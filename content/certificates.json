@@ -1,0 +1,39 @@
+[
+  {
+    "id": "anthropic-claude-engineer-2025",
+    "title": "Claude Engineer Certification",
+    "issuer": "Anthropic",
+    "issuedDate": "2025-11-14",
+    "credentialUrl": "https://example.com/credentials/anthropic-claude-engineer",
+    "badgeImage": {
+      "src": "/images/certificates/anthropic-claude-engineer-2025/badge.png",
+      "alt": "Anthropic Claude Engineer credential badge, warm-toned crest on cream"
+    },
+    "tags": ["ai", "anthropic", "engineering"]
+  },
+  {
+    "id": "google-cloud-ml-engineer-2025",
+    "title": "Professional Machine Learning Engineer",
+    "issuer": "Google Cloud",
+    "issuedDate": "2025-06-02",
+    "expiresDate": "2027-06-02",
+    "credentialUrl": "https://example.com/credentials/google-ml-engineer",
+    "badgeImage": {
+      "src": "/images/certificates/google-cloud-ml-engineer-2025/badge.png",
+      "alt": "Google Cloud Professional Machine Learning Engineer badge, muted blue and grey"
+    },
+    "tags": ["ml", "google-cloud", "engineering"]
+  },
+  {
+    "id": "deeplearning-ai-prompt-engineering-2025",
+    "title": "Prompt Engineering for Developers",
+    "issuer": "DeepLearning.AI",
+    "issuedDate": "2025-03-19",
+    "credentialUrl": "https://example.com/credentials/deeplearning-ai-prompt-engineering",
+    "badgeImage": {
+      "src": "/images/certificates/deeplearning-ai-prompt-engineering-2025/badge.png",
+      "alt": "DeepLearning.AI Prompt Engineering completion certificate, sage and cream layout"
+    },
+    "tags": ["ai", "prompting", "coursera"]
+  }
+]

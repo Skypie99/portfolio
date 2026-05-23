@@ -11,3 +11,5 @@ build/
 .idea/
 .vscode/
 coverage/
+tsconfig.tsbuildinfo
+next-env.d.ts

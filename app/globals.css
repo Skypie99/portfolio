@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------
+   Dani PROJECT_DESIGN.md §1.1 — CSS variables.
+   Mirrored in tailwind.config.ts. Keep the two in sync.
+   ------------------------------------------------------------------ */
+:root {
+  /* Foundations */
+  --color-cream:        #FAF9F5;
+  --color-warm-white:   #F0F0EA;
+  --color-blush:        #FCF3ED;
+  --color-peach-cream:  #FDE9D7;
+
+  /* Terracotta scale */
+  --color-sand:         #FBCFAC;
+  --color-amber:        #E2976E;
+  --color-terracotta:   #B35F32;
+  --color-umber:        #7F4323;
+  --color-bark:         #48230F;
+
+  /* Neutrals */
+  --color-stone:        #DCDCD6;
+  --color-stone-strong: #888879;
+  --color-pebble:       #B8B8AA;
+  --color-sage:         #717267;
+  --color-sage-text:    #5C5D54;
+  --color-charcoal:     #484A43;
+  --color-near-black:   #232420;
+
+  /* Semantic */
+  --color-bg:                 var(--color-cream);
+  --color-bg-alt:             var(--color-warm-white);
+  --color-surface:            var(--color-blush);
+  --color-surface-warm:       var(--color-peach-cream);
+  --color-text:               var(--color-near-black);
+  --color-text-muted:         var(--color-charcoal);
+  --color-text-meta:          var(--color-sage-text);
+  --color-decorative-sage:    var(--color-sage);
+  --color-border-decorative:  var(--color-stone);
+  --color-border-interactive: var(--color-stone-strong);
+  --color-border:             var(--color-border-decorative);
+  --color-accent:             var(--color-terracotta);
+  --color-accent-primary:     var(--color-terracotta);
+  --color-accent-text:        var(--color-umber);
+  --color-accent-soft:        var(--color-amber);
+  --color-accent-deep:        var(--color-umber);
+  --color-link:               var(--color-umber);
+  --color-link-hover:         var(--color-terracotta);
+
+  /* Type scale */
+  --fs-display-l: 3.25rem;
+  --fs-display-m: 2.25rem;
+  --fs-display-s: 1.1875rem;
+  --fs-body:      1rem;
+  --fs-body-sm:   0.875rem;
+  --fs-label:     0.75rem;
+  --fs-meta:      0.6875rem;
+
+  --lh-display: 1.15;
+  --lh-body:    1.65;
+  --lh-label:   1.4;
+  --ls-body:    0.0156em;
+  --ls-label:   0.125em;
+
+  /* Spacing */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.5rem;
+  --space-6:  2rem;
+  --space-8:  3rem;
+  --space-10: 4rem;
+  --space-12: 6rem;
+  --space-16: 8rem;
+  --space-20: 12.5rem;
+
+  /* Radii */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:  16px;
+  --radius-pill: 999px;
+
+  /* Borders */
+  --border-hairline:    1px solid var(--color-border-decorative);
+  --border-interactive: 1px solid var(--color-border-interactive);
+
+  /* Motion */
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft:   cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast:    180ms;
+  --dur-base:    280ms;
+  --dur-slow:    520ms;
+  --dur-reveal:  900ms;
+
+  /* Layout */
+  --sidebar-w:   280px;
+  --content-max: 1120px;
+  --gutter:      var(--space-6);
+
+  /* Shadows */
+  --shadow-soft: 0 1px 2px rgba(35, 36, 32, 0.04),
+                 0 4px 12px rgba(35, 36, 32, 0.03);
+}
+
+/* ------------------------------------------------------------------
+   Base resets
+   ------------------------------------------------------------------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-cream);
+  color: var(--color-near-black);
+  font-family: var(--font-dm-sans), -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.25px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Focus-visible default — Alex §6.1. Terracotta 4.33:1 on cream (PASS 3:1 UI). */
+*:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* The skip-link's :focus state is in components/SkipLink.tsx via Tailwind. */
+
+/* Disable any text-decoration on anchors by default; components opt in. */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Make headings inherit weight defaults (no auto-bold). */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* ------------------------------------------------------------------
+   Hero entrance — Peter C2 perf (Framer removed from initial chunk).
+   Same fade + 8px translateY rise, easeOut 600ms, staggered by class.
+   ------------------------------------------------------------------ */
+@keyframes fade-rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-enter {
+  animation: fade-rise 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.hero-enter-delay-1 { animation-delay: 100ms; }
+.hero-enter-delay-2 { animation-delay: 200ms; }
+.hero-enter-delay-3 { animation-delay: 300ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-enter,
+  .hero-enter-delay-1,
+  .hero-enter-delay-2,
+  .hero-enter-delay-3 {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Reduced motion — Alex §5.2 binding rule
+   ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Selection — soft warm tone, not jarring blue
+   ------------------------------------------------------------------ */
+::selection {
+  background: var(--color-peach-cream);
+  color: var(--color-near-black);
+}

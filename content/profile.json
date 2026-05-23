@@ -1,0 +1,19 @@
+{
+  "name": "Sky Halisky",
+  "wordmarkText": "Sky Halisky",
+  "tagline": "Building thoughtful AI work, one careful deliverable at a time.",
+  "location": "Canada",
+  "contactEmail": "skylerhalisky@gmail.com",
+  "socials": [
+    {
+      "platform": "github",
+      "handle": "@skypie99",
+      "url": "https://github.com/skypie99"
+    },
+    {
+      "platform": "linkedin",
+      "handle": "sky-halisky",
+      "url": "https://www.linkedin.com/in/sky-halisky/"
+    }
+  ]
+}

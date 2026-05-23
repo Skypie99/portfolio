@@ -1,0 +1,130 @@
+import Link from 'next/link';
+
+import { cn } from '@/lib/cn';
+import { getProfile } from '@/lib/content';
+
+/**
+ * Footer — F-10. Three-column ffern-style. Reads from profile.json.
+ *
+ * Alex §4.5: external links open in new tab with rel="noopener noreferrer"
+ * AND include a visually-hidden "(opens in new tab)" cue for SR users.
+ */
+export function Footer() {
+  const profile = getProfile();
+  const year = new Date().getFullYear();
+
+  return (
+    <footer
+      className={cn(
+        'bg-warm-white border-t border-border-decorative',
+        'px-gutter pt-12 pb-8',
+      )}
+    >
+      <div className="max-w-content mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Column 1 — Site */}
+          <div className="flex flex-col gap-4">
+            <h3 className="font-mono text-label tracking-label uppercase text-text-meta">
+              Site
+            </h3>
+            <ul className="flex flex-col gap-2">
+              <li>
+                <Link
+                  href="/"
+                  className="font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/work/"
+                  className="font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+                >
+                  Work
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/certificates/"
+                  className="font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+                >
+                  Certificates
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/about/"
+                  className="font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact/"
+                  className="font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+                >
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 2 — About */}
+          <div className="flex flex-col gap-4">
+            <h3 className="font-mono text-label tracking-label uppercase text-text-meta">
+              About
+            </h3>
+            <p className="font-sans text-body-sm text-charcoal leading-[1.65]">
+              {profile.name} is an AI builder based in {profile.location}.
+              {' '}
+              {profile.tagline}
+            </p>
+          </div>
+
+          {/* Column 3 — Social + Contact */}
+          <div className="flex flex-col gap-4">
+            <h3 className="font-mono text-label tracking-label uppercase text-text-meta">
+              Elsewhere
+            </h3>
+            <ul className="flex flex-col gap-2">
+              <li>
+                <a
+                  href={`mailto:${profile.contactEmail}`}
+                  className="font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out break-all"
+                >
+                  {profile.contactEmail}
+                </a>
+              </li>
+              {profile.socials.map((s) => (
+                <li key={s.url}>
+                  <a
+                    href={s.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out inline-flex items-center gap-1"
+                  >
+                    <span className="capitalize">{s.platform}</span>
+                    <span aria-hidden="true" className="text-text-meta">{'↗'}</span>
+                    <span className="sr-only">(opens in new tab)</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom strip */}
+        <div className="mt-12 pt-6 border-t border-border-decorative flex flex-col md:flex-row gap-2 md:gap-6 justify-between">
+          <p className="font-mono text-meta tracking-label uppercase text-text-meta">
+            {'©'} {year} {profile.name}
+          </p>
+          <p className="font-mono text-meta tracking-label uppercase text-text-meta">
+            Made with care
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
