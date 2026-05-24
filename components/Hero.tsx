@@ -73,7 +73,12 @@ export function Hero({ eyebrow, heading, subhead, ctaLabel, ctaHref }: HeroProps
         </p>
 
         <div className="hero-enter hero-enter-delay-3">
-          <Button href={ctaHref}>{ctaLabel}</Button>
+          {/* Cycle 20: one-shot dot pulse 800ms after mount draws the eye
+              after the hero entrance settles. Reduced-motion safe via
+              the .cta-dot-pulse @media gate in globals.css. */}
+          <Button href={ctaHref} pulseOnMount>
+            {ctaLabel}
+          </Button>
         </div>
       </div>
     </section>

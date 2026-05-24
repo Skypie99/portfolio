@@ -15,6 +15,13 @@ type CommonProps = {
   fullWidth?: boolean;
   /** Renders the terracotta signature dot before the label. Default true. */
   showDot?: boolean;
+  /**
+   * Cycle 20: one-shot scale pulse on the dot ~800ms after mount.
+   * Used on the homepage hero CTA to draw the eye after the hero
+   * entrance animation settles. Reduced-motion safe (the CSS keyframe
+   * is gated behind prefers-reduced-motion: no-preference).
+   */
+  pulseOnMount?: boolean;
   className?: string;
 };
 
@@ -54,7 +61,7 @@ const variants: Record<Variant, string> = {
     'hover:bg-warm-white hover:border-charcoal',
 };
 
-function Dot({ visible }: { visible: boolean }) {
+function Dot({ visible, pulse }: { visible: boolean; pulse: boolean }) {
   if (!visible) return null;
   return (
     <span
@@ -63,6 +70,7 @@ function Dot({ visible }: { visible: boolean }) {
         'inline-block w-2 h-2 rounded-full bg-terracotta',
         'transition-all duration-base ease-out',
         'group-hover:w-2.5 group-hover:h-2.5',
+        pulse && 'cta-dot-pulse',
       )}
     />
   );
@@ -80,6 +88,7 @@ export const Button = forwardRef<HTMLElement, Props>(function Button(props, ref)
     variant = 'primary',
     fullWidth = false,
     showDot = true,
+    pulseOnMount = false,
     className,
   } = props;
 
@@ -92,6 +101,7 @@ export const Button = forwardRef<HTMLElement, Props>(function Button(props, ref)
       variant: _v,
       fullWidth: _f,
       showDot: _s,
+      pulseOnMount: _p,
       className: _c,
       children: _ch,
       ...anchorAttrs
@@ -103,7 +113,7 @@ export const Button = forwardRef<HTMLElement, Props>(function Button(props, ref)
         className={classes}
         {...anchorAttrs}
       >
-        <Dot visible={showDot} />
+        <Dot visible={showDot} pulse={pulseOnMount} />
         <span>{children}</span>
       </a>
     );
@@ -113,6 +123,7 @@ export const Button = forwardRef<HTMLElement, Props>(function Button(props, ref)
     variant: _v,
     fullWidth: _f,
     showDot: _s,
+    pulseOnMount: _p,
     className: _c,
     children: _ch,
     ...buttonAttrs
@@ -123,7 +134,7 @@ export const Button = forwardRef<HTMLElement, Props>(function Button(props, ref)
       className={classes}
       {...buttonAttrs}
     >
-      <Dot visible={showDot} />
+      <Dot visible={showDot} pulse={pulseOnMount} />
       <span>{children}</span>
     </button>
   );

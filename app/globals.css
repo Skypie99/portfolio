@@ -228,6 +228,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ------------------------------------------------------------------
+   Hero CTA dot pulse — Cycle 20. One quiet 1.0 → 1.15 → 1.0 scale
+   pulse on the terracotta dot ~800ms after mount, drawing the eye
+   to the primary CTA without being loud. Single-shot, never repeats.
+
+   Reduced-motion users see a static dot (the @media gate skips the
+   animation declaration entirely; transform stays at the default
+   identity matrix).
+
+   Combined with the parent Button's group-hover scale (8px → 10px)
+   on hover — both transforms compose cleanly because they're set
+   on the same dot element at different times.
+   ------------------------------------------------------------------ */
+@keyframes cta-dot-pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cta-dot-pulse {
+    animation: cta-dot-pulse 800ms ease-out 800ms 1 both;
+  }
+}
+
+/* ------------------------------------------------------------------
    Hero eyebrow scroll-fade — Cycle 10 (warm-bright interactive
    polish). The "AI PORTFOLIO — 2026" eyebrow gently fades to 0 as
    the user scrolls past the hero, then comes back when they scroll

@@ -39,4 +39,13 @@ describe('Hero', () => {
     expect(eyebrow).toHaveClass('hero-enter');
     expect(eyebrow).toHaveClass('hero-scroll-fade');
   });
+
+  it('CTA dot carries the cta-dot-pulse class (Cycle 20 one-shot mount pulse)', () => {
+    const { container } = render(<Hero {...fixture} />);
+    // The terracotta dot is the aria-hidden span with bg-terracotta inside
+    // the Hero's CTA button. The pulse class wires up the one-shot 800ms
+    // scale animation declared in globals.css.
+    const dot = container.querySelector('span.bg-terracotta.cta-dot-pulse');
+    expect(dot).not.toBeNull();
+  });
 });
