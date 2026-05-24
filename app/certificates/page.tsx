@@ -114,7 +114,7 @@ export default function CertificatesPage() {
 
                   {/* Title — h3 per Alex F-C4-2 (heading rotor flat:
                       h1 page → h2 sr-only section → h3 card). */}
-                  <h3 className="font-serif font-normal text-[1.375rem] text-near-black leading-tight mb-3">
+                  <h3 className="font-serif font-normal text-[1.5rem] text-near-black leading-tight mb-3">
                     {c.title}
                   </h3>
 

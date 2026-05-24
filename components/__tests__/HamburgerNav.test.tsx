@@ -81,7 +81,7 @@ afterEach(() => {
 describe('HamburgerNav', () => {
   it('renders the trigger button collapsed by default', () => {
     render(<HamburgerNav />);
-    const trigger = screen.getByRole('button', { name: /open menu/i });
+    const trigger = screen.getByRole('button', { name: /open navigation menu/i });
     expect(trigger).toBeInTheDocument();
     expect(trigger).toHaveAttribute('aria-expanded', 'false');
     expect(trigger).toHaveAttribute('aria-controls', 'primary-menu');
@@ -90,12 +90,12 @@ describe('HamburgerNav', () => {
   it('toggles aria-expanded when the trigger is clicked', async () => {
     const user = userEvent.setup();
     render(<HamburgerNav />);
-    const trigger = screen.getByRole('button', { name: /open menu/i });
+    const trigger = screen.getByRole('button', { name: /open navigation menu/i });
 
     await user.click(trigger);
     expect(trigger).toHaveAttribute('aria-expanded', 'true');
     // Accessible name updates to reflect the new toggle state.
-    expect(screen.getByRole('button', { name: /close menu/i })).toBe(trigger);
+    expect(screen.getByRole('button', { name: /close navigation menu/i })).toBe(trigger);
 
     await user.click(trigger);
     expect(trigger).toHaveAttribute('aria-expanded', 'false');
@@ -104,7 +104,7 @@ describe('HamburgerNav', () => {
   it('closes the overlay and returns focus to the trigger on Escape', async () => {
     const user = userEvent.setup();
     render(<HamburgerNav />);
-    const trigger = screen.getByRole('button', { name: /open menu/i });
+    const trigger = screen.getByRole('button', { name: /open navigation menu/i });
 
     await user.click(trigger);
     expect(trigger).toHaveAttribute('aria-expanded', 'true');

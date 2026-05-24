@@ -95,7 +95,7 @@ export function HamburgerNav() {
         type="button"
         aria-expanded={open}
         aria-controls="primary-menu"
-        aria-label={open ? 'Close menu' : 'Open menu'}
+        aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
         onClick={() => setOpen((v) => !v)}
         className={cn(
           'fixed top-4 right-4 z-50',
