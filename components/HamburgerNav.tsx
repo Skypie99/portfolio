@@ -145,9 +145,9 @@ export function HamburgerNav() {
             role="dialog"
             aria-modal="true"
             aria-label="Primary menu"
-            initial={reduceMotion ? false : { opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={reduceMotion ? { opacity: 1 } : { opacity: 0 }}
+            initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={reduceMotion ? { opacity: 1 } : { opacity: 0, y: 8 }}
             transition={{ duration: reduceMotion ? 0 : 0.28, ease: [0.4, 0, 0.2, 1] }}
             className={cn(
               'fixed inset-0 z-40',
@@ -165,11 +165,11 @@ export function HamburgerNav() {
                   return (
                     <motion.li
                       key={item.href}
-                      initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+                      initial={reduceMotion ? false : { opacity: 0, y: 12 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{
                         duration: reduceMotion ? 0 : 0.4,
-                        delay: reduceMotion ? 0 : 0.05 + i * 0.05,
+                        delay: reduceMotion ? 0 : 0.04 + i * 0.06,
                         ease: [0.22, 1, 0.36, 1],
                       }}
                     >
@@ -184,6 +184,17 @@ export function HamburgerNav() {
                           'transition-colors duration-fast ease-out',
                         )}
                       >
+                        {/* Editorial index number — DM Mono eyebrow,
+                            terracotta on active, muted meta on inactive */}
+                        <span
+                          aria-hidden="true"
+                          className={cn(
+                            'font-mono text-meta tracking-label w-6 text-right shrink-0',
+                            isActive ? 'text-accent-text' : 'text-text-meta',
+                          )}
+                        >
+                          {String(i + 1).padStart(2, '0')}
+                        </span>
                         {isActive && (
                           <span
                             aria-hidden="true"
