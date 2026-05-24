@@ -115,13 +115,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* How I work */}
+      {/* How I work — Cycle 17: Dani §3.6 strict refit. Section on cream,
+          steps inside a rounded peach-cream callout panel. Hairline dividers
+          between steps preserved from Cycle 7. */}
       <section
         className={cn(
           'reveal-on-scroll',
           'px-gutter',
           'py-12 md:py-16 lg:py-20',
-          'bg-peach-cream',
+          'bg-cream',
+          'border-t border-border-decorative',
         )}
       >
         <div className="max-w-content mx-auto">
@@ -134,30 +137,33 @@ export default function HomePage() {
             </h2>
           </div>
 
-          {/* Dani §3.6: hairline dividers between steps. */}
-          <ol className="flex flex-col divide-y divide-border-decorative">
-            <li className="py-8 first:pt-0 last:pb-0">
-              <NumberedStep
-                number="01"
-                title="Discover"
-                body="Start with the smallest, most honest version of the problem. Talk to the people who will live with the thing — not just the people who will buy it."
-              />
-            </li>
-            <li className="py-8 first:pt-0 last:pb-0">
-              <NumberedStep
-                number="02"
-                title="Build"
-                body="One careful slice at a time. Type-safe, accessible from the first line, instrumented enough to learn from. Refuse to ship what I haven't tried to use."
-              />
-            </li>
-            <li className="py-8 first:pt-0 last:pb-0">
-              <NumberedStep
-                number="03"
-                title="Ship"
-                body="Document what changed, what's still rough, and what the next maintainer will need to know. A deliverable is the work plus the story of how it was made."
-              />
-            </li>
-          </ol>
+          {/* Dani §3.6: peach-cream panel, --radius-lg, --space-8 padding.
+              Inner <ol> keeps the Cycle 7 hairline dividers between steps. */}
+          <div className="bg-peach-cream rounded-lg p-8 md:p-12">
+            <ol className="flex flex-col divide-y divide-border-decorative">
+              <li className="py-8 first:pt-0 last:pb-0">
+                <NumberedStep
+                  number="01"
+                  title="Discover"
+                  body="Start with the smallest, most honest version of the problem. Talk to the people who will live with the thing — not just the people who will buy it."
+                />
+              </li>
+              <li className="py-8 first:pt-0 last:pb-0">
+                <NumberedStep
+                  number="02"
+                  title="Build"
+                  body="One careful slice at a time. Type-safe, accessible from the first line, instrumented enough to learn from. Refuse to ship what I haven't tried to use."
+                />
+              </li>
+              <li className="py-8 first:pt-0 last:pb-0">
+                <NumberedStep
+                  number="03"
+                  title="Ship"
+                  body="Document what changed, what's still rough, and what the next maintainer will need to know. A deliverable is the work plus the story of how it was made."
+                />
+              </li>
+            </ol>
+          </div>
         </div>
       </section>
 

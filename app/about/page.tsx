@@ -69,12 +69,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* How I work */}
+      {/* How I work — Cycle 17: Dani §3.6 strict refit. */}
       <section
         className={cn(
           'reveal-on-scroll',
           'px-gutter py-24 lg:py-32',
-          'bg-peach-cream border-t border-border-decorative',
+          'bg-cream border-t border-border-decorative',
         )}
       >
         <div className="max-w-content mx-auto">
@@ -87,31 +87,33 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          {/* Dani §3.6: hairline dividers between steps as a quiet rhythm marker.
-              Stone (#DCDCD6) is purely decorative — exempt from 3:1 per Alex. */}
-          <ol className="flex flex-col divide-y divide-border-decorative">
-            <li className="py-8 first:pt-0 last:pb-0">
-              <NumberedStep
-                number="01"
-                title="Discover"
-                body="Scope an AI project to the smallest honest version of the problem. Talk to the people who'll live with the thing — not just the people who will pay for it."
-              />
-            </li>
-            <li className="py-8 first:pt-0 last:pb-0">
-              <NumberedStep
-                number="02"
-                title="Build"
-                body="Loop with agents, iterate fast, ship-and-adjust. Type-safe and accessible from the first line. Refuse to ship what I haven't tried to use."
-              />
-            </li>
-            <li className="py-8 first:pt-0 last:pb-0">
-              <NumberedStep
-                number="03"
-                title="Ship"
-                body="Refine in production, learn from use, write down what changed and why. Follow through — a deliverable is the work plus the story of how it was made."
-              />
-            </li>
-          </ol>
+          {/* Peach-cream callout panel — Dani §3.6. Hairline dividers
+              between steps preserved from Cycle 7 (Stone decorative). */}
+          <div className="bg-peach-cream rounded-lg p-8 md:p-12">
+            <ol className="flex flex-col divide-y divide-border-decorative">
+              <li className="py-8 first:pt-0 last:pb-0">
+                <NumberedStep
+                  number="01"
+                  title="Discover"
+                  body="Scope an AI project to the smallest honest version of the problem. Talk to the people who'll live with the thing — not just the people who will pay for it."
+                />
+              </li>
+              <li className="py-8 first:pt-0 last:pb-0">
+                <NumberedStep
+                  number="02"
+                  title="Build"
+                  body="Loop with agents, iterate fast, ship-and-adjust. Type-safe and accessible from the first line. Refuse to ship what I haven't tried to use."
+                />
+              </li>
+              <li className="py-8 first:pt-0 last:pb-0">
+                <NumberedStep
+                  number="03"
+                  title="Ship"
+                  body="Refine in production, learn from use, write down what changed and why. Follow through — a deliverable is the work plus the story of how it was made."
+                />
+              </li>
+            </ol>
+          </div>
         </div>
       </section>
 
