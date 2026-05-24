@@ -92,7 +92,7 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${profile.contactEmail}`}
-                  className="font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out break-all"
+                  className="link-draw font-sans text-body-sm text-near-black break-all"
                 >
                   {profile.contactEmail}
                 </a>
@@ -115,12 +115,18 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom strip */}
+        {/* Bottom strip — Dani brand signature: terracotta dot beside
+            'Made with care' echoes the CTA dot pattern, ties the footer
+            into the rest of the editorial frame. */}
         <div className="mt-12 pt-6 border-t border-border-decorative flex flex-col md:flex-row gap-2 md:gap-6 justify-between">
           <p className="font-mono text-meta tracking-label uppercase text-text-meta">
             {'©'} {year} {profile.name}
           </p>
-          <p className="font-mono text-meta tracking-label uppercase text-text-meta">
+          <p className="font-mono text-meta tracking-label uppercase text-text-meta inline-flex items-center gap-2">
+            <span
+              aria-hidden="true"
+              className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta"
+            />
             Made with care
           </p>
         </div>
