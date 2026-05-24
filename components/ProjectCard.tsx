@@ -144,13 +144,21 @@ export function ProjectCard({
       </p>
 
       {/* Tech pills — Dani §3.8 via shared TagPill primitive. */}
-      <ul className="flex flex-wrap gap-2">
+      <ul className="flex flex-wrap gap-2 mb-5">
         {d.tech.slice(0, maxTech).map((t) => (
           <li key={t}>
             <TagPill>{t}</TagPill>
           </li>
         ))}
       </ul>
+
+      {/* Explicit "View work →" CTA — makes the card's action unambiguous
+          even without hover state. Inherits group-hover color from the
+          parent <a>'s transition for visual consistency. */}
+      <span className="inline-flex items-center gap-1 font-mono text-meta tracking-label uppercase text-accent-text transition-transform duration-fast ease-out group-hover:translate-x-1 group-focus-visible:translate-x-1">
+        View work
+        <span aria-hidden="true">{'→'}</span>
+      </span>
     </a>
   );
 }
