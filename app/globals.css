@@ -215,6 +215,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ------------------------------------------------------------------
+   Hero eyebrow scroll-fade — Cycle 10 (warm-bright interactive
+   polish). The "AI PORTFOLIO — 2026" eyebrow gently fades to 0 as
+   the user scrolls past the hero, then comes back when they scroll
+   up. Pure CSS scroll-driven animation, zero JS added.
+
+   Combined with the existing .hero-enter mount animation (which
+   fades the eyebrow IN on first paint) — both animations coexist
+   via animation-timeline declarations.
+
+   Older browsers: @supports gate → eyebrow stays opacity:1 always.
+   Reduced motion: @media gate → no fade animation registered.
+   ------------------------------------------------------------------ */
+@keyframes hero-fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-scroll-fade {
+      animation: hero-fade-out linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 100%;
+    }
+  }
+}
+
+/* ------------------------------------------------------------------
    Section scroll-reveal — Dani §5.3.
    Fade + 16px translateY rise, easeOut, triggered as the section
    enters the viewport. Pure CSS via scroll-driven animations.

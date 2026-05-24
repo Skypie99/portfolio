@@ -38,7 +38,7 @@ export function Hero({ eyebrow, heading, subhead, ctaLabel, ctaHref }: HeroProps
       <div className="max-w-content w-full">
         <p
           className={cn(
-            'hero-enter',
+            'hero-enter hero-scroll-fade',
             'font-mono text-label tracking-label uppercase text-text-meta mb-4',
           )}
         >
