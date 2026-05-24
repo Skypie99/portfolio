@@ -95,12 +95,24 @@ export function ProjectCard({
           )}
           loading="lazy"
         />
-        <span
+        {/* Cycle 26: elevated placeholder overlay. A tiny terracotta dot
+            + DM Mono eyebrow above the Cormorant title turns the empty
+            well into an intentional editorial card (instead of "image
+            failed to load"). Disappears once real images replace the
+            cream blocks. aria-hidden — the alt attribute carries
+            semantics for screen readers. */}
+        <div
           aria-hidden="true"
-          className="font-serif font-light text-[1.5rem] text-umber px-4 text-center"
+          className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-4 text-center"
         >
-          {d.title}
-        </span>
+          <span className="inline-flex items-center gap-2 font-mono text-meta tracking-label uppercase text-umber/70">
+            <span className="inline-block w-1 h-1 rounded-full bg-terracotta" />
+            {d.role}
+          </span>
+          <span className="font-serif font-light text-[1.5rem] text-umber leading-tight">
+            {d.title}
+          </span>
+        </div>
       </div>
 
       {/* Featured tag */}

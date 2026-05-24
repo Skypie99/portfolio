@@ -103,12 +103,19 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
                 height={1000}
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <span
+              {/* Cycle 26: elevated placeholder overlay matches ProjectCard. */}
+              <div
                 aria-hidden="true"
-                className="font-serif font-light text-[2rem] text-umber px-6 text-center"
+                className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 text-center"
               >
-                {d.title}
-              </span>
+                <span className="inline-flex items-center gap-2 font-mono text-meta tracking-label uppercase text-umber/70">
+                  <span className="inline-block w-1 h-1 rounded-full bg-terracotta" />
+                  {d.role}
+                </span>
+                <span className="font-serif font-light text-[2rem] text-umber leading-tight">
+                  {d.title}
+                </span>
+              </div>
             </div>
 
             {/* Details column */}
@@ -240,6 +247,8 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
                       className="absolute inset-0 w-full h-full object-cover"
                       loading="lazy"
                     />
+                    {/* Cycle 26: gallery placeholder. Tighter overlay (no
+                        eyebrow) since the caption below carries context. */}
                     <span
                       aria-hidden="true"
                       className="font-serif font-light text-[1.25rem] text-umber px-4 text-center"
