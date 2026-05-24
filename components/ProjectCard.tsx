@@ -1,3 +1,4 @@
+import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import type { Deliverable } from '@/lib/schema';
 
@@ -120,14 +121,11 @@ export function ProjectCard({
         {d.summary}
       </p>
 
-      {/* Tech pills */}
+      {/* Tech pills — Dani §3.8 via shared TagPill primitive. */}
       <ul className="flex flex-wrap gap-2">
         {d.tech.slice(0, maxTech).map((t) => (
-          <li
-            key={t}
-            className="inline-flex items-center px-3 py-1 rounded-pill bg-sand text-umber font-mono text-meta tracking-label uppercase"
-          >
-            {t}
+          <li key={t}>
+            <TagPill>{t}</TagPill>
           </li>
         ))}
       </ul>

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Button } from '@/components/Button';
 import { Hero } from '@/components/Hero';
 import { NumberedStep } from '@/components/NumberedStep';
+import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getDeliverables, getProfile } from '@/lib/content';
 
@@ -90,11 +91,8 @@ export default function HomePage() {
                       </p>
                       <ul className="flex flex-wrap gap-2 mt-2">
                         {d.tech.slice(0, 4).map((t) => (
-                          <li
-                            key={t}
-                            className="inline-flex items-center px-3 py-1 rounded-pill bg-sand text-umber font-mono text-meta tracking-label uppercase"
-                          >
-                            {t}
+                          <li key={t}>
+                            <TagPill>{t}</TagPill>
                           </li>
                         ))}
                       </ul>

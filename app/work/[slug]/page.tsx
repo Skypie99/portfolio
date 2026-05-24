@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { Button } from '@/components/Button';
+import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getDeliverables, getProfile } from '@/lib/content';
 
@@ -143,11 +144,8 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
                 </p>
                 <ul className="flex flex-wrap gap-2">
                   {d.tech.map((t) => (
-                    <li
-                      key={t}
-                      className="inline-flex items-center px-3 py-1 rounded-pill bg-sand text-umber font-mono text-meta tracking-label uppercase"
-                    >
-                      {t}
+                    <li key={t}>
+                      <TagPill>{t}</TagPill>
                     </li>
                   ))}
                 </ul>
