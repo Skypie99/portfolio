@@ -72,6 +72,7 @@ export default function AboutPage() {
       {/* How I work */}
       <section
         className={cn(
+          'reveal-on-scroll',
           'px-gutter py-24 lg:py-32',
           'bg-peach-cream border-t border-border-decorative',
         )}
@@ -116,6 +117,7 @@ export default function AboutPage() {
       {recent.length > 0 && (
         <section
           className={cn(
+            'reveal-on-scroll',
             'px-gutter py-24 lg:py-32',
             'bg-cream border-t border-border-decorative',
           )}
@@ -175,6 +177,7 @@ export default function AboutPage() {
       {/* CTA */}
       <section
         className={cn(
+          'reveal-on-scroll',
           'px-gutter py-24 lg:py-32',
           'bg-cream border-t border-border-decorative',
         )}

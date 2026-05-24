@@ -57,6 +57,7 @@ export default function ContactPage() {
       {profile.socials.length > 0 && (
         <section
           className={cn(
+            'reveal-on-scroll',
             'px-gutter py-24 lg:py-32',
             'bg-blush border-t border-border-decorative',
           )}

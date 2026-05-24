@@ -38,6 +38,7 @@ export default function HomePage() {
       {/* Selected work */}
       <section
         className={cn(
+          'reveal-on-scroll',
           'px-gutter',
           'py-12 md:py-16 lg:py-20',
           'bg-cream',
@@ -119,6 +120,7 @@ export default function HomePage() {
       {/* How I work */}
       <section
         className={cn(
+          'reveal-on-scroll',
           'px-gutter',
           'py-12 md:py-16 lg:py-20',
           'bg-peach-cream',
@@ -163,6 +165,7 @@ export default function HomePage() {
       {/* Closing CTA */}
       <section
         className={cn(
+          'reveal-on-scroll',
           'px-gutter',
           'py-12 md:py-16 lg:py-20',
           'bg-cream',

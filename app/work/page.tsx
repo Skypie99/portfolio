@@ -59,6 +59,7 @@ export default function WorkIndexPage() {
       {/* Deliverables grid */}
       <section
         className={cn(
+          'reveal-on-scroll',
           'px-gutter',
           'pb-24 lg:pb-32',
           'bg-cream',

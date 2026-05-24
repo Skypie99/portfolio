@@ -202,7 +202,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
 
       {/* Optional gallery */}
       {d.gallery && d.gallery.length > 0 && (
-        <section className="px-gutter py-16 lg:py-24 bg-blush border-t border-border-decorative">
+        <section className="reveal-on-scroll px-gutter py-16 lg:py-24 bg-blush border-t border-border-decorative">
           <div className="max-w-content mx-auto">
             <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
               Gallery
@@ -243,6 +243,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
       {others.length > 0 && (
         <section
           className={cn(
+            'reveal-on-scroll',
             'px-gutter py-16 lg:py-24',
             'bg-cream border-t border-border-decorative',
           )}
@@ -287,6 +288,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
       {/* Closing CTA */}
       <section
         className={cn(
+          'reveal-on-scroll',
           'px-gutter py-24 lg:py-32',
           'bg-cream border-t border-border-decorative',
         )}
