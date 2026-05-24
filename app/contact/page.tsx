@@ -96,7 +96,7 @@ export default function ContactPage() {
       {/* Back link */}
       <section
         className={cn(
-          'px-gutter py-16 lg:py-20',
+          'px-gutter py-24 lg:py-32',
           'bg-cream border-t border-border-decorative',
         )}
       >

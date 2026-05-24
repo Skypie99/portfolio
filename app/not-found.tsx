@@ -9,7 +9,7 @@ import { Button } from '@/components/Button';
  */
 export default function NotFound() {
   return (
-    <section className="px-gutter py-16 md:py-20 lg:py-32 min-h-[60vh] flex items-center">
+    <section className="px-gutter py-24 lg:py-32 min-h-[60vh] flex items-center">
       <div className="max-w-content mx-auto w-full">
         <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
           404

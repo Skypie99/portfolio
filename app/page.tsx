@@ -41,7 +41,7 @@ export default function HomePage() {
         className={cn(
           'reveal-on-scroll',
           'px-gutter',
-          'py-12 md:py-16 lg:py-20',
+          'py-24 lg:py-32',
           'bg-cream',
           'border-t border-border-decorative',
         )}
@@ -122,7 +122,7 @@ export default function HomePage() {
         className={cn(
           'reveal-on-scroll',
           'px-gutter',
-          'py-12 md:py-16 lg:py-20',
+          'py-24 lg:py-32',
           'bg-cream',
           'border-t border-border-decorative',
         )}
@@ -172,7 +172,7 @@ export default function HomePage() {
         className={cn(
           'reveal-on-scroll',
           'px-gutter',
-          'py-12 md:py-16 lg:py-20',
+          'py-24 lg:py-32',
           'bg-cream',
           'border-t border-border-decorative',
         )}

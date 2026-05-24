@@ -63,7 +63,7 @@ export default function WorkIndexPage() {
           'px-gutter',
           'pb-24 lg:pb-32',
           'bg-cream',
-          'border-t border-border-decorative pt-16 lg:pt-20',
+          'border-t border-border-decorative pt-24 lg:pt-32',
         )}
       >
         <div className="max-w-content mx-auto">

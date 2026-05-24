@@ -65,7 +65,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
           uppercase 11px. Only 'Work' is a link (with link-draw underline-
           draw hover). Current slug is plain text — you're already there.
           aria-label declares the nav landmark for screen readers. */}
-      <section className="px-gutter pt-16 lg:pt-20 bg-cream">
+      <section className="px-gutter pt-24 lg:pt-32 bg-cream">
         <div className="max-w-content mx-auto">
           <nav aria-label="Breadcrumb">
             <ol className="inline-flex items-center gap-2 font-mono text-meta tracking-label uppercase text-text-meta">
@@ -89,7 +89,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
       </section>
 
       {/* Main content — hero left, details right */}
-      <section className="px-gutter py-12 md:py-16 lg:py-24 bg-cream">
+      <section className="px-gutter py-24 lg:py-32 bg-cream">
         <div className="max-w-content mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start">
             {/* Hero image / fallback block */}
@@ -218,7 +218,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
 
       {/* Optional gallery */}
       {d.gallery && d.gallery.length > 0 && (
-        <section className="reveal-on-scroll px-gutter py-16 lg:py-24 bg-blush border-t border-border-decorative">
+        <section className="reveal-on-scroll px-gutter py-24 lg:py-32 bg-blush border-t border-border-decorative">
           <div className="max-w-content mx-auto">
             <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
               Gallery
@@ -264,7 +264,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
         <section
           className={cn(
             'reveal-on-scroll',
-            'px-gutter py-16 lg:py-24',
+            'px-gutter py-24 lg:py-32',
             'bg-cream border-t border-border-decorative',
           )}
         >

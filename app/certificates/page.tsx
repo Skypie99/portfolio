@@ -62,7 +62,7 @@ export default function CertificatesPage() {
       <section
         className={cn(
           'reveal-on-scroll',
-          'px-gutter pb-24 lg:pb-32 pt-16 lg:pt-20',
+          'px-gutter pb-24 lg:pb-32 pt-24 lg:pt-32',
           'bg-cream border-t border-border-decorative',
         )}
       >
