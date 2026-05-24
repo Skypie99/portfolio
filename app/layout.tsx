@@ -22,26 +22,29 @@ import './globals.css';
  * http-equiv> in <head>. Less strict than HTTP CSP (frame-ancestors
  * is ignored, no report-uri), but covers script/style/font/img/object.
  *
- * Permissive choices and why:
+ * IMPORTANT — production-only.
+ * Next.js dev mode uses webpack with eval() for HMR / Fast Refresh.
+ * Shipping this CSP in dev silently blocks chunk loads (no
+ * 'unsafe-eval' in our policy) — hydration fails, dynamic imports
+ * stay TEMPLATE placeholders. Confirmed via demo capture
+ * post-cycle-12. The static export build doesn't use eval, so
+ * production gets the tight policy.
+ *
+ * Permissive choices for production and why:
  *  - 'unsafe-inline' on script-src: Next 15 inlines a small runtime
  *    bootstrap script and chunk-load hints. Per-request nonces aren't
- *    available under static export, so 'unsafe-inline' is the only
- *    path that doesn't break the app.
+ *    available under static export.
  *  - 'unsafe-inline' on style-src: styled-jsx + Tailwind's hashed
  *    selectors emit inline <style>. Same constraint as script-src.
  *  - img-src 'self' data: blob:: data: covers SVG-in-CSS, blob:
  *    covers any future client-side image processing.
- *  - connect-src 'self': site does no AJAX in v1; tightens to self
- *    so future additions need an explicit broaden.
+ *  - connect-src 'self': site does no AJAX in v1.
  *  - frame-ancestors 'none' + base-uri 'self' + form-action 'self':
- *    defense-in-depth even though no forms / iframes / dynamic <base>
- *    are used today.
+ *    defense-in-depth.
  *
- * Referrer-Policy = strict-origin-when-cross-origin: full referrer
- * within own site, only origin to cross-site links. Matches Mozilla's
- * recommended default for portfolio sites.
+ * Referrer-Policy ships in both dev + prod via metadata.referrer.
  */
-const CSP = [
+const PROD_CSP = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-inline'",
   "style-src 'self' 'unsafe-inline'",
@@ -53,6 +56,8 @@ const CSP = [
   "form-action 'self'",
   "frame-ancestors 'none'",
 ].join('; ');
+
+const isProd = process.env.NODE_ENV === 'production';
 
 export function generateMetadata(): Metadata {
   const profile = getProfile();
@@ -83,8 +88,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={cn(cormorant.variable, dmSans.variable, dmMono.variable)}
     >
       <head>
-        {/* Steve §Cycle 12 — meta-CSP (GH Pages has no HTTP CSP path) */}
-        <meta httpEquiv="Content-Security-Policy" content={CSP} />
+        {/* Steve §Cycle 12 — meta-CSP (GH Pages has no HTTP CSP path).
+            Production-only — dev needs 'unsafe-eval' for HMR. */}
+        {isProd && (
+          <meta httpEquiv="Content-Security-Policy" content={PROD_CSP} />
+        )}
       </head>
       <body className="bg-cream text-near-black">
         <SkipLink />
