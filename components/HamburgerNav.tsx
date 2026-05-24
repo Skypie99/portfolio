@@ -109,21 +109,28 @@ export function HamburgerNav() {
         )}
       >
         <span aria-hidden="true" className="relative block w-[22px] h-[14px]">
+          {/* Dani §3.5 — lines shift to terracotta on hover via bg-current,
+              inheriting from the parent button's text-color transition
+              (which is duration-fast). The line spans themselves transition
+              only transform/top/opacity for the open/close choreography. */}
           <span
             className={cn(
-              'absolute left-0 right-0 h-px bg-current transition-all duration-base ease-out',
+              'absolute left-0 right-0 h-px bg-current ease-out',
+              'transition-[transform,top] duration-base',
               open ? 'top-1.5 rotate-45' : 'top-0',
             )}
           />
           <span
             className={cn(
-              'absolute left-0 right-0 top-1.5 h-px bg-current transition-opacity duration-base ease-out',
+              'absolute left-0 right-0 top-1.5 h-px bg-current ease-out',
+              'transition-opacity duration-base',
               open ? 'opacity-0' : 'opacity-100',
             )}
           />
           <span
             className={cn(
-              'absolute left-0 right-0 h-px bg-current transition-all duration-base ease-out',
+              'absolute left-0 right-0 h-px bg-current ease-out',
+              'transition-[transform,top] duration-base',
               open ? 'top-1.5 -rotate-45' : 'top-3',
             )}
           />
