@@ -61,16 +61,30 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
 
   return (
     <>
-      {/* Back link */}
+      {/* Breadcrumb — Cycle 19. Editorial 'Work / <Title>' pattern, DM Mono
+          uppercase 11px. Only 'Work' is a link (with link-draw underline-
+          draw hover). Current slug is plain text — you're already there.
+          aria-label declares the nav landmark for screen readers. */}
       <section className="px-gutter pt-16 lg:pt-20 bg-cream">
         <div className="max-w-content mx-auto">
-          <Link
-            href="/work/"
-            className="inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-accent-text hover:text-near-black transition-colors duration-fast ease-out"
-          >
-            <span aria-hidden="true">{'←'}</span>
-            All work
-          </Link>
+          <nav aria-label="Breadcrumb">
+            <ol className="inline-flex items-center gap-2 font-mono text-meta tracking-label uppercase text-text-meta">
+              <li>
+                <Link
+                  href="/work/"
+                  className="link-draw inline-block text-text-meta"
+                >
+                  Work
+                </Link>
+              </li>
+              <li aria-hidden="true" className="text-stone">
+                {'/'}
+              </li>
+              <li aria-current="page" className="text-near-black">
+                {d.title}
+              </li>
+            </ol>
+          </nav>
         </div>
       </section>
 
