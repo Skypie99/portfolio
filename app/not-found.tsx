@@ -3,26 +3,47 @@ import Link from 'next/link';
 import { Button } from '@/components/Button';
 
 /**
- * 404 page. Quiet editorial styling that matches the rest of the site.
- * Sky-mention: future cycles add /work, /about, /certificates, /contact —
- * until those land, the HamburgerNav links to them will land here.
+ * 404 page. Cycle 28 critique pass — evergreen copy (the "still
+ * being built" line was dated), breadcrumb-style header matching
+ * the rest of the editorial frame, secondary "Selected Work" link
+ * for visitors who 404'd by typing a /work/<slug> wrong.
  */
 export default function NotFound() {
   return (
     <section className="px-gutter py-24 lg:py-32 min-h-[60vh] flex items-center">
       <div className="max-w-content mx-auto w-full">
-        <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
-          404
-        </p>
+        {/* Breadcrumb-style header — matches /work/[slug] pattern */}
+        <nav aria-label="Breadcrumb" className="mb-8">
+          <ol className="inline-flex items-center gap-2 font-mono text-meta tracking-label uppercase text-text-meta">
+            <li>
+              <Link href="/" className="link-draw inline-block text-text-meta">
+                Home
+              </Link>
+            </li>
+            <li aria-hidden="true" className="text-stone">/</li>
+            <li aria-current="page" className="text-near-black">404</li>
+          </ol>
+        </nav>
+
         <h1 className="font-serif font-light text-display-l text-near-black leading-tight mb-6">
-          That page hasn{'’'}t been written yet.
+          Nothing here.
         </h1>
-        <p className="font-sans font-light text-body text-charcoal max-w-[540px] mb-8 leading-[1.65]">
-          The portfolio is still being built. The page you asked for is either
-          on the way or never existed. Either way, the homepage is the best
-          place to start.
+
+        <p className="font-sans font-light text-body text-charcoal max-w-[540px] mb-10 leading-[1.65]">
+          The page you{'’'}re looking for doesn{'’'}t exist — or it moved.
+          The homepage is the best place to start, and the work index has
+          every deliverable.
         </p>
-        <Button href="/">Back to the homepage</Button>
+
+        <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
+          <Button href="/">Back to the homepage</Button>
+          <Link
+            href="/work/"
+            className="link-draw inline-block font-mono text-label tracking-label uppercase text-near-black"
+          >
+            Or browse the work {'→'}
+          </Link>
+        </div>
       </div>
     </section>
   );
