@@ -156,7 +156,7 @@ export default function AboutPage() {
                     <p className="font-sans font-light text-body text-charcoal leading-[1.65] max-w-[540px]">
                       {d.summary}
                     </p>
-                    <span className="font-mono text-meta tracking-label uppercase text-accent-text mt-2 inline-flex items-center gap-1 transition-transform duration-fast ease-out group-hover:translate-x-1">
+                    <span className="font-mono text-meta tracking-label uppercase text-accent-text mt-2 inline-flex items-center gap-1 transition-transform duration-fast ease-out group-hover:translate-x-1 group-focus-visible:translate-x-1">
                       Read more
                       <span aria-hidden="true">{'→'}</span>
                     </span>
