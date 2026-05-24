@@ -178,9 +178,9 @@ export function HamburgerNav() {
                         onClick={close}
                         aria-current={isActive ? 'page' : undefined}
                         className={cn(
-                          'inline-flex items-center gap-4',
+                          'group inline-flex items-center gap-4',
                           'font-serif font-normal text-display-m leading-tight',
-                          'text-near-black hover:text-accent-text',
+                          'text-near-black hover:text-accent-text focus-visible:text-accent-text',
                           'transition-colors duration-fast ease-out',
                         )}
                       >
@@ -190,6 +190,8 @@ export function HamburgerNav() {
                           aria-hidden="true"
                           className={cn(
                             'font-mono text-meta tracking-label w-6 text-right shrink-0',
+                            'transition-transform duration-fast ease-out',
+                            'group-hover:scale-110 group-focus-visible:scale-110',
                             isActive ? 'text-accent-text' : 'text-text-meta',
                           )}
                         >
