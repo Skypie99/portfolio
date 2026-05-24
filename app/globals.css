@@ -240,25 +240,28 @@ h1, h2, h3, h4, h5, h6 {
   /* No box-level transform; child img + border handle the hover state. */
 }
 
-/* Cycle 16 + Cycle 26 — broken-image polish.
+/* Cycle 16 + Cycle 26 + Cycle 29 — broken-image polish.
 
-   Cycle 16 hid the alt-text-fallback paint (`color: transparent`) so the
-   alt attribute doesn't render visually on broken placeholder imgs.
+   `color: transparent` hides alt-text fallback paint on all imgs.
+   `font-size: 0` hides the browser's broken-image icon glyph where it
+   works (varies by browser engine).
 
-   Cycle 26 adds `font-size: 0` to imgs under `/images/` (Sky's placeholder
-   path) so the small browser broken-image icon glyph also disappears.
-   The decorative Cormorant fallback overlay then becomes the ONLY visible
-   layer in placeholder wells — clean editorial typography, nothing more.
-
-   Both rules are harmless once real images load: `color` and `font-size`
-   don't affect the rendered bitmap. Successfully-loaded imgs from other
-   paths (e.g. future CDN URLs) are unaffected because the font-size rule
-   is scoped to the placeholder path. */
+   `img::before` is the reliable cross-browser fix: pseudo-elements on
+   <img> only render when the image FAILS to load (a broken img stops
+   being a replaced element, which activates ::before/::after). The
+   blush overlay covers the broken-image icon completely. Harmless on
+   successfully-loaded images — ::before is suppressed on replaced
+   elements and has zero visual effect. */
 img {
   color: transparent;
-}
-img[src^="/images/"] {
   font-size: 0;
+}
+img::before {
+  content: '';
+  display: block;
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-blush);
 }
 
 /* ------------------------------------------------------------------

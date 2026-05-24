@@ -25,6 +25,7 @@ export function Sidebar() {
         'h-screen',
         'p-8',
         'bg-cream',
+        'border-r border-border-decorative',
       )}
     >
       {/* Wordmark — Cycle 18: link-draw underline matches the editorial
