@@ -120,4 +120,26 @@ describe('HamburgerNav', () => {
     });
     expect(trigger).toHaveFocus();
   });
+
+  it('locks body scroll when overlay is open and restores it on close', async () => {
+    const user = userEvent.setup();
+    // Ensure we start with unrestricted scroll (jsdom default).
+    document.body.style.overflow = '';
+
+    render(<HamburgerNav />);
+    const trigger = screen.getByRole('button', { name: /open navigation menu/i });
+
+    await user.click(trigger);
+    // Overlay open — body scroll must be suppressed so the page behind
+    // doesn't scroll while the menu is displayed.
+    expect(document.body.style.overflow).toBe('hidden');
+
+    // Close via the trigger button.
+    await user.click(screen.getByRole('button', { name: /close navigation menu/i }));
+    await waitFor(() => {
+      expect(trigger).toHaveAttribute('aria-expanded', 'false');
+    });
+    // Scroll lock must be released when the overlay closes.
+    expect(document.body.style.overflow).toBe('');
+  });
 });
