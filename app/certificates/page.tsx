@@ -71,19 +71,26 @@ export default function CertificatesPage() {
               <li key={c.id}>
                 <article
                   className={cn(
-                    'work-card',
+                    'work-card group',
                     'h-full flex flex-col',
                     'bg-blush border border-border-decorative',
                     'p-8',
                     'rounded-md',
+                    'transition-colors duration-base ease-out',
+                    'hover:border-pebble focus-within:border-pebble',
                   )}
                 >
-                  {/* Badge image / fallback */}
+                  {/* Badge image / fallback — Dani §3.3 hover: subtle 1.02 scale.
+                      Same treatment as ProjectCard for visual consistency. */}
                   <div className="relative w-full aspect-square bg-peach-cream border border-border-decorative mb-6 overflow-hidden flex items-center justify-center">
                     <img
                       src={c.badgeImage.src}
                       alt={c.badgeImage.alt}
-                      className="absolute inset-0 w-full h-full object-contain p-4"
+                      className={cn(
+                        'absolute inset-0 w-full h-full object-contain p-4',
+                        'transition-transform duration-slow ease-out',
+                        'group-hover:scale-[1.02] group-focus-within:scale-[1.02]',
+                      )}
                       loading="lazy"
                     />
                     <span

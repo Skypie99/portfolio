@@ -52,19 +52,29 @@ export function ProjectCard({
     >
       {/* Hero image / placeholder block. The <img> sits above an
           aria-hidden decorative title; if the image 404s, the cream
-          block shows through with the title typography behind it. */}
+          block shows through with the title typography behind it.
+
+          Dani §3.3 hover: border deepens to pebble, image scales 1.02
+          over --dur-slow --ease-out. group-hover/group-focus-visible
+          drive both from the parent <a>.work-card. */}
       <div
         className={cn(
           'relative w-full aspect-[4/3] mb-6',
           'bg-blush border border-border-decorative overflow-hidden',
           'flex items-center justify-center',
+          'transition-colors duration-base ease-out',
+          'group-hover:border-pebble group-focus-visible:border-pebble',
         )}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={d.heroImage.src}
           alt={d.heroImage.alt}
-          className="absolute inset-0 w-full h-full object-cover"
+          className={cn(
+            'absolute inset-0 w-full h-full object-cover',
+            'transition-transform duration-slow ease-out',
+            'group-hover:scale-[1.02] group-focus-visible:scale-[1.02]',
+          )}
           loading="lazy"
         />
         <span

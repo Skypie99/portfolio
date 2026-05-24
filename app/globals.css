@@ -177,20 +177,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ------------------------------------------------------------------
-   Work-card hover lift — F-04 / F-06. 4px translateY lift, easeOut.
-   Pure CSS so we can keep the /work and /certificates routes as Server
-   Components (no Framer Motion on listing pages). Reduced-motion block
-   below disables the transform automatically (Alex §5.2).
+   Work-card hover — Dani §3.3 strict: image scales 1.02 over --dur-slow,
+   border deepens to --color-pebble. NO lift, NO shadow. The previous
+   4px translateY was a Cycle 2/3 divergence; restored here.
+
+   Image scale + border color are applied via Tailwind group-hover on
+   the JSX (ProjectCard.tsx + certificates page). This block keeps the
+   focus-visible affordance Alex F-C4-1 set up — the global
+   *:focus-visible Terracotta outline still fires.
+
+   Reduced-motion globals block snaps the scale transition to ~0ms.
    ------------------------------------------------------------------ */
 .work-card {
-  transition:
-    transform var(--dur-base) var(--ease-out),
-    box-shadow var(--dur-base) var(--ease-out);
-  will-change: transform;
-}
-.work-card:hover,
-.work-card:focus-visible {
-  transform: translateY(-4px);
+  /* No box-level transform; child img + border handle the hover state. */
 }
 
 /* ------------------------------------------------------------------
