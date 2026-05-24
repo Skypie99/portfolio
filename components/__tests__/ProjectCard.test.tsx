@@ -88,9 +88,17 @@ describe('ProjectCard', () => {
   it('hero <img> carries explicit width/height for CLS (Alex F-C4-3, Cycle 6)', () => {
     render(<ProjectCard deliverable={baseDeliverable} />);
     const img = screen.getByAltText(/warm-toned mockup/i);
-    // 800×600 = 4:3, matches the aspect-[4/3] container.
-    expect(img).toHaveAttribute('width', '800');
+    // Cycle 23 refined the default aspect from 4:3 (800×600) to 3:2
+    // (900×600). The wide variant uses 1280×720 (16:9) — covered below.
+    expect(img).toHaveAttribute('width', '900');
     expect(img).toHaveAttribute('height', '600');
+  });
+
+  it('hero <img> uses the 16:9 cinematic ratio when wide=true (Cycle 23)', () => {
+    render(<ProjectCard deliverable={baseDeliverable} wide />);
+    const img = screen.getByAltText(/warm-toned mockup/i);
+    expect(img).toHaveAttribute('width', '1280');
+    expect(img).toHaveAttribute('height', '720');
   });
 
   it('hero <img> opts into the Dani §3.3 hover scale via group-hover (Cycle 2)', () => {
