@@ -53,13 +53,16 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Socials */}
+      {/* Socials — Cycle 27: tightened bg from blush to warm-white +
+          smaller top padding so the section reads as a continuation of
+          the contact column, not a separate block. The hairline border-t
+          already provides the visual handoff. */}
       {profile.socials.length > 0 && (
         <section
           className={cn(
             'reveal-on-scroll',
-            'px-gutter py-24 lg:py-32',
-            'bg-blush border-t border-border-decorative',
+            'px-gutter pt-16 lg:pt-20 pb-24 lg:pb-32',
+            'bg-cream border-t border-border-decorative',
           )}
         >
           <div className="max-w-content mx-auto">

@@ -21,7 +21,11 @@ export function Footer() {
       )}
     >
       <div className="max-w-content mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Cycle 27: bump 3-col breakpoint from md (768px) to lg (1024px)
+            so each column has enough horizontal room for its header +
+            text. Tablet width gets a single column instead of cramped
+            triplets. */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Column 1 — Site */}
           <div className="flex flex-col gap-4">
             <h3 className="font-mono text-label tracking-label uppercase text-text-meta">

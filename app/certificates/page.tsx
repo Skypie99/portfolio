@@ -83,8 +83,13 @@ export default function CertificatesPage() {
                     'hover:border-pebble focus-within:border-pebble',
                   )}
                 >
-                  {/* Badge image / fallback — Dani §3.3 hover: subtle 1.02 scale.
-                      Same treatment as ProjectCard for visual consistency. */}
+                  {/* Badge image / fallback — Cycle 27: removed the
+                      issuer overlay text. Issuer name already appears
+                      as the eyebrow above the title; repeating it
+                      inside the well was triple-redundant. The well
+                      now reads as decorative texture instead of
+                      duplicate meta. Becomes the real badge once Sky
+                      drops actual credential images in. */}
                   <div className="relative w-full aspect-square bg-peach-cream border border-border-decorative mb-6 overflow-hidden flex items-center justify-center">
                     {/* Alex F-C4-3: explicit dimensions for the 1:1 badge. */}
                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -100,12 +105,6 @@ export default function CertificatesPage() {
                       )}
                       loading="lazy"
                     />
-                    <span
-                      aria-hidden="true"
-                      className="font-serif font-light text-[1.25rem] text-umber text-center px-4"
-                    >
-                      {c.issuer}
-                    </span>
                   </div>
 
                   {/* Issuer */}
