@@ -86,9 +86,13 @@ export default function CertificatesPage() {
                   {/* Badge image / fallback — Dani §3.3 hover: subtle 1.02 scale.
                       Same treatment as ProjectCard for visual consistency. */}
                   <div className="relative w-full aspect-square bg-peach-cream border border-border-decorative mb-6 overflow-hidden flex items-center justify-center">
+                    {/* Alex F-C4-3: explicit dimensions for the 1:1 badge. */}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={c.badgeImage.src}
                       alt={c.badgeImage.alt}
+                      width={400}
+                      height={400}
                       className={cn(
                         'absolute inset-0 w-full h-full object-contain p-4',
                         'transition-transform duration-slow ease-out',

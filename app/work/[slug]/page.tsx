@@ -79,9 +79,13 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start">
             {/* Hero image / fallback block */}
             <div className="relative w-full aspect-[4/5] bg-blush border border-border-decorative overflow-hidden flex items-center justify-center order-1 md:order-1">
+              {/* Alex F-C4-3: explicit dimensions for the 4:5 hero. */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={d.heroImage.src}
                 alt={d.heroImage.alt}
+                width={800}
+                height={1000}
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <span
@@ -214,9 +218,13 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
               {d.gallery.map((img) => (
                 <li key={img.src} className="flex flex-col gap-3">
                   <div className="relative w-full aspect-[4/3] bg-peach-cream border border-border-decorative overflow-hidden flex items-center justify-center">
+                    {/* Alex F-C4-3: explicit dimensions for the 4:3 gallery. */}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={img.src}
                       alt={img.alt}
+                      width={800}
+                      height={600}
                       className="absolute inset-0 w-full h-full object-cover"
                       loading="lazy"
                     />

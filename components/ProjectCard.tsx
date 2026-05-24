@@ -66,10 +66,17 @@ export function ProjectCard({
           'group-hover:border-pebble group-focus-visible:border-pebble',
         )}
       >
+        {/* Explicit width/height — Alex F-C4-3. Layout space is
+            already reserved by the aspect-[4/3] container; these
+            attributes give the browser an intrinsic ratio hint
+            (800×600 = 4:3) so it never has to wait for the bitmap
+            before painting. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={d.heroImage.src}
           alt={d.heroImage.alt}
+          width={800}
+          height={600}
           className={cn(
             'absolute inset-0 w-full h-full object-cover',
             'transition-transform duration-slow ease-out',
