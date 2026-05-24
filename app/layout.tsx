@@ -14,12 +14,53 @@ import { getProfile } from '@/lib/content';
 
 import './globals.css';
 
+/**
+ * Steve §Cycle 12 — meta-CSP + meta-referrer.
+ *
+ * GH Pages can't send real CSP/HSTS HTTP headers (no server-side
+ * header control), so we ship a meta-equivalent CSP via <meta
+ * http-equiv> in <head>. Less strict than HTTP CSP (frame-ancestors
+ * is ignored, no report-uri), but covers script/style/font/img/object.
+ *
+ * Permissive choices and why:
+ *  - 'unsafe-inline' on script-src: Next 15 inlines a small runtime
+ *    bootstrap script and chunk-load hints. Per-request nonces aren't
+ *    available under static export, so 'unsafe-inline' is the only
+ *    path that doesn't break the app.
+ *  - 'unsafe-inline' on style-src: styled-jsx + Tailwind's hashed
+ *    selectors emit inline <style>. Same constraint as script-src.
+ *  - img-src 'self' data: blob:: data: covers SVG-in-CSS, blob:
+ *    covers any future client-side image processing.
+ *  - connect-src 'self': site does no AJAX in v1; tightens to self
+ *    so future additions need an explicit broaden.
+ *  - frame-ancestors 'none' + base-uri 'self' + form-action 'self':
+ *    defense-in-depth even though no forms / iframes / dynamic <base>
+ *    are used today.
+ *
+ * Referrer-Policy = strict-origin-when-cross-origin: full referrer
+ * within own site, only origin to cross-site links. Matches Mozilla's
+ * recommended default for portfolio sites.
+ */
+const CSP = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline'",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob:",
+  "font-src 'self'",
+  "connect-src 'self'",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "frame-ancestors 'none'",
+].join('; ');
+
 export function generateMetadata(): Metadata {
   const profile = getProfile();
   return {
     title: `${profile.name} — AI Portfolio`,
     description: profile.tagline,
     metadataBase: undefined,
+    referrer: 'strict-origin-when-cross-origin',
     other: {
       'color-scheme': 'light',
     },
@@ -41,6 +82,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       className={cn(cormorant.variable, dmSans.variable, dmMono.variable)}
     >
+      <head>
+        {/* Steve §Cycle 12 — meta-CSP (GH Pages has no HTTP CSP path) */}
+        <meta httpEquiv="Content-Security-Policy" content={CSP} />
+      </head>
       <body className="bg-cream text-near-black">
         <SkipLink />
         <HamburgerNavMount />
