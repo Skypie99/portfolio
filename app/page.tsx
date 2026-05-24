@@ -114,7 +114,7 @@ export default function HomePage() {
           <div className="mt-16">
             <Link
               href="/work/"
-              className="inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+              className="inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text focus-visible:text-accent-text transition-colors duration-fast ease-out"
             >
               See all work
               <span aria-hidden="true">{'→'}</span>
