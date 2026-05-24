@@ -9,6 +9,12 @@ type ProjectCardProps = {
    * the rows even. The detail page surfaces the full list.
    */
   maxTech?: number;
+  /**
+   * Cycle 23: wider hero ratio for the featured row-spanning card on /work.
+   * Default cards use 3:2 (curated index feel); wide cards use 16:9 (more
+   * cinematic for the showcase slot).
+   */
+  wide?: boolean;
   className?: string;
 };
 
@@ -35,6 +41,7 @@ type ProjectCardProps = {
 export function ProjectCard({
   deliverable: d,
   maxTech = 3,
+  wide = false,
   className,
 }: ProjectCardProps) {
   return (
@@ -60,7 +67,10 @@ export function ProjectCard({
           drive both from the parent <a>.work-card. */}
       <div
         className={cn(
-          'relative w-full aspect-[4/3] mb-6',
+          'relative w-full mb-6',
+          // Cycle 23: 3:2 for the index reads as curated;
+          // 16:9 for the featured row-spanner reads as cinematic.
+          wide ? 'aspect-[16/9]' : 'aspect-[3/2]',
           'bg-blush border border-border-decorative overflow-hidden',
           'flex items-center justify-center',
           'transition-colors duration-base ease-out',
@@ -68,16 +78,16 @@ export function ProjectCard({
         )}
       >
         {/* Explicit width/height — Alex F-C4-3. Layout space is
-            already reserved by the aspect-[4/3] container; these
-            attributes give the browser an intrinsic ratio hint
-            (800×600 = 4:3) so it never has to wait for the bitmap
-            before painting. */}
+            already reserved by the aspect-* container; these attributes
+            give the browser an intrinsic ratio hint so it never has to
+            wait for the bitmap before painting. Cycle 23: matches the
+            wide vs default ratio above. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={d.heroImage.src}
           alt={d.heroImage.alt}
-          width={800}
-          height={600}
+          width={wide ? 1280 : 900}
+          height={wide ? 720 : 600}
           className={cn(
             'absolute inset-0 w-full h-full object-cover',
             'transition-transform duration-slow ease-out',

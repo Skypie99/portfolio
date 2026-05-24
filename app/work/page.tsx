@@ -78,19 +78,22 @@ export default function WorkIndexPage() {
             </p>
           ) : (
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
-              {ordered.map((d, idx) => (
-                <li
-                  key={d.id}
-                  className={cn(
-                    // Featured deliverable spans the full row on md+, giving
-                    // it a "row-spanning treatment" (per Cycle 4 brief). Falls
-                    // back to a single column when nothing's featured.
-                    d.featured && idx === 0 && 'md:col-span-2',
-                  )}
-                >
-                  <ProjectCard deliverable={d} />
-                </li>
-              ))}
+              {ordered.map((d, idx) => {
+                const isFeatured = d.featured && idx === 0;
+                return (
+                  <li
+                    key={d.id}
+                    className={cn(
+                      // Featured deliverable spans the full row on md+
+                      // and gets the wider 16:9 hero (Cycle 23 — cinematic
+                      // showcase vs the curated 3:2 default).
+                      isFeatured && 'md:col-span-2',
+                    )}
+                  >
+                    <ProjectCard deliverable={d} wide={isFeatured} />
+                  </li>
+                );
+              })}
             </ul>
           )}
 
