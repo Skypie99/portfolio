@@ -96,6 +96,14 @@ export default function HomePage() {
                           </li>
                         ))}
                       </ul>
+                      <Link
+                        href={`/work/${d.id}/`}
+                        aria-label={`Read about ${d.title}`}
+                        className="mt-2 inline-flex items-center gap-1 font-mono text-meta tracking-label uppercase text-accent-text transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1"
+                      >
+                        Read more
+                        <span aria-hidden="true">{'→'}</span>
+                      </Link>
                     </div>
                   </div>
                 </article>
