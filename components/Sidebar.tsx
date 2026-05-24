@@ -27,10 +27,12 @@ export function Sidebar() {
         'bg-cream',
       )}
     >
-      {/* Wordmark — must be a real <a>, accessible name matches visible text */}
+      {/* Wordmark — Cycle 18: link-draw underline matches the editorial
+          hover treatment used in the footer email + detail Links list.
+          inline-block so the gradient-backed underline tracks the text width. */}
       <Link
         href="/"
-        className="block font-serif font-normal text-display-s text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+        className="link-draw inline-block font-serif font-normal text-display-s text-near-black"
       >
         {profile.wordmarkText}
       </Link>
@@ -46,9 +48,12 @@ export function Sidebar() {
           <Link
             href={`/work/${featured.id}/`}
             aria-label={`Featured deliverable: ${featured.title} — ${featured.role}`}
-            className="group flex flex-col gap-2 text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+            className="group flex flex-col gap-2 text-near-black transition-colors duration-fast ease-out"
           >
-            <span className="font-serif font-normal text-display-s leading-tight">
+            {/* Cycle 18: only the title gets the link-draw underline so the
+                multi-line block (role label, View work arrow) doesn't get a
+                visually broken underline across line breaks. */}
+            <span className="link-draw inline-block font-serif font-normal text-display-s leading-tight">
               {featured.title}
             </span>
             <span className="font-sans text-body-sm text-charcoal">
@@ -62,7 +67,7 @@ export function Sidebar() {
         ) : (
           <Link
             href="/work/"
-            className="font-serif font-normal text-display-s text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+            className="link-draw inline-block font-serif font-normal text-display-s text-near-black"
           >
             Latest work {'→'}
           </Link>

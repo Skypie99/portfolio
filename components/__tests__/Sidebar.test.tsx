@@ -64,4 +64,10 @@ describe('Sidebar', () => {
     const nav = screen.getByRole('navigation', { name: /site navigation/i });
     expect(nav).toBeInTheDocument();
   });
+
+  it('wordmark carries the link-draw editorial hover pattern (Cycle 18)', () => {
+    render(<Sidebar />);
+    const wordmark = screen.getByRole('link', { name: /sky halisky/i });
+    expect(wordmark).toHaveClass('link-draw');
+  });
 });
