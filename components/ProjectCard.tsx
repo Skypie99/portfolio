@@ -96,10 +96,12 @@ export function ProjectCard({
         </p>
       )}
 
-      {/* Title */}
-      <h2 className="font-serif font-normal text-[1.75rem] text-near-black leading-tight mb-2 group-hover:text-accent-text transition-colors duration-fast ease-out">
+      {/* Title — h3 per Alex F-C4-2 so the heading rotor reads
+          h1 (page) → h2 (section, may be sr-only) → h3 (card title).
+          The visual size/weight is unchanged. */}
+      <h3 className="font-serif font-normal text-[1.75rem] text-near-black leading-tight mb-2 group-hover:text-accent-text transition-colors duration-fast ease-out">
         {d.title}
-      </h2>
+      </h3>
 
       {/* Role + Year metadata */}
       <p className="font-mono text-meta tracking-label uppercase text-text-meta mb-3">

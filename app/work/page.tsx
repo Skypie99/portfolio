@@ -67,6 +67,10 @@ export default function WorkIndexPage() {
         )}
       >
         <div className="max-w-content mx-auto">
+          {/* sr-only section heading — Alex F-C4-2. Closes the
+              h1 → h3 gap that previously existed; sighted users still
+              see the visible page header above as the only h1. */}
+          <h2 className="sr-only">Deliverables</h2>
           {ordered.length === 0 ? (
             // Empty-state per F-04 acceptance criteria.
             <p className="font-serif font-light text-display-s text-charcoal leading-[1.65] max-w-[540px]">

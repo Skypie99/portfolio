@@ -48,9 +48,11 @@ describe('ProjectCard', () => {
   it('renders title, role, and year from props', () => {
     render(<ProjectCard deliverable={baseDeliverable} />);
 
-    // Title sits in an <h2> — the most stable signal for "this card renders".
+    // Title sits in an <h3> — Alex F-C4-2 heading rotor demoted the card
+    // title from h2 to h3 so the rotor reads h1 (page) → h2 (sr-only
+    // section) → h3 (card). Visible size/weight is unchanged.
     expect(
-      screen.getByRole('heading', { level: 2, name: 'AccessMap' }),
+      screen.getByRole('heading', { level: 3, name: 'AccessMap' }),
     ).toBeInTheDocument();
 
     // Role and year share a single metadata line: "Solo builder · 2026".

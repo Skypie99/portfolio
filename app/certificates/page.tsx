@@ -67,6 +67,8 @@ export default function CertificatesPage() {
         )}
       >
         <div className="max-w-content mx-auto">
+          {/* sr-only section heading — Alex F-C4-2 heading rotor. */}
+          <h2 className="sr-only">Credentials</h2>
           <ul className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
             {certificates.map((c) => (
               <li key={c.id}>
@@ -107,10 +109,11 @@ export default function CertificatesPage() {
                     {c.issuer}
                   </p>
 
-                  {/* Title */}
-                  <h2 className="font-serif font-normal text-[1.375rem] text-near-black leading-tight mb-3">
+                  {/* Title — h3 per Alex F-C4-2 (heading rotor flat:
+                      h1 page → h2 sr-only section → h3 card). */}
+                  <h3 className="font-serif font-normal text-[1.375rem] text-near-black leading-tight mb-3">
                     {c.title}
-                  </h2>
+                  </h3>
 
                   {/* Issued date */}
                   <p className="font-mono text-meta tracking-label uppercase text-sage-text mb-6">
