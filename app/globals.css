@@ -177,6 +177,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ------------------------------------------------------------------
+   Work-card hover lift — F-04 / F-06. 4px translateY lift, easeOut.
+   Pure CSS so we can keep the /work and /certificates routes as Server
+   Components (no Framer Motion on listing pages). Reduced-motion block
+   below disables the transform automatically (Alex §5.2).
+   ------------------------------------------------------------------ */
+.work-card {
+  transition:
+    transform var(--dur-base) var(--ease-out),
+    box-shadow var(--dur-base) var(--ease-out);
+  will-change: transform;
+}
+.work-card:hover,
+.work-card:focus-visible {
+  transform: translateY(-4px);
+}
+
+/* ------------------------------------------------------------------
    Reduced motion — Alex §5.2 binding rule
    ------------------------------------------------------------------ */
 @media (prefers-reduced-motion: reduce) {

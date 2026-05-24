@@ -1,0 +1,82 @@
+# Deploy — build the Next.js static export and publish to GitHub Pages.
+#
+# Owned by Rory (DevOps). DORMANT until Sky pushes the repo to GitHub and
+# completes the one-time manual setup (see docs/DEPLOY_PLAN.md §3).
+#
+# Separation of concerns:
+#   - ci.yml (Gary) gates every PR with lint + typecheck + test + build.
+#   - deploy.yml (this file) ONLY builds + ships what Sky has already merged.
+#     No lint, no test, no typecheck here — that's ci.yml's job.
+#
+# Triggers:
+#   - push -> main: fires whenever Sky merges a cycle/* branch into main.
+#   - workflow_dispatch: manual re-deploy button in the Actions tab (e.g. for
+#     §6.2 emergency rollback by re-running the last good run).
+#
+# Permissions (top-level, GH-Pages requirements):
+#   - contents: read   — checkout the code.
+#   - pages: write     — publish to GH-Pages.
+#   - id-token: write  — OIDC token for deploy-pages@v4.
+#
+# Concurrency:
+#   - Group "pages" so only one deploy runs at a time.
+#   - cancel-in-progress: if Sky pushes twice quickly, the older run is
+#     cancelled and the newest commit wins. Keeps the live site predictable.
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static export
+        # `next build` with `output: 'export'` in next.config.mjs emits ./out.
+        # NODE_ENV=production is set automatically by `next build`, which is
+        # what flips on basePath=/portfolio per next.config.mjs.
+        run: npm run build
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

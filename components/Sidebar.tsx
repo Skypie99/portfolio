@@ -35,14 +35,17 @@ export function Sidebar() {
         {profile.wordmarkText}
       </Link>
 
-      {/* Featured slot — falls back to "Latest Work" when no featured deliverable */}
+      {/* Featured slot — falls back to "Latest Work" when no featured deliverable.
+          Featured link points at the deliverable's detail page (Peter perf nit:
+          the previous "/" was a dead link disguised as a CTA). */}
       <div className="flex flex-col gap-3">
         <span className="font-mono text-label tracking-label uppercase text-text-meta">
           Featured
         </span>
         {featured ? (
           <Link
-            href="/"
+            href={`/work/${featured.id}/`}
+            aria-label={`Featured deliverable: ${featured.title} — ${featured.role}`}
             className="group flex flex-col gap-2 text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
           >
             <span className="font-serif font-normal text-display-s leading-tight">
@@ -58,7 +61,7 @@ export function Sidebar() {
           </Link>
         ) : (
           <Link
-            href="/"
+            href="/work/"
             className="font-serif font-normal text-display-s text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
           >
             Latest work {'→'}

@@ -34,7 +34,12 @@ const base =
   'font-mono text-label tracking-label uppercase ' +
   'text-near-black ' +
   'border ' +
-  'transition-colors duration-base ease-out';
+  'transition-colors duration-base ease-out ' +
+  // Alex BLK-3 ratified pick A: disabled state uses charcoal + 50% opacity
+  // (~4.3:1 contrast — meets WCAG normal-text minimum) instead of pebble
+  // which would have failed contrast. Applies to native <button disabled>.
+  'disabled:text-charcoal disabled:opacity-50 ' +
+  'disabled:cursor-not-allowed disabled:hover:bg-cream';
 
 const widthClasses = (full: boolean) =>
   full ? 'w-full' : 'w-full md:w-auto';

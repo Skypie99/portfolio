@@ -291,3 +291,45 @@ Sky's answers feed directly into:
 ---
 
 *Rory out. Next cycle: write the actual `deploy.yml` once Shamus has a buildable Next.js app to deploy.*
+
+---
+
+## Status — Cycle 4
+
+**Cycle:** `cycle/auto-2026-05-23` (Cycle 4 work, Day-0 continuation)
+**As of:** 2026-05-23
+**Workflow:** DORMANT — exists on disk, will not fire until Sky pushes to GitHub and enables Pages (§3).
+
+### DONE this cycle
+
+- [x] `/Users/skypie/Portfolio/.github/workflows/deploy.yml` written — push-to-main trigger, `workflow_dispatch` for manual re-runs, `pages`/`id-token`/`contents` permissions, `pages` concurrency with `cancel-in-progress: true`, two-job pipeline (`build` → `deploy`), action versions pinned per §2.5 (`checkout@v4`, `setup-node@v4` with `node-version: 20` + `cache: npm`, `configure-pages@v5`, `upload-pages-artifact@v3`, `deploy-pages@v4`), `environment: github-pages` with `url:` output for the clickable Actions link.
+- [x] `/Users/skypie/Portfolio/.github/workflows/ci.yml` already in place (Gary, Cycle 2) — gates every PR with lint + typecheck + test + build. No overlap with `deploy.yml`. Two workflows, one concern each.
+- [x] `/Users/skypie/Portfolio/public/.nojekyll` present (zero-byte) — GH-Pages will serve `_next/*` without Jekyll stripping it.
+- [x] `/Users/skypie/Portfolio/next.config.mjs` wired with `output: 'export'`, `basePath: '/portfolio'` (gated on `NODE_ENV === 'production'`, so local `dev` still serves at `/`), `images.unoptimized: true`, `trailingSlash: true`. Repo name decision (§7 #1) is effectively locked to `portfolio` by this `basePath`.
+- [x] YAML structurally validated after write — parses cleanly via `js-yaml`, two jobs, six build steps, deploy depends on build, environment block correct.
+
+### Sky still does manually (one-time, click-by-click in §3)
+
+- [ ] **Create the GitHub repo** — `https://github.com/new` → owner `Skypie99` → name `portfolio` (lowercase, matches `basePath`) → **Public** → do NOT initialize with README/`.gitignore`/license → **Create repository**.
+- [ ] **Push the local repo to GitHub** — only Sky runs this (Constitution Art. 1):
+  ```bash
+  cd ~/Portfolio
+  git remote add origin https://github.com/Skypie99/portfolio.git
+  git checkout main                                # or: git branch -M main (only if main doesn't exist yet)
+  git push -u origin main
+  ```
+- [ ] **Enable GitHub Pages with Actions as source** — repo → **Settings** → **Pages** → **Source** dropdown → select **"GitHub Actions"** (NOT "Deploy from a branch") → save. No branch picker needed in Actions mode.
+- [ ] **(Optional, can defer)** Custom domain — §3.4 still applies if/when Sky wants to point e.g. `portfolio.skydev.com` at the site. Recommendation per §7 #2 is to defer until content is live.
+- [ ] **(Optional, recommended)** Branch protection on `main` — repo → **Settings** → **Branches** → add rule for `main`: require pull request review, require `ci.yml` checks (lint, typecheck, test, build) to pass before merge. Locks in Const. Art. 1 ("only Sky merges") at the platform level. Not required for `deploy.yml` to work.
+
+### What happens the first time Sky pushes to main after setup
+
+1. Push lands on `main`.
+2. `deploy.yml` fires automatically. `build` job: `npm ci` → `npm run build` (Next emits `out/` with `basePath=/portfolio`) → upload `out/` as the Pages artifact.
+3. `deploy` job: `deploy-pages@v4` publishes the artifact. The Actions run page shows a clickable URL: `https://skypie99.github.io/portfolio/`.
+4. Estimated total runtime: ~90 seconds for the current portfolio size.
+
+### Rollback is unchanged
+
+§6 (Standard via `git revert`, Emergency via "Re-run all jobs" on the last good Actions run) is still the playbook. `workflow_dispatch` in this `deploy.yml` makes the emergency path one extra click cheaper.
+

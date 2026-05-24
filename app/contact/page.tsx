@@ -1,0 +1,114 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+
+import { Button } from '@/components/Button';
+import { cn } from '@/lib/cn';
+import { getProfile } from '@/lib/content';
+
+export function generateMetadata(): Metadata {
+  const profile = getProfile();
+  return {
+    title: `Contact — ${profile.name}`,
+    description: `Get in touch with ${profile.name} about AI engineering, accessibility, or thoughtful product collaborations.`,
+  };
+}
+
+/**
+ * /contact — F-08. Minimal mailto-only page (Sky decided no form this cycle).
+ *
+ * Server Component. Primary CTA opens the user{'s} mail client with a
+ * pre-filled subject. Optional secondary list of socials reads from
+ * profile.json so it stays in sync with the Sidebar / Footer.
+ *
+ * Per Alex §4.5: every external link gets target=_blank, rel=noopener
+ * noreferrer, AND an sr-only "(opens in new tab)" cue.
+ */
+export default function ContactPage() {
+  const profile = getProfile();
+
+  return (
+    <>
+      {/* Page header + primary CTA */}
+      <section className="px-gutter py-24 lg:py-32 bg-cream">
+        <div className="max-w-content mx-auto">
+          <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+            Contact
+          </p>
+          <h1 className="font-serif font-light text-display-l text-near-black leading-tight max-w-3xl mb-6">
+            Get in touch.
+          </h1>
+          <p className="font-sans font-light text-body text-charcoal leading-[1.65] max-w-[640px] mb-4">
+            Best for AI engineering, accessibility, or thoughtful product
+            collaborations. I reply to most messages within a few days.
+          </p>
+          <p className="font-sans font-light text-body text-charcoal leading-[1.65] max-w-[640px] mb-10">
+            For everything else, the socials below also work.
+          </p>
+
+          <Button
+            href={`mailto:${profile.contactEmail}?subject=Hello from your portfolio`}
+          >
+            Email {profile.contactEmail}
+          </Button>
+        </div>
+      </section>
+
+      {/* Socials */}
+      {profile.socials.length > 0 && (
+        <section
+          className={cn(
+            'px-gutter py-24 lg:py-32',
+            'bg-blush border-t border-border-decorative',
+          )}
+        >
+          <div className="max-w-content mx-auto">
+            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+              Elsewhere
+            </p>
+            <h2 className="font-serif font-light text-display-m text-near-black mb-12 max-w-2xl leading-tight">
+              Find me in other quiet corners.
+            </h2>
+
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl">
+              {profile.socials.map((s) => (
+                <li key={s.url} className="border-t border-border-decorative pt-4">
+                  <p className="font-mono text-meta tracking-label uppercase text-sage-text mb-1">
+                    {s.platform}
+                  </p>
+                  <a
+                    href={s.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-sans text-body text-accent-text hover:text-near-black transition-colors duration-fast ease-out inline-flex items-center gap-2 underline underline-offset-4 decoration-1"
+                  >
+                    <span>{s.handle}</span>
+                    <span aria-hidden="true">{'↗'}</span>
+                    <span className="sr-only">(opens in new tab)</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {/* Back link */}
+      <section
+        className={cn(
+          'px-gutter py-16 lg:py-20',
+          'bg-cream border-t border-border-decorative',
+        )}
+      >
+        <div className="max-w-content mx-auto">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+          >
+            <span aria-hidden="true">{'←'}</span>
+            Back to home
+          </Link>
+        </div>
+      </section>
+    </>
+  );
+}

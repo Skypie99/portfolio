@@ -35,5 +35,29 @@
       "alt": "DeepLearning.AI Prompt Engineering completion certificate, sage and cream layout"
     },
     "tags": ["ai", "prompting", "coursera"]
+  },
+  {
+    "id": "ibm-ai-engineering-2024",
+    "title": "AI Engineering Professional Certificate",
+    "issuer": "IBM",
+    "issuedDate": "2024-09-28",
+    "credentialUrl": "https://example.com/credentials/ibm-ai-engineering",
+    "badgeImage": {
+      "src": "/images/certificates/ibm-ai-engineering-2024/badge.png",
+      "alt": "IBM AI Engineering professional badge, muted neutral palette with a quiet wordmark"
+    },
+    "tags": ["ai", "ibm", "engineering"]
+  },
+  {
+    "id": "responsible-ai-microsoft-2024",
+    "title": "Responsible AI Practices",
+    "issuer": "Microsoft Learn",
+    "issuedDate": "2024-05-11",
+    "credentialUrl": "https://example.com/credentials/microsoft-responsible-ai",
+    "badgeImage": {
+      "src": "/images/certificates/responsible-ai-microsoft-2024/badge.png",
+      "alt": "Microsoft Learn Responsible AI completion crest, calm neutral tones on cream"
+    },
+    "tags": ["ai", "ethics", "microsoft"]
   }
 ]

@@ -28,6 +28,34 @@
     "featured": false
   },
   {
+    "id": "claude-corp-dashboard",
+    "title": "Claude Corp Dashboard",
+    "summary": "A local-only Next.js dashboard surfacing agent activity, qa-reports, and branch status across every project in the Claude Corp system.",
+    "role": "Solo builder",
+    "tech": ["Next.js", "Multi-agent", "Internal tool"],
+    "year": 2026,
+    "heroImage": {
+      "src": "/images/deliverables/claude-corp-dashboard/hero.jpg",
+      "alt": "A linen-textured desk with a laptop displaying an editorial dashboard of project tiles, warm window light"
+    },
+    "tags": ["dashboards", "agents", "internal"],
+    "featured": false
+  },
+  {
+    "id": "prompt-library",
+    "title": "Prompt Library",
+    "summary": "A solo-built Next.js prompt manager with fifty shipped features, browser-only storage, and an API key that never leaves the user's machine.",
+    "role": "Solo builder",
+    "tech": ["Next.js", "AI", "Solo build"],
+    "year": 2026,
+    "heroImage": {
+      "src": "/images/deliverables/prompt-library/hero.jpg",
+      "alt": "A quiet workspace with a notebook of prompts open beside a laptop, soft natural light from the side"
+    },
+    "tags": ["ai", "tools", "local-first"],
+    "featured": false
+  },
+  {
     "id": "mutual-mesh",
     "title": "Mutual Mesh",
     "summary": "Privacy-first mutual-aid platform connecting neighbours who want to give with neighbours who need a hand.",
