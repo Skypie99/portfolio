@@ -2,6 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ==================================================================
+   MOTION SYSTEM (Cycle 25 — documented for future cycles)
+
+   Pick the duration from THIS table when adding a new transition.
+   Tailwind defaults are NOT in this system — every `transition-*`
+   declaration must carry an explicit `duration-{token}` class.
+
+   ┌───────────────┬──────┬────────────────────────────────────────┐
+   │ token         │ ms   │ use for                                │
+   ├───────────────┼──────┼────────────────────────────────────────┤
+   │ duration-fast │ 180  │ inline link color/underline, small     │
+   │               │      │ arrow translateX, hamburger glyph color │
+   │ duration-base │ 280  │ button bg, card border, hamburger      │
+   │               │      │ open/close choreography, surface fades │
+   │ duration-slow │ 520  │ card image scale on hover (1.02)       │
+   │ duration-reveal│ 900 │ scroll-driven section reveals          │
+   └───────────────┴──────┴────────────────────────────────────────┘
+
+   Easing: `ease-out` (cubic-bezier(0.22, 1, 0.36, 1)) by default;
+   `ease-soft` (cubic-bezier(0.4, 0, 0.2, 1)) only for the hamburger
+   overlay open/close.
+
+   Exceptions (intentional, documented):
+   - .hero-enter — 600ms cubic-bezier(0.16, 1, 0.3, 1) — one-shot
+     mount fade-rise; staggered via delay classes (Cycle 2)
+   - .cta-dot-pulse — 800ms ease-out, 800ms delay — one-shot
+     attention pulse on the homepage CTA dot (Cycle 20)
+
+   Reduced-motion: every animation/transition is forced to 0.01ms
+   by the @media block at the bottom of this file (Alex §5.2).
+   ================================================================== */
+
 /* ------------------------------------------------------------------
    Dani PROJECT_DESIGN.md §1.1 — CSS variables.
    Mirrored in tailwind.config.ts. Keep the two in sync.
