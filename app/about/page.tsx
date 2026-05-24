@@ -87,22 +87,24 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <ol className="flex flex-col gap-10">
-            <li>
+          {/* Dani §3.6: hairline dividers between steps as a quiet rhythm marker.
+              Stone (#DCDCD6) is purely decorative — exempt from 3:1 per Alex. */}
+          <ol className="flex flex-col divide-y divide-border-decorative">
+            <li className="py-8 first:pt-0 last:pb-0">
               <NumberedStep
                 number="01"
                 title="Discover"
                 body="Scope an AI project to the smallest honest version of the problem. Talk to the people who'll live with the thing — not just the people who will pay for it."
               />
             </li>
-            <li>
+            <li className="py-8 first:pt-0 last:pb-0">
               <NumberedStep
                 number="02"
                 title="Build"
                 body="Loop with agents, iterate fast, ship-and-adjust. Type-safe and accessible from the first line. Refuse to ship what I haven't tried to use."
               />
             </li>
-            <li>
+            <li className="py-8 first:pt-0 last:pb-0">
               <NumberedStep
                 number="03"
                 title="Ship"

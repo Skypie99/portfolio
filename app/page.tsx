@@ -136,22 +136,23 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <ol className="flex flex-col gap-10">
-            <li>
+          {/* Dani §3.6: hairline dividers between steps. */}
+          <ol className="flex flex-col divide-y divide-border-decorative">
+            <li className="py-8 first:pt-0 last:pb-0">
               <NumberedStep
                 number="01"
                 title="Discover"
                 body="Start with the smallest, most honest version of the problem. Talk to the people who will live with the thing — not just the people who will buy it."
               />
             </li>
-            <li>
+            <li className="py-8 first:pt-0 last:pb-0">
               <NumberedStep
                 number="02"
                 title="Build"
                 body="One careful slice at a time. Type-safe, accessible from the first line, instrumented enough to learn from. Refuse to ship what I haven't tried to use."
               />
             </li>
-            <li>
+            <li className="py-8 first:pt-0 last:pb-0">
               <NumberedStep
                 number="03"
                 title="Ship"
