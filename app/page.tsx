@@ -147,7 +147,7 @@ export default function HomePage() {
 
           {/* Dani §3.6: peach-cream panel, --radius-lg, --space-8 padding.
               Inner <ol> keeps the Cycle 7 hairline dividers between steps. */}
-          <div className="bg-peach-cream rounded-lg p-8 md:p-12">
+          <div className="bg-peach-cream border border-border-decorative rounded-lg p-8 md:p-12">
             <ol className="flex flex-col divide-y divide-border-decorative">
               <li className="py-8 first:pt-0 last:pb-0">
                 <NumberedStep
