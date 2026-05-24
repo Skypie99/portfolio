@@ -214,3 +214,32 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--color-peach-cream);
   color: var(--color-near-black);
 }
+
+/* ------------------------------------------------------------------
+   Editorial link — Dani §5.1.5. "Underline draws in left-to-right,
+   color shifts near-black → terracotta over 180ms."
+
+   Implemented via a background-image gradient sized 0% → 100% on hover.
+   Robust across browsers (no reliance on text-decoration-color
+   transitions, which Safari pre-17 didn't animate). Reduced-motion
+   block in this file snaps the transition to 0.01ms automatically.
+   ------------------------------------------------------------------ */
+.link-draw {
+  background-image: linear-gradient(
+    to right,
+    var(--color-link-hover),
+    var(--color-link-hover)
+  );
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  padding-bottom: 2px;
+  transition:
+    background-size var(--dur-base) var(--ease-out),
+    color var(--dur-fast) var(--ease-out);
+}
+.link-draw:hover,
+.link-draw:focus-visible {
+  background-size: 100% 1px;
+  color: var(--color-link-hover);
+}

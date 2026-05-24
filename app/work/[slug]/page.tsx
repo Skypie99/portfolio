@@ -162,7 +162,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
                           href={l.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="font-sans text-body text-accent-text hover:text-near-black underline underline-offset-4 decoration-1 inline-flex items-center gap-2 transition-colors duration-fast ease-out"
+                          className="link-draw font-sans text-body text-accent-text inline-flex items-center gap-2"
                         >
                           <span className="font-mono text-meta tracking-label uppercase text-text-meta mr-2">
                             {l.type}

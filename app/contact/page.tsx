@@ -79,7 +79,7 @@ export default function ContactPage() {
                     href={s.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-sans text-body text-accent-text hover:text-near-black transition-colors duration-fast ease-out inline-flex items-center gap-2 underline underline-offset-4 decoration-1"
+                    className="link-draw font-sans text-body text-accent-text inline-flex items-center gap-2"
                   >
                     <span>{s.handle}</span>
                     <span aria-hidden="true">{'↗'}</span>
