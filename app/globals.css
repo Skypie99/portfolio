@@ -192,6 +192,19 @@ h1, h2, h3, h4, h5, h6 {
   /* No box-level transform; child img + border handle the hover state. */
 }
 
+/* Cycle 16 self-correct: hide broken-image alt-text bleed-through.
+   Cycle 6's explicit width/height made browsers reserve layout space for
+   placeholder <img>s AND render the alt attribute inside the broken-image
+   icon area (using the element's `color` property). The decorative
+   <span aria-hidden="true">{title}</span> sits underneath so the visible
+   layer is meant to be the Cormorant title — but the alt text bled through
+   on top. `color: transparent` hides the alt-text-fallback paint while
+   keeping the alt attribute intact for screen readers. Certificate badges
+   reuse the same .work-card class on their <article>. */
+.work-card img {
+  color: transparent;
+}
+
 /* ------------------------------------------------------------------
    Reduced motion — Alex §5.2 binding rule
    ------------------------------------------------------------------ */
