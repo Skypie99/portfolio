@@ -85,6 +85,22 @@ describe('ProjectCard', () => {
     expect(link).toBeInTheDocument();
   });
 
+  it('hero <img> carries explicit width/height for CLS (Alex F-C4-3, Cycle 6)', () => {
+    render(<ProjectCard deliverable={baseDeliverable} />);
+    const img = screen.getByAltText(/warm-toned mockup/i);
+    // 800×600 = 4:3, matches the aspect-[4/3] container.
+    expect(img).toHaveAttribute('width', '800');
+    expect(img).toHaveAttribute('height', '600');
+  });
+
+  it('hero <img> opts into the Dani §3.3 hover scale via group-hover (Cycle 2)', () => {
+    render(<ProjectCard deliverable={baseDeliverable} />);
+    const img = screen.getByAltText(/warm-toned mockup/i);
+    // The image scales 1.02 on hover or focus of the parent .work-card link.
+    expect(img).toHaveClass('group-hover:scale-[1.02]');
+    expect(img).toHaveClass('group-focus-visible:scale-[1.02]');
+  });
+
   it('renders the Featured pill when featured is true', () => {
     const { rerender } = render(<ProjectCard deliverable={baseDeliverable} />);
 
