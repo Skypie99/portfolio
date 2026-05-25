@@ -1,4 +1,5 @@
 import { AppMockup } from '@/components/AppMockup';
+
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import type { Deliverable } from '@/lib/schema';
@@ -44,12 +45,11 @@ export function ProjectCard({
     <div
       className={cn(
         'work-card group block',
-        // Alex F-C4-1 fix: removed `focus:outline-none` so the global
-        // 2px Terracotta `:focus-visible` outline fires alongside the
-        // hover/focus lift. WCAG 2.4.13 needs a real focus affordance,
-        // not motion alone.
-        // Dani wave4: warm-white card base + stone border + blush hover shift.
-        'bg-warm-white border border-stone rounded-md p-6',
+        // Alex F-C4-1: focus-visible outline alongside hover/focus lift.
+        // Shamus wave2: border-l-4 + border-l-terracotta = editorial left accent.
+        // border-l-terracotta is side-specific — doesn't merge-conflict with
+        // border-stone (all-sides shorthand). border-l-4 is a distinct width group.
+        'bg-warm-white border border-stone border-l-4 border-l-terracotta rounded-md p-6',
         'transition-colors duration-base ease-out',
         'hover:bg-blush hover:border-stone-strong hover:shadow-soft',
         'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta focus-visible:rounded-sm',
@@ -59,18 +59,12 @@ export function ProjectCard({
       {/* ── Mockup area ─────────────────────────────────────────────── */}
       <div
         className={cn(
-          'relative w-full mb-6',
-          // Cycle 23: 3:2 for the index reads as curated;
-          // 16:9 for the featured row-spanner reads as cinematic.
+          'relative w-full mb-6 overflow-hidden',
           wide ? 'aspect-[16/9]' : 'aspect-[3/2]',
-          // Dani wave4: image well uses blush inside the warm-white card.
-          // On hover, the card shifts to blush and border deepens — the well
-          // deepens to peach-cream for a layered warm shift.
-          'bg-blush border border-stone overflow-hidden',
-          'flex items-center justify-center',
+          'bg-gradient-to-br from-blush to-peach-cream',
+          'border border-stone',
           'transition-colors duration-base ease-out',
-          'group-hover:bg-peach-cream group-hover:border-stone-strong',
-          'group-focus-visible:bg-peach-cream group-focus-visible:border-stone-strong',
+          'group-hover:border-stone-strong group-focus-visible:border-stone-strong',
         )}
         aria-hidden="true"
       >
