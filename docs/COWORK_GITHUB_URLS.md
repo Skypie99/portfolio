@@ -1,39 +1,61 @@
-# Cowork Prompt — Wire GitHub URLs into Portfolio
+# Cowork Prompt — Add GitHub Links to Portfolio
 
-Paste the block below into a Cowork session when you're ready to add real GitHub
-links to the project cards. Have the 4 repo URLs handy before you start.
+Paste everything between the dashed lines into a Cowork session.
+Fill in the four GitHub URLs before sending.
 
 ---
 
-## Prompt to paste
+You are working on the portfolio site at ~/Portfolio/ on branch `feature/single-scroll-2026-05-24`.
 
+The homepage is already a single scrollable page with 4 projects: AccessMap, Claude Corp, Prompt Library, Mutual Mesh.
+
+Your job is to wire real GitHub repository links into the project cards. Here are the URLs (Sky fills these in):
+
+- AccessMap:      https://github.com/___________
+- Claude Corp:    https://github.com/___________
+- Prompt Library: https://github.com/___________
+- Mutual Mesh:    https://github.com/___________
+
+## Steps
+
+1. Open `content/deliverables.json`. Add a `links` array to each of the 4 deliverables using the URLs above. Each entry uses this shape (already supported by the schema):
+
+```json
+"links": [
+  { "label": "GitHub", "href": "https://github.com/...", "type": "github" }
+]
 ```
-I have a Next.js portfolio site at ~/Portfolio/ on branch feature/single-scroll-2026-05-24.
-I want to add real GitHub repository links to the 4 project deliverables.
 
-Here are the GitHub URLs (fill these in before sending):
-- AccessMap:       <GitHub URL>
-- Claude Corp:     <GitHub URL>
-- Prompt Library:  <GitHub URL>
-- Mutual Mesh:     <GitHub URL>
+2. Open `app/page.tsx`. In the Work section, each project article already has a "Read more →" link. Below it, add a "GitHub →" link that renders when the deliverable has a github-type link. Use these exact classes to match the existing style:
 
-The deliverable schema already supports a `links` array. Each link has:
-  { label: string, href: string (https://), type: "github" | "demo" | ... }
-
-Tasks:
-1. Open content/deliverables.json
-2. Add a `links` array to each of the 4 deliverables with type "github" and the
-   corresponding URL above. Example:
-   "links": [{ "label": "GitHub", "href": "https://github.com/...", "type": "github" }]
-
-3. Open app/work/[slug]/page.tsx. Find where deliverable detail is rendered.
-   Below the tech tags, add a "GitHub →" link that renders when d.links exists and
-   has a github-type entry. Use the existing `text-accent-text` token and
-   `font-mono text-meta tracking-label uppercase` typography. Open in new tab
-   (target="_blank" rel="noopener noreferrer").
-
-4. Run: cd ~/Portfolio && npm run typecheck && npm run lint && npm test && npm run build
-   All gates must pass (0 errors, 17/17 tests).
-
-5. Do NOT merge to main. Work stays on feature/single-scroll-2026-05-24.
+```tsx
+{d.links?.find((l) => l.type === 'github') && (
+  <a
+    href={d.links.find((l) => l.type === 'github')!.href}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={`View ${d.title} source on GitHub`}
+    className="mt-1 inline-flex items-center gap-1 font-mono text-meta tracking-label uppercase text-text-meta transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1"
+  >
+    GitHub
+    <span aria-hidden="true">{'→'}</span>
+  </a>
+)}
 ```
+
+3. Run all gates — they must all pass before committing:
+
+```bash
+cd ~/Portfolio
+npm run typecheck   # 0 errors
+npm run lint        # 0 warnings
+npm test -- --run   # 40/40
+npm run build       # 0 errors
+```
+
+4. Commit on the existing branch with a message like:
+   `feat: wire GitHub links into project cards`
+
+5. Do NOT merge to main and do NOT push. Sky merges manually.
+
+---
