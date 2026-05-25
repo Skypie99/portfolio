@@ -2,7 +2,7 @@
   {
     "id": "accessmap",
     "title": "AccessMap",
-    "summary": "A privacy-respecting accessibility-flagging app helping disabled users navigate the city with care and confidence.",
+    "summary": "Mobile app for flagging accessibility barriers — broken ramps, missing tactile paths — pinned to a real city map. Privacy-first: no tracking, no data sold.",
     "role": "Solo builder",
     "tech": [
       "Expo",
@@ -37,7 +37,7 @@
   {
     "id": "claude-corp",
     "title": "Claude Corp",
-    "summary": "A 14-role multi-agent system with a written Constitution governing how the team collaborates, plans, and ships safely.",
+    "summary": "An 18-role AI team governed by a written Constitution. Each agent owns a domain; an orchestrator runs the cycles. The infrastructure behind this portfolio.",
     "role": "Architect",
     "tech": [
       "Claude Code",
@@ -71,7 +71,7 @@
   {
     "id": "prompt-library",
     "title": "Prompt Library",
-    "summary": "A solo-built Next.js prompt manager with fifty shipped features, browser-only storage, and an API key that never leaves the user's machine.",
+    "summary": "Local-first prompt manager in Next.js 15. Prompts stay in the browser, API key never leaves the machine. Fifty features shipped across twenty stacked branches.",
     "role": "Solo builder",
     "tech": [
       "Next.js 15",
@@ -107,7 +107,7 @@
   {
     "id": "pacman-code-trainer",
     "title": "Pac-Man Code Trainer",
-    "summary": "A retro flashcard game for memorizing Claude Code CLI commands and macOS shortcuts. 40 cards, zero dependencies, vanilla HTML/JS.",
+    "summary": "CLI commands turned into a retro arcade game. Forty flashcards covering Claude Code and macOS shortcuts, zero dependencies, runs straight from GitHub Pages.",
     "role": "Solo builder",
     "tech": [
       "Vanilla JS",
@@ -142,12 +142,13 @@
   {
     "id": "mutual-mesh",
     "title": "Mutual Mesh",
-    "summary": "Privacy-first mutual-aid platform connecting neighbours who want to give with neighbours who need a hand.",
+    "summary": "Mutual-aid app connecting neighbours who want to help with those who need it. Privacy-first: a PRIVACY.md gate blocks every new feature before any code ships.",
     "role": "Lead engineer",
     "tech": [
       "Expo",
       "React Native",
-      "Supabase"
+      "Supabase",
+      "TypeScript"
     ],
     "year": 2026,
     "heroImage": {
