@@ -23,11 +23,11 @@ import { cn } from '@/lib/cn';
 type NavItem = { href: string; label: string };
 
 const NAV_ITEMS: NavItem[] = [
-  { href: '/', label: 'Home' },
-  { href: '/work/', label: 'Work' },
-  { href: '/certificates/', label: 'Certificates' },
-  { href: '/about/', label: 'About' },
-  { href: '/contact/', label: 'Contact' },
+  { href: '/',              label: 'Home'         },
+  { href: '/#work',         label: 'Work'         },
+  { href: '/#certificates', label: 'Certificates' },
+  { href: '/#about',        label: 'About'        },
+  { href: '/#contact',      label: 'Contact'      },
 ];
 
 export function HamburgerNav() {
@@ -159,9 +159,8 @@ export function HamburgerNav() {
             <nav aria-label="Primary menu" className="w-full max-w-content">
               <ul className="flex flex-col gap-6 items-start">
                 {NAV_ITEMS.map((item, i) => {
-                  const isActive =
-                    pathname === item.href ||
-                    (item.href !== '/' && pathname?.startsWith(item.href));
+                  // Anchor links are all on the homepage; only Home gets aria-current="page"
+                  const isActive = item.href === '/' && pathname === '/';
                   return (
                     <motion.li
                       key={item.href}
