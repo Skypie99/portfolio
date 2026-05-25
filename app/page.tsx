@@ -5,39 +5,41 @@ import { Hero } from '@/components/Hero';
 import { NumberedStep } from '@/components/NumberedStep';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
-import { getDeliverables, getProfile } from '@/lib/content';
+import { getCertificates, getDeliverables, getProfile } from '@/lib/content';
 
 /**
- * Homepage. Server Component — reads content at build time, ships zero JS
- * for the static blocks. Hero + HamburgerNav are the only client modules.
+ * Single-scroll homepage. Server Component — all content at build time, zero
+ * client JS except Hero + HamburgerNav.
  *
- * Layout sequence:
- *  1. Hero (F-01)
- *  2. Selected work — three deliverables, featured one first
- *  3. How I work — Discover / Build / Ship
- *  4. CTA — mailto with the terracotta dot
+ * Section order (all anchor-linked from the hamburger nav):
+ *  #hero          — Hero (F-01)
+ *  #work          — All 4 deliverables
+ *  #process       — Discover / Build / Ship
+ *  #about         — Bio
+ *  #certificates  — Credential list
+ *  #contact       — Mailto CTA
  */
 export default function HomePage() {
   const profile = getProfile();
   const deliverables = getDeliverables();
-  // Show up to 3, featured first if present (getDeliverables() returns newest-first by year;
-  // we also surface the featured at the top of the selected list).
-  const featured = deliverables.find((d) => d.featured);
-  const others = deliverables.filter((d) => !d.featured).slice(0, featured ? 2 : 3);
-  const selected = featured ? [featured, ...others] : others;
+  const certificates = getCertificates();
 
   return (
     <>
-      <Hero
-        eyebrow="AI portfolio — 2026"
-        heading={profile.tagline}
-        subhead="A small studio of AI-assisted tools, audits, and reference materials. Built slowly. Documented honestly."
-        ctaLabel="View the work"
-        ctaHref="/work/"
-      />
+      {/* ── Hero ─────────────────────────────────────────────────────── */}
+      <div id="hero">
+        <Hero
+          eyebrow="AI portfolio — 2026"
+          heading={profile.tagline}
+          subhead="A small studio of AI-assisted tools, audits, and reference materials. Built slowly. Documented honestly."
+          ctaLabel="View the work"
+          ctaHref="#work"
+        />
+      </div>
 
-      {/* Selected work */}
+      {/* ── Work ─────────────────────────────────────────────────────── */}
       <section
+        id="work"
         className={cn(
           'reveal-on-scroll',
           'px-gutter',
@@ -49,7 +51,7 @@ export default function HomePage() {
         <div className="max-w-content mx-auto">
           <div className="mb-12">
             <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
-              Selected work
+              Work
             </p>
             <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight">
               A handful of recent things, made with intention.
@@ -57,7 +59,7 @@ export default function HomePage() {
           </div>
 
           <ul className="flex flex-col gap-12">
-            {selected.map((d, idx) => (
+            {deliverables.map((d, idx) => (
               <li key={d.id}>
                 <article
                   className={cn(
@@ -110,23 +112,12 @@ export default function HomePage() {
               </li>
             ))}
           </ul>
-
-          <div className="mt-16">
-            <Link
-              href="/work/"
-              className="inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text focus-visible:text-accent-text transition-colors duration-fast ease-out"
-            >
-              See all work
-              <span aria-hidden="true">{'→'}</span>
-            </Link>
-          </div>
         </div>
       </section>
 
-      {/* How I work — Cycle 17: Dani §3.6 strict refit. Section on cream,
-          steps inside a rounded peach-cream callout panel. Hairline dividers
-          between steps preserved from Cycle 7. */}
+      {/* ── Process ──────────────────────────────────────────────────── */}
       <section
+        id="process"
         className={cn(
           'reveal-on-scroll',
           'px-gutter',
@@ -145,8 +136,6 @@ export default function HomePage() {
             </h2>
           </div>
 
-          {/* Dani §3.6: peach-cream panel, --radius-lg, --space-8 padding.
-              Inner <ol> keeps the Cycle 7 hairline dividers between steps. */}
           <div className="bg-peach-cream border border-border-decorative rounded-lg p-8 md:p-12">
             <ol className="flex flex-col divide-y divide-border-decorative">
               <li className="py-8 first:pt-0 last:pb-0">
@@ -175,8 +164,115 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Closing CTA */}
+      {/* ── About ────────────────────────────────────────────────────── */}
       <section
+        id="about"
+        className={cn(
+          'reveal-on-scroll',
+          'px-gutter',
+          'py-24 lg:py-32',
+          'bg-cream',
+          'border-t border-border-decorative',
+        )}
+      >
+        <div className="max-w-content mx-auto">
+          <div className="mb-12">
+            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+              About
+            </p>
+            <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight">
+              I build AI tools with care.
+            </h2>
+          </div>
+
+          <div className="max-w-[640px] flex flex-col gap-6">
+            <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
+              Most of what I make starts with a problem worth solving, then a
+              small thing that solves it well. I would rather ship one careful
+              deliverable than a dozen rough ones.
+            </p>
+            <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
+              I work from {profile.location}, mostly on AI-assisted tooling,
+              accessibility, and the quiet infrastructure that makes a product
+              feel calm to use. Long projects, small surfaces, real users.
+            </p>
+            <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
+              I keep a written record of how each thing was built and why —
+              both for the people who come next and for me, the next time I
+              need to remember.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Certificates ─────────────────────────────────────────────── */}
+      <section
+        id="certificates"
+        className={cn(
+          'reveal-on-scroll',
+          'px-gutter',
+          'py-24 lg:py-32',
+          'bg-cream',
+          'border-t border-border-decorative',
+        )}
+      >
+        <div className="max-w-content mx-auto">
+          <div className="mb-12">
+            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+              Certificates
+            </p>
+            <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight">
+              Credentials earned along the way.
+            </h2>
+          </div>
+
+          <ul className="flex flex-col divide-y divide-border-decorative">
+            {certificates.map((c) => (
+              <li key={c.id} className="py-8 first:pt-0 last:pb-0">
+                <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-12">
+                  <p className="font-mono text-meta tracking-label uppercase text-text-meta md:w-40 shrink-0">
+                    {c.issuer}
+                  </p>
+                  <div className="flex-1 flex flex-col gap-1">
+                    <h3 className="font-serif font-normal text-[1.25rem] text-near-black leading-tight">
+                      {c.title}
+                    </h3>
+                    <p className="font-mono text-meta tracking-label uppercase text-text-meta">
+                      {new Date(c.issuedDate).toLocaleDateString('en-CA', {
+                        year: 'numeric',
+                        month: 'long',
+                      })}
+                      {c.expiresDate && (
+                        <>
+                          {' '}· expires{' '}
+                          {new Date(c.expiresDate).toLocaleDateString('en-CA', {
+                            year: 'numeric',
+                            month: 'long',
+                          })}
+                        </>
+                      )}
+                    </p>
+                  </div>
+                  <Link
+                    href={c.credentialUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View credential: ${c.title} from ${c.issuer}`}
+                    className="font-mono text-meta tracking-label uppercase text-accent-text inline-flex items-center gap-1 transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 shrink-0"
+                  >
+                    View
+                    <span aria-hidden="true">{'→'}</span>
+                  </Link>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ── Contact ──────────────────────────────────────────────────── */}
+      <section
+        id="contact"
         className={cn(
           'reveal-on-scroll',
           'px-gutter',
