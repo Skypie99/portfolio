@@ -4,16 +4,29 @@
     "title": "AccessMap",
     "summary": "A privacy-respecting accessibility-flagging app helping disabled users navigate the city with care and confidence.",
     "role": "Solo builder",
-    "tech": ["Expo", "React Native", "Supabase", "TypeScript"],
+    "tech": [
+      "Expo",
+      "React Native",
+      "Supabase",
+      "TypeScript"
+    ],
     "year": 2026,
     "heroImage": {
       "src": "/images/deliverables/accessmap/hero.jpg",
       "alt": "Warm-toned mockup of the AccessMap mobile interface showing accessibility flags pinned to a city map"
     },
     "links": [
-      { "label": "GitHub", "href": "https://github.com/Skypie99/AccessMap", "type": "github" }
+      {
+        "label": "GitHub",
+        "href": "https://github.com/Skypie99/AccessMap",
+        "type": "github"
+      }
     ],
-    "tags": ["accessibility", "mobile", "privacy"],
+    "tags": [
+      "accessibility",
+      "mobile",
+      "privacy"
+    ],
     "featured": true
   },
   {
@@ -21,16 +34,33 @@
     "title": "Claude Corp",
     "summary": "A 14-role multi-agent system with a written Constitution governing how the team collaborates, plans, and ships safely.",
     "role": "Architect",
-    "tech": ["Claude Code", "MCP", "Multi-agent orchestration"],
+    "tech": [
+      "Claude Code",
+      "MCP",
+      "Multi-agent orchestration"
+    ],
     "year": 2026,
     "heroImage": {
       "src": "/images/deliverables/claude-corp/hero.jpg",
       "alt": "A printed Constitution document on a linen surface beside a single terracotta-toned cup"
     },
     "links": [
-      { "label": "GitHub", "href": "https://github.com/Skypie99/Claude_Corp", "type": "github" }
+      {
+        "label": "GitHub",
+        "href": "https://github.com/Skypie99/Claude_Corp",
+        "type": "github"
+      },
+      {
+        "label": "Live demo",
+        "href": "https://skypie99.github.io/Claude_Corp/",
+        "type": "demo"
+      }
     ],
-    "tags": ["agents", "tooling", "process"],
+    "tags": [
+      "agents",
+      "tooling",
+      "process"
+    ],
     "featured": false
   },
   {
@@ -38,16 +68,33 @@
     "title": "Prompt Library",
     "summary": "A solo-built Next.js prompt manager with fifty shipped features, browser-only storage, and an API key that never leaves the user's machine.",
     "role": "Solo builder",
-    "tech": ["Next.js", "AI", "Solo build"],
+    "tech": [
+      "Next.js",
+      "AI",
+      "Solo build"
+    ],
     "year": 2026,
     "heroImage": {
       "src": "/images/deliverables/prompt-library/hero.jpg",
       "alt": "A quiet workspace with a notebook of prompts open beside a laptop, soft natural light from the side"
     },
     "links": [
-      { "label": "GitHub", "href": "https://github.com/Skypie99/Prompt_Libary", "type": "github" }
+      {
+        "label": "GitHub",
+        "href": "https://github.com/Skypie99/Prompt_Libary",
+        "type": "github"
+      },
+      {
+        "label": "Live demo",
+        "href": "https://skypie99.github.io/Prompt_Libary/",
+        "type": "demo"
+      }
     ],
-    "tags": ["ai", "tools", "local-first"],
+    "tags": [
+      "ai",
+      "tools",
+      "local-first"
+    ],
     "featured": false
   },
   {
@@ -55,16 +102,28 @@
     "title": "Mutual Mesh",
     "summary": "Privacy-first mutual-aid platform connecting neighbours who want to give with neighbours who need a hand.",
     "role": "Lead engineer",
-    "tech": ["Expo", "React Native", "Supabase"],
+    "tech": [
+      "Expo",
+      "React Native",
+      "Supabase"
+    ],
     "year": 2026,
     "heroImage": {
       "src": "/images/deliverables/mutual-mesh/hero.jpg",
       "alt": "Two hands passing a small bundle across a kitchen table, soft window light from the left"
     },
     "links": [
-      { "label": "GitHub", "href": "https://github.com/Skypie99/mutual-mesh", "type": "github" }
+      {
+        "label": "GitHub",
+        "href": "https://github.com/Skypie99/mutual-mesh",
+        "type": "github"
+      }
     ],
-    "tags": ["community", "mobile", "privacy"],
+    "tags": [
+      "community",
+      "mobile",
+      "privacy"
+    ],
     "featured": false
   }
 ]
