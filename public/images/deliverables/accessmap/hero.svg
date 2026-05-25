@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <title>AccessMap — accessibility-flagging app hero illustration</title>
+  <defs>
+    <!-- Warm cream background -->
+    <pattern id="am-grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <line x1="40" y1="0" x2="40" y2="40" stroke="#DCDCD6" stroke-width="0.6" opacity="0.5"/>
+      <line x1="0" y1="40" x2="40" y2="40" stroke="#DCDCD6" stroke-width="0.6" opacity="0.5"/>
+    </pattern>
+    <!-- Dot texture overlay -->
+    <pattern id="am-dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="0.8" fill="#7F4323" opacity="0.06"/>
+    </pattern>
+    <!-- Pin drop shadow -->
+    <filter id="am-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#7F4323" flood-opacity="0.18"/>
+    </filter>
+    <!-- Radial glow under pin -->
+    <radialGradient id="am-glow" cx="50%" cy="100%" r="40%" fx="50%" fy="100%">
+      <stop offset="0%" stop-color="#FBCFAC" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#FAF9F5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="#FAF9F5"/>
+
+  <!-- Grid lines (map aesthetic) -->
+  <rect width="800" height="500" fill="url(#am-grid)"/>
+
+  <!-- Dot texture -->
+  <rect width="800" height="500" fill="url(#am-dots)"/>
+
+  <!-- Soft map zones — abstract blush areas suggesting city blocks -->
+  <rect x="60" y="80" width="120" height="80" rx="4" fill="#FCF3ED" opacity="0.7"/>
+  <rect x="200" y="60" width="80" height="60" rx="4" fill="#F0F0EA" opacity="0.6"/>
+  <rect x="540" y="340" width="140" height="90" rx="4" fill="#FCF3ED" opacity="0.6"/>
+  <rect x="580" y="80" width="100" height="70" rx="4" fill="#F0F0EA" opacity="0.5"/>
+  <rect x="100" y="340" width="100" height="80" rx="4" fill="#FCF3ED" opacity="0.5"/>
+  <rect x="320" y="380" width="130" height="60" rx="4" fill="#F0F0EA" opacity="0.5"/>
+
+  <!-- Road lines — horizontal -->
+  <line x1="0" y1="200" x2="800" y2="200" stroke="#DCDCD6" stroke-width="1.5" opacity="0.7"/>
+  <line x1="0" y1="300" x2="800" y2="300" stroke="#DCDCD6" stroke-width="1" opacity="0.5"/>
+  <!-- Road lines — vertical -->
+  <line x1="260" y1="0" x2="260" y2="500" stroke="#DCDCD6" stroke-width="1.5" opacity="0.7"/>
+  <line x1="520" y1="0" x2="520" y2="500" stroke="#DCDCD6" stroke-width="1" opacity="0.5"/>
+
+  <!-- Glow under the pin -->
+  <ellipse cx="400" cy="310" rx="90" ry="30" fill="url(#am-glow)"/>
+
+  <!-- Location pin group -->
+  <g filter="url(#am-shadow)">
+    <!-- Pin body (teardrop) -->
+    <path d="M400 120 C360 120 330 150 330 188 C330 230 400 310 400 310 C400 310 470 230 470 188 C470 150 440 120 400 120 Z" fill="#B35F32"/>
+    <!-- Pin inner circle -->
+    <circle cx="400" cy="188" r="28" fill="#FAF9F5"/>
+    <!-- Wheelchair accessibility symbol inside pin -->
+    <!-- Head -->
+    <circle cx="400" cy="168" r="6" fill="#B35F32"/>
+    <!-- Body -->
+    <line x1="400" y1="174" x2="400" y2="196" stroke="#B35F32" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- Left arm -->
+    <line x1="400" y1="180" x2="387" y2="187" stroke="#B35F32" stroke-width="3" stroke-linecap="round"/>
+    <!-- Right arm / wheel reach -->
+    <line x1="400" y1="180" x2="413" y2="187" stroke="#B35F32" stroke-width="3" stroke-linecap="round"/>
+    <!-- Seat -->
+    <line x1="400" y1="196" x2="412" y2="196" stroke="#B35F32" stroke-width="3" stroke-linecap="round"/>
+    <!-- Leg down -->
+    <line x1="400" y1="196" x2="393" y2="207" stroke="#B35F32" stroke-width="3" stroke-linecap="round"/>
+    <!-- Wheel -->
+    <circle cx="410" cy="207" r="7" fill="none" stroke="#B35F32" stroke-width="2.5"/>
+  </g>
+
+  <!-- Small secondary pins on the map -->
+  <!-- Pin 1 -->
+  <g opacity="0.55">
+    <path d="M175 200 C163 200 154 209 154 220 C154 234 175 258 175 258 C175 258 196 234 196 220 C196 209 187 200 175 200 Z" fill="#E2976E"/>
+    <circle cx="175" cy="220" r="9" fill="#FAF9F5"/>
+    <circle cx="175" cy="218" r="2.5" fill="#E2976E"/>
+  </g>
+  <!-- Pin 2 -->
+  <g opacity="0.45">
+    <path d="M610 180 C599 180 591 188 591 198 C591 210 610 232 610 232 C610 232 629 210 629 198 C629 188 621 180 610 180 Z" fill="#7F4323"/>
+    <circle cx="610" cy="198" r="8" fill="#FAF9F5"/>
+    <circle cx="610" cy="196" r="2" fill="#7F4323"/>
+  </g>
+  <!-- Pin 3 -->
+  <g opacity="0.35">
+    <path d="M310 340 C301 340 294 347 294 356 C294 366 310 384 310 384 C310 384 326 366 326 356 C326 347 319 340 310 340 Z" fill="#FBCFAC"/>
+    <circle cx="310" cy="356" r="7" fill="#FAF9F5"/>
+    <circle cx="310" cy="354" r="2" fill="#B35F32"/>
+  </g>
+
+  <!-- Subtle route line connecting pins to main pin -->
+  <path d="M175 258 Q240 280 320 280 Q360 280 380 300" stroke="#FBCFAC" stroke-width="1.5" fill="none" stroke-dasharray="4 5" opacity="0.6"/>
+  <path d="M610 232 Q580 260 500 272 Q460 278 420 300" stroke="#FBCFAC" stroke-width="1.5" fill="none" stroke-dasharray="4 5" opacity="0.5"/>
+
+  <!-- Bottom label band -->
+  <rect x="0" y="450" width="800" height="50" fill="#FAF9F5" opacity="0.0"/>
+
+  <!-- Word mark -->
+  <text x="400" y="448" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="400" letter-spacing="4" fill="#7F4323" text-anchor="middle" opacity="0.5">ACCESSMAP</text>
+</svg>

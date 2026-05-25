@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <title>Prompt Library — local-first prompt manager hero illustration</title>
+  <defs>
+    <!-- Dot texture -->
+    <pattern id="pl-dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="0.8" fill="#7F4323" opacity="0.055"/>
+    </pattern>
+    <!-- Card shadow filter -->
+    <filter id="pl-shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#7F4323" flood-opacity="0.10"/>
+    </filter>
+    <filter id="pl-shadow-sm" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#7F4323" flood-opacity="0.08"/>
+    </filter>
+    <!-- Warm gradient on accent border -->
+    <linearGradient id="pl-accent-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#B35F32"/>
+      <stop offset="100%" stop-color="#E2976E"/>
+    </linearGradient>
+    <!-- Subtle card top gradient -->
+    <linearGradient id="pl-card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Background vignette -->
+    <radialGradient id="pl-vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#FAF9F5" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#F0F0EA" stop-opacity="0.5"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="#FAF9F5"/>
+
+  <!-- Dot texture -->
+  <rect width="800" height="500" fill="url(#pl-dots)"/>
+
+  <!-- Vignette -->
+  <rect width="800" height="500" fill="url(#pl-vignette)"/>
+
+  <!-- ───── Stacked cards (back to front) ───── -->
+
+  <!-- Card 5 — furthest back, most offset -->
+  <g filter="url(#pl-shadow)">
+    <rect x="198" y="105" width="404" height="290" rx="5" fill="#DCDCD6" opacity="0.5"/>
+  </g>
+
+  <!-- Card 4 -->
+  <g filter="url(#pl-shadow)">
+    <rect x="208" y="115" width="404" height="290" rx="5" fill="#F0F0EA" opacity="0.75"/>
+    <!-- Left terracotta accent border -->
+    <rect x="208" y="115" width="5" height="290" rx="2" fill="url(#pl-accent-grad)" opacity="0.25"/>
+  </g>
+
+  <!-- Card 3 -->
+  <g filter="url(#pl-shadow)">
+    <rect x="218" y="125" width="404" height="290" rx="5" fill="#F0F0EA" opacity="0.85"/>
+    <rect x="218" y="125" width="5" height="290" rx="2" fill="url(#pl-accent-grad)" opacity="0.4"/>
+    <!-- Faint lines on card 3 -->
+    <line x1="238" y1="165" x2="570" y2="165" stroke="#DCDCD6" stroke-width="1.2" opacity="0.8"/>
+    <line x1="238" y1="185" x2="520" y2="185" stroke="#DCDCD6" stroke-width="1.2" opacity="0.6"/>
+    <line x1="238" y1="205" x2="500" y2="205" stroke="#DCDCD6" stroke-width="1.2" opacity="0.5"/>
+  </g>
+
+  <!-- Card 2 (second from front) -->
+  <g filter="url(#pl-shadow)">
+    <rect x="228" y="135" width="404" height="290" rx="5" fill="#FAF9F5" opacity="0.9"/>
+    <rect x="228" y="135" width="5" height="290" rx="2" fill="url(#pl-accent-grad)" opacity="0.55"/>
+    <!-- Card 2 content lines -->
+    <line x1="248" y1="178" x2="580" y2="178" stroke="#DCDCD6" stroke-width="1.2" opacity="0.9"/>
+    <line x1="248" y1="198" x2="540" y2="198" stroke="#DCDCD6" stroke-width="1.2" opacity="0.7"/>
+    <line x1="248" y1="218" x2="510" y2="218" stroke="#DCDCD6" stroke-width="1.2" opacity="0.6"/>
+    <!-- Card 2 tag pills -->
+    <rect x="248" y="255" width="60" height="18" rx="9" fill="#FCF3ED" stroke="#FBCFAC" stroke-width="1"/>
+    <rect x="316" y="255" width="72" height="18" rx="9" fill="#FCF3ED" stroke="#FBCFAC" stroke-width="1"/>
+  </g>
+
+  <!-- Card 1 — FRONT (main card) -->
+  <g filter="url(#pl-shadow)">
+    <rect x="178" y="105" width="444" height="290" rx="6" fill="#FAF9F5"/>
+    <!-- Subtle top sheen -->
+    <rect x="178" y="105" width="444" height="80" rx="6" fill="url(#pl-card-grad)"/>
+    <!-- Left accent border — full terracotta gradient -->
+    <rect x="178" y="105" width="6" height="290" rx="3" fill="url(#pl-accent-grad)"/>
+
+    <!-- Card header row -->
+    <rect x="184" y="105" width="438" height="48" rx="4" fill="#FCF3ED" opacity="0.6"/>
+
+    <!-- Category eyebrow -->
+    <text x="200" y="128" font-family="'Courier New', Courier, monospace" font-size="9" letter-spacing="2.5" fill="#B35F32" opacity="0.8">WRITING · EDITING</text>
+
+    <!-- Prompt title -->
+    <text x="200" y="172" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-weight="400" fill="#232420" opacity="0.9">Rewrite for clarity</text>
+
+    <!-- Divider -->
+    <line x1="200" y1="185" x2="605" y2="185" stroke="#DCDCD6" stroke-width="1" opacity="0.8"/>
+
+    <!-- Prompt body text (simulated lines) -->
+    <rect x="200" y="200" width="380" height="9" rx="4" fill="#DCDCD6" opacity="0.6"/>
+    <rect x="200" y="216" width="340" height="9" rx="4" fill="#DCDCD6" opacity="0.5"/>
+    <rect x="200" y="232" width="360" height="9" rx="4" fill="#DCDCD6" opacity="0.55"/>
+    <rect x="200" y="248" width="200" height="9" rx="4" fill="#DCDCD6" opacity="0.4"/>
+
+    <!-- Tag pills on front card -->
+    <rect x="200" y="278" width="54" height="20" rx="10" fill="#FCF3ED" stroke="#E2976E" stroke-width="1"/>
+    <text x="227" y="292" font-family="'Courier New', Courier, monospace" font-size="8" fill="#B35F32" text-anchor="middle" letter-spacing="1">AI</text>
+
+    <rect x="262" y="278" width="72" height="20" rx="10" fill="#FCF3ED" stroke="#E2976E" stroke-width="1"/>
+    <text x="298" y="292" font-family="'Courier New', Courier, monospace" font-size="8" fill="#B35F32" text-anchor="middle" letter-spacing="1">WRITING</text>
+
+    <rect x="342" y="278" width="80" height="20" rx="10" fill="#FCF3ED" stroke="#E2976E" stroke-width="1"/>
+    <text x="382" y="292" font-family="'Courier New', Courier, monospace" font-size="8" fill="#B35F32" text-anchor="middle" letter-spacing="1">LOCAL-FIRST</text>
+
+    <!-- Bottom row -->
+    <line x1="200" y1="315" x2="605" y2="315" stroke="#DCDCD6" stroke-width="0.8" opacity="0.6"/>
+
+    <!-- Copy CTA area -->
+    <text x="200" y="340" font-family="'Courier New', Courier, monospace" font-size="9" letter-spacing="1.5" fill="#7F4323" opacity="0.6">50 PROMPTS · BROWSER-ONLY STORAGE</text>
+  </g>
+
+  <!-- Floating mini lock icon (privacy indicator) top-right -->
+  <g transform="translate(634, 116)">
+    <rect x="0" y="6" width="16" height="12" rx="2" fill="#FBCFAC" stroke="#B35F32" stroke-width="1" opacity="0.7"/>
+    <path d="M3 6 C3 1 13 1 13 6" fill="none" stroke="#B35F32" stroke-width="1.2" opacity="0.7"/>
+    <circle cx="8" cy="12" r="2" fill="#B35F32" opacity="0.6"/>
+  </g>
+
+  <!-- Word mark -->
+  <text x="400" y="448" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="400" letter-spacing="4" fill="#7F4323" text-anchor="middle" opacity="0.4">PROMPT LIBRARY</text>
+</svg>
