@@ -9,14 +9,14 @@ export function SkipLink() {
       href="#main"
       className="
         sr-only
-        focus:not-sr-only
-        focus:fixed focus:left-4 focus:top-4 focus:z-[9999]
-        focus:px-4 focus:py-3
-        focus:bg-cream focus:text-near-black
-        focus:border-2 focus:border-accent-primary
-        focus:rounded-md
-        focus:font-mono focus:text-label focus:tracking-label focus:uppercase
-        focus:no-underline
+        focus-visible:not-sr-only
+        focus-visible:fixed focus-visible:left-4 focus-visible:top-4 focus-visible:z-[9999]
+        focus-visible:px-4 focus-visible:py-3
+        focus-visible:bg-cream focus-visible:text-near-black
+        focus-visible:border-2 focus-visible:border-accent-primary
+        focus-visible:rounded-md
+        focus-visible:font-mono focus-visible:text-label focus-visible:tracking-label focus-visible:uppercase
+        focus-visible:no-underline
       "
     >
       Skip to main content

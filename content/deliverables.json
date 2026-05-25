@@ -74,9 +74,11 @@
     "summary": "A solo-built Next.js prompt manager with fifty shipped features, browser-only storage, and an API key that never leaves the user's machine.",
     "role": "Solo builder",
     "tech": [
-      "Next.js",
-      "AI",
-      "Solo build"
+      "Next.js 15",
+      "TypeScript",
+      "Vitest",
+      "localStorage",
+      "GitHub Pages"
     ],
     "year": 2026,
     "heroImage": {
@@ -99,6 +101,41 @@
       "ai",
       "tools",
       "local-first"
+    ],
+    "featured": false
+  },
+  {
+    "id": "pacman-code-trainer",
+    "title": "Pac-Man Code Trainer",
+    "summary": "A retro flashcard game for memorizing Claude Code CLI commands and macOS shortcuts. 40 cards, zero dependencies, vanilla HTML/JS.",
+    "role": "Solo builder",
+    "tech": [
+      "Vanilla JS",
+      "HTML",
+      "CSS",
+      "GitHub Pages"
+    ],
+    "year": 2026,
+    "heroImage": {
+      "src": "/images/deliverables/pacman-code-trainer/hero.jpg",
+      "alt": "Retro pixel-art Pac-Man grid showing flashcard commands on a dark arcade background"
+    },
+    "links": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com/Skypie99/pacman-code-trainer",
+        "type": "github"
+      },
+      {
+        "label": "Live demo",
+        "href": "https://skypie99.github.io/pacman-code-trainer/",
+        "type": "demo"
+      }
+    ],
+    "tags": [
+      "tools",
+      "game",
+      "learning"
     ],
     "featured": false
   },
