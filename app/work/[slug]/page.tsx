@@ -288,7 +288,8 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
           className={cn(
             'reveal-on-scroll',
             'px-gutter py-24 lg:py-32',
-            'bg-cream border-t border-border-decorative',
+            // Dani wave4: warm-white for section variety between cream main and gallery.
+            'bg-warm-white border-t border-border-decorative',
           )}
         >
           <div className="max-w-content mx-auto">

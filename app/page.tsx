@@ -173,6 +173,7 @@ export default function HomePage() {
           'reveal-on-scroll',
           'px-gutter',
           'py-24 lg:py-32',
+          // Dani wave4: alternating bg rhythm — cream/warm-white/cream/warm-white...
           'bg-warm-white',
           'border-t border-border-decorative',
         )}
@@ -270,6 +271,7 @@ export default function HomePage() {
           'reveal-on-scroll',
           'px-gutter',
           'py-24 lg:py-32',
+          // Dani wave4: alternating — warm-white
           'bg-warm-white',
           'border-t border-border-decorative',
         )}
