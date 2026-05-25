@@ -1,23 +1,15 @@
 /**
- * ProjectCard smoke tests — Cycle 4 (Gary).
+ * ProjectCard smoke tests — updated for Wave 1 luxury redesign.
  *
- * ProjectCard is the shared deliverable card used on /work (F-04) and
- * anywhere else a deliverable surfaces visually (the "What I'm working on"
- * block on /about, etc.). The component is a pure server-friendly render —
- * no client state, no effects, no router — so these tests use a single
- * inline Deliverable fixture and assert directly on the DOM:
+ * ProjectCard now renders:
+ *  - An AppMockup (pure CSS/SVG, no img) in the top mockup area
+ *  - Multiple CTA links: "View case study", "Live demo", "GitHub"
+ *  - A heading (h3) whose accessible name is "<title> — <role>, <year>"
+ *    because the link inside carries aria-label with that full string
+ *  - A featured badge pill when `featured: true`
  *
- *   1. Title / role / year render from props.
- *   2. The whole card is one <a> pointing to /work/<slug>/ (matches the
- *      trailing-slash convention used elsewhere in the static export).
- *   3. The link exposes an accessible name summarising the destination
- *      (Alex §4.4 — link text meaningful out of context).
- *   4. The featured visual treatment appears only when `featured: true`
- *      (the "Featured" pill that ProjectCard wraps in a paragraph with the
- *      terracotta dot).
- *
- * The fixture is hand-built rather than imported from content/ so the test
- * is hermetic — it doesn't break when Sky reshuffles the JSON.
+ * Tests are updated to match the redesigned DOM without breaking accessibility
+ * intent. Gary: image-based tests removed since AppMockup replaces img.
  */
 import { afterEach, describe, expect, it } from 'vitest';
 import { cleanup, render, screen } from '@testing-library/react';
@@ -48,16 +40,17 @@ describe('ProjectCard', () => {
   it('renders title, role, and year from props', () => {
     render(<ProjectCard deliverable={baseDeliverable} />);
 
-    // Title sits in an <h3> — Alex F-C4-2 heading rotor demoted the card
-    // title from h2 to h3 so the rotor reads h1 (page) → h2 (sr-only
-    // section) → h3 (card). Visible size/weight is unchanged.
+    // Title sits in an <h3> — Wave 1 redesign: the h3 wraps a link whose
+    // aria-label is "<title> — <role>, <year>", so the heading's accessible
+    // name is the full string. Query with the full name.
     expect(
-      screen.getByRole('heading', { level: 3, name: 'AccessMap' }),
+      screen.getByRole('heading', {
+        level: 3,
+        name: /AccessMap.*Solo builder.*2026/i,
+      }),
     ).toBeInTheDocument();
 
     // Role and year share a single metadata line: "Solo builder · 2026".
-    // Use a function matcher so the middot/whitespace can't make the assertion
-    // flaky if Shamus tweaks the separator later.
     expect(
       screen.getByText((content) =>
         content.includes('Solo builder') && content.includes('2026'),
@@ -65,63 +58,90 @@ describe('ProjectCard', () => {
     ).toBeInTheDocument();
   });
 
-  it('wraps the whole card in a single link to /work/<slug>/', () => {
+  it('renders a case-study link pointing to /work/<slug>/', () => {
     render(<ProjectCard deliverable={baseDeliverable} />);
 
-    // One link per card — the entire surface is the click target.
-    const links = screen.getAllByRole('link');
-    expect(links).toHaveLength(1);
-    expect(links[0]).toHaveAttribute('href', '/work/accessmap/');
+    // Wave 1: card has multiple links; the primary one is the case-study link
+    // and the title link, both pointing to /work/accessmap/.
+    const caseStudyLink = screen.getByRole('link', {
+      name: /read case study for accessmap/i,
+    });
+    expect(caseStudyLink).toHaveAttribute('href', '/work/accessmap/');
   });
 
   it('exposes an accessible name summarising the destination (Alex §4.4)', () => {
     render(<ProjectCard deliverable={baseDeliverable} />);
 
-    // The link's accessible name is "<title> — <role>, <year>" so screen-reader
-    // users hear the same context sighted users see in the card body.
+    // The title link's accessible name is "<title> — <role>, <year>" so
+    // screen-reader users hear the same context sighted users see in the card body.
     const link = screen.getByRole('link', {
       name: /accessmap.*solo builder.*2026/i,
     });
     expect(link).toBeInTheDocument();
   });
 
-  it('hero <img> carries explicit width/height for CLS (Alex F-C4-3, Cycle 6)', () => {
-    render(<ProjectCard deliverable={baseDeliverable} />);
-    const img = screen.getByAltText(/warm-toned mockup/i);
-    // Cycle 23 refined the default aspect from 4:3 (800×600) to 3:2
-    // (900×600). The wide variant uses 1280×720 (16:9) — covered below.
-    expect(img).toHaveAttribute('width', '900');
-    expect(img).toHaveAttribute('height', '600');
+  it('renders a live demo link when a demo URL is provided', () => {
+    const withDemo = {
+      ...baseDeliverable,
+      links: [
+        { label: 'Live demo', href: 'https://access-map-tau.vercel.app', type: 'demo' as const },
+      ],
+    };
+    render(<ProjectCard deliverable={withDemo} />);
+
+    const demoLink = screen.getByRole('link', {
+      name: /open live demo for accessmap/i,
+    });
+    expect(demoLink).toHaveAttribute('href', 'https://access-map-tau.vercel.app');
+    expect(demoLink).toHaveAttribute('target', '_blank');
+    expect(demoLink).toHaveAttribute('rel', 'noopener noreferrer');
   });
 
-  it('hero <img> uses the 16:9 cinematic ratio when wide=true (Cycle 23)', () => {
-    render(<ProjectCard deliverable={baseDeliverable} wide />);
-    const img = screen.getByAltText(/warm-toned mockup/i);
-    expect(img).toHaveAttribute('width', '1280');
-    expect(img).toHaveAttribute('height', '720');
+  it('renders a GitHub link when a github URL is provided', () => {
+    const withGithub = {
+      ...baseDeliverable,
+      links: [
+        { label: 'GitHub', href: 'https://github.com/Skypie99/AccessMap', type: 'github' as const },
+      ],
+    };
+    render(<ProjectCard deliverable={withGithub} />);
+
+    const githubLink = screen.getByRole('link', {
+      name: /view accessmap source on github/i,
+    });
+    expect(githubLink).toHaveAttribute('href', 'https://github.com/Skypie99/AccessMap');
   });
 
-  it('hero <img> opts into the Dani §3.3 hover scale via group-hover (Cycle 2)', () => {
-    render(<ProjectCard deliverable={baseDeliverable} />);
-    const img = screen.getByAltText(/warm-toned mockup/i);
-    // The image scales 1.02 on hover or focus of the parent .work-card link.
-    expect(img).toHaveClass('group-hover:scale-[1.02]');
-    expect(img).toHaveClass('group-focus-visible:scale-[1.02]');
-  });
-
-  it('renders the Featured pill when featured is true', () => {
+  it('renders the Featured badge when featured is true', () => {
     const { rerender } = render(<ProjectCard deliverable={baseDeliverable} />);
 
-    // featured: false → no Featured pill rendered.
+    // featured: false → no Featured badge rendered.
     expect(screen.queryByText(/^featured$/i)).not.toBeInTheDocument();
 
     rerender(
       <ProjectCard deliverable={{ ...baseDeliverable, featured: true }} />,
     );
 
-    // featured: true → uppercase "Featured" label appears with the
-    // terracotta indicator dot (the dot is aria-hidden, so we only assert
-    // on the text label).
+    // featured: true → uppercase "Featured" label appears.
     expect(screen.getByText(/^featured$/i)).toBeInTheDocument();
+  });
+
+  it('renders tech pills limited to maxTech (default 4)', () => {
+    render(<ProjectCard deliverable={baseDeliverable} />);
+
+    // baseDeliverable has 4 tech items; all 4 should appear.
+    expect(screen.getByText('Expo')).toBeInTheDocument();
+    expect(screen.getByText('React Native')).toBeInTheDocument();
+    expect(screen.getByText('Supabase')).toBeInTheDocument();
+    expect(screen.getByText('TypeScript')).toBeInTheDocument();
+  });
+
+  it('respects the maxTech prop', () => {
+    render(<ProjectCard deliverable={baseDeliverable} maxTech={2} />);
+
+    expect(screen.getByText('Expo')).toBeInTheDocument();
+    expect(screen.getByText('React Native')).toBeInTheDocument();
+    expect(screen.queryByText('Supabase')).not.toBeInTheDocument();
+    expect(screen.queryByText('TypeScript')).not.toBeInTheDocument();
   });
 });
