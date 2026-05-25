@@ -128,10 +128,19 @@ export function Footer() {
                     href={s.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out inline-flex items-center gap-1"
+                    className={cn(
+                      'font-sans text-body-sm inline-flex items-center gap-1',
+                      'transition-colors duration-fast ease-out',
+                      // GitHub gets terracotta — elevated brand presence
+                      s.platform.toLowerCase() === 'github'
+                        ? 'text-accent-text hover:text-terracotta'
+                        : 'text-near-black hover:text-accent-text',
+                    )}
                   >
                     <span className="capitalize">{s.platform}</span>
-                    <span aria-hidden="true" className="text-text-meta">{'↗'}</span>
+                    <span aria-hidden="true" className="text-text-meta">
+                      {'↗'}
+                    </span>
                     <span className="sr-only">(opens in new tab)</span>
                   </a>
                 </li>
@@ -140,18 +149,26 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom strip */}
-        <div className="mt-14 pt-6 border-t border-stone/70 flex flex-col md:flex-row gap-3 md:gap-6 justify-between">
+        {/* Bottom strip — Dani brand signature: terracotta dot beside
+            'Made with care' echoes the CTA dot pattern, ties the footer
+            into the rest of the editorial frame.
+            Dani wave5: add 'Built with Claude Code' closing line. */}
+        <div className="mt-12 pt-6 border-t border-stone flex flex-col md:flex-row gap-2 md:gap-6 justify-between items-start md:items-center">
           <p className="font-mono text-meta tracking-label uppercase text-text-meta">
             {'©'} {year} {profile.name} · All rights reserved
           </p>
-          <p className="font-mono text-meta tracking-label uppercase text-text-meta inline-flex items-center gap-2">
-            <span
-              aria-hidden="true"
-              className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta"
-            />
-            Made with care, in Canada
-          </p>
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-6">
+            <p className="font-mono text-meta tracking-label uppercase text-text-meta">
+              Built with Claude Code
+            </p>
+            <p className="font-mono text-meta tracking-label uppercase text-text-meta inline-flex items-center gap-2">
+              <span
+                aria-hidden="true"
+                className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta"
+              />
+              Made with care
+            </p>
+          </div>
         </div>
       </div>
     </footer>
