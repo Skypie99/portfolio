@@ -106,6 +106,18 @@ export default function HomePage() {
                         Read more
                         <span aria-hidden="true">{'→'}</span>
                       </Link>
+                      {d.links?.find((l) => l.type === 'github') && (
+                        <a
+                          href={d.links.find((l) => l.type === 'github')!.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`View ${d.title} source on GitHub`}
+                          className="mt-1 inline-flex items-center gap-1 font-mono text-meta tracking-label uppercase text-text-meta transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1"
+                        >
+                          GitHub
+                          <span aria-hidden="true">{'→'}</span>
+                        </a>
+                      )}
                     </div>
                   </div>
                 </article>
