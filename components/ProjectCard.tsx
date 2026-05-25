@@ -1,3 +1,4 @@
+import { AppMockup } from '@/components/AppMockup';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import type { Deliverable } from '@/lib/schema';
@@ -5,160 +6,171 @@ import type { Deliverable } from '@/lib/schema';
 type ProjectCardProps = {
   deliverable: Deliverable;
   /**
-   * Max number of tech pills to render. Default 3 — keeps the card calm and
-   * the rows even. The detail page surfaces the full list.
+   * Max number of tech pills to render. Default 4.
    */
   maxTech?: number;
   /**
-   * Cycle 23: wider hero ratio for the featured row-spanning card on /work.
-   * Default cards use 3:2 (curated index feel); wide cards use 16:9 (more
-   * cinematic for the showcase slot).
+   * Wide (featured) card — full-width span, larger mockup area, featured badge.
    */
   wide?: boolean;
   className?: string;
 };
 
 /**
- * ProjectCard — single deliverable as an editorial card.
+ * ProjectCard — luxury editorial card with live app mockup.
  *
- * Reused on /work (F-04) and anywhere else a deliverable surfaces visually
- * (e.g. the "What I'm working on" block on /about). Extracted from the
- * previous inline /work markup so the two pages share one source of truth
- * and the hover/focus rules stay in lockstep.
+ * Replaces the hero image placeholder with a pure CSS/SVG AppMockup
+ * component that previews each project's actual UI. No external images.
  *
- * Born accessible:
- *  - Whole card is a single <a> with an `aria-label` summarising destination
- *    per Alex §4.4 (link text meaningful out of context).
- *  - Hover lift (`.work-card`) mirrors :focus-visible per Alex §6.2 so
- *    keyboard users get the same affordance as mouse users.
- *  - Image carries the deliverable's alt text exactly (Alex §4.1); the
- *    cream-tinted fallback block uses the title as decorative typography
- *    (`aria-hidden`) so the alt is the sole accessible name.
- *
- * Server-friendly: no client state, no client effects. Renders identically
- * on /work (Server Component) and any future page that imports it.
+ * Accessibility:
+ *  - Card wraps title + role + summary as the accessible name via aria-label.
+ *  - Mockup is aria-hidden — decorative only.
+ *  - Focus-visible outline fires on the card link (2px terracotta).
+ *  - Demo link opens in a new tab with rel="noopener noreferrer".
  */
 export function ProjectCard({
   deliverable: d,
-  maxTech = 3,
+  maxTech = 4,
   wide = false,
   className,
 }: ProjectCardProps) {
+  const githubLink = d.links?.find((l) => l.type === 'github');
+  const demoLink = d.links?.find((l) => l.type === 'demo');
+
   return (
-    <a
-      href={`/work/${d.id}/`}
+    <div
       className={cn(
-        'work-card group block',
-        // Alex F-C4-1 fix: removed `focus:outline-none` so the global
-        // 2px Terracotta `:focus-visible` outline fires alongside the
-        // hover/focus lift. WCAG 2.4.13 needs a real focus affordance,
-        // not motion alone.
-        'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta rounded-sm',
+        'group relative flex flex-col bg-blush border border-stone rounded-lg overflow-hidden',
+        'transition-all duration-base ease-out',
+        'hover:-translate-y-1 hover:shadow-soft hover:border-pebble',
+        'focus-within:border-pebble',
+        'min-h-[520px]',
         className,
       )}
-      aria-label={`${d.title} — ${d.role}, ${d.year}`}
     >
-      {/* Hero image / placeholder block. The <img> sits above an
-          aria-hidden decorative title; if the image 404s, the cream
-          block shows through with the title typography behind it.
-
-          Dani §3.3 hover: border deepens to pebble, image scales 1.02
-          over --dur-slow --ease-out. group-hover/group-focus-visible
-          drive both from the parent <a>.work-card. */}
+      {/* ── Mockup area (top ~55% of card) ──────────────────────────── */}
       <div
         className={cn(
-          'relative w-full mb-6',
-          // Cycle 23: 3:2 for the index reads as curated;
-          // 16:9 for the featured row-spanner reads as cinematic.
-          wide ? 'aspect-[16/9]' : 'aspect-[3/2]',
-          'bg-blush border border-border-decorative overflow-hidden',
-          'flex items-center justify-center',
-          'transition-colors duration-base ease-out',
-          'group-hover:border-pebble group-focus-visible:border-pebble',
+          'relative flex items-center justify-center',
+          'bg-gradient-to-b from-warm-white to-blush',
+          wide ? 'py-10 px-8' : 'py-8 px-6',
         )}
+        aria-hidden="true"
       >
-        {/* Explicit width/height — Alex F-C4-3. Layout space is
-            already reserved by the aspect-* container; these attributes
-            give the browser an intrinsic ratio hint so it never has to
-            wait for the bitmap before painting. Cycle 23: matches the
-            wide vs default ratio above. */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={d.heroImage.src}
-          alt={d.heroImage.alt}
-          width={wide ? 1280 : 900}
-          height={wide ? 720 : 600}
-          className={cn(
-            'absolute inset-0 w-full h-full object-cover',
-            'transition-transform duration-slow ease-out',
-            'group-hover:scale-[1.02] group-focus-visible:scale-[1.02]',
-          )}
-          loading="lazy"
+        {/* Featured badge */}
+        {d.featured && (
+          <span
+            className={cn(
+              'absolute top-3 left-4',
+              'font-mono text-meta tracking-label uppercase',
+              'bg-peach-cream text-accent-text',
+              'px-2.5 py-0.5 rounded-pill',
+              'border border-sand',
+            )}
+          >
+            Featured
+          </span>
+        )}
+        <AppMockup
+          slug={d.id as 'accessmap' | 'claude-corp' | 'prompt-library' | 'mutual-mesh'}
+          className={wide ? 'scale-110' : ''}
         />
-        {/* Cycle 26: elevated placeholder overlay. A tiny terracotta dot
-            + DM Mono eyebrow above the Cormorant title turns the empty
-            well into an intentional editorial card (instead of "image
-            failed to load"). Disappears once real images replace the
-            cream blocks. aria-hidden — the alt attribute carries
-            semantics for screen readers. */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-4 text-center"
-        >
-          <span className="inline-flex items-center gap-2 font-mono text-meta tracking-label uppercase text-umber/70">
-            <span className="inline-block w-1 h-1 rounded-full bg-terracotta" />
-            {d.role}
-          </span>
-          <span className="font-serif font-light text-[1.5rem] text-umber leading-tight">
-            {d.title}
-          </span>
-        </div>
       </div>
 
-      {/* Featured tag */}
-      {d.featured && (
-        <p className="font-mono text-meta tracking-label uppercase text-accent-text mb-2 inline-flex items-center gap-2">
-          <span
-            aria-hidden="true"
-            className="inline-block w-2 h-2 rounded-full bg-terracotta"
-          />
-          Featured
+      {/* ── Content area (bottom ~45% of card) ──────────────────────── */}
+      <div className="p-6 flex flex-col gap-3 flex-1">
+        {/* Eyebrow */}
+        <p className="font-mono text-meta tracking-label uppercase text-sage-text">
+          {d.role} · {d.year}
         </p>
-      )}
 
-      {/* Title — h3 per Alex F-C4-2 so the heading rotor reads
-          h1 (page) → h2 (section, may be sr-only) → h3 (card title).
-          The visual size/weight is unchanged. */}
-      <h3 className="font-serif font-normal text-[1.75rem] text-near-black leading-tight mb-2 group-hover:text-accent-text group-focus-visible:text-accent-text transition-colors duration-fast ease-out">
-        {d.title}
-      </h3>
+        {/* Title — navigable link is the heading */}
+        <h3 className="font-serif font-normal leading-tight text-near-black" style={{ fontSize: '1.75rem' }}>
+          <a
+            href={`/work/${d.id}/`}
+            aria-label={`${d.title} — ${d.role}, ${d.year}`}
+            className={cn(
+              'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta rounded-sm',
+              'transition-colors duration-fast ease-out',
+              'group-hover:text-accent-text',
+            )}
+          >
+            {d.title}
+          </a>
+        </h3>
 
-      {/* Role + Year metadata */}
-      <p className="font-mono text-meta tracking-label uppercase text-text-meta mb-3">
-        {d.role} · {d.year}
-      </p>
+        {/* Summary */}
+        <p
+          className="font-sans font-light text-body-sm text-charcoal leading-relaxed"
+          style={{
+            display: '-webkit-box',
+            WebkitLineClamp: 3,
+            WebkitBoxOrient: 'vertical',
+            overflow: 'hidden',
+          }}
+        >
+          {d.summary}
+        </p>
 
-      {/* Summary */}
-      <p className="font-sans font-light text-body text-charcoal leading-[1.65] mb-4 max-w-[540px]">
-        {d.summary}
-      </p>
+        {/* Tech pills */}
+        <ul className="flex flex-wrap gap-2 mt-1">
+          {d.tech.slice(0, maxTech).map((t) => (
+            <li key={t}>
+              <TagPill>{t}</TagPill>
+            </li>
+          ))}
+        </ul>
 
-      {/* Tech pills — Dani §3.8 via shared TagPill primitive. */}
-      <ul className="flex flex-wrap gap-2 mb-5">
-        {d.tech.slice(0, maxTech).map((t) => (
-          <li key={t}>
-            <TagPill>{t}</TagPill>
-          </li>
-        ))}
-      </ul>
-
-      {/* Explicit "View work →" CTA — makes the card's action unambiguous
-          even without hover state. Inherits group-hover color from the
-          parent <a>'s transition for visual consistency. */}
-      <span className="inline-flex items-center gap-1 font-mono text-meta tracking-label uppercase text-accent-text transition-transform duration-fast ease-out group-hover:translate-x-1 group-focus-visible:translate-x-1">
-        View work
-        <span aria-hidden="true">{'→'}</span>
-      </span>
-    </a>
+        {/* CTA row */}
+        <div className="mt-auto flex items-center gap-4 pt-2">
+          <a
+            href={`/work/${d.id}/`}
+            className={cn(
+              'inline-flex items-center gap-1',
+              'font-mono text-meta tracking-label uppercase text-accent-text',
+              'transition-transform duration-fast ease-out',
+              'hover:translate-x-1 focus-visible:translate-x-1',
+              'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta rounded-sm',
+            )}
+            aria-label={`Read case study for ${d.title}`}
+          >
+            View case study <span aria-hidden="true">→</span>
+          </a>
+          {demoLink && (
+            <a
+              href={demoLink.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                'inline-flex items-center gap-1',
+                'font-mono text-meta tracking-label uppercase text-sage-text',
+                'transition-colors duration-fast ease-out hover:text-charcoal',
+                'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta rounded-sm',
+              )}
+              aria-label={`Open live demo for ${d.title} (opens in new tab)`}
+            >
+              Live demo <span aria-hidden="true">↗</span>
+            </a>
+          )}
+          {githubLink && (
+            <a
+              href={githubLink.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                'inline-flex items-center gap-1',
+                'font-mono text-meta tracking-label uppercase text-sage-text',
+                'transition-colors duration-fast ease-out hover:text-charcoal',
+                'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta rounded-sm',
+              )}
+              aria-label={`View ${d.title} source on GitHub (opens in new tab)`}
+            >
+              GitHub <span aria-hidden="true">↗</span>
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
   );
 }
+

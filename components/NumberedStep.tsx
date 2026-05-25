@@ -4,6 +4,11 @@ type NumberedStepProps = {
   number: string;
   title: string;
   body: string;
+  /**
+   * Wave 3: adds a left terracotta border to the numeral column,
+   * used when the step sits inside the warm-white process panel.
+   */
+  highlight?: boolean;
   className?: string;
 };
 
@@ -14,9 +19,12 @@ type NumberedStepProps = {
  * Alex BLK-3.b: at 19px the normal-text contrast rule applies, so the
  * numeral MUST be Umber (7.30:1 on cream), never raw Terracotta (3.87:1 fail).
  *
+ * Wave 3: `highlight` prop adds a terracotta left-border on the numeral
+ * column for use inside the warm-white process panel.
+ *
  * Reused for the "How I work" block on the homepage and the About page.
  */
-export function NumberedStep({ number, title, body, className }: NumberedStepProps) {
+export function NumberedStep({ number, title, body, highlight = false, className }: NumberedStepProps) {
   return (
     <div className={cn('flex gap-6 items-start', className)}>
       <span
@@ -25,6 +33,7 @@ export function NumberedStep({ number, title, body, className }: NumberedStepPro
           'font-mono text-display-s tracking-label uppercase',
           'text-accent-text',
           'shrink-0 w-12',
+          highlight && 'border-l-2 border-terracotta pl-3',
         )}
       >
         {number}
