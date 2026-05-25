@@ -20,6 +20,11 @@
         "label": "GitHub",
         "href": "https://github.com/Skypie99/AccessMap",
         "type": "github"
+      },
+      {
+        "label": "Live demo",
+        "href": "https://access-map-tau.vercel.app",
+        "type": "demo"
       }
     ],
     "tags": [
@@ -117,6 +122,11 @@
         "label": "GitHub",
         "href": "https://github.com/Skypie99/mutual-mesh",
         "type": "github"
+      },
+      {
+        "label": "Live demo",
+        "href": "https://mutual-mesh.vercel.app",
+        "type": "demo"
       }
     ],
     "tags": [
