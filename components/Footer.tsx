@@ -96,6 +96,7 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${profile.contactEmail}`}
+                  aria-label={`Send email to ${profile.contactEmail}`}
                   className="link-draw font-sans text-body-sm text-near-black break-all"
                 >
                   {profile.contactEmail}
