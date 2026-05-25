@@ -10,6 +10,9 @@
       "src": "/images/deliverables/accessmap/hero.jpg",
       "alt": "Warm-toned mockup of the AccessMap mobile interface showing accessibility flags pinned to a city map"
     },
+    "links": [
+      { "label": "GitHub", "href": "https://github.com/Skypie99/AccessMap", "type": "github" }
+    ],
     "tags": ["accessibility", "mobile", "privacy"],
     "featured": true
   },
@@ -24,6 +27,9 @@
       "src": "/images/deliverables/claude-corp/hero.jpg",
       "alt": "A printed Constitution document on a linen surface beside a single terracotta-toned cup"
     },
+    "links": [
+      { "label": "GitHub", "href": "https://github.com/Skypie99/Claude_Corp", "type": "github" }
+    ],
     "tags": ["agents", "tooling", "process"],
     "featured": false
   },
@@ -38,6 +44,9 @@
       "src": "/images/deliverables/prompt-library/hero.jpg",
       "alt": "A quiet workspace with a notebook of prompts open beside a laptop, soft natural light from the side"
     },
+    "links": [
+      { "label": "GitHub", "href": "https://github.com/Skypie99/Prompt_Libary", "type": "github" }
+    ],
     "tags": ["ai", "tools", "local-first"],
     "featured": false
   },
