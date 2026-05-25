@@ -52,6 +52,9 @@
       "src": "/images/deliverables/mutual-mesh/hero.jpg",
       "alt": "Two hands passing a small bundle across a kitchen table, soft window light from the left"
     },
+    "links": [
+      { "label": "GitHub", "href": "https://github.com/Skypie99/mutual-mesh", "type": "github" }
+    ],
     "tags": ["community", "mobile", "privacy"],
     "featured": false
   }
