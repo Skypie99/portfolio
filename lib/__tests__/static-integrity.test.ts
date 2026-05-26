@@ -1,0 +1,270 @@
+/**
+ * static-integrity.test.ts — Portfolio static export integrity checks (Gary).
+ *
+ * Reads the built ./out/ directory and asserts two structural invariants:
+ *
+ *   Gap 2 — Internal link resolution
+ *     Every internal href in every HTML file must resolve to an actual file
+ *     or directory inside ./out/. A 404 on any internal nav link is a silent
+ *     user-facing break that the build process won't catch on its own.
+ *
+ *   Gap 3 — External link rel attributes
+ *     Every <a> that points to an external URL (http:// or https://) must
+ *     carry rel="noopener noreferrer". Missing rel lets the opened page
+ *     access window.opener and read the referrer — both a security risk and
+ *     an Alex §4.5 / WCAG 3.2.5 compliance gap.
+ *
+ * IMPORTANT — requires a prior `npm run build`.
+ * These tests operate on all .html files inside ./out/. They will fail with a clear message
+ * if ./out/ doesn't exist yet (run `npm run build` first, or use
+ * `npm run test:static` which chains build → test).
+ *
+ * No mocks. No browser. Pure node:fs on the real artifact.
+ */
+
+import { existsSync, readFileSync } from 'node:fs';
+import { join, resolve } from 'node:path';
+import { describe, expect, it } from 'vitest';
+
+// ---------------------------------------------------------------------------
+// Helpers
+// ---------------------------------------------------------------------------
+
+const OUT_DIR = resolve(process.cwd(), 'out');
+
+/** Walk ./out/ and return absolute paths of every .html file. */
+function collectHtmlFiles(dir: string): string[] {
+  const { readdirSync, statSync } = require('node:fs') as typeof import('node:fs');
+  const results: string[] = [];
+  for (const entry of readdirSync(dir)) {
+    const full = join(dir, entry);
+    if (statSync(full).isDirectory()) {
+      results.push(...collectHtmlFiles(full));
+    } else if (entry.endsWith('.html')) {
+      results.push(full);
+    }
+  }
+  return results;
+}
+
+/**
+ * Extract all href values from <a> tags in an HTML string.
+ * Returns raw href strings as they appear in the source.
+ */
+function extractAnchorHrefs(html: string): string[] {
+  const hrefs: string[] = [];
+  // Match <a ... href="..." ...> — captures the href value
+  const pattern = /<a\s[^>]*href="([^"]+)"/gi;
+  let match: RegExpExecArray | null;
+  while ((match = pattern.exec(html)) !== null) {
+    hrefs.push(match[1]);
+  }
+  return hrefs;
+}
+
+/**
+ * Extract all <a> tag full attribute strings for rel checking.
+ * Returns objects with href + rel (may be undefined).
+ */
+function extractAnchors(html: string): Array<{ href: string; rel: string | undefined }> {
+  const anchors: Array<{ href: string; rel: string | undefined }> = [];
+  // Match full <a ...> opening tags
+  const tagPattern = /<a\s([^>]*)>/gi;
+  let tagMatch: RegExpExecArray | null;
+  while ((tagMatch = tagPattern.exec(html)) !== null) {
+    const attrs = tagMatch[1];
+    const hrefMatch = /href="([^"]+)"/i.exec(attrs);
+    const relMatch = /rel="([^"]+)"/i.exec(attrs);
+    if (hrefMatch) {
+      anchors.push({
+        href: hrefMatch[1],
+        rel: relMatch ? relMatch[1] : undefined,
+      });
+    }
+  }
+  return anchors;
+}
+
+/**
+ * The Next.js static export for this site uses basePath=/portfolio in
+ * production. Internal hrefs in ./out/ therefore look like:
+ *   /portfolio/work/accessmap/
+ *   /portfolio/
+ * Strip the basePath prefix to get a path we can look up in ./out/.
+ */
+const BASE_PATH = '/portfolio';
+
+function isInternalHref(href: string): boolean {
+  // Starts with / (absolute internal) but not // (protocol-relative external)
+  return href.startsWith('/') && !href.startsWith('//');
+}
+
+function isExternalHref(href: string): boolean {
+  return href.startsWith('http://') || href.startsWith('https://');
+}
+
+/**
+ * Resolve an internal href to a filesystem path inside ./out/.
+ * Strips the basePath prefix if present, then looks for:
+ *   1. out/<path>/index.html  (directory-style URL with trailing slash)
+ *   2. out/<path>.html        (direct file)
+ *   3. out/<path>             (raw file, e.g. static assets — skipped for anchors)
+ */
+function resolveInternalHref(href: string): string | null {
+  // Strip basePath prefix
+  let path = href;
+  if (path.startsWith(BASE_PATH)) {
+    path = path.slice(BASE_PATH.length) || '/';
+  }
+
+  // Skip fragment-only links (#section) and mailto:
+  if (path.startsWith('#') || path.startsWith('mailto:')) return null;
+
+  // Strip query + fragment
+  path = path.split('?')[0].split('#')[0];
+  if (!path) return null;
+
+  // Trailing-slash → index.html
+  if (path.endsWith('/')) {
+    return join(OUT_DIR, path, 'index.html');
+  }
+
+  // Try direct .html match, then directory/index.html
+  const direct = join(OUT_DIR, path);
+  if (direct.endsWith('.html')) return direct;
+  return join(OUT_DIR, path, 'index.html');
+}
+
+// ---------------------------------------------------------------------------
+// Guard: ./out/ must exist (fail fast with a useful message)
+// ---------------------------------------------------------------------------
+
+function assertOutDirExists() {
+  if (!existsSync(OUT_DIR)) {
+    throw new Error(
+      `./out/ directory not found. Run \`npm run build\` before static-integrity tests.\n` +
+        `Expected: ${OUT_DIR}`,
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Gap 2 — Internal link resolution
+// ---------------------------------------------------------------------------
+
+describe('Gap 2 — internal link resolution', () => {
+  it('every internal href in every HTML file resolves to an existing file in ./out/', () => {
+    assertOutDirExists();
+
+    const htmlFiles = collectHtmlFiles(OUT_DIR);
+    expect(htmlFiles.length).toBeGreaterThan(0);
+
+    const broken: Array<{ file: string; href: string; expected: string }> = [];
+
+    for (const htmlFile of htmlFiles) {
+      const html = readFileSync(htmlFile, 'utf8');
+      const hrefs = extractAnchorHrefs(html);
+
+      for (const href of hrefs) {
+        if (!isInternalHref(href)) continue;
+
+        const resolved = resolveInternalHref(href);
+        if (resolved === null) continue; // mailto, fragment — skip
+
+        if (!existsSync(resolved)) {
+          broken.push({
+            file: htmlFile.replace(OUT_DIR, './out'),
+            href,
+            expected: resolved.replace(OUT_DIR, './out'),
+          });
+        }
+      }
+    }
+
+    if (broken.length > 0) {
+      const report = broken
+        .map((b) => `  [${b.file}] href="${b.href}" → missing ${b.expected}`)
+        .join('\n');
+      expect.fail(`${broken.length} broken internal link(s):\n${report}`);
+    }
+  });
+
+  it('finds at least one internal link across all pages (sanity check)', () => {
+    assertOutDirExists();
+
+    const htmlFiles = collectHtmlFiles(OUT_DIR);
+    let totalInternal = 0;
+
+    for (const htmlFile of htmlFiles) {
+      const html = readFileSync(htmlFile, 'utf8');
+      const hrefs = extractAnchorHrefs(html);
+      totalInternal += hrefs.filter(isInternalHref).length;
+    }
+
+    expect(totalInternal).toBeGreaterThan(0);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Gap 3 — External link rel attributes
+// ---------------------------------------------------------------------------
+
+describe('Gap 3 — external link rel attributes', () => {
+  it('every external <a href="https://..."> has rel="noopener noreferrer"', () => {
+    assertOutDirExists();
+
+    const htmlFiles = collectHtmlFiles(OUT_DIR);
+    expect(htmlFiles.length).toBeGreaterThan(0);
+
+    const violations: Array<{ file: string; href: string; rel: string | undefined }> = [];
+
+    for (const htmlFile of htmlFiles) {
+      const html = readFileSync(htmlFile, 'utf8');
+      const anchors = extractAnchors(html);
+
+      for (const anchor of anchors) {
+        if (!isExternalHref(anchor.href)) continue;
+
+        const rel = anchor.rel ?? '';
+        const parts = rel.split(/\s+/);
+        const hasNoopener = parts.includes('noopener');
+        const hasNoreferrer = parts.includes('noreferrer');
+
+        if (!hasNoopener || !hasNoreferrer) {
+          violations.push({
+            file: htmlFile.replace(OUT_DIR, './out'),
+            href: anchor.href,
+            rel: anchor.rel,
+          });
+        }
+      }
+    }
+
+    if (violations.length > 0) {
+      const report = violations
+        .map(
+          (v) =>
+            `  [${v.file}] href="${v.href}" rel="${v.rel ?? '(none)'}"\n` +
+            `    → needs rel="noopener noreferrer"`,
+        )
+        .join('\n');
+      expect.fail(`${violations.length} external link(s) missing rel="noopener noreferrer":\n${report}`);
+    }
+  });
+
+  it('finds at least one external link across all pages (sanity check)', () => {
+    assertOutDirExists();
+
+    const htmlFiles = collectHtmlFiles(OUT_DIR);
+    let totalExternal = 0;
+
+    for (const htmlFile of htmlFiles) {
+      const html = readFileSync(htmlFile, 'utf8');
+      const anchors = extractAnchors(html);
+      totalExternal += anchors.filter((a) => isExternalHref(a.href)).length;
+    }
+
+    // If this fails the site has no external links at all — suspicious
+    expect(totalExternal).toBeGreaterThan(0);
+  });
+});
