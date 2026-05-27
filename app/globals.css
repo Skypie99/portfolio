@@ -209,9 +209,44 @@ h1, h2, h3, h4, h5, h6 {
 .hero-enter {
   animation: fade-rise 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
-.hero-enter-delay-1 { animation-delay: 100ms; }
-.hero-enter-delay-2 { animation-delay: 200ms; }
-.hero-enter-delay-3 { animation-delay: 300ms; }
+.hero-enter-delay-1 { animation-delay: 80ms; }
+.hero-enter-delay-2 { animation-delay: 180ms; }
+.hero-enter-delay-3 { animation-delay: 320ms; }
+
+/* Hero radial wash — soft warm glow from the upper-right corner,
+   layered on the cream background. Pure CSS, no JS. The wash sits
+   behind hero content (z-0) and never intercepts pointer events. */
+.hero-wash {
+  background:
+    radial-gradient(
+      60% 50% at 90% 0%,
+      rgba(226, 151, 110, 0.18) 0%,
+      rgba(252, 243, 237, 0.00) 60%
+    ),
+    radial-gradient(
+      40% 35% at 0% 100%,
+      rgba(220, 220, 214, 0.30) 0%,
+      rgba(250, 249, 245, 0.00) 70%
+    );
+}
+
+/* Status pill — pulsing terracotta dot ring. Single-shot fade-in via
+   .hero-enter on the parent; the ping animation runs softly in a loop.
+   Reduced-motion gate disables the loop. */
+@keyframes hero-ping {
+  0%   { transform: scale(1);   opacity: 0.55; }
+  75%, 100% { transform: scale(2.25); opacity: 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-status-ping {
+    animation: hero-ping 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+}
+
+/* Modern text-wrap utilities — let the browser pick clean line breaks
+   for headlines and balanced ragged-right for body copy. No JS. */
+.text-balance { text-wrap: balance; }
+.text-pretty  { text-wrap: pretty;  }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-enter,
