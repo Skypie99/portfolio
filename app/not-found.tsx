@@ -25,11 +25,14 @@ export default function NotFound() {
           </ol>
         </nav>
 
-        <h1 className="font-serif font-light text-display-l text-near-black leading-tight mb-6">
+        <h1
+          className="font-serif font-light text-[clamp(2.5rem,6vw,4rem)] text-near-black leading-[1.05] mb-6 text-balance"
+          style={{ letterSpacing: '-0.02em' }}
+        >
           Nothing here.
         </h1>
 
-        <p className="font-sans font-light text-body text-charcoal max-w-[540px] mb-10 leading-[1.65]">
+        <p className="font-sans font-light text-[1.0625rem] text-charcoal max-w-[540px] mb-10 leading-[1.65] text-pretty">
           The page you{'’'}re looking for doesn{'’'}t exist — or it moved.
           The homepage is the best place to start, and the work index has
           every deliverable.
