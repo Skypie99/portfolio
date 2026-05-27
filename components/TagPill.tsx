@@ -25,6 +25,7 @@ export function TagPill({ children, className }: TagPillProps) {
         'inline-flex items-center px-3 py-1 rounded-pill',
         'bg-sand text-umber',
         'font-mono text-meta tracking-label uppercase',
+        'transition-colors duration-fast ease-out',
         className,
       )}
     >

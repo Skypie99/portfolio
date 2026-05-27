@@ -26,23 +26,27 @@ type NumberedStepProps = {
  */
 export function NumberedStep({ number, title, body, highlight = false, className }: NumberedStepProps) {
   return (
-    <div className={cn('flex gap-6 items-start', className)}>
+    <div className={cn('flex gap-6 md:gap-8 items-start', className)}>
       <span
         aria-hidden="true"
         className={cn(
           'font-mono text-display-s tracking-label uppercase',
           'text-accent-text',
           'shrink-0 w-12',
-          highlight && 'border-l-2 border-terracotta pl-3',
+          'leading-none pt-1',
+          highlight && 'border-l-2 border-terracotta pl-4 py-1',
         )}
       >
         {number}
       </span>
       <div className="flex flex-col gap-3">
-        <h3 className="font-serif font-normal text-[1.5rem] leading-tight text-near-black">
+        <h3
+          className="font-serif font-normal text-[1.5rem] leading-[1.15] text-near-black text-balance"
+          style={{ letterSpacing: '-0.01em' }}
+        >
           {title}
         </h3>
-        <p className="font-sans font-light text-body text-charcoal leading-[1.65] max-w-[540px]">
+        <p className="font-sans font-light text-body text-charcoal leading-[1.65] max-w-[540px] text-pretty">
           {body}
         </p>
       </div>
