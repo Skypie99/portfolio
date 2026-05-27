@@ -36,17 +36,19 @@ type Props = AnchorProps | ButtonProps;
 const base =
   // group lets the dot react to the parent's hover/focus
   'group inline-flex items-center justify-center gap-3 ' +
-  'h-14 px-6 ' +
+  'h-14 px-7 ' +
   'rounded-pill ' +
   'font-mono text-label tracking-label uppercase ' +
   'text-near-black ' +
   'border ' +
-  'transition-colors duration-base ease-out ' +
+  'transition-[background-color,border-color,box-shadow,transform] duration-base ease-out ' +
+  'hover:shadow-soft hover:-translate-y-px ' +
+  'active:translate-y-0 ' +
   // Alex BLK-3 ratified pick A: disabled state uses charcoal + 50% opacity
   // (~4.3:1 contrast — meets WCAG normal-text minimum) instead of pebble
   // which would have failed contrast. Applies to native <button disabled>.
   'disabled:text-charcoal disabled:opacity-50 ' +
-  'disabled:cursor-not-allowed disabled:hover:bg-cream';
+  'disabled:cursor-not-allowed disabled:hover:bg-cream disabled:hover:shadow-none disabled:hover:translate-y-0';
 
 const widthClasses = (full: boolean) =>
   full ? 'w-full' : 'w-full md:w-auto';
@@ -54,7 +56,7 @@ const widthClasses = (full: boolean) =>
 const variants: Record<Variant, string> = {
   primary:
     'bg-cream border-border-interactive ' +
-    'hover:bg-blush ' +
+    'hover:bg-blush hover:border-charcoal ' +
     'active:bg-peach-cream',
   ghost:
     'bg-transparent border-border-interactive ' +

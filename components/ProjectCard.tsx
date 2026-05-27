@@ -19,8 +19,11 @@ type ProjectCardProps = {
 /**
  * ProjectCard — luxury editorial card with live app mockup.
  *
- * Replaces the hero image placeholder with a pure CSS/SVG AppMockup
- * component that previews each project's actual UI. No external images.
+ * 2026-05-27 polish:
+ *  - Refined hover (border + shadow elevation + 4px lift, no scale)
+ *  - "Live" indicator dot when the deliverable has a demo link
+ *  - Cleaner CTA row — case study primary, demo + GitHub demoted to icons
+ *  - Wide cards lay out mockup + content side-by-side on md+
  *
  * Accessibility:
  *  - Card wraps title + role + summary as the accessible name via aria-label.
@@ -41,19 +44,19 @@ export function ProjectCard({
     <div
       className={cn(
         'group relative flex flex-col bg-blush border border-stone rounded-lg overflow-hidden',
-        'transition-all duration-base ease-out',
+        'transition-[transform,box-shadow,border-color] duration-base ease-out',
         'hover:-translate-y-1 hover:shadow-soft hover:border-pebble',
         'focus-within:border-pebble',
-        'min-h-[520px]',
+        wide ? 'md:flex-row md:min-h-[420px]' : 'min-h-[520px]',
         className,
       )}
     >
-      {/* ── Mockup area (top ~55% of card) ──────────────────────────── */}
+      {/* ── Mockup area ─────────────────────────────────────────────── */}
       <div
         className={cn(
           'relative flex items-center justify-center',
-          'bg-gradient-to-b from-warm-white to-blush',
-          wide ? 'py-10 px-8' : 'py-8 px-6',
+          'bg-gradient-to-br from-warm-white via-blush to-peach-cream/60',
+          wide ? 'md:w-1/2 py-12 px-8' : 'py-8 px-6',
         )}
         aria-hidden="true"
       >
@@ -61,14 +64,35 @@ export function ProjectCard({
         {d.featured && (
           <span
             className={cn(
-              'absolute top-3 left-4',
+              'absolute top-4 left-4',
               'font-mono text-meta tracking-label uppercase',
-              'bg-peach-cream text-accent-text',
-              'px-2.5 py-0.5 rounded-pill',
-              'border border-sand',
+              'bg-cream text-accent-text',
+              'px-2.5 py-1 rounded-pill',
+              'border border-sand shadow-soft',
+              'inline-flex items-center gap-1.5',
             )}
           >
+            <span className="inline-block w-1 h-1 rounded-full bg-terracotta" />
             Featured
+          </span>
+        )}
+        {/* Live indicator — only when a demo link exists */}
+        {demoLink && (
+          <span
+            className={cn(
+              'absolute top-4 right-4',
+              'font-mono text-meta tracking-label uppercase text-sage-text',
+              'bg-cream/80 backdrop-blur-sm',
+              'px-2.5 py-1 rounded-pill',
+              'border border-stone/60',
+              'inline-flex items-center gap-1.5',
+            )}
+          >
+            <span className="relative inline-flex h-1.5 w-1.5">
+              <span className="hero-status-ping absolute inline-flex h-full w-full rounded-full bg-terracotta opacity-60" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-terracotta" />
+            </span>
+            Live
           </span>
         )}
         <AppMockup
@@ -77,15 +101,19 @@ export function ProjectCard({
         />
       </div>
 
-      {/* ── Content area (bottom ~45% of card) ──────────────────────── */}
-      <div className="p-6 flex flex-col gap-3 flex-1">
+      {/* ── Content area ────────────────────────────────────────────── */}
+      <div className={cn('p-6 md:p-8 flex flex-col gap-3 flex-1', wide && 'md:w-1/2 md:justify-center')}>
         {/* Eyebrow */}
-        <p className="font-mono text-meta tracking-label uppercase text-sage-text">
+        <p className="font-mono text-meta tracking-label uppercase text-sage-text flex items-center gap-2">
+          <span aria-hidden="true" className="inline-block w-1 h-1 rounded-full bg-stone-strong" />
           {d.role} · {d.year}
         </p>
 
         {/* Title — navigable link is the heading */}
-        <h3 className="font-serif font-normal leading-tight text-near-black" style={{ fontSize: '1.75rem' }}>
+        <h3
+          className="font-serif font-normal leading-[1.1] text-near-black"
+          style={{ fontSize: wide ? '2.25rem' : '1.75rem', letterSpacing: '-0.015em' }}
+        >
           <a
             href={`/work/${d.id}/`}
             aria-label={`${d.title} — ${d.role}, ${d.year}`}
@@ -101,10 +129,10 @@ export function ProjectCard({
 
         {/* Summary */}
         <p
-          className="font-sans font-light text-body-sm text-charcoal leading-relaxed"
+          className="font-sans font-light text-body-sm text-charcoal leading-[1.65] text-pretty"
           style={{
             display: '-webkit-box',
-            WebkitLineClamp: 3,
+            WebkitLineClamp: wide ? 4 : 3,
             WebkitBoxOrient: 'vertical',
             overflow: 'hidden',
           }}
@@ -122,11 +150,11 @@ export function ProjectCard({
         </ul>
 
         {/* CTA row */}
-        <div className="mt-auto flex items-center gap-4 pt-2">
+        <div className="mt-auto pt-5 flex items-center gap-5 border-t border-stone/60">
           <a
             href={`/work/${d.id}/`}
             className={cn(
-              'inline-flex items-center gap-1',
+              'inline-flex items-center gap-1.5',
               'font-mono text-meta tracking-label uppercase text-accent-text',
               'transition-transform duration-fast ease-out',
               'hover:translate-x-1 focus-visible:translate-x-1',
@@ -134,15 +162,16 @@ export function ProjectCard({
             )}
             aria-label={`Read case study for ${d.title}`}
           >
-            View case study <span aria-hidden="true">→</span>
+            Case study <span aria-hidden="true">→</span>
           </a>
+          <span aria-hidden="true" className="text-stone">·</span>
           {demoLink && (
             <a
               href={demoLink.href}
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
-                'inline-flex items-center gap-1',
+                'inline-flex items-center gap-1.5',
                 'font-mono text-meta tracking-label uppercase text-sage-text',
                 'transition-colors duration-fast ease-out hover:text-charcoal',
                 'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta rounded-sm',
@@ -158,7 +187,7 @@ export function ProjectCard({
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
-                'inline-flex items-center gap-1',
+                'inline-flex items-center gap-1.5',
                 'font-mono text-meta tracking-label uppercase text-sage-text',
                 'transition-colors duration-fast ease-out hover:text-charcoal',
                 'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta rounded-sm',
@@ -173,4 +202,3 @@ export function ProjectCard({
     </div>
   );
 }
-
