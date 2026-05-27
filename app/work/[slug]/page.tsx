@@ -130,11 +130,14 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
                 </p>
               )}
 
-              <h1 className="font-serif font-light text-[clamp(2.25rem,5vw,3.5rem)] leading-[1.1] text-near-black">
+              <h1
+                className="font-serif font-light text-[clamp(2.25rem,5.5vw,4rem)] leading-[1.05] text-near-black text-balance"
+                style={{ letterSpacing: '-0.02em' }}
+              >
                 {d.title}
               </h1>
 
-              <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
+              <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
                 {d.summary}
               </p>
 
