@@ -157,8 +157,10 @@ export function HamburgerNav() {
             )}
           >
             {/* Wordmark — visible inside the overlay so mobile users see the site
-                name when the nav is open. Mirrors the Sidebar wordmark treatment. */}
-            <p className="font-serif font-normal text-display-s text-near-black mb-10 select-none">
+                name when the nav is open. Mirrors the Sidebar wordmark treatment.
+                aria-hidden: decorative — the dialog aria-label already names this
+                as "Primary menu"; the wordmark text adds no navigational meaning. */}
+            <p aria-hidden="true" className="font-serif font-normal text-display-s text-near-black mb-10 select-none">
               Sky Halisky
             </p>
             <nav aria-label="Primary menu" className="w-full max-w-content">
