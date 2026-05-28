@@ -62,10 +62,23 @@ const isProd = process.env.NODE_ENV === 'production';
 export function generateMetadata(): Metadata {
   const profile = getProfile();
   return {
-    title: `${profile.name} — AI Portfolio`,
-    description: profile.tagline,
+    title: 'Sky Halisky — AI Portfolio',
+    description:
+      'AI-powered apps built with Claude Code. AccessMap, MutualMesh, Prompt Library and more.',
     metadataBase: undefined,
     referrer: 'strict-origin-when-cross-origin',
+    openGraph: {
+      title: 'Sky Halisky — AI Portfolio',
+      description:
+        'AI-powered apps built with Claude Code. AccessMap, MutualMesh, Prompt Library and more.',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Sky Halisky — AI Portfolio',
+      description:
+        'AI-powered apps built with Claude Code. AccessMap, MutualMesh, Prompt Library and more.',
+    },
     other: {
       'color-scheme': 'light',
     },
