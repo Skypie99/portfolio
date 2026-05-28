@@ -69,40 +69,6 @@
     "featured": false
   },
   {
-    "id": "pacman-code-trainer",
-    "title": "Pac-Man Code Trainer",
-    "summary": "CLI commands turned into a retro arcade game. Forty flashcards covering Claude Code and macOS shortcuts, zero dependencies, runs straight from GitHub Pages.",
-    "role": "Solo builder",
-    "tech": [
-      "HTML/CSS/JavaScript",
-      "Browser-native",
-      "Arcade UI"
-    ],
-    "year": 2026,
-    "heroImage": {
-      "src": "/images/deliverables/pacman/hero.jpg",
-      "alt": "Retro arcade-style Pac-Man game interface with colorful dots and command flashcards on a dark background"
-    },
-    "links": [
-      {
-        "label": "GitHub",
-        "href": "https://github.com/Skypie99/pacman-code-trainer",
-        "type": "github"
-      },
-      {
-        "label": "Play now",
-        "href": "https://skypie99.github.io/pacman-code-trainer/",
-        "type": "demo"
-      }
-    ],
-    "tags": [
-      "learning",
-      "arcade",
-      "developer-tools"
-    ],
-    "featured": false
-  },
-  {
     "id": "prompt-library",
     "title": "Prompt Library",
     "summary": "Local-first prompt manager in Next.js 15. Prompts stay in the browser, API key never leaves the machine. Fifty features shipped across twenty stacked branches.",
