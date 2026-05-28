@@ -69,6 +69,40 @@
     "featured": false
   },
   {
+    "id": "pacman-code-trainer",
+    "title": "Pac-Man Code Trainer",
+    "summary": "A retro arcade flashcard game for memorizing Claude Code commands and Mac terminal commands. Click the right command-dot, Pac-Man chomps it. Click the wrong one, a ghost takes a life.",
+    "role": "Solo builder",
+    "tech": [
+      "HTML/CSS/JavaScript",
+      "Browser-native",
+      "Arcade UI"
+    ],
+    "year": 2026,
+    "heroImage": {
+      "src": "/images/deliverables/pacman/hero.jpg",
+      "alt": "Retro arcade-style Pac-Man game interface with colorful dots and command flashcards on a dark background"
+    },
+    "links": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com/Skypie99/pacman-code-trainer",
+        "type": "github"
+      },
+      {
+        "label": "Play now",
+        "href": "https://skypie99.github.io/pacman-code-trainer/",
+        "type": "demo"
+      }
+    ],
+    "tags": [
+      "learning",
+      "arcade",
+      "developer-tools"
+    ],
+    "featured": false
+  },
+  {
     "id": "prompt-library",
     "title": "Prompt Library",
     "summary": "A solo-built Next.js prompt manager with fifty shipped features, browser-only storage, and an API key that never leaves the user's machine.",
