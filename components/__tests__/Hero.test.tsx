@@ -33,11 +33,13 @@ describe('Hero', () => {
     ).toBeInTheDocument();
   });
 
-  it('eyebrow carries both hero-enter (mount fade) and hero-scroll-fade (Cycle 10) classes', () => {
+  it('eyebrow wrapper carries both hero-enter (mount fade) and hero-scroll-fade (Cycle 10) classes', () => {
     render(<Hero {...fixture} />);
-    const eyebrow = screen.getByText(fixture.eyebrow);
-    expect(eyebrow).toHaveClass('hero-enter');
-    expect(eyebrow).toHaveClass('hero-scroll-fade');
+    // wave5: eyebrow <p> + terracotta rule are wrapped in a single animated div.
+    // The animation classes live on the wrapper, not the <p> directly.
+    const eyebrowWrapper = screen.getByText(fixture.eyebrow).parentElement;
+    expect(eyebrowWrapper).toHaveClass('hero-enter');
+    expect(eyebrowWrapper).toHaveClass('hero-scroll-fade');
   });
 
   it('CTA dot carries the cta-dot-pulse class (Cycle 20 one-shot mount pulse)', () => {
