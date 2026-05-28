@@ -61,11 +61,28 @@ const isProd = process.env.NODE_ENV === 'production';
 
 export function generateMetadata(): Metadata {
   const profile = getProfile();
+  const siteUrl = 'https://skypie99.github.io/portfolio';
+  const description = `${profile.tagline} — Four live products, a multi-agent system, and an accessibility map. All open source.`;
   return {
     title: `${profile.name} — AI Portfolio`,
-    description: profile.tagline,
-    metadataBase: undefined,
+    description,
+    metadataBase: new URL(siteUrl),
     referrer: 'strict-origin-when-cross-origin',
+    openGraph: {
+      type: 'website',
+      url: siteUrl,
+      siteName: `${profile.name} — AI Portfolio`,
+      title: `${profile.name} — AI Portfolio`,
+      description,
+      images: [{ url: '/og-image.svg', width: 1200, height: 630, alt: `${profile.name} — AI Portfolio` }],
+      locale: 'en_CA',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${profile.name} — AI Portfolio`,
+      description,
+      images: ['/og-image.svg'],
+    },
     other: {
       'color-scheme': 'light',
     },

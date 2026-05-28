@@ -2,7 +2,7 @@
   {
     "id": "accessmap",
     "title": "AccessMap",
-    "summary": "A privacy-respecting accessibility-flagging app helping disabled users navigate the city with care and confidence.",
+    "summary": "Expo/React Native app where disabled residents flag inaccessible paths, broken ramps, and missing curb cuts — then share fixes with their neighbourhood.",
     "role": "Solo builder",
     "tech": [
       "Expo",
@@ -105,7 +105,7 @@
   {
     "id": "mutual-mesh",
     "title": "Mutual Mesh",
-    "summary": "Privacy-first mutual-aid platform connecting neighbours who want to give with neighbours who need a hand.",
+    "summary": "E2E-encrypted Expo app for mutual aid: neighbours post what they can share and what they need, matched privately without a central record of requests.",
     "role": "Lead engineer",
     "tech": [
       "Expo",
