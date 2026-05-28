@@ -156,6 +156,11 @@ export function HamburgerNav() {
               'p-8',
             )}
           >
+            {/* Wordmark — visible inside the overlay so mobile users see the site
+                name when the nav is open. Mirrors the Sidebar wordmark treatment. */}
+            <p className="font-serif font-normal text-display-s text-near-black mb-10 select-none">
+              Sky Halisky
+            </p>
             <nav aria-label="Primary menu" className="w-full max-w-content">
               <ul className="flex flex-col gap-6 items-start">
                 {NAV_ITEMS.map((item, i) => {

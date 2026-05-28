@@ -45,25 +45,26 @@ export default function AboutPage() {
             About
           </p>
           <h1 className="font-serif font-light text-display-l text-near-black leading-tight max-w-3xl mb-8">
-            I build AI tools with care.
+            I&apos;m learning to build AI tools — and documenting everything along the way.
           </h1>
 
           {/* Story paragraphs */}
           <div className="max-w-[640px] flex flex-col gap-6">
             <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
-              Most of what I make starts with a problem worth solving, then a
-              small thing that solves it well. I would rather ship one careful
-              deliverable than a dozen rough ones.
+              I&apos;m a beginner coder based in {profile.location}. I started
+              building because I had problems worth solving and couldn&apos;t
+              wait for someone else to solve them. Most days that means
+              shipping something small, learning from it, and trying again.
             </p>
             <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
-              I work from {profile.location}, mostly on AI-assisted tooling,
-              accessibility, and the quiet infrastructure that makes a product
-              feel calm to use. Long projects, small surfaces, real users.
+              My projects live at the intersection of AI tooling, accessibility,
+              and privacy. I care about who gets left out of software — so the
+              things I build try to include them instead.
             </p>
             <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
-              I keep a written record of how each thing was built and why —
-              both for the people who come next and for me, the next time I
-              need to remember.
+              I write down how each thing was built and why. Partly for the
+              people who come next. Mostly because I forget, and honest
+              documentation is the kindest thing you can leave behind.
             </p>
           </div>
         </div>
@@ -83,7 +84,7 @@ export default function AboutPage() {
               How I work
             </p>
             <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight">
-              Three quiet steps, repeated carefully.
+              Claude Code, multi-agent systems, and a lot of iteration.
             </h2>
           </div>
 
@@ -94,25 +95,108 @@ export default function AboutPage() {
               <li className="py-8 first:pt-0 last:pb-0">
                 <NumberedStep
                   number="01"
-                  title="Discover"
-                  body="Scope an AI project to the smallest honest version of the problem. Talk to the people who'll live with the thing — not just the people who will pay for it."
+                  title="Start with Claude Code"
+                  body="I use Claude Code as my primary building environment — it's where most of my projects actually get made. I describe what I want, read the output carefully, and course-correct when something feels off."
                 />
               </li>
               <li className="py-8 first:pt-0 last:pb-0">
                 <NumberedStep
                   number="02"
-                  title="Build"
-                  body="Loop with agents, iterate fast, ship-and-adjust. Type-safe and accessible from the first line. Refuse to ship what I haven't tried to use."
+                  title="Build a team of agents"
+                  body="For bigger projects, I've built Claude Corp — a 14-role multi-agent system where each role has a clear job: design, code, QA, communications. They work from a written Constitution so nothing gets decided by accident."
                 />
               </li>
               <li className="py-8 first:pt-0 last:pb-0">
                 <NumberedStep
                   number="03"
-                  title="Ship"
-                  body="Refine in production, learn from use, write down what changed and why. Follow through — a deliverable is the work plus the story of how it was made."
+                  title="Iterate until it's honest"
+                  body="I don't ship until I've used the thing myself. Then I write down what I learned — what broke, what surprised me, what I'd do differently. The documentation is part of the deliverable."
                 />
               </li>
             </ol>
+          </div>
+        </div>
+      </section>
+
+      {/* What I care about */}
+      <section
+        className={cn(
+          'reveal-on-scroll',
+          'px-gutter py-24 lg:py-32',
+          'bg-cream border-t border-border-decorative',
+        )}
+      >
+        <div className="max-w-content mx-auto">
+          <div className="mb-12">
+            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+              What I care about
+            </p>
+            <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight">
+              Accessibility, privacy, and code that doesn&apos;t cut corners.
+            </h2>
+          </div>
+
+          <div className="max-w-[640px] flex flex-col gap-6">
+            <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
+              Accessibility isn&apos;t an afterthought in my work — it&apos;s
+              the starting point. I aim for WCAG 2.2 AA on every interface I
+              touch. AccessMap exists specifically because disabled people
+              deserve better navigation tools, not retrofitted ones.
+            </p>
+            <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
+              Privacy-first means the user&apos;s data is theirs. My Prompt
+              Library stores everything locally — no backend, no account, no
+              server that might get breached. Mutual Mesh is built the same
+              way. If you don&apos;t need the data to make the product work,
+              don&apos;t collect it.
+            </p>
+            <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
+              Clean code over speed. I&apos;d rather take longer and do it
+              right than ship fast and apologise. That&apos;s not a principle
+              I picked up from a book — it&apos;s one I learned the hard way
+              by shipping things that weren&apos;t ready.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* What I'm learning */}
+      <section
+        className={cn(
+          'reveal-on-scroll',
+          'px-gutter py-24 lg:py-32',
+          'bg-cream border-t border-border-decorative',
+        )}
+      >
+        <div className="max-w-content mx-auto">
+          <div className="mb-12">
+            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+              What I&apos;m learning
+            </p>
+            <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight">
+              Still a beginner. Getting better on purpose.
+            </h2>
+          </div>
+
+          <div className="max-w-[640px] flex flex-col gap-6">
+            <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
+              I&apos;m not a trained software engineer. I came to coding
+              through building — I had ideas I wanted to exist, so I learned
+              enough to make them real. That&apos;s still how I work: I build
+              to learn, not the other way around.
+            </p>
+            <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
+              Right now I&apos;m getting better at TypeScript, React Native,
+              and designing multi-agent systems that stay safe even when
+              they&apos;re running unsupervised. Each project teaches me
+              something the last one didn&apos;t.
+            </p>
+            <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
+              I&apos;m looking for collaborators, clients, or employers who
+              want someone who will read the docs, ask the right questions,
+              and genuinely care how the thing turns out. If that sounds like
+              you, let&apos;s talk.
+            </p>
           </div>
         </div>
       </section>
