@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "test:static": "npm run build && vitest run lib/__tests__/static-integrity.test.ts"
   },
   "dependencies": {
     "clsx": "^2.1.1",
