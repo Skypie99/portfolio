@@ -71,7 +71,7 @@
   {
     "id": "pacman-code-trainer",
     "title": "Pac-Man Code Trainer",
-    "summary": "A retro arcade flashcard game for memorizing Claude Code commands and Mac terminal commands. Click the right command-dot, Pac-Man chomps it. Click the wrong one, a ghost takes a life.",
+    "summary": "Retro arcade flashcard game for memorizing Claude Code and Mac terminal commands. Click the right dot, Pac-Man chomps it; wrong dot, a ghost takes a life.",
     "role": "Solo builder",
     "tech": [
       "HTML/CSS/JavaScript",
