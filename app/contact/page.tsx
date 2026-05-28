@@ -104,7 +104,8 @@ export default function ContactPage() {
       <section
         className={cn(
           'px-gutter py-24 lg:py-32',
-          'bg-cream border-t border-border-decorative',
+          // Dani wave4: warm-white for the closing section contrast.
+          'bg-warm-white border-t border-border-decorative',
         )}
       >
         <div className="max-w-content mx-auto">

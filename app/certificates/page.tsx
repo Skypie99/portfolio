@@ -67,7 +67,8 @@ export default function CertificatesPage() {
         className={cn(
           'reveal-on-scroll',
           'px-gutter pb-24 lg:pb-32 pt-24 lg:pt-32',
-          'bg-cream border-t border-border-decorative',
+          // Dani wave4: warm-white for the grid section — blush cards pop on warm-white.
+          'bg-warm-white border-t border-border-decorative',
         )}
       >
         <div className="max-w-content mx-auto">

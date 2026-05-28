@@ -1,4 +1,5 @@
 import { AppMockup } from '@/components/AppMockup';
+
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import type { Deliverable } from '@/lib/schema';
@@ -43,20 +44,27 @@ export function ProjectCard({
   return (
     <div
       className={cn(
-        'group relative flex flex-col bg-blush border border-stone rounded-lg overflow-hidden',
-        'transition-[transform,box-shadow,border-color] duration-base ease-out',
-        'hover:-translate-y-1 hover:shadow-soft hover:border-pebble',
-        'focus-within:border-pebble',
-        wide ? 'md:flex-row' : 'min-h-[360px] sm:min-h-[520px]',
+        'work-card group block',
+        // Alex F-C4-1: focus-visible outline alongside hover/focus lift.
+        // Shamus wave2: border-l-4 + border-l-terracotta = editorial left accent.
+        // border-l-terracotta is side-specific — doesn't merge-conflict with
+        // border-stone (all-sides shorthand). border-l-4 is a distinct width group.
+        'bg-warm-white border border-stone border-l-4 border-l-terracotta rounded-md p-6',
+        'transition-colors duration-base ease-out',
+        'hover:bg-blush hover:border-stone-strong hover:shadow-soft',
+        'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta focus-visible:rounded-sm',
         className,
       )}
     >
       {/* ── Mockup area ─────────────────────────────────────────────── */}
       <div
         className={cn(
-          'relative flex items-center justify-center',
-          'bg-gradient-to-br from-warm-white via-blush to-peach-cream/60',
-          wide ? 'md:w-1/2 py-12 px-8' : 'py-8 px-6',
+          'relative w-full mb-6 overflow-hidden',
+          wide ? 'aspect-[16/9]' : 'aspect-[3/2]',
+          'bg-gradient-to-br from-blush to-peach-cream',
+          'border border-stone',
+          'transition-colors duration-base ease-out',
+          'group-hover:border-stone-strong group-focus-visible:border-stone-strong',
         )}
         aria-hidden="true"
       >

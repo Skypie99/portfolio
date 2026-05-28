@@ -12,9 +12,19 @@ import { getCertificates, getDeliverables, getProfile } from '@/lib/content';
  * Single-scroll homepage. Server Component — all content at build time, zero
  * client JS except Hero + HamburgerNav + AppMockup (client animation).
  *
- * Section rhythm (2026-05-27 polish): alternates cream → warm-white →
- * cream so the page reads with editorial paragraphing instead of a single
- * cream wash. Each section keeps the same hairline divider on top.
+ * Section order (all anchor-linked from the hamburger nav):
+ *  #hero          — Hero (F-01)
+ *  #work          — All 4 deliverables
+ *  #process       — Discover / Build / Ship
+ *  #about         — Bio
+ *  #certificates  — Credential list
+ *  #contact       — Mailto CTA
+ *
+ * Dani wave5 homepage polish:
+ *  - Section headers get terracotta left-border accent for visual hierarchy
+ *  - Contact section uses peach-cream bg for warm closing
+ *  - Contact section adds eyebrow label + email address display
+ *  - Process/Certificates alternate to bg-warm-white for rhythm
  */
 export default function HomePage() {
   const profile = getProfile();
@@ -132,23 +142,14 @@ export default function HomePage() {
         )}
       >
         <div className="max-w-content mx-auto">
-          <div className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <div>
-              <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
-                <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
-                Selected work
-              </p>
-              <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-[1.1] text-balance">
-                A handful of recent things, made with intention.
-              </h2>
-            </div>
-            <Link
-              href="/work/"
-              className="link-draw inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black self-start md:self-auto"
-            >
-              All work
-              <span aria-hidden="true">{'→'}</span>
-            </Link>
+          {/* Dani wave5: terracotta left-border accent on section headers */}
+          <div className="mb-12 pl-4 border-l-2 border-terracotta">
+            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+              Work
+            </p>
+            <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight">
+              A handful of recent things, made with intention.
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -178,9 +179,8 @@ export default function HomePage() {
         )}
       >
         <div className="max-w-content mx-auto">
-          <div className="mb-12">
-            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
-              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
+          <div className="mb-12 pl-4 border-l-2 border-terracotta">
+            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
               How I work
             </p>
             <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-[1.1] text-balance">
@@ -225,10 +225,9 @@ export default function HomePage() {
           'border-t border-border-decorative',
         )}
       >
-        <div className="max-w-content mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
-          <div className="md:col-span-4">
-            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
-              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
+        <div className="max-w-content mx-auto">
+          <div className="mb-12 pl-4 border-l-2 border-terracotta">
+            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
               About
             </p>
             <h2 className="font-serif font-light text-display-m text-near-black leading-[1.1] text-balance">
@@ -275,9 +274,8 @@ export default function HomePage() {
         )}
       >
         <div className="max-w-content mx-auto">
-          <div className="mb-12">
-            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
-              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
+          <div className="mb-12 pl-4 border-l-2 border-terracotta">
+            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
               Certificates
             </p>
             <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-[1.1] text-balance">
@@ -336,44 +334,33 @@ export default function HomePage() {
           'reveal-on-scroll',
           'px-gutter',
           'py-24 lg:py-32',
-          'bg-gradient-to-br from-cream via-blush to-peach-cream',
+          // Dani wave5: peach-cream bg — warmer closing, distinct from rhythm
+          'bg-peach-cream',
           'border-t border-border-decorative',
           'relative overflow-hidden',
         )}
       >
-        {/* Decorative serif ampersand — quiet editorial ornament. */}
-        <span
-          aria-hidden="true"
-          className="absolute -right-6 -bottom-12 font-serif font-light text-terracotta select-none pointer-events-none leading-none"
-          style={{ fontSize: 'clamp(18rem, 36vw, 28rem)', opacity: 0.07 }}
-        >
-          &amp;
-        </span>
-
-        <div className="max-w-content mx-auto flex flex-col items-start gap-10 relative">
-          <p className="font-mono text-label tracking-label uppercase text-text-meta flex items-center gap-2">
-            <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
+        <div className="max-w-content mx-auto flex flex-col items-start gap-8">
+          {/* Eyebrow label matching other sections */}
+          <p className="font-mono text-label tracking-label uppercase text-text-meta">
             Contact
           </p>
-          <h2 className="font-serif font-light text-[clamp(2.25rem,5vw,3.5rem)] text-near-black max-w-3xl leading-[1.05] text-balance" style={{ letterSpacing: '-0.02em' }}>
-            Have an AI project worth building? Let&apos;s talk.
+          <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight">
+            Have an AI project worth building?
+            <br />
+            Let&apos;s talk.
           </h2>
-          <div className="flex flex-col items-start gap-4">
-            <Button href={`mailto:${profile.contactEmail}`}>Get in touch</Button>
-            {/* Trust signals */}
-            <div className="flex flex-wrap gap-x-6 gap-y-1.5 mt-1">
-              {['Open to freelance', 'Based in Vancouver, BC', 'Reply within 48h'].map((s) => (
-                <span
-                  key={s}
-                  className="font-mono text-meta text-sage-text flex items-center gap-1.5"
-                  style={{ letterSpacing: '0.06em' }}
-                >
-                  <span className="text-terracotta" aria-hidden="true">✓</span>{' '}
-                  {s}
-                </span>
-              ))}
-            </div>
-          </div>
+          {/* Email address as warm secondary cue before CTA */}
+          <p className="font-sans font-light text-body-sm text-charcoal -mt-2">
+            Reach out at{' '}
+            <a
+              href={`mailto:${profile.contactEmail}`}
+              className="text-accent-text hover:text-terracotta transition-colors duration-fast ease-out"
+            >
+              {profile.contactEmail}
+            </a>
+          </p>
+          <Button href={`mailto:${profile.contactEmail}`}>Get in touch</Button>
         </div>
       </section>
     </>

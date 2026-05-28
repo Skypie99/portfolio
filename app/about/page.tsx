@@ -90,7 +90,8 @@ export default function AboutPage() {
         className={cn(
           'reveal-on-scroll',
           'px-gutter py-24 lg:py-32',
-          'bg-cream border-t border-border-decorative',
+          // Dani wave4: alternating rhythm — warm-white
+          'bg-warm-white border-t border-border-decorative',
         )}
       >
         <div className="max-w-content mx-auto">
@@ -181,7 +182,8 @@ export default function AboutPage() {
         className={cn(
           'reveal-on-scroll',
           'px-gutter py-24 lg:py-32',
-          'bg-cream border-t border-border-decorative',
+          // Dani wave4: alternating — warm-white
+          'bg-warm-white border-t border-border-decorative',
         )}
       >
         <div className="max-w-content mx-auto">

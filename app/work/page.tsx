@@ -77,7 +77,8 @@ export default function WorkIndexPage() {
           'reveal-on-scroll',
           'px-gutter',
           'pb-24 lg:pb-32',
-          'bg-cream',
+          // Dani wave4: warm-white contrasts the cream header for clear section rhythm.
+          'bg-warm-white',
           'border-t border-border-decorative pt-24 lg:pt-32',
         )}
       >
