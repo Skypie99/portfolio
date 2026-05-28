@@ -164,7 +164,11 @@ export function HamburgerNav() {
               Sky Halisky
             </p>
             <nav aria-label="Primary menu" className="w-full max-w-content">
-              <ul className="flex flex-col gap-6 items-start">
+              <p className="font-mono text-label tracking-label uppercase text-text-meta mb-10 flex items-center gap-2">
+                <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
+                Menu
+              </p>
+              <ul className="flex flex-col gap-7 items-start">
                 {NAV_ITEMS.map((item, i) => {
                   // Anchor links are all on the homepage; only Home gets aria-current="page"
                   const isActive = item.href === '/' && pathname === '/';
@@ -184,20 +188,20 @@ export function HamburgerNav() {
                         onClick={close}
                         aria-current={isActive ? 'page' : undefined}
                         className={cn(
-                          'group inline-flex items-center gap-4',
-                          'font-serif font-normal text-display-m leading-tight',
+                          'group inline-flex items-baseline gap-5',
+                          'font-serif font-light text-[clamp(2.25rem,7vw,4rem)] leading-[1] text-balance',
                           'text-near-black hover:text-accent-text focus-visible:text-accent-text',
                           'transition-colors duration-fast ease-out',
                         )}
+                        style={{ letterSpacing: '-0.02em' }}
                       >
-                        {/* Editorial index number — DM Mono eyebrow,
-                            terracotta on active, muted meta on inactive */}
+                        {/* Editorial index number */}
                         <span
                           aria-hidden="true"
                           className={cn(
-                            'font-mono text-meta tracking-label w-6 text-right shrink-0',
+                            'font-mono text-label tracking-label w-10 text-right shrink-0',
                             'transition-transform duration-fast ease-out',
-                            'group-hover:scale-110 group-focus-visible:scale-110',
+                            'group-hover:translate-x-1 group-focus-visible:translate-x-1',
                             isActive ? 'text-accent-text' : 'text-text-meta',
                           )}
                         >
@@ -206,7 +210,7 @@ export function HamburgerNav() {
                         {isActive && (
                           <span
                             aria-hidden="true"
-                            className="inline-block w-2 h-2 rounded-full bg-terracotta"
+                            className="inline-block w-2.5 h-2.5 rounded-full bg-terracotta self-center"
                           />
                         )}
                         <span>{item.label}</span>
@@ -215,6 +219,13 @@ export function HamburgerNav() {
                   );
                 })}
               </ul>
+              <p className="font-mono text-meta tracking-label uppercase text-text-meta mt-14 inline-flex items-center gap-2">
+                <span aria-hidden="true" className="relative inline-flex h-1.5 w-1.5">
+                  <span className="hero-status-ping absolute inline-flex h-full w-full rounded-full bg-terracotta opacity-60" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-terracotta" />
+                </span>
+                Available for work · 2026
+              </p>
             </nav>
           </motion.div>
         )}

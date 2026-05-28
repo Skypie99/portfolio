@@ -4,7 +4,12 @@ import { cn } from '@/lib/cn';
 import { getProfile } from '@/lib/content';
 
 /**
- * Footer — F-10. Three-column ffern-style. Reads from profile.json.
+ * Footer — F-10. Editorial brand block + three columns.
+ *
+ * 2026-05-27 polish: prominent wordmark + tagline + availability sits in
+ * its own row above the columns. The three columns (Site / About /
+ * Elsewhere) preserve the ffern-style nav grid Gary's Cycle 11 test
+ * locks in.
  *
  * Alex §4.5: external links open in new tab with rel="noopener noreferrer"
  * AND include a visually-hidden "(opens in new tab)" cue for SR users.
@@ -17,15 +22,30 @@ export function Footer() {
     <footer
       className={cn(
         'bg-warm-white border-t border-border-decorative',
-        'px-gutter pt-12 pb-8',
+        'px-gutter pt-16 pb-8',
       )}
     >
       <div className="max-w-content mx-auto">
-        {/* Cycle 27: bump 3-col breakpoint from md (768px) to lg (1024px)
-            so each column has enough horizontal room for its header +
-            text. Tablet width gets a single column instead of cramped
-            triplets. */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Brand block — sits above the columns */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 pb-10 border-b border-stone/60">
+          <div className="flex flex-col gap-3">
+            <Link
+              href="/"
+              className="link-draw inline-block font-serif font-normal text-[1.75rem] text-near-black leading-none self-start"
+            >
+              {profile.name}
+            </Link>
+            <p className="font-mono text-meta tracking-label uppercase text-text-meta inline-flex items-center gap-2">
+              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
+              {profile.location} · Open to work
+            </p>
+          </div>
+          <p className="font-serif font-light text-[1.25rem] text-charcoal max-w-[36ch] leading-snug text-pretty md:text-right">
+            {profile.tagline}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {/* Column 1 — Site */}
           <div className="flex flex-col gap-4">
             <h3 className="font-mono text-label tracking-label uppercase text-text-meta">
@@ -80,10 +100,10 @@ export function Footer() {
             <h3 className="font-mono text-label tracking-label uppercase text-text-meta">
               About
             </h3>
-            <p className="font-sans text-body-sm text-charcoal leading-[1.65]">
-              {profile.name} is an AI builder based in {profile.location}.
-              {' '}
-              {profile.tagline}
+            <p className="font-sans text-body-sm text-charcoal leading-[1.65] text-pretty">
+              {profile.name} is an AI builder based in {profile.location}. Long
+              projects, small surfaces, real users — and a written record of
+              how every piece got made.
             </p>
           </div>
 
@@ -120,19 +140,17 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom strip — Dani brand signature: terracotta dot beside
-            'Made with care' echoes the CTA dot pattern, ties the footer
-            into the rest of the editorial frame. */}
-        <div className="mt-12 pt-6 border-t border-border-decorative flex flex-col md:flex-row gap-2 md:gap-6 justify-between">
+        {/* Bottom strip */}
+        <div className="mt-14 pt-6 border-t border-stone/70 flex flex-col md:flex-row gap-3 md:gap-6 justify-between">
           <p className="font-mono text-meta tracking-label uppercase text-text-meta">
-            {'©'} {year} {profile.name}
+            {'©'} {year} {profile.name} · All rights reserved
           </p>
           <p className="font-mono text-meta tracking-label uppercase text-text-meta inline-flex items-center gap-2">
             <span
               aria-hidden="true"
               className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta"
             />
-            Made with care
+            Made with care, in Canada
           </p>
         </div>
       </div>
