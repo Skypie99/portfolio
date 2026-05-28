@@ -41,30 +41,33 @@ export default function AboutPage() {
       {/* Page header */}
       <section className="px-gutter py-24 lg:py-32 bg-cream">
         <div className="max-w-content mx-auto">
-          <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+          <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
+            <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
             About
           </p>
-          <h1 className="font-serif font-light text-display-l text-near-black leading-tight max-w-3xl mb-8">
-            I&apos;m learning to build AI tools — and documenting everything along the way.
+          <h1
+            className="font-serif font-light text-[clamp(2.5rem,6vw,4rem)] text-near-black leading-[1.05] max-w-3xl mb-10 text-balance"
+            style={{ letterSpacing: '-0.02em' }}
+          >
+            I build AI tools with care.
           </h1>
 
           {/* Story paragraphs */}
           <div className="max-w-[640px] flex flex-col gap-6">
-            <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
-              I&apos;m a beginner coder based in {profile.location}. I started
-              building because I had problems worth solving and couldn&apos;t
-              wait for someone else to solve them. Most days that means
-              shipping something small, learning from it, and trying again.
+            <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
+              Most of what I make starts with a problem worth solving, then a
+              small thing that solves it well. I would rather ship one careful
+              deliverable than a dozen rough ones.
             </p>
-            <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
-              My projects live at the intersection of AI tooling, accessibility,
-              and privacy. I care about who gets left out of software — so the
-              things I build try to include them instead.
+            <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
+              I work from {profile.location}, mostly on AI-assisted tooling,
+              accessibility, and the quiet infrastructure that makes a product
+              feel calm to use. Long projects, small surfaces, real users.
             </p>
-            <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
-              I write down how each thing was built and why. Partly for the
-              people who come next. Mostly because I forget, and honest
-              documentation is the kindest thing you can leave behind.
+            <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
+              I keep a written record of how each thing was built and why —
+              both for the people who come next and for me, the next time I
+              need to remember.
             </p>
           </div>
         </div>
@@ -80,11 +83,12 @@ export default function AboutPage() {
       >
         <div className="max-w-content mx-auto">
           <div className="mb-12">
-            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
+              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               How I work
             </p>
-            <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight">
-              Claude Code, multi-agent systems, and a lot of iteration.
+            <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-[1.1] text-balance">
+              Three quiet steps, repeated carefully.
             </h2>
           </div>
 
@@ -212,10 +216,11 @@ export default function AboutPage() {
         >
           <div className="max-w-content mx-auto">
             <div className="mb-12">
-              <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+              <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
+                <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 What I{'’'}m working on
               </p>
-              <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight">
+              <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-[1.1] text-balance">
                 A handful of recent things.
               </h2>
             </div>

@@ -31,17 +31,21 @@ export default function ContactPage() {
       {/* Page header + primary CTA */}
       <section className="px-gutter py-24 lg:py-32 bg-cream">
         <div className="max-w-content mx-auto">
-          <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+          <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
+            <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
             Contact
           </p>
-          <h1 className="font-serif font-light text-display-l text-near-black leading-tight max-w-3xl mb-6">
+          <h1
+            className="font-serif font-light text-[clamp(2.5rem,6vw,4rem)] text-near-black leading-[1.05] max-w-3xl mb-8 text-balance"
+            style={{ letterSpacing: '-0.02em' }}
+          >
             Get in touch.
           </h1>
-          <p className="font-sans font-light text-body text-charcoal leading-[1.65] max-w-[640px] mb-4">
+          <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] max-w-[640px] mb-4 text-pretty">
             Best for AI engineering, accessibility, or thoughtful product
             collaborations. I reply to most messages within a few days.
           </p>
-          <p className="font-sans font-light text-body text-charcoal leading-[1.65] max-w-[640px] mb-10">
+          <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] max-w-[640px] mb-10 text-pretty">
             For everything else, the socials below also work.
           </p>
 
