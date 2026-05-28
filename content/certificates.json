@@ -1,63 +1,80 @@
 [
   {
-    "id": "anthropic-claude-engineer-2025",
-    "title": "Claude Engineer Certification",
+    "id": "anthropic-ai-fluency-foundations-2026",
+    "title": "AI Fluency Framework & Foundations",
     "issuer": "Anthropic",
-    "issuedDate": "2025-11-14",
-    "credentialUrl": "https://example.com/credentials/anthropic-claude-engineer",
+    "issuedDate": "2026-05-01",
+    "credentialUrl": "https://www.anthropic.com/credentials/ef3fxd6rptc5",
+    "credentialId": "ef3fxd6rptc5",
     "badgeImage": {
-      "src": "/images/certificates/anthropic-claude-engineer-2025/badge.png",
-      "alt": "Anthropic Claude Engineer credential badge, warm-toned crest on cream"
+      "src": "/images/certificates/anthropic-ai-fluency-2026/badge.png",
+      "alt": "Anthropic AI Fluency Framework & Foundations credential badge"
     },
-    "tags": ["ai", "anthropic", "engineering"]
+    "tags": ["ai", "anthropic", "foundations"]
   },
   {
-    "id": "google-cloud-ml-engineer-2025",
-    "title": "Professional Machine Learning Engineer",
-    "issuer": "Google Cloud",
-    "issuedDate": "2025-06-02",
-    "expiresDate": "2027-06-02",
-    "credentialUrl": "https://example.com/credentials/google-ml-engineer",
+    "id": "anthropic-claude-cowork-intro-2026",
+    "title": "Introduction to Claude Cowork",
+    "issuer": "Anthropic",
+    "issuedDate": "2026-05-01",
+    "credentialUrl": "https://www.anthropic.com/credentials/rgnu9r9tyfoj",
+    "credentialId": "rgnu9r9tyfoj",
     "badgeImage": {
-      "src": "/images/certificates/google-cloud-ml-engineer-2025/badge.png",
-      "alt": "Google Cloud Professional Machine Learning Engineer badge, muted blue and grey"
+      "src": "/images/certificates/anthropic-cowork-intro-2026/badge.png",
+      "alt": "Anthropic Introduction to Claude Cowork credential badge"
     },
-    "tags": ["ml", "google-cloud", "engineering"]
+    "tags": ["ai", "anthropic", "claude", "collaboration"]
   },
   {
-    "id": "deeplearning-ai-prompt-engineering-2025",
-    "title": "Prompt Engineering for Developers",
+    "id": "anthropic-claude-101-2026",
+    "title": "Claude 101",
+    "issuer": "Anthropic",
+    "issuedDate": "2026-05-01",
+    "credentialUrl": "https://www.anthropic.com/credentials/9twktanftgpq",
+    "credentialId": "9twktanftgpq",
+    "badgeImage": {
+      "src": "/images/certificates/anthropic-claude-101-2026/badge.png",
+      "alt": "Anthropic Claude 101 credential badge"
+    },
+    "tags": ["ai", "anthropic", "claude"]
+  },
+  {
+    "id": "google-prompting-essentials-2025",
+    "title": "Google Prompting Essentials Specialization",
+    "issuer": "Google",
+    "issuedDate": "2025-07-01",
+    "credentialUrl": "https://www.coursera.org/account/accomplishments/specialization/MIQJBUVPS86V",
+    "credentialId": "MIQJBUVPS86V",
+    "badgeImage": {
+      "src": "/images/certificates/google-prompting-essentials-2025/badge.png",
+      "alt": "Google Prompting Essentials Specialization credential badge"
+    },
+    "tags": ["ai", "google", "prompting", "specialization"]
+  },
+  {
+    "id": "umich-python-getting-started-2025",
+    "title": "Programming for Everybody (Getting Started with Python)",
+    "issuer": "University of Michigan",
+    "issuedDate": "2025-06-01",
+    "credentialUrl": "https://www.coursera.org/account/accomplishments/certificate/LNNCK1O38M7U",
+    "credentialId": "LNNCK1O38M7U",
+    "badgeImage": {
+      "src": "/images/certificates/umich-python-2025/badge.png",
+      "alt": "University of Michigan Programming for Everybody Python completion badge"
+    },
+    "tags": ["python", "programming", "coursera"]
+  },
+  {
+    "id": "deeplearning-ai-for-everyone-2025",
+    "title": "AI For Everyone",
     "issuer": "DeepLearning.AI",
-    "issuedDate": "2025-03-19",
-    "credentialUrl": "https://example.com/credentials/deeplearning-ai-prompt-engineering",
+    "issuedDate": "2025-06-01",
+    "credentialUrl": "https://www.deeplearning.ai/verify/5Z1UGVB7BO2N",
+    "credentialId": "5Z1UGVB7BO2N",
     "badgeImage": {
-      "src": "/images/certificates/deeplearning-ai-prompt-engineering-2025/badge.png",
-      "alt": "DeepLearning.AI Prompt Engineering completion certificate, sage and cream layout"
+      "src": "/images/certificates/deeplearning-ai-for-everyone-2025/badge.png",
+      "alt": "DeepLearning.AI AI For Everyone completion badge"
     },
-    "tags": ["ai", "prompting", "coursera"]
-  },
-  {
-    "id": "ibm-ai-engineering-2024",
-    "title": "AI Engineering Professional Certificate",
-    "issuer": "IBM",
-    "issuedDate": "2024-09-28",
-    "credentialUrl": "https://example.com/credentials/ibm-ai-engineering",
-    "badgeImage": {
-      "src": "/images/certificates/ibm-ai-engineering-2024/badge.png",
-      "alt": "IBM AI Engineering professional badge, muted neutral palette with a quiet wordmark"
-    },
-    "tags": ["ai", "ibm", "engineering"]
-  },
-  {
-    "id": "responsible-ai-microsoft-2024",
-    "title": "Responsible AI Practices",
-    "issuer": "Microsoft Learn",
-    "issuedDate": "2024-05-11",
-    "credentialUrl": "https://example.com/credentials/microsoft-responsible-ai",
-    "badgeImage": {
-      "src": "/images/certificates/responsible-ai-microsoft-2024/badge.png",
-      "alt": "Microsoft Learn Responsible AI completion crest, calm neutral tones on cream"
-    },
-    "tags": ["ai", "ethics", "microsoft"]
+    "tags": ["ai", "deeplearning", "foundations"]
   }
 ]

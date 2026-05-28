@@ -67,19 +67,19 @@ export default function AboutPage() {
           {/* Story paragraphs */}
           <div className="max-w-[640px] flex flex-col gap-6">
             <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
-              Most of what I make starts with a problem worth solving, then a
-              small thing that solves it well. I would rather ship one careful
-              deliverable than a dozen rough ones.
+              I started building because I wanted to solve problems that mattered. Most of what I make begins with a real person, a real frustration, and a stubborn belief that technology should make their life easier, not harder. I would rather ship one careful deliverable than a dozen rough ones.
             </p>
             <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
-              I work from {profile.location}, mostly on AI-assisted tooling,
-              accessibility, and the quiet infrastructure that makes a product
-              feel calm to use. Long projects, small surfaces, real users.
+              Accessibility isn&apos;t an add-on for me — it&apos;s the baseline. I learned early that the features that help people with disabilities make everything easier for everyone. Accessible products are kind products. That shapes every line I write.
             </p>
             <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
-              I keep a written record of how each thing was built and why —
-              both for the people who come next and for me, the next time I
-              need to remember.
+              I work from {profile.location}, mostly on AI-assisted tooling, community infrastructure, and the quiet systems that make a product feel calm to use. I favor learning in the open — shipping things, talking about the process, and inviting others into the work before it&apos;s done.
+            </p>
+            <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
+              I keep a written record of how each thing was built and why — both for the people who come next and for me, the next time I need to remember. Documentation is love letter to the future.
+            </p>
+            <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
+              Right now, I&apos;m exploring what happens when accessibility, AI, and community collide. I want to build tools that help people help each other — especially the people who&apos;ve been left behind by most of tech. That&apos;s where I&apos;m headed.
             </p>
           </div>
         </div>
@@ -230,7 +230,7 @@ export default function AboutPage() {
             <div className="mb-12">
               <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
                 <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
-                What I{'’'}m working on
+                What I&apos;m working on
               </p>
               <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-[1.1] text-balance">
                 A handful of recent things.
