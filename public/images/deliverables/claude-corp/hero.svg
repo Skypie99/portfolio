@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <title>Claude Corp — multi-agent AI system hero illustration</title>
+  <defs>
+    <!-- Fine dot texture -->
+    <pattern id="cc-dots" x="0" y="0" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="9" cy="9" r="0.7" fill="#7F4323" opacity="0.055"/>
+    </pattern>
+    <!-- Center hub glow -->
+    <radialGradient id="cc-hub-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FBCFAC" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#FAF9F5" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#FAF9F5" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Hub ring gradient -->
+    <radialGradient id="cc-hub-fill" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#D06A35"/>
+      <stop offset="100%" stop-color="#7F4323"/>
+    </radialGradient>
+    <!-- Outer glow for the overall diagram -->
+    <radialGradient id="cc-bg-glow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#FCF3ED" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#FAF9F5" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Node shadow -->
+    <filter id="cc-shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#7F4323" flood-opacity="0.18"/>
+    </filter>
+    <!-- Hub shadow -->
+    <filter id="cc-hub-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#7F4323" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="#FAF9F5"/>
+  <!-- Dot texture -->
+  <rect width="800" height="500" fill="url(#cc-dots)"/>
+  <!-- Background radial glow -->
+  <rect width="800" height="500" fill="url(#cc-bg-glow)"/>
+
+  <!-- ───── Orbital rings (decorative, very subtle) ───── -->
+  <circle cx="400" cy="245" r="110" fill="none" stroke="#DCDCD6" stroke-width="0.8" stroke-dasharray="3 6" opacity="0.5"/>
+  <circle cx="400" cy="245" r="170" fill="none" stroke="#DCDCD6" stroke-width="0.6" stroke-dasharray="2 8" opacity="0.35"/>
+
+  <!-- ───── Connector lines (hub to role nodes) ───── -->
+  <!-- Hub center: 400,245 -->
+  <!-- Positions for 8 role nodes at r=145, evenly spaced at 45° intervals -->
+  <!-- N0: 400+145*sin(0°), 245-145*cos(0°) = 400, 100 -->
+  <!-- N1: 400+103, 245-103 = 503, 142 -->
+  <!-- N2: 400+145, 245 = 545, 245 -->
+  <!-- N3: 400+103, 245+103 = 503, 348 -->
+  <!-- N4: 400, 245+145 = 400, 390 -->
+  <!-- N5: 400-103, 245+103 = 297, 348 -->
+  <!-- N6: 400-145, 245 = 255, 245 -->
+  <!-- N7: 400-103, 245-103 = 297, 142 -->
+
+  <!-- Connectors — elegant thin lines -->
+  <line x1="400" y1="245" x2="400" y2="108" stroke="#DCDCD6" stroke-width="1.2" opacity="0.7"/>
+  <line x1="400" y1="245" x2="497" y2="148" stroke="#DCDCD6" stroke-width="1.2" opacity="0.7"/>
+  <line x1="400" y1="245" x2="537" y2="245" stroke="#DCDCD6" stroke-width="1.2" opacity="0.7"/>
+  <line x1="400" y1="245" x2="497" y2="342" stroke="#DCDCD6" stroke-width="1.2" opacity="0.7"/>
+  <line x1="400" y1="245" x2="400" y2="382" stroke="#DCDCD6" stroke-width="1.2" opacity="0.7"/>
+  <line x1="400" y1="245" x2="303" y2="342" stroke="#DCDCD6" stroke-width="1.2" opacity="0.7"/>
+  <line x1="400" y1="245" x2="263" y2="245" stroke="#DCDCD6" stroke-width="1.2" opacity="0.7"/>
+  <line x1="400" y1="245" x2="303" y2="148" stroke="#DCDCD6" stroke-width="1.2" opacity="0.7"/>
+
+  <!-- Outer ring partial connectors (suggesting cross-role links) -->
+  <path d="M400 108 Q450 128 497 148" stroke="#DCDCD6" stroke-width="0.7" fill="none" opacity="0.35"/>
+  <path d="M537 245 Q517 295 497 342" stroke="#DCDCD6" stroke-width="0.7" fill="none" opacity="0.3"/>
+  <path d="M400 382 Q352 362 303 342" stroke="#DCDCD6" stroke-width="0.7" fill="none" opacity="0.3"/>
+  <path d="M263 245 Q283 196 303 148" stroke="#DCDCD6" stroke-width="0.7" fill="none" opacity="0.35"/>
+
+  <!-- ───── Role nodes (8 roles) ───── -->
+  <!-- Color scheme: alternating umber / sand / stone -->
+
+  <!-- N0 top — Quinn (copy) -->
+  <g filter="url(#cc-shadow)">
+    <circle cx="400" cy="108" r="19" fill="#7F4323"/>
+  </g>
+  <circle cx="400" cy="108" r="13" fill="#7F4323"/>
+  <circle cx="400" cy="108" r="5" fill="#FBCFAC"/>
+  <text x="400" y="84" font-family="'Courier New', Courier, monospace" font-size="8" letter-spacing="1" fill="#7F4323" text-anchor="middle" opacity="0.6">QUINN</text>
+
+  <!-- N1 upper-right — Dani (design) -->
+  <g filter="url(#cc-shadow)">
+    <circle cx="497" cy="148" r="19" fill="#FBCFAC"/>
+  </g>
+  <circle cx="497" cy="148" r="13" fill="#FBCFAC"/>
+  <circle cx="497" cy="148" r="5" fill="#B35F32"/>
+  <text x="515" y="140" font-family="'Courier New', Courier, monospace" font-size="8" letter-spacing="1" fill="#7F4323" text-anchor="start" opacity="0.6">DANI</text>
+
+  <!-- N2 right — Steve (security) -->
+  <g filter="url(#cc-shadow)">
+    <circle cx="537" cy="245" r="19" fill="#7F4323"/>
+  </g>
+  <circle cx="537" cy="245" r="13" fill="#7F4323"/>
+  <circle cx="537" cy="245" r="5" fill="#FBCFAC"/>
+  <text x="562" y="249" font-family="'Courier New', Courier, monospace" font-size="8" letter-spacing="1" fill="#7F4323" text-anchor="start" opacity="0.6">STEVE</text>
+
+  <!-- N3 lower-right — Gary (performance) -->
+  <g filter="url(#cc-shadow)">
+    <circle cx="497" cy="342" r="19" fill="#FBCFAC"/>
+  </g>
+  <circle cx="497" cy="342" r="13" fill="#FBCFAC"/>
+  <circle cx="497" cy="342" r="5" fill="#B35F32"/>
+  <text x="515" y="358" font-family="'Courier New', Courier, monospace" font-size="8" letter-spacing="1" fill="#7F4323" text-anchor="start" opacity="0.6">GARY</text>
+
+  <!-- N4 bottom — Shamus (features) -->
+  <g filter="url(#cc-shadow)">
+    <circle cx="400" cy="382" r="19" fill="#E2976E"/>
+  </g>
+  <circle cx="400" cy="382" r="13" fill="#E2976E"/>
+  <circle cx="400" cy="382" r="5" fill="#FAF9F5"/>
+  <text x="400" y="410" font-family="'Courier New', Courier, monospace" font-size="8" letter-spacing="1" fill="#7F4323" text-anchor="middle" opacity="0.6">SHAMUS</text>
+
+  <!-- N5 lower-left — Alex (accessibility) -->
+  <g filter="url(#cc-shadow)">
+    <circle cx="303" cy="342" r="19" fill="#FBCFAC"/>
+  </g>
+  <circle cx="303" cy="342" r="13" fill="#FBCFAC"/>
+  <circle cx="303" cy="342" r="5" fill="#B35F32"/>
+  <text x="285" y="358" font-family="'Courier New', Courier, monospace" font-size="8" letter-spacing="1" fill="#7F4323" text-anchor="end" opacity="0.6">ALEX</text>
+
+  <!-- N6 left — Morgan (PM) -->
+  <g filter="url(#cc-shadow)">
+    <circle cx="263" cy="245" r="19" fill="#7F4323"/>
+  </g>
+  <circle cx="263" cy="245" r="13" fill="#7F4323"/>
+  <circle cx="263" cy="245" r="5" fill="#FBCFAC"/>
+  <text x="238" y="249" font-family="'Courier New', Courier, monospace" font-size="8" letter-spacing="1" fill="#7F4323" text-anchor="end" opacity="0.6">MORGAN</text>
+
+  <!-- N7 upper-left — Will (engineer) -->
+  <g filter="url(#cc-shadow)">
+    <circle cx="303" cy="148" r="19" fill="#E2976E"/>
+  </g>
+  <circle cx="303" cy="148" r="13" fill="#E2976E"/>
+  <circle cx="303" cy="148" r="5" fill="#FAF9F5"/>
+  <text x="285" y="140" font-family="'Courier New', Courier, monospace" font-size="8" letter-spacing="1" fill="#7F4323" text-anchor="end" opacity="0.6">WILL</text>
+
+  <!-- ───── Central hub ───── -->
+  <!-- Outer glow ring -->
+  <circle cx="400" cy="245" r="62" fill="url(#cc-hub-glow)"/>
+
+  <!-- Hub body -->
+  <circle cx="400" cy="245" r="46" fill="url(#cc-hub-fill)" filter="url(#cc-hub-shadow)"/>
+
+  <!-- Hub inner ring -->
+  <circle cx="400" cy="245" r="46" fill="none" stroke="#FBCFAC" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Hub inner circle (lighter) -->
+  <circle cx="400" cy="245" r="32" fill="#B35F32"/>
+
+  <!-- Constitution icon inside hub: simplified document lines -->
+  <rect x="389" y="228" width="22" height="28" rx="2" fill="none" stroke="#FAF9F5" stroke-width="1.5" opacity="0.8"/>
+  <line x1="393" y1="236" x2="407" y2="236" stroke="#FAF9F5" stroke-width="1.2" opacity="0.7"/>
+  <line x1="393" y1="242" x2="407" y2="242" stroke="#FAF9F5" stroke-width="1.2" opacity="0.7"/>
+  <line x1="393" y1="248" x2="402" y2="248" stroke="#FAF9F5" stroke-width="1.2" opacity="0.7"/>
+
+  <!-- Hub label -->
+  <text x="400" y="298" font-family="'Courier New', Courier, monospace" font-size="8" letter-spacing="2" fill="#B35F32" text-anchor="middle" opacity="0.6">ORCHESTRATOR</text>
+
+  <!-- Word mark -->
+  <text x="400" y="455" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="400" letter-spacing="4" fill="#7F4323" text-anchor="middle" opacity="0.4">CLAUDE CORP</text>
+</svg>
