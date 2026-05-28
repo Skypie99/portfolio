@@ -7,10 +7,21 @@ import { getDeliverables, getProfile } from '@/lib/content';
 
 export function generateMetadata(): Metadata {
   const profile = getProfile();
+  const description = 'A small, deliberate body of AI-assisted tools, accessibility work, and open-source projects by Sky Halisky.';
   return {
     title: `Selected Work — ${profile.name}`,
-    description:
-      'A small, deliberate body of AI-assisted tools, audits, and reference materials by Sky Halisky.',
+    description,
+    openGraph: {
+      type: 'website',
+      title: `Selected Work — ${profile.name}`,
+      description,
+      images: [{ url: '/og-image.svg', width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `Selected Work — ${profile.name}`,
+      description,
+    },
   };
 }
 

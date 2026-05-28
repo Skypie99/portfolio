@@ -47,7 +47,7 @@ export function ProjectCard({
         'transition-[transform,box-shadow,border-color] duration-base ease-out',
         'hover:-translate-y-1 hover:shadow-soft hover:border-pebble',
         'focus-within:border-pebble',
-        wide ? 'md:flex-row md:min-h-[420px]' : 'min-h-[520px]',
+        wide ? 'md:flex-row' : 'min-h-[360px] sm:min-h-[520px]',
         className,
       )}
     >
@@ -150,11 +150,11 @@ export function ProjectCard({
         </ul>
 
         {/* CTA row */}
-        <div className="mt-auto pt-5 flex items-center gap-5 border-t border-stone/60">
+        <div className="mt-auto pt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-stone/60">
           <a
             href={`/work/${d.id}/`}
             className={cn(
-              'inline-flex items-center gap-1.5',
+              'inline-flex items-center gap-1.5 whitespace-nowrap',
               'font-mono text-meta tracking-label uppercase text-accent-text',
               'transition-transform duration-fast ease-out',
               'hover:translate-x-1 focus-visible:translate-x-1',
@@ -171,7 +171,7 @@ export function ProjectCard({
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
-                'inline-flex items-center gap-1.5',
+                'inline-flex items-center gap-1.5 whitespace-nowrap',
                 'font-mono text-meta tracking-label uppercase text-sage-text',
                 'transition-colors duration-fast ease-out hover:text-charcoal',
                 'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta rounded-sm',
@@ -187,7 +187,7 @@ export function ProjectCard({
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
-                'inline-flex items-center gap-1.5',
+                'inline-flex items-center gap-1.5 whitespace-nowrap',
                 'font-mono text-meta tracking-label uppercase text-sage-text',
                 'transition-colors duration-fast ease-out hover:text-charcoal',
                 'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta rounded-sm',

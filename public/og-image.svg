@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <title>Sky Halisky — AI Portfolio</title>
+  <rect width="1200" height="630" fill="#FAF9F5"/>
+  <radialGradient id="wash" cx="90%" cy="0%" r="60%">
+    <stop offset="0%" stop-color="#E2976E" stop-opacity="0.18"/>
+    <stop offset="100%" stop-color="#FAF9F5" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="1200" height="630" fill="url(#wash)"/>
+  <rect x="40" y="40" width="1120" height="550" rx="8" fill="none" stroke="#DCDCD6" stroke-width="1"/>
+  <!-- Decorative serif ampersand ornament -->
+  <text x="820" y="620" font-family="Georgia, serif" font-size="520" font-weight="300" fill="#E2976E" opacity="0.06">&amp;</text>
+  <!-- Eyebrow -->
+  <circle cx="88" cy="102" r="5" fill="#B35F32"/>
+  <text x="104" y="108" font-family="'Courier New', Courier, monospace" font-size="13" fill="#5C5D54" letter-spacing="3">AI PORTFOLIO · 2026</text>
+  <!-- Availability pill -->
+  <rect x="88" y="120" width="182" height="28" rx="14" fill="#FCF3ED" stroke="#FBCFAC" stroke-width="1"/>
+  <circle cx="107" cy="134" r="4" fill="#B35F32"/>
+  <text x="120" y="139" font-family="'Courier New', Courier, monospace" font-size="11" fill="#B35F32" letter-spacing="2">AVAILABLE FOR WORK</text>
+  <!-- Main heading -->
+  <text x="88" y="270" font-family="Georgia, 'Times New Roman', serif" font-size="80" font-weight="300" fill="#232420" letter-spacing="-2">Sky Halisky</text>
+  <!-- Tagline -->
+  <text x="88" y="326" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="300" fill="#484A43">AI tools, built slowly. Documented honestly.</text>
+  <!-- Hairline rule -->
+  <line x1="88" y1="362" x2="380" y2="362" stroke="#DCDCD6" stroke-width="1"/>
+  <!-- Meta row — individual text elements at calculated x positions -->
+  <text x="88" y="394" font-family="'Courier New', Courier, monospace" font-size="12" fill="#5C5D54" letter-spacing="2">VANCOUVER, BC</text>
+  <text x="254" y="394" font-family="'Courier New', Courier, monospace" font-size="12" fill="#B8B8AA">·</text>
+  <text x="270" y="394" font-family="'Courier New', Courier, monospace" font-size="12" fill="#5C5D54" letter-spacing="2">4 LIVE PROJECTS</text>
+  <text x="434" y="394" font-family="'Courier New', Courier, monospace" font-size="12" fill="#B8B8AA">·</text>
+  <text x="450" y="394" font-family="'Courier New', Courier, monospace" font-size="12" fill="#5C5D54" letter-spacing="2">ALL OPEN SOURCE</text>
+  <!-- URL -->
+  <text x="88" y="556" font-family="'Courier New', Courier, monospace" font-size="14" fill="#888879" letter-spacing="0.5">skypie99.github.io/portfolio</text>
+</svg>

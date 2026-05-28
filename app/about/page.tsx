@@ -8,9 +8,21 @@ import { getDeliverables, getProfile } from '@/lib/content';
 
 export function generateMetadata(): Metadata {
   const profile = getProfile();
+  const description = `About ${profile.name}, an AI builder based in ${profile.location}. ${profile.tagline}`;
   return {
     title: `About — ${profile.name}`,
-    description: `About ${profile.name}, an AI builder based in ${profile.location}. ${profile.tagline}`,
+    description,
+    openGraph: {
+      type: 'website',
+      title: `About — ${profile.name}`,
+      description,
+      images: [{ url: '/og-image.svg', width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `About — ${profile.name}`,
+      description,
+    },
   };
 }
 
