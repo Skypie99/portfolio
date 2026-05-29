@@ -53,14 +53,16 @@ export function ProjectCard({
         'transition-colors duration-base ease-out',
         'hover:bg-blush hover:border-stone-strong hover:shadow-soft',
         'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta focus-visible:rounded-sm',
+        // Wide featured card: side-by-side mockup + content on md+.
+        wide && 'md:flex md:flex-row md:gap-8 md:items-start',
         className,
       )}
     >
       {/* ── Mockup area ─────────────────────────────────────────────── */}
       <div
         className={cn(
-          'relative w-full mb-6 overflow-hidden',
-          wide ? 'aspect-[16/9]' : 'aspect-[3/2]',
+          'relative overflow-hidden',
+          wide ? 'w-full md:w-1/2 mb-6 md:mb-0 aspect-[4/3]' : 'w-full mb-6 aspect-[3/2]',
           'bg-gradient-to-br from-blush to-peach-cream',
           'border border-stone',
           'transition-colors duration-base ease-out',
@@ -110,7 +112,7 @@ export function ProjectCard({
       </div>
 
       {/* ── Content area ────────────────────────────────────────────── */}
-      <div className={cn('p-6 md:p-8 flex flex-col gap-3 flex-1', wide && 'md:w-1/2 md:justify-center')}>
+      <div className={cn('p-6 md:p-8 flex flex-col gap-3 flex-1', wide && 'md:p-0 md:justify-center')}>
         {/* Eyebrow */}
         <p className="font-mono text-meta tracking-label uppercase text-sage-text flex items-center gap-2">
           <span aria-hidden="true" className="inline-block w-1 h-1 rounded-full bg-stone-strong" />
