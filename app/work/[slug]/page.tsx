@@ -106,12 +106,14 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
             {/* Hero image / fallback block */}
             <div className="relative w-full aspect-[4/5] bg-blush border border-border-decorative overflow-hidden flex items-center justify-center order-1 md:order-1">
               {/* Alex F-C4-3: explicit dimensions for the 4:5 hero. */}
+              {/* Peter: not LCP on mobile (below fold initially), lazy-load safe */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={d.heroImage.src}
                 alt={d.heroImage.alt}
                 width={800}
                 height={1000}
+                loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover"
               />
               {/* Cycle 26: elevated placeholder overlay matches ProjectCard. */}
