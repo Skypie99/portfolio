@@ -106,6 +106,8 @@ export function HamburgerNav() {
           'rounded-pill',
           'text-near-black hover:text-accent-primary',
           'transition-colors duration-fast ease-out',
+          // Sidebar handles desktop navigation; hamburger is mobile-only.
+          'md:hidden',
         )}
       >
         <span aria-hidden="true" className="relative block w-[22px] h-[14px]">
@@ -156,6 +158,26 @@ export function HamburgerNav() {
               'p-8',
             )}
           >
+            {/* Alex A11y 2026-05-29: Explicit close button inside the dialog trap.
+                WCAG 2.1.2 requires dialogs to be closeable via a UI mechanism within
+                the modal, not only via keyboard shortcut (Escape). AT users with
+                aria-modal="true" may not reach the trigger button outside the dialog. */}
+            <button
+              type="button"
+              onClick={close}
+              aria-label="Close navigation menu"
+              className={cn(
+                'absolute top-4 right-4',
+                'inline-flex items-center justify-center',
+                'h-11 w-11',
+                'bg-transparent border border-border-decorative rounded-pill',
+                'text-near-black hover:text-accent-primary',
+                'transition-colors duration-fast ease-out',
+              )}
+            >
+              <span aria-hidden="true" className="text-[1.25rem] leading-none font-light">{'×'}</span>
+            </button>
+
             {/* Wordmark — visible inside the overlay so mobile users see the site
                 name when the nav is open. Mirrors the Sidebar wordmark treatment.
                 aria-hidden: decorative — the dialog aria-label already names this
