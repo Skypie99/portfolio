@@ -4,7 +4,7 @@
 **Cycle:** `cycle/auto-2026-05-23` (Day-0 Kickoff)
 **Status:** PLAN ONLY. No workflow file written. No deploy performed. No repo created.
 **Authority:** Sky's intent > CONSTITUTION v1.3 > role files > skills
-**Reference pattern:** `pacman-code-trainer` → `https://skypie99.github.io/pacman-code-trainer/` (Sky's existing GH-Pages success)
+**Reference pattern:** `pacman-code-trainer` → `https://skylerhalisky.github.io/pacman-code-trainer/` (Sky's existing GH-Pages success)
 
 ---
 
@@ -167,7 +167,7 @@ git push -u origin main
 
 1. Same Settings → Pages screen → **Custom domain** field → enter e.g. `portfolio.skydev.com`.
 2. Click Save → GitHub generates a verification record.
-3. At Sky's DNS provider, add a `CNAME` record: `portfolio` → `skypie99.github.io.`
+3. At Sky's DNS provider, add a `CNAME` record: `portfolio` → `skylerhalisky.github.io.`
 4. Wait for DNS propagation (5 min – 24 hr).
 5. Back on the Pages screen, tick **"Enforce HTTPS"**.
 6. Add `/public/CNAME` file with the bare domain (e.g., `portfolio.skydev.com`) and commit.
@@ -257,8 +257,8 @@ Rory escalates these because they need human judgment, not infrastructure expert
 
 | # | Decision | Recommendation | Why it matters |
 |---|---|---|---|
-| 1 | **Repo name** | `portfolio` (lowercase, short, clean URL `skypie99.github.io/portfolio/`) | Sets `basePath` in `next.config.js` and the live URL forever |
-| 2 | **Custom domain** | Defer to next cycle. Ship to `skypie99.github.io/portfolio/` first, add domain after content is live. | Custom domain adds DNS + verification complexity; not worth it Day-0 |
+| 1 | **Repo name** | `portfolio` (lowercase, short, clean URL `skylerhalisky.github.io/portfolio/`) | Sets `basePath` in `next.config.js` and the live URL forever |
+| 2 | **Custom domain** | Defer to next cycle. Ship to `skylerhalisky.github.io/portfolio/` first, add domain after content is live. | Custom domain adds DNS + verification complexity; not worth it Day-0 |
 | 3 | **Deploy branch** | `main` (confirmed default) | Matches Constitution Art. 1 — Sky owns merges to main, main is the deploy trigger |
 | 4 | **Public vs private repo** | Public | Free GH-Pages requires public; portfolio is public-facing anyway |
 | 5 | **Node version** | `20` (current LTS) | Matches `package.json` engines field Shamus will set; CI and local dev must agree |
@@ -326,7 +326,7 @@ Sky's answers feed directly into:
 
 1. Push lands on `main`.
 2. `deploy.yml` fires automatically. `build` job: `npm ci` → `npm run build` (Next emits `out/` with `basePath=/portfolio`) → upload `out/` as the Pages artifact.
-3. `deploy` job: `deploy-pages@v4` publishes the artifact. The Actions run page shows a clickable URL: `https://skypie99.github.io/portfolio/`.
+3. `deploy` job: `deploy-pages@v4` publishes the artifact. The Actions run page shows a clickable URL: `https://skylerhalisky.github.io/portfolio/`.
 4. Estimated total runtime: ~90 seconds for the current portfolio size.
 
 ### Rollback is unchanged
