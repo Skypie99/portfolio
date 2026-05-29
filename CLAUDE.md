@@ -1,0 +1,157 @@
+# Portfolio — project context
+
+Sky's public-facing AI portfolio. Static Next.js 15 site deployed to GitHub Pages. Shows deliverables (projects), certificates, and an About page. Content lives in JSON files validated by Zod schemas at build time.
+
+**Live:** https://skypie99.github.io/portfolio/
+**Local path:** `~/Portfolio`
+**Owner:** skylerhalisky@gmail.com
+
+---
+
+## Stack
+
+- **Next.js 15** (App Router, `output: 'export'` → static HTML)
+- **React 18** + **TypeScript strict**
+- **Tailwind CSS 3** + **Framer Motion** (animation)
+- **Zod** — build-time content validation
+- **Vitest** + **@testing-library/react** — component + integration tests
+- **GitHub Pages** — hosting (auto-deploy via `.github/workflows/deploy.yml` on push to `main`)
+
+No backend. No database. No auth.
+
+---
+
+## File map
+
+```
+app/
+  layout.tsx            root layout — fonts, globals, skip link
+  page.tsx              homepage — hero + project cards
+  about/page.tsx        About page
+  work/page.tsx         full deliverables list
+  work/[slug]/page.tsx  individual deliverable detail page
+  certificates/page.tsx credentials grid
+  contact/page.tsx      contact page
+  not-found.tsx         404
+
+components/             all shared UI components
+  AppMockup.tsx         animated phone mockup used in hero
+  Hero.tsx              homepage hero section
+  ProjectCard.tsx       card for each deliverable
+  Sidebar.tsx           persistent left sidebar nav
+  HamburgerNav.tsx      mobile nav (client component)
+  Button.tsx            styled button / link button
+  TagPill.tsx           tech/category tag pill
+  NumberedStep.tsx      methodology step display
+  SkipLink.tsx          a11y skip-to-content link
+  Footer.tsx            page footer
+
+content/                edit these to update what's on the site
+  profile.json          name, tagline, location, email, socials
+  deliverables.json     array of portfolio projects (cards + detail pages)
+  certificates.json     array of credentials/badges
+
+lib/
+  schema.ts             Zod schemas — DeliverableSchema, CertificateSchema, ProfileSchema
+  content.ts            getProfile(), getDeliverables(), getCertificates() — parse + validate JSON
+  cn.ts                 clsx + tailwind-merge utility
+
+public/images/
+  deliverables/<slug>/  hero images for each project
+  certificates/<slug>/  badge images for each certificate
+```
+
+---
+
+## Content data model
+
+All content is JSON, parsed and validated at build time via `lib/content.ts`. A schema violation **fails the build** — that's intentional.
+
+### deliverables.json
+Each entry must match `DeliverableSchema`:
+- `id` — kebab-case slug (matches the `/work/[slug]` route)
+- `title`, `summary` (max 160 chars), `role`, `year`
+- `tech` — array, 1–8 items
+- `heroImage` — `{ src, alt }`, src must be under `/images/deliverables/<slug>/`
+- `gallery` — optional, max 8 images
+- `links` — optional, max 5 links, each with `label`, `href` (https only), `type` (github/demo/writeup/video/other). Max one `type: "demo"` per deliverable.
+- `tags` — max 6
+- `featured: boolean` — **exactly one** deliverable may be `featured: true`. Two or more = build error.
+
+### certificates.json
+Each entry must match `CertificateSchema`:
+- `id`, `title`, `issuer`, `issuedDate` (ISO `YYYY-MM-DD`), optional `expiresDate`
+- `credentialUrl` — must be a real https URL
+- `badgeImage` — src must be under `/images/certificates/<slug>/`
+- `tags` — max 6
+
+### profile.json
+Matches `ProfileSchema` — `name`, `wordmarkText`, `tagline`, `location`, `contactEmail`, `socials` (max 6).
+
+### Alt-text rule (Alex §4.1)
+Alt text must be 4–200 chars and must NOT start with "image of", "picture of", or "photo of". The schema enforces this — a violation fails the build.
+
+---
+
+## Deploy pipeline
+
+**Push to `main` = live within ~2 minutes.** There is no staging environment.
+
+```
+npm run build   # outputs to out/ (static export)
+# GitHub Actions picks it up automatically on push
+```
+
+The site lives at `/portfolio/` on GitHub Pages. `basePath` is set to `/portfolio` in production and `''` in dev — never hardcode the base path in links, use Next.js `<Link>` and relative paths.
+
+`trailingSlash: true` is required — GH Pages serves `/work/` via `/work/index.html`.
+
+---
+
+## Commands
+
+```
+npm run dev          # localhost:3000 (no basePath in dev)
+npm run build        # static export → out/
+npm run typecheck    # tsc --noEmit — must pass before shipping
+npm test             # vitest run (all tests)
+npm run test:static  # build + run static-integrity tests (validates links, images, JSON)
+```
+
+Always run `npm run typecheck` before declaring something done.
+
+---
+
+## Conventions
+
+- **TypeScript strict** — no `any`.
+- **Tailwind only** — no inline `style=` or raw CSS except in `globals.css`.
+- No theme system yet; color tokens are Tailwind classes.
+- Components are in `components/`, pages are in `app/`. Don't blur the line.
+- Client components (`"use client"`) only when actually needed (event handlers, browser APIs). Everything else stays server/static.
+- Tests live in `components/__tests__/` and `lib/__tests__/`. Match the filename of what you're testing.
+
+---
+
+## Gotchas (load-bearing)
+
+### 1. Push to `main` is instant production
+There's no deploy gate. Always run `npm run build && npm test` locally before pushing. A broken build silently leaves the old version up — no rollback notice.
+
+### 2. `output: 'export'` bans runtime Next.js features
+No `next/image` optimization (images are `unoptimized: true`), no API routes, no server actions, no middleware at runtime. Everything must be statically generatable.
+
+### 3. `basePath: '/portfolio'` in production
+Dev runs without basePath. `<Link href="/about">` works in both environments — Next.js prepends basePath automatically. Never manually prepend `/portfolio/` to a path.
+
+### 4. Featured-slot invariant
+Exactly 0 or 1 deliverable may have `featured: true`. Adding a second throws at build time with a clear error message. If you want to change the featured project, set the old one to `false` first.
+
+### 5. Image paths are schema-enforced
+`heroImage.src` must match `/images/deliverables/<slug>/...`. `badgeImage.src` must match `/images/certificates/<slug>/...`. The Zod regex enforces this — wrong path = build error.
+
+### 6. Security headers are documentation only
+The `headers()` block in `next.config.mjs` is present for when we migrate off GitHub Pages, but GH Pages ignores it at runtime. Don't rely on those headers being applied in production.
+
+### 7. Static-integrity test runs a full build
+`npm run test:static` calls `npm run build` first. Don't run it in hot loops — it's slow. Use `npm test` for the fast component tests during development.

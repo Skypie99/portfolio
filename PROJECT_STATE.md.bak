@@ -1,0 +1,139 @@
+---
+project: portfolio
+date: 2026-05-28
+phase: 2-kickoff
+status: phase-1-shipped-phase-2-active
+approval: sky-2026-05-28
+---
+
+# Portfolio Project State
+
+**Last updated:** 2026-05-28 (Phase 2 Kickoff)
+
+---
+
+## Phase 1: SHIPPED ✅
+
+Merged to main 2026-05-29. Includes:
+- Homepage + deliverables index
+- About page + contact
+- Work detail pages (5 projects scaffolded)
+- Certificates display
+- Luxury design tokens (warm minimalism, terracotta accent, motion system)
+- All tests passing (40/40)
+
+---
+
+## Phase 2: IN PROGRESS (KICKOFF 2026-05-28)
+
+**Approved by Sky:** All Phase 2 scope + effort estimates confirmed
+
+**Roadmap:** `qa-reports/2026-05-28_Morgan_Phase2-4_Roadmap.md`
+
+**Duration:** 15–18 days (shipping target ~2026-06-14)
+
+### Phase 2 Scope
+
+**Component Evolution (Dani)**
+- Project card elevation system (hover: soft shadow + peach-cream shift + 2px Y-translate)
+- Interactive filtering UI (category pills, smooth fade-in 280ms content swap)
+- Case study card variant (image + headline + description with muted backdrop)
+- Badge micro-components (issuer logos, verified checkmark)
+- Scroll-triggered section reveals (fade-in + 12px Y-translate)
+
+**Case Studies (5 projects, Sky + Will)**
+- 3-section narrative arc: Problem → How I Built It → What Happened
+- 300–500 words per project (approved length)
+- Optional "Lessons" sidebar (3–5 bullet-point takeaways)
+- Full OG metadata + alt text
+- Linkable at `/work/[slug]/case-study`
+
+**About Page Enhancement (Will)**
+- Add "Current Focus" section (150 words, expanding on accessibility/AI/community themes)
+
+**Performance Profiling (Peter)**
+- Scroll animation impact on Core Web Vitals (LCP, CLS, FID)
+- Zero regression requirement
+
+**QA & Testing (Gary)**
+- WCAG 2.2 AA validation on new interactive states
+- 40/40 test suite pass before merge
+
+### Phase 2 Task Assignments
+
+| Role | Task | Due | Status |
+|------|------|-----|--------|
+| **Dani** | Component design tokens + mockups (card elevation, filtering, section reveals) | ~2026-06-01 | READY TO START |
+| **Will** | Case study templates + About "Current Focus" outline | 2026-05-30 | READY TO START |
+| **Sky** | Draft 5 case study skeletons (bullet-point outlines, problem/process/outcome) | 2026-05-30 | BLOCKING PATH |
+| **Will** | Edit case studies for voice + accessibility + alt text | 2026-06-04 | Blocked on Sky drafts |
+| **Shamus** | Implement Phase 2 UI components | 2026-06-09 | Blocked on Dani tokens |
+| **Gary** | Test Phase 2 component suite | 2026-06-10 | Blocked on Shamus build |
+| **Peter** | Profile scroll animations; perf report | 2026-06-12 | Blocked on Shamus build |
+| **Morgan + Sky** | Phase 2 merge to main (pending QA thumbs-up) | 2026-06-14 | Blocked on Gary + Peter |
+
+---
+
+## Phase 3: CONDITIONAL (Decision: DEFERRED)
+
+**Status:** Awaiting Sky decision (2026-06-15 deadline)
+
+**Scope:** Blog infrastructure + 2–3 pilot posts (optional, contingent on Sky 1–2 posts/month cadence)
+
+**If approved:** 8–10 days (Will setup + Sky + Will content)
+**If deferred:** Phase 3 collapses to Dani's optional polish loop only
+
+---
+
+## Phase 4: EXPLORATORY (Decisions: DEFERRED)
+
+**Status:** Awaiting Phase 3 completion + Sky decisions
+
+**Optional items:**
+- Dark mode tokens + UI (if approved; 5–7 additional days, Dani + Shamus + Alex)
+- Long-form thought leadership posts (if Phase 3 blog establishes cadence)
+
+---
+
+## Critical Path
+
+1. **Sky case study drafts** (due 2026-05-30) → blocks Will, Shamus, all downstream
+2. **Dani design tokens** (due ~2026-06-01) → blocks Shamus UI build
+3. **Shamus Phase 2 UI build** (2026-06-02 start, due 2026-06-09) → blocks Gary tests + Peter perf
+4. **Gary tests + Peter perf** (2026-06-10–2026-06-12) → unblocks merge
+5. **Phase 2 merge** (2026-06-14) → Phase 1 + 2 live
+
+**Parallelization opportunity:** Will edits can overlap with Shamus UI build start (Will finishes first 1–2 case studies while Shamus scaffolds component structure).
+
+---
+
+## Approved Decisions
+
+| Decision | Sky Approval | Notes |
+|----------|--------------|-------|
+| Phase 2 approval | ✅ YES (2026-05-28) | Proceed with full Phase 2 scope |
+| Case study length | 300–500 words | Deeper process insights, stronger SEO |
+| Category accent tints | ✅ APPROVED | Project-category decorative backgrounds (Amber/Terracotta/Sand/Umber) |
+| Phase 3 blog | ⏳ DEFERRED | Decision deadline 2026-06-15 |
+| Phase 4 dark mode | ⏳ DEFERRED | Decision pending Phase 3 + Phase 3 completion |
+
+---
+
+## Team Availability
+
+- **Dani:** Ready to start Phase 2 tokens immediately
+- **Will:** Ready to start case study templates + About outline immediately
+- **Sky:** Owns case study narrative drafts (blocking path; due 2026-05-30)
+- **Shamus:** Standing by for Dani tokens + Sky drafts
+- **Gary:** Standing by for Shamus build
+- **Peter:** Standing by for Shamus build
+
+---
+
+## Handoff Notes
+
+- All three strategy docs finalized: Dani Vision, Will Content, Morgan Roadmap
+- Dependency graph explicit; no ambiguous gates
+- Effort estimates vetted by role leads
+- Risk mitigations documented in roadmap
+- Next checkpoint: Dani tokens + Sky drafts both due ~2026-06-01
