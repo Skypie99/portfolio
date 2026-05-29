@@ -4,16 +4,17 @@ import { notFound } from 'next/navigation';
 
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
-import { getBlogPosts, getProfile } from '@/lib/content';
+import { getAllBlogPostSlugs, getBlogPosts, getProfile } from '@/lib/content';
 
 type RouteParams = { slug: string };
 
 /**
  * Static export needs every dynamic route enumerated at build time.
- * Only non-draft posts get a page — drafts are never statically generated.
+ * We include ALL slugs (even drafts) so Next.js can generate the static file.
+ * Draft slugs resolve to notFound() at render time via getBlogPosts() filter.
  */
 export function generateStaticParams(): RouteParams[] {
-  return getBlogPosts().map((p) => ({ slug: p.id }));
+  return getAllBlogPostSlugs().map((slug) => ({ slug }));
 }
 
 export function generateMetadata({ params }: { params: RouteParams }): Metadata {
