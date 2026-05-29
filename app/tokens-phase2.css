@@ -88,8 +88,8 @@
   --badge-bg:         var(--color-cream);
   --badge-bg-hover:   var(--color-warm-white);
 
-  /* Badge border (umber accent) */
-  --badge-border:     1px solid var(--color-accent-deep);
+  /* Badge border color (umber accent) — stores color only; border-width/style set by Tailwind `border` utility */
+  --badge-border-color: var(--color-accent-deep);
 
   /* Badge accent color (umber for checkmark icon) */
   --badge-accent:     var(--color-accent-deep);
@@ -139,12 +139,27 @@
 
   /* Case Study Card spacing */
   --case-study-padding: var(--space-6);
+  /* INTENTIONAL RAW DIMENSION: 240px (15rem) = image frame height for CaseStudyCard.
+     Not on spacing scale (max space-20 = 200px). Approved as image-specific viewport
+     dimension — does not map to typographic spacing rhythm. Dani-approved exception.
+     (Const. 6.2 — intentional exception, not a token system violation.) */
   --case-study-image-height: 240px;
   --case-study-overlay-padding: var(--space-5);
 
   /* Badge group spacing */
   --badge-group-gap: var(--space-3);
   --badge-padding: var(--space-2) var(--space-3);
+}
+
+/* ==================================================================
+   CASE STUDY CARD — overlay hover via group selector
+   Implements the 15% → 25% tint deepen on card hover/focus.
+   (Replaces the former non-existent group-hover:opacity-change utility.)
+   ================================================================== */
+
+.case-study-card:hover .case-study-overlay,
+.case-study-card:focus-visible .case-study-overlay {
+  background-color: var(--case-study-overlay-hover);
 }
 
 /* ==================================================================
