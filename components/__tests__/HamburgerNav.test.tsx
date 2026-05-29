@@ -95,7 +95,10 @@ describe('HamburgerNav', () => {
     await user.click(trigger);
     expect(trigger).toHaveAttribute('aria-expanded', 'true');
     // Accessible name updates to reflect the new toggle state.
-    expect(screen.getByRole('button', { name: /close navigation menu/i })).toBe(trigger);
+    // Two "Close navigation menu" buttons exist while open: the outer trigger
+    // and the in-dialog close button (Alex A11y 2026-05-29). Confirm both exist.
+    expect(screen.getAllByRole('button', { name: /close navigation menu/i }).length).toBeGreaterThanOrEqual(1);
+    expect(trigger).toHaveAttribute('aria-controls', 'primary-menu');
 
     await user.click(trigger);
     expect(trigger).toHaveAttribute('aria-expanded', 'false');
@@ -134,8 +137,12 @@ describe('HamburgerNav', () => {
     // doesn't scroll while the menu is displayed.
     expect(document.body.style.overflow).toBe('hidden');
 
-    // Close via the trigger button.
-    await user.click(screen.getByRole('button', { name: /close navigation menu/i }));
+    // Close via the trigger button (identified by aria-controls, distinct from
+    // the in-dialog close button added by Alex A11y 2026-05-29).
+    // Two "Close navigation menu" buttons exist when open — use the one with aria-controls.
+    const closeButtons = screen.getAllByRole('button', { name: /close navigation menu/i });
+    const triggerClose = closeButtons.find((b) => b.hasAttribute('aria-controls'))!;
+    await user.click(triggerClose);
     await waitFor(() => {
       expect(trigger).toHaveAttribute('aria-expanded', 'false');
     });
