@@ -13,6 +13,7 @@ import { cn } from '@/lib/cn';
 import { getProfile } from '@/lib/content';
 
 import './globals.css';
+import './tokens-phase2.css';
 
 /**
  * Steve §Cycle 12 — meta-CSP + meta-referrer.
