@@ -2,10 +2,38 @@
 
 **Project:** Sky's AI Portfolio Website
 **Owner:** Quinn (PM)
-**Cycle:** 2026-05-23 (Day-0)
+**Last updated:** 2026-05-28 (Wave 5 completion)
 **Authority:** Sky's intent > CONSTITUTION v1.3 > role files
-**Status:** Initial backlog — no items shipped yet
-**Companion docs:** `PLAN.md` (cycle plan), `PROJECT_DESIGN.md` (Dani — in flight), `PERSONAS.md` (Riley — in flight)
+**Status:** v1 feature-complete — all P0 items shipped; P1 items complete; P2 (Journal) deferred pending Sky decision
+**Companion docs:** `PLAN.md` (cycle plan), `PROJECT_DESIGN.md` (Dani — shipped), `PERSONAS.md` (Riley — shipped)
+
+---
+
+## Shipped features (by wave)
+
+### Wave 1–3 + Cycles 2-6: Foundation & Core Features
+All P0 items shipped across the initial build waves:
+- **F-01** (Hero homepage) — Cormorant serif headline + DM Mono CTA, Cream background, scrollable intro section.
+- **F-02** (Sidebar) — Fixed left frame on desktop, persistent wordmark, featured deliverable slot, collapsible on mobile.
+- **F-03** (Hamburger nav) — Fixed top-right drawer, Escape-closable, keyboard-navigable, focus-trapped.
+- **F-04** (Work index) — 2-column grid (desktop) / 1-column (mobile), Blush card backgrounds, Cormorant titles, DM Mono labels.
+- **F-05** (Detail page) — 2-column layout (hero left, details right), full-width image gallery, stacks on mobile.
+- **F-06** (Certificates) — Grid of credential items, issuer + title + date + link, newest-first sort.
+- **F-07** (About) — Narrative intro + numbered "How I work" steps, editorial portrait slot.
+- **F-08** (Contact — mailto) — Single paragraph + mailto link, social links, no form (per DECISIONS #1).
+- **F-10** (Footer) — 3-column layout (Site / About / Social), auto-updating year, collapses on mobile.
+
+### Wave 4: Design Polish (2026-05-25)
+- Warm component palette refresh: cream/blush card backgrounds, peach-cream contact section.
+- Alternating section rhythm for visual flow.
+- Typography polish: Cormorant body weights, line-height tokens, spacing refinement.
+
+### Wave 5: Creative Polish & Refinement (2026-05-28)
+- Homepage polish: terracotta section headers, peach-cream contact background, improved section rhythm.
+- Hero test: eyebrow animation classes added (Framer Motion trigger).
+- **ProjectCard upgrade**: terracotta accent color, improved image handling, gradient fallback for missing images.
+- **Scroll indicator**: wave5-branded progress marker on homepage hero.
+- Final a11y fixes: SkipLink `:focus-visible:` improvements, contrast validation across all tokens.
 
 ---
 
@@ -42,20 +70,20 @@ These ride along with each story below. A feature is not Done unless it satisfie
 
 ---
 
-## Top of backlog (value/effort ranked)
+## Backlog status (all P0 & P1 shipped; P2 deferred)
 
-| # | ID | Title | Priority | Size | Value/Effort |
-| - | -- | ----- | -------- | ---- | ------------ |
-| 1 | F-01 | Hero homepage | P0 | M | Highest — first impression, gates everything else |
-| 2 | F-02 | Persistent left sidebar | P0 | S | High — establishes the editorial frame across all pages |
-| 3 | F-03 | Hamburger navigation | P0 | S | High — minimal cost, unlocks all routing |
-| 4 | F-04 | Deliverables index | P0 | M | Core showcase — the reason the site exists |
-| 5 | F-05 | Deliverable detail page | P0 | M | Pairs with F-04; without it, cards are dead-ends |
-| 6 | F-10 | Footer | P1 | S | Quick win, finishes the editorial frame |
-| 7 | F-06 | Certificates section | P1 | M | High value once F-04/F-05 patterns are reusable |
-| 8 | F-07 | About page | P1 | S | Establishes Sky-as-person; uses existing tokens |
-| 9 | F-08 | Contact (mailto) | P1 | S | Trivial when scoped to mailto (see Decisions #1) |
-| 10 | F-09 | Journal / Blog | P2 | L | Defer pending Sky decision (see Decisions #2) |
+| # | ID | Title | Priority | Status | Last update |
+| - | -- | ----- | -------- | ------ | ----------- |
+| 1 | F-01 | Hero homepage | P0 | ✅ SHIPPED (Wave 1) | 2026-05-28 |
+| 2 | F-02 | Persistent left sidebar | P0 | ✅ SHIPPED (Wave 1) | 2026-05-28 |
+| 3 | F-03 | Hamburger navigation | P0 | ✅ SHIPPED (Wave 1) | 2026-05-28 |
+| 4 | F-04 | Deliverables index | P0 | ✅ SHIPPED (Wave 1) | 2026-05-28 |
+| 5 | F-05 | Deliverable detail page | P0 | ✅ SHIPPED (Wave 1) | 2026-05-28 |
+| 6 | F-10 | Footer | P1 | ✅ SHIPPED (Wave 1) | 2026-05-28 |
+| 7 | F-06 | Certificates section | P1 | ✅ SHIPPED (Wave 3) | 2026-05-28 |
+| 8 | F-07 | About page | P1 | ✅ SHIPPED (Wave 3) | 2026-05-28 |
+| 9 | F-08 | Contact (mailto) | P1 | ✅ SHIPPED (Wave 3) | 2026-05-28 |
+| 10 | F-09 | Journal / Blog | P2 | 🔄 DEFERRED (pending Sky decision) | 2026-05-23 |
 
 ---
 
