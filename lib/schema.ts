@@ -116,6 +116,25 @@ export const ProfileSchema = z.object({
     .max(6),
 });
 
+/**
+ * BlogPostSchema — content/blog.json entries.
+ *
+ * Design: id is the URL slug, content is raw markdown (rendered at page level),
+ * draft posts are excluded from all listings and static params at build time.
+ * readingTimeMinutes is manually curated (not calculated) for accuracy.
+ */
+export const BlogPostSchema = z.object({
+  id: SlugSchema,
+  title: z.string().min(4).max(120),
+  summary: z.string().min(10).max(200),
+  publishedDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'must be ISO date YYYY-MM-DD'),
+  tags: z.array(z.string().min(2).max(30)).max(6),
+  readingTimeMinutes: z.number().int().positive().max(60),
+  content: z.string().min(1),
+  draft: z.boolean().optional(),
+});
+
 export type Deliverable = z.infer<typeof DeliverableSchema>;
 export type Certificate = z.infer<typeof CertificateSchema>;
 export type Profile = z.infer<typeof ProfileSchema>;
+export type BlogPost = z.infer<typeof BlogPostSchema>;

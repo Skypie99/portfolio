@@ -90,6 +90,22 @@ export function Sidebar() {
         )}
       </div>
 
+      {/* ── Blog link ─────────────────────────────────────────────── */}
+      <div className="flex flex-col gap-3">
+        <span className="font-mono text-label tracking-label uppercase text-text-meta">
+          Writing
+        </span>
+        <Link
+          href="/blog/"
+          className="group font-mono text-meta tracking-label uppercase text-accent-text inline-flex items-center gap-1"
+        >
+          <span className="group-hover:translate-x-1 group-focus-visible:translate-x-1 transition-transform duration-fast ease-out inline-flex items-center gap-1">
+            Read the blog
+            <span aria-hidden="true">{'→'}</span>
+          </span>
+        </Link>
+      </div>
+
       {/* ── Bottom block ───────────────────────────────────────────── */}
       <div className="mt-auto flex flex-col gap-4">
         <Button href={`mailto:${profile.contactEmail}`} fullWidth>
