@@ -113,6 +113,22 @@ export function getBlogPosts(): BlogPost[] {
 }
 
 /**
+ * getAllBlogPostSlugs — returns slugs for ALL posts (including drafts).
+ * Used exclusively in generateStaticParams so Next.js static export can
+ * enumerate every dynamic route. Draft slugs still resolve to notFound()
+ * at render time because getBlogPosts() filters them out.
+ */
+export function getAllBlogPostSlugs(): string[] {
+  const raw = readJson<unknown[]>('blog.json');
+  const slugs: string[] = [];
+  raw.forEach((item) => {
+    const parsed = BlogPostSchema.safeParse(item);
+    if (parsed.success) slugs.push(parsed.data.id);
+  });
+  return slugs;
+}
+
+/**
  * getCertificates — ordered newest-first by issuedDate.
  */
 export function getCertificates(): Certificate[] {
