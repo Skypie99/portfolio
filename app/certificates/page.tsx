@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+import BadgeImage from '@/components/BadgeImage';
 import { cn } from '@/lib/cn';
 import { getCertificates, getProfile } from '@/lib/content';
 
@@ -96,19 +97,17 @@ export default function CertificatesPage() {
                       duplicate meta. Becomes the real badge once Sky
                       drops actual credential images in. */}
                   <div className="relative w-full aspect-square bg-peach-cream border border-border-decorative mb-6 overflow-hidden flex items-center justify-center">
-                    {/* Alex F-C4-3: explicit dimensions for the 1:1 badge. */}
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                    {/* Alex F-C4-3: explicit dimensions for the 1:1 badge.
+                        BadgeImage is a client component so the onError
+                        fallback (graceful degradation) can fire. */}
+                    <BadgeImage
                       src={c.badgeImage.src}
                       alt={c.badgeImage.alt}
-                      width={400}
-                      height={400}
                       className={cn(
                         'absolute inset-0 w-full h-full object-contain p-4',
                         'transition-transform duration-slow ease-out',
                         'group-hover:scale-[1.02] group-focus-within:scale-[1.02]',
                       )}
-                      loading="lazy"
                     />
                   </div>
 

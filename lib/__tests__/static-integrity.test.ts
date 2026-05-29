@@ -14,6 +14,12 @@
  *     access window.opener and read the referrer — both a security risk and
  *     an Alex §4.5 / WCAG 3.2.5 compliance gap.
  *
+ *   Gap 4 — Referenced image asset existence
+ *     Every <img src="..."> pointing to a local path (not http:// / https:// /
+ *     data:) must resolve to an existing file inside ./out/. Missing images
+ *     produce broken-image icons on the live site — badge images, hero images,
+ *     and gallery images are all caught.
+ *
  * IMPORTANT — requires a prior `npm run build`.
  * These tests operate on all .html files inside ./out/. They will fail with a clear message
  * if ./out/ doesn't exist yet (run `npm run build` first, or use
@@ -268,3 +274,4 @@ describe('Gap 3 — external link rel attributes', () => {
     expect(totalExternal).toBeGreaterThan(0);
   });
 });
+
