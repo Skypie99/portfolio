@@ -50,8 +50,9 @@ export function ProjectCard({
         // border-l-terracotta is side-specific — doesn't merge-conflict with
         // border-stone (all-sides shorthand). border-l-4 is a distinct width group.
         'bg-warm-white border border-stone border-l-4 border-l-terracotta rounded-md p-6',
-        'transition-colors duration-base ease-out',
-        'hover:bg-blush hover:border-stone-strong hover:shadow-soft',
+        'transition-all duration-280 ease-out',
+        // Phase 2 elevation: hover lifts card with shadow + peach-cream tint + Y-translate
+        'hover:bg-[var(--card-bg-hover)] hover:border-[var(--card-border-hover)] hover:shadow-[var(--shadow-elevation-2)] hover:-translate-y-1',
         'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta focus-visible:rounded-sm',
         // Wide featured card: side-by-side mockup + content on md+.
         wide && 'md:flex md:flex-row md:gap-8 md:items-start',
