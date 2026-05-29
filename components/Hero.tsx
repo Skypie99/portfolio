@@ -87,14 +87,16 @@ export function Hero({ eyebrow, heading, subhead, ctaLabel, ctaHref }: HeroProps
             {ctaLabel}
           </Button>
 
-          {/* Scroll indicator — subtle affordance to continue reading */}
+          {/* Scroll indicator — subtle affordance to continue reading.
+              Alex A11y 2026-05-29: was opacity-60 (2.65:1 contrast — WCAG 1.4.3 FAIL).
+              Changed to opacity-90 (5.04:1 — PASS) while keeping the subtle feel. */}
           <a
             href="#work"
             aria-label="Scroll to work section"
             className={cn(
               'inline-flex flex-col items-center gap-1.5',
               'font-mono text-meta tracking-label uppercase text-text-meta',
-              'opacity-60 hover:opacity-100',
+              'opacity-90 hover:opacity-100',
               'transition-opacity duration-base ease-out',
             )}
           >
