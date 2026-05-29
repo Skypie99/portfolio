@@ -1,0 +1,12 @@
+[
+  {
+    "id": "building-accessmap",
+    "title": "Building AccessMap: A Beginner's Guide to Accessibility Apps",
+    "summary": "How I built a crowdsourced accessibility mapping app using Expo and Supabase — from zero coding experience to a working product.",
+    "publishedDate": "2026-05-30",
+    "tags": ["accessibility", "expo", "react-native", "supabase"],
+    "readingTimeMinutes": 5,
+    "draft": false,
+    "content": "## Why AccessMap?\n\nAccessibility information for public spaces is scattered, outdated, or missing entirely. I wanted to build something that let people with mobility challenges find out — before they arrive — whether a coffee shop has a step at the door or whether the nearest pharmacy has an accessible entrance. AccessMap is that tool: a crowdsourced map where anyone can add, verify, or dispute accessibility data for any location.\n\n## The Stack\n\nI chose Expo because it lets a single codebase target iOS and Android simultaneously, which matters when you're a solo developer. Supabase handles the backend: a Postgres database with row-level security so users can only edit their own contributions, plus real-time subscriptions that push map updates without polling. The combination is fast to iterate on and free to start.\n\n## What I Learned\n\nBuilding for accessibility while knowing almost nothing about coding forced a useful discipline: every decision had to be explainable in plain terms. Why is this button 44×44 pixels? Because WCAG 2.1 requires it for touch targets. Why does the map load accessibility data before satellite tiles? Because the data is the whole point. These constraints made the architecture cleaner, not harder.\n\n## This Post Is a Placeholder\n\nThis article is a placeholder used to test the blog infrastructure. The real article — with screenshots, architecture diagrams, and the full story of building AccessMap — will replace this content once the blog is live. If you're reading this, the infrastructure works."
+  }
+]
