@@ -28,9 +28,9 @@ export function CredentialBadge({
     <div
       className={cn(
         'badge inline-flex items-center gap-2 rounded-pill',
-        'bg-[var(--badge-bg)] border border-[var(--badge-border)]',
+        'bg-[var(--badge-bg)] border border-[var(--badge-border-color)]',
         'px-3 py-2 text-sm text-[var(--badge-text)]',
-        'transition-all duration-280 ease-out',
+        'transition-all duration-base ease-out',
         href && 'hover:bg-[var(--badge-bg-hover)] hover:text-[var(--badge-text-hover)] hover:shadow-soft',
         href && 'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta rounded-sm',
         'group',

@@ -37,7 +37,7 @@ export function FilterPill({
       className={cn(
         'pill-base inline-flex items-center gap-2 whitespace-nowrap',
         'rounded-pill font-mono text-meta tracking-label uppercase',
-        'transition-all duration-280 ease-out',
+        'transition-all duration-base ease-out',
         'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta rounded-sm',
         // Resting state
         !isActive && !disabled && [
@@ -58,7 +58,7 @@ export function FilterPill({
           className={cn(
             'inline-flex',
             isActive ? 'stroke-2' : 'stroke-[1.5]',
-            'transition-all duration-280 ease-out',
+            'transition-all duration-base ease-out',
           )}
         >
           {icon}

@@ -14,7 +14,7 @@ type CaseStudyCardProps = {
  * CaseStudyCard — Image-backed card with muted tint overlay.
  *
  * Image height: 240px
- * Overlay: terracotta 15% opacity (resting) → 25% on hover
+ * Overlay: terracotta 15% opacity (resting) → 25% on hover (via .case-study-overlay CSS selector)
  * Image hover: scale 1.02 over 520ms (duration-slow)
  * Category-specific tints applied via CSS variables
  *
@@ -45,7 +45,7 @@ export function CaseStudyCard({
       <div
         className={cn(
           'relative overflow-hidden',
-          'w-full transition-all duration-520 ease-out',
+          'w-full transition-all duration-slow ease-out',
         )}
         style={{ height: 'var(--case-study-image-height, 240px)' }}
       >
@@ -54,20 +54,19 @@ export function CaseStudyCard({
           alt={imageAlt}
           className={cn(
             'w-full h-full object-cover',
-            'transition-all duration-520 ease-out',
+            'transition-all duration-slow ease-out',
             'group-hover:scale-102',
           )}
           loading="lazy"
         />
-        {/* Category-specific tint overlay */}
+        {/* Category-specific tint overlay — hover state handled by .case-study-card:hover .case-study-overlay in tokens-phase2.css */}
         <div
           className={cn(
-            'absolute inset-0',
-            'transition-all duration-520 ease-out',
-            'group-hover:opacity-change',
+            'absolute inset-0 case-study-overlay',
+            'transition-all duration-slow ease-out',
           )}
           style={{
-            backgroundColor: `var(--case-study-overlay, rgba(179, 95, 50, 0.15))`,
+            backgroundColor: 'var(--case-study-overlay)',
           }}
           aria-hidden="true"
         />
@@ -78,7 +77,7 @@ export function CaseStudyCard({
         className={cn(
           'p-6 flex flex-col gap-3',
           'bg-warm-white border border-stone border-t-0 rounded-b-lg',
-          'transition-colors duration-280 ease-out',
+          'transition-colors duration-base ease-out',
           'group-hover:bg-blush',
         )}
       >
@@ -92,7 +91,7 @@ export function CaseStudyCard({
           className={cn(
             'inline-flex w-fit',
             'font-mono text-meta tracking-label uppercase text-accent-text',
-            'transition-transform duration-280 ease-out',
+            'transition-transform duration-base ease-out',
             'group-hover:translate-x-1',
           )}
         >
