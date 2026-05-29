@@ -342,7 +342,8 @@ export default function HomePage() {
       >
         <div className="max-w-content mx-auto flex flex-col items-start gap-8">
           {/* Eyebrow label matching other sections */}
-          <p className="font-mono text-label tracking-label uppercase text-text-meta">
+          <p className="font-mono text-label tracking-label uppercase text-text-meta flex items-center gap-2">
+            <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
             Contact
           </p>
           <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight">

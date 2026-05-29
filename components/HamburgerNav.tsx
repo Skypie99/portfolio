@@ -106,6 +106,8 @@ export function HamburgerNav() {
           'rounded-pill',
           'text-near-black hover:text-accent-primary',
           'transition-colors duration-fast ease-out',
+          // Sidebar handles desktop navigation; hamburger is mobile-only.
+          'md:hidden',
         )}
       >
         <span aria-hidden="true" className="relative block w-[22px] h-[14px]">
