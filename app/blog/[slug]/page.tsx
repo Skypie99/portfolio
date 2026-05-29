@@ -1,0 +1,219 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+
+import { TagPill } from '@/components/TagPill';
+import { cn } from '@/lib/cn';
+import { getBlogPosts, getProfile } from '@/lib/content';
+
+type RouteParams = { slug: string };
+
+/**
+ * Static export needs every dynamic route enumerated at build time.
+ * Only non-draft posts get a page — drafts are never statically generated.
+ */
+export function generateStaticParams(): RouteParams[] {
+  return getBlogPosts().map((p) => ({ slug: p.id }));
+}
+
+export function generateMetadata({ params }: { params: RouteParams }): Metadata {
+  const post = getBlogPosts().find((p) => p.id === params.slug);
+  if (!post) return { title: 'Post not found' };
+  const profile = getProfile();
+  return {
+    title: `${post.title} — ${profile.name}`,
+    description: post.summary,
+    openGraph: {
+      type: 'article',
+      title: `${post.title} — ${profile.name}`,
+      description: post.summary,
+      publishedTime: post.publishedDate,
+      images: [{ url: '/og-image.svg', width: 1200, height: 630, alt: post.title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${post.title} — ${profile.name}`,
+      description: post.summary,
+    },
+  };
+}
+
+/**
+ * renderMarkdown — lightweight markdown-to-JSX renderer for blog post content.
+ *
+ * Handles: ## headings (h2, h3), **bold**, *italic*, blank-line paragraphs.
+ * No dependency on react-markdown or remark — keeps the bundle clean and the
+ * content model predictable. If posts need tables, code blocks, or lists,
+ * extend this renderer or migrate to react-markdown at that point.
+ */
+function renderMarkdown(markdown: string): React.ReactNode[] {
+  const blocks = markdown.split(/\n{2,}/).map((b) => b.trim()).filter(Boolean);
+
+  return blocks.map((block, blockIdx) => {
+    const key = `block-${blockIdx}`;
+
+    // h3 — ### heading
+    if (block.startsWith('### ')) {
+      return (
+        <h3
+          key={key}
+          className="font-serif font-light text-[clamp(1.25rem,2.5vw,1.75rem)] text-near-black leading-[1.15] mt-10 mb-4"
+          style={{ letterSpacing: '-0.01em' }}
+        >
+          {block.slice(4)}
+        </h3>
+      );
+    }
+
+    // h2 — ## heading
+    if (block.startsWith('## ')) {
+      return (
+        <h2
+          key={key}
+          className="font-serif font-light text-[clamp(1.5rem,3vw,2.25rem)] text-near-black leading-[1.1] mt-14 mb-5 first:mt-0"
+          style={{ letterSpacing: '-0.01em' }}
+        >
+          {block.slice(3)}
+        </h2>
+      );
+    }
+
+    // Paragraph — inline bold/italic parsing
+    return (
+      <p
+        key={key}
+        className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.75] text-pretty"
+      >
+        {parseInline(block)}
+      </p>
+    );
+  });
+}
+
+/**
+ * parseInline — handles **bold** and *italic* within paragraph text.
+ */
+function parseInline(text: string): React.ReactNode[] {
+  // Split on bold (**text**) and italic (*text*), preserving delimiters.
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={i} className="font-semibold text-near-black">{part.slice(2, -2)}</strong>;
+    }
+    if (part.startsWith('*') && part.endsWith('*')) {
+      return <em key={i}>{part.slice(1, -1)}</em>;
+    }
+    return part;
+  });
+}
+
+/**
+ * /blog/[slug] — individual blog post page.
+ *
+ * Server Component. Static at build time via generateStaticParams.
+ * Layout: post header (title, date, reading time, tags) → prose body → back link.
+ */
+export default function BlogPostPage({ params }: { params: RouteParams }) {
+  const post = getBlogPosts().find((p) => p.id === params.slug);
+  if (!post) notFound();
+
+  const renderedContent = renderMarkdown(post.content);
+
+  return (
+    <>
+      {/* Post header */}
+      <section className="px-gutter pt-24 lg:pt-32 pb-12 bg-cream">
+        <div className="max-w-content mx-auto">
+          {/* Breadcrumb */}
+          <nav aria-label="Breadcrumb" className="mb-12">
+            <ol className="inline-flex items-center gap-2 font-mono text-meta tracking-label uppercase text-text-meta">
+              <li>
+                <Link href="/blog/" className="link-draw inline-block text-text-meta">
+                  Blog
+                </Link>
+              </li>
+              <li aria-hidden="true" className="text-stone">{'/'}</li>
+              <li aria-current="page" className="text-near-black truncate max-w-[240px]">
+                {post.title}
+              </li>
+            </ol>
+          </nav>
+
+          {/* Meta */}
+          <div className="flex flex-wrap items-center gap-4 mb-8">
+            <time
+              dateTime={post.publishedDate}
+              className="font-mono text-meta tracking-label uppercase text-text-meta"
+            >
+              {new Date(post.publishedDate + 'T12:00:00').toLocaleDateString('en-CA', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </time>
+            <span aria-hidden="true" className="font-mono text-meta text-stone-strong">·</span>
+            <span className="font-mono text-meta tracking-label uppercase text-text-meta">
+              {post.readingTimeMinutes} min read
+            </span>
+          </div>
+
+          {/* Title */}
+          <h1
+            className="font-serif font-light text-[clamp(2.25rem,6vw,4rem)] text-near-black leading-[1.05] max-w-3xl mb-10 text-balance"
+            style={{ letterSpacing: '-0.02em' }}
+          >
+            {post.title}
+          </h1>
+
+          {/* Summary */}
+          <p className="font-sans font-light text-[1.125rem] text-charcoal leading-[1.65] max-w-[640px] text-pretty mb-10">
+            {post.summary}
+          </p>
+
+          {/* Tags */}
+          {post.tags.length > 0 && (
+            <ul className="flex flex-wrap gap-2" aria-label="Tags">
+              {post.tags.map((tag) => (
+                <li key={tag}>
+                  <TagPill>{tag}</TagPill>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </section>
+
+      {/* Prose body */}
+      <section
+        className={cn(
+          'px-gutter',
+          'py-16 lg:py-20',
+          'bg-warm-white',
+          'border-t border-border-decorative',
+        )}
+      >
+        <div className="max-w-content mx-auto">
+          <article
+            aria-label={post.title}
+            className="max-w-[720px] flex flex-col gap-6"
+          >
+            {renderedContent}
+          </article>
+        </div>
+      </section>
+
+      {/* Back link */}
+      <section className="px-gutter py-16 bg-cream border-t border-border-decorative">
+        <div className="max-w-content mx-auto">
+          <Link
+            href="/blog/"
+            className="inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+          >
+            <span aria-hidden="true">{'←'}</span>
+            All posts
+          </Link>
+        </div>
+      </section>
+    </>
+  );
+}
