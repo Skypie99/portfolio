@@ -2,9 +2,11 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 import {
+  BlogPostSchema,
   CertificateSchema,
   DeliverableSchema,
   ProfileSchema,
+  type BlogPost,
   type Certificate,
   type Deliverable,
   type Profile,
@@ -77,6 +79,37 @@ export function getDeliverables(): Deliverable[] {
 export function getFeaturedDeliverable(): Deliverable | null {
   const all = getDeliverables();
   return all.find((d) => d.featured) ?? null;
+}
+
+/**
+ * getBlogPosts — all non-draft posts, ordered newest-first by publishedDate.
+ * draft: true posts are excluded at build time so they never appear in listings
+ * or static params. Throws loudly on schema violations.
+ */
+export function getBlogPosts(): BlogPost[] {
+  const raw = readJson<unknown[]>('blog.json');
+  const validated: BlogPost[] = [];
+  raw.forEach((item, idx) => {
+    const parsed = BlogPostSchema.safeParse(item);
+    if (!parsed.success) {
+      throw new Error(
+        `content/blog.json[${idx}] failed validation:\n${JSON.stringify(parsed.error.format(), null, 2)}`,
+      );
+    }
+    validated.push(parsed.data);
+  });
+
+  const ids = new Set<string>();
+  for (const p of validated) {
+    if (ids.has(p.id)) {
+      throw new Error(`Duplicate blog post id: "${p.id}". Slugs must be unique.`);
+    }
+    ids.add(p.id);
+  }
+
+  return validated
+    .filter((p) => !p.draft)
+    .sort((a, b) => b.publishedDate.localeCompare(a.publishedDate));
 }
 
 /**
