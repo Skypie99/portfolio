@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { cn } from '@/lib/cn';
 
 type CredentialBadgeProps = {
@@ -38,11 +39,13 @@ export function CredentialBadge({
       )}
     >
       {logoUrl && (
-        <img
+        <Image
           src={logoUrl}
           alt={logoAlt || label}
-          className="h-4 w-4 object-contain"
-          loading="lazy"
+          width={16}
+          height={16}
+          unoptimized
+          className="object-contain"
         />
       )}
       {/* Checkmark icon */}
