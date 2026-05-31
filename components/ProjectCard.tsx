@@ -48,27 +48,28 @@ export function ProjectCard({
         'work-card group block',
         // Alex F-C4-1: focus-visible outline alongside hover/focus lift.
         // Shamus wave2: border-l-4 + border-l-terracotta = editorial left accent.
-        // border-l-terracotta is side-specific — doesn't merge-conflict with
-        // border-stone (all-sides shorthand). border-l-4 is a distinct width group.
-        'bg-warm-white border border-stone border-l-4 border-l-terracotta rounded-md p-6',
+        'bg-warm-white border border-stone border-l-4 border-l-terracotta rounded-md',
+        // overflow-hidden lets the image sit edge-to-edge with rounded card corners
+        'overflow-hidden',
         'transition-all duration-280 ease-out',
-        // Phase 2 elevation: hover lifts card with shadow + peach-cream tint + Y-translate
         'hover:bg-[var(--card-bg-hover)] hover:border-[var(--card-border-hover)] hover:shadow-[var(--shadow-elevation-2)] hover:-translate-y-1',
         'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta focus-visible:rounded-sm',
-        // Wide featured card: side-by-side mockup + content on md+.
-        wide && 'md:flex md:flex-row md:gap-8 md:items-start',
+        // Wide featured card: side-by-side on md+, image fills left half.
+        wide && 'md:flex md:flex-row md:items-stretch',
         className,
       )}
     >
-      {/* ── Mockup area ─────────────────────────────────────────────── */}
+      {/* ── Mockup area — edge-to-edge, no outer card padding ───────── */}
       <div
         className={cn(
           'relative overflow-hidden',
-          wide ? 'w-full md:w-1/2 mb-6 md:mb-0 aspect-[4/3]' : 'w-full mb-6 aspect-[3/2]',
-          'bg-gradient-to-br from-blush to-peach-cream',
-          'border border-stone',
+          wide
+            ? 'w-full md:w-1/2 aspect-[4/3] md:aspect-auto md:self-stretch'
+            : 'w-full aspect-[3/2] border-b border-stone',
+          // Richer staged gradient: blush → peach-cream → warm sand
+          'bg-gradient-to-br from-blush via-peach-cream to-[#FDDFC5]',
           'transition-colors duration-base ease-out',
-          'group-hover:border-stone-strong group-focus-visible:border-stone-strong',
+          'group-hover:from-peach-cream group-hover:to-sand',
         )}
         aria-hidden="true"
       >
@@ -113,8 +114,8 @@ export function ProjectCard({
         />
       </div>
 
-      {/* ── Content area ────────────────────────────────────────────── */}
-      <div className={cn('p-6 md:p-8 flex flex-col gap-3 flex-1', wide && 'md:p-0 md:justify-center')}>
+      {/* ── Content area — owns its padding since card no longer has p-6 ── */}
+      <div className={cn('p-6 flex flex-col gap-3 flex-1', wide && 'md:p-8 md:justify-center')}>
         {/* Eyebrow */}
         <p className="font-mono text-meta tracking-label uppercase text-sage-text flex items-center gap-2">
           <span aria-hidden="true" className="inline-block w-1 h-1 rounded-full bg-stone-strong" />
