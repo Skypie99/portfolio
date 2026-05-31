@@ -58,8 +58,8 @@ export default function AboutPage() {
             About
           </p>
           <h1
-            className="font-serif font-light text-[clamp(2.5rem,6vw,4rem)] text-near-black leading-[1.05] max-w-3xl mb-10 text-balance"
-            style={{ letterSpacing: '-0.02em' }}
+            className="font-serif font-light text-[clamp(2.5rem,6vw,4.5rem)] text-near-black leading-[1.05] max-w-3xl mb-10 text-balance"
+            style={{ letterSpacing: '-0.025em' }}
           >
             I build AI tools with care.
           </h1>
@@ -69,6 +69,15 @@ export default function AboutPage() {
             <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
               I started building because I wanted to solve problems that mattered. Most of what I make begins with a real person, a real frustration, and a stubborn belief that technology should make their life easier, not harder. I would rather ship one careful deliverable than a dozen rough ones.
             </p>
+
+            {/* Pull-quote — editorial accent, carries the thesis */}
+            <blockquote
+              className="pl-5 border-l-2 border-terracotta font-serif font-light text-[1.375rem] text-near-black leading-[1.4] text-balance"
+              style={{ letterSpacing: '-0.01em' }}
+            >
+              Accessibility isn&apos;t an add-on. It&apos;s the starting point.
+            </blockquote>
+
             <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
               Accessibility isn&apos;t an add-on for me — it&apos;s the baseline. I learned early that the features that help people with disabilities make everything easier for everyone. Accessible products are kind products. That shapes every line I write.
             </p>

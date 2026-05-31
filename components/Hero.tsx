@@ -28,10 +28,9 @@ export function Hero({ eyebrow, heading, subhead, ctaLabel, ctaHref }: HeroProps
     <section
       className={cn(
         'relative overflow-hidden',
-        'min-h-[80vh]',
+        'min-h-[85vh]',
         'flex flex-col justify-center',
         'px-gutter',
-        'pt-20 pb-16 md:pt-20 md:pb-16',
         'bg-cream',
       )}
       style={{
@@ -39,7 +38,10 @@ export function Hero({ eyebrow, heading, subhead, ctaLabel, ctaHref }: HeroProps
         paddingBottom: 'clamp(64px, 10vw, 128px)',
       }}
     >
-      <div className="max-w-content w-full">
+      {/* Warm radial wash — defined in globals.css, applied as overlay so bg-cream base stays */}
+      <div aria-hidden="true" className="hero-wash absolute inset-0 pointer-events-none" />
+
+      <div className="max-w-content w-full relative">
         {/* Eyebrow + terracotta brand rule */}
         <div className="hero-enter hero-scroll-fade mb-8">
           <p className="font-mono text-label tracking-label uppercase text-text-meta mb-3">
@@ -53,33 +55,32 @@ export function Hero({ eyebrow, heading, subhead, ctaLabel, ctaHref }: HeroProps
           className={cn(
             'hero-enter hero-enter-delay-2',
             'font-serif font-light',
-            'text-[clamp(2.5rem,7.5vw,4.5rem)] md:text-[4.5rem]',
-            'leading-[1.02]',
+            'text-[clamp(2.75rem,8vw,5.5rem)]',
+            'leading-[1.0]',
             'text-near-black',
-            'mb-6',
-            'max-w-[18ch]',
+            'mb-7',
+            'max-w-[16ch]',
             'text-balance',
           )}
-          style={{ letterSpacing: '-0.025em' }}
+          style={{ letterSpacing: '-0.03em' }}
         >
           {heading}
         </h1>
 
         <p
           className={cn(
-            'hero-enter hero-enter-delay-2',
+            'hero-enter hero-enter-delay-3',
             'font-sans font-light text-[1.0625rem] text-charcoal',
             'leading-[1.65]',
-            'max-w-[540px]',
+            'max-w-[520px]',
             'mb-10',
             'text-pretty',
           )}
-          style={{ letterSpacing: '0.25px' }}
         >
           {subhead}
         </p>
 
-        <div className="hero-enter hero-enter-delay-3 flex flex-col items-start gap-10">
+        <div className="hero-enter hero-enter-delay-4 flex flex-col items-start gap-10">
           {/* Cycle 20: one-shot dot pulse 800ms after mount draws the eye
               after the hero entrance settles. Reduced-motion safe via
               the .cta-dot-pulse @media gate in globals.css. */}

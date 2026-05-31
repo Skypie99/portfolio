@@ -212,6 +212,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-enter-delay-1 { animation-delay: 80ms; }
 .hero-enter-delay-2 { animation-delay: 180ms; }
 .hero-enter-delay-3 { animation-delay: 320ms; }
+.hero-enter-delay-4 { animation-delay: 480ms; }
 
 /* Hero radial wash — soft warm glow from the upper-right corner,
    layered on the cream background. Pure CSS, no JS. The wash sits
@@ -252,7 +253,8 @@ h1, h2, h3, h4, h5, h6 {
   .hero-enter,
   .hero-enter-delay-1,
   .hero-enter-delay-2,
-  .hero-enter-delay-3 {
+  .hero-enter-delay-3,
+  .hero-enter-delay-4 {
     animation: none;
     opacity: 1;
     transform: none;

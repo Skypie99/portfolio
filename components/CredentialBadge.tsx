@@ -69,7 +69,13 @@ export function CredentialBadge({
 
   if (href) {
     return (
-      <a href={href} className="inline-block" aria-label={`${label} credential`}>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block"
+        aria-label={`${label} credential (opens in new tab)`}
+      >
         {content}
       </a>
     );
