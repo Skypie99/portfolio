@@ -62,7 +62,7 @@ const isProd = process.env.NODE_ENV === 'production';
 
 export function generateMetadata(): Metadata {
   const profile = getProfile();
-  const siteUrl = 'https://skylerhalisky.github.io/portfolio';
+  const siteUrl = 'https://skypie99.github.io/portfolio';
   const description = `${profile.tagline} — Four live products, a multi-agent system, and an accessibility map. All open source.`;
   return {
     title: `${profile.name} — AI Portfolio`,
