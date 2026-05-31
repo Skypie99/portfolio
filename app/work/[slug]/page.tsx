@@ -3,11 +3,25 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { Button } from '@/components/Button';
+import { CaseStudyCard } from '@/components/CaseStudyCard';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getDeliverables, getProfile } from '@/lib/content';
 
 type RouteParams = { slug: string };
+
+type CaseStudyCategory = 'accessmap' | 'claude-corp' | 'prompt-library' | 'pacman' | 'mutual';
+
+function toCategory(id: string): CaseStudyCategory {
+  const map: Record<string, CaseStudyCategory> = {
+    'accessmap': 'accessmap',
+    'claude-corp': 'claude-corp',
+    'prompt-library': 'prompt-library',
+    'pacman-code-trainer': 'pacman',
+    'mutual-mesh': 'mutual',
+  };
+  return map[id] ?? 'accessmap';
+}
 
 /**
  * Static export needs every dynamic route enumerated at build time.
@@ -284,7 +298,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
         </section>
       )}
 
-      {/* Other work */}
+      {/* Other work — CaseStudyCard replaces the simpler inline link cards */}
       {others.length > 0 && (
         <section
           className={cn(
@@ -304,26 +318,15 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
 
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
               {others.map((o) => (
-                <li key={o.id} className="border-t border-border-decorative pt-6">
-                  <Link
+                <li key={o.id}>
+                  <CaseStudyCard
+                    title={o.title}
+                    category={toCategory(o.id)}
+                    imageUrl={o.heroImage.src}
+                    imageAlt={o.heroImage.alt}
+                    description={o.summary}
                     href={`/work/${o.id}/`}
-                    aria-label={`Read about ${o.title} — ${o.role}, ${o.year}`}
-                    className="group flex flex-col gap-2 text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
-                  >
-                    <p className="font-mono text-meta tracking-label uppercase text-text-meta">
-                      {o.role} · {o.year}
-                    </p>
-                    <h3 className="font-serif font-normal text-[1.5rem] leading-tight">
-                      {o.title}
-                    </h3>
-                    <p className="font-sans font-light text-body-sm text-charcoal leading-[1.65] max-w-[540px]">
-                      {o.summary}
-                    </p>
-                    <span className="font-mono text-meta tracking-label uppercase text-accent-text mt-2 inline-flex items-center gap-1 transition-transform duration-fast ease-out group-hover:translate-x-1 group-focus-visible:translate-x-1">
-                      Read more
-                      <span aria-hidden="true">{'→'}</span>
-                    </span>
-                  </Link>
+                  />
                 </li>
               ))}
             </ul>
@@ -343,7 +346,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
           <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight">
             Have a project like this?
             <br />
-            Let{'’'}s talk.
+            Let&apos;s talk.
           </h2>
           <Button
             href={`mailto:${profile.contactEmail}?subject=About ${encodeURIComponent(d.title)}`}

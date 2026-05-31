@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import BadgeImage from '@/components/BadgeImage';
+import { CredentialBadge } from '@/components/CredentialBadge';
 import { cn } from '@/lib/cn';
 import { getCertificates, getProfile } from '@/lib/content';
 
@@ -57,7 +58,7 @@ export default function CertificatesPage() {
           </h1>
           <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] max-w-[640px] text-pretty">
             Selected credentials and certifications. A short paper trail of the
-            things I{'’'}ve studied formally — most of the learning happens in
+            things I&apos;ve studied formally — most of the learning happens in
             the work, not on paper.
           </p>
         </div>
@@ -127,18 +128,15 @@ export default function CertificatesPage() {
                     {formatIssuedDate(c.issuedDate)}
                   </p>
 
-                  {/* View credential link */}
+                  {/* Credential badge — CredentialBadge renders as a polished
+                      checkmark + label pill linked to the credential URL.
+                      logoUrl is omitted until Sky adds the real badge PNGs,
+                      so it renders gracefully as checkmark + label only. */}
                   <div className="mt-auto">
-                    <a
+                    <CredentialBadge
+                      label={c.title}
                       href={c.credentialUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-mono text-meta tracking-label uppercase text-accent-text hover:text-near-black transition-colors duration-fast ease-out inline-flex items-center gap-2"
-                    >
-                      View credential
-                      <span aria-hidden="true">{'↗'}</span>
-                      <span className="sr-only">(opens in new tab)</span>
-                    </a>
+                    />
                   </div>
                 </article>
               </li>
