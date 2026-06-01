@@ -6,44 +6,107 @@ function clamp01(v: number): number {
   return Math.max(0, Math.min(1, v));
 }
 
-function easeInOutCubic(t: number): number {
-  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-}
-
 function easeInCubic(t: number): number {
   return t * t * t;
+}
+
+function easeInOutQuart(t: number): number {
+  return t < 0.5 ? 8 * t * t * t * t : 1 - Math.pow(-2 * t + 2, 4) / 2;
 }
 
 export function CinematicIntro() {
   const { scrollY } = useScroll();
 
-  // ── Sky: atmospheric crossfade ──────────────────────────────────────
-  const skyNightOp  = useTransform(scrollY, [0, 70, 290], [1, 1, 0]);
-  const skyDawnOp   = useTransform(scrollY, [70, 165, 225, 315], [0, 1, 1, 0]);
-  const skyGoldenOp = useTransform(scrollY, [240, 340], [0, 1]);
+  // ═══════════════════════════════════════════════════════════════
+  //  SKY — atmospheric crossfade + horizon bloom
+  //  Night exits decisively; dawn gets 150px hold at peak;
+  //  golden arrives as the culmination, not an afterthought
+  // ═══════════════════════════════════════════════════════════════
+  const skyNightOp  = useTransform(scrollY, [0, 80, 260], [1, 1, 0]);
+  const skyDawnOp   = useTransform(scrollY, [50, 170, 320, 410], [0, 1, 1, 0]);
+  const skyGoldenOp = useTransform(scrollY, [340, 440], [0, 1]);
+  const horizonGlowOp = useTransform(scrollY, [130, 280, 440], [0, 0.55, 0.9]);
 
-  // ── Stars: accelerating spread — parallax increases with proximity ──
-  const starsOp    = useTransform(scrollY, [0, 110, 280], [1, 1, 0]);
+  // ═══════════════════════════════════════════════════════════════
+  //  STARS — gone by mid-dawn, not lingering into golden
+  // ═══════════════════════════════════════════════════════════════
+  const starsOp    = useTransform(scrollY, [0, 100, 270], [1, 1, 0]);
   const starsScale = useTransform(scrollY, (v: number) => {
-    const t = clamp01(v / 340);
+    const t = clamp01(v / 440);
     return 1 + easeInCubic(t) * 2;
   });
-  const moonOp = useTransform(scrollY, [0, 90, 240], [1, 1, 0]);
 
-  // ── Landscape: eased descent — slow start, dramatic middle, gentle landing
+  // ═══════════════════════════════════════════════════════════════
+  //  MOON — brighter than stars, dissolves later (120→300)
+  // ═══════════════════════════════════════════════════════════════
+  const moonOp = useTransform(scrollY, [0, 120, 300], [1, 1, 0]);
+  const moonHaloScale = useTransform(scrollY, [120, 270], [1, 1.6]);
+  const moonHaloOp    = useTransform(scrollY, [120, 200, 290], [0.06, 0.18, 0]);
+
+  // ═══════════════════════════════════════════════════════════════
+  //  SHOOTING STAR — blink-and-you-miss-it delight
+  // ═══════════════════════════════════════════════════════════════
+  const shootingStarOp = useTransform(scrollY, [38, 43, 53, 58], [0, 0.85, 0.85, 0]);
+  const shootingStarX  = useTransform(scrollY, [38, 58], [0, 180]);
+  const shootingStarY  = useTransform(scrollY, [38, 58], [0, 65]);
+
+  // ═══════════════════════════════════════════════════════════════
+  //  LANDSCAPE — helicopter descent (0.32→1.0, quartic S-curve)
+  //  Cautious approach → rapid mid-descent → long gentle touchdown
+  // ═══════════════════════════════════════════════════════════════
   const landScale = useTransform(scrollY, (v: number) => {
-    const t = clamp01(v / 350);
-    return 0.18 + easeInOutCubic(t) * 0.82;
+    const t = clamp01(v / 480);
+    return 0.32 + easeInOutQuart(t) * 0.68;
   });
-  const mesaOp  = useTransform(scrollY, [80, 190], [0, 1]);
-  const floraOp = useTransform(scrollY, [200, 290], [0, 1]);
 
-  // ── Title card: staggered entrance, y-drift, extended hold ──────────
-  const titleY       = useTransform(scrollY, [270, 315, 360, 410], [10, 0, 0, -4]);
-  const titleLine1Op = useTransform(scrollY, [270, 312, 360, 410], [0, 1, 1, 0]);
-  const titleLine2Op = useTransform(scrollY, [282, 320, 360, 410], [0, 1, 1, 0]);
-  const titleLine3Op = useTransform(scrollY, [292, 326, 360, 410], [0, 1, 1, 0]);
-  const skipOp       = useTransform(scrollY, [145, 190, 370, 415], [0, 1, 1, 0]);
+  // ═══════════════════════════════════════════════════════════════
+  //  DEPTH PARALLAX — physically grounded stagger + offsets
+  //  Sky ~10mi, far mesas ~2mi, mid ~0.5mi, near ~500ft, flora ~100ft
+  //  250px stagger between first and last layer reveal
+  // ═══════════════════════════════════════════════════════════════
+  const farMesaOp = useTransform(scrollY, [50, 150], [0, 1]);
+  const farMesaY  = useTransform(scrollY, [50, 480], [0, 50]);
+
+  const midMesaOp = useTransform(scrollY, [110, 230], [0, 1]);
+  const midMesaY  = useTransform(scrollY, [110, 480], [0, 24]);
+
+  const nearMesaOp = useTransform(scrollY, [180, 300], [0, 1]);
+  const nearMesaY  = useTransform(scrollY, [180, 480], [0, 6]);
+
+  const floraOp = useTransform(scrollY, [300, 400], [0, 1]);
+  const floraY  = useTransform(scrollY, [300, 480], [0, -18]);
+
+  // ═══════════════════════════════════════════════════════════════
+  //  ATMOSPHERIC DEPTH HAZE — builds between mesa groups as they appear
+  // ═══════════════════════════════════════════════════════════════
+  const depthHaze1Op = useTransform(scrollY, [160, 380], [0, 0.35]);
+  const depthHaze2Op = useTransform(scrollY, [240, 400], [0, 0.25]);
+
+  // ═══════════════════════════════════════════════════════════════
+  //  DUST MOTES — golden-hour only, arrives with the golden sky
+  // ═══════════════════════════════════════════════════════════════
+  const dustOp = useTransform(scrollY, [340, 440], [0, 0.55]);
+
+  // ═══════════════════════════════════════════════════════════════
+  //  TITLE CARD — ghost presence → focal resolve → settle
+  //  Shimmers at 8-12% opacity from scroll 280, resolves to 1.0
+  //  by 380. Feels like it was always there in the landscape.
+  // ═══════════════════════════════════════════════════════════════
+  const titleY       = useTransform(scrollY, [280, 380, 450, 510], [8, 0, 0, -4]);
+  const titleScale   = useTransform(scrollY, [280, 380], [1.01, 1]);
+  const titleLine1Op = useTransform(scrollY, [280, 330, 380, 450, 510], [0, 0.12, 1, 1, 0]);
+  const titleLine2Op = useTransform(scrollY, [292, 340, 388, 450, 510], [0, 0.10, 1, 1, 0]);
+  const titleLine3Op = useTransform(scrollY, [304, 350, 396, 450, 510], [0, 0.08, 1, 1, 0]);
+
+  const titleTrackingVal = useTransform(scrollY, [280, 380], [0.12, 0.04]);
+  const titleTracking    = useTransform(titleTrackingVal, (v: number) => `${v}em`);
+  const subTrackingVal   = useTransform(scrollY, [304, 396], [0.35, 0.22]);
+  const subTracking      = useTransform(subTrackingVal, (v: number) => `${v}em`);
+
+  const ruleScaleX = useTransform(scrollY, [380, 410, 450, 510], [0, 1, 1, 0]);
+  const ruleOp     = useTransform(scrollY, [380, 400, 450, 510], [0, 0.35, 0.35, 0]);
+
+  const skipOp   = useTransform(scrollY, [170, 220, 460, 510], [0, 1, 1, 0]);
   const promptOp = useTransform(scrollY, [0, 80], [1, 0]);
 
   function handleSkip() {
@@ -54,18 +117,21 @@ export function CinematicIntro() {
     <div className="cinematic-wrapper" aria-hidden="true">
       <div className="cinematic-scene">
 
-        {/* ── Sky layers (Framer Motion opacity) ─────────────────────── */}
+        {/* ── Sky layers ──────────────────────────────────────────── */}
         <motion.div className="cin-sky cin-sky-night"  style={{ opacity: skyNightOp }} />
         <motion.div className="cin-sky cin-sky-dawn"   style={{ opacity: skyDawnOp }} />
         <motion.div className="cin-sky cin-sky-golden" style={{ opacity: skyGoldenOp }} />
 
-        {/* ── Stars — scale outward as camera drops (spreading zoom effect) */}
+        {/* Horizon bloom — warm radial glow at the horizon during dawn */}
+        <motion.div className="cin-horizon-glow" style={{ opacity: horizonGlowOp }} />
+
+        {/* ── Stars ───────────────────────────────────────────────── */}
         <motion.div
           className="cin-stars"
           style={{ opacity: starsOp, scale: starsScale }}
         />
 
-        {/* ── Constellations ──────────────────────────────────────────── */}
+        {/* ── Constellations ──────────────────────────────────────── */}
         <motion.svg
           viewBox="0 0 1440 600"
           preserveAspectRatio="xMidYMid slice"
@@ -108,35 +174,56 @@ export function CinematicIntro() {
           </g>
         </motion.svg>
 
-        {/* ── Moon (crescent with luminosity halo) ────────────────────── */}
-        <motion.svg
-          aria-hidden="true"
-          viewBox="0 0 120 120"
+        {/* ── Moon — crescent with luminous halo bloom ──────────── */}
+        <motion.div
           style={{
             opacity: moonOp,
             position: 'absolute', top: '8%', left: '50%',
             transform: 'translateX(-50%)',
             width: 'clamp(56px, 7vw, 84px)', height: 'clamp(56px, 7vw, 84px)',
             zIndex: 3, overflow: 'visible',
+            pointerEvents: 'none',
             willChange: 'opacity',
           }}
         >
-          <defs>
-            <mask id="cin-crescent">
-              <rect width="120" height="120" fill="white" />
-              <circle cx="72" cy="50" r="40" fill="black" />
-            </mask>
-          </defs>
-          <circle cx="58" cy="50" r="52" fill="rgba(253,246,227,0.02)" />
-          <circle cx="58" cy="50" r="44" fill="rgba(253,246,227,0.04)" />
-          <circle cx="58" cy="50" r="40" fill="rgba(253,246,227,0.06)" />
-          <circle cx="58" cy="50" r="36" fill="#FDF6E3" mask="url(#cin-crescent)" />
-        </motion.svg>
+          <motion.div
+            style={{
+              position: 'absolute',
+              inset: '-40%',
+              borderRadius: '50%',
+              background: 'radial-gradient(circle, rgba(253,246,227,0.12) 0%, rgba(253,246,227,0.04) 40%, transparent 70%)',
+              scale: moonHaloScale,
+              opacity: moonHaloOp,
+              willChange: 'transform, opacity',
+            }}
+          />
+          <svg
+            viewBox="0 0 120 120"
+            aria-hidden="true"
+            style={{ width: '100%', height: '100%', overflow: 'visible' }}
+          >
+            <defs>
+              <mask id="cin-crescent">
+                <rect width="120" height="120" fill="white" />
+                <circle cx="72" cy="50" r="40" fill="black" />
+              </mask>
+            </defs>
+            <circle cx="58" cy="50" r="52" fill="rgba(253,246,227,0.02)" />
+            <circle cx="58" cy="50" r="44" fill="rgba(253,246,227,0.04)" />
+            <circle cx="58" cy="50" r="40" fill="rgba(253,246,227,0.06)" />
+            <circle cx="58" cy="50" r="36" fill="#FDF6E3" mask="url(#cin-crescent)" />
+          </svg>
+        </motion.div>
 
-        {/* ── Landscape zoom container ─────────────────────────────────
-            Camera starts high (scale 0.18 = distant horizon strip).
-            As scroll increases the scene grows toward full-screen ground level.
-            transform-origin: bottom center keeps ground anchored.          */}
+        {/* ── Shooting star — scroll-driven streak ────────────── */}
+        <motion.div
+          className="cin-shooting-star"
+          style={{ opacity: shootingStarOp, x: shootingStarX, y: shootingStarY }}
+        />
+
+        {/* ═══════════════════════════════════════════════════════
+            LANDSCAPE — depth-layered parallax system
+            ═══════════════════════════════════════════════════════ */}
         <motion.div className="cin-landscape-zoom" style={{ scale: landScale }}>
 
           {/* Ground plane */}
@@ -150,27 +237,18 @@ export function CinematicIntro() {
             <rect x="0" y="381" width="1440" height="8"   fill="#3A2410" />
           </svg>
 
-          {/* ── Mesa formations ─────────────────────────────────────────
-              WA symmetry: center mesa (tallest) flanked by two shorter
-              on each side. Light source from the left — left faces catch
-              warm light, right faces hold colored shadow. Horizontal
-              sedimentary banding is the geological signature.             */}
+          {/* ── FAR MESAS — atmospheric blue-shift, most parallax lag ── */}
           <motion.svg
             className="cin-mesas-svg"
             viewBox="0 0 1440 500"
             preserveAspectRatio="none"
             aria-hidden="true"
-            style={{ opacity: mesaOp }}
+            style={{ opacity: farMesaOp, y: farMesaY }}
           >
             <defs>
               <clipPath id="mfl"><path d="M 42 390 L 68 290 L 92 262 L 140 258 L 205 260 L 248 262 L 262 290 L 280 390 Z" /></clipPath>
-              <clipPath id="mlc"><path d="M 382 390 L 410 255 L 432 220 L 468 216 L 510 214 L 550 216 L 568 252 L 585 390 Z" /></clipPath>
-              <clipPath id="mc"><path d="M 578 390 L 615 238 L 642 165 L 682 161 L 720 159 L 758 161 L 798 164 L 825 240 L 862 390 Z" /></clipPath>
-              <clipPath id="mrc"><path d="M 858 390 L 880 248 L 900 210 L 942 206 L 998 207 L 1038 210 L 1056 246 L 1080 390 Z" /></clipPath>
               <clipPath id="mfr"><path d="M 1162 390 L 1182 280 L 1200 254 L 1250 250 L 1312 252 L 1358 254 L 1375 278 L 1398 390 Z" /></clipPath>
             </defs>
-
-            {/* FAR-LEFT MESA — atmospheric blue-shift (most distant) */}
             <g>
               <path d="M 42 390 L 68 290 L 92 262 L 140 258 L 205 260 L 248 262 L 262 290 L 280 390 Z" fill="#5E2216" />
               <path d="M 92 262 L 140 258 L 205 260 L 248 262 L 255 285 L 100 287 Z" fill="#7A3022" />
@@ -185,8 +263,37 @@ export function CinematicIntro() {
                 <line x1="210" y1="261" x2="208" y2="390" stroke="rgba(40,15,8,0.05)" strokeWidth="0.6" />
               </g>
             </g>
+            <g>
+              <path d="M 1162 390 L 1182 280 L 1200 254 L 1250 250 L 1312 252 L 1358 254 L 1375 278 L 1398 390 Z" fill="#5E2216" />
+              <path d="M 1200 254 L 1250 250 L 1312 252 L 1358 254 L 1365 278 L 1208 280 Z" fill="#7A3022" />
+              <path d="M 1162 390 L 1182 280 L 1208 280 L 1214 390 Z" fill="rgba(180,90,55,0.18)" />
+              <path d="M 1390 390 L 1375 278 L 1365 278 L 1378 390 Z" fill="rgba(50,18,8,0.22)" />
+              <g clipPath="url(#mfr)">
+                <rect x="1155" y="282" width="250" height="3" fill="rgba(130,55,30,0.14)" />
+                <rect x="1155" y="312" width="250" height="4" fill="rgba(90,35,18,0.12)" />
+                <rect x="1155" y="342" width="250" height="3" fill="rgba(130,55,30,0.10)" />
+                <rect x="1155" y="370" width="250" height="4" fill="rgba(90,35,18,0.10)" />
+                <line x1="1278" y1="252" x2="1276" y2="390" stroke="rgba(40,15,8,0.06)" strokeWidth="0.7" />
+                <line x1="1230" y1="251" x2="1228" y2="390" stroke="rgba(40,15,8,0.05)" strokeWidth="0.6" />
+              </g>
+            </g>
+          </motion.svg>
 
-            {/* LEFT-CENTER MESA */}
+          {/* Atmospheric haze 1 — between far and mid depth planes */}
+          <motion.div className="cin-depth-haze" style={{ opacity: depthHaze1Op }} />
+
+          {/* ── MID MESAS — medium parallax lag ────────────────── */}
+          <motion.svg
+            className="cin-mesas-svg"
+            viewBox="0 0 1440 500"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+            style={{ opacity: midMesaOp, y: midMesaY }}
+          >
+            <defs>
+              <clipPath id="mlc"><path d="M 382 390 L 410 255 L 432 220 L 468 216 L 510 214 L 550 216 L 568 252 L 585 390 Z" /></clipPath>
+              <clipPath id="mrc"><path d="M 858 390 L 880 248 L 900 210 L 942 206 L 998 207 L 1038 210 L 1056 246 L 1080 390 Z" /></clipPath>
+            </defs>
             <g>
               <path d="M 382 390 L 410 255 L 432 220 L 468 216 L 510 214 L 550 216 L 568 252 L 585 390 Z" fill="#7D2E1E" />
               <path d="M 432 220 L 468 216 L 510 214 L 550 216 L 560 246 L 442 248 Z" fill="#9B3824" />
@@ -201,8 +308,36 @@ export function CinematicIntro() {
                 <line x1="530" y1="216" x2="528" y2="390" stroke="rgba(40,15,8,0.05)" strokeWidth="0.6" />
               </g>
             </g>
+            <g>
+              <path d="M 858 390 L 880 248 L 900 210 L 942 206 L 998 207 L 1038 210 L 1056 246 L 1080 390 Z" fill="#7D2E1E" />
+              <path d="M 900 210 L 942 206 L 998 207 L 1038 210 L 1047 242 L 910 244 Z" fill="#9B3824" />
+              <path d="M 858 390 L 880 248 L 910 244 L 916 390 Z" fill="rgba(190,95,58,0.20)" />
+              <path d="M 1072 390 L 1056 246 L 1047 242 L 1060 390 Z" fill="rgba(50,18,8,0.24)" />
+              <g clipPath="url(#mrc)">
+                <rect x="850" y="252" width="240" height="4" fill="rgba(140,58,32,0.13)" />
+                <rect x="850" y="288" width="240" height="3" fill="rgba(90,32,16,0.14)" />
+                <rect x="850" y="322" width="240" height="4" fill="rgba(140,58,32,0.11)" />
+                <rect x="850" y="358" width="240" height="3" fill="rgba(90,32,16,0.10)" />
+                <line x1="968" y1="207" x2="966" y2="390" stroke="rgba(40,15,8,0.06)" strokeWidth="0.7" />
+                <line x1="920" y1="208" x2="918" y2="390" stroke="rgba(40,15,8,0.05)" strokeWidth="0.6" />
+              </g>
+            </g>
+          </motion.svg>
 
-            {/* CENTER MESA — hero piece, tallest, WA focal point */}
+          {/* Atmospheric haze 2 — between mid and near depth planes */}
+          <motion.div className="cin-depth-haze cin-depth-haze-2" style={{ opacity: depthHaze2Op }} />
+
+          {/* ── NEAR MESA — center hero piece, slight parallax lag ── */}
+          <motion.svg
+            className="cin-mesas-svg"
+            viewBox="0 0 1440 500"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+            style={{ opacity: nearMesaOp, y: nearMesaY }}
+          >
+            <defs>
+              <clipPath id="mc"><path d="M 578 390 L 615 238 L 642 165 L 682 161 L 720 159 L 758 161 L 798 164 L 825 240 L 862 390 Z" /></clipPath>
+            </defs>
             <g>
               <path d="M 578 390 L 615 238 L 642 165 L 682 161 L 720 159 L 758 161 L 798 164 L 825 240 L 862 390 Z" fill="#7D2E1E" />
               <path d="M 642 165 L 682 161 L 720 159 L 758 161 L 798 164 L 810 198 L 632 200 Z" fill="#A03828" />
@@ -220,54 +355,16 @@ export function CinematicIntro() {
                 <line x1="660" y1="166" x2="658" y2="390" stroke="rgba(40,15,8,0.04)" strokeWidth="0.5" />
               </g>
             </g>
-
-            {/* RIGHT-CENTER MESA */}
-            <g>
-              <path d="M 858 390 L 880 248 L 900 210 L 942 206 L 998 207 L 1038 210 L 1056 246 L 1080 390 Z" fill="#7D2E1E" />
-              <path d="M 900 210 L 942 206 L 998 207 L 1038 210 L 1047 242 L 910 244 Z" fill="#9B3824" />
-              <path d="M 858 390 L 880 248 L 910 244 L 916 390 Z" fill="rgba(190,95,58,0.20)" />
-              <path d="M 1072 390 L 1056 246 L 1047 242 L 1060 390 Z" fill="rgba(50,18,8,0.24)" />
-              <g clipPath="url(#mrc)">
-                <rect x="850" y="252" width="240" height="4" fill="rgba(140,58,32,0.13)" />
-                <rect x="850" y="288" width="240" height="3" fill="rgba(90,32,16,0.14)" />
-                <rect x="850" y="322" width="240" height="4" fill="rgba(140,58,32,0.11)" />
-                <rect x="850" y="358" width="240" height="3" fill="rgba(90,32,16,0.10)" />
-                <line x1="968" y1="207" x2="966" y2="390" stroke="rgba(40,15,8,0.06)" strokeWidth="0.7" />
-                <line x1="920" y1="208" x2="918" y2="390" stroke="rgba(40,15,8,0.05)" strokeWidth="0.6" />
-              </g>
-            </g>
-
-            {/* FAR-RIGHT MESA — atmospheric blue-shift */}
-            <g>
-              <path d="M 1162 390 L 1182 280 L 1200 254 L 1250 250 L 1312 252 L 1358 254 L 1375 278 L 1398 390 Z" fill="#5E2216" />
-              <path d="M 1200 254 L 1250 250 L 1312 252 L 1358 254 L 1365 278 L 1208 280 Z" fill="#7A3022" />
-              <path d="M 1162 390 L 1182 280 L 1208 280 L 1214 390 Z" fill="rgba(180,90,55,0.18)" />
-              <path d="M 1390 390 L 1375 278 L 1365 278 L 1378 390 Z" fill="rgba(50,18,8,0.22)" />
-              <g clipPath="url(#mfr)">
-                <rect x="1155" y="282" width="250" height="3" fill="rgba(130,55,30,0.14)" />
-                <rect x="1155" y="312" width="250" height="4" fill="rgba(90,35,18,0.12)" />
-                <rect x="1155" y="342" width="250" height="3" fill="rgba(130,55,30,0.10)" />
-                <rect x="1155" y="370" width="250" height="4" fill="rgba(90,35,18,0.10)" />
-                <line x1="1278" y1="252" x2="1276" y2="390" stroke="rgba(40,15,8,0.06)" strokeWidth="0.7" />
-                <line x1="1230" y1="251" x2="1228" y2="390" stroke="rgba(40,15,8,0.05)" strokeWidth="0.6" />
-              </g>
-            </g>
           </motion.svg>
 
-          {/* ── Flora: sagebrush, saguaro, juniper ──────────────────────
-              WA composition: saguaro left-of-center, juniper right-of-center,
-              sagebrush clumps scattered across the ground plane.            */}
+          {/* ── Flora — foreground, slight upward parallax ─────── */}
           <motion.svg
             className="cin-flora-svg"
             viewBox="0 0 1440 500"
             preserveAspectRatio="none"
             aria-hidden="true"
-            style={{ opacity: floraOp }}
+            style={{ opacity: floraOp, y: floraY }}
           >
-            {/* ── SAGEBRUSH CLUSTERS ──────────────────────────────────────
-                Layered ellipses with sprigs — grey-green desert scrub.    */}
-
-            {/* Cluster A — far left (with sprigs) */}
             <g fill="#4A5828">
               <ellipse cx="148" cy="388" rx="9"  ry="5" />
               <ellipse cx="158" cy="391" rx="10" ry="5" />
@@ -283,8 +380,6 @@ export function CinematicIntro() {
               <line x1="157" y1="382" x2="159" y2="375" />
               <line x1="164" y1="383" x2="168" y2="378" />
             </g>
-
-            {/* Cluster B */}
             <g fill="#4A5828">
               <ellipse cx="308" cy="389" rx="9" ry="5" />
               <ellipse cx="319" cy="391" rx="8" ry="4" />
@@ -295,8 +390,6 @@ export function CinematicIntro() {
               <ellipse cx="317" cy="384" rx="10" ry="6" />
               <ellipse cx="327" cy="385" rx="8"  ry="5" />
             </g>
-
-            {/* Cluster C (with sprigs) */}
             <g fill="#4A5828">
               <ellipse cx="465" cy="389" rx="10" ry="5" />
               <ellipse cx="477" cy="391" rx="9"  ry="5" />
@@ -311,8 +404,6 @@ export function CinematicIntro() {
               <line x1="475" y1="383" x2="478" y2="376" />
               <line x1="482" y1="384" x2="486" y2="379" />
             </g>
-
-            {/* Cluster D — near saguaro base */}
             <g fill="#4A5828">
               <ellipse cx="516" cy="389" rx="8" ry="4" />
               <ellipse cx="526" cy="391" rx="9" ry="5" />
@@ -322,8 +413,6 @@ export function CinematicIntro() {
               <ellipse cx="524" cy="385" rx="10" ry="5" />
               <ellipse cx="533" cy="386" rx="8"  ry="4" />
             </g>
-
-            {/* Cluster E — center-right (with sprigs) */}
             <g fill="#4A5828">
               <ellipse cx="784" cy="389" rx="10" ry="5" />
               <ellipse cx="796" cy="391" rx="9"  ry="5" />
@@ -337,8 +426,6 @@ export function CinematicIntro() {
               <line x1="784" y1="384" x2="781" y2="377" />
               <line x1="794" y1="383" x2="797" y2="376" />
             </g>
-
-            {/* Cluster F (with sprigs) */}
             <g fill="#4A5828">
               <ellipse cx="1088" cy="389" rx="9"  ry="5" />
               <ellipse cx="1100" cy="391" rx="10" ry="5" />
@@ -353,8 +440,6 @@ export function CinematicIntro() {
               <line x1="1098" y1="383" x2="1101" y2="376" />
               <line x1="1106" y1="384" x2="1110" y2="379" />
             </g>
-
-            {/* Cluster G — far right */}
             <g fill="#4A5828">
               <ellipse cx="1248" cy="389" rx="9"  ry="5" />
               <ellipse cx="1260" cy="391" rx="10" ry="5" />
@@ -364,8 +449,6 @@ export function CinematicIntro() {
               <ellipse cx="1257" cy="384" rx="11" ry="6" />
               <ellipse cx="1268" cy="385" rx="7"  ry="4" />
             </g>
-
-            {/* Cluster H — small, between saguaro and juniper */}
             <g fill="#4A5828">
               <ellipse cx="692" cy="390" rx="7" ry="4" />
               <ellipse cx="701" cy="392" rx="8" ry="4" />
@@ -375,8 +458,6 @@ export function CinematicIntro() {
               <ellipse cx="699" cy="386" rx="9"  ry="5" />
               <ellipse cx="708" cy="387" rx="6"  ry="3" />
             </g>
-
-            {/* ── SAGUARO — left-of-center (trunk at x~630) ──────────── */}
             <g fill="#2D5A20">
               <path d="M 624 390 C 623 360, 623 310, 624 278 C 625 270, 627 266, 630 264 C 633 266, 635 270, 636 278 C 637 310, 637 360, 636 390 Z" />
               <path d="M 625 332 C 620 330, 608 328, 600 322 C 594 316, 592 308, 592 296 C 592 282, 593 276, 596 274 C 599 276, 600 282, 600 296 C 600 308, 604 316, 610 320 C 616 324, 624 328, 625 328 Z" />
@@ -388,8 +469,6 @@ export function CinematicIntro() {
             </g>
             <path d="M 624 390 C 623 360, 623 310, 624 278 C 625 270, 626 267, 628 265 L 628 390 Z" fill="rgba(70,120,45,0.18)" />
             <ellipse cx="648" cy="389" rx="14" ry="3" fill="rgba(30,12,6,0.16)" />
-
-            {/* ── DEAD JUNIPER — right of center (x~920) ─────────────── */}
             <g strokeLinecap="round" fill="none">
               <path d="M 920 390 C 919 370, 918 345, 917 320 C 916 312, 917 308, 918 305" stroke="#4A3820" strokeWidth="5" />
               <line x1="918" y1="335" x2="886" y2="302" stroke="#4A3820" strokeWidth="3" />
@@ -413,30 +492,51 @@ export function CinematicIntro() {
               <line x1="952" y1="296" x2="960" y2="308" stroke="#54432A" strokeWidth="0.9" />
             </g>
             <ellipse cx="934" cy="389" rx="12" ry="3" fill="rgba(30,12,6,0.14)" />
-
           </motion.svg>
         </motion.div>
 
-        {/* ── Atmospheric haze — warm golden-hour glow at the horizon ── */}
+        {/* ── Dust motes — golden-hour floating particles ──────── */}
+        <motion.div className="cin-dust-motes" style={{ opacity: dustOp }} />
+
+        {/* ── Atmospheric haze — warm golden-hour glow at horizon ─ */}
         <motion.div className="cin-atmosphere" style={{ opacity: skyGoldenOp }} />
 
-        {/* ── Title card — mobile (CSS time-based stagger) ───────────── */}
+        {/* ── Title card — mobile (CSS time-based stagger) ─────── */}
         <div className="cinematic-title-card cinematic-title-mobile" aria-hidden="true">
           <p className="cinematic-title-wordmark cin-line-1">SkyPi Studio</p>
           <p className="cinematic-title-sub cin-line-2">Est. 2026</p>
           <p className="cinematic-title-sub cin-line-3">Okanagan Valley, British Columbia</p>
         </div>
 
-        {/* ── Title card — desktop (staggered entrance with y-drift) ────── */}
+        {/* ── Title card — desktop (WA chapter opening) ────────── */}
         <div className="cinematic-title-card cinematic-title-desktop" aria-hidden="true">
-          <motion.div style={{ y: titleY }}>
-            <motion.p className="cinematic-title-wordmark" style={{ opacity: titleLine1Op }}>SkyPi Studio</motion.p>
-            <motion.p className="cinematic-title-sub"      style={{ opacity: titleLine2Op }}>Est. 2026</motion.p>
-            <motion.p className="cinematic-title-sub"      style={{ opacity: titleLine3Op }}>Okanagan Valley, British Columbia</motion.p>
+          <motion.div style={{ y: titleY, scale: titleScale }}>
+            <motion.p
+              className="cinematic-title-wordmark"
+              style={{ opacity: titleLine1Op, letterSpacing: titleTracking }}
+            >
+              SkyPi Studio
+            </motion.p>
+            <motion.div
+              className="cin-title-rule"
+              style={{ scaleX: ruleScaleX, opacity: ruleOp }}
+            />
+            <motion.p
+              className="cinematic-title-sub"
+              style={{ opacity: titleLine2Op, letterSpacing: subTracking }}
+            >
+              Est. 2026
+            </motion.p>
+            <motion.p
+              className="cinematic-title-sub"
+              style={{ opacity: titleLine3Op, letterSpacing: subTracking }}
+            >
+              Okanagan Valley, British Columbia
+            </motion.p>
           </motion.div>
         </div>
 
-        {/* ── Skip link ───────────────────────────────────────────────── */}
+        {/* ── Skip link ───────────────────────────────────────── */}
         <motion.button
           className="cinematic-skip-link"
           style={{ opacity: skipOp }}
@@ -447,16 +547,17 @@ export function CinematicIntro() {
           Skip to the work ↓
         </motion.button>
 
-        {/* ── Scroll prompt (desktop only) ────────────────────────────── */}
-        <motion.p
+        {/* ── Scroll prompt — breathing text + chevron bob ─────── */}
+        <motion.div
           className="cinematic-scroll-prompt"
           style={{ opacity: promptOp }}
           aria-hidden="true"
         >
-          Scroll to begin.
-        </motion.p>
+          <span className="cin-prompt-text">Scroll to begin</span>
+          <span className="cin-prompt-chevron" aria-hidden="true">&#8964;</span>
+        </motion.div>
 
-        {/* ── Mobile scroll cue ───────────────────────────────────────── */}
+        {/* ── Mobile scroll cue ───────────────────────────────── */}
         <div className="cinematic-mobile-arrow" aria-hidden="true">↓</div>
 
       </div>
