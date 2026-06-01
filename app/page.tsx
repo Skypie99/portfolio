@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { Button } from '@/components/Button';
+import { ContactEmail } from '@/components/ContactEmail';
 import { Hero } from '@/components/Hero';
 import { NumberedStep } from '@/components/NumberedStep';
 import { ProjectCard } from '@/components/ProjectCard';
@@ -64,10 +64,10 @@ export default function HomePage() {
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <div id="hero">
         <Hero
-          eyebrow="AI portfolio — 2026"
-          heading={profile.tagline}
-          subhead="Four live products. A multi-agent system that ships real commits. An accessibility map shaping how disabled neighbours navigate the city. All open source — and built one careful deliverable at a time."
-          ctaLabel="View the work"
+          eyebrow="Portfolio — 2026"
+          heading="An accessibility map. A multi-agent system. A Pac-Man trainer."
+          subhead="Built in public. Documented from the first commit. Four products live. All open source."
+          ctaLabel="See the work."
           ctaHref="#work"
         />
       </div>
@@ -86,14 +86,14 @@ export default function HomePage() {
           {/* Section label */}
           <p className="font-mono text-label text-sage-text uppercase tracking-label mb-3 flex items-center gap-2">
             <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
-            Live Projects
+            Live
           </p>
           {/* Heading */}
           <h2 className="font-serif font-light text-display-m text-near-black mb-3 max-w-2xl leading-[1.1] text-balance">
-            Built and shipped. Open source. Everything in this portfolio is live.
+            Built, shipped, and open. Everything here is live.
           </h2>
           <p className="font-sans font-light text-body text-charcoal mb-12 max-w-[540px] text-pretty">
-            Four products on the open internet. Click any title to open the GitHub repo or the running app.
+            Four products on the open internet. Each one accessible by design.
           </p>
 
           {/* 4-col stat grid — vertical-rule layout for editorial weight */}
@@ -145,10 +145,10 @@ export default function HomePage() {
           {/* Dani wave5: terracotta left-border accent on section headers */}
           <div className="mb-12 pl-4 border-l-2 border-terracotta">
             <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
-              Work
+              The Work
             </p>
             <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight">
-              A handful of recent things, made with intention.
+              A handful of things, made with intention.
             </h2>
           </div>
 
@@ -181,7 +181,7 @@ export default function HomePage() {
         <div className="max-w-content mx-auto">
           <div className="mb-12 pl-4 border-l-2 border-terracotta">
             <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
-              How I work
+              Method
             </p>
             <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-[1.1] text-balance">
               Three quiet steps, repeated carefully.
@@ -193,21 +193,21 @@ export default function HomePage() {
             <NumberedStep
               number="01"
               title="Discover"
-              body="Start with the smallest, most honest version of the problem. Talk to the people who will live with the thing — not just the people who will buy it."
+              body="Start with the smallest honest version of the problem. The people who will live with the thing know more than the ones who will fund it."
               highlight
             />
             <div className="border-t border-stone/70" />
             <NumberedStep
               number="02"
               title="Build"
-              body="One careful slice at a time. Type-safe, accessible from the first line, instrumented enough to learn from. Refuse to ship what I haven't tried to use."
+              body="One slice at a time. Type-safe, accessible from the first line, documented enough to learn from."
               highlight
             />
             <div className="border-t border-stone/70" />
             <NumberedStep
               number="03"
               title="Ship"
-              body="Document what changed, what's still rough, and what the next maintainer will need to know. A deliverable is the work plus the story of how it was made."
+              body="Write down what changed and what the next person will need. The documentation is the deliverable."
               highlight
             />
           </div>
@@ -228,10 +228,10 @@ export default function HomePage() {
         <div className="max-w-content mx-auto">
           <div className="mb-12 pl-4 border-l-2 border-terracotta">
             <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
-              About
+              A Brief Account
             </p>
             <h2 className="font-serif font-light text-display-m text-near-black leading-[1.1] text-balance">
-              I build AI tools with care.
+              The work is careful. The record is honest.
             </h2>
           </div>
 
@@ -249,21 +249,20 @@ export default function HomePage() {
             </blockquote>
 
             <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
-              Most of what I make starts with a problem worth solving, then a
-              small thing that solves it well. I work from {profile.location},
-              mostly on AI-assisted tooling, accessibility, and the quiet
-              infrastructure that makes a product feel calm to use.
+              Most of what I make starts with a problem worth solving. I prefer
+              small, exact software to large, approximate software. I work from
+              {' '}{profile.location}, mostly on AI tooling, accessibility
+              infrastructure, and the systems that make a product feel calm.
             </p>
             <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
-              I keep a written record of how each thing was built and why —
-              both for the people who come next and for me, the next time I
-              need to remember.
+              I keep a written record of how each thing was made. The
+              documentation is part of the deliverable, not an afterthought.
             </p>
             <Link
               href="/about/"
               className="link-draw inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black mt-2 self-start"
             >
-              Read the full story
+              The full account
               <span aria-hidden="true">{'→'}</span>
             </Link>
           </div>
@@ -284,10 +283,10 @@ export default function HomePage() {
         <div className="max-w-content mx-auto">
           <div className="mb-12 pl-4 border-l-2 border-terracotta">
             <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
-              Certificates
+              Credentials
             </p>
             <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-[1.1] text-balance">
-              Credentials earned along the way.
+              Credentials, earned in order.
             </h2>
           </div>
 
@@ -352,24 +351,14 @@ export default function HomePage() {
           {/* Eyebrow label matching other sections */}
           <p className="font-mono text-label tracking-label uppercase text-text-meta flex items-center gap-2">
             <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
-            Contact
+            Correspond
           </p>
           <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight">
-            Have an AI project worth building?
+            Have something worth building?
             <br />
-            Let&apos;s talk.
+            Write to me.
           </h2>
-          {/* Email address as warm secondary cue before CTA */}
-          <p className="font-sans font-light text-body-sm text-charcoal -mt-2">
-            Reach out at{' '}
-            <a
-              href={`mailto:${profile.contactEmail}`}
-              className="text-accent-text hover:text-terracotta transition-colors duration-fast ease-out"
-            >
-              {profile.contactEmail}
-            </a>
-          </p>
-          <Button href={`mailto:${profile.contactEmail}`}>Get in touch</Button>
+          <ContactEmail label="Write to me." />
         </div>
       </section>
     </>

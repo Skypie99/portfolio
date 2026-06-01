@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-import { Button } from '@/components/Button';
 import { CaseStudyCard } from '@/components/CaseStudyCard';
+import { ContactEmail } from '@/components/ContactEmail';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getDeliverables, getProfile } from '@/lib/content';
@@ -134,7 +134,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
                   href="/work/"
                   className="link-draw inline-block text-text-meta"
                 >
-                  Work
+                  The Work
                 </Link>
               </li>
               <li aria-hidden="true" className="text-stone">
@@ -356,10 +356,10 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
         >
           <div className="max-w-content mx-auto">
             <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
-              Other work
+              More work
             </p>
             <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight mb-12">
-              Keep reading.
+              Continue reading.
             </h2>
 
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
@@ -390,15 +390,11 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
       >
         <div className="max-w-content mx-auto flex flex-col items-start gap-8">
           <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight">
-            Have a project like this?
+            Have something like this?
             <br />
-            Let&apos;s talk.
+            Write to me.
           </h2>
-          <Button
-            href={`mailto:${profile.contactEmail}?subject=About ${encodeURIComponent(d.title)}`}
-          >
-            Get in touch
-          </Button>
+          <ContactEmail label="Write to me." subject={`About ${d.title}`} />
         </div>
       </section>
     </>
