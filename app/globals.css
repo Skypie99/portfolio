@@ -488,6 +488,12 @@ img::before {
    - Mobile (<768px): static golden hour, no scroll sequence
    ================================================================== */
 
+/* -- Scroll-space wrapper (sticky context for the scene) -- */
+.cinematic-wrapper {
+  height: calc(100vh + 400px);
+  position: relative;
+}
+
 /* -- Scene container (sticky within the scroll-space wrapper) -- */
 .cinematic-scene {
   position: sticky;
@@ -677,6 +683,21 @@ img::before {
   pointer-events: none;
 }
 
+/* -- Mobile arrow (scroll cue, desktop hidden) -- */
+.cinematic-mobile-arrow {
+  display: none;
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.125rem;
+  pointer-events: none;
+  font-family: var(--font-cormorant), Garamond, Georgia, serif;
+  font-style: italic;
+}
+
 /* -- Keyframes -- */
 @keyframes cinematic-night-fade {
   from { opacity: 1; }
@@ -711,6 +732,24 @@ img::before {
 @keyframes cinematic-twinkle {
   0%, 100% { opacity: 0.65; }
   50%       { opacity: 1.0; }
+}
+
+/* Mobile title: invisible → fade in → hold → fade out */
+@keyframes cinematic-mobile-title {
+  0%     { opacity: 0; }
+  12.5%  { opacity: 0; }   /* 0.6s — fade begins */
+  29.2%  { opacity: 1; }   /* 1.4s — fully visible */
+  70.8%  { opacity: 1; }   /* 3.4s — hold ends */
+  87.5%  { opacity: 0; }   /* 4.2s — faded out */
+  100%   { opacity: 0; }
+}
+
+/* Mobile scroll cue arrow: delayed fade-in + gentle pulse */
+@keyframes cinematic-mobile-arrow {
+  0%   { opacity: 0;    transform: translateX(-50%) translateY(-3px); }
+  25%  { opacity: 0.55; transform: translateX(-50%) translateY(0);    }
+  75%  { opacity: 0.45; transform: translateX(-50%) translateY(5px);  }
+  100% { opacity: 0.2;  transform: translateX(-50%) translateY(-3px); }
 }
 
 /* -- Scroll-driven animations (Chrome 115+, Safari 17.4+, no reduced motion) -- */
@@ -775,11 +814,51 @@ img::before {
   }
 }
 
-/* -- Mobile (<768px): static golden hour, title always visible, no scroll seq -- */
+/* -- Mobile (<768px): static golden hour, animated title card, no scroll seq -- */
 @media (max-width: 767px) {
+  /* Collapse the scroll budget — scene is just a full-viewport block */
+  .cinematic-wrapper { height: 100vh; }
+
+  /* Allow native touch-scroll to pass through the sticky scene */
+  .cinematic-scene { touch-action: pan-y; }
+
+  /* Show mobile title, hide desktop Framer version and scroll prompts */
   .cinematic-title-mobile  { display: block; }
   .cinematic-title-desktop { display: none; }
   .cinematic-scroll-prompt { display: none; }
   .cinematic-skip-link     { display: none; }
+
+  /* Title card: fade in on load, hold, then dissolve */
+  .cinematic-title-mobile {
+    animation: cinematic-mobile-title 4.8s ease-in-out forwards;
+  }
+
+  /* Position title higher so it sits clearly in the sky band */
+  .cinematic-title-card { top: 35%; }
+
+  /* Stop the star twinkle — battery drain on a hidden element */
+  .cinematic-stars::before { animation: none; }
+
+  /* Scroll-cue arrow: appears after title dissolves, pulses gently */
+  .cinematic-mobile-arrow {
+    display: block;
+    animation: cinematic-mobile-arrow 2s ease-in-out infinite 4.4s both;
+  }
 }
+
+/* Reduced motion: show title statically, suppress arrow animation */
+@media (max-width: 767px) and (prefers-reduced-motion: reduce) {
+  .cinematic-title-mobile { animation: none; opacity: 1; }
+  .cinematic-mobile-arrow { display: none; }
+}
+
+/* ContentReveal: skip the scroll-driven fade on mobile — content is already
+   near the viewport fold and should just appear when the user scrolls to it */
+@media (max-width: 767px) {
+  .cinematic-content-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 /* End cinematic intro ================================================ */
