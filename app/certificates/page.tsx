@@ -8,10 +8,22 @@ import { getCertificates, getProfile } from '@/lib/content';
 
 export function generateMetadata(): Metadata {
   const profile = getProfile();
+  const description = 'Professional credentials and certifications held by Sky Halisky.';
   return {
     title: `Certificates — ${profile.name}`,
-    description:
-      'Professional credentials and certifications held by Sky Halisky.',
+    description,
+    openGraph: {
+      type: 'website',
+      title: `Certificates — ${profile.name}`,
+      description,
+      images: [{ url: '/og-image.svg', width: 1200, height: 630, alt: `Certificates — ${profile.name}` }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `Certificates — ${profile.name}`,
+      description,
+      images: ['/og-image.svg'],
+    },
   };
 }
 

@@ -7,9 +7,22 @@ import { getProfile } from '@/lib/content';
 
 export function generateMetadata(): Metadata {
   const profile = getProfile();
+  const description = `Get in touch with ${profile.name} about AI engineering, accessibility, or thoughtful product collaborations.`;
   return {
     title: `Contact — ${profile.name}`,
-    description: `Get in touch with ${profile.name} about AI engineering, accessibility, or thoughtful product collaborations.`,
+    description,
+    openGraph: {
+      type: 'website',
+      title: `Contact — ${profile.name}`,
+      description,
+      images: [{ url: '/og-image.svg', width: 1200, height: 630, alt: `Contact — ${profile.name}` }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `Contact — ${profile.name}`,
+      description,
+      images: ['/og-image.svg'],
+    },
   };
 }
 
