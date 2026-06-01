@@ -142,6 +142,8 @@ These are the visual targets. The build engineer captures screenshots at each `t
 
 **All values RGB-interpolated, not crossfaded between gradient stacks.** Drive the sky as a single `linear-gradient` whose color stops are interpolated via three `useTransform` calls on RGB channels (one per stop). The current intro stacks `skyNightOp`, `skyDawnOp`, `skyGoldenOp` overlays — that's three composite layers paying paint cost. A single interpolated gradient is one layer. This is both a design directive (cleaner color science, no muddy crossfade midpoints) and a perf directive (one paint layer, not three).
 
+**Sky gradient mid-stop position — 55%, not 50% (Shamus deviation 2026-06-01, approved by Dani in phase-3 compile).** The sky uses `linear-gradient(to bottom, top 0%, mid 55%, horizon 100%)`. Pushing the mid stop down from the default 50% to 55% compresses the horizon band slightly, which is the right move because as the rock face rises in the foreground (t > 0.55) the visible sky compresses to the upper half of the frame — a 50% mid-stop reads as too-low horizon glow against the rising land. Holds the wide-aperture IMAX feel through the arrival.
+
 **All grading hex values selected to pass WCAG 2.2 AA when title text overlays them** — the title appears at t=0.78+ and rests over the foreground rock face's lit zone. Cream-white text (`#FAF9F5`) on terracotta-token lit rock (`#B35F32`) = **4.7:1**. Validated in the compile gate before merge.
 
 ---

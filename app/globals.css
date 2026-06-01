@@ -894,6 +894,12 @@ img::before {
   white-space: nowrap;
 }
 .cinematic-skip-link:hover { color: rgba(255, 255, 255, 0.70); }
+.cinematic-skip-link:focus-visible {
+  color: rgba(255, 255, 255, 0.95);
+  outline: 2px solid rgba(255, 255, 255, 0.85);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
 
 /* -- Scroll prompt (breathing text + chevron bob) -- */
 .cinematic-scroll-prompt {
@@ -987,8 +993,13 @@ img::before {
 
 /* -- Mobile (<768px): static golden hour, animated title card, no scroll seq -- */
 @media (max-width: 767px) {
-  /* Collapse the scroll budget — scene is just a full-viewport block */
-  .cinematic-wrapper { height: 100vh; }
+  /* Collapse the scroll budget — scene is just a full-viewport block.
+     Both .cinematic-wrapper and .cinematic-wrapper-200vh listed
+     explicitly so the IMAX 200vh modifier on the cinematic intro
+     also collapses to 100vh on phones (single-class specificity
+     would otherwise lose to a later-source-order modifier). */
+  .cinematic-wrapper,
+  .cinematic-wrapper-200vh { height: 100vh; }
 
   /* Allow native touch-scroll to pass through the sticky scene */
   .cinematic-scene { touch-action: pan-y; }

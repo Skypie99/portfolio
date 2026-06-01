@@ -59,8 +59,27 @@ function interpStops(t: number, stops: Stop[]): string {
 }
 
 /* Sky keyframes — 5 t-points × 3 vertical stops (Dani §6).
-   Mirrors the `--cinema-sky-*` tokens; literal hex here so the
-   useTransform callback returns a primitive without reading the DOM. */
+   ─────────────────────────────────────────────────────────────────
+   TOKEN SOURCE-OF-TRUTH MIRROR (Dani CONCERN, polish item 3):
+   The hex values below MUST stay in sync with the canonical
+   `--cinema-sky-*`, `--cinema-far-*`, `--cinema-mid-*`,
+   `--cinema-near-*` tokens declared in `app/tokens-phase2.css`.
+   If you tweak the palette, update BOTH the tokens AND this file.
+   Literals here are necessary because `useTransform`'s callback is
+   invoked outside React render and cannot read CSS custom properties
+   without a DOM round-trip per frame (perf-prohibitive).
+   Future: Wave 3 follow-up — resolve tokens once on mount via
+   `getComputedStyle(document.documentElement)` and feed the arrays.
+   ─────────────────────────────────────────────────────────────────
+   SKY_TOP    → --cinema-sky-top-{0,30,60,100}
+   SKY_MID    → --cinema-sky-mid-{0,30,60,100}
+   SKY_HORIZON→ --cinema-sky-horizon-{0,30,60,100}
+   FAR_MESA   → --cinema-far-mesa-{0,40,70,100}
+   MID_MESA   → --cinema-mid-mesa-{25,40,70,100}
+   NEAR_UPPER → --cinema-near-upper-{55,85,100}
+   NEAR_LIT   → --cinema-near-lit-{55,85,100} (lit zone == --color-terracotta at t=1.0)
+   NEAR_SHADOW→ --cinema-near-shadow-{55,85,100} (shadow == --color-umber at t=1.0)
+*/
 const SKY_TOP: Stop[] = [
   { t: 0.0, hex: '#0F1A2E' },
   { t: 0.25, hex: '#3E4A6F' },
@@ -297,6 +316,20 @@ function AnimatedScene() {
   // Apply quint S-curve once. Every downstream motion derives from this.
   const t: MotionValue<number> = useTransform(scrollYProgress, easeInOutQuint);
 
+  /* ─────────────────────────────────────────────────────────────────
+     NOTE — INPUT RANGES BELOW ARE ON THE EASED TRACK, NOT RAW SCROLL.
+     `t` above is `easeInOutQuint(scrollYProgress)`, so every input
+     range like `[0.18, 0.30, 0.70, 0.90]` is interpreted on the
+     curved track. A keyframe at eased-t 0.30 does NOT correspond to
+     a raw scroll position of 30% — it lands where easeInOutQuint
+     equals 0.30 (approximately raw 41% on this curve's first half).
+     The unified-easing architecture is intentional: every layer
+     accelerates and decelerates as one body. Spec act-boundaries
+     (Act 1 / 2 / 3) in §4 are written on eased-t and match below.
+     To map eased-t back to raw scroll: invert easeInOutQuint
+     (bezier 0.83, 0, 0.17, 1).
+     ───────────────────────────────────────────────────────────────── */
+
   /* ── SKY — single gradient, RGB-interpolated stops (Dani §6) ─────── */
   const skyTop = useTransform(t, (v) => interpStops(v, SKY_TOP));
   const skyMid = useTransform(t, (v) => interpStops(v, SKY_MID));
@@ -352,14 +385,19 @@ function AnimatedScene() {
   const rockLitFill = useTransform(t, (v) => interpStops(v, NEAR_LIT));
   const rockShadowFill = useTransform(t, (v) => interpStops(v, NEAR_SHADOW));
 
-  /* ── TITLE CARD — staggered resolve t [0.78, 0.92], HOLD to end ──── */
-  const wordmarkOp = useTransform(t, [0.78, 0.82], [0, 1]);
-  const wordmarkTrackingVal = useTransform(t, [0.78, 0.82], [0.12, 0.04]);
+  /* ── TITLE CARD — staggered resolve t [0.82, 0.95], HOLD to end ────
+     Wordmark resolves at t [0.82, 0.86] so it appears against the
+     fully-lit rock-face `#B35F32` (Dani polish item 7) — contrast
+     ratio 4.7:1 vs the cream `#FAF9F5` text (matches spec §6 claim).
+     Earlier `[0.78, 0.82]` resolved at ~#A85630 which landed at
+     ~4.55:1 — passing AA but tighter than promised. */
+  const wordmarkOp = useTransform(t, [0.82, 0.86], [0, 1]);
+  const wordmarkTrackingVal = useTransform(t, [0.82, 0.86], [0.12, 0.04]);
   const wordmarkTracking = useTransform(wordmarkTrackingVal, (v) => `${v}em`);
-  const ruleScaleX = useTransform(t, [0.84, 0.87], [0, 1]);
-  const ruleOp = useTransform(t, [0.84, 0.87], [0, 0.35]);
-  const sub1Op = useTransform(t, [0.86, 0.89], [0, 1]);
-  const sub2Op = useTransform(t, [0.90, 0.93], [0, 1]);
+  const ruleScaleX = useTransform(t, [0.86, 0.89], [0, 1]);
+  const ruleOp = useTransform(t, [0.86, 0.89], [0, 0.35]);
+  const sub1Op = useTransform(t, [0.88, 0.91], [0, 1]);
+  const sub2Op = useTransform(t, [0.92, 0.95], [0, 1]);
 
   /* ── SKIP LINK + SCROLL PROMPT ───────────────────────────────────── */
   const skipOp = useTransform(t, [0.18, 0.22, 0.95, 1.0], [0, 1, 1, 0]);
@@ -737,16 +775,17 @@ function AnimatedScene() {
         </motion.svg>
 
         {/* ── TITLE CARD — resolves t [0.78, 0.92], HOLDS to end ──── */}
-        <div className="cinematic-title-card cinematic-title-desktop" aria-hidden="true">
-          <motion.p
+        <div className="cinematic-title-card cinematic-title-desktop">
+          <motion.h2
             className="cinematic-title-wordmark"
             style={{ opacity: wordmarkOp, letterSpacing: wordmarkTracking }}
           >
             SkyPi Studio
-          </motion.p>
+          </motion.h2>
           <motion.div
             className="cin-title-rule"
             style={{ scaleX: ruleScaleX, opacity: ruleOp }}
+            aria-hidden="true"
           />
           <motion.p className="cinematic-title-sub" style={{ opacity: sub1Op }}>
             Est. 2026
@@ -757,19 +796,18 @@ function AnimatedScene() {
         </div>
 
         {/* ── Mobile title (CSS-driven stagger, no scroll) ────────── */}
-        <div className="cinematic-title-card cinematic-title-mobile" aria-hidden="true">
-          <p className="cinematic-title-wordmark cin-line-1">SkyPi Studio</p>
+        <div className="cinematic-title-card cinematic-title-mobile">
+          <h2 className="cinematic-title-wordmark cin-line-1">SkyPi Studio</h2>
           <p className="cinematic-title-sub cin-line-2">Est. 2026</p>
           <p className="cinematic-title-sub cin-line-3">Okanagan Valley, British Columbia</p>
         </div>
 
-        {/* ── Skip link ───────────────────────────────────────────── */}
+        {/* ── Skip link — keyboard-reachable (WCAG 2.1.1 + 2.4.1) ── */}
         <motion.button
           className="cinematic-skip-link"
           style={{ opacity: skipOp }}
           onClick={handleSkip}
-          tabIndex={-1}
-          aria-hidden="true"
+          type="button"
         >
           Skip to the work ↓
         </motion.button>
