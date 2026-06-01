@@ -38,8 +38,9 @@ export function Hero({ eyebrow, heading, subhead, ctaLabel, ctaHref }: HeroProps
         paddingBottom: 'clamp(64px, 10vw, 128px)',
       }}
     >
-      {/* Warm radial wash — defined in globals.css, applied as overlay so bg-cream base stays */}
-      <div aria-hidden="true" className="hero-wash absolute inset-0 pointer-events-none" />
+      {/* Warm radial wash — drifts upward on scroll for depth behind the headline.
+          hero-bg-drift: translateY + scale driven by scroll-driven animation. */}
+      <div aria-hidden="true" className="hero-wash hero-bg-drift absolute inset-0 pointer-events-none" />
 
       <div className="max-w-content w-full relative">
         {/* Eyebrow + terracotta brand rule */}
@@ -53,7 +54,7 @@ export function Hero({ eyebrow, heading, subhead, ctaLabel, ctaHref }: HeroProps
 
         <h1
           className={cn(
-            'hero-enter hero-enter-delay-2',
+            'hero-enter hero-enter-delay-2 hero-scroll-translate',
             'font-serif font-light',
             'text-[clamp(2.75rem,8vw,5.5rem)]',
             'leading-[1.0]',
@@ -80,7 +81,7 @@ export function Hero({ eyebrow, heading, subhead, ctaLabel, ctaHref }: HeroProps
           {subhead}
         </p>
 
-        <div className="hero-enter hero-enter-delay-4 flex flex-col items-start gap-10">
+        <div className="hero-enter hero-enter-delay-4 hero-scroll-fade flex flex-col items-start gap-10">
           {/* Cycle 20: one-shot dot pulse 800ms after mount draws the eye
               after the hero entrance settles. Reduced-motion safe via
               the .cta-dot-pulse @media gate in globals.css. */}
