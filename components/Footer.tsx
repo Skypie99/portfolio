@@ -152,11 +152,11 @@ export function Footer() {
         {/* Bottom strip */}
         <div className="mt-12 pt-6 border-t border-stone flex flex-col md:flex-row gap-2 md:gap-6 justify-between items-start md:items-center">
           <p className="font-mono text-meta tracking-label uppercase text-text-meta">
-            SkyPi Studio — Est. 2024 · {'©'} {year}
+            SkyPi Studio — Est. 2026 · {'©'} {year}
           </p>
           <div className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-6">
             <p className="font-mono text-meta tracking-label uppercase text-text-meta">
-              Built somewhere in New Mexico.
+              Built in the Okanagan Valley, British Columbia.
             </p>
             <p className="font-mono text-meta tracking-label uppercase text-text-meta inline-flex items-center gap-2">
               <span
