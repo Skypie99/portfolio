@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { AnimatedStepList } from '@/components/AnimatedStepList';
-import { Button } from '@/components/Button';
+import { ContactEmail } from '@/components/ContactEmail';
 import { cn } from '@/lib/cn';
 import { getDeliverables, getProfile } from '@/lib/content';
 
@@ -302,9 +302,7 @@ export default function AboutPage() {
             <br />
             Let{'’'}s talk.
           </h2>
-          <Button href={`mailto:${profile.contactEmail}?subject=Hello from your portfolio`}>
-            Get in touch
-          </Button>
+          <ContactEmail label="Get in touch" />
 
           <Link
             href="/"
