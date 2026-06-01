@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2520 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="far-ridge placeholder">
+  <!-- PLACEHOLDER: distant hazy ridge. TRANSPARENT background. pale dusty rose, low + flat. -->
+  <path d="M0 770
+           L260 730 L540 752 L820 700 L1120 738 L1420 690
+           L1720 726 L2020 698 L2300 730 L2520 712
+           L2520 1080 L0 1080 Z"
+        fill="#D9A9A6" opacity="0.92"/>
+  <text x="1260" y="930" text-anchor="middle"
+        font-family="ui-monospace, Menlo, monospace" font-size="40"
+        fill="#5A2E2C" opacity="0.55" letter-spacing="5">far-ridge — PLACEHOLDER</text>
+</svg>

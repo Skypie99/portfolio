@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2520 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="near-rockface placeholder">
+  <!-- PLACEHOLDER: near cliff face — THE ARRIVAL SUBJECT. TRANSPARENT background.
+       saturated terracotta, tall block with vertical fluting lines. Fills lower frame. -->
+  <!-- main cliff block -->
+  <path d="M120 1080 L150 470 L420 360 L900 330 L1500 348 L2080 332 L2400 430 L2420 1080 Z"
+        fill="#B3592C" opacity="0.98"/>
+  <!-- lit upper rim (raking light from frame left) -->
+  <path d="M150 470 L420 360 L900 330 L1500 348 L2080 332 L2400 430
+           L2400 470 L2080 372 L1500 388 L900 370 L420 400 L182 500 Z"
+        fill="#D27A45" opacity="0.85"/>
+  <!-- vertical fluting -->
+  <g stroke="#7E3A1A" stroke-width="7" opacity="0.55">
+    <path d="M470 392 L470 1080"/>
+    <path d="M760 372 L760 1080"/>
+    <path d="M1090 360 L1090 1080"/>
+    <path d="M1420 366 L1420 1080"/>
+    <path d="M1760 360 L1760 1080"/>
+    <path d="M2080 372 L2080 1080"/>
+  </g>
+  <text x="1260" y="760" text-anchor="middle"
+        font-family="ui-monospace, Menlo, monospace" font-size="48"
+        fill="#FBE3D0" opacity="0.78" letter-spacing="6">near-rockface — PLACEHOLDER</text>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2520 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="mid-mesa placeholder">
+  <!-- PLACEHOLDER: mid-distance butte. TRANSPARENT background. mid ochre, flat-top mesa. -->
+  <!-- ground berm -->
+  <path d="M0 880 L640 858 L1320 872 L1980 852 L2520 874 L2520 1080 L0 1080 Z"
+        fill="#C18A3E" opacity="0.95"/>
+  <!-- the flat-top butte -->
+  <path d="M760 880 L820 560 L1180 540 L1560 552 L1640 880 Z"
+        fill="#C99441" opacity="0.97"/>
+  <!-- a stratification line -->
+  <path d="M812 660 L1612 668" stroke="#9C6E2E" stroke-width="6" opacity="0.6"/>
+  <text x="1260" y="990" text-anchor="middle"
+        font-family="ui-monospace, Menlo, monospace" font-size="42"
+        fill="#5C3F12" opacity="0.6" letter-spacing="5">mid-mesa — PLACEHOLDER</text>
+</svg>
