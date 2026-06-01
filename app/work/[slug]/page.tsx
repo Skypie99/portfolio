@@ -121,6 +121,23 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'SoftwareApplication',
+            name: d.title,
+            description: d.summary,
+            url: `https://www.skypistudio.com/work/${d.id}/`,
+            author: {
+              '@type': 'Person',
+              name: 'Sky Halisky',
+              url: 'https://www.skypistudio.com',
+            },
+          }),
+        }}
+      />
       {/* Breadcrumb — Cycle 19. Editorial 'Work / <Title>' pattern, DM Mono
           uppercase 11px. Only 'Work' is a link (with link-draw underline-
           draw hover). Current slug is plain text — you're already there.

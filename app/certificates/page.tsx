@@ -10,7 +10,7 @@ export function generateMetadata(): Metadata {
   return {
     title: `Certificates — ${profile.name}`,
     description:
-      'Professional credentials and certifications held by Sky Halisky.',
+      'Credentials earned by Sky Halisky — Anthropic, Google, University of Michigan, DeepLearning.AI.',
   };
 }
 

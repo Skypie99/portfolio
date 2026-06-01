@@ -488,6 +488,12 @@ img::before {
    - Mobile (<768px): static golden hour, no scroll sequence
    ================================================================== */
 
+/* -- Scroll-space wrapper (sticky context for the scene) -- */
+.cinematic-wrapper {
+  height: calc(100vh + 400px);
+  position: relative;
+}
+
 /* -- Scene container (sticky within the scroll-space wrapper) -- */
 .cinematic-scene {
   position: sticky;
@@ -497,30 +503,55 @@ img::before {
   isolation: isolate;
 }
 
-/* -- Sky layers -- */
-.cinematic-sky-night,
-.cinematic-sky-dawn,
-.cinematic-sky-golden {
+/* -- Sky layers (Framer Motion controls opacity — no CSS fallback needed) -- */
+.cin-sky {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  will-change: opacity;
 }
-/* Fallback / default: golden hour already showing */
-.cinematic-sky-night {
-  opacity: 0;
-  background: linear-gradient(to bottom, #1B1F3A 0%, #16213e 33%, #2d1b4e 67%, #4a2040 100%);
+.cin-sky-night {
+  background: linear-gradient(to bottom, #1B1F3A 0%, #16213e 40%, #2d1b4e 70%, #3a1840 100%);
+  z-index: 1;
 }
-.cinematic-sky-dawn {
-  opacity: 0;
-  background: linear-gradient(to bottom, #2C1654 0%, #6B3080 33%, #C95E50 67%, #E8895C 100%);
+.cin-sky-dawn {
+  background: linear-gradient(
+    to bottom,
+    #2C1654 0%,
+    #5A3070 18%,
+    #8B4F8E 32%,
+    #AE5A70 48%,
+    #C96858 64%,
+    #D88058 78%,
+    #E89860 92%,
+    #E8A060 100%
+  );
+  z-index: 1;
 }
-.cinematic-sky-golden {
-  opacity: 1;
-  background: linear-gradient(to bottom, #F5C518 0%, #D4936E 33%, #C84B31 67%, #8B4513 100%);
+.cin-sky-golden {
+  background:
+    radial-gradient(
+      ellipse 100% 45% at 28% 92%,
+      rgba(248, 196, 112, 0.30) 0%,
+      transparent 65%
+    ),
+    linear-gradient(
+      to bottom,
+      #B87044 0%,
+      #C88050 12%,
+      #D89458 28%,
+      #E8A860 44%,
+      #F0B464 56%,
+      #E89850 68%,
+      #D07838 80%,
+      #A05828 92%,
+      #7A3E1C 100%
+    );
+  z-index: 1;
 }
 
-/* -- Stars -- */
-.cinematic-stars {
+/* -- Stars (Framer Motion drives scale + opacity — spreading zoom effect) -- */
+.cin-stars {
   position: absolute;
   top: 0;
   left: 0;
@@ -528,9 +559,10 @@ img::before {
   height: 60%;
   pointer-events: none;
   z-index: 2;
-  opacity: 0;   /* hidden in fallback */
+  transform-origin: 50% 50%;
+  will-change: opacity, transform;
 }
-.cinematic-stars::before {
+.cin-stars::before {
   content: '';
   position: absolute;
   top: 0;
@@ -539,6 +571,7 @@ img::before {
   height: 2px;
   border-radius: 50%;
   background: transparent;
+  animation: cin-twinkle 3.5s ease-in-out infinite;
   box-shadow:
     47px  34px 1px rgba(255,255,255,0.9),
     82px  89px 0px rgba(255,255,255,0.7),
@@ -597,14 +630,51 @@ img::before {
   1380px 145px 0px rgba(255,255,255,0.7);
 }
 
-/* -- Moon / constellation defaults (hidden in fallback) -- */
-.cinematic-moon        { opacity: 0; }
-.cinematic-constellation { opacity: 0; }
+/* -- Landscape zoom container (Framer Motion drives scale 0.18→1) -- */
+.cin-landscape-zoom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80vh;
+  transform-origin: 50% 100%;   /* grow from bottom-center = camera descending */
+  z-index: 4;
+  pointer-events: none;
+  will-change: transform;
+}
+.cin-ground-svg,
+.cin-mesas-svg,
+.cin-flora-svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.cin-mesas-svg,
+.cin-flora-svg {
+  will-change: opacity;
+}
 
-/* -- Landscape layer defaults (visible, in-place for fallback) -- */
-.cinematic-landscape-bg,
-.cinematic-landscape-mid,
-.cinematic-landscape-fg { transform: translateY(0); }
+/* -- Atmospheric haze (warm golden-hour glow between depth planes) -- */
+.cin-atmosphere {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 35%;
+  background: linear-gradient(
+    to top,
+    rgba(200, 130, 60, 0.18) 0%,
+    rgba(220, 150, 80, 0.12) 30%,
+    rgba(232, 168, 96, 0.06) 60%,
+    transparent 100%
+  );
+  z-index: 5;
+  pointer-events: none;
+  will-change: opacity;
+}
 
 /* -- Title card -- */
 .cinematic-title-card {
@@ -617,6 +687,7 @@ img::before {
   pointer-events: none;
   color: #FAF9F5;
   text-shadow: 0 2px 16px rgba(0,0,0,0.35);
+  will-change: opacity;
 }
 .cinematic-title-wordmark {
   font-family: var(--font-cormorant), Garamond, Georgia, serif;
@@ -653,12 +724,13 @@ img::before {
   font-family: var(--font-cormorant), Garamond, Georgia, serif;
   font-size: 0.875rem;
   font-style: italic;
-  color: rgba(255, 255, 255, 0.6);
-  padding: 0.5rem 0;
-  transition: color 180ms ease-out;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.44);
+  padding: 0.25rem 0;
+  transition: color 220ms ease-out;
   white-space: nowrap;
 }
-.cinematic-skip-link:hover { color: rgba(255, 255, 255, 0.92); }
+.cinematic-skip-link:hover { color: rgba(255, 255, 255, 0.70); }
 
 /* -- Scroll prompt -- */
 .cinematic-scroll-prompt {
@@ -671,115 +743,101 @@ img::before {
   font-family: var(--font-cormorant), Garamond, Georgia, serif;
   font-size: 0.875rem;
   font-style: italic;
-  color: rgba(255, 255, 255, 0.55);
-  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.34);
+  letter-spacing: 0.08em;
   white-space: nowrap;
   pointer-events: none;
 }
 
+/* -- Mobile arrow (scroll cue, desktop hidden) -- */
+.cinematic-mobile-arrow {
+  display: none;
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.125rem;
+  pointer-events: none;
+  font-family: var(--font-cormorant), Garamond, Georgia, serif;
+  font-style: italic;
+}
+
 /* -- Keyframes -- */
-@keyframes cinematic-night-fade {
-  from { opacity: 1; }
-  to   { opacity: 0; }
-}
-@keyframes cinematic-dawn-pulse {
-  0%   { opacity: 0; }
-  35%  { opacity: 1; }
-  65%  { opacity: 1; }
-  100% { opacity: 0; }
-}
-@keyframes cinematic-golden-rise {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-@keyframes cinematic-elem-fade {
-  from { opacity: 1; }
-  to   { opacity: 0; }
-}
-@keyframes cinematic-rise-120 {
-  from { transform: translateY(120px); }
-  to   { transform: translateY(0); }
-}
-@keyframes cinematic-rise-80 {
-  from { transform: translateY(80px); }
-  to   { transform: translateY(0); }
-}
-@keyframes cinematic-rise-40 {
-  from { transform: translateY(40px); }
-  to   { transform: translateY(0); }
-}
-@keyframes cinematic-twinkle {
+@keyframes cin-twinkle {
   0%, 100% { opacity: 0.65; }
   50%       { opacity: 1.0; }
 }
 
-/* -- Scroll-driven animations (Chrome 115+, Safari 17.4+, no reduced motion) -- */
-@supports (animation-timeline: scroll()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .cinematic-sky-night {
-      opacity: 1;
-      animation: cinematic-night-fade linear both;
-      animation-timeline: scroll(root);
-      animation-range: 60px 260px;
-    }
-    .cinematic-sky-dawn {
-      animation: cinematic-dawn-pulse linear both;
-      animation-timeline: scroll(root);
-      animation-range: 0px 350px;
-    }
-    .cinematic-sky-golden {
-      opacity: 0;
-      animation: cinematic-golden-rise linear both;
-      animation-timeline: scroll(root);
-      animation-range: 220px 350px;
-    }
-    .cinematic-stars {
-      opacity: 1;
-      animation: cinematic-elem-fade linear both;
-      animation-timeline: scroll(root);
-      animation-range: 100px 270px;
-    }
-    .cinematic-stars::before {
-      animation: cinematic-twinkle 3.5s ease-in-out infinite;
-    }
-    .cinematic-constellation {
-      opacity: 1;
-      animation: cinematic-elem-fade linear both;
-      animation-timeline: scroll(root);
-      animation-range: 100px 270px;
-    }
-    .cinematic-moon {
-      opacity: 1;
-      animation: cinematic-elem-fade linear both;
-      animation-timeline: scroll(root);
-      animation-range: 80px 250px;
-    }
-    .cinematic-landscape-bg {
-      transform: translateY(120px);
-      animation: cinematic-rise-120 linear both;
-      animation-timeline: scroll(root);
-      animation-range: 100px 300px;
-    }
-    .cinematic-landscape-mid {
-      transform: translateY(80px);
-      animation: cinematic-rise-80 linear both;
-      animation-timeline: scroll(root);
-      animation-range: 100px 300px;
-    }
-    .cinematic-landscape-fg {
-      transform: translateY(40px);
-      animation: cinematic-rise-40 linear both;
-      animation-timeline: scroll(root);
-      animation-range: 100px 300px;
-    }
-  }
+/* Mobile title: invisible → fade in → hold → fade out */
+@keyframes cinematic-mobile-title {
+  0%     { opacity: 0; }
+  12.5%  { opacity: 0; }   /* 0.6s — fade begins */
+  29.2%  { opacity: 1; }   /* 1.4s — fully visible */
+  70.8%  { opacity: 1; }   /* 3.4s — hold ends */
+  87.5%  { opacity: 0; }   /* 4.2s — faded out */
+  100%   { opacity: 0; }
 }
 
-/* -- Mobile (<768px): static golden hour, title always visible, no scroll seq -- */
+/* Mobile scroll cue arrow: delayed fade-in + gentle pulse */
+@keyframes cinematic-mobile-arrow {
+  0%   { opacity: 0;    transform: translateX(-50%) translateY(-3px); }
+  25%  { opacity: 0.55; transform: translateX(-50%) translateY(0);    }
+  75%  { opacity: 0.45; transform: translateX(-50%) translateY(5px);  }
+  100% { opacity: 0.2;  transform: translateX(-50%) translateY(-3px); }
+}
+
+/* Scroll-driven animations replaced entirely by Framer Motion useTransform */
+
+/* -- Mobile (<768px): static golden hour, animated title card, no scroll seq -- */
 @media (max-width: 767px) {
+  /* Collapse the scroll budget — scene is just a full-viewport block */
+  .cinematic-wrapper { height: 100vh; }
+
+  /* Allow native touch-scroll to pass through the sticky scene */
+  .cinematic-scene { touch-action: pan-y; }
+
+  /* Show mobile title, hide desktop Framer version and scroll prompts */
   .cinematic-title-mobile  { display: block; }
   .cinematic-title-desktop { display: none; }
   .cinematic-scroll-prompt { display: none; }
   .cinematic-skip-link     { display: none; }
+
+  /* Title card: Wes Anderson stagger — each line enters in turn */
+  .cinematic-title-mobile .cin-line-1 { opacity: 0; animation: cinematic-mobile-title 4.8s ease-in-out forwards; }
+  .cinematic-title-mobile .cin-line-2 { opacity: 0; animation: cinematic-mobile-title 4.8s ease-in-out forwards 0.55s; }
+  .cinematic-title-mobile .cin-line-3 { opacity: 0; animation: cinematic-mobile-title 4.8s ease-in-out forwards 1.1s; }
+
+  /* Position title higher so it sits clearly in the sky band */
+  .cinematic-title-card { top: 35%; }
+
+  /* Stop the star twinkle on mobile — battery drain on a hidden element */
+  .cin-stars::before { animation: none; }
+
+  /* Scroll-cue arrow: appears after title dissolves, pulses gently */
+  .cinematic-mobile-arrow {
+    display: block;
+    animation: cinematic-mobile-arrow 2s ease-in-out infinite 4.4s both;
+    will-change: opacity, transform;
+  }
 }
+
+/* Reduced motion: show all title lines statically, suppress arrow animation */
+@media (max-width: 767px) and (prefers-reduced-motion: reduce) {
+  .cinematic-title-mobile .cin-line-1,
+  .cinematic-title-mobile .cin-line-2,
+  .cinematic-title-mobile .cin-line-3 { animation: none; opacity: 1; }
+  .cinematic-mobile-arrow { display: none; }
+}
+
+/* ContentReveal: skip the scroll-driven fade on mobile — content is already
+   near the viewport fold and should just appear when the user scrolls to it */
+@media (max-width: 767px) {
+  .cinematic-content-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 /* End cinematic intro ================================================ */
