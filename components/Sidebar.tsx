@@ -108,7 +108,7 @@ export function Sidebar() {
 
       {/* ── Bottom block ───────────────────────────────────────────── */}
       <div className="mt-auto flex flex-col gap-4">
-        <Button href={`mailto:${profile.contactEmail}`} fullWidth>
+        <Button href="/contact/" fullWidth>
           Get in touch
         </Button>
         <div className="flex items-center justify-between font-mono text-meta tracking-label uppercase text-text-meta">
