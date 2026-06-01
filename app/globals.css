@@ -473,3 +473,313 @@ img::before {
   background-size: 100% 1px;
   color: var(--color-link-hover);
 }
+
+/* ==================================================================
+   CINEMATIC INTRO — Phase 5
+   Wes Anderson / New Mexico desert scroll intro.
+
+   Architecture:
+   - Sky layers: opacity toggled by CSS scroll-driven animations
+   - Stars/moon/constellation: fade out as sky brightens (scroll-driven)
+   - Landscape layers: rise from bottom (scroll-driven transforms)
+   - Title card + skip link: Framer Motion (CinematicIntro.tsx)
+   - Gate: @supports (animation-timeline: scroll()) — golden hour static fallback
+   - Reduced motion: global 0.01ms rule snaps everything to end state
+   - Mobile (<768px): static golden hour, no scroll sequence
+   ================================================================== */
+
+/* -- Scene container (sticky within the scroll-space wrapper) -- */
+.cinematic-scene {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* -- Sky layers -- */
+.cinematic-sky-night,
+.cinematic-sky-dawn,
+.cinematic-sky-golden {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+/* Fallback / default: golden hour already showing */
+.cinematic-sky-night {
+  opacity: 0;
+  background: linear-gradient(to bottom, #1B1F3A 0%, #16213e 33%, #2d1b4e 67%, #4a2040 100%);
+}
+.cinematic-sky-dawn {
+  opacity: 0;
+  background: linear-gradient(to bottom, #2C1654 0%, #6B3080 33%, #C95E50 67%, #E8895C 100%);
+}
+.cinematic-sky-golden {
+  opacity: 1;
+  background: linear-gradient(to bottom, #F5C518 0%, #D4936E 33%, #C84B31 67%, #8B4513 100%);
+}
+
+/* -- Stars -- */
+.cinematic-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;   /* hidden in fallback */
+}
+.cinematic-stars::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow:
+    47px  34px 1px rgba(255,255,255,0.9),
+    82px  89px 0px rgba(255,255,255,0.7),
+   156px  23px 1px rgba(255,255,255,0.85),
+   201px 145px 0px rgba(255,255,255,0.6),
+   267px  67px 0px rgba(255,255,255,0.9),
+   310px 189px 1px rgba(255,255,255,0.75),
+    94px 201px 0px rgba(255,255,255,0.7),
+   178px 312px 0px rgba(255,255,255,0.6),
+   233px 234px 1px rgba(255,255,255,0.8),
+    45px 267px 0px rgba(255,255,255,0.65),
+   389px  89px 0px rgba(255,255,255,0.9),
+   412px 234px 1px rgba(255,255,255,0.7),
+   467px 145px 0px rgba(255,255,255,0.75),
+   440px  67px 1px rgba(255,255,255,0.8),
+   567px  45px 1px rgba(255,255,255,0.85),
+   612px 123px 0px rgba(255,255,255,0.7),
+   689px  78px 0px rgba(255,255,255,0.9),
+   723px 201px 1px rgba(255,255,255,0.65),
+   801px  34px 0px rgba(255,255,255,0.8),
+   834px 156px 1px rgba(255,255,255,0.75),
+   756px 289px 0px rgba(255,255,255,0.6),
+   678px 312px 0px rgba(255,255,255,0.7),
+   590px 267px 1px rgba(255,255,255,0.65),
+   721px 145px 0px rgba(255,255,255,0.8),
+   845px 234px 1px rgba(255,255,255,0.7),
+   978px  89px 0px rgba(255,255,255,0.85),
+  1023px  34px 1px rgba(255,255,255,0.9),
+  1089px 167px 0px rgba(255,255,255,0.75),
+  1134px  78px 0px rgba(255,255,255,0.8),
+  1198px 234px 1px rgba(255,255,255,0.6),
+  1245px 123px 0px rgba(255,255,255,0.7),
+  1289px 189px 0px rgba(255,255,255,0.65),
+  1312px  56px 1px rgba(255,255,255,0.85),
+  1023px 234px 0px rgba(255,255,255,0.7),
+  1145px 312px 1px rgba(255,255,255,0.6),
+  1267px 267px 0px rgba(255,255,255,0.75),
+  1189px 145px 0px rgba(255,255,255,0.8),
+   123px 378px 1px rgba(255,255,255,0.5),
+   245px 423px 0px rgba(255,255,255,0.55),
+   389px 345px 0px rgba(255,255,255,0.6),
+   534px 412px 1px rgba(255,255,255,0.5),
+   678px 389px 0px rgba(255,255,255,0.55),
+   789px 434px 1px rgba(255,255,255,0.5),
+   934px 378px 0px rgba(255,255,255,0.6),
+  1056px 423px 1px rgba(255,255,255,0.55),
+  1189px 367px 0px rgba(255,255,255,0.5),
+  1312px 412px 1px rgba(255,255,255,0.45),
+   300px 112px 2px rgba(255,255,255,0.9),
+   890px  67px 2px rgba(255,255,255,0.85),
+  1100px 200px 2px rgba(255,255,255,0.9),
+   500px 300px 1px rgba(255,255,255,0.7),
+   700px 150px 2px rgba(255,255,255,0.85),
+   150px 150px 1px rgba(255,255,255,0.7),
+  1350px 290px 0px rgba(255,255,255,0.65),
+  1380px 145px 0px rgba(255,255,255,0.7);
+}
+
+/* -- Moon / constellation defaults (hidden in fallback) -- */
+.cinematic-moon        { opacity: 0; }
+.cinematic-constellation { opacity: 0; }
+
+/* -- Landscape layer defaults (visible, in-place for fallback) -- */
+.cinematic-landscape-bg,
+.cinematic-landscape-mid,
+.cinematic-landscape-fg { transform: translateY(0); }
+
+/* -- Title card -- */
+.cinematic-title-card {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+  pointer-events: none;
+  color: #FAF9F5;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.35);
+}
+.cinematic-title-wordmark {
+  font-family: var(--font-cormorant), Garamond, Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+.cinematic-title-sub {
+  font-family: var(--font-cormorant), Garamond, Georgia, serif;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  line-height: 2.2;
+  opacity: 0.75;
+}
+
+/* Mobile: show one title, hide desktop Framer version */
+.cinematic-title-mobile  { display: none; }
+.cinematic-title-desktop { display: block; }
+
+/* -- Skip link -- */
+.cinematic-skip-link {
+  position: absolute;
+  bottom: 1.75rem;
+  right: 2rem;
+  z-index: 10;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-cormorant), Garamond, Georgia, serif;
+  font-size: 0.875rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 0.5rem 0;
+  transition: color 180ms ease-out;
+  white-space: nowrap;
+}
+.cinematic-skip-link:hover { color: rgba(255, 255, 255, 0.92); }
+
+/* -- Scroll prompt -- */
+.cinematic-scroll-prompt {
+  position: absolute;
+  bottom: 1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  margin: 0;
+  font-family: var(--font-cormorant), Garamond, Georgia, serif;
+  font-size: 0.875rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* -- Keyframes -- */
+@keyframes cinematic-night-fade {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+@keyframes cinematic-dawn-pulse {
+  0%   { opacity: 0; }
+  35%  { opacity: 1; }
+  65%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes cinematic-golden-rise {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes cinematic-elem-fade {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+@keyframes cinematic-rise-120 {
+  from { transform: translateY(120px); }
+  to   { transform: translateY(0); }
+}
+@keyframes cinematic-rise-80 {
+  from { transform: translateY(80px); }
+  to   { transform: translateY(0); }
+}
+@keyframes cinematic-rise-40 {
+  from { transform: translateY(40px); }
+  to   { transform: translateY(0); }
+}
+@keyframes cinematic-twinkle {
+  0%, 100% { opacity: 0.65; }
+  50%       { opacity: 1.0; }
+}
+
+/* -- Scroll-driven animations (Chrome 115+, Safari 17.4+, no reduced motion) -- */
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .cinematic-sky-night {
+      opacity: 1;
+      animation: cinematic-night-fade linear both;
+      animation-timeline: scroll(root);
+      animation-range: 60px 260px;
+    }
+    .cinematic-sky-dawn {
+      animation: cinematic-dawn-pulse linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0px 350px;
+    }
+    .cinematic-sky-golden {
+      opacity: 0;
+      animation: cinematic-golden-rise linear both;
+      animation-timeline: scroll(root);
+      animation-range: 220px 350px;
+    }
+    .cinematic-stars {
+      opacity: 1;
+      animation: cinematic-elem-fade linear both;
+      animation-timeline: scroll(root);
+      animation-range: 100px 270px;
+    }
+    .cinematic-stars::before {
+      animation: cinematic-twinkle 3.5s ease-in-out infinite;
+    }
+    .cinematic-constellation {
+      opacity: 1;
+      animation: cinematic-elem-fade linear both;
+      animation-timeline: scroll(root);
+      animation-range: 100px 270px;
+    }
+    .cinematic-moon {
+      opacity: 1;
+      animation: cinematic-elem-fade linear both;
+      animation-timeline: scroll(root);
+      animation-range: 80px 250px;
+    }
+    .cinematic-landscape-bg {
+      transform: translateY(120px);
+      animation: cinematic-rise-120 linear both;
+      animation-timeline: scroll(root);
+      animation-range: 100px 300px;
+    }
+    .cinematic-landscape-mid {
+      transform: translateY(80px);
+      animation: cinematic-rise-80 linear both;
+      animation-timeline: scroll(root);
+      animation-range: 100px 300px;
+    }
+    .cinematic-landscape-fg {
+      transform: translateY(40px);
+      animation: cinematic-rise-40 linear both;
+      animation-timeline: scroll(root);
+      animation-range: 100px 300px;
+    }
+  }
+}
+
+/* -- Mobile (<768px): static golden hour, title always visible, no scroll seq -- */
+@media (max-width: 767px) {
+  .cinematic-title-mobile  { display: block; }
+  .cinematic-title-desktop { display: none; }
+  .cinematic-scroll-prompt { display: none; }
+  .cinematic-skip-link     { display: none; }
+}
+/* End cinematic intro ================================================ */

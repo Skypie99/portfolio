@@ -124,6 +124,29 @@ export default function AboutPage() {
           {/* Peach-cream callout panel — Dani §3.6. Hairline dividers
               between steps preserved from Cycle 7 (Stone decorative). */}
           <div className="bg-peach-cream border border-border-decorative rounded-lg p-8 md:p-12">
+            <ol className="flex flex-col divide-y divide-border-decorative">
+              <li className="py-8 first:pt-0 last:pb-0">
+                <NumberedStep
+                  number="01"
+                  title="Describe the problem."
+                  body="Use Claude Code as the primary building environment. Read the output. Course-correct when something is wrong."
+                />
+              </li>
+              <li className="py-8 first:pt-0 last:pb-0">
+                <NumberedStep
+                  number="02"
+                  title="Assemble the team."
+                  body="For larger work, fifteen agents — each with a defined role, operating from a written constitution. Nothing is decided by accident."
+                />
+              </li>
+              <li className="py-8 first:pt-0 last:pb-0">
+                <NumberedStep
+                  number="03"
+                  title="Do not ship until you have used it."
+                  body="Then write down what broke, what surprised you, and what the next person will need to know."
+                />
+              </li>
+            </ol>
           </div>
         </div>
       </section>
@@ -283,6 +306,9 @@ export default function AboutPage() {
             <br />
             Let{'’'}s talk.
           </h2>
+          <Button href={`mailto:${profile.contactEmail}?subject=Hello from your portfolio`}>
+            Write to me.
+          </Button>
 
           <Link
             href="/"
