@@ -515,7 +515,9 @@ img::before {
 .cinematic-wrapper {
   height: calc(100vh + 500px);
   position: relative;
-  overflow: hidden;
+  /* no overflow:hidden here — it breaks position:sticky on .cinematic-scene
+     (any overflow!=visible ancestor makes a sticky child fall back to normal
+     flow and scroll away). The scene does its own clipping at line ~532. */
 }
 
 /* Phase 5.5 IMAX redesign — 200vh budget (Dani spec §2) */
