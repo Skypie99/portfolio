@@ -7,7 +7,7 @@ import { getBlogPosts, getProfile } from '@/lib/content';
 
 export function generateMetadata(): Metadata {
   const profile = getProfile();
-  const description = 'Writing on accessibility, AI tools, and building things carefully — by Sky Halisky.';
+  const description = 'Writing by Sky Halisky on AI, accessibility, and building things.';
   return {
     title: `Blog — ${profile.name}`,
     description,
