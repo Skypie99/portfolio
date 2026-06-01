@@ -503,30 +503,27 @@ img::before {
   isolation: isolate;
 }
 
-/* -- Sky layers -- */
-.cinematic-sky-night,
-.cinematic-sky-dawn,
-.cinematic-sky-golden {
+/* -- Sky layers (Framer Motion controls opacity — no CSS fallback needed) -- */
+.cin-sky {
   position: absolute;
   inset: 0;
   pointer-events: none;
 }
-/* Fallback / default: golden hour already showing */
-.cinematic-sky-night {
-  opacity: 0;
-  background: linear-gradient(to bottom, #1B1F3A 0%, #16213e 33%, #2d1b4e 67%, #4a2040 100%);
+.cin-sky-night {
+  background: linear-gradient(to bottom, #1B1F3A 0%, #16213e 40%, #2d1b4e 70%, #3a1840 100%);
+  z-index: 1;
 }
-.cinematic-sky-dawn {
-  opacity: 0;
-  background: linear-gradient(to bottom, #2C1654 0%, #6B3080 33%, #C95E50 67%, #E8895C 100%);
+.cin-sky-dawn {
+  background: linear-gradient(to bottom, #2C1654 0%, #8B4F8E 30%, #C95E50 68%, #E8895C 100%);
+  z-index: 1;
 }
-.cinematic-sky-golden {
-  opacity: 1;
-  background: linear-gradient(to bottom, #F5C518 0%, #D4936E 33%, #C84B31 67%, #8B4513 100%);
+.cin-sky-golden {
+  background: linear-gradient(to bottom, #F5A623 0%, #E07C3A 35%, #C84B31 68%, #8B4513 100%);
+  z-index: 1;
 }
 
-/* -- Stars -- */
-.cinematic-stars {
+/* -- Stars (Framer Motion drives scale + opacity — spreading zoom effect) -- */
+.cin-stars {
   position: absolute;
   top: 0;
   left: 0;
@@ -534,9 +531,9 @@ img::before {
   height: 60%;
   pointer-events: none;
   z-index: 2;
-  opacity: 0;   /* hidden in fallback */
+  transform-origin: 50% 50%;
 }
-.cinematic-stars::before {
+.cin-stars::before {
   content: '';
   position: absolute;
   top: 0;
@@ -545,6 +542,7 @@ img::before {
   height: 2px;
   border-radius: 50%;
   background: transparent;
+  animation: cin-twinkle 3.5s ease-in-out infinite;
   box-shadow:
     47px  34px 1px rgba(255,255,255,0.9),
     82px  89px 0px rgba(255,255,255,0.7),
@@ -603,14 +601,27 @@ img::before {
   1380px 145px 0px rgba(255,255,255,0.7);
 }
 
-/* -- Moon / constellation defaults (hidden in fallback) -- */
-.cinematic-moon        { opacity: 0; }
-.cinematic-constellation { opacity: 0; }
-
-/* -- Landscape layer defaults (visible, in-place for fallback) -- */
-.cinematic-landscape-bg,
-.cinematic-landscape-mid,
-.cinematic-landscape-fg { transform: translateY(0); }
+/* -- Landscape zoom container (Framer Motion drives scale 0.18→1) -- */
+.cin-landscape-zoom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80vh;
+  transform-origin: 50% 100%;   /* grow from bottom-center = camera descending */
+  z-index: 4;
+  pointer-events: none;
+}
+.cin-ground-svg,
+.cin-mesas-svg,
+.cin-flora-svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
 
 /* -- Title card -- */
 .cinematic-title-card {
@@ -699,37 +710,7 @@ img::before {
 }
 
 /* -- Keyframes -- */
-@keyframes cinematic-night-fade {
-  from { opacity: 1; }
-  to   { opacity: 0; }
-}
-@keyframes cinematic-dawn-pulse {
-  0%   { opacity: 0; }
-  35%  { opacity: 1; }
-  65%  { opacity: 1; }
-  100% { opacity: 0; }
-}
-@keyframes cinematic-golden-rise {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-@keyframes cinematic-elem-fade {
-  from { opacity: 1; }
-  to   { opacity: 0; }
-}
-@keyframes cinematic-rise-120 {
-  from { transform: translateY(120px); }
-  to   { transform: translateY(0); }
-}
-@keyframes cinematic-rise-80 {
-  from { transform: translateY(80px); }
-  to   { transform: translateY(0); }
-}
-@keyframes cinematic-rise-40 {
-  from { transform: translateY(40px); }
-  to   { transform: translateY(0); }
-}
-@keyframes cinematic-twinkle {
+@keyframes cin-twinkle {
   0%, 100% { opacity: 0.65; }
   50%       { opacity: 1.0; }
 }
@@ -752,67 +733,7 @@ img::before {
   100% { opacity: 0.2;  transform: translateX(-50%) translateY(-3px); }
 }
 
-/* -- Scroll-driven animations (Chrome 115+, Safari 17.4+, no reduced motion) -- */
-@supports (animation-timeline: scroll()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .cinematic-sky-night {
-      opacity: 1;
-      animation: cinematic-night-fade linear both;
-      animation-timeline: scroll(root);
-      animation-range: 60px 260px;
-    }
-    .cinematic-sky-dawn {
-      animation: cinematic-dawn-pulse linear both;
-      animation-timeline: scroll(root);
-      animation-range: 0px 350px;
-    }
-    .cinematic-sky-golden {
-      opacity: 0;
-      animation: cinematic-golden-rise linear both;
-      animation-timeline: scroll(root);
-      animation-range: 220px 350px;
-    }
-    .cinematic-stars {
-      opacity: 1;
-      animation: cinematic-elem-fade linear both;
-      animation-timeline: scroll(root);
-      animation-range: 100px 270px;
-    }
-    .cinematic-stars::before {
-      animation: cinematic-twinkle 3.5s ease-in-out infinite;
-    }
-    .cinematic-constellation {
-      opacity: 1;
-      animation: cinematic-elem-fade linear both;
-      animation-timeline: scroll(root);
-      animation-range: 100px 270px;
-    }
-    .cinematic-moon {
-      opacity: 1;
-      animation: cinematic-elem-fade linear both;
-      animation-timeline: scroll(root);
-      animation-range: 80px 250px;
-    }
-    .cinematic-landscape-bg {
-      transform: translateY(120px);
-      animation: cinematic-rise-120 linear both;
-      animation-timeline: scroll(root);
-      animation-range: 100px 300px;
-    }
-    .cinematic-landscape-mid {
-      transform: translateY(80px);
-      animation: cinematic-rise-80 linear both;
-      animation-timeline: scroll(root);
-      animation-range: 100px 300px;
-    }
-    .cinematic-landscape-fg {
-      transform: translateY(40px);
-      animation: cinematic-rise-40 linear both;
-      animation-timeline: scroll(root);
-      animation-range: 100px 300px;
-    }
-  }
-}
+/* Scroll-driven animations replaced entirely by Framer Motion useTransform */
 
 /* -- Mobile (<768px): static golden hour, animated title card, no scroll seq -- */
 @media (max-width: 767px) {
@@ -836,8 +757,8 @@ img::before {
   /* Position title higher so it sits clearly in the sky band */
   .cinematic-title-card { top: 35%; }
 
-  /* Stop the star twinkle — battery drain on a hidden element */
-  .cinematic-stars::before { animation: none; }
+  /* Stop the star twinkle on mobile — battery drain on a hidden element */
+  .cin-stars::before { animation: none; }
 
   /* Scroll-cue arrow: appears after title dissolves, pulses gently */
   .cinematic-mobile-arrow {
