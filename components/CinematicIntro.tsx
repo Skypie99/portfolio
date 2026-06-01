@@ -2,42 +2,53 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 
+function clamp01(v: number): number {
+  return Math.max(0, Math.min(1, v));
+}
+
+function easeInOutCubic(t: number): number {
+  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+}
+
+function easeInCubic(t: number): number {
+  return t * t * t;
+}
+
 export function CinematicIntro() {
   const { scrollY } = useScroll();
 
-  // Sky transitions
-  const skyNightOp  = useTransform(scrollY, [0, 60, 280], [1, 1, 0]);
-  const skyDawnOp   = useTransform(scrollY, [60, 150, 215, 305], [0, 1, 1, 0]);
-  const skyGoldenOp = useTransform(scrollY, [230, 320], [0, 1]);
+  // ── Sky: atmospheric crossfade ──────────────────────────────────────
+  const skyNightOp  = useTransform(scrollY, [0, 70, 290], [1, 1, 0]);
+  const skyDawnOp   = useTransform(scrollY, [70, 165, 225, 315], [0, 1, 1, 0]);
+  const skyGoldenOp = useTransform(scrollY, [240, 340], [0, 1]);
 
-  // Stars spread outward as camera descends (zoom spreading effect)
-  const starsOp    = useTransform(scrollY, [0, 100, 265], [1, 1, 0]);
-  const starsScale = useTransform(scrollY, [0, 320], [1, 2.6]);
-  const moonOp     = useTransform(scrollY, [0, 80, 225], [1, 1, 0]);
+  // ── Stars: accelerating spread — parallax increases with proximity ──
+  const starsOp    = useTransform(scrollY, [0, 110, 280], [1, 1, 0]);
+  const starsScale = useTransform(scrollY, (v: number) => {
+    const t = clamp01(v / 340);
+    return 1 + easeInCubic(t) * 2;
+  });
+  const moonOp = useTransform(scrollY, [0, 90, 240], [1, 1, 0]);
 
-  // Full landscape zoom: camera descends from high altitude to ground level
-  const landScale = useTransform(scrollY, [0, 320], [0.18, 1]);
-  // Mesas emerge as we get close enough to resolve them
-  const mesaOp    = useTransform(scrollY, [70, 175], [0, 1]);
-  // Flora detail appears as we reach ground level
-  const floraOp   = useTransform(scrollY, [195, 278], [0, 1]);
+  // ── Landscape: eased descent — slow start, dramatic middle, gentle landing
+  const landScale = useTransform(scrollY, (v: number) => {
+    const t = clamp01(v / 350);
+    return 0.18 + easeInOutCubic(t) * 0.82;
+  });
+  const mesaOp  = useTransform(scrollY, [80, 190], [0, 1]);
+  const floraOp = useTransform(scrollY, [200, 290], [0, 1]);
 
-  // Title card: fades in at ground level, holds, exits
-  const titleOp  = useTransform(scrollY, [255, 295, 325, 365], [0, 1, 1, 0]);
-  const skipOp   = useTransform(scrollY, [120, 165, 330, 370], [0, 1, 1, 0]);
+  // ── Title card: staggered entrance, y-drift, extended hold ──────────
+  const titleY       = useTransform(scrollY, [270, 315, 360, 410], [10, 0, 0, -4]);
+  const titleLine1Op = useTransform(scrollY, [270, 312, 360, 410], [0, 1, 1, 0]);
+  const titleLine2Op = useTransform(scrollY, [282, 320, 360, 410], [0, 1, 1, 0]);
+  const titleLine3Op = useTransform(scrollY, [292, 326, 360, 410], [0, 1, 1, 0]);
+  const skipOp       = useTransform(scrollY, [145, 190, 370, 415], [0, 1, 1, 0]);
   const promptOp = useTransform(scrollY, [0, 80], [1, 0]);
 
   function handleSkip() {
     document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' });
   }
-
-  const titleContent = (
-    <>
-      <p className="cinematic-title-wordmark">SkyPi Studio</p>
-      <p className="cinematic-title-sub">Est. 2026</p>
-      <p className="cinematic-title-sub">Okanagan Valley, British Columbia</p>
-    </>
-  );
 
   return (
     <div className="cinematic-wrapper" aria-hidden="true">
@@ -379,19 +390,21 @@ export function CinematicIntro() {
           </motion.svg>
         </motion.div>
 
-        {/* ── Title card — mobile ────────────────────────────────────── */}
+        {/* ── Title card — mobile (CSS time-based stagger) ───────────── */}
         <div className="cinematic-title-card cinematic-title-mobile" aria-hidden="true">
-          {titleContent}
+          <p className="cinematic-title-wordmark cin-line-1">SkyPi Studio</p>
+          <p className="cinematic-title-sub cin-line-2">Est. 2026</p>
+          <p className="cinematic-title-sub cin-line-3">Okanagan Valley, British Columbia</p>
         </div>
 
-        {/* ── Title card — desktop (scroll-driven opacity) ──────────── */}
-        <motion.div
-          className="cinematic-title-card cinematic-title-desktop"
-          style={{ opacity: titleOp }}
-          aria-hidden="true"
-        >
-          {titleContent}
-        </motion.div>
+        {/* ── Title card — desktop (staggered entrance with y-drift) ────── */}
+        <div className="cinematic-title-card cinematic-title-desktop" aria-hidden="true">
+          <motion.div style={{ y: titleY }}>
+            <motion.p className="cinematic-title-wordmark" style={{ opacity: titleLine1Op }}>SkyPi Studio</motion.p>
+            <motion.p className="cinematic-title-sub"      style={{ opacity: titleLine2Op }}>Est. 2026</motion.p>
+            <motion.p className="cinematic-title-sub"      style={{ opacity: titleLine3Op }}>Okanagan Valley, British Columbia</motion.p>
+          </motion.div>
+        </div>
 
         {/* ── Skip link ───────────────────────────────────────────────── */}
         <motion.button
