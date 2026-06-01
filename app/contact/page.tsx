@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-import { Button } from '@/components/Button';
+import { ContactEmail } from '@/components/ContactEmail';
 import { cn } from '@/lib/cn';
 import { getProfile } from '@/lib/content';
 
@@ -33,27 +33,23 @@ export default function ContactPage() {
         <div className="max-w-content mx-auto">
           <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
             <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
-            Contact
+            Correspond
           </p>
           <h1
             className="font-serif font-light text-[clamp(2.5rem,6vw,4rem)] text-near-black leading-[1.05] max-w-3xl mb-8 text-balance"
             style={{ letterSpacing: '-0.02em' }}
           >
-            Get in touch.
+            Write to me.
           </h1>
           <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] max-w-[640px] mb-4 text-pretty">
-            Best for AI engineering, accessibility, or thoughtful product
-            collaborations. I reply to most messages within a few days.
+            AI engineering. Accessibility. Thoughtful product collaborations.
+            I reply to most messages within a few days.
           </p>
           <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] max-w-[640px] mb-10 text-pretty">
-            For everything else, the socials below also work.
+            The socials below also work, for everything else.
           </p>
 
-          <Button
-            href={`mailto:${profile.contactEmail}?subject=Hello from your portfolio`}
-          >
-            Email {profile.contactEmail}
-          </Button>
+          <ContactEmail />
         </div>
       </section>
 
