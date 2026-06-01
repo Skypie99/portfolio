@@ -440,10 +440,11 @@ function MutualMeshScreen() {
 const floatStyles = `
 @keyframes mockup-float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-4px); }
+  40%       { transform: translateY(-6px); }
+  60%       { transform: translateY(-5px); }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .mockup-float { animation: mockup-float 4s ease-in-out infinite; }
+  .mockup-float { animation: mockup-float 5s cubic-bezier(0.37, 0, 0.63, 1) infinite; }
 }
 `
 

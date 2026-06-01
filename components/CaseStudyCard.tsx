@@ -58,7 +58,7 @@ export function CaseStudyCard({
           className={cn(
             'w-full h-full object-cover',
             'transition-all duration-slow ease-out',
-            'group-hover:scale-102',
+            'group-hover:scale-[1.02]',
           )}
           loading="lazy"
         />

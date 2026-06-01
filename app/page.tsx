@@ -107,8 +107,8 @@ export default function HomePage() {
                 )}
               >
                 <p
-                  className="font-serif font-light text-[2.75rem] text-terracotta leading-none mb-1"
-                  style={{ letterSpacing: '-0.02em' }}
+                  className="font-serif font-light text-[clamp(2.5rem,5vw,3.75rem)] text-terracotta leading-none mb-1"
+                  style={{ letterSpacing: '-0.03em' }}
                   aria-label={`${stat} ${label}`}
                 >
                   {stat}
@@ -235,16 +235,24 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div className="md:col-span-7 md:col-start-6 max-w-[640px] flex flex-col gap-6">
+          <div className="max-w-[640px] flex flex-col gap-6">
+            {/* Pull-quote accent — editorial tone-setter */}
+            <blockquote
+              className={cn(
+                'pl-5 border-l-2 border-terracotta',
+                'font-serif font-light text-[1.375rem] text-near-black leading-[1.4]',
+                'text-balance',
+              )}
+              style={{ letterSpacing: '-0.01em' }}
+            >
+              One careful deliverable beats a dozen rough ones.
+            </blockquote>
+
             <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
               Most of what I make starts with a problem worth solving, then a
-              small thing that solves it well. I would rather ship one careful
-              deliverable than a dozen rough ones.
-            </p>
-            <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
-              I work from {profile.location}, mostly on AI-assisted tooling,
-              accessibility, and the quiet infrastructure that makes a product
-              feel calm to use. Long projects, small surfaces, real users.
+              small thing that solves it well. I work from {profile.location},
+              mostly on AI-assisted tooling, accessibility, and the quiet
+              infrastructure that makes a product feel calm to use.
             </p>
             <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
               I keep a written record of how each thing was built and why —

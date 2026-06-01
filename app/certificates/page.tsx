@@ -86,18 +86,19 @@ export default function CertificatesPage() {
                     'bg-blush border border-border-decorative',
                     'p-8',
                     'rounded-md',
-                    'transition-colors duration-base ease-out',
-                    'hover:border-pebble focus-within:border-pebble',
+                    'transition-all duration-base ease-out',
+                    'hover:border-pebble hover:shadow-[var(--shadow-elevation-2)] hover:-translate-y-0.5',
+                    'focus-within:border-pebble',
                   )}
                 >
-                  {/* Badge image / fallback — Cycle 27: removed the
-                      issuer overlay text. Issuer name already appears
-                      as the eyebrow above the title; repeating it
-                      inside the well was triple-redundant. The well
-                      now reads as decorative texture instead of
-                      duplicate meta. Becomes the real badge once Sky
-                      drops actual credential images in. */}
-                  <div className="relative w-full aspect-square bg-peach-cream border border-border-decorative mb-6 overflow-hidden flex items-center justify-center">
+                  {/* Badge image well — warm radial gradient gives depth vs flat bg */}
+                  <div
+                    className="relative w-full aspect-square border border-border-decorative mb-6 overflow-hidden flex items-center justify-center"
+                    style={{
+                      background:
+                        'radial-gradient(60% 60% at 50% 40%, #FDE9D7 0%, #FCF3ED 55%, #F0F0EA 100%)',
+                    }}
+                  >
                     {/* Alex F-C4-3: explicit dimensions for the 1:1 badge.
                         BadgeImage is a client component so the onError
                         fallback (graceful degradation) can fire. */}
