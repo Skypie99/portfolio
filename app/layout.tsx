@@ -63,7 +63,8 @@ const isProd = process.env.NODE_ENV === 'production';
 export function generateMetadata(): Metadata {
   const profile = getProfile();
   const siteUrl = 'https://www.skypistudio.com';
-  const description = `${profile.tagline} — Four live products, a multi-agent system, and an accessibility map. All open source.`;
+  const description =
+    'Sky Halisky is an AI developer building accessible, privacy-first tools from the Okanagan Valley, BC. Creator of AccessMap, the Prompt Library, and more.';
   return {
     title: `${profile.name} — AI Portfolio`,
     description,
@@ -111,6 +112,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {isProd && (
           <meta httpEquiv="Content-Security-Policy" content={PROD_CSP} />
         )}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              name: 'Sky Halisky',
+              url: 'https://www.skypistudio.com',
+              jobTitle: 'AI Developer',
+              description:
+                'AI developer and builder based in the Okanagan Valley, British Columbia. Creator of AccessMap, Claude Corp, the Prompt Library, and more.',
+              sameAs: [
+                'https://github.com/skypie99',
+                'https://www.linkedin.com/in/sky-halisky/',
+              ],
+            }),
+          }}
+        />
       </head>
       <body className="bg-cream text-near-black">
         <SkipLink />
