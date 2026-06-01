@@ -68,6 +68,7 @@ export const DeliverableSchema = z.object({
     ),
   tags: z.array(z.string().min(2).max(30)).max(6),
   featured: z.boolean(),
+  body: z.string().min(10).optional(),
 });
 
 export const CertificateSchema = z
