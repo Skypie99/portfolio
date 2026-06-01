@@ -515,11 +515,38 @@ img::before {
   z-index: 1;
 }
 .cin-sky-dawn {
-  background: linear-gradient(to bottom, #2C1654 0%, #8B4F8E 30%, #C95E50 68%, #E8895C 100%);
+  background: linear-gradient(
+    to bottom,
+    #2C1654 0%,
+    #5A3070 18%,
+    #8B4F8E 32%,
+    #AE5A70 48%,
+    #C96858 64%,
+    #D88058 78%,
+    #E89860 92%,
+    #E8A060 100%
+  );
   z-index: 1;
 }
 .cin-sky-golden {
-  background: linear-gradient(to bottom, #F5A623 0%, #E07C3A 35%, #C84B31 68%, #8B4513 100%);
+  background:
+    radial-gradient(
+      ellipse 100% 45% at 28% 92%,
+      rgba(248, 196, 112, 0.30) 0%,
+      transparent 65%
+    ),
+    linear-gradient(
+      to bottom,
+      #B87044 0%,
+      #C88050 12%,
+      #D89458 28%,
+      #E8A860 44%,
+      #F0B464 56%,
+      #E89850 68%,
+      #D07838 80%,
+      #A05828 92%,
+      #7A3E1C 100%
+    );
   z-index: 1;
 }
 
@@ -627,6 +654,25 @@ img::before {
 }
 .cin-mesas-svg,
 .cin-flora-svg {
+  will-change: opacity;
+}
+
+/* -- Atmospheric haze (warm golden-hour glow between depth planes) -- */
+.cin-atmosphere {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 35%;
+  background: linear-gradient(
+    to top,
+    rgba(200, 130, 60, 0.18) 0%,
+    rgba(220, 150, 80, 0.12) 30%,
+    rgba(232, 168, 96, 0.06) 60%,
+    transparent 100%
+  );
+  z-index: 5;
+  pointer-events: none;
   will-change: opacity;
 }
 

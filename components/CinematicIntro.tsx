@@ -108,7 +108,7 @@ export function CinematicIntro() {
           </g>
         </motion.svg>
 
-        {/* ── Moon (crescent) ─────────────────────────────────────────── */}
+        {/* ── Moon (crescent with luminosity halo) ────────────────────── */}
         <motion.svg
           aria-hidden="true"
           viewBox="0 0 120 120"
@@ -127,6 +127,8 @@ export function CinematicIntro() {
               <circle cx="72" cy="50" r="40" fill="black" />
             </mask>
           </defs>
+          <circle cx="58" cy="50" r="52" fill="rgba(253,246,227,0.02)" />
+          <circle cx="58" cy="50" r="44" fill="rgba(253,246,227,0.04)" />
           <circle cx="58" cy="50" r="40" fill="rgba(253,246,227,0.06)" />
           <circle cx="58" cy="50" r="36" fill="#FDF6E3" mask="url(#cin-crescent)" />
         </motion.svg>
@@ -137,7 +139,7 @@ export function CinematicIntro() {
             transform-origin: bottom center keeps ground anchored.          */}
         <motion.div className="cin-landscape-zoom" style={{ scale: landScale }}>
 
-          {/* Ground plane — visible as soon as the zoom container appears */}
+          {/* Ground plane */}
           <svg
             className="cin-ground-svg"
             viewBox="0 0 1440 500"
@@ -150,8 +152,9 @@ export function CinematicIntro() {
 
           {/* ── Mesa formations ─────────────────────────────────────────
               WA symmetry: center mesa (tallest) flanked by two shorter
-              on each side. Light source from the left — left faces lighter,
-              right faces darker. Geological striations on all cliff faces.  */}
+              on each side. Light source from the left — left faces catch
+              warm light, right faces hold colored shadow. Horizontal
+              sedimentary banding is the geological signature.             */}
           <motion.svg
             className="cin-mesas-svg"
             viewBox="0 0 1440 500"
@@ -159,22 +162,27 @@ export function CinematicIntro() {
             aria-hidden="true"
             style={{ opacity: mesaOp }}
           >
+            <defs>
+              <clipPath id="mfl"><path d="M 42 390 L 68 290 L 92 262 L 140 258 L 205 260 L 248 262 L 262 290 L 280 390 Z" /></clipPath>
+              <clipPath id="mlc"><path d="M 382 390 L 410 255 L 432 220 L 468 216 L 510 214 L 550 216 L 568 252 L 585 390 Z" /></clipPath>
+              <clipPath id="mc"><path d="M 578 390 L 615 238 L 642 165 L 682 161 L 720 159 L 758 161 L 798 164 L 825 240 L 862 390 Z" /></clipPath>
+              <clipPath id="mrc"><path d="M 858 390 L 880 248 L 900 210 L 942 206 L 998 207 L 1038 210 L 1056 246 L 1080 390 Z" /></clipPath>
+              <clipPath id="mfr"><path d="M 1162 390 L 1182 280 L 1200 254 L 1250 250 L 1312 252 L 1358 254 L 1375 278 L 1398 390 Z" /></clipPath>
+            </defs>
+
             {/* FAR-LEFT MESA — atmospheric blue-shift (most distant) */}
             <g>
               <path d="M 42 390 L 68 290 L 92 262 L 140 258 L 205 260 L 248 262 L 262 290 L 280 390 Z" fill="#5E2216" />
-              {/* Cap band — slightly lighter rock on top tier */}
               <path d="M 92 262 L 140 258 L 205 260 L 248 262 L 255 285 L 100 287 Z" fill="#7A3022" />
-              {/* Left face highlight (light from left) */}
-              <path d="M 42 390 L 68 290 L 100 287 L 106 390 Z" fill="rgba(200,100,70,0.18)" />
-              {/* Right face shadow */}
-              <path d="M 272 390 L 262 290 L 255 285 L 264 390 Z" fill="rgba(0,0,0,0.22)" />
-              {/* Geological striations */}
-              <g stroke="rgba(0,0,0,0.1)" strokeWidth="0.9" fill="none">
-                <line x1="115" y1="287" x2="110" y2="390" />
-                <line x1="140" y1="285" x2="136" y2="390" />
-                <line x1="165" y1="286" x2="162" y2="390" />
-                <line x1="195" y1="285" x2="193" y2="390" />
-                <line x1="225" y1="285" x2="224" y2="390" />
+              <path d="M 42 390 L 68 290 L 100 287 L 106 390 Z" fill="rgba(180,90,55,0.18)" />
+              <path d="M 272 390 L 262 290 L 255 285 L 264 390 Z" fill="rgba(50,18,8,0.22)" />
+              <g clipPath="url(#mfl)">
+                <rect x="30" y="290" width="260" height="3" fill="rgba(130,55,30,0.14)" />
+                <rect x="30" y="318" width="260" height="4" fill="rgba(90,35,18,0.12)" />
+                <rect x="30" y="348" width="260" height="3" fill="rgba(130,55,30,0.10)" />
+                <rect x="30" y="374" width="260" height="4" fill="rgba(90,35,18,0.10)" />
+                <line x1="155" y1="260" x2="152" y2="390" stroke="rgba(40,15,8,0.07)" strokeWidth="0.7" />
+                <line x1="210" y1="261" x2="208" y2="390" stroke="rgba(40,15,8,0.05)" strokeWidth="0.6" />
               </g>
             </g>
 
@@ -182,35 +190,34 @@ export function CinematicIntro() {
             <g>
               <path d="M 382 390 L 410 255 L 432 220 L 468 216 L 510 214 L 550 216 L 568 252 L 585 390 Z" fill="#7D2E1E" />
               <path d="M 432 220 L 468 216 L 510 214 L 550 216 L 560 246 L 442 248 Z" fill="#9B3824" />
-              <path d="M 382 390 L 410 255 L 442 248 L 448 390 Z" fill="rgba(200,100,70,0.20)" />
-              <path d="M 578 390 L 568 252 L 560 246 L 572 390 Z" fill="rgba(0,0,0,0.24)" />
-              <g stroke="rgba(0,0,0,0.11)" strokeWidth="0.9" fill="none">
-                <line x1="458" y1="248" x2="454" y2="390" />
-                <line x1="478" y1="247" x2="475" y2="390" />
-                <line x1="502" y1="246" x2="499" y2="390" />
-                <line x1="525" y1="247" x2="523" y2="390" />
-                <line x1="545" y1="248" x2="543" y2="390" />
+              <path d="M 382 390 L 410 255 L 442 248 L 448 390 Z" fill="rgba(190,95,58,0.20)" />
+              <path d="M 578 390 L 568 252 L 560 246 L 572 390 Z" fill="rgba(50,18,8,0.24)" />
+              <g clipPath="url(#mlc)">
+                <rect x="375" y="256" width="220" height="4" fill="rgba(140,58,32,0.13)" />
+                <rect x="375" y="290" width="220" height="3" fill="rgba(90,32,16,0.14)" />
+                <rect x="375" y="326" width="220" height="4" fill="rgba(140,58,32,0.11)" />
+                <rect x="375" y="360" width="220" height="3" fill="rgba(90,32,16,0.10)" />
+                <line x1="478" y1="216" x2="476" y2="390" stroke="rgba(40,15,8,0.06)" strokeWidth="0.7" />
+                <line x1="530" y1="216" x2="528" y2="390" stroke="rgba(40,15,8,0.05)" strokeWidth="0.6" />
               </g>
             </g>
 
             {/* CENTER MESA — hero piece, tallest, WA focal point */}
             <g>
               <path d="M 578 390 L 615 238 L 642 165 L 682 161 L 720 159 L 758 161 L 798 164 L 825 240 L 862 390 Z" fill="#7D2E1E" />
-              {/* Cap — warm terracotta cap rock */}
               <path d="M 642 165 L 682 161 L 720 159 L 758 161 L 798 164 L 810 198 L 632 200 Z" fill="#A03828" />
-              {/* Left face light */}
-              <path d="M 578 390 L 615 238 L 632 200 L 638 390 Z" fill="rgba(200,100,70,0.22)" />
-              {/* Right face shadow */}
-              <path d="M 852 390 L 825 240 L 810 198 L 820 390 Z" fill="rgba(0,0,0,0.26)" />
-              {/* Striations */}
-              <g stroke="rgba(0,0,0,0.11)" strokeWidth="1" fill="none">
-                <line x1="652" y1="200" x2="648" y2="390" />
-                <line x1="672" y1="199" x2="669" y2="390" />
-                <line x1="695" y1="198" x2="692" y2="390" />
-                <line x1="720" y1="197" x2="718" y2="390" />
-                <line x1="744" y1="198" x2="742" y2="390" />
-                <line x1="768" y1="199" x2="766" y2="390" />
-                <line x1="790" y1="200" x2="789" y2="390" />
+              <path d="M 578 390 L 615 238 L 632 200 L 638 390 Z" fill="rgba(200,100,62,0.22)" />
+              <path d="M 852 390 L 825 240 L 810 198 L 820 390 Z" fill="rgba(50,18,8,0.26)" />
+              <g clipPath="url(#mc)">
+                <rect x="570" y="210" width="300" height="5" fill="rgba(160,56,40,0.12)" />
+                <rect x="570" y="248" width="300" height="4" fill="rgba(100,36,18,0.14)" />
+                <rect x="570" y="282" width="300" height="5" fill="rgba(160,56,40,0.11)" />
+                <rect x="570" y="318" width="300" height="4" fill="rgba(100,36,18,0.12)" />
+                <rect x="570" y="352" width="300" height="5" fill="rgba(160,56,40,0.09)" />
+                <rect x="570" y="378" width="300" height="3" fill="rgba(100,36,18,0.08)" />
+                <line x1="680" y1="162" x2="678" y2="390" stroke="rgba(40,15,8,0.06)" strokeWidth="0.7" />
+                <line x1="740" y1="162" x2="738" y2="390" stroke="rgba(40,15,8,0.05)" strokeWidth="0.6" />
+                <line x1="660" y1="166" x2="658" y2="390" stroke="rgba(40,15,8,0.04)" strokeWidth="0.5" />
               </g>
             </g>
 
@@ -218,14 +225,15 @@ export function CinematicIntro() {
             <g>
               <path d="M 858 390 L 880 248 L 900 210 L 942 206 L 998 207 L 1038 210 L 1056 246 L 1080 390 Z" fill="#7D2E1E" />
               <path d="M 900 210 L 942 206 L 998 207 L 1038 210 L 1047 242 L 910 244 Z" fill="#9B3824" />
-              <path d="M 858 390 L 880 248 L 910 244 L 916 390 Z" fill="rgba(200,100,70,0.20)" />
-              <path d="M 1072 390 L 1056 246 L 1047 242 L 1060 390 Z" fill="rgba(0,0,0,0.24)" />
-              <g stroke="rgba(0,0,0,0.11)" strokeWidth="0.9" fill="none">
-                <line x1="922" y1="244" x2="919" y2="390" />
-                <line x1="946" y1="243" x2="944" y2="390" />
-                <line x1="972" y1="243" x2="970" y2="390" />
-                <line x1="998" y1="243" x2="997" y2="390" />
-                <line x1="1024" y1="244" x2="1023" y2="390" />
+              <path d="M 858 390 L 880 248 L 910 244 L 916 390 Z" fill="rgba(190,95,58,0.20)" />
+              <path d="M 1072 390 L 1056 246 L 1047 242 L 1060 390 Z" fill="rgba(50,18,8,0.24)" />
+              <g clipPath="url(#mrc)">
+                <rect x="850" y="252" width="240" height="4" fill="rgba(140,58,32,0.13)" />
+                <rect x="850" y="288" width="240" height="3" fill="rgba(90,32,16,0.14)" />
+                <rect x="850" y="322" width="240" height="4" fill="rgba(140,58,32,0.11)" />
+                <rect x="850" y="358" width="240" height="3" fill="rgba(90,32,16,0.10)" />
+                <line x1="968" y1="207" x2="966" y2="390" stroke="rgba(40,15,8,0.06)" strokeWidth="0.7" />
+                <line x1="920" y1="208" x2="918" y2="390" stroke="rgba(40,15,8,0.05)" strokeWidth="0.6" />
               </g>
             </g>
 
@@ -233,22 +241,22 @@ export function CinematicIntro() {
             <g>
               <path d="M 1162 390 L 1182 280 L 1200 254 L 1250 250 L 1312 252 L 1358 254 L 1375 278 L 1398 390 Z" fill="#5E2216" />
               <path d="M 1200 254 L 1250 250 L 1312 252 L 1358 254 L 1365 278 L 1208 280 Z" fill="#7A3022" />
-              <path d="M 1162 390 L 1182 280 L 1208 280 L 1214 390 Z" fill="rgba(200,100,70,0.18)" />
-              <path d="M 1390 390 L 1375 278 L 1365 278 L 1378 390 Z" fill="rgba(0,0,0,0.22)" />
-              <g stroke="rgba(0,0,0,0.1)" strokeWidth="0.9" fill="none">
-                <line x1="1222" y1="280" x2="1219" y2="390" />
-                <line x1="1248" y1="279" x2="1246" y2="390" />
-                <line x1="1276" y1="279" x2="1274" y2="390" />
-                <line x1="1305" y1="279" x2="1304" y2="390" />
-                <line x1="1335" y1="280" x2="1334" y2="390" />
+              <path d="M 1162 390 L 1182 280 L 1208 280 L 1214 390 Z" fill="rgba(180,90,55,0.18)" />
+              <path d="M 1390 390 L 1375 278 L 1365 278 L 1378 390 Z" fill="rgba(50,18,8,0.22)" />
+              <g clipPath="url(#mfr)">
+                <rect x="1155" y="282" width="250" height="3" fill="rgba(130,55,30,0.14)" />
+                <rect x="1155" y="312" width="250" height="4" fill="rgba(90,35,18,0.12)" />
+                <rect x="1155" y="342" width="250" height="3" fill="rgba(130,55,30,0.10)" />
+                <rect x="1155" y="370" width="250" height="4" fill="rgba(90,35,18,0.10)" />
+                <line x1="1278" y1="252" x2="1276" y2="390" stroke="rgba(40,15,8,0.06)" strokeWidth="0.7" />
+                <line x1="1230" y1="251" x2="1228" y2="390" stroke="rgba(40,15,8,0.05)" strokeWidth="0.6" />
               </g>
             </g>
           </motion.svg>
 
           {/* ── Flora: sagebrush, saguaro, juniper ──────────────────────
               WA composition: saguaro left-of-center, juniper right-of-center,
-              sagebrush clumps scattered across the ground plane.
-              One element intentionally slightly off for art-direction intent. */}
+              sagebrush clumps scattered across the ground plane.            */}
           <motion.svg
             className="cin-flora-svg"
             viewBox="0 0 1440 500"
@@ -257,10 +265,9 @@ export function CinematicIntro() {
             style={{ opacity: floraOp }}
           >
             {/* ── SAGEBRUSH CLUSTERS ──────────────────────────────────────
-                Small oval clumps of grey-green — knee-height high desert scrub.
-                Shadow layer first, then lighter tops for volume.              */}
+                Layered ellipses with sprigs — grey-green desert scrub.    */}
 
-            {/* Cluster A — far left */}
+            {/* Cluster A — far left (with sprigs) */}
             <g fill="#4A5828">
               <ellipse cx="148" cy="388" rx="9"  ry="5" />
               <ellipse cx="158" cy="391" rx="10" ry="5" />
@@ -270,6 +277,11 @@ export function CinematicIntro() {
               <ellipse cx="146" cy="385" rx="8"  ry="5" />
               <ellipse cx="157" cy="384" rx="11" ry="6" />
               <ellipse cx="167" cy="385" rx="7"  ry="4" />
+            </g>
+            <g stroke="#6B7C3A" strokeWidth="0.8" strokeLinecap="round" fill="none">
+              <line x1="148" y1="383" x2="145" y2="377" />
+              <line x1="157" y1="382" x2="159" y2="375" />
+              <line x1="164" y1="383" x2="168" y2="378" />
             </g>
 
             {/* Cluster B */}
@@ -284,7 +296,7 @@ export function CinematicIntro() {
               <ellipse cx="327" cy="385" rx="8"  ry="5" />
             </g>
 
-            {/* Cluster C */}
+            {/* Cluster C (with sprigs) */}
             <g fill="#4A5828">
               <ellipse cx="465" cy="389" rx="10" ry="5" />
               <ellipse cx="477" cy="391" rx="9"  ry="5" />
@@ -293,6 +305,11 @@ export function CinematicIntro() {
               <ellipse cx="461" cy="386" rx="8"  ry="5" />
               <ellipse cx="473" cy="385" rx="12" ry="6" />
               <ellipse cx="484" cy="386" rx="8"  ry="4" />
+            </g>
+            <g stroke="#6B7C3A" strokeWidth="0.8" strokeLinecap="round" fill="none">
+              <line x1="465" y1="384" x2="462" y2="377" />
+              <line x1="475" y1="383" x2="478" y2="376" />
+              <line x1="482" y1="384" x2="486" y2="379" />
             </g>
 
             {/* Cluster D — near saguaro base */}
@@ -306,7 +323,7 @@ export function CinematicIntro() {
               <ellipse cx="533" cy="386" rx="8"  ry="4" />
             </g>
 
-            {/* Cluster E — center-right, breaks pure symmetry (WA intent) */}
+            {/* Cluster E — center-right (with sprigs) */}
             <g fill="#4A5828">
               <ellipse cx="784" cy="389" rx="10" ry="5" />
               <ellipse cx="796" cy="391" rx="9"  ry="5" />
@@ -316,8 +333,12 @@ export function CinematicIntro() {
               <ellipse cx="793" cy="385" rx="11" ry="6" />
               <ellipse cx="805" cy="386" rx="8"  ry="4" />
             </g>
+            <g stroke="#6B7C3A" strokeWidth="0.8" strokeLinecap="round" fill="none">
+              <line x1="784" y1="384" x2="781" y2="377" />
+              <line x1="794" y1="383" x2="797" y2="376" />
+            </g>
 
-            {/* Cluster F */}
+            {/* Cluster F (with sprigs) */}
             <g fill="#4A5828">
               <ellipse cx="1088" cy="389" rx="9"  ry="5" />
               <ellipse cx="1100" cy="391" rx="10" ry="5" />
@@ -326,6 +347,11 @@ export function CinematicIntro() {
               <ellipse cx="1085" cy="386" rx="8"  ry="5" />
               <ellipse cx="1097" cy="385" rx="12" ry="6" />
               <ellipse cx="1109" cy="386" rx="8"  ry="4" />
+            </g>
+            <g stroke="#6B7C3A" strokeWidth="0.8" strokeLinecap="round" fill="none">
+              <line x1="1090" y1="384" x2="1087" y2="377" />
+              <line x1="1098" y1="383" x2="1101" y2="376" />
+              <line x1="1106" y1="384" x2="1110" y2="379" />
             </g>
 
             {/* Cluster G — far right */}
@@ -350,47 +376,49 @@ export function CinematicIntro() {
               <ellipse cx="708" cy="387" rx="6"  ry="3" />
             </g>
 
-            {/* ── SAGUARO — slightly left of center (trunk center x≈630) ── */}
-            <g fill="#2D4A1E">
-              {/* Trunk */}
-              <rect x="622" y="268" width="16" height="122" rx="7" />
-              {/* Left arm: horizontal then vertical — arm emerges at y≈316 */}
-              <rect x="583" y="308" width="43" height="14" rx="6" />
-              <rect x="580" y="273" width="14" height="43" rx="6" />
-              {/* Right arm: horizontal then vertical — slightly higher for asymmetry */}
-              <rect x="634" y="330" width="44" height="13" rx="6" />
-              <rect x="665" y="296" width="13" height="47" rx="6" />
+            {/* ── SAGUARO — left-of-center (trunk at x~630) ──────────── */}
+            <g fill="#2D5A20">
+              <path d="M 624 390 C 623 360, 623 310, 624 278 C 625 270, 627 266, 630 264 C 633 266, 635 270, 636 278 C 637 310, 637 360, 636 390 Z" />
+              <path d="M 625 332 C 620 330, 608 328, 600 322 C 594 316, 592 308, 592 296 C 592 282, 593 276, 596 274 C 599 276, 600 282, 600 296 C 600 308, 604 316, 610 320 C 616 324, 624 328, 625 328 Z" />
+              <path d="M 635 324 C 640 322, 652 320, 660 314 C 666 308, 668 300, 668 288 C 668 276, 669 270, 672 268 C 675 270, 676 276, 676 288 C 676 300, 672 310, 666 316 C 658 322, 642 324, 635 322 Z" />
             </g>
-            {/* Saguaro left-face highlight (light from left) */}
-            <rect x="622" y="268" width="5"  height="122" rx="2" fill="rgba(80,140,60,0.2)" />
-            <rect x="580" y="273" width="5"  height="43"  rx="2" fill="rgba(80,140,60,0.2)" />
+            <g stroke="rgba(22,50,12,0.25)" strokeWidth="0.6" fill="none">
+              <line x1="628" y1="272" x2="628" y2="388" />
+              <line x1="632" y1="268" x2="632" y2="388" />
+            </g>
+            <path d="M 624 390 C 623 360, 623 310, 624 278 C 625 270, 626 267, 628 265 L 628 390 Z" fill="rgba(70,120,45,0.18)" />
+            <ellipse cx="648" cy="389" rx="14" ry="3" fill="rgba(30,12,6,0.16)" />
 
-            {/* ── DEAD JUNIPER — right of center (x≈922) ─────────────────
-                Bare gnarled branches, no foliage — classic high-desert form. */}
-            <g stroke="#4A3820" strokeLinecap="round" fill="none">
-              <line x1="920" y1="390" x2="918" y2="318" strokeWidth="4" />
-              {/* Main branches */}
-              <line x1="918" y1="335" x2="888" y2="306" strokeWidth="2.8" />
-              <line x1="918" y1="328" x2="950" y2="300" strokeWidth="2.8" />
-              <line x1="918" y1="320" x2="896" y2="295" strokeWidth="2.2" />
-              {/* Sub-branches left */}
-              <line x1="888" y1="306" x2="870" y2="290" strokeWidth="1.6" />
-              <line x1="888" y1="306" x2="892" y2="286" strokeWidth="1.6" />
-              <line x1="896" y1="295" x2="880" y2="280" strokeWidth="1.4" />
-              <line x1="896" y1="295" x2="900" y2="277" strokeWidth="1.4" />
-              {/* Sub-branches right */}
-              <line x1="950" y1="300" x2="935" y2="283" strokeWidth="1.6" />
-              <line x1="950" y1="300" x2="966" y2="285" strokeWidth="1.6" />
-              <line x1="950" y1="300" x2="958" y2="279" strokeWidth="1.2" />
-              {/* Tertiary */}
-              <line x1="870" y1="290" x2="863" y2="276" strokeWidth="1" />
-              <line x1="892" y1="286" x2="886" y2="272" strokeWidth="1" />
-              <line x1="935" y1="283" x2="928" y2="268" strokeWidth="1" />
-              <line x1="966" y1="285" x2="974" y2="271" strokeWidth="1" />
+            {/* ── DEAD JUNIPER — right of center (x~920) ─────────────── */}
+            <g strokeLinecap="round" fill="none">
+              <path d="M 920 390 C 919 370, 918 345, 917 320 C 916 312, 917 308, 918 305" stroke="#4A3820" strokeWidth="5" />
+              <line x1="918" y1="335" x2="886" y2="302" stroke="#4A3820" strokeWidth="3" />
+              <line x1="918" y1="325" x2="952" y2="296" stroke="#4A3820" strokeWidth="2.8" />
+              <line x1="917" y1="316" x2="894" y2="288" stroke="#4A3820" strokeWidth="2.2" />
+              <line x1="918" y1="308" x2="940" y2="282" stroke="#4A3820" strokeWidth="2" />
+              <line x1="886" y1="302" x2="868" y2="284" stroke="#54432A" strokeWidth="1.6" />
+              <line x1="886" y1="302" x2="880" y2="278" stroke="#54432A" strokeWidth="1.4" />
+              <line x1="894" y1="288" x2="878" y2="272" stroke="#54432A" strokeWidth="1.4" />
+              <line x1="894" y1="288" x2="898" y2="268" stroke="#54432A" strokeWidth="1.2" />
+              <line x1="952" y1="296" x2="938" y2="278" stroke="#54432A" strokeWidth="1.6" />
+              <line x1="952" y1="296" x2="968" y2="280" stroke="#54432A" strokeWidth="1.4" />
+              <line x1="940" y1="282" x2="956" y2="266" stroke="#54432A" strokeWidth="1.2" />
+              <line x1="868" y1="284" x2="860" y2="272" stroke="#5C4C30" strokeWidth="0.9" />
+              <line x1="868" y1="284" x2="864" y2="268" stroke="#5C4C30" strokeWidth="0.8" />
+              <line x1="880" y1="278" x2="874" y2="264" stroke="#5C4C30" strokeWidth="0.8" />
+              <line x1="938" y1="278" x2="930" y2="264" stroke="#5C4C30" strokeWidth="0.9" />
+              <line x1="968" y1="280" x2="976" y2="266" stroke="#5C4C30" strokeWidth="0.8" />
+              <line x1="956" y1="266" x2="962" y2="254" stroke="#5C4C30" strokeWidth="0.7" />
+              <line x1="886" y1="302" x2="892" y2="316" stroke="#54432A" strokeWidth="1" />
+              <line x1="952" y1="296" x2="960" y2="308" stroke="#54432A" strokeWidth="0.9" />
             </g>
+            <ellipse cx="934" cy="389" rx="12" ry="3" fill="rgba(30,12,6,0.14)" />
 
           </motion.svg>
         </motion.div>
+
+        {/* ── Atmospheric haze — warm golden-hour glow at the horizon ── */}
+        <motion.div className="cin-atmosphere" style={{ opacity: skyGoldenOp }} />
 
         {/* ── Title card — mobile (CSS time-based stagger) ───────────── */}
         <div className="cinematic-title-card cinematic-title-mobile" aria-hidden="true">
