@@ -37,7 +37,7 @@ export function Footer() {
               {profile.name}
             </Link>
             <p className="font-mono text-meta tracking-label uppercase text-text-meta inline-flex items-center gap-2">
-              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
+              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-wa-teal" />
               {profile.location} · Open to work
             </p>
           </div>
@@ -156,7 +156,7 @@ export function Footer() {
             <p className="font-mono text-meta tracking-label uppercase text-text-meta inline-flex items-center gap-2">
               <span
                 aria-hidden="true"
-                className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta"
+                className="inline-block w-1.5 h-1.5 rounded-full bg-wa-teal"
               />
               Made with care
             </p>

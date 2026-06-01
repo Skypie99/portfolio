@@ -42,6 +42,20 @@ const config: Config = {
         charcoal: '#484A43',
         'near-black': '#232420',
 
+        // Wes Anderson teal scale — Phase 5
+        'wa-teal-deep':  '#1D5468',  // text: 8.1:1 on cream
+        'wa-teal':       '#2E6678',  // text: 6.2:1 on cream
+        'wa-teal-mid':   '#4A8FA0',  // UI/icons: 3.4:1 on cream
+        'wa-teal-soft':  '#96C4D0',  // borders, decorative
+        'wa-teal-pale':  '#D4EDF2',  // light surfaces
+        'wa-teal-wash':  '#EAF4F7',  // section backgrounds
+
+        // Wes Anderson dusty rose scale — Phase 5 creative pick
+        'wa-rose':       '#7D4E5A',  // text: 6.0:1 on cream
+        'wa-rose-mid':   '#B0808E',  // decorative
+        'wa-rose-soft':  '#D4B0B8',  // borders, decorative
+        'wa-rose-pale':  '#F0E4E7',  // light surfaces
+
         // Semantic aliases (prefer these in components)
         'text-meta': '#5C5D54',
         'border-decorative': '#DCDCD6',

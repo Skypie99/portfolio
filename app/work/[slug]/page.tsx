@@ -318,7 +318,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
 
       {/* Optional gallery */}
       {d.gallery && d.gallery.length > 0 && (
-        <section className="reveal-on-scroll px-gutter py-24 lg:py-32 bg-blush border-t border-border-decorative">
+        <section className="reveal-on-scroll px-gutter py-24 lg:py-32 bg-wa-rose-pale border-t border-wa-rose-soft/40">
           <div className="max-w-content mx-auto">
             <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
               Gallery
@@ -329,7 +329,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
               {d.gallery.map((img) => (
                 <li key={img.src} className="flex flex-col gap-3">
-                  <div className="relative w-full aspect-[4/3] bg-peach-cream border border-border-decorative overflow-hidden flex items-center justify-center">
+                  <div className="relative w-full aspect-[4/3] bg-wa-teal-pale border border-wa-teal-soft/40 overflow-hidden flex items-center justify-center">
                     {/* Alex F-C4-3: explicit dimensions for the 4:3 gallery. */}
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
