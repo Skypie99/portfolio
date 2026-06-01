@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import { Button } from '@/components/Button';
-import { CinematicIntro } from '@/components/CinematicIntro';
+import { CinematicDesert } from '@/components/cinematic/CinematicDesert';
 import { ContentReveal } from '@/components/ContentReveal';
 import { Hero } from '@/components/Hero';
 import { NumberedStep } from '@/components/NumberedStep';
@@ -63,8 +63,8 @@ export default function HomePage() {
 
   return (
     <>
-      {/* ── Cinematic intro — Phase 5 scroll scene ───────────────────── */}
-      <CinematicIntro />
+      {/* ── Cinematic intro — 2.5D GSAP camera-push desert (placeholder phase) ─ */}
+      <CinematicDesert />
 
       <ContentReveal>
       {/* ── Hero ─────────────────────────────────────────────────────── */}

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2520 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="sky-dawn placeholder">
+  <!-- PLACEHOLDER: pre-dawn sky. Full-frame, NO alpha. indigo -> plum -> rose. -->
+  <defs>
+    <linearGradient id="dawn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#1B1740"/>
+      <stop offset="0.45" stop-color="#3A2356"/>
+      <stop offset="0.74" stop-color="#7D3A63"/>
+      <stop offset="0.90" stop-color="#C0617A"/>
+      <stop offset="1"    stop-color="#E89A8E"/>
+    </linearGradient>
+  </defs>
+  <rect width="2520" height="1080" fill="url(#dawn)"/>
+  <!-- last stars -->
+  <g fill="#FFFFFF" opacity="0.85">
+    <circle cx="320"  cy="160" r="3"/>
+    <circle cx="690"  cy="90"  r="2"/>
+    <circle cx="1140" cy="210" r="2.5"/>
+    <circle cx="1530" cy="120" r="2"/>
+    <circle cx="1980" cy="180" r="3"/>
+    <circle cx="2300" cy="100" r="2"/>
+    <circle cx="510"  cy="300" r="1.5"/>
+    <circle cx="1760" cy="280" r="1.5"/>
+    <circle cx="900"  cy="60"  r="1.5"/>
+  </g>
+  <text x="1260" y="545" text-anchor="middle"
+        font-family="ui-monospace, Menlo, monospace" font-size="46"
+        fill="#FFFFFF" opacity="0.34" letter-spacing="6">sky-dawn — PLACEHOLDER</text>
+</svg>

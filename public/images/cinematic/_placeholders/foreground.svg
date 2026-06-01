@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2520 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="foreground placeholder">
+  <!-- PLACEHOLDER: near desert floor + scrub. TRANSPARENT background.
+       dark umber (darkest tonal value). floor berm + 2 cactus silhouettes. -->
+  <!-- floor berm -->
+  <path d="M0 940 L520 905 L1080 928 L1700 900 L2200 924 L2520 905 L2520 1080 L0 1080 Z"
+        fill="#46230F" opacity="0.98"/>
+  <!-- left saguaro -->
+  <g fill="#3A1D0C" opacity="0.98">
+    <rect x="430" y="640" width="58" height="300" rx="26"/>
+    <path d="M430 760 q-70 0 -70 -78 l0 -52 q0 -30 26 -30 q26 0 26 30 l0 40 q0 26 18 26 Z"/>
+    <path d="M488 720 q70 0 70 -78 l0 -40 q0 -30 -26 -30 q-26 0 -26 30 l0 28 q0 26 -18 26 Z"/>
+  </g>
+  <!-- right saguaro (smaller) -->
+  <g fill="#3A1D0C" opacity="0.98">
+    <rect x="1980" y="710" width="48" height="226" rx="22"/>
+    <path d="M1980 800 q-58 0 -58 -64 l0 -40 q0 -26 22 -26 q22 0 22 26 l0 30 q0 22 14 22 Z"/>
+  </g>
+  <text x="1260" y="1030" text-anchor="middle"
+        font-family="ui-monospace, Menlo, monospace" font-size="42"
+        fill="#E8B998" opacity="0.62" letter-spacing="5">foreground — PLACEHOLDER</text>
+</svg>
