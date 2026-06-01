@@ -15,7 +15,7 @@ export function ContentReveal({ children }: { children: ReactNode }) {
   const y = useTransform(scrollY, [300, 420], [22, 0]);
 
   return (
-    <motion.div style={{ opacity, y }}>
+    <motion.div className="cinematic-content-reveal" style={{ opacity, y }}>
       {children}
     </motion.div>
   );
