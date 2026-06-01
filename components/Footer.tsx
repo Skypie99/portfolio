@@ -66,7 +66,7 @@ export function Footer() {
                   href="/work/"
                   className="font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
                 >
-                  Work
+                  The Work
                 </Link>
               </li>
               <li>
@@ -74,7 +74,7 @@ export function Footer() {
                   href="/certificates/"
                   className="font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
                 >
-                  Certificates
+                  Credentials
                 </Link>
               </li>
               <li>
@@ -82,7 +82,7 @@ export function Footer() {
                   href="/about/"
                   className="font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
                 >
-                  About
+                  A Brief Account
                 </Link>
               </li>
               <li>
@@ -90,7 +90,7 @@ export function Footer() {
                   href="/contact/"
                   className="font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
                 >
-                  Contact
+                  Correspond
                 </Link>
               </li>
             </ul>
@@ -102,9 +102,9 @@ export function Footer() {
               About
             </h3>
             <p className="font-sans text-body-sm text-charcoal leading-[1.65] text-pretty">
-              {profile.name} is an AI builder based in {profile.location}. Long
-              projects, small surfaces, real users — and a written record of
-              how every piece got made.
+              {profile.name} builds AI tools. Small surfaces, real users,
+              documented from the first commit. Four products live. All open
+              source.
             </p>
           </div>
 
@@ -144,17 +144,14 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom strip — Dani brand signature: terracotta dot beside
-            'Made with care' echoes the CTA dot pattern, ties the footer
-            into the rest of the editorial frame.
-            Dani wave5: add 'Built with Claude Code' closing line. */}
+        {/* Bottom strip */}
         <div className="mt-12 pt-6 border-t border-stone flex flex-col md:flex-row gap-2 md:gap-6 justify-between items-start md:items-center">
           <p className="font-mono text-meta tracking-label uppercase text-text-meta">
-            {'©'} {year} {profile.name} · All rights reserved
+            SkyPi Studio — Est. 2024 · {'©'} {year}
           </p>
           <div className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-6">
             <p className="font-mono text-meta tracking-label uppercase text-text-meta">
-              Built with Claude Code
+              Built somewhere in New Mexico.
             </p>
             <p className="font-mono text-meta tracking-label uppercase text-text-meta inline-flex items-center gap-2">
               <span
