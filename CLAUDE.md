@@ -2,7 +2,7 @@
 
 Sky's public-facing AI portfolio. Static Next.js 15 site deployed to GitHub Pages. Shows deliverables (projects), certificates, and an About page. Content lives in JSON files validated by Zod schemas at build time.
 
-**Live:** https://skypie99.github.io/portfolio/
+**Live:** https://www.skypistudio.com
 **Local path:** `~/Portfolio`
 **Owner:** skylerhalisky@gmail.com
 
