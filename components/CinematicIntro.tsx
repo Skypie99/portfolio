@@ -75,6 +75,7 @@ export function CinematicIntro() {
             position: 'absolute', inset: 0,
             width: '100%', height: '100%',
             pointerEvents: 'none', zIndex: 3,
+            willChange: 'opacity',
           }}
         >
           <g stroke="rgba(255,255,255,0.28)" strokeWidth="0.8" fill="none">
@@ -117,6 +118,7 @@ export function CinematicIntro() {
             transform: 'translateX(-50%)',
             width: 'clamp(56px, 7vw, 84px)', height: 'clamp(56px, 7vw, 84px)',
             zIndex: 3, overflow: 'visible',
+            willChange: 'opacity',
           }}
         >
           <defs>

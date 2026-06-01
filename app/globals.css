@@ -533,6 +533,7 @@ img::before {
   pointer-events: none;
   z-index: 2;
   transform-origin: 50% 50%;
+  will-change: opacity, transform;
 }
 .cin-stars::before {
   content: '';
@@ -612,6 +613,7 @@ img::before {
   transform-origin: 50% 100%;   /* grow from bottom-center = camera descending */
   z-index: 4;
   pointer-events: none;
+  will-change: transform;
 }
 .cin-ground-svg,
 .cin-mesas-svg,
@@ -622,6 +624,10 @@ img::before {
   width: 100%;
   height: 100%;
   display: block;
+}
+.cin-mesas-svg,
+.cin-flora-svg {
+  will-change: opacity;
 }
 
 /* -- Title card -- */
@@ -635,6 +641,7 @@ img::before {
   pointer-events: none;
   color: #FAF9F5;
   text-shadow: 0 2px 16px rgba(0,0,0,0.35);
+  will-change: opacity;
 }
 .cinematic-title-wordmark {
   font-family: var(--font-cormorant), Garamond, Georgia, serif;
@@ -766,6 +773,7 @@ img::before {
   .cinematic-mobile-arrow {
     display: block;
     animation: cinematic-mobile-arrow 2s ease-in-out infinite 4.4s both;
+    will-change: opacity, transform;
   }
 }
 
