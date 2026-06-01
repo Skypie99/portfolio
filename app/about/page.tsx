@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+import { AnimatedStepList } from '@/components/AnimatedStepList';
 import { Button } from '@/components/Button';
-import { NumberedStep } from '@/components/NumberedStep';
 import { cn } from '@/lib/cn';
 import { getDeliverables, getProfile } from '@/lib/content';
 
@@ -117,29 +117,25 @@ export default function AboutPage() {
           {/* Peach-cream callout panel — Dani §3.6. Hairline dividers
               between steps preserved from Cycle 7 (Stone decorative). */}
           <div className="bg-peach-cream border border-border-decorative rounded-lg p-8 md:p-12">
-            <ol className="flex flex-col divide-y divide-border-decorative">
-              <li className="py-8 first:pt-0 last:pb-0">
-                <NumberedStep
-                  number="01"
-                  title="Start with Claude Code"
-                  body="I use Claude Code as my primary building environment — it's where most of my projects actually get made. I describe what I want, read the output carefully, and course-correct when something feels off."
-                />
-              </li>
-              <li className="py-8 first:pt-0 last:pb-0">
-                <NumberedStep
-                  number="02"
-                  title="Build a team of agents"
-                  body="For bigger projects, I've built Claude Corp — a 14-role multi-agent system where each role has a clear job: design, code, QA, communications. They work from a written Constitution so nothing gets decided by accident."
-                />
-              </li>
-              <li className="py-8 first:pt-0 last:pb-0">
-                <NumberedStep
-                  number="03"
-                  title="Iterate until it's honest"
-                  body="I don't ship until I've used the thing myself. Then I write down what I learned — what broke, what surprised me, what I'd do differently. The documentation is part of the deliverable."
-                />
-              </li>
-            </ol>
+            <AnimatedStepList
+              steps={[
+                {
+                  number: '01',
+                  title: 'Start with Claude Code',
+                  body: "I use Claude Code as my primary building environment — it's where most of my projects actually get made. I describe what I want, read the output carefully, and course-correct when something feels off.",
+                },
+                {
+                  number: '02',
+                  title: 'Build a team of agents',
+                  body: "For bigger projects, I've built Claude Corp — a 14-role multi-agent system where each role has a clear job: design, code, QA, communications. They work from a written Constitution so nothing gets decided by accident.",
+                },
+                {
+                  number: '03',
+                  title: "Iterate until it's honest",
+                  body: "I don't ship until I've used the thing myself. Then I write down what I learned — what broke, what surprised me, what I'd do differently. The documentation is part of the deliverable.",
+                },
+              ]}
+            />
           </div>
         </div>
       </section>
