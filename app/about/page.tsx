@@ -68,7 +68,7 @@ export default function AboutPage() {
           <div className="max-w-[640px] flex flex-col gap-6">
             <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
               I came to software through problems I wanted to solve. Most of them
-              involved accessibility — tools that should have been better but weren't.
+              involved accessibility — tools that should have been better but weren&apos;t.
               I decided to make some that were.
             </p>
 
