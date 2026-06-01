@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-import { ProjectCard } from '@/components/ProjectCard';
+import { WorkFilterGrid } from '@/components/WorkFilterGrid';
 import { cn } from '@/lib/cn';
 import { getDeliverables, getProfile } from '@/lib/content';
 
@@ -28,20 +28,15 @@ export function generateMetadata(): Metadata {
 /**
  * /work — F-04. Editorial grid of deliverables.
  *
- * Server Component (zero JS shipped to the client beyond the layout shell).
- * The card primitive lives in `components/ProjectCard.tsx` — shared with
- * any other surface that lists deliverables. Keeps hover/focus rules and
- * accessibility patterns in lockstep across the site.
+ * Server Component. Header + back link are static; the filter grid is a
+ * client component (WorkFilterGrid) so FilterPill interactive state works
+ * without shipping unnecessary JS for the static header sections.
  *
- * Featured deliverable is hoisted to the first cell and given a row-spanning
- * treatment on md+. Empty state copy renders if no deliverables exist
- * (cross-cutting F-04 acceptance criterion).
+ * Featured deliverable renders as a wide ProjectCard above the filter grid.
+ * Non-featured deliverables render as CaseStudyCards, filterable by tag.
  */
 export default function WorkIndexPage() {
   const deliverables = getDeliverables();
-  const featured = deliverables.find((d) => d.featured);
-  const rest = deliverables.filter((d) => !d.featured);
-  const ordered = featured ? [featured, ...rest] : rest;
 
   return (
     <>
@@ -87,30 +82,13 @@ export default function WorkIndexPage() {
               h1 → h3 gap that previously existed; sighted users still
               see the visible page header above as the only h1. */}
           <h2 className="sr-only">Deliverables</h2>
-          {ordered.length === 0 ? (
+          {deliverables.length === 0 ? (
             // Empty-state per F-04 acceptance criteria.
             <p className="font-serif font-light text-display-s text-charcoal leading-[1.65] max-w-[540px]">
               Deliverables coming soon.
             </p>
           ) : (
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
-              {ordered.map((d, idx) => {
-                const isFeatured = d.featured && idx === 0;
-                return (
-                  <li
-                    key={d.id}
-                    className={cn(
-                      // Featured deliverable spans the full row on md+
-                      // and gets the wider 16:9 hero (Cycle 23 — cinematic
-                      // showcase vs the curated 3:2 default).
-                      isFeatured && 'md:col-span-2',
-                    )}
-                  >
-                    <ProjectCard deliverable={d} wide={isFeatured} />
-                  </li>
-                );
-              })}
-            </ul>
+            <WorkFilterGrid deliverables={deliverables} />
           )}
 
           {/* Back link */}
