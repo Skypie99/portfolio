@@ -15,12 +15,13 @@ export function generateMetadata(): Metadata {
       type: 'website',
       title: `Selected Work — ${profile.name}`,
       description,
-      images: [{ url: '/og-image.svg', width: 1200, height: 630 }],
+      images: [{ url: '/og-image.svg', width: 1200, height: 630, alt: `Selected Work — ${profile.name}` }],
     },
     twitter: {
       card: 'summary_large_image',
       title: `Selected Work — ${profile.name}`,
       description,
+      images: ['/og-image.svg'],
     },
   };
 }
