@@ -28,9 +28,10 @@ import { useReducedMotion } from './useReducedMotion';
  *
  * ScrollTrigger pins .cdesert-pin for the full height of .cdesert-stage and
  * maps scroll-progress 0→1 onto a single GSAP timeline of unit length (1).
- * `scrub: 1` gives ~1s smooth catch-up so it never feels snappy. Every tween
- * carries power2.inOut so the motion eases in and out of rest — the "cinematic"
- * feel — rather than tracking the scrollbar linearly.
+ * `scrub: 1.1` gives a smooth, slightly weighted catch-up so it never feels
+ * snappy. The depth dolly rides power3.inOut (cautious open, decisive mid, long
+ * gentle arrival); crossfades/reveals use sine.inOut so no fade pops — the
+ * "cinematic" feel, rather than tracking the scrollbar linearly.
  *
  * Because each tween is placed on the timeline at its authored progress window
  * (e.g. an opacity ramp at start=p0, duration=p1−p0), a plate's opacity/scale/
@@ -100,7 +101,7 @@ export function CinematicDesert() {
           end: 'bottom bottom',
           pin,
           pinSpacing: true, // ScrollTrigger owns the spacer so the Hero flows after
-          scrub: 1, // ~1s smooth catch-up — the cinematic glide
+          scrub: 1.1, // slightly longer catch-up — a touch more inertia on the glide
           anticipatePin: 1,
           invalidateOnRefresh: true,
         },
@@ -111,77 +112,97 @@ export function CinematicDesert() {
         const el = layerRefs.current[i];
         if (!el) return;
 
-        // scale + drift run the WHOLE push (0→P), eased.
+        // scale + drift run the WHOLE push (0→P). power3.inOut is the spine of
+        // the IMAX glide: a cautious open, a decisive mid, and a long gentle
+        // arrival (a heavier ease-out tail than power2) so the dolly settles
+        // into the destination instead of stopping flat.
         tl.fromTo(
           el,
           { scale: plate.scaleFrom, yPercent: plate.yFrom },
-          { scale: plate.scaleTo, yPercent: plate.yTo, duration: P },
+          { scale: plate.scaleTo, yPercent: plate.yTo, duration: P, ease: 'power3.inOut' },
           0,
         );
 
         // optional opacity ramp, placed on its authored sub-window [p0,p1].
+        // sine.inOut (was linear) carves the ends of every fade so the dawn→day
+        // sky crossfade has no luminance dip at the midpoint, and the
+        // near-rockface reveal / foreground exit ease in and out of frame
+        // instead of popping on at a constant rate.
         if (plate.opacity) {
           const { from, to, p0, p1 } = plate.opacity;
           tl.fromTo(
             el,
             { opacity: from },
-            { opacity: to, duration: Math.max(0.0001, p1 - p0), ease: 'none' },
+            { opacity: to, duration: Math.max(0.0001, p1 - p0), ease: 'sine.inOut' },
             p0,
           );
         }
       });
 
       // ── lighting arc: cool-blue → warm-gold grade across the whole push ────
+      // sine.inOut (was power1.inOut) is the gentlest continuous S — the warmth
+      // builds like a sunrise, no perceptible step at any point in the grade.
       if (gradeRef.current) {
         tl.fromTo(
           gradeRef.current,
           { '--cdesert-grade-mix': 0 },
-          { '--cdesert-grade-mix': 1, duration: P, ease: 'power1.inOut' },
+          { '--cdesert-grade-mix': 1, duration: P, ease: 'sine.inOut' },
           0,
         );
       }
 
       // ── sun glow: rises from the horizon, warms, blooms (peak ~p0.85) ──────
+      // Main rise is power1.inOut (was power2.in): it emerges steadily from the
+      // horizon and DECELERATES as it crests, handing off to the bloom — instead
+      // of a hard ease-in that left the sun rushing up late.
       if (sunRef.current) {
         tl.fromTo(
           sunRef.current,
           { yPercent: 18, opacity: 0, scale: 0.85 },
-          { yPercent: -6, opacity: 0.95, scale: 1.35, duration: P, ease: 'power2.in' },
+          { yPercent: -6, opacity: 0.95, scale: 1.35, duration: P, ease: 'power1.inOut' },
           0,
         );
         // a final halation bloom that peaks near p≈0.85 then settles slightly.
+        // sine.out on the settle (was linear) keeps the halation from snapping.
         tl.to(sunRef.current, { opacity: 1, scale: 1.5, duration: 0.15, ease: 'power2.out' }, 0.78)
-          .to(sunRef.current, { opacity: 0.9, scale: 1.42, duration: 0.07, ease: 'none' }, 0.93);
+          .to(sunRef.current, { opacity: 0.9, scale: 1.42, duration: 0.08, ease: 'sine.out' }, 0.92);
       }
 
       // ── atmospheric haze: swells mid-push, eases as we "enter" the dust ────
+      // Peaks softened (0.55→0.50, 0.40→0.36) and residuals lowered
+      // (0.12→0.10, 0.08→0.06) so the bands read as depth haze rather than a fog
+      // wall and clear more fully as the camera arrives. Curves stay sine.inOut.
       if (haze1Ref.current) {
         tl.fromTo(
           haze1Ref.current,
           { opacity: 0 },
-          { opacity: 0.55, duration: 0.35, ease: 'sine.inOut' },
+          { opacity: 0.5, duration: 0.35, ease: 'sine.inOut' },
           0.2,
-        ).to(haze1Ref.current, { opacity: 0.12, duration: 0.3, ease: 'sine.inOut' }, 0.62);
+        ).to(haze1Ref.current, { opacity: 0.1, duration: 0.3, ease: 'sine.inOut' }, 0.62);
       }
       if (haze2Ref.current) {
         tl.fromTo(
           haze2Ref.current,
           { opacity: 0 },
-          { opacity: 0.4, duration: 0.32, ease: 'sine.inOut' },
+          { opacity: 0.36, duration: 0.32, ease: 'sine.inOut' },
           0.3,
-        ).to(haze2Ref.current, { opacity: 0.08, duration: 0.28, ease: 'sine.inOut' }, 0.68);
+        ).to(haze2Ref.current, { opacity: 0.06, duration: 0.28, ease: 'sine.inOut' }, 0.68);
       }
 
-      // ── title: resolves over p[0.80,0.92], then HOLDS to p=1 ───────────────
+      // ── title: carves in over p[0.80,0.96], then HOLDS to p=1 ──────────────
+      // Longer reveal window (0.12→0.16) + deeper start blur (6→8px) makes the
+      // wordmark resolve out of soft focus as a graceful carve-in rather than a
+      // snap; power2.out decelerates it into place. yPercent eases up a hair
+      // more (6→5) so the lift is felt, not seen.
       if (titleRef.current) {
         tl.fromTo(
           titleRef.current,
-          { opacity: 0, yPercent: 6, filter: 'blur(6px)' },
-          { opacity: 1, yPercent: 0, filter: 'blur(0px)', duration: 0.12, ease: 'power2.out' },
+          { opacity: 0, yPercent: 5, filter: 'blur(8px)' },
+          { opacity: 1, yPercent: 0, filter: 'blur(0px)', duration: 0.16, ease: 'power2.out' },
           0.8,
         );
         // explicit hold so the wordmark stays put through the end of the scroll.
-        tl.to(titleRef.current, { opacity: 1, duration: 0.08 }, 0.92);
+        tl.to(titleRef.current, { opacity: 1, duration: 0.04 }, 0.96);
       }
     },
     { scope, dependencies: [animate] },
