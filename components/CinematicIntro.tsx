@@ -27,8 +27,8 @@ export function CinematicIntro() {
   );
 
   return (
-    /* Scroll-space wrapper: 100vh scene + 400px of scroll budget */
-    <div style={{ height: 'calc(100vh + 400px)', position: 'relative' }} aria-hidden="true">
+    /* Scroll-space wrapper: desktop = 100vh + 400px budget; mobile = 100vh only (CSS) */
+    <div className="cinematic-wrapper" aria-hidden="true">
       <div className="cinematic-scene">
 
         {/* ── Sky layers ──────────────────────────────────────────────── */}
@@ -255,7 +255,7 @@ export function CinematicIntro() {
           Skip to the work ↓
         </motion.button>
 
-        {/* ── Scroll prompt ───────────────────────────────────────────── */}
+        {/* ── Scroll prompt (desktop only — hidden on mobile via CSS) ────── */}
         <motion.p
           className="cinematic-scroll-prompt"
           style={{ opacity: promptOpacity }}
@@ -263,6 +263,9 @@ export function CinematicIntro() {
         >
           Scroll to begin.
         </motion.p>
+
+        {/* ── Mobile scroll cue arrow (hidden on desktop via CSS) ─────────── */}
+        <div className="cinematic-mobile-arrow" aria-hidden="true">↓</div>
 
       </div>
     </div>
