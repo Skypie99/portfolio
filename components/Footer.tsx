@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+import { FooterEmail } from '@/components/FooterEmail';
 import { cn } from '@/lib/cn';
 import { getProfile } from '@/lib/content';
 
@@ -114,13 +115,7 @@ export function Footer() {
             </h3>
             <ul className="flex flex-col gap-2">
               <li>
-                <a
-                  href={`mailto:${profile.contactEmail}`}
-                  aria-label={`Send email to ${profile.contactEmail}`}
-                  className="link-draw font-sans text-body-sm text-near-black break-all"
-                >
-                  {profile.contactEmail}
-                </a>
+                <FooterEmail />
               </li>
               {profile.socials.map((s) => (
                 <li key={s.url}>
