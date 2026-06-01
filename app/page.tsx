@@ -84,8 +84,8 @@ export default function HomePage() {
         className={cn(
           'reveal-on-scroll',
           'px-gutter py-20 lg:py-24',
-          'bg-warm-white',
-          'border-t border-border-decorative',
+          'bg-wa-teal-wash',
+          'border-t border-wa-teal-soft/40',
         )}
       >
         <div className="max-w-content mx-auto">
@@ -103,13 +103,13 @@ export default function HomePage() {
           </p>
 
           {/* 4-col stat grid — vertical-rule layout for editorial weight */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-stone/60 border border-stone rounded-lg overflow-hidden">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-wa-teal-soft/30 border border-wa-teal-soft/50 rounded-lg overflow-hidden">
             {showcaseChips.map(({ stat, label, project, tags }) => (
               <div
                 key={project}
                 className={cn(
                   'group flex flex-col bg-cream p-6',
-                  'transition-colors duration-base ease-out hover:bg-blush',
+                  'transition-colors duration-base ease-out hover:bg-wa-teal-pale',
                 )}
               >
                 <p
@@ -347,8 +347,8 @@ export default function HomePage() {
           'reveal-on-scroll',
           'px-gutter',
           'py-24 lg:py-32',
-          'bg-peach-cream',
-          'border-t border-border-decorative',
+          'bg-wa-teal-pale',
+          'border-t border-wa-teal-soft/50',
           'relative overflow-hidden',
         )}
       >

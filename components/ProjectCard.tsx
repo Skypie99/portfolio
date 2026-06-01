@@ -66,10 +66,10 @@ export function ProjectCard({
           wide
             ? 'w-full md:w-1/2 aspect-[4/3] md:aspect-auto md:self-stretch'
             : 'w-full aspect-[3/2] border-b border-stone',
-          // Richer staged gradient: blush → peach-cream → warm sand
-          'bg-gradient-to-br from-blush via-peach-cream to-[#FDDFC5]',
+          // WA phase 5: dusty rose → pale teal gradient, warms on hover
+          'bg-gradient-to-br from-wa-rose-pale via-blush to-wa-teal-pale',
           'transition-colors duration-base ease-out',
-          'group-hover:from-peach-cream group-hover:to-sand',
+          'group-hover:from-wa-rose-pale group-hover:to-wa-teal-pale',
         )}
         aria-hidden="true"
       >
@@ -118,7 +118,7 @@ export function ProjectCard({
       <div className={cn('p-6 flex flex-col gap-3 flex-1', wide && 'md:p-8 md:justify-center')}>
         {/* Eyebrow */}
         <p className="font-mono text-meta tracking-label uppercase text-sage-text flex items-center gap-2">
-          <span aria-hidden="true" className="inline-block w-1 h-1 rounded-full bg-stone-strong" />
+          <span aria-hidden="true" className="inline-block w-1 h-1 rounded-full bg-wa-teal-mid" />
           {d.role} · {d.year}
         </p>
 

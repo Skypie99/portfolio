@@ -23,7 +23,7 @@ export function TagPill({ children, className }: TagPillProps) {
     <span
       className={cn(
         'inline-flex items-center px-3 py-1 rounded-pill',
-        'bg-sand text-umber',
+        'bg-wa-teal-pale text-wa-teal-deep',
         'font-mono text-meta tracking-label uppercase',
         'transition-colors duration-fast ease-out',
         className,
