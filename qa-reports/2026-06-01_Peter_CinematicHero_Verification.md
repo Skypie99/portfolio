@@ -88,3 +88,45 @@ This is a single-file, single-rule CSS fix (or a small JSX restructure in `Cinem
 Once fixed: re-run this same 5-keyframe pass (`/tmp/peter-snap.mjs` is reusable; pass `NODE_PATH=/Users/skypie/Portfolio/node_modules`) — expected outcome is all five desktop frames PASS with the title card resolving by t=0.97.
 
 — Peter, Performance Engineer
+
+---
+
+## Re-verification after Shamus fix (commit d9865fb)
+
+**Branch:** `feat/auto-2026-06-01-cinematic-hero` @ `d9865fb`, tree clean.
+**Build:** PASS — `✓ Exporting`, homepage `8.3 kB` / `155 kB` First Load JS. **No delta** vs prior pass (was 8.2 kB; 0.1 kB is the matchMedia hook, negligible). No new deps.
+**Harness:** same CDP-driven headless Chrome (148) via `/tmp/peter-snap.mjs`, isolated `--remote-debugging-port=9222` profile, Portfolio dev server on `:3000`. `docH=10024 vh=900 wrapH=1800` (geometry unchanged from prior pass).
+
+### Measurement correction applied
+Shamus is right: the camera journey plays over the **first ~900px** (the pinned window), not 1800. My prior pass screenshotted at 900/1350/1755 — at/after the (correct) sticky release — which is why I saw cream + Hero and mis-read it as a detachment failure. The detachment at scrollY 450 was the *real* bug (overflow:hidden on `.cinematic-wrapper` broke the sticky). Re-sampled inside the corrected window: scrollY **0 / 225 / 450 / 675 / 880**.
+
+### Desktop keyframe verdicts (1440×900) — re-run
+
+| scrollY | Verdict | What the screenshot shows |
+|---|---|---|
+| 0 | **PASS** | Crescent moon top-center, indigo→plum night sky, gold road dashes to vanishing point, umber mesas lower-right, "Scroll to begin" hint. |
+| 225 | **PASS** | Scene **still pinned** (right pane is cinematic, not cream). Eased-t flat at start, so still near-night — correct per quint curve. |
+| 450 | **PASS** (was FAIL/BLOCKER) | Full Act-2 mid-glide: blue→terracotta dawn sky, sun cresting horizon center, mesas at full opacity, road expanding, power-line poles, "Skip to the work ↓" link visible. **Detachment bug gone.** |
+| 675 | **PASS** | Rock face risen with vertical fluting + sediment band, sky narrowed to top strip, **"SkyPi Studio" title card already resolved** (rule + EST. 2026 + Okanagan Valley). |
+| 880 | **PASS** (was FAIL/BLOCKER) | Payoff frame: rock face dominant, title card fully resolved + holding dead-center over the lit band. |
+
+### Title-card in-viewport confirmation (scrollY 880, measured via getBoundingClientRect)
+`.cinematic-scene`: `top=0, bottom=900, pinned=true` (prior pass measured `top=-900` here — scrolled off).
+`.cinematic-title-desktop`: text = "SkyPi Studio / Est. 2026 / Okanagan Valley, British Columbia", **rect `{top:514, left:651, width:417, height:142}`**, `opacity:1`, `display:block`, **inViewport: true**.
+**Sticky release point swept: scrollY ≈ 910** — scene stays pinned 0→900, releases ~900 exactly as Shamus stated. All 5 keyframes (max 880) fall inside the pinned window.
+
+### Mobile (375×812) — StaticArrivalFrame
+Gate now routes phones to StaticArrivalFrame: `staticFramePresent: true`, `animatedWrapperPresent: false` (the AnimatedScene/`.cinematic-wrapper` is entirely absent on mobile — no more 0/0=NaN→clamp-to-1.0 end-frame). Screenshot shows rock face + **"SkyPi Studio" title visible in the sky band**. `.cinematic-title-static` rect `{top:224, width:188, height:121}`, wordmark `188×37`, `opacity:1`, `visible: true`. Prior CONCERN resolved.
+
+### Console errors
+**0** across desktop (5 frames) + mobile passes. Clean runtime.
+
+### Source-fix confirmation (read directly)
+- `.cinematic-wrapper` (globals.css ~515): `overflow:hidden` **removed**, replaced with a 3-line explanatory comment. `.cinematic-scene` keeps its own `overflow:hidden` (line 534) — correct clip untouched.
+- `CinematicIntro.tsx:303-315`: SSR-safe `isNarrow` matchMedia('(max-width:767px)') (initial `false` → no hydration mismatch); gate `if (prefersReducedMotion || isNarrow) return <StaticArrivalFrame/>`.
+
+## RE-VERIFICATION VERDICT — **READY-TO-MERGE**
+
+All 5 desktop keyframes PASS (2 prior BLOCKERs cleared), title card "SkyPi Studio" measured on-screen at scrollY 880 (`{top:514,w:417,h:142}`, opacity 1), sticky now pins through the full 0–900 window and releases at ~910. Mobile renders the deliberate StaticArrivalFrame with a visible title (no NaN end-frame). 0 console errors, build clean, bundle flat (155 kB), no new deps. The fix is correct and complete.
+
+— Peter, Performance Engineer (re-verify)
