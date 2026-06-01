@@ -515,6 +515,12 @@ img::before {
 .cinematic-wrapper {
   height: calc(100vh + 500px);
   position: relative;
+  overflow: hidden;
+}
+
+/* Phase 5.5 IMAX redesign — 200vh budget (Dani spec §2) */
+.cinematic-wrapper-200vh {
+  height: 200vh;
 }
 
 /* -- Scene container (sticky within the scroll-space wrapper) -- */
@@ -522,8 +528,33 @@ img::before {
   position: sticky;
   top: 0;
   height: 100vh;
+  width: 100%;
   overflow: hidden;
   isolation: isolate;
+}
+
+/* -- Phase 5.5: single animated sky gradient layer (Dani §6) -- */
+.cin-sky-dome {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  will-change: background;
+}
+
+/* -- Phase 5.5: generic depth-plane wrapper (will-change on plane,
+   not on inner SVG paths) -- */
+.cin-plane {
+  pointer-events: none;
+}
+
+/* -- Phase 5.5: reduced-motion static arrival frame (Dani §9) -- */
+.cinematic-static-frame {
+  position: relative;
+  isolation: isolate;
+}
+.cinematic-title-static {
+  top: 65%;
 }
 
 /* -- Sky layers (Framer Motion controls opacity — no CSS fallback needed) -- */
@@ -796,14 +827,16 @@ img::before {
    1250px 56vh 0px rgba(248,196,112,0.30);
 }
 
-/* -- Title card -- */
+/* -- Title card --
+   Phase 5.5: rests over the foreground rock face's lit zone (below
+   the sediment break, ~65% from top of viewport). Dani §8. */
 .cinematic-title-card {
   position: absolute;
-  top: 42%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  z-index: 10;
+  z-index: 20;
   pointer-events: none;
   color: #FAF9F5;
   text-shadow: 0 2px 16px rgba(0,0,0,0.35);
