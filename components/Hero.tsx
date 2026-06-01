@@ -103,7 +103,7 @@ export function Hero({ eyebrow, heading, subhead, ctaLabel, ctaHref }: HeroProps
             )}
           >
             <span>Scroll</span>
-            <span aria-hidden="true" className="text-terracotta text-[1rem] leading-none">
+            <span aria-hidden="true" className="text-wa-teal text-[1rem] leading-none">
               {'↓'}
             </span>
           </a>

@@ -61,6 +61,20 @@
   --color-charcoal:     #484A43;
   --color-near-black:   #232420;
 
+  /* Wes Anderson teal scale — new in Phase 5 WA palette */
+  --color-wa-teal-deep:  #1D5468;   /* text: 8.1:1 on cream */
+  --color-wa-teal:       #2E6678;   /* text: 6.2:1 on cream */
+  --color-wa-teal-mid:   #4A8FA0;   /* UI/icons: 3.4:1 on cream */
+  --color-wa-teal-soft:  #96C4D0;   /* borders, decorative */
+  --color-wa-teal-pale:  #D4EDF2;   /* light surfaces */
+  --color-wa-teal-wash:  #EAF4F7;   /* section backgrounds */
+
+  /* Wes Anderson dusty rose scale — Phase 5 creative pick */
+  --color-wa-rose:       #7D4E5A;   /* text: 6.0:1 on cream */
+  --color-wa-rose-mid:   #B0808E;   /* UI/decorative */
+  --color-wa-rose-soft:  #D4B0B8;   /* borders, decorative */
+  --color-wa-rose-pale:  #F0E4E7;   /* light surfaces */
+
   /* Semantic */
   --color-bg:                 var(--color-cream);
   --color-bg-alt:             var(--color-warm-white);
@@ -80,6 +94,15 @@
   --color-accent-deep:        var(--color-umber);
   --color-link:               var(--color-umber);
   --color-link-hover:         var(--color-terracotta);
+
+  /* WA secondary + tertiary semantic aliases */
+  --color-secondary:          var(--color-wa-teal);
+  --color-secondary-text:     var(--color-wa-teal-deep);
+  --color-secondary-soft:     var(--color-wa-teal-mid);
+  --color-bg-teal:            var(--color-wa-teal-wash);
+  --color-surface-teal:       var(--color-wa-teal-pale);
+  --color-tertiary:           var(--color-wa-rose);
+  --color-surface-rose:       var(--color-wa-rose-pale);
 
   /* Type scale */
   --fs-display-l: 3.25rem;
@@ -215,9 +238,9 @@ h1, h2, h3, h4, h5, h6 {
 .hero-enter-delay-3  { animation-delay: 360ms; }
 .hero-enter-delay-4  { animation-delay: 500ms; }
 
-/* Hero radial wash — soft warm glow from the upper-right corner,
-   layered on the cream background. Pure CSS, no JS. The wash sits
-   behind hero content (z-0) and never intercepts pointer events. */
+/* Hero radial wash — warm amber from upper-right, teal whisper from
+   lower-left. The teal-to-amber diagonal is the WA signature duality:
+   cool distance behind, warm foreground. No JS, pure CSS. */
 .hero-wash {
   background:
     radial-gradient(
@@ -227,7 +250,7 @@ h1, h2, h3, h4, h5, h6 {
     ),
     radial-gradient(
       40% 35% at 0% 100%,
-      rgba(220, 220, 214, 0.30) 0%,
+      rgba(74, 143, 160, 0.10) 0%,
       rgba(250, 249, 245, 0.00) 70%
     );
 }
