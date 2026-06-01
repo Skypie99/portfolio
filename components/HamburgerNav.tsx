@@ -24,11 +24,11 @@ type NavItem = { href: string; label: string };
 
 const NAV_ITEMS: NavItem[] = [
   { href: '/',              label: 'Home'         },
-  { href: '/#work',         label: 'Work'         },
-  { href: '/#certificates', label: 'Certificates' },
-  { href: '/#about',        label: 'About'        },
-  { href: '/blog/',         label: 'Blog'         },
-  { href: '/#contact',      label: 'Contact'      },
+  { href: '/#work',         label: 'The Work'        },
+  { href: '/#certificates', label: 'Credentials'     },
+  { href: '/#about',        label: 'A Brief Account' },
+  { href: '/blog/',         label: 'Dispatches'      },
+  { href: '/#contact',      label: 'Correspond'      },
 ];
 
 export function HamburgerNav() {
