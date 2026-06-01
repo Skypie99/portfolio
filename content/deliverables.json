@@ -88,12 +88,12 @@
     "links": [
       {
         "label": "GitHub",
-        "href": "https://github.com/Skypie99/Prompt_Libary",
+        "href": "https://github.com/Skypie99/Prompt_Library",
         "type": "github"
       },
       {
         "label": "Live demo",
-        "href": "https://skypie99.github.io/Prompt_Libary/",
+        "href": "https://skypie99.github.io/Prompt_Library/",
         "type": "demo"
       }
     ],
