@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-import { Button } from '@/components/Button';
+import { ContactEmail } from '@/components/ContactEmail';
 import { NumberedStep } from '@/components/NumberedStep';
 import { cn } from '@/lib/cn';
 import { getDeliverables, getProfile } from '@/lib/content';
@@ -55,19 +55,21 @@ export default function AboutPage() {
         <div className="max-w-content mx-auto">
           <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
             <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
-            About
+            A Brief Account
           </p>
           <h1
             className="font-serif font-light text-[clamp(2.5rem,6vw,4.5rem)] text-near-black leading-[1.05] max-w-3xl mb-10 text-balance"
             style={{ letterSpacing: '-0.025em' }}
           >
-            I build AI tools with care.
+            I build things with AI.
           </h1>
 
           {/* Story paragraphs */}
           <div className="max-w-[640px] flex flex-col gap-6">
             <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
-              I started building because I wanted to solve problems that mattered. Most of what I make begins with a real person, a real frustration, and a stubborn belief that technology should make their life easier, not harder. I would rather ship one careful deliverable than a dozen rough ones.
+              I came to software through problems I wanted to solve. Most of them
+              involved accessibility — tools that should have been better but weren&apos;t.
+              I decided to make some that were.
             </p>
 
             {/* Pull-quote — editorial accent, carries the thesis */}
@@ -75,20 +77,22 @@ export default function AboutPage() {
               className="pl-5 border-l-2 border-terracotta font-serif font-light text-[1.375rem] text-near-black leading-[1.4] text-balance"
               style={{ letterSpacing: '-0.01em' }}
             >
-              Accessibility isn&apos;t an add-on. It&apos;s the starting point.
+              Accessibility is not an add-on. It is where you begin.
             </blockquote>
 
             <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
-              Accessibility isn&apos;t an add-on for me — it&apos;s the baseline. I learned early that the features that help people with disabilities make everything easier for everyone. Accessible products are kind products. That shapes every line I write.
+              I work from {profile.location}. Mostly on AI-assisted tooling,
+              accessibility infrastructure, and community software. I prefer
+              learning in public.
             </p>
             <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
-              I work from {profile.location}, mostly on AI-assisted tooling, community infrastructure, and the quiet systems that make a product feel calm to use. I favor learning in the open — shipping things, talking about the process, and inviting others into the work before it&apos;s done.
+              I keep a written record of how each thing was made. The documentation
+              is part of the deliverable, not an afterthought.
             </p>
             <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
-              I keep a written record of how each thing was built and why — both for the people who come next and for me, the next time I need to remember. Documentation is love letter to the future.
-            </p>
-            <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
-              Right now, I&apos;m exploring what happens when accessibility, AI, and community collide. I want to build tools that help people help each other — especially the people who&apos;ve been left behind by most of tech. That&apos;s where I&apos;m headed.
+              Right now: an accessibility map. A multi-agent system that ships real
+              commits. A community mesh built for privacy. A Pac-Man trainer.
+              All of them open source.
             </p>
           </div>
         </div>
@@ -107,7 +111,7 @@ export default function AboutPage() {
           <div className="mb-12">
             <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
-              How I work
+              Method
             </p>
             <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-[1.1] text-balance">
               Three quiet steps, repeated carefully.
@@ -121,22 +125,22 @@ export default function AboutPage() {
               <li className="py-8 first:pt-0 last:pb-0">
                 <NumberedStep
                   number="01"
-                  title="Start with Claude Code"
-                  body="I use Claude Code as my primary building environment — it's where most of my projects actually get made. I describe what I want, read the output carefully, and course-correct when something feels off."
+                  title="Describe the problem."
+                  body="Use Claude Code as the primary building environment. Read the output. Course-correct when something is wrong."
                 />
               </li>
               <li className="py-8 first:pt-0 last:pb-0">
                 <NumberedStep
                   number="02"
-                  title="Build a team of agents"
-                  body="For bigger projects, I've built Claude Corp — a 14-role multi-agent system where each role has a clear job: design, code, QA, communications. They work from a written Constitution so nothing gets decided by accident."
+                  title="Assemble the team."
+                  body="For larger work, fifteen agents — each with a defined role, operating from a written constitution. Nothing is decided by accident."
                 />
               </li>
               <li className="py-8 first:pt-0 last:pb-0">
                 <NumberedStep
                   number="03"
-                  title="Iterate until it's honest"
-                  body="I don't ship until I've used the thing myself. Then I write down what I learned — what broke, what surprised me, what I'd do differently. The documentation is part of the deliverable."
+                  title="Do not ship until you have used it."
+                  body="Then write down what broke, what surprised you, and what the next person will need to know."
                 />
               </li>
             </ol>
@@ -156,32 +160,28 @@ export default function AboutPage() {
           <div className="mb-12">
             <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
-              What I care about
+              Principles
             </p>
             <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight">
-              Accessibility, privacy, and code that doesn&apos;t cut corners.
+              Accessibility. Privacy. No shortcuts.
             </h2>
           </div>
 
           <div className="max-w-[640px] flex flex-col gap-6">
             <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
-              Accessibility isn&apos;t an afterthought in my work — it&apos;s
-              the starting point. I aim for WCAG 2.2 AA on every interface I
-              touch. AccessMap exists specifically because disabled people
-              deserve better navigation tools, not retrofitted ones.
+              WCAG 2.2 AA on every interface. Not because it is required.
+              Because it is correct. AccessMap exists because disabled people
+              deserve navigation tools designed for them, not adapted for them.
             </p>
             <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
-              Privacy-first means the user&apos;s data is theirs. My Prompt
-              Library stores everything locally — no backend, no account, no
-              server that might get breached. Mutual Mesh is built the same
-              way. If you don&apos;t need the data to make the product work,
-              don&apos;t collect it.
+              The user&apos;s data is theirs. Prompt Library stores everything
+              locally — no backend, no account, no server. Mutual Mesh is built
+              the same way. If the data is not necessary, do not collect it.
             </p>
             <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
-              Clean code over speed. I&apos;d rather take longer and do it
-              right than ship fast and apologise. That&apos;s not a principle
-              I picked up from a book — it&apos;s one I learned the hard way
-              by shipping things that weren&apos;t ready.
+              I would rather take longer and do it correctly than ship fast and
+              apologise. This is not a principle from a book. It came from
+              shipping things that were not ready.
             </p>
           </div>
         </div>
@@ -200,7 +200,7 @@ export default function AboutPage() {
           <div className="mb-12">
             <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
-              What I&apos;m learning
+              Currently
             </p>
             <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight">
               Still a beginner. Getting better on purpose.
@@ -209,22 +209,19 @@ export default function AboutPage() {
 
           <div className="max-w-[640px] flex flex-col gap-6">
             <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
-              I&apos;m not a trained software engineer. I came to coding
-              through building — I had ideas I wanted to exist, so I learned
-              enough to make them real. That&apos;s still how I work: I build
-              to learn, not the other way around.
+              I am not a trained software engineer. I came to coding through
+              building — I had ideas I wanted to exist. That is still how this
+              works.
             </p>
             <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
-              Right now I&apos;m getting better at TypeScript, React Native,
-              and designing multi-agent systems that stay safe even when
-              they&apos;re running unsupervised. Each project teaches me
-              something the last one didn&apos;t.
+              Right now: TypeScript, React Native, multi-agent systems that
+              stay safe unsupervised. Each project teaches something the last
+              one did not.
             </p>
             <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
-              I&apos;m looking for collaborators, clients, or employers who
-              want someone who will read the docs, ask the right questions,
-              and genuinely care how the thing turns out. If that sounds like
-              you, let&apos;s talk.
+              I am looking for collaborators and clients who read the
+              documentation, ask good questions, and care how things turn out.
+              Write to me if that sounds like you.
             </p>
           </div>
         </div>
@@ -243,10 +240,10 @@ export default function AboutPage() {
             <div className="mb-12">
               <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
                 <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
-                What I&apos;m working on
+                The Work
               </p>
               <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-[1.1] text-balance">
-                A handful of recent things.
+                A handful of things.
               </h2>
             </div>
 
@@ -271,7 +268,7 @@ export default function AboutPage() {
                       {d.summary}
                     </p>
                     <span className="font-mono text-meta tracking-label uppercase text-accent-text mt-2 inline-flex items-center gap-1 transition-transform duration-fast ease-out group-hover:translate-x-1 group-focus-visible:translate-x-1">
-                      Read more
+                      Continue
                       <span aria-hidden="true">{'→'}</span>
                     </span>
                   </Link>
@@ -284,7 +281,7 @@ export default function AboutPage() {
                 href="/work/"
                 className="inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
               >
-                See all work
+                All the work
                 <span aria-hidden="true">{'→'}</span>
               </Link>
             </div>
@@ -302,13 +299,11 @@ export default function AboutPage() {
       >
         <div className="max-w-content mx-auto flex flex-col items-start gap-8">
           <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight">
-            Want to work together?
+            Have something worth building?
             <br />
-            Let{'’'}s talk.
+            Write to me.
           </h2>
-          <Button href={`mailto:${profile.contactEmail}?subject=Hello from your portfolio`}>
-            Get in touch
-          </Button>
+          <ContactEmail label="Write to me." />
 
           <Link
             href="/"
