@@ -66,7 +66,8 @@ describe('ProjectCard', () => {
     const caseStudyLink = screen.getByRole('link', {
       name: /read case study for accessmap/i,
     });
-    expect(caseStudyLink).toHaveAttribute('href', '/work/accessmap/');
+    // Next.js Link normalises trailing slashes in the jsdom test environment.
+    expect(caseStudyLink).toHaveAttribute('href', expect.stringContaining('/work/accessmap'));
   });
 
   it('exposes an accessible name summarising the destination (Alex §4.4)', () => {
