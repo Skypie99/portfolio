@@ -1,15 +1,15 @@
 'use client'
 
 /**
- * AppMockup — pure JSX/SVG/CSS app preview for each of the 4 projects.
+ * AppMockup — pure JSX/SVG/CSS app preview for each of the 5 projects.
  * No external images. No npm packages beyond React.
  *
  * Slug union matches deliverables.json `id` values exactly.
  * Phone frame: AccessMap + MutualMesh.
- * Browser frame: Claude Corp + Prompt Library.
+ * Browser frame: Claude Corp + Prompt Library + Pac-Man Code Trainer.
  */
 
-type AppMockupSlug = 'accessmap' | 'claude-corp' | 'prompt-library' | 'mutual-mesh'
+type AppMockupSlug = 'accessmap' | 'claude-corp' | 'prompt-library' | 'pacman-code-trainer' | 'mutual-mesh'
 
 type AppMockupProps = {
   slug: AppMockupSlug
@@ -269,6 +269,115 @@ function PromptLibraryScreen() {
   )
 }
 
+/* ─── Pac-Man Code Trainer Screen ─────────────────────────────────────── */
+
+function PacManScreen() {
+  const cards = [
+    { key: '/exit', label: 'Exit session' },
+    { key: '/clear', label: 'Clear context' },
+    { key: '/status', label: 'Check status' },
+  ]
+  return (
+    <div style={{ background: '#0D0D0D', width: '100%', height: '100%', padding: '10px 8px', overflow: 'hidden', display: 'flex', flexDirection: 'column', gap: 8 }}>
+      {/* Score row */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <span style={{ fontFamily: 'monospace', fontSize: 8, color: '#F5C842', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Score: 1200</span>
+        {/* Lives — three small Pac-Man shapes */}
+        <span style={{ display: 'flex', gap: 4 }}>
+          {[0, 1, 2].map((i) => (
+            <svg key={i} viewBox="0 0 12 12" width={10} height={10}>
+              <path d="M6 0 A6 6 0 1 1 6 12 A6 6 0 1 1 6 0 L6 6 Z" fill="#F5C842" />
+            </svg>
+          ))}
+        </span>
+      </div>
+
+      {/* Maze strip — dots row */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 3, paddingLeft: 2 }}>
+        {Array.from({ length: 16 }).map((_, i) => (
+          <span
+            key={i}
+            style={{
+              width: i === 4 ? 5 : 3,
+              height: i === 4 ? 5 : 3,
+              borderRadius: '50%',
+              background: i < 5 ? 'transparent' : '#F5C842',
+              opacity: i < 5 ? 0 : 0.55,
+              flexShrink: 0,
+            }}
+          />
+        ))}
+        {/* Pac-Man icon */}
+        <svg viewBox="0 0 12 12" width={12} height={12} style={{ flexShrink: 0 }}>
+          <path d="M6 0 A6 6 0 1 1 3 10.39 L6 6 Z" fill="#F5C842" />
+        </svg>
+        {/* Ghost */}
+        <svg viewBox="0 0 12 14" width={11} height={13} style={{ flexShrink: 0, marginLeft: 2 }}>
+          <path d="M0 14 L0 5 A6 6 0 0 1 12 5 L12 14 L10 12 L8 14 L6 12 L4 14 L2 12 Z" fill="#FF6B9D" />
+          <circle cx="4" cy="5.5" r="1.5" fill="white" />
+          <circle cx="8" cy="5.5" r="1.5" fill="white" />
+          <circle cx="4.5" cy="6" r="0.7" fill="#1A1AFF" />
+          <circle cx="8.5" cy="6" r="0.7" fill="#1A1AFF" />
+        </svg>
+      </div>
+
+      {/* Flashcard */}
+      <div
+        style={{
+          flex: 1,
+          background: '#1A1A1A',
+          border: '1px solid #2A2A2A',
+          borderRadius: 6,
+          padding: '8px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 6,
+        }}
+      >
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <span style={{ fontFamily: 'monospace', fontSize: 7, color: '#F5C842', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Card 12 / 40</span>
+          <span style={{ fontFamily: 'monospace', fontSize: 7, color: '#555', letterSpacing: '0.06em' }}>Claude Code</span>
+        </div>
+        <div
+          style={{
+            background: '#111',
+            borderRadius: 4,
+            padding: '6px 8px',
+            fontFamily: 'monospace',
+            fontSize: 11,
+            color: '#F5C842',
+            letterSpacing: '0.05em',
+            lineHeight: 1.4,
+          }}
+        >
+          /doctor
+        </div>
+        <div style={{ fontFamily: 'monospace', fontSize: 8, color: '#888', lineHeight: 1.5 }}>
+          Check setup health
+        </div>
+      </div>
+
+      {/* Mini grid of commands */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 4 }}>
+        {cards.map(({ key, label }) => (
+          <div
+            key={key}
+            style={{
+              background: '#1A1A1A',
+              border: '1px solid #2A2A2A',
+              borderRadius: 4,
+              padding: '4px 5px',
+            }}
+          >
+            <div style={{ fontFamily: 'monospace', fontSize: 7, color: '#F5C842', marginBottom: 2, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{key}</div>
+            <div style={{ fontFamily: 'monospace', fontSize: 6, color: '#555', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 /* ─── MutualMesh Screen ────────────────────────────────────────────────── */
 
 function MutualMeshScreen() {
@@ -358,6 +467,11 @@ export function AppMockup({ slug, className }: AppMockupProps) {
         {slug === 'prompt-library' && (
           <BrowserFrame urlText="Prompt Library">
             <PromptLibraryScreen />
+          </BrowserFrame>
+        )}
+        {slug === 'pacman-code-trainer' && (
+          <BrowserFrame urlText="pacman-code-trainer">
+            <PacManScreen />
           </BrowserFrame>
         )}
         {slug === 'mutual-mesh' && (

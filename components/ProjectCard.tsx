@@ -1,5 +1,6 @@
-import { AppMockup } from '@/components/AppMockup';
+import Link from 'next/link';
 
+import { AppMockup } from '@/components/AppMockup';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import type { Deliverable } from '@/lib/schema';
@@ -107,7 +108,7 @@ export function ProjectCard({
           </span>
         )}
         <AppMockup
-          slug={d.id as 'accessmap' | 'claude-corp' | 'prompt-library' | 'mutual-mesh'}
+          slug={d.id as 'accessmap' | 'claude-corp' | 'prompt-library' | 'pacman-code-trainer' | 'mutual-mesh'}
           className={wide ? 'scale-110' : ''}
         />
       </div>
@@ -125,7 +126,7 @@ export function ProjectCard({
           className="font-serif font-normal leading-[1.1] text-near-black"
           style={{ fontSize: wide ? '2.25rem' : '1.75rem', letterSpacing: '-0.015em' }}
         >
-          <a
+          <Link
             href={`/work/${d.id}/`}
             aria-label={`${d.title} — ${d.role}, ${d.year}`}
             className={cn(
@@ -135,7 +136,7 @@ export function ProjectCard({
             )}
           >
             {d.title}
-          </a>
+          </Link>
         </h3>
 
         {/* Summary */}
@@ -162,7 +163,7 @@ export function ProjectCard({
 
         {/* CTA row */}
         <div className="mt-auto pt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-stone/60">
-          <a
+          <Link
             href={`/work/${d.id}/`}
             className={cn(
               'inline-flex items-center gap-1.5 whitespace-nowrap',
@@ -174,7 +175,7 @@ export function ProjectCard({
             aria-label={`Read case study for ${d.title}`}
           >
             Case study <span aria-hidden="true">→</span>
-          </a>
+          </Link>
           <span aria-hidden="true" className="text-stone">·</span>
           {demoLink && (
             <a

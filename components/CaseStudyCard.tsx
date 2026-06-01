@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { cn } from '@/lib/cn';
 
 type CaseStudyCardProps = {
@@ -30,7 +32,7 @@ export function CaseStudyCard({
   className,
 }: CaseStudyCardProps) {
   return (
-    <a
+    <Link
       href={href}
       className={cn(
         'case-study-card group block',
@@ -49,6 +51,7 @@ export function CaseStudyCard({
         )}
         style={{ height: 'var(--case-study-image-height, 240px)' }}
       >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={imageUrl}
           alt={imageAlt}
@@ -98,6 +101,6 @@ export function CaseStudyCard({
           Read more <span aria-hidden="true">→</span>
         </span>
       </div>
-    </a>
+    </Link>
   );
 }
