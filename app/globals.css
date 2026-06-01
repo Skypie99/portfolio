@@ -173,6 +173,13 @@ html,
 body {
   margin: 0;
   padding: 0;
+  /* Full-bleed guard (Dani 2026-06-01): the homepage cinematic uses width:100vw
+     to break out of the sidebar column. `overflow-x: clip` swallows any sub-pixel
+     horizontal overflow from the 100vw block WITHOUT establishing a scroll
+     container — so it does NOT break the sticky <Sidebar> (which `overflow-x:
+     hidden` would; see the note near .cinematic-scene). Vertical scroll and
+     ScrollTrigger pinning are unaffected. */
+  overflow-x: clip;
   background: var(--color-cream);
   color: var(--color-near-black);
   font-family: var(--font-dm-sans), -apple-system, BlinkMacSystemFont, sans-serif;
@@ -1073,9 +1080,66 @@ img::before {
   width: 100%;
 }
 
-/* -- Pinned 100vh viewport. ScrollTrigger sets the spacer; we clip here. -- */
+/* -- FULL-BLEED TAKEOVER (Dani 2026-06-01) ----------------------------------
+   The homepage cinematic lives inside <main>, which on desktop (>=768px / md)
+   is the 2nd flex child after the sticky <Sidebar> (w-sidebar = 280px). Left
+   alone, ScrollTrigger pins the scene at left:280 / width:1160 — the sidebar
+   (name/nav/links) flanks the IMAX descent the whole way. We don't want that:
+   the intro should OWN the viewport.
+
+   Mechanism: break the stage out of the flex column so its in-flow box spans
+   the full viewport (width:100vw) with its LEFT edge at viewport x=0.
+   ScrollTrigger then measures the pin (a width:100% child) at x=0 /
+   width:100vw and fixes it edge-to-edge, covering the sidebar. The 500vh
+   in-flow spacer ScrollTrigger inserts keeps the scroll budget; on release the
+   pin unpins and the shell (sidebar + Hero) flows in below exactly as before.
+
+   Why not the textbook `margin-left: calc(50% - 50vw)` full-bleed trick? That
+   only centres a 100vw block when its container is CENTRED in the viewport.
+   <main> is NOT centred on desktop — it's pushed right by the sidebar — so the
+   textbook calc lands the stage at left:140 (140px sidebar peek at top). The
+   correct cancel is the container's own left offset, which equals the sidebar
+   width. We express that as `--cdesert-shell-offset`: 0 by default (mobile,
+   where <main> already starts at x=0 and is full width → no-op), and the
+   sidebar width at md+ (where the sidebar appears). So the stage's left edge
+   lands exactly on x=0 at every breakpoint.
+
+   --sidebar-w mirrors the Tailwind `spacing.sidebar` token (tailwind.config.ts);
+   keep them in sync if the rail width ever changes.
+
+   Scoped to the homepage automatically: <CinematicDesert> (the only emitter of
+   .cdesert-*) renders ONLY in app/page.tsx. Other routes never mount it, so
+   their sidebar is untouched.
+
+   Guarded by `overflow-x: clip` on <html>/<body> (see base layer) so 100vw
+   never introduces a horizontal scrollbar. */
+:root {
+  --sidebar-w: 280px; /* mirror of tailwind.config.ts → theme.extend.spacing.sidebar */
+}
+.cdesert-stage,
+.cdesert-static {
+  --cdesert-shell-offset: 0px; /* mobile: <main> already at x=0, full width */
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(-1 * var(--cdesert-shell-offset));
+  margin-right: calc(-1 * var(--cdesert-shell-offset));
+}
+@media (min-width: 768px) {
+  /* md+: the sidebar is shown and <main> is pushed right by its width. Cancel
+     exactly that offset so the stage's left edge sits on viewport x=0. */
+  .cdesert-stage,
+  .cdesert-static {
+    --cdesert-shell-offset: var(--sidebar-w);
+  }
+}
+
+/* -- Pinned 100vh viewport. ScrollTrigger sets the spacer; we clip here. --
+   z-index lifts the pin above the sticky sidebar (which sits at the default
+   auto stacking level) once ScrollTrigger fixes it, so no 280px rail peeks
+   through during the descent. */
 .cdesert-pin {
   position: relative;
+  z-index: 50;
   height: 100vh;
   width: 100%;
   overflow: hidden;
@@ -1265,10 +1329,14 @@ img::before {
   100% { transform: translate3d(-6px, -52px, 0); opacity: 0.0; }
 }
 
-/* -- Static arrival frame (reduced-motion + narrow viewport) -- */
+/* -- Static arrival frame (reduced-motion + narrow viewport) --
+   NOTE: width is owned by the FULL-BLEED TAKEOVER block above
+   (.cdesert-stage, .cdesert-static → width:100vw + shell-offset). Do NOT
+   re-declare width here — this rule sits LATER in the cascade and a `width:
+   100%` would override the full-bleed back to the boxed 1160px, leaving a
+   sidebar-width gap on the right of the desktop reduced-motion frame. */
 .cdesert-static {
   position: relative;
-  width: 100%;
   height: 100vh;
 }
 .cdesert-static-stage {
