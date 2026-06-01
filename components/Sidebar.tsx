@@ -76,7 +76,7 @@ export function Sidebar() {
               {featured.role}
             </span>
             <span className="font-mono text-meta tracking-label uppercase text-accent-text mt-1 inline-flex items-center gap-1 transition-transform duration-fast ease-out group-hover:translate-x-1 group-focus-visible:translate-x-1">
-              View work
+              Open it
               <span aria-hidden="true">{'→'}</span>
             </span>
           </Link>
@@ -93,14 +93,14 @@ export function Sidebar() {
       {/* ── Blog link ─────────────────────────────────────────────── */}
       <div className="flex flex-col gap-3">
         <span className="font-mono text-label tracking-label uppercase text-text-meta">
-          Writing
+          Dispatches
         </span>
         <Link
           href="/blog/"
           className="group font-mono text-meta tracking-label uppercase text-accent-text inline-flex items-center gap-1"
         >
           <span className="group-hover:translate-x-1 group-focus-visible:translate-x-1 transition-transform duration-fast ease-out inline-flex items-center gap-1">
-            Read the blog
+            Read dispatches
             <span aria-hidden="true">{'→'}</span>
           </span>
         </Link>
@@ -108,8 +108,8 @@ export function Sidebar() {
 
       {/* ── Bottom block ───────────────────────────────────────────── */}
       <div className="mt-auto flex flex-col gap-4">
-        <Button href={`mailto:${profile.contactEmail}`} fullWidth>
-          Get in touch
+        <Button href="/contact/" fullWidth>
+          Write to me.
         </Button>
         <div className="flex items-center justify-between font-mono text-meta tracking-label uppercase text-text-meta">
           <span>{'©'} {year}</span>
