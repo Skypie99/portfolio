@@ -3,9 +3,6 @@ const nextConfig = {
   // Static export for GitHub Pages (per Rory's DEPLOY_PLAN.md)
   output: 'export',
 
-  // Subdir hosting on GH Pages: site lives at /portfolio/ in production
-  basePath: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
-
   // GH Pages can't run the Image Optimization API; ship raw <img> tags
   images: { unoptimized: true },
 
