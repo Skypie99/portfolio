@@ -1,6 +1,8 @@
 import Link from 'next/link';
 
+import { CinematicIntro } from '@/components/CinematicIntro';
 import { ContactEmail } from '@/components/ContactEmail';
+import { ContentReveal } from '@/components/ContentReveal';
 import { Hero } from '@/components/Hero';
 import { NumberedStep } from '@/components/NumberedStep';
 import { ProjectCard } from '@/components/ProjectCard';
@@ -61,6 +63,10 @@ export default function HomePage() {
 
   return (
     <>
+      {/* ── Cinematic intro — Phase 5 scroll scene ───────────────────── */}
+      <CinematicIntro />
+
+      <ContentReveal>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <div id="hero">
         <Hero
@@ -361,6 +367,7 @@ export default function HomePage() {
           <ContactEmail label="Write to me." />
         </div>
       </section>
+      </ContentReveal>
     </>
   );
 }
