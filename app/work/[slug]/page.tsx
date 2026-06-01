@@ -8,6 +8,41 @@ import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getDeliverables, getProfile } from '@/lib/content';
 
+function parseInline(text: string): React.ReactNode[] {
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith('**') && part.endsWith('**'))
+      return <strong key={i} className="font-semibold text-near-black">{part.slice(2, -2)}</strong>;
+    if (part.startsWith('*') && part.endsWith('*'))
+      return <em key={i}>{part.slice(1, -1)}</em>;
+    return part;
+  });
+}
+
+function renderMarkdown(markdown: string): React.ReactNode[] {
+  const blocks = markdown.split(/\n{2,}/).map((b) => b.trim()).filter(Boolean);
+  return blocks.map((block, i) => {
+    const key = `b-${i}`;
+    if (block.startsWith('## '))
+      return (
+        <h2 key={key} className="font-serif font-light text-[clamp(1.5rem,3vw,2rem)] text-near-black leading-[1.1] mt-12 mb-4 first:mt-0" style={{ letterSpacing: '-0.01em' }}>
+          {block.slice(3)}
+        </h2>
+      );
+    if (block.startsWith('### '))
+      return (
+        <h3 key={key} className="font-serif font-light text-[clamp(1.25rem,2.5vw,1.5rem)] text-near-black leading-[1.15] mt-8 mb-3" style={{ letterSpacing: '-0.01em' }}>
+          {block.slice(4)}
+        </h3>
+      );
+    return (
+      <p key={key} className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.75] text-pretty">
+        {parseInline(block)}
+      </p>
+    );
+  });
+}
+
 type RouteParams = { slug: string };
 
 type CaseStudyCategory = 'accessmap' | 'claude-corp' | 'prompt-library' | 'pacman' | 'mutual';
@@ -252,6 +287,17 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
           </div>
         </div>
       </section>
+
+      {/* Case study body — rendered only when body content exists */}
+      {d.body && (
+        <section className="px-gutter py-24 lg:py-32 bg-warm-white border-t border-border-decorative">
+          <div className="max-w-content mx-auto">
+            <article aria-label={`${d.title} case study`} className="max-w-[720px] flex flex-col gap-6">
+              {renderMarkdown(d.body)}
+            </article>
+          </div>
+        </section>
+      )}
 
       {/* Optional gallery */}
       {d.gallery && d.gallery.length > 0 && (
