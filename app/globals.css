@@ -209,10 +209,11 @@ h1, h2, h3, h4, h5, h6 {
 .hero-enter {
   animation: fade-rise 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
-.hero-enter-delay-1 { animation-delay: 80ms; }
-.hero-enter-delay-2 { animation-delay: 180ms; }
-.hero-enter-delay-3 { animation-delay: 320ms; }
-.hero-enter-delay-4 { animation-delay: 480ms; }
+.hero-enter-delay-1  { animation-delay: 80ms; }
+.hero-enter-delay-2  { animation-delay: 180ms; }
+.hero-enter-delay-25 { animation-delay: 260ms; }
+.hero-enter-delay-3  { animation-delay: 360ms; }
+.hero-enter-delay-4  { animation-delay: 500ms; }
 
 /* Hero radial wash — soft warm glow from the upper-right corner,
    layered on the cream background. Pure CSS, no JS. The wash sits
@@ -253,6 +254,7 @@ h1, h2, h3, h4, h5, h6 {
   .hero-enter,
   .hero-enter-delay-1,
   .hero-enter-delay-2,
+  .hero-enter-delay-25,
   .hero-enter-delay-3,
   .hero-enter-delay-4 {
     animation: none;
@@ -370,6 +372,46 @@ img::before {
   @media (prefers-reduced-motion: no-preference) {
     .hero-scroll-fade {
       animation: hero-fade-out linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 100%;
+    }
+  }
+}
+
+/* ------------------------------------------------------------------
+   Hero scroll-parallax — headline drifts upward as the hero exits.
+   Layered on top of the entrance animation: the two coexist because
+   animation-timeline: view() only activates during exit phase.
+
+   -48px over the exit range ≈ 7-8% of typical hero height — tasteful,
+   not disorienting. Reduced-motion gate in @supports block.
+   ------------------------------------------------------------------ */
+@keyframes hero-parallax {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-48px); }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-scroll-translate {
+      animation: hero-parallax linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 80%;
+    }
+  }
+}
+
+/* Hero background drift — warm amber overlay shifts upward slightly
+   as the hero exits, creating a sense of depth behind the headline. */
+@keyframes hero-bg-drift {
+  from { transform: translateY(0) scale(1);   opacity: 1; }
+  to   { transform: translateY(-24px) scale(1.06); opacity: 0.4; }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-bg-drift {
+      animation: hero-bg-drift linear both;
       animation-timeline: view();
       animation-range: exit 0% exit 100%;
     }

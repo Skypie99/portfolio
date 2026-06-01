@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-import { Button } from '@/components/Button';
+import { ContactEmail } from '@/components/ContactEmail';
 import { cn } from '@/lib/cn';
 import { getProfile } from '@/lib/content';
 
@@ -49,11 +49,7 @@ export default function ContactPage() {
             For everything else, the socials below also work.
           </p>
 
-          <Button
-            href={`mailto:${profile.contactEmail}?subject=Hello from your portfolio`}
-          >
-            Email {profile.contactEmail}
-          </Button>
+          <ContactEmail />
         </div>
       </section>
 

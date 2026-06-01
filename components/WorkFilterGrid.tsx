@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import { AnimatePresence, motion, useInView, useReducedMotion } from 'framer-motion';
 
 import { CaseStudyCard } from '@/components/CaseStudyCard';
 import { FilterPill } from '@/components/FilterPill';
@@ -24,8 +25,25 @@ type WorkFilterGridProps = {
   deliverables: Deliverable[];
 };
 
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08 } },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] as const },
+  },
+};
+
 export function WorkFilterGrid({ deliverables }: WorkFilterGridProps) {
   const [activeTag, setActiveTag] = useState<string | null>(null);
+  const shouldReduceMotion = useReducedMotion();
+  const gridRef = useRef<HTMLUListElement>(null);
+  const isInView = useInView(gridRef, { once: true, margin: '-80px' });
 
   const featured = deliverables.find((d) => d.featured);
   const rest = deliverables.filter((d) => !d.featured);
@@ -63,33 +81,58 @@ export function WorkFilterGrid({ deliverables }: WorkFilterGridProps) {
         </div>
       )}
 
-      {/* Featured card — wide ProjectCard, hidden when tag filter excludes it */}
-      {featured && featuredVisible && (
-        <div className="mb-12">
-          <ProjectCard deliverable={featured} wide />
-        </div>
-      )}
+      {/* Featured card — animates out when tag filter excludes it */}
+      <AnimatePresence mode="wait">
+        {featured && featuredVisible && (
+          <motion.div
+            key="featured"
+            layout={!shouldReduceMotion}
+            initial={false}
+            exit={shouldReduceMotion ? undefined : { opacity: 0, scale: 0.98, transition: { duration: 0.18 } }}
+            className="mb-12"
+          >
+            <ProjectCard deliverable={featured} wide />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-      {/* Non-featured grid */}
+      {/* Non-featured grid — layout animation on filter + stagger on scroll enter */}
       {filteredRest.length === 0 && !featuredVisible ? (
         <p className="font-serif font-light text-display-s text-charcoal leading-[1.65]">
           No deliverables match this filter.
         </p>
       ) : filteredRest.length > 0 ? (
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          {filteredRest.map((d) => (
-            <li key={d.id}>
-              <CaseStudyCard
-                title={d.title}
-                category={toCategory(d.id)}
-                imageUrl={d.heroImage.src}
-                imageAlt={d.heroImage.alt}
-                description={d.summary}
-                href={`/work/${d.id}/`}
-              />
-            </li>
-          ))}
-        </ul>
+        <motion.ul
+          ref={gridRef}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12"
+          variants={shouldReduceMotion ? undefined : containerVariants}
+          initial={shouldReduceMotion ? undefined : 'hidden'}
+          animate={shouldReduceMotion ? undefined : (isInView ? 'visible' : 'hidden')}
+        >
+          <AnimatePresence mode="popLayout" initial={false}>
+            {filteredRest.map((d) => (
+              <motion.li
+                key={d.id}
+                layout={!shouldReduceMotion}
+                variants={shouldReduceMotion ? undefined : cardVariants}
+                exit={
+                  shouldReduceMotion
+                    ? undefined
+                    : { opacity: 0, scale: 0.96, y: -8, transition: { duration: 0.2 } }
+                }
+              >
+                <CaseStudyCard
+                  title={d.title}
+                  category={toCategory(d.id)}
+                  imageUrl={d.heroImage.src}
+                  imageAlt={d.heroImage.alt}
+                  description={d.summary}
+                  href={`/work/${d.id}/`}
+                />
+              </motion.li>
+            ))}
+          </AnimatePresence>
+        </motion.ul>
       ) : null}
     </div>
   );
