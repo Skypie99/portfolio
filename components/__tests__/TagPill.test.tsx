@@ -21,13 +21,13 @@ describe('TagPill', () => {
     expect(screen.getByText('TypeScript')).toBeInTheDocument();
   });
 
-  it('applies the Dani §3.8 token classes (sand bg, umber text, mono uppercase)', () => {
+  it('applies WA Phase 5 teal token classes (teal-pale bg, teal-deep text, mono uppercase)', () => {
     render(<TagPill>Expo</TagPill>);
     const pill = screen.getByText('Expo');
-    // Token class assertions — if Dani's spec moves, these change with it.
+    // Token class assertions — if the spec moves, these change with it.
     expect(pill).toHaveClass(
-      'bg-sand',
-      'text-umber',
+      'bg-wa-teal-pale',
+      'text-wa-teal-deep',
       'font-mono',
       'uppercase',
       'rounded-pill',
@@ -38,6 +38,6 @@ describe('TagPill', () => {
     render(<TagPill className="custom-extra">Tailwind</TagPill>);
     const pill = screen.getByText('Tailwind');
     expect(pill).toHaveClass('custom-extra');
-    expect(pill).toHaveClass('bg-sand'); // base preserved
+    expect(pill).toHaveClass('bg-wa-teal-pale'); // base preserved
   });
 });

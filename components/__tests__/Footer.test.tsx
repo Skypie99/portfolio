@@ -37,13 +37,12 @@ describe('Footer', () => {
     expect(copyright).toBeInTheDocument();
   });
 
-  it('renders the Cycle 9 "Made with care" line with the terracotta brand dot', () => {
+  it('renders the "Made with care" line with the WA teal status dot (Phase 5)', () => {
     const { container } = render(<Footer />);
     const madeWithCare = screen.getByText(/made with care/i);
     expect(madeWithCare).toBeInTheDocument();
-    // The terracotta dot is an aria-hidden <span> with bg-terracotta —
-    // confirm a sibling matches before the text to lock in the brand sig.
-    const dot = container.querySelector('span.bg-terracotta');
+    // Phase 5 WA palette: status dots changed from terracotta to teal.
+    const dot = container.querySelector('span.bg-wa-teal');
     expect(dot).not.toBeNull();
   });
 
