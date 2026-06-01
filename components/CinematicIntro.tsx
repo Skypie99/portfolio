@@ -6,12 +6,12 @@ function clamp01(v: number): number {
   return Math.max(0, Math.min(1, v));
 }
 
-function easeInOutCubic(t: number): number {
-  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-}
-
 function easeInCubic(t: number): number {
   return t * t * t;
+}
+
+function easeInOutQuart(t: number): number {
+  return t < 0.5 ? 8 * t * t * t * t : 1 - Math.pow(-2 * t + 2, 4) / 2;
 }
 
 export function CinematicIntro() {
@@ -19,27 +19,29 @@ export function CinematicIntro() {
 
   // ═══════════════════════════════════════════════════════════════
   //  SKY — atmospheric crossfade + horizon bloom
+  //  Night exits decisively; dawn gets 150px hold at peak;
+  //  golden arrives as the culmination, not an afterthought
   // ═══════════════════════════════════════════════════════════════
-  const skyNightOp  = useTransform(scrollY, [0, 70, 290], [1, 1, 0]);
-  const skyDawnOp   = useTransform(scrollY, [70, 165, 225, 315], [0, 1, 1, 0]);
-  const skyGoldenOp = useTransform(scrollY, [240, 340], [0, 1]);
-  const horizonGlowOp = useTransform(scrollY, [120, 220, 340], [0, 0.6, 0.9]);
+  const skyNightOp  = useTransform(scrollY, [0, 80, 260], [1, 1, 0]);
+  const skyDawnOp   = useTransform(scrollY, [50, 170, 320, 410], [0, 1, 1, 0]);
+  const skyGoldenOp = useTransform(scrollY, [340, 440], [0, 1]);
+  const horizonGlowOp = useTransform(scrollY, [130, 280, 440], [0, 0.55, 0.9]);
 
   // ═══════════════════════════════════════════════════════════════
-  //  STARS — accelerating spread with parallax zoom
+  //  STARS — gone by mid-dawn, not lingering into golden
   // ═══════════════════════════════════════════════════════════════
-  const starsOp    = useTransform(scrollY, [0, 110, 280], [1, 1, 0]);
+  const starsOp    = useTransform(scrollY, [0, 100, 270], [1, 1, 0]);
   const starsScale = useTransform(scrollY, (v: number) => {
-    const t = clamp01(v / 340);
+    const t = clamp01(v / 440);
     return 1 + easeInCubic(t) * 2;
   });
 
   // ═══════════════════════════════════════════════════════════════
-  //  MOON — crescent with halo bloom before dissolve
+  //  MOON — brighter than stars, dissolves later (120→300)
   // ═══════════════════════════════════════════════════════════════
-  const moonOp = useTransform(scrollY, [0, 90, 240], [1, 1, 0]);
-  const moonHaloScale = useTransform(scrollY, [90, 210], [1, 1.6]);
-  const moonHaloOp    = useTransform(scrollY, [90, 155, 230], [0.06, 0.18, 0]);
+  const moonOp = useTransform(scrollY, [0, 120, 300], [1, 1, 0]);
+  const moonHaloScale = useTransform(scrollY, [120, 270], [1, 1.6]);
+  const moonHaloOp    = useTransform(scrollY, [120, 200, 290], [0.06, 0.18, 0]);
 
   // ═══════════════════════════════════════════════════════════════
   //  SHOOTING STAR — blink-and-you-miss-it delight
@@ -49,58 +51,62 @@ export function CinematicIntro() {
   const shootingStarY  = useTransform(scrollY, [38, 58], [0, 65]);
 
   // ═══════════════════════════════════════════════════════════════
-  //  LANDSCAPE — base camera descent (eased scale 0.18 → 1.0)
+  //  LANDSCAPE — helicopter descent (0.32→1.0, quartic S-curve)
+  //  Cautious approach → rapid mid-descent → long gentle touchdown
   // ═══════════════════════════════════════════════════════════════
   const landScale = useTransform(scrollY, (v: number) => {
-    const t = clamp01(v / 350);
-    return 0.18 + easeInOutCubic(t) * 0.82;
+    const t = clamp01(v / 480);
+    return 0.32 + easeInOutQuart(t) * 0.68;
   });
 
   // ═══════════════════════════════════════════════════════════════
-  //  DEPTH PARALLAX — staggered reveal + vertical offsets
-  //  Far = appears first, lags most (pushed down as camera drops)
-  //  Near = appears last, no lag (reference plane)
+  //  DEPTH PARALLAX — physically grounded stagger + offsets
+  //  Sky ~10mi, far mesas ~2mi, mid ~0.5mi, near ~500ft, flora ~100ft
+  //  250px stagger between first and last layer reveal
   // ═══════════════════════════════════════════════════════════════
-  const farMesaOp = useTransform(scrollY, [60, 160], [0, 1]);
-  const farMesaY  = useTransform(scrollY, [60, 350], [0, 18]);
+  const farMesaOp = useTransform(scrollY, [50, 150], [0, 1]);
+  const farMesaY  = useTransform(scrollY, [50, 480], [0, 50]);
 
-  const midMesaOp = useTransform(scrollY, [80, 190], [0, 1]);
-  const midMesaY  = useTransform(scrollY, [80, 350], [0, 8]);
+  const midMesaOp = useTransform(scrollY, [110, 230], [0, 1]);
+  const midMesaY  = useTransform(scrollY, [110, 480], [0, 24]);
 
-  const nearMesaOp = useTransform(scrollY, [100, 210], [0, 1]);
+  const nearMesaOp = useTransform(scrollY, [180, 300], [0, 1]);
+  const nearMesaY  = useTransform(scrollY, [180, 480], [0, 6]);
 
-  const floraOp = useTransform(scrollY, [200, 290], [0, 1]);
-  const floraY  = useTransform(scrollY, [200, 350], [0, -4]);
-
-  // ═══════════════════════════════════════════════════════════════
-  //  ATMOSPHERIC DEPTH HAZE — warm amber between mesa groups
-  // ═══════════════════════════════════════════════════════════════
-  const depthHaze1Op = useTransform(scrollY, [150, 300], [0, 0.35]);
-  const depthHaze2Op = useTransform(scrollY, [180, 320], [0, 0.25]);
+  const floraOp = useTransform(scrollY, [300, 400], [0, 1]);
+  const floraY  = useTransform(scrollY, [300, 480], [0, -18]);
 
   // ═══════════════════════════════════════════════════════════════
-  //  DUST MOTES — golden-hour suspended particles
+  //  ATMOSPHERIC DEPTH HAZE — builds between mesa groups as they appear
   // ═══════════════════════════════════════════════════════════════
-  const dustOp = useTransform(scrollY, [240, 340], [0, 0.55]);
+  const depthHaze1Op = useTransform(scrollY, [160, 380], [0, 0.35]);
+  const depthHaze2Op = useTransform(scrollY, [240, 400], [0, 0.25]);
 
   // ═══════════════════════════════════════════════════════════════
-  //  TITLE CARD — WA chapter opening
+  //  DUST MOTES — golden-hour only, arrives with the golden sky
   // ═══════════════════════════════════════════════════════════════
-  const titleY       = useTransform(scrollY, [270, 315, 360, 410], [10, 0, 0, -4]);
-  const titleScale   = useTransform(scrollY, [270, 315], [1.015, 1]);
-  const titleLine1Op = useTransform(scrollY, [270, 312, 360, 410], [0, 1, 1, 0]);
-  const titleLine2Op = useTransform(scrollY, [282, 320, 360, 410], [0, 1, 1, 0]);
-  const titleLine3Op = useTransform(scrollY, [292, 326, 360, 410], [0, 1, 1, 0]);
+  const dustOp = useTransform(scrollY, [340, 440], [0, 0.55]);
 
-  const titleTrackingVal = useTransform(scrollY, [270, 315], [0.12, 0.04]);
+  // ═══════════════════════════════════════════════════════════════
+  //  TITLE CARD — ghost presence → focal resolve → settle
+  //  Shimmers at 8-12% opacity from scroll 280, resolves to 1.0
+  //  by 380. Feels like it was always there in the landscape.
+  // ═══════════════════════════════════════════════════════════════
+  const titleY       = useTransform(scrollY, [280, 380, 450, 510], [8, 0, 0, -4]);
+  const titleScale   = useTransform(scrollY, [280, 380], [1.01, 1]);
+  const titleLine1Op = useTransform(scrollY, [280, 330, 380, 450, 510], [0, 0.12, 1, 1, 0]);
+  const titleLine2Op = useTransform(scrollY, [292, 340, 388, 450, 510], [0, 0.10, 1, 1, 0]);
+  const titleLine3Op = useTransform(scrollY, [304, 350, 396, 450, 510], [0, 0.08, 1, 1, 0]);
+
+  const titleTrackingVal = useTransform(scrollY, [280, 380], [0.12, 0.04]);
   const titleTracking    = useTransform(titleTrackingVal, (v: number) => `${v}em`);
-  const subTrackingVal   = useTransform(scrollY, [282, 326], [0.35, 0.22]);
+  const subTrackingVal   = useTransform(scrollY, [304, 396], [0.35, 0.22]);
   const subTracking      = useTransform(subTrackingVal, (v: number) => `${v}em`);
 
-  const ruleScaleX = useTransform(scrollY, [305, 335, 360, 410], [0, 1, 1, 0]);
-  const ruleOp     = useTransform(scrollY, [305, 325, 360, 410], [0, 0.35, 0.35, 0]);
+  const ruleScaleX = useTransform(scrollY, [380, 410, 450, 510], [0, 1, 1, 0]);
+  const ruleOp     = useTransform(scrollY, [380, 400, 450, 510], [0, 0.35, 0.35, 0]);
 
-  const skipOp   = useTransform(scrollY, [145, 190, 370, 415], [0, 1, 1, 0]);
+  const skipOp   = useTransform(scrollY, [170, 220, 460, 510], [0, 1, 1, 0]);
   const promptOp = useTransform(scrollY, [0, 80], [1, 0]);
 
   function handleSkip() {
@@ -321,13 +327,13 @@ export function CinematicIntro() {
           {/* Atmospheric haze 2 — between mid and near depth planes */}
           <motion.div className="cin-depth-haze cin-depth-haze-2" style={{ opacity: depthHaze2Op }} />
 
-          {/* ── NEAR MESA — center hero piece, no parallax lag ──── */}
+          {/* ── NEAR MESA — center hero piece, slight parallax lag ── */}
           <motion.svg
             className="cin-mesas-svg"
             viewBox="0 0 1440 500"
             preserveAspectRatio="none"
             aria-hidden="true"
-            style={{ opacity: nearMesaOp }}
+            style={{ opacity: nearMesaOp, y: nearMesaY }}
           >
             <defs>
               <clipPath id="mc"><path d="M 578 390 L 615 238 L 642 165 L 682 161 L 720 159 L 758 161 L 798 164 L 825 240 L 862 390 Z" /></clipPath>

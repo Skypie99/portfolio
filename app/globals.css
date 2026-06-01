@@ -513,7 +513,7 @@ img::before {
 
 /* -- Scroll-space wrapper (sticky context for the scene) -- */
 .cinematic-wrapper {
-  height: calc(100vh + 400px);
+  height: calc(100vh + 500px);
   position: relative;
 }
 
