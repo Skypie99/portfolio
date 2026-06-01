@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   motion,
   useScroll,
@@ -291,7 +291,25 @@ const STAR_POSITIONS: Array<[number, number, number, number]> = [
    ──────────────────────────────────────────────────────────────────────── */
 export function CinematicIntro() {
   const prefersReducedMotion = useReducedMotion();
-  if (prefersReducedMotion) {
+
+  /* Narrow-viewport gate (SSR-safe — no `window` during render so the static
+     export builds and the first client paint matches the server: both start
+     `false` = AnimatedScene. After mount, phones (<768px) flip to true).
+     WHY route phones to StaticArrivalFrame: on <768px the mobile @media
+     collapses .cinematic-wrapper-200vh to 100vh, so useScroll's target is
+     exactly viewport-height → scrollYProgress = 0/0 = NaN → Framer clamps to
+     1.0 → AnimatedScene renders its END frame instantly with no title. The
+     static frame is the deliberate, correct final frame with a visible title. */
+  const [isNarrow, setIsNarrow] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 767px)');
+    const update = () => setIsNarrow(mq.matches);
+    update();
+    mq.addEventListener('change', update);
+    return () => mq.removeEventListener('change', update);
+  }, []);
+
+  if (prefersReducedMotion || isNarrow) {
     return <StaticArrivalFrame />;
   }
   return <AnimatedScene />;
