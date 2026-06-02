@@ -8,12 +8,15 @@
  * change, alpha intact. Between them they cover ~all 2026 browsers.
  *
  * ── RIGHT-SIZING (don't ship more pixels than the deepest push uses) ────────
- * Each plane is sized to its max on-screen magnification — a plane that only
- * scales to 1.12× doesn't need full 3360px, but the fg planes magnify to 2.6×
- * and must keep their pixels or they'd smear at the closest push:
- *   sky   planes (scale ≤1.12): 2048px wide
- *   mid / cliff   (scale ≤1.7) : 2880px wide
- *   fg    planes  (scale ≤2.6) : 3360px wide  (kept)
+ * Each plane is sized to its max on-screen magnification. PERF rebuild
+ * (2026-06-02): the depth-push scale caps were hard-reduced (sky ≤1.08,
+ * mid/cliff ≤1.30, fg ≤1.45 — was up to 2.6×), so the planes no longer need
+ * their old pixel budget. Smaller masters = less decode + far less GPU texture
+ * memory per composited layer, which is the second-biggest perf lever after the
+ * scale cap. New right-sized targets:
+ *   sky   planes (scale ≤1.08): 1536px wide  (was 2048)
+ *   mid / cliff   (scale ≤1.30): 2048px wide  (was 2880)
+ *   fg    planes  (scale ≤1.45): 2304px wide  (was 3360)
  *
  * ── ENCODE ──────────────────────────────────────────────────────────────────
  * AVIF quality 56, effort 9 (high), alpha preserved on the 6 transparent
@@ -58,17 +61,17 @@ const WEBP_QUALITY = 80;
  */
 const PLANES = [
   // DAWN
-  { id: 'dawn-sky', tier: 'sky', width: 2048, transparent: false, avifQ: 62 },
-  { id: 'dawn-mid', tier: 'mid', width: 2880, transparent: true },
-  { id: 'dawn-fg', tier: 'fg', width: 3360, transparent: true },
+  { id: 'dawn-sky', tier: 'sky', width: 1536, transparent: false, avifQ: 62 },
+  { id: 'dawn-mid', tier: 'mid', width: 2048, transparent: true },
+  { id: 'dawn-fg', tier: 'fg', width: 2304, transparent: true },
   // MID
-  { id: 'mid-sky', tier: 'sky', width: 2048, transparent: false, avifQ: 62 },
-  { id: 'mid-mid', tier: 'mid', width: 2880, transparent: true },
-  { id: 'mid-fg', tier: 'fg', width: 3360, transparent: true },
+  { id: 'mid-sky', tier: 'sky', width: 1536, transparent: false, avifQ: 62 },
+  { id: 'mid-mid', tier: 'mid', width: 2048, transparent: true },
+  { id: 'mid-fg', tier: 'fg', width: 2304, transparent: true },
   // ARRIVAL
-  { id: 'arrival-sky', tier: 'sky', width: 2048, transparent: false, avifQ: 62 },
-  { id: 'arrival-cliff', tier: 'cliff', width: 2880, transparent: true },
-  { id: 'arrival-fg', tier: 'fg', width: 3360, transparent: true },
+  { id: 'arrival-sky', tier: 'sky', width: 1536, transparent: false, avifQ: 62 },
+  { id: 'arrival-cliff', tier: 'cliff', width: 2048, transparent: true },
+  { id: 'arrival-fg', tier: 'fg', width: 2304, transparent: true },
 ];
 
 const fmtKB = (bytes) => `${(bytes / 1024).toFixed(0)}KB`;

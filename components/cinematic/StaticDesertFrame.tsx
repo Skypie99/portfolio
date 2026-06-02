@@ -34,14 +34,15 @@ export function StaticDesertFrame() {
       <div className="cdesert-static-stage">
         {/* plates, frozen near their arrival transforms */}
         {PLATES.map((plate, i) => {
-          // Hold each plate at a representative late-push transform. We don't go
-          // all the way to scaleTo for the near layers (that would blow the
-          // subject out of frame); the arrival reads best a touch before p=1.
+          // Hold each plate at a representative late-push transform. With the
+          // PERF scale caps (2026-06-02) the whole push Δ is gentle, so the
+          // arrival subject reads best parked AT its scaleTo (the old ×0.86
+          // pull-back was to keep the 1.5× wall in frame; at 1.30 it sits clean).
           const isArrival = plate.id === ARRIVAL_ID;
           const scale = isArrival
-            ? plate.scaleTo * 0.86
-            : plate.scaleFrom + (plate.scaleTo - plate.scaleFrom) * 0.7;
-          const y = plate.yFrom + (plate.yTo - plate.yFrom) * 0.82;
+            ? plate.scaleTo
+            : plate.scaleFrom + (plate.scaleTo - plate.scaleFrom) * 0.85;
+          const y = plate.yFrom + (plate.yTo - plate.yFrom) * 0.85;
           const { avif, webp } = sourcesFor(plate);
           return (
             <picture key={plate.id}>
