@@ -167,14 +167,17 @@ const ARRIVAL_SCENE: Scene = {
   id: 'arrival-cliff',
   arrivalId: 'arrival-cliff',
   range: { start: 0.4, end: 1.0 }, // dolly begins early (0.40) — the cliff is pushing up under the dissolve
-  // THE dissolve (in). Delayed to 0.46 → 0.62: the arrival SKY plane
-  // (arrival-sky.png) carries faint vertical inpaint streaks at the frame-top
-  // (the source cliff reached the top, so there was no clean sky to seed). Holding
-  // the group hidden until 0.46 keeps that plane invisible until the wall has risen
-  // + haze has swelled to cover the upper frame, so the streaks never show
-  // mid-dissolve. MID holds opaque underneath (incoming-only) so there's no gap.
-  // Ends 0.62; arrival HOLDS to p=1.
-  fadeIn: { start: 0.46, end: 0.62 },
+  // THE dissolve (in). 0.46 → 0.66 (Dani 2026-06-02: end pushed 0.62 → 0.66 for a
+  // longer, gentler resolve so the wall MATERIALISES rather than pops in). Still
+  // delayed to 0.46: the arrival SKY plane (arrival-sky.png) carries faint vertical
+  // inpaint streaks at the frame-top (the source cliff reached the top, so there was
+  // no clean sky to seed). Holding the group hidden until 0.46 keeps that plane
+  // invisible until the wall has risen + haze has swelled to cover the upper frame,
+  // so the streaks never show mid-dissolve. The wider window means the cliff keeps
+  // GROWING (its scale push) visibly as it fades up — the camera ARRIVING at the
+  // rock, not a crossfade between two stills. MID holds opaque underneath
+  // (incoming-only) so there's no gap. Ends 0.66; arrival HOLDS to p=1.
+  fadeIn: { start: 0.46, end: 0.66 },
   fadeOut: null, // holds to the end
   sun: { x: 0.7, y: 0.3 }, // (no bloom — sunMax 0; kept only as the element's anchor)
   sunMax: 0, // bloom REMOVED — the cliff photo is already golden-lit; the added glow read as cheap glare (Sky). Warmth comes only from the even wash.
@@ -197,14 +200,15 @@ const ARRIVAL_SCENE: Scene = {
       plateSrc: '/images/cinematic/arrival-cliff.png',
       placeholderSrc: '/images/cinematic/_placeholders/near-rockface.svg',
       transparent: true,
-      // the wall lands already large (it resolves IN, not from far away) and
-      // settles with a gentle final push — a touch less Δ than the vista mids so
-      // the flutes don't smear at the end.
-      // PERF: cap the END at 1.30 (cliff tier ceiling); keep a higher scaleFrom
-      // (1.10) so it still "lands large" — the Δ is small either way.
-      scaleFrom: 1.1,
+      // the wall resolves IN through haze and keeps GROWING as it lands — the
+      // camera arriving at the rock. Dani 2026-06-02: scaleFrom 1.10 → 1.04 so the
+      // wall has more visible forward travel ACROSS the dissolve (it builds/rises
+      // into the frame rather than appearing pre-sized), then settles with a gentle
+      // final push so the flutes don't smear at the end. END capped at 1.30 (cliff
+      // tier ceiling); the slightly larger Δ (0.26) reads as a real dolly-in.
+      scaleFrom: 1.04,
       scaleTo: 1.3,
-      yFrom: 0,
+      yFrom: 2,
       yTo: 4,
     },
   ],
