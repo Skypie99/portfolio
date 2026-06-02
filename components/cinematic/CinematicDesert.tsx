@@ -52,6 +52,34 @@ import { useReducedMotion } from './useReducedMotion';
 
 const SCENES = ACTIVE_SCENES;
 
+/**
+ * PERF (2026-06-02): per-scene COMPOSITE windows [start,end] in master-p. A scene
+ * is composited (painted + will-change'd) only while p is inside its window;
+ * outside it the group gets `.cdesert-scene--culled` (visibility:hidden) so its 3
+ * planes leave the GPU composite entirely. Windows overlap ONLY across the two
+ * dissolves, so at most 2 scenes (6 planes) ever composite, ~1 (3 planes) at rest.
+ *
+ * Boundaries (with small margins) follow the dissolve math: the beats use an
+ * incoming-only dissolve (the outgoing group holds opaque and is OCCLUDED by the
+ * opaque incoming group above it), so a lower beat is safe to cull once the next
+ * beat has fully faded IN and covers it:
+ *   DAWN    [0,    0.48]  — occluded once MID finishes fading in (MID fadeIn end 0.46)
+ *   MID     [0.32, 0.82]  — composites from its fadeIn start (0.34) until ARRIVAL
+ *                           finishes fading in (0.80) and occludes it
+ *   ARRIVAL [0.68, 1.0 ]  — composites from just before its fadeIn start (0.70)
+ * The default array is index-aligned to SCENES = [DAWN, MID, ARRIVAL]; if the
+ * scene list changes (e.g. placeholder rig), every scene falls back to "always
+ * composite" so nothing is wrongly hidden.
+ */
+const CULL_WINDOWS: readonly { start: number; end: number }[] =
+  SCENES.length === 3
+    ? [
+        { start: -0.01, end: 0.48 }, // DAWN
+        { start: 0.32, end: 0.82 }, // MID
+        { start: 0.68, end: 1.01 }, // ARRIVAL
+      ]
+    : SCENES.map(() => ({ start: -0.01, end: 1.01 }));
+
 /** Flat [sceneIndex, planeIndex] addressing for the per-plane ref grid. */
 type PlaneAddr = { s: number; p: number };
 
@@ -83,16 +111,17 @@ export function CinematicDesert() {
   const sunRefs = useRef<(HTMLDivElement | null)[]>([]);
   const gradeRef = useRef<HTMLDivElement>(null);
   const exposureRef = useRef<HTMLDivElement>(null);
-  const haze1Ref = useRef<HTMLDivElement>(null);
-  const haze2Ref = useRef<HTMLDivElement>(null);
+  // PERF (2026-06-02): the two haze bands merged into ONE overlay → one ref.
+  const hazeRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
 
   // Whether to mount the animated scene. When false we render the static frame
   // and skip GSAP entirely.
-  // INTERIM (2026-06-02): forced to the static frame while the scroll engine is
-  // rebuilt for performance — the 9-plane/8-overlay composite froze the renderer
-  // on scroll. Restore `!(reduce || narrow)` once the lightweight engine ships.
-  const FORCE_STATIC = true;
+  // PERF rebuild (2026-06-02): the lightweight engine ships on this branch
+  // (perf/cinematic-lightweight) — scale caps, scene culling, merged overlays,
+  // motes dropped — so the animated path is RE-ENABLED. The static-frame
+  // fallback below still serves reduced-motion + narrow viewports.
+  const FORCE_STATIC = false;
   const animate = !FORCE_STATIC && !(reduce || narrow);
 
   useGSAP(
@@ -103,6 +132,33 @@ export function CinematicDesert() {
       const stage = scope.current?.querySelector('.cdesert-stage');
       const pin = pinRef.current;
       if (!stage || !pin) return;
+
+      // ── SCENE CULLING (PERF 2026-06-02) ──────────────────────────────────
+      // Drive each group's composite on/off from master progress. Toggling the
+      // cull class (visibility:hidden) drops an inactive beat's 3 planes out of
+      // the GPU composite; we also park will-change:transform ONLY on the planes
+      // of the currently-composited scene(s) so we never hold 9 promoted layers'
+      // worth of GPU memory at once (will-change discipline — too many promoted
+      // layers blow the memory budget and themselves cause jank).
+      const applyCull = (p: number) => {
+        for (let si = 0; si < SCENES.length; si += 1) {
+          const group = sceneRefs.current[si];
+          if (!group) continue;
+          const win = CULL_WINDOWS[si] ?? { start: -0.01, end: 1.01 };
+          const active = p >= win.start && p <= win.end;
+          // class toggle is idempotent + cheap; only writes when it changes.
+          if (group.classList.contains('cdesert-scene--culled') === active) {
+            group.classList.toggle('cdesert-scene--culled', !active);
+          }
+          // will-change discipline: promote only the active scene(s) — the group
+          // for its opacity dissolve, its planes for their transform push.
+          group.style.willChange = active ? 'opacity' : 'auto';
+          for (let pi = 0; pi < SCENES[si].planes.length; pi += 1) {
+            const el = layerRefs.current.get(`${si}:${pi}`);
+            if (el) el.style.willChange = active ? 'transform' : 'auto';
+          }
+        }
+      };
 
       const tl = gsap.timeline({
         defaults: { ease: 'power2.inOut' },
@@ -115,8 +171,14 @@ export function CinematicDesert() {
           scrub: 1.1,
           anticipatePin: 1,
           invalidateOnRefresh: true,
+          // cull on every progress tick (cheap: a handful of class/style writes,
+          // only when a boundary is crossed) + once on mount/refresh.
+          onUpdate: (self) => applyCull(self.progress),
+          onRefresh: (self) => applyCull(self.progress),
         },
       });
+      // initial state (p≈0): only DAWN composites.
+      applyCull(0);
 
       // Dev-only debug handle: lets a harness scrub the descent by progress
       // (`__cdesert.seek(0.55)`) without fighting scroll/screenshot sync. Stripped
@@ -274,27 +336,20 @@ export function CinematicDesert() {
       }
 
       // ── atmospheric haze: swells into DISSOLVE B, clears as the cliff lands ──
-      // The bands carry the mid→arrival leap so the cliff resolves IN through dust
-      // rather than cutting. Tuned to the widened dissolve B (p0.66–0.80): the swell
-      // starts LATER (p≈0.58, so the calm mid beat stays crisp), peaks right at the
-      // dissolve heart (~p0.72) a touch denser so the wall genuinely materialises out
-      // of haze, then clears as the cliff settles (by p≈0.88). sine.inOut throughout
-      // so the dust breathes in and out — no edge.
-      if (haze1Ref.current) {
+      // The (now single, merged) haze band carries the mid→arrival leap so the
+      // cliff resolves IN through dust rather than cutting. Tuned to dissolve B
+      // (p0.66–0.80): the swell starts LATER (p≈0.58, so the calm mid beat stays
+      // crisp), peaks right at the dissolve heart (~p0.72) so the wall genuinely
+      // materialises out of haze, then clears as the cliff settles (by p≈0.80).
+      // sine.inOut so the dust breathes in and out — no edge. (Peak 0.58 carries
+      // both former bands' density; the element stacks both gradients.)
+      if (hazeRef.current) {
         tl.fromTo(
-          haze1Ref.current,
+          hazeRef.current,
           { opacity: 0 },
           { opacity: 0.58, duration: 0.16, ease: 'sine.inOut' },
           0.58,
-        ).to(haze1Ref.current, { opacity: 0.06, duration: 0.14, ease: 'sine.inOut' }, 0.78);
-      }
-      if (haze2Ref.current) {
-        tl.fromTo(
-          haze2Ref.current,
-          { opacity: 0 },
-          { opacity: 0.46, duration: 0.15, ease: 'sine.inOut' },
-          0.62,
-        ).to(haze2Ref.current, { opacity: 0.04, duration: 0.14, ease: 'sine.inOut' }, 0.8);
+        ).to(hazeRef.current, { opacity: 0.05, duration: 0.16, ease: 'sine.inOut' }, 0.78);
       }
 
       // ── title: carves in over p[0.84,0.95], then HOLDS to p=1 ──────────────
@@ -369,8 +424,8 @@ export function CinematicDesert() {
           {/* lighting arc — one continuous grade + exposure over the whole push */}
           <div ref={gradeRef} className="cdesert-grade" aria-hidden="true" />
           <div ref={exposureRef} className="cdesert-exposure" aria-hidden="true" />
-          <div ref={haze1Ref} className="cdesert-haze cdesert-haze--1" aria-hidden="true" />
-          <div ref={haze2Ref} className="cdesert-haze cdesert-haze--2" aria-hidden="true" />
+          {/* single merged atmospheric haze band (was two) */}
+          <div ref={hazeRef} className="cdesert-haze" aria-hidden="true" />
 
           {/* title wordmark */}
           <div ref={titleRef} className="cdesert-title">

@@ -1,38 +1,22 @@
 /**
  * FilmGrain — the plate-agnostic finishing layer that sits on top of the whole
- * scene. Four stacked, decorative, non-interactive elements:
+ * scene. PERF rebuild (2026-06-02): trimmed to the cheap, static finish only:
  *
  *   1. a STATIC SVG grain (feTurbulence, fractalNoise, 3 octaves) at low
  *      opacity — rendered once, never animated (animated turbulence is a known
  *      GPU killer, so we bake a single noise field and leave it).
  *   2. a radial VIGNETTE that darkens the corners and focuses the eye.
- *   3. ≤16 slowly-drifting dust motes (cheap CSS-keyframe transforms).
- *   4. a warm color-grade tint to unify the palette toward gold.
+ *   3. a warm color-grade tint to unify the palette toward gold.
+ *
+ * The 16 animated dust motes were REMOVED here: 16 continuously-transforming
+ * compositor layers is real per-frame GPU cost for dust that's barely visible,
+ * and they kept a hot ticker even at rest. The grain + vignette already give the
+ * frame its film texture. (See the perf report on perf/cinematic-lightweight.)
  *
  * Everything here is pointer-events:none + aria-hidden — it must never trap a
  * tap or be announced. It does not depend on any plate, so it works identically
  * over placeholders and real art.
  */
-
-/** ≤16 motes — authored once so positions/durations are stable across renders. */
-const MOTES = [
-  { left: '8%', top: '64%', size: 3, dur: 19, delay: 0 },
-  { left: '17%', top: '38%', size: 2, dur: 23, delay: -4 },
-  { left: '24%', top: '72%', size: 4, dur: 17, delay: -8 },
-  { left: '33%', top: '52%', size: 2, dur: 26, delay: -2 },
-  { left: '41%', top: '80%', size: 3, dur: 21, delay: -11 },
-  { left: '48%', top: '44%', size: 2, dur: 24, delay: -6 },
-  { left: '55%', top: '68%', size: 4, dur: 18, delay: -14 },
-  { left: '62%', top: '34%', size: 2, dur: 27, delay: -3 },
-  { left: '69%', top: '76%', size: 3, dur: 20, delay: -9 },
-  { left: '76%', top: '50%', size: 2, dur: 25, delay: -16 },
-  { left: '83%', top: '62%', size: 3, dur: 22, delay: -5 },
-  { left: '89%', top: '40%', size: 2, dur: 28, delay: -12 },
-  { left: '13%', top: '86%', size: 2, dur: 23, delay: -7 },
-  { left: '46%', top: '24%', size: 2, dur: 29, delay: -18 },
-  { left: '72%', top: '88%', size: 3, dur: 19, delay: -10 },
-  { left: '93%', top: '74%', size: 2, dur: 26, delay: -15 },
-] as const;
 
 export function FilmGrain() {
   return (
@@ -54,26 +38,8 @@ export function FilmGrain() {
       {/* 2 — vignette */}
       <div className="cdesert-vignette" />
 
-      {/* 4 — warm color-grade tint (sits under the motes, over the vignette) */}
+      {/* 3 — warm color-grade tint (over the vignette) */}
       <div className="cdesert-tint" />
-
-      {/* 3 — drifting dust motes */}
-      <div className="cdesert-motes">
-        {MOTES.map((m, i) => (
-          <span
-            key={i}
-            className="cdesert-mote"
-            style={{
-              left: m.left,
-              top: m.top,
-              width: m.size,
-              height: m.size,
-              animationDuration: `${m.dur}s`,
-              animationDelay: `${m.delay}s`,
-            }}
-          />
-        ))}
-      </div>
     </div>
   );
 }

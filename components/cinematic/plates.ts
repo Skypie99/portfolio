@@ -114,37 +114,43 @@ const DAWN_SCENE: Scene = {
   sunMax: 0.34, // SUBTLE — pre-dawn glow only; the deep cold quiet keeps its dark
   planes: [
     {
+      // PERF (2026-06-02): scale caps hard-reduced (was 1.04→1.12) so the
+      // composited surface (viewport × scale²) stays small. sky barely pushes.
       id: 'dawn-sky',
       label: 'dawn sky (backdrop)',
       plateSrc: '/images/cinematic/dawn-sky.png',
       placeholderSrc: '/images/cinematic/_placeholders/sky-dawn.svg',
       transparent: false,
-      scaleFrom: 1.04,
-      scaleTo: 1.12,
+      scaleFrom: 1.0,
+      scaleTo: 1.08,
       yFrom: 0,
       yTo: -1,
     },
     {
+      // PERF: was 1.0→1.6 / yTo 8. Capped to 1.30 and yTo scaled down with the
+      // smaller Δ (≈30/60 of the old travel) so the dolly still reads.
       id: 'dawn-mid',
       label: 'dawn buttes + valley (mid)',
       plateSrc: '/images/cinematic/dawn-mid.png',
       placeholderSrc: '/images/cinematic/_placeholders/mid-mesa.svg',
       transparent: true,
       scaleFrom: 1.0,
-      scaleTo: 1.6,
+      scaleTo: 1.3,
       yFrom: 0,
-      yTo: 8,
+      yTo: 4,
     },
     {
+      // PERF: was 1.15→2.5 / yFrom 4 yTo 34 (the worst surface, 2.5²=6.25× a
+      // viewport). Capped to 1.45 and travel scaled to the smaller Δ.
       id: 'dawn-fg',
       label: 'dawn red ledge + scrub (near)',
       plateSrc: '/images/cinematic/dawn-fg.png',
       placeholderSrc: '/images/cinematic/_placeholders/foreground.svg',
       transparent: true,
-      scaleFrom: 1.15,
-      scaleTo: 2.5,
-      yFrom: 4,
-      yTo: 34,
+      scaleFrom: 1.0,
+      scaleTo: 1.45,
+      yFrom: 2,
+      yTo: 18,
     },
   ],
 } as const;
@@ -167,37 +173,40 @@ const MID_SCENE: Scene = {
                 // (lockfile §EXPOSURE: no daytime spike); the bloom is arrival's alone
   planes: [
     {
+      // PERF (2026-06-02): sky scale cap (was 1.04→1.12).
       id: 'mid-sky',
       label: 'mid sky (backdrop)',
       plateSrc: '/images/cinematic/mid-sky.png',
       placeholderSrc: '/images/cinematic/_placeholders/sky-day.svg',
       transparent: false,
-      scaleFrom: 1.04,
-      scaleTo: 1.12,
+      scaleFrom: 1.0,
+      scaleTo: 1.08,
       yFrom: 0,
       yTo: -1,
     },
     {
+      // PERF: was 1.0→1.7 / yTo 9. Capped to 1.30, travel scaled to the Δ.
       id: 'mid-mid',
       label: 'mid buttes + spires + plain',
       plateSrc: '/images/cinematic/mid-mid.png',
       placeholderSrc: '/images/cinematic/_placeholders/mid-mesa.svg',
       transparent: true,
       scaleFrom: 1.0,
-      scaleTo: 1.7,
+      scaleTo: 1.3,
       yFrom: 0,
-      yTo: 9,
+      yTo: 4,
     },
     {
+      // PERF: was 1.15→2.6 / yTo 34 (worst surface). Capped to 1.45.
       id: 'mid-fg',
       label: 'mid terracotta dunes + grass (near)',
       plateSrc: '/images/cinematic/mid-fg.png',
       placeholderSrc: '/images/cinematic/_placeholders/foreground.svg',
       transparent: true,
-      scaleFrom: 1.15,
-      scaleTo: 2.6,
-      yFrom: 4,
-      yTo: 34,
+      scaleFrom: 1.0,
+      scaleTo: 1.45,
+      yFrom: 2,
+      yTo: 18,
     },
   ],
 } as const;
@@ -227,13 +236,14 @@ const ARRIVAL_SCENE: Scene = {
   sunMax: 0.9, // the golden bloom — the richest light, earned late
   planes: [
     {
+      // PERF (2026-06-02): sky scale cap (was 1.04→1.12).
       id: 'arrival-sky',
       label: 'arrival sky sliver (backdrop)',
       plateSrc: '/images/cinematic/arrival-sky.png',
       placeholderSrc: '/images/cinematic/_placeholders/sky-day.svg',
       transparent: false,
-      scaleFrom: 1.04,
-      scaleTo: 1.12,
+      scaleFrom: 1.0,
+      scaleTo: 1.08,
       yFrom: 0,
       yTo: -1,
     },
@@ -246,21 +256,25 @@ const ARRIVAL_SCENE: Scene = {
       // the wall lands already large (it resolves IN, not from far away) and
       // settles with a gentle final push — a touch less Δ than the vista mids so
       // the flutes don't smear at the end.
-      scaleFrom: 1.12,
-      scaleTo: 1.5,
+      // PERF: was 1.12→1.5. Cap the END at 1.30 (cliff tier ceiling); keep a
+      // higher scaleFrom (1.10) so it still "lands large" — the Δ is small either
+      // way, so the composited surface stays under ~1.7× a viewport throughout.
+      scaleFrom: 1.1,
+      scaleTo: 1.3,
       yFrom: 0,
-      yTo: 5,
+      yTo: 4,
     },
     {
+      // PERF: was 1.15→2.3 / yTo 28. Capped to 1.45.
       id: 'arrival-fg',
       label: 'arrival talus + sand (near)',
       plateSrc: '/images/cinematic/arrival-fg.png',
       placeholderSrc: '/images/cinematic/_placeholders/foreground.svg',
       transparent: true,
-      scaleFrom: 1.15,
-      scaleTo: 2.3,
-      yFrom: 4,
-      yTo: 28,
+      scaleFrom: 1.0,
+      scaleTo: 1.45,
+      yFrom: 2,
+      yTo: 15,
     },
   ],
 } as const;
