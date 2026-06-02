@@ -51,8 +51,9 @@ export function StaticDesertFrame() {
           );
         })}
 
-        {/* warm grade held at the golden end of the lighting arc */}
+        {/* warm grade + lifted exposure held at the sunrise end of the arc */}
         <div className="cdesert-grade cdesert-grade--warm" aria-hidden="true" />
+        <div className="cdesert-exposure cdesert-exposure--warm" aria-hidden="true" />
         <div className="cdesert-sun cdesert-sun--bloom" aria-hidden="true" />
 
         {/* resolved wordmark */}

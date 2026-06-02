@@ -74,6 +74,7 @@ export function CinematicDesert() {
   // one ref per plate, in PLATES order
   const layerRefs = useRef<(HTMLImageElement | null)[]>([]);
   const gradeRef = useRef<HTMLDivElement>(null);
+  const exposureRef = useRef<HTMLDivElement>(null);
   const sunRef = useRef<HTMLDivElement>(null);
   const haze1Ref = useRef<HTMLDivElement>(null);
   const haze2Ref = useRef<HTMLDivElement>(null);
@@ -147,6 +148,25 @@ export function CinematicDesert() {
           gradeRef.current,
           { '--cdesert-grade-mix': 0 },
           { '--cdesert-grade-mix': 1, duration: P, ease: 'sine.inOut' },
+          0,
+        );
+      }
+
+      // ── exposure / time-of-day: deep pre-dawn (p=0) → warm sunrise (p→1) ────
+      // The grade overlay above shifts HUE (cool→warm); this layer drives the
+      // EXPOSURE arc the grade's multiply blend can't. It's an `overlay` blend
+      // (see .cdesert-exposure): at p=0 a cool-blue wash DEEPENS the frame (true
+      // pre-dawn), and as p→1 it crossfades to a warm wash that LIFTS the
+      // midtones/highlights and lets the glow breathe — so the valley reads as
+      // the sun cresting, not a recolored night.
+      // One driver var `--cdesert-expose` (0→1) on the same scrubbed timeline;
+      // sine.inOut matches the grade so hue + exposure move as one continuous
+      // sunrise with no banding. (Tuned to WARM a dark frame — never fake midday.)
+      if (exposureRef.current) {
+        tl.fromTo(
+          exposureRef.current,
+          { '--cdesert-expose': 0 },
+          { '--cdesert-expose': 1, duration: P, ease: 'sine.inOut' },
           0,
         );
       }
@@ -230,6 +250,7 @@ export function CinematicDesert() {
 
           {/* lighting arc */}
           <div ref={gradeRef} className="cdesert-grade" aria-hidden="true" />
+          <div ref={exposureRef} className="cdesert-exposure" aria-hidden="true" />
           <div ref={haze1Ref} className="cdesert-haze cdesert-haze--1" aria-hidden="true" />
           <div ref={haze2Ref} className="cdesert-haze cdesert-haze--2" aria-hidden="true" />
           <div ref={sunRef} className="cdesert-sun" aria-hidden="true" />

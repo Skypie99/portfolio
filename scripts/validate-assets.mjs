@@ -6,12 +6,16 @@
  * error message listing missing files so the build is blocked before
  * any missing badge reaches production.
  *
- * Dani (cinematic 2.5D): also validates the 6 cinematic depth plates.
- *   - While components/cinematic/plates.ts has USE_PLACEHOLDERS = true, this
- *     checks the 6 PLACEHOLDER svgs exist (and does NOT hard-fail on missing
- *     real PNGs — Sky is still generating those).
- *   - When USE_PLACEHOLDERS = false, it flips to requiring the 6 real
- *     /public/images/cinematic/<id>.png plates instead.
+ * Dani (cinematic 2.5D): also validates the cinematic depth planes.
+ *   - When components/cinematic/plates.ts has USE_PLACEHOLDERS = true, this
+ *     checks the 6 PLACEHOLDER svgs (the motion-mechanics rig) exist.
+ *   - When USE_PLACEHOLDERS = false (the default now the real DAWN vista is
+ *     separated), it requires the real scene planes
+ *     /public/images/cinematic/<id>.png — currently the 3 dawn planes.
+ *
+ * Pivot note (2026-06-01): we no longer ship 6 isolated plates; Sky generates
+ * whole vistas and we separate each into a small depth-plane stack. The real-art
+ * id list below mirrors DAWN_SCENE.planes in plates.ts.
  *
  * Run automatically as npm `prebuild` (wired in package.json).
  * Can also be run standalone: node scripts/validate-assets.mjs
@@ -24,10 +28,15 @@ import { fileURLToPath } from 'node:url';
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 const ROOT = resolve(__dirname, '..');
 
-/** The 6 cinematic plate ids, back → front. Mirrors PLATE_IDS in plates.ts.
- *  (Kept as a literal here because plates.ts is TS and this script is plain
- *  ESM with no TS loader; the regex below cross-checks it stays in sync.) */
-const CINEMATIC_IDS = ['sky-dawn', 'sky-day', 'far-ridge', 'mid-mesa', 'near-rockface', 'foreground'];
+/** Placeholder-rig ids (grey SVGs), back → front. Used when USE_PLACEHOLDERS=true.
+ *  Mirrors PLACEHOLDER_SCENE.planes in plates.ts. */
+const PLACEHOLDER_IDS = ['sky-dawn', 'sky-day', 'far-ridge', 'mid-mesa', 'near-rockface', 'foreground'];
+
+/** Real-art ids (separated vista depth planes), back → front. Used when
+ *  USE_PLACEHOLDERS=false. Mirrors DAWN_SCENE.planes in plates.ts.
+ *  (Kept as a literal here because plates.ts is TS and this script is plain ESM
+ *  with no TS loader.) */
+const DAWN_PLANE_IDS = ['dawn-sky', 'dawn-mid', 'dawn-fg'];
 
 /** Certificate badge images referenced from content/certificates.json. */
 function checkCertificates(publicDir) {
@@ -71,22 +80,24 @@ function usePlaceholders() {
   return m[1] === 'true';
 }
 
-/** The 6 cinematic depth plates (placeholders OR real PNGs per the flag). */
+/** The cinematic depth planes (placeholder SVGs OR real scene PNGs per the flag). */
 function checkCinematicPlates(publicDir) {
   const flag = usePlaceholders();
   if (flag === null) return { mode: 'skipped', count: 0, missing: [] };
 
+  // placeholder rig = the 6 grey SVGs; real art = the separated vista planes.
+  const ids = flag ? PLACEHOLDER_IDS : DAWN_PLANE_IDS;
   const missing = [];
-  for (const id of CINEMATIC_IDS) {
+  for (const id of ids) {
     const rel = flag
       ? join('images', 'cinematic', '_placeholders', `${id}.svg`)
       : join('images', 'cinematic', `${id}.png`);
     const fullPath = join(publicDir, rel);
     if (!existsSync(fullPath)) {
-      missing.push({ kind: flag ? 'placeholder' : 'plate', id, src: `/${rel.split(/[\\/]/).join('/')}`, expected: fullPath });
+      missing.push({ kind: flag ? 'placeholder' : 'plane', id, src: `/${rel.split(/[\\/]/).join('/')}`, expected: fullPath });
     }
   }
-  return { mode: flag ? 'placeholders' : 'real', count: CINEMATIC_IDS.length, missing };
+  return { mode: flag ? 'placeholders' : 'real', count: ids.length, missing };
 }
 
 function main() {
@@ -113,7 +124,7 @@ function main() {
       if (plates.mode === 'placeholders') {
         console.error('Add the missing cinematic PLACEHOLDER svgs to public/images/cinematic/_placeholders/.');
       } else {
-        console.error('USE_PLACEHOLDERS is false — add the 6 real plates to public/images/cinematic/<id>.png, or flip the flag back to true.');
+        console.error('USE_PLACEHOLDERS is false — add the missing real scene planes to public/images/cinematic/<id>.png (separate them from public/images/cinematic/source/), or flip the flag back to true.');
       }
     }
     console.error('');

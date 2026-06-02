@@ -12,6 +12,7 @@ import { cleanup, render } from '@testing-library/react';
 import { afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
 
 import { CinematicDesert } from '../CinematicDesert';
+import { ARRIVAL_ID } from '../plates';
 
 // gsap/ScrollTrigger is imported by the component under test and registers
 // global load/resize listeners that call window.scrollTo on import — jsdom has
@@ -50,12 +51,14 @@ describe('CinematicDesert (reduced motion)', () => {
     mockMatchMedia(true);
     const { container } = render(<CinematicDesert />);
 
-    // The static frame paints the plate <img> layers with data-plate ids.
+    // The static frame paints the depth-plane <img> layers with data-plate ids.
     const plates = container.querySelectorAll('img[data-plate]');
     expect(plates.length).toBeGreaterThan(0);
 
-    // Placeholder phase: the src points at the placeholder SVGs.
-    const arrival = container.querySelector('img[data-plate="near-rockface"]');
+    // Scene-agnostic: the arrival plane (whatever the active scene declares) is
+    // present and its src points at the cinematic image dir. This survives a
+    // scene swap (placeholder rig ↔ separated vista) without editing the test.
+    const arrival = container.querySelector(`img[data-plate="${ARRIVAL_ID}"]`);
     expect(arrival).not.toBeNull();
     expect(arrival?.getAttribute('src')).toContain('/images/cinematic/');
 
