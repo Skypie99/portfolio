@@ -10,11 +10,12 @@
  *   - When components/cinematic/plates.ts has USE_PLACEHOLDERS = true, this
  *     checks the 6 PLACEHOLDER svgs (the motion-mechanics rig) exist.
  *   - When USE_PLACEHOLDERS = false (the default), it requires the real scene
- *     planes in their SHIPPED formats — both <id>.avif AND <id>.webp — for all 9
- *     across the 3 beats (dawn / mid / arrival), unioned. The heavy source PNGs
- *     are dropped from public/ (retained only in cinematic-masters/, outside
- *     public/ so they never ship), so we validate the AVIF+WebP the <picture>
- *     actually serves, not PNG.
+ *     planes in their SHIPPED formats — both <id>.avif AND <id>.webp — for the 5
+ *     USED planes of the 2-scene recut (mid-sky, mid-mid, arrival-sky,
+ *     arrival-cliff, mid-fg), unioned across MID + ARRIVAL + FLOOR. The heavy
+ *     source PNGs are dropped from public/ (retained only in cinematic-masters/,
+ *     outside public/ so they never ship), so we validate the AVIF+WebP the
+ *     <picture> actually serves, not PNG.
  *
  * Pivot note (2026-06-01): we no longer ship 6 isolated plates; Sky generates
  * whole vistas and we separate each into a small depth-plane stack
@@ -39,18 +40,22 @@ const ROOT = resolve(__dirname, '..');
 const PLACEHOLDER_IDS = ['sky-dawn', 'sky-day', 'far-ridge', 'mid-mesa', 'near-rockface', 'foreground'];
 
 /** Real-art ids (separated vista depth planes), back → front, UNIONED across the
- *  3 beats of the descent. Used when USE_PLACEHOLDERS=false. Mirrors
- *  SCENES = [DAWN_SCENE, MID_SCENE, ARRIVAL_SCENE] in plates.ts — if a scene's
+ *  scenes of the descent. Used when USE_PLACEHOLDERS=false. Mirrors
+ *  SCENES = [MID_SCENE, ARRIVAL_SCENE, FLOOR_SCENE] in plates.ts — if a scene's
  *  planes change there, grow/edit this list (it's a literal because plates.ts is
- *  TS and this script is plain ESM with no TS loader). All 9 must exist or the
- *  build is blocked at prebuild. */
+ *  TS and this script is plain ESM with no TS loader).
+ *
+ *  2-SCENE RECUT (2026-06-02): only these 5 planes are USED. DAWN (dawn-sky/mid/fg)
+ *  and the arrival base (arrival-fg) are DROPPED — the cliff rises out of the
+ *  persistent mid floor (mid-fg) instead. Those files remain on disk but are NOT
+ *  gated (unreferenced). All 5 below must exist or the build is blocked at prebuild. */
 const SCENE_PLANE_IDS = [
-  // DAWN
-  'dawn-sky', 'dawn-mid', 'dawn-fg',
-  // MID
-  'mid-sky', 'mid-mid', 'mid-fg',
-  // ARRIVAL
-  'arrival-sky', 'arrival-cliff', 'arrival-fg',
+  // MID (opener): sky + buttes
+  'mid-sky', 'mid-mid',
+  // ARRIVAL: sky sliver + fluted wall
+  'arrival-sky', 'arrival-cliff',
+  // FLOOR (persistent ground, rendered on top): the mid valley floor
+  'mid-fg',
 ];
 
 /** Certificate badge images referenced from content/certificates.json. */

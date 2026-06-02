@@ -53,30 +53,29 @@ import { useReducedMotion } from './useReducedMotion';
 const SCENES = ACTIVE_SCENES;
 
 /**
- * PERF (2026-06-02): per-scene COMPOSITE windows [start,end] in master-p. A scene
- * is composited (painted + will-change'd) only while p is inside its window;
- * outside it the group gets `.cdesert-scene--culled` (visibility:hidden) so its 3
- * planes leave the GPU composite entirely. Windows overlap ONLY across the two
- * dissolves, so at most 2 scenes (6 planes) ever composite, ~1 (3 planes) at rest.
+ * PERF: per-scene COMPOSITE windows [start,end] in master-p. A scene's group gets
+ * `.cdesert-scene--culled` while p is OUTSIDE its window. The class no longer
+ * hides (it's GSAP opacity 0 that stops it drawing; the class only drops
+ * pointer-events + is kept as an engine hook), so culling here is conservative —
+ * we never cull the FLOOR or anything mid-dissolve.
  *
- * Boundaries (with small margins) follow the dissolve math: the beats use an
- * incoming-only dissolve (the outgoing group holds opaque and is OCCLUDED by the
- * opaque incoming group above it), so a lower beat is safe to cull once the next
- * beat has fully faded IN and covers it:
- *   DAWN    [0,    0.48]  — occluded once MID finishes fading in (MID fadeIn end 0.46)
- *   MID     [0.32, 0.82]  — composites from its fadeIn start (0.34) until ARRIVAL
- *                           finishes fading in (0.80) and occludes it
- *   ARRIVAL [0.68, 1.0 ]  — composites from just before its fadeIn start (0.70)
- * The default array is index-aligned to SCENES = [DAWN, MID, ARRIVAL]; if the
- * scene list changes (e.g. placeholder rig), every scene falls back to "always
- * composite" so nothing is wrongly hidden.
+ * 2-SCENE RECUT (2026-06-02): SCENES = [MID, ARRIVAL, FLOOR]. The dissolve is
+ * incoming-only (the outgoing group holds opaque and is OCCLUDED by the opaque
+ * incoming group above it), so MID is safe to cull once ARRIVAL has fully faded IN
+ * (fadeIn end 0.62) and covers it. The FLOOR is the persistent ground — it NEVER
+ * dissolves and is NEVER culled (window spans the whole timeline).
+ *   MID     [-0.01, 0.64]  — opener; composited until ARRIVAL covers it (~0.62)
+ *   ARRIVAL [ 0.44, 1.01]  — from just before its fadeIn start (0.46) to the end
+ *   FLOOR   [-0.01, 1.01]  — always composited (persistent)
+ * Index-aligned to SCENES; any other scene list (e.g. placeholder rig) falls back
+ * to "always composite" so nothing is wrongly hidden.
  */
 const CULL_WINDOWS: readonly { start: number; end: number }[] =
   SCENES.length === 3
     ? [
-        { start: -0.01, end: 0.48 }, // DAWN
-        { start: 0.32, end: 0.82 }, // MID
-        { start: 0.68, end: 1.01 }, // ARRIVAL
+        { start: -0.01, end: 0.64 }, // MID (opener)
+        { start: 0.44, end: 1.01 }, // ARRIVAL
+        { start: -0.01, end: 1.01 }, // FLOOR (persistent — never culled)
       ]
     : SCENES.map(() => ({ start: -0.01, end: 1.01 }));
 
@@ -283,35 +282,17 @@ export function CinematicDesert() {
           // opaque incoming group above it (see note). Last beat holds to p=1.
         }
 
-        // ── per-scene sun: drift + bloom within the scene's window ───────────
-        // The sun ELEMENT is parked at this beat's measured glow (CSS, below);
-        // here we only rise/bloom/fade it on the timeline so one sun reads as
-        // travelling center→up-right across the descent (each scene's sun is
-        // visible only while its group is, via the group opacity above).
+        // ── per-scene sun: BLOOM KILLED (2026-06-02 recut) ───────────────────
+        // Every scene's sunMax is 0 — the localized sun disc was the bright
+        // flash/glare Sky saw (the mid's side-key lit up during the transition).
+        // We drive the sun element to opacity:scene.sunMax (0) and hold it there:
+        // no rise, no halation, no hardcoded bloom. The element paints nothing at
+        // any scroll position. Warmth is now an EVEN wash from the grade/exposure
+        // overlays (globals.css) — no hotspot. (The element + the per-scene `sun`
+        // anchor are retained so re-introducing a glow later is a data change.)
         const sun = sunRefs.current[si];
         if (sun) {
-          const isArrival = si === SCENES.length - 1;
-          // Peak bloom is per-beat (scene.sunMax): dawn is a SUBTLE pre-dawn glow
-          // that must not wash the dark; the big bright bloom is the arrival's
-          // alone. Early beats also bloom smaller so the sun reads as a distant
-          // glow, not a near light source over the vista.
-          tl.fromTo(
-            sun,
-            { yPercent: 14, opacity: 0.0, scale: 0.85 },
-            {
-              yPercent: -6,
-              opacity: scene.sunMax,
-              scale: isArrival ? 1.3 : 1.05,
-              duration: span,
-              ease: 'power1.inOut',
-            },
-            scene.range.start,
-          );
-          // arrival beat alone gets a halation bloom as the cliff lands (~p0.85).
-          if (isArrival) {
-            tl.to(sun, { opacity: 1, scale: 1.5, duration: 0.1, ease: 'power2.out' }, 0.82)
-              .to(sun, { opacity: 0.92, scale: 1.42, duration: 0.08, ease: 'sine.out' }, 0.93);
-          }
+          tl.set(sun, { opacity: scene.sunMax }, scene.range.start);
         }
       });
 
@@ -354,21 +335,20 @@ export function CinematicDesert() {
           .to(ex, { '--cdesert-expose': 1, duration: 0.02, ease: 'sine.out' }, 0.98); // full golden at p1
       }
 
-      // ── atmospheric haze: swells into DISSOLVE B, clears as the cliff lands ──
-      // The (now single, merged) haze band carries the mid→arrival leap so the
-      // cliff resolves IN through dust rather than cutting. Tuned to dissolve B
-      // (p0.66–0.80): the swell starts LATER (p≈0.58, so the calm mid beat stays
-      // crisp), peaks right at the dissolve heart (~p0.72) so the wall genuinely
-      // materialises out of haze, then clears as the cliff settles (by p≈0.80).
-      // sine.inOut so the dust breathes in and out — no edge. (Peak 0.58 carries
-      // both former bands' density; the element stacks both gradients.)
+      // ── atmospheric haze: swells into THE DISSOLVE, clears as the cliff lands ──
+      // The single merged haze band carries the mid→arrival leap so the cliff
+      // resolves IN through dust rather than cutting. RECUT 2026-06-02 — retuned to
+      // the new (earlier) dissolve window (p0.46–0.62): the swell starts ~p0.40 so
+      // the opener stays crisp, peaks at the dissolve heart (~p0.53) so the wall
+      // genuinely materialises out of haze, then clears as the cliff settles (by
+      // ~p0.64). sine.inOut so the dust breathes in and out — no edge.
       if (hazeRef.current) {
         tl.fromTo(
           hazeRef.current,
           { opacity: 0 },
-          { opacity: 0.58, duration: 0.16, ease: 'sine.inOut' },
-          0.58,
-        ).to(hazeRef.current, { opacity: 0.05, duration: 0.16, ease: 'sine.inOut' }, 0.78);
+          { opacity: 0.58, duration: 0.13, ease: 'sine.inOut' },
+          0.4,
+        ).to(hazeRef.current, { opacity: 0.05, duration: 0.13, ease: 'sine.inOut' }, 0.56);
       }
 
       // ── title: carves in over p[0.84,0.95], then HOLDS to p=1 ──────────────
@@ -397,8 +377,16 @@ export function CinematicDesert() {
     <div ref={scope}>
       <section className="cdesert-stage" aria-label="SkyPi Studio — desert title scene">
         <div ref={pinRef} className="cdesert-pin">
-          {/* three stacked scene groups, each its own depth stack + sun */}
-          {SCENES.map((scene, si) => (
+          {/* stacked scene groups, each its own depth stack + sun. Render order
+              (= z) is SCENES order: [MID, ARRIVAL, FLOOR] — the persistent floor
+              renders last (top z) so the cliff rises out of it. */}
+          {SCENES.map((scene, si) => {
+            // A scene starts VISIBLE iff its fadeIn is a zero-width window
+            // ("already on screen") — that's MID (the opener) AND the persistent
+            // FLOOR. Scenes that dissolve IN (ARRIVAL) start hidden at opacity 0.
+            // Keyed off fadeIn, not the index, so the floor (si 2) starts visible.
+            const startsVisible = scene.fadeIn.end - scene.fadeIn.start <= 0;
+            return (
             <div
               key={scene.id}
               ref={(el) => {
@@ -406,8 +394,7 @@ export function CinematicDesert() {
               }}
               className="cdesert-scene"
               data-scene={scene.id}
-              // dawn (si 0) starts visible; later scenes start hidden and fade in.
-              style={{ opacity: si === 0 ? 1 : 0, zIndex: 10 + si }}
+              style={{ opacity: startsVisible ? 1 : 0, zIndex: 10 + si }}
               aria-hidden="true"
             >
               {scene.planes.map((plate, pi) => (
@@ -418,8 +405,9 @@ export function CinematicDesert() {
                   ref={(el) => {
                     layerRefs.current.set(`${si}:${pi}`, el);
                   }}
-                  // lazy-load every scene's planes except the first (dawn) —
-                  // the off-screen beats load as the user scrolls toward them.
+                  // `eager` is API-compat only — ALL planes load eagerly now
+                  // (Layer forces loading="eager"); the force-decode effect makes
+                  // every plane GPU-ready upfront so no scene hitches mid-scroll.
                   eager={si === 0}
                 />
               ))}
@@ -438,7 +426,8 @@ export function CinematicDesert() {
                 aria-hidden="true"
               />
             </div>
-          ))}
+            );
+          })}
 
           {/* lighting arc — one continuous grade + exposure over the whole push */}
           <div ref={gradeRef} className="cdesert-grade" aria-hidden="true" />

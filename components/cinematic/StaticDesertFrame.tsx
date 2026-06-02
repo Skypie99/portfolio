@@ -8,15 +8,17 @@ import { ARRIVAL_ID, PLATES, SCENES, sourcesFor, srcFor, type Plate } from './pl
  * for users who prefer reduced motion and for narrow (phone) viewports, where a
  * 680vh pinned scroll-hijack would be hostile.
  *
- * It paints the ARRIVAL beat's planes (the golden fluted cliff — the most
- * impressive frame of the piece) frozen near their p≈1 transforms (wall risen to
- * fill the frame, talus settled), the warm grade + lifted exposure, the golden
- * sun parked at the arrival crest, the resolved title, and the grain/vignette
- * finish. The result IS the destination shot, so nothing feels missing.
+ * It paints the ARRIVAL destination — the golden fluted cliff — frozen near its
+ * landed transform (wall risen to fill the frame). RECUT 2026-06-02: the cliff has
+ * no base of its own (arrival-fg dropped), so the plane stack ends with the
+ * persistent FLOOR (mid-fg) UNDER the wall — the cliff sits on the same ground the
+ * live scene rides on. Warm grade + lifted exposure are an EVEN warm wash (no sun
+ * bloom — that disc was cheap glare). The result IS the destination shot, so
+ * nothing feels missing.
  *
- * (PLATES resolves to the ARRIVAL scene's planes — see plates.ts back-compat
- * aliases — so this stays the golden cliff even though the live scene now has
- * three beats.)
+ * (PLATES resolves to [arrival-sky, arrival-cliff, mid-fg floor] — see plates.ts
+ * back-compat aliases — back→front, the floor last/on-top. ARRIVAL_ID stays the
+ * cliff so it parks at its landed scale and the floor/sky settle behind/under it.)
  */
 
 

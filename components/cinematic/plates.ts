@@ -1,25 +1,38 @@
 /**
  * plates.ts — the data-driven manifest for the 2.5D camera-push desert.
  *
- * ── 3-BEAT DESCENT (2026-06-01, Dani) ───────────────────────────────────────
- * The piece is now a single continuous scroll-scrubbed camera push through THREE
- * beats, no cuts:
+ * ── 2-SCENE DESCENT over ONE CONTINUOUS FLOOR (2026-06-02, recut) ────────────
+ * The piece is a single continuous scroll-scrubbed camera push: it OPENS in the
+ * mid valley and ARRIVES at the fluted cliff, one dissolve, no cuts. The old DAWN
+ * vista is dropped (Sky: "very natural and logical" — open already in the valley,
+ * descend to the wall):
  *
- *   DAWN    deep cool blue-hour Monument Valley vista → pushes into the valley
- *   ↳ dissolve A (near-seamless — same valley, central-spire lock holds)
- *   MID     warmer daylight, same valley pushed closer → continues forward
- *   ↳ dissolve B (the one real leap — valley → cliff, resolved IN through haze)
- *   ARRIVAL golden close-up of a fluted sandstone cliff → title carves + HOLDS
+ *   MID      warm daylight valley (sky + buttes) — the OPENER → pushes forward
+ *   ↳ THE DISSOLVE (the one real leap — valley → cliff, resolved IN through haze)
+ *   ARRIVAL  golden close-up of a fluted sandstone cliff → title carves + HOLDS
+ *
+ * ── THE PERSISTENT FLOOR (load-bearing) ─────────────────────────────────────
+ * The arrival cliff plane (arrival-cliff) is the fluted WALL only — its talus/base
+ * lived in arrival-fg, which is now DROPPED. So the cliff has no ground; the bottom
+ * of the frame is filled by the MID valley's floor (mid-fg) PERSISTING under the
+ * rising wall. mid-fg is pulled into its OWN group (FLOOR_SCENE) that NEVER
+ * dissolves and renders IN FRONT (top z). The mid sky/buttes fade out at the
+ * dissolve; the floor does not — so the cliff rises out of ONE unbroken floor, no
+ * second floor to cross-fade against (no doubling/ghosting).
+ *
+ * Render/z order back → front:  mid-sky, mid-mid  (↔ arrival-sky, arrival-cliff
+ * cross-dissolving)  then the persistent mid-fg FLOOR on top. SCENES is ordered
+ * [MID, ARRIVAL, FLOOR] so the floor group is rendered last (highest z).
  *
  * Each beat is a whole Midjourney vista SEPARATED into a small stack of depth
  * planes (transparent PNGs) by scripts/separate-scene.mjs. The engine drives the
  * planes with ONE GSAP timeline (progress p ∈ [0,1]); each scene's planes animate
- * within that scene's `range`, and the three scene GROUPS cross-dissolve on their
- * `dissolve` windows. No second timeline, no per-frame listeners.
+ * within that scene's `range`, and the scene GROUPS cross-dissolve on their
+ * `fadeIn`/`fadeOut` windows. No second timeline, no per-frame listeners.
  *
- * Authority: designs/AESTHETIC_LOCKFILE.md (commit 46fbc19). The dissolve
- * windows, exposure ramp, and per-scene sun positions below are transcribed from
- * §1, §3, §4 of that lockfile.
+ * Light: every bloom is killed (sunMax 0 on every scene — the mid's old side-key
+ * was the bright flash Sky saw during the transition). Warmth now comes ONLY from
+ * an EVEN warm wash in the grade/exposure overlays (globals.css), no hotspot.
  *
  * Ordering within a scene: back → front (index 0 furthest back). The render
  * layers each scene's array with ascending z-index so a nearer plane always
@@ -84,96 +97,40 @@ export type Scene = {
   fadeOut: Range | null;
   /** measured sun/brightest-point for this beat, fraction of frame (origin TL) */
   sun: { x: number; y: number };
-  /** peak opacity of this beat's sun bloom. Dawn is a SUBTLE pre-dawn glow; the
-   *  big bright bloom is reserved for arrival (golden). Keeps the dawn beat's
-   *  negative space + low key intact (lockfile §1, §6). */
+  /** peak opacity of this beat's sun bloom. RECUT 2026-06-02: 0 on EVERY scene —
+   *  the localized sun disc was the bright flash/glare Sky saw (the mid's bloom lit
+   *  up during the transition). All warmth is now an EVEN wash from the grade +
+   *  exposure overlays; there is ZERO bright hotspot at any scroll position. */
   sunMax: number;
 };
 
 /**
  * THE FLIP. When `true`, the engine renders the grey SVG placeholders (the
- * motion-mechanics phase). The real 3-beat scenes exist on disk, so we default to
+ * motion-mechanics phase). The real scenes exist on disk, so we default to
  * `false`. validate-assets.mjs reads this: false → it enforces the real scene
- * planes exist (all 9, unioned across the 3 scenes).
+ * planes exist (the 5 USED planes, unioned across MID + ARRIVAL + FLOOR).
  */
 export const USE_PLACEHOLDERS = false;
 
 /**
- * ── BEAT 1 — DAWN VISTA (3 depth planes) ────────────────────────────────────
- * Source: source/dawn-vista.png. Separated (vista layout) into sky/mid/fg.
- * Depth ramps (scene-local p): sky barely moves; mid (buttes+valley) looms; fg
- * (near red ledge + scrub) races down past the camera. Cool, dark, vast.
- */
-const DAWN_SCENE: Scene = {
-  id: 'dawn-vista',
-  arrivalId: 'dawn-mid',
-  range: { start: 0.0, end: 0.46 },
-  fadeIn: { start: 0.0, end: 0.0 }, // already on screen at p=0
-  fadeOut: { start: 0.34, end: 0.46 }, // dissolve A (lockfile §4: p~0.34–0.46)
-  sun: { x: 0.5, y: 0.62 }, // warm glow dead-center on the horizon (sun rising center)
-  sunMax: 0.34, // SUBTLE — pre-dawn glow only; the deep cold quiet keeps its dark
-  planes: [
-    {
-      // PERF (2026-06-02): scale caps hard-reduced (was 1.04→1.12) so the
-      // composited surface (viewport × scale²) stays small. sky barely pushes.
-      id: 'dawn-sky',
-      label: 'dawn sky (backdrop)',
-      plateSrc: '/images/cinematic/dawn-sky.png',
-      placeholderSrc: '/images/cinematic/_placeholders/sky-dawn.svg',
-      transparent: false,
-      scaleFrom: 1.0,
-      scaleTo: 1.08,
-      yFrom: 0,
-      yTo: -1,
-    },
-    {
-      // PERF: was 1.0→1.6 / yTo 8. Capped to 1.30 and yTo scaled down with the
-      // smaller Δ (≈30/60 of the old travel) so the dolly still reads.
-      id: 'dawn-mid',
-      label: 'dawn buttes + valley (mid)',
-      plateSrc: '/images/cinematic/dawn-mid.png',
-      placeholderSrc: '/images/cinematic/_placeholders/mid-mesa.svg',
-      transparent: true,
-      scaleFrom: 1.0,
-      scaleTo: 1.3,
-      yFrom: 0,
-      yTo: 4,
-    },
-    {
-      // PERF: was 1.15→2.5 / yFrom 4 yTo 34 (the worst surface, 2.5²=6.25× a
-      // viewport). Capped to 1.45 and travel scaled to the smaller Δ.
-      id: 'dawn-fg',
-      label: 'dawn red ledge + scrub (near)',
-      plateSrc: '/images/cinematic/dawn-fg.png',
-      placeholderSrc: '/images/cinematic/_placeholders/foreground.svg',
-      transparent: true,
-      scaleFrom: 1.0,
-      scaleTo: 1.45,
-      yFrom: 2,
-      yTo: 18,
-    },
-  ],
-} as const;
-
-/**
- * ── BEAT 2 — MID APPROACH (3 depth planes) ──────────────────────────────────
- * Source: source/mid-approach.png. Separated (vista layout) into sky/mid/fg.
- * Same valley pushed closer; the central twin spires stay dead-center (the
- * continuity lock with dawn). Warmer, but graded LOW (the engine grade keeps it
- * off a daytime spike). The push CONTINUES forward through the dissolve.
+ * ── SCENE 1 — MID APPROACH / THE OPENER (sky + buttes) ──────────────────────
+ * Source: source/mid-approach.png. Separated (vista layout); we keep only the
+ * sky + the buttes/spires here — the floor (mid-fg) is pulled into FLOOR_SCENE
+ * below so it can PERSIST under the arrival. Warm daylight valley, graded by the
+ * even wash. This is the opening frame (fadeIn {0,0} = already on screen); the
+ * push CONTINUES forward through the dissolve, then sky+buttes fade out.
  */
 const MID_SCENE: Scene = {
   id: 'mid-approach',
   arrivalId: 'mid-mid',
-  range: { start: 0.34, end: 0.80 },
-  fadeIn: { start: 0.34, end: 0.46 }, // dissolve A (in) — lockfile §4 p~0.34–0.46
-  fadeOut: { start: 0.66, end: 0.80 }, // dissolve B (out) — lockfile §4 p~0.66–0.80
-  sun: { x: 0.62, y: 0.4 }, // raking key from upper-right
-  sunMax: 0.44, // restrained side-key — keeps MID on its warm-but-LOW plateau
-                // (lockfile §EXPOSURE: no daytime spike); the bloom is arrival's alone
+  range: { start: 0.0, end: 0.62 }, // OPENER — push runs from the top through the dissolve
+  fadeIn: { start: 0.0, end: 0.0 }, // already on screen at p=0
+  fadeOut: { start: 0.46, end: 0.62 }, // THE dissolve (out) — valley sky+buttes hand off to the cliff
+  sun: { x: 0.62, y: 0.4 }, // (no bloom — sunMax 0; kept only as the element's anchor)
+  sunMax: 0, // bloom KILLED — the mid side-key was the bright flash during the transition (Sky, 2026-06-02)
   planes: [
     {
-      // PERF (2026-06-02): sky scale cap (was 1.04→1.12).
+      // PERF (2026-06-02): sky scale cap.
       id: 'mid-sky',
       label: 'mid sky (backdrop)',
       plateSrc: '/images/cinematic/mid-sky.png',
@@ -185,7 +142,7 @@ const MID_SCENE: Scene = {
       yTo: -1,
     },
     {
-      // PERF: was 1.0→1.7 / yTo 9. Capped to 1.30, travel scaled to the Δ.
+      // PERF: capped to 1.30 (mid tier ceiling), travel scaled to the Δ.
       id: 'mid-mid',
       label: 'mid buttes + spires + plain',
       plateSrc: '/images/cinematic/mid-mid.png',
@@ -196,47 +153,34 @@ const MID_SCENE: Scene = {
       yFrom: 0,
       yTo: 4,
     },
-    {
-      // PERF: was 1.15→2.6 / yTo 34 (worst surface). Capped to 1.45.
-      id: 'mid-fg',
-      label: 'mid terracotta dunes + grass (near)',
-      plateSrc: '/images/cinematic/mid-fg.png',
-      placeholderSrc: '/images/cinematic/_placeholders/foreground.svg',
-      transparent: true,
-      scaleFrom: 1.0,
-      scaleTo: 1.45,
-      yFrom: 2,
-      yTo: 18,
-    },
   ],
 } as const;
 
 /**
- * ── BEAT 3 — ARRIVAL CLIFF (3 depth planes) ─────────────────────────────────
- * Source: source/arrival-cliff.png. Separated (cliff layout) into
- * sky/cliff/fg. The fluted wall is dominant; it resolves IN through haze on
- * dissolve B and the title carves over it. Golden — the richest light, earned
- * late. This scene HOLDS to p=1 (no fadeOut).
+ * ── SCENE 2 — ARRIVAL CLIFF (sky sliver + fluted wall) ──────────────────────
+ * Source: source/arrival-cliff.png. The fluted WALL is dominant; arrival-fg
+ * (its talus/base) is DROPPED — the wall now rises out of the persistent mid
+ * floor (FLOOR_SCENE) instead. It resolves IN through haze on the dissolve and
+ * the title carves over it. Golden via the even wash. HOLDS to p=1 (no fadeOut).
  */
 const ARRIVAL_SCENE: Scene = {
   id: 'arrival-cliff',
   arrivalId: 'arrival-cliff',
-  range: { start: 0.62, end: 1.0 }, // dolly still begins early (0.62) — the cliff is pushing under the dissolve
-  // dissolve B (in). Start delayed 0.66 → 0.70 vs lockfile §4: the arrival SKY
-  // plane (arrival-sky.png) carries faint vertical inpaint streaks at the frame-
-  // top (the source cliff reaches the top, so there was no clean sky to seed).
-  // Holding the whole group hidden until 0.70 keeps that plane invisible until the
-  // cliff wall has risen + haze has swelled to cover the upper frame — so the
-  // streaks never show mid-dissolve. MID holds opaque underneath (incoming-only),
-  // so there's no gap. Ends 0.80; arrival HOLDS to p=1. (Peter 3-beat verify
-  // 2026-06-01 §6 cosmetic polish.)
-  fadeIn: { start: 0.7, end: 0.8 },
+  range: { start: 0.4, end: 1.0 }, // dolly begins early (0.40) — the cliff is pushing up under the dissolve
+  // THE dissolve (in). Delayed to 0.46 → 0.62: the arrival SKY plane
+  // (arrival-sky.png) carries faint vertical inpaint streaks at the frame-top
+  // (the source cliff reached the top, so there was no clean sky to seed). Holding
+  // the group hidden until 0.46 keeps that plane invisible until the wall has risen
+  // + haze has swelled to cover the upper frame, so the streaks never show
+  // mid-dissolve. MID holds opaque underneath (incoming-only) so there's no gap.
+  // Ends 0.62; arrival HOLDS to p=1.
+  fadeIn: { start: 0.46, end: 0.62 },
   fadeOut: null, // holds to the end
-  sun: { x: 0.7, y: 0.3 }, // warmest band on the upper-right crest
-  sunMax: 0, // bloom REMOVED — the arrival cliff photo is already golden-lit; the added sun-glow read as cheap glare (Sky, 2026-06-02). Warmth now comes only from the grade/exposure.
+  sun: { x: 0.7, y: 0.3 }, // (no bloom — sunMax 0; kept only as the element's anchor)
+  sunMax: 0, // bloom REMOVED — the cliff photo is already golden-lit; the added glow read as cheap glare (Sky). Warmth comes only from the even wash.
   planes: [
     {
-      // PERF (2026-06-02): sky scale cap (was 1.04→1.12).
+      // PERF (2026-06-02): sky scale cap.
       id: 'arrival-sky',
       label: 'arrival sky sliver (backdrop)',
       plateSrc: '/images/cinematic/arrival-sky.png',
@@ -256,31 +200,57 @@ const ARRIVAL_SCENE: Scene = {
       // the wall lands already large (it resolves IN, not from far away) and
       // settles with a gentle final push — a touch less Δ than the vista mids so
       // the flutes don't smear at the end.
-      // PERF: was 1.12→1.5. Cap the END at 1.30 (cliff tier ceiling); keep a
-      // higher scaleFrom (1.10) so it still "lands large" — the Δ is small either
-      // way, so the composited surface stays under ~1.7× a viewport throughout.
+      // PERF: cap the END at 1.30 (cliff tier ceiling); keep a higher scaleFrom
+      // (1.10) so it still "lands large" — the Δ is small either way.
       scaleFrom: 1.1,
       scaleTo: 1.3,
       yFrom: 0,
       yTo: 4,
     },
+  ],
+} as const;
+
+/**
+ * ── FLOOR — the PERSISTENT desert floor (mid-fg, one plane) ─────────────────
+ * The continuous ground the whole piece rides on. It is the MID valley's floor
+ * (mid-fg) pulled into its OWN group so it NEVER dissolves: range 0→1, fadeIn
+ * {0,0} (already on screen), fadeOut null (holds to p=1). Rendered LAST in SCENES
+ * → highest z → it sits IN FRONT of everything, so the arrival cliff RISES OUT OF
+ * this one floor. The mid sky/buttes fade out at the dissolve; this floor does not
+ * — and there is no second floor to cross-fade against, so no doubling/ghosting.
+ * Keeps its gentle fg push (scale cap 1.45, fg/floor tier).
+ */
+const FLOOR_SCENE: Scene = {
+  id: 'floor',
+  arrivalId: 'mid-fg',
+  range: { start: 0.0, end: 1.0 }, // pushes gently the whole way
+  fadeIn: { start: 0.0, end: 0.0 }, // already on screen at p=0
+  fadeOut: null, // NEVER dissolves — holds to p=1 (and never gets culled)
+  sun: { x: 0.5, y: 0.6 }, // unused (no sun element bloom; sunMax 0)
+  sunMax: 0,
+  planes: [
     {
-      // PERF: was 1.15→2.3 / yTo 28. Capped to 1.45.
-      id: 'arrival-fg',
-      label: 'arrival talus + sand (near)',
-      plateSrc: '/images/cinematic/arrival-fg.png',
+      // the one continuous floor. PERF cap 1.45 (fg/floor tier); gentle push.
+      id: 'mid-fg',
+      label: 'desert floor (terracotta dunes + grass) — persistent',
+      plateSrc: '/images/cinematic/mid-fg.png',
       placeholderSrc: '/images/cinematic/_placeholders/foreground.svg',
       transparent: true,
       scaleFrom: 1.0,
       scaleTo: 1.45,
       yFrom: 2,
-      yTo: 15,
+      yTo: 18,
     },
   ],
 } as const;
 
-/** The 3 beats, in descent order. The engine sequences these on one timeline. */
-export const SCENES: readonly Scene[] = [DAWN_SCENE, MID_SCENE, ARRIVAL_SCENE] as const;
+/**
+ * The scenes the engine sequences on one timeline, in RENDER order (back→front
+ * group z). [MID, ARRIVAL, FLOOR]: mid sky/buttes and the arrival sky/cliff
+ * cross-dissolve underneath, then the persistent floor renders LAST (on top) so
+ * the cliff rises out of it. DAWN is dropped from the recut.
+ */
+export const SCENES: readonly Scene[] = [MID_SCENE, ARRIVAL_SCENE, FLOOR_SCENE] as const;
 
 /**
  * ── Placeholder scene (motion-mechanics rig) ────────────────────────────────
@@ -380,17 +350,26 @@ export const ACTIVE_SCENES: readonly Scene[] = USE_PLACEHOLDERS
 
 /**
  * ── Back-compat single-scene aliases ────────────────────────────────────────
- * The static frame + the reduced-motion test reference these. We point them at
- * the ARRIVAL beat (the golden cliff) so the static fallback is the most
- * impressive frame and ARRIVAL_ID stays meaningful.
+ * The static frame (reduced-motion / narrow) + the reduced-motion test reference
+ * these. The static frame is the ARRIVAL destination — the golden fluted cliff —
+ * but the cliff has no base of its own (arrival-fg dropped), so the static plane
+ * stack ends with the persistent FLOOR (mid-fg) under the wall: the cliff sits on
+ * the same ground the live scene rides on. Order back→front:
+ *   arrival-sky, arrival-cliff, mid-fg(floor).
+ * ARRIVAL_ID stays the cliff so the static frame parks it at its landed scale.
  */
-const FALLBACK_SCENE: Scene = USE_PLACEHOLDERS ? PLACEHOLDER_SCENE : ARRIVAL_SCENE;
+const STATIC_PLATES: readonly Plate[] = [
+  ...ARRIVAL_SCENE.planes, // arrival-sky, arrival-cliff
+  ...FLOOR_SCENE.planes, // mid-fg floor, rendered last (on top)
+];
 
-/** back → front. Used by the static frame. */
-export const PLATES: readonly Plate[] = FALLBACK_SCENE.planes;
+/** back → front. Used by the static frame. Placeholder rig keeps its own stack. */
+export const PLATES: readonly Plate[] = USE_PLACEHOLDERS
+  ? PLACEHOLDER_SCENE.planes
+  : STATIC_PLATES;
 
 /** The arrival subject — the plane the whole push resolves onto. */
-export const ARRIVAL_ID = FALLBACK_SCENE.arrivalId;
+export const ARRIVAL_ID = USE_PLACEHOLDERS ? PLACEHOLDER_SCENE.arrivalId : ARRIVAL_SCENE.arrivalId;
 
 /**
  * Which image source to render for a plane, honoring the global flag.
