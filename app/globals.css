@@ -1190,6 +1190,44 @@ img::before {
 }
 .cdesert-grade--warm { --cdesert-grade-mix: 1; }
 
+/* -- Exposure / time-of-day overlay: deep pre-dawn → warm sunrise lift.
+   The grade above shifts HUE; this layer drives EXPOSURE, which a multiply grade
+   can't do (multiply only darkens). GSAP animates --cdesert-expose 0→1.
+
+   mix-blend-mode:overlay is the key: an overlay layer darkens where the scene is
+   dark and lightens where it's light, by the overlay color —
+     • at expose=0 a cool deep-blue overlay DEEPENS the frame (true pre-dawn:
+       shadows sink, the whole valley reads a stop darker and bluer);
+     • as expose→1 it crossfades to a warm near-white overlay that LIFTS the
+       midtones/highlights (the sun cresting warms and opens the valley).
+   Two stacked gradients, each gated by the driver var, so the handoff is one
+   continuous exposure ramp with no banding. Kept subtle — it warms a dark frame
+   into sunrise; it never tries to fake midday. -- */
+.cdesert-exposure {
+  position: absolute;
+  inset: 0;
+  z-index: 41; /* just above the hue grade, below haze/sun */
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  --cdesert-expose: 0;
+  background:
+    /* warm sunrise LIFT (comes up with expose); brightest low, toward the glow */
+    radial-gradient(
+        ellipse 140% 95% at 32% 92%,
+        rgba(255, 236, 200, calc(0.50 * var(--cdesert-expose))) 0%,
+        rgba(255, 206, 150, calc(0.30 * var(--cdesert-expose))) 38%,
+        rgba(255, 188, 130, 0) 72%
+      ),
+    /* cool pre-dawn DEEPEN (fades out as expose rises) */
+    linear-gradient(
+        180deg,
+        rgba(18, 26, 64, calc(0.34 * (1 - var(--cdesert-expose)))) 0%,
+        rgba(14, 18, 50, calc(0.42 * (1 - var(--cdesert-expose)))) 55%,
+        rgba(8, 11, 34, calc(0.52 * (1 - var(--cdesert-expose)))) 100%
+      );
+}
+.cdesert-exposure--warm { --cdesert-expose: 1; }
+
 /* -- Sun glow: radial bloom rising from the horizon. GSAP drives y/scale/op. -- */
 .cdesert-sun {
   position: absolute;
