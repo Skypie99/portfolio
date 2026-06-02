@@ -46,13 +46,13 @@ export const Layer = forwardRef<HTMLImageElement, LayerProps>(function Layer(
         draggable={false}
         data-plate={plate.id}
         className="cdesert-layer"
-        // The dawn beat (eager) loads immediately so the opening frame is sharp;
-        // off-screen beats (mid/arrival) lazy-load as the user scrolls toward them
-        // — 9 hi-res planes shouldn't all block the open. (We deliberately don't
-        // set fetchpriority: React 18.3's prop handling for it is inconsistent
-        // between SSR/jsdom/DOM and warns either spelling; `loading="eager"`
-        // already front-loads the dawn planes, which is what matters.)
-        loading={eager ? 'eager' : 'lazy'}
+        // ALL planes load eagerly. Lazy-loading off-screen beats meant their AVIF
+        // decoded on the main thread the first time each scene scrolled into view —
+        // a ~1s hitch per scene mid-scroll (the "glitchy at points"). Eager-loading
+        // (~1.8MB total) front-loads fetch+decode to page-open; CinematicDesert then
+        // forces `img.decode()` on all planes so they're GPU-ready before any scroll.
+        // (`eager` prop retained for API compatibility; all planes are eager now.)
+        loading="eager"
         decoding="async"
         style={{
           zIndex: z,

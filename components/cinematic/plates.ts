@@ -233,7 +233,7 @@ const ARRIVAL_SCENE: Scene = {
   fadeIn: { start: 0.7, end: 0.8 },
   fadeOut: null, // holds to the end
   sun: { x: 0.7, y: 0.3 }, // warmest band on the upper-right crest
-  sunMax: 0.9, // the golden bloom — the richest light, earned late
+  sunMax: 0, // bloom REMOVED — the arrival cliff photo is already golden-lit; the added sun-glow read as cheap glare (Sky, 2026-06-02). Warmth now comes only from the grade/exposure.
   planes: [
     {
       // PERF (2026-06-02): sky scale cap (was 1.04→1.12).

@@ -1,4 +1,3 @@
-import type { CSSProperties } from 'react';
 
 import { FilmGrain } from './FilmGrain';
 import { ARRIVAL_ID, PLATES, SCENES, sourcesFor, srcFor, type Plate } from './plates';
@@ -20,8 +19,6 @@ import { ARRIVAL_ID, PLATES, SCENES, sourcesFor, srcFor, type Plate } from './pl
  * three beats.)
  */
 
-/** The arrival beat's measured sun (upper-right crest), for the static bloom. */
-const ARRIVAL_SUN = SCENES[SCENES.length - 1]?.sun ?? { x: 0.7, y: 0.3 };
 
 /** End-state opacity for a plate (its post-p1 value if it has an opacity ramp). */
 function endOpacity(plate: Plate): number {
@@ -68,16 +65,8 @@ export function StaticDesertFrame() {
         {/* warm grade + lifted exposure held at the golden end of the arc */}
         <div className="cdesert-grade cdesert-grade--warm" aria-hidden="true" />
         <div className="cdesert-exposure cdesert-exposure--warm" aria-hidden="true" />
-        <div
-          className="cdesert-sun cdesert-sun--bloom"
-          style={
-            {
-              '--sun-x': `${ARRIVAL_SUN.x * 100}%`,
-              '--sun-y': `${ARRIVAL_SUN.y * 100}%`,
-            } as CSSProperties
-          }
-          aria-hidden="true"
-        />
+        {/* sun-bloom REMOVED — the arrival cliff photo is already golden-lit; the
+            added glow read as cheap glare (Sky, 2026-06-02). Warmth stays via grade. */}
 
         {/* resolved wordmark */}
         <div className="cdesert-title cdesert-title--resolved">

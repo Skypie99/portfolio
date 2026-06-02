@@ -124,6 +124,25 @@ export function CinematicDesert() {
   const FORCE_STATIC = false;
   const animate = !FORCE_STATIC && !(reduce || narrow);
 
+  // PERF (2026-06-02): force-decode every plane upfront. Lazy planes decoded their
+  // AVIF on the main thread the first time each scene scrolled into view — a ~1s
+  // hitch per scene (the "glitchy at points"). Decoding here, while the user is
+  // still at the top, makes them GPU-ready so scrolling is pure compositing (~60fps).
+  useEffect(() => {
+    if (!animate) return;
+    let cancelled = false;
+    const id = requestAnimationFrame(() => {
+      if (cancelled) return;
+      layerRefs.current.forEach((img) => {
+        if (img?.decode) img.decode().catch(() => {});
+      });
+    });
+    return () => {
+      cancelled = true;
+      cancelAnimationFrame(id);
+    };
+  }, [animate]);
+
   useGSAP(
     () => {
       if (!animate) return;
