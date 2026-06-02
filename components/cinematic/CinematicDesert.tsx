@@ -37,9 +37,9 @@ import { useReducedMotion } from './useReducedMotion';
  * never a cut. ONE exposure ramp + ONE grade ramp run across the WHOLE p (never
  * reset per scene), so the light is a single slow sunrise dark→golden.
  *
- * `scrub: 1.4` gives a buttery, weighted catch-up (the expensive glide). Depth
- * rides power1.inOut — a gentle ease so the scroll-scrubbed dolly tracks the scroll
- * PROPORTIONALLY (organic), with soft takeoff/landing. Crossfades/exposure ride
+ * `scrub: 1.5` gives a buttery, weighted catch-up (the expensive glide). Depth
+ * rides sine.inOut — the silkiest ease, so the scroll-scrubbed dolly tracks the scroll
+ * PROPORTIONALLY (organic) with soft takeoff/landing. Crossfades/exposure ride
  * sine.inOut / power2.out so nothing pops.
  *
  * SSR-safety: nothing touches `window` at module scope. GSAP wiring runs inside
@@ -75,7 +75,7 @@ const CULL_WINDOWS: readonly { start: number; end: number }[] =
   SCENES.length === 3
     ? [
         { start: -0.01, end: 0.64 }, // MID (opener)
-        { start: 0.42, end: 1.01 }, // ARRIVAL (start widened 0.44→0.42 for fade-in margin)
+        { start: 0.40, end: 1.01 }, // ARRIVAL (start 0.40 — composite just before the fade opens at 0.42; the cliff's range now starts at 0.32)
         { start: -0.01, end: 1.01 }, // FLOOR (persistent — never culled)
       ]
     : SCENES.map(() => ({ start: -0.01, end: 1.01 }));
@@ -185,7 +185,7 @@ export function CinematicDesert() {
           end: 'bottom bottom',
           pin,
           pinSpacing: true,
-          scrub: 1.4,
+          scrub: 1.5,
           anticipatePin: 1,
           invalidateOnRefresh: true,
           // cull on every progress tick (cheap: a handful of class/style writes,
@@ -228,10 +228,11 @@ export function CinematicDesert() {
       // ── per-scene plane depth pushes ──────────────────────────────────────
       // Each plane tween is placed at its SCENE's range.start with a duration of
       // the scene's span, so its scaleFrom→scaleTo plays out exactly across that
-      // beat's window on the master timeline. REFINE 2026-06-02: power1.inOut (was
-      // power3.inOut) — on a SCRUBBED timeline the ease maps scroll→progress, so a
-      // gentle quad makes the dolly track the scroll PROPORTIONALLY (organic/smooth)
-      // with soft ends; the old quartic dead-zoned, then lurched, then crawled.
+      // beat's window on the master timeline. REFINE 2026-06-02: sine.inOut (silkiest
+      // standard ease) — on a SCRUBBED timeline the ease maps scroll→progress, so the
+      // gentlest curve makes the dolly track the scroll most PROPORTIONALLY (organic/
+      // silky) with soft ends. (Was power1.inOut; the original power3 quartic
+      // dead-zoned, then lurched, then crawled.)
       SCENES.forEach((scene: Scene, si) => {
         const span = Math.max(0.0001, scene.range.end - scene.range.start);
         scene.planes.forEach((plate: Plate, pi) => {
@@ -240,7 +241,7 @@ export function CinematicDesert() {
           tl.fromTo(
             el,
             { scale: plate.scaleFrom, yPercent: plate.yFrom },
-            { scale: plate.scaleTo, yPercent: plate.yTo, duration: span, ease: 'power1.inOut' },
+            { scale: plate.scaleTo, yPercent: plate.yTo, duration: span, ease: 'sine.inOut' },
             scene.range.start,
           );
           // optional 2nd-phase drift on the MASTER timeline (ABSOLUTE p) — a .to()
@@ -261,7 +262,7 @@ export function CinematicDesert() {
                 scale: toScale,
                 yPercent: toY,
                 duration: Math.max(0.0001, end - start),
-                ease: 'power1.inOut',
+                ease: 'sine.inOut',
                 immediateRender: false,
               },
               start,
