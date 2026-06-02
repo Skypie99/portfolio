@@ -211,8 +211,16 @@ const MID_SCENE: Scene = {
 const ARRIVAL_SCENE: Scene = {
   id: 'arrival-cliff',
   arrivalId: 'arrival-cliff',
-  range: { start: 0.62, end: 1.0 },
-  fadeIn: { start: 0.66, end: 0.80 }, // dissolve B (in) — lockfile §4 p~0.66–0.80
+  range: { start: 0.62, end: 1.0 }, // dolly still begins early (0.62) — the cliff is pushing under the dissolve
+  // dissolve B (in). Start delayed 0.66 → 0.70 vs lockfile §4: the arrival SKY
+  // plane (arrival-sky.png) carries faint vertical inpaint streaks at the frame-
+  // top (the source cliff reaches the top, so there was no clean sky to seed).
+  // Holding the whole group hidden until 0.70 keeps that plane invisible until the
+  // cliff wall has risen + haze has swelled to cover the upper frame — so the
+  // streaks never show mid-dissolve. MID holds opaque underneath (incoming-only),
+  // so there's no gap. Ends 0.80; arrival HOLDS to p=1. (Peter 3-beat verify
+  // 2026-06-01 §6 cosmetic polish.)
+  fadeIn: { start: 0.7, end: 0.8 },
   fadeOut: null, // holds to the end
   sun: { x: 0.7, y: 0.3 }, // warmest band on the upper-right crest
   sunMax: 0.9, // the golden bloom — the richest light, earned late
