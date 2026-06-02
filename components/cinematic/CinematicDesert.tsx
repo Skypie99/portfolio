@@ -89,7 +89,11 @@ export function CinematicDesert() {
 
   // Whether to mount the animated scene. When false we render the static frame
   // and skip GSAP entirely.
-  const animate = !(reduce || narrow);
+  // INTERIM (2026-06-02): forced to the static frame while the scroll engine is
+  // rebuilt for performance — the 9-plane/8-overlay composite froze the renderer
+  // on scroll. Restore `!(reduce || narrow)` once the lightweight engine ships.
+  const FORCE_STATIC = true;
+  const animate = !FORCE_STATIC && !(reduce || narrow);
 
   useGSAP(
     () => {
