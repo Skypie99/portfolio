@@ -37,8 +37,10 @@ import { useReducedMotion } from './useReducedMotion';
  * never a cut. ONE exposure ramp + ONE grade ramp run across the WHOLE p (never
  * reset per scene), so the light is a single slow sunrise dark→golden.
  *
- * `scrub: 1.1` gives a smooth, slightly weighted catch-up. Depth rides
- * power3.inOut; crossfades/exposure ride sine.inOut so nothing pops.
+ * `scrub: 1.4` gives a buttery, weighted catch-up (the expensive glide). Depth
+ * rides power1.inOut — a gentle ease so the scroll-scrubbed dolly tracks the scroll
+ * PROPORTIONALLY (organic), with soft takeoff/landing. Crossfades/exposure ride
+ * sine.inOut / power2.out so nothing pops.
  *
  * SSR-safety: nothing touches `window` at module scope. GSAP wiring runs inside
  * useGSAP (client effect). `narrow` starts false so server/first client render
@@ -183,7 +185,7 @@ export function CinematicDesert() {
           end: 'bottom bottom',
           pin,
           pinSpacing: true,
-          scrub: 1.1,
+          scrub: 1.4,
           anticipatePin: 1,
           invalidateOnRefresh: true,
           // cull on every progress tick (cheap: a handful of class/style writes,
@@ -226,8 +228,10 @@ export function CinematicDesert() {
       // ── per-scene plane depth pushes ──────────────────────────────────────
       // Each plane tween is placed at its SCENE's range.start with a duration of
       // the scene's span, so its scaleFrom→scaleTo plays out exactly across that
-      // beat's window on the master timeline. power3.inOut is the spine of the
-      // IMAX glide (cautious open, decisive mid, long gentle arrival).
+      // beat's window on the master timeline. REFINE 2026-06-02: power1.inOut (was
+      // power3.inOut) — on a SCRUBBED timeline the ease maps scroll→progress, so a
+      // gentle quad makes the dolly track the scroll PROPORTIONALLY (organic/smooth)
+      // with soft ends; the old quartic dead-zoned, then lurched, then crawled.
       SCENES.forEach((scene: Scene, si) => {
         const span = Math.max(0.0001, scene.range.end - scene.range.start);
         scene.planes.forEach((plate: Plate, pi) => {
@@ -236,7 +240,7 @@ export function CinematicDesert() {
           tl.fromTo(
             el,
             { scale: plate.scaleFrom, yPercent: plate.yFrom },
-            { scale: plate.scaleTo, yPercent: plate.yTo, duration: span, ease: 'power3.inOut' },
+            { scale: plate.scaleTo, yPercent: plate.yTo, duration: span, ease: 'power1.inOut' },
             scene.range.start,
           );
           // optional 2nd-phase drift on the MASTER timeline (ABSOLUTE p) — a .to()
@@ -257,7 +261,7 @@ export function CinematicDesert() {
                 scale: toScale,
                 yPercent: toY,
                 duration: Math.max(0.0001, end - start),
-                ease: 'power3.inOut',
+                ease: 'power1.inOut',
                 immediateRender: false,
               },
               start,
@@ -391,6 +395,20 @@ export function CinematicDesert() {
           { opacity: 1, yPercent: 0, filter: 'blur(0px)', duration: 0.11, ease: 'power2.out' },
           0.86,
         );
+        // REFINE 2026-06-02: the wordmark TIGHTENS its tracking as it lands (0.12em →
+        // its resting 0.06em) so it CRYSTALLISES into place rather than just fading up
+        // — a classic expensive-title move (the original design intent). Targets the
+        // inner mark (where letter-spacing lives); same position/ease as the carve so
+        // the two resolve as ONE gesture.
+        const mark = titleRef.current.querySelector('.cdesert-title-mark');
+        if (mark) {
+          tl.fromTo(
+            mark,
+            { letterSpacing: '0.12em' },
+            { letterSpacing: '0.06em', duration: 0.11, ease: 'power2.out' },
+            0.86,
+          );
+        }
         tl.to(titleRef.current, { opacity: 1, duration: 0.03 }, 0.97);
       }
     },

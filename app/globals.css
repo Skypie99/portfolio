@@ -1079,7 +1079,10 @@ img::before {
    purposeful rather than endless (and fewer scroll-pixels to scrub through). */
 .cdesert-stage {
   position: relative;
-  height: 500vh;     /* 3-beat descent: ~160vh of push per beat + dissolves */
+  height: 620vh;     /* REFINE 2026-06-02: 500→620vh for a slower, more deliberate
+                        cinematic dolly (haze layer removed → perf headroom back).
+                        ~200vh of push per beat. Scales the whole timeline uniformly
+                        so the unified zoom + all proportions are preserved. */
   width: 100%;
 }
 
