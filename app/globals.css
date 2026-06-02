@@ -1305,39 +1305,10 @@ img::before {
 /* helper retained but inert: even if toggled, it grants no glow (background:none). */
 .cdesert-sun--bloom { opacity: 0; }
 
-/* -- Atmospheric haze band (between depth layers). GSAP fades opacity. --
-   PERF rebuild (2026-06-02): the two haze bands (.cdesert-haze--1/--2) are
-   MERGED into this single full-bleed element. Both were near-identical warm
-   bottom-anchored gradients swelling into dissolve B; stacking the two source
-   gradients in one layer (the denser lower band + the brighter near band) reads
-   identically as the dust the cliff resolves through, at HALF the composited
-   full-screen layers. One animated overlay, not two. */
-.cdesert-haze {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 62%;
-  z-index: 25; /* between mid plane and the near/cliff plane */
-  pointer-events: none;
-  opacity: 0;
-  will-change: opacity;
-  /* lower band (denser, was --1) + near band (brighter, was --2), stacked. */
-  background:
-    linear-gradient(
-      0deg,
-      rgba(255, 206, 158, 0.0) 0%,
-      rgba(255, 206, 158, 0.5) 45%,
-      rgba(255, 206, 158, 0.0) 74%,
-      rgba(255, 206, 158, 0.0) 100%
-    ),
-    linear-gradient(
-      0deg,
-      rgba(236, 178, 120, 0.0) 0%,
-      rgba(236, 178, 120, 0.55) 45%,
-      rgba(236, 178, 120, 0.0) 100%
-    );
-}
+/* Atmospheric haze (.cdesert-haze) REMOVED 2026-06-02 — Sky: "remove the dust, it
+   does not make sense." The arrival now reads via OCCLUSION-BY-MOTION (a pre-grown
+   arrival-cliff covers the valley by position) + the matched warm grade, not a
+   dust-masked crossfade. The ref/tween/JSX in CinematicDesert.tsx were removed too. */
 
 /* -- Title wordmark — minimal, centred, cinema-first. -- */
 .cdesert-title {

@@ -8,7 +8,7 @@
  * descend to the wall):
  *
  *   MID      warm daylight valley (sky + buttes) — the OPENER → pushes forward
- *   ↳ THE DISSOLVE (the one real leap — valley → cliff, resolved IN through haze)
+ *   ↳ THE DISSOLVE (the one real leap — valley → cliff; the cliff RISES to cover it)
  *   ARRIVAL  golden close-up of a fluted sandstone cliff → title carves + HOLDS
  *
  * ── THE PERSISTENT FLOOR (load-bearing) ─────────────────────────────────────
@@ -169,26 +169,26 @@ const MID_SCENE: Scene = {
  * ── SCENE 2 — ARRIVAL CLIFF (sky sliver + fluted wall) ──────────────────────
  * Source: source/arrival-cliff.png. The fluted WALL is dominant; arrival-fg
  * (its talus/base) is DROPPED — the wall now rises out of the persistent mid
- * floor (FLOOR_SCENE) instead. It resolves IN through haze on the dissolve and
- * the title carves over it. Golden via the even wash. HOLDS to p=1 (no fadeOut).
+ * floor (FLOOR_SCENE) instead. It arrives by RISING to cover the valley (occlusion-
+ * by-motion — no dust) and the title carves over it. Golden via the even wash.
+ * HOLDS to p=1 (no fadeOut).
  */
 const ARRIVAL_SCENE: Scene = {
   id: 'arrival-cliff',
   arrivalId: 'arrival-cliff',
   range: { start: 0.4, end: 1.0 }, // dolly begins early (0.40) — the cliff is pushing up under the dissolve
-  // THE dissolve (in). 0.42 → 0.60 (REFINE 2026-06-02: "resolve UNDER the dust").
-  // The group fade is now power2.out (front-loaded in CinematicDesert.tsx), so the
-  // cliff is ~85% present by ~p0.50 — BEFORE the haze peaks (0.66 @ p0.58) — and the
-  // last of the opacity resolves buried in dust. The REVEAL is then carried by the
-  // haze clearing + the gold lift, NOT by the opacity ramp, so there's no perceptible
-  // "crossfade" seam: the wall EMERGES out of golden morning dust. The cliff keeps
-  // GROWING (its scale push) visibly as it lands — camera ARRIVING, not a still. MID
-  // holds opaque underneath (incoming-only) so there's no gap; arrival HOLDS to p=1.
-  //   Note on start moving 0.46 → 0.42: arrival-sky.png carries faint vertical inpaint
-  //   streaks at the frame-top. The haze now reaches ≥0.30 by p0.46 (earlier + denser
-  //   front), veiling the upper frame before the plane is legible, so the streaks
-  //   still never show. If any streak ever peeks, bump start 0.42 → 0.44.
-  fadeIn: { start: 0.42, end: 0.6 },
+  // THE dissolve (in). 0.44 → 0.54 (REFINE 2026-06-02: dust REMOVED — a short,
+  // front-loaded fade behind a PRE-GROWN cliff). The group fade is power2.out, so the
+  // cliff reaches ~85% opaque by ~p0.47; because arrival-cliff is pre-grown + lowered
+  // (scaleFrom 1.12 / yFrom 5), that brief translucent window happens behind a wall
+  // that already covers most of the frame → the valley is occluded by POSITION, not
+  // masked by dust, so there is no see-through ghost. The wall keeps GROWING as it
+  // lands (camera ARRIVING, not a still). MID holds opaque underneath (incoming-only)
+  // so there's no gap; arrival HOLDS to p=1.
+  //   arrival-sky.png has faint top-edge inpaint streaks; the rising cliff + the warm
+  //   sky-wash cover the upper frame by the time the plane is legible. If any streak
+  //   ever peeks, bump start 0.44 → 0.46.
+  fadeIn: { start: 0.44, end: 0.54 },
   fadeOut: null, // holds to the end
   sun: { x: 0.7, y: 0.3 }, // (no bloom — sunMax 0; kept only as the element's anchor)
   sunMax: 0, // bloom REMOVED — the cliff photo is already golden-lit; the added glow read as cheap glare (Sky). Warmth comes only from the even wash.
@@ -211,16 +211,20 @@ const ARRIVAL_SCENE: Scene = {
       plateSrc: '/images/cinematic/arrival-cliff.png',
       placeholderSrc: '/images/cinematic/_placeholders/near-rockface.svg',
       transparent: true,
-      // the wall resolves IN through haze and keeps GROWING as it lands — the
-      // camera arriving at the rock. Dani 2026-06-02: scaleFrom 1.10 → 1.04 so the
-      // wall has more visible forward travel ACROSS the dissolve (it builds/rises
-      // into the frame rather than appearing pre-sized), then settles with a gentle
-      // final push so the flutes don't smear at the end. END capped at 1.30 (cliff
-      // tier ceiling); the slightly larger Δ (0.26) reads as a real dolly-in.
-      scaleFrom: 1.04,
+      // RECUT 2026-06-02 — OCCLUSION-BY-MOTION (the dust is gone). The wall now
+      // arrives by COVERING the valley with its own opaque shape, not by a haze-masked
+      // crossfade. It's PRE-GROWN + lowered at the fade start (scaleFrom 1.04 → 1.12,
+      // yFrom 2 → 5) so that during the short fade-in it already fills most of the
+      // frame as a solid silhouette — the valley behind is hidden by POSITION, so
+      // there's no see-through ghost without dust. It keeps GROWING to scaleTo 1.30
+      // (yTo 4 → 7, settling WITH the floor at yTo 5) so it still reads as the camera
+      // dollying in, not a still. Both ends are warm sandstone at matched exposure →
+      // the brief blend reads as a red-rock match-cut, not a crossfade. (Δscale 0.18
+      // is gentle so the flutes don't smear at the end.)
+      scaleFrom: 1.12,
       scaleTo: 1.3,
-      yFrom: 2,
-      yTo: 4,
+      yFrom: 5,
+      yTo: 7,
     },
   ],
 } as const;
@@ -245,16 +249,24 @@ const FLOOR_SCENE: Scene = {
   sunMax: 0,
   planes: [
     {
-      // the one continuous floor. PERF cap 1.45 (fg/floor tier); gentle push.
+      // RECUT 2026-06-02 — COHESIVE FLOOR. The floor was over-parallaxed (scaleTo
+      // 1.45, yTo 18) so it slid DOWN/forward far faster than the mountains (1.30 /
+      // yTo 4) — the ground "rushed" independently (Sky: the ground should move WITH
+      // the mountains "at the exact same time"). The yTo gap was the dominant slide;
+      // cut it to 5 so the floor's drift ≈ the mountains' through the mid push.
+      // scaleTo trimmed 1.45 → 1.38 toward the mid tier so the foreground grows WITH
+      // the scene, not ahead of it. (A whisper of lead remains because the floor's
+      // range is 0→1 vs the mountains' 0→0.62 — different easing windows — so it can't
+      // track identically; the values are tuned by eye to read as one cohesive push.)
       id: 'mid-fg',
-      label: 'desert floor (terracotta dunes + grass) — persistent',
+      label: 'desert floor (terracotta dunes + grass) — persistent, moves with the scene',
       plateSrc: '/images/cinematic/mid-fg.png',
       placeholderSrc: '/images/cinematic/_placeholders/foreground.svg',
       transparent: true,
       scaleFrom: 1.0,
-      scaleTo: 1.45,
+      scaleTo: 1.38, // was 1.45 — trimmed toward the mid tier for a cohesive push
       yFrom: 2,
-      yTo: 18,
+      yTo: 5, // was 18 — kills the independent downward slide (the dominant fix)
     },
   ],
 } as const;

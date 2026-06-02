@@ -24,7 +24,6 @@ import { useReducedMotion } from './useReducedMotion';
  *         a per-scene sun glow (positioned at that beat's measured sun)
  *       grade overlay   (cool→warm, ONE continuous ramp)
  *       exposure overlay(deep→golden, ONE continuous ramp)
- *       2 haze bands    (swell into dissolve B, clear as the cliff lands)
  *       title wordmark  (resolves p[0.86,0.96], holds to 1)
  *       <FilmGrain/>
  *
@@ -74,7 +73,7 @@ const CULL_WINDOWS: readonly { start: number; end: number }[] =
   SCENES.length === 3
     ? [
         { start: -0.01, end: 0.64 }, // MID (opener)
-        { start: 0.44, end: 1.01 }, // ARRIVAL
+        { start: 0.42, end: 1.01 }, // ARRIVAL (start widened 0.44→0.42 for fade-in margin)
         { start: -0.01, end: 1.01 }, // FLOOR (persistent — never culled)
       ]
     : SCENES.map(() => ({ start: -0.01, end: 1.01 }));
@@ -110,8 +109,6 @@ export function CinematicDesert() {
   const sunRefs = useRef<(HTMLDivElement | null)[]>([]);
   const gradeRef = useRef<HTMLDivElement>(null);
   const exposureRef = useRef<HTMLDivElement>(null);
-  // PERF (2026-06-02): the two haze bands merged into ONE overlay → one ref.
-  const hazeRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
 
   // Whether to mount the animated scene. When false we render the static frame
@@ -271,11 +268,11 @@ export function CinematicDesert() {
         if (group) {
           // fade IN (0→1). A zero-width window means "already on screen": the MID
           // opener and the FLOOR both use {0,0} → inDur 0 → skipped here, so ONLY the
-          // ARRIVAL group hits this branch. REFINE 2026-06-02: power2.out (was
-          // sine.inOut). The FRONT-LOADED curve gets the incoming cliff ~85% opaque
-          // early — BEFORE the haze peaks — so the last of the fade resolves BURIED in
-          // dust and the haze-clear + gold-lift (not the opacity ramp) carry the
-          // reveal. That's what turns a perceptible crossfade into an EMERGENCE.
+          // ARRIVAL group hits this branch. power2.out (front-loaded): the incoming
+          // cliff reaches ~85% opaque EARLY in the short window, and because the cliff
+          // is pre-grown (plates.ts) it already covers most of the frame as a solid
+          // shape — so the valley is occluded by POSITION as it fades, not crossfaded.
+          // That (not dust) is what turns a perceptible crossfade into an arrival.
           const inDur = scene.fadeIn.end - scene.fadeIn.start;
           if (inDur > 0) {
             tl.fromTo(
@@ -342,38 +339,19 @@ export function CinematicDesert() {
           .to(ex, { '--cdesert-expose': 0.44, duration: 0.18, ease: 'sine.inOut' }, 0.18) // morning warms over the valley
           .to(ex, { '--cdesert-expose': 0.54, duration: 0.18, ease: 'sine.inOut' }, 0.36) // through the dissolve
           .to(ex, { '--cdesert-expose': 0.6, duration: 0.16, ease: 'sine.inOut' }, 0.54) // cliff resolving, still climbing (0.54–0.70)
-          // REFINE 2026-06-02: gold ACCELERATES earlier (p0.70, was 0.74) and gentler
-          // (0.78, was 0.80) so the warm→gold surge sits UNDER the haze's final clear
-          // (0.30→0.06 over p0.70–0.82): the dust burns off AS the light turns golden
-          // around the already-present cliff. Replaces the old 0.66@0.70 + 0.80@0.74
-          // OVERLAPPING pair with one clean knot (0.70–0.84), then continues as before.
-          .to(ex, { '--cdesert-expose': 0.78, duration: 0.14, ease: 'sine.in' }, 0.7) // gold accel under the dust-clear
+          // Gold ACCELERATES from p0.70 (a gentle 'sine.in' catch) so the cliff lands
+          // in the richest light just as it finishes arriving. One clean knot
+          // (0.70–0.84); the old dust-clear coupling is moot now the haze is removed.
+          .to(ex, { '--cdesert-expose': 0.78, duration: 0.14, ease: 'sine.in' }, 0.7) // gold accel as the cliff lands
           .to(ex, { '--cdesert-expose': 0.92, duration: 0.12, ease: 'sine.inOut' }, 0.86)
           .to(ex, { '--cdesert-expose': 1, duration: 0.02, ease: 'sine.out' }, 0.98); // full golden-hour at p1
       }
 
-      // ── atmospheric haze: swells into THE DISSOLVE, clears INTO the gold ──────
-      // The single merged haze band IS the reveal now (the opacity ramp is decoupled —
-      // see the power2.out group fade). REFINE 2026-06-02 — 4-knot curve tuned so the
-      // cliff EMERGES out of dust rather than crossfading: the swell starts ~p0.38 (a
-      // hair earlier + denser, ≥~0.30 by p0.46, veiling the upper frame BEFORE the
-      // arrival plane is legible — covers the arrival-sky inpaint streaks), then PEAKS
-      // later & denser (0.66 @ p0.58 — the cliff is already ~present but still veiled,
-      // so it materialises OUT of the densest dust as it grows), then a GENTLE mid-clear
-      // (0.30 @ p0.70 — still dusty while the cliff dollies), then the FINAL clear
-      // (0.06 @ p0.82) timed to the gold acceleration (expose surges p0.70+) so the
-      // dust burns off AS the light turns golden. sine.inOut throughout — no edge.
-      if (hazeRef.current) {
-        tl.fromTo(
-          hazeRef.current,
-          { opacity: 0 },
-          { opacity: 0.34, duration: 0.1, ease: 'sine.inOut' },
-          0.38,
-        )
-          .to(hazeRef.current, { opacity: 0.66, duration: 0.1, ease: 'sine.inOut' }, 0.48) // dust thickens — peaks LATER (p0.58)
-          .to(hazeRef.current, { opacity: 0.3, duration: 0.12, ease: 'sine.inOut' }, 0.58) // gentle mid-clear — still veiled while the cliff dollies
-          .to(hazeRef.current, { opacity: 0.06, duration: 0.12, ease: 'sine.inOut' }, 0.7); // final clear INTO the gold (p0.70→0.82)
-      }
+      // Atmospheric haze REMOVED 2026-06-02 (Sky: "remove the dust, it does not make
+      // sense"). The arrival no longer resolves THROUGH dust — it arrives by
+      // occlusion-by-motion: the pre-grown arrival-cliff (plates.ts) covers the valley
+      // by position over a short front-loaded fade, with the warm grade carrying the
+      // blend as a red-rock match-cut. No haze element/tween remains.
 
       // ── title: carves in over p[0.86,0.97], then HOLDS to p=1 ──────────────
       // Late (the gold has fully landed on the cliff), and graceful: it rises a hair,
@@ -458,8 +436,6 @@ export function CinematicDesert() {
           {/* lighting arc — one continuous grade + exposure over the whole push */}
           <div ref={gradeRef} className="cdesert-grade" aria-hidden="true" />
           <div ref={exposureRef} className="cdesert-exposure" aria-hidden="true" />
-          {/* single merged atmospheric haze band (was two) */}
-          <div ref={hazeRef} className="cdesert-haze" aria-hidden="true" />
 
           {/* title wordmark */}
           <div ref={titleRef} className="cdesert-title">
