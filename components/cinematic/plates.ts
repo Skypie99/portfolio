@@ -44,7 +44,8 @@ export type PlateOpacity = {
 };
 
 export type Plate = {
-  /** stable id; also the plane filename stem (/images/cinematic/<id>.png) */
+  /** stable id; also the plane filename stem (/images/cinematic/<id>.{avif,webp};
+   *  plateSrc keeps the .png stem and sourcesFor() derives the shipped formats) */
   id: string;
   /** human label, used for the placeholder caption + alt-debug only */
   label: string;
@@ -380,9 +381,45 @@ export const ARRIVAL_ID = FALLBACK_SCENE.arrivalId;
 /**
  * Which image source to render for a plane, honoring the global flag.
  * One place decides placeholder-vs-real so the flip is total and consistent.
+ *
+ * For real art this is the WebP variant (the heavy source PNGs are dropped from
+ * the shipped bundle — only AVIF+WebP ship — so WebP is the universal <img>
+ * fallback, NOT the PNG). Placeholders return their SVG as-is.
  */
 export function srcFor(plate: Plate): string {
-  return USE_PLACEHOLDERS ? plate.placeholderSrc : plate.plateSrc;
+  if (USE_PLACEHOLDERS) return plate.placeholderSrc;
+  return swapExt(plate.plateSrc, 'webp');
+}
+
+/** Swap a path's file extension (…/foo.png → …/foo.webp). The AVIF / WebP
+ *  variants are always derived from the manifest's plateSrc stem so there's no
+ *  second list to keep in sync. */
+function swapExt(src: string, ext: string): string {
+  return src.replace(/\.[a-z0-9]+$/i, `.${ext}`);
+}
+
+/**
+ * The responsive source set for a plane's <picture>:
+ *   { avif, webp } → modern formats (AVIF primary, WebP fallback), derived from
+ *                    the plateSrc stem. ~all 2026 browsers take one or the other,
+ *                    alpha intact.
+ *   { fallback }   → the <img> src (WebP for real art; the SVG for placeholders).
+ * For placeholders (grey SVGs) there are no raster variants — avif/webp are null
+ * and the SVG is served directly.
+ */
+export function sourcesFor(plate: Plate): {
+  avif: string | null;
+  webp: string | null;
+  fallback: string;
+} {
+  if (USE_PLACEHOLDERS) {
+    return { avif: null, webp: null, fallback: plate.placeholderSrc };
+  }
+  return {
+    avif: swapExt(plate.plateSrc, 'avif'),
+    webp: swapExt(plate.plateSrc, 'webp'),
+    fallback: swapExt(plate.plateSrc, 'webp'),
+  };
 }
 
 /** Every plane id across all active scenes, back→front per scene. Used by

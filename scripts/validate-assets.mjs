@@ -10,12 +10,18 @@
  *   - When components/cinematic/plates.ts has USE_PLACEHOLDERS = true, this
  *     checks the 6 PLACEHOLDER svgs (the motion-mechanics rig) exist.
  *   - When USE_PLACEHOLDERS = false (the default), it requires the real scene
- *     planes /public/images/cinematic/<id>.png — all 9 across the 3 beats
- *     (dawn / mid / arrival), unioned.
+ *     planes in their SHIPPED formats — both <id>.avif AND <id>.webp — for all 9
+ *     across the 3 beats (dawn / mid / arrival), unioned. The heavy source PNGs
+ *     are dropped from public/ (retained only in cinematic-masters/, outside
+ *     public/ so they never ship), so we validate the AVIF+WebP the <picture>
+ *     actually serves, not PNG.
  *
  * Pivot note (2026-06-01): we no longer ship 6 isolated plates; Sky generates
- * whole vistas and we separate each into a small depth-plane stack. The real-art
- * id list below mirrors SCENES (DAWN+MID+ARRIVAL) in plates.ts.
+ * whole vistas and we separate each into a small depth-plane stack
+ * (scripts/separate-scene.mjs → lossless PNG masters in cinematic-masters/planes/),
+ * then encode each plane to AVIF+WebP (scripts/encode-planes.mjs, ~80% lighter,
+ * right-sized per plane). The real-art id list below mirrors SCENES
+ * (DAWN+MID+ARRIVAL) in plates.ts.
  *
  * Run automatically as npm `prebuild` (wired in package.json).
  * Can also be run standalone: node scripts/validate-assets.mjs
@@ -89,23 +95,35 @@ function usePlaceholders() {
   return m[1] === 'true';
 }
 
-/** The cinematic depth planes (placeholder SVGs OR real scene PNGs per the flag). */
+/** The cinematic depth planes: placeholder SVGs (flag on) OR the real scene
+ *  planes in their shipped AVIF+WebP formats (flag off). A real plane must have
+ *  BOTH variants — the <picture> serves AVIF with a WebP fallback. */
 function checkCinematicPlates(publicDir) {
   const flag = usePlaceholders();
   if (flag === null) return { mode: 'skipped', count: 0, missing: [] };
 
-  // placeholder rig = the 6 grey SVGs; real art = the 9 separated beat planes.
+  // placeholder rig = the 6 grey SVGs; real art = the 9 separated beat planes,
+  // each shipped as AVIF + WebP (both required).
   const ids = flag ? PLACEHOLDER_IDS : SCENE_PLANE_IDS;
+  const exts = flag ? ['svg'] : ['avif', 'webp'];
   const missing = [];
   for (const id of ids) {
-    const rel = flag
-      ? join('images', 'cinematic', '_placeholders', `${id}.svg`)
-      : join('images', 'cinematic', `${id}.png`);
-    const fullPath = join(publicDir, rel);
-    if (!existsSync(fullPath)) {
-      missing.push({ kind: flag ? 'placeholder' : 'plane', id, src: `/${rel.split(/[\\/]/).join('/')}`, expected: fullPath });
+    for (const ext of exts) {
+      const rel = flag
+        ? join('images', 'cinematic', '_placeholders', `${id}.${ext}`)
+        : join('images', 'cinematic', `${id}.${ext}`);
+      const fullPath = join(publicDir, rel);
+      if (!existsSync(fullPath)) {
+        missing.push({
+          kind: flag ? 'placeholder' : `plane(${ext})`,
+          id,
+          src: `/${rel.split(/[\\/]/).join('/')}`,
+          expected: fullPath,
+        });
+      }
     }
   }
+  // count = logical planes (each contributes ≥1 file); report stays readable.
   return { mode: flag ? 'placeholders' : 'real', count: ids.length, missing };
 }
 
@@ -133,7 +151,7 @@ function main() {
       if (plates.mode === 'placeholders') {
         console.error('Add the missing cinematic PLACEHOLDER svgs to public/images/cinematic/_placeholders/.');
       } else {
-        console.error('USE_PLACEHOLDERS is false — add the missing real scene planes to public/images/cinematic/<id>.png (separate them from public/images/cinematic/source/), or flip the flag back to true.');
+        console.error('USE_PLACEHOLDERS is false — the shipped planes are AVIF + WebP. Regenerate them: `node scripts/separate-scene.mjs ...` (PNG masters → cinematic-masters/planes/) then `node scripts/encode-planes.mjs` (→ <id>.avif + <id>.webp). Or flip the flag back to true.');
       }
     }
     console.error('');
@@ -144,7 +162,7 @@ function main() {
   if (plates.mode === 'skipped') {
     console.log('[validate-assets] OK — cinematic plate check skipped (no plates.ts).');
   } else {
-    const label = plates.mode === 'placeholders' ? 'placeholder svg' : 'real plate PNG';
+    const label = plates.mode === 'placeholders' ? 'placeholder svg' : 'real plate (AVIF+WebP)';
     console.log(`[validate-assets] OK — all ${plates.count} cinematic ${label}(s) found in public/.`);
   }
 }
