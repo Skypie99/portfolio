@@ -1173,12 +1173,24 @@ img::before {
   mix-blend-mode: multiply;
   --cdesert-grade-mix: 0;
   background:
-    /* warm layer (revealed by the mix var) */
+    /* warm layer (revealed by the mix var) — DIRECTIONAL: the gold concentrates
+       on the SUN side (left horizon, anchored at 17%/55% to match the measured
+       sun) and eases toward neutral on the right, so the warm grade rakes from
+       the sun rather than tinting the frame uniformly. A faint vertical warm
+       underlay keeps the lower frame from going cold where the radial falls off
+       (continuous, no banding). */
+    radial-gradient(
+        ellipse 165% 130% at 17% 55%,
+        rgba(255, 214, 150, calc(0.46 * var(--cdesert-grade-mix))) 0%,
+        rgba(224, 140, 82, calc(0.30 * var(--cdesert-grade-mix))) 42%,
+        rgba(150, 84, 46, calc(0.10 * var(--cdesert-grade-mix))) 72%,
+        rgba(127, 67, 35, 0) 100%
+      ),
     linear-gradient(
         180deg,
-        rgba(255, 214, 150, calc(0.42 * var(--cdesert-grade-mix))) 0%,
-        rgba(214, 130, 74, calc(0.30 * var(--cdesert-grade-mix))) 60%,
-        rgba(127, 67, 35, calc(0.34 * var(--cdesert-grade-mix))) 100%
+        rgba(214, 150, 92, calc(0.10 * var(--cdesert-grade-mix))) 0%,
+        rgba(150, 84, 46, calc(0.14 * var(--cdesert-grade-mix))) 60%,
+        rgba(127, 67, 35, calc(0.18 * var(--cdesert-grade-mix))) 100%
       ),
     /* cool base (fades out as warm comes up) */
     linear-gradient(
@@ -1211,32 +1223,50 @@ img::before {
   mix-blend-mode: overlay;
   --cdesert-expose: 0;
   background:
-    /* warm sunrise LIFT (comes up with expose); brightest low, toward the glow */
+    /* warm sunrise LIFT — DIRECTIONAL, raking FROM the sun (left horizon).
+       Anchored at the measured sun (17% x, 55% horizon-y), brightest there and
+       falling off across the frame toward the right, so the warm light visibly
+       comes FROM the sun instead of lifting the whole frame uniformly. The wide
+       ellipse (170% × 120%) carries the warm tail rightward along the horizon
+       band; the long 0%→78% stops keep it smooth & continuous (no banding). */
     radial-gradient(
-        ellipse 140% 95% at 32% 92%,
-        rgba(255, 236, 200, calc(0.50 * var(--cdesert-expose))) 0%,
-        rgba(255, 206, 150, calc(0.30 * var(--cdesert-expose))) 38%,
-        rgba(255, 188, 130, 0) 72%
+        ellipse 170% 120% at 17% 55%,
+        rgba(255, 236, 200, calc(0.56 * var(--cdesert-expose))) 0%,
+        rgba(255, 210, 156, calc(0.34 * var(--cdesert-expose))) 34%,
+        rgba(255, 192, 134, calc(0.12 * var(--cdesert-expose))) 56%,
+        rgba(255, 188, 130, 0) 78%
       ),
-    /* cool pre-dawn DEEPEN (fades out as expose rises) */
+    /* cool pre-dawn DEEPEN (fades out as expose rises) — uniform vertical sink,
+       slightly cooler on the right (away from the sun) so the dark side reads
+       deepest opposite the glow. Pre-dawn shadow is non-directional, so this
+       stays a gentle vertical wash; the WARM layer above carries the direction. */
     linear-gradient(
-        180deg,
-        rgba(18, 26, 64, calc(0.34 * (1 - var(--cdesert-expose)))) 0%,
-        rgba(14, 18, 50, calc(0.42 * (1 - var(--cdesert-expose)))) 55%,
+        110deg,
+        rgba(14, 20, 56, calc(0.30 * (1 - var(--cdesert-expose)))) 0%,
+        rgba(14, 18, 50, calc(0.40 * (1 - var(--cdesert-expose)))) 55%,
         rgba(8, 11, 34, calc(0.52 * (1 - var(--cdesert-expose)))) 100%
       );
 }
 .cdesert-exposure--warm { --cdesert-expose: 1; }
 
-/* -- Sun glow: radial bloom rising from the horizon. GSAP drives y/scale/op. -- */
+/* -- Sun glow: radial bloom rising from the horizon, anchored to the REAL sun.
+   MEASURED from public/images/cinematic/source/dawn-vista.png (Pillow+numpy):
+   the pre-dawn glow peaks on the LEFT horizon — sky-band luminance peak at
+   x≈0.15, glow argmax x≈0.18, horizon y≈0.55 (the sky is 1.47× brighter on the
+   left edge than the right). So the bloom emanates from x≈17% / y≈55%, NOT 50%.
+   The element's horizontal CENTER is parked at 17% (left:17% + margin-left:-35vmax).
+   `bottom` raises the element so its bloom CRESTS at the horizon as GSAP lifts
+   yPercent (18→-6) over scroll — the existing rise is preserved, just over the
+   left sun. GSAP drives y/scale/opacity (transform-only), so it owns transform;
+   we never set transform here. -- */
 .cdesert-sun {
   position: absolute;
-  left: 50%;
-  bottom: -6%;
+  left: 17%; /* sun x ≈ 0.17 (measured left-horizon glow), was 50% center */
+  bottom: 6%; /* lifts the bloom centre toward the horizon (~55% down) as it rises */
   z-index: 35;
   width: 70vmax;
   height: 70vmax;
-  margin-left: -35vmax;
+  margin-left: -35vmax; /* centre the 70vmax bloom on left:17% */
   pointer-events: none;
   will-change: transform, opacity;
   opacity: 0;
