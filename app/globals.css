@@ -1166,7 +1166,15 @@ img::before {
   width: 100%;
   overflow: hidden;
   isolation: isolate;
-  background: #1B1740; /* pre-dawn fallback behind the sky plate */
+  /* RECUT 2026-06-02 — WARM DAWN fallback (was #1B1740, a cold pre-dawn navy from
+     the old night→day design). The pin background shows in exactly two places: (a)
+     for the brief moment on load before the eager sky plate decodes+paints, and (b)
+     faintly through the mid→arrival cross-dissolve (each group's opacity dips, so
+     ~25% of the pin shows at the crossover). A cold navy there read as a dark
+     flash on an otherwise warm, daylight piece. This soft lavender→terracotta dawn
+     wash makes the load flash a blurred warm valley and keeps the dissolve warm —
+     never a cold/dark blink. The opaque sky plate fully hides it at rest. */
+  background: linear-gradient(180deg, #847f97 0%, #9a7a6e 50%, #5e3e32 100%);
 }
 
 /* -- A SCENE GROUP: one beat's full depth stack + its sun, stacked full-bleed.
@@ -1213,25 +1221,22 @@ img::before {
   pointer-events: none;
   mix-blend-mode: multiply;
   --cdesert-grade-mix: 0;
+  /* RECUT 2026-06-02 — DAYTIME OPEN. The cool blue/purple base that used to sit
+     UNDER the warm layer is REMOVED. It existed for the old night→day 3-beat (a
+     pre-dawn blue-hour open); this 2-scene recut opens in the warm DAYLIGHT mid
+     valley — Sky's brief is explicit: "the mid photo is daylight, NOT a forced
+     dark open." With the cool base gone, at --cdesert-grade-mix:0 this multiply
+     layer is fully TRANSPARENT (a no-op — the valley shows in its own warm
+     daylight, no crush), and as GSAP ramps the mix 0→1 down the descent the warm
+     golden grade builds on top, landing the arrival cliff in full gold. The
+     arrival look is unchanged (the cool base was already at 0 by mix=1). EVEN
+     warm wash, no hotspot, no bloom. */
   background:
-    /* warm layer (revealed by the mix var). RECUT 2026-06-02 — EVEN WARM WASH, no
-       hotspot. The old radial-gradient anchored a bright warm disc above the
-       horizon center; that localized brightness was part of the glare Sky saw.
-       Replaced with a smooth FULL-FRAME vertical warm wash (top→bottom, gently
-       warmer toward the lower frame where the ground sits) — even across the whole
-       width, no bright spot anywhere. Keeps the warm golden TONE; just no disc. */
     linear-gradient(
         180deg,
         rgba(245, 196, 138, calc(0.30 * var(--cdesert-grade-mix))) 0%,
         rgba(224, 154, 94, calc(0.30 * var(--cdesert-grade-mix))) 50%,
         rgba(176, 104, 58, calc(0.26 * var(--cdesert-grade-mix))) 100%
-      ),
-    /* cool base (fades out as warm comes up) */
-    linear-gradient(
-        180deg,
-        rgba(43, 58, 110, calc(0.40 * (1 - var(--cdesert-grade-mix)))) 0%,
-        rgba(58, 35, 86, calc(0.30 * (1 - var(--cdesert-grade-mix)))) 70%,
-        rgba(27, 23, 64, calc(0.34 * (1 - var(--cdesert-grade-mix)))) 100%
       );
 }
 .cdesert-grade--warm { --cdesert-grade-mix: 1; }
@@ -1256,33 +1261,21 @@ img::before {
   pointer-events: none;
   mix-blend-mode: overlay;
   --cdesert-expose: 0;
+  /* RECUT 2026-06-02 — DAYTIME OPEN. The cool navy "morning-shade deepen" that
+     used to sit UNDER the warm lift is REMOVED (same reason as the grade above):
+     on an overlay blend it sank the daylight valley toward a cold blue-hour dusk
+     at p=0 (the dark open Sky kept seeing). Dani had already softened it, but on
+     a daytime mid plate ANY cool deepen at rest fights the brief. With it gone,
+     at --cdesert-expose:0 this overlay is fully TRANSPARENT (no-op — the daylight
+     valley is intact); as GSAP ramps the expose 0→1 the warm sunrise LIFT opens
+     the midtones toward gold for the arrival. EVEN full-frame wash, no disc, no
+     bloom. */
   background:
-    /* warm sunrise LIFT — RECUT 2026-06-02: EVEN WARM WASH, no hotspot. The old
-       radial put a bright lift disc on the horizon band; on an overlay blend that
-       localized brightness was the bloom/flash. Replaced with a smooth FULL-FRAME
-       vertical warm lift (even across the width, a touch stronger up top where the
-       sky opens, easing down) so the midtones lift toward gold WITHOUT any bright
-       spot. Long, gentle stops → smooth & continuous, no banding, no disc. */
     linear-gradient(
         180deg,
         rgba(255, 224, 182, calc(0.34 * var(--cdesert-expose))) 0%,
         rgba(255, 210, 160, calc(0.30 * var(--cdesert-expose))) 45%,
         rgba(255, 196, 140, calc(0.24 * var(--cdesert-expose))) 100%
-      ),
-    /* cool MORNING-SHADE deepen (fades out as expose rises) — a gentle vertical
-       sink, deepest at the bottom of the frame. RE-TUNED (Dani 2026-06-02):
-       0.40/0.52/0.66 → 0.20/0.28/0.38. Sky's brief is explicit — the mid photo is
-       DAYLIGHT, so the open must read as warm EARLY MORNING, not a forced blue-hour
-       night that crushed the daylight valley to a cold silhouette (measured: the
-       valley sank to a dim blue dusk at p=0). The lighter, less-saturated cool layer
-       keeps a soft cool morning-shade in the lower frame (so the golden lift still
-       has somewhere to climb FROM) without killing the daylight. As expose rises it
-       releases completely. Non-directional; the WARM layer above carries direction. */
-    linear-gradient(
-        180deg,
-        rgba(28, 34, 74, calc(0.20 * (1 - var(--cdesert-expose)))) 0%,
-        rgba(26, 32, 68, calc(0.28 * (1 - var(--cdesert-expose)))) 55%,
-        rgba(18, 22, 52, calc(0.38 * (1 - var(--cdesert-expose)))) 100%
       );
 }
 .cdesert-exposure--warm { --cdesert-expose: 1; }
@@ -1467,7 +1460,10 @@ img::before {
   height: 100%;
   overflow: hidden;
   isolation: isolate;
-  background: #1B1740;
+  /* RECUT 2026-06-02 — warm golden-dawn fallback behind the arrival cliff (was
+     #1B1740 navy). The static frame IS the golden destination shot; a cold navy
+     base fought it. Warm wash sits invisibly behind the opaque cliff/sky plates. */
+  background: linear-gradient(180deg, #7e6e82 0%, #a07254 50%, #6a4634 100%);
 }
 
 /* Reduced motion: the pin/timeline never mount because we render the static
