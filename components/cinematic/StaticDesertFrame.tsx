@@ -1,18 +1,27 @@
+import type { CSSProperties } from 'react';
+
 import { FilmGrain } from './FilmGrain';
-import { ARRIVAL_ID, PLATES, srcFor, type Plate } from './plates';
+import { ARRIVAL_ID, PLATES, SCENES, srcFor, type Plate } from './plates';
 
 /**
  * StaticDesertFrame — a single composed frame at the ARRIVAL state, with NO
  * ScrollTrigger, NO timeline, and no motion of its own. This is what we render
  * for users who prefer reduced motion and for narrow (phone) viewports, where a
- * 500vh pinned scroll-hijack would be hostile.
+ * 680vh pinned scroll-hijack would be hostile.
  *
- * It paints the same plates as the live scene but frozen at roughly their p≈1
- * end transforms (near-rockface risen to fill the lower frame, sky-day shown,
- * foreground already drifted past and faded out), the warm grade, the resolved
- * title, and the grain/vignette finish. The result reads as the destination
- * shot — the same place the animated push arrives at — so nothing feels missing.
+ * It paints the ARRIVAL beat's planes (the golden fluted cliff — the most
+ * impressive frame of the piece) frozen near their p≈1 transforms (wall risen to
+ * fill the frame, talus settled), the warm grade + lifted exposure, the golden
+ * sun parked at the arrival crest, the resolved title, and the grain/vignette
+ * finish. The result IS the destination shot, so nothing feels missing.
+ *
+ * (PLATES resolves to the ARRIVAL scene's planes — see plates.ts back-compat
+ * aliases — so this stays the golden cliff even though the live scene now has
+ * three beats.)
  */
+
+/** The arrival beat's measured sun (upper-right crest), for the static bloom. */
+const ARRIVAL_SUN = SCENES[SCENES.length - 1]?.sun ?? { x: 0.7, y: 0.3 };
 
 /** End-state opacity for a plate (its post-p1 value if it has an opacity ramp). */
 function endOpacity(plate: Plate): number {
@@ -51,10 +60,19 @@ export function StaticDesertFrame() {
           );
         })}
 
-        {/* warm grade + lifted exposure held at the sunrise end of the arc */}
+        {/* warm grade + lifted exposure held at the golden end of the arc */}
         <div className="cdesert-grade cdesert-grade--warm" aria-hidden="true" />
         <div className="cdesert-exposure cdesert-exposure--warm" aria-hidden="true" />
-        <div className="cdesert-sun cdesert-sun--bloom" aria-hidden="true" />
+        <div
+          className="cdesert-sun cdesert-sun--bloom"
+          style={
+            {
+              '--sun-x': `${ARRIVAL_SUN.x * 100}%`,
+              '--sun-y': `${ARRIVAL_SUN.y * 100}%`,
+            } as CSSProperties
+          }
+          aria-hidden="true"
+        />
 
         {/* resolved wordmark */}
         <div className="cdesert-title cdesert-title--resolved">
