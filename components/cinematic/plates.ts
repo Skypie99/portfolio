@@ -182,19 +182,20 @@ const MID_SCENE: Scene = {
 const ARRIVAL_SCENE: Scene = {
   id: 'arrival-cliff',
   arrivalId: 'arrival-cliff',
-  range: { start: 0.4, end: 1.0 }, // dolly begins early (0.40) — the cliff is pushing up under the dissolve
-  // THE dissolve (in). 0.44 → 0.54 (REFINE 2026-06-02: dust REMOVED — a short,
-  // front-loaded fade behind a PRE-GROWN cliff). The group fade is power2.out, so the
-  // cliff reaches ~85% opaque by ~p0.47; because arrival-cliff is pre-grown + lowered
-  // (scaleFrom 1.12 / yFrom 5), that brief translucent window happens behind a wall
-  // that already covers most of the frame → the valley is occluded by POSITION, not
-  // masked by dust, so there is no see-through ghost. The wall keeps GROWING as it
-  // lands (camera ARRIVING, not a still). MID holds opaque underneath (incoming-only)
-  // so there's no gap; arrival HOLDS to p=1.
-  //   arrival-sky.png has faint top-edge inpaint streaks; the rising cliff + the warm
-  //   sky-wash cover the upper frame by the time the plane is legible. If any streak
-  //   ever peeks, bump start 0.44 → 0.46.
-  fadeIn: { start: 0.44, end: 0.54 },
+  range: { start: 0.32, end: 0.62 }, // REFINE 2026-06-02: phase-1 shares the MID valley's window {…,0.62} so the cliff CO-MOVES with it (matched scale+velocity through the blend → seamless, not jarring); lands on 1.30 at 0.62, then arrival-cliff.phase2 carries it on
+  // THE dissolve (in). 0.42 → 0.58 (REFINE 2026-06-02: longer + softer — a GRADUAL
+  // emergence, not a snap). dust REMOVED. The group fade is power2.out (front-loaded,
+  // ~85% opaque early). The cliff now CO-MOVES with the valley through the blend: its
+  // range starts at 0.32, so it's already dollying (scale ~1.225) when the fade opens
+  // at 0.42 — co-scaled (Δ≤0.01) and velocity-matched with the valley behind it, both
+  // warm sandstone under one grade. So the translucent window reads as a red-rock
+  // MATCH-DISSOLVE, not a see-through hole (no dust needed), and the camera never
+  // lurches (no static cliff over a fast valley). MID holds opaque underneath
+  // (incoming-only); arrival HOLDS to p=1.
+  //   arrival-sky.png has faint top-edge inpaint streaks; the rising cliff + warm
+  //   sky-wash cover the upper frame by the time it's legible. If any streak peeks,
+  //   bump start 0.42 → 0.44.
+  fadeIn: { start: 0.42, end: 0.58 },
   fadeOut: null, // holds to the end
   sun: { x: 0.7, y: 0.3 }, // (no bloom — sunMax 0; kept only as the element's anchor)
   sunMax: 0, // bloom REMOVED — the cliff photo is already golden-lit; the added glow read as cheap glare (Sky). Warmth comes only from the even wash.
@@ -217,20 +218,24 @@ const ARRIVAL_SCENE: Scene = {
       plateSrc: '/images/cinematic/arrival-cliff.png',
       placeholderSrc: '/images/cinematic/_placeholders/near-rockface.svg',
       transparent: true,
-      // RECUT 2026-06-02 — OCCLUSION-BY-MOTION (the dust is gone). The wall now
-      // arrives by COVERING the valley with its own opaque shape, not by a haze-masked
-      // crossfade. It's PRE-GROWN + lowered at the fade start (scaleFrom 1.04 → 1.12,
-      // yFrom 2 → 5) so that during the short fade-in it already fills most of the
-      // frame as a solid silhouette — the valley behind is hidden by POSITION, so
-      // there's no see-through ghost without dust. It keeps GROWING to scaleTo 1.30
-      // (yTo 4 → 7, settling WITH the floor at yTo 5) so it still reads as the camera
-      // dollying in, not a still. Both ends are warm sandstone at matched exposure →
-      // the brief blend reads as a red-rock match-cut, not a crossfade. (Δscale 0.18
-      // is gentle so the flutes don't smear at the end.)
-      scaleFrom: 1.12,
+      // RECUT 2026-06-02 — CO-MOVING DOLLY (the dust is gone). The wall arrives by
+      // COVERING the valley with its own opaque shape AND dollying in LOCKSTEP with it,
+      // so the camera push is continuous through the handoff (no lurch — the fix for
+      // the "jarring"). Its scene range is {0.32, 0.62} = the valley's window, so
+      // phase-1 tracks the valley's scale+velocity and LANDS on 1.30 EXACTLY at p0.62
+      // (scale gap ≤0.01, velocity ratio ~1 through the fade — vs the old pre-grown,
+      // near-static cliff that popped in over a fast valley). scaleFrom 1.20 (was 1.12)
+      // → MORE coverage during the fade AND closes the gap. yTo 6 settles WITH the
+      // floor (floor yTo 6). phase2 (0.62→1.0) re-accelerates the cliff (1.30→1.38) so
+      // it keeps dollying into the title hold and never freezes. Warm sandstone both
+      // ends → a red-rock match-dissolve, not a crossfade.
+      scaleFrom: 1.2,
       scaleTo: 1.3,
       yFrom: 5,
-      yTo: 7,
+      yTo: 6,
+      // 2nd-phase drift through the arrival (p0.62→1.0): keep dollying WITH the floor
+      // so the foreground + wall arrive as ONE and nothing freezes.
+      phase2: { toScale: 1.38, toY: 8, start: 0.62, end: 1.0 },
     },
   ],
 } as const;
