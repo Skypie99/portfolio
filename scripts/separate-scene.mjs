@@ -48,8 +48,8 @@
  *
  * ── USAGE ───────────────────────────────────────────────────────────────────
  *   node scripts/separate-scene.mjs \
- *     --src public/images/cinematic/source/dawn-vista.png \
- *     --out public/images/cinematic --scene dawn --layout vista \
+ *     --src cinematic-masters/source/dawn-vista.png \
+ *     --out cinematic-masters/planes --scene dawn --layout vista \
  *     --horizon 0.47 --fg 0.72 [--feather 0.012] [--seed 0.06]
  *
  * Fractions are of image HEIGHT, origin top (0=top, 1=bottom).
@@ -59,7 +59,10 @@
  *   --seed     how far above the horizon to sample the sky-fill seed row.
  *   --skygrad  (cliff only) how far below the sliver to extend the sky gradient.
  *
- * Output: {out}/{scene}-{plane}.png (sky/mid/fg or sky/cliff/fg).
+ * Output: {out}/{scene}-{plane}.png (sky/mid/fg or sky/cliff/fg) — LOSSLESS PNG
+ * masters. These are NOT shipped; scripts/encode-planes.mjs encodes them to the
+ * AVIF+WebP that actually ship under public/. Masters live in cinematic-masters/
+ * (outside public/, so the static export never copies them into out/).
  */
 
 import { existsSync, mkdirSync } from 'node:fs';
@@ -88,7 +91,7 @@ function parseArgs(argv) {
 
 const args = parseArgs(process.argv.slice(2));
 const SRC = args.src;
-const OUT = args.out ?? 'public/images/cinematic';
+const OUT = args.out ?? 'cinematic-masters/planes';
 const SCENE = args.scene;
 const LAYOUT = args.layout ?? 'vista'; // 'vista' | 'cliff'
 const FEATHER = args.feather ? Number(args.feather) : 0.012;

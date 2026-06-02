@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'react';
 
 import { FilmGrain } from './FilmGrain';
-import { ARRIVAL_ID, PLATES, SCENES, srcFor, type Plate } from './plates';
+import { ARRIVAL_ID, PLATES, SCENES, sourcesFor, srcFor, type Plate } from './plates';
 
 /**
  * StaticDesertFrame — a single composed frame at the ARRIVAL state, with NO
@@ -42,21 +42,25 @@ export function StaticDesertFrame() {
             ? plate.scaleTo * 0.86
             : plate.scaleFrom + (plate.scaleTo - plate.scaleFrom) * 0.7;
           const y = plate.yFrom + (plate.yTo - plate.yFrom) * 0.82;
+          const { avif, webp } = sourcesFor(plate);
           return (
-            <img
-              key={plate.id}
-              src={srcFor(plate)}
-              alt=""
-              aria-hidden="true"
-              draggable={false}
-              data-plate={plate.id}
-              className="cdesert-layer"
-              style={{
-                zIndex: i,
-                opacity: endOpacity(plate),
-                transform: `translateY(${y}%) scale(${scale})`,
-              }}
-            />
+            <picture key={plate.id}>
+              {avif && <source type="image/avif" srcSet={avif} />}
+              {webp && <source type="image/webp" srcSet={webp} />}
+              <img
+                src={srcFor(plate)}
+                alt=""
+                aria-hidden="true"
+                draggable={false}
+                data-plate={plate.id}
+                className="cdesert-layer"
+                style={{
+                  zIndex: i,
+                  opacity: endOpacity(plate),
+                  transform: `translateY(${y}%) scale(${scale})`,
+                }}
+              />
+            </picture>
           );
         })}
 
