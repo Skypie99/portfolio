@@ -1269,17 +1269,20 @@ img::before {
         rgba(255, 210, 160, calc(0.30 * var(--cdesert-expose))) 45%,
         rgba(255, 196, 140, calc(0.24 * var(--cdesert-expose))) 100%
       ),
-    /* cool pre-dawn DEEPEN (fades out as expose rises) — a vertical sink that reads
-       deepest at the bottom of the frame. Deepened (0.28/0.40/0.52 → 0.40/0.52/0.66)
-       so the OPEN sinks to true blue-hour silhouettes (a stop+ darker, the valley
-       reads as shape not detail) — Sky's "deep/dark start". As expose lifts this
-       releases completely, so the golden landing is earned against a real night.
-       Pre-dawn shadow is non-directional; the WARM layer above carries direction. */
+    /* cool MORNING-SHADE deepen (fades out as expose rises) — a gentle vertical
+       sink, deepest at the bottom of the frame. RE-TUNED (Dani 2026-06-02):
+       0.40/0.52/0.66 → 0.20/0.28/0.38. Sky's brief is explicit — the mid photo is
+       DAYLIGHT, so the open must read as warm EARLY MORNING, not a forced blue-hour
+       night that crushed the daylight valley to a cold silhouette (measured: the
+       valley sank to a dim blue dusk at p=0). The lighter, less-saturated cool layer
+       keeps a soft cool morning-shade in the lower frame (so the golden lift still
+       has somewhere to climb FROM) without killing the daylight. As expose rises it
+       releases completely. Non-directional; the WARM layer above carries direction. */
     linear-gradient(
         180deg,
-        rgba(13, 18, 52, calc(0.40 * (1 - var(--cdesert-expose)))) 0%,
-        rgba(12, 16, 46, calc(0.52 * (1 - var(--cdesert-expose)))) 55%,
-        rgba(7, 10, 30, calc(0.66 * (1 - var(--cdesert-expose)))) 100%
+        rgba(28, 34, 74, calc(0.20 * (1 - var(--cdesert-expose)))) 0%,
+        rgba(26, 32, 68, calc(0.28 * (1 - var(--cdesert-expose)))) 55%,
+        rgba(18, 22, 52, calc(0.38 * (1 - var(--cdesert-expose)))) 100%
       );
 }
 .cdesert-exposure--warm { --cdesert-expose: 1; }
@@ -1397,15 +1400,45 @@ img::before {
 .cdesert-vignette {
   position: absolute;
   inset: 0;
-  /* falloff starts a touch earlier (52→48%) and the corner is deepened
-     (0.50→0.55) for an archival print vignette that pulls the eye to centre
-     without reading as a tunnel. Warm-black tone preserved. */
-  background: radial-gradient(
-    ellipse 120% 100% at 50% 42%,
-    rgba(0, 0, 0, 0) 48%,
-    rgba(30, 14, 6, 0.32) 86%,
-    rgba(20, 9, 3, 0.55) 100%
-  );
+  /* TWO stacked layers, both normal-blend so they reliably tame the brightest
+     region of the frame (which the multiply grade + overlay exposure can't —
+     multiply only darkens a touch, overlay on a LIGHT area pushes it brighter).
+
+     1. WARM SKY WASH (Dani 2026-06-02) — a top-anchored amber→transparent wash.
+        The arrival-sky plate is a bright COLD band (measured rgb(175,209,232),
+        luma 201 — ~3× the cliff and blue-dominant); against the deep terracotta
+        wall it read as the "bright light at the end" (a cold blown patch pulling
+        the eye + breaking the golden-hour mood). This warm wash sits OVER the
+        upper frame and pulls that sky warm + gently down — exactly the warm
+        atmospheric sky-glow you get at golden hour — so the top reads as warm
+        morning sky, not cold daylight. Subtle on the mid opener (a warm haze),
+        decisive over the pale arrival sky. Paint-only, present at every position.
+     2. VIGNETTE — archival print falloff; the TOP corners are deepened a touch
+        more than the rest (a second top-biased radial) so the upper sky never
+        blooms bright at the edges. Warm-black tone preserved. */
+  background:
+    /* 1 — warm sky wash from the top */
+    linear-gradient(
+      180deg,
+      rgba(214, 130, 74, 0.30) 0%,
+      rgba(216, 140, 86, 0.16) 18%,
+      rgba(220, 150, 96, 0.05) 34%,
+      rgba(220, 150, 96, 0.0) 48%
+    ),
+    /* 2a — top-biased corner deepen (tames upper-sky edge brightness) */
+    radial-gradient(
+      ellipse 140% 70% at 50% 0%,
+      rgba(28, 14, 7, 0.0) 52%,
+      rgba(26, 13, 6, 0.16) 82%,
+      rgba(22, 11, 5, 0.30) 100%
+    ),
+    /* 2b — main archival vignette */
+    radial-gradient(
+      ellipse 120% 100% at 50% 42%,
+      rgba(0, 0, 0, 0) 48%,
+      rgba(30, 14, 6, 0.32) 86%,
+      rgba(20, 9, 3, 0.55) 100%
+    );
 }
 .cdesert-tint {
   position: absolute;

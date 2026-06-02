@@ -296,74 +296,86 @@ export function CinematicDesert() {
         }
       });
 
-      // ── ONE continuous hue grade: cool-blue → warm-gold across the whole p ──
+      // ── ONE continuous hue grade: warm-morning → warm-gold across the whole p ──
+      // RE-TUNED (Dani 2026-06-02): starts at 0.35, not 0. The open is warm DAYLIGHT
+      // (see the exposure note), so the hue grade must not slam a full cool-blue
+      // multiply over the valley at p=0 (that was part of the cold open). Beginning
+      // partway-warm means the morning already reads warm, and the grade still travels
+      // a long, even way up to full gold for the arrival. sine.inOut → no banding.
       if (gradeRef.current) {
         tl.fromTo(
           gradeRef.current,
-          { '--cdesert-grade-mix': 0 },
+          { '--cdesert-grade-mix': 0.35 },
           { '--cdesert-grade-mix': 1, duration: 1, ease: 'sine.inOut' },
           0,
         );
       }
 
-      // ── ONE continuous exposure ramp: deep pre-dawn → golden ───────────────
-      // Authored to the lockfile curve: dark/cool at p=0, slow lift through dawn,
-      // a WARM-but-LOW plateau across MID (no daytime spike), then the gold
-      // accelerates after p≈0.74 so arrival earns its warmth. We shape the
-      // monotonic curve with keyframes (custom-prop tween) instead of a single
-      // ease so the MID plateau + late-gold acceleration are explicit.
+      // ── ONE continuous exposure ramp: warm MORNING → golden-hour ───────────
+      // RE-AUTHORED (Dani 2026-06-02). Sky's brief is explicit: the recut OPENS in
+      // the daylight MID valley, so this is NOT a forced dark/pre-dawn open — it's a
+      // gentle warm-morning → golden-hour LIFT. The old curve opened at a true 0 with
+      // a deep night-hold, which crushed the daylight photo to a cold blue dusk at the
+      // top (measured). We now OPEN already warm-lit (~0.30 — soft early morning, the
+      // valley reads as daylight with a touch of cool morning-shade left in the lower
+      // frame), then climb smoothly, with the gold still ACCELERATING late so the
+      // arrival cliff earns the richest, most golden light.
       if (exposureRef.current) {
         const ex = exposureRef.current;
-        // The curve, knot by knot (every segment sine.inOut so slopes meet smoothly
-        // — no kink, no banding). Deep-held open → slow dawn lift → MID plateau →
-        // late-gold acceleration after p≈0.74 → full gold at p1. Floor starts at a
-        // true 0 (the CSS cool-deepen, slightly deepened below, sinks the opening to
-        // silhouettes) and the first move is small + late so the night HOLDS and the
-        // eye adjusts before any warmth arrives.
+        // Knot by knot (every segment sine.inOut so slopes meet smoothly — no kink,
+        // no banding). Warm-morning open (0.30) → steady lift across the valley push →
+        // through the dissolve → late-gold acceleration after p≈0.74 → full golden at
+        // p1. Monotonic, gentle, even.
         tl.fromTo(
           ex,
-          { '--cdesert-expose': 0 },
-          { '--cdesert-expose': 0.05, duration: 0.16, ease: 'sine.inOut' }, // deep hold
+          { '--cdesert-expose': 0.3 },
+          { '--cdesert-expose': 0.36, duration: 0.18, ease: 'sine.inOut' }, // warm-morning open, soft lift
           0,
         )
-          .to(ex, { '--cdesert-expose': 0.18, duration: 0.2, ease: 'sine.inOut' }, 0.16) // dawn begins to lift
-          .to(ex, { '--cdesert-expose': 0.34, duration: 0.18, ease: 'sine.inOut' }, 0.36) // through dissolve A
-          .to(ex, { '--cdesert-expose': 0.42, duration: 0.16, ease: 'sine.inOut' }, 0.54) // MID plateau (~0.42 @ p0.55)
-          .to(ex, { '--cdesert-expose': 0.48, duration: 0.16, ease: 'sine.inOut' }, 0.7) // plateau holds low to p0.70
-          .to(ex, { '--cdesert-expose': 0.66, duration: 0.12, ease: 'sine.in' }, 0.74) // gold ACCELERATES (after 0.74)
-          .to(ex, { '--cdesert-expose': 0.86, duration: 0.12, ease: 'sine.inOut' }, 0.86)
-          .to(ex, { '--cdesert-expose': 1, duration: 0.02, ease: 'sine.out' }, 0.98); // full golden at p1
+          .to(ex, { '--cdesert-expose': 0.44, duration: 0.18, ease: 'sine.inOut' }, 0.18) // morning warms over the valley
+          .to(ex, { '--cdesert-expose': 0.54, duration: 0.18, ease: 'sine.inOut' }, 0.36) // through the dissolve
+          .to(ex, { '--cdesert-expose': 0.6, duration: 0.16, ease: 'sine.inOut' }, 0.54) // cliff resolving, still climbing
+          .to(ex, { '--cdesert-expose': 0.66, duration: 0.16, ease: 'sine.inOut' }, 0.7) // approaching golden
+          .to(ex, { '--cdesert-expose': 0.8, duration: 0.12, ease: 'sine.in' }, 0.74) // gold ACCELERATES (after 0.74)
+          .to(ex, { '--cdesert-expose': 0.92, duration: 0.12, ease: 'sine.inOut' }, 0.86)
+          .to(ex, { '--cdesert-expose': 1, duration: 0.02, ease: 'sine.out' }, 0.98); // full golden-hour at p1
       }
 
       // ── atmospheric haze: swells into THE DISSOLVE, clears as the cliff lands ──
       // The single merged haze band carries the mid→arrival leap so the cliff
-      // resolves IN through dust rather than cutting. RECUT 2026-06-02 — retuned to
-      // the new (earlier) dissolve window (p0.46–0.62): the swell starts ~p0.40 so
-      // the opener stays crisp, peaks at the dissolve heart (~p0.53) so the wall
-      // genuinely materialises out of haze, then clears as the cliff settles (by
-      // ~p0.64). sine.inOut so the dust breathes in and out — no edge.
+      // resolves IN through dust rather than cutting. Dani 2026-06-02 — retuned to the
+      // wider dissolve (p0.46–0.66): the swell starts ~p0.40 (opener stays crisp),
+      // rises a touch deeper and peaks slightly LATER (~p0.55, the heart of the now-
+      // longer resolve) so the wall genuinely materialises OUT of the densest dust as
+      // it grows, then clears gently as the cliff settles (by ~p0.68). A 3-knot rise
+      // (0.40→0.50→0.55) makes the swell itself smoother. sine.inOut so the dust
+      // breathes in and out — no edge.
       if (hazeRef.current) {
         tl.fromTo(
           hazeRef.current,
           { opacity: 0 },
-          { opacity: 0.58, duration: 0.13, ease: 'sine.inOut' },
+          { opacity: 0.4, duration: 0.1, ease: 'sine.inOut' },
           0.4,
-        ).to(hazeRef.current, { opacity: 0.05, duration: 0.13, ease: 'sine.inOut' }, 0.56);
+        )
+          .to(hazeRef.current, { opacity: 0.62, duration: 0.07, ease: 'sine.inOut' }, 0.5) // peak at the resolve heart
+          .to(hazeRef.current, { opacity: 0.05, duration: 0.13, ease: 'sine.inOut' }, 0.57); // clear as the cliff settles
       }
 
-      // ── title: carves in over p[0.84,0.95], then HOLDS to p=1 ──────────────
-      // Late (the gold has nearly landed), and graceful: it rises a hair, sharpens
-      // from a soft 9px blur, and fades up on power2.out so it SETTLES rather than
-      // pops. Once carved it holds fully opaque through the tail so the wordmark is
-      // the frame you're left on (lockfile: "carves in late and HOLDS").
+      // ── title: carves in over p[0.86,0.97], then HOLDS to p=1 ──────────────
+      // Late (the gold has fully landed on the cliff), and graceful: it rises a hair,
+      // sharpens from a soft 10px blur, and fades up on power2.out so it SETTLES
+      // rather than pops. Dani 2026-06-02: nudged a touch later (0.84→0.86) + a hair
+      // longer so it resolves over the FULLY golden cliff and the eye lands on the
+      // wordmark last. Once carved it holds fully opaque through the tail so the
+      // wordmark is the frame you're left on (lockfile: "carves in late and HOLDS").
       if (titleRef.current) {
         tl.fromTo(
           titleRef.current,
-          { opacity: 0, yPercent: 6, filter: 'blur(9px)' },
+          { opacity: 0, yPercent: 7, filter: 'blur(10px)' },
           { opacity: 1, yPercent: 0, filter: 'blur(0px)', duration: 0.11, ease: 'power2.out' },
-          0.84,
+          0.86,
         );
-        tl.to(titleRef.current, { opacity: 1, duration: 0.05 }, 0.95);
+        tl.to(titleRef.current, { opacity: 1, duration: 0.03 }, 0.97);
       }
     },
     { scope, dependencies: [animate] },
