@@ -9,13 +9,13 @@
  * Dani (cinematic 2.5D): also validates the cinematic depth planes.
  *   - When components/cinematic/plates.ts has USE_PLACEHOLDERS = true, this
  *     checks the 6 PLACEHOLDER svgs (the motion-mechanics rig) exist.
- *   - When USE_PLACEHOLDERS = false (the default now the real DAWN vista is
- *     separated), it requires the real scene planes
- *     /public/images/cinematic/<id>.png — currently the 3 dawn planes.
+ *   - When USE_PLACEHOLDERS = false (the default), it requires the real scene
+ *     planes /public/images/cinematic/<id>.png — all 9 across the 3 beats
+ *     (dawn / mid / arrival), unioned.
  *
  * Pivot note (2026-06-01): we no longer ship 6 isolated plates; Sky generates
  * whole vistas and we separate each into a small depth-plane stack. The real-art
- * id list below mirrors DAWN_SCENE.planes in plates.ts.
+ * id list below mirrors SCENES (DAWN+MID+ARRIVAL) in plates.ts.
  *
  * Run automatically as npm `prebuild` (wired in package.json).
  * Can also be run standalone: node scripts/validate-assets.mjs
@@ -32,11 +32,20 @@ const ROOT = resolve(__dirname, '..');
  *  Mirrors PLACEHOLDER_SCENE.planes in plates.ts. */
 const PLACEHOLDER_IDS = ['sky-dawn', 'sky-day', 'far-ridge', 'mid-mesa', 'near-rockface', 'foreground'];
 
-/** Real-art ids (separated vista depth planes), back → front. Used when
- *  USE_PLACEHOLDERS=false. Mirrors DAWN_SCENE.planes in plates.ts.
- *  (Kept as a literal here because plates.ts is TS and this script is plain ESM
- *  with no TS loader.) */
-const DAWN_PLANE_IDS = ['dawn-sky', 'dawn-mid', 'dawn-fg'];
+/** Real-art ids (separated vista depth planes), back → front, UNIONED across the
+ *  3 beats of the descent. Used when USE_PLACEHOLDERS=false. Mirrors
+ *  SCENES = [DAWN_SCENE, MID_SCENE, ARRIVAL_SCENE] in plates.ts — if a scene's
+ *  planes change there, grow/edit this list (it's a literal because plates.ts is
+ *  TS and this script is plain ESM with no TS loader). All 9 must exist or the
+ *  build is blocked at prebuild. */
+const SCENE_PLANE_IDS = [
+  // DAWN
+  'dawn-sky', 'dawn-mid', 'dawn-fg',
+  // MID
+  'mid-sky', 'mid-mid', 'mid-fg',
+  // ARRIVAL
+  'arrival-sky', 'arrival-cliff', 'arrival-fg',
+];
 
 /** Certificate badge images referenced from content/certificates.json. */
 function checkCertificates(publicDir) {
@@ -85,8 +94,8 @@ function checkCinematicPlates(publicDir) {
   const flag = usePlaceholders();
   if (flag === null) return { mode: 'skipped', count: 0, missing: [] };
 
-  // placeholder rig = the 6 grey SVGs; real art = the separated vista planes.
-  const ids = flag ? PLACEHOLDER_IDS : DAWN_PLANE_IDS;
+  // placeholder rig = the 6 grey SVGs; real art = the 9 separated beat planes.
+  const ids = flag ? PLACEHOLDER_IDS : SCENE_PLANE_IDS;
   const missing = [];
   for (const id of ids) {
     const rel = flag

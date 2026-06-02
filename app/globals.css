@@ -1076,7 +1076,7 @@ img::before {
 /* -- Stage: the scroll budget. ScrollTrigger pins .cdesert-pin inside. -- */
 .cdesert-stage {
   position: relative;
-  height: 500vh;     /* 5× viewport of scroll travel */
+  height: 680vh;     /* 3-beat descent: ~200vh of push per beat + dissolves */
   width: 100%;
 }
 
@@ -1147,6 +1147,18 @@ img::before {
   background: #1B1740; /* pre-dawn fallback behind the sky plate */
 }
 
+/* -- A SCENE GROUP: one beat's full depth stack + its sun, stacked full-bleed.
+   GSAP cross-dissolves the whole group's opacity on the dissolve windows so the
+   three beats fade through one another (no cut). Each group is its own stacking
+   context so its planes/sun composite together, then the group composites as a
+   unit. -- */
+.cdesert-scene {
+  position: absolute;
+  inset: 0;
+  isolation: isolate;
+  will-change: opacity;
+}
+
 /* -- A depth plate. The GSAP transform target. -- */
 .cdesert-layer {
   position: absolute;
@@ -1173,17 +1185,18 @@ img::before {
   mix-blend-mode: multiply;
   --cdesert-grade-mix: 0;
   background:
-    /* warm layer (revealed by the mix var) — DIRECTIONAL: the gold concentrates
-       on the SUN side (left horizon, anchored at 17%/55% to match the measured
-       sun) and eases toward neutral on the right, so the warm grade rakes from
-       the sun rather than tinting the frame uniformly. A faint vertical warm
-       underlay keeps the lower frame from going cold where the radial falls off
-       (continuous, no banding). */
+    /* warm layer (revealed by the mix var). The per-scene SUN element carries
+       the DIRECTIONAL bloom (center at dawn → upper-right at arrival); this
+       global grade is a BROAD warm wash anchored a touch above the horizon
+       center (50%/48%) that rakes upward, so it reinforces the sun without
+       fighting it or pinning warmth to one corner across all three beats. A
+       faint vertical warm underlay keeps the lower frame from going cold where
+       the radial falls off (continuous, no banding). */
     radial-gradient(
-        ellipse 165% 130% at 17% 55%,
-        rgba(255, 214, 150, calc(0.46 * var(--cdesert-grade-mix))) 0%,
-        rgba(224, 140, 82, calc(0.30 * var(--cdesert-grade-mix))) 42%,
-        rgba(150, 84, 46, calc(0.10 * var(--cdesert-grade-mix))) 72%,
+        ellipse 175% 135% at 50% 48%,
+        rgba(255, 214, 150, calc(0.44 * var(--cdesert-grade-mix))) 0%,
+        rgba(224, 140, 82, calc(0.28 * var(--cdesert-grade-mix))) 44%,
+        rgba(150, 84, 46, calc(0.10 * var(--cdesert-grade-mix))) 74%,
         rgba(127, 67, 35, 0) 100%
       ),
     linear-gradient(
@@ -1223,50 +1236,52 @@ img::before {
   mix-blend-mode: overlay;
   --cdesert-expose: 0;
   background:
-    /* warm sunrise LIFT — DIRECTIONAL, raking FROM the sun (left horizon).
-       Anchored at the measured sun (17% x, 55% horizon-y), brightest there and
-       falling off across the frame toward the right, so the warm light visibly
-       comes FROM the sun instead of lifting the whole frame uniformly. The wide
-       ellipse (170% × 120%) carries the warm tail rightward along the horizon
-       band; the long 0%→78% stops keep it smooth & continuous (no banding). */
+    /* warm sunrise LIFT — a BROAD lift centered on the horizon band (50%/52%),
+       brightest along the center horizon and easing up/out. The per-scene SUN
+       element provides the directional rake (center→upper-right across beats);
+       this global lift just opens the midtones as the sun crests, lifting the
+       whole frame toward gold without pinning to one corner. Wide ellipse +
+       long 0%→80% stops keep it smooth & continuous (no banding). */
     radial-gradient(
-        ellipse 170% 120% at 17% 55%,
-        rgba(255, 236, 200, calc(0.56 * var(--cdesert-expose))) 0%,
-        rgba(255, 210, 156, calc(0.34 * var(--cdesert-expose))) 34%,
-        rgba(255, 192, 134, calc(0.12 * var(--cdesert-expose))) 56%,
-        rgba(255, 188, 130, 0) 78%
+        ellipse 180% 130% at 50% 52%,
+        rgba(255, 236, 200, calc(0.54 * var(--cdesert-expose))) 0%,
+        rgba(255, 210, 156, calc(0.32 * var(--cdesert-expose))) 36%,
+        rgba(255, 192, 134, calc(0.12 * var(--cdesert-expose))) 58%,
+        rgba(255, 188, 130, 0) 80%
       ),
-    /* cool pre-dawn DEEPEN (fades out as expose rises) — uniform vertical sink,
-       slightly cooler on the right (away from the sun) so the dark side reads
-       deepest opposite the glow. Pre-dawn shadow is non-directional, so this
-       stays a gentle vertical wash; the WARM layer above carries the direction. */
+    /* cool pre-dawn DEEPEN (fades out as expose rises) — a gentle vertical sink
+       that reads deepest at the bottom of the frame. Pre-dawn shadow is
+       non-directional; the WARM layer above carries the direction. */
     linear-gradient(
-        110deg,
-        rgba(14, 20, 56, calc(0.30 * (1 - var(--cdesert-expose)))) 0%,
+        180deg,
+        rgba(14, 20, 56, calc(0.28 * (1 - var(--cdesert-expose)))) 0%,
         rgba(14, 18, 50, calc(0.40 * (1 - var(--cdesert-expose)))) 55%,
         rgba(8, 11, 34, calc(0.52 * (1 - var(--cdesert-expose)))) 100%
       );
 }
 .cdesert-exposure--warm { --cdesert-expose: 1; }
 
-/* -- Sun glow: radial bloom rising from the horizon, anchored to the REAL sun.
-   MEASURED from public/images/cinematic/source/dawn-vista.png (Pillow+numpy):
-   the pre-dawn glow peaks on the LEFT horizon — sky-band luminance peak at
-   x≈0.15, glow argmax x≈0.18, horizon y≈0.55 (the sky is 1.47× brighter on the
-   left edge than the right). So the bloom emanates from x≈17% / y≈55%, NOT 50%.
-   The element's horizontal CENTER is parked at 17% (left:17% + margin-left:-35vmax).
-   `bottom` raises the element so its bloom CRESTS at the horizon as GSAP lifts
-   yPercent (18→-6) over scroll — the existing rise is preserved, just over the
-   left sun. GSAP drives y/scale/opacity (transform-only), so it owns transform;
-   we never set transform here. -- */
+/* -- Sun glow: a radial bloom anchored to EACH BEAT's measured sun. The element
+   lives inside its scene group and is parked at that beat's glow via the
+   --sun-x / --sun-y custom props the component sets from plates.ts `scene.sun`
+   (fractions of the frame, origin top-left):
+       DAWN    x0.50 / y0.62  (sun rising DEAD-CENTER on the horizon)
+       MID     x0.62 / y0.40  (raking key from upper-right)
+       ARRIVAL x0.70 / y0.30  (warmest band on the upper-right crest)
+   One sun reads as travelling center→up-right across the descent because each
+   beat's sun is visible only while its group is (group opacity). The lockfile
+   §3 correction is satisfied here: DAWN is centered (x0.50), NOT the old 17%.
+   Negative margins center the 70vmax bloom on the anchor so GSAP can own
+   `transform` (yPercent/scale) without fighting a centering translate. -- */
 .cdesert-sun {
   position: absolute;
-  left: 17%; /* sun x ≈ 0.17 (measured left-horizon glow), was 50% center */
-  bottom: 6%; /* lifts the bloom centre toward the horizon (~55% down) as it rises */
+  left: var(--sun-x, 50%);
+  top: var(--sun-y, 60%);
   z-index: 35;
   width: 70vmax;
   height: 70vmax;
-  margin-left: -35vmax; /* centre the 70vmax bloom on left:17% */
+  margin-left: -35vmax; /* center the 70vmax bloom on the anchor x */
+  margin-top: -35vmax;  /* center it on the anchor y */
   pointer-events: none;
   will-change: transform, opacity;
   opacity: 0;
@@ -1333,9 +1348,15 @@ img::before {
   font-size: clamp(2.25rem, 6.5vw, 5.5rem);
   letter-spacing: 0.06em;
   /* warm near-white at high contrast (≥4.7:1) against the terracotta arrival
-     band; the text-shadow guarantees legibility over any plate tone. */
+     band. The brightest golden flutes read ~4.3:1 against the bone text at the
+     raw-plate level, so a layered warm-black shadow (a soft wide halation + two
+     tight passes) sinks the immediate ground behind the glyphs and guarantees
+     ≥4.7:1 over any plate tone — verified at p=0.97 over the arrival cliff. */
   color: #FFF6EC;
-  text-shadow: 0 2px 28px rgba(40, 18, 8, 0.78), 0 1px 3px rgba(40, 18, 8, 0.9);
+  text-shadow:
+    0 2px 30px rgba(28, 12, 4, 0.86),
+    0 1px 8px rgba(28, 12, 4, 0.92),
+    0 1px 3px rgba(28, 12, 4, 0.95);
   text-align: center;
   white-space: nowrap;
 }

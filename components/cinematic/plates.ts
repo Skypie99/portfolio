@@ -1,47 +1,45 @@
 /**
  * plates.ts — the data-driven manifest for the 2.5D camera-push desert.
  *
- * ── PIVOT (2026-06-01, Dani) ────────────────────────────────────────────────
- * We are NO LONGER compositing 6 isolated AI plates. Sky now generates whole
- * cohesive SCENES (one Midjourney vista) and we separate each scene into a small
- * stack of DEPTH PLANES (transparent PNGs) on disk. The engine drives that plane
- * stack with one GSAP timeline exactly as before — the choreography model
- * (scale + yPercent + opacity over progress p) is unchanged.
+ * ── 3-BEAT DESCENT (2026-06-01, Dani) ───────────────────────────────────────
+ * The piece is now a single continuous scroll-scrubbed camera push through THREE
+ * beats, no cuts:
  *
- * The active scene is described by `ACTIVE_SCENE` below: its planes (back→front)
- * each carry their own depth transform. CinematicDesert.tsx reads `PLATES`
- * (which is just `ACTIVE_SCENE.planes`) and animates them; nothing in the engine
- * knows or cares that the art now comes from one separated vista instead of six
- * generated plates.
+ *   DAWN    deep cool blue-hour Monument Valley vista → pushes into the valley
+ *   ↳ dissolve A (near-seamless — same valley, central-spire lock holds)
+ *   MID     warmer daylight, same valley pushed closer → continues forward
+ *   ↳ dissolve B (the one real leap — valley → cliff, resolved IN through haze)
+ *   ARRIVAL golden close-up of a fluted sandstone cliff → title carves + HOLDS
  *
- * Ordering: back → front (index 0 renders furthest back). The render layers the
- * array in order with ascending z-index, so a nearer plane always composites on
- * top of everything behind it.
+ * Each beat is a whole Midjourney vista SEPARATED into a small stack of depth
+ * planes (transparent PNGs) by scripts/separate-scene.mjs. The engine drives the
+ * planes with ONE GSAP timeline (progress p ∈ [0,1]); each scene's planes animate
+ * within that scene's `range`, and the three scene GROUPS cross-dissolve on their
+ * `dissolve` windows. No second timeline, no per-frame listeners.
  *
- * Transform model (matches Dani's director blueprint):
- *   scaleFrom/scaleTo — GSAP `scale`, grows over progress p (nearer = larger Δ
- *                       = reads as a forward dolly).
- *   yFrom/yTo         — GSAP `yPercent` (percent of the element's own height),
- *                       drift. Positive = downward. Transform-only; we NEVER
- *                       animate top/left/width/height.
- *   opacity           — optional crossfade/reveal, ramped over a sub-range
- *                       [p0,p1] of the master progress (outside the range it
- *                       holds at `from` before p0 and `to` after p1).
+ * Authority: designs/AESTHETIC_LOCKFILE.md (commit 46fbc19). The dissolve
+ * windows, exposure ramp, and per-scene sun positions below are transcribed from
+ * §1, §3, §4 of that lockfile.
  *
- * All numbers are authored against progress p ∈ [0,1] across the pinned range.
+ * Ordering within a scene: back → front (index 0 furthest back). The render
+ * layers each scene's array with ascending z-index so a nearer plane always
+ * composites over everything behind it.
  *
- * SOURCE-RESOLUTION NOTE: the dawn vista is 1680×720 (21:9). That's fine for this
- * prototype, but the near plane scales to ~2.4× at the deepest push, so the final
- * cut likely wants a 2× upscale of the source (→3360×1440) so the foreground
- * stays crisp at full dolly. Flagged for Sky.
+ * Transform model (unchanged):
+ *   scaleFrom/scaleTo — GSAP `scale`; nearer = larger Δ = forward dolly.
+ *   yFrom/yTo         — GSAP `yPercent` (percent of the element's own height).
+ *   opacity           — optional per-plane reveal/exit over a sub-range [p0,p1].
+ * All numbers are authored against the SCENE's local progress (0→1 across its
+ * `range`), so a plane's depth ramp is independent of where its scene sits on the
+ * master timeline. Transform-only; we NEVER animate top/left/width/height.
  */
 
 export type PlateOpacity = {
   from: number;
   to: number;
-  /** progress at which the opacity ramp starts */
+  /** progress at which the opacity ramp starts (scene-local) */
   p0: number;
-  /** progress at which the opacity ramp ends */
+  /** progress at which the opacity ramp ends (scene-local) */
   p1: number;
 };
 
@@ -58,15 +56,18 @@ export type Plate = {
   transparent: boolean;
   scaleFrom: number;
   scaleTo: number;
-  /** yPercent at p=0 */
+  /** yPercent at scene-local p=0 */
   yFrom: number;
-  /** yPercent at p=1 */
+  /** yPercent at scene-local p=1 */
   yTo: number;
   /** optional opacity ramp; omitted = fully opaque the whole way */
   opacity?: PlateOpacity;
 };
 
-/** A whole separated vista: a back→front stack of depth planes + the arrival id. */
+/** Master-timeline window [start,end] in p∈[0,1]. */
+export type Range = { start: number; end: number };
+
+/** A whole separated vista: a back→front stack of depth planes + choreography. */
 export type Scene = {
   /** stable scene id (also the source vista stem) */
   id: string;
@@ -74,35 +75,42 @@ export type Scene = {
   planes: readonly Plate[];
   /** which plane the camera push resolves onto (the arrival subject) */
   arrivalId: string;
+  /** the master-timeline window over which this scene's planes do their push */
+  range: Range;
+  /** group cross-dissolve IN window (opacity 0→1) on the master timeline */
+  fadeIn: Range;
+  /** group cross-dissolve OUT window (opacity 1→0); null = holds to p=1 */
+  fadeOut: Range | null;
+  /** measured sun/brightest-point for this beat, fraction of frame (origin TL) */
+  sun: { x: number; y: number };
+  /** peak opacity of this beat's sun bloom. Dawn is a SUBTLE pre-dawn glow; the
+   *  big bright bloom is reserved for arrival (golden). Keeps the dawn beat's
+   *  negative space + low key intact (lockfile §1, §6). */
+  sunMax: number;
 };
 
 /**
  * THE FLIP. When `true`, the engine renders the grey SVG placeholders (the
- * motion-mechanics phase). Now that the real DAWN scene planes exist on disk we
- * default to `false` so the photographic separated vista drives the scene; the
- * placeholder code path is kept intact (and simply unused) so the mechanics rig
- * can be re-enabled by flipping this one line. validate-assets.mjs reads this:
- * false → it enforces the real scene planes exist.
+ * motion-mechanics phase). The real 3-beat scenes exist on disk, so we default to
+ * `false`. validate-assets.mjs reads this: false → it enforces the real scene
+ * planes exist (all 9, unioned across the 3 scenes).
  */
 export const USE_PLACEHOLDERS = false;
 
 /**
- * ── THE DAWN VISTA, separated into 3 depth planes ───────────────────────────
- * Source: public/images/cinematic/source/dawn-vista.png (Midjourney, cleared to
- * ship). Separated by components/cinematic separation pass (sky/mid/fg).
- *
- *   dawn-sky → back layer, barely moves (the distant backdrop)
- *   dawn-mid → buttes + mesas + valley floor; grow as we approach
- *   dawn-fg  → near red ledge + sage scrub; races down past the camera
- *
- * Depth ramps per Dani's director blueprint:
- *   sky   scale 1.04→1.10, y  0→-1   (parallax floor; almost still)
- *   mid   scale 1.00→1.60, y  0→+8   (buttes loom)
- *   fg    scale 1.15→2.40, y +4→+34  (foreground rushes by)
+ * ── BEAT 1 — DAWN VISTA (3 depth planes) ────────────────────────────────────
+ * Source: source/dawn-vista.png. Separated (vista layout) into sky/mid/fg.
+ * Depth ramps (scene-local p): sky barely moves; mid (buttes+valley) looms; fg
+ * (near red ledge + scrub) races down past the camera. Cool, dark, vast.
  */
-export const DAWN_SCENE: Scene = {
+const DAWN_SCENE: Scene = {
   id: 'dawn-vista',
   arrivalId: 'dawn-mid',
+  range: { start: 0.0, end: 0.46 },
+  fadeIn: { start: 0.0, end: 0.0 }, // already on screen at p=0
+  fadeOut: { start: 0.36, end: 0.42 }, // dissolve A
+  sun: { x: 0.5, y: 0.62 }, // warm glow dead-center on the horizon (sun rising center)
+  sunMax: 0.34, // SUBTLE — pre-dawn glow only; the deep cold quiet keeps its dark
   planes: [
     {
       id: 'dawn-sky',
@@ -111,7 +119,7 @@ export const DAWN_SCENE: Scene = {
       placeholderSrc: '/images/cinematic/_placeholders/sky-dawn.svg',
       transparent: false,
       scaleFrom: 1.04,
-      scaleTo: 1.1,
+      scaleTo: 1.12,
       yFrom: 0,
       yTo: -1,
     },
@@ -133,7 +141,7 @@ export const DAWN_SCENE: Scene = {
       placeholderSrc: '/images/cinematic/_placeholders/foreground.svg',
       transparent: true,
       scaleFrom: 1.15,
-      scaleTo: 2.4,
+      scaleTo: 2.5,
       yFrom: 4,
       yTo: 34,
     },
@@ -141,14 +149,129 @@ export const DAWN_SCENE: Scene = {
 } as const;
 
 /**
+ * ── BEAT 2 — MID APPROACH (3 depth planes) ──────────────────────────────────
+ * Source: source/mid-approach.png. Separated (vista layout) into sky/mid/fg.
+ * Same valley pushed closer; the central twin spires stay dead-center (the
+ * continuity lock with dawn). Warmer, but graded LOW (the engine grade keeps it
+ * off a daytime spike). The push CONTINUES forward through the dissolve.
+ */
+const MID_SCENE: Scene = {
+  id: 'mid-approach',
+  arrivalId: 'mid-mid',
+  range: { start: 0.34, end: 0.74 },
+  fadeIn: { start: 0.36, end: 0.42 }, // dissolve A (in)
+  fadeOut: { start: 0.68, end: 0.74 }, // dissolve B (out)
+  sun: { x: 0.62, y: 0.4 }, // raking key from upper-right
+  sunMax: 0.52, // moderate side-key; warmer than dawn, not yet the golden bloom
+  planes: [
+    {
+      id: 'mid-sky',
+      label: 'mid sky (backdrop)',
+      plateSrc: '/images/cinematic/mid-sky.png',
+      placeholderSrc: '/images/cinematic/_placeholders/sky-day.svg',
+      transparent: false,
+      scaleFrom: 1.04,
+      scaleTo: 1.12,
+      yFrom: 0,
+      yTo: -1,
+    },
+    {
+      id: 'mid-mid',
+      label: 'mid buttes + spires + plain',
+      plateSrc: '/images/cinematic/mid-mid.png',
+      placeholderSrc: '/images/cinematic/_placeholders/mid-mesa.svg',
+      transparent: true,
+      scaleFrom: 1.0,
+      scaleTo: 1.7,
+      yFrom: 0,
+      yTo: 9,
+    },
+    {
+      id: 'mid-fg',
+      label: 'mid terracotta dunes + grass (near)',
+      plateSrc: '/images/cinematic/mid-fg.png',
+      placeholderSrc: '/images/cinematic/_placeholders/foreground.svg',
+      transparent: true,
+      scaleFrom: 1.15,
+      scaleTo: 2.6,
+      yFrom: 4,
+      yTo: 34,
+    },
+  ],
+} as const;
+
+/**
+ * ── BEAT 3 — ARRIVAL CLIFF (3 depth planes) ─────────────────────────────────
+ * Source: source/arrival-cliff.png. Separated (cliff layout) into
+ * sky/cliff/fg. The fluted wall is dominant; it resolves IN through haze on
+ * dissolve B and the title carves over it. Golden — the richest light, earned
+ * late. This scene HOLDS to p=1 (no fadeOut).
+ */
+const ARRIVAL_SCENE: Scene = {
+  id: 'arrival-cliff',
+  arrivalId: 'arrival-cliff',
+  range: { start: 0.66, end: 1.0 },
+  fadeIn: { start: 0.68, end: 0.74 }, // dissolve B (in)
+  fadeOut: null, // holds to the end
+  sun: { x: 0.7, y: 0.3 }, // warmest band on the upper-right crest
+  sunMax: 0.9, // the golden bloom — the richest light, earned late
+  planes: [
+    {
+      id: 'arrival-sky',
+      label: 'arrival sky sliver (backdrop)',
+      plateSrc: '/images/cinematic/arrival-sky.png',
+      placeholderSrc: '/images/cinematic/_placeholders/sky-day.svg',
+      transparent: false,
+      scaleFrom: 1.04,
+      scaleTo: 1.12,
+      yFrom: 0,
+      yTo: -1,
+    },
+    {
+      id: 'arrival-cliff',
+      label: 'arrival fluted cliff wall',
+      plateSrc: '/images/cinematic/arrival-cliff.png',
+      placeholderSrc: '/images/cinematic/_placeholders/near-rockface.svg',
+      transparent: true,
+      // the wall lands already large (it resolves IN, not from far away) and
+      // settles with a gentle final push — a touch less Δ than the vista mids so
+      // the flutes don't smear at the end.
+      scaleFrom: 1.12,
+      scaleTo: 1.5,
+      yFrom: 0,
+      yTo: 5,
+    },
+    {
+      id: 'arrival-fg',
+      label: 'arrival talus + sand (near)',
+      plateSrc: '/images/cinematic/arrival-fg.png',
+      placeholderSrc: '/images/cinematic/_placeholders/foreground.svg',
+      transparent: true,
+      scaleFrom: 1.15,
+      scaleTo: 2.3,
+      yFrom: 4,
+      yTo: 28,
+    },
+  ],
+} as const;
+
+/** The 3 beats, in descent order. The engine sequences these on one timeline. */
+export const SCENES: readonly Scene[] = [DAWN_SCENE, MID_SCENE, ARRIVAL_SCENE] as const;
+
+/**
  * ── Placeholder scene (motion-mechanics rig) ────────────────────────────────
  * The original 6-plate grey-SVG stand-ins. Retained, unused while
  * USE_PLACEHOLDERS=false, so the mechanics rig can be brought back by flipping
- * the flag. Mirrors the depth ramps the mechanics phase was verified against.
+ * the flag. Single-scene shape (the mechanics phase predates the 3-beat split).
  */
 const PLACEHOLDER_SCENE: Scene = {
   id: 'placeholders',
   arrivalId: 'near-rockface',
+  range: { start: 0.0, end: 1.0 },
+  fadeIn: { start: 0.0, end: 0.0 },
+  fadeOut: null,
+  sun: { x: 0.5, y: 0.6 },
+  sunMax: 0.7,
   planes: [
     {
       id: 'sky-dawn',
@@ -224,16 +347,26 @@ const PLACEHOLDER_SCENE: Scene = {
 } as const;
 
 /**
- * The scene the engine renders. We swap the WHOLE scene on the flag so the
- * placeholder rig and the real vista can't half-mix (e.g. 6 ids vs 3).
+ * The scenes the engine renders. Swapping the WHOLE list on the flag keeps the
+ * placeholder rig and the real vistas from half-mixing.
  */
-export const ACTIVE_SCENE: Scene = USE_PLACEHOLDERS ? PLACEHOLDER_SCENE : DAWN_SCENE;
+export const ACTIVE_SCENES: readonly Scene[] = USE_PLACEHOLDERS
+  ? [PLACEHOLDER_SCENE]
+  : SCENES;
 
-/** back → front. The engine maps one GSAP timeline over these. */
-export const PLATES: readonly Plate[] = ACTIVE_SCENE.planes;
+/**
+ * ── Back-compat single-scene aliases ────────────────────────────────────────
+ * The static frame + the reduced-motion test reference these. We point them at
+ * the ARRIVAL beat (the golden cliff) so the static fallback is the most
+ * impressive frame and ARRIVAL_ID stays meaningful.
+ */
+const FALLBACK_SCENE: Scene = USE_PLACEHOLDERS ? PLACEHOLDER_SCENE : ARRIVAL_SCENE;
+
+/** back → front. Used by the static frame. */
+export const PLATES: readonly Plate[] = FALLBACK_SCENE.planes;
 
 /** The arrival subject — the plane the whole push resolves onto. */
-export const ARRIVAL_ID = ACTIVE_SCENE.arrivalId;
+export const ARRIVAL_ID = FALLBACK_SCENE.arrivalId;
 
 /**
  * Which image source to render for a plane, honoring the global flag.
@@ -243,5 +376,8 @@ export function srcFor(plate: Plate): string {
   return USE_PLACEHOLDERS ? plate.placeholderSrc : plate.plateSrc;
 }
 
-/** The active scene's plane ids, in back→front order. Used by validate-assets.mjs. */
-export const PLATE_IDS: readonly string[] = PLATES.map((p) => p.id);
+/** Every plane id across all active scenes, back→front per scene. Used by
+ *  validate-assets.mjs (kept in sync there as a literal union). */
+export const PLATE_IDS: readonly string[] = ACTIVE_SCENES.flatMap((s) =>
+  s.planes.map((p) => p.id),
+);

@@ -19,10 +19,12 @@ type LayerProps = {
   plate: Plate;
   /** ascending paint order; index 0 (sky) sits at the back */
   z: number;
+  /** eager-load this plane (the first/dawn beat); later beats lazy-load. */
+  eager?: boolean;
 };
 
 export const Layer = forwardRef<HTMLImageElement, LayerProps>(function Layer(
-  { plate, z },
+  { plate, z, eager = false },
   ref,
 ) {
   const startOpacity = plate.opacity ? plate.opacity.from : 1;
@@ -36,6 +38,14 @@ export const Layer = forwardRef<HTMLImageElement, LayerProps>(function Layer(
       draggable={false}
       data-plate={plate.id}
       className="cdesert-layer"
+      // The dawn beat (eager) loads immediately so the opening frame is sharp;
+      // off-screen beats (mid/arrival) lazy-load as the user scrolls toward them
+      // — 9 hi-res planes shouldn't all block the open. (We deliberately don't
+      // set fetchpriority: React 18.3's prop handling for it is inconsistent
+      // between SSR/jsdom/DOM and warns either spelling; `loading="eager"`
+      // already front-loads the dawn planes, which is what matters.)
+      loading={eager ? 'eager' : 'lazy'}
+      decoding="async"
       style={{
         zIndex: z,
         // Seed the pre-animation state so SSR/first paint already matches the
