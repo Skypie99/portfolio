@@ -1092,7 +1092,14 @@ img::before {
    ScrollTrigger's layout + the GSAP transforms stay valid; the compositor still
    skips painting a hidden subtree. -- */
 .cdesert-scene--culled {
-  visibility: hidden;
+  /* PERF (2026-06-02): no longer hides. `visibility: hidden` dropped an inactive
+     beat's 3 planes out of the composite — but RE-showing them at the dissolve
+     forced the GPU to raster 3 large textures at that instant, a visible catch at
+     each scene transition (the remaining "hitch"). The inactive scene is already
+     at GSAP opacity 0 (so it isn't drawn); leaving it composited keeps the plane
+     textures GPU-warm, making each dissolve a cheap opacity blend with no raster.
+     Class retained as an engine hook (toggled but no longer hiding). */
+  pointer-events: none;
 }
 
 /* -- FULL-BLEED TAKEOVER (Dani 2026-06-01) ----------------------------------
@@ -1207,25 +1214,17 @@ img::before {
   mix-blend-mode: multiply;
   --cdesert-grade-mix: 0;
   background:
-    /* warm layer (revealed by the mix var). The per-scene SUN element carries
-       the DIRECTIONAL bloom (center at dawn → upper-right at arrival); this
-       global grade is a BROAD warm wash anchored a touch above the horizon
-       center (50%/48%) that rakes upward, so it reinforces the sun without
-       fighting it or pinning warmth to one corner across all three beats. A
-       faint vertical warm underlay keeps the lower frame from going cold where
-       the radial falls off (continuous, no banding). */
-    radial-gradient(
-        ellipse 175% 135% at 50% 48%,
-        rgba(255, 214, 150, calc(0.44 * var(--cdesert-grade-mix))) 0%,
-        rgba(224, 140, 82, calc(0.28 * var(--cdesert-grade-mix))) 44%,
-        rgba(150, 84, 46, calc(0.10 * var(--cdesert-grade-mix))) 74%,
-        rgba(127, 67, 35, 0) 100%
-      ),
+    /* warm layer (revealed by the mix var). RECUT 2026-06-02 — EVEN WARM WASH, no
+       hotspot. The old radial-gradient anchored a bright warm disc above the
+       horizon center; that localized brightness was part of the glare Sky saw.
+       Replaced with a smooth FULL-FRAME vertical warm wash (top→bottom, gently
+       warmer toward the lower frame where the ground sits) — even across the whole
+       width, no bright spot anywhere. Keeps the warm golden TONE; just no disc. */
     linear-gradient(
         180deg,
-        rgba(214, 150, 92, calc(0.10 * var(--cdesert-grade-mix))) 0%,
-        rgba(150, 84, 46, calc(0.14 * var(--cdesert-grade-mix))) 60%,
-        rgba(127, 67, 35, calc(0.18 * var(--cdesert-grade-mix))) 100%
+        rgba(245, 196, 138, calc(0.30 * var(--cdesert-grade-mix))) 0%,
+        rgba(224, 154, 94, calc(0.30 * var(--cdesert-grade-mix))) 50%,
+        rgba(176, 104, 58, calc(0.26 * var(--cdesert-grade-mix))) 100%
       ),
     /* cool base (fades out as warm comes up) */
     linear-gradient(
@@ -1258,18 +1257,17 @@ img::before {
   mix-blend-mode: overlay;
   --cdesert-expose: 0;
   background:
-    /* warm sunrise LIFT — a BROAD lift centered on the horizon band (50%/52%),
-       brightest along the center horizon and easing up/out. The per-scene SUN
-       element provides the directional rake (center→upper-right across beats);
-       this global lift just opens the midtones as the sun crests, lifting the
-       whole frame toward gold without pinning to one corner. Wide ellipse +
-       long 0%→80% stops keep it smooth & continuous (no banding). */
-    radial-gradient(
-        ellipse 180% 130% at 50% 52%,
-        rgba(255, 236, 200, calc(0.54 * var(--cdesert-expose))) 0%,
-        rgba(255, 210, 156, calc(0.32 * var(--cdesert-expose))) 36%,
-        rgba(255, 192, 134, calc(0.12 * var(--cdesert-expose))) 58%,
-        rgba(255, 188, 130, 0) 80%
+    /* warm sunrise LIFT — RECUT 2026-06-02: EVEN WARM WASH, no hotspot. The old
+       radial put a bright lift disc on the horizon band; on an overlay blend that
+       localized brightness was the bloom/flash. Replaced with a smooth FULL-FRAME
+       vertical warm lift (even across the width, a touch stronger up top where the
+       sky opens, easing down) so the midtones lift toward gold WITHOUT any bright
+       spot. Long, gentle stops → smooth & continuous, no banding, no disc. */
+    linear-gradient(
+        180deg,
+        rgba(255, 224, 182, calc(0.34 * var(--cdesert-expose))) 0%,
+        rgba(255, 210, 160, calc(0.30 * var(--cdesert-expose))) 45%,
+        rgba(255, 196, 140, calc(0.24 * var(--cdesert-expose))) 100%
       ),
     /* cool pre-dawn DEEPEN (fades out as expose rises) — a vertical sink that reads
        deepest at the bottom of the frame. Deepened (0.28/0.40/0.52 → 0.40/0.52/0.66)
@@ -1286,18 +1284,14 @@ img::before {
 }
 .cdesert-exposure--warm { --cdesert-expose: 1; }
 
-/* -- Sun glow: a radial bloom anchored to EACH BEAT's measured sun. The element
-   lives inside its scene group and is parked at that beat's glow via the
-   --sun-x / --sun-y custom props the component sets from plates.ts `scene.sun`
-   (fractions of the frame, origin top-left):
-       DAWN    x0.50 / y0.62  (sun rising DEAD-CENTER on the horizon)
-       MID     x0.62 / y0.40  (raking key from upper-right)
-       ARRIVAL x0.70 / y0.30  (warmest band on the upper-right crest)
-   One sun reads as travelling center→up-right across the descent because each
-   beat's sun is visible only while its group is (group opacity). The lockfile
-   §3 correction is satisfied here: DAWN is centered (x0.50), NOT the old 17%.
-   Negative margins center the 70vmax bloom on the anchor so GSAP can own
-   `transform` (yPercent/scale) without fighting a centering translate. -- */
+/* -- Sun glow element: BLOOM KILLED (2026-06-02 recut). Every scene's sunMax is 0
+   (the localized sun disc was the bright flash/glare Sky saw), so this element must
+   paint NOTHING at any scroll position. The component pins it to opacity 0 on the
+   timeline; here we also remove its glow background entirely so there is zero
+   residual paint even if opacity were ever non-zero. The element + its --sun-x /
+   --sun-y anchor (set from plates.ts `scene.sun`) are retained so re-introducing a
+   glow later is a data change, not a structural one. Warmth now comes solely from
+   the EVEN warm wash in .cdesert-grade / .cdesert-exposure — no hotspot. -- */
 .cdesert-sun {
   position: absolute;
   left: var(--sun-x, 50%);
@@ -1305,20 +1299,15 @@ img::before {
   z-index: 35;
   width: 70vmax;
   height: 70vmax;
-  margin-left: -35vmax; /* center the 70vmax bloom on the anchor x */
-  margin-top: -35vmax;  /* center it on the anchor y */
+  margin-left: -35vmax;
+  margin-top: -35vmax;
   pointer-events: none;
   will-change: transform, opacity;
   opacity: 0;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(255, 244, 214, 0.95) 0%,
-    rgba(255, 211, 138, 0.70) 22%,
-    rgba(240, 158, 92, 0.34) 42%,
-    rgba(240, 158, 92, 0) 66%
-  );
+  background: none; /* no bloom paints — even wash carries all warmth */
 }
-.cdesert-sun--bloom { opacity: 1; transform: translateY(-6%) scale(1.45); }
+/* helper retained but inert: even if toggled, it grants no glow (background:none). */
+.cdesert-sun--bloom { opacity: 0; }
 
 /* -- Atmospheric haze band (between depth layers). GSAP fades opacity. --
    PERF rebuild (2026-06-02): the two haze bands (.cdesert-haze--1/--2) are
