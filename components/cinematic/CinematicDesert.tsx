@@ -258,13 +258,15 @@ export function CinematicDesert() {
         // opacity underneath — the opaque incoming group covers it as it resolves.
         //
         // Why not also fade the outgoing group out (the obvious "cross"-fade)?
-        // Because the groups are STACKED over the dark pre-dawn pin (#1B1740): if
-        // the lower group also went translucent, the pin would bleed through at the
-        // dissolve midpoint (measured: dissolve B sagged ~20% in luminance and
-        // cooled toward indigo at t=0.5 — a dark seam right in the "one real leap").
-        // Holding the outgoing group opaque keeps total coverage at 1 and the frame
-        // warm THROUGH the dissolve — an unbroken push, never a dip. The manifest's
-        // `fadeOut` window is retained as the spec record of where the handoff sits.
+        // Because the groups are STACKED over the pin: if the lower group also went
+        // translucent, the pin would bleed through at the dissolve midpoint (measured
+        // on the old cold pin: dissolve B sagged ~20% in luminance and cooled toward
+        // indigo at t=0.5 — a dark seam right in the "one real leap"). Holding the
+        // outgoing group opaque keeps total coverage at 1 and the frame warm THROUGH
+        // the dissolve — an unbroken push, never a dip. (The pin is now a WARM dawn
+        // wash too — 2026-06-02 recut — so even an accidental bleed would stay warm,
+        // but incoming-only remains the clean approach: zero bleed of any kind.) The
+        // manifest's `fadeOut` window is retained as the spec record of the handoff.
         const group = sceneRefs.current[si];
         if (group) {
           // fade IN (0→1). A zero-width window means "already on screen" (dawn).
