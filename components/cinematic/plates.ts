@@ -76,6 +76,12 @@ export type Plate = {
   yTo: number;
   /** optional opacity ramp; omitted = fully opaque the whole way */
   opacity?: PlateOpacity;
+  /** optional 2nd-phase transform drift on the MASTER timeline [start,end]
+   *  (ABSOLUTE p, not scene-local), for a plane whose scene `range` ends before
+   *  p=1 but which must KEEP MOVING — e.g. the persistent floor under the still-
+   *  rising arrival cliff (so the foreground doesn't freeze). Applied as a 2nd
+   *  `.to()` after the main fromTo, continuing from the plane's phase-1 end value. */
+  phase2?: { toScale: number; toY: number; start: number; end: number };
 };
 
 /** Master-timeline window [start,end] in p∈[0,1]. */
@@ -242,31 +248,35 @@ const ARRIVAL_SCENE: Scene = {
 const FLOOR_SCENE: Scene = {
   id: 'floor',
   arrivalId: 'mid-fg',
-  range: { start: 0.0, end: 1.0 }, // pushes gently the whole way
+  range: { start: 0.0, end: 0.62 }, // UNIFIED ZOOM — SAME window as the mountains (mid-mid 0→0.62) so the floor rides the same easing and tracks them EXACTLY; phase2 (on mid-fg) continues it through the arrival
   fadeIn: { start: 0.0, end: 0.0 }, // already on screen at p=0
   fadeOut: null, // NEVER dissolves — holds to p=1 (and never gets culled)
   sun: { x: 0.5, y: 0.6 }, // unused (no sun element bloom; sunMax 0)
   sunMax: 0,
   planes: [
     {
-      // RECUT 2026-06-02 — COHESIVE FLOOR. The floor was over-parallaxed (scaleTo
-      // 1.45, yTo 18) so it slid DOWN/forward far faster than the mountains (1.30 /
-      // yTo 4) — the ground "rushed" independently (Sky: the ground should move WITH
-      // the mountains "at the exact same time"). The yTo gap was the dominant slide;
-      // cut it to 5 so the floor's drift ≈ the mountains' through the mid push.
-      // scaleTo trimmed 1.45 → 1.38 toward the mid tier so the foreground grows WITH
-      // the scene, not ahead of it. (A whisper of lead remains because the floor's
-      // range is 0→1 vs the mountains' 0→0.62 — different easing windows — so it can't
-      // track identically; the values are tuned by eye to read as one cohesive push.)
+      // RECUT 2026-06-02 — UNIFIED ZOOM (refinement 4). The floor must move AS ONE
+      // with the mountains on the first image (Sky, repeatedly). The REAL fix is the
+      // RANGE: FLOOR_SCENE.range is now {0,0.62} = the mountains' window, so the floor
+      // rides the SAME power3.inOut curve and tracks mid-mid's scale EXACTLY at every
+      // p — not the old {0,1}, which stretched the ease and made the floor LAG the
+      // zoom (at p0.31 the mountains were 1.15× but the floor only ~1.04×). scaleTo
+      // 1.30 === mid-mid; yTo 6 gives Δy 4 === mid-mid's Δy, so the floor holds a
+      // constant +2 yPercent foreground offset and never converges/diverges. phase2
+      // keeps it drifting WITH the cliff through the arrival so it doesn't freeze
+      // (~85% of the cliff's travel is after p0.62).
       id: 'mid-fg',
-      label: 'desert floor (terracotta dunes + grass) — persistent, moves with the scene',
+      label: 'desert floor (terracotta dunes + grass) — persistent, moves AS ONE with the scene',
       plateSrc: '/images/cinematic/mid-fg.png',
       placeholderSrc: '/images/cinematic/_placeholders/foreground.svg',
       transparent: true,
       scaleFrom: 1.0,
-      scaleTo: 1.38, // was 1.45 — trimmed toward the mid tier for a cohesive push
+      scaleTo: 1.3, // === mid-mid (unified zoom — floor tracks the mountains exactly)
       yFrom: 2,
-      yTo: 5, // was 18 — kills the independent downward slide (the dominant fix)
+      yTo: 6, // Δy 4 === mid-mid's Δy → constant +2 yPercent foreground offset
+      // 2nd-phase drift through the arrival (p0.62→1.0): continue WITH the cliff so the
+      // foreground never freezes while the wall finishes its dolly. Tuned by eye.
+      phase2: { toScale: 1.4, toY: 8, start: 0.62, end: 1.0 },
     },
   ],
 } as const;

@@ -239,6 +239,30 @@ export function CinematicDesert() {
             { scale: plate.scaleTo, yPercent: plate.yTo, duration: span, ease: 'power3.inOut' },
             scene.range.start,
           );
+          // optional 2nd-phase drift on the MASTER timeline (ABSOLUTE p) — a .to()
+          // that CONTINUES from this plane's phase-1 end value. For a plane whose
+          // scene range ends before p=1 but which must keep moving: the persistent
+          // FLOOR under the still-rising arrival cliff, so the foreground never
+          // freezes (~85% of the cliff's dolly happens after the floor's 0.62 settle).
+          if (plate.phase2) {
+            const { toScale, toY, start, end } = plate.phase2;
+            // fromTo (explicit FROM = phase-1's end) + immediateRender:false so this
+            // 2nd tween does NOT prime/leak onto the property before its window — it
+            // sits inert until the playhead reaches `start`, then continues seamlessly
+            // from the plane's phase-1 end value (no offset, no jump at the handoff).
+            tl.fromTo(
+              el,
+              { scale: plate.scaleTo, yPercent: plate.yTo },
+              {
+                scale: toScale,
+                yPercent: toY,
+                duration: Math.max(0.0001, end - start),
+                ease: 'power3.inOut',
+                immediateRender: false,
+              },
+              start,
+            );
+          }
           // optional per-plane opacity reveal/exit (scene-local sub-window)
           if (plate.opacity) {
             const { from, to, p0, p1 } = plate.opacity;
