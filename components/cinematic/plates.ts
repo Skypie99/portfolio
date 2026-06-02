@@ -108,7 +108,7 @@ const DAWN_SCENE: Scene = {
   arrivalId: 'dawn-mid',
   range: { start: 0.0, end: 0.46 },
   fadeIn: { start: 0.0, end: 0.0 }, // already on screen at p=0
-  fadeOut: { start: 0.36, end: 0.42 }, // dissolve A
+  fadeOut: { start: 0.34, end: 0.46 }, // dissolve A (lockfile §4: p~0.34–0.46)
   sun: { x: 0.5, y: 0.62 }, // warm glow dead-center on the horizon (sun rising center)
   sunMax: 0.34, // SUBTLE — pre-dawn glow only; the deep cold quiet keeps its dark
   planes: [
@@ -158,11 +158,12 @@ const DAWN_SCENE: Scene = {
 const MID_SCENE: Scene = {
   id: 'mid-approach',
   arrivalId: 'mid-mid',
-  range: { start: 0.34, end: 0.74 },
-  fadeIn: { start: 0.36, end: 0.42 }, // dissolve A (in)
-  fadeOut: { start: 0.68, end: 0.74 }, // dissolve B (out)
+  range: { start: 0.34, end: 0.80 },
+  fadeIn: { start: 0.34, end: 0.46 }, // dissolve A (in) — lockfile §4 p~0.34–0.46
+  fadeOut: { start: 0.66, end: 0.80 }, // dissolve B (out) — lockfile §4 p~0.66–0.80
   sun: { x: 0.62, y: 0.4 }, // raking key from upper-right
-  sunMax: 0.52, // moderate side-key; warmer than dawn, not yet the golden bloom
+  sunMax: 0.44, // restrained side-key — keeps MID on its warm-but-LOW plateau
+                // (lockfile §EXPOSURE: no daytime spike); the bloom is arrival's alone
   planes: [
     {
       id: 'mid-sky',
@@ -210,8 +211,8 @@ const MID_SCENE: Scene = {
 const ARRIVAL_SCENE: Scene = {
   id: 'arrival-cliff',
   arrivalId: 'arrival-cliff',
-  range: { start: 0.66, end: 1.0 },
-  fadeIn: { start: 0.68, end: 0.74 }, // dissolve B (in)
+  range: { start: 0.62, end: 1.0 },
+  fadeIn: { start: 0.66, end: 0.80 }, // dissolve B (in) — lockfile §4 p~0.66–0.80
   fadeOut: null, // holds to the end
   sun: { x: 0.7, y: 0.3 }, // warmest band on the upper-right crest
   sunMax: 0.9, // the golden bloom — the richest light, earned late

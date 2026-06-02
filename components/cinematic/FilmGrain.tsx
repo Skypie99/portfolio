@@ -42,7 +42,7 @@ export function FilmGrain() {
         <filter id="cdesert-grain-filter">
           <feTurbulence
             type="fractalNoise"
-            baseFrequency="0.65"
+            baseFrequency="0.9"
             numOctaves={3}
             stitchTiles="stitch"
           />
