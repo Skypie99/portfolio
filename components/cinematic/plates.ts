@@ -183,19 +183,22 @@ const ARRIVAL_SCENE: Scene = {
   id: 'arrival-cliff',
   arrivalId: 'arrival-cliff',
   range: { start: 0.32, end: 0.62 }, // REFINE 2026-06-02: phase-1 shares the MID valley's window {…,0.62} so the cliff CO-MOVES with it (matched scale+velocity through the blend → seamless, not jarring); lands on 1.30 at 0.62, then arrival-cliff.phase2 carries it on
-  // THE dissolve (in). 0.42 → 0.58 (REFINE 2026-06-02: longer + softer — a GRADUAL
-  // emergence, not a snap). dust REMOVED. The group fade is power2.out (front-loaded,
-  // ~85% opaque early). The cliff now CO-MOVES with the valley through the blend: its
-  // range starts at 0.32, so it's already dollying (scale ~1.225) when the fade opens
-  // at 0.42 — co-scaled (Δ≤0.01) and velocity-matched with the valley behind it, both
-  // warm sandstone under one grade. So the translucent window reads as a red-rock
-  // MATCH-DISSOLVE, not a see-through hole (no dust needed), and the camera never
-  // lurches (no static cliff over a fast valley). MID holds opaque underneath
-  // (incoming-only); arrival HOLDS to p=1.
+  // THE dissolve (in). 0.42 → 0.60 (REFINE 2026-06-02 r2: EVEN ease, moderate width —
+  // a gradual cinematic dissolve, not a snap). The group fade is now sine.inOut (was
+  // the front-loaded power2.out, which hit ~85% opaque by the window midpoint = the
+  // "abrupt change" Sky kept seeing). The even ease gives a gentle onset (no front-load
+  // snap); the moderate 0.18 window passes through the muddy 50/50 midpoint reasonably
+  // quickly (a wider window lingered there = double-exposure). NOTE the irreducible
+  // trade-off: crossfading a WIDE valley vista into a CLOSE cliff shows a brief overlap
+  // of both at the midpoint — slower = less abrupt but muddier, faster = cleaner but
+  // abrupt. This is the balance point. The cliff CO-MOVES with the valley (range starts
+  // 0.32, co-scaled gap ≤2%, velocity-matched), both warm sandstone under one grade, so
+  // the blend is a red-rock match-dissolve, not a scale-mismatch ghost. MID holds opaque
+  // underneath (incoming-only) and is culled only at 0.64 (after the fade); HOLDS to p=1.
   //   arrival-sky.png has faint top-edge inpaint streaks; the rising cliff + warm
   //   sky-wash cover the upper frame by the time it's legible. If any streak peeks,
-  //   bump start 0.42 → 0.44.
-  fadeIn: { start: 0.42, end: 0.58 },
+  //   bump start 0.40 → 0.42.
+  fadeIn: { start: 0.42, end: 0.6 },
   fadeOut: null, // holds to the end
   sun: { x: 0.7, y: 0.3 }, // (no bloom — sunMax 0; kept only as the element's anchor)
   sunMax: 0, // bloom REMOVED — the cliff photo is already golden-lit; the added glow read as cheap glare (Sky). Warmth comes only from the even wash.

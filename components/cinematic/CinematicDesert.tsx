@@ -75,7 +75,7 @@ const CULL_WINDOWS: readonly { start: number; end: number }[] =
   SCENES.length === 3
     ? [
         { start: -0.01, end: 0.64 }, // MID (opener)
-        { start: 0.40, end: 1.01 }, // ARRIVAL (start 0.40 — composite just before the fade opens at 0.42; the cliff's range now starts at 0.32)
+        { start: 0.38, end: 1.01 }, // ARRIVAL (start 0.38 — composite just before the fade opens at 0.40; the cliff's range starts at 0.32)
         { start: -0.01, end: 1.01 }, // FLOOR (persistent — never culled)
       ]
     : SCENES.map(() => ({ start: -0.01, end: 1.01 }));
@@ -297,17 +297,20 @@ export function CinematicDesert() {
         if (group) {
           // fade IN (0→1). A zero-width window means "already on screen": the MID
           // opener and the FLOOR both use {0,0} → inDur 0 → skipped here, so ONLY the
-          // ARRIVAL group hits this branch. power2.out (front-loaded): the incoming
-          // cliff reaches ~85% opaque EARLY in the short window, and because the cliff
-          // is pre-grown (plates.ts) it already covers most of the frame as a solid
-          // shape — so the valley is occluded by POSITION as it fades, not crossfaded.
-          // That (not dust) is what turns a perceptible crossfade into an arrival.
+          // ARRIVAL group hits this branch. REFINE 2026-06-02: sine.inOut (was
+          // power2.out) over a LONGER window ({0.40,0.64}) — a GRADUAL, EVEN crossfade
+          // (50% opaque at the window midpoint), so the valley→cliff content change
+          // DISSOLVES silkily instead of snapping. (The old front-loaded power2.out hit
+          // ~85% opaque by the window midpoint = the "abrupt change" Sky kept seeing.)
+          // The planes CO-MOVE (matched scale through the window), so this slow dissolve
+          // blends two co-scaled, warm-lit red-rock frames → a clean cinematic dissolve,
+          // not a scale-mismatch ghost.
           const inDur = scene.fadeIn.end - scene.fadeIn.start;
           if (inDur > 0) {
             tl.fromTo(
               group,
               { opacity: 0 },
-              { opacity: 1, duration: inDur, ease: 'power2.out' },
+              { opacity: 1, duration: inDur, ease: 'sine.inOut' },
               scene.fadeIn.start,
             );
           }
