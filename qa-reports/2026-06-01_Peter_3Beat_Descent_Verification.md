@@ -78,3 +78,49 @@ Single monotonic exposure ramp: 0 → 0.05 → 0.16 → 0.23 → **0.34 → 0.42
 It reads as a continuous, breathtaking descent — not slides. Real parallax through all three beats, both dissolves smooth (A near-seamless, B sells the leap through haze), dark→cool→golden light arc lands, title carves + holds centered + legible, full-bleed the whole way, scene never blank, zero console errors, all gates green, mobile golden-arrival fallback correct, route-scoping correct. One cosmetic tell (transient arrival-sky streaks during the p65–72 part of dissolve B) is worth a one-number polish but does not gate production — it's brief, haze-veiled, and reads as dust. Holds Sky's bar.
 
 — Peter (Performance Engineer), last gate before production.
+
+---
+
+## Post-optimization re-verify (2026-06-01, Peter)
+
+**Branch:** `feat/cinematic-desert-2.5d` · **HEAD:** `8d99c53` (`perf(cinematic): AVIF/WebP hero planes + arrival-sky streak fix`, on top of `12f6ea9` fadeIn 0.66→0.70). main untouched (`cebeb7e`), nothing pushed.
+**Method:** same rig — self-launched system Chrome `--headless=new` on CDP 9333 (own profile), pure-Node WS driver, `__cdesert.freeze(p)`. Re-shot the SAME keyframes as the SHIP run and **pixel-diffed each optimized AVIF frame against the prior SHIP PNG** in `/tmp/peter-3beat/` (per-channel mean-abs-diff overall + upper-third "streak zone" + a detrended per-column-stdev vertical-streak metric). Plus an independent network/format capture. New artifacts in `/tmp/peter-optimized/` (14 PNGs + `diff.json` + `netcheck.json`).
+**Chrome-148 note:** the newer build rejects the DevTools WS unless launched with `--remote-allow-origins=*` (403 otherwise) — added to the launch flags; rig otherwise unchanged.
+
+### Bundle: before → after
+| | SHIP (PNG) | Optimized (AVIF+WebP) | Δ |
+|---|---|---|---|
+| 9 shipped planes (`public/images/cinematic/`) | ~67–69 MB PNG | **4.15 MB** (9 AVIF 2.07 MB + 9 WebP 2.07 MB) | **~94% lighter** |
+| `out/images/cinematic/` | ~69 MB, PNG | **4.5 MB** — 0 PNG, 9 AVIF + 9 WebP | — |
+| whole `out/` | ~73 MB | **8.1 MB** | — |
+| eager (DAWN) weight | — | **dawn AVIF ≈ 0.59 MB** (sky 23 KB + mid 223 KB + fg 331 KB) | under ~3 MB eager target |
+PNG masters relocated to `cinematic-masters/` (outside `public/`); `find out -path '*cinematic-masters*'` → 0, no source/master leak into the export.
+
+### Gates (all clean on `8d99c53`)
+- `npm run typecheck` → exit 0.
+- `npm test` → **110 passed | 1 todo** (17 files).
+- `npm run build` → prebuild `validate-assets` **PASS** ("all 9 cinematic real plate (AVIF+WebP)"), static export 3/3. (Note: validate-assets now enforces both `<id>.avif` AND `<id>.webp` for all 9.)
+
+### Format served (independent capture, `netcheck.json`)
+All 9 planes fetched `.avif`, HTTP 200, MIME `image/avif`; **0 WebP/PNG requested** (fallback never fires on a modern browser). Decoded natural widths match the per-magnification right-sizing: sky **nw=2048**, mid/cliff **nw=2880**, fg **nw=3360**. Lazy/eager unchanged (DAWN eager, MID/ARRIVAL lazy).
+
+### Visual identity vs SHIP (pixel-diff, `diff.json`)
+At-rest + transition frames OUTSIDE the dissolve-B window are **imperceptibly identical** — overall mean-abs-diff **0.8–1.7 / 255** (p00 0.82, p15 0.90, p30 1.05, p42 1.25, p55 1.64, p64 1.66). The AVIF banding worst-case (dawn/mid/arrival **sky gradients**) shows **no banding**: upper-third detrended column-stdev is identical opt-vs-prior (p15 0.301 vs 0.304; p64 2.344 vs 2.388) — AVIF added no vertical blocking. Feathered edges (mesa skyline, cliff crest, fg cutoff) decode clean; the golden arrival hold (p100, the money shot — finest cliff-flute detail) diffs 2.5/255, title crisp. **No AVIF artifact found at any keyframe.**
+
+The only large diffs are at **p70 / p73** (overall 10.8 / 12.4; upper-third 16.9 / 20.1) — and they are the **streak fix landing, not a regression**: at those p-values the SHIP build had the streaky arrival-sky already faded in mid-dissolve, whereas the optimized build (a) holds the arrival group hidden until 0.70 (telemetry: arrival-cliff op=0.012 @ p0.70 vs SHIP ~0.3+) and (b) ships a rebuilt streak-free sky. By p77 the arrival fully resolves and the frame **reconverges** (diff drops to 3.8/255).
+
+### Streak — GONE ✅
+Side-by-side upper-third inspection at p64 / p67 / p70 (`desktop-*.png` vs SHIP `extra-*.png`):
+- **p67** (mid old-streak-window): SHIP shows faint vertical inpaint streaks raining down the upper sky; **optimized is a clean smooth gradient** — streaks absent, composition (mesas, spires, dunes, palette, golden tone) otherwise identical.
+- **p70**: SHIP shows pronounced vertical streaks across the upper two-thirds (streaky arrival-sky mid-fade); **optimized still shows the clean MID vista** (arrival not yet visible) — zero streaks.
+Both mechanisms (timing delay 0.66→0.70 + source-art rebuild) are present and complementary. The cosmetic tell flagged in §6 is **eliminated**.
+
+### Sanity (unchanged from SHIP)
+Continuous descent, both dissolves smooth (A near-seamless via central-spire lock, B sells the leap through haze), monotonic dark→cool→golden light arc (expose 0→1, gradeMix 0→1, arrival bloom →0.92), title carves p0.85→1.0 and HOLDS centered (cx=720) + legible, full-bleed (pin `position:fixed`, left:0, w:1440 every frame), scene never blank. **0 console errors** across desktop + netcheck + mobile + work passes.
+- **Mobile 375×812:** `StaticDesertFrame` golden-arrival cliff + resolved centered title, full-bleed, AVIF, no scroll-hijack. (`mobile-static.png`)
+- **/work route:** cinematic does NOT mount; left NAV rail intact (left:0, w:280, h:900). (`work-route.png`)
+
+### Verdict — **SHIP**
+Bundle is production-light (~73 MB → 8.1 MB out/; planes ~94% lighter; eager DAWN ~0.59 MB). Visuals are pixel-identical to the locked SHIP build everywhere except the dissolve-B window, where the change is the *removal* of the arrival-sky streak — confirmed gone. No AVIF banding or edge artifacts. All gates green, AVIF served at right widths, mobile + route-scoping correct, zero console errors. **Cleared for Gary to push to skypistudio.com.** Artifacts: `/tmp/peter-optimized/`.
+
+— Peter (Performance Engineer), final gate — optimization re-verify.
