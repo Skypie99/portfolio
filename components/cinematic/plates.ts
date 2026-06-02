@@ -130,16 +130,25 @@ const MID_SCENE: Scene = {
   sunMax: 0, // bloom KILLED — the mid side-key was the bright flash during the transition (Sky, 2026-06-02)
   planes: [
     {
-      // PERF (2026-06-02): sky scale cap.
+      // RECUT 2026-06-02 — TRANSFORM-LOCKED TO mid-mid (1.30 / +4). The two tall
+      // EDGE mesas are split across planes: their TOPS are baked into this sky plate,
+      // their BASES live on mid-mid. With the old sky cap (1.08 / -1) the tops scaled
+      // & drifted LESS than the bases (1.30 / +4) on the zoom, so the mesa tops
+      // visibly detached from their lower halves (Sky, 2026-06-02). Locking this
+      // plate's push to mid-mid's EXACTLY (scaleFrom/yFrom already match; now scaleTo/
+      // yTo too) makes the two planes interpolate identically at every p → tops and
+      // bases move as ONE, zero shear by construction. Cost: the sky/clouds now dolly
+      // 30% (was 8%) — correct for a forward push, far better than a tear. (arrival-sky
+      // is PURE sky, no rock, so it keeps its slow 1.08 parallax — only mid-sky locks.)
       id: 'mid-sky',
-      label: 'mid sky (backdrop)',
+      label: 'mid sky (backdrop) — locked to mid-mid (carries the mesa tops)',
       plateSrc: '/images/cinematic/mid-sky.png',
       placeholderSrc: '/images/cinematic/_placeholders/sky-day.svg',
       transparent: false,
       scaleFrom: 1.0,
-      scaleTo: 1.08,
+      scaleTo: 1.3, // LOCKED to mid-mid (was 1.08) — kills the mesa-top shear
       yFrom: 0,
-      yTo: -1,
+      yTo: 4, // LOCKED to mid-mid (was -1)
     },
     {
       // PERF: capped to 1.30 (mid tier ceiling), travel scaled to the Δ.
@@ -167,17 +176,19 @@ const ARRIVAL_SCENE: Scene = {
   id: 'arrival-cliff',
   arrivalId: 'arrival-cliff',
   range: { start: 0.4, end: 1.0 }, // dolly begins early (0.40) — the cliff is pushing up under the dissolve
-  // THE dissolve (in). 0.46 → 0.66 (Dani 2026-06-02: end pushed 0.62 → 0.66 for a
-  // longer, gentler resolve so the wall MATERIALISES rather than pops in). Still
-  // delayed to 0.46: the arrival SKY plane (arrival-sky.png) carries faint vertical
-  // inpaint streaks at the frame-top (the source cliff reached the top, so there was
-  // no clean sky to seed). Holding the group hidden until 0.46 keeps that plane
-  // invisible until the wall has risen + haze has swelled to cover the upper frame,
-  // so the streaks never show mid-dissolve. The wider window means the cliff keeps
-  // GROWING (its scale push) visibly as it fades up — the camera ARRIVING at the
-  // rock, not a crossfade between two stills. MID holds opaque underneath
-  // (incoming-only) so there's no gap. Ends 0.66; arrival HOLDS to p=1.
-  fadeIn: { start: 0.46, end: 0.66 },
+  // THE dissolve (in). 0.42 → 0.60 (REFINE 2026-06-02: "resolve UNDER the dust").
+  // The group fade is now power2.out (front-loaded in CinematicDesert.tsx), so the
+  // cliff is ~85% present by ~p0.50 — BEFORE the haze peaks (0.66 @ p0.58) — and the
+  // last of the opacity resolves buried in dust. The REVEAL is then carried by the
+  // haze clearing + the gold lift, NOT by the opacity ramp, so there's no perceptible
+  // "crossfade" seam: the wall EMERGES out of golden morning dust. The cliff keeps
+  // GROWING (its scale push) visibly as it lands — camera ARRIVING, not a still. MID
+  // holds opaque underneath (incoming-only) so there's no gap; arrival HOLDS to p=1.
+  //   Note on start moving 0.46 → 0.42: arrival-sky.png carries faint vertical inpaint
+  //   streaks at the frame-top. The haze now reaches ≥0.30 by p0.46 (earlier + denser
+  //   front), veiling the upper frame before the plane is legible, so the streaks
+  //   still never show. If any streak ever peeks, bump start 0.42 → 0.44.
+  fadeIn: { start: 0.42, end: 0.6 },
   fadeOut: null, // holds to the end
   sun: { x: 0.7, y: 0.3 }, // (no bloom — sunMax 0; kept only as the element's anchor)
   sunMax: 0, // bloom REMOVED — the cliff photo is already golden-lit; the added glow read as cheap glare (Sky). Warmth comes only from the even wash.
