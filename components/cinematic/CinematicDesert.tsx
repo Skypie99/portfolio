@@ -167,10 +167,24 @@ export function CinematicDesert() {
           }
         });
 
-        // ── scene-group cross-dissolve (the no-cut transitions) ──────────────
+        // ── scene-group cross-dissolve — INCOMING-ONLY (true A-over-B) ────────
+        // Each beat's back plane (sky) is opaque and fills the frame, so the WHOLE
+        // group is opaque. Beats stack by z (later beat on top). We therefore
+        // dissolve a beat IN over the one below and let the OUTGOING beat hold full
+        // opacity underneath — the opaque incoming group covers it as it resolves.
+        //
+        // Why not also fade the outgoing group out (the obvious "cross"-fade)?
+        // Because the groups are STACKED over the dark pre-dawn pin (#1B1740): if
+        // the lower group also went translucent, the pin would bleed through at the
+        // dissolve midpoint (measured: dissolve B sagged ~20% in luminance and
+        // cooled toward indigo at t=0.5 — a dark seam right in the "one real leap").
+        // Holding the outgoing group opaque keeps total coverage at 1 and the frame
+        // warm THROUGH the dissolve — an unbroken push, never a dip. The manifest's
+        // `fadeOut` window is retained as the spec record of where the handoff sits.
         const group = sceneRefs.current[si];
         if (group) {
           // fade IN (0→1). A zero-width window means "already on screen" (dawn).
+          // sine.inOut: eased on/off so the incoming beat resolves IN, never pops.
           const inDur = scene.fadeIn.end - scene.fadeIn.start;
           if (inDur > 0) {
             tl.fromTo(
@@ -180,11 +194,8 @@ export function CinematicDesert() {
               scene.fadeIn.start,
             );
           }
-          // fade OUT (1→0) on the next dissolve; null = holds to the end.
-          if (scene.fadeOut) {
-            const outDur = Math.max(0.0001, scene.fadeOut.end - scene.fadeOut.start);
-            tl.to(group, { opacity: 0, duration: outDur, ease: 'sine.inOut' }, scene.fadeOut.start);
-          }
+          // No fadeOut tween: the outgoing group stays opaque and is occluded by the
+          // opaque incoming group above it (see note). Last beat holds to p=1.
         }
 
         // ── per-scene sun: drift + bloom within the scene's window ───────────
@@ -237,49 +248,64 @@ export function CinematicDesert() {
       // ease so the MID plateau + late-gold acceleration are explicit.
       if (exposureRef.current) {
         const ex = exposureRef.current;
+        // The curve, knot by knot (every segment sine.inOut so slopes meet smoothly
+        // — no kink, no banding). Deep-held open → slow dawn lift → MID plateau →
+        // late-gold acceleration after p≈0.74 → full gold at p1. Floor starts at a
+        // true 0 (the CSS cool-deepen, slightly deepened below, sinks the opening to
+        // silhouettes) and the first move is small + late so the night HOLDS and the
+        // eye adjusts before any warmth arrives.
         tl.fromTo(
           ex,
           { '--cdesert-expose': 0 },
-          { '--cdesert-expose': 0.12, duration: 0.2, ease: 'sine.inOut' },
+          { '--cdesert-expose': 0.05, duration: 0.16, ease: 'sine.inOut' }, // deep hold
           0,
         )
-          .to(ex, { '--cdesert-expose': 0.3, duration: 0.2, ease: 'sine.inOut' }, 0.2)
-          .to(ex, { '--cdesert-expose': 0.42, duration: 0.15, ease: 'sine.inOut' }, 0.4) // MID plateau
-          .to(ex, { '--cdesert-expose': 0.5, duration: 0.17, ease: 'sine.inOut' }, 0.55)
-          .to(ex, { '--cdesert-expose': 0.72, duration: 0.13, ease: 'power1.in' }, 0.72) // gold accelerates
-          .to(ex, { '--cdesert-expose': 0.9, duration: 0.13, ease: 'sine.inOut' }, 0.85)
-          .to(ex, { '--cdesert-expose': 1, duration: 0.02, ease: 'sine.out' }, 0.98);
+          .to(ex, { '--cdesert-expose': 0.18, duration: 0.2, ease: 'sine.inOut' }, 0.16) // dawn begins to lift
+          .to(ex, { '--cdesert-expose': 0.34, duration: 0.18, ease: 'sine.inOut' }, 0.36) // through dissolve A
+          .to(ex, { '--cdesert-expose': 0.42, duration: 0.16, ease: 'sine.inOut' }, 0.54) // MID plateau (~0.42 @ p0.55)
+          .to(ex, { '--cdesert-expose': 0.48, duration: 0.16, ease: 'sine.inOut' }, 0.7) // plateau holds low to p0.70
+          .to(ex, { '--cdesert-expose': 0.66, duration: 0.12, ease: 'sine.in' }, 0.74) // gold ACCELERATES (after 0.74)
+          .to(ex, { '--cdesert-expose': 0.86, duration: 0.12, ease: 'sine.inOut' }, 0.86)
+          .to(ex, { '--cdesert-expose': 1, duration: 0.02, ease: 'sine.out' }, 0.98); // full golden at p1
       }
 
       // ── atmospheric haze: swells into DISSOLVE B, clears as the cliff lands ──
-      // The bands carry the mid→arrival leap so the cliff resolves IN through
-      // dust rather than cutting. Peak around p0.70, clearing by p0.86.
+      // The bands carry the mid→arrival leap so the cliff resolves IN through dust
+      // rather than cutting. Tuned to the widened dissolve B (p0.66–0.80): the swell
+      // starts LATER (p≈0.58, so the calm mid beat stays crisp), peaks right at the
+      // dissolve heart (~p0.72) a touch denser so the wall genuinely materialises out
+      // of haze, then clears as the cliff settles (by p≈0.88). sine.inOut throughout
+      // so the dust breathes in and out — no edge.
       if (haze1Ref.current) {
         tl.fromTo(
           haze1Ref.current,
           { opacity: 0 },
-          { opacity: 0.5, duration: 0.22, ease: 'sine.inOut' },
-          0.5,
-        ).to(haze1Ref.current, { opacity: 0.08, duration: 0.16, ease: 'sine.inOut' }, 0.78);
+          { opacity: 0.58, duration: 0.16, ease: 'sine.inOut' },
+          0.58,
+        ).to(haze1Ref.current, { opacity: 0.06, duration: 0.14, ease: 'sine.inOut' }, 0.78);
       }
       if (haze2Ref.current) {
         tl.fromTo(
           haze2Ref.current,
           { opacity: 0 },
-          { opacity: 0.4, duration: 0.2, ease: 'sine.inOut' },
-          0.56,
-        ).to(haze2Ref.current, { opacity: 0.05, duration: 0.16, ease: 'sine.inOut' }, 0.82);
+          { opacity: 0.46, duration: 0.15, ease: 'sine.inOut' },
+          0.62,
+        ).to(haze2Ref.current, { opacity: 0.04, duration: 0.14, ease: 'sine.inOut' }, 0.8);
       }
 
-      // ── title: carves in over p[0.86,0.96], then HOLDS to p=1 ──────────────
+      // ── title: carves in over p[0.84,0.95], then HOLDS to p=1 ──────────────
+      // Late (the gold has nearly landed), and graceful: it rises a hair, sharpens
+      // from a soft 9px blur, and fades up on power2.out so it SETTLES rather than
+      // pops. Once carved it holds fully opaque through the tail so the wordmark is
+      // the frame you're left on (lockfile: "carves in late and HOLDS").
       if (titleRef.current) {
         tl.fromTo(
           titleRef.current,
-          { opacity: 0, yPercent: 5, filter: 'blur(8px)' },
-          { opacity: 1, yPercent: 0, filter: 'blur(0px)', duration: 0.1, ease: 'power2.out' },
-          0.86,
+          { opacity: 0, yPercent: 6, filter: 'blur(9px)' },
+          { opacity: 1, yPercent: 0, filter: 'blur(0px)', duration: 0.11, ease: 'power2.out' },
+          0.84,
         );
-        tl.to(titleRef.current, { opacity: 1, duration: 0.04 }, 0.96);
+        tl.to(titleRef.current, { opacity: 1, duration: 0.05 }, 0.95);
       }
     },
     { scope, dependencies: [animate] },
