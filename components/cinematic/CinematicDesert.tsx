@@ -269,14 +269,19 @@ export function CinematicDesert() {
         // manifest's `fadeOut` window is retained as the spec record of the handoff.
         const group = sceneRefs.current[si];
         if (group) {
-          // fade IN (0→1). A zero-width window means "already on screen" (dawn).
-          // sine.inOut: eased on/off so the incoming beat resolves IN, never pops.
+          // fade IN (0→1). A zero-width window means "already on screen": the MID
+          // opener and the FLOOR both use {0,0} → inDur 0 → skipped here, so ONLY the
+          // ARRIVAL group hits this branch. REFINE 2026-06-02: power2.out (was
+          // sine.inOut). The FRONT-LOADED curve gets the incoming cliff ~85% opaque
+          // early — BEFORE the haze peaks — so the last of the fade resolves BURIED in
+          // dust and the haze-clear + gold-lift (not the opacity ramp) carry the
+          // reveal. That's what turns a perceptible crossfade into an EMERGENCE.
           const inDur = scene.fadeIn.end - scene.fadeIn.start;
           if (inDur > 0) {
             tl.fromTo(
               group,
               { opacity: 0 },
-              { opacity: 1, duration: inDur, ease: 'sine.inOut' },
+              { opacity: 1, duration: inDur, ease: 'power2.out' },
               scene.fadeIn.start,
             );
           }
@@ -336,31 +341,38 @@ export function CinematicDesert() {
         )
           .to(ex, { '--cdesert-expose': 0.44, duration: 0.18, ease: 'sine.inOut' }, 0.18) // morning warms over the valley
           .to(ex, { '--cdesert-expose': 0.54, duration: 0.18, ease: 'sine.inOut' }, 0.36) // through the dissolve
-          .to(ex, { '--cdesert-expose': 0.6, duration: 0.16, ease: 'sine.inOut' }, 0.54) // cliff resolving, still climbing
-          .to(ex, { '--cdesert-expose': 0.66, duration: 0.16, ease: 'sine.inOut' }, 0.7) // approaching golden
-          .to(ex, { '--cdesert-expose': 0.8, duration: 0.12, ease: 'sine.in' }, 0.74) // gold ACCELERATES (after 0.74)
+          .to(ex, { '--cdesert-expose': 0.6, duration: 0.16, ease: 'sine.inOut' }, 0.54) // cliff resolving, still climbing (0.54–0.70)
+          // REFINE 2026-06-02: gold ACCELERATES earlier (p0.70, was 0.74) and gentler
+          // (0.78, was 0.80) so the warm→gold surge sits UNDER the haze's final clear
+          // (0.30→0.06 over p0.70–0.82): the dust burns off AS the light turns golden
+          // around the already-present cliff. Replaces the old 0.66@0.70 + 0.80@0.74
+          // OVERLAPPING pair with one clean knot (0.70–0.84), then continues as before.
+          .to(ex, { '--cdesert-expose': 0.78, duration: 0.14, ease: 'sine.in' }, 0.7) // gold accel under the dust-clear
           .to(ex, { '--cdesert-expose': 0.92, duration: 0.12, ease: 'sine.inOut' }, 0.86)
           .to(ex, { '--cdesert-expose': 1, duration: 0.02, ease: 'sine.out' }, 0.98); // full golden-hour at p1
       }
 
-      // ── atmospheric haze: swells into THE DISSOLVE, clears as the cliff lands ──
-      // The single merged haze band carries the mid→arrival leap so the cliff
-      // resolves IN through dust rather than cutting. Dani 2026-06-02 — retuned to the
-      // wider dissolve (p0.46–0.66): the swell starts ~p0.40 (opener stays crisp),
-      // rises a touch deeper and peaks slightly LATER (~p0.55, the heart of the now-
-      // longer resolve) so the wall genuinely materialises OUT of the densest dust as
-      // it grows, then clears gently as the cliff settles (by ~p0.68). A 3-knot rise
-      // (0.40→0.50→0.55) makes the swell itself smoother. sine.inOut so the dust
-      // breathes in and out — no edge.
+      // ── atmospheric haze: swells into THE DISSOLVE, clears INTO the gold ──────
+      // The single merged haze band IS the reveal now (the opacity ramp is decoupled —
+      // see the power2.out group fade). REFINE 2026-06-02 — 4-knot curve tuned so the
+      // cliff EMERGES out of dust rather than crossfading: the swell starts ~p0.38 (a
+      // hair earlier + denser, ≥~0.30 by p0.46, veiling the upper frame BEFORE the
+      // arrival plane is legible — covers the arrival-sky inpaint streaks), then PEAKS
+      // later & denser (0.66 @ p0.58 — the cliff is already ~present but still veiled,
+      // so it materialises OUT of the densest dust as it grows), then a GENTLE mid-clear
+      // (0.30 @ p0.70 — still dusty while the cliff dollies), then the FINAL clear
+      // (0.06 @ p0.82) timed to the gold acceleration (expose surges p0.70+) so the
+      // dust burns off AS the light turns golden. sine.inOut throughout — no edge.
       if (hazeRef.current) {
         tl.fromTo(
           hazeRef.current,
           { opacity: 0 },
-          { opacity: 0.4, duration: 0.1, ease: 'sine.inOut' },
-          0.4,
+          { opacity: 0.34, duration: 0.1, ease: 'sine.inOut' },
+          0.38,
         )
-          .to(hazeRef.current, { opacity: 0.62, duration: 0.07, ease: 'sine.inOut' }, 0.5) // peak at the resolve heart
-          .to(hazeRef.current, { opacity: 0.05, duration: 0.13, ease: 'sine.inOut' }, 0.57); // clear as the cliff settles
+          .to(hazeRef.current, { opacity: 0.66, duration: 0.1, ease: 'sine.inOut' }, 0.48) // dust thickens — peaks LATER (p0.58)
+          .to(hazeRef.current, { opacity: 0.3, duration: 0.12, ease: 'sine.inOut' }, 0.58) // gentle mid-clear — still veiled while the cliff dollies
+          .to(hazeRef.current, { opacity: 0.06, duration: 0.12, ease: 'sine.inOut' }, 0.7); // final clear INTO the gold (p0.70→0.82)
       }
 
       // ── title: carves in over p[0.86,0.97], then HOLDS to p=1 ──────────────
