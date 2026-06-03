@@ -90,6 +90,13 @@ export function CardField({ slug, className, depth = 0.04, children }: CardField
         className="pointer-events-none absolute inset-0 opacity-[0.13] mix-blend-soft-light"
         style={{ backgroundImage: NOISE, backgroundSize: '160px 160px' }}
       />
+      {/* Fine keyline — frames the field like a mounted print (a hairline of warm
+          light inside the top edge, deepening at the base). */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{ boxShadow: 'inset 0 1px 0 0 rgb(255 244 224 / 0.22), inset 0 0 0 1px rgb(255 244 224 / 0.10)' }}
+      />
       {children && <div className="relative z-10 flex h-full flex-col">{children}</div>}
     </div>
   );
