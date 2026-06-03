@@ -56,7 +56,9 @@
   /* Pill text color states */
   --pill-text-resting:    var(--color-text-muted);
   --pill-text-hover:      var(--color-text);
-  --pill-text-active:     var(--color-accent-primary);
+  /* Active pill: ink text for AA contrast at 11px — the 2px terracotta border
+     + tint already carry the "active" signal (not colour-alone). */
+  --pill-text-active:     var(--color-text);
 
   /* Pill icon stroke width */
   --pill-stroke-width-resting: 1.5px;
