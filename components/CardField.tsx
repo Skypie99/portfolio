@@ -90,25 +90,6 @@ export function CardField({ slug, className, depth = 0.04, children }: CardField
         className="pointer-events-none absolute inset-0 opacity-[0.13] mix-blend-soft-light"
         style={{ backgroundImage: NOISE, backgroundSize: '160px 160px' }}
       />
-      {/* Cursor-follow golden light — blooms where you point (--mx/--my set by
-          useTilt on the card). Screen-blended so it reads as real light. */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100"
-        style={{
-          background: `radial-gradient(26% 34% at var(--mx, 50%) var(--my, 28%), rgb(${SUN} / 0.5), transparent 72%)`,
-          mixBlendMode: 'screen',
-        }}
-      />
-      {/* Specular gleam — one slow diagonal sweep across on hover-enter. */}
-      <div
-        aria-hidden="true"
-        className="card-gleam pointer-events-none absolute inset-0"
-        style={{
-          background: 'linear-gradient(100deg, transparent 42%, rgb(255 248 232 / 0.5) 50%, transparent 58%)',
-          mixBlendMode: 'screen',
-        }}
-      />
       {/* Fine keyline — frames the field like a mounted print (a hairline of warm
           light inside the top edge, deepening at the base). */}
       <div
