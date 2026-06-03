@@ -51,8 +51,7 @@ export default function BlogIndexPage() {
             Blog — {posts.length} {posts.length === 1 ? 'post' : 'posts'}
           </p>
           <h1
-            className="font-serif font-light text-[clamp(2.5rem,6vw,4rem)] ember leading-[1.05] max-w-3xl mb-8 text-balance"
-            style={{ letterSpacing: '-0.02em' }}
+            className="font-serif font-light text-display ember leading-[1.05] max-w-3xl mb-8 text-balance"
           >
             Writing
           </h1>

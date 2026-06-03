@@ -55,8 +55,7 @@ export default function WorkIndexPage() {
               The Work — {deliverables.length} deliverable{deliverables.length === 1 ? '' : 's'}
             </p>
             <h1
-              className="font-serif font-light text-[clamp(2.5rem,6vw,4.5rem)] ember leading-[1.05] max-w-3xl mb-8 text-balance"
-              style={{ letterSpacing: '-0.025em' }}
+              className="font-serif font-light text-display ember leading-[1.05] max-w-3xl mb-8 text-balance"
             >
               The Work
             </h1>

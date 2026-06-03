@@ -191,7 +191,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
                   <span className="inline-block w-1 h-1 rounded-full bg-terracotta" />
                   {d.role}
                 </span>
-                <span className="font-serif font-light text-[2rem] text-umber leading-tight">
+                <span className="font-serif font-light text-step-3 text-umber leading-tight">
                   {d.title}
                 </span>
               </div>
@@ -210,8 +210,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
               )}
 
               <h1
-                className="font-serif font-light text-[clamp(2.25rem,5.5vw,4rem)] leading-[1.05] ember text-balance"
-                style={{ letterSpacing: '-0.02em' }}
+                className="font-serif font-light text-display leading-[1.05] ember text-balance"
               >
                 {d.title}
               </h1>
@@ -323,7 +322,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
             <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
               Gallery
             </p>
-            <h2 className="font-serif font-light text-display-m text-near-black mb-12 max-w-2xl leading-tight">
+            <h2 className="font-serif font-light text-step-4 text-near-black mb-12 max-w-2xl leading-tight">
               A closer look.
             </h2>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
@@ -344,7 +343,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
                         eyebrow) since the caption below carries context. */}
                     <span
                       aria-hidden="true"
-                      className="font-serif font-light text-[1.25rem] text-umber px-4 text-center"
+                      className="font-serif font-light text-step-1 text-umber px-4 text-center"
                     >
                       {d.title}
                     </span>
@@ -375,7 +374,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
             <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
               More work
             </p>
-            <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight mb-12">
+            <h2 className="font-serif font-light text-step-4 text-near-black max-w-2xl leading-tight mb-12">
               Continue reading.
             </h2>
 
@@ -406,7 +405,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
         )}
       >
         <div className="max-w-content mx-auto flex flex-col items-start gap-8">
-          <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight">
+          <h2 className="font-serif font-light text-step-4 text-near-black max-w-2xl leading-tight">
             Have something like this?
             <br />
             Write to me.

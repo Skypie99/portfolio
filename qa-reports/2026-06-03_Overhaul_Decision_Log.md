@@ -45,5 +45,22 @@ This log records decisions as the run proceeds (brief §2.4: "the record is part
 
 **Tooling note:** added a `portfolio-overhaul` entry to `~/AccessMap/.claude/launch.json` (preview MCP reads cwd's launch.json; serves Portfolio on :3220 via `bash -lc cd …`). Left uncommitted in AccessMap (dev convenience). No headless browser in Portfolio → mockup-PNG pipeline (puppeteer-core + system Chrome in /tmp) to be set up before Phase 2.
 
-### Phase 2 — Structure & UX
+### Phase 2 — Structure & UX ✅ (tag `overhaul-phase2`)
+
+**Shipped (type hierarchy systematized + reveal primitive + hover reconcile):**
+- **Tuned the two fluid display tokens to real content** (nothing referenced them yet): `--fs-display` → `clamp(2.75rem, 1.6rem + 5vw, 4.25rem)` (44→68px, route page titles); `--fs-hero` → `clamp(3rem, 1.4rem + 6vw, 5.5rem)` (48→88px, homepage hero). Keeps titles confident rather than shrinking onto the mathematical scale.
+- **Migrated all structural type onto the scale** across 16 files (Dani mapping, applied by Sonnet builder): hero h1 → `text-hero`; all route page-title h1s → `text-display`; section h2s (`display-m` 36px) → `text-step-4` (39px, more confident); card/large titles → `text-step-3`; sub-heads/blockquotes/cert titles → `text-step-2`; 20px → `text-step-1`. Removed now-redundant inline `letterSpacing` where `text-display`/`text-hero` tuples supply it; kept specific `-0.015em`/`-0.01em` on card titles/blockquotes (step tokens don't set ls). −8 net lines (cleaner than the arbitrary clamps it replaced).
+- **Built `components/Reveal.tsx`** — the cross-browser scroll-reveal primitive (framer `useInView({once,margin:-80px})` + `useReducedMotion`, `{opacity:0,y:16}→{0}`, `index*0.08s` stagger). Replaces the Firefox-broken CSS `reveal-on-scroll`. **Built + tested, NOT yet wired** (wiring is Phase 4). + `components/__tests__/Reveal.test.tsx` (4 tests).
+- **Reconciled the stale ProjectCard hover comment** in globals.css (`.work-card`): the "NO lift, NO shadow" Dani §3.3 note contradicted shipped behavior (`hover:-translate-y-1` + warm shadow). Updated the comment text to match reality; behavior untouched.
+
+**Decisions:**
+- **D2.1** Section headers → fixed `text-step-4` (39px) not a new fluid tier — short headers, +3px over the old 36px reads more confident; revisit fluidity in P6 if mobile flags it.
+- **D2.2** Left UNMIGRATED (intentional): stat figures (page.tsx — they get the count-up in P4), HamburgerNav nav-link clamps (nav, not headings), body leads `1.0625rem`/`1.125rem` (body-adjacent), `display-s` (distinct small-serif role; P7 cleanup), AppMockup SVG label letterSpacings, content-renderer markdown headings.
+- **D2.3** Delegated the mechanical roll-out to a Sonnet builder with an exact mapping table; Morgan (Opus) reviewed the full diff + verified visually. Model-split per Sky's kickoff decision K3.
+
+**Verification:** typecheck clean · 19 test files / 154 tests + 1 todo (incl. 4 new Reveal) · ESLint clean · static export builds. Browser (both modes): hero now commanding `text-hero` ember serif; section headers more confident; dark-mode hero legible. **Cinematic byte-identical** (diff: zero frozen-file edits; landing reads only `--font-cormorant`/`--sidebar-w`, untouched). No console errors.
+
+**Note:** dark-mode preview screenshots letterbox (MCP screenshot-canvas artifact after a colorScheme resize) — content verified correct via light captures + eval state; not a site issue. Race-avoidance for future captures: resize → reload → scroll → shoot.
+
+### Phase 3 — Visual / UI pass
 _(next)_

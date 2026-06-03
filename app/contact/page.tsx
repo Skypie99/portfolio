@@ -36,8 +36,7 @@ export default function ContactPage() {
             Correspond
           </p>
           <h1
-            className="font-serif font-light text-[clamp(2.5rem,6vw,4rem)] ember leading-[1.05] max-w-3xl mb-8 text-balance"
-            style={{ letterSpacing: '-0.02em' }}
+            className="font-serif font-light text-display ember leading-[1.05] max-w-3xl mb-8 text-balance"
           >
             Write to me.
           </h1>
@@ -70,7 +69,7 @@ export default function ContactPage() {
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Elsewhere
             </p>
-            <h2 className="font-serif font-light text-display-m text-near-black mb-12 max-w-2xl leading-tight">
+            <h2 className="font-serif font-light text-step-4 text-near-black mb-12 max-w-2xl leading-tight">
               Find me in other quiet corners.
             </h2>
 

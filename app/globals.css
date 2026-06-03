@@ -215,8 +215,8 @@
   --fs-step-3: 1.953rem;    /* 31.25px — card title */
   --fs-step-4: 2.441rem;    /* 39.06px — section head */
   --fs-step-5: 3.052rem;    /* 48.83px — page title */
-  --fs-display: clamp(2.5rem, 5.5vw, 3.75rem);  /* fluid display */
-  --fs-hero:    clamp(3.25rem, 8vw, 6rem);       /* hero statement */
+  --fs-display: clamp(2.75rem, 1.6rem + 5vw, 4.25rem);  /* route page titles (44→68px) */
+  --fs-hero:    clamp(3rem, 1.4rem + 6vw, 5.5rem);       /* homepage hero (48→88px) */
 
   --lh-tight:   1.1;
   --lh-snug:    1.2;
@@ -546,19 +546,20 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
 }
 
 /* ------------------------------------------------------------------
-   Work-card hover — Dani §3.3 strict: image scales 1.02 over --dur-slow,
-   border deepens to --color-pebble. NO lift, NO shadow. The previous
-   4px translateY was a Cycle 2/3 divergence; restored here.
+   Work-card hover — shipped behavior: card lifts 4px (-translate-y-1)
+   and gains a warm shadow (--shadow-elevation-2). Border and bg-hover
+   also deepen. This replaces the earlier Dani §3.3 no-lift spec, which
+   was overridden in a subsequent polish pass (2026-05-27).
 
-   Image scale + border color are applied via Tailwind group-hover on
-   the JSX (ProjectCard.tsx + certificates page). This block keeps the
-   focus-visible affordance Alex F-C4-1 set up — the global
-   *:focus-visible Terracotta outline still fires.
+   All hover classes are applied via Tailwind group-hover on the JSX
+   in ProjectCard.tsx: `hover:-translate-y-1 hover:shadow-[var(--shadow-elevation-2)]`.
+   This block keeps the focus-visible affordance Alex F-C4-1 set up —
+   the global *:focus-visible Terracotta outline still fires.
 
    Reduced-motion globals block snaps the scale transition to ~0ms.
    ------------------------------------------------------------------ */
 .work-card {
-  /* No box-level transform; child img + border handle the hover state. */
+  /* Box-level lift + warm shadow on hover — see ProjectCard.tsx hover classes. */
 }
 
 /* Cycle 16 + Cycle 26 + Cycle 29 — broken-image polish.
