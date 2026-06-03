@@ -408,10 +408,9 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
                   <CaseStudyCard
                     title={o.title}
                     category={toCategory(o.id)}
-                    imageUrl={o.heroImage.src}
-                    imageAlt={o.heroImage.alt}
                     description={o.summary}
                     href={`/work/${o.id}/`}
+                    index={allDeliverables.findIndex((x) => x.id === o.id)}
                   />
                 </Reveal>
               ))}

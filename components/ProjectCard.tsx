@@ -1,161 +1,107 @@
 import Link from 'next/link';
 
-import { CardImage, type CardAccent } from '@/components/CardImage';
-import { TagPill } from '@/components/TagPill';
+import { CardField } from '@/components/CardField';
 import { cn } from '@/lib/cn';
 import type { Deliverable } from '@/lib/schema';
 
 type ProjectCardProps = {
   deliverable: Deliverable;
-  /**
-   * Max number of tech pills to render. Default 4.
-   */
+  /** Max number of tech labels to render. Default 4. */
   maxTech?: number;
-  /**
-   * Wide (featured) card — full-width span, larger mockup area, featured badge.
-   */
+  /** Wide (featured) card — field + caption side-by-side on md+. */
   wide?: boolean;
+  /** Editorial index for the corner numeral ("01", "02"…). Default 0. */
+  index?: number;
   className?: string;
 };
 
 /**
- * ProjectCard — luxury editorial card with live app mockup.
+ * ProjectCard — v2 bold-editorial card.
  *
- * 2026-05-27 polish:
- *  - Refined hover (border + shadow elevation + 4px lift, no scale)
- *  - "Live" indicator dot when the deliverable has a demo link
- *  - Cleaner CTA row — case study primary, demo + GitHub demoted to icons
- *  - Wide cards lay out mockup + content side-by-side on md+
+ * No illustration: a golden-hour <CardField> carries an index numeral + the
+ * oversized serif title (cream over the field's deep pool, AA-safe), and a clean
+ * high-contrast caption below/beside holds the summary, a de-rainbowed tech line,
+ * and a single CTA. Deep ink on a surface that contrasts the section background.
  *
- * Accessibility:
- *  - Card wraps title + role + summary as the accessible name via aria-label.
- *  - Mockup is aria-hidden — decorative only.
- *  - Focus-visible outline fires on the card link (2px terracotta).
- *  - Demo link opens in a new tab with rel="noopener noreferrer".
+ * Accessibility: the title is an <h3> wrapping a link whose aria-label is
+ * "<title> — <role>, <year>"; a separate case-study link + demo/github links carry
+ * their own labels; the field layers are aria-hidden. Focus-visible rings throughout.
  */
 export function ProjectCard({
   deliverable: d,
   maxTech = 4,
   wide = false,
+  index = 0,
   className,
 }: ProjectCardProps) {
   const githubLink = d.links?.find((l) => l.type === 'github');
   const demoLink = d.links?.find((l) => l.type === 'demo');
-
-  // Per-project signature colour — a curated teal+orange spread so the work
-  // set reads as a spectrum, not five identical terracotta cards.
-  const ACCENT: Record<string, { border: string; dot: string; accent: CardAccent }> = {
-    'accessmap':           { border: 'border-l-terracotta', dot: 'bg-terracotta', accent: 'terracotta' },
-    'claude-corp':         { border: 'border-l-lagoon',     dot: 'bg-lagoon',     accent: 'lagoon' },
-    'prompt-library':      { border: 'border-l-gold',       dot: 'bg-gold',       accent: 'gold' },
-    'pacman-code-trainer': { border: 'border-l-emerald',    dot: 'bg-emerald',    accent: 'emerald' },
-    'mutual-mesh':         { border: 'border-l-caramel',    dot: 'bg-caramel',    accent: 'caramel' },
-  };
-  const a = ACCENT[d.id] ?? ACCENT['accessmap'];
+  const numeral = String(index + 1).padStart(2, '0');
 
   return (
     <div
       className={cn(
-        'work-card group block',
-        // Alex F-C4-1: focus-visible outline alongside hover/focus lift.
-        // Shamus wave2: border-l-4 + border-l-terracotta = editorial left accent.
-        'bg-warm-white border border-stone border-l-4 rounded-md',
-        a.border,
-        'shadow-lg',
-        // overflow-hidden lets the image sit edge-to-edge with rounded card corners
-        'overflow-hidden',
-        'transition-all duration-280 ease-out',
-        'hover:bg-[var(--card-bg-hover)] hover:border-[var(--card-border-hover)] hover:shadow-xl hover:-translate-y-1',
-        'active:translate-y-0 active:shadow-lg',
-        'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta focus-visible:rounded-sm',
-        // Wide featured card: side-by-side on md+, image fills left half.
-        wide && 'md:flex md:flex-row md:items-stretch',
+        'work-card group relative flex flex-col overflow-hidden rounded-lg',
+        // surface contrasts both section bgs (cream / warm-white) in both modes
+        'bg-surface border border-line shadow-xl',
+        'transition-all duration-280 ease-out hover:-translate-y-1 hover:border-pebble',
+        wide && 'md:flex-row md:items-stretch',
         className,
       )}
     >
-      {/* ── Image area — framed product illustration in the shared premium
-          "lit-well" material (screenshot-ready). Badges overlay the frame. ── */}
-      <div className={cn('relative', wide ? 'w-full md:w-1/2 md:self-stretch' : 'w-full')}>
-        <CardImage
-          src={d.heroImage.src}
-          alt={d.heroImage.alt}
-          accent={a.accent}
-          className={cn(
-            // Non-wide: intrinsic aspect height. Wide: aspect on mobile, then on
-            // md+ absolutely fill the stretched flex column (CardImage has no
-            // in-flow content, so h-full would collapse to 0 — fill instead).
-            wide ? 'aspect-[4/3] md:absolute md:inset-0 md:aspect-auto' : 'aspect-[3/2] border-b border-stone',
-          )}
-        />
-        {/* Featured badge */}
+      {/* ── Golden-hour field — editorial type overlaid ──────────────── */}
+      <CardField
+        slug={d.id}
+        className={cn(wide ? 'aspect-[4/3] md:aspect-auto md:w-[58%] md:min-h-[26rem]' : 'aspect-[4/5]')}
+      >
+        {/* index numeral */}
+        <span
+          aria-hidden="true"
+          className="absolute left-6 top-5 font-serif font-light leading-none text-[#FAF8F1]/25"
+          style={{ fontSize: 'clamp(2.5rem, 5vw, 3.75rem)' }}
+        >
+          {numeral}
+        </span>
+
+        {/* featured badge */}
         {d.featured && (
-          <span
-            className={cn(
-              'absolute top-4 left-4 z-10',
-              'font-mono text-meta tracking-label uppercase',
-              'bg-cream text-accent-text',
-              'px-2.5 py-1 rounded-pill',
-              'border border-sand shadow-soft',
-              'inline-flex items-center gap-1.5',
-            )}
-          >
-            <span className="inline-block w-1 h-1 rounded-full bg-terracotta" />
+          <span className="absolute right-6 top-6 inline-flex items-center gap-1.5 rounded-pill border border-[#FAF8F1]/25 bg-[#FAF8F1]/10 px-2.5 py-1 font-mono text-meta uppercase tracking-label text-[#FAF8F1] backdrop-blur-sm">
+            <span aria-hidden="true" className="inline-block h-1 w-1 rounded-full bg-[rgb(var(--rgb-gold))]" />
             Featured
           </span>
         )}
-        {/* Live indicator — only when a demo link exists */}
-        {demoLink && (
-          <span
-            className={cn(
-              'absolute top-4 right-4 z-10',
-              'font-mono text-meta tracking-label uppercase text-sage-text',
-              'bg-cream/80 backdrop-blur-sm',
-              'px-2.5 py-1 rounded-pill',
-              'border border-stone/60',
-              'inline-flex items-center gap-1.5',
-            )}
+
+        {/* role · year + title, anchored over the deep bottom pool */}
+        <div className="mt-auto px-6 pb-6 md:px-8 md:pb-8">
+          <p className="mb-2 flex items-center gap-2 font-mono text-meta uppercase tracking-label text-[#FAF8F1]/75">
+            <span aria-hidden="true" className="inline-block h-1 w-1 rounded-full bg-[rgb(var(--rgb-gold))]" />
+            {d.role} · {d.year}
+          </p>
+          <h3
+            className="font-serif font-light leading-[1.04] text-[#FAF8F1]"
+            style={{
+              letterSpacing: '-0.02em',
+              fontSize: wide ? 'clamp(2.4rem, 3.4vw, 3.4rem)' : 'clamp(1.75rem, 2.4vw, 2.3rem)',
+            }}
           >
-            <span className="relative inline-flex h-1.5 w-1.5">
-              <span className="hero-status-ping absolute inline-flex h-full w-full rounded-full bg-terracotta opacity-60" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-terracotta" />
-            </span>
-            Live
-          </span>
-        )}
-      </div>
+            <Link
+              href={`/work/${d.id}/`}
+              aria-label={`${d.title} — ${d.role}, ${d.year}`}
+              className="rounded-sm transition-opacity duration-fast ease-out hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FAF8F1]"
+            >
+              {d.title}
+            </Link>
+          </h3>
+        </div>
+      </CardField>
 
-      {/* ── Content area — owns its padding since card no longer has p-6 ── */}
-      <div className={cn('p-6 flex flex-col gap-3 flex-1', wide && 'md:p-8 md:justify-center')}>
-        {/* Eyebrow */}
-        <p className="font-mono text-meta tracking-label uppercase text-sage-text flex items-center gap-2">
-          <span aria-hidden="true" className={cn('inline-block w-1 h-1 rounded-full', a.dot)} />
-          {d.role} · {d.year}
-        </p>
-
-        {/* Title — navigable link is the heading */}
-        <h3
-          className={cn('font-serif font-normal leading-[1.1] text-near-black', wide ? 'text-step-4' : 'text-step-3')}
-          style={{ letterSpacing: '-0.015em' }}
-        >
-          <Link
-            href={`/work/${d.id}/`}
-            aria-label={`${d.title} — ${d.role}, ${d.year}`}
-            className={cn(
-              'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta rounded-sm',
-              'transition-colors duration-fast ease-out',
-              'group-hover:text-accent-text',
-            )}
-          >
-            {d.title}
-          </Link>
-        </h3>
-
-        {/* Summary */}
+      {/* ── Caption — deep ink on surface ────────────────────────────── */}
+      <div className={cn('flex flex-col gap-5 p-6 md:p-7', wide && 'md:w-[42%] md:justify-center')}>
         <p
-          className="font-sans font-light text-body-sm text-charcoal leading-[1.65] text-pretty"
+          className="font-sans font-light text-body-sm leading-[1.6] text-charcoal text-pretty"
           style={{
             display: '-webkit-box',
-            WebkitLineClamp: wide ? 4 : 3,
+            WebkitLineClamp: wide ? 4 : 2,
             WebkitBoxOrient: 'vertical',
             overflow: 'hidden',
           }}
@@ -163,66 +109,48 @@ export function ProjectCard({
           {d.summary}
         </p>
 
-        {/* Tech pills */}
-        <ul className="flex flex-wrap gap-2 mt-1">
+        {/* tech — disciplined, monochrome (no pastel rainbow) */}
+        <ul className="flex flex-wrap gap-x-3 gap-y-1">
           {d.tech.slice(0, maxTech).map((t) => (
-            <li key={t}>
-              <TagPill>{t}</TagPill>
+            <li key={t} className="font-mono text-meta uppercase tracking-label text-text-meta">
+              {t}
             </li>
           ))}
         </ul>
 
-        {/* CTA row — Case study is primary (left); Live demo + GitHub are
-            secondary, pushed to the right as a quiet cluster. */}
-        <div className="mt-auto pt-5 flex flex-wrap items-center border-t border-stone/60">
+        {/* CTA row */}
+        <div className="mt-1 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-line pt-4">
           <Link
             href={`/work/${d.id}/`}
-            className={cn(
-              'inline-flex items-center gap-1.5 whitespace-nowrap',
-              'font-mono text-meta tracking-label uppercase text-accent-text',
-              'transition-transform duration-fast ease-out',
-              'hover:translate-x-1 focus-visible:translate-x-1',
-              'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta rounded-sm',
-            )}
             aria-label={`Read case study for ${d.title}`}
+            className="inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
           >
-            Case study <span aria-hidden="true">→</span>
+            View project <span aria-hidden="true">→</span>
           </Link>
-          {(demoLink || githubLink) && (
-            <span className="flex items-center gap-4 ml-auto">
-              {demoLink && (
-                <a
-                  href={demoLink.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(
-                    'inline-flex items-center gap-1.5 whitespace-nowrap',
-                    'font-mono text-meta tracking-label uppercase text-sage-text',
-                    'transition-colors duration-fast ease-out hover:text-charcoal',
-                    'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta rounded-sm',
-                  )}
-                  aria-label={`Open live demo for ${d.title} (opens in new tab)`}
-                >
-                  Live demo <span aria-hidden="true">↗</span>
-                </a>
+          {demoLink && (
+            <a
+              href={demoLink.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open live demo for ${d.title} (opens in new tab)`}
+              className="ml-auto inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+            >
+              Live <span aria-hidden="true">↗</span>
+            </a>
+          )}
+          {githubLink && (
+            <a
+              href={githubLink.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View ${d.title} source on GitHub (opens in new tab)`}
+              className={cn(
+                'inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta',
+                !demoLink && 'ml-auto',
               )}
-              {githubLink && (
-                <a
-                  href={githubLink.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(
-                    'inline-flex items-center gap-1.5 whitespace-nowrap',
-                    'font-mono text-meta tracking-label uppercase text-sage-text',
-                    'transition-colors duration-fast ease-out hover:text-charcoal',
-                    'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta rounded-sm',
-                  )}
-                  aria-label={`View ${d.title} source on GitHub (opens in new tab)`}
-                >
-                  GitHub <span aria-hidden="true">↗</span>
-                </a>
-              )}
-            </span>
+            >
+              GitHub <span aria-hidden="true">↗</span>
+            </a>
           )}
         </div>
       </div>
