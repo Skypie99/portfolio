@@ -142,8 +142,6 @@
   --color-wa-rose-pale: rgb(var(--rgb-rose-pale));
 
   /* Type scale */
-  --fs-display-l: 3.25rem;
-  --fs-display-m: 2.25rem;
   --fs-display-s: 1.1875rem;
   --fs-body:      1rem;
   --fs-body-sm:   0.875rem;
@@ -195,6 +193,72 @@
   /* Shadows */
   --shadow-soft: 0 1px 2px rgba(35, 36, 32, 0.04),
                  0 4px 12px rgba(35, 36, 32, 0.03);
+
+  /* ==================================================================
+     OVERHAUL 2026-06-03 — ADDITIVE token extensions (below-the-landing
+     experience overhaul). Every name here is NEW; nothing above is
+     mutated. The live cinematic reads only --font-cormorant + --sidebar-w,
+     never these — so additive extension is safe. Mirrored in
+     tailwind.config.ts; named font-size tokens are also registered in
+     lib/cn.ts. rgba/hex literals (shadows, scrim) get an html.dark
+     override below; --rgb-*-derived values flip for free.
+     ================================================================== */
+
+  /* --- Modular type scale: body (1rem) is the anchor; steps rise on a
+         1.25 ratio with a wider 1.5 leap into the display tiers. Layered
+         ALONGSIDE the existing --fs-* compat tokens; components migrate in
+         phases 2–3, old aliases retire in phase 7. --- */
+  --fs-step-1: 1.25rem;     /* 20px    — lead paragraph */
+  --fs-step-2: 1.5rem;      /* 24px    — sub-head */
+  --fs-step-3: 1.953rem;    /* 31.25px — card title */
+  --fs-step-4: 2.441rem;    /* 39.06px — section head */
+  --fs-step-5: 3.052rem;    /* 48.83px — page title */
+  --fs-display: clamp(2.75rem, 1.6rem + 5vw, 4.25rem);  /* route page titles (44→68px) */
+  --fs-hero:    clamp(3rem, 1.4rem + 6vw, 5.5rem);       /* homepage hero (48→88px) */
+
+  --lh-tight:   1.1;
+  --lh-snug:    1.2;
+  --ls-display: -0.02em;
+  --ls-hero:    -0.025em;
+
+  /* --- Easing vocabulary (entrance / exit / snap) beside --ease-out/soft --- */
+  --ease-entrance: cubic-bezier(0.16, 1, 0.3, 1);     /* arriving (expo-out) */
+  --ease-exit:     cubic-bezier(0.4, 0, 1, 1);        /* leaving (accel-in) */
+  --ease-snap:     cubic-bezier(0.34, 1.56, 0.64, 1); /* small pop — overshoot, RM-gated */
+
+  /* --- Ambient golden-hour drift (signature moment 2; CSS-only) --- */
+  --dur-ambient: 26s;
+
+  /* --- Layered WARM shadow ramp (light). Dark overrides in html.dark. --- */
+  --shadow-sm: 0 1px 2px rgba(60, 32, 18, 0.05);
+  --shadow-md: 0 2px 4px rgba(60, 32, 18, 0.06), 0 8px 16px rgba(60, 32, 18, 0.05);
+  --shadow-lg: 0 4px 8px rgba(60, 32, 18, 0.07), 0 12px 28px rgba(60, 32, 18, 0.08);
+  --shadow-xl: 0 6px 12px rgba(60, 32, 18, 0.09), 0 18px 44px rgba(60, 32, 18, 0.11);
+
+  /* --- Border-width scale (hairline is decorative-only; DPR-dependent) --- */
+  --border-width-hairline: 0.5px;
+  --border-width-thin:     1px;
+  --border-width-thick:    2px;
+  --border-width-heavy:    4px;
+
+  /* --- Focus ring tokenized (value unchanged from the Alex-validated ring) --- */
+  --focus-ring-width:  2px;
+  --focus-ring-offset: 2px;
+  --focus-ring-color:  var(--color-accent-primary);
+
+  /* --- Scrollbar width + scrim. (Scrollbar RULES land in phase 5 after the
+         §7 takeover check; this is just the knob.) --- */
+  --scrollbar-w: 10px;
+  --scrim:       rgb(20 9 3 / 0.5);
+
+  /* --- Z-index ladder. Consistent with the landing's FROZEN z-indexes
+         (grain 100, cdesert pin 50 / title 60 / finish 70) — names the
+         below-landing layers around them; does not renumber them. --- */
+  --z-base:    0;
+  --z-raised:  10;
+  --z-sticky:  30;
+  --z-overlay: 80;
+  --z-grain:   100;
 }
 
 /* ==================================================================
@@ -239,6 +303,15 @@ html.dark {
   --rgb-earth-deep:   33 26 19;      /* card backdrop — deeper warm dark */
 
   color-scheme: dark;
+
+  /* Overhaul 2026-06-03 — the warm shadow ramp & scrim are rgba/hex
+     literals (NOT --rgb-* triplets), so they do not auto-flip; deepen
+     them for the dark "lit cliff at dusk" surface. */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.40);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.50);
+  --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.55);
+  --scrim:     rgb(0 0 0 / 0.60);
 }
 
 /* ------------------------------------------------------------------
@@ -276,25 +349,46 @@ body {
   font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
 }
 
-/* Cycle 24: large Cormorant display tiers get a tiny negative track —
-   modern luxury serifs (Dior, Aesop, ffern) all use slight negative
-   spacing at display sizes for that "expensive" feel. Applied only to
-   the large display tiers so body Cormorant rendering is unaffected. */
-.font-serif.text-display-l,
-.font-serif.text-display-m,
-.font-serif.text-\[clamp\(2\.25rem\,7vw\,4rem\)\],
-.font-serif.text-\[clamp\(2\.25rem\,5vw\,3\.5rem\)\] {
-  letter-spacing: -0.01em;
-}
 
-/* Focus-visible default — Alex §6.1. Terracotta 4.33:1 on cream (PASS 3:1 UI). */
+/* Focus-visible default — Alex §6.1. Terracotta 4.33:1 on cream (PASS 3:1 UI).
+   Tokenized (Phase 5) so the ring is a system knob — values unchanged. */
 *:focus-visible {
-  outline: 2px solid var(--color-accent-primary);
-  outline-offset: 2px;
+  outline: var(--focus-ring-width, 2px) solid var(--focus-ring-color, var(--color-accent-primary));
+  outline-offset: var(--focus-ring-offset, 2px);
   border-radius: 2px;
 }
 
 /* The skip-link's :focus state is in components/SkipLink.tsx via Tailwind. */
+
+/* ------------------------------------------------------------------
+   Scrollbar — Phase 5 1% detail. Thin, warm, low-contrast: reads as a
+   quiet edge, never as chrome. `--rgb-*`-backed so it flips in dark mode
+   for free. Gated to pointer:fine — touch devices keep native overlay
+   scrollbars. Kept understated so it never competes with the cinematic
+   takeover (AESTHETIC_LOCKFILE §7 #1 — verified non-intrusive both modes).
+   ------------------------------------------------------------------ */
+@media (pointer: fine) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--rgb-line-strong) / 0.5) transparent;
+  }
+  ::-webkit-scrollbar {
+    width: var(--scrollbar-w, 10px);
+    height: var(--scrollbar-w, 10px);
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(var(--rgb-line-strong) / 0.45);
+    border-radius: var(--radius-pill);
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(var(--rgb-pebble) / 0.7);
+  }
+}
 
 /* Disable any text-decoration on anchors by default; components opt in. */
 a {
@@ -471,19 +565,66 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
 }
 
 /* ------------------------------------------------------------------
-   Work-card hover — Dani §3.3 strict: image scales 1.02 over --dur-slow,
-   border deepens to --color-pebble. NO lift, NO shadow. The previous
-   4px translateY was a Cycle 2/3 divergence; restored here.
+   Work-card hover — shipped behavior: card lifts 4px (-translate-y-1)
+   and gains a warm shadow (--shadow-elevation-2). Border and bg-hover
+   also deepen. This replaces the earlier Dani §3.3 no-lift spec, which
+   was overridden in a subsequent polish pass (2026-05-27).
 
-   Image scale + border color are applied via Tailwind group-hover on
-   the JSX (ProjectCard.tsx + certificates page). This block keeps the
-   focus-visible affordance Alex F-C4-1 set up — the global
-   *:focus-visible Terracotta outline still fires.
+   All hover classes are applied via Tailwind group-hover on the JSX
+   in ProjectCard.tsx: `hover:-translate-y-1 hover:shadow-[var(--shadow-elevation-2)]`.
+   This block keeps the focus-visible affordance Alex F-C4-1 set up —
+   the global *:focus-visible Terracotta outline still fires.
 
    Reduced-motion globals block snaps the scale transition to ~0ms.
    ------------------------------------------------------------------ */
 .work-card {
-  /* No box-level transform; child img + border handle the hover state. */
+  /* Box-level lift + warm shadow on hover — see ProjectCard.tsx hover classes. */
+}
+
+/* ------------------------------------------------------------------
+   Ambient golden-hour drift — signature moment #2 (Contact section).
+   A single warm radial light field that drifts almost imperceptibly on an
+   autonomous ultra-slow loop — the landing's sun "remembered at rest".
+   transform-only (compositor-cheap); gated to no-preference so it never
+   runs under reduced-motion, where it then holds as a static warm glow.
+   ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: no-preference) {
+  .ambient-drift {
+    animation: ambient-drift var(--dur-ambient, 26s) ease-in-out infinite alternate;
+  }
+}
+@keyframes ambient-drift {
+  from { transform: translate3d(-2%, -1%, 0) scale(1.04); }
+  to   { transform: translate3d(2%, 2%, 0) scale(1.1); }
+}
+
+/* ------------------------------------------------------------------
+   Reveal primitive (components/Reveal.tsx) — fade + rise on scroll-in,
+   IntersectionObserver-driven (no animation lib, Phase 6). Content stays
+   in the DOM (opacity, not display) so it remains in the a11y tree +
+   crawlable; reduced-motion and no-JS visitors get the final visible state.
+   ------------------------------------------------------------------ */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out);
+}
+.reveal-shown {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+@media (scripting: none) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* Cycle 16 + Cycle 26 + Cycle 29 — broken-image polish.
@@ -625,32 +766,6 @@ img::before {
   }
 }
 
-/* ------------------------------------------------------------------
-   Section scroll-reveal — Dani §5.3.
-   Fade + 16px translateY rise, easeOut, triggered as the section
-   enters the viewport. Pure CSS via scroll-driven animations.
-
-   Modern browsers (Chrome/Edge 115+, Safari 17.4+) opt in via
-   @supports. Older browsers (Firefox at time of writing) get the
-   end state by default — graceful no-animation fallback.
-
-   Reduced-motion users see the end state immediately (the @media
-   guard inside @supports skips the animation declaration entirely).
-   ------------------------------------------------------------------ */
-@keyframes reveal-rise {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .reveal-on-scroll {
-      animation: reveal-rise linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 60%;
-    }
-  }
-}
 
 /* ------------------------------------------------------------------
    Editorial link — Dani §5.1.5. "Underline draws in left-to-right,

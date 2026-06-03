@@ -39,7 +39,7 @@ export function Sidebar() {
       <div className="flex flex-col gap-3">
         <Link
           href="/"
-          className="link-draw inline-block font-serif font-normal text-[1.5rem] leading-none text-near-black"
+          className="link-draw inline-block font-serif font-normal text-step-2 leading-none text-near-black"
         >
           {profile.wordmarkText}
         </Link>
@@ -72,7 +72,7 @@ export function Sidebar() {
             aria-label={`Featured deliverable: ${featured.title} — ${featured.role}`}
             className="group flex flex-col gap-1.5 text-near-black transition-colors duration-fast ease-out"
           >
-            <span className="link-draw inline-block font-serif font-normal text-[1.375rem] leading-tight">
+            <span className="link-draw inline-block font-serif font-normal text-step-2 leading-tight">
               {featured.title}
             </span>
             <span className="font-sans text-body-sm text-charcoal">

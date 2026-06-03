@@ -32,7 +32,7 @@ export function Footer() {
           <div className="flex flex-col gap-3">
             <Link
               href="/"
-              className="link-draw inline-block font-serif font-normal text-[1.75rem] text-near-black leading-none self-start"
+              className="link-draw inline-block font-serif font-normal text-step-3 text-near-black leading-none self-start"
             >
               {profile.name}
             </Link>
@@ -41,7 +41,7 @@ export function Footer() {
               {profile.location} · Open to work
             </p>
           </div>
-          <p className="font-serif font-light text-[1.25rem] text-charcoal max-w-[36ch] leading-snug text-pretty md:text-right">
+          <p className="font-serif font-light text-step-1 text-charcoal max-w-[36ch] leading-snug text-pretty md:text-right">
             {profile.tagline}
           </p>
         </div>
@@ -56,7 +56,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/"
-                  className="font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+                  className="link-draw font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
                 >
                   Home
                 </Link>
@@ -64,7 +64,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/work/"
-                  className="font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+                  className="link-draw font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
                 >
                   The Work
                 </Link>
@@ -72,7 +72,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/certificates/"
-                  className="font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+                  className="link-draw font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
                 >
                   Credentials
                 </Link>
@@ -80,7 +80,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/about/"
-                  className="font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+                  className="link-draw font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
                 >
                   A Brief Account
                 </Link>
@@ -88,7 +88,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/contact/"
-                  className="font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+                  className="link-draw font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
                 >
                   Correspond
                 </Link>
@@ -124,7 +124,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={cn(
-                      'font-sans text-body-sm inline-flex items-center gap-1',
+                      'link-draw font-sans text-body-sm inline-flex items-center gap-1',
                       'transition-colors duration-fast ease-out',
                       // GitHub gets terracotta — elevated brand presence
                       s.platform.toLowerCase() === 'github'

@@ -26,8 +26,7 @@ export default function NotFound() {
         </nav>
 
         <h1
-          className="font-serif font-light text-[clamp(2.5rem,6vw,4rem)] text-near-black leading-[1.05] mb-6 text-balance"
-          style={{ letterSpacing: '-0.02em' }}
+          className="font-serif font-light text-display text-near-black leading-[1.05] mb-6 text-balance"
         >
           Nothing here.
         </h1>
