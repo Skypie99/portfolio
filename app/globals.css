@@ -1079,10 +1079,10 @@ img::before {
    purposeful rather than endless (and fewer scroll-pixels to scrub through). */
 .cdesert-stage {
   position: relative;
-  height: 620vh;     /* REFINE 2026-06-02: 500→620vh for a slower, more deliberate
-                        cinematic dolly (haze layer removed → perf headroom back).
-                        ~200vh of push per beat. Scales the whole timeline uniformly
-                        so the unified zoom + all proportions are preserved. */
+  height: 720vh;     /* REFINE: 500→620vh, then 620→720vh (r6 fluidity) for a slower,
+                        more deliberate cinematic dolly — more scroll room so the unified
+                        rise isn't rushed. Scales the whole timeline uniformly so the
+                        unified zoom + all proportions are preserved. */
   width: 100%;
 }
 

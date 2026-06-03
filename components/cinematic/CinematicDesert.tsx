@@ -185,7 +185,7 @@ export function CinematicDesert() {
           end: 'bottom bottom',
           pin,
           pinSpacing: true,
-          scrub: 1.5,
+          scrub: 1.8,
           anticipatePin: 1,
           invalidateOnRefresh: true,
           // cull on every progress tick (cheap: a handful of class/style writes,
