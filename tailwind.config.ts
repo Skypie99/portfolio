@@ -153,6 +153,9 @@ const config: Config = {
         base: '280ms',
         slow: '520ms',
         reveal: '900ms',
+        // Motion-polish 2026-06-03 — scene tier (var-backed; globals.css)
+        transition: 'var(--dur-transition)', // route-change crossfade
+        scene: 'var(--dur-scene)', // large section reveal
       },
       transitionTimingFunction: {
         out: 'cubic-bezier(0.22, 1, 0.36, 1)',
@@ -161,6 +164,9 @@ const config: Config = {
         entrance: 'var(--ease-entrance)',
         exit: 'var(--ease-exit)',
         snap: 'var(--ease-snap)',
+        // Motion-polish 2026-06-03 — golden-hour "camera" easings (globals.css)
+        'gh-glide': 'var(--ease-gh-glide)',
+        'gh-settle': 'var(--ease-gh-settle)',
       },
       boxShadow: {
         soft: '0 1px 2px rgba(35,36,32,0.04), 0 4px 12px rgba(35,36,32,0.03)',
