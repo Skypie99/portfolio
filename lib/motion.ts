@@ -50,6 +50,9 @@ export function usePrefersReducedMotion() {
   const [reduced, setReduced] = useState(false);
 
   useEffect(() => {
+    // matchMedia is absent in some environments (older embedded webviews, jsdom
+    // under test). Treat that as "no preference" rather than throwing.
+    if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') return;
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
     setReduced(mq.matches);
     const onChange = () => setReduced(mq.matches);

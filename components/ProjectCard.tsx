@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { AppMockup } from '@/components/AppMockup';
+import { CardImage, type CardAccent } from '@/components/CardImage';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import type { Deliverable } from '@/lib/schema';
@@ -44,12 +44,12 @@ export function ProjectCard({
 
   // Per-project signature colour — a curated teal+orange spread so the work
   // set reads as a spectrum, not five identical terracotta cards.
-  const ACCENT: Record<string, { border: string; dot: string; from: string }> = {
-    'accessmap':           { border: 'border-l-terracotta', dot: 'bg-terracotta', from: 'from-accent/15' },
-    'claude-corp':         { border: 'border-l-lagoon',     dot: 'bg-lagoon',     from: 'from-lagoon/20' },
-    'prompt-library':      { border: 'border-l-gold',       dot: 'bg-gold',       from: 'from-gold/22' },
-    'pacman-code-trainer': { border: 'border-l-emerald',    dot: 'bg-emerald',    from: 'from-emerald/18' },
-    'mutual-mesh':         { border: 'border-l-caramel',    dot: 'bg-caramel',    from: 'from-caramel/18' },
+  const ACCENT: Record<string, { border: string; dot: string; accent: CardAccent }> = {
+    'accessmap':           { border: 'border-l-terracotta', dot: 'bg-terracotta', accent: 'terracotta' },
+    'claude-corp':         { border: 'border-l-lagoon',     dot: 'bg-lagoon',     accent: 'lagoon' },
+    'prompt-library':      { border: 'border-l-gold',       dot: 'bg-gold',       accent: 'gold' },
+    'pacman-code-trainer': { border: 'border-l-emerald',    dot: 'bg-emerald',    accent: 'emerald' },
+    'mutual-mesh':         { border: 'border-l-caramel',    dot: 'bg-caramel',    accent: 'caramel' },
   };
   const a = ACCENT[d.id] ?? ACCENT['accessmap'];
 
@@ -61,50 +61,34 @@ export function ProjectCard({
         // Shamus wave2: border-l-4 + border-l-terracotta = editorial left accent.
         'bg-warm-white border border-stone border-l-4 rounded-md',
         a.border,
-        'shadow-md',
+        'shadow-lg',
         // overflow-hidden lets the image sit edge-to-edge with rounded card corners
         'overflow-hidden',
         'transition-all duration-280 ease-out',
-        'hover:bg-[var(--card-bg-hover)] hover:border-[var(--card-border-hover)] hover:shadow-lg hover:-translate-y-1',
-        'active:translate-y-0 active:shadow-md',
+        'hover:bg-[var(--card-bg-hover)] hover:border-[var(--card-border-hover)] hover:shadow-xl hover:-translate-y-1',
+        'active:translate-y-0 active:shadow-lg',
         'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta focus-visible:rounded-sm',
         // Wide featured card: side-by-side on md+, image fills left half.
         wide && 'md:flex md:flex-row md:items-stretch',
         className,
       )}
     >
-      {/* ── Mockup area — edge-to-edge, no outer card padding ───────── */}
-      <div
-        className={cn(
-          'relative overflow-hidden',
-          wide
-            ? 'w-full md:w-1/2 aspect-[4/3] md:aspect-auto md:self-stretch'
-            : 'w-full aspect-[3/2] border-b border-stone',
-          // Earthy sandstone backdrop behind every mockup — warm desert tone,
-          // a subtle clay gradient for depth. Each project keeps its signature
-          // colour on the border + dot. Flips to warm dark earth in dark mode.
-          'bg-gradient-to-br from-earth to-earth-deep',
-          // Seat the device in a warm "lit well": a soft inner shadow pooling
-          // at the base + a single top-light overlay (one warm light from
-          // above, echoing the landing's golden direction). Adds depth so the
-          // mockup feels placed inside the card, not pasted flat against it.
-          'shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]',
-          'transition-[filter] duration-base ease-out',
-          'group-hover:brightness-[1.03]',
-        )}
-        aria-hidden="true"
-      >
-        {/* Warm top-light — single source from above (lit-well depth).
-            Softer in dark mode (0.38 → 0.16) to prevent bloom on the dark earth. */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,241,217,0.38),transparent_62%)] dark:bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,241,217,0.16),transparent_62%)]"
+      {/* ── Image area — framed product illustration in the shared premium
+          "lit-well" material (screenshot-ready). Badges overlay the frame. ── */}
+      <div className={cn('relative', wide ? 'w-full md:w-1/2 md:self-stretch' : 'w-full')}>
+        <CardImage
+          src={d.heroImage.src}
+          alt={d.heroImage.alt}
+          accent={a.accent}
+          className={cn(
+            wide ? 'aspect-[4/3] md:h-full md:aspect-auto' : 'aspect-[3/2] border-b border-stone',
+          )}
         />
         {/* Featured badge */}
         {d.featured && (
           <span
             className={cn(
-              'absolute top-4 left-4',
+              'absolute top-4 left-4 z-10',
               'font-mono text-meta tracking-label uppercase',
               'bg-cream text-accent-text',
               'px-2.5 py-1 rounded-pill',
@@ -120,7 +104,7 @@ export function ProjectCard({
         {demoLink && (
           <span
             className={cn(
-              'absolute top-4 right-4',
+              'absolute top-4 right-4 z-10',
               'font-mono text-meta tracking-label uppercase text-sage-text',
               'bg-cream/80 backdrop-blur-sm',
               'px-2.5 py-1 rounded-pill',
@@ -135,10 +119,6 @@ export function ProjectCard({
             Live
           </span>
         )}
-        <AppMockup
-          slug={d.id as 'accessmap' | 'claude-corp' | 'prompt-library' | 'pacman-code-trainer' | 'mutual-mesh'}
-          className={wide ? 'scale-110' : ''}
-        />
       </div>
 
       {/* ── Content area — owns its padding since card no longer has p-6 ── */}
