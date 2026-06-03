@@ -170,7 +170,12 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
         <div className="max-w-content mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start">
             {/* Hero image / fallback block */}
-            <div className="relative w-full aspect-[4/5] bg-blush border border-border-decorative overflow-hidden flex items-center justify-center order-1 md:order-1">
+            <div className="relative w-full aspect-[4/5] bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-1 md:order-1 shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]">
+              {/* Warm top-light — single source from above (lit-well depth) */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,241,217,0.38),transparent_62%)] dark:bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,241,217,0.16),transparent_62%)]"
+              />
               {/* Alex F-C4-3: explicit dimensions for the 4:5 hero. */}
               {/* Peter: not LCP on mobile (below fold initially), lazy-load safe */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -328,7 +333,12 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
               {d.gallery.map((img) => (
                 <li key={img.src} className="flex flex-col gap-3">
-                  <div className="relative w-full aspect-[4/3] bg-wa-teal-pale border border-wa-teal-soft/40 overflow-hidden flex items-center justify-center">
+                  <div className="relative w-full aspect-[4/3] bg-gradient-to-br from-earth to-earth-deep border border-wa-teal-soft/40 overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]">
+                    {/* Warm top-light — single source from above (lit-well depth) */}
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute inset-0 bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,241,217,0.38),transparent_62%)] dark:bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,241,217,0.16),transparent_62%)]"
+                    />
                     {/* Alex F-C4-3: explicit dimensions for the 4:3 gallery. */}
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img

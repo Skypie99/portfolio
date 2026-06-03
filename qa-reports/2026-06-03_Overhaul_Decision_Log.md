@@ -62,5 +62,24 @@ This log records decisions as the run proceeds (brief §2.4: "the record is part
 
 **Note:** dark-mode preview screenshots letterbox (MCP screenshot-canvas artifact after a colorScheme resize) — content verified correct via light captures + eval state; not a site issue. Race-avoidance for future captures: resize → reload → scroll → shoot.
 
-### Phase 3 — Visual / UI pass
+### Phase 3 — Visual / UI pass ✅ (tag `overhaul-phase3`)
+
+**Shipped (warm depth system — the "expensive" look):**
+- **The "lit well" — the signature depth move.** Each Work-card mockup now sits in a warm lit well: `from-earth→earth-deep` gradient + a soft base inner-shadow (`shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]`) + a single warm top-light overlay (`radial-gradient … rgba(255,241,217,0.38)`, dark variant `0.16`). The device reads as *seated and lit from above* — one warm light source, echoing the landing. Validated visually in **both modes** (Morgan greenlit off the prototype before roll-out).
+- **Cards onto the warm shadow ramp:** `shadow-md` resting → `hover:shadow-lg` (was `shadow-warm` + `--shadow-elevation-2`).
+- **Aliased `--shadow-elevation-1/2/3` → `var(--shadow-md/lg/xl)`** in tokens-phase2.css — so `AnimatedCertGrid` hover + the `card-elevate` keyframe inherit warm depth with zero call-site churn.
+- **Lit-well applied to the case-study image wells** (hero `aspect-[4/5]` + gallery `aspect-[4/3]` in `work/[slug]`) — same pattern; also sets up signature moment #3 (P4).
+- **Stats band** grid gains `shadow-md` (reads as a seated panel).
+- **Decluttered the ProjectCard CTA row:** `Case study →` primary (left), `Live demo / GitHub` quiet cluster pushed right (`ml-auto`), `·` divider removed — addresses the audit's "crowded" flag. All aria-labels/rel/focus rings preserved.
+
+**Decisions:**
+- **D3.1** Greenlit the lit-well direction off a homepage prototype, then delegated roll-out to a Sonnet builder (model-split K3). The lit-well is the restrained "depth & materiality" the brief asks for — felt, not seen.
+- **D3.2** Left the Method panel + Button + small chips on `shadow-soft` (intentionally quiet; brief wants Method restrained).
+- **D3.3** Dark top-light alpha lowered to 0.16 (vs 0.38 light) so the warm glow doesn't read as a hotspot on the dark earth backdrop.
+
+**Verification:** typecheck clean · 154 tests + 1 todo · ESLint clean · static export builds (15 pages / 3 exported). **`/` First Load JS still 197 kB — depth is pure CSS, zero perf cost.** Cards' warm depth confirmed via computed styles + both-mode captures; cinematic intact (dawn vista unchanged). No frozen files touched.
+
+**Tooling notes:** (1) Hit a Next dev `.next`-cache corruption (`__webpack_modules__ is not a function` + RSC manifest errors) that served stale bundles — fixed by `rm -rf .next` + restart; verify edits via `preview_inspect` computed styles, not just screenshots. (2) The preview MCP is pinned to `/`; eval-navigation to sub-routes doesn't persist — case-study visuals verified at the code/computed level (identical lit-well pattern); will point a launch.json path at a sub-route when P4/P7/P8 need sub-route captures.
+
+### Phase 4 — Motion & interaction
 _(next)_

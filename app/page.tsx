@@ -106,7 +106,7 @@ export default function HomePage() {
           </p>
 
           {/* 4-col stat grid — vertical-rule layout for editorial weight */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-wa-teal-soft/30 border border-wa-teal-soft/50 rounded-lg overflow-hidden">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-wa-teal-soft/30 border border-wa-teal-soft/50 rounded-lg overflow-hidden shadow-md">
             {showcaseChips.map(({ stat, label, project, tags }, i) => (
               <div
                 key={project}
