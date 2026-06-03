@@ -167,13 +167,13 @@ export default function HomePage() {
             {/* Featured card — full width, col-span preserved via className */}
             {deliverables[0] && (
               <Reveal className="md:col-span-2" index={0}>
-                <ProjectCard deliverable={deliverables[0]} wide />
+                <ProjectCard deliverable={deliverables[0]} wide index={0} />
               </Reveal>
             )}
             {/* Remaining 3 in 2-col grid */}
             {deliverables.slice(1).map((d, i) => (
               <Reveal key={d.id} index={i + 1}>
-                <ProjectCard deliverable={d} />
+                <ProjectCard deliverable={d} index={i + 1} />
               </Reveal>
             ))}
           </div>
