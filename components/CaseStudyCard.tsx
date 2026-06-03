@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+import { CardImage, type CardAccent } from '@/components/CardImage';
 import { cn } from '@/lib/cn';
 
 type CaseStudyCardProps = {
@@ -10,6 +11,15 @@ type CaseStudyCardProps = {
   description: string;
   href: string;
   className?: string;
+};
+
+/** Per-project signature colour — mirrors ProjectCard's spread. */
+const ACCENT: Record<CaseStudyCardProps['category'], CardAccent> = {
+  'accessmap': 'terracotta',
+  'claude-corp': 'lagoon',
+  'prompt-library': 'gold',
+  'pacman': 'emerald',
+  'mutual': 'caramel',
 };
 
 /**
@@ -36,50 +46,25 @@ export function CaseStudyCard({
       href={href}
       className={cn(
         'case-study-card group block',
-        'rounded-lg overflow-hidden',
-        'transition-all duration-fast ease-out',
+        'rounded-lg overflow-hidden bg-warm-white border border-stone',
+        'shadow-lg transition-all duration-base ease-out',
+        'hover:shadow-xl hover:-translate-y-1 active:translate-y-0 active:shadow-lg',
         'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta rounded-sm',
         className,
       )}
       data-category={category}
     >
-      {/* Image wrapper with overlay */}
-      <div
-        className={cn(
-          'relative overflow-hidden',
-          'w-full transition-all duration-slow ease-out',
-        )}
-        style={{ height: 'var(--case-study-image-height, 240px)' }}
-      >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={imageUrl}
-          alt={imageAlt}
-          className={cn(
-            'w-full h-full object-cover',
-            'transition-all duration-slow ease-out',
-            'group-hover:scale-[1.02]',
-          )}
-          loading="lazy"
-        />
-        {/* Category-specific tint overlay — hover state handled by .case-study-card:hover .case-study-overlay in tokens-phase2.css */}
-        <div
-          className={cn(
-            'absolute inset-0 case-study-overlay',
-            'transition-all duration-slow ease-out',
-          )}
-          style={{
-            backgroundColor: 'var(--case-study-overlay)',
-          }}
-          aria-hidden="true"
-        />
+      {/* Framed product image — shared premium material (lit-well + scrim +
+          parallax). Replaces the old flat terracotta tint over a raw <img>. */}
+      <div style={{ height: 'var(--case-study-image-height, 240px)' }}>
+        <CardImage src={imageUrl} alt={imageAlt} accent={ACCENT[category]} className="h-full" />
       </div>
 
       {/* Content */}
       <div
         className={cn(
           'p-6 flex flex-col gap-3',
-          'bg-warm-white border border-stone border-t-0 rounded-b-lg',
+          'border-t border-stone',
           'transition-colors duration-base ease-out',
           'group-hover:bg-blush',
         )}
