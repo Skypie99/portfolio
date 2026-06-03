@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
+import { Reveal } from '@/components/Reveal';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getAllBlogPostSlugs, getBlogPosts, getProfile } from '@/lib/content';
@@ -193,12 +194,14 @@ export default function BlogPostPage({ params }: { params: RouteParams }) {
         )}
       >
         <div className="max-w-content mx-auto">
-          <article
-            aria-label={post.title}
-            className="max-w-[720px] flex flex-col gap-6"
-          >
-            {renderedContent}
-          </article>
+          <Reveal variant="scene">
+            <article
+              aria-label={post.title}
+              className="max-w-[720px] flex flex-col gap-6"
+            >
+              {renderedContent}
+            </article>
+          </Reveal>
         </div>
       </section>
 

@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import { Button } from '@/components/Button';
 import { NumberedStep } from '@/components/NumberedStep';
+import { ParallaxWash } from '@/components/ParallaxWash';
 import { Reveal } from '@/components/Reveal';
 import { cn } from '@/lib/cn';
 import { getDeliverables, getProfile } from '@/lib/content';
@@ -107,10 +108,13 @@ export default function AboutPage() {
           'px-gutter py-24 lg:py-32',
           // Dani wave4: alternating rhythm — warm-white
           'bg-warm-white border-t border-border-decorative',
+          'relative overflow-hidden',
         )}
       >
-        <div className="max-w-content mx-auto">
-          <Reveal className="mb-12">
+        {/* Golden-hour scroll-depth (teal, to harmonise with the panel) */}
+        <ParallaxWash depth="far" tone="teal" />
+        <div className="relative z-10 max-w-content mx-auto">
+          <Reveal variant="scene" className="mb-12">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Method
@@ -164,7 +168,7 @@ export default function AboutPage() {
         )}
       >
         <div className="max-w-content mx-auto">
-          <Reveal className="mb-12">
+          <Reveal variant="scene" className="mb-12">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Principles
@@ -203,7 +207,7 @@ export default function AboutPage() {
         )}
       >
         <div className="max-w-content mx-auto">
-          <Reveal className="mb-12">
+          <Reveal variant="scene" className="mb-12">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Currently
@@ -242,7 +246,7 @@ export default function AboutPage() {
           )}
         >
           <div className="max-w-content mx-auto">
-            <Reveal className="mb-12">
+            <Reveal variant="scene" className="mb-12">
               <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
                 <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 The Work

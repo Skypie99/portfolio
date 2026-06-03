@@ -83,7 +83,7 @@ export default function BlogIndexPage() {
             <ul className="flex flex-col divide-y divide-border-decorative">
               {posts.map((post, idx) => (
                 <li key={post.id} className="py-12 first:pt-0">
-                  <Reveal index={idx}>
+                  <Reveal index={idx} variant="depth">
                   <Link
                     href={`/blog/${post.id}/`}
                     aria-label={`Read: ${post.title}`}

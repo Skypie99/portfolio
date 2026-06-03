@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { Button } from '@/components/Button';
 import { CaseStudyCard } from '@/components/CaseStudyCard';
 import { HeroImageSettle, HeroTitleSettle } from '@/components/HeroSettle';
+import { ParallaxWash } from '@/components/ParallaxWash';
 import { Reveal } from '@/components/Reveal';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
@@ -317,11 +318,15 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
 
       {/* Case study body — rendered only when body content exists */}
       {d.body && (
-        <section className="px-gutter py-24 lg:py-32 bg-warm-white border-t border-border-decorative">
-          <div className="max-w-content mx-auto">
-            <article aria-label={`${d.title} case study`} className="max-w-[720px] flex flex-col gap-6">
-              {renderMarkdown(d.body)}
-            </article>
+        <section className="px-gutter py-24 lg:py-32 bg-warm-white border-t border-border-decorative relative overflow-hidden">
+          {/* Golden-hour scroll-depth behind the case-study prose */}
+          <ParallaxWash depth="far" />
+          <div className="relative z-10 max-w-content mx-auto">
+            <Reveal variant="scene">
+              <article aria-label={`${d.title} case study`} className="max-w-[720px] flex flex-col gap-6">
+                {renderMarkdown(d.body)}
+              </article>
+            </Reveal>
           </div>
         </section>
       )}
@@ -330,7 +335,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
       {d.gallery && d.gallery.length > 0 && (
         <section className="px-gutter py-24 lg:py-32 bg-wa-rose-pale border-t border-wa-rose-soft/40">
           <div className="max-w-content mx-auto">
-            <Reveal>
+            <Reveal variant="scene">
               <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
                 Gallery
               </p>
@@ -388,7 +393,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
           )}
         >
           <div className="max-w-content mx-auto">
-            <Reveal>
+            <Reveal variant="scene">
               <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
                 More work
               </p>
