@@ -91,7 +91,7 @@ export function WorkFilterGrid({ deliverables }: WorkFilterGridProps) {
             exit={shouldReduceMotion ? undefined : { opacity: 0, scale: 0.98, transition: { duration: 0.18 } }}
             className="mb-12"
           >
-            <ProjectCard deliverable={featured} wide />
+            <ProjectCard deliverable={featured} wide index={deliverables.indexOf(featured)} />
           </motion.div>
         )}
       </AnimatePresence>
@@ -124,10 +124,9 @@ export function WorkFilterGrid({ deliverables }: WorkFilterGridProps) {
                 <CaseStudyCard
                   title={d.title}
                   category={toCategory(d.id)}
-                  imageUrl={d.heroImage.src}
-                  imageAlt={d.heroImage.alt}
                   description={d.summary}
                   href={`/work/${d.id}/`}
+                  index={deliverables.findIndex((x) => x.id === d.id)}
                 />
               </motion.li>
             ))}
