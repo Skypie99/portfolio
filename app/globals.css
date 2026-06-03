@@ -670,6 +670,25 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
   }
 }
 
+/* ------------------------------------------------------------------
+   Route-change transition (app/template.tsx) — motion-polish 2026-06-03.
+   A calm crossfade + small rise on each client navigation, turning hard
+   route cuts into continuous cinematic flow. The homepage + initial load
+   are exempt in the template (the cinematic opening is never touched).
+   Gated to no-preference, so reduced-motion visitors get the final state
+   instantly; the .page-enter wrapper only ever exists via JS navigation.
+   ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: no-preference) {
+  .page-enter {
+    animation: page-enter var(--dur-transition) var(--ease-gh-glide) both;
+    will-change: opacity, transform;
+  }
+}
+@keyframes page-enter {
+  from { opacity: 0; transform: translate3d(0, 8px, 0); }
+  to   { opacity: 1; transform: none; }
+}
+
 /* Cycle 16 + Cycle 26 + Cycle 29 — broken-image polish.
 
    `color: transparent` hides alt-text fallback paint on all imgs.
