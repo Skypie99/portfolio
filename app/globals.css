@@ -1086,6 +1086,15 @@ img::before {
   width: 100%;
 }
 
+/* Mobile: shorter scroll than the 380vh desktop stage (r11) — Sky felt the back half
+   (after the cliff rises → fill + title) needed a bit less swiping on a phone. Scales the
+   whole timeline uniformly on phones; desktop pacing is untouched. */
+@media (max-width: 767px) {
+  .cdesert-stage {
+    height: 300vh;
+  }
+}
+
 /* -- Scene-group cull (PERF 2026-06-02): when a beat's group opacity reaches 0
    (fully faded out, or not yet faded in) the engine adds this class so its 3
    planes drop OUT of the composite entirely — the GPU never rasterises or blends
