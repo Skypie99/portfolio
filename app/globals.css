@@ -142,8 +142,6 @@
   --color-wa-rose-pale: rgb(var(--rgb-rose-pale));
 
   /* Type scale */
-  --fs-display-l: 3.25rem;
-  --fs-display-m: 2.25rem;
   --fs-display-s: 1.1875rem;
   --fs-body:      1rem;
   --fs-body-sm:   0.875rem;
@@ -351,16 +349,6 @@ body {
   font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
 }
 
-/* Cycle 24: large Cormorant display tiers get a tiny negative track —
-   modern luxury serifs (Dior, Aesop, ffern) all use slight negative
-   spacing at display sizes for that "expensive" feel. Applied only to
-   the large display tiers so body Cormorant rendering is unaffected. */
-.font-serif.text-display-l,
-.font-serif.text-display-m,
-.font-serif.text-\[clamp\(2\.25rem\,7vw\,4rem\)\],
-.font-serif.text-\[clamp\(2\.25rem\,5vw\,3\.5rem\)\] {
-  letter-spacing: -0.01em;
-}
 
 /* Focus-visible default — Alex §6.1. Terracotta 4.33:1 on cream (PASS 3:1 UI).
    Tokenized (Phase 5) so the ring is a system knob — values unchanged. */
@@ -778,32 +766,6 @@ img::before {
   }
 }
 
-/* ------------------------------------------------------------------
-   Section scroll-reveal — Dani §5.3.
-   Fade + 16px translateY rise, easeOut, triggered as the section
-   enters the viewport. Pure CSS via scroll-driven animations.
-
-   Modern browsers (Chrome/Edge 115+, Safari 17.4+) opt in via
-   @supports. Older browsers (Firefox at time of writing) get the
-   end state by default — graceful no-animation fallback.
-
-   Reduced-motion users see the end state immediately (the @media
-   guard inside @supports skips the animation declaration entirely).
-   ------------------------------------------------------------------ */
-@keyframes reveal-rise {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .reveal-on-scroll {
-      animation: reveal-rise linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 60%;
-    }
-  }
-}
 
 /* ------------------------------------------------------------------
    Editorial link — Dani §5.1.5. "Underline draws in left-to-right,

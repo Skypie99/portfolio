@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { ContactEmail } from '@/components/ContactEmail';
+import { Reveal } from '@/components/Reveal';
 import { cn } from '@/lib/cn';
 import { getProfile } from '@/lib/content';
 
@@ -59,36 +60,39 @@ export default function ContactPage() {
       {profile.socials.length > 0 && (
         <section
           className={cn(
-            'reveal-on-scroll',
             'px-gutter pt-16 lg:pt-20 pb-24 lg:pb-32',
             'bg-cream border-t border-border-decorative',
           )}
         >
           <div className="max-w-content mx-auto">
-            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
-              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
-              Elsewhere
-            </p>
-            <h2 className="font-serif font-light text-step-4 text-near-black mb-12 max-w-2xl leading-tight">
-              Find me in other quiet corners.
-            </h2>
+            <Reveal className="mb-12">
+              <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
+                <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
+                Elsewhere
+              </p>
+              <h2 className="font-serif font-light text-step-4 text-near-black max-w-2xl leading-tight">
+                Find me in other quiet corners.
+              </h2>
+            </Reveal>
 
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl">
-              {profile.socials.map((s) => (
+              {profile.socials.map((s, i) => (
                 <li key={s.url} className="border-t border-border-decorative pt-4">
-                  <p className="font-mono text-meta tracking-label uppercase text-sage-text mb-1">
-                    {s.platform}
-                  </p>
-                  <a
-                    href={s.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="link-draw font-sans text-body text-accent-text inline-flex items-center gap-2"
-                  >
-                    <span>{s.handle}</span>
-                    <span aria-hidden="true">{'↗'}</span>
-                    <span className="sr-only">(opens in new tab)</span>
-                  </a>
+                  <Reveal index={i}>
+                    <p className="font-mono text-meta tracking-label uppercase text-sage-text mb-1">
+                      {s.platform}
+                    </p>
+                    <a
+                      href={s.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="link-draw font-sans text-body text-accent-text inline-flex items-center gap-2"
+                    >
+                      <span>{s.handle}</span>
+                      <span aria-hidden="true">{'↗'}</span>
+                      <span className="sr-only">(opens in new tab)</span>
+                    </a>
+                  </Reveal>
                 </li>
               ))}
             </ul>

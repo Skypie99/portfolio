@@ -139,5 +139,27 @@ This log records decisions as the run proceeds (brief §2.4: "the record is part
 
 **⚠ Verification gotcha (for P7/P8):** a programmatic `window.scrollTo` via the preview eval does NOT trigger IntersectionObserver recomputation in headless Chrome, so reveals read as `opacity:0` ("not fired") in that synthetic case. A real scroll event (`scrollBy` nudge) or a load-time-in-view element fires them correctly — real users + anchor jumps are fine. When verifying reveals in the preview, nudge-scroll after `scrollTo`, or trust `.reveal-shown`/computed-opacity after a nudge.
 
-### Phase 7 — Cohesion & QA + token cleanup
-_(next)_
+### Phase 7 — Cohesion & QA + token cleanup ✅ (tag `overhaul-phase7`)
+
+**Cleanup (mechanical, Sonnet builder; grep-proven):**
+- **Sub-route reveal migration** — the 5 remaining `reveal-on-scroll` sub-routes (`/about` ×5 sections, `/blog`, `/certificates`, `/contact`, `/work`) migrated to the cross-browser `<Reveal>` primitive (staggered lists, layouts/dividers preserved). The site's reveals now work in **all browsers** (the CSS `animation-timeline` version was silently dead in Firefox). Removed the now-dead `.reveal-on-scroll` CSS rule + its exclusive `reveal-rise` keyframe from globals.
+- **Retired `display-l` + `display-m`** (zero usages after the Phase 2 migration) from tailwind fontSize, globals `--fs-*`, `lib/cn.ts`, and the stale 4-selector letter-spacing rule. **Kept `display-s`** (still used 7×). Grep confirms zero `display-l`/`display-m` refs repo-wide.
+- Left the `--shadow-elevation-*` aliases (they correctly map to the warm ramp — intentional).
+
+**Cohesion review (Morgan, Opus) — visited every route, both modes:**
+- **Homepage** (light + dark): hero, count-up stats, lit-well Work cards, ambient drift — excellent.
+- **Case study** `/work/[slug]`: hero settle + lit-well image wells.
+- **`/about`** (light): `text-display` title, the pull-quote moment, body rhythm, reveals — cohesive + editorial.
+- **`/work`** (light): filter-pill system + lit-well cards.
+- **`/contact`** (dark): `text-display` title in lifted terracotta, correct warm-dark palette (AA), CTA pill, sidebar.
+- **Verdict: of-a-piece.** Consistent type hierarchy (display / step tiers / body), consistent warm depth (lit-wells + shadow ramp), consistent reveals + sidebar/footer, both modes polished + AA. The calm, editorial, accessibility-first voice is intact and elevated.
+
+**Decisions:**
+- **D7.1** The outer-`<Reveal>` + self-animating `WorkFilterGrid`/`AnimatedCertGrid` "double reveal" reads clean in the result (matches the homepage's section-fade + item-stagger) — left as-is.
+- **D7.2** OG card kept on system font (D5.2) — not worth the build-time font-fetch fragility; the card is on-brand via palette + motif.
+- **D7.3** Load-time in-view reveals fire via the IntersectionObserver *initial* callback (verified: `/contact` content visible on load) — no flash, no scroll required for above-the-fold content.
+
+**Verification:** typecheck clean · 160 tests + 1 todo · ESLint clean · build 17 pages / export OK. −31 net lines (cleanup). Cinematic untouched (no frozen edits; removed CSS was non-cinematic). Both modes reviewed across all routes.
+
+### Phase 8 — Independent a11y sign-off (Alex)
+_(next — the final gate)_
