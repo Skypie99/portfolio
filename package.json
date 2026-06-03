@@ -2,6 +2,11 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "browserslist": [
+    "defaults",
+    "not dead",
+    "not op_mini all"
+  ],
   "scripts": {
     "dev": "next dev",
     "prebuild": "node scripts/validate-assets.mjs",
