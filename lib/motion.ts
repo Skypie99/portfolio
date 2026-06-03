@@ -160,3 +160,53 @@ export function useParallax<T extends HTMLElement = HTMLDivElement>(depth = 0.08
 
   return ref;
 }
+
+/* ────────────────────────────────────────────────────────────────────
+ * useSpotlight — a soft light that follows the cursor across a card
+ * (premium cards, 2026-06-03). rAF-throttled pointermove sets `--mx`/`--my`
+ * (cursor 0–100%) and `--hover` (0/1) on the element; the `.glow-card` CSS
+ * consumes them. RM → no-op. SSR/jsdom-safe (guards window/matchMedia);
+ * fine-pointer (hover) devices only.
+ * ──────────────────────────────────────────────────────────────────── */
+export function useSpotlight<T extends HTMLElement = HTMLDivElement>() {
+  const ref = useRef<T>(null);
+  const reduced = usePrefersReducedMotion();
+
+  useEffect(() => {
+    if (reduced) return;
+    const el = ref.current;
+    if (!el || typeof window === 'undefined' || typeof window.matchMedia !== 'function') return;
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+    let raf = 0;
+    let pending: { x: number; y: number } | null = null;
+    const apply = () => {
+      raf = 0;
+      if (!pending) return;
+      const r = el.getBoundingClientRect();
+      el.style.setProperty('--mx', `${(((pending.x - r.left) / r.width) * 100).toFixed(1)}%`);
+      el.style.setProperty('--my', `${(((pending.y - r.top) / r.height) * 100).toFixed(1)}%`);
+    };
+    const onMove = (e: PointerEvent) => {
+      pending = { x: e.clientX, y: e.clientY };
+      if (!raf) raf = requestAnimationFrame(apply);
+    };
+    const onEnter = () => el.style.setProperty('--hover', '1');
+    const onLeave = () => {
+      if (raf) { cancelAnimationFrame(raf); raf = 0; }
+      el.style.setProperty('--hover', '0');
+    };
+
+    el.addEventListener('pointerenter', onEnter);
+    el.addEventListener('pointermove', onMove);
+    el.addEventListener('pointerleave', onLeave);
+    return () => {
+      if (raf) cancelAnimationFrame(raf);
+      el.removeEventListener('pointerenter', onEnter);
+      el.removeEventListener('pointermove', onMove);
+      el.removeEventListener('pointerleave', onLeave);
+    };
+  }, [reduced]);
+
+  return ref;
+}
