@@ -54,18 +54,18 @@ export function ProjectCard({
         slug={d.id}
         className={cn(wide ? 'aspect-[4/3] md:aspect-auto md:w-[58%] md:min-h-[26rem]' : 'aspect-[4/5]')}
       >
-        {/* index numeral */}
+        {/* index numeral — deep umber, reads as a watermark on the luminous sky */}
         <span
           aria-hidden="true"
-          className="absolute left-6 top-5 font-serif font-light leading-none text-[#FAF8F1]/25"
+          className="absolute left-6 top-5 font-serif font-light leading-none text-[#3A1C0C]/35"
           style={{ fontSize: 'clamp(2.5rem, 5vw, 3.75rem)' }}
         >
           {numeral}
         </span>
 
-        {/* featured badge */}
+        {/* featured badge — dark glassy pill (works over the bright sky) */}
         {d.featured && (
-          <span className="absolute right-6 top-6 inline-flex items-center gap-1.5 rounded-pill border border-[#FAF8F1]/25 bg-[#FAF8F1]/10 px-2.5 py-1 font-mono text-meta uppercase tracking-label text-[#FAF8F1] backdrop-blur-sm">
+          <span className="absolute right-6 top-6 inline-flex items-center gap-1.5 rounded-pill border border-[#FAF8F1]/20 bg-[#2A1206]/45 px-2.5 py-1 font-mono text-meta uppercase tracking-label text-[#FAF8F1] backdrop-blur-sm">
             <span aria-hidden="true" className="inline-block h-1 w-1 rounded-full bg-[rgb(var(--rgb-gold))]" />
             Featured
           </span>

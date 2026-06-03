@@ -40,7 +40,7 @@ export function CaseStudyCard({ title, category, description, href, index = 0, c
       <CardField slug={category} className="aspect-[4/5]">
         <span
           aria-hidden="true"
-          className="absolute left-6 top-5 font-serif font-light leading-none text-[#FAF8F1]/25"
+          className="absolute left-6 top-5 font-serif font-light leading-none text-[#3A1C0C]/35"
           style={{ fontSize: 'clamp(2.5rem, 5vw, 3.75rem)' }}
         >
           {numeral}
