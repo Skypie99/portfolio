@@ -112,7 +112,7 @@ export default function HomePage() {
                 key={project}
                 className={cn(
                   'group flex flex-col bg-cream p-6',
-                  'transition-colors duration-base ease-out hover:bg-wa-teal-pale',
+                  'transition-colors duration-base ease-out hover:bg-surface',
                 )}
               >
                 <p

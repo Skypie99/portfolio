@@ -21,10 +21,10 @@ type TagPillProps = {
  */
 const TAG_VARIANTS = [
   'bg-cool-soft/45 text-cool-deep',   // seafoam → deep pine
-  'bg-gold-glow/40 text-accent-ink',  // gold → warm
+  'bg-gold-glow/40 text-ink',         // gold → ink (a11y: accent-ink missed 4.5:1 on gold in both modes)
   'bg-cool-mid/35 text-cool-deep',    // lagoon → deep pine
-  'bg-accent/22 text-accent-ink',     // terracotta wash → warm
-  'bg-rose/30 text-accent-ink',       // muted clay → warm
+  'bg-accent/22 text-ink',            // terracotta wash → ink (a11y: accent-ink missed 4.5:1 on terracotta light)
+  'bg-rose/30 text-ink',              // muted clay → ink (a11y: accent-ink missed 4.5:1 on rose light + dark)
   'bg-emerald/25 text-cool-deep',     // emerald → deep pine
 ] as const;
 
