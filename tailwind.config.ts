@@ -1,15 +1,16 @@
 import type { Config } from 'tailwindcss';
 
 /**
- * Wires Dani's revised PROJECT_DESIGN.md §1.1 tokens into Tailwind.
- * Every color, font, size, spacing, radius, and motion value here mirrors
- * the CSS variables declared in app/globals.css. Keep the two in sync.
+ * Wires Dani's design tokens into Tailwind. Colours mirror app/globals.css:
+ * mode-aware semantic tokens are backed by `--rgb-*` triplets (they flip in
+ * dark mode AND support opacity modifiers like border-line/70), raw "paint"
+ * hexes are fixed. Keep the two files in sync.
  *
- * Alex BLK-1/2/3 fixes baked in:
- *  - sage-text #5C5D54 for text uses; raw sage #717267 decorative only
- *  - stone-strong #888879 for interactive borders; stone #DCDCD6 decorative only
- *  - accent-text (umber #7F4323) for inline links + 19px numerals
- *  - terracotta #B35F32 for graphics/CTAs/≥24px display only
+ * Token guidance (golden-hour desert palette, 2026-06-02):
+ *  - text:    ink / ink-muted / ink-meta   (never raw paint for body copy)
+ *  - links:   cool (pine, ≥4.5:1) or accent-ink (warm, ≥4.5:1)
+ *  - chrome:  accent (terracotta) for CTAs / graphics / ≥large text + UI
+ *  - surface: canvas / canvas-alt / surface ; borders: line / line-strong
  */
 const config: Config = {
   content: [
@@ -17,53 +18,77 @@ const config: Config = {
     './components/**/*.{ts,tsx}',
     './lib/**/*.{ts,tsx}',
   ],
+  // class-strategy dark mode — next-themes toggles `.dark` on <html>.
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        // Foundations (backgrounds)
-        cream: '#FAF9F5',
-        'warm-white': '#F0F0EA',
-        blush: '#FCF3ED',
-        'peach-cream': '#FDE9D7',
+        // ── Mode-aware semantic tokens — PREFER THESE ───────────────
+        // Backed by --rgb-* triplets in globals.css: flip under html.dark
+        // and support opacity modifiers (e.g. border-line/70, bg-accent/10).
+        canvas:         'rgb(var(--rgb-canvas) / <alpha-value>)',
+        'canvas-alt':   'rgb(var(--rgb-canvas-alt) / <alpha-value>)',
+        surface:        'rgb(var(--rgb-surface) / <alpha-value>)',
+        'surface-warm': 'rgb(var(--rgb-surface-warm) / <alpha-value>)',
+        'panel-cool':   'rgb(var(--rgb-panel-cool) / <alpha-value>)',
+        'wash-cool':    'rgb(var(--rgb-wash-cool) / <alpha-value>)',
+        ink:            'rgb(var(--rgb-ink) / <alpha-value>)',
+        'ink-muted':    'rgb(var(--rgb-ink-muted) / <alpha-value>)',
+        'ink-meta':     'rgb(var(--rgb-ink-meta) / <alpha-value>)',
+        line:           'rgb(var(--rgb-line) / <alpha-value>)',
+        'line-strong':  'rgb(var(--rgb-line-strong) / <alpha-value>)',
+        accent:         'rgb(var(--rgb-accent) / <alpha-value>)',
+        'accent-hover': 'rgb(var(--rgb-accent-hover) / <alpha-value>)',
+        'accent-ink':   'rgb(var(--rgb-accent-ink) / <alpha-value>)',
+        cool:           'rgb(var(--rgb-cool) / <alpha-value>)',
+        'cool-deep':    'rgb(var(--rgb-cool-deep) / <alpha-value>)',
+        'cool-mid':     'rgb(var(--rgb-cool-mid) / <alpha-value>)',
+        'cool-soft':    'rgb(var(--rgb-cool-soft) / <alpha-value>)',
+        'gold-glow':    'rgb(var(--rgb-gold) / <alpha-value>)',
+        foil:           'rgb(var(--rgb-foil) / <alpha-value>)',
+        rose:           'rgb(var(--rgb-rose) / <alpha-value>)',
+        'rose-pale':    'rgb(var(--rgb-rose-pale) / <alpha-value>)',
 
-        // Terracotta accent scale
-        sand: '#FBCFAC',
-        amber: '#E2976E',
-        terracotta: '#B35F32',
-        umber: '#7F4323',
-        bark: '#48230F',
+        // ── Raw brand paint — FIXED hue, does NOT flip ──────────────
+        // Decorative fills / tags / gradients only; never body text.
+        pine: '#427A6F', emerald: '#4DA978', lagoon: '#57AAAE',
+        seafoam: '#89B5A8', sage: '#AEBA94', bone: '#CCCFBE',
+        sand: '#C4AD81', gold: '#BF9B5D', caramel: '#A97A4C',
+        'rock-lit': '#B25128', 'rock-deep': '#9D2D05', twilight: '#A4A0B2',
+        bark: '#5E2F18',
 
-        // Neutrals
-        stone: '#DCDCD6',
-        'stone-strong': '#888879',
-        pebble: '#B8B8AA',
-        sage: '#717267',
-        'sage-text': '#5C5D54',
-        charcoal: '#484A43',
-        'near-black': '#232420',
-
-        // Wes Anderson teal scale — Phase 5
-        'wa-teal-deep':  '#1D5468',  // text: 8.1:1 on cream
-        'wa-teal':       '#2E6678',  // text: 6.2:1 on cream
-        'wa-teal-mid':   '#4A8FA0',  // UI/icons: 3.4:1 on cream
-        'wa-teal-soft':  '#96C4D0',  // borders, decorative
-        'wa-teal-pale':  '#D4EDF2',  // light surfaces
-        'wa-teal-wash':  '#EAF4F7',  // section backgrounds
-
-        // Wes Anderson dusty rose scale — Phase 5 creative pick
-        'wa-rose':       '#7D4E5A',  // text: 6.0:1 on cream
-        'wa-rose-mid':   '#B0808E',  // decorative
-        'wa-rose-soft':  '#D4B0B8',  // borders, decorative
-        'wa-rose-pale':  '#F0E4E7',  // light surfaces
-
-        // Semantic aliases (prefer these in components)
-        'text-meta': '#5C5D54',
-        'border-decorative': '#DCDCD6',
-        'border-interactive': '#888879',
-        'accent-primary': '#B35F32',
-        'accent-text': '#7F4323',
-        link: '#7F4323',
-        'link-hover': '#B35F32',
+        // ── Legacy names → roles (existing classes flip for free) ───
+        // Retire in a later semantic-rename cleanup once components migrate.
+        cream:          'rgb(var(--rgb-canvas) / <alpha-value>)',
+        'warm-white':   'rgb(var(--rgb-canvas-alt) / <alpha-value>)',
+        blush:          'rgb(var(--rgb-surface) / <alpha-value>)',
+        'peach-cream':  'rgb(var(--rgb-surface-warm) / <alpha-value>)',
+        amber:          'rgb(var(--rgb-accent-soft) / <alpha-value>)',
+        terracotta:     'rgb(var(--rgb-accent) / <alpha-value>)',
+        umber:          'rgb(var(--rgb-accent-ink) / <alpha-value>)',
+        stone:          'rgb(var(--rgb-line) / <alpha-value>)',
+        'stone-strong': 'rgb(var(--rgb-line-strong) / <alpha-value>)',
+        pebble:         'rgb(var(--rgb-pebble) / <alpha-value>)',
+        'sage-text':    'rgb(var(--rgb-ink-meta) / <alpha-value>)',
+        charcoal:       'rgb(var(--rgb-ink-muted) / <alpha-value>)',
+        'near-black':   'rgb(var(--rgb-ink) / <alpha-value>)',
+        'wa-teal-deep': 'rgb(var(--rgb-cool-deep) / <alpha-value>)',
+        'wa-teal':      'rgb(var(--rgb-cool) / <alpha-value>)',
+        'wa-teal-mid':  'rgb(var(--rgb-cool-mid) / <alpha-value>)',
+        'wa-teal-soft': 'rgb(var(--rgb-cool-soft) / <alpha-value>)',
+        'wa-teal-pale': 'rgb(var(--rgb-panel-cool) / <alpha-value>)',
+        'wa-teal-wash': 'rgb(var(--rgb-wash-cool) / <alpha-value>)',
+        'wa-rose':      'rgb(var(--rgb-rose) / <alpha-value>)',
+        'wa-rose-mid':  'rgb(var(--rgb-rose) / <alpha-value>)',
+        'wa-rose-soft': 'rgb(var(--rgb-cool-soft) / <alpha-value>)',
+        'wa-rose-pale': 'rgb(var(--rgb-rose-pale) / <alpha-value>)',
+        'text-meta':    'rgb(var(--rgb-ink-meta) / <alpha-value>)',
+        'border-decorative':  'rgb(var(--rgb-line) / <alpha-value>)',
+        'border-interactive': 'rgb(var(--rgb-line-strong) / <alpha-value>)',
+        'accent-primary':     'rgb(var(--rgb-accent) / <alpha-value>)',
+        'accent-text':        'rgb(var(--rgb-accent-ink) / <alpha-value>)',
+        link:                 'rgb(var(--rgb-accent-ink) / <alpha-value>)',
+        'link-hover':         'rgb(var(--rgb-accent-hover) / <alpha-value>)',
       },
       fontFamily: {
         serif: ['var(--font-cormorant)', 'Garamond', 'Georgia', 'serif'],

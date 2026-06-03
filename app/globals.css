@@ -39,70 +39,104 @@
    Mirrored in tailwind.config.ts. Keep the two in sync.
    ------------------------------------------------------------------ */
 :root {
-  /* Foundations */
-  --color-cream:        #FAF9F5;
-  --color-warm-white:   #F0F0EA;
-  --color-blush:        #FCF3ED;
-  --color-peach-cream:  #FDE9D7;
+  /* ==================================================================
+     DESERT PALETTE — golden-hour makeover (Dani 2026-06-02).
+     Mode-aware colors are stored as `--rgb-*` SPACE-SEPARATED TRIPLETS
+     so Tailwind opacity modifiers work: rgb(var(--rgb-x) / <alpha>).
+     `--color-*` are convenience full-color vars that AUTO-FOLLOW the
+     triplets (used by plain CSS + tokens-phase2.css). Dark mode (see
+     `html.dark` below) overrides ONLY the `--rgb-*` triplets, so every
+     `--color-*` and every Tailwind token flips automatically — no
+     mass class rename needed. Raw "paint" hexes (pine, gold, …) that
+     should NOT flip live in tailwind.config.ts.
+     Contrast targets (light): ink ≥13:1, ink-muted ~7:1, ink-meta
+     ~5.4:1, cool(pine) ~4.6:1, accent(terracotta) large/UI only.
+     ================================================================== */
 
-  /* Terracotta scale */
-  --color-sand:         #FBCFAC;
-  --color-amber:        #E2976E;
-  --color-terracotta:   #B35F32;
-  --color-umber:        #7F4323;
-  --color-bark:         #48230F;
+  /* --- Mode-aware role triplets (LIGHT) --- */
+  --rgb-canvas:       250 248 241;   /* page background (warm off-white) */
+  --rgb-canvas-alt:   241 239 230;   /* alternating sections */
+  --rgb-surface:      255 255 255;   /* cards */
+  --rgb-surface-warm: 247 239 228;   /* warm closing surfaces */
+  --rgb-panel-cool:   205 224 212;   /* cool-tinted surface */
+  --rgb-wash-cool:    234 241 236;   /* cool section background */
 
-  /* Neutrals */
-  --color-stone:        #DCDCD6;
-  --color-stone-strong: #888879;
-  --color-pebble:       #B8B8AA;
-  --color-sage:         #717267;
-  --color-sage-text:    #5C5D54;
-  --color-charcoal:     #484A43;
-  --color-near-black:   #232420;
+  --rgb-ink:          32 48 44;      /* body + headings (deep pine-charcoal) */
+  --rgb-ink-muted:    70 84 77;      /* body-muted (~7:1 on canvas) */
+  --rgb-ink-meta:     90 107 100;    /* metadata / eyebrow (~5.4:1) */
 
-  /* Wes Anderson teal scale — new in Phase 5 WA palette */
-  --color-wa-teal-deep:  #1D5468;   /* text: 8.1:1 on cream */
-  --color-wa-teal:       #2E6678;   /* text: 6.2:1 on cream */
-  --color-wa-teal-mid:   #4A8FA0;   /* UI/icons: 3.4:1 on cream */
-  --color-wa-teal-soft:  #96C4D0;   /* borders, decorative */
-  --color-wa-teal-pale:  #D4EDF2;   /* light surfaces */
-  --color-wa-teal-wash:  #EAF4F7;   /* section backgrounds */
+  --rgb-line:         204 207 190;   /* dividers/borders (bone) */
+  --rgb-line-strong:  140 148 132;   /* interactive borders (≥3:1) */
+  --rgb-pebble:       179 186 166;   /* card hover border */
 
-  /* Wes Anderson dusty rose scale — Phase 5 creative pick */
-  --color-wa-rose:       #7D4E5A;   /* text: 6.0:1 on cream */
-  --color-wa-rose-mid:   #B0808E;   /* UI/decorative */
-  --color-wa-rose-soft:  #D4B0B8;   /* borders, decorative */
-  --color-wa-rose-pale:  #F0E4E7;   /* light surfaces */
+  --rgb-accent:       185 99 64;     /* terracotta — CTA/graphics/≥large text */
+  --rgb-accent-hover: 178 81 40;     /* sunlit rock — hover / glow */
+  --rgb-accent-ink:   163 86 54;     /* small warm inline links (≥4.5:1) */
+  --rgb-accent-soft:  208 138 87;    /* soft warm fill */
 
-  /* Semantic */
-  --color-bg:                 var(--color-cream);
-  --color-bg-alt:             var(--color-warm-white);
-  --color-surface:            var(--color-blush);
-  --color-surface-warm:       var(--color-peach-cream);
-  --color-text:               var(--color-near-black);
-  --color-text-muted:         var(--color-charcoal);
-  --color-text-meta:          var(--color-sage-text);
-  --color-decorative-sage:    var(--color-sage);
-  --color-border-decorative:  var(--color-stone);
-  --color-border-interactive: var(--color-stone-strong);
-  --color-border:             var(--color-border-decorative);
-  --color-accent:             var(--color-terracotta);
-  --color-accent-primary:     var(--color-terracotta);
-  --color-accent-text:        var(--color-umber);
-  --color-accent-soft:        var(--color-amber);
-  --color-accent-deep:        var(--color-umber);
-  --color-link:               var(--color-umber);
-  --color-link-hover:         var(--color-terracotta);
+  --rgb-cool:         66 122 111;    /* pine — cool links / text (~4.6:1) */
+  --rgb-cool-deep:    47 87 77;      /* deep pine */
+  --rgb-cool-mid:     69 144 154;    /* lagoon — icons (≥3:1 UI) */
+  --rgb-cool-soft:    137 181 168;   /* seafoam — soft cool borders */
 
-  /* WA secondary + tertiary semantic aliases */
-  --color-secondary:          var(--color-wa-teal);
-  --color-secondary-text:     var(--color-wa-teal-deep);
-  --color-secondary-soft:     var(--color-wa-teal-mid);
-  --color-bg-teal:            var(--color-wa-teal-wash);
-  --color-surface-teal:       var(--color-wa-teal-pale);
-  --color-tertiary:           var(--color-wa-rose);
-  --color-surface-rose:       var(--color-wa-rose-pale);
+  --rgb-gold:         191 155 93;    /* golden-hour glow */
+  --rgb-foil:         164 160 178;   /* twilight lavender-grey */
+  --rgb-rose:         138 106 94;    /* muted warm (was dusty rose) */
+  --rgb-rose-pale:    239 230 216;   /* warm pale surface */
+
+  /* --- Convenience colors (auto-follow triplets; used by plain CSS) --- */
+  --color-bg:                 rgb(var(--rgb-canvas));
+  --color-bg-alt:             rgb(var(--rgb-canvas-alt));
+  --color-surface:            rgb(var(--rgb-surface));
+  --color-surface-warm:       rgb(var(--rgb-surface-warm));
+  --color-text:               rgb(var(--rgb-ink));
+  --color-text-muted:         rgb(var(--rgb-ink-muted));
+  --color-text-meta:          rgb(var(--rgb-ink-meta));
+  --color-border-decorative:  rgb(var(--rgb-line));
+  --color-border-interactive: rgb(var(--rgb-line-strong));
+  --color-border:             rgb(var(--rgb-line));
+  --color-accent:             rgb(var(--rgb-accent));
+  --color-accent-primary:     rgb(var(--rgb-accent));
+  --color-accent-hover:       rgb(var(--rgb-accent-hover));
+  --color-accent-text:        rgb(var(--rgb-accent-ink));
+  --color-accent-deep:        rgb(var(--rgb-accent-ink));
+  --color-accent-soft:        rgb(var(--rgb-accent-soft));
+  --color-link:               rgb(var(--rgb-accent-ink));
+  --color-link-hover:         rgb(var(--rgb-accent-hover));
+  --color-secondary:          rgb(var(--rgb-cool));
+  --color-secondary-text:     rgb(var(--rgb-cool-deep));
+  --color-secondary-soft:     rgb(var(--rgb-cool-mid));
+  --color-bg-teal:            rgb(var(--rgb-wash-cool));
+  --color-surface-teal:       rgb(var(--rgb-panel-cool));
+  --color-tertiary:           rgb(var(--rgb-rose));
+  --color-surface-rose:       rgb(var(--rgb-rose-pale));
+  --color-gold-glow:          rgb(var(--rgb-gold));
+  --color-foil:               rgb(var(--rgb-foil));
+  --color-decorative-sage:    rgb(var(--rgb-cool-soft));
+
+  /* --- Legacy raw names → mapped to roles (kept for compat; flip too) --- */
+  --color-cream:        rgb(var(--rgb-canvas));
+  --color-warm-white:   rgb(var(--rgb-canvas-alt));
+  --color-blush:        rgb(var(--rgb-surface));
+  --color-peach-cream:  rgb(var(--rgb-surface-warm));
+  --color-near-black:   rgb(var(--rgb-ink));
+  --color-charcoal:     rgb(var(--rgb-ink-muted));
+  --color-sage-text:    rgb(var(--rgb-ink-meta));
+  --color-sage:         rgb(var(--rgb-cool-soft));
+  --color-stone:        rgb(var(--rgb-line));
+  --color-stone-strong: rgb(var(--rgb-line-strong));
+  --color-pebble:       rgb(var(--rgb-pebble));
+  --color-terracotta:   rgb(var(--rgb-accent));
+  --color-umber:        rgb(var(--rgb-accent-ink));
+  --color-amber:        rgb(var(--rgb-accent-soft));
+  --color-wa-teal-deep: rgb(var(--rgb-cool-deep));
+  --color-wa-teal:      rgb(var(--rgb-cool));
+  --color-wa-teal-mid:  rgb(var(--rgb-cool-mid));
+  --color-wa-teal-soft: rgb(var(--rgb-cool-soft));
+  --color-wa-teal-pale: rgb(var(--rgb-panel-cool));
+  --color-wa-teal-wash: rgb(var(--rgb-wash-cool));
+  --color-wa-rose:      rgb(var(--rgb-rose));
+  --color-wa-rose-pale: rgb(var(--rgb-rose-pale));
 
   /* Type scale */
   --fs-display-l: 3.25rem;
@@ -158,6 +192,47 @@
   /* Shadows */
   --shadow-soft: 0 1px 2px rgba(35, 36, 32, 0.04),
                  0 4px 12px rgba(35, 36, 32, 0.03);
+}
+
+/* ==================================================================
+   DARK MODE — "lit cliff at dusk". Overrides ONLY the role triplets;
+   every --color-* convenience var and Tailwind token follows. Toggled
+   by next-themes (class="dark" on <html>; defaultTheme=system).
+   Dark contrast: ink ~14:1, ink-muted ~9:1, accent(terracotta lifted)
+   ~6:1 on canvas, cool(lagoon lifted) ~8:1.
+   ================================================================== */
+html.dark {
+  --rgb-canvas:       21 25 26;      /* warm near-black, faint teal */
+  --rgb-canvas-alt:   26 31 32;
+  --rgb-surface:      30 36 38;
+  --rgb-surface-warm: 38 31 27;
+  --rgb-panel-cool:   28 42 42;
+  --rgb-wash-cool:    22 32 31;
+
+  --rgb-ink:          236 234 224;   /* bone-cream */
+  --rgb-ink-muted:    182 194 187;
+  --rgb-ink-meta:     159 176 169;
+
+  --rgb-line:         44 52 54;
+  --rgb-line-strong:  74 86 82;
+  --rgb-pebble:       80 96 90;
+
+  --rgb-accent:       207 122 79;    /* terracotta lifted for dark */
+  --rgb-accent-hover: 218 138 92;
+  --rgb-accent-ink:   224 160 116;   /* warm link text on dark */
+  --rgb-accent-soft:  200 140 96;
+
+  --rgb-cool:         111 191 194;   /* lagoon lifted */
+  --rgb-cool-deep:    154 215 217;
+  --rgb-cool-mid:     90 170 174;
+  --rgb-cool-soft:    74 111 112;
+
+  --rgb-gold:         201 168 95;    /* gold glow lifted */
+  --rgb-foil:         180 176 194;
+  --rgb-rose:         170 134 122;
+  --rgb-rose-pale:    44 36 32;
+
+  color-scheme: dark;
 }
 
 /* ------------------------------------------------------------------

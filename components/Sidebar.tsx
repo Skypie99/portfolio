@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import { Button } from '@/components/Button';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { cn } from '@/lib/cn';
 import { getFeaturedDeliverable, getProfile } from '@/lib/content';
 
@@ -53,6 +54,8 @@ export function Sidebar() {
           </span>
           Available for work
         </p>
+        {/* Light/dark theme toggle */}
+        <ThemeToggle withLabel className="mt-2" />
       </div>
 
       {/* Hairline */}
