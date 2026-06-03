@@ -638,6 +638,24 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
   opacity: 1;
   transform: none;
 }
+/* Motion-polish 2026-06-03 — Reveal variants (calm cinematic depth).
+   Placed BEFORE the reduced-motion + no-JS blocks below so those (which
+   target the always-present base .reveal) override these for RM / no-JS
+   visitors. `variant` bundles travel + easing so call sites stay token-clean. */
+.reveal-scene {
+  transform: translateY(28px);
+  transition: opacity var(--dur-scene) var(--ease-gh-settle),
+              transform var(--dur-scene) var(--ease-gh-settle);
+}
+.reveal-depth {
+  transform: translateY(22px) scale(0.985);
+  transition: opacity var(--dur-reveal) var(--ease-gh-settle),
+              transform var(--dur-reveal) var(--ease-gh-settle);
+}
+.reveal-shown.reveal-scene,
+.reveal-shown.reveal-depth {
+  transform: none;
+}
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
