@@ -63,10 +63,16 @@ const isProd = process.env.NODE_ENV === 'production';
 
 // Explicit viewport (Next ships a default `width=device-width, initial-scale=1`;
 // we own it to add viewport-fit=cover so notched phones render edge-to-edge).
+// themeColor per Next 14/15 spec — matches real canvas tokens so the browser
+// chrome adopts the active palette (light: --rgb-canvas 250 248 241; dark: 21 25 26).
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   viewportFit: 'cover',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#FAF8F1' },
+    { media: '(prefers-color-scheme: dark)', color: '#15191A' },
+  ],
 };
 
 export function generateMetadata(): Metadata {
@@ -85,14 +91,15 @@ export function generateMetadata(): Metadata {
       siteName: `${profile.name} — AI Portfolio`,
       title: `${profile.name} — AI Portfolio`,
       description,
-      images: [{ url: '/og-image.svg', width: 1200, height: 630, alt: `${profile.name} — AI Portfolio` }],
+      // opengraph-image.tsx (file convention) auto-injects the PNG og:image.
+      // No explicit images: entry needed here; the convention takes precedence.
       locale: 'en_CA',
     },
     twitter: {
       card: 'summary_large_image',
       title: `${profile.name} — AI Portfolio`,
       description,
-      images: ['/og-image.svg'],
+      // Twitter also picks up the auto-generated PNG from opengraph-image.tsx.
     },
     // `color-scheme` is managed at runtime by next-themes (light/dark/system).
   };

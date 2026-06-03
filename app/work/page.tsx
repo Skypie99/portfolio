@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+import { Reveal } from '@/components/Reveal';
 import { WorkFilterGrid } from '@/components/WorkFilterGrid';
 import { cn } from '@/lib/cn';
 import { getDeliverables, getProfile } from '@/lib/content';
@@ -55,8 +56,7 @@ export default function WorkIndexPage() {
               The Work — {deliverables.length} deliverable{deliverables.length === 1 ? '' : 's'}
             </p>
             <h1
-              className="font-serif font-light text-[clamp(2.5rem,6vw,4.5rem)] ember leading-[1.05] max-w-3xl mb-8 text-balance"
-              style={{ letterSpacing: '-0.025em' }}
+              className="font-serif font-light text-display ember leading-[1.05] max-w-3xl mb-8 text-balance"
             >
               The Work
             </h1>
@@ -71,7 +71,6 @@ export default function WorkIndexPage() {
       {/* Deliverables grid */}
       <section
         className={cn(
-          'reveal-on-scroll',
           'px-gutter',
           'pb-24 lg:pb-32',
           // Dani wave4: warm-white contrasts the cream header for clear section rhythm.
@@ -84,6 +83,7 @@ export default function WorkIndexPage() {
               h1 → h3 gap that previously existed; sighted users still
               see the visible page header above as the only h1. */}
           <h2 className="sr-only">Deliverables</h2>
+          <Reveal>
           {deliverables.length === 0 ? (
             // Empty-state per F-04 acceptance criteria.
             <p className="font-serif font-light text-display-s text-charcoal leading-[1.65] max-w-[540px]">
@@ -92,6 +92,7 @@ export default function WorkIndexPage() {
           ) : (
             <WorkFilterGrid deliverables={deliverables} />
           )}
+          </Reveal>
 
           {/* Back link */}
           <div className="mt-20">

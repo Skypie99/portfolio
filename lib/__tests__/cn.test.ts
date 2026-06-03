@@ -76,8 +76,8 @@ describe('cn() — custom color tokens (Cycle 11 regression)', () => {
 
 describe('cn() — custom font-size tokens', () => {
   it('resolves two custom font-size tokens (last wins)', () => {
-    const result = cn('text-body', 'text-display-l');
-    expect(result).toBe('text-display-l');
+    const result = cn('text-body', 'text-display-s');
+    expect(result).toBe('text-display-s');
   });
 
   it('deduplicates standard and custom font-size (last wins)', () => {

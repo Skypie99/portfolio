@@ -56,14 +56,13 @@ export function Hero({ eyebrow, heading, subhead, ctaLabel, ctaHref }: HeroProps
           className={cn(
             'hero-enter hero-enter-delay-2 hero-scroll-translate',
             'font-serif font-light',
-            'text-[clamp(2.75rem,8vw,5.5rem)]',
+            'text-hero',
             'leading-[1.0]',
             'ember',
             'mb-7',
             'max-w-[16ch]',
             'text-balance',
           )}
-          style={{ letterSpacing: '-0.03em' }}
         >
           {heading}
         </h1>

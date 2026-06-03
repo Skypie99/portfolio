@@ -3,9 +3,11 @@ import Link from 'next/link';
 import { Button } from '@/components/Button';
 import { CinematicDesert } from '@/components/cinematic/CinematicDesert';
 import { ContentReveal } from '@/components/ContentReveal';
+import { CountUpStat } from '@/components/CountUpStat';
 import { Hero } from '@/components/Hero';
 import { NumberedStep } from '@/components/NumberedStep';
 import { ProjectCard } from '@/components/ProjectCard';
+import { Reveal } from '@/components/Reveal';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getCertificates, getDeliverables, getProfile } from '@/lib/content';
@@ -85,46 +87,43 @@ export default function HomePage() {
       <section
         id="showcase"
         className={cn(
-          'reveal-on-scroll',
           'px-gutter py-20 lg:py-24',
           'bg-wa-teal-wash',
           'border-t border-wa-teal-soft/40',
         )}
       >
         <div className="max-w-content mx-auto">
-          {/* Section label */}
-          <p className="font-mono text-label text-sage-text uppercase tracking-label mb-3 flex items-center gap-2">
-            <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
-            Live
-          </p>
-          {/* Heading */}
-          <h2 className="font-serif font-light text-display-m ember mb-3 max-w-2xl leading-[1.1] text-balance">
-            Built, shipped, and open. Everything here is live.
-          </h2>
-          <p className="font-sans font-light text-body text-charcoal mb-12 max-w-[540px] text-pretty">
-            Four products on the open internet. Each one accessible by design.
-          </p>
+          <Reveal>
+            {/* Section label */}
+            <p className="font-mono text-label text-sage-text uppercase tracking-label mb-3 flex items-center gap-2">
+              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
+              Live
+            </p>
+            {/* Heading */}
+            <h2 className="font-serif font-light text-step-4 ember mb-3 max-w-2xl leading-[1.1] text-balance">
+              Built, shipped, and open. Everything here is live.
+            </h2>
+            <p className="font-sans font-light text-body text-charcoal mb-12 max-w-[540px] text-pretty">
+              Four products on the open internet. Each one accessible by design.
+            </p>
+          </Reveal>
 
           {/* 4-col stat grid — vertical-rule layout for editorial weight */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-wa-teal-soft/30 border border-wa-teal-soft/50 rounded-lg overflow-hidden">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-wa-teal-soft/30 border border-wa-teal-soft/50 rounded-lg overflow-hidden shadow-md">
             {showcaseChips.map(({ stat, label, project, tags }, i) => (
-              <div
+              <Reveal
                 key={project}
+                index={i}
                 className={cn(
                   'group flex flex-col bg-cream p-6',
                   'transition-colors duration-base ease-out hover:bg-surface',
                 )}
               >
-                <p
-                  className={cn(
-                    'font-serif font-light text-[clamp(2.75rem,5.5vw,4.25rem)] leading-none mb-1',
-                    STAT_EMBER[i % STAT_EMBER.length],
-                  )}
-                  style={{ letterSpacing: '-0.03em' }}
-                  aria-label={`${stat} ${label}`}
-                >
-                  {stat}
-                </p>
+                <CountUpStat
+                  value={stat}
+                  emberClass={STAT_EMBER[i % STAT_EMBER.length]}
+                  label={label}
+                />
                 <p className="font-mono text-label text-sage-text uppercase tracking-label mb-4">
                   {label}
                 </p>
@@ -136,7 +135,7 @@ export default function HomePage() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -146,7 +145,6 @@ export default function HomePage() {
       <section
         id="work"
         className={cn(
-          'reveal-on-scroll',
           'px-gutter',
           'py-24 lg:py-32',
           'bg-cream',
@@ -155,25 +153,27 @@ export default function HomePage() {
       >
         <div className="max-w-content mx-auto">
           {/* Dani wave5: terracotta left-border accent on section headers */}
-          <div className="mb-12 pl-4 border-l-2 border-terracotta">
+          <Reveal className="mb-12 pl-4 border-l-2 border-terracotta">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4">
               The Work
             </p>
-            <h2 className="font-serif font-light text-display-m ember max-w-2xl leading-tight">
+            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
               A handful of things, made with intention.
             </h2>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Featured card — full width */}
+            {/* Featured card — full width, col-span preserved via className */}
             {deliverables[0] && (
-              <div className="md:col-span-2">
+              <Reveal className="md:col-span-2" index={0}>
                 <ProjectCard deliverable={deliverables[0]} wide />
-              </div>
+              </Reveal>
             )}
             {/* Remaining 3 in 2-col grid */}
-            {deliverables.slice(1).map((d) => (
-              <ProjectCard key={d.id} deliverable={d} />
+            {deliverables.slice(1).map((d, i) => (
+              <Reveal key={d.id} index={i + 1}>
+                <ProjectCard deliverable={d} />
+              </Reveal>
             ))}
           </div>
         </div>
@@ -183,7 +183,6 @@ export default function HomePage() {
       <section
         id="process"
         className={cn(
-          'reveal-on-scroll',
           'px-gutter',
           'py-24 lg:py-32',
           'bg-warm-white',
@@ -191,37 +190,47 @@ export default function HomePage() {
         )}
       >
         <div className="max-w-content mx-auto">
-          <div className="mb-12 pl-4 border-l-2 border-terracotta">
+          <Reveal className="mb-12 pl-4 border-l-2 border-terracotta">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4">
               Method
             </p>
-            <h2 className="font-serif font-light text-display-m ember max-w-2xl leading-[1.1] text-balance">
+            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-[1.1] text-balance">
               Three quiet steps, repeated carefully.
             </h2>
-          </div>
+          </Reveal>
 
-          {/* Warm-white panel — hairline rules between steps */}
+          {/* Warm-white panel — hairline rules between steps.
+              Each NumberedStep staggered 80ms apart (index * 0.08s in Reveal).
+              AnimatedStepList not used: it lacks the `highlight` prop and
+              manages its own dividers inside an <ol>, which would require
+              restructuring the existing divider elements between steps. */}
           <div className="bg-cream rounded-lg p-8 md:p-12 border border-stone space-y-8 shadow-soft">
-            <NumberedStep
-              number="01"
-              title="Discover"
-              body="Start with the smallest honest version of the problem. The people who will live with the thing know more than the ones who will fund it."
-              highlight
-            />
+            <Reveal index={0}>
+              <NumberedStep
+                number="01"
+                title="Discover"
+                body="Start with the smallest honest version of the problem. The people who will live with the thing know more than the ones who will fund it."
+                highlight
+              />
+            </Reveal>
             <div className="border-t border-stone/70" />
-            <NumberedStep
-              number="02"
-              title="Build"
-              body="One slice at a time. Type-safe, accessible from the first line, documented enough to learn from."
-              highlight
-            />
+            <Reveal index={1}>
+              <NumberedStep
+                number="02"
+                title="Build"
+                body="One slice at a time. Type-safe, accessible from the first line, documented enough to learn from."
+                highlight
+              />
+            </Reveal>
             <div className="border-t border-stone/70" />
-            <NumberedStep
-              number="03"
-              title="Ship"
-              body="Write down what changed and what the next person will need. The documentation is the deliverable."
-              highlight
-            />
+            <Reveal index={2}>
+              <NumberedStep
+                number="03"
+                title="Ship"
+                body="Write down what changed and what the next person will need. The documentation is the deliverable."
+                highlight
+              />
+            </Reveal>
           </div>
         </div>
       </section>
@@ -230,7 +239,6 @@ export default function HomePage() {
       <section
         id="about"
         className={cn(
-          'reveal-on-scroll',
           'px-gutter',
           'py-24 lg:py-32',
           'bg-cream',
@@ -238,21 +246,21 @@ export default function HomePage() {
         )}
       >
         <div className="max-w-content mx-auto">
-          <div className="mb-12 pl-4 border-l-2 border-terracotta">
+          <Reveal className="mb-12 pl-4 border-l-2 border-terracotta">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4">
               A Brief Account
             </p>
-            <h2 className="font-serif font-light text-display-m ember leading-[1.1] text-balance">
+            <h2 className="font-serif font-light text-step-4 ember leading-[1.1] text-balance">
               The work is careful. The record is honest.
             </h2>
-          </div>
+          </Reveal>
 
-          <div className="max-w-[640px] flex flex-col gap-6">
+          <Reveal className="max-w-[640px] flex flex-col gap-6">
             {/* Pull-quote accent — editorial tone-setter */}
             <blockquote
               className={cn(
                 'pl-5 border-l-2 border-terracotta',
-                'font-serif font-light italic text-[1.5rem] text-ink leading-[1.45]',
+                'font-serif font-light italic text-step-2 text-ink leading-[1.45]',
                 'text-balance',
               )}
               style={{ letterSpacing: '-0.01em' }}
@@ -277,7 +285,7 @@ export default function HomePage() {
               The full account
               <span aria-hidden="true">{'→'}</span>
             </Link>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -285,7 +293,6 @@ export default function HomePage() {
       <section
         id="certificates"
         className={cn(
-          'reveal-on-scroll',
           'px-gutter',
           'py-24 lg:py-32',
           'bg-warm-white',
@@ -293,53 +300,57 @@ export default function HomePage() {
         )}
       >
         <div className="max-w-content mx-auto">
-          <div className="mb-12 pl-4 border-l-2 border-terracotta">
+          <Reveal className="mb-12 pl-4 border-l-2 border-terracotta">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4">
               Credentials
             </p>
-            <h2 className="font-serif font-light text-display-m ember max-w-2xl leading-[1.1] text-balance">
+            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-[1.1] text-balance">
               Credentials, earned in order.
             </h2>
-          </div>
+          </Reveal>
 
+          {/* divide-y preserved on the <ul>; Reveal wraps each li's inner
+              content so the divider border lives on the <li>, not the wrapper. */}
           <ul className="flex flex-col divide-y divide-stone/70">
-            {certificates.map((c) => (
+            {certificates.map((c, i) => (
               <li key={c.id} className="py-8 first:pt-0 last:pb-0 group">
-                <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-12">
-                  <p className="font-mono text-meta tracking-label uppercase text-text-meta md:w-40 shrink-0">
-                    {c.issuer}
-                  </p>
-                  <div className="flex-1 flex flex-col gap-1">
-                    <h3 className="font-serif font-normal text-[1.375rem] text-near-black leading-tight transition-colors duration-fast ease-out group-hover:text-accent-text">
-                      {c.title}
-                    </h3>
-                    <p className="font-mono text-meta tracking-label uppercase text-text-meta">
-                      {new Date(c.issuedDate).toLocaleDateString('en-CA', {
-                        year: 'numeric',
-                        month: 'long',
-                      })}
-                      {c.expiresDate && (
-                        <>
-                          {' '}· expires{' '}
-                          {new Date(c.expiresDate).toLocaleDateString('en-CA', {
-                            year: 'numeric',
-                            month: 'long',
-                          })}
-                        </>
-                      )}
+                <Reveal index={i}>
+                  <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-12">
+                    <p className="font-mono text-meta tracking-label uppercase text-text-meta md:w-40 shrink-0">
+                      {c.issuer}
                     </p>
+                    <div className="flex-1 flex flex-col gap-1">
+                      <h3 className="font-serif font-normal text-step-2 text-near-black leading-tight transition-colors duration-fast ease-out group-hover:text-accent-text">
+                        {c.title}
+                      </h3>
+                      <p className="font-mono text-meta tracking-label uppercase text-text-meta">
+                        {new Date(c.issuedDate).toLocaleDateString('en-CA', {
+                          year: 'numeric',
+                          month: 'long',
+                        })}
+                        {c.expiresDate && (
+                          <>
+                            {' '}· expires{' '}
+                            {new Date(c.expiresDate).toLocaleDateString('en-CA', {
+                              year: 'numeric',
+                              month: 'long',
+                            })}
+                          </>
+                        )}
+                      </p>
+                    </div>
+                    <Link
+                      href={c.credentialUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View credential: ${c.title} from ${c.issuer}`}
+                      className="font-mono text-meta tracking-label uppercase text-accent-text inline-flex items-center gap-1 transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 shrink-0"
+                    >
+                      View
+                      <span aria-hidden="true">{'→'}</span>
+                    </Link>
                   </div>
-                  <Link
-                    href={c.credentialUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`View credential: ${c.title} from ${c.issuer}`}
-                    className="font-mono text-meta tracking-label uppercase text-accent-text inline-flex items-center gap-1 transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 shrink-0"
-                  >
-                    View
-                    <span aria-hidden="true">{'→'}</span>
-                  </Link>
-                </div>
+                </Reveal>
               </li>
             ))}
           </ul>
@@ -350,7 +361,6 @@ export default function HomePage() {
       <section
         id="contact"
         className={cn(
-          'reveal-on-scroll',
           'px-gutter',
           'py-24 lg:py-32',
           'bg-wa-teal-pale',
@@ -358,12 +368,26 @@ export default function HomePage() {
           'relative overflow-hidden',
         )}
       >
-        <div className="max-w-content mx-auto flex flex-col items-start gap-8">
+        {/* Signature moment #2 — ambient golden-hour drift: a single warm light
+            field on an ultra-slow autonomous loop, echoing the landing's sun at
+            rest. CSS/compositor-only; freezes to a static glow under reduced
+            motion. Uses --rgb-gold/--rgb-accent-soft so it flips in dark mode. */}
+        <div
+          aria-hidden="true"
+          className="ambient-drift pointer-events-none absolute -inset-[25%] z-0"
+          style={{
+            background:
+              'radial-gradient(55% 50% at 50% 38%, rgb(var(--rgb-gold) / 0.22), rgb(var(--rgb-accent-soft) / 0.10) 46%, transparent 70%)',
+            willChange: 'transform',
+          }}
+        />
+        {/* Reveal wraps only the content div; the ambient-drift div above is left as-is */}
+        <Reveal className="relative z-10 max-w-content mx-auto flex flex-col items-start gap-8">
           <p className="font-mono text-label tracking-label uppercase text-wa-teal-deep flex items-center gap-2">
             <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
             Correspond
           </p>
-          <h2 className="font-serif font-light text-display-m ember max-w-2xl leading-tight">
+          <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
             Have something worth building?
             <br />
             Write to me.
@@ -372,13 +396,13 @@ export default function HomePage() {
             Write to{' '}
             <a
               href={`mailto:${profile.contactEmail}`}
-              className="text-wa-teal-deep hover:text-accent transition-colors duration-fast ease-out"
+              className="text-wa-teal-deep hover:text-near-black transition-colors duration-fast ease-out"
             >
               {profile.contactEmail}
             </a>
           </p>
           <Button href={`mailto:${profile.contactEmail}`}>Write to me.</Button>
-        </div>
+        </Reveal>
       </section>
       </ContentReveal>
     </>

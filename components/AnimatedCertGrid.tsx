@@ -101,7 +101,7 @@ export function AnimatedCertGrid({ certificates }: AnimatedCertGridProps) {
             </p>
 
             {/* Title — h3 per Alex F-C4-2 (h1 page → h2 sr-only section → h3 card) */}
-            <h3 className="font-serif font-normal text-[1.5rem] text-near-black leading-tight mb-3">
+            <h3 className="font-serif font-normal text-step-2 text-near-black leading-tight mb-3">
               {c.title}
             </h3>
 
