@@ -152,7 +152,7 @@ const MID_SCENE: Scene = {
       placeholderSrc: '/images/cinematic/_placeholders/sky-day.svg',
       transparent: false,
       scaleFrom: 1.0,
-      scaleTo: 1.42, // LOCKED to mid-mid — 1.30→1.42 (r8): a more substantial dolly-in so the zoom isn't slow
+      scaleTo: 1.5, // LOCKED to mid-mid — r10: bigger dolly so the zoom matches the rise's presence
       yFrom: 0,
       yTo: 4, // LOCKED to mid-mid (was -1)
     },
@@ -164,7 +164,7 @@ const MID_SCENE: Scene = {
       placeholderSrc: '/images/cinematic/_placeholders/mid-mesa.svg',
       transparent: true,
       scaleFrom: 1.0,
-      scaleTo: 1.42, // === mid-sky (r8: 1.30→1.42 dolly bump; lock preserved)
+      scaleTo: 1.5, // === mid-sky (r10 dolly bump; lock preserved)
       yFrom: 0,
       yTo: 4,
     },
@@ -203,10 +203,11 @@ const ARRIVAL_SCENE: Scene = {
   // RISE-TO-FILL (2026-06-02 r3 — Sky's chosen direction). The cliff ARRIVES BY RISING +
   // GROWING to fill the frame at FULL opacity — NO crossfade, so ZERO overlap/ghost. (A
   // crossfade of the WIDE valley vista into the CLOSE cliff always showed a brief
-  // double-exposure mid-dissolve; this removes it entirely.) range runs 0.12→1.0: ONE
-  // continuous arc (r6); started earlier + SPREAD (r8: 0.12) so the rise is GENTLER and woven
-  // into the (now more substantial 1.42) zoom — the butte no longer feels fast vs the dolly.
-  range: { start: 0.12, end: 1.0 },
+  // double-exposure mid-dissolve; this removes it entirely.) range runs 0.05→1.0: ONE
+  // continuous arc (r6); started at 0.05 (r10) so the rise is WOVEN into the valley zoom from
+  // near the first scroll — the dolly-in + the rise are ONE simultaneous move (no slow
+  // zoom-alone gap, no slow-zoom-then-fast-mountain). yFrom 92 still hides it at p0.
+  range: { start: 0.05, end: 1.0 },
   // ZERO-WIDTH fadeIn = the group is OPAQUE from mount (startsVisible in the renderer);
   // there is NO opacity tween on the cliff — the reveal is 100% MOTION. The cliff (the
   // group's ONLY plane now) is parked LOW/below the frame until ~0.30, then rises into
@@ -285,12 +286,12 @@ const FLOOR_SCENE: Scene = {
       placeholderSrc: '/images/cinematic/_placeholders/foreground.svg',
       transparent: true,
       scaleFrom: 1.0,
-      scaleTo: 1.42, // === mid-mid (unified zoom; r8 dolly bump 1.30→1.42)
+      scaleTo: 1.5, // === mid-mid (unified zoom; r10 dolly bump)
       yFrom: 2,
       yTo: 6, // Δy 4 === mid-mid's Δy → constant +2 yPercent foreground offset
       // 2nd-phase drift through the arrival (p0.62→1.0): continue WITH the cliff so the
       // foreground never freezes while the wall finishes its dolly. Tuned by eye.
-      phase2: { toScale: 1.52, toY: 8, start: 0.62, end: 1.0 },
+      phase2: { toScale: 1.6, toY: 8, start: 0.62, end: 1.0 },
     },
   ],
 } as const;
