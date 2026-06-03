@@ -1,7 +1,10 @@
+'use client';
+
 import Link from 'next/link';
 
 import { CardField } from '@/components/CardField';
 import { cn } from '@/lib/cn';
+import { useSpotlight } from '@/lib/motion';
 
 type CaseStudyCardProps = {
   title: string;
@@ -13,56 +16,62 @@ type CaseStudyCardProps = {
   className?: string;
 };
 
+const FOIL = 'linear-gradient(118deg, #f6e3ad 0%, #c89b4b 48%, #f2db9f 100%)';
+
 /**
- * CaseStudyCard — v2 bold-editorial card (the whole card is one link).
- *
- * A golden-hour <CardField> with an index numeral + the oversized serif title
- * (cream over the deep pool), then a clean caption with the one-line description
- * and a quiet "Read more" cue. Matches ProjectCard's language so the grid + the
- * featured card read as one family. No illustration.
+ * CaseStudyCard — sleek-dark glass card (the whole card is one link). Matches
+ * ProjectCard's register: dark glass + glowing rim, a warm ember glow + grain,
+ * cursor spotlight, gold-foil numeral, crisp light-on-dark type.
  */
 export function CaseStudyCard({ title, category, description, href, index = 0, className }: CaseStudyCardProps) {
   const numeral = String(index + 1).padStart(2, '0');
+  const spotRef = useSpotlight<HTMLAnchorElement>();
 
   return (
     <Link
+      ref={spotRef}
       href={href}
       aria-label={`${title} — read the case study`}
       data-category={category}
       className={cn(
-        'case-study-card group relative block overflow-hidden rounded-lg',
-        'bg-surface border border-[rgb(var(--rgb-accent)/0.18)] shadow-xl',
-        'transition-all duration-280 ease-out hover:-translate-y-1 hover:border-[rgb(var(--rgb-accent)/0.38)]',
-        'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta',
+        'dark-card case-study-card group relative isolate flex flex-col overflow-hidden rounded-[18px]',
+        'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E8AE78]',
         className,
       )}
     >
-      <CardField slug={category} className="aspect-[4/5]">
+      <CardField slug={category} />
+
+      <div className="relative z-10 flex flex-1 flex-col p-7 md:p-8">
         <span
           aria-hidden="true"
-          className="absolute left-6 top-5 font-serif font-light leading-none text-[#3A1C0C]/35"
-          style={{ fontSize: 'clamp(2.5rem, 5vw, 3.75rem)' }}
+          className="font-serif font-light leading-none"
+          style={{
+            fontSize: 'clamp(2.4rem, 4.6vw, 3.6rem)',
+            backgroundImage: FOIL,
+            WebkitBackgroundClip: 'text',
+            backgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            color: 'transparent',
+          }}
         >
           {numeral}
         </span>
-        <div className="mt-auto px-6 pb-6">
+
+        <div className="mt-auto flex flex-col gap-4 pt-12">
           <h3
-            className="font-serif font-light leading-[1.04] text-[#FAF8F1]"
-            style={{ letterSpacing: '-0.022em', fontSize: 'clamp(1.95rem, 2.7vw, 2.55rem)' }}
+            className="font-serif font-light leading-[1.05] text-[#FAF8F1]"
+            style={{ letterSpacing: '-0.022em', fontSize: 'clamp(1.9rem, 2.6vw, 2.5rem)' }}
           >
             {title}
           </h3>
+          <span aria-hidden="true" className="block h-0.5 w-12 rounded-full" style={{ background: FOIL }} />
+          <p className="font-sans font-light text-body-sm leading-[1.65] text-[#FAF8F1]/60 line-clamp-2 text-pretty">
+            {description}
+          </p>
+          <span className="inline-flex items-center gap-1.5 font-mono text-meta uppercase tracking-label text-[#E8AE78] transition-transform duration-fast ease-out group-hover:translate-x-1">
+            Read more <span aria-hidden="true">→</span>
+          </span>
         </div>
-      </CardField>
-
-      <div className="flex flex-col gap-5 p-7">
-        <span aria-hidden="true" className="block h-px w-10 bg-[rgb(var(--rgb-accent)/0.55)]" />
-        <p className="font-sans font-light text-body-sm leading-[1.65] text-charcoal line-clamp-2 text-pretty">
-          {description}
-        </p>
-        <span className="inline-flex items-center gap-1.5 font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-fast ease-out group-hover:translate-x-1">
-          Read more <span aria-hidden="true">→</span>
-        </span>
       </div>
     </Link>
   );
