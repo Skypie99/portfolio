@@ -259,6 +259,31 @@
   --z-sticky:  30;
   --z-overlay: 80;
   --z-grain:   100;
+
+  /* ==================================================================
+     MOTION-POLISH 2026-06-03 — site-wide cinematic motion system.
+     ADDITIVE: every name here is NEW. A softened, CALM sibling of the
+     locked landing's vocabulary — the intro's quint S-curve
+     cubic-bezier(0.83,0,0.17,1) is studied but NEVER reused here.
+     Mirrored in tailwind.config.ts (ease-gh-* / duration-transition|scene).
+     Full reference + reduced-motion variants: MOTION_SYSTEM.md.
+     ================================================================== */
+  /* Golden-hour easings — the intro's "camera" weight, gentler. */
+  --ease-gh-glide:  cubic-bezier(0.5, 0, 0.1, 1);     /* weighted S-curve — transitions, parallax, scene moves */
+  --ease-gh-settle: cubic-bezier(0.22, 0.9, 0.26, 1); /* soft arrival + long settle — big reveals */
+  /* Scene duration tier (beside --dur-fast/base/slow/reveal above). */
+  --dur-transition: 420ms;   /* route-change crossfade */
+  --dur-scene:      1200ms;  /* large section reveal — slower reads more cinematic */
+  /* Stagger rhythm. */
+  --stagger-step:   80ms;    /* matches <Reveal index> today */
+  --stagger-scene:  120ms;   /* larger choreographed sequences */
+  /* Parallax depth tiers — fraction of an element's scroll travel offered
+     to a layer. far moves least (distant), near moves most (close) — echoes
+     the intro's slow-far / fast-near layering. Consumed by useParallax(depth)
+     in lib/motion.ts and any .gh-parallax-* CSS scroll-timeline layer. */
+  --parallax-far:   0.04;
+  --parallax-mid:   0.08;
+  --parallax-near:  0.14;
 }
 
 /* ==================================================================
@@ -613,6 +638,24 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
   opacity: 1;
   transform: none;
 }
+/* Motion-polish 2026-06-03 — Reveal variants (calm cinematic depth).
+   Placed BEFORE the reduced-motion + no-JS blocks below so those (which
+   target the always-present base .reveal) override these for RM / no-JS
+   visitors. `variant` bundles travel + easing so call sites stay token-clean. */
+.reveal-scene {
+  transform: translateY(28px);
+  transition: opacity var(--dur-scene) var(--ease-gh-settle),
+              transform var(--dur-scene) var(--ease-gh-settle);
+}
+.reveal-depth {
+  transform: translateY(22px) scale(0.985);
+  transition: opacity var(--dur-reveal) var(--ease-gh-settle),
+              transform var(--dur-reveal) var(--ease-gh-settle);
+}
+.reveal-shown.reveal-scene,
+.reveal-shown.reveal-depth {
+  transform: none;
+}
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
@@ -625,6 +668,25 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
     opacity: 1;
     transform: none;
   }
+}
+
+/* ------------------------------------------------------------------
+   Route-change transition (app/template.tsx) — motion-polish 2026-06-03.
+   A calm crossfade + small rise on each client navigation, turning hard
+   route cuts into continuous cinematic flow. The homepage + initial load
+   are exempt in the template (the cinematic opening is never touched).
+   Gated to no-preference, so reduced-motion visitors get the final state
+   instantly; the .page-enter wrapper only ever exists via JS navigation.
+   ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: no-preference) {
+  .page-enter {
+    animation: page-enter var(--dur-transition) var(--ease-gh-glide) both;
+    will-change: opacity, transform;
+  }
+}
+@keyframes page-enter {
+  from { opacity: 0; transform: translate3d(0, 8px, 0); }
+  to   { opacity: 1; transform: none; }
 }
 
 /* Cycle 16 + Cycle 26 + Cycle 29 — broken-image polish.
