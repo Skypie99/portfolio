@@ -21,23 +21,31 @@ describe('TagPill', () => {
     expect(screen.getByText('TypeScript')).toBeInTheDocument();
   });
 
-  it('applies WA Phase 5 teal token classes (teal-pale bg, teal-deep text, mono uppercase)', () => {
+  it('applies the stable base classes + one of the desert spectrum hues', () => {
     render(<TagPill>Expo</TagPill>);
     const pill = screen.getByText('Expo');
-    // Token class assertions — if the spec moves, these change with it.
-    expect(pill).toHaveClass(
-      'bg-wa-teal-pale',
-      'text-wa-teal-deep',
-      'font-mono',
-      'uppercase',
-      'rounded-pill',
+    // Stable base — mono uppercase pill — always present.
+    expect(pill).toHaveClass('font-mono', 'uppercase', 'rounded-pill', 'px-3', 'py-1');
+    // A deterministic teal→gold→terracotta tint is applied (one of the variants).
+    expect(pill.className).toMatch(
+      /\bbg-(cool-soft|gold-glow|cool-mid|accent|rose|emerald)\b/,
     );
+  });
+
+  it('assigns a deterministic hue per label (same label → same hue)', () => {
+    const hueOf = (label: string) => {
+      render(<TagPill>{label}</TagPill>);
+      const cls = screen.getByText(label).className.match(/bg-[\w-]+/)?.[0];
+      cleanup();
+      return cls;
+    };
+    expect(hueOf('Mobile')).toBe(hueOf('Mobile'));
   });
 
   it('merges additional className via cn() without dropping base classes', () => {
     render(<TagPill className="custom-extra">Tailwind</TagPill>);
     const pill = screen.getByText('Tailwind');
     expect(pill).toHaveClass('custom-extra');
-    expect(pill).toHaveClass('bg-wa-teal-pale'); // base preserved
+    expect(pill).toHaveClass('rounded-pill'); // base preserved
   });
 });
