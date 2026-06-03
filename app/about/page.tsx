@@ -53,12 +53,12 @@ export default function AboutPage() {
       {/* Page header */}
       <section className="px-gutter py-24 lg:py-32 bg-cream">
         <div className="max-w-content mx-auto">
-          <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
+          <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
             <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
             A Brief Account
           </p>
           <h1
-            className="font-serif font-light text-[clamp(2.5rem,6vw,4.5rem)] text-near-black leading-[1.05] max-w-3xl mb-10 text-balance"
+            className="font-serif font-light text-[clamp(2.5rem,6vw,4.5rem)] ember leading-[1.05] max-w-3xl mb-10 text-balance"
             style={{ letterSpacing: '-0.025em' }}
           >
             I build things with AI.
@@ -112,11 +112,11 @@ export default function AboutPage() {
       >
         <div className="max-w-content mx-auto">
           <div className="mb-12">
-            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
+            <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Method
             </p>
-            <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-[1.1] text-balance">
+            <h2 className="font-serif font-light text-display-m ember max-w-2xl leading-[1.1] text-balance">
               Three quiet steps, repeated carefully.
             </h2>
           </div>
@@ -161,11 +161,11 @@ export default function AboutPage() {
       >
         <div className="max-w-content mx-auto">
           <div className="mb-12">
-            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
+            <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Principles
             </p>
-            <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight">
+            <h2 className="font-serif font-light text-display-m ember max-w-2xl leading-tight">
               Accessibility. Privacy. No shortcuts.
             </h2>
           </div>
@@ -201,11 +201,11 @@ export default function AboutPage() {
       >
         <div className="max-w-content mx-auto">
           <div className="mb-12">
-            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
+            <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Currently
             </p>
-            <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight">
+            <h2 className="font-serif font-light text-display-m ember max-w-2xl leading-tight">
               Still a beginner. Getting better on purpose.
             </h2>
           </div>
@@ -241,11 +241,11 @@ export default function AboutPage() {
         >
           <div className="max-w-content mx-auto">
             <div className="mb-12">
-              <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
+              <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
                 <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 The Work
               </p>
-              <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-[1.1] text-balance">
+              <h2 className="font-serif font-light text-display-m ember max-w-2xl leading-[1.1] text-balance">
                 A handful of things.
               </h2>
             </div>
@@ -301,7 +301,7 @@ export default function AboutPage() {
         )}
       >
         <div className="max-w-content mx-auto flex flex-col items-start gap-8">
-          <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight">
+          <h2 className="font-serif font-light text-display-m ember max-w-2xl leading-tight">
             Want to work together?
             <br />
             Let{'’'}s talk.

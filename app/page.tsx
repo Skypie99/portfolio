@@ -95,7 +95,7 @@ export default function HomePage() {
             Live
           </p>
           {/* Heading */}
-          <h2 className="font-serif font-light text-display-m text-near-black mb-3 max-w-2xl leading-[1.1] text-balance">
+          <h2 className="font-serif font-light text-display-m ember mb-3 max-w-2xl leading-[1.1] text-balance">
             Built, shipped, and open. Everything here is live.
           </h2>
           <p className="font-sans font-light text-body text-charcoal mb-12 max-w-[540px] text-pretty">
@@ -113,7 +113,7 @@ export default function HomePage() {
                 )}
               >
                 <p
-                  className="font-serif font-light text-[clamp(2.5rem,5vw,3.75rem)] text-terracotta leading-none mb-1"
+                  className="font-serif font-light text-[clamp(2.75rem,5.5vw,4.25rem)] ember leading-none mb-1"
                   style={{ letterSpacing: '-0.03em' }}
                   aria-label={`${stat} ${label}`}
                 >
@@ -150,10 +150,10 @@ export default function HomePage() {
         <div className="max-w-content mx-auto">
           {/* Dani wave5: terracotta left-border accent on section headers */}
           <div className="mb-12 pl-4 border-l-2 border-terracotta">
-            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+            <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4">
               The Work
             </p>
-            <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight">
+            <h2 className="font-serif font-light text-display-m ember max-w-2xl leading-tight">
               A handful of things, made with intention.
             </h2>
           </div>
@@ -186,10 +186,10 @@ export default function HomePage() {
       >
         <div className="max-w-content mx-auto">
           <div className="mb-12 pl-4 border-l-2 border-terracotta">
-            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+            <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4">
               Method
             </p>
-            <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-[1.1] text-balance">
+            <h2 className="font-serif font-light text-display-m ember max-w-2xl leading-[1.1] text-balance">
               Three quiet steps, repeated carefully.
             </h2>
           </div>
@@ -233,10 +233,10 @@ export default function HomePage() {
       >
         <div className="max-w-content mx-auto">
           <div className="mb-12 pl-4 border-l-2 border-terracotta">
-            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+            <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4">
               A Brief Account
             </p>
-            <h2 className="font-serif font-light text-display-m text-near-black leading-[1.1] text-balance">
+            <h2 className="font-serif font-light text-display-m ember leading-[1.1] text-balance">
               The work is careful. The record is honest.
             </h2>
           </div>
@@ -288,10 +288,10 @@ export default function HomePage() {
       >
         <div className="max-w-content mx-auto">
           <div className="mb-12 pl-4 border-l-2 border-terracotta">
-            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+            <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4">
               Credentials
             </p>
-            <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-[1.1] text-balance">
+            <h2 className="font-serif font-light text-display-m ember max-w-2xl leading-[1.1] text-balance">
               Credentials, earned in order.
             </h2>
           </div>
@@ -357,7 +357,7 @@ export default function HomePage() {
             <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
             Correspond
           </p>
-          <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight">
+          <h2 className="font-serif font-light text-display-m ember max-w-2xl leading-tight">
             Have something worth building?
             <br />
             Write to me.

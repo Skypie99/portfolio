@@ -55,7 +55,7 @@
 
   /* --- Mode-aware role triplets (LIGHT) --- */
   --rgb-canvas:       250 248 241;   /* page background (warm off-white) */
-  --rgb-canvas-alt:   241 239 230;   /* alternating sections */
+  --rgb-canvas-alt:   245 237 222;   /* alternating sections — warmer sand */
   --rgb-surface:      255 255 255;   /* cards */
   --rgb-surface-warm: 247 239 228;   /* warm closing surfaces */
   --rgb-panel-cool:   205 224 212;   /* cool-tinted surface */
@@ -330,11 +330,17 @@ h1, h2, h3, h4, h5, h6 {
      tension. Dramatic, but the sun stays upper-right and the ink headline
      (left) keeps full contrast. Saved for the hero only (brief §7). */
   background:
-    radial-gradient(24% 24% at 91% -3%, rgb(var(--rgb-gold) / 0.85) 0%, rgb(var(--rgb-gold) / 0) 62%),
-    radial-gradient(82% 80% at 85% -12%, rgb(var(--rgb-gold) / 0.55) 0%, rgb(var(--rgb-gold) / 0) 60%),
-    radial-gradient(64% 58% at 98% 3%, rgb(var(--rgb-accent) / 0.26) 0%, rgb(var(--rgb-accent) / 0) 56%),
-    radial-gradient(150% 70% at 50% 124%, rgb(var(--rgb-accent-soft) / 0.26) 0%, rgb(var(--rgb-accent-soft) / 0) 66%),
-    radial-gradient(58% 55% at -8% 108%, rgb(var(--rgb-foil) / 0.30) 0%, rgb(var(--rgb-foil) / 0) 74%);
+    radial-gradient(22% 22% at 92% -4%, rgb(var(--rgb-gold) / 0.95) 0%, rgb(var(--rgb-gold) / 0) 60%),
+    radial-gradient(85% 85% at 86% -12%, rgb(var(--rgb-gold) / 0.62) 0%, rgb(var(--rgb-gold) / 0) 58%),
+    radial-gradient(68% 60% at 99% 2%, rgb(var(--rgb-accent) / 0.34) 0%, rgb(var(--rgb-accent) / 0) 55%),
+    radial-gradient(155% 75% at 50% 128%, rgb(var(--rgb-accent-soft) / 0.34) 0%, rgb(var(--rgb-accent-soft) / 0) 66%),
+    radial-gradient(60% 58% at -10% 108%, rgb(var(--rgb-foil) / 0.38) 0%, rgb(var(--rgb-foil) / 0) 72%),
+    /* golden-hour sky → ground base: lavender top, clear text zone, warm sand floor */
+    linear-gradient(180deg,
+      rgb(var(--rgb-foil) / 0.16) 0%,
+      rgb(var(--rgb-canvas) / 0) 26%,
+      rgb(var(--rgb-canvas) / 0) 66%,
+      rgb(var(--rgb-accent-soft) / 0.20) 100%);
 }
 html.dark .hero-wash {
   /* DARK — keep the dusk glow as-is (subtle gold upper-right + cool whisper). */
@@ -357,11 +363,56 @@ body::after {
   inset: 0;
   z-index: 100;
   pointer-events: none;
-  opacity: 0.05;
+  opacity: 0.08;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23g)'/%3E%3C/svg%3E");
   background-size: 160px 160px;
 }
-html.dark body::after { opacity: 0.07; }
+html.dark body::after { opacity: 0.10; }
+
+/* ==================================================================
+   RICHNESS LAYER (2026-06-02 bold pass) — warm "ember" gradient text,
+   gradient rules, warm-tinted depth. Keeps the desert warmth recurring
+   so the page reads cinematic, not flat. All-warm tones (classy, not
+   rainbow); tokens flip to a warm glow in dark mode. Readable at display
+   sizes (rock-lit/terracotta/deep all clear 3:1 large in light).
+   ================================================================== */
+
+/* Ember gradient text — apply IN PLACE OF a text-color class (don't pair
+   with text-ink/text-near-black) on display headings, stat numbers, etc. */
+.ember {
+  background-image: linear-gradient(
+    100deg,
+    rgb(var(--rgb-accent-hover)) 0%,
+    rgb(var(--rgb-accent)) 50%,
+    rgb(var(--rgb-accent-ink)) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  /* a hair of warmth bleed for the "lit" feel */
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Gradient hairline rule — terracotta fading out. Use for section accents. */
+.rule-ember {
+  border: 0;
+  height: 2px;
+  background: linear-gradient(90deg, rgb(var(--rgb-accent)) 0%, rgb(var(--rgb-gold) / 0.7) 45%, rgb(var(--rgb-accent) / 0) 100%);
+}
+
+/* Warm-tinted elevation — depth that feels lit, not generic gray. */
+.shadow-warm {
+  box-shadow:
+    0 1px 2px rgba(60, 32, 18, 0.05),
+    0 4px 10px rgba(60, 32, 18, 0.06),
+    0 18px 44px rgba(60, 32, 18, 0.10);
+}
+html.dark .shadow-warm {
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.45),
+    0 18px 48px rgba(0, 0, 0, 0.55);
+}
 
 /* Status pill — pulsing terracotta dot ring. Single-shot fade-in via
    .hero-enter on the parent; the ping animation runs softly in a loop.
