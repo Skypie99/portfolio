@@ -160,3 +160,67 @@ export function useParallax<T extends HTMLElement = HTMLDivElement>(depth = 0.08
 
   return ref;
 }
+
+/* ────────────────────────────────────────────────────────────────────
+ * useTilt — premium pointer interaction for cards (card-wow 2026-06-03).
+ *
+ * On a fine-pointer device, a rAF-throttled pointermove sets CSS vars on the
+ * element: `--rx`/`--ry` (subtle tilt, ≤ maxDeg), `--mx`/`--my` (cursor 0–100%
+ * for a light that follows the cursor), and `--hover` (0/1). The `.tilt-card`
+ * CSS consumes them. pointerleave eases everything back to rest.
+ *
+ * Reduced motion → no-op (never tilts). SSR/jsdom-safe (guards window/matchMedia,
+ * so it returns early under test). Touch devices (no hover) are skipped.
+ * ──────────────────────────────────────────────────────────────────── */
+export function useTilt<T extends HTMLElement = HTMLDivElement>(maxDeg = 5) {
+  const ref = useRef<T>(null);
+  const reduced = usePrefersReducedMotion();
+
+  useEffect(() => {
+    if (reduced) return;
+    const el = ref.current;
+    if (!el || typeof window === 'undefined' || typeof window.matchMedia !== 'function') return;
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+    let raf = 0;
+    let pending: { x: number; y: number } | null = null;
+
+    const apply = () => {
+      raf = 0;
+      if (!pending) return;
+      const r = el.getBoundingClientRect();
+      const px = Math.min(1, Math.max(0, (pending.x - r.left) / r.width));
+      const py = Math.min(1, Math.max(0, (pending.y - r.top) / r.height));
+      el.style.setProperty('--mx', `${(px * 100).toFixed(1)}%`);
+      el.style.setProperty('--my', `${(py * 100).toFixed(1)}%`);
+      el.style.setProperty('--ry', `${((px - 0.5) * 2 * maxDeg).toFixed(2)}deg`);
+      el.style.setProperty('--rx', `${(-(py - 0.5) * 2 * maxDeg).toFixed(2)}deg`);
+    };
+    const onMove = (e: PointerEvent) => {
+      pending = { x: e.clientX, y: e.clientY };
+      if (!raf) raf = requestAnimationFrame(apply);
+    };
+    const onEnter = () => el.style.setProperty('--hover', '1');
+    const onLeave = () => {
+      if (raf) { cancelAnimationFrame(raf); raf = 0; }
+      pending = null;
+      el.style.setProperty('--hover', '0');
+      el.style.setProperty('--rx', '0deg');
+      el.style.setProperty('--ry', '0deg');
+      el.style.setProperty('--mx', '50%');
+      el.style.setProperty('--my', '28%');
+    };
+
+    el.addEventListener('pointerenter', onEnter);
+    el.addEventListener('pointermove', onMove);
+    el.addEventListener('pointerleave', onLeave);
+    return () => {
+      if (raf) cancelAnimationFrame(raf);
+      el.removeEventListener('pointerenter', onEnter);
+      el.removeEventListener('pointermove', onMove);
+      el.removeEventListener('pointerleave', onLeave);
+    };
+  }, [reduced, maxDeg]);
+
+  return ref;
+}
