@@ -1165,7 +1165,8 @@ img::before {
 .cdesert-pin {
   position: relative;
   z-index: 50;
-  height: 100vh;
+  height: 100vh; /* fallback */
+  height: 100svh; /* mobile: stable small-viewport height so the address bar doesn't shift the pin */
   width: 100%;
   overflow: hidden;
   isolation: isolate;

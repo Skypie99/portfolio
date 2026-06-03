@@ -118,9 +118,10 @@ export function CinematicDesert() {
   // PERF rebuild (2026-06-02): the lightweight engine ships on this branch
   // (perf/cinematic-lightweight) — scale caps, scene culling, merged overlays,
   // motes dropped — so the animated path is RE-ENABLED. The static-frame
-  // fallback below still serves reduced-motion + narrow viewports.
+  // fallback below still serves reduced-motion. MOBILE now ANIMATES too (r11 — Sky
+  // wants the cinematic on phones); `narrow` is kept only as a data-hook for portrait CSS.
   const FORCE_STATIC = false;
-  const animate = !FORCE_STATIC && !(reduce || narrow);
+  const animate = !FORCE_STATIC && !reduce;
 
   // PERF (2026-06-02): force-decode every plane upfront. Lazy planes decoded their
   // AVIF on the main thread the first time each scene scrolled into view — a ~1s
@@ -145,6 +146,9 @@ export function CinematicDesert() {
     () => {
       if (!animate) return;
       gsap.registerPlugin(ScrollTrigger);
+      // Mobile: ignore the iOS/Android address-bar show/hide resize so the pin
+      // doesn't jump mid-scroll (r11 — the cinematic now runs on phones).
+      ScrollTrigger.config({ ignoreMobileResize: true });
 
       const stage = scope.current?.querySelector('.cdesert-stage');
       const pin = pinRef.current;
@@ -434,7 +438,7 @@ export function CinematicDesert() {
   }
 
   return (
-    <div ref={scope}>
+    <div ref={scope} data-narrow={narrow ? '' : undefined}>
       <section className="cdesert-stage" aria-label="SkyPi Studio — desert title scene">
         <div ref={pinRef} className="cdesert-pin">
           {/* stacked scene groups, each its own depth stack + sun. Render order
