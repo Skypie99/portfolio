@@ -107,6 +107,17 @@ const config: Config = {
         'body-sm': ['0.875rem', { lineHeight: '1.6' }], // 14px
         label: ['0.75rem', { lineHeight: '1.4' }], // 12px
         meta: ['0.6875rem', { lineHeight: '1.4' }], // 11px
+
+        // ── Overhaul 2026-06-03 — modular scale. Sizes are var()-backed by
+        //    --fs-* in globals.css (single source of truth; a Vitest parity
+        //    test guards it). Registered in lib/cn.ts CUSTOM_FONT_SIZES.
+        'step-1': ['var(--fs-step-1)', { lineHeight: '1.55' }], // 20px lead
+        'step-2': ['var(--fs-step-2)', { lineHeight: '1.35' }], // 24px sub-head
+        'step-3': ['var(--fs-step-3)', { lineHeight: '1.2' }], // 31px card title
+        'step-4': ['var(--fs-step-4)', { lineHeight: '1.15' }], // 39px section head
+        'step-5': ['var(--fs-step-5)', { lineHeight: '1.1' }], // 49px page title
+        display: ['var(--fs-display)', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+        hero: ['var(--fs-hero)', { lineHeight: '1.05', letterSpacing: '-0.025em' }],
       },
       letterSpacing: {
         body: '0.0156em', // +0.25px
@@ -146,9 +157,24 @@ const config: Config = {
       transitionTimingFunction: {
         out: 'cubic-bezier(0.22, 1, 0.36, 1)',
         soft: 'cubic-bezier(0.4, 0, 0.2, 1)',
+        // Overhaul 2026-06-03 — entrance/exit/snap (var-backed; globals.css)
+        entrance: 'var(--ease-entrance)',
+        exit: 'var(--ease-exit)',
+        snap: 'var(--ease-snap)',
       },
       boxShadow: {
         soft: '0 1px 2px rgba(35,36,32,0.04), 0 4px 12px rgba(35,36,32,0.03)',
+        // Overhaul 2026-06-03 — layered warm ramp (var-backed; flips dark
+        // via the html.dark override in globals.css). Overrides Tailwind's
+        // unused core sm/md/lg/xl with our warm system.
+        sm: 'var(--shadow-sm)',
+        md: 'var(--shadow-md)',
+        lg: 'var(--shadow-lg)',
+        xl: 'var(--shadow-xl)',
+      },
+      borderWidth: {
+        // Overhaul 2026-06-03 — hairline divider (decorative only).
+        hairline: '0.5px',
       },
     },
   },
