@@ -210,7 +210,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
               )}
 
               <h1
-                className="font-serif font-light text-[clamp(2.25rem,5.5vw,4rem)] leading-[1.05] text-near-black text-balance"
+                className="font-serif font-light text-[clamp(2.25rem,5.5vw,4rem)] leading-[1.05] ember text-balance"
                 style={{ letterSpacing: '-0.02em' }}
               >
                 {d.title}

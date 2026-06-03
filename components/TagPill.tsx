@@ -10,20 +10,37 @@ type TagPillProps = {
 /**
  * TagPill — Dani §3.8 canonical primitive.
  *
- * Shape: rounded-pill (999px). Background sand (#FBCFAC).
- * Text: DM Mono, 11px (text-meta), UPPERCASE, tracking-label, Umber.
- * Padding: px-3 py-1 (12px horizontal, 4px vertical) per --space-3/--space-1.
+ * Desert spectrum: soft tinted pills spanning teal → gold → terracotta, all
+ * token-driven so they flip in dark mode. A deterministic hash of the label
+ * keeps each tag a consistent hue everywhere (e.g. "Mobile" is always seafoam,
+ * "MCP" always gold) — variety without randomness, per brief §7 (palette in
+ * category tags, not rainbowed onto every element).
  *
  * Used for tech stack on cards (ProjectCard, /work/[slug], homepage selected
- * work). Extracted in Cycle 8 to deduplicate four identical inline copies
- * of the same className combo. If Dani's spec changes, only this file moves.
+ * work). If Dani's spec changes, only this file moves.
  */
+const TAG_VARIANTS = [
+  'bg-cool-soft/45 text-cool-deep',   // seafoam → deep pine
+  'bg-gold-glow/40 text-accent-ink',  // gold → warm
+  'bg-cool-mid/35 text-cool-deep',    // lagoon → deep pine
+  'bg-accent/22 text-accent-ink',     // terracotta wash → warm
+  'bg-rose/30 text-accent-ink',       // muted clay → warm
+  'bg-emerald/25 text-cool-deep',     // emerald → deep pine
+] as const;
+
+function hue(node: ReactNode): string {
+  const s = typeof node === 'string' ? node : String(node ?? '');
+  let h = 0;
+  for (let i = 0; i < s.length; i += 1) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+  return TAG_VARIANTS[h % TAG_VARIANTS.length];
+}
+
 export function TagPill({ children, className }: TagPillProps) {
   return (
     <span
       className={cn(
         'inline-flex items-center px-3 py-1 rounded-pill',
-        'bg-wa-teal-pale text-wa-teal-deep',
+        hue(children),
         'font-mono text-meta tracking-label uppercase',
         'transition-colors duration-fast ease-out',
         className,

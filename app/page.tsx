@@ -61,6 +61,9 @@ export default function HomePage() {
     },
   ] as const;
 
+  /** Each stat number takes a different desert hue — a teal + orange spread. */
+  const STAT_EMBER = ['ember', 'ember-teal', 'ember-gold', 'ember-moss'];
+
   return (
     <>
       {/* ── Cinematic intro — 2.5D GSAP camera-push desert (placeholder phase) ─ */}
@@ -104,7 +107,7 @@ export default function HomePage() {
 
           {/* 4-col stat grid — vertical-rule layout for editorial weight */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-wa-teal-soft/30 border border-wa-teal-soft/50 rounded-lg overflow-hidden">
-            {showcaseChips.map(({ stat, label, project, tags }) => (
+            {showcaseChips.map(({ stat, label, project, tags }, i) => (
               <div
                 key={project}
                 className={cn(
@@ -113,7 +116,10 @@ export default function HomePage() {
                 )}
               >
                 <p
-                  className="font-serif font-light text-[clamp(2.75rem,5.5vw,4.25rem)] ember leading-none mb-1"
+                  className={cn(
+                    'font-serif font-light text-[clamp(2.75rem,5.5vw,4.25rem)] leading-none mb-1',
+                    STAT_EMBER[i % STAT_EMBER.length],
+                  )}
                   style={{ letterSpacing: '-0.03em' }}
                   aria-label={`${stat} ${label}`}
                 >
