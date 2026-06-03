@@ -1079,10 +1079,10 @@ img::before {
    purposeful rather than endless (and fewer scroll-pixels to scrub through). */
 .cdesert-stage {
   position: relative;
-  height: 460vh;     /* REFINE: 500→620→720vh, then 720→460vh (r7) — Sky wanted FEWER
-                        scrolls + a more responsive, fluid start (720 felt slow/long).
-                        Scales the whole timeline uniformly so the unified rise + all
-                        proportions + the hidden-start are preserved — just less scroll. */
+  height: 380vh;     /* REFINE: 500→620→720→460 (r7), 460→380vh (r10) — Sky: still too much
+                        scroll. Fewer scroll-pixels through the intro. Scales the whole timeline
+                        uniformly so the woven dolly+rise + all proportions + the hidden-start
+                        are preserved — just less scroll. */
   width: 100%;
 }
 

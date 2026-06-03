@@ -75,7 +75,7 @@ const CULL_WINDOWS: readonly { start: number; end: number }[] =
   SCENES.length === 3
     ? [
         { start: -0.01, end: 0.64 }, // MID (opener)
-        { start: 0.10, end: 1.01 }, // ARRIVAL (start 0.10 — the cliff's RISE starts at 0.12; composite just before so it's drawable as it enters from below)
+        { start: 0.02, end: 1.01 }, // ARRIVAL (start 0.02 — the cliff's RISE starts at 0.05; composite just before so it's drawable as it enters from below)
         { start: -0.01, end: 1.01 }, // FLOOR (persistent — never culled)
       ]
     : SCENES.map(() => ({ start: -0.01, end: 1.01 }));
