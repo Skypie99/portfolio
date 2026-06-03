@@ -246,7 +246,7 @@ export default function HomePage() {
             <blockquote
               className={cn(
                 'pl-5 border-l-2 border-terracotta',
-                'font-serif font-light text-[1.375rem] text-near-black leading-[1.4]',
+                'font-serif font-light italic text-[1.5rem] text-ink leading-[1.45]',
                 'text-balance',
               )}
               style={{ letterSpacing: '-0.01em' }}
