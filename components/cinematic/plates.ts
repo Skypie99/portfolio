@@ -203,9 +203,9 @@ const ARRIVAL_SCENE: Scene = {
   // RISE-TO-FILL (2026-06-02 r3 — Sky's chosen direction). The cliff ARRIVES BY RISING +
   // GROWING to fill the frame at FULL opacity — NO crossfade, so ZERO overlap/ghost. (A
   // crossfade of the WIDE valley vista into the CLOSE cliff always showed a brief
-  // double-exposure mid-dissolve; this removes it entirely.) range starts 0.30 so the
-  // rise has room and the wall lands by 0.62.
-  range: { start: 0.3, end: 0.62 },
+  // double-exposure mid-dissolve; this removes it entirely.) range starts 0.30 and now runs
+  // to 1.0 (r6 — fluidity) so the whole rise is ONE continuous arc with no mid-rise hitch.
+  range: { start: 0.3, end: 1.0 },
   // ZERO-WIDTH fadeIn = the group is OPAQUE from mount (startsVisible in the renderer);
   // there is NO opacity tween on the cliff — the reveal is 100% MOTION. The cliff (the
   // group's ONLY plane now) is parked LOW/below the frame until ~0.30, then rises into
@@ -233,16 +233,17 @@ const ARRIVAL_SCENE: Scene = {
       //     viewport bottom for p0–0.30 (nothing sticks out), then the butte RISES up out of
       //     the bottom as you scroll in. The fast early part (still below frame) is unseen;
       //     the VISIBLE rise — crest crossing in and lifting to fill — spans ~p0.40–1.0.
-      // It grows (scaleFrom 1.0 → scaleTo 1.42) and lifts (yFrom 92 → yTo 8) over the range;
-      // transform-origin 50% 70% lifts the crest as it grows. phase2 keeps dollying up+in
-      // (1.42→1.52, y8→-2) through the title hold so the golden rock face FILLS to a wall
-      // while LEAVING the natural crest + a thin dawn-sky sliver at the top (Sky's framing).
-      // It rises OUT OF the persistent floor (mid-fg, rendered on top).
+      // FLUID rise (r6): ONE continuous tween over the whole p[0.30,1.0] range — grows
+      // (scaleFrom 1.0 → scaleTo 1.52) and lifts (yFrom 92 → yTo -2) on a single sine.inOut
+      // arc. Previously this was split into phase1 (→0.62) + phase2 (→1.0); each eased to
+      // ~zero velocity at 0.62, so the butte whooshed up then STALLED mid-rise — a hitch.
+      // Unified = even velocity, gentle emergence, soft landing into the hero. transform-
+      // origin 50% 70% lifts the crest as it grows; it FILLS to a wall leaving the natural
+      // crest + a thin dawn-sky sliver at the top. Rises OUT OF the persistent floor (mid-fg).
       scaleFrom: 1.0,
-      scaleTo: 1.42,
+      scaleTo: 1.52,
       yFrom: 92,
-      yTo: 8,
-      phase2: { toScale: 1.52, toY: -2, start: 0.62, end: 1.0 },
+      yTo: -2,
     },
   ],
 } as const;
