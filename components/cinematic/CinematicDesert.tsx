@@ -75,7 +75,7 @@ const CULL_WINDOWS: readonly { start: number; end: number }[] =
   SCENES.length === 3
     ? [
         { start: -0.01, end: 0.64 }, // MID (opener)
-        { start: 0.28, end: 1.01 }, // ARRIVAL (start 0.28 — the cliff's RISE starts at 0.30; composite just before so it's drawable as it enters from below)
+        { start: 0.18, end: 1.01 }, // ARRIVAL (start 0.18 — the cliff's RISE starts at 0.20; composite just before so it's drawable as it enters from below)
         { start: -0.01, end: 1.01 }, // FLOOR (persistent — never culled)
       ]
     : SCENES.map(() => ({ start: -0.01, end: 1.01 }));
@@ -178,14 +178,14 @@ export function CinematicDesert() {
       };
 
       const tl = gsap.timeline({
-        defaults: { ease: 'power2.inOut' },
+        defaults: { ease: 'none' },
         scrollTrigger: {
           trigger: stage,
           start: 'top top',
           end: 'bottom bottom',
           pin,
           pinSpacing: true,
-          scrub: 1.8,
+          scrub: 1.0,
           anticipatePin: 1,
           invalidateOnRefresh: true,
           // cull on every progress tick (cheap: a handful of class/style writes,
