@@ -34,7 +34,7 @@ const CUSTOM_COLOR_TOKENS = [
  * culprit Cycle 11 surfaced.
  */
 const CUSTOM_FONT_SIZES = [
-  'display-l', 'display-m', 'display-s',
+  'display-s',
   'body', 'body-sm', 'label', 'meta',
   // Overhaul 2026-06-03 — modular scale (tailwind.config.ts fontSize).
   // Required so twMerge groups `text-step-3` / `text-display` / `text-hero`

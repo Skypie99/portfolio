@@ -99,9 +99,7 @@ const config: Config = {
         mono: ['var(--font-dm-mono)', 'ui-monospace', 'monospace'],
       },
       fontSize: {
-        // Per Dani §2.2
-        'display-l': ['3.25rem', { lineHeight: '1.15' }], // 52px
-        'display-m': ['2.25rem', { lineHeight: '1.15' }], // 36px
+        // Per Dani §2.2 (display-l / display-m retired in Phase 7 — zero usages; display-s kept 7× active)
         'display-s': ['1.1875rem', { lineHeight: '1.2' }], // 19px
         body: ['1rem', { lineHeight: '1.65' }], // 16px
         'body-sm': ['0.875rem', { lineHeight: '1.6' }], // 14px
@@ -114,7 +112,7 @@ const config: Config = {
         'step-1': ['var(--fs-step-1)', { lineHeight: '1.55' }], // 20px lead
         'step-2': ['var(--fs-step-2)', { lineHeight: '1.35' }], // 24px sub-head
         // Phase 5 — tight optical kerning on the large serif tiers (the
-        // "expensive" display tracking the section heads lost off display-m).
+        // "expensive" display tracking carries its own letter-spacing inline).
         'step-3': ['var(--fs-step-3)', { lineHeight: '1.2', letterSpacing: '-0.01em' }], // 31px card title
         'step-4': ['var(--fs-step-4)', { lineHeight: '1.15', letterSpacing: '-0.015em' }], // 39px section head
         'step-5': ['var(--fs-step-5)', { lineHeight: '1.1', letterSpacing: '-0.02em' }], // 49px page title

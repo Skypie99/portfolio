@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { AnimatedCertGrid } from '@/components/AnimatedCertGrid';
+import { Reveal } from '@/components/Reveal';
 import { cn } from '@/lib/cn';
 import { getCertificates, getProfile } from '@/lib/content';
 
@@ -53,7 +54,6 @@ export default function CertificatesPage() {
       {/* Certificates grid */}
       <section
         className={cn(
-          'reveal-on-scroll',
           'px-gutter pb-24 lg:pb-32 pt-24 lg:pt-32',
           // Dani wave4: warm-white for the grid section — blush cards pop on warm-white.
           'bg-warm-white border-t border-border-decorative',
@@ -62,6 +62,7 @@ export default function CertificatesPage() {
         <div className="max-w-content mx-auto">
           {/* sr-only section heading — Alex F-C4-2 heading rotor. */}
           <h2 className="sr-only">Credentials</h2>
+          <Reveal>
           {certificates.length === 0 ? (
             <p className="font-serif font-light text-display-s text-charcoal leading-[1.65] max-w-[540px]">
               Credentials coming soon.
@@ -69,6 +70,7 @@ export default function CertificatesPage() {
           ) : (
             <AnimatedCertGrid certificates={certificates} />
           )}
+          </Reveal>
 
           {/* Back link */}
           <div className="mt-20">

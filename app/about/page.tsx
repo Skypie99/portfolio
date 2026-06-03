@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import { Button } from '@/components/Button';
 import { NumberedStep } from '@/components/NumberedStep';
+import { Reveal } from '@/components/Reveal';
 import { cn } from '@/lib/cn';
 import { getDeliverables, getProfile } from '@/lib/content';
 
@@ -103,14 +104,13 @@ export default function AboutPage() {
       {/* How I work — Cycle 17: Dani §3.6 strict refit. */}
       <section
         className={cn(
-          'reveal-on-scroll',
           'px-gutter py-24 lg:py-32',
           // Dani wave4: alternating rhythm — warm-white
           'bg-warm-white border-t border-border-decorative',
         )}
       >
         <div className="max-w-content mx-auto">
-          <div className="mb-12">
+          <Reveal className="mb-12">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Method
@@ -118,32 +118,38 @@ export default function AboutPage() {
             <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-[1.1] text-balance">
               Three quiet steps, repeated carefully.
             </h2>
-          </div>
+          </Reveal>
 
           {/* Peach-cream callout panel — Dani §3.6. Hairline dividers
               between steps preserved from Cycle 7 (Stone decorative). */}
           <div className="bg-wa-teal-wash border border-wa-teal-soft/50 rounded-lg p-8 md:p-12">
             <ol className="flex flex-col divide-y divide-border-decorative">
               <li className="py-8 first:pt-0 last:pb-0">
-                <NumberedStep
-                  number="01"
-                  title="Describe the problem."
-                  body="Use Claude Code as the primary building environment. Read the output. Course-correct when something is wrong."
-                />
+                <Reveal index={0}>
+                  <NumberedStep
+                    number="01"
+                    title="Describe the problem."
+                    body="Use Claude Code as the primary building environment. Read the output. Course-correct when something is wrong."
+                  />
+                </Reveal>
               </li>
               <li className="py-8 first:pt-0 last:pb-0">
-                <NumberedStep
-                  number="02"
-                  title="Assemble the team."
-                  body="For larger work, fifteen agents — each with a defined role, operating from a written constitution. Nothing is decided by accident."
-                />
+                <Reveal index={1}>
+                  <NumberedStep
+                    number="02"
+                    title="Assemble the team."
+                    body="For larger work, fifteen agents — each with a defined role, operating from a written constitution. Nothing is decided by accident."
+                  />
+                </Reveal>
               </li>
               <li className="py-8 first:pt-0 last:pb-0">
-                <NumberedStep
-                  number="03"
-                  title="Do not ship until you have used it."
-                  body="Then write down what broke, what surprised you, and what the next person will need to know."
-                />
+                <Reveal index={2}>
+                  <NumberedStep
+                    number="03"
+                    title="Do not ship until you have used it."
+                    body="Then write down what broke, what surprised you, and what the next person will need to know."
+                  />
+                </Reveal>
               </li>
             </ol>
           </div>
@@ -153,13 +159,12 @@ export default function AboutPage() {
       {/* What I care about */}
       <section
         className={cn(
-          'reveal-on-scroll',
           'px-gutter py-24 lg:py-32',
           'bg-cream border-t border-border-decorative',
         )}
       >
         <div className="max-w-content mx-auto">
-          <div className="mb-12">
+          <Reveal className="mb-12">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Principles
@@ -167,9 +172,9 @@ export default function AboutPage() {
             <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
               Accessibility. Privacy. No shortcuts.
             </h2>
-          </div>
+          </Reveal>
 
-          <div className="max-w-[640px] flex flex-col gap-6">
+          <Reveal className="max-w-[640px] flex flex-col gap-6">
             <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
               WCAG 2.2 AA on every interface. Not because it is required.
               Because it is correct. AccessMap exists because disabled people
@@ -185,21 +190,20 @@ export default function AboutPage() {
               apologise. This is not a principle from a book. It came from
               shipping things that were not ready.
             </p>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* What I'm learning */}
       <section
         className={cn(
-          'reveal-on-scroll',
           'px-gutter py-24 lg:py-32',
           // Dani wave4: alternating — warm-white
           'bg-warm-white border-t border-border-decorative',
         )}
       >
         <div className="max-w-content mx-auto">
-          <div className="mb-12">
+          <Reveal className="mb-12">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Currently
@@ -207,9 +211,9 @@ export default function AboutPage() {
             <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
               Still a beginner. Getting better on purpose.
             </h2>
-          </div>
+          </Reveal>
 
-          <div className="max-w-[640px] flex flex-col gap-6">
+          <Reveal className="max-w-[640px] flex flex-col gap-6">
             <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
               I am not a trained software engineer. I came to coding through
               building — I had ideas I wanted to exist. That is still how this
@@ -225,7 +229,7 @@ export default function AboutPage() {
               documentation, ask good questions, and care how things turn out.
               Write to me if that sounds like you.
             </p>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -233,13 +237,12 @@ export default function AboutPage() {
       {recent.length > 0 && (
         <section
           className={cn(
-            'reveal-on-scroll',
             'px-gutter py-24 lg:py-32',
             'bg-cream border-t border-border-decorative',
           )}
         >
           <div className="max-w-content mx-auto">
-            <div className="mb-12">
+            <Reveal className="mb-12">
               <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
                 <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 The Work
@@ -247,33 +250,35 @@ export default function AboutPage() {
               <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-[1.1] text-balance">
                 A handful of things.
               </h2>
-            </div>
+            </Reveal>
 
             <ul className="flex flex-col gap-8 max-w-3xl">
-              {recent.map((d) => (
+              {recent.map((d, i) => (
                 <li
                   key={d.id}
                   className="border-t border-border-decorative pt-6"
                 >
-                  <Link
-                    href={`/work/${d.id}/`}
-                    aria-label={`Read about ${d.title} — ${d.role}, ${d.year}`}
-                    className="group flex flex-col gap-2 text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
-                  >
-                    <p className="font-mono text-meta tracking-label uppercase text-text-meta">
-                      {d.role} · {d.year}
-                    </p>
-                    <h3 className="font-serif font-normal text-step-2 leading-tight">
-                      {d.title}
-                    </h3>
-                    <p className="font-sans font-light text-body text-charcoal leading-[1.65] max-w-[540px]">
-                      {d.summary}
-                    </p>
-                    <span className="font-mono text-meta tracking-label uppercase text-accent-text mt-2 inline-flex items-center gap-1 transition-transform duration-fast ease-out group-hover:translate-x-1 group-focus-visible:translate-x-1">
-                      Continue
-                      <span aria-hidden="true">{'→'}</span>
-                    </span>
-                  </Link>
+                  <Reveal index={i}>
+                    <Link
+                      href={`/work/${d.id}/`}
+                      aria-label={`Read about ${d.title} — ${d.role}, ${d.year}`}
+                      className="group flex flex-col gap-2 text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+                    >
+                      <p className="font-mono text-meta tracking-label uppercase text-text-meta">
+                        {d.role} · {d.year}
+                      </p>
+                      <h3 className="font-serif font-normal text-step-2 leading-tight">
+                        {d.title}
+                      </h3>
+                      <p className="font-sans font-light text-body text-charcoal leading-[1.65] max-w-[540px]">
+                        {d.summary}
+                      </p>
+                      <span className="font-mono text-meta tracking-label uppercase text-accent-text mt-2 inline-flex items-center gap-1 transition-transform duration-fast ease-out group-hover:translate-x-1 group-focus-visible:translate-x-1">
+                        Continue
+                        <span aria-hidden="true">{'→'}</span>
+                      </span>
+                    </Link>
+                  </Reveal>
                 </li>
               ))}
             </ul>
@@ -292,14 +297,8 @@ export default function AboutPage() {
       )}
 
       {/* CTA */}
-      <section
-        className={cn(
-          'reveal-on-scroll',
-          'px-gutter py-24 lg:py-32',
-          'bg-cream border-t border-border-decorative',
-        )}
-      >
-        <div className="max-w-content mx-auto flex flex-col items-start gap-8">
+      <section className="px-gutter py-24 lg:py-32 bg-cream border-t border-border-decorative">
+        <Reveal className="max-w-content mx-auto flex flex-col items-start gap-8">
           <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
             Want to work together?
             <br />
@@ -316,7 +315,7 @@ export default function AboutPage() {
             <span aria-hidden="true">{'←'}</span>
             Back to home
           </Link>
-        </div>
+        </Reveal>
       </section>
     </>
   );

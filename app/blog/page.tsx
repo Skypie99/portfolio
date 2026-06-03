@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+import { Reveal } from '@/components/Reveal';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getBlogPosts, getProfile } from '@/lib/content';
@@ -65,7 +66,6 @@ export default function BlogIndexPage() {
       {/* Posts list */}
       <section
         className={cn(
-          'reveal-on-scroll',
           'px-gutter',
           'pb-24 lg:pb-32',
           'bg-warm-white',
@@ -83,6 +83,7 @@ export default function BlogIndexPage() {
             <ul className="flex flex-col divide-y divide-border-decorative">
               {posts.map((post, idx) => (
                 <li key={post.id} className="py-12 first:pt-0">
+                  <Reveal index={idx}>
                   <Link
                     href={`/blog/${post.id}/`}
                     aria-label={`Read: ${post.title}`}
@@ -160,6 +161,7 @@ export default function BlogIndexPage() {
                       </div>
                     </div>
                   </Link>
+                  </Reveal>
                 </li>
               ))}
             </ul>
