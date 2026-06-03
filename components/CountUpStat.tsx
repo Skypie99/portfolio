@@ -1,9 +1,9 @@
 'use client';
 
-import { animate, useInView, useReducedMotion } from 'framer-motion';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { cn } from '@/lib/cn';
+import { useInViewOnce, usePrefersReducedMotion } from '@/lib/motion';
 
 type CountUpStatProps = {
   /** Raw stat string, e.g. "789", "50+", "E2E". */
@@ -38,9 +38,8 @@ function parseStat(value: string): { target: number; suffix: string } | null {
  */
 export function CountUpStat({ value, emberClass, label }: CountUpStatProps) {
   const parsed = useMemo(() => parseStat(value), [value]);
-  const ref = useRef<HTMLParagraphElement>(null);
-  const inView = useInView(ref, { once: true, margin: '-80px' });
-  const reduced = useReducedMotion();
+  const [ref, inView] = useInViewOnce<HTMLParagraphElement>();
+  const reduced = usePrefersReducedMotion();
   // Initial = final value: correct first paint, no-JS safe, no flash of 0.
   const [display, setDisplay] = useState(parsed ? parsed.target : 0);
   const started = useRef(false);
@@ -48,13 +47,20 @@ export function CountUpStat({ value, emberClass, label }: CountUpStatProps) {
   useEffect(() => {
     if (!parsed || reduced || started.current || !inView) return;
     started.current = true;
+    const target = parsed.target;
+    const duration = 900;
+    const easeOut = (t: number) => 1 - Math.pow(1 - t, 3); // ≈ ease-out [.22,1,.36,1]
+    let raf = 0;
+    let start = 0;
+    const tick = (now: number) => {
+      if (!start) start = now;
+      const t = Math.min((now - start) / duration, 1);
+      setDisplay(Math.round(easeOut(t) * target));
+      if (t < 1) raf = requestAnimationFrame(tick);
+    };
     setDisplay(0); // snap to 0 as it enters view, then count up
-    const controls = animate(0, parsed.target, {
-      duration: 0.9,
-      ease: [0.22, 1, 0.36, 1],
-      onUpdate: (v) => setDisplay(Math.round(v)),
-    });
-    return () => controls.stop();
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
   }, [inView, reduced, parsed]);
 
   return (
