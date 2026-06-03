@@ -4,6 +4,8 @@ import { notFound } from 'next/navigation';
 
 import { Button } from '@/components/Button';
 import { CaseStudyCard } from '@/components/CaseStudyCard';
+import { HeroImageSettle, HeroTitleSettle } from '@/components/HeroSettle';
+import { Reveal } from '@/components/Reveal';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getDeliverables, getProfile } from '@/lib/content';
@@ -169,8 +171,10 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
       <section className="px-gutter py-24 lg:py-32 bg-cream">
         <div className="max-w-content mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start">
-            {/* Hero image / fallback block */}
-            <div className="relative w-full aspect-[4/5] bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-1 md:order-1 shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]">
+            {/* Hero image / fallback block — HeroImageSettle wraps the whole
+                well so the settle animation is the grid child itself. All
+                existing classes preserved on the wrapper. */}
+            <HeroImageSettle className="relative w-full aspect-[4/5] bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-1 md:order-1 shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]">
               {/* Warm top-light — single source from above (lit-well depth) */}
               <div
                 aria-hidden="true"
@@ -200,7 +204,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
                   {d.title}
                 </span>
               </div>
-            </div>
+            </HeroImageSettle>
 
             {/* Details column */}
             <div className="flex flex-col gap-8 order-2 md:order-2 md:sticky md:top-12">
@@ -214,11 +218,13 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
                 </p>
               )}
 
-              <h1
+              {/* HeroTitleSettle: carves in after the image (delay 150ms),
+                  tightening letter-spacing from 0.12em to -0.02em. */}
+              <HeroTitleSettle
                 className="font-serif font-light text-display leading-[1.05] ember text-balance"
               >
                 {d.title}
-              </h1>
+              </HeroTitleSettle>
 
               <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
                 {d.summary}
@@ -322,17 +328,19 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
 
       {/* Optional gallery */}
       {d.gallery && d.gallery.length > 0 && (
-        <section className="reveal-on-scroll px-gutter py-24 lg:py-32 bg-wa-rose-pale border-t border-wa-rose-soft/40">
+        <section className="px-gutter py-24 lg:py-32 bg-wa-rose-pale border-t border-wa-rose-soft/40">
           <div className="max-w-content mx-auto">
-            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
-              Gallery
-            </p>
-            <h2 className="font-serif font-light text-step-4 text-near-black mb-12 max-w-2xl leading-tight">
-              A closer look.
-            </h2>
+            <Reveal>
+              <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+                Gallery
+              </p>
+              <h2 className="font-serif font-light text-step-4 text-near-black mb-12 max-w-2xl leading-tight">
+                A closer look.
+              </h2>
+            </Reveal>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-              {d.gallery.map((img) => (
-                <li key={img.src} className="flex flex-col gap-3">
+              {d.gallery.map((img, i) => (
+                <Reveal key={img.src} index={i} as="li" className="flex flex-col gap-3">
                   <div className="relative w-full aspect-[4/3] bg-gradient-to-br from-earth to-earth-deep border border-wa-teal-soft/40 overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]">
                     {/* Warm top-light — single source from above (lit-well depth) */}
                     <div
@@ -363,7 +371,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
                       {img.caption}
                     </p>
                   )}
-                </li>
+                </Reveal>
               ))}
             </ul>
           </div>
@@ -374,23 +382,24 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
       {others.length > 0 && (
         <section
           className={cn(
-            'reveal-on-scroll',
             'px-gutter py-24 lg:py-32',
             // Dani wave4: warm-white for section variety between cream main and gallery.
             'bg-warm-white border-t border-border-decorative',
           )}
         >
           <div className="max-w-content mx-auto">
-            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
-              More work
-            </p>
-            <h2 className="font-serif font-light text-step-4 text-near-black max-w-2xl leading-tight mb-12">
-              Continue reading.
-            </h2>
+            <Reveal>
+              <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+                More work
+              </p>
+              <h2 className="font-serif font-light text-step-4 text-near-black max-w-2xl leading-tight mb-12">
+                Continue reading.
+              </h2>
+            </Reveal>
 
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-              {others.map((o) => (
-                <li key={o.id}>
+              {others.map((o, i) => (
+                <Reveal key={o.id} index={i} as="li">
                   <CaseStudyCard
                     title={o.title}
                     category={toCategory(o.id)}
@@ -399,7 +408,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
                     description={o.summary}
                     href={`/work/${o.id}/`}
                   />
-                </li>
+                </Reveal>
               ))}
             </ul>
           </div>
@@ -409,12 +418,11 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
       {/* Closing CTA */}
       <section
         className={cn(
-          'reveal-on-scroll',
           'px-gutter py-24 lg:py-32',
           'bg-cream border-t border-border-decorative',
         )}
       >
-        <div className="max-w-content mx-auto flex flex-col items-start gap-8">
+        <Reveal className="max-w-content mx-auto flex flex-col items-start gap-8">
           <h2 className="font-serif font-light text-step-4 text-near-black max-w-2xl leading-tight">
             Have something like this?
             <br />
@@ -425,7 +433,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
           >
             Write to me.
           </Button>
-        </div>
+        </Reveal>
       </section>
     </>
   );

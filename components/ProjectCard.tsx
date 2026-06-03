@@ -66,6 +66,7 @@ export function ProjectCard({
         'overflow-hidden',
         'transition-all duration-280 ease-out',
         'hover:bg-[var(--card-bg-hover)] hover:border-[var(--card-border-hover)] hover:shadow-lg hover:-translate-y-1',
+        'active:translate-y-0 active:shadow-md',
         'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta focus-visible:rounded-sm',
         // Wide featured card: side-by-side on md+, image fills left half.
         wide && 'md:flex md:flex-row md:items-stretch',

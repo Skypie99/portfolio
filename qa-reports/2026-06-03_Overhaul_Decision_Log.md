@@ -81,5 +81,27 @@ This log records decisions as the run proceeds (brief §2.4: "the record is part
 
 **Tooling notes:** (1) Hit a Next dev `.next`-cache corruption (`__webpack_modules__ is not a function` + RSC manifest errors) that served stale bundles — fixed by `rm -rf .next` + restart; verify edits via `preview_inspect` computed styles, not just screenshots. (2) The preview MCP is pinned to `/`; eval-navigation to sub-routes doesn't persist — case-study visuals verified at the code/computed level (identical lit-well pattern); will point a launch.json path at a sub-route when P4/P7/P8 need sub-route captures.
 
-### Phase 4 — Motion & interaction
+### Phase 4 — Motion & interaction ✅ (tag `overhaul-phase4`)
+
+**The three signature moments (all "arrive & settle", echoing the landing):**
+1. **Stat count-up** (`components/CountUpStat.tsx`, Morgan-built) — numeric figures count 0→value once on scroll-in over `--dur-reveal`/`--ease-out`, then hold. `tabular-nums` (verified applied) locks digit width = no jitter. `E2E` stays static; `50+` reveals its `+` at completion. Accessible name = final value; SSR/no-JS/RM render the final value (no flash of 0). Verified live: counts, correct values, panel depth.
+2. **Ambient golden-hour drift** (`.ambient-drift` in globals.css + a blob in `#contact`, Morgan-built) — one warm radial light field drifting ≤4% over 26s, infinite-alternate, `--rgb-gold`/`--rgb-accent-soft` (flips dark). CSS/compositor-only. Verified live: `animation-name: ambient-drift`, 26s. RM → static glow (gated `no-preference` + global RM freeze).
+3. **Case-study hero "settle"** (`components/HeroSettle.tsx`, Sonnet-built, Morgan-reviewed) — on mount the image well settles (opacity + `scale 1.02→1`, 900ms) then the `<h1>` carves in (opacity + y + **letter-spacing 0.12em→-0.02em**, 520ms, +150ms delay) — the landing's signature title gesture, image-then-title ordering. RM → final state. Verified live on `/work/accessmap/` (title + lit-well render correct).
+
+**Quiet micro-motion layer:**
+- **Keystone fix:** replaced the Firefox-broken CSS `reveal-on-scroll` on all 6 homepage sections with the cross-browser `<Reveal>` primitive. Verified reveals settle visible; grid dividers + featured `md:col-span-2` preserved.
+- **Staggered entrances** (80ms): Work cards, stat cells, credentials items, Method steps (used `<Reveal index>` not AnimatedStepList — the latter lacks the `highlight` prop + owns its own divider structure; Reveal gives the same stagger with zero restructure).
+- **Footer link-draw:** all 9 footer links now draw an underline on hover + focus-visible (was color-only).
+- **Card press:** ProjectCard gains `active:translate-y-0 active:shadow-md`.
+
+**Verification:** typecheck clean · 20 files / 160 tests + 1 todo (incl. 6 new HeroSettle) · ESLint clean · build 15 pages / 3 exported · no console errors · cinematic untouched (no frozen edits).
+
+**⚠ Carried items:**
+- **PERF (→ Phase 6):** `/` First Load JS rose **197 → 210 kB (+13 kB)** — the new homepage motion components pull framer-motion into the homepage bundle, breaking the lazy-load split. Phase 6 fix: `LazyMotion`+`m` (loads features lazily, ~5 kB core) or lazy-mount, to restore the split while keeping SSR + the count-up's no-flash.
+- **Consistency (→ Phase 7):** `reveal-on-scroll` still active on the sub-route pages (`/about`, `/blog`, `/certificates`, `/contact`, `/work` index) — migrate those to `<Reveal>` in the cohesion pass for site-wide Firefox parity.
+- **Verify (→ P7/P8):** HeroSettle carve-in feel + a mid-count frame are best confirmed with a slow-mo / RM-toggle pass; functionally verified now.
+
+**Tooling note:** Next dev HMR is unreliable on this GSAP-heavy setup (stale bundles; `__webpack_modules__` corruption after `next build` shares `.next`). Reliable loop: stop → `rm -rf .next` → restart → verify via `preview_inspect`/`eval`. Sub-route navigation works on a *healthy* server (earlier bounces were the corrupted one).
+
+### Phase 5 — Detail & finish (the 1%)
 _(next)_
