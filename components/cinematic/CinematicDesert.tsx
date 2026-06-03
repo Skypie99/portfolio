@@ -238,9 +238,17 @@ export function CinematicDesert() {
         scene.planes.forEach((plate: Plate, pi) => {
           const el = layerRefs.current.get(`${si}:${pi}`);
           if (!el) return;
+          // The SSR seed (Layer.tsx `translateY(yFrom%)`) is parsed by GSAP as a separate
+          // `y` that ADDS to yPercent — a harmless ~0 offset for the small-yFrom MID planes,
+          // but it DOUBLES the deep-parked arrival cliff (yFrom 92) so it could never rise
+          // into frame. Clear `y` for the cliff only, so its vertical position is yPercent-
+          // only (parks at yFrom% = below the frame, then rises cleanly to yTo/phase2).
+          const clearSeed = plate.id === 'arrival-cliff';
           tl.fromTo(
             el,
-            { scale: plate.scaleFrom, yPercent: plate.yFrom },
+            clearSeed
+              ? { scale: plate.scaleFrom, yPercent: plate.yFrom, y: 0 }
+              : { scale: plate.scaleFrom, yPercent: plate.yFrom },
             { scale: plate.scaleTo, yPercent: plate.yTo, duration: span, ease: 'sine.inOut' },
             scene.range.start,
           );
