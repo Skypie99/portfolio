@@ -610,6 +610,35 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
   to   { transform: translate3d(2%, 2%, 0) scale(1.1); }
 }
 
+/* ------------------------------------------------------------------
+   Reveal primitive (components/Reveal.tsx) — fade + rise on scroll-in,
+   IntersectionObserver-driven (no animation lib, Phase 6). Content stays
+   in the DOM (opacity, not display) so it remains in the a11y tree +
+   crawlable; reduced-motion and no-JS visitors get the final visible state.
+   ------------------------------------------------------------------ */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out);
+}
+.reveal-shown {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+@media (scripting: none) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* Cycle 16 + Cycle 26 + Cycle 29 — broken-image polish.
 
    `color: transparent` hides alt-text fallback paint on all imgs.

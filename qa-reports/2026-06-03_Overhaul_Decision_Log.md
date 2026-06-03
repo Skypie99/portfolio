@@ -120,5 +120,24 @@ This log records decisions as the run proceeds (brief §2.4: "the record is part
 
 **Verification:** typecheck clean · 160 tests + 1 todo · ESLint clean · build 17 pages / export OK (PNG OG emitted, 1200×630). Favicon + theme-color + PNG og:image confirmed in built `out/index.html`. No frozen files touched.
 
-### Phase 6 — Perf & a11y hardening
+### Phase 6 — Perf & a11y hardening ✅ (tag `overhaul-phase6`)
+
+**Perf — clawed back the motion-phase weight:**
+- **De-framered the two new homepage motion components** (`Reveal`, `CountUpStat`) → vanilla `IntersectionObserver` + CSS transition + `requestAnimationFrame`, via a new dependency-free `lib/motion.ts` (`useInViewOnce` + `usePrefersReducedMotion`). Removed framer's `useInView`/`animate` from the homepage critical path. `.reveal` CSS (with reduced-motion + `@media (scripting: none)` no-JS fallbacks) added to globals.
+- **`/` First Load JS: 210 → 205 kB.** Net vs the 197 baseline = **+8 kB for the entire motion layer** (3 signature moments + reveals everywhere) — lean, because the new pieces use CSS/IO not an animation lib.
+- **Did NOT de-framer `ContentReveal`** (the remaining ~8 kB): it's a scroll-linked fade coupled to the LOCKED cinematic's handoff (scrollY 300→420) with frozen-region mobile overrides on `.cinematic-content-reveal`. Risk to the locked-landing transition > the gain. Accepted.
+- Verified the vanilla reveals **fire on real scroll** (all 5 showcase reveals → `opacity: 1`) and the count-up renders correctly.
+
+**A11y self-check (team hardening; the formal independent audit is Alex, Phase 8):**
+- **Reduced motion:** every new animation degrades to its final/static state — reveal + drift via `@media (prefers-reduced-motion: reduce)`; count-up + HeroSettle via the `usePrefersReducedMotion`/`useReducedMotion` hooks. Verified in code.
+- **Focus:** tokenized ring (AA terracotta, unchanged values); `.link-draw` draws on `:hover` AND `:focus-visible` (keyboard footer users get the underline, not just the ring).
+- **Contrast:** new surfaces reuse existing AA-validated tokens; decorative layers (lit-well, scrollbar, drift) carry no text.
+- **Target sizes:** new interactive elements are text links + large cards (≥24px).
+- **Reveal content is in the DOM (opacity, not display)** → stays in the a11y tree + crawlable even before it animates in.
+
+**Verification:** typecheck clean · 160 tests + 1 todo · ESLint clean · build 17 pages / export OK. `/` = 205 kB. No frozen files touched.
+
+**⚠ Verification gotcha (for P7/P8):** a programmatic `window.scrollTo` via the preview eval does NOT trigger IntersectionObserver recomputation in headless Chrome, so reveals read as `opacity:0` ("not fired") in that synthetic case. A real scroll event (`scrollBy` nudge) or a load-time-in-view element fires them correctly — real users + anchor jumps are fine. When verifying reveals in the preview, nudge-scroll after `scrollTo`, or trust `.reveal-shown`/computed-opacity after a nudge.
+
+### Phase 7 — Cohesion & QA + token cleanup
 _(next)_
