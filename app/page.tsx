@@ -6,6 +6,7 @@ import { ContentReveal } from '@/components/ContentReveal';
 import { CountUpStat } from '@/components/CountUpStat';
 import { Hero } from '@/components/Hero';
 import { NumberedStep } from '@/components/NumberedStep';
+import { ParallaxWash } from '@/components/ParallaxWash';
 import { ProjectCard } from '@/components/ProjectCard';
 import { Reveal } from '@/components/Reveal';
 import { TagPill } from '@/components/TagPill';
@@ -93,7 +94,7 @@ export default function HomePage() {
         )}
       >
         <div className="max-w-content mx-auto">
-          <Reveal>
+          <Reveal variant="scene">
             {/* Section label */}
             <p className="font-mono text-label text-sage-text uppercase tracking-label mb-3 flex items-center gap-2">
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
@@ -153,7 +154,7 @@ export default function HomePage() {
       >
         <div className="max-w-content mx-auto">
           {/* Dani wave5: terracotta left-border accent on section headers */}
-          <Reveal className="mb-12 pl-4 border-l-2 border-terracotta">
+          <Reveal variant="scene" className="mb-12 pl-4 border-l-2 border-terracotta">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4">
               The Work
             </p>
@@ -190,7 +191,7 @@ export default function HomePage() {
         )}
       >
         <div className="max-w-content mx-auto">
-          <Reveal className="mb-12 pl-4 border-l-2 border-terracotta">
+          <Reveal variant="scene" className="mb-12 pl-4 border-l-2 border-terracotta">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4">
               Method
             </p>
@@ -243,10 +244,13 @@ export default function HomePage() {
           'py-24 lg:py-32',
           'bg-cream',
           'border-t border-border-decorative',
+          'relative overflow-hidden',
         )}
       >
-        <div className="max-w-content mx-auto">
-          <Reveal className="mb-12 pl-4 border-l-2 border-terracotta">
+        {/* Golden-hour scroll-depth — far tier, holds static under reduced motion */}
+        <ParallaxWash depth="far" />
+        <div className="relative z-10 max-w-content mx-auto">
+          <Reveal variant="scene" className="mb-12 pl-4 border-l-2 border-terracotta">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4">
               A Brief Account
             </p>
@@ -300,7 +304,7 @@ export default function HomePage() {
         )}
       >
         <div className="max-w-content mx-auto">
-          <Reveal className="mb-12 pl-4 border-l-2 border-terracotta">
+          <Reveal variant="scene" className="mb-12 pl-4 border-l-2 border-terracotta">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4">
               Credentials
             </p>

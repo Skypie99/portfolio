@@ -59,3 +59,101 @@ export function usePrefersReducedMotion() {
 
   return reduced;
 }
+
+/* ────────────────────────────────────────────────────────────────────
+ * useParallax — scroll-linked depth drift (motion-polish 2026-06-03).
+ *
+ * One shared rAF + one IntersectionObserver for ALL parallax elements on
+ * the page (no per-element scroll listeners). Reads are batched, then
+ * writes — a single `translate3d` per element, so it stays on the
+ * compositor at 60fps. A frame only runs on scroll / resize / visibility
+ * change (rAF-throttled), so there's zero work while idle.
+ *
+ * `depth` is the fraction of the element's distance-from-viewport-center
+ * applied as counter-movement (see --parallax-far/mid/near in
+ * MOTION_SYSTEM.md): far = 0.04, mid = 0.08, near = 0.14. Larger = closer.
+ *
+ * Reduced motion: the element is never registered and no transform is ever
+ * written. Attach ONLY to decorative (aria-hidden) layers or hero imagery
+ * inside an overflow-clipped, slightly-oversized frame — never the
+ * cinematic intro or the homepage hero.
+ * ──────────────────────────────────────────────────────────────────── */
+
+type ParallaxEntry = { depth: number; lastShift: number };
+
+let pxRegistry: Map<HTMLElement, ParallaxEntry> | null = null;
+let pxActive: Set<HTMLElement> | null = null;
+let pxObserver: IntersectionObserver | null = null;
+let pxRaf = 0;
+
+function pxFrame() {
+  pxRaf = 0;
+  if (!pxRegistry || !pxActive) return;
+  const vpCenter = window.innerHeight / 2;
+  // READ pass — gather target shifts (getBoundingClientRect reflects the
+  // current transform, so subtract the last shift to recover layout center).
+  const writes: Array<[HTMLElement, number]> = [];
+  for (const el of pxActive) {
+    const entry = pxRegistry.get(el);
+    if (!entry) continue;
+    const rect = el.getBoundingClientRect();
+    const baseCenter = rect.top + rect.height / 2 - entry.lastShift;
+    writes.push([el, (baseCenter - vpCenter) * entry.depth]);
+  }
+  // WRITE pass — apply transforms together (no interleaved layout thrash).
+  for (const [el, shift] of writes) {
+    const entry = pxRegistry.get(el);
+    if (!entry) continue;
+    entry.lastShift = shift;
+    el.style.transform = `translate3d(0, ${shift.toFixed(2)}px, 0)`;
+  }
+}
+
+function pxSchedule() {
+  if (pxRaf) return;
+  pxRaf = requestAnimationFrame(pxFrame);
+}
+
+function pxEnsureGlobals() {
+  if (pxRegistry) return;
+  pxRegistry = new Map();
+  pxActive = new Set();
+  pxObserver = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries) {
+        const el = e.target as HTMLElement;
+        if (e.isIntersecting) pxActive!.add(el);
+        else pxActive!.delete(el);
+      }
+      pxSchedule();
+    },
+    // Engage a little before the element enters so it's already positioned.
+    { rootMargin: '20% 0px 20% 0px' },
+  );
+  window.addEventListener('scroll', pxSchedule, { passive: true });
+  window.addEventListener('resize', pxSchedule);
+}
+
+/** Returns a ref to attach to the layer you want to parallax. */
+export function useParallax<T extends HTMLElement = HTMLDivElement>(depth = 0.08) {
+  const ref = useRef<T>(null);
+  const reduced = usePrefersReducedMotion();
+
+  useEffect(() => {
+    if (reduced) return; // RM: never register, never transform.
+    const el = ref.current;
+    if (!el || typeof IntersectionObserver === 'undefined') return;
+    pxEnsureGlobals();
+    pxRegistry!.set(el, { depth, lastShift: 0 });
+    pxObserver!.observe(el);
+    pxSchedule();
+    return () => {
+      pxObserver?.unobserve(el);
+      pxRegistry?.delete(el);
+      pxActive?.delete(el);
+      el.style.transform = '';
+    };
+  }, [depth, reduced]);
+
+  return ref;
+}

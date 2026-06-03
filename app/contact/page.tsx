@@ -65,7 +65,7 @@ export default function ContactPage() {
           )}
         >
           <div className="max-w-content mx-auto">
-            <Reveal className="mb-12">
+            <Reveal variant="scene" className="mb-12">
               <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
                 <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 Elsewhere
@@ -78,7 +78,7 @@ export default function ContactPage() {
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl">
               {profile.socials.map((s, i) => (
                 <li key={s.url} className="border-t border-border-decorative pt-4">
-                  <Reveal index={i}>
+                  <Reveal index={i} variant="depth">
                     <p className="font-mono text-meta tracking-label uppercase text-sage-text mb-1">
                       {s.platform}
                     </p>
