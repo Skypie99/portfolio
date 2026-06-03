@@ -61,11 +61,11 @@ export function ProjectCard({
         // Shamus wave2: border-l-4 + border-l-terracotta = editorial left accent.
         'bg-warm-white border border-stone border-l-4 rounded-md',
         a.border,
-        'shadow-warm',
+        'shadow-md',
         // overflow-hidden lets the image sit edge-to-edge with rounded card corners
         'overflow-hidden',
         'transition-all duration-280 ease-out',
-        'hover:bg-[var(--card-bg-hover)] hover:border-[var(--card-border-hover)] hover:shadow-[var(--shadow-elevation-2)] hover:-translate-y-1',
+        'hover:bg-[var(--card-bg-hover)] hover:border-[var(--card-border-hover)] hover:shadow-lg hover:-translate-y-1',
         'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta focus-visible:rounded-sm',
         // Wide featured card: side-by-side on md+, image fills left half.
         wide && 'md:flex md:flex-row md:items-stretch',
@@ -83,11 +83,22 @@ export function ProjectCard({
           // a subtle clay gradient for depth. Each project keeps its signature
           // colour on the border + dot. Flips to warm dark earth in dark mode.
           'bg-gradient-to-br from-earth to-earth-deep',
+          // Seat the device in a warm "lit well": a soft inner shadow pooling
+          // at the base + a single top-light overlay (one warm light from
+          // above, echoing the landing's golden direction). Adds depth so the
+          // mockup feels placed inside the card, not pasted flat against it.
+          'shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]',
           'transition-[filter] duration-base ease-out',
           'group-hover:brightness-[1.03]',
         )}
         aria-hidden="true"
       >
+        {/* Warm top-light — single source from above (lit-well depth).
+            Softer in dark mode (0.38 → 0.16) to prevent bloom on the dark earth. */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,241,217,0.38),transparent_62%)] dark:bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,241,217,0.16),transparent_62%)]"
+        />
         {/* Featured badge */}
         {d.featured && (
           <span
@@ -177,8 +188,9 @@ export function ProjectCard({
           ))}
         </ul>
 
-        {/* CTA row */}
-        <div className="mt-auto pt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-stone/60">
+        {/* CTA row — Case study is primary (left); Live demo + GitHub are
+            secondary, pushed to the right as a quiet cluster. */}
+        <div className="mt-auto pt-5 flex flex-wrap items-center border-t border-stone/60">
           <Link
             href={`/work/${d.id}/`}
             className={cn(
@@ -192,38 +204,41 @@ export function ProjectCard({
           >
             Case study <span aria-hidden="true">→</span>
           </Link>
-          <span aria-hidden="true" className="text-stone">·</span>
-          {demoLink && (
-            <a
-              href={demoLink.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                'inline-flex items-center gap-1.5 whitespace-nowrap',
-                'font-mono text-meta tracking-label uppercase text-sage-text',
-                'transition-colors duration-fast ease-out hover:text-charcoal',
-                'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta rounded-sm',
+          {(demoLink || githubLink) && (
+            <span className="flex items-center gap-4 ml-auto">
+              {demoLink && (
+                <a
+                  href={demoLink.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cn(
+                    'inline-flex items-center gap-1.5 whitespace-nowrap',
+                    'font-mono text-meta tracking-label uppercase text-sage-text',
+                    'transition-colors duration-fast ease-out hover:text-charcoal',
+                    'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta rounded-sm',
+                  )}
+                  aria-label={`Open live demo for ${d.title} (opens in new tab)`}
+                >
+                  Live demo <span aria-hidden="true">↗</span>
+                </a>
               )}
-              aria-label={`Open live demo for ${d.title} (opens in new tab)`}
-            >
-              Live demo <span aria-hidden="true">↗</span>
-            </a>
-          )}
-          {githubLink && (
-            <a
-              href={githubLink.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                'inline-flex items-center gap-1.5 whitespace-nowrap',
-                'font-mono text-meta tracking-label uppercase text-sage-text',
-                'transition-colors duration-fast ease-out hover:text-charcoal',
-                'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta rounded-sm',
+              {githubLink && (
+                <a
+                  href={githubLink.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cn(
+                    'inline-flex items-center gap-1.5 whitespace-nowrap',
+                    'font-mono text-meta tracking-label uppercase text-sage-text',
+                    'transition-colors duration-fast ease-out hover:text-charcoal',
+                    'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta rounded-sm',
+                  )}
+                  aria-label={`View ${d.title} source on GitHub (opens in new tab)`}
+                >
+                  GitHub <span aria-hidden="true">↗</span>
+                </a>
               )}
-              aria-label={`View ${d.title} source on GitHub (opens in new tab)`}
-            >
-              GitHub <span aria-hidden="true">↗</span>
-            </a>
+            </span>
           )}
         </div>
       </div>
