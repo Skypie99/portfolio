@@ -81,7 +81,10 @@ export function ProjectCard({
           alt={d.heroImage.alt}
           accent={a.accent}
           className={cn(
-            wide ? 'aspect-[4/3] md:h-full md:aspect-auto' : 'aspect-[3/2] border-b border-stone',
+            // Non-wide: intrinsic aspect height. Wide: aspect on mobile, then on
+            // md+ absolutely fill the stretched flex column (CardImage has no
+            // in-flow content, so h-full would collapse to 0 — fill instead).
+            wide ? 'aspect-[4/3] md:absolute md:inset-0 md:aspect-auto' : 'aspect-[3/2] border-b border-stone',
           )}
         />
         {/* Featured badge */}
