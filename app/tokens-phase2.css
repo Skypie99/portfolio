@@ -56,7 +56,9 @@
   /* Pill text color states */
   --pill-text-resting:    var(--color-text-muted);
   --pill-text-hover:      var(--color-text);
-  --pill-text-active:     var(--color-accent-primary);
+  /* Active pill: ink text for AA contrast at 11px — the 2px terracotta border
+     + tint already carry the "active" signal (not colour-alone). */
+  --pill-text-active:     var(--color-text);
 
   /* Pill icon stroke width */
   --pill-stroke-width-resting: 1.5px;
@@ -297,10 +299,11 @@
   --cinema-sky-mid-t075:      #C9B89A;
   --cinema-sky-horizon-t075:  #E8D4B5;
 
-  /* t=1.00 — settles into WA palette (teal-soft → teal-pale → rose-pale) */
-  --cinema-sky-top-t1:        #96C4D0;   /* matches --color-wa-teal-soft */
-  --cinema-sky-mid-t1:        #D4EDF2;   /* matches --color-wa-teal-pale */
-  --cinema-sky-horizon-t1:    #F0E4E7;   /* matches --color-wa-rose-pale */
+  /* t=1.00 — settles into the desert palette end-state (cool green-teal
+     pale sky → warm sand-pale horizon). The hero continues from here. */
+  --cinema-sky-top-t1:        #9CC2B4;   /* cool green-teal pale */
+  --cinema-sky-mid-t1:        #D2E6DA;   /* panel-cool pale */
+  --cinema-sky-horizon-t1:    #EFE6D6;   /* warm sand pale */
 
   /* ----------------------------------------------------------------
      LAND COLOR INTERPOLATION
@@ -312,14 +315,14 @@
   --cinema-far-t0:            #3A2018;   /* deep shadow */
   --cinema-far-t04:           #6B3826;   /* umber */
   --cinema-far-t07:           #9F5538;   /* lit terracotta */
-  --cinema-far-t1:            #C97A52;   /* distant warm */
+  --cinema-far-t1:            #C2764C;   /* distant warm */
 
   /* Mid mesa — red sienna → terracotta token → warm haze */
   --cinema-mid-t04:           #8B4530;   /* red sienna */
   --cinema-mid-t07:           #B35F32;   /* terracotta — matches --color-terracotta */
-  --cinema-mid-t1:            #D89572;   /* warm haze */
+  --cinema-mid-t1:            #CE8A66;   /* warm haze */
 
   /* Near rock face — umber shadow band → terracotta sun-lit zone */
   --cinema-near-t07:          #7F4323;   /* umber band shadow — matches --color-umber */
-  --cinema-near-t1:           #B35F32;   /* terracotta sun-lit — matches --color-terracotta */
+  --cinema-near-t1:           #B96340;   /* terracotta sun-lit — new signature */
 }

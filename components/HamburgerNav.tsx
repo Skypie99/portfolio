@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { cn } from '@/lib/cn';
 
 /**
@@ -249,6 +250,9 @@ export function HamburgerNav() {
                 </span>
                 Available for work · 2026
               </p>
+              <div className="mt-10">
+                <ThemeToggle withLabel />
+              </div>
             </nav>
           </motion.div>
         )}

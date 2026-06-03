@@ -61,6 +61,9 @@ export default function HomePage() {
     },
   ] as const;
 
+  /** Each stat number takes a different desert hue — a teal + orange spread. */
+  const STAT_EMBER = ['ember', 'ember-teal', 'ember-gold', 'ember-moss'];
+
   return (
     <>
       {/* ── Cinematic intro — 2.5D GSAP camera-push desert (placeholder phase) ─ */}
@@ -95,7 +98,7 @@ export default function HomePage() {
             Live
           </p>
           {/* Heading */}
-          <h2 className="font-serif font-light text-display-m text-near-black mb-3 max-w-2xl leading-[1.1] text-balance">
+          <h2 className="font-serif font-light text-display-m ember mb-3 max-w-2xl leading-[1.1] text-balance">
             Built, shipped, and open. Everything here is live.
           </h2>
           <p className="font-sans font-light text-body text-charcoal mb-12 max-w-[540px] text-pretty">
@@ -104,7 +107,7 @@ export default function HomePage() {
 
           {/* 4-col stat grid — vertical-rule layout for editorial weight */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-wa-teal-soft/30 border border-wa-teal-soft/50 rounded-lg overflow-hidden">
-            {showcaseChips.map(({ stat, label, project, tags }) => (
+            {showcaseChips.map(({ stat, label, project, tags }, i) => (
               <div
                 key={project}
                 className={cn(
@@ -113,7 +116,10 @@ export default function HomePage() {
                 )}
               >
                 <p
-                  className="font-serif font-light text-[clamp(2.5rem,5vw,3.75rem)] text-terracotta leading-none mb-1"
+                  className={cn(
+                    'font-serif font-light text-[clamp(2.75rem,5.5vw,4.25rem)] leading-none mb-1',
+                    STAT_EMBER[i % STAT_EMBER.length],
+                  )}
                   style={{ letterSpacing: '-0.03em' }}
                   aria-label={`${stat} ${label}`}
                 >
@@ -150,10 +156,10 @@ export default function HomePage() {
         <div className="max-w-content mx-auto">
           {/* Dani wave5: terracotta left-border accent on section headers */}
           <div className="mb-12 pl-4 border-l-2 border-terracotta">
-            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+            <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4">
               The Work
             </p>
-            <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight">
+            <h2 className="font-serif font-light text-display-m ember max-w-2xl leading-tight">
               A handful of things, made with intention.
             </h2>
           </div>
@@ -186,10 +192,10 @@ export default function HomePage() {
       >
         <div className="max-w-content mx-auto">
           <div className="mb-12 pl-4 border-l-2 border-terracotta">
-            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+            <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4">
               Method
             </p>
-            <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-[1.1] text-balance">
+            <h2 className="font-serif font-light text-display-m ember max-w-2xl leading-[1.1] text-balance">
               Three quiet steps, repeated carefully.
             </h2>
           </div>
@@ -233,10 +239,10 @@ export default function HomePage() {
       >
         <div className="max-w-content mx-auto">
           <div className="mb-12 pl-4 border-l-2 border-terracotta">
-            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+            <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4">
               A Brief Account
             </p>
-            <h2 className="font-serif font-light text-display-m text-near-black leading-[1.1] text-balance">
+            <h2 className="font-serif font-light text-display-m ember leading-[1.1] text-balance">
               The work is careful. The record is honest.
             </h2>
           </div>
@@ -246,7 +252,7 @@ export default function HomePage() {
             <blockquote
               className={cn(
                 'pl-5 border-l-2 border-terracotta',
-                'font-serif font-light text-[1.375rem] text-near-black leading-[1.4]',
+                'font-serif font-light italic text-[1.5rem] text-ink leading-[1.45]',
                 'text-balance',
               )}
               style={{ letterSpacing: '-0.01em' }}
@@ -288,10 +294,10 @@ export default function HomePage() {
       >
         <div className="max-w-content mx-auto">
           <div className="mb-12 pl-4 border-l-2 border-terracotta">
-            <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+            <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4">
               Credentials
             </p>
-            <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-[1.1] text-balance">
+            <h2 className="font-serif font-light text-display-m ember max-w-2xl leading-[1.1] text-balance">
               Credentials, earned in order.
             </h2>
           </div>
@@ -353,11 +359,11 @@ export default function HomePage() {
         )}
       >
         <div className="max-w-content mx-auto flex flex-col items-start gap-8">
-          <p className="font-mono text-label tracking-label uppercase text-text-meta flex items-center gap-2">
+          <p className="font-mono text-label tracking-label uppercase text-wa-teal-deep flex items-center gap-2">
             <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
             Correspond
           </p>
-          <h2 className="font-serif font-light text-display-m text-near-black max-w-2xl leading-tight">
+          <h2 className="font-serif font-light text-display-m ember max-w-2xl leading-tight">
             Have something worth building?
             <br />
             Write to me.
@@ -366,7 +372,7 @@ export default function HomePage() {
             Write to{' '}
             <a
               href={`mailto:${profile.contactEmail}`}
-              className="text-accent-text hover:text-terracotta transition-colors duration-fast ease-out"
+              className="text-wa-teal-deep hover:text-accent transition-colors duration-fast ease-out"
             >
               {profile.contactEmail}
             </a>

@@ -58,7 +58,7 @@ export function Hero({ eyebrow, heading, subhead, ctaLabel, ctaHref }: HeroProps
             'font-serif font-light',
             'text-[clamp(2.75rem,8vw,5.5rem)]',
             'leading-[1.0]',
-            'text-near-black',
+            'ember',
             'mb-7',
             'max-w-[16ch]',
             'text-balance',
