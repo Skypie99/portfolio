@@ -1,10 +1,7 @@
-'use client';
-
 import Link from 'next/link';
 
 import { CardField } from '@/components/CardField';
 import { cn } from '@/lib/cn';
-import { useTilt } from '@/lib/motion';
 
 type CaseStudyCardProps = {
   title: string;
@@ -26,18 +23,16 @@ type CaseStudyCardProps = {
  */
 export function CaseStudyCard({ title, category, description, href, index = 0, className }: CaseStudyCardProps) {
   const numeral = String(index + 1).padStart(2, '0');
-  const tiltRef = useTilt<HTMLAnchorElement>(5);
 
   return (
     <Link
-      ref={tiltRef}
       href={href}
       aria-label={`${title} — read the case study`}
       data-category={category}
       className={cn(
-        'tilt-card case-study-card group relative block overflow-hidden rounded-lg',
+        'case-study-card group relative block overflow-hidden rounded-lg',
         'bg-surface border border-[rgb(var(--rgb-accent)/0.18)] shadow-xl',
-        'hover:border-[rgb(var(--rgb-accent)/0.38)]',
+        'transition-all duration-280 ease-out hover:-translate-y-1 hover:border-[rgb(var(--rgb-accent)/0.38)]',
         'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta',
         className,
       )}
@@ -45,8 +40,8 @@ export function CaseStudyCard({ title, category, description, href, index = 0, c
       <CardField slug={category} className="aspect-[4/5]">
         <span
           aria-hidden="true"
-          className="gold-foil gold-foil-text absolute left-6 top-5 font-serif font-light leading-none"
-          style={{ fontSize: 'clamp(2.5rem, 5vw, 3.75rem)', textShadow: '0 1px 1px rgb(54 26 10 / 0.4)' }}
+          className="absolute left-6 top-5 font-serif font-light leading-none text-[#3A1C0C]/35"
+          style={{ fontSize: 'clamp(2.5rem, 5vw, 3.75rem)' }}
         >
           {numeral}
         </span>
@@ -61,7 +56,7 @@ export function CaseStudyCard({ title, category, description, href, index = 0, c
       </CardField>
 
       <div className="flex flex-col gap-5 p-7">
-        <span aria-hidden="true" className="gold-foil block h-0.5 w-12 rounded-full" />
+        <span aria-hidden="true" className="block h-px w-10 bg-[rgb(var(--rgb-accent)/0.55)]" />
         <p className="font-sans font-light text-body-sm leading-[1.65] text-charcoal line-clamp-2 text-pretty">
           {description}
         </p>
