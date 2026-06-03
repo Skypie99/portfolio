@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import { FooterEmail } from '@/components/FooterEmail';
+import { Reveal } from '@/components/Reveal';
 import { cn } from '@/lib/cn';
 import { getProfile } from '@/lib/content';
 
@@ -26,7 +27,7 @@ export function Footer() {
         'px-gutter pt-16 pb-8',
       )}
     >
-      <div className="max-w-content mx-auto">
+      <Reveal className="max-w-content mx-auto">
         {/* Brand block — sits above the columns */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 pb-10 border-b border-stone/60">
           <div className="flex flex-col gap-3">
@@ -162,7 +163,7 @@ export function Footer() {
             </p>
           </div>
         </div>
-      </div>
+      </Reveal>
     </footer>
   );
 }
