@@ -195,6 +195,72 @@
   /* Shadows */
   --shadow-soft: 0 1px 2px rgba(35, 36, 32, 0.04),
                  0 4px 12px rgba(35, 36, 32, 0.03);
+
+  /* ==================================================================
+     OVERHAUL 2026-06-03 — ADDITIVE token extensions (below-the-landing
+     experience overhaul). Every name here is NEW; nothing above is
+     mutated. The live cinematic reads only --font-cormorant + --sidebar-w,
+     never these — so additive extension is safe. Mirrored in
+     tailwind.config.ts; named font-size tokens are also registered in
+     lib/cn.ts. rgba/hex literals (shadows, scrim) get an html.dark
+     override below; --rgb-*-derived values flip for free.
+     ================================================================== */
+
+  /* --- Modular type scale: body (1rem) is the anchor; steps rise on a
+         1.25 ratio with a wider 1.5 leap into the display tiers. Layered
+         ALONGSIDE the existing --fs-* compat tokens; components migrate in
+         phases 2–3, old aliases retire in phase 7. --- */
+  --fs-step-1: 1.25rem;     /* 20px    — lead paragraph */
+  --fs-step-2: 1.5rem;      /* 24px    — sub-head */
+  --fs-step-3: 1.953rem;    /* 31.25px — card title */
+  --fs-step-4: 2.441rem;    /* 39.06px — section head */
+  --fs-step-5: 3.052rem;    /* 48.83px — page title */
+  --fs-display: clamp(2.5rem, 5.5vw, 3.75rem);  /* fluid display */
+  --fs-hero:    clamp(3.25rem, 8vw, 6rem);       /* hero statement */
+
+  --lh-tight:   1.1;
+  --lh-snug:    1.2;
+  --ls-display: -0.02em;
+  --ls-hero:    -0.025em;
+
+  /* --- Easing vocabulary (entrance / exit / snap) beside --ease-out/soft --- */
+  --ease-entrance: cubic-bezier(0.16, 1, 0.3, 1);     /* arriving (expo-out) */
+  --ease-exit:     cubic-bezier(0.4, 0, 1, 1);        /* leaving (accel-in) */
+  --ease-snap:     cubic-bezier(0.34, 1.56, 0.64, 1); /* small pop — overshoot, RM-gated */
+
+  /* --- Ambient golden-hour drift (signature moment 2; CSS-only) --- */
+  --dur-ambient: 26s;
+
+  /* --- Layered WARM shadow ramp (light). Dark overrides in html.dark. --- */
+  --shadow-sm: 0 1px 2px rgba(60, 32, 18, 0.05);
+  --shadow-md: 0 2px 4px rgba(60, 32, 18, 0.06), 0 8px 16px rgba(60, 32, 18, 0.05);
+  --shadow-lg: 0 4px 8px rgba(60, 32, 18, 0.07), 0 12px 28px rgba(60, 32, 18, 0.08);
+  --shadow-xl: 0 6px 12px rgba(60, 32, 18, 0.09), 0 18px 44px rgba(60, 32, 18, 0.11);
+
+  /* --- Border-width scale (hairline is decorative-only; DPR-dependent) --- */
+  --border-width-hairline: 0.5px;
+  --border-width-thin:     1px;
+  --border-width-thick:    2px;
+  --border-width-heavy:    4px;
+
+  /* --- Focus ring tokenized (value unchanged from the Alex-validated ring) --- */
+  --focus-ring-width:  2px;
+  --focus-ring-offset: 2px;
+  --focus-ring-color:  var(--color-accent-primary);
+
+  /* --- Scrollbar width + scrim. (Scrollbar RULES land in phase 5 after the
+         §7 takeover check; this is just the knob.) --- */
+  --scrollbar-w: 10px;
+  --scrim:       rgb(20 9 3 / 0.5);
+
+  /* --- Z-index ladder. Consistent with the landing's FROZEN z-indexes
+         (grain 100, cdesert pin 50 / title 60 / finish 70) — names the
+         below-landing layers around them; does not renumber them. --- */
+  --z-base:    0;
+  --z-raised:  10;
+  --z-sticky:  30;
+  --z-overlay: 80;
+  --z-grain:   100;
 }
 
 /* ==================================================================
@@ -239,6 +305,15 @@ html.dark {
   --rgb-earth-deep:   33 26 19;      /* card backdrop — deeper warm dark */
 
   color-scheme: dark;
+
+  /* Overhaul 2026-06-03 — the warm shadow ramp & scrim are rgba/hex
+     literals (NOT --rgb-* triplets), so they do not auto-flip; deepen
+     them for the dark "lit cliff at dusk" surface. */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.40);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.50);
+  --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.55);
+  --scrim:     rgb(0 0 0 / 0.60);
 }
 
 /* ------------------------------------------------------------------
