@@ -22,7 +22,7 @@
  * 4. Gentle alpha choke tightens the very faint outer feather. Silhouette kept.
  *
  *   node scripts/build-arrival-cliff.mjs
- * Input : cinematic-masters/source/arrival-cliff-new.png (opaque 3360x1440)
+ * Input : cinematic-masters/source/arrival-cliff-newest.png (opaque 3360x1440)
  * Output: cinematic-masters/planes/arrival-cliff.png (RGBA master)
  *   then: node scripts/encode-planes.mjs   → ships AVIF + WebP under public/
  */
@@ -33,7 +33,7 @@ import sharp from 'sharp';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 const ROOT = resolve(__dirname, '..');
-const SRC = join(ROOT, 'cinematic-masters/source/arrival-cliff-new.png');
+const SRC = join(ROOT, 'cinematic-masters/source/arrival-cliff-newest.png');
 const OUT = join(ROOT, 'cinematic-masters/planes/arrival-cliff.png');
 
 // ── tunables ─────────────────────────────────────────────────────────────────
@@ -43,6 +43,12 @@ const BLEED_RADIUS = 12, BLEED_PASSES = 4; // reach ≈ 48px (covers the feather
 const ROCK_FALLBACK = [120, 58, 32];
 const CHOKE_LO = 0.08, CHOKE_HI = 0.92; // tighten the faint outer feather
 const MAX_SPECK_AREA = 1500, SPECK_DILATE = 5; // despeckle small cyan blobs only
+// color-match grade — seat the deep-red golden-hour mesa among the scene's brighter dawn
+// buttes (scene lit rock ~209,89,11; newest ~135,43,8). Per-channel gain on a gamma-lifted
+// base + small lift, applied to all output RGB (rock + bled edge). Tune by eye in-scene.
+const GRADE_GAIN = [1.26, 1.42, 1.12];
+const GRADE_GAMMA = 0.94;
+const GRADE_LIFT = [4, 2, 0];
 
 const clamp01 = (x) => Math.max(0, Math.min(1, x));
 const smoothstep = (e0, e1, x) => {
@@ -50,6 +56,8 @@ const smoothstep = (e0, e1, x) => {
   const t = clamp01((x - e0) / (e1 - e0));
   return t * t * (3 - 2 * t);
 };
+const gradeCh = (c, gi, li) =>
+  Math.max(0, Math.min(255, Math.round(Math.pow(c / 255, GRADE_GAMMA) * 255 * gi + li)));
 
 const { data, info } = await sharp(SRC).removeAlpha().raw().toBuffer({ resolveWithObject: true });
 const { width: w, height: h, channels: ch } = info; // ch = 3
@@ -151,6 +159,10 @@ for (let p = 0, i = 0, o = 0; p < w * h; p += 1, i += ch, o += 4) {
     if (ww[p] > 1e-4) { out[o] = Math.round(wr[p] / ww[p]); out[o + 1] = Math.round(wg[p] / ww[p]); out[o + 2] = Math.round(wb[p] / ww[p]); }
     else { out[o] = ROCK_FALLBACK[0]; out[o + 1] = ROCK_FALLBACK[1]; out[o + 2] = ROCK_FALLBACK[2]; }
   } else { out[o] = data[i]; out[o + 1] = data[i + 1]; out[o + 2] = data[i + 2]; }
+  // color-match grade (rock + bled edge alike) → seat the mesa among the dawn buttes
+  out[o] = gradeCh(out[o], GRADE_GAIN[0], GRADE_LIFT[0]);
+  out[o + 1] = gradeCh(out[o + 1], GRADE_GAIN[1], GRADE_LIFT[1]);
+  out[o + 2] = gradeCh(out[o + 2], GRADE_GAIN[2], GRADE_LIFT[2]);
   out[o + 3] = Math.round(clamp01((a - CHOKE_LO) / (CHOKE_HI - CHOKE_LO)) * 255);
   if (isFringe) { fr += out[o]; fg += out[o + 1]; fb += out[o + 2]; fc += 1; }
 }

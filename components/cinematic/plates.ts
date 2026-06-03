@@ -219,28 +219,30 @@ const ARRIVAL_SCENE: Scene = {
   planes: [
     {
       id: 'arrival-cliff',
-      label: 'arrival flat-top mesa — RISES to fill (natural crest)',
+      label: 'arrival golden-hour butte — HIDDEN, then RISES out of the ground to fill',
       plateSrc: '/images/cinematic/arrival-cliff.png',
       placeholderSrc: '/images/cinematic/_placeholders/near-rockface.svg',
       transparent: true,
-      // RISE-TO-FILL with the NEW flat-top mesa (2026-06-02 r4 — Sky's new image). The old
-      // cliff had a hard rectangular TOP (illogical as it popped up); this mesa has a
-      // NATURAL crest with dawn sky above it (the blue sky is keyed transparent — see
-      // scripts/build-arrival-cliff.mjs). The mesa enters LOW (yFrom 24 = mostly below the
-      // frame) and RISES (yTo 4) while GROWING (scaleFrom 1.10 → scaleTo 1.48 — a
-      // forward-dolly LOOM, not a flat curtain-slide). transform-origin 50% 70% lifts the
-      // crest as it grows, so the natural flat top + dawn sky are visible DURING the rise
-      // (no hard crop). The mesa's rock band sits LOWER in-plate (more sky above the crest)
-      // than the old cliff, so it needs MORE lift: phase2 keeps dollying up+in (1.48→1.56,
-      // y4→-4) through the title hold so the golden rock face FILLS to a wall while LEAVING
-      // the natural crest + a thin dawn-sky sliver at the top (Sky's chosen end-framing —
-      // showcases the mesa's logical top at the hero). It rises OUT OF the persistent floor
-      // (mid-fg, on top).
-      scaleFrom: 1.1,
-      scaleTo: 1.48,
-      yFrom: 24,
-      yTo: 4,
-      phase2: { toScale: 1.56, toY: -4, start: 0.62, end: 1.0 },
+      // RISE-TO-FILL with Sky's newest golden-hour butte (2026-06-02 r5). Two fixes vs r4:
+      // (1) COLOR — the butte is colour-matched to the scene's dawn buttes in the build
+      //     script (scripts/build-arrival-cliff.mjs grade), so it no longer reads sandy.
+      // (2) HIDDEN START — the cull class does NOT hide (engine), so before the range the
+      //     plane just holds yFrom; the cliff renders IN FRONT of the valley floor, so it
+      //     can't hide behind it — it must be pushed fully BELOW the frame. At yFrom 24 the
+      //     crest poked out at ~0.62 screen. yFrom is now 92 → the crest sits just below the
+      //     viewport bottom for p0–0.30 (nothing sticks out), then the butte RISES up out of
+      //     the bottom as you scroll in. The fast early part (still below frame) is unseen;
+      //     the VISIBLE rise — crest crossing in and lifting to fill — spans ~p0.40–1.0.
+      // It grows (scaleFrom 1.0 → scaleTo 1.42) and lifts (yFrom 92 → yTo 8) over the range;
+      // transform-origin 50% 70% lifts the crest as it grows. phase2 keeps dollying up+in
+      // (1.42→1.52, y8→-2) through the title hold so the golden rock face FILLS to a wall
+      // while LEAVING the natural crest + a thin dawn-sky sliver at the top (Sky's framing).
+      // It rises OUT OF the persistent floor (mid-fg, rendered on top).
+      scaleFrom: 1.0,
+      scaleTo: 1.42,
+      yFrom: 92,
+      yTo: 8,
+      phase2: { toScale: 1.52, toY: -2, start: 0.62, end: 1.0 },
     },
   ],
 } as const;
