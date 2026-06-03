@@ -31,7 +31,7 @@ export function Sidebar() {
         'w-sidebar shrink-0',
         'h-screen',
         'p-8',
-        'bg-cream',
+        'bg-wa-teal-wash',
         'border-r border-wa-teal-soft/50',
       )}
     >
@@ -47,7 +47,7 @@ export function Sidebar() {
           AI engineer · Accessibility
         </p>
         {/* Availability micro-status */}
-        <p className="font-mono text-meta tracking-label uppercase text-wa-teal inline-flex items-center gap-2 mt-2">
+        <p className="font-mono text-meta tracking-label uppercase text-wa-teal-deep inline-flex items-center gap-2 mt-2">
           <span aria-hidden="true" className="relative inline-flex h-1.5 w-1.5">
             <span className="hero-status-ping absolute inline-flex h-full w-full rounded-full bg-wa-teal opacity-60" />
             <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-wa-teal" />
@@ -100,7 +100,7 @@ export function Sidebar() {
         </span>
         <Link
           href="/blog/"
-          className="group font-mono text-meta tracking-label uppercase text-wa-teal inline-flex items-center gap-1"
+          className="group font-mono text-meta tracking-label uppercase text-wa-teal-deep inline-flex items-center gap-1"
         >
           <span className="group-hover:translate-x-1 group-focus-visible:translate-x-1 transition-transform duration-fast ease-out inline-flex items-center gap-1">
             Read dispatches

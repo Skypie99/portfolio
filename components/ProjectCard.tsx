@@ -79,10 +79,10 @@ export function ProjectCard({
           wide
             ? 'w-full md:w-1/2 aspect-[4/3] md:aspect-auto md:self-stretch'
             : 'w-full aspect-[3/2] border-b border-stone',
-          // Desert gradient behind the mockup: the project's signature hue →
-          // gold → seafoam, brightening on hover. Token-driven where it flips.
-          'bg-gradient-to-br via-gold-glow/18 to-cool-soft/25',
-          a.from,
+          // Uniform teal backdrop behind every mockup — the same teal as the
+          // contact ("Write to me") section, so the work set reads as one calm
+          // set. Each project keeps its signature colour on the border + dot.
+          'bg-wa-teal-pale',
           'transition-[filter] duration-base ease-out',
           'group-hover:brightness-105',
         )}
