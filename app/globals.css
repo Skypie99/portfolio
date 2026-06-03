@@ -764,6 +764,56 @@ html.dark .glow-card::after {
     rgb(255 236 200 / 0.16), transparent 72%);
 }
 
+/* ------------------------------------------------------------------
+   Sun-baked cards (dani 2026-06-03) — a carved stone TABLET. The whole card
+   is one slab (CardField paints the stone); the title is INCISED, the numeral
+   foil-STAMPED. A raking sun (--mx/--my/--hover from useSpotlight) moves the
+   sheen and SWINGS the carving's light direction (--lx/--ly), so the relief
+   re-lights as the cursor crosses. Compositor-only; reduced-motion → static.
+   ------------------------------------------------------------------ */
+.stone-card {
+  position: relative;
+  isolation: isolate;
+  /* carved-relief light direction from the cursor (unitless --mxn/--myn in
+     [-1,1] set by useSpotlight; default = the resting sun, upper-left). */
+  --lx: calc(var(--mxn, -0.7) * 1.4px);
+  --ly: calc(var(--myn, -0.85) * 1.4px);
+  box-shadow: 0 18px 40px -20px rgb(18 9 3 / 0.5), 0 3px 10px -5px rgb(18 9 3 / 0.4);
+  transition: transform 0.42s var(--ease-gh-glide), box-shadow 0.42s var(--ease-gh-glide);
+}
+@media (hover: hover) and (pointer: fine) {
+  .stone-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 62px -22px rgb(18 9 3 / 0.6), 0 0 48px -10px rgb(208 138 87 / 0.22);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stone-card { transition: box-shadow 0.3s ease; }
+  .stone-card:hover { transform: none; }
+}
+
+/* The title, INCISED into the stone — a cream glyph set into a carved groove
+   (cream fill stays AA over the deepened lower stone; the relief reads carved).
+   The groove's lit/shadow walls swing with --lx/--ly as the sun crosses. */
+.stone-carve {
+  color: #f6edda;
+  text-shadow:
+    0 0 2px rgb(26 13 5 / 0.7),
+    var(--lx) var(--ly) 1px rgb(26 13 5 / 0.78),
+    calc(var(--lx) * -1) calc(var(--ly) * -1) 0 rgb(255 248 228 / 0.42);
+  transition: text-shadow var(--dur-base) var(--ease-gh-glide);
+}
+/* The numeral, foil-STAMPED proud of the stone (embossed — opposite relief). */
+.stone-numeral {
+  text-shadow:
+    var(--lx) var(--ly) 0 rgb(255 248 224 / 0.42),
+    calc(var(--lx) * -1) calc(var(--ly) * -1) 1px rgb(26 13 5 / 0.6);
+  transition: text-shadow var(--dur-base) var(--ease-gh-glide);
+}
+@media (prefers-reduced-motion: reduce) {
+  .stone-carve, .stone-numeral { transition: none; }
+}
+
 /* Cycle 16 + Cycle 26 + Cycle 29 — broken-image polish.
 
    `color: transparent` hides alt-text fallback paint on all imgs.
