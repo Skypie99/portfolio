@@ -562,6 +562,23 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
   /* Box-level lift + warm shadow on hover — see ProjectCard.tsx hover classes. */
 }
 
+/* ------------------------------------------------------------------
+   Ambient golden-hour drift — signature moment #2 (Contact section).
+   A single warm radial light field that drifts almost imperceptibly on an
+   autonomous ultra-slow loop — the landing's sun "remembered at rest".
+   transform-only (compositor-cheap); gated to no-preference so it never
+   runs under reduced-motion, where it then holds as a static warm glow.
+   ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: no-preference) {
+  .ambient-drift {
+    animation: ambient-drift var(--dur-ambient, 26s) ease-in-out infinite alternate;
+  }
+}
+@keyframes ambient-drift {
+  from { transform: translate3d(-2%, -1%, 0) scale(1.04); }
+  to   { transform: translate3d(2%, 2%, 0) scale(1.1); }
+}
+
 /* Cycle 16 + Cycle 26 + Cycle 29 — broken-image polish.
 
    `color: transparent` hides alt-text fallback paint on all imgs.
