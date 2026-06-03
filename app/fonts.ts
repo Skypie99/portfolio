@@ -8,6 +8,8 @@ import { Cormorant_Garamond, DM_Sans, DM_Mono } from 'next/font/google';
 export const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
   weight: ['300', '400'],
+  // `italic` added 2026-06-02 for the editorial pull-quote (real italic, not faux).
+  style: ['normal', 'italic'],
   variable: '--font-cormorant',
   display: 'swap',
 });
