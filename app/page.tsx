@@ -359,7 +359,7 @@ export default function HomePage() {
         )}
       >
         <div className="max-w-content mx-auto flex flex-col items-start gap-8">
-          <p className="font-mono text-label tracking-label uppercase text-text-meta flex items-center gap-2">
+          <p className="font-mono text-label tracking-label uppercase text-wa-teal-deep flex items-center gap-2">
             <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
             Correspond
           </p>
@@ -372,7 +372,7 @@ export default function HomePage() {
             Write to{' '}
             <a
               href={`mailto:${profile.contactEmail}`}
-              className="text-accent-text hover:text-terracotta transition-colors duration-fast ease-out"
+              className="text-wa-teal-deep hover:text-accent transition-colors duration-fast ease-out"
             >
               {profile.contactEmail}
             </a>
