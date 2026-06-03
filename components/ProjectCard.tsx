@@ -42,9 +42,9 @@ export function ProjectCard({
     <div
       className={cn(
         'work-card group relative flex flex-col overflow-hidden rounded-lg',
-        // surface contrasts both section bgs (cream / warm-white) in both modes
-        'bg-surface border border-line shadow-xl',
-        'transition-all duration-280 ease-out hover:-translate-y-1 hover:border-pebble',
+        // warm hairline keyline (terracotta-tinted) + soft elevation — a framed print
+        'bg-surface border border-[rgb(var(--rgb-accent)/0.18)] shadow-xl',
+        'transition-all duration-280 ease-out hover:-translate-y-1 hover:border-[rgb(var(--rgb-accent)/0.38)]',
         wide && 'md:flex-row md:items-stretch',
         className,
       )}
@@ -80,8 +80,8 @@ export function ProjectCard({
           <h3
             className="font-serif font-light leading-[1.04] text-[#FAF8F1]"
             style={{
-              letterSpacing: '-0.02em',
-              fontSize: wide ? 'clamp(2.4rem, 3.4vw, 3.4rem)' : 'clamp(1.75rem, 2.4vw, 2.3rem)',
+              letterSpacing: '-0.022em',
+              fontSize: wide ? 'clamp(2.6rem, 3.7vw, 3.9rem)' : 'clamp(1.95rem, 2.7vw, 2.55rem)',
             }}
           >
             <Link
@@ -95,10 +95,12 @@ export function ProjectCard({
         </div>
       </CardField>
 
-      {/* ── Caption — deep ink on surface ────────────────────────────── */}
-      <div className={cn('flex flex-col gap-5 p-6 md:p-7', wide && 'md:w-[42%] md:justify-center')}>
+      {/* ── Caption — deep ink on surface, generous mat ──────────────── */}
+      <div className={cn('flex flex-col gap-6 p-7 md:p-9', wide && 'md:w-[42%] md:justify-center')}>
+        {/* refined editorial accent rule */}
+        <span aria-hidden="true" className="block h-px w-10 bg-[rgb(var(--rgb-accent)/0.55)]" />
         <p
-          className="font-sans font-light text-body-sm leading-[1.6] text-charcoal text-pretty"
+          className="font-sans font-light text-body-sm leading-[1.65] text-charcoal text-pretty"
           style={{
             display: '-webkit-box',
             WebkitLineClamp: wide ? 4 : 2,
@@ -119,7 +121,7 @@ export function ProjectCard({
         </ul>
 
         {/* CTA row */}
-        <div className="mt-1 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-line pt-4">
+        <div className="mt-1 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-[rgb(var(--rgb-accent)/0.14)] pt-5">
           <Link
             href={`/work/${d.id}/`}
             aria-label={`Read case study for ${d.title}`}

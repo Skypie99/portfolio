@@ -31,8 +31,8 @@ export function CaseStudyCard({ title, category, description, href, index = 0, c
       data-category={category}
       className={cn(
         'case-study-card group relative block overflow-hidden rounded-lg',
-        'bg-surface border border-line shadow-xl',
-        'transition-all duration-280 ease-out hover:-translate-y-1 hover:border-pebble',
+        'bg-surface border border-[rgb(var(--rgb-accent)/0.18)] shadow-xl',
+        'transition-all duration-280 ease-out hover:-translate-y-1 hover:border-[rgb(var(--rgb-accent)/0.38)]',
         'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta',
         className,
       )}
@@ -48,15 +48,16 @@ export function CaseStudyCard({ title, category, description, href, index = 0, c
         <div className="mt-auto px-6 pb-6">
           <h3
             className="font-serif font-light leading-[1.04] text-[#FAF8F1]"
-            style={{ letterSpacing: '-0.02em', fontSize: 'clamp(1.75rem, 2.4vw, 2.3rem)' }}
+            style={{ letterSpacing: '-0.022em', fontSize: 'clamp(1.95rem, 2.7vw, 2.55rem)' }}
           >
             {title}
           </h3>
         </div>
       </CardField>
 
-      <div className="flex flex-col gap-4 p-6">
-        <p className="font-sans font-light text-body-sm leading-[1.6] text-charcoal line-clamp-2 text-pretty">
+      <div className="flex flex-col gap-5 p-7">
+        <span aria-hidden="true" className="block h-px w-10 bg-[rgb(var(--rgb-accent)/0.55)]" />
+        <p className="font-sans font-light text-body-sm leading-[1.65] text-charcoal line-clamp-2 text-pretty">
           {description}
         </p>
         <span className="inline-flex items-center gap-1.5 font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-fast ease-out group-hover:translate-x-1">
