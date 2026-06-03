@@ -49,6 +49,7 @@ export function ProjectCard({
         // Alex F-C4-1: focus-visible outline alongside hover/focus lift.
         // Shamus wave2: border-l-4 + border-l-terracotta = editorial left accent.
         'bg-warm-white border border-stone border-l-4 border-l-terracotta rounded-md',
+        'shadow-warm',
         // overflow-hidden lets the image sit edge-to-edge with rounded card corners
         'overflow-hidden',
         'transition-all duration-280 ease-out',
@@ -66,10 +67,11 @@ export function ProjectCard({
           wide
             ? 'w-full md:w-1/2 aspect-[4/3] md:aspect-auto md:self-stretch'
             : 'w-full aspect-[3/2] border-b border-stone',
-          // WA phase 5: dusty rose → pale teal gradient, warms on hover
-          'bg-gradient-to-br from-wa-rose-pale via-blush to-wa-teal-pale',
+          // Desert gradient behind the mockup: terracotta → gold → seafoam,
+          // deepens on hover. Token-driven so it flips in dark mode.
+          'bg-gradient-to-br from-accent/15 via-gold-glow/18 to-cool-soft/25',
           'transition-colors duration-base ease-out',
-          'group-hover:from-wa-rose-pale group-hover:to-wa-teal-pale',
+          'group-hover:from-accent/25 group-hover:to-cool-soft/30',
         )}
         aria-hidden="true"
       >
