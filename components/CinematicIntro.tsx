@@ -85,21 +85,21 @@ const SKY_TOP: Stop[] = [
   { t: 0.25, hex: '#3E4A6F' },
   { t: 0.5, hex: '#5C7AA0' },
   { t: 0.75, hex: '#7BA8C4' },
-  { t: 1.0, hex: '#96C4D0' },
+  { t: 1.0, hex: '#9CC2B4' },
 ];
 const SKY_MID: Stop[] = [
   { t: 0.0, hex: '#2A1F3A' },
   { t: 0.25, hex: '#8B5A6F' },
   { t: 0.5, hex: '#B89878' },
   { t: 0.75, hex: '#C9B89A' },
-  { t: 1.0, hex: '#D4EDF2' },
+  { t: 1.0, hex: '#D2E6DA' },
 ];
 const SKY_HORIZON: Stop[] = [
   { t: 0.0, hex: '#4A2540' },
   { t: 0.25, hex: '#D4885A' },
   { t: 0.5, hex: '#DAA070' },
   { t: 0.75, hex: '#E8D4B5' },
-  { t: 1.0, hex: '#F0E4E7' },
+  { t: 1.0, hex: '#EFE6D6' },
 ];
 
 /* Land color tracks (Dani §6). */
@@ -107,28 +107,28 @@ const FAR_MESA: Stop[] = [
   { t: 0.0, hex: '#3A2018' },
   { t: 0.4, hex: '#6B3826' },
   { t: 0.7, hex: '#9F5538' },
-  { t: 1.0, hex: '#C97A52' },
+  { t: 1.0, hex: '#C2764C' },
 ];
 const MID_MESA: Stop[] = [
   { t: 0.25, hex: '#7A3A26' },
   { t: 0.4, hex: '#8B4530' },
   { t: 0.7, hex: '#B35F32' },
-  { t: 1.0, hex: '#D89572' },
+  { t: 1.0, hex: '#CE8A66' },
 ];
 const NEAR_UPPER: Stop[] = [
   { t: 0.55, hex: '#8B4530' },
   { t: 0.85, hex: '#A05E3E' },
-  { t: 1.0, hex: '#C97A52' },
+  { t: 1.0, hex: '#C2764C' },
 ];
 const NEAR_LIT: Stop[] = [
   { t: 0.55, hex: '#7A3A22' },
   { t: 0.85, hex: '#A04E2A' },
-  { t: 1.0, hex: '#B35F32' },
+  { t: 1.0, hex: '#B96340' },
 ];
 const NEAR_SHADOW: Stop[] = [
   { t: 0.55, hex: '#4A2410' },
   { t: 0.85, hex: '#6A3819' },
-  { t: 1.0, hex: '#7F4323' },
+  { t: 1.0, hex: '#6E3A20' },
 ];
 
 /* ────────────────────────────────────────────────────────────────────────
