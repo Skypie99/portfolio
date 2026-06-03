@@ -179,66 +179,68 @@ const MID_SCENE: Scene = {
  * by-motion — no dust) and the title carves over it. Golden via the even wash.
  * HOLDS to p=1 (no fadeOut).
  */
+/** arrival-sky — the opaque sky backdrop. DROPPED from the live ARRIVAL scene (the
+ *  rise-to-fill arrival keeps the group OPAQUE from mount, so a full-frame opaque sky
+ *  plate would cover the valley from p=0). Retained as a standalone plate ONLY for the
+ *  STATIC frame (reduced-motion / mobile), where it backs the cliff's transparent
+ *  top-corner. In the LIVE scene the cliff's transparent corner shows the continuing
+ *  mid-sky (the valley's own sky), so the sky stays CONTINUOUS through the rise. */
+const ARRIVAL_SKY_PLATE: Plate = {
+  id: 'arrival-sky',
+  label: 'arrival sky backdrop — static frame only',
+  plateSrc: '/images/cinematic/arrival-sky.png',
+  placeholderSrc: '/images/cinematic/_placeholders/sky-day.svg',
+  transparent: false,
+  scaleFrom: 1.0,
+  scaleTo: 1.08,
+  yFrom: 0,
+  yTo: -1,
+};
+
 const ARRIVAL_SCENE: Scene = {
   id: 'arrival-cliff',
   arrivalId: 'arrival-cliff',
-  range: { start: 0.32, end: 0.62 }, // REFINE 2026-06-02: phase-1 shares the MID valley's window {…,0.62} so the cliff CO-MOVES with it (matched scale+velocity through the blend → seamless, not jarring); lands on 1.30 at 0.62, then arrival-cliff.phase2 carries it on
-  // THE dissolve (in). 0.42 → 0.60 (REFINE 2026-06-02 r2: EVEN ease, moderate width —
-  // a gradual cinematic dissolve, not a snap). The group fade is now sine.inOut (was
-  // the front-loaded power2.out, which hit ~85% opaque by the window midpoint = the
-  // "abrupt change" Sky kept seeing). The even ease gives a gentle onset (no front-load
-  // snap); the moderate 0.18 window passes through the muddy 50/50 midpoint reasonably
-  // quickly (a wider window lingered there = double-exposure). NOTE the irreducible
-  // trade-off: crossfading a WIDE valley vista into a CLOSE cliff shows a brief overlap
-  // of both at the midpoint — slower = less abrupt but muddier, faster = cleaner but
-  // abrupt. This is the balance point. The cliff CO-MOVES with the valley (range starts
-  // 0.32, co-scaled gap ≤2%, velocity-matched), both warm sandstone under one grade, so
-  // the blend is a red-rock match-dissolve, not a scale-mismatch ghost. MID holds opaque
-  // underneath (incoming-only) and is culled only at 0.64 (after the fade); HOLDS to p=1.
-  //   arrival-sky.png has faint top-edge inpaint streaks; the rising cliff + warm
-  //   sky-wash cover the upper frame by the time it's legible. If any streak peeks,
-  //   bump start 0.40 → 0.42.
-  fadeIn: { start: 0.42, end: 0.6 },
+  // RISE-TO-FILL (2026-06-02 r3 — Sky's chosen direction). The cliff ARRIVES BY RISING +
+  // GROWING to fill the frame at FULL opacity — NO crossfade, so ZERO overlap/ghost. (A
+  // crossfade of the WIDE valley vista into the CLOSE cliff always showed a brief
+  // double-exposure mid-dissolve; this removes it entirely.) range starts 0.30 so the
+  // rise has room and the wall lands by 0.62.
+  range: { start: 0.3, end: 0.62 },
+  // ZERO-WIDTH fadeIn = the group is OPAQUE from mount (startsVisible in the renderer);
+  // there is NO opacity tween on the cliff — the reveal is 100% MOTION. The cliff (the
+  // group's ONLY plane now) is parked LOW/below the frame until ~0.30, then rises into
+  // view already opaque → no blend, no ghost, no double-exposure. (arrival-sky is dropped
+  // from the live scene — see ARRIVAL_SKY_PLATE — else its opaque full frame would cover
+  // the valley from p=0.)
+  fadeIn: { start: 0.3, end: 0.3 },
   fadeOut: null, // holds to the end
   sun: { x: 0.7, y: 0.3 }, // (no bloom — sunMax 0; kept only as the element's anchor)
-  sunMax: 0, // bloom REMOVED — the cliff photo is already golden-lit; the added glow read as cheap glare (Sky). Warmth comes only from the even wash.
+  sunMax: 0, // bloom REMOVED — the cliff photo is already golden-lit. Warmth comes only from the even wash.
   planes: [
     {
-      // PERF (2026-06-02): sky scale cap.
-      id: 'arrival-sky',
-      label: 'arrival sky sliver (backdrop)',
-      plateSrc: '/images/cinematic/arrival-sky.png',
-      placeholderSrc: '/images/cinematic/_placeholders/sky-day.svg',
-      transparent: false,
-      scaleFrom: 1.0,
-      scaleTo: 1.08,
-      yFrom: 0,
-      yTo: -1,
-    },
-    {
       id: 'arrival-cliff',
-      label: 'arrival fluted cliff wall',
+      label: 'arrival flat-top mesa — RISES to fill (natural crest)',
       plateSrc: '/images/cinematic/arrival-cliff.png',
       placeholderSrc: '/images/cinematic/_placeholders/near-rockface.svg',
       transparent: true,
-      // RECUT 2026-06-02 — CO-MOVING DOLLY (the dust is gone). The wall arrives by
-      // COVERING the valley with its own opaque shape AND dollying in LOCKSTEP with it,
-      // so the camera push is continuous through the handoff (no lurch — the fix for
-      // the "jarring"). Its scene range is {0.32, 0.62} = the valley's window, so
-      // phase-1 tracks the valley's scale+velocity and LANDS on 1.30 EXACTLY at p0.62
-      // (scale gap ≤0.01, velocity ratio ~1 through the fade — vs the old pre-grown,
-      // near-static cliff that popped in over a fast valley). scaleFrom 1.20 (was 1.12)
-      // → MORE coverage during the fade AND closes the gap. yTo 6 settles WITH the
-      // floor (floor yTo 6). phase2 (0.62→1.0) re-accelerates the cliff (1.30→1.38) so
-      // it keeps dollying into the title hold and never freezes. Warm sandstone both
-      // ends → a red-rock match-dissolve, not a crossfade.
-      scaleFrom: 1.2,
-      scaleTo: 1.3,
-      yFrom: 5,
-      yTo: 6,
-      // 2nd-phase drift through the arrival (p0.62→1.0): keep dollying WITH the floor
-      // so the foreground + wall arrive as ONE and nothing freezes.
-      phase2: { toScale: 1.38, toY: 8, start: 0.62, end: 1.0 },
+      // RISE-TO-FILL with the NEW flat-top mesa (2026-06-02 r4 — Sky's new image). The old
+      // cliff had a hard rectangular TOP (illogical as it popped up); this mesa has a
+      // NATURAL crest with dawn sky above it (the blue sky is keyed transparent — see
+      // scripts/build-arrival-cliff.mjs). The mesa enters LOW (yFrom 24 = mostly below the
+      // frame) and RISES (yTo 4) while GROWING (scaleFrom 1.10 → scaleTo 1.48 — a
+      // forward-dolly LOOM, not a flat curtain-slide). transform-origin 50% 70% lifts the
+      // crest as it grows, so the natural flat top + dawn sky are visible DURING the rise
+      // (no hard crop). The mesa's rock band sits LOWER in-plate (more sky above the crest)
+      // than the old cliff, so it needs MORE lift: phase2 keeps dollying up+in (1.48→1.56,
+      // y4→-4) through the title hold so the golden rock face FILLS to a wall while LEAVING
+      // the natural crest + a thin dawn-sky sliver at the top (Sky's chosen end-framing —
+      // showcases the mesa's logical top at the hero). It rises OUT OF the persistent floor
+      // (mid-fg, on top).
+      scaleFrom: 1.1,
+      scaleTo: 1.48,
+      yFrom: 24,
+      yTo: 4,
+      phase2: { toScale: 1.56, toY: -4, start: 0.62, end: 1.0 },
     },
   ],
 } as const;
@@ -404,7 +406,8 @@ export const ACTIVE_SCENES: readonly Scene[] = USE_PLACEHOLDERS
  * ARRIVAL_ID stays the cliff so the static frame parks it at its landed scale.
  */
 const STATIC_PLATES: readonly Plate[] = [
-  ...ARRIVAL_SCENE.planes, // arrival-sky, arrival-cliff
+  ARRIVAL_SKY_PLATE, // sky backdrop — explicit (dropped from the LIVE scene, kept here so the static cliff's transparent top-corner has a sky behind it)
+  ...ARRIVAL_SCENE.planes, // arrival-cliff (the live scene is cliff-only now)
   ...FLOOR_SCENE.planes, // mid-fg floor, rendered last (on top)
 ];
 
