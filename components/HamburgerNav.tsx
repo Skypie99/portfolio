@@ -187,7 +187,7 @@ export function HamburgerNav() {
             <p aria-hidden="true" className="font-serif font-normal text-display-s text-near-black mb-10 select-none">
               Sky Halisky
             </p>
-            <nav aria-label="Primary menu" className="w-full max-w-content">
+            <nav aria-label="Site" className="w-full max-w-content">
               <p className="font-mono text-label tracking-label uppercase text-text-meta mb-10 flex items-center gap-2">
                 <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 Menu

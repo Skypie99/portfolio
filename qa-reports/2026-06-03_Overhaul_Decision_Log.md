@@ -161,5 +161,21 @@ This log records decisions as the run proceeds (brief §2.4: "the record is part
 
 **Verification:** typecheck clean · 160 tests + 1 todo · ESLint clean · build 17 pages / export OK. −31 net lines (cleanup). Cinematic untouched (no frozen edits; removed CSS was non-cinematic). Both modes reviewed across all routes.
 
-### Phase 8 — Independent a11y sign-off (Alex)
-_(next — the final gate)_
+### Phase 8 — Independent a11y sign-off (Alex) ✅ (tag `overhaul-phase8`) — **FINAL GATE PASSED**
+
+Full report: `qa-reports/2026-06-03_Alex_A11y_SignOff.md`.
+
+**Independent audit (fresh-eyes Alex agent, whole site below the landing, both modes):** verdict PASS-WITH-FOLLOWUPS — no blockers, 3 HIGH + 1 MEDIUM + a few LOW. Morgan reviewed every finding adversarially before acting:
+- **HIGH-1 (resting `text-wa-teal-deep` contrast "3.58:1") — FALSE POSITIVE.** `wa-teal-deep` ≡ `cool-deep` (both `--rgb-cool-deep` 47 87 77); on `panel-cool` it's **5.87:1 (PASS)**. Alex had used the lighter `--rgb-cool` value by mistake — confirmed + agreed on re-verify. No change made (the proposed swap was a no-op). *Catching this is why audit findings get independently re-computed before "fixing."*
+- **HIGH-2 (email-link *hover* `text-accent` terracotta on teal-pale, 3.05:1) — REAL → FIXED:** `hover:text-accent` → `hover:text-near-black` (now 10:1). `app/page.tsx`.
+- **HIGH-3 (ContentReveal scroll-fade not reduced-motion-gated; RM users saw opacity:0 content + keyboard focus on invisible content — WCAG 2.3.3/2.4.7) — REAL → FIXED:** added `useReducedMotion()` → renders a plain visible `<div>` under RM; non-RM cinematic handoff unchanged. `components/ContentReveal.tsx`.
+- **MEDIUM-4 (FilterPill used an undefined `pill-base` → ~15px target, fails 2.5.8) — REAL → FIXED:** `pill-base` → `px-3 py-1.5` (now 27.4px ≥ 24px). `components/FilterPill.tsx`.
+- **LOW (HamburgerNav dialog + inner nav both labelled "Primary menu") — FIXED:** inner `<nav>` → `aria-label="Site"`. Remaining LOWs (ProjectCard dead focus-visible classes, CaseStudyCard RM cleanliness) are compliant — noted, not blocking.
+
+**Re-verification (independent):** Alex re-checked each fix → all **RESOLVED**, no regressions, HIGH-1 agreed false. **FINAL VERDICT: PASS — WCAG 2.2 AA across the whole site below the landing, both modes.**
+
+**Verification:** typecheck clean · 160 tests + 1 todo · ESLint clean · build 17 pages / export OK · `/` First Load JS 206 kB.
+
+---
+
+## ✅ ALL 8 PHASES COMPLETE — the overhaul is done, Alex-signed-off, landing untouched.

@@ -396,7 +396,7 @@ export default function HomePage() {
             Write to{' '}
             <a
               href={`mailto:${profile.contactEmail}`}
-              className="text-wa-teal-deep hover:text-accent transition-colors duration-fast ease-out"
+              className="text-wa-teal-deep hover:text-near-black transition-colors duration-fast ease-out"
             >
               {profile.contactEmail}
             </a>
