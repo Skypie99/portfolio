@@ -249,7 +249,9 @@ export function CinematicDesert() {
             clearSeed
               ? { scale: plate.scaleFrom, yPercent: plate.yFrom, y: 0 }
               : { scale: plate.scaleFrom, yPercent: plate.yFrom },
-            { scale: plate.scaleTo, yPercent: plate.yTo, duration: span, ease: 'sine.inOut' },
+            // ease 'none' (r9): linear depth motion tracks the scroll 1:1 — the zoom isn't slow
+            // to start and the butte doesn't pop mid-rise; the weighted glide comes from scrub.
+            { scale: plate.scaleTo, yPercent: plate.yTo, duration: span, ease: 'none' },
             scene.range.start,
           );
           // optional 2nd-phase drift on the MASTER timeline (ABSOLUTE p) — a .to()
@@ -270,7 +272,7 @@ export function CinematicDesert() {
                 scale: toScale,
                 yPercent: toY,
                 duration: Math.max(0.0001, end - start),
-                ease: 'sine.inOut',
+                ease: 'none', // r9: linear — even velocity, matches phase1 (the floor's continuation)
                 immediateRender: false,
               },
               start,
