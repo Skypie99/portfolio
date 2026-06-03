@@ -1,5 +1,4 @@
 import { Button } from '@/components/Button';
-import { KineticHeading } from '@/components/KineticHeading';
 import { cn } from '@/lib/cn';
 
 type HeroProps = {
@@ -53,22 +52,20 @@ export function Hero({ eyebrow, heading, subhead, ctaLabel, ctaHref }: HeroProps
           <span aria-hidden="true" className="block h-px w-10 bg-terracotta" />
         </div>
 
-        {/* Bolder pass: the headline assembles word-by-word (KineticHeading) —
-            the signature "max drama" arrival. Self-animates per word, so it no
-            longer uses the .hero-enter block fade. Keeps the scroll parallax. */}
-        <KineticHeading
-          text={heading}
-          wordClassName="ember"
+        <h1
           className={cn(
-            'hero-scroll-translate',
+            'hero-enter hero-enter-delay-2 hero-scroll-translate',
             'font-serif font-light',
             'text-hero',
             'leading-[1.0]',
+            'ember',
             'mb-7',
             'max-w-[16ch]',
             'text-balance',
           )}
-        />
+        >
+          {heading}
+        </h1>
 
         <p
           className={cn(

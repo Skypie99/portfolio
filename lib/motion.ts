@@ -50,10 +50,6 @@ export function usePrefersReducedMotion() {
   const [reduced, setReduced] = useState(false);
 
   useEffect(() => {
-    // Guard: matchMedia is absent in jsdom / non-DOM envs — stay at the
-    // default (false) rather than throw (mirrors the IntersectionObserver
-    // guard in useInViewOnce).
-    if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') return;
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
     setReduced(mq.matches);
     const onChange = () => setReduced(mq.matches);

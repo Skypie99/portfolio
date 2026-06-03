@@ -145,22 +145,13 @@ export default function HomePage() {
       <section
         id="work"
         className={cn(
-          'relative overflow-hidden',
           'px-gutter',
           'py-24 lg:py-32',
           'bg-cream',
           'border-t border-border-decorative',
         )}
       >
-        {/* Bolder pass: a warm golden-hour wash behind the centerpiece Work
-            section — richer light echoing the hero's sun (a glow from the
-            upper-right + a warm ground rise). Static, aria-hidden,
-            --rgb-backed so it flips for dark mode; sits behind the cards. */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_55%_at_88%_-6%,rgb(var(--rgb-gold)/0.20),transparent_60%),radial-gradient(85%_55%_at_50%_116%,rgb(var(--rgb-accent-soft)/0.12),transparent_68%)]"
-        />
-        <div className="relative z-10 max-w-content mx-auto">
+        <div className="max-w-content mx-auto">
           {/* Dani wave5: terracotta left-border accent on section headers */}
           <Reveal className="mb-12 pl-4 border-l-2 border-terracotta">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4">
