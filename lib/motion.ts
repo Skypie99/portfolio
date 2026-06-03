@@ -184,8 +184,13 @@ export function useSpotlight<T extends HTMLElement = HTMLDivElement>() {
       raf = 0;
       if (!pending) return;
       const r = el.getBoundingClientRect();
-      el.style.setProperty('--mx', `${(((pending.x - r.left) / r.width) * 100).toFixed(1)}%`);
-      el.style.setProperty('--my', `${(((pending.y - r.top) / r.height) * 100).toFixed(1)}%`);
+      const px = (pending.x - r.left) / r.width;
+      const py = (pending.y - r.top) / r.height;
+      el.style.setProperty('--mx', `${(px * 100).toFixed(1)}%`);
+      el.style.setProperty('--my', `${(py * 100).toFixed(1)}%`);
+      // unitless [-1,1] light-direction source for the carved-stone relief (--lx/--ly)
+      el.style.setProperty('--mxn', ((px - 0.5) * 2).toFixed(3));
+      el.style.setProperty('--myn', ((py - 0.5) * 2).toFixed(3));
     };
     const onMove = (e: PointerEvent) => {
       pending = { x: e.clientX, y: e.clientY };
