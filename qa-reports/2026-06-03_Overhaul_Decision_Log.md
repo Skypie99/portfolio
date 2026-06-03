@@ -103,5 +103,22 @@ This log records decisions as the run proceeds (brief §2.4: "the record is part
 
 **Tooling note:** Next dev HMR is unreliable on this GSAP-heavy setup (stale bundles; `__webpack_modules__` corruption after `next build` shares `.next`). Reliable loop: stop → `rm -rf .next` → restart → verify via `preview_inspect`/`eval`. Sub-route navigation works on a *healthy* server (earlier bounces were the corrupted one).
 
-### Phase 5 — Detail & finish (the 1%)
+### Phase 5 — Detail & finish (the 1%) ✅ (tag `overhaul-phase5`)
+
+**Shipped (the details people feel but can't name):**
+- **Styled scrollbar** — thin, warm, low-contrast, `--rgb-line-strong`/`--rgb-pebble`-backed (flips dark for free), gated to `pointer:fine` (touch keeps native overlay). Understated so it never reads as chrome over the cinematic takeover (lockfile §7 #1).
+- **Tokenized focus ring** — the global `*:focus-visible` now reads `--focus-ring-width/offset/color` (values unchanged; now a system knob).
+- **Tight optical kerning** on the large serif tiers — `step-3/4/5` gain `-0.01 / -0.015 / -0.02em` (the "expensive serif" tracking the section heads lost migrating off `display-m`).
+- **Favicon** — `app/icon.svg`: a golden-hour desert sun (terracotta disc + clay horizon lines) echoing the landing; legible at 16px, works on light + dark tabs. Wired (`<link rel="icon" type="image/svg+xml">`).
+- **theme-color** — `viewport` export: light `#FAF8F1` / dark `#15191A`, so mobile browser chrome matches the mode.
+- **Raster OG card** (HIGH VALUE — the owner is about to share publicly) — `app/opengraph-image.tsx` via `next/og` generates a **static 1200×630 PNG** at build (needed `dynamic = 'force-static'` for export). Desert palette, terracotta sun motif, name + tagline + SKYPISTUDIO.COM eyebrow + "AI PORTFOLIO" pill. Replaces the SVG OG (which didn't render on iMessage/LinkedIn/Slack/Twitter). Built `og:image`/`twitter:image` confirmed pointing at the PNG.
+- **Empty states** — `/certificates` was missing one (bare `<ul>`); added a brand-voice "Credentials coming soon." `/work` + `/blog` + 404 already handled (confirmed).
+
+**Decisions:**
+- **D5.1** Scrollbar styled (not hidden) — hiding it would remove a scroll affordance (a11y/usability); subtle-styling is the premium-and-accessible choice.
+- **D5.2** OG card uses system fonts (not Cormorant) for build robustness — loading the brand serif into satori needs a fragile build-time font fetch. Card is on-brand via palette + sun motif. **Optional P7 refinement:** wire Cormorant into the OG card for full display-face consistency (only if a non-fragile font source is available).
+
+**Verification:** typecheck clean · 160 tests + 1 todo · ESLint clean · build 17 pages / export OK (PNG OG emitted, 1200×630). Favicon + theme-color + PNG og:image confirmed in built `out/index.html`. No frozen files touched.
+
+### Phase 6 — Perf & a11y hardening
 _(next)_

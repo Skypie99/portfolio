@@ -113,9 +113,11 @@ const config: Config = {
         //    test guards it). Registered in lib/cn.ts CUSTOM_FONT_SIZES.
         'step-1': ['var(--fs-step-1)', { lineHeight: '1.55' }], // 20px lead
         'step-2': ['var(--fs-step-2)', { lineHeight: '1.35' }], // 24px sub-head
-        'step-3': ['var(--fs-step-3)', { lineHeight: '1.2' }], // 31px card title
-        'step-4': ['var(--fs-step-4)', { lineHeight: '1.15' }], // 39px section head
-        'step-5': ['var(--fs-step-5)', { lineHeight: '1.1' }], // 49px page title
+        // Phase 5 — tight optical kerning on the large serif tiers (the
+        // "expensive" display tracking the section heads lost off display-m).
+        'step-3': ['var(--fs-step-3)', { lineHeight: '1.2', letterSpacing: '-0.01em' }], // 31px card title
+        'step-4': ['var(--fs-step-4)', { lineHeight: '1.15', letterSpacing: '-0.015em' }], // 39px section head
+        'step-5': ['var(--fs-step-5)', { lineHeight: '1.1', letterSpacing: '-0.02em' }], // 49px page title
         display: ['var(--fs-display)', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
         hero: ['var(--fs-hero)', { lineHeight: '1.05', letterSpacing: '-0.025em' }],
       },
