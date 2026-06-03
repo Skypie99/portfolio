@@ -324,16 +324,19 @@ h1, h2, h3, h4, h5, h6 {
    lower-left. The teal-to-amber diagonal is the WA signature duality:
    cool distance behind, warm foreground. No JS, pure CSS. */
 .hero-wash {
+  /* Golden-hour glow (warm, upper-right) over a cool whisper (lower-left) —
+     the desert "warm light on cool sky" logic. Token-driven so it tracks the
+     palette and flips in dark mode (gold + cool both lift; fade is the canvas). */
   background:
     radial-gradient(
       60% 50% at 90% 0%,
-      rgba(226, 151, 110, 0.18) 0%,
-      rgba(252, 243, 237, 0.00) 60%
+      rgb(var(--rgb-gold) / 0.20) 0%,
+      rgb(var(--rgb-canvas) / 0) 60%
     ),
     radial-gradient(
       40% 35% at 0% 100%,
-      rgba(74, 143, 160, 0.10) 0%,
-      rgba(250, 249, 245, 0.00) 70%
+      rgb(var(--rgb-cool-mid) / 0.12) 0%,
+      rgb(var(--rgb-canvas) / 0) 70%
     );
 }
 
