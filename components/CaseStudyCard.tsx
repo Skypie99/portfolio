@@ -1,7 +1,12 @@
+'use client';
+
 import Link from 'next/link';
 
 import { CardField } from '@/components/CardField';
 import { cn } from '@/lib/cn';
+import { useSpotlight } from '@/lib/motion';
+
+const FOIL = 'linear-gradient(118deg, #9a6c1f 0%, #e9c46a 38%, #fbe6b0 52%, #c79a3e 68%, #9a6c1f 100%)';
 
 type CaseStudyCardProps = {
   title: string;
@@ -23,16 +28,16 @@ type CaseStudyCardProps = {
  */
 export function CaseStudyCard({ title, category, description, href, index = 0, className }: CaseStudyCardProps) {
   const numeral = String(index + 1).padStart(2, '0');
+  const spotRef = useSpotlight<HTMLAnchorElement>();
 
   return (
     <Link
+      ref={spotRef}
       href={href}
       aria-label={`${title} — read the case study`}
       data-category={category}
       className={cn(
-        'case-study-card group relative block overflow-hidden rounded-lg',
-        'bg-surface border border-[rgb(var(--rgb-accent)/0.18)] shadow-xl',
-        'transition-all duration-280 ease-out hover:-translate-y-1 hover:border-[rgb(var(--rgb-accent)/0.38)]',
+        'glow-card case-study-card group relative block overflow-hidden rounded-lg bg-surface',
         'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta',
         className,
       )}
@@ -40,8 +45,16 @@ export function CaseStudyCard({ title, category, description, href, index = 0, c
       <CardField slug={category} className="aspect-[4/5]">
         <span
           aria-hidden="true"
-          className="absolute left-6 top-5 font-serif font-light leading-none text-[#3A1C0C]/35"
-          style={{ fontSize: 'clamp(2.5rem, 5vw, 3.75rem)' }}
+          className="absolute left-6 top-5 font-serif font-light leading-none"
+          style={{
+            fontSize: 'clamp(2.5rem, 5vw, 3.75rem)',
+            backgroundImage: FOIL,
+            WebkitBackgroundClip: 'text',
+            backgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            color: 'transparent',
+            textShadow: '0 1px 1px rgb(60 32 14 / 0.16)',
+          }}
         >
           {numeral}
         </span>
@@ -55,8 +68,8 @@ export function CaseStudyCard({ title, category, description, href, index = 0, c
         </div>
       </CardField>
 
-      <div className="flex flex-col gap-5 p-7">
-        <span aria-hidden="true" className="block h-px w-10 bg-[rgb(var(--rgb-accent)/0.55)]" />
+      <div className="relative z-10 flex flex-col gap-5 p-7">
+        <span aria-hidden="true" className="block h-0.5 w-12 rounded-full" style={{ background: FOIL }} />
         <p className="font-sans font-light text-body-sm leading-[1.65] text-charcoal line-clamp-2 text-pretty">
           {description}
         </p>
