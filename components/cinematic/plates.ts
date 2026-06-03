@@ -203,9 +203,10 @@ const ARRIVAL_SCENE: Scene = {
   // RISE-TO-FILL (2026-06-02 r3 — Sky's chosen direction). The cliff ARRIVES BY RISING +
   // GROWING to fill the frame at FULL opacity — NO crossfade, so ZERO overlap/ghost. (A
   // crossfade of the WIDE valley vista into the CLOSE cliff always showed a brief
-  // double-exposure mid-dissolve; this removes it entirely.) range starts 0.30 and now runs
-  // to 1.0 (r6 — fluidity) so the whole rise is ONE continuous arc with no mid-rise hitch.
-  range: { start: 0.3, end: 1.0 },
+  // double-exposure mid-dissolve; this removes it entirely.) range now runs 0.20→1.0: ONE
+  // continuous arc (r6, no mid-rise hitch) that also STARTS earlier (r7) so the butte emerges
+  // sooner — the opening valley beat isn't slow before the arrival.
+  range: { start: 0.2, end: 1.0 },
   // ZERO-WIDTH fadeIn = the group is OPAQUE from mount (startsVisible in the renderer);
   // there is NO opacity tween on the cliff — the reveal is 100% MOTION. The cliff (the
   // group's ONLY plane now) is parked LOW/below the frame until ~0.30, then rises into
@@ -230,7 +231,7 @@ const ARRIVAL_SCENE: Scene = {
       //     plane just holds yFrom; the cliff renders IN FRONT of the valley floor, so it
       //     can't hide behind it — it must be pushed fully BELOW the frame. At yFrom 24 the
       //     crest poked out at ~0.62 screen. yFrom is now 92 → the crest sits just below the
-      //     viewport bottom for p0–0.30 (nothing sticks out), then the butte RISES up out of
+      //     viewport bottom for p0–0.20 (nothing sticks out), then the butte RISES up out of
       //     the bottom as you scroll in. The fast early part (still below frame) is unseen;
       //     the VISIBLE rise — crest crossing in and lifting to fill — spans ~p0.40–1.0.
       // FLUID rise (r6): ONE continuous tween over the whole p[0.30,1.0] range — grows
