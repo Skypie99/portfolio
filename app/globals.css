@@ -362,14 +362,45 @@ body {
   letter-spacing: -0.01em;
 }
 
-/* Focus-visible default — Alex §6.1. Terracotta 4.33:1 on cream (PASS 3:1 UI). */
+/* Focus-visible default — Alex §6.1. Terracotta 4.33:1 on cream (PASS 3:1 UI).
+   Tokenized (Phase 5) so the ring is a system knob — values unchanged. */
 *:focus-visible {
-  outline: 2px solid var(--color-accent-primary);
-  outline-offset: 2px;
+  outline: var(--focus-ring-width, 2px) solid var(--focus-ring-color, var(--color-accent-primary));
+  outline-offset: var(--focus-ring-offset, 2px);
   border-radius: 2px;
 }
 
 /* The skip-link's :focus state is in components/SkipLink.tsx via Tailwind. */
+
+/* ------------------------------------------------------------------
+   Scrollbar — Phase 5 1% detail. Thin, warm, low-contrast: reads as a
+   quiet edge, never as chrome. `--rgb-*`-backed so it flips in dark mode
+   for free. Gated to pointer:fine — touch devices keep native overlay
+   scrollbars. Kept understated so it never competes with the cinematic
+   takeover (AESTHETIC_LOCKFILE §7 #1 — verified non-intrusive both modes).
+   ------------------------------------------------------------------ */
+@media (pointer: fine) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--rgb-line-strong) / 0.5) transparent;
+  }
+  ::-webkit-scrollbar {
+    width: var(--scrollbar-w, 10px);
+    height: var(--scrollbar-w, 10px);
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(var(--rgb-line-strong) / 0.45);
+    border-radius: var(--radius-pill);
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(var(--rgb-pebble) / 0.7);
+  }
+}
 
 /* Disable any text-decoration on anchors by default; components opt in. */
 a {

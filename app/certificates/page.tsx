@@ -62,7 +62,13 @@ export default function CertificatesPage() {
         <div className="max-w-content mx-auto">
           {/* sr-only section heading — Alex F-C4-2 heading rotor. */}
           <h2 className="sr-only">Credentials</h2>
-          <AnimatedCertGrid certificates={certificates} />
+          {certificates.length === 0 ? (
+            <p className="font-serif font-light text-display-s text-charcoal leading-[1.65] max-w-[540px]">
+              Credentials coming soon.
+            </p>
+          ) : (
+            <AnimatedCertGrid certificates={certificates} />
+          )}
 
           {/* Back link */}
           <div className="mt-20">
