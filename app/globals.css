@@ -1426,7 +1426,9 @@ img::before {
    sidebar-width gap on the right of the desktop reduced-motion frame. */
 .cdesert-static {
   position: relative;
-  height: 100vh;
+  height: 100vh; /* fallback for browsers without svh */
+  height: 100svh; /* small-viewport height — the MOBILE hero fills the screen without
+                     address-bar cutoff or reflow as the bar shows/hides (iOS/Android) */
 }
 .cdesert-static-stage {
   position: relative;

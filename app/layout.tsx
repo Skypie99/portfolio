@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 
 import { cormorant, dmMono, dmSans } from '@/app/fonts';
 import { Footer } from '@/components/Footer';
@@ -59,6 +59,14 @@ const PROD_CSP = [
 ].join('; ');
 
 const isProd = process.env.NODE_ENV === 'production';
+
+// Explicit viewport (Next ships a default `width=device-width, initial-scale=1`;
+// we own it to add viewport-fit=cover so notched phones render edge-to-edge).
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+};
 
 export function generateMetadata(): Metadata {
   const profile = getProfile();
