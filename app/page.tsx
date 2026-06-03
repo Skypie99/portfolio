@@ -98,7 +98,7 @@ export default function HomePage() {
             Live
           </p>
           {/* Heading */}
-          <h2 className="font-serif font-light text-display-m ember mb-3 max-w-2xl leading-[1.1] text-balance">
+          <h2 className="font-serif font-light text-step-4 ember mb-3 max-w-2xl leading-[1.1] text-balance">
             Built, shipped, and open. Everything here is live.
           </h2>
           <p className="font-sans font-light text-body text-charcoal mb-12 max-w-[540px] text-pretty">
@@ -159,7 +159,7 @@ export default function HomePage() {
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4">
               The Work
             </p>
-            <h2 className="font-serif font-light text-display-m ember max-w-2xl leading-tight">
+            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
               A handful of things, made with intention.
             </h2>
           </div>
@@ -195,7 +195,7 @@ export default function HomePage() {
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4">
               Method
             </p>
-            <h2 className="font-serif font-light text-display-m ember max-w-2xl leading-[1.1] text-balance">
+            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-[1.1] text-balance">
               Three quiet steps, repeated carefully.
             </h2>
           </div>
@@ -242,7 +242,7 @@ export default function HomePage() {
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4">
               A Brief Account
             </p>
-            <h2 className="font-serif font-light text-display-m ember leading-[1.1] text-balance">
+            <h2 className="font-serif font-light text-step-4 ember leading-[1.1] text-balance">
               The work is careful. The record is honest.
             </h2>
           </div>
@@ -252,7 +252,7 @@ export default function HomePage() {
             <blockquote
               className={cn(
                 'pl-5 border-l-2 border-terracotta',
-                'font-serif font-light italic text-[1.5rem] text-ink leading-[1.45]',
+                'font-serif font-light italic text-step-2 text-ink leading-[1.45]',
                 'text-balance',
               )}
               style={{ letterSpacing: '-0.01em' }}
@@ -297,7 +297,7 @@ export default function HomePage() {
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4">
               Credentials
             </p>
-            <h2 className="font-serif font-light text-display-m ember max-w-2xl leading-[1.1] text-balance">
+            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-[1.1] text-balance">
               Credentials, earned in order.
             </h2>
           </div>
@@ -310,7 +310,7 @@ export default function HomePage() {
                     {c.issuer}
                   </p>
                   <div className="flex-1 flex flex-col gap-1">
-                    <h3 className="font-serif font-normal text-[1.375rem] text-near-black leading-tight transition-colors duration-fast ease-out group-hover:text-accent-text">
+                    <h3 className="font-serif font-normal text-step-2 text-near-black leading-tight transition-colors duration-fast ease-out group-hover:text-accent-text">
                       {c.title}
                     </h3>
                     <p className="font-mono text-meta tracking-label uppercase text-text-meta">
@@ -363,7 +363,7 @@ export default function HomePage() {
             <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
             Correspond
           </p>
-          <h2 className="font-serif font-light text-display-m ember max-w-2xl leading-tight">
+          <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
             Have something worth building?
             <br />
             Write to me.

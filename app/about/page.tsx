@@ -58,8 +58,7 @@ export default function AboutPage() {
             A Brief Account
           </p>
           <h1
-            className="font-serif font-light text-[clamp(2.5rem,6vw,4.5rem)] ember leading-[1.05] max-w-3xl mb-10 text-balance"
-            style={{ letterSpacing: '-0.025em' }}
+            className="font-serif font-light text-display ember leading-[1.05] max-w-3xl mb-10 text-balance"
           >
             I build things with AI.
           </h1>
@@ -74,7 +73,7 @@ export default function AboutPage() {
 
             {/* Pull-quote — editorial accent, carries the thesis */}
             <blockquote
-              className="pl-5 border-l-2 border-terracotta font-serif font-light text-[1.375rem] text-near-black leading-[1.4] text-balance"
+              className="pl-5 border-l-2 border-terracotta font-serif font-light text-step-2 text-near-black leading-[1.4] text-balance"
               style={{ letterSpacing: '-0.01em' }}
             >
               Accessibility is not an add-on. It is where you begin.
@@ -116,7 +115,7 @@ export default function AboutPage() {
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Method
             </p>
-            <h2 className="font-serif font-light text-display-m ember max-w-2xl leading-[1.1] text-balance">
+            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-[1.1] text-balance">
               Three quiet steps, repeated carefully.
             </h2>
           </div>
@@ -165,7 +164,7 @@ export default function AboutPage() {
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Principles
             </p>
-            <h2 className="font-serif font-light text-display-m ember max-w-2xl leading-tight">
+            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
               Accessibility. Privacy. No shortcuts.
             </h2>
           </div>
@@ -205,7 +204,7 @@ export default function AboutPage() {
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Currently
             </p>
-            <h2 className="font-serif font-light text-display-m ember max-w-2xl leading-tight">
+            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
               Still a beginner. Getting better on purpose.
             </h2>
           </div>
@@ -245,7 +244,7 @@ export default function AboutPage() {
                 <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 The Work
               </p>
-              <h2 className="font-serif font-light text-display-m ember max-w-2xl leading-[1.1] text-balance">
+              <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-[1.1] text-balance">
                 A handful of things.
               </h2>
             </div>
@@ -264,7 +263,7 @@ export default function AboutPage() {
                     <p className="font-mono text-meta tracking-label uppercase text-text-meta">
                       {d.role} · {d.year}
                     </p>
-                    <h3 className="font-serif font-normal text-[1.5rem] leading-tight">
+                    <h3 className="font-serif font-normal text-step-2 leading-tight">
                       {d.title}
                     </h3>
                     <p className="font-sans font-light text-body text-charcoal leading-[1.65] max-w-[540px]">
@@ -301,7 +300,7 @@ export default function AboutPage() {
         )}
       >
         <div className="max-w-content mx-auto flex flex-col items-start gap-8">
-          <h2 className="font-serif font-light text-display-m ember max-w-2xl leading-tight">
+          <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
             Want to work together?
             <br />
             Let{'’'}s talk.

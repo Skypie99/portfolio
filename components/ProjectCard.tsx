@@ -139,8 +139,8 @@ export function ProjectCard({
 
         {/* Title — navigable link is the heading */}
         <h3
-          className="font-serif font-normal leading-[1.1] text-near-black"
-          style={{ fontSize: wide ? '2.25rem' : '1.75rem', letterSpacing: '-0.015em' }}
+          className={cn('font-serif font-normal leading-[1.1] text-near-black', wide ? 'text-step-4' : 'text-step-3')}
+          style={{ letterSpacing: '-0.015em' }}
         >
           <Link
             href={`/work/${d.id}/`}

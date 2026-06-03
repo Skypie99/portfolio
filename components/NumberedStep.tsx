@@ -41,7 +41,7 @@ export function NumberedStep({ number, title, body, highlight = false, className
       </span>
       <div className="flex flex-col gap-3">
         <h3
-          className="font-serif font-normal text-[1.5rem] leading-[1.15] text-near-black text-balance"
+          className="font-serif font-normal text-step-2 leading-[1.15] text-near-black text-balance"
           style={{ letterSpacing: '-0.01em' }}
         >
           {title}
