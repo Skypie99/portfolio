@@ -79,12 +79,12 @@ export function ProjectCard({
           wide
             ? 'w-full md:w-1/2 aspect-[4/3] md:aspect-auto md:self-stretch'
             : 'w-full aspect-[3/2] border-b border-stone',
-          // Uniform teal backdrop behind every mockup — the same teal as the
-          // contact ("Write to me") section, so the work set reads as one calm
-          // set. Each project keeps its signature colour on the border + dot.
-          'bg-wa-teal-pale',
+          // Earthy sandstone backdrop behind every mockup — warm desert tone,
+          // a subtle clay gradient for depth. Each project keeps its signature
+          // colour on the border + dot. Flips to warm dark earth in dark mode.
+          'bg-gradient-to-br from-earth to-earth-deep',
           'transition-[filter] duration-base ease-out',
-          'group-hover:brightness-105',
+          'group-hover:brightness-[1.03]',
         )}
         aria-hidden="true"
       >

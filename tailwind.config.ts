@@ -48,6 +48,9 @@ const config: Config = {
         foil:           'rgb(var(--rgb-foil) / <alpha-value>)',
         rose:           'rgb(var(--rgb-rose) / <alpha-value>)',
         'rose-pale':    'rgb(var(--rgb-rose-pale) / <alpha-value>)',
+        rail:           'rgb(var(--rgb-rail) / <alpha-value>)',
+        earth:          'rgb(var(--rgb-earth) / <alpha-value>)',
+        'earth-deep':   'rgb(var(--rgb-earth-deep) / <alpha-value>)',
 
         // ── Raw brand paint — FIXED hue, does NOT flip ──────────────
         // Decorative fills / tags / gradients only; never body text.

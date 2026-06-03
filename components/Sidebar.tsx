@@ -31,7 +31,7 @@ export function Sidebar() {
         'w-sidebar shrink-0',
         'h-screen',
         'p-8',
-        'bg-wa-teal-wash',
+        'bg-rail',
         'border-r border-wa-teal-soft/50',
       )}
     >
