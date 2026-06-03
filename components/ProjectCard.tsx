@@ -1,8 +1,13 @@
+'use client';
+
 import Link from 'next/link';
 
 import { CardField } from '@/components/CardField';
 import { cn } from '@/lib/cn';
+import { useSpotlight } from '@/lib/motion';
 import type { Deliverable } from '@/lib/schema';
+
+const FOIL = 'linear-gradient(118deg, #9a6c1f 0%, #e9c46a 38%, #fbe6b0 52%, #c79a3e 68%, #9a6c1f 100%)';
 
 type ProjectCardProps = {
   deliverable: Deliverable;
@@ -37,14 +42,14 @@ export function ProjectCard({
   const githubLink = d.links?.find((l) => l.type === 'github');
   const demoLink = d.links?.find((l) => l.type === 'demo');
   const numeral = String(index + 1).padStart(2, '0');
+  const spotRef = useSpotlight<HTMLDivElement>();
 
   return (
     <div
+      ref={spotRef}
       className={cn(
-        'work-card group relative flex flex-col overflow-hidden rounded-lg',
-        // warm hairline keyline (terracotta-tinted) + soft elevation — a framed print
-        'bg-surface border border-[rgb(var(--rgb-accent)/0.18)] shadow-xl',
-        'transition-all duration-280 ease-out hover:-translate-y-1 hover:border-[rgb(var(--rgb-accent)/0.38)]',
+        // glow-card: warm glowing rim + glass highlight + cursor spotlight + hover lift
+        'glow-card work-card group relative flex flex-col overflow-hidden rounded-lg bg-surface',
         wide && 'md:flex-row md:items-stretch',
         className,
       )}
@@ -54,11 +59,19 @@ export function ProjectCard({
         slug={d.id}
         className={cn(wide ? 'aspect-[4/3] md:aspect-auto md:w-[58%] md:min-h-[26rem]' : 'aspect-[4/5]')}
       >
-        {/* index numeral — deep umber, reads as a watermark on the luminous sky */}
+        {/* index numeral — gold-foil, stamped */}
         <span
           aria-hidden="true"
-          className="absolute left-6 top-5 font-serif font-light leading-none text-[#3A1C0C]/35"
-          style={{ fontSize: 'clamp(2.5rem, 5vw, 3.75rem)' }}
+          className="absolute left-6 top-5 font-serif font-light leading-none"
+          style={{
+            fontSize: 'clamp(2.5rem, 5vw, 3.75rem)',
+            backgroundImage: FOIL,
+            WebkitBackgroundClip: 'text',
+            backgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            color: 'transparent',
+            textShadow: '0 1px 1px rgb(60 32 14 / 0.16)',
+          }}
         >
           {numeral}
         </span>
@@ -96,9 +109,9 @@ export function ProjectCard({
       </CardField>
 
       {/* ── Caption — deep ink on surface, generous mat ──────────────── */}
-      <div className={cn('flex flex-col gap-6 p-7 md:p-9', wide && 'md:w-[42%] md:justify-center')}>
-        {/* refined editorial accent rule */}
-        <span aria-hidden="true" className="block h-px w-10 bg-[rgb(var(--rgb-accent)/0.55)]" />
+      <div className={cn('relative z-10 flex flex-col gap-6 p-7 md:p-9', wide && 'md:w-[42%] md:justify-center')}>
+        {/* refined editorial accent rule — gold foil */}
+        <span aria-hidden="true" className="block h-0.5 w-12 rounded-full" style={{ background: FOIL }} />
         <p
           className="font-sans font-light text-body-sm leading-[1.65] text-charcoal text-pretty"
           style={{
