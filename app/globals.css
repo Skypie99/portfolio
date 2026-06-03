@@ -414,6 +414,25 @@ html.dark .shadow-warm {
     0 18px 48px rgba(0, 0, 0, 0.55);
 }
 
+/* Ember siblings — the same lit-gradient treatment in the other desert hues,
+   so a row of numbers/labels can span teal → gold → moss → terracotta. All
+   readable at display sizes (≥3:1 large); each lifts brighter in dark mode. */
+.ember-teal,
+.ember-gold,
+.ember-moss {
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.ember-teal { background-image: linear-gradient(100deg, #4A8FA0 0%, #2F574D 100%); }
+.ember-gold { background-image: linear-gradient(100deg, #BE8230 0%, #9D2D05 100%); }
+.ember-moss { background-image: linear-gradient(100deg, #4E9E6E 0%, #235B3E 100%); }
+html.dark .ember-teal { background-image: linear-gradient(100deg, #8FD0D2 0%, #5FA9AB 100%); }
+html.dark .ember-gold { background-image: linear-gradient(100deg, #E7C07A 0%, #CF7A4F 100%); }
+html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4E9E6E 100%); }
+
 /* Status pill — pulsing terracotta dot ring. Single-shot fade-in via
    .hero-enter on the parent; the ping animation runs softly in a loop.
    Reduced-motion gate disables the loop. */

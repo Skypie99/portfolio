@@ -42,13 +42,25 @@ export function ProjectCard({
   const githubLink = d.links?.find((l) => l.type === 'github');
   const demoLink = d.links?.find((l) => l.type === 'demo');
 
+  // Per-project signature colour — a curated teal+orange spread so the work
+  // set reads as a spectrum, not five identical terracotta cards.
+  const ACCENT: Record<string, { border: string; dot: string; from: string }> = {
+    'accessmap':           { border: 'border-l-terracotta', dot: 'bg-terracotta', from: 'from-accent/15' },
+    'claude-corp':         { border: 'border-l-lagoon',     dot: 'bg-lagoon',     from: 'from-lagoon/20' },
+    'prompt-library':      { border: 'border-l-gold',       dot: 'bg-gold',       from: 'from-gold/22' },
+    'pacman-code-trainer': { border: 'border-l-emerald',    dot: 'bg-emerald',    from: 'from-emerald/18' },
+    'mutual-mesh':         { border: 'border-l-caramel',    dot: 'bg-caramel',    from: 'from-caramel/18' },
+  };
+  const a = ACCENT[d.id] ?? ACCENT['accessmap'];
+
   return (
     <div
       className={cn(
         'work-card group block',
         // Alex F-C4-1: focus-visible outline alongside hover/focus lift.
         // Shamus wave2: border-l-4 + border-l-terracotta = editorial left accent.
-        'bg-warm-white border border-stone border-l-4 border-l-terracotta rounded-md',
+        'bg-warm-white border border-stone border-l-4 rounded-md',
+        a.border,
         'shadow-warm',
         // overflow-hidden lets the image sit edge-to-edge with rounded card corners
         'overflow-hidden',
@@ -67,11 +79,12 @@ export function ProjectCard({
           wide
             ? 'w-full md:w-1/2 aspect-[4/3] md:aspect-auto md:self-stretch'
             : 'w-full aspect-[3/2] border-b border-stone',
-          // Desert gradient behind the mockup: terracotta → gold → seafoam,
-          // deepens on hover. Token-driven so it flips in dark mode.
-          'bg-gradient-to-br from-accent/15 via-gold-glow/18 to-cool-soft/25',
-          'transition-colors duration-base ease-out',
-          'group-hover:from-accent/25 group-hover:to-cool-soft/30',
+          // Desert gradient behind the mockup: the project's signature hue →
+          // gold → seafoam, brightening on hover. Token-driven where it flips.
+          'bg-gradient-to-br via-gold-glow/18 to-cool-soft/25',
+          a.from,
+          'transition-[filter] duration-base ease-out',
+          'group-hover:brightness-105',
         )}
         aria-hidden="true"
       >
@@ -120,7 +133,7 @@ export function ProjectCard({
       <div className={cn('p-6 flex flex-col gap-3 flex-1', wide && 'md:p-8 md:justify-center')}>
         {/* Eyebrow */}
         <p className="font-mono text-meta tracking-label uppercase text-sage-text flex items-center gap-2">
-          <span aria-hidden="true" className="inline-block w-1 h-1 rounded-full bg-wa-teal-mid" />
+          <span aria-hidden="true" className={cn('inline-block w-1 h-1 rounded-full', a.dot)} />
           {d.role} · {d.year}
         </p>
 
