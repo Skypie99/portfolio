@@ -1,178 +1,161 @@
-'use client';
-
 import Link from 'next/link';
 
 import { CardField } from '@/components/CardField';
 import { cn } from '@/lib/cn';
-import { useSpotlight } from '@/lib/motion';
 import type { Deliverable } from '@/lib/schema';
 
 type ProjectCardProps = {
   deliverable: Deliverable;
   /** Max number of tech labels to render. Default 4. */
   maxTech?: number;
-  /** Wide (featured) card — hero + details side-by-side on md+. */
+  /** Wide (featured) card — field + caption side-by-side on md+. */
   wide?: boolean;
   /** Editorial index for the corner numeral ("01", "02"…). Default 0. */
   index?: number;
   className?: string;
 };
 
-const FOIL = 'linear-gradient(118deg, #f6e3ad 0%, #c89b4b 48%, #f2db9f 100%)';
-
 /**
- * ProjectCard — sleek-dark glass card (Linear/Stripe register, warm soul).
+ * ProjectCard — v2 bold-editorial card.
  *
- * A dark glass panel with a fine glowing gradient rim, a warm golden-hour ember
- * glow + grain (CardField), and a cursor-follow spotlight (useSpotlight). Gold-foil
- * numeral, crisp light-on-dark type, a single glowing CTA.
+ * No illustration: a golden-hour <CardField> carries an index numeral + the
+ * oversized serif title (cream over the field's deep pool, AA-safe), and a clean
+ * high-contrast caption below/beside holds the summary, a de-rainbowed tech line,
+ * and a single CTA. Deep ink on a surface that contrasts the section background.
  *
- * A11y: the title is an <h3> wrapping a link labelled "<title> — <role>, <year>";
- * a case-study link + demo/github links carry their own labels; glow layers are
- * aria-hidden; focus-visible rings throughout.
+ * Accessibility: the title is an <h3> wrapping a link whose aria-label is
+ * "<title> — <role>, <year>"; a separate case-study link + demo/github links carry
+ * their own labels; the field layers are aria-hidden. Focus-visible rings throughout.
  */
-export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index = 0, className }: ProjectCardProps) {
+export function ProjectCard({
+  deliverable: d,
+  maxTech = 4,
+  wide = false,
+  index = 0,
+  className,
+}: ProjectCardProps) {
   const githubLink = d.links?.find((l) => l.type === 'github');
   const demoLink = d.links?.find((l) => l.type === 'demo');
   const numeral = String(index + 1).padStart(2, '0');
-  const spotRef = useSpotlight<HTMLDivElement>();
-
-  const numeralEl = (
-    <span
-      aria-hidden="true"
-      className="font-serif font-light leading-none"
-      style={{
-        fontSize: 'clamp(2.4rem, 4.6vw, 3.6rem)',
-        backgroundImage: FOIL,
-        WebkitBackgroundClip: 'text',
-        backgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-        color: 'transparent',
-      }}
-    >
-      {numeral}
-    </span>
-  );
-
-  const featuredEl = d.featured && (
-    <span className="inline-flex items-center gap-1.5 rounded-pill border border-[#FAF8F1]/15 bg-[#FAF8F1]/[0.06] px-2.5 py-1 font-mono text-meta uppercase tracking-label text-[#FAF8F1]/85 backdrop-blur-sm">
-      <span aria-hidden="true" className="inline-block h-1 w-1 rounded-full" style={{ background: FOIL }} />
-      Featured
-    </span>
-  );
-
-  const titleEl = (
-    <>
-      <p className="mb-2 flex items-center gap-2 font-mono text-meta uppercase tracking-label text-[#FAF8F1]/55">
-        <span aria-hidden="true" className="inline-block h-1 w-1 rounded-full" style={{ background: FOIL }} />
-        {d.role} · {d.year}
-      </p>
-      <h3
-        className="font-serif font-light leading-[1.05] text-[#FAF8F1]"
-        style={{ letterSpacing: '-0.022em', fontSize: wide ? 'clamp(2.5rem, 3.6vw, 3.7rem)' : 'clamp(1.9rem, 2.6vw, 2.5rem)' }}
-      >
-        <Link
-          href={`/work/${d.id}/`}
-          aria-label={`${d.title} — ${d.role}, ${d.year}`}
-          className="rounded-sm transition-opacity duration-fast ease-out hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FAF8F1]"
-        >
-          {d.title}
-        </Link>
-      </h3>
-    </>
-  );
-
-  const detailsEl = (
-    <>
-      <span aria-hidden="true" className="block h-0.5 w-12 rounded-full" style={{ background: FOIL }} />
-      <p
-        className="font-sans font-light text-body-sm leading-[1.65] text-[#FAF8F1]/60 text-pretty"
-        style={{ display: '-webkit-box', WebkitLineClamp: wide ? 4 : 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
-      >
-        {d.summary}
-      </p>
-      <ul className="flex flex-wrap gap-x-3 gap-y-1">
-        {d.tech.slice(0, maxTech).map((t) => (
-          <li key={t} className="font-mono text-meta uppercase tracking-label text-[#FAF8F1]/45">
-            {t}
-          </li>
-        ))}
-      </ul>
-      <div className="mt-1 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-[#FAF8F1]/10 pt-4">
-        <Link
-          href={`/work/${d.id}/`}
-          aria-label={`Read case study for ${d.title}`}
-          className="inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-[#E8AE78] transition-all duration-fast ease-out hover:text-[#F2C893] hover:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E8AE78]"
-        >
-          View project <span aria-hidden="true">→</span>
-        </Link>
-        {demoLink && (
-          <a
-            href={demoLink.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`Open live demo for ${d.title} (opens in new tab)`}
-            className="ml-auto inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-[#FAF8F1]/45 transition-colors duration-fast ease-out hover:text-[#FAF8F1]/85 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E8AE78]"
-          >
-            Live <span aria-hidden="true">↗</span>
-          </a>
-        )}
-        {githubLink && (
-          <a
-            href={githubLink.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`View ${d.title} source on GitHub (opens in new tab)`}
-            className={cn(
-              'inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-[#FAF8F1]/45 transition-colors duration-fast ease-out hover:text-[#FAF8F1]/85 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E8AE78]',
-              !demoLink && 'ml-auto',
-            )}
-          >
-            GitHub <span aria-hidden="true">↗</span>
-          </a>
-        )}
-      </div>
-    </>
-  );
 
   return (
     <div
-      ref={spotRef}
       className={cn(
-        'dark-card work-card group relative isolate flex flex-col overflow-hidden rounded-[18px]',
-        wide && 'md:flex-row md:items-stretch md:min-h-[24rem]',
+        'work-card group relative flex flex-col overflow-hidden rounded-lg',
+        // warm hairline keyline (terracotta-tinted) + soft elevation — a framed print
+        'bg-surface border border-[rgb(var(--rgb-accent)/0.18)] shadow-xl',
+        'transition-all duration-280 ease-out hover:-translate-y-1 hover:border-[rgb(var(--rgb-accent)/0.38)]',
+        wide && 'md:flex-row md:items-stretch',
         className,
       )}
     >
-      <CardField slug={d.id} />
+      {/* ── Golden-hour field — editorial type overlaid ──────────────── */}
+      <CardField
+        slug={d.id}
+        className={cn(wide ? 'aspect-[4/3] md:aspect-auto md:w-[58%] md:min-h-[26rem]' : 'aspect-[4/5]')}
+      >
+        {/* index numeral — deep umber, reads as a watermark on the luminous sky */}
+        <span
+          aria-hidden="true"
+          className="absolute left-6 top-5 font-serif font-light leading-none text-[#3A1C0C]/35"
+          style={{ fontSize: 'clamp(2.5rem, 5vw, 3.75rem)' }}
+        >
+          {numeral}
+        </span>
 
-      {wide ? (
-        <>
-          {/* hero (left) */}
-          <div className="relative z-10 flex flex-col justify-between p-8 md:w-[56%] md:p-10">
-            <div className="flex items-start justify-between gap-4">
-              {numeralEl}
-              {featuredEl}
-            </div>
-            <div className="mt-12 md:mt-0">{titleEl}</div>
-          </div>
-          {/* details (right) */}
-          <div className="relative z-10 flex flex-col justify-center gap-5 border-t border-[#FAF8F1]/10 p-8 md:w-[44%] md:border-l md:border-t-0 md:p-10">
-            {detailsEl}
-          </div>
-        </>
-      ) : (
-        <div className="relative z-10 flex flex-1 flex-col p-7 md:p-8">
-          <div className="flex items-start justify-between gap-4">
-            {numeralEl}
-            {featuredEl}
-          </div>
-          <div className="mt-auto flex flex-col gap-5 pt-12">
-            <div>{titleEl}</div>
-            {detailsEl}
-          </div>
+        {/* featured badge — dark glassy pill (works over the bright sky) */}
+        {d.featured && (
+          <span className="absolute right-6 top-6 inline-flex items-center gap-1.5 rounded-pill border border-[#FAF8F1]/20 bg-[#2A1206]/45 px-2.5 py-1 font-mono text-meta uppercase tracking-label text-[#FAF8F1] backdrop-blur-sm">
+            <span aria-hidden="true" className="inline-block h-1 w-1 rounded-full bg-[rgb(var(--rgb-gold))]" />
+            Featured
+          </span>
+        )}
+
+        {/* role · year + title, anchored over the deep bottom pool */}
+        <div className="mt-auto px-6 pb-6 md:px-8 md:pb-8">
+          <p className="mb-2 flex items-center gap-2 font-mono text-meta uppercase tracking-label text-[#FAF8F1]/75">
+            <span aria-hidden="true" className="inline-block h-1 w-1 rounded-full bg-[rgb(var(--rgb-gold))]" />
+            {d.role} · {d.year}
+          </p>
+          <h3
+            className="font-serif font-light leading-[1.04] text-[#FAF8F1]"
+            style={{
+              letterSpacing: '-0.022em',
+              fontSize: wide ? 'clamp(2.6rem, 3.7vw, 3.9rem)' : 'clamp(1.95rem, 2.7vw, 2.55rem)',
+            }}
+          >
+            <Link
+              href={`/work/${d.id}/`}
+              aria-label={`${d.title} — ${d.role}, ${d.year}`}
+              className="rounded-sm transition-opacity duration-fast ease-out hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FAF8F1]"
+            >
+              {d.title}
+            </Link>
+          </h3>
         </div>
-      )}
+      </CardField>
+
+      {/* ── Caption — deep ink on surface, generous mat ──────────────── */}
+      <div className={cn('flex flex-col gap-6 p-7 md:p-9', wide && 'md:w-[42%] md:justify-center')}>
+        {/* refined editorial accent rule */}
+        <span aria-hidden="true" className="block h-px w-10 bg-[rgb(var(--rgb-accent)/0.55)]" />
+        <p
+          className="font-sans font-light text-body-sm leading-[1.65] text-charcoal text-pretty"
+          style={{
+            display: '-webkit-box',
+            WebkitLineClamp: wide ? 4 : 2,
+            WebkitBoxOrient: 'vertical',
+            overflow: 'hidden',
+          }}
+        >
+          {d.summary}
+        </p>
+
+        {/* tech — disciplined, monochrome (no pastel rainbow) */}
+        <ul className="flex flex-wrap gap-x-3 gap-y-1">
+          {d.tech.slice(0, maxTech).map((t) => (
+            <li key={t} className="font-mono text-meta uppercase tracking-label text-text-meta">
+              {t}
+            </li>
+          ))}
+        </ul>
+
+        {/* CTA row */}
+        <div className="mt-1 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-[rgb(var(--rgb-accent)/0.14)] pt-5">
+          <Link
+            href={`/work/${d.id}/`}
+            aria-label={`Read case study for ${d.title}`}
+            className="inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+          >
+            View project <span aria-hidden="true">→</span>
+          </Link>
+          {demoLink && (
+            <a
+              href={demoLink.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open live demo for ${d.title} (opens in new tab)`}
+              className="ml-auto inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+            >
+              Live <span aria-hidden="true">↗</span>
+            </a>
+          )}
+          {githubLink && (
+            <a
+              href={githubLink.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View ${d.title} source on GitHub (opens in new tab)`}
+              className={cn(
+                'inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta',
+                !demoLink && 'ml-auto',
+              )}
+            >
+              GitHub <span aria-hidden="true">↗</span>
+            </a>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
