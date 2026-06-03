@@ -9,6 +9,7 @@ import { Footer } from '@/components/Footer';
 import { HamburgerNavMount } from '@/components/HamburgerNavMount';
 import { Sidebar } from '@/components/Sidebar';
 import { SkipLink } from '@/components/SkipLink';
+import { ThemeProvider } from '@/components/ThemeProvider';
 import { cn } from '@/lib/cn';
 import { getProfile } from '@/lib/content';
 
@@ -85,9 +86,7 @@ export function generateMetadata(): Metadata {
       description,
       images: ['/og-image.svg'],
     },
-    other: {
-      'color-scheme': 'light',
-    },
+    // `color-scheme` is managed at runtime by next-themes (light/dark/system).
   };
 }
 
@@ -104,6 +103,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={cn(cormorant.variable, dmSans.variable, dmMono.variable)}
     >
       <head>
@@ -131,20 +131,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body className="bg-cream text-near-black">
-        <SkipLink />
-        <HamburgerNavMount />
-        <div className="flex flex-col md:flex-row min-h-screen">
-          <Sidebar />
-          <main
-            id="main"
-            tabIndex={-1}
-            className="flex-1 flex flex-col min-w-0"
-          >
-            <div className="flex-1">{children}</div>
-            <Footer />
-          </main>
-        </div>
+      <body className="bg-canvas text-ink">
+        <ThemeProvider>
+          <SkipLink />
+          <HamburgerNavMount />
+          <div className="flex flex-col md:flex-row min-h-screen">
+            <Sidebar />
+            <main
+              id="main"
+              tabIndex={-1}
+              className="flex-1 flex flex-col min-w-0"
+            >
+              <div className="flex-1">{children}</div>
+              <Footer />
+            </main>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
