@@ -70,7 +70,7 @@ export function Hero({ eyebrow, heading, subhead, ctaLabel, ctaHref }: HeroProps
         <p
           className={cn(
             'hero-enter hero-enter-delay-3',
-            'font-sans font-light text-[1.0625rem] text-charcoal',
+            'font-sans font-light text-prose text-charcoal',
             'leading-[1.65]',
             'max-w-[520px]',
             'mb-10',

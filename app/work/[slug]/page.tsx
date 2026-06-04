@@ -39,7 +39,7 @@ function renderMarkdown(markdown: string): React.ReactNode[] {
         </h3>
       );
     return (
-      <p key={key} className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.75] text-pretty">
+      <p key={key} className="font-sans font-light text-prose text-charcoal leading-[1.75] text-pretty">
         {parseInline(block)}
       </p>
     );
@@ -227,7 +227,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
                 {d.title}
               </HeroTitleSettle>
 
-              <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
+              <p className="font-sans font-light text-prose text-charcoal leading-[1.65] text-pretty">
                 {d.summary}
               </p>
 

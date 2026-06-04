@@ -61,7 +61,7 @@ export default function WorkIndexPage() {
               The Work
             </h1>
           </div>
-          <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] max-w-[640px] mt-6 text-pretty">
+          <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-[640px] mt-6 text-pretty">
             A small body of AI-assisted tools and reference materials. Built
             slowly, documented honestly, sized to a single careful hand.
           </p>

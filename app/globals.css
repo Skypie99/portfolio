@@ -58,6 +58,7 @@
   --rgb-canvas-alt:   245 237 222;   /* alternating sections — warmer sand */
   --rgb-surface:      255 255 255;   /* cards */
   --rgb-surface-warm: 247 239 228;   /* warm closing surfaces */
+  --rgb-surface-mid:  250 248 241;   /* raised panel — light: = cream (no change); dark: lifts (see html.dark) */
   --rgb-panel-cool:   205 224 212;   /* cool-tinted surface */
   --rgb-wash-cool:    234 241 236;   /* cool section background */
 
@@ -188,6 +189,8 @@
   /* Layout */
   --sidebar-w:   280px;
   --content-max: 1120px;
+  --measure:      65ch;   /* optimal body measure (~60–75 chars) */
+  --measure-wide: 72ch;   /* long-form prose (blog/case-study body) */
   --gutter:      var(--space-6);
 
   /* Shadows */
@@ -298,6 +301,7 @@ html.dark {
   --rgb-canvas-alt:   26 31 32;
   --rgb-surface:      30 36 38;
   --rgb-surface-warm: 38 31 27;
+  --rgb-surface-mid:  37 43 45;      /* raised panel — clearly above canvas(21 25 26)/canvas-alt(26 31 32) so dark panels read as designed depth, not a flat invert */
   --rgb-panel-cool:   28 42 42;
   --rgb-wash-cool:    22 32 31;
 
