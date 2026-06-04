@@ -1,90 +1,103 @@
+'use client';
+
+import type { ReactNode } from 'react';
+
+import { useParallax } from '@/lib/motion';
 import { cn } from '@/lib/cn';
 
 /**
- * Per-project warm STONE palette (sun-baked cards). A refined, gallery-smooth
- * clay/sandstone — all in the desert family. hi = sun-lit top, mid = body,
- * lo = the shadowed base (deep umber so cream ink/title clears WCAG AA there),
- * vein = a faint mineral mottle.
+ * Golden-hour palette sampled from the locked cinematic intro (cdesert grade +
+ * exposure): a luminous gold-cream sky → gold-peach → terracotta-amber → deep
+ * terracotta over a deep warm base. The field reads like the intro's sky-to-cliff,
+ * with the title carved into the deep pool at the base — echoing the intro's
+ * wordmark resolving on the lit cliff. Fixed RGB (a warm "photograph": same in
+ * light + dark).
  */
-const STONE: Record<string, { hi: string; mid: string; lo: string; vein: string }> = {
-  'accessmap': { hi: '201 141 95', mid: '164 97 59', lo: '38 22 12', vein: '120 64 36' }, // terracotta
-  'claude-corp': { hi: '193 145 86', mid: '151 103 53', lo: '36 24 12', vein: '116 78 40' }, // deep ochre
-  'prompt-library': { hi: '209 171 113', mid: '173 132 80', lo: '40 30 16', vein: '134 98 54' }, // pale sandstone
-  'pacman-code-trainer': { hi: '190 118 76', mid: '150 80 46', lo: '36 20 11', vein: '120 56 30' }, // rust
-  'pacman': { hi: '190 118 76', mid: '150 80 46', lo: '36 20 11', vein: '120 56 30' },
-  'mutual-mesh': { hi: '192 140 118', mid: '153 103 85', lo: '37 24 19', vein: '120 80 64' }, // clay-rose
-  'mutual': { hi: '192 140 118', mid: '153 103 85', lo: '37 24 19', vein: '120 80 64' },
+const SKY = '255 226 184'; // luminous gold-cream (intro exposure top)
+const SUN = '255 240 214'; // sun glow
+const PEACH = '245 196 138'; // gold-peach
+const CLIFF = '176 104 58'; // deep terracotta (intro grade bottom)
+const DEEP = '28 12 4'; // deep warm base / title pool (intro title scrim)
+
+/** Per-project MID hue — a SUBTLE shift, all inside the golden-hour family. */
+const FIELD_MID: Record<string, string> = {
+  'accessmap': '224 150 90', // terracotta-amber (classic)
+  'claude-corp': '206 134 78', // deeper amber
+  'prompt-library': '236 186 118', // gold-forward
+  'pacman-code-trainer': '200 108 60', // rust
+  'pacman': '200 108 60',
+  'mutual-mesh': '202 142 114', // clay-rose
+  'mutual': '202 142 114',
 };
 
-/** Site film-grain (matches body::after) — the stone's tooth. */
+/** Site film-grain (matches body::after) — crafted, photographic texture. */
 const NOISE =
   "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23g)'/%3E%3C/svg%3E\")";
 
 type CardFieldProps = {
   slug: string;
+  /** Sizing/shape classes — the PARENT owns aspect/height. */
   className?: string;
+  /** Parallax depth for the drifting sun glow (small; far tier). 0 disables. */
+  depth?: number;
+  /** Overlaid editorial content (numeral, title, meta). */
+  children?: ReactNode;
 };
 
 /**
- * CardField — the sun-baked stone slab (the whole card's surface). A refined,
- * gallery-smooth clay tablet: lit at the top, deepening into shadow at the base
- * where the inscription sits. All layers are static and baked once — EXCEPT the
- * warm "sheen" which is the moving sun (positioned by --mx/--my, gated on
- * --hover, both set by useSpotlight on the card root). Decorative; the carved
- * content sits above it (z-10).
+ * CardField — golden-hour "material" matched to the cinematic intro. A luminous
+ * vertical sky→cliff gradient, a drifting sun glow (useParallax, RM-safe), a soft
+ * vignette + film grain for photographic depth, and a deep base pool that keeps an
+ * overlaid cream title at WCAG AA.
  */
-export function CardField({ slug, className }: CardFieldProps) {
-  const s = STONE[slug] ?? STONE['accessmap'];
+export function CardField({ slug, className, depth = 0.04, children }: CardFieldProps) {
+  const ref = useParallax<HTMLDivElement>(depth);
+  const mid = FIELD_MID[slug] ?? FIELD_MID['accessmap'];
+
   return (
-    <div aria-hidden="true" className={cn('pointer-events-none absolute inset-0 overflow-hidden', className)}>
-      {/* Lithology — sun-lit top → deep shadowed base. */}
+    <div
+      className={cn('relative overflow-hidden', className)}
+      style={{ backgroundColor: `rgb(${DEEP})` }}
+    >
+      {/* Luminous golden-hour field: sky → gold → project-hue → cliff → deep pool. */}
       <div
+        aria-hidden="true"
         className="absolute inset-0"
         style={{
-          backgroundImage: `linear-gradient(177deg, rgb(${s.hi}) 0%, rgb(${s.mid}) 30%, rgb(${s.mid}) 46%, rgb(${s.lo}) 82%, rgb(${s.lo}) 100%)`,
+          backgroundImage: `linear-gradient(176deg, rgb(${SKY}) 0%, rgb(${PEACH}) 17%, rgb(${mid}) 43%, rgb(${CLIFF}) 71%, rgb(70 33 16) 88%, rgb(${DEEP}) 100%)`,
         }}
       />
-      {/* Inscription shadow — guarantees the lower stone is deep (AA for ink/title). */}
+      {/* Drifting sun glow (parallax) — the moving golden light. Oversized. */}
       <div
-        className="absolute inset-0"
+        ref={ref}
+        aria-hidden="true"
+        className="absolute -inset-[14%] will-change-transform"
         style={{
-          backgroundImage: `linear-gradient(to top, rgb(${s.lo}) 6%, rgb(${s.lo} / 0.62) 36%, transparent 62%)`,
+          backgroundImage: `radial-gradient(105% 60% at 50% -2%, rgb(${SUN} / 0.8), transparent 52%)`,
         }}
       />
-      {/* Minimal mineral mottling — refined, barely there. */}
+      {/* Soft vignette — photographic edge fall-off, like the intro. */}
       <div
-        className="absolute inset-0"
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
         style={{
-          backgroundImage: `radial-gradient(120% 80% at 24% 16%, rgb(${s.vein} / 0.04), transparent 60%), radial-gradient(90% 70% at 82% 38%, rgb(18 10 4 / 0.04), transparent 55%)`,
+          backgroundImage: `radial-gradient(125% 115% at 50% 38%, transparent 56%, rgb(${DEEP} / 0.5) 100%)`,
         }}
       />
-      {/* Static raking key-light (the resting sun, upper-left) + base occlusion. */}
+      {/* Film grain. */}
       <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage: `radial-gradient(140% 110% at 16% -12%, rgb(255 234 196 / 0.26), transparent 46%), radial-gradient(120% 80% at 50% 122%, rgb(18 10 4 / 0.30), transparent 60%)`,
-        }}
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-[0.13] mix-blend-soft-light"
+        style={{ backgroundImage: NOISE, backgroundSize: '160px 160px' }}
       />
-      {/* Moving sun — a warm sheen at the cursor, gated on hover. The only moving layer. */}
+      {/* Fine keyline — frames the field like a mounted print (a hairline of warm
+          light inside the top edge, deepening at the base). */}
       <div
-        className="absolute inset-0 mix-blend-soft-light"
-        style={{
-          backgroundImage: `radial-gradient(58% 70% at var(--mx, 18%) var(--my, 6%), rgb(255 236 198 / calc(0.42 * var(--hover, 0))), transparent 62%)`,
-        }}
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{ boxShadow: 'inset 0 1px 0 0 rgb(255 244 224 / 0.22), inset 0 0 0 1px rgb(255 244 224 / 0.10)' }}
       />
-      {/* Fine grain — the stone's tooth. */}
-      <div
-        className="absolute inset-0 opacity-[0.09] mix-blend-soft-light"
-        style={{ backgroundImage: NOISE, backgroundSize: '170px 170px' }}
-      />
-      {/* Chamfered stone bevel — the slab is a physical object. */}
-      <div
-        className="absolute inset-0"
-        style={{
-          boxShadow:
-            'inset 1px 1px 0 0 rgb(255 244 224 / 0.18), inset -1px -2px 7px 0 rgb(18 10 4 / 0.30), inset 0 0 0 1px rgb(18 10 4 / 0.10)',
-        }}
-      />
+      {children && <div className="relative z-10 flex h-full flex-col">{children}</div>}
     </div>
   );
 }
