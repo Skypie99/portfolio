@@ -23,10 +23,20 @@ export function Footer() {
   return (
     <footer
       className={cn(
+        'relative',
         'bg-warm-white border-t border-border-decorative',
-        'px-gutter pt-16 pb-8',
+        'px-gutter pt-20 pb-8',
       )}
     >
+      {/* faint warm hairline-glow marking the footer threshold */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-px"
+        style={{
+          background:
+            'linear-gradient(to right, transparent, rgb(var(--rgb-accent) / 0.4) 50%, transparent)',
+        }}
+      />
       <Reveal className="max-w-content mx-auto">
         {/* Brand block — sits above the columns */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 pb-10 border-b border-stone/60">
