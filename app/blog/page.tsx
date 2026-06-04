@@ -124,7 +124,7 @@ export default function BlogIndexPage() {
                       {/* Title */}
                       <h3
                         className={cn(
-                          'font-serif font-light text-[clamp(1.5rem,3.5vw,2.25rem)] leading-[1.1] text-balance',
+                          'font-serif font-light text-[clamp(1.5rem,3.5vw,2.25rem)] leading-[1.15] text-balance',
                           'text-near-black group-hover:text-accent-text group-focus-visible:text-accent-text',
                           'transition-colors duration-fast ease-out',
                         )}

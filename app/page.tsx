@@ -223,7 +223,7 @@ export default function HomePage() {
               AnimatedStepList not used: it lacks the `highlight` prop and
               manages its own dividers inside an <ol>, which would require
               restructuring the existing divider elements between steps. */}
-          <div className="bg-surface-mid rounded-lg p-8 md:p-12 border border-stone dark:border-line-strong/60 space-y-8 shadow-lg dark:shadow-md">
+          <div className="bg-surface-mid rounded-lg p-8 md:p-12 border border-stone dark:border-line-strong/75 space-y-8 shadow-lg dark:shadow-md">
             <Reveal index={0} variant="depth">
               <NumberedStep
                 number="01"

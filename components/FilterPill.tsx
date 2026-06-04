@@ -35,10 +35,10 @@ export function FilterPill({
       disabled={disabled}
       aria-pressed={isActive}
       className={cn(
-        'px-3 py-1.5 inline-flex items-center gap-2 whitespace-nowrap',
+        'min-h-11 px-4 py-1.5 inline-flex items-center justify-center gap-2 whitespace-nowrap',
         'rounded-pill font-mono text-meta tracking-label uppercase',
         'transition-all duration-base ease-out',
-        'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta rounded-sm',
+        'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta',
         // Resting state
         !isActive && !disabled && [
           'bg-transparent border border-[var(--pill-border-resting)] text-[var(--pill-text-resting)]',
