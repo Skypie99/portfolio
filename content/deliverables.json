@@ -108,42 +108,6 @@
     "body": "## The problem\n\nMy AI prompts were scattered across notes, markdown files, and memory. I needed one searchable place to keep them — and a hard requirement: nothing leaves the browser. No API keys hitting a backend. No prompts stored in the cloud. The privacy constraint wasn't a nice-to-have; it was the whole product.\n\n## The approach\n\nBuilt in Next.js 15 with localStorage as the entire data layer. One constraint — \"everything stays on the user's machine\" — became the governing design principle. Search? localStorage query. Tags, favorites, import, export, dark mode — all local-first. I shipped across 20 stacked branches over several months, adding features without ever standing up a server.\n\nThe constraint forced discipline. You can't cheat with a backend. Every feature had to be thoughtfully scoped because there was nowhere to offload decisions.\n\n## What shipped\n\nA local-first prompt manager with full-text search, tag filtering, favorites, bulk import/export, and dark mode. Fifty features shipped. Zero backend. Deployed as a static site on GitHub Pages and open-sourced under a permissive license.\n\n## Reflection\n\nLocal-first privacy isn't a limitation — it's a competitive advantage. Building everything in the open with no server made the product sharper, not weaker. I'd make the same call again."
   },
   {
-    "id": "pacman-code-trainer",
-    "title": "Pac-Man Code Trainer",
-    "summary": "CLI commands turned into a retro arcade game. 56 flashcards covering Claude Code, macOS, and Git — zero dependencies, runs straight from GitHub Pages.",
-    "role": "Solo builder",
-    "tech": [
-      "Vanilla JS",
-      "HTML",
-      "CSS",
-      "GitHub Pages"
-    ],
-    "year": 2026,
-    "heroImage": {
-      "src": "/images/deliverables/pacman-code-trainer/hero.png",
-      "alt": "Pac-Man Code Trainer start screen — neon arcade title on a dark grid, PRESS START button, category tabs along the bottom"
-    },
-    "links": [
-      {
-        "label": "GitHub",
-        "href": "https://github.com/Skypie99/pacman-code-trainer",
-        "type": "github"
-      },
-      {
-        "label": "Live demo",
-        "href": "https://skypie99.github.io/pacman-code-trainer/",
-        "type": "demo"
-      }
-    ],
-    "tags": [
-      "tools",
-      "game",
-      "learning"
-    ],
-    "featured": false,
-    "body": "## The problem\n\nI kept forgetting Claude Code commands and macOS shortcuts. Flashcards are the right learning tool, but they're boring enough that I'd skip them. I wanted something where repetition felt like play — where a wrong answer meant losing a life, not quietly failing a quiz.\n\n## The approach\n\nA weekend build in vanilla HTML, CSS, and JavaScript. No frameworks — that constraint was intentional. Every feature had to be simple enough to implement in pure JS. The Pac-Man mechanics aren't decoration: right answers make Pac-Man eat the dot, wrong answers let the ghosts catch you. The game loop *is* the learning loop.\n\nKeeping it dependency-free meant it runs anywhere, forever, without worrying about broken packages or build steps.\n\n## What shipped\n\n56 flashcards across Claude Code, macOS terminal, and Git commands, arcade mechanics with lives and scoring, zero npm dependencies, and a one-file deploy to GitHub Pages. No build step required.\n\n## Reflection\n\nI still use it. The commands I learned through the game are the ones that stuck. Sometimes the right solution is a weekend project in vanilla JS — and reaching for a framework would have been the wrong call."
-  },
-  {
     "id": "mutual-mesh",
     "title": "Mutual Mesh",
     "summary": "Mutual-aid app connecting neighbours who want to help with those who need it. Privacy-first: a PRIVACY.md gate blocks every new feature before any code ships.",
