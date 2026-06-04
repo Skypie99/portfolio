@@ -88,12 +88,15 @@ export default function HomePage() {
       <section
         id="showcase"
         className={cn(
+          'relative isolate overflow-hidden',
           'px-gutter py-20 lg:py-24',
           'bg-wa-teal-wash',
           'border-t border-wa-teal-soft/40',
         )}
       >
-        <div className="max-w-content mx-auto">
+        {/* layered golden-hour depth — far tier, drifts on scroll, static under RM */}
+        <ParallaxWash depth="far" tone="teal" />
+        <div className="relative z-10 max-w-content mx-auto">
           <Reveal variant="scene">
             {/* Section label */}
             <p className="font-mono text-label text-sage-text uppercase tracking-label mb-3 flex items-center gap-2">
@@ -115,8 +118,9 @@ export default function HomePage() {
               <Reveal
                 key={project}
                 index={i}
+                variant="depth"
                 className={cn(
-                  'group flex flex-col bg-cream p-6',
+                  'group flex flex-col bg-cream p-6 md:p-7',
                   'transition-colors duration-base ease-out hover:bg-surface',
                 )}
               >
@@ -195,13 +199,16 @@ export default function HomePage() {
       <section
         id="process"
         className={cn(
+          'relative isolate overflow-hidden',
           'px-gutter',
           'py-24 lg:py-32',
           'bg-warm-white',
           'border-t border-border-decorative',
         )}
       >
-        <div className="max-w-content mx-auto">
+        {/* layered golden-hour depth behind the method panel — far tier, RM-static */}
+        <ParallaxWash depth="far" />
+        <div className="relative z-10 max-w-content mx-auto">
           <Reveal variant="scene" className="mb-12 pl-4 border-l-2 border-terracotta">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4">
               Method
@@ -216,8 +223,8 @@ export default function HomePage() {
               AnimatedStepList not used: it lacks the `highlight` prop and
               manages its own dividers inside an <ol>, which would require
               restructuring the existing divider elements between steps. */}
-          <div className="bg-cream rounded-lg p-8 md:p-12 border border-stone space-y-8 shadow-soft">
-            <Reveal index={0}>
+          <div className="bg-cream rounded-lg p-8 md:p-12 border border-stone space-y-8 shadow-lg">
+            <Reveal index={0} variant="depth">
               <NumberedStep
                 number="01"
                 title="Discover"
@@ -226,7 +233,7 @@ export default function HomePage() {
               />
             </Reveal>
             <div className="border-t border-stone/70" />
-            <Reveal index={1}>
+            <Reveal index={1} variant="depth">
               <NumberedStep
                 number="02"
                 title="Build"
@@ -235,7 +242,7 @@ export default function HomePage() {
               />
             </Reveal>
             <div className="border-t border-stone/70" />
-            <Reveal index={2}>
+            <Reveal index={2} variant="depth">
               <NumberedStep
                 number="03"
                 title="Ship"
@@ -270,7 +277,7 @@ export default function HomePage() {
             </h2>
           </Reveal>
 
-          <Reveal className="max-w-[640px] flex flex-col gap-6">
+          <Reveal variant="depth" className="max-w-[640px] flex flex-col gap-6">
             {/* Pull-quote accent — editorial tone-setter */}
             <blockquote
               className={cn(
@@ -283,7 +290,7 @@ export default function HomePage() {
               One careful deliverable beats a dozen rough ones.
             </blockquote>
 
-            <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
+            <p className="font-sans font-light text-step-1 text-ink leading-[1.6] text-pretty">
               Most of what I make starts with a problem worth solving. I prefer
               small, exact software to large, approximate software. I work from
               {' '}{profile.location}, mostly on AI tooling, accessibility
@@ -329,8 +336,8 @@ export default function HomePage() {
           <ul className="flex flex-col divide-y divide-stone/70">
             {certificates.map((c, i) => (
               <li key={c.id} className="py-8 first:pt-0 last:pb-0 group">
-                <Reveal index={i}>
-                  <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-12">
+                <Reveal index={i} variant="depth">
+                  <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-12 transition-transform duration-base ease-out group-hover:translate-x-1">
                     <p className="font-mono text-meta tracking-label uppercase text-text-meta md:w-40 shrink-0">
                       {c.issuer}
                     </p>
