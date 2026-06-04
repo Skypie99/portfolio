@@ -123,18 +123,6 @@
       "src": "/images/deliverables/ghost-code/hero.png",
       "alt": "Ghost Code arcade screen — the neon Phantom mascot hovering between four command-token answers, score and spirit-life HUD in a synthwave cabinet"
     },
-    "links": [
-      {
-        "label": "GitHub",
-        "href": "https://github.com/Skypie99/ghost-code",
-        "type": "github"
-      },
-      {
-        "label": "Live demo",
-        "href": "https://skypie99.github.io/ghost-code/",
-        "type": "demo"
-      }
-    ],
     "tags": [
       "tools",
       "game",
