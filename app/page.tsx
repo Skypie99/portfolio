@@ -277,7 +277,7 @@ export default function HomePage() {
             </h2>
           </Reveal>
 
-          <Reveal variant="depth" className="max-w-[640px] flex flex-col gap-6">
+          <Reveal variant="depth" className="max-w-measure flex flex-col gap-6">
             {/* Pull-quote accent — editorial tone-setter */}
             <blockquote
               className={cn(
