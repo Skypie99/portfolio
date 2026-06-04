@@ -57,7 +57,17 @@ export function WorkFilterGrid({ deliverables }: WorkFilterGridProps) {
   const featuredVisible = !activeTag || (featured && featured.tags.includes(activeTag));
 
   return (
-    <div>
+    <div className="relative isolate">
+      {/* soft wash so the liquid-glass cards have something to refract —
+          a warm golden glow + a whisper of cool blue (decorative, static) */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{
+          backgroundImage:
+            'radial-gradient(38% 36% at 18% 22%, rgb(255 212 158 / 0.17), transparent 62%), radial-gradient(46% 44% at 88% 88%, rgb(150 188 214 / 0.18), transparent 64%)',
+        }}
+      />
       {/* Filter pills */}
       {allTags.length > 0 && (
         <div
