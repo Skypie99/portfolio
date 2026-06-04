@@ -204,3 +204,24 @@ No `width`/`border-width` animation (CLS); dividers grow via `scale-x` (composit
 magnetic both ride the existing fine-pointer + RM gates, so touch and reduced-motion get a calm,
 static, fully-AA site. The intro scene (GSAP, `components/cinematic/**`, `globals.css` 1044→EOF) is
 byte-identical — none of the above touches it.
+
+---
+
+## §11 — WOW continuity pass (2026-06-04) — "one cinematic piece"
+
+The intro's golden light + signature *carve-in* now carry through the page, so the site reads as one
+piece instead of a stunning intro on an ordinary page. The intro is studied read-only; its quint curve
+`cubic-bezier(0.83,0,0.17,1)` is **never** reused below the landing — new motion uses the site easings.
+The intro files are byte-identical (verified by fingerprint).
+
+| Move | Where | Motion | Reduced motion / fallback |
+|---|---|---|---|
+| **Handoff bloom** ("sun follows you in") | `.hero-bg-drift` keyframe (`globals.css`) | the warm hero wash now lives over the hero's full pass: **blooms opacity 0.5→1 on ENTRY** (light resolves in as the intro releases), holds, then drifts up + fades on exit (original behaviour preserved). One scroll-linked animation (`animation-range: entry 0% exit 100%`); no two-animation opacity conflict | `@supports(view())` + RM gated → wash sits at full opacity (current behaviour). Headline also lands before the light deepens (readability) |
+| **Light continuity** ("sun in every room") | `ParallaxWash depth="far"` added to the homepage Certificates section, `/work/` + `/certificates/` headers, and `/work/[slug]` gallery + "More work" | the warm golden field now persists across every major section, not just some | decorative `aria-hidden` behind content (`z-10`); RM → static glow |
+| **Lit focal plane** | `CardField` `featured` prop (`ProjectCard` passes `d.featured`) | featured card's warm caustic alpha 0.20→0.28 — reads "closer to the sun", echoing the intro's focal-depth hierarchy | static; decorative (behind content) so no contrast impact |
+| **Carve-in recurs** | `Reveal variant="carve"` (`.reveal-carve`), applied to case-study body `##` H2s; prose uses `depth` | a brief `filter: blur(5px)→0` + 18px rise on `--ease-gh-settle` — the intro title's focus-pull recurs as the editorial body reveals in reading order | **sharp at rest**; RM / no-JS → instantly sharp (`filter: none`), never blurred, never animates while unreadable |
+| **CTA "sun at rest" echo** | `/work/[slug]` closing CTA | the homepage Contact `ambient-drift` warm field + `Reveal variant="scene"` recur on every CTA entry | `ambient-drift` is no-preference gated → static glow |
+
+Plus craft: Process step dividers → `.rule-ember` gradient hairlines; About Principles/Currently body →
+`variant="depth"`; Contact "Elsewhere" h2 → `.ember`; showcase stat figures gain a `group-hover` lean
+(compositor, origin-left). All transform/opacity/filter-only, AA-preserved, RM-safe.

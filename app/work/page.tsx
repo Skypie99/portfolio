@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { SettleHeading } from '@/components/HeroSettle';
+import { ParallaxWash } from '@/components/ParallaxWash';
 import { WorkFilterGrid } from '@/components/WorkFilterGrid';
 import { cn } from '@/lib/cn';
 import { getDeliverables, getProfile } from '@/lib/content';
@@ -44,12 +45,16 @@ export default function WorkIndexPage() {
       {/* Page header */}
       <section
         className={cn(
+          'relative isolate overflow-hidden',
           'px-gutter',
           'py-24 lg:py-32',
           'bg-cream',
         )}
       >
-        <div className="max-w-content mx-auto">
+        {/* golden-hour light continuity (wow 2026-06-04) — arriving at the
+            showcase feels lit, carrying the desert's warmth in. RM → static. */}
+        <ParallaxWash depth="far" />
+        <div className="relative z-10 max-w-content mx-auto">
           <div className="pl-4 border-l-2 border-terracotta">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />

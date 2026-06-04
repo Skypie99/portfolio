@@ -1,0 +1,54 @@
+[If the Gmail draft failed again, the connector needs reconnecting. Full report:
+summaries/2026-06-04_Portfolio_WOW_Report.md]
+
+To: skylerhalisky@gmail.com
+Subject: Portfolio — WOW continuity pass (branch ready for review, intro untouched)
+
+Hi Sky,
+
+The "WOW — one cinematic piece" pass is done and green on branch
+polish/portfolio-wow-2026-06-04 (NOT merged — main stays your gate). Full report:
+summaries/2026-06-04_Portfolio_WOW_Report.md.
+
+HONESTY GATE — proceed (focused), then stop.
+After three rounds the site is at a high bar. The one real gap was continuity: it read like a
+stunning intro on top of a very good but ordinary page, because the desert's golden light and the
+intro's signature carve-in went silent below the landing. This round closes exactly that — wow from
+craft + continuity, not new effects. It's now at diminishing returns; I recommend stopping.
+
+THE INTRO WAS NEVER TOUCHED (your hard rule), proven mechanically: a guard ran after every step and the
+final protected-set fingerprint matches the pre-flight baseline exactly. Zero diff in components/cinematic,
+ContentReveal, the cinematic globals.css range, tokens, assets, and the shared surfaces. New motion uses the
+site's easings only — the intro's curve is never reused.
+
+FOUR SIGNATURE MOVES (all extend the intro's language):
+1. "The sun follows you in" — the hero's warm wash now blooms in as the intro releases, so the golden
+   light resolves into the page as one continuous sun (not a cut). Also lets the headline land first.
+2. "The sun is in every room" — the warm light field is now on every major section it was missing from
+   (homepage Certificates, /work/ + /certificates/ headers, /work/[slug] gallery + more-work).
+3. "Lit /work/ centerpiece" — the featured card glows a touch warmer (focal plane), echoing the intro's
+   focal depth; the /work/ header is lit. Shipped cascade untouched (you chose refine-in-place).
+4. "The carve-in recurs" — case-study body H2s carve in (blur to sharp) like the intro title, and the
+   body now reveals in reading order instead of one block.
+
+Plus craft: Process dividers are warm gradient rules; Contact "Elsewhere" heading is now ember (all
+section headings match); stat figures lean in on hover; the closing CTA gains the homepage's warm
+"sun at rest" drift.
+
+NON-NEGOTIABLES HELD: WCAG AA in both modes (washes are decorative behind content; carve text is sharp at
+rest; ember headings are large-text); reduced-motion honored for every new motion (calm/static, instantly
+sharp); transform/opacity/filter only (no CLS); both modes; no new dependency. Build, typecheck, 160 tests,
+and static-integrity all pass.
+
+ONE FLAG (out of scope, your call): the homepage hero heading still says "…A Pac-Man trainer." after the
+Ghost Code rebrand. I didn't rewrite your headline voice — tell me the wording and I'll fix it.
+
+HOW TO REVIEW:
+  git diff main..polish/portfolio-wow-2026-06-04   (11 files, +133/-35, no intro files)
+Then live, both modes + mobile/desktop: scroll out of the intro into the hero (light carries through);
+scroll the homepage (warm light everywhere, warm Process rules, stat hover); /work/ (lit header, brighter
+featured card); a /work/[slug] (H2s carve in, warm closing CTA); tab with the keyboard; turn on Reduce
+Motion and re-walk (calm/static, text instantly sharp); confirm the intro is unchanged. Confirm the wow
+lands AND the text still reads effortlessly.
+
+— Claude (Portfolio WOW pass)

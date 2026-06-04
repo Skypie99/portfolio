@@ -33,27 +33,48 @@ function renderMarkdown(markdown: string): React.ReactNode[] {
   let firstPara = true;
   return blocks.map((block, i) => {
     const key = `b-${i}`;
+    // Reading-order choreography (wow 2026-06-04, SM4): each block reveals as it
+    // scrolls in. The `##` sub-headings CARVE in (blur→sharp focus-pull) so the
+    // locked intro title's signature gesture recurs through the editorial body;
+    // H3s + prose rise with the depth reveal. Stagger capped so long bodies
+    // never pile up. RM / no-JS → final sharp state (see .reveal-carve).
+    const index = Math.min(i, 4);
     if (block.startsWith('## '))
       return (
-        <h2 key={key} className="font-serif font-light text-[clamp(1.5rem,3vw,2rem)] text-near-black leading-[1.1] mt-12 mb-4 first:mt-0" style={{ letterSpacing: '-0.01em' }}>
+        <Reveal
+          key={key}
+          as="h2"
+          variant="carve"
+          index={index}
+          className="font-serif font-light text-[clamp(1.5rem,3vw,2rem)] tracking-[-0.01em] text-near-black leading-[1.1] mt-12 mb-4 first:mt-0"
+        >
           {block.slice(3)}
-        </h2>
+        </Reveal>
       );
     if (block.startsWith('### '))
       return (
-        <h3 key={key} className="font-serif font-light text-[clamp(1.25rem,2.5vw,1.5rem)] text-near-black leading-[1.15] mt-8 mb-3" style={{ letterSpacing: '-0.01em' }}>
+        <Reveal
+          key={key}
+          as="h3"
+          variant="depth"
+          index={index}
+          className="font-serif font-light text-[clamp(1.25rem,2.5vw,1.5rem)] tracking-[-0.01em] text-near-black leading-[1.15] mt-8 mb-3"
+        >
           {block.slice(4)}
-        </h3>
+        </Reveal>
       );
     const dropCap = firstPara;
     firstPara = false;
     return (
-      <p
+      <Reveal
         key={key}
+        as="p"
+        variant="depth"
+        index={index}
         className={`font-sans font-light text-prose text-charcoal leading-[1.75] text-pretty nums-oldstyle${dropCap ? ' drop-cap' : ''}`}
       >
         {parseInline(block)}
-      </p>
+      </Reveal>
     );
   });
 }
@@ -335,19 +356,23 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
           {/* Golden-hour scroll-depth behind the case-study prose */}
           <ParallaxWash depth="far" />
           <div className="relative z-10 max-w-content mx-auto">
-            <Reveal variant="scene">
-              <article aria-label={`${d.title} case study`} className="max-w-measure-wide flex flex-col gap-6">
-                {renderMarkdown(d.body)}
-              </article>
-            </Reveal>
+            {/* Each block self-reveals in reading order (carve on H2s, depth on
+                prose) — see renderMarkdown — so the body has internal cinematic
+                choreography instead of one undifferentiated fade. */}
+            <article aria-label={`${d.title} case study`} className="max-w-measure-wide flex flex-col gap-6">
+              {renderMarkdown(d.body)}
+            </article>
           </div>
         </section>
       )}
 
       {/* Optional gallery */}
       {d.gallery && d.gallery.length > 0 && (
-        <section className="px-gutter py-24 lg:py-32 bg-cream border-t border-border-decorative">
-          <div className="max-w-content mx-auto">
+        <section className="relative overflow-hidden px-gutter py-24 lg:py-32 bg-cream border-t border-border-decorative">
+          {/* golden-hour light continuity (wow 2026-06-04) — the gallery sits in
+              the same warm field as the case-study body above it. RM → static. */}
+          <ParallaxWash depth="far" />
+          <div className="relative z-10 max-w-content mx-auto">
             <Reveal variant="scene">
               <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
                 Gallery
@@ -393,12 +418,15 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
       {others.length > 0 && (
         <section
           className={cn(
+            'relative overflow-hidden',
             'px-gutter py-24 lg:py-32',
             // Dani wave4: warm-white for section variety between cream main and gallery.
             'bg-warm-white border-t border-border-decorative',
           )}
         >
-          <div className="max-w-content mx-auto">
+          {/* golden-hour light continuity — the glass cards sit in warm light, not a bare field. */}
+          <ParallaxWash depth="far" />
+          <div className="relative z-10 max-w-content mx-auto">
             <Reveal variant="scene">
               <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
                 More work
@@ -428,12 +456,25 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
       {/* Closing CTA */}
       <section
         className={cn(
+          'relative overflow-hidden',
           'px-gutter py-24 lg:py-32',
           'bg-cream border-t border-border-decorative',
         )}
       >
-        <Reveal className="max-w-content mx-auto flex flex-col items-start gap-8">
-          <h2 className="font-serif font-light text-step-4 text-near-black max-w-2xl leading-tight">
+        {/* ambient golden-hour drift echo (wow 2026-06-04, C5) — the homepage
+            contact's "sun at rest" recurs on every CTA entry, so the invitation
+            reads warm everywhere. CSS/compositor-only; static under reduced motion. */}
+        <div
+          aria-hidden="true"
+          className="ambient-drift pointer-events-none absolute -inset-[25%] z-0"
+          style={{
+            background:
+              'radial-gradient(55% 50% at 50% 38%, rgb(var(--rgb-gold) / 0.22), rgb(var(--rgb-accent-soft) / 0.10) 46%, transparent 70%)',
+            willChange: 'transform',
+          }}
+        />
+        <Reveal variant="scene" className="relative z-10 max-w-content mx-auto flex flex-col items-start gap-8">
+          <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
             Have something like this?
             <br />
             Write to me.

@@ -46,7 +46,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
         className,
       )}
     >
-      <CardField slug={d.id} />
+      <CardField slug={d.id} featured={d.featured} />
 
       <div className="relative z-10 flex flex-1 flex-col p-7 md:p-9">
         {/* open top glass — ghosted numeral + Featured seal */}

@@ -64,3 +64,16 @@ rhythm. New components: `CardField` (living caustic), `TactileMedia`, `MagneticB
 `SettleHeading`. TagPill gains a faint inset hover ring (tint-agnostic, no CLS). See `MOTION_SYSTEM.md`
 §10 for the motion side. Dead `.work-card` class removed. All new colour use reuses `--rgb-*` tokens
 (AA in both modes); the intro scene is untouched.
+
+## WOW continuity pass (2026-06-04)
+The desert's **golden light now carries through the whole page** so it reads as one cinematic piece, not
+an intro on an ordinary page. The hero wash **blooms in** as the intro releases (light continuity); a warm
+`ParallaxWash` is now on **every** major section (the "sun in every room" — homepage Certificates, `/work/`
++ `/certificates/` headers, `/work/[slug]` gallery + "More work"); the **featured** work card reads as a
+brighter **focal plane** (`CardField featured` → caustic 0.28); the intro title's **carve-in** (blur→sharp)
+recurs on case-study body H2s (`Reveal variant="carve"`); and the closing CTA gains the homepage's
+`ambient-drift` warmth. Craft: Process dividers → `.rule-ember`; Contact "Elsewhere" h2 → `.ember` (every
+section h2 is now ember). Readability is protected — washes are decorative behind content, carve text is
+sharp at rest (RM → instantly sharp), and every new motion is `@supports`/reduced-motion gated. New motion
+uses the site's easings only — the intro's quint curve is never reused, and the intro files are
+byte-identical. See `MOTION_SYSTEM.md` §11.

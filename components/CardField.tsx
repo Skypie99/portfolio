@@ -40,11 +40,17 @@ const NOISE =
 
 type CardFieldProps = {
   slug: string;
+  /** Featured card → a brighter warm caustic so it reads as the lit "focal
+   *  plane" (wow 2026-06-04, SM3 — echoes the intro's focal-depth hierarchy).
+   *  Decorative only: the pool sits behind the glass + ink content, so a
+   *  warmer caustic never affects text contrast. */
+  featured?: boolean;
   className?: string;
 };
 
-export function CardField({ slug, className }: CardFieldProps) {
+export function CardField({ slug, featured = false, className }: CardFieldProps) {
   const sig = SIGNATURE[slug] ?? SIGNATURE['accessmap'];
+  const causticAlpha = featured ? 0.28 : 0.2;
 
   return (
     <div
@@ -56,7 +62,7 @@ export function CardField({ slug, className }: CardFieldProps) {
           with a slow lag, so it reads as one sun with the ::after specular. */}
       <div
         className="absolute inset-0 cf-caustic"
-        style={{ backgroundImage: `radial-gradient(72% 56% at 20% -10%, rgb(${sig} / 0.20), transparent 60%)` }}
+        style={{ backgroundImage: `radial-gradient(72% 56% at 20% -10%, rgb(${sig} / ${causticAlpha}), transparent 60%)` }}
       />
       {/* soft top lens-sweep — internal glass highlight, reads convex */}
       <div
