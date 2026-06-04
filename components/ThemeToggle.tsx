@@ -65,7 +65,7 @@ export function ThemeToggle({ className, withLabel = false }: Props) {
       aria-label={mounted ? `Switch to ${next} mode` : 'Toggle colour theme'}
       title={mounted ? `Switch to ${next} mode` : undefined}
       className={cn(
-        'inline-flex items-center justify-center h-9 w-9 rounded-pill shrink-0',
+        'inline-flex items-center justify-center h-11 w-11 rounded-pill shrink-0',
         'border border-line text-ink-meta',
         'transition-colors duration-base ease-out',
         'hover:text-accent hover:border-line-strong',

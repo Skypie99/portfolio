@@ -137,9 +137,10 @@ export function Footer() {
                     className={cn(
                       'link-draw font-sans text-body-sm inline-flex items-center gap-1',
                       'transition-colors duration-fast ease-out',
-                      // GitHub gets terracotta — elevated brand presence
+                      // GitHub gets terracotta — elevated brand presence (resting);
+                      // hover unifies to accent-text in dark so it matches the others.
                       s.platform.toLowerCase() === 'github'
-                        ? 'text-accent-text hover:text-terracotta'
+                        ? 'text-accent-text hover:text-terracotta dark:hover:text-accent-text'
                         : 'text-near-black hover:text-accent-text',
                     )}
                   >

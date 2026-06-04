@@ -301,8 +301,11 @@ html.dark {
   --rgb-canvas-alt:   26 31 32;
   --rgb-surface:      30 36 38;
   --rgb-surface-warm: 38 31 27;
-  --rgb-surface-mid:  37 43 45;      /* raised panel — clearly above canvas(21 25 26)/canvas-alt(26 31 32) so dark panels read as designed depth, not a flat invert */
+  --rgb-surface-mid:  41 48 51;      /* raised panel — clearly above canvas(21 25 26)/canvas-alt(26 31 32) so dark panels read as designed depth, not a flat invert */
   --rgb-panel-cool:   28 42 42;
+  /* In dark, the resting filter-pill border (stone) is near-invisible (1.36:1);
+     lift it to the interactive line so it clears the 3:1 UI minimum. */
+  --pill-border-resting: var(--color-border-interactive);
   --rgb-wash-cool:    22 32 31;
 
   --rgb-ink:          236 234 224;   /* bone-cream */
