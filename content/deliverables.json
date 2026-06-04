@@ -110,7 +110,7 @@
   {
     "id": "pacman-code-trainer",
     "title": "Pac-Man Code Trainer",
-    "summary": "CLI commands turned into a retro arcade game. Forty flashcards covering Claude Code and macOS shortcuts, zero dependencies, runs straight from GitHub Pages.",
+    "summary": "CLI commands turned into a retro arcade game. 56 flashcards covering Claude Code, macOS, and Git — zero dependencies, runs straight from GitHub Pages.",
     "role": "Solo builder",
     "tech": [
       "Vanilla JS",
@@ -141,7 +141,7 @@
       "learning"
     ],
     "featured": false,
-    "body": "## The problem\n\nI kept forgetting Claude Code commands and macOS shortcuts. Flashcards are the right learning tool, but they're boring enough that I'd skip them. I wanted something where repetition felt like play — where a wrong answer meant losing a life, not quietly failing a quiz.\n\n## The approach\n\nA weekend build in vanilla HTML, CSS, and JavaScript. No frameworks — that constraint was intentional. Every feature had to be simple enough to implement in pure JS. The Pac-Man mechanics aren't decoration: right answers make Pac-Man eat the dot, wrong answers let the ghosts catch you. The game loop *is* the learning loop.\n\nKeeping it dependency-free meant it runs anywhere, forever, without worrying about broken packages or build steps.\n\n## What shipped\n\nForty flashcards covering Claude Code commands and macOS shortcuts, arcade mechanics with lives and scoring, zero npm dependencies, and a one-file deploy to GitHub Pages. No build step required.\n\n## Reflection\n\nI still use it. The commands I learned through the game are the ones that stuck. Sometimes the right solution is a weekend project in vanilla JS — and reaching for a framework would have been the wrong call."
+    "body": "## The problem\n\nI kept forgetting Claude Code commands and macOS shortcuts. Flashcards are the right learning tool, but they're boring enough that I'd skip them. I wanted something where repetition felt like play — where a wrong answer meant losing a life, not quietly failing a quiz.\n\n## The approach\n\nA weekend build in vanilla HTML, CSS, and JavaScript. No frameworks — that constraint was intentional. Every feature had to be simple enough to implement in pure JS. The Pac-Man mechanics aren't decoration: right answers make Pac-Man eat the dot, wrong answers let the ghosts catch you. The game loop *is* the learning loop.\n\nKeeping it dependency-free meant it runs anywhere, forever, without worrying about broken packages or build steps.\n\n## What shipped\n\n56 flashcards across Claude Code, macOS terminal, and Git commands, arcade mechanics with lives and scoring, zero npm dependencies, and a one-file deploy to GitHub Pages. No build step required.\n\n## Reflection\n\nI still use it. The commands I learned through the game are the ones that stuck. Sometimes the right solution is a weekend project in vanilla JS — and reaching for a framework would have been the wrong call."
   },
   {
     "id": "mutual-mesh",
