@@ -44,9 +44,10 @@ export function FilterPill({
           'bg-transparent border border-[var(--pill-border-resting)] text-[var(--pill-text-resting)]',
           'hover:bg-[var(--pill-bg-hover)] hover:border-[var(--pill-border-hover)] hover:text-[var(--pill-text-hover)]',
         ],
-        // Active state
+        // Active state — constant 1px border (color/bg change, not width) so
+        // activating a pill never shifts layout (no CLS jiggle).
         isActive && [
-          'bg-[var(--pill-bg-active)] border-2 border-[var(--pill-border-active)] text-[var(--pill-text-active)]',
+          'bg-[var(--pill-bg-active)] border border-[var(--pill-border-active)] text-[var(--pill-text-active)]',
         ],
         // Disabled state
         disabled && 'opacity-50 cursor-not-allowed',
