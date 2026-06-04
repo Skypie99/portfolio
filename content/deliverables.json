@@ -120,8 +120,8 @@
     ],
     "year": 2026,
     "heroImage": {
-      "src": "/images/deliverables/pacman-code-trainer/hero.svg",
-      "alt": "Retro pixel-art Pac-Man grid showing flashcard commands on a dark arcade background"
+      "src": "/images/deliverables/pacman-code-trainer/hero.png",
+      "alt": "Pac-Man Code Trainer start screen — neon arcade title on a dark grid, PRESS START button, category tabs along the bottom"
     },
     "links": [
       {
