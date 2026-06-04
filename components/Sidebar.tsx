@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import { Button } from '@/components/Button';
+import { SidebarProgress } from '@/components/SidebarProgress';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { cn } from '@/lib/cn';
 import { getFeaturedDeliverable, getProfile } from '@/lib/content';
@@ -26,6 +27,7 @@ export function Sidebar() {
     <nav
       aria-label="Site navigation"
       className={cn(
+        'relative',
         'hidden md:flex flex-col gap-10',
         'sticky top-0 self-start',
         'w-sidebar shrink-0',
@@ -35,6 +37,10 @@ export function Sidebar() {
         'border-r border-wa-teal-soft/50',
       )}
     >
+      {/* Reading-progress hairline on the right edge — fills as the page
+          scrolls; collapses to nothing under reduced motion. */}
+      <SidebarProgress />
+
       {/* ── Brand block ────────────────────────────────────────────── */}
       <div className="flex flex-col gap-3">
         <Link

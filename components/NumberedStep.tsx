@@ -30,10 +30,10 @@ export function NumberedStep({ number, title, body, highlight = false, className
       <span
         aria-hidden="true"
         className={cn(
-          'font-mono text-display-s tracking-label uppercase',
+          'font-mono text-step-2 tracking-label uppercase',
           'text-accent-text',
-          'shrink-0 w-12',
-          'leading-none pt-1',
+          'shrink-0 w-14',
+          'leading-none pt-0.5',
           highlight && 'border-l-2 border-terracotta pl-4 py-1',
         )}
       >
