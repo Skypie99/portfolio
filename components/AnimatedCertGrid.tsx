@@ -81,7 +81,7 @@ export function AnimatedCertGrid({ certificates }: AnimatedCertGridProps) {
               className="relative w-full aspect-square border border-border-decorative mb-6 overflow-hidden flex items-center justify-center"
               style={{
                 background:
-                  'radial-gradient(60% 60% at 50% 40%, #FDE9D7 0%, #FCF3ED 55%, #F0F0EA 100%)',
+                  'radial-gradient(60% 60% at 50% 40%, rgb(var(--rgb-surface-warm)) 0%, rgb(var(--rgb-surface-mid)) 55%, rgb(var(--rgb-canvas-alt)) 100%)',
               }}
             >
               <BadgeImage

@@ -1,6 +1,12 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { Button } from '@/components/Button';
+
+export const metadata: Metadata = {
+  title: '404 — Page not found',
+  description: 'That page doesn’t exist. Browse the selected work or head back home.',
+};
 
 /**
  * 404 page. Cycle 28 critique pass — evergreen copy (the "still
@@ -31,7 +37,7 @@ export default function NotFound() {
           Nothing here.
         </h1>
 
-        <p className="font-sans font-light text-[1.0625rem] text-charcoal max-w-[540px] mb-10 leading-[1.65] text-pretty">
+        <p className="font-sans font-light text-prose text-charcoal max-w-[540px] mb-10 leading-[1.65] text-pretty">
           The page you{'’'}re looking for doesn{'’'}t exist — or it moved.
           The homepage is the best place to start, and the work index has
           every deliverable.

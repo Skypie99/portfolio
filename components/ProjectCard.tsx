@@ -41,7 +41,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
       ref={spotRef}
       className={cn(
         'glass-card work-card group relative isolate flex flex-col overflow-hidden rounded-[22px]',
-        wide ? 'min-h-[23rem]' : 'aspect-[4/5]',
+        wide ? 'min-h-[20rem] md:min-h-[23rem]' : 'aspect-[4/5]',
         className,
       )}
     >

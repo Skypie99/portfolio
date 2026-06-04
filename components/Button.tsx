@@ -60,7 +60,9 @@ const variants: Record<Variant, string> = {
     'active:bg-peach-cream',
   ghost:
     'bg-transparent border-border-interactive ' +
-    'hover:bg-warm-white hover:border-charcoal',
+    'hover:bg-warm-white hover:border-charcoal ' +
+    // disabled ghost stays transparent (override the base's disabled:hover:bg-cream)
+    'disabled:hover:bg-transparent disabled:hover:border-border-interactive',
 };
 
 function Dot({ visible, pulse }: { visible: boolean; pulse: boolean }) {

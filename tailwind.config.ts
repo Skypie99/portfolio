@@ -30,6 +30,7 @@ const config: Config = {
         'canvas-alt':   'rgb(var(--rgb-canvas-alt) / <alpha-value>)',
         surface:        'rgb(var(--rgb-surface) / <alpha-value>)',
         'surface-warm': 'rgb(var(--rgb-surface-warm) / <alpha-value>)',
+        'surface-mid':  'rgb(var(--rgb-surface-mid) / <alpha-value>)',
         'panel-cool':   'rgb(var(--rgb-panel-cool) / <alpha-value>)',
         'wash-cool':    'rgb(var(--rgb-wash-cool) / <alpha-value>)',
         ink:            'rgb(var(--rgb-ink) / <alpha-value>)',
@@ -102,6 +103,7 @@ const config: Config = {
         // Per Dani §2.2 (display-l / display-m retired in Phase 7 — zero usages; display-s kept 7× active)
         'display-s': ['1.1875rem', { lineHeight: '1.2' }], // 19px
         body: ['1rem', { lineHeight: '1.65' }], // 16px
+        prose: ['1.0625rem', { lineHeight: '1.65' }], // 17px — comfortable long-form reading size
         'body-sm': ['0.875rem', { lineHeight: '1.6' }], // 14px
         label: ['0.75rem', { lineHeight: '1.4' }], // 12px
         meta: ['0.6875rem', { lineHeight: '1.4' }], // 11px
@@ -147,6 +149,8 @@ const config: Config = {
       },
       maxWidth: {
         content: '1120px',
+        measure: 'var(--measure)',
+        'measure-wide': 'var(--measure-wide)',
       },
       transitionDuration: {
         fast: '180ms',

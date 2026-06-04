@@ -120,7 +120,7 @@ export default function HomePage() {
                 index={i}
                 variant="depth"
                 className={cn(
-                  'group flex flex-col bg-cream p-6 md:p-7',
+                  'group flex flex-col bg-surface-mid p-6 md:p-7',
                   'transition-colors duration-base ease-out hover:bg-surface',
                 )}
               >
@@ -132,7 +132,7 @@ export default function HomePage() {
                 <p className="font-mono text-label text-sage-text uppercase tracking-label mb-4">
                   {label}
                 </p>
-                <p className="font-serif text-[1.0625rem] text-near-black mb-3">{project}</p>
+                <p className="font-serif text-prose text-near-black mb-3">{project}</p>
                 <ul className="flex flex-wrap gap-1.5 mt-auto" aria-label={`Tags for ${project}`}>
                   {tags.map((tag) => (
                     <li key={tag}>
@@ -223,7 +223,7 @@ export default function HomePage() {
               AnimatedStepList not used: it lacks the `highlight` prop and
               manages its own dividers inside an <ol>, which would require
               restructuring the existing divider elements between steps. */}
-          <div className="bg-cream rounded-lg p-8 md:p-12 border border-stone space-y-8 shadow-lg">
+          <div className="bg-surface-mid rounded-lg p-8 md:p-12 border border-stone dark:border-line-strong/60 space-y-8 shadow-lg dark:shadow-md">
             <Reveal index={0} variant="depth">
               <NumberedStep
                 number="01"
@@ -277,7 +277,7 @@ export default function HomePage() {
             </h2>
           </Reveal>
 
-          <Reveal variant="depth" className="max-w-[640px] flex flex-col gap-6">
+          <Reveal variant="depth" className="max-w-measure flex flex-col gap-6">
             {/* Pull-quote accent — editorial tone-setter */}
             <blockquote
               className={cn(
@@ -296,7 +296,7 @@ export default function HomePage() {
               {' '}{profile.location}, mostly on AI tooling, accessibility
               infrastructure, and the systems that make a product feel calm.
             </p>
-            <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
+            <p className="font-sans font-light text-prose text-charcoal leading-[1.65] text-pretty">
               I keep a written record of how each thing was made. The
               documentation is part of the deliverable, not an afterthought.
             </p>
