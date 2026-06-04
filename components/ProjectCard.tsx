@@ -40,7 +40,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
     <div
       ref={spotRef}
       className={cn(
-        'glass-card work-card group relative isolate flex flex-col overflow-hidden rounded-[20px]',
+        'glass-card work-card group relative isolate flex flex-col overflow-hidden rounded-[22px]',
         wide ? 'min-h-[23rem]' : 'aspect-[4/5]',
         className,
       )}
@@ -58,7 +58,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
             {numeral}
           </span>
           {d.featured && (
-            <span className="inline-flex items-center gap-1.5 rounded-pill border border-[rgb(var(--rgb-accent)/0.3)] bg-[rgb(var(--rgb-accent)/0.1)] px-2.5 py-1 font-mono text-meta uppercase tracking-label text-accent-text backdrop-blur-sm">
+            <span className="inline-flex items-center gap-1.5 rounded-pill border border-[rgb(var(--rgb-ink)/0.12)] bg-[rgb(var(--rgb-surface)/0.55)] px-2.5 py-1 font-mono text-meta uppercase tracking-label text-accent-text backdrop-blur-md">
               <span aria-hidden="true" className="inline-block h-1 w-1 rounded-full bg-terracotta" />
               Featured
             </span>
@@ -87,7 +87,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
                 {d.title}
               </Link>
             </h3>
-            <span aria-hidden="true" className="block h-px w-10 rounded-full bg-[rgb(var(--rgb-accent)/0.55)]" />
+            <span aria-hidden="true" className="block h-px w-12 rounded-full bg-gradient-to-r from-[rgb(var(--rgb-accent)/0.65)] via-[rgb(var(--rgb-accent)/0.3)] to-transparent" />
           </div>
 
           <div className={cn('flex flex-col gap-5', wide && 'md:max-w-[40%]')}>

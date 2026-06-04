@@ -3,13 +3,15 @@
 import { cn } from '@/lib/cn';
 
 /**
- * CardField — the faint light INSIDE the liquid-glass card (liquid-glass
- * 2026-06-03). A per-project warm caustic (light pooling from the top-left) plus
- * a whisper of cool refraction at the far edge — the "prism" of light passing
- * through glass — and a fine frost grain. All decorative + aria-hidden + static
- * (low alpha): the card root paints the glass body, rim and cursor specular;
- * this just tints the panel so each project reads a touch different without
- * breaking the minimal/light look. Renders as an absolute fill the card clips.
+ * CardField — the light INSIDE the liquid-glass card (liquid-glass 2026-06-03,
+ * refined v2). A per-project warm caustic (light pooling from the top-left), a
+ * soft top lens-sweep (internal glass depth), and a present-but-soft SOFT-BLUE
+ * refraction at the far corner — the "prism" of light passing through glass —
+ * over a fine frost grain. All decorative + aria-hidden + static (low alpha):
+ * the card root paints the glass body, spectral rim and cursor specular; this
+ * tints the panel so each project reads a touch different and the glass has
+ * internal light to lens, without breaking the minimal/light look. Renders as an
+ * absolute fill the card clips.
  */
 
 /** Per-project signature hue (warm golden-hour family) for the caustic. */
@@ -23,8 +25,8 @@ const SIGNATURE: Record<string, string> = {
   'mutual': '202 142 114',
 };
 
-/** A whisper of cool light at the opposite edge — the refracted "prism" edge. */
-const COOL = '137 181 168'; // seafoam (site cool-soft), very low alpha
+/** Soft blue at the far corner — the refracted "prism" edge (a quiet whisper). */
+const BLUE = '150 188 214'; // soft sky-blue
 
 /** Site film-grain (matches body::after) — fine frost tooth. */
 const NOISE =
@@ -48,10 +50,15 @@ export function CardField({ slug, className }: CardFieldProps) {
         className="absolute inset-0"
         style={{ backgroundImage: `radial-gradient(72% 56% at 20% -10%, rgb(${sig} / 0.20), transparent 60%)` }}
       />
-      {/* cool refraction — a whisper of spectral light at the far corner */}
+      {/* soft top lens-sweep — internal glass highlight, reads convex */}
       <div
         className="absolute inset-0"
-        style={{ backgroundImage: `radial-gradient(60% 50% at 110% 114%, rgb(${COOL} / 0.10), transparent 58%)` }}
+        style={{ backgroundImage: `radial-gradient(120% 42% at 50% -16%, rgb(255 255 255 / 0.14), transparent 64%)` }}
+      />
+      {/* soft-blue refraction — the "prism" light pooling in from the far corner */}
+      <div
+        className="absolute inset-0"
+        style={{ backgroundImage: `radial-gradient(78% 64% at 108% 112%, rgb(${BLUE} / 0.26), transparent 62%)` }}
       />
       {/* fine frost grain */}
       <div
