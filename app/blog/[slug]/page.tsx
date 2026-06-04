@@ -84,7 +84,7 @@ function renderMarkdown(markdown: string): React.ReactNode[] {
     return (
       <p
         key={key}
-        className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.75] text-pretty"
+        className="font-sans font-light text-prose text-charcoal leading-[1.75] text-pretty"
       >
         {parseInline(block)}
       </p>

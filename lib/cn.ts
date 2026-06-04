@@ -35,7 +35,7 @@ const CUSTOM_COLOR_TOKENS = [
  */
 const CUSTOM_FONT_SIZES = [
   'display-s',
-  'body', 'body-sm', 'label', 'meta',
+  'body', 'prose', 'body-sm', 'label', 'meta',
   // Overhaul 2026-06-03 — modular scale (tailwind.config.ts fontSize).
   // Required so twMerge groups `text-step-3` / `text-display` / `text-hero`
   // as font-size, not text-color (the Cycle 11 collapse bug class).
