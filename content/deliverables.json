@@ -73,14 +73,14 @@
   {
     "id": "prompt-library",
     "title": "Prompt Library",
-    "summary": "Local-first prompt manager in Next.js 15. Prompts stay in the browser, API key never leaves the machine. Fifty features shipped across twenty stacked branches.",
+    "summary": "Local-first AI prompt manager. Your prompts, your API key, your browser — zero cloud, instant runs.",
     "role": "Solo builder",
     "tech": [
       "Next.js 15",
       "TypeScript",
       "Vitest",
       "localStorage",
-      "GitHub Pages"
+      "Vercel"
     ],
     "year": 2026,
     "heroImage": {
@@ -95,7 +95,7 @@
       },
       {
         "label": "Live demo",
-        "href": "https://skypie99.github.io/Prompt_Library/",
+        "href": "https://promptlibrary.skypistudio.com",
         "type": "demo"
       }
     ],
