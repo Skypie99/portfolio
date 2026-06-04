@@ -7,38 +7,30 @@ import { cn } from '@/lib/cn';
 import { useSpotlight } from '@/lib/motion';
 import type { Deliverable } from '@/lib/schema';
 
-const FOIL = 'linear-gradient(118deg, #9a6c1f 0%, #e9c46a 38%, #fbe6b0 52%, #c79a3e 68%, #9a6c1f 100%)';
-
 type ProjectCardProps = {
   deliverable: Deliverable;
   /** Max number of tech labels to render. Default 4. */
   maxTech?: number;
-  /** Wide (featured) card — field + caption side-by-side on md+. */
+  /** Wide (featured) panel — the inscription splits into two columns on md+. */
   wide?: boolean;
-  /** Editorial index for the corner numeral ("01", "02"…). Default 0. */
+  /** Editorial index for the ghosted numeral ("01", "02"…). Default 0. */
   index?: number;
   className?: string;
 };
 
 /**
- * ProjectCard — v2 bold-editorial card.
+ * ProjectCard — a liquid-glass panel (liquid-glass 2026-06-03). Minimal, light,
+ * expensive: a translucent frosted card floating over the warm page with a bright
+ * refractive rim + a cursor-follow specular (.glass-card). A ghosted serif numeral
+ * and an optional Featured seal sit on the open top glass; the inscription
+ * (role·year, title, summary, tech, CTA) is set in the site's flipping ink tokens
+ * along the bottom — crisp and AA in both light + dark.
  *
- * No illustration: a golden-hour <CardField> carries an index numeral + the
- * oversized serif title (cream over the field's deep pool, AA-safe), and a clean
- * high-contrast caption below/beside holds the summary, a de-rainbowed tech line,
- * and a single CTA. Deep ink on a surface that contrasts the section background.
- *
- * Accessibility: the title is an <h3> wrapping a link whose aria-label is
- * "<title> — <role>, <year>"; a separate case-study link + demo/github links carry
- * their own labels; the field layers are aria-hidden. Focus-visible rings throughout.
+ * A11y: the <h3> wraps a <Link aria-label="<title> — <role>, <year>">; the
+ * case-study + demo/github links carry their own labels; the glass/caustic layers
+ * are aria-hidden. Focus-visible rings throughout.
  */
-export function ProjectCard({
-  deliverable: d,
-  maxTech = 4,
-  wide = false,
-  index = 0,
-  className,
-}: ProjectCardProps) {
+export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index = 0, className }: ProjectCardProps) {
   const githubLink = d.links?.find((l) => l.type === 'github');
   const demoLink = d.links?.find((l) => l.type === 'demo');
   const numeral = String(index + 1).padStart(2, '0');
@@ -48,125 +40,112 @@ export function ProjectCard({
     <div
       ref={spotRef}
       className={cn(
-        // glow-card: warm glowing rim + glass highlight + cursor spotlight + hover lift
-        'glow-card work-card group relative flex flex-col overflow-hidden rounded-lg bg-surface',
-        wide && 'md:flex-row md:items-stretch',
+        'glass-card work-card group relative isolate flex flex-col overflow-hidden rounded-[20px]',
+        wide ? 'min-h-[23rem]' : 'aspect-[4/5]',
         className,
       )}
     >
-      {/* ── Golden-hour field — editorial type overlaid ──────────────── */}
-      <CardField
-        slug={d.id}
-        className={cn(wide ? 'aspect-[4/3] md:aspect-auto md:w-[58%] md:min-h-[26rem]' : 'aspect-[4/5]')}
-      >
-        {/* index numeral — gold-foil, stamped */}
-        <span
-          aria-hidden="true"
-          className="absolute left-6 top-5 font-serif font-light leading-none"
-          style={{
-            fontSize: 'clamp(2.5rem, 5vw, 3.75rem)',
-            backgroundImage: FOIL,
-            WebkitBackgroundClip: 'text',
-            backgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            color: 'transparent',
-            textShadow: '0 1px 1px rgb(60 32 14 / 0.16)',
-          }}
-        >
-          {numeral}
-        </span>
+      <CardField slug={d.id} />
 
-        {/* featured badge — dark glassy pill (works over the bright sky) */}
-        {d.featured && (
-          <span className="absolute right-6 top-6 inline-flex items-center gap-1.5 rounded-pill border border-[#FAF8F1]/20 bg-[#2A1206]/45 px-2.5 py-1 font-mono text-meta uppercase tracking-label text-[#FAF8F1] backdrop-blur-sm">
-            <span aria-hidden="true" className="inline-block h-1 w-1 rounded-full bg-[rgb(var(--rgb-gold))]" />
-            Featured
+      <div className="relative z-10 flex flex-1 flex-col p-7 md:p-9">
+        {/* open top glass — ghosted numeral + Featured seal */}
+        <div className="flex items-start justify-between gap-4">
+          <span
+            aria-hidden="true"
+            className="font-serif font-light leading-none text-near-black/15"
+            style={{ fontSize: 'clamp(2.6rem, 5vw, 3.6rem)', letterSpacing: '-0.02em' }}
+          >
+            {numeral}
           </span>
-        )}
-
-        {/* role · year + title, anchored over the deep bottom pool */}
-        <div className="mt-auto px-6 pb-6 md:px-8 md:pb-8">
-          <p className="mb-2 flex items-center gap-2 font-mono text-meta uppercase tracking-label text-[#FAF8F1]/75">
-            <span aria-hidden="true" className="inline-block h-1 w-1 rounded-full bg-[rgb(var(--rgb-gold))]" />
-            {d.role} · {d.year}
-          </p>
-          <h3
-            className="font-serif font-light leading-[1.04] text-[#FAF8F1]"
-            style={{
-              letterSpacing: '-0.022em',
-              fontSize: wide ? 'clamp(2.6rem, 3.7vw, 3.9rem)' : 'clamp(1.95rem, 2.7vw, 2.55rem)',
-            }}
-          >
-            <Link
-              href={`/work/${d.id}/`}
-              aria-label={`${d.title} — ${d.role}, ${d.year}`}
-              className="rounded-sm transition-opacity duration-fast ease-out hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FAF8F1]"
-            >
-              {d.title}
-            </Link>
-          </h3>
+          {d.featured && (
+            <span className="inline-flex items-center gap-1.5 rounded-pill border border-[rgb(var(--rgb-accent)/0.3)] bg-[rgb(var(--rgb-accent)/0.1)] px-2.5 py-1 font-mono text-meta uppercase tracking-label text-accent-text backdrop-blur-sm">
+              <span aria-hidden="true" className="inline-block h-1 w-1 rounded-full bg-terracotta" />
+              Featured
+            </span>
+          )}
         </div>
-      </CardField>
 
-      {/* ── Caption — deep ink on surface, generous mat ──────────────── */}
-      <div className={cn('relative z-10 flex flex-col gap-6 p-7 md:p-9', wide && 'md:w-[42%] md:justify-center')}>
-        {/* refined editorial accent rule — gold foil */}
-        <span aria-hidden="true" className="block h-0.5 w-12 rounded-full" style={{ background: FOIL }} />
-        <p
-          className="font-sans font-light text-body-sm leading-[1.65] text-charcoal text-pretty"
-          style={{
-            display: '-webkit-box',
-            WebkitLineClamp: wide ? 4 : 2,
-            WebkitBoxOrient: 'vertical',
-            overflow: 'hidden',
-          }}
-        >
-          {d.summary}
-        </p>
-
-        {/* tech — disciplined, monochrome (no pastel rainbow) */}
-        <ul className="flex flex-wrap gap-x-3 gap-y-1">
-          {d.tech.slice(0, maxTech).map((t) => (
-            <li key={t} className="font-mono text-meta uppercase tracking-label text-text-meta">
-              {t}
-            </li>
-          ))}
-        </ul>
-
-        {/* CTA row */}
-        <div className="mt-1 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-[rgb(var(--rgb-accent)/0.14)] pt-5">
-          <Link
-            href={`/work/${d.id}/`}
-            aria-label={`Read case study for ${d.title}`}
-            className="inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
-          >
-            View project <span aria-hidden="true">→</span>
-          </Link>
-          {demoLink && (
-            <a
-              href={demoLink.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Open live demo for ${d.title} (opens in new tab)`}
-              className="ml-auto inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+        {/* the inscription — bottom-anchored; wide splits into two columns */}
+        <div className={cn('mt-auto flex flex-col gap-5', wide && 'md:flex-row md:items-end md:justify-between md:gap-12')}>
+          <div className={cn('flex flex-col gap-4', wide && 'md:max-w-[54%]')}>
+            <p className="flex items-center gap-2 font-mono text-meta uppercase tracking-label text-text-meta">
+              <span aria-hidden="true" className="inline-block h-1 w-1 rounded-full bg-terracotta" />
+              {d.role} · {d.year}
+            </p>
+            <h3
+              className="font-serif font-light leading-[1.05] text-near-black"
+              style={{
+                letterSpacing: '-0.022em',
+                fontSize: wide ? 'clamp(2.4rem, 3.6vw, 3.6rem)' : 'clamp(1.85rem, 2.6vw, 2.4rem)',
+              }}
             >
-              Live <span aria-hidden="true">↗</span>
-            </a>
-          )}
-          {githubLink && (
-            <a
-              href={githubLink.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`View ${d.title} source on GitHub (opens in new tab)`}
-              className={cn(
-                'inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta',
-                !demoLink && 'ml-auto',
+              <Link
+                href={`/work/${d.id}/`}
+                aria-label={`${d.title} — ${d.role}, ${d.year}`}
+                className="rounded-sm transition-opacity duration-fast ease-out hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta"
+              >
+                {d.title}
+              </Link>
+            </h3>
+            <span aria-hidden="true" className="block h-px w-10 rounded-full bg-[rgb(var(--rgb-accent)/0.55)]" />
+          </div>
+
+          <div className={cn('flex flex-col gap-5', wide && 'md:max-w-[40%]')}>
+            <p
+              className="font-sans font-light text-body-sm leading-[1.65] text-charcoal text-pretty"
+              style={{
+                display: '-webkit-box',
+                WebkitLineClamp: wide ? 4 : 2,
+                WebkitBoxOrient: 'vertical',
+                overflow: 'hidden',
+              }}
+            >
+              {d.summary}
+            </p>
+
+            <ul className="flex flex-wrap gap-x-3 gap-y-1">
+              {d.tech.slice(0, maxTech).map((t) => (
+                <li key={t} className="font-mono text-meta uppercase tracking-label text-text-meta">
+                  {t}
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-1 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-[rgb(var(--rgb-ink)/0.1)] pt-4">
+              <Link
+                href={`/work/${d.id}/`}
+                aria-label={`Read case study for ${d.title}`}
+                className="inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+              >
+                View project <span aria-hidden="true">→</span>
+              </Link>
+              {demoLink && (
+                <a
+                  href={demoLink.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open live demo for ${d.title} (opens in new tab)`}
+                  className="ml-auto inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                >
+                  Live <span aria-hidden="true">↗</span>
+                </a>
               )}
-            >
-              GitHub <span aria-hidden="true">↗</span>
-            </a>
-          )}
+              {githubLink && (
+                <a
+                  href={githubLink.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`View ${d.title} source on GitHub (opens in new tab)`}
+                  className={cn(
+                    'inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta',
+                    !demoLink && 'ml-auto',
+                  )}
+                >
+                  GitHub <span aria-hidden="true">↗</span>
+                </a>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </div>
