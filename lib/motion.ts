@@ -210,3 +210,86 @@ export function useSpotlight<T extends HTMLElement = HTMLDivElement>() {
 
   return ref;
 }
+
+/* ────────────────────────────────────────────────────────────────────
+ * useScrollProgress — page scroll fraction (0→1) as a CSS variable
+ * (high-end polish 2026-06-03). Sets `--scroll-progress` on <html> via
+ * ONE rAF-throttled scroll listener, so consumers can drive a
+ * compositor-only `transform: scaleY(var(--scroll-progress))` (e.g. the
+ * sidebar progress hairline) with ZERO React re-renders. Reduced motion →
+ * no-op (the var stays unset → indicator collapses to 0). SSR-safe.
+ * ──────────────────────────────────────────────────────────────────── */
+export function useScrollProgress() {
+  const reduced = usePrefersReducedMotion();
+
+  useEffect(() => {
+    if (reduced || typeof window === 'undefined') return;
+    const root = document.documentElement;
+    let raf = 0;
+    const apply = () => {
+      raf = 0;
+      const max = root.scrollHeight - window.innerHeight;
+      const f = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+      root.style.setProperty('--scroll-progress', f.toFixed(4));
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(apply);
+    };
+    apply();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    return () => {
+      if (raf) cancelAnimationFrame(raf);
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      root.style.removeProperty('--scroll-progress');
+    };
+  }, [reduced]);
+}
+
+/* ────────────────────────────────────────────────────────────────────
+ * useActiveSection — scroll-spy (high-end polish 2026-06-03). Returns the
+ * id of the section currently crossing the viewport's middle band, for
+ * nav active-state highlighting. ONE IntersectionObserver over the given
+ * ids; React state updates ONLY when the active section CHANGES (no
+ * per-frame churn). Not motion → runs under reduced motion too. SSR-safe
+ * (starts ''). Pass a STABLE ids array (module constant) to avoid
+ * re-subscribing each render.
+ * ──────────────────────────────────────────────────────────────────── */
+export function useActiveSection(ids: string[]) {
+  const [active, setActive] = useState('');
+  const key = ids.join(',');
+
+  useEffect(() => {
+    if (typeof IntersectionObserver === 'undefined' || typeof document === 'undefined') return;
+    const els = key
+      .split(',')
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el != null);
+    if (!els.length) return;
+
+    const ratios = new Map<string, number>();
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) ratios.set(e.target.id, e.intersectionRatio);
+          else ratios.delete(e.target.id);
+        }
+        let best = '';
+        let bestRatio = 0;
+        for (const [id, ratio] of ratios) {
+          if (ratio >= bestRatio) {
+            bestRatio = ratio;
+            best = id;
+          }
+        }
+        if (best) setActive(best);
+      },
+      { rootMargin: '-45% 0px -45% 0px', threshold: [0, 0.25, 0.5, 1] },
+    );
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, [key]);
+
+  return active;
+}

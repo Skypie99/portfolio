@@ -143,3 +143,33 @@ Also honor `@media (scripting: none)` for JS-driven reveals (show final state).
   `components/Reveal.tsx`, `app/template.tsx` (route transition).
 - Guard: `lib/__tests__/token-parity.test.ts` (new tokens are additive — they don't
   touch the asserted `step-*` / `entrance|exit|snap` / `sm|md|lg|xl` sets).
+
+---
+
+## 9. High-end polish round (2026-06-03) — additions
+
+Site-wide refinement + richer motion on the flat sections. No GSAP below the landing
+(GSAP is intro-only); all new motion is CSS + `lib/motion.ts`. The cinematic intro is
+LOCKED and was not touched.
+
+**New primitives (`lib/motion.ts`):**
+- `useScrollProgress()` — sets `--scroll-progress` (0→1 page-scroll fraction) on `<html>`
+  via one rAF-throttled scroll listener; consumers drive a compositor-only
+  `transform: scaleY(var(--scroll-progress))`. Zero React re-renders.
+  **Reduced motion → no-op** (the var stays unset → `scaleY(0)` → indicator collapsed).
+- `useActiveSection(ids)` — IntersectionObserver scroll-spy returning the id of the
+  section crossing the viewport's middle band (for nav active-state). Updates only on
+  change. Not motion → runs under reduced motion too. Pass a stable ids array.
+
+**New patterns + reduced-motion contract:**
+| Pattern | Where | Motion | Reduced motion |
+|---|---|---|---|
+| Layered parallax wash | Showcase, Process (+ existing About/Contact) | `ParallaxWash` far tier drifts on scroll | static glow |
+| Depth reveals | Showcase cells, Process steps, About block, Certificates rows | `Reveal variant="depth"` (scale-settle + rise, staggered) | final state, instant |
+| Sidebar progress hairline | `SidebarProgress` (desktop rail) | `scaleY(var(--scroll-progress))` fill | collapsed (var 0) |
+| Row hover slide | Certificates | `group-hover:translate-x-1` on content | instant (hover, not scroll) |
+| Footer threshold glow | Footer | static warm hairline-gradient | unchanged |
+
+All animate transform/opacity only; the parallax reuses the single shared rAF; AA holds
+in both modes over every wash. `useActiveSection` is wired for the mobile nav active-state
+(follow-up).
