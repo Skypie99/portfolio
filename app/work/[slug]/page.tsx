@@ -29,6 +29,7 @@ function parseInline(text: string): React.ReactNode[] {
 
 function renderMarkdown(markdown: string): React.ReactNode[] {
   const blocks = markdown.split(/\n{2,}/).map((b) => b.trim()).filter(Boolean);
+  let firstPara = true;
   return blocks.map((block, i) => {
     const key = `b-${i}`;
     if (block.startsWith('## '))
@@ -43,8 +44,13 @@ function renderMarkdown(markdown: string): React.ReactNode[] {
           {block.slice(4)}
         </h3>
       );
+    const dropCap = firstPara;
+    firstPara = false;
     return (
-      <p key={key} className="font-sans font-light text-prose text-charcoal leading-[1.75] text-pretty">
+      <p
+        key={key}
+        className={`font-sans font-light text-prose text-charcoal leading-[1.75] text-pretty nums-oldstyle${dropCap ? ' drop-cap' : ''}`}
+      >
         {parseInline(block)}
       </p>
     );
@@ -184,7 +190,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
               {/* Warm top-light — single source from above (lit-well depth) */}
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,241,217,0.38),transparent_62%)] dark:bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,221,176,0.10),transparent_62%)]"
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,241,217,0.46),transparent_62%)] dark:bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,221,176,0.10),transparent_62%)]"
               />
               {/* Alex F-C4-3: explicit dimensions for the 4:5 hero. */}
               {/* Peter: not LCP on mobile (below fold initially), lazy-load safe */}
@@ -355,7 +361,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
                     {/* Warm top-light — single source from above (lit-well depth) */}
                     <div
                       aria-hidden="true"
-                      className="pointer-events-none absolute inset-0 bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,241,217,0.38),transparent_62%)] dark:bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,221,176,0.10),transparent_62%)]"
+                      className="pointer-events-none absolute inset-0 bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,241,217,0.46),transparent_62%)] dark:bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,221,176,0.10),transparent_62%)]"
                     />
                     {/* Alex F-C4-3: explicit dimensions for the 4:3 gallery. */}
                     {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -51,6 +51,7 @@ export function generateMetadata({ params }: { params: RouteParams }): Metadata 
  */
 function renderMarkdown(markdown: string): React.ReactNode[] {
   const blocks = markdown.split(/\n{2,}/).map((b) => b.trim()).filter(Boolean);
+  let firstPara = true;
 
   return blocks.map((block, blockIdx) => {
     const key = `block-${blockIdx}`;
@@ -81,11 +82,13 @@ function renderMarkdown(markdown: string): React.ReactNode[] {
       );
     }
 
-    // Paragraph — inline bold/italic parsing
+    // Paragraph — inline parsing + oldstyle figures; drop cap on the first.
+    const dropCap = firstPara;
+    firstPara = false;
     return (
       <p
         key={key}
-        className="font-sans font-light text-prose text-charcoal leading-[1.75] text-pretty"
+        className={`font-sans font-light text-prose text-charcoal leading-[1.75] text-pretty nums-oldstyle${dropCap ? ' drop-cap' : ''}`}
       >
         {parseInline(block)}
       </p>

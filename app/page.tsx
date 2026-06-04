@@ -5,6 +5,7 @@ import { CinematicDesert } from '@/components/cinematic/CinematicDesert';
 import { ContentReveal } from '@/components/ContentReveal';
 import { CountUpStat } from '@/components/CountUpStat';
 import { Hero } from '@/components/Hero';
+import { Icon } from '@/components/Icon';
 import { NumberedStep } from '@/components/NumberedStep';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { ProjectCard } from '@/components/ProjectCard';
@@ -100,7 +101,7 @@ export default function HomePage() {
           <Reveal variant="scene">
             {/* Section label */}
             <p className="font-mono text-label text-sage-text uppercase tracking-label mb-3 flex items-center gap-2">
-              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
+              <Icon name="live" className="w-3.5 h-3.5 text-terracotta" />
               Live
             </p>
             {/* Heading */}
@@ -170,7 +171,8 @@ export default function HomePage() {
         <div className="max-w-content mx-auto">
           {/* Dani wave5: terracotta left-border accent on section headers */}
           <Reveal variant="scene" className="mb-12 pl-4 border-l-2 border-terracotta">
-            <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4">
+            <p className="flex items-center gap-2 font-mono text-label tracking-label uppercase text-accent-ink mb-4">
+              <Icon name="work" className="w-3.5 h-3.5 text-terracotta" />
               The Work
             </p>
             <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
@@ -210,7 +212,8 @@ export default function HomePage() {
         <ParallaxWash depth="far" />
         <div className="relative z-10 max-w-content mx-auto">
           <Reveal variant="scene" className="mb-12 pl-4 border-l-2 border-terracotta">
-            <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4">
+            <p className="flex items-center gap-2 font-mono text-label tracking-label uppercase text-accent-ink mb-4">
+              <Icon name="method" className="w-3.5 h-3.5 text-terracotta" />
               Method
             </p>
             <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-[1.1] text-balance">
@@ -269,7 +272,8 @@ export default function HomePage() {
         <ParallaxWash depth="far" />
         <div className="relative z-10 max-w-content mx-auto">
           <Reveal variant="scene" className="mb-12 pl-4 border-l-2 border-terracotta">
-            <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4">
+            <p className="flex items-center gap-2 font-mono text-label tracking-label uppercase text-accent-ink mb-4">
+              <Icon name="about" className="w-3.5 h-3.5 text-terracotta" />
               A Brief Account
             </p>
             <h2 className="font-serif font-light text-step-4 ember leading-[1.1] text-balance">
@@ -279,16 +283,10 @@ export default function HomePage() {
 
           <Reveal variant="depth" className="max-w-measure flex flex-col gap-6">
             {/* Pull-quote accent — editorial tone-setter */}
-            <blockquote
-              className={cn(
-                'pl-5 border-l-2 border-terracotta',
-                'font-serif font-light italic text-step-2 text-ink leading-[1.45]',
-                'text-balance',
-              )}
-              style={{ letterSpacing: '-0.01em' }}
-            >
+            <blockquote className="pull-quote nums-oldstyle pl-3 font-serif font-light italic text-step-2 text-ink leading-[1.45] text-balance">
               One careful deliverable beats a dozen rough ones.
             </blockquote>
+            <span aria-hidden="true" className="rule-ember block h-px w-16" />
 
             <p className="font-sans font-light text-step-1 text-ink leading-[1.6] text-pretty">
               Most of what I make starts with a problem worth solving. I prefer
@@ -323,7 +321,8 @@ export default function HomePage() {
       >
         <div className="max-w-content mx-auto">
           <Reveal variant="scene" className="mb-12 pl-4 border-l-2 border-terracotta">
-            <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4">
+            <p className="flex items-center gap-2 font-mono text-label tracking-label uppercase text-accent-ink mb-4">
+              <Icon name="credentials" className="w-3.5 h-3.5 text-terracotta" />
               Credentials
             </p>
             <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-[1.1] text-balance">
@@ -406,7 +405,7 @@ export default function HomePage() {
         {/* Reveal wraps only the content div; the ambient-drift div above is left as-is */}
         <Reveal className="relative z-10 max-w-content mx-auto flex flex-col items-start gap-8">
           <p className="font-mono text-label tracking-label uppercase text-wa-teal-deep flex items-center gap-2">
-            <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
+            <Icon name="contact" className="w-3.5 h-3.5 text-terracotta" />
             Correspond
           </p>
           <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
