@@ -2,11 +2,12 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-import { Button } from '@/components/Button';
 import { CaseStudyCard } from '@/components/CaseStudyCard';
+import { MagneticButton } from '@/components/MagneticButton';
 import { HeroImageSettle, HeroTitleSettle } from '@/components/HeroSettle';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { Reveal } from '@/components/Reveal';
+import { TactileMedia } from '@/components/TactileMedia';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getDeliverables, getProfile } from '@/lib/content';
@@ -186,7 +187,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
             {/* Hero image / fallback block — HeroImageSettle wraps the whole
                 well so the settle animation is the grid child itself. All
                 existing classes preserved on the wrapper. */}
-            <HeroImageSettle className="relative w-full aspect-[4/5] bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-1 md:order-1 shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]">
+            <HeroImageSettle className="group relative w-full aspect-[4/5] bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-1 md:order-1 shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]">
               {/* Warm top-light — single source from above (lit-well depth) */}
               <div
                 aria-hidden="true"
@@ -194,14 +195,13 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
               />
               {/* Alex F-C4-3: explicit dimensions for the 4:5 hero. */}
               {/* Peter: not LCP on mobile (below fold initially), lazy-load safe */}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              {/* tactile-pass: photo leans in on hover + drifts gently on scroll */}
+              <TactileMedia
                 src={d.heroImage.src}
                 alt={d.heroImage.alt}
                 width={800}
                 height={1000}
-                loading="lazy"
-                className="absolute inset-0 w-full h-full object-cover"
+                depth={0.06}
               />
               {/* Cycle 26: elevated placeholder overlay matches ProjectCard. */}
               <div
@@ -283,22 +283,27 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
                     Links
                   </p>
                   <ul className="flex flex-col gap-2">
-                    {d.links.map((l) => (
-                      <li key={l.href}>
+                    {d.links.map((l, i) => (
+                      <Reveal key={l.href} as="li" index={i}>
                         <a
                           href={l.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="link-draw font-sans text-body text-accent-text inline-flex items-center gap-2"
+                          className="group link-draw font-sans text-body text-accent-text inline-flex items-center gap-2"
                         >
                           <span className="font-mono text-meta tracking-label uppercase text-text-meta mr-2">
                             {l.type}
                           </span>
                           <span>{l.label}</span>
-                          <span aria-hidden="true">{'↗'}</span>
+                          <span
+                            aria-hidden="true"
+                            className="inline-block transition-transform duration-base ease-gh-glide group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                          >
+                            {'↗'}
+                          </span>
                           <span className="sr-only">(opens in new tab)</span>
                         </a>
-                      </li>
+                      </Reveal>
                     ))}
                   </ul>
                 </div>
@@ -312,11 +317,8 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
                   </p>
                   <ul className="flex flex-wrap gap-2">
                     {d.tags.map((tag) => (
-                      <li
-                        key={tag}
-                        className="font-mono text-meta tracking-label uppercase text-sage-text"
-                      >
-                        #{tag}
+                      <li key={tag}>
+                        <TagPill>{tag}</TagPill>
                       </li>
                     ))}
                   </ul>
@@ -344,7 +346,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
 
       {/* Optional gallery */}
       {d.gallery && d.gallery.length > 0 && (
-        <section className="px-gutter py-24 lg:py-32 bg-wa-rose-pale border-t border-wa-rose-soft/40">
+        <section className="px-gutter py-24 lg:py-32 bg-cream border-t border-border-decorative">
           <div className="max-w-content mx-auto">
             <Reveal variant="scene">
               <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
@@ -357,22 +359,15 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
               {d.gallery.map((img, i) => (
                 <Reveal key={img.src} index={i} as="li" className="flex flex-col gap-3">
-                  <div className="relative w-full aspect-[4/3] bg-gradient-to-br from-earth to-earth-deep border border-wa-teal-soft/40 overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]">
+                  <div className="group relative w-full aspect-[4/3] bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]">
                     {/* Warm top-light — single source from above (lit-well depth) */}
                     <div
                       aria-hidden="true"
                       className="pointer-events-none absolute inset-0 bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,241,217,0.46),transparent_62%)] dark:bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,221,176,0.10),transparent_62%)]"
                     />
                     {/* Alex F-C4-3: explicit dimensions for the 4:3 gallery. */}
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={img.src}
-                      alt={img.alt}
-                      width={800}
-                      height={600}
-                      className="absolute inset-0 w-full h-full object-cover"
-                      loading="lazy"
-                    />
+                    {/* tactile-pass: leans in on hover + drifts gently on scroll */}
+                    <TactileMedia src={img.src} alt={img.alt} width={800} height={600} />
                     {/* Cycle 26: gallery placeholder. Tighter overlay (no
                         eyebrow) since the caption below carries context. */}
                     <span
@@ -443,11 +438,11 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
             <br />
             Write to me.
           </h2>
-          <Button
+          <MagneticButton
             href={`mailto:${profile.contactEmail}?subject=About ${encodeURIComponent(d.title)}`}
           >
             Write to me.
-          </Button>
+          </MagneticButton>
         </Reveal>
       </section>
     </>

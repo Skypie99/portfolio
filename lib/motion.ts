@@ -180,12 +180,31 @@ export function useSpotlight<T extends HTMLElement = HTMLDivElement>() {
 
     let raf = 0;
     let pending: { x: number; y: number } | null = null;
+    // Lagged caustic position (--cx/--cy, 0–100%): eases toward the pointer
+    // while hovering and back to center (50/50) on leave, so CardField's warm
+    // pool TRAILS the sharp ::after specular like a deeper light — the "one
+    // sun" read. We lerp in rAF rather than via a CSS transition because
+    // transitions don't fire on var()-driven transforms. Self-terminating:
+    // the loop stops once the pool has caught up (or settled home).
+    let cx = 50, cy = 50, tx = 50, ty = 50, settle = 0;
+    const tick = () => {
+      settle = 0;
+      cx += (tx - cx) * 0.14;
+      cy += (ty - cy) * 0.14;
+      el.style.setProperty('--cx', `${cx.toFixed(2)}%`);
+      el.style.setProperty('--cy', `${cy.toFixed(2)}%`);
+      if (Math.abs(tx - cx) > 0.04 || Math.abs(ty - cy) > 0.04) settle = requestAnimationFrame(tick);
+    };
+    const kick = () => { if (!settle) settle = requestAnimationFrame(tick); };
     const apply = () => {
       raf = 0;
       if (!pending) return;
       const r = el.getBoundingClientRect();
-      el.style.setProperty('--mx', `${(((pending.x - r.left) / r.width) * 100).toFixed(1)}%`);
-      el.style.setProperty('--my', `${(((pending.y - r.top) / r.height) * 100).toFixed(1)}%`);
+      const mx = ((pending.x - r.left) / r.width) * 100;
+      const my = ((pending.y - r.top) / r.height) * 100;
+      el.style.setProperty('--mx', `${mx.toFixed(1)}%`);
+      el.style.setProperty('--my', `${my.toFixed(1)}%`);
+      tx = mx; ty = my; kick(); // steer the lagged pool toward the cursor
     };
     const onMove = (e: PointerEvent) => {
       pending = { x: e.clientX, y: e.clientY };
@@ -195,6 +214,7 @@ export function useSpotlight<T extends HTMLElement = HTMLDivElement>() {
     const onLeave = () => {
       if (raf) { cancelAnimationFrame(raf); raf = 0; }
       el.style.setProperty('--hover', '0');
+      tx = 50; ty = 50; kick(); // ease the caustic home
     };
 
     el.addEventListener('pointerenter', onEnter);
@@ -202,11 +222,67 @@ export function useSpotlight<T extends HTMLElement = HTMLDivElement>() {
     el.addEventListener('pointerleave', onLeave);
     return () => {
       if (raf) cancelAnimationFrame(raf);
+      if (settle) cancelAnimationFrame(settle);
       el.removeEventListener('pointerenter', onEnter);
       el.removeEventListener('pointermove', onMove);
       el.removeEventListener('pointerleave', onLeave);
     };
   }, [reduced]);
+
+  return ref;
+}
+
+/* ────────────────────────────────────────────────────────────────────
+ * useMagnetic — a small, capped cursor-pull on a primary CTA (organic-pass
+ * 2026-06-03, signature move #4). On pointermove over the element it writes a
+ * damped translate3d TOWARD the cursor (offset from the element's center ×
+ * `strength`, clamped to ±`max` px); on leave it clears the transform so the
+ * element eases home — the spring/catch-up comes from the element's own
+ * `transition: transform …` (Button's transform transition). rAF-throttled,
+ * compositor-only (one translate3d). Fine-pointer (hover) devices only; RM →
+ * no-op. Built to mirror useSpotlight exactly. SSR/jsdom-safe.
+ * ──────────────────────────────────────────────────────────────────── */
+export function useMagnetic<T extends HTMLElement = HTMLElement>(strength = 0.22, max = 6) {
+  const ref = useRef<T>(null);
+  const reduced = usePrefersReducedMotion();
+
+  useEffect(() => {
+    if (reduced) return;
+    const el = ref.current;
+    if (!el || typeof window === 'undefined' || typeof window.matchMedia !== 'function') return;
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+    let raf = 0;
+    let pending: { x: number; y: number } | null = null;
+    const apply = () => {
+      raf = 0;
+      if (!pending) return;
+      const r = el.getBoundingClientRect();
+      const dx = pending.x - (r.left + r.width / 2);
+      const dy = pending.y - (r.top + r.height / 2);
+      const tx = Math.max(-max, Math.min(max, dx * strength));
+      const ty = Math.max(-max, Math.min(max, dy * strength));
+      el.style.transform = `translate3d(${tx.toFixed(2)}px, ${ty.toFixed(2)}px, 0)`;
+    };
+    const onMove = (e: PointerEvent) => {
+      pending = { x: e.clientX, y: e.clientY };
+      if (!raf) raf = requestAnimationFrame(apply);
+    };
+    const onLeave = () => {
+      if (raf) { cancelAnimationFrame(raf); raf = 0; }
+      pending = null;
+      el.style.transform = '';
+    };
+
+    el.addEventListener('pointermove', onMove);
+    el.addEventListener('pointerleave', onLeave);
+    return () => {
+      if (raf) cancelAnimationFrame(raf);
+      el.removeEventListener('pointermove', onMove);
+      el.removeEventListener('pointerleave', onLeave);
+      el.style.transform = '';
+    };
+  }, [reduced, strength, max]);
 
   return ref;
 }

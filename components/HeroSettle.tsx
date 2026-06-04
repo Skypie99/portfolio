@@ -96,3 +96,45 @@ export function HeroTitleSettle({ children, className }: SlotProps) {
     </motion.h1>
   );
 }
+
+/**
+ * SettleHeading — the case-study title gesture (HeroTitleSettle), generalized
+ * for every route page's <h1> (organic-pass 2026-06-03, signature move #3).
+ *
+ * Carves in on MOUNT — opacity 0→1, y 8→0, letter-spacing 0.10em→-0.02em,
+ * ~560ms, ease [0.16,1,0.3,1] — so every page header crystallises on arrival
+ * the way the detail-page title and the cinematic wordmark do, instead of
+ * popping in flat. Slightly gentler travel than HeroTitleSettle (these h1s
+ * sit a little lower on the page and share the route-change crossfade).
+ *
+ * `--ls-rest` lets a caller pin a different resting letter-spacing than the
+ * default -0.02em (e.g. display heads that rest tighter). Reduced motion →
+ * final/visible state immediately. SSR-safe (server renders final state;
+ * the mount animation fires in the same frame after hydration).
+ */
+export function SettleHeading({
+  children,
+  className,
+  restLetterSpacing = '-0.02em',
+}: SlotProps & { restLetterSpacing?: string }) {
+  const shouldReduceMotion = useReducedMotion();
+
+  if (shouldReduceMotion) {
+    return (
+      <h1 className={className} style={{ letterSpacing: restLetterSpacing }}>
+        {children}
+      </h1>
+    );
+  }
+
+  return (
+    <motion.h1
+      className={className}
+      initial={{ opacity: 0, y: 8, letterSpacing: '0.1em' }}
+      animate={{ opacity: 1, y: 0, letterSpacing: restLetterSpacing }}
+      transition={{ duration: 0.56, ease: [0.16, 1, 0.3, 1] }}
+    >
+      {children}
+    </motion.h1>
+  );
+}

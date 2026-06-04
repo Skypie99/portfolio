@@ -35,8 +35,8 @@ app/
   not-found.tsx         404
 
 components/             all shared UI components
-  AppMockup.tsx         animated phone mockup used in hero
-  Hero.tsx              homepage hero section
+  cinematic/            opening interactive desert scroll scene (GSAP) — PROTECTED, read-only
+  Hero.tsx              homepage hero section (below the cinematic scene)
   ProjectCard.tsx       card for each deliverable
   Sidebar.tsx           persistent left sidebar nav
   HamburgerNav.tsx      mobile nav (client component)

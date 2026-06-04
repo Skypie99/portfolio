@@ -23,6 +23,12 @@ const SIGNATURE: Record<string, string> = {
   'pacman': '200 108 60',
   'mutual-mesh': '202 142 114', // clay-rose
   'mutual': '202 142 114',
+  // Certificate issuers — same warm family, distinct per issuer so the
+  // credential cards read a touch different without leaving golden-hour.
+  'anthropic': '214 132 88', // clay-terracotta
+  'google': '236 186 118', // gold
+  'university-of-michigan': '202 142 114', // clay-rose
+  'deeplearning-ai': '206 134 78', // deep amber
 };
 
 /** Soft blue at the far corner — the refracted "prism" edge (a quiet whisper). */
@@ -45,9 +51,11 @@ export function CardField({ slug, className }: CardFieldProps) {
       aria-hidden="true"
       className={cn('pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]', className)}
     >
-      {/* warm caustic — light pooling from the top-left, project-tinted */}
+      {/* warm caustic — light pooling from the top-left, project-tinted.
+          .cf-caustic lets the pool damp-track the cursor (useSpotlight --mx/--my)
+          with a slow lag, so it reads as one sun with the ::after specular. */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 cf-caustic"
         style={{ backgroundImage: `radial-gradient(72% 56% at 20% -10%, rgb(${sig} / 0.20), transparent 60%)` }}
       />
       {/* soft top lens-sweep — internal glass highlight, reads convex */}
@@ -55,9 +63,10 @@ export function CardField({ slug, className }: CardFieldProps) {
         className="absolute inset-0"
         style={{ backgroundImage: `radial-gradient(120% 42% at 50% -16%, rgb(255 255 255 / 0.14), transparent 64%)` }}
       />
-      {/* soft-blue refraction — the "prism" light pooling in from the far corner */}
+      {/* soft-blue refraction — the "prism" light pooling in from the far corner.
+          .cf-prism counter-drifts (smaller, slower, opposite) for internal parallax. */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 cf-prism"
         style={{ backgroundImage: `radial-gradient(78% 64% at 108% 112%, rgb(${BLUE} / 0.26), transparent 62%)` }}
       />
       {/* fine frost grain */}

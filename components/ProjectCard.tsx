@@ -3,6 +3,7 @@
 import Link from 'next/link';
 
 import { CardField } from '@/components/CardField';
+import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { useSpotlight } from '@/lib/motion';
 import type { Deliverable } from '@/lib/schema';
@@ -52,7 +53,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
         <div className="flex items-start justify-between gap-4">
           <span
             aria-hidden="true"
-            className="font-serif font-light leading-none text-near-black/15"
+            className="font-serif font-light leading-none text-near-black/15 transition-colors duration-slow ease-gh-glide group-hover:text-near-black/25"
             style={{ fontSize: 'clamp(2.6rem, 5vw, 3.6rem)', letterSpacing: '-0.02em' }}
           >
             {numeral}
@@ -82,12 +83,12 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
               <Link
                 href={`/work/${d.id}/`}
                 aria-label={`${d.title} — ${d.role}, ${d.year}`}
-                className="rounded-sm transition-opacity duration-fast ease-out hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta"
+                className="rounded-sm transition-colors duration-fast ease-out hover:text-accent-text focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta"
               >
                 {d.title}
               </Link>
             </h3>
-            <span aria-hidden="true" className="block h-px w-12 rounded-full bg-gradient-to-r from-[rgb(var(--rgb-accent)/0.65)] via-[rgb(var(--rgb-accent)/0.3)] to-transparent" />
+            <span aria-hidden="true" className={cn('block h-px rounded-full bg-gradient-to-r from-[rgb(var(--rgb-accent)/0.65)] via-[rgb(var(--rgb-accent)/0.3)] to-transparent origin-left transition-transform duration-slow ease-gh-glide group-hover:scale-x-125', wide ? 'w-20' : 'w-12')} />
           </div>
 
           <div className={cn('flex flex-col gap-5', wide && 'md:max-w-[40%]')}>
@@ -103,10 +104,10 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
               {d.summary}
             </p>
 
-            <ul className="flex flex-wrap gap-x-3 gap-y-1">
+            <ul className="flex flex-wrap gap-2">
               {d.tech.slice(0, maxTech).map((t) => (
-                <li key={t} className="font-mono text-meta uppercase tracking-label text-text-meta">
-                  {t}
+                <li key={t}>
+                  <TagPill>{t}</TagPill>
                 </li>
               ))}
             </ul>
@@ -115,7 +116,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
               <Link
                 href={`/work/${d.id}/`}
                 aria-label={`Read case study for ${d.title}`}
-                className="inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                className="inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-base ease-gh-glide hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
               >
                 View project <span aria-hidden="true">→</span>
               </Link>

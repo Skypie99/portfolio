@@ -155,7 +155,10 @@ export function HamburgerNav() {
             transition={{ duration: reduceMotion ? 0 : 0.28, ease: [0.4, 0, 0.2, 1] }}
             className={cn(
               'fixed inset-0 z-40',
-              'bg-cream',
+              // Frosted cohesion with the glass cards — kept near-opaque (92%)
+              // so the overlay's ink/bone nav text holds AA over any content
+              // behind; the blur only softens the faint bleed-through.
+              'bg-cream/92 backdrop-blur-2xl',
               'flex items-center justify-center',
               'p-8',
             )}

@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-import { Button } from '@/components/Button';
+import { SettleHeading } from '@/components/HeroSettle';
 import { Icon } from '@/components/Icon';
+import { MagneticButton } from '@/components/MagneticButton';
 import { NumberedStep } from '@/components/NumberedStep';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { Reveal } from '@/components/Reveal';
@@ -60,11 +61,11 @@ export default function AboutPage() {
             <Icon name="about" className="w-3.5 h-3.5 text-terracotta" />
             A Brief Account
           </p>
-          <h1
+          <SettleHeading
             className="font-serif font-light text-display ember leading-[1.05] max-w-3xl mb-10 text-balance"
           >
             I build things with AI.
-          </h1>
+          </SettleHeading>
 
           {/* Story paragraphs */}
           <div className="max-w-[640px] flex flex-col gap-6">
@@ -265,7 +266,7 @@ export default function AboutPage() {
                     <Link
                       href={`/work/${d.id}/`}
                       aria-label={`Read about ${d.title} — ${d.role}, ${d.year}`}
-                      className="group flex flex-col gap-2 text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+                      className="group flex flex-col gap-2 text-near-black hover:text-accent-text transition-[color,transform] duration-base ease-gh-glide hover:translate-x-0.5"
                     >
                       <p className="font-mono text-meta tracking-label uppercase text-text-meta">
                         {d.role} · {d.year}
@@ -307,9 +308,9 @@ export default function AboutPage() {
             <br />
             Let{'’'}s talk.
           </h2>
-          <Button href={`mailto:${profile.contactEmail}?subject=Hello from your portfolio`}>
+          <MagneticButton href={`mailto:${profile.contactEmail}?subject=Hello from your portfolio`}>
             Write to me.
-          </Button>
+          </MagneticButton>
 
           <Link
             href="/"

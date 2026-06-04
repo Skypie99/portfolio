@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-import { Reveal } from '@/components/Reveal';
+import { SettleHeading } from '@/components/HeroSettle';
 import { WorkFilterGrid } from '@/components/WorkFilterGrid';
 import { cn } from '@/lib/cn';
 import { getDeliverables, getProfile } from '@/lib/content';
@@ -55,11 +55,11 @@ export default function WorkIndexPage() {
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               The Work — {deliverables.length} deliverable{deliverables.length === 1 ? '' : 's'}
             </p>
-            <h1
+            <SettleHeading
               className="font-serif font-light text-display ember leading-[1.05] max-w-3xl mb-8 text-balance"
             >
               The Work
-            </h1>
+            </SettleHeading>
           </div>
           <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-[640px] mt-6 text-pretty">
             A small body of AI-assisted tools and reference materials. Built
@@ -83,24 +83,24 @@ export default function WorkIndexPage() {
               h1 → h3 gap that previously existed; sighted users still
               see the visible page header above as the only h1. */}
           <h2 className="sr-only">Deliverables</h2>
-          <Reveal>
           {deliverables.length === 0 ? (
             // Empty-state per F-04 acceptance criteria.
             <p className="font-serif font-light text-display-s text-charcoal leading-[1.65] max-w-[540px]">
               Deliverables coming soon.
             </p>
           ) : (
+            // WorkFilterGrid owns its own entrance: the featured card reveals
+            // with depth and the grid cascades per-card (no outer block reveal).
             <WorkFilterGrid deliverables={deliverables} />
           )}
-          </Reveal>
 
           {/* Back link */}
           <div className="mt-20">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+              className="group inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
             >
-              <span aria-hidden="true">{'←'}</span>
+              <span aria-hidden="true" className="inline-block transition-transform duration-base ease-gh-glide group-hover:-translate-x-1">{'←'}</span>
               Back to home
             </Link>
           </div>

@@ -1,0 +1,58 @@
+[NOTE: I could not create the Gmail draft — the Gmail connector reported
+"This connector requires additional permissions. The user needs to reconnect
+it with the appropriate access." Reconnect Gmail and I can draft it, or copy
+the text below. Full report: summaries/2026-06-03_Portfolio_Organic_Report.md]
+
+To: skylerhalisky@gmail.com
+Subject: Portfolio — Organic + Interactive refinement (branch ready for review)
+
+Hi Sky,
+
+The organic + interactive refinement pass on skypistudio.com is done and green on branch
+polish/portfolio-organic-2026-06-03 (NOT merged — main stays your gate). Full report saved at
+summaries/2026-06-03_Portfolio_Organic_Report.md.
+
+HONESTY-GATE VERDICT — proceed, bounded, then stop.
+After six rounds the flagship surfaces were already strong. The real, non-manufactured gap was that
+the mature system hadn't been propagated to the secondary surfaces. This round closed that and landed
+four organic signature moves. The site is now at genuine diminishing returns — I recommend stopping here.
+
+YOU CONFIRMED:
+- Add subtle magnetic CTAs too → done (faint pull on the "Write to me." / Contact buttons).
+- Cert cards → full glass treatment → done (they now match the work cards).
+
+FOUR SIGNATURE MOVES:
+1. "One sun" living caustic — on every glass card (work + certs), the warm light now trails your cursor
+   while the highlight leads, so the glass reads as one physical sun with internal depth.
+2. Tactile work evidence — detail-page hero + gallery photos lean in on hover and drift on scroll.
+3. Coherent arrival — every page heading now does the case-study "settle" carve-in and the grids
+   breathe in per-card with the featured card landing first.
+4. Subtle magnetic CTAs — the primary invitations gently pull toward the cursor and spring home.
+
+Plus a coherence sweep: certificate cards → liquid glass; tags render as pills like tech; ember on the
+two cold headings; tactile micro-feedback on numerals/dividers/arrows/rows; gallery colour realigned;
+dead code removed.
+
+NON-NEGOTIABLES MET:
+- Intro scene UNTOUCHED — git diff shows zero changes to components/cinematic/**, the protected
+  globals.css block (1044→EOF), tokens-phase2.css, the sidebar/font tokens, or overflow-x: clip.
+- WCAG AA preserved in both modes; keyboard nav + visible focus unchanged; every new motion honors
+  prefers-reduced-motion; touch stays calm. 60fps transform/opacity only (no CLS); no new dependencies.
+- Build, typecheck, 160 tests, and static-integrity all pass.
+
+HOW TO REVIEW:
+  git diff main..polish/portfolio-organic-2026-06-03
+Then view live in BOTH light + dark, mobile + desktop:
+- /work/ (grid cascade; hover a card — caustic trails the cursor; tech as pills)
+- /work/accessmap/ (tactile hero + gallery; Tech AND Tags as pills; title settles)
+- /certificates/ (cards now read as liquid glass)
+- /about/, /contact/, a /blog/ post, a 404 (every heading settles + ember; tactile rows)
+- Magnetic: hover the "Write to me." and Contact buttons
+- Tab through with the keyboard; then enable Reduce Motion and re-walk (everything goes calm/static)
+- Confirm the intro desert scene looks/behaves exactly as before
+
+One note: the headless preview I use throttles animation frames in a background tab, so Framer reveals
+froze mid-animation in my screenshots — not a production issue (they complete in a real browser). I
+verified those paths via the DOM and the passing build/tests; your live walkthrough is the real check.
+
+— Claude (Portfolio organic pass)

@@ -663,23 +663,6 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
 }
 
 /* ------------------------------------------------------------------
-   Work-card hover — shipped behavior: card lifts 4px (-translate-y-1)
-   and gains a warm shadow (--shadow-elevation-2). Border and bg-hover
-   also deepen. This replaces the earlier Dani §3.3 no-lift spec, which
-   was overridden in a subsequent polish pass (2026-05-27).
-
-   All hover classes are applied via Tailwind group-hover on the JSX
-   in ProjectCard.tsx: `hover:-translate-y-1 hover:shadow-[var(--shadow-elevation-2)]`.
-   This block keeps the focus-visible affordance Alex F-C4-1 set up —
-   the global *:focus-visible Terracotta outline still fires.
-
-   Reduced-motion globals block snaps the scale transition to ~0ms.
-   ------------------------------------------------------------------ */
-.work-card {
-  /* Box-level lift + warm shadow on hover — see ProjectCard.tsx hover classes. */
-}
-
-/* ------------------------------------------------------------------
    Ambient golden-hour drift — signature moment #2 (Contact section).
    A single warm radial light field that drifts almost imperceptibly on an
    autonomous ultra-slow loop — the landing's sun "remembered at rest".
@@ -1039,6 +1022,35 @@ html.dark ::selection {
 .link-draw:focus-visible {
   background-size: 100% 1px;
   color: var(--color-link-hover);
+}
+
+/* ------------------------------------------------------------------
+   Living caustic — organic-pass 2026-06-03, signature move #1 ("one sun").
+   The liquid-glass card's cursor specular (.glass-card::after) glides with
+   the pointer via useSpotlight's --mx/--my. These two CardField layers — the
+   warm caustic pool (.cf-caustic) and the cool prism corner (.cf-prism) —
+   track the LAGGED pointer (--cx/--cy, eased toward the cursor and home again
+   in useSpotlight's rAF lerp) at small amplitude and in OPPOSITE directions.
+   The warm light then trails the sharp specular like a deeper, slower light,
+   and the cool prism counter-drifts: the highlight + the pool read as one
+   physical sun moving over the glass with a whisper of internal parallax.
+   Compositor transform only (translate3d); the lag/ease lives in JS, since a
+   CSS transition won't animate a var()-driven transform. Reduced motion /
+   touch: useSpotlight never sets --cx/--cy, so both layers hold centered.
+   ------------------------------------------------------------------ */
+.cf-caustic {
+  transform: translate3d(
+    calc((var(--cx, 50%) - 50%) * 0.1),
+    calc((var(--cy, 50%) - 50%) * 0.08),
+    0
+  );
+}
+.cf-prism {
+  transform: translate3d(
+    calc((var(--cx, 50%) - 50%) * -0.055),
+    calc((var(--cy, 50%) - 50%) * -0.045),
+    0
+  );
 }
 
 /* ==================================================================
