@@ -235,7 +235,7 @@ export default function HomePage() {
                 highlight
               />
             </Reveal>
-            <div className="border-t border-stone/70" />
+            <div aria-hidden="true" className="rule-ember" />
             <Reveal index={1} variant="depth">
               <NumberedStep
                 number="02"
@@ -244,7 +244,7 @@ export default function HomePage() {
                 highlight
               />
             </Reveal>
-            <div className="border-t border-stone/70" />
+            <div aria-hidden="true" className="rule-ember" />
             <Reveal index={2} variant="depth">
               <NumberedStep
                 number="03"
@@ -313,13 +313,18 @@ export default function HomePage() {
       <section
         id="certificates"
         className={cn(
+          'relative isolate overflow-hidden',
           'px-gutter',
           'py-24 lg:py-32',
           'bg-warm-white',
           'border-t border-border-decorative',
         )}
       >
-        <div className="max-w-content mx-auto">
+        {/* golden-hour light continuity (wow 2026-06-04) — the only homepage
+            scroll section that lacked a warm wash; the sun is now in every room.
+            far tier, drifts on scroll, static under reduced motion. */}
+        <ParallaxWash depth="far" />
+        <div className="relative z-10 max-w-content mx-auto">
           <Reveal variant="scene" className="mb-12 pl-4 border-l-2 border-terracotta">
             <p className="flex items-center gap-2 font-mono text-label tracking-label uppercase text-accent-ink mb-4">
               <Icon name="credentials" className="w-3.5 h-3.5 text-terracotta" />

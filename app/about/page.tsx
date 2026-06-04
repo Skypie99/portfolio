@@ -178,7 +178,7 @@ export default function AboutPage() {
             </h2>
           </Reveal>
 
-          <Reveal className="max-w-[640px] flex flex-col gap-6">
+          <Reveal variant="depth" className="max-w-[640px] flex flex-col gap-6">
             <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
               WCAG 2.2 AA on every interface. Not because it is required.
               Because it is correct. AccessMap exists because disabled people
@@ -217,7 +217,7 @@ export default function AboutPage() {
             </h2>
           </Reveal>
 
-          <Reveal className="max-w-[640px] flex flex-col gap-6">
+          <Reveal variant="depth" className="max-w-[640px] flex flex-col gap-6">
             <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
               I am not a trained software engineer. I came to coding through
               building — I had ideas I wanted to exist. That is still how this

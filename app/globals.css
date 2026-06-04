@@ -708,9 +708,25 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
   transition: opacity var(--dur-reveal) var(--ease-gh-settle),
               transform var(--dur-reveal) var(--ease-gh-settle);
 }
+/* carve (wow 2026-06-04) — echoes the locked intro title's signature
+   focus-pull: a brief blur→sharp + rise, on the site's gh-settle curve (NOT
+   the intro's curve). For KEY editorial headings only. Text is sharp at rest;
+   reduced-motion / no-JS render it instantly sharp (filter reset below) so it
+   never sits blurred and never animates while unreadable. */
+.reveal-carve {
+  transform: translateY(18px);
+  filter: blur(5px);
+  transition: opacity var(--dur-reveal) var(--ease-gh-settle),
+              transform var(--dur-reveal) var(--ease-gh-settle),
+              filter var(--dur-reveal) var(--ease-gh-settle);
+}
 .reveal-shown.reveal-scene,
-.reveal-shown.reveal-depth {
+.reveal-shown.reveal-depth,
+.reveal-shown.reveal-carve {
   transform: none;
+}
+.reveal-shown.reveal-carve {
+  filter: none;
 }
 @media (prefers-reduced-motion: reduce) {
   .reveal {
@@ -718,12 +734,14 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
     transform: none;
     transition: none;
   }
+  .reveal-carve { filter: none; }
 }
 @media (scripting: none) {
   .reveal {
     opacity: 1;
     transform: none;
   }
+  .reveal-carve { filter: none; }
 }
 
 /* ------------------------------------------------------------------
@@ -977,11 +995,22 @@ html.dark ::selection {
   }
 }
 
-/* Hero background drift — warm amber overlay shifts upward slightly
-   as the hero exits, creating a sense of depth behind the headline. */
+/* Hero background wash — full life over the hero's pass through the viewport
+   (wow 2026-06-04, signature move #1: "the sun follows you in"). On ENTRY the
+   warm wash BLOOMS from a soft half-light to full — so as the locked desert
+   scene releases, its golden light appears to RESOLVE INTO the hero rather
+   than cut away (the site reads as one continuous piece). It holds full while
+   the hero is read,
+   then on EXIT drifts up + fades (the original exit behaviour, preserved).
+   One scroll-linked animation (no two-animation opacity conflict). No-support
+   / reduced-motion: the wash sits at full opacity (its base) — graceful and
+   fully readable. The half-light start also lets the headline land before the
+   light deepens (readability win). */
 @keyframes hero-bg-drift {
-  from { transform: translateY(0) scale(1);   opacity: 1; }
-  to   { transform: translateY(-24px) scale(1.06); opacity: 0.4; }
+  0%   { transform: translateY(0) scale(1);        opacity: 0.5; }
+  28%  { transform: translateY(0) scale(1);        opacity: 1;   }
+  72%  { transform: translateY(0) scale(1);        opacity: 1;   }
+  100% { transform: translateY(-24px) scale(1.06); opacity: 0.4; }
 }
 
 @supports (animation-timeline: view()) {
@@ -989,7 +1018,7 @@ html.dark ::selection {
     .hero-bg-drift {
       animation: hero-bg-drift linear both;
       animation-timeline: view();
-      animation-range: exit 0% exit 100%;
+      animation-range: entry 0% exit 100%;
     }
   }
 }

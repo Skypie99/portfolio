@@ -18,9 +18,12 @@ type RevealProps = {
    *  - `default` — 16px rise, 0.55s ease-out (unchanged baseline).
    *  - `scene`   — 28px rise on `--dur-scene` + `--ease-gh-settle` (section headers).
    *  - `depth`   — 22px rise + subtle scale-settle on `--ease-gh-settle` (layered feel).
+   *  - `carve`   — blur→sharp focus-pull + 18px rise, echoing the locked intro
+   *    title's signature resolve. KEY editorial headings only; sharp at rest,
+   *    RM/no-JS render it instantly sharp (never blurred, never unreadable).
    * Reduced-motion / no-JS fall back to the final visible state regardless.
    */
-  variant?: 'default' | 'scene' | 'depth';
+  variant?: 'default' | 'scene' | 'depth' | 'carve';
   /** Rendered element. Default `div`. */
   as?: ElementType;
 };
@@ -57,6 +60,7 @@ export function Reveal({
         'reveal',
         variant === 'scene' && 'reveal-scene',
         variant === 'depth' && 'reveal-depth',
+        variant === 'carve' && 'reveal-carve',
         inView && 'reveal-shown',
         className,
       )}

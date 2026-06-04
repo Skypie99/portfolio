@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import { AnimatedCertGrid } from '@/components/AnimatedCertGrid';
 import { SettleHeading } from '@/components/HeroSettle';
+import { ParallaxWash } from '@/components/ParallaxWash';
 import { cn } from '@/lib/cn';
 import { getCertificates, getProfile } from '@/lib/content';
 
@@ -32,8 +33,11 @@ export default function CertificatesPage() {
   return (
     <>
       {/* Page header */}
-      <section className="px-gutter py-24 lg:py-32 bg-cream">
-        <div className="max-w-content mx-auto">
+      <section className="relative isolate overflow-hidden px-gutter py-24 lg:py-32 bg-cream">
+        {/* golden-hour light continuity (wow 2026-06-04) — the header is lit
+            like every other showcase entry point. RM → static. */}
+        <ParallaxWash depth="far" />
+        <div className="relative z-10 max-w-content mx-auto">
           <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
             <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
             Credentials — {certificates.length}
