@@ -34,7 +34,7 @@ export function CaseStudyCard({ title, category, description, href, index = 0, c
       aria-label={`${title} — read the case study`}
       data-category={category}
       className={cn(
-        'glass-card case-study-card group relative isolate flex aspect-[4/5] flex-col overflow-hidden rounded-[20px]',
+        'glass-card case-study-card group relative isolate flex aspect-[4/5] flex-col overflow-hidden rounded-[22px]',
         'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta',
         className,
       )}
@@ -57,7 +57,7 @@ export function CaseStudyCard({ title, category, description, href, index = 0, c
           >
             {title}
           </h3>
-          <span aria-hidden="true" className="block h-px w-10 rounded-full bg-[rgb(var(--rgb-accent)/0.55)]" />
+          <span aria-hidden="true" className="block h-px w-12 rounded-full bg-gradient-to-r from-[rgb(var(--rgb-accent)/0.65)] via-[rgb(var(--rgb-accent)/0.3)] to-transparent" />
           <p className="font-sans font-light text-body-sm leading-[1.65] text-charcoal line-clamp-2 text-pretty">
             {description}
           </p>

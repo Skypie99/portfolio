@@ -146,12 +146,23 @@ export default function HomePage() {
       <section
         id="work"
         className={cn(
+          'relative isolate',
           'px-gutter',
           'py-24 lg:py-32',
           'bg-cream',
           'border-t border-border-decorative',
         )}
       >
+        {/* soft wash so the liquid-glass cards have something to refract —
+            a warm golden glow + a whisper of cool blue (decorative, static) */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10"
+          style={{
+            backgroundImage:
+              'radial-gradient(40% 44% at 20% 26%, rgb(255 212 158 / 0.18), transparent 62%), radial-gradient(44% 48% at 86% 82%, rgb(150 188 214 / 0.18), transparent 64%)',
+          }}
+        />
         <div className="max-w-content mx-auto">
           {/* Dani wave5: terracotta left-border accent on section headers */}
           <Reveal variant="scene" className="mb-12 pl-4 border-l-2 border-terracotta">
