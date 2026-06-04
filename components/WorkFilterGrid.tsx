@@ -10,14 +10,14 @@ import { ProjectCard } from '@/components/ProjectCard';
 import { Reveal } from '@/components/Reveal';
 import type { Deliverable } from '@/lib/schema';
 
-type Category = 'accessmap' | 'claude-corp' | 'prompt-library' | 'pacman' | 'mutual';
+type Category = 'accessmap' | 'claude-corp' | 'prompt-library' | 'ghost' | 'mutual';
 
 function toCategory(id: string): Category {
   const map: Record<string, Category> = {
     'accessmap': 'accessmap',
     'claude-corp': 'claude-corp',
     'prompt-library': 'prompt-library',
-    'pacman-code-trainer': 'pacman',
+    'ghost-code': 'ghost',
     'mutual-mesh': 'mutual',
   };
   return map[id] ?? 'accessmap';

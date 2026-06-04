@@ -71,7 +71,7 @@
   --tint-accessmap:   rgba(226, 151, 110, 0.2);   /* amber */
   --tint-claude-corp: rgba(179, 95, 50, 0.2);     /* terracotta */
   --tint-prompt-lib:  rgba(251, 207, 172, 0.2);   /* sand */
-  --tint-pacman:      rgba(127, 67, 35, 0.2);     /* umber */
+  --tint-ghost:       rgba(72, 195, 210, 0.2);     /* phantom cyan */
   --tint-mutual:      rgba(179, 95, 50, 0.2);     /* terracotta */
 
   /* Generic muted overlay for case study backgrounds */

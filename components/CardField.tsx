@@ -19,8 +19,8 @@ const SIGNATURE: Record<string, string> = {
   'accessmap': '224 150 90', // terracotta-amber
   'claude-corp': '206 134 78', // deep amber
   'prompt-library': '236 186 118', // gold
-  'pacman-code-trainer': '200 108 60', // rust
-  'pacman': '200 108 60',
+  'ghost-code': '72 195 210', // phantom cyan
+  'ghost': '72 195 210',
   'mutual-mesh': '202 142 114', // clay-rose
   'mutual': '202 142 114',
   // Certificate issuers — same warm family, distinct per issuer so the

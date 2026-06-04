@@ -8,7 +8,7 @@ import { useSpotlight } from '@/lib/motion';
 
 type CaseStudyCardProps = {
   title: string;
-  category: 'accessmap' | 'claude-corp' | 'prompt-library' | 'pacman' | 'mutual';
+  category: 'accessmap' | 'claude-corp' | 'prompt-library' | 'ghost' | 'mutual';
   description: string;
   href: string;
   /** Editorial index for the ghosted numeral. Default 0. */

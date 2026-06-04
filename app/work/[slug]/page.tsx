@@ -60,14 +60,14 @@ function renderMarkdown(markdown: string): React.ReactNode[] {
 
 type RouteParams = { slug: string };
 
-type CaseStudyCategory = 'accessmap' | 'claude-corp' | 'prompt-library' | 'pacman' | 'mutual';
+type CaseStudyCategory = 'accessmap' | 'claude-corp' | 'prompt-library' | 'ghost' | 'mutual';
 
 function toCategory(id: string): CaseStudyCategory {
   const map: Record<string, CaseStudyCategory> = {
     'accessmap': 'accessmap',
     'claude-corp': 'claude-corp',
     'prompt-library': 'prompt-library',
-    'pacman-code-trainer': 'pacman',
+    'ghost-code': 'ghost',
     'mutual-mesh': 'mutual',
   };
   return map[id] ?? 'accessmap';
