@@ -10,15 +10,20 @@ import { Reveal } from '@/components/Reveal';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getDeliverables, getProfile } from '@/lib/content';
+import { INLINE_CODE_CLASS, smartPunctuation } from '@/lib/markdown';
 
 function parseInline(text: string): React.ReactNode[] {
-  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g);
+  // Split on **bold**, *italic*, and `code`, preserving delimiters. Smart
+  // punctuation applies to prose + emphasis, never inside `code`.
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`)/g);
   return parts.map((part, i) => {
     if (part.startsWith('**') && part.endsWith('**'))
-      return <strong key={i} className="font-semibold text-near-black">{part.slice(2, -2)}</strong>;
+      return <strong key={i} className="font-semibold text-near-black">{smartPunctuation(part.slice(2, -2))}</strong>;
+    if (part.startsWith('`') && part.endsWith('`'))
+      return <code key={i} className={INLINE_CODE_CLASS}>{part.slice(1, -1)}</code>;
     if (part.startsWith('*') && part.endsWith('*'))
-      return <em key={i}>{part.slice(1, -1)}</em>;
-    return part;
+      return <em key={i}>{smartPunctuation(part.slice(1, -1))}</em>;
+    return smartPunctuation(part);
   });
 }
 
@@ -179,7 +184,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
               {/* Warm top-light — single source from above (lit-well depth) */}
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,241,217,0.38),transparent_62%)] dark:bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,241,217,0.16),transparent_62%)]"
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,241,217,0.38),transparent_62%)] dark:bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,221,176,0.10),transparent_62%)]"
               />
               {/* Alex F-C4-3: explicit dimensions for the 4:5 hero. */}
               {/* Peter: not LCP on mobile (below fold initially), lazy-load safe */}
@@ -323,7 +328,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
           <ParallaxWash depth="far" />
           <div className="relative z-10 max-w-content mx-auto">
             <Reveal variant="scene">
-              <article aria-label={`${d.title} case study`} className="max-w-[720px] flex flex-col gap-6">
+              <article aria-label={`${d.title} case study`} className="max-w-measure-wide flex flex-col gap-6">
                 {renderMarkdown(d.body)}
               </article>
             </Reveal>
@@ -350,7 +355,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
                     {/* Warm top-light — single source from above (lit-well depth) */}
                     <div
                       aria-hidden="true"
-                      className="pointer-events-none absolute inset-0 bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,241,217,0.38),transparent_62%)] dark:bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,241,217,0.16),transparent_62%)]"
+                      className="pointer-events-none absolute inset-0 bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,241,217,0.38),transparent_62%)] dark:bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,221,176,0.10),transparent_62%)]"
                     />
                     {/* Alex F-C4-3: explicit dimensions for the 4:3 gallery. */}
                     {/* eslint-disable-next-line @next/next/no-img-element */}

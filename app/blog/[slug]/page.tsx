@@ -6,6 +6,7 @@ import { Reveal } from '@/components/Reveal';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getAllBlogPostSlugs, getBlogPosts, getProfile } from '@/lib/content';
+import { INLINE_CODE_CLASS, smartPunctuation } from '@/lib/markdown';
 
 type RouteParams = { slug: string };
 
@@ -96,16 +97,20 @@ function renderMarkdown(markdown: string): React.ReactNode[] {
  * parseInline — handles **bold** and *italic* within paragraph text.
  */
 function parseInline(text: string): React.ReactNode[] {
-  // Split on bold (**text**) and italic (*text*), preserving delimiters.
-  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g);
+  // Split on **bold**, *italic*, and `code`, preserving delimiters. Smart
+  // punctuation applies to prose + emphasis, never inside `code`.
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`)/g);
   return parts.map((part, i) => {
     if (part.startsWith('**') && part.endsWith('**')) {
-      return <strong key={i} className="font-semibold text-near-black">{part.slice(2, -2)}</strong>;
+      return <strong key={i} className="font-semibold text-near-black">{smartPunctuation(part.slice(2, -2))}</strong>;
+    }
+    if (part.startsWith('`') && part.endsWith('`')) {
+      return <code key={i} className={INLINE_CODE_CLASS}>{part.slice(1, -1)}</code>;
     }
     if (part.startsWith('*') && part.endsWith('*')) {
-      return <em key={i}>{part.slice(1, -1)}</em>;
+      return <em key={i}>{smartPunctuation(part.slice(1, -1))}</em>;
     }
-    return part;
+    return smartPunctuation(part);
   });
 }
 
@@ -167,7 +172,7 @@ export default function BlogPostPage({ params }: { params: RouteParams }) {
           </h1>
 
           {/* Summary */}
-          <p className="font-sans font-light text-[1.125rem] text-charcoal leading-[1.65] max-w-[640px] text-pretty mb-10">
+          <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-measure-wide text-pretty mb-10">
             {post.summary}
           </p>
 
@@ -197,7 +202,7 @@ export default function BlogPostPage({ params }: { params: RouteParams }) {
           <Reveal variant="scene">
             <article
               aria-label={post.title}
-              className="max-w-[720px] flex flex-col gap-6"
+              className="max-w-measure-wide flex flex-col gap-6"
             >
               {renderedContent}
             </article>
