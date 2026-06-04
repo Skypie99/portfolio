@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { Button } from '@/components/Button';
+import { Icon } from '@/components/Icon';
 import { NumberedStep } from '@/components/NumberedStep';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { Reveal } from '@/components/Reveal';
@@ -56,7 +57,7 @@ export default function AboutPage() {
       <section className="px-gutter py-24 lg:py-32 bg-cream">
         <div className="max-w-content mx-auto">
           <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
-            <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
+            <Icon name="about" className="w-3.5 h-3.5 text-terracotta" />
             A Brief Account
           </p>
           <h1
@@ -74,12 +75,10 @@ export default function AboutPage() {
             </p>
 
             {/* Pull-quote — editorial accent, carries the thesis */}
-            <blockquote
-              className="pl-5 border-l-2 border-terracotta font-serif font-light text-step-2 text-near-black leading-[1.4] text-balance"
-              style={{ letterSpacing: '-0.01em' }}
-            >
+            <blockquote className="pull-quote nums-oldstyle pl-3 font-serif font-light text-step-2 text-near-black leading-[1.4] text-balance">
               Accessibility is not an add-on. It is where you begin.
             </blockquote>
+            <span aria-hidden="true" className="rule-ember block h-px w-16 mt-5" />
 
             <p className="font-sans font-light text-prose text-charcoal leading-[1.65] text-pretty">
               I work from {profile.location}. Mostly on AI-assisted tooling,
@@ -116,7 +115,7 @@ export default function AboutPage() {
         <div className="relative z-10 max-w-content mx-auto">
           <Reveal variant="scene" className="mb-12">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
-              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
+              <Icon name="about" className="w-3.5 h-3.5 text-terracotta" />
               Method
             </p>
             <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-[1.1] text-balance">
@@ -170,7 +169,7 @@ export default function AboutPage() {
         <div className="max-w-content mx-auto">
           <Reveal variant="scene" className="mb-12">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
-              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
+              <Icon name="about" className="w-3.5 h-3.5 text-terracotta" />
               Principles
             </p>
             <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
@@ -209,7 +208,7 @@ export default function AboutPage() {
         <div className="max-w-content mx-auto">
           <Reveal variant="scene" className="mb-12">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
-              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
+              <Icon name="about" className="w-3.5 h-3.5 text-terracotta" />
               Currently
             </p>
             <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
@@ -248,7 +247,7 @@ export default function AboutPage() {
           <div className="max-w-content mx-auto">
             <Reveal variant="scene" className="mb-12">
               <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
-                <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
+                <Icon name="about" className="w-3.5 h-3.5 text-terracotta" />
                 The Work
               </p>
               <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-[1.1] text-balance">
