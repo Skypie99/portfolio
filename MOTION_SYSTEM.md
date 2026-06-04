@@ -173,3 +173,34 @@ LOCKED and was not touched.
 All animate transform/opacity only; the parallax reuses the single shared rAF; AA holds
 in both modes over every wash. `useActiveSection` is wired for the mobile nav active-state
 (follow-up).
+
+---
+
+## §10 — Organic + interactive pass (2026-06-03)
+
+Natural physics, soft living detail, tactile response — extending the calm vocabulary above
+(no new easings; no GSAP below the landing; the intro scene is untouched). Four signature moves
+plus a coherence sweep. Every new motion is transform/opacity-only and reduced-motion safe.
+
+**Hooks (`lib/motion.ts`, dependency-free, fine-pointer + RM gated):**
+- `useSpotlight()` — now ALSO publishes a **lagged** caustic position `--cx`/`--cy` (0–100%) via a
+  self-terminating rAF lerp (eases toward the pointer, home to 50/50 on leave) alongside the raw
+  `--mx`/`--my`/`--hover` it already set. The specular tracks raw; the caustic trails. (A CSS
+  transition can't animate a `var()`-driven transform, so the lag lives in JS.)
+- `useMagnetic(strength = 0.22, max = 6)` — capped `translate3d` toward the cursor on a CTA; clears
+  on leave so Button's own `transition: transform` springs it home. Mirrors `useSpotlight`'s shape.
+
+**New patterns + reduced-motion contract:**
+| Pattern | Where | Motion | Reduced motion / touch |
+|---|---|---|---|
+| Living caustic ("one sun") | `.cf-caustic` + `.cf-prism` in `CardField` (every glass card: work + certs) | warm pool damp-tracks `--cx/--cy`, cool prism counter-drifts → internal parallax under the cursor specular | `useSpotlight` never sets the vars → both hold centered (static) |
+| Magnetic CTA | `MagneticButton` (closing "Write to me." + Contact) | faint capped pull toward cursor, eased spring-home | `useMagnetic` no-op → ordinary Button |
+| Tactile work media | `TactileMedia` (detail hero + gallery) | hover scale 1→1.05 (group) + `useParallax` scroll-drift in an oversized clipped well | parallax static; hover is intent (fine under RM) |
+| Settle on arrival | `SettleHeading` (every route h1: work, certs, about, contact, 404, blog) | mount carve-in: opacity/y + letter-spacing 0.10em→rest, echoing the cinematic wordmark | renders final state instantly |
+| Weighted grid cascade | `WorkFilterGrid`, `AnimatedCertGrid`, featured card via `Reveal variant="depth"` | per-item rise + `scale(0.985)` settle on `gh-settle`, staggered | gated → final state |
+| Tactile micro-feedback | card numerals, accent dividers (`scale-x`), CTA + back arrows, About/Contact rows, TagPill | `group-hover` color/transform on `gh-glide` | snap instant (hover intent; global RM block zeroes duration) |
+
+No `width`/`border-width` animation (CLS); dividers grow via `scale-x` (compositor). The caustic and
+magnetic both ride the existing fine-pointer + RM gates, so touch and reduced-motion get a calm,
+static, fully-AA site. The intro scene (GSAP, `components/cinematic/**`, `globals.css` 1044→EOF) is
+byte-identical — none of the above touches it.

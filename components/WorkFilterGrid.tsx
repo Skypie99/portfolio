@@ -5,7 +5,9 @@ import { AnimatePresence, motion, useInView, useReducedMotion } from 'framer-mot
 
 import { CaseStudyCard } from '@/components/CaseStudyCard';
 import { FilterPill } from '@/components/FilterPill';
+import { ParallaxWash } from '@/components/ParallaxWash';
 import { ProjectCard } from '@/components/ProjectCard';
+import { Reveal } from '@/components/Reveal';
 import type { Deliverable } from '@/lib/schema';
 
 type Category = 'accessmap' | 'claude-corp' | 'prompt-library' | 'pacman' | 'mutual';
@@ -27,15 +29,18 @@ type WorkFilterGridProps = {
 
 const containerVariants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.08 } },
+  visible: { transition: { staggerChildren: 0.09, delayChildren: 0.04 } },
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
+  // Weighted landing: cards rise + settle from a touch of depth (scale 0.985)
+  // on the gh-settle curve — a soft, long-tailed arrival, never poppy.
+  hidden: { opacity: 0, y: 28, scale: 0.985 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] as const },
+    scale: 1,
+    transition: { duration: 0.7, ease: [0.22, 0.9, 0.26, 1] as const },
   },
 };
 
@@ -58,6 +63,12 @@ export function WorkFilterGrid({ deliverables }: WorkFilterGridProps) {
 
   return (
     <div className="relative isolate">
+      {/* drifting golden-hour wash — in its own clipped layer so the -inset
+          oversize never clips the cards' hover-lift or shadows. Adds gentle
+          scroll-life behind the grid (organic-pass), under the static refraction. */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <ParallaxWash depth="far" />
+      </div>
       {/* soft wash so the liquid-glass cards have something to refract —
           a warm golden glow + a whisper of cool blue (decorative, static) */}
       <div
@@ -101,7 +112,12 @@ export function WorkFilterGrid({ deliverables }: WorkFilterGridProps) {
             exit={shouldReduceMotion ? undefined : { opacity: 0, scale: 0.98, transition: { duration: 0.18 } }}
             className="mb-12"
           >
-            <ProjectCard deliverable={featured} wide index={deliverables.indexOf(featured)} />
+            {/* Reveal owns the scroll-entrance (CSS/IO depth-rise) so the
+                featured card lands with the same weight as the grid cards —
+                kept separate from the Framer layout/filter choreography. */}
+            <Reveal variant="depth">
+              <ProjectCard deliverable={featured} wide index={deliverables.indexOf(featured)} />
+            </Reveal>
           </motion.div>
         )}
       </AnimatePresence>

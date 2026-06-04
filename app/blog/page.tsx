@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+import { SettleHeading } from '@/components/HeroSettle';
 import { Reveal } from '@/components/Reveal';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
@@ -51,11 +52,11 @@ export default function BlogIndexPage() {
             <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
             Blog — {posts.length} {posts.length === 1 ? 'post' : 'posts'}
           </p>
-          <h1
+          <SettleHeading
             className="font-serif font-light text-display ember leading-[1.05] max-w-3xl mb-8 text-balance"
           >
             Writing
-          </h1>
+          </SettleHeading>
           <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-[640px] text-pretty">
             Notes on accessibility, AI-assisted building, and what it means to
             make things carefully — one project at a time.
@@ -171,9 +172,9 @@ export default function BlogIndexPage() {
           <div className="mt-20">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+              className="group inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
             >
-              <span aria-hidden="true">{'←'}</span>
+              <span aria-hidden="true" className="inline-block transition-transform duration-base ease-gh-glide group-hover:-translate-x-1">{'←'}</span>
               Back to home
             </Link>
           </div>

@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 
 import { Button } from '@/components/Button';
+import { useMagnetic } from '@/lib/motion';
 
 type ContactEmailProps = {
   /**
@@ -26,6 +27,7 @@ type ContactEmailProps = {
  */
 export function ContactEmail({ label }: ContactEmailProps = {}) {
   const [email, setEmail] = useState<string | null>(null);
+  const magRef = useMagnetic<HTMLElement>(0.2, 6);
 
   useEffect(() => {
     // Parts assembled at runtime — never in static HTML
@@ -40,5 +42,5 @@ export function ContactEmail({ label }: ContactEmailProps = {}) {
 
   const children = label ?? (email ? `Email ${email}` : 'Send me an email');
 
-  return <Button href={href}>{children}</Button>;
+  return <Button ref={magRef} href={href}>{children}</Button>;
 }

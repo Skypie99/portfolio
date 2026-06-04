@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { Button } from '@/components/Button';
+import { SettleHeading } from '@/components/HeroSettle';
+import { Reveal } from '@/components/Reveal';
 
 export const metadata: Metadata = {
   title: '404 — Page not found',
@@ -31,27 +33,29 @@ export default function NotFound() {
           </ol>
         </nav>
 
-        <h1
-          className="font-serif font-light text-display text-near-black leading-[1.05] mb-6 text-balance"
+        <SettleHeading
+          className="font-serif font-light text-display ember leading-[1.05] mb-6 text-balance"
         >
           Nothing here.
-        </h1>
+        </SettleHeading>
 
-        <p className="font-sans font-light text-prose text-charcoal max-w-[540px] mb-10 leading-[1.65] text-pretty">
-          The page you{'’'}re looking for doesn{'’'}t exist — or it moved.
-          The homepage is the best place to start, and the work index has
-          every deliverable.
-        </p>
+        <Reveal>
+          <p className="font-sans font-light text-prose text-charcoal max-w-[540px] mb-10 leading-[1.65] text-pretty">
+            The page you{'’'}re looking for doesn{'’'}t exist — or it moved.
+            The homepage is the best place to start, and the work index has
+            every deliverable.
+          </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
-          <Button href="/">Back to the homepage</Button>
-          <Link
-            href="/work/"
-            className="link-draw inline-block font-mono text-label tracking-label uppercase text-near-black"
-          >
-            Or browse the work {'→'}
-          </Link>
-        </div>
+          <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
+            <Button href="/">Back to the homepage</Button>
+            <Link
+              href="/work/"
+              className="link-draw inline-block font-mono text-label tracking-label uppercase text-near-black"
+            >
+              Or browse the work {'→'}
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

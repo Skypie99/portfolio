@@ -51,3 +51,16 @@ harsh drop shadows.
 Custom `::selection` (peach on ink, flips), thin warm scrollbar, terracotta focus ring, per-route
 titles + descriptions, dynamic `app/sitemap.ts`, OG image (`opengraph-image.tsx`), `apple-icon`,
 `colorScheme: 'light dark'`. No global `scroll-behavior: smooth` (would fight the intro's ScrollTrigger).
+
+## Organic + interactive pass (2026-06-03)
+One coherent card system everywhere: **certificates now use the same locked liquid-glass material as
+work cards** (`CertCard` = `.glass-card` + per-issuer `CardField` caustic + `useSpotlight`), retiring
+the flat blush tier. **Tags render as `TagPill`s** like Tech (the section labels carry the distinction);
+the plain-text card tech list is gone. Every route `<h1>` carries the `.ember` gradient and the
+`SettleHeading` carve-in (work, certs, about, contact, 404, blog) — no more flat pop-in. Detail-page
+hero + gallery images are tactile (`TactileMedia`: hover-scale + scroll-parallax) instead of inert
+plates; the off-system `rose-pale`/`teal-soft` gallery section is realigned to the cream/warm-white
+rhythm. New components: `CardField` (living caustic), `TactileMedia`, `MagneticButton`, `CertCard`,
+`SettleHeading`. TagPill gains a faint inset hover ring (tint-agnostic, no CLS). See `MOTION_SYSTEM.md`
+§10 for the motion side. Dead `.work-card` class removed. All new colour use reuses `--rgb-*` tokens
+(AA in both modes); the intro scene is untouched.

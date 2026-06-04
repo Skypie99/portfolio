@@ -46,7 +46,7 @@ export function NumberedStep({ number, title, body, highlight = false, className
         >
           {title}
         </h3>
-        <p className="font-sans font-light text-body text-charcoal leading-[1.65] max-w-[540px] text-pretty">
+        <p className="font-sans font-light text-body text-charcoal leading-[1.65] max-w-measure text-pretty">
           {body}
         </p>
       </div>
