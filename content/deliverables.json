@@ -108,6 +108,42 @@
     "body": "## The problem\n\nMy AI prompts were scattered across notes, markdown files, and memory. I needed one searchable place to keep them — and a hard requirement: nothing leaves the browser. No API keys hitting a backend. No prompts stored in the cloud. The privacy constraint wasn't a nice-to-have; it was the whole product.\n\n## The approach\n\nBuilt in Next.js 15 with localStorage as the entire data layer. One constraint — \"everything stays on the user's machine\" — became the governing design principle. Search? localStorage query. Tags, favorites, import, export, dark mode — all local-first. I shipped across 20 stacked branches over several months, adding features without ever standing up a server.\n\nThe constraint forced discipline. You can't cheat with a backend. Every feature had to be thoughtfully scoped because there was nowhere to offload decisions.\n\n## What shipped\n\nA local-first prompt manager with full-text search, tag filtering, favorites, bulk import/export, and dark mode. Fifty features shipped. Zero backend. Deployed as a static site on GitHub Pages and open-sourced under a permissive license.\n\n## Reflection\n\nLocal-first privacy isn't a limitation — it's a competitive advantage. Building everything in the open with no server made the product sharper, not weaker. I'd make the same call again."
   },
   {
+    "id": "ghost-code",
+    "title": "Ghost Code",
+    "summary": "Retro arcade trainer for CLI commands — guide the Phantom, capture the right token. 56 cards, vanilla JS, zero dependencies, runs in any browser.",
+    "role": "Solo builder",
+    "tech": [
+      "Vanilla JS",
+      "HTML",
+      "CSS",
+      "GitHub Pages"
+    ],
+    "year": 2026,
+    "heroImage": {
+      "src": "/images/deliverables/ghost-code/hero.png",
+      "alt": "Ghost Code arcade screen — the neon Phantom mascot hovering between four command-token answers, score and spirit-life HUD in a synthwave cabinet"
+    },
+    "links": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com/Skypie99/ghost-code",
+        "type": "github"
+      },
+      {
+        "label": "Live demo",
+        "href": "https://skypie99.github.io/ghost-code/",
+        "type": "demo"
+      }
+    ],
+    "tags": [
+      "tools",
+      "game",
+      "learning"
+    ],
+    "featured": false,
+    "body": "## The problem\n\nLearning Claude Code, macOS shortcuts, and Git felt like grinding through flashcards — and flashcards are forgettable. The commands only stick when your hands have run them under pressure. I wanted a way to turn command memorization into something you'd actually want to come back to, without any server, account, or install.\n\n## The approach\n\nI built an original arcade game from scratch in vanilla JS: no frameworks, no build step, one file you can open in any browser. The Phantom — an original character I designed — floats through a synthwave cabinet. Four command tokens appear each round; capture the right one, dodge the wrong ones. Wrong answers cost a spirit life. The constraint of zero dependencies forced every feature to be exactly as heavy as it needed to be, nothing more.\n\nDesigning the Phantom was as important as the game loop. A mascot with personality keeps you playing. I went through six character iterations before landing on the neon ghost silhouette — distinct, playful, and readable at small sizes.\n\n## What shipped\n\nFifty-six command cards spanning Claude Code, macOS, and Git — organized so earlier rounds are forgiving, later rounds are unforgiving. WCAG AA-accessible: keyboard-navigable, sufficient contrast throughout, no motion traps. One-file deploy to GitHub Pages; no backend, no account, no tracking. The Phantom is entirely original.\n\n## Reflection\n\nThe best constraint I gave myself was \"zero dependencies.\" It eliminated every architectural debate and forced the game to be exactly what it needed to be. I'd reach for that constraint more often."
+  },
+  {
     "id": "mutual-mesh",
     "title": "Mutual Mesh",
     "summary": "Mutual-aid app connecting neighbours who want to help with those who need it. Privacy-first: a PRIVACY.md gate blocks every new feature before any code ships.",
