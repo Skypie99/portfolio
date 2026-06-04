@@ -43,7 +43,7 @@ export default function CertificatesPage() {
           >
             Certificates
           </h1>
-          <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] max-w-[640px] text-pretty">
+          <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-[640px] text-pretty">
             Selected credentials and certifications. A short paper trail of the
             things I&apos;ve studied formally — most of the learning happens in
             the work, not on paper.

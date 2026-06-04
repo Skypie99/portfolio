@@ -67,7 +67,7 @@ export default function AboutPage() {
 
           {/* Story paragraphs */}
           <div className="max-w-[640px] flex flex-col gap-6">
-            <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
+            <p className="font-sans font-light text-prose text-charcoal leading-[1.65] text-pretty">
               I came to software through problems I wanted to solve. Most of them
               involved accessibility — tools that should have been better but weren&apos;t.
               I decided to make some that were.
@@ -81,21 +81,21 @@ export default function AboutPage() {
               Accessibility is not an add-on. It is where you begin.
             </blockquote>
 
-            <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
+            <p className="font-sans font-light text-prose text-charcoal leading-[1.65] text-pretty">
               I work from {profile.location}. Mostly on AI-assisted tooling,
               accessibility infrastructure, and community software. I prefer
               learning in public.
             </p>
-            <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
+            <p className="font-sans font-light text-prose text-charcoal leading-[1.65] text-pretty">
               I keep a written record of how each thing was made. The documentation
               is part of the deliverable, not an afterthought.
             </p>
-            <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
+            <p className="font-sans font-light text-prose text-charcoal leading-[1.65] text-pretty">
               Right now: an accessibility map. A multi-agent system that ships real
               commits. A community mesh built for privacy. A Pac-Man trainer.
               All of them open source.
             </p>
-            <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] text-pretty">
+            <p className="font-sans font-light text-prose text-charcoal leading-[1.65] text-pretty">
               
             </p>
           </div>

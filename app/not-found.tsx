@@ -31,7 +31,7 @@ export default function NotFound() {
           Nothing here.
         </h1>
 
-        <p className="font-sans font-light text-[1.0625rem] text-charcoal max-w-[540px] mb-10 leading-[1.65] text-pretty">
+        <p className="font-sans font-light text-prose text-charcoal max-w-[540px] mb-10 leading-[1.65] text-pretty">
           The page you{'’'}re looking for doesn{'’'}t exist — or it moved.
           The homepage is the best place to start, and the work index has
           every deliverable.

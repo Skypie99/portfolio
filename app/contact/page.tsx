@@ -41,11 +41,11 @@ export default function ContactPage() {
           >
             Write to me.
           </h1>
-          <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] max-w-[640px] mb-4 text-pretty">
+          <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-[640px] mb-4 text-pretty">
             AI engineering. Accessibility. Thoughtful product collaborations.
             I reply to most messages within a few days.
           </p>
-          <p className="font-sans font-light text-[1.0625rem] text-charcoal leading-[1.65] max-w-[640px] mb-10 text-pretty">
+          <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-[640px] mb-10 text-pretty">
             The socials below also work, for everything else.
           </p>
 
