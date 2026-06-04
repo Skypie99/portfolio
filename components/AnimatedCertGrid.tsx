@@ -68,9 +68,9 @@ export function AnimatedCertGrid({ certificates }: AnimatedCertGridProps) {
             className={cn(
               'work-card group',
               'h-full flex flex-col',
-              'bg-blush border border-border-decorative',
+              'bg-blush dark:bg-surface-mid border border-border-decorative',
               'p-8',
-              'rounded-md',
+              'rounded-lg',
               'transition-all duration-base ease-out',
               'hover:border-pebble hover:shadow-[var(--shadow-elevation-2)] hover:-translate-y-0.5',
               'focus-within:border-pebble',
