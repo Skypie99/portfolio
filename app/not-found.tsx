@@ -1,6 +1,12 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { Button } from '@/components/Button';
+
+export const metadata: Metadata = {
+  title: '404 — Page not found',
+  description: 'That page doesn’t exist. Browse the selected work or head back home.',
+};
 
 /**
  * 404 page. Cycle 28 critique pass — evergreen copy (the "still
