@@ -6,7 +6,7 @@ import { CardField } from '@/components/CardField';
 import { CardProductReveal } from '@/components/ProductReveal';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
-import { heroMedia } from '@/lib/media';
+import { cardMedia } from '@/lib/media';
 import { useSpotlight } from '@/lib/motion';
 import type { Deliverable } from '@/lib/schema';
 
@@ -57,13 +57,12 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
       <CardProductReveal
         slug={d.id}
         title={d.title}
-        media={heroMedia(d)}
+        media={cardMedia(d)}
         className={cn(
           'shrink-0 border-b border-[rgb(var(--rgb-ink)/0.08)]',
-          // Featured band: a 21:9 cinematic banner (was an extreme ~4:1 letterbox
-          // that magnified a tall phone screenshot too hard). 21:9 + the per-shot
-          // focal frames the key content with map/context margin around it.
-          wide && 'aspect-[21/9]',
+          // Featured band: a 16:9 banner — matches the pre-cropped card image so
+          // it shows (near-)exactly, and reads as a clean cinematic crop.
+          wide && 'aspect-[16/9]',
         )}
       />
 

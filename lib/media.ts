@@ -52,3 +52,25 @@ export function heroMedia(d: HeroSource): ProductRevealMedia {
     focal: d.heroShot?.focal,
   };
 }
+
+type CardSource = Pick<Deliverable, 'heroImage' | 'heroShot' | 'cardImage'>;
+
+/**
+ * Media for a work CARD. A dedicated, pre-cropped `cardImage` wins (shown exactly
+ * — static cover, no re-zoom), so a tall phone hero can stay whole while the card
+ * shows a wide framed crop. Otherwise the card falls back to the hero image
+ * (focal-cropped with parallax) — landscape heroShots fit the band fine.
+ */
+export function cardMedia(d: CardSource): ProductRevealMedia {
+  if (d.cardImage?.src) {
+    return {
+      src: d.cardImage.src,
+      alt: d.cardImage.alt,
+      avif: d.cardImage.avif,
+      webp: d.cardImage.webp,
+      focal: d.cardImage.focal,
+      precropped: true,
+    };
+  }
+  return heroMedia(d);
+}
