@@ -180,7 +180,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
           uppercase 11px. Only 'Work' is a link (with link-draw underline-
           draw hover). Current slug is plain text — you're already there.
           aria-label declares the nav landmark for screen readers. */}
-      <section className="px-gutter pt-24 lg:pt-32 bg-cream">
+      <section className="px-gutter pt-24 lg:pt-32 world-surface">
         <div className="max-w-content mx-auto">
           <nav aria-label="Breadcrumb">
             <ol className="inline-flex items-center gap-2 font-mono text-meta tracking-label uppercase text-text-meta">
@@ -204,7 +204,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
       </section>
 
       {/* Main content — hero left, details right */}
-      <section className="px-gutter py-24 lg:py-32 bg-cream">
+      <section className="px-gutter py-24 lg:py-32 world-surface">
         <div className="max-w-content mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start">
             {/* Hero image / fallback block — HeroImageSettle wraps the whole
@@ -337,7 +337,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
 
       {/* Case study body — rendered only when body content exists */}
       {d.body && (
-        <section className="px-gutter py-24 lg:py-32 bg-warm-white border-t border-border-decorative relative overflow-hidden">
+        <section className="px-gutter py-24 lg:py-32 world-surface-alt border-t border-border-decorative relative overflow-hidden">
           {/* Golden-hour scroll-depth behind the case-study prose */}
           <ParallaxWash depth="far" />
           <div className="relative z-10 max-w-content mx-auto">
@@ -356,7 +356,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
           d.shots[i].src (one-line swap, no layout shift — see SHOW_WORK_PLAN.md).
           The section sits in the same warm light (ParallaxWash) as the body. */}
       {d.shots && d.shots.length > 0 && (
-        <section className="relative overflow-hidden px-gutter py-24 lg:py-32 bg-cream border-t border-border-decorative">
+        <section className="relative overflow-hidden px-gutter py-24 lg:py-32 world-surface border-t border-border-decorative">
           <ParallaxWash depth="far" />
           <div className="relative z-10 max-w-content mx-auto">
             <Reveal variant="scene">
@@ -390,7 +390,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
 
       {/* Optional gallery */}
       {d.gallery && d.gallery.length > 0 && (
-        <section className="relative overflow-hidden px-gutter py-24 lg:py-32 bg-cream border-t border-border-decorative">
+        <section className="relative overflow-hidden px-gutter py-24 lg:py-32 world-surface border-t border-border-decorative">
           {/* golden-hour light continuity (wow 2026-06-04) — the gallery sits in
               the same warm field as the case-study body above it. RM → static. */}
           <ParallaxWash depth="far" />
@@ -443,7 +443,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
             'relative overflow-hidden',
             'px-gutter py-24 lg:py-32',
             // Dani wave4: warm-white for section variety between cream main and gallery.
-            'bg-warm-white border-t border-border-decorative',
+            'world-surface-alt border-t border-border-decorative',
           )}
         >
           {/* golden-hour light continuity — the glass cards sit in warm light, not a bare field. */}
@@ -481,7 +481,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
         className={cn(
           'relative overflow-hidden',
           'px-gutter py-24 lg:py-32',
-          'bg-cream border-t border-border-decorative',
+          'world-surface border-t border-border-decorative',
         )}
       >
         {/* ambient golden-hour drift echo (wow 2026-06-04, C5) — the homepage

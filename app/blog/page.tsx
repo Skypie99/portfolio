@@ -44,7 +44,7 @@ export default function BlogIndexPage() {
         className={cn(
           'px-gutter',
           'py-24 lg:py-32',
-          'bg-cream',
+          'world-surface',
         )}
       >
         <div className="max-w-content mx-auto">
@@ -69,7 +69,7 @@ export default function BlogIndexPage() {
         className={cn(
           'px-gutter',
           'pb-24 lg:pb-32',
-          'bg-warm-white',
+          'world-surface-alt',
           'border-t border-border-decorative pt-24 lg:pt-32',
         )}
       >
