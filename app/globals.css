@@ -883,21 +883,24 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
   /* Translucent content-surface alphas — STATIC, set just above the alpha the
      contrast pass requires for ink-meta ≥ 4.5 over EVERY world state, so the
      world shows through as much as legibility allows. Tunable knobs. */
-  --surface-alpha:       0.62;   /* cream sections — world reads ~38% */
+  --surface-alpha:       0.59;   /* cream sections — world reads ~41% */
   --surface-alpha-alt:   0.79;   /* canvas-alt (footer/certs/process) — meta-heavy */
-  --surface-alpha-cool:  0.77;   /* wash-cool / panel-cool (showcase/contact) */
+  --surface-alpha-cool:  0.77;   /* wash-cool (showcase) */
+  --surface-alpha-coolpale: 0.62; /* panel-cool (contact) — muted-only text */
 }
 html.dark {
   --day-night-rest: 1;                 /* RM / no-JS: dark rests at night */
-  --sky-day-1: 64 50 38;   --sky-day-2: 95 64 38;   --sky-day-3: 126 80 44;   --sky-day-4: 44 35 26;
-  --sky-dusk-1: 34 35 50;  --sky-dusk-2: 62 45 48;  --sky-dusk-3: 92 56 44;   --sky-dusk-4: 28 24 21;
-  --sky-night-1: 10 14 24; --sky-night-2: 14 18 28; --sky-night-3: 22 25 34;  --sky-night-4: 9 12 15;
-  --sky-sun: 201 168 95;
+  --sky-day-1: 86 60 40;   --sky-day-2: 120 76 40;  --sky-day-3: 146 90 48;   --sky-day-4: 48 38 28;
+  --sky-dusk-1: 40 40 60;  --sky-dusk-2: 78 52 52;  --sky-dusk-3: 110 64 48;  --sky-dusk-4: 30 26 22;
+  --sky-night-1: 8 12 22;  --sky-night-2: 12 16 28; --sky-night-3: 20 24 36;  --sky-night-4: 7 10 14;
+  --sky-sun: 224 184 110;
   /* dark panels over a dark world keep AA (light ink) at much lower alpha →
      the deep-amber → night world reads clearly through the glass */
-  --surface-alpha:       0.66;
-  --surface-alpha-alt:   0.70;
-  --surface-alpha-cool:  0.66;
+  /* dark = the dramatic night half: ~50% world bleed (all text still AA — verified) */
+  --surface-alpha:       0.50;
+  --surface-alpha-alt:   0.53;
+  --surface-alpha-cool:  0.53;
+  --surface-alpha-coolpale: 0.60;
 }
 
 /* The fixed stage — behind everything, never interactive. body's bg-canvas is
@@ -938,15 +941,15 @@ html.dark {
 .world-sun {
   position: absolute;
   left: 50%;
-  top: 13%;
-  width: 46vmax;
-  height: 46vmax;
+  top: 11%;
+  width: 58vmax;
+  height: 58vmax;
   border-radius: 50%;
-  transform: translate(-50%, calc(var(--day-night, var(--day-night-rest)) * 64vh));
-  opacity: clamp(0, calc(1.15 - var(--day-night, var(--day-night-rest)) * 1.3), 0.9);
+  transform: translate(-50%, calc(var(--day-night, var(--day-night-rest)) * 70vh));
+  opacity: clamp(0, calc(1.2 - var(--day-night, var(--day-night-rest)) * 1.35), 1);
   will-change: transform, opacity;
   background: radial-gradient(circle at 50% 50%,
-    rgb(var(--sky-sun) / 0.55) 0%, rgb(var(--sky-sun) / 0.26) 32%, rgb(var(--sky-sun) / 0) 64%);
+    rgb(var(--sky-sun) / 0.7) 0%, rgb(var(--sky-sun) / 0.34) 30%, rgb(var(--sky-sun) / 0) 62%);
 }
 /* The horizon line — a warm hairline (echoes .pr-horizon), fading with the light. */
 .world-horizon {
@@ -967,7 +970,7 @@ html.dark {
 .world-surface       { background-color: rgb(var(--rgb-canvas)     / var(--surface-alpha)); }
 .world-surface-alt   { background-color: rgb(var(--rgb-canvas-alt) / var(--surface-alpha-alt)); }
 .world-surface-cool  { background-color: rgb(var(--rgb-wash-cool)  / var(--surface-alpha-cool)); }
-.world-surface-cool-pale { background-color: rgb(var(--rgb-panel-cool) / var(--surface-alpha-cool)); }
+.world-surface-cool-pale { background-color: rgb(var(--rgb-panel-cool) / var(--surface-alpha-coolpale)); }
 
 /* No-JS: ensure the world still rests at its theme state even if the var path is
    ever bypassed (defensive — the fallback in var() already covers it). */
