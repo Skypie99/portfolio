@@ -103,3 +103,21 @@ optional, `alt` required, optional `caption`/`avif`/`webp`). `.svg` heroes are t
 tokens (token-parity green); reduced-motion + `(scripting:none)` show the final image/placeholder
 instantly; intro byte-identical. New components: `ProductReveal`, `DeviceFrame`; shared `lib/signature.ts`,
 `lib/media.ts`. See `MOTION_SYSTEM.md` §12.
+
+## Continuous world (2026-06-05) — "One continuous world" (Direction A)
+
+The golden-hour desert is now a **persistent backdrop** behind every post-intro surface, evolving
+**golden → dusk → night** with scroll. Content rides on the **same panels, now translucent frosted
+glass** (`.world-surface` / `-alt` / `-cool` / `-cool-pale` replaced the opaque `bg-cream` /
+`bg-warm-white` / `bg-wa-teal-*` site-wide), so the page travels through the living world; the glass
+cards refract it. `WorldBackdrop` (fixed, z:-1, `aria-hidden`) is mounted once in `layout.tsx`.
+
+**Two-themes-as-two-halves:** light mode is the **airy daylight** half of the world (high-luminance
+golden→blue-hour stops), dark mode is the **deep night** half — the scroll arc plays within each, and
+the theme toggle (the user's explicit choice) is what owns every readable surface. New decorative
+`--rgb` triplets flip per theme: `--sky-day/dusk/night-1..4`, `--sky-sun`. Panel translucency knobs:
+`--surface-alpha` (.62 light / .66 dark), `--surface-alpha-alt` (.79 / .70), `--surface-alpha-cool`
+(.77 / .66) — set just above the alpha each surface needs to keep **all text at WCAG AA over every
+world state** (verified by contrast pass: light body ≥9.7:1 / small-meta ≥4.5:1; dark all ≥5.2:1).
+All additive — `token-parity` green, the `.cdesert-*` / `.cinematic-*` ranges untouched. See
+`MOTION_SYSTEM.md` §13 + `CONTINUOUS_WORLD_PLAN.md`.
