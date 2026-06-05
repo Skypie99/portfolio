@@ -44,6 +44,9 @@ export type ProductRevealMedia = {
   /** CSS object-position for the full-bleed card/shot crop (e.g. "50% 44%").
    *  Ignored by the device-framed hero (which shows the whole screen). */
   focal?: string;
+  /** This image is ALREADY cropped for the card front — render it statically
+   *  (no parallax oversize, no re-zoom) so it shows exactly as supplied. */
+  precropped?: boolean;
 };
 
 export type ProductRevealProps = {
@@ -142,28 +145,39 @@ function BandHint({ sig }: { sig: string }) {
   );
 }
 
-/** Real screenshot inside a device frame — shows the WHOLE screen (object-contain,
- *  static), so nothing is cropped: the status bar, content and bottom nav all show
- *  exactly as in the source. Wrapped in <picture> for avif/webp. The phone screen
- *  aspect ≈ a modern phone, so a phone screenshot fills it edge-to-edge. */
-function FramedShot({
+/** A real screenshot rendered STATICALLY (no parallax oversize), so it shows
+ *  exactly as supplied — nothing re-zoomed or drifted.
+ *   • `fit="contain"` — device hero: the WHOLE screen (status bar → content →
+ *     bottom nav), nothing cut.
+ *   • `fit="cover"` — pre-cropped card front: fills the band; the band aspect is
+ *     paired with the image so there's no further crop.
+ *  Wrapped in <picture> for avif/webp; `position` sets object-position. */
+function StaticShot({
   src,
   alt,
   sources,
+  fit,
+  position,
 }: {
   src: string;
   alt: string;
   sources?: { avif?: string; webp?: string };
+  fit: 'cover' | 'contain';
+  position?: string;
 }) {
   const img = (
     // eslint-disable-next-line @next/next/no-img-element
     <img
       src={src}
       alt={alt}
-      width={1170}
-      height={2532}
+      width={1280}
+      height={800}
       loading="lazy"
-      className="absolute inset-0 h-full w-full object-contain"
+      style={position ? { objectPosition: position } : undefined}
+      className={cn(
+        'absolute inset-0 h-full w-full',
+        fit === 'cover' ? 'object-cover' : 'object-contain',
+      )}
     />
   );
   return sources && (sources.avif || sources.webp) ? (
@@ -195,16 +209,29 @@ export function ProductReveal({
   const hasReal = Boolean(media.src);
   const sources = media.avif || media.webp ? { avif: media.avif, webp: media.webp } : undefined;
 
-  // The "screen" content. Two real-image modes:
-  //  • device-framed (hero) → FramedShot: the WHOLE screen, contained, static.
-  //  • full-bleed (card/shot) → TactileMedia: cover-cropped to `focal`, parallax.
+  // The "screen" content. Real-image modes:
+  //  • device-framed (hero) → StaticShot contain: the WHOLE screen, static.
+  //  • card front with a PRE-CROPPED image → StaticShot cover: shown exactly,
+  //    no parallax oversize (the band aspect is paired with the image).
+  //  • full-bleed (card/shot), un-cropped source → TactileMedia: cover-cropped
+  //    to `focal`, with the tactile parallax drift.
   const screen: ReactNode = !hasReal ? (
     kind === 'none' ? (
       <BandHint sig={sig} />
     ) : (
       <HeroScreenFill sig={sig} title={title} eyebrow={eyebrow} />
     )
-  ) : kind === 'none' ? (
+  ) : kind !== 'none' ? (
+    <StaticShot src={media.src as string} alt={media.alt} sources={sources} fit="contain" />
+  ) : media.precropped ? (
+    <StaticShot
+      src={media.src as string}
+      alt={media.alt}
+      sources={sources}
+      fit="cover"
+      position={media.focal}
+    />
+  ) : (
     <TactileMedia
       src={media.src as string}
       alt={media.alt}
@@ -214,8 +241,6 @@ export function ProductReveal({
       sources={sources}
       position={media.focal}
     />
-  ) : (
-    <FramedShot src={media.src as string} alt={media.alt} sources={sources} />
   );
 
   const layers = (

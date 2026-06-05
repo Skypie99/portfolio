@@ -88,6 +88,11 @@ export const DeliverableSchema = z.object({
    *  no `src` — => the golden-hour placeholder renders in the device frame. The
    *  one-line swap to "show" the product: add this with a real `src` + `alt`. */
   heroShot: ShotImageSchema.optional(),
+  /** Optional PRE-CROPPED image for the work-card FRONT (distinct from the
+   *  hero/page image). When present, the cards show this exactly (static cover,
+   *  no re-zoom); otherwise they fall back to the hero image, focal-cropped. Let
+   *  a tall phone hero stay whole while the card shows a wide, framed crop. */
+  cardImage: ShotImageSchema.optional(),
   /** Optional 2–3 in-body product shots. Each renders a beautiful placeholder
    *  until its `src` is filled in (drop-in, no layout shift). */
   shots: z.array(ShotImageSchema).max(3).optional(),
