@@ -33,7 +33,7 @@ export default function CertificatesPage() {
   return (
     <>
       {/* Page header */}
-      <section className="relative isolate overflow-hidden px-gutter py-24 lg:py-32 bg-cream">
+      <section className="relative isolate overflow-hidden px-gutter py-24 lg:py-32 world-surface">
         {/* golden-hour light continuity (wow 2026-06-04) — the header is lit
             like every other showcase entry point. RM → static. */}
         <ParallaxWash depth="far" />
@@ -60,7 +60,7 @@ export default function CertificatesPage() {
         className={cn(
           'px-gutter pb-24 lg:pb-32 pt-24 lg:pt-32',
           // Dani wave4: warm-white for the grid section — blush cards pop on warm-white.
-          'bg-warm-white border-t border-border-decorative',
+          'world-surface-alt border-t border-border-decorative',
         )}
       >
         <div className="max-w-content mx-auto">

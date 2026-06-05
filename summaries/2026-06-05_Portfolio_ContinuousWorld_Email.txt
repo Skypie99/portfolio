@@ -1,0 +1,56 @@
+Subject: skypistudio.com — "One Continuous World" is built (Direction A) — your review
+
+Hi Sky,
+
+The flagship is built on feature/portfolio-continuous-world-2026-06-05 (off main,
+which already has B + C + D). Not merged, not pushed — your gate. The locked intro is
+byte-identical; B (Show the work) and D (filmic transitions + scroll-spy) are intact.
+
+WHAT IT DOES
+The golden-hour desert is now a persistent, evolving backdrop behind the whole
+post-intro site. As you scroll, the sun lowers and the grade shifts golden → dusk →
+night — and that day→night arc IS the light→dark transition. Content rides on the same
+panels, now translucent frosted glass, so the page travels THROUGH the living world.
+The intro stops being a curtain and becomes Act One of one continuous descent.
+
+DECISIONS FOR YOU (full detail in the report)
+1. Theme↔scroll rule (please confirm): the toggle owns the readable theme; scroll owns
+   the backdrop's time-of-day. Light mode = the daylight half of the world; dark mode =
+   the night half. (The literal "scroll flips the theme" alternative was rejected for
+   accessibility.)
+2. Light mode is intentionally airy (to keep small labels at AA over the moving world);
+   dark mode is the dramatic one. I can push light further on your say-so.
+3. Project subdomains — 3 need your word (I did NOT guess):
+     • Prompt Library → prompts.skypistudio.com  ✅ already correct
+     • Ghost Code     → ghostcode.skypistudio.com ✅ already correct
+     • AccessMap      → access-map-tau.vercel.app  ⚠️ subdomain?
+     • Claude Corp    → skypie99.github.io/Claude_Corp/  ⚠️ subdomain?
+     • Mutual Mesh    → mutual-mesh.vercel.app  ⚠️ subdomain?
+   GitHub links kept as secondary source links. I couldn't verify resolution from the
+   sandbox — please confirm.
+4. Canonical: each /work/[slug] is self-canonical to the apex; the subdomains are
+   separate products (no duplicate-content issue). The apex/www fix is your pending
+   canonical-apex PR — this branch doesn't touch SEO files, so no collision.
+5. I stashed your uncommitted /new-window bookkeeping to start clean:
+   git checkout feature/canonical-apex-domain-2026-06-05 && git stash pop  (stash@{0}).
+
+READABILITY (measured, both themes, golden/dusk/night)
+Light: body ≥9.7:1, small labels ≥4.5:1 everywhere they appear. Dark: everything ≥5.2:1.
+No scroll position drops any text below WCAG AA, in either theme.
+
+PERFORMANCE
+Compositor-only (opacity/transform on ~4 fixed layers), +2 kB JS, no new dependency, no
+per-scroll repaints. Reduced-motion / low-power → a clean STATIC world (golden in light,
+night in dark). Please confirm 60fps on a real device (the headless sandbox can't
+measure it).
+
+REVIEW
+  git diff main..feature/portfolio-continuous-world-2026-06-05
+Then npm run dev and: scroll the full homepage (watch golden→night), toggle light/dark,
+read text at every scroll position, check the sub-pages, and turn on Reduce Motion to
+see the static fallback. Confirm the intro is unchanged.
+
+Full report: summaries/2026-06-05_Portfolio_ContinuousWorld_Report.md
+Spec/plan:   CONTINUOUS_WORLD_PLAN.md
+
+— Built by Claude Code

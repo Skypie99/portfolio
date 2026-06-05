@@ -55,7 +55,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Page header */}
-      <section className="px-gutter py-24 lg:py-32 bg-cream">
+      <section className="px-gutter py-24 lg:py-32 world-surface">
         <div className="max-w-content mx-auto">
           <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
             <Icon name="about" className="w-3.5 h-3.5 text-terracotta" />
@@ -107,7 +107,7 @@ export default function AboutPage() {
         className={cn(
           'px-gutter py-24 lg:py-32',
           // Dani wave4: alternating rhythm — warm-white
-          'bg-warm-white border-t border-border-decorative',
+          'world-surface-alt border-t border-border-decorative',
           'relative overflow-hidden',
         )}
       >
@@ -164,7 +164,7 @@ export default function AboutPage() {
       <section
         className={cn(
           'px-gutter py-24 lg:py-32',
-          'bg-cream border-t border-border-decorative',
+          'world-surface border-t border-border-decorative',
         )}
       >
         <div className="max-w-content mx-auto">
@@ -203,7 +203,7 @@ export default function AboutPage() {
         className={cn(
           'px-gutter py-24 lg:py-32',
           // Dani wave4: alternating — warm-white
-          'bg-warm-white border-t border-border-decorative',
+          'world-surface-alt border-t border-border-decorative',
         )}
       >
         <div className="max-w-content mx-auto">
@@ -242,7 +242,7 @@ export default function AboutPage() {
         <section
           className={cn(
             'px-gutter py-24 lg:py-32',
-            'bg-cream border-t border-border-decorative',
+            'world-surface border-t border-border-decorative',
           )}
         >
           <div className="max-w-content mx-auto">
@@ -301,7 +301,7 @@ export default function AboutPage() {
       )}
 
       {/* CTA */}
-      <section className="px-gutter py-24 lg:py-32 bg-cream border-t border-border-decorative">
+      <section className="px-gutter py-24 lg:py-32 world-surface border-t border-border-decorative">
         <Reveal className="max-w-content mx-auto flex flex-col items-start gap-8">
           <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
             Want to work together?

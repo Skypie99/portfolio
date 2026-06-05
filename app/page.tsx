@@ -91,7 +91,7 @@ export default function HomePage() {
         className={cn(
           'relative isolate overflow-hidden',
           'px-gutter py-20 lg:py-24',
-          'bg-wa-teal-wash',
+          'world-surface-cool',
           'border-t border-wa-teal-soft/40',
         )}
       >
@@ -154,7 +154,7 @@ export default function HomePage() {
           'relative isolate',
           'px-gutter',
           'py-24 lg:py-32',
-          'bg-cream',
+          'world-surface',
           'border-t border-border-decorative',
         )}
       >
@@ -204,7 +204,7 @@ export default function HomePage() {
           'relative isolate overflow-hidden',
           'px-gutter',
           'py-24 lg:py-32',
-          'bg-warm-white',
+          'world-surface-alt',
           'border-t border-border-decorative',
         )}
       >
@@ -263,7 +263,7 @@ export default function HomePage() {
         className={cn(
           'px-gutter',
           'py-24 lg:py-32',
-          'bg-cream',
+          'world-surface',
           'border-t border-border-decorative',
           'relative overflow-hidden',
         )}
@@ -316,7 +316,7 @@ export default function HomePage() {
           'relative isolate overflow-hidden',
           'px-gutter',
           'py-24 lg:py-32',
-          'bg-warm-white',
+          'world-surface-alt',
           'border-t border-border-decorative',
         )}
       >
@@ -389,7 +389,7 @@ export default function HomePage() {
         className={cn(
           'px-gutter',
           'py-24 lg:py-32',
-          'bg-wa-teal-pale',
+          'world-surface-cool-pale',
           'border-t border-wa-teal-soft/50',
           'relative overflow-hidden',
         )}

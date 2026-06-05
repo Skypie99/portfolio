@@ -48,7 +48,7 @@ export default function WorkIndexPage() {
           'relative isolate overflow-hidden',
           'px-gutter',
           'py-24 lg:py-32',
-          'bg-cream',
+          'world-surface',
         )}
       >
         {/* golden-hour light continuity (wow 2026-06-04) — arriving at the
@@ -79,7 +79,7 @@ export default function WorkIndexPage() {
           'px-gutter',
           'pb-24 lg:pb-32',
           // Dani wave4: warm-white contrasts the cream header for clear section rhythm.
-          'bg-warm-white',
+          'world-surface-alt',
           'border-t border-border-decorative pt-24 lg:pt-32',
         )}
       >

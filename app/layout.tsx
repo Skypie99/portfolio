@@ -11,6 +11,7 @@ import { Sidebar } from '@/components/Sidebar';
 import { SkipLink } from '@/components/SkipLink';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { ViewTransitions } from '@/components/ViewTransitions';
+import { WorldBackdrop } from '@/components/WorldBackdrop';
 import { cn } from '@/lib/cn';
 import { getProfile } from '@/lib/content';
 
@@ -150,6 +151,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="bg-canvas text-ink">
         <ThemeProvider>
+          {/* Continuous world (Direction A): the persistent, scroll-evolving
+              golden-hour → night desert behind ALL content. Fixed, z-index:-1,
+              aria-hidden; the locked intro + the now-translucent panels sit on
+              top of it. Renders behind everything; never covers content. */}
+          <WorldBackdrop />
           {/* Filmic page transitions: one capture-phase nav interceptor that
               wraps same-origin client navigations in a native View Transition
               cross-dissolve. Renders null; degrades to plain navigation. */}

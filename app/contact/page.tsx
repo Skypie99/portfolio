@@ -31,7 +31,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Page header + primary CTA */}
-      <section className="px-gutter py-24 lg:py-32 bg-cream">
+      <section className="px-gutter py-24 lg:py-32 world-surface">
         <div className="max-w-content mx-auto">
           <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
             <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
@@ -62,7 +62,7 @@ export default function ContactPage() {
         <section
           className={cn(
             'px-gutter pt-16 lg:pt-20 pb-24 lg:pb-32',
-            'bg-cream border-t border-border-decorative',
+            'world-surface border-t border-border-decorative',
           )}
         >
           <div className="max-w-content mx-auto">
@@ -109,7 +109,7 @@ export default function ContactPage() {
         className={cn(
           'px-gutter py-16 lg:py-20',
           // Dani wave4: warm-white for the closing section contrast.
-          'bg-warm-white border-t border-border-decorative',
+          'world-surface-alt border-t border-border-decorative',
         )}
       >
         <div className="max-w-content mx-auto">

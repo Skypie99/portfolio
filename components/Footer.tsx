@@ -24,7 +24,7 @@ export function Footer() {
     <footer
       className={cn(
         'relative',
-        'bg-warm-white border-t border-border-decorative',
+        'world-surface-alt border-t border-border-decorative',
         'px-gutter pt-20 pb-8',
       )}
     >
