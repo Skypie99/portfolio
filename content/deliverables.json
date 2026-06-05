@@ -216,7 +216,7 @@
   {
     "id": "mutual-mesh",
     "title": "Mutual Mesh",
-    "summary": "A privacy-first mutual-aid marketplace for sharing food, baby supplies, hygiene and HRT — built so vulnerable communities can help each other without surveillance. Invite-only, neighbourhood-level (never an address), and a PRIVACY.md gate that blocks every feature until its data risks are documented.",
+    "summary": "Privacy-first mutual-aid marketplace for food, baby supplies, hygiene and HRT. Invite-only, neighbourhood-level (never an address), built not to surveil.",
     "role": "Lead engineer",
     "tech": [
       "Expo",
@@ -232,7 +232,7 @@
     "heroShot": {
       "src": "/images/deliverables/mutual-mesh/screen-feed.png",
       "focal": "50% 14%",
-      "alt": "Mutual Mesh's guest-demo marketplace feed on synthetic data: a 'Demo — sample data' banner, a List/Map toggle, and neighbourhood listings for canned goods, sealed baby formula and winter coats, each tagged Available with an FSA-level location"
+      "alt": "Mutual Mesh's guest-demo feed: a 'Demo — sample data' banner over neighbourhood listings for canned goods, baby formula and winter coats, each tagged Available with an FSA-level location"
     },
     "cardImage": {
       "src": "/images/deliverables/mutual-mesh/card-feed.jpg",
