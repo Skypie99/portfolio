@@ -1,0 +1,46 @@
+To: skylerhalisky@gmail.com
+Subject: Portfolio — "Show the work, cinematically" is built (placeholders live, real screenshots are a one-line swap)
+
+Sky,
+
+The portfolio now SHOWS every product instead of just describing it. One reusable
+cinematic component — ProductReveal — renders a genuinely beautiful golden-hour
+placeholder in every work card and case study today, and accepts a real
+screenshot later as a one-line edit with zero layout shift. Ghost Code already
+shows its real game frame, so you can see the finished look right now.
+
+Branch: feature/portfolio-show-work-2026-06-04 (stacked on the WOW branch; NOT
+merged — main stays your gate).
+
+BEFORE → AFTER
+- AccessMap hero: was an empty "ACCESSMAP" placeholder → now a phone resting in
+  the golden-hour world (notch, soft shadow, wordmark), gorgeous in light + dark.
+- All 5 heroes: device-in-landscape, true to each product — phone (AccessMap,
+  Mutual Mesh), window/terminal (Prompt Library, Claude Corp), arcade plate
+  (Ghost Code → its real screenshot).
+- Every case study gains a "See it in motion" section with 2–3 filmic in-body
+  shots (placeholders now, captions written, drop-in ready).
+- Every work card gains a golden-hour media band on top; the glass inscription
+  stays below (all text on glass → contrast preserved).
+
+DROP IN A REAL SCREENSHOT (one line, in content/deliverables.json):
+  "heroShot": { "src": "/images/deliverables/<slug>/screen.png", "alt": "…" }
+or add a "src" to a shots[] entry. It lands in the same frame — no layout shift.
+Full guide: SHOW_WORK_PLAN.md.
+
+FLOOR HELD
+- Intro scene byte-identical (0 changes to the cinematic files or the .cdesert
+  CSS — verified by git diff).
+- WCAG AA preserved (no text over imagery); reduced-motion + no-JS show the final
+  state instantly; no CLS; no new dependency.
+- 164 tests pass; token-parity + static-integrity green; build green.
+
+HOW TO REVIEW
+  git diff main..feature/portfolio-show-work-2026-06-04
+Then `npm run dev` and look at /work/accessmap/ (the fix), /work/ghost-code/ (the
+real-image path), and the cards on / and /work/ — in both themes, mobile +
+desktop, keyboard, reduced-motion on.
+
+Full report: summaries/2026-06-04_Portfolio_ShowWork_Report.md
+
+— Claude Corp

@@ -36,6 +36,34 @@ const GalleryImageSchema = ImageSchema.extend({
   caption: z.string().max(160).optional(),
 });
 
+/**
+ * ShotImageSchema — product screenshots for the cinematic ProductReveal
+ * (Show-the-work 2026-06-04). `src` is OPTIONAL: when absent the component
+ * renders the golden-hour placeholder and emits NO <img>; when present it drops
+ * a real screenshot into the same reserved frame with zero layout shift. `alt`
+ * is REQUIRED even for placeholders so the description is ready the moment a
+ * real `src` is added — that's the one-line swap. A present `src` (and the
+ * optional `avif`/`webp` responsive siblings) must live under
+ * /images/deliverables/<slug>/, the same rule as heroImage.
+ */
+const ShotImageSchema = z
+  .object({
+    src: z.string().startsWith('/images/').optional(),
+    alt: AltTextSchema,
+    caption: z.string().max(160).optional(),
+    avif: z.string().startsWith('/images/').optional(),
+    webp: z.string().startsWith('/images/').optional(),
+    width: z.number().int().positive().optional(),
+    height: z.number().int().positive().optional(),
+  })
+  .refine(
+    (img) =>
+      [img.src, img.avif, img.webp].every(
+        (s) => !s || /^\/images\/deliverables\/[a-z0-9-]+\//.test(s),
+      ),
+    'shot src/avif/webp, when present, must live under /images/deliverables/<slug>/',
+  );
+
 export const DeliverableSchema = z.object({
   id: SlugSchema,
   title: z.string().min(4).max(80),
@@ -52,6 +80,13 @@ export const DeliverableSchema = z.object({
     'heroImage.src must live under /images/deliverables/<slug>/',
   ),
   gallery: z.array(GalleryImageSchema).max(8).optional(),
+  /** Optional real hero screenshot (Show-the-work 2026-06-04). Absent — or with
+   *  no `src` — => the golden-hour placeholder renders in the device frame. The
+   *  one-line swap to "show" the product: add this with a real `src` + `alt`. */
+  heroShot: ShotImageSchema.optional(),
+  /** Optional 2–3 in-body product shots. Each renders a beautiful placeholder
+   *  until its `src` is filled in (drop-in, no layout shift). */
+  shots: z.array(ShotImageSchema).max(3).optional(),
   links: z
     .array(
       z.object({

@@ -225,3 +225,22 @@ The intro files are byte-identical (verified by fingerprint).
 Plus craft: Process step dividers → `.rule-ember` gradient hairlines; About Principles/Currently body →
 `variant="depth"`; Contact "Elsewhere" h2 → `.ember`; showcase stat figures gain a `group-hover` lean
 (compositor, origin-left). All transform/opacity/filter-only, AA-preserved, RM-safe.
+
+## §12 — Show the work, cinematically (2026-06-04) — `ProductReveal`
+
+The reusable product-media component (`components/ProductReveal.tsx` + `DeviceFrame.tsx`) that shows
+every product (placeholder now, real screenshot via a one-line swap later — see `SHOW_WORK_PLAN.md`).
+It echoes the locked intro's film language with the SITE's own motion only; no GSAP, no new dependency.
+
+| Move | Where | Motion | Reduced motion / fallback |
+|---|---|---|---|
+| **Golden-hour placeholder** | `.pr-world` / `.pr-frame-*` / `.pr-horizon` (`globals.css`, outside the `.cdesert-*` range) | **none — static paint.** The wow is the warm world + per-medium device frame, not animation | identical: it never animates, so RM / no-JS show the exact same placeholder |
+| **Parallax drift** | the media layer reuses `TactileMedia` (`useParallax`, hero `.06` / card `.04` / shot `.08`) inside an `inset-[-12%]` clipped well | one compositor `translate3d` on scroll — the intro's slow-far/fast-near depth, reused | `useParallax` writes no transform under RM / no-JS → image sits centred |
+| **Scroll/mount reveal** | owned by the CALL SITE, never nested: cards by their existing `<Reveal>`, the hero by `HeroImageSettle` | the band/hero cross-dissolves + settles as today | the existing `.reveal` + `HeroImageSettle` RM/no-JS final-state paths cover it |
+| **Card hover** | `group-hover:scale-[1.05]` on the real screenshot (TactileMedia) + the glass card's own `:hover` | a quiet lean-in on the media; glass lift unchanged | hover intent only; touch never hovers; no RM concern |
+
+Tokens consumed, never mutated: `--ease-gh-glide`/`--ease-gh-settle`, `--dur-slow`, `--rgb-*`,
+`--shadow-lg`, `--scrim`. The intro's quint curve is **not** reused; the intro files stay byte-identical;
+`token-parity` stays green (no `--fs-*`/`--ease-*`/`--shadow-*` mutated). New CSS classes: `.pr-world`,
+`.pr-horizon`, `.pr-scrim`, `.pr-frame[-phone|-window|-plate]`, `.pr-screen[-phone|-plate]`, `.pr-notch`,
+`.pr-titlebar`.

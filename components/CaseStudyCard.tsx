@@ -3,6 +3,7 @@
 import Link from 'next/link';
 
 import { CardField } from '@/components/CardField';
+import { CardProductReveal, type ProductRevealMedia } from '@/components/ProductReveal';
 import { cn } from '@/lib/cn';
 import { useSpotlight } from '@/lib/motion';
 
@@ -11,6 +12,9 @@ type CaseStudyCardProps = {
   category: 'accessmap' | 'claude-corp' | 'prompt-library' | 'ghost' | 'mutual';
   description: string;
   href: string;
+  /** Product media for the band (Show-the-work 2026-06-04). Omit → the
+   *  golden-hour placeholder; pass `{ src }` to drop in a real screenshot. */
+  media?: ProductRevealMedia;
   /** Editorial index for the ghosted numeral. Default 0. */
   index?: number;
   className?: string;
@@ -23,7 +27,7 @@ type CaseStudyCardProps = {
  * bottom — ink tokens, AA in both modes. A cursor-follow specular glides across the
  * frosted surface (useSpotlight → --mx/--my).
  */
-export function CaseStudyCard({ title, category, description, href, index = 0, className }: CaseStudyCardProps) {
+export function CaseStudyCard({ title, category, description, href, media, index = 0, className }: CaseStudyCardProps) {
   const numeral = String(index + 1).padStart(2, '0');
   const spotRef = useSpotlight<HTMLAnchorElement>();
 
@@ -34,12 +38,20 @@ export function CaseStudyCard({ title, category, description, href, index = 0, c
       aria-label={`${title} — read the case study`}
       data-category={category}
       className={cn(
-        'glass-card case-study-card group relative isolate flex aspect-[4/5] flex-col overflow-hidden rounded-[22px]',
+        'glass-card case-study-card group relative isolate flex min-h-[22rem] flex-col overflow-hidden rounded-[22px]',
         'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta',
         className,
       )}
     >
       <CardField slug={category} />
+
+      {/* Show-the-work 2026-06-04: cinematic product band (placeholder now). */}
+      <CardProductReveal
+        slug={category}
+        title={title}
+        media={media ?? { alt: title }}
+        className="shrink-0 border-b border-[rgb(var(--rgb-ink)/0.08)]"
+      />
 
       <div className="relative z-10 flex flex-1 flex-col p-7 md:p-8">
         <span

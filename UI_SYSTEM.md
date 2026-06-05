@@ -77,3 +77,29 @@ section h2 is now ember). Readability is protected — washes are decorative beh
 sharp at rest (RM → instantly sharp), and every new motion is `@supports`/reduced-motion gated. New motion
 uses the site's easings only — the intro's quint curve is never reused, and the intro files are
 byte-identical. See `MOTION_SYSTEM.md` §11.
+
+## Show the work, cinematically (2026-06-04)
+The site now **shows** every product, not just describes it. ONE reusable component —
+`ProductReveal` (+ `DeviceFrame`) — renders product media in the golden-hour world, echoing the
+locked intro with the site's own (non-GSAP) motion. Two states share ONE reserved frame so a real
+screenshot is a **one-line swap** with **zero CLS** (see `SHOW_WORK_PLAN.md`):
+- **Placeholder** (no real `src`) — a genuinely beautiful, pure-CSS golden-hour world (`.pr-world`:
+  `--rgb-gold` sun-bloom + per-product `--pr-sig` key light + cool prism `150 188 214` + `--rgb-earth`
+  → `--rgb-earth-deep` ground) with a `.pr-horizon` hairline, a per-medium **device frame**, and a
+  product wordmark (hero) or UI hint (card/shot). Emits **no `<img>`**.
+- **Real image** — the screenshot drops into the SAME frame via `<picture>` (AVIF→WebP→`<img>`, reusing
+  `TactileMedia`'s parallax layer).
+**Contexts + aspect (reserved → no CLS):** hero `aspect-[4/5]` (device-in-landscape, owned by
+`HeroImageSettle`); work-card band `16/10` atop the glass inscription (Sky's call — all text stays on
+glass, AA preserved; card grows with a `min-h` floor); in-body shot `16/10`.
+**Device frames** (`lib/signature.ts → frameForSlug`, hero only): `phone` (AccessMap, Mutual Mesh),
+`window`/terminal (Prompt Library, Claude Corp), `plate` (Ghost Code). Pure CSS, `.panel-lit`,
+`--shadow-lg`, both themes via `--rgb-*`.
+**Legibility:** `.pr-scrim` (tokenized `--scrim`) guards ≥4.5:1 for any text over a future bright
+screenshot; the hero wordmark is decorative (`aria-hidden` — the real `<h1>` is in the column).
+**Data:** `content/deliverables.json` gains optional `heroShot` + `shots[]` (`ShotImageSchema` — `src`
+optional, `alt` required, optional `caption`/`avif`/`webp`). `.svg` heroes are treated as placeholders.
+**Floor held:** new `.pr-*` CSS lives outside the locked `.cdesert-*` range and only consumes existing
+tokens (token-parity green); reduced-motion + `(scripting:none)` show the final image/placeholder
+instantly; intro byte-identical. New components: `ProductReveal`, `DeviceFrame`; shared `lib/signature.ts`,
+`lib/media.ts`. See `MOTION_SYSTEM.md` §12.
