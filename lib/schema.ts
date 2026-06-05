@@ -51,6 +51,10 @@ const ShotImageSchema = z
     src: z.string().startsWith('/images/').optional(),
     alt: AltTextSchema,
     caption: z.string().max(160).optional(),
+    /** CSS object-position for the full-bleed card/shot crop (e.g. "50% 44%").
+     *  Lets a tall screenshot be framed on its key content. Ignored by the
+     *  device-framed hero, which shows the whole screen (object-contain). */
+    focal: z.string().max(24).optional(),
     avif: z.string().startsWith('/images/').optional(),
     webp: z.string().startsWith('/images/').optional(),
     width: z.number().int().positive().optional(),
