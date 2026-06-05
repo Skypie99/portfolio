@@ -17,7 +17,7 @@
     },
     "heroShot": {
       "src": "/images/deliverables/accessmap/screen-map.png",
-      "focal": "50% 62%",
+      "focal": "50% 60%",
       "alt": "AccessMap's map view with a verified severity-4 'No ramp' barrier pinned to a downtown Kelowna corner, three nearby flags, and a Report button"
     },
     "shots": [
@@ -169,6 +169,10 @@
     "heroImage": {
       "src": "/images/deliverables/ghost-code/hero.png",
       "alt": "Ghost Code arcade screen — the neon Phantom mascot hovering between four command-token answers, score and spirit-life HUD in a synthwave cabinet"
+    },
+    "heroShot": {
+      "src": "/images/deliverables/ghost-code/screen-game.png",
+      "alt": "Ghost Code arcade round — the Phantom hovering between four git-command answer cards for staging changed files, with the spirits and score HUD"
     },
     "shots": [
       {
