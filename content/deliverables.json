@@ -15,6 +15,10 @@
       "src": "/images/deliverables/accessmap/hero.svg",
       "alt": "Warm-toned mockup of the AccessMap mobile interface showing accessibility flags pinned to a city map"
     },
+    "heroShot": {
+      "src": "/images/deliverables/accessmap/screen-map.png",
+      "alt": "AccessMap's map view with a verified severity-4 'No ramp' barrier pinned to a downtown Kelowna corner, three nearby flags, and a Report button"
+    },
     "shots": [
       {
         "alt": "AccessMap map view with accessibility barrier pins dropped on real downtown streets",
