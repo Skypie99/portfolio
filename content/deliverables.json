@@ -20,6 +20,10 @@
       "focal": "50% 60%",
       "alt": "AccessMap's map view with a verified severity-4 'No ramp' barrier pinned to a downtown Kelowna corner, three nearby flags, and a Report button"
     },
+    "cardImage": {
+      "src": "/images/deliverables/accessmap/card-flag.jpg",
+      "alt": "AccessMap's map with a verified 'No ramp' barrier flagged at a downtown Kelowna corner — wheelchair users have to detour"
+    },
     "shots": [
       {
         "alt": "AccessMap map view with accessibility barrier pins dropped on real downtown streets",
