@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import { Button } from '@/components/Button';
 import { SidebarProgress } from '@/components/SidebarProgress';
+import { SidebarSectionNav } from '@/components/SidebarSectionNav';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { cn } from '@/lib/cn';
 import { getFeaturedDeliverable, getProfile } from '@/lib/content';
@@ -98,6 +99,9 @@ export function Sidebar() {
           </Link>
         )}
       </div>
+
+      {/* ── On this page (scroll-spy section index) ─────────────────── */}
+      <SidebarSectionNav />
 
       {/* ── Blog link ─────────────────────────────────────────────── */}
       <div className="flex flex-col gap-3">
