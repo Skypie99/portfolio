@@ -124,6 +124,11 @@
       "src": "/images/deliverables/prompt-library/hero.svg",
       "alt": "A quiet workspace with a notebook of prompts open beside a laptop, soft natural light from the side"
     },
+    "cardImage": {
+      "src": "/images/deliverables/prompt-library/card-landing.png",
+      "focal": "50% 0%",
+      "alt": "Prompt Library V2 landing — 'Your prompts, one keystroke away', a prompt search box, and category filters"
+    },
     "shots": [
       {
         "alt": "Prompt Library search view filtering a prompt collection by tag in real time",
