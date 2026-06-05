@@ -44,7 +44,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
       ref={spotRef}
       className={cn(
         'glass-card work-card group relative isolate flex flex-col overflow-hidden rounded-[22px]',
-        wide ? 'min-h-[20rem] md:min-h-[23rem]' : 'min-h-[22rem]',
+        wide ? 'md:flex-row min-h-[22rem]' : 'min-h-[22rem]',
         className,
       )}
     >
@@ -60,9 +60,9 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
         media={cardMedia(d)}
         className={cn(
           'shrink-0 border-b border-[rgb(var(--rgb-ink)/0.08)]',
-          // Featured band: a 16:9 banner — matches the pre-cropped card image so
-          // it shows (near-)exactly, and reads as a clean cinematic crop.
-          wide && 'aspect-[16/9]',
+          // Lead card: a horizontal banner — the image takes the left half and
+          // stretches to the card's height; mobile keeps the stacked 16:10 band.
+          wide && 'md:w-1/2 md:self-stretch md:aspect-auto md:border-b-0 md:border-r',
         )}
       />
 
@@ -84,9 +84,9 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
           )}
         </div>
 
-        {/* the inscription — bottom-anchored; wide splits into two columns */}
-        <div className={cn('mt-auto flex flex-col gap-5', wide && 'md:flex-row md:items-end md:justify-between md:gap-12')}>
-          <div className={cn('flex flex-col gap-4', wide && 'md:max-w-[54%]')}>
+        {/* the inscription — bottom-anchored (lead + normal cards share this) */}
+        <div className="mt-auto flex flex-col gap-5">
+          <div className="flex flex-col gap-4">
             <p className="flex items-center gap-2 font-mono text-meta uppercase tracking-label text-text-meta">
               <span aria-hidden="true" className="inline-block h-1 w-1 rounded-full bg-terracotta" />
               {d.role} · {d.year}
@@ -95,7 +95,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
               className="font-serif font-light leading-[1.05] text-near-black"
               style={{
                 letterSpacing: '-0.022em',
-                fontSize: wide ? 'clamp(2.4rem, 3.6vw, 3.6rem)' : 'clamp(1.85rem, 2.6vw, 2.4rem)',
+                fontSize: 'clamp(1.85rem, 2.6vw, 2.4rem)',
               }}
             >
               <Link
@@ -106,15 +106,15 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
                 {d.title}
               </Link>
             </h3>
-            <span aria-hidden="true" className={cn('block h-px rounded-full bg-gradient-to-r from-[rgb(var(--rgb-accent)/0.65)] via-[rgb(var(--rgb-accent)/0.3)] to-transparent origin-left transition-transform duration-slow ease-gh-glide group-hover:scale-x-125', wide ? 'w-20' : 'w-12')} />
+            <span aria-hidden="true" className="block h-px w-12 rounded-full bg-gradient-to-r from-[rgb(var(--rgb-accent)/0.65)] via-[rgb(var(--rgb-accent)/0.3)] to-transparent origin-left transition-transform duration-slow ease-gh-glide group-hover:scale-x-125" />
           </div>
 
-          <div className={cn('flex flex-col gap-5', wide && 'md:max-w-[40%]')}>
+          <div className="flex flex-col gap-5">
             <p
               className="font-sans font-light text-body-sm leading-[1.65] text-charcoal text-pretty"
               style={{
                 display: '-webkit-box',
-                WebkitLineClamp: wide ? 4 : 2,
+                WebkitLineClamp: 2,
                 WebkitBoxOrient: 'vertical',
                 overflow: 'hidden',
               }}
