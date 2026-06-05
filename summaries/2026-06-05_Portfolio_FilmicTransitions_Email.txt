@@ -1,0 +1,35 @@
+Subject: Portfolio — Filmic transitions (Direction D) ready to review on a branch
+
+Hi Sky,
+
+Direction D is built on feature/portfolio-filmic-transitions-2026-06-05 (not merged — main stays your gate). Two things landed, and the locked intro scene was not touched.
+
+WHAT CHANGED
+1. Filmic page transitions — moving between Home, /work, and case studies now plays a true golden cross-dissolve (the old view dissolving into the new through a faint breath of golden light), 420ms, on the site's gh-glide curve. It reads like a cut in a film instead of a hard load. Built on the NATIVE View Transitions API — no new dependency, no experimental flag. Arrivals at the homepage stay an instant cut so the cinematic intro is never disturbed.
+2. Sidebar scroll-spy — the rail now has a quiet "On this page" index (The Work, Method, A Brief Account, Credentials, Correspond). As you scroll the homepage, the current section is gently emphasized (ink-weight shift + a small terracotta marker). It's wayfinding, not a highlight.
+
+DECISIONS FOR SKY (none block the build, all reversible)
+- No new dependency / no experimental flag. (Next's experimental.viewTransition needs React 19; we're on 18.3 — rejected. next-view-transitions package — declined.)
+- Confirmed with you in planning: cross-dissolve over a wipe; sidebar index persistent across pages, active only on home.
+- Retired the old enter-only ".page-enter" fade — superseded by the real cross-dissolve.
+- Minor flag: a hard reload that lands on "/" from another page could still play the free cross-document fade before the cinematic (low risk). Easy to suppress later if you dislike it.
+
+FLOOR HELD
+Reduced motion -> instant cuts (both features). aria-current is correct and NOT announced on every scroll (no live region). Focus is undisturbed by the transition. No-JS still navigates (links are real anchors; the (scripting:none) floor is untouched). WCAG AA measured in BOTH themes — active text 11.9:1 / 13.7:1, inactive 4.9:1 / 7.3:1, marker 3.7:1 / 5.2:1. The intro and the B "show the work" reveals are untouched; their tests still pass. 60fps, opacity-only, zero CLS.
+
+GREEN
+typecheck + 178 tests (incl. token-parity, cinematic, sidebar) + static export build + static-integrity all pass.
+
+HOW TO REVIEW
+  git diff main..feature/portfolio-filmic-transitions-2026-06-05
+Then `npm run dev` and, on desktop:
+- Navigate work <-> about <-> case study — watch the calm golden cross-dissolve, in light AND dark.
+- work -> Home should cut instantly, then the desert intro plays as before.
+- Scroll the homepage — the sidebar marker tracks the section.
+- Turn Reduce Motion on — everything goes instant and clean.
+
+One honest note: this run's headless preview couldn't render the GSAP homepage visually or run its IntersectionObserver (blank screenshots, no animation frames), so I verified the dissolve + scroll-spy at the mechanism level (API support, correct interceptor behavior, the built CSS, unit tests, measured contrast) rather than a live frame-grab. They're best eyeballed via the checklist above. Nothing flagged a defect — purely a preview-environment limit.
+
+Full report: summaries/2026-06-05_Portfolio_FilmicTransitions_Report.md
+
+— Built on the branch; ready when you are.
