@@ -79,7 +79,7 @@ export const viewport: Viewport = {
 
 export function generateMetadata(): Metadata {
   const profile = getProfile();
-  const siteUrl = 'https://www.skypistudio.com';
+  const siteUrl = 'https://skypistudio.com';
   const description =
     'Sky Halisky is an AI developer building accessible, privacy-first tools from the Okanagan Valley, BC. Creator of AccessMap, the Prompt Library, and more.';
   return {
@@ -136,7 +136,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               '@context': 'https://schema.org',
               '@type': 'Person',
               name: 'Sky Halisky',
-              url: 'https://www.skypistudio.com',
+              url: 'https://skypistudio.com',
               jobTitle: 'AI Developer',
               description:
                 'AI developer and builder based in the Okanagan Valley, British Columbia. Creator of AccessMap, Claude Corp, the Prompt Library, and more.',
