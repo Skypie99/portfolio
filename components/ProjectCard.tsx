@@ -3,8 +3,10 @@
 import Link from 'next/link';
 
 import { CardField } from '@/components/CardField';
+import { CardProductReveal } from '@/components/ProductReveal';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
+import { heroAlt, heroSources, realHeroSrc } from '@/lib/media';
 import { useSpotlight } from '@/lib/motion';
 import type { Deliverable } from '@/lib/schema';
 
@@ -36,17 +38,33 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
   const demoLink = d.links?.find((l) => l.type === 'demo');
   const numeral = String(index + 1).padStart(2, '0');
   const spotRef = useSpotlight<HTMLDivElement>();
+  const heroSrc = realHeroSrc(d);
+  const sources = heroSources(d);
 
   return (
     <div
       ref={spotRef}
       className={cn(
         'glass-card work-card group relative isolate flex flex-col overflow-hidden rounded-[22px]',
-        wide ? 'min-h-[20rem] md:min-h-[23rem]' : 'aspect-[4/5]',
+        wide ? 'min-h-[20rem] md:min-h-[23rem]' : 'min-h-[22rem]',
         className,
       )}
     >
       <CardField slug={d.id} featured={d.featured} />
+
+      {/* Show-the-work 2026-06-04: a cinematic product band crowns the card.
+          Placeholder now (golden-hour world); a real screenshot drops in via
+          d.heroShot — see SHOW_WORK_PLAN.md. Decorative — the inscription below
+          carries the title/links, so all text stays on glass (AA preserved). */}
+      <CardProductReveal
+        slug={d.id}
+        title={d.title}
+        media={{ src: heroSrc, alt: heroAlt(d), avif: sources?.avif, webp: sources?.webp }}
+        className={cn(
+          'shrink-0 border-b border-[rgb(var(--rgb-ink)/0.08)]',
+          wide && 'aspect-auto h-44 sm:h-52 md:h-60 lg:h-64',
+        )}
+      />
 
       <div className="relative z-10 flex flex-1 flex-col p-7 md:p-9">
         {/* open top glass — ghosted numeral + Featured seal */}

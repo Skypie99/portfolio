@@ -38,6 +38,19 @@ import { describe, expect, it } from 'vitest';
 
 const OUT_DIR = resolve(process.cwd(), 'out');
 
+// These checks read the built ./out/ artifact, so they only run after a build.
+// `npm run test:static` chains build → test; a bare `npm run test` (e.g. CI's
+// unit-test job, which builds separately) has no ./out/ yet. In that case SKIP
+// rather than throw — the gate is still enforced by test:static and locally —
+// so `npm test` stays green without a build. The skip is labeled (below), never
+// silent. (Surfaced by the repo's first PR: vitest's default run picks this file
+// up, and CI's Test job runs before any build.)
+const OUT_EXISTS = existsSync(OUT_DIR);
+
+describe.runIf(!OUT_EXISTS)('Static integrity (build-dependent)', () => {
+  it.skip('skipped — needs ./out/; run `npm run test:static` (build → test) to exercise these', () => {});
+});
+
 /** Walk ./out/ and return absolute paths of every .html file. */
 function collectHtmlFiles(dir: string): string[] {
   const { readdirSync, statSync } = require('node:fs') as typeof import('node:fs');
@@ -158,7 +171,7 @@ function assertOutDirExists() {
 // Gap 2 — Internal link resolution
 // ---------------------------------------------------------------------------
 
-describe('Gap 2 — internal link resolution', () => {
+describe.skipIf(!OUT_EXISTS)('Gap 2 — internal link resolution', () => {
   it('every internal href in every HTML file resolves to an existing file in ./out/', () => {
     assertOutDirExists();
 
@@ -215,7 +228,7 @@ describe('Gap 2 — internal link resolution', () => {
 // Gap 3 — External link rel attributes
 // ---------------------------------------------------------------------------
 
-describe('Gap 3 — external link rel attributes', () => {
+describe.skipIf(!OUT_EXISTS)('Gap 3 — external link rel attributes', () => {
   it('every external <a href="https://..."> has rel="noopener noreferrer"', () => {
     assertOutDirExists();
 

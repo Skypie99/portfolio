@@ -745,6 +745,109 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
 }
 
 /* ------------------------------------------------------------------
+   ProductReveal — cinematic product media + golden-hour placeholder
+   (Show-the-work 2026-06-04). Styling for components/ProductReveal.tsx +
+   DeviceFrame.tsx. These rules live in the SITE-UI region — deliberately
+   OUTSIDE the locked .cdesert-* range (1644+). They only CONSUME existing
+   tokens (--rgb-x, --shadow-lg); no font-size, easing or shadow token is
+   mutated, so token-parity stays green. `--pr-sig` (a per-product RGB
+   triplet) is set inline by ProductReveal. Everything here is static paint
+   — no animation — so reduced-motion and no-JS visitors get the identical
+   final placeholder.
+   ------------------------------------------------------------------ */
+.pr-world {
+  background:
+    radial-gradient(120% 82% at 50% -14%, rgb(var(--rgb-gold) / 0.32), transparent 60%),
+    radial-gradient(94% 76% at 16% 6%, rgb(var(--pr-sig, 224 150 90) / 0.26), transparent 62%),
+    radial-gradient(82% 92% at 110% 114%, rgb(150 188 214 / 0.16), transparent 60%),
+    linear-gradient(180deg, rgb(var(--rgb-earth) / 0.55), rgb(var(--rgb-earth-deep) / 0.9));
+}
+.pr-horizon {
+  top: 62%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(var(--rgb-gold) / 0.42) 22%,
+    rgb(var(--rgb-gold) / 0.42) 78%,
+    transparent
+  );
+}
+/* Scrim for any text set OVER a (future) bright screenshot — ≥4.5:1 guard. */
+.pr-scrim {
+  background: linear-gradient(
+    to top,
+    rgb(20 9 3 / 0.46) 0%,
+    rgb(20 9 3 / 0.14) 30%,
+    transparent 60%
+  );
+}
+
+/* Device frames — the app resting in the golden-hour world (hero only). */
+.pr-frame {
+  display: flex;
+  flex-direction: column;
+}
+.pr-frame-phone {
+  padding: 0.5rem;
+  border: 1px solid rgb(var(--rgb-ink) / 0.14);
+  border-radius: 2rem;
+  background: rgb(var(--rgb-canvas) / 0.55);
+  box-shadow: var(--shadow-lg);
+}
+.pr-frame-window {
+  overflow: hidden;
+  border: 1px solid rgb(var(--rgb-ink) / 0.14);
+  border-radius: 0.9rem;
+  background: rgb(var(--rgb-canvas) / 0.6);
+  box-shadow: var(--shadow-lg);
+}
+.pr-frame-plate {
+  padding: 0.55rem;
+  border: 2px solid rgb(var(--pr-sig, 72 195 210) / 0.5);
+  border-radius: 1rem;
+  background: rgb(var(--rgb-earth-deep) / 0.5);
+  box-shadow: var(--shadow-lg), inset 0 0 26px rgb(var(--pr-sig, 72 195 210) / 0.18);
+}
+.pr-screen {
+  position: relative;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+.pr-screen-phone {
+  border-radius: 1.5rem;
+}
+.pr-screen-plate {
+  border-radius: 0.55rem;
+}
+.pr-notch {
+  position: absolute;
+  left: 50%;
+  top: 0.5rem;
+  z-index: 2;
+  width: 26%;
+  max-width: 4rem;
+  height: 0.34rem;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: rgb(var(--rgb-ink) / 0.2);
+}
+.pr-titlebar {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.4rem;
+  height: 1.6rem;
+  padding: 0 0.7rem;
+}
+.pr-titlebar > span {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: rgb(var(--rgb-ink) / 0.16);
+}
+
+/* ------------------------------------------------------------------
    Route-change transition (app/template.tsx) — motion-polish 2026-06-03.
    A calm crossfade + small rise on each client navigation, turning hard
    route cuts into continuous cinematic flow. The homepage + initial load

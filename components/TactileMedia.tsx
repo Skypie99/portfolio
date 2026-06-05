@@ -11,6 +11,10 @@ type TactileMediaProps = {
   /** Parallax depth. Default 0.05 (far) — paired with the -12% oversize below
    *  so the drift never reveals an edge of the clipping well. */
   depth?: number;
+  /** Optional responsive sources (Show-the-work 2026-06-04). When present the
+   *  <img> is wrapped in a <picture> with AVIF → WebP → <img> (mirrors the
+   *  locked cinematic Layer.tsx). Absent → renders exactly as before. */
+  sources?: { avif?: string; webp?: string };
   className?: string;
 };
 
@@ -29,23 +33,35 @@ type TactileMediaProps = {
  * never registers or transforms (static), and the hover scale is hover intent
  * (fine under RM). Touch devices simply never hover. Alt text is preserved.
  */
-export function TactileMedia({ src, alt, width, height, depth = 0.05, className }: TactileMediaProps) {
+export function TactileMedia({ src, alt, width, height, depth = 0.05, sources, className }: TactileMediaProps) {
   const ref = useParallax<HTMLDivElement>(depth);
+
+  const img = (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      loading="lazy"
+      className={cn(
+        'absolute inset-0 h-full w-full object-cover transition-transform duration-slow ease-gh-glide group-hover:scale-[1.05]',
+        className,
+      )}
+    />
+  );
 
   return (
     <div ref={ref} className="absolute inset-[-12%]">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        loading="lazy"
-        className={cn(
-          'absolute inset-0 h-full w-full object-cover transition-transform duration-slow ease-gh-glide group-hover:scale-[1.05]',
-          className,
-        )}
-      />
+      {sources && (sources.avif || sources.webp) ? (
+        <picture>
+          {sources.avif && <source type="image/avif" srcSet={sources.avif} />}
+          {sources.webp && <source type="image/webp" srcSet={sources.webp} />}
+          {img}
+        </picture>
+      ) : (
+        img
+      )}
     </div>
   );
 }

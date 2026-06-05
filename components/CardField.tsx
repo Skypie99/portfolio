@@ -1,6 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/cn';
+import { BLUE, signatureFor } from '@/lib/signature';
 
 /**
  * CardField — the light INSIDE the liquid-glass card (liquid-glass 2026-06-03,
@@ -13,26 +14,6 @@ import { cn } from '@/lib/cn';
  * internal light to lens, without breaking the minimal/light look. Renders as an
  * absolute fill the card clips.
  */
-
-/** Per-project signature hue (warm golden-hour family) for the caustic. */
-const SIGNATURE: Record<string, string> = {
-  'accessmap': '224 150 90', // terracotta-amber
-  'claude-corp': '206 134 78', // deep amber
-  'prompt-library': '236 186 118', // gold
-  'ghost-code': '72 195 210', // phantom cyan
-  'ghost': '72 195 210',
-  'mutual-mesh': '202 142 114', // clay-rose
-  'mutual': '202 142 114',
-  // Certificate issuers — same warm family, distinct per issuer so the
-  // credential cards read a touch different without leaving golden-hour.
-  'anthropic': '214 132 88', // clay-terracotta
-  'google': '236 186 118', // gold
-  'university-of-michigan': '202 142 114', // clay-rose
-  'deeplearning-ai': '206 134 78', // deep amber
-};
-
-/** Soft blue at the far corner — the refracted "prism" edge (a quiet whisper). */
-const BLUE = '150 188 214'; // soft sky-blue
 
 /** Site film-grain (matches body::after) — fine frost tooth. */
 const NOISE =
@@ -49,7 +30,7 @@ type CardFieldProps = {
 };
 
 export function CardField({ slug, featured = false, className }: CardFieldProps) {
-  const sig = SIGNATURE[slug] ?? SIGNATURE['accessmap'];
+  const sig = signatureFor(slug);
   const causticAlpha = featured ? 0.28 : 0.2;
 
   return (
