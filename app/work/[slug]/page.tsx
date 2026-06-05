@@ -6,11 +6,13 @@ import { CaseStudyCard } from '@/components/CaseStudyCard';
 import { MagneticButton } from '@/components/MagneticButton';
 import { HeroImageSettle, HeroTitleSettle } from '@/components/HeroSettle';
 import { ParallaxWash } from '@/components/ParallaxWash';
+import { HeroProductReveal, ShotProductReveal } from '@/components/ProductReveal';
 import { Reveal } from '@/components/Reveal';
 import { TactileMedia } from '@/components/TactileMedia';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getDeliverables, getProfile } from '@/lib/content';
+import { heroAlt, heroSources, realHeroSrc } from '@/lib/media';
 import { INLINE_CODE_CLASS, smartPunctuation } from '@/lib/markdown';
 
 function parseInline(text: string): React.ReactNode[] {
@@ -209,34 +211,22 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
                 well so the settle animation is the grid child itself. All
                 existing classes preserved on the wrapper. */}
             <HeroImageSettle className="group relative w-full aspect-[4/5] bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-1 md:order-1 shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]">
-              {/* Warm top-light — single source from above (lit-well depth) */}
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,241,217,0.46),transparent_62%)] dark:bg-[radial-gradient(125%_85%_at_50%_-15%,rgba(255,221,176,0.10),transparent_62%)]"
+              {/* Show-the-work 2026-06-04: the device-in-landscape reveal.
+                  Placeholder now (golden-hour world + the product's per-medium
+                  device frame); a real screenshot drops into the SAME frame via
+                  d.heroShot with zero layout shift — see SHOW_WORK_PLAN.md. The
+                  4:5 well + the mount settle stay owned by HeroImageSettle. */}
+              <HeroProductReveal
+                slug={d.id}
+                title={d.title}
+                eyebrow={d.role}
+                media={{
+                  src: realHeroSrc(d),
+                  alt: heroAlt(d),
+                  avif: heroSources(d)?.avif,
+                  webp: heroSources(d)?.webp,
+                }}
               />
-              {/* Alex F-C4-3: explicit dimensions for the 4:5 hero. */}
-              {/* Peter: not LCP on mobile (below fold initially), lazy-load safe */}
-              {/* tactile-pass: photo leans in on hover + drifts gently on scroll */}
-              <TactileMedia
-                src={d.heroImage.src}
-                alt={d.heroImage.alt}
-                width={800}
-                height={1000}
-                depth={0.06}
-              />
-              {/* Cycle 26: elevated placeholder overlay matches ProjectCard. */}
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 text-center"
-              >
-                <span className="inline-flex items-center gap-2 font-mono text-meta tracking-label uppercase text-umber/70">
-                  <span className="inline-block w-1 h-1 rounded-full bg-terracotta" />
-                  {d.role}
-                </span>
-                <span className="font-serif font-light text-step-3 text-umber leading-tight">
-                  {d.title}
-                </span>
-              </div>
             </HeroImageSettle>
 
             {/* Details column */}
@@ -366,6 +356,43 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
         </section>
       )}
 
+      {/* In-body product shots — Show-the-work 2026-06-04. Each renders a
+          beautiful golden-hour placeholder until a real screenshot drops into
+          d.shots[i].src (one-line swap, no layout shift — see SHOW_WORK_PLAN.md).
+          The section sits in the same warm light (ParallaxWash) as the body. */}
+      {d.shots && d.shots.length > 0 && (
+        <section className="relative overflow-hidden px-gutter py-24 lg:py-32 bg-cream border-t border-border-decorative">
+          <ParallaxWash depth="far" />
+          <div className="relative z-10 max-w-content mx-auto">
+            <Reveal variant="scene">
+              <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+                Inside the build
+              </p>
+              <h2 className="font-serif font-light text-step-4 text-near-black mb-12 max-w-2xl leading-tight">
+                See it in motion.
+              </h2>
+            </Reveal>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+              {d.shots.map((shot, i) => (
+                <Reveal key={shot.alt} index={i} as="li" className="flex flex-col gap-3">
+                  <ShotProductReveal
+                    slug={d.id}
+                    title={d.title}
+                    media={{ src: shot.src, alt: shot.alt, avif: shot.avif, webp: shot.webp }}
+                    className="rounded-2xl border border-border-decorative"
+                  />
+                  {shot.caption && (
+                    <p className="font-sans text-body-sm text-charcoal leading-[1.6]">
+                      {shot.caption}
+                    </p>
+                  )}
+                </Reveal>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
       {/* Optional gallery */}
       {d.gallery && d.gallery.length > 0 && (
         <section className="relative overflow-hidden px-gutter py-24 lg:py-32 bg-cream border-t border-border-decorative">
@@ -444,6 +471,12 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
                     category={toCategory(o.id)}
                     description={o.summary}
                     href={`/work/${o.id}/`}
+                    media={{
+                      src: realHeroSrc(o),
+                      alt: heroAlt(o),
+                      avif: heroSources(o)?.avif,
+                      webp: heroSources(o)?.webp,
+                    }}
                     index={allDeliverables.findIndex((x) => x.id === o.id)}
                   />
                 </Reveal>

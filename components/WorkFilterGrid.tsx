@@ -8,6 +8,7 @@ import { FilterPill } from '@/components/FilterPill';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { ProjectCard } from '@/components/ProjectCard';
 import { Reveal } from '@/components/Reveal';
+import { heroAlt, heroSources, realHeroSrc } from '@/lib/media';
 import type { Deliverable } from '@/lib/schema';
 
 type Category = 'accessmap' | 'claude-corp' | 'prompt-library' | 'ghost' | 'mutual';
@@ -152,6 +153,12 @@ export function WorkFilterGrid({ deliverables }: WorkFilterGridProps) {
                   category={toCategory(d.id)}
                   description={d.summary}
                   href={`/work/${d.id}/`}
+                  media={{
+                    src: realHeroSrc(d),
+                    alt: heroAlt(d),
+                    avif: heroSources(d)?.avif,
+                    webp: heroSources(d)?.webp,
+                  }}
                   index={deliverables.findIndex((x) => x.id === d.id)}
                 />
               </motion.li>
