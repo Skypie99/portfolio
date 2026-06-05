@@ -10,6 +10,7 @@ import { HamburgerNavMount } from '@/components/HamburgerNavMount';
 import { Sidebar } from '@/components/Sidebar';
 import { SkipLink } from '@/components/SkipLink';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import { ViewTransitions } from '@/components/ViewTransitions';
 import { cn } from '@/lib/cn';
 import { getProfile } from '@/lib/content';
 
@@ -149,6 +150,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="bg-canvas text-ink">
         <ThemeProvider>
+          {/* Filmic page transitions: one capture-phase nav interceptor that
+              wraps same-origin client navigations in a native View Transition
+              cross-dissolve. Renders null; degrades to plain navigation. */}
+          <ViewTransitions />
           <SkipLink />
           <HamburgerNavMount />
           <div className="flex flex-col md:flex-row min-h-screen">

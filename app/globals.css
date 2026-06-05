@@ -852,22 +852,47 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
 }
 
 /* ------------------------------------------------------------------
-   Route-change transition (app/template.tsx) — motion-polish 2026-06-03.
-   A calm crossfade + small rise on each client navigation, turning hard
-   route cuts into continuous cinematic flow. The homepage + initial load
-   are exempt in the template (the cinematic opening is never touched).
-   Gated to no-preference, so reduced-motion visitors get the final state
-   instantly; the .page-enter wrapper only ever exists via JS navigation.
+   Filmic page transitions (view-transitions 2026-06-05) — Direction D.
+   A TRUE cross-dissolve on same-origin navigations via the native View
+   Transitions API — replacing the old enter-only .page-enter. Two layers
+   share these pseudos:
+     • cross-document  — @view-transition { navigation: auto } (no-JS + hard loads)
+     • same-document   — document.startViewTransition() in <ViewTransitions/>
+   A calm golden cross-fade under 500ms on --ease-gh-glide, echoing the intro's
+   golden-hour light WITHOUT reusing its signature quint curve. Compositor-only
+   (opacity), so 60fps and zero CLS. Arrivals at '/' are exempted in the
+   interceptor so the GSAP cinematic mounts on its cold path, undisturbed.
    ------------------------------------------------------------------ */
+@view-transition { navigation: auto; }
+
 @media (prefers-reduced-motion: no-preference) {
-  .page-enter {
-    animation: page-enter var(--dur-transition) var(--ease-gh-glide) both;
-    will-change: opacity, transform;
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: var(--dur-transition);          /* 420ms — under the 500ms cap */
+    animation-timing-function: var(--ease-gh-glide);
+  }
+  /* A breath of golden light THROUGH the dissolve: a faint warm field sits
+     behind the cross-fading snapshots and glows for a beat as the outgoing
+     frame thins, then the new frame settles over it. Capped at 0.10 alpha so
+     it reads as light, never a flash. --rgb-gold flips in html.dark, so it
+     stays on-palette in both themes automatically. */
+  ::view-transition-image-pair(root) {
+    background: radial-gradient(125% 95% at 50% -12%,
+      rgb(var(--rgb-gold) / 0.10), transparent 64%);
   }
 }
-@keyframes page-enter {
-  from { opacity: 0; transform: translate3d(0, 8px, 0); }
-  to   { opacity: 1; transform: none; }
+
+/* Reduced motion → INSTANT CUT. Snap the root snapshots (the VT pseudos are
+   NOT matched by the global *,::before,::after reduced-motion rule below, so
+   they need their own guard) and drop the gold. This also neutralizes the
+   cross-document path, which JS can't intercept; the <ViewTransitions/>
+   interceptor independently skips startViewTransition under reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.01ms !important;
+  }
+  ::view-transition-image-pair(root) { background: none; }
 }
 
 /* ------------------------------------------------------------------
