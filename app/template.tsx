@@ -1,43 +1,23 @@
-'use client';
-
-import { usePathname } from 'next/navigation';
-import { useEffect, type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 /**
- * Route-change transition (motion-polish 2026-06-03).
+ * Route template — pass-through (view-transitions 2026-06-05).
  *
- * Next's App Router re-mounts `template.tsx` on every navigation, so a CSS
- * enter animation here plays once per page change — a calm crossfade + small
- * rise on `--ease-gh-glide` / `--dur-transition` (see .page-enter in
- * globals.css). It turns the site's hard route cuts into one continuous,
- * cinematic flow.
+ * Route-change motion now lives in the native View Transitions layer
+ * (components/ViewTransitions.tsx + the ::view-transition-* block in
+ * globals.css), which gives a TRUE old→new cross-dissolve. That superseded the
+ * old enter-only `.page-enter` fade this template used to apply, so the template
+ * is now a transparent pass-through.
  *
- * TWO exemptions keep it safe:
- *  1. The homepage ('/') renders children UNWRAPPED — the locked cinematic
- *     intro + hero first-load stays byte-identical and never gets a transition
- *     layered over it.
- *  2. The INITIAL page load is exempt (the `armed` flag is false until after
- *     the first mount) so we never fade the LCP element on a cold load — only
- *     client-side navigations animate.
+ * Why keep the file at all: Next's App Router re-mounts template.tsx on every
+ * navigation. Leaving it as a no-op wrapper documents that route-transition
+ * concerns are intentionally handled elsewhere, and keeps the seam available if
+ * a future per-route wrapper is ever needed.
  *
- * Reduced motion: the .page-enter animation is gated to `no-preference`, so RM
- * visitors get the final state instantly. No-JS visitors only ever see the
- * (unwrapped) SSR page — client navigations require JS — so content is always
- * present and visible.
+ * The homepage exemption (so the locked GSAP cinematic is never layered under a
+ * transition) and the reduced-motion / no-JS fallbacks all live in the View
+ * Transitions layer now, not here.
  */
-
-// Module-scoped: false during SSR + the first client render (so hydration
-// matches), then flipped true after the initial mount. Persists across
-// navigations, so every subsequent client navigation animates.
-let armed = false;
-
 export default function Template({ children }: { children: ReactNode }) {
-  const pathname = usePathname();
-
-  useEffect(() => {
-    armed = true;
-  }, []);
-
-  const animate = armed && pathname !== '/';
-  return animate ? <div className="page-enter">{children}</div> : <>{children}</>;
+  return <>{children}</>;
 }
