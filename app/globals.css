@@ -1080,11 +1080,11 @@ html.dark {
   z-index: 1;
   background:
     radial-gradient(50% 60% at var(--mx, 28%) var(--my, 4%),
-      rgb(255 255 255 / 0.42), transparent 60%),
+      rgb(255 255 255 / 0.22), transparent 60%),
     radial-gradient(20% 26% at var(--mx, 28%) var(--my, 4%),
-      rgb(206 228 244 / 0.5), transparent 56%);
+      rgb(206 228 244 / 0.26), transparent 56%);
   mix-blend-mode: soft-light;
-  opacity: 0.4;
+  opacity: 0.18;
   transition: opacity 0.5s var(--ease-gh-glide);
 }
 @media (hover: hover) and (pointer: fine) {
@@ -1097,7 +1097,7 @@ html.dark {
                 0 40px 74px -28px rgb(72 46 26 / 0.32);
   }
   .glass-card:hover::before { opacity: 1; }
-  .glass-card:hover::after { opacity: 1; }
+  .glass-card:hover::after { opacity: 0.45; }
 }
 @media (prefers-reduced-motion: reduce) {
   .glass-card { transition: box-shadow 0.3s ease; }
@@ -1122,9 +1122,9 @@ html.dark .glass-card::before {
 html.dark .glass-card::after {
   background:
     radial-gradient(50% 60% at var(--mx, 28%) var(--my, 4%),
-      rgb(255 245 228 / 0.18), transparent 62%),
+      rgb(255 245 228 / 0.09), transparent 62%),
     radial-gradient(20% 26% at var(--mx, 28%) var(--my, 4%),
-      rgb(188 214 235 / 0.22), transparent 56%);
+      rgb(188 214 235 / 0.11), transparent 56%);
   mix-blend-mode: screen;
 }
 
@@ -1329,15 +1329,15 @@ html.dark ::selection {
    ------------------------------------------------------------------ */
 .cf-caustic {
   transform: translate3d(
-    calc((var(--cx, 50%) - 50%) * 0.1),
-    calc((var(--cy, 50%) - 50%) * 0.08),
+    calc((var(--cx, 50%) - 50%) * 0.05),
+    calc((var(--cy, 50%) - 50%) * 0.04),
     0
   );
 }
 .cf-prism {
   transform: translate3d(
-    calc((var(--cx, 50%) - 50%) * -0.055),
-    calc((var(--cy, 50%) - 50%) * -0.045),
+    calc((var(--cx, 50%) - 50%) * -0.028),
+    calc((var(--cy, 50%) - 50%) * -0.022),
     0
   );
 }
