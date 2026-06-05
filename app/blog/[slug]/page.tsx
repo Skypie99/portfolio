@@ -133,7 +133,7 @@ export default function BlogPostPage({ params }: { params: RouteParams }) {
   return (
     <>
       {/* Post header */}
-      <section className="px-gutter pt-24 lg:pt-32 pb-12 bg-cream">
+      <section className="px-gutter pt-24 lg:pt-32 pb-12 world-surface">
         <div className="max-w-content mx-auto">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="mb-12">
@@ -198,7 +198,7 @@ export default function BlogPostPage({ params }: { params: RouteParams }) {
         className={cn(
           'px-gutter',
           'py-16 lg:py-20',
-          'bg-warm-white',
+          'world-surface-alt',
           'border-t border-border-decorative',
         )}
       >
@@ -215,7 +215,7 @@ export default function BlogPostPage({ params }: { params: RouteParams }) {
       </section>
 
       {/* Back link */}
-      <section className="px-gutter py-16 bg-cream border-t border-border-decorative">
+      <section className="px-gutter py-16 world-surface border-t border-border-decorative">
         <div className="max-w-content mx-auto">
           <Link
             href="/blog/"

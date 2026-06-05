@@ -31,7 +31,7 @@ export function Hero({ eyebrow, heading, subhead, ctaLabel, ctaHref }: HeroProps
         'min-h-[85vh]',
         'flex flex-col justify-center',
         'px-gutter',
-        'bg-cream',
+        'world-surface',
       )}
       style={{
         paddingTop: 'clamp(96px, 14vw, 200px)',

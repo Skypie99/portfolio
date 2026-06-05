@@ -244,3 +244,25 @@ Tokens consumed, never mutated: `--ease-gh-glide`/`--ease-gh-settle`, `--dur-slo
 `token-parity` stays green (no `--fs-*`/`--ease-*`/`--shadow-*` mutated). New CSS classes: `.pr-world`,
 `.pr-horizon`, `.pr-scrim`, `.pr-frame[-phone|-window|-plate]`, `.pr-screen[-phone|-plate]`, `.pr-notch`,
 `.pr-titlebar`.
+
+## §13 — Continuous world (2026-06-05) — "One continuous world" (Direction A)
+
+The golden-hour desert is now a **persistent, scroll-evolving backdrop** behind the whole
+post-intro site, so the page travels *through* one world golden → dusk → night. The intro is
+studied read-only and stays byte-identical; **no GSAP below the landing** — the arc is one CSS var.
+
+| Move | Where | Motion | Reduced motion / fallback |
+|---|---|---|---|
+| **Day→night arc** | `WorldBackdrop` (fixed, z:-1, `aria-hidden`), mounted in `app/layout.tsx` | `useDayNight()` sets `--day-night` (0→1) on `<html>` via ONE rAF-throttled scroll listener; a base **dusk** sky with **day** crossfading out (0→0.5) and **night** crossfading in (0.5→1) — compositor-only `opacity` | **no-op** → `var(--day-night, var(--day-night-rest))`; rests at golden (light) / night (dark). Static, premium |
+| **Sun + horizon** | `.world-sun` / `.world-horizon` | sun lowers (`translateY`) + dims; horizon line fades with the light — transform/opacity only | hold at the rest state |
+| **Content travels through** | `.world-surface[-alt|-cool|-cool-pale]` replace the opaque section `bg-*` | translucent panels (static paint) let the fixed world show as content scrolls over it | unchanged — static translucency |
+
+**Arc origin:** remapped to begin at the post-intro handoff — `--day-night` is 0 (full golden) the
+instant the locked 680vh intro finishes (anchored to `.cinematic-content-reveal` on the homepage; page
+top on sub-pages). **Theme ↔ scroll rule:** the toggle owns the readable theme (light = the daylight
+half of the world, dark = the night half); scroll only drives the backdrop's time-of-day. They never
+fight (different layers). New tokens: `--day-night-rest`, `--sky-day/dusk/night-1..4`, `--sky-sun`,
+`--surface-alpha[-alt|-cool]` — all additive (`token-parity` green; intro untouched). Readability:
+panel alphas are tuned so ALL text clears WCAG AA over every world state in both themes (measured).
+Hook: `useDayNight` in `lib/motion.ts`; component: `components/WorldBackdrop.tsx`. See
+`CONTINUOUS_WORLD_PLAN.md`.
