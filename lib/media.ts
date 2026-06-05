@@ -10,6 +10,8 @@
  * flat illustration. `undefined` => ProductReveal paints the placeholder.
  */
 
+import type { ProductRevealMedia } from '@/components/ProductReveal';
+
 import type { Deliverable } from './schema';
 
 /** SVG heroes are illustrative mockups → treated as placeholders, not screenshots. */
@@ -31,4 +33,22 @@ export function heroAlt(d: HeroSource): string {
 export function heroSources(d: HeroSource): { avif?: string; webp?: string } | undefined {
   if (!d.heroShot?.avif && !d.heroShot?.webp) return undefined;
   return { avif: d.heroShot?.avif, webp: d.heroShot?.webp };
+}
+
+/**
+ * The full ProductReveal media object for a deliverable — one source of truth for
+ * the case-study hero AND both card types. Carries the real src (or undefined →
+ * placeholder), alt, responsive sources, and the `focal` crop used by the
+ * full-bleed card/shot band (the device-framed hero ignores focal — it shows the
+ * whole screen).
+ */
+export function heroMedia(d: HeroSource): ProductRevealMedia {
+  const sources = heroSources(d);
+  return {
+    src: realHeroSrc(d),
+    alt: heroAlt(d),
+    avif: sources?.avif,
+    webp: sources?.webp,
+    focal: d.heroShot?.focal,
+  };
 }

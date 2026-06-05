@@ -6,7 +6,7 @@ import { CardField } from '@/components/CardField';
 import { CardProductReveal } from '@/components/ProductReveal';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
-import { heroAlt, heroSources, realHeroSrc } from '@/lib/media';
+import { heroMedia } from '@/lib/media';
 import { useSpotlight } from '@/lib/motion';
 import type { Deliverable } from '@/lib/schema';
 
@@ -38,8 +38,6 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
   const demoLink = d.links?.find((l) => l.type === 'demo');
   const numeral = String(index + 1).padStart(2, '0');
   const spotRef = useSpotlight<HTMLDivElement>();
-  const heroSrc = realHeroSrc(d);
-  const sources = heroSources(d);
 
   return (
     <div
@@ -59,7 +57,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
       <CardProductReveal
         slug={d.id}
         title={d.title}
-        media={{ src: heroSrc, alt: heroAlt(d), avif: sources?.avif, webp: sources?.webp }}
+        media={heroMedia(d)}
         className={cn(
           'shrink-0 border-b border-[rgb(var(--rgb-ink)/0.08)]',
           wide && 'aspect-auto h-44 sm:h-52 md:h-60 lg:h-64',

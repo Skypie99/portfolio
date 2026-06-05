@@ -12,7 +12,7 @@ import { TactileMedia } from '@/components/TactileMedia';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getDeliverables, getProfile } from '@/lib/content';
-import { heroAlt, heroSources, realHeroSrc } from '@/lib/media';
+import { heroMedia } from '@/lib/media';
 import { INLINE_CODE_CLASS, smartPunctuation } from '@/lib/markdown';
 
 function parseInline(text: string): React.ReactNode[] {
@@ -220,12 +220,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
                 slug={d.id}
                 title={d.title}
                 eyebrow={d.role}
-                media={{
-                  src: realHeroSrc(d),
-                  alt: heroAlt(d),
-                  avif: heroSources(d)?.avif,
-                  webp: heroSources(d)?.webp,
-                }}
+                media={heroMedia(d)}
               />
             </HeroImageSettle>
 
@@ -378,7 +373,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
                   <ShotProductReveal
                     slug={d.id}
                     title={d.title}
-                    media={{ src: shot.src, alt: shot.alt, avif: shot.avif, webp: shot.webp }}
+                    media={{ src: shot.src, alt: shot.alt, avif: shot.avif, webp: shot.webp, focal: shot.focal }}
                     className="rounded-2xl border border-border-decorative"
                   />
                   {shot.caption && (
@@ -471,12 +466,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
                     category={toCategory(o.id)}
                     description={o.summary}
                     href={`/work/${o.id}/`}
-                    media={{
-                      src: realHeroSrc(o),
-                      alt: heroAlt(o),
-                      avif: heroSources(o)?.avif,
-                      webp: heroSources(o)?.webp,
-                    }}
+                    media={heroMedia(o)}
                     index={allDeliverables.findIndex((x) => x.id === o.id)}
                   />
                 </Reveal>

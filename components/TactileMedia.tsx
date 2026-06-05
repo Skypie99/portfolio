@@ -15,6 +15,9 @@ type TactileMediaProps = {
    *  <img> is wrapped in a <picture> with AVIF → WebP → <img> (mirrors the
    *  locked cinematic Layer.tsx). Absent → renders exactly as before. */
   sources?: { avif?: string; webp?: string };
+  /** CSS object-position for the cover crop (e.g. "50% 44%"). Lets a tall
+   *  screenshot be framed on its key content. Default center. */
+  position?: string;
   className?: string;
 };
 
@@ -33,7 +36,7 @@ type TactileMediaProps = {
  * never registers or transforms (static), and the hover scale is hover intent
  * (fine under RM). Touch devices simply never hover. Alt text is preserved.
  */
-export function TactileMedia({ src, alt, width, height, depth = 0.05, sources, className }: TactileMediaProps) {
+export function TactileMedia({ src, alt, width, height, depth = 0.05, sources, position, className }: TactileMediaProps) {
   const ref = useParallax<HTMLDivElement>(depth);
 
   const img = (
@@ -44,6 +47,7 @@ export function TactileMedia({ src, alt, width, height, depth = 0.05, sources, c
       width={width}
       height={height}
       loading="lazy"
+      style={position ? { objectPosition: position } : undefined}
       className={cn(
         'absolute inset-0 h-full w-full object-cover transition-transform duration-slow ease-gh-glide group-hover:scale-[1.05]',
         className,

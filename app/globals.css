@@ -813,6 +813,10 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
   position: relative;
   flex: 1 1 auto;
   overflow: hidden;
+  /* Neutral dark "screen off" tone — only ever visible as a sliver of letterbox
+     behind a contained real screenshot (FramedShot, object-contain), where it
+     blends with the dark status/nav bars. Placeholders cover this entirely. */
+  background: #0e131a;
 }
 .pr-screen-phone {
   border-radius: 1.5rem;
