@@ -17,6 +17,7 @@
     },
     "heroShot": {
       "src": "/images/deliverables/accessmap/screen-map.png",
+      "focal": "50% 62%",
       "alt": "AccessMap's map view with a verified severity-4 'No ramp' barrier pinned to a downtown Kelowna corner, three nearby flags, and a Report button"
     },
     "shots": [

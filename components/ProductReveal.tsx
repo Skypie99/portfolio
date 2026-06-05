@@ -41,6 +41,9 @@ export type ProductRevealMedia = {
   avif?: string;
   webp?: string;
   caption?: string;
+  /** CSS object-position for the full-bleed card/shot crop (e.g. "50% 44%").
+   *  Ignored by the device-framed hero (which shows the whole screen). */
+  focal?: string;
 };
 
 export type ProductRevealProps = {
@@ -139,6 +142,41 @@ function BandHint({ sig }: { sig: string }) {
   );
 }
 
+/** Real screenshot inside a device frame — shows the WHOLE screen (object-contain,
+ *  static), so nothing is cropped: the status bar, content and bottom nav all show
+ *  exactly as in the source. Wrapped in <picture> for avif/webp. The phone screen
+ *  aspect ≈ a modern phone, so a phone screenshot fills it edge-to-edge. */
+function FramedShot({
+  src,
+  alt,
+  sources,
+}: {
+  src: string;
+  alt: string;
+  sources?: { avif?: string; webp?: string };
+}) {
+  const img = (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={src}
+      alt={alt}
+      width={1170}
+      height={2532}
+      loading="lazy"
+      className="absolute inset-0 h-full w-full object-contain"
+    />
+  );
+  return sources && (sources.avif || sources.webp) ? (
+    <picture>
+      {sources.avif && <source type="image/avif" srcSet={sources.avif} />}
+      {sources.webp && <source type="image/webp" srcSet={sources.webp} />}
+      {img}
+    </picture>
+  ) : (
+    img
+  );
+}
+
 export function ProductReveal({
   slug,
   title,
@@ -157,8 +195,16 @@ export function ProductReveal({
   const hasReal = Boolean(media.src);
   const sources = media.avif || media.webp ? { avif: media.avif, webp: media.webp } : undefined;
 
-  // The "screen" content: a real screenshot (carries alt) OR a decorative fill.
-  const screen: ReactNode = hasReal ? (
+  // The "screen" content. Two real-image modes:
+  //  • device-framed (hero) → FramedShot: the WHOLE screen, contained, static.
+  //  • full-bleed (card/shot) → TactileMedia: cover-cropped to `focal`, parallax.
+  const screen: ReactNode = !hasReal ? (
+    kind === 'none' ? (
+      <BandHint sig={sig} />
+    ) : (
+      <HeroScreenFill sig={sig} title={title} eyebrow={eyebrow} />
+    )
+  ) : kind === 'none' ? (
     <TactileMedia
       src={media.src as string}
       alt={media.alt}
@@ -166,11 +212,10 @@ export function ProductReveal({
       height={nominal.h}
       depth={d}
       sources={sources}
+      position={media.focal}
     />
-  ) : kind === 'none' ? (
-    <BandHint sig={sig} />
   ) : (
-    <HeroScreenFill sig={sig} title={title} eyebrow={eyebrow} />
+    <FramedShot src={media.src as string} alt={media.alt} sources={sources} />
   );
 
   const layers = (
