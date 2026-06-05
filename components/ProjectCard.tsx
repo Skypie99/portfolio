@@ -60,7 +60,10 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
         media={heroMedia(d)}
         className={cn(
           'shrink-0 border-b border-[rgb(var(--rgb-ink)/0.08)]',
-          wide && 'aspect-auto h-44 sm:h-52 md:h-60 lg:h-64',
+          // Featured band: a 21:9 cinematic banner (was an extreme ~4:1 letterbox
+          // that magnified a tall phone screenshot too hard). 21:9 + the per-shot
+          // focal frames the key content with map/context margin around it.
+          wide && 'aspect-[21/9]',
         )}
       />
 
