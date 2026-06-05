@@ -4,7 +4,7 @@ The next things to fix/build, ordered by value vs. cost. One line per item —
 flesh it out when you (or an agent) picks it up. This file is the source of
 truth for what to do next; remove items once they land on `main`.
 
-This site is **live** (https://www.skypistudio.com) and push-to-`main`
+This site is **live** (https://skypistudio.com) and push-to-`main`
 deploys instantly with no staging gate — so P0 items affect production now.
 
 ---
