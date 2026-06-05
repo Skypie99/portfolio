@@ -167,11 +167,11 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
             '@type': 'SoftwareApplication',
             name: d.title,
             description: d.summary,
-            url: `https://www.skypistudio.com/work/${d.id}/`,
+            url: `https://skypistudio.com/work/${d.id}/`,
             author: {
               '@type': 'Person',
               name: 'Sky Halisky',
-              url: 'https://www.skypistudio.com',
+              url: 'https://skypistudio.com',
             },
           }),
         }}

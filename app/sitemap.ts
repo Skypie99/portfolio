@@ -8,7 +8,7 @@ import { getBlogPosts, getDeliverables } from '@/lib/content';
  * hand-maintained public/sitemap.xml. Static-export friendly (Next emits
  * /sitemap.xml at build). `trailingSlash: true` in next.config → URLs end in /.
  */
-const BASE = 'https://www.skypistudio.com';
+const BASE = 'https://skypistudio.com';
 
 // Static export: generate the sitemap at build time (not on-request).
 export const dynamic = 'force-static';
