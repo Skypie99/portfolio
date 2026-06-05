@@ -12,7 +12,7 @@ import { TactileMedia } from '@/components/TactileMedia';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getDeliverables, getProfile } from '@/lib/content';
-import { heroMedia } from '@/lib/media';
+import { cardMedia, heroMedia } from '@/lib/media';
 import { INLINE_CODE_CLASS, smartPunctuation } from '@/lib/markdown';
 
 function parseInline(text: string): React.ReactNode[] {
@@ -466,7 +466,7 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
                     category={toCategory(o.id)}
                     description={o.summary}
                     href={`/work/${o.id}/`}
-                    media={heroMedia(o)}
+                    media={cardMedia(o)}
                     index={allDeliverables.findIndex((x) => x.id === o.id)}
                   />
                 </Reveal>
