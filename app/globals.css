@@ -851,6 +851,131 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
   background: rgb(var(--rgb-ink) / 0.16);
 }
 
+/* ==================================================================
+   CONTINUOUS WORLD (Direction A, 2026-06-05) — the persistent, scroll-
+   evolving golden-hour → night desert the whole post-intro site travels
+   through. ADDITIVE + SITE-UI region (well above the locked .cinematic-*
+   / .cdesert-* ranges); consumes/declares only NEW decorative tokens, so
+   token-parity stays green. Drives everything off ONE var, --day-night
+   (0 golden → 0.5 dusk → 1 night), set by useDayNight() on scroll.
+   Reduced-motion / no-JS → the var is unset and the world rests at
+   --day-night-rest (light → golden, dark → night). Compositor-only
+   (opacity/transform). See components/WorldBackdrop.tsx + the plan.
+
+   Per-theme sky tokens are decorative --rgb triplets that FLIP in
+   html.dark: LIGHT = the daylight half of the world, DARK = the night
+   half — the day→night scroll arc plays within each (the light→dark
+   transition, expressed cinematically). The night stops in LIGHT mode are
+   a deliberately LIGHT twilight so the translucent cream panels keep text
+   at WCAG AA over the darkest scroll state.
+   ================================================================== */
+:root {
+  --day-night-rest: 0;                 /* RM / no-JS: light rests at golden */
+  /* LIGHT = the AIRY DAYLIGHT half of the world. High-luminance golden →
+     blue-hour stops so the translucent panels keep ALL text (incl. small
+     meta) at WCAG AA over every scroll state, while the warm→cool shift
+     still reads clearly. The DRAMATIC deep world lives in dark mode (below),
+     where light ink has the headroom for it. (Verified by the contrast pass.) */
+  --sky-day-1: 255 236 206;  --sky-day-2: 255 221 176;  --sky-day-3: 252 205 162;  --sky-day-4: 230 210 182;
+  --sky-dusk-1: 236 216 220; --sky-dusk-2: 250 212 182; --sky-dusk-3: 240 198 172; --sky-dusk-4: 222 202 192;
+  --sky-night-1: 200 206 224;--sky-night-2: 216 208 220;--sky-night-3: 228 212 208;--sky-night-4: 218 210 214;
+  --sky-sun: 255 220 158;
+  /* Translucent content-surface alphas — STATIC, set just above the alpha the
+     contrast pass requires for ink-meta ≥ 4.5 over EVERY world state, so the
+     world shows through as much as legibility allows. Tunable knobs. */
+  --surface-alpha:       0.62;   /* cream sections — world reads ~38% */
+  --surface-alpha-alt:   0.79;   /* canvas-alt (footer/certs/process) — meta-heavy */
+  --surface-alpha-cool:  0.77;   /* wash-cool / panel-cool (showcase/contact) */
+}
+html.dark {
+  --day-night-rest: 1;                 /* RM / no-JS: dark rests at night */
+  --sky-day-1: 64 50 38;   --sky-day-2: 95 64 38;   --sky-day-3: 126 80 44;   --sky-day-4: 44 35 26;
+  --sky-dusk-1: 34 35 50;  --sky-dusk-2: 62 45 48;  --sky-dusk-3: 92 56 44;   --sky-dusk-4: 28 24 21;
+  --sky-night-1: 10 14 24; --sky-night-2: 14 18 28; --sky-night-3: 22 25 34;  --sky-night-4: 9 12 15;
+  --sky-sun: 201 168 95;
+  /* dark panels over a dark world keep AA (light ink) at much lower alpha →
+     the deep-amber → night world reads clearly through the glass */
+  --surface-alpha:       0.66;
+  --surface-alpha-alt:   0.70;
+  --surface-alpha-cool:  0.66;
+}
+
+/* The fixed stage — behind everything, never interactive. body's bg-canvas is
+   the ultimate backstop BEHIND this (never seen; the dusk base is opaque). */
+.world-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: rgb(var(--sky-dusk-4));
+  contain: strict;
+}
+.world-sky { position: absolute; inset: 0; }
+/* DUSK base — always opaque, so the world is opaque at every scroll position. */
+.world-sky--dusk {
+  background: linear-gradient(180deg,
+    rgb(var(--sky-dusk-1)) 0%, rgb(var(--sky-dusk-2)) 50%,
+    rgb(var(--sky-dusk-3)) 74%, rgb(var(--sky-dusk-4)) 100%);
+}
+/* DAY crossfades OUT over 0 → 0.5. */
+.world-sky--day {
+  opacity: clamp(0, calc(1 - var(--day-night, var(--day-night-rest)) / 0.5), 1);
+  will-change: opacity;
+  background: linear-gradient(180deg,
+    rgb(var(--sky-day-1)) 0%, rgb(var(--sky-day-2)) 50%,
+    rgb(var(--sky-day-3)) 74%, rgb(var(--sky-day-4)) 100%);
+}
+/* NIGHT crossfades IN over 0.5 → 1. */
+.world-sky--night {
+  opacity: clamp(0, calc((var(--day-night, var(--day-night-rest)) - 0.5) / 0.5), 1);
+  will-change: opacity;
+  background: linear-gradient(180deg,
+    rgb(var(--sky-night-1)) 0%, rgb(var(--sky-night-2)) 58%,
+    rgb(var(--sky-night-3)) 80%, rgb(var(--sky-night-4)) 100%);
+}
+/* The sun — a soft warm disc high at golden, sinking + dimming toward night. */
+.world-sun {
+  position: absolute;
+  left: 50%;
+  top: 13%;
+  width: 46vmax;
+  height: 46vmax;
+  border-radius: 50%;
+  transform: translate(-50%, calc(var(--day-night, var(--day-night-rest)) * 64vh));
+  opacity: clamp(0, calc(1.15 - var(--day-night, var(--day-night-rest)) * 1.3), 0.9);
+  will-change: transform, opacity;
+  background: radial-gradient(circle at 50% 50%,
+    rgb(var(--sky-sun) / 0.55) 0%, rgb(var(--sky-sun) / 0.26) 32%, rgb(var(--sky-sun) / 0) 64%);
+}
+/* The horizon line — a warm hairline (echoes .pr-horizon), fading with the light. */
+.world-horizon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 60%;
+  height: 1px;
+  opacity: clamp(0.12, calc(1 - var(--day-night, var(--day-night-rest))), 1);
+  background: linear-gradient(90deg,
+    transparent, rgb(var(--sky-sun) / 0.4) 24%, rgb(var(--sky-sun) / 0.4) 76%, transparent);
+}
+
+/* Translucent content surfaces — replace the opaque section bg-* so the fixed
+   world shows through as content scrolls over it. Static paint (no per-scroll
+   repaint); the world's evolving light reads as a continuous tint through the
+   whole page. Inner panels/cards (surface-mid, glass-card) stay as-is. */
+.world-surface       { background-color: rgb(var(--rgb-canvas)     / var(--surface-alpha)); }
+.world-surface-alt   { background-color: rgb(var(--rgb-canvas-alt) / var(--surface-alpha-alt)); }
+.world-surface-cool  { background-color: rgb(var(--rgb-wash-cool)  / var(--surface-alpha-cool)); }
+.world-surface-cool-pale { background-color: rgb(var(--rgb-panel-cool) / var(--surface-alpha-cool)); }
+
+/* No-JS: ensure the world still rests at its theme state even if the var path is
+   ever bypassed (defensive — the fallback in var() already covers it). */
+@media (scripting: none) {
+  .world-sky--day   { opacity: clamp(0, calc(1 - var(--day-night-rest) / 0.5), 1); }
+  .world-sky--night { opacity: clamp(0, calc((var(--day-night-rest) - 0.5) / 0.5), 1); }
+}
+
 /* ------------------------------------------------------------------
    Filmic page transitions (view-transitions 2026-06-05) — Direction D.
    A TRUE cross-dissolve on same-origin navigations via the native View

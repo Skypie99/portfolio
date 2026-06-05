@@ -324,6 +324,57 @@ export function useScrollProgress() {
 }
 
 /* ────────────────────────────────────────────────────────────────────
+ * useDayNight — the continuous-world arc (Direction A, 2026-06-05). Sets
+ * `--day-night` (0→1) on <html> via ONE rAF-throttled scroll listener, so the
+ * persistent WorldBackdrop can re-grade golden → dusk → night on the compositor
+ * (opacity/transform crossfades) with ZERO React re-renders.
+ *
+ * Remapped so the arc BEGINS where the post-intro content hands off: on the
+ * homepage the start is the top of `.cinematic-content-reveal` (i.e. the instant
+ * the locked 680vh intro finishes and the golden cliff hands off → day-night 0 =
+ * full golden); on routes without the intro the arc runs from the page top. End
+ * is the document bottom (footer → night). getBoundingClientRect()+scrollY is
+ * read each frame so a late layout (the GSAP pin-spacer, images) can't desync the
+ * anchor.
+ *
+ * Reduced motion → no-op (the var stays unset; the world rests at a
+ * theme-appropriate static state via `var(--day-night, var(--day-night-rest))`).
+ * SSR-safe. Mirrors useScrollProgress exactly.
+ * ──────────────────────────────────────────────────────────────────── */
+export function useDayNight() {
+  const reduced = usePrefersReducedMotion();
+
+  useEffect(() => {
+    if (reduced || typeof window === 'undefined') return;
+    const root = document.documentElement;
+    let raf = 0;
+    const apply = () => {
+      raf = 0;
+      const anchor = document.querySelector('.cinematic-content-reveal');
+      const start = anchor
+        ? anchor.getBoundingClientRect().top + window.scrollY
+        : 0;
+      const end = root.scrollHeight - window.innerHeight;
+      const span = end - start;
+      const dn = span > 0 ? Math.min(1, Math.max(0, (window.scrollY - start) / span)) : 0;
+      root.style.setProperty('--day-night', dn.toFixed(4));
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(apply);
+    };
+    apply();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    return () => {
+      if (raf) cancelAnimationFrame(raf);
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      root.style.removeProperty('--day-night');
+    };
+  }, [reduced]);
+}
+
+/* ────────────────────────────────────────────────────────────────────
  * useActiveSection — scroll-spy (high-end polish 2026-06-03). Returns the
  * id of the section currently crossing the viewport's middle band, for
  * nav active-state highlighting. ONE IntersectionObserver over the given
