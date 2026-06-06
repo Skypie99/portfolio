@@ -28,7 +28,7 @@ const NAV_ITEMS: NavItem[] = [
   { href: '/#work',         label: 'The Work'        },
   { href: '/#certificates', label: 'Credentials'     },
   { href: '/#about',        label: 'A Brief Account' },
-  { href: '/blog/',         label: 'Dispatches'      },
+  { href: '/blog/',         label: 'Notes'           },
   { href: '/#contact',      label: 'Correspond'      },
 ];
 

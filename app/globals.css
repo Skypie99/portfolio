@@ -865,28 +865,31 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
    Per-theme sky tokens are decorative --rgb triplets that FLIP in
    html.dark: LIGHT = the daylight half of the world, DARK = the night
    half — the day→night scroll arc plays within each (the light→dark
-   transition, expressed cinematically). The night stops in LIGHT mode are
-   a deliberately LIGHT twilight so the translucent cream panels keep text
-   at WCAG AA over the darkest scroll state.
+   transition, expressed cinematically). The evening stops in LIGHT mode are
+   a deliberately HIGH-LUMINANCE warm golden-evening (gentler / less travel
+   than dark) so the translucent cream panels keep text at WCAG AA over every
+   scroll state.
    ================================================================== */
 :root {
   --day-night-rest: 0;                 /* RM / no-JS: light rests at golden */
   /* LIGHT = the AIRY DAYLIGHT half of the world. High-luminance golden →
-     blue-hour stops so the translucent panels keep ALL text (incl. small
-     meta) at WCAG AA over every scroll state, while the warm→cool shift
-     still reads clearly. The DRAMATIC deep world lives in dark mode (below),
-     where light ink has the headroom for it. (Verified by the contrast pass.) */
+     warm golden-evening stops so the translucent panels keep ALL text (incl.
+     small meta) at WCAG AA over every scroll state, while the gentle warm→warmer
+     shift still reads clearly. This is deliberately GENTLER than the dark arc:
+     less luminance travel, warm throughout (no cool twilight), so light stays
+     airy/calm/bright. The DRAMATIC deep world lives in dark mode (below), where
+     light ink has the headroom for it. (Verified by the live contrast pass.) */
   --sky-day-1: 255 236 206;  --sky-day-2: 255 221 176;  --sky-day-3: 252 205 162;  --sky-day-4: 230 210 182;
-  --sky-dusk-1: 236 216 220; --sky-dusk-2: 250 212 182; --sky-dusk-3: 240 198 172; --sky-dusk-4: 222 202 192;
-  --sky-night-1: 200 206 224;--sky-night-2: 216 208 220;--sky-night-3: 228 212 208;--sky-night-4: 218 210 214;
+  --sky-dusk-1: 250 224 196; --sky-dusk-2: 252 216 184; --sky-dusk-3: 248 210 176; --sky-dusk-4: 234 212 184;
+  --sky-night-1: 245 206 158;--sky-night-2: 244 210 168;--sky-night-3: 240 212 180;--sky-night-4: 236 214 176;
   --sky-sun: 255 220 158;
   /* Translucent content-surface alphas — STATIC, set just above the alpha the
      contrast pass requires for ink-meta ≥ 4.5 over EVERY world state, so the
      world shows through as much as legibility allows. Tunable knobs. */
-  --surface-alpha:       0.59;   /* cream sections — world reads ~41% */
-  --surface-alpha-alt:   0.79;   /* canvas-alt (footer/certs/process) — meta-heavy */
-  --surface-alpha-cool:  0.77;   /* wash-cool (showcase) */
-  --surface-alpha-coolpale: 0.62; /* panel-cool (contact) — muted-only text */
+  --surface-alpha:       0.62;   /* cream sections — world reads ~38% (raised +.03 for AA margin under the revealed light world) */
+  --surface-alpha-alt:   0.82;   /* canvas-alt (footer/certs/process) — meta-heavy → firmed +.03 for AA margin (worst meta 4.6→4.7) */
+  --surface-alpha-cool:  0.80;   /* wash-cool (showcase) — firmed +.03 for AA margin */
+  --surface-alpha-coolpale: 0.66; /* panel-cool (contact) — muted-only text (raised +.04 for AA margin) */
 }
 html.dark {
   --day-night-rest: 1;                 /* RM / no-JS: dark rests at night */
@@ -910,21 +913,25 @@ html.dark {
   --surface-alpha-coolpale: 0.56;
 }
 
-/* Let the continuous world actually SHOW in dark mode. The backdrop sits at
+/* Let the continuous world actually SHOW in BOTH themes. The backdrop sits at
    z-index:-1, but the body's opaque `bg-canvas` paints OVER negative-z children
    (CSS paint order: stacking-context bg → negative z → in-flow block bgs), so
-   in dark the world was almost entirely occluded — the real reason the day→night
-   arc read flat. Dropping the dark body fill lets the world's own opaque dusk
-   base become the page backstop, so the amber→night descent reads through the
-   translucent panels. Light mode is untouched (its body keeps bg-canvas), and
-   the cinematic intro is full-bleed so it is unaffected. */
-html.dark body {
+   the world was occluded — the real reason the arc read flat. That opaque fill
+   comes from the Tailwind `.bg-canvas` utility (app/layout.tsx), so we override
+   it with a `body.bg-canvas` selector (specificity 0-1-1 beats the utility's
+   0-1-0). Dropping the body fill lets the world's own opaque dusk base become
+   the page backstop, so the arc reads through the translucent panels. DARK is
+   byte-identical (it already computed body transparent via the old html.dark
+   rule); LIGHT now joins — GENTLY (see the warm golden-evening sky retune above).
+   `html` keeps its cream fallback (≈ line 369) so there is never a flash before
+   the world paints, and the cinematic intro is full-bleed so it is unaffected. */
+body.bg-canvas {
   background-color: transparent;
 }
 
-/* The fixed stage — behind everything, never interactive. In dark the world's
-   opaque dusk base is the backstop (body fill is dropped above); in light the
-   body's bg-canvas sits behind. */
+/* The fixed stage — behind everything, never interactive. In BOTH themes the
+   world's opaque dusk base is the backstop (body fill is dropped above), with
+   html's cream as the ultimate fallback behind it. */
 .world-backdrop {
   position: fixed;
   inset: 0;

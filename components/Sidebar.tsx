@@ -103,17 +103,17 @@ export function Sidebar() {
       {/* ── On this page (scroll-spy section index) ─────────────────── */}
       <SidebarSectionNav />
 
-      {/* ── Blog link ─────────────────────────────────────────────── */}
+      {/* ── Notes link ────────────────────────────────────────────── */}
       <div className="flex flex-col gap-3">
         <span className="font-mono text-label tracking-label uppercase text-text-meta">
-          Dispatches
+          Notes
         </span>
         <Link
           href="/blog/"
           className="group font-mono text-meta tracking-label uppercase text-wa-teal-deep inline-flex items-center gap-1"
         >
           <span className="group-hover:translate-x-1 group-focus-visible:translate-x-1 transition-transform duration-fast ease-out inline-flex items-center gap-1">
-            Read dispatches
+            Read the notes
             <span aria-hidden="true">{'→'}</span>
           </span>
         </Link>
