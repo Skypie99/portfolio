@@ -38,6 +38,9 @@ export function FilterPill({
         'min-h-11 px-4 py-1.5 inline-flex items-center justify-center gap-2 whitespace-nowrap',
         'rounded-pill font-mono text-meta tracking-label uppercase',
         'transition-all duration-base ease-out',
+        // Tactile press — a subtle compositor-only push on pointer-down, for
+        // parity with the site's button language. RM-safe (transform only).
+        'active:scale-[0.97]',
         'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta',
         // Resting state
         !isActive && !disabled && [

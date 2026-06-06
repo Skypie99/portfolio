@@ -9,19 +9,19 @@ import { getBlogPosts, getProfile } from '@/lib/content';
 
 export function generateMetadata(): Metadata {
   const profile = getProfile();
-  const description = 'Writing by Sky Halisky on AI, accessibility, and building things.';
+  const description = 'Notes by Sky Halisky on AI, accessibility, and building things.';
   return {
-    title: `Blog — ${profile.name}`,
+    title: `Notes — ${profile.name}`,
     description,
     openGraph: {
       type: 'website',
-      title: `Blog — ${profile.name}`,
+      title: `Notes — ${profile.name}`,
       description,
       images: [{ url: '/og-image.svg', width: 1200, height: 630 }],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `Blog — ${profile.name}`,
+      title: `Notes — ${profile.name}`,
       description,
     },
   };
@@ -50,15 +50,15 @@ export default function BlogIndexPage() {
         <div className="max-w-content mx-auto">
           <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
             <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
-            Blog — {posts.length} {posts.length === 1 ? 'post' : 'posts'}
+            Notes — {posts.length} {posts.length === 1 ? 'entry' : 'entries'}
           </p>
           <SettleHeading
             className="font-serif font-light text-display ember leading-[1.05] max-w-3xl mb-8 text-balance"
           >
-            Writing
+            Notes
           </SettleHeading>
           <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-[640px] text-pretty">
-            Notes on accessibility, AI-assisted building, and what it means to
+            On accessibility, AI-assisted building, and what it means to
             make things carefully — one project at a time.
           </p>
         </div>
@@ -94,7 +94,7 @@ export default function BlogIndexPage() {
                     <span
                       aria-hidden="true"
                       className={cn(
-                        'font-mono text-label tracking-label shrink-0 mt-1',
+                        'font-mono text-label tracking-label tabular-nums shrink-0 mt-1',
                         'text-text-meta group-hover:text-accent-text group-focus-visible:text-accent-text',
                         'transition-colors duration-fast ease-out',
                       )}

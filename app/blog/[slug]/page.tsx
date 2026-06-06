@@ -140,7 +140,7 @@ export default function BlogPostPage({ params }: { params: RouteParams }) {
             <ol className="inline-flex items-center gap-2 font-mono text-meta tracking-label uppercase text-text-meta">
               <li>
                 <Link href="/blog/" className="link-draw inline-block text-text-meta">
-                  Blog
+                  Notes
                 </Link>
               </li>
               <li aria-hidden="true" className="text-stone">{'/'}</li>

@@ -12,6 +12,8 @@ type ContactEmailProps = {
    * hydration and "Send me an email" before.
    */
   label?: string;
+  /** Optional mailto subject line. Defaults to a generic greeting. */
+  subject?: string;
 };
 
 /**
@@ -25,7 +27,7 @@ type ContactEmailProps = {
  * Bot scrapers never execute JavaScript, so the address never appears
  * in the static HTML or in Next.js's __NEXT_DATA__ serialisation.
  */
-export function ContactEmail({ label }: ContactEmailProps = {}) {
+export function ContactEmail({ label, subject = 'Hello from your portfolio' }: ContactEmailProps = {}) {
   const [email, setEmail] = useState<string | null>(null);
   const magRef = useMagnetic<HTMLElement>(0.2, 6);
 
@@ -36,9 +38,12 @@ export function ContactEmail({ label }: ContactEmailProps = {}) {
     setEmail(`${user}@${domain}`);
   }, []);
 
+  // Before hydration (and with scripting disabled) the address is never in the
+  // HTML, so fall back to the /contact page rather than a dead `#` — keeps the
+  // CTA functional for no-JS visitors without exposing the address to scrapers.
   const href = email
-    ? `mailto:${email}?subject=Hello from your portfolio`
-    : '#';
+    ? `mailto:${email}?subject=${encodeURIComponent(subject)}`
+    : '/contact/';
 
   const children = label ?? (email ? `Email ${email}` : 'Send me an email');
 
