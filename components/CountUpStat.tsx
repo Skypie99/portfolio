@@ -16,8 +16,8 @@ type CountUpStatProps = {
 
 /** Split a stat into a numeric target + trailing suffix, or null if non-numeric. */
 function parseStat(value: string): { target: number; suffix: string } | null {
-  const m = value.match(/^(\d+)(\D*)$/);
-  return m ? { target: Number(m[1]), suffix: m[2] } : null;
+  const m = value.match(/^(\d[\d,]*)(\D*)$/);
+  return m ? { target: Number(m[1].replace(/,/g, '')), suffix: m[2] } : null;
 }
 
 /**
@@ -77,7 +77,7 @@ export function CountUpStat({ value, emberClass, label }: CountUpStatProps) {
       style={{ letterSpacing: '-0.03em' }}
       aria-label={`${value} ${label}`}
     >
-      {parsed ? `${display}${display >= parsed.target ? parsed.suffix : ''}` : value}
+      {parsed ? `${display.toLocaleString('en-US')}${display >= parsed.target ? parsed.suffix : ''}` : value}
     </p>
   );
 }

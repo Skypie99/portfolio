@@ -92,8 +92,8 @@ export default function AboutPage() {
             </p>
             <p className="font-sans font-light text-prose text-charcoal leading-[1.65] text-pretty">
               Right now: an accessibility map. A multi-agent system that ships real
-              commits. A community mesh built for privacy. A Pac-Man trainer.
-              All of them open source.
+              commits. A local-first prompt manager. A community mesh built for
+              privacy. A command-line trainer. All of them open source.
             </p>
             <p className="font-sans font-light text-prose text-charcoal leading-[1.65] text-pretty">
               
