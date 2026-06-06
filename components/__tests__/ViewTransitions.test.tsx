@@ -111,4 +111,43 @@ describe('ViewTransitions interceptor', () => {
     clickAnchor({ href: '/#work' });
     expect(pushMock).not.toHaveBeenCalled();
   });
+
+  it('attaches a rejection handler to every View Transition promise (no uncaught TimeoutError)', () => {
+    // Regression guard for the live `TimeoutError: Transition was aborted because
+    // of timeout in DOM update` console spew. jsdom has no startViewTransition;
+    // install one that drives the callback (so the nav still happens) and returns
+    // a transition whose `finished` REJECTS — exactly what the browser does when a
+    // transition is aborted/interrupted or times out. The component must attach a
+    // `.catch` to each promise so the rejection never surfaces as a console error.
+    const realRaf = window.requestAnimationFrame;
+    // Stub rAF so the callback's (ignored) resolve-promise never throws/resolves.
+    window.requestAnimationFrame = (() => 0) as typeof window.requestAnimationFrame;
+
+    const finished = Promise.reject(new Error('TimeoutError: Transition was aborted'));
+    const updateCallbackDone = Promise.resolve();
+    const ready = Promise.resolve();
+    const finishedCatch = vi.spyOn(finished, 'catch');
+    const updateCatch = vi.spyOn(updateCallbackDone, 'catch');
+    const readyCatch = vi.spyOn(ready, 'catch');
+
+    const svt = vi.fn((cb: () => unknown) => {
+      cb(); // runs router.push(dest) + returns the (ignored) 2-rAF promise
+      return { finished, updateCallbackDone, ready };
+    });
+    (document as unknown as { startViewTransition?: unknown }).startViewTransition = svt;
+
+    try {
+      clickAnchor({ href: '/work/access-map/' });
+
+      expect(svt).toHaveBeenCalledTimes(1);
+      expect(pushMock).toHaveBeenCalledWith('/work/access-map/');
+      // The fix: a rejection handler is attached to all three transition promises.
+      expect(finishedCatch).toHaveBeenCalledTimes(1);
+      expect(updateCatch).toHaveBeenCalledTimes(1);
+      expect(readyCatch).toHaveBeenCalledTimes(1);
+    } finally {
+      delete (document as unknown as { startViewTransition?: unknown }).startViewTransition;
+      window.requestAnimationFrame = realRaf;
+    }
+  });
 });

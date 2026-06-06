@@ -890,21 +890,41 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
 }
 html.dark {
   --day-night-rest: 1;                 /* RM / no-JS: dark rests at night */
-  --sky-day-1: 86 60 40;   --sky-day-2: 120 76 40;  --sky-day-3: 146 90 48;   --sky-day-4: 48 38 28;
-  --sky-dusk-1: 40 40 60;  --sky-dusk-2: 78 52 52;  --sky-dusk-3: 110 64 48;  --sky-dusk-4: 30 26 22;
-  --sky-night-1: 8 12 22;  --sky-night-2: 12 16 28; --sky-night-3: 20 24 36;  --sky-night-4: 7 10 14;
-  --sky-sun: 224 184 110;
-  /* dark panels over a dark world keep AA (light ink) at much lower alpha →
-     the deep-amber → night world reads clearly through the glass */
-  /* dark = the dramatic night half: ~50% world bleed (all text still AA — verified) */
+  /* DARK = the dramatic night half, now a CLEARLY FELT sunset→night descent:
+     a warm amber/terracotta golden-hour (day) → an indigo-above / ember-below
+     twilight (dusk) → a deep blue-black night. The warm→cool journey is widened
+     so the arc reads as you scroll, while the *day-4* base (which sits lowest,
+     behind the content columns) stays deep so behind-text luminance barely
+     moves and light ink keeps WCAG AA over every scroll state. */
+  --sky-day-1: 118 72 46;  --sky-day-2: 148 86 48;  --sky-day-3: 176 102 56;  --sky-day-4: 60 42 30;
+  --sky-dusk-1: 46 44 78;  --sky-dusk-2: 92 58 66;  --sky-dusk-3: 128 72 54;  --sky-dusk-4: 24 20 24;
+  --sky-night-1: 6 10 20;  --sky-night-2: 9 13 26;  --sky-night-3: 15 19 32;  --sky-night-4: 5 8 13;
+  --sky-sun: 232 178 106;
+  /* Translucent panels over the now-revealed world (see `html.dark body`
+     below). Kept near the original alphas — the reveal, not a lower alpha, is
+     what makes the arc read — so light ink stays WCAG AA even over the warmest
+     day band (worst-case meta ≈ 5.4:1, verified live). */
   --surface-alpha:       0.50;
-  --surface-alpha-alt:   0.53;
-  --surface-alpha-cool:  0.53;
-  --surface-alpha-coolpale: 0.60;
+  --surface-alpha-alt:   0.52;
+  --surface-alpha-cool:  0.50;
+  --surface-alpha-coolpale: 0.56;
 }
 
-/* The fixed stage — behind everything, never interactive. body's bg-canvas is
-   the ultimate backstop BEHIND this (never seen; the dusk base is opaque). */
+/* Let the continuous world actually SHOW in dark mode. The backdrop sits at
+   z-index:-1, but the body's opaque `bg-canvas` paints OVER negative-z children
+   (CSS paint order: stacking-context bg → negative z → in-flow block bgs), so
+   in dark the world was almost entirely occluded — the real reason the day→night
+   arc read flat. Dropping the dark body fill lets the world's own opaque dusk
+   base become the page backstop, so the amber→night descent reads through the
+   translucent panels. Light mode is untouched (its body keeps bg-canvas), and
+   the cinematic intro is full-bleed so it is unaffected. */
+html.dark body {
+  background-color: transparent;
+}
+
+/* The fixed stage — behind everything, never interactive. In dark the world's
+   opaque dusk base is the backstop (body fill is dropped above); in light the
+   body's bg-canvas sits behind. */
 .world-backdrop {
   position: fixed;
   inset: 0;
@@ -950,6 +970,18 @@ html.dark {
   will-change: transform, opacity;
   background: radial-gradient(circle at 50% 50%,
     rgb(var(--sky-sun) / 0.7) 0%, rgb(var(--sky-sun) / 0.34) 30%, rgb(var(--sky-sun) / 0) 62%);
+}
+/* In dark mode the sun is the clearest "sunset" cue — a larger, warm disc that
+   sits higher in the open sky and sinks further toward night. It lives in the
+   empty sky (no text beneath it), so it can carry the descent without touching
+   contrast. Stays a soft glow, never a hard bright disc. */
+html.dark .world-sun {
+  width: 64vmax;
+  height: 64vmax;
+  transform: translate(-50%, calc(var(--day-night, var(--day-night-rest)) * 86vh));
+  opacity: clamp(0, calc(1.22 - var(--day-night, var(--day-night-rest)) * 1.32), 0.95);
+  background: radial-gradient(circle at 50% 50%,
+    rgb(var(--sky-sun) / 0.5) 0%, rgb(var(--sky-sun) / 0.24) 32%, rgb(var(--sky-sun) / 0) 64%);
 }
 /* The horizon line — a warm hairline (echoes .pr-horizon), fading with the light. */
 .world-horizon {
@@ -1122,10 +1154,17 @@ html.dark .glass-card::before {
 html.dark .glass-card::after {
   background:
     radial-gradient(50% 60% at var(--mx, 28%) var(--my, 4%),
-      rgb(255 245 228 / 0.09), transparent 62%),
+      rgb(255 245 228 / 0.07), transparent 62%),
     radial-gradient(20% 26% at var(--mx, 28%) var(--my, 4%),
-      rgb(188 214 235 / 0.11), transparent 56%);
+      rgb(188 214 235 / 0.09), transparent 56%);
   mix-blend-mode: screen;
+}
+/* The dark cursor sheen uses a brightening `screen` blend; with the deepened
+   day→night world now visible behind the cards (see `html.dark body`), keep the
+   hover lift a touch quieter than light so the mouse light stays atmosphere you
+   feel more than see — never a feature. (Light is unchanged; its world is too.) */
+html.dark .glass-card:hover::after {
+  opacity: 0.34;
 }
 
 /* Cycle 16 + Cycle 26 + Cycle 29 — broken-image polish.
