@@ -56,7 +56,7 @@ describe('BlogIndexPage', () => {
   it('renders the page heading', () => {
     mockGetBlogPosts.mockReturnValue(TWO_POSTS);
     render(<BlogIndexPage />);
-    expect(screen.getByRole('heading', { level: 1, name: /writing/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1, name: /notes/i })).toBeInTheDocument();
   });
 
   it('renders all post titles as headings', () => {
@@ -93,7 +93,7 @@ describe('BlogIndexPage', () => {
   it('shows post count in the eyebrow label', () => {
     mockGetBlogPosts.mockReturnValue(TWO_POSTS);
     render(<BlogIndexPage />);
-    expect(screen.getByText(/2 posts/i)).toBeInTheDocument();
+    expect(screen.getByText(/2 entries/i)).toBeInTheDocument();
   });
 
   it('renders reading time for each post', () => {

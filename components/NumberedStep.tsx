@@ -30,7 +30,7 @@ export function NumberedStep({ number, title, body, highlight = false, className
       <span
         aria-hidden="true"
         className={cn(
-          'font-mono text-step-2 tracking-label uppercase',
+          'font-mono text-step-2 tracking-label uppercase tabular-nums',
           'text-accent-text',
           'shrink-0 w-14',
           'leading-none pt-0.5',
