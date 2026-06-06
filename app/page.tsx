@@ -40,7 +40,7 @@ export default function HomePage() {
   /** Showcase stat chips — hardcoded per spec */
   const showcaseChips = [
     {
-      stat: '789',
+      stat: '1,564',
       label: 'tests passing',
       project: 'AccessMap',
       tags: ['Mobile', 'WCAG AA', 'Open source'],
