@@ -95,9 +95,6 @@ export default function AboutPage() {
               commits. A local-first prompt manager. A community mesh built for
               privacy. A command-line trainer. All of them open source.
             </p>
-            <p className="font-sans font-light text-prose text-charcoal leading-[1.65] text-pretty">
-              
-            </p>
           </div>
         </div>
       </section>

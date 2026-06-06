@@ -115,6 +115,13 @@ function HeroScreenFill({ sig, title, eyebrow }: { sig: string; title: string; e
           </span>
         )}
         <span className="font-serif font-light text-step-3 text-umber leading-tight">{title}</span>
+        {/* Designed empty state (Show-the-work): the device frame holds the
+            product wordmark as an intentional cover until a real screenshot
+            drops into the same well — labelled so the cinematic reveal lands on
+            a deliberate preview, never a missing image. */}
+        <span className="mt-1 font-mono text-meta tracking-label uppercase text-umber/55">
+          Interface preview
+        </span>
       </div>
     </div>
   );
