@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { CaseStudyCard } from '@/components/CaseStudyCard';
-import { MagneticButton } from '@/components/MagneticButton';
+import { ContactEmail } from '@/components/ContactEmail';
 import { HeroImageSettle, HeroTitleSettle } from '@/components/HeroSettle';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { HeroProductReveal, ShotProductReveal } from '@/components/ProductReveal';
@@ -11,7 +11,7 @@ import { Reveal } from '@/components/Reveal';
 import { TactileMedia } from '@/components/TactileMedia';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
-import { getDeliverables, getProfile } from '@/lib/content';
+import { getDeliverables } from '@/lib/content';
 import { cardMedia, heroMedia } from '@/lib/media';
 import { INLINE_CODE_CLASS, smartPunctuation } from '@/lib/markdown';
 
@@ -151,7 +151,6 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
   if (!deliverable) {
     notFound();
   }
-  const profile = getProfile();
   const d = deliverable;
   // "Other work" — up to 2 sibling deliverables, prefer same-year + non-self.
   // Cheap quiet recommendation; no algorithm, just neighbours.
@@ -502,11 +501,9 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
             <br />
             Write to me.
           </h2>
-          <MagneticButton
-            href={`mailto:${profile.contactEmail}?subject=About ${encodeURIComponent(d.title)}`}
-          >
-            Write to me.
-          </MagneticButton>
+          {/* Bot-safe mailto (assembled at runtime) — carries a per-project
+              subject so replies stay threaded; matches /contact + home + about. */}
+          <ContactEmail subject={`About ${d.title}`} />
         </Reveal>
       </section>
     </>

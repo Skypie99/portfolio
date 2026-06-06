@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import { SettleHeading } from '@/components/HeroSettle';
 import { Icon } from '@/components/Icon';
-import { MagneticButton } from '@/components/MagneticButton';
+import { ContactEmail } from '@/components/ContactEmail';
 import { NumberedStep } from '@/components/NumberedStep';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { Reveal } from '@/components/Reveal';
@@ -308,9 +308,8 @@ export default function AboutPage() {
             <br />
             Let{'’'}s talk.
           </h2>
-          <MagneticButton href={`mailto:${profile.contactEmail}?subject=Hello from your portfolio`}>
-            Write to me.
-          </MagneticButton>
+          {/* Bot-safe mailto (assembled at runtime) — matches /contact + home. */}
+          <ContactEmail />
 
           <Link
             href="/"
