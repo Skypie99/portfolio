@@ -58,6 +58,12 @@ export default function HomePage() {
       tags: ['No backend', 'Browser-only'],
     },
     {
+      stat: '56',
+      label: 'command cards',
+      project: 'Ghost Code',
+      tags: ['Vanilla JS', 'Zero deps'],
+    },
+    {
       stat: 'E2E',
       label: 'encrypted',
       project: 'Mutual Mesh',
@@ -78,8 +84,8 @@ export default function HomePage() {
       <div id="hero">
         <Hero
           eyebrow="Portfolio — 2026"
-          heading="An accessibility map. A multi-agent system. A Pac-Man trainer."
-          subhead="Built in public. Documented from the first commit. Four products live. All open source."
+          heading="An accessibility map. A multi-agent system. A command-line trainer."
+          subhead="Built in public. Documented from the first commit. Five products live. All open source."
           ctaLabel="See the work."
           ctaHref="#work"
         />
@@ -109,12 +115,12 @@ export default function HomePage() {
               Built, shipped, and open. Everything here is live.
             </h2>
             <p className="font-sans font-light text-body text-charcoal mb-12 max-w-[540px] text-pretty">
-              Four products on the open internet. Each one accessible by design.
+              Five products on the open internet. Each one accessible by design.
             </p>
           </Reveal>
 
           {/* 4-col stat grid — vertical-rule layout for editorial weight */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-wa-teal-soft/30 border border-wa-teal-soft/50 rounded-lg overflow-hidden shadow-md">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px bg-wa-teal-soft/30 border border-wa-teal-soft/50 rounded-lg overflow-hidden shadow-md">
             {showcaseChips.map(({ stat, label, project, tags }, i) => (
               <Reveal
                 key={project}
