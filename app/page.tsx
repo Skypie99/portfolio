@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-import { Button } from '@/components/Button';
 import { CinematicDesert } from '@/components/cinematic/CinematicDesert';
+import { ContactEmail } from '@/components/ContactEmail';
 import { ContentReveal } from '@/components/ContentReveal';
 import { CountUpStat } from '@/components/CountUpStat';
 import { Hero } from '@/components/Hero';
@@ -424,16 +424,14 @@ export default function HomePage() {
             <br />
             Write to me.
           </h2>
-          <p className="font-sans font-light text-body-sm text-charcoal -mt-2">
-            Write to{' '}
-            <a
-              href={`mailto:${profile.contactEmail}`}
-              className="text-wa-teal-deep hover:text-near-black transition-colors duration-fast ease-out"
-            >
-              {profile.contactEmail}
-            </a>
+          <p className="font-sans font-light text-body-sm text-charcoal -mt-2 max-w-[44ch] text-pretty">
+            AI engineering, accessibility, and thoughtful product work. I reply
+            to most messages within a few days.
           </p>
-          <Button href={`mailto:${profile.contactEmail}`}>Write to me.</Button>
+          {/* Bot-safe mailto — the address is assembled at runtime (matches the
+              /contact page), so it never sits raw in the static HTML for scrapers.
+              Shows "Email {address}" to humans after hydration. */}
+          <ContactEmail />
         </Reveal>
       </section>
       </ContentReveal>
