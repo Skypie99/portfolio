@@ -3,6 +3,16 @@
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 
+/** Minimal shape of the object `document.startViewTransition()` returns. */
+type ViewTransitionLike = {
+  finished?: Promise<unknown>;
+  updateCallbackDone?: Promise<unknown>;
+  ready?: Promise<unknown>;
+};
+
+/** Intentionally ignore an expected (post-navigation) transition rejection. */
+const noop = (): void => {};
+
 /**
  * Filmic page transitions (view-transitions 2026-06-05) — Direction D.
  *
@@ -83,7 +93,7 @@ export function ViewTransitions() {
       // Feature-detect without leaning on lib.dom typings (cast via unknown, no `any`).
       const startViewTransition = (
         document as unknown as {
-          startViewTransition?: (cb: () => void | Promise<void>) => unknown;
+          startViewTransition?: (cb: () => void | Promise<void>) => ViewTransitionLike;
         }
       ).startViewTransition;
 
@@ -93,7 +103,7 @@ export function ViewTransitions() {
       }
 
       try {
-        startViewTransition.call(document, () => {
+        const transition = startViewTransition.call(document, () => {
           router.push(dest);
           // router.push is fire-and-forget; resolve on the SECOND paint so the
           // statically pre-rendered route has committed before the new snapshot
@@ -102,6 +112,16 @@ export function ViewTransitions() {
             requestAnimationFrame(() => requestAnimationFrame(() => resolve())),
           );
         });
+        // The transition's promises reject when it is aborted/interrupted (a rapid
+        // second navigation skips the first) or times out the DOM-update window
+        // (`TimeoutError: Transition was aborted because of timeout in DOM update`).
+        // The navigation has already happened via router.push, so those rejections
+        // are expected and harmless — swallow them so they never surface as
+        // uncaught console errors. (The sync `try/catch` only covers throws, not
+        // these async rejections.)
+        transition?.finished?.catch?.(noop);
+        transition?.updateCallbackDone?.catch?.(noop);
+        transition?.ready?.catch?.(noop);
       } catch {
         router.push(dest); // a VT error must never strand the navigation
       }
