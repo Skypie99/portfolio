@@ -36,5 +36,47 @@ Three fixes, in priority order, one commit each, all green checks (`lint` · `ty
 - **All:** `npm run lint && npm run typecheck && npm test && npm run build` green.
 
 ## DECISIONS / flags
-- No new dependencies introduced (will note here if that changes — it should not).
+- No new dependencies introduced (verified: `package.json` / lockfile unchanged).
 - Branch stays off `main`; Sky reviews and merges.
+
+---
+
+## OUTCOME (what shipped, 2026-06-05)
+
+Three commits on `fix/portfolio-trio-2026-06-05` (off `main` `fe22e32`), green checks
+(`lint` · `typecheck` · 179 tests · `build`) after each. Intro untouched — every CSS
+hunk is at globals.css ~890 / ~971 / ~1154, all far below the locked cinematic range
+(1345–2296); `--font-cormorant` / `--sidebar-w` unchanged.
+
+- **Fix 1 — `34d17fa`** (`components/ViewTransitions.tsx` + test). Swallow the
+  transition's `.finished`/`.updateCallbackDone`/`.ready` rejections. **Verified live:**
+  forcing `startViewTransition` to reject with the exact `TimeoutError` produced **zero**
+  unhandled rejections; navigation still completes; `toHome` instant-cut + all fallbacks
+  intact.
+
+- **Fix 2 — `cd57a3f`** (`app/globals.css`). **Key discovery:** the arc wasn't flat
+  because of timid tokens — the `z-index:-1` backdrop was **occluded** by the body's
+  opaque `bg-canvas` (CSS paint order: stacking-bg → negative-z → in-flow block bgs).
+  Fix = drop the dark body fill (`html.dark body { background-color: transparent }`) so
+  the world's opaque dusk base backstops; plus widened dark sky tokens (warm amber →
+  indigo/ember dusk → deep night) and a bigger/sinking dark sun. **Verified live:** day
+  reads clearly warm, night deep cool; light mode unchanged (`bodyBg` still cream);
+  worst-case dark meta over the warmest day band ≈ **5.4:1** (AA holds).
+  *Note for Sky:* light mode's world is still subtler (occluded) — only DARK was in
+  scope here. Revealing light's world would need its own AA pass (light tokens are
+  high-luminance) — flag if you want it.
+
+- **Fix 3 — `e8c52d3`** (`app/globals.css`). The "mouse light" = the per-card
+  `.glass-card::after` cursor sheen (dark uses a brightening `screen` blend). Since
+  Fix 2 put a bolder world behind the cards, brought the **dark** sheen down (gradients
+  0.09/0.11 → 0.07/0.09; hover 0.45 → 0.34) so it stays atmosphere-you-feel-more-than-see,
+  far below the rolled-back "too intense" pass. **Light untouched** (its world is
+  unchanged). **Verified live** on `/work/` (no GSAP intro): hover shows a gentle sheen
+  tracking the cursor (`--mx/--my` live, `::after` opacity 0.34), never a feature.
+
+**Env note (not a site bug):** the Next *dev* server intermittently logs
+`Cannot find module ./vendor-chunks/framer-motion.js` on the `/work/[slug]` route and
+needs a clean `.next` after a production `build`; the production `build` itself is clean
+and prerenders every route. The GSAP-pinned intro also can't be scrubbed via synthetic
+`scrollTo`, so dark-arc/card verification used forced `--day-night` / the intro-free
+`/work/` page.
