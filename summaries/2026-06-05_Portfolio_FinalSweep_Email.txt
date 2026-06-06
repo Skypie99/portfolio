@@ -1,0 +1,53 @@
+To: skylerhalisky@gmail.com
+Subject: Portfolio Final Sweep — light world revealed + whole-site polish (AA-safe, dark untouched)
+
+NOTE: Email delivery is disabled / the Gmail connector needs reconnecting with
+draft access, so this was NOT sent. It's saved here ready to send. (Full report:
+~/Portfolio/summaries/2026-06-05_Portfolio_FinalSweep_Report.md)
+
+---
+
+Hi Sky,
+
+The thorough final sweep on skypistudio.com is done, on branch polish/portfolio-final-sweep-2026-06-05 (off current main, so it includes last week's dark-arc + spotlight fixes). Not merged — main stays your gate.
+
+DECISIONS FOR YOU
+-----------------
+1) LIGHT REVEAL + MEASURED AA. I revealed the light world the gentlest way that clears AA with margin, and measured it live (not guessed). Light now reads as a soft warm daylight easing to a warm golden-evening (it used to latently fall toward a cool twilight blue — wrong direction, so I retuned it warm). Worst-case contrast over every scroll position and band:
+   - cream sections (hero/work/about/404): meta 4.69 / body 6.63 / ink 11.49
+   - footer/certs/process: meta 4.65 / body 6.56
+   - showcase: meta 4.67 / body 6.59
+   - contact panel: muted-only by design (5.61) — it carries no small meta text
+   All normal text clears 4.5:1 with margin. No text sits over the bare world.
+   DARK is byte-identical — I changed zero dark tokens; measured dark AA is unchanged.
+
+2) WRITING SECTION → "Notes" (your pick). Unified across nav, title, OG, eyebrow, H1, breadcrumb (+ test). It was three different names before (Blog/Writing/Dispatches).
+
+3) EMAIL → obfuscated (your pick), extended site-wide. The raw address was sitting in the static HTML on the homepage AND the about page AND all five case-study CTAs. I made all six bot-safe (the address assembles at runtime; humans still get a one-click mailto after load). Verified: zero raw addresses in any built HTML page. If you'd rather keep it visible-and-raw somewhere, say so and I'll revert that page.
+
+4) MISSING SCREENSHOTS — your call (I did NOT fabricate any). Claude Corp and Prompt Library have no real hero screenshot, so the cinematic reveal landed on an empty placeholder. I turned it into a designed empty state ("Interface preview" cover) so it reads as intentional. When you have real screenshots, drop them into content/deliverables.json (heroShot) and they replace the placeholder with no layout shift.
+
+5) PRE-EXISTING (not changed): the sub-pages' social/OG images are SVG, which Twitter/LinkedIn/Facebook won't render. Homepage already uses a proper PNG. Recommend a follow-up to render sub-page OG as PNG.
+
+WHAT ELSE GOT POLISHED
+----------------------
+- Ghost numerals on cards: were nearly invisible (15%, read like an accident) → a deliberate just-visible 30% editorial index (flips correctly in dark), now with aligned tabular numerals.
+- Hero: the empty right half is closed with a whisper-quiet vertical "spine" (hairlines + the brand terracotta dot) that anchors the negative space without competing with the world.
+- 404: it was the only section with no surface — with the light body now transparent its text would've sat on the bare world; gave it the AA-protected panel.
+- Tabular numerals on the Method steps + Notes index; FilterPill got a tactile press; removed a stray empty paragraph on About.
+
+CONFIRMATIONS
+-------------
+- Intro untouched (no cinematic/cdesert files in the diff; all CSS edits sit above the locked block; font/sidebar tokens unchanged).
+- Dark unchanged (byte-identical behavior, measured).
+- AA held in both modes, with margin.
+- Green: lint, typecheck, 179 tests, full build, and static-integrity all pass. No new dependencies.
+- The second fresh-eyes pass caught and I fixed inline: a Tailwind opacity bug that was making the ghost numeral render solid, a test collision, the email still leaking on about + case studies, and the bare 404.
+
+HOW TO REVIEW
+-------------
+  git diff main..polish/portfolio-final-sweep-2026-06-05
+  npm run dev
+Then: scroll light mode top->bottom (gentle warmth, text always crisp) · confirm dark is identical to before · both modes on mobile · keyboard + screen reader (focus ring, filter pills, case-study controls) · reduced-motion on (world holds static at golden) · and the section-by-section polish (ghost numerals, hero spine, "Notes" everywhere, the Interface-preview covers, the contact button shows the address but the page source doesn't).
+
+— Claude
