@@ -745,6 +745,53 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
 }
 
 /* ------------------------------------------------------------------
+   Settle-on-arrival (components/HeroSettle.tsx) — pure-CSS entrance,
+   same idiom as .hero-enter (fix(settle) 2026-06-10). The REST state is
+   the visible final state: the entrance exists only inside the
+   no-preference media query, so reduced-motion, no-JS, and
+   background-tab visitors always hold the readable end frame. (The
+   previous framer version SSR'd inline `opacity:0`, stranding RM and
+   no-JS visitors with invisible titles/heroes on hard loads.) Tokens
+   only; timings/easings match the framer tweens exactly:
+   560ms / --ease-entrance        (SettleHeading,  was [0.16,1,0.3,1])
+   --dur-slow + 150ms delay       (HeroTitleSettle, same curve)
+   --dur-reveal / --ease-out      (HeroImageSettle, was [0.22,1,0.36,1])
+   ------------------------------------------------------------------ */
+@keyframes settle-title {
+  from {
+    opacity: 0;
+    transform: translateY(var(--settle-y, 8px));
+    letter-spacing: var(--ls-from, 0.1em);
+  }
+}
+@keyframes settle-img {
+  from {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+}
+.settle-heading,
+.hero-settle-title {
+  letter-spacing: var(--ls-rest, -0.02em);
+}
+.hero-settle-title {
+  --settle-y: 12px;
+  --ls-from: 0.12em;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .settle-heading {
+    animation: settle-title 560ms var(--ease-entrance) both;
+  }
+  .hero-settle-title {
+    animation: settle-title var(--dur-slow) var(--ease-entrance) both;
+    animation-delay: 150ms;
+  }
+  .hero-settle-img {
+    animation: settle-img var(--dur-reveal) var(--ease-out) both;
+  }
+}
+
+/* ------------------------------------------------------------------
    ProductReveal — cinematic product media + golden-hour placeholder
    (Show-the-work 2026-06-04). Styling for components/ProductReveal.tsx +
    DeviceFrame.tsx. These rules live in the SITE-UI region — deliberately
