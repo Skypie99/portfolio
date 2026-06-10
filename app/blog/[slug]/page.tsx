@@ -20,8 +20,13 @@ export function generateStaticParams(): RouteParams[] {
   return getAllBlogPostSlugs().map((slug) => ({ slug }));
 }
 
-export function generateMetadata({ params }: { params: RouteParams }): Metadata {
-  const post = getBlogPosts().find((p) => p.id === params.slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<RouteParams>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getBlogPosts().find((p) => p.id === slug);
   if (!post) return { title: 'Post not found' };
   const profile = getProfile();
   return {
@@ -124,8 +129,13 @@ function parseInline(text: string): React.ReactNode[] {
  * Server Component. Static at build time via generateStaticParams.
  * Layout: post header (title, date, reading time, tags) → prose body → back link.
  */
-export default function BlogPostPage({ params }: { params: RouteParams }) {
-  const post = getBlogPosts().find((p) => p.id === params.slug);
+export default async function BlogPostPage({
+  params,
+}: {
+  params: Promise<RouteParams>;
+}) {
+  const { slug } = await params;
+  const post = getBlogPosts().find((p) => p.id === slug);
   if (!post) notFound();
 
   const renderedContent = renderMarkdown(post.content);
