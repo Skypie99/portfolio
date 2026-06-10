@@ -85,7 +85,7 @@ export default function HomePage() {
         <Hero
           eyebrow="Portfolio — 2026"
           heading="An accessibility map. A multi-agent system. A command-line trainer."
-          subhead="Built in public. Documented from the first commit. Five products live. All open source."
+          subhead="Built in public. Documented from the first commit. Every product live on the open internet."
           ctaLabel="See the work."
           ctaHref="#work"
         />
@@ -115,7 +115,7 @@ export default function HomePage() {
               Built, shipped, and open. Everything here is live.
             </h2>
             <p className="font-sans font-light text-body text-charcoal mb-12 max-w-[540px] text-pretty">
-              Five products on the open internet. Each one accessible by design.
+              Real products on the open internet. Each one accessible by design.
             </p>
           </Reveal>
 

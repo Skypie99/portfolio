@@ -10,7 +10,7 @@ import { getCertificates, getProfile } from '@/lib/content';
 export function generateMetadata(): Metadata {
   const profile = getProfile();
   return {
-    title: `Certificates — ${profile.name}`,
+    title: `Credentials — ${profile.name}`,
     description:
       'Credentials earned by Sky Halisky — Anthropic, Google, University of Michigan, DeepLearning.AI.',
   };
@@ -45,7 +45,7 @@ export default function CertificatesPage() {
           <SettleHeading
             className="font-serif font-light text-display ember leading-[1.05] max-w-3xl mb-8 text-balance"
           >
-            Certificates
+            Credentials
           </SettleHeading>
           <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-[640px] text-pretty">
             Selected credentials and certifications. A short paper trail of the
