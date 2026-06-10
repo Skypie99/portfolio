@@ -137,10 +137,20 @@ export function WorkFilterGrid({ deliverables }: WorkFilterGridProps) {
           animate={shouldReduceMotion ? undefined : (isInView ? 'visible' : 'hidden')}
         >
           <AnimatePresence mode="popLayout" initial={false}>
-            {filteredRest.map((d) => (
+            {filteredRest.map((d, i) => (
               <motion.li
                 key={d.id}
                 layout={!shouldReduceMotion}
+                // An odd trailing card spans both tracks but renders at one
+                // track's width, centered — pixel-identical to its siblings,
+                // no bare grid cell. Covers every odd filter count (5, 3, 1);
+                // JSX-computed because popLayout keeps exiting <li>s in the
+                // DOM mid-filter, which would corrupt a CSS :nth-child rule.
+                className={
+                  i === filteredRest.length - 1 && filteredRest.length % 2 === 1
+                    ? 'md:col-span-2 md:w-[calc(50%-1.5rem)] md:justify-self-center'
+                    : undefined
+                }
                 variants={shouldReduceMotion ? undefined : cardVariants}
                 exit={
                   shouldReduceMotion

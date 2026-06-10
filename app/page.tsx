@@ -128,6 +128,10 @@ export default function HomePage() {
                 variant="depth"
                 className={cn(
                   'group flex flex-col bg-surface-mid p-6 md:p-7',
+                  // An odd trailing chip spans its 2-col (mobile) / 3-col (md)
+                  // row so no bare grid cell shows through; lg's 5-up row is
+                  // already even. `odd:` self-disables if a 6th chip lands.
+                  'last:odd:col-span-2 lg:last:odd:col-span-1',
                   'transition-colors duration-base ease-out hover:bg-surface',
                 )}
               >
@@ -193,12 +197,22 @@ export default function HomePage() {
                 <ProjectCard deliverable={deliverables[0]} wide index={0} />
               </Reveal>
             )}
-            {/* Remaining 3 in 2-col grid */}
-            {deliverables.slice(1).map((d, i) => (
-              <Reveal key={d.id} index={i + 1}>
-                <ProjectCard deliverable={d} index={i + 1} />
-              </Reveal>
-            ))}
+            {/* Remaining cards in the 2-col grid. An odd trailing card spans
+                the full row in the featured horizontal layout (the variant
+                proven full-width two rows up) so it bookends the grid instead
+                of dangling beside an empty cell. Self-disables at even counts. */}
+            {deliverables.slice(1).map((d, i, rest) => {
+              const lone = i === rest.length - 1 && rest.length % 2 === 1;
+              return (
+                <Reveal
+                  key={d.id}
+                  index={i + 1}
+                  className={lone ? 'md:col-span-2' : undefined}
+                >
+                  <ProjectCard deliverable={d} index={i + 1} wide={lone} />
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
