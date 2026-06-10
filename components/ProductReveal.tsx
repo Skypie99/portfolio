@@ -68,7 +68,7 @@ export type ProductRevealProps = {
 };
 
 const ASPECT: Record<ProductRevealContext, string> = {
-  hero: '', // parent (HeroImageSettle) owns aspect-[4/5]
+  hero: '', // parent (HeroImageSettle) owns the aspect (4/5 portrait, 4/3 landscape real shots)
   card: 'aspect-[16/10]',
   shot: 'aspect-[16/10]',
 };
@@ -79,6 +79,17 @@ const FRAME_PLACEMENT: Record<Exclude<DeviceFrameKind, 'none'>, string> = {
   phone: 'absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2',
   window: 'absolute left-1/2 top-1/2 w-[86%] aspect-[16/11] -translate-x-1/2 -translate-y-1/2',
   plate: 'absolute left-1/2 top-1/2 w-[86%] aspect-[16/10] -translate-x-1/2 -translate-y-1/2',
+};
+
+/* Real-screenshot placement — the 86% width was tuned for the designed
+   empty state's "device resting in the world" composition; a REAL landscape
+   shot can carry more of the well, so window/plate widen to 94% (phone is
+   byte-identical). Selected only when media.src exists, so the two designed
+   empty states (claude-corp, prompt-library) never move. */
+const FRAME_PLACEMENT_REAL: Record<Exclude<DeviceFrameKind, 'none'>, string> = {
+  phone: FRAME_PLACEMENT.phone,
+  window: 'absolute left-1/2 top-1/2 w-[94%] aspect-[16/11] -translate-x-1/2 -translate-y-1/2',
+  plate: 'absolute left-1/2 top-1/2 w-[94%] aspect-[16/10] -translate-x-1/2 -translate-y-1/2',
 };
 
 /** Nominal <img> dimensions (CLS hint only; CSS drives the real size). */
@@ -257,7 +268,7 @@ export function ProductReveal({
       {kind === 'none' ? (
         <div className="absolute inset-0 overflow-hidden">{screen}</div>
       ) : (
-        <DeviceFrame kind={kind} className={FRAME_PLACEMENT[kind]}>
+        <DeviceFrame kind={kind} className={(hasReal ? FRAME_PLACEMENT_REAL : FRAME_PLACEMENT)[kind]}>
           {screen}
         </DeviceFrame>
       )}

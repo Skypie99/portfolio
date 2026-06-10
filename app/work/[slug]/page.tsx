@@ -13,6 +13,7 @@ import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getDeliverables } from '@/lib/content';
 import { cardMedia, heroMedia } from '@/lib/media';
+import { frameForSlug } from '@/lib/signature';
 import { INLINE_CODE_CLASS, smartPunctuation } from '@/lib/markdown';
 
 function parseInline(text: string): React.ReactNode[] {
@@ -155,6 +156,12 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
   // "Other work" — up to 2 sibling deliverables, prefer same-year + non-self.
   // Cheap quiet recommendation; no algorithm, just neighbours.
   const others = allDeliverables.filter((x) => x.id !== d.id).slice(0, 2);
+  // Hero well aspect is data-known at build: portrait 4/5 suits phone media
+  // and the designed empty states; landscape REAL shots (window/plate frames)
+  // were letterboxing in it — they get a 4/3 well so the screenshot presents
+  // at its proper scale. Static class either way → zero CLS.
+  const media = heroMedia(d);
+  const wideHero = Boolean(media.src) && frameForSlug(d.id) !== 'phone';
 
   return (
     <>
@@ -209,17 +216,23 @@ export default function WorkDetailPage({ params }: { params: RouteParams }) {
             {/* Hero image / fallback block — HeroImageSettle wraps the whole
                 well so the settle animation is the grid child itself. All
                 existing classes preserved on the wrapper. */}
-            <HeroImageSettle className="group relative w-full aspect-[4/5] bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-1 md:order-1 shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]">
+            <HeroImageSettle
+              className={cn(
+                'group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-1 md:order-1 shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]',
+                wideHero ? 'aspect-[4/3]' : 'aspect-[4/5]',
+              )}
+            >
               {/* Show-the-work 2026-06-04: the device-in-landscape reveal.
                   Placeholder now (golden-hour world + the product's per-medium
                   device frame); a real screenshot drops into the SAME frame via
                   d.heroShot with zero layout shift — see SHOW_WORK_PLAN.md. The
-                  4:5 well + the mount settle stay owned by HeroImageSettle. */}
+                  aspect well (4:5 portrait; 4:3 for window/plate real shots) +
+                  the mount settle stay owned by HeroImageSettle. */}
               <HeroProductReveal
                 slug={d.id}
                 title={d.title}
                 eyebrow={d.role}
-                media={heroMedia(d)}
+                media={media}
               />
             </HeroImageSettle>
 

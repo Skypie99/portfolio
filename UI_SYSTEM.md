@@ -89,9 +89,10 @@ screenshot is a **one-line swap** with **zero CLS** (see `SHOW_WORK_PLAN.md`):
   product wordmark (hero) or UI hint (card/shot). Emits **no `<img>`**.
 - **Real image** — the screenshot drops into the SAME frame via `<picture>` (AVIF→WebP→`<img>`, reusing
   `TactileMedia`'s parallax layer).
-**Contexts + aspect (reserved → no CLS):** hero `aspect-[4/5]` (device-in-landscape, owned by
-`HeroImageSettle`); work-card band `16/10` atop the glass inscription (Sky's call — all text stays on
-glass, AA preserved; card grows with a `min-h` floor); in-body shot `16/10`.
+**Contexts + aspect (reserved → no CLS):** hero `aspect-[4/5]` (phone heroes + designed empty states)
+or `aspect-[4/3]` (window/plate REAL-shot heroes; data-known at build, real shots widen the frame to
+`w-[94%]`), owned by `HeroImageSettle`; work-card band `16/10` atop the glass inscription (Sky's call —
+all text stays on glass, AA preserved; card grows with a `min-h` floor); in-body shot `16/10`.
 **Device frames** (`lib/signature.ts → frameForSlug`, hero only): `phone` (AccessMap, Mutual Mesh),
 `window`/terminal (Prompt Library, Claude Corp), `plate` (Ghost Code). Pure CSS, `.panel-lit`,
 `--shadow-lg`, both themes via `--rgb-*`.
