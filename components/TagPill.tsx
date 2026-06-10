@@ -23,7 +23,7 @@ const TAG_VARIANTS = [
   'bg-cool-soft/45 text-cool-deep',   // seafoam → deep pine
   'bg-gold-glow/40 text-ink',         // gold → ink (a11y: accent-ink missed 4.5:1 on gold in both modes)
   'bg-cool-mid/35 text-cool-deep',    // lagoon → deep pine
-  'bg-accent/22 text-ink',            // terracotta wash → ink (a11y: accent-ink missed 4.5:1 on terracotta light)
+  'bg-accent/30 text-ink',            // terracotta wash → ink (a11y: accent-ink missed 4.5:1 on terracotta light; /30 matches rose/30's measured pill-vs-card weight — /22 read as bare text in both themes)
   'bg-rose/30 text-ink',              // muted clay → ink (a11y: accent-ink missed 4.5:1 on rose light + dark)
   'bg-emerald/25 text-cool-deep',     // emerald → deep pine
 ] as const;

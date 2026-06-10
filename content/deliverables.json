@@ -112,7 +112,7 @@
     "tags": [
       "dashboard",
       "agents",
-      "tooling"
+      "tools"
     ],
     "featured": false,
     "body": "## The problem\n\nI'd been coordinating a small team of AI agents — a project manager, engineers, a designer, a security reviewer — across several projects at once. The work was getting done, but I had nowhere to actually *see* it. Who's active right now? What decisions are waiting on me? Which blocker is about to slip? It all lived in scattered reports and commit logs. I wanted a cockpit.\n\n## The approach\n\nI built it in Next.js as a server-rendered dashboard that turns the team's real activity — reports, decisions, blockers — into an agent feed, a decision queue, a blocker board, per-project health grades, and velocity charts.\n\nThe interesting problem was privacy. The real data is sensitive: security findings, private notes, internal decisions. It can never be published. So the public demo runs in a hard-locked demo mode — every data reader short-circuits to a synthetic snapshot before it can touch a real file, the write path is severed so nothing persists, and a build guard refuses to ship the public build unless demo mode is on. The real, full-data version stays local-only.\n\n## What shipped\n\nA genuinely drivable demo. Sign in as a guest, approve a decision, triage a blocker, watch the agent feed update — all on synthetic data that resets each session. Fifteen roles, live status, seven-day insights, and per-project health scores, in light or dark.\n\n## Reflection\n\nThe build taught me that *make it public* and *keep it private* aren't opposites. With the right seam, you can ship a faithful, interactive demo while the sensitive version never leaves your machine. That separation turned out to be the whole design."
@@ -164,7 +164,7 @@
     ],
     "tags": [
       "agents",
-      "tooling",
+      "tools",
       "process"
     ],
     "featured": false,
