@@ -106,12 +106,13 @@ export function generateStaticParams(): RouteParams[] {
   return getDeliverables().map((d) => ({ slug: d.id }));
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: RouteParams;
-}): Metadata {
-  const d = getDeliverables().find((x) => x.id === params.slug);
+  params: Promise<RouteParams>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const d = getDeliverables().find((x) => x.id === slug);
   if (!d) {
     return { title: 'Work — not found' };
   }
@@ -146,9 +147,14 @@ export function generateMetadata({
  * Per Alex §4.5, external links open in new tab with rel="noopener noreferrer"
  * AND an sr-only "(opens in new tab)" cue.
  */
-export default function WorkDetailPage({ params }: { params: RouteParams }) {
+export default async function WorkDetailPage({
+  params,
+}: {
+  params: Promise<RouteParams>;
+}) {
+  const { slug } = await params;
   const allDeliverables = getDeliverables();
-  const deliverable = allDeliverables.find((d) => d.id === params.slug);
+  const deliverable = allDeliverables.find((d) => d.id === slug);
   if (!deliverable) {
     notFound();
   }
