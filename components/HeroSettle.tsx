@@ -1,11 +1,8 @@
-'use client';
-
 /**
- * HeroSettle — signature moment #3 (Phase 4).
+ * HeroSettle — signature moment #3 (Phase 4; CSS conversion fix(settle) 2026-06-10).
  *
- * Two thin wrappers for the case-study hero block. Both animate on MOUNT
- * (not scroll — they're above the fold on the detail page), mirroring the
- * cinematic landing's signature gesture:
+ * Three thin wrappers that settle a page's flagship elements on arrival,
+ * mirroring the cinematic landing's signature gesture:
  *
  *   1. HeroImageSettle: image well settles — opacity 0→1, scale 1.02→1,
  *      ~900ms, ease [0.22,1,0.36,1] (snappy easeOut).
@@ -13,21 +10,27 @@
  *      y 12→0, letter-spacing 0.12em→-0.02em, delay ~150ms, ~520ms,
  *      ease [0.16,1,0.3,1] (power2.out). The tightening LS mirrors the
  *      cinematic wordmark gesture — loose → crystallised.
+ *   3. SettleHeading: the same gesture generalized for every route page's
+ *      <h1> — opacity 0→1, y 8→0, letter-spacing 0.10em→-0.02em, ~560ms.
  *
- * Reduced motion: useReducedMotion() immediately renders the final/visible
- * state — no perturb on mount. SSR-safe: framer-motion only fires
- * `animate` after hydration, so the server renders both slots at their
- * final state (opacity:1, no transforms, LS at -0.02em). Initial state
- * is applied client-side after hydration — the brief flash is imperceptible
- * because the mount animation fires in the same frame.
+ * These are SERVER components: the markup carries the visible FINAL state
+ * and the entrance lives entirely in CSS (`.settle-heading`,
+ * `.hero-settle-title`, `.hero-settle-img` — globals.css, same idiom as
+ * .hero-enter). The previous framer-motion version SSR'd its `initial`
+ * state as inline `opacity:0`, which permanently stranded reduced-motion
+ * visitors (hydration branch mismatch leaves the baked style unpatched)
+ * and no-JS visitors (the scripting:none block doesn't reach inline
+ * styles) with invisible titles and heroes on hard loads. CSS keyframes
+ * gated behind `prefers-reduced-motion: no-preference` give the identical
+ * motion with a readable end frame for everyone else — no JS, no rAF.
  *
- * Existing markup is preserved: each wrapper accepts `children` + an
- * optional `className` forwarded to the motion element. All existing
- * classes/content on the image well and h1 live in page.tsx as before.
+ * `restLetterSpacing` pins a different resting letter-spacing than the
+ * default -0.02em via the `--ls-rest` custom property.
  */
 
-import { type ReactNode } from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { type CSSProperties, type ReactNode } from 'react';
+
+import { cn } from '@/lib/cn';
 
 type SlotProps = {
   children: ReactNode;
@@ -35,106 +38,43 @@ type SlotProps = {
 };
 
 /**
- * HeroImageSettle — wraps the 4:5 hero image well.
- * Settles on mount: opacity 0→1, scale 1.02→1, ~900ms.
+ * HeroImageSettle — wraps the case-study hero image well.
+ * Settles on arrival: opacity 0→1, scale 1.02→1, ~900ms (CSS).
  */
 export function HeroImageSettle({ children, className }: SlotProps) {
-  const shouldReduceMotion = useReducedMotion();
-
-  if (shouldReduceMotion) {
-    // Final state immediately — no scale, no opacity perturb.
-    return <div className={className}>{children}</div>;
-  }
-
-  return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, scale: 1.02 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{
-        duration: 0.9,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-    >
-      {children}
-    </motion.div>
-  );
+  return <div className={cn('hero-settle-img', className)}>{children}</div>;
 }
 
 /**
  * HeroTitleSettle — wraps the case-study <h1>.
  * Carves in after the image: opacity 0→1, y 12→0,
- * letter-spacing 0.12em→-0.02em, delay 150ms, ~520ms.
+ * letter-spacing 0.12em→-0.02em, delay 150ms, ~520ms (CSS).
  */
 export function HeroTitleSettle({ children, className }: SlotProps) {
-  const shouldReduceMotion = useReducedMotion();
-
-  if (shouldReduceMotion) {
-    // Final state: resting letter-spacing, fully visible.
-    return (
-      <h1
-        className={className}
-        style={{ letterSpacing: '-0.02em' }}
-      >
-        {children}
-      </h1>
-    );
-  }
-
-  return (
-    <motion.h1
-      className={className}
-      initial={{ opacity: 0, y: 12, letterSpacing: '0.12em' }}
-      animate={{ opacity: 1, y: 0, letterSpacing: '-0.02em' }}
-      transition={{
-        duration: 0.52,
-        ease: [0.16, 1, 0.3, 1],
-        delay: 0.15,
-      }}
-    >
-      {children}
-    </motion.h1>
-  );
+  return <h1 className={cn('hero-settle-title', className)}>{children}</h1>;
 }
 
 /**
- * SettleHeading — the case-study title gesture (HeroTitleSettle), generalized
- * for every route page's <h1> (organic-pass 2026-06-03, signature move #3).
- *
- * Carves in on MOUNT — opacity 0→1, y 8→0, letter-spacing 0.10em→-0.02em,
- * ~560ms, ease [0.16,1,0.3,1] — so every page header crystallises on arrival
- * the way the detail-page title and the cinematic wordmark do, instead of
- * popping in flat. Slightly gentler travel than HeroTitleSettle (these h1s
- * sit a little lower on the page and share the route-change crossfade).
- *
- * `--ls-rest` lets a caller pin a different resting letter-spacing than the
- * default -0.02em (e.g. display heads that rest tighter). Reduced motion →
- * final/visible state immediately. SSR-safe (server renders final state;
- * the mount animation fires in the same frame after hydration).
+ * SettleHeading — the title gesture generalized for every route page's
+ * <h1> (organic-pass 2026-06-03, signature move #3). Carves in on arrival
+ * so every page header crystallises the way the detail-page title and the
+ * cinematic wordmark do, instead of popping in flat.
  */
 export function SettleHeading({
   children,
   className,
-  restLetterSpacing = '-0.02em',
+  restLetterSpacing,
 }: SlotProps & { restLetterSpacing?: string }) {
-  const shouldReduceMotion = useReducedMotion();
-
-  if (shouldReduceMotion) {
-    return (
-      <h1 className={className} style={{ letterSpacing: restLetterSpacing }}>
-        {children}
-      </h1>
-    );
-  }
-
   return (
-    <motion.h1
-      className={className}
-      initial={{ opacity: 0, y: 8, letterSpacing: '0.1em' }}
-      animate={{ opacity: 1, y: 0, letterSpacing: restLetterSpacing }}
-      transition={{ duration: 0.56, ease: [0.16, 1, 0.3, 1] }}
+    <h1
+      className={cn('settle-heading', className)}
+      style={
+        restLetterSpacing
+          ? ({ '--ls-rest': restLetterSpacing } as CSSProperties)
+          : undefined
+      }
     >
       {children}
-    </motion.h1>
+    </h1>
   );
 }
