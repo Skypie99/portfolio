@@ -150,10 +150,12 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
                       href={demoLink.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`Open live demo for ${d.title} (opens in new tab)`}
+                      aria-label={`Open ${demoLink.label.toLowerCase()} for ${d.title} (opens in new tab)`}
                       className="inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
                     >
-                      Live <span aria-hidden="true">↗</span>
+                      {/* label-derived: "Live" for live products, "Demo" for
+                          not-yet-live ones (e.g. Mutual Mesh) */}
+                      {demoLink.label.split(' ')[0]} <span aria-hidden="true">↗</span>
                     </a>
                   )}
                   {githubLink && (
