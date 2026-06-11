@@ -183,8 +183,8 @@ export default function AboutPage() {
             </p>
             <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
               The user&apos;s data is theirs. Prompt Library stores everything
-              locally — no backend, no account, no server. Mutual Mesh is built
-              the same way. If the data is not necessary, do not collect it.
+              locally — no backend, no account, no server. If the data is not
+              necessary, do not collect it.
             </p>
             <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
               I would rather take longer and do it correctly than ship fast and
