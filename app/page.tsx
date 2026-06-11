@@ -440,7 +440,7 @@ export default function HomePage() {
             Correspond
           </p>
           <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
-            Passionate about building something special?
+            Have something worth building?
             <br />
             Let&apos;s talk about it.
           </h2>
