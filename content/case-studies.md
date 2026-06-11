@@ -87,7 +87,7 @@ Solved my own workflow problem, then open-sourced it. Other AI practitioners ado
 Mutual aid networks exist in communities, but centralized platforms are surveillance risks. When an app stores "what people need," it becomes a database of vulnerability—a target for data breaches, corporate profit, or government oversight. I wanted neighbors to help each other without platforms profiting or snooping. The challenge: how do you enable matching without storing the data?
 
 **Process**
-End-to-end encrypted Expo app. Neighbors post what they can share and what they need; the platform matches them privately without keeping a central record of vulnerability. The platform uses Supabase for auth and real-time matching, but encryption + RLS mean the platform itself is blind to the content. Even I can't see the requests.
+Privacy-first Expo app. Neighbors post what they can share and what they need; the platform matches them privately without keeping a central record of vulnerability. The platform uses Supabase for auth and real-time matching, but encryption + RLS mean the platform itself is blind to the content. Even I can't see the requests.
 
 That constraint—not knowing what people need—felt backward at first. But it's the entire point. Trust comes from limits, not promises.
 
@@ -98,6 +98,6 @@ Proof of concept with 2 pilot neighborhoods. People shared vulnerable asks (chil
 - Privacy is radical for vulnerable communities
 - Trust is earned through constraints, not promises
 - Technology should serve communities, not extract from them
-- E2E encryption enables the requests that platforms would suppress
+- Privacy-first design enables the requests that platforms would suppress
 
 ---
