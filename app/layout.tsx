@@ -143,7 +143,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 'AI developer and builder based in the Okanagan Valley, British Columbia. Creator of AccessMap, Claude Corp, the Prompt Library, and more.',
               sameAs: [
                 'https://github.com/skypie99',
-                'https://www.linkedin.com/in/sky-halisky/',
+                'https://www.linkedin.com/in/skyler-halisky',
               ],
             }),
           }}
