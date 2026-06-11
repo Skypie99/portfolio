@@ -133,8 +133,8 @@ export function Footer() {
             </h3>
             <p className="font-sans text-body-sm text-charcoal leading-[1.65] text-pretty">
               {profile.name} builds AI tools. Small surfaces, real users,
-              documented from the first commit. Built in public, live on the
-              open internet.
+              documented from the first commit. Built in public, five of six
+              live on the open internet.
             </p>
           </div>
 

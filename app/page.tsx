@@ -85,7 +85,7 @@ export default function HomePage() {
         <Hero
           eyebrow="Portfolio — 2026"
           heading="An accessibility map. A multi-agent system. A command-line trainer."
-          subhead="Built in public. Documented from the first commit. Every product live on the open internet."
+          subhead="Built in public. Documented from the first commit. Six projects built, five live on the open internet."
           ctaLabel="See the work."
           ctaHref="#work"
         />
@@ -108,11 +108,11 @@ export default function HomePage() {
             {/* Section label */}
             <p className="font-mono text-label text-sage-text uppercase tracking-label mb-3 flex items-center gap-2">
               <Icon name="live" className="w-3.5 h-3.5 text-terracotta" />
-              Live
+              Shipped
             </p>
             {/* Heading */}
             <h2 className="font-serif font-light text-step-4 ember mb-3 max-w-2xl leading-[1.1] text-balance">
-              Built, shipped, and open. Everything here is live.
+              Built, shipped, and open.
             </h2>
             <p className="font-sans font-light text-body text-charcoal mb-12 max-w-[540px] text-pretty">
               Real products on the open internet. Each one accessible by design.

@@ -322,7 +322,7 @@
         "type": "github"
       },
       {
-        "label": "Live demo",
+        "label": "Demo",
         "href": "https://mutual-mesh.vercel.app/?demo=1",
         "type": "demo"
       }
