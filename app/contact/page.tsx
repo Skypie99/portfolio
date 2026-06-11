@@ -43,8 +43,9 @@ export default function ContactPage() {
             Write to me.
           </SettleHeading>
           <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-[640px] mb-4 text-pretty">
-            AI engineering. Accessibility. Thoughtful product collaborations.
-            I reply to most messages within a few days.
+            Accessible technology, built with care. Thoughtful product
+            collaborations. Learning out loud, one project at a time. I read
+            every message that comes through.
           </p>
           <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-[640px] mb-10 text-pretty">
             The socials below also work, for everything else.

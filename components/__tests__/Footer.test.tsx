@@ -27,23 +27,24 @@ describe('Footer', () => {
     expect(screen.getByRole('heading', { level: 3, name: 'Elsewhere' })).toBeInTheDocument();
   });
 
-  it('auto-updates the copyright year to current year', () => {
+  it('renders the studio mark without a © notice (2026-06-10 voice pass)', () => {
     render(<Footer />);
-    const currentYear = new Date().getFullYear().toString();
-    // Year sits in the © line — match flexibly so the symbol can change.
-    const copyright = screen.getByText((content) =>
-      content.includes('©') && content.includes(currentYear),
-    );
-    expect(copyright).toBeInTheDocument();
+    expect(screen.getByText(/SkyPi Studio — Est\. 2026/)).toBeInTheDocument();
+    // The © line was retired with the voice pass — quiet luxury, less is more.
+    expect(screen.queryByText(/©/)).not.toBeInTheDocument();
   });
 
-  it('renders the "Made with care" line with the WA teal status dot (Phase 5)', () => {
-    const { container } = render(<Footer />);
-    const madeWithCare = screen.getByText(/made with care/i);
-    expect(madeWithCare).toBeInTheDocument();
-    // Phase 5 WA palette: status dots changed from terracotta to teal.
-    const dot = container.querySelector('span.bg-wa-teal');
-    expect(dot).not.toBeNull();
+  it('renders the tagline under the name and the Okanagan line, sans status clutter', () => {
+    render(<Footer />);
+    expect(
+      screen.getByText('AI tools built with intention.'),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Built in the Okanagan Valley, British Columbia\./),
+    ).toBeInTheDocument();
+    // "Made with care" + "Open to work" status lines were retired.
+    expect(screen.queryByText(/made with care/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/open to work/i)).not.toBeInTheDocument();
   });
 
   it('applies link-draw to the email mailto (Cycle 1 editorial link pattern)', () => {
