@@ -1037,16 +1037,18 @@ html.dark .world-sun {
   background: radial-gradient(circle at 50% 50%,
     rgb(var(--sky-sun) / 0.5) 0%, rgb(var(--sky-sun) / 0.24) 32%, rgb(var(--sky-sun) / 0) 64%);
 }
-/* The horizon line — a warm hairline (echoes .pr-horizon), fading with the light. */
+/* The horizon line — a warm hairline (echoes .pr-horizon), fading with the light.
+   Softened (2026-06-10): opacity ceiling 1 -> 0.35 and gradient alpha 0.4 -> 0.22
+   so the viewport-fixed line reads as designed glow, not a stray artifact. */
 .world-horizon {
   position: absolute;
   left: 0;
   right: 0;
   top: 60%;
   height: 1px;
-  opacity: clamp(0.12, calc(1 - var(--day-night, var(--day-night-rest))), 1);
+  opacity: clamp(0.12, calc(1 - var(--day-night, var(--day-night-rest))), 0.35);
   background: linear-gradient(90deg,
-    transparent, rgb(var(--sky-sun) / 0.4) 24%, rgb(var(--sky-sun) / 0.4) 76%, transparent);
+    transparent, rgb(var(--sky-sun) / 0.22) 24%, rgb(var(--sky-sun) / 0.22) 76%, transparent);
 }
 
 /* Translucent content surfaces — replace the opaque section bg-* so the fixed
