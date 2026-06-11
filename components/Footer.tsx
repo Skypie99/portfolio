@@ -5,6 +5,17 @@ import { Reveal } from '@/components/Reveal';
 import { cn } from '@/lib/cn';
 import { getProfile } from '@/lib/content';
 
+/** Proper brand casing for social platforms — profile.json's `platform` is
+ *  a schema-locked lowercase enum, so the display label is mapped at render
+ *  ("Github"/"Linkedin" via CSS `capitalize` read as typos to a careful eye). */
+const PLATFORM_LABELS: Record<string, string> = {
+  github: 'GitHub',
+  linkedin: 'LinkedIn',
+  twitter: 'Twitter',
+  mastodon: 'Mastodon',
+  bluesky: 'Bluesky',
+};
+
 /**
  * Footer — F-10. Editorial brand block + three columns.
  *
@@ -98,6 +109,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/blog/"
+                  className="link-draw font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+                >
+                  Notes
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/contact/"
                   className="link-draw font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
                 >
@@ -114,8 +133,8 @@ export function Footer() {
             </h3>
             <p className="font-sans text-body-sm text-charcoal leading-[1.65] text-pretty">
               {profile.name} builds AI tools. Small surfaces, real users,
-              documented from the first commit. Five products live. All open
-              source.
+              documented from the first commit. Built in public, five of six
+              live on the open internet.
             </p>
           </div>
 
@@ -144,7 +163,7 @@ export function Footer() {
                         : 'text-near-black hover:text-accent-text',
                     )}
                   >
-                    <span className="capitalize">{s.platform}</span>
+                    <span>{PLATFORM_LABELS[s.platform] ?? s.platform}</span>
                     <span aria-hidden="true" className="text-text-meta">
                       {'↗'}
                     </span>

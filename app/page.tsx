@@ -85,7 +85,7 @@ export default function HomePage() {
         <Hero
           eyebrow="Portfolio — 2026"
           heading="An accessibility map. A multi-agent system. A command-line trainer."
-          subhead="Built in public. Documented from the first commit. Five products live. All open source."
+          subhead="Built in public. Documented from the first commit. Six projects built, five live on the open internet."
           ctaLabel="See the work."
           ctaHref="#work"
         />
@@ -108,14 +108,14 @@ export default function HomePage() {
             {/* Section label */}
             <p className="font-mono text-label text-sage-text uppercase tracking-label mb-3 flex items-center gap-2">
               <Icon name="live" className="w-3.5 h-3.5 text-terracotta" />
-              Live
+              Shipped
             </p>
             {/* Heading */}
             <h2 className="font-serif font-light text-step-4 ember mb-3 max-w-2xl leading-[1.1] text-balance">
-              Built, shipped, and open. Everything here is live.
+              Built, shipped, and open.
             </h2>
             <p className="font-sans font-light text-body text-charcoal mb-12 max-w-[540px] text-pretty">
-              Five products on the open internet. Each one accessible by design.
+              Real products on the open internet. Each one accessible by design.
             </p>
           </Reveal>
 
@@ -128,6 +128,10 @@ export default function HomePage() {
                 variant="depth"
                 className={cn(
                   'group flex flex-col bg-surface-mid p-6 md:p-7',
+                  // An odd trailing chip spans its 2-col (mobile) / 3-col (md)
+                  // row so no bare grid cell shows through; lg's 5-up row is
+                  // already even. `odd:` self-disables if a 6th chip lands.
+                  'last:odd:col-span-2 lg:last:odd:col-span-1',
                   'transition-colors duration-base ease-out hover:bg-surface',
                 )}
               >
@@ -193,12 +197,22 @@ export default function HomePage() {
                 <ProjectCard deliverable={deliverables[0]} wide index={0} />
               </Reveal>
             )}
-            {/* Remaining 3 in 2-col grid */}
-            {deliverables.slice(1).map((d, i) => (
-              <Reveal key={d.id} index={i + 1}>
-                <ProjectCard deliverable={d} index={i + 1} />
-              </Reveal>
-            ))}
+            {/* Remaining cards in the 2-col grid. An odd trailing card spans
+                the full row in the featured horizontal layout (the variant
+                proven full-width two rows up) so it bookends the grid instead
+                of dangling beside an empty cell. Self-disables at even counts. */}
+            {deliverables.slice(1).map((d, i, rest) => {
+              const lone = i === rest.length - 1 && rest.length % 2 === 1;
+              return (
+                <Reveal
+                  key={d.id}
+                  index={i + 1}
+                  className={lone ? 'md:col-span-2' : undefined}
+                >
+                  <ProjectCard deliverable={d} index={i + 1} wide={lone} />
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>

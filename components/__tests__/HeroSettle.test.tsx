@@ -1,69 +1,31 @@
 /**
- * HeroSettle smoke tests — Phase 4 (Shamus).
+ * HeroSettle smoke tests — rewritten for the CSS conversion (fix(settle)
+ * 2026-06-10). HeroSettle is a server component now: plain elements with
+ * entrance classes; globals.css owns the motion.
  *
- * Verifies:
- *   - HeroImageSettle renders children.
- *   - HeroTitleSettle renders children.
- *   - Under reduced motion, both render at their final/visible state with no
- *     animation perturbation (HeroTitleSettle renders as an <h1> with -0.02em
- *     letter-spacing; HeroImageSettle renders as a plain <div>).
- *
- * framer-motion is mocked (same approach as Reveal.test.tsx) so jsdom does
- * not choke on animation timing or IntersectionObserver.
+ * The load-bearing assertion is the SSR-markup regression guard: no inline
+ * `opacity` may ever reach the rendered markup again. The previous framer
+ * version baked `opacity:0` into the static HTML, which left reduced-motion
+ * and no-JS visitors with permanently invisible titles and heroes.
  */
-import { afterEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, describe, expect, it } from 'vitest';
 import { cleanup, render, screen } from '@testing-library/react';
-import { createElement, forwardRef, type ReactNode } from 'react';
 
-const FRAMER_PROPS = new Set([
-  'initial',
-  'animate',
-  'exit',
-  'transition',
-  'variants',
-  'whileHover',
-  'whileTap',
-  'whileFocus',
-  'whileInView',
-  'layout',
-  'layoutId',
-]);
-
-// Default mock: no reduced motion, not in view.
-vi.mock('framer-motion', async () => {
-  const actual = await vi.importActual<typeof import('framer-motion')>('framer-motion');
-  return {
-    ...actual,
-    motion: new Proxy(
-      {},
-      {
-        get: (_target, tag: string) => {
-          const Component = forwardRef<
-            HTMLElement,
-            { children?: ReactNode } & Record<string, unknown>
-          >((props, ref) => {
-            const { children, ...rest } = props;
-            const cleaned: Record<string, unknown> = { ref };
-            for (const [k, v] of Object.entries(rest)) {
-              if (FRAMER_PROPS.has(k)) continue;
-              cleaned[k] = v;
-            }
-            return createElement(tag, cleaned, children as ReactNode);
-          });
-          Component.displayName = `motion.${tag}`;
-          return Component;
-        },
-      },
-    ),
-    useReducedMotion: () => false,
-  };
-});
-
-import { HeroImageSettle, HeroTitleSettle } from '@/components/HeroSettle';
+import {
+  HeroImageSettle,
+  HeroTitleSettle,
+  SettleHeading,
+} from '@/components/HeroSettle';
 
 afterEach(() => {
   cleanup();
 });
+
+/** No inline opacity may reach SSR markup (RM/no-JS visibility guard). */
+function expectNoInlineOpacity(el: Element | null) {
+  expect(el).not.toBeNull();
+  expect((el as HTMLElement).getAttribute('style') ?? '').not.toMatch(/opacity/);
+}
 
 describe('HeroImageSettle', () => {
   it('renders its children', () => {
@@ -76,61 +38,81 @@ describe('HeroImageSettle', () => {
     expect(screen.getByAltText('Test hero')).toBeInTheDocument();
   });
 
-  it('accepts and forwards className', () => {
+  it('forwards className and carries the entrance class', () => {
     const { container } = render(
       <HeroImageSettle className="my-hero-class">
         <span>content</span>
       </HeroImageSettle>,
     );
+    expect(container.firstChild).toHaveClass('hero-settle-img');
     expect(container.firstChild).toHaveClass('my-hero-class');
   });
 
-  it('renders children under reduced motion (final state, no animation)', () => {
-    vi.doMock('framer-motion', async () => {
-      const actual = await vi.importActual<typeof import('framer-motion')>('framer-motion');
-      return { ...actual, useReducedMotion: () => true };
-    });
-    render(
+  it('ships no inline opacity (visible-at-rest markup)', () => {
+    const { container } = render(
       <HeroImageSettle>
-        <span>Accessible image</span>
+        <span>content</span>
       </HeroImageSettle>,
     );
-    expect(screen.getByText('Accessible image')).toBeInTheDocument();
+    expectNoInlineOpacity(container.firstElementChild);
   });
 });
 
 describe('HeroTitleSettle', () => {
-  it('renders its children', () => {
-    render(
-      <HeroTitleSettle>
-        AccessMap
-      </HeroTitleSettle>,
-    );
+  it('renders an <h1> with the entrance class', () => {
+    const { container } = render(<HeroTitleSettle>AccessMap</HeroTitleSettle>);
+    const h1 = container.querySelector('h1');
+    expect(h1).toBeInTheDocument();
+    expect(h1).toHaveClass('hero-settle-title');
     expect(screen.getByText('AccessMap')).toBeInTheDocument();
   });
 
   it('accepts and forwards className', () => {
     const { container } = render(
-      <HeroTitleSettle className="font-serif ember">
-        AccessMap
-      </HeroTitleSettle>,
+      <HeroTitleSettle className="font-serif ember">AccessMap</HeroTitleSettle>,
     );
     expect(container.firstChild).toHaveClass('font-serif');
     expect(container.firstChild).toHaveClass('ember');
   });
 
-  it('renders children under reduced motion (final state, no animation)', () => {
-    vi.doMock('framer-motion', async () => {
-      const actual = await vi.importActual<typeof import('framer-motion')>('framer-motion');
-      return { ...actual, useReducedMotion: () => true };
-    });
-    // Even with the top-level mock (reduced-motion false), the children must
-    // render — the reduced-motion true path is a subset of "renders children".
-    render(
-      <HeroTitleSettle className="font-serif">
-        Accessible title
-      </HeroTitleSettle>,
+  it('ships no inline opacity (visible-at-rest markup)', () => {
+    const { container } = render(<HeroTitleSettle>AccessMap</HeroTitleSettle>);
+    expectNoInlineOpacity(container.firstElementChild);
+  });
+});
+
+describe('SettleHeading', () => {
+  it('renders an <h1> with the settle-heading class', () => {
+    const { container } = render(<SettleHeading>The Work</SettleHeading>);
+    const h1 = container.querySelector('h1');
+    expect(h1).toBeInTheDocument();
+    expect(h1).toHaveClass('settle-heading');
+  });
+
+  it('accepts and forwards className', () => {
+    const { container } = render(
+      <SettleHeading className="text-display ember">The Work</SettleHeading>,
     );
-    expect(screen.getByText('Accessible title')).toBeInTheDocument();
+    expect(container.firstChild).toHaveClass('text-display');
+    expect(container.firstChild).toHaveClass('ember');
+  });
+
+  it('sets --ls-rest when restLetterSpacing is given', () => {
+    const { container } = render(
+      <SettleHeading restLetterSpacing="-0.03em">Tight</SettleHeading>,
+    );
+    const h1 = container.querySelector('h1') as HTMLElement;
+    expect(h1.style.getPropertyValue('--ls-rest')).toBe('-0.03em');
+  });
+
+  it('renders no style attribute when restLetterSpacing is omitted', () => {
+    const { container } = render(<SettleHeading>The Work</SettleHeading>);
+    const h1 = container.querySelector('h1') as HTMLElement;
+    expect(h1.getAttribute('style')).toBeNull();
+  });
+
+  it('ships no inline opacity (visible-at-rest markup)', () => {
+    const { container } = render(<SettleHeading>The Work</SettleHeading>);
+    expectNoInlineOpacity(container.firstElementChild);
   });
 });
