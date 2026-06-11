@@ -29,7 +29,7 @@ vi.mock('@/lib/motion', () => ({
 
 import { SidebarSectionNav } from '@/components/SidebarSectionNav';
 
-const LABELS = ['The Work', 'Method', 'A Brief Account', 'Credentials', 'Correspond'];
+const LABELS = ['The Work', 'Method', 'A Brief Account', 'Credentials', "Let's talk"];
 
 beforeEach(() => {
   pathnameMock.mockReturnValue('/');
@@ -51,7 +51,7 @@ describe('SidebarSectionNav', () => {
     }
     expect(screen.getByRole('link', { name: 'The Work' })).toHaveAttribute('href', '/#work');
     expect(screen.getByRole('link', { name: 'A Brief Account' })).toHaveAttribute('href', '/#about');
-    expect(screen.getByRole('link', { name: 'Correspond' })).toHaveAttribute('href', '/#contact');
+    expect(screen.getByRole('link', { name: "Let's talk" })).toHaveAttribute('href', '/#contact');
   });
 
   it('marks nothing active by default (no section in view yet)', () => {

@@ -437,7 +437,7 @@ export default function HomePage() {
         <Reveal className="relative z-10 max-w-content mx-auto flex flex-col items-start gap-8">
           <p className="font-mono text-label tracking-label uppercase text-wa-teal-deep flex items-center gap-2">
             <Icon name="contact" className="w-3.5 h-3.5 text-terracotta" />
-            Correspond
+            Let&apos;s talk
           </p>
           <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
             Have something worth building?
