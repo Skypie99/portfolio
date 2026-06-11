@@ -1,6 +1,16 @@
 # PROJECT_STATE — portfolio
 
-_Last compiled: 2026-05-29 by Will (State Update)_
+_Last compiled: 2026-06-10 by Rory (Release)_
+
+## Latest Release — Final Polish + Honest Copy + Reorder (2026-06-10)
+
+**MERGED + DEPLOYED.** `polish/portfolio-final-2026-06-10` → main `--no-ff` at **`80e512f`** (pushed; GitHub Pages live). Rollback: `git revert -m 1 80e512f`.
+
+- **Honest count/live status (Decision A):** site now says **six projects built/shown, FIVE live** — Mutual Mesh is built but NOT live. Hero "Six projects built, five live on the open internet"; showcase strip reframed (eyebrow "Shipped", heading "Built, shipped, and open."); footer "five of six live"; Mutual Mesh demo link reads **"Demo"** on the card, detail page, and a11y label (`ProjectCard` now derives the label from the data — five live products keep "Live").
+- **Card reorder (Decision B):** AccessMap featured #1 → **Claude Corp #2 → Dashboard #3** → Prompt Library → Ghost Code → Mutual Mesh. One `deliverables.json` source, so the homepage grid and `/work` agree; Mutual Mesh stays the full-width grid bookend.
+- **Plus the polish pass** (reduced-motion + no-JS title visibility raised, grid bookends, pill contrast, hero scaling).
+- **Gates:** lint 0 · typecheck 0 · 184 tests · build + static-integrity clean — green on branch AND merged main. **Intro byte-identical** (cinematic pathset diff empty; `CinematicIntro.tsx` blob hash unchanged).
+- Full report: `summaries/2026-06-10_Portfolio_FinalPolish_Merge_Report.md`.
 
 ## Current Status
 
