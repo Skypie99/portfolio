@@ -40,7 +40,7 @@ const SECTIONS = [
   { id: 'process', href: '/#process', label: 'Method' },
   { id: 'about', href: '/#about', label: 'A Brief Account' },
   { id: 'certificates', href: '/#certificates', label: 'Credentials' },
-  { id: 'contact', href: '/#contact', label: 'Correspond' },
+  { id: 'contact', href: '/#contact', label: "Let's talk" },
 ] as const;
 
 // Module-stable id list so useActiveSection doesn't re-subscribe each render.

@@ -115,7 +115,7 @@ export function Footer() {
                   href="/contact/"
                   className="link-draw font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
                 >
-                  Correspond
+                  Let&apos;s talk
                 </Link>
               </li>
             </ul>
