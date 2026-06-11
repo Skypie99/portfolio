@@ -138,30 +138,38 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
               >
                 View project <span aria-hidden="true">→</span>
               </Link>
-              {demoLink && (
-                <a
-                  href={demoLink.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Open live demo for ${d.title} (opens in new tab)`}
-                  className="ml-auto inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
-                >
-                  Live <span aria-hidden="true">↗</span>
-                </a>
-              )}
-              {githubLink && (
-                <a
-                  href={githubLink.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`View ${d.title} source on GitHub (opens in new tab)`}
-                  className={cn(
-                    'inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta',
-                    !demoLink && 'ml-auto',
+              {(demoLink || githubLink) && (
+                /* Grouped so the external links wrap as ONE unit on narrow
+                   cards — previously GitHub orphaned alone onto a second
+                   line at 390px. Desktop is pixel-identical: the group is
+                   right-aligned via ml-auto and the internal gap-x-5 matches
+                   the parent gap that used to separate Live/GitHub. */
+                <span className="ml-auto flex items-center gap-x-5">
+                  {demoLink && (
+                    <a
+                      href={demoLink.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Open ${demoLink.label.toLowerCase()} for ${d.title} (opens in new tab)`}
+                      className="inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                    >
+                      {/* label-derived: "Live" for live products, "Demo" for
+                          not-yet-live ones (e.g. Mutual Mesh) */}
+                      {demoLink.label.split(' ')[0]} <span aria-hidden="true">↗</span>
+                    </a>
                   )}
-                >
-                  GitHub <span aria-hidden="true">↗</span>
-                </a>
+                  {githubLink && (
+                    <a
+                      href={githubLink.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${d.title} source on GitHub (opens in new tab)`}
+                      className="inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                    >
+                      GitHub <span aria-hidden="true">↗</span>
+                    </a>
+                  )}
+                </span>
               )}
             </div>
           </div>
