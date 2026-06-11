@@ -20,7 +20,7 @@ import { getCertificates, getDeliverables, getProfile } from '@/lib/content';
  *
  * Section order (all anchor-linked from the hamburger nav):
  *  #hero          — Hero (F-01)
- *  #work          — All 4 deliverables
+ *  #work          — All deliverables (six)
  *  #process       — Discover / Build / Ship
  *  #about         — Bio
  *  #certificates  — Credential list
@@ -65,7 +65,7 @@ export default function HomePage() {
     },
     {
       stat: '0',
-      label: 'data collected',
+      label: 'addresses stored',
       project: 'Mutual Mesh',
       tags: ['Privacy-first', 'Invite-only', 'EXIF-strip'],
     },
