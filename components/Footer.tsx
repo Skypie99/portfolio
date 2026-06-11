@@ -19,17 +19,16 @@ const PLATFORM_LABELS: Record<string, string> = {
 /**
  * Footer — F-10. Editorial brand block + three columns.
  *
- * 2026-05-27 polish: prominent wordmark + tagline + availability sits in
- * its own row above the columns. The three columns (Site / About /
- * Elsewhere) preserve the ffern-style nav grid Gary's Cycle 11 test
- * locks in.
+ * 2026-06-10 voice pass: prominent wordmark + tagline sit in their own
+ * row above the columns — no availability status, no © clutter. The
+ * three columns (Site / About / Elsewhere) preserve the ffern-style nav
+ * grid Gary's Cycle 11 test locks in.
  *
  * Alex §4.5: external links open in new tab with rel="noopener noreferrer"
  * AND include a visually-hidden "(opens in new tab)" cue for SR users.
  */
 export function Footer() {
   const profile = getProfile();
-  const year = new Date().getFullYear();
 
   return (
     <footer
@@ -58,14 +57,10 @@ export function Footer() {
             >
               {profile.name}
             </Link>
-            <p className="font-mono text-meta tracking-label uppercase text-text-meta inline-flex items-center gap-2">
-              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-wa-teal" />
-              {profile.location} · Open to work
+            <p className="font-mono text-meta tracking-label uppercase text-text-meta">
+              {profile.tagline}
             </p>
           </div>
-          <p className="font-serif font-light text-step-1 text-charcoal max-w-[36ch] leading-snug text-pretty md:text-right">
-            {profile.tagline}
-          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
@@ -132,9 +127,10 @@ export function Footer() {
               About
             </h3>
             <p className="font-sans text-body-sm text-charcoal leading-[1.65] text-pretty">
-              {profile.name} builds AI tools. Small surfaces, real users,
-              documented from the first commit. Built in public, five of six
-              live on the open internet.
+              {profile.name} builds small, careful AI tools. Accessible by
+              default, useful by design, so no one&apos;s left out. Built in
+              public, honest about what ships — five of six live on the open
+              internet.
             </p>
           </div>
 
@@ -178,20 +174,11 @@ export function Footer() {
         {/* Bottom strip */}
         <div className="mt-12 pt-6 border-t border-stone flex flex-col md:flex-row gap-2 md:gap-6 justify-between items-start md:items-center">
           <p className="font-mono text-meta tracking-label uppercase text-text-meta">
-            SkyPi Studio — Est. 2026 · {'©'} {year}
+            SkyPi Studio — Est. 2026
           </p>
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-6">
-            <p className="font-mono text-meta tracking-label uppercase text-text-meta">
-              Built in the Okanagan Valley, British Columbia.
-            </p>
-            <p className="font-mono text-meta tracking-label uppercase text-text-meta inline-flex items-center gap-2">
-              <span
-                aria-hidden="true"
-                className="inline-block w-1.5 h-1.5 rounded-full bg-wa-teal"
-              />
-              Made with care
-            </p>
-          </div>
+          <p className="font-mono text-meta tracking-label uppercase text-text-meta">
+            Built in the Okanagan Valley, British Columbia.
+          </p>
         </div>
       </Reveal>
     </footer>

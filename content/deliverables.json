@@ -62,7 +62,7 @@
     "id": "claude-corp",
     "title": "Claude Corp",
     "summary": "A 15-role AI team governed by a written Constitution. Each agent owns a domain; an orchestrator runs the cycles. The infrastructure behind this portfolio.",
-    "role": "Architect",
+    "role": "Solo builder",
     "tech": [
       "Claude Code",
       "MCP",
@@ -280,7 +280,7 @@
     "id": "mutual-mesh",
     "title": "Mutual Mesh",
     "summary": "Privacy-first mutual-aid marketplace for food, baby supplies, hygiene and HRT. Invite-only, neighbourhood-level (never an address), built not to surveil.",
-    "role": "Lead engineer",
+    "role": "Solo builder",
     "tech": [
       "Expo",
       "React Native",

@@ -20,7 +20,7 @@ import { getCertificates, getDeliverables, getProfile } from '@/lib/content';
  *
  * Section order (all anchor-linked from the hamburger nav):
  *  #hero          — Hero (F-01)
- *  #work          — All 4 deliverables
+ *  #work          — All deliverables (six)
  *  #process       — Discover / Build / Ship
  *  #about         — Bio
  *  #certificates  — Credential list
@@ -40,7 +40,7 @@ export default function HomePage() {
   /** Showcase stat chips — hardcoded per spec */
   const showcaseChips = [
     {
-      stat: '1,564',
+      stat: '1,680',
       label: 'tests passing',
       project: 'AccessMap',
       tags: ['Mobile', 'WCAG AA', 'Open source'],
@@ -52,8 +52,8 @@ export default function HomePage() {
       tags: ['MCP', 'Real commits'],
     },
     {
-      stat: '50+',
-      label: 'features shipped',
+      stat: '100%',
+      label: 'static',
       project: 'Prompt Library',
       tags: ['No backend', 'Browser-only'],
     },
@@ -64,10 +64,16 @@ export default function HomePage() {
       tags: ['Vanilla JS', 'Zero deps'],
     },
     {
-      stat: 'E2E',
-      label: 'encrypted',
+      stat: '0',
+      label: 'addresses stored',
       project: 'Mutual Mesh',
-      tags: ['Privacy-first', 'Community'],
+      tags: ['Privacy-first', 'Invite-only', 'EXIF-strip'],
+    },
+    {
+      stat: '2.2 AA',
+      label: 'WCAG conformance',
+      project: 'Born accessible',
+      tags: ['Screen-reader', '44pt targets', 'Reduced-motion'],
     },
   ] as const;
 
@@ -84,8 +90,8 @@ export default function HomePage() {
       <div id="hero">
         <Hero
           eyebrow="Portfolio — 2026"
-          heading="An accessibility map. A multi-agent system. A command-line trainer."
-          subhead="Built in public. Documented from the first commit. Six projects built, five live on the open internet."
+          heading="An accessibility map. A multi-agent system. A web-based prompt library."
+          subhead="Six projects built, five live on the open web. Accessibility first, built for everyone."
           ctaLabel="See the work."
           ctaHref="#work"
         />
@@ -119,8 +125,8 @@ export default function HomePage() {
             </p>
           </Reveal>
 
-          {/* 4-col stat grid — vertical-rule layout for editorial weight */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px bg-wa-teal-soft/30 border border-wa-teal-soft/50 rounded-lg overflow-hidden shadow-md">
+          {/* 3×2 stat grid — vertical-rule layout for editorial weight */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-px bg-wa-teal-soft/30 border border-wa-teal-soft/50 rounded-lg overflow-hidden shadow-md">
             {showcaseChips.map(({ stat, label, project, tags }, i) => (
               <Reveal
                 key={project}
@@ -128,9 +134,9 @@ export default function HomePage() {
                 variant="depth"
                 className={cn(
                   'group flex flex-col bg-surface-mid p-6 md:p-7',
-                  // An odd trailing chip spans its 2-col (mobile) / 3-col (md)
-                  // row so no bare grid cell shows through; lg's 5-up row is
-                  // already even. `odd:` self-disables if a 6th chip lands.
+                  // An odd trailing chip spans its 2-col (mobile) / 3-col (md+)
+                  // row so no bare grid cell shows through. With six chips the
+                  // grid is a clean 3×2 and `odd:` self-disables on its own.
                   'last:odd:col-span-2 lg:last:odd:col-span-1',
                   'transition-colors duration-base ease-out hover:bg-surface',
                 )}
@@ -260,7 +266,7 @@ export default function HomePage() {
               <NumberedStep
                 number="02"
                 title="Build"
-                body="One slice at a time. Type-safe, accessible from the first line, documented enough to learn from."
+                body="One slice at a time. Type-safe, accessible from the first line, no shortcuts that leave people out."
                 highlight
               />
             </Reveal>
@@ -268,8 +274,8 @@ export default function HomePage() {
             <Reveal index={2} variant="depth">
               <NumberedStep
                 number="03"
-                title="Ship"
-                body="Write down what changed and what the next person will need. The documentation is the deliverable."
+                title="Ship & stay curious"
+                body="Get it into the world, notice what's not working and what could be, and keep refining until it earns its place. The work speaks for itself."
                 highlight
               />
             </Reveal>
@@ -436,12 +442,8 @@ export default function HomePage() {
           <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
             Have something worth building?
             <br />
-            Write to me.
+            Let&apos;s talk about it.
           </h2>
-          <p className="font-sans font-light text-body-sm text-charcoal -mt-2 max-w-[44ch] text-pretty">
-            AI engineering, accessibility, and thoughtful product work. I reply
-            to most messages within a few days.
-          </p>
           {/* Bot-safe mailto — the address is assembled at runtime (matches the
               /contact page), so it never sits raw in the static HTML for scrapers.
               Shows "Email {address}" to humans after hydration. */}

@@ -11,18 +11,16 @@ import { getFeaturedDeliverable, getProfile } from '@/lib/content';
  * Sidebar — F-02. Persistent left rail on desktop (>=960px),
  * hidden on mobile (the hamburger overlay takes its place).
  *
- * 2026-05-27 polish: the rail now reads like a proper brand mark.
- *  - Wordmark + discipline subtitle ("AI engineer · accessibility")
- *  - Availability micro-status under the wordmark (pulsing dot + label)
+ * 2026-06-10 voice pass: the rail reads like a proper brand mark, quieter.
+ *  - Wordmark + brand line ("Technology designed with accessibility in mind.")
  *  - Featured callout preserved
- *  - "© 2026" + location pinned to the bottom under the CTA
+ *  - Clean "Write to me." CTA pinned to the bottom — no © / location clutter
  *
  * Markup is <nav aria-label="Site navigation"> per Alex §2.1.
  */
 export function Sidebar() {
   const profile = getProfile();
   const featured = getFeaturedDeliverable();
-  const year = new Date().getFullYear();
 
   return (
     <nav
@@ -51,15 +49,7 @@ export function Sidebar() {
           {profile.wordmarkText}
         </Link>
         <p className="font-mono text-meta tracking-label uppercase text-text-meta leading-snug">
-          AI engineer · Accessibility
-        </p>
-        {/* Availability micro-status */}
-        <p className="font-mono text-meta tracking-label uppercase text-wa-teal-deep inline-flex items-center gap-2 mt-2">
-          <span aria-hidden="true" className="relative inline-flex h-1.5 w-1.5">
-            <span className="hero-status-ping absolute inline-flex h-full w-full rounded-full bg-wa-teal opacity-60" />
-            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-wa-teal" />
-          </span>
-          Available for work
+          Technology designed with accessibility in mind.
         </p>
         {/* Light/dark theme toggle */}
         <ThemeToggle withLabel className="mt-2" />
@@ -124,10 +114,6 @@ export function Sidebar() {
         <Button href="/contact/" fullWidth>
           Write to me.
         </Button>
-        <div className="flex items-center justify-between font-mono text-meta tracking-label uppercase text-text-meta">
-          <span>{'©'} {year}</span>
-          <span>{profile.location}</span>
-        </div>
       </div>
     </nav>
   );

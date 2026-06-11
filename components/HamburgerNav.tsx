@@ -246,12 +246,8 @@ export function HamburgerNav() {
                   );
                 })}
               </ul>
-              <p className="font-mono text-meta tracking-label uppercase text-text-meta mt-14 inline-flex items-center gap-2">
-                <span aria-hidden="true" className="relative inline-flex h-1.5 w-1.5">
-                  <span className="hero-status-ping absolute inline-flex h-full w-full rounded-full bg-wa-teal opacity-60" />
-                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-wa-teal" />
-                </span>
-                Available for work · 2026
+              <p className="font-mono text-meta tracking-label uppercase text-text-meta mt-14">
+                Technology designed with accessibility in mind.
               </p>
               <div className="mt-10">
                 <ThemeToggle withLabel />
