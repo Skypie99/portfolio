@@ -4,7 +4,7 @@
     "title": "AI Fluency Framework & Foundations",
     "issuer": "Anthropic",
     "issuedDate": "2026-05-01",
-    "credentialUrl": "https://www.anthropic.com/credentials/ef3fxd6rptc5",
+    "credentialUrl": "https://verify.skilljar.com/c/ef3fxd6rptc5",
     "credentialId": "ef3fxd6rptc5",
     "badgeImage": {
       "src": "/images/certificates/anthropic-ai-fluency-2026/badge.png",
@@ -17,7 +17,7 @@
     "title": "Introduction to Claude Cowork",
     "issuer": "Anthropic",
     "issuedDate": "2026-05-01",
-    "credentialUrl": "https://www.anthropic.com/credentials/rgnu9r9tyfoj",
+    "credentialUrl": "https://verify.skilljar.com/c/rgnu9r9tyfoj",
     "credentialId": "rgnu9r9tyfoj",
     "badgeImage": {
       "src": "/images/certificates/anthropic-cowork-intro-2026/badge.png",
@@ -30,13 +30,52 @@
     "title": "Claude 101",
     "issuer": "Anthropic",
     "issuedDate": "2026-05-01",
-    "credentialUrl": "https://www.anthropic.com/credentials/9twktanftgpq",
+    "credentialUrl": "https://verify.skilljar.com/c/9twktanftgpq",
     "credentialId": "9twktanftgpq",
     "badgeImage": {
       "src": "/images/certificates/anthropic-claude-101-2026/badge.png",
       "alt": "Anthropic Claude 101 credential badge"
     },
     "tags": ["ai", "anthropic", "claude"]
+  },
+  {
+    "id": "anthropic-mcp-intro-2026",
+    "title": "Introduction to Model Context Protocol",
+    "issuer": "Anthropic",
+    "issuedDate": "2026-06-01",
+    "credentialUrl": "https://verify.skilljar.com/c/397oybawccv4",
+    "credentialId": "397oybawccv4",
+    "badgeImage": {
+      "src": "/images/certificates/anthropic-mcp-intro-2026/badge.png",
+      "alt": "Anthropic Introduction to Model Context Protocol credential badge"
+    },
+    "tags": ["ai", "anthropic", "mcp"]
+  },
+  {
+    "id": "anthropic-claude-code-in-action-2026",
+    "title": "Claude Code in Action",
+    "issuer": "Anthropic",
+    "issuedDate": "2026-05-01",
+    "credentialUrl": "https://verify.skilljar.com/c/ad8ot95z543s",
+    "credentialId": "ad8ot95z543s",
+    "badgeImage": {
+      "src": "/images/certificates/anthropic-claude-code-in-action-2026/badge.png",
+      "alt": "Anthropic Claude Code in Action credential badge"
+    },
+    "tags": ["ai", "anthropic", "claude-code"]
+  },
+  {
+    "id": "anthropic-claude-code-101-2026",
+    "title": "Claude Code 101",
+    "issuer": "Anthropic",
+    "issuedDate": "2026-05-01",
+    "credentialUrl": "https://verify.skilljar.com/c/cxrwvg7sz5w6",
+    "credentialId": "cxrwvg7sz5w6",
+    "badgeImage": {
+      "src": "/images/certificates/anthropic-claude-code-101-2026/badge.png",
+      "alt": "Anthropic Claude Code 101 credential badge"
+    },
+    "tags": ["ai", "anthropic", "claude-code"]
   },
   {
     "id": "google-prompting-essentials-2025",
@@ -56,7 +95,7 @@
     "title": "Programming for Everybody (Getting Started with Python)",
     "issuer": "University of Michigan",
     "issuedDate": "2025-06-01",
-    "credentialUrl": "https://www.coursera.org/account/accomplishments/certificate/LNNCK1O38M7U",
+    "credentialUrl": "https://www.coursera.org/account/accomplishments/records/LNNCK1O38M7U",
     "credentialId": "LNNCK1O38M7U",
     "badgeImage": {
       "src": "/images/certificates/umich-python-2025/badge.png",
@@ -69,7 +108,7 @@
     "title": "AI For Everyone",
     "issuer": "DeepLearning.AI",
     "issuedDate": "2025-06-01",
-    "credentialUrl": "https://www.deeplearning.ai/verify/5Z1UGVB7BO2N",
+    "credentialUrl": "https://www.coursera.org/account/accomplishments/records/5Z1UGVB7BO2N",
     "credentialId": "5Z1UGVB7BO2N",
     "badgeImage": {
       "src": "/images/certificates/deeplearning-ai-for-everyone-2025/badge.png",
