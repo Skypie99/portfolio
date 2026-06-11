@@ -180,7 +180,7 @@
       "TypeScript",
       "Vitest",
       "localStorage",
-      "Vercel"
+      "GitHub Pages"
     ],
     "year": 2026,
     "heroImage": {
@@ -224,7 +224,7 @@
       "local-first"
     ],
     "featured": false,
-    "body": "## The problem\n\nMy AI prompts were scattered across notes, markdown files, and memory. I needed one searchable place to keep them — and a hard requirement: nothing leaves the browser. No API keys hitting a backend. No prompts stored in the cloud. The privacy constraint wasn't a nice-to-have; it was the whole product.\n\n## The approach\n\nBuilt in Next.js 15 with localStorage as the entire data layer. One constraint — \"everything stays on the user's machine\" — became the governing design principle. Search? localStorage query. Tags, favorites, import, export, dark mode — all local-first. I shipped across 20 stacked branches over several months, adding features without ever standing up a server.\n\nThe constraint forced discipline. You can't cheat with a backend. Every feature had to be thoughtfully scoped because there was nowhere to offload decisions.\n\n## What shipped\n\nA local-first prompt manager with full-text search, tag filtering, favorites, bulk import/export, and dark mode. Fifty features shipped. Zero backend. Deployed as a static site on GitHub Pages and open-sourced under a permissive license.\n\n## Reflection\n\nLocal-first privacy isn't a limitation — it's a competitive advantage. Building everything in the open with no server made the product sharper, not weaker. I'd make the same call again."
+    "body": "## The problem\n\nMy AI prompts were scattered across notes, markdown files, and memory. I needed one searchable place to keep them — and a hard requirement: nothing leaves the browser. No API keys hitting a backend. No prompts stored in the cloud. The privacy constraint wasn't a nice-to-have; it was the whole product.\n\n## The approach\n\nBuilt in Next.js 15 with localStorage as the entire data layer. One constraint — \"everything stays on the user's machine\" — became the governing design principle. Search? localStorage query. Tags, favorites, import, export, dark mode — all local-first. I shipped across 20 stacked branches over several months, adding features without ever standing up a server.\n\nThe constraint forced discipline. You can't cheat with a backend. Every feature had to be thoughtfully scoped because there was nowhere to offload decisions.\n\n## What shipped\n\nA local-first prompt manager with full-text search, tag filtering, favorites, bulk import/export, and dark mode. Zero backend. Deployed as a static site on GitHub Pages and open-sourced under a permissive license.\n\n## Reflection\n\nLocal-first privacy isn't a limitation — it's a competitive advantage. Building everything in the open with no server made the product sharper, not weaker. I'd make the same call again."
   },
   {
     "id": "ghost-code",
