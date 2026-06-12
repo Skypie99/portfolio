@@ -1449,6 +1449,42 @@ html.dark ::selection {
   );
 }
 
+/* ------------------------------------------------------------------
+   Rail short-height steps (components/Sidebar.tsx) — defects repair R4
+   (2026-06-12). The rail is sticky top-0 h-screen: page scroll can never
+   reveal anything past its bottom edge, and its natural content height
+   (~968px with gap-10=4rem + p-8=3rem on this project's spacing scale)
+   clipped the "Write to me." CTA at common laptop heights (800/700).
+   Two hand-ordered steps tighten the vertical rhythm; the later block
+   wins inside its range (source order is the cascade here — stacked
+   Tailwind arbitrary variants of one property have compiler-determined
+   output order, so this lives in CSS). overflow-y:auto is the fail-safe
+   floor for very short viewports — it shows no scrollbar when content
+   fits. At >=900px viewport heights neither query matches: the rail is
+   pixel-identical to its designed rhythm. Horizontal padding untouched.
+   ------------------------------------------------------------------ */
+@media (max-height: 899px) {
+  .rail-nav {
+    gap: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    overflow-y: auto;
+  }
+}
+@media (max-height: 800px) {
+  .rail-nav {
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  /* Featured block trim: the role line + "Open it" meta row yield their
+     height so the CTA always lands inside the viewport. The featured
+     title (the link itself) stays. */
+  .rail-trim {
+    display: none;
+  }
+}
+
 /* ==================================================================
    CINEMATIC INTRO — Phase 5
    Wes Anderson / New Mexico desert scroll intro.
