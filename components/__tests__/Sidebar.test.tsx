@@ -70,4 +70,22 @@ describe('Sidebar', () => {
     const wordmark = screen.getByRole('link', { name: /sky halisky/i });
     expect(wordmark).toHaveClass('link-draw');
   });
+
+  it('exposes the data-rail hook for RailInert and is not inert by default (R3)', () => {
+    render(<Sidebar />);
+    const nav = screen.getByRole('navigation', { name: /site navigation/i });
+    expect(nav).toHaveAttribute('data-rail');
+    expect(nav.hasAttribute('inert')).toBe(false);
+  });
+
+  it('carries the short-viewport rail classes (R4)', () => {
+    render(<Sidebar />);
+    const nav = screen.getByRole('navigation', { name: /site navigation/i });
+    // rail-nav: max-height steps + overflow floor live in globals.css.
+    expect(nav).toHaveClass('rail-nav');
+    // rail-trim: the featured role line and "Open it" meta row yield their
+    // height below 800px viewport heights so the bottom CTA always renders.
+    expect(screen.getByText('Solo builder')).toHaveClass('rail-trim');
+    expect(document.querySelectorAll('.rail-trim')).toHaveLength(2);
+  });
 });

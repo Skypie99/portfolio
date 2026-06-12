@@ -124,6 +124,21 @@ describe('HamburgerNav', () => {
     expect(trigger).toHaveFocus();
   });
 
+  it('layers trigger and drawer above the pinned stage (R3 z contract)', async () => {
+    // The homepage's pinned desert stage is a frozen z-50 stacking context
+    // that sits later in the DOM. Both chrome layers must beat it — and the
+    // trigger must stay above the overlay so the close position keeps
+    // winning the hit-test. (Defects repair R3, 2026-06-12.)
+    const user = userEvent.setup();
+    render(<HamburgerNav />);
+    const trigger = screen.getByRole('button', { name: /open navigation menu/i });
+    expect(trigger.className).toContain('z-[90]');
+
+    await user.click(trigger);
+    const dialog = await screen.findByRole('dialog', { name: /primary menu/i });
+    expect(dialog.className).toContain('z-[80]');
+  });
+
   it('locks body scroll when overlay is open and restores it on close', async () => {
     const user = userEvent.setup();
     // Ensure we start with unrestricted scroll (jsdom default).

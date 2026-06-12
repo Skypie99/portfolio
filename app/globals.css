@@ -383,11 +383,14 @@ body {
 
 
 /* Focus-visible default — Alex §6.1. Terracotta 4.33:1 on cream (PASS 3:1 UI).
-   Tokenized (Phase 5) so the ring is a system knob — values unchanged. */
+   Tokenized (Phase 5) so the ring is a system knob. The outline traces each
+   element's OWN border-radius (pills stay pills, 22px cards stay 22px) — the
+   rule never mutates element geometry. (Defects repair R6, 2026-06-12: the
+   old `border-radius: 2px` here SET the focused element's radius, collapsing
+   every .rounded-pill into a square — and transition-all animated the melt.) */
 *:focus-visible {
   outline: var(--focus-ring-width, 2px) solid var(--focus-ring-color, var(--color-accent-primary));
   outline-offset: var(--focus-ring-offset, 2px);
-  border-radius: 2px;
 }
 
 /* The skip-link's :focus state is in components/SkipLink.tsx via Tailwind. */
@@ -735,6 +738,14 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
     transition: none;
   }
   .reveal-carve { filter: none; }
+  /* ContentReveal wrapper — belt-and-braces: the component never attaches
+     inline styles under reduced motion, but if they ever leak again, RM
+     visitors must still see the homepage. Mirrors the mobile floor near the
+     cinematic block. */
+  .cinematic-content-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 @media (scripting: none) {
   .reveal {
@@ -742,6 +753,10 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
     transform: none;
   }
   .reveal-carve { filter: none; }
+  .cinematic-content-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 /* ------------------------------------------------------------------
@@ -1435,6 +1450,42 @@ html.dark ::selection {
     calc((var(--cy, 50%) - 50%) * -0.022),
     0
   );
+}
+
+/* ------------------------------------------------------------------
+   Rail short-height steps (components/Sidebar.tsx) — defects repair R4
+   (2026-06-12). The rail is sticky top-0 h-screen: page scroll can never
+   reveal anything past its bottom edge, and its natural content height
+   (~968px with gap-10=4rem + p-8=3rem on this project's spacing scale)
+   clipped the "Write to me." CTA at common laptop heights (800/700).
+   Two hand-ordered steps tighten the vertical rhythm; the later block
+   wins inside its range (source order is the cascade here — stacked
+   Tailwind arbitrary variants of one property have compiler-determined
+   output order, so this lives in CSS). overflow-y:auto is the fail-safe
+   floor for very short viewports — it shows no scrollbar when content
+   fits. At >=900px viewport heights neither query matches: the rail is
+   pixel-identical to its designed rhythm. Horizontal padding untouched.
+   ------------------------------------------------------------------ */
+@media (max-height: 899px) {
+  .rail-nav {
+    gap: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    overflow-y: auto;
+  }
+}
+@media (max-height: 800px) {
+  .rail-nav {
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  /* Featured block trim: the role line + "Open it" meta row yield their
+     height so the CTA always lands inside the viewport. The featured
+     title (the link itself) stays. */
+  .rail-trim {
+    display: none;
+  }
 }
 
 /* ==================================================================
