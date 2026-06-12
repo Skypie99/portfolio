@@ -36,7 +36,7 @@ Deploy run [27441311467](https://github.com/Skypie99/portfolio/actions/runs/2744
 
 ### CI run on this branch
 
-- Result: see PR checks (run triggered on push).
+- Run [27441931156](https://github.com/Skypie99/portfolio/actions/runs/27441931156): Lint / Typecheck / Test / Build all ✅ on `checkout@v6` + `setup-node@v6`, **zero deprecation annotations** (the old runs had two).
 
 ## DECISIONS FOR SKY
 
