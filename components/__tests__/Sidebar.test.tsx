@@ -70,4 +70,11 @@ describe('Sidebar', () => {
     const wordmark = screen.getByRole('link', { name: /sky halisky/i });
     expect(wordmark).toHaveClass('link-draw');
   });
+
+  it('exposes the data-rail hook for RailInert and is not inert by default (R3)', () => {
+    render(<Sidebar />);
+    const nav = screen.getByRole('navigation', { name: /site navigation/i });
+    expect(nav).toHaveAttribute('data-rail');
+    expect(nav.hasAttribute('inert')).toBe(false);
+  });
 });

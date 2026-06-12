@@ -100,7 +100,11 @@ export function HamburgerNav() {
         aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
         onClick={() => setOpen((v) => !v)}
         className={cn(
-          'fixed top-4 right-4 z-50',
+          // z-[90]: above the homepage's pinned desert stage (frozen z-50 —
+          // a later-in-DOM z-tie left real taps dead at page top), below the
+          // pointer-inert film grain (z-100). The frosted bg is designed to
+          // sit on anything.
+          'fixed top-4 right-4 z-[90]',
           'inline-flex items-center justify-center',
           'h-11 w-11', // 44x44 hit area per Alex §3.5 option 1
           'bg-cream/90 backdrop-blur-sm',
@@ -154,7 +158,13 @@ export function HamburgerNav() {
             exit={reduceMotion ? { opacity: 1 } : { opacity: 0, y: 8 }}
             transition={{ duration: reduceMotion ? 0 : 0.28, ease: [0.4, 0, 0.2, 1] }}
             className={cn(
-              'fixed inset-0 z-40',
+              // z-[80] (--z-overlay): the drawer must beat the pinned desert
+              // stage (z-50) too — lifting only the trigger would open an
+              // INVISIBLE dialog under the stage at page top, with a live
+              // focus trap inside it. Stays below the trigger (z-[90]) so
+              // the close position keeps winning the hit-test, and below
+              // the pointer-inert grain (z-100).
+              'fixed inset-0 z-[80]',
               // Frosted cohesion with the glass cards — kept near-opaque (92%)
               // so the overlay's ink/bone nav text holds AA over any content
               // behind; the blur only softens the faint bleed-through.
