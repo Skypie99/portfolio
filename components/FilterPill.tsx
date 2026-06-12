@@ -37,7 +37,12 @@ export function FilterPill({
       className={cn(
         'min-h-11 px-4 py-1.5 inline-flex items-center justify-center gap-2 whitespace-nowrap',
         'rounded-pill font-mono text-meta tracking-label uppercase',
-        'transition-all duration-base ease-out',
+        // Exactly the properties the pill's states change — rest/hover/active
+        // colors, the press transform, the disabled opacity. Excludes
+        // border-radius and outline-color so keyboard focus shows the ring
+        // instantly on the pill's true shape (R6: transition-all animated a
+        // 280ms radius melt + ring fade-in).
+        'transition-[background-color,border-color,color,opacity,transform] duration-base ease-out',
         // Tactile press — a subtle compositor-only push on pointer-down, for
         // parity with the site's button language. RM-safe (transform only).
         'active:scale-[0.97]',

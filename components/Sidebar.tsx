@@ -25,6 +25,10 @@ export function Sidebar() {
   return (
     <nav
       aria-label="Site navigation"
+      // Stable hook for RailInert (homepage chrome guard) — it toggles the
+      // native `inert` attribute here while the pinned desert scene fully
+      // obscures the rail. No visual effect.
+      data-rail=""
       className={cn(
         'relative',
         'hidden md:flex flex-col gap-10',
@@ -34,6 +38,10 @@ export function Sidebar() {
         'p-8',
         'bg-rail',
         'border-r border-wa-teal-soft/50',
+        // Short-viewport steps (globals.css R4): tightens gap/py below 900px
+        // viewport height + overflow-y:auto floor, so the bottom CTA always
+        // renders. No effect at >=900px heights.
+        'rail-nav',
       )}
     >
       {/* Reading-progress hairline on the right edge — fills as the page
@@ -72,10 +80,10 @@ export function Sidebar() {
             <span className="link-draw inline-block font-serif font-normal text-step-2 leading-tight">
               {featured.title}
             </span>
-            <span className="font-sans text-body-sm text-charcoal">
+            <span className="rail-trim font-sans text-body-sm text-charcoal">
               {featured.role}
             </span>
-            <span className="font-mono text-meta tracking-label uppercase text-accent-text mt-1 inline-flex items-center gap-1 transition-transform duration-fast ease-out group-hover:translate-x-1 group-focus-visible:translate-x-1">
+            <span className="rail-trim font-mono text-meta tracking-label uppercase text-accent-text mt-1 inline-flex items-center gap-1 transition-transform duration-fast ease-out group-hover:translate-x-1 group-focus-visible:translate-x-1">
               Open it
               <span aria-hidden="true">{'→'}</span>
             </span>

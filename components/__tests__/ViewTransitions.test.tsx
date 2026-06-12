@@ -19,10 +19,14 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { cleanup, render } from '@testing-library/react';
 
-const { pushMock } = vi.hoisted(() => ({ pushMock: vi.fn() }));
+const { pushMock, pathnameMock } = vi.hoisted(() => ({
+  pushMock: vi.fn(),
+  pathnameMock: vi.fn((): string => '/'),
+}));
 
 vi.mock('next/navigation', () => ({
   useRouter: () => ({ push: pushMock }),
+  usePathname: () => pathnameMock(),
 }));
 
 import { ViewTransitions } from '@/components/ViewTransitions';
@@ -43,6 +47,8 @@ function clickAnchor(attrs: Record<string, string>, init: MouseEventInit = {}): 
 
 beforeEach(() => {
   pushMock.mockClear();
+  pathnameMock.mockClear();
+  pathnameMock.mockReturnValue('/');
   render(<ViewTransitions />); // attaches the capture-phase document listener
   // Bubble phase, so jsdom's default navigation is canceled for every test
   // anchor without affecting the capture-phase interceptor's decision.
@@ -117,12 +123,10 @@ describe('ViewTransitions interceptor', () => {
     // of timeout in DOM update` console spew. jsdom has no startViewTransition;
     // install one that drives the callback (so the nav still happens) and returns
     // a transition whose `finished` REJECTS — exactly what the browser does when a
-    // transition is aborted/interrupted or times out. The component must attach a
-    // `.catch` to each promise so the rejection never surfaces as a console error.
-    const realRaf = window.requestAnimationFrame;
-    // Stub rAF so the callback's (ignored) resolve-promise never throws/resolves.
-    window.requestAnimationFrame = (() => 0) as typeof window.requestAnimationFrame;
-
+    // transition is aborted/interrupted. The component must attach a `.catch` to
+    // each promise so the rejection never surfaces as a console error. (The
+    // callback's own promise is now commit/backstop-resolved — no rAF involved;
+    // its backstop timer is cleared by the unmount cleanup in afterEach.)
     const finished = Promise.reject(new Error('TimeoutError: Transition was aborted'));
     const updateCallbackDone = Promise.resolve();
     const ready = Promise.resolve();
@@ -131,7 +135,7 @@ describe('ViewTransitions interceptor', () => {
     const readyCatch = vi.spyOn(ready, 'catch');
 
     const svt = vi.fn((cb: () => unknown) => {
-      cb(); // runs router.push(dest) + returns the (ignored) 2-rAF promise
+      cb(); // runs router.push(dest) + returns the commit-resolved promise
       return { finished, updateCallbackDone, ready };
     });
     (document as unknown as { startViewTransition?: unknown }).startViewTransition = svt;
@@ -147,7 +151,96 @@ describe('ViewTransitions interceptor', () => {
       expect(readyCatch).toHaveBeenCalledTimes(1);
     } finally {
       delete (document as unknown as { startViewTransition?: unknown }).startViewTransition;
-      window.requestAnimationFrame = realRaf;
+    }
+  });
+
+  it('resolves the update callback on ROUTE COMMIT (pathname change), not paint', async () => {
+    // The View Transitions spec suspends rendering while the update callback's
+    // promise is pending — a paint/rAF-based resolver deadlocks into the UA's
+    // ~4s timeout (the D5 freeze). The repair resolves on pathname commit.
+    cleanup(); // drop the beforeEach instance; this test controls rerenders
+    pathnameMock.mockReturnValue('/');
+    const view = render(<ViewTransitions />);
+
+    let callbackPromise: Promise<void> | undefined;
+    const svt = vi.fn((cb: () => Promise<void>) => {
+      callbackPromise = cb();
+      return {
+        finished: Promise.resolve(),
+        updateCallbackDone: Promise.resolve(),
+        ready: Promise.resolve(),
+      };
+    });
+    (document as unknown as { startViewTransition?: unknown }).startViewTransition = svt;
+
+    try {
+      clickAnchor({ href: '/work/access-map/' });
+      expect(svt).toHaveBeenCalledTimes(1);
+
+      let resolved = false;
+      void callbackPromise!.then(() => {
+        resolved = true;
+      });
+      await Promise.resolve();
+      await Promise.resolve();
+      expect(resolved).toBe(false); // no commit yet — promise must still be pending
+
+      // Next commits the new route → usePathname flips → effect settles.
+      pathnameMock.mockReturnValue('/work/access-map/');
+      view.rerender(<ViewTransitions />);
+      await Promise.resolve();
+      await Promise.resolve();
+      expect(resolved).toBe(true); // resolved WITHOUT any timer or paint
+    } finally {
+      delete (document as unknown as { startViewTransition?: unknown }).startViewTransition;
+    }
+  });
+
+  it('backstop-resolves a stuck navigation instead of riding the UA timeout', async () => {
+    vi.useFakeTimers();
+
+    let callbackPromise: Promise<void> | undefined;
+    const svt = vi.fn((cb: () => Promise<void>) => {
+      callbackPromise = cb();
+      return {
+        finished: Promise.resolve(),
+        updateCallbackDone: Promise.resolve(),
+        ready: Promise.resolve(),
+      };
+    });
+    (document as unknown as { startViewTransition?: unknown }).startViewTransition = svt;
+
+    try {
+      clickAnchor({ href: '/work/access-map/' });
+      expect(svt).toHaveBeenCalledTimes(1);
+
+      let resolved = false;
+      void callbackPromise!.then(() => {
+        resolved = true;
+      });
+      // Pathname never changes (stuck nav). The 1.5s backstop must fire —
+      // well under the UA's ~4s DOM-update timeout.
+      await vi.advanceTimersByTimeAsync(1500);
+      expect(resolved).toBe(true);
+    } finally {
+      delete (document as unknown as { startViewTransition?: unknown }).startViewTransition;
+      vi.useRealTimers();
+    }
+  });
+
+  it('takes the plain-push instant cut for a same-path search-only navigation', () => {
+    // The pathname resolver cannot observe a search-only commit, so these
+    // degrade to an instant cut (strictly better than the old 4s freeze).
+    window.history.pushState({}, '', '/work/');
+    const svt = vi.fn();
+    (document as unknown as { startViewTransition?: unknown }).startViewTransition = svt;
+
+    try {
+      clickAnchor({ href: '/work/?filter=ai' });
+      expect(pushMock).toHaveBeenCalledWith('/work/?filter=ai');
+      expect(svt).not.toHaveBeenCalled();
+    } finally {
+      delete (document as unknown as { startViewTransition?: unknown }).startViewTransition;
     }
   });
 });
