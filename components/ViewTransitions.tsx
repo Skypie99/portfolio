@@ -1,7 +1,7 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import { useCallback, useEffect, useRef } from 'react';
 
 /** Minimal shape of the object `document.startViewTransition()` returns. */
 type ViewTransitionLike = {
@@ -12,6 +12,12 @@ type ViewTransitionLike = {
 
 /** Intentionally ignore an expected (post-navigation) transition rejection. */
 const noop = (): void => {};
+
+/** Backstop for the update-callback resolver: a stuck navigation must never
+ *  ride the UA's ~4s DOM-update timeout (frozen page, hard cut). Well under
+ *  4s, generous enough for an uncached static-route fetch; firing early
+ *  degrades to an instant cut, never a hang. */
+const COMMIT_BACKSTOP_MS = 1500;
 
 /**
  * Filmic page transitions (view-transitions 2026-06-05) — Direction D.
@@ -31,17 +37,50 @@ const noop = (): void => {};
  *  - no startViewTransition()  → plain router.push (instant cut)
  *  - destination '/'           → plain router.push (protects the GSAP cinematic —
  *                                the homepage never mounts under a transitioning root)
+ *  - same-path search-only nav → plain router.push (instant cut; the pathname
+ *                                resolver below cannot observe a search-only
+ *                                commit, and useSearchParams would force a
+ *                                Suspense boundary into the static-export root)
  *  - modifier/aux/_blank/ext/mailto/tel/download/in-page-hash → NOT intercepted;
  *    the browser does exactly what it does today (Link client-nav or <a> hard-nav)
  *  - no-JS                     → this never mounts; the cross-document
  *                                @view-transition rule (globals.css) handles hard
  *                                loads for free, and links navigate normally
  *
+ * The update callback resolves on ROUTE COMMIT (pathname change), not on
+ * paint: the View Transitions spec suspends rendering — rAF callbacks never
+ * fire — while the callback's promise is pending, so a paint-based resolver
+ * deadlocks into the UA's ~4s DOM-update timeout and the dissolve never
+ * plays. React commits and flushes effects via scheduler macrotasks, which
+ * keep running under suspended rendering.
+ *
  * Renders null. Mounted once in the root layout so it persists across all
  * client navigations and is the single source of interception.
  */
 export function ViewTransitions() {
   const router = useRouter();
+  const pathname = usePathname();
+
+  // In-flight View Transition update-callback resolver. Settled on ROUTE
+  // COMMIT (pathname effect below) or by the backstop timer — whichever
+  // comes first.
+  const pendingRef = useRef<{ resolve: () => void; timer: number } | null>(null);
+
+  const settlePending = useCallback(() => {
+    const pending = pendingRef.current;
+    if (!pending) return;
+    pendingRef.current = null;
+    window.clearTimeout(pending.timer);
+    pending.resolve();
+  }, []);
+
+  // ROUTE-COMMIT resolver. React flushes this effect on commit via a
+  // scheduler macrotask — paint is NOT required — so it runs even while the
+  // View Transition has rendering suspended (a rAF would not). First-mount
+  // run is a no-op: pendingRef is null.
+  useEffect(() => {
+    settlePending();
+  }, [pathname, settlePending]);
 
   useEffect(() => {
     function onClick(e: MouseEvent) {
@@ -97,7 +136,10 @@ export function ViewTransitions() {
         }
       ).startViewTransition;
 
-      if (reduce || toHome || typeof startViewTransition !== 'function') {
+      // `samePath` here means a search-only navigation (same-path + hash and
+      // identical-URL clicks already returned above): the pathname resolver
+      // cannot observe that commit, so it degrades to an instant cut.
+      if (reduce || toHome || samePath || typeof startViewTransition !== 'function') {
         router.push(dest);
         return;
       }
@@ -105,12 +147,21 @@ export function ViewTransitions() {
       try {
         const transition = startViewTransition.call(document, () => {
           router.push(dest);
-          // router.push is fire-and-forget; resolve on the SECOND paint so the
-          // statically pre-rendered route has committed before the new snapshot
-          // is captured (no loading.tsx flash on a static export).
-          return new Promise<void>((resolve) =>
-            requestAnimationFrame(() => requestAnimationFrame(() => resolve())),
-          );
+          // Resolve on ROUTE COMMIT, not paint: rendering (rAF/paint) is
+          // suspended while this promise is pending, so a paint-based
+          // resolver can never fire — it rides the UA's ~4s DOM-update
+          // timeout and the dissolve is replaced by a frozen page + hard
+          // cut. The pathname effect above settles this as soon as Next
+          // commits the new route (~tens of ms on this static export); the
+          // backstop timer covers a stuck navigation.
+          return new Promise<void>((resolve) => {
+            settlePending(); // a rapid second nav supersedes the previous pending
+            const timer = window.setTimeout(() => {
+              if (pendingRef.current?.resolve === resolve) pendingRef.current = null;
+              resolve();
+            }, COMMIT_BACKSTOP_MS);
+            pendingRef.current = { resolve, timer };
+          });
         });
         // The transition's promises reject when it is aborted/interrupted (a rapid
         // second navigation skips the first) or times out the DOM-update window
@@ -128,8 +179,11 @@ export function ViewTransitions() {
     }
 
     document.addEventListener('click', onClick, true); // capture phase
-    return () => document.removeEventListener('click', onClick, true);
-  }, [router]);
+    return () => {
+      document.removeEventListener('click', onClick, true);
+      settlePending(); // never strand a resolver (or its timer) on unmount
+    };
+  }, [router, settlePending]);
 
   return null;
 }
