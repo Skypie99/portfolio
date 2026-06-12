@@ -735,6 +735,14 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
     transition: none;
   }
   .reveal-carve { filter: none; }
+  /* ContentReveal wrapper — belt-and-braces: the component never attaches
+     inline styles under reduced motion, but if they ever leak again, RM
+     visitors must still see the homepage. Mirrors the mobile floor near the
+     cinematic block. */
+  .cinematic-content-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 @media (scripting: none) {
   .reveal {
@@ -742,6 +750,10 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
     transform: none;
   }
   .reveal-carve { filter: none; }
+  .cinematic-content-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 /* ------------------------------------------------------------------
