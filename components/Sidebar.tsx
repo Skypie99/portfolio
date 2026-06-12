@@ -25,6 +25,10 @@ export function Sidebar() {
   return (
     <nav
       aria-label="Site navigation"
+      // Stable hook for RailInert (homepage chrome guard) — it toggles the
+      // native `inert` attribute here while the pinned desert scene fully
+      // obscures the rail. No visual effect.
+      data-rail=""
       className={cn(
         'relative',
         'hidden md:flex flex-col gap-10',

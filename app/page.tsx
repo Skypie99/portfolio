@@ -9,6 +9,7 @@ import { Icon } from '@/components/Icon';
 import { NumberedStep } from '@/components/NumberedStep';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { ProjectCard } from '@/components/ProjectCard';
+import { RailInert } from '@/components/RailInert';
 import { Reveal } from '@/components/Reveal';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
@@ -84,6 +85,10 @@ export default function HomePage() {
     <>
       {/* ── Cinematic intro — 2.5D GSAP camera-push desert (placeholder phase) ─ */}
       <CinematicDesert />
+
+      {/* Chrome guard: rail is inert while the pinned stage fully obscures it
+          (skip link → hero CTA stays the top-of-page keyboard journey). */}
+      <RailInert />
 
       <ContentReveal>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
