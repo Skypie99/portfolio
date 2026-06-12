@@ -383,11 +383,14 @@ body {
 
 
 /* Focus-visible default — Alex §6.1. Terracotta 4.33:1 on cream (PASS 3:1 UI).
-   Tokenized (Phase 5) so the ring is a system knob — values unchanged. */
+   Tokenized (Phase 5) so the ring is a system knob. The outline traces each
+   element's OWN border-radius (pills stay pills, 22px cards stay 22px) — the
+   rule never mutates element geometry. (Defects repair R6, 2026-06-12: the
+   old `border-radius: 2px` here SET the focused element's radius, collapsing
+   every .rounded-pill into a square — and transition-all animated the melt.) */
 *:focus-visible {
   outline: var(--focus-ring-width, 2px) solid var(--focus-ring-color, var(--color-accent-primary));
   outline-offset: var(--focus-ring-offset, 2px);
-  border-radius: 2px;
 }
 
 /* The skip-link's :focus state is in components/SkipLink.tsx via Tailwind. */

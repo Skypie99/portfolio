@@ -33,7 +33,11 @@ export function CredentialBadge({
         'px-3 py-2 text-sm text-[var(--badge-text)]',
         'transition-all duration-base ease-out',
         href && 'hover:bg-[var(--badge-bg-hover)] hover:text-[var(--badge-text-hover)] hover:shadow-soft',
-        href && 'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta rounded-sm',
+        // (R6) The old focus-visible classes here were dead code — this div is
+        // never the focus target (the wrapper <a> below is) — and carried an
+        // unprefixed `rounded-sm` that fought rounded-pill by stylesheet
+        // emission order. The global *:focus-visible ring on the wrapper now
+        // traces the pill.
         'group',
         className,
       )}
@@ -73,7 +77,9 @@ export function CredentialBadge({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-block"
+        // rounded-pill so the global focus ring traces the badge's pill shape
+        // (the <a> is the focus target, not the pill div it wraps). (R6)
+        className="inline-block rounded-pill"
         aria-label={`${label} credential (opens in new tab)`}
       >
         {content}
