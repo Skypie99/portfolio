@@ -1,7 +1,7 @@
 'use client';
 
-import { useRef, useState } from 'react';
-import { AnimatePresence, motion, useInView, useReducedMotion } from 'framer-motion';
+import { useState } from 'react';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 
 import { CaseStudyCard } from '@/components/CaseStudyCard';
 import { FilterPill } from '@/components/FilterPill';
@@ -28,28 +28,9 @@ type WorkFilterGridProps = {
   deliverables: Deliverable[];
 };
 
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.09, delayChildren: 0.04 } },
-};
-
-const cardVariants = {
-  // Weighted landing: cards rise + settle from a touch of depth (scale 0.985)
-  // on the gh-settle curve — a soft, long-tailed arrival, never poppy.
-  hidden: { opacity: 0, y: 28, scale: 0.985 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.7, ease: [0.22, 0.9, 0.26, 1] as const },
-  },
-};
-
 export function WorkFilterGrid({ deliverables }: WorkFilterGridProps) {
   const [activeTag, setActiveTag] = useState<string | null>(null);
   const shouldReduceMotion = useReducedMotion();
-  const gridRef = useRef<HTMLUListElement>(null);
-  const isInView = useInView(gridRef, { once: true, margin: '-80px' });
 
   const featured = deliverables.find((d) => d.featured);
   const rest = deliverables.filter((d) => !d.featured);
@@ -123,24 +104,23 @@ export function WorkFilterGrid({ deliverables }: WorkFilterGridProps) {
         )}
       </AnimatePresence>
 
-      {/* Non-featured grid — layout animation on filter + stagger on scroll enter */}
+      {/* Non-featured grid — framer keeps only the layout/exit filter
+          choreography; Reveal (CSS/IO) owns the scroll-entrance, the same
+          proven contract as the featured card above. REST state is visible:
+          reduced-motion and no-JS get the final state via the .reveal floors
+          in globals.css — no inline opacity:0 ever reaches the SSR HTML. */}
       {filteredRest.length === 0 && !featuredVisible ? (
         <p className="font-serif font-light text-display-s text-charcoal leading-[1.65]">
           No deliverables match this filter.
         </p>
       ) : filteredRest.length > 0 ? (
-        <motion.ul
-          ref={gridRef}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12"
-          variants={shouldReduceMotion ? undefined : containerVariants}
-          initial={shouldReduceMotion ? undefined : 'hidden'}
-          animate={shouldReduceMotion ? undefined : (isInView ? 'visible' : 'hidden')}
-        >
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           <AnimatePresence mode="popLayout" initial={false}>
             {filteredRest.map((d, i) => (
               <motion.li
                 key={d.id}
                 layout={!shouldReduceMotion}
+                initial={false}
                 // An odd trailing card spans both tracks but renders at one
                 // track's width, centered — pixel-identical to its siblings,
                 // no bare grid cell. Covers every odd filter count (5, 3, 1);
@@ -151,25 +131,26 @@ export function WorkFilterGrid({ deliverables }: WorkFilterGridProps) {
                     ? 'md:col-span-2 md:w-[calc(50%-1.5rem)] md:justify-self-center'
                     : undefined
                 }
-                variants={shouldReduceMotion ? undefined : cardVariants}
                 exit={
                   shouldReduceMotion
                     ? undefined
                     : { opacity: 0, scale: 0.96, y: -8, transition: { duration: 0.2 } }
                 }
               >
-                <CaseStudyCard
-                  title={d.title}
-                  category={toCategory(d.id)}
-                  description={d.summary}
-                  href={`/work/${d.id}/`}
-                  media={cardMedia(d)}
-                  index={deliverables.findIndex((x) => x.id === d.id)}
-                />
+                <Reveal variant="depth" index={i}>
+                  <CaseStudyCard
+                    title={d.title}
+                    category={toCategory(d.id)}
+                    description={d.summary}
+                    href={`/work/${d.id}/`}
+                    media={cardMedia(d)}
+                    index={deliverables.findIndex((x) => x.id === d.id)}
+                  />
+                </Reveal>
               </motion.li>
             ))}
           </AnimatePresence>
-        </motion.ul>
+        </ul>
       ) : null}
     </div>
   );
