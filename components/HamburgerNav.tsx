@@ -256,7 +256,7 @@ export function HamburgerNav() {
                   );
                 })}
               </ul>
-              <p className="font-mono text-meta tracking-label uppercase text-text-meta mt-14">
+              <p className="font-mono text-meta tracking-label uppercase text-text-meta mt-14 text-balance">
                 Technology designed with accessibility in mind.
               </p>
               <div className="mt-10">

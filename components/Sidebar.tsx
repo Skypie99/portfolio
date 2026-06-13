@@ -56,7 +56,7 @@ export function Sidebar() {
         >
           {profile.wordmarkText}
         </Link>
-        <p className="font-mono text-meta tracking-label uppercase text-text-meta leading-snug">
+        <p className="font-mono text-meta tracking-label uppercase text-text-meta leading-snug text-balance">
           Technology designed with accessibility in mind.
         </p>
         {/* Light/dark theme toggle */}

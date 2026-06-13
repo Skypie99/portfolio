@@ -588,6 +588,12 @@ html.dark body::after { opacity: 0.10; }
 .nums-oldstyle {
   font-feature-settings: 'onum' 1, 'kern' 1, 'liga' 1, 'calt' 1;
 }
+/* Lining figures — cap-height numerals for serif credential titles, so
+   "Claude 101" matches the lining mono of the verify pill that certifies
+   the same string (never "1o1"). Sibling of .nums-oldstyle above. */
+.nums-lining {
+  font-feature-settings: 'lnum' 1, 'kern' 1, 'liga' 1, 'calt' 1;
+}
 
 /* Lit-from-above panel — a hairline top-highlight so flat surfaces read convex. */
 .panel-lit {

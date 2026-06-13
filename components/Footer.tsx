@@ -177,7 +177,7 @@ export function Footer() {
             SkyPi Studio — Est. 2026
           </p>
           <p className="font-mono text-meta tracking-label uppercase text-text-meta">
-            Built in the Okanagan Valley, British Columbia.
+            Built in the Okanagan Valley, British{'\u00A0'}Columbia.
           </p>
         </div>
       </Reveal>
