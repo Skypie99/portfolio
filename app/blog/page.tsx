@@ -6,6 +6,7 @@ import { Reveal } from '@/components/Reveal';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getBlogPosts, getProfile } from '@/lib/content';
+import { bindSoloLetters } from '@/lib/markdown';
 
 export function generateMetadata(): Metadata {
   const profile = getProfile();
@@ -131,7 +132,7 @@ export default function BlogIndexPage() {
                         )}
                         style={{ letterSpacing: '-0.01em' }}
                       >
-                        {post.title}
+                        {bindSoloLetters(post.title)}
                       </h3>
 
                       {/* Summary */}

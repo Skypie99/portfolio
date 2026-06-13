@@ -378,7 +378,7 @@ export default function HomePage() {
                       {c.issuer}
                     </p>
                     <div className="flex-1 flex flex-col gap-1">
-                      <h3 className="font-serif font-normal text-step-2 text-near-black leading-tight transition-colors duration-fast ease-out group-hover:text-accent-text">
+                      <h3 className="font-serif font-normal text-step-2 text-near-black leading-tight nums-lining transition-colors duration-fast ease-out group-hover:text-accent-text">
                         {c.title}
                       </h3>
                       <p className="font-mono text-meta tracking-label uppercase text-text-meta">
