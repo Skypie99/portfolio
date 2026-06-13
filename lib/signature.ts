@@ -16,6 +16,7 @@ export type DeviceFrameKind = 'phone' | 'window' | 'plate' | 'none';
 export const SIGNATURE: Record<string, string> = {
   'accessmap': '224 150 90', // terracotta-amber
   'claude-corp': '206 134 78', // deep amber
+  'dashboard': '190 146 102', // steel-amber — the navy-and-amber dashboard's quieter light
   'prompt-library': '236 186 118', // gold
   'ghost-code': '72 195 210', // phantom cyan
   'ghost': '72 195 210',
@@ -48,6 +49,7 @@ const FRAME_FOR_SLUG: Record<string, DeviceFrameKind> = {
   'mutual': 'phone',
   'prompt-library': 'window',
   'claude-corp': 'window',
+  'dashboard': 'window',
   'ghost-code': 'plate',
   'ghost': 'plate',
 };

@@ -204,7 +204,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Featured card — full width, col-span preserved via className */}
             {deliverables[0] && (
-              <Reveal className="md:col-span-2" index={0}>
+              <Reveal variant="depth" className="md:col-span-2" index={0}>
                 <ProjectCard deliverable={deliverables[0]} wide index={0} />
               </Reveal>
             )}
@@ -218,6 +218,7 @@ export default function HomePage() {
                 <Reveal
                   key={d.id}
                   index={i + 1}
+                  variant="depth"
                   className={lone ? 'md:col-span-2' : undefined}
                 >
                   <ProjectCard deliverable={d} index={i + 1} wide={lone} />
@@ -377,7 +378,7 @@ export default function HomePage() {
                       {c.issuer}
                     </p>
                     <div className="flex-1 flex flex-col gap-1">
-                      <h3 className="font-serif font-normal text-step-2 text-near-black leading-tight transition-colors duration-fast ease-out group-hover:text-accent-text">
+                      <h3 className="font-serif font-normal text-step-2 text-near-black leading-tight nums-lining transition-colors duration-fast ease-out group-hover:text-accent-text">
                         {c.title}
                       </h3>
                       <p className="font-mono text-meta tracking-label uppercase text-text-meta">
@@ -439,21 +440,25 @@ export default function HomePage() {
           }}
         />
         {/* Reveal wraps only the content div; the ambient-drift div above is left as-is */}
-        <Reveal className="relative z-10 max-w-content mx-auto flex flex-col items-start gap-8">
-          <p className="font-mono text-label tracking-label uppercase text-wa-teal-deep flex items-center gap-2">
-            <Icon name="contact" className="w-3.5 h-3.5 text-terracotta" />
-            Let&apos;s talk
-          </p>
-          <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
-            Have something worth building?
-            <br />
-            Let&apos;s talk about it.
-          </h2>
-          {/* Bot-safe mailto — the address is assembled at runtime (matches the
-              /contact page), so it never sits raw in the static HTML for scrapers.
-              Shows "Email {address}" to humans after hydration. */}
-          <ContactEmail />
-        </Reveal>
+        <div className="relative z-10 max-w-content mx-auto flex flex-col items-start gap-8">
+          <Reveal variant="scene" className="flex flex-col items-start gap-8">
+            <p className="font-mono text-label tracking-label uppercase text-wa-teal-deep flex items-center gap-2">
+              <Icon name="contact" className="w-3.5 h-3.5 text-terracotta" />
+              Let&apos;s talk
+            </p>
+            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
+              Have something worth building?
+              <br />
+              Let&apos;s talk about it.
+            </h2>
+          </Reveal>
+          <Reveal index={1}>
+            {/* Bot-safe mailto — the address is assembled at runtime (matches the
+                /contact page), so it never sits raw in the static HTML for scrapers.
+                Shows "Email {address}" to humans after hydration. */}
+            <ContactEmail />
+          </Reveal>
+        </div>
       </section>
       </ContentReveal>
     </>

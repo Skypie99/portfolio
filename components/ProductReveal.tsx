@@ -84,8 +84,8 @@ const FRAME_PLACEMENT: Record<Exclude<DeviceFrameKind, 'none'>, string> = {
 /* Real-screenshot placement — the 86% width was tuned for the designed
    empty state's "device resting in the world" composition; a REAL landscape
    shot can carry more of the well, so window/plate widen to 94% (phone is
-   byte-identical). Selected only when media.src exists, so the two designed
-   empty states (claude-corp, prompt-library) never move. */
+   byte-identical). Selected only when media.src exists, so any designed
+   empty state never moves. */
 const FRAME_PLACEMENT_REAL: Record<Exclude<DeviceFrameKind, 'none'>, string> = {
   phone: FRAME_PLACEMENT.phone,
   window: 'absolute left-1/2 top-1/2 w-[94%] aspect-[16/11] -translate-x-1/2 -translate-y-1/2',

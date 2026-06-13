@@ -56,7 +56,7 @@ export function Sidebar() {
         >
           {profile.wordmarkText}
         </Link>
-        <p className="font-mono text-meta tracking-label uppercase text-text-meta leading-snug">
+        <p className="font-mono text-meta tracking-label uppercase text-text-meta leading-snug text-balance">
           Technology designed with accessibility in mind.
         </p>
         {/* Light/dark theme toggle */}
@@ -77,7 +77,9 @@ export function Sidebar() {
             aria-label={`Featured deliverable: ${featured.title} — ${featured.role}`}
             className="group flex flex-col gap-1.5 text-near-black transition-colors duration-fast ease-out"
           >
-            <span className="link-draw inline-block font-serif font-normal text-step-2 leading-tight">
+            {/* Half-rank below the wordmark — one serif crown per rail (HI-3).
+                Matches the slot's own fallback rank. */}
+            <span className="link-draw inline-block font-serif font-normal text-display-s leading-tight">
               {featured.title}
             </span>
             <span className="rail-trim font-sans text-body-sm text-charcoal">
