@@ -35,6 +35,8 @@ function parseStat(value: string): { target: number; suffix: string } | null {
  *    readers never hear "0, 1, 2…".
  *  - SSR / no-JS / reduced-motion render the final value immediately — the
  *    number is never hidden and there is no flash of "0".
+ *  - The figure caps at --fs-step-5: the display clamp's upper range belongs
+ *    to route H1s (HI-4) — the stats win their cells, never the page.
  */
 export function CountUpStat({ value, emberClass, label }: CountUpStatProps) {
   const parsed = useMemo(() => parseStat(value), [value]);
@@ -67,7 +69,7 @@ export function CountUpStat({ value, emberClass, label }: CountUpStatProps) {
     <p
       ref={ref}
       className={cn(
-        'font-serif font-light text-[clamp(2.75rem,5.5vw,4.25rem)] leading-none mb-1 tabular-nums',
+        'font-serif font-light text-[clamp(2.75rem,5.5vw,var(--fs-step-5))] leading-none mb-1 tabular-nums',
         // tactile (wow 2026-06-04, C4): the figure leans in a hair when its cell
         // is hovered — the count "completes under your hand". Compositor-only,
         // origin-left so it stays aligned; snaps to rest under reduced motion.
