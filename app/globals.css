@@ -972,7 +972,7 @@ html.dark {
      moves and light ink keeps WCAG AA over every scroll state. */
   --sky-day-1: 118 72 46;  --sky-day-2: 148 86 48;  --sky-day-3: 176 102 56;  --sky-day-4: 60 42 30;
   --sky-dusk-1: 46 44 78;  --sky-dusk-2: 92 58 66;  --sky-dusk-3: 128 72 54;  --sky-dusk-4: 24 20 24;
-  --sky-night-1: 6 10 20;  --sky-night-2: 9 13 26;  --sky-night-3: 15 19 32;  --sky-night-4: 5 8 13;
+  --sky-night-1: 5 9 24;  --sky-night-2: 11 15 30;  --sky-night-3: 24 24 34;  --sky-night-4: 18 13 9;
   --sky-sun: 232 178 106;
   /* Translucent panels over the now-revealed world (see `html.dark body`
      below). Kept near the original alphas — the reveal, not a lower alpha, is
@@ -1076,6 +1076,34 @@ html.dark .world-sun {
   opacity: clamp(0.12, calc(1 - var(--day-night, var(--day-night-rest))), 0.35);
   background: linear-gradient(90deg,
     transparent, rgb(var(--sky-sun) / 0.22) 24%, rgb(var(--sky-sun) / 0.22) 76%, transparent);
+}
+/* The footer threshold ember — the last coal. The existing terracotta
+   hairline's alpha rises 0.4 → 0.55 as the world clock reaches night.
+   Scroll-linked VALUE, not an animation: under reduced motion / no-JS the
+   var is never set and the rest fallback applies (light rests at day → 0.4,
+   today's exact pixel; dark rests at night → 0.55, the lamp lit). Floor is
+   today's 0.4 — this line only ever gains presence, never loses it. */
+.footer-threshold {
+  background: linear-gradient(to right,
+    transparent,
+    rgb(var(--rgb-accent) / calc(0.4 + 0.15 * var(--day-night, var(--day-night-rest)))) 50%,
+    transparent);
+}
+/* Backdrop dither (dark only) — the identical self-contained turbulence tile
+   as the global grain (body::after, line ~499), composited INSIDE the fixed
+   backdrop so the long near-black ramps quantize invisibly at the source.
+   Static (RM-safe), no pointer events (inherited from .world-backdrop),
+   clipped by its contain:strict. Paints above the sky/sun/horizon children
+   (tree order) and below all content (the backdrop is z-index:-1). The
+   global grain at 0.10 is unchanged; text surfaces stay pixel-identical
+   apart from the ~0.025 effective contribution under 0.5-alpha panels. */
+html.dark .world-backdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
 }
 
 /* Translucent content surfaces — replace the opaque section bg-* so the fixed
