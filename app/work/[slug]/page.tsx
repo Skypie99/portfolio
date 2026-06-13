@@ -84,12 +84,13 @@ function renderMarkdown(markdown: string): React.ReactNode[] {
 
 type RouteParams = { slug: string };
 
-type CaseStudyCategory = 'accessmap' | 'claude-corp' | 'prompt-library' | 'ghost' | 'mutual';
+type CaseStudyCategory = 'accessmap' | 'claude-corp' | 'dashboard' | 'prompt-library' | 'ghost' | 'mutual';
 
 function toCategory(id: string): CaseStudyCategory {
   const map: Record<string, CaseStudyCategory> = {
     'accessmap': 'accessmap',
     'claude-corp': 'claude-corp',
+    'dashboard': 'dashboard',
     'prompt-library': 'prompt-library',
     'ghost-code': 'ghost',
     'mutual-mesh': 'mutual',
@@ -159,9 +160,17 @@ export default async function WorkDetailPage({
     notFound();
   }
   const d = deliverable;
-  // "Other work" — up to 2 sibling deliverables, prefer same-year + non-self.
-  // Cheap quiet recommendation; no algorithm, just neighbours.
-  const others = allDeliverables.filter((x) => x.id !== d.id).slice(0, 2);
+  // "Other work" — the two catalogue neighbours, WRAPPING, so every study hands
+  // off to a different pair and all six deliverables are recommended somewhere.
+  // Still no algorithm — just neighbours, now actually circulating.
+  const n = allDeliverables.length;
+  const selfIndex = allDeliverables.findIndex((x) => x.id === d.id);
+  const others =
+    n > 1
+      ? [allDeliverables[(selfIndex + 1) % n], allDeliverables[(selfIndex + 2) % n]].filter(
+          (x, i, arr) => x.id !== d.id && arr.findIndex((y) => y.id === x.id) === i,
+        )
+      : [];
   // Hero well aspect is data-known at build: portrait 4/5 suits phone media
   // and the designed empty states; landscape REAL shots (window/plate frames)
   // were letterboxing in it — they get a 4/3 well so the screenshot presents
