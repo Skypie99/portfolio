@@ -9,7 +9,7 @@ import { useSpotlight } from '@/lib/motion';
 
 type CaseStudyCardProps = {
   title: string;
-  category: 'accessmap' | 'claude-corp' | 'prompt-library' | 'ghost' | 'mutual';
+  category: 'accessmap' | 'claude-corp' | 'dashboard' | 'prompt-library' | 'ghost' | 'mutual';
   description: string;
   href: string;
   /** Product media for the band (Show-the-work 2026-06-04). Omit → the

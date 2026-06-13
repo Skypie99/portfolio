@@ -73,6 +73,10 @@
       "src": "/images/deliverables/claude-corp/hero.svg",
       "alt": "A printed Constitution document on a linen surface beside a single terracotta-toned cup"
     },
+    "heroShot": {
+      "src": "/images/deliverables/claude-corp/card-landing.jpg",
+      "alt": "The Claude Corp landing page: a bold headline 'A 15-role AI team that ships software autonomously' over a dark hero with View on GitHub and Meet the team buttons"
+    },
     "cardImage": {
       "src": "/images/deliverables/claude-corp/card-landing.jpg",
       "alt": "The Claude Corp landing page: a bold headline 'A 15-role AI team that ships software autonomously' over a dark hero with View on GitHub and Meet the team buttons"
@@ -186,6 +190,10 @@
     "heroImage": {
       "src": "/images/deliverables/prompt-library/hero.svg",
       "alt": "A quiet workspace with a notebook of prompts open beside a laptop, soft natural light from the side"
+    },
+    "heroShot": {
+      "src": "/images/deliverables/prompt-library/card-landing.png",
+      "alt": "Prompt Library V2 landing — 'Your prompts, one keystroke away', a prompt search box, and category filters"
     },
     "cardImage": {
       "src": "/images/deliverables/prompt-library/card-landing.png",

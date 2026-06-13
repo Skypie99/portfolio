@@ -7,7 +7,7 @@ import { Reveal } from '@/components/Reveal';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getAllBlogPostSlugs, getBlogPosts, getProfile } from '@/lib/content';
-import { INLINE_CODE_CLASS, smartPunctuation } from '@/lib/markdown';
+import { bindSoloLetters, INLINE_CODE_CLASS, smartPunctuation } from '@/lib/markdown';
 
 type RouteParams = { slug: string };
 
@@ -182,7 +182,7 @@ export default async function BlogPostPage({
           <SettleHeading
             className="font-serif font-light text-display ember leading-[1.05] max-w-3xl mb-10 text-balance"
           >
-            {post.title}
+            {bindSoloLetters(post.title)}
           </SettleHeading>
 
           {/* Summary */}

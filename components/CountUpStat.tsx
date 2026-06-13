@@ -28,13 +28,18 @@ function parseStat(value: string): { target: number; suffix: string } | null {
  * one eased ramp (--ease-out / --dur-reveal) that resolves and stops.
  *
  * Craft details that keep it premium, not gimmicky:
- *  - `tabular-nums` locks digit width so the number never jitters horizontally.
+ *  - `tabular-nums` locks digit width while the count runs so the number
+ *    never jitters horizontally; it releases the frame the count completes,
+ *    and is never worn by SSR / no-JS / reduced-motion renders — the rest
+ *    state is the final frame.
  *  - Non-numeric values ("E2E") render statically — no nonsense scramble.
  *  - A trailing suffix ("+") only appears once the count completes.
  *  - The accessible name is the FINAL value ("789 tests passing"), so screen
  *    readers never hear "0, 1, 2…".
  *  - SSR / no-JS / reduced-motion render the final value immediately — the
  *    number is never hidden and there is no flash of "0".
+ *  - The figure caps at --fs-step-5: the display clamp's upper range belongs
+ *    to route H1s (HI-4) — the stats win their cells, never the page.
  */
 export function CountUpStat({ value, emberClass, label }: CountUpStatProps) {
   const parsed = useMemo(() => parseStat(value), [value]);
@@ -43,6 +48,7 @@ export function CountUpStat({ value, emberClass, label }: CountUpStatProps) {
   // Initial = final value: correct first paint, no-JS safe, no flash of 0.
   const [display, setDisplay] = useState(parsed ? parsed.target : 0);
   const started = useRef(false);
+  const counting = parsed !== null && display < parsed.target;
 
   useEffect(() => {
     if (!parsed || reduced || started.current || !inView) return;
@@ -67,7 +73,8 @@ export function CountUpStat({ value, emberClass, label }: CountUpStatProps) {
     <p
       ref={ref}
       className={cn(
-        'font-serif font-light text-[clamp(2.75rem,5.5vw,4.25rem)] leading-none mb-1 tabular-nums',
+        'font-serif font-light text-[clamp(2.75rem,5.5vw,var(--fs-step-5))] leading-none mb-1',
+        counting && 'tabular-nums',
         // tactile (wow 2026-06-04, C4): the figure leans in a hair when its cell
         // is hovered — the count "completes under your hand". Compositor-only,
         // origin-left so it stays aligned; snaps to rest under reduced motion.
