@@ -946,10 +946,13 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
      shift still reads clearly. This is deliberately GENTLER than the dark arc:
      less luminance travel, warm throughout (no cool twilight), so light stays
      airy/calm/bright. The DRAMATIC deep world lives in dark mode (below), where
-     light ink has the headroom for it. (Verified by the live contrast pass.) */
+     light ink has the headroom for it. (Verified by the live contrast pass.)
+     The night stops lean a few degrees toward --rgb-rose at locked luminance
+     (desert alpenglow; still warm throughout, no cool twilight); re-verified
+     by the live contrast pass 2026-06-12. */
   --sky-day-1: 255 236 206;  --sky-day-2: 255 221 176;  --sky-day-3: 252 205 162;  --sky-day-4: 230 210 182;
-  --sky-dusk-1: 250 224 196; --sky-dusk-2: 252 216 184; --sky-dusk-3: 248 210 176; --sky-dusk-4: 234 212 184;
-  --sky-night-1: 245 206 158;--sky-night-2: 244 210 168;--sky-night-3: 240 212 180;--sky-night-4: 236 214 176;
+  --sky-dusk-1: 250 224 196; --sky-dusk-2: 252 216 184; --sky-dusk-3: 248 210 176; --sky-dusk-4: 238 211 184;
+  --sky-night-1: 247 204 175;--sky-night-2: 245 209 181;--sky-night-3: 242 211 185;--sky-night-4: 238 213 187;
   --sky-sun: 255 220 158;
   /* Translucent content-surface alphas — STATIC, set just above the alpha the
      contrast pass requires for ink-meta ≥ 4.5 over EVERY world state, so the
@@ -1032,7 +1035,9 @@ body.bg-canvas {
     rgb(var(--sky-night-1)) 0%, rgb(var(--sky-night-2)) 58%,
     rgb(var(--sky-night-3)) 80%, rgb(var(--sky-night-4)) 100%);
 }
-/* The sun — a soft warm disc high at golden, sinking + dimming toward night. */
+/* The sun — a soft warm disc high at golden, sinking + dimming toward night.
+   The light skirt dissolves out to 80% so the falloff never cuts a contour
+   across bare-field pages (the blog post's reading column crosses it). */
 .world-sun {
   position: absolute;
   left: 50%;
@@ -1044,7 +1049,8 @@ body.bg-canvas {
   opacity: clamp(0, calc(1.2 - var(--day-night, var(--day-night-rest)) * 1.35), 1);
   will-change: transform, opacity;
   background: radial-gradient(circle at 50% 50%,
-    rgb(var(--sky-sun) / 0.7) 0%, rgb(var(--sky-sun) / 0.34) 30%, rgb(var(--sky-sun) / 0) 62%);
+    rgb(var(--sky-sun) / 0.7) 0%, rgb(var(--sky-sun) / 0.34) 30%,
+    rgb(var(--sky-sun) / 0.16) 48%, rgb(var(--sky-sun) / 0.06) 64%, rgb(var(--sky-sun) / 0) 80%);
 }
 /* In dark mode the sun is the clearest "sunset" cue — a larger, warm disc that
    sits higher in the open sky and sinks further toward night. It lives in the
