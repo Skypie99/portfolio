@@ -41,11 +41,7 @@ export function Footer() {
       {/* faint warm hairline-glow marking the footer threshold */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-px"
-        style={{
-          background:
-            'linear-gradient(to right, transparent, rgb(var(--rgb-accent) / 0.4) 50%, transparent)',
-        }}
+        className="pointer-events-none absolute inset-x-0 top-0 h-px footer-threshold"
       />
       <Reveal className="max-w-content mx-auto">
         {/* Brand block — sits above the columns */}
