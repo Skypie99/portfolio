@@ -110,15 +110,10 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
           </div>
 
           <div className="flex flex-col gap-5">
-            <p
-              className="font-sans font-light text-body-sm leading-[1.65] text-charcoal text-pretty"
-              style={{
-                display: '-webkit-box',
-                WebkitLineClamp: 2,
-                WebkitBoxOrient: 'vertical',
-                overflow: 'hidden',
-              }}
-            >
+            {/* TY-2: no line clamp — the schema's 160-char summary cap is the
+                fence; equal card heights come from the inscription's mt-auto,
+                never from amputating the sentence with an ellipsis. */}
+            <p className="font-sans font-light text-body-sm leading-[1.65] text-charcoal text-pretty">
               {d.summary}
             </p>
 
