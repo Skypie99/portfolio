@@ -85,7 +85,7 @@
     "credentialUrl": "https://www.coursera.org/account/accomplishments/specialization/MIQJBUVPS86V",
     "credentialId": "MIQJBUVPS86V",
     "badgeImage": {
-      "src": "/images/certificates/google-prompting-essentials-2025/badge.png",
+      "src": "/images/certificates/google-prompting-essentials-2025/badge.svg",
       "alt": "Google Prompting Essentials Specialization credential badge"
     },
     "tags": ["ai", "google", "prompting", "specialization"]
@@ -98,7 +98,7 @@
     "credentialUrl": "https://www.coursera.org/account/accomplishments/records/LNNCK1O38M7U",
     "credentialId": "LNNCK1O38M7U",
     "badgeImage": {
-      "src": "/images/certificates/umich-python-2025/badge.png",
+      "src": "/images/certificates/umich-python-2025/badge.svg",
       "alt": "University of Michigan Programming for Everybody Python completion badge"
     },
     "tags": ["python", "programming", "coursera"]
@@ -111,7 +111,7 @@
     "credentialUrl": "https://www.coursera.org/account/accomplishments/records/5Z1UGVB7BO2N",
     "credentialId": "5Z1UGVB7BO2N",
     "badgeImage": {
-      "src": "/images/certificates/deeplearning-ai-for-everyone-2025/badge.png",
+      "src": "/images/certificates/deeplearning-ai-for-everyone-2025/badge.svg",
       "alt": "DeepLearning.AI AI For Everyone completion badge"
     },
     "tags": ["ai", "deeplearning", "foundations"]
