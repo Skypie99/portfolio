@@ -52,7 +52,7 @@ export function CertCard({ certificate: c }: { certificate: Certificate }) {
             tile lives in `.cert-badge-well` (globals.css); --cert-sig is the
             per-issuer hue consumed by the dark surround (item 20, CO-7). */}
         <div
-          className="cert-badge-well relative mb-6 flex aspect-square w-full items-center justify-center overflow-hidden rounded-md border border-[rgb(var(--rgb-ink)/0.08)]"
+          className="cert-badge-well relative mb-6 flex aspect-square w-full items-center justify-center overflow-hidden rounded-md border border-[rgb(var(--rgb-ink)/0.14)]"
           style={{ '--cert-sig': signatureFor(issuerKey(c.issuer)) } as CSSProperties}
         >
           <BadgeImage
