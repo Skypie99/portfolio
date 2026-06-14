@@ -1114,10 +1114,13 @@ html.dark .world-sun {
    identical). --cert-sig (set per-issuer inline) is consumed only by the dark
    surround below (item 20). */
 .cert-badge-well {
-  background: radial-gradient(60% 60% at 50% 36%,
+  /* Deeper toward the rim so the cream tile reads as a distinct recessed panel
+     against the frosted card — the badge sits IN a tile, not floating (HI-5). */
+  background: radial-gradient(66% 66% at 50% 34%,
     rgb(var(--rgb-surface-warm)) 0%,
-    rgb(var(--rgb-surface-mid)) 55%,
+    rgb(var(--rgb-surface-mid)) 46%,
     rgb(var(--rgb-canvas-alt)) 100%);
+  box-shadow: inset 0 1px 3px rgb(60 44 28 / 0.08);
 }
 /* CO-7 (§7.3, DARK only): the badge well's surround deepens one luminance step,
    tinted by the per-issuer --cert-sig, so the badge reads world → lit mat →
