@@ -223,10 +223,27 @@
   --fs-display: clamp(2.75rem, 1.6rem + 5vw, 4.25rem);  /* route page titles (44→68px) */
   --fs-hero:    clamp(3rem, 1.4rem + 6vw, 5.5rem);       /* homepage hero (48→88px) */
 
+  /* --- §7.4 TY-8 — promoted display clamps (were inline style/text-[clamp()] in
+         components). IDENTICAL computed values; their line-height + tracking are
+         folded into the tailwind fontSize tuples (+ the --ls-* tokens below).
+         Guarded by token-parity.test.ts. --- */
+  --fs-card-numeral:    clamp(2.6rem, 5vw, 3.6rem);      /* ProjectCard / CaseStudyCard numeral */
+  --fs-card-title:      clamp(1.85rem, 2.6vw, 2.4rem);   /* ProjectCard / CaseStudyCard title */
+  --fs-stat-figure:     clamp(2.75rem, 5.5vw, var(--fs-step-5)); /* CountUpStat — ceiling = step-5 (Flagship #2) */
+  --fs-nav-item:        clamp(2rem, 6.2vw, 3.75rem);     /* HamburgerNav overlay item */
+  --fs-prose-h2:        clamp(1.5rem, 3vw, 2.25rem);     /* blog post h2 */
+  --fs-prose-h3:        clamp(1.25rem, 2.5vw, 1.75rem);  /* blog post h3 */
+  --fs-case-h2:         clamp(1.5rem, 3vw, 2rem);        /* case-study renderer h2 */
+  --fs-case-h3:         clamp(1.25rem, 2.5vw, 1.5rem);   /* case-study renderer h3 */
+  --fs-blog-card-title: clamp(1.5rem, 3.5vw, 2.25rem);  /* blog listing card title */
+
   --lh-tight:   1.1;
   --lh-snug:    1.2;
-  --ls-display: -0.02em;
-  --ls-hero:    -0.025em;
+  --ls-display:    -0.02em; /* card numeral + nav item (also display/step-5 tier) */
+  --ls-hero:       -0.025em;
+  --ls-card-title: -0.022em; /* §7.4 TY-8 — promoted off-token trackings */
+  --ls-heading:    -0.01em;  /* blog/case-study h2+h3 + blog card title */
+  --ls-stat:       -0.03em;  /* CountUpStat figure */
 
   /* --- Easing vocabulary (entrance / exit / snap) beside --ease-out/soft --- */
   --ease-entrance: cubic-bezier(0.16, 1, 0.3, 1);     /* arriving (expo-out) */

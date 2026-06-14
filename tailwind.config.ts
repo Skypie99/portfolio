@@ -118,8 +118,23 @@ const config: Config = {
         'step-3': ['var(--fs-step-3)', { lineHeight: '1.2', letterSpacing: '-0.01em' }], // 31px card title
         'step-4': ['var(--fs-step-4)', { lineHeight: '1.15', letterSpacing: '-0.015em' }], // 39px section head
         'step-5': ['var(--fs-step-5)', { lineHeight: '1.1', letterSpacing: '-0.02em' }], // 49px page title
-        display: ['var(--fs-display)', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+        // §7.4 TY-8 — display line-height folded 1.1 → 1.05 (every non-test
+        // text-display call site overrode to leading-[1.05]; those are removed).
+        display: ['var(--fs-display)', { lineHeight: '1.05', letterSpacing: '-0.02em' }],
         hero: ['var(--fs-hero)', { lineHeight: '1.05', letterSpacing: '-0.025em' }],
+
+        // §7.4 TY-8 — promoted display tokens (var-backed by --fs-* in globals.css;
+        // line-height + tracking folded in from the former inline styles).
+        // Registered in lib/cn.ts CUSTOM_FONT_SIZES + guarded by token-parity.test.ts.
+        'card-numeral': ['var(--fs-card-numeral)', { letterSpacing: 'var(--ls-display)' }],
+        'card-title': ['var(--fs-card-title)', { lineHeight: '1.05', letterSpacing: 'var(--ls-card-title)' }],
+        'stat-figure': ['var(--fs-stat-figure)', { lineHeight: '1', letterSpacing: 'var(--ls-stat)' }],
+        'nav-item': ['var(--fs-nav-item)', { lineHeight: '1.05', letterSpacing: 'var(--ls-display)' }],
+        'prose-h2': ['var(--fs-prose-h2)', { lineHeight: '1.1', letterSpacing: 'var(--ls-heading)' }],
+        'prose-h3': ['var(--fs-prose-h3)', { lineHeight: '1.15', letterSpacing: 'var(--ls-heading)' }],
+        'case-h2': ['var(--fs-case-h2)', { lineHeight: '1.1', letterSpacing: 'var(--ls-heading)' }],
+        'case-h3': ['var(--fs-case-h3)', { lineHeight: '1.15', letterSpacing: 'var(--ls-heading)' }],
+        'blog-card-title': ['var(--fs-blog-card-title)', { lineHeight: '1.15', letterSpacing: 'var(--ls-heading)' }],
       },
       letterSpacing: {
         body: '0.0156em', // +0.25px

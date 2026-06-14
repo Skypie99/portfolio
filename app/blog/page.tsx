@@ -54,7 +54,7 @@ export default function BlogIndexPage() {
             Notes — {posts.length} {posts.length === 1 ? 'entry' : 'entries'}
           </p>
           <SettleHeading
-            className="font-serif font-light text-display ember leading-[1.05] max-w-3xl mb-12 text-balance"
+            className="font-serif font-light text-display ember max-w-3xl mb-12 text-balance"
           >
             Notes
           </SettleHeading>
@@ -128,11 +128,10 @@ export default function BlogIndexPage() {
                       {/* Title */}
                       <h3
                         className={cn(
-                          'font-serif font-normal md:font-light text-[clamp(1.5rem,3.5vw,2.25rem)] leading-[1.15] text-balance',
+                          'font-serif font-normal md:font-light text-blog-card-title text-balance',
                           'text-near-black group-hover:text-accent-text group-focus-visible:text-accent-text',
                           'transition-colors duration-fast ease-out',
                         )}
-                        style={{ letterSpacing: '-0.01em' }}
                       >
                         {bindSoloLetters(post.title)}
                       </h3>

@@ -62,7 +62,7 @@ export default function AboutPage() {
             A Brief Account
           </p>
           <SettleHeading
-            className="font-serif font-light text-display ember leading-[1.05] max-w-3xl mb-16 text-balance"
+            className="font-serif font-light text-display ember max-w-3xl mb-16 text-balance"
           >
             I build things with AI.
           </SettleHeading>

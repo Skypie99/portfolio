@@ -56,16 +56,14 @@ export function CaseStudyCard({ title, category, description, href, media, index
       <div className="relative z-10 flex flex-1 flex-col p-7 md:p-12">
         <span
           aria-hidden="true"
-          className="font-serif font-light leading-none tabular-nums text-near-black/30 transition-colors duration-slow ease-gh-glide group-hover:text-near-black/45"
-          style={{ fontSize: 'clamp(2.6rem, 5vw, 3.6rem)', letterSpacing: '-0.02em' }}
+          className="font-serif font-light text-card-numeral leading-none tabular-nums text-near-black/30 transition-colors duration-slow ease-gh-glide group-hover:text-near-black/45"
         >
           {numeral}
         </span>
 
         <div className="mt-auto flex flex-col gap-4">
           <h3
-            className="font-serif font-light leading-[1.05] text-near-black"
-            style={{ letterSpacing: '-0.022em', fontSize: 'clamp(1.85rem, 2.6vw, 2.4rem)' }}
+            className="font-serif font-light text-card-title text-near-black"
           >
             {title}
           </h3>

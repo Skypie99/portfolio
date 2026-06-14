@@ -38,7 +38,7 @@ export default function ContactPage() {
             Let&apos;s talk
           </p>
           <SettleHeading
-            className="font-serif font-light text-display ember leading-[1.05] max-w-3xl mb-12 text-balance"
+            className="font-serif font-light text-display ember max-w-3xl mb-12 text-balance"
           >
             Write to me.
           </SettleHeading>

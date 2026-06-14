@@ -71,8 +71,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
         <div className="flex items-start justify-between gap-4">
           <span
             aria-hidden="true"
-            className="font-serif font-light leading-none tabular-nums text-near-black/30 transition-colors duration-slow ease-gh-glide group-hover:text-near-black/45"
-            style={{ fontSize: 'clamp(2.6rem, 5vw, 3.6rem)', letterSpacing: '-0.02em' }}
+            className="font-serif font-light text-card-numeral leading-none tabular-nums text-near-black/30 transition-colors duration-slow ease-gh-glide group-hover:text-near-black/45"
           >
             {numeral}
           </span>
@@ -92,11 +91,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
               {d.role} · {d.year}
             </p>
             <h3
-              className="font-serif font-light leading-[1.05] text-near-black"
-              style={{
-                letterSpacing: '-0.022em',
-                fontSize: 'clamp(1.85rem, 2.6vw, 2.4rem)',
-              }}
+              className="font-serif font-light text-card-title text-near-black"
             >
               <Link
                 href={`/work/${d.id}/`}

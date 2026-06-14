@@ -34,7 +34,7 @@ export default function NotFound() {
         </nav>
 
         <SettleHeading
-          className="font-serif font-light text-display ember leading-[1.05] mb-8 text-balance"
+          className="font-serif font-light text-display ember mb-8 text-balance"
         >
           Nothing here.
         </SettleHeading>
