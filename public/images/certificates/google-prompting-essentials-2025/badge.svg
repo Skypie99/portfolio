@@ -1,8 +1,0 @@
-<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#1b1610" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
-  <!-- speech bubble (prompt) -->
-  <path d="M44 96 C44 79 56 72 72 71 C112 68 152 69 178 73 C193 75 198 88 197 102 C196 122 198 140 195 153 C193 166 181 171 166 172 C140 174 110 173 88 173 L67 196 C61 203 51 200 52 190 L53 172 C41 169 38 158 38 145 C37 126 40 108 44 96 Z" fill="#e6e0d3"/>
-  <path d="M71 110 C101 107 139 108 167 110" stroke-width="8"/>
-  <path d="M71 136 C92 134 120 135 141 136" stroke-width="8"/>
-  <!-- sparkle (the 'essential' spark) -->
-  <path d="M204 42 C208 62 213 68 231 72 C213 76 208 82 204 102 C200 82 195 76 177 72 C195 68 200 62 204 42 Z" fill="#e6e0d3"/>
-</svg>
