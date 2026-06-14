@@ -1,13 +1,10 @@
 'use client';
 
-import type { CSSProperties } from 'react';
-
 import BadgeImage from '@/components/BadgeImage';
 import { CardField } from '@/components/CardField';
 import { CredentialBadge } from '@/components/CredentialBadge';
 import { useSpotlight } from '@/lib/motion';
 import type { Certificate } from '@/lib/schema';
-import { signatureFor } from '@/lib/signature';
 
 const MONTHS = [
   'JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE',
@@ -45,24 +42,19 @@ export function CertCard({ certificate: c }: { certificate: Certificate }) {
     >
       <CardField slug={issuerKey(c.issuer)} />
 
-      <div className="relative z-10 flex h-full flex-col items-center text-center">
-        {/* Badge well — HI-5: the cream tile the Anthropic doodles already use;
-            third-party badges are equalized to a consistent, slightly-reduced
-            scale inside it (artwork pixels untouched, protected #12). The light
-            tile lives in `.cert-badge-well` (globals.css); --cert-sig is the
-            per-issuer hue consumed by the dark surround (item 20, CO-7). */}
+      <div className="relative z-10 flex h-full flex-col">
+        {/* Badge well — lit from above, badge leans in on hover */}
         <div
-          className="cert-badge-well relative mb-6 flex aspect-square w-full items-center justify-center overflow-hidden rounded-md border border-[rgb(var(--rgb-ink)/0.14)]"
-          style={{ '--cert-sig': signatureFor(issuerKey(c.issuer)) } as CSSProperties}
+          className="relative mb-6 flex aspect-square w-full items-center justify-center overflow-hidden rounded-md border border-[rgb(var(--rgb-ink)/0.08)]"
+          style={{
+            background:
+              'radial-gradient(60% 60% at 50% 36%, rgb(var(--rgb-surface-warm)) 0%, rgb(var(--rgb-surface-mid)) 55%, rgb(var(--rgb-canvas-alt)) 100%)',
+          }}
         >
-          {/* Fill the well via absolute inset (robust everywhere) and reduce
-              scale with padding, NOT percentage max-h/max-w on a flex child —
-              WebKit collapses % heights against an aspect-ratio parent to zero,
-              which hid every badge in Safari. p-[15%] → ~70% (item 18's scale). */}
           <BadgeImage
             src={c.badgeImage.src}
             alt={c.badgeImage.alt}
-            className="absolute inset-0 h-full w-full object-contain p-[15%] transition-transform duration-slow ease-gh-glide group-hover:scale-[1.03] group-focus-within:scale-[1.03]"
+            className="absolute inset-0 h-full w-full object-contain p-4 transition-transform duration-slow ease-gh-glide group-hover:scale-[1.03] group-focus-within:scale-[1.03]"
           />
         </div>
 
