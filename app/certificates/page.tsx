@@ -58,7 +58,9 @@ export default function CertificatesPage() {
       {/* Certificates grid */}
       <section
         className={cn(
-          'px-gutter pb-24 lg:pb-32 pt-24 lg:pt-32',
+          // SP-3: closer is its own section below; pb becomes a ~72px content
+          // gap so it doesn't double-stack with the closer. §7.4 will rename.
+          'px-gutter pb-[4.5rem] pt-24 lg:pt-32',
           // Dani wave4: warm-white for the grid section — blush cards pop on warm-white.
           'world-surface-alt border-t border-border-decorative',
         )}
@@ -75,16 +77,20 @@ export default function CertificatesPage() {
             <AnimatedCertGrid certificates={certificates} />
           )}
 
-          {/* Back link */}
-          <div className="mt-20">
-            <Link
-              href="/"
-              className="group inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
-            >
-              <span aria-hidden="true" className="inline-block transition-transform duration-base ease-gh-glide group-hover:-translate-x-1">{'←'}</span>
-              Back to home
-            </Link>
-          </div>
+        </div>
+      </section>
+
+      {/* Back link — SP-3 unified closer grammar: hairline border-t + ~72px
+          (py-[4.5rem]). world-surface alternates off the -alt grid above. */}
+      <section className="px-gutter py-[4.5rem] world-surface border-t border-border-decorative">
+        <div className="max-w-content mx-auto">
+          <Link
+            href="/"
+            className="group inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+          >
+            <span aria-hidden="true" className="inline-block transition-transform duration-base ease-gh-glide group-hover:-translate-x-1">{'←'}</span>
+            Back to home
+          </Link>
         </div>
       </section>
     </>

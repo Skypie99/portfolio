@@ -107,7 +107,10 @@ export default function HomePage() {
         id="showcase"
         className={cn(
           'relative isolate overflow-hidden',
-          'px-gutter py-20 lg:py-24',
+          // SP-4: ascending (was py-20 lg:py-24 = 200→96px, shrinking as the
+          // screen grows). Renders ≈80px below lg → 96px at lg; desktop value
+          // unchanged (protected #5). §7.4 refactor will rename the plumbing.
+          'px-gutter py-[5rem] lg:py-24',
           'world-surface-cool',
           'border-t border-wa-teal-soft/40',
         )}
@@ -135,7 +138,8 @@ export default function HomePage() {
             {showcaseChips.map(({ stat, label, project, tags }, i) => (
               <Reveal
                 key={project}
-                index={i}
+                // MO-4: cap the stagger (site idiom, work/[slug]/page.tsx:42-44)
+                index={Math.min(i, 4)}
                 variant="depth"
                 className={cn(
                   'group flex flex-col bg-surface-mid p-6 md:p-7',
@@ -372,7 +376,9 @@ export default function HomePage() {
           <ul className="flex flex-col divide-y divide-stone/70">
             {certificates.map((c, i) => (
               <li key={c.id} className="py-8 first:pt-0 last:pb-0 group">
-                <Reveal index={i} variant="depth">
+                {/* MO-4: cap the stagger so a fold-edge row never holds at
+                    opacity 0 after an anchor jump (site idiom Math.min(i, 4)). */}
+                <Reveal index={Math.min(i, 4)} variant="depth">
                   <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-12 transition-transform duration-base ease-out group-hover:translate-x-1">
                     <p className="font-mono text-meta tracking-label uppercase text-text-meta md:w-40 shrink-0">
                       {c.issuer}
@@ -401,11 +407,16 @@ export default function HomePage() {
                       href={c.credentialUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`View credential: ${c.title} from ${c.issuer}`}
+                      // CO-8: new-tab cue lives in the aria-label because it
+                      // overrides children (the rich credential name is kept);
+                      // the sr-only span mirrors the site's established pattern.
+                      aria-label={`View credential: ${c.title} from ${c.issuer} (opens in new tab)`}
                       className="font-mono text-meta tracking-label uppercase text-accent-text inline-flex items-center gap-1 transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 shrink-0"
                     >
                       View
-                      <span aria-hidden="true">{'→'}</span>
+                      {/* CO-8: ↗ external-link glyph (was the internal →) */}
+                      <span aria-hidden="true">{'↗'}</span>
+                      <span className="sr-only">(opens in new tab)</span>
                     </Link>
                   </div>
                 </Reveal>

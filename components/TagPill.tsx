@@ -42,9 +42,10 @@ export function TagPill({ children, className }: TagPillProps) {
         'inline-flex items-center px-3 py-1 rounded-pill',
         hue(children),
         'font-mono text-meta tracking-label uppercase',
-        // tactile-pass: a faint inset edge catches light on hover — tint-agnostic,
-        // no CLS (ring is box-shadow), and invisible at rest so the chip is unchanged.
-        'ring-1 ring-inset ring-transparent transition-[box-shadow,color,background-color] duration-base ease-out hover:ring-[rgb(var(--rgb-ink)/0.16)]',
+        // IN-4: no hover ring — a decorative chip answering the cursor (while
+        // `cursor` stays auto) impersonates a control it isn't. Stillness is the
+        // site's honest "not a control"; the affordance returns with the cursor
+        // and a destination only if a chip ever becomes a link.
         className,
       )}
     >
