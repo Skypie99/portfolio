@@ -1065,15 +1065,17 @@ html.dark .world-sun {
     rgb(var(--sky-sun) / 0.5) 0%, rgb(var(--sky-sun) / 0.24) 32%, rgb(var(--sky-sun) / 0) 64%);
 }
 /* The horizon line — a warm hairline (echoes .pr-horizon), fading with the light.
-   Softened (2026-06-10): opacity ceiling 1 -> 0.35 and gradient alpha 0.4 -> 0.22
-   so the viewport-fixed line reads as designed glow, not a stray artifact. */
+   Softened (2026-06-10): opacity ceiling 1 -> 0.35 and gradient alpha 0.4 -> 0.22.
+   SE-3 (light-only): ceiling 0.35 -> 0.22 — on the bare 404 the horizon was a
+   hairline with no job; light binds the ceiling, dark binds the 0.12 floor
+   (untouched, protected #15). Sub-perceptual on content pages. */
 .world-horizon {
   position: absolute;
   left: 0;
   right: 0;
   top: 60%;
   height: 1px;
-  opacity: clamp(0.12, calc(1 - var(--day-night, var(--day-night-rest))), 0.35);
+  opacity: clamp(0.12, calc(1 - var(--day-night, var(--day-night-rest))), 0.22);
   background: linear-gradient(90deg,
     transparent, rgb(var(--sky-sun) / 0.22) 24%, rgb(var(--sky-sun) / 0.22) 76%, transparent);
 }
@@ -1088,6 +1090,16 @@ html.dark .world-sun {
     transparent,
     rgb(var(--rgb-accent) / calc(0.4 + 0.15 * var(--day-night, var(--day-night-rest)))) 50%,
     transparent);
+}
+/* Cert badge well (HI-5 / CO-7) — the cream tile a credential badge rests on.
+   Light values are the exact gradient formerly inline in CertCard (pixel-
+   identical). --cert-sig (set per-issuer inline) is consumed only by the dark
+   surround below (item 20). */
+.cert-badge-well {
+  background: radial-gradient(60% 60% at 50% 36%,
+    rgb(var(--rgb-surface-warm)) 0%,
+    rgb(var(--rgb-surface-mid)) 55%,
+    rgb(var(--rgb-canvas-alt)) 100%);
 }
 /* Backdrop dither (dark only) — the identical self-contained turbulence tile
    as the global grain (body::after, line ~499), composited INSIDE the fixed
