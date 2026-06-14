@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import { Button } from '@/components/Button';
+import { SidebarFeatured } from '@/components/SidebarFeatured';
 import { SidebarProgress } from '@/components/SidebarProgress';
 import { SidebarSectionNav } from '@/components/SidebarSectionNav';
 import { ThemeToggle } from '@/components/ThemeToggle';
@@ -71,33 +72,10 @@ export function Sidebar() {
         <span className="font-mono text-label tracking-label uppercase text-text-meta">
           Featured
         </span>
-        {featured ? (
-          <Link
-            href={`/work/${featured.id}/`}
-            aria-label={`Featured deliverable: ${featured.title} — ${featured.role}`}
-            className="group flex flex-col gap-1.5 text-near-black transition-colors duration-fast ease-out"
-          >
-            {/* Half-rank below the wordmark — one serif crown per rail (HI-3).
-                Matches the slot's own fallback rank. */}
-            <span className="link-draw inline-block font-serif font-normal text-display-s leading-tight">
-              {featured.title}
-            </span>
-            <span className="rail-trim font-sans text-body-sm text-charcoal">
-              {featured.role}
-            </span>
-            <span className="rail-trim font-mono text-meta tracking-label uppercase text-accent-text mt-1 inline-flex items-center gap-1 transition-transform duration-fast ease-out group-hover:translate-x-1 group-focus-visible:translate-x-1">
-              Open it
-              <span aria-hidden="true">{'→'}</span>
-            </span>
-          </Link>
-        ) : (
-          <Link
-            href="/work/"
-            className="link-draw inline-block font-serif font-normal text-display-s text-near-black"
-          >
-            Latest work {'→'}
-          </Link>
-        )}
+        {/* IN-19 / §7.2: route-aware (aria-current + stilled arrow on-route).
+            Extracted to a client leaf so the rail stays a server component and
+            the featured JSON read stays on the server. */}
+        <SidebarFeatured featured={featured} />
       </div>
 
       {/* ── On this page (scroll-spy section index) ─────────────────── */}
