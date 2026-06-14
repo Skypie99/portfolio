@@ -47,7 +47,12 @@ export default function WorkIndexPage() {
         className={cn(
           'relative isolate overflow-hidden',
           'px-gutter',
-          'py-24 lg:py-32',
+          // Z6a/HI-1: hero owns the page-top beat only. Its bottom beat used to
+          // double-stack against the deliverables section's pt-24 lg:pt-32 (the
+          // single canonical seam) — an accidental ~256px doubling that pushed
+          // every deliverable below the fold. Drop the hero's bottom; the
+          // border-t section divider below carries the single transition.
+          'pt-24 lg:pt-32',
           'world-surface',
         )}
       >
