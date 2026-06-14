@@ -67,7 +67,10 @@ function renderMarkdown(markdown: string): React.ReactNode[] {
       return (
         <h3
           key={key}
-          className="font-serif font-light text-[clamp(1.25rem,2.5vw,1.75rem)] text-near-black leading-[1.15] mt-10 mb-4"
+          // SP-5: mt-8 (approach 48px) — onto the case-study renderer's 96/48
+          // (2:1) scale; was mt-10 (64px) > the h2's mt-14, a latent inversion.
+          // Pass 3 renderer unification (§7.7) may supersede this function.
+          className="font-serif font-light text-[clamp(1.25rem,2.5vw,1.75rem)] text-near-black leading-[1.15] mt-8 mb-4"
           style={{ letterSpacing: '-0.01em' }}
         >
           {block.slice(4)}
@@ -80,7 +83,9 @@ function renderMarkdown(markdown: string): React.ReactNode[] {
       return (
         <h2
           key={key}
-          className="font-serif font-light text-[clamp(1.5rem,3vw,2.25rem)] text-near-black leading-[1.1] mt-14 mb-5 first:mt-0"
+          // SP-5: mt-12 (approach 96px) — matches the case-study renderer's
+          // 96/48 (2:1); was mt-14 (56px) < the h3's mt-10. §7.7 may supersede.
+          className="font-serif font-light text-[clamp(1.5rem,3vw,2.25rem)] text-near-black leading-[1.1] mt-12 mb-5 first:mt-0"
           style={{ letterSpacing: '-0.01em' }}
         >
           {block.slice(3)}
@@ -224,8 +229,9 @@ export default async function BlogPostPage({
         </div>
       </section>
 
-      {/* Back link */}
-      <section className="px-gutter py-16 world-surface border-t border-border-decorative">
+      {/* Back link — SP-3 unified closer grammar: hairline border-t + ~72px
+          (py-[4.5rem]). world-surface alternates off the -alt prose above. */}
+      <section className="px-gutter py-[4.5rem] world-surface border-t border-border-decorative">
         <div className="max-w-content mx-auto">
           <Link
             href="/blog/"

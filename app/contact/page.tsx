@@ -55,14 +55,14 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Socials — Cycle 27: tightened bg from blush to warm-white +
-          smaller top padding so the section reads as a continuation of
-          the contact column, not a separate block. The hairline border-t
-          already provides the visual handoff. */}
+      {/* Socials — Cycle 27 / SP-2: warm-white + a true continuation top
+          padding so "Elsewhere" crests the fold; the hairline border-t carries
+          the handoff. Top pad renders ≈64/80px (arbitrary rem dodges the
+          inverted spacing namespace; §7.4 refactor will rename the plumbing). */}
       {profile.socials.length > 0 && (
         <section
           className={cn(
-            'px-gutter pt-16 lg:pt-20 pb-24 lg:pb-32',
+            'px-gutter pt-[4rem] lg:pt-[5rem] pb-24 lg:pb-32',
             'world-surface border-t border-border-decorative',
           )}
         >
@@ -104,12 +104,12 @@ export default function ContactPage() {
         </section>
       )}
 
-      {/* Back link — tightened vertical rhythm: a single nav link doesn't
-          need a full py-24 section (the hairline border carries the handoff). */}
+      {/* Back link — SP-3 unified closer grammar: hairline border-t + ~72px
+          symmetric (py-[4.5rem]). world-surface-alt alternates off the socials'
+          world-surface above. §7.4 refactor will rename the plumbing. */}
       <section
         className={cn(
-          'px-gutter py-16 lg:py-20',
-          // Dani wave4: warm-white for the closing section contrast.
+          'px-gutter py-[4.5rem]',
           'world-surface-alt border-t border-border-decorative',
         )}
       >

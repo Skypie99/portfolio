@@ -35,7 +35,10 @@ export function Footer() {
       className={cn(
         'relative',
         'world-surface-alt border-t border-border-decorative',
-        'px-gutter pt-20 pb-8',
+        // SP-6: step the threshold approach down below lg (was pt-20 = 200px at
+        // every width). Renders ≈112px below lg, keeps 12.5rem/200px at lg
+        // (protected #7). pb-8 exit asymmetry untouched. §7.4 will rename this.
+        'px-gutter pt-[7rem] lg:pt-20 pb-8',
       )}
     >
       {/* faint warm hairline-glow marking the footer threshold */}

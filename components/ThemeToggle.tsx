@@ -83,7 +83,10 @@ export function ThemeToggle({ className, withLabel = false }: Props) {
   return (
     <div className={cn('inline-flex items-center gap-3', className)}>
       <span className="font-mono text-meta tracking-label uppercase text-ink-meta">
-        {mounted ? (isDark ? 'Dark' : 'Light') : 'Theme'}
+        {/* IN-5: name the DESTINATION (the capitalized `next` mode), so the label
+            agrees with the icon and aria-label instead of reporting current state.
+            Existing strings only — no new copy. */}
+        {mounted ? (isDark ? 'Light' : 'Dark') : 'Theme'}
       </span>
       {button}
     </div>

@@ -26,8 +26,10 @@ type NavItem = { href: string; label: string };
 const NAV_ITEMS: NavItem[] = [
   { href: '/',              label: 'Home'         },
   { href: '/#work',         label: 'The Work'        },
-  { href: '/#certificates', label: 'Credentials'     },
+  // CO-9: A Brief Account before Credentials — matches the rail's order and the
+  // homepage physical order (#work → #about → #certificates).
   { href: '/#about',        label: 'A Brief Account' },
+  { href: '/#certificates', label: 'Credentials'     },
   { href: '/blog/',         label: 'Notes'           },
   { href: '/#contact',      label: "Let's talk"      },
 ];
@@ -114,6 +116,10 @@ export function HamburgerNav() {
           'transition-colors duration-fast ease-out',
           // Sidebar handles desktop navigation; hamburger is mobile-only.
           'md:hidden',
+          // IN-3: while the dialog is open this trigger (z-90) sits directly
+          // over the in-dialog close button (z-80) — make it inert so the close
+          // button wins the hit-test. Stays mounted so focus returns here on close.
+          open && 'pointer-events-none opacity-0',
         )}
       >
         <span aria-hidden="true" className="relative block w-[22px] h-[14px]">
@@ -169,7 +175,10 @@ export function HamburgerNav() {
               // so the overlay's ink/bone nav text holds AA over any content
               // behind; the blur only softens the faint bleed-through.
               'bg-cream/92 backdrop-blur-2xl',
-              'flex items-center justify-center',
+              // IN-2: flex-col so the wordmark renders on one line ABOVE the menu
+              // (without it the overlay is a row and strands the wordmark beside
+              // the menu as a two-line scrap).
+              'flex flex-col items-center justify-center',
               'p-8',
             )}
           >

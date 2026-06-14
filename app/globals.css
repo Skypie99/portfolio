@@ -190,7 +190,7 @@
   --sidebar-w:   280px;
   --content-max: 1120px;
   --measure:      65ch;   /* optimal body measure (~60–75 chars) */
-  --measure-wide: 72ch;   /* long-form prose (blog/case-study body) */
+  --measure-wide: 60ch;   /* long-form prose (blog/case-study body) — TY-5: re-derived from 72ch (rendered ~782px) to ≈650px (verified computed), the house optimum (was rendering ~90–96 real chars) */
   --gutter:      var(--space-6);
 
   /* Shadows */
@@ -877,6 +877,24 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
   background: rgb(var(--rgb-earth-deep) / 0.5);
   box-shadow: var(--shadow-lg), inset 0 0 26px rgb(var(--pr-sig, 72 195 210) / 0.18);
 }
+/* CO-7 (§7.3, DARK only): deepen the neutral media mat one luminance step and
+   tint it with the project's own --pr-sig, so a bright (light-mode) screenshot
+   reads world → lit mat → artifact. Light mode never matches; .pr-frame-plate
+   is already sig-tinted and left as-is. Static paint — RM / no-JS identical.
+   New html.dark .selector rules (not the flat html.dark{} block) — token-parity
+   never sees them. */
+html.dark .pr-frame-window {
+  background:
+    linear-gradient(180deg, rgb(var(--pr-sig, 224 150 90) / 0.10), transparent 70%),
+    rgb(var(--rgb-canvas) / 0.72);
+  border-color: rgb(var(--pr-sig, 224 150 90) / 0.22);
+}
+html.dark .pr-frame-phone {
+  background:
+    linear-gradient(180deg, rgb(var(--pr-sig, 224 150 90) / 0.10), transparent 70%),
+    rgb(var(--rgb-canvas) / 0.68);
+  border-color: rgb(var(--pr-sig, 224 150 90) / 0.22);
+}
 .pr-screen {
   position: relative;
   flex: 1 1 auto;
@@ -1065,15 +1083,17 @@ html.dark .world-sun {
     rgb(var(--sky-sun) / 0.5) 0%, rgb(var(--sky-sun) / 0.24) 32%, rgb(var(--sky-sun) / 0) 64%);
 }
 /* The horizon line — a warm hairline (echoes .pr-horizon), fading with the light.
-   Softened (2026-06-10): opacity ceiling 1 -> 0.35 and gradient alpha 0.4 -> 0.22
-   so the viewport-fixed line reads as designed glow, not a stray artifact. */
+   Softened (2026-06-10): opacity ceiling 1 -> 0.35 and gradient alpha 0.4 -> 0.22.
+   SE-3 (light-only): ceiling 0.35 -> 0.22 — on the bare 404 the horizon was a
+   hairline with no job; light binds the ceiling, dark binds the 0.12 floor
+   (untouched, protected #15). Sub-perceptual on content pages. */
 .world-horizon {
   position: absolute;
   left: 0;
   right: 0;
   top: 60%;
   height: 1px;
-  opacity: clamp(0.12, calc(1 - var(--day-night, var(--day-night-rest))), 0.35);
+  opacity: clamp(0.12, calc(1 - var(--day-night, var(--day-night-rest))), 0.22);
   background: linear-gradient(90deg,
     transparent, rgb(var(--sky-sun) / 0.22) 24%, rgb(var(--sky-sun) / 0.22) 76%, transparent);
 }
@@ -1088,6 +1108,29 @@ html.dark .world-sun {
     transparent,
     rgb(var(--rgb-accent) / calc(0.4 + 0.15 * var(--day-night, var(--day-night-rest)))) 50%,
     transparent);
+}
+/* Cert badge well (HI-5 / CO-7) — the cream tile a credential badge rests on.
+   Light values are the exact gradient formerly inline in CertCard (pixel-
+   identical). --cert-sig (set per-issuer inline) is consumed only by the dark
+   surround below (item 20). */
+.cert-badge-well {
+  background: radial-gradient(60% 60% at 50% 36%,
+    rgb(var(--rgb-surface-warm)) 0%,
+    rgb(var(--rgb-surface-mid)) 55%,
+    rgb(var(--rgb-canvas-alt)) 100%);
+}
+/* CO-7 (§7.3, DARK only): the badge well's surround deepens one luminance step,
+   tinted by the per-issuer --cert-sig, so the badge reads world → lit mat →
+   bright badge. Item 18's reduced/centered badge scale is theme-invariant and
+   unaffected (this only repaints the well). Light tile above is untouched. */
+html.dark .cert-badge-well {
+  background:
+    radial-gradient(60% 60% at 50% 36%, rgb(var(--cert-sig, 214 132 88) / 0.14) 0%, transparent 70%),
+    radial-gradient(120% 120% at 50% 36%,
+      rgb(var(--rgb-surface-warm)) 0%,
+      rgb(var(--rgb-earth-deep) / 0.9) 60%,
+      rgb(var(--rgb-canvas) / 0.95) 100%);
+  border-color: rgb(var(--cert-sig, 214 132 88) / 0.22);
 }
 /* Backdrop dither (dark only) — the identical self-contained turbulence tile
    as the global grain (body::after, line ~499), composited INSIDE the fixed
@@ -1193,7 +1236,7 @@ html.dark .world-backdrop::after {
               inset 0 -1px 1px 0 rgb(72 52 32 / 0.06),
               0 12px 28px -18px rgb(58 68 92 / 0.16),
               0 26px 54px -28px rgb(72 46 26 / 0.26);
-  transition: box-shadow 0.5s var(--ease-gh-glide), transform 0.5s var(--ease-gh-glide);
+  transition: box-shadow var(--dur-slow) var(--ease-gh-glide), transform var(--dur-slow) var(--ease-gh-glide);
 }
 /* spectral refractive rim — soft-blue on the cool side → clear → warm */
 .glass-card::before {
@@ -1211,7 +1254,7 @@ html.dark .world-backdrop::after {
   pointer-events: none;
   z-index: 2;
   opacity: 0.9;
-  transition: opacity 0.5s var(--ease-gh-glide);
+  transition: opacity var(--dur-slow) var(--ease-gh-glide);
 }
 /* dual specular — a broad sheen + a tighter COOL glint that glide with the cursor */
 .glass-card::after {
@@ -1228,7 +1271,7 @@ html.dark .world-backdrop::after {
       rgb(206 228 244 / 0.26), transparent 56%);
   mix-blend-mode: soft-light;
   opacity: 0.18;
-  transition: opacity 0.5s var(--ease-gh-glide);
+  transition: opacity var(--dur-slow) var(--ease-gh-glide);
 }
 @media (hover: hover) and (pointer: fine) {
   .glass-card:hover {
@@ -1243,7 +1286,9 @@ html.dark .world-backdrop::after {
   .glass-card:hover::after { opacity: 0.45; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .glass-card { transition: box-shadow 0.3s ease; }
+  /* MO-3: the dead `box-shadow 0.3s ease` was already neutralized by the global
+     RM rule (transition-duration: 0.01ms !important) — only the transform kill
+     does real work here. */
   .glass-card:hover { transform: none; }
 }
 /* dark mode — warm-dark frosted glass (the ink token flips light → AA) */

@@ -77,7 +77,9 @@ export default function WorkIndexPage() {
       <section
         className={cn(
           'px-gutter',
-          'pb-24 lg:pb-32',
+          // SP-3: closer is now its own section below; this beat becomes the
+          // content-internal gap (~72px) so it doesn't double-stack. §7.4.
+          'pb-[4.5rem]',
           // Dani wave4: warm-white contrasts the cream header for clear section rhythm.
           'world-surface-alt',
           'border-t border-border-decorative pt-24 lg:pt-32',
@@ -99,16 +101,20 @@ export default function WorkIndexPage() {
             <WorkFilterGrid deliverables={deliverables} />
           )}
 
-          {/* Back link */}
-          <div className="mt-20">
-            <Link
-              href="/"
-              className="group inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
-            >
-              <span aria-hidden="true" className="inline-block transition-transform duration-base ease-gh-glide group-hover:-translate-x-1">{'←'}</span>
-              Back to home
-            </Link>
-          </div>
+        </div>
+      </section>
+
+      {/* Back link — SP-3 unified closer grammar: hairline border-t + ~72px
+          (py-[4.5rem]). world-surface alternates off the -alt grid above. */}
+      <section className="px-gutter py-[4.5rem] world-surface border-t border-border-decorative">
+        <div className="max-w-content mx-auto">
+          <Link
+            href="/"
+            className="group inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+          >
+            <span aria-hidden="true" className="inline-block transition-transform duration-base ease-gh-glide group-hover:-translate-x-1">{'←'}</span>
+            Back to home
+          </Link>
         </div>
       </section>
     </>
