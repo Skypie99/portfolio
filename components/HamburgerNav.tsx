@@ -179,7 +179,7 @@ export function HamburgerNav() {
               // (without it the overlay is a row and strands the wordmark beside
               // the menu as a two-line scrap).
               'flex flex-col items-center justify-center',
-              'p-8',
+              'p-12',
             )}
           >
             {/* Alex A11y 2026-05-29: Explicit close button inside the dialog trap.
@@ -206,11 +206,11 @@ export function HamburgerNav() {
                 name when the nav is open. Mirrors the Sidebar wordmark treatment.
                 aria-hidden: decorative — the dialog aria-label already names this
                 as "Primary menu"; the wordmark text adds no navigational meaning. */}
-            <p aria-hidden="true" className="font-serif font-normal text-display-s text-near-black mb-10 select-none">
+            <p aria-hidden="true" className="font-serif font-normal text-display-s text-near-black mb-16 select-none">
               Sky Halisky
             </p>
             <nav aria-label="Site" className="w-full max-w-content">
-              <p className="font-mono text-label tracking-label uppercase text-text-meta mb-10 flex items-center gap-2">
+              <p className="font-mono text-label tracking-label uppercase text-text-meta mb-16 flex items-center gap-2">
                 <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 Menu
               </p>
@@ -234,7 +234,7 @@ export function HamburgerNav() {
                         onClick={close}
                         aria-current={isActive ? 'page' : undefined}
                         className={cn(
-                          'group inline-flex items-baseline gap-5',
+                          'group inline-flex items-baseline gap-6',
                           'font-serif font-light text-[clamp(2rem,6.2vw,3.75rem)] leading-[1.05] text-balance',
                           'text-near-black hover:text-accent-text focus-visible:text-accent-text',
                           'transition-colors duration-fast ease-out',
@@ -245,7 +245,7 @@ export function HamburgerNav() {
                         <span
                           aria-hidden="true"
                           className={cn(
-                            'font-mono text-label tracking-label w-10 text-right shrink-0',
+                            'font-mono text-label tracking-label w-16 text-right shrink-0',
                             'transition-transform duration-fast ease-out',
                             'group-hover:translate-x-1 group-focus-visible:translate-x-1',
                             isActive ? 'text-accent-text' : 'text-text-meta',
@@ -268,7 +268,7 @@ export function HamburgerNav() {
               <p className="font-mono text-meta tracking-label uppercase text-text-meta mt-14 text-balance">
                 Technology designed with accessibility in mind.
               </p>
-              <div className="mt-10">
+              <div className="mt-16">
                 <ThemeToggle withLabel />
               </div>
             </nav>

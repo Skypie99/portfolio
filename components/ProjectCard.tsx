@@ -85,7 +85,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
         </div>
 
         {/* the inscription — bottom-anchored (lead + normal cards share this) */}
-        <div className="mt-auto flex flex-col gap-5">
+        <div className="mt-auto flex flex-col gap-6">
           <div className="flex flex-col gap-4">
             <p className="flex items-center gap-2 font-mono text-meta uppercase tracking-label text-text-meta">
               <span aria-hidden="true" className="inline-block h-1 w-1 rounded-full bg-terracotta" />
@@ -106,10 +106,10 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
                 {d.title}
               </Link>
             </h3>
-            <span aria-hidden="true" className="block h-px w-12 rounded-full bg-gradient-to-r from-[rgb(var(--rgb-accent)/0.65)] via-[rgb(var(--rgb-accent)/0.3)] to-transparent origin-left transition-transform duration-slow ease-gh-glide group-hover:scale-x-125" />
+            <span aria-hidden="true" className="block h-px w-24 rounded-full bg-gradient-to-r from-[rgb(var(--rgb-accent)/0.65)] via-[rgb(var(--rgb-accent)/0.3)] to-transparent origin-left transition-transform duration-slow ease-gh-glide group-hover:scale-x-125" />
           </div>
 
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-6">
             {/* TY-2: no line clamp — the schema's 160-char summary cap is the
                 fence; equal card heights come from the inscription's mt-auto,
                 never from amputating the sentence with an ellipsis. */}
@@ -125,7 +125,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
               ))}
             </ul>
 
-            <div className="mt-1 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-[rgb(var(--rgb-ink)/0.1)] pt-4">
+            <div className="mt-1 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-[rgb(var(--rgb-ink)/0.1)] pt-4">
               <Link
                 href={`/work/${d.id}/`}
                 aria-label={`Read case study for ${d.title}`}
@@ -137,9 +137,9 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
                 /* Grouped so the external links wrap as ONE unit on narrow
                    cards — previously GitHub orphaned alone onto a second
                    line at 390px. Desktop is pixel-identical: the group is
-                   right-aligned via ml-auto and the internal gap-x-5 matches
+                   right-aligned via ml-auto and the internal gap-x-6 matches
                    the parent gap that used to separate Live/GitHub. */
-                <span className="ml-auto flex items-center gap-x-5">
+                <span className="ml-auto flex items-center gap-x-6">
                   {demoLink && (
                     <a
                       href={demoLink.href}

@@ -54,7 +54,7 @@ export default function BlogIndexPage() {
             Notes — {posts.length} {posts.length === 1 ? 'entry' : 'entries'}
           </p>
           <SettleHeading
-            className="font-serif font-light text-display ember leading-[1.05] max-w-3xl mb-8 text-balance"
+            className="font-serif font-light text-display ember leading-[1.05] max-w-3xl mb-12 text-balance"
           >
             Notes
           </SettleHeading>
@@ -71,7 +71,7 @@ export default function BlogIndexPage() {
           'px-gutter',
           // SP-3: closer is now its own section below; this beat becomes the
           // content-internal gap (~72px) so it doesn't double-stack. §7.4.
-          'pb-[4.5rem]',
+          'pb-18',
           'world-surface-alt',
           'border-t border-border-decorative pt-24 lg:pt-32',
         )}
@@ -86,12 +86,12 @@ export default function BlogIndexPage() {
           ) : (
             <ul className="flex flex-col divide-y divide-border-decorative">
               {posts.map((post, idx) => (
-                <li key={post.id} className="py-12 first:pt-0">
+                <li key={post.id} className="py-24 first:pt-0">
                   <Reveal index={idx} variant="depth">
                   <Link
                     href={`/blog/${post.id}/`}
                     aria-label={`Read: ${post.title}`}
-                    className="group flex flex-col md:flex-row md:items-start gap-6 md:gap-10 text-near-black"
+                    className="group flex flex-col md:flex-row md:items-start gap-8 md:gap-16 text-near-black"
                   >
                     {/* Index number */}
                     <span
@@ -175,8 +175,8 @@ export default function BlogIndexPage() {
       </section>
 
       {/* Back link — SP-3 unified closer grammar: hairline border-t + ~72px
-          (py-[4.5rem]). world-surface alternates off the -alt list above. */}
-      <section className="px-gutter py-[4.5rem] world-surface border-t border-border-decorative">
+          (py-18). world-surface alternates off the -alt list above. */}
+      <section className="px-gutter py-18 world-surface border-t border-border-decorative">
         <div className="max-w-content mx-auto">
           <Link
             href="/"

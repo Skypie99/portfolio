@@ -65,7 +65,7 @@ export function WorkFilterGrid({ deliverables }: WorkFilterGridProps) {
       {/* Filter pills */}
       {allTags.length > 0 && (
         <div
-          className="flex flex-wrap gap-2 mb-12"
+          className="flex flex-wrap gap-2 mb-24"
           role="group"
           aria-label="Filter deliverables by tag"
         >
@@ -93,7 +93,7 @@ export function WorkFilterGrid({ deliverables }: WorkFilterGridProps) {
             layout={!shouldReduceMotion}
             initial={false}
             exit={shouldReduceMotion ? undefined : { opacity: 0, scale: 0.98, transition: { duration: 0.18 } }}
-            className="mb-12"
+            className="mb-24"
           >
             {/* Reveal owns the scroll-entrance (CSS/IO depth-rise) so the
                 featured card lands with the same weight as the grid cards —
@@ -115,7 +115,7 @@ export function WorkFilterGrid({ deliverables }: WorkFilterGridProps) {
           No deliverables match this filter.
         </p>
       ) : filteredRest.length > 0 ? (
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
           <AnimatePresence mode="popLayout" initial={false}>
             {filteredRest.map((d, i) => (
               <motion.li

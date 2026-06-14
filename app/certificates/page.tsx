@@ -43,7 +43,7 @@ export default function CertificatesPage() {
             Credentials — {certificates.length}
           </p>
           <SettleHeading
-            className="font-serif font-light text-display ember leading-[1.05] max-w-3xl mb-8 text-balance"
+            className="font-serif font-light text-display ember leading-[1.05] max-w-3xl mb-12 text-balance"
           >
             Credentials
           </SettleHeading>
@@ -60,7 +60,7 @@ export default function CertificatesPage() {
         className={cn(
           // SP-3: closer is its own section below; pb becomes a ~72px content
           // gap so it doesn't double-stack with the closer. §7.4 will rename.
-          'px-gutter pb-[4.5rem] pt-24 lg:pt-32',
+          'px-gutter pb-18 pt-24 lg:pt-32',
           // Dani wave4: warm-white for the grid section — blush cards pop on warm-white.
           'world-surface-alt border-t border-border-decorative',
         )}
@@ -81,8 +81,8 @@ export default function CertificatesPage() {
       </section>
 
       {/* Back link — SP-3 unified closer grammar: hairline border-t + ~72px
-          (py-[4.5rem]). world-surface alternates off the -alt grid above. */}
-      <section className="px-gutter py-[4.5rem] world-surface border-t border-border-decorative">
+          (py-18). world-surface alternates off the -alt grid above. */}
+      <section className="px-gutter py-18 world-surface border-t border-border-decorative">
         <div className="max-w-content mx-auto">
           <Link
             href="/"

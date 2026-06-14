@@ -38,14 +38,14 @@ export function CertCard({ certificate: c }: { certificate: Certificate }) {
   return (
     <article
       ref={spotRef}
-      className="glass-card group relative isolate flex h-full flex-col overflow-hidden rounded-[22px] p-8"
+      className="glass-card group relative isolate flex h-full flex-col overflow-hidden rounded-[22px] p-12"
     >
       <CardField slug={issuerKey(c.issuer)} />
 
       <div className="relative z-10 flex h-full flex-col">
         {/* Badge well — lit from above, badge leans in on hover */}
         <div
-          className="relative mb-6 flex aspect-square w-full items-center justify-center overflow-hidden rounded-md border border-[rgb(var(--rgb-ink)/0.08)]"
+          className="relative mb-8 flex aspect-square w-full items-center justify-center overflow-hidden rounded-md border border-[rgb(var(--rgb-ink)/0.08)]"
           style={{
             background:
               'radial-gradient(60% 60% at 50% 36%, rgb(var(--rgb-surface-warm)) 0%, rgb(var(--rgb-surface-mid)) 55%, rgb(var(--rgb-canvas-alt)) 100%)',
@@ -69,7 +69,7 @@ export function CertCard({ certificate: c }: { certificate: Certificate }) {
         </h3>
 
         {/* Issued date */}
-        <p className="mb-6 font-mono text-meta uppercase tracking-label text-text-meta">
+        <p className="mb-8 font-mono text-meta uppercase tracking-label text-text-meta">
           {formatIssuedDate(c.issuedDate)}
         </p>
 

@@ -41,7 +41,7 @@ export function AnimatedStepList({ steps }: AnimatedStepListProps) {
       {steps.map((step, i) => (
         <motion.li
           key={step.number}
-          className="py-8 first:pt-0 last:pb-0"
+          className="py-12 first:pt-0 last:pb-0"
           variants={shouldReduceMotion ? undefined : itemVariants}
           initial={shouldReduceMotion ? undefined : 'hidden'}
           animate={shouldReduceMotion ? undefined : (isInView ? 'visible' : 'hidden')}
