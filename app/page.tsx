@@ -107,7 +107,10 @@ export default function HomePage() {
         id="showcase"
         className={cn(
           'relative isolate overflow-hidden',
-          'px-gutter py-20 lg:py-24',
+          // SP-4: ascending (was py-20 lg:py-24 = 200→96px, shrinking as the
+          // screen grows). Renders ≈80px below lg → 96px at lg; desktop value
+          // unchanged (protected #5). §7.4 refactor will rename the plumbing.
+          'px-gutter py-[5rem] lg:py-24',
           'world-surface-cool',
           'border-t border-wa-teal-soft/40',
         )}
