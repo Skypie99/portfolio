@@ -55,10 +55,14 @@ export function CertCard({ certificate: c }: { certificate: Certificate }) {
           className="cert-badge-well relative mb-6 flex aspect-square w-full items-center justify-center overflow-hidden rounded-md border border-[rgb(var(--rgb-ink)/0.14)]"
           style={{ '--cert-sig': signatureFor(issuerKey(c.issuer)) } as CSSProperties}
         >
+          {/* Fill the well via absolute inset (robust everywhere) and reduce
+              scale with padding, NOT percentage max-h/max-w on a flex child —
+              WebKit collapses % heights against an aspect-ratio parent to zero,
+              which hid every badge in Safari. p-[15%] → ~70% (item 18's scale). */}
           <BadgeImage
             src={c.badgeImage.src}
             alt={c.badgeImage.alt}
-            className="max-h-[72%] max-w-[72%] w-auto h-auto object-contain transition-transform duration-slow ease-gh-glide group-hover:scale-[1.03] group-focus-within:scale-[1.03]"
+            className="absolute inset-0 h-full w-full object-contain p-[15%] transition-transform duration-slow ease-gh-glide group-hover:scale-[1.03] group-focus-within:scale-[1.03]"
           />
         </div>
 
