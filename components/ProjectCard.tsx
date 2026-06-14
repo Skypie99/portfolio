@@ -44,7 +44,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
       ref={spotRef}
       className={cn(
         'glass-card work-card group relative isolate flex flex-col overflow-hidden rounded-[22px]',
-        wide ? 'md:flex-row min-h-[22rem]' : 'min-h-[22rem]',
+        wide ? 'lg:flex-row min-h-[22rem]' : 'min-h-[22rem]',
         className,
       )}
     >
@@ -62,7 +62,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
           'shrink-0 border-b border-[rgb(var(--rgb-ink)/0.08)]',
           // Lead card: a horizontal banner — the image takes the left half and
           // stretches to the card's height; mobile keeps the stacked 16:10 band.
-          wide && 'md:w-1/2 md:self-stretch md:aspect-auto md:border-b-0 md:border-r',
+          wide && 'lg:w-1/2 lg:self-stretch lg:aspect-auto lg:border-b-0 lg:border-r',
         )}
       />
 
