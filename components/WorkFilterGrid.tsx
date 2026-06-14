@@ -115,7 +115,7 @@ export function WorkFilterGrid({ deliverables }: WorkFilterGridProps) {
           No deliverables match this filter.
         </p>
       ) : filteredRest.length > 0 ? (
-        <ul className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24">
+        <ul className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
           <AnimatePresence mode="popLayout" initial={false}>
             {filteredRest.map((d, i) => (
               <motion.li
