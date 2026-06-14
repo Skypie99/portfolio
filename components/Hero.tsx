@@ -59,12 +59,12 @@ export function Hero({ eyebrow, heading, subhead, ctaLabel, ctaHref }: HeroProps
         </div>
 
         {/* Eyebrow + terracotta brand rule */}
-        <div className="hero-enter hero-scroll-fade mb-8">
+        <div className="hero-enter hero-scroll-fade mb-12">
           <p className="font-mono text-label tracking-label uppercase text-text-meta mb-3">
             {eyebrow}
           </p>
           {/* Terracotta horizontal rule — brand anchor, ties to CTA dot pattern */}
-          <span aria-hidden="true" className="block h-px w-10 bg-terracotta" />
+          <span aria-hidden="true" className="block h-px w-16 bg-terracotta" />
         </div>
 
         <h1
@@ -88,14 +88,14 @@ export function Hero({ eyebrow, heading, subhead, ctaLabel, ctaHref }: HeroProps
             'font-sans font-light text-prose text-charcoal',
             'leading-[1.65]',
             'max-w-[520px]',
-            'mb-10',
+            'mb-16',
             'text-pretty',
           )}
         >
           {subhead}
         </p>
 
-        <div className="hero-enter hero-enter-delay-4 hero-scroll-fade flex flex-col items-start gap-10">
+        <div className="hero-enter hero-enter-delay-4 hero-scroll-fade flex flex-col items-start gap-16">
           {/* Cycle 20: one-shot dot pulse 800ms after mount draws the eye
               after the hero entrance settles. Reduced-motion safe via
               the .cta-dot-pulse @media gate in globals.css. */}

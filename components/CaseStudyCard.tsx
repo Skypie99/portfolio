@@ -53,23 +53,21 @@ export function CaseStudyCard({ title, category, description, href, media, index
         className="shrink-0 border-b border-[rgb(var(--rgb-ink)/0.08)]"
       />
 
-      <div className="relative z-10 flex flex-1 flex-col p-7 md:p-8">
+      <div className="relative z-10 flex flex-1 flex-col p-7 md:p-12">
         <span
           aria-hidden="true"
-          className="font-serif font-light leading-none tabular-nums text-near-black/30 transition-colors duration-slow ease-gh-glide group-hover:text-near-black/45"
-          style={{ fontSize: 'clamp(2.6rem, 5vw, 3.6rem)', letterSpacing: '-0.02em' }}
+          className="font-serif font-light text-card-numeral leading-none tabular-nums text-near-black/30 transition-colors duration-slow ease-gh-glide group-hover:text-near-black/45"
         >
           {numeral}
         </span>
 
         <div className="mt-auto flex flex-col gap-4">
           <h3
-            className="font-serif font-light leading-[1.05] text-near-black"
-            style={{ letterSpacing: '-0.022em', fontSize: 'clamp(1.85rem, 2.6vw, 2.4rem)' }}
+            className="font-serif font-light text-card-title text-near-black"
           >
             {title}
           </h3>
-          <span aria-hidden="true" className="block h-px w-12 rounded-full bg-gradient-to-r from-[rgb(var(--rgb-accent)/0.65)] via-[rgb(var(--rgb-accent)/0.3)] to-transparent origin-left transition-transform duration-slow ease-gh-glide group-hover:scale-x-125" />
+          <span aria-hidden="true" className="block h-px w-24 rounded-full bg-gradient-to-r from-[rgb(var(--rgb-accent)/0.65)] via-[rgb(var(--rgb-accent)/0.3)] to-transparent origin-left transition-transform duration-slow ease-gh-glide group-hover:scale-x-125" />
           <p className="font-sans font-light text-body-sm leading-[1.65] text-charcoal line-clamp-2 text-pretty">
             {description}
           </p>

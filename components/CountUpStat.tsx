@@ -73,7 +73,7 @@ export function CountUpStat({ value, emberClass, label }: CountUpStatProps) {
     <p
       ref={ref}
       className={cn(
-        'font-serif font-light text-[clamp(2.75rem,5.5vw,var(--fs-step-5))] leading-none mb-1',
+        'font-serif font-light text-stat-figure mb-1',
         counting && 'tabular-nums',
         // tactile (wow 2026-06-04, C4): the figure leans in a hair when its cell
         // is hovered — the count "completes under your hand". Compositor-only,
@@ -81,7 +81,6 @@ export function CountUpStat({ value, emberClass, label }: CountUpStatProps) {
         'origin-left transition-transform duration-base ease-gh-glide group-hover:scale-[1.03]',
         emberClass,
       )}
-      style={{ letterSpacing: '-0.03em' }}
       aria-label={`${value} ${label}`}
     >
       {parsed ? `${display.toLocaleString('en-US')}${display >= parsed.target ? parsed.suffix : ''}` : value}

@@ -109,7 +109,7 @@ function HeroScreenFill({ sig, title, eyebrow }: { sig: string; title: string; e
   return (
     <div
       aria-hidden="true"
-      className="absolute inset-0 flex flex-col items-center justify-center px-5 text-center"
+      className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center"
     >
       <div
         className="absolute inset-0"
@@ -117,7 +117,7 @@ function HeroScreenFill({ sig, title, eyebrow }: { sig: string; title: string; e
           background: `linear-gradient(165deg, rgb(${sig} / 0.18), rgb(${sig} / 0.05) 55%, rgb(var(--rgb-earth) / 0.10))`,
         }}
       />
-      <Bar className="absolute left-1/2 top-4 h-1 w-10 -translate-x-1/2 bg-[rgb(var(--rgb-ink)/0.10)]" />
+      <Bar className="absolute left-1/2 top-4 h-1 w-16 -translate-x-1/2 bg-[rgb(var(--rgb-ink)/0.10)]" />
       <div className="relative z-10 flex flex-col items-center gap-3">
         {eyebrow && (
           <span className="inline-flex items-center gap-2 font-mono text-meta tracking-label uppercase text-umber/70">
@@ -153,7 +153,7 @@ function BandHint({ sig }: { sig: string }) {
           <Bar className="h-1.5 w-1.5 bg-[rgb(var(--rgb-ink)/0.10)]" />
           <Bar className="h-1.5 w-1.5 bg-[rgb(var(--rgb-ink)/0.08)]" />
         </div>
-        <div className="absolute inset-x-5 top-9 flex flex-col gap-2">
+        <div className="absolute inset-x-6 top-9 flex flex-col gap-2">
           <Bar className="h-2 w-3/5 bg-[rgb(var(--rgb-ink)/0.08)]" />
           <Bar className="h-2 w-2/5" style={{ background: `rgb(${sig} / 0.40)` }} />
           <Bar className="h-2 w-4/5 bg-[rgb(var(--rgb-ink)/0.06)]" />
