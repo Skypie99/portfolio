@@ -333,9 +333,13 @@ export function useScrollProgress() {
  * homepage the start is the top of `.cinematic-content-reveal` (i.e. the instant
  * the locked 680vh intro finishes and the golden cliff hands off → day-night 0 =
  * full golden); on routes without the intro the arc runs from the page top. End
- * is the document bottom (footer → night). getBoundingClientRect()+scrollY is
- * read each frame so a late layout (the GSAP pin-spacer, images) can't desync the
- * anchor.
+ * is the FOOTER THRESHOLD — the scrollY at which the footer's top hairline meets
+ * the viewport bottom (footerTop − innerHeight), so full night + the flagship
+ * ending (alpenglow / last-coal ember) peak while the footer crests INTO view,
+ * witnessed at the door, not behind the opaque footer at absolute max scroll
+ * (Z5/SE-2). getBoundingClientRect()+scrollY is read each frame so a late layout
+ * (the GSAP pin-spacer, images) can't desync the anchor. The mapping stays linear
+ * and theme-invariant — only the input domain's END moved.
  *
  * Reduced motion → no-op (the var stays unset; the world rests at a
  * theme-appropriate static state via `var(--day-night, var(--day-night-rest))`).
@@ -354,7 +358,18 @@ export function useDayNight() {
       const start = anchor
         ? anchor.getBoundingClientRect().top + window.scrollY
         : 0;
-      const end = root.scrollHeight - window.innerHeight;
+      // End at the footer THRESHOLD, not the document bottom: the scrollY at which
+      // the footer's top hairline meets the viewport bottom (Z5/SE-2). So full
+      // night + the threshold ember (.footer-threshold) reach peak while the footer
+      // crests INTO view — witnessed at the door — instead of completing behind the
+      // opaque footer at absolute max scroll. Measured each frame (getBoundingClientRect
+      // + scrollY, mirroring `start`) so a late layout can't desync it. Same linear,
+      // theme-invariant mapping — only the input domain's END moves.
+      const footer = document.querySelector('footer');
+      const footerTop = footer
+        ? footer.getBoundingClientRect().top + window.scrollY
+        : root.scrollHeight;
+      const end = footerTop - window.innerHeight;
       const span = end - start;
       const dn = span > 0 ? Math.min(1, Math.max(0, (window.scrollY - start) / span)) : 0;
       root.style.setProperty('--day-night', dn.toFixed(4));
