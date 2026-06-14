@@ -134,7 +134,7 @@ export default function HomePage() {
           </Reveal>
 
           {/* 3×2 stat grid — vertical-rule layout for editorial weight */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-px bg-wa-teal-soft/30 border border-wa-teal-soft/50 rounded-lg overflow-hidden shadow-md">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-px bg-wa-teal-soft/30 border border-wa-teal-soft/50 rounded-lg overflow-hidden shadow-md">
             {showcaseChips.map(({ stat, label, project, tags }, i) => (
               <Reveal
                 key={project}
@@ -205,10 +205,10 @@ export default function HomePage() {
             </h2>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Featured card — full width, col-span preserved via className */}
             {deliverables[0] && (
-              <Reveal variant="depth" className="md:col-span-2" index={0}>
+              <Reveal variant="depth" className="lg:col-span-2" index={0}>
                 <ProjectCard deliverable={deliverables[0]} wide index={0} />
               </Reveal>
             )}
@@ -223,7 +223,7 @@ export default function HomePage() {
                   key={d.id}
                   index={i + 1}
                   variant="depth"
-                  className={lone ? 'md:col-span-2' : undefined}
+                  className={lone ? 'lg:col-span-2' : undefined}
                 >
                   <ProjectCard deliverable={d} index={i + 1} wide={lone} />
                 </Reveal>
@@ -379,8 +379,8 @@ export default function HomePage() {
                 {/* MO-4: cap the stagger so a fold-edge row never holds at
                     opacity 0 after an anchor jump (site idiom Math.min(i, 4)). */}
                 <Reveal index={Math.min(i, 4)} variant="depth">
-                  <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-24 transition-transform duration-base ease-out group-hover:translate-x-1">
-                    <p className="font-mono text-meta tracking-label uppercase text-text-meta md:w-40 shrink-0">
+                  <div className="flex flex-col lg:flex-row lg:items-baseline gap-2 lg:gap-24 transition-transform duration-base ease-out group-hover:translate-x-1">
+                    <p className="font-mono text-meta tracking-label uppercase text-text-meta lg:w-40 shrink-0">
                       {c.issuer}
                     </p>
                     <div className="flex-1 flex flex-col gap-1">

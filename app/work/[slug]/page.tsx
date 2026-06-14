@@ -14,73 +14,7 @@ import { cn } from '@/lib/cn';
 import { getDeliverables } from '@/lib/content';
 import { cardMedia, heroMedia } from '@/lib/media';
 import { frameForSlug } from '@/lib/signature';
-import { INLINE_CODE_CLASS, smartPunctuation } from '@/lib/markdown';
-
-function parseInline(text: string): React.ReactNode[] {
-  // Split on **bold**, *italic*, and `code`, preserving delimiters. Smart
-  // punctuation applies to prose + emphasis, never inside `code`.
-  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`)/g);
-  return parts.map((part, i) => {
-    if (part.startsWith('**') && part.endsWith('**'))
-      return <strong key={i} className="font-semibold text-near-black">{smartPunctuation(part.slice(2, -2))}</strong>;
-    if (part.startsWith('`') && part.endsWith('`'))
-      return <code key={i} className={INLINE_CODE_CLASS}>{part.slice(1, -1)}</code>;
-    if (part.startsWith('*') && part.endsWith('*'))
-      return <em key={i}>{smartPunctuation(part.slice(1, -1))}</em>;
-    return smartPunctuation(part);
-  });
-}
-
-function renderMarkdown(markdown: string): React.ReactNode[] {
-  const blocks = markdown.split(/\n{2,}/).map((b) => b.trim()).filter(Boolean);
-  let firstPara = true;
-  return blocks.map((block, i) => {
-    const key = `b-${i}`;
-    // Reading-order choreography (wow 2026-06-04, SM4): each block reveals as it
-    // scrolls in. The `##` sub-headings CARVE in (blur→sharp focus-pull) so the
-    // locked intro title's signature gesture recurs through the editorial body;
-    // H3s + prose rise with the depth reveal. Stagger capped so long bodies
-    // never pile up. RM / no-JS → final sharp state (see .reveal-carve).
-    const index = Math.min(i, 4);
-    if (block.startsWith('## '))
-      return (
-        <Reveal
-          key={key}
-          as="h2"
-          variant="carve"
-          index={index}
-          className="font-serif font-light text-case-h2 text-near-black mt-24 mb-4 first:mt-0"
-        >
-          {block.slice(3)}
-        </Reveal>
-      );
-    if (block.startsWith('### '))
-      return (
-        <Reveal
-          key={key}
-          as="h3"
-          variant="depth"
-          index={index}
-          className="font-serif font-light text-case-h3 text-near-black mt-12 mb-3"
-        >
-          {block.slice(4)}
-        </Reveal>
-      );
-    const dropCap = firstPara;
-    firstPara = false;
-    return (
-      <Reveal
-        key={key}
-        as="p"
-        variant="depth"
-        index={index}
-        className={`font-sans font-light text-prose text-charcoal leading-[1.75] text-pretty nums-oldstyle${dropCap ? ' drop-cap' : ''}`}
-      >
-        {parseInline(block)}
-      </Reveal>
-    );
-  });
-}
+import { renderMarkdownProse } from '@/components/MarkdownProse';
 
 type RouteParams = { slug: string };
 
@@ -197,13 +131,15 @@ export default async function WorkDetailPage({
           }),
         }}
       />
-      {/* Breadcrumb — Cycle 19. Editorial 'Work / <Title>' pattern, DM Mono
-          uppercase 11px. Only 'Work' is a link (with link-draw underline-
-          draw hover). Current slug is plain text — you're already there.
-          aria-label declares the nav landmark for screen readers. */}
-      <section className="px-gutter pt-24 lg:pt-32 world-surface">
+      {/* Main content — breadcrumb leads (404 model), then hero + details.
+          Cycle 19 breadcrumb 'The Work / <Title>': only 'The Work' links; the
+          current slug is plain text (aria-current). Relocated INTO the content
+          section (Z6b/HI-2, mirroring app/not-found.tsx) so the page's NAME leads
+          instead of a full empty breadcrumb section pushing the hero below the
+          fold. Grammar + aria byte-identical to the prior standalone section. */}
+      <section className="px-gutter py-24 lg:py-32 world-surface">
         <div className="max-w-content mx-auto">
-          <nav aria-label="Breadcrumb">
+          <nav aria-label="Breadcrumb" className="mb-12">
             <ol className="inline-flex items-center gap-2 font-mono text-meta tracking-label uppercase text-text-meta">
               <li>
                 <Link
@@ -221,19 +157,13 @@ export default async function WorkDetailPage({
               </li>
             </ol>
           </nav>
-        </div>
-      </section>
-
-      {/* Main content — hero left, details right */}
-      <section className="px-gutter py-24 lg:py-32 world-surface">
-        <div className="max-w-content mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-24 lg:gap-50 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 lg:gap-50 items-start">
             {/* Hero image / fallback block — HeroImageSettle wraps the whole
                 well so the settle animation is the grid child itself. All
                 existing classes preserved on the wrapper. */}
             <HeroImageSettle
               className={cn(
-                'group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-1 md:order-1 shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]',
+                'group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-1 shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]',
                 wideHero ? 'aspect-[4/3]' : 'aspect-[4/5]',
               )}
             >
@@ -252,7 +182,7 @@ export default async function WorkDetailPage({
             </HeroImageSettle>
 
             {/* Details column */}
-            <div className="flex flex-col gap-12 order-2 md:order-2 md:sticky md:top-24">
+            <div className="flex flex-col gap-12 order-1 lg:order-2 lg:sticky lg:top-24">
               {d.featured && (
                 <p className="font-mono text-meta tracking-label uppercase text-accent-text inline-flex items-center gap-2">
                   <span
@@ -372,7 +302,7 @@ export default async function WorkDetailPage({
                 prose) — see renderMarkdown — so the body has internal cinematic
                 choreography instead of one undifferentiated fade. */}
             <article aria-label={`${d.title} case study`} className="max-w-measure-wide flex flex-col gap-8">
-              {renderMarkdown(d.body)}
+              {renderMarkdownProse(d.body, 'case')}
             </article>
           </div>
         </section>
@@ -394,7 +324,7 @@ export default async function WorkDetailPage({
                 See it in motion.
               </h2>
             </Reveal>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
+            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
               {d.shots.map((shot, i) => (
                 <Reveal key={shot.alt} index={i} as="li" className="flex flex-col gap-3">
                   <ShotProductReveal
@@ -430,7 +360,7 @@ export default async function WorkDetailPage({
                 A closer look.
               </h2>
             </Reveal>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
+            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
               {d.gallery.map((img, i) => (
                 <Reveal key={img.src} index={i} as="li" className="flex flex-col gap-3">
                   <div className="group relative w-full aspect-[4/3] bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]">
@@ -485,7 +415,7 @@ export default async function WorkDetailPage({
               </h2>
             </Reveal>
 
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
+            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
               {others.map((o, i) => (
                 <Reveal key={o.id} index={i} as="li">
                   <CaseStudyCard
