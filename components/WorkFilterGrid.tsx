@@ -65,7 +65,7 @@ export function WorkFilterGrid({ deliverables }: WorkFilterGridProps) {
       {/* Filter pills */}
       {allTags.length > 0 && (
         <div
-          className="flex flex-wrap gap-2 mb-24"
+          className="flex flex-wrap gap-2 mb-12"
           role="group"
           aria-label="Filter deliverables by tag"
         >
