@@ -40,6 +40,10 @@ const CUSTOM_FONT_SIZES = [
   // Required so twMerge groups `text-step-3` / `text-display` / `text-hero`
   // as font-size, not text-color (the Cycle 11 collapse bug class).
   'step-1', 'step-2', 'step-3', 'step-4', 'step-5', 'display', 'hero',
+  // §7.4 TY-8 — promoted display tokens (tailwind.config.ts fontSize). Required so
+  // twMerge groups `text-card-numeral` etc. as font-size, not text-color (Cycle 11).
+  'card-numeral', 'card-title', 'stat-figure', 'nav-item',
+  'prose-h2', 'prose-h3', 'case-h2', 'case-h3', 'blog-card-title',
 ];
 
 const twMerge = extendTailwindMerge({

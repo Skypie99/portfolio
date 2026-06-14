@@ -49,7 +49,7 @@ function renderMarkdown(markdown: string): React.ReactNode[] {
           as="h2"
           variant="carve"
           index={index}
-          className="font-serif font-light text-[clamp(1.5rem,3vw,2rem)] tracking-[-0.01em] text-near-black leading-[1.1] mt-24 mb-4 first:mt-0"
+          className="font-serif font-light text-case-h2 text-near-black mt-24 mb-4 first:mt-0"
         >
           {block.slice(3)}
         </Reveal>
@@ -61,7 +61,7 @@ function renderMarkdown(markdown: string): React.ReactNode[] {
           as="h3"
           variant="depth"
           index={index}
-          className="font-serif font-light text-[clamp(1.25rem,2.5vw,1.5rem)] tracking-[-0.01em] text-near-black leading-[1.15] mt-12 mb-3"
+          className="font-serif font-light text-case-h3 text-near-black mt-12 mb-3"
         >
           {block.slice(4)}
         </Reveal>
@@ -266,7 +266,7 @@ export default async function WorkDetailPage({
               {/* HeroTitleSettle: carves in after the image (delay 150ms),
                   tightening letter-spacing from 0.12em to -0.02em. */}
               <HeroTitleSettle
-                className="font-serif font-light text-display leading-[1.05] ember text-balance"
+                className="font-serif font-light text-display ember text-balance"
               >
                 {d.title}
               </HeroTitleSettle>

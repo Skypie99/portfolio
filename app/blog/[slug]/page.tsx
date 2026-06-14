@@ -70,8 +70,7 @@ function renderMarkdown(markdown: string): React.ReactNode[] {
           // SP-5: mt-12 (3rem/48px) — the case-study renderer's 96/48 (2:1)
           // rhythm (the h2 below uses mt-24). Honest scale (§7.4): numerals
           // now track size. Pass 3 renderer unification (§7.7) may supersede.
-          className="font-serif font-light text-[clamp(1.25rem,2.5vw,1.75rem)] text-near-black leading-[1.15] mt-12 mb-4"
-          style={{ letterSpacing: '-0.01em' }}
+          className="font-serif font-light text-prose-h3 text-near-black mt-12 mb-4"
         >
           {block.slice(4)}
         </h3>
@@ -85,8 +84,7 @@ function renderMarkdown(markdown: string): React.ReactNode[] {
           key={key}
           // SP-5: mt-24 (6rem/96px) — matches the case-study renderer's 96/48
           // (2:1) rhythm (the h3 above uses mt-12). Honest scale (§7.4). §7.7 may supersede.
-          className="font-serif font-light text-[clamp(1.5rem,3vw,2.25rem)] text-near-black leading-[1.1] mt-24 mb-6 first:mt-0"
-          style={{ letterSpacing: '-0.01em' }}
+          className="font-serif font-light text-prose-h2 text-near-black mt-24 mb-6 first:mt-0"
         >
           {block.slice(3)}
         </h2>
@@ -185,7 +183,7 @@ export default async function BlogPostPage({
 
           {/* Title */}
           <SettleHeading
-            className="font-serif font-light text-display ember leading-[1.05] max-w-3xl mb-16 text-balance"
+            className="font-serif font-light text-display ember max-w-3xl mb-16 text-balance"
           >
             {bindSoloLetters(post.title)}
           </SettleHeading>

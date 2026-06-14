@@ -235,11 +235,10 @@ export function HamburgerNav() {
                         aria-current={isActive ? 'page' : undefined}
                         className={cn(
                           'group inline-flex items-baseline gap-6',
-                          'font-serif font-light text-[clamp(2rem,6.2vw,3.75rem)] leading-[1.05] text-balance',
+                          'font-serif font-light text-nav-item text-balance',
                           'text-near-black hover:text-accent-text focus-visible:text-accent-text',
                           'transition-colors duration-fast ease-out',
                         )}
-                        style={{ letterSpacing: '-0.02em' }}
                       >
                         {/* Editorial index number */}
                         <span
