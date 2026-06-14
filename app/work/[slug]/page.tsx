@@ -197,13 +197,15 @@ export default async function WorkDetailPage({
           }),
         }}
       />
-      {/* Breadcrumb — Cycle 19. Editorial 'Work / <Title>' pattern, DM Mono
-          uppercase 11px. Only 'Work' is a link (with link-draw underline-
-          draw hover). Current slug is plain text — you're already there.
-          aria-label declares the nav landmark for screen readers. */}
-      <section className="px-gutter pt-24 lg:pt-32 world-surface">
+      {/* Main content — breadcrumb leads (404 model), then hero + details.
+          Cycle 19 breadcrumb 'The Work / <Title>': only 'The Work' links; the
+          current slug is plain text (aria-current). Relocated INTO the content
+          section (Z6b/HI-2, mirroring app/not-found.tsx) so the page's NAME leads
+          instead of a full empty breadcrumb section pushing the hero below the
+          fold. Grammar + aria byte-identical to the prior standalone section. */}
+      <section className="px-gutter py-24 lg:py-32 world-surface">
         <div className="max-w-content mx-auto">
-          <nav aria-label="Breadcrumb">
+          <nav aria-label="Breadcrumb" className="mb-12">
             <ol className="inline-flex items-center gap-2 font-mono text-meta tracking-label uppercase text-text-meta">
               <li>
                 <Link
@@ -221,19 +223,13 @@ export default async function WorkDetailPage({
               </li>
             </ol>
           </nav>
-        </div>
-      </section>
-
-      {/* Main content — hero left, details right */}
-      <section className="px-gutter py-24 lg:py-32 world-surface">
-        <div className="max-w-content mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 lg:gap-50 items-start">
             {/* Hero image / fallback block — HeroImageSettle wraps the whole
                 well so the settle animation is the grid child itself. All
                 existing classes preserved on the wrapper. */}
             <HeroImageSettle
               className={cn(
-                'group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-1 lg:order-1 shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]',
+                'group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-1 shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]',
                 wideHero ? 'aspect-[4/3]' : 'aspect-[4/5]',
               )}
             >
@@ -252,7 +248,7 @@ export default async function WorkDetailPage({
             </HeroImageSettle>
 
             {/* Details column */}
-            <div className="flex flex-col gap-12 order-2 lg:order-2 lg:sticky lg:top-24">
+            <div className="flex flex-col gap-12 order-1 lg:order-2 lg:sticky lg:top-24">
               {d.featured && (
                 <p className="font-mono text-meta tracking-label uppercase text-accent-text inline-flex items-center gap-2">
                   <span
