@@ -45,14 +45,14 @@ export function CertCard({ certificate: c }: { certificate: Certificate }) {
     >
       <CardField slug={issuerKey(c.issuer)} />
 
-      <div className="relative z-10 flex h-full flex-col">
+      <div className="relative z-10 flex h-full flex-col items-center text-center">
         {/* Badge well — HI-5: the cream tile the Anthropic doodles already use;
             third-party badges are equalized to a consistent, slightly-reduced
             scale inside it (artwork pixels untouched, protected #12). The light
             tile lives in `.cert-badge-well` (globals.css); --cert-sig is the
             per-issuer hue consumed by the dark surround (item 20, CO-7). */}
         <div
-          className="cert-badge-well relative mb-6 flex aspect-square w-full items-center justify-center overflow-hidden rounded-md border border-[rgb(var(--rgb-ink)/0.08)]"
+          className="cert-badge-well relative mb-6 flex aspect-square w-full items-center justify-center overflow-hidden rounded-md border border-[rgb(var(--rgb-ink)/0.14)]"
           style={{ '--cert-sig': signatureFor(issuerKey(c.issuer)) } as CSSProperties}
         >
           <BadgeImage
