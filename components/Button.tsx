@@ -118,7 +118,7 @@ export const Button = forwardRef<HTMLElement, Props>(function Button(props, ref)
         {...anchorAttrs}
       >
         <Dot visible={showDot} pulse={pulseOnMount} />
-        <span>{children}</span>
+        <span className="text-center text-balance">{children}</span>
       </a>
     );
   }
@@ -139,7 +139,7 @@ export const Button = forwardRef<HTMLElement, Props>(function Button(props, ref)
       {...buttonAttrs}
     >
       <Dot visible={showDot} pulse={pulseOnMount} />
-      <span>{children}</span>
+      <span className="text-center text-balance">{children}</span>
     </button>
   );
 });

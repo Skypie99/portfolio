@@ -190,7 +190,7 @@
   --sidebar-w:   280px;
   --content-max: 1120px;
   --measure:      65ch;   /* optimal body measure (~60–75 chars) */
-  --measure-wide: 72ch;   /* long-form prose (blog/case-study body) */
+  --measure-wide: 60ch;   /* long-form prose (blog/case-study body) — TY-5: re-derived from 72ch (rendered ~782px) to ≈650px (verified computed), the house optimum (was rendering ~90–96 real chars) */
   --gutter:      var(--space-6);
 
   /* Shadows */
