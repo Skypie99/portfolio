@@ -109,8 +109,9 @@
   /* Reveal exit: fade + translateY drop over 600ms (faster than enter) */
   --dur-reveal-exit:  600ms;
 
-  /* Stagger delay for sequential reveals (each card offset by 100ms) */
-  --reveal-stagger:   100ms;
+  /* MO-3: orphan `--reveal-stagger: 100ms` removed — it had no consumer and was
+     the only off-spec cascade beat (the documented two are --stagger-step 80ms
+     and --stagger-scene 120ms in globals.css). */
 
   /* Scroll-driven reveal range: fade in as section enters viewport */
   --reveal-range-start: 0%;

@@ -138,7 +138,8 @@ export default function HomePage() {
             {showcaseChips.map(({ stat, label, project, tags }, i) => (
               <Reveal
                 key={project}
-                index={i}
+                // MO-4: cap the stagger (site idiom, work/[slug]/page.tsx:42-44)
+                index={Math.min(i, 4)}
                 variant="depth"
                 className={cn(
                   'group flex flex-col bg-surface-mid p-6 md:p-7',
@@ -375,7 +376,9 @@ export default function HomePage() {
           <ul className="flex flex-col divide-y divide-stone/70">
             {certificates.map((c, i) => (
               <li key={c.id} className="py-8 first:pt-0 last:pb-0 group">
-                <Reveal index={i} variant="depth">
+                {/* MO-4: cap the stagger so a fold-edge row never holds at
+                    opacity 0 after an anchor jump (site idiom Math.min(i, 4)). */}
+                <Reveal index={Math.min(i, 4)} variant="depth">
                   <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-12 transition-transform duration-base ease-out group-hover:translate-x-1">
                     <p className="font-mono text-meta tracking-label uppercase text-text-meta md:w-40 shrink-0">
                       {c.issuer}
