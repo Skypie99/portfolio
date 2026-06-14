@@ -38,7 +38,7 @@ export default function ContactPage() {
             Let&apos;s talk
           </p>
           <SettleHeading
-            className="font-serif font-light text-display ember leading-[1.05] max-w-3xl mb-8 text-balance"
+            className="font-serif font-light text-display ember max-w-3xl mb-12 text-balance"
           >
             Write to me.
           </SettleHeading>
@@ -47,7 +47,7 @@ export default function ContactPage() {
             collaborations. Learning out loud, one project at a time. I read
             every message that comes through.
           </p>
-          <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-[640px] mb-10 text-pretty">
+          <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-[640px] mb-16 text-pretty">
             The socials below also work, for everything else.
           </p>
 
@@ -62,12 +62,12 @@ export default function ContactPage() {
       {profile.socials.length > 0 && (
         <section
           className={cn(
-            'px-gutter pt-[4rem] lg:pt-[5rem] pb-24 lg:pb-32',
+            'px-gutter pt-16 lg:pt-20 pb-24 lg:pb-32',
             'world-surface border-t border-border-decorative',
           )}
         >
           <div className="max-w-content mx-auto">
-            <Reveal variant="scene" className="mb-12">
+            <Reveal variant="scene" className="mb-24">
               <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
                 <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 Elsewhere
@@ -77,7 +77,7 @@ export default function ContactPage() {
               </h2>
             </Reveal>
 
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl">
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl">
               {profile.socials.map((s, i) => (
                 <li key={s.url} className="group border-t border-border-decorative pt-4">
                   <Reveal index={i} variant="depth">
@@ -105,11 +105,11 @@ export default function ContactPage() {
       )}
 
       {/* Back link — SP-3 unified closer grammar: hairline border-t + ~72px
-          symmetric (py-[4.5rem]). world-surface-alt alternates off the socials'
+          symmetric (py-18). world-surface-alt alternates off the socials'
           world-surface above. §7.4 refactor will rename the plumbing. */}
       <section
         className={cn(
-          'px-gutter py-[4.5rem]',
+          'px-gutter py-18',
           'world-surface-alt border-t border-border-decorative',
         )}
       >

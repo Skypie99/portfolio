@@ -62,13 +62,13 @@ export default function AboutPage() {
             A Brief Account
           </p>
           <SettleHeading
-            className="font-serif font-light text-display ember leading-[1.05] max-w-3xl mb-10 text-balance"
+            className="font-serif font-light text-display ember max-w-3xl mb-16 text-balance"
           >
             I build things with AI.
           </SettleHeading>
 
           {/* Story paragraphs */}
-          <div className="max-w-[640px] flex flex-col gap-6">
+          <div className="max-w-[640px] flex flex-col gap-8">
             <p className="font-sans font-light text-prose text-charcoal leading-[1.65] text-pretty">
               I came to software through problems I wanted to solve. Most of them
               involved accessibility — tools that should have been better but weren&apos;t.
@@ -79,7 +79,7 @@ export default function AboutPage() {
             <blockquote className="pull-quote nums-oldstyle pl-3 font-serif font-light text-step-2 text-near-black leading-[1.4] text-balance">
               Accessibility is not an add-on. It is where you begin.
             </blockquote>
-            <span aria-hidden="true" className="rule-ember block h-px w-16 mt-5" />
+            <span aria-hidden="true" className="rule-ember block h-px w-32 mt-6" />
 
             <p className="font-sans font-light text-prose text-charcoal leading-[1.65] text-pretty">
               I work from {profile.location}. Mostly on AI-assisted tooling,
@@ -111,7 +111,7 @@ export default function AboutPage() {
         {/* Golden-hour scroll-depth (teal, to harmonise with the panel) */}
         <ParallaxWash depth="far" tone="teal" />
         <div className="relative z-10 max-w-content mx-auto">
-          <Reveal variant="scene" className="mb-12">
+          <Reveal variant="scene" className="mb-24">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
               <Icon name="about" className="w-3.5 h-3.5 text-terracotta" />
               Method
@@ -123,9 +123,9 @@ export default function AboutPage() {
 
           {/* Peach-cream callout panel — Dani §3.6. Hairline dividers
               between steps preserved from Cycle 7 (Stone decorative). */}
-          <div className="bg-wa-teal-wash border border-wa-teal-soft/50 rounded-lg p-8 md:p-12">
+          <div className="bg-wa-teal-wash border border-wa-teal-soft/50 rounded-lg p-12 md:p-24">
             <ol className="flex flex-col divide-y divide-border-decorative">
-              <li className="py-8 first:pt-0 last:pb-0">
+              <li className="py-12 first:pt-0 last:pb-0">
                 <Reveal index={0}>
                   <NumberedStep
                     number="01"
@@ -134,7 +134,7 @@ export default function AboutPage() {
                   />
                 </Reveal>
               </li>
-              <li className="py-8 first:pt-0 last:pb-0">
+              <li className="py-12 first:pt-0 last:pb-0">
                 <Reveal index={1}>
                   <NumberedStep
                     number="02"
@@ -143,7 +143,7 @@ export default function AboutPage() {
                   />
                 </Reveal>
               </li>
-              <li className="py-8 first:pt-0 last:pb-0">
+              <li className="py-12 first:pt-0 last:pb-0">
                 <Reveal index={2}>
                   <NumberedStep
                     number="03"
@@ -165,7 +165,7 @@ export default function AboutPage() {
         )}
       >
         <div className="max-w-content mx-auto">
-          <Reveal variant="scene" className="mb-12">
+          <Reveal variant="scene" className="mb-24">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
               <Icon name="about" className="w-3.5 h-3.5 text-terracotta" />
               Principles
@@ -175,7 +175,7 @@ export default function AboutPage() {
             </h2>
           </Reveal>
 
-          <Reveal variant="depth" className="max-w-[640px] flex flex-col gap-6">
+          <Reveal variant="depth" className="max-w-[640px] flex flex-col gap-8">
             <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
               WCAG 2.2 AA on every interface. Not because it is required.
               Because it is correct. AccessMap exists because disabled people
@@ -204,7 +204,7 @@ export default function AboutPage() {
         )}
       >
         <div className="max-w-content mx-auto">
-          <Reveal variant="scene" className="mb-12">
+          <Reveal variant="scene" className="mb-24">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
               <Icon name="about" className="w-3.5 h-3.5 text-terracotta" />
               Currently
@@ -214,7 +214,7 @@ export default function AboutPage() {
             </h2>
           </Reveal>
 
-          <Reveal variant="depth" className="max-w-[640px] flex flex-col gap-6">
+          <Reveal variant="depth" className="max-w-[640px] flex flex-col gap-8">
             <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
               I am not a trained software engineer. I came to coding through
               building — I had ideas I wanted to exist. That is still how this
@@ -243,7 +243,7 @@ export default function AboutPage() {
           )}
         >
           <div className="max-w-content mx-auto">
-            <Reveal variant="scene" className="mb-12">
+            <Reveal variant="scene" className="mb-24">
               <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
                 <Icon name="about" className="w-3.5 h-3.5 text-terracotta" />
                 The Work
@@ -253,11 +253,11 @@ export default function AboutPage() {
               </h2>
             </Reveal>
 
-            <ul className="flex flex-col gap-8 max-w-3xl">
+            <ul className="flex flex-col gap-12 max-w-3xl">
               {recent.map((d, i) => (
                 <li
                   key={d.id}
-                  className="border-t border-border-decorative pt-6"
+                  className="border-t border-border-decorative pt-8"
                 >
                   <Reveal index={i}>
                     <Link
@@ -284,7 +284,7 @@ export default function AboutPage() {
               ))}
             </ul>
 
-            <div className="mt-12">
+            <div className="mt-24">
               <Link
                 href="/work/"
                 className="inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
@@ -299,7 +299,7 @@ export default function AboutPage() {
 
       {/* CTA */}
       <section className="px-gutter py-24 lg:py-32 world-surface border-t border-border-decorative">
-        <Reveal className="max-w-content mx-auto flex flex-col items-start gap-8">
+        <Reveal className="max-w-content mx-auto flex flex-col items-start gap-12">
           <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
             Want to work together?
             <br />
@@ -310,7 +310,7 @@ export default function AboutPage() {
 
           <Link
             href="/"
-            className="mt-8 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+            className="mt-12 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
           >
             <span aria-hidden="true">{'←'}</span>
             Back to home

@@ -32,11 +32,11 @@ export function Sidebar() {
       data-rail=""
       className={cn(
         'relative',
-        'hidden md:flex flex-col gap-10',
+        'hidden md:flex flex-col gap-16',
         'sticky top-0 self-start',
         'w-sidebar shrink-0',
         'h-screen',
-        'p-8',
+        'p-12',
         'bg-rail',
         'border-r border-wa-teal-soft/50',
         // Short-viewport steps (globals.css R4): tightens gap/py below 900px
