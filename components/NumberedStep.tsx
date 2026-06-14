@@ -26,7 +26,7 @@ type NumberedStepProps = {
  */
 export function NumberedStep({ number, title, body, highlight = false, className }: NumberedStepProps) {
   return (
-    <div className={cn('flex gap-6 md:gap-8 items-start', className)}>
+    <div className={cn('flex gap-8 md:gap-12 items-start', className)}>
       <span
         aria-hidden="true"
         className={cn(

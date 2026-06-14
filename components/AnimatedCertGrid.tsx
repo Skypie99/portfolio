@@ -19,7 +19,7 @@ type AnimatedCertGridProps = {
  */
 export function AnimatedCertGrid({ certificates }: AnimatedCertGridProps) {
   return (
-    <ul className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+    <ul className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
       {certificates.map((c, i) => (
         <Reveal key={c.id} as="li" variant="depth" index={i}>
           <CertCard certificate={c} />

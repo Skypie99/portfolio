@@ -61,12 +61,12 @@ export default function WorkIndexPage() {
               The Work — {deliverables.length} deliverable{deliverables.length === 1 ? '' : 's'}
             </p>
             <SettleHeading
-              className="font-serif font-light text-display ember leading-[1.05] max-w-3xl mb-8 text-balance"
+              className="font-serif font-light text-display ember leading-[1.05] max-w-3xl mb-12 text-balance"
             >
               The Work
             </SettleHeading>
           </div>
-          <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-[640px] mt-6 text-pretty">
+          <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-[640px] mt-8 text-pretty">
             A small body of AI-assisted tools and reference materials. Built
             slowly, documented honestly, sized to a single careful hand.
           </p>
@@ -79,7 +79,7 @@ export default function WorkIndexPage() {
           'px-gutter',
           // SP-3: closer is now its own section below; this beat becomes the
           // content-internal gap (~72px) so it doesn't double-stack. §7.4.
-          'pb-[4.5rem]',
+          'pb-18',
           // Dani wave4: warm-white contrasts the cream header for clear section rhythm.
           'world-surface-alt',
           'border-t border-border-decorative pt-24 lg:pt-32',
@@ -105,8 +105,8 @@ export default function WorkIndexPage() {
       </section>
 
       {/* Back link — SP-3 unified closer grammar: hairline border-t + ~72px
-          (py-[4.5rem]). world-surface alternates off the -alt grid above. */}
-      <section className="px-gutter py-[4.5rem] world-surface border-t border-border-decorative">
+          (py-18). world-surface alternates off the -alt grid above. */}
+      <section className="px-gutter py-18 world-surface border-t border-border-decorative">
         <div className="max-w-content mx-auto">
           <Link
             href="/"

@@ -67,10 +67,10 @@ function renderMarkdown(markdown: string): React.ReactNode[] {
       return (
         <h3
           key={key}
-          // SP-5: mt-8 (approach 48px) — onto the case-study renderer's 96/48
-          // (2:1) scale; was mt-10 (64px) > the h2's mt-14, a latent inversion.
-          // Pass 3 renderer unification (§7.7) may supersede this function.
-          className="font-serif font-light text-[clamp(1.25rem,2.5vw,1.75rem)] text-near-black leading-[1.15] mt-8 mb-4"
+          // SP-5: mt-12 (3rem/48px) — the case-study renderer's 96/48 (2:1)
+          // rhythm (the h2 below uses mt-24). Honest scale (§7.4): numerals
+          // now track size. Pass 3 renderer unification (§7.7) may supersede.
+          className="font-serif font-light text-[clamp(1.25rem,2.5vw,1.75rem)] text-near-black leading-[1.15] mt-12 mb-4"
           style={{ letterSpacing: '-0.01em' }}
         >
           {block.slice(4)}
@@ -83,9 +83,9 @@ function renderMarkdown(markdown: string): React.ReactNode[] {
       return (
         <h2
           key={key}
-          // SP-5: mt-12 (approach 96px) — matches the case-study renderer's
-          // 96/48 (2:1); was mt-14 (56px) < the h3's mt-10. §7.7 may supersede.
-          className="font-serif font-light text-[clamp(1.5rem,3vw,2.25rem)] text-near-black leading-[1.1] mt-12 mb-5 first:mt-0"
+          // SP-5: mt-24 (6rem/96px) — matches the case-study renderer's 96/48
+          // (2:1) rhythm (the h3 above uses mt-12). Honest scale (§7.4). §7.7 may supersede.
+          className="font-serif font-light text-[clamp(1.5rem,3vw,2.25rem)] text-near-black leading-[1.1] mt-24 mb-6 first:mt-0"
           style={{ letterSpacing: '-0.01em' }}
         >
           {block.slice(3)}
@@ -148,10 +148,10 @@ export default async function BlogPostPage({
   return (
     <>
       {/* Post header */}
-      <section className="px-gutter pt-24 lg:pt-32 pb-12 world-surface">
+      <section className="px-gutter pt-24 lg:pt-32 pb-24 world-surface">
         <div className="max-w-content mx-auto">
           {/* Breadcrumb */}
-          <nav aria-label="Breadcrumb" className="mb-12">
+          <nav aria-label="Breadcrumb" className="mb-24">
             <ol className="inline-flex items-center gap-2 font-mono text-meta tracking-label uppercase text-text-meta">
               <li>
                 <Link href="/blog/" className="link-draw inline-block text-text-meta">
@@ -166,7 +166,7 @@ export default async function BlogPostPage({
           </nav>
 
           {/* Meta */}
-          <div className="flex flex-wrap items-center gap-4 mb-8">
+          <div className="flex flex-wrap items-center gap-4 mb-12">
             <time
               dateTime={post.publishedDate}
               className="font-mono text-meta tracking-label uppercase text-text-meta"
@@ -185,13 +185,13 @@ export default async function BlogPostPage({
 
           {/* Title */}
           <SettleHeading
-            className="font-serif font-light text-display ember leading-[1.05] max-w-3xl mb-10 text-balance"
+            className="font-serif font-light text-display ember leading-[1.05] max-w-3xl mb-16 text-balance"
           >
             {bindSoloLetters(post.title)}
           </SettleHeading>
 
           {/* Summary */}
-          <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-measure-wide text-pretty mb-10">
+          <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-measure-wide text-pretty mb-16">
             {post.summary}
           </p>
 
@@ -212,7 +212,7 @@ export default async function BlogPostPage({
       <section
         className={cn(
           'px-gutter',
-          'py-16 lg:py-20',
+          'py-32 lg:py-50',
           'world-surface-alt',
           'border-t border-border-decorative',
         )}
@@ -221,7 +221,7 @@ export default async function BlogPostPage({
           <Reveal variant="scene">
             <article
               aria-label={post.title}
-              className="max-w-measure-wide flex flex-col gap-6"
+              className="max-w-measure-wide flex flex-col gap-8"
             >
               {renderedContent}
             </article>
@@ -230,8 +230,8 @@ export default async function BlogPostPage({
       </section>
 
       {/* Back link — SP-3 unified closer grammar: hairline border-t + ~72px
-          (py-[4.5rem]). world-surface alternates off the -alt prose above. */}
-      <section className="px-gutter py-[4.5rem] world-surface border-t border-border-decorative">
+          (py-18). world-surface alternates off the -alt prose above. */}
+      <section className="px-gutter py-18 world-surface border-t border-border-decorative">
         <div className="max-w-content mx-auto">
           <Link
             href="/blog/"

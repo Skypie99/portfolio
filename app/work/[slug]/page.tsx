@@ -49,7 +49,7 @@ function renderMarkdown(markdown: string): React.ReactNode[] {
           as="h2"
           variant="carve"
           index={index}
-          className="font-serif font-light text-[clamp(1.5rem,3vw,2rem)] tracking-[-0.01em] text-near-black leading-[1.1] mt-12 mb-4 first:mt-0"
+          className="font-serif font-light text-[clamp(1.5rem,3vw,2rem)] tracking-[-0.01em] text-near-black leading-[1.1] mt-24 mb-4 first:mt-0"
         >
           {block.slice(3)}
         </Reveal>
@@ -61,7 +61,7 @@ function renderMarkdown(markdown: string): React.ReactNode[] {
           as="h3"
           variant="depth"
           index={index}
-          className="font-serif font-light text-[clamp(1.25rem,2.5vw,1.5rem)] tracking-[-0.01em] text-near-black leading-[1.15] mt-8 mb-3"
+          className="font-serif font-light text-[clamp(1.25rem,2.5vw,1.5rem)] tracking-[-0.01em] text-near-black leading-[1.15] mt-12 mb-3"
         >
           {block.slice(4)}
         </Reveal>
@@ -227,7 +227,7 @@ export default async function WorkDetailPage({
       {/* Main content — hero left, details right */}
       <section className="px-gutter py-24 lg:py-32 world-surface">
         <div className="max-w-content mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-24 lg:gap-50 items-start">
             {/* Hero image / fallback block — HeroImageSettle wraps the whole
                 well so the settle animation is the grid child itself. All
                 existing classes preserved on the wrapper. */}
@@ -252,7 +252,7 @@ export default async function WorkDetailPage({
             </HeroImageSettle>
 
             {/* Details column */}
-            <div className="flex flex-col gap-8 order-2 md:order-2 md:sticky md:top-12">
+            <div className="flex flex-col gap-12 order-2 md:order-2 md:sticky md:top-24">
               {d.featured && (
                 <p className="font-mono text-meta tracking-label uppercase text-accent-text inline-flex items-center gap-2">
                   <span
@@ -276,7 +276,7 @@ export default async function WorkDetailPage({
               </p>
 
               {/* Role / Year */}
-              <dl className="grid grid-cols-2 gap-6 border-t border-border-decorative pt-6">
+              <dl className="grid grid-cols-2 gap-8 border-t border-border-decorative pt-8">
                 <div>
                   <dt className="font-mono text-meta tracking-label uppercase text-text-meta mb-1">
                     Role
@@ -311,7 +311,7 @@ export default async function WorkDetailPage({
 
               {/* Links list */}
               {d.links && d.links.length > 0 && (
-                <div className="border-t border-border-decorative pt-6">
+                <div className="border-t border-border-decorative pt-8">
                   <p className="font-mono text-meta tracking-label uppercase text-text-meta mb-3">
                     Links
                   </p>
@@ -344,7 +344,7 @@ export default async function WorkDetailPage({
 
               {/* Tags */}
               {d.tags.length > 0 && (
-                <div className="border-t border-border-decorative pt-6">
+                <div className="border-t border-border-decorative pt-8">
                   <p className="font-mono text-meta tracking-label uppercase text-text-meta mb-3">
                     Tags
                   </p>
@@ -371,7 +371,7 @@ export default async function WorkDetailPage({
             {/* Each block self-reveals in reading order (carve on H2s, depth on
                 prose) — see renderMarkdown — so the body has internal cinematic
                 choreography instead of one undifferentiated fade. */}
-            <article aria-label={`${d.title} case study`} className="max-w-measure-wide flex flex-col gap-6">
+            <article aria-label={`${d.title} case study`} className="max-w-measure-wide flex flex-col gap-8">
               {renderMarkdown(d.body)}
             </article>
           </div>
@@ -390,11 +390,11 @@ export default async function WorkDetailPage({
               <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
                 Inside the build
               </p>
-              <h2 className="font-serif font-light text-step-4 text-near-black mb-12 max-w-2xl leading-tight">
+              <h2 className="font-serif font-light text-step-4 text-near-black mb-24 max-w-2xl leading-tight">
                 See it in motion.
               </h2>
             </Reveal>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
               {d.shots.map((shot, i) => (
                 <Reveal key={shot.alt} index={i} as="li" className="flex flex-col gap-3">
                   <ShotProductReveal
@@ -426,11 +426,11 @@ export default async function WorkDetailPage({
               <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
                 Gallery
               </p>
-              <h2 className="font-serif font-light text-step-4 text-near-black mb-12 max-w-2xl leading-tight">
+              <h2 className="font-serif font-light text-step-4 text-near-black mb-24 max-w-2xl leading-tight">
                 A closer look.
               </h2>
             </Reveal>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
               {d.gallery.map((img, i) => (
                 <Reveal key={img.src} index={i} as="li" className="flex flex-col gap-3">
                   <div className="group relative w-full aspect-[4/3] bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]">
@@ -480,12 +480,12 @@ export default async function WorkDetailPage({
               <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
                 More work
               </p>
-              <h2 className="font-serif font-light text-step-4 text-near-black max-w-2xl leading-tight mb-12">
+              <h2 className="font-serif font-light text-step-4 text-near-black max-w-2xl leading-tight mb-24">
                 Continue reading.
               </h2>
             </Reveal>
 
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
               {others.map((o, i) => (
                 <Reveal key={o.id} index={i} as="li">
                   <CaseStudyCard
@@ -523,7 +523,7 @@ export default async function WorkDetailPage({
             willChange: 'transform',
           }}
         />
-        <Reveal variant="scene" className="relative z-10 max-w-content mx-auto flex flex-col items-start gap-8">
+        <Reveal variant="scene" className="relative z-10 max-w-content mx-auto flex flex-col items-start gap-12">
           <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
             Have something like this?
             <br />

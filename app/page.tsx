@@ -107,10 +107,10 @@ export default function HomePage() {
         id="showcase"
         className={cn(
           'relative isolate overflow-hidden',
-          // SP-4: ascending (was py-20 lg:py-24 = 200→96px, shrinking as the
-          // screen grows). Renders ≈80px below lg → 96px at lg; desktop value
-          // unchanged (protected #5). §7.4 refactor will rename the plumbing.
-          'px-gutter py-[5rem] lg:py-24',
+          // SP-4: ascending — 80px below lg (py-20 = 5rem) → 96px at lg
+          // (py-24 = 6rem). Honest scale (§7.4): the numeral now tracks the
+          // rendered size, so the ascent reads straight off the class.
+          'px-gutter py-20 lg:py-24',
           'world-surface-cool',
           'border-t border-wa-teal-soft/40',
         )}
@@ -128,7 +128,7 @@ export default function HomePage() {
             <h2 className="font-serif font-light text-step-4 ember mb-3 max-w-2xl leading-[1.1] text-balance">
               Built, shipped, and open.
             </h2>
-            <p className="font-sans font-light text-body text-charcoal mb-12 max-w-[540px] text-pretty">
+            <p className="font-sans font-light text-body text-charcoal mb-24 max-w-[540px] text-pretty">
               Real products on the open internet. Each one accessible by design.
             </p>
           </Reveal>
@@ -142,7 +142,7 @@ export default function HomePage() {
                 index={Math.min(i, 4)}
                 variant="depth"
                 className={cn(
-                  'group flex flex-col bg-surface-mid p-6 md:p-7',
+                  'group flex flex-col bg-surface-mid p-8 md:p-7',
                   // An odd trailing chip spans its 2-col (mobile) / 3-col (md+)
                   // row so no bare grid cell shows through. With six chips the
                   // grid is a clean 3×2 and `odd:` self-disables on its own.
@@ -195,7 +195,7 @@ export default function HomePage() {
         />
         <div className="max-w-content mx-auto">
           {/* Dani wave5: terracotta left-border accent on section headers */}
-          <Reveal variant="scene" className="mb-12 pl-4 border-l-2 border-terracotta">
+          <Reveal variant="scene" className="mb-24 pl-4 border-l-2 border-terracotta">
             <p className="flex items-center gap-2 font-mono text-label tracking-label uppercase text-accent-ink mb-4">
               <Icon name="work" className="w-3.5 h-3.5 text-terracotta" />
               The Work
@@ -205,7 +205,7 @@ export default function HomePage() {
             </h2>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Featured card — full width, col-span preserved via className */}
             {deliverables[0] && (
               <Reveal variant="depth" className="md:col-span-2" index={0}>
@@ -247,7 +247,7 @@ export default function HomePage() {
         {/* layered golden-hour depth behind the method panel — far tier, RM-static */}
         <ParallaxWash depth="far" />
         <div className="relative z-10 max-w-content mx-auto">
-          <Reveal variant="scene" className="mb-12 pl-4 border-l-2 border-terracotta">
+          <Reveal variant="scene" className="mb-24 pl-4 border-l-2 border-terracotta">
             <p className="flex items-center gap-2 font-mono text-label tracking-label uppercase text-accent-ink mb-4">
               <Icon name="method" className="w-3.5 h-3.5 text-terracotta" />
               Method
@@ -262,7 +262,7 @@ export default function HomePage() {
               AnimatedStepList not used: it lacks the `highlight` prop and
               manages its own dividers inside an <ol>, which would require
               restructuring the existing divider elements between steps. */}
-          <div className="bg-surface-mid rounded-lg p-8 md:p-12 border border-stone dark:border-line-strong/75 space-y-8 shadow-lg dark:shadow-md">
+          <div className="bg-surface-mid rounded-lg p-12 md:p-24 border border-stone dark:border-line-strong/75 space-y-12 shadow-lg dark:shadow-md">
             <Reveal index={0} variant="depth">
               <NumberedStep
                 number="01"
@@ -307,7 +307,7 @@ export default function HomePage() {
         {/* Golden-hour scroll-depth — far tier, holds static under reduced motion */}
         <ParallaxWash depth="far" />
         <div className="relative z-10 max-w-content mx-auto">
-          <Reveal variant="scene" className="mb-12 pl-4 border-l-2 border-terracotta">
+          <Reveal variant="scene" className="mb-24 pl-4 border-l-2 border-terracotta">
             <p className="flex items-center gap-2 font-mono text-label tracking-label uppercase text-accent-ink mb-4">
               <Icon name="about" className="w-3.5 h-3.5 text-terracotta" />
               A Brief Account
@@ -317,12 +317,12 @@ export default function HomePage() {
             </h2>
           </Reveal>
 
-          <Reveal variant="depth" className="max-w-measure flex flex-col gap-6">
+          <Reveal variant="depth" className="max-w-measure flex flex-col gap-8">
             {/* Pull-quote accent — editorial tone-setter */}
             <blockquote className="pull-quote nums-oldstyle pl-3 font-serif font-light italic text-step-2 text-ink leading-[1.45] text-balance">
               One careful deliverable beats a dozen rough ones.
             </blockquote>
-            <span aria-hidden="true" className="rule-ember block h-px w-16" />
+            <span aria-hidden="true" className="rule-ember block h-px w-32" />
 
             <p className="font-sans font-light text-step-1 text-ink leading-[1.6] text-pretty">
               Most of what I make starts with a problem worth solving. I prefer
@@ -361,7 +361,7 @@ export default function HomePage() {
             far tier, drifts on scroll, static under reduced motion. */}
         <ParallaxWash depth="far" />
         <div className="relative z-10 max-w-content mx-auto">
-          <Reveal variant="scene" className="mb-12 pl-4 border-l-2 border-terracotta">
+          <Reveal variant="scene" className="mb-24 pl-4 border-l-2 border-terracotta">
             <p className="flex items-center gap-2 font-mono text-label tracking-label uppercase text-accent-ink mb-4">
               <Icon name="credentials" className="w-3.5 h-3.5 text-terracotta" />
               Credentials
@@ -375,11 +375,11 @@ export default function HomePage() {
               content so the divider border lives on the <li>, not the wrapper. */}
           <ul className="flex flex-col divide-y divide-stone/70">
             {certificates.map((c, i) => (
-              <li key={c.id} className="py-8 first:pt-0 last:pb-0 group">
+              <li key={c.id} className="py-12 first:pt-0 last:pb-0 group">
                 {/* MO-4: cap the stagger so a fold-edge row never holds at
                     opacity 0 after an anchor jump (site idiom Math.min(i, 4)). */}
                 <Reveal index={Math.min(i, 4)} variant="depth">
-                  <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-12 transition-transform duration-base ease-out group-hover:translate-x-1">
+                  <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-24 transition-transform duration-base ease-out group-hover:translate-x-1">
                     <p className="font-mono text-meta tracking-label uppercase text-text-meta md:w-40 shrink-0">
                       {c.issuer}
                     </p>
@@ -451,8 +451,8 @@ export default function HomePage() {
           }}
         />
         {/* Reveal wraps only the content div; the ambient-drift div above is left as-is */}
-        <div className="relative z-10 max-w-content mx-auto flex flex-col items-start gap-8">
-          <Reveal variant="scene" className="flex flex-col items-start gap-8">
+        <div className="relative z-10 max-w-content mx-auto flex flex-col items-start gap-12">
+          <Reveal variant="scene" className="flex flex-col items-start gap-12">
             <p className="font-mono text-label tracking-label uppercase text-wa-teal-deep flex items-center gap-2">
               <Icon name="contact" className="w-3.5 h-3.5 text-terracotta" />
               Let&apos;s talk

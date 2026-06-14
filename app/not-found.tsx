@@ -21,7 +21,7 @@ export default function NotFound() {
     <section className="px-gutter py-24 lg:py-32 min-h-[60vh] flex items-center world-surface">
       <div className="max-w-content mx-auto w-full">
         {/* Breadcrumb-style header — matches /work/[slug] pattern */}
-        <nav aria-label="Breadcrumb" className="mb-8">
+        <nav aria-label="Breadcrumb" className="mb-12">
           <ol className="inline-flex items-center gap-2 font-mono text-meta tracking-label uppercase text-text-meta">
             <li>
               <Link href="/" className="link-draw inline-block text-text-meta">
@@ -34,13 +34,13 @@ export default function NotFound() {
         </nav>
 
         <SettleHeading
-          className="font-serif font-light text-display ember leading-[1.05] mb-6 text-balance"
+          className="font-serif font-light text-display ember leading-[1.05] mb-8 text-balance"
         >
           Nothing here.
         </SettleHeading>
 
         <Reveal>
-          <p className="font-sans font-light text-prose text-charcoal max-w-[540px] mb-10 leading-[1.65] text-pretty">
+          <p className="font-sans font-light text-prose text-charcoal max-w-[540px] mb-16 leading-[1.65] text-pretty">
             The page you{'’'}re looking for doesn{'’'}t exist — or it moved.
             The homepage is the best place to start, and the work index has
             every deliverable.

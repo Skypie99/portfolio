@@ -126,18 +126,13 @@ const config: Config = {
         label: '0.125em', // +2px
       },
       spacing: {
-        // Dani §1.1 — overlays Tailwind's defaults where they differ
-        '1': '0.25rem',
-        '2': '0.5rem',
-        '3': '0.75rem',
-        '4': '1rem',
-        '5': '1.5rem',
-        '6': '2rem',
-        '8': '3rem',
-        '10': '4rem',
-        '12': '6rem',
-        '16': '8rem',
-        '20': '12.5rem',
+        // §7.4 — honest namespace: numeral × 0.25rem = rendered size (the natural
+        // Tailwind ramp). The inverted overrides (5→1.5rem … 20→12.5rem) are gone, so
+        // the stock defaults apply (5=1.25 … 16=4 … 24=6 … 32=8rem). Only the two
+        // non-default honest keys the call sites need are declared here.
+        // Guarded by lib/__tests__/token-parity.test.ts (no inverted literals; monotonic).
+        '18': '4.5rem', // 72px  = 18 × 0.25rem
+        '50': '12.5rem', // 200px = 50 × 0.25rem
         gutter: '2rem',
         sidebar: '280px',
       },

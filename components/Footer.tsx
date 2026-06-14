@@ -35,10 +35,10 @@ export function Footer() {
       className={cn(
         'relative',
         'world-surface-alt border-t border-border-decorative',
-        // SP-6: step the threshold approach down below lg (was pt-20 = 200px at
-        // every width). Renders ≈112px below lg, keeps 12.5rem/200px at lg
-        // (protected #7). pb-8 exit asymmetry untouched. §7.4 will rename this.
-        'px-gutter pt-[7rem] lg:pt-20 pb-8',
+        // SP-6: threshold approach — 112px below lg (pt-28 = 7rem) stepping to
+        // 200px at lg (pt-50 = 12.5rem); pb-12 (3rem/48px) keeps the exit
+        // asymmetry. Honest scale (§7.4): numerals now track the rendered size.
+        'px-gutter pt-28 lg:pt-50 pb-12',
       )}
     >
       {/* faint warm hairline-glow marking the footer threshold */}
@@ -48,7 +48,7 @@ export function Footer() {
       />
       <Reveal className="max-w-content mx-auto">
         {/* Brand block — sits above the columns */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 pb-10 border-b border-stone/60">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-24 pb-16 border-b border-stone/60">
           <div className="flex flex-col gap-3">
             <Link
               href="/"
@@ -62,7 +62,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
           {/* Column 1 — Site */}
           <div className="flex flex-col gap-4">
             <h3 className="font-mono text-label tracking-label uppercase text-text-meta">
@@ -171,7 +171,7 @@ export function Footer() {
         </div>
 
         {/* Bottom strip */}
-        <div className="mt-12 pt-6 border-t border-stone flex flex-col md:flex-row gap-2 md:gap-6 justify-between items-start md:items-center">
+        <div className="mt-24 pt-8 border-t border-stone flex flex-col md:flex-row gap-2 md:gap-8 justify-between items-start md:items-center">
           <p className="font-mono text-meta tracking-label uppercase text-text-meta">
             SkyPi Studio — Est. 2026
           </p>
