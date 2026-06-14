@@ -77,7 +77,7 @@ export default function ContactPage() {
               </h2>
             </Reveal>
 
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl">
+            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-2xl">
               {profile.socials.map((s, i) => (
                 <li key={s.url} className="group border-t border-border-decorative pt-4">
                   <Reveal index={i} variant="depth">

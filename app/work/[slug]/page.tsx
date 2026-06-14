@@ -227,13 +227,13 @@ export default async function WorkDetailPage({
       {/* Main content — hero left, details right */}
       <section className="px-gutter py-24 lg:py-32 world-surface">
         <div className="max-w-content mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-24 lg:gap-50 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 lg:gap-50 items-start">
             {/* Hero image / fallback block — HeroImageSettle wraps the whole
                 well so the settle animation is the grid child itself. All
                 existing classes preserved on the wrapper. */}
             <HeroImageSettle
               className={cn(
-                'group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-1 md:order-1 shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]',
+                'group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-1 lg:order-1 shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]',
                 wideHero ? 'aspect-[4/3]' : 'aspect-[4/5]',
               )}
             >
@@ -252,7 +252,7 @@ export default async function WorkDetailPage({
             </HeroImageSettle>
 
             {/* Details column */}
-            <div className="flex flex-col gap-12 order-2 md:order-2 md:sticky md:top-24">
+            <div className="flex flex-col gap-12 order-2 lg:order-2 lg:sticky lg:top-24">
               {d.featured && (
                 <p className="font-mono text-meta tracking-label uppercase text-accent-text inline-flex items-center gap-2">
                   <span
@@ -394,7 +394,7 @@ export default async function WorkDetailPage({
                 See it in motion.
               </h2>
             </Reveal>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
+            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24">
               {d.shots.map((shot, i) => (
                 <Reveal key={shot.alt} index={i} as="li" className="flex flex-col gap-3">
                   <ShotProductReveal
@@ -430,7 +430,7 @@ export default async function WorkDetailPage({
                 A closer look.
               </h2>
             </Reveal>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
+            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24">
               {d.gallery.map((img, i) => (
                 <Reveal key={img.src} index={i} as="li" className="flex flex-col gap-3">
                   <div className="group relative w-full aspect-[4/3] bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]">
@@ -485,7 +485,7 @@ export default async function WorkDetailPage({
               </h2>
             </Reveal>
 
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
+            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24">
               {others.map((o, i) => (
                 <Reveal key={o.id} index={i} as="li">
                   <CaseStudyCard

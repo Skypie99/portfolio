@@ -91,7 +91,7 @@ export default function BlogIndexPage() {
                   <Link
                     href={`/blog/${post.id}/`}
                     aria-label={`Read: ${post.title}`}
-                    className="group flex flex-col md:flex-row md:items-start gap-8 md:gap-16 text-near-black"
+                    className="group flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-16 text-near-black"
                   >
                     {/* Index number */}
                     <span
