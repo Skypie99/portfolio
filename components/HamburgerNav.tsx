@@ -26,8 +26,10 @@ type NavItem = { href: string; label: string };
 const NAV_ITEMS: NavItem[] = [
   { href: '/',              label: 'Home'         },
   { href: '/#work',         label: 'The Work'        },
-  { href: '/#certificates', label: 'Credentials'     },
+  // CO-9: A Brief Account before Credentials — matches the rail's order and the
+  // homepage physical order (#work → #about → #certificates).
   { href: '/#about',        label: 'A Brief Account' },
+  { href: '/#certificates', label: 'Credentials'     },
   { href: '/blog/',         label: 'Notes'           },
   { href: '/#contact',      label: "Let's talk"      },
 ];
