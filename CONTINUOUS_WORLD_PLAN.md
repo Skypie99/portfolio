@@ -68,14 +68,19 @@ instant the intro hands off.
 | ~0.48 | `#process` | **dusk** — sun at the horizon |
 | ~0.62 | `#about` | deepening dusk |
 | ~0.78 | `#certificates` | twilight, sun set |
-| ~0.92 | `#contact` | **night** (dark theme) / deep twilight (light theme) |
-| 1.00 | `<Footer/>` | full night / twilight floor |
+| ~0.92 | `#contact` | deepening toward night |
+| 1.00 | footer threshold enters viewport bottom | **full night + peak ember** — held through `<Footer/>` |
+
+> **Z5/SE-2 (2026-06-14):** the arc END re-anchored from the document bottom to the **footer threshold**
+> (`footerTop − innerHeight`), so `--day-night` hits 1.0 the instant the footer's top hairline crests the
+> viewport bottom — the ending is witnessed at the door, not behind the opaque footer. dn then holds at 1.0
+> through the footer. Same linear, theme-invariant mapping; only the end moved. See `lib/motion.ts useDayNight`.
 
 **Sub-pages** (`/work`, `/work/[slug]`, `/about`, `/certificates`, `/contact`, `/blog`): no intro,
-so the arc runs top(0, golden) → footer(1, night). Each page is its own short day→night "scene";
+so the arc runs top(0, golden) → footer threshold(1, night). Each page is its own short day→night "scene";
 the View-Transitions cross-dissolve smooths the reset to golden on entry. Documented as intentional.
 
-Mapping is **linear** in v1 (tune to a gentle ease in the sweep so golden lingers through the hero).
+Mapping is **linear** and **theme-invariant** (protected — Z5 moved only the end anchor, not the curve).
 
 ---
 

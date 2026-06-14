@@ -259,7 +259,12 @@ studied read-only and stays byte-identical; **no GSAP below the landing** — th
 
 **Arc origin:** remapped to begin at the post-intro handoff — `--day-night` is 0 (full golden) the
 instant the locked 680vh intro finishes (anchored to `.cinematic-content-reveal` on the homepage; page
-top on sub-pages). **Theme ↔ scroll rule:** the toggle owns the readable theme (light = the daylight
+top on sub-pages). **Arc end (Z5/SE-2, 2026-06-14):** the **footer threshold**, not the document bottom —
+`--day-night` reaches 1 (full night + the `.footer-threshold` ember at peak 0.55) the instant the footer's
+top hairline meets the viewport bottom (`footerTop − innerHeight`, measured each frame), and holds at 1
+through the footer. So the flagship ending (alpenglow / last coal) is witnessed *at the door* instead of
+completing behind the opaque footer at absolute max scroll. The mapping stays **linear + theme-invariant**;
+only the input domain's END moved. **Theme ↔ scroll rule:** the toggle owns the readable theme (light = the daylight
 half of the world, dark = the night half); scroll only drives the backdrop's time-of-day. They never
 fight (different layers). New tokens: `--day-night-rest`, `--sky-day/dusk/night-1..4`, `--sky-sun`,
 `--surface-alpha[-alt|-cool]` — all additive (`token-parity` green; intro untouched). Readability:

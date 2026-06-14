@@ -65,7 +65,7 @@ export function WorkFilterGrid({ deliverables }: WorkFilterGridProps) {
       {/* Filter pills */}
       {allTags.length > 0 && (
         <div
-          className="flex flex-wrap gap-2 mb-24"
+          className="flex flex-wrap gap-2 mb-12"
           role="group"
           aria-label="Filter deliverables by tag"
         >
@@ -115,7 +115,7 @@ export function WorkFilterGrid({ deliverables }: WorkFilterGridProps) {
           No deliverables match this filter.
         </p>
       ) : filteredRest.length > 0 ? (
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
+        <ul className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
           <AnimatePresence mode="popLayout" initial={false}>
             {filteredRest.map((d, i) => (
               <motion.li
@@ -129,7 +129,7 @@ export function WorkFilterGrid({ deliverables }: WorkFilterGridProps) {
                 // DOM mid-filter, which would corrupt a CSS :nth-child rule.
                 className={
                   i === filteredRest.length - 1 && filteredRest.length % 2 === 1
-                    ? 'md:col-span-2 md:w-[calc(50%-1.5rem)] md:justify-self-center'
+                    ? 'lg:col-span-2 lg:w-[calc(50%-1.5rem)] lg:justify-self-center'
                     : undefined
                 }
                 exit={
