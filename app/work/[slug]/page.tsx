@@ -324,7 +324,7 @@ export default async function WorkDetailPage({
                 See it in motion.
               </h2>
             </Reveal>
-            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24">
+            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
               {d.shots.map((shot, i) => (
                 <Reveal key={shot.alt} index={i} as="li" className="flex flex-col gap-3">
                   <ShotProductReveal
@@ -360,7 +360,7 @@ export default async function WorkDetailPage({
                 A closer look.
               </h2>
             </Reveal>
-            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24">
+            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
               {d.gallery.map((img, i) => (
                 <Reveal key={img.src} index={i} as="li" className="flex flex-col gap-3">
                   <div className="group relative w-full aspect-[4/3] bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]">
@@ -415,7 +415,7 @@ export default async function WorkDetailPage({
               </h2>
             </Reveal>
 
-            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24">
+            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
               {others.map((o, i) => (
                 <Reveal key={o.id} index={i} as="li">
                   <CaseStudyCard
