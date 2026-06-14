@@ -3,11 +3,11 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { SettleHeading } from '@/components/HeroSettle';
-import { Reveal } from '@/components/Reveal';
+import { renderMarkdownProse } from '@/components/MarkdownProse';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getAllBlogPostSlugs, getBlogPosts, getProfile } from '@/lib/content';
-import { bindSoloLetters, INLINE_CODE_CLASS, smartPunctuation } from '@/lib/markdown';
+import { bindSoloLetters } from '@/lib/markdown';
 
 type RouteParams = { slug: string };
 
@@ -48,85 +48,6 @@ export async function generateMetadata({
 }
 
 /**
- * renderMarkdown — lightweight markdown-to-JSX renderer for blog post content.
- *
- * Handles: ## headings (h2, h3), **bold**, *italic*, blank-line paragraphs.
- * No dependency on react-markdown or remark — keeps the bundle clean and the
- * content model predictable. If posts need tables, code blocks, or lists,
- * extend this renderer or migrate to react-markdown at that point.
- */
-function renderMarkdown(markdown: string): React.ReactNode[] {
-  const blocks = markdown.split(/\n{2,}/).map((b) => b.trim()).filter(Boolean);
-  let firstPara = true;
-
-  return blocks.map((block, blockIdx) => {
-    const key = `block-${blockIdx}`;
-
-    // h3 — ### heading
-    if (block.startsWith('### ')) {
-      return (
-        <h3
-          key={key}
-          // SP-5: mt-12 (3rem/48px) — the case-study renderer's 96/48 (2:1)
-          // rhythm (the h2 below uses mt-24). Honest scale (§7.4): numerals
-          // now track size. Pass 3 renderer unification (§7.7) may supersede.
-          className="font-serif font-light text-prose-h3 text-near-black mt-12 mb-4"
-        >
-          {block.slice(4)}
-        </h3>
-      );
-    }
-
-    // h2 — ## heading
-    if (block.startsWith('## ')) {
-      return (
-        <h2
-          key={key}
-          // SP-5: mt-24 (6rem/96px) — matches the case-study renderer's 96/48
-          // (2:1) rhythm (the h3 above uses mt-12). Honest scale (§7.4). §7.7 may supersede.
-          className="font-serif font-light text-prose-h2 text-near-black mt-24 mb-6 first:mt-0"
-        >
-          {block.slice(3)}
-        </h2>
-      );
-    }
-
-    // Paragraph — inline parsing + oldstyle figures; drop cap on the first.
-    const dropCap = firstPara;
-    firstPara = false;
-    return (
-      <p
-        key={key}
-        className={`font-sans font-light text-prose text-charcoal leading-[1.75] text-pretty nums-oldstyle${dropCap ? ' drop-cap' : ''}`}
-      >
-        {parseInline(block)}
-      </p>
-    );
-  });
-}
-
-/**
- * parseInline — handles **bold** and *italic* within paragraph text.
- */
-function parseInline(text: string): React.ReactNode[] {
-  // Split on **bold**, *italic*, and `code`, preserving delimiters. Smart
-  // punctuation applies to prose + emphasis, never inside `code`.
-  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`)/g);
-  return parts.map((part, i) => {
-    if (part.startsWith('**') && part.endsWith('**')) {
-      return <strong key={i} className="font-semibold text-near-black">{smartPunctuation(part.slice(2, -2))}</strong>;
-    }
-    if (part.startsWith('`') && part.endsWith('`')) {
-      return <code key={i} className={INLINE_CODE_CLASS}>{part.slice(1, -1)}</code>;
-    }
-    if (part.startsWith('*') && part.endsWith('*')) {
-      return <em key={i}>{smartPunctuation(part.slice(1, -1))}</em>;
-    }
-    return smartPunctuation(part);
-  });
-}
-
-/**
  * /blog/[slug] — individual blog post page.
  *
  * Server Component. Static at build time via generateStaticParams.
@@ -141,7 +62,7 @@ export default async function BlogPostPage({
   const post = getBlogPosts().find((p) => p.id === slug);
   if (!post) notFound();
 
-  const renderedContent = renderMarkdown(post.content);
+  const renderedContent = renderMarkdownProse(post.content, 'blog');
 
   return (
     <>
@@ -216,14 +137,16 @@ export default async function BlogPostPage({
         )}
       >
         <div className="max-w-content mx-auto">
-          <Reveal variant="scene">
-            <article
-              aria-label={post.title}
-              className="max-w-measure-wide flex flex-col gap-8"
-            >
-              {renderedContent}
-            </article>
-          </Reveal>
+          {/* Each block self-reveals in reading order (carve on H2s, depth on
+              prose) via the shared renderMarkdownProse — Notes inherits the
+              case-study choreography (Z7/CO-6). No outer scene Reveal; the
+              .reveal floors in globals.css carry the RM / no-JS rest state. */}
+          <article
+            aria-label={post.title}
+            className="max-w-measure-wide flex flex-col gap-8"
+          >
+            {renderedContent}
+          </article>
         </div>
       </section>
 

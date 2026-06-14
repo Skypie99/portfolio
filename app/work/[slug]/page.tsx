@@ -14,73 +14,7 @@ import { cn } from '@/lib/cn';
 import { getDeliverables } from '@/lib/content';
 import { cardMedia, heroMedia } from '@/lib/media';
 import { frameForSlug } from '@/lib/signature';
-import { INLINE_CODE_CLASS, smartPunctuation } from '@/lib/markdown';
-
-function parseInline(text: string): React.ReactNode[] {
-  // Split on **bold**, *italic*, and `code`, preserving delimiters. Smart
-  // punctuation applies to prose + emphasis, never inside `code`.
-  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`)/g);
-  return parts.map((part, i) => {
-    if (part.startsWith('**') && part.endsWith('**'))
-      return <strong key={i} className="font-semibold text-near-black">{smartPunctuation(part.slice(2, -2))}</strong>;
-    if (part.startsWith('`') && part.endsWith('`'))
-      return <code key={i} className={INLINE_CODE_CLASS}>{part.slice(1, -1)}</code>;
-    if (part.startsWith('*') && part.endsWith('*'))
-      return <em key={i}>{smartPunctuation(part.slice(1, -1))}</em>;
-    return smartPunctuation(part);
-  });
-}
-
-function renderMarkdown(markdown: string): React.ReactNode[] {
-  const blocks = markdown.split(/\n{2,}/).map((b) => b.trim()).filter(Boolean);
-  let firstPara = true;
-  return blocks.map((block, i) => {
-    const key = `b-${i}`;
-    // Reading-order choreography (wow 2026-06-04, SM4): each block reveals as it
-    // scrolls in. The `##` sub-headings CARVE in (blur→sharp focus-pull) so the
-    // locked intro title's signature gesture recurs through the editorial body;
-    // H3s + prose rise with the depth reveal. Stagger capped so long bodies
-    // never pile up. RM / no-JS → final sharp state (see .reveal-carve).
-    const index = Math.min(i, 4);
-    if (block.startsWith('## '))
-      return (
-        <Reveal
-          key={key}
-          as="h2"
-          variant="carve"
-          index={index}
-          className="font-serif font-light text-case-h2 text-near-black mt-24 mb-4 first:mt-0"
-        >
-          {block.slice(3)}
-        </Reveal>
-      );
-    if (block.startsWith('### '))
-      return (
-        <Reveal
-          key={key}
-          as="h3"
-          variant="depth"
-          index={index}
-          className="font-serif font-light text-case-h3 text-near-black mt-12 mb-3"
-        >
-          {block.slice(4)}
-        </Reveal>
-      );
-    const dropCap = firstPara;
-    firstPara = false;
-    return (
-      <Reveal
-        key={key}
-        as="p"
-        variant="depth"
-        index={index}
-        className={`font-sans font-light text-prose text-charcoal leading-[1.75] text-pretty nums-oldstyle${dropCap ? ' drop-cap' : ''}`}
-      >
-        {parseInline(block)}
-      </Reveal>
-    );
-  });
-}
+import { renderMarkdownProse } from '@/components/MarkdownProse';
 
 type RouteParams = { slug: string };
 
@@ -368,7 +302,7 @@ export default async function WorkDetailPage({
                 prose) — see renderMarkdown — so the body has internal cinematic
                 choreography instead of one undifferentiated fade. */}
             <article aria-label={`${d.title} case study`} className="max-w-measure-wide flex flex-col gap-8">
-              {renderMarkdown(d.body)}
+              {renderMarkdownProse(d.body, 'case')}
             </article>
           </div>
         </section>
