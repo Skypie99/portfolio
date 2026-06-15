@@ -41,7 +41,17 @@ export function Footer() {
         'px-gutter pt-28 lg:pt-50 pb-12',
       )}
     >
-      {/* faint warm hairline-glow marking the footer threshold */}
+      {/* Warm alpenglow seam — the day→night climax crests at the footer
+          threshold. Its strength rides --day-night, so it's invisible at golden
+          day and peaks as night arrives at the door. Centered on the seam so it
+          spills up into the page and down into the footer's top padding (above
+          the body text); paints over the footer's translucent surface so the
+          climax reads even where the panels are near-opaque. Decorative + inert. */}
+      <div
+        aria-hidden="true"
+        className="footer-alpenglow pointer-events-none absolute inset-x-0 top-0 h-48 -translate-y-1/2"
+      />
+      {/* crisp warm hairline thread marking the exact threshold */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 h-px footer-threshold"
