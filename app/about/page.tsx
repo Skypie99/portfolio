@@ -68,7 +68,7 @@ export default function AboutPage() {
 
           {/* Story paragraphs */}
           <div className="max-w-[640px] flex flex-col gap-8">
-            <p className="font-sans font-light text-prose text-charcoal leading-[1.65] text-pretty">
+            <p className="font-sans font-light text-step-1 text-charcoal text-pretty">
               I came to software through problems I wanted to solve. Most of them
               involved accessibility — tools that should have been better but weren&apos;t.
               I decided to make some that were.

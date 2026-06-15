@@ -201,7 +201,7 @@ export default async function WorkDetailPage({
                 {d.title}
               </HeroTitleSettle>
 
-              <p className="font-sans font-light text-prose text-charcoal leading-[1.65] text-pretty">
+              <p className="font-sans font-light text-step-1 text-charcoal text-pretty">
                 {d.summary}
               </p>
 
