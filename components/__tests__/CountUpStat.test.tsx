@@ -27,7 +27,7 @@ afterEach(() => {
   cleanup();
 });
 
-const SUFFIX = 'text-[0.62em]'; // the subordinate unit span's tell
+const SUFFIX = 'text-[0.5em]'; // the subordinate unit span's tell
 
 describe('CountUpStat — suffix subordination', () => {
   it('counted "100%": "%" sits in the subordinate span, "100" does not', () => {
