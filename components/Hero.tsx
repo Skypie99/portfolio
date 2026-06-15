@@ -85,8 +85,7 @@ export function Hero({ eyebrow, heading, subhead, ctaLabel, ctaHref }: HeroProps
         <p
           className={cn(
             'hero-enter hero-enter-delay-3',
-            'font-sans font-light text-prose text-charcoal',
-            'leading-[1.65]',
+            'font-sans font-light text-step-1 text-charcoal',
             'max-w-[520px]',
             'mb-16',
             'text-pretty',

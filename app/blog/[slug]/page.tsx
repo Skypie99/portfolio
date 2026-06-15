@@ -110,7 +110,7 @@ export default async function BlogPostPage({
           </SettleHeading>
 
           {/* Summary */}
-          <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-measure-wide text-pretty mb-16">
+          <p className="font-sans font-light text-step-1 text-charcoal max-w-measure-wide text-pretty mb-16">
             {post.summary}
           </p>
 
