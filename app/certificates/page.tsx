@@ -38,7 +38,7 @@ export default function CertificatesPage() {
             like every other showcase entry point. RM → static. */}
         <ParallaxWash depth="far" />
         <div className="relative z-10 max-w-content mx-auto">
-          <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
+          <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
             <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
             Credentials — {certificates.length}
           </p>
