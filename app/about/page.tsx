@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { SettleHeading } from '@/components/HeroSettle';
-import { Icon } from '@/components/Icon';
 import { ContactEmail } from '@/components/ContactEmail';
 import { NumberedStep } from '@/components/NumberedStep';
 import { ParallaxWash } from '@/components/ParallaxWash';
@@ -58,7 +57,7 @@ export default function AboutPage() {
       <section className="px-gutter py-24 lg:py-32 world-surface">
         <div className="max-w-content mx-auto">
           <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
-            <Icon name="about" className="w-3.5 h-3.5 text-terracotta" />
+            <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
             A Brief Account
           </p>
           <SettleHeading
@@ -113,7 +112,7 @@ export default function AboutPage() {
         <div className="relative z-10 max-w-content mx-auto">
           <Reveal variant="scene" className="mb-24">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
-              <Icon name="about" className="w-3.5 h-3.5 text-terracotta" />
+              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Method
             </p>
             <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-[1.1] text-balance">
@@ -167,7 +166,7 @@ export default function AboutPage() {
         <div className="max-w-content mx-auto">
           <Reveal variant="scene" className="mb-24">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
-              <Icon name="about" className="w-3.5 h-3.5 text-terracotta" />
+              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Principles
             </p>
             <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
@@ -206,7 +205,7 @@ export default function AboutPage() {
         <div className="max-w-content mx-auto">
           <Reveal variant="scene" className="mb-24">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
-              <Icon name="about" className="w-3.5 h-3.5 text-terracotta" />
+              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Currently
             </p>
             <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
@@ -245,7 +244,7 @@ export default function AboutPage() {
           <div className="max-w-content mx-auto">
             <Reveal variant="scene" className="mb-24">
               <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
-                <Icon name="about" className="w-3.5 h-3.5 text-terracotta" />
+                <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 The Work
               </p>
               <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-[1.1] text-balance">
