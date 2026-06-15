@@ -6,7 +6,7 @@ import { Reveal } from '@/components/Reveal';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getBlogPosts, getProfile } from '@/lib/content';
-import { bindSoloLetters } from '@/lib/markdown';
+import { bindSeparatorDash, bindSoloLetters } from '@/lib/markdown';
 
 export function generateMetadata(): Metadata {
   const profile = getProfile();
@@ -133,7 +133,7 @@ export default function BlogIndexPage() {
                           'transition-colors duration-fast ease-out',
                         )}
                       >
-                        {bindSoloLetters(post.title)}
+                        {bindSeparatorDash(bindSoloLetters(post.title))}
                       </h3>
 
                       {/* Summary */}

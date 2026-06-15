@@ -35,6 +35,18 @@ export function bindSoloLetters(text: string): string {
   return text.replace(/(^|\s)([AaI])\s(?=\S)/g, '$1$2\u00A0');
 }
 
+/**
+ * Wrap-point etiquette for display titles (TY-6) \u2014 binds a spaced separator
+ * dash (em "\u2014" / en "\u2013") to the preceding word with a no-break space so a
+ * display line can't START with a hanging dash. Presentation-only: visible
+ * characters are identical; only the wrap point before the dash is removed
+ * (the space after stays, so the following clause still wraps naturally).
+ * Title-only, like bindSoloLetters \u2014 never applied to body prose.
+ */
+export function bindSeparatorDash(text: string): string {
+  return text.replace(/(\S) ([\u2014\u2013]) /g, '$1\u00A0$2 ');
+}
+
 /** Shared className for inline `code` spans in the markdown renderer. */
 export const INLINE_CODE_CLASS =
   'font-mono text-[0.85em] rounded px-1.5 py-0.5 bg-[rgb(var(--rgb-ink)/0.06)] text-near-black break-words';
