@@ -317,7 +317,8 @@ export default async function WorkDetailPage({
           <ParallaxWash depth="far" />
           <div className="relative z-10 max-w-content mx-auto">
             <Reveal variant="scene">
-              <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+              <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
+                <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 Inside the build
               </p>
               <h2 className="font-serif font-light text-step-4 text-near-black mb-24 max-w-2xl leading-tight">
@@ -353,7 +354,8 @@ export default async function WorkDetailPage({
           <ParallaxWash depth="far" />
           <div className="relative z-10 max-w-content mx-auto">
             <Reveal variant="scene">
-              <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+              <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
+                <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 Gallery
               </p>
               <h2 className="font-serif font-light text-step-4 text-near-black mb-24 max-w-2xl leading-tight">
@@ -407,7 +409,8 @@ export default async function WorkDetailPage({
           <ParallaxWash depth="far" />
           <div className="relative z-10 max-w-content mx-auto">
             <Reveal variant="scene">
-              <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+              <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
+                <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 More work
               </p>
               <h2 className="font-serif font-light text-step-4 text-near-black max-w-2xl leading-tight mb-24">

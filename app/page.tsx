@@ -5,7 +5,6 @@ import { ContactEmail } from '@/components/ContactEmail';
 import { ContentReveal } from '@/components/ContentReveal';
 import { CountUpStat } from '@/components/CountUpStat';
 import { Hero } from '@/components/Hero';
-import { Icon } from '@/components/Icon';
 import { NumberedStep } from '@/components/NumberedStep';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { ProjectCard } from '@/components/ProjectCard';
@@ -120,8 +119,8 @@ export default function HomePage() {
         <div className="relative z-10 max-w-content mx-auto">
           <Reveal variant="scene">
             {/* Section label */}
-            <p className="font-mono text-label text-sage-text uppercase tracking-label mb-3 flex items-center gap-2">
-              <Icon name="live" className="w-3.5 h-3.5 text-terracotta" />
+            <p className="font-mono text-label text-accent-ink uppercase tracking-label mb-3 flex items-center gap-2">
+              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Shipped
             </p>
             {/* Heading */}
@@ -197,7 +196,7 @@ export default function HomePage() {
           {/* Dani wave5: terracotta left-border accent on section headers */}
           <Reveal variant="scene" className="mb-24 pl-4 border-l-2 border-terracotta">
             <p className="flex items-center gap-2 font-mono text-label tracking-label uppercase text-accent-ink mb-4">
-              <Icon name="work" className="w-3.5 h-3.5 text-terracotta" />
+              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               The Work
             </p>
             <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
@@ -249,7 +248,7 @@ export default function HomePage() {
         <div className="relative z-10 max-w-content mx-auto">
           <Reveal variant="scene" className="mb-24 pl-4 border-l-2 border-terracotta">
             <p className="flex items-center gap-2 font-mono text-label tracking-label uppercase text-accent-ink mb-4">
-              <Icon name="method" className="w-3.5 h-3.5 text-terracotta" />
+              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Method
             </p>
             <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-[1.1] text-balance">
@@ -309,7 +308,7 @@ export default function HomePage() {
         <div className="relative z-10 max-w-content mx-auto">
           <Reveal variant="scene" className="mb-24 pl-4 border-l-2 border-terracotta">
             <p className="flex items-center gap-2 font-mono text-label tracking-label uppercase text-accent-ink mb-4">
-              <Icon name="about" className="w-3.5 h-3.5 text-terracotta" />
+              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               A Brief Account
             </p>
             <h2 className="font-serif font-light text-step-4 ember leading-[1.1] text-balance">
@@ -363,7 +362,7 @@ export default function HomePage() {
         <div className="relative z-10 max-w-content mx-auto">
           <Reveal variant="scene" className="mb-24 pl-4 border-l-2 border-terracotta">
             <p className="flex items-center gap-2 font-mono text-label tracking-label uppercase text-accent-ink mb-4">
-              <Icon name="credentials" className="w-3.5 h-3.5 text-terracotta" />
+              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Credentials
             </p>
             <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-[1.1] text-balance">
@@ -453,8 +452,8 @@ export default function HomePage() {
         {/* Reveal wraps only the content div; the ambient-drift div above is left as-is */}
         <div className="relative z-10 max-w-content mx-auto flex flex-col items-start gap-12">
           <Reveal variant="scene" className="flex flex-col items-start gap-12">
-            <p className="font-mono text-label tracking-label uppercase text-wa-teal-deep flex items-center gap-2">
-              <Icon name="contact" className="w-3.5 h-3.5 text-terracotta" />
+            <p className="font-mono text-label tracking-label uppercase text-accent-ink flex items-center gap-2">
+              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Let&apos;s talk
             </p>
             <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
