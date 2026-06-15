@@ -7,7 +7,7 @@ import { renderMarkdownProse } from '@/components/MarkdownProse';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getAllBlogPostSlugs, getBlogPosts, getProfile } from '@/lib/content';
-import { bindSoloLetters } from '@/lib/markdown';
+import { bindSeparatorDash, bindSoloLetters } from '@/lib/markdown';
 
 type RouteParams = { slug: string };
 
@@ -106,7 +106,7 @@ export default async function BlogPostPage({
           <SettleHeading
             className="font-serif font-light text-display ember max-w-3xl mb-16 text-balance"
           >
-            {bindSoloLetters(post.title)}
+            {bindSeparatorDash(bindSoloLetters(post.title))}
           </SettleHeading>
 
           {/* Summary */}
