@@ -267,6 +267,18 @@ export function ProductReveal({
       <div aria-hidden="true" className="pr-horizon absolute inset-x-0" />
       {kind === 'none' ? (
         <div className="absolute inset-0 overflow-hidden">{screen}</div>
+      ) : bare ? (
+        // §5.6: the case-study hero only. An independent arrival host — same box
+        // (absolute inset-0), no centering transform of its own — so it can lift
+        // the framed artifact a hair MORE than the golden-hour world settling
+        // behind it (HeroImageSettle), landing the subject ONTO a held stage,
+        // without ever touching the frame's own -translate-x/y-1/2 centering.
+        // RM/no-JS: no animation → transform:none → byte-identical to today.
+        <div className="pr-hero-lift absolute inset-0">
+          <DeviceFrame kind={kind} className={(hasReal ? FRAME_PLACEMENT_REAL : FRAME_PLACEMENT)[kind]}>
+            {screen}
+          </DeviceFrame>
+        </div>
       ) : (
         <DeviceFrame kind={kind} className={(hasReal ? FRAME_PLACEMENT_REAL : FRAME_PLACEMENT)[kind]}>
           {screen}
