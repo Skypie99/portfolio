@@ -1142,11 +1142,15 @@ html.dark .world-sun {
 .footer-alpenglow {
   opacity: clamp(0, var(--day-night, var(--day-night-rest)), 1);
   will-change: opacity;
+  /* Warmth pushed ~1.8–2× (Sky: light-mode climax was too subtle — make the day
+     clearly close at the door). No text lands under the band (it sits in the
+     footer top-padding gap), so there's no AA constraint. The taller h-48 band
+     (Footer.tsx) gives the glow more presence rising into the page. */
   background: linear-gradient(to bottom,
     transparent 0%,
-    rgb(var(--rgb-gold)   / 0.10) 34%,
-    rgb(var(--rgb-accent) / 0.22) 50%,
-    rgb(var(--rgb-gold)   / 0.10) 66%,
+    rgb(var(--rgb-gold)   / 0.19) 32%,
+    rgb(var(--rgb-accent) / 0.40) 50%,
+    rgb(var(--rgb-gold)   / 0.19) 68%,
     transparent 100%);
 }
 /* Backdrop dither (dark only) — the identical self-contained turbulence tile

@@ -49,7 +49,7 @@ export function Footer() {
           climax reads even where the panels are near-opaque. Decorative + inert. */}
       <div
         aria-hidden="true"
-        className="footer-alpenglow pointer-events-none absolute inset-x-0 top-0 h-32 -translate-y-1/2"
+        className="footer-alpenglow pointer-events-none absolute inset-x-0 top-0 h-48 -translate-y-1/2"
       />
       {/* crisp warm hairline thread marking the exact threshold */}
       <div
