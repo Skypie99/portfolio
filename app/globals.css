@@ -577,6 +577,25 @@ html.dark body::after { opacity: 0.10; }
   color: rgb(var(--rgb-accent-ink));
   font-feature-settings: 'liga' 1, 'dlig' 1;
 }
+/* Polish §6 P3: where supported, cap-align + baseline-snap the initial via
+   `initial-letter` instead of the raw float (which sits slightly proud of the
+   first line's cap-height). The float rule above stays the FALLBACK — engines
+   without initial-letter support (e.g. Firefox) render exactly as before. Only
+   the float-era geometry is overridden here; color / family / weight /
+   padding-right / dlig fall through from the base rule (a separate block only
+   overrides the properties it lists). `font-size: inherit` is load-bearing:
+   initial-letter sizes the glyph from the line metrics, so the 4.6rem clamp
+   must be dropped or the cap explodes. */
+@supports (initial-letter: 3 3) or (-webkit-initial-letter: 3 3) {
+  .drop-cap::first-letter {
+    -webkit-initial-letter: 3 3;
+    initial-letter: 3 3;
+    float: none;
+    font-size: inherit;
+    line-height: normal;
+    margin-top: 0;
+  }
+}
 
 /* Pull-quote — serif italic jewellery with an oversized faded quote mark. */
 .pull-quote {
