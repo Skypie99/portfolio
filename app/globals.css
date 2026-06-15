@@ -834,6 +834,32 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
 }
 
 /* ------------------------------------------------------------------
+   §5.6 — the framed artifact lifts INTO its golden hour. The case-study
+   hero's device frame travels a hair MORE than the world settling behind
+   it (HeroImageSettle: opacity 0→1 + scale 1.02→1), so the subject lands
+   ONTO a held stage — the depth grammar the intro + F1 finale already use.
+   BOTH planes zoom OUT (same direction → reads as depth, not desync); the
+   frame just travels farther (0.045 vs the world's 0.02) and lands ~420ms
+   later (1200ms + 120ms delay vs the world's 900ms) — ~a half-second of
+   depth. Transform-only (the world's fade already carries the frame, which
+   sits inside .hero-settle-img — a second opacity would muddy the edge).
+   Host = .pr-hero-lift (ProductReveal hero branch): an absolute inset-0
+   wrapper with NO centering transform, so this never touches the frame's
+   own -translate-x/y-1/2. Consumes existing tokens only → token-parity
+   stays green. RM / no-JS: the rule below isn't applied → transform:none →
+   the frame rests centered, byte-identical to today. Reversible: delete the
+   keyframe + this rule + the .pr-hero-lift wrapper.
+   ------------------------------------------------------------------ */
+@keyframes pr-hero-lift {
+  from { transform: scale(1.045); } /* no `to` → settles to the host's rest = none */
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pr-hero-lift {
+    animation: pr-hero-lift var(--dur-scene) var(--ease-gh-settle) 120ms both;
+  }
+}
+
+/* ------------------------------------------------------------------
    ProductReveal — cinematic product media + golden-hour placeholder
    (Show-the-work 2026-06-04). Styling for components/ProductReveal.tsx +
    DeviceFrame.tsx. These rules live in the SITE-UI region — deliberately
