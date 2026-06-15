@@ -922,7 +922,23 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
   border: 2px solid rgb(var(--pr-sig, 72 195 210) / 0.5);
   border-radius: 1rem;
   background: rgb(var(--rgb-earth-deep) / 0.5);
-  box-shadow: var(--shadow-lg), inset 0 0 26px rgb(var(--pr-sig, 72 195 210) / 0.18);
+  /* Lit-glass coherence (Polish §6 P1): share phone/window's panel-lit convex
+     top-highlight so all three frames read as one material. The highlight inset
+     is listed BEFORE the cyan sig-inset — first-listed box-shadow paints on top,
+     so the sharp 1px line reads over the diffuse glow. Inlined here (NOT the
+     .panel-lit class) because both rules own `box-shadow`: the class would
+     cascade-override (no-op in light; erases the cyan inset in dark). */
+  box-shadow:
+    var(--shadow-lg),
+    inset 0 1px 0 0 rgb(255 255 255 / 0.55),
+    inset 0 0 26px rgb(var(--pr-sig, 72 195 210) / 0.18);
+}
+/* Dark variant — same convex highlight as html.dark .panel-lit, cyan inset kept. */
+html.dark .pr-frame-plate {
+  box-shadow:
+    var(--shadow-lg),
+    inset 0 1px 0 0 rgb(255 240 214 / 0.08),
+    inset 0 0 26px rgb(var(--pr-sig, 72 195 210) / 0.18);
 }
 /* CO-7 (§7.3, DARK only): deepen the neutral media mat one luminance step and
    tint it with the project's own --pr-sig, so a bright (light-mode) screenshot
