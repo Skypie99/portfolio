@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import type { CSSProperties } from 'react';
 
 import { CaseStudyCard } from '@/components/CaseStudyCard';
 import { ContactEmail } from '@/components/ContactEmail';
@@ -13,7 +14,7 @@ import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getDeliverables } from '@/lib/content';
 import { cardMedia, heroMedia } from '@/lib/media';
-import { frameForSlug } from '@/lib/signature';
+import { frameForSlug, signatureFor } from '@/lib/signature';
 import { renderMarkdownProse } from '@/components/MarkdownProse';
 
 type RouteParams = { slug: string };
@@ -193,6 +194,21 @@ export default async function WorkDetailPage({
                 </p>
               )}
 
+              {/* §5.4 — per-project signature: the title opens with its own
+                  --pr-sig hue. Only the decorative dot takes the color; all
+                  text stays on standard ink tokens. Reuses §5.1's dot geometry. */}
+              <p
+                className="font-mono text-meta tracking-label uppercase text-accent-ink inline-flex items-center gap-2"
+                style={{ '--pr-sig': signatureFor(d.id) } as CSSProperties}
+              >
+                <span
+                  aria-hidden="true"
+                  className="inline-block w-1.5 h-1.5 rounded-full"
+                  style={{ background: 'rgb(var(--pr-sig))' }}
+                />
+                {d.role}
+              </p>
+
               {/* HeroTitleSettle: carves in after the image (delay 150ms),
                   tightening letter-spacing from 0.12em to -0.02em. */}
               <HeroTitleSettle
@@ -201,7 +217,7 @@ export default async function WorkDetailPage({
                 {d.title}
               </HeroTitleSettle>
 
-              <p className="font-sans font-light text-prose text-charcoal leading-[1.65] text-pretty">
+              <p className="font-sans font-light text-step-1 text-charcoal text-pretty">
                 {d.summary}
               </p>
 
@@ -317,7 +333,8 @@ export default async function WorkDetailPage({
           <ParallaxWash depth="far" />
           <div className="relative z-10 max-w-content mx-auto">
             <Reveal variant="scene">
-              <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+              <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
+                <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 Inside the build
               </p>
               <h2 className="font-serif font-light text-step-4 text-near-black mb-24 max-w-2xl leading-tight">
@@ -353,7 +370,8 @@ export default async function WorkDetailPage({
           <ParallaxWash depth="far" />
           <div className="relative z-10 max-w-content mx-auto">
             <Reveal variant="scene">
-              <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+              <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
+                <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 Gallery
               </p>
               <h2 className="font-serif font-light text-step-4 text-near-black mb-24 max-w-2xl leading-tight">
@@ -407,7 +425,8 @@ export default async function WorkDetailPage({
           <ParallaxWash depth="far" />
           <div className="relative z-10 max-w-content mx-auto">
             <Reveal variant="scene">
-              <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4">
+              <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
+                <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 More work
               </p>
               <h2 className="font-serif font-light text-step-4 text-near-black max-w-2xl leading-tight mb-24">
