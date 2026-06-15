@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import type { CSSProperties } from 'react';
 
 import { CaseStudyCard } from '@/components/CaseStudyCard';
 import { ContactEmail } from '@/components/ContactEmail';
@@ -13,7 +14,7 @@ import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getDeliverables } from '@/lib/content';
 import { cardMedia, heroMedia } from '@/lib/media';
-import { frameForSlug } from '@/lib/signature';
+import { frameForSlug, signatureFor } from '@/lib/signature';
 import { renderMarkdownProse } from '@/components/MarkdownProse';
 
 type RouteParams = { slug: string };
@@ -192,6 +193,21 @@ export default async function WorkDetailPage({
                   Featured
                 </p>
               )}
+
+              {/* §5.4 — per-project signature: the title opens with its own
+                  --pr-sig hue. Only the decorative dot takes the color; all
+                  text stays on standard ink tokens. Reuses §5.1's dot geometry. */}
+              <p
+                className="font-mono text-meta tracking-label uppercase text-accent-ink inline-flex items-center gap-2"
+                style={{ '--pr-sig': signatureFor(d.id) } as CSSProperties}
+              >
+                <span
+                  aria-hidden="true"
+                  className="inline-block w-1.5 h-1.5 rounded-full"
+                  style={{ background: 'rgb(var(--pr-sig))' }}
+                />
+                {d.role}
+              </p>
 
               {/* HeroTitleSettle: carves in after the image (delay 150ms),
                   tightening letter-spacing from 0.12em to -0.02em. */}
