@@ -1130,6 +1130,29 @@ html.dark .world-sun {
     rgb(var(--rgb-accent) / calc(0.4 + 0.15 * var(--day-night, var(--day-night-rest)))) 50%,
     transparent);
 }
+/* The footer alpenglow — the GLOW around the hairline coal above. A soft vertical
+   warm wash (gold halo → terracotta core → gold → out) centered on the seam, so
+   the warm day→night climax actually reads in light mode where the lower panels
+   are too near-opaque to show the world's evolving tint. Strength rides the world
+   clock: absent at golden day, peaking as night arrives at the door. Sits ABOVE
+   the footer's translucent surface (footer child, painted over its bg) and is
+   centered on the seam (-translate-y-1/2 in Footer.tsx) so it lands in the top
+   padding / the page above — never under the footer body text. RM-safe (rest →
+   light 0 / dark 1), compositor-only opacity, decorative + inert. */
+.footer-alpenglow {
+  opacity: clamp(0, var(--day-night, var(--day-night-rest)), 1);
+  will-change: opacity;
+  /* Warmth pushed ~1.8–2× (Sky: light-mode climax was too subtle — make the day
+     clearly close at the door). No text lands under the band (it sits in the
+     footer top-padding gap), so there's no AA constraint. The taller h-48 band
+     (Footer.tsx) gives the glow more presence rising into the page. */
+  background: linear-gradient(to bottom,
+    transparent 0%,
+    rgb(var(--rgb-gold)   / 0.19) 32%,
+    rgb(var(--rgb-accent) / 0.40) 50%,
+    rgb(var(--rgb-gold)   / 0.19) 68%,
+    transparent 100%);
+}
 /* Backdrop dither (dark only) — the identical self-contained turbulence tile
    as the global grain (body::after, line ~499), composited INSIDE the fixed
    backdrop so the long near-black ramps quantize invisibly at the source.

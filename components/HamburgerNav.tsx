@@ -171,10 +171,15 @@ export function HamburgerNav() {
               // the close position keeps winning the hit-test, and below
               // the pointer-inert grain (z-100).
               'fixed inset-0 z-[80]',
-              // Frosted cohesion with the glass cards — kept near-opaque (92%)
-              // so the overlay's ink/bone nav text holds AA over any content
-              // behind; the blur only softens the faint bleed-through.
-              'bg-cream/92 backdrop-blur-2xl',
+              // Fully opaque so the modal completely occludes the fixed
+              // WorldBackdrop (z-index:-1) behind it. A translucent fill let the
+              // night-sky gradient bleed through — and `bg-cream/92` in fact
+              // generated NO rule at all (92 isn't a Tailwind opacity step), so
+              // the drawer rendered with no background and the world showed
+              // straight through the blur. `bg-cream` = --rgb-canvas, flipping
+              // cream (light) / near-black (dark) with the theme; gives the nav
+              // text a solid, full-AA backdrop.
+              'bg-cream',
               // IN-2: flex-col so the wordmark renders on one line ABOVE the menu
               // (without it the overlay is a row and strands the wordmark beside
               // the menu as a two-line scrap).
