@@ -89,7 +89,7 @@ export function CountUpStat({ value, emberClass, label }: CountUpStatProps) {
   //    (so the four pure-number cells stay span-free).
   //  • static (parsed === null) — split a trailing unit out of e.g. "2.2 AA".
   const suffixSpan = (text: string) => (
-    <span className="text-[0.62em] tracking-normal align-baseline ml-[0.12em]">{text}</span>
+    <span className="text-[0.5em] tracking-normal align-baseline ml-[0.22em]">{text}</span>
   );
 
   let body: ReactNode;
