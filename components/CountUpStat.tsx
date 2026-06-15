@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { type ReactNode, useEffect, useMemo, useRef, useState } from 'react';
 
 import { cn } from '@/lib/cn';
 import { useInViewOnce, usePrefersReducedMotion } from '@/lib/motion';
@@ -18,6 +18,19 @@ type CountUpStatProps = {
 function parseStat(value: string): { target: number; suffix: string } | null {
   const m = value.match(/^(\d[\d,]*)(\D*)$/);
   return m ? { target: Number(m[1].replace(/,/g, '')), suffix: m[2] } : null;
+}
+
+/**
+ * Split a STATIC (non-counted) stat into a leading figure + trailing unit so the
+ * unit can be set optically below the numeral (§5.5). "2.2 AA" → {figure:"2.2",
+ * unit:"AA"} (the literal space is dropped — the unit span's margin is the gap).
+ * Returns null for pure tokens with no leading number ("E2E") so they render
+ * whole. Deliberately separate from parseStat: widening parseStat's regex would
+ * route "2.2 AA" into the count-up path and animate "2.2".
+ */
+function splitStaticUnit(value: string): { figure: string; unit: string } | null {
+  const m = value.match(/^(\d[\d.,]*)\s*(\S.*)$/);
+  return m ? { figure: m[1], unit: m[2] } : null;
 }
 
 /**
@@ -69,6 +82,36 @@ export function CountUpStat({ value, emberClass, label }: CountUpStatProps) {
     return () => cancelAnimationFrame(raf);
   }, [inView, reduced, parsed]);
 
+  // §5.5: the trailing unit (e.g. "%" in "100%", "AA" in "2.2 AA") is set optically
+  // below the numeral so every figure reads as one confident stat. Two paths:
+  //  • counted (parsed) — the number animates; the suffix appears only once it lands
+  //    (preserving the existing "suffix on completion" detail) and only if non-empty
+  //    (so the four pure-number cells stay span-free).
+  //  • static (parsed === null) — split a trailing unit out of e.g. "2.2 AA".
+  const suffixSpan = (text: string) => (
+    <span className="text-[0.62em] tracking-normal align-baseline ml-[0.12em]">{text}</span>
+  );
+
+  let body: ReactNode;
+  if (parsed) {
+    body = (
+      <>
+        {display.toLocaleString('en-US')}
+        {display >= parsed.target && parsed.suffix ? suffixSpan(parsed.suffix) : null}
+      </>
+    );
+  } else {
+    const split = splitStaticUnit(value);
+    body = split ? (
+      <>
+        {split.figure}
+        {suffixSpan(split.unit)}
+      </>
+    ) : (
+      value
+    );
+  }
+
   return (
     <p
       ref={ref}
@@ -83,7 +126,7 @@ export function CountUpStat({ value, emberClass, label }: CountUpStatProps) {
       )}
       aria-label={`${value} ${label}`}
     >
-      {parsed ? `${display.toLocaleString('en-US')}${display >= parsed.target ? parsed.suffix : ''}` : value}
+      {body}
     </p>
   );
 }
