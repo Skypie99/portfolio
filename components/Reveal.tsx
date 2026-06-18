@@ -26,6 +26,8 @@ type RevealProps = {
   variant?: 'default' | 'scene' | 'depth' | 'carve';
   /** Rendered element. Default `div`. */
   as?: ElementType;
+  /** Optional element id — used for in-page anchors (e.g. heading slugs). */
+  id?: string;
 };
 
 /**
@@ -49,6 +51,7 @@ export function Reveal({
   staggerStep = 80,
   variant = 'default',
   as: Tag = 'div',
+  id,
 }: RevealProps) {
   const [ref, inView] = useInViewOnce<HTMLElement>();
   const Comp = Tag as ElementType;
@@ -56,6 +59,7 @@ export function Reveal({
   return (
     <Comp
       ref={ref}
+      id={id}
       className={cn(
         'reveal',
         variant === 'scene' && 'reveal-scene',

@@ -47,6 +47,20 @@ export function bindSeparatorDash(text: string): string {
   return text.replace(/(\S) ([\u2014\u2013]) /g, '$1\u00A0$2 ');
 }
 
+/**
+ * slugify — turn a heading's text into a stable, URL-safe id for in-page
+ * anchors and the article contents index (§8.3). Strips markdown emphasis
+ * markers so `**Bold** heading` and `Bold heading` slug identically.
+ */
+export function slugify(text: string): string {
+  return text
+    .replace(/[*`_]/g, '') // drop **bold** / *italic* / `code` / _em_ markers
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-') // non-alphanumerics → single hyphen
+    .replace(/^-+|-+$/g, ''); // trim leading/trailing hyphens
+}
+
 /** Shared className for inline `code` spans in the markdown renderer. */
 export const INLINE_CODE_CLASS =
   'font-mono text-[0.85em] rounded px-1.5 py-0.5 bg-[rgb(var(--rgb-ink)/0.06)] text-near-black break-words';
