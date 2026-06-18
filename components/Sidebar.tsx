@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import { Button } from '@/components/Button';
+import { SidebarArticleNav } from '@/components/SidebarArticleNav';
 import { SidebarFeatured } from '@/components/SidebarFeatured';
 import { SidebarProgress } from '@/components/SidebarProgress';
 import { SidebarSectionNav } from '@/components/SidebarSectionNav';
@@ -79,7 +80,11 @@ export function Sidebar() {
       </div>
 
       {/* ── On this page (scroll-spy section index) ─────────────────── */}
+      {/* Home + most routes: the site-section index. A single Note / case
+          study swaps in that article's own contents (§8.3); the two are
+          mutually exclusive by route, so only one ever renders. */}
       <SidebarSectionNav />
+      <SidebarArticleNav />
 
       {/* ── Notes link ────────────────────────────────────────────── */}
       <div className="flex flex-col gap-3">
