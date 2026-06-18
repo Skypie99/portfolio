@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 import { Reveal } from '@/components/Reveal';
-import { INLINE_CODE_CLASS, smartPunctuation } from '@/lib/markdown';
+import { INLINE_CODE_CLASS, slugify, smartPunctuation } from '@/lib/markdown';
 
 /**
  * parseInline — the SINGLE inline parser site-wide (Z7/CO-6). Splits on **bold**,
@@ -60,21 +60,35 @@ export function renderMarkdownProse(markdown: string, variant: ProseVariant): Re
   const c = VARIANT_CLASSES[variant];
   const blocks = markdown.split(/\n{2,}/).map((b) => b.trim()).filter(Boolean);
   let firstPara = true;
+  // Stable, unique heading ids for in-page anchors + the article contents
+  // index (§8.3). Collisions (repeated heading text) get -2, -3, … suffixes.
+  const usedIds = new Set<string>();
+  const headingId = (text: string): string => {
+    const base = slugify(text) || 'section';
+    let id = base;
+    for (let n = 2; usedIds.has(id); n += 1) id = `${base}-${n}`;
+    usedIds.add(id);
+    return id;
+  };
   return blocks.map((block, i) => {
     const key = `b-${i}`;
     const index = Math.min(i, 4);
-    if (block.startsWith('## '))
+    if (block.startsWith('## ')) {
+      const text = block.slice(3);
       return (
-        <Reveal key={key} as="h2" variant="carve" index={index} className={c.h2}>
-          {block.slice(3)}
+        <Reveal key={key} as="h2" id={headingId(text)} variant="carve" index={index} className={`${c.h2} scroll-mt-24`}>
+          {text}
         </Reveal>
       );
-    if (block.startsWith('### '))
+    }
+    if (block.startsWith('### ')) {
+      const text = block.slice(4);
       return (
-        <Reveal key={key} as="h3" variant="depth" index={index} className={c.h3}>
-          {block.slice(4)}
+        <Reveal key={key} as="h3" id={headingId(text)} variant="depth" index={index} className={`${c.h3} scroll-mt-24`}>
+          {text}
         </Reveal>
       );
+    }
     const dropCap = firstPara;
     firstPara = false;
     return (

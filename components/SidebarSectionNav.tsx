@@ -46,10 +46,17 @@ const SECTIONS = [
 // Module-stable id list so useActiveSection doesn't re-subscribe each render.
 const SECTION_IDS: string[] = SECTIONS.map((s) => s.id);
 
+// Single Note / case study — SidebarArticleNav shows that article's own
+// contents here instead (§8.3), so this home-section index steps aside.
+const LONGFORM_ROUTE = /^\/(blog|work)\/[^/]+\/?$/;
+
 export function SidebarSectionNav() {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? '';
   const onHome = pathname === '/';
   const active = useActiveSection(SECTION_IDS); // '' off-home (hook no-ops)
+
+  // On a single article, the contents index (SidebarArticleNav) takes this slot.
+  if (LONGFORM_ROUTE.test(pathname)) return null;
 
   return (
     <nav aria-label="On this page" className="flex flex-col gap-3">
