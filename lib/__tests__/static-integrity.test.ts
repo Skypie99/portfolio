@@ -148,9 +148,12 @@ function resolveInternalHref(href: string): string | null {
     return join(OUT_DIR, path, 'index.html');
   }
 
-  // Try direct .html match, then directory/index.html
+  // Try direct .html match, then a concrete static file (e.g. /feed.xml,
+  // /feed.json — links to real files emitted by Route Handlers), then
+  // directory/index.html.
   const direct = join(OUT_DIR, path);
   if (direct.endsWith('.html')) return direct;
+  if (existsSync(direct)) return direct;
   return join(OUT_DIR, path, 'index.html');
 }
 

@@ -14,6 +14,13 @@ export function generateMetadata(): Metadata {
   return {
     title: `Notes — ${profile.name}`,
     description,
+    // Feed autodiscovery (§8.4) — browsers/readers find the RSS + JSON feeds.
+    alternates: {
+      types: {
+        'application/rss+xml': '/feed.xml',
+        'application/feed+json': '/feed.json',
+      },
+    },
     openGraph: {
       type: 'website',
       title: `Notes — ${profile.name}`,
@@ -61,6 +68,23 @@ export default function BlogIndexPage() {
           <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-[640px] text-pretty">
             On accessibility, AI-assisted building, and what it means to
             make things carefully — one project at a time.
+          </p>
+          {/* Quiet feed affordance (§8.4) — follow without an algorithm in the middle. */}
+          <p className="mt-8 font-mono text-meta tracking-label uppercase text-text-meta flex items-center gap-3">
+            <span>Subscribe</span>
+            <a
+              href="/feed.xml"
+              className="link-draw text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+            >
+              RSS
+            </a>
+            <span aria-hidden="true" className="text-stone-strong">·</span>
+            <a
+              href="/feed.json"
+              className="link-draw text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+            >
+              JSON
+            </a>
           </p>
         </div>
       </section>
