@@ -135,6 +135,14 @@ export function Footer() {
                   Accessibility
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/colophon/"
+                  className="link-draw font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+                >
+                  Colophon
+                </Link>
+              </li>
             </ul>
           </div>
 

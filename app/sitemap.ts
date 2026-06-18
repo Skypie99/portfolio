@@ -24,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/blog/`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${BASE}/contact/`, lastModified: now, changeFrequency: 'yearly', priority: 0.5 },
     { url: `${BASE}/accessibility/`, lastModified: now, changeFrequency: 'yearly', priority: 0.5 },
+    { url: `${BASE}/colophon/`, lastModified: now, changeFrequency: 'yearly', priority: 0.5 },
   ];
 
   const work: MetadataRoute.Sitemap = getDeliverables().map((d) => ({
