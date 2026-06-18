@@ -200,3 +200,39 @@ In the spirit of being honest about what ships:
 
 Accessibility barriers feel lonely when you face them alone. If something here got in your way — a control you could not reach, text you could not read, anything at all — I want to know. Tell me what broke and what you were trying to do. I read every message that comes through, and I will fix it.`;
 }
+
+/**
+ * getColophon — the body copy for the /colophon page (§8.2).
+ *
+ * The site documenting itself: stack, type, the day→night world, the quiet
+ * design systems, and the build process. Same constraints as the accessibility
+ * statement — authored for renderMarkdownProse (## headings + bold-lead
+ * paragraphs only; no lists / inline links). Every claim is grounded in the
+ * real codebase (package.json, app/fonts.ts, lib/signature.ts, globals.css,
+ * CLAUDE.md) and in Sky's existing /about process copy. Sky owns this wording.
+ */
+export function getColophon(): string {
+  return `Most sites hide how they were made. This one tells you.
+
+I keep a written record of how each thing was built — the documentation is part of the deliverable, not an afterthought. This page is that habit turned on the portfolio itself.
+
+## The stack
+
+This is a static site. Next.js builds it to plain HTML at compile time, so there is no server, no database, and no account — nothing to run, and nothing to breach. React and TypeScript hold the structure; Tailwind handles the styling; Framer Motion and GSAP carry the motion. The words and the projects live in small JSON and Markdown files, checked by Zod every time the site builds — if the content is malformed, the build fails instead of shipping something broken. It is hosted on GitHub Pages and rebuilds itself within a couple of minutes of every change.
+
+## The type
+
+Three typefaces, each with one job. **Cormorant Garamond** sets the serif crowns — the large titles that open each page. **DM Sans**, kept light, carries the body for calm reading. **DM Mono** handles the small uppercase labels and the metadata. All three are self-hosted at build time, so reading this page makes no outside font requests.
+
+## The world
+
+The part you feel before you can name it: one continuous golden-hour desert that the whole site travels through. It opens at warm daylight and eases toward night as you scroll, cresting exactly as the footer arrives. Light mode is the daylight half of that world; dark mode is the night half — the same journey, told in each. It is decorative, hidden from screen readers, and it holds perfectly still the moment your system asks for reduced motion.
+
+## The quiet systems
+
+A few details that repeat on purpose. The page titles wear an **ember** gradient — a warm rust-to-gold wash, with cool teal and moss variants so the warmth has something to lean on. Each project signs its own name with a **signature hue** from the same golden-hour family — terracotta for AccessMap, phantom cyan for Ghost Code, clay-rose for Mutual Mesh — and sits in a frame true to its medium: a phone, a browser window, a clean plate. Even the numerals are deliberate — lined up while they count, old-style once they settle into prose.
+
+## How it was made
+
+The same way everything here gets made. I describe the problem to Claude Code and build in the open, reading the output and correcting it when it goes wrong. For the larger work, a team of agents — each with a defined role, working from a written constitution — does the heavy lifting, so nothing is decided by accident. Nothing ships until I have used it. Then I write down what broke, and what the next person will need to know.`;
+}
