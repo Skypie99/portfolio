@@ -403,7 +403,7 @@ body {
 }
 
 
-/* Focus-visible default — Alex §6.1. Terracotta 4.33:1 on cream (PASS 3:1 UI).
+/* Focus-visible default — Alex §6.1. Terracotta 4.02:1 on cream (PASS 3:1 UI).
    Tokenized (Phase 5) so the ring is a system knob. The outline traces each
    element's OWN border-radius (pills stay pills, 22px cards stay 22px) — the
    rule never mutates element geometry. (Defects repair R6, 2026-06-12: the
