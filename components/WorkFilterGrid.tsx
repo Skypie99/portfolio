@@ -36,7 +36,20 @@ export function WorkFilterGrid({ deliverables }: WorkFilterGridProps) {
   const featured = deliverables.find((d) => d.featured);
   const rest = deliverables.filter((d) => !d.featured);
 
-  const allTags = Array.from(new Set(deliverables.flatMap((d) => d.tags))).sort();
+  // Only surface filter facets that actually GROUP the catalog (§6 polish). A
+  // tag on a single deliverable isolates one card rather than filtering it — with
+  // six projects that's noise (the taxonomy was finer than the catalog it sorts).
+  // Cards still carry their full tag set; this trims only the filter row to the
+  // facets that partition two or more deliverables.
+  const tagCounts = deliverables
+    .flatMap((d) => d.tags)
+    .reduce<Record<string, number>>((acc, t) => {
+      acc[t] = (acc[t] ?? 0) + 1;
+      return acc;
+    }, {});
+  const allTags = Object.keys(tagCounts)
+    .filter((tag) => tagCounts[tag] >= 2)
+    .sort();
 
   const filteredRest = activeTag
     ? rest.filter((d) => d.tags.includes(activeTag))
