@@ -33,7 +33,7 @@ export default function ContactPage() {
       {/* Page header + primary CTA */}
       <section className="px-gutter py-24 lg:py-32 world-surface">
         <div className="max-w-content mx-auto">
-          <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
+          <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
             <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
             Let&apos;s talk
           </p>
@@ -68,7 +68,7 @@ export default function ContactPage() {
         >
           <div className="max-w-content mx-auto">
             <Reveal variant="scene" className="mb-24">
-              <p className="font-mono text-label tracking-label uppercase text-text-meta mb-4 flex items-center gap-2">
+              <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
                 <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 Elsewhere
               </p>
