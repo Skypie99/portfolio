@@ -37,7 +37,7 @@ export async function generateMetadata({
       title: `${post.title} — ${profile.name}`,
       description: post.summary,
       publishedTime: post.publishedDate,
-      images: [{ url: '/og-image.svg', width: 1200, height: 630, alt: post.title }],
+      images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: post.title }],
     },
     twitter: {
       card: 'summary_large_image',

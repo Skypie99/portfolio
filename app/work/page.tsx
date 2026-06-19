@@ -18,7 +18,7 @@ export function generateMetadata(): Metadata {
       type: 'website',
       title: `Selected Work — ${profile.name}`,
       description,
-      images: [{ url: '/og-image.svg', width: 1200, height: 630 }],
+      images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
     },
     twitter: {
       card: 'summary_large_image',
