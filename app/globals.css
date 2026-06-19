@@ -1367,11 +1367,27 @@ html.dark .world-backdrop::after {
   .glass-card:hover::before { opacity: 1; }
   .glass-card:hover::after { opacity: 0.45; }
 }
+/* Keyboard parity (polish 2026-06-18): the lift + specular that :hover gives a
+   mouse, :focus-within gives the keyboard — ungated by pointer type so it works
+   on any device. Values mirror the :hover block above (kept in sync). Uses
+   :focus-within (not :focus-visible) because ProjectCard's links are children of
+   .glass-card; on CaseStudyCard the card itself is the link, so this covers both. */
+.glass-card:focus-within {
+  transform: translateY(-7px);
+  box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 0.9),
+              inset 0 0 0 1px rgb(255 255 255 / 0.34),
+              inset 0 -1px 1px 0 rgb(72 52 32 / 0.07),
+              0 16px 34px -20px rgb(58 68 92 / 0.2),
+              0 40px 74px -28px rgb(72 46 26 / 0.32);
+}
+.glass-card:focus-within::before { opacity: 1; }
+.glass-card:focus-within::after { opacity: 0.45; }
 @media (prefers-reduced-motion: reduce) {
   /* MO-3: the dead `box-shadow 0.3s ease` was already neutralized by the global
      RM rule (transition-duration: 0.01ms !important) — only the transform kill
-     does real work here. */
-  .glass-card:hover { transform: none; }
+     does real work here. Focus parity gets the same kill. */
+  .glass-card:hover,
+  .glass-card:focus-within { transform: none; }
 }
 /* dark mode — warm-dark frosted glass (the ink token flips light → AA) */
 html.dark .glass-card {
@@ -1401,7 +1417,8 @@ html.dark .glass-card::after {
    day→night world now visible behind the cards (see `html.dark body`), keep the
    hover lift a touch quieter than light so the mouse light stays atmosphere you
    feel more than see — never a feature. (Light is unchanged; its world is too.) */
-html.dark .glass-card:hover::after {
+html.dark .glass-card:hover::after,
+html.dark .glass-card:focus-within::after {
   opacity: 0.34;
 }
 

@@ -67,7 +67,7 @@ export default function AboutPage() {
           </SettleHeading>
 
           {/* Story paragraphs */}
-          <div className="max-w-[640px] flex flex-col gap-8">
+          <div className="max-w-measure-lead flex flex-col gap-8">
             <p className="font-sans font-light text-step-1 text-charcoal text-pretty">
               I came to software through problems I wanted to solve. Most of them
               involved accessibility — tools that should have been better but weren&apos;t.
@@ -174,7 +174,7 @@ export default function AboutPage() {
             </h2>
           </Reveal>
 
-          <Reveal variant="depth" className="max-w-[640px] flex flex-col gap-8">
+          <Reveal variant="depth" className="max-w-measure-lead flex flex-col gap-8">
             <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
               WCAG 2.2 AA on every interface. Not because it is required.
               Because it is correct. AccessMap exists because disabled people
@@ -213,7 +213,7 @@ export default function AboutPage() {
             </h2>
           </Reveal>
 
-          <Reveal variant="depth" className="max-w-[640px] flex flex-col gap-8">
+          <Reveal variant="depth" className="max-w-measure-lead flex flex-col gap-8">
             <p className="font-sans font-light text-body text-charcoal leading-[1.65]">
               I am not a trained software engineer. I came to coding through
               building — I had ideas I wanted to exist. That is still how this

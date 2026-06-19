@@ -65,7 +65,7 @@ export default function BlogIndexPage() {
           >
             Notes
           </SettleHeading>
-          <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-[640px] text-pretty">
+          <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-measure-lead text-pretty">
             On accessibility, AI-assisted building, and what it means to
             make things carefully — one project at a time.
           </p>
@@ -161,7 +161,7 @@ export default function BlogIndexPage() {
                       </h3>
 
                       {/* Summary */}
-                      <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-[640px] text-pretty">
+                      <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-measure-lead text-pretty">
                         {post.summary}
                       </p>
 

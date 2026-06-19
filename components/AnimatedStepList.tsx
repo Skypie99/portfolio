@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 
 import { NumberedStep } from '@/components/NumberedStep';
+import { MOTION } from '@/lib/motion';
 
 type Step = {
   number: string;
@@ -20,7 +21,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const },
+    transition: { duration: MOTION.DUR_SLOW, ease: MOTION.EASE_ENTRANCE },
   },
 };
 
@@ -48,7 +49,7 @@ export function AnimatedStepList({ steps }: AnimatedStepListProps) {
           transition={
             shouldReduceMotion
               ? undefined
-              : { delay: i * 0.12, duration: 0.5, ease: [0.16, 1, 0.3, 1] }
+              : { delay: i * MOTION.STAGGER_SCENE, duration: MOTION.DUR_SLOW, ease: MOTION.EASE_ENTRANCE }
           }
         >
           <NumberedStep

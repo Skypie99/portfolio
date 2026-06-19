@@ -12,6 +12,20 @@ import { useEffect, useRef, useState } from 'react';
  * count/reveal CSS is gated on `prefers-reduced-motion` elsewhere.
  */
 
+/**
+ * Motion constants mirroring the CSS tokens in app/globals.css — the single
+ * source for Framer Motion call sites, which can't read CSS custom properties.
+ * Kept in sync with globals.css deliberately (polish 2026-06-18).
+ */
+export const MOTION = {
+  /** --dur-slow: 520ms */
+  DUR_SLOW: 0.52,
+  /** --stagger-scene: 120ms */
+  STAGGER_SCENE: 0.12,
+  /** --ease-entrance: cubic-bezier(0.16, 1, 0.3, 1) — expo-out "arriving" curve */
+  EASE_ENTRANCE: [0.16, 1, 0.3, 1] as const,
+} as const;
+
 /** Returns `[ref, inView]`; `inView` flips true once when the element first
  *  enters the viewport, then the observer disconnects (one-shot). */
 export function useInViewOnce<T extends Element = HTMLElement>(

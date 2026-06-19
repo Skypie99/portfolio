@@ -42,12 +42,12 @@ export default function ContactPage() {
           >
             Write to me.
           </SettleHeading>
-          <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-[640px] mb-4 text-pretty">
+          <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-measure-lead mb-4 text-pretty">
             Accessible technology, built with care. Thoughtful product
             collaborations. Learning out loud, one project at a time. I read
             every message that comes through.
           </p>
-          <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-[640px] mb-16 text-pretty">
+          <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-measure-lead mb-16 text-pretty">
             The socials below also work, for everything else.
           </p>
 

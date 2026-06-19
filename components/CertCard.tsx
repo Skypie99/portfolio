@@ -38,7 +38,7 @@ export function CertCard({ certificate: c }: { certificate: Certificate }) {
   return (
     <article
       ref={spotRef}
-      className="glass-card group relative isolate flex h-full flex-col overflow-hidden rounded-[22px] p-12"
+      className="glass-card group relative isolate flex h-full flex-col overflow-hidden rounded-card p-12"
     >
       <CardField slug={issuerKey(c.issuer)} />
 
