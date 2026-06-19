@@ -121,9 +121,14 @@ export function getBlogPosts(): BlogPost[] {
 export function getAllBlogPostSlugs(): string[] {
   const raw = readJson<unknown[]>('blog.json');
   const slugs: string[] = [];
-  raw.forEach((item) => {
+  raw.forEach((item, idx) => {
     const parsed = BlogPostSchema.safeParse(item);
-    if (parsed.success) slugs.push(parsed.data.id);
+    if (!parsed.success) {
+      throw new Error(
+        `content/blog.json[${idx}] failed validation:\n${JSON.stringify(parsed.error.format(), null, 2)}`,
+      );
+    }
+    slugs.push(parsed.data.id);
   });
   return slugs;
 }
