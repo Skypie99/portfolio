@@ -7,6 +7,16 @@ type HeroProps = {
   subhead: string;
   ctaLabel: string;
   ctaHref: string;
+  /**
+   * Attribution nameplate (optional) — rendered above the eyebrow when `name`
+   * is provided. Puts a face + name + a soft positioning line on the hub so a
+   * first-time visitor knows whose work this is. Omitting `name` leaves the
+   * hero exactly as before (keeps the Hero smoke test fixture unchanged).
+   */
+  name?: string;
+  positioning?: string;
+  avatarSrc?: string;
+  avatarAlt?: string;
 };
 
 /**
@@ -23,7 +33,17 @@ type HeroProps = {
  *   - Terracotta rule (40px wide, 1px tall) below eyebrow for brand anchor
  *   - Scroll indicator below CTA draws eye to continue reading
  */
-export function Hero({ eyebrow, heading, subhead, ctaLabel, ctaHref }: HeroProps) {
+export function Hero({
+  eyebrow,
+  heading,
+  subhead,
+  ctaLabel,
+  ctaHref,
+  name,
+  positioning,
+  avatarSrc,
+  avatarAlt,
+}: HeroProps) {
   return (
     <section
       className={cn(
@@ -57,6 +77,35 @@ export function Hero({ eyebrow, heading, subhead, ctaLabel, ctaHref }: HeroProps
           <span className="h-1.5 w-1.5 rounded-full bg-terracotta/70" />
           <span className="h-28 w-px bg-gradient-to-t from-transparent to-terracotta/40" />
         </div>
+
+        {/* Attribution nameplate — face + name + soft positioning line, so a
+            first-time visitor knows whose work this is the moment the hero
+            settles. Enters with the eyebrow (base hero-enter timing); snaps to
+            final state under prefers-reduced-motion via the globals.css gate. */}
+        {name && (
+          <div className="hero-enter mb-10 flex items-center gap-4">
+            {avatarSrc && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={avatarSrc}
+                alt={avatarAlt ?? name}
+                width={56}
+                height={56}
+                className="h-14 w-14 shrink-0 rounded-full object-cover ring-1 ring-terracotta/25"
+              />
+            )}
+            <div className="flex flex-col gap-1">
+              <p className="font-serif font-light text-step-2 leading-tight text-near-black">
+                {name}
+              </p>
+              {positioning && (
+                <p className="font-sans font-light text-body-sm leading-snug text-charcoal text-pretty max-w-[44ch]">
+                  {positioning}
+                </p>
+              )}
+            </div>
+          </div>
+        )}
 
         {/* Eyebrow + terracotta brand rule */}
         <div className="hero-enter hero-scroll-fade mb-12">

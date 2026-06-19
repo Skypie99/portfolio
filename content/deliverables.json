@@ -46,7 +46,7 @@
       },
       {
         "label": "Live demo",
-        "href": "https://access-map-tau.vercel.app",
+        "href": "https://accessmap.skypistudio.com",
         "type": "demo"
       }
     ],
@@ -103,7 +103,7 @@
       },
       {
         "label": "Live demo",
-        "href": "https://skypie99.github.io/Claude_Corp/",
+        "href": "https://claudecorp.skypistudio.com",
         "type": "demo"
       }
     ],

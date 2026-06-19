@@ -93,6 +93,10 @@ export default function HomePage() {
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <div id="hero">
         <Hero
+          name="Sky Halisky"
+          positioning="Building accessible, AI-native product. Open to thoughtful product collaborations."
+          avatarSrc="/images/headshot.jpg"
+          avatarAlt="Sky Halisky"
           eyebrow="Portfolio — 2026"
           heading="An accessibility map. A multi-agent system. A web-based prompt library."
           subhead="Six projects built, five live on the open web. Accessibility first, built for everyone."
