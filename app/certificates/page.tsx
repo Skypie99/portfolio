@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { AnimatedCertGrid } from '@/components/AnimatedCertGrid';
+import { EmptyState } from '@/components/EmptyState';
 import { SettleHeading } from '@/components/HeroSettle';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { cn } from '@/lib/cn';
@@ -69,9 +70,10 @@ export default function CertificatesPage() {
           {/* sr-only section heading — Alex F-C4-2 heading rotor. */}
           <h2 className="sr-only">Credentials</h2>
           {certificates.length === 0 ? (
-            <p className="font-serif font-light text-display-s text-charcoal leading-[1.65] max-w-[540px]">
-              Credentials coming soon.
-            </p>
+            <EmptyState
+              title="Credentials coming soon."
+              note="A short paper trail of formal study will appear here — most of the learning happens in the work."
+            />
           ) : (
             // AnimatedCertGrid owns its entrance (per-card weighted cascade).
             <AnimatedCertGrid certificates={certificates} />

@@ -619,6 +619,39 @@ html.dark body::after { opacity: 0.10; }
   pointer-events: none;
 }
 
+/* Block pull-quote — long-form <blockquote class="pull-quote"> from
+   renderMarkdownProse. The inline jewellery above (italic, hanging quote mark)
+   still applies; this adds the block frame: Cormorant, a lifted reading size,
+   breathing room, and left room for the hanging mark. Colour comes from the
+   `text-near-black` token on the element. */
+blockquote.pull-quote {
+  font-family: var(--font-cormorant);
+  font-weight: 300;
+  font-size: clamp(1.35rem, 1.1rem + 1.05vw, 1.75rem);
+  line-height: 1.42;
+  margin: 1.25rem 0;
+  padding-left: 1.6rem;
+}
+
+/* Long-form lists — semantic markers in the warm accent, body rhythm between
+   items. Shared by case studies + Notes (renderMarkdownProse). */
+.prose-list {
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+.prose-list.prose-list-ordered {
+  list-style: decimal;
+}
+.prose-list > li {
+  margin-top: 0.5rem;
+}
+.prose-list > li:first-child {
+  margin-top: 0;
+}
+.prose-list > li::marker {
+  color: rgb(var(--rgb-accent));
+}
+
 /* Discretionary ligatures on the big serif display headings. */
 .serif-display {
   font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1, 'dlig' 1;

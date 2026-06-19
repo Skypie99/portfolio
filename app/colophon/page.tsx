@@ -131,8 +131,10 @@ export default function ColophonPage() {
         </div>
       </section>
 
-      {/* Closer — cross-link to the accessibility statement, plus back home. */}
-      <section className="px-gutter py-18 world-surface border-t border-border-decorative">
+      {/* Closer — cross-link to the accessibility statement, plus back home.
+          world-surface-alt alternates off the world-surface type-specimen
+          section above (the specimens→closer seam was surface→surface). */}
+      <section className="px-gutter py-18 world-surface-alt border-t border-border-decorative">
         <div className="max-w-content mx-auto flex flex-col items-start gap-8">
           <Link
             href="/accessibility/"

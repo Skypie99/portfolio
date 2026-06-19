@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+import { EmptyState } from '@/components/EmptyState';
 import { SettleHeading } from '@/components/HeroSettle';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { WorkFilterGrid } from '@/components/WorkFilterGrid';
@@ -96,10 +97,11 @@ export default function WorkIndexPage() {
               see the visible page header above as the only h1. */}
           <h2 className="sr-only">Deliverables</h2>
           {deliverables.length === 0 ? (
-            // Empty-state per F-04 acceptance criteria.
-            <p className="font-serif font-light text-display-s text-charcoal leading-[1.65] max-w-[540px]">
-              Deliverables coming soon.
-            </p>
+            // Empty-state per F-04 acceptance criteria — composed treatment (EmptyState).
+            <EmptyState
+              title="Deliverables coming soon."
+              note="New work is being written up — built slowly, documented honestly. Check back shortly."
+            />
           ) : (
             // WorkFilterGrid owns its own entrance: the featured card reveals
             // with depth and the grid cascades per-card (no outer block reveal).
