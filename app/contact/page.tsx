@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import { ContactEmail } from '@/components/ContactEmail';
 import { SettleHeading } from '@/components/HeroSettle';
+import { ParallaxWash } from '@/components/ParallaxWash';
 import { Reveal } from '@/components/Reveal';
 import { cn } from '@/lib/cn';
 import { getProfile } from '@/lib/content';
@@ -31,8 +32,11 @@ export default function ContactPage() {
   return (
     <>
       {/* Page header + primary CTA */}
-      <section className="px-gutter py-24 lg:py-32 world-surface">
-        <div className="max-w-content mx-auto">
+      <section className="relative isolate overflow-hidden px-gutter py-24 lg:py-32 world-surface">
+        {/* golden-hour light continuity — the invitation reads warm, matching
+            every other showcase header (work, certificates). RM → static. */}
+        <ParallaxWash depth="far" />
+        <div className="relative z-10 max-w-content mx-auto">
           <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
             <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
             Let&apos;s talk

@@ -88,7 +88,7 @@ export default async function BlogPostPage({
           <div className="flex flex-wrap items-center gap-4 mb-12">
             <time
               dateTime={post.publishedDate}
-              className="font-mono text-meta tracking-label uppercase text-text-meta"
+              className="font-mono text-meta tracking-label uppercase text-text-meta tabular-nums"
             >
               {new Date(post.publishedDate + 'T12:00:00').toLocaleDateString('en-CA', {
                 year: 'numeric',
@@ -97,7 +97,7 @@ export default async function BlogPostPage({
               })}
             </time>
             <span aria-hidden="true" className="font-mono text-meta text-stone-strong">·</span>
-            <span className="font-mono text-meta tracking-label uppercase text-text-meta">
+            <span className="font-mono text-meta tracking-label uppercase text-text-meta tabular-nums">
               {post.readingTimeMinutes} min read
             </span>
           </div>

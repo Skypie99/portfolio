@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+import { EmptyState } from '@/components/EmptyState';
 import { SettleHeading } from '@/components/HeroSettle';
+import { ParallaxWash } from '@/components/ParallaxWash';
 import { Reveal } from '@/components/Reveal';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
@@ -50,12 +52,16 @@ export default function BlogIndexPage() {
       {/* Page header */}
       <section
         className={cn(
+          'relative isolate overflow-hidden',
           'px-gutter',
           'py-24 lg:py-32',
           'world-surface',
         )}
       >
-        <div className="max-w-content mx-auto">
+        {/* golden-hour light continuity — the quietest entry point is now lit
+            like every other showcase header (work, certificates). RM → static. */}
+        <ParallaxWash depth="far" />
+        <div className="relative z-10 max-w-content mx-auto">
           <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
             <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
             Notes — {posts.length} {posts.length === 1 ? 'entry' : 'entries'}
@@ -104,9 +110,10 @@ export default function BlogIndexPage() {
           <h2 className="sr-only">Posts</h2>
 
           {posts.length === 0 ? (
-            <p className="font-serif font-light text-display-s text-charcoal leading-[1.65] max-w-[540px]">
-              No posts yet — check back soon.
-            </p>
+            <EmptyState
+              title="No posts yet."
+              note="Notes on accessibility, AI-assisted building, and making things carefully are on the way."
+            />
           ) : (
             <ul className="flex flex-col divide-y divide-border-decorative">
               {posts.map((post, idx) => (
@@ -135,7 +142,7 @@ export default function BlogIndexPage() {
                       <div className="flex flex-wrap items-center gap-4">
                         <time
                           dateTime={post.publishedDate}
-                          className="font-mono text-meta tracking-label uppercase text-text-meta"
+                          className="font-mono text-meta tracking-label uppercase text-text-meta tabular-nums"
                         >
                           {new Date(post.publishedDate + 'T12:00:00').toLocaleDateString('en-CA', {
                             year: 'numeric',
@@ -144,7 +151,7 @@ export default function BlogIndexPage() {
                           })}
                         </time>
                         <span aria-hidden="true" className="font-mono text-meta text-stone-strong">·</span>
-                        <span className="font-mono text-meta tracking-label uppercase text-text-meta">
+                        <span className="font-mono text-meta tracking-label uppercase text-text-meta tabular-nums">
                           {post.readingTimeMinutes} min read
                         </span>
                       </div>
