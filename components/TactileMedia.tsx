@@ -56,7 +56,7 @@ export function TactileMedia({ src, alt, width, height, depth = 0.05, sources, p
   );
 
   return (
-    <div ref={ref} className="absolute inset-[-12%]">
+    <div ref={ref} className="absolute inset-[-12%]" style={{ willChange: 'transform' }}>
       {sources && (sources.avif || sources.webp) ? (
         <picture>
           {sources.avif && <source type="image/avif" srcSet={sources.avif} />}

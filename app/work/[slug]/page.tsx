@@ -153,7 +153,7 @@ export default async function WorkDetailPage({
               <li aria-hidden="true" className="text-stone">
                 {'/'}
               </li>
-              <li aria-current="page" className="text-near-black">
+              <li aria-current="page" className="text-near-black truncate max-w-[240px]">
                 {d.title}
               </li>
             </ol>

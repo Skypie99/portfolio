@@ -43,7 +43,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
     <div
       ref={spotRef}
       className={cn(
-        'glass-card work-card group relative isolate flex flex-col overflow-hidden rounded-[22px]',
+        'glass-card work-card group relative isolate flex flex-col overflow-hidden rounded-card',
         wide ? 'lg:flex-row min-h-[22rem]' : 'min-h-[22rem]',
         className,
       )}
@@ -71,7 +71,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
         <div className="flex items-start justify-between gap-4">
           <span
             aria-hidden="true"
-            className="font-serif font-light text-card-numeral leading-none tabular-nums text-near-black/30 transition-colors duration-slow ease-gh-glide group-hover:text-near-black/45"
+            className="font-serif font-light text-card-numeral leading-none tabular-nums text-near-black/30 origin-top-left transition duration-slow ease-gh-glide group-hover:text-near-black/45 motion-safe:group-hover:scale-[1.04]"
           >
             {numeral}
           </span>

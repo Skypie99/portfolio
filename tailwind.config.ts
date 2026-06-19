@@ -155,12 +155,14 @@ const config: Config = {
         sm: '4px',
         md: '8px',
         lg: '16px',
+        card: '22px', // liquid-glass card corner (ProjectCard/CaseStudyCard/CertCard)
         pill: '9999px',
       },
       maxWidth: {
         content: '1120px',
         measure: 'var(--measure)',
         'measure-wide': 'var(--measure-wide)',
+        'measure-lead': '640px', // lead/intro paragraph width (was a hardcoded max-w-[640px])
       },
       transitionDuration: {
         fast: '180ms',
