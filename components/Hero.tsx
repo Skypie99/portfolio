@@ -89,9 +89,9 @@ export function Hero({
               <img
                 src={avatarSrc}
                 alt={avatarAlt ?? name}
-                width={56}
-                height={56}
-                className="h-14 w-14 shrink-0 rounded-full object-cover ring-1 ring-terracotta/25"
+                width={80}
+                height={80}
+                className="h-20 w-20 shrink-0 rounded-full object-cover ring-1 ring-terracotta/25"
               />
             )}
             <div className="flex flex-col gap-1">
