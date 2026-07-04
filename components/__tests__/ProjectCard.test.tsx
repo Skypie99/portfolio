@@ -63,8 +63,10 @@ describe('ProjectCard', () => {
 
     // Wave 1: card has multiple links; the primary one is the case-study link
     // and the title link, both pointing to /work/accessmap/.
+    // L6-03 (SC 2.5.3 Label in Name): the CTA's accessible name now leads with
+    // its visible label ("View project") — see components/ProjectCard.tsx.
     const caseStudyLink = screen.getByRole('link', {
-      name: /read case study for accessmap/i,
+      name: /view project.*accessmap.*case study/i,
     });
     // Next.js Link normalises trailing slashes in the jsdom test environment.
     expect(caseStudyLink).toHaveAttribute('href', expect.stringContaining('/work/accessmap'));
