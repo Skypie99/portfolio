@@ -1102,19 +1102,31 @@ html.dark {
      twilight (dusk) → a deep blue-black night. The warm→cool journey is widened
      so the arc reads as you scroll, while the *day-4* base (which sits lowest,
      behind the content columns) stays deep so behind-text luminance barely
-     moves and light ink keeps WCAG AA over every scroll state. */
-  --sky-day-1: 118 72 46;  --sky-day-2: 148 86 48;  --sky-day-3: 176 102 56;  --sky-day-4: 60 42 30;
+     moves and light ink keeps WCAG AA over every scroll state.
+     P0-A (L6-01, 2026-07-03): the day band's BRIGHT plateaus (day-1/2/3) are
+     deepened ~13% (warmth/hue held, luminance dropped) so the golden-hour arc
+     reads as a DEEPER amber, not a dimmed one — day still sits clearly above
+     dusk-3(128 72 54) so the day→dusk→night travel is preserved. This is the
+     open-sky share of the deepen; the paneled-text share is --surface-alpha. */
+  --sky-day-1: 103 63 40;  --sky-day-2: 129 75 42;  --sky-day-3: 153 89 49;  --sky-day-4: 60 42 30;
   --sky-dusk-1: 46 44 78;  --sky-dusk-2: 92 58 66;  --sky-dusk-3: 128 72 54;  --sky-dusk-4: 24 20 24;
   --sky-night-1: 5 9 24;  --sky-night-2: 11 15 30;  --sky-night-3: 24 24 34;  --sky-night-4: 18 13 9;
   --sky-sun: 232 178 106;
   /* Translucent panels over the now-revealed world (see `html.dark body`
-     below). Kept near the original alphas — the reveal, not a lower alpha, is
-     what makes the arc read — so light ink stays WCAG AA even over the warmest
-     day band (worst-case meta ≈ 5.4:1, verified live). */
-  --surface-alpha:       0.50;
-  --surface-alpha-alt:   0.52;
-  --surface-alpha-cool:  0.50;
-  --surface-alpha-coolpale: 0.56;
+     below). P0-A (L6-01, 2026-07-03): the panel alphas are FIRMED (surface/-alt
+     0.50/0.52→0.68, cool/-coolpale 0.50/0.56→0.66) — the arc-safe "deepen the
+     field under the type" lever. It darkens ONLY the content panels' composited
+     backdrop, never the open sky or the sun, so the day→night arc is byte-
+     untouched. Every measured dark AA failure (about/contact/colophon/404 body
+     + contact H1) sits on one of these panels; firming their alpha drops the
+     warm day-band bleed under text from ~3.8–4.4:1 to ≥4.8:1 body / ≥3.5:1 H1
+     (honest token-vs-bg contrast, worst-region across scroll offsets), while
+     ~32% of the world still reads through so the evolving tint is preserved.
+     Held equal across surfaces so no section-to-section tone seam appears. */
+  --surface-alpha:       0.68;
+  --surface-alpha-alt:   0.68;
+  --surface-alpha-cool:  0.66;
+  --surface-alpha-coolpale: 0.66;
 }
 
 /* Let the continuous world actually SHOW in BOTH themes. The backdrop sits at
