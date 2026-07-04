@@ -74,7 +74,7 @@ export default function ColophonPage() {
   return (
     <>
       {/* Page header — eyebrow + display title + summary (matches /about, /accessibility) */}
-      <section className="px-gutter py-24 lg:py-32 world-surface">
+      <section data-band-anchor className="px-gutter py-24 lg:py-32 world-surface">
         <div className="max-w-content mx-auto">
           <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
             <span
