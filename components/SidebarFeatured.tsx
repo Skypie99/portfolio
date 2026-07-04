@@ -39,7 +39,9 @@ export function SidebarFeatured({ featured }: { featured: Deliverable | null }) 
   return (
     <Link
       href={`/work/${featured.id}/`}
-      aria-label={`Featured deliverable: ${featured.title} — ${featured.role}`}
+      /* SC 2.5.3 Label in Name: the visible CTA ("Open it") must appear in the
+         accessible name; the title/role/context enrich it. */
+      aria-label={`Featured deliverable: ${featured.title} — ${featured.role}. Open it.`}
       aria-current={onRoute ? 'page' : undefined}
       className="group flex flex-col gap-1.5 text-near-black transition-colors duration-fast ease-out"
     >

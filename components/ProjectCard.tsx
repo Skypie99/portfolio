@@ -123,7 +123,10 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
             <div className="mt-1 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-[rgb(var(--rgb-ink)/0.1)] pt-4">
               <Link
                 href={`/work/${d.id}/`}
-                aria-label={`Read case study for ${d.title}`}
+                /* SC 2.5.3 Label in Name: the accessible name must contain the
+                   visible label ("View project") so speech-input users can act
+                   on what they see. Extra context follows the visible words. */
+                aria-label={`View project — ${d.title} case study`}
                 className="inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-base ease-gh-glide hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
               >
                 View project <span aria-hidden="true">→</span>
