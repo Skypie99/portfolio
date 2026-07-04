@@ -32,7 +32,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Page header + primary CTA */}
-      <section className="relative isolate overflow-hidden px-gutter py-24 lg:py-32 world-surface">
+      <section data-band-anchor className="relative isolate overflow-hidden px-gutter py-24 lg:py-32 world-surface">
         {/* golden-hour light continuity — the invitation reads warm, matching
             every other showcase header (work, certificates). RM → static. */}
         <ParallaxWash depth="far" />

@@ -1295,6 +1295,30 @@ html.dark .world-backdrop::after {
    pill class — if the TagPill variant string changes, update this rule. */
 html.dark .bg-cool-mid\/35 { background-color: rgb(var(--rgb-cool-soft) / 0.45); }
 
+/* P0-A (L6-01 candlelight anchor, 2026-07-03): the deepen (above) restores AA;
+   this makes each repaired dark band read *candlelit, not dimmed* by pooling
+   one small warm light at the BASE of the band — a "gold plinth pool" from the
+   existing vocabulary (the footer alpenglow's gold→ember warmth). DARK ONLY,
+   decorative (::before → out of the a11y tree), static (RM-safe), and
+   pointer-inert. It pools in the band's lower region where no text lands and is
+   painted BEHIND content (z-index:-1 within the section's own stacking
+   context), so it adds night-mood warmth without lifting any text background —
+   verified by re-measuring every repaired zone WITH the anchor present. Light
+   mode has no matching rule → the `data-band-anchor` marker is inert there. */
+html.dark [data-band-anchor] { position: relative; isolation: isolate; }
+html.dark [data-band-anchor]::before {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 42%;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(60% 118% at 50% 100%,
+    rgb(var(--rgb-gold)   / 0.075) 0%,
+    rgb(var(--rgb-accent) / 0.035) 42%,
+    transparent 72%);
+}
+
 /* No-JS: ensure the world still rests at its theme state even if the var path is
    ever bypassed (defensive — the fallback in var() already covers it). */
 @media (scripting: none) {

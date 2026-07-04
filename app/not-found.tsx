@@ -18,7 +18,7 @@ export const metadata: Metadata = {
  */
 export default function NotFound() {
   return (
-    <section className="px-gutter py-24 lg:py-32 min-h-[60vh] flex items-center world-surface">
+    <section data-band-anchor className="px-gutter py-24 lg:py-32 min-h-[60vh] flex items-center world-surface">
       <div className="max-w-content mx-auto w-full">
         {/* Breadcrumb-style header — matches /work/[slug] pattern */}
         <nav aria-label="Breadcrumb" className="mb-12">
