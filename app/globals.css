@@ -618,6 +618,13 @@ html.dark body::after { opacity: 0.10; }
   color: rgb(var(--rgb-accent) / 0.15);
   pointer-events: none;
 }
+/* P0-A (L6-09, 2026-07-03): in dark, the 0.15-accent ornament over the deep
+   warm backdrop faded to ~1.10:1 — effectively unrendered — silently losing the
+   typographic jewellery the light theme keeps. Decorative (z-index:-1, behind
+   the quote, exempt from 1.4.3/1.4.11), so this is a parity/ornament restore,
+   not a contrast fix: a dark-only opacity lift brings the mark back to a soft,
+   clearly-present terracotta. Light mode is untouched. */
+html.dark .pull-quote::before { color: rgb(var(--rgb-accent) / 0.34); }
 
 /* Block pull-quote — long-form <blockquote class="pull-quote"> from
    renderMarkdownProse. The inline jewellery above (italic, hanging quote mark)
