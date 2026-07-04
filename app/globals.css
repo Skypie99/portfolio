@@ -1285,6 +1285,16 @@ html.dark .world-backdrop::after {
 .world-surface-cool  { background-color: rgb(var(--rgb-wash-cool)  / var(--surface-alpha-cool)); }
 .world-surface-cool-pale { background-color: rgb(var(--rgb-panel-cool) / var(--surface-alpha-coolpale)); }
 
+/* P0-A (L6-01 rider, 2026-07-03): the "lagoon" TagPill variant
+   (`bg-cool-mid/35 text-cool-deep`, TagPill.tsx §3.8 — the ONLY use of
+   bg-cool-mid in the codebase) failed dark AA: the light-cyan cool-deep text
+   over the bright lagoon wash measured ~4.2-4.3:1 (its seafoam sibling
+   `bg-cool-soft/45` passes at ~5.1). In DARK ONLY, retint the wash to the
+   sibling's proven darker seafoam composite so the pill clears AA with
+   headroom; light mode keeps its lagoon (byte-unchanged). Scoped to this exact
+   pill class — if the TagPill variant string changes, update this rule. */
+html.dark .bg-cool-mid\/35 { background-color: rgb(var(--rgb-cool-soft) / 0.45); }
+
 /* No-JS: ensure the world still rests at its theme state even if the var path is
    ever bypassed (defensive — the fallback in var() already covers it). */
 @media (scripting: none) {
