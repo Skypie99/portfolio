@@ -132,13 +132,60 @@ function checkCinematicPlates(publicDir) {
   return { mode: flag ? 'placeholders' : 'real', count: ids.length, missing };
 }
 
+/**
+ * Deliverable proof media (P2-A, L7-02): for every heroShot / cardImage / shots[]
+ * that DECLARES an optimized sibling (`avif`/`webp`) or a `video` ({mp4,webm,
+ * poster,captions}) in content/deliverables.json, the referenced file must exist
+ * in public/. We gate ONLY what's declared — un-produced siblings for the other
+ * projects are P2-B's to wire, so an absent-but-undeclared sibling is not an error.
+ * The raw `src` fallback is separately covered by the static-integrity test.
+ */
+function checkDeliverableProof(publicDir) {
+  const delPath = join(ROOT, 'content', 'deliverables.json');
+  let dels;
+  try {
+    dels = JSON.parse(readFileSync(delPath, 'utf8'));
+  } catch (err) {
+    console.error(`[validate-assets] ERROR: could not read ${delPath}: ${err.message}`);
+    process.exit(1);
+  }
+
+  const missing = [];
+  let declared = 0;
+  const exists = (src, kind, where) => {
+    if (!src) return;
+    declared += 1;
+    const rel = src.startsWith('/') ? src.slice(1) : src;
+    const fullPath = join(publicDir, rel);
+    if (!existsSync(fullPath)) missing.push({ kind, id: where, src, expected: fullPath });
+  };
+  const checkOne = (obj, where) => {
+    if (!obj || typeof obj !== 'object') return;
+    exists(obj.avif, 'proof(avif)', where);
+    exists(obj.webp, 'proof(webp)', where);
+    if (obj.video && typeof obj.video === 'object') {
+      exists(obj.video.mp4, 'proof(video.mp4)', where);
+      exists(obj.video.webm, 'proof(video.webm)', where);
+      exists(obj.video.poster, 'proof(video.poster)', where);
+      exists(obj.video.captions, 'proof(video.captions)', where);
+    }
+  };
+  for (const d of dels) {
+    checkOne(d.heroShot, `${d.id} heroShot`);
+    checkOne(d.cardImage, `${d.id} cardImage`);
+    if (Array.isArray(d.shots)) d.shots.forEach((s, i) => checkOne(s, `${d.id} shots[${i}]`));
+  }
+  return { count: declared, missing };
+}
+
 function main() {
   const publicDir = join(ROOT, 'public');
 
   const certs = checkCertificates(publicDir);
   const plates = checkCinematicPlates(publicDir);
+  const proof = checkDeliverableProof(publicDir);
 
-  const missing = [...certs.missing, ...plates.missing];
+  const missing = [...certs.missing, ...plates.missing, ...proof.missing];
 
   if (missing.length > 0) {
     console.error(`\n[validate-assets] BUILD BLOCKED — ${missing.length} missing asset(s):\n`);
@@ -159,6 +206,9 @@ function main() {
         console.error('USE_PLACEHOLDERS is false — the shipped planes are AVIF + WebP. Regenerate them: `node scripts/separate-scene.mjs ...` (PNG masters → cinematic-masters/planes/) then `node scripts/encode-planes.mjs` (→ <id>.avif + <id>.webp). Or flip the flag back to true.');
       }
     }
+    if (proof.missing.length) {
+      console.error('A deliverable in content/deliverables.json DECLARES a proof sibling (avif/webp/video) whose file is missing from public/. Regenerate it: `node scripts/encode-proof.mjs <slug> <master> --kind hero|shot|card` (or scripts/encode-video.mjs for video), or remove the declaration.');
+    }
     console.error('');
     process.exit(1);
   }
@@ -170,6 +220,7 @@ function main() {
     const label = plates.mode === 'placeholders' ? 'placeholder svg' : 'real plate (AVIF+WebP)';
     console.log(`[validate-assets] OK — all ${plates.count} cinematic ${label}(s) found in public/.`);
   }
+  console.log(`[validate-assets] OK — all ${proof.count} declared deliverable proof sibling(s) found in public/.`);
 }
 
 main();
