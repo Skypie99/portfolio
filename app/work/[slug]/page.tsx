@@ -53,7 +53,10 @@ export async function generateMetadata({
     return { title: 'Work — not found' };
   }
   return {
-    title: `${d.title} — Selected Work`,
+    // L1-03: the browser-tab title adopts the identity string this page's own
+    // og:title already carries (below) — signed tabs, not anonymous inventory
+    // labels, on the exact pages recruiters get deep-linked to.
+    title: `${d.title} — Sky Halisky`,
     description: d.summary,
     openGraph: {
       type: 'article',
