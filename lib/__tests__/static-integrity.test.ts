@@ -291,3 +291,67 @@ describe.skipIf(!OUT_EXISTS)('Gap 3 — external link rel attributes', () => {
   });
 });
 
+/**
+ * Gap 5 — Reveal failure floor (L7-01) pre-paint guard.
+ *
+ * The scroll-reveal primitive rests VISIBLE and only arms its hidden state
+ * under `html.js`, set by an inline <head> script BEFORE first paint. This
+ * locks that contract into the built artifact: if the guard is ever dropped
+ * or moved out of <head>, every `.reveal` would ship permanently invisible on
+ * a dropped chunk again. Also asserts the CSS scoping + watchdog floor landed.
+ */
+describe.skipIf(!OUT_EXISTS)('Gap 5 — reveal failure floor guard', () => {
+  it('every reveal-bearing page ships the inline `js` guard INSIDE <head> (pre-paint, no-flash)', () => {
+    const htmlFiles = collectHtmlFiles(OUT_DIR);
+    expect(htmlFiles.length).toBeGreaterThan(0);
+
+    // Only pages that actually ship `.reveal` content need the guard. The
+    // pages-router error shell (out/500/index.html) has no reveals and does not
+    // go through the app-router root layout, so it is correctly exempt.
+    const revealPages = htmlFiles.filter((f) => /class="[^"]*\breveal\b/.test(readFileSync(f, 'utf8')));
+    expect(revealPages.length).toBeGreaterThan(0);
+
+    const offenders: string[] = [];
+    for (const htmlFile of revealPages) {
+      const html = readFileSync(htmlFile, 'utf8');
+      const headEnd = html.indexOf('</head>');
+      const guardAt = html.indexOf("classList.add('js')");
+      // Guard must exist AND sit before </head> so it runs during head-parse,
+      // before any body .reveal computes style.
+      if (guardAt === -1 || headEnd === -1 || guardAt > headEnd) {
+        offenders.push(htmlFile.replace(OUT_DIR, './out'));
+      }
+    }
+    expect(offenders, `guard missing or outside <head> in:\n${offenders.join('\n')}`).toEqual([]);
+  });
+
+  it('static markup ships `.reveal` armed-not-shown (no baked reveal-shown)', () => {
+    // The reveal-shown class is added by JS at runtime only; if it were baked
+    // into the export the no-flash reasoning would not hold.
+    const blog = join(OUT_DIR, 'blog', 'index.html');
+    if (!existsSync(blog)) return; // route shape guarded elsewhere
+    const html = readFileSync(blog, 'utf8');
+    expect(html).toMatch(/class="[^"]*\breveal\b/); // reveal elements present
+    expect(html).not.toContain('reveal-shown'); // never pre-shown in static HTML
+  });
+
+  it('built CSS scopes the hidden state under html.js and defines the failsafe floor', () => {
+    const { readdirSync } = require('node:fs') as typeof import('node:fs');
+    const cssDir = join(OUT_DIR, '_next', 'static', 'css');
+    if (!existsSync(cssDir)) return;
+    const css = readdirSync(cssDir)
+      .filter((f) => f.endsWith('.css'))
+      .map((f) => readFileSync(join(cssDir, f), 'utf8'))
+      .join('\n');
+    // Hidden state must be scoped to html.js (not a bare .reveal{opacity:0}).
+    expect(css).toMatch(/html\.js\s+\.reveal\{opacity:0/);
+    // Watchdog rescue floor must exist.
+    expect(css).toContain('reveal-failsafe');
+    // A BARE `.reveal{opacity:0}` (not scoped under `html.js `) must NOT ship —
+    // that unconditional hide was the L7-01 exposure. The negative lookbehind
+    // lets the scoped `html.js .reveal{opacity:0}` through while catching a bare
+    // rule (which would be preceded by `}` , `,` or start-of-file, not `js `).
+    expect(css).not.toMatch(/(?<!js )\.reveal\{opacity:0/);
+  });
+});
+

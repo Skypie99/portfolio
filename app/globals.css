@@ -773,26 +773,51 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
    IntersectionObserver-driven (no animation lib, Phase 6). Content stays
    in the DOM (opacity, not display) so it remains in the a11y tree +
    crawlable; reduced-motion and no-JS visitors get the final visible state.
-   ------------------------------------------------------------------ */
+
+   FAILURE FLOOR (L7-01, 2026-07-04) — extends the b63e583 "the REST state is
+   the VISIBLE state" principle to this last primitive. The REST state is now
+   VISIBLE: the hidden pre-reveal choreography is armed ONLY under `html.js`,
+   a class an inline <head> script (app/layout.tsx) sets before first paint —
+   so a dropped chunk / dead hydration / crawler / no-JS visitor all rest
+   VISIBLE, never stranded at opacity:0. No-flash: `html.js` is set during
+   head-parse, before any body `.reveal` computes style, so an element is born
+   hidden, never painted-visible-then-hidden. The same inline script arms an
+   ~8s watchdog (cleared by RevealAlive's hydration-alive signal); if hydration
+   never reports alive, `html.reveal-failsafe` fades every `.reveal` to its
+   visible rest frame on the existing ease-out. The RM + scripting:none floors
+   are preserved (RM now scoped to beat `html.js` too). */
+
+/* REST = VISIBLE (no-JS / dead-JS / crawler floor). */
 .reveal {
+  opacity: 1;
+  transform: none;
+}
+.reveal-scene,
+.reveal-depth,
+.reveal-carve {
+  transform: none;
+  filter: none;
+}
+
+/* Hidden + scroll-reveal choreography — armed ONLY when JS is present. */
+html.js .reveal {
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out);
 }
-.reveal-shown {
+html.js .reveal-shown {
   opacity: 1;
   transform: none;
 }
 /* Motion-polish 2026-06-03 — Reveal variants (calm cinematic depth).
-   Placed BEFORE the reduced-motion + no-JS blocks below so those (which
-   target the always-present base .reveal) override these for RM / no-JS
-   visitors. `variant` bundles travel + easing so call sites stay token-clean. */
-.reveal-scene {
+   `variant` bundles travel + easing so call sites stay token-clean. Scoped
+   under html.js so RM / no-JS / dead-JS visitors get the flat visible rest. */
+html.js .reveal-scene {
   transform: translateY(28px);
   transition: opacity var(--dur-scene) var(--ease-gh-settle),
               transform var(--dur-scene) var(--ease-gh-settle);
 }
-.reveal-depth {
+html.js .reveal-depth {
   transform: translateY(22px) scale(0.985);
   transition: opacity var(--dur-reveal) var(--ease-gh-settle),
               transform var(--dur-reveal) var(--ease-gh-settle);
@@ -802,28 +827,49 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
    the intro's curve). For KEY editorial headings only. Text is sharp at rest;
    reduced-motion / no-JS render it instantly sharp (filter reset below) so it
    never sits blurred and never animates while unreadable. */
-.reveal-carve {
+html.js .reveal-carve {
   transform: translateY(18px);
   filter: blur(5px);
   transition: opacity var(--dur-reveal) var(--ease-gh-settle),
               transform var(--dur-reveal) var(--ease-gh-settle),
               filter var(--dur-reveal) var(--ease-gh-settle);
 }
-.reveal-shown.reveal-scene,
-.reveal-shown.reveal-depth,
-.reveal-shown.reveal-carve {
+/* shown — MUST follow the html.js hidden rules (equal specificity → order wins) */
+html.js .reveal-shown.reveal-scene,
+html.js .reveal-shown.reveal-depth,
+html.js .reveal-shown.reveal-carve {
   transform: none;
 }
-.reveal-shown.reveal-carve {
+html.js .reveal-shown.reveal-carve {
   filter: none;
 }
+
+/* Dead-JS watchdog floor — if hydration never reported alive (dropped chunk),
+   the inline <head> script's watchdog adds html.reveal-failsafe → fade every
+   unshown reveal to its visible rest frame. Ancestor repeated on each item so
+   none leak globally; !important beats the html.js hidden rules. */
+html.reveal-failsafe .reveal,
+html.reveal-failsafe .reveal-scene,
+html.reveal-failsafe .reveal-depth,
+html.reveal-failsafe .reveal-carve {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
+  /* RM rests visible — scoped to beat html.js (0,2,1) too, else RM-with-JS
+     visitors would sit hidden until scroll. */
+  .reveal,
+  html.js .reveal,
+  html.js .reveal-scene,
+  html.js .reveal-depth,
+  html.js .reveal-carve {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
   }
-  .reveal-carve { filter: none; }
   /* ContentReveal wrapper — belt-and-braces: the component never attaches
      inline styles under reduced motion, but if they ever leak again, RM
      visitors must still see the homepage. Mirrors the mobile floor near the
@@ -834,6 +880,8 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
   }
 }
 @media (scripting: none) {
+  /* Redundant now (base .reveal is already visible) but kept: documents intent
+     and is a defense-in-depth floor for true no-JS. */
   .reveal {
     opacity: 1;
     transform: none;

@@ -7,6 +7,7 @@ import { Footer } from '@/components/Footer';
 // 15.5 disallows that flag inside Server Components. Splits Framer Motion
 // (~45 KB) out of the homepage First Load JS (Peter C2 perf).
 import { HamburgerNavMount } from '@/components/HamburgerNavMount';
+import { RevealAlive } from '@/components/RevealAlive';
 import { Sidebar } from '@/components/Sidebar';
 import { SkipLink } from '@/components/SkipLink';
 import { ThemeProvider } from '@/components/ThemeProvider';
@@ -130,6 +131,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {isProd && (
           <meta httpEquiv="Content-Security-Policy" content={PROD_CSP} />
         )}
+        {/* Reveal failure floor (L7-01) — CSP-safe inline guard, runs during
+            head-parse (before any body .reveal computes style, so no flash):
+            (1) add `js` → arm the hidden scroll-reveal state; (2) start an ~8s
+            watchdog that adds `reveal-failsafe` (rescues content to visible) if
+            hydration never reports alive via RevealAlive; (3) fast-path: a
+            dropped chunk fires a resource error on its <script> → rescue at once.
+            Imperative classList only (matches next-themes; survives hydration
+            under the existing suppressHydrationWarning on <html>). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){var d=document.documentElement;d.classList.add('js');" +
+              "function r(){if(window.__revealFailsafe!==undefined){clearTimeout(window.__revealFailsafe);window.__revealFailsafe=undefined;}d.classList.add('reveal-failsafe');}" +
+              "window.__revealFailsafe=setTimeout(r,8000);" +
+              "window.addEventListener('error',function(e){var t=e&&e.target;if(t&&t.tagName==='SCRIPT')r();},true);})();",
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -151,6 +169,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="bg-canvas text-ink">
         <ThemeProvider>
+          {/* Reveal failure floor (L7-01): clears the inline guard's watchdog
+              once React hydrates — proof the bundle executed. Renders null. */}
+          <RevealAlive />
           {/* Continuous world (Direction A): the persistent, scroll-evolving
               golden-hour → night desert behind ALL content. Fixed, z-index:-1,
               aria-hidden; the locked intro + the now-translucent panels sit on
