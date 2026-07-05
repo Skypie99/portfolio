@@ -1,3 +1,6 @@
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+
 import { ImageResponse } from 'next/og';
 
 // Required for `output: 'export'` — tells Next this route is pre-renderable
@@ -20,6 +23,15 @@ export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
 export default function Image() {
+  // L8-03: satori (next/og) can't parse the woff2 that next/font ships, so the
+  // serif intent below never fired and the name rendered in the bundled sans.
+  // We read a static Cormorant Garamond Light TTF (OFL, subset) at build time —
+  // this route is `force-static`, so it runs in Node and `fs` is available — and
+  // pass it through ImageResponse's `fonts` option so the name finally crosses
+  // the wire in the site's signature serif.
+  const cormorantLight = readFileSync(
+    join(process.cwd(), 'app/fonts/CormorantGaramond-Light.ttf'),
+  );
   return new ImageResponse(
     (
       <div
@@ -87,11 +99,12 @@ export default function Image() {
           }}
         />
 
-        {/* Left decorative accent bar */}
+        {/* Left decorative accent bar — moved in with the re-anchored text so it
+            reads as the wordmark's margin rule rather than an orphan at the edge. */}
         <div
           style={{
             position: 'absolute',
-            left: 80,
+            left: 264,
             top: 80,
             bottom: 80,
             width: 3,
@@ -101,16 +114,21 @@ export default function Image() {
           }}
         />
 
-        {/* Main text block */}
+        {/* Main text block — re-anchored into the center-square crop-safe zone
+            (L8-03 rider). iMessage/Slack unfurl near-square, keeping roughly the
+            centre 630px (x≈285–915) of the 1200×630 card; anchored at left:112 the
+            wordmark clipped to "…Halisky". At left:300 / maxWidth:560 the whole
+            "Sky Halisky" survives a centre-square crop, while the full card stays
+            bottom-anchored and the sun/rules keep the right third. */}
         <div
           style={{
             position: 'absolute',
-            left: 112,
+            left: 300,
             bottom: 100,
             display: 'flex',
             flexDirection: 'column',
             gap: 16,
-            maxWidth: 740,
+            maxWidth: 560,
           }}
         >
           {/* Eyebrow label */}
@@ -128,10 +146,10 @@ export default function Image() {
             SKYPISTUDIO.COM
           </div>
 
-          {/* Name */}
+          {/* Name — the site's signature serif, now actually loaded (L8-03) */}
           <div
             style={{
-              fontFamily: 'serif',
+              fontFamily: 'Cormorant Garamond',
               fontSize: 88,
               fontWeight: 300,
               lineHeight: 1.0,
@@ -200,6 +218,14 @@ export default function Image() {
     ),
     {
       ...size,
+      fonts: [
+        {
+          name: 'Cormorant Garamond',
+          data: cormorantLight,
+          weight: 300,
+          style: 'normal',
+        },
+      ],
     },
   );
 }
