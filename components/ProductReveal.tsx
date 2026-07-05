@@ -1,6 +1,6 @@
 'use client';
 
-import type { CSSProperties, ReactNode } from 'react';
+import { type CSSProperties, type ImgHTMLAttributes, type ReactNode, useEffect, useRef } from 'react';
 
 import { DeviceFrame } from '@/components/DeviceFrame';
 import { TactileMedia } from '@/components/TactileMedia';
@@ -32,14 +32,36 @@ import { type DeviceFrameKind, frameForSlug, signatureFor } from '@/lib/signatur
 
 export type ProductRevealContext = 'hero' | 'card' | 'shot';
 
+/** Optional proof video (P2-A). A short silent loop; poster-first + RM-gated. */
+export type ProductRevealVideo = {
+  mp4?: string;
+  webm?: string;
+  /** Required — the still shown before play / under reduced-motion / no-JS. */
+  poster: string;
+  /** Optional captions track (.vtt). */
+  captions?: string;
+  /** Required — describes the clip for the a11y tree (meaning never needs motion). */
+  alt: string;
+};
+
 export type ProductRevealMedia = {
-  /** Absence => render the placeholder and emit NO <img>. */
+  /** Absence => render the placeholder and emit NO <img> (unless `video`). */
   src?: string;
   /** Required (schema-enforced) — the real image's alt, ready for the swap. */
   alt: string;
   /** Optional responsive siblings (absent until generated). */
   avif?: string;
   webp?: string;
+  /** Optional width-variant srcsets (P2-A). When absent each <source> falls back
+   *  to the single avif/webp candidate — no behaviour change. */
+  avifSrcset?: string;
+  webpSrcset?: string;
+  sizes?: string;
+  /** Inline LQIP data-URI (P2-A) painted behind the image in the reserved well —
+   *  no animation, no new box → zero CLS, RM-safe. */
+  lqip?: string;
+  /** Optional proof video (P2-A). Takes precedence over the still image. */
+  video?: ProductRevealVideo;
   caption?: string;
   /** CSS object-position for the full-bleed card/shot crop (e.g. "50% 44%").
    *  Ignored by the device-framed hero (which shows the whole screen). */
@@ -65,6 +87,9 @@ export type ProductRevealProps = {
    *  used by the case-study hero, where HeroImageSettle provides aspect +
    *  group + overflow + the mount settle. */
   bare?: boolean;
+  /** Override eager loading. Defaults to true for the hero (above-fold LCP,
+   *  L7-02), false for cards/shots. */
+  eager?: boolean;
 };
 
 const ASPECT: Record<ProductRevealContext, string> = {
@@ -74,6 +99,12 @@ const ASPECT: Record<ProductRevealContext, string> = {
 };
 
 const DEPTH: Record<ProductRevealContext, number> = { hero: 0.06, card: 0.04, shot: 0.08 };
+
+/** Lowercase `fetchpriority` for the eager hero <img> (L7-02). React 18.3 renders
+ *  the camelCase `fetchPriority` prop verbatim + logs a dev warning; the lowercase
+ *  HTML attribute is correct, warning-free, and lands in the SSR HTML where the
+ *  browser's preload scanner reads it. */
+const HIGH_FETCH_PRIORITY = { fetchpriority: 'high' } as unknown as ImgHTMLAttributes<HTMLImageElement>;
 
 const FRAME_PLACEMENT: Record<Exclude<DeviceFrameKind, 'none'>, string> = {
   phone: 'absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2',
@@ -170,18 +201,26 @@ function BandHint({ sig }: { sig: string }) {
  *   • `fit="cover"` — pre-cropped card front: fills the band; the band aspect is
  *     paired with the image so there's no further crop.
  *  Wrapped in <picture> for avif/webp; `position` sets object-position. */
+type ShotSources = { avif?: string; webp?: string; avifSrcset?: string; webpSrcset?: string; sizes?: string };
+
 function StaticShot({
   src,
   alt,
   sources,
   fit,
   position,
+  eager = false,
+  lqip,
 }: {
   src: string;
   alt: string;
-  sources?: { avif?: string; webp?: string };
+  sources?: ShotSources;
   fit: 'cover' | 'contain';
   position?: string;
+  /** Above-fold hero → eager + fetchpriority=high (L7-02). Default lazy. */
+  eager?: boolean;
+  /** Inline LQIP data-URI painted behind the image (no transition → RM/CLS-safe). */
+  lqip?: string;
 }) {
   const img = (
     // eslint-disable-next-line @next/next/no-img-element
@@ -190,7 +229,9 @@ function StaticShot({
       alt={alt}
       width={1280}
       height={800}
-      loading="lazy"
+      loading={eager ? 'eager' : 'lazy'}
+      decoding="async"
+      {...(eager ? HIGH_FETCH_PRIORITY : {})}
       style={position ? { objectPosition: position } : undefined}
       className={cn(
         'absolute inset-0 h-full w-full',
@@ -198,14 +239,94 @@ function StaticShot({
       )}
     />
   );
-  return sources && (sources.avif || sources.webp) ? (
-    <picture>
-      {sources.avif && <source type="image/avif" srcSet={sources.avif} />}
-      {sources.webp && <source type="image/webp" srcSet={sources.webp} />}
-      {img}
-    </picture>
+  // LQIP: a static blurred tint filling the same box behind the image. No new
+  // element that participates in layout, no animation → zero CLS, RM-safe.
+  const lqipLayer = lqip ? (
+    <div
+      aria-hidden="true"
+      className="absolute inset-0"
+      style={{
+        backgroundImage: `url("${lqip}")`,
+        backgroundSize: fit === 'cover' ? 'cover' : 'contain',
+        backgroundPosition: position ?? 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    />
+  ) : null;
+  const picture =
+    sources && (sources.avif || sources.webp) ? (
+      <picture>
+        {sources.avif && (
+          <source type="image/avif" srcSet={sources.avifSrcset ?? sources.avif} {...(sources.sizes ? { sizes: sources.sizes } : {})} />
+        )}
+        {sources.webp && (
+          <source type="image/webp" srcSet={sources.webpSrcset ?? sources.webp} {...(sources.sizes ? { sizes: sources.sizes } : {})} />
+        )}
+        {img}
+      </picture>
+    ) : (
+      img
+    );
+  return lqip ? (
+    <>
+      {lqipLayer}
+      {picture}
+    </>
   ) : (
-    img
+    picture
+  );
+}
+
+/** ProofVideo — a short silent proof loop (P2-A, Sky's motion extension). The
+ *  a11y contract is ABSOLUTE: poster-first, muted, playsInline, with a play
+ *  affordance (native controls). Under reduced-motion / no-JS it stays a poster
+ *  the visitor plays deliberately; autoplay is a JS-only enhancement applied
+ *  ONLY when prefers-reduced-motion is unset. Meaning never depends on motion
+ *  (the poster + alt carry it). Rest-visible under dead JS (native poster). */
+function ProofVideo({
+  video,
+  fit,
+  position,
+  lqip,
+}: {
+  video: ProductRevealVideo;
+  fit: 'cover' | 'contain';
+  position?: string;
+  lqip?: string;
+}) {
+  const ref = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    // matchMedia is absent in jsdom / older webviews — guard like lib/motion.
+    if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; // RM: stay poster
+    // No-preference only: opt into a muted, looping autoplay.
+    el.muted = true;
+    el.loop = true;
+    el.setAttribute('autoplay', '');
+    const p = el.play?.();
+    if (p && typeof p.catch === 'function') p.catch(() => {});
+  }, []);
+  return (
+    <video
+      ref={ref}
+      poster={video.poster}
+      preload="none"
+      muted
+      playsInline
+      controls
+      aria-label={video.alt}
+      className={cn('absolute inset-0 h-full w-full', fit === 'cover' ? 'object-cover' : 'object-contain')}
+      style={{
+        ...(position ? { objectPosition: position } : {}),
+        ...(lqip ? { backgroundImage: `url("${lqip}")`, backgroundSize: fit === 'cover' ? 'cover' : 'contain', backgroundPosition: position ?? 'center', backgroundRepeat: 'no-repeat' } : {}),
+      }}
+    >
+      {video.mp4 && <source src={video.mp4} type="video/mp4" />}
+      {video.webm && <source src={video.webm} type="video/webm" />}
+      {video.captions && <track kind="captions" src={video.captions} srcLang="en" label="Captions" default />}
+    </video>
   );
 }
 
@@ -219,28 +340,44 @@ export function ProductReveal({
   depth,
   className,
   bare = false,
+  eager: eagerProp,
 }: ProductRevealProps) {
   const sig = signatureFor(slug);
   const kind: DeviceFrameKind = frame ?? (context === 'hero' ? frameForSlug(slug) : 'none');
   const d = depth ?? DEPTH[context];
   const nominal = NOMINAL[context];
+  const hasVideo = Boolean(media.video);
   const hasReal = Boolean(media.src);
-  const sources = media.avif || media.webp ? { avif: media.avif, webp: media.webp } : undefined;
+  // Above-fold hero loads eager + fetchpriority=high (L7-02); in-body shots/cards
+  // stay lazy. Overridable per call site.
+  const eager = eagerProp ?? context === 'hero';
+  const sources: ShotSources | undefined =
+    media.avif || media.webp
+      ? { avif: media.avif, webp: media.webp, avifSrcset: media.avifSrcset, webpSrcset: media.webpSrcset, sizes: media.sizes }
+      : undefined;
 
-  // The "screen" content. Real-image modes:
+  // The "screen" content. Real modes (video wins over still over placeholder):
+  //  • video (any context) → ProofVideo: poster-first, RM-gated autoplay.
   //  • device-framed (hero) → StaticShot contain: the WHOLE screen, static.
   //  • card front with a PRE-CROPPED image → StaticShot cover: shown exactly,
   //    no parallax oversize (the band aspect is paired with the image).
   //  • full-bleed (card/shot), un-cropped source → TactileMedia: cover-cropped
   //    to `focal`, with the tactile parallax drift.
-  const screen: ReactNode = !hasReal ? (
+  const screen: ReactNode = hasVideo ? (
+    <ProofVideo
+      video={media.video as ProductRevealVideo}
+      fit={kind !== 'none' ? 'contain' : 'cover'}
+      position={kind !== 'none' ? undefined : media.focal}
+      lqip={media.lqip}
+    />
+  ) : !hasReal ? (
     kind === 'none' ? (
       <BandHint sig={sig} />
     ) : (
       <HeroScreenFill sig={sig} title={title} eyebrow={eyebrow} />
     )
   ) : kind !== 'none' ? (
-    <StaticShot src={media.src as string} alt={media.alt} sources={sources} fit="contain" />
+    <StaticShot src={media.src as string} alt={media.alt} sources={sources} fit="contain" eager={eager} lqip={media.lqip} />
   ) : media.precropped ? (
     <StaticShot
       src={media.src as string}
@@ -248,6 +385,8 @@ export function ProductReveal({
       sources={sources}
       fit="cover"
       position={media.focal}
+      eager={eager}
+      lqip={media.lqip}
     />
   ) : (
     <TactileMedia
@@ -258,6 +397,8 @@ export function ProductReveal({
       depth={d}
       sources={sources}
       position={media.focal}
+      eager={eager}
+      lqip={media.lqip}
     />
   );
 
