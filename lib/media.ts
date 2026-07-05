@@ -35,6 +35,25 @@ export function heroSources(d: HeroSource): { avif?: string; webp?: string } | u
   return { avif: d.heroShot?.avif, webp: d.heroShot?.webp };
 }
 
+/** Preload descriptor for a case-study hero's AVIF — its LCP element (L7-02).
+ *  Returns null when no optimized hero sibling exists, so we NEVER preload the
+ *  raw PNG whale. PRODUCED here (P2-A); P2-B WIRES it into the case-study <head>
+ *  (it touches a showcase surface), e.g.:
+ *
+ *    const p = heroPreloadLink(d);
+ *    if (p) ReactDOM.preload(p.href, { as: p.as, type: p.type, fetchPriority: p.fetchPriority });
+ *
+ *  Home first-paint plate preload / avatar-preload retirement (L7-03) is
+ *  deliberately NOT produced here — it touches the locked-intro delivery surface
+ *  (PROTECT #1); see design-reviews/uplift/assets/p2a/README-p2a.md for the note. */
+export type HeroPreload = { href: string; as: 'image'; type: string; fetchPriority: 'high' };
+
+export function heroPreloadLink(d: HeroSource): HeroPreload | null {
+  const avif = d.heroShot?.avif;
+  if (!avif) return null;
+  return { href: avif, as: 'image', type: 'image/avif', fetchPriority: 'high' };
+}
+
 /**
  * The full ProductReveal media object for a deliverable — one source of truth for
  * the case-study hero AND both card types. Carries the real src (or undefined →
