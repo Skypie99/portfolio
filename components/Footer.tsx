@@ -69,6 +69,14 @@ export function Footer() {
             <p className="font-mono text-meta tracking-label uppercase text-text-meta">
               {profile.tagline}
             </p>
+            {/* L8-02: the imprint sits directly beneath the author's wordmark —
+                the way a book's title page binds a writer to their press. The
+                terracotta sun-dot is the aria-hidden connective mark. Relocated
+                here from the bottom strip; zero new words, only adjacency. */}
+            <p className="font-mono text-meta tracking-label uppercase text-text-meta inline-flex items-center gap-2">
+              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
+              SkyPi Studio — Est. 2026
+            </p>
           </div>
         </div>
 
@@ -196,11 +204,9 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom strip */}
+        {/* Bottom strip — the Okanagan postmark stays; the SkyPi Studio
+            postmark moved up into the brand block (L8-02, author over imprint). */}
         <div className="mt-24 pt-8 border-t border-stone flex flex-col md:flex-row gap-2 md:gap-8 justify-between items-start md:items-center">
-          <p className="font-mono text-meta tracking-label uppercase text-text-meta">
-            SkyPi Studio — Est. 2026
-          </p>
           <p className="font-mono text-meta tracking-label uppercase text-text-meta">
             Built in the Okanagan Valley, British{'\u00A0'}Columbia.
           </p>
