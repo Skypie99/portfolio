@@ -2758,3 +2758,70 @@ html.dark ::selection {
    frame in JS. With the motes removed there's nothing left here to freeze. */
 
 /* End cinematic desert ============================================== */
+
+/* ── Runway identity mark (L1-01 / S17) ==============================
+   The restrained identity affordance that holds the top-left corner through
+   the wordless cinematic runway, so "who is this / what do they build"
+   registers at first paint — WITHOUT touching the locked intro. A fixed sibling
+   of the stage (component: RunwayIdentity), on the site's own `.glass-card`
+   material, theme-aware ink, visible-by-default. RunwayIdentityRelease fades it
+   out when the runway ends so it never overlaps the revealed sidebar/hero. */
+.runway-identity {
+  position: fixed;
+  top: max(0.9rem, env(safe-area-inset-top));
+  left: max(0.9rem, env(safe-area-inset-left));
+  z-index: 55; /* above the pinned stage (z-50); spatially clear of the centred title carve */
+  opacity: 1; /* rest-visible floor — present with no JS, no entrance dependency */
+  pointer-events: none; /* a mark, not a control: no tab stop, no hit area */
+  transition:
+    opacity 480ms var(--ease-gh-glide),
+    transform 480ms var(--ease-gh-glide),
+    visibility 480ms var(--ease-gh-glide);
+}
+@media (min-width: 768px) {
+  .runway-identity {
+    top: max(1.15rem, env(safe-area-inset-top));
+    left: max(1.15rem, env(safe-area-inset-left));
+  }
+}
+/* Handoff: once the post-runway content intersects, RunwayIdentityRelease sets
+   [data-runway-done] and the mark retires. The global reduced-motion rule
+   neutralizes the transition duration, so under RM it snaps rather than fades. */
+.runway-identity[data-runway-done] {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+}
+.runway-identity-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 13px;
+}
+.runway-identity-sun {
+  display: flex;
+  flex: 0 0 auto;
+}
+.runway-identity-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+}
+.runway-identity-name,
+.runway-identity-role {
+  font-family: var(--font-dm-mono), ui-monospace, monospace;
+  text-transform: uppercase;
+  line-height: 1;
+  font-weight: 400;
+}
+.runway-identity-name {
+  font-size: 0.75rem; /* == text-label */
+  letter-spacing: 0.13em;
+  color: var(--color-near-black); /* theme-aware ink; flips light <-> dark with the glass */
+}
+.runway-identity-role {
+  font-size: 0.625rem; /* clearly secondary */
+  letter-spacing: 0.15em;
+  color: rgb(var(--rgb-ink) / 0.8); /* theme-aware, still well above AA on the frost */
+}
