@@ -139,6 +139,18 @@ describe('HamburgerNav', () => {
     expect(dialog.className).toContain('z-[80]');
   });
 
+  it('gives the overlay an internal scroll path so the toggle is reachable on short viewports (L5-02)', async () => {
+    // Below ~740px tall the centered menu column overflowed with no scroll
+    // path, stranding the theme toggle (the only theme control under 768px).
+    // The dialog must be its own scroll container so the whole column is
+    // reachable. Locks the fix against a future refactor dropping it.
+    const user = userEvent.setup();
+    render(<HamburgerNav />);
+    await user.click(screen.getByRole('button', { name: /open navigation menu/i }));
+    const dialog = await screen.findByRole('dialog', { name: /primary menu/i });
+    expect(dialog.className).toContain('overflow-y-auto');
+  });
+
   it('locks body scroll when overlay is open and restores it on close', async () => {
     const user = userEvent.setup();
     // Ensure we start with unrestricted scroll (jsdom default).

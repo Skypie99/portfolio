@@ -79,7 +79,20 @@ export function HamburgerNav() {
     const t = window.setTimeout(() => {
       const firstLink = overlayRef.current?.querySelector<HTMLAnchorElement>('a[href]');
       firstLink?.focus();
+      // L5-02: on short/landscape viewports the first item can open clipped at
+      // the top edge; pull it into the scroll container's view. No-op when
+      // already visible (so ≥812-tall stays byte-identical); instant → RM-safe.
+      firstLink?.scrollIntoView?.({ block: 'nearest' });
     }, reduceMotion ? 0 : 50);
+
+    // L5-02 focus belt: keep every trap stop inside the scroll container's view,
+    // so keyboard/AT focus can never land on an off-screen control (e.g. the
+    // theme toggle sitting below the fold on iPhone-SE-class heights).
+    const overlayEl = overlayRef.current;
+    const onFocusIn = (e: FocusEvent) => {
+      (e.target as HTMLElement | null)?.scrollIntoView?.({ block: 'nearest' });
+    };
+    overlayEl?.addEventListener('focusin', onFocusIn);
 
     // Lock body scroll while overlay is open
     const prevOverflow = document.body.style.overflow;
@@ -88,6 +101,7 @@ export function HamburgerNav() {
     return () => {
       document.removeEventListener('keydown', onKey);
       window.clearTimeout(t);
+      overlayEl?.removeEventListener('focusin', onFocusIn);
       document.body.style.overflow = prevOverflow;
     };
   }, [open, reduceMotion, close]);
@@ -180,11 +194,13 @@ export function HamburgerNav() {
               // cream (light) / near-black (dark) with the theme; gives the nav
               // text a solid, full-AA backdrop.
               'bg-cream',
-              // IN-2: flex-col so the wordmark renders on one line ABOVE the menu
-              // (without it the overlay is a row and strands the wordmark beside
-              // the menu as a two-line scrap).
-              'flex flex-col items-center justify-center',
-              'p-12',
+              // L5-02 scroll floor: the dialog is the scroll container so the
+              // whole column stays reachable at short viewport heights (iPhone
+              // SE/8 class, 667/568 tall) and in landscape. Centering + padding
+              // move to the inner wrapper below (min-h-svh) so it is byte-
+              // identical at ≥812-tall and only scrolls once content overflows.
+              // overscroll-contain belts the existing body-scroll lock.
+              'overflow-y-auto overscroll-contain',
             )}
           >
             {/* Alex A11y 2026-05-29: Explicit close button inside the dialog trap.
@@ -196,7 +212,13 @@ export function HamburgerNav() {
               onClick={close}
               aria-label="Close navigation menu"
               className={cn(
-                'absolute top-4 right-4',
+                // L5-02: fixed (not absolute) so it stays pinned to the viewport
+                // top-right while the dialog scrolls — an absolute child of the
+                // scroll container would scroll away with the content and become
+                // unreachable at the exact short heights this fix targets.
+                // Byte-identical at ≥812-tall (no scroll → same origin). Kept
+                // below the trigger's z-[90] so the trigger wins the outer hit-test.
+                'fixed top-4 right-4 z-[1]',
                 'inline-flex items-center justify-center',
                 'h-11 w-11',
                 'bg-transparent border border-border-decorative rounded-pill',
@@ -207,6 +229,26 @@ export function HamburgerNav() {
               <span aria-hidden="true" className="text-[1.25rem] leading-none font-light">{'×'}</span>
             </button>
 
+            {/* L5-02 inner wrapper — carries the centering + padding that used to
+                live on the dialog. min-h-svh (stable small-viewport height, NOT
+                dvh/full: no toolbar resize-jump, survives the framer transform)
+                keeps the column centered when it fits and lets it grow + scroll
+                when it doesn't. Safe-area block padding keeps the wordmark clear
+                of the notch and the theme toggle clear of the home indicator. */}
+            <div
+              className={cn(
+                'min-h-svh flex flex-col items-center justify-center',
+                'px-12',
+                // Vertical padding floor is 2rem, NOT the horizontal 3rem: the
+                // old p-12 dialog overflow-centered the ~740px column in 812,
+                // yielding a 36px effective top/bottom gap — a 3rem (48px) floor
+                // here would instead top-anchor + shift the column 12px down at
+                // 812 (breaking byte-identity). ≤36px keeps it centered at 812;
+                // env() still expands to clear a notch / home indicator on device.
+                'pt-[max(2rem,env(safe-area-inset-top,0px))]',
+                'pb-[max(2rem,env(safe-area-inset-bottom,0px))]',
+              )}
+            >
             {/* Wordmark — visible inside the overlay so mobile users see the site
                 name when the nav is open. Mirrors the Sidebar wordmark treatment.
                 aria-hidden: decorative — the dialog aria-label already names this
@@ -276,6 +318,7 @@ export function HamburgerNav() {
                 <ThemeToggle withLabel />
               </div>
             </nav>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
