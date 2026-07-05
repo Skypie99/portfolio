@@ -49,6 +49,8 @@ export function heroMedia(d: HeroSource): ProductRevealMedia {
     alt: heroAlt(d),
     avif: sources?.avif,
     webp: sources?.webp,
+    lqip: d.heroShot?.lqip,
+    video: d.heroShot?.video,
     focal: d.heroShot?.focal,
   };
 }
@@ -68,6 +70,8 @@ export function cardMedia(d: CardSource): ProductRevealMedia {
       alt: d.cardImage.alt,
       avif: d.cardImage.avif,
       webp: d.cardImage.webp,
+      lqip: d.cardImage.lqip,
+      video: d.cardImage.video,
       focal: d.cardImage.focal,
       precropped: true,
     };

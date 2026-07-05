@@ -46,6 +46,19 @@ const GalleryImageSchema = ImageSchema.extend({
  * optional `avif`/`webp` responsive siblings) must live under
  * /images/deliverables/<slug>/, the same rule as heroImage.
  */
+/** Optional proof VIDEO (P2-A, Sky's motion extension). A short, silent screen
+ *  loop. The shipped <video> is poster-first + muted + playsInline with a play
+ *  affordance; autoplay is JS-opt-in ONLY when prefers-reduced-motion is unset
+ *  (gated in ProductReveal). `poster` + `alt` are REQUIRED so meaning never
+ *  depends on motion; `captions` (a .vtt) is optional but wired when present. */
+const ProofVideoSchema = z.object({
+  mp4: z.string().startsWith('/images/').optional(),
+  webm: z.string().startsWith('/images/').optional(),
+  poster: z.string().startsWith('/images/'),
+  captions: z.string().startsWith('/images/').optional(),
+  alt: AltTextSchema,
+});
+
 const ShotImageSchema = z
   .object({
     src: z.string().startsWith('/images/').optional(),
@@ -57,15 +70,27 @@ const ShotImageSchema = z
     focal: z.string().max(24).optional(),
     avif: z.string().startsWith('/images/').optional(),
     webp: z.string().startsWith('/images/').optional(),
+    /** Inline LQIP blur placeholder — a base64 data-URI (from encode-proof.mjs).
+     *  Painted behind the image inside the reserved-aspect well; the real image
+     *  covers it on decode. Zero request, zero CLS, RM-safe (no animation). */
+    lqip: z.string().startsWith('data:image/').optional(),
+    /** Optional proof video (short silent loop) — see ProofVideoSchema. */
+    video: ProofVideoSchema.optional(),
     width: z.number().int().positive().optional(),
     height: z.number().int().positive().optional(),
   })
   .refine(
     (img) =>
-      [img.src, img.avif, img.webp].every(
-        (s) => !s || /^\/images\/deliverables\/[a-z0-9-]+\//.test(s),
-      ),
-    'shot src/avif/webp, when present, must live under /images/deliverables/<slug>/',
+      [
+        img.src,
+        img.avif,
+        img.webp,
+        img.video?.mp4,
+        img.video?.webm,
+        img.video?.poster,
+        img.video?.captions,
+      ].every((s) => !s || /^\/images\/deliverables\/[a-z0-9-]+\//.test(s)),
+    'shot src/avif/webp + video paths, when present, must live under /images/deliverables/<slug>/',
   );
 
 export const DeliverableSchema = z.object({
