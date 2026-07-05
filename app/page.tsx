@@ -10,6 +10,7 @@ import { ParallaxWash } from '@/components/ParallaxWash';
 import { ProjectCard } from '@/components/ProjectCard';
 import { RailInert } from '@/components/RailInert';
 import { Reveal } from '@/components/Reveal';
+import { RunwayIdentity } from '@/components/RunwayIdentity';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getCertificates, getDeliverables, getProfile } from '@/lib/content';
@@ -82,6 +83,11 @@ export default function HomePage() {
 
   return (
     <>
+      {/* ── Identity mark — holds the top-left through the wordless runway so
+          who-this-is registers at first paint (L1-01 / S17). Fixed sibling of
+          the intro, never a child of it; the locked intro is untouched. ── */}
+      <RunwayIdentity name="Sky Halisky" roleLabel="AI developer" />
+
       {/* ── Cinematic intro — 2.5D GSAP camera-push desert (placeholder phase) ─ */}
       <CinematicDesert />
 
