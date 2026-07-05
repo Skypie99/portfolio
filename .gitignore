@@ -13,3 +13,10 @@ build/
 coverage/
 tsconfig.tsbuildinfo
 next-env.d.ts
+
+# Proof-media masters (P2-A): heavy raw screenshots / screen-recordings that feed
+# scripts/encode-proof.mjs + scripts/encode-video.mjs. NEVER shipped — only the
+# encoded AVIF/WebP/MP4/WebM siblings in public/ ship. Keep the dir + README.
+proof-masters/*
+!proof-masters/.gitkeep
+!proof-masters/README.md
