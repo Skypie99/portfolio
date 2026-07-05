@@ -17,6 +17,9 @@
     },
     "heroShot": {
       "src": "/images/deliverables/accessmap/screen-map.png",
+      "avif": "/images/deliverables/accessmap/screen-map.avif",
+      "webp": "/images/deliverables/accessmap/screen-map.webp",
+      "lqip": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAADwBQCdASoUACsAPvFop1AppqOiurmYATAeCWUAwZAh1rDcEQTzRvW1ctBr1Oup58vXcO52INDhQAD+7Ey4CXoH6D505WNnAAdVwfqWSQhC1MAgD5ZMv+M/JqfPa+SehBIG3KODUivT6odsL0Qt4DGEZoZCJtrFVPwTAaLX+5i5pBDsX4eX23O/HGwJ/uFlPcphJldafMYfVNA8H2k3JE0AAAA=",
       "focal": "50% 60%",
       "alt": "AccessMap's map view with a verified severity-4 'No ramp' barrier pinned to a downtown Kelowna corner, three nearby flags, and a Report button"
     },
