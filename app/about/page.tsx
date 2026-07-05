@@ -208,8 +208,15 @@ export default function AboutPage() {
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Currently
             </p>
+            {/* SKY-EDITABLE (P1 item 3) — reframed honest-but-confident: leads
+                with the posture of building-in-the-open rather than "beginner",
+                the receipts already prove the competence. Swap this one line to
+                taste. Alternatives on the table:
+                  A. "Still learning out loud. Shipping anyway."
+                  C. "Self-taught, shipping in public. Getting better on purpose."
+                Original: "Still a beginner. Getting better on purpose." */}
             <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
-              Still a beginner. Getting better on purpose.
+              Learning in public. Shipping on purpose.
             </h2>
           </Reveal>
 
