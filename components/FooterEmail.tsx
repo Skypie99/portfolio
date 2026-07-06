@@ -20,7 +20,10 @@ export function FooterEmail() {
   return (
     <a
       href={email ? `mailto:${email}` : '/contact/'}
-      aria-label={email ? `Send email to ${email}` : 'Contact page'}
+      /* label-content-name-mismatch: pre-hydration the visible label is "Email me",
+         so carry no explicit aria-label (the name = the visible text); post-hydration
+         "Send email to <addr>" contains the visible address. */
+      aria-label={email ? `Send email to ${email}` : undefined}
       className="link-draw font-sans text-body-sm text-near-black break-all"
     >
       {email ?? 'Email me'}
