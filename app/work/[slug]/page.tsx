@@ -147,9 +147,9 @@ export default async function WorkDetailPage({
           section (Z6b/HI-2, mirroring app/not-found.tsx) so the page's NAME leads
           instead of a full empty breadcrumb section pushing the hero below the
           fold. Grammar + aria byte-identical to the prior standalone section. */}
-      <section className="px-gutter py-24 lg:py-32 world-surface">
+      <section className="px-gutter py-16 md:py-24 lg:py-32 world-surface">
         <div className="max-w-content mx-auto">
-          <nav aria-label="Breadcrumb" className="mb-12">
+          <nav aria-label="Breadcrumb" className="mb-8 md:mb-12">
             <ol className="inline-flex items-center gap-2 font-mono text-meta tracking-label uppercase text-text-meta">
               <li>
                 <Link
@@ -167,22 +167,22 @@ export default async function WorkDetailPage({
               </li>
             </ol>
           </nav>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 lg:gap-50 items-start">
-            {/* Hero image / fallback block — HeroImageSettle wraps the whole
-                well so the settle animation is the grid child itself. All
-                existing classes preserved on the wrapper. */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-12 lg:gap-x-50 items-start">
+            {/* L5-01: hero image well. On phones + tablets it rides BETWEEN the
+                title block and the metadata block (order-2) so proof crests the
+                first thumb-flick; at lg it returns to the left column. The
+                reserved-aspect class + mount settle stay owned by HeroImageSettle
+                → zero CLS; 1440 is unchanged. */}
             <HeroImageSettle
               className={cn(
-                'group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-1 shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]',
+                'group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]',
                 wideHero ? 'aspect-[4/3]' : 'aspect-[4/5]',
               )}
             >
-              {/* Show-the-work 2026-06-04: the device-in-landscape reveal.
-                  Placeholder now (golden-hour world + the product's per-medium
-                  device frame); a real screenshot drops into the SAME frame via
-                  d.heroShot with zero layout shift — see SHOW_WORK_PLAN.md. The
-                  aspect well (4:5 portrait; 4:3 for window/plate real shots) +
-                  the mount settle stay owned by HeroImageSettle. */}
+              {/* Show-the-work: a real screenshot drops into the SAME frame via
+                  d.heroShot with zero layout shift. The aspect well (4:5 portrait;
+                  4:3 for window/plate real shots) + the mount settle stay owned by
+                  HeroImageSettle. */}
               <HeroProductReveal
                 slug={d.id}
                 title={d.title}
@@ -191,146 +191,159 @@ export default async function WorkDetailPage({
               />
             </HeroImageSettle>
 
-            {/* Details column */}
-            <div className="flex flex-col gap-12 order-1 lg:order-2 lg:sticky lg:top-24">
-              {d.featured && (
-                <p className="font-mono text-meta tracking-label uppercase text-accent-text inline-flex items-center gap-2">
-                  <span
-                    aria-hidden="true"
-                    className="inline-block w-2 h-2 rounded-full bg-terracotta"
-                  />
-                  Featured
-                </p>
-              )}
+            {/* Details — ONE sticky right column at lg (today's exact structure,
+                so 1440 stays pixel-identical). Below lg the wrapper is
+                display:contents, so the title block (order-1) and metadata block
+                (order-3) become siblings of the well (order-2) and reorder around
+                it: title leads, proof crests the fold, metadata follows (L5-01). */}
+            <div className="contents lg:flex lg:flex-col lg:gap-12 lg:sticky lg:top-24">
+              {/* Title block — leads on every viewport. Mobile air steps down
+                  (L5-04): gap-6 → md:gap-8 → lg:gap-12 (desktop unchanged). */}
+              <div className="flex flex-col gap-6 md:gap-8 lg:gap-12 order-1 lg:order-none">
+                {/* FEATURED + role share ONE line at base (L5-04's two-chip void);
+                    lg:contents reverts them to today's two stacked children. */}
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 lg:contents">
+                  {d.featured && (
+                    <p className="font-mono text-meta tracking-label uppercase text-accent-text inline-flex items-center gap-2">
+                      <span
+                        aria-hidden="true"
+                        className="inline-block w-2 h-2 rounded-full bg-terracotta"
+                      />
+                      Featured
+                    </p>
+                  )}
 
-              {/* §5.4 — per-project signature: the title opens with its own
-                  --pr-sig hue. Only the decorative dot takes the color; all
-                  text stays on standard ink tokens. Reuses §5.1's dot geometry. */}
-              <p
-                className="font-mono text-meta tracking-label uppercase text-accent-ink inline-flex items-center gap-2"
-                style={{ '--pr-sig': signatureFor(d.id) } as CSSProperties}
-              >
-                <span
-                  aria-hidden="true"
-                  className="inline-block w-1.5 h-1.5 rounded-full"
-                  style={{ background: 'rgb(var(--pr-sig))' }}
-                />
-                {d.role}
-              </p>
-
-              {/* HeroTitleSettle: carves in after the image (delay 150ms),
-                  tightening letter-spacing from 0.12em to -0.02em. */}
-              <HeroTitleSettle
-                className="font-serif font-light text-display ember text-balance"
-              >
-                {d.title}
-              </HeroTitleSettle>
-
-              <p className="font-sans font-light text-step-1 text-charcoal text-pretty">
-                {d.summary}
-              </p>
-
-              {/* L3-04(b): live-demo pill — the site's loudest claim ("five of
-                  six live") gets a primary affordance at the moment the hero
-                  makes it, using the existing Button pill + its own label. */}
-              {demoLink && (
-                <div>
-                  <Button
-                    href={demoLink.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    variant="primary"
-                    aria-label={`${demoLink.label} for ${d.title} (opens in new tab)`}
+                  {/* §5.4 — per-project signature: the role opens with its own
+                      --pr-sig hue. Only the decorative dot takes the color. */}
+                  <p
+                    className="font-mono text-meta tracking-label uppercase text-accent-ink inline-flex items-center gap-2"
+                    style={{ '--pr-sig': signatureFor(d.id) } as CSSProperties}
                   >
-                    {demoLink.label}
-                    <span aria-hidden="true" className="ml-1">{'↗'}</span>
-                  </Button>
-                </div>
-              )}
-
-              {/* Role / Year */}
-              <dl className="grid grid-cols-2 gap-8 border-t border-border-decorative pt-8">
-                <div>
-                  <dt className="font-mono text-meta tracking-label uppercase text-text-meta mb-1">
-                    Role
-                  </dt>
-                  <dd className="font-sans text-body text-near-black">
+                    <span
+                      aria-hidden="true"
+                      className="inline-block w-1.5 h-1.5 rounded-full"
+                      style={{ background: 'rgb(var(--pr-sig))' }}
+                    />
                     {d.role}
-                  </dd>
+                  </p>
                 </div>
-                <div>
-                  <dt className="font-mono text-meta tracking-label uppercase text-text-meta mb-1">
-                    Year
-                  </dt>
-                  <dd className="font-sans text-body text-near-black">
-                    {d.year}
-                  </dd>
-                </div>
-              </dl>
 
-              {/* Tech pills */}
-              <div>
-                <p className="font-mono text-meta tracking-label uppercase text-text-meta mb-3">
-                  Tech
+                {/* HeroTitleSettle: carves in after the image (delay 150ms),
+                    tightening letter-spacing from 0.12em to -0.02em. */}
+                <HeroTitleSettle
+                  className="font-serif font-light text-display ember text-balance"
+                >
+                  {d.title}
+                </HeroTitleSettle>
+
+                <p className="font-sans font-light text-step-1 text-charcoal text-pretty">
+                  {d.summary}
                 </p>
-                <ul className="flex flex-wrap gap-2">
-                  {d.tech.map((t) => (
-                    <li key={t}>
-                      <TagPill>{t}</TagPill>
-                    </li>
-                  ))}
-                </ul>
+
+                {/* L3-04(b): live-demo pill — sits with the claim it proves. */}
+                {demoLink && (
+                  <div>
+                    <Button
+                      href={demoLink.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      variant="primary"
+                      aria-label={`${demoLink.label} for ${d.title} (opens in new tab)`}
+                    >
+                      {demoLink.label}
+                      <span aria-hidden="true" className="ml-1">{'↗'}</span>
+                    </Button>
+                  </div>
+                )}
               </div>
 
-              {/* Links list — the demo is promoted to the pill above (L3-04),
-                  so only the remaining links (GitHub, write-ups) show here. */}
-              {otherLinks.length > 0 && (
-                <div className="border-t border-border-decorative pt-8">
-                  <p className="font-mono text-meta tracking-label uppercase text-text-meta mb-3">
-                    Links
-                  </p>
-                  <ul className="flex flex-col gap-2">
-                    {otherLinks.map((l, i) => (
-                      <Reveal key={l.href} as="li" index={i}>
-                        <a
-                          href={l.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="group link-draw font-sans text-body text-accent-text inline-flex items-center gap-2"
-                        >
-                          <span className="font-mono text-meta tracking-label uppercase text-text-meta mr-2">
-                            {l.type}
-                          </span>
-                          <span>{l.label}</span>
-                          <span
-                            aria-hidden="true"
-                            className="inline-block transition-transform duration-base ease-gh-glide group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                          >
-                            {'↗'}
-                          </span>
-                          <span className="sr-only">(opens in new tab)</span>
-                        </a>
-                      </Reveal>
-                    ))}
-                  </ul>
-                </div>
-              )}
+              {/* Metadata block — role/year, tech, links, tags. Follows the proof
+                  on mobile (order-3); rejoins the sticky column at lg. */}
+              <div className="flex flex-col gap-12 order-3 lg:order-none">
+                {/* Role / Year */}
+                <dl className="grid grid-cols-2 gap-8 border-t border-border-decorative pt-8">
+                  <div>
+                    <dt className="font-mono text-meta tracking-label uppercase text-text-meta mb-1">
+                      Role
+                    </dt>
+                    <dd className="font-sans text-body text-near-black">
+                      {d.role}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="font-mono text-meta tracking-label uppercase text-text-meta mb-1">
+                      Year
+                    </dt>
+                    <dd className="font-sans text-body text-near-black">
+                      {d.year}
+                    </dd>
+                  </div>
+                </dl>
 
-              {/* Tags */}
-              {d.tags.length > 0 && (
-                <div className="border-t border-border-decorative pt-8">
+                {/* Tech pills */}
+                <div>
                   <p className="font-mono text-meta tracking-label uppercase text-text-meta mb-3">
-                    Tags
+                    Tech
                   </p>
                   <ul className="flex flex-wrap gap-2">
-                    {d.tags.map((tag) => (
-                      <li key={tag}>
-                        <TagPill>{tag}</TagPill>
+                    {d.tech.map((t) => (
+                      <li key={t}>
+                        <TagPill>{t}</TagPill>
                       </li>
                     ))}
                   </ul>
                 </div>
-              )}
+
+                {/* Links list — the demo is promoted to the pill above (L3-04),
+                    so only the remaining links (GitHub, write-ups) show here. */}
+                {otherLinks.length > 0 && (
+                  <div className="border-t border-border-decorative pt-8">
+                    <p className="font-mono text-meta tracking-label uppercase text-text-meta mb-3">
+                      Links
+                    </p>
+                    <ul className="flex flex-col gap-2">
+                      {otherLinks.map((l, i) => (
+                        <Reveal key={l.href} as="li" index={i}>
+                          <a
+                            href={l.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group link-draw font-sans text-body text-accent-text inline-flex items-center gap-2"
+                          >
+                            <span className="font-mono text-meta tracking-label uppercase text-text-meta mr-2">
+                              {l.type}
+                            </span>
+                            <span>{l.label}</span>
+                            <span
+                              aria-hidden="true"
+                              className="inline-block transition-transform duration-base ease-gh-glide group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                            >
+                              {'↗'}
+                            </span>
+                            <span className="sr-only">(opens in new tab)</span>
+                          </a>
+                        </Reveal>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Tags */}
+                {d.tags.length > 0 && (
+                  <div className="border-t border-border-decorative pt-8">
+                    <p className="font-mono text-meta tracking-label uppercase text-text-meta mb-3">
+                      Tags
+                    </p>
+                    <ul className="flex flex-wrap gap-2">
+                      {d.tags.map((tag) => (
+                        <li key={tag}>
+                          <TagPill>{tag}</TagPill>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
