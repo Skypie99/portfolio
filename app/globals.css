@@ -720,19 +720,6 @@ html.dark .ember-teal { background-image: linear-gradient(100deg, #8FD0D2 0%, #5
 html.dark .ember-gold { background-image: linear-gradient(100deg, #E7C07A 0%, #CF7A4F 100%); }
 html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4E9E6E 100%); }
 
-/* Status pill — pulsing terracotta dot ring. Single-shot fade-in via
-   .hero-enter on the parent; the ping animation runs softly in a loop.
-   Reduced-motion gate disables the loop. */
-@keyframes hero-ping {
-  0%   { transform: scale(1);   opacity: 0.55; }
-  75%, 100% { transform: scale(2.25); opacity: 0; }
-}
-@media (prefers-reduced-motion: no-preference) {
-  .hero-status-ping {
-    animation: hero-ping 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
-  }
-}
-
 /* Modern text-wrap utilities — let the browser pick clean line breaks
    for headlines and balanced ragged-right for body copy. No JS. */
 .text-balance { text-wrap: balance; }

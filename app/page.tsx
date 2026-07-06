@@ -296,10 +296,7 @@ export default function HomePage() {
           </Reveal>
 
           {/* Warm-white panel — hairline rules between steps.
-              Each NumberedStep staggered 80ms apart (index * 0.08s in Reveal).
-              AnimatedStepList not used: it lacks the `highlight` prop and
-              manages its own dividers inside an <ol>, which would require
-              restructuring the existing divider elements between steps. */}
+              Each NumberedStep staggered 80ms apart (index * 0.08s in Reveal). */}
           <div className="bg-surface-mid rounded-lg p-12 md:p-24 border border-stone dark:border-line-strong/75 space-y-12 shadow-lg dark:shadow-md">
             <Reveal index={0} variant="depth">
               <NumberedStep
