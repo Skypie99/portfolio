@@ -21,10 +21,11 @@ afterEach(() => {
 describe('Footer', () => {
   it('renders all three columns (Site, About, Elsewhere)', () => {
     render(<Footer />);
-    // Column headers — h3 with mono uppercase styling.
-    expect(screen.getByRole('heading', { level: 3, name: 'Site' })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { level: 3, name: 'About' })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { level: 3, name: 'Elsewhere' })).toBeInTheDocument();
+    // Column headers — h2 with mono uppercase styling (L6-04: h2, not h3, so the
+    // /404/ outline reads h1→h2 with no skipped level; renders identically).
+    expect(screen.getByRole('heading', { level: 2, name: 'Site' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 2, name: 'About' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 2, name: 'Elsewhere' })).toBeInTheDocument();
   });
 
   it('renders the studio mark without a © notice (2026-06-10 voice pass)', () => {

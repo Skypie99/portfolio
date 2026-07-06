@@ -83,9 +83,9 @@ export function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
           {/* Column 1 — Site */}
           <div className="flex flex-col gap-4">
-            <h3 className="font-mono text-label tracking-label uppercase text-text-meta">
+            <h2 className="font-mono text-label tracking-label uppercase text-text-meta">
               Site
-            </h3>
+            </h2>
             <ul className="flex flex-col gap-2">
               <li>
                 <Link
@@ -156,9 +156,9 @@ export function Footer() {
 
           {/* Column 2 — About */}
           <div className="flex flex-col gap-4">
-            <h3 className="font-mono text-label tracking-label uppercase text-text-meta">
+            <h2 className="font-mono text-label tracking-label uppercase text-text-meta">
               About
-            </h3>
+            </h2>
             <p className="font-sans text-body-sm text-charcoal leading-[1.65] text-pretty">
               {profile.name} builds small, careful AI tools. Accessible by
               default, useful by design, so no one&apos;s left out. Built in
@@ -169,9 +169,9 @@ export function Footer() {
 
           {/* Column 3 — Social + Contact */}
           <div className="flex flex-col gap-4">
-            <h3 className="font-mono text-label tracking-label uppercase text-text-meta">
+            <h2 className="font-mono text-label tracking-label uppercase text-text-meta">
               Elsewhere
-            </h3>
+            </h2>
             <ul className="flex flex-col gap-2">
               <li>
                 <FooterEmail />
