@@ -58,10 +58,43 @@ export function ThemeToggle({ className, withLabel = false }: Props) {
   const isDark = mounted && resolvedTheme === 'dark';
   const next = isDark ? 'light' : 'dark';
 
+  // S19 (L4-03): flipping the theme joins the route-dissolve language — one
+  // full-surface golden cross-dissolve (the ::view-transition(root) block in
+  // globals.css: --dur-transition on --ease-gh-glide). Reduced motion and
+  // engines without the API keep today's instant snap (the ::view-transition
+  // 0.01ms guard is layer 3 of the RM contract; this JS gate is belt-and-braces).
+  const flip = () => {
+    const reduce =
+      typeof window !== 'undefined' &&
+      typeof window.matchMedia === 'function' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const startViewTransition = (
+      document as unknown as {
+        startViewTransition?: (cb: () => void) => unknown;
+      }
+    ).startViewTransition;
+    if (reduce || typeof startViewTransition !== 'function') {
+      setTheme(next);
+      return;
+    }
+    startViewTransition.call(document, () => {
+      // Paint is suspended while a VT callback runs, so we cannot wait for
+      // next-themes' post-commit effect to apply the class (a rAF/paint resolver
+      // would never fire — see ViewTransitions.tsx). Toggle the class synchronously
+      // here so the transition captures the NEW theme; setTheme keeps next-themes'
+      // state, storage and disableTransitionOnChange guard in sync (it re-applies
+      // the same class — a no-op).
+      const root = document.documentElement;
+      root.classList.toggle('dark', next === 'dark');
+      root.style.colorScheme = next;
+      setTheme(next);
+    });
+  };
+
   const button = (
     <button
       type="button"
-      onClick={() => setTheme(next)}
+      onClick={flip}
       aria-label={mounted ? `Switch to ${next} mode` : 'Toggle colour theme'}
       title={mounted ? `Switch to ${next} mode` : undefined}
       className={cn(
