@@ -910,7 +910,12 @@ html.reveal-failsafe .reveal-carve {
   from {
     opacity: 0;
     transform: translateY(var(--settle-y, 8px));
-    letter-spacing: var(--ls-from, 0.1em);
+    /* CLS floor: letter-spacing is intentionally NOT animated. A wide 0.12em
+       start re-wrapped the serif hero titles ~1 line, so settling to the rest
+       spacing pulled the whole hero up after paint (measured CLS up to ~0.031
+       on /work/prompt-library/, motion-only). Fade + rise carry the gesture;
+       the rest letter-spacing (--ls-rest) applies from first paint, so the
+       title never changes width → zero layout shift. */
   }
 }
 @keyframes settle-img {
@@ -937,6 +942,21 @@ html.reveal-failsafe .reveal-carve {
   }
   .hero-settle-img {
     animation: settle-img var(--dur-reveal) var(--ease-out) both;
+  }
+}
+
+/* "On this page" rail index (SidebarArticleNav) is read from the DOM after
+   hydration; this placeholder reserves its height so the rail's NOTES + CTA
+   don't shift down when it populates (CLS floor at md/768). Gated on
+   scripting:enabled — a no-JS visitor never gets the index, so no empty gap is
+   left. Height tuned to the case-study story spine (4 headings ≈ 155px). */
+.sidebar-toc-reserve {
+  display: none;
+}
+@media (scripting: enabled) {
+  .sidebar-toc-reserve {
+    display: block;
+    min-height: 155px;
   }
 }
 

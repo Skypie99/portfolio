@@ -54,7 +54,16 @@ export function SidebarArticleNav() {
 
   const active = useActiveSection(headings.map((h) => h.id));
 
-  if (!isLongForm || headings.length === 0) return null;
+  if (!isLongForm) return null;
+  // Headings are read from the DOM AFTER hydration, so on SSR / first paint the
+  // index is empty. Rather than render nothing (which then grows ~155px on
+  // hydrate and shoves the rail's NOTES + CTA down — a ~0.005 CLS on the rail at
+  // md/768), reserve the index's height with a placeholder. It's gated on
+  // scripting:enabled in CSS, so a no-JS visitor — who never gets this
+  // client-read index at all — sees no empty gap.
+  if (headings.length === 0) {
+    return <div className="sidebar-toc-reserve" aria-hidden="true" />;
+  }
 
   return (
     <nav aria-label="On this page" className="flex flex-col gap-3">
