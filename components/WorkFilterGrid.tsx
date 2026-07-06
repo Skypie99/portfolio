@@ -158,6 +158,7 @@ export function WorkFilterGrid({ deliverables }: WorkFilterGridProps) {
                     description={d.summary}
                     href={`/work/${d.id}/`}
                     media={cardMedia(d)}
+                    links={d.links}
                     index={deliverables.findIndex((x) => x.id === d.id)}
                   />
                 </Reveal>
