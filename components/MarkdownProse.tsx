@@ -156,7 +156,15 @@ export function renderMarkdownProse(markdown: string, variant: ProseVariant): Re
         </Reveal>
       );
     }
-    const dropCap = firstPara;
+    // L2-04: the drop-cap initial is ~3 lines tall. Over a one-line opening
+    // paragraph (the colophon's 51-char "Most sites hide how they were made.")
+    // it leaves an L-shaped hole. Cap only when the opener wraps ≥3 lines at the
+    // prose measure (~60ch/line) so the initial always has text beside it —
+    // otherwise it gracefully stands down. Calibrated on the two real openers:
+    // colophon 51 chars → no cap; blog ~280 chars → cap. First paragraph only
+    // (never migrates to a later one).
+    const plainLen = block.replace(/[*_`~[\]()>#]/g, '').trim().length;
+    const dropCap = firstPara && plainLen >= 180;
     firstPara = false;
     return (
       <Reveal
