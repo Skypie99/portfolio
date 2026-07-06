@@ -235,16 +235,28 @@
     },
     "shots": [
       {
-        "alt": "Prompt Library search view filtering a prompt collection by tag in real time",
-        "caption": "Full-text search across every saved prompt."
+        "alt": "Prompt Library's command-palette search returning a live match — a 'code review' query surfacing the Code Review Buddy prompt.",
+        "caption": "Full-text search across every saved prompt.",
+        "src": "/images/deliverables/prompt-library/screen-search.png",
+        "avif": "/images/deliverables/prompt-library/screen-search.avif",
+        "webp": "/images/deliverables/prompt-library/screen-search.webp",
+        "lqip": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAAAQAwCdASoUAA0APxFysFAsJqSisAgBgCIJZwC7ABgevgAA/lRpyPtEDylsMz7P+rhrQAAA"
       },
       {
-        "alt": "Prompt Library editor composing a prompt with favourites and tags applied",
-        "caption": "Compose, tag, favourite — all local-first."
+        "alt": "Prompt Library's New Prompt composer — title, prompt body with {{variable}} fill-ins, a category picker, and suggested tags.",
+        "caption": "Compose, tag, favourite — all local-first.",
+        "src": "/images/deliverables/prompt-library/screen-compose.png",
+        "avif": "/images/deliverables/prompt-library/screen-compose.avif",
+        "webp": "/images/deliverables/prompt-library/screen-compose.webp",
+        "lqip": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAAAQAwCdASoUAA0APxFysFAsJqSisAgBgCIJZwAAUoSQUAAA9yrfc8wH3C5mjm5zNnx/puHPEPh5AAAA"
       },
       {
-        "alt": "Prompt Library dark mode showing the local-first bulk import and export panel",
-        "caption": "Bulk import and export. Zero backend, dark mode included."
+        "alt": "Prompt Library's settings panel with the local-first Export library and Import library controls, all stored in the browser.",
+        "caption": "Bulk import and export. Zero backend, dark mode included.",
+        "src": "/images/deliverables/prompt-library/screen-import.png",
+        "avif": "/images/deliverables/prompt-library/screen-import.avif",
+        "webp": "/images/deliverables/prompt-library/screen-import.webp",
+        "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAAAwAwCdASoUAA0APxFysFAsJqSisAgBgCIJZwAAUSsoVOWAAPxbCNhZezkCEDPOvW8B9NglYeQAAA=="
       }
     ],
     "links": [
