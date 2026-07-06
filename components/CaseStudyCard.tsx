@@ -6,6 +6,7 @@ import { CardField } from '@/components/CardField';
 import { CardProductReveal, type ProductRevealMedia } from '@/components/ProductReveal';
 import { cn } from '@/lib/cn';
 import { useSpotlight } from '@/lib/motion';
+import type { Deliverable } from '@/lib/schema';
 
 type CaseStudyCardProps = {
   title: string;
@@ -15,31 +16,36 @@ type CaseStudyCardProps = {
   /** Product media for the band (Show-the-work 2026-06-04). Omit → the
    *  golden-hour placeholder; pass `{ src }` to drop in a real screenshot. */
   media?: ProductRevealMedia;
+  /** The deliverable's links (L3-04): surfaces the LIVE ↗ / GITHUB ↗ quick
+   *  links on the card so no proof path dead-ends — the featured card's grammar. */
+  links?: Deliverable['links'];
   /** Editorial index for the ghosted numeral. Default 0. */
   index?: number;
   className?: string;
 };
 
 /**
- * CaseStudyCard — a liquid-glass panel (the whole card is one link). Mirrors
- * ProjectCard's language: a ghosted serif numeral on the open top glass, then the
- * title, a fine accent rule, a one-line description and a "Read more" cue along the
- * bottom — ink tokens, AA in both modes. A cursor-follow specular glides across the
- * frosted surface (useSpotlight → --mx/--my).
+ * CaseStudyCard — a liquid-glass panel. Mirrors ProjectCard's language: a ghosted
+ * serif numeral on the open top glass, then the title, a fine accent rule, a
+ * one-line description, and a footer action row — "Read more →" plus LIVE ↗ /
+ * GITHUB ↗ quick links (L3-04: the featured card's grammar, so a live demo is one
+ * tap from the grid, not buried inside the case study). Ink tokens, AA in both
+ * modes. A cursor-follow specular glides across the frosted surface (useSpotlight
+ * → --mx/--my). The card is no longer one whole link — the title and each action
+ * are their own focus targets (no nested anchors).
  */
-export function CaseStudyCard({ title, category, description, href, media, index = 0, className }: CaseStudyCardProps) {
+export function CaseStudyCard({ title, category, description, href, media, links, index = 0, className }: CaseStudyCardProps) {
   const numeral = String(index + 1).padStart(2, '0');
-  const spotRef = useSpotlight<HTMLAnchorElement>();
+  const githubLink = links?.find((l) => l.type === 'github');
+  const demoLink = links?.find((l) => l.type === 'demo');
+  const spotRef = useSpotlight<HTMLDivElement>();
 
   return (
-    <Link
+    <div
       ref={spotRef}
-      href={href}
-      aria-label={`${title} — read the case study`}
       data-category={category}
       className={cn(
         'glass-card case-study-card group relative isolate flex min-h-[22rem] flex-col overflow-hidden rounded-card',
-        'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta',
         className,
       )}
     >
@@ -62,20 +68,63 @@ export function CaseStudyCard({ title, category, description, href, media, index
         </span>
 
         <div className="mt-auto flex flex-col gap-4">
-          <h3
-            className="font-serif font-light text-card-title text-near-black"
-          >
-            {title}
+          <h3 className="font-serif font-light text-card-title text-near-black">
+            <Link
+              href={href}
+              aria-label={`${title} — read the case study`}
+              className="rounded-sm transition-colors duration-fast ease-out hover:text-accent-text focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta"
+            >
+              {title}
+            </Link>
           </h3>
           <span aria-hidden="true" className="block h-px w-24 rounded-full bg-gradient-to-r from-[rgb(var(--rgb-accent)/0.65)] via-[rgb(var(--rgb-accent)/0.3)] to-transparent origin-left transition-transform duration-slow ease-gh-glide group-hover:scale-x-125" />
           <p className="font-sans font-light text-body-sm leading-[1.65] text-charcoal line-clamp-2 text-pretty">
             {description}
           </p>
-          <span className="inline-flex items-center gap-1.5 font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-base ease-gh-glide group-hover:translate-x-1">
-            Read more <span aria-hidden="true">→</span>
-          </span>
+
+          {/* Footer action row (L3-04) — the featured card's proven grammar:
+              case-study link + LIVE ↗ / GITHUB ↗ grouped so they wrap as one
+              unit on narrow cards. */}
+          <div className="mt-1 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-[rgb(var(--rgb-ink)/0.1)] pt-4">
+            <Link
+              href={href}
+              /* SC 2.5.3 Label in Name: the visible words lead the accessible name. */
+              aria-label={`Read more — ${title} case study`}
+              className="inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-base ease-gh-glide hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+            >
+              Read more <span aria-hidden="true">→</span>
+            </Link>
+            {(demoLink || githubLink) && (
+              <span className="ml-auto flex items-center gap-x-6">
+                {demoLink && (
+                  <a
+                    href={demoLink.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Open ${demoLink.label.toLowerCase()} for ${title} (opens in new tab)`}
+                    className="inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                  >
+                    {/* label-derived: "Live" for live products, "Demo" for
+                        not-yet-live ones (e.g. Mutual Mesh) */}
+                    {demoLink.label.split(' ')[0]} <span aria-hidden="true">↗</span>
+                  </a>
+                )}
+                {githubLink && (
+                  <a
+                    href={githubLink.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View ${title} source on GitHub (opens in new tab)`}
+                    className="inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                  >
+                    GitHub <span aria-hidden="true">↗</span>
+                  </a>
+                )}
+              </span>
+            )}
+          </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }

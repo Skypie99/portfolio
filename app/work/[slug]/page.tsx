@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { CSSProperties } from 'react';
 
+import { Button } from '@/components/Button';
 import { CaseStudyCard } from '@/components/CaseStudyCard';
 import { ContactEmail } from '@/components/ContactEmail';
 import { HeroImageSettle, HeroTitleSettle } from '@/components/HeroSettle';
@@ -115,6 +116,11 @@ export default async function WorkDetailPage({
   // at its proper scale. Static class either way → zero CLS.
   const media = heroMedia(d);
   const wideHero = Boolean(media.src) && frameForSlug(d.id) !== 'phone';
+  // L3-04(b): the strongest proof — "click the live thing" — is promoted out of
+  // the below-fold LINKS list into a primary pill in the hero details column. The
+  // remaining links (GitHub, write-ups) keep the list; the demo no longer doubles.
+  const demoLink = d.links?.find((l) => l.type === 'demo');
+  const otherLinks = d.links?.filter((l) => l.type !== 'demo') ?? [];
 
   return (
     <>
@@ -224,6 +230,24 @@ export default async function WorkDetailPage({
                 {d.summary}
               </p>
 
+              {/* L3-04(b): live-demo pill — the site's loudest claim ("five of
+                  six live") gets a primary affordance at the moment the hero
+                  makes it, using the existing Button pill + its own label. */}
+              {demoLink && (
+                <div>
+                  <Button
+                    href={demoLink.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="primary"
+                    aria-label={`${demoLink.label} for ${d.title} (opens in new tab)`}
+                  >
+                    {demoLink.label}
+                    <span aria-hidden="true" className="ml-1">{'↗'}</span>
+                  </Button>
+                </div>
+              )}
+
               {/* Role / Year */}
               <dl className="grid grid-cols-2 gap-8 border-t border-border-decorative pt-8">
                 <div>
@@ -258,14 +282,15 @@ export default async function WorkDetailPage({
                 </ul>
               </div>
 
-              {/* Links list */}
-              {d.links && d.links.length > 0 && (
+              {/* Links list — the demo is promoted to the pill above (L3-04),
+                  so only the remaining links (GitHub, write-ups) show here. */}
+              {otherLinks.length > 0 && (
                 <div className="border-t border-border-decorative pt-8">
                   <p className="font-mono text-meta tracking-label uppercase text-text-meta mb-3">
                     Links
                   </p>
                   <ul className="flex flex-col gap-2">
-                    {d.links.map((l, i) => (
+                    {otherLinks.map((l, i) => (
                       <Reveal key={l.href} as="li" index={i}>
                         <a
                           href={l.href}
@@ -446,6 +471,7 @@ export default async function WorkDetailPage({
                     description={o.summary}
                     href={`/work/${o.id}/`}
                     media={cardMedia(o)}
+                    links={o.links}
                     index={allDeliverables.findIndex((x) => x.id === o.id)}
                   />
                 </Reveal>

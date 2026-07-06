@@ -38,42 +38,51 @@ export default function HomePage() {
   const deliverables = getDeliverables();
   const certificates = getCertificates();
 
-  /** Showcase stat chips — hardcoded per spec */
+  /** Showcase stat chips — hardcoded per spec. L3-09: each chip is now a quiet
+   *  door to the proof it names (project chips → their case study, the a11y chip
+   *  → the /accessibility/ statement) — same composition, only the system's own
+   *  link affordances added. */
   const showcaseChips = [
     {
       stat: '1,680',
       label: 'tests passing',
       project: 'AccessMap',
+      href: '/work/accessmap/',
       tags: ['Mobile', 'WCAG AA', 'Open source'],
     },
     {
       stat: '15',
       label: 'AI agents',
       project: 'Claude Corp',
+      href: '/work/claude-corp/',
       tags: ['MCP', 'Real commits'],
     },
     {
       stat: '100%',
       label: 'static',
       project: 'Prompt Library',
+      href: '/work/prompt-library/',
       tags: ['No backend', 'Browser-only'],
     },
     {
       stat: '56',
       label: 'command cards',
       project: 'Ghost Code',
+      href: '/work/ghost-code/',
       tags: ['Vanilla JS', 'Zero deps'],
     },
     {
       stat: '0',
       label: 'addresses stored',
       project: 'Mutual Mesh',
+      href: '/work/mutual-mesh/',
       tags: ['Privacy-first', 'Invite-only', 'EXIF-strip'],
     },
     {
       stat: '2.2 AA',
       label: 'WCAG conformance',
       project: 'Born accessible',
+      href: '/accessibility/',
       tags: ['Screen-reader', '44pt targets', 'Reduced-motion'],
     },
   ] as const;
@@ -144,19 +153,22 @@ export default function HomePage() {
 
           {/* 3×2 stat grid — vertical-rule layout for editorial weight */}
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-px bg-wa-teal-soft/30 border border-wa-teal-soft/50 rounded-lg overflow-hidden shadow-md">
-            {showcaseChips.map(({ stat, label, project, tags }, i) => (
+            {showcaseChips.map(({ stat, label, project, href, tags }, i) => (
               <Reveal
                 key={project}
                 // MO-4: cap the stagger (site idiom, work/[slug]/page.tsx:42-44)
                 index={Math.min(i, 4)}
                 variant="depth"
                 className={cn(
-                  'group flex flex-col bg-surface-mid p-8 md:p-7',
+                  'group relative flex flex-col bg-surface-mid p-8 md:p-7',
                   // An odd trailing chip spans its 2-col (mobile) / 3-col (md+)
                   // row so no bare grid cell shows through. With six chips the
                   // grid is a clean 3×2 and `odd:` self-disables on its own.
                   'last:odd:col-span-2 lg:last:odd:col-span-1',
-                  'transition-colors duration-base ease-out hover:bg-surface',
+                  // L3-09: the whole chip is a quiet door — hover AND focus-within
+                  // warm the surface (the site's glass-card focus idiom), so a
+                  // keyboard visitor sees the same lift a pointer does.
+                  'transition-colors duration-base ease-out hover:bg-surface focus-within:bg-surface',
                 )}
               >
                 <CountUpStat
@@ -167,7 +179,24 @@ export default function HomePage() {
                 <p className="font-mono text-label text-sage-text uppercase tracking-label mb-4">
                   {label}
                 </p>
-                <p className="font-serif text-prose text-near-black mb-3">{project}</p>
+                {/* L3-09: project name is the chip's link; a stretched ::after
+                    makes the entire cell a tap target without changing a pixel of
+                    the composition. → is the site's internal-nav grammar. */}
+                <p className="font-serif text-prose text-near-black mb-3">
+                  <Link
+                    href={href}
+                    aria-label={`${project} — ${stat} ${label}`}
+                    className="rounded-sm transition-colors duration-fast ease-out after:absolute after:inset-0 after:content-[''] group-hover:text-accent-text focus-visible:text-accent-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                  >
+                    {project}
+                  </Link>
+                  <span
+                    aria-hidden="true"
+                    className="ml-1.5 inline-block text-accent-text opacity-70 transition-transform duration-base ease-gh-glide group-hover:translate-x-0.5"
+                  >
+                    {'→'}
+                  </span>
+                </p>
                 <ul className="flex flex-wrap gap-1.5 mt-auto" aria-label={`Tags for ${project}`}>
                   {tags.map((tag) => (
                     <li key={tag}>
