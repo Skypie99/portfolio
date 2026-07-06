@@ -113,20 +113,27 @@ export function CountUpStat({ value, emberClass, label }: CountUpStatProps) {
   }
 
   return (
-    <p
-      ref={ref}
-      className={cn(
-        'font-serif font-light text-stat-figure mb-1',
-        counting && 'tabular-nums',
-        // tactile (wow 2026-06-04, C4): the figure leans in a hair when its cell
-        // is hovered — the count "completes under your hand". Compositor-only,
-        // origin-left so it stays aligned; snaps to rest under reduced motion.
-        'origin-left transition-transform duration-base ease-gh-glide group-hover:scale-[1.03]',
-        emberClass,
-      )}
-      aria-label={`${value} ${label}`}
-    >
-      {body}
-    </p>
+    <>
+      {/* L6-05 (aria-prohibited-attr): a <p> cannot carry aria-label. The
+          animated figure is aria-hidden so AT never hears "0, 1, 2…", and the
+          stable accessible name — the FINAL value — lives on an sr-only span.
+          The finding's prescribed mechanism; the visual craft is byte-identical. */}
+      <p
+        ref={ref}
+        aria-hidden="true"
+        className={cn(
+          'font-serif font-light text-stat-figure mb-1',
+          counting && 'tabular-nums',
+          // tactile (wow 2026-06-04, C4): the figure leans in a hair when its cell
+          // is hovered — the count "completes under your hand". Compositor-only,
+          // origin-left so it stays aligned; snaps to rest under reduced motion.
+          'origin-left transition-transform duration-base ease-gh-glide group-hover:scale-[1.03]',
+          emberClass,
+        )}
+      >
+        {body}
+      </p>
+      <span className="sr-only">{`${value} ${label}`}</span>
+    </>
   );
 }
