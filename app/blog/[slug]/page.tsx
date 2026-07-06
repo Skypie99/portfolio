@@ -192,9 +192,13 @@ export default async function BlogPostPage({
             </span>
           </div>
 
-          {/* Title */}
+          {/* Title — L5-05: at md the sidebar (hidden md:flex) narrows the
+              column, but --fs-display's 5vw term reads the full viewport and
+              skyscrapers the title. Step the tier down to step-5 across the md
+              band; the full display size returns at lg where the column is wide.
+              Call-site only — the shared --fs-display token (10 titles) is untouched. */}
           <SettleHeading
-            className="font-serif font-light text-display ember max-w-3xl mb-16 text-balance"
+            className="font-serif font-light text-display md:text-step-5 lg:text-display ember max-w-3xl mb-16 text-balance"
           >
             {bindSeparatorDash(bindSoloLetters(post.title))}
           </SettleHeading>
