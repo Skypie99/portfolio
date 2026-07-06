@@ -271,8 +271,11 @@ export function HamburgerNav() {
                       initial={reduceMotion ? false : { opacity: 0, y: 12 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{
-                        duration: reduceMotion ? 0 : 0.4,
-                        delay: reduceMotion ? 0 : 0.04 + i * 0.06,
+                        // L4-05: token timings (280ms base / 80ms step) — matches the
+                        // dialog transition (0.28 above) and the Reveal stagger step;
+                        // was freelancing 400ms/60ms off-token.
+                        duration: reduceMotion ? 0 : 0.28,
+                        delay: reduceMotion ? 0 : 0.04 + i * 0.08,
                         ease: [0.22, 1, 0.36, 1],
                       }}
                     >
