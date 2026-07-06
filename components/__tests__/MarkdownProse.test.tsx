@@ -72,20 +72,38 @@ describe('renderMarkdownProse — additive block grammar', () => {
 
 describe('renderMarkdownProse — regression: unchanged constructs', () => {
   it('renders headings, emphasis, code, and a drop-cap first paragraph as before', () => {
+    // The opener must wrap ≥3 lines to carry the cap (L2-04) — long enough here.
     const md =
-      '## Heading two\n\nFirst paragraph with **bold**, *italic*, and `code`.\n\n### Heading three\n\nSecond paragraph.';
+      '## Heading two\n\n' +
+      'First paragraph with **bold**, *italic*, and `code`, written long enough to wrap ' +
+      'past three lines at the prose measure so the drop-cap initial always has text ' +
+      'beside it and never leaves an L-shaped hole in the opening column.\n\n' +
+      '### Heading three\n\nSecond paragraph.';
     const { container } = renderMd(md);
     expect(container.querySelector('h2')?.textContent).toBe('Heading two');
     expect(container.querySelector('h3')?.textContent).toBe('Heading three');
     expect(container.querySelector('strong')?.textContent).toBe('bold');
     expect(container.querySelector('em')?.textContent).toBe('italic');
     expect(container.querySelector('code')?.textContent).toBe('code');
-    // Drop cap only on the FIRST paragraph (unchanged behaviour).
+    // Drop cap only on the FIRST (long) paragraph.
     const paras = container.querySelectorAll('p');
     expect(paras[0].className).toContain('drop-cap');
     expect(paras[1].className).not.toContain('drop-cap');
     // Prose-only input must not sprout any new block construct.
     expect(container.querySelector('ul, ol, blockquote')).toBeNull();
+  });
+
+  it('stands the drop-cap down on a one-line opener (L2-04)', () => {
+    // A ~3-line-tall initial over a one-line paragraph leaves an L-hole (the
+    // colophon opener). Short openers now stand the cap down; it never migrates.
+    const { container } = renderMd(
+      'Most sites hide how they were made. This one tells you.\n\n' +
+        'A second, longer paragraph that carries on well past the point where the ' +
+        'opening line would have wrapped, but the cap belongs only to the first.',
+    );
+    const paras = container.querySelectorAll('p');
+    expect(paras[0].className).not.toContain('drop-cap');
+    expect(paras[1].className).not.toContain('drop-cap');
   });
 
   it('keeps serif-display ligatures on prose headings', () => {
