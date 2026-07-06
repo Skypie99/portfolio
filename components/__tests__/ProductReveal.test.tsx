@@ -97,6 +97,27 @@ describe('ProductReveal', () => {
     // The card band is a pure UI hint — the title lives in the inscription below.
     expect(screen.queryByText('Mutual Mesh')).not.toBeInTheDocument();
   });
+
+  it('shot empty state is the designed silhouette, not a loading skeleton (L3-02)', () => {
+    const { container } = render(
+      <ProductReveal
+        slug="accessmap"
+        title="AccessMap"
+        context="shot"
+        media={{ alt: 'AccessMap report flow' }}
+      />,
+    );
+
+    // The designed empty state is present — a device silhouette on the lit stage.
+    const placeholder = container.querySelector('[data-pr-placeholder="designed"]');
+    expect(placeholder).not.toBeNull();
+    // It carries no <img> and no wordmark …
+    expect(container.querySelector('img')).toBeNull();
+    expect(screen.queryByText('AccessMap')).not.toBeInTheDocument();
+    // … and the retired skeleton grammar (window-chrome dots + wireframe text
+    // bars, which were <span> Bars) is gone: the designed still has no bars.
+    expect(placeholder!.querySelectorAll('span').length).toBe(0);
+  });
 });
 
 /**

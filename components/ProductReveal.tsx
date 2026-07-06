@@ -169,26 +169,39 @@ function HeroScreenFill({ sig, title, eyebrow }: { sig: string; title: string; e
   );
 }
 
-/** Card / in-body placeholder: a soft "screen" silhouette resting in the world. */
-function BandHint({ sig }: { sig: string }) {
+/** Card / in-body designed empty state (L3-02: "the reel, real"). Retires the
+ *  skeleton grammar — window-chrome dots + wireframe text bars, the universal
+ *  dialect of a *failed load* — in favour of the pr-world treatment the heroes
+ *  own: a clean device silhouette resting on the golden-hour stage, lit by the
+ *  project's own --pr-sig, a *designed* still awaiting its subject. Portrait for
+ *  phone products (AccessMap), landscape for the web ones — so an unfilled slot
+ *  still reads product-true. Pure static paint (no <img>, no text, no keyframes)
+ *  → zero CLS, reduced-motion-safe, rest-visible. */
+function BandHint({ sig, frame }: { sig: string; frame: DeviceFrameKind }) {
+  const portrait = frame === 'phone';
   return (
-    <div aria-hidden="true" className="absolute inset-0 flex items-center justify-center">
+    <div
+      aria-hidden="true"
+      data-pr-placeholder="designed"
+      className="absolute inset-0 flex items-center justify-center"
+    >
       <div
-        className="panel-lit relative h-[64%] w-[66%] overflow-hidden rounded-xl border border-[rgb(var(--rgb-ink)/0.08)]"
+        className={cn(
+          'panel-lit relative overflow-hidden rounded-[1.35rem] border',
+          portrait ? 'h-[82%] aspect-[9/19]' : 'h-[66%] w-[64%]',
+        )}
         style={{
-          background: `linear-gradient(160deg, rgb(${sig} / 0.16), rgb(var(--rgb-canvas) / 0.10) 60%, transparent)`,
+          borderColor: `rgb(${sig} / 0.28)`,
+          background: `linear-gradient(165deg, rgb(${sig} / 0.20), rgb(${sig} / 0.05) 52%, rgb(var(--rgb-earth-deep) / 0.30))`,
+          boxShadow: `inset 0 0 42px rgb(${sig} / 0.12)`,
         }}
       >
-        <div className="absolute inset-x-0 top-0 flex items-center gap-1.5 px-3 py-2">
-          <Bar className="h-1.5 w-1.5 bg-[rgb(var(--rgb-ink)/0.14)]" />
-          <Bar className="h-1.5 w-1.5 bg-[rgb(var(--rgb-ink)/0.10)]" />
-          <Bar className="h-1.5 w-1.5 bg-[rgb(var(--rgb-ink)/0.08)]" />
-        </div>
-        <div className="absolute inset-x-6 top-9 flex flex-col gap-2">
-          <Bar className="h-2 w-3/5 bg-[rgb(var(--rgb-ink)/0.08)]" />
-          <Bar className="h-2 w-2/5" style={{ background: `rgb(${sig} / 0.40)` }} />
-          <Bar className="h-2 w-4/5 bg-[rgb(var(--rgb-ink)/0.06)]" />
-        </div>
+        {/* the lit screen — a soft sig-tinted pool of light, the stage waiting to
+            hold the real subject (no fake chrome, no wireframe text). */}
+        <div
+          className="absolute inset-0"
+          style={{ background: `radial-gradient(74% 54% at 50% 38%, rgb(${sig} / 0.22), transparent 72%)` }}
+        />
       </div>
     </div>
   );
@@ -372,7 +385,7 @@ export function ProductReveal({
     />
   ) : !hasReal ? (
     kind === 'none' ? (
-      <BandHint sig={sig} />
+      <BandHint sig={sig} frame={frameForSlug(slug)} />
     ) : (
       <HeroScreenFill sig={sig} title={title} eyebrow={eyebrow} />
     )
