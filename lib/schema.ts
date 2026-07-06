@@ -193,6 +193,22 @@ export const ProfileSchema = z.object({
  * draft posts are excluded from all listings and static params at build time.
  * readingTimeMinutes is manually curated (not calculated) for accuracy.
  */
+/**
+ * BlogFigureSchema (L3-06 / S12) — one optional product figure for a post. Reuses
+ * ImageSchema's `/images/` + alt rules; the AVIF/WebP siblings + LQIP let the
+ * figure ship through the same optimized <picture> pipeline as the rest of the
+ * site (its reserved-aspect well keeps CLS at 0). `afterHeading` is the `## …`
+ * heading id after which the figure is spliced, so a real screen lands where the
+ * essay describes it.
+ */
+const BlogFigureSchema = ImageSchema.extend({
+  avif: z.string().startsWith('/images/').optional(),
+  webp: z.string().startsWith('/images/').optional(),
+  lqip: z.string().optional(),
+  caption: z.string().max(160).optional(),
+  afterHeading: z.string().min(2).max(80).optional(),
+});
+
 export const BlogPostSchema = z.object({
   id: SlugSchema,
   title: z.string().min(4).max(120),
@@ -202,6 +218,10 @@ export const BlogPostSchema = z.object({
   readingTimeMinutes: z.number().int().positive().max(60),
   content: z.string().min(1),
   draft: z.boolean().optional(),
+  /** L3-06 / S12: one optional product figure, spliced at its `afterHeading` seam. */
+  figure: BlogFigureSchema.optional(),
+  /** L3-06 / S12: the case-study slug this post hands off to at its close (no dead end). */
+  relatedDeliverable: SlugSchema.optional(),
 });
 
 export type Deliverable = z.infer<typeof DeliverableSchema>;
