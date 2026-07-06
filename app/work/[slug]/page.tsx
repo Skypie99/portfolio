@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { CSSProperties } from 'react';
+import ReactDOM from 'react-dom';
 
 import { Button } from '@/components/Button';
 import { CaseStudyCard } from '@/components/CaseStudyCard';
@@ -14,7 +15,7 @@ import { TactileMedia } from '@/components/TactileMedia';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getDeliverables } from '@/lib/content';
-import { cardMedia, heroMedia } from '@/lib/media';
+import { cardMedia, heroMedia, heroPreloadLink } from '@/lib/media';
 import { frameForSlug, signatureFor } from '@/lib/signature';
 import { renderMarkdownProse } from '@/components/MarkdownProse';
 
@@ -121,6 +122,17 @@ export default async function WorkDetailPage({
   // remaining links (GitHub, write-ups) keep the list; the demo no longer doubles.
   const demoLink = d.links?.find((l) => l.type === 'demo');
   const otherLinks = d.links?.filter((l) => l.type !== 'demo') ?? [];
+  // L7-02: preload the case-study hero's AVIF (its LCP element). heroPreloadLink
+  // returns null unless an optimized sibling is declared, so a placeholder-only or
+  // raw-PNG hero is never preloaded — no whale in the <head>.
+  const heroPreload = heroPreloadLink(d);
+  if (heroPreload) {
+    ReactDOM.preload(heroPreload.href, {
+      as: heroPreload.as,
+      type: heroPreload.type,
+      fetchPriority: heroPreload.fetchPriority,
+    });
+  }
 
   return (
     <>
@@ -388,7 +400,7 @@ export default async function WorkDetailPage({
                   <ShotProductReveal
                     slug={d.id}
                     title={d.title}
-                    media={{ src: shot.src, alt: shot.alt, avif: shot.avif, webp: shot.webp, focal: shot.focal }}
+                    media={{ src: shot.src, alt: shot.alt, avif: shot.avif, webp: shot.webp, focal: shot.focal, lqip: shot.lqip, video: shot.video }}
                     className="rounded-2xl border border-border-decorative"
                   />
                   {shot.caption && (
