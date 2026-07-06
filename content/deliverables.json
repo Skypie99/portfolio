@@ -26,6 +26,7 @@
     "cardImage": {
       "src": "/images/deliverables/accessmap/card-flag.jpg",
       "alt": "AccessMap's map with a verified 'No ramp' barrier flagged at a downtown Kelowna corner — wheelchair users have to detour",
+      "focal": "6% 42%",
       "avif": "/images/deliverables/accessmap/card-flag.avif",
       "webp": "/images/deliverables/accessmap/card-flag.webp",
       "lqip": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAABwAwCdASoUAAsAPxFysFAsJqSisAgBgCIJZwAAUXs+pvJ3lgAA+Q8bh4A0LM0unW56ZOCejiEIDrZ0AUfs2vzriQInbncuFYAAAA=="
