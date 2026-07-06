@@ -3,6 +3,14 @@ import { cn } from '@/lib/cn';
 
 type CredentialBadgeProps = {
   label: string;
+  /**
+   * Short, fixed visible text for the verify affordance (L3-01). The card's <h3>
+   * already shows the full credential title two lines up, so echoing it in the
+   * pill only clipped it mid-word at the card edge on 5 of 9 cards. The full
+   * `label` is kept in the accessible name, and the visible verb is contained in
+   * that name (Label in Name). Exact wording is Sky's — default kept terse.
+   */
+  verifyLabel?: string;
   logoUrl?: string;
   logoAlt?: string;
   href?: string;
@@ -10,7 +18,7 @@ type CredentialBadgeProps = {
 };
 
 /**
- * CredentialBadge — Logo + checkmark icon + label.
+ * CredentialBadge — Logo + checkmark icon + a short verify label.
  *
  * Container: cream bg, umber 1px border, umber text
  * Hover (280ms): warm-white bg, dark text, subtle elevation
@@ -20,6 +28,7 @@ type CredentialBadgeProps = {
  */
 export function CredentialBadge({
   label,
+  verifyLabel = 'Verify',
   logoUrl,
   logoAlt,
   href,
@@ -66,7 +75,7 @@ export function CredentialBadge({
         <polyline points="20 6 9 17 4 12" />
       </svg>
       <span className="font-mono text-meta tracking-label uppercase whitespace-nowrap">
-        {label}
+        {verifyLabel}
       </span>
     </div>
   );
@@ -80,7 +89,7 @@ export function CredentialBadge({
         // rounded-pill so the global focus ring traces the badge's pill shape
         // (the <a> is the focus target, not the pill div it wraps). (R6)
         className="inline-block rounded-pill"
-        aria-label={`${label} credential (opens in new tab)`}
+        aria-label={`${verifyLabel} credential: ${label} (opens in new tab)`}
       >
         {content}
       </a>
