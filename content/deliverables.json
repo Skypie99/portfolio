@@ -25,7 +25,10 @@
     },
     "cardImage": {
       "src": "/images/deliverables/accessmap/card-flag.jpg",
-      "alt": "AccessMap's map with a verified 'No ramp' barrier flagged at a downtown Kelowna corner — wheelchair users have to detour"
+      "alt": "AccessMap's map with a verified 'No ramp' barrier flagged at a downtown Kelowna corner — wheelchair users have to detour",
+      "avif": "/images/deliverables/accessmap/card-flag.avif",
+      "webp": "/images/deliverables/accessmap/card-flag.webp",
+      "lqip": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAABwAwCdASoUAAsAPxFysFAsJqSisAgBgCIJZwAAUXs+pvJ3lgAA+Q8bh4A0LM0unW56ZOCejiEIDrZ0AUfs2vzriQInbncuFYAAAA=="
     },
     "shots": [
       {
@@ -78,11 +81,17 @@
     },
     "heroShot": {
       "src": "/images/deliverables/claude-corp/card-landing.jpg",
-      "alt": "The Claude Corp landing page: a bold headline 'A 15-role AI team that builds software autonomously' over a dark hero with View on GitHub and Meet the team buttons"
+      "alt": "The Claude Corp landing page: a bold headline 'A 15-role AI team that builds software autonomously' over a dark hero with View on GitHub and Meet the team buttons",
+      "avif": "/images/deliverables/claude-corp/card-landing.avif",
+      "webp": "/images/deliverables/claude-corp/card-landing.webp",
+      "lqip": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAABQAwCdASoUAA0APxFysFAsJqSisAgBgCIJZQAAUp+3upxEGAD+48HzkLTR4BV/5J6HmM/g0xxY31LGYO1kgAAA"
     },
     "cardImage": {
       "src": "/images/deliverables/claude-corp/card-landing.jpg",
-      "alt": "The Claude Corp landing page: a bold headline 'A 15-role AI team that builds software autonomously' over a dark hero with View on GitHub and Meet the team buttons"
+      "alt": "The Claude Corp landing page: a bold headline 'A 15-role AI team that builds software autonomously' over a dark hero with View on GitHub and Meet the team buttons",
+      "avif": "/images/deliverables/claude-corp/card-landing.avif",
+      "webp": "/images/deliverables/claude-corp/card-landing.webp",
+      "lqip": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAABQAwCdASoUAA0APxFysFAsJqSisAgBgCIJZQAAUp+3upxEGAD+48HzkLTR4BV/5J6HmM/g0xxY31LGYO1kgAAA"
     },
     "shots": [
       {
@@ -138,28 +147,43 @@
     "heroShot": {
       "src": "/images/deliverables/dashboard/screen-home.png",
       "focal": "50% 0%",
-      "alt": "The dashboard home: live agent count, pending decisions, open blockers, recent reports, a seven-day insights row, and per-project health grades"
+      "alt": "The dashboard home: live agent count, pending decisions, open blockers, recent reports, a seven-day insights row, and per-project health grades",
+      "avif": "/images/deliverables/dashboard/screen-home.avif",
+      "webp": "/images/deliverables/dashboard/screen-home.webp",
+      "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwCdADLxQAD+7uCrxBpsAEOWH0+xYjqZd8GvZQAAAA=="
     },
     "cardImage": {
       "src": "/images/deliverables/dashboard/screen-home.png",
       "focal": "50% 0%",
-      "alt": "Claude Corp Dashboard home with KPI cards and per-project health grades in dark mode"
+      "alt": "Claude Corp Dashboard home with KPI cards and per-project health grades in dark mode",
+      "avif": "/images/deliverables/dashboard/screen-home.avif",
+      "webp": "/images/deliverables/dashboard/screen-home.webp",
+      "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwCdADLxQAD+7uCrxBpsAEOWH0+xYjqZd8GvZQAAAA=="
     },
     "shots": [
       {
         "src": "/images/deliverables/dashboard/screen-decisions.png",
         "alt": "The decision queue, where each pending decision shows selectable options with a recommended pick and Approve, Defer, and Escalate actions",
-        "caption": "The decision queue — pick an option, then approve, defer, or escalate."
+        "caption": "The decision queue — pick an option, then approve, defer, or escalate.",
+        "avif": "/images/deliverables/dashboard/screen-decisions.avif",
+        "webp": "/images/deliverables/dashboard/screen-decisions.webp",
+        "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACQAwCdASoUAA0APxFwsFAsJiSisAgBgCIJZQCdACHhvVH7whS4AP7r7jnyBSHwzT/D4oJcx6AAAA=="
       },
       {
         "src": "/images/deliverables/dashboard/screen-agents.png",
         "alt": "The agent feed listing fifteen roles with each one's current task, live status, and project",
-        "caption": "Agent feed — fifteen roles, live status at a glance."
+        "caption": "Agent feed — fifteen roles, live status at a glance.",
+        "avif": "/images/deliverables/dashboard/screen-agents.avif",
+        "webp": "/images/deliverables/dashboard/screen-agents.webp",
+        "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACQAwCdASoUAA0APxFysFAsJqSisAgBgCIJZQCw7CHhvVUoUIvAAP7r7jnX4ia2C5pN0RHHASAAAA=="
       },
       {
         "src": "/images/deliverables/dashboard/screen-velocity.png",
         "alt": "The agent velocity view charting report output per agent across a seven-day window",
-        "caption": "Velocity — who shipped what over the last week."
+        "caption": "Velocity — who shipped what over the last week.",
+        "avif": "/images/deliverables/dashboard/screen-velocity.avif",
+        "webp": "/images/deliverables/dashboard/screen-velocity.webp",
+        "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACQAwCdASoUAA0APxFwsFAsJiSisAgBgCIJZQCdACHgFTKwbuYAAP7r7hnEOIaDVcSlE17XL4AAAA=="
       }
     ],
     "links": [
@@ -196,12 +220,18 @@
     },
     "heroShot": {
       "src": "/images/deliverables/prompt-library/card-landing.png",
-      "alt": "Prompt Library V2 landing — 'Your prompts, one keystroke away', a prompt search box, and category filters"
+      "alt": "Prompt Library V2 landing — 'Your prompts, one keystroke away', a prompt search box, and category filters",
+      "avif": "/images/deliverables/prompt-library/card-landing.avif",
+      "webp": "/images/deliverables/prompt-library/card-landing.webp",
+      "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADQAgCdASoUAA4APxFwsFAsJiSisAgBgCIJaQAAe/QAAP7vfwCdpQdLpomilUAA"
     },
     "cardImage": {
       "src": "/images/deliverables/prompt-library/card-landing.png",
       "focal": "50% 0%",
-      "alt": "Prompt Library V2 landing — 'Your prompts, one keystroke away', a prompt search box, and category filters"
+      "alt": "Prompt Library V2 landing — 'Your prompts, one keystroke away', a prompt search box, and category filters",
+      "avif": "/images/deliverables/prompt-library/card-landing.avif",
+      "webp": "/images/deliverables/prompt-library/card-landing.webp",
+      "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADQAgCdASoUAA4APxFwsFAsJiSisAgBgCIJaQAAe/QAAP7vfwCdpQdLpomilUAA"
     },
     "shots": [
       {
@@ -255,12 +285,21 @@
     },
     "heroShot": {
       "src": "/images/deliverables/ghost-code/screen-game.png",
-      "alt": "Ghost Code arcade round — the Phantom hovering between four git-command answer cards for staging changed files, with the spirits and score HUD"
+      "alt": "Ghost Code arcade round — the Phantom hovering between four git-command answer cards for staging changed files, with the spirits and score HUD",
+      "avif": "/images/deliverables/ghost-code/screen-game.avif",
+      "webp": "/images/deliverables/ghost-code/screen-game.webp",
+      "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAAAwAwCdASoUAA8APxFysVAsJqSisAgBgCIJQAAPWjw+bjoAAP7utsOcK+g4wRA87HuAH020E3sCAA=="
     },
     "shots": [
       {
         "alt": "Ghost Code arcade round with the Phantom hovering between four command tokens",
-        "caption": "Capture the right command; dodge the wrong ones."
+        "caption": "Capture the right command; dodge the wrong ones.",
+        "video": {
+          "mp4": "/images/deliverables/ghost-code/loop.mp4",
+          "webm": "/images/deliverables/ghost-code/loop.webm",
+          "poster": "/images/deliverables/ghost-code/loop-poster.avif",
+          "alt": "A Ghost Code round in play — the Phantom hovering among four command tokens as the round timer runs."
+        }
       },
       {
         "alt": "Ghost Code HUD showing spirit lives draining as the round counter climbs",
@@ -306,11 +345,17 @@
     "heroShot": {
       "src": "/images/deliverables/mutual-mesh/screen-feed.png",
       "focal": "50% 14%",
-      "alt": "Mutual Mesh's guest-demo feed: a 'Demo — sample data' banner over neighbourhood listings for canned goods, baby formula and winter coats, each tagged Available with an FSA-level location"
+      "alt": "Mutual Mesh's guest-demo feed: a 'Demo — sample data' banner over neighbourhood listings for canned goods, baby formula and winter coats, each tagged Available with an FSA-level location",
+      "avif": "/images/deliverables/mutual-mesh/screen-feed.avif",
+      "webp": "/images/deliverables/mutual-mesh/screen-feed.webp",
+      "lqip": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAABQBACdASoUACUAPxF2slGsJySisBqoAYAiCWUA0qwUM8Z7QeZPoXKnnMAAAPfT73/GDhc6H++IfK2E24mzvdLVBRQnH+BfiU80BP5NoLupUa6w+Nhwcvduzkjp6beSAk1e6pY3YAAAAA=="
     },
     "cardImage": {
       "src": "/images/deliverables/mutual-mesh/card-feed.jpg",
-      "alt": "Mutual Mesh marketplace feed — a 'Demo — sample data' banner over neighbourhood resource listings, each tagged Available with a neighbourhood-level FSA code"
+      "alt": "Mutual Mesh marketplace feed — a 'Demo — sample data' banner over neighbourhood resource listings, each tagged Available with a neighbourhood-level FSA code",
+      "avif": "/images/deliverables/mutual-mesh/card-feed.avif",
+      "webp": "/images/deliverables/mutual-mesh/card-feed.webp",
+      "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACQAwCdASoUAA0APxGCtFIsKaUisAgBgCIJZQAAXBhzl7fj7BpAAN4x94F5lVdAw9yMXvXXIS5lXmA7dkoGy6nxZ0LmJIAA"
     },
     "shots": [
       {
@@ -319,11 +364,19 @@
       },
       {
         "alt": "A Mutual Mesh resource detail with its description and a neighbourhood-level pickup note",
-        "caption": "Pickup is neighbourhood-level; a contact handle is revealed only after you claim."
+        "caption": "Pickup is neighbourhood-level; a contact handle is revealed only after you claim.",
+        "src": "/images/deliverables/mutual-mesh/screen-detail.png",
+        "avif": "/images/deliverables/mutual-mesh/screen-detail.avif",
+        "webp": "/images/deliverables/mutual-mesh/screen-detail.webp",
+        "lqip": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAABwBACdASoUACUAPwVwrFArpqQitVv4AXAgiWUAzNAhRIRaAi+S6/eOcjjxYAD+W/IHD+k3bsP6dIMTULv2BjAwoBwXyXnTKk0tCYuJXzMCpGigAAA="
       },
       {
         "alt": "The read-only guest demo prompting a visitor to sign up before they can claim",
-        "caption": "Invite-only by design — the public demo runs on synthetic data with zero network calls."
+        "caption": "Invite-only by design — the public demo runs on synthetic data with zero network calls.",
+        "src": "/images/deliverables/mutual-mesh/screen-signup.png",
+        "avif": "/images/deliverables/mutual-mesh/screen-signup.avif",
+        "webp": "/images/deliverables/mutual-mesh/screen-signup.webp",
+        "lqip": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAACQBACdASoUACUAPv1sq1ArJiQitUgBYB+JZQDO7CyzYUEQayi0uO6pPBmiiLAA/ni6g9ngutyUmvl/w1TXTsQqZ5/A4RvFlpPVixCgDkJ3JUVDTtJKIAAA"
       }
     ],
     "links": [
