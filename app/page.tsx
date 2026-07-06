@@ -445,16 +445,17 @@ export default function HomePage() {
                       href={c.credentialUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      // CO-8: new-tab cue lives in the aria-label because it
-                      // overrides children (the rich credential name is kept);
-                      // the sr-only span mirrors the site's established pattern.
+                      // CO-8: the new-tab cue lives in the aria-label, which
+                      // overrides children for the accessible name (the rich
+                      // credential title is kept). No sr-only "(opens in new tab)"
+                      // span: with an explicit label it never reaches the name, yet
+                      // axe counts it as visible text → label-content-name-mismatch.
                       aria-label={`View credential: ${c.title} from ${c.issuer} (opens in new tab)`}
                       className="font-mono text-meta tracking-label uppercase text-accent-text inline-flex items-center gap-1 transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 shrink-0"
                     >
                       View
                       {/* CO-8: ↗ external-link glyph (was the internal →) */}
                       <span aria-hidden="true">{'↗'}</span>
-                      <span className="sr-only">(opens in new tab)</span>
                     </Link>
                   </div>
                 </Reveal>

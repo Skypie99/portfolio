@@ -268,7 +268,10 @@ export default function AboutPage() {
                   <Reveal index={i}>
                     <Link
                       href={`/work/${d.id}/`}
-                      aria-label={`Read about ${d.title} — ${d.role}, ${d.year}`}
+                      /* label-content-name-mismatch: this card link wraps role · year,
+                         title, summary and "Continue", so a concise "Read about <title>"
+                         name would omit most of the visible text. Name from content
+                         instead (the arrow is aria-hidden) — AT hears the full card. */
                       className="group flex flex-col gap-2 text-near-black hover:text-accent-text transition-[color,transform] duration-base ease-gh-glide hover:translate-x-0.5"
                     >
                       <p className="font-mono text-meta tracking-label uppercase text-text-meta">

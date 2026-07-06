@@ -81,7 +81,9 @@ describe('BlogIndexPage', () => {
   it('renders links to individual post pages', () => {
     mockGetBlogPosts.mockReturnValue(TWO_POSTS);
     render(<BlogIndexPage />);
-    const postLinks = screen.getAllByRole('link', { name: /read:/i });
+    // Card links now take their accessible name from content (no partial
+    // aria-label — see label-content-name-mismatch fix); each ends in "Read more".
+    const postLinks = screen.getAllByRole('link', { name: /read more/i });
     // Two posts → two links
     expect(postLinks).toHaveLength(2);
     // First link points to building-accessmap.

@@ -121,7 +121,12 @@ export default function BlogIndexPage() {
                   <Reveal index={idx} variant="depth">
                   <Link
                     href={`/blog/${post.id}/`}
-                    aria-label={`Read: ${post.title}`}
+                    /* label-content-name-mismatch: the card link wraps the date,
+                       reading time, title, summary, tags and "Read more", so an
+                       explicit "Read: <title>" name would omit most of the visible
+                       text. Name from content instead — the arrow/index/dot are
+                       aria-hidden, so AT hears date · reading time · title · summary
+                       · tags · "Read more" in reading order. */
                     className="group flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-16 text-near-black"
                   >
                     {/* Index number */}

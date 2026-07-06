@@ -39,9 +39,11 @@ export function SidebarFeatured({ featured }: { featured: Deliverable | null }) 
   return (
     <Link
       href={`/work/${featured.id}/`}
-      /* SC 2.5.3 Label in Name: the visible CTA ("Open it") must appear in the
-         accessible name; the title/role/context enrich it. */
-      aria-label={`Featured deliverable: ${featured.title} — ${featured.role}. Open it.`}
+      /* SC 2.5.3 Label in Name + axe label-content-name-mismatch: the accessible
+         name is built from the visible content (title · role · "Open it"), so the
+         visible CTA is always in the name and no explicit aria-label can drift
+         from the rendered text. The rail's own "Featured" eyebrow supplies the
+         slot context; this mirrors the no-featured fallback's content-as-name. */
       aria-current={onRoute ? 'page' : undefined}
       className="group flex flex-col gap-1.5 text-near-black transition-colors duration-fast ease-out"
     >
