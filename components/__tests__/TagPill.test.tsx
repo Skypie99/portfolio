@@ -42,6 +42,13 @@ describe('TagPill', () => {
     expect(hueOf('Mobile')).toBe(hueOf('Mobile'));
   });
 
+  it('reserves the terracotta accent for the explicit `accent` prop only (L2-05)', () => {
+    // The hot terracotta wash is out of the deterministic hash pool: an ordinary
+    // label never lands on it (no false emphasis), and `accent` opts into it.
+    render(<TagPill accent>Featured</TagPill>);
+    expect(screen.getByText('Featured')).toHaveClass('bg-accent/30');
+  });
+
   it('merges additional className via cn() without dropping base classes', () => {
     render(<TagPill className="custom-extra">Tailwind</TagPill>);
     const pill = screen.getByText('Tailwind');
