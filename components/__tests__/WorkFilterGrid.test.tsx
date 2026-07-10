@@ -65,4 +65,32 @@ describe('WorkFilterGrid', () => {
     expect(ulIndex).toBeGreaterThan(-1);
     expect(featuredIndex).toBeLessThan(ulIndex);
   });
+
+  it('odd trailing card adopts home\'s wide idiom — spans both tracks, never centered (L3-08)', () => {
+    // 1 featured + 3 rest = odd rest count → the last grid card is lone.
+    const oddSet: Deliverable[] = [
+      makeDeliverable(1, true),
+      makeDeliverable(2, false),
+      makeDeliverable(3, false),
+      makeDeliverable(4, false),
+    ];
+    const html = renderToString(<WorkFilterGrid deliverables={oddSet} />);
+    // The lone li spans both tracks (home's grammar) — exactly once, and the
+    // retired centered-orphan classes are gone.
+    expect(html.match(/lg:col-span-2/g)).toHaveLength(1);
+    expect(html).not.toContain('lg:justify-self-center');
+    // The lone card renders as the wide horizontal ProjectCard (work-card +
+    // lg:flex-row), bookending the grid like the featured card above it.
+    expect(html.match(/work-card/g)).toHaveLength(2); // featured + lone
+    expect(html.match(/case-study-card/g)).toHaveLength(2); // the paired row
+    expect(html).toContain('lg:flex-row');
+  });
+
+  it('even rest count keeps every grid card in the case-study grammar', () => {
+    const html = renderToString(<WorkFilterGrid deliverables={deliverables} />);
+    // 2 rest cards → no lone treatment: no col-span, one work-card (featured).
+    expect(html).not.toContain('lg:col-span-2');
+    expect(html.match(/work-card/g)).toHaveLength(1);
+    expect(html.match(/case-study-card/g)).toHaveLength(2);
+  });
 });
