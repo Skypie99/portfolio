@@ -96,7 +96,7 @@ export default function AccessibilityPage() {
         <div className="max-w-content mx-auto flex flex-col items-start gap-8">
           <Link
             href="/contact/"
-            className="group inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+            className="group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
           >
             Get in touch
             <span

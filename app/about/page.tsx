@@ -319,7 +319,7 @@ export default function AboutPage() {
 
           <Link
             href="/"
-            className="mt-12 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+            className="mt-12 px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
           >
             <span aria-hidden="true">{'←'}</span>
             Back to home

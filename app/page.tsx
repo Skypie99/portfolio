@@ -448,7 +448,9 @@ export default function HomePage() {
                       // span: with an explicit label it never reaches the name, yet
                       // axe counts it as visible text → label-content-name-mismatch.
                       aria-label={`View credential: ${c.title} from ${c.issuer} (opens in new tab)`}
-                      className="font-mono text-meta tracking-label uppercase text-accent-text inline-flex items-center gap-1 transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 shrink-0"
+                      /* L5-07: px/py-1 + negative margins lift the tap box
+                         (~23px) with zero layout shift. */
+                      className="px-1 py-1 -mx-1 -my-1 font-mono text-meta tracking-label uppercase text-accent-text inline-flex items-center gap-1 transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 shrink-0"
                     >
                       View
                       {/* CO-8: ↗ external-link glyph (was the internal →) */}
