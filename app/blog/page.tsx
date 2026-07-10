@@ -116,8 +116,12 @@ export default function BlogIndexPage() {
             />
           ) : (
             <ul className="flex flex-col divide-y divide-border-decorative">
+              {/* last:pb-0 (L3-07): the section's own pb-18 carries the close,
+                  so a one-entry list doesn't stack ~96px of dead li padding on
+                  top of the closer grammar. Dividers between entries keep
+                  their py-24 rhythm. */}
               {posts.map((post, idx) => (
-                <li key={post.id} className="py-24 first:pt-0">
+                <li key={post.id} className="py-24 first:pt-0 last:pb-0">
                   <Reveal index={idx} variant="depth">
                   <Link
                     href={`/blog/${post.id}/`}
@@ -210,15 +214,24 @@ export default function BlogIndexPage() {
       </section>
 
       {/* Back link — SP-3 unified closer grammar: hairline border-t + ~72px
-          (py-18). world-surface alternates off the -alt list above. */}
+          (py-18). world-surface alternates off the -alt list above.
+          L3-07: a quiet forward action joins the closer so the one-entry
+          page has a next step instead of only an exit. */}
       <section className="px-gutter py-18 world-surface border-t border-border-decorative">
-        <div className="max-w-content mx-auto">
+        <div className="max-w-content mx-auto flex flex-wrap items-center justify-between gap-x-8 gap-y-4">
           <Link
             href="/"
             className="group inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
           >
             <span aria-hidden="true" className="inline-block transition-transform duration-base ease-gh-glide group-hover:-translate-x-1">{'←'}</span>
             Back to home
+          </Link>
+          <Link
+            href="/work/"
+            className="group inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+          >
+            Browse the work
+            <span aria-hidden="true" className="inline-block transition-transform duration-base ease-gh-glide group-hover:translate-x-1">{'→'}</span>
           </Link>
         </div>
       </section>
