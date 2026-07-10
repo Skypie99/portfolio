@@ -77,8 +77,9 @@ export async function generateMetadata({
 /**
  * /work/[slug] — F-05. Editorial deliverable detail.
  *
- * Server Component. Layout: hero image (top on mobile, left on md+),
- * details on the right. Sections per spec:
+ * Server Component. Layout: title → hero image → metadata below lg (L5-01
+ * proof-first order; the metadata scan is a 2-column ledger in the md band,
+ * L5-03), image left + sticky / details right at lg. Sections per spec:
  *   1. Back-link "← All work"
  *   2. Hero image / cream-tinted fallback
  *   3. Title + summary + role/year + tech pills (left), links list (right)
@@ -290,10 +291,13 @@ export default async function WorkDetailPage({
               </div>
 
               {/* Metadata block — role/year, tech, links, tags. Follows the proof
-                  on mobile (order-3); rejoins the sticky column at lg. */}
-              <div className="flex flex-col gap-12 order-3 lg:order-none">
+                  on mobile (order-3); rejoins the details column at lg.
+                  L5-03: the md band sets the scan as a designed 2-column ledger
+                  (Role/Year spanning · Tech | Links · Tags spanning) instead of
+                  the inherited single phone stack. */}
+              <div className="flex flex-col gap-12 order-3 lg:order-none md:max-lg:grid md:max-lg:grid-cols-2 md:max-lg:gap-8">
                 {/* Role / Year */}
-                <dl className="grid grid-cols-2 gap-8 border-t border-border-decorative pt-8">
+                <dl className="grid grid-cols-2 gap-8 border-t border-border-decorative pt-8 md:max-lg:col-span-2">
                   <div>
                     <dt className="font-mono text-meta tracking-label uppercase text-text-meta mb-1">
                       Role
@@ -327,9 +331,11 @@ export default async function WorkDetailPage({
                 </div>
 
                 {/* Links list — the demo is promoted to the pill above (L3-04),
-                    so only the remaining links (GitHub, write-ups) show here. */}
+                    so only the remaining links (GitHub, write-ups) show here.
+                    In the md ledger it sits beside Tech, hairline dropped so the
+                    two column tops align. */}
                 {otherLinks.length > 0 && (
-                  <div className="border-t border-border-decorative pt-8">
+                  <div className="border-t border-border-decorative pt-8 md:max-lg:border-t-0 md:max-lg:pt-0">
                     <p className="font-mono text-meta tracking-label uppercase text-text-meta mb-3">
                       Links
                     </p>
@@ -362,7 +368,7 @@ export default async function WorkDetailPage({
 
                 {/* Tags */}
                 {d.tags.length > 0 && (
-                  <div className="border-t border-border-decorative pt-8">
+                  <div className="border-t border-border-decorative pt-8 md:max-lg:col-span-2">
                     <p className="font-mono text-meta tracking-label uppercase text-text-meta mb-3">
                       Tags
                     </p>

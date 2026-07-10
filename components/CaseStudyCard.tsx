@@ -46,20 +46,26 @@ export function CaseStudyCard({ title, category, description, href, media, links
       data-category={category}
       className={cn(
         'glass-card case-study-card group relative isolate flex min-h-[22rem] flex-col overflow-hidden rounded-card',
+        // L5-03: the md band (sidebar-narrowed ~424px column) reads as a
+        // horizontal media-thumb row — the ProjectCard wide grammar applied at
+        // tablet — instead of an inherited ~560px phone stack. lg untouched.
+        'md:max-lg:min-h-0 md:max-lg:flex-row',
         className,
       )}
     >
       <CardField slug={category} />
 
-      {/* Show-the-work 2026-06-04: cinematic product band (placeholder now). */}
+      {/* Show-the-work 2026-06-04: cinematic product band (placeholder now).
+          L5-03 md band: the band takes the left 2/5 and stretches to the row's
+          height (aspect released) — mirrors ProjectCard's wide treatment. */}
       <CardProductReveal
         slug={category}
         title={title}
         media={media ?? { alt: title }}
-        className="shrink-0 border-b border-[rgb(var(--rgb-ink)/0.08)]"
+        className="shrink-0 border-b border-[rgb(var(--rgb-ink)/0.08)] md:max-lg:w-2/5 md:max-lg:self-stretch md:max-lg:aspect-auto md:max-lg:border-b-0 md:max-lg:border-r"
       />
 
-      <div className="relative z-10 flex flex-1 flex-col p-7 md:p-12">
+      <div className="relative z-10 flex flex-1 flex-col p-7 md:max-lg:p-8 lg:p-12">
         <span
           aria-hidden="true"
           className="font-serif font-light text-card-numeral leading-none tabular-nums text-near-black/30 origin-top-left transition duration-slow ease-gh-glide group-hover:text-near-black/45 motion-safe:group-hover:scale-[1.04]"
