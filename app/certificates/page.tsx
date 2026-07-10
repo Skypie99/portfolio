@@ -18,7 +18,8 @@ export function generateMetadata(): Metadata {
 }
 
 /**
- * /certificates — F-06. Editorial 3-column grid on md+, 1-column on mobile.
+ * /certificates — F-06. Editorial 3-column grid at lg, ledger rows in the md
+ * band (L5-03: the sidebar-narrowed tablet column), 1-column on mobile.
  *
  * Server Component. Per Dana DATA_SHAPE.md we do NOT show `expiresDate`
  * publicly (privacy + signal-to-noise reasons). The page reads issuedDate,

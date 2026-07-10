@@ -19,7 +19,7 @@ type AnimatedCertGridProps = {
  */
 export function AnimatedCertGrid({ certificates }: AnimatedCertGridProps) {
   return (
-    <ul className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+    <ul className="grid grid-cols-1 md:max-lg:gap-8 lg:grid-cols-3 gap-12 lg:gap-16">
       {certificates.map((c, i) => (
         // L4-02: cap the stagger (site idiom, app/page.tsx:160) so the nine-card
         // grid stops at ~4 steps of delay instead of an uncapped 640ms ramp.
