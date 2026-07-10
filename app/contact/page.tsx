@@ -66,7 +66,10 @@ export default function ContactPage() {
       {profile.socials.length > 0 && (
         <section
           className={cn(
-            'px-gutter pt-16 lg:pt-20 pb-24 lg:pb-32',
+            // L3-07: trailing pad mirrors the section's own top (16/20) instead
+            // of the full 24/32 band — a two-link list doesn't earn a showcase
+            // close, and the closer grammar below still carries the air.
+            'px-gutter pt-16 lg:pt-20 pb-16 lg:pb-20',
             'world-surface border-t border-border-decorative',
           )}
         >
