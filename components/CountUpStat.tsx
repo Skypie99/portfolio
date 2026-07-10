@@ -30,7 +30,12 @@ function parseStat(value: string): { target: number; suffix: string } | null {
  */
 function splitStaticUnit(value: string): { figure: string; unit: string } | null {
   const m = value.match(/^(\d[\d.,]*)\s*(\S.*)$/);
-  return m ? { figure: m[1], unit: m[2] } : null;
+  if (!m) return null;
+  // A pure decimal ("0.003") has no unit — without this guard the greedy
+  // figure group backtracks its last digit into the unit slot and the final
+  // digit renders superscript.
+  if (/^[\d.,]+$/.test(m[2])) return null;
+  return { figure: m[1], unit: m[2] };
 }
 
 /**

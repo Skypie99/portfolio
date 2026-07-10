@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+import { A11yReceipts } from '@/components/A11yReceipts';
 import { SettleHeading } from '@/components/HeroSettle';
 import { renderMarkdownProse } from '@/components/MarkdownProse';
 import { cn } from '@/lib/cn';
-import { getAccessibilityStatement, getProfile } from '@/lib/content';
+import { getA11yReceipts, getAccessibilityStatementParts, getProfile } from '@/lib/content';
 import { bindSeparatorDash, bindSoloLetters } from '@/lib/markdown';
 
 export function generateMetadata(): Metadata {
@@ -46,8 +47,13 @@ export function generateMetadata(): Metadata {
  * Footer/ContactEmail).
  */
 export default function AccessibilityPage() {
-  const statement = getAccessibilityStatement();
-  const rendered = renderMarkdownProse(statement, 'blog');
+  // S6: the statement splits at "What I have not done" so the measured
+  // receipts strip sits before the limits section — the page keeps its honest
+  // last word (the split getter throws at build if the marker drifts).
+  const { built, limits } = getAccessibilityStatementParts();
+  const receipts = getA11yReceipts();
+  const renderedBuilt = renderMarkdownProse(built, 'blog');
+  const renderedLimits = renderMarkdownProse(limits, 'blog');
 
   return (
     <>
@@ -81,11 +87,12 @@ export default function AccessibilityPage() {
         )}
       >
         <div className="max-w-content mx-auto">
-          <article
-            aria-label="Accessibility statement"
-            className="max-w-measure-wide flex flex-col gap-8"
-          >
-            {rendered}
+          {/* The prose halves keep the long-form measure; the receipts strip
+              between them spans the full content column (home's grid width). */}
+          <article aria-label="Accessibility statement" className="flex flex-col gap-8">
+            <div className="max-w-measure-wide flex flex-col gap-8">{renderedBuilt}</div>
+            <A11yReceipts data={receipts} className="my-12" />
+            <div className="max-w-measure-wide flex flex-col gap-8">{renderedLimits}</div>
           </article>
         </div>
       </section>

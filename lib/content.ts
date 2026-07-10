@@ -2,10 +2,12 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 import {
+  A11yReceiptsSchema,
   BlogPostSchema,
   CertificateSchema,
   DeliverableSchema,
   ProfileSchema,
+  type A11yReceipts,
   type BlogPost,
   type Certificate,
   type Deliverable,
@@ -204,6 +206,44 @@ In the spirit of being honest about what ships:
 ## Found a barrier? Tell me.
 
 Accessibility barriers feel lonely when you face them alone. If something here got in your way — a control you could not reach, text you could not read, anything at all — I want to know. Tell me what broke and what you were trying to do. I read every message that comes through, and I will fix it.`;
+}
+
+/** The heading the receipts strip must sit ABOVE (S6: the limits section keeps
+ *  the page's honest last word). Split marker, not display copy. */
+const LIMITS_HEADING = '## What I have not done';
+
+/**
+ * getAccessibilityStatementParts — the statement split at the limits heading so
+ * the /accessibility/ page can seat the measured-receipts strip (S6) before
+ * "What I have not done". Throws loudly if the marker drifts: silently dropping
+ * the limits section would be the most expensive honesty failure this site has.
+ */
+export function getAccessibilityStatementParts(): { built: string; limits: string } {
+  const statement = getAccessibilityStatement();
+  const at = statement.indexOf(`\n${LIMITS_HEADING}`);
+  if (at === -1) {
+    throw new Error(
+      `getAccessibilityStatementParts: marker "${LIMITS_HEADING}" not found — the statement structure changed; re-seat the receipts strip.`,
+    );
+  }
+  return { built: statement.slice(0, at), limits: statement.slice(at + 1) };
+}
+
+/**
+ * getA11yReceipts — the measured numbers behind the /accessibility/ receipts
+ * strip (S6). Validated like every other content file; the strip publishes
+ * ONLY what a real run measured — see public/receipts/ for the evidence
+ * snapshot the page links to.
+ */
+export function getA11yReceipts(): A11yReceipts {
+  const raw = readJson<unknown>('a11y-receipts.json');
+  const parsed = A11yReceiptsSchema.safeParse(raw);
+  if (!parsed.success) {
+    throw new Error(
+      `content/a11y-receipts.json failed validation:\n${JSON.stringify(parsed.error.format(), null, 2)}`,
+    );
+  }
+  return parsed.data;
 }
 
 /**

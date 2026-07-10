@@ -224,7 +224,36 @@ export const BlogPostSchema = z.object({
   relatedDeliverable: SlugSchema.optional(),
 });
 
+/**
+ * A11yReceiptsSchema — content/a11y-receipts.json (S6 / L6-02 enhancement).
+ *
+ * The /accessibility/ receipts strip publishes MEASURED numbers from a real
+ * verification run — never aspirational claims. `measuredDate` is the ISO date
+ * of the run; `evidencePath` points at the static, re-runnable snapshot under
+ * public/receipts/. Exactly six receipts close the 3×2 grid (no bare cell).
+ * Values are short display strings ("0", "AA", "100%"), rendered through
+ * CountUpStat, whose sr-only span carries the stable accessible name.
+ */
+export const A11yReceiptsSchema = z.object({
+  measuredDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'must be ISO date YYYY-MM-DD'),
+  evidencePath: z
+    .string()
+    .startsWith('/receipts/', 'evidence must ship under public/receipts/')
+    .endsWith('.json'),
+  method: z.array(z.string().min(2).max(90)).min(1).max(8),
+  receipts: z
+    .array(
+      z.object({
+        value: z.string().min(1).max(12),
+        label: z.string().min(2).max(40),
+        sub: z.string().min(2).max(90),
+      }),
+    )
+    .length(6),
+});
+
 export type Deliverable = z.infer<typeof DeliverableSchema>;
 export type Certificate = z.infer<typeof CertificateSchema>;
 export type Profile = z.infer<typeof ProfileSchema>;
 export type BlogPost = z.infer<typeof BlogPostSchema>;
+export type A11yReceipts = z.infer<typeof A11yReceiptsSchema>;

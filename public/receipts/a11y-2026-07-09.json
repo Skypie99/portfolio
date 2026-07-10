@@ -1,0 +1,111 @@
+{
+  "measuredDate": "2026-07-09",
+  "claim": "Real numbers from a real run — a snapshot you can re-run. Not a live CI gate.",
+  "summary": {
+    "axe violations": {
+      "value": 0,
+      "detail": "0 violations across 32 scans (16 routes × 2 themes), axe-core 4.11.4, defaults + label-content-name-mismatch + color-contrast, reduced-motion + scroll-settled"
+    },
+    "reduced-motion layers": {
+      "value": 6,
+      "detail": "usePrefersReducedMotion hook · global 0.01ms CSS rule · .reveal rest-visible floors · @media (scripting:none) no-JS floors · framer shouldReduceMotion · motion-safe media wrappers — the rest state is the visible state under every gate"
+    },
+    "measured, both themes": {
+      "value": "AA",
+      "detail": "axe color-contrast enabled across all 32 scans (light + dark, theme-applied + settled) — 0 contrast violations; the P0 candlelight repair holds"
+    },
+    "tests passing": {
+      "value": 325,
+      "detail": "the portfolio’s own vitest suite (component + integration + static floors) — not the AccessMap project’s 1,680"
+    },
+    "focus stops visible": {
+      "value": "100%",
+      "detail": "every tab stop focus-visible with the 2px terracotta ring (keyboard-traced transcripts, P3 axe report; re-affirmed by 0 axe focus violations this run)"
+    },
+    "worst-case CLS": {
+      "value": "0.003",
+      "detail": "worst route × width: blog-building-accessmap@768 = 0.00303 — production build, buffered layout-shift observer, scroll-through; floor 0.004"
+    }
+  },
+  "method": {
+    "engine": "Chromium 1228 (playwright-core 1.61.1) headless, DSF2 — NOT Safari/WebKit",
+    "honesty": "Chromium — NOT Safari/WebKit. Static production build served locally. Re-run: npm run build, serve out/ on :3005, then node design-reviews/uplift/assets/p3/run-axe.mjs and node design-reviews/uplift/assets/p5/run-cls.mjs.",
+    "rules": "defaults + label-content-name-mismatch enabled + color-contrast enabled",
+    "when": "2026-07-09"
+  },
+  "axePerScan": {
+    "home__light": 0,
+    "home__dark": 0,
+    "about__light": 0,
+    "about__dark": 0,
+    "accessibility__light": 0,
+    "accessibility__dark": 0,
+    "blog__light": 0,
+    "blog__dark": 0,
+    "blog-building-accessmap__light": 0,
+    "blog-building-accessmap__dark": 0,
+    "certificates__light": 0,
+    "certificates__dark": 0,
+    "colophon__light": 0,
+    "colophon__dark": 0,
+    "contact__light": 0,
+    "contact__dark": 0,
+    "work__light": 0,
+    "work__dark": 0,
+    "work-accessmap__light": 0,
+    "work-accessmap__dark": 0,
+    "work-claude-corp__light": 0,
+    "work-claude-corp__dark": 0,
+    "work-dashboard__light": 0,
+    "work-dashboard__dark": 0,
+    "work-prompt-library__light": 0,
+    "work-prompt-library__dark": 0,
+    "work-ghost-code__light": 0,
+    "work-ghost-code__dark": 0,
+    "work-mutual-mesh__light": 0,
+    "work-mutual-mesh__dark": 0,
+    "404__light": 0,
+    "404__dark": 0
+  },
+  "clsPerRoute": {
+    "home@375": 0,
+    "home@768": 0.00116,
+    "home@1440": 0.00176,
+    "work@375": 0,
+    "work@768": 0.00003,
+    "work@1440": 0.00001,
+    "blog@375": 0,
+    "blog@768": 0.00003,
+    "blog@1440": 0.00001,
+    "blog-building-accessmap@375": 0,
+    "blog-building-accessmap@768": 0.00303,
+    "blog-building-accessmap@1440": 0.00101,
+    "contact@375": 0.00171,
+    "contact@768": 0.00003,
+    "contact@1440": 0.00001,
+    "accessibility@375": 0,
+    "accessibility@768": 0.00003,
+    "accessibility@1440": 0.00001,
+    "certificates@375": 0,
+    "certificates@768": 0.00003,
+    "certificates@1440": 0.00001,
+    "about@375": 0,
+    "about@768": 0.00003,
+    "about@1440": 0.00001,
+    "colophon@375": 0,
+    "colophon@768": 0.00003,
+    "colophon@1440": 0.00001,
+    "work-prompt-library@375": 0,
+    "work-prompt-library@768": 0.00003,
+    "work-prompt-library@1440": 0.00001,
+    "work-dashboard@375": 0,
+    "work-dashboard@768": 0.00003,
+    "work-dashboard@1440": 0.00001,
+    "work-accessmap@375": 0,
+    "work-accessmap@768": 0.00003,
+    "work-accessmap@1440": 0.00001,
+    "404@375": 0,
+    "404@768": 0.00003,
+    "404@1440": 0.00001
+  }
+}
