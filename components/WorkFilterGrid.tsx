@@ -130,40 +130,49 @@ export function WorkFilterGrid({ deliverables }: WorkFilterGridProps) {
       ) : filteredRest.length > 0 ? (
         <ul className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
           <AnimatePresence mode="popLayout" initial={false}>
-            {filteredRest.map((d, i) => (
-              <motion.li
-                key={d.id}
-                layout={!shouldReduceMotion}
-                initial={false}
-                // An odd trailing card spans both tracks but renders at one
-                // track's width, centered — pixel-identical to its siblings,
-                // no bare grid cell. Covers every odd filter count (5, 3, 1);
-                // JSX-computed because popLayout keeps exiting <li>s in the
-                // DOM mid-filter, which would corrupt a CSS :nth-child rule.
-                className={
-                  i === filteredRest.length - 1 && filteredRest.length % 2 === 1
-                    ? 'lg:col-span-2 lg:w-[calc(50%-1.5rem)] lg:justify-self-center'
-                    : undefined
-                }
-                exit={
-                  shouldReduceMotion
-                    ? undefined
-                    : { opacity: 0, scale: 0.96, y: -8, transition: { duration: 0.2 } }
-                }
-              >
-                <Reveal variant="depth" index={i}>
-                  <CaseStudyCard
-                    title={d.title}
-                    category={toCategory(d.id)}
-                    description={d.summary}
-                    href={`/work/${d.id}/`}
-                    media={cardMedia(d)}
-                    links={d.links}
-                    index={deliverables.findIndex((x) => x.id === d.id)}
-                  />
-                </Reveal>
-              </motion.li>
-            ))}
+            {filteredRest.map((d, i) => {
+              // An odd trailing card adopts home's idiom (L3-08): it spans both
+              // tracks as a wide horizontal ProjectCard — the same full-width
+              // grammar as the featured card above — so the grid bookends
+              // instead of stranding a centered orphan. Covers every odd filter
+              // count (5, 3, 1); JSX-computed because popLayout keeps exiting
+              // <li>s in the DOM mid-filter, which would corrupt a CSS
+              // :nth-child rule.
+              const lone = i === filteredRest.length - 1 && filteredRest.length % 2 === 1;
+              return (
+                <motion.li
+                  key={d.id}
+                  layout={!shouldReduceMotion}
+                  initial={false}
+                  className={lone ? 'lg:col-span-2' : undefined}
+                  exit={
+                    shouldReduceMotion
+                      ? undefined
+                      : { opacity: 0, scale: 0.96, y: -8, transition: { duration: 0.2 } }
+                  }
+                >
+                  <Reveal variant="depth" index={i}>
+                    {lone ? (
+                      <ProjectCard
+                        deliverable={d}
+                        wide
+                        index={deliverables.findIndex((x) => x.id === d.id)}
+                      />
+                    ) : (
+                      <CaseStudyCard
+                        title={d.title}
+                        category={toCategory(d.id)}
+                        description={d.summary}
+                        href={`/work/${d.id}/`}
+                        media={cardMedia(d)}
+                        links={d.links}
+                        index={deliverables.findIndex((x) => x.id === d.id)}
+                      />
+                    )}
+                  </Reveal>
+                </motion.li>
+              );
+            })}
           </AnimatePresence>
         </ul>
       ) : null}
