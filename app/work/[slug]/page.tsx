@@ -184,13 +184,32 @@ export default async function WorkDetailPage({
                 title block and the metadata block (order-2) so proof crests the
                 first thumb-flick; at lg it returns to the left column. The
                 reserved-aspect class + mount settle stay owned by HeroImageSettle
-                → zero CLS; 1440 is unchanged. */}
+                → zero CLS.
+                L2-03/S15: at lg the STICKY lives here (swapped off the details
+                column, classes only — never re-parented): the shorter media well
+                now rides along the metadata scan instead of stranding a dead
+                quadrant under the frame. Phone-aspect wells (4/5) are taller
+                than their columns, so sticky never engages there. */}
             <HeroImageSettle
               className={cn(
-                'group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]',
+                'group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none lg:sticky lg:top-24 shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]',
                 wideHero ? 'aspect-[4/3]' : 'aspect-[4/5]',
               )}
             >
+              {/* S15: the plinth glow pool — the project's signature hue pooling
+                  under the framed product so the travelling well reads lit, not
+                  stranded. Decorative, absolute (zero CLS), rides with the well. */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0"
+                style={
+                  {
+                    '--pr-sig': signatureFor(d.id),
+                    background:
+                      'radial-gradient(58% 52% at 50% 56%, rgb(var(--pr-sig) / 0.22), rgb(var(--pr-sig) / 0.07) 58%, transparent 78%)',
+                  } as CSSProperties
+                }
+              />
               {/* Show-the-work: a real screenshot drops into the SAME frame via
                   d.heroShot with zero layout shift. The aspect well (4:5 portrait;
                   4:3 for window/plate real shots) + the mount settle stay owned by
@@ -203,12 +222,13 @@ export default async function WorkDetailPage({
               />
             </HeroImageSettle>
 
-            {/* Details — ONE sticky right column at lg (today's exact structure,
-                so 1440 stays pixel-identical). Below lg the wrapper is
-                display:contents, so the title block (order-1) and metadata block
-                (order-3) become siblings of the well (order-2) and reorder around
-                it: title leads, proof crests the fold, metadata follows (L5-01). */}
-            <div className="contents lg:flex lg:flex-col lg:gap-12 lg:sticky lg:top-24">
+            {/* Details — the right column at lg (sticky moved onto the media
+                well, L2-03/S15: the TALLER column scrolls free; a sticky here
+                could never engage). Below lg the wrapper is display:contents,
+                so the title block (order-1) and metadata block (order-3) become
+                siblings of the well (order-2) and reorder around it: title
+                leads, proof crests the fold, metadata follows (L5-01). */}
+            <div className="contents lg:flex lg:flex-col lg:gap-12">
               {/* Title block — leads on every viewport. Mobile air steps down
                   (L5-04): gap-6 → md:gap-8 → lg:gap-12 (desktop unchanged). */}
               <div className="flex flex-col gap-6 md:gap-8 lg:gap-12 order-1 lg:order-none">
