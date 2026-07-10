@@ -72,4 +72,11 @@ describe('CountUpStat — suffix subordination', () => {
     expect(container.querySelector('p')!.textContent).toBe('E2E');
     expect(container.querySelector('p span')).toBeNull();
   });
+
+  it('pure decimal "0.003": rendered whole — the last digit never subordinates (S6 receipts)', () => {
+    const { container } = render(<CountUpStat value="0.003" emberClass="ember-teal" label="worst-case CLS" />);
+    expect(container.querySelector('p')!.textContent).toBe('0.003');
+    expect(container.querySelector('p span')).toBeNull();
+    expect(container.querySelector('.sr-only')?.textContent).toBe('0.003 worst-case CLS');
+  });
 });

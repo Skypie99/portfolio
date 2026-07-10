@@ -1,0 +1,42 @@
+{
+  "measuredDate": "2026-07-09",
+  "evidencePath": "/receipts/a11y-2026-07-09.json",
+  "method": [
+    "axe-core 4.11.4 — 16 routes × 2 themes",
+    "label-content-name-mismatch + color-contrast on",
+    "reduced-motion, scroll-settled",
+    "Chromium — not WebKit"
+  ],
+  "receipts": [
+    {
+      "value": "0",
+      "label": "axe violations",
+      "sub": "16 routes × 2 themes, strict rules"
+    },
+    {
+      "value": "6",
+      "label": "reduced-motion layers",
+      "sub": "rest-visible under every gate"
+    },
+    {
+      "value": "AA",
+      "label": "measured, both themes",
+      "sub": "pixel-contrast at the ledger coords"
+    },
+    {
+      "value": "325",
+      "label": "tests passing",
+      "sub": "the portfolio's own suite"
+    },
+    {
+      "value": "100%",
+      "label": "focus stops visible",
+      "sub": "every tab stop, keyboard-traced"
+    },
+    {
+      "value": "0.003",
+      "label": "worst-case CLS",
+      "sub": "worst route, production build — floor 0.004"
+    }
+  ]
+}
