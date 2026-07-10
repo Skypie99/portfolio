@@ -28,6 +28,7 @@ export function generateMetadata(): Metadata {
  */
 export default function ContactPage() {
   const profile = getProfile();
+  const linkedin = profile.socials.find((s) => s.platform === 'linkedin');
 
   return (
     <>
@@ -56,6 +57,25 @@ export default function ContactPage() {
           </p>
 
           <ContactEmail />
+
+          {/* L3-03: the quiet career-document pointer — employer-safe wording,
+              deliberately NOT a résumé PDF (Sky's quiet-search stance). */}
+          {linkedin && (
+            <p className="mt-8 font-mono text-meta tracking-label uppercase">
+              <a
+                href={linkedin.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-draw text-near-black hover:text-accent-text transition-colors duration-fast ease-out inline-flex items-center gap-1.5"
+              >
+                <span>Full history on LinkedIn</span>
+                <span aria-hidden="true" className="text-text-meta">
+                  {'↗'}
+                </span>
+                <span className="sr-only">(opens in new tab)</span>
+              </a>
+            </p>
+          )}
         </div>
       </section>
 

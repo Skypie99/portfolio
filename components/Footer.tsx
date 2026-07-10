@@ -29,6 +29,7 @@ const PLATFORM_LABELS: Record<string, string> = {
  */
 export function Footer() {
   const profile = getProfile();
+  const linkedin = profile.socials.find((s) => s.platform === 'linkedin');
 
   return (
     <footer
@@ -165,6 +166,23 @@ export function Footer() {
               public, honest about what ships — five of six live on the open
               internet.
             </p>
+            {/* L3-03: the quiet career-document pointer — the fullest history
+                lives on LinkedIn. Deliberately NOT a résumé PDF (Sky's
+                employer-safe, quiet-search stance). */}
+            {linkedin && (
+              <a
+                href={linkedin.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-draw font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out inline-flex items-center gap-1 self-start"
+              >
+                <span>Full history on LinkedIn</span>
+                <span aria-hidden="true" className="text-text-meta">
+                  {'↗'}
+                </span>
+                <span className="sr-only">(opens in new tab)</span>
+              </a>
+            )}
           </div>
 
           {/* Column 3 — Social + Contact */}
