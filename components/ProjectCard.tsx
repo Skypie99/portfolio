@@ -120,6 +120,10 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
               ))}
             </ul>
 
+            {/* L5-07: each action link carries px/py-1 with compensating
+                negative margins — the tap box grows to ~23px (exactly the
+                gap-y-2 wrap pitch, so wrapped rows abut without overlap)
+                while layout and wrap rhythm stay byte-identical. */}
             <div className="mt-1 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-[rgb(var(--rgb-ink)/0.1)] pt-4">
               <Link
                 href={`/work/${d.id}/`}
@@ -127,7 +131,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
                    visible label ("View project") so speech-input users can act
                    on what they see. Extra context follows the visible words. */
                 aria-label={`View project — ${d.title} case study`}
-                className="inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-base ease-gh-glide hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                className="px-1 py-1 -mx-1 -my-1 inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-base ease-gh-glide hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
               >
                 View project <span aria-hidden="true">→</span>
               </Link>
@@ -144,7 +148,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Open ${demoLink.label.toLowerCase()} for ${d.title} (opens in new tab)`}
-                      className="inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                      className="px-1 py-1 -mx-1 -my-1 inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
                     >
                       {/* label-derived: "Live" for live products, "Demo" for
                           not-yet-live ones (e.g. Mutual Mesh) */}
@@ -157,7 +161,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`View ${d.title} source on GitHub (opens in new tab)`}
-                      className="inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                      className="px-1 py-1 -mx-1 -my-1 inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
                     >
                       GitHub <span aria-hidden="true">↗</span>
                     </a>

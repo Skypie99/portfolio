@@ -85,12 +85,14 @@ export function CaseStudyCard({ title, category, description, href, media, links
           {/* Footer action row (L3-04) — the featured card's proven grammar:
               case-study link + LIVE ↗ / GITHUB ↗ grouped so they wrap as one
               unit on narrow cards. */}
+          {/* L5-07: action links carry px/py-1 + negative margins — tap box
+              grows to ~23px (the gap-y-2 wrap pitch) with zero layout shift. */}
           <div className="mt-1 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-[rgb(var(--rgb-ink)/0.1)] pt-4">
             <Link
               href={href}
               /* SC 2.5.3 Label in Name: the visible words lead the accessible name. */
               aria-label={`Read more — ${title} case study`}
-              className="inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-base ease-gh-glide hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+              className="px-1 py-1 -mx-1 -my-1 inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-base ease-gh-glide hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
             >
               Read more <span aria-hidden="true">→</span>
             </Link>
@@ -102,7 +104,7 @@ export function CaseStudyCard({ title, category, description, href, media, links
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Open ${demoLink.label.toLowerCase()} for ${title} (opens in new tab)`}
-                    className="inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                    className="px-1 py-1 -mx-1 -my-1 inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
                   >
                     {/* label-derived: "Live" for live products, "Demo" for
                         not-yet-live ones (e.g. Mutual Mesh) */}
@@ -115,7 +117,7 @@ export function CaseStudyCard({ title, category, description, href, media, links
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`View ${title} source on GitHub (opens in new tab)`}
-                    className="inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                    className="px-1 py-1 -mx-1 -my-1 inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
                   >
                     GitHub <span aria-hidden="true">↗</span>
                   </a>
