@@ -163,8 +163,15 @@ export function renderMarkdownProse(markdown: string, variant: ProseVariant): Re
     // otherwise it gracefully stands down. Calibrated on the two real openers:
     // colophon 51 chars → no cap; blog ~280 chars → cap. First paragraph only
     // (never migrates to a later one).
-    const plainLen = block.replace(/[*_`~[\]()>#]/g, '').trim().length;
-    const dropCap = firstPara && plainLen >= 180;
+    // FT-8/C-30: the CSS ::first-letter initial can only style one leading glyph,
+    // so a contraction opener ("I've…", "I'd…") fractures — the cap takes the "I"
+    // and orphans the "'ve". Stand the cap down when the opener's first word
+    // carries an apostrophe. Tested on the RAW source (U+0027), before parseInline
+    // lifts it to a curly ’; the strip regex above leaves apostrophes intact.
+    const plain = block.replace(/[*_`~[\]()>#]/g, '').trim();
+    const plainLen = plain.length;
+    const opensWithContraction = /['’]/.test(plain.split(/\s+/)[0] ?? '');
+    const dropCap = firstPara && plainLen >= 180 && !opensWithContraction;
     firstPara = false;
     return (
       <Reveal
