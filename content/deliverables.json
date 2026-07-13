@@ -378,7 +378,11 @@
     "shots": [
       {
         "alt": "Mutual Mesh marketplace feed of neighbourhood resource listings",
-        "caption": "Browse a neighbourhood's offers — no real name, no address, just a chosen handle and an FSA."
+        "caption": "Browse a neighbourhood's offers — no real name, no address, just a chosen handle and an FSA.",
+        "src": "/images/deliverables/mutual-mesh/card-feed.jpg",
+        "avif": "/images/deliverables/mutual-mesh/card-feed.avif",
+        "webp": "/images/deliverables/mutual-mesh/card-feed.webp",
+        "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACQAwCdASoUAA0APxGCtFIsKaUisAgBgCIJZQAAXBhzl7fj7BpAAN4x94F5lVdAw9yMXvXXIS5lXmA7dkoGy6nxZ0LmJIAA"
       },
       {
         "alt": "A Mutual Mesh resource detail with its description and a neighbourhood-level pickup note",
