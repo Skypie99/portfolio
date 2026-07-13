@@ -14,6 +14,9 @@ type ContactEmailProps = {
   label?: string;
   /** Optional mailto subject line. Defaults to a generic greeting. */
   subject?: string;
+  /** Optional CSS color for the signature dot (FT-14) — a per-project `--pr-sig`
+   *  hue forwarded to the Button's dot. Recolors only the dot background. */
+  dotColor?: string;
 };
 
 /**
@@ -27,7 +30,11 @@ type ContactEmailProps = {
  * Bot scrapers never execute JavaScript, so the address never appears
  * in the static HTML or in Next.js's __NEXT_DATA__ serialisation.
  */
-export function ContactEmail({ label, subject = 'Hello from your portfolio' }: ContactEmailProps = {}) {
+export function ContactEmail({
+  label,
+  subject = 'Hello from your portfolio',
+  dotColor,
+}: ContactEmailProps = {}) {
   const [email, setEmail] = useState<string | null>(null);
   const magRef = useMagnetic<HTMLElement>(0.2, 6);
 
@@ -47,5 +54,9 @@ export function ContactEmail({ label, subject = 'Hello from your portfolio' }: C
 
   const children = label ?? (email ? `Email ${email}` : 'Send me an email');
 
-  return <Button ref={magRef} href={href}>{children}</Button>;
+  return (
+    <Button ref={magRef} href={href} dotColor={dotColor}>
+      {children}
+    </Button>
+  );
 }

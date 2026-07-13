@@ -646,7 +646,7 @@ export default async function WorkDetailPage({
           </h2>
           {/* Bot-safe mailto (assembled at runtime) — carries a per-project
               subject so replies stay threaded; matches /contact + home + about. */}
-          <ContactEmail subject={`About ${d.title}`} />
+          <ContactEmail subject={`About ${d.title}`} dotColor={`rgb(${signatureFor(d.id)})`} />
         </Reveal>
       </section>
     </>
