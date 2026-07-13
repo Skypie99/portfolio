@@ -258,7 +258,7 @@
       },
       {
         "alt": "Prompt Library's settings panel with the local-first Export library and Import library controls, all stored in the browser.",
-        "caption": "Bulk import and export. Zero backend, dark mode included.",
+        "caption": "Bulk import and export. Zero backend.",
         "src": "/images/deliverables/prompt-library/screen-import.png",
         "avif": "/images/deliverables/prompt-library/screen-import.avif",
         "webp": "/images/deliverables/prompt-library/screen-import.webp",
