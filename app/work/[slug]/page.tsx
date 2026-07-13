@@ -62,9 +62,26 @@ export async function generateMetadata({
     description: d.summary,
     openGraph: {
       type: 'article',
+      // W0-04: Next.js shallow-merges openGraph per top-level key, so this leaf
+      // route's object REPLACES the root layout's openGraph wholesale — url,
+      // siteName and locale must be restated here or they silently drop from
+      // every /work/* share. url is the route's OWN (resolved against
+      // metadataBase), never the root's homepage url.
+      url: `/work/${slug}/`,
+      siteName: 'Sky Halisky — AI Portfolio',
+      locale: 'en_CA',
       title: `${d.title} — Sky Halisky`,
       description: d.summary,
-      images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: d.title }],
+      // FT-1/W0-01/02: the share unfurl now deposits the WORK — the deliverable's
+      // own card image (accessmap → the "No ramp · SEVERITY 4 · VERIFIED" flag)
+      // instead of the generic wordmark plate, resolved absolute via metadataBase.
+      // alt stays d.title, which the real artifact finally makes true. Falls back
+      // to the global plate for any deliverable without a card image.
+      images: [
+        d.cardImage?.src
+          ? { url: d.cardImage.src, width: d.cardImage.width, height: d.cardImage.height, alt: d.title }
+          : { url: '/opengraph-image', width: 1200, height: 630, alt: d.title },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
