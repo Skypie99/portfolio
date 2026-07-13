@@ -90,7 +90,23 @@ export default function AccessibilityPage() {
           {/* The prose halves keep the long-form measure; the receipts strip
               between them spans the full content column (home's grid width). */}
           <article aria-label="Accessibility statement" className="flex flex-col gap-8">
-            <div className="max-w-measure-wide flex flex-col gap-8">{renderedBuilt}</div>
+            <div className="max-w-measure-wide flex flex-col gap-8">
+              {renderedBuilt}
+              {/* WM-19 — the reduced-motion-only line. Present in the HTML and the
+                  a11y tree, display-gated to prefers-reduced-motion via Tailwind's
+                  built-in motion-reduce: variant (no JS, no flip, no flash; resolves
+                  before first paint). For motion visitors it is display:none — absent
+                  from the accessibility tree. NEVER author this in the content.ts
+                  markdown string: the single site-wide inline parser has no RM-gating
+                  syntax, so a markdown line would render for EVERYONE and invert it. */}
+              {/* NEEDS-SKY COPY — Sky writes the real sentence: flat, dry, present
+                  tense, a TRUE statement that the page is holding motion still right
+                  now. Must NOT merely restate the paragraph's own "holds still right
+                  now." Replace the placeholder text below, then delete this note. */}
+              <p className="hidden motion-reduce:block font-sans font-light text-prose text-charcoal leading-[1.75] text-pretty">
+                [NEEDS-SKY placeholder — the reduced-motion-only line goes here.]
+              </p>
+            </div>
             <A11yReceipts data={receipts} className="my-12" />
             <div className="max-w-measure-wide flex flex-col gap-8">{renderedLimits}</div>
           </article>
