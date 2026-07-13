@@ -276,6 +276,22 @@ export default async function WorkDetailPage({
                     />
                     {d.role}
                   </p>
+
+                  {/* FT-2/W3-02: below md the page is otherwise nameless until
+                      the footer wordmark far down the scroll — sign the arrival
+                      with a byline chip so the 375 stranger meets WHO in first
+                      paint. Scoped md:hidden: the sidebar rail signs from md=768
+                      up, so this shows ONLY on the <768 stranger view; the wrapper
+                      is lg:contents, so the chip carries its OWN md:hidden. Static
+                      (above HeroTitleSettle) — HeroSettle stays 2 animated
+                      elements. The terracotta sun-dot is the Footer author mark. */}
+                  <p className="md:hidden font-mono text-meta tracking-label uppercase text-text-meta inline-flex items-center gap-2">
+                    <span
+                      aria-hidden="true"
+                      className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta"
+                    />
+                    Sky Halisky
+                  </p>
                 </div>
 
                 {/* HeroTitleSettle: carves in after the image (delay 150ms),
