@@ -240,6 +240,33 @@ export default async function WorkDetailPage({
               />
             </HeroImageSettle>
 
+            {/* FT-3/FT-10 — the museum plate. A static mono-meta plate as a plain
+                grid sibling directly beneath the hero well (NOT inside the aspect
+                box). On phones it follows the well (order-2), above the metadata;
+                at lg it is placed at col-1/row-2 — snug beneath accessmap's tall
+                4/5 phone well (taller than its column, so it does not ride the
+                sticky). Data-gated on d.heroPlate → accessmap only; every other
+                deliverable renders nothing here and its grid is unchanged. Mono
+                register, NEVER quotation-styled (the one pull-quote per essay
+                lives in Reflection). It seats the artifact's own severity ledger
+                line at reading size and names the place she mapped (the SR-only
+                provenance the raster bakes in illegibly). SSR'd static → CLS 0. */}
+            {d.heroPlate && (
+              <div className="order-2 lg:order-none lg:col-start-1 lg:row-start-2 flex flex-col gap-3 max-w-measure-wide">
+                <div className="flex flex-col gap-1.5">
+                  <p className="font-mono text-meta tracking-label uppercase text-accent-text">
+                    {d.heroPlate.severity}
+                  </p>
+                  <p className="font-mono text-body-sm text-near-black leading-snug">
+                    {d.heroPlate.caption}
+                  </p>
+                </div>
+                <p className="font-mono text-meta tracking-label uppercase text-text-meta">
+                  {d.heroPlate.provenance}
+                </p>
+              </div>
+            )}
+
             {/* Details — the right column at lg (sticky moved onto the media
                 well, L2-03/S15: the TALLER column scrolls free; a sticky here
                 could never engage). Below lg the wrapper is display:contents,

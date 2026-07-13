@@ -118,6 +118,17 @@ export const DeliverableSchema = z.object({
    *  no re-zoom); otherwise they fall back to the hero image, focal-cropped. Let
    *  a tall phone hero stay whole while the card shows a wide, framed crop. */
   cardImage: ShotImageSchema.optional(),
+  /** Optional "museum plate" beneath the hero well (FT-3/FT-10) — the artifact's
+   *  own ledger line at reading size, plus the place it was mapped. Data-gated:
+   *  renders only where present (accessmap today). Mono-meta furniture, never
+   *  quotation-styled (one pull-quote per essay holds). */
+  heroPlate: z
+    .object({
+      severity: z.string().min(2).max(60),
+      caption: z.string().min(2).max(160),
+      provenance: z.string().min(2).max(80),
+    })
+    .optional(),
   /** Optional 2–3 in-body product shots. Each renders a beautiful placeholder
    *  until its `src` is filled in (drop-in, no layout shift). */
   shots: z.array(ShotImageSchema).max(3).optional(),
