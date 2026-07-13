@@ -659,6 +659,44 @@ blockquote.pull-quote {
   color: rgb(var(--rgb-accent));
 }
 
+/* FT-9 — :target arrival marker. When a deep-link (or an in-page TOC click)
+   lands on a section heading, a 2px terracotta bar lights in the gutter beside
+   it — borrowing the sidebar rail's own active grammar (SidebarArticleNav's
+   2px terracotta bar). It PERSISTS while the hash does (information — "you are
+   here" — not a flash-and-vanish celebration) and never moves focus. A DISTINCT
+   channel from :focus-visible (that is the outline ring; an h2 is not
+   focusable). Reduced motion → instant full presence (no animation). The
+   relative context is scoped to the targeted heading only, so non-targeted
+   headings are untouched. Blast radius: any deep-linkable <article> h2[id]
+   (work + blog + colophon + accessibility). */
+article h2[id]:target {
+  position: relative;
+}
+article h2[id]:target::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--gutter));
+  top: 0.1em;
+  width: 2px;
+  height: 0.8em;
+  border-radius: 1px;
+  background: rgb(var(--rgb-accent));
+  opacity: 1;
+}
+@media (prefers-reduced-motion: no-preference) {
+  article h2[id]:target::before {
+    animation: target-arrival 300ms ease-in;
+  }
+}
+@keyframes target-arrival {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* Discretionary ligatures on the big serif display headings. */
 .serif-display {
   font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1, 'dlig' 1;
