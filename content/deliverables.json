@@ -370,6 +370,7 @@
     },
     "cardImage": {
       "src": "/images/deliverables/mutual-mesh/card-feed.jpg",
+      "focal": "10% 50%",
       "alt": "Mutual Mesh marketplace feed — a 'Demo — sample data' banner over neighbourhood resource listings, each tagged Available with a neighbourhood-level FSA code",
       "avif": "/images/deliverables/mutual-mesh/card-feed.avif",
       "webp": "/images/deliverables/mutual-mesh/card-feed.webp",
