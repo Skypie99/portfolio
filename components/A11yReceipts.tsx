@@ -58,7 +58,7 @@ export function A11yReceipts({ data, className }: { data: A11yReceiptsData; clas
       {/* Method line — the receipt's fine print + the evidence artifact */}
       <p className="mt-6 font-mono text-meta tracking-label uppercase text-text-meta leading-[2]">
         Measured {data.measuredDate}
-        <span aria-hidden="true"> · </span>
+        <span aria-hidden="true"> · </span>{' '}
         <a
           href={data.evidencePath}
           className="link-draw text-accent-text hover:text-accent-text"
@@ -67,7 +67,7 @@ export function A11yReceipts({ data, className }: { data: A11yReceiptsData; clas
         </a>
         {data.method.map((m) => (
           <span key={m}>
-            <span aria-hidden="true"> · </span>
+            <span aria-hidden="true"> · </span>{' '}
             {m}
           </span>
         ))}
