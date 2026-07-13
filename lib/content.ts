@@ -256,11 +256,11 @@ export function getA11yReceipts(): A11yReceipts {
  * real codebase (package.json, app/fonts.ts, lib/signature.ts, globals.css,
  * CLAUDE.md) and in Sky's existing /about process copy. Sky owns this wording.
  *
- * NEEDS-SKY-COPY (T10 W2-02): the "## The world" paragraph now discloses that the
- * desert vistas are Midjourney-generated, then separated by hand into depth planes —
- * an honest-safe placeholder in Sky's voice (no apologetic banner). Ratify or replace.
- * The locked cinematic film (components/cinematic/) is untouched — this is disclosure
- * ELSEWHERE, in the candor layer only.
+ * Sky-ratified 2026-07-13 (T10 W2-02): the "## The world" paragraph discloses that the
+ * desert vistas are Midjourney-generated, then separated by hand into depth planes
+ * (Sky's own pipeline) — in Sky's voice, no apologetic banner. The locked cinematic
+ * film (components/cinematic/) is untouched — this is disclosure ELSEWHERE, in the
+ * candor layer only.
  */
 export function getColophon(): string {
   return `Most sites hide how they were made. This one tells you.

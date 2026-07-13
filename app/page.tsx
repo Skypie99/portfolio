@@ -80,11 +80,11 @@ export default function HomePage() {
     },
     {
       stat: '2.2 AA',
-      // NEEDS-SKY-COPY (T10 W4-02): honest-safe placeholder replacing 'WCAG conformance'
-      // — "conformance" is a WCAG term for a MET standard, which overclaims vs the
-      // /accessibility/ statement ("self-assessed, not certified; not a badge I have
-      // been given"). 'the bar I build to' echoes that page's own words ("AA is the bar
-      // I design and build against"). Ratify or replace — the final words are Sky's.
+      // Sky-ratified 2026-07-13 (T10 W4-02): 'the bar I build to' replaces 'WCAG
+      // conformance' — "conformance" is a WCAG term for a MET standard, which overclaimed
+      // vs the /accessibility/ statement ("self-assessed, not certified; not a badge I
+      // have been given"); this echoes that page's own words ("AA is the bar I design and
+      // build against").
       label: 'the bar I build to',
       project: 'Born accessible',
       href: '/accessibility/',
