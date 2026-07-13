@@ -12,7 +12,7 @@
     },
     "measured, both themes": {
       "value": "AA",
-      "detail": "axe color-contrast enabled across all 32 scans (light + dark, theme-applied + settled) — 0 contrast violations; the P0 candlelight repair holds"
+      "detail": "axe color-contrast enabled across all 32 scans (light + dark, theme-applied + settled) — 0 contrast violations; the dark-mode contrast repair holds"
     },
     "tests passing": {
       "value": 325,
