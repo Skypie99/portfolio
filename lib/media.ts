@@ -79,8 +79,10 @@ type CardSource = Pick<Deliverable, 'heroImage' | 'heroShot' | 'cardImage'>;
 /**
  * Media for a work CARD. A dedicated, pre-cropped `cardImage` wins (shown exactly
  * — static cover, no re-zoom), so a tall phone hero can stay whole while the card
- * shows a wide framed crop. Otherwise the card falls back to the hero image
- * (focal-cropped with parallax) — landscape heroShots fit the band fine.
+ * shows a wide framed crop. Otherwise the card falls back to the hero image —
+ * still a static cover crop (precropped), never TactileMedia's hover parallax, so
+ * every card plate reads with the same no-hover reach [C-19]; landscape heroShots
+ * fit the band fine.
  */
 export function cardMedia(d: CardSource): ProductRevealMedia {
   if (d.cardImage?.src) {
@@ -95,5 +97,5 @@ export function cardMedia(d: CardSource): ProductRevealMedia {
       precropped: true,
     };
   }
-  return heroMedia(d);
+  return { ...heroMedia(d), precropped: true };
 }
