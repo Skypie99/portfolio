@@ -106,6 +106,20 @@ describe('renderMarkdownProse — regression: unchanged constructs', () => {
     expect(paras[1].className).not.toContain('drop-cap');
   });
 
+  it('stands the drop-cap down on an apostrophe (contraction) opener [FT-8]', () => {
+    // The ::first-letter initial styles a single glyph, so "I've…" would cap the
+    // "I" and orphan the "'ve". A long opener that starts with a contraction now
+    // stands the cap down — the length gate alone would otherwise grant it.
+    const { container } = renderMd(
+      "I've always been passionate about accessibility, and this opener runs long " +
+        'enough past three lines at the prose measure that the length gate alone ' +
+        'would otherwise grant the drop-cap initial — the apostrophe guard is what ' +
+        'stands it down here.',
+    );
+    const paras = container.querySelectorAll('p');
+    expect(paras[0].className).not.toContain('drop-cap');
+  });
+
   it('keeps serif-display ligatures on prose headings', () => {
     const { container } = renderMd('## A heading');
     expect(container.querySelector('h2')?.className).toContain('serif-display');
