@@ -459,6 +459,30 @@ export default async function WorkDetailPage({
             <article aria-label={`${d.title} case study`} className="max-w-measure-wide flex flex-col gap-8">
               {renderMarkdownProse(d.body, 'case')}
             </article>
+
+            {/* FT-7 — close the essay like an essay. A designed sign-off (never
+                content markdown) matched to the essay measure: a hairline, then
+                the author + place (unified to the footer's "British Columbia"
+                idiom, not "BC"), and exactly ONE internal route — the real footer
+                label — closing the long person-route gap at the conviction peak.
+                No bio sentence, no availability signal. Reveal holds DOM space by
+                opacity (RM / no-JS → full presence) → CLS 0. */}
+            <Reveal
+              variant="depth"
+              className="max-w-measure-wide mt-16 lg:mt-20 flex flex-col gap-5"
+            >
+              <hr className="w-full border-0 border-t border-border-decorative" />
+              <p className="font-mono text-meta tracking-label uppercase text-text-meta">
+                — Sky Halisky · Okanagan Valley, British{' '}Columbia
+              </p>
+              <Link
+                href="/about/"
+                className="link-draw self-start font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+              >
+                A Brief Account
+                <span aria-hidden="true"> →</span>
+              </Link>
+            </Reveal>
           </div>
         </section>
       )}
