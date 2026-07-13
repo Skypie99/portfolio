@@ -255,6 +255,12 @@ export function getA11yReceipts(): A11yReceipts {
  * paragraphs only; no lists / inline links). Every claim is grounded in the
  * real codebase (package.json, app/fonts.ts, lib/signature.ts, globals.css,
  * CLAUDE.md) and in Sky's existing /about process copy. Sky owns this wording.
+ *
+ * NEEDS-SKY-COPY (T10 W2-02): the "## The world" paragraph now discloses that the
+ * desert vistas are Midjourney-generated, then separated by hand into depth planes —
+ * an honest-safe placeholder in Sky's voice (no apologetic banner). Ratify or replace.
+ * The locked cinematic film (components/cinematic/) is untouched — this is disclosure
+ * ELSEWHERE, in the candor layer only.
  */
 export function getColophon(): string {
   return `Most sites hide how they were made. This one tells you.
@@ -271,7 +277,7 @@ Three typefaces, each with one job. **Cormorant Garamond** sets the serif crowns
 
 ## The world
 
-The part you feel before you can name it: one continuous golden-hour desert that the whole site travels through. It opens at warm daylight and eases toward night as you scroll, cresting exactly as the footer arrives. Light mode is the daylight half of that world; dark mode is the night half — the same journey, told in each. It is decorative, hidden from screen readers, and it holds perfectly still the moment your system asks for reduced motion.
+The part you feel before you can name it: one continuous golden-hour desert that the whole site travels through. It opens at warm daylight and eases toward night as you scroll, cresting exactly as the footer arrives. Light mode is the daylight half of that world; dark mode is the night half — the same journey, told in each. It is decorative, hidden from screen readers, and it holds perfectly still the moment your system asks for reduced motion. The desert itself is generated: each vista begins in Midjourney, then I separate it by hand into the depth planes the scene travels through.
 
 ## The quiet systems
 
