@@ -1040,6 +1040,16 @@ html.reveal-failsafe .reveal-carve {
     transparent
   );
 }
+/* C-16: on a designed empty well the golden-hour hairline shows THROUGH the
+   translucent BandHint silhouette, reading as a dead scanline across the device.
+   Occlude it on placeholder wells — the silhouette owns the frame; filled wells
+   cover the horizon with their opaque screen, so they are unaffected. :has()
+   scopes it to the well holding the placeholder (> .pr-horizon pins the well
+   root, never an outer group); where :has() is unsupported the line simply stays
+   (graceful). Static paint, no token mutated. */
+.group:has([data-pr-placeholder="designed"]) > .pr-horizon {
+  opacity: 0;
+}
 /* Scrim for any text set OVER a (future) bright screenshot — ≥4.5:1 guard. */
 .pr-scrim {
   background: linear-gradient(
