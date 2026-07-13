@@ -403,11 +403,13 @@ export default async function WorkDetailPage({
         </section>
       )}
 
-      {/* In-body product shots — Show-the-work 2026-06-04. Each renders a
-          beautiful golden-hour placeholder until a real screenshot drops into
-          d.shots[i].src (one-line swap, no layout shift — see SHOW_WORK_PLAN.md).
-          The section sits in the same warm light (ParallaxWash) as the body. */}
-      {d.shots && d.shots.length > 0 && (
+      {/* In-body product shots — Show-the-work 2026-06-04. The section renders
+          only once at least one shot carries real media (src or video); until
+          then it stays hidden rather than staging empty "designed" wells (W3-01).
+          A real screenshot dropping into d.shots[i].src auto-restores it with no
+          layout shift (one-line swap — see SHOW_WORK_PLAN.md). The section sits
+          in the same warm light (ParallaxWash) as the body. */}
+      {d.shots?.some((s) => s.src || s.video) && (
         <section className="relative overflow-hidden px-gutter py-24 lg:py-32 world-surface border-t border-border-decorative">
           <ParallaxWash depth="far" />
           <div className="relative z-10 max-w-content mx-auto">
