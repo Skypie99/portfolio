@@ -444,7 +444,26 @@ export function useActiveSection(ids: string[]) {
       { rootMargin: '-45% 0px -45% 0px', threshold: [0, 0.25, 0.5, 1] },
     );
     els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
+
+    // C-31: the IntersectionObserver only derives the active id from SCROLL
+    // position, so on a TOC click or a fresh deep-link the aria-current lags
+    // behind (or points at the wrong section) until the reader scrolls. Seed the
+    // active id from the URL hash on mount and on every hashchange — TOC-anchor
+    // clicks, deep-links, and back/forward all fire it — so aria-current names
+    // the landed section immediately; the observer then keeps it honest as the
+    // reader moves.
+    const idSet = new Set(key.split(','));
+    const seedFromHash = () => {
+      const id = window.location.hash.slice(1);
+      if (id && idSet.has(id)) setActive(id);
+    };
+    seedFromHash();
+    window.addEventListener('hashchange', seedFromHash);
+
+    return () => {
+      io.disconnect();
+      window.removeEventListener('hashchange', seedFromHash);
+    };
   }, [key]);
 
   return active;
