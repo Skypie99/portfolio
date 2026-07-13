@@ -166,6 +166,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }),
           }}
         />
+        {/* WM-21 — humans.txt colophon pointer, served at the apex root. */}
+        <link rel="author" href="/humans.txt" />
       </head>
       <body className="bg-canvas text-ink">
         <ThemeProvider>
