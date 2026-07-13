@@ -21,6 +21,15 @@ import { useEffect } from 'react';
  * ScrollTrigger's `end: 'bottom bottom'`. IO is not a scroll listener and
  * fires only at boundary crossings — no per-frame work, no thrash.
  *
+ * Top-open guard (C-20): "content not intersecting" is true in TWO opposite
+ * states — the wrapper still below the viewport (intro, stage covering) AND the
+ * wrapper scrolled entirely above it (resting bottom, footer in view). A bare
+ * threshold-0 observer can't tell them apart and would re-inert the rail at the
+ * resting bottom (toggle / nav / CTA dead). The top-open rootMargin
+ * ('100000px 0px 0px 0px') grows the intersection root upward, so anything
+ * scrolled past the top still counts as intersecting — the rail engages ONLY
+ * while the wrapper is below the viewport (the intro), never at the bottom.
+ *
  * Engage gate: bails unless `.cdesert-stage` exists — under reduced motion
  * the cinematic renders its static frame (no stage, no pin), so chrome is
  * never inert for RM / static / no-JS visitors. Direct `toggleAttribute`
@@ -41,7 +50,7 @@ export function RailInert() {
       ([entry]) => {
         rail.toggleAttribute('inert', !entry.isIntersecting);
       },
-      { threshold: 0 },
+      { threshold: 0, rootMargin: '100000px 0px 0px 0px' },
     );
     io.observe(content);
 

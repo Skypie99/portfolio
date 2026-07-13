@@ -14,6 +14,16 @@ import { useEffect } from 'react';
  * top edge is the stage bottom). "content intersecting" ⇔ "runway is over", so
  * we toggle `data-runway-done` on the mark and CSS fades it out.
  *
+ * Two guards mirror RailInert's top-open repair:
+ *  - Top-open rootMargin ('100000px 0px 0px 0px', C-20): the wrapper is also
+ *    "not intersecting" once scrolled entirely above the viewport (resting
+ *    bottom), which would un-retire the mark and double it over the footer.
+ *    Growing the root upward keeps the mark "done" past the bottom.
+ *  - Strict-intersection gate (intersectionRatio > 0, C-21): the reduced-motion
+ *    static frame reports isIntersecting=true at ratio 0 on mount, retiring the
+ *    mark before the RM visitor ever sees the arrival chip. Requiring a real
+ *    ratio keeps that chip alive.
+ *
  * Unlike RailInert this does NOT gate on `.cdesert-stage`: under reduced motion
  * the intro is a single static frame, and the mark must still retire once the
  * content below it scrolls into view. IO is not a scroll listener — it fires
@@ -29,9 +39,12 @@ export function RunwayIdentityRelease() {
 
     const io = new IntersectionObserver(
       ([entry]) => {
-        mark.toggleAttribute('data-runway-done', entry.isIntersecting);
+        mark.toggleAttribute(
+          'data-runway-done',
+          entry.isIntersecting && entry.intersectionRatio > 0,
+        );
       },
-      { threshold: 0 },
+      { threshold: 0, rootMargin: '100000px 0px 0px 0px' },
     );
     io.observe(content);
 
