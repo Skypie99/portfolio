@@ -387,6 +387,7 @@
       {
         "alt": "A Mutual Mesh resource detail with its description and a neighbourhood-level pickup note",
         "caption": "Pickup is neighbourhood-level; a contact handle is revealed only after you claim.",
+        "focal": "50% 10%",
         "src": "/images/deliverables/mutual-mesh/screen-detail.png",
         "avif": "/images/deliverables/mutual-mesh/screen-detail.avif",
         "webp": "/images/deliverables/mutual-mesh/screen-detail.webp",
@@ -395,6 +396,7 @@
       {
         "alt": "The read-only guest demo prompting a visitor to sign up before they can claim",
         "caption": "Invite-only by design — the public demo runs on synthetic data with zero network calls.",
+        "focal": "50% 46%",
         "src": "/images/deliverables/mutual-mesh/screen-signup.png",
         "avif": "/images/deliverables/mutual-mesh/screen-signup.avif",
         "webp": "/images/deliverables/mutual-mesh/screen-signup.webp",
