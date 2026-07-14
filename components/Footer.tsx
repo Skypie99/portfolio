@@ -8,7 +8,7 @@ import { getProfile } from '@/lib/content';
 /** Proper brand casing for social platforms — profile.json's `platform` is
  *  a schema-locked lowercase enum, so the display label is mapped at render
  *  ("Github"/"Linkedin" via CSS `capitalize` read as typos to a careful eye). */
-const PLATFORM_LABELS: Record<string, string> = {
+export const PLATFORM_LABELS: Record<string, string> = {
   github: 'GitHub',
   linkedin: 'LinkedIn',
   twitter: 'Twitter',

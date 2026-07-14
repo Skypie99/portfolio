@@ -527,18 +527,24 @@ export default async function WorkDetailPage({
             </Reveal>
             <ul className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
               {d.shots.map((shot, i) => (
-                <Reveal key={shot.alt} index={i} as="li" className="flex flex-col gap-3">
-                  <ShotProductReveal
-                    slug={d.id}
-                    title={d.title}
-                    media={{ src: shot.src, alt: shot.alt, avif: shot.avif, webp: shot.webp, focal: shot.focal, lqip: shot.lqip, video: shot.video }}
-                    className="rounded-2xl border border-border-decorative"
-                  />
-                  {shot.caption && (
-                    <p className="font-sans text-body-sm text-charcoal leading-[1.6]">
-                      {smartPunctuation(shot.caption)}
-                    </p>
-                  )}
+                <Reveal key={shot.alt} index={i} as="li">
+                  {/* C-54: bind plate + caption programmatically (figure/figcaption)
+                      — the template's signature the flagships inherit. When a caption
+                      is present it carries the description, so the plate's alt is
+                      emptied to stop AT hearing the scene twice (de-dup alt/caption). */}
+                  <figure className="m-0 flex flex-col gap-3">
+                    <ShotProductReveal
+                      slug={d.id}
+                      title={d.title}
+                      media={{ src: shot.src, alt: shot.caption ? '' : shot.alt, avif: shot.avif, webp: shot.webp, focal: shot.focal, lqip: shot.lqip, video: shot.video }}
+                      className="rounded-2xl border border-border-decorative"
+                    />
+                    {shot.caption && (
+                      <figcaption className="font-sans text-body-sm text-charcoal leading-[1.6]">
+                        {smartPunctuation(shot.caption)}
+                      </figcaption>
+                    )}
+                  </figure>
                 </Reveal>
               ))}
             </ul>
