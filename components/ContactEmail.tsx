@@ -69,8 +69,26 @@ export function ContactEmail({
     ));
 
   return (
-    <Button ref={magRef} href={href} dotColor={dotColor}>
-      {children}
-    </Button>
+    <>
+      <Button ref={magRef} href={href} dotColor={dotColor}>
+        {children}
+      </Button>
+      {/* C-72: with JS off the mailto is never assembled and the Button falls back
+          to /contact/ — a circular self-link on that very page. Give no-JS visitors
+          a real path via the ALREADY-PUBLIC socials (GitHub/LinkedIn). No address is
+          exposed, so the bot-armor is untouched; the browser hides this when JS runs. */}
+      <noscript>
+        <p className="mt-4 font-mono text-meta tracking-label uppercase text-text-meta">
+          Or reach me on{' '}
+          <a href="https://github.com/skypie99" className="link-draw text-accent-text">
+            GitHub
+          </a>{' '}
+          ·{' '}
+          <a href="https://www.linkedin.com/in/skyler-halisky" className="link-draw text-accent-text">
+            LinkedIn
+          </a>
+        </p>
+      </noscript>
+    </>
   );
 }
