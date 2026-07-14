@@ -75,7 +75,16 @@ export function CredentialBadge({
         <polyline points="20 6 9 17 4 12" />
       </svg>
       <span className="font-mono text-meta tracking-label uppercase whitespace-nowrap">
-        {verifyLabel}
+        {verifyLabel}{' '}
+        {/* C-78: the house external-link grammar — ↗ for a new tab (→ is reserved
+            for internal nav). aria-hidden; the wrapper <a>'s aria-label already
+            carries the "(opens in new tab)" cue, so this adds no SR double-speak. */}
+        <span
+          aria-hidden="true"
+          className="inline-block transition-transform duration-base ease-gh-glide group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+        >
+          ↗
+        </span>
       </span>
     </div>
   );
