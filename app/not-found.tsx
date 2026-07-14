@@ -28,7 +28,7 @@ export default function NotFound() {
                 Home
               </Link>
             </li>
-            <li aria-hidden="true" className="text-stone">/</li>
+            <li aria-hidden="true" className="text-stone dark:text-stone-strong">/</li>
             <li aria-current="page" className="text-near-black">404</li>
           </ol>
         </nav>

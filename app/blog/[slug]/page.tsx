@@ -167,7 +167,7 @@ export default async function BlogPostPage({
                   Notes
                 </Link>
               </li>
-              <li aria-hidden="true" className="text-stone">{'/'}</li>
+              <li aria-hidden="true" className="text-stone dark:text-stone-strong">{'/'}</li>
               <li aria-current="page" className="text-near-black truncate max-w-[240px] lg:max-w-[420px] xl:max-w-[560px]">
                 {post.title}
               </li>
