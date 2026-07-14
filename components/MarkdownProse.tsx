@@ -27,7 +27,7 @@ function parseInline(text: string): ReactNode[] {
   const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`|\[[^\]]+\]\([^)]+\))/g);
   return parts.map((part, i) => {
     if (part.startsWith('**') && part.endsWith('**'))
-      return <strong key={i} className="font-semibold text-near-black">{smartPunctuation(part.slice(2, -2))}</strong>;
+      return <strong key={i} className="font-light text-near-black">{smartPunctuation(part.slice(2, -2))}</strong>;
     if (part.startsWith('`') && part.endsWith('`'))
       return <code key={i} className={INLINE_CODE_CLASS}>{part.slice(1, -1)}</code>;
     if (part.startsWith('*') && part.endsWith('*'))

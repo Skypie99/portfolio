@@ -391,6 +391,12 @@ body {
   color: var(--color-near-black);
   font-family: var(--font-dm-sans), -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 300;
+  /* C-85: DM Sans ships weight 300 ONLY. Never let the browser SYNTHESIZE a
+     heavier face (the faux-smear that <strong>/<b> and any 500/600 request would
+     otherwise trigger) — it falls back to the nearest LOADED weight instead.
+     Weight-only on purpose: the sans-body <em> keeps its synthesized oblique
+     (no italic DM Sans face is loaded), so style synthesis must stay on. */
+  font-synthesis-weight: none;
   letter-spacing: 0.25px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
