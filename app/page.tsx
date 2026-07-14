@@ -158,14 +158,24 @@ export default function HomePage() {
 
           {/* 3×2 stat grid — vertical-rule layout for editorial weight */}
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-px bg-wa-teal-soft/30 border border-wa-teal-soft/50 rounded-lg overflow-hidden shadow-md">
-            {showcaseChips.map(({ stat, label, project, href, tags }, i) => (
+            {showcaseChips.map(({ stat, label, project, href, tags }, i) => {
+              // C-22: split off the LAST word so it + the arrow can be bound in a
+              // whitespace-nowrap span — a soft-wrap opportunity sits before the
+              // inline-block arrow at 375 and NBSP can't suppress it. Earlier words
+              // still wrap. head keeps its trailing space.
+              const lastSpace = project.lastIndexOf(' ');
+              const head = lastSpace === -1 ? '' : project.slice(0, lastSpace + 1);
+              const tail = lastSpace === -1 ? project : project.slice(lastSpace + 1);
+              return (
               <Reveal
                 key={project}
                 // MO-4: cap the stagger (site idiom, work/[slug]/page.tsx:42-44)
                 index={Math.min(i, 4)}
                 variant="depth"
                 className={cn(
-                  'group relative flex flex-col bg-surface-mid p-8 md:p-7',
+                  // C-22: reclaim base cell width (p-8→p-6) so the tag pills fit
+                  // their ~90px box at 375 without folding; md+ keeps p-7.
+                  'group relative flex flex-col bg-surface-mid p-6 md:p-7',
                   // An odd trailing chip spans its 2-col (mobile) / 3-col (md+)
                   // row so no bare grid cell shows through. With six chips the
                   // grid is a clean 3×2 and `odd:` self-disables on its own.
@@ -193,14 +203,18 @@ export default function HomePage() {
                     aria-label={`${project} — ${stat} ${label}`}
                     className="rounded-sm transition-colors duration-fast ease-out after:absolute after:inset-0 after:content-[''] group-hover:text-accent-text focus-visible:text-accent-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
                   >
-                    {project}
+                    {head}
+                    {/* C-22: last word + arrow bound so the → never strands. */}
+                    <span className="whitespace-nowrap">
+                      {tail}
+                      <span
+                        aria-hidden="true"
+                        className="ml-1.5 inline-block text-accent-text opacity-70 transition-transform duration-base ease-gh-glide group-hover:translate-x-0.5"
+                      >
+                        {'→'}
+                      </span>
+                    </span>
                   </Link>
-                  <span
-                    aria-hidden="true"
-                    className="ml-1.5 inline-block text-accent-text opacity-70 transition-transform duration-base ease-gh-glide group-hover:translate-x-0.5"
-                  >
-                    {'→'}
-                  </span>
                 </p>
                 <ul className="flex flex-wrap gap-1.5 mt-auto" aria-label={`Tags for ${project}`}>
                   {tags.map((tag) => (
@@ -210,7 +224,8 @@ export default function HomePage() {
                   ))}
                 </ul>
               </Reveal>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

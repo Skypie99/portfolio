@@ -76,7 +76,10 @@ export default function AboutPage() {
 
             {/* Pull-quote — editorial accent, carries the thesis */}
             <blockquote className="pull-quote nums-oldstyle pl-3 font-serif font-light text-step-2 text-near-black leading-[1.4] text-balance">
-              Accessibility is not an add-on. It is where you begin.
+              {/* C-49: text-balance preferred the hyphen break "add-/on." at 375.
+                  A nowrap span keeps the pivot compound whole (identical block
+                  height at every width → CLS 0). */}
+              Accessibility is not an <span className="whitespace-nowrap">add-on.</span> It is where you begin.
             </blockquote>
             <span aria-hidden="true" className="rule-ember block h-px w-32 mt-6" />
 
