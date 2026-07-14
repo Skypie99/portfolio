@@ -153,11 +153,15 @@ export default function ColophonPage() {
           </Link>
           <Link
             href="/"
-            className="group inline-flex items-center gap-2 font-mono text-meta tracking-label uppercase text-text-meta hover:text-accent-text transition-colors duration-fast ease-out"
+            /* C-89: match the padded-tap idiom the accessibility-statement closer
+               above already carries (px/py + cancelling negative margins → a ≥24px
+               box, zero layout shift). C-69-family: keyboard focus gets the same
+               ink shift + arrow glide as hover. */
+            className="group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-meta tracking-label uppercase text-text-meta hover:text-accent-text focus-visible:text-accent-text transition-colors duration-fast ease-out"
           >
             <span
               aria-hidden="true"
-              className="inline-block transition-transform duration-base ease-gh-glide group-hover:-translate-x-1"
+              className="inline-block transition-transform duration-base ease-gh-glide group-hover:-translate-x-1 group-focus-visible:-translate-x-1"
             >
               {'←'}
             </span>

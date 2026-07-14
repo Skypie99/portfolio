@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { ContactEmail } from '@/components/ContactEmail';
+import { PLATFORM_LABELS } from '@/components/Footer';
 import { SettleHeading } from '@/components/HeroSettle';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { Reveal } from '@/components/Reveal';
@@ -108,9 +109,14 @@ export default function ContactPage() {
               {profile.socials.map((s, i) => (
                 <li key={s.url} className="group border-t border-border-decorative pt-4">
                   <Reveal index={i} variant="depth">
-                    <div className="transition-transform duration-base ease-gh-glide group-hover:translate-x-1">
+                    {/* C-69: keyboard parity — the cell glides on a focused link
+                        (group-has :focus-visible), not hover alone. */}
+                    <div className="transition-transform duration-base ease-gh-glide group-hover:translate-x-1 group-has-[:focus-visible]:translate-x-1">
+                      {/* C-74: map the schema-locked lowercase enum to its proper
+                          label so AT hears "GitHub"/"LinkedIn", not "github"/
+                          "linkedin" (CSS uppercase keeps the visual unchanged). */}
                       <p className="font-mono text-meta tracking-label uppercase text-sage-text mb-1">
-                        {s.platform}
+                        {PLATFORM_LABELS[s.platform] ?? s.platform}
                       </p>
                       <a
                         href={s.url}
@@ -143,9 +149,10 @@ export default function ContactPage() {
         <div className="max-w-content mx-auto">
           <Link
             href="/"
-            className="group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+            className="group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text focus-visible:text-accent-text transition-colors duration-fast ease-out"
           >
-            <span aria-hidden="true" className="inline-block transition-transform duration-base ease-gh-glide group-hover:-translate-x-1">{'←'}</span>
+            {/* C-69: keyboard visitors get the same arrow glide + ink shift as hover. */}
+            <span aria-hidden="true" className="inline-block transition-transform duration-base ease-gh-glide group-hover:-translate-x-1 group-focus-visible:-translate-x-1">{'←'}</span>
             Back to home
           </Link>
         </div>
