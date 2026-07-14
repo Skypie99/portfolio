@@ -205,7 +205,7 @@ export default async function BlogPostPage({
 
           {/* Summary */}
           <p className="font-sans font-light text-step-1 text-charcoal max-w-measure-wide text-pretty mb-16">
-            {post.summary}
+            {bindSeparatorDash(post.summary)}
           </p>
 
           {/* Tags */}

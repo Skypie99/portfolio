@@ -14,6 +14,7 @@ import { Reveal } from '@/components/Reveal';
 import { TactileMedia } from '@/components/TactileMedia';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
+import { smartPunctuation } from '@/lib/markdown';
 import { getDeliverables } from '@/lib/content';
 import { cardMedia, heroMedia, heroPreloadLink } from '@/lib/media';
 import { frameForSlug, signatureFor } from '@/lib/signature';
@@ -258,7 +259,7 @@ export default async function WorkDetailPage({
                     {d.heroPlate.severity}
                   </p>
                   <p className="font-mono text-body-sm text-near-black leading-snug">
-                    {d.heroPlate.caption}
+                    {smartPunctuation(d.heroPlate.caption)}
                   </p>
                 </div>
                 <p className="font-mono text-meta tracking-label uppercase text-text-meta">
@@ -517,7 +518,7 @@ export default async function WorkDetailPage({
                   />
                   {shot.caption && (
                     <p className="font-sans text-body-sm text-charcoal leading-[1.6]">
-                      {shot.caption}
+                      {smartPunctuation(shot.caption)}
                     </p>
                   )}
                 </Reveal>
@@ -566,7 +567,7 @@ export default async function WorkDetailPage({
                   </div>
                   {img.caption && (
                     <p className="font-sans text-body-sm text-charcoal leading-[1.6]">
-                      {img.caption}
+                      {smartPunctuation(img.caption)}
                     </p>
                   )}
                 </Reveal>
