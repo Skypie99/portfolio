@@ -114,6 +114,14 @@ export async function generateMetadata({
       title: `${post.title} — ${profile.name}`,
       description: post.summary,
     },
+    // C-93: feed autodiscovery — the essay advertises the Notes feeds so a reader
+    // or crawler finds them from the post itself.
+    alternates: {
+      types: {
+        'application/feed+json': '/feed.json',
+        'application/rss+xml': '/feed.xml',
+      },
+    },
   };
 }
 
@@ -131,6 +139,7 @@ export default async function BlogPostPage({
   const { slug } = await params;
   const post = getBlogPosts().find((p) => p.id === slug);
   if (!post) notFound();
+  const profile = getProfile();
 
   const renderedContent = renderMarkdownProse(post.content, 'blog');
 
@@ -156,6 +165,28 @@ export default async function BlogPostPage({
 
   return (
     <>
+      {/* C-94: BlogPosting JSON-LD names the author at the crawler layer (mirrors
+          the Person schema in the root layout + the CreativeWork on case studies),
+          quietly serving the byline signal on a shared link. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
+            headline: post.title,
+            description: post.summary,
+            datePublished: post.publishedDate,
+            keywords: post.tags.join(', '),
+            author: { '@type': 'Person', name: profile.name, url: 'https://skypistudio.com' },
+            publisher: { '@type': 'Person', name: profile.name },
+            mainEntityOfPage: {
+              '@type': 'WebPage',
+              '@id': `https://skypistudio.com/blog/${post.id}/`,
+            },
+          }),
+        }}
+      />
       {/* Post header */}
       <section className="px-gutter pt-24 lg:pt-32 pb-24 world-surface">
         <div className="max-w-content mx-auto">
