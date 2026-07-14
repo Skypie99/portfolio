@@ -80,11 +80,21 @@ export function ContactEmail({
       <noscript>
         <p className="mt-4 font-mono text-meta tracking-label uppercase text-text-meta">
           Or reach me on{' '}
-          <a href="https://github.com/skypie99" className="link-draw text-accent-text">
+          <a
+            href="https://github.com/skypie99"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-draw text-accent-text"
+          >
             GitHub
           </a>{' '}
           ·{' '}
-          <a href="https://www.linkedin.com/in/skyler-halisky" className="link-draw text-accent-text">
+          <a
+            href="https://www.linkedin.com/in/skyler-halisky"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-draw text-accent-text"
+          >
             LinkedIn
           </a>
         </p>
