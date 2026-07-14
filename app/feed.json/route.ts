@@ -1,4 +1,5 @@
 import { getBlogPosts, getProfile } from '@/lib/content';
+import { markdownToFeedHtml } from '@/lib/markdown';
 
 /**
  * /feed.json — JSON Feed 1.1 for Notes (§8.4).
@@ -32,6 +33,9 @@ export function GET(): Response {
         url,
         title: post.title,
         summary: post.summary,
+        // C-92: JSON Feed 1.1 items MUST carry content — summary alone was
+        // spec-incomplete. The full post as clean semantic HTML.
+        content_html: markdownToFeedHtml(post.content),
         date_published: `${post.publishedDate}T12:00:00Z`,
         tags: post.tags,
       };
