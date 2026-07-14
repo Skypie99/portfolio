@@ -27,7 +27,7 @@ export function A11yReceipts({ data, className }: { data: A11yReceiptsData; clas
       <Reveal variant="scene">
         {/* The eyebrow is the strip's heading — it joins the statement's h2
             outline so heading-nav users land on the receipts, not past them. */}
-        <h2 className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
+        <h2 id="receipts" className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2 scroll-mt-24">
           <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
           Measured, not claimed
         </h2>
