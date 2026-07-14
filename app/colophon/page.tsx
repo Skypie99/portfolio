@@ -45,7 +45,10 @@ const TYPE_SPECIMENS: { sample: string; sampleClass: string; family: string; rol
   },
   {
     sample: 'Calm, readable body text — kept light so long-form never tires the eye.',
-    sampleClass: 'font-sans font-light text-step-1 text-charcoal',
+    // C-88: the block is titled "the type, set live" — the 'body' specimen must
+    // render at the real long-form body size (text-prose, 17px), not the lead
+    // tier (text-step-1, 20px) it was mistakenly set at.
+    sampleClass: 'font-sans font-light text-prose text-charcoal',
     family: 'DM Sans',
     role: 'body',
   },

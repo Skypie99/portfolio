@@ -377,8 +377,11 @@ export default async function WorkDetailPage({
                   </div>
                 </dl>
 
-                {/* Tech pills */}
-                <div>
+                {/* Tech pills — C-52: dashboard is the only deliverable with no
+                    non-demo links, so at 768 Tech otherwise sits in a half-column
+                    beside empty air. When there are no other links, span both
+                    ledger columns so the row reads as intended. */}
+                <div className={cn(otherLinks.length === 0 && 'md:max-lg:col-span-2')}>
                   <p className="font-mono text-meta tracking-label uppercase text-text-meta mb-3">
                     Tech
                   </p>

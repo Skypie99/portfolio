@@ -367,7 +367,10 @@ export default function HomePage() {
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               A Brief Account
             </p>
-            <h2 className="font-serif font-light text-step-4 ember leading-[1.1] text-balance">
+            {/* C-23: max-w-2xl matches the five sibling section H2s (:151/:261/:313/
+                :424/:518) — the About head was the lone one off the shared 672px grid.
+                Byte-identical render today; restores the grid so future copy can't drift. */}
+            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-[1.1] text-balance">
               The work is careful. The record is honest.
             </h2>
           </Reveal>
