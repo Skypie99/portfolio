@@ -114,7 +114,7 @@ export function renderMarkdownProse(markdown: string, variant: ProseVariant): Re
       const text = block.slice(3);
       return (
         <Reveal key={key} as="h2" id={headingId(text)} variant="carve" index={index} className={`${c.h2} scroll-mt-24`}>
-          {text}
+          {smartPunctuation(text)}
         </Reveal>
       );
     }
@@ -122,7 +122,7 @@ export function renderMarkdownProse(markdown: string, variant: ProseVariant): Re
       const text = block.slice(4);
       return (
         <Reveal key={key} as="h3" id={headingId(text)} variant="depth" index={index} className={`${c.h3} scroll-mt-24`}>
-          {text}
+          {smartPunctuation(text)}
         </Reveal>
       );
     }

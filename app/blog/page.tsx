@@ -178,7 +178,7 @@ export default function BlogIndexPage() {
 
                       {/* Summary */}
                       <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-measure-lead text-pretty">
-                        {post.summary}
+                        {bindSeparatorDash(post.summary)}
                       </p>
 
                       {/* Tags + CTA row */}

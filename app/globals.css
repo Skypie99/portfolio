@@ -611,7 +611,10 @@ html.dark body::after { opacity: 0.10; }
   letter-spacing: -0.015em;
 }
 .pull-quote::before {
-  content: '\201C';
+  /* C-60: the '/ ""' alt-text pairing empties the pseudo-element's accessible
+     name so AT no longer opens every blockquote with an unpaired curly quote.
+     Purely decorative (z-index:-1) — the quote stays visible, only AT skips it. */
+  content: '\201C' / '';
   position: absolute;
   left: 0.06em;
   top: -0.46em;
