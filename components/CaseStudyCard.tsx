@@ -84,7 +84,11 @@ export function CaseStudyCard({ title, category, description, href, media, links
             </Link>
           </h3>
           <span aria-hidden="true" className="block h-px w-24 rounded-full bg-gradient-to-r from-[rgb(var(--rgb-accent)/0.65)] via-[rgb(var(--rgb-accent)/0.3)] to-transparent origin-left transition-transform duration-slow ease-gh-glide group-hover:scale-x-125" />
-          <p className="font-sans font-light text-body-sm leading-[1.65] text-charcoal line-clamp-2 text-pretty">
+          {/* C-14: no line-clamp — the summaries are Sky's own written receipt
+              sentences ("vanilla JS, zero dependencies", "zero cloud, instant
+              runs."); clamping amputated them on the work grid. Un-clamped they
+              stand at their natural height (a build-time change → CLS 0). */}
+          <p className="font-sans font-light text-body-sm leading-[1.65] text-charcoal text-pretty">
             {description}
           </p>
 
