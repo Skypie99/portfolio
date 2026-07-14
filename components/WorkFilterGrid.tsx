@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 
 import { CaseStudyCard } from '@/components/CaseStudyCard';
@@ -31,7 +31,38 @@ type WorkFilterGridProps = {
 
 export function WorkFilterGrid({ deliverables }: WorkFilterGridProps) {
   const [activeTag, setActiveTag] = useState<string | null>(null);
+  const [skipMotion, setSkipMotion] = useState(false);
   const shouldReduceMotion = useReducedMotion();
+
+  // C-25: a gallery already walked should BE there on return — not re-perform its
+  // entrance and forget your filter. Remember the filter across navigations; on
+  // any re-visit within the session, skip the entrance (subtractive, RM-invisible,
+  // wonder-budget-POSITIVE). Both setState calls batch, so the restore renders in
+  // one settled frame. sessionStorage failures fall back to the fresh entrance.
+  useEffect(() => {
+    try {
+      const saved = sessionStorage.getItem('work:filter');
+      if (sessionStorage.getItem('work:seen') === '1') {
+        if (saved !== null) setActiveTag(saved === '' ? null : saved);
+        setSkipMotion(true);
+      }
+      sessionStorage.setItem('work:seen', '1');
+    } catch {
+      /* sessionStorage unavailable (private mode / disabled) — keep the entrance */
+    }
+  }, []);
+
+  useEffect(() => {
+    try {
+      sessionStorage.setItem('work:filter', activeTag ?? '');
+    } catch {
+      /* ignore */
+    }
+  }, [activeTag]);
+
+  // On a re-visit, the framer filter choreography is suppressed too, so the
+  // remembered filter is simply THERE rather than re-animating into place.
+  const noMotion = shouldReduceMotion || skipMotion;
 
   const featured = deliverables.find((d) => d.featured);
   const rest = deliverables.filter((d) => !d.featured);
@@ -103,15 +134,15 @@ export function WorkFilterGrid({ deliverables }: WorkFilterGridProps) {
         {featured && featuredVisible && (
           <motion.div
             key="featured"
-            layout={!shouldReduceMotion}
+            layout={!noMotion}
             initial={false}
-            exit={shouldReduceMotion ? undefined : { opacity: 0, scale: 0.98, transition: { duration: 0.18 } }}
+            exit={noMotion ? undefined : { opacity: 0, scale: 0.98, transition: { duration: 0.18 } }}
             className="mb-24"
           >
             {/* Reveal owns the scroll-entrance (CSS/IO depth-rise) so the
                 featured card lands with the same weight as the grid cards —
                 kept separate from the Framer layout/filter choreography. */}
-            <Reveal variant="depth">
+            <Reveal variant="depth" skip={skipMotion}>
               <ProjectCard deliverable={featured} wide index={deliverables.indexOf(featured)} />
             </Reveal>
           </motion.div>
@@ -142,16 +173,16 @@ export function WorkFilterGrid({ deliverables }: WorkFilterGridProps) {
               return (
                 <motion.li
                   key={d.id}
-                  layout={!shouldReduceMotion}
+                  layout={!noMotion}
                   initial={false}
                   className={lone ? 'lg:col-span-2' : undefined}
                   exit={
-                    shouldReduceMotion
+                    noMotion
                       ? undefined
                       : { opacity: 0, scale: 0.96, y: -8, transition: { duration: 0.2 } }
                   }
                 >
-                  <Reveal variant="depth" index={i}>
+                  <Reveal variant="depth" index={i} skip={skipMotion}>
                     {lone ? (
                       <ProjectCard
                         deliverable={d}
