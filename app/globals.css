@@ -2342,3 +2342,69 @@ html.dark ::selection {
   letter-spacing: 0.15em;
   color: rgb(var(--rgb-ink) / 0.8); /* theme-aware, still well above AA on the frost */
 }
+
+/* ── Intro scroll-continuation cue (T6 / W2-01) ─────────────────────────────
+   Whisper-weight orientation glyph — the same "Scroll ↓" affordance the Hero
+   uses one viewport later, surfaced INSIDE the pinned intro so a first-timer
+   knows the scroll is the skip and that there's a destination below the film.
+   A fixed sibling of the locked intro (never a child of components/cinematic).
+   Decorative only: aria-hidden, pointer-events:none, no tab stop — the sr-only
+   skip-link stays the keyboard truth. Same fixed layer as .runway-identity
+   (z-55): it sits bottom-centre, the identity mark top-left — spatially clear.
+   Retires (fades out) the moment the post-intro content arrives, on the exact
+   geometry RailInert / RunwayIdentityRelease trust; degrades to rest-visible
+   without JS. CLS: fixed node, opacity/visibility only → 0. ───────────────── */
+.intro-scroll-cue {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: max(1.25rem, env(safe-area-inset-bottom));
+  z-index: 55; /* above the pinned stage (z-50); bottom-centre, clear of the mark */
+  display: flex;
+  justify-content: center;
+  opacity: 1; /* rest-visible floor — present with no JS, no entrance dependency */
+  pointer-events: none; /* a cue, not a control: no tab stop, no hit area */
+  transition:
+    opacity 480ms var(--ease-gh-glide),
+    visibility 480ms var(--ease-gh-glide);
+}
+.intro-scroll-cue[data-cue-done] {
+  opacity: 0;
+  visibility: hidden;
+}
+/* The glyph fades up after a short beat so it reads as part of the film's own
+   settle, not a UI element racing the first frame. Ends at 0.9 — the Hero
+   cue's exact opacity (5.04:1 AA over the surface; measured over the film in
+   the R2-P4 contrast gate). */
+.intro-scroll-cue-glyph {
+  /* Theme-invariant light tone: the cue is ALWAYS over the dark cinematic
+     foreground (in both themes — the film is theme-invariant), so the flat-
+     surface ink-meta token (dark in light mode) can't serve here. A soft light
+     sage reads as a whisper over the film. */
+  color: rgb(178 183 176);
+  /* Soft dark scrim — no edge, fades fully to transparent — so the light glyph
+     holds AA as the film's foreground scrubs from dark to lit. Reads as a
+     vignette, never a chip/button (the substrate-justified deviation the
+     RunwayIdentity mark also makes, more subtle than its glass-card). Measured
+     across the scrub in the R2-P4 contrast gate. */
+  padding: 0.45rem 1.6rem 0.72rem;
+  background: radial-gradient(ellipse at 50% 55%, rgb(14 7 3 / 0.66) 0%, rgb(14 7 3 / 0.4) 50%, transparent 82%);
+  text-shadow: 0 1px 5px rgb(20 10 5 / 0.5);
+  animation: intro-cue-rise 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 700ms;
+}
+@keyframes intro-cue-rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+/* RM-first-class: the global reduced-motion floor forces animation-DURATION to
+   0.01ms but NOT animation-DELAY — so a delayed fade would leave the cue
+   invisible for the full 700ms delay under reduce. Present it immediately, no
+   motion (matches the .hero-enter RM idiom). */
+@media (prefers-reduced-motion: reduce) {
+  .intro-scroll-cue-glyph {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
