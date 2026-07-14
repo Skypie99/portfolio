@@ -52,7 +52,21 @@ export function ContactEmail({
     ? `mailto:${email}?subject=${encodeURIComponent(subject)}`
     : '/contact/';
 
-  const children = label ?? (email ? `Email ${email}` : 'Send me an email');
+  // C-70: the full "Email {address}" label decks over two lines inside the
+  // w-full pill at 375. Below md show a short label; restore the full address at
+  // md+. Each span toggles via `display`, so the accessible name is exactly the
+  // one visible span — no label-content-name-mismatch, and the short label leads
+  // its own accessible name (SC 2.5.3). A caller-supplied `label` is left as-is.
+  const children =
+    label ??
+    (email ? (
+      <>
+        <span className="md:hidden">Email me</span>
+        <span className="hidden md:inline">{`Email ${email}`}</span>
+      </>
+    ) : (
+      'Send me an email'
+    ));
 
   return (
     <Button ref={magRef} href={href} dotColor={dotColor}>
