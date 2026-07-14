@@ -8,7 +8,7 @@
     "credentialId": "ef3fxd6rptc5",
     "badgeImage": {
       "src": "/images/certificates/anthropic-ai-fluency-2026/badge.png",
-      "alt": "Anthropic AI Fluency Framework & Foundations credential badge"
+      "alt": "A hand-drawn grid of four panes with one square shaded, beside an open hand with its fingers raised"
     },
     "tags": ["ai", "anthropic", "foundations"]
   },
@@ -21,7 +21,7 @@
     "credentialId": "rgnu9r9tyfoj",
     "badgeImage": {
       "src": "/images/certificates/anthropic-cowork-intro-2026/badge.png",
-      "alt": "Anthropic Introduction to Claude Cowork credential badge"
+      "alt": "A hand-drawn zigzag of linked dots crossing an angular sand-coloured burst"
     },
     "tags": ["ai", "anthropic", "claude", "collaboration"]
   },
@@ -34,7 +34,7 @@
     "credentialId": "9twktanftgpq",
     "badgeImage": {
       "src": "/images/certificates/anthropic-claude-101-2026/badge.png",
-      "alt": "Anthropic Claude 101 credential badge"
+      "alt": "A hand-drawn apple resting on a closed book"
     },
     "tags": ["ai", "anthropic", "claude"]
   },
@@ -47,7 +47,7 @@
     "credentialId": "397oybawccv4",
     "badgeImage": {
       "src": "/images/certificates/anthropic-mcp-intro-2026/badge.png",
-      "alt": "Anthropic Introduction to Model Context Protocol credential badge"
+      "alt": "A hand-drawn power plug with a coiling cord, reaching toward a wall socket"
     },
     "tags": ["ai", "anthropic", "mcp"]
   },
@@ -60,7 +60,7 @@
     "credentialId": "ad8ot95z543s",
     "badgeImage": {
       "src": "/images/certificates/anthropic-claude-code-in-action-2026/badge.png",
-      "alt": "Anthropic Claude Code in Action credential badge"
+      "alt": "A hand-drawn terminal window with a command prompt, trailing speed lines, a small lightning bolt at its corner"
     },
     "tags": ["ai", "anthropic", "claude-code"]
   },
@@ -73,7 +73,7 @@
     "credentialId": "cxrwvg7sz5w6",
     "badgeImage": {
       "src": "/images/certificates/anthropic-claude-code-101-2026/badge.png",
-      "alt": "Anthropic Claude Code 101 credential badge"
+      "alt": "A hand-drawn open laptop showing a command prompt, an apple beside it"
     },
     "tags": ["ai", "anthropic", "claude-code"]
   },
