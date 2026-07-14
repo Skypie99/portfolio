@@ -58,7 +58,7 @@ export function CertCard({ certificate: c }: { certificate: Certificate }) {
           <BadgeImage
             src={c.badgeImage.src}
             alt={c.badgeImage.alt}
-            className="absolute inset-0 h-full w-full object-contain p-4 transition-transform duration-slow ease-gh-glide group-hover:scale-[1.03] group-focus-within:scale-[1.03]"
+            className="absolute inset-0 h-full w-full object-contain p-4 transition-transform duration-slow ease-gh-glide motion-safe:group-hover:scale-[1.03] motion-safe:group-focus-within:scale-[1.03]"
           />
         </div>
 
