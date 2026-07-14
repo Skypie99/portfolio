@@ -5,6 +5,7 @@ import { ContactEmail } from '@/components/ContactEmail';
 import { ContentReveal } from '@/components/ContentReveal';
 import { CountUpStat } from '@/components/CountUpStat';
 import { Hero } from '@/components/Hero';
+import { IntroScrollCue } from '@/components/IntroScrollCue';
 import { NumberedStep } from '@/components/NumberedStep';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { ProjectCard } from '@/components/ProjectCard';
@@ -108,6 +109,11 @@ export default function HomePage() {
       {/* Chrome guard: rail is inert while the pinned stage fully obscures it
           (skip link → hero CTA stays the top-of-page keyboard journey). */}
       <RailInert />
+
+      {/* T6/W2-01: the scroll IS the skip — a whisper wayfinding cue INSIDE the
+          pinned intro, a fixed sibling of the film (never a child). Retires when
+          the content below arrives; the locked intro is untouched. */}
+      <IntroScrollCue />
 
       <ContentReveal>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
