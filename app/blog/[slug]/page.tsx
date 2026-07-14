@@ -82,6 +82,31 @@ function ProseFigure({ figure }: { figure: NonNullable<BlogPost['figure']> }) {
 }
 
 /**
+ * DatedStatusNote (T11 / SK-02) — a dated snapshot stamp spliced above a
+ * time-bound status claim, so a weeks-old "in TestFlight / review pending"
+ * reads as "here's where this stood on {date}," not a live present-tense
+ * promise the redeploying site keeps re-vouching for. Reuses the post
+ * byline's <time> grammar (below) and the receipts strip's "as of {date}"
+ * snapshot phrasing. Page-level, like ProseFigure — never coupled into the
+ * shared renderer; the page splices it in at the "What's next" seam.
+ * Exported for the seam/format test; a non-reserved export the router ignores.
+ */
+export function DatedStatusNote({ date }: { date: string }) {
+  return (
+    <p className="font-mono text-meta tracking-label uppercase text-text-meta">
+      Status as of{' '}
+      <time dateTime={date} className="tabular-nums">
+        {new Date(date + 'T12:00:00').toLocaleDateString('en-CA', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        })}
+      </time>
+    </p>
+  );
+}
+
+/**
  * Static export needs every dynamic route enumerated at build time.
  * We include ALL slugs (even drafts) so Next.js can generate the static file.
  * Draft slugs resolve to notFound() at render time via getBlogPosts() filter.
@@ -156,6 +181,19 @@ export default async function BlogPostPage({
       : -1;
     if (seam >= 0) content.splice(seam + 1, 0, fig);
     else content.push(fig);
+  }
+
+  // T11 / SK-02: date the forward-looking status so a frozen "TestFlight is
+  // live / review is pending" reads as a snapshot ("Status as of {date}"),
+  // not a live promise the redeploying site keeps re-vouching for. Independent
+  // splice pass — findIndex runs against the current array, so it's correct
+  // regardless of the figure spliced above. Page-level, never coupled into the
+  // shared renderer.
+  const statusSeam = content.findIndex(
+    (el) => isValidElement(el) && (el.props as { id?: string }).id === 'what-s-next',
+  );
+  if (statusSeam >= 0) {
+    content.splice(statusSeam + 1, 0, <DatedStatusNote key="blog-status-date" date={post.publishedDate} />);
   }
 
   // S12: the post hands off to its case study at the close instead of dead-ending.
