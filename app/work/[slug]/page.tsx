@@ -190,7 +190,11 @@ export default async function WorkDetailPage({
                   The Work
                 </Link>
               </li>
-              <li aria-hidden="true" className="text-stone">
+              {/* C-61: text-stone computes ~1:1 on the dark world-surface — the
+                  crumb lost its path between two floating labels. Lift to
+                  stone-strong in dark for the same faint-hairline the light theme
+                  keeps (decorative parity, not an a11y gate). */}
+              <li aria-hidden="true" className="text-stone dark:text-stone-strong">
                 {'/'}
               </li>
               <li aria-current="page" className="text-near-black truncate max-w-[240px] lg:max-w-[420px] xl:max-w-[560px]">
@@ -412,9 +416,20 @@ export default async function WorkDetailPage({
                             rel="noopener noreferrer"
                             className="group link-draw font-sans text-body text-accent-text inline-flex items-center gap-2"
                           >
-                            <span className="font-mono text-meta tracking-label uppercase text-text-meta mr-2">
-                              {l.type}
-                            </span>
+                            {/* C-17/W5-03: the mono type-eyebrow adds info only
+                                when the category differs from the name — for
+                                github (type "github" == label "GitHub") it just
+                                stutters "GITHUB GitHub". Suppress it when they
+                                match; aria-hidden otherwise so AT hears the label
+                                once (the category is decoration). */}
+                            {l.type.toLowerCase() !== l.label.toLowerCase() && (
+                              <span
+                                aria-hidden="true"
+                                className="font-mono text-meta tracking-label uppercase text-text-meta mr-2"
+                              >
+                                {l.type}
+                              </span>
+                            )}
                             <span>{l.label}</span>
                             <span
                               aria-hidden="true"
