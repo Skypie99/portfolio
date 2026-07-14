@@ -68,8 +68,10 @@ export default function CertificatesPage() {
         )}
       >
         <div className="max-w-content mx-auto">
-          {/* sr-only section heading — Alex F-C4-2 heading rotor. */}
-          <h2 className="sr-only">Credentials</h2>
+          {/* sr-only section heading — Alex F-C4-2 heading rotor. C-83: distinct
+              from the page H1 "Credentials" so the rotor stops hearing
+              "Credentials, Credentials". */}
+          <h2 className="sr-only">Credential list</h2>
           {certificates.length === 0 ? (
             <EmptyState
               title="Credentials coming soon."
