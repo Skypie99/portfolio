@@ -62,7 +62,21 @@ export function SidebarArticleNav() {
   // scripting:enabled in CSS, so a no-JS visitor — who never gets this
   // client-read index at all — sees no empty gap.
   if (headings.length === 0) {
-    return <div className="sidebar-toc-reserve" aria-hidden="true" />;
+    // C-42-rider: the reserve must MATCH the route's populated rail, or the swap
+    // to the real <nav> on hydrate shifts the rail's NOTES + CTA. Measured (768 +
+    // 1440): case studies run to the 4-heading story spine (≈155px, the CSS
+    // default) while the long-form Note runs to 5 headings (≈214px). A single
+    // fixed value forced the Note to grow ~59px on hydrate — the site's worst CLS
+    // (0.00303). Key the reserve off the route so BOTH land at ~0 shift, and so a
+    // future C-42 doorway heading only needs its own route's number retuned here.
+    const isNote = /^\/blog\/[^/]+\/?$/.test(pathname);
+    return (
+      <div
+        className="sidebar-toc-reserve"
+        aria-hidden="true"
+        style={isNote ? { minHeight: 214 } : undefined}
+      />
+    );
   }
 
   return (
