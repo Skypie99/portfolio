@@ -28,6 +28,9 @@ type RevealProps = {
   as?: ElementType;
   /** Optional element id — used for in-page anchors (e.g. heading slugs). */
   id?: string;
+  /** C-25: render settled immediately, no scroll-entrance — a gallery returned
+   *  to via back/forward should already BE there, not re-perform its curtain. */
+  skip?: boolean;
 };
 
 /**
@@ -52,9 +55,13 @@ export function Reveal({
   variant = 'default',
   as: Tag = 'div',
   id,
+  skip = false,
 }: RevealProps) {
   const [ref, inView] = useInViewOnce<HTMLElement>();
   const Comp = Tag as ElementType;
+  // `skip` shows the final state at once; killing the transition makes it
+  // instant (no re-fade) rather than a one-frame jump into the 900ms curtain.
+  const shown = skip || inView;
 
   return (
     <Comp
@@ -65,10 +72,13 @@ export function Reveal({
         variant === 'scene' && 'reveal-scene',
         variant === 'depth' && 'reveal-depth',
         variant === 'carve' && 'reveal-carve',
-        inView && 'reveal-shown',
+        shown && 'reveal-shown',
         className,
       )}
-      style={index ? { transitionDelay: `${index * staggerStep}ms` } : undefined}
+      style={{
+        ...(index ? { transitionDelay: `${index * staggerStep}ms` } : {}),
+        ...(skip ? { transition: 'none' } : {}),
+      }}
     >
       {children}
     </Comp>
