@@ -187,14 +187,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <HamburgerNavMount />
           <div className="flex flex-col md:flex-row min-h-screen">
             <Sidebar />
-            <main
-              id="main"
-              tabIndex={-1}
-              className="flex-1 flex flex-col min-w-0"
-            >
-              <div className="flex-1">{children}</div>
+            {/* C-71: <main> wraps ONLY the page content; the Footer is its sibling
+                in this column wrapper (which keeps main's old classes + the same
+                child order, so the render is byte-identical). This lifts the
+                footer's contentinfo landmark to TOP LEVEL — nested inside <main> it
+                failed axe landmark-contentinfo-is-top-level. NOT the arc-stretching
+                sibling move: the max-w-content block and the alpenglow arc (a fixed
+                z-index:-1 backdrop) are untouched. */}
+            <div className="flex-1 flex flex-col min-w-0">
+              <main id="main" tabIndex={-1} className="flex-1">
+                {children}
+              </main>
               <Footer />
-            </main>
+            </div>
           </div>
         </ThemeProvider>
       </body>
