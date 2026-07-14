@@ -25,8 +25,11 @@ type NumberedStepProps = {
  * Reused for the "How I work" block on the homepage and the About page.
  */
 export function NumberedStep({ number, title, body, highlight = false, className }: NumberedStepProps) {
+  // C-43: below lg the numeral column + gap ate the body's measure, rendering the
+  // confession at ~12ch / 9 lines. Stack the numeral ABOVE the text sub-lg so the
+  // body keeps its full width; restore the side-by-side row at lg.
   return (
-    <div className={cn('flex gap-8 md:gap-12 items-start', className)}>
+    <div className={cn('flex flex-col gap-3 lg:flex-row lg:gap-12 lg:items-start', className)}>
       <span
         aria-hidden="true"
         className={cn(
