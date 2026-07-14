@@ -52,7 +52,8 @@ export default function NotFound() {
               href="/work/"
               className="link-draw inline-block font-mono text-label tracking-label uppercase text-near-black"
             >
-              Or browse the work {'→'}
+              {/* C-110: bind the last word + arrow so the → never strands. */}
+              Or browse the <span className="whitespace-nowrap">work {'→'}</span>
             </Link>
           </div>
         </Reveal>
