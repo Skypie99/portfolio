@@ -102,6 +102,12 @@ export function CaseStudyCard({ title, category, description, href, media, links
               href={href}
               /* SC 2.5.3 Label in Name: the visible words lead the accessible name. */
               aria-label={`Read more — ${title} case study`}
+              /* C-55: the title link above already spends one tab stop on this exact
+                 href — two stops per neighbour card is the only redundancy in the
+                 journey. tabIndex={-1} drops the SECOND keyboard stop while keeping
+                 this a real, clickable, SR-rotor-visible link (NOT aria-hidden, NOT a
+                 whole-card link). One stop per neighbour card, both names preserved. */
+              tabIndex={-1}
               className="px-1 py-1 -mx-1 -my-1 inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-base ease-gh-glide hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
             >
               Read more <span aria-hidden="true">→</span>
