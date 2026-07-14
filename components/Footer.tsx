@@ -33,6 +33,11 @@ export function Footer() {
 
   return (
     <footer
+      // C-71: this <footer> is nested (not a <body> child), so it isn't an
+      // implicit contentinfo landmark. The explicit role makes it discoverable to
+      // AT landmark nav — NOT the structural sibling move, which would re-center
+      // the max-w-content block and stretch the PROTECT alpenglow arc.
+      role="contentinfo"
       className={cn(
         'relative',
         'world-surface-alt border-t border-border-decorative',
