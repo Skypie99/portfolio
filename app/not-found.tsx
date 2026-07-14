@@ -50,7 +50,9 @@ export default function NotFound() {
             <Button href="/">Back to the homepage</Button>
             <Link
               href="/work/"
-              className="link-draw inline-block font-mono text-label tracking-label uppercase text-near-black"
+              /* C-113: padded-tap idiom (≥24px box, negative margins cancel the
+                 layout shift) so the secondary exit isn't a thin target at 375. */
+              className="link-draw inline-block px-1 py-1.5 -mx-1 -my-1.5 font-mono text-label tracking-label uppercase text-near-black"
             >
               {/* C-110: bind the last word + arrow so the → never strands. */}
               Or browse the <span className="whitespace-nowrap">work {'→'}</span>
