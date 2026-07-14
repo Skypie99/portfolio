@@ -118,7 +118,7 @@ export default function ColophonPage() {
       {/* Live type specimen — the type system shown in its own faces. */}
       <section className="px-gutter py-32 lg:py-50 world-surface border-t border-border-decorative">
         <div className="max-w-content mx-auto">
-          <h2 className="font-serif font-light text-prose-h2 text-near-black mb-12">
+          <h2 id="type-specimen" className="font-serif font-light text-prose-h2 text-near-black mb-12 scroll-mt-24">
             The type, set live
           </h2>
           <ul className="flex flex-col gap-12 max-w-measure-wide">
