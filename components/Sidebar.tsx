@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
-import { Button } from '@/components/Button';
 import { SidebarArticleNav } from '@/components/SidebarArticleNav';
 import { SidebarFeatured } from '@/components/SidebarFeatured';
 import { SidebarProgress } from '@/components/SidebarProgress';
+import { SidebarNotesLink, SidebarWriteCta } from '@/components/SidebarRailLinks';
 import { SidebarSectionNav } from '@/components/SidebarSectionNav';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { cn } from '@/lib/cn';
@@ -91,22 +91,12 @@ export function Sidebar() {
         <span className="font-mono text-label tracking-label uppercase text-text-meta">
           Notes
         </span>
-        <Link
-          href="/blog/"
-          className="group font-mono text-meta tracking-label uppercase text-wa-teal-deep inline-flex items-center gap-1"
-        >
-          <span className="group-hover:translate-x-1 group-focus-visible:translate-x-1 transition-transform duration-fast ease-out inline-flex items-center gap-1">
-            Read the notes
-            <span aria-hidden="true">{'→'}</span>
-          </span>
-        </Link>
+        <SidebarNotesLink />
       </div>
 
       {/* ── Bottom block ───────────────────────────────────────────── */}
       <div className="mt-auto flex flex-col gap-4">
-        <Button href="/contact/" fullWidth>
-          Write to me.
-        </Button>
+        <SidebarWriteCta />
       </div>
     </nav>
   );
