@@ -484,6 +484,18 @@ export default function HomePage() {
               </li>
             ))}
           </ul>
+          {/* C-81: a real page-door to the dedicated credentials room — the
+              hand-drawn badges live there, not in this text digest. Internal →
+              grammar (↗ is reserved for external), padded tap box (L5-07). */}
+          <Reveal className="mt-16">
+            <Link
+              href="/certificates/"
+              className="group inline-flex items-center gap-1.5 px-1 py-1 -mx-1 -my-1 rounded-sm font-mono text-meta tracking-label uppercase text-accent-text transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+            >
+              See the credential badges
+              <span aria-hidden="true">{'→'}</span>
+            </Link>
+          </Reveal>
         </div>
       </section>
 
