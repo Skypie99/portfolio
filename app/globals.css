@@ -983,7 +983,10 @@ html.reveal-failsafe .reveal-carve {
    hydration; this placeholder reserves its height so the rail's NOTES + CTA
    don't shift down when it populates (CLS floor at md/768). Gated on
    scripting:enabled — a no-JS visitor never gets the index, so no empty gap is
-   left. Height tuned to the case-study story spine (4 headings ≈ 155px). */
+   left. This 155px default matches the case-study story spine (4 headings,
+   measured 155px). The one long-form Note runs to 5 headings (measured 214px);
+   SidebarArticleNav overrides min-height inline on that route (C-42-rider) so it
+   doesn't grow on hydrate. */
 .sidebar-toc-reserve {
   display: none;
 }
