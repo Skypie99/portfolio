@@ -47,7 +47,11 @@ export function A11yReceipts({ data, className }: { data: A11yReceiptsData; clas
             className={cn('flex flex-col bg-surface-mid p-8 md:p-7', 'group')}
           >
             <CountUpStat value={r.value} emberClass={STAT_EMBER[i % STAT_EMBER.length]} label={r.label} />
-            <p className="font-mono text-label text-sage-text uppercase tracking-label mb-2">
+            {/* W5-02: CountUpStat's sr-only name is already "{value} {label}", so
+                this visible caption would make AT hear the label a second time.
+                aria-hidden keeps the caption on screen while the sr-only name stays
+                the single canonical announcement (the figure above is aria-hidden too). */}
+            <p aria-hidden="true" className="font-mono text-label text-sage-text uppercase tracking-label mb-2">
               {r.label}
             </p>
             <p className="font-mono text-meta text-text-meta">{r.sub}</p>
