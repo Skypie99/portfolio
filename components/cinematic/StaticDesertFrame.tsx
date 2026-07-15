@@ -42,11 +42,14 @@ export function StaticDesertFrame() {
             ? plate.scaleTo
             : plate.scaleFrom + (plate.scaleTo - plate.scaleFrom) * 0.85;
           const y = plate.yFrom + (plate.yTo - plate.yFrom) * 0.85;
-          const { avif, webp } = sourcesFor(plate);
+          const { avifSrcSet, webpSrcSet } = sourcesFor(plate);
           return (
             <picture key={plate.id}>
-              {avif && <source type="image/avif" srcSet={avif} />}
-              {webp && <source type="image/webp" srcSet={webp} />}
+              {/* sizes="100vw" — same full-bleed contract as Layer.tsx; the
+                  static frame (reduced-motion) also benefits from the mobile
+                  tier where one exists (arrival-cliff, mid-fg). */}
+              {avifSrcSet && <source type="image/avif" srcSet={avifSrcSet} sizes="100vw" />}
+              {webpSrcSet && <source type="image/webp" srcSet={webpSrcSet} sizes="100vw" />}
               <img
                 src={srcFor(plate)}
                 alt=""
