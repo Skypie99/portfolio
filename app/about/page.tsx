@@ -31,13 +31,13 @@ export function generateMetadata(): Metadata {
 
 /**
  * /about — F-07. Sky's story + "How I work" reuses the <NumberedStep />
- * component, then a "What I'm working on" block surfaces the 3 most recent
- * deliverables (linked into /work/[slug]). Restrained ffern-style copy —
- * short sentences, no fluff.
+ * component, then a "What I'm working on" block surfaces up to 3 deliverables
+ * — the featured one first, then year-desc — linked into /work/[slug].
+ * Restrained ffern-style copy — short sentences, no fluff.
  *
- * Server Component. The placeholder paragraphs below are written in Sky's
- * voice per the brief; he can swap them at any time without touching the
- * layout. Generous line-height (1.65) per Dani §3.
+ * Server Component. The story paragraphs below are finalized copy in Sky's
+ * voice; the copy can be swapped at any time without touching the layout.
+ * Generous line-height (1.65) per Dani §3.
  */
 export default function AboutPage() {
   const profile = getProfile();
