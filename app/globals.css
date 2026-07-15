@@ -1660,6 +1660,24 @@ html.dark .glass-card:hover::after,
 html.dark .glass-card:focus-within::after {
   opacity: 0.34;
 }
+/* C-18 — in dark the hover/focus lift kept its RESTING shadow: html.dark
+   .glass-card (specificity 0,2,1) out-ranks the light .glass-card:hover shadow
+   (0,2,0), so the lifted card cast no deeper shadow and read pasted-on. Deepen
+   the dark drop-shadow to TRACK the 7px lift (mirroring light's hover deepening
+   in dark's black-based palette), and extend it to :focus-within so keyboard
+   users get the identical lift (PROTECT #7 focus parity). Kept a touch quieter
+   than light per the dark "atmosphere you feel more than see" treatment. This
+   deepens a shadow on hover/focus only — rest is untouched, glass never thinned.
+   Not RM-guarded: mirrors light, where the transform is killed under reduce but
+   the hover shadow still applies. */
+html.dark .glass-card:hover,
+html.dark .glass-card:focus-within {
+  box-shadow: inset 0 1px 0 0 rgb(255 240 214 / 0.1),
+              inset 0 0 0 1px rgb(255 240 214 / 0.05),
+              inset 0 -1px 1px 0 rgb(0 0 0 / 0.3),
+              0 18px 38px -20px rgb(0 0 0 / 0.55),
+              0 40px 74px -28px rgb(0 0 0 / 0.66);
+}
 
 /* Cycle 16 + Cycle 26 + Cycle 29 — broken-image polish.
 
