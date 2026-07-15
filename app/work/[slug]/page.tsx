@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { CSSProperties } from 'react';
-import ReactDOM from 'react-dom';
 
 import { Button } from '@/components/Button';
 import { CaseStudyCard } from '@/components/CaseStudyCard';
@@ -186,20 +185,29 @@ export default async function WorkDetailPage({
   // remaining links (GitHub, write-ups) keep the list; the demo no longer doubles.
   const demoLink = d.links?.find((l) => l.type === 'demo');
   const otherLinks = d.links?.filter((l) => l.type !== 'demo') ?? [];
-  // L7-02: preload the case-study hero's AVIF (its LCP element). heroPreloadLink
-  // returns null unless an optimized sibling is declared, so a placeholder-only or
-  // raw-PNG hero is never preloaded — no whale in the <head>.
+  // L7-02 / C-03: preload the case-study hero's AVIF (its LCP element) as a JSX
+  // <link> hoisted into THIS page's <head> — NOT via ReactDOM.preload(). The
+  // imperative preload is emitted as an RSC flight hint Next applies even when the
+  // route is only PREFETCHED, so hovering/viewporting the home grid injected all
+  // six work heroes at fetchpriority=high into the home (and every other) route's
+  // head — stealing bandwidth from that page's own LCP (the C-03 spillover). A
+  // rendered <link> only lands in the head when this route actually renders, so
+  // "featured opens warm" survives (in the built page AND on real navigation)
+  // without the cross-route leak. heroPreloadLink returns null unless an optimized
+  // sibling is declared, so a placeholder-only or raw-PNG hero is never preloaded.
   const heroPreload = heroPreloadLink(d);
-  if (heroPreload) {
-    ReactDOM.preload(heroPreload.href, {
-      as: heroPreload.as,
-      type: heroPreload.type,
-      fetchPriority: heroPreload.fetchPriority,
-    });
-  }
 
   return (
     <>
+      {heroPreload && (
+        <link
+          rel="preload"
+          as={heroPreload.as}
+          href={heroPreload.href}
+          type={heroPreload.type}
+          fetchPriority={heroPreload.fetchPriority}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
