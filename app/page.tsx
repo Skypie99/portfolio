@@ -44,7 +44,7 @@ export default function HomePage() {
    *  link affordances added. */
   const showcaseChips = [
     {
-      stat: '1,680',
+      stat: '1,804',
       label: 'tests passing',
       project: 'AccessMap',
       href: '/work/accessmap/',
