@@ -36,6 +36,11 @@ type ProjectCardProps = {
 export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index = 0, className }: ProjectCardProps) {
   const githubLink = d.links?.find((l) => l.type === 'github');
   const demoLink = d.links?.find((l) => l.type === 'demo');
+  // L3-09 seam fix: surface one additional "proof" link (type: 'other') when a
+  // deliverable's own repo doesn't carry its own evidence (e.g. Claude Corp's
+  // repo is the landing page, not the system — its commit history lives in
+  // AccessMap). Absent for every other deliverable today, so this is additive.
+  const otherLink = d.links?.find((l) => l.type === 'other');
   const numeral = String(index + 1).padStart(2, '0');
   const spotRef = useSpotlight<HTMLDivElement>();
 
@@ -135,7 +140,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
               >
                 View project <span aria-hidden="true">→</span>
               </Link>
-              {(demoLink || githubLink) && (
+              {(demoLink || githubLink || otherLink) && (
                 /* Grouped so the external links wrap as ONE unit on narrow
                    cards — previously GitHub orphaned alone onto a second
                    line at 390px. Desktop is pixel-identical: the group is
@@ -163,7 +168,23 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
                       aria-label={`View ${d.title} source on GitHub (opens in new tab)`}
                       className="px-1 py-1 -mx-1 -my-1 inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
                     >
-                      GitHub <span aria-hidden="true">↗</span>
+                      {/* L3-09: the button's own label drives the visible text
+                          (was hardcoded "GitHub") — so a repo that isn't the
+                          real source of truth (Claude Corp's is a landing
+                          page) can say so honestly instead of implying more
+                          than the link delivers. */}
+                      {githubLink.label} <span aria-hidden="true">↗</span>
+                    </a>
+                  )}
+                  {otherLink && (
+                    <a
+                      href={otherLink.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Open ${otherLink.label} for ${d.title} (opens in new tab)`}
+                      className="px-1 py-1 -mx-1 -my-1 inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                    >
+                      {otherLink.label} <span aria-hidden="true">↗</span>
                     </a>
                   )}
                 </span>

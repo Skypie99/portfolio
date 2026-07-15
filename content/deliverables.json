@@ -77,7 +77,6 @@
     "role": "Solo builder",
     "tech": [
       "Claude Code",
-      "MCP",
       "Multi-agent orchestration"
     ],
     "year": 2026,
@@ -115,7 +114,7 @@
     ],
     "links": [
       {
-        "label": "GitHub",
+        "label": "Site source",
         "href": "https://github.com/Skypie99/Claude_Corp",
         "type": "github"
       },
@@ -123,6 +122,11 @@
         "label": "Live demo",
         "href": "https://claudecorp.skypistudio.com",
         "type": "demo"
+      },
+      {
+        "label": "Real commits (AccessMap)",
+        "href": "https://github.com/Skypie99/AccessMap/commits/main",
+        "type": "other"
       }
     ],
     "tags": [
