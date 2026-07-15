@@ -38,6 +38,9 @@ export function CaseStudyCard({ title, category, description, href, media, links
   const numeral = String(index + 1).padStart(2, '0');
   const githubLink = links?.find((l) => l.type === 'github');
   const demoLink = links?.find((l) => l.type === 'demo');
+  // L3-09 seam fix: mirrors ProjectCard — surface a proof link (type: 'other')
+  // for the rare deliverable whose own repo isn't its own evidence.
+  const otherLink = links?.find((l) => l.type === 'other');
   const spotRef = useSpotlight<HTMLDivElement>();
 
   return (
@@ -102,7 +105,7 @@ export function CaseStudyCard({ title, category, description, href, media, links
             >
               Read more <span aria-hidden="true">→</span>
             </Link>
-            {(demoLink || githubLink) && (
+            {(demoLink || githubLink || otherLink) && (
               <span className="ml-auto flex items-center gap-x-6">
                 {demoLink && (
                   <a
@@ -125,7 +128,19 @@ export function CaseStudyCard({ title, category, description, href, media, links
                     aria-label={`View ${title} source on GitHub (opens in new tab)`}
                     className="px-1 py-1 -mx-1 -my-1 inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
                   >
-                    GitHub <span aria-hidden="true">↗</span>
+                    {/* L3-09: label-driven text (was hardcoded "GitHub"). */}
+                    {githubLink.label} <span aria-hidden="true">↗</span>
+                  </a>
+                )}
+                {otherLink && (
+                  <a
+                    href={otherLink.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Open ${otherLink.label} for ${title} (opens in new tab)`}
+                    className="px-1 py-1 -mx-1 -my-1 inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                  >
+                    {otherLink.label} <span aria-hidden="true">↗</span>
                   </a>
                 )}
               </span>

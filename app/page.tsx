@@ -55,7 +55,7 @@ export default function HomePage() {
       label: 'AI agents',
       project: 'Claude Corp',
       href: '/work/claude-corp/',
-      tags: ['MCP', 'Real commits'],
+      tags: ['Open source', 'Real commits'],
     },
     {
       stat: '100%',
