@@ -964,7 +964,6 @@ html.reveal-failsafe .reveal-carve {
 }
 .hero-settle-title {
   --settle-y: 12px;
-  --ls-from: 0.12em;
 }
 @media (prefers-reduced-motion: no-preference) {
   .settle-heading {

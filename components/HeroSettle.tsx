@@ -6,12 +6,14 @@
  *
  *   1. HeroImageSettle: image well settles — opacity 0→1, scale 1.02→1,
  *      ~900ms, ease [0.22,1,0.36,1] (snappy easeOut).
- *   2. HeroTitleSettle: h1 carves in AFTER the image — opacity 0→1,
- *      y 12→0, letter-spacing 0.12em→-0.02em, delay ~150ms, ~520ms,
- *      ease [0.16,1,0.3,1] (power2.out). The tightening LS mirrors the
- *      cinematic wordmark gesture — loose → crystallised.
+ *   2. HeroTitleSettle: h1 settles in AFTER the image — opacity 0→1,
+ *      y 12→0, delay ~150ms, ~520ms, ease [0.16,1,0.3,1] (power2.out).
+ *      Letter-spacing is NOT animated: a wide start re-wrapped the serif
+ *      title and pulled the hero up after paint, so the rest spacing
+ *      (--ls-rest) applies from first paint for a zero-CLS settle. See
+ *      globals.css @keyframes settle-title.
  *   3. SettleHeading: the same gesture generalized for every route page's
- *      <h1> — opacity 0→1, y 8→0, letter-spacing 0.10em→-0.02em, ~560ms.
+ *      <h1> — opacity 0→1, y 8→0, ~560ms (letter-spacing not animated, per #2).
  *
  * These are SERVER components: the markup carries the visible FINAL state
  * and the entrance lives entirely in CSS (`.settle-heading`,
@@ -47,8 +49,8 @@ export function HeroImageSettle({ children, className }: SlotProps) {
 
 /**
  * HeroTitleSettle — wraps the case-study <h1>.
- * Carves in after the image: opacity 0→1, y 12→0,
- * letter-spacing 0.12em→-0.02em, delay 150ms, ~520ms (CSS).
+ * Settles in after the image: opacity 0→1, y 12→0, delay 150ms, ~520ms (CSS).
+ * Letter-spacing is set at rest via --ls-rest, not animated (zero-CLS).
  */
 export function HeroTitleSettle({ children, className }: SlotProps) {
   return <h1 className={cn('hero-settle-title', className)}>{children}</h1>;
