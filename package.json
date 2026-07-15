@@ -11,6 +11,7 @@
     "dev": "next dev",
     "prebuild": "node scripts/validate-assets.mjs",
     "build": "next build",
+    "postbuild": "node scripts/prune-500.mjs",
     "validate:assets": "node scripts/validate-assets.mjs",
     "start": "next start",
     "lint": "next lint",
