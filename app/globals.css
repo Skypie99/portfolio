@@ -1520,6 +1520,45 @@ html.dark [data-band-anchor]::before {
               0 26px 54px -28px rgb(72 46 26 / 0.26);
   transition: box-shadow var(--dur-slow) var(--ease-gh-glide), transform var(--dur-slow) var(--ease-gh-glide);
 }
+
+/* C-01 — cheaper scroll-time glass on the HOME work grid. Skip fully OFF-SCREEN
+   work cards so only the near-viewport backdrop-filter panes stay live during a
+   scroll pass (the "fewer simultaneously-live backdrop-filter panes" lever) —
+   this is where the survived-the-pin recruiter meets the six proofs (C-01, HIGH).
+   Scoped to .work-card ONLY — never the base .glass-card (also worn by CertCard
+   and the position:fixed RunwayIdentity chip).
+
+   NOT applied to .case-study-card: content-visibility there breached the CLS
+   floor on the dense /work/ listing grid + the variable-height forward-door
+   cards (real height 384px@768 → 660px@1440 — no single contain-intrinsic-size
+   seed fits, and the grid's row-height coordination shifted on first render).
+   The CLS floor is non-negotiable, so the case-study glass (C-05) keeps its
+   normal rendering; its scroll cost already sits near the long-frame target and
+   rides the R2-D4 device gate.
+
+   PARITY (the constraint): content-visibility:auto changes rendering ONLY for
+   cards that are off-screen. A VISIBLE card gains contain:layout|paint|style but
+   NOT size, and .work-card already carries isolation:isolate + overflow:hidden,
+   so nothing visible changes — the outset hover drop-shadow + ::after specular
+   are NOT clipped (proven: overflow:hidden is already present and the 5-layer
+   shadow still renders outside the box). Cheaper glass, never thinner glass.
+
+   CLS: the `auto` keyword caches each card's real rendered size, so re-scroll
+   reserves the exact height; the 700px seed (measured work-card median) only
+   estimates the first below-fold paint, which lands off-viewport.
+
+   Felt 60fps on real iOS/Safari WebKit is DIRECTIONAL here / device-gated (R2-D4);
+   backdrop-filter rasterizes differently off Chromium.
+
+   SCOPE: `#work .work-card` — the home page's "The Work" grid section (id="work")
+   ONLY. The same .work-card class also appears on the /work/ route inside a
+   Framer-layout filterable grid whose CLS is pre-existing + flaky (a separate,
+   out-of-scope surface); this selector never reaches it, so /work/ is untouched. */
+#work .work-card {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 700px;
+}
+
 /* spectral refractive rim — soft-blue on the cool side → clear → warm */
 .glass-card::before {
   content: '';
