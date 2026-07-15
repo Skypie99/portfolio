@@ -69,13 +69,14 @@ const fmtKB = (bytes) => `${(bytes / 1024).toFixed(0)}KB`;
 
 function parseArgs(argv) {
   const pos = [];
-  const opt = { kind: 'shot', name: null, widths: [], dry: false, json: false };
+  const opt = { kind: 'shot', name: null, widths: [], dry: false, json: false, outDir: null };
   for (let i = 0; i < argv.length; i += 1) {
     const a = argv[i];
     if (a === '--dry') opt.dry = true;
     else if (a === '--json') opt.json = true;
     else if (a === '--kind') opt.kind = argv[++i];
     else if (a === '--name') opt.name = argv[++i];
+    else if (a === '--out-dir') opt.outDir = argv[++i];
     else if (a === '--widths') opt.widths = String(argv[++i]).split(',').map((n) => parseInt(n, 10)).filter(Boolean);
     else pos.push(a);
   }
@@ -112,7 +113,7 @@ async function main() {
   const { slug, masterArg, kind, dry, json } = args;
 
   if (!slug || !masterArg) {
-    console.error('usage: node scripts/encode-proof.mjs <slug> <masterPath> [--kind hero|shot|card] [--name N] [--widths a,b] [--dry] [--json]');
+    console.error('usage: node scripts/encode-proof.mjs <slug> <masterPath> [--kind hero|shot|card] [--name N] [--out-dir DIR] [--widths a,b] [--dry] [--json]');
     process.exit(2);
   }
   if (!SLUG_RE.test(slug)) {
@@ -131,7 +132,10 @@ async function main() {
   }
 
   const name = args.name ?? basename(masterArg, extname(masterArg));
-  const outDir = join(ROOT, 'public', 'images', 'deliverables', slug);
+  // Default output is the deliverables tree; --out-dir writes siblings elsewhere
+  // (e.g. public/images/certificates/<dir>/ for the C-02 badge encode). rel()
+  // below already derives the correct /-rooted path from any location under public/.
+  const outDir = args.outDir ? resolve(ROOT, args.outDir) : join(ROOT, 'public', 'images', 'deliverables', slug);
   const { maxW, budgetKB } = KIND[kind];
   const budgetBytes = budgetKB * 1024;
 

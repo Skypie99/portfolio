@@ -162,7 +162,14 @@ export const CertificateSchema = z
       .regex(/^\d{4}-\d{2}-\d{2}$/, 'must be ISO date YYYY-MM-DD')
       .optional(),
     credentialUrl: z.string().url().startsWith('https://'),
-    badgeImage: ImageSchema.refine(
+    // C-02: optional AVIF/WebP siblings so the hand-drawn badges ship through the
+    // same optimized <picture> pipeline as blog figures (BlogFigureSchema). The PNG
+    // stays the universal <img> fallback; modern engines fetch the ~5 KB AVIF. Zod
+    // strips undeclared keys, so these MUST be declared or the JSON values vanish.
+    badgeImage: ImageSchema.extend({
+      avif: z.string().startsWith('/images/').optional(),
+      webp: z.string().startsWith('/images/').optional(),
+    }).refine(
       (img) => /^\/images\/certificates\/[a-z0-9-]+\//.test(img.src),
       'badgeImage.src must live under /images/certificates/<slug>/',
     ),
