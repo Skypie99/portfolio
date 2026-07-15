@@ -8,7 +8,9 @@
     "credentialId": "ef3fxd6rptc5",
     "badgeImage": {
       "src": "/images/certificates/anthropic-ai-fluency-2026/badge.png",
-      "alt": "A hand-drawn grid of four panes with one square shaded, beside an open hand with its fingers raised"
+      "alt": "A hand-drawn grid of four panes with one square shaded, beside an open hand with its fingers raised",
+      "avif": "/images/certificates/anthropic-ai-fluency-2026/badge.avif",
+      "webp": "/images/certificates/anthropic-ai-fluency-2026/badge.webp"
     },
     "tags": ["ai", "anthropic", "foundations"]
   },
@@ -21,7 +23,9 @@
     "credentialId": "rgnu9r9tyfoj",
     "badgeImage": {
       "src": "/images/certificates/anthropic-cowork-intro-2026/badge.png",
-      "alt": "A hand-drawn zigzag of linked dots crossing an angular sand-coloured burst"
+      "alt": "A hand-drawn zigzag of linked dots crossing an angular sand-coloured burst",
+      "avif": "/images/certificates/anthropic-cowork-intro-2026/badge.avif",
+      "webp": "/images/certificates/anthropic-cowork-intro-2026/badge.webp"
     },
     "tags": ["ai", "anthropic", "claude", "collaboration"]
   },
@@ -34,7 +38,9 @@
     "credentialId": "9twktanftgpq",
     "badgeImage": {
       "src": "/images/certificates/anthropic-claude-101-2026/badge.png",
-      "alt": "A hand-drawn apple resting on a closed book"
+      "alt": "A hand-drawn apple resting on a closed book",
+      "avif": "/images/certificates/anthropic-claude-101-2026/badge.avif",
+      "webp": "/images/certificates/anthropic-claude-101-2026/badge.webp"
     },
     "tags": ["ai", "anthropic", "claude"]
   },
@@ -47,7 +53,9 @@
     "credentialId": "397oybawccv4",
     "badgeImage": {
       "src": "/images/certificates/anthropic-mcp-intro-2026/badge.png",
-      "alt": "A hand-drawn power plug with a coiling cord, reaching toward a wall socket"
+      "alt": "A hand-drawn power plug with a coiling cord, reaching toward a wall socket",
+      "avif": "/images/certificates/anthropic-mcp-intro-2026/badge.avif",
+      "webp": "/images/certificates/anthropic-mcp-intro-2026/badge.webp"
     },
     "tags": ["ai", "anthropic", "mcp"]
   },
@@ -60,7 +68,9 @@
     "credentialId": "ad8ot95z543s",
     "badgeImage": {
       "src": "/images/certificates/anthropic-claude-code-in-action-2026/badge.png",
-      "alt": "A hand-drawn terminal window with a command prompt, trailing speed lines, a small lightning bolt at its corner"
+      "alt": "A hand-drawn terminal window with a command prompt, trailing speed lines, a small lightning bolt at its corner",
+      "avif": "/images/certificates/anthropic-claude-code-in-action-2026/badge.avif",
+      "webp": "/images/certificates/anthropic-claude-code-in-action-2026/badge.webp"
     },
     "tags": ["ai", "anthropic", "claude-code"]
   },
@@ -73,7 +83,9 @@
     "credentialId": "cxrwvg7sz5w6",
     "badgeImage": {
       "src": "/images/certificates/anthropic-claude-code-101-2026/badge.png",
-      "alt": "A hand-drawn open laptop showing a command prompt, an apple beside it"
+      "alt": "A hand-drawn open laptop showing a command prompt, an apple beside it",
+      "avif": "/images/certificates/anthropic-claude-code-101-2026/badge.avif",
+      "webp": "/images/certificates/anthropic-claude-code-101-2026/badge.webp"
     },
     "tags": ["ai", "anthropic", "claude-code"]
   },
