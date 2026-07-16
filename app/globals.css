@@ -2346,10 +2346,14 @@ html.dark ::selection {
   z-index: 55; /* above the pinned stage (z-50); spatially clear of the centred title carve */
   opacity: 1; /* rest-visible floor — present with no JS, no entrance dependency */
   pointer-events: none; /* a mark, not a control: no tab stop, no hit area */
+  /* U2 (A-02): exit on the house fast register — at flick velocity the 480ms
+     fade was still mid-air when arriving content reached the mark's pixels.
+     180ms clears the chip's ~744px of post-trigger travel up to ~4,100px/s
+     with the observer geometry untouched. Same easing, same end state. */
   transition:
-    opacity 480ms var(--ease-gh-glide),
-    transform 480ms var(--ease-gh-glide),
-    visibility 480ms var(--ease-gh-glide);
+    opacity var(--dur-fast) var(--ease-gh-glide),
+    transform var(--dur-fast) var(--ease-gh-glide),
+    visibility var(--dur-fast) var(--ease-gh-glide);
 }
 @media (min-width: 768px) {
   .runway-identity {
@@ -2420,9 +2424,13 @@ html.dark ::selection {
   justify-content: center;
   opacity: 1; /* rest-visible floor — present with no JS, no entrance dependency */
   pointer-events: none; /* a cue, not a control: no tab stop, no hit area */
+  /* U2 (A-02): fast-register exit (PROTECT-66 sanctions exactly this knob).
+     The cue sits ~20px above the viewport bottom — no honest duration can
+     finish after the 0px edge-touch at flick, so the retirement observer also
+     fires a viewport early for motion users (IntroScrollCue.tsx, RM-gated). */
   transition:
-    opacity 480ms var(--ease-gh-glide),
-    visibility 480ms var(--ease-gh-glide);
+    opacity var(--dur-fast) var(--ease-gh-glide),
+    visibility var(--dur-fast) var(--ease-gh-glide);
 }
 .intro-scroll-cue[data-cue-done] {
   opacity: 0;

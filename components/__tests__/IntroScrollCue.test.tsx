@@ -21,12 +21,14 @@ type IOEntry = { isIntersecting: boolean; intersectionRatio: number };
 type IOCallback = (entries: IOEntry[]) => void;
 
 let ioCallback: IOCallback | null = null;
+let ioOptions: IntersectionObserverInit | undefined;
 let observedTargets: Element[] = [];
 let disconnectCount = 0;
 
 class MockIntersectionObserver {
-  constructor(cb: IOCallback) {
+  constructor(cb: IOCallback, opts?: IntersectionObserverInit) {
     ioCallback = cb;
+    ioOptions = opts;
   }
   observe(el: Element) {
     observedTargets.push(el);
@@ -46,6 +48,7 @@ function addContentWrapper() {
 
 beforeEach(() => {
   ioCallback = null;
+  ioOptions = undefined;
   observedTargets = [];
   disconnectCount = 0;
   vi.stubGlobal('IntersectionObserver', MockIntersectionObserver);
@@ -121,5 +124,49 @@ describe('IntroScrollCue — retirement contract', () => {
     vi.stubGlobal('IntersectionObserver', undefined);
     addContentWrapper();
     expect(() => render(<IntroScrollCue />)).not.toThrow();
+  });
+});
+
+describe('IntroScrollCue — U2 retirement geometry (RM-gated early margin)', () => {
+  // jsdom has no matchMedia by default: the conservative fork IS the jsdom
+  // fork, so this pin is simultaneously the old-webview guard and the C-20
+  // byte-parity check for environments without motion signals.
+  it('keeps the byte-original geometry when matchMedia is unavailable', () => {
+    addContentWrapper();
+    render(<IntroScrollCue />);
+    expect(ioOptions?.rootMargin).toBe('100000px 0px 0px 0px');
+    expect(ioOptions?.threshold).toBe(0);
+  });
+
+  it('fires a viewport early for motion users (no-preference)', () => {
+    vi.stubGlobal('matchMedia', (q: string) => ({
+      matches: q === '(prefers-reduced-motion: no-preference)',
+      media: q,
+    }));
+    addContentWrapper();
+    const { container } = render(<IntroScrollCue />);
+    expect(ioOptions?.rootMargin).toBe('100000px 0px 100% 0px');
+    expect(ioOptions?.threshold).toBe(0);
+
+    // The callback semantics are byte-identical under the expanded root:
+    // real-ratio retires, off-screen returns.
+    const cue = container.querySelector('.intro-scroll-cue')!;
+    ioCallback!([{ isIntersecting: true, intersectionRatio: 0.5 }]);
+    expect(cue.hasAttribute('data-cue-done')).toBe(true);
+    ioCallback!([{ isIntersecting: false, intersectionRatio: 0 }]);
+    expect(cue.hasAttribute('data-cue-done')).toBe(false);
+  });
+
+  it('keeps the byte-original geometry under reduced motion (the C-21 mount guard)', () => {
+    vi.stubGlobal('matchMedia', (q: string) => ({ matches: false, media: q }));
+    addContentWrapper();
+    const { container } = render(<IntroScrollCue />);
+    // RM keeps 0-margin: at the RM static frame's 0px edge-touch mount, any
+    // positive bottom margin would report ratio > 0 and retire the cue before
+    // the RM visitor ever sees it.
+    expect(ioOptions?.rootMargin).toBe('100000px 0px 0px 0px');
+    const cue = container.querySelector('.intro-scroll-cue')!;
+    ioCallback!([{ isIntersecting: true, intersectionRatio: 0 }]);
+    expect(cue.hasAttribute('data-cue-done')).toBe(false);
   });
 });
