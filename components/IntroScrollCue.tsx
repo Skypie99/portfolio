@@ -42,6 +42,21 @@ export function IntroScrollCue() {
     const el = ref.current;
     if (!content || !el) return;
 
+    // U2 (A-02) — retire early for MOTION USERS ONLY. The cue's lowest pixel
+    // sits ~20px above the viewport bottom, so arriving content covers it
+    // within 1–2 frames at flick velocity: no honest fade can finish after the
+    // 0px edge-touch. A +100% bottom margin fires the fade one viewport ahead
+    // (≥230ms of travel at ≤3.5k px/s ≥ the 180ms fast-register fade). MUST
+    // stay RM-gated: the RM static frame mounts `.cinematic-content-reveal` at
+    // the 0px edge-touch, where ANY positive bottom margin reports ratio > 0
+    // at mount and would retire the cue before the RM visitor ever sees it —
+    // RM keeps the byte-original C-20 geometry, where the C-21 ratio-0 gate
+    // still bites. matchMedia guarded for jsdom / old webviews (absent →
+    // conservative original geometry), the lib/motion.ts house pattern.
+    const motionOK =
+      typeof window.matchMedia === 'function' &&
+      window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
+
     const io = new IntersectionObserver(
       ([entry]) => {
         el.toggleAttribute(
@@ -49,7 +64,12 @@ export function IntroScrollCue() {
           entry.isIntersecting && entry.intersectionRatio > 0,
         );
       },
-      { threshold: 0, rootMargin: '100000px 0px 0px 0px' },
+      {
+        threshold: 0,
+        rootMargin: motionOK
+          ? '100000px 0px 100% 0px' // C-20 top-open + the U2 early-fire margin
+          : '100000px 0px 0px 0px', // byte-original geometry (RM / no-matchMedia)
+      },
     );
     io.observe(content);
 
