@@ -138,14 +138,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             hydration never reports alive via RevealAlive; (3) fast-path: a
             dropped chunk fires a resource error on its <script> → rescue at once.
             Imperative classList only (matches next-themes; survives hydration
-            under the existing suppressHydrationWarning on <html>). */}
+            under the existing suppressHydrationWarning on <html>).
+            U4 (A-04): a document load WITH a location.hash also sets
+            `reveal-seat` — the pre-paint half of seated fragment arrivals
+            (globals.css forces every .reveal seated under it; Reveal.tsx adopts
+            in-viewport reveals at hydration and releases the class so
+            below-viewport reveals re-arm unseen). The branch sits at the END of
+            the IIFE so the failure floor above it is armed first, byte-
+            unchanged, no matter what. */}
         <script
           dangerouslySetInnerHTML={{
             __html:
               "(function(){var d=document.documentElement;d.classList.add('js');" +
               "function r(){if(window.__revealFailsafe!==undefined){clearTimeout(window.__revealFailsafe);window.__revealFailsafe=undefined;}d.classList.add('reveal-failsafe');}" +
               "window.__revealFailsafe=setTimeout(r,8000);" +
-              "window.addEventListener('error',function(e){var t=e&&e.target;if(t&&t.tagName==='SCRIPT')r();},true);})();",
+              "window.addEventListener('error',function(e){var t=e&&e.target;if(t&&t.tagName==='SCRIPT')r();},true);" +
+              "if(location.hash)d.classList.add('reveal-seat');})();",
           }}
         />
         <script
