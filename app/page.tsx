@@ -258,8 +258,10 @@ export default function HomePage() {
           }}
         />
         <div className="max-w-content mx-auto">
-          {/* Dani wave5: terracotta left-border accent on section headers */}
-          <Reveal variant="scene" className="mb-24 pl-4 border-l-2 border-terracotta">
+          {/* Dani wave5: terracotta left-border accent on section headers.
+              U3 (A-03): corridor air tightened one spacing step (mb-24 → mb-20)
+              — the walk read the heading→gallery stretch as dead air. */}
+          <Reveal variant="scene" className="mb-20 pl-4 border-l-2 border-terracotta">
             <p className="flex items-center gap-2 font-mono text-label tracking-label uppercase text-accent-ink mb-4">
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               The Work

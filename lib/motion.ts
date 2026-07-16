@@ -27,9 +27,18 @@ export const MOTION = {
 } as const;
 
 /** Returns `[ref, inView]`; `inView` flips true once when the element first
- *  enters the viewport, then the observer disconnects (one-shot). */
+ *  enters the viewport, then the observer disconnects (one-shot).
+ *
+ *  U3 (A-03) — the default arming line sits ~a fifth of a viewport BELOW the
+ *  fold (positive bottom rootMargin, viewport-proportional), so reveals are
+ *  painted when the eyes land at flick speed instead of fading under the
+ *  reader. Consumers: Reveal (cell/section choreography) and CountUpStat
+ *  (which inherits the pre-arm by DECISIONS #2 option (i): at flick the count
+ *  is armed just ahead of entry and still performs; at stroll it settles to a
+ *  number at rest — the RM/no-JS rest state). Keep in sync by eye with
+ *  Reveal's hash-arrival seating band (components/Reveal.tsx, U4). */
 export function useInViewOnce<T extends Element = HTMLElement>(
-  rootMargin = '0px 0px -80px 0px',
+  rootMargin = '0px 0px 20% 0px',
 ) {
   const ref = useRef<T>(null);
   const [inView, setInView] = useState(false);
