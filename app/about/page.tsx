@@ -81,7 +81,7 @@ export default function AboutPage() {
                   height at every width → CLS 0). */}
               Accessibility is not an <span className="whitespace-nowrap">add-on.</span> It is where you begin.
             </blockquote>
-            <span aria-hidden="true" className="rule-ember block h-px w-32 mt-6" />
+            <span aria-hidden="true" className="rule-ember block h-px w-32" />
 
             <p className="font-sans font-light text-prose text-charcoal leading-[1.65] text-pretty">
               I work from {profile.location}. Mostly on AI-assisted tooling,
