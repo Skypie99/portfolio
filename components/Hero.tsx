@@ -54,7 +54,17 @@ export function Hero({
         'world-surface',
       )}
       style={{
-        paddingTop: 'clamp(96px, 14vw, 200px)',
+        // U1 (A-01) — the landing pad. Top air sized to receive the film's exit
+        // momentum: a natural flick past the pin release settles ~0.9–1.5
+        // viewports beyond the seam at 375, so the nameplate sits deep enough
+        // that the settled frame composes the person (avatar + name + role +
+        // headline start) instead of depositing the visitor mid-headline.
+        // Decreasing-with-width curve: ~500px at 375 (where release physics
+        // live — the walk-observed settle band is seam+900…1330px), easing to
+        // the original 200px by 1440 (desktop wheel scrolling never overshot).
+        // Pure spacing — gravity, never capture or snap; the hero-wash bloom
+        // keeps the receiving air lit.
+        paddingTop: 'clamp(200px, calc(605px - 28vw), 500px)',
         paddingBottom: 'clamp(64px, 10vw, 128px)',
       }}
     >
