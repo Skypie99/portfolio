@@ -299,10 +299,10 @@ export default function AboutPage() {
             <div className="mt-24">
               <Link
                 href="/work/"
-                className="inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+                className="group inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
               >
                 All the work
-                <span aria-hidden="true">{'→'}</span>
+                <span aria-hidden="true" className="inline-block transition-transform duration-base ease-gh-glide group-hover:translate-x-1 group-focus-visible:translate-x-1">{'→'}</span>
               </Link>
             </div>
           </div>
@@ -322,9 +322,9 @@ export default function AboutPage() {
 
           <Link
             href="/"
-            className="mt-12 px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+            className="group mt-12 px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
           >
-            <span aria-hidden="true">{'←'}</span>
+            <span aria-hidden="true" className="inline-block transition-transform duration-base ease-gh-glide group-hover:-translate-x-1 group-focus-visible:-translate-x-1">{'←'}</span>
             Back to home
           </Link>
         </Reveal>
