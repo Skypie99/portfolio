@@ -891,6 +891,32 @@ html.reveal-failsafe .reveal-carve {
   filter: none !important;
 }
 
+/* U4 (A-04) — fragment arrivals open seated. `reveal-seat` is set pre-paint by
+   the layout.tsx head script when the document loads WITH a location.hash: the
+   room paints assembled for the hydration window, so the FT-9 :target mark
+   lights over a seated audience instead of a blank stage. Same floor grammar
+   as reveal-failsafe above; `filter` matters — the :target headings are
+   carve-variant Reveals (MarkdownProse) and would otherwise paint blurred.
+   Reveal.tsx adopts in-viewport reveals at hydration (skip idiom) and then
+   releases this class so below-viewport reveals re-arm for the normal
+   choreography. */
+html.reveal-seat .reveal,
+html.reveal-seat .reveal-scene,
+html.reveal-seat .reveal-depth,
+html.reveal-seat .reveal-carve {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  transition: none !important;
+}
+/* Release companion — present only for the release recalc (+1 frame): with it,
+   still-armed reveals SNAP back to their hidden armed state instead of running
+   the 0.55s opacity transition backwards off-screen (a mid-hydration flick
+   could catch that decay). Never matches seated reveals (:not(.reveal-shown)). */
+html.reveal-rearm .reveal:not(.reveal-shown) {
+  transition: none !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   /* RM rests visible — scoped to beat html.js (0,2,1) too, else RM-with-JS
      visitors would sit hidden until scroll. */

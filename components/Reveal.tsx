@@ -1,9 +1,44 @@
 'use client';
 
+import { useEffect, useLayoutEffect, useState } from 'react';
 import type { ElementType, ReactNode } from 'react';
 
 import { cn } from '@/lib/cn';
 import { useInViewOnce } from '@/lib/motion';
+
+/* U4 (A-04) — seated fragment arrivals. The layout.tsx head script sets
+   `reveal-seat` on <html> pre-paint when the document loads WITH a
+   location.hash; globals.css seats every .reveal under it for the hydration
+   window. At hydration each Reveal adopts as seated if it sits at/above the
+   arming band, then the class is released (rAF-aligned, idempotent) so
+   below-viewport reveals re-arm UNSEEN — `reveal-rearm` suppresses the 0.55s
+   opacity decay for exactly that recalc. Keyed on the CLASS, never live
+   location.hash, so TOC clicks / client navs / bfcache never enter this path. */
+const SEAT = 'reveal-seat';
+const REARM = 'reveal-rearm';
+
+/* SSR renders Reveal, so the layout effect is isomorphic-guarded (the server
+   never runs it; the guard silences React's SSR useLayoutEffect warning). */
+const useIsoLayoutEffect = typeof window === 'undefined' ? useEffect : useLayoutEffect;
+
+/** One-shot release of the pre-paint seat. Every Reveal that saw the class
+ *  schedules it; the first rAF to run does the work, the rest no-op. rAF-
+ *  aligned so {add rearm, remove seat} land in ONE style recalc; rearm drops
+ *  two frames later, after that recalc has been consumed. setTimeout floor
+ *  for jsdom / ancient webviews. */
+function releaseSeat() {
+  const raf: (cb: () => void) => void =
+    typeof requestAnimationFrame === 'function'
+      ? (cb) => void requestAnimationFrame(() => cb())
+      : (cb) => void setTimeout(cb, 0);
+  raf(() => {
+    const d = document.documentElement;
+    if (!d.classList.contains(SEAT)) return; // already released
+    d.classList.add(REARM);
+    d.classList.remove(SEAT);
+    raf(() => raf(() => d.classList.remove(REARM)));
+  });
+}
 
 type RevealProps = {
   children: ReactNode;
@@ -59,9 +94,30 @@ export function Reveal({
 }: RevealProps) {
   const [ref, inView] = useInViewOnce<HTMLElement>();
   const Comp = Tag as ElementType;
-  // `skip` shows the final state at once; killing the transition makes it
-  // instant (no re-fade) rather than a one-frame jump into the 900ms curtain.
-  const shown = skip || inView;
+  const [seated, setSeated] = useState(false);
+
+  // U4 — fragment-arrival adoption. Runs pre-paint (layout effect): a Reveal
+  // at/above the arming band adopts the seated state via the skip idiom, so
+  // the seated re-render commits before the release rAF ever paints. The 1.2
+  // band mirrors useInViewOnce's '0px 0px 20% 0px' pre-arm (lib/motion.ts —
+  // keep in sync by eye): anything inside it would be IO-shown at hydration
+  // anyway; seating it instead removes the one race a mid-hydration flick
+  // could catch. `releaseSeat` is unconditional — pages whose reveals all sit
+  // below the viewport must still release and re-arm.
+  useIsoLayoutEffect(() => {
+    if (!document.documentElement.classList.contains(SEAT)) return;
+    const el = ref.current;
+    if (el && el.getBoundingClientRect().top < window.innerHeight * 1.2) {
+      setSeated(true);
+    }
+    releaseSeat();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // `skip` (and a U4 seated adoption) shows the final state at once; killing
+  // the transition makes it instant (no re-fade) rather than a one-frame jump
+  // into the 900ms curtain.
+  const shown = skip || seated || inView;
 
   return (
     <Comp
@@ -77,7 +133,7 @@ export function Reveal({
       )}
       style={{
         ...(index ? { transitionDelay: `${index * staggerStep}ms` } : {}),
-        ...(skip ? { transition: 'none' } : {}),
+        ...(skip || seated ? { transition: 'none' } : {}),
       }}
     >
       {children}
