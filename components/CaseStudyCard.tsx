@@ -7,6 +7,7 @@ import { CardProductReveal, type ProductRevealMedia } from '@/components/Product
 import { cn } from '@/lib/cn';
 import { useSpotlight } from '@/lib/motion';
 import type { Deliverable } from '@/lib/schema';
+import { frameForSlug } from '@/lib/signature';
 
 type CaseStudyCardProps = {
   title: string;
@@ -21,6 +22,13 @@ type CaseStudyCardProps = {
   links?: Deliverable['links'];
   /** Editorial index for the ghosted numeral. Default 0. */
   index?: number;
+  /** The gallery wall (R4/BP9 · P03): every work full-width — the md-band
+   *  anatomy generalized to lg+. Well ratio picked per frame (the shipped
+   *  anatomies): portrait phone frames take 2/5, window/plate take 1/2 —
+   *  portrait media never force-cropped. */
+  wide?: boolean;
+  /** Which side the media well hangs on at lg (the wall's alternation). */
+  mediaSide?: 'left' | 'right';
   className?: string;
 };
 
@@ -34,11 +42,14 @@ type CaseStudyCardProps = {
  * → --mx/--my). The card is no longer one whole link — the title and each action
  * are their own focus targets (no nested anchors).
  */
-export function CaseStudyCard({ title, category, description, href, media, links, index = 0, className }: CaseStudyCardProps) {
+export function CaseStudyCard({ title, category, description, href, media, links, index = 0, wide = false, mediaSide = 'left', className }: CaseStudyCardProps) {
   const numeral = String(index + 1).padStart(2, '0');
   const githubLink = links?.find((l) => l.type === 'github');
   const demoLink = links?.find((l) => l.type === 'demo');
   const spotRef = useSpotlight<HTMLDivElement>();
+  // The wall's well ratio per frame (R4/BP9): portrait phone frames 2/5,
+  // window/plate 1/2 — the two shipped anatomies, picked per work.
+  const wellClass = frameForSlug(category) === 'phone' ? 'lg:w-2/5' : 'lg:w-1/2';
 
   return (
     <div
@@ -50,6 +61,10 @@ export function CaseStudyCard({ title, category, description, href, media, links
         // horizontal media-thumb row — the ProjectCard wide grammar applied at
         // tablet — instead of an inherited ~560px phone stack. lg untouched.
         'md:max-lg:min-h-0 md:max-lg:flex-row',
+        // The gallery wall (R4/BP9): the same horizontal grammar at lg+,
+        // alternation via flex-row-reverse on right-hung rows.
+        wide && 'lg:min-h-0 lg:flex-row',
+        wide && mediaSide === 'right' && 'lg:flex-row-reverse',
         className,
       )}
     >
@@ -62,7 +77,11 @@ export function CaseStudyCard({ title, category, description, href, media, links
         slug={category}
         title={title}
         media={media ?? { alt: title }}
-        className="shrink-0 border-b border-[rgb(var(--rgb-ink)/0.08)] md:max-lg:w-2/5 md:max-lg:self-stretch md:max-lg:aspect-auto md:max-lg:border-b-0 md:max-lg:border-r"
+        className={cn(
+          'shrink-0 border-b border-[rgb(var(--rgb-ink)/0.08)] md:max-lg:w-2/5 md:max-lg:self-stretch md:max-lg:aspect-auto md:max-lg:border-b-0 md:max-lg:border-r',
+          wide && cn('lg:self-stretch lg:aspect-auto lg:border-b-0', wellClass),
+          wide && (mediaSide === 'right' ? 'lg:border-l' : 'lg:border-r'),
+        )}
       />
 
       <div className="relative z-10 flex flex-1 flex-col p-7 md:max-lg:p-8 lg:p-12">
