@@ -64,9 +64,9 @@ technical defects) and the arbiter confirmed: R3 DECISIONS #1 locks `components/
 | D6 | **Temporal film grain** | 2–3 pre-rendered grain seeds flipped at 6–8fps — living film stock at the approved 0.035 opacity. | Static grain is a documented deliberate finish |
 | D7 | **Witnessed seam entrance** (post device session) | Re-key the content arrival to real geometry on the shared clock so the page genuinely surfaces out of the film (re-authors what this pass deleted, honestly this time). | U1 "gravity, never magnetism" mandate |
 
-Recommendation: **D1 + D2 yes** (they are smoothness fixes inside the film, invisible as
-imagery changes); D3 mild yes; D4 only with before/after strips on device; D5/D6 pure
-taste; D7 after the R3-D5 device verdict.
+**OUTCOME (Sky, in-chat, 2026-07-19):** D1 ✅ + D2 ✅ + D3 ✅ + D5 ✅ ratified and shipped
+in the follow-up train `polish/film-ratified-2026-07-19`; D6 ❌ declined (static grain
+stands); D4 + D7 remain open, gated on the device session.
 
 ## S5 prep-sheet (device-session dial candidates, commit nothing)
 

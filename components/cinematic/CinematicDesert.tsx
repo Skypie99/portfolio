@@ -40,7 +40,9 @@ import { useReducedMotion } from './useReducedMotion';
  * `scrub: 1.0` gives a weighted catch-up (the expensive glide). Depth rides
  * ease 'none' (r9): LINEAR value-vs-progress, so the dolly tracks the scroll
  * 1:1 with even velocity — the glide feel comes entirely from the scrub.
- * Crossfades/exposure ride sine.inOut / power2.out so nothing pops.
+ * Crossfades ride sine.inOut so nothing pops; the exposure ramp is one
+ * piecewise-linear keyframes tween over its original knots (D1, Sky-ratified
+ * 2026-07-19) so the light climbs continuously, never stalling at a knot.
  *
  * SSR-safety: nothing touches `window` at module scope. GSAP wiring runs inside
  * useGSAP (client effect). `narrow` starts false so server/first client render
@@ -186,6 +188,10 @@ export function CinematicDesert() {
         }
       };
 
+      // D5 breathe hook — assigned after the timeline exists (it needs the
+      // ScrollTrigger); called from onUpdate so any scrub movement wakes it.
+      let breatheWake: () => void = () => {};
+
       const tl = gsap.timeline({
         defaults: { ease: 'none' },
         scrollTrigger: {
@@ -199,8 +205,14 @@ export function CinematicDesert() {
           invalidateOnRefresh: true,
           // cull on every progress tick (cheap: a handful of class/style writes,
           // only when a boundary is crossed) + once on mount/refresh.
-          onUpdate: (self) => applyCull(self.progress),
-          onRefresh: (self) => applyCull(self.progress),
+          onUpdate: (self) => {
+            applyCull(self.progress);
+            breatheWake();
+          },
+          onRefresh: (self) => {
+            applyCull(self.progress);
+            breatheWake();
+          },
         },
       });
       // initial state (p≈0): only DAWN composites.
@@ -377,25 +389,34 @@ export function CinematicDesert() {
       // arrival cliff earns the richest, most golden light.
       if (exposureRef.current) {
         const ex = exposureRef.current;
-        // Knot by knot (every segment sine.inOut so slopes meet smoothly — no kink,
-        // no banding). Warm-morning open (0.30) → steady lift across the valley push →
-        // through the dissolve → late-gold acceleration after p≈0.74 → full golden at
-        // p1. Monotonic, gentle, even.
-        tl.fromTo(
+        // D1 (Sky-ratified 2026-07-19, film-lock opened in-chat): ONE
+        // piecewise-linear keyframes tween carrying the SAME knot values at the
+        // SAME positions as the previous seven-tween chain. The chained
+        // per-segment sine.inOut eases had ZERO slope at every knot, so the
+        // light stalled and re-accelerated seven times across the scroll; this
+        // delivers the continuous, monotonic warm-morning → golden climb the
+        // original ":no-kink" comment intended. Late-gold acceleration is
+        // encoded by the knot SPACING itself (0.60@p.70 → 0.78@p.84).
+        tl.to(
           ex,
-          { '--cdesert-expose': 0.3 },
-          { '--cdesert-expose': 0.36, duration: 0.18, ease: 'sine.inOut' }, // warm-morning open, soft lift
+          {
+            keyframes: {
+              '0%': { '--cdesert-expose': 0.3 },
+              '18%': { '--cdesert-expose': 0.36 },
+              '36%': { '--cdesert-expose': 0.44 },
+              '54%': { '--cdesert-expose': 0.54 },
+              '70%': { '--cdesert-expose': 0.6 },
+              '84%': { '--cdesert-expose': 0.78 },
+              '86%': { '--cdesert-expose': 0.78 },
+              '98%': { '--cdesert-expose': 0.92 },
+              '100%': { '--cdesert-expose': 1 },
+              easeEach: 'none',
+            },
+            duration: 1,
+            ease: 'none',
+          },
           0,
-        )
-          .to(ex, { '--cdesert-expose': 0.44, duration: 0.18, ease: 'sine.inOut' }, 0.18) // morning warms over the valley
-          .to(ex, { '--cdesert-expose': 0.54, duration: 0.18, ease: 'sine.inOut' }, 0.36) // through the dissolve
-          .to(ex, { '--cdesert-expose': 0.6, duration: 0.16, ease: 'sine.inOut' }, 0.54) // cliff resolving, still climbing (0.54–0.70)
-          // Gold ACCELERATES from p0.70 (a gentle 'sine.in' catch) so the cliff lands
-          // in the richest light just as it finishes arriving. One clean knot
-          // (0.70–0.84); the old dust-clear coupling is moot now the haze is removed.
-          .to(ex, { '--cdesert-expose': 0.78, duration: 0.14, ease: 'sine.in' }, 0.7) // gold accel as the cliff lands
-          .to(ex, { '--cdesert-expose': 0.92, duration: 0.12, ease: 'sine.inOut' }, 0.86)
-          .to(ex, { '--cdesert-expose': 1, duration: 0.02, ease: 'sine.out' }, 0.98); // full golden-hour at p1
+        );
       }
 
       // Atmospheric haze REMOVED 2026-06-02 (Sky: "remove the dust, it does not make
@@ -418,21 +439,62 @@ export function CinematicDesert() {
           { opacity: 1, yPercent: 0, filter: 'blur(0px)', duration: 0.11, ease: 'power2.out' },
           0.86,
         );
-        // REFINE 2026-06-02: the wordmark TIGHTENS its tracking as it lands (0.12em →
-        // its resting 0.06em) so it CRYSTALLISES into place rather than just fading up
-        // — a classic expensive-title move (the original design intent). Targets the
-        // inner mark (where letter-spacing lives); same position/ease as the carve so
-        // the two resolve as ONE gesture.
+        // REFINE 2026-06-02: the wordmark TIGHTENS as it lands so it CRYSTALLISES
+        // into place rather than just fading up — a classic expensive-title move.
+        // D2 (Sky-ratified 2026-07-19): the tighten is scaleX 1.05→1
+        // (compositor-only) instead of letterSpacing 0.12em→0.06em, which re-ran
+        // text LAYOUT on every scrub tick through the carve — the scene's only
+        // layout-invalidating tween. Under the concurrent blur(10→0) the two
+        // reads are visually indistinguishable (pixel-diff ≤0.12%); same
+        // position/ease as the carve so the two resolve as ONE gesture.
         const mark = titleRef.current.querySelector('.cdesert-title-mark');
         if (mark) {
           tl.fromTo(
             mark,
-            { letterSpacing: '0.12em' },
-            { letterSpacing: '0.06em', duration: 0.11, ease: 'power2.out' },
+            { scaleX: 1.05, transformOrigin: '50% 50%' },
+            { scaleX: 1, duration: 0.11, ease: 'power2.out' },
             0.86,
           );
         }
         tl.to(titleRef.current, { opacity: 1, duration: 0.03 }, 0.97);
+      }
+
+      // ── D5: the living frame (Sky-ratified 2026-07-19) ───────────────────
+      // After ~1.2s of scroll rest INSIDE the pinned film (the scrub settling
+      // counts as movement, so in practice ~2s after the last input), the
+      // scene groups breathe: an additive, SCALE-UP-ONLY 0.5% yoyo zoom.
+      // Group-level, so it composes multiplicatively over the plate tweens and
+      // can never double-write them; scale-up-only, so a plate edge can never
+      // be revealed. The first tick of scrub movement pauses the breathe and
+      // eases the groups home in 220ms (no other writer touches group scale,
+      // so nothing fights). Lives only on the animated path — reduced motion
+      // renders StaticDesertFrame and never breathes. This deliberately
+      // reverses the earlier all-at-rest-stillness removal for the FRAME ONLY
+      // (no motes/bloom/haze return) — ratified by Sky in-chat 2026-07-19.
+      const groups = sceneRefs.current.filter((g): g is HTMLDivElement => g !== null);
+      if (groups.length) {
+        const breathe = gsap
+          .timeline({ paused: true, repeat: -1, yoyo: true })
+          .to(groups, { scale: 1.005, duration: 3.6, ease: 'sine.inOut' });
+        let breathing = false;
+        let idleT: ReturnType<typeof setTimeout> | undefined;
+        breatheWake = () => {
+          if (breathing) {
+            breathing = false;
+            breathe.pause();
+            gsap.to(groups, { scale: 1, duration: 0.22, ease: 'sine.out' });
+          }
+          clearTimeout(idleT);
+          idleT = setTimeout(() => {
+            const st = tl.scrollTrigger;
+            if (st && st.isActive) {
+              breathing = true;
+              breathe.restart();
+            }
+          }, 1200);
+        };
+        breatheWake(); // arm at the opening frame
+        return () => clearTimeout(idleT);
       }
     },
     { scope, dependencies: [animate] },

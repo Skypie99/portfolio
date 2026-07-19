@@ -306,13 +306,15 @@ code but that no visitor ever witnessed is deleted.
   a scene actually crosses a cull boundary (was every scrub tick).
 - **Physics micro-fixes:** the card caustic lerp is time-based (`k = 1 − exp(−dt/110)` —
   same feel at 60Hz, no more half-length trails on 120Hz ProMotion).
-- **Held for Sky (adversarial verify enforced the locks):** three further refinements were
-  built, verified, then REVERTED out of this pass because they touch ratified protected
-  surfaces (DECISIONS #1 locks `components/cinematic/` incl. the title carve; PROTECT-66
-  sanctions the cue's exit *duration* only): (a) the exposure ramp as one continuous
-  piecewise-linear keyframes tween over the same knots (the seven sine segments have zero
-  slope at every knot — the light stalls seven times per pass); (b) the title tighten as
-  compositor-only `scaleX 1.05→1` (letterSpacing re-runs text layout per scrub tick);
-  (c) the runway mark + intro cue exiting on `--ease-exit` (accel-out). Staged as Sky
-  decisions in the clockwork qa-report. Inside the film this pass ships only zero-output
-  hygiene: the applyCull write-guard + comment truth.
+- **Sky-ratified film refinements (2026-07-19, in-chat — second train):** the adversarial
+  verify first REVERTED these out as lock violations (DECISIONS #1 READ-ONLY film;
+  PROTECT-66 duration-only), then Sky explicitly ratified them from the clockwork decision
+  menu: **D1** exposure ramp as one continuous piecewise-linear keyframes tween over its
+  original knots (the seven sine segments had zero slope at every knot — the light stalled
+  seven times per pass); **D2** title tighten as compositor-only `scaleX 1.05→1`
+  (letterSpacing re-ran text layout per scrub tick); **D3** runway mark + intro cue exit
+  on `--ease-exit` (accel-out; durations untouched); **D5** the living frame — after
+  ~1.2s of scroll rest inside the film the scene groups breathe (additive scale-up-only
+  1.000→1.005 yoyo, 3.6s halves, eased home in 220ms on the next scrub tick; frame only —
+  no motes/bloom/haze return). **Declined: D6** temporal grain (static grain stands).
+  D4 (floor C1 handoff) + D7 (witnessed seam) remain open, device-session-gated.
