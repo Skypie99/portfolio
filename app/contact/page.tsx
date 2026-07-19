@@ -13,7 +13,7 @@ export function generateMetadata(): Metadata {
   const profile = getProfile();
   return {
     title: `Contact — ${profile.name}`,
-    description: 'Write to Sky Halisky — AI developer based in the Okanagan Valley, British Columbia.',
+    description: 'Write to Sky Halisky — AI builder based in the Okanagan Valley, British Columbia.',
   };
 }
 

@@ -11,7 +11,7 @@ import { getDeliverables, getProfile } from '@/lib/content';
 
 export function generateMetadata(): Metadata {
   const profile = getProfile();
-  const description = 'Sky Halisky. AI developer. Okanagan Valley, British Columbia.';
+  const description = 'Sky Halisky. AI builder. Okanagan Valley, British Columbia.';
   return {
     title: `About — ${profile.name}`,
     description,

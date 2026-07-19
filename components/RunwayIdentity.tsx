@@ -21,7 +21,7 @@ import { RunwayIdentityRelease } from './RunwayIdentityRelease';
  */
 export function RunwayIdentity({
   name = 'Sky Halisky',
-  roleLabel = 'AI developer',
+  roleLabel = 'AI Builder',
 }: {
   name?: string;
   roleLabel?: string;
