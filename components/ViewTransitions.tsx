@@ -68,6 +68,12 @@ export function ViewTransitions() {
   // comes first.
   const pendingRef = useRef<{ resolve: () => void; timer: number } | null>(null);
 
+  // Enfilade navigation sequence (R4/BP1 verify fix): a rapid second
+  // navigation SKIPS the first transition, whose finished.finally would
+  // otherwise delete the direction attribute the second navigation just set.
+  // Only the LATEST navigation's owner may clear.
+  const navSeqRef = useRef(0);
+
   const settlePending = useCallback(() => {
     const pending = pendingRef.current;
     if (!pending) return;
@@ -151,10 +157,13 @@ export function ViewTransitions() {
       // Prefix-parent relations only (lib/navDirection); null = plain dissolve.
       // Set ONLY on this VT branch, so it is absent by construction under
       // reduced motion, on '/' arrivals, and on every degraded path.
+      const seq = ++navSeqRef.current;
+      delete document.documentElement.dataset.navDirection; // self-heal any stale attr
       const direction = navDirection(window.location.pathname, url.pathname);
       if (direction) document.documentElement.dataset.navDirection = direction;
       const clearDirection = (): void => {
-        delete document.documentElement.dataset.navDirection;
+        // A superseded navigation's settle must not wipe its successor's attr.
+        if (navSeqRef.current === seq) delete document.documentElement.dataset.navDirection;
       };
 
       try {
@@ -184,11 +193,15 @@ export function ViewTransitions() {
         // uncaught console errors. (The sync `try/catch` only covers throws, not
         // these async rejections.)
         // The direction attribute clears when the transition fully settles —
-        // success OR abort/skip (finally) — so a rapid second navigation
-        // re-derives its own direction from a clean root.
-        if (transition?.finished) {
+        // success OR abort/skip (finally) — and the sequence guard means a
+        // superseded transition's settle never wipes its successor's attr.
+        // Throw-tolerant like the shipped chains: a truthy `finished` without
+        // a callable `.finally` (exotic double) must never throw us into the
+        // catch block, whose router.push would double-navigate.
+        if (typeof transition?.finished?.finally === 'function') {
           transition.finished.finally(clearDirection).catch(noop);
         } else {
+          transition?.finished?.catch?.(noop);
           clearDirection(); // no settle signal to wait on — never strand the attr
         }
         transition?.updateCallbackDone?.catch?.(noop);
