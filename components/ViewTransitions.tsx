@@ -3,6 +3,7 @@
 import { usePathname, useRouter } from 'next/navigation';
 import { useCallback, useEffect, useRef } from 'react';
 
+import { applyDoorAjar, recordDeparture } from '@/lib/doorAjar';
 import { navDirection } from '@/lib/navDirection';
 
 /** Minimal shape of the object `document.startViewTransition()` returns. */
@@ -88,6 +89,10 @@ export function ViewTransitions() {
   // run is a no-op: pendingRef is null.
   useEffect(() => {
     settlePending();
+    // The door ajar (R4/BP2 · P08): on commit, mark the card of the room the
+    // visitor just left — present-until-next-nav (this same effect clears it
+    // on the following commit). First mount is a no-op (no departure recorded).
+    if (pathname != null) applyDoorAjar(pathname);
   }, [pathname, settlePending]);
 
   useEffect(() => {
@@ -128,6 +133,12 @@ export function ViewTransitions() {
 
       // We are taking over this navigation.
       e.preventDefault();
+
+      // The door ajar (R4/BP2 · P08): remember the room being left — in
+      // memory only — when this click returns to a page that shows its card.
+      // Recorded on EVERY taken-over branch (incl. the '/' instant cut and
+      // reduced motion — the mark is presence, not motion).
+      recordDeparture(window.location.pathname, url.pathname);
 
       const reduce =
         typeof window.matchMedia === 'function' &&

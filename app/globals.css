@@ -708,6 +708,32 @@ article h2[id]:target::before {
   }
 }
 
+/* The Door Ajar (R4/BP2 · P08) — FT-9's gutter-bar grammar on the reciprocal
+   moment: returning to a page that shows the card of the room you just left,
+   that card's link holds the same 2px terracotta hairline — FT-9 VERBATIM
+   (2px, flat, opaque, radius 1px, accent token, 0.8em beside the text) —
+   PRESENT-UNTIL-NEXT-NAV: no timer, no fade, no keyframes, so the reduced-
+   motion experience and the motion experience are the same first-class
+   design by construction. In-memory only (the postmark's truth is the
+   fence): the attribute is set on route commit by lib/doorAjar via the
+   shipped interceptor — never persisted, never in server HTML. Decorative
+   wayfinding; the pseudo carries no content and no SR surface. The bar's
+   vertical extent on a card vs FT-9's 0.8em on prose is Sky's remaining
+   eye-value (DECISIONS §P flag). */
+a[data-door-ajar] {
+  position: relative;
+}
+a[data-door-ajar]::before {
+  content: '';
+  position: absolute;
+  left: -1rem; /* the card's own gutter — beside the title, FT-9's placement */
+  top: 0.1em;
+  width: 2px;
+  height: 0.8em;
+  border-radius: 1px;
+  background: rgb(var(--rgb-accent));
+}
+
 /* Discretionary ligatures on the big serif display headings. */
 .serif-display {
   font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1, 'dlig' 1;
