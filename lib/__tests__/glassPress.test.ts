@@ -1,11 +1,13 @@
 /**
  * Glass with mass (R4/BP3 · P12) — the CSS contract.
  * jsdom cannot evaluate media queries, so this locks the SOURCE contract:
- * coarse-pointer gating, both zero-JS ladder rungs as SEPARATE rules,
- * transform confined to no-preference, tokens only (no raw beziers, no
- * magic durations), and the zero-JS cell (no touchstart rung shipped).
+ * coarse-pointer gating, every ladder rung as a STANDALONE rule (selector
+ * immediately followed by `{` — pins separateness in any order, the BP3
+ * skeptic's stronger form), the DARK rungs (the C-18 specificity trap),
+ * the LVHA tie-break (doubled class), transform confined to no-preference,
+ * tokens only, and the zero-JS cell across the whole runtime source.
  */
-import { readFileSync } from 'node:fs';
+import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
 import { describe, expect, it } from 'vitest';
@@ -27,20 +29,41 @@ function mediaBlock(prelude: string): string {
   return css.slice(bodyStart, i);
 }
 
+function walk(dir: string, out: string[] = []): string[] {
+  for (const name of readdirSync(dir)) {
+    if (name === '__tests__' || name === 'node_modules') continue;
+    const p = join(dir, name);
+    if (statSync(p).isDirectory()) walk(p, out);
+    else if (/\.(ts|tsx)$/.test(name)) out.push(p);
+  }
+  return out;
+}
+
 describe('glass press (coarse pointers) — source contract', () => {
   const shadowBlock = mediaBlock('@media (pointer: coarse) {');
   const motionBlock = mediaBlock(
     '@media (pointer: coarse) and (prefers-reduced-motion: no-preference) {',
   );
 
-  it('ships BOTH zero-JS ladder rungs as SEPARATE rules in both blocks', () => {
-    for (const block of [shadowBlock, motionBlock]) {
-      expect(block).toContain('.glass-card:active');
-      expect(block).toContain('.glass-card:has(:active)');
-      // Separate rules — never one comma list an engine without :has would drop.
-      expect(block).not.toMatch(/\.glass-card:active\s*,/);
-      expect(block).not.toMatch(/,\s*\.glass-card:has\(:active\)/);
-    }
+  it('ships every ladder rung as a STANDALONE rule (selector immediately opens its own block)', () => {
+    // Light rungs carry the LVHA tie-break (doubled class beats the later
+    // :focus-within at 0,2,0); dark rungs carry html.dark (beats the dark
+    // rest stack at 0,2,1). A comma-combined list in ANY order would fail
+    // these prelude-shape assertions.
+    expect(shadowBlock).toMatch(/\.glass-card\.glass-card:active\s*\{/);
+    expect(shadowBlock).toMatch(/\.glass-card\.glass-card:has\(:active\)\s*\{/);
+    expect(shadowBlock).toMatch(/html\.dark \.glass-card:active\s*\{/);
+    expect(shadowBlock).toMatch(/html\.dark \.glass-card:has\(:active\)\s*\{/);
+    expect(motionBlock).toMatch(/\.glass-card\.glass-card:active\s*\{/);
+    expect(motionBlock).toMatch(/\.glass-card\.glass-card:has\(:active\)\s*\{/);
+    expect(shadowBlock).not.toMatch(/:active\s*,/);
+    expect(motionBlock).not.toMatch(/:active\s*,/);
+  });
+
+  it('gives DARK its own shadow answer (the C-18 trap: html.dark rest stack out-ranks bare rungs)', () => {
+    const darkRung = shadowBlock.slice(shadowBlock.indexOf('html.dark .glass-card:active'));
+    expect(darkRung).toContain('rgb(255 240 214 / 0.1)'); // the dark rest insets, verbatim
+    expect(darkRung).toContain('rgb(0 0 0 / 0.55)'); // tightened dark outers
   });
 
   it('confines the press TRANSFORM to the no-preference block (RM = shadow-only)', () => {
@@ -56,17 +79,16 @@ describe('glass press (coarse pointers) — source contract', () => {
     expect(motionBlock).toContain('var(--dur-base)');
     expect(motionBlock).toContain('calc(var(--dur-fast) / 2)');
     expect(motionBlock).toContain('var(--ease-gh-glide)');
-    // No bare millisecond literals in the motion block (tokens/calc only).
     expect(motionBlock).not.toMatch(/[\s:]\d+ms/);
   });
 
-  it('keeps the pitch\'s 0-JS cell true — no touchstart rung anywhere in the runtime source', () => {
-    const interceptor = readFileSync(
-      join(process.cwd(), 'components', 'ViewTransitions.tsx'),
-      'utf8',
-    );
-    const doorAjar = readFileSync(join(process.cwd(), 'lib', 'doorAjar.ts'), 'utf8');
-    expect(interceptor).not.toContain('touchstart');
-    expect(doorAjar).not.toContain('touchstart');
+  it('keeps the pitch\'s 0-JS cell true — no touchstart anywhere in the runtime source', () => {
+    const files = [
+      ...walk(join(process.cwd(), 'components')),
+      ...walk(join(process.cwd(), 'lib')),
+      ...walk(join(process.cwd(), 'app')),
+    ];
+    const offenders = files.filter((f) => readFileSync(f, 'utf8').includes('touchstart'));
+    expect(offenders).toEqual([]);
   });
 });
