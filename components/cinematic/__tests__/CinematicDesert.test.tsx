@@ -65,4 +65,21 @@ describe('CinematicDesert (reduced motion)', () => {
     // The resolved wordmark is present in the static frame.
     expect(container.querySelector('.cdesert-title-mark')?.textContent).toBe('SkyPi Studio');
   });
+
+  it('static frame carries the gilded-ink data-text and the landed rim-glow (art pass)', () => {
+    mockMatchMedia(true);
+    const { container } = render(<CinematicDesert />);
+
+    // gilded ink: the ::after overlay reads its glyphs from data-text — if the
+    // attribute drifts from the visible text, the overlay ghosts.
+    const mark = container.querySelector('.cdesert-title-mark');
+    expect(mark?.getAttribute('data-text')).toBe(mark?.textContent);
+
+    // landed rim-glow: the static destination shot keeps the calm 0.5 rest —
+    // the class pair must both be present (opacity comes from CSS).
+    const glow = container.querySelector('.cdesert-cliff-glow');
+    expect(glow).not.toBeNull();
+    expect(glow?.classList.contains('cdesert-cliff-glow--landed')).toBe(true);
+  });
 });
+

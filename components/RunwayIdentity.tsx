@@ -34,6 +34,8 @@ export function RunwayIdentity({
             {/* the favicon's terracotta sun, cresting two clay horizon lines */}
             <svg width="16" height="16" viewBox="0 0 32 32" fill="none">
               <circle cx="16" cy="14.5" r="6.25" fill="#B35F40" />
+              {/* minted limb line (art pass) — a whisper of gold on the disc's edge */}
+              <circle cx="16" cy="14.5" r="6.25" fill="none" stroke="#C2A878" strokeOpacity="0.55" strokeWidth="0.75" />
               <path
                 d="M5.5 22.25H26.5"
                 stroke="#A35636"

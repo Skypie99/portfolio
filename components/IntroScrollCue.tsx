@@ -80,7 +80,20 @@ export function IntroScrollCue() {
     <div ref={ref} aria-hidden="true" className="intro-scroll-cue">
       <span className="intro-scroll-cue-glyph inline-flex flex-col items-center gap-1.5 font-mono text-meta tracking-label uppercase">
         <span>Scroll</span>
-        <span className="text-[1rem] leading-none">{'↓'}</span>
+        {/* drawn chevron (art pass) — optical, not typographic; same 1rem line
+            box as the font glyph it replaces → zero layout shift */}
+        <span className="text-[1rem] leading-none">
+          <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+            <path
+              d="M2.5 4.5 L6 8 L9.5 4.5"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </span>
       </span>
     </div>
   );

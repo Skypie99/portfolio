@@ -38,6 +38,11 @@ export function FilmGrain() {
       {/* 2 — vignette */}
       <div className="cdesert-vignette" />
 
+      {/* 2b — scroll-driven push-in (art pass): deepens as the gold lands.
+          Driven by CinematicDesert (opacity 0→1 over p[0.70,1.0]); rests fully
+          drawn-in on the static frame via the .cdesert-static-stage scope rule. */}
+      <div className="cdesert-vignette-arc" />
+
       {/* 3 — warm color-grade tint (over the vignette) */}
       <div className="cdesert-tint" />
     </div>
