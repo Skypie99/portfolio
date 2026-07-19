@@ -295,7 +295,15 @@ const FLOOR_SCENE: Scene = {
       yTo: 6, // Δy 4 === mid-mid's Δy → constant +2 yPercent foreground offset
       // 2nd-phase drift through the arrival (p0.62→1.0): continue WITH the cliff so the
       // foreground never freezes while the wall finishes its dolly. Tuned by eye.
-      phase2: { toScale: 1.6, toY: 8, start: 0.62, end: 1.0 },
+      // D4 (Sky-ratified 2026-07-19): scale rides power2.out — entry slope
+      // 3 × (0.1/0.38) = 0.7895 vs phase1's linear exit 0.5/0.62 = 0.8065
+      // (−2.1%, near-C1), erasing the 3.06× instant growth-rate drop the linear
+      // continuation had at p0.62; decays to a settle under the title carve,
+      // endpoints byte-identical (1.6 @ p1). yPercent stays linear — its 1.23×
+      // step is sub-threshold and every eased candidate overshoots the entry
+      // slope (sine.out +28%). NOTE: GSAP power2.out IS the cubic (power1=quad,
+      // power3=quart) — power3 would over-speed the entry +30%.
+      phase2: { toScale: 1.6, toY: 8, start: 0.62, end: 1.0, scaleEase: 'power2.out' },
     },
   ],
 } as const;
