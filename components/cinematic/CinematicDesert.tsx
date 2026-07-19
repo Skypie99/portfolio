@@ -281,21 +281,26 @@ export function CinematicDesert() {
           // FLOOR under the still-rising arrival cliff, so the foreground never
           // freezes (~85% of the cliff's dolly happens after the floor's 0.62 settle).
           if (plate.phase2) {
-            const { toScale, toY, start, end } = plate.phase2;
-            // fromTo (explicit FROM = phase-1's end) + immediateRender:false so this
-            // 2nd tween does NOT prime/leak onto the property before its window — it
-            // sits inert until the playhead reaches `start`, then continues seamlessly
+            const { toScale, toY, start, end, scaleEase, yEase } = plate.phase2;
+            const dur = Math.max(0.0001, end - start);
+            // fromTo (explicit FROM = phase-1's end) + immediateRender:false so these
+            // 2nd tweens do NOT prime/leak onto the property before their window — they
+            // sit inert until the playhead reaches `start`, then continue seamlessly
             // from the plane's phase-1 end value (no offset, no jump at the handoff).
+            // D4 (Sky-ratified 2026-07-19): split into per-property twin tweens so the
+            // manifest can ease scale and yPercent independently — GSAP has no
+            // per-property ease. Defaults 'none' = byte-identical to the old single
+            // linear tween. Disjoint properties + same window → no overwrite conflict.
             tl.fromTo(
               el,
-              { scale: plate.scaleTo, yPercent: plate.yTo },
-              {
-                scale: toScale,
-                yPercent: toY,
-                duration: Math.max(0.0001, end - start),
-                ease: 'none', // r9: linear — even velocity, matches phase1 (the floor's continuation)
-                immediateRender: false,
-              },
+              { scale: plate.scaleTo },
+              { scale: toScale, duration: dur, ease: scaleEase ?? 'none', immediateRender: false },
+              start,
+            );
+            tl.fromTo(
+              el,
+              { yPercent: plate.yTo },
+              { yPercent: toY, duration: dur, ease: yEase ?? 'none', immediateRender: false },
               start,
             );
           }
