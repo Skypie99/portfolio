@@ -6,6 +6,7 @@ import { ContentReveal } from '@/components/ContentReveal';
 import { CountUpStat } from '@/components/CountUpStat';
 import { Hero } from '@/components/Hero';
 import { IntroScrollCue } from '@/components/IntroScrollCue';
+import { LitWindows } from '@/components/LitWindows';
 import { NumberedStep } from '@/components/NumberedStep';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { ProjectCard } from '@/components/ProjectCard';
@@ -552,6 +553,14 @@ export default function HomePage() {
           </Reveal>
         </div>
       </section>
+
+      {/* The lit windows (R4/BP6 · P01) — the door's night reveal, bound to the
+          showcase strip's own "five live" claim (one source with the hero
+          sentence; DECISIONS §S). Height-0 row → zero layout, CLS 0. */}
+      <LitWindows
+        deliverables={deliverables}
+        litHrefs={showcaseChips.map((c) => c.href)}
+      />
       </ContentReveal>
     </>
   );

@@ -1532,6 +1532,65 @@ html.dark [data-band-anchor]::before {
   .world-sky--night { opacity: clamp(0, calc((var(--day-night-rest) - 0.5) / 0.5), 1); }
 }
 
+/* The lit windows (R4/BP6 · P01) — at full night above the footer, the works
+   appear as lit windows on the horizon; the one whose room isn't on the open
+   web stays dark (the map is bound to the hero sentence's own five — the
+   showcase strip — one source; DECISIONS §S). Rides the shipped --day-night
+   writer: opacity resolves as night falls, no keyframes; RM/no-JS fall to
+   the theme rest via the house fallback+clamp (dark rest = 1 → PRESENT,
+   statically — the resolve is skipped, never simulated; light rest = 0) and
+   the whole row is dark-register-only (§D4 default). Six real links = six
+   honest tab stops (the pitch's named price), 44px hit areas, painted panes
+   — no images. Zero layout: a height-0 row with absolutely positioned
+   children (CLS 0, the PROTECT-10/33 pattern). The footer's own composition
+   (alpenglow, threshold, wordmark, postmark) is untouched. */
+.lit-windows {
+  position: relative;
+  height: 0;
+  z-index: 4;
+  display: none;
+}
+html.dark .lit-windows {
+  display: block;
+}
+.lit-window {
+  position: absolute;
+  left: var(--lw-x);
+  bottom: -3.25rem;
+  width: 44px;
+  height: 44px;
+  transform: translateX(-50%);
+  border-radius: 4px;
+  opacity: clamp(0, calc((var(--day-night, var(--day-night-rest)) - 0.62) / 0.28), 1);
+}
+.lit-window::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 5px;
+  height: 8px;
+  transform: translate(-50%, -50%);
+  border-radius: 1px;
+  background: rgb(var(--lw-sig) / 0.9);
+  box-shadow:
+    0 0 8px 1px rgb(var(--lw-sig) / 0.45),
+    0 0 22px 5px rgb(var(--lw-sig) / 0.16);
+}
+/* The dark window — glass without light: honestly present, honestly unlit
+   (the honesty is never verbalized on-surface — the WM-6 fence). */
+.lit-window:not([data-lit])::before {
+  background: rgb(var(--lw-sig) / 0.08);
+  box-shadow: inset 0 0 0 1px rgb(255 240 214 / 0.09);
+}
+/* A keyboard visitor summons the row regardless of scroll — the tab stop is
+   never an invisible trap. */
+.lit-window:focus-visible {
+  outline: 2px solid rgb(var(--rgb-accent));
+  outline-offset: 4px;
+  opacity: 1;
+}
+
 /* ------------------------------------------------------------------
    Filmic page transitions (view-transitions 2026-06-05) — Direction D.
    A TRUE cross-dissolve on same-origin navigations via the native View
