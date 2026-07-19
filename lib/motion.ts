@@ -107,38 +107,89 @@ export function usePrefersReducedMotion() {
 
 type ParallaxEntry = { depth: number; lastShift: number };
 
+/* ── Shared motion frame clock (motion-clockwork 2026-07-19) ─────────────
+   ONE passive scroll/resize listener + ONE rAF for EVERY scroll-linked value
+   on the page (parallax translates, --scroll-progress, --day-night). Each
+   consumer contributes a read() that only MEASURES (rects, scrollY, heights)
+   and a write() that only WRITES styles; the frame runs all reads, then all
+   writes — so cross-consumer layout thrash inside a frame is impossible and
+   every scroll-linked surface (washes, hairline, sky crossfade, lit windows,
+   footer ember) updates on the SAME tick. Extends the original pxFrame
+   read→write discipline to the whole page: before this, parallax,
+   useScrollProgress and useDayNight each ran their own listener + rAF, so a
+   fast flick could leave one surface a frame behind another. */
+type FrameConsumer = {
+  read: () => void;
+  write: () => void;
+};
+
+const frameConsumers = new Set<FrameConsumer>();
+let frameRaf = 0;
+let frameListenersOn = false;
+
+function motionFrame() {
+  frameRaf = 0;
+  // READ phase for every consumer first…
+  for (const c of frameConsumers) c.read();
+  // …then the WRITE phase — never interleaved.
+  for (const c of frameConsumers) c.write();
+}
+
+function motionSchedule() {
+  if (!frameRaf) frameRaf = requestAnimationFrame(motionFrame);
+}
+
+/** Register a consumer and run one frame so it paints its initial state. The
+ *  window listeners attach once, on first use (page-lifetime, like the old
+ *  pxEnsureGlobals) — an empty-registry frame is a no-op loop, so idle cost
+ *  after every consumer unregisters is nil. */
+function addFrameConsumer(c: FrameConsumer) {
+  if (!frameListenersOn && typeof window !== 'undefined') {
+    frameListenersOn = true;
+    window.addEventListener('scroll', motionSchedule, { passive: true });
+    window.addEventListener('resize', motionSchedule);
+  }
+  frameConsumers.add(c);
+  motionSchedule();
+}
+
+function removeFrameConsumer(c: FrameConsumer) {
+  frameConsumers.delete(c);
+}
+
 let pxRegistry: Map<HTMLElement, ParallaxEntry> | null = null;
 let pxActive: Set<HTMLElement> | null = null;
 let pxObserver: IntersectionObserver | null = null;
-let pxRaf = 0;
+// Parallax runs as ONE consumer on the shared clock; the read pass stores the
+// pending shifts here for the write pass (module-scoped scratch, no per-frame
+// allocation churn beyond the array itself).
+let pxWrites: Array<[HTMLElement, number]> = [];
 
-function pxFrame() {
-  pxRaf = 0;
-  if (!pxRegistry || !pxActive) return;
-  const vpCenter = window.innerHeight / 2;
-  // READ pass — gather target shifts (getBoundingClientRect reflects the
-  // current transform, so subtract the last shift to recover layout center).
-  const writes: Array<[HTMLElement, number]> = [];
-  for (const el of pxActive) {
-    const entry = pxRegistry.get(el);
-    if (!entry) continue;
-    const rect = el.getBoundingClientRect();
-    const baseCenter = rect.top + rect.height / 2 - entry.lastShift;
-    writes.push([el, (baseCenter - vpCenter) * entry.depth]);
-  }
-  // WRITE pass — apply transforms together (no interleaved layout thrash).
-  for (const [el, shift] of writes) {
-    const entry = pxRegistry.get(el);
-    if (!entry) continue;
-    entry.lastShift = shift;
-    el.style.transform = `translate3d(0, ${shift.toFixed(2)}px, 0)`;
-  }
-}
-
-function pxSchedule() {
-  if (pxRaf) return;
-  pxRaf = requestAnimationFrame(pxFrame);
-}
+const pxConsumer: FrameConsumer = {
+  // READ — gather target shifts (getBoundingClientRect reflects the current
+  // transform, so subtract the last shift to recover layout center).
+  read: () => {
+    pxWrites = [];
+    if (!pxRegistry || !pxActive) return;
+    const vpCenter = window.innerHeight / 2;
+    for (const el of pxActive) {
+      const entry = pxRegistry.get(el);
+      if (!entry) continue;
+      const rect = el.getBoundingClientRect();
+      const baseCenter = rect.top + rect.height / 2 - entry.lastShift;
+      pxWrites.push([el, (baseCenter - vpCenter) * entry.depth]);
+    }
+  },
+  // WRITE — apply transforms together.
+  write: () => {
+    for (const [el, shift] of pxWrites) {
+      const entry = pxRegistry?.get(el);
+      if (!entry) continue;
+      entry.lastShift = shift;
+      el.style.transform = `translate3d(0, ${shift.toFixed(2)}px, 0)`;
+    }
+  },
+};
 
 function pxEnsureGlobals() {
   if (pxRegistry) return;
@@ -151,13 +202,12 @@ function pxEnsureGlobals() {
         if (e.isIntersecting) pxActive!.add(el);
         else pxActive!.delete(el);
       }
-      pxSchedule();
+      motionSchedule();
     },
     // Engage a little before the element enters so it's already positioned.
     { rootMargin: '20% 0px 20% 0px' },
   );
-  window.addEventListener('scroll', pxSchedule, { passive: true });
-  window.addEventListener('resize', pxSchedule);
+  addFrameConsumer(pxConsumer);
 }
 
 /** Returns a ref to attach to the layer you want to parallax. */
@@ -166,18 +216,25 @@ export function useParallax<T extends HTMLElement = HTMLDivElement>(depth = 0.08
   const reduced = usePrefersReducedMotion();
 
   useEffect(() => {
-    if (reduced) return; // RM: never register, never transform.
+    if (reduced) return; // RM: never register, never transform, never promote.
     const el = ref.current;
     if (!el || typeof IntersectionObserver === 'undefined') return;
     pxEnsureGlobals();
     pxRegistry!.set(el, { depth, lastShift: 0 });
     pxObserver!.observe(el);
-    pxSchedule();
+    // will-change LIFECYCLE (MOTION_SYSTEM §7): promoted only while registered
+    // for parallax — so reduced-motion visitors (who never reach this line) and
+    // unmounted wells never pin a resident compositor layer. Was an
+    // unconditional inline style on the consumers, paid even when no transform
+    // would ever be written.
+    el.style.willChange = 'transform';
+    motionSchedule();
     return () => {
       pxObserver?.unobserve(el);
       pxRegistry?.delete(el);
       pxActive?.delete(el);
       el.style.transform = '';
+      el.style.willChange = '';
     };
   }, [depth, reduced]);
 
@@ -209,14 +266,23 @@ export function useSpotlight<T extends HTMLElement = HTMLDivElement>() {
     // sun" read. We lerp in rAF rather than via a CSS transition because
     // transitions don't fire on var()-driven transforms. Self-terminating:
     // the loop stops once the pool has caught up (or settled home).
-    let cx = 50, cy = 50, tx = 50, ty = 50, settle = 0;
-    const tick = () => {
+    let cx = 50, cy = 50, tx = 50, ty = 50, settle = 0, lastTick = 0;
+    const tick = (now: number) => {
       settle = 0;
-      cx += (tx - cx) * 0.14;
-      cy += (ty - cy) * 0.14;
+      // Frame-rate-independent catch-up: exponential smoothing by TIME, not by
+      // tick — τ≈110ms reproduces the tuned 60Hz feel (0.14/frame) exactly, and
+      // the caustic no longer trails HALF as far on 120Hz ProMotion displays
+      // (per-tick lerp halves the time constant at double the frame rate). dt
+      // capped so a background-tab pause can't teleport the pool.
+      const dt = lastTick ? Math.min(100, now - lastTick) : 16.7;
+      lastTick = now;
+      const k = 1 - Math.exp(-dt / 110);
+      cx += (tx - cx) * k;
+      cy += (ty - cy) * k;
       el.style.setProperty('--cx', `${cx.toFixed(2)}%`);
       el.style.setProperty('--cy', `${cy.toFixed(2)}%`);
       if (Math.abs(tx - cx) > 0.04 || Math.abs(ty - cy) > 0.04) settle = requestAnimationFrame(tick);
+      else lastTick = 0; // loop ends — next kick starts with a fresh dt
     };
     const kick = () => { if (!settle) settle = requestAnimationFrame(tick); };
     const apply = () => {
@@ -324,23 +390,22 @@ export function useScrollProgress() {
   useEffect(() => {
     if (reduced || typeof window === 'undefined') return;
     const root = document.documentElement;
-    let raf = 0;
-    const apply = () => {
-      raf = 0;
-      const max = root.scrollHeight - window.innerHeight;
-      const f = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
-      root.style.setProperty('--scroll-progress', f.toFixed(4));
+    // Rides the shared motion clock (motion-clockwork 2026-07-19): measured in
+    // the read phase, written in the write phase, same tick as parallax +
+    // --day-night — the hairline can never run a frame apart from the sky.
+    let f = 0;
+    const consumer: FrameConsumer = {
+      read: () => {
+        const max = root.scrollHeight - window.innerHeight;
+        f = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+      },
+      write: () => {
+        root.style.setProperty('--scroll-progress', f.toFixed(4));
+      },
     };
-    const onScroll = () => {
-      if (!raf) raf = requestAnimationFrame(apply);
-    };
-    apply();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
+    addFrameConsumer(consumer);
     return () => {
-      if (raf) cancelAnimationFrame(raf);
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onScroll);
+      removeFrameConsumer(consumer);
       root.style.removeProperty('--scroll-progress');
     };
   }, [reduced]);
@@ -374,39 +439,44 @@ export function useDayNight() {
   useEffect(() => {
     if (reduced || typeof window === 'undefined') return;
     const root = document.documentElement;
-    let raf = 0;
-    const apply = () => {
-      raf = 0;
-      const anchor = document.querySelector('.cinematic-content-reveal');
-      const start = anchor
-        ? anchor.getBoundingClientRect().top + window.scrollY
-        : 0;
-      // End at the footer THRESHOLD, not the document bottom: the scrollY at which
-      // the footer's top hairline meets the viewport bottom (Z5/SE-2). So full
-      // night + the threshold ember (.footer-threshold) reach peak while the footer
-      // crests INTO view — witnessed at the door — instead of completing behind the
-      // opaque footer at absolute max scroll. Measured each frame (getBoundingClientRect
-      // + scrollY, mirroring `start`) so a late layout can't desync it. Same linear,
-      // theme-invariant mapping — only the input domain's END moves.
-      const footer = document.querySelector('footer');
-      const footerTop = footer
-        ? footer.getBoundingClientRect().top + window.scrollY
-        : root.scrollHeight;
-      const end = footerTop - window.innerHeight;
-      const span = end - start;
-      const dn = span > 0 ? Math.min(1, Math.max(0, (window.scrollY - start) / span)) : 0;
-      root.style.setProperty('--day-night', dn.toFixed(4));
+    // Rides the shared motion clock (motion-clockwork 2026-07-19), so the sky
+    // crossfade, lit windows and footer ember advance on the same tick as
+    // every other scroll-linked surface. The ELEMENT lookups are cached and
+    // re-resolved only if the node leaves the document (client-side nav) —
+    // they were two document.querySelector calls per frame. The per-frame
+    // getBoundingClientRect measurements are KEPT deliberately: they are the
+    // late-layout desync guard described below.
+    let anchor: Element | null = null;
+    let footer: Element | null = null;
+    let dn = 0;
+    const consumer: FrameConsumer = {
+      read: () => {
+        if (!anchor || !anchor.isConnected) anchor = document.querySelector('.cinematic-content-reveal');
+        if (!footer || !footer.isConnected) footer = document.querySelector('footer');
+        const start = anchor
+          ? anchor.getBoundingClientRect().top + window.scrollY
+          : 0;
+        // End at the footer THRESHOLD, not the document bottom: the scrollY at which
+        // the footer's top hairline meets the viewport bottom (Z5/SE-2). So full
+        // night + the threshold ember (.footer-threshold) reach peak while the footer
+        // crests INTO view — witnessed at the door — instead of completing behind the
+        // opaque footer at absolute max scroll. Measured each frame (getBoundingClientRect
+        // + scrollY, mirroring `start`) so a late layout can't desync it. Same linear,
+        // theme-invariant mapping — only the input domain's END moves.
+        const footerTop = footer
+          ? footer.getBoundingClientRect().top + window.scrollY
+          : root.scrollHeight;
+        const end = footerTop - window.innerHeight;
+        const span = end - start;
+        dn = span > 0 ? Math.min(1, Math.max(0, (window.scrollY - start) / span)) : 0;
+      },
+      write: () => {
+        root.style.setProperty('--day-night', dn.toFixed(4));
+      },
     };
-    const onScroll = () => {
-      if (!raf) raf = requestAnimationFrame(apply);
-    };
-    apply();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
+    addFrameConsumer(consumer);
     return () => {
-      if (raf) cancelAnimationFrame(raf);
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onScroll);
+      removeFrameConsumer(consumer);
       root.style.removeProperty('--day-night');
     };
   }, [reduced]);

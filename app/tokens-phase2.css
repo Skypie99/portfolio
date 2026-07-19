@@ -102,20 +102,11 @@
      Dani §2.5 — scroll-driven reveals with staggered timing
      ================================================================== */
 
-  /* Reveal entrance: fade + translateY rise over 900ms */
-  --dur-reveal-enter: 900ms;
-  --ease-reveal:      cubic-bezier(0.22, 1, 0.36, 1);  /* ease-out */
-
-  /* Reveal exit: fade + translateY drop over 600ms (faster than enter) */
-  --dur-reveal-exit:  600ms;
-
-  /* MO-3: orphan `--reveal-stagger: 100ms` removed — it had no consumer and was
-     the only off-spec cascade beat (the documented two are --stagger-step 80ms
-     and --stagger-scene 120ms in globals.css). */
-
-  /* Scroll-driven reveal range: fade in as section enters viewport */
-  --reveal-range-start: 0%;
-  --reveal-range-end:   60%;
+  /* Dead parallel reveal grammar (--dur-reveal-enter/-exit, --ease-reveal,
+     --reveal-range-*) DELETED 2026-07-19 (motion-clockwork): zero consumers —
+     the real reveal system lives in globals.css on --dur-reveal +
+     --ease-gh-settle. One vocabulary, one clock. (MO-3 removed the orphan
+     --reveal-stagger earlier for the same reason.) */
 
   /* ------------------------------------------------------------------
      FILTER ANIMATION — Smooth pill state transitions
@@ -197,61 +188,12 @@
    Extends from globals.css with entrance/exit differentiation
    ================================================================== */
 
-@keyframes reveal-enter {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes reveal-exit {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(-12px);
-  }
-}
-
-/* Pill state transition — smooth color + border swap */
-@keyframes pill-activate {
-  from {
-    border-color: var(--pill-border-resting);
-    background-color: var(--pill-bg-resting);
-    color: var(--pill-text-resting);
-  }
-  to {
-    border-color: var(--pill-border-active);
-    background-color: var(--pill-bg-active);
-    color: var(--pill-text-active);
-  }
-}
-
-/* Card elevation lift — subtle Y-translate + shadow deepening */
-@keyframes card-elevate {
-  from {
-    transform: translateY(0);
-    box-shadow: var(--shadow-soft);
-    border-color: var(--card-border-resting);
-    background-color: var(--card-bg-resting);
-  }
-  to {
-    transform: translateY(var(--card-translate-y));
-    box-shadow: var(--shadow-elevation-2);
-    border-color: var(--card-border-hover);
-    background-color: var(--card-bg-hover);
-  }
-}
-
-/* Reduced motion: disable entrance/exit animations */
+/* Phase-2 keyframes (reveal-enter/-exit, pill-activate, card-elevate)
+   DELETED 2026-07-19 (motion-clockwork): zero consumers — hover/active states
+   run on transitions, reveals on the globals.css system. Their broad
+   [class*="reveal-"] RM guard also shadowed the real reveal floor in
+   globals.css; the card-/pill- halves of that guard remain below unchanged. */
 @media (prefers-reduced-motion: reduce) {
-  [class*="reveal-"],
   [class*="card-"],
   [class*="pill-"] {
     animation: none !important;

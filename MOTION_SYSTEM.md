@@ -271,3 +271,48 @@ fight (different layers). New tokens: `--day-night-rest`, `--sky-day/dusk/night-
 panel alphas are tuned so ALL text clears WCAG AA over every world state in both themes (measured).
 Hook: `useDayNight` in `lib/motion.ts`; component: `components/WorldBackdrop.tsx`. See
 `CONTINUOUS_WORLD_PLAN.md`.
+
+## §14 — Motion-clockwork pass (2026-07-19) — one grammar, one clock
+
+**Intent:** coherence + honesty, not new motion. Every entrance now decelerates on one
+family; every scroll-linked value advances on one frame clock; motion that existed in
+code but that no visitor ever witnessed is deleted.
+
+- **One entrance grammar:** the base `.reveal` transition joined the `--ease-gh-settle`
+  family at `--dur-slow` (was a hard-coded `0.55s ease-out`) — duration alone now encodes
+  scale (520/900/1200ms). `hero-settle-img` joined its sibling title on `--ease-entrance`;
+  the `:target` gutter-bar arrival decelerates in (`--ease-entrance`, was `ease-in` — the
+  site's only accelerating arrival); `ambient-drift` rides `--ease-gh-glide` (was generic
+  `ease-in-out`, the only animation outside the named vocabulary).
+- **One clock (`lib/motion.ts`):** a shared frame scheduler — ONE passive scroll/resize
+  listener + ONE rAF; every consumer runs a read phase (measurements only) then a write
+  phase (styles only). Parallax, `--scroll-progress`, and `--day-night` all ride it, so no
+  scroll-linked surface can be a frame behind another. `useDayNight`'s element lookups are
+  cached (re-resolved on disconnect); its per-frame `getBoundingClientRect` is KEPT — the
+  deliberate late-layout guard.
+- **Phantom machinery deleted:** ContentReveal's scroll-linked fade (saturated thousands
+  of px before its first visible pixel; its held inline transform also made the whole-page
+  wrapper a containing block for fixed descendants); the `.hero-enter` mount stagger + its
+  delay classes + `fade-rise` and the `.cta-dot-pulse` keyed to it — the hero mounts below
+  the pinned 380vh cinematic, so these one-shot mount animations always FINISHED
+  off-screen, unwitnessed in every browser (on the eyebrow/h1/CTA rows the
+  `hero-scroll-*` rules additionally replaced the same `animation` shorthand in
+  view-timeline browsers); the phase-2 parallel reveal vocabulary in `tokens-phase2.css`
+  (zero consumers; its broad `[class*="reveal-"]` RM guard shadowed the real floor —
+  card-/pill- guards kept).
+- **§7 contract now real:** `will-change` on parallax layers is applied by `useParallax`
+  only while registered (never under reduced motion) — was unconditional inline styles on
+  ParallaxWash/TactileMedia. The cinematic's `applyCull` writes class/will-change only when
+  a scene actually crosses a cull boundary (was every scrub tick).
+- **Physics micro-fixes:** the card caustic lerp is time-based (`k = 1 − exp(−dt/110)` —
+  same feel at 60Hz, no more half-length trails on 120Hz ProMotion).
+- **Held for Sky (adversarial verify enforced the locks):** three further refinements were
+  built, verified, then REVERTED out of this pass because they touch ratified protected
+  surfaces (DECISIONS #1 locks `components/cinematic/` incl. the title carve; PROTECT-66
+  sanctions the cue's exit *duration* only): (a) the exposure ramp as one continuous
+  piecewise-linear keyframes tween over the same knots (the seven sine segments have zero
+  slope at every knot — the light stalls seven times per pass); (b) the title tighten as
+  compositor-only `scaleX 1.05→1` (letterSpacing re-runs text layout per scrub tick);
+  (c) the runway mark + intro cue exiting on `--ease-exit` (accel-out). Staged as Sky
+  decisions in the clockwork qa-report. Inside the film this pass ships only zero-output
+  hygiene: the applyCull write-guard + comment truth.

@@ -33,21 +33,25 @@ describe('Hero', () => {
     ).toBeInTheDocument();
   });
 
-  it('eyebrow wrapper carries both hero-enter (mount fade) and hero-scroll-fade (Cycle 10) classes', () => {
+  it('eyebrow wrapper keeps hero-scroll-fade; the retired hero-enter stagger stays gone', () => {
     render(<Hero {...fixture} />);
-    // wave5: eyebrow <p> + terracotta rule are wrapped in a single animated div.
-    // The animation classes live on the wrapper, not the <p> directly.
+    // wave5: eyebrow <p> + terracotta rule are wrapped in a single div; the
+    // scroll-exit class lives on the wrapper. motion-clockwork 2026-07-19: the
+    // .hero-enter mount stagger was retired (the view-timeline scroll rules had
+    // replaced its `animation` in modern browsers, so it never played) — this
+    // guards against it quietly returning.
     const eyebrowWrapper = screen.getByText(fixture.eyebrow).parentElement;
-    expect(eyebrowWrapper).toHaveClass('hero-enter');
     expect(eyebrowWrapper).toHaveClass('hero-scroll-fade');
+    expect(eyebrowWrapper).not.toHaveClass('hero-enter');
   });
 
-  it('CTA dot carries the cta-dot-pulse class (Cycle 20 one-shot mount pulse)', () => {
+  it('CTA dot renders without the retired cta-dot-pulse class (motion-clockwork 2026-07-19)', () => {
     const { container } = render(<Hero {...fixture} />);
-    // The terracotta dot is the aria-hidden span with bg-terracotta inside
-    // the Hero's CTA button. The pulse class wires up the one-shot 800ms
-    // scale animation declared in globals.css.
-    const dot = container.querySelector('span.bg-terracotta.cta-dot-pulse');
+    // The terracotta dot remains the aria-hidden span inside the CTA button;
+    // the Cycle 20 one-shot pulse was retired with the hero entrance it was
+    // keyed to (its keyframes are deleted from globals.css).
+    const dot = container.querySelector('span.bg-terracotta');
     expect(dot).not.toBeNull();
+    expect(dot).not.toHaveClass('cta-dot-pulse');
   });
 });

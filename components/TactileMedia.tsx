@@ -75,8 +75,9 @@ export function TactileMedia({ src, alt, width, height, depth = 0.05, sources, p
     <div
       ref={ref}
       className="absolute inset-[-12%]"
+      // will-change is managed by useParallax (promoted only while registered —
+      // never under reduced motion, where no transform is ever written).
       style={{
-        willChange: 'transform',
         // LQIP: a static blurred tint behind the image, inside the SAME drifting
         // layer (no new box → no CLS). The real <img> paints over it on decode;
         // there is NO transition, so it is byte-identical under reduced-motion.
