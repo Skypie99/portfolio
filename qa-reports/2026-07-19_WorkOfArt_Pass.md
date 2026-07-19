@@ -36,6 +36,25 @@ D7 stays device-gated; D6 stays declined. Design record: `MOTION_SYSTEM.md` §15
   re-breathes (1.005). **Jank:** no regression (desktop dropped% 52.9→46.1 / 54.8→50.0,
   iPhone equal).
 
+## Adversarial verify outcome (4 lenses + arbiter)
+
+SHIP_WITH_FIXES → both catches fixed pre-deploy, re-gated, runtime-verified:
+1. **Gilded ink double-announce** (all 4 lenses; CDP AX-tree-proven): `content:
+   attr(data-text)` joined the accessibility tree → "SkyPi Studio" ×2. Fixed with the
+   alt-text syntax `content: attr(data-text) / ''` + the @supports gate widened to
+   require it (unsupporting browsers now fail the whole gate → solid-ink single
+   announcement — the exact pre-pass treatment).
+2. **Chip hairline silent no-op**: `.runway-identity-chip::after` merged into
+   `.glass-card::after`'s cursor specular (opacity .18 + soft-light → ~2% effective).
+   Re-vehicled as `outline: 1px solid` at `-1px` offset (collision-free; the chip is
+   never focusable; outline follows border-radius on the 2026 baseline).
+3. Tidy: the static frame's landed glow moved out of `<picture>` (invalid content
+   model) to a keyed sibling — geometry/paint identical, validator-clean.
+Everything else: VERIFIED across lenses (transform sync from plate data, cull hook
+write-guard, D4 math + overwrite semantics, breathe×glow composition, mask cache-hit +
+@supports containment, screen-blend isolation, static-frame sub-pixel registration,
+records integrity a–f incl. zero residual "AI developer" in out/).
+
 ## Rollback
 Single revert of the merge commit; per-commit reverts also clean (D4 has the one-line
 data rollback: delete `scaleEase`). OG regenerates from source at build.

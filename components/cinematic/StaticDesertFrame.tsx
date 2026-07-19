@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 
 import { FilmGrain } from './FilmGrain';
 import { ARRIVAL_ID, PLATES, SCENES, sourcesFor, srcFor, type Plate } from './plates';
@@ -44,7 +45,8 @@ export function StaticDesertFrame() {
           const y = plate.yFrom + (plate.yTo - plate.yFrom) * 0.85;
           const { avif, webp } = sourcesFor(plate);
           return (
-            <picture key={plate.id}>
+            <Fragment key={plate.id}>
+            <picture>
               {avif && <source type="image/avif" srcSet={avif} />}
               {webp && <source type="image/webp" srcSet={webp} />}
               <img
@@ -60,18 +62,22 @@ export function StaticDesertFrame() {
                   transform: `translateY(${y}%) scale(${scale})`,
                 }}
               />
-              {/* landed rim-glow (art pass): the static destination shot keeps a
-                  calmer 0.5 of the live peak — no motion narrative to justify a
-                  hot rim for reduced-motion visitors. Same park transform as the
-                  cliff; DOM-after → paints above it, below the floor plate. */}
-              {isArrival && (
-                <div
-                  className="cdesert-cliff-glow cdesert-cliff-glow--landed"
-                  aria-hidden="true"
-                  style={{ zIndex: i, transform: `translateY(${y}%) scale(${scale})` }}
-                />
-              )}
             </picture>
+            {/* landed rim-glow (art pass): the static destination shot keeps a
+                calmer 0.5 of the live peak — no motion narrative to justify a
+                hot rim for reduced-motion visitors. Same park transform as the
+                cliff. A SIBLING of the <picture> (a div is invalid picture
+                content per the HTML model — verify-fleet tidy); both resolve
+                their containing block to .cdesert-static-stage, so geometry and
+                the explicit zIndex paint order are unchanged. */}
+            {isArrival && (
+              <div
+                className="cdesert-cliff-glow cdesert-cliff-glow--landed"
+                aria-hidden="true"
+                style={{ zIndex: i, transform: `translateY(${y}%) scale(${scale})` }}
+              />
+            )}
+            </Fragment>
           );
         })}
 
