@@ -16,13 +16,6 @@ type CommonProps = {
   /** Renders the terracotta signature dot before the label. Default true. */
   showDot?: boolean;
   /**
-   * Cycle 20: one-shot scale pulse on the dot ~800ms after mount.
-   * Used on the homepage hero CTA to draw the eye after the hero
-   * entrance animation settles. Reduced-motion safe (the CSS keyframe
-   * is gated behind prefers-reduced-motion: no-preference).
-   */
-  pulseOnMount?: boolean;
-  /**
    * Optional CSS color for the signature dot's BACKGROUND (e.g. a per-project
    * `--pr-sig` hue like `rgb(224 150 90)`). Recolors ONLY the dot — the pill's
    * terracotta focus ring, border and hover are untouched (we never redefine
@@ -72,7 +65,7 @@ const variants: Record<Variant, string> = {
     'disabled:hover:bg-transparent disabled:hover:border-border-interactive',
 };
 
-function Dot({ visible, pulse, color }: { visible: boolean; pulse: boolean; color?: string }) {
+function Dot({ visible, color }: { visible: boolean; color?: string }) {
   if (!visible) return null;
   return (
     <span
@@ -84,7 +77,6 @@ function Dot({ visible, pulse, color }: { visible: boolean; pulse: boolean; colo
         !color && 'bg-terracotta',
         'transition-all duration-base ease-out',
         'group-hover:w-2.5 group-hover:h-2.5',
-        pulse && 'cta-dot-pulse',
       )}
       style={color ? { background: color } : undefined}
     />
@@ -103,7 +95,6 @@ export const Button = forwardRef<HTMLElement, Props>(function Button(props, ref)
     variant = 'primary',
     fullWidth = false,
     showDot = true,
-    pulseOnMount = false,
     dotColor,
     className,
   } = props;
@@ -117,7 +108,6 @@ export const Button = forwardRef<HTMLElement, Props>(function Button(props, ref)
       variant: _v,
       fullWidth: _f,
       showDot: _s,
-      pulseOnMount: _p,
       dotColor: _d,
       className: _c,
       children: _ch,
@@ -130,7 +120,7 @@ export const Button = forwardRef<HTMLElement, Props>(function Button(props, ref)
         className={classes}
         {...anchorAttrs}
       >
-        <Dot visible={showDot} pulse={pulseOnMount} color={dotColor} />
+        <Dot visible={showDot} color={dotColor} />
         <span className="text-center text-balance">{children}</span>
       </a>
     );
@@ -140,7 +130,6 @@ export const Button = forwardRef<HTMLElement, Props>(function Button(props, ref)
     variant: _v,
     fullWidth: _f,
     showDot: _s,
-    pulseOnMount: _p,
     dotColor: _d,
     className: _c,
     children: _ch,
@@ -152,7 +141,7 @@ export const Button = forwardRef<HTMLElement, Props>(function Button(props, ref)
       className={classes}
       {...buttonAttrs}
     >
-      <Dot visible={showDot} pulse={pulseOnMount} />
+      <Dot visible={showDot} />
       <span className="text-center text-balance">{children}</span>
     </button>
   );

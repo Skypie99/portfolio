@@ -17,7 +17,7 @@ import { useReducedMotion } from './useReducedMotion';
  * ────────────────────────────────────────────────────────────────────────────
  * MECHANICS (one timeline, scrubbed to scroll — no per-frame listeners):
  *
- *   <section .cdesert-stage>          height: 680vh   ← the scroll budget
+ *   <section .cdesert-stage>          380vh desktop / 300vh phones ← the scroll budget
  *     <div .cdesert-pin>              height: 100vh   ← ScrollTrigger PINS this
  *       3 SCENE GROUPS, stacked (.cdesert-scene), each:
  *         3 depth-plane <img> layers (back→front)
@@ -37,10 +37,10 @@ import { useReducedMotion } from './useReducedMotion';
  * never a cut. ONE exposure ramp + ONE grade ramp run across the WHOLE p (never
  * reset per scene), so the light is a single slow sunrise dark→golden.
  *
- * `scrub: 1.5` gives a buttery, weighted catch-up (the expensive glide). Depth
- * rides sine.inOut — the silkiest ease, so the scroll-scrubbed dolly tracks the scroll
- * PROPORTIONALLY (organic) with soft takeoff/landing. Crossfades/exposure ride
- * sine.inOut / power2.out so nothing pops.
+ * `scrub: 1.0` gives a weighted catch-up (the expensive glide). Depth rides
+ * ease 'none' (r9): LINEAR value-vs-progress, so the dolly tracks the scroll
+ * 1:1 with even velocity — the glide feel comes entirely from the scrub.
+ * Crossfades/exposure ride sine.inOut / power2.out so nothing pops.
  *
  * SSR-safety: nothing touches `window` at module scope. GSAP wiring runs inside
  * useGSAP (client effect). `narrow` starts false so server/first client render
@@ -161,16 +161,21 @@ export function CinematicDesert() {
       // of the currently-composited scene(s) so we never hold 9 promoted layers'
       // worth of GPU memory at once (will-change discipline — too many promoted
       // layers blow the memory budget and themselves cause jank).
+      // Write-guard (clockwork r4): applyCull runs on EVERY scrub tick, but a
+      // scene only crosses a cull boundary a handful of times per pass — so all
+      // writes (class + will-change) happen ONLY when a scene's active state
+      // actually flips. Before this, the will-change styles were re-written on
+      // every onUpdate: 3 groups + 9 plane styles per scrolled frame.
+      const cullState: boolean[] = [];
       const applyCull = (p: number) => {
         for (let si = 0; si < SCENES.length; si += 1) {
           const group = sceneRefs.current[si];
           if (!group) continue;
           const win = CULL_WINDOWS[si] ?? { start: -0.01, end: 1.01 };
           const active = p >= win.start && p <= win.end;
-          // class toggle is idempotent + cheap; only writes when it changes.
-          if (group.classList.contains('cdesert-scene--culled') === active) {
-            group.classList.toggle('cdesert-scene--culled', !active);
-          }
+          if (cullState[si] === active) continue; // no boundary crossed — zero writes
+          cullState[si] = active;
+          group.classList.toggle('cdesert-scene--culled', !active);
           // will-change discipline: promote only the active scene(s) — the group
           // for its opacity dissolve, its planes for their transform push.
           group.style.willChange = active ? 'opacity' : 'auto';

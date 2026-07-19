@@ -37,7 +37,9 @@ export function ParallaxWash({ depth = 'far', tone = 'gold', className }: Parall
       ref={ref}
       aria-hidden="true"
       className={cn('pointer-events-none absolute -inset-[22%] z-0', className)}
-      style={{ background: gradient, willChange: 'transform' }}
+      // will-change is managed by useParallax (promoted only while registered —
+      // never under reduced motion, where no transform is ever written).
+      style={{ background: gradient }}
     />
   );
 }

@@ -24,10 +24,10 @@ type HeroProps = {
  * with the terracotta signature dot.
  *
  * Server Component (Peter C2 perf): Framer Motion removed from initial
- * chunk. Motion implemented as CSS keyframes in `app/globals.css`:
- *   - status pill -> eyebrow -> heading -> subhead -> button stagger via delay classes
- *   - fade + 8px translateY rise, easeOut, 600ms
- *   - prefers-reduced-motion -> snaps to final state, no animation
+ * chunk. Arrival is carried by the hero-wash bloom (hero-bg-drift in
+ * `app/globals.css`) + the landing-pad spacing below — the old .hero-enter
+ * mount stagger was retired (motion-clockwork 2026-07-19): the view-timeline
+ * scroll rules replaced its `animation` in modern browsers, so it never played.
  *
  * Dani wave5 homepage polish:
  *   - Terracotta rule (40px wide, 1px tall) below eyebrow for brand anchor
@@ -90,10 +90,9 @@ export function Hero({
 
         {/* Attribution nameplate — face + name + soft positioning line, so a
             first-time visitor knows whose work this is the moment the hero
-            settles. Enters with the eyebrow (base hero-enter timing); snaps to
-            final state under prefers-reduced-motion via the globals.css gate. */}
+            settles. Rest-visible: the wash bloom carries the arrival. */}
         {name && (
-          <div className="hero-enter mb-10 flex items-center gap-4">
+          <div className="mb-10 flex items-center gap-4">
             {avatarSrc && (
               // eslint-disable-next-line @next/next/no-img-element
               <img
@@ -118,7 +117,7 @@ export function Hero({
         )}
 
         {/* Eyebrow + terracotta brand rule */}
-        <div className="hero-enter hero-scroll-fade mb-12">
+        <div className="hero-scroll-fade mb-12">
           <p className="font-mono text-label tracking-label uppercase text-text-meta mb-3">
             {eyebrow}
           </p>
@@ -128,7 +127,7 @@ export function Hero({
 
         <h1
           className={cn(
-            'hero-enter hero-enter-delay-2 hero-scroll-translate',
+            'hero-scroll-translate',
             'font-serif font-light',
             'text-hero',
             'leading-[1.0]',
@@ -143,7 +142,6 @@ export function Hero({
 
         <p
           className={cn(
-            'hero-enter hero-enter-delay-3',
             'font-sans font-light text-step-1 text-charcoal',
             'max-w-[520px]',
             'mb-16',
@@ -153,13 +151,8 @@ export function Hero({
           {subhead}
         </p>
 
-        <div className="hero-enter hero-enter-delay-4 hero-scroll-fade flex flex-col items-start gap-16">
-          {/* Cycle 20: one-shot dot pulse 800ms after mount draws the eye
-              after the hero entrance settles. Reduced-motion safe via
-              the .cta-dot-pulse @media gate in globals.css. */}
-          <Button href={ctaHref} pulseOnMount>
-            {ctaLabel}
-          </Button>
+        <div className="hero-scroll-fade flex flex-col items-start gap-16">
+          <Button href={ctaHref}>{ctaLabel}</Button>
 
           {/* Scroll indicator — subtle affordance to continue reading.
               Alex A11y 2026-05-29: was opacity-60 (2.65:1 contrast — WCAG 1.4.3 FAIL).

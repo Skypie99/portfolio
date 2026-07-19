@@ -24,11 +24,13 @@
    `ease-soft` (cubic-bezier(0.4, 0, 0.2, 1)) only for the hamburger
    overlay open/close.
 
-   Exceptions (intentional, documented):
-   - .hero-enter — 600ms cubic-bezier(0.16, 1, 0.3, 1) — one-shot
-     mount fade-rise; staggered via delay classes (Cycle 2)
-   - .cta-dot-pulse — 800ms ease-out, 800ms delay — one-shot
-     attention pulse on the homepage CTA dot (Cycle 20)
+   (The old .hero-enter mount stagger + .cta-dot-pulse exceptions were
+   retired in the motion-clockwork pass, 2026-07-19: the hero mounts below
+   the pinned 380vh cinematic, so the one-shot mount animations always
+   finished off-screen, unwitnessed — and 3 of the 5 staggered elements
+   were additionally overridden by the view-timeline scroll rules' later
+   `animation` shorthand. The hero-wash bloom — hero-bg-drift — carries
+   the arrival.)
 
    Reduced-motion: every animation/transition is forced to 0.01ms
    by the @media block at the bottom of this file (Alex §5.2).
@@ -467,22 +469,14 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0;
 }
 
-/* ------------------------------------------------------------------
-   Hero entrance — Peter C2 perf (Framer removed from initial chunk).
-   Same fade + 8px translateY rise, easeOut 600ms, staggered by class.
-   ------------------------------------------------------------------ */
-@keyframes fade-rise {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.hero-enter {
-  animation: fade-rise 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-.hero-enter-delay-1  { animation-delay: 80ms; }
-.hero-enter-delay-2  { animation-delay: 180ms; }
-.hero-enter-delay-25 { animation-delay: 260ms; }
-.hero-enter-delay-3  { animation-delay: 360ms; }
-.hero-enter-delay-4  { animation-delay: 500ms; }
+/* Hero mount stagger (.hero-enter / fade-rise) RETIRED 2026-07-19
+   (motion-clockwork): the hero mounts below the pinned 380vh cinematic, so
+   this one-shot mount stagger (max 500ms delay + 600ms, 'both' fill) always
+   FINISHED thousands of px off-screen — unwitnessed in every browser. On the
+   eyebrow/h1/CTA rows the hero-scroll-* rules below additionally replaced
+   its `animation` shorthand in @supports(animation-timeline) browsers (the
+   shorthand-collision landmine this deletion defuses for good). The wash
+   bloom (hero-bg-drift) carries the arrival. */
 
 /* Hero radial wash — warm amber from upper-right, teal whisper from
    lower-left. The teal-to-amber diagonal is the WA signature duality:
@@ -696,7 +690,9 @@ article h2[id]:target::before {
 }
 @media (prefers-reduced-motion: no-preference) {
   article h2[id]:target::before {
-    animation: target-arrival 300ms ease-in;
+    /* var(--ease-entrance): the site's arrivals DECELERATE in; ease-in made
+       this the only element that accelerated into visibility (clockwork r1). */
+    animation: target-arrival 300ms var(--ease-entrance);
   }
 }
 @keyframes target-arrival {
@@ -803,19 +799,6 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
 .text-balance { text-wrap: balance; }
 .text-pretty  { text-wrap: pretty;  }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero-enter,
-  .hero-enter-delay-1,
-  .hero-enter-delay-2,
-  .hero-enter-delay-25,
-  .hero-enter-delay-3,
-  .hero-enter-delay-4 {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-}
-
 /* ------------------------------------------------------------------
    Ambient golden-hour drift — signature moment #2 (Contact section).
    A single warm radial light field that drifts almost imperceptibly on an
@@ -825,7 +808,9 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
    ------------------------------------------------------------------ */
 @media (prefers-reduced-motion: no-preference) {
   .ambient-drift {
-    animation: ambient-drift var(--dur-ambient, 26s) ease-in-out infinite alternate;
+    /* gh-glide: the same weighted S every other glide uses — this was the
+       one animation outside the named easing vocabulary (clockwork r1). */
+    animation: ambient-drift var(--dur-ambient, 26s) var(--ease-gh-glide) infinite alternate;
   }
 }
 @keyframes ambient-drift {
@@ -868,7 +853,10 @@ html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4
 html.js .reveal {
   opacity: 0;
   transform: translateY(16px);
-  transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out);
+  /* One entrance grammar (clockwork r1): the same gh-settle deceleration
+     family as the scene/depth/carve variants — duration alone encodes scale
+     (520 / 900 / 1200ms). Was a hard-coded 0.55s ease-out, the odd one out. */
+  transition: opacity var(--dur-slow) var(--ease-gh-settle), transform var(--dur-slow) var(--ease-gh-settle);
 }
 html.js .reveal-shown {
   opacity: 1;
@@ -942,8 +930,8 @@ html.reveal-seat .reveal-carve {
 }
 /* Release companion — present only for the release recalc (+1 frame): with it,
    still-armed reveals SNAP back to their hidden armed state instead of running
-   the 0.55s opacity transition backwards off-screen (a mid-hydration flick
-   could catch that decay). Never matches seated reveals (:not(.reveal-shown)). */
+   the base opacity transition (--dur-slow) backwards off-screen (a
+   mid-hydration flick could catch that decay). Never matches seated reveals (:not(.reveal-shown)). */
 html.reveal-rearm .reveal:not(.reveal-shown) {
   transition: none !important;
 }
@@ -986,7 +974,7 @@ html.reveal-rearm .reveal:not(.reveal-shown) {
 
 /* ------------------------------------------------------------------
    Settle-on-arrival (components/HeroSettle.tsx) — pure-CSS entrance,
-   same idiom as .hero-enter (fix(settle) 2026-06-10). The REST state is
+   same idiom the retired .hero-enter used (fix(settle) 2026-06-10). The REST state is
    the visible final state: the entrance exists only inside the
    no-preference media query, so reduced-motion, no-JS, and
    background-tab visitors always hold the readable end frame. (The
@@ -1031,7 +1019,9 @@ html.reveal-rearm .reveal:not(.reveal-shown) {
     animation-delay: 150ms;
   }
   .hero-settle-img {
-    animation: settle-img var(--dur-reveal) var(--ease-out) both;
+    /* var(--ease-entrance), matching .hero-settle-title — the case-study hero
+       title + image arrive as ONE shot, not two curves (clockwork r1). */
+    animation: settle-img var(--dur-reveal) var(--ease-entrance) both;
   }
 }
 
@@ -2006,30 +1996,10 @@ html.dark ::selection {
   color: rgb(var(--rgb-ink));
 }
 
-/* ------------------------------------------------------------------
-   Hero CTA dot pulse — Cycle 20. One quiet 1.0 → 1.15 → 1.0 scale
-   pulse on the terracotta dot ~800ms after mount, drawing the eye
-   to the primary CTA without being loud. Single-shot, never repeats.
-
-   Reduced-motion users see a static dot (the @media gate skips the
-   animation declaration entirely; transform stays at the default
-   identity matrix).
-
-   Combined with the parent Button's group-hover scale (8px → 10px)
-   on hover — both transforms compose cleanly because they're set
-   on the same dot element at different times.
-   ------------------------------------------------------------------ */
-@keyframes cta-dot-pulse {
-  0%   { transform: scale(1); }
-  50%  { transform: scale(1.15); }
-  100% { transform: scale(1); }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .cta-dot-pulse {
-    animation: cta-dot-pulse 800ms ease-out 800ms 1 both;
-  }
-}
+/* CTA dot pulse (Cycle 20) RETIRED 2026-07-19 (motion-clockwork): a one-shot
+   attention pulse 800ms after mount, keyed to a hero entrance that no longer
+   exists (and that modern browsers never played). The dot's group-hover
+   grow is the living affordance. */
 
 /* ------------------------------------------------------------------
    Hero eyebrow scroll-fade — Cycle 10 (warm-bright interactive
@@ -2037,9 +2007,11 @@ html.dark ::selection {
    the user scrolls past the hero, then comes back when they scroll
    up. Pure CSS scroll-driven animation, zero JS added.
 
-   Combined with the existing .hero-enter mount animation (which
-   fades the eyebrow IN on first paint) — both animations coexist
-   via animation-timeline declarations.
+   (Historical note — clockwork 2026-07-19: on elements carrying both
+   classes, this rule REPLACED the old .hero-enter entrance — both set the
+   `animation` SHORTHAND at equal specificity, so they never actually
+   coexisted. The stagger — always off-screen below the pinned intro
+   anyway — is retired.)
 
    Older browsers: @supports gate → eyebrow stays opacity:1 always.
    Reduced motion: @media gate → no fade animation registered.
@@ -2485,7 +2457,7 @@ html.dark ::selection {
   justify-content: center;
   pointer-events: none;
   opacity: 0;
-  will-change: transform, opacity;
+  will-change: transform, opacity, filter; /* the carve's blur(10→0) runs here (clockwork r4) */
 }
 .cdesert-title--resolved { opacity: 1; }
 .cdesert-title-mark {
@@ -2730,7 +2702,7 @@ html.dark ::selection {
   padding: 0.45rem 1.6rem 0.72rem;
   background: radial-gradient(ellipse at 50% 55%, rgb(14 7 3 / 0.66) 0%, rgb(14 7 3 / 0.4) 50%, transparent 82%);
   text-shadow: 0 1px 5px rgb(20 10 5 / 0.5);
-  animation: intro-cue-rise 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: intro-cue-rise 600ms var(--ease-entrance) both; /* clockwork r1: fold the literal bezier into the token */
   animation-delay: 700ms;
 }
 @keyframes intro-cue-rise {
@@ -2740,7 +2712,7 @@ html.dark ::selection {
 /* RM-first-class: the global reduced-motion floor forces animation-DURATION to
    0.01ms but NOT animation-DELAY — so a delayed fade would leave the cue
    invisible for the full 700ms delay under reduce. Present it immediately, no
-   motion (matches the .hero-enter RM idiom). */
+   motion (the animation:none + visible-rest idiom). */
 @media (prefers-reduced-motion: reduce) {
   .intro-scroll-cue-glyph {
     animation: none;
