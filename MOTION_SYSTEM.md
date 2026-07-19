@@ -318,3 +318,39 @@ code but that no visitor ever witnessed is deleted.
   1.000→1.005 yoyo, 3.6s halves, eased home in 220ms on the next scrub tick; frame only —
   no motes/bloom/haze return). **Declined: D6** temporal grain (static grain stands).
   D4 (floor C1 handoff) + D7 (witnessed seam) remain open, device-session-gated.
+
+## §15 — Work-of-art pass (2026-07-19, Sky-directed) — "the gold lands"
+
+Sky's brief: the intro is the first impression — "next level perfect and cinematic."
+Sky ratified in-chat: **full cinematic craft** (new light choreography + elevated title,
+no new imagery), **D4** (floor handoff), and the **"AI Builder" identity** everywhere.
+**D7 stays open/device-gated** (the seam remains gravity-only). D6 remains declined.
+
+- **Cliff rim-glow:** `.cdesert-cliff-glow` — a sibling layer inside the ARRIVAL group
+  masked by the arrival plate's OWN alpha (`mask-image: image-set(...)`, byte-identical
+  cached file, zero new downloads), crest-band gradient (dies by 52% of the box) +
+  `screen` blend; transform-synced FROM THE PLATE'S DATA; opacity 0→0.85 over
+  p[0.70,0.97] riding the exposure ramp's late-gold knot. Rim light on rock only — the
+  killed sun-disc stays dead. Whole painted path `@supports`-gated (`background: none`
+  base): no branch can paint an unmasked gradient. Static frame rests a landed 0.5.
+- **Vignette arc:** `.cdesert-vignette-arc` (FilmGrain mounts it) — a dedicated additive
+  deepen layer, GSAP opacity 0→1 over p[0.70,1.0]; p=0 stays byte-identical; the static
+  frame rests fully drawn-in via the `.cdesert-static-stage` scope rule. Compositor-only
+  by construction (rejected var-multiply: full-frame repaint per scrub tick).
+- **Gilded title:** bone→pale-gold ink via a `data-text` `::after` overlay
+  (`background-clip: text` cannot live on the mark — its text-shadow paints above the
+  clipped fill); base glyphs keep #FFF6EC + the AA halation, RE-SUNK for the gold's
+  deeper stop (mid pass 8→12px, wide 34px/.88). Crystallize retimed: blur 7, rise 5,
+  scaleX 1.03, window p[0.845,0.975] — less displacement over more scroll; the title
+  CONDENSES. Comparative contrast gate: ≥ baseline in every context (mobile improves).
+- **D4 floor handoff:** phase2 split into per-property twin tweens; mid-fg scale rides
+  `power2.out` (entry slope 0.7895 vs phase1's 0.8065 exit — −2.1%, near-C1; the 3.06×
+  instant rate-drop is gone); yPercent stays linear (1.23× step sub-threshold; eased
+  candidates overshoot). NOTE: GSAP `power2.out` is the cubic — `power3.out` (quart,
+  E′(0)=4) would over-speed the entry +30%. Endpoints byte-identical; sampler-proven
+  (A1 split ≡ old to machine precision; boundary-continuous; slope 0.7687 measured).
+- **Chrome:** chip terracotta inner hairline + minted sun limb + role ink .8→.84; cue
+  warms cool-sage → bone with a drawn chevron; cue opacity comment reconciled (the
+  keyframe ends at 1 and always has — "0.9" described the Hero's cue).
+- **Identity:** the badge + OG card + JSON-LD jobTitle + all page descriptions read
+  "AI Builder"/"AI builder" (Title Case on the chip + jobTitle, lowercase in prose).
