@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+import { CalibrationRecord } from '@/components/CalibrationRecord';
 import { SettleHeading } from '@/components/HeroSettle';
 import { renderMarkdownProse } from '@/components/MarkdownProse';
 import { cn } from '@/lib/cn';
-import { getColophon, getProfile } from '@/lib/content';
+import { getColophon, getProfile, getRounds } from '@/lib/content';
 import { bindSeparatorDash, bindSoloLetters } from '@/lib/markdown';
 
 export function generateMetadata(): Metadata {
@@ -73,6 +74,7 @@ const TYPE_SPECIMENS: { sample: string; sampleClass: string; family: string; rol
 export default function ColophonPage() {
   const colophon = getColophon();
   const rendered = renderMarkdownProse(colophon, 'blog');
+  const rounds = getRounds();
 
   return (
     <>
@@ -134,10 +136,17 @@ export default function ColophonPage() {
         </div>
       </section>
 
+      {/* The calibration record (R4/BP7 · P02) — after the specimens, before
+          the closer: the rounds ledger on the alternating surface. Data =
+          content/rounds.json (build-gated, append-only). */}
+      <CalibrationRecord rounds={rounds} />
+
       {/* Closer — cross-link to the accessibility statement, plus back home.
-          world-surface-alt alternates off the world-surface type-specimen
-          section above (the specimens→closer seam was surface→surface). */}
-      <section className="px-gutter py-18 world-surface-alt border-t border-border-decorative">
+          R4/BP7 surface flip (the pitch's one DISPLACES): the calibration
+          section above now holds world-surface-alt, so the closer flips to
+          world-surface — the world-surface alternation stays true — and
+          adopts the full py-32 lg:py-50 rhythm. */}
+      <section className="px-gutter py-32 lg:py-50 world-surface border-t border-border-decorative">
         <div className="max-w-content mx-auto flex flex-col items-start gap-8">
           <Link
             href="/accessibility/"
