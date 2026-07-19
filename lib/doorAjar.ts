@@ -25,11 +25,10 @@
  * Release: PRESENT-UNTIL-NEXT-NAV, universally — no timer, no fade; the
  * reduced-motion experience and the motion experience are the same
  * first-class design by construction (FT-9's "persists … not a
- * flash-and-vanish" semantic). Known quiet degrade (accepted): the /work/
- * tag filter remounts its cards (AnimatePresence keyed exit/re-entry), and
- * a remounted card loses the imperative mark — the visitor has already
- * engaged the grid by then, which is the mark's job done. A future
- * re-render refactor should NOT "fix" this into persistence.
+ * flash-and-vanish" semantic). (The originally-documented /work/ filter
+ * remount degrade retired WITH the filters in R4/BP9 — the gallery wall's
+ * cards never remount, so the mark simply persists until the next
+ * navigation, as designed.)
  */
 
 /** Pages that show the work cards (trailing-slash tolerant). */

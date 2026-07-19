@@ -49,6 +49,14 @@ function toCategory(id: string): Category {
 export function GalleryWall({ deliverables }: { deliverables: Deliverable[] }) {
   const [skipMotion, setSkipMotion] = useState(false);
 
+  // Row 01 = the featured work, MECHANICALLY (batch-skeptic catch): the
+  // exactly-one-featured invariant picks who hangs first — never JSON order
+  // coincidence. The rest keep their catalog order behind it.
+  const featured = deliverables.find((d) => d.featured);
+  const hung = featured
+    ? [featured, ...deliverables.filter((d) => d !== featured)]
+    : deliverables;
+
   useEffect(() => {
     try {
       if (sessionStorage.getItem('work:seen') === '1') setSkipMotion(true);
@@ -79,7 +87,7 @@ export function GalleryWall({ deliverables }: { deliverables: Deliverable[] }) {
           tail-depth budget (check 10's gate: plate-06's start depth measured
           old-vs-new at 1440 and 375; receipts/bp9). */}
       <ul className="flex flex-col gap-20 lg:gap-24">
-        {deliverables.map((d, i) => {
+        {hung.map((d, i) => {
           // Row 01 = frontispiece (image-left, parity-exempt); 02 left, then
           // alternate: 03 right, 04 left, 05 right, 06 left.
           const side: 'left' | 'right' = i === 0 ? 'left' : i % 2 === 1 ? 'left' : 'right';

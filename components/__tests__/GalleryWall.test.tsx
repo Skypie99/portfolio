@@ -70,9 +70,16 @@ describe('GalleryWall', () => {
     for (const c of cards) expect(c.className).toContain('lg:flex-row');
   });
 
-  it('rows carry the depth register (the featured contract, generalized)', () => {
+  it('every row carries the depth register (the featured contract, generalized)', () => {
     const { container } = render(<GalleryWall deliverables={six} />);
-    expect(container.querySelectorAll('.reveal-depth, [class*="reveal"]').length).toBeGreaterThan(0);
+    expect(container.querySelectorAll('.reveal-depth')).toHaveLength(6);
+  });
+
+  it('hangs the FEATURED work first, mechanically — never by JSON-order coincidence', () => {
+    const shuffled = [six[1], six[2], six[0], six[3], six[4], six[5]]; // featured at index 2
+    const { container } = render(<GalleryWall deliverables={shuffled} />);
+    const firstTitle = container.querySelector('.case-study-card h3');
+    expect(firstTitle?.textContent).toBe('Test Project 1'); // the featured one
   });
 
   it('C-25 SURVIVOR: a wall already walked skips its entrance on return', async () => {
