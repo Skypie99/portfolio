@@ -99,12 +99,10 @@ export default function AccessibilityPage() {
                   from the accessibility tree. NEVER author this in the content.ts
                   markdown string: the single site-wide inline parser has no RM-gating
                   syntax, so a markdown line would render for EVERYONE and invert it. */}
-              {/* NEEDS-SKY COPY — Sky writes the real sentence: flat, dry, present
-                  tense, a TRUE statement that the page is holding motion still right
-                  now. Must NOT merely restate the paragraph's own "holds still right
-                  now." Replace the placeholder text below, then delete this note. */}
+              {/* T9 — Sky's line (picked in-chat 2026-07-19, option 1 verbatim). */}
               <p className="hidden motion-reduce:block font-sans font-light text-prose text-charcoal leading-[1.75] text-pretty">
-                [NEEDS-SKY placeholder — the reduced-motion-only line goes here.]
+                You&apos;re reading this because your system asked for less motion.
+                The site listened — everything is already in place.
               </p>
             </div>
             <A11yReceipts data={receipts} className="my-12" />
