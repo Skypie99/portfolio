@@ -2531,9 +2531,14 @@ html.dark ::selection {
    the gradient glyphs exactly on top (inherited font/tracking + inset:0 =
    identical pixels; the parent carve transforms both as one). Unsupported
    browsers keep today's exact treatment via the @supports gate. */
-@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+@supports (((-webkit-background-clip: text) or (background-clip: text)) and (content: attr(data-text) / '')) {
   .cdesert-title-mark::after {
-    content: attr(data-text);
+    /* alt-text syntax: the / '' empties the generated content from the
+       accessibility tree — without it, screen readers announce the wordmark
+       TWICE (verify-fleet catch, CDP-proven). Browsers without the syntax fail
+       the whole widened @supports gate → today's solid-ink treatment, single
+       announcement. */
+    content: attr(data-text) / '';
     position: absolute;
     inset: 0;
     background: linear-gradient(
@@ -2729,18 +2734,17 @@ html.dark ::selection {
   border-radius: 13px;
 }
 /* Warm inner hairline (art pass) — the film's clay, one whisper of an accent.
-   .glass-card already sets position:relative + isolation, so the overlay ring
-   needs no new stacking context. */
-.runway-identity-chip::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  box-shadow: inset 0 0 0 1px rgb(179 95 64 / 0.12);
+   Vehicle is OUTLINE, not a pseudo: .glass-card owns BOTH ::before (rim-light)
+   and ::after (cursor specular) on this same element — a chip ::after merged
+   into the specular's opacity/blend and rendered the hairline invisible
+   (verify-fleet catch). outline follows border-radius (2026 baseline), nothing
+   else declares it here (the chip is pointer-events:none, never focused). */
+.runway-identity-chip {
+  outline: 1px solid rgb(179 95 64 / 0.12);
+  outline-offset: -1px;
 }
-html.dark .runway-identity-chip::after {
-  box-shadow: inset 0 0 0 1px rgb(255 214 170 / 0.10); /* warm bone on dark glass */
+html.dark .runway-identity-chip {
+  outline-color: rgb(255 214 170 / 0.10); /* warm bone on dark glass */
 }
 .runway-identity-sun {
   display: flex;
