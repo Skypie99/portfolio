@@ -10,7 +10,7 @@ import { getDeliverables, getProfile } from '@/lib/content';
 
 export function generateMetadata(): Metadata {
   const profile = getProfile();
-  const description = 'Projects by Sky Halisky — AI developer. Accessibility mapping, multi-agent systems, prompt management, and more.';
+  const description = 'Projects by Sky Halisky — AI builder. Accessibility mapping, multi-agent systems, prompt management, and more.';
   return {
     title: `Selected Work — ${profile.name}`,
     description,

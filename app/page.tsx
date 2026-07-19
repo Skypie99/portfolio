@@ -102,7 +102,7 @@ export default function HomePage() {
       {/* ── Identity mark — holds the top-left through the wordless runway so
           who-this-is registers at first paint (L1-01 / S17). Fixed sibling of
           the intro, never a child of it; the locked intro is untouched. ── */}
-      <RunwayIdentity name="Sky Halisky" roleLabel="AI developer" />
+      <RunwayIdentity name="Sky Halisky" roleLabel="AI Builder" />
 
       {/* ── Cinematic intro — 2.5D GSAP camera-push desert (placeholder phase) ─ */}
       <CinematicDesert />
