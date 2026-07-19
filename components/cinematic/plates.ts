@@ -80,8 +80,12 @@ export type Plate = {
    *  (ABSOLUTE p, not scene-local), for a plane whose scene `range` ends before
    *  p=1 but which must KEEP MOVING — e.g. the persistent floor under the still-
    *  rising arrival cliff (so the foreground doesn't freeze). Applied as a 2nd
-   *  `.to()` after the main fromTo, continuing from the plane's phase-1 end value. */
-  phase2?: { toScale: number; toY: number; start: number; end: number };
+   *  `.to()` after the main fromTo, continuing from the plane's phase-1 end value.
+   *  D4 (Sky-ratified 2026-07-19): optional per-property eases for the
+   *  continuation (GSAP has no per-property ease in one tween, so the engine
+   *  splits scale/yPercent into twin tweens at the same position). Omitted =
+   *  'none' (linear), the historical behavior. */
+  phase2?: { toScale: number; toY: number; start: number; end: number; scaleEase?: string; yEase?: string };
 };
 
 /** Master-timeline window [start,end] in p∈[0,1]. */
