@@ -338,6 +338,49 @@ describe('ViewTransitions interceptor', () => {
     }
   });
 
+  it('keeps the SECOND navigation\'s direction when a rapid re-nav skips the first transition (seq guard)', async () => {
+    // Skeptic-caught (BP1 verify): VT2 skips VT1; VT1's finished then FULFILLS
+    // and its finally(clearDirection) runs in a microtask — without the
+    // sequence guard it would delete the attribute VT2 just set, and the
+    // second enfilade would silently play as a plain dissolve.
+    window.history.pushState({}, '', '/work/');
+    let resolveFirst!: () => void;
+    const finishedFirst = new Promise<void>((r) => {
+      resolveFirst = r;
+    });
+    const finishedSecond = new Promise<void>(() => {}); // stays pending
+    let call = 0;
+    const svt = vi.fn((cb: () => unknown) => {
+      cb();
+      call += 1;
+      return {
+        finished: call === 1 ? finishedFirst : finishedSecond,
+        updateCallbackDone: Promise.resolve(),
+        ready: Promise.resolve(),
+      };
+    });
+    (document as unknown as { startViewTransition?: unknown }).startViewTransition = svt;
+
+    try {
+      clickAnchor({ href: '/work/access-map/' });
+      expect(document.documentElement.dataset.navDirection).toBe('descend');
+
+      clickAnchor({ href: '/work/dashboard/' }); // rapid second descend, VT1 superseded
+      expect(svt).toHaveBeenCalledTimes(2);
+      expect(document.documentElement.dataset.navDirection).toBe('descend');
+
+      resolveFirst(); // VT1 settles (skip → fulfilled) AFTER being superseded
+      await Promise.resolve();
+      await Promise.resolve();
+      await Promise.resolve();
+      // The guard: VT1's clear is suppressed — VT2's direction survives.
+      expect(document.documentElement.dataset.navDirection).toBe('descend');
+    } finally {
+      delete (document as unknown as { startViewTransition?: unknown }).startViewTransition;
+      delete document.documentElement.dataset.navDirection;
+    }
+  });
+
   it('sets NO direction attribute under reduced motion (the RM branch never reaches the enfilade)', () => {
     window.history.pushState({}, '', '/work/');
     const svt = vi.fn();
