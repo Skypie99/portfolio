@@ -554,14 +554,21 @@ export default function HomePage() {
         </div>
       </section>
 
+      </ContentReveal>
+
       {/* The lit windows (R4/BP6 · P01) — the door's night reveal, bound to the
           showcase strip's own "five live" claim (one source with the hero
-          sentence; DECISIONS §S). Height-0 row → zero layout, CLS 0. */}
+          sentence; DECISIONS §S). Height-0 row → zero layout, CLS 0.
+          OUTSIDE <ContentReveal> on purpose (batch-skeptic HIGH): the reveal
+          wrapper's persistent inline transform creates a stacking context that
+          let the footer paint AND hit-test above the windows on desktop —
+          out here the row joins the root stacking context and z-index wins.
+          The component only consumes the :root --day-night var, so nothing
+          else changes. */}
       <LitWindows
         deliverables={deliverables}
         litHrefs={showcaseChips.map((c) => c.href)}
       />
-      </ContentReveal>
     </>
   );
 }

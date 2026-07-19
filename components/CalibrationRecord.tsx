@@ -34,12 +34,14 @@ export function CalibrationRecord({ rounds }: { rounds: Round[] }) {
         <p className="font-mono text-meta tracking-label uppercase text-text-meta mb-12">
           {METHOD_LINE}
         </p>
-        {/* The pitch's role="list" amendment is satisfied natively: house lint
-            (jsx-a11y/no-redundant-roles) forbids the explicit role, and this ul
-            never strips list semantics (no list-none) — VoiceOver keeps the
-            list. If a Safari quirk ever shows on device, the override is a
-            project-lint decision (Sky's), noted in evidence. */}
-        <ul className="flex flex-col max-w-measure-wide">
+        {/* role="list" IS load-bearing here (batch-skeptic corrected the first
+            build's premise): Tailwind preflight sets list-style:none on every
+            ul, which is exactly the condition that makes Safari/VoiceOver drop
+            list semantics — the pitch's blocking a11y REQUIRE stands, so the
+            lint rule is disabled for this one line. Device-verifiable on the
+            standing VoiceOver session. */}
+        {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
+        <ul role="list" className="flex flex-col max-w-measure-wide">
           {rounds.map((r) => (
             <li
               key={r.numeral}
