@@ -1632,6 +1632,56 @@ html.dark [data-band-anchor]::before {
   transition: box-shadow var(--dur-slow) var(--ease-gh-glide), transform var(--dur-slow) var(--ease-gh-glide);
 }
 
+/* Glass with mass (R4/BP3 · P12) — on coarse pointers the material admits it
+   was touched: the press settles the card a hair under the thumb (1px, 0.995
+   — felt, never seen), the release settles back on the house settle curve at
+   a token duration. ONE press-state for all glass, defined once. The press
+   vocabulary is ONE FAMILY, THREE WEIGHTS (DECISIONS §D4): Button
+   `active:translate-y-0` · FilterPill `active:scale-[0.97]` · glass
+   1px/0.995 — relation documented here, their values untouched. LADDER
+   HONESTY (pitch AMENDMENTS): .glass-card is a non-interactive div whose
+   link is a child — ancestor :active AND :has(:active) BOTH ship as
+   SEPARATE rules (separate on purpose: an engine without :has must not drop
+   a combined selector list), both zero-JS; the noop-touchstart rung is NOT
+   shipped (it would break the pitch's 0-JS cell) and waits on device
+   evidence. Desktop hover physics untouched — this block is coarse-only.
+   RM: the transform lives inside no-preference; the RM thumb gets the
+   shadow acknowledgment only (the global reduce rule snaps its transition)
+   — an answer, without motion. iOS truths (touch-delay, scroll-cancel,
+   ancestor-:active propagation) are the device gate. */
+@media (pointer: coarse) {
+  .glass-card:active {
+    box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 0.75),
+                inset 0 0 0 1px rgb(255 255 255 / 0.22),
+                inset 0 -1px 1px 0 rgb(72 52 32 / 0.06),
+                0 8px 20px -16px rgb(58 68 92 / 0.18),
+                0 16px 36px -24px rgb(72 46 26 / 0.28);
+  }
+  .glass-card:has(:active) {
+    box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 0.75),
+                inset 0 0 0 1px rgb(255 255 255 / 0.22),
+                inset 0 -1px 1px 0 rgb(72 52 32 / 0.06),
+                0 8px 20px -16px rgb(58 68 92 / 0.18),
+                0 16px 36px -24px rgb(72 46 26 / 0.28);
+  }
+}
+@media (pointer: coarse) and (prefers-reduced-motion: no-preference) {
+  .glass-card {
+    transition: box-shadow var(--dur-base) var(--ease-gh-settle),
+                transform var(--dur-base) var(--ease-gh-settle);
+  }
+  .glass-card:active {
+    transform: translateY(1px) scale(0.995);
+    transition-duration: calc(var(--dur-fast) / 2);
+    transition-timing-function: var(--ease-gh-glide);
+  }
+  .glass-card:has(:active) {
+    transform: translateY(1px) scale(0.995);
+    transition-duration: calc(var(--dur-fast) / 2);
+    transition-timing-function: var(--ease-gh-glide);
+  }
+}
+
 /* C-01 — cheaper scroll-time glass on the HOME work grid. Skip fully OFF-SCREEN
    work cards so only the near-viewport backdrop-filter panes stay live during a
    scroll pass (the "fewer simultaneously-live backdrop-filter panes" lever) —
