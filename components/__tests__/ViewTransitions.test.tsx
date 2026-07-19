@@ -130,7 +130,14 @@ describe('ViewTransitions interceptor', () => {
     const finished = Promise.reject(new Error('TimeoutError: Transition was aborted'));
     const updateCallbackDone = Promise.resolve();
     const ready = Promise.resolve();
-    const finishedCatch = vi.spyOn(finished, 'catch');
+    // Since the enfilade (R4/BP1), `finished` is consumed via
+    // `.finally(clearDirection).catch(noop)` — the rejection handler rides the
+    // finally-chain, so the mechanism assertion is "finally attached once";
+    // the swallow itself is proven behaviorally: `finished` here is ALREADY
+    // rejected, so if the chain missed it, vitest would fail this file with
+    // an unhandled rejection (and the dedicated abort test below re-proves
+    // clear-on-abort end to end).
+    const finishedFinally = vi.spyOn(finished, 'finally');
     const updateCatch = vi.spyOn(updateCallbackDone, 'catch');
     const readyCatch = vi.spyOn(ready, 'catch');
 
@@ -145,8 +152,9 @@ describe('ViewTransitions interceptor', () => {
 
       expect(svt).toHaveBeenCalledTimes(1);
       expect(pushMock).toHaveBeenCalledWith('/work/access-map/');
-      // The fix: a rejection handler is attached to all three transition promises.
-      expect(finishedCatch).toHaveBeenCalledTimes(1);
+      // The fix: a rejection handler is attached to all three transition promises
+      // (finished via its finally-chain — see the note above).
+      expect(finishedFinally).toHaveBeenCalledTimes(1);
       expect(updateCatch).toHaveBeenCalledTimes(1);
       expect(readyCatch).toHaveBeenCalledTimes(1);
     } finally {
@@ -225,6 +233,138 @@ describe('ViewTransitions interceptor', () => {
     } finally {
       delete (document as unknown as { startViewTransition?: unknown }).startViewTransition;
       vi.useRealTimers();
+    }
+  });
+
+  it('sets data-nav-direction="descend" on a parent→child click and clears it on finish (enfilade, R4/BP1)', async () => {
+    window.history.pushState({}, '', '/work/');
+    let resolveFinished!: () => void;
+    const finished = new Promise<void>((r) => {
+      resolveFinished = r;
+    });
+    const svt = vi.fn((cb: () => unknown) => {
+      cb();
+      return { finished, updateCallbackDone: Promise.resolve(), ready: Promise.resolve() };
+    });
+    (document as unknown as { startViewTransition?: unknown }).startViewTransition = svt;
+
+    try {
+      clickAnchor({ href: '/work/access-map/' });
+      expect(svt).toHaveBeenCalledTimes(1);
+      // While the transition is in flight, the attribute drives the keyframes.
+      expect(document.documentElement.dataset.navDirection).toBe('descend');
+
+      resolveFinished();
+      await Promise.resolve();
+      await Promise.resolve();
+      await Promise.resolve();
+      // finished.finally(clearDirection) — a clean root for the next navigation.
+      expect(document.documentElement.dataset.navDirection).toBeUndefined();
+    } finally {
+      delete (document as unknown as { startViewTransition?: unknown }).startViewTransition;
+      delete document.documentElement.dataset.navDirection;
+    }
+  });
+
+  it('sets data-nav-direction="ascend" on a child→parent click (the breadcrumb leg)', () => {
+    window.history.pushState({}, '', '/work/access-map/');
+    const svt = vi.fn((cb: () => unknown) => {
+      cb();
+      return {
+        finished: new Promise<void>(() => {}), // pending — attr stays up for the assert
+        updateCallbackDone: Promise.resolve(),
+        ready: Promise.resolve(),
+      };
+    });
+    (document as unknown as { startViewTransition?: unknown }).startViewTransition = svt;
+
+    try {
+      clickAnchor({ href: '/work/' });
+      expect(svt).toHaveBeenCalledTimes(1);
+      expect(document.documentElement.dataset.navDirection).toBe('ascend');
+    } finally {
+      delete (document as unknown as { startViewTransition?: unknown }).startViewTransition;
+      delete document.documentElement.dataset.navDirection;
+    }
+  });
+
+  it('sets NO direction attribute on a non-parent navigation (plain dissolve preserved)', () => {
+    window.history.pushState({}, '', '/work/access-map/');
+    const svt = vi.fn((cb: () => unknown) => {
+      cb();
+      return {
+        finished: new Promise<void>(() => {}),
+        updateCallbackDone: Promise.resolve(),
+        ready: Promise.resolve(),
+      };
+    });
+    (document as unknown as { startViewTransition?: unknown }).startViewTransition = svt;
+
+    try {
+      clickAnchor({ href: '/about/' });
+      expect(svt).toHaveBeenCalledTimes(1); // the VT still runs — just directionless
+      expect(document.documentElement.dataset.navDirection).toBeUndefined();
+    } finally {
+      delete (document as unknown as { startViewTransition?: unknown }).startViewTransition;
+      delete document.documentElement.dataset.navDirection;
+    }
+  });
+
+  it('clears the direction attribute even when the transition is aborted (finished rejects)', async () => {
+    window.history.pushState({}, '', '/work/');
+    let rejectFinished!: (e: Error) => void;
+    const finished = new Promise<void>((_r, rej) => {
+      rejectFinished = rej;
+    });
+    const svt = vi.fn((cb: () => unknown) => {
+      cb();
+      return { finished, updateCallbackDone: Promise.resolve(), ready: Promise.resolve() };
+    });
+    (document as unknown as { startViewTransition?: unknown }).startViewTransition = svt;
+
+    try {
+      clickAnchor({ href: '/work/access-map/' });
+      expect(document.documentElement.dataset.navDirection).toBe('descend');
+
+      rejectFinished(new Error('Transition was aborted'));
+      await Promise.resolve();
+      await Promise.resolve();
+      await Promise.resolve();
+      // finally() ran (attr cleared) and catch(noop) swallowed the rejection.
+      expect(document.documentElement.dataset.navDirection).toBeUndefined();
+    } finally {
+      delete (document as unknown as { startViewTransition?: unknown }).startViewTransition;
+      delete document.documentElement.dataset.navDirection;
+    }
+  });
+
+  it('sets NO direction attribute under reduced motion (the RM branch never reaches the enfilade)', () => {
+    window.history.pushState({}, '', '/work/');
+    const svt = vi.fn();
+    (document as unknown as { startViewTransition?: unknown }).startViewTransition = svt;
+    const realMatchMedia = window.matchMedia;
+    window.matchMedia = ((query: string) =>
+      ({
+        matches: query.includes('prefers-reduced-motion'),
+        media: query,
+        addEventListener: () => {},
+        removeEventListener: () => {},
+        addListener: () => {},
+        removeListener: () => {},
+        onchange: null,
+        dispatchEvent: () => false,
+      }) as MediaQueryList) as typeof window.matchMedia;
+
+    try {
+      clickAnchor({ href: '/work/access-map/' });
+      // RM branch: plain push, no View Transition, no attribute — the shipped
+      // instant cut is the first-class RM experience, untouched.
+      expect(pushMock).toHaveBeenCalledWith('/work/access-map/');
+      expect(svt).not.toHaveBeenCalled();
+      expect(document.documentElement.dataset.navDirection).toBeUndefined();
+    } finally {
+      window.matchMedia = realMatchMedia;
+      delete (document as unknown as { startViewTransition?: unknown }).startViewTransition;
     }
   });
 
