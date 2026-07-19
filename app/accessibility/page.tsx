@@ -17,9 +17,17 @@ export function generateMetadata(): Metadata {
     description,
     openGraph: {
       type: 'website',
+      // W0-04 (R4/BP8): the leaf openGraph REPLACES the root's wholesale —
+      // url, siteName and locale restated (the /work/[slug] pattern) so they
+      // never silently drop from this route's share. The image is the route's
+      // OWN measurement plate (app/accessibility/opengraph-image.tsx — the
+      // receipt unfurls, P05).
+      url: '/accessibility/',
+      siteName: 'Sky Halisky — AI Portfolio',
+      locale: 'en_CA',
       title: `Accessibility — ${profile.name}`,
       description,
-      images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+      images: [{ url: '/accessibility/opengraph-image', width: 1200, height: 630 }],
     },
     twitter: {
       card: 'summary_large_image',
