@@ -2597,11 +2597,15 @@ html.dark ::selection {
   /* U2 (A-02): exit on the house fast register — at flick velocity the 480ms
      fade was still mid-air when arriving content reached the mark's pixels.
      180ms clears the chip's ~744px of post-trigger travel up to ~4,100px/s
-     with the observer geometry untouched. Same easing, same end state. */
+     with the observer geometry untouched. D3 (Sky-ratified 2026-07-19,
+     supersedes the "same easing" note): the curve is --ease-exit — "swept
+     away by the arriving page" wants acceleration OUT; the glide's slow head
+     wasted the first ~30% of a velocity-critical 180ms. Duration (U2's
+     sanctioned knob) untouched. */
   transition:
-    opacity var(--dur-fast) var(--ease-gh-glide),
-    transform var(--dur-fast) var(--ease-gh-glide),
-    visibility var(--dur-fast) var(--ease-gh-glide);
+    opacity var(--dur-fast) var(--ease-exit),
+    transform var(--dur-fast) var(--ease-exit),
+    visibility var(--dur-fast) var(--ease-exit);
 }
 @media (min-width: 768px) {
   .runway-identity {
@@ -2676,9 +2680,12 @@ html.dark ::selection {
      The cue sits ~20px above the viewport bottom — no honest duration can
      finish after the 0px edge-touch at flick, so the retirement observer also
      fires a viewport early for motion users (IntroScrollCue.tsx, RM-gated). */
+  /* D3 (Sky-ratified 2026-07-19): --ease-exit (accel-out), matching the
+     runway mark — the pair retires as one displaced gesture. Duration
+     (PROTECT-66's sanctioned knob) untouched. */
   transition:
-    opacity var(--dur-fast) var(--ease-gh-glide),
-    visibility var(--dur-fast) var(--ease-gh-glide);
+    opacity var(--dur-fast) var(--ease-exit),
+    visibility var(--dur-fast) var(--ease-exit);
 }
 .intro-scroll-cue[data-cue-done] {
   opacity: 0;
