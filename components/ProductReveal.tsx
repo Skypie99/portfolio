@@ -419,6 +419,10 @@ export function ProductReveal({
     <>
       <div aria-hidden="true" className="pr-world absolute inset-0" />
       <div aria-hidden="true" className="pr-horizon absolute inset-x-0" />
+      {/* The exhibit lamp (R4/BP4 · P06) — case-study hero only, dark register
+          only (CSS-gated): the artifact becomes the room's light source. Static
+          paint behind the frame; light theme renders nothing (display:none). */}
+      {bare && <div aria-hidden="true" className="pr-lamp pointer-events-none absolute inset-0" />}
       {kind === 'none' ? (
         <div className="absolute inset-0 overflow-hidden">{screen}</div>
       ) : bare ? (

@@ -21,6 +21,33 @@ afterEach(() => {
 });
 
 describe('ProductReveal', () => {
+  it('renders the exhibit lamp layer on the case-study hero ONLY (R4/BP4 P06)', () => {
+    // bare = the hero host (HeroProductReveal). The lamp is a dark-register
+    // CSS layer — presence here, visibility owned by html.dark in globals.css.
+    const hero = render(
+      <ProductReveal
+        slug="accessmap"
+        title="AccessMap"
+        context="hero"
+        bare
+        media={{ alt: 'AccessMap map view with accessibility pins' }}
+      />,
+    );
+    expect(hero.container.querySelector('.pr-lamp')).not.toBeNull();
+    expect(hero.container.querySelector('.pr-lamp')).toHaveAttribute('aria-hidden', 'true');
+    cleanup();
+
+    const card = render(
+      <ProductReveal
+        slug="accessmap"
+        title="AccessMap"
+        context="card"
+        media={{ alt: 'AccessMap map view with accessibility pins' }}
+      />,
+    );
+    expect(card.container.querySelector('.pr-lamp')).toBeNull();
+  });
+
   it('renders the golden-hour placeholder (no <img>) when no real src is given', () => {
     const { container } = render(
       <ProductReveal

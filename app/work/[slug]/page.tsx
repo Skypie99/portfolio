@@ -310,9 +310,14 @@ export default async function WorkDetailPage({
                 line at reading size and names the place she mapped (the SR-only
                 provenance the raster bakes in illegibly). SSR'd static → CLS 0. */}
             {d.heroPlate && (
-              <div className="order-2 lg:order-none lg:col-start-1 lg:row-start-2 flex flex-col gap-3 max-w-measure-wide">
+              <div
+                className="order-2 lg:order-none lg:col-start-1 lg:row-start-2 flex flex-col gap-3 max-w-measure-wide"
+                /* R4/BP4: the plate borrows the room's own light — --pr-sig
+                   scopes the dark-only hairline warmth (pr-plate-lit) below. */
+                style={{ '--pr-sig': signatureFor(d.id) } as CSSProperties}
+              >
                 <div className="flex flex-col gap-1.5">
-                  <p className="font-mono text-meta tracking-label uppercase text-accent-text">
+                  <p className="pr-plate-lit font-mono text-meta tracking-label uppercase text-accent-text">
                     {d.heroPlate.severity}
                   </p>
                   <p className="font-mono text-body-sm text-near-black leading-snug">
