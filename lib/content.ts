@@ -7,11 +7,13 @@ import {
   CertificateSchema,
   DeliverableSchema,
   ProfileSchema,
+  RoundsSchema,
   type A11yReceipts,
   type BlogPost,
   type Certificate,
   type Deliverable,
   type Profile,
+  type Round,
 } from '@/lib/schema';
 
 const CONTENT_DIR = join(process.cwd(), 'content');
@@ -133,6 +135,22 @@ export function getAllBlogPostSlugs(): string[] {
     slugs.push(parsed.data.id);
   });
   return slugs;
+}
+
+/**
+ * getRounds — the colophon's calibration record (R4/BP7 · P02), receipts
+ * pattern: validated at build, a bad row fails the build, append-only by
+ * convention (see RoundsSchema).
+ */
+export function getRounds(): Round[] {
+  const raw = readJson<unknown>('rounds.json');
+  const parsed = RoundsSchema.safeParse(raw);
+  if (!parsed.success) {
+    throw new Error(
+      `content/rounds.json failed validation:\n${JSON.stringify(parsed.error.format(), null, 2)}`,
+    );
+  }
+  return parsed.data;
 }
 
 /**

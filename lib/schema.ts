@@ -270,7 +270,34 @@ export const A11yReceiptsSchema = z.object({
     .length(6),
 });
 
+/** Calibration record (R4/BP7 · P02) — the colophon's round ledger, in the
+ *  receipts pattern: small dated JSON, validated at build (a bad row FAILS
+ *  the build), APPEND-ONLY by convention — future rounds add a row, never
+ *  edit a closed one. One close-date semantic per row: every count/gate a
+ *  row carries is that round's OWN close-state (the pitch's CRIT amendment).
+ *  At most ONE open round (no `closed` date) — rendered as the terracotta
+ *  "open" dot. All strings are Sky-editable data (DECISIONS §S delegation). */
+export const RoundSchema = z
+  .object({
+    numeral: z.string().regex(/^[IVX]{1,4}$/),
+    title: z.string().min(2).max(24),
+    closed: z
+      .string()
+      .regex(/^\d{4}-\d{2}-\d{2}$/)
+      .optional(),
+    counts: z.array(z.string().min(3).max(64)).min(1).max(4),
+  })
+  .strict();
+
+export const RoundsSchema = z
+  .array(RoundSchema)
+  .min(1)
+  .refine((rows) => rows.filter((r) => !r.closed).length <= 1, {
+    message: 'at most one round may be open (missing `closed`)',
+  });
+
 export type Deliverable = z.infer<typeof DeliverableSchema>;
+export type Round = z.infer<typeof RoundSchema>;
 export type Certificate = z.infer<typeof CertificateSchema>;
 export type Profile = z.infer<typeof ProfileSchema>;
 export type BlogPost = z.infer<typeof BlogPostSchema>;
