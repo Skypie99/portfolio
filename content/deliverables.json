@@ -301,6 +301,13 @@
       "src": "/images/deliverables/ghost-code/hero.png",
       "alt": "Ghost Code arcade screen — the neon Phantom mascot hovering between four command-token answers, score and spirit-life HUD in a synthwave cabinet"
     },
+    "cardImage": {
+      "src": "/images/deliverables/ghost-code/og-card.png",
+      "alt": "Ghost Code arcade round — the Phantom hovering between four git-command answer cards for staging changed files, with the spirits and score HUD",
+      "avif": "/images/deliverables/ghost-code/screen-game.avif",
+      "webp": "/images/deliverables/ghost-code/screen-game.webp",
+      "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAAAwAwCdASoUAA8APxFysVAsJqSisAgBgCIJQAAPWjw+bjoAAP7utsOcK+g4wRA87HuAH020E3sCAA=="
+    },
     "heroShot": {
       "src": "/images/deliverables/ghost-code/screen-game.png",
       "alt": "Ghost Code arcade round — the Phantom hovering between four git-command answer cards for staging changed files, with the spirits and score HUD",
