@@ -183,6 +183,8 @@ const config: Config = {
         // Motion-polish 2026-06-03 — golden-hour "camera" easings (globals.css)
         'gh-glide': 'var(--ease-gh-glide)',
         'gh-settle': 'var(--ease-gh-settle)',
+        'gh-recede': 'var(--ease-gh-recede)',
+        'gh-arrive': 'var(--ease-gh-arrive)',
       },
       boxShadow: {
         soft: '0 1px 2px rgba(35,36,32,0.04), 0 4px 12px rgba(35,36,32,0.03)',

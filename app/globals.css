@@ -295,6 +295,8 @@
   /* Golden-hour easings — the intro's "camera" weight, gentler. */
   --ease-gh-glide:  cubic-bezier(0.5, 0, 0.1, 1);     /* weighted S-curve — transitions, parallax, scene moves */
   --ease-gh-settle: cubic-bezier(0.22, 0.9, 0.26, 1); /* soft arrival + long settle — big reveals */
+  --ease-gh-recede: cubic-bezier(0.32, 0, 0.24, 1);   /* the enfilade — the outgoing room gives way (R4/BP1) */
+  --ease-gh-arrive: cubic-bezier(0.16, 0.6, 0.2, 1);  /* the enfilade — the incoming room settles (R4/BP1) */
   /* Scene duration tier (beside --dur-fast/base/slow/reveal above). */
   --dur-transition: 420ms;   /* route-change crossfade */
   --dur-scene:      1200ms;  /* large section reveal — slower reads more cinematic */
@@ -1502,6 +1504,60 @@ html.dark [data-band-anchor]::before {
     background: radial-gradient(125% 95% at 50% -12%,
       rgb(var(--rgb-gold) / 0.10), transparent 64%);
   }
+}
+
+/* ------------------------------------------------------------------
+   The Enfilade (R4/BP1 · P04) — direction and mass on the SAME gold
+   dissolve. Directional ONLY under a prefix-parent relation: the
+   interceptor sets html[data-nav-direction] from lib/navDirection
+   (descend = deeper along one axis; ascend = back up it through a
+   link); every other navigation keeps the shipped dissolve above,
+   byte-identical. Composition rule: authoring animation-name on these
+   pseudos REPLACES the UA's own fade keyframes, so an explicit fade
+   rides in the animation LIST beside the transform, and plus-lighter
+   is restated so the pair stays a TRUE cross-dissolve. Same 420ms,
+   same gold field (it lives on ::view-transition-image-pair, above,
+   untouched). This whole block lives inside no-preference with NO
+   !important — the reduce guard below must keep winning the cascade
+   on hard loads the interceptor can't reach. Remove this block and
+   the site is byte-identical to the shipped dissolve.
+   ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: no-preference) {
+  html[data-nav-direction]::view-transition-old(root),
+  html[data-nav-direction]::view-transition-new(root) {
+    mix-blend-mode: plus-lighter;
+  }
+  html[data-nav-direction='descend']::view-transition-old(root) {
+    animation:
+      enfilade-fade-out var(--dur-transition) var(--ease-gh-glide) both,
+      enfilade-recede   var(--dur-transition) var(--ease-gh-recede) both;
+  }
+  html[data-nav-direction='descend']::view-transition-new(root) {
+    animation:
+      enfilade-fade-in     var(--dur-transition) var(--ease-gh-glide) both,
+      enfilade-arrive-deep var(--dur-transition) var(--ease-gh-arrive) both;
+  }
+  html[data-nav-direction='ascend']::view-transition-old(root) {
+    animation:
+      enfilade-fade-out var(--dur-transition) var(--ease-gh-glide) both,
+      enfilade-give-way var(--dur-transition) var(--ease-gh-recede) both;
+  }
+  html[data-nav-direction='ascend']::view-transition-new(root) {
+    animation:
+      enfilade-fade-in         var(--dur-transition) var(--ease-gh-glide) both,
+      enfilade-advance-to-meet var(--dur-transition) var(--ease-gh-arrive) both;
+  }
+  @keyframes enfilade-fade-out { from { opacity: 1; } to { opacity: 0; } }
+  @keyframes enfilade-fade-in  { from { opacity: 0; } to { opacity: 1; } }
+  /* Descend: the outgoing room gives way — its weight settles back into
+     the house — while the incoming room arrives from slightly beyond and
+     settles onto the floor. 1.5% and 10px: felt, never seen. */
+  @keyframes enfilade-recede      { to   { transform: scale(0.985); } }
+  @keyframes enfilade-arrive-deep { from { transform: translateY(10px) scale(1.004); } }
+  /* Ascend: the mirror — the room you leave steps back toward where it
+     came from; the room you return to advances to meet you. */
+  @keyframes enfilade-give-way        { to   { transform: translateY(10px) scale(1.004); } }
+  @keyframes enfilade-advance-to-meet { from { transform: scale(0.985); } }
 }
 
 /* Reduced motion → INSTANT CUT. Snap the root snapshots (the VT pseudos are

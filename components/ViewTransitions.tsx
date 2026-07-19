@@ -3,6 +3,8 @@
 import { usePathname, useRouter } from 'next/navigation';
 import { useCallback, useEffect, useRef } from 'react';
 
+import { navDirection } from '@/lib/navDirection';
+
 /** Minimal shape of the object `document.startViewTransition()` returns. */
 type ViewTransitionLike = {
   finished?: Promise<unknown>;
@@ -144,6 +146,17 @@ export function ViewTransitions() {
         return;
       }
 
+      // The enfilade (R4/BP1 · P04): direction is one attribute, set from data
+      // this interceptor already holds — the current pathname and the target.
+      // Prefix-parent relations only (lib/navDirection); null = plain dissolve.
+      // Set ONLY on this VT branch, so it is absent by construction under
+      // reduced motion, on '/' arrivals, and on every degraded path.
+      const direction = navDirection(window.location.pathname, url.pathname);
+      if (direction) document.documentElement.dataset.navDirection = direction;
+      const clearDirection = (): void => {
+        delete document.documentElement.dataset.navDirection;
+      };
+
       try {
         const transition = startViewTransition.call(document, () => {
           router.push(dest);
@@ -170,10 +183,18 @@ export function ViewTransitions() {
         // are expected and harmless — swallow them so they never surface as
         // uncaught console errors. (The sync `try/catch` only covers throws, not
         // these async rejections.)
-        transition?.finished?.catch?.(noop);
+        // The direction attribute clears when the transition fully settles —
+        // success OR abort/skip (finally) — so a rapid second navigation
+        // re-derives its own direction from a clean root.
+        if (transition?.finished) {
+          transition.finished.finally(clearDirection).catch(noop);
+        } else {
+          clearDirection(); // no settle signal to wait on — never strand the attr
+        }
         transition?.updateCallbackDone?.catch?.(noop);
         transition?.ready?.catch?.(noop);
       } catch {
+        clearDirection();
         router.push(dest); // a VT error must never strand the navigation
       }
     }
