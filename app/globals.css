@@ -1188,6 +1188,34 @@ html.dark .pr-frame-phone {
     rgb(var(--rgb-canvas) / 0.68);
   border-color: rgb(var(--pr-sig, 224 150 90) / 0.22);
 }
+/* The exhibit lamp (R4/BP4 · P06) — dark register ONLY: in dark theme the
+   framed artifact becomes the room's light source — the shipped --pr-sig
+   plinth (S15 pool + pr-world sig radial) DEEPENED into a warm pool around
+   the frame; extension, not invention. Light theme renders nothing (a lamp
+   at noon is nothing). Two radials, NO blur (the mock's blur(2px) was an
+   unnamed compositing cost — dropped by its own skeptic); mix-blend-mode:
+   screen is the ONE compositing effect, named. Static paint — the default
+   state IS the RM state (the optional ambient breath is NOT shipped;
+   intensity is the conservative dial per DECISIONS §D4 — Sky's eye moves it
+   on the six-hue receipts sheet). Contrast duty: the strict-0 axe rule on
+   the lit dark state across all six hues is the instrument. */
+.pr-lamp {
+  display: none;
+}
+html.dark .pr-lamp {
+  display: block;
+  mix-blend-mode: screen;
+  background:
+    radial-gradient(72% 60% at 50% 46%, rgb(var(--pr-sig, 224 150 90) / 0.20), transparent 70%),
+    radial-gradient(110% 92% at 50% 60%, rgb(var(--pr-sig, 224 150 90) / 0.10), transparent 78%);
+}
+/* The museum plate's hairline, warmed by the same light — ONE scoped
+   text-shadow on the plate's severity line only (never a wildcard sibling
+   glow), dark register only. */
+html.dark .pr-plate-lit {
+  text-shadow: 0 0 14px rgb(var(--pr-sig, 224 150 90) / 0.3);
+}
+
 .pr-screen {
   position: relative;
   flex: 1 1 auto;
@@ -1650,32 +1678,60 @@ html.dark [data-band-anchor]::before {
    — an answer, without motion. iOS truths (touch-delay, scroll-cancel,
    ancestor-:active propagation) are the device gate. */
 @media (pointer: coarse) {
-  .glass-card:active {
+  /* Doubled class = the LVHA tie-break (BP3 verify): :focus-within (0,2,0)
+     sits LATER in source — a pressed card must press even while focused
+     (Android Chrome focuses tapped links), so the press carries 0,3,0. */
+  .glass-card.glass-card:active {
     box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 0.75),
                 inset 0 0 0 1px rgb(255 255 255 / 0.22),
                 inset 0 -1px 1px 0 rgb(72 52 32 / 0.06),
                 0 8px 20px -16px rgb(58 68 92 / 0.18),
                 0 16px 36px -24px rgb(72 46 26 / 0.28);
   }
-  .glass-card:has(:active) {
+  .glass-card.glass-card:has(:active) {
     box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 0.75),
                 inset 0 0 0 1px rgb(255 255 255 / 0.22),
                 inset 0 -1px 1px 0 rgb(72 52 32 / 0.06),
                 0 8px 20px -16px rgb(58 68 92 / 0.18),
                 0 16px 36px -24px rgb(72 46 26 / 0.28);
+  }
+  /* DARK press rungs (BP3 verify HIGH — the C-18 trap, not re-tripped):
+     `html.dark .glass-card` (0,2,1) out-ranks bare press rules, so dark
+     needs its own rungs or the dark press loses its shadow answer entirely
+     (and the dark RM press would be a ZERO response). Dark rest insets
+     verbatim; the two outers tightened in dark's black palette. */
+  html.dark .glass-card:active {
+    box-shadow: inset 0 1px 0 0 rgb(255 240 214 / 0.1),
+                inset 0 0 0 1px rgb(255 240 214 / 0.05),
+                inset 0 -1px 1px 0 rgb(0 0 0 / 0.3),
+                0 10px 24px -18px rgb(0 0 0 / 0.55),
+                0 18px 38px -26px rgb(0 0 0 / 0.64);
+  }
+  html.dark .glass-card:has(:active) {
+    box-shadow: inset 0 1px 0 0 rgb(255 240 214 / 0.1),
+                inset 0 0 0 1px rgb(255 240 214 / 0.05),
+                inset 0 -1px 1px 0 rgb(0 0 0 / 0.3),
+                0 10px 24px -18px rgb(0 0 0 / 0.55),
+                0 18px 38px -26px rgb(0 0 0 / 0.64);
   }
 }
 @media (pointer: coarse) and (prefers-reduced-motion: no-preference) {
+  /* One settle family on the deciding surface: this retimes EVERY coarse
+     .glass-card state change to the settle pair — including the keyboard
+     :focus-within lift on touch devices with keyboards. INTENDED (BP3
+     verify, decision-level): the press is the coarse surface's primary
+     physics; values and end-states untouched everywhere. Flagged in
+     DECISIONS §P for Sky. */
   .glass-card {
     transition: box-shadow var(--dur-base) var(--ease-gh-settle),
                 transform var(--dur-base) var(--ease-gh-settle);
   }
-  .glass-card:active {
+  .glass-card.glass-card:active {
     transform: translateY(1px) scale(0.995);
     transition-duration: calc(var(--dur-fast) / 2);
     transition-timing-function: var(--ease-gh-glide);
   }
-  .glass-card:has(:active) {
+  .glass-card.glass-card:has(:active) {
     transform: translateY(1px) scale(0.995);
     transition-duration: calc(var(--dur-fast) / 2);
     transition-timing-function: var(--ease-gh-glide);
