@@ -60,6 +60,17 @@ export function StaticDesertFrame() {
                   transform: `translateY(${y}%) scale(${scale})`,
                 }}
               />
+              {/* landed rim-glow (art pass): the static destination shot keeps a
+                  calmer 0.5 of the live peak — no motion narrative to justify a
+                  hot rim for reduced-motion visitors. Same park transform as the
+                  cliff; DOM-after → paints above it, below the floor plate. */}
+              {isArrival && (
+                <div
+                  className="cdesert-cliff-glow cdesert-cliff-glow--landed"
+                  aria-hidden="true"
+                  style={{ zIndex: i, transform: `translateY(${y}%) scale(${scale})` }}
+                />
+              )}
             </picture>
           );
         })}
@@ -70,9 +81,9 @@ export function StaticDesertFrame() {
         {/* sun-bloom REMOVED — the arrival cliff photo is already golden-lit; the
             added glow read as cheap glare (Sky, 2026-06-02). Warmth stays via grade. */}
 
-        {/* resolved wordmark */}
+        {/* resolved wordmark — data-text feeds the gilded-ink ::after overlay */}
         <div className="cdesert-title cdesert-title--resolved">
-          <p className="cdesert-title-mark">SkyPi Studio</p>
+          <p className="cdesert-title-mark" data-text="SkyPi Studio">SkyPi Studio</p>
         </div>
 
         <FilmGrain />

@@ -2347,6 +2347,45 @@ html.dark ::selection {
   pointer-events: none;
 }
 
+/* -- Cliff rim-glow: THE GOLD LANDS on the crest (art pass, Sky-ratified
+   2026-07-19). Masked by the arrival plate's OWN alpha — image-set() reuses the
+   byte-identical file the <picture> already fetched (AVIF where the img chose
+   AVIF, WebP where it chose WebP → HTTP cache hit in every branch; zero new
+   downloads). The fill is a warm band that dies by 52% of the plate box, so
+   gradient ∩ plate-alpha = the crest only: RIM light on rock, never a hotspot
+   in air (the killed sun-disc stays dead). The whole painted path sits inside
+   @supports — no branch can ever render an unmasked full-frame gradient. -- */
+.cdesert-cliff-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 1;                 /* above the cliff plane (z0) inside the ARRIVAL group; the FLOOR group stays in front */
+  transform-origin: 50% 70%;  /* MUST match .cdesert-layer — the synced tween lands on identical pixels */
+  pointer-events: none;
+  opacity: 0;                 /* GSAP-driven; also the no-support rest state */
+  background: none;           /* paints NOTHING unless the masked path is supported */
+}
+@supports (mask-image: image-set(url('/images/cinematic/arrival-cliff.avif') type('image/avif'))) {
+  .cdesert-cliff-glow {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 216, 158, 0.55) 0%,
+      rgba(255, 198, 130, 0.34) 18%,
+      rgba(242, 164, 96, 0.14) 36%,
+      rgba(242, 164, 96, 0) 52%
+    );
+    mask-image: image-set(
+      url('/images/cinematic/arrival-cliff.avif') type('image/avif'),
+      url('/images/cinematic/arrival-cliff.webp') type('image/webp')
+    );
+    mask-size: cover;             /* replicate the img: object-fit: cover ... */
+    mask-position: center bottom; /* ... object-position: center bottom */
+    mask-repeat: no-repeat;
+    mix-blend-mode: screen;       /* additive light on the rock, kept in-palette by the multiply grade above */
+  }
+}
+/* static-frame rest: the landed gold, calmer than the live peak */
+.cdesert-cliff-glow--landed { opacity: 0.5; }
+
 /* -- Lighting grade overlay: cool-blue → warm-gold.
    GSAP animates --cdesert-grade-mix 0→1; the warm layer's opacity reads it,
    crossfading over the cool base. multiply keeps it as a *grade*, not a wash. -- */
@@ -2462,6 +2501,7 @@ html.dark ::selection {
 .cdesert-title--resolved { opacity: 1; }
 .cdesert-title-mark {
   margin: 0;
+  position: relative; /* hosts the gilded-ink ::after overlay (art pass) */
   font-family: var(--font-cormorant), Garamond, Georgia, serif;
   font-weight: 300;
   font-size: clamp(2.25rem, 6.5vw, 5.5rem);
@@ -2470,14 +2510,45 @@ html.dark ::selection {
      band. The brightest golden flutes read ~4.3:1 against the bone text at the
      raw-plate level, so a layered warm-black shadow (a soft wide halation + two
      tight passes) sinks the immediate ground behind the glyphs and guarantees
-     ≥4.7:1 over any plate tone — verified at p=0.97 over the arrival cliff. */
+     ≥4.7:1 over any plate tone — verified at p=0.97 over the arrival cliff.
+     ART PASS 2026-07-19: halation re-sunk for the gilded ink — the gradient's
+     deepest gold stop (#FFE9C4, L 0.836) needs the band at L ≤ 0.1385 to hold
+     4.7:1; the mid pass widened 8→12px owns the worst-case pixel a few px off
+     the strokes, the wide layer bumped 30px/.86 → 34px/.88 for margin. */
   color: #FFF6EC;
   text-shadow:
-    0 2px 30px rgba(28, 12, 4, 0.86),
-    0 1px 8px rgba(28, 12, 4, 0.92),
-    0 1px 3px rgba(28, 12, 4, 0.95);
+    0 2px 34px rgba(26, 11, 4, 0.88),
+    0 1px 12px rgba(26, 11, 4, 0.94),
+    0 1px 3px rgba(24, 10, 4, 0.96);
   text-align: center;
   white-space: nowrap;
+}
+
+/* Gilded ink (art pass): background-clip:text CANNOT live on the mark itself —
+   its own text-shadow paints ABOVE the clipped background fill, muddying the
+   gold (and dropping the shadow would forfeit the measured AA halation). So the
+   base glyphs keep solid #FFF6EC + halation, and this ::after duplicate paints
+   the gradient glyphs exactly on top (inherited font/tracking + inset:0 =
+   identical pixels; the parent carve transforms both as one). Unsupported
+   browsers keep today's exact treatment via the @supports gate. */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .cdesert-title-mark::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      #FFFDF6 0%,
+      #FFF6E6 55%,
+      #FFEDCF 88%,
+      #FFE9C4 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    text-shadow: none; /* halation lives on the base glyphs beneath */
+  }
 }
 
 /* -- Finishing layer container (grain + vignette + tint + motes). -- */
@@ -2539,6 +2610,35 @@ html.dark ::selection {
       rgba(30, 14, 6, 0.32) 86%,
       rgba(20, 9, 3, 0.55) 100%
     );
+}
+
+/* -- Vignette ARC (art pass): the frame draws in as the gold lands. A separate
+   additive deepen layer so the ratified p=0 frame stays byte-identical; GSAP
+   drives OPACITY only (0→1 over p[0.70,1.0]) — compositor-cheap, unlike
+   animating a var inside background (full-frame repaint per scrub tick). -- */
+.cdesert-vignette-arc {
+  position: absolute;
+  inset: 0;
+  opacity: 0; /* live-path opening frame; GSAP drives the landing */
+  background:
+    /* golden-hour air thickens at the top as the gold lands */
+    linear-gradient(
+      180deg,
+      rgba(206, 118, 62, 0.10) 0%,
+      rgba(210, 128, 74, 0.05) 16%,
+      rgba(210, 128, 74, 0) 30%
+    ),
+    /* the push-in: corners draw inward */
+    radial-gradient(
+      ellipse 118% 96% at 50% 44%,
+      rgba(0, 0, 0, 0) 46%,
+      rgba(26, 12, 5, 0.14) 78%,
+      rgba(18, 8, 3, 0.30) 100%
+    );
+}
+/* the static frame IS the landed state — fully drawn in, zero JS */
+.cdesert-static-stage .cdesert-vignette-arc {
+  opacity: 1;
 }
 .cdesert-tint {
   position: absolute;
@@ -2628,6 +2728,20 @@ html.dark ::selection {
   padding: 0.5rem 0.85rem;
   border-radius: 13px;
 }
+/* Warm inner hairline (art pass) — the film's clay, one whisper of an accent.
+   .glass-card already sets position:relative + isolation, so the overlay ring
+   needs no new stacking context. */
+.runway-identity-chip::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgb(179 95 64 / 0.12);
+}
+html.dark .runway-identity-chip::after {
+  box-shadow: inset 0 0 0 1px rgb(255 214 170 / 0.10); /* warm bone on dark glass */
+}
 .runway-identity-sun {
   display: flex;
   flex: 0 0 auto;
@@ -2652,7 +2766,7 @@ html.dark ::selection {
 .runway-identity-role {
   font-size: 0.625rem; /* clearly secondary */
   letter-spacing: 0.15em;
-  color: rgb(var(--rgb-ink) / 0.8); /* theme-aware, still well above AA on the frost */
+  color: rgb(var(--rgb-ink) / 0.84); /* theme-aware, well above AA on the frost (art pass: 0.8→0.84 — the "AI Builder" line earns a touch more presence; contrast strictly ↑) */
 }
 
 /* ── Intro scroll-continuation cue (T6 / W2-01) ─────────────────────────────
@@ -2692,15 +2806,16 @@ html.dark ::selection {
   visibility: hidden;
 }
 /* The glyph fades up after a short beat so it reads as part of the film's own
-   settle, not a UI element racing the first frame. Ends at 0.9 — the Hero
-   cue's exact opacity (5.04:1 AA over the surface; measured over the film in
-   the R2-P4 contrast gate). */
+   settle, not a UI element racing the first frame. COMMENT-TRUTH (art pass):
+   the intro-cue-rise keyframe ends at opacity 1 (and always has — the R2-P4
+   contrast gate measured the LIVE build, i.e. at 1); the Hero's own cue sits
+   at 0.9. The old "ends at 0.9" note described the Hero cue, not this one. */
 .intro-scroll-cue-glyph {
   /* Theme-invariant light tone: the cue is ALWAYS over the dark cinematic
      foreground (in both themes — the film is theme-invariant), so the flat-
      surface ink-meta token (dark in light mode) can't serve here. A soft light
      sage reads as a whisper over the film. */
-  color: rgb(178 183 176);
+  color: rgb(209 202 190); /* art pass: warm bone (was cool sage — the one off-palette tone over the warm film); lighter over the dark scrim → AA strictly improves */
   /* Soft dark scrim — no edge, fades fully to transparent — so the light glyph
      holds AA as the film's foreground scrubs from dark to lit. Reads as a
      vignette, never a chip/button (the substrate-justified deviation the

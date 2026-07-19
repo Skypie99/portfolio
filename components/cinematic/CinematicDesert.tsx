@@ -114,6 +114,9 @@ export function CinematicDesert() {
   const gradeRef = useRef<HTMLDivElement>(null);
   const exposureRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
+  // Work-of-art pass (Sky-ratified 2026-07-19): the cliff rim-glow layer —
+  // masked by the arrival plate's own alpha, transform-synced to the cliff.
+  const cliffGlowRef = useRef<HTMLDivElement>(null);
 
   // Whether to mount the animated scene. When false we render the static frame
   // and skip GSAP entirely.
@@ -184,6 +187,10 @@ export function CinematicDesert() {
           for (let pi = 0; pi < SCENES[si].planes.length; pi += 1) {
             const el = layerRefs.current.get(`${si}:${pi}`);
             if (el) el.style.willChange = active ? 'transform' : 'auto';
+          }
+          // the rim-glow rides the ARRIVAL scene's promotion window (art pass)
+          if (SCENES[si].id === 'arrival-cliff' && cliffGlowRef.current) {
+            cliffGlowRef.current.style.willChange = active ? 'transform, opacity' : 'auto';
           }
         }
       };
@@ -366,6 +373,32 @@ export function CinematicDesert() {
         if (sun) {
           tl.set(sun, { opacity: scene.sunMax }, scene.range.start);
         }
+
+        // ── cliff rim-glow: THE GOLD LANDS (work-of-art pass, Sky-ratified) ──
+        // A masked layer using the arrival plate's OWN alpha (CSS mask, cache-hit
+        // on the already-fetched file), filled with a crest-band gradient — rim
+        // light on the rock only, never a hotspot in air (the killed sun-disc
+        // stays dead). Transform-synced to the cliff plate FROM ITS DATA (never
+        // literals) so the pair can't drift; the gold swells over the exposure
+        // ramp's late-gold acceleration and holds, landed, to p=1.
+        if (scene.id === 'arrival-cliff' && cliffGlowRef.current) {
+          const cliff = scene.planes.find((pl) => pl.id === 'arrival-cliff');
+          if (cliff) {
+            const sspan = Math.max(0.0001, scene.range.end - scene.range.start);
+            tl.fromTo(
+              cliffGlowRef.current,
+              { scale: cliff.scaleFrom, yPercent: cliff.yFrom, y: 0 }, // y:0 mirrors the cliff's SSR-seed clear
+              { scale: cliff.scaleTo, yPercent: cliff.yTo, duration: sspan, ease: 'none' },
+              scene.range.start,
+            );
+            tl.fromTo(
+              cliffGlowRef.current,
+              { opacity: 0 },
+              { opacity: 0.85, duration: 0.27, ease: 'sine.inOut' }, // midpoint ≈p0.835 rides the 0.84 gold knot
+              0.7,
+            );
+          }
+        }
       });
 
       // ── ONE continuous hue grade: warm-morning → warm-gold across the whole p ──
@@ -424,6 +457,16 @@ export function CinematicDesert() {
         );
       }
 
+      // ── vignette arc: the frame draws in as the gold lands (art pass) ──────
+      // A dedicated additive deepen layer (FilmGrain mounts it) whose OPACITY
+      // animates — compositor-only; the ratified p=0 frame stays byte-identical.
+      // Same window + ease as the rim-glow, so crest-light, edge draw-in and the
+      // title crystallize compose as ONE landing gesture.
+      const vigArc = stage.querySelector('.cdesert-vignette-arc');
+      if (vigArc) {
+        tl.fromTo(vigArc, { opacity: 0 }, { opacity: 1, duration: 0.3, ease: 'sine.inOut' }, 0.7);
+      }
+
       // Atmospheric haze REMOVED 2026-06-02 (Sky: "remove the dust, it does not make
       // sense"). The arrival no longer resolves THROUGH dust — it arrives by
       // occlusion-by-motion: the pre-grown arrival-cliff (plates.ts) covers the valley
@@ -438,11 +481,15 @@ export function CinematicDesert() {
       // wordmark last. Once carved it holds fully opaque through the tail so the
       // wordmark is the frame you're left on (lockfile: "carves in late and HOLDS").
       if (titleRef.current) {
+        // Art pass retime (Sky-ratified 2026-07-19): reads MORE expensive via
+        // LESS displacement over MORE scroll — blur 10→7, rise 7→5, window
+        // 0.11→0.13, start pinned to the 0.845 late-gold knot. The title
+        // CONDENSES rather than arrives; power2.out keeps first pixels prompt.
         tl.fromTo(
           titleRef.current,
-          { opacity: 0, yPercent: 7, filter: 'blur(10px)' },
-          { opacity: 1, yPercent: 0, filter: 'blur(0px)', duration: 0.11, ease: 'power2.out' },
-          0.86,
+          { opacity: 0, yPercent: 5, filter: 'blur(7px)' },
+          { opacity: 1, yPercent: 0, filter: 'blur(0px)', duration: 0.13, ease: 'power2.out' },
+          0.845,
         );
         // REFINE 2026-06-02: the wordmark TIGHTENS as it lands so it CRYSTALLISES
         // into place rather than just fading up — a classic expensive-title move.
@@ -456,12 +503,12 @@ export function CinematicDesert() {
         if (mark) {
           tl.fromTo(
             mark,
-            { scaleX: 1.05, transformOrigin: '50% 50%' },
-            { scaleX: 1, duration: 0.11, ease: 'power2.out' },
-            0.86,
+            { scaleX: 1.03, transformOrigin: '50% 50%' },
+            { scaleX: 1, duration: 0.13, ease: 'power2.out' },
+            0.845,
           );
         }
-        tl.to(titleRef.current, { opacity: 1, duration: 0.03 }, 0.97);
+        tl.to(titleRef.current, { opacity: 1, duration: 0.025 }, 0.975);
       }
 
       // ── D5: the living frame (Sky-ratified 2026-07-19) ───────────────────
@@ -547,6 +594,12 @@ export function CinematicDesert() {
                   eager={si === 0}
                 />
               ))}
+              {/* cliff rim-glow — masked by the plate's own alpha; the gold
+                  lands on the crest p[0.70,0.97] (art pass). CSS opacity:0 rest
+                  + @supports gate → SSR-safe, paints nothing unless masked. */}
+              {scene.id === 'arrival-cliff' && (
+                <div ref={cliffGlowRef} className="cdesert-cliff-glow" aria-hidden="true" />
+              )}
               {/* per-scene sun, parked at that beat's measured glow */}
               <div
                 ref={(el) => {
@@ -569,9 +622,9 @@ export function CinematicDesert() {
           <div ref={gradeRef} className="cdesert-grade" aria-hidden="true" />
           <div ref={exposureRef} className="cdesert-exposure" aria-hidden="true" />
 
-          {/* title wordmark */}
+          {/* title wordmark — data-text feeds the gilded-ink ::after overlay */}
           <div ref={titleRef} className="cdesert-title">
-            <p className="cdesert-title-mark">SkyPi Studio</p>
+            <p className="cdesert-title-mark" data-text="SkyPi Studio">SkyPi Studio</p>
           </div>
 
           {/* finishing grain / vignette / motes */}
