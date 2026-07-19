@@ -411,6 +411,72 @@ describe('ViewTransitions interceptor', () => {
     }
   });
 
+  it('marks the departed room card on a return home — through the instant-cut branch (door ajar, R4/BP2)', () => {
+    // A→home rides the toHome instant cut (no View Transition) — the mark is
+    // presence, not motion, so it must survive every degraded branch.
+    cleanup();
+    window.history.pushState({}, '', '/work/access-map/');
+    pathnameMock.mockReturnValue('/work/access-map/');
+    const view = render(<ViewTransitions />);
+
+    const card = document.createElement('a');
+    card.setAttribute('href', '/work/access-map/');
+    document.body.appendChild(card);
+
+    try {
+      clickAnchor({ href: '/' });
+      expect(pushMock).toHaveBeenCalledWith('/');
+
+      // Next commits '/' → the pathname effect applies the mark.
+      pathnameMock.mockReturnValue('/');
+      view.rerender(<ViewTransitions />);
+      expect(card.hasAttribute('data-door-ajar')).toBe(true);
+
+      // The following commit releases it — present-until-next-nav.
+      pathnameMock.mockReturnValue('/about/');
+      view.rerender(<ViewTransitions />);
+      expect(card.hasAttribute('data-door-ajar')).toBe(false);
+    } finally {
+      card.remove();
+    }
+  });
+
+  it('marks the card under reduced motion too (the mark is presence, not motion)', () => {
+    cleanup();
+    window.history.pushState({}, '', '/work/access-map/');
+    pathnameMock.mockReturnValue('/work/access-map/');
+    const view = render(<ViewTransitions />);
+
+    const card = document.createElement('a');
+    card.setAttribute('href', '/work/access-map/');
+    document.body.appendChild(card);
+
+    const realMatchMedia = window.matchMedia;
+    window.matchMedia = ((query: string) =>
+      ({
+        matches: query.includes('prefers-reduced-motion'),
+        media: query,
+        addEventListener: () => {},
+        removeEventListener: () => {},
+        addListener: () => {},
+        removeListener: () => {},
+        onchange: null,
+        dispatchEvent: () => false,
+      }) as MediaQueryList) as typeof window.matchMedia;
+
+    try {
+      clickAnchor({ href: '/' });
+      expect(pushMock).toHaveBeenCalledWith('/');
+
+      pathnameMock.mockReturnValue('/');
+      view.rerender(<ViewTransitions />);
+      expect(card.hasAttribute('data-door-ajar')).toBe(true);
+    } finally {
+      window.matchMedia = realMatchMedia;
+      card.remove();
+    }
+  });
+
   it('takes the plain-push instant cut for a same-path search-only navigation', () => {
     // The pathname resolver cannot observe a search-only commit, so these
     // degrade to an instant cut (strictly better than the old 4s freeze).
