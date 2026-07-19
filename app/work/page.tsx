@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { EmptyState } from '@/components/EmptyState';
+import { GalleryWall } from '@/components/GalleryWall';
 import { SettleHeading } from '@/components/HeroSettle';
 import { ParallaxWash } from '@/components/ParallaxWash';
-import { WorkFilterGrid } from '@/components/WorkFilterGrid';
 import { cn } from '@/lib/cn';
 import { getDeliverables, getProfile } from '@/lib/content';
 
@@ -29,14 +29,16 @@ export function generateMetadata(): Metadata {
 }
 
 /**
- * /work — F-04. Editorial grid of deliverables.
+ * /work — the gallery wall (R4/BP9 · P03, was F-04's filterable grid).
  *
- * Server Component. Header + back link are static; the filter grid is a
- * client component (WorkFilterGrid) so FilterPill interactive state works
- * without shipping unnecessary JS for the static header sections.
+ * Server Component. Header + back link are static; the wall itself is a thin
+ * client component (GalleryWall) only for the C-25 entrance-skip — no framer,
+ * no filters (retired under the §S-delegated PROTECT-63-adjacent ruling;
+ * DECISIONS records it, Sky can re-rule).
  *
- * Featured deliverable renders as a wide ProjectCard above the filter grid.
- * Non-featured deliverables render as CaseStudyCards, filterable by tag.
+ * Every work hangs full-width in alternating plates, walked 01→06 — the
+ * featured invariant still picks who hangs first; on the wall the order IS
+ * the hierarchy.
  */
 export default function WorkIndexPage() {
   const deliverables = getDeliverables();
@@ -103,9 +105,10 @@ export default function WorkIndexPage() {
               note="New work is being written up — built slowly, documented honestly. Check back shortly."
             />
           ) : (
-            // WorkFilterGrid owns its own entrance: the featured card reveals
-            // with depth and the grid cascades per-card (no outer block reveal).
-            <WorkFilterGrid deliverables={deliverables} />
+            // The gallery wall (R4/BP9 · P03) — the promenade replaces the
+            // filterable grid: every work full-width, walked 01→06, framer
+            // retired from the route. The C-25 entrance-skip survives inside.
+            <GalleryWall deliverables={deliverables} />
           )}
 
         </div>
