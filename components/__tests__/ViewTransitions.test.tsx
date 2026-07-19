@@ -421,6 +421,7 @@ describe('ViewTransitions interceptor', () => {
 
     const card = document.createElement('a');
     card.setAttribute('href', '/work/access-map/');
+    card.setAttribute('data-door-target', '/work/access-map/'); // the card's opt-in hook
     document.body.appendChild(card);
 
     try {
@@ -449,6 +450,7 @@ describe('ViewTransitions interceptor', () => {
 
     const card = document.createElement('a');
     card.setAttribute('href', '/work/access-map/');
+    card.setAttribute('data-door-target', '/work/access-map/'); // the card's opt-in hook
     document.body.appendChild(card);
 
     const realMatchMedia = window.matchMedia;

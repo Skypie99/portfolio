@@ -719,7 +719,10 @@ article h2[id]:target::before {
    shipped interceptor — never persisted, never in server HTML. Decorative
    wayfinding; the pseudo carries no content and no SR surface. The bar's
    vertical extent on a card vs FT-9's 0.8em on prose is Sky's remaining
-   eye-value (DECISIONS §P flag). */
+   eye-value (DECISIONS §P flag). Marking is OPT-IN via data-door-target on
+   the card TITLE links only (skeptic-caught: positioning an arbitrary
+   href-matched anchor re-parents stretched-link ::after overlays — the
+   home showcase chips' whole-cell tap target must never collapse). */
 a[data-door-ajar] {
   position: relative;
 }

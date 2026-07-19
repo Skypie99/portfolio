@@ -78,6 +78,10 @@ export function CaseStudyCard({ title, category, description, href, media, links
             <Link
               href={href}
               aria-label={`${title} — read the case study`}
+              /* The door ajar (R4/BP2): the card's ONE opt-in mark hook (see
+                 ProjectCard) — one bar per card, beside the title, FT-9's
+                 placement. */
+              data-door-target={href}
               className="rounded-sm transition-colors duration-fast ease-out hover:text-accent-text focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta"
             >
               {title}

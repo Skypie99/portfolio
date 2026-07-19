@@ -96,6 +96,10 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
               <Link
                 href={`/work/${d.id}/`}
                 aria-label={`${d.title} — ${d.role}, ${d.year}`}
+                /* The door ajar (R4/BP2): the card's ONE opt-in mark hook —
+                   lib/doorAjar marks only [data-door-target], never bare
+                   hrefs (the stretched-link chips must stay unpositioned). */
+                data-door-target={`/work/${d.id}/`}
                 className="rounded-sm transition-colors duration-fast ease-out hover:text-accent-text focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta"
               >
                 {d.title}
