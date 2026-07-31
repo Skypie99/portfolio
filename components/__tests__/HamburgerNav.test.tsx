@@ -84,7 +84,10 @@ describe('HamburgerNav', () => {
     const trigger = screen.getByRole('button', { name: /open navigation menu/i });
     expect(trigger).toBeInTheDocument();
     expect(trigger).toHaveAttribute('aria-expanded', 'false');
-    expect(trigger).toHaveAttribute('aria-controls', 'primary-menu');
+    // L2-1 (a11y deep-QA 2026-07-31): collapsed, #primary-menu is not mounted, so
+    // aria-controls is absent rather than dangling. The open-state idref is
+    // asserted in the dedicated L2-1 test below.
+    expect(trigger).not.toHaveAttribute('aria-controls');
   });
 
   it('toggles aria-expanded when the trigger is clicked', async () => {
@@ -122,6 +125,45 @@ describe('HamburgerNav', () => {
       expect(trigger).toHaveAttribute('aria-expanded', 'false');
     });
     expect(trigger).toHaveFocus();
+  });
+
+  // a11y deep-QA 2026-07-31 — L2-1 / L2-2 robustness hardening.
+  it('points aria-controls at #primary-menu only while that element exists (L2-1)', async () => {
+    const user = userEvent.setup();
+    render(<HamburgerNav />);
+    const trigger = screen.getByRole('button', { name: /open navigation menu/i });
+
+    // Closed: the dialog is unmounted, so the idref must not dangle.
+    expect(document.getElementById('primary-menu')).toBeNull();
+    expect(trigger).not.toHaveAttribute('aria-controls');
+
+    await user.click(trigger);
+    await screen.findByRole('dialog', { name: /primary menu/i });
+    expect(document.getElementById('primary-menu')).not.toBeNull();
+    expect(trigger).toHaveAttribute('aria-controls', 'primary-menu');
+  });
+
+  it('takes the trigger out of the Tab order while open, yet still returns focus to it (L2-2)', async () => {
+    const user = userEvent.setup();
+    render(<HamburgerNav />);
+    const trigger = screen.getByRole('button', { name: /open navigation menu/i });
+
+    expect(trigger).not.toHaveAttribute('tabindex');
+
+    await user.click(trigger);
+    await screen.findByRole('dialog', { name: /primary menu/i });
+
+    // Open: visually gone and pointer-inert, so it must not be a sequential stop
+    // outside the dialog's trap.
+    expect(trigger).toHaveAttribute('tabindex', '-1');
+
+    // ...but it must remain PROGRAMMATICALLY focusable, because close() focuses it
+    // synchronously before React re-renders. `visibility:hidden` or `inert` here
+    // would silently break focus-return — this assertion is the tripwire.
+    await user.keyboard('{Escape}');
+    await waitFor(() => expect(trigger).toHaveAttribute('aria-expanded', 'false'));
+    expect(trigger).toHaveFocus();
+    expect(trigger).not.toHaveAttribute('tabindex');
   });
 
   it('layers trigger and drawer above the pinned stage (R3 z contract)', async () => {
