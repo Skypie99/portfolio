@@ -112,8 +112,18 @@ export function HamburgerNav() {
         ref={triggerRef}
         type="button"
         aria-expanded={open}
-        aria-controls="primary-menu"
+        // L2-1: #primary-menu only exists while the dialog is mounted, so the
+        // idref is only pointed at it while it is real. (AT ignores dangling
+        // idrefs, but the honest form is the one that never dangles.)
+        aria-controls={open ? 'primary-menu' : undefined}
         aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
+        // L2-2: while the dialog is open this trigger stays mounted (focus must
+        // return here on close) but is visually gone and pointer-inert. -1 takes
+        // it out of the sequential Tab order too, so it cannot be a trap stop
+        // outside the dialog — while staying programmatically focusable, which
+        // `visibility:hidden`/`inert` would not be, and close() focuses it
+        // synchronously before React re-renders.
+        tabIndex={open ? -1 : undefined}
         onClick={() => setOpen((v) => !v)}
         className={cn(
           // z-[90]: above the homepage's pinned desert stage (frozen z-50 —
