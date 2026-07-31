@@ -15,7 +15,8 @@ import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { INLINE_CODE_CLASS, smartPunctuation } from '@/lib/markdown';
 import { getDeliverables } from '@/lib/content';
-import { cardMedia, heroMedia, heroPreloadLink } from '@/lib/media';
+import { ThemedHeroPreload } from '@/components/ThemedHeroPreload';
+import { cardMedia, heroMedia, heroPreloadLink, heroPreloadLinks } from '@/lib/media';
 import { frameForSlug, signatureFor } from '@/lib/signature';
 import { renderMarkdownProse } from '@/components/MarkdownProse';
 
@@ -195,10 +196,16 @@ export default async function WorkDetailPage({
   // "featured opens warm" survives (in the built page AND on real navigation)
   // without the cross-route leak. heroPreloadLink returns null unless an optimized
   // sibling is declared, so a placeholder-only or raw-PNG hero is never preloaded.
-  const heroPreload = heroPreloadLink(d);
+  // Themed heroes (showcase/theme-sync) swap the static link for a tiny inline
+  // script that preloads ONLY the active theme's variant — the theme-blind link
+  // would waste the wrong AVIF for half the visitors. Single-theme heroes keep
+  // the exact link below, byte-identically.
+  const themedPreloads = heroPreloadLinks(d);
+  const heroPreload = themedPreloads ? null : heroPreloadLink(d);
 
   return (
     <>
+      {themedPreloads && <ThemedHeroPreload links={themedPreloads} />}
       {heroPreload && (
         <link
           rel="preload"
