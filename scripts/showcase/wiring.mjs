@@ -5,9 +5,8 @@
  * authored here and must stay TRUE to the frame they sit under.
  *
  * Curation notes:
- *  - accessmap cardImage is deliberately NOT rewired: the ratified "No ramp ·
- *    SEVERITY 4 · VERIFIED" flag crop (FT-1, Sky-picked) stays until Sky says
- *    otherwise — the card-vs-themed-map question rides the mockup gate.
+ *  - accessmap cardImage = the themed map pair (SKY'S GATE PICK 2026-07-31,
+ *    superseding the FT-1 flag crop — the card re-themes with the site).
  *  - shots[0] carries the drawer-spring clip in BOTH themes (poster-first,
  *    RM-safe); the report walk's submission remains NEEDS-DEVICE and is not
  *    embedded.
@@ -18,6 +17,12 @@ export const WIRING = [
     slug: 'accessmap',
     ogTheme: 'dark',
     heroShot: { scene: 'map-overview', viewport: 'phone' },
+    cardImage: {
+      scene: 'map-overview',
+      viewport: 'phone',
+      focal: '50% 30%',
+      alt: "AccessMap's live barrier map — severity pins over downtown Kelowna street tiles, the flag count and filter controls up top.",
+    },
     shots: [
       {
         scene: 'drawer-open',
@@ -41,6 +46,44 @@ export const WIRING = [
         viewport: 'phone',
         focal: '50% 30%',
         caption: "Peer verification — neighbours confirm what's still broken.",
+      },
+    ],
+  },
+
+  {
+    slug: 'prompt-library',
+    ogTheme: 'dark',
+    heroShot: { scene: 'home', viewport: 'desktop' },
+    cardImage: {
+      scene: 'home',
+      viewport: 'desktop',
+      focal: '50% 18%',
+      alt: 'The Prompt Library home — search and category chips over the prompt grid, the featured card leading.',
+    },
+    shots: [
+      {
+        scene: 'prompt-detail',
+        viewport: 'desktop',
+        caption: 'A prompt opened — variables to fill, the copy control waiting.',
+      },
+    ],
+  },
+
+  {
+    slug: 'claude-corp',
+    ogTheme: 'dark',
+    heroShot: { scene: 'hero-pipeline', viewport: 'desktop' },
+    cardImage: {
+      scene: 'hero-pipeline',
+      viewport: 'desktop',
+      focal: '50% 12%',
+      alt: 'The Claude Corp front door — the fifteen-role pipeline under the editorial hero.',
+    },
+    shots: [
+      {
+        scene: 'team',
+        viewport: 'desktop',
+        caption: 'Fifteen roles, one governed main branch.',
       },
     ],
   },

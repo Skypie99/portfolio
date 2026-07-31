@@ -4,7 +4,7 @@ import type { ShowcaseChrome } from '@/components/ProductReveal';
  * SHOWCASE_CHROME — the site-wide presentation chrome for themed showcases:
  * how a captured screen sits in the world.
  *
- *   'device' — today's DeviceFrame grammar (phone/window/plate), unchanged.
+ *   'device' — the DeviceFrame grammar (phone/window/plate).
  *   'float'  — the clean artifact: rounded plane + the site's warm shadow,
  *              no device chrome.
  *   'matte'  — the exhibit mat (.ts-matte): the capture presented as a framed
@@ -15,4 +15,4 @@ import type { ShowcaseChrome } from '@/components/ProductReveal';
  * commit. Until then it stays 'device' — today's look. Per-scene `chrome` in
  * deliverables.json remains the escape hatch either way.
  */
-export const SHOWCASE_CHROME: ShowcaseChrome = 'device';
+export const SHOWCASE_CHROME: ShowcaseChrome = 'float';
