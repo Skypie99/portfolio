@@ -4,7 +4,10 @@ import { type CSSProperties, type ImgHTMLAttributes, type ReactNode, useEffect, 
 
 import { DeviceFrame } from '@/components/DeviceFrame';
 import { TactileMedia } from '@/components/TactileMedia';
+import { ThemedMotion } from '@/components/ThemedMotion';
+import { ThemedShowcase } from '@/components/ThemedShowcase';
 import { cn } from '@/lib/cn';
+import { SHOWCASE_CHROME } from '@/lib/showcase';
 import { type DeviceFrameKind, frameForSlug, signatureFor } from '@/lib/signature';
 
 /**
@@ -44,6 +47,23 @@ export type ProductRevealVideo = {
   alt: string;
 };
 
+/** The DARK twin of a themed scene (showcase/theme-sync): file paths + LQIP +
+ *  an optional dark clip. alt/focal/caption are shared with the base (same
+ *  scene, same box, one accessible name). */
+export type ThemedVariant = {
+  src?: string;
+  avif?: string;
+  webp?: string;
+  lqip?: string;
+  video?: Omit<ProductRevealVideo, 'alt'>;
+};
+
+/** Mono-theme capture, matted on site tokens — names which theme the capture IS. */
+export type ShowcaseMatte = 'light-mono' | 'dark-mono';
+
+/** Presentation chrome (the mockup-gate axis): device frame / clean float / exhibit mat. */
+export type ShowcaseChrome = 'device' | 'float' | 'matte';
+
 export type ProductRevealMedia = {
   /** Absence => render the placeholder and emit NO <img> (unless `video`). */
   src?: string;
@@ -69,6 +89,14 @@ export type ProductRevealMedia = {
   /** This image is ALREADY cropped for the card front — render it statically
    *  (no parallax oversize, no re-zoom) so it shows exactly as supplied. */
   precropped?: boolean;
+  /** Theme-synced dark twin (showcase/theme-sync). When present the showcase
+   *  renders the variant matching the active theme; the swap rides the site's
+   *  own view-transition dissolve. */
+  dark?: ThemedVariant;
+  /** Mono-theme project: the single capture matted on site-token surfaces. */
+  matte?: ShowcaseMatte;
+  /** Per-scene chrome override; absent → the site-wide SHOWCASE_CHROME. */
+  chrome?: ShowcaseChrome;
 };
 
 export type ProductRevealProps = {
@@ -133,6 +161,38 @@ const NOMINAL: Record<ProductRevealContext, { w: number; h: number }> = {
 /** A faint UI bar — a decorative hint of an interface (no text). */
 function Bar({ className, style }: { className?: string; style?: CSSProperties }) {
   return <span aria-hidden="true" className={cn('block rounded-full', className)} style={style} />;
+}
+
+/** The framed-context artifact under one of three chromes (the mockup-gate
+ *  axis, showcase/theme-sync). 'device' is today's DeviceFrame, byte-identical
+ *  for all legacy media; 'float' and 'matte' apply only to THEMED media and
+ *  only once picked (SHOWCASE_CHROME / per-scene `chrome`). */
+function FramedArtifact({
+  kind,
+  hasReal,
+  chrome,
+  children,
+}: {
+  kind: Exclude<DeviceFrameKind, 'none'>;
+  hasReal: boolean;
+  chrome: 'device' | 'float' | 'matte';
+  children: ReactNode;
+}) {
+  if (chrome === 'float') {
+    return <div className={cn(FRAME_PLACEMENT_REAL[kind], 'ts-float')}>{children}</div>;
+  }
+  if (chrome === 'matte') {
+    return (
+      <div className="ts-matte absolute inset-0">
+        <div className="ts-matte-well">{children}</div>
+      </div>
+    );
+  }
+  return (
+    <DeviceFrame kind={kind} className={(hasReal ? FRAME_PLACEMENT_REAL : FRAME_PLACEMENT)[kind]}>
+      {children}
+    </DeviceFrame>
+  );
 }
 
 /** Hero device-screen placeholder: signature wash + product wordmark + eyebrow. */
@@ -369,14 +429,51 @@ export function ProductReveal({
       ? { avif: media.avif, webp: media.webp, avifSrcset: media.avifSrcset, webpSrcset: media.webpSrcset, sizes: media.sizes }
       : undefined;
 
+  // Themed media (showcase/theme-sync): a dark twin or a mono matte routes the
+  // screen through ThemedShowcase/ThemedMotion — the variant matching the
+  // active theme, swapping inside the site's own view-transition dissolve.
+  // Legacy single-theme media below renders byte-identically to before.
+  const chrome = media.chrome ?? SHOWCASE_CHROME;
+  const isThemed = Boolean(media.dark || media.matte);
+  const themedFit: 'cover' | 'contain' = kind !== 'none' ? 'contain' : 'cover';
+
   // The "screen" content. Real modes (video wins over still over placeholder):
+  //  • themed still/clip → ThemedShowcase / ThemedMotion (above).
   //  • video (any context) → ProofVideo: poster-first, RM-gated autoplay.
   //  • device-framed (hero) → StaticShot contain: the WHOLE screen, static.
   //  • card front with a PRE-CROPPED image → StaticShot cover: shown exactly,
   //    no parallax oversize (the band aspect is paired with the image).
   //  • full-bleed (card/shot), un-cropped source → TactileMedia: cover-cropped
   //    to `focal`, with the tactile parallax drift.
-  const screen: ReactNode = hasVideo ? (
+  const screen: ReactNode = isThemed ? (
+    media.video || media.dark?.video ? (
+      <ThemedMotion
+        light={{
+          mp4: media.video?.mp4,
+          webm: media.video?.webm,
+          poster: media.video?.poster ?? '',
+          lqip: media.lqip,
+        }}
+        dark={media.dark?.video ? { ...media.dark.video, lqip: media.dark.lqip } : undefined}
+        matte={media.matte}
+        alt={media.video?.alt ?? media.alt}
+        captions={media.video?.captions}
+        fit={themedFit}
+        position={kind !== 'none' ? undefined : media.focal}
+      />
+    ) : (
+      <ThemedShowcase
+        light={{ src: media.src as string, avif: media.avif, webp: media.webp, lqip: media.lqip }}
+        dark={media.dark}
+        matte={media.matte}
+        alt={media.alt}
+        fit={themedFit}
+        position={kind !== 'none' ? undefined : media.focal}
+        eager={eager}
+        sizes={media.sizes}
+      />
+    )
+  ) : hasVideo ? (
     <ProofVideo
       video={media.video as ProductRevealVideo}
       fit={kind !== 'none' ? 'contain' : 'cover'}
@@ -433,14 +530,18 @@ export function ProductReveal({
         // without ever touching the frame's own -translate-x/y-1/2 centering.
         // RM/no-JS: no animation → transform:none → byte-identical to today.
         <div className="pr-hero-lift absolute inset-0">
-          <DeviceFrame kind={kind} className={(hasReal ? FRAME_PLACEMENT_REAL : FRAME_PLACEMENT)[kind]}>
+          <FramedArtifact
+            kind={kind}
+            hasReal={hasReal}
+            chrome={isThemed ? chrome : 'device'}
+          >
             {screen}
-          </DeviceFrame>
+          </FramedArtifact>
         </div>
       ) : (
-        <DeviceFrame kind={kind} className={(hasReal ? FRAME_PLACEMENT_REAL : FRAME_PLACEMENT)[kind]}>
+        <FramedArtifact kind={kind} hasReal={hasReal} chrome={isThemed ? chrome : 'device'}>
           {screen}
-        </DeviceFrame>
+        </FramedArtifact>
       )}
     </>
   );
