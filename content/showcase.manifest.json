@@ -1,0 +1,13 @@
+{
+  "schema": "showcase-manifest/1",
+  "generatedAt": null,
+  "factory": {
+    "script": "scripts/capture-showcase.mjs",
+    "engine": "playwright-core 1.61.1 / chromium-1228 (Chromium — Safari/WebKit stays a device gate)",
+    "encoders": "ffmpeg-static 6.0 (libx264 + libvpx-vp9) + sharp 0.34.5"
+  },
+  "projects": {},
+  "captures": [],
+  "budget": null,
+  "determinismProof": null
+}
