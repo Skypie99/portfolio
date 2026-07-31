@@ -106,6 +106,7 @@ async function main() {
   console.log(`[encode-video] ${slug}/${name}  width=${width}  ceiling=${VIDEO_CEILING_MB}MB${dry ? '  (DRY RUN)' : ''}`);
   if (dry) { console.log('  (dry) would emit mp4 + webm + poster.{avif,webp,jpg}'); return; }
 
+  rmSync(stagingDir, { recursive: true, force: true }); // sweep residue from any interrupted prior run
   mkdirSync(stagingDir, { recursive: true });
   const tmpMp4 = join(stagingDir, `${name}.mp4`);
   const tmpWebm = join(stagingDir, `${name}.webm`);
@@ -122,8 +123,14 @@ async function main() {
   } catch {
     webmDropReason = 'vp9 encode failed';
   }
-  // Poster frame → PNG → sharp → AVIF/WebP/JPG under budget (seek composes with --start).
+  // Poster frame → PNG → sharp → AVIF/WebP/JPG under budget (seek composes with
+  // --start). A seek past the recording's EOF yields no frame — retry near the
+  // clip's head rather than failing the whole encode.
   ff(['-ss', String((a.start ?? 0) + a.posterAt), '-i', masterPath, '-frames:v', '1', '-vf', scale, tmpFrame]);
+  if (!existsSync(tmpFrame)) {
+    console.log(`  poster seek ${(a.start ?? 0) + a.posterAt}s past EOF — retrying at ${(a.start ?? 0) + 0.5}s`);
+    ff(['-ss', String((a.start ?? 0) + 0.5), '-i', masterPath, '-frames:v', '1', '-vf', scale, tmpFrame]);
+  }
 
   const posterAvif = join(stagingDir, `${name}-poster.avif`);
   const posterWebp = join(stagingDir, `${name}-poster.webp`);

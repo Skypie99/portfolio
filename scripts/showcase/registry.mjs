@@ -140,18 +140,23 @@ export const PROJECTS = [
         id: 'report-composed',
         viewports: ['phone'],
         themes: 'both',
-        // Ends at the ENABLED submit CTA — the r2 fence verbatim: never pressed.
+        // The report entry lives on HOME at this SHA (aria-dump diagnosis
+        // 2026-07-31: the map has no report FAB; the home pill is occluded once
+        // the map opens). Compose from Home; category/severity/description are
+        // resilient optionals so a copy tweak degrades the composition, never
+        // the scene. Ends at the submit CTA — the r2 fence verbatim: NEVER
+        // pressed.
         nav: [
-          { clickLabel: 'Open the full map' },
-          { wait: 3000 },
-          { clickOpt: 'Close' },
-          { wait: 500 },
+          { wait: 2500 },
           { clickLabel: 'Report a barrier' },
           { wait: 3000 },
-          { clickLabel: 'Category: Blocked path' },
-          { wait: 500 },
-          { clickLabelOpt: 'Severity 4:' },
-          { wait: 500 },
+          { clickLabelOpt: 'Category: Blocked path' },
+          { clickTextOpt: 'Blocked path' },
+          { wait: 600 },
+          { clickLabelOpt: 'Severity 4' },
+          { wait: 600 },
+          { clickLabelOpt: 'Use my location' },
+          { wait: 1200 },
           { fillLabelOpt: { label: 'Description', value: 'Construction hoarding blocks the whole sidewalk.' } },
           { wait: 800 },
         ],
@@ -242,14 +247,15 @@ export const PROJECTS = [
       {
         id: 'report-walk',
         themes: ['light'],
-        pre: [{ clickLabel: 'Open the full map' }, { wait: 3000 }, { clickOpt: 'Close' }, { wait: 600 }],
+        pre: [{ wait: 2000 }], // the report pill lives on Home at this SHA
         drive: [
           { mark: 'gestureStart' },
           { clickLabel: 'Report a barrier' },
           { wait: 2200 },
-          { clickLabel: 'Category: Blocked path' },
+          { clickLabelOpt: 'Category: Blocked path' },
+          { clickTextOpt: 'Blocked path' },
           { wait: 900 },
-          { clickLabelOpt: 'Severity 4:' },
+          { clickLabelOpt: 'Severity 4' },
           { wait: 1200 },
           { mark: 'gestureEnd' },
         ],

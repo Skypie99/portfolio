@@ -59,7 +59,17 @@ export function linkNodeModules(repo, dest, appDir = null) {
   const src = appDir ? path.join(repo, appDir, 'node_modules') : path.join(repo, 'node_modules');
   const target = appDir ? path.join(dest, appDir, 'node_modules') : path.join(dest, 'node_modules');
   if (!fs.existsSync(src)) throw new Error(`node_modules missing in source repo: ${src} (installs are forbidden)`);
-  if (!fs.existsSync(target)) fs.symlinkSync(src, target, 'dir');
+  if (fs.existsSync(target)) return;
+  if (process.platform === 'darwin') {
+    // Metro resolves modules by REALPATH, so a symlinked node_modules makes
+    // expo/AppEntry.js look for ../../App in the SOURCE repo — outside the
+    // worktree's watched root — and the export dies. An APFS clonefile copy
+    // (cp -c: copy-on-write, near-instant, no extra disk) puts a physical
+    // node_modules inside the worktree instead. No network, no installs.
+    execFileSync('cp', ['-cR', src, target]);
+  } else {
+    fs.symlinkSync(src, target, 'dir');
+  }
 }
 
 /** Copy .env byte-for-byte for build-time EXPO_PUBLIC_* vars. Contents are never
