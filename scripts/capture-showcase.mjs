@@ -25,7 +25,7 @@ import path from 'node:path';
 import { createRequire } from 'node:module';
 
 import {
-  BANK_ROOT, MASTERS_ROOT, RECEIPTS_ROOT, PROJECTS, REPO_ROOT, VIEWPORTS,
+  BANK_ROOT, MASTERS_ROOT, RECEIPTS_ROOT, PROJECTS, VIEWPORTS,
 } from './showcase/registry.mjs';
 import { bankProject, compareRuns, isoDate, printBudget, readManifest, writeManifest } from './showcase/manifest.mjs';
 import { launchBrowser, makeContext, runNav, settleTheme, shoot, assertNoViolations } from './showcase/driver.mjs';
@@ -170,6 +170,9 @@ async function captureStills({ project, src, baseUrl, browser, args, mastersRoot
         fs.mkdirSync(path.dirname(masterPath), { recursive: true });
         const exists = fs.existsSync(masterPath);
         if (!(args.resume && exists)) {
+          // Per-scene isolation: one scene failing must never kill the project.
+          // On failure, bank a FAILED frame + the page's accessible names so the
+          // fix is a diagnosis, not a guess — then continue.
           const ctx = await makeContext(browser, project, { theme, viewport: VIEWPORTS[vpName] });
           try {
             const page = await ctx.newPage();
@@ -178,9 +181,29 @@ async function captureStills({ project, src, baseUrl, browser, args, mastersRoot
             });
             await settleTheme(page, project, theme);
             if (project.readyText) await page.getByText(project.readyText, { exact: false }).first().waitFor({ timeout: 30_000 }).catch(() => {});
-            await runNav(page, ctx, scene.nav ?? []);
-            await shoot(page, masterPath, { settleMs: scene.settle ?? 450 });
-            assertNoViolations(ctx, `${project.slug}/${stem}`);
+            try {
+              await runNav(page, ctx, scene.nav ?? []);
+              await shoot(page, masterPath, { settleMs: scene.settle ?? 450 });
+              assertNoViolations(ctx, `${project.slug}/${stem}`);
+            } catch (err) {
+              await page.screenshot({ path: masterPath.replace(/\.png$/, '.FAILED.png') }).catch(() => {});
+              const aria = await page
+                .evaluate(() =>
+                  Array.from(document.querySelectorAll('button,[role="button"],a,[role="tab"],[aria-label]'))
+                    .map((el) => ({
+                      label: el.getAttribute('aria-label'),
+                      text: (el.textContent || '').trim().slice(0, 60),
+                      role: el.getAttribute('role') || el.tagName.toLowerCase(),
+                    }))
+                    .filter((x) => x.label || x.text)
+                    .slice(0, 120),
+                )
+                .catch(() => []);
+              fs.writeFileSync(masterPath.replace(/\.png$/, '.FAILED.aria.json'), JSON.stringify(aria, null, 1));
+              rows.push({ ...baseRow(project, src, scene.id, theme, vpName, scene, ['FAILED']), error: String(err.message).slice(0, 200) });
+              console.log(`  [still] ${project.slug}/${stem} FAILED — ${String(err.message).split('\n')[0].slice(0, 110)}`);
+              continue;
+            }
           } finally {
             await ctx.close();
           }
@@ -209,6 +232,7 @@ async function captureClips({ project, src, baseUrl, browser, args, mastersRoot,
   for (const clip of project.clips ?? []) {
     if (args.scene && clip.id !== args.scene) continue;
     for (const theme of clip.themes.filter((t) => !args.theme || t === args.theme)) {
+      try {
       const stem = `${clip.id}.${theme}.phone`;
       const clipDir = path.join(mastersRoot, project.slug, 'clips');
       fs.mkdirSync(clipDir, { recursive: true });
@@ -265,6 +289,10 @@ async function captureClips({ project, src, baseUrl, browser, args, mastersRoot,
       }
       rows.push(row);
       console.log(`  [clip] ${stem} ${row.flags.join(',') || 'ok'}`);
+      } catch (err) {
+        rows.push({ ...baseRow(project, src, `clip:${clip.id}`, theme, 'phone', clip, ['FAILED']), error: String(err.message).slice(0, 200) });
+        console.log(`  [clip] ${clip.id}.${theme} FAILED — ${String(err.message).split('\n')[0].slice(0, 110)}`);
+      }
     }
   }
 }
@@ -272,7 +300,7 @@ async function captureClips({ project, src, baseUrl, browser, args, mastersRoot,
 async function rawFileInfo(file) {
   const { createHash } = await import('node:crypto');
   return {
-    path: path.relative(REPO_ROOT, file),
+    path: path.relative(BANK_ROOT, file),
     sha256: createHash('sha256').update(fs.readFileSync(file)).digest('hex'),
     bytes: fs.statSync(file).size,
   };

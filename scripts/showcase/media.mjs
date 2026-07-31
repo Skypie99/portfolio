@@ -11,7 +11,7 @@ import path from 'node:path';
 
 import { createRequire } from 'node:module';
 
-import { REPO_ROOT, SHIP_ROOT } from './registry.mjs';
+import { BANK_ROOT, REPO_ROOT, SHIP_ROOT } from './registry.mjs';
 import { sha256 } from './manifest.mjs';
 
 const require = createRequire(import.meta.url);
@@ -31,7 +31,9 @@ function runJson(script, args) {
 export async function masterInfo(file) {
   const meta = await sharp(file).metadata();
   return {
-    path: path.relative(REPO_ROOT, file),
+    // Bank-relative so the manifest reads the same from any run location
+    // (worktree during the train, ~/Portfolio after merge).
+    path: path.relative(BANK_ROOT, file),
     sha256: sha256(file),
     bytes: fs.statSync(file).size,
     width: meta.width,
