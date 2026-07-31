@@ -29,12 +29,18 @@
       }
     },
     "cardImage": {
-      "src": "/images/deliverables/accessmap/card-flag.jpg",
-      "alt": "AccessMap's map with a verified 'No ramp' barrier flagged at a downtown Kelowna corner — wheelchair users have to detour",
-      "focal": "6% 42%",
-      "avif": "/images/deliverables/accessmap/card-flag.avif",
-      "webp": "/images/deliverables/accessmap/card-flag.webp",
-      "lqip": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAABwAwCdASoUAAsAPxFysFAsJqSisAgBgCIJZwAAUXs+pvJ3lgAA+Q8bh4A0LM0unW56ZOCejiEIDrZ0AUfs2vzriQInbncuFYAAAA=="
+      "src": "/showcase/accessmap/map-overview.light.phone.webp",
+      "alt": "AccessMap's live barrier map — severity pins over downtown Kelowna street tiles, the flag count and filter controls up top.",
+      "focal": "50% 30%",
+      "avif": "/showcase/accessmap/map-overview.light.phone.avif",
+      "webp": "/showcase/accessmap/map-overview.light.phone.webp",
+      "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAwBACdASoUACsAPxF6sVEsKCSisBVaqYAiCWUAAJRfXcR0LayXH5e1NeQA/u/XyHCSMQalheBQMpfugq916K0++GpIkN7SWrFsrkiBbu5gAAAA",
+      "dark": {
+        "src": "/showcase/accessmap/map-overview.dark.phone.webp",
+        "avif": "/showcase/accessmap/map-overview.dark.phone.avif",
+        "webp": "/showcase/accessmap/map-overview.dark.phone.webp",
+        "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAACwBACdASoUACsAPwFurFArJqQisA1RYCAJY2hwXMYT/rSVh6g9kx6tfLUlwMYAAP7vpmaTBcxq86PT7eO3cX2vWNxA6algNxXN6Mvr5G4adSz4b1O2fYNmdtX/gYAmMgb/WSWgAAA="
+      }
     },
     "heroPlate": {
       "severity": "SEVERITY 4 · VERIFIED",
