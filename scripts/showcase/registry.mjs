@@ -313,7 +313,7 @@ export const PROJECTS = [
     title: 'Ghost Code',
     priority: 3,
     repo: '/Users/skypie/Games/pacman-code-trainer',
-    source: { kind: 'worktree', ref: 'main', sha: '38f98bc' }, // tracked index.html dirty in checkout
+    source: { kind: 'worktree', ref: 'main', sha: '1e6b963' }, // 2026-07-31: toggle-reachability fix landed on top of the light-mode merge
     build: { kind: 'none' },
     serve: { kind: 'static', port: 8123 },
     theme: {
