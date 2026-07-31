@@ -355,3 +355,59 @@ describe.skipIf(!OUT_EXISTS)('Gap 5 — reveal failure floor guard', () => {
   });
 });
 
+// ---------------------------------------------------------------------------
+// Gap 5 — new-tab links announce themselves, INCLUDING inside <noscript>
+//
+// The /accessibility/ page publishes "links that open a new tab say so". The
+// rendered site honoured that (133/133 labelled), but the <noscript> fallback in
+// ContactEmail did not — 18 links (9 pages x 2) opened a new tab silently for
+// no-JS visitors. DOM-based sweeps miss this class entirely, because a browser
+// never parses <noscript> content into the DOM when JS is on. This check reads
+// the shipped HTML as text, so noscript is just markup like any other.
+// (a11y deep-QA 2026-07-31, finding C9-1.)
+// ---------------------------------------------------------------------------
+
+describe.runIf(OUT_EXISTS)('Gap 5 — new-tab links announce themselves', () => {
+  /** Full <a ...>...</a> elements, including any nested inside <noscript>. */
+  function extractAnchorElements(html: string): Array<{ open: string; inner: string }> {
+    const out: Array<{ open: string; inner: string }> = [];
+    const pattern = /<a\s([^>]*)>([\s\S]*?)<\/a>/gi;
+    let m: RegExpExecArray | null;
+    while ((m = pattern.exec(html)) !== null) out.push({ open: m[1], inner: m[2] });
+    return out;
+  }
+
+  const NEW_TAB_WORDING = /opens in (?:a )?new tab/i;
+
+  it('every target="_blank" anchor carries an accessible new-tab announcement', () => {
+    const offenders: string[] = [];
+    for (const file of collectHtmlFiles(OUT_DIR)) {
+      const html = readFileSync(file, 'utf8');
+      for (const { open, inner } of extractAnchorElements(html)) {
+        if (!/target="_blank"/i.test(open)) continue;
+        // Either the visible/sr-only text says it, or the accessible name does.
+        const ariaLabel = /aria-label="([^"]*)"/i.exec(open)?.[1] ?? '';
+        const title = /title="([^"]*)"/i.exec(open)?.[1] ?? '';
+        if (NEW_TAB_WORDING.test(inner) || NEW_TAB_WORDING.test(ariaLabel) || NEW_TAB_WORDING.test(title)) continue;
+        const href = /href="([^"]+)"/i.exec(open)?.[1] ?? '(no href)';
+        offenders.push(`${file.replace(OUT_DIR, '')} → ${href}`);
+      }
+    }
+    expect(offenders, `new-tab links with no announcement:\n${offenders.join('\n')}`).toEqual([]);
+  });
+
+  it('the noscript contact fallback specifically announces its new-tab links', () => {
+    // Pins the exact regression C9-1 fixed: a DOM sweep cannot see this markup,
+    // so without an explicit assertion the fallback can silently rot again.
+    const home = join(OUT_DIR, 'index.html');
+    if (!existsSync(home)) return;
+    const html = readFileSync(home, 'utf8');
+    const noscripts = [...html.matchAll(/<noscript>([\s\S]*?)<\/noscript>/gi)].map((m) => m[1]);
+    const contactFallback = noscripts.find((n) => /github\.com|linkedin\.com/i.test(n));
+    expect(contactFallback, 'expected a <noscript> socials fallback in the built homepage').toBeTruthy();
+    const links = extractAnchorElements(contactFallback!).filter((a) => /target="_blank"/i.test(a.open));
+    expect(links.length).toBeGreaterThanOrEqual(2);
+    for (const l of links) expect(l.inner).toMatch(NEW_TAB_WORDING);
+  });
+});
+

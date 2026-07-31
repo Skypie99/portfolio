@@ -87,6 +87,7 @@ export function ContactEmail({
             className="link-draw text-accent-text"
           >
             GitHub
+            <span className="sr-only">(opens in new tab)</span>
           </a>{' '}
           ·{' '}
           <a
@@ -96,6 +97,7 @@ export function ContactEmail({
             className="link-draw text-accent-text"
           >
             LinkedIn
+            <span className="sr-only">(opens in new tab)</span>
           </a>
         </p>
       </noscript>
