@@ -20,3 +20,9 @@ next-env.d.ts
 proof-masters/*
 !proof-masters/.gitkeep
 !proof-masters/README.md
+
+# Showcase capture masters (showcase/theme-sync): raw dsf2 PNGs + raw clip webms
+# banked under design-reviews/showcase-refresh/masters/ — NEVER committed; only
+# the encoded siblings in public/showcase/ ship. (design-reviews/ itself stays
+# untracked by convention; this line makes a stray add harmless.)
+design-reviews/showcase-refresh/masters/
