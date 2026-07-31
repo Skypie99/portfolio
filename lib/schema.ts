@@ -202,6 +202,10 @@ export const DeliverableSchema = z.object({
    *  site: W0-05 measured that the pale card melts into white LinkedIn feeds
    *  while dark survives them. */
   ogTheme: z.enum(['light', 'dark']).optional(),
+  /** Dedicated unfurl raster (1200×630 JPG cut from the dark master by
+   *  scripts/og-cards.mjs). Unfurlers get a native-aspect JPG — never the
+   *  card's WebP/AVIF pair (LinkedIn's fetcher is format-conservative). */
+  ogCard: AssetPath.optional(),
 });
 
 export const CertificateSchema = z

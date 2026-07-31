@@ -118,15 +118,18 @@ export async function generateMetadata({
       locale: 'en_CA',
       title: `${d.title} — Sky Halisky`,
       description: d.summary,
-      // FT-1/W0-01/02: the share unfurl now deposits the WORK — the deliverable's
-      // own card image (accessmap → the "No ramp · SEVERITY 4 · VERIFIED" flag)
-      // instead of the generic wordmark plate, resolved absolute via metadataBase.
-      // alt stays d.title, which the real artifact finally makes true. Falls back
-      // to the global plate for any deliverable without a card image.
+      // FT-1/W0-01/02: the share unfurl deposits the WORK, resolved absolute via
+      // metadataBase. Precedence (showcase/theme-sync): the dedicated ogCard —
+      // a 1200×630 JPG cut from the DARK master (W0-05: dark survives white
+      // LinkedIn feeds; unfurl fetchers are format-conservative, so never the
+      // on-site WebP/AVIF pair) — then the legacy card raster, then the global
+      // plate. alt stays d.title, which the real artifact makes true.
       images: [
-        d.cardImage?.src
-          ? { url: d.cardImage.src, width: d.cardImage.width, height: d.cardImage.height, alt: d.title }
-          : { url: '/opengraph-image', width: 1200, height: 630, alt: d.title },
+        d.ogCard
+          ? { url: d.ogCard, width: 1200, height: 630, alt: d.title }
+          : d.cardImage?.src
+            ? { url: d.cardImage.src, width: d.cardImage.width, height: d.cardImage.height, alt: d.title }
+            : { url: '/opengraph-image', width: 1200, height: 630, alt: d.title },
       ],
     },
     twitter: {

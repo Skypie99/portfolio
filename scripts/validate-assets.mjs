@@ -184,6 +184,7 @@ function checkDeliverableProof(publicDir) {
     checkOne(d.heroShot, `${d.id} heroShot`);
     checkOne(d.cardImage, `${d.id} cardImage`);
     if (Array.isArray(d.shots)) d.shots.forEach((s, i) => checkOne(s, `${d.id} shots[${i}]`));
+    exists(d.ogCard, 'proof(ogCard)', `${d.id} ogCard`);
   }
   return { count: declared, missing };
 }

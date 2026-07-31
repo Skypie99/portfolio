@@ -67,6 +67,7 @@ async function main() {
     if (w.cardImage) patch.cardImage = build(w.cardImage);
     if (w.shots) patch.shots = w.shots.map(build);
     if (w.ogTheme) patch.ogTheme = w.ogTheme;
+    if (w.ogCard) patch.ogCard = w.ogCard;
     patches[w.slug] = patch;
   }
 
