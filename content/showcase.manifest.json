@@ -1759,23 +1759,23 @@
       "files": {
         "master": {
           "path": "masters/ghost-code/board.dark.desktop.png",
-          "sha256": "73e38112b2e7d87c343016b76dd944b28f7bdd5e0155e515423d42694db840bd",
-          "bytes": 341114,
+          "sha256": "e2d2ab6442250331d1d4ee9f7f3a35a97fa4cfdeb99e5f8b54e82cc2c7f1c1af",
+          "bytes": 118781,
           "width": 2880,
           "height": 1800
         },
         "shipped": [
           {
             "path": "/showcase/ghost-code/board.dark.desktop.avif",
-            "bytes": 16812,
+            "bytes": 12619,
             "quality": 52
           },
           {
             "path": "/showcase/ghost-code/board.dark.desktop.webp",
-            "bytes": 29592
+            "bytes": 20602
           }
         ],
-        "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAACwAgCdASoUAA0APxFysFAsJqSisAgBgCIJaQAAeyAA/u9c3/4ZB9MDXt4AAA=="
+        "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADwAgCdASoUAA0APxFysVCsJqSisAgBgCIJaQDG9DBsAAD+7wyvSX2mpsX5so0AAAA="
       }
     },
     {
@@ -1793,23 +1793,23 @@
       "files": {
         "master": {
           "path": "masters/ghost-code/board.dark.phone.png",
-          "sha256": "a1d8ac535f5095ae6a754b2cb7dfbbc217233edd512a309fabf9baf1b4a0496e",
-          "bytes": 220782,
+          "sha256": "0967356b70aad540e7caf8a160e684b1a232faf8e2026608babac713228d5f25",
+          "bytes": 82681,
           "width": 780,
           "height": 1688
         },
         "shipped": [
           {
             "path": "/showcase/ghost-code/board.dark.phone.avif",
-            "bytes": 21858,
+            "bytes": 14211,
             "quality": 52
           },
           {
             "path": "/showcase/ghost-code/board.dark.phone.webp",
-            "bytes": 42436
+            "bytes": 26828
           }
         ],
-        "lqip": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAABQBACdASoUACsAPxGAsFMsKKQoKrgMAYAiCWcAygAoGJT1HKKGMok9fRQAAP7vL/EIdkJ5YBEOXhPoNV2y0ACEtBL+VMGE/3a0RX5bSJ8T0KAnAAA="
+        "lqip": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADQAwCdASoUACsAPxGCtFasKCSjpWmZgCIJaQDRvBEL94BLj8ASF0AA/u4bDwZoH7en2q+01O5hA+xt5XGm/S/hx3+X8B+u7OiUY/qliAAAAA=="
       }
     },
     {
@@ -1827,23 +1827,23 @@
       "files": {
         "master": {
           "path": "masters/ghost-code/board.light.desktop.png",
-          "sha256": "6d4359646c1d8f705b7b9401f437af0216178ae77dca1e935ce917948307d562",
-          "bytes": 251022,
+          "sha256": "f49c126081b6ad0a651f0ef33b587da8c8e81101df69434c8e32e64b90098573",
+          "bytes": 116833,
           "width": 2880,
           "height": 1800
         },
         "shipped": [
           {
             "path": "/showcase/ghost-code/board.light.desktop.avif",
-            "bytes": 16281,
+            "bytes": 13247,
             "quality": 52
           },
           {
             "path": "/showcase/ghost-code/board.light.desktop.webp",
-            "bytes": 29794
+            "bytes": 21542
           }
         ],
-        "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFwsFAsJiSisAgBgCIJaQDKAC0kAAD+70aVFCStQDfjPAAA"
+        "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADQAgCdASoUAA0APxFysVCsJqSisAgBgCIJaQAAe/QAAP7vr4rPc0ojUCXgAA=="
       }
     },
     {
@@ -1861,23 +1861,125 @@
       "files": {
         "master": {
           "path": "masters/ghost-code/board.light.phone.png",
-          "sha256": "e0941efb62cba14d9afd57175b29c26fbda09612b4e4e6cdf95e1d7400b3bf78",
-          "bytes": 174404,
+          "sha256": "5c8d66f44431fae218c3da354e0da73679eb22c07b3e799e829cf2f02fd29e53",
+          "bytes": 81397,
           "width": 780,
           "height": 1688
         },
         "shipped": [
           {
             "path": "/showcase/ghost-code/board.light.phone.avif",
-            "bytes": 22514,
+            "bytes": 15370,
             "quality": 52
           },
           {
             "path": "/showcase/ghost-code/board.light.phone.webp",
-            "bytes": 43484
+            "bytes": 29070
           }
         ],
-        "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAQBACdASoUACsAPxF8tFKsKCUiqqoBgCIJZwDD6B3cJidjko3alBoS4AD+7pX+oWqlkRnmse+46XeugCq9tcKLl3iM3xka8e9FeqOUiW46gAAA"
+        "lqip": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAwAwCdASoUACsAPxGCt1YsKCUjpWmZgCIJaQDSrA8duyCAAP7vHoedYQDsZ91u9Qvp2aYaQ4qYTEuD3a5HBAGObfr7CieMA9RmvAAA"
+      }
+    },
+    {
+      "project": "ghost-code",
+      "projectSha": "1e6b963d3b88940f13593dac2d0b1cb8e7966549",
+      "projectBranch": "main",
+      "scene": "clip:round",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "A Ghost Code round in motion — the Phantom on patrol while the code prompt waits below.",
+      "determinism": "seeded-byte",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/ghost-code/clips/round.dark.phone.raw.webm",
+          "sha256": "f33f4dfe7e9a65b8c48d01e0d3d860c3fd47bcdb8153b74a740d12deb63bc3cf",
+          "bytes": 194151
+        }
+      },
+      "clip": {
+        "id": "round",
+        "durationS": 5.7,
+        "trim": {
+          "rawStartS": 4.9
+        },
+        "mp4": {
+          "path": "/showcase/ghost-code/clips/round.dark.phone.mp4",
+          "bytes": 21801
+        },
+        "webm": {
+          "path": "/showcase/ghost-code/clips/round.dark.phone.webm",
+          "bytes": 22021
+        },
+        "webmDropReason": null,
+        "posters": [
+          {
+            "path": "/showcase/ghost-code/clips/round.dark.phone-poster.avif",
+            "bytes": 11114
+          },
+          {
+            "path": "/showcase/ghost-code/clips/round.dark.phone-poster.webp",
+            "bytes": 12482
+          },
+          {
+            "path": "/showcase/ghost-code/clips/round.dark.phone-poster.jpg",
+            "bytes": 17354
+          }
+        ],
+        "needsCaptions": true
+      }
+    },
+    {
+      "project": "ghost-code",
+      "projectSha": "1e6b963d3b88940f13593dac2d0b1cb8e7966549",
+      "projectBranch": "main",
+      "scene": "clip:round",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "A Ghost Code round in motion — the Phantom on patrol while the code prompt waits below.",
+      "determinism": "seeded-byte",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/ghost-code/clips/round.light.phone.raw.webm",
+          "sha256": "8e43c0409952dd90457c791aba2337e79e2f60c2b58bf4a3de68a5a071097d86",
+          "bytes": 203155
+        }
+      },
+      "clip": {
+        "id": "round",
+        "durationS": 5.7,
+        "trim": {
+          "rawStartS": 1.5
+        },
+        "mp4": {
+          "path": "/showcase/ghost-code/clips/round.light.phone.mp4",
+          "bytes": 22361
+        },
+        "webm": {
+          "path": "/showcase/ghost-code/clips/round.light.phone.webm",
+          "bytes": 46958
+        },
+        "webmDropReason": null,
+        "posters": [
+          {
+            "path": "/showcase/ghost-code/clips/round.light.phone-poster.avif",
+            "bytes": 9871
+          },
+          {
+            "path": "/showcase/ghost-code/clips/round.light.phone-poster.webp",
+            "bytes": 13424
+          },
+          {
+            "path": "/showcase/ghost-code/clips/round.light.phone-poster.jpg",
+            "bytes": 18821
+          }
+        ],
+        "needsCaptions": true
       }
     },
     {
@@ -2451,10 +2553,28 @@
       "route": "/",
       "altText": "A prompt opened in the library — variable fields ready to fill above the monospace prompt preview and its copy control.",
       "determinism": "byte-expected",
-      "flags": [
-        "FAILED"
-      ],
-      "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for locator('[data-prompt-card], article a, article button').first()\n"
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/prompt-library/prompt-detail.dark.desktop.png",
+          "sha256": "5ca34340f3b228d69f81b9500f754424c9d8318fd39756c22e088ab9a18b6a60",
+          "bytes": 355215,
+          "width": 2880,
+          "height": 1800
+        },
+        "shipped": [
+          {
+            "path": "/showcase/prompt-library/prompt-detail.dark.desktop.avif",
+            "bytes": 18645,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/prompt-library/prompt-detail.dark.desktop.webp",
+            "bytes": 33740
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAACwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwAAeyAA/u96QN2C+YAQAAA="
+      }
     },
     {
       "project": "prompt-library",
@@ -2470,7 +2590,7 @@
       "flags": [
         "FAILED"
       ],
-      "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for locator('[data-prompt-card], article a, article button').first()\n"
+      "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByLabel('Open featured prompt').first()\n    - locator resolved to <button type=\"button\" aria-label=\"Open featured prompt: Explain L"
     },
     {
       "project": "prompt-library",
@@ -2483,10 +2603,28 @@
       "route": "/",
       "altText": "A prompt opened in the library — variable fields ready to fill above the monospace prompt preview and its copy control.",
       "determinism": "byte-expected",
-      "flags": [
-        "FAILED"
-      ],
-      "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for locator('[data-prompt-card], article a, article button').first()\n"
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/prompt-library/prompt-detail.light.desktop.png",
+          "sha256": "1180ba43f62b7d6bdd9a7ceff03a8b0974605c0a59075a123f35d4d554948e05",
+          "bytes": 395263,
+          "width": 2880,
+          "height": 1800
+        },
+        "shipped": [
+          {
+            "path": "/showcase/prompt-library/prompt-detail.light.desktop.avif",
+            "bytes": 19843,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/prompt-library/prompt-detail.light.desktop.webp",
+            "bytes": 35756
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAABQAwCdASoUAA0APxF0tFEsJqUisAgBgCIJZwAASrdfNhngAAD8XJ/73MCe5oEWgVu9UeVBIo2t23PiUkvAAA=="
+      }
     },
     {
       "project": "prompt-library",
@@ -2502,21 +2640,21 @@
       "flags": [
         "FAILED"
       ],
-      "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for locator('[data-prompt-card], article a, article button').first()\n"
+      "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByLabel('Open featured prompt').first()\n    - locator resolved to <button type=\"button\" aria-label=\"Open featured prompt: Explain L"
     }
   ],
   "budget": {
     "shipped": {
-      "files": 126,
-      "stillAvifMB": 1.38,
-      "stillFallbackMB": 2.3,
-      "clipMp4MB": 0.65,
-      "clipWebmMB": 0.68,
-      "posterMB": 0.34
+      "files": 140,
+      "stillAvifMB": 1.39,
+      "stillFallbackMB": 2.32,
+      "clipMp4MB": 0.69,
+      "clipWebmMB": 0.75,
+      "posterMB": 0.42
     },
     "maxStillAvifKB": 50,
     "maxClipMp4KB": 191,
-    "treeTotalMB": 5.34,
+    "treeTotalMB": 5.57,
     "targetMB": 8,
     "hardCapMB": 10,
     "withinTarget": true,

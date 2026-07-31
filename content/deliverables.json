@@ -142,31 +142,46 @@
       "alt": "A printed Constitution document on a linen surface beside a single terracotta-toned cup"
     },
     "heroShot": {
-      "src": "/images/deliverables/claude-corp/card-landing.jpg",
-      "alt": "The Claude Corp landing page: a bold headline 'A 15-role AI team that builds software autonomously' over a dark hero with View on GitHub and Meet the team buttons",
-      "avif": "/images/deliverables/claude-corp/card-landing.avif",
-      "webp": "/images/deliverables/claude-corp/card-landing.webp",
-      "lqip": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAABQAwCdASoUAA0APxFysFAsJqSisAgBgCIJZQAAUp+3upxEGAD+48HzkLTR4BV/5J6HmM/g0xxY31LGYO1kgAAA"
+      "src": "/showcase/claude-corp/hero-pipeline.light.desktop.webp",
+      "alt": "The Claude Corp front door — the editorial hero over the agent pipeline diagram, fifteen roles feeding one governed main branch.",
+      "avif": "/showcase/claude-corp/hero-pipeline.light.desktop.avif",
+      "webp": "/showcase/claude-corp/hero-pipeline.light.desktop.webp",
+      "lqip": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAAAwAwCdASoUAA0APxFysFCsJqSisAgBgCIJZwDE2C0HlrAAAP7ubh/WwQtuQ4o8OlLUyjaVXCpWQAAA",
+      "dark": {
+        "src": "/showcase/claude-corp/hero-pipeline.dark.desktop.webp",
+        "avif": "/showcase/claude-corp/hero-pipeline.dark.desktop.avif",
+        "webp": "/showcase/claude-corp/hero-pipeline.dark.desktop.webp",
+        "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAABQAwCdASoUAA0APxFysVCsJqSisAgBgCIJZwAAW+i3kccLgAD+6Mmt8ToMv9QYHbQDxjN63DdYAA=="
+      }
     },
     "cardImage": {
-      "src": "/images/deliverables/claude-corp/card-landing.jpg",
-      "alt": "The Claude Corp landing page: a bold headline 'A 15-role AI team that builds software autonomously' over a dark hero with View on GitHub and Meet the team buttons",
-      "avif": "/images/deliverables/claude-corp/card-landing.avif",
-      "webp": "/images/deliverables/claude-corp/card-landing.webp",
-      "lqip": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAABQAwCdASoUAA0APxFysFAsJqSisAgBgCIJZQAAUp+3upxEGAD+48HzkLTR4BV/5J6HmM/g0xxY31LGYO1kgAAA"
+      "src": "/showcase/claude-corp/hero-pipeline.light.desktop.webp",
+      "alt": "The Claude Corp front door — the fifteen-role pipeline under the editorial hero.",
+      "focal": "50% 12%",
+      "avif": "/showcase/claude-corp/hero-pipeline.light.desktop.avif",
+      "webp": "/showcase/claude-corp/hero-pipeline.light.desktop.webp",
+      "lqip": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAAAwAwCdASoUAA0APxFysFCsJqSisAgBgCIJZwDE2C0HlrAAAP7ubh/WwQtuQ4o8OlLUyjaVXCpWQAAA",
+      "dark": {
+        "src": "/showcase/claude-corp/hero-pipeline.dark.desktop.webp",
+        "avif": "/showcase/claude-corp/hero-pipeline.dark.desktop.avif",
+        "webp": "/showcase/claude-corp/hero-pipeline.dark.desktop.webp",
+        "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAABQAwCdASoUAA0APxFysVCsJqSisAgBgCIJZwAAW+i3kccLgAD+6Mmt8ToMv9QYHbQDxjN63DdYAA=="
+      }
     },
     "shots": [
       {
-        "alt": "Claude Corp orchestrator routing one work cycle across its fifteen agent roles",
-        "caption": "The orchestrator routes each cycle to the right role."
-      },
-      {
-        "alt": "A Claude Corp role command file showing one agent's explicit domain boundaries",
-        "caption": "Every role has an explicit lane, written down."
-      },
-      {
-        "alt": "The Claude Corp Constitution open in version control beside a QA report trail",
-        "caption": "Governance as infrastructure — rules in version control."
+        "src": "/showcase/claude-corp/team.light.desktop.webp",
+        "alt": "The fifteen-role team grid — each agent card naming its craft, from Quinn on product through Morgan on reporting.",
+        "caption": "Fifteen roles, one governed main branch.",
+        "avif": "/showcase/claude-corp/team.light.desktop.avif",
+        "webp": "/showcase/claude-corp/team.light.desktop.webp",
+        "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAACwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwAAeyAA/u6S6PUztUEzQoAAAA==",
+        "dark": {
+          "src": "/showcase/claude-corp/team.dark.desktop.webp",
+          "avif": "/showcase/claude-corp/team.dark.desktop.avif",
+          "webp": "/showcase/claude-corp/team.dark.desktop.webp",
+          "lqip": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwDE2C0kAAD+7q2OgXNbtkakiadcLXN6HwAA"
+        }
       }
     ],
     "links": [
@@ -187,7 +202,8 @@
       "process"
     ],
     "featured": false,
-    "body": "## The problem\n\nBuilding solo is manageable. Bigger projects are not. When I started coordinating AI agents for more complex work, I hit the same wall every time: without clear decision rights, scope debates never ended. One agent would start building while another assumed we were still in design. No escalation path. No clear lanes. Multi-agent systems need rules, not just good intentions.\n\n## The approach\n\nI drafted a Constitution — literally, like a governing document. Each of the 15 roles has explicit domain boundaries: Dani owns design, Steve owns security, Rory owns deployment. Morgan (the PM) routes decisions to the right domain instead of letting them pile up. My role is final call on trade-offs, nothing else.\n\nThe system is strict by design — agents can't self-approve major decisions. That sounds heavyweight, but written rules actually freed everyone. When you know your lane, you can move fast inside it. I came to think of governance as infrastructure: code needs architecture, teams need constitutions.\n\n## What shipped\n\nA 15-role AI team governed by a written Constitution, with an orchestrator that runs cycles and routes work. Each role has its own command file, a defined scope, and a QA report trail. This portfolio — the one you're reading — was built and maintained entirely within Claude Corp. The Constitution lives in [GitHub](https://github.com/Skypie99/Claude_Corp) and evolves when we discover new patterns.\n\n## Reflection\n\n> The biggest unlock wasn't any individual role — it was realizing that the rules are what make speed possible.\n\nI'd build the governance layer first next time, before writing a single line of application code."
+    "body": "## The problem\n\nBuilding solo is manageable. Bigger projects are not. When I started coordinating AI agents for more complex work, I hit the same wall every time: without clear decision rights, scope debates never ended. One agent would start building while another assumed we were still in design. No escalation path. No clear lanes. Multi-agent systems need rules, not just good intentions.\n\n## The approach\n\nI drafted a Constitution — literally, like a governing document. Each of the 15 roles has explicit domain boundaries: Dani owns design, Steve owns security, Rory owns deployment. Morgan (the PM) routes decisions to the right domain instead of letting them pile up. My role is final call on trade-offs, nothing else.\n\nThe system is strict by design — agents can't self-approve major decisions. That sounds heavyweight, but written rules actually freed everyone. When you know your lane, you can move fast inside it. I came to think of governance as infrastructure: code needs architecture, teams need constitutions.\n\n## What shipped\n\nA 15-role AI team governed by a written Constitution, with an orchestrator that runs cycles and routes work. Each role has its own command file, a defined scope, and a QA report trail. This portfolio — the one you're reading — was built and maintained entirely within Claude Corp. The Constitution lives in [GitHub](https://github.com/Skypie99/Claude_Corp) and evolves when we discover new patterns.\n\n## Reflection\n\n> The biggest unlock wasn't any individual role — it was realizing that the rules are what make speed possible.\n\nI'd build the governance layer first next time, before writing a single line of application code.",
+    "ogTheme": "dark"
   },
   {
     "id": "dashboard",
@@ -207,45 +223,60 @@
       "alt": "Dark dashboard motif with a blueprint grid, a soft blue glow, and the Claude Corp lightning mark"
     },
     "heroShot": {
-      "src": "/images/deliverables/dashboard/screen-home.png",
-      "focal": "50% 0%",
-      "alt": "The dashboard home: live agent count, pending decisions, open blockers, recent reports, a seven-day insights row, and per-project health grades",
-      "avif": "/images/deliverables/dashboard/screen-home.avif",
-      "webp": "/images/deliverables/dashboard/screen-home.webp",
-      "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwCdADLxQAD+7uCrxBpsAEOWH0+xYjqZd8GvZQAAAA=="
+      "src": "/showcase/dashboard/command-center.light.desktop.webp",
+      "alt": "The Dashboard command center — project health, agent activity and pending decisions on one calm board.",
+      "avif": "/showcase/dashboard/command-center.light.desktop.avif",
+      "webp": "/showcase/dashboard/command-center.light.desktop.webp",
+      "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwC+SDKUAAD+7xZ/NZFb30c5AAAA",
+      "dark": {
+        "src": "/showcase/dashboard/command-center.dark.desktop.webp",
+        "avif": "/showcase/dashboard/command-center.dark.desktop.avif",
+        "webp": "/showcase/dashboard/command-center.dark.desktop.webp",
+        "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAgCdASoUAA0APxFysFAwpqSisAgCECIJaQDLLC5JAAD+7ZpVBZuQEeGsIRv1JCgAAA=="
+      }
     },
     "cardImage": {
-      "src": "/images/deliverables/dashboard/screen-home.png",
-      "focal": "50% 0%",
-      "alt": "Claude Corp Dashboard home with KPI cards and per-project health grades in dark mode",
-      "avif": "/images/deliverables/dashboard/screen-home.avif",
-      "webp": "/images/deliverables/dashboard/screen-home.webp",
-      "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwCdADLxQAD+7uCrxBpsAEOWH0+xYjqZd8GvZQAAAA=="
+      "src": "/showcase/dashboard/command-center.light.desktop.webp",
+      "alt": "The Dashboard command center — project health, agent activity and pending decisions on one calm board.",
+      "focal": "50% 14%",
+      "avif": "/showcase/dashboard/command-center.light.desktop.avif",
+      "webp": "/showcase/dashboard/command-center.light.desktop.webp",
+      "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwC+SDKUAAD+7xZ/NZFb30c5AAAA",
+      "dark": {
+        "src": "/showcase/dashboard/command-center.dark.desktop.webp",
+        "avif": "/showcase/dashboard/command-center.dark.desktop.avif",
+        "webp": "/showcase/dashboard/command-center.dark.desktop.webp",
+        "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAgCdASoUAA0APxFysFAwpqSisAgCECIJaQDLLC5JAAD+7ZpVBZuQEeGsIRv1JCgAAA=="
+      }
     },
     "shots": [
       {
-        "src": "/images/deliverables/dashboard/screen-decisions.png",
-        "alt": "The decision queue, where each pending decision shows selectable options with a recommended pick and Approve, Defer, and Escalate actions",
-        "caption": "The decision queue — pick an option, then approve, defer, or escalate.",
-        "avif": "/images/deliverables/dashboard/screen-decisions.avif",
-        "webp": "/images/deliverables/dashboard/screen-decisions.webp",
-        "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACQAwCdASoUAA0APxFwsFAsJiSisAgBgCIJZQCdACHhvVH7whS4AP7r7jnyBSHwzT/D4oJcx6AAAA=="
+        "src": "/showcase/dashboard/think-tank.light.desktop.webp",
+        "alt": "The Think Tank board — ideas triaged into Do it, Later and Skip lanes with their leverage notes.",
+        "caption": "The Think Tank — ideas triaged into Do it, Later and Skip.",
+        "avif": "/showcase/dashboard/think-tank.light.desktop.avif",
+        "webp": "/showcase/dashboard/think-tank.light.desktop.webp",
+        "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwDA3C0kAAD+70dpzID7d6oAAA==",
+        "dark": {
+          "src": "/showcase/dashboard/think-tank.dark.desktop.webp",
+          "avif": "/showcase/dashboard/think-tank.dark.desktop.avif",
+          "webp": "/showcase/dashboard/think-tank.dark.desktop.webp",
+          "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJaQDLLC0kAAD+7Z0K3QbCLgAAAA=="
+        }
       },
       {
-        "src": "/images/deliverables/dashboard/screen-agents.png",
-        "alt": "The agent feed listing fifteen roles with each one's current task, live status, and project",
-        "caption": "Agent feed — fifteen roles, live status at a glance.",
-        "avif": "/images/deliverables/dashboard/screen-agents.avif",
-        "webp": "/images/deliverables/dashboard/screen-agents.webp",
-        "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACQAwCdASoUAA0APxFysFAsJqSisAgBgCIJZQCw7CHhvVUoUIvAAP7r7jnX4ia2C5pN0RHHASAAAA=="
-      },
-      {
-        "src": "/images/deliverables/dashboard/screen-velocity.png",
-        "alt": "The agent velocity view charting report output per agent across a seven-day window",
-        "caption": "Velocity — who shipped what over the last week.",
-        "avif": "/images/deliverables/dashboard/screen-velocity.avif",
-        "webp": "/images/deliverables/dashboard/screen-velocity.webp",
-        "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACQAwCdASoUAA0APxFwsFAsJiSisAgBgCIJZQCdACHgFTKwbuYAAP7r7hnEOIaDVcSlE17XL4AAAA=="
+        "src": "/showcase/dashboard/dispatch.light.desktop.webp",
+        "alt": "The Dispatch queue — work items lined up with status, owner and the relay controls held safely off.",
+        "caption": "The Dispatch queue — agent work lined up with its receipts.",
+        "avif": "/showcase/dashboard/dispatch.light.desktop.avif",
+        "webp": "/showcase/dashboard/dispatch.light.desktop.webp",
+        "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAAAwAwCdASoUAA0APxFysVCsJqSisAgBgCIJZwDCgC0HcTJgAP7vbwvjsqiRwP3GLAA=",
+        "dark": {
+          "src": "/showcase/dashboard/dispatch.dark.desktop.webp",
+          "avif": "/showcase/dashboard/dispatch.dark.desktop.avif",
+          "webp": "/showcase/dashboard/dispatch.dark.desktop.webp",
+          "lqip": "data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAACwAgCdASoUAA0APxFysFCsJqSisAgBgCIJZwAAeyAA/u2XqUVNyAAA"
+        }
       }
     ],
     "links": [
@@ -261,7 +292,8 @@
       "tools"
     ],
     "featured": false,
-    "body": "## The problem\n\nI'd been coordinating a small team of AI agents — a project manager, engineers, a designer, a security reviewer — across several projects at once. The work was getting done, but I had nowhere to actually *see* it. Who's active right now? What decisions are waiting on me? Which blocker is about to slip? It all lived in scattered reports and commit logs. I wanted a cockpit.\n\n## The approach\n\nI built it in Next.js as a server-rendered dashboard that turns the team's real activity — reports, decisions, blockers — into an agent feed, a decision queue, a blocker board, per-project health grades, and velocity charts.\n\nThe interesting problem was privacy. The real data is sensitive: security findings, private notes, internal decisions. It can never be published. So the public demo runs in a hard-locked demo mode — every data reader short-circuits to a synthetic snapshot before it can touch a real file, the write path is severed so nothing persists, and a build guard refuses to ship the public build unless demo mode is on. The real, full-data version stays local-only.\n\n## What shipped\n\nA genuinely drivable demo. Sign in as a guest, approve a decision, triage a blocker, watch the agent feed update — all on synthetic data that resets each session. Fifteen roles, live status, seven-day insights, and per-project health scores, in light or dark.\n\n## Reflection\n\nThe build taught me that *make it public* and *keep it private* aren't opposites. With the right seam, you can ship a faithful, interactive demo while the sensitive version never leaves your machine.\n\n> That separation turned out to be the whole design."
+    "body": "## The problem\n\nI'd been coordinating a small team of AI agents — a project manager, engineers, a designer, a security reviewer — across several projects at once. The work was getting done, but I had nowhere to actually *see* it. Who's active right now? What decisions are waiting on me? Which blocker is about to slip? It all lived in scattered reports and commit logs. I wanted a cockpit.\n\n## The approach\n\nI built it in Next.js as a server-rendered dashboard that turns the team's real activity — reports, decisions, blockers — into an agent feed, a decision queue, a blocker board, per-project health grades, and velocity charts.\n\nThe interesting problem was privacy. The real data is sensitive: security findings, private notes, internal decisions. It can never be published. So the public demo runs in a hard-locked demo mode — every data reader short-circuits to a synthetic snapshot before it can touch a real file, the write path is severed so nothing persists, and a build guard refuses to ship the public build unless demo mode is on. The real, full-data version stays local-only.\n\n## What shipped\n\nA genuinely drivable demo. Sign in as a guest, approve a decision, triage a blocker, watch the agent feed update — all on synthetic data that resets each session. Fifteen roles, live status, seven-day insights, and per-project health scores, in light or dark.\n\n## Reflection\n\nThe build taught me that *make it public* and *keep it private* aren't opposites. With the right seam, you can ship a faithful, interactive demo while the sensitive version never leaves your machine.\n\n> That separation turned out to be the whole design.",
+    "ogTheme": "dark"
   },
   {
     "id": "prompt-library",
@@ -281,44 +313,46 @@
       "alt": "A quiet workspace with a notebook of prompts open beside a laptop, soft natural light from the side"
     },
     "heroShot": {
-      "src": "/images/deliverables/prompt-library/card-landing.png",
-      "alt": "Prompt Library V2 landing — 'Your prompts, one keystroke away', a prompt search box, and category filters",
-      "avif": "/images/deliverables/prompt-library/card-landing.avif",
-      "webp": "/images/deliverables/prompt-library/card-landing.webp",
-      "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADQAgCdASoUAA4APxFwsFAsJiSisAgBgCIJaQAAe/QAAP7vfwCdpQdLpomilUAA"
+      "src": "/showcase/prompt-library/home.light.desktop.webp",
+      "alt": "The Prompt Library home — search bar and category chips over a grid of prompt cards, the featured card leading.",
+      "avif": "/showcase/prompt-library/home.light.desktop.avif",
+      "webp": "/showcase/prompt-library/home.light.desktop.webp",
+      "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZQC/OC0kAAD+70NE0Whk0FQFcAAA",
+      "dark": {
+        "src": "/showcase/prompt-library/home.dark.desktop.webp",
+        "avif": "/showcase/prompt-library/home.dark.desktop.avif",
+        "webp": "/showcase/prompt-library/home.dark.desktop.webp",
+        "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwDG9DBsAAD+75zzZSCePfEHqAAA"
+      }
     },
     "cardImage": {
-      "src": "/images/deliverables/prompt-library/card-landing.png",
-      "focal": "50% 0%",
-      "alt": "Prompt Library V2 landing — 'Your prompts, one keystroke away', a prompt search box, and category filters",
-      "avif": "/images/deliverables/prompt-library/card-landing.avif",
-      "webp": "/images/deliverables/prompt-library/card-landing.webp",
-      "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADQAgCdASoUAA4APxFwsFAsJiSisAgBgCIJaQAAe/QAAP7vfwCdpQdLpomilUAA"
+      "src": "/showcase/prompt-library/home.light.desktop.webp",
+      "alt": "The Prompt Library home — search and category chips over the prompt grid, the featured card leading.",
+      "focal": "50% 18%",
+      "avif": "/showcase/prompt-library/home.light.desktop.avif",
+      "webp": "/showcase/prompt-library/home.light.desktop.webp",
+      "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZQC/OC0kAAD+70NE0Whk0FQFcAAA",
+      "dark": {
+        "src": "/showcase/prompt-library/home.dark.desktop.webp",
+        "avif": "/showcase/prompt-library/home.dark.desktop.avif",
+        "webp": "/showcase/prompt-library/home.dark.desktop.webp",
+        "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwDG9DBsAAD+75zzZSCePfEHqAAA"
+      }
     },
     "shots": [
       {
-        "alt": "Prompt Library's command-palette search returning a live match — a 'code review' query surfacing the Code Review Buddy prompt.",
-        "caption": "Full-text search across every saved prompt.",
-        "src": "/images/deliverables/prompt-library/screen-search.png",
-        "avif": "/images/deliverables/prompt-library/screen-search.avif",
-        "webp": "/images/deliverables/prompt-library/screen-search.webp",
-        "lqip": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAAAQAwCdASoUAA0APxFysFAsJqSisAgBgCIJZwC7ABgevgAA/lRpyPtEDylsMz7P+rhrQAAA"
-      },
-      {
-        "alt": "Prompt Library's New Prompt composer — title, prompt body with {{variable}} fill-ins, a category picker, and suggested tags.",
-        "caption": "Compose, tag, favourite — all local-first.",
-        "src": "/images/deliverables/prompt-library/screen-compose.png",
-        "avif": "/images/deliverables/prompt-library/screen-compose.avif",
-        "webp": "/images/deliverables/prompt-library/screen-compose.webp",
-        "lqip": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAAAQAwCdASoUAA0APxFysFAsJqSisAgBgCIJZwAAUoSQUAAA9yrfc8wH3C5mjm5zNnx/puHPEPh5AAAA"
-      },
-      {
-        "alt": "Prompt Library's settings panel with the local-first Export library and Import library controls, all stored in the browser.",
-        "caption": "Bulk import and export. Zero backend.",
-        "src": "/images/deliverables/prompt-library/screen-import.png",
-        "avif": "/images/deliverables/prompt-library/screen-import.avif",
-        "webp": "/images/deliverables/prompt-library/screen-import.webp",
-        "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAAAwAwCdASoUAA0APxFysFAsJqSisAgBgCIJZwAAUSsoVOWAAPxbCNhZezkCEDPOvW8B9NglYeQAAA=="
+        "src": "/showcase/prompt-library/prompt-detail.light.desktop.webp",
+        "alt": "A prompt opened in the library — variable fields ready to fill above the monospace prompt preview and its copy control.",
+        "caption": "A prompt opened — variables to fill, the copy control waiting.",
+        "avif": "/showcase/prompt-library/prompt-detail.light.desktop.avif",
+        "webp": "/showcase/prompt-library/prompt-detail.light.desktop.webp",
+        "lqip": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAABQAwCdASoUAA0APxF0tFEsJqUisAgBgCIJZwAASrdfNhngAAD8XJ/73MCe5oEWgVu9UeVBIo2t23PiUkvAAA==",
+        "dark": {
+          "src": "/showcase/prompt-library/prompt-detail.dark.desktop.webp",
+          "avif": "/showcase/prompt-library/prompt-detail.dark.desktop.avif",
+          "webp": "/showcase/prompt-library/prompt-detail.dark.desktop.webp",
+          "lqip": "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAACwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwAAeyAA/u96QN2C+YAQAAA="
+        }
       }
     ],
     "links": [
@@ -339,7 +373,8 @@
       "local-first"
     ],
     "featured": false,
-    "body": "## The problem\n\nMy AI prompts were scattered across notes, markdown files, and memory. I needed one searchable place to keep them — and a hard requirement: nothing leaves the browser. No API keys hitting a backend. No prompts stored in the cloud. The privacy constraint wasn't a nice-to-have; it was the whole product.\n\n## The approach\n\nBuilt in Next.js 15 with localStorage as the entire data layer. One constraint — \"everything stays on the user's machine\" — became the governing design principle. Search? localStorage query. Tags, favorites, import, export, dark mode — all local-first. I shipped across 20 stacked branches over several months, adding features without ever standing up a server.\n\nThe constraint forced discipline. You can't cheat with a backend. Every feature had to be thoughtfully scoped because there was nowhere to offload decisions.\n\n## What shipped\n\nA local-first prompt manager with full-text search, tag filtering, favorites, bulk import/export, and dark mode. Zero backend. Deployed as a static site on GitHub Pages and open-sourced under a permissive license.\n\n## Reflection\n\n> Local-first privacy isn't a limitation — it's a competitive advantage.\n\nBuilding everything in the open with no server made the product sharper, not weaker. I'd make the same call again."
+    "body": "## The problem\n\nMy AI prompts were scattered across notes, markdown files, and memory. I needed one searchable place to keep them — and a hard requirement: nothing leaves the browser. No API keys hitting a backend. No prompts stored in the cloud. The privacy constraint wasn't a nice-to-have; it was the whole product.\n\n## The approach\n\nBuilt in Next.js 15 with localStorage as the entire data layer. One constraint — \"everything stays on the user's machine\" — became the governing design principle. Search? localStorage query. Tags, favorites, import, export, dark mode — all local-first. I shipped across 20 stacked branches over several months, adding features without ever standing up a server.\n\nThe constraint forced discipline. You can't cheat with a backend. Every feature had to be thoughtfully scoped because there was nowhere to offload decisions.\n\n## What shipped\n\nA local-first prompt manager with full-text search, tag filtering, favorites, bulk import/export, and dark mode. Zero backend. Deployed as a static site on GitHub Pages and open-sourced under a permissive license.\n\n## Reflection\n\n> Local-first privacy isn't a limitation — it's a competitive advantage.\n\nBuilding everything in the open with no server made the product sharper, not weaker. I'd make the same call again.",
+    "ogTheme": "dark"
   },
   {
     "id": "ghost-code",
@@ -357,34 +392,58 @@
       "src": "/images/deliverables/ghost-code/hero.png",
       "alt": "Ghost Code arcade screen — the neon Phantom mascot hovering between four command-token answers, score and spirit-life HUD in a synthwave cabinet"
     },
-    "cardImage": {
-      "src": "/images/deliverables/ghost-code/og-card.png",
-      "alt": "Ghost Code arcade round — the Phantom hovering between four git-command answer cards for staging changed files, with the spirits and score HUD",
-      "avif": "/images/deliverables/ghost-code/screen-game.avif",
-      "webp": "/images/deliverables/ghost-code/screen-game.webp",
-      "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAAAwAwCdASoUAA8APxFysVAsJqSisAgBgCIJQAAPWjw+bjoAAP7utsOcK+g4wRA87HuAH020E3sCAA=="
-    },
     "heroShot": {
-      "src": "/images/deliverables/ghost-code/screen-game.png",
-      "alt": "Ghost Code arcade round — the Phantom hovering between four git-command answer cards for staging changed files, with the spirits and score HUD",
-      "avif": "/images/deliverables/ghost-code/screen-game.avif",
-      "webp": "/images/deliverables/ghost-code/screen-game.webp",
-      "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAAAwAwCdASoUAA8APxFysVAsJqSisAgBgCIJQAAPWjw+bjoAAP7utsOcK+g4wRA87HuAH020E3sCAA=="
+      "src": "/showcase/ghost-code/title.light.desktop.webp",
+      "alt": "Ghost Code’s title screen — the arcade cabinet framing the Phantom mascot, Start and Settings glowing below the wordmark.",
+      "avif": "/showcase/ghost-code/title.light.desktop.avif",
+      "webp": "/showcase/ghost-code/title.light.desktop.webp",
+      "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJaQDG9DBsAAD+70aSc5OMpoAAAA==",
+      "dark": {
+        "src": "/showcase/ghost-code/title.dark.desktop.webp",
+        "avif": "/showcase/ghost-code/title.dark.desktop.avif",
+        "webp": "/showcase/ghost-code/title.dark.desktop.webp",
+        "lqip": "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAACwAgCdASoUAA0APxFwsFAsJiSisAgBgCIJaQAAeyAA/u9c3hKeVpJigAA="
+      }
+    },
+    "cardImage": {
+      "src": "/showcase/ghost-code/board.light.desktop.webp",
+      "alt": "A Ghost Code round mid-chase — the Phantom in the maze with the command prompt waiting below.",
+      "focal": "50% 40%",
+      "avif": "/showcase/ghost-code/board.light.desktop.avif",
+      "webp": "/showcase/ghost-code/board.light.desktop.webp",
+      "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADQAgCdASoUAA0APxFysVCsJqSisAgBgCIJaQAAe/QAAP7vr4rPc0ojUCXgAA==",
+      "dark": {
+        "src": "/showcase/ghost-code/board.dark.desktop.webp",
+        "avif": "/showcase/ghost-code/board.dark.desktop.avif",
+        "webp": "/showcase/ghost-code/board.dark.desktop.webp",
+        "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADwAgCdASoUAA0APxFysVCsJqSisAgBgCIJaQDG9DBsAAD+7wyvSX2mpsX5so0AAAA="
+      }
     },
     "shots": [
       {
-        "alt": "Ghost Code arcade round with the Phantom hovering between four command tokens",
-        "caption": "Capture the right command; dodge the wrong ones.",
+        "src": "/showcase/ghost-code/board.light.desktop.webp",
+        "alt": "A Ghost Code round in play — the maze board mid-chase with the code prompt beneath and score and streak counters keeping pace.",
+        "caption": "A seeded round in motion — same maze, both themes.",
+        "avif": "/showcase/ghost-code/board.light.desktop.avif",
+        "webp": "/showcase/ghost-code/board.light.desktop.webp",
+        "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADQAgCdASoUAA0APxFysVCsJqSisAgBgCIJaQAAe/QAAP7vr4rPc0ojUCXgAA==",
         "video": {
-          "mp4": "/images/deliverables/ghost-code/loop.mp4",
-          "webm": "/images/deliverables/ghost-code/loop.webm",
-          "poster": "/images/deliverables/ghost-code/loop-poster.avif",
-          "alt": "A Ghost Code round in play — the Phantom hovering among four command tokens as the round timer runs."
+          "mp4": "/showcase/ghost-code/clips/round.light.phone.mp4",
+          "webm": "/showcase/ghost-code/clips/round.light.phone.webm",
+          "poster": "/showcase/ghost-code/clips/round.light.phone-poster.avif",
+          "alt": "A Ghost Code round in motion — the Phantom on patrol while the code prompt waits below."
+        },
+        "dark": {
+          "src": "/showcase/ghost-code/board.dark.desktop.webp",
+          "avif": "/showcase/ghost-code/board.dark.desktop.avif",
+          "webp": "/showcase/ghost-code/board.dark.desktop.webp",
+          "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADwAgCdASoUAA0APxFysVCsJqSisAgBgCIJaQDG9DBsAAD+7wyvSX2mpsX5so0AAAA=",
+          "video": {
+            "mp4": "/showcase/ghost-code/clips/round.dark.phone.mp4",
+            "webm": "/showcase/ghost-code/clips/round.dark.phone.webm",
+            "poster": "/showcase/ghost-code/clips/round.dark.phone-poster.avif"
+          }
         }
-      },
-      {
-        "alt": "Ghost Code HUD showing spirit lives draining as the round counter climbs",
-        "caption": "Wrong answers cost a spirit life. Later rounds get unforgiving."
       }
     ],
     "links": [
@@ -405,7 +464,8 @@
       "learning"
     ],
     "featured": false,
-    "body": "## The problem\n\nLearning Claude Code, macOS shortcuts, and Git felt like grinding through flashcards — and flashcards are forgettable. The commands only stick when your hands have run them under pressure. I wanted a way to turn command memorization into something you'd actually want to come back to, without any server, account, or install.\n\n## The approach\n\nI built an original arcade game from scratch in vanilla JS: no frameworks, no build step, one file you can open in any browser. The Phantom — an original character I designed — floats through a synthwave cabinet. Four command tokens appear each round; capture the right one, dodge the wrong ones. Wrong answers cost a spirit life. The constraint of zero dependencies forced every feature to be exactly as heavy as it needed to be, nothing more.\n\nDesigning the Phantom was as important as the game loop. A mascot with personality keeps you playing. I went through six character iterations before landing on the neon ghost silhouette — distinct, playful, and readable at small sizes.\n\n## What shipped\n\nFifty-six command cards spanning Claude Code, macOS, and Git — organized so earlier rounds are forgiving, later rounds are unforgiving. WCAG AA-accessible: keyboard-navigable, sufficient contrast throughout, no motion traps. One-file deploy to GitHub Pages; no backend, no account, no tracking. The Phantom is entirely original.\n\n## Reflection\n\n> The best constraint I gave myself was \"zero dependencies.\"\n\nIt eliminated every architectural debate and forced the game to be exactly what it needed to be. I'd reach for that constraint more often."
+    "body": "## The problem\n\nLearning Claude Code, macOS shortcuts, and Git felt like grinding through flashcards — and flashcards are forgettable. The commands only stick when your hands have run them under pressure. I wanted a way to turn command memorization into something you'd actually want to come back to, without any server, account, or install.\n\n## The approach\n\nI built an original arcade game from scratch in vanilla JS: no frameworks, no build step, one file you can open in any browser. The Phantom — an original character I designed — floats through a synthwave cabinet. Four command tokens appear each round; capture the right one, dodge the wrong ones. Wrong answers cost a spirit life. The constraint of zero dependencies forced every feature to be exactly as heavy as it needed to be, nothing more.\n\nDesigning the Phantom was as important as the game loop. A mascot with personality keeps you playing. I went through six character iterations before landing on the neon ghost silhouette — distinct, playful, and readable at small sizes.\n\n## What shipped\n\nFifty-six command cards spanning Claude Code, macOS, and Git — organized so earlier rounds are forgiving, later rounds are unforgiving. WCAG AA-accessible: keyboard-navigable, sufficient contrast throughout, no motion traps. One-file deploy to GitHub Pages; no backend, no account, no tracking. The Phantom is entirely original.\n\n## Reflection\n\n> The best constraint I gave myself was \"zero dependencies.\"\n\nIt eliminated every architectural debate and forced the game to be exactly what it needed to be. I'd reach for that constraint more often.",
+    "ogTheme": "dark"
   },
   {
     "id": "mutual-mesh",
