@@ -480,9 +480,13 @@ export default function HomePage() {
                       // span: with an explicit label it never reaches the name, yet
                       // axe counts it as visible text → label-content-name-mismatch.
                       aria-label={`View credential: ${c.title} from ${c.issuer} (opens in new tab)`}
-                      /* L5-07: px/py-1 + negative margins lift the tap box
-                         (~23px) with zero layout shift. */
-                      className="px-1 py-1 -mx-1 -my-1 font-mono text-meta tracking-label uppercase text-accent-text inline-flex items-center gap-1 transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 shrink-0"
+                      /* L5-07: px/py + negative margins lift the tap box with
+                         zero layout shift. F7-1 (a11y 07-31): py-1 gave ~23px;
+                         py-[15px] reaches the house 44 floor. Measured room to
+                         the nearest interactive neighbour is 123px (1280) /
+                         170px (375), so the grown box still collides with
+                         nothing. */
+                      className="px-1 py-[15px] -mx-1 -my-[15px] font-mono text-meta tracking-label uppercase text-accent-text inline-flex items-center gap-1 transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 shrink-0"
                     >
                       View
                       {/* CO-8: ↗ external-link glyph (was the internal →) */}
@@ -499,7 +503,7 @@ export default function HomePage() {
           <Reveal className="mt-16">
             <Link
               href="/certificates/"
-              className="group inline-flex items-center gap-1.5 px-1 py-1 -mx-1 -my-1 rounded-sm font-mono text-meta tracking-label uppercase text-accent-text transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+              className="group inline-flex items-center gap-1.5 px-1 py-[15px] -mx-1 -my-[15px] rounded-sm font-mono text-meta tracking-label uppercase text-accent-text transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
             >
               See the credential badges
               <span aria-hidden="true">{'→'}</span>
