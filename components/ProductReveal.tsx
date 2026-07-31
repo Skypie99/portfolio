@@ -1,6 +1,6 @@
 'use client';
 
-import { type CSSProperties, type ImgHTMLAttributes, type ReactNode, useEffect, useRef } from 'react';
+import { type CSSProperties, type ImgHTMLAttributes, type ReactNode } from 'react';
 
 import { DeviceFrame } from '@/components/DeviceFrame';
 import { TactileMedia } from '@/components/TactileMedia';
@@ -350,58 +350,11 @@ function StaticShot({
   );
 }
 
-/** ProofVideo — a short silent proof loop (P2-A, Sky's motion extension). The
- *  a11y contract is ABSOLUTE: poster-first, muted, playsInline, with a play
- *  affordance (native controls). Under reduced-motion / no-JS it stays a poster
- *  the visitor plays deliberately; autoplay is a JS-only enhancement applied
- *  ONLY when prefers-reduced-motion is unset. Meaning never depends on motion
- *  (the poster + alt carry it). Rest-visible under dead JS (native poster). */
-function ProofVideo({
-  video,
-  fit,
-  position,
-  lqip,
-}: {
-  video: ProductRevealVideo;
-  fit: 'cover' | 'contain';
-  position?: string;
-  lqip?: string;
-}) {
-  const ref = useRef<HTMLVideoElement>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    // matchMedia is absent in jsdom / older webviews — guard like lib/motion.
-    if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; // RM: stay poster
-    // No-preference only: opt into a muted, looping autoplay.
-    el.muted = true;
-    el.loop = true;
-    el.setAttribute('autoplay', '');
-    const p = el.play?.();
-    if (p && typeof p.catch === 'function') p.catch(() => {});
-  }, []);
-  return (
-    <video
-      ref={ref}
-      poster={video.poster}
-      preload="none"
-      muted
-      playsInline
-      controls
-      aria-label={video.alt}
-      className={cn('absolute inset-0 h-full w-full', fit === 'cover' ? 'object-cover' : 'object-contain')}
-      style={{
-        ...(position ? { objectPosition: position } : {}),
-        ...(lqip ? { backgroundImage: `url("${lqip}")`, backgroundSize: fit === 'cover' ? 'cover' : 'contain', backgroundPosition: position ?? 'center', backgroundRepeat: 'no-repeat' } : {}),
-      }}
-    >
-      {video.mp4 && <source src={video.mp4} type="video/mp4" />}
-      {video.webm && <source src={video.webm} type="video/webm" />}
-      {video.captions && <track kind="captions" src={video.captions} srcLang="en" label="Captions" default />}
-    </video>
-  );
-}
+/* ProofVideo (P2-A) retired by the showcase train: every clip — themed or
+   single — now renders through ThemedMotion, whose contract is a strict
+   superset (poster-first, preload=none, IO-gated autoplay, RM re-checked at
+   play time, SSR native controls → visible 44px affordance, sticky user
+   pause, theme-flip loop continuity). One motion grammar site-wide. */
 
 export function ProductReveal({
   slug,
@@ -474,11 +427,19 @@ export function ProductReveal({
       />
     )
   ) : hasVideo ? (
-    <ProofVideo
-      video={media.video as ProductRevealVideo}
+    // Single-theme clips ride the SAME grammar as themed ones (ThemedMotion in
+    // single mode) — poster-first, IO-gated, RM-safe, one visible affordance.
+    <ThemedMotion
+      light={{
+        mp4: media.video?.mp4,
+        webm: media.video?.webm,
+        poster: media.video?.poster ?? '',
+        lqip: media.lqip,
+      }}
+      alt={media.video?.alt ?? media.alt}
+      captions={media.video?.captions}
       fit={kind !== 'none' ? 'contain' : 'cover'}
       position={kind !== 'none' ? undefined : media.focal}
-      lqip={media.lqip}
     />
   ) : !hasReal ? (
     kind === 'none' ? (

@@ -76,6 +76,11 @@ const themesFor = (scene, only) => {
 
 /** Resolve where a project's servable tree comes from (worktree vs in place). */
 async function resolveSource(project, notes) {
+  if (project.source.kind === 'live') {
+    const sha = resolveSha(project.repo, project.source.shaRef ?? 'origin/main');
+    notes.push(`captured from the LIVE deployment at ${project.source.url} (local build impossible: missing dep, installs forbidden); sha recorded from ${project.source.shaRef ?? 'origin/main'}`);
+    return { rootDir: null, sha, branch: project.source.shaRef ?? 'origin/main', worktree: null, decision: 'live-capture' };
+  }
   if (project.source.kind === 'inplace') {
     const state = describeRepoState(project.repo);
     const pinned = project.source.sha;
@@ -97,6 +102,9 @@ async function resolveSource(project, notes) {
 /** Build + serve; returns { server, baseUrl, teardownExtra } */
 async function buildAndServe(project, src, notes) {
   const b = project.build ?? { kind: 'none' };
+  if (b.kind === 'live') {
+    return { server: null, baseUrl: project.source.url };
+  }
   const port = project.serve.port;
   if (await portInUse(port)) throw new Error(`port ${port} already in use — refusing to squat`);
 

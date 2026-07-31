@@ -307,7 +307,7 @@ export const PROJECTS = [
     readySelector: 'main',
     scenes: [
       { id: 'home', viewports: ['phone', 'desktop'], themes: 'both', nav: [{ wait: 1200 }], ship: true, shipKind: 'hero', alt: 'The Prompt Library home — search bar and category chips over a grid of prompt cards, the featured card leading.' },
-      { id: 'prompt-detail', viewports: ['phone', 'desktop'], themes: 'both', nav: [{ wait: 1000 }, { clickFirst: '[data-prompt-card], article a, article button' }, { wait: 900 }], ship: true, shipKind: 'shot', alt: 'A prompt opened in the library — variable fields ready to fill above the monospace prompt preview and its copy control.' },
+      { id: 'prompt-detail', viewports: ['phone', 'desktop'], themes: 'both', nav: [{ wait: 1000 }, { clickLabel: 'Open featured prompt' }, { wait: 900 }], ship: true, shipKind: 'shot', alt: 'A prompt opened in the library — variable fields ready to fill above the monospace prompt preview and its copy control.' },
       { id: 'command-palette', viewports: ['desktop'], themes: 'both', nav: [{ wait: 800 }, { press: 'Meta+K' }, { wait: 600 }], ship: false, shipKind: 'shot', alt: 'The command palette floating over the dimmed library, ready for a keystroke.' },
       { id: 'not-found', viewports: ['desktop'], themes: 'both', path: '/404.html', nav: [{ wait: 800 }], ship: false, shipKind: 'shot', alt: 'The designed 404 page — the library’s type and palette holding even when the route is lost.' },
     ],
@@ -350,10 +350,22 @@ export const PROJECTS = [
     readySelector: 'body',
     scenes: [
       { id: 'title', viewports: ['desktop'], themes: 'both', nav: [{ waitFonts: true }, { wait: 1200 }], ship: true, shipKind: 'hero', alt: 'Ghost Code’s title screen — the arcade cabinet framing the Phantom mascot, Start and Settings glowing below the wordmark.' },
-      { id: 'board', viewports: ['phone', 'desktop'], themes: 'both', nav: [{ waitFonts: true }, { clickTextOpt: 'Start' }, { wait: 1500 }], ship: true, shipKind: 'shot', alt: 'A Ghost Code round in play — the maze board mid-chase with the code prompt beneath and score and streak counters keeping pace.' },
+      { id: 'board', viewports: ['phone', 'desktop'], themes: 'both', nav: [{ waitFonts: true }, { evaluateOpt: 'startGame()' }, { wait: 1200 }], ship: true, shipKind: 'shot', alt: 'A Ghost Code round in play — the maze board mid-chase with the code prompt beneath and score and streak counters keeping pace.' },
       { id: 'gameover', viewports: ['phone', 'desktop'], themes: 'both', nav: [{ waitFonts: true }, { evaluateOpt: 'window.__gcForceGameOver && window.__gcForceGameOver()' }, { wait: 1200 }], ship: false, shipKind: 'shot', alt: 'The results screen after a round — mastery bars per concept and the invitation to run it back.' },
     ],
-    clips: [],
+    clips: [
+      {
+        // Replaces the dark-only proof loop with BOTH real themes (seeded PRNG
+        // keeps the round deterministic). Supersedes loop.mp4/webm at retrofit.
+        id: 'round',
+        themes: ['light', 'dark'],
+        pre: [{ waitFonts: true }, { evaluateOpt: 'startGame()' }, { wait: 800 }],
+        drive: [{ mark: 'gestureStart' }, { wait: 4500 }, { mark: 'gestureEnd' }],
+        targetS: 5,
+        posterAt: 1.0,
+        alt: 'A Ghost Code round in motion — the Phantom on patrol while the code prompt waits below.',
+      },
+    ],
     notes: ['P-6: Phantom renders one-eyed ≤600px (both themes) — no mobile mascot shots.'],
   },
 
@@ -387,16 +399,14 @@ export const PROJECTS = [
     priority: 5,
     repo: '/Users/skypie/Dashboard',
     appDir: 'dashboard-app',
-    source: { kind: 'worktree', ref: 'main', sha: null /* resolved at run; verify == origin/main */ },
-    build: {
-      kind: 'next-demo-server',
-      buildCmd: ['npm', 'run', 'build:demo'],
-      startCmd: ['npm', 'run', 'start:demo', '--', '-p', '3210'],
-      linkNodeModules: true,
-      env: { NEXT_PUBLIC_DEMO_MODE: '1' }, // DEMO ONLY — non-demo reads live qa-reports + ~/.claude
-      timeoutMs: 10 * 60 * 1000,
-    },
-    serve: { kind: 'command', port: 3210 },
+    // LIVE CAPTURE (2026-07-31): main @ b8bd3a9 needs @anthropic-ai/sdk, which
+    // was never installed on this machine (installs are forbidden), so a local
+    // demo build cannot exist. The public demo at dashboard.skypistudio.com IS
+    // the deployed truth (Vercel builds main with its own install) — capture it
+    // directly. GET-only navigation; demo mode gates all writes server-side.
+    source: { kind: 'live', url: 'https://dashboard.skypistudio.com', shaRef: 'origin/main' },
+    build: { kind: 'live' },
+    serve: { kind: 'live' },
     theme: {
       colorSchemeEmulation: true,
       seeds: (theme) => ({ 'cc-theme': theme }),
