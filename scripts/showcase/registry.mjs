@@ -307,7 +307,9 @@ export const PROJECTS = [
     readySelector: 'main',
     scenes: [
       { id: 'home', viewports: ['phone', 'desktop'], themes: 'both', nav: [{ wait: 1200 }], ship: true, shipKind: 'hero', alt: 'The Prompt Library home — search bar and category chips over a grid of prompt cards, the featured card leading.' },
-      { id: 'prompt-detail', viewports: ['phone', 'desktop'], themes: 'both', nav: [{ wait: 1000 }, { clickLabel: 'Open featured prompt' }, { wait: 900 }], ship: true, shipKind: 'shot', alt: 'A prompt opened in the library — variable fields ready to fill above the monospace prompt preview and its copy control.' },
+      // Desktop only: the featured-prompt affordance is not reachable at 390px
+      // (failed twice, aria-dumped) — the phone layout collapses the banner.
+      { id: 'prompt-detail', viewports: ['desktop'], themes: 'both', nav: [{ wait: 1000 }, { clickLabel: 'Open featured prompt' }, { wait: 900 }], ship: true, shipKind: 'shot', alt: 'A prompt opened in the library — variable fields ready to fill above the monospace prompt preview and its copy control.' },
       { id: 'command-palette', viewports: ['desktop'], themes: 'both', nav: [{ wait: 800 }, { press: 'Meta+K' }, { wait: 600 }], ship: false, shipKind: 'shot', alt: 'The command palette floating over the dimmed library, ready for a keystroke.' },
       { id: 'not-found', viewports: ['desktop'], themes: 'both', path: '/404.html', nav: [{ wait: 800 }], ship: false, shipKind: 'shot', alt: 'The designed 404 page — the library’s type and palette holding even when the route is lost.' },
     ],
@@ -346,7 +348,11 @@ export const PROJECTS = [
         })();`,
       postLoadAttr: true, // belt: set data-theme again after load
     },
-    determinism: 'seeded-byte',
+    // byte-expected, NOT seeded-byte: the seeded PRNG fixes the ROUND's content
+    // (maze, tokens, prompt) but the Phantom runs on a time-driven canvas loop —
+    // two captures at different wall-clock instants legitimately differ by a
+    // few animation pixels. Structure + dimensions must still match exactly.
+    determinism: 'byte-expected',
     readySelector: 'body',
     scenes: [
       { id: 'title', viewports: ['desktop'], themes: 'both', nav: [{ waitFonts: true }, { wait: 1200 }], ship: true, shipKind: 'hero', alt: 'Ghost Code’s title screen — the arcade cabinet framing the Phantom mascot, Start and Settings glowing below the wordmark.' },

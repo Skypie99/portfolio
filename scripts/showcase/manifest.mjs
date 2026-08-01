@@ -18,7 +18,10 @@ export const sha256 = (file) => createHash('sha256').update(fs.readFileSync(file
 
 export const isoDate = () => new Date().toISOString().slice(0, 10); // date-only; excluded from determinism diffs
 
-const rowKey = (r) => [r.project, r.scene, r.clip?.id ?? '', r.theme, r.viewport].join('|');
+// scene already carries the clip identity ('clip:<id>') — keying on clip.id
+// again let a FAILED clip attempt (no clip payload) survive beside its later
+// successful row instead of being replaced. One key axis, replace-by-scene.
+const rowKey = (r) => [r.project, r.scene, r.theme, r.viewport].join('|');
 
 export function emptyManifest() {
   return {
