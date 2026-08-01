@@ -16,6 +16,12 @@ export function generateMetadata(): Metadata {
     description,
     openGraph: {
       type: 'website',
+      // TA-10: a leaf openGraph REPLACES the root's wholesale (W0-04), so url,
+      // siteName and locale must be restated here or they drop out of this
+      // route's share card entirely. url is this route's OWN.
+      url: '/work/',
+      siteName: 'Sky Halisky — AI Portfolio',
+      locale: 'en_CA',
       title: `Selected Work — ${profile.name}`,
       description,
       images: [{ url: '/opengraph-image', width: 1200, height: 630 }],

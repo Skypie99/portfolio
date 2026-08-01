@@ -10,10 +10,32 @@ import { getCertificates, getProfile } from '@/lib/content';
 
 export function generateMetadata(): Metadata {
   const profile = getProfile();
+  const description =
+    'Credentials earned by Sky Halisky — Anthropic, Google, University of Michigan, DeepLearning.AI.';
   return {
     title: `Credentials — ${profile.name}`,
-    description:
-      'Credentials earned by Sky Halisky — Anthropic, Google, University of Michigan, DeepLearning.AI.',
+    description,
+    // TA-10 (truth audit 2026-07-31): with no openGraph/twitter block of its
+    // own, this route inherited the ROOT layout's wholesale — og:url included —
+    // so an unfurl of /certificates/ announced itself as the homepage, title
+    // and description and all. Own block, own url; siteName and locale are
+    // restated because a leaf openGraph REPLACES the root's rather than merging
+    // into it (the /work/[slug] + /accessibility pattern, W0-04).
+    // Strings are this page's OWN existing title/description — no new copy.
+    openGraph: {
+      type: 'website',
+      url: '/certificates/',
+      siteName: 'Sky Halisky — AI Portfolio',
+      locale: 'en_CA',
+      title: `Credentials — ${profile.name}`,
+      description,
+      images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `Credentials — ${profile.name}`,
+      description,
+    },
   };
 }
 

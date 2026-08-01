@@ -17,6 +17,11 @@ export function generateMetadata(): Metadata {
     description,
     openGraph: {
       type: 'website',
+      // TA-10: a leaf openGraph REPLACES the root's wholesale (W0-04) — url,
+      // siteName and locale restated so they survive on this route's share.
+      url: '/colophon/',
+      siteName: 'Sky Halisky — AI Portfolio',
+      locale: 'en_CA',
       title: `Colophon — ${profile.name}`,
       description,
       images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
