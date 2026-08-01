@@ -523,3 +523,120 @@ describe.runIf(OUT_EXISTS)('Gap 6 — share-card identity', () => {
   });
 });
 
+// ---------------------------------------------------------------------------
+// Gap 7 — share-card images resolve, and resolve as IMAGES
+//
+// GitHub Pages derives content-type from the file extension alone. Next's
+// opengraph-image file convention emits its PNG at an EXTENSIONLESS path
+// (out/opengraph-image), so GH Pages shipped a valid 1200x630 PNG as
+// `application/octet-stream` — verified live 2026-07-31. Sniffing unfurlers
+// render it anyway; a strict one that trusts content-type can refuse the card.
+//
+// scripts/og-png-alias.mjs (postbuild) copies each card to a byte-identical
+// `.png` sibling and app/ metadata points at that. These assertions are what
+// keep the two halves honest: if the alias script stops running, or Next moves
+// the convention's output path, the og:image references would silently 404 —
+// which is strictly worse than the wrong MIME type it replaced.
+// (Truth audit 2026-07-31, finding TA-11 / F-4.)
+// ---------------------------------------------------------------------------
+
+describe.runIf(OUT_EXISTS)('Gap 7 — share-card images', () => {
+  const SITE_ORIGIN = 'https://skypistudio.com';
+  const IMAGE_EXT = /\.(png|jpe?g|webp|avif|gif|svg)$/i;
+
+  /** Every og:image / twitter:image content value across the built site. */
+  function collectCardImageRefs(): Array<{ route: string; url: string }> {
+    const refs: Array<{ route: string; url: string }> = [];
+    for (const file of collectHtmlFiles(OUT_DIR)) {
+      const html = readFileSync(file, 'utf8');
+      const route = file.replace(OUT_DIR, '');
+      const pattern =
+        /<meta\s+(?:property="og:image"|name="twitter:image")\s+content="([^"]*)"/gi;
+      let m: RegExpExecArray | null;
+      while ((m = pattern.exec(html)) !== null) refs.push({ route, url: m[1] });
+    }
+    return refs;
+  }
+
+  it('every share-card image resolves to a real file in ./out/', () => {
+    assertOutDirExists();
+    const refs = collectCardImageRefs();
+    expect(refs.length, 'expected the built site to reference share-card images').toBeGreaterThan(0);
+
+    const missing: string[] = [];
+    for (const { route, url } of refs) {
+      if (!url.startsWith(SITE_ORIGIN)) continue; // off-origin cards aren't ours to verify
+      const rel = url.slice(SITE_ORIGIN.length).split('?')[0].split('#')[0];
+      if (!existsSync(join(OUT_DIR, rel))) missing.push(`${route} → ${rel}`);
+    }
+    expect(missing, `share-card images that 404:\n${missing.join('\n')}`).toEqual([]);
+  });
+
+  // The /404 surface is the one documented exemption. Its card is emitted by
+  // the opengraph-image FILE CONVENTION, which outranks any `images` entry
+  // inherited from the root layout; overriding it would mean restating the
+  // layout's whole openGraph block (a page-level block REPLACES the layout's)
+  // and so duplicating the site description a third time. A 404 is an error
+  // surface nobody shares on purpose, and its card is unchanged from what
+  // shipped before this fix — so the debt is parked, loudly, not silently.
+  const CARD_EXEMPT = /^\/404(\.html|\/index\.html)$/;
+
+  it('every share-card image path carries a real image extension (GH Pages sends image/*)', () => {
+    const offenders: string[] = [];
+    for (const { route, url } of collectCardImageRefs()) {
+      if (CARD_EXEMPT.test(route)) continue;
+      if (!url.startsWith(SITE_ORIGIN)) continue;
+      const rel = url.slice(SITE_ORIGIN.length).split('?')[0].split('#')[0];
+      if (!IMAGE_EXT.test(rel)) offenders.push(`${route} → ${rel}`);
+    }
+    expect(
+      offenders,
+      `extensionless card paths — GH Pages will serve these as application/octet-stream:\n${offenders.join('\n')}`,
+    ).toEqual([]);
+  });
+
+  it('the homepage’s restated openGraph block has not drifted from its own <title>/description', () => {
+    // app/page.tsx must restate the layout's og values verbatim (a page-level
+    // openGraph replaces the layout's), which is a live drift risk. Pin it
+    // against the document's own title + meta description — the same strings
+    // app/layout.tsx generates — so an edit to one and not the other fails here.
+    const html = readFileSync(join(OUT_DIR, 'index.html'), 'utf8');
+    const docTitle = /<title>([^<]*)<\/title>/i.exec(html)?.[1];
+    const docDesc = /<meta\s+name="description"\s+content="([^"]*)"/i.exec(html)?.[1];
+    expect(docTitle, 'expected the homepage to render a <title>').toBeTruthy();
+    expect(docDesc, 'expected the homepage to render a meta description').toBeTruthy();
+
+    const ogTitleTag = /<meta\s+property="og:title"\s+content="([^"]*)"/i.exec(html)?.[1];
+    const ogDescTag = /<meta\s+property="og:description"\s+content="([^"]*)"/i.exec(html)?.[1];
+    expect(ogTitleTag, 'homepage og:title drifted from <title>').toBe(docTitle);
+    expect(ogDescTag, 'homepage og:description drifted from meta description').toBe(docDesc);
+  });
+
+  it('each .png alias is byte-identical to the card the convention generated', () => {
+    // The alias must be a copy, never a re-encode: the whole point is that the
+    // bytes a strict unfurler finally accepts are the SAME bytes Next rendered.
+    const aliases = collectCardImageRefs()
+      .filter((r) => r.url.startsWith(SITE_ORIGIN))
+      .map((r) => r.url.slice(SITE_ORIGIN.length).split('?')[0])
+      .filter((rel) => /\/opengraph-image\.png$|\/twitter-image\.png$/.test(rel));
+
+    const checked = new Set<string>();
+    for (const rel of aliases) {
+      if (checked.has(rel)) continue;
+      checked.add(rel);
+      const aliasPath = join(OUT_DIR, rel);
+      const originalPath = aliasPath.replace(/\.png$/, '');
+      expect(existsSync(aliasPath), `missing alias ${rel}`).toBe(true);
+      expect(
+        existsSync(originalPath),
+        `${rel} has no extensionless original — the convention's output moved`,
+      ).toBe(true);
+      expect(
+        readFileSync(aliasPath).equals(readFileSync(originalPath)),
+        `${rel} is not byte-identical to the generated card`,
+      ).toBe(true);
+    }
+    expect(checked.size, 'expected at least one .png card alias').toBeGreaterThan(0);
+  });
+});
+

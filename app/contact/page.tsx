@@ -8,6 +8,7 @@ import { ParallaxWash } from '@/components/ParallaxWash';
 import { Reveal } from '@/components/Reveal';
 import { cn } from '@/lib/cn';
 import { getProfile } from '@/lib/content';
+import { OG_CARD } from '@/lib/og';
 
 export function generateMetadata(): Metadata {
   const profile = getProfile();
@@ -28,7 +29,7 @@ export function generateMetadata(): Metadata {
       locale: 'en_CA',
       title: `Contact — ${profile.name}`,
       description,
-      images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+      images: [OG_CARD],
     },
     twitter: {
       card: 'summary_large_image',

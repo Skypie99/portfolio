@@ -17,6 +17,7 @@ import { INLINE_CODE_CLASS, smartPunctuation } from '@/lib/markdown';
 import { getDeliverables } from '@/lib/content';
 import { ThemedHeroPreload } from '@/components/ThemedHeroPreload';
 import { cardMedia, heroMedia, heroPreloadLink, heroPreloadLinks } from '@/lib/media';
+import { OG_CARD } from '@/lib/og';
 import { frameForSlug, signatureFor } from '@/lib/signature';
 import { renderMarkdownProse } from '@/components/MarkdownProse';
 
@@ -129,7 +130,7 @@ export async function generateMetadata({
           ? { url: d.ogCard, width: 1200, height: 630, alt: d.title }
           : d.cardImage?.src
             ? { url: d.cardImage.src, width: d.cardImage.width, height: d.cardImage.height, alt: d.title }
-            : { url: '/opengraph-image', width: 1200, height: 630, alt: d.title },
+            : { ...OG_CARD, alt: d.title },
       ],
     },
     twitter: {

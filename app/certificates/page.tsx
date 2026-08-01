@@ -7,6 +7,7 @@ import { SettleHeading } from '@/components/HeroSettle';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { cn } from '@/lib/cn';
 import { getCertificates, getProfile } from '@/lib/content';
+import { OG_CARD } from '@/lib/og';
 
 export function generateMetadata(): Metadata {
   const profile = getProfile();
@@ -29,7 +30,7 @@ export function generateMetadata(): Metadata {
       locale: 'en_CA',
       title: `Credentials — ${profile.name}`,
       description,
-      images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+      images: [OG_CARD],
     },
     twitter: {
       card: 'summary_large_image',

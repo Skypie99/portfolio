@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { CinematicDesert } from '@/components/cinematic/CinematicDesert';
@@ -16,6 +17,38 @@ import { RunwayIdentity } from '@/components/RunwayIdentity';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getCertificates, getDeliverables, getProfile } from '@/lib/content';
+import { OG_CARD } from '@/lib/og';
+
+/**
+ * TA-11 (truth audit 2026-07-31) — the homepage's share card, restated here
+ * and not in app/layout.tsx, because for the `/` segment the opengraph-image
+ * FILE CONVENTION outranks a layout-level `images` entry (it does not outrank a
+ * page-level one). Without this, `/` — the most-shared URL on the site — kept
+ * emitting the extensionless card path that GitHub Pages serves as
+ * `application/octet-stream`. See lib/og.ts.
+ *
+ * A page-level `openGraph` REPLACES the layout's wholesale rather than merging
+ * (the same rule behind TA-10), so url / siteName / locale / title /
+ * description are restated verbatim from app/layout.tsx — no new copy. The
+ * static-integrity suite pins them against this page's own <title> and meta
+ * description so the two declarations cannot drift apart unnoticed.
+ */
+export function generateMetadata(): Metadata {
+  const profile = getProfile();
+  const description =
+    'Sky Halisky is an AI builder crafting accessible, privacy-first tools from the Okanagan Valley, BC. Creator of AccessMap, the Prompt Library, and more.';
+  return {
+    openGraph: {
+      type: 'website',
+      url: 'https://skypistudio.com',
+      siteName: `${profile.name} — AI Portfolio`,
+      locale: 'en_CA',
+      title: `${profile.name} — AI Portfolio`,
+      description,
+      images: [OG_CARD],
+    },
+  };
+}
 
 /**
  * Single-scroll homepage. Server Component — all content at build time, zero
