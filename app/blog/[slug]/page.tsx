@@ -12,6 +12,7 @@ import { cn } from '@/lib/cn';
 import { getAllBlogPostSlugs, getBlogPosts, getDeliverables, getProfile } from '@/lib/content';
 import { bindSeparatorDash, bindSoloLetters } from '@/lib/markdown';
 import { cardMedia } from '@/lib/media';
+import { OG_CARD } from '@/lib/og';
 import type { BlogPost } from '@/lib/schema';
 
 type RouteParams = { slug: string };
@@ -138,7 +139,7 @@ export async function generateMetadata({
       title: `${post.title} — ${profile.name}`,
       description: post.summary,
       publishedTime: post.publishedDate,
-      images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: post.title }],
+      images: [{ ...OG_CARD, alt: post.title }],
     },
     twitter: {
       card: 'summary_large_image',

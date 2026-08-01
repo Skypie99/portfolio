@@ -7,6 +7,7 @@ import { renderMarkdownProse } from '@/components/MarkdownProse';
 import { cn } from '@/lib/cn';
 import { getA11yReceipts, getAccessibilityStatementParts, getProfile } from '@/lib/content';
 import { bindSeparatorDash, bindSoloLetters } from '@/lib/markdown';
+import { ACCESSIBILITY_OG_CARD } from '@/lib/og';
 
 export function generateMetadata(): Metadata {
   const profile = getProfile();
@@ -27,7 +28,7 @@ export function generateMetadata(): Metadata {
       locale: 'en_CA',
       title: `Accessibility — ${profile.name}`,
       description,
-      images: [{ url: '/accessibility/opengraph-image', width: 1200, height: 630 }],
+      images: [ACCESSIBILITY_OG_CARD],
     },
     twitter: {
       card: 'summary_large_image',

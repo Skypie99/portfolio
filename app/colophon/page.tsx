@@ -7,6 +7,7 @@ import { renderMarkdownProse } from '@/components/MarkdownProse';
 import { cn } from '@/lib/cn';
 import { getColophon, getProfile, getRounds } from '@/lib/content';
 import { bindSeparatorDash, bindSoloLetters } from '@/lib/markdown';
+import { OG_CARD } from '@/lib/og';
 
 export function generateMetadata(): Metadata {
   const profile = getProfile();
@@ -24,7 +25,7 @@ export function generateMetadata(): Metadata {
       locale: 'en_CA',
       title: `Colophon — ${profile.name}`,
       description,
-      images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+      images: [OG_CARD],
     },
     twitter: {
       card: 'summary_large_image',

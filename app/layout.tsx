@@ -15,6 +15,7 @@ import { ViewTransitions } from '@/components/ViewTransitions';
 import { WorldBackdrop } from '@/components/WorldBackdrop';
 import { cn } from '@/lib/cn';
 import { getProfile } from '@/lib/content';
+import { OG_CARD } from '@/lib/og';
 
 import './globals.css';
 import './tokens-phase2.css';
@@ -95,15 +96,20 @@ export function generateMetadata(): Metadata {
       siteName: `${profile.name} — AI Portfolio`,
       title: `${profile.name} — AI Portfolio`,
       description,
-      // opengraph-image.tsx (file convention) auto-injects the PNG og:image.
-      // No explicit images: entry needed here; the convention takes precedence.
       locale: 'en_CA',
+      // TA-11: point at the `.png` alias so GH Pages sends image/png rather
+      // than application/octet-stream (see lib/og.ts for the full why).
+      // NOTE: this LAYOUT declaration does not win for the `/` segment itself —
+      // the opengraph-image file convention outranks it there — so the homepage
+      // restates its card in app/page.tsx. This entry is what every descendant
+      // segment without its own openGraph block inherits.
+      images: [OG_CARD],
     },
     twitter: {
       card: 'summary_large_image',
       title: `${profile.name} — AI Portfolio`,
       description,
-      // Twitter also picks up the auto-generated PNG from opengraph-image.tsx.
+      // Twitter falls back to openGraph.images when it declares none of its own.
     },
     // `color-scheme` is managed at runtime by next-themes (light/dark/system).
   };
