@@ -219,7 +219,10 @@ async function captureStills({ project, src, baseUrl, browser, args, mastersRoot
         const master = await masterInfo(masterPath);
         const row = baseRow(project, src, scene.id, theme, vpName, scene, [...(scene.flags ?? [])]);
         row.files = { master };
-        if (scene.ship) {
+        // Verify mode compares masters ONLY — it must never re-encode into the
+        // shipped tree (run 2's animation-pixel drift would silently replace
+        // the canonical, manifest-recorded assets).
+        if (scene.ship && !args.verify) {
           try {
             const enc = encodeStill({ slug: project.slug, stem, kind: scene.shipKind ?? 'shot', masterPath });
             row.files.shipped = enc.shipped;
