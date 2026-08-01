@@ -11,9 +11,30 @@ import { getProfile } from '@/lib/content';
 
 export function generateMetadata(): Metadata {
   const profile = getProfile();
+  const description =
+    'Write to Sky Halisky — AI builder based in the Okanagan Valley, British Columbia.';
   return {
     title: `Contact — ${profile.name}`,
-    description: 'Write to Sky Halisky — AI builder based in the Okanagan Valley, British Columbia.',
+    description,
+    // TA-10 (truth audit 2026-07-31): see /certificates — same inheritance
+    // defect. Without its own block this route unfurled as the homepage, which
+    // is the one page a recruiter sharing a contact link does NOT mean to send.
+    // siteName + locale restated (a leaf openGraph replaces the root's, W0-04).
+    // Strings are this page's OWN existing title/description — no new copy.
+    openGraph: {
+      type: 'website',
+      url: '/contact/',
+      siteName: 'Sky Halisky — AI Portfolio',
+      locale: 'en_CA',
+      title: `Contact — ${profile.name}`,
+      description,
+      images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `Contact — ${profile.name}`,
+      description,
+    },
   };
 }
 

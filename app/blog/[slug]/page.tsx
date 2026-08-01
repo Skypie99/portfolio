@@ -129,6 +129,12 @@ export async function generateMetadata({
     description: post.summary,
     openGraph: {
       type: 'article',
+      // TA-10: a leaf openGraph REPLACES the root's wholesale (W0-04) — url,
+      // siteName and locale restated so they survive on this route's share.
+      // url is the POST's own, never the root's homepage url.
+      url: `/blog/${slug}/`,
+      siteName: 'Sky Halisky — AI Portfolio',
+      locale: 'en_CA',
       title: `${post.title} — ${profile.name}`,
       description: post.summary,
       publishedTime: post.publishedDate,

@@ -411,3 +411,115 @@ describe.runIf(OUT_EXISTS)('Gap 5 — new-tab links announce themselves', () => 
   });
 });
 
+// ---------------------------------------------------------------------------
+// Gap 6 — share-card identity (every route unfurls as ITSELF)
+//
+// Next.js shallow-merges `metadata.openGraph` per TOP-LEVEL KEY: a leaf route
+// that declares its own openGraph object REPLACES the root layout's rather than
+// merging into it, and a leaf that declares NONE inherits the root's entire
+// block — og:url included. Both halves of that rule bite:
+//
+//   - A route with no openGraph block inherits og:url = the HOMEPAGE, so a
+//     shared link to it unfurls wearing the homepage's title, description and
+//     URL. /certificates/ and /contact/ shipped this way.
+//   - A route that declares openGraph but omits url/siteName/locale silently
+//     drops all three from its card. /work/, /about/, /colophon/ and /blog/*
+//     shipped this way.
+//
+// The site is a job-search artifact: the share card is the pre-click claim a
+// recruiter reads before the page ever loads, so a card that names the wrong
+// page is a truth defect, not a cosmetic one. This locks the whole class.
+// (Truth audit 2026-07-31, finding TA-10 / F-3.)
+// ---------------------------------------------------------------------------
+
+describe.runIf(OUT_EXISTS)('Gap 6 — share-card identity', () => {
+  const SITE_ORIGIN = 'https://skypistudio.com';
+  const EXPECTED_SITE_NAME = 'Sky Halisky — AI Portfolio';
+
+  /** The route path a built HTML file is served at: out/work/index.html → /work/ */
+  function routePathOf(file: string): string {
+    const rel = file.replace(OUT_DIR, '').replace(/^\//, '');
+    if (rel === 'index.html') return '/';
+    return '/' + rel.replace(/index\.html$/, '');
+  }
+
+  /** <meta property="og:x" content="..."> — property-keyed, as OG tags are emitted. */
+  function ogTag(html: string, prop: string): string | undefined {
+    const m = new RegExp(
+      `<meta\\s+property="og:${prop}"\\s+content="([^"]*)"`,
+      'i',
+    ).exec(html);
+    return m?.[1];
+  }
+
+  // The 404 surface is served for ARBITRARY unmatched paths, so it has no
+  // canonical URL of its own — inheriting the root's og:url is correct there,
+  // not impersonation. Excluded deliberately, never silently.
+  const IS_404 = (f: string) => /(^|\/)404(\.html|\/index\.html)$/.test(f.replace(OUT_DIR, ''));
+
+  function realRoutes(): string[] {
+    return collectHtmlFiles(OUT_DIR).filter((f) => !IS_404(f));
+  }
+
+  it('every route declares og:url, and it is the route’s OWN url', () => {
+    assertOutDirExists();
+    const routes = realRoutes();
+    expect(routes.length).toBeGreaterThan(0);
+
+    const offenders: string[] = [];
+    for (const file of routes) {
+      const html = readFileSync(file, 'utf8');
+      const expected = SITE_ORIGIN + routePathOf(file);
+      const actual = ogTag(html, 'url');
+      if (actual === undefined) {
+        offenders.push(`${routePathOf(file)} → og:url MISSING (expected ${expected})`);
+      } else if (actual !== expected) {
+        offenders.push(`${routePathOf(file)} → og:url is "${actual}", expected "${expected}"`);
+      }
+    }
+    expect(
+      offenders,
+      `routes whose share card names the wrong page:\n${offenders.join('\n')}`,
+    ).toEqual([]);
+  });
+
+  it('every route keeps og:site_name and og:locale (they drop when a leaf replaces the root block)', () => {
+    const offenders: string[] = [];
+    for (const file of realRoutes()) {
+      const html = readFileSync(file, 'utf8');
+      const siteName = ogTag(html, 'site_name');
+      const locale = ogTag(html, 'locale');
+      if (siteName !== EXPECTED_SITE_NAME) {
+        offenders.push(`${routePathOf(file)} → og:site_name is ${siteName ?? 'MISSING'}`);
+      }
+      if (!locale) offenders.push(`${routePathOf(file)} → og:locale MISSING`);
+    }
+    expect(offenders, `share cards missing site identity:\n${offenders.join('\n')}`).toEqual([]);
+  });
+
+  it('no interior route wears the homepage’s og:title or twitter:title', () => {
+    // The precise impersonation lock: /certificates/ and /contact/ used to
+    // announce themselves as "Sky Halisky — AI Portfolio" with the homepage's
+    // description attached.
+    const home = join(OUT_DIR, 'index.html');
+    assertOutDirExists();
+    const homeTitle = ogTag(readFileSync(home, 'utf8'), 'title');
+    expect(homeTitle, 'expected the homepage to declare an og:title').toBeTruthy();
+
+    const offenders: string[] = [];
+    for (const file of realRoutes()) {
+      if (file === home) continue;
+      const html = readFileSync(file, 'utf8');
+      if (ogTag(html, 'title') === homeTitle) {
+        offenders.push(`${routePathOf(file)} → og:title`);
+      }
+      const twTitle = /<meta\s+name="twitter:title"\s+content="([^"]*)"/i.exec(html)?.[1];
+      if (twTitle === homeTitle) offenders.push(`${routePathOf(file)} → twitter:title`);
+    }
+    expect(
+      offenders,
+      `interior routes unfurling as the homepage:\n${offenders.join('\n')}`,
+    ).toEqual([]);
+  });
+});
+
