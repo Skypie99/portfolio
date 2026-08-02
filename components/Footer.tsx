@@ -182,9 +182,13 @@ export function Footer() {
                 className="link-draw font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out inline-flex items-center gap-1 self-start"
               >
                 <span>Full history on LinkedIn</span>
-                <span aria-hidden="true" className="text-text-meta">
-                  {'↗'}
-                </span>
+                {/* UP-11: no colour override — the ↗ takes its label's colour.
+                    That is the house external-link grammar (C-78, named in
+                    CredentialBadge.tsx); the former text-text-meta override was
+                    one of only three left in the estate. Rendered census (162 ↗
+                    instances, 10 routes × 2 themes) in
+                    receipts/p4/glyph-census-*.json. */}
+                <span aria-hidden="true">{'↗'}</span>
                 <span className="sr-only">(opens in new tab)</span>
               </a>
             )}
@@ -216,9 +220,11 @@ export function Footer() {
                     )}
                   >
                     <span>{PLATFORM_LABELS[s.platform] ?? s.platform}</span>
-                    <span aria-hidden="true" className="text-text-meta">
-                      {'↗'}
-                    </span>
+                    {/* UP-11: the ↗ takes its label's colour (C-78 house
+                        grammar) — so GitHub's accent label no longer carries a
+                        muted glyph. The RESTING accent above is deliberate and
+                        untouched; only the glyph mismatch was in scope. */}
+                    <span aria-hidden="true">{'↗'}</span>
                     <span className="sr-only">(opens in new tab)</span>
                   </a>
                 </li>

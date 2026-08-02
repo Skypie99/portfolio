@@ -92,9 +92,11 @@ export default function ContactPage() {
                 className="link-draw text-near-black hover:text-accent-text transition-colors duration-fast ease-out inline-flex items-center gap-1.5"
               >
                 <span>Full history on LinkedIn</span>
-                <span aria-hidden="true" className="text-text-meta">
-                  {'↗'}
-                </span>
+                {/* UP-11: the ↗ takes its label's colour (C-78). This is the
+                    same link as Footer.tsx's About-column pointer, so it moves
+                    with it — leaving it muted here would have made one link
+                    render two ways. */}
+                <span aria-hidden="true">{'↗'}</span>
                 <span className="sr-only">(opens in new tab)</span>
               </a>
             </p>
