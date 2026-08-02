@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { A11yReceipts } from '@/components/A11yReceipts';
+import { Button } from '@/components/Button';
 import { SettleHeading } from '@/components/HeroSettle';
 import { renderMarkdownProse } from '@/components/MarkdownProse';
 import { cn } from '@/lib/cn';
@@ -121,21 +122,19 @@ export default function AccessibilityPage() {
       </section>
 
       {/* Closer — the report-a-barrier route. Forward CTA to /contact, plus a
-          quiet back-to-home, matching the /about closer grammar. */}
+          quiet back-to-home, matching the /about closer grammar.
+          UP-46 (ui-polish 2026-08-01): the forward CTA is now the house dot-pill,
+          which is what "the /about closer grammar" has always denoted — /about
+          pairs a pill (ContactEmail) with a quiet back link, and this page was
+          rendering both links in the quiet register. Precedent for a pill on an
+          INTERNAL route: not-found.tsx:50 and the rail's SidebarWriteCta. No →:
+          no internal-route pill in the estate carries one. /colophon's closer is
+          structurally this page's twin and was deliberately NOT changed — its
+          forward link is navigation, not the page's primary action; see
+          DECISIONS §P UP-46-COLOPHON. */}
       <section className="px-gutter py-18 world-surface border-t border-border-decorative">
         <div className="max-w-content mx-auto flex flex-col items-start gap-8">
-          <Link
-            href="/contact/"
-            className="group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
-          >
-            Get in touch
-            <span
-              aria-hidden="true"
-              className="inline-block transition-transform duration-base ease-gh-glide group-hover:translate-x-1"
-            >
-              {'→'}
-            </span>
-          </Link>
+          <Button href="/contact/">Get in touch</Button>
           <Link
             href="/"
             className="group inline-flex items-center gap-2 font-mono text-meta tracking-label uppercase text-text-meta hover:text-accent-text transition-colors duration-fast ease-out"
