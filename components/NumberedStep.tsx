@@ -43,10 +43,13 @@ export function NumberedStep({ number, title, body, highlight = false, className
         {number}
       </span>
       <div className="flex flex-col gap-3">
-        <h3
-          className="font-serif font-normal text-step-2 leading-[1.15] text-near-black text-balance"
-          style={{ letterSpacing: '-0.01em' }}
-        >
+        {/* UI_SYSTEM §type: tracking rides a `tracking-*` utility, never an inline
+            style. text-step-2 folds no tracking of its own (only step-3/4/5 do),
+            so the sub-head's -0.01em is carried explicitly here. Arbitrary rather
+            than a named token by design — --ls-heading holds this exact value, but
+            exposing it as `tracking-heading` is a tailwind.config change that
+            belongs to the naming pass (UP-03 · DECISIONS §P P1-UP-03-FORM). */}
+        <h3 className="font-serif font-normal text-step-2 tracking-[-0.01em] leading-[1.15] text-near-black text-balance">
           {title}
         </h3>
         <p className="font-sans font-light text-body text-charcoal leading-[1.65] max-w-measure text-pretty">
