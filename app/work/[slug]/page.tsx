@@ -739,7 +739,24 @@ export default async function WorkDetailPage({
           }}
         />
         <Reveal variant="scene" className="relative z-10 max-w-content mx-auto flex flex-col items-start gap-12">
-          <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
+          {/* UP-12 (ui-polish 2026-08-01): text-balance — UI_SYSTEM §Micro-typo
+              ("text-balance on headings"), which this heading was missing while
+              the page's own H1 already carried it. At 375 the pre-<br> segment
+              set "Have something like / this?" — a 66.39px orphan at the
+              conversion moment of all six project pages. Chromium balances each
+              forced-break segment independently, so the <br> is no obstacle:
+              237.28 / 127.63, with "Write to me." untouched at 184.36.
+              Measured no-op at 320, 360 and every width ≥480 (1440 is
+              byte-identical); it fires only in the 375–437 band. Block height
+              146.48px before and after → CLS 0. No nbsp was needed, so no copy
+              byte moves and the sanctioned presentation-entity exception went
+              unused. Note the h2 is a fit-content flex item under items-start
+              (capped by max-content at 373.44px), not container-bound — which is
+              why max-w-2xl never binds here and why 1440 is safe. Zero colour
+              TOKENS move, but the re-flow does slide "this?" along the fixed
+              .ember ramp (t 0.136 → 0.318: rgb +2,+6,+8 light / −4,−6,−4 dark),
+              so the both-theme captures show a hue delta with no new pair. */}
+          <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight text-balance">
             Have something like this?
             <br />
             Write to me.
