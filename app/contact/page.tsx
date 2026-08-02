@@ -129,7 +129,14 @@ export default function ContactPage() {
               </h2>
             </Reveal>
 
-            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-2xl">
+            {/* UP-48 (ui-polish 2026-08-01): no measure cap on this grid. The
+                removed max-w-2xl held the list to 672px inside a 1096px content
+                row, so the two hairline-topped columns stopped at 60% and left a
+                424px void that read as an empty third slot. max-w-2xl is the
+                estate's HEADING measure — of its 19 uses, 18 are on an h2 and
+                this <ul> was the lone exception. Below lg the grid is one column
+                and the cap never bound, so nothing moves at 375. */}
+            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {profile.socials.map((s, i) => (
                 <li key={s.url} className="group border-t border-border-decorative pt-4">
                   <Reveal index={i} variant="depth">
