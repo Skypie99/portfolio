@@ -82,8 +82,17 @@ export function A11yReceipts({ data, className }: { data: A11yReceiptsData; clas
         </p>
       </Reveal>
 
-      {/* 3×2 receipts grid — home's showcase grammar verbatim */}
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-px bg-wa-teal-soft/30 border border-wa-teal-soft/50 rounded-lg overflow-hidden shadow-md">
+      {/* 3×2 receipts grid — home's showcase grammar verbatim (app/page.tsx).
+          UP-29 / UP-23 (ui-polish 2026-08-01): BOTH grids collapse to one column
+          below 480px, and these two container strings must stay byte-identical —
+          changing one without the other silently falsifies the "verbatim" claim
+          this comment makes. At 375 the 2-col cell's 90px content box drove three
+          of the six mono labels to three lines and split "reduced-motion" at its
+          own hyphen; at 320 the label, the sub and the "0.003" figure all
+          overflowed their padding box (invisibly — they ate the right padding
+          rather than crossing an edge, which is why the audit's overflow probe
+          read zero). Every width >=480 is byte-identical. */}
+      <div className="grid grid-cols-1 min-[480px]:grid-cols-2 lg:grid-cols-3 gap-px bg-wa-teal-soft/30 border border-wa-teal-soft/50 rounded-lg overflow-hidden shadow-md">
         {data.receipts.map((r, i) => (
           <Reveal
             key={r.label}
