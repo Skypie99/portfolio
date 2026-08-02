@@ -91,10 +91,25 @@ export function ThemeToggle({ className, withLabel = false }: Props) {
     });
   };
 
+  // showcase/theme-sync: hovering/focusing/touching the toggle is INTENT — it
+  // gives in-viewport ThemedShowcases a ~150-500ms head start to arm their
+  // inactive twin before the click, so the dissolve is sharp, not blurred.
+  // Pure event dispatch: no markup, no geometry, no behavior change here.
+  const signalIntent = () => {
+    try {
+      window.dispatchEvent(new Event('ts:theme-intent'));
+    } catch {
+      /* SSR/jsdom guard */
+    }
+  };
+
   const button = (
     <button
       type="button"
       onClick={flip}
+      onPointerEnter={signalIntent}
+      onFocus={signalIntent}
+      onTouchStart={signalIntent}
       aria-label={mounted ? `Switch to ${next} mode` : 'Toggle colour theme'}
       title={mounted ? `Switch to ${next} mode` : undefined}
       className={cn(

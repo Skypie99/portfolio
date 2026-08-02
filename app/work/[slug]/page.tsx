@@ -15,7 +15,8 @@ import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { INLINE_CODE_CLASS, smartPunctuation } from '@/lib/markdown';
 import { getDeliverables } from '@/lib/content';
-import { cardMedia, heroMedia, heroPreloadLink } from '@/lib/media';
+import { ThemedHeroPreload } from '@/components/ThemedHeroPreload';
+import { cardMedia, heroMedia, heroPreloadLink, heroPreloadLinks } from '@/lib/media';
 import { frameForSlug, signatureFor } from '@/lib/signature';
 import { renderMarkdownProse } from '@/components/MarkdownProse';
 
@@ -117,15 +118,18 @@ export async function generateMetadata({
       locale: 'en_CA',
       title: `${d.title} — Sky Halisky`,
       description: d.summary,
-      // FT-1/W0-01/02: the share unfurl now deposits the WORK — the deliverable's
-      // own card image (accessmap → the "No ramp · SEVERITY 4 · VERIFIED" flag)
-      // instead of the generic wordmark plate, resolved absolute via metadataBase.
-      // alt stays d.title, which the real artifact finally makes true. Falls back
-      // to the global plate for any deliverable without a card image.
+      // FT-1/W0-01/02: the share unfurl deposits the WORK, resolved absolute via
+      // metadataBase. Precedence (showcase/theme-sync): the dedicated ogCard —
+      // a 1200×630 JPG cut from the DARK master (W0-05: dark survives white
+      // LinkedIn feeds; unfurl fetchers are format-conservative, so never the
+      // on-site WebP/AVIF pair) — then the legacy card raster, then the global
+      // plate. alt stays d.title, which the real artifact makes true.
       images: [
-        d.cardImage?.src
-          ? { url: d.cardImage.src, width: d.cardImage.width, height: d.cardImage.height, alt: d.title }
-          : { url: '/opengraph-image', width: 1200, height: 630, alt: d.title },
+        d.ogCard
+          ? { url: d.ogCard, width: 1200, height: 630, alt: d.title }
+          : d.cardImage?.src
+            ? { url: d.cardImage.src, width: d.cardImage.width, height: d.cardImage.height, alt: d.title }
+            : { url: '/opengraph-image', width: 1200, height: 630, alt: d.title },
       ],
     },
     twitter: {
@@ -195,10 +199,16 @@ export default async function WorkDetailPage({
   // "featured opens warm" survives (in the built page AND on real navigation)
   // without the cross-route leak. heroPreloadLink returns null unless an optimized
   // sibling is declared, so a placeholder-only or raw-PNG hero is never preloaded.
-  const heroPreload = heroPreloadLink(d);
+  // Themed heroes (showcase/theme-sync) swap the static link for a tiny inline
+  // script that preloads ONLY the active theme's variant — the theme-blind link
+  // would waste the wrong AVIF for half the visitors. Single-theme heroes keep
+  // the exact link below, byte-identically.
+  const themedPreloads = heroPreloadLinks(d);
+  const heroPreload = themedPreloads ? null : heroPreloadLink(d);
 
   return (
     <>
+      {themedPreloads && <ThemedHeroPreload links={themedPreloads} />}
       {heroPreload && (
         <link
           rel="preload"

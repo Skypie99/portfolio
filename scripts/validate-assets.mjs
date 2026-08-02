@@ -28,7 +28,7 @@
  * Can also be run standalone: node scripts/validate-assets.mjs
  */
 
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, statSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -157,23 +157,34 @@ function checkDeliverableProof(publicDir) {
     declared += 1;
     const rel = src.startsWith('/') ? src.slice(1) : src;
     const fullPath = join(publicDir, rel);
-    if (!existsSync(fullPath)) missing.push({ kind, id: where, src, expected: fullPath });
+    if (!existsSync(fullPath)) {
+      missing.push({ kind, id: where, src, expected: fullPath });
+    } else if (statSync(fullPath).size === 0) {
+      // A 0-byte asset is a missing asset that lies (the shipped loop.webm class:
+      // an interrupted encode stranded an empty file and existsSync waved it by).
+      missing.push({ kind: `${kind} ZERO-BYTE`, id: where, src, expected: fullPath });
+    }
   };
   const checkOne = (obj, where) => {
     if (!obj || typeof obj !== 'object') return;
     exists(obj.avif, 'proof(avif)', where);
     exists(obj.webp, 'proof(webp)', where);
+    exists(obj.src, 'proof(src)', where);
     if (obj.video && typeof obj.video === 'object') {
       exists(obj.video.mp4, 'proof(video.mp4)', where);
       exists(obj.video.webm, 'proof(video.webm)', where);
       exists(obj.video.poster, 'proof(video.poster)', where);
       exists(obj.video.captions, 'proof(video.captions)', where);
     }
+    // Themed twin (showcase train): a declared dark variant is gated exactly
+    // like its base — same shape, one recursion.
+    if (obj.dark && typeof obj.dark === 'object') checkOne(obj.dark, `${where} (dark)`);
   };
   for (const d of dels) {
     checkOne(d.heroShot, `${d.id} heroShot`);
     checkOne(d.cardImage, `${d.id} cardImage`);
     if (Array.isArray(d.shots)) d.shots.forEach((s, i) => checkOne(s, `${d.id} shots[${i}]`));
+    exists(d.ogCard, 'proof(ogCard)', `${d.id} ogCard`);
   }
   return { count: declared, missing };
 }

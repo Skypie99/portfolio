@@ -46,36 +46,69 @@ const GalleryImageSchema = ImageSchema.extend({
  * optional `avif`/`webp` responsive siblings) must live under
  * /images/deliverables/<slug>/, the same rule as heroImage.
  */
+/** Shipped-asset path: the legacy curated tree OR the factory's showcase tree
+ *  (showcase/theme-sync). Both live under public/ and ride the same <picture>
+ *  pipeline; the per-slug segment is enforced by the ShotImageSchema refine. */
+const AssetPath = z
+  .string()
+  .regex(/^\/(images|showcase)\//, 'asset paths must live under /images/ or /showcase/');
+
 /** Optional proof VIDEO (P2-A, Sky's motion extension). A short, silent screen
  *  loop. The shipped <video> is poster-first + muted + playsInline with a play
  *  affordance; autoplay is JS-opt-in ONLY when prefers-reduced-motion is unset
  *  (gated in ProductReveal). `poster` + `alt` are REQUIRED so meaning never
  *  depends on motion; `captions` (a .vtt) is optional but wired when present. */
 const ProofVideoSchema = z.object({
-  mp4: z.string().startsWith('/images/').optional(),
-  webm: z.string().startsWith('/images/').optional(),
-  poster: z.string().startsWith('/images/'),
-  captions: z.string().startsWith('/images/').optional(),
+  mp4: AssetPath.optional(),
+  webm: AssetPath.optional(),
+  poster: AssetPath,
+  captions: AssetPath.optional(),
   alt: AltTextSchema,
+});
+
+/** The DARK twin of a themed scene (showcase/theme-sync). Carries only what
+ *  differs by theme — file paths + LQIP + an optional dark clip. alt / focal /
+ *  caption / dimensions are SHARED with the base entry (same scene, same box,
+ *  one accessible name); the dark video's alt likewise lives on the base video. */
+const ThemedDarkSchema = z.object({
+  src: AssetPath.optional(),
+  avif: AssetPath.optional(),
+  webp: AssetPath.optional(),
+  lqip: z.string().startsWith('data:image/').optional(),
+  video: ProofVideoSchema.omit({ alt: true }).optional(),
 });
 
 const ShotImageSchema = z
   .object({
-    src: z.string().startsWith('/images/').optional(),
+    src: AssetPath.optional(),
     alt: AltTextSchema,
     caption: z.string().max(160).optional(),
     /** CSS object-position for the full-bleed card/shot crop (e.g. "50% 44%").
      *  Lets a tall screenshot be framed on its key content. Ignored by the
      *  device-framed hero, which shows the whole screen (object-contain). */
     focal: z.string().max(24).optional(),
-    avif: z.string().startsWith('/images/').optional(),
-    webp: z.string().startsWith('/images/').optional(),
+    avif: AssetPath.optional(),
+    webp: AssetPath.optional(),
     /** Inline LQIP blur placeholder — a base64 data-URI (from encode-proof.mjs).
      *  Painted behind the image inside the reserved-aspect well; the real image
      *  covers it on decode. Zero request, zero CLS, RM-safe (no animation). */
     lqip: z.string().startsWith('data:image/').optional(),
     /** Optional proof video (short silent loop) — see ProofVideoSchema. */
     video: ProofVideoSchema.optional(),
+    /** Theme-synced twin (showcase/theme-sync): the DARK capture of the same
+     *  scene. When present, ThemedShowcase renders the variant matching the
+     *  active site theme and the swap rides the site's own view-transition
+     *  dissolve. Requires a base `src` (the light variant) — never combined
+     *  with `matte`. */
+    dark: ThemedDarkSchema.optional(),
+    /** Mono-theme project (no real second theme): the single capture renders
+     *  matted on site-token surfaces that sit correctly in both themes —
+     *  designed and honest, never a fake recolor. Names which theme the one
+     *  capture IS. Never combined with `dark`. */
+    matte: z.enum(['light-mono', 'dark-mono']).optional(),
+    /** Per-scene presentation chrome override (the mockup-gate axis). Absent →
+     *  the site-wide SHOWCASE_CHROME default. */
+    chrome: z.enum(['device', 'float', 'matte']).optional(),
     width: z.number().int().positive().optional(),
     height: z.number().int().positive().optional(),
   })
@@ -89,8 +122,23 @@ const ShotImageSchema = z
         img.video?.webm,
         img.video?.poster,
         img.video?.captions,
-      ].every((s) => !s || /^\/images\/deliverables\/[a-z0-9-]+\//.test(s)),
-    'shot src/avif/webp + video paths, when present, must live under /images/deliverables/<slug>/',
+        img.dark?.src,
+        img.dark?.avif,
+        img.dark?.webp,
+        img.dark?.video?.mp4,
+        img.dark?.video?.webm,
+        img.dark?.video?.poster,
+        img.dark?.video?.captions,
+      ].every((s) => !s || /^\/(images\/deliverables|showcase)\/[a-z0-9-]+\//.test(s)),
+    'shot src/avif/webp + video paths (base and dark), when present, must live under /images/deliverables/<slug>/ or /showcase/<slug>/',
+  )
+  .refine(
+    (img) => !img.dark || Boolean(img.src),
+    'a dark twin requires a base src (the light variant)',
+  )
+  .refine(
+    (img) => !(img.dark && img.matte),
+    'dark and matte are mutually exclusive — a scene is themed OR mono, never both',
   );
 
 export const DeliverableSchema = z.object({
@@ -149,6 +197,15 @@ export const DeliverableSchema = z.object({
   tags: z.array(z.string().min(2).max(30)).max(6),
   featured: z.boolean(),
   body: z.string().min(10).optional(),
+  /** Which theme's card variant feeds the og:image unfurl (crawlers have no
+   *  theme — the raster is fixed at build). Default 'dark' at the metadata call
+   *  site: W0-05 measured that the pale card melts into white LinkedIn feeds
+   *  while dark survives them. */
+  ogTheme: z.enum(['light', 'dark']).optional(),
+  /** Dedicated unfurl raster (1200×630 JPG cut from the dark master by
+   *  scripts/og-cards.mjs). Unfurlers get a native-aspect JPG — never the
+   *  card's WebP/AVIF pair (LinkedIn's fetcher is format-conservative). */
+  ogCard: AssetPath.optional(),
 });
 
 export const CertificateSchema = z

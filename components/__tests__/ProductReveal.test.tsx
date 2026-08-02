@@ -238,7 +238,7 @@ describe('ProductReveal — proof pipeline (P2-A)', () => {
     expect(container.querySelector('source[type="image/avif"]')).toHaveAttribute('sizes');
   });
 
-  it('renders a proof video poster-first with NO autoplay attribute (RM-gated)', () => {
+  it('renders a proof video poster-first with NO autoplay attribute (RM-gated, ThemedMotion grammar)', () => {
     const { container } = render(
       <ProductReveal
         slug="ghost-code"
@@ -261,9 +261,14 @@ describe('ProductReveal — proof pipeline (P2-A)', () => {
     expect(video).toHaveAttribute('poster', '/images/deliverables/ghost-code/loop-poster.avif');
     expect(video).toHaveAttribute('preload', 'none');
     expect(video).toHaveAttribute('playsinline');
-    expect(video).toHaveAttribute('controls');
     // The a11y floor: autoplay is a JS-only enhancement, never in the markup.
     expect(video).not.toHaveAttribute('autoplay');
+    // Post-hydration the native controls yield to ThemedMotion's visible 44px
+    // pause/play affordance (SSR keeps `controls` — covered in its own suite).
+    expect(video).not.toHaveAttribute('controls');
+    expect(
+      container.querySelector('button[aria-label*="animation"]'),
+    ).not.toBeNull();
     expect(container.querySelector('source[type="video/mp4"]')).not.toBeNull();
     expect(container.querySelector('track[kind="captions"]')).toHaveAttribute('src', '/images/deliverables/ghost-code/loop.vtt');
     // A video replaces the still image entirely.

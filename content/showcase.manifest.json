@@ -1,0 +1,2624 @@
+{
+  "schema": "showcase-manifest/1",
+  "generatedAt": "2026-08-01",
+  "factory": {
+    "script": "scripts/capture-showcase.mjs",
+    "engine": "playwright-core 1.61.1 / chromium-1228 (Chromium — Safari/WebKit stays a device gate)",
+    "encoders": "ffmpeg-static 6.0 (libx264 + libvpx-vp9) + sharp 0.34.5"
+  },
+  "projects": {
+    "claude-corp": {
+      "slug": "claude-corp",
+      "repo": "/Users/skypie/Claude_Corp",
+      "projectBranch": "main",
+      "projectSha": "7e961a3357a0db6bdb652fa3127be0b398dec95f",
+      "shaDecision": "inplace",
+      "determinism": "byte-expected",
+      "bankOnly": false,
+      "needsDevice": [],
+      "notes": [],
+      "bankedAt": "2026-07-31"
+    },
+    "accessmap": {
+      "slug": "accessmap",
+      "repo": "/Users/skypie/AccessMap",
+      "projectBranch": "shipready/3-polish-submission",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "shaDecision": "sky-pinned",
+      "determinism": "structural",
+      "bankOnly": false,
+      "needsDevice": [
+        "sheet swipe-dismiss (no PanResponder on web; pageSheet is native-only)",
+        "report submission end-state"
+      ],
+      "notes": [],
+      "bankedAt": "2026-07-31"
+    },
+    "prompt-library": {
+      "slug": "prompt-library",
+      "repo": "/Users/skypie/Documents/Claude/Projects/Prompt Library Tool",
+      "projectBranch": "main",
+      "projectSha": "052b37a8aa0b6aea09efb636bf9d26ad7d63ef88",
+      "shaDecision": "inplace",
+      "determinism": "byte-expected",
+      "bankOnly": false,
+      "needsDevice": [],
+      "notes": [
+        "3 tracked file(s) modified in checkout (doc-level dirt tolerated, recorded)"
+      ],
+      "bankedAt": "2026-07-31"
+    },
+    "pet-paradise": {
+      "slug": "pet-paradise",
+      "repo": "/Users/skypie/luxury-dog-sitting",
+      "projectBranch": "main",
+      "projectSha": "a343f5c85f867ca5e34dc5a34decdc7b0cbb83ca",
+      "shaDecision": "inplace",
+      "determinism": "byte-expected",
+      "bankOnly": true,
+      "needsDevice": [],
+      "notes": [],
+      "bankedAt": "2026-07-31"
+    },
+    "ghost-code": {
+      "slug": "ghost-code",
+      "repo": "/Users/skypie/Games/pacman-code-trainer",
+      "projectBranch": "main",
+      "projectSha": "1e6b963d3b88940f13593dac2d0b1cb8e7966549",
+      "shaDecision": "sky-pinned",
+      "determinism": "seeded-byte",
+      "bankOnly": false,
+      "needsDevice": [],
+      "notes": [],
+      "bankedAt": "2026-07-31"
+    },
+    "dashboard": {
+      "slug": "dashboard",
+      "repo": "/Users/skypie/Dashboard",
+      "projectBranch": "origin/main",
+      "projectSha": "b8bd3a97ffa59fd7479c0036bcf369f7c3a19d65",
+      "shaDecision": "live-capture",
+      "determinism": "demo-snapshot",
+      "bankOnly": false,
+      "needsDevice": [],
+      "notes": [
+        "captured from the LIVE deployment at https://dashboard.skypistudio.com (local build impossible: missing dep, installs forbidden); sha recorded from origin/main"
+      ],
+      "bankedAt": "2026-07-31"
+    }
+  },
+  "captures": [
+    {
+      "project": "accessmap",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "clip:drawer-spring",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "AccessMap's navigation drawer springing open over the home screen, resting a beat, then sliding away.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/clips/drawer-spring.dark.phone.raw.webm",
+          "sha256": "4718562bf8a5b2e8da44ad4cdab6d719bfabcc64987192c1f2ec5b3378f7b880",
+          "bytes": 311312
+        }
+      },
+      "clip": {
+        "id": "drawer-spring",
+        "durationS": 3.6,
+        "trim": {
+          "rawStartS": 2.1
+        },
+        "mp4": {
+          "path": "/showcase/accessmap/clips/drawer-spring.dark.phone.mp4",
+          "bytes": 78583
+        },
+        "webm": {
+          "path": "/showcase/accessmap/clips/drawer-spring.dark.phone.webm",
+          "bytes": 92970
+        },
+        "webmDropReason": null,
+        "posters": [
+          {
+            "path": "/showcase/accessmap/clips/drawer-spring.dark.phone-poster.avif",
+            "bytes": 7476
+          },
+          {
+            "path": "/showcase/accessmap/clips/drawer-spring.dark.phone-poster.webp",
+            "bytes": 8960
+          },
+          {
+            "path": "/showcase/accessmap/clips/drawer-spring.dark.phone-poster.jpg",
+            "bytes": 11023
+          }
+        ],
+        "needsCaptions": true
+      }
+    },
+    {
+      "project": "accessmap",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "clip:drawer-spring",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "AccessMap's navigation drawer springing open over the home screen, resting a beat, then sliding away.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/clips/drawer-spring.light.phone.raw.webm",
+          "sha256": "852783568312e03e43130ec2e398a94f4db1386bf369bd4f0f55bc4439b38725",
+          "bytes": 317304
+        }
+      },
+      "clip": {
+        "id": "drawer-spring",
+        "durationS": 3.6,
+        "trim": {
+          "rawStartS": 2.1
+        },
+        "mp4": {
+          "path": "/showcase/accessmap/clips/drawer-spring.light.phone.mp4",
+          "bytes": 89275
+        },
+        "webm": {
+          "path": "/showcase/accessmap/clips/drawer-spring.light.phone.webm",
+          "bytes": 88768
+        },
+        "webmDropReason": null,
+        "posters": [
+          {
+            "path": "/showcase/accessmap/clips/drawer-spring.light.phone-poster.avif",
+            "bytes": 7869
+          },
+          {
+            "path": "/showcase/accessmap/clips/drawer-spring.light.phone-poster.webp",
+            "bytes": 10100
+          },
+          {
+            "path": "/showcase/accessmap/clips/drawer-spring.light.phone-poster.jpg",
+            "bytes": 12355
+          }
+        ],
+        "needsCaptions": true
+      }
+    },
+    {
+      "project": "accessmap",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "clip:map-browse",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "Panning across the AccessMap barrier map and zooming in — severity pins holding their place over the streets.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/clips/map-browse.dark.phone.raw.webm",
+          "sha256": "b9d84f257b634e5e4c8c9b254297c43f6634fb37e438defbe13c4792625d4734",
+          "bytes": 1073766
+        }
+      },
+      "clip": {
+        "id": "map-browse",
+        "durationS": 5.1,
+        "trim": {
+          "rawStartS": 9.7
+        },
+        "mp4": {
+          "path": "/showcase/accessmap/clips/map-browse.dark.phone.mp4",
+          "bytes": 163939
+        },
+        "webm": {
+          "path": "/showcase/accessmap/clips/map-browse.dark.phone.webm",
+          "bytes": 167270
+        },
+        "webmDropReason": null,
+        "posters": [
+          {
+            "path": "/showcase/accessmap/clips/map-browse.dark.phone-poster.avif",
+            "bytes": 22476
+          },
+          {
+            "path": "/showcase/accessmap/clips/map-browse.dark.phone-poster.webp",
+            "bytes": 25924
+          },
+          {
+            "path": "/showcase/accessmap/clips/map-browse.dark.phone-poster.jpg",
+            "bytes": 27433
+          }
+        ],
+        "needsCaptions": true
+      }
+    },
+    {
+      "project": "accessmap",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "clip:map-browse",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "Panning across the AccessMap barrier map and zooming in — severity pins holding their place over the streets.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/clips/map-browse.light.phone.raw.webm",
+          "sha256": "899cd337cad578a46ca21797fc9ad713419d327089d97d001e1917cd3cbfd2f4",
+          "bytes": 1090027
+        }
+      },
+      "clip": {
+        "id": "map-browse",
+        "durationS": 5.3,
+        "trim": {
+          "rawStartS": 9.5
+        },
+        "mp4": {
+          "path": "/showcase/accessmap/clips/map-browse.light.phone.mp4",
+          "bytes": 196093
+        },
+        "webm": {
+          "path": "/showcase/accessmap/clips/map-browse.light.phone.webm",
+          "bytes": 209147
+        },
+        "webmDropReason": null,
+        "posters": [
+          {
+            "path": "/showcase/accessmap/clips/map-browse.light.phone-poster.avif",
+            "bytes": 28064
+          },
+          {
+            "path": "/showcase/accessmap/clips/map-browse.light.phone-poster.webp",
+            "bytes": 31078
+          },
+          {
+            "path": "/showcase/accessmap/clips/map-browse.light.phone-poster.jpg",
+            "bytes": 30726
+          }
+        ],
+        "needsCaptions": true
+      }
+    },
+    {
+      "project": "accessmap",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "clip:report-walk",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "Opening the Report a barrier flow, choosing Blocked path and severity 4 — stopping at the ready-to-send form.",
+      "determinism": "structural",
+      "flags": [
+        "submission NEEDS-DEVICE"
+      ],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/clips/report-walk.light.phone.raw.webm",
+          "sha256": "74d9596588470c2db8e62179a061bee82afd516462671bb30b5420c6fbd81f58",
+          "bytes": 436168
+        }
+      },
+      "clip": {
+        "id": "report-walk",
+        "durationS": 6.2,
+        "trim": {
+          "rawStartS": 4.6
+        },
+        "mp4": {
+          "path": "/showcase/accessmap/clips/report-walk.light.phone.mp4",
+          "bytes": 92847
+        },
+        "webm": {
+          "path": "/showcase/accessmap/clips/report-walk.light.phone.webm",
+          "bytes": 94256
+        },
+        "webmDropReason": null,
+        "posters": [
+          {
+            "path": "/showcase/accessmap/clips/report-walk.light.phone-poster.avif",
+            "bytes": 21869
+          },
+          {
+            "path": "/showcase/accessmap/clips/report-walk.light.phone-poster.webp",
+            "bytes": 21384
+          },
+          {
+            "path": "/showcase/accessmap/clips/report-walk.light.phone-poster.jpg",
+            "bytes": 26164
+          }
+        ],
+        "needsCaptions": true
+      }
+    },
+    {
+      "project": "accessmap",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "clip:theme-flip",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "AccessMap's Appearance control flipping the whole app dark and back to light, every surface re-theming in place.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/clips/theme-flip.light.phone.raw.webm",
+          "sha256": "568a8d2ce8f76d643775bad8e03d60d0bd573da52a6242fff03ffa637a2f0b08",
+          "bytes": 383956
+        }
+      },
+      "clip": {
+        "id": "theme-flip",
+        "durationS": 4.1,
+        "trim": {
+          "rawStartS": 3.3
+        },
+        "mp4": {
+          "path": "/showcase/accessmap/clips/theme-flip.light.phone.mp4",
+          "bytes": 56634
+        },
+        "webm": {
+          "path": "/showcase/accessmap/clips/theme-flip.light.phone.webm",
+          "bytes": 61389
+        },
+        "webmDropReason": null,
+        "posters": [
+          {
+            "path": "/showcase/accessmap/clips/theme-flip.light.phone-poster.avif",
+            "bytes": 15063
+          },
+          {
+            "path": "/showcase/accessmap/clips/theme-flip.light.phone-poster.webp",
+            "bytes": 21532
+          },
+          {
+            "path": "/showcase/accessmap/clips/theme-flip.light.phone-poster.jpg",
+            "bytes": 24903
+          }
+        ],
+        "needsCaptions": true
+      }
+    },
+    {
+      "project": "accessmap",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "drawer-open",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "AccessMap's navigation drawer slid open over the dimmed home screen — frosted-glass rows for Resources, How to help, About and Settings.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/drawer-open.dark.phone.png",
+          "sha256": "a9421a8176a5417fd9376057bddc7c73901880bc7f793b938a702fe0996fd8b3",
+          "bytes": 191294,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/accessmap/drawer-open.dark.phone.avif",
+            "bytes": 9408,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/accessmap/drawer-open.dark.phone.webp",
+            "bytes": 20798
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAAAQAwCdASoUACsAPxGEulcsKCWkpWgBgCIJZwAALKezlywA/u8NwIAHTI4jhMnZO6iFkcO4fYkIOflkcAA="
+      }
+    },
+    {
+      "project": "accessmap",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "drawer-open",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "AccessMap's navigation drawer slid open over the dimmed home screen — frosted-glass rows for Resources, How to help, About and Settings.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/drawer-open.light.phone.png",
+          "sha256": "f6dce2722fe59566db7656c6e65239371627bd0efa61bb8528ff8882cfbd734a",
+          "bytes": 227173,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/accessmap/drawer-open.light.phone.avif",
+            "bytes": 10616,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/accessmap/drawer-open.light.phone.webp",
+            "bytes": 22652
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADQBACdASoUACsAPxF0r1AsJyQitVQIAYAiCWcA0bwLGZmS0skTc73/wxCzp9iYAAD+303oTVXQ57Om3+HurWwi+eYCaYC63SvzVSD4MjnD5nuJ1WXzAAAA"
+      }
+    },
+    {
+      "project": "accessmap",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "guest-profile",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The signed-out Profile screen — an editorial header, a sign-in invitation card, and contribution stats held as quiet placeholders.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/guest-profile.dark.phone.png",
+          "sha256": "fe60cbec4a250e61e8b31acfdc2fe61501782dedd627774b0ae0ed8460426d52",
+          "bytes": 746016,
+          "width": 780,
+          "height": 1688
+        }
+      }
+    },
+    {
+      "project": "accessmap",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "guest-profile",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The signed-out Profile screen — an editorial header, a sign-in invitation card, and contribution stats held as quiet placeholders.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/guest-profile.light.phone.png",
+          "sha256": "2f0d4f2ee947e34a90773423ba290f63523ff9b07e2d9a976994289ebe143612",
+          "bytes": 1026685,
+          "width": 780,
+          "height": 1688
+        }
+      }
+    },
+    {
+      "project": "accessmap",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "map-overview",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "AccessMap's full map — severity-coloured barrier pins over street tiles of downtown Kelowna, a nearest-barrier banner up top and rounded zoom controls at the edge.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/map-overview.dark.desktop.png",
+          "sha256": "912722a5051c5680c7c9889742c79ababde1d929be0b7e1fc8ec7bac991bb710",
+          "bytes": 879837,
+          "width": 2880,
+          "height": 1800
+        },
+        "shipped": [
+          {
+            "path": "/showcase/accessmap/map-overview.dark.desktop.avif",
+            "bytes": 28494,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/accessmap/map-overview.dark.desktop.webp",
+            "bytes": 47528
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAACwAgCdASoUAA0APxFysVC/pqSisAgD8CIJZwAAeyAA/u9fulQznVZ/m5c3F10QHzH0vAAA"
+      }
+    },
+    {
+      "project": "accessmap",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "map-overview",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "AccessMap's full map — severity-coloured barrier pins over street tiles of downtown Kelowna, a nearest-barrier banner up top and rounded zoom controls at the edge.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/map-overview.dark.phone.png",
+          "sha256": "283fa2aab87bbc5161f516cf1ac52c217e70b4f9217f44779b04584c5d62cdbe",
+          "bytes": 322609,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/accessmap/map-overview.dark.phone.avif",
+            "bytes": 46087,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/accessmap/map-overview.dark.phone.webp",
+            "bytes": 70314
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAACwBACdASoUACsAPwFurFArJqQisA1RYCAJY2hwXMYT/rSVh6g9kx6tfLUlwMYAAP7vpmaTBcxq86PT7eO3cX2vWNxA6algNxXN6Mvr5G4adSz4b1O2fYNmdtX/gYAmMgb/WSWgAAA="
+      }
+    },
+    {
+      "project": "accessmap",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "map-overview",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "AccessMap's full map — severity-coloured barrier pins over street tiles of downtown Kelowna, a nearest-barrier banner up top and rounded zoom controls at the edge.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/map-overview.light.desktop.png",
+          "sha256": "b50498dacdf00d5cb9480095d446db75d87ddb0336983cb36974d3b2e5f2f6ea",
+          "bytes": 1396377,
+          "width": 2880,
+          "height": 1800
+        },
+        "shipped": [
+          {
+            "path": "/showcase/accessmap/map-overview.light.desktop.avif",
+            "bytes": 40930,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/accessmap/map-overview.light.desktop.webp",
+            "bytes": 64120
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAAAwAwCdASoUAA0APxF0sFC4pqSisAgDECIJZwAAetEx8bdAAP7uzdt/KunrxpUBdcvAAA=="
+      }
+    },
+    {
+      "project": "accessmap",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "map-overview",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "AccessMap's full map — severity-coloured barrier pins over street tiles of downtown Kelowna, a nearest-barrier banner up top and rounded zoom controls at the edge.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/map-overview.light.phone.png",
+          "sha256": "457b8fc76219e60d832936cdc5c871afc8a4fadfc4a48ca419923b0de4e73fdb",
+          "bytes": 474372,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/accessmap/map-overview.light.phone.avif",
+            "bytes": 51187,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/accessmap/map-overview.light.phone.webp",
+            "bytes": 79880
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAwBACdASoUACsAPxF6sVEsKCSisBVaqYAiCWUAAJRfXcR0LayXH5e1NeQA/u/XyHCSMQalheBQMpfugq916K0++GpIkN7SWrFsrkiBbu5gAAAA"
+      }
+    },
+    {
+      "project": "accessmap",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "nearby-flags-sheet",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The Nearby flags sheet raised over the map — grabber bar on top, then barrier cards carrying severity out of 5, status and distance.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/nearby-flags-sheet.dark.phone.png",
+          "sha256": "4d11ce633a9b1ff9208d82e7fc5ce9f80d56693e37c3c09dbf4983e1d5fee470",
+          "bytes": 137914,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/accessmap/nearby-flags-sheet.dark.phone.avif",
+            "bytes": 24782,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/accessmap/nearby-flags-sheet.dark.phone.webp",
+            "bytes": 49300
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQBACdASoUACsAPxGAtFWsJ6SjJWsxgCIJZwDSrAtucieMl3cpXyYXEAD+2ORkvVRtJndFN+L3oWj5ISWeqCxGU5oqGpfU5pinAdlAAAA="
+      }
+    },
+    {
+      "project": "accessmap",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "nearby-flags-sheet",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The Nearby flags sheet raised over the map — grabber bar on top, then barrier cards carrying severity out of 5, status and distance.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/nearby-flags-sheet.light.phone.png",
+          "sha256": "b9b03ee21bab96e7c6d1f94d1a9073d89522e9c2cfb2b0cb27e0799d156631fb",
+          "bytes": 132782,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/accessmap/nearby-flags-sheet.light.phone.avif",
+            "bytes": 25805,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/accessmap/nearby-flags-sheet.light.phone.webp",
+            "bytes": 49252
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAABQBACdASoUACsAPxF6slKsJ6SipW5hgCIJZwDSrAt2cDno3svzKkOFbZZAAP7qdsffgs2H36/EcHpCy5AKWOoAtV17MYxVv94HLIetWfYhozqt6/nEQAAA"
+      }
+    },
+    {
+      "project": "accessmap",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "report-composed",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The Report a barrier sheet fully composed — Blocked path chosen, severity 4 set, a one-line description in place, and the Submit button lit but deliberately unpressed.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/report-composed.dark.phone.png",
+          "sha256": "77daa210f27e35bfa6b658cfadcc3d2928c39047e0e1eeae8065895d8425f3c8",
+          "bytes": 224710,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/accessmap/report-composed.dark.phone.avif",
+            "bytes": 29671,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/accessmap/report-composed.dark.phone.webp",
+            "bytes": 58546
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAABQBQCdASoUACsAPvVop1AqpqOiurmYAVAeiUAQXKEVyv9k1huoZlScTF3a0qwQNruNsgAA/vDJ2K9sRWNP84dzhPE6PfjH64Lb6s5UokB3k/RJfK3oRm3mZyPlLmO2ghAdN1uwKEJUDuhcjFnA6iCyx+AAAA=="
+      }
+    },
+    {
+      "project": "accessmap",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "report-composed",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The Report a barrier sheet fully composed — Blocked path chosen, severity 4 set, a one-line description in place, and the Submit button lit but deliberately unpressed.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/report-composed.light.phone.png",
+          "sha256": "6fffb6abb807ddc2c14d476e4cd812676a308f60d770a01ddcbacd3365bf32da",
+          "bytes": 262735,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/accessmap/report-composed.light.phone.avif",
+            "bytes": 33587,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/accessmap/report-composed.light.phone.webp",
+            "bytes": 61532
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAACwBACdASoUACsAPw1wrVAsJqQitVQMAYAhiUAZ+4yv7JOFbrFHMCwuIxrmmAyUANxlZ1/ynJiBM3ZLd0ZURXNpuwG2Xtefg2HNST18mLQ0zHPD6aMlaDQJfa51//molIgGvPAeui67GFo7YK4Hf0LdQAA="
+      }
+    },
+    {
+      "project": "accessmap",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "settings-appearance",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "AccessMap's Appearance setting — a three-segment Light, Dark, System control with the active segment raised: the app documenting its own theming.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/settings-appearance.dark.phone.png",
+          "sha256": "1e8f80269b2967a87074aeda7a7eff1b61a1da8eaa0e4e18196ae8860b985477",
+          "bytes": 625141,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/accessmap/settings-appearance.dark.phone.avif",
+            "bytes": 24729,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/accessmap/settings-appearance.dark.phone.webp",
+            "bytes": 48092
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAwBQCdASoUACsAPxF+sVQsKCQjKrgKAYAiCWcAyJgLNsl91sZNrCmQuRKnTDPv8RYQgAD+0MGoQNHCjOGojKbSZt8WPRxSdduOLzHIdXLYO7PKqJGV8V469suB8gfO1y/gmDOwAAA="
+      }
+    },
+    {
+      "project": "accessmap",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "settings-appearance",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "AccessMap's Appearance setting — a three-segment Light, Dark, System control with the active segment raised: the app documenting its own theming.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/settings-appearance.light.phone.png",
+          "sha256": "1d9d2560a76463167ef42390e1579a3248882b8d2d2310f06dfc26af905ae770",
+          "bytes": 680652,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/accessmap/settings-appearance.light.phone.avif",
+            "bytes": 24556,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/accessmap/settings-appearance.light.phone.webp",
+            "bytes": 46790
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAACwAwCdASoUACsAPxF8s1QsJ6QjJWzJgCIJZwDN/At1omzkeDgL4AD+xw1WD2OKvESK8jzW1vF5hd5v4oT7Qyr9N5IDh/rGgx1NOBlzgbsAAA=="
+      }
+    },
+    {
+      "project": "accessmap",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "tasks",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The Tasks screen — open barrier reports as frosted-glass rows with category icon, severity, status pill and age, under the filter controls.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/tasks.dark.phone.png",
+          "sha256": "f051239d511ac434e51d57071825c766aa33f4be502a792226519f0951c0280b",
+          "bytes": 401763,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/accessmap/tasks.dark.phone.avif",
+            "bytes": 33651,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/accessmap/tasks.dark.phone.webp",
+            "bytes": 60564
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAAAQBQCdASoUACsAPwVsqFArpiiisA1RcCCJYwC7M22DSwvZAJexBplJOc8Wq1ZCmk6IAP7c484DrNcP6adtKLm5K6/TVLSjL+Ua/qWHlci/xiFvRdtqRH8bXyG+IJtEc0CZfvzPf7qM18wJggqoDfWplDUZ+F73igB3aktNAAA="
+      }
+    },
+    {
+      "project": "accessmap",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "tasks",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The Tasks screen — open barrier reports as frosted-glass rows with category icon, severity, status pill and age, under the filter controls.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/tasks.light.phone.png",
+          "sha256": "8d9f23103bda46f2c77faabb1a1cc250572811dc0022d687d9167bdc01cff1b4",
+          "bytes": 426043,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/accessmap/tasks.light.phone.avif",
+            "bytes": 33206,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/accessmap/tasks.light.phone.webp",
+            "bytes": 61854
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAAAQBQCdASoUACsAPxF8sVEsKCSjsBqoAYAiCWMAx+Q6aUJPeKmsv2tub8YGxT8+IUwAAP7n7MNy/nsUZpRpMnUhsyq8gmJOXggEfCMHLMTRwd2/k87aJl8JhfxkaeuVXLcEwd4thSw85/YZfEDpMM9qTsugAA=="
+      }
+    },
+    {
+      "project": "accessmap",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "terms",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The Terms and Community Guidelines sheet — plain-language sections set in the editorial type, scrollable as a full page sheet.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/terms.dark.phone.png",
+          "sha256": "4f9d17f85d9f480ec22dd7db09423f9addbb834aa1ea072b5a641698f7939805",
+          "bytes": 976244,
+          "width": 780,
+          "height": 1688
+        }
+      }
+    },
+    {
+      "project": "accessmap",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "terms",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The Terms and Community Guidelines sheet — plain-language sections set in the editorial type, scrollable as a full page sheet.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/terms.light.phone.png",
+          "sha256": "8e6860949215b6ccd7db13ae0b519a44afe66ef366a8701b88f863e368845385",
+          "bytes": 1244584,
+          "width": 780,
+          "height": 1688
+        }
+      }
+    },
+    {
+      "project": "claude-corp",
+      "projectSha": "7e961a3357a0db6bdb652fa3127be0b398dec95f",
+      "projectBranch": "main",
+      "scene": "hero-pipeline",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "The Claude Corp front door — the editorial hero over the agent pipeline diagram, fifteen roles feeding one governed main branch.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/claude-corp/hero-pipeline.dark.desktop.png",
+          "sha256": "868b42aaaeae7abafe1b5917455c3b2e5eb7bd7dfbdeb0fc93c01bad7e384575",
+          "bytes": 2591058,
+          "width": 2880,
+          "height": 1800
+        },
+        "shipped": [
+          {
+            "path": "/showcase/claude-corp/hero-pipeline.dark.desktop.avif",
+            "bytes": 22850,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/claude-corp/hero-pipeline.dark.desktop.webp",
+            "bytes": 36950
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAABQAwCdASoUAA0APxFysVCsJqSisAgBgCIJZwAAW+i3kccLgAD+6Mmt8ToMv9QYHbQDxjN63DdYAA=="
+      }
+    },
+    {
+      "project": "claude-corp",
+      "projectSha": "7e961a3357a0db6bdb652fa3127be0b398dec95f",
+      "projectBranch": "main",
+      "scene": "hero-pipeline",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The Claude Corp front door — the editorial hero over the agent pipeline diagram, fifteen roles feeding one governed main branch.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/claude-corp/hero-pipeline.dark.phone.png",
+          "sha256": "72bfa5ae44edcc2e423130a98e611a360a060a4cfa20b283b6e2026a0c4a5e17",
+          "bytes": 1004758,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/claude-corp/hero-pipeline.dark.phone.avif",
+            "bytes": 36360,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/claude-corp/hero-pipeline.dark.phone.webp",
+            "bytes": 56852
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAACwBQCdASoUACsAPvVoqFAqpiQiurmYAVAeiWUAz6AhuloIifk/vkW8mIazUe66y79jsh/J3AAA/ujlpQKDwtly/4G3rEQhEMJmPnAwOU5iu3sl5WvLM7nTcpiZYSAsUvrq11gtB4hzoIAcvv/nAAAA"
+      }
+    },
+    {
+      "project": "claude-corp",
+      "projectSha": "7e961a3357a0db6bdb652fa3127be0b398dec95f",
+      "projectBranch": "main",
+      "scene": "hero-pipeline",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "The Claude Corp front door — the editorial hero over the agent pipeline diagram, fifteen roles feeding one governed main branch.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/claude-corp/hero-pipeline.light.desktop.png",
+          "sha256": "96d9c74cea74cb59b1c34941ab8414b92b128f46810b61f7168d3a498d73d7fd",
+          "bytes": 1533155,
+          "width": 2880,
+          "height": 1800
+        },
+        "shipped": [
+          {
+            "path": "/showcase/claude-corp/hero-pipeline.light.desktop.avif",
+            "bytes": 22510,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/claude-corp/hero-pipeline.light.desktop.webp",
+            "bytes": 36178
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAAAwAwCdASoUAA0APxFysFCsJqSisAgBgCIJZwDE2C0HlrAAAP7ubh/WwQtuQ4o8OlLUyjaVXCpWQAAA"
+      }
+    },
+    {
+      "project": "claude-corp",
+      "projectSha": "7e961a3357a0db6bdb652fa3127be0b398dec95f",
+      "projectBranch": "main",
+      "scene": "hero-pipeline",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The Claude Corp front door — the editorial hero over the agent pipeline diagram, fifteen roles feeding one governed main branch.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/claude-corp/hero-pipeline.light.phone.png",
+          "sha256": "f840010136603240a10408f6f1585c89a31160988e046100be7a2b057fce94e1",
+          "bytes": 769410,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/claude-corp/hero-pipeline.light.phone.avif",
+            "bytes": 30939,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/claude-corp/hero-pipeline.light.phone.webp",
+            "bytes": 54976
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAABQBQCdASoUACsAPvVmqVAqpaQiurmYAVAeiWUAAFF6974V/flIsdzwumAqTwCJDLfTuoAA/t8d1xkjJRHoWfaXalpxdua736nMotDYWRd6HTW2f4gRT967s/71SfF/0V5gKzamxhs1fRD9btMdPGE1fBtrwAAA"
+      }
+    },
+    {
+      "project": "claude-corp",
+      "projectSha": "7e961a3357a0db6bdb652fa3127be0b398dec95f",
+      "projectBranch": "main",
+      "scene": "not-found",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "/404.html",
+      "altText": "Claude Corp’s designed 404 — the ink-and-cream register holding on the lost-route page.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/claude-corp/not-found.dark.desktop.png",
+          "sha256": "85d0adab2e769f15f638e4310e9b8907fb55b325eacd6ec27e0cadb2137fab38",
+          "bytes": 126665,
+          "width": 2880,
+          "height": 1800
+        }
+      }
+    },
+    {
+      "project": "claude-corp",
+      "projectSha": "7e961a3357a0db6bdb652fa3127be0b398dec95f",
+      "projectBranch": "main",
+      "scene": "not-found",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "/404.html",
+      "altText": "Claude Corp’s designed 404 — the ink-and-cream register holding on the lost-route page.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/claude-corp/not-found.light.desktop.png",
+          "sha256": "1d0ce10e6661bf226abd2a0d25aaf85135db2a6c232a4f106a525489dafb7752",
+          "bytes": 127673,
+          "width": 2880,
+          "height": 1800
+        }
+      }
+    },
+    {
+      "project": "claude-corp",
+      "projectSha": "7e961a3357a0db6bdb652fa3127be0b398dec95f",
+      "projectBranch": "main",
+      "scene": "proof",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "The proof section — shipped-work receipts lined up under the governance rules that produced them.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/claude-corp/proof.dark.desktop.png",
+          "sha256": "8e81fa277ce857fc9fcbefef9d3fcec07683ae2565ecf87fc07ec7908b922ca0",
+          "bytes": 3649911,
+          "width": 2880,
+          "height": 1800
+        }
+      }
+    },
+    {
+      "project": "claude-corp",
+      "projectSha": "7e961a3357a0db6bdb652fa3127be0b398dec95f",
+      "projectBranch": "main",
+      "scene": "proof",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "The proof section — shipped-work receipts lined up under the governance rules that produced them.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/claude-corp/proof.light.desktop.png",
+          "sha256": "09fe3d486f2d49f12950466585de66da0ada1fe14142419413b706d18d2e3f20",
+          "bytes": 2150740,
+          "width": 2880,
+          "height": 1800
+        }
+      }
+    },
+    {
+      "project": "claude-corp",
+      "projectSha": "7e961a3357a0db6bdb652fa3127be0b398dec95f",
+      "projectBranch": "main",
+      "scene": "team",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "The fifteen-role team grid — each agent card naming its craft, from Quinn on product through Morgan on reporting.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/claude-corp/team.dark.desktop.png",
+          "sha256": "7b65f9dfd416e5b19b6f6dd9f43e16b22bfb612245a9bd8c793be32fb07e2dab",
+          "bytes": 3679643,
+          "width": 2880,
+          "height": 1800
+        },
+        "shipped": [
+          {
+            "path": "/showcase/claude-corp/team.dark.desktop.avif",
+            "bytes": 50910,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/claude-corp/team.dark.desktop.webp",
+            "bytes": 78680
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwDE2C0kAAD+7q2OgXNbtkakiadcLXN6HwAA"
+      }
+    },
+    {
+      "project": "claude-corp",
+      "projectSha": "7e961a3357a0db6bdb652fa3127be0b398dec95f",
+      "projectBranch": "main",
+      "scene": "team",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The fifteen-role team grid — each agent card naming its craft, from Quinn on product through Morgan on reporting.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/claude-corp/team.dark.phone.png",
+          "sha256": "af09c2f52f9c01f0759313f289c69b53f135cbff35dbf422097d1cb52b3cf326",
+          "bytes": 1072626,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/claude-corp/team.dark.phone.avif",
+            "bytes": 31209,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/claude-corp/team.dark.phone.webp",
+            "bytes": 54448
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAACwAwCdASoUACsAPxF2s1MsJqSiqrgMAYAiCWcA0bwP2y2M0SLkAAD+7kiX78euplqSRuYQ3ICgYQMrH/t/LDY5ySQSVyrPK7vEi+J+1pfGEAAA"
+      }
+    },
+    {
+      "project": "claude-corp",
+      "projectSha": "7e961a3357a0db6bdb652fa3127be0b398dec95f",
+      "projectBranch": "main",
+      "scene": "team",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "The fifteen-role team grid — each agent card naming its craft, from Quinn on product through Morgan on reporting.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/claude-corp/team.light.desktop.png",
+          "sha256": "9c119e9997861aff52f71cfe24081d3637e00c12858f3334e90bbd81dabcd7b5",
+          "bytes": 2131864,
+          "width": 2880,
+          "height": 1800
+        },
+        "shipped": [
+          {
+            "path": "/showcase/claude-corp/team.light.desktop.avif",
+            "bytes": 50734,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/claude-corp/team.light.desktop.webp",
+            "bytes": 79172
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAACwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwAAeyAA/u6S6PUztUEzQoAAAA=="
+      }
+    },
+    {
+      "project": "claude-corp",
+      "projectSha": "7e961a3357a0db6bdb652fa3127be0b398dec95f",
+      "projectBranch": "main",
+      "scene": "team",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The fifteen-role team grid — each agent card naming its craft, from Quinn on product through Morgan on reporting.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/claude-corp/team.light.phone.png",
+          "sha256": "b065710153cd352219345b986ceb9bedd3936e33d392ad95c3ccb6bce6c7f997",
+          "bytes": 765773,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/claude-corp/team.light.phone.avif",
+            "bytes": 31328,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/claude-corp/team.light.phone.webp",
+            "bytes": 54448
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAABwBACdASoUACsAPxFurVCsJiQjsBqqqYAiCWkA0MwWazKea5voxdCgtCTnUAD+5xM+YPjoajNMl4EetZ5cZDIJVm+dc3cdwoY7lQDbRgMwAAAA"
+      }
+    },
+    {
+      "project": "dashboard",
+      "projectSha": "b8bd3a97ffa59fd7479c0036bcf369f7c3a19d65",
+      "projectBranch": "origin/main",
+      "scene": "command-center",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "The Dashboard command center — project health, agent activity and pending decisions on one calm board.",
+      "determinism": "demo-snapshot",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/dashboard/command-center.dark.desktop.png",
+          "sha256": "8e6226026c18469f1c66069746558484642db7908bb958a406078885ec08769b",
+          "bytes": 4176505,
+          "width": 2880,
+          "height": 1800
+        },
+        "shipped": [
+          {
+            "path": "/showcase/dashboard/command-center.dark.desktop.avif",
+            "bytes": 26488,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/dashboard/command-center.dark.desktop.webp",
+            "bytes": 38456
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAgCdASoUAA0APxFysFAwpqSisAgCECIJaQDLLC5JAAD+7ZpVBZuQEeGsIRv1JCgAAA=="
+      }
+    },
+    {
+      "project": "dashboard",
+      "projectSha": "b8bd3a97ffa59fd7479c0036bcf369f7c3a19d65",
+      "projectBranch": "origin/main",
+      "scene": "command-center",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The Dashboard command center — project health, agent activity and pending decisions on one calm board.",
+      "determinism": "demo-snapshot",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/dashboard/command-center.dark.phone.png",
+          "sha256": "f92c9619fd710f2b356cb583c0ecb1df1b041173f244e82b4ea93f109a1fe939",
+          "bytes": 1514655,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/dashboard/command-center.dark.phone.avif",
+            "bytes": 21786,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/dashboard/command-center.dark.phone.webp",
+            "bytes": 40114
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADwAwCdASoUACsAPxGEuVcsKCWkpWgBgCIJZwDRgAt1ebNINAliX5pwAP7YuqsHzsBymLajS7tCKpp35SWhL8n9orYUxuAA"
+      }
+    },
+    {
+      "project": "dashboard",
+      "projectSha": "b8bd3a97ffa59fd7479c0036bcf369f7c3a19d65",
+      "projectBranch": "origin/main",
+      "scene": "command-center",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "The Dashboard command center — project health, agent activity and pending decisions on one calm board.",
+      "determinism": "demo-snapshot",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/dashboard/command-center.light.desktop.png",
+          "sha256": "88c8aeaef5bca760de810714de635938ea5d6bfd29cbf3a7dbbe96f84e32aab4",
+          "bytes": 2952721,
+          "width": 2880,
+          "height": 1800
+        },
+        "shipped": [
+          {
+            "path": "/showcase/dashboard/command-center.light.desktop.avif",
+            "bytes": 24996,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/dashboard/command-center.light.desktop.webp",
+            "bytes": 39034
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwC+SDKUAAD+7xZ/NZFb30c5AAAA"
+      }
+    },
+    {
+      "project": "dashboard",
+      "projectSha": "b8bd3a97ffa59fd7479c0036bcf369f7c3a19d65",
+      "projectBranch": "origin/main",
+      "scene": "command-center",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The Dashboard command center — project health, agent activity and pending decisions on one calm board.",
+      "determinism": "demo-snapshot",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/dashboard/command-center.light.phone.png",
+          "sha256": "80cf0cbe1c36162de59096d342d35c162534131b369d5f69406e23887a9cb669",
+          "bytes": 1134838,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/dashboard/command-center.light.phone.avif",
+            "bytes": 21295,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/dashboard/command-center.light.phone.webp",
+            "bytes": 33070
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAABQBACdASoUACsAPxF2r1IsLSQisBVaqaAiCWkAACovpicbZyjPkSN4+HAAAP7vSXClXdK/IAl/ugeW7EZga7fGxVTBeUDwAAA="
+      }
+    },
+    {
+      "project": "dashboard",
+      "projectSha": "b8bd3a97ffa59fd7479c0036bcf369f7c3a19d65",
+      "projectBranch": "origin/main",
+      "scene": "dispatch",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "/dispatch",
+      "altText": "The Dispatch queue — work items lined up with status, owner and the relay controls held safely off.",
+      "determinism": "demo-snapshot",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/dashboard/dispatch.dark.desktop.png",
+          "sha256": "217d8bfb268cfec4db778a1718c20b8f47b747f4de415511de323a88c09f7edd",
+          "bytes": 3093676,
+          "width": 2880,
+          "height": 1800
+        },
+        "shipped": [
+          {
+            "path": "/showcase/dashboard/dispatch.dark.desktop.avif",
+            "bytes": 34675,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/dashboard/dispatch.dark.desktop.webp",
+            "bytes": 51408
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAACwAgCdASoUAA0APxFysFCsJqSisAgBgCIJZwAAeyAA/u2XqUVNyAAA"
+      }
+    },
+    {
+      "project": "dashboard",
+      "projectSha": "b8bd3a97ffa59fd7479c0036bcf369f7c3a19d65",
+      "projectBranch": "origin/main",
+      "scene": "dispatch",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/dispatch",
+      "altText": "The Dispatch queue — work items lined up with status, owner and the relay controls held safely off.",
+      "determinism": "demo-snapshot",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/dashboard/dispatch.dark.phone.png",
+          "sha256": "f86edb0db403d325c348f509569e4693cd8c8f8454a0063721bcd8bfea6eb043",
+          "bytes": 1323049,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/dashboard/dispatch.dark.phone.avif",
+            "bytes": 37234,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/dashboard/dispatch.dark.phone.webp",
+            "bytes": 58754
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAACQAwCdASoUACsAPxF4t1WsJqUkqrgIAYAiCWkA0qwPWatx250AAP7tnnKVG2SUxoiREuWXVvL7uhvOq8STa5HyAAA="
+      }
+    },
+    {
+      "project": "dashboard",
+      "projectSha": "b8bd3a97ffa59fd7479c0036bcf369f7c3a19d65",
+      "projectBranch": "origin/main",
+      "scene": "dispatch",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "/dispatch",
+      "altText": "The Dispatch queue — work items lined up with status, owner and the relay controls held safely off.",
+      "determinism": "demo-snapshot",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/dashboard/dispatch.light.desktop.png",
+          "sha256": "bada40fcd3eb06f603098cb14aeabee4886779a1d4d0703fabe933d57b6f57f9",
+          "bytes": 1971511,
+          "width": 2880,
+          "height": 1800
+        },
+        "shipped": [
+          {
+            "path": "/showcase/dashboard/dispatch.light.desktop.avif",
+            "bytes": 32604,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/dashboard/dispatch.light.desktop.webp",
+            "bytes": 51560
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAAAwAwCdASoUAA0APxFysVCsJqSisAgBgCIJZwDCgC0HcTJgAP7vbwvjsqiRwP3GLAA="
+      }
+    },
+    {
+      "project": "dashboard",
+      "projectSha": "b8bd3a97ffa59fd7479c0036bcf369f7c3a19d65",
+      "projectBranch": "origin/main",
+      "scene": "dispatch",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/dispatch",
+      "altText": "The Dispatch queue — work items lined up with status, owner and the relay controls held safely off.",
+      "determinism": "demo-snapshot",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/dashboard/dispatch.light.phone.png",
+          "sha256": "6884632abf2eb73512e1949f0c542bb6ffb4956a9a3af570b35da857f77fc081",
+          "bytes": 860413,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/dashboard/dispatch.light.phone.avif",
+            "bytes": 38709,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/dashboard/dispatch.light.phone.webp",
+            "bytes": 56470
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAAAQAwCdASoUACsAPxF6tFQsJ7AopWzKACIJZwAALwIoxZAA/u8f+G6zPO8ludBXQxsw6JlgEuGivZG9JBO8R0AA"
+      }
+    },
+    {
+      "project": "dashboard",
+      "projectSha": "b8bd3a97ffa59fd7479c0036bcf369f7c3a19d65",
+      "projectBranch": "origin/main",
+      "scene": "think-tank",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "/think-tank",
+      "altText": "The Think Tank board — ideas triaged into Do it, Later and Skip lanes with their leverage notes.",
+      "determinism": "demo-snapshot",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/dashboard/think-tank.dark.desktop.png",
+          "sha256": "34e1fce0006a0938eeb3ebdaba715f43e85b0604476c3b1a524d966e8936370d",
+          "bytes": 3356361,
+          "width": 2880,
+          "height": 1800
+        },
+        "shipped": [
+          {
+            "path": "/showcase/dashboard/think-tank.dark.desktop.avif",
+            "bytes": 35935,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/dashboard/think-tank.dark.desktop.webp",
+            "bytes": 53090
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJaQDLLC0kAAD+7Z0K3QbCLgAAAA=="
+      }
+    },
+    {
+      "project": "dashboard",
+      "projectSha": "b8bd3a97ffa59fd7479c0036bcf369f7c3a19d65",
+      "projectBranch": "origin/main",
+      "scene": "think-tank",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/think-tank",
+      "altText": "The Think Tank board — ideas triaged into Do it, Later and Skip lanes with their leverage notes.",
+      "determinism": "demo-snapshot",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/dashboard/think-tank.dark.phone.png",
+          "sha256": "2afb9450084d33fbe94615ba32cbde9f08113180d09c3d18e1e98bf54c05b222",
+          "bytes": 1329647,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/dashboard/think-tank.dark.phone.avif",
+            "bytes": 42367,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/dashboard/think-tank.dark.phone.webp",
+            "bytes": 66804
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAQAwCdASoUACsAPxGAu1WsJ6YkpWmZgCIJaQAAKXzRSUAA/u1Wrf1XbuoX5EoluJm30FXGkB3wE53Gbv6rnw9zOthdoAAA"
+      }
+    },
+    {
+      "project": "dashboard",
+      "projectSha": "b8bd3a97ffa59fd7479c0036bcf369f7c3a19d65",
+      "projectBranch": "origin/main",
+      "scene": "think-tank",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "/think-tank",
+      "altText": "The Think Tank board — ideas triaged into Do it, Later and Skip lanes with their leverage notes.",
+      "determinism": "demo-snapshot",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/dashboard/think-tank.light.desktop.png",
+          "sha256": "f67e349ade4a762f74c4b57d11aaaa1a4dfcfb66b23892f1416cc024b2fb53e0",
+          "bytes": 2186850,
+          "width": 2880,
+          "height": 1800
+        },
+        "shipped": [
+          {
+            "path": "/showcase/dashboard/think-tank.light.desktop.avif",
+            "bytes": 33131,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/dashboard/think-tank.light.desktop.webp",
+            "bytes": 52964
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwDA3C0kAAD+70dpzID7d6oAAA=="
+      }
+    },
+    {
+      "project": "dashboard",
+      "projectSha": "b8bd3a97ffa59fd7479c0036bcf369f7c3a19d65",
+      "projectBranch": "origin/main",
+      "scene": "think-tank",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/think-tank",
+      "altText": "The Think Tank board — ideas triaged into Do it, Later and Skip lanes with their leverage notes.",
+      "determinism": "demo-snapshot",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/dashboard/think-tank.light.phone.png",
+          "sha256": "5041fe8d43ca06b58a6b7e997a7ef795e1493b916caea42bd21e0b8369c0d5ea",
+          "bytes": 924846,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/dashboard/think-tank.light.phone.avif",
+            "bytes": 40899,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/dashboard/think-tank.light.phone.webp",
+            "bytes": 64256
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAAAwAwCdASoUACsAPxGAuFYsJ6UjpWmZgCIJaQDR+BEM0ASgAP7u7rcM0J9JVMJhU14yoejndOzo0r//CsGQsgAA"
+      }
+    },
+    {
+      "project": "ghost-code",
+      "projectSha": "1e6b963d3b88940f13593dac2d0b1cb8e7966549",
+      "projectBranch": "main",
+      "scene": "board",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "A Ghost Code round in play — the maze board mid-chase with the code prompt beneath and score and streak counters keeping pace.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/ghost-code/board.dark.desktop.png",
+          "sha256": "e2d2ab6442250331d1d4ee9f7f3a35a97fa4cfdeb99e5f8b54e82cc2c7f1c1af",
+          "bytes": 118781,
+          "width": 2880,
+          "height": 1800
+        },
+        "shipped": [
+          {
+            "path": "/showcase/ghost-code/board.dark.desktop.avif",
+            "bytes": 12619,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/ghost-code/board.dark.desktop.webp",
+            "bytes": 20602
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADwAgCdASoUAA0APxFysVCsJqSisAgBgCIJaQDG9DBsAAD+7wyvSX2mpsX5so0AAAA="
+      }
+    },
+    {
+      "project": "ghost-code",
+      "projectSha": "1e6b963d3b88940f13593dac2d0b1cb8e7966549",
+      "projectBranch": "main",
+      "scene": "board",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "A Ghost Code round in play — the maze board mid-chase with the code prompt beneath and score and streak counters keeping pace.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/ghost-code/board.dark.phone.png",
+          "sha256": "0967356b70aad540e7caf8a160e684b1a232faf8e2026608babac713228d5f25",
+          "bytes": 82681,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/ghost-code/board.dark.phone.avif",
+            "bytes": 14211,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/ghost-code/board.dark.phone.webp",
+            "bytes": 26828
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADQAwCdASoUACsAPxGCtFasKCSjpWmZgCIJaQDRvBEL94BLj8ASF0AA/u4bDwZoH7en2q+01O5hA+xt5XGm/S/hx3+X8B+u7OiUY/qliAAAAA=="
+      }
+    },
+    {
+      "project": "ghost-code",
+      "projectSha": "1e6b963d3b88940f13593dac2d0b1cb8e7966549",
+      "projectBranch": "main",
+      "scene": "board",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "A Ghost Code round in play — the maze board mid-chase with the code prompt beneath and score and streak counters keeping pace.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/ghost-code/board.light.desktop.png",
+          "sha256": "f49c126081b6ad0a651f0ef33b587da8c8e81101df69434c8e32e64b90098573",
+          "bytes": 116833,
+          "width": 2880,
+          "height": 1800
+        },
+        "shipped": [
+          {
+            "path": "/showcase/ghost-code/board.light.desktop.avif",
+            "bytes": 13247,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/ghost-code/board.light.desktop.webp",
+            "bytes": 21542
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADQAgCdASoUAA0APxFysVCsJqSisAgBgCIJaQAAe/QAAP7vr4rPc0ojUCXgAA=="
+      }
+    },
+    {
+      "project": "ghost-code",
+      "projectSha": "1e6b963d3b88940f13593dac2d0b1cb8e7966549",
+      "projectBranch": "main",
+      "scene": "board",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "A Ghost Code round in play — the maze board mid-chase with the code prompt beneath and score and streak counters keeping pace.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/ghost-code/board.light.phone.png",
+          "sha256": "5c8d66f44431fae218c3da354e0da73679eb22c07b3e799e829cf2f02fd29e53",
+          "bytes": 81397,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/ghost-code/board.light.phone.avif",
+            "bytes": 15370,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/ghost-code/board.light.phone.webp",
+            "bytes": 29070
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAwAwCdASoUACsAPxGCt1YsKCUjpWmZgCIJaQDSrA8duyCAAP7vHoedYQDsZ91u9Qvp2aYaQ4qYTEuD3a5HBAGObfr7CieMA9RmvAAA"
+      }
+    },
+    {
+      "project": "ghost-code",
+      "projectSha": "1e6b963d3b88940f13593dac2d0b1cb8e7966549",
+      "projectBranch": "main",
+      "scene": "clip:round",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "A Ghost Code round in motion — the Phantom on patrol while the code prompt waits below.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/ghost-code/clips/round.dark.phone.raw.webm",
+          "sha256": "f33f4dfe7e9a65b8c48d01e0d3d860c3fd47bcdb8153b74a740d12deb63bc3cf",
+          "bytes": 194151
+        }
+      },
+      "clip": {
+        "id": "round",
+        "durationS": 5.7,
+        "trim": {
+          "rawStartS": 4.9
+        },
+        "mp4": {
+          "path": "/showcase/ghost-code/clips/round.dark.phone.mp4",
+          "bytes": 21801
+        },
+        "webm": {
+          "path": "/showcase/ghost-code/clips/round.dark.phone.webm",
+          "bytes": 22021
+        },
+        "webmDropReason": null,
+        "posters": [
+          {
+            "path": "/showcase/ghost-code/clips/round.dark.phone-poster.avif",
+            "bytes": 11114
+          },
+          {
+            "path": "/showcase/ghost-code/clips/round.dark.phone-poster.webp",
+            "bytes": 12482
+          },
+          {
+            "path": "/showcase/ghost-code/clips/round.dark.phone-poster.jpg",
+            "bytes": 17354
+          }
+        ],
+        "needsCaptions": true
+      }
+    },
+    {
+      "project": "ghost-code",
+      "projectSha": "1e6b963d3b88940f13593dac2d0b1cb8e7966549",
+      "projectBranch": "main",
+      "scene": "clip:round",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "A Ghost Code round in motion — the Phantom on patrol while the code prompt waits below.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/ghost-code/clips/round.light.phone.raw.webm",
+          "sha256": "8e43c0409952dd90457c791aba2337e79e2f60c2b58bf4a3de68a5a071097d86",
+          "bytes": 203155
+        }
+      },
+      "clip": {
+        "id": "round",
+        "durationS": 5.7,
+        "trim": {
+          "rawStartS": 1.5
+        },
+        "mp4": {
+          "path": "/showcase/ghost-code/clips/round.light.phone.mp4",
+          "bytes": 22361
+        },
+        "webm": {
+          "path": "/showcase/ghost-code/clips/round.light.phone.webm",
+          "bytes": 46958
+        },
+        "webmDropReason": null,
+        "posters": [
+          {
+            "path": "/showcase/ghost-code/clips/round.light.phone-poster.avif",
+            "bytes": 9871
+          },
+          {
+            "path": "/showcase/ghost-code/clips/round.light.phone-poster.webp",
+            "bytes": 13424
+          },
+          {
+            "path": "/showcase/ghost-code/clips/round.light.phone-poster.jpg",
+            "bytes": 18821
+          }
+        ],
+        "needsCaptions": true
+      }
+    },
+    {
+      "project": "ghost-code",
+      "projectSha": "1e6b963d3b88940f13593dac2d0b1cb8e7966549",
+      "projectBranch": "main",
+      "scene": "gameover",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "The results screen after a round — mastery bars per concept and the invitation to run it back.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/ghost-code/gameover.dark.desktop.png",
+          "sha256": "005c529825b612dd73d5275a69eec53ba055f28496758b316a32e1a6fdc6fc21",
+          "bytes": 363744,
+          "width": 2880,
+          "height": 1800
+        }
+      }
+    },
+    {
+      "project": "ghost-code",
+      "projectSha": "1e6b963d3b88940f13593dac2d0b1cb8e7966549",
+      "projectBranch": "main",
+      "scene": "gameover",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The results screen after a round — mastery bars per concept and the invitation to run it back.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/ghost-code/gameover.dark.phone.png",
+          "sha256": "5dfe577cb88ae454ddceb32a63527ef40da4fc9813baac5df3b23ad0bc61a065",
+          "bytes": 231698,
+          "width": 780,
+          "height": 1688
+        }
+      }
+    },
+    {
+      "project": "ghost-code",
+      "projectSha": "1e6b963d3b88940f13593dac2d0b1cb8e7966549",
+      "projectBranch": "main",
+      "scene": "gameover",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "The results screen after a round — mastery bars per concept and the invitation to run it back.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/ghost-code/gameover.light.desktop.png",
+          "sha256": "eca55d1bba83ae6de6bbc1d33431552a5a325cfe2c088825730ba90ee935dd90",
+          "bytes": 263588,
+          "width": 2880,
+          "height": 1800
+        }
+      }
+    },
+    {
+      "project": "ghost-code",
+      "projectSha": "1e6b963d3b88940f13593dac2d0b1cb8e7966549",
+      "projectBranch": "main",
+      "scene": "gameover",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The results screen after a round — mastery bars per concept and the invitation to run it back.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/ghost-code/gameover.light.phone.png",
+          "sha256": "f4029159a848b12de63fc6ed98a45118027b33428298e844ffb019bc479be7a7",
+          "bytes": 180073,
+          "width": 780,
+          "height": 1688
+        }
+      }
+    },
+    {
+      "project": "ghost-code",
+      "projectSha": "1e6b963d3b88940f13593dac2d0b1cb8e7966549",
+      "projectBranch": "main",
+      "scene": "title",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "Ghost Code’s title screen — the arcade cabinet framing the Phantom mascot, Start and Settings glowing below the wordmark.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/ghost-code/title.dark.desktop.png",
+          "sha256": "2f7f6bc4145ffa154b9200c763ab93d35142408e1f816e1995cdd602e795ed3c",
+          "bytes": 363192,
+          "width": 2880,
+          "height": 1800
+        },
+        "shipped": [
+          {
+            "path": "/showcase/ghost-code/title.dark.desktop.avif",
+            "bytes": 13772,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/ghost-code/title.dark.desktop.webp",
+            "bytes": 22432
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAACwAgCdASoUAA0APxFwsFAsJiSisAgBgCIJaQAAeyAA/u9c3hKeVpJigAA="
+      }
+    },
+    {
+      "project": "ghost-code",
+      "projectSha": "1e6b963d3b88940f13593dac2d0b1cb8e7966549",
+      "projectBranch": "main",
+      "scene": "title",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "Ghost Code’s title screen — the arcade cabinet framing the Phantom mascot, Start and Settings glowing below the wordmark.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/ghost-code/title.light.desktop.png",
+          "sha256": "8a9e26dfc84c6e72cf8522f78fce3cfa039d1da70a58de0be215cadb70861e01",
+          "bytes": 263730,
+          "width": 2880,
+          "height": 1800
+        },
+        "shipped": [
+          {
+            "path": "/showcase/ghost-code/title.light.desktop.avif",
+            "bytes": 13138,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/ghost-code/title.light.desktop.webp",
+            "bytes": 22598
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJaQDG9DBsAAD+70aSc5OMpoAAAA=="
+      }
+    },
+    {
+      "project": "pet-paradise",
+      "projectSha": "a343f5c85f867ca5e34dc5a34decdc7b0cbb83ca",
+      "projectBranch": "main",
+      "scene": "gallery",
+      "capturedAt": "2026-07-31",
+      "theme": "matte",
+      "viewport": "phone",
+      "route": "/#gallery",
+      "altText": "The gallery — visiting dogs at ease around the property, framed as a simple photo wall.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/pet-paradise/gallery.matte.phone.png",
+          "sha256": "4ad6a43e4c5fb18c3e754d761bf59ab41b39fc0c117492945ed0d08c9a7fef56",
+          "bytes": 1352910,
+          "width": 780,
+          "height": 1688
+        }
+      }
+    },
+    {
+      "project": "pet-paradise",
+      "projectSha": "a343f5c85f867ca5e34dc5a34decdc7b0cbb83ca",
+      "projectBranch": "main",
+      "scene": "hero",
+      "capturedAt": "2026-07-31",
+      "theme": "matte",
+      "viewport": "desktop",
+      "route": "/#hero",
+      "altText": "Sky's Pet Paradise front door — gold serif welcome over a near-black canvas, the Okanagan dog-sitting pitch in one screen.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/pet-paradise/hero.matte.desktop.png",
+          "sha256": "099e533fa0db69fecd17b0d647637079bdd82d7c146e60d2d9fd79dedab1aa45",
+          "bytes": 4356360,
+          "width": 2880,
+          "height": 1800
+        },
+        "shipped": [
+          {
+            "path": "/showcase/pet-paradise/hero.matte.desktop.avif",
+            "bytes": 34795,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/pet-paradise/hero.matte.desktop.webp",
+            "bytes": 59520
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAACQAwCdASoUAA0APxF2sVAsJ6SisAgBgCIJYwDDNB6NqujrGefoAP7ZpOM3JaIBdfLvRkcH0897puRlbbmotAAA"
+      }
+    },
+    {
+      "project": "pet-paradise",
+      "projectSha": "a343f5c85f867ca5e34dc5a34decdc7b0cbb83ca",
+      "projectBranch": "main",
+      "scene": "hero",
+      "capturedAt": "2026-07-31",
+      "theme": "matte",
+      "viewport": "phone",
+      "route": "/#hero",
+      "altText": "Sky's Pet Paradise front door — gold serif welcome over a near-black canvas, the Okanagan dog-sitting pitch in one screen.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/pet-paradise/hero.matte.phone.png",
+          "sha256": "01fc5a41eafa89f7197698e71407534b522a8f8f632d6e4dc4f676b8b1ce729e",
+          "bytes": 1110560,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/pet-paradise/hero.matte.phone.avif",
+            "bytes": 32710,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/pet-paradise/hero.matte.phone.webp",
+            "bytes": 62674
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAAAwBQCdASoUACsAPxF6tlGsKCUiqrgMAYAiCWMAy+BF49qjjxyw4qOmHO/UO3ZRZ1gzAAD+7tS2wE5F1wiDrMFKxrpUhpHHVQyDied6wiybNJIO3DeOMJ7T5wjNAFwB7YPpV8coCeRsA346rdOed7kPQtGcPU4JII7y+BAA"
+      }
+    },
+    {
+      "project": "pet-paradise",
+      "projectSha": "a343f5c85f867ca5e34dc5a34decdc7b0cbb83ca",
+      "projectBranch": "main",
+      "scene": "pricing",
+      "capturedAt": "2026-07-31",
+      "theme": "matte",
+      "viewport": "desktop",
+      "route": "/#pricing",
+      "altText": "The pricing grid — rates for overnight and daytime care set in the same quiet gold-on-dark register.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/pet-paradise/pricing.matte.desktop.png",
+          "sha256": "b2476d3742051084ce9a2e96265084ae62e13e6c96bc4f67bf49edd22f164773",
+          "bytes": 195286,
+          "width": 2880,
+          "height": 1800
+        }
+      }
+    },
+    {
+      "project": "pet-paradise",
+      "projectSha": "a343f5c85f867ca5e34dc5a34decdc7b0cbb83ca",
+      "projectBranch": "main",
+      "scene": "services",
+      "capturedAt": "2026-07-31",
+      "theme": "matte",
+      "viewport": "desktop",
+      "route": "/#services",
+      "altText": "The services cards — boarding, day care and drop-in visits, each priced and framed in gold on the dark canvas.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/pet-paradise/services.matte.desktop.png",
+          "sha256": "8313e883ce636be123e54a224594c2c24535e8ea8bc0bc2110b68155c286e310",
+          "bytes": 241244,
+          "width": 2880,
+          "height": 1800
+        },
+        "shipped": [
+          {
+            "path": "/showcase/pet-paradise/services.matte.desktop.avif",
+            "bytes": 34285,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/pet-paradise/services.matte.desktop.webp",
+            "bytes": 50092
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADwAgCdASoUAA0APxFysFCsJqSisAgBgCIJaQDLLC5JAAD+73t8uyZUbTWB2jBgAAA="
+      }
+    },
+    {
+      "project": "pet-paradise",
+      "projectSha": "a343f5c85f867ca5e34dc5a34decdc7b0cbb83ca",
+      "projectBranch": "main",
+      "scene": "services",
+      "capturedAt": "2026-07-31",
+      "theme": "matte",
+      "viewport": "phone",
+      "route": "/#services",
+      "altText": "The services cards — boarding, day care and drop-in visits, each priced and framed in gold on the dark canvas.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/pet-paradise/services.matte.phone.png",
+          "sha256": "b7f54878fe73f08157f4300a652b2f7b1aa7f1e374b405ea6ddfd9666983472d",
+          "bytes": 121326,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/pet-paradise/services.matte.phone.avif",
+            "bytes": 29762,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/pet-paradise/services.matte.phone.webp",
+            "bytes": 46016
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADwAwCdASoUACsAPxGEuVcsKCWjpWgBgCIJaQDRCAt2ywaGG0IPI54AAP7r2/BD1Bus5KgpDvY/F5mwnRzreFqEWNnFAAAA"
+      }
+    },
+    {
+      "project": "prompt-library",
+      "projectSha": "052b37a8aa0b6aea09efb636bf9d26ad7d63ef88",
+      "projectBranch": "main",
+      "scene": "command-palette",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "The command palette floating over the dimmed library, ready for a keystroke.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/prompt-library/command-palette.dark.desktop.png",
+          "sha256": "25a55481b7cbca13584fe0e5d5b44e41ecf2985f95b611d31b8f724bf5d139bc",
+          "bytes": 532242,
+          "width": 2880,
+          "height": 1800
+        }
+      }
+    },
+    {
+      "project": "prompt-library",
+      "projectSha": "052b37a8aa0b6aea09efb636bf9d26ad7d63ef88",
+      "projectBranch": "main",
+      "scene": "command-palette",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "The command palette floating over the dimmed library, ready for a keystroke.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/prompt-library/command-palette.light.desktop.png",
+          "sha256": "737fcc33b2d7aff5251dead7cd9c8f5079ae9e2c09b2b19a087a66f898859a03",
+          "bytes": 590108,
+          "width": 2880,
+          "height": 1800
+        }
+      }
+    },
+    {
+      "project": "prompt-library",
+      "projectSha": "052b37a8aa0b6aea09efb636bf9d26ad7d63ef88",
+      "projectBranch": "main",
+      "scene": "home",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "The Prompt Library home — search bar and category chips over a grid of prompt cards, the featured card leading.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/prompt-library/home.dark.desktop.png",
+          "sha256": "983029bbf03aeff271ea06d005ae31e1137a046de27372ea5f2e37ce122a6c57",
+          "bytes": 276865,
+          "width": 2880,
+          "height": 1800
+        },
+        "shipped": [
+          {
+            "path": "/showcase/prompt-library/home.dark.desktop.avif",
+            "bytes": 24637,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/prompt-library/home.dark.desktop.webp",
+            "bytes": 36790
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwDG9DBsAAD+75zzZSCePfEHqAAA"
+      }
+    },
+    {
+      "project": "prompt-library",
+      "projectSha": "052b37a8aa0b6aea09efb636bf9d26ad7d63ef88",
+      "projectBranch": "main",
+      "scene": "home",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The Prompt Library home — search bar and category chips over a grid of prompt cards, the featured card leading.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/prompt-library/home.dark.phone.png",
+          "sha256": "9a8a2e4d4f23b857110e3e2bf4abb3478f274b6e5ce79b9e15f232a676435006",
+          "bytes": 189142,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/prompt-library/home.dark.phone.avif",
+            "bytes": 36730,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/prompt-library/home.dark.phone.webp",
+            "bytes": 63304
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACwAwCdASoUACsAPxF+t1SsKCUkJWsxgCIJZwAAK+8ANVhk+biyYAD+7wbcR8QSeR5gphyTA2lTVjrQeXulFI1FfdZJQMmpcQAAAA=="
+      }
+    },
+    {
+      "project": "prompt-library",
+      "projectSha": "052b37a8aa0b6aea09efb636bf9d26ad7d63ef88",
+      "projectBranch": "main",
+      "scene": "home",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "The Prompt Library home — search bar and category chips over a grid of prompt cards, the featured card leading.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/prompt-library/home.light.desktop.png",
+          "sha256": "c707d05e3a031ee0fe7f700de3a49f731abe7595b7276322959d855184ba273f",
+          "bytes": 432397,
+          "width": 2880,
+          "height": 1800
+        },
+        "shipped": [
+          {
+            "path": "/showcase/prompt-library/home.light.desktop.avif",
+            "bytes": 24138,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/prompt-library/home.light.desktop.webp",
+            "bytes": 37710
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZQC/OC0kAAD+70NE0Whk0FQFcAAA"
+      }
+    },
+    {
+      "project": "prompt-library",
+      "projectSha": "052b37a8aa0b6aea09efb636bf9d26ad7d63ef88",
+      "projectBranch": "main",
+      "scene": "home",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The Prompt Library home — search bar and category chips over a grid of prompt cards, the featured card leading.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/prompt-library/home.light.phone.png",
+          "sha256": "9d231f93351a078d540ad711db0045f36108946a0d036ce15c21cc0de4530ddb",
+          "bytes": 239272,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/prompt-library/home.light.phone.avif",
+            "bytes": 39041,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/prompt-library/home.light.phone.webp",
+            "bytes": 65764
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACwAwCdASoUACsAPxGCuFYsKCUjpWmZgCIJZwDQVA4bADE1uxCCAAD+7mYdebmQ7UV7sQZ+HqD3Vaccu/EIRMfQ4nRp4QAA"
+      }
+    },
+    {
+      "project": "prompt-library",
+      "projectSha": "052b37a8aa0b6aea09efb636bf9d26ad7d63ef88",
+      "projectBranch": "main",
+      "scene": "not-found",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "/404.html",
+      "altText": "The designed 404 page — the library’s type and palette holding even when the route is lost.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/prompt-library/not-found.dark.desktop.png",
+          "sha256": "b916f8d7108b9cdc311dc334de05729bb64a18e9b7f79fa1c9ed06cd97afa4c6",
+          "bytes": 86552,
+          "width": 2880,
+          "height": 1800
+        }
+      }
+    },
+    {
+      "project": "prompt-library",
+      "projectSha": "052b37a8aa0b6aea09efb636bf9d26ad7d63ef88",
+      "projectBranch": "main",
+      "scene": "not-found",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "/404.html",
+      "altText": "The designed 404 page — the library’s type and palette holding even when the route is lost.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/prompt-library/not-found.light.desktop.png",
+          "sha256": "0374b15486eaf37f417f3bb62f53fccdb53d81a197b285fd64627ac965541868",
+          "bytes": 406144,
+          "width": 2880,
+          "height": 1800
+        }
+      }
+    },
+    {
+      "project": "prompt-library",
+      "projectSha": "052b37a8aa0b6aea09efb636bf9d26ad7d63ef88",
+      "projectBranch": "main",
+      "scene": "prompt-detail",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "A prompt opened in the library — variable fields ready to fill above the monospace prompt preview and its copy control.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/prompt-library/prompt-detail.dark.desktop.png",
+          "sha256": "5ca34340f3b228d69f81b9500f754424c9d8318fd39756c22e088ab9a18b6a60",
+          "bytes": 355215,
+          "width": 2880,
+          "height": 1800
+        },
+        "shipped": [
+          {
+            "path": "/showcase/prompt-library/prompt-detail.dark.desktop.avif",
+            "bytes": 18645,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/prompt-library/prompt-detail.dark.desktop.webp",
+            "bytes": 33740
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAACwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwAAeyAA/u96QN2C+YAQAAA="
+      }
+    },
+    {
+      "project": "prompt-library",
+      "projectSha": "052b37a8aa0b6aea09efb636bf9d26ad7d63ef88",
+      "projectBranch": "main",
+      "scene": "prompt-detail",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "A prompt opened in the library — variable fields ready to fill above the monospace prompt preview and its copy control.",
+      "determinism": "byte-expected",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/prompt-library/prompt-detail.light.desktop.png",
+          "sha256": "1180ba43f62b7d6bdd9a7ceff03a8b0974605c0a59075a123f35d4d554948e05",
+          "bytes": 395263,
+          "width": 2880,
+          "height": 1800
+        },
+        "shipped": [
+          {
+            "path": "/showcase/prompt-library/prompt-detail.light.desktop.avif",
+            "bytes": 19843,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/prompt-library/prompt-detail.light.desktop.webp",
+            "bytes": 35756
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAABQAwCdASoUAA0APxF0tFEsJqUisAgBgCIJZwAASrdfNhngAAD8XJ/73MCe5oEWgVu9UeVBIo2t23PiUkvAAA=="
+      }
+    }
+  ],
+  "budget": {
+    "shipped": {
+      "files": 140,
+      "stillAvifMB": 1.39,
+      "stillFallbackMB": 2.32,
+      "clipMp4MB": 0.69,
+      "clipWebmMB": 0.75,
+      "posterMB": 0.42
+    },
+    "maxStillAvifKB": 50,
+    "maxClipMp4KB": 191,
+    "treeTotalMB": 5.57,
+    "targetMB": 8,
+    "hardCapMB": 10,
+    "withinTarget": true,
+    "withinHardCap": true
+  },
+  "determinismProof": {
+    "ranAt": "2026-07-31",
+    "result": "PASS",
+    "checked": 68,
+    "drift": 24,
+    "fatal": 0,
+    "missing": 0,
+    "receipt": "design-reviews/showcase-refresh/receipts/determinism-final.md"
+  }
+}
