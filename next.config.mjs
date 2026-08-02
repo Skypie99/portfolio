@@ -24,8 +24,16 @@ const nextConfig = {
           // MIME type sniffing prevention
           { key: 'X-Content-Type-Options', value: 'nosniff' },
 
-          // Clickjacking defense
+          // Clickjacking defense. X-Frame-Options is the legacy header; CSP
+          // frame-ancestors is its modern replacement, and THIS block is its only
+          // possible home — the meta-delivered CSP in app/layout.tsx cannot carry
+          // it (the spec drops the directive in <meta> delivery, and browsers log
+          // an error for it on every page view). UP-01.
+          // Keep BOTH policies: this single-directive header is ADDITIVE to
+          // layout.tsx's meta policy, never a replacement — if this block ever
+          // starts applying, do not delete the meta CSP as "redundant".
           { key: 'X-Frame-Options', value: 'DENY' },
+          { key: 'Content-Security-Policy', value: "frame-ancestors 'none'" },
 
           // Referrer privacy (consistent with meta tag in layout.tsx)
           { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },

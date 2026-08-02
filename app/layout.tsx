@@ -25,8 +25,9 @@ import './tokens-phase2.css';
  *
  * GH Pages can't send real CSP/HSTS HTTP headers (no server-side
  * header control), so we ship a meta-equivalent CSP via <meta
- * http-equiv> in <head>. Less strict than HTTP CSP (frame-ancestors
- * is ignored, no report-uri), but covers script/style/font/img/object.
+ * http-equiv> in <head>. Less strict than HTTP CSP (no report-uri, and
+ * meta delivery drops frame-ancestors outright — see the ABSENT note
+ * below), but covers script/style/font/img/object.
  *
  * IMPORTANT — production-only.
  * Next.js dev mode uses webpack with eval() for HMR / Fast Refresh.
@@ -45,8 +46,19 @@ import './tokens-phase2.css';
  *  - img-src 'self' data: blob:: data: covers SVG-in-CSS, blob:
  *    covers any future client-side image processing.
  *  - connect-src 'self': site does no AJAX in v1.
- *  - frame-ancestors 'none' + base-uri 'self' + form-action 'self':
- *    defense-in-depth.
+ *  - base-uri 'self' + form-action 'self': defense-in-depth, and both
+ *    ARE honored in meta delivery.
+ *
+ * Deliberately ABSENT — frame-ancestors (UP-01, ui-polish 2026-08-01).
+ * The spec drops frame-ancestors when a policy arrives via <meta>, so it
+ * never protected anything here — it only bought a red console error on
+ * every route, every visit: "The Content Security Policy directive
+ * 'frame-ancestors' is ignored when delivered via a <meta> element."
+ * (68/68 frames in the audit's rig sweep). Removing it changes NO
+ * protection. Its real home is the headers() block in next.config.mjs,
+ * which now carries Content-Security-Policy: frame-ancestors 'none'
+ * beside the legacy X-Frame-Options: DENY — documentation-only while we
+ * are on GH Pages (gotcha 6), live the day we leave.
  *
  * Referrer-Policy ships in both dev + prod via metadata.referrer.
  */
@@ -60,7 +72,6 @@ const PROD_CSP = [
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",
-  "frame-ancestors 'none'",
 ].join('; ');
 
 const isProd = process.env.NODE_ENV === 'production';
