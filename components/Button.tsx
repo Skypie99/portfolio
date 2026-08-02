@@ -75,7 +75,10 @@ function Dot({ visible, color }: { visible: boolean; color?: string }) {
         // Default terracotta unless a per-project hue is threaded in (FT-14) —
         // background only; the accent ring/border stay terracotta.
         !color && 'bg-terracotta',
-        'transition-all duration-base ease-out',
+        // Enumerated, not transition-all: the dot only ever animates its size on
+        // group-hover and its fill on theme flip. (Button's own element already
+        // enumerates — see `base` above.)
+        'transition-[width,height,background-color] duration-base ease-out',
         'group-hover:w-2.5 group-hover:h-2.5',
       )}
       style={color ? { background: color } : undefined}
