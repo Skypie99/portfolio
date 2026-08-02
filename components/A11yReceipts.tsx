@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+
 import { CountUpStat } from '@/components/CountUpStat';
 import { Reveal } from '@/components/Reveal';
 import { cn } from '@/lib/cn';
@@ -6,6 +8,49 @@ import type { A11yReceipts as A11yReceiptsData } from '@/lib/schema';
 /** Home's stat-figure rotation (app/page.tsx STAT_EMBER) — the receipts strip
  *  speaks the exact same grammar, so the same ember cycle applies. */
 const STAT_EMBER = ['ember', 'ember-teal', 'ember-gold', 'ember-moss'];
+
+/**
+ * MethodSegment (UP-14c, ui-polish 2026-08-01) — one "· …" clause of the method
+ * line, structured so the line can break ONLY between whole words.
+ *
+ * Two rules, both zero-copy (the visible characters are byte-identical; spans
+ * are structure):
+ *  1. Every word is its own `whitespace-nowrap` span, with the SPACES left
+ *     outside them so they stay the only break opportunities. A hyphenated
+ *     token is the only kind that could split at all — `overflow-wrap` is
+ *     `normal`, so an unhyphenated word has no interior break opportunity —
+ *     and this is what stops "COLOR-/CONTRAST" and "SCROLL-/SETTLED".
+ *  2. The "·" is bonded INTO the span of the word that follows it, so the
+ *     separator always leads its own clause and can never strand alone at the
+ *     start of a line. Before this, it trailed on one break and led on another.
+ *
+ * The audit prescribed nowrap on each whole ·-SEGMENT. That was measured and
+ * REJECTED: "· label-content-name-mismatch + color-contrast on" sets 390.8px
+ * against a 311px column at 375 and 256px at 320, so it would have traded a
+ * wrap defect for a hard horizontal overflow — breaking this phase's own
+ * zero-overflow rail. The widest unbreakable unit this ships instead is
+ * "· label-content-name-mismatch" at 231.3px, which clears 320 with ~25px to
+ * spare. `lib/schema.ts` caps a method string at 90 chars but does not cap a
+ * single TOKEN, so a future 90-character hyphenated word would overflow; the
+ * longest today is 27 chars / ~215px.
+ */
+function MethodSegment({ children }: { children: React.ReactNode }) {
+  const words = typeof children === 'string' ? children.split(' ') : null;
+  return (
+    <>
+      {' '}
+      <span className="whitespace-nowrap">
+        <span aria-hidden="true">·</span> {words ? words[0] : children}
+      </span>
+      {words?.slice(1).map((word, i) => (
+        <Fragment key={`${word}-${i}`}>
+          {' '}
+          <span className="whitespace-nowrap">{word}</span>
+        </Fragment>
+      ))}
+    </>
+  );
+}
 
 /**
  * A11yReceipts — the dated receipts strip on /accessibility/ (S6 / L6-02
@@ -59,21 +104,23 @@ export function A11yReceipts({ data, className }: { data: A11yReceiptsData; clas
         ))}
       </div>
 
-      {/* Method line — the receipt's fine print + the evidence artifact */}
+      {/* Method line — the receipt's fine print + the evidence artifact.
+          UP-14(c) (ui-polish 2026-08-01): this line now breaks BETWEEN words
+          only — never inside a compound token, and never leaving a "·" adrift
+          at the start of a line. See MethodSegment for the mechanism and for
+          why the audit's per-SEGMENT nowrap was measured and rejected. */}
       <p className="mt-6 font-mono text-meta tracking-label uppercase text-text-meta leading-[2]">
         Measured {data.measuredDate}
-        <span aria-hidden="true"> · </span>{' '}
-        <a
-          href={data.evidencePath}
-          className="link-draw text-accent-text hover:text-accent-text"
-        >
-          Evidence JSON
-        </a>
+        <MethodSegment>
+          <a
+            href={data.evidencePath}
+            className="link-draw text-accent-text hover:text-accent-text"
+          >
+            Evidence JSON
+          </a>
+        </MethodSegment>
         {data.method.map((m) => (
-          <span key={m}>
-            <span aria-hidden="true"> · </span>{' '}
-            {m}
-          </span>
+          <MethodSegment key={m}>{m}</MethodSegment>
         ))}
       </p>
     </div>

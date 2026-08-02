@@ -191,7 +191,7 @@ export default function AboutPage() {
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Principles
             </p>
-            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
+            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight text-balance">
               Accessibility. Privacy. No shortcuts.
             </h2>
           </Reveal>
@@ -238,7 +238,7 @@ export default function AboutPage() {
                   A. "Still learning out loud. Shipping anyway."
                   C. "Self-taught, shipping in public. Getting better on purpose."
                 Original: "Still a beginner. Getting better on purpose." */}
-            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
+            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight text-balance">
               Learning in public. Shipping on purpose.
             </h2>
           </Reveal>
