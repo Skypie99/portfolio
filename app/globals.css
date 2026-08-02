@@ -2846,3 +2846,67 @@ html.dark .runway-identity-chip {
     transform: none;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   THEMED SHOWCASE (showcase/theme-sync) — the .ts- block.
+
+   Project imagery that matches the active theme. Two full <picture> layers
+   render SSR inside ProductReveal's existing reserved well; this block is the
+   ENTIRE swap mechanism: `display` gating keyed on html.dark. It flips
+   synchronously inside ThemeToggle's startViewTransition callback, so the
+   swap is captured by the site's own ::view-transition dissolve
+   (--dur-transition on --ease-gh-glide, ~line 1600) — one crossfade, whole
+   page. NO transition/animation may ever be added here: the hard cut is the
+   contract in BOTH reduced-motion (the 0.01ms VT guard makes it instant) and
+   full-motion (the VT snapshot supplies the fade). `display` (not
+   visibility/opacity) also removes the hidden twin from the a11y tree and
+   gives it no box, so the browser never fetches the lazy inactive variant.
+   ═════════════════════════════════════════════════════════════════════════ */
+.ts-layer {
+  position: absolute;
+  inset: 0;
+}
+.ts-layer--dark { display: none; }
+html.dark .ts-layer--dark { display: block; }
+html.dark .ts-layer--light { display: none; }
+
+/* The exhibit mat for MONO-theme projects: an honest presentation of a
+   single-theme capture, built ENTIRELY from flipping site tokens so it sits
+   correctly in both themes (a photograph of a dark product on the light site —
+   designed, never recolored). --pr-sig is the project's signature hue set by
+   ProductReveal on the well. */
+.ts-matte {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(180deg, rgb(var(--pr-sig, var(--rgb-gold)) / 0.10), transparent 70%),
+    rgb(var(--rgb-surface) / 0.85);
+}
+.ts-matte-well {
+  position: relative;
+  width: 88%;
+  height: 84%;
+  overflow: hidden;
+  border: 1px solid rgb(var(--rgb-ink) / 0.12);
+  border-radius: 0.9rem;
+  /* panel-lit grammar: warm inner top light in light theme… */
+  box-shadow: var(--shadow-lg), inset 0 1px 0 0 rgb(255 255 255 / 0.55);
+}
+html.dark .ts-matte-well {
+  /* …ember-warmed hairline in dark. */
+  box-shadow: var(--shadow-lg), inset 0 1px 0 0 rgb(255 240 214 / 0.08);
+}
+
+/* The 'float' chrome (mockup-gate option B): the capture as a clean artifact —
+   rounded plane + the site's warm shadow, no device chrome. Applies only to
+   themed showcases and only via SHOWCASE_CHROME / per-scene `chrome`. */
+.ts-float {
+  overflow: hidden;
+  border-radius: 1.35rem;
+  border: 1px solid rgb(var(--rgb-ink) / 0.10);
+  box-shadow: var(--shadow-lg);
+}
+html.dark .ts-float {
+  border-color: rgb(255 240 214 / 0.10);
+}

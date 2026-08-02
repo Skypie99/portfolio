@@ -54,6 +54,21 @@ export function heroPreloadLink(d: HeroSource): HeroPreload | null {
   return { href: avif, as: 'image', type: 'image/avif', fetchPriority: 'high' };
 }
 
+/** Themed hero preloads (showcase/theme-sync): when the hero carries a dark
+ *  twin, the static single preload would waste the wrong variant's bytes for
+ *  half the visitors. ThemedHeroPreload injects exactly ONE of these at
+ *  runtime, picked by the same theme signal next-themes reads pre-hydration.
+ *  Null when the hero isn't themed → callers keep the static heroPreloadLink. */
+export function heroPreloadLinks(d: HeroSource): { light: HeroPreload; dark: HeroPreload } | null {
+  const light = d.heroShot?.avif;
+  const dark = d.heroShot?.dark?.avif;
+  if (!light || !dark) return null;
+  return {
+    light: { href: light, as: 'image', type: 'image/avif', fetchPriority: 'high' },
+    dark: { href: dark, as: 'image', type: 'image/avif', fetchPriority: 'high' },
+  };
+}
+
 /**
  * The full ProductReveal media object for a deliverable — one source of truth for
  * the case-study hero AND both card types. Carries the real src (or undefined →
@@ -71,6 +86,11 @@ export function heroMedia(d: HeroSource): ProductRevealMedia {
     lqip: d.heroShot?.lqip,
     video: d.heroShot?.video,
     focal: d.heroShot?.focal,
+    // Theme-synced twin + mono matting + chrome (showcase/theme-sync) — pure
+    // threading; ProductReveal decides how (and whether) to render them.
+    dark: d.heroShot?.dark,
+    matte: d.heroShot?.matte,
+    chrome: d.heroShot?.chrome,
   };
 }
 
@@ -94,6 +114,9 @@ export function cardMedia(d: CardSource): ProductRevealMedia {
       lqip: d.cardImage.lqip,
       video: d.cardImage.video,
       focal: d.cardImage.focal,
+      dark: d.cardImage.dark,
+      matte: d.cardImage.matte,
+      chrome: d.cardImage.chrome,
       precropped: true,
     };
   }
