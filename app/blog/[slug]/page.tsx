@@ -272,7 +272,24 @@ export default async function BlogPostPage({
               column, but --fs-display's 5vw term reads the full viewport and
               skyscrapers the title. Step the tier down to step-5 across the md
               band; the full display size returns at lg where the column is wide.
-              Call-site only — the shared --fs-display token (10 titles) is untouched. */}
+              Call-site only — the shared --fs-display token (10 titles) is untouched.
+              UP-13 (ui-polish 2026-08-01) was investigated here and deliberately NOT
+              BUILT — see DECISIONS §P `P5-UP-13-TIER`. The defect is real (at 375 the
+              5vw term yields 44.35px into a 311px measure and this 64-character title
+              sets in six lines, block 279px ≈ 34% of an 812px viewport) but the
+              audit's mechanism is not: the clamp's min term never binds at 375
+              (44.35 > 44), so "step the lower bound down" is inert, and the proposed
+              34–36px region measures WORSE than today at 35 and 36px (4 lines) with
+              only the exact 34px edge reaching 3 lines at 99% box fill. The audit's
+              second symptom, "a hanging em-dash", is not a defect at all —
+              bindSeparatorDash (lib/markdown.ts, TY-6) NBSP-welds the dash to the
+              word before it precisely so a line can never START with one, and line 2
+              ending "AccessMap —" is that rule working. The one form that cures 375
+              (`text-step-3 sm:…`) costs a +84.3% size step across 639→640, the
+              estate's first TYPOGRAPHIC `sm:` (the only two `sm:` uses today are
+              layout), and a tracking mismatch: `.settle-heading` (built CSS offset
+              43925) outranks `.text-step-3` (20824) at equal specificity, so the
+              heading would render step-3's size at display-tier tracking. Sky's call. */}
           <SettleHeading
             className="font-serif font-light text-display md:text-step-5 lg:text-display ember max-w-3xl mb-16 text-balance"
           >
