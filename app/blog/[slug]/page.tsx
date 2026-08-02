@@ -74,7 +74,15 @@ function ProseFigure({ figure }: { figure: NonNullable<BlogPost['figure']> }) {
         </picture>
       </div>
       {figure.caption && (
-        <figcaption className="font-mono text-meta tracking-label uppercase text-text-meta">
+        /* UP-14(a) (ui-polish 2026-08-01): text-pretty — UI_SYSTEM §Micro-typo
+           ("text-pretty on body"). The caption is 86 uppercase mono characters
+           against a 60ch measure, so the greedy break stranded "FLAG." alone on
+           its own line at 1440. pretty pulls one word down; the line COUNT is
+           unchanged, so the block height is unchanged and CLS stays 0. It is a
+           no-op below ~700px, where the caption already sets three lines ending
+           "BARRIER FLAG.". balance was rejected: it is defined for headings and
+           would compress this to a centred-rag label against a 650px measure. */
+        <figcaption className="font-mono text-meta tracking-label uppercase text-text-meta text-pretty">
           {figure.caption}
         </figcaption>
       )}
@@ -348,7 +356,7 @@ export default async function BlogPostPage({
                 <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 Keep reading
               </p>
-              <h2 className="font-serif font-light text-step-4 text-near-black max-w-2xl leading-tight mb-12">
+              <h2 className="font-serif font-light text-step-4 text-near-black max-w-2xl leading-tight mb-12 text-balance">
                 Continue reading.
               </h2>
               {/* One deliberate handoff — a single-column max-width so it reads as

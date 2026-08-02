@@ -300,7 +300,7 @@ export default function HomePage() {
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               The Work
             </p>
-            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
+            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight text-balance">
               A handful of things, made with intention.
             </h2>
           </Reveal>
