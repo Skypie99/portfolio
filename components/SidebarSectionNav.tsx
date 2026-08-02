@@ -5,22 +5,43 @@ import { usePathname } from 'next/navigation';
 
 import { cn } from '@/lib/cn';
 import { useActiveSection } from '@/lib/motion';
+import { sectionIdsForRoute, sectionsForRoute } from '@/lib/sectionNav';
 
 /**
  * SidebarSectionNav — "On this page" scroll-spy index (view-transitions 2026-06-05).
  *
- * A quiet section index for the desktop rail. As you scroll the homepage, the
- * current section is gently emphasized (ink-weight shift + a 2px terracotta
- * marker) and exposed to assistive tech via `aria-current`. Driven by the
- * existing IntersectionObserver-based `useActiveSection` hook (no scroll-handler
- * thrash; one state update only when the active section CHANGES).
+ * A quiet section index for the desktop rail. As you scroll, the current section
+ * is gently emphasized (ink-weight shift + a 2px terracotta marker) and exposed
+ * to assistive tech via `aria-current`. Driven by the existing
+ * IntersectionObserver-based `useActiveSection` hook (no scroll-handler thrash;
+ * one state update only when the active section CHANGES).
  *
- * Behavior across pages (confirmed with Sky): the block is ALWAYS rendered so the
- * rail stays consistent, but the active marker only ever lights up on the
- * homepage. Two independent guards make off-home inert:
- *   1. `onHome` (pathname === '/') gates `aria-current` + the marker, and
- *   2. `useActiveSection` itself no-ops when the section ids don't resolve
- *      (any non-'/' route) and stays ''.
+ * Behavior across pages — SUPERSEDED 2026-08-01 by UP-10 (ui-polish train,
+ * phase P3). The previous contract, recorded here as confirmed with Sky, was:
+ * render the HOMEPAGE's five links on every non-longform route, "so the rail
+ * stays consistent", with the active marker gated to `pathname === '/'`. That
+ * rested on a premise which did not survive measurement — on all eight other
+ * routes 5 of 5 entries pointed at ids the page does not contain and the
+ * scroll-spy lit nothing, so the consistency was of shape only. The index now
+ * describes the route you are actually on:
+ *   1. `sectionsForRoute` returns THIS route's real, named sections (lib/
+ *      sectionNav.ts owns the map and the three rules it follows), and
+ *   2. a route with no index — /work, /certificates, /blog, /contact, the 404 —
+ *      renders NOTHING here rather than an empty or borrowed shell.
+ * Half 2 changes rail COMPOSITION, which is the half Sky's earlier ruling was
+ * about; it is on her list as DECISIONS §P `P3-UP-10-SUPPRESS` and is one
+ * commit to revoke. Half 1 is forced and needs no ruling.
+ *
+ * The `onHome` gate is gone because every listed id exists on its own route, so
+ * `useActiveSection` is now correct everywhere rather than inert off-home. Note
+ * what that hook does NOT do: when no id resolves it returns early, so `active`
+ * is component state that would otherwise persist across a soft navigation
+ * (this rail never unmounts). Ids DO collide across routes on purpose — `work`
+ * names a section on both `/` and `/about` — so the hook clears on every id
+ * list change; without that reset the previous route's marker would follow the
+ * reader onto the next page. See lib/motion.ts.
+ *
+ * The "On this page" label string itself is Sky's copy — never reworded.
  *
  * Accessibility:
  *   - `aria-current="true"` on the active link, inside a plain <nav>/<ul>/<a>
@@ -32,31 +53,26 @@ import { useActiveSection } from '@/lib/motion';
  *   - Reduced motion: the marker's scale transition is snapped instantly by the
  *     global prefers-reduced-motion rule in globals.css; the active state still
  *     updates (it's IntersectionObserver-driven, not motion).
- *   - No-JS: the <nav> + 5 links are server-rendered and navigate as plain
- *     anchors; only the live active-tracking is absent (acceptable).
+ *   - No-JS: the <nav> + its links are server-rendered from the static map and
+ *     navigate as plain anchors; only the live active-tracking is absent. (This
+ *     is why the map is static rather than a DOM read like SidebarArticleNav's —
+ *     see that file's C-42-rider for what an SSR-empty index costs.)
  */
-const SECTIONS = [
-  { id: 'work', href: '/#work', label: 'The Work' },
-  { id: 'process', href: '/#process', label: 'Method' },
-  { id: 'about', href: '/#about', label: 'A Brief Account' },
-  { id: 'certificates', href: '/#certificates', label: 'Credentials' },
-  { id: 'contact', href: '/#contact', label: "Let's talk" },
-] as const;
-
-// Module-stable id list so useActiveSection doesn't re-subscribe each render.
-const SECTION_IDS: string[] = SECTIONS.map((s) => s.id);
 
 // Single Note / case study — SidebarArticleNav shows that article's own
-// contents here instead (§8.3), so this home-section index steps aside.
+// contents here instead (§8.3), so this site-section index steps aside.
 const LONGFORM_ROUTE = /^\/(blog|work)\/[^/]+\/?$/;
 
 export function SidebarSectionNav() {
   const pathname = usePathname() ?? '';
-  const onHome = pathname === '/';
-  const active = useActiveSection(SECTION_IDS); // '' off-home (hook no-ops)
+  const sections = sectionsForRoute(pathname);
+  // Hooks stay unconditional; the hook no-ops on an empty/unresolvable id list.
+  const active = useActiveSection(sectionIdsForRoute(pathname) as string[]);
 
   // On a single article, the contents index (SidebarArticleNav) takes this slot.
   if (LONGFORM_ROUTE.test(pathname)) return null;
+  // A route with no in-page sections gets no index at all — not an empty shell.
+  if (sections.length === 0) return null;
 
   return (
     <nav aria-label="On this page" className="flex flex-col gap-3">
@@ -64,8 +80,8 @@ export function SidebarSectionNav() {
         On this page
       </span>
       <ul className="flex flex-col gap-2.5">
-        {SECTIONS.map((s) => {
-          const isActive = onHome && active === s.id;
+        {sections.map((s) => {
+          const isActive = active === s.id;
           return (
             <li key={s.id}>
               <Link

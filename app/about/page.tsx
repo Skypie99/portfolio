@@ -59,6 +59,17 @@ export default function AboutPage() {
 
   return (
     <>
+      {/* UP-10: the four in-page section bands below carry ids so the rail's
+          "On this page" index can point at THIS page's sections instead of the
+          homepage's. Attribute-only — every heading string, class and band is
+          untouched. The id vocabulary matches home's (one terse word per
+          section, on the <section> itself); the map that consumes them lives in
+          lib/sectionNav.ts and a guard asserts each one still exists.
+          This opening band is NOT one of them: `data-band-anchor` marks it as
+          the route's title band (home's `div#hero` analogue, which the rail has
+          always omitted), and its eyebrow "A Brief Account" is the name the
+          Footer and HamburgerNav give to this whole PAGE — indexing it would
+          put the page inside its own table of contents. */}
       {/* Page header */}
       <section data-band-anchor className="px-gutter py-24 lg:py-32 world-surface">
         <div className="max-w-content mx-auto">
@@ -109,6 +120,7 @@ export default function AboutPage() {
 
       {/* How I work — Cycle 17: Dani §3.6 strict refit. */}
       <section
+        id="method"
         className={cn(
           'px-gutter py-24 lg:py-32',
           // Dani wave4: alternating rhythm — warm-white
@@ -167,6 +179,7 @@ export default function AboutPage() {
 
       {/* What I care about */}
       <section
+        id="principles"
         className={cn(
           'px-gutter py-24 lg:py-32',
           'world-surface border-t border-border-decorative',
@@ -205,6 +218,7 @@ export default function AboutPage() {
 
       {/* What I'm learning */}
       <section
+        id="currently"
         className={cn(
           'px-gutter py-24 lg:py-32',
           // Dani wave4: alternating — warm-white
@@ -252,6 +266,7 @@ export default function AboutPage() {
       {/* What I'm working on */}
       {recent.length > 0 && (
         <section
+          id="work"
           className={cn(
             'px-gutter py-24 lg:py-32',
             'world-surface border-t border-border-decorative',

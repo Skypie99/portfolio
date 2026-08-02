@@ -78,6 +78,15 @@ describe('Sidebar', () => {
     expect(nav.hasAttribute('inert')).toBe(false);
   });
 
+  it('leaves the "On this page" slot empty when the route is unknown (UP-10)', () => {
+    // This file renders <Sidebar /> with no App Router context, so usePathname()
+    // is null. Before UP-10 the rail printed the homepage's five section links
+    // here regardless of route, and this file asserted nothing about it — so its
+    // meaning could change silently. Pin it: an unknown route gets no index.
+    render(<Sidebar />);
+    expect(screen.queryByRole('navigation', { name: /on this page/i })).not.toBeInTheDocument();
+  });
+
   it('carries the short-viewport rail classes (R4)', () => {
     render(<Sidebar />);
     const nav = screen.getByRole('navigation', { name: /site navigation/i });
