@@ -125,9 +125,31 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
             </ul>
 
             {/* L5-07: each action link carries px/py-1 with compensating
-                negative margins — the tap box grows to ~23px (exactly the
-                gap-y-2 wrap pitch, so wrapped rows abut without overlap)
-                while layout and wrap rhythm stay byte-identical. */}
+                negative margins — the border box is ~23px, exactly the gap-y-2
+                wrap pitch, so wrapped rows abut without overlap while layout
+                and wrap rhythm stay byte-identical. That pitch is load-bearing:
+                KEEP the py-1/-my-1 pair.
+
+                UP-02 / F7-2 (ui-polish 2026-08-01): 23px is under the house 44
+                floor, and the row's own 8px inter-line gap is already fully
+                spent by the pair above — every extra pixel has to come from
+                OUTSIDE the row. So the hit area is lifted by a one-sided
+                stretched ::after (the L3-09 recipe, app/page.tsx:237), not by
+                more padding:
+                  · leading link  → the overlay reaches UP into the dead band
+                    above the hairline rule (nothing interactive there);
+                  · trailing group → its overlays reach DOWN into the card's own
+                    bottom padding.
+                Wrapped, the two extensions move APART instead of colliding;
+                unwrapped, they are separated horizontally by 16–218px. Either
+                way: 44.391px effective, zero overlaps (measured).
+
+                Padding was the obvious fix and is WRONG here: `*:focus-visible`
+                (globals.css:422) traces each element's own border box, so
+                growing it would draw a 44px ring around a 15px label and
+                straddle the hairline. The ::after leaves the border box — and
+                therefore the ring — exactly where it was. Measurements:
+                build-plan/receipts/p2/. */}
             <div className="mt-1 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-[rgb(var(--rgb-ink)/0.1)] pt-4">
               <Link
                 href={`/work/${d.id}/`}
@@ -135,7 +157,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
                    visible label ("View project") so speech-input users can act
                    on what they see. Extra context follows the visible words. */
                 aria-label={`View project — ${d.title} case study`}
-                className="px-1 py-1 -mx-1 -my-1 inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-base ease-gh-glide hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:-top-[21px] after:bottom-0 after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-base ease-gh-glide hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
               >
                 View project <span aria-hidden="true">→</span>
               </Link>
@@ -152,7 +174,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Open ${demoLink.label.toLowerCase()} for ${d.title} (opens in new tab)`}
-                      className="px-1 py-1 -mx-1 -my-1 inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                      className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
                     >
                       {/* label-derived: "Live" for live products, "Demo" for
                           not-yet-live ones (e.g. Mutual Mesh) */}
@@ -165,7 +187,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`View ${d.title} source on GitHub (opens in new tab)`}
-                      className="px-1 py-1 -mx-1 -my-1 inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                      className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
                     >
                       GitHub <span aria-hidden="true">↗</span>
                     </a>

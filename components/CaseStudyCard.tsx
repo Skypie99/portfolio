@@ -118,8 +118,18 @@ export function CaseStudyCard({ title, category, description, href, media, links
           {/* Footer action row (L3-04) — the featured card's proven grammar:
               case-study link + LIVE ↗ / GITHUB ↗ grouped so they wrap as one
               unit on narrow cards. */}
-          {/* L5-07: action links carry px/py-1 + negative margins — tap box
-              grows to ~23px (the gap-y-2 wrap pitch) with zero layout shift. */}
+          {/* L5-07: action links carry px/py-1 + negative margins — the border
+              box is ~23px (the gap-y-2 wrap pitch) with zero layout shift. That
+              pitch is load-bearing: KEEP the py-1/-my-1 pair.
+
+              UP-02 / F7-2 (ui-polish 2026-08-01): the hit area is lifted to
+              44.391px by a one-sided stretched ::after (the L3-09 recipe) —
+              leading link UP into the dead band above the rule, trailing group
+              DOWN into the card's foot — because the row's 8px inter-line gap
+              is already fully spent, so extra pixels must come from outside the
+              row. Identical grammar to ProjectCard's action row; the long-form
+              rationale (including why padding is the WRONG mechanism here — it
+              would drag the focus ring with it) lives there. */}
           <div className="mt-1 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-[rgb(var(--rgb-ink)/0.1)] pt-4">
             <Link
               href={href}
@@ -131,7 +141,7 @@ export function CaseStudyCard({ title, category, description, href, media, links
                  this a real, clickable, SR-rotor-visible link (NOT aria-hidden, NOT a
                  whole-card link). One stop per neighbour card, both names preserved. */
               tabIndex={-1}
-              className="px-1 py-1 -mx-1 -my-1 inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-base ease-gh-glide hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+              className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:-top-[21px] after:bottom-0 after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-base ease-gh-glide hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
             >
               Read more <span aria-hidden="true">→</span>
             </Link>
@@ -143,7 +153,7 @@ export function CaseStudyCard({ title, category, description, href, media, links
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Open ${demoLink.label.toLowerCase()} for ${title} (opens in new tab)`}
-                    className="px-1 py-1 -mx-1 -my-1 inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                    className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
                   >
                     {/* label-derived: "Live" for live products, "Demo" for
                         not-yet-live ones (e.g. Mutual Mesh) */}
@@ -156,7 +166,7 @@ export function CaseStudyCard({ title, category, description, href, media, links
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`View ${title} source on GitHub (opens in new tab)`}
-                    className="px-1 py-1 -mx-1 -my-1 inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                    className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
                   >
                     GitHub <span aria-hidden="true">↗</span>
                   </a>
