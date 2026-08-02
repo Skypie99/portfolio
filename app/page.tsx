@@ -196,8 +196,26 @@ export default function HomePage() {
             </p>
           </Reveal>
 
-          {/* 3×2 stat grid — vertical-rule layout for editorial weight */}
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-px bg-wa-teal-soft/30 border border-wa-teal-soft/50 rounded-lg overflow-hidden shadow-md">
+          {/* Stat grid — ONE column below 480, 2-up to lg, then the 3×2
+              vertical-rule layout for editorial weight.
+              UP-23 (ui-polish 2026-08-01): at 375 the 2-up cell left a 106px
+              text box, so chips folded inside their pills (OPEN/SOURCE,
+              44PT/TARGETS), mono labels broke (TESTS/PASSING) and the serif
+              link wrapped mid-name — the page's one genuinely cheap moment.
+              The measured fold threshold is ~435px, so the collapse alone
+              covers the whole failing band and the phase's second prescription
+              (whitespace-nowrap on the pills) is a measured no-op above it —
+              deliberately NOT shipped, because TagPill is shared and a global
+              nowrap overflows ProjectCard at 320 and /work/claude-corp/ at 768
+              on "Multi-agent orchestration". Every width >=480 is byte-identical.
+              Nothing needed re-drawing for the 1-col case: the hairlines are
+              `gap-px` over the container's own background, which is
+              axis-agnostic — 2 horizontal seams + 1 vertical at 375 become 5
+              horizontal seams and none vertical, by the same mechanism.
+              This string is TWINNED with components/A11yReceipts.tsx, whose
+              comment records it as "home's showcase grammar verbatim" — the two
+              must move together or that claim goes false at mobile. */}
+          <div className="grid grid-cols-1 min-[480px]:grid-cols-2 lg:grid-cols-3 gap-px bg-wa-teal-soft/30 border border-wa-teal-soft/50 rounded-lg overflow-hidden shadow-md">
             {showcaseChips.map(({ stat, label, project, href, tags }, i) => {
               // C-22: split off the LAST word so it + the arrow can be bound in a
               // whitespace-nowrap span — a soft-wrap opportunity sits before the
@@ -216,10 +234,15 @@ export default function HomePage() {
                   // C-22: reclaim base cell width (p-8→p-6) so the tag pills fit
                   // their ~90px box at 375 without folding; md+ keeps p-7.
                   'group relative flex flex-col bg-surface-mid p-6 md:p-7',
-                  // An odd trailing chip spans its 2-col (mobile) / 3-col (md+)
-                  // row so no bare grid cell shows through. With six chips the
-                  // grid is a clean 3×2 and `odd:` self-disables on its own.
-                  'last:odd:col-span-2 lg:last:odd:col-span-1',
+                  // An odd trailing chip spans its 2-col / 3-col (lg+) row so no
+                  // bare grid cell shows through. With six chips the grid is a
+                  // clean 3×2 and `odd:` self-disables on its own.
+                  // UP-23: gated at min-[480px] so it cannot fire in the 1-col
+                  // band. Inert today (6 chips = even), but an item spanning 2
+                  // columns in a 1-col grid ADDS an implicit second column
+                  // (CSS Grid §8.5), so a future 7th chip would silently make
+                  // the phone band a lopsided 2-up. Zero pixels while even.
+                  'min-[480px]:last:odd:col-span-2 lg:last:odd:col-span-1',
                   // L3-09: the whole chip is a quiet door — hover AND focus-within
                   // warm the surface (the site's glass-card focus idiom), so a
                   // keyboard visitor sees the same lift a pointer does.
