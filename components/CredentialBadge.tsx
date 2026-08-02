@@ -39,7 +39,7 @@ export function CredentialBadge({
       className={cn(
         'badge inline-flex items-center gap-2 rounded-pill',
         'bg-[var(--badge-bg)] border border-[var(--badge-border-color)]',
-        'px-3 py-2 text-sm text-[var(--badge-text)]',
+        'px-3 py-2 text-body-sm text-[var(--badge-text)]',
         'transition-all duration-base ease-out',
         href && 'hover:bg-[var(--badge-bg-hover)] hover:text-[var(--badge-text-hover)] hover:shadow-soft',
         // (R6) The old focus-visible classes here were dead code — this div is
