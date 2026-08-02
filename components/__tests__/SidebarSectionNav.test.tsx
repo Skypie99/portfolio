@@ -1,10 +1,20 @@
 /**
- * SidebarSectionNav tests (view-transitions 2026-06-05).
+ * SidebarSectionNav tests (view-transitions 2026-06-05; rewritten for UP-10,
+ * ui-polish 2026-08-01).
  *
- * Covers the scroll-spy active-state logic: the "On this page" landmark + all
- * five section links render; exactly one link gets aria-current when a section
- * is active ON THE HOMEPAGE; and nothing is marked active off-home (the onHome
- * guard) even if the scroll-spy hook reports a section.
+ * The old contract — "render the homepage's five links on every non-longform
+ * route, gate the active marker to pathname === '/'" — was replaced because it
+ * lied: on all eight other routes every entry pointed at an id the page does not
+ * contain. These tests pin the NEW contract:
+ *   - each indexed route renders its OWN ordered section list and hrefs,
+ *   - the home list is byte-unchanged,
+ *   - the scroll-spy now lights on every indexed route (the onHome gate is gone),
+ *   - and an unindexed route renders NOTHING at all — not an empty shell.
+ *
+ * The complementary guard lives in lib/__tests__/section-nav-anchors.test.ts: it
+ * proves against the BUILT HTML that every id exists on its route and that every
+ * label is a string that route actually renders. Between them, a page section
+ * cannot be renamed, moved or deleted without a test failing.
  *
  * `next/navigation` (usePathname) and `@/lib/motion` (useActiveSection) are
  * mocked with hoisted, per-test-configurable fns — jsdom provides neither App
@@ -28,8 +38,28 @@ vi.mock('@/lib/motion', () => ({
 }));
 
 import { SidebarSectionNav } from '@/components/SidebarSectionNav';
+import { ROUTE_SECTIONS, sectionsForRoute, INDEXED_ROUTES } from '@/lib/sectionNav';
 
-const LABELS = ['The Work', 'Method', 'A Brief Account', 'Credentials', "Let's talk"];
+const HOME_LABELS = ['The Work', 'Method', 'A Brief Account', 'Credentials', "Let's talk"];
+
+/**
+ * Rendered outside the app, next/link normalizes `/about/#x` to `/about#x`;
+ * the real export re-adds the slash (`trailingSlash: true`) and ships
+ * `/about/#x` — asserted byte-for-byte against the built HTML in
+ * lib/__tests__/section-nav-anchors.test.ts (T5). Here both sides are collapsed
+ * to the same form so these tests are about routing intent, not serialization.
+ */
+const hrefShape = (href: string | null) => (href ?? '').replace('/#', '#');
+
+/** The rendered index, in DOM order, as [label, href] pairs. */
+function renderedEntries() {
+  const nav = screen.queryByRole('navigation', { name: /on this page/i });
+  if (!nav) return null;
+  return Array.from(nav.querySelectorAll('a')).map((a) => [
+    (a.textContent ?? '').trim(),
+    hrefShape(a.getAttribute('href')),
+  ]);
+}
 
 beforeEach(() => {
   pathnameMock.mockReturnValue('/');
@@ -40,13 +70,13 @@ afterEach(() => {
   cleanup();
 });
 
-describe('SidebarSectionNav', () => {
+describe('SidebarSectionNav — the homepage index is unchanged', () => {
   it('renders the "On this page" landmark with all five section links', () => {
     render(<SidebarSectionNav />);
     const nav = screen.getByRole('navigation', { name: /on this page/i });
     expect(nav).toBeInTheDocument();
 
-    for (const label of LABELS) {
+    for (const label of HOME_LABELS) {
       expect(screen.getByRole('link', { name: label })).toBeInTheDocument();
     }
     expect(screen.getByRole('link', { name: 'The Work' })).toHaveAttribute('href', '/#work');
@@ -54,9 +84,15 @@ describe('SidebarSectionNav', () => {
     expect(screen.getByRole('link', { name: "Let's talk" })).toHaveAttribute('href', '/#contact');
   });
 
+  it('keeps the visible "On this page" label string exactly', () => {
+    render(<SidebarSectionNav />);
+    // Sky's copy — the phase may change the LIST, never this string.
+    expect(screen.getByText('On this page')).toBeInTheDocument();
+  });
+
   it('marks nothing active by default (no section in view yet)', () => {
     render(<SidebarSectionNav />);
-    for (const label of LABELS) {
+    for (const label of HOME_LABELS) {
       expect(screen.getByRole('link', { name: label })).not.toHaveAttribute('aria-current');
     }
   });
@@ -69,19 +105,136 @@ describe('SidebarSectionNav', () => {
       'aria-current',
       'true',
     );
-    // Every other link must NOT carry aria-current.
-    for (const label of LABELS.filter((l) => l !== 'A Brief Account')) {
+    for (const label of HOME_LABELS.filter((l) => l !== 'A Brief Account')) {
       expect(screen.getByRole('link', { name: label })).not.toHaveAttribute('aria-current');
     }
   });
+});
 
-  it('marks nothing active off the homepage even if a section is reported', () => {
+describe('SidebarSectionNav — the index describes the route you are on (UP-10)', () => {
+  it.each([
+    [
+      '/about/',
+      [
+        ['Method', '/about#method'],
+        ['Principles', '/about#principles'],
+        ['Currently', '/about#currently'],
+        ['The Work', '/about#work'],
+      ],
+    ],
+    [
+      '/colophon/',
+      [
+        ['The stack', '/colophon#the-stack'],
+        ['The type', '/colophon#the-type'],
+        ['The world', '/colophon#the-world'],
+        ['The quiet systems', '/colophon#the-quiet-systems'],
+        ['How it was made', '/colophon#how-it-was-made'],
+        ['The type, set live', '/colophon#type-specimen'],
+        ['Calibration record', '/colophon#calibration'],
+      ],
+    ],
+    [
+      '/accessibility/',
+      [
+        ['The standard I aim for', '/accessibility#the-standard-i-aim-for'],
+        ['What I built in', '/accessibility#what-i-built-in'],
+        ['Measured, not claimed', '/accessibility#receipts'],
+        ['What I have not done', '/accessibility#what-i-have-not-done'],
+        ['Found a barrier? Tell me.', '/accessibility#found-a-barrier-tell-me'],
+      ],
+    ],
+  ])('%s renders its own sections, in document order', (pathname, expected) => {
+    pathnameMock.mockReturnValue(pathname);
+    render(<SidebarSectionNav />);
+    expect(renderedEntries()).toEqual(expected);
+  });
+
+  it('never shows the homepage list on another route', () => {
     pathnameMock.mockReturnValue('/about/');
-    activeMock.mockReturnValue('about'); // hook wouldn't fire off-home, but guard regardless
+    render(<SidebarSectionNav />);
+    // 'The Work' and 'A Brief Account' legitimately recur as /about's OWN
+    // section names, so the tell is the href: no entry may point at '/#...'.
+    for (const [, href] of renderedEntries() ?? []) {
+      expect(href).toMatch(/^\/about#/);
+    }
+    expect(screen.queryByRole('link', { name: 'Credentials' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: 'A Brief Account' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: 'Method' })).toBeInTheDocument();
+  });
+
+  it('lights the active section on a non-home route (the onHome gate is gone)', () => {
+    pathnameMock.mockReturnValue('/colophon/');
+    activeMock.mockReturnValue('the-world');
     render(<SidebarSectionNav />);
 
-    for (const label of LABELS) {
-      expect(screen.getByRole('link', { name: label })).not.toHaveAttribute('aria-current');
+    expect(screen.getByRole('link', { name: 'The world' })).toHaveAttribute('aria-current', 'true');
+    const current = screen
+      .getByRole('navigation', { name: /on this page/i })
+      .querySelectorAll('[aria-current]');
+    expect(current).toHaveLength(1);
+  });
+
+  it('resolves a route with and without its trailing slash identically', () => {
+    expect(sectionsForRoute('/about')).toBe(sectionsForRoute('/about/'));
+    expect(sectionsForRoute('/')).toHaveLength(5);
+    expect(sectionsForRoute('/about')).toHaveLength(4);
+  });
+
+  it('an empty pathname gets NO index — it must never fall back to home\'s', () => {
+    // usePathname is typed `string | null`; the component's `?? ''` fallback
+    // would otherwise render the homepage index, with live scroll-spy, on an
+    // unknown route — a miniature of the bug UP-10 removes.
+    expect(sectionsForRoute('')).toHaveLength(0);
+    pathnameMock.mockReturnValue('');
+    const { container } = render(<SidebarSectionNav />);
+    expect(container).toBeEmptyDOMElement();
+  });
+});
+
+describe('SidebarSectionNav — routes with no index render nothing', () => {
+  it.each([
+    ['/work/', 'a single gallery band; its only other heading is sr-only'],
+    ['/certificates/', 'a single credential grid; its only other heading is sr-only'],
+    ['/blog/', 'a single post list; its only other heading is sr-only'],
+    ['/contact/', 'one named band under its title band — a one-item list is not an index'],
+    ['/some-unmapped-route/', 'the 404 and anything unmapped'],
+  ])('%s renders no "On this page" block at all — %s', (pathname) => {
+    pathnameMock.mockReturnValue(pathname);
+    const { container } = render(<SidebarSectionNav />);
+    expect(screen.queryByRole('navigation', { name: /on this page/i })).not.toBeInTheDocument();
+    // Not an empty shell either — the component contributes no DOM whatsoever.
+    expect(container).toBeEmptyDOMElement();
+  });
+
+  it.each(['/blog/building-accessmap/', '/work/accessmap/'])(
+    'steps aside on the long-form route %s so SidebarArticleNav owns the slot',
+    (pathname) => {
+      pathnameMock.mockReturnValue(pathname);
+      const { container } = render(<SidebarSectionNav />);
+      expect(container).toBeEmptyDOMElement();
+    },
+  );
+});
+
+describe('sectionNav map invariants', () => {
+  it('every href is its own route plus its own id — no cross-route anchors', () => {
+    for (const route of INDEXED_ROUTES) {
+      const sections = ROUTE_SECTIONS[route as keyof typeof ROUTE_SECTIONS];
+      const prefix = route === '/' ? '/' : `${route}/`;
+      for (const s of sections) {
+        expect(s.href).toBe(`${prefix}#${s.id}`);
+      }
+    }
+  });
+
+  it('has no duplicate ids or labels within a route, and never an empty list', () => {
+    for (const route of INDEXED_ROUTES) {
+      const sections = ROUTE_SECTIONS[route as keyof typeof ROUTE_SECTIONS];
+      // Rule 2: fewer than two named sections means the route is not indexed.
+      expect(sections.length).toBeGreaterThanOrEqual(2);
+      expect(new Set(sections.map((s) => s.id)).size).toBe(sections.length);
+      expect(new Set(sections.map((s) => s.label)).size).toBe(sections.length);
     }
   });
 });

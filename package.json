@@ -19,7 +19,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
-    "test:static": "npm run build && vitest run lib/__tests__/static-integrity.test.ts"
+    "test:static": "npm run build && vitest run lib/__tests__/static-integrity.test.ts lib/__tests__/section-nav-anchors.test.ts"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

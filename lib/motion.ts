@@ -490,12 +490,26 @@ export function useDayNight() {
  * per-frame churn). Not motion → runs under reduced motion too. SSR-safe
  * (starts ''). Pass a STABLE ids array (module constant) to avoid
  * re-subscribing each render.
+ *
+ * Returns '' when nothing is in view AND whenever the id list changes — the
+ * result is only ever set to an id that resolved in the CURRENT list, never to
+ * a leftover from the previous one (see the reset in the effect).
  * ──────────────────────────────────────────────────────────────────── */
 export function useActiveSection(ids: string[]) {
   const [active, setActive] = useState('');
   const key = ids.join(',');
 
   useEffect(() => {
+    // UP-10: clear FIRST, on every id-list change. The consumers live in the
+    // persistent rail, outside {children} — a soft navigation swaps the page
+    // but never unmounts them, so this state survives the route change, and
+    // every write below is conditional on finding a section (`if (best)`, and
+    // the hash seed). Without this reset a section id that exists on BOTH
+    // routes — `work` is a section on `/` and on `/about` — would leave the
+    // previous route's aria-current lit on the new page until the reader
+    // happened to scroll into a mapped band. Same fix covers SidebarArticleNav
+    // navigating between two articles.
+    setActive('');
     if (typeof IntersectionObserver === 'undefined' || typeof document === 'undefined') return;
     const els = key
       .split(',')
