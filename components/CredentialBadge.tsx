@@ -40,7 +40,9 @@ export function CredentialBadge({
         'badge inline-flex items-center gap-2 rounded-pill',
         'bg-[var(--badge-bg)] border border-[var(--badge-border-color)]',
         'px-3 py-2 text-body-sm text-[var(--badge-text)]',
-        'transition-all duration-base ease-out',
+        // Enumerated, not transition-all: bg/border/text flip with the theme, and
+        // hover adds the wash + soft shadow. Nothing else on this pill animates.
+        'transition-[background-color,border-color,box-shadow,color] duration-base ease-out',
         href && 'hover:bg-[var(--badge-bg-hover)] hover:text-[var(--badge-text-hover)] hover:shadow-soft',
         // (R6) The old focus-visible classes here were dead code — this div is
         // never the focus target (the wrapper <a> below is) — and carried an
