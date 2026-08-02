@@ -279,7 +279,24 @@ export default function HomePage() {
                     </span>
                   </Link>
                 </p>
-                <ul className="flex flex-wrap gap-1.5 mt-auto" aria-label={`Tags for ${project}`}>
+                {/* UP-47 (ui-polish 2026-08-01): deliberately NOT bottom-anchored.
+                    The cell's slack is set by its grid row's tallest cell and is
+                    CONSERVED either way — `mt-auto` only chose to park it ABOVE the
+                    chips, which made a lone chip row sit level with its neighbours'
+                    SECOND row. `mt-1` over the link's own `mb-3` puts the chips a
+                    flat 16px under their link in every cell (flex-item margins do
+                    not collapse), which is the design authority's stated target; the
+                    slack then falls BELOW, trading a ragged interior bottom for a
+                    level top — the phase file pre-accepts exactly that. Cost, stated
+                    because it is real: +4px per grid row of section height (+8px at
+                    lg, +12px on phones). Magnitude correction for the record: the
+                    audit's "~80px dead band" is a deviceScaleFactor-2 IMAGE-pixel
+                    reading of a 43.39 CSS px gap; the true max anywhere is 55.44px,
+                    and the gap is already 0 at 320/480/640/768 — so this item is a
+                    no-op at those widths, and with UP-23's collapse in front of it a
+                    no-op at every width below 480. The three card components keep
+                    their own recorded mt-auto; this is the stat grid only. */}
+                <ul className="flex flex-wrap gap-1.5 mt-1" aria-label={`Tags for ${project}`}>
                   {tags.map((tag) => (
                     <li key={tag}>
                       <TagPill>{tag}</TagPill>
