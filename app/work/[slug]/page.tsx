@@ -266,7 +266,23 @@ export default async function WorkDetailPage({
               </li>
             </ol>
           </nav>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-12 lg:gap-x-50 items-start">
+          {/* UP-31 (ui-polish 2026-08-01): `lg:grid-rows-[auto_1fr]` pairs with the
+              details column's `lg:row-start-1 lg:row-span-2` below. Without a
+              FLEXIBLE row 2 the span alone only halves the defect — CSS Grid
+              §12.5 distributes a spanning item's intrinsic contribution equally
+              across the auto tracks it crosses, so row 1 would inflate 560 →
+              698.5px and the plate would still hang 186.50px low (measured).
+              A spanning item is excluded from that distribution when it crosses
+              a track with a flexible max sizing function, so `1fr` on row 2 lets
+              row 1 collapse to the well and the plate sits at the grid's own
+              gap-y-12. Gated on d.heroPlate so the other five deliverables emit
+              a byte-identical class string, honouring the promise at :318. */}
+          <div
+            className={cn(
+              'grid grid-cols-1 lg:grid-cols-2 gap-y-12 lg:gap-x-50 items-start',
+              d.heroPlate && 'lg:grid-rows-[auto_1fr]',
+            )}
+          >
             {/* L5-01: hero image well. On phones + tablets it rides BETWEEN the
                 title block and the metadata block (order-2) so proof crests the
                 first thumb-flick; at lg it returns to the left column. The
@@ -312,9 +328,17 @@ export default async function WorkDetailPage({
             {/* FT-3/FT-10 — the museum plate. A static mono-meta plate as a plain
                 grid sibling directly beneath the hero well (NOT inside the aspect
                 box). On phones it follows the well (order-2), above the metadata;
-                at lg it is placed at col-1/row-2 — snug beneath accessmap's tall
-                4/5 phone well (taller than its column, so it does not ride the
-                sticky). Data-gated on d.heroPlate → accessmap only; every other
+                at lg it is placed at col-1/row-2 — snug beneath accessmap's 4/5
+                phone well. UP-31 (ui-polish 2026-08-01) corrects two claims this
+                comment used to make: the well is NOT taller than its column (560
+                vs 972.30px at 1440) and it DOES ride the sticky, so row 1 was
+                being sized by the tall details column and "snug beneath" never
+                held — the plate hung 460.30px low at 1440 and 880.08px at 1024.
+                The grid now carries lg:grid-rows-[auto_1fr] and the details
+                column spans both rows, which collapses row 1 to the well and
+                delivers the stated intent: a 48.00px gap, the grid's own
+                gap-y-12, identical to what 375 already rendered.
+                Data-gated on d.heroPlate → accessmap only; every other
                 deliverable renders nothing here and its grid is unchanged. Mono
                 register, NEVER quotation-styled (the one pull-quote per essay
                 lives in Reflection). It seats the artifact's own severity ledger
@@ -346,8 +370,20 @@ export default async function WorkDetailPage({
                 could never engage). Below lg the wrapper is display:contents,
                 so the title block (order-1) and metadata block (order-3) become
                 siblings of the well (order-2) and reorder around it: title
-                leads, proof crests the fold, metadata follows (L5-01). */}
-            <div className="contents lg:flex lg:flex-col lg:gap-12">
+                leads, proof crests the fold, metadata follows (L5-01).
+                UP-31: on the plate route this column spans BOTH grid rows, so
+                row 1 is sized by the media well instead of by this column — the
+                only reason the plate ever hung 460px below the frame it
+                annotates. This column's own rect is byte-identical before and
+                after (top 200, h 972.30 at 1440); only the plate moves. The
+                well's sticky still engages, with its travel reduced from 547.58
+                to 412.30px at 1440 — exactly the dead band that was removed. */}
+            <div
+              className={cn(
+                'contents lg:flex lg:flex-col lg:gap-12',
+                d.heroPlate && 'lg:row-start-1 lg:row-span-2',
+              )}
+            >
               {/* Title block — leads on every viewport. Mobile air steps down
                   (L5-04): gap-6 → md:gap-8 → lg:gap-12 (desktop unchanged). */}
               <div className="flex flex-col gap-6 md:gap-8 lg:gap-12 order-1 lg:order-none">
