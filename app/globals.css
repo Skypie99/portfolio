@@ -583,8 +583,8 @@ html.dark body::after { opacity: 0.10; }
    `initial-letter` instead of the raw float (which sits slightly proud of the
    first line's cap-height). The float rule above stays the FALLBACK — engines
    without initial-letter support (e.g. Firefox) render exactly as before. Only
-   the float-era geometry is overridden here; color / family / weight /
-   padding-right / dlig fall through from the base rule (a separate block only
+   the float-era geometry is overridden here; color / family / weight / dlig
+   fall through from the base rule (a separate block only
    overrides the properties it lists). `font-size: inherit` is load-bearing:
    initial-letter sizes the glyph from the line metrics, so the 4.6rem clamp
    must be dropped or the cap explodes. */
@@ -596,6 +596,23 @@ html.dark body::after { opacity: 0.10; }
     font-size: inherit;
     line-height: normal;
     margin-top: 0;
+    /* UP-34b (ui-polish 2026-08-01): padding-right can NOT fall through here —
+       its em basis changed. In the float rule the em is the clamp (49.6–73.6px),
+       so 0.09em buys 4.46–6.62px; under `font-size: inherit` (17px) the same
+       declaration collapses to 1.53px. `initial-letter` reserves only the
+       glyph's ADVANCE as a rectangle, so a letter whose ink reaches full advance
+       at the baseline ("L" foot serif, "A" right foot) leaves its last wrapped
+       line ~2.0px of ink clearance against 20–41px on the lines above it —
+       measured on ghost-code's "L" and the blog's "A" by colour-tag mask.
+       0.24em = 4.08px restores just under the float path's calibrated 4.46px
+       floor: a floor lift, not a new number. Scoped to this branch on purpose —
+       raising the base value would move Firefox's float path to 11.9–17.7px
+       (2.7x) and that path cannot be measured here. CSS has no per-line lever,
+       so the disparity narrows rather than equalises. `shape-margin` is inert:
+       it applies to floats only, and float is none here (verified live, 0.000px).
+       Measured across all six capped routes x 2 themes x 5 widths: every line
+       shifts +2.56px, line count and block height unchanged in 60/60 → CLS 0. */
+    padding-right: 0.24em;
   }
 }
 
