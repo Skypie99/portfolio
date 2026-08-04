@@ -387,9 +387,26 @@ export default async function WorkDetailPage({
               {/* Title block — leads on every viewport. Mobile air steps down
                   (L5-04): gap-6 → md:gap-8 → lg:gap-12 (desktop unchanged). */}
               <div className="flex flex-col gap-6 md:gap-8 lg:gap-12 order-1 lg:order-none">
-                {/* FEATURED + role share ONE line at base (L5-04's two-chip void);
-                    lg:contents reverts them to today's two stacked children. */}
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 lg:contents">
+                {/* FEATURED + role share ONE line at base (L5-04's two-chip void).
+                    UP-32 (ui-polish 2026-08-01) extends that to EVERY width by
+                    dropping the `lg:contents` this line used to carry, which had
+                    left desktop stacking two lone kickers 48px apart above the
+                    title. That token was a BLAST-RADIUS device, not a design
+                    ruling: P2-B's own result records it as "`lg:contents` keeps
+                    desktop 1440 byte-identical" and "the `lg:contents`
+                    restructure holds desktop by construction", and P3 repeats
+                    "preserved by construction (class move, never re-parent)".
+                    L5-04 itself measured 375 only and named this exact remedy —
+                    "letting the two chips share a line".
+                    NO interpunct separator: both kickers already carry their own
+                    coloured dot (and below md the byline chip joins them on this
+                    same row), so a "·" would add a third mark in a third hue.
+                    The dots are untouched — DECISIONS §P P4-UP-27-DOTS is an OPEN
+                    Sky fork about the dot logic on this exact page.
+                    Renders two kickers on accessmap ONLY (schema: exactly one
+                    `featured`); the other five slugs have a single visible child
+                    here at lg, where contents-vs-flex is a measured no-op. */}
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
                   {d.featured && (
                     <p className="font-mono text-meta tracking-label uppercase text-accent-text inline-flex items-center gap-2">
                       <span
