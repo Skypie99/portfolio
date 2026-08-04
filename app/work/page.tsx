@@ -62,7 +62,26 @@ export default function WorkIndexPage() {
           // single canonical seam) — an accidental ~256px doubling that pushed
           // every deliverable below the fold. Drop the hero's bottom; the
           // border-t section divider below carries the single transition.
-          'pt-24 lg:pt-32',
+          // UP-35 (ui-polish 2026-08-01) REFINES that ruling, it does not revert
+          // it. Z6a took the bottom to ZERO, which glued the divider to the lead
+          // paragraph: 0.00px from its border box and 8.05px from its last
+          // baseline (pure descender + half-leading — no authored space at all),
+          // against 129px of air on the far side. A 0:129 split reads as an
+          // underline of that sentence, not a section break, and /work was the
+          // estate's only such hero — the other six index heroes all run the
+          // symmetric py-24 lg:py-32 (128:129). pb-12 restores a beat WITHOUT
+          // re-creating the doubling: the seam totals 177px @1440 / 145px @375,
+          // not ~256px. Re-verified at Z6a's own 1280x800 — the first work still
+          // crests the fold by 287px where Z6a certified its fix at 191px, partly
+          // because the 13 filter pills it also blamed went with the retired
+          // filter grid (the component name is deliberately not written here —
+          // GalleryWall.test.tsx guards this file against that string, and the
+          // guard is correct). Dropping the rule instead was measured and refused:
+          // the world-surface -> world-surface-alt wash step is only 1.04-1.06:1
+          // while the hairline carries 1.38-1.62:1, so the rule is ~90% of the
+          // seam's signal, and it is a 40-site house grammar. A FULL beat re-add
+          // here IS the doubling this comment was written to kill: don't.
+          'pt-24 lg:pt-32 pb-12',
           'world-surface',
         )}
       >
