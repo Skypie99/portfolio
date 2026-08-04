@@ -1343,7 +1343,29 @@ body.bg-canvas {
 
 /* The fixed stage — behind everything, never interactive. In BOTH themes the
    world's opaque dusk base is the backstop (body fill is dropped above), with
-   html's cream as the ultimate fallback behind it. */
+   html's cream as the ultimate fallback behind it.
+
+   UP-16 (ui-polish 2026-08-01) — READ THIS BEFORE BELIEVING A FULL-PAGE FRAME.
+   Because this layer is `position: fixed`, Chromium's `fullPage: true` capture
+   paints it ONLY over the first viewport height; every document row below that
+   gets no world paint and falls through to html's cream/canvas fallback above.
+   The composite is dead flat there, so a stitched frame carries a hard 1-row
+   step at y == the CAPTURE viewport height — measured at 700 / 900 / 1100, the
+   step follows the viewport exactly while the document height stays constant.
+   The 2026-08-01 audit read that step as a "case-study hero band seam" cutting
+   the ROLE/YEAR meta stack on six routes. It is not a rendered defect: it has
+   no content-derived quantity, it lands mid-group in 20 of 24 frames purely by
+   where the fold falls, and viewport-only captures at scrollY 0/300/600/900/1200
+   show ZERO discontinuity at that y in either theme. The only real edge in those
+   frames is the designed hero -> body `border-t border-border-decorative`.
+   A real reader never sees it — the fixed backdrop always covers the viewport.
+   The `.world-horizon` line below IS live at every scroll position, and it was
+   measured too: 1.0125:1 (light) / 1.026:1 (dark) against the surface it crosses,
+   i.e. below perceptual threshold, not a seam.
+   If you need clean full-page frames, stretch this layer in the RIG, never here:
+     .world-backdrop { position: absolute; top: 0; height: <scrollHeight>px }
+   injected before the shot. Changing it in source would un-fix the "one
+   continuous world" (see components/WorldBackdrop.tsx) for zero visible gain. */
 .world-backdrop {
   position: fixed;
   inset: 0;
