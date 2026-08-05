@@ -47,12 +47,22 @@ export function CertCard({ certificate: c }: { certificate: Certificate }) {
       <CardField slug={issuerKey(c.issuer)} />
 
       <div className="relative z-10 flex h-full flex-col md:max-lg:flex-row md:max-lg:items-center md:max-lg:gap-8">
-        {/* Badge well — lit from above, badge leans in on hover */}
+        {/* Badge well — lit from above, badge leans in on hover.
+            UP-17 (ui-polish 2026-08-01): the well paints the `--rgb-paper-*`
+            trio, which globals.css deliberately does NOT flip, instead of the
+            surface trio, which does. The badges are flattened ink-on-paper
+            rasters — mostly transparent, only ink + a paper fill — so under the
+            dark surfaces their line art sat at 1.15-1.29:1 and disappeared. The
+            well is a paper OBJECT, so it keeps the paper palette (hairline
+            included) in both themes; the card around it still flips normally.
+            Same shape, same stops, same gradient — only the source tokens move.
+            Measured after: dark 14.28-15.14:1 on the six doodles, which is
+            light's own 14.80-15.11:1 to within half a point. */}
         <div
-          className="relative mb-8 flex aspect-square w-full items-center justify-center overflow-hidden rounded-md border border-[rgb(var(--rgb-ink)/0.08)] md:max-lg:mb-0 md:max-lg:w-36 md:max-lg:shrink-0"
+          className="relative mb-8 flex aspect-square w-full items-center justify-center overflow-hidden rounded-md border border-[rgb(var(--rgb-paper-ink)/0.08)] md:max-lg:mb-0 md:max-lg:w-36 md:max-lg:shrink-0"
           style={{
             background:
-              'radial-gradient(60% 60% at 50% 36%, rgb(var(--rgb-surface-warm)) 0%, rgb(var(--rgb-surface-mid)) 55%, rgb(var(--rgb-canvas-alt)) 100%)',
+              'radial-gradient(60% 60% at 50% 36%, rgb(var(--rgb-paper-warm)) 0%, rgb(var(--rgb-paper-lit)) 55%, rgb(var(--rgb-paper-edge)) 100%)',
           }}
         >
           <BadgeImage

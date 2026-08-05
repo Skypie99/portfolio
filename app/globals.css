@@ -64,6 +64,30 @@
   --rgb-panel-cool:   205 224 212;   /* cool-tinted surface */
   --rgb-wash-cool:    234 241 236;   /* cool section background */
 
+  /* --- PAPER — deliberately does NOT flip (UP-17, ui-polish 2026-08-01) ------
+     The certificate badges are flattened ink-on-paper rasters, not SVG strokes
+     that could be re-tokened: 7 of the 9 carry an alpha channel that is 65-91%
+     fully transparent, and the six hand-drawn Anthropic doodles contain only TWO
+     colours — ink rgb(20,20,19) and a paper fill rgb(227,218,204). Their line
+     art is therefore drawn straight onto whatever the WELL paints.
+     Under the dark surface trio the well went near-black and the six doodles'
+     ink measured 1.15-1.29:1 against it — paint-sampled off the rendered page
+     at /certificates, both widths, NOT nominal token maths. The drawings
+     effectively vanished and only the cream-filled masses survived, as
+     unmodelled blobs. The same six measured 14.96-15.24:1 in light.
+     These four triplets are the LIGHT surface values, mirrored here so the well
+     stays PAPER in both themes: no new colour enters the palette, and because
+     `html.dark` overrides only the tokens it lists, omitting these IS the
+     mechanism that keeps them fixed. The two opaque badges (U-M, DeepLearning.AI
+     — colour-type 2, no alpha) paint their own field full-bleed and are
+     pixel-identical either way; Google's transparent badge already sits on this
+     exact cream in light today, so this is the shipped light-mode condition, not
+     a new one. Ink tokens are untouched. */
+  --rgb-paper-warm:   247 239 228;   /* == light --rgb-surface-warm (well core)  */
+  --rgb-paper-lit:    250 248 241;   /* == light --rgb-surface-mid  (well mid)   */
+  --rgb-paper-edge:   245 237 222;   /* == light --rgb-canvas-alt   (well edge)  */
+  --rgb-paper-ink:     32  48  44;   /* == light --rgb-ink (the well's own hairline) */
+
   --rgb-ink:          32 48 44;      /* body + headings (deep pine-charcoal) */
   --rgb-ink-muted:    70 84 77;      /* body-muted (~7:1 on canvas) */
   --rgb-ink-meta:     84 100 93;     /* metadata / eyebrow — ≥4.5:1 on every world surface (a11y 07-31) */
