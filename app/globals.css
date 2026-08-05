@@ -666,6 +666,20 @@ html.dark body::after { opacity: 0.10; }
 /* Pull-quote — serif italic jewellery with an oversized faded quote mark. */
 .pull-quote {
   position: relative;
+  /* UP-21 (ui-polish 2026-08-01) — the ornament's real defect was STACKING, not
+     alpha. The mark below is `z-index: -1`, so it needs a stacking context to
+     paint above the translucent `.world-surface*` panel it sits on. DARK has one
+     by accident: `html.dark [data-band-anchor] { isolation: isolate }` (the
+     gold-plinth rule further down) is dark-only, so in dark the mark is trapped
+     inside the band and lands at full strength. LIGHT had none, so the mark
+     escaped to the root stacking context and was painted OVER by the section's
+     own panel — measured live, it contributed only Δ(4,7,8) instead of the
+     Δ(10,20,23) its alpha specifies, which is exactly the audit's "Δ5-9,
+     vanishes". Isolating here fixes the CAUSE and makes the two themes
+     structurally symmetric; measured on the built site it is a no-op in dark
+     (0 pixels changed) and light-only in effect. The alpha is NOT touched, so
+     nothing about the mark's specified weight moves in either theme. */
+  isolation: isolate;
   font-style: italic;
   hanging-punctuation: first;
   letter-spacing: -0.015em;
