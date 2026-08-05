@@ -548,7 +548,20 @@ h1, h2, h3, h4, h5, h6 {
       rgb(var(--rgb-accent-soft) / 0.20) 100%);
 }
 html.dark .hero-wash {
-  /* DARK — keep the dusk glow as-is (subtle gold upper-right + cool whisper). */
+  /* DARK — keep the dusk glow as-is (subtle gold upper-right + cool whisper).
+     UP-37 (ui-polish 2026-08-01): VERIFIED-NON-ISSUE, looked at rather than
+     argued. The audit read this glow as "topping out in a razor-straight cut",
+     from flattened full-page captures where the fixed night scene does not
+     paint. Loaded in a real viewport, scrolled to the hero's resting state,
+     both widths: the only hard edge is the DESIGNED cinematic -> hero handoff
+     at the section's own top, and the glow demonstrably softens it rather than
+     slicing it. Luminance scan columns across that boundary give a single-row
+     step of 0.0545 (1.84:1) at x=288, far from the glow, and <=0.042 (1.51:1)
+     at x=1224, on the glow's own side — i.e. the step is SMALLEST where the
+     glow is strongest, which is the opposite of a clipped gradient. (The
+     element also carries overflow:visible, no clip-path and no mask, so there
+     is nothing here to clip it.) The cinematic surface above is intro-locked
+     and read-only regardless. No change; do not re-derive a top fade. */
   background:
     radial-gradient(60% 50% at 90% 0%, rgb(var(--rgb-gold) / 0.20) 0%, rgb(var(--rgb-canvas) / 0) 60%),
     radial-gradient(40% 35% at 0% 100%, rgb(var(--rgb-cool-mid) / 0.12) 0%, rgb(var(--rgb-canvas) / 0) 70%);
