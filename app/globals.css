@@ -1888,7 +1888,20 @@ html.dark .lit-windows {
   contain-intrinsic-size: auto 700px;
 }
 
-/* spectral refractive rim — soft-blue on the cool side → clear → warm */
+/* Spectral refractive rim — warm-bright on the lit side → clear → warm.
+   UP-19 (ui-polish 2026-08-01): the lit stop used to be `rgb(150 188 214 / 0.85)`,
+   a soft-blue meant to read as glass dispersion. On the golden-hour LIGHT surface
+   it composited to ~rgb(164,195,215) — the audit pixel-sampled 188,206,221 — an
+   off-palette cool edge on every glass card in the estate. DARK never had the
+   problem because its own rule (see `html.dark .glass-card::before`) already
+   carries the same hue at 0.4 instead of 0.85, where it reads warm-neutral.
+   The lit stop is now the warm cream that rule ALREADY uses, so no new colour
+   enters the file and the dispersion story survives as a warm-to-warm sweep.
+   NOTE the scope, which the finding did not: `.glass-card` is worn by
+   CaseStudyCard, ProjectCard, CertCard and RunwayIdentity — this is an
+   estate-wide edge, not a /certificates one. Decorative: the rim is a 1px
+   masked inset ring with no text on it (border-box edge; the nearest ink is the
+   card's own padding away). Light only; dark is byte-untouched. */
 .glass-card::before {
   content: '';
   position: absolute;
@@ -1896,7 +1909,7 @@ html.dark .lit-windows {
   border-radius: inherit;
   padding: 1px;
   background: linear-gradient(140deg,
-    rgb(150 188 214 / 0.85) 0%, rgb(255 255 255 / 0.6) 26%,
+    rgb(255 244 224 / 0.85) 0%, rgb(255 255 255 / 0.6) 26%,
     rgb(255 255 255 / 0.08) 54%, rgb(255 232 200 / 0.62) 100%);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
