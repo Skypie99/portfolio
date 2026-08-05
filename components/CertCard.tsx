@@ -65,6 +65,23 @@ export function CertCard({ certificate: c }: { certificate: Certificate }) {
               'radial-gradient(60% 60% at 50% 36%, rgb(var(--rgb-paper-warm)) 0%, rgb(var(--rgb-paper-lit)) 55%, rgb(var(--rgb-paper-edge)) 100%)',
           }}
         >
+          {/* UP-18 (ui-polish 2026-08-01) — DO NOT "fix" the U-M and
+              DeepLearning.AI badges from here. Their words are cut mid-letter
+              INSIDE THE SOURCE FILES: both are colour-type-2 PNGs with no alpha,
+              full-bleed, and their own pixels read "…mming for Everybod…" /
+              "…r Everyone". `object-contain` below is already correct and shows
+              the whole asset; there is nothing left to reveal.
+              Two candidate CSS cures were measured and both are dead ends:
+              `object-cover` is PIXEL-EQUIVALENT here (every asset is square and
+              the padding box is square, so cover scale == contain scale — 0
+              pixels differ above AA rounding), and `object-position` cannot
+              recover pixels the file does not contain. The real fix is new
+              source art — NEEDS-SKY-ASSET, tracked in the existing S10/L3-05
+              badge lane (design-reviews/uplift/2026-07-06_P4_CoverageSweep.md).
+              Note the differentiator is NOT the 500x500 size the audit blamed:
+              five healthy Anthropic badges are also 500x500. It is that the
+              seven healthy badges carry a transparent alpha channel with zero
+              content on any edge, and these two are opaque and full-bleed. */}
           <BadgeImage
             src={c.badgeImage.src}
             alt={c.badgeImage.alt}
