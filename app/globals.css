@@ -347,7 +347,30 @@
    ================================================================== */
 html.dark {
   --rgb-canvas:       21 25 26;      /* warm near-black, faint teal */
-  --rgb-canvas-alt:   26 31 32;
+  /* UP-20 (ui-polish 2026-08-01) — alternating-band rhythm, WARMED not LIFTED.
+     `.world-surface-alt` composites this at alpha 0.68 over the same world as
+     `.world-surface`, so the world cancels and the bands differ by exactly
+     0.68 x (alt - canvas). At the old 26 31 32 that was (3.4, 4.1, 4.1): a
+     near-neutral 6.7-unit step, which is why about/certificates/footers read as
+     one slab in dark while light separates by ~14 warm units.
+     The audit prescribed lifting this "~8-10 luminance points". THAT IS NOT
+     SPENDABLE, and it was measured rather than argued: ink-contrast.test.ts:73
+     pins a pixel-measured worst backdrop for this very surface, [89,74,57],
+     where the guard-pinned `--rgb-accent-ink` sits at 4.6395:1 against a 4.5
+     floor — 0.14 of headroom. A uniform lift moves that backdrop by 0.68 per
+     step and takes the pair to 4.4935 at +3, 4.2608 at +8 and 4.1713 at +12.
+     The live candidate sweep agrees: +12 introduced 11 new sub-floor pairs.
+     So the separation is bought in HUE, where contrast is nearly free, instead
+     of in LIGHTNESS, where it is not. 34 28 22 is warm (R-B +12) against a
+     canvas that is cool (R-B -5), a 17-unit chromatic step that closely matches
+     LIGHT's own 14-unit one — and it is very slightly DARKER overall, so the
+     binding pair IMPROVES to ~4.66:1 and both `bg-warm-white` hover consumers
+     (Button ghost, CredentialBadge) go 13.5 -> 13.65:1.
+     Honest limit: this delivers ~3 luminance points, not the 8-10 asked for.
+     Nothing can deliver those without breaking the floor. Whether the warm turn
+     reads on a real OLED panel is an eye question, not a measurable one — it is
+     on the device list. Revocable by this one triplet. */
+  --rgb-canvas-alt:   34 28 22;
   --rgb-surface:      30 36 38;
   --rgb-surface-warm: 38 31 27;
   --rgb-surface-mid:  41 48 51;      /* raised panel — clearly above canvas(21 25 26)/canvas-alt(26 31 32) so dark panels read as designed depth, not a flat invert */
