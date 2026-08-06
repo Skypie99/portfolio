@@ -61,7 +61,29 @@ const TYPE_SPECIMENS: { sample: string; sampleClass: string; family: string; rol
   },
   {
     sample: 'LABELS & METADATA',
-    sampleClass: 'font-mono text-label tracking-label uppercase text-text-meta',
+    // UP-42 (ui-polish 2026-08-01) — the row read as a paste error: measured, its
+    // specimen and its caption rendered at the SAME ink token (rgb(84,100,93)
+    // light / rgb(159,176,169) dark) one pixel apart (12px over 11px, size ratio
+    // 1.091 against rows 1-2's 1.545 and 3.551). The ink is the half that was
+    // free, and it is the half that carries the collapse: near-black against the
+    // caption's ink-meta separates specimen from caption by weight rather than by
+    // size. Paint-sampled against the real translucent world-surface behind it
+    // (glyphs painted transparent, occlusion-checked points): 5.31-5.36:1 ->
+    // 11.40-11.82:1 light, 7.13-7.29:1 -> 12.00-13.72:1 dark, against a 4.5 bar.
+    // NOT a new pair - the h2 26px above this list already paints --rgb-ink on
+    // this same section, as does the closer link two sections down.
+    //
+    // The audit's other half - a "real display step, ~18-22px" - is NOT taken,
+    // and this is a Sky fork, not an oversight. Two recorded intents block it.
+    // (1) C-88 immediately above records, for THIS array, that a specimen renders
+    // at its face's REAL working size; measured, 180 of the estate's 182 font-mono
+    // call sites set 11-12px (the lone 24px one is NumberedStep's numeral, not a
+    // label). (2) Sky's byte-locked prose one section ABOVE this block - the "##
+    // The type" copy this specimen exists to demonstrate - says DM Mono "handles
+    // the small uppercase labels and the metadata"; at 19px the "small" specimen
+    // would out-size the body specimen (17px) and invert the page's own
+    // descending 39 / 17 / 12 order. Both forms are captured in receipts/p8/.
+    sampleClass: 'font-mono text-label tracking-label uppercase text-near-black',
     family: 'DM Mono',
     role: 'labels & metadata',
   },
