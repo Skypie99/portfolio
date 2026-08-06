@@ -90,6 +90,21 @@ export function GalleryWall({ deliverables }: { deliverables: Deliverable[] }) {
         {hung.map((d, i) => {
           // Row 01 = frontispiece (image-left, parity-exempt); 02 left, then
           // alternate: 03 right, 04 left, 05 right, 06 left.
+          //
+          // THE DOUBLED LEFT AT 01+02 IS THE DESIGN, NOT AN OFF-BY-ONE. Recorded
+          // here with its authority because a later audit (ui-polish UP-41) read
+          // it as "the zig-zag starts one row late" and proposed flipping 02.
+          // R4/P03's pitch specs the hang verbatim: "THE ALTERNATION RULE: row 01
+          // (the featured work) anchors the wall image-left and is exempt from
+          // parity — it is the frontispiece; alternation begins at 02
+          // (image-left) and flips each row after (03 image-right, 04 left, 05
+          // right, 06 left)." The exemption is not incidental: P03's own
+          // adversarial pass ADDED it ("the alternation rule defined incl. the
+          // featured row-01 exemption", pitch.md SKEPTIC RECORD).
+          // Measured live at 1440, two independent paths agreeing: L L R L R L.
+          // Below lg there is no alternation to start — the md band's own
+          // horizontal grammar hangs every card media-left — so the question
+          // only exists at lg+.
           const side: 'left' | 'right' = i === 0 ? 'left' : i % 2 === 1 ? 'left' : 'right';
           return (
             <li key={d.id}>
