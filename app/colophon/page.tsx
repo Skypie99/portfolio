@@ -169,13 +169,62 @@ export default function ColophonPage() {
           content/rounds.json (build-gated, append-only). */}
       <CalibrationRecord rounds={rounds} />
 
-      {/* Closer — cross-link to the accessibility statement, plus back home.
+      {/* Closer — back home, then the cross-link to the accessibility statement.
           R4/BP7 surface flip (the pitch's one DISPLACES): the calibration
           section above now holds world-surface-alt, so the closer flips to
           world-surface — the world-surface alternation stays true — and
-          adopts the full py-32 lg:py-50 rhythm. */}
+          adopts the full py-32 lg:py-50 rhythm.
+
+          UP-28 (ui-polish 2026-08-01): the two links were SOURCE-reordered so
+          the exit comes first, which is the order /blog and the 404 already
+          render. It is a reorder and nothing else — the container class, both
+          class strings and both link strings are byte-identical, and it
+          measures 0.00px on every axis (container, section and document height,
+          and the 20.00px inter-link gap) at 320/375/414/640/700/768/800/900/
+          1024/1280/1440 in both themes, with and without reduced motion. The
+          zero is forced rather than lucky: flex items never margin-collapse, so
+          the container's height is the same sum in either order. Any future
+          revisit must reorder the SOURCE too — an `order-*` or
+          `flex-row-reverse` flip would leave the tab order pointing the other
+          way from the eye.
+
+          What was measured and REFUSED: adopting /blog's container grammar to
+          get the audit's "desktop = back left, forward right". /blog's pair
+          needs 318.22px to share a row and /colophon's needs 455.95px (Sky's
+          forward string is 312.06px of ink against /blog's 164.16px), so the
+          same class renders row at 640–764, STACKS again at 768 where the md
+          sidebar narrows the column to 424px, then returns to row at 800 with
+          0.05px of slack. A reader widening the window would watch the closer
+          flip twice. An `lg:`-gated row reaches the same destination without
+          the dip and is costed for Sky rather than taken here.
+
+          The ordering rule this follows is recorded in the build train's
+          DECISIONS §P, not asserted here: no source file in this estate states
+          an order doctrine, and inventing one in a comment would manufacture
+          authority for the next window. */}
       <section className="px-gutter py-32 lg:py-50 world-surface border-t border-border-decorative">
         <div className="max-w-content mx-auto flex flex-col items-start gap-8">
+          <Link
+            href="/"
+            /* C-89: match the padded-tap idiom the accessibility-statement closer
+               BELOW already carries (px/py + cancelling negative margins → a ≥24px
+               box, zero layout shift). C-69-family: keyboard focus gets the same
+               ink shift + arrow glide as hover.
+               (The word was "above" until UP-28 put this link first. The referent
+               is and always was this page's own sibling link — /accessibility's
+               back link carries no padded-tap idiom at all and measures 15.39px,
+               and the commit that wrote this comment, 8b087f2, never touched that
+               file.) */
+            className="group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-meta tracking-label uppercase text-text-meta hover:text-accent-text focus-visible:text-accent-text transition-colors duration-fast ease-out"
+          >
+            <span
+              aria-hidden="true"
+              className="inline-block transition-transform duration-base ease-gh-glide group-hover:-translate-x-1 group-focus-visible:-translate-x-1"
+            >
+              {'←'}
+            </span>
+            Back to home
+          </Link>
           <Link
             href="/accessibility/"
             className="group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
@@ -187,22 +236,6 @@ export default function ColophonPage() {
             >
               {'→'}
             </span>
-          </Link>
-          <Link
-            href="/"
-            /* C-89: match the padded-tap idiom the accessibility-statement closer
-               above already carries (px/py + cancelling negative margins → a ≥24px
-               box, zero layout shift). C-69-family: keyboard focus gets the same
-               ink shift + arrow glide as hover. */
-            className="group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-meta tracking-label uppercase text-text-meta hover:text-accent-text focus-visible:text-accent-text transition-colors duration-fast ease-out"
-          >
-            <span
-              aria-hidden="true"
-              className="inline-block transition-transform duration-base ease-gh-glide group-hover:-translate-x-1 group-focus-visible:-translate-x-1"
-            >
-              {'←'}
-            </span>
-            Back to home
           </Link>
         </div>
       </section>
