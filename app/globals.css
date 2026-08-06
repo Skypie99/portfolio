@@ -2900,9 +2900,13 @@ html.dark .runway-identity-chip {
 }
 
 /* ── Intro scroll-continuation cue (T6 / W2-01) ─────────────────────────────
-   Whisper-weight orientation glyph — the same "Scroll ↓" affordance the Hero
+   Whisper-weight orientation glyph — the same "Scroll" affordance the Hero
    uses one viewport later, surfaced INSIDE the pinned intro so a first-timer
    knows the scroll is the skip and that there's a destination below the film.
+   COMMENT-TRUTH (ui-polish UP-39): this said "Scroll ↓" and went stale when the
+   2026-07-19 art pass swapped the arrow for a drawn chevron. The WORD is shared,
+   the glyph and the colour deliberately are not — see IntroScrollCue.tsx, which
+   carries the measurements and MOTION_SYSTEM §15's record.
    A fixed sibling of the locked intro (never a child of components/cinematic).
    Decorative only: aria-hidden, pointer-events:none, no tab stop — the sr-only
    skip-link stays the keyboard truth. Same fixed layer as .runway-identity

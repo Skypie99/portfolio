@@ -7,10 +7,18 @@ import { useEffect, useRef } from 'react';
  *
  * The locked cinematic runs a long pinned scrub with zero orientation inside
  * it: a first-timer can't tell the scroll IS the skip, or that there's a
- * destination below the film. This surfaces the SAME "Scroll ↓" affordance the
+ * destination below the film. This surfaces the SAME "Scroll" affordance the
  * Hero already uses one viewport later (components/Hero.tsx) INSIDE the intro,
  * at the same weight and grammar — the only honest lever inside the locked-film
  * fence (the film's imagery, timing, and 380vh budget are untouched).
+ *
+ * COMMENT-TRUTH (ui-polish UP-39): this docblock said "the SAME 'Scroll ↓'
+ * affordance" and that went stale when the 2026-07-19 work-of-art pass replaced
+ * the ↓ with the drawn chevron below. The WORD is shared; the glyph deliberately
+ * is not, and neither is the colour (this cue is bone over the theme-invariant
+ * film, the Hero's arrow is text-wa-teal on a themed surface). MOTION_SYSTEM §15
+ * already treats them as two objects, and it reconciled a sibling stale claim in
+ * this same component once before ("0.9" described the Hero's cue, not this one).
  *
  * It is a fixed SIBLING of <CinematicDesert/>, never a child — it does not
  * touch components/cinematic/** or the T3-owned observers. Decorative
@@ -80,8 +88,30 @@ export function IntroScrollCue() {
     <div ref={ref} aria-hidden="true" className="intro-scroll-cue">
       <span className="intro-scroll-cue-glyph inline-flex flex-col items-center gap-1.5 font-mono text-meta tracking-label uppercase">
         <span>Scroll</span>
-        {/* drawn chevron (art pass) — optical, not typographic; same 1rem line
-            box as the font glyph it replaces → zero layout shift */}
+        {/* drawn chevron (art pass) — optical, not typographic. Ratified
+            2026-07-19 (Sky-directed work-of-art pass, 1393d40) and recorded in
+            MOTION_SYSTEM §15: "cue warms cool-sage → bone with a drawn chevron".
+            KEEP IT.
+
+            COMMENT-TRUTH (ui-polish UP-39): the old justification here —
+            "same 1rem line box as the font glyph it replaces → zero layout
+            shift" — is MEASURABLY FALSE, and is corrected rather than deleted
+            so the decision keeps its reason and the reason keeps its numbers.
+            An <svg> is a REPLACED inline element sized by its own width/height
+            attrs (12), so `leading-none`'s 16px line box never applies to it:
+            this span measures 12.000 x 12.000 where the ↓ it replaced measures
+            12.141 x 16.000 (byte-identical class list, injected-clone control,
+            identical at all 19 widths 320–2560, confirmed by a second
+            independent rig). Restoring the arrow would GROW the cue root
+            52.094 → 56.094px, +4.000px (+7.68%). The swap is cheap and
+            reversible, but it is not free in either direction.
+
+            UP-39's premise was also refuted at the same time: the audit calls
+            these "two glyph styles within one viewport", but under real motion
+            the two cues are NEVER co-visible — 0 of 246 samples across both
+            themes at 375/768/1440, because this cue retires before the Hero's
+            arrow can enter the viewport (the Hero's ↓ sits 1045–1422px below
+            the content wrapper's own top edge, on a 900px viewport). */}
         <span className="text-[1rem] leading-none">
           <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
             <path
