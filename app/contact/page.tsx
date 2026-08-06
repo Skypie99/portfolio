@@ -6,6 +6,7 @@ import { PLATFORM_LABELS } from '@/components/Footer';
 import { SettleHeading } from '@/components/HeroSettle';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { Reveal } from '@/components/Reveal';
+import { RunwayIdentity } from '@/components/RunwayIdentity';
 import { cn } from '@/lib/cn';
 import { getProfile } from '@/lib/content';
 import { OG_CARD } from '@/lib/og';
@@ -55,6 +56,11 @@ export default function ContactPage() {
 
   return (
     <>
+      {/* UP-38: the mobile brand chip. Measured, this route rendered ZERO
+          identity -- visible OR in the a11y tree -- before the footer at
+          320/375/414. Same mark home's runway uses; hidden from md up, where
+          the rail starts signing. */}
+      <RunwayIdentity variant="page" />
       {/* Page header + primary CTA */}
       <section data-band-anchor className="relative isolate overflow-hidden px-gutter py-24 lg:py-32 world-surface">
         {/* golden-hour light continuity — the invitation reads warm, matching

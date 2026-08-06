@@ -5,6 +5,7 @@ import { EmptyState } from '@/components/EmptyState';
 import { GalleryWall } from '@/components/GalleryWall';
 import { SettleHeading } from '@/components/HeroSettle';
 import { ParallaxWash } from '@/components/ParallaxWash';
+import { RunwayIdentity } from '@/components/RunwayIdentity';
 import { cn } from '@/lib/cn';
 import { getDeliverables, getProfile } from '@/lib/content';
 import { OG_CARD } from '@/lib/og';
@@ -52,6 +53,11 @@ export default function WorkIndexPage() {
 
   return (
     <>
+      {/* UP-38: the mobile brand chip. Measured, this route rendered ZERO
+          identity -- visible OR in the a11y tree -- before the footer at
+          320/375/414. Same mark home's runway uses; hidden from md up, where
+          the rail starts signing. */}
+      <RunwayIdentity variant="page" />
       {/* Page header */}
       <section
         className={cn(

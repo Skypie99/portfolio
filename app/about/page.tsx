@@ -6,6 +6,7 @@ import { ContactEmail } from '@/components/ContactEmail';
 import { NumberedStep } from '@/components/NumberedStep';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { Reveal } from '@/components/Reveal';
+import { RunwayIdentity } from '@/components/RunwayIdentity';
 import { cn } from '@/lib/cn';
 import { getDeliverables, getProfile } from '@/lib/content';
 import { OG_CARD } from '@/lib/og';
@@ -59,6 +60,11 @@ export default function AboutPage() {
 
   return (
     <>
+      {/* UP-38: the mobile brand chip. Measured, this route rendered ZERO
+          identity -- visible OR in the a11y tree -- before the footer at
+          320/375/414. Same mark home's runway uses; hidden from md up, where
+          the rail starts signing. */}
+      <RunwayIdentity variant="page" />
       {/* UP-10: the four in-page section bands below carry ids so the rail's
           "On this page" index can point at THIS page's sections instead of the
           homepage's. Attribute-only — every heading string, class and band is

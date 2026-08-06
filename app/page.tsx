@@ -14,6 +14,7 @@ import { ProjectCard } from '@/components/ProjectCard';
 import { RailInert } from '@/components/RailInert';
 import { Reveal } from '@/components/Reveal';
 import { RunwayIdentity } from '@/components/RunwayIdentity';
+import { RunwayIdentityRelease } from '@/components/RunwayIdentityRelease';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getCertificates, getDeliverables, getProfile } from '@/lib/content';
@@ -136,6 +137,10 @@ export default function HomePage() {
           who-this-is registers at first paint (L1-01 / S17). Fixed sibling of
           the intro, never a child of it; the locked intro is untouched. ── */}
       <RunwayIdentity name="Sky Halisky" roleLabel="AI Builder" />
+      {/* The retirement lives HERE, not inside RunwayIdentity, because it is a
+          client component and a static import would ship it to every route that
+          mounts the mark -- proven in the built chunks, not assumed (UP-38). */}
+      <RunwayIdentityRelease />
 
       {/* ── Cinematic intro — 2.5D GSAP camera-push desert (placeholder phase) ─ */}
       <CinematicDesert />

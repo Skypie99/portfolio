@@ -6,6 +6,7 @@ import { SettleHeading } from '@/components/HeroSettle';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { Reveal } from '@/components/Reveal';
 import { TagPill } from '@/components/TagPill';
+import { RunwayIdentity } from '@/components/RunwayIdentity';
 import { cn } from '@/lib/cn';
 import { getBlogPosts, getProfile } from '@/lib/content';
 import { bindSeparatorDash, bindSoloLetters } from '@/lib/markdown';
@@ -55,6 +56,11 @@ export default function BlogIndexPage() {
 
   return (
     <>
+      {/* UP-38: the mobile brand chip. Measured, this route rendered ZERO
+          identity -- visible OR in the a11y tree -- before the footer at
+          320/375/414. Same mark home's runway uses; hidden from md up, where
+          the rail starts signing. */}
+      <RunwayIdentity variant="page" />
       {/* Page header */}
       <section
         className={cn(

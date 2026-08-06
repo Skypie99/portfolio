@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { CalibrationRecord } from '@/components/CalibrationRecord';
 import { SettleHeading } from '@/components/HeroSettle';
 import { renderMarkdownProse } from '@/components/MarkdownProse';
+import { RunwayIdentity } from '@/components/RunwayIdentity';
 import { cn } from '@/lib/cn';
 import { getColophon, getProfile, getRounds } from '@/lib/content';
 import { bindSeparatorDash, bindSoloLetters } from '@/lib/markdown';
@@ -106,6 +107,11 @@ export default function ColophonPage() {
 
   return (
     <>
+      {/* UP-38: the mobile brand chip. Measured, this route rendered ZERO
+          identity -- visible OR in the a11y tree -- before the footer at
+          320/375/414. Same mark home's runway uses; hidden from md up, where
+          the rail starts signing. */}
+      <RunwayIdentity variant="page" />
       {/* Page header — eyebrow + display title + summary (matches /about, /accessibility) */}
       <section data-band-anchor className="px-gutter py-24 lg:py-32 world-surface">
         <div className="max-w-content mx-auto">

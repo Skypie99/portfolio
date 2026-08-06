@@ -5,6 +5,7 @@ import { AnimatedCertGrid } from '@/components/AnimatedCertGrid';
 import { EmptyState } from '@/components/EmptyState';
 import { SettleHeading } from '@/components/HeroSettle';
 import { ParallaxWash } from '@/components/ParallaxWash';
+import { RunwayIdentity } from '@/components/RunwayIdentity';
 import { cn } from '@/lib/cn';
 import { getCertificates, getProfile } from '@/lib/content';
 import { OG_CARD } from '@/lib/og';
@@ -57,6 +58,11 @@ export default function CertificatesPage() {
 
   return (
     <>
+      {/* UP-38: the mobile brand chip. Measured, this route rendered ZERO
+          identity -- visible OR in the a11y tree -- before the footer at
+          320/375/414. Same mark home's runway uses; hidden from md up, where
+          the rail starts signing. */}
+      <RunwayIdentity variant="page" />
       {/* Page header */}
       <section className="relative isolate overflow-hidden px-gutter py-24 lg:py-32 world-surface">
         {/* golden-hour light continuity (wow 2026-06-04) — the header is lit

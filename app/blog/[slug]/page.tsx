@@ -8,6 +8,7 @@ import { SettleHeading } from '@/components/HeroSettle';
 import { renderMarkdownProse } from '@/components/MarkdownProse';
 import { Reveal } from '@/components/Reveal';
 import { TagPill } from '@/components/TagPill';
+import { RunwayIdentity } from '@/components/RunwayIdentity';
 import { cn } from '@/lib/cn';
 import { getAllBlogPostSlugs, getBlogPosts, getDeliverables, getProfile } from '@/lib/content';
 import { bindSeparatorDash, bindSoloLetters } from '@/lib/markdown';
@@ -218,6 +219,11 @@ export default async function BlogPostPage({
 
   return (
     <>
+      {/* UP-38: the mobile brand chip. Measured, this route rendered ZERO
+          identity -- visible OR in the a11y tree -- before the footer at
+          320/375/414. Same mark home's runway uses; hidden from md up, where
+          the rail starts signing. */}
+      <RunwayIdentity variant="page" />
       {/* C-94: BlogPosting JSON-LD names the author at the crawler layer (mirrors
           the Person schema in the root layout + the CreativeWork on case studies),
           quietly serving the byline signal on a shared link. */}

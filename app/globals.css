@@ -2843,6 +2843,15 @@ html.dark ::selection {
     top: max(1.15rem, env(safe-area-inset-top));
     left: max(1.15rem, env(safe-area-inset-left));
   }
+  /* UP-38: the SUBPAGE mount stops exactly where the desktop rail starts
+     signing. Measured on both sides of the boundary rather than assumed —
+     rail display:none at 375 and 767, flex at 768; hamburger flex at 375/767,
+     none at 768. Above this the rail carries the wordmark, so a chip here
+     would be the estate's second signature on one screen. Same constraint
+     /work/[slug]'s byline chip already records for itself (FT-2/W3-02). */
+  .runway-identity--page {
+    display: none;
+  }
 }
 /* Handoff: once the post-runway content intersects, RunwayIdentityRelease sets
    [data-runway-done] and the mark retires. The global reduced-motion rule
