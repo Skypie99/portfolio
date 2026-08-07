@@ -63,8 +63,22 @@ const config: Config = {
 
         // ── Legacy names → roles (existing classes flip for free) ───
         // Retire in a later semantic-rename cleanup once components migrate.
-        cream:          'rgb(var(--rgb-canvas) / <alpha-value>)',
-        'warm-white':   'rgb(var(--rgb-canvas-alt) / <alpha-value>)',
+        //
+        // UP-06 / P10 (2026-08-06) migrated the call sites of FOUR families to
+        // the canonical names — charcoal, cream, warm-white and wa-teal*. Their
+        // entries below STAY, and deliberately: the showcase-owned files still
+        // carry skipped call sites (app/work/[slug]/page.tsx x3 text-charcoal),
+        // so deleting these keys would emit no rule and silently drop the paint.
+        // Retire each one only after the showcase train merges and those sites
+        // are migrated. The other legacy families here were NOT in P10's scope
+        // and are still live vocabulary — see DECISIONS §P `P10-CENSUS`.
+        //
+        // ⚠ TWO OF THE wa-teal ROWS DO NOT FOLLOW THE `wa-teal-* → cool-*`
+        // PATTERN. `cool-pale` and `cool-wash` are registered nowhere, so
+        // following the pattern emits nothing and the colour vanishes with no
+        // type or test failure. The mapping is per-row, below, not a rule.
+        cream:          'rgb(var(--rgb-canvas) / <alpha-value>)',      // legacy alias — canonical: canvas; call sites migrated by P10; retire after showcase merge
+        'warm-white':   'rgb(var(--rgb-canvas-alt) / <alpha-value>)',  // legacy alias — canonical: canvas-alt; call sites migrated by P10; retire after showcase merge
         blush:          'rgb(var(--rgb-surface) / <alpha-value>)',
         'peach-cream':  'rgb(var(--rgb-surface-warm) / <alpha-value>)',
         amber:          'rgb(var(--rgb-accent-soft) / <alpha-value>)',
@@ -74,14 +88,14 @@ const config: Config = {
         'stone-strong': 'rgb(var(--rgb-line-strong) / <alpha-value>)',
         pebble:         'rgb(var(--rgb-pebble) / <alpha-value>)',
         'sage-text':    'rgb(var(--rgb-ink-meta) / <alpha-value>)',
-        charcoal:       'rgb(var(--rgb-ink-muted) / <alpha-value>)',
+        charcoal:       'rgb(var(--rgb-ink-muted) / <alpha-value>)',  // legacy alias — canonical: ink-muted; call sites migrated by P10; retire after showcase merge
         'near-black':   'rgb(var(--rgb-ink) / <alpha-value>)',
-        'wa-teal-deep': 'rgb(var(--rgb-cool-deep) / <alpha-value>)',
-        'wa-teal':      'rgb(var(--rgb-cool) / <alpha-value>)',
-        'wa-teal-mid':  'rgb(var(--rgb-cool-mid) / <alpha-value>)',
-        'wa-teal-soft': 'rgb(var(--rgb-cool-soft) / <alpha-value>)',
-        'wa-teal-pale': 'rgb(var(--rgb-panel-cool) / <alpha-value>)',
-        'wa-teal-wash': 'rgb(var(--rgb-wash-cool) / <alpha-value>)',
+        'wa-teal-deep': 'rgb(var(--rgb-cool-deep) / <alpha-value>)',  // legacy alias — canonical: cool-deep; call sites migrated by P10; retire after showcase merge
+        'wa-teal':      'rgb(var(--rgb-cool) / <alpha-value>)',  // legacy alias — canonical: cool; call sites migrated by P10; retire after showcase merge
+        'wa-teal-mid':  'rgb(var(--rgb-cool-mid) / <alpha-value>)',  // legacy alias — canonical: cool-mid; call sites migrated by P10; retire after showcase merge
+        'wa-teal-soft': 'rgb(var(--rgb-cool-soft) / <alpha-value>)',  // legacy alias — canonical: cool-soft; call sites migrated by P10; retire after showcase merge
+        'wa-teal-pale': 'rgb(var(--rgb-panel-cool) / <alpha-value>)',  // legacy alias — canonical: panel-cool  ⚠ NOT cool-pale; call sites migrated by P10; retire after showcase merge
+        'wa-teal-wash': 'rgb(var(--rgb-wash-cool) / <alpha-value>)',  // legacy alias — canonical: wash-cool  ⚠ NOT cool-wash; call sites migrated by P10; retire after showcase merge
         'wa-rose':      'rgb(var(--rgb-rose) / <alpha-value>)',
         'wa-rose-mid':  'rgb(var(--rgb-rose) / <alpha-value>)',
         'wa-rose-soft': 'rgb(var(--rgb-cool-soft) / <alpha-value>)',
