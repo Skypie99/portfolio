@@ -5,6 +5,14 @@
 #
 # Triggers:
 #   - pull_request -> main: gate every PR before merge.
+#   - push -> main: the workflow actually in use. This repo is merged locally
+#     and pushed straight to main, so the PR trigger never fires and only one
+#     stale branch has ever matched cycle/** — CI was, in practice, dormant
+#     while deploy.yml shipped every push to production. This does NOT gate the
+#     deploy (deploy.yml runs independently on the same push); it means a broken
+#     main is REPORTED rather than unnoticed. Making the deploy depend on CI is a
+#     policy change that can block a push, so it is Sky's call, not this fix's —
+#     see DECISIONS §P `CI-DEPLOY-UNGATED`.
 #   - push -> cycle/*: catch regressions during in-flight cycle work.
 #
 # Concurrency:
@@ -18,6 +26,7 @@ on:
     branches: [main]
   push:
     branches:
+      - main
       - "cycle/**"
 
 permissions:
@@ -62,6 +71,13 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
+      # Build FIRST. The build-dependent guards (static-integrity.test.ts and
+      # section-nav-anchors.test.ts) read ./out/ and deliberately SKIP when it is
+      # absent, so running `npm run test` on a bare checkout executed neither —
+      # every link-resolution, share-card, reveal-floor, new-tab and image-asset
+      # check silently sat out CI and only ever ran on someone's laptop. The skip
+      # was labeled, not silent, but nothing failed when it fired.
+      - run: npm run build
       - run: npm run test
 
   build:
