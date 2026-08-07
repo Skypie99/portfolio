@@ -56,7 +56,7 @@ const TYPE_SPECIMENS: { sample: string; sampleClass: string; family: string; rol
     // C-88: the block is titled "the type, set live" — the 'body' specimen must
     // render at the real long-form body size (text-prose, 17px), not the lead
     // tier (text-step-1, 20px) it was mistakenly set at.
-    sampleClass: 'font-sans font-light text-prose text-charcoal',
+    sampleClass: 'font-sans font-light text-prose text-ink-muted',
     family: 'DM Sans',
     role: 'body',
   },
@@ -125,7 +125,7 @@ export default function ColophonPage() {
           <SettleHeading className="font-serif font-light text-display ember max-w-3xl mb-16 text-balance">
             {bindSeparatorDash(bindSoloLetters('How this was made.'))}
           </SettleHeading>
-          <p className="font-sans font-light text-step-1 text-charcoal max-w-measure-wide text-pretty">
+          <p className="font-sans font-light text-step-1 text-ink-muted max-w-measure-wide text-pretty">
             The stack, the type, the world, and the quiet systems behind it.
           </p>
         </div>

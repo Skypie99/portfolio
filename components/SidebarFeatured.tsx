@@ -52,7 +52,7 @@ export function SidebarFeatured({ featured }: { featured: Deliverable | null }) 
       <span className="link-draw inline-block font-serif font-normal text-display-s leading-tight">
         {featured.title}
       </span>
-      <span className="rail-trim font-sans text-body-sm text-charcoal">
+      <span className="rail-trim font-sans text-body-sm text-ink-muted">
         {featured.role}
       </span>
       <span

@@ -21,7 +21,7 @@ export function EmptyState({ title, note }: EmptyStateProps) {
       <p className="font-serif font-light text-display-s text-near-black leading-[1.2]">
         {title}
       </p>
-      <p className="font-sans font-light text-prose text-charcoal leading-[1.65] text-pretty">
+      <p className="font-sans font-light text-prose text-ink-muted leading-[1.65] text-pretty">
         {note}
       </p>
     </Reveal>

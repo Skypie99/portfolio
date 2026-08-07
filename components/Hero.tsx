@@ -108,7 +108,7 @@ export function Hero({
                 {name}
               </p>
               {positioning && (
-                <p className="font-sans font-light text-body-sm leading-snug text-charcoal text-pretty max-w-[44ch]">
+                <p className="font-sans font-light text-body-sm leading-snug text-ink-muted text-pretty max-w-[44ch]">
                   {positioning}
                 </p>
               )}
@@ -142,7 +142,7 @@ export function Hero({
 
         <p
           className={cn(
-            'font-sans font-light text-step-1 text-charcoal',
+            'font-sans font-light text-step-1 text-ink-muted',
             'max-w-[520px]',
             'mb-16',
             'text-pretty',

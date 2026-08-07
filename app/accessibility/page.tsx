@@ -86,7 +86,7 @@ export default function AccessibilityPage() {
           <SettleHeading className="font-serif font-light text-display ember max-w-3xl mb-16 text-balance">
             {bindSeparatorDash(bindSoloLetters('Accessibility is where I begin.'))}
           </SettleHeading>
-          <p className="font-sans font-light text-step-1 text-charcoal max-w-measure-wide text-pretty">
+          <p className="font-sans font-light text-step-1 text-ink-muted max-w-measure-wide text-pretty">
             Honest about what this site does for accessibility, and what it does not yet.
           </p>
         </div>
@@ -116,7 +116,7 @@ export default function AccessibilityPage() {
                   markdown string: the single site-wide inline parser has no RM-gating
                   syntax, so a markdown line would render for EVERYONE and invert it. */}
               {/* T9 — Sky's line (picked in-chat 2026-07-19, option 1 verbatim). */}
-              <p className="hidden motion-reduce:block font-sans font-light text-prose text-charcoal leading-[1.75] text-pretty">
+              <p className="hidden motion-reduce:block font-sans font-light text-prose text-ink-muted leading-[1.75] text-pretty">
                 You&apos;re reading this because your system asked for less motion.
                 The site listened — everything is already in place.
               </p>

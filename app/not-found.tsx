@@ -48,7 +48,7 @@ export default function NotFound() {
           </SettleHeading>
 
           <Reveal>
-            <p className="font-sans font-light text-prose text-charcoal max-w-[540px] mb-16 leading-[1.65] text-pretty">
+            <p className="font-sans font-light text-prose text-ink-muted max-w-[540px] mb-16 leading-[1.65] text-pretty">
               The page you{'’'}re looking for doesn{'’'}t exist — or it moved.
               The homepage is the best place to start, and the work index has
               every deliverable.
