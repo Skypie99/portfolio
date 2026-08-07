@@ -82,6 +82,7 @@ export function RunwayIdentity({
     >
       <span className="runway-identity-chip glass-card">
         <span aria-hidden="true" className="runway-identity-sun">
+          {/* UP-07 (ui-polish 2026-08-01): these hex are DELIBERATE and NOT tokenized — the mark rides the intro's fixed golden palette and must not theme-flip. See UI_SYSTEM.md "UI-polish pass (2026-08-01)". */}
           {/* the favicon's terracotta sun, cresting two clay horizon lines */}
           <svg width="16" height="16" viewBox="0 0 32 32" fill="none">
             <circle cx="16" cy="14.5" r="6.25" fill="#B35F40" />
