@@ -56,6 +56,11 @@ describe('cn() — custom color tokens (Cycle 11 regression)', () => {
 
   it('keeps bg-sand when followed by another non-conflicting bg', () => {
     // bg-sand and bg-cream are both custom colors; the last one should win.
+    // Deliberately still on the ALIAS after UP-06/P10 renamed the call sites:
+    // `cream` is registered in cn.ts's CUSTOM_COLOR_TOKENS, the canonical
+    // `canvas` is not (it resolves via tailwind-merge's default fallback). So
+    // swapping this to bg-canvas would quietly stop testing the registration
+    // this case exists to cover. Measured: both group identically, 30/30.
     const result = cn('bg-sand', 'bg-cream');
     expect(result).toBe('bg-cream');
   });

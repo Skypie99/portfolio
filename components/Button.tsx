@@ -48,20 +48,20 @@ const base =
   // (~4.3:1 contrast — meets WCAG normal-text minimum) instead of pebble
   // which would have failed contrast. Applies to native <button disabled>.
   'disabled:text-ink-muted disabled:opacity-50 ' +
-  'disabled:cursor-not-allowed disabled:hover:bg-cream disabled:hover:shadow-none disabled:hover:translate-y-0';
+  'disabled:cursor-not-allowed disabled:hover:bg-canvas disabled:hover:shadow-none disabled:hover:translate-y-0';
 
 const widthClasses = (full: boolean) =>
   full ? 'w-full' : 'w-full md:w-auto';
 
 const variants: Record<Variant, string> = {
   primary:
-    'bg-cream border-border-interactive ' +
+    'bg-canvas border-border-interactive ' +
     'hover:bg-blush hover:border-ink-muted ' +
     'active:bg-peach-cream',
   ghost:
     'bg-transparent border-border-interactive ' +
-    'hover:bg-warm-white hover:border-ink-muted ' +
-    // disabled ghost stays transparent (override the base's disabled:hover:bg-cream)
+    'hover:bg-canvas-alt hover:border-ink-muted ' +
+    // disabled ghost stays transparent (override the base's disabled:hover:bg-canvas)
     'disabled:hover:bg-transparent disabled:hover:border-border-interactive',
 };
 

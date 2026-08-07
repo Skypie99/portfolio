@@ -41,7 +41,7 @@ describe('Button', () => {
     // Custom class is applied…
     expect(el).toHaveClass('test-extra');
     // …and the base design-system classes are preserved.
-    expect(el).toHaveClass('bg-cream');
+    expect(el).toHaveClass('bg-canvas');
     expect(el).toHaveClass('rounded-pill');
     expect(el).toHaveClass('font-mono');
   });

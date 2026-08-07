@@ -133,7 +133,7 @@ export function HamburgerNav() {
           'fixed top-4 right-4 z-[90]',
           'inline-flex items-center justify-center',
           'h-11 w-11', // 44x44 hit area per Alex §3.5 option 1
-          'bg-cream/90 backdrop-blur-sm',
+          'bg-canvas/90 backdrop-blur-sm',
           'border border-border-decorative',
           'rounded-pill',
           'text-near-black hover:text-accent-primary',
@@ -197,13 +197,13 @@ export function HamburgerNav() {
               'fixed inset-0 z-[80]',
               // Fully opaque so the modal completely occludes the fixed
               // WorldBackdrop (z-index:-1) behind it. A translucent fill let the
-              // night-sky gradient bleed through — and `bg-cream/92` in fact
-              // generated NO rule at all (92 isn't a Tailwind opacity step), so
-              // the drawer rendered with no background and the world showed
-              // straight through the blur. `bg-cream` = --rgb-canvas, flipping
-              // cream (light) / near-black (dark) with the theme; gives the nav
-              // text a solid, full-AA backdrop.
-              'bg-cream',
+              // night-sky gradient bleed through — and the /92 opacity modifier
+              // it was tried with generated NO rule at all (92 isn't a Tailwind
+              // opacity step), so the drawer rendered with no background and the
+              // world showed straight through the blur. `bg-canvas` is the
+              // canvas token, flipping cream (light) / near-black (dark) with
+              // the theme; gives the nav text a solid, full-AA backdrop.
+              'bg-canvas',
               // L5-02 scroll floor: the dialog is the scroll container so the
               // whole column stays reachable at short viewport heights (iPhone
               // SE/8 class, 667/568 tall) and in landscape. Centering + padding

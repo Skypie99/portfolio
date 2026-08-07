@@ -364,8 +364,12 @@ html.dark {
      of in LIGHTNESS, where it is not. 34 28 22 is warm (R-B +12) against a
      canvas that is cool (R-B -5), a 17-unit chromatic step that closely matches
      LIGHT's own 14-unit one — and it is very slightly DARKER overall, so the
-     binding pair IMPROVES to ~4.66:1 and both `bg-warm-white` hover consumers
-     (Button ghost, CredentialBadge) go 13.5 -> 13.65:1.
+     binding pair IMPROVES to ~4.66:1 and both canvas-alt hover consumers go
+     13.5 -> 13.65:1: the Button ghost via `hover:bg-canvas-alt` (renamed from
+     `hover:bg-warm-white` by UP-06/P10 — same triplet), and CredentialBadge via
+     `--badge-bg-hover`, which tokens-phase2.css:88 sets to `var(--color-warm-white)`.
+     That CSS VARIABLE keeps its legacy name: P10 renamed class tokens only, so
+     grepping `warm-white` still finds the badge's route to this triplet.
      Honest limit: this delivers ~3 luminance points, not the 8-10 asked for.
      Nothing can deliver those without breaking the floor. Whether the warm turn
      reads on a real OLED panel is an eye question, not a measurable one — it is
