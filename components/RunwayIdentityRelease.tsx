@@ -44,7 +44,20 @@ export function RunwayIdentityRelease() {
           entry.isIntersecting && entry.intersectionRatio > 0,
         );
       },
-      { threshold: 0, rootMargin: '100000px 0px 0px 0px' },
+      {
+        // C-22 (2026-08-06) — see IntroScrollCue for the full account; this
+        // component had the identical defect for the identical reason, and the
+        // docblock above states the mechanism ("IO is not a scroll listener — it
+        // fires only at the boundary crossing") without drawing its consequence.
+        // Under reduced motion the wrapper is ALREADY intersecting at ratio 0 on
+        // mount, so the only boundary crossing happens before the visitor has
+        // scrolled; the ratio then grows without crossing anything and the
+        // `ratio > 0` gate is never re-asked. The mark stayed pinned over the
+        // sidebar wordmark for the whole page. Tiny multiple stops because the
+        // ratio is target-relative and tops out near 0.099 here.
+        threshold: [0, 0.001, 0.01, 0.05],
+        rootMargin: '100000px 0px 0px 0px',
+      },
     );
     io.observe(content);
 

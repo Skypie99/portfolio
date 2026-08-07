@@ -135,7 +135,7 @@ describe('IntroScrollCue — U2 retirement geometry (RM-gated early margin)', ()
     addContentWrapper();
     render(<IntroScrollCue />);
     expect(ioOptions?.rootMargin).toBe('100000px 0px 0px 0px');
-    expect(ioOptions?.threshold).toBe(0);
+    expect(ioOptions?.threshold).toEqual([0, 0.001, 0.01, 0.05]);
   });
 
   it('fires a viewport early for motion users (no-preference)', () => {
@@ -146,7 +146,7 @@ describe('IntroScrollCue — U2 retirement geometry (RM-gated early margin)', ()
     addContentWrapper();
     const { container } = render(<IntroScrollCue />);
     expect(ioOptions?.rootMargin).toBe('100000px 0px 100% 0px');
-    expect(ioOptions?.threshold).toBe(0);
+    expect(ioOptions?.threshold).toEqual([0, 0.001, 0.01, 0.05]);
 
     // The callback semantics are byte-identical under the expanded root:
     // real-ratio retires, off-screen returns.
@@ -168,5 +168,36 @@ describe('IntroScrollCue — U2 retirement geometry (RM-gated early margin)', ()
     const cue = container.querySelector('.intro-scroll-cue')!;
     ioCallback!([{ isIntersecting: true, intersectionRatio: 0 }]);
     expect(cue.hasAttribute('data-cue-done')).toBe(false);
+  });
+  /**
+   * C-22 REGRESSION GUARD — the reduced-motion defect this ladder exists to fix.
+   *
+   * With a lone `0` threshold the observer fires only on the 0-crossing. Under RM
+   * the content wrapper mounts ALREADY intersecting at ratio 0 (measured: its top
+   * is exactly viewport-bottom), so the crossing is spent before the visitor
+   * scrolls and the growing ratio crosses nothing — the callback never runs again
+   * and the `ratio > 0` gate is never re-asked. Live result was 0 of 246 samples
+   * retiring under reduce vs 220 of 246 under no-preference: a permanent scrim over
+   * the footer for exactly the readers who asked for less motion.
+   *
+   * This asserts the PROPERTY rather than the literal, so it still bites if the
+   * stops are retuned: there must be a stop above 0 and low enough to actually be
+   * reached. The ratio is relative to the TARGET's height — 9,567px against a 900px
+   * viewport — so the achievable maximum is ~0.099 and any lone stop at 0.1 or
+   * above would never fire.
+   */
+  it('offers a reachable threshold above 0, or the RM gate is unreachable (C-22)', () => {
+    vi.stubGlobal('matchMedia', (q: string) => ({ matches: false, media: q }));
+    addContentWrapper();
+    render(<IntroScrollCue />);
+    const t = ioOptions?.threshold;
+    expect(Array.isArray(t), 'a single threshold cannot re-fire as the ratio grows').toBe(true);
+    const stops = t as number[];
+    expect(stops).toContain(0);
+    const reachable = stops.filter((v) => v > 0 && v <= 0.09);
+    expect(
+      reachable.length,
+      `needs a stop in (0, 0.09] — the target tops out near 0.099, so ${JSON.stringify(stops)} would never re-fire`,
+    ).toBeGreaterThan(0);
   });
 });
