@@ -292,4 +292,8 @@ additive: if the header block ever starts applying, the meta CSP must not be del
   state was the proposal.
 - **2026-08-06 · P10 scoped to the four named families**, then `near-black` ruled in (P10b); the other 12
   families stay dual-named by decision, not oversight.
+- **2026-08-07 · UP-33 built on Sky's pick** — `h-full` on the single 2-up `<CaseStudyCard>` call site
+  (`app/work/[slug]/page.tsx`) so the "Continue reading" cards fill their stretched row and both feet line
+  up (measured footDelta 0.00, equal heights). Activates the card's own `mt-auto`; tally moves to 28
+  shipped / 4 not-built.
 - *(This log lives here, not in `DECISIONS_LOG.md`, which carries Morgan's frozen uncommitted edits.)*
