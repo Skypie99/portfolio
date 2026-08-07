@@ -236,7 +236,7 @@ export function HamburgerNav() {
                 'transition-colors duration-fast ease-out',
               )}
             >
-              <span aria-hidden="true" className="text-[1.25rem] leading-none font-light">{'×'}</span>
+              <span aria-hidden="true" className="text-step-1 leading-none font-light">{'×'}</span>
             </button>
 
             {/* L5-02 inner wrapper — carries the centering + padding that used to

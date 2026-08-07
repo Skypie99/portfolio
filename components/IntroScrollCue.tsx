@@ -112,7 +112,7 @@ export function IntroScrollCue() {
             themes at 375/768/1440, because this cue retires before the Hero's
             arrow can enter the viewport (the Hero's ↓ sits 1045–1422px below
             the content wrapper's own top edge, on a 900px viewport). */}
-        <span className="text-[1rem] leading-none">
+        <span className="text-body leading-none">
           <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
             <path
               d="M2.5 4.5 L6 8 L9.5 4.5"

@@ -168,7 +168,7 @@ export function Hero({
             )}
           >
             <span>Scroll</span>
-            <span aria-hidden="true" className="text-cool text-[1rem] leading-none">
+            <span aria-hidden="true" className="text-cool text-body leading-none">
               {'↓'}
             </span>
           </a>
