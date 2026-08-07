@@ -755,6 +755,7 @@ export default async function WorkDetailPage({
             <ul className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
               {others.map((o, i) => (
                 <Reveal key={o.id} index={i} as="li">
+                  {/* UP-33: h-full fills the stretched 2-up row so both card feet line up — it activates the card's own mt-auto footer; tailwind-merge keeps min-h-[22rem]. */}
                   <CaseStudyCard
                     title={o.title}
                     category={toCategory(o.id)}
@@ -763,6 +764,7 @@ export default async function WorkDetailPage({
                     media={cardMedia(o)}
                     links={o.links}
                     index={allDeliverables.findIndex((x) => x.id === o.id)}
+                    className="h-full"
                   />
                 </Reveal>
               ))}
