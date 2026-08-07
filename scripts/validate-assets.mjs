@@ -189,14 +189,63 @@ function checkDeliverableProof(publicDir) {
   return { count: declared, missing };
 }
 
+/**
+ * Blog figure images referenced from content/blog.json.
+ *
+ * This checker did not exist, and its absence is why a live 404 shipped: showcase
+ * commit 593eebe deleted card-flag.{jpg,avif,webp} while blog.json kept referencing
+ * all three, and /blog/building-accessmap/ served a broken hero to production. Every
+ * gate stayed green because this validator covered certificates.json and
+ * deliverables.json only — blog.json had no build-time asset check at all.
+ *
+ * Same shape as the deliverable-proof check, including its zero-byte rule (an
+ * interrupted encode leaves a 0-byte file that existsSync waves through).
+ */
+function checkBlogFigures(publicDir) {
+  const blogPath = join(ROOT, 'content', 'blog.json');
+  let posts;
+  try {
+    posts = JSON.parse(readFileSync(blogPath, 'utf8'));
+  } catch (err) {
+    console.error(`[validate-assets] ERROR: could not read ${blogPath}: ${err.message}`);
+    process.exit(1);
+  }
+
+  const missing = [];
+  let declared = 0;
+  const exists = (src, kind, where) => {
+    // Only local paths are ours to verify; lqip is an inline data: URI.
+    if (!src || typeof src !== 'string' || !src.startsWith('/')) return;
+    declared += 1;
+    const fullPath = join(publicDir, src.slice(1));
+    if (!existsSync(fullPath)) {
+      missing.push({ kind, id: where, src, expected: fullPath });
+    } else if (statSync(fullPath).size === 0) {
+      missing.push({ kind: `${kind} ZERO-BYTE`, id: where, src, expected: fullPath });
+    }
+  };
+
+  for (const p of Array.isArray(posts) ? posts : []) {
+    const where = p?.id ?? p?.slug ?? '(unknown post)';
+    const fig = p?.figure;
+    if (fig && typeof fig === 'object') {
+      exists(fig.src, 'blog figure(src)', `${where} figure`);
+      exists(fig.avif, 'blog figure(avif)', `${where} figure`);
+      exists(fig.webp, 'blog figure(webp)', `${where} figure`);
+    }
+  }
+  return { count: declared, missing };
+}
+
 function main() {
   const publicDir = join(ROOT, 'public');
 
   const certs = checkCertificates(publicDir);
   const plates = checkCinematicPlates(publicDir);
   const proof = checkDeliverableProof(publicDir);
+  const blog = checkBlogFigures(publicDir);
 
-  const missing = [...certs.missing, ...plates.missing, ...proof.missing];
+  const missing = [...certs.missing, ...plates.missing, ...proof.missing, ...blog.missing];
 
   if (missing.length > 0) {
     console.error(`\n[validate-assets] BUILD BLOCKED — ${missing.length} missing asset(s):\n`);
@@ -220,6 +269,9 @@ function main() {
     if (proof.missing.length) {
       console.error('A deliverable in content/deliverables.json DECLARES a proof sibling (avif/webp/video) whose file is missing from public/. Regenerate it: `node scripts/encode-proof.mjs <slug> <master> --kind hero|shot|card` (or scripts/encode-video.mjs for video), or remove the declaration.');
     }
+    if (blog.missing.length) {
+      console.error('A post in content/blog.json references a figure image that is missing from public/. Restore the file (it may have been deleted by an imagery change — check `git log --diff-filter=D -- <path>`) or update the figure block. Note a dead avif/webp BREAKS the image even when the jpg is fine: <picture> does not fall back on a 404.');
+    }
     console.error('');
     process.exit(1);
   }
@@ -232,6 +284,7 @@ function main() {
     console.log(`[validate-assets] OK — all ${plates.count} cinematic ${label}(s) found in public/.`);
   }
   console.log(`[validate-assets] OK — all ${proof.count} declared deliverable proof sibling(s) found in public/.`);
+  console.log(`[validate-assets] OK — all ${blog.count} blog figure image(s) found in public/.`);
 }
 
 main();
