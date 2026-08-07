@@ -540,6 +540,64 @@ describe.runIf(OUT_EXISTS)('Gap 6 — share-card identity', () => {
 // (Truth audit 2026-07-31, finding TA-11 / F-4.)
 // ---------------------------------------------------------------------------
 
+describe.runIf(OUT_EXISTS)('Gap 4 — referenced image asset existence', () => {
+  /**
+   * Gap 4 — Referenced image asset existence.
+   *
+   * This file's own header has documented Gap 4 since it was written, and the
+   * test did not exist. That gap is exactly how a live 404 survived: showcase
+   * commit `593eebe` deleted `card-flag.{jpg,avif,webp}` while
+   * `content/blog.json` kept referencing all three, so
+   * `/blog/building-accessmap/` shipped a broken hero to production and every
+   * gate stayed green. Nothing validated content images — `static-integrity`
+   * covered hrefs and share cards, and `asset-integrity`'s badge check is an
+   * `it.todo`.
+   *
+   * Scope is DELIBERATELY wider than the one bug: any local `<img src>` or
+   * `<source srcset>` in the built output. `<source>` matters as much as `<img>`
+   * and is the harder half — Chromium picks the AVIF `<source>` and `<picture>`
+   * does NOT fall back when it 404s, so a dead `<source>` breaks the image while
+   * a perfectly good `<img src>` sits right beside it. That is why the live
+   * symptom was one console error per frame rather than three.
+   *
+   * Note React emits `srcSet` on `<source>`; HTML attribute names are
+   * case-insensitive so the browser honours it, and the pattern below is too.
+   */
+  function collectContentImageRefs(): { route: string; url: string; attr: string }[] {
+    const refs: { route: string; url: string; attr: string }[] = [];
+    for (const file of collectHtmlFiles(OUT_DIR)) {
+      const html = readFileSync(file, 'utf8');
+      const route = file.replace(OUT_DIR, '');
+      const pattern = /<(?:img|source)\b[^>]*?\b(src|srcset)="([^"]*)"/gi;
+      let m: RegExpExecArray | null;
+      while ((m = pattern.exec(html)) !== null) {
+        // srcset may carry a candidate list ("a.jpg 1x, b.jpg 2x") — take each URL.
+        for (const cand of m[2].split(',')) {
+          const url = cand.trim().split(/\s+/)[0];
+          if (url) refs.push({ route, url, attr: m[1].toLowerCase() });
+        }
+      }
+    }
+    return refs;
+  }
+
+  it('every local <img src> and <source srcset> resolves to a real file in ./out/', () => {
+    assertOutDirExists();
+    const refs = collectContentImageRefs();
+    // Non-vacuity: an empty match set would make this pass by finding nothing.
+    expect(refs.length, 'expected the built site to reference content images').toBeGreaterThan(10);
+
+    const missing: string[] = [];
+    for (const { route, url, attr } of refs) {
+      if (/^(https?:)?\/\//i.test(url) || url.startsWith('data:')) continue; // off-origin / inline
+      const rel = url.split('?')[0].split('#')[0];
+      if (!rel.startsWith('/')) continue; // relative paths resolve against the route, not ./out/
+      if (!existsSync(join(OUT_DIR, rel))) missing.push(`${route} → ${attr}="${rel}"`);
+    }
+    expect(missing, `content images that 404:\n${missing.join('\n')}`).toEqual([]);
+  });
+});
+
 describe.runIf(OUT_EXISTS)('Gap 7 — share-card images', () => {
   const SITE_ORIGIN = 'https://skypistudio.com';
   const IMAGE_EXT = /\.(png|jpe?g|webp|avif|gif|svg)$/i;
