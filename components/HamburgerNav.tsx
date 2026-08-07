@@ -136,7 +136,7 @@ export function HamburgerNav() {
           'bg-canvas/90 backdrop-blur-sm',
           'border border-border-decorative',
           'rounded-pill',
-          'text-near-black hover:text-accent-primary',
+          'text-ink hover:text-accent-primary',
           'transition-colors duration-fast ease-out',
           // Sidebar handles desktop navigation; hamburger is mobile-only.
           'md:hidden',
@@ -232,7 +232,7 @@ export function HamburgerNav() {
                 'inline-flex items-center justify-center',
                 'h-11 w-11',
                 'bg-transparent border border-border-decorative rounded-pill',
-                'text-near-black hover:text-accent-primary',
+                'text-ink hover:text-accent-primary',
                 'transition-colors duration-fast ease-out',
               )}
             >
@@ -263,7 +263,7 @@ export function HamburgerNav() {
                 name when the nav is open. Mirrors the Sidebar wordmark treatment.
                 aria-hidden: decorative — the dialog aria-label already names this
                 as "Primary menu"; the wordmark text adds no navigational meaning. */}
-            <p aria-hidden="true" className="font-serif font-normal text-display-s text-near-black mb-16 select-none">
+            <p aria-hidden="true" className="font-serif font-normal text-display-s text-ink mb-16 select-none">
               Sky Halisky
             </p>
             <nav aria-label="Site" className="w-full max-w-content">
@@ -296,7 +296,7 @@ export function HamburgerNav() {
                         className={cn(
                           'group inline-flex items-baseline gap-6',
                           'font-serif font-light text-nav-item text-balance',
-                          'text-near-black hover:text-accent-text focus-visible:text-accent-text',
+                          'text-ink hover:text-accent-text focus-visible:text-accent-text',
                           'transition-colors duration-fast ease-out',
                         )}
                       >

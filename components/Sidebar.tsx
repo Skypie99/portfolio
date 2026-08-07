@@ -54,7 +54,7 @@ export function Sidebar() {
       <div className="flex flex-col gap-3">
         <Link
           href="/"
-          className="link-draw inline-block font-serif font-normal text-step-2 leading-none text-near-black"
+          className="link-draw inline-block font-serif font-normal text-step-2 leading-none text-ink"
         >
           {profile.wordmarkText}
         </Link>

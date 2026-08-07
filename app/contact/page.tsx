@@ -95,7 +95,7 @@ export default function ContactPage() {
                 href={linkedin.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="link-draw text-near-black hover:text-accent-text transition-colors duration-fast ease-out inline-flex items-center gap-1.5"
+                className="link-draw text-ink hover:text-accent-text transition-colors duration-fast ease-out inline-flex items-center gap-1.5"
               >
                 <span>Full history on LinkedIn</span>
                 {/* UP-11: the ↗ takes its label's colour (C-78). This is the
@@ -186,7 +186,7 @@ export default function ContactPage() {
         <div className="max-w-content mx-auto">
           <Link
             href="/"
-            className="group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text focus-visible:text-accent-text transition-colors duration-fast ease-out"
+            className="group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-ink hover:text-accent-text focus-visible:text-accent-text transition-colors duration-fast ease-out"
           >
             {/* C-69: keyboard visitors get the same arrow glide + ink shift as hover. */}
             <span aria-hidden="true" className="inline-block transition-transform duration-base ease-gh-glide group-hover:-translate-x-1 group-focus-visible:-translate-x-1">{'←'}</span>

@@ -96,7 +96,7 @@ export function SidebarArticleNav() {
                   'group relative inline-flex items-start pl-3',
                   'font-mono text-meta tracking-label uppercase',
                   'transition-colors duration-fast ease-out',
-                  isActive ? 'text-near-black' : 'text-text-meta hover:text-near-black',
+                  isActive ? 'text-ink' : 'text-text-meta hover:text-ink',
                 )}
               >
                 {/* Quiet active marker — 2px terracotta bar; aria-current carries

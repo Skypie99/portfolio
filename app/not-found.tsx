@@ -37,7 +37,7 @@ export default function NotFound() {
                 </Link>
               </li>
               <li aria-hidden="true" className="text-stone dark:text-stone-strong">/</li>
-              <li aria-current="page" className="text-near-black">404</li>
+              <li aria-current="page" className="text-ink">404</li>
             </ol>
           </nav>
 
@@ -60,7 +60,7 @@ export default function NotFound() {
                 href="/work/"
                 /* C-113: padded-tap idiom (≥24px box, negative margins cancel the
                    layout shift) so the secondary exit isn't a thin target at 375. */
-                className="link-draw inline-block px-1 py-1.5 -mx-1 -my-1.5 font-mono text-label tracking-label uppercase text-near-black"
+                className="link-draw inline-block px-1 py-1.5 -mx-1 -my-1.5 font-mono text-label tracking-label uppercase text-ink"
               >
                 {/* C-110: bind the last word + arrow so the → never strands. */}
                 Or browse the <span className="whitespace-nowrap">work {'→'}</span>

@@ -29,7 +29,7 @@ export function CalibrationRecord({ rounds }: { rounds: Round[] }) {
       <div className="max-w-content mx-auto">
         <h2
           id="calibration"
-          className="font-serif font-light text-prose-h2 text-near-black mb-3 scroll-mt-24"
+          className="font-serif font-light text-prose-h2 text-ink mb-3 scroll-mt-24"
         >
           {HEADING}
         </h2>
@@ -51,12 +51,12 @@ export function CalibrationRecord({ rounds }: { rounds: Round[] }) {
             >
               <span
                 aria-hidden="true"
-                className="font-serif font-light text-step-1 leading-none text-near-black/75 w-10 shrink-0"
+                className="font-serif font-light text-step-1 leading-none text-ink/75 w-10 shrink-0"
               >
                 {r.numeral}
               </span>
               <span className="sr-only">{`Round ${r.numeral}`}</span>
-              <span className="font-mono text-label tracking-label uppercase text-near-black">
+              <span className="font-mono text-label tracking-label uppercase text-ink">
                 {r.title}
               </span>
               {/* UP-43(b): ml-auto lands every status on the row rule's own right

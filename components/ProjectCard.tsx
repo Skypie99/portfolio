@@ -71,7 +71,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
         <div className="flex items-start justify-between gap-4">
           <span
             aria-hidden="true"
-            className="font-serif font-light text-card-numeral leading-none tabular-nums text-near-black/30 origin-top-left transition duration-slow ease-gh-glide group-hover:text-near-black/45 motion-safe:group-hover:scale-[1.04]"
+            className="font-serif font-light text-card-numeral leading-none tabular-nums text-ink/30 origin-top-left transition duration-slow ease-gh-glide group-hover:text-ink/45 motion-safe:group-hover:scale-[1.04]"
           >
             {numeral}
           </span>
@@ -91,7 +91,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
               {d.role} · {d.year}
             </p>
             <h3
-              className="font-serif font-light text-card-title text-near-black"
+              className="font-serif font-light text-card-title text-ink"
             >
               <Link
                 href={`/work/${d.id}/`}
@@ -174,7 +174,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Open ${demoLink.label.toLowerCase()} for ${d.title} (opens in new tab)`}
-                      className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                      className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
                     >
                       {/* label-derived: "Live" for live products, "Demo" for
                           not-yet-live ones (e.g. Mutual Mesh) */}
@@ -187,7 +187,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`View ${d.title} source on GitHub (opens in new tab)`}
-                      className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                      className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
                     >
                       GitHub <span aria-hidden="true">↗</span>
                     </a>

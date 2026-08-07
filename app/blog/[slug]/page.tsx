@@ -258,7 +258,7 @@ export default async function BlogPostPage({
                 </Link>
               </li>
               <li aria-hidden="true" className="shrink-0 text-stone dark:text-stone-strong">{'/'}</li>
-              <li aria-current="page" className="text-near-black truncate min-w-0 max-w-[240px] lg:max-w-[420px] xl:max-w-[560px]">
+              <li aria-current="page" className="text-ink truncate min-w-0 max-w-[240px] lg:max-w-[420px] xl:max-w-[560px]">
                 {post.title}
               </li>
             </ol>
@@ -362,7 +362,7 @@ export default async function BlogPostPage({
                 <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 Keep reading
               </p>
-              <h2 className="font-serif font-light text-step-4 text-near-black max-w-2xl leading-tight mb-12 text-balance">
+              <h2 className="font-serif font-light text-step-4 text-ink max-w-2xl leading-tight mb-12 text-balance">
                 Continue reading.
               </h2>
               {/* One deliberate handoff — a single-column max-width so it reads as
@@ -383,7 +383,7 @@ export default async function BlogPostPage({
           )}
           <Link
             href="/blog/"
-            className="group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+            className="group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-ink hover:text-accent-text transition-colors duration-fast ease-out"
           >
             <span aria-hidden="true" className="inline-block transition-transform duration-base ease-gh-glide group-hover:-translate-x-1">{'←'}</span>
             All posts
