@@ -12,11 +12,21 @@
  * contrast, light and dark alike".
  *
  * WHAT IT GUARDS
- * The BINDING_BACKGROUNDS below are the darkest (light theme) / lightest (dark
- * theme) composited backgrounds each ink is actually painted on, pixel-measured
- * across 16 routes × 2 themes with every glyph painted transparent (so the sample
- * is the true composite: panel + WorldBackdrop + gradients). If someone lightens
- * accent-ink back toward its old value, or darkens ink-meta's surfaces, this fails.
+ * BINDING_SURFACES below are the darkest (light theme) / lightest (dark theme)
+ * backgrounds each ink is actually painted on, originally pixel-measured across
+ * 16 routes × 2 themes with every glyph painted transparent (so the sample is the
+ * true composite: panel + WorldBackdrop + gradients).
+ *
+ * 2026-08-06 — THE COMPOSITES ARE NOW DERIVED, NOT REMEMBERED.
+ * They used to be frozen triplets, which made this guard unable to fail on the
+ * change it most needed to catch: it compared ink against a background literal that
+ * no longer described the page. Under the old form, dropping --surface-alpha-alt
+ * from 0.82 to 0.55 — which really does push two inks below AA — left this suite
+ * fully green, because the alpha appeared nowhere in it. It now recomputes each
+ * composite from the live panel token and alpha, and that same edit fails four
+ * assertions. Only the WorldBackdrop pixel stays pinned (it comes from a scrolling
+ * gradient), and a companion pin fails loudly if the sky stops behind it move.
+ * See DECISIONS §P `P7-UP-20-GUARD-VACUOUS`.
  *
  * Evidence + method: design-reviews/a11y-qa/2026-07-31/
  */
@@ -45,45 +55,165 @@ function contrast(a: RGB, b: RGB): number {
 }
 
 /**
- * Read an `--rgb-*` triplet from a specific block of globals.css.
- * `scope: 'root'` reads the light `:root` block; `scope: 'dark'` reads `html.dark`.
+ * Every top-level block in globals.css whose selector is EXACTLY `sel`, brace-matched.
+ *
+ * The previous reader sliced the file at the FIRST `html.dark {` and regexed the
+ * remainder. That is safe only for tokens defined in the early blocks. globals.css
+ * has a SECOND token pair further down — `:root` (~1365) and `html.dark` (~1389),
+ * carrying the world sky stops and the surface alphas — so a `scope: 'dark'` lookup
+ * for anything defined down there would scan from line 348 and return whichever
+ * definition came first, i.e. the LIGHT value, silently. Nothing in the old file
+ * exercised that path, so it was a trap rather than a live bug; this reader closes
+ * it by matching whole blocks and refusing ambiguity outright.
  */
+function blocksFor(sel: string): string[] {
+  const out: string[] = [];
+  const re = new RegExp(`^${sel.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*\\{`, 'gm');
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(CSS)) !== null) {
+    let i = m.index + m[0].length;
+    let depth = 1;
+    while (depth > 0 && i < CSS.length) {
+      if (CSS[i] === '{') depth++;
+      else if (CSS[i] === '}') depth--;
+      i++;
+    }
+    out.push(CSS.slice(m.index + m[0].length, i - 1));
+  }
+  return out;
+}
+
+/** The single declared value of `--name` in the light (`:root`) or dark (`html.dark`) blocks. */
+function readDecl(name: string, scope: 'root' | 'dark'): string {
+  const sel = scope === 'root' ? ':root' : 'html.dark';
+  const hits = blocksFor(sel)
+    .map((b) => b.match(new RegExp(`--${name}:\\s*([^;]+);`)))
+    .filter(Boolean)
+    .map((m) => m![1].trim());
+  // Exactly one, always. Zero means the token moved; more than one means two blocks
+  // disagree and the "which wins" answer would depend on source order — either way
+  // this guard must stop rather than pick.
+  expect(hits, `--${name} must have exactly one definition in ${sel} (found ${hits.length})`)
+    .toHaveLength(1);
+  return hits[0];
+}
+
+/** Read an `--rgb-*` triplet. */
 function readToken(name: string, scope: 'root' | 'dark'): RGB {
-  const darkStart = CSS.indexOf('html.dark {');
-  expect(darkStart, 'globals.css must contain an `html.dark {` block').toBeGreaterThan(-1);
-  const region = scope === 'root' ? CSS.slice(0, darkStart) : CSS.slice(darkStart);
-  const m = region.match(new RegExp(`--${name}:\\s*(\\d+)\\s+(\\d+)\\s+(\\d+)\\s*;`));
-  expect(m, `--${name} must be defined in the ${scope} block of globals.css`).toBeTruthy();
-  return [Number(m![1]), Number(m![2]), Number(m![3])];
+  const parts = readDecl(name, scope).split(/\s+/).slice(0, 3).map(Number);
+  expect(parts.every((n) => Number.isFinite(n)), `--${name} (${scope}) must be an r g b triplet`).toBe(true);
+  return parts as RGB;
+}
+
+/** Read a scalar custom property (the surface alphas). */
+function readNumber(name: string, scope: 'root' | 'dark'): number {
+  const n = Number(readDecl(name, scope).split(/\s+/)[0]);
+  expect(Number.isFinite(n), `--${name} (${scope}) must be numeric`).toBe(true);
+  return n;
+}
+
+/** Source-over compositing of an opaque backdrop under a translucent panel. */
+function composite(panel: RGB, alpha: number, backdrop: RGB): RGB {
+  return panel.map((c, i) => c * alpha + backdrop[i] * (1 - alpha)) as RGB;
 }
 
 /**
- * Pixel-measured binding backgrounds — the worst real surface each ink lands on.
- * Recorded 2026-07-31 from design-reviews/a11y-qa/2026-07-31/ (census2.json).
+ * THE BINDING SURFACES — DERIVED, NOT FROZEN.
+ *
+ * This table used to store each binding background as a finished pixel triplet.
+ * Those numbers were correct when measured (2026-07-31) and then FROZE: any change
+ * to a surface token or a surface alpha left the assertion comparing ink against a
+ * stale backdrop, so it stayed green while the real rendered pair fell below AA.
+ * The file's own header anticipated exactly that and nothing enforced it — the
+ * `P7-UP-20-GUARD-VACUOUS` finding, and the reason UP-20 had to be measured around
+ * this guard rather than trusted to it.
+ *
+ * What each of these surfaces actually is, is computable:
+ *
+ *     .world-surface-*  =  rgb(var(--rgb-PANEL) / var(--surface-alpha-*))
+ *                          composited over the WorldBackdrop
+ *
+ * so the composite is `panel × alpha + backdrop × (1 − alpha)` and only ONE term
+ * resists derivation: the backdrop pixel itself, which comes out of a scrolling
+ * multi-stop sky gradient. So that is the only thing still pinned — recovered from
+ * the original census by inverting the same equation, and sanity-checked: all five
+ * land inside [0,255] and read as warm desert-sky values ([234,180,147] …
+ * [195,148,94]), which is what the WorldBackdrop paints. A wrong model would not
+ * have produced five plausible sky pixels.
+ *
+ * The guard now tracks --rgb-canvas, --rgb-canvas-alt, --rgb-wash-cool,
+ * --rgb-panel-cool, every --surface-alpha-*, and the ink tokens automatically.
+ * The residue (a moved SKY STOP would change the pinned backdrops) is covered by
+ * its own staleness pin below, so it fails loudly asking for a re-measure instead
+ * of passing quietly.
  */
-const BINDING_BACKGROUNDS: ReadonlyArray<{
+const BINDING_SURFACES: ReadonlyArray<{
   token: string;
   scope: 'root' | 'dark';
-  bg: RGB;
+  panel: string;
+  alphaVar: string;
+  backdrop: RGB;
+  measured: RGB;
   where: string;
 }> = [
-  { token: 'rgb-accent-ink', scope: 'root', bg: [215, 209, 190], where: 'homepage contact eyebrow — world-surface-cool-pale' },
-  { token: 'rgb-accent-ink', scope: 'root', bg: [238, 223, 203], where: '"More work" eyebrow — world-surface-alt (work pages)' },
-  { token: 'rgb-accent-ink', scope: 'root', bg: [226, 228, 216], where: '"Shipped" eyebrow — world-surface-cool' },
-  { token: 'rgb-ink-meta', scope: 'root', bg: [236, 221, 199], where: 'showcase date meta — world-surface-alt' },
-  { token: 'rgb-accent-ink', scope: 'dark', bg: [89, 74, 57], where: 'prose link on /work/accessmap/ — world-surface-alt over the night world' },
+  { token: 'rgb-accent-ink', scope: 'root', panel: 'rgb-panel-cool', alphaVar: 'surface-alpha-coolpale', backdrop: [234.41, 179.94, 147.29], measured: [215, 209, 190], where: 'homepage contact eyebrow — world-surface-cool-pale' },
+  { token: 'rgb-accent-ink', scope: 'root', panel: 'rgb-canvas-alt', alphaVar: 'surface-alpha-alt', backdrop: [206.11, 159.22, 116.44], measured: [238, 223, 203], where: '"More work" eyebrow — world-surface-alt (work pages)' },
+  { token: 'rgb-accent-ink', scope: 'root', panel: 'rgb-wash-cool', alphaVar: 'surface-alpha-cool', backdrop: [194.0, 176.0, 136.0], measured: [226, 228, 216], where: '"Shipped" eyebrow — world-surface-cool' },
+  { token: 'rgb-ink-meta', scope: 'root', panel: 'rgb-canvas-alt', alphaVar: 'surface-alpha-alt', backdrop: [195.0, 148.11, 94.22], measured: [236, 221, 199], where: 'showcase date meta — world-surface-alt' },
+  { token: 'rgb-accent-ink', scope: 'dark', panel: 'rgb-canvas-alt', alphaVar: 'surface-alpha-alt', backdrop: [205.88, 171.75, 131.38], measured: [89, 74, 57], where: 'prose link on /work/accessmap/ — world-surface-alt over the night world' },
+];
+
+/**
+ * The sky stops that were live when the backdrops above were measured. These are
+ * the ONE input the derivation cannot recompute, so if any of them moves the pinned
+ * backdrops are stale and this fails with a re-measure instruction rather than
+ * quietly certifying against an old sky.
+ */
+const SKY_STOPS_AT_MEASUREMENT: ReadonlyArray<{ name: string; scope: 'root' | 'dark'; rgb: RGB }> = [
+  { name: 'sky-day-1', scope: 'root', rgb: [255, 236, 206] },
+  { name: 'sky-day-4', scope: 'root', rgb: [230, 210, 182] },
+  { name: 'sky-dusk-4', scope: 'root', rgb: [238, 211, 184] },
+  { name: 'sky-night-4', scope: 'root', rgb: [238, 213, 187] },
+  { name: 'sky-day-1', scope: 'dark', rgb: [103, 63, 40] },
+  { name: 'sky-day-4', scope: 'dark', rgb: [60, 42, 30] },
+  { name: 'sky-dusk-4', scope: 'dark', rgb: [24, 20, 24] },
+  { name: 'sky-night-4', scope: 'dark', rgb: [18, 13, 9] },
 ];
 
 const AA_SMALL = 4.5;
 
 describe('ink tokens clear WCAG AA on the surfaces they are actually painted on', () => {
-  it.each(BINDING_BACKGROUNDS)(
+  it.each(BINDING_SURFACES)(
     '--$token ($scope) ≥ 4.5:1 against $where',
-    ({ token, scope, bg }) => {
+    ({ token, scope, panel, alphaVar, backdrop }) => {
       const ink = readToken(token, scope);
+      const bg = composite(readToken(panel, scope), readNumber(alphaVar, scope), backdrop);
       expect(contrast(ink, bg)).toBeGreaterThanOrEqual(AA_SMALL);
     },
   );
+
+  // The derivation must REPRODUCE the original census at today's token values.
+  // If this drifts, either a token moved (and the AA assertions above already
+  // re-derived correctly, which is the point) or the model is wrong — and a model
+  // that cannot reproduce its own measurement is not allowed to certify anything.
+  it.each(BINDING_SURFACES)(
+    'the composite model reproduces the measured backdrop for $where',
+    ({ scope, panel, alphaVar, backdrop, measured }) => {
+      const bg = composite(readToken(panel, scope), readNumber(alphaVar, scope), backdrop);
+      bg.forEach((c, i) => expect(Math.abs(c - measured[i])).toBeLessThanOrEqual(0.51));
+    },
+  );
+
+  it('the sky stops behind the pinned backdrops have not moved (else re-measure)', () => {
+    for (const { name, scope, rgb } of SKY_STOPS_AT_MEASUREMENT) {
+      expect(
+        readToken(name, scope),
+        `--${name} (${scope}) changed since the 2026-07-31 census. The pinned backdrops in ` +
+          `BINDING_SURFACES are composited over this sky, so they are now stale — re-run the ` +
+          `paint-sampled census (design-reviews/a11y-qa/2026-07-31/) and update them together.`,
+      ).toEqual(rgb);
+    }
+  });
 
   // Regression pin: the specific values this audit landed on. A deliberate future
   // change should update these together with a fresh measured census — never one
