@@ -73,7 +73,25 @@ export function IntroScrollCue() {
         );
       },
       {
-        threshold: 0,
+        // C-22 (2026-08-06) — THE LADDER IS WHAT MAKES THE C-21 GATE REACHABLE.
+        // With a single `0` threshold the observer fires only on the 0-crossing.
+        // Under reduced motion the static frame mounts `.cinematic-content-reveal`
+        // AT the 0px edge-touch (measured: its top is exactly viewport-bottom,
+        // isIntersecting true, ratio 0), so the crossing has already happened at
+        // mount and every later scroll only GROWS the ratio — which crosses
+        // nothing. The callback never ran again, the `ratio > 0` gate was never
+        // re-evaluated, and the cue never retired: 0 of 246 samples retired under
+        // reduce vs 220 of 246 under no-preference. The C-21 guard, written to
+        // stop a premature retirement under RM, is precisely what made
+        // retirement IMPOSSIBLE under RM.
+        // Extra stops give the ratio something to cross so the gate is asked
+        // again. They are deliberately tiny and multiple: intersectionRatio is
+        // relative to the TARGET's height, and this target is ~9,567px against a
+        // 900px viewport, so it tops out at ~0.099 — a lone 0.5 or 0.1 stop would
+        // never be reached, and a lone 0.01 would go marginal if the page grew.
+        // Motion behaviour is unchanged: it already retires on the 0-crossing,
+        // and the later stops only re-assert the same true.
+        threshold: [0, 0.001, 0.01, 0.05],
         rootMargin: motionOK
           ? '100000px 0px 100% 0px' // C-20 top-open + the U2 early-fire margin
           : '100000px 0px 0px 0px', // byte-original geometry (RM / no-matchMedia)
