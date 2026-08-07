@@ -92,14 +92,14 @@ export default function BlogIndexPage() {
             <span>Subscribe</span>
             <a
               href="/feed.xml"
-              className="link-draw text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+              className="link-draw text-ink hover:text-accent-text transition-colors duration-fast ease-out"
             >
               RSS
             </a>
             <span aria-hidden="true" className="text-stone-strong">·</span>
             <a
               href="/feed.json"
-              className="link-draw text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+              className="link-draw text-ink hover:text-accent-text transition-colors duration-fast ease-out"
             >
               JSON
             </a>
@@ -143,7 +143,7 @@ export default function BlogIndexPage() {
                        text. Name from content instead — the arrow/index/dot are
                        aria-hidden, so AT hears date · reading time · title · summary
                        · tags · "Read more" in reading order. */
-                    className="group flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-16 text-near-black"
+                    className="group flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-16 text-ink"
                   >
                     {/* Index number */}
                     <span
@@ -181,7 +181,7 @@ export default function BlogIndexPage() {
                       <h3
                         className={cn(
                           'font-serif font-normal md:font-light text-blog-card-title text-balance',
-                          'text-near-black group-hover:text-accent-text group-focus-visible:text-accent-text',
+                          'text-ink group-hover:text-accent-text group-focus-visible:text-accent-text',
                           'transition-colors duration-fast ease-out',
                         )}
                       >
@@ -233,14 +233,14 @@ export default function BlogIndexPage() {
         <div className="max-w-content mx-auto flex flex-wrap items-center justify-between gap-x-8 gap-y-4">
           <Link
             href="/"
-            className="group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+            className="group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-ink hover:text-accent-text transition-colors duration-fast ease-out"
           >
             <span aria-hidden="true" className="inline-block transition-transform duration-base ease-gh-glide group-hover:-translate-x-1">{'←'}</span>
             Back to home
           </Link>
           <Link
             href="/work/"
-            className="group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+            className="group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-ink hover:text-accent-text transition-colors duration-fast ease-out"
           >
             Browse the work
             <span aria-hidden="true" className="inline-block transition-transform duration-base ease-gh-glide group-hover:translate-x-1">{'→'}</span>

@@ -84,7 +84,7 @@ const TYPE_SPECIMENS: { sample: string; sampleClass: string; family: string; rol
     // the small uppercase labels and the metadata"; at 19px the "small" specimen
     // would out-size the body specimen (17px) and invert the page's own
     // descending 39 / 17 / 12 order. Both forms are captured in receipts/p8/.
-    sampleClass: 'font-mono text-label tracking-label uppercase text-near-black',
+    sampleClass: 'font-mono text-label tracking-label uppercase text-ink',
     family: 'DM Mono',
     role: 'labels & metadata',
   },
@@ -154,7 +154,7 @@ export default function ColophonPage() {
       {/* Live type specimen — the type system shown in its own faces. */}
       <section className="px-gutter py-32 lg:py-50 world-surface border-t border-border-decorative">
         <div className="max-w-content mx-auto">
-          <h2 id="type-specimen" className="font-serif font-light text-prose-h2 text-near-black mb-12 scroll-mt-24">
+          <h2 id="type-specimen" className="font-serif font-light text-prose-h2 text-ink mb-12 scroll-mt-24">
             The type, set live
           </h2>
           <ul className="flex flex-col gap-12 max-w-measure-wide">
@@ -233,7 +233,7 @@ export default function ColophonPage() {
           </Link>
           <Link
             href="/accessibility/"
-            className="group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+            className="group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-ink hover:text-accent-text transition-colors duration-fast ease-out"
           >
             Read the accessibility statement
             <span

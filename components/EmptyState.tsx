@@ -18,7 +18,7 @@ export function EmptyState({ title, note }: EmptyStateProps) {
   return (
     <Reveal className="flex flex-col items-start gap-5 max-w-measure-lead">
       <span aria-hidden="true" className="rule-ember block w-16" />
-      <p className="font-serif font-light text-display-s text-near-black leading-[1.2]">
+      <p className="font-serif font-light text-display-s text-ink leading-[1.2]">
         {title}
       </p>
       <p className="font-sans font-light text-prose text-ink-muted leading-[1.65] text-pretty">

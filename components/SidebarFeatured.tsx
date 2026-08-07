@@ -27,7 +27,7 @@ export function SidebarFeatured({ featured }: { featured: Deliverable | null }) 
     return (
       <Link
         href="/work/"
-        className="link-draw inline-block font-serif font-normal text-display-s text-near-black"
+        className="link-draw inline-block font-serif font-normal text-display-s text-ink"
       >
         Latest work {'→'}
       </Link>
@@ -45,7 +45,7 @@ export function SidebarFeatured({ featured }: { featured: Deliverable | null }) 
          from the rendered text. The rail's own "Featured" eyebrow supplies the
          slot context; this mirrors the no-featured fallback's content-as-name. */
       aria-current={onRoute ? 'page' : undefined}
-      className="group flex flex-col gap-1.5 text-near-black transition-colors duration-fast ease-out"
+      className="group flex flex-col gap-1.5 text-ink transition-colors duration-fast ease-out"
     >
       {/* Half-rank below the wordmark — one serif crown per rail (HI-3).
           Matches the slot's own fallback rank. */}

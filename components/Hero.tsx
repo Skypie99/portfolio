@@ -104,7 +104,7 @@ export function Hero({
               />
             )}
             <div className="flex flex-col gap-1">
-              <p className="font-serif font-light text-step-2 leading-tight text-near-black">
+              <p className="font-serif font-light text-step-2 leading-tight text-ink">
                 {name}
               </p>
               {positioning && (

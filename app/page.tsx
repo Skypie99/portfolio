@@ -265,7 +265,7 @@ export default function HomePage() {
                 {/* L3-09: project name is the chip's link; a stretched ::after
                     makes the entire cell a tap target without changing a pixel of
                     the composition. → is the site's internal-nav grammar. */}
-                <p className="font-serif text-prose text-near-black mb-3">
+                <p className="font-serif text-prose text-ink mb-3">
                   <Link
                     href={href}
                     aria-label={`${project} — ${stat} ${label}`}
@@ -481,7 +481,7 @@ export default function HomePage() {
             </p>
             <Link
               href="/about/"
-              className="link-draw inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black mt-2 self-start"
+              className="link-draw inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-ink mt-2 self-start"
             >
               The full account
               <span aria-hidden="true">{'→'}</span>
@@ -529,7 +529,7 @@ export default function HomePage() {
                       {c.issuer}
                     </p>
                     <div className="flex-1 flex flex-col gap-1">
-                      <h3 className="font-serif font-normal text-step-2 text-near-black leading-tight nums-lining transition-colors duration-fast ease-out group-hover:text-accent-text">
+                      <h3 className="font-serif font-normal text-step-2 text-ink leading-tight nums-lining transition-colors duration-fast ease-out group-hover:text-accent-text">
                         {c.title}
                       </h3>
                       <p className="font-mono text-meta tracking-label uppercase text-text-meta">

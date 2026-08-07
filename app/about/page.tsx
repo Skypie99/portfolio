@@ -98,7 +98,7 @@ export default function AboutPage() {
             </p>
 
             {/* Pull-quote — editorial accent, carries the thesis */}
-            <blockquote className="pull-quote nums-oldstyle pl-3 font-serif font-light text-step-2 text-near-black leading-[1.4] text-balance">
+            <blockquote className="pull-quote nums-oldstyle pl-3 font-serif font-light text-step-2 text-ink leading-[1.4] text-balance">
               {/* C-49: text-balance preferred the hyphen break "add-/on." at 375.
                   A nowrap span keeps the pivot compound whole (identical block
                   height at every width → CLS 0). */}
@@ -302,7 +302,7 @@ export default function AboutPage() {
                          title, summary and "Continue", so a concise "Read about <title>"
                          name would omit most of the visible text. Name from content
                          instead (the arrow is aria-hidden) — AT hears the full card. */
-                      className="group flex flex-col gap-2 text-near-black hover:text-accent-text transition-[color,transform] duration-base ease-gh-glide hover:translate-x-0.5"
+                      className="group flex flex-col gap-2 text-ink hover:text-accent-text transition-[color,transform] duration-base ease-gh-glide hover:translate-x-0.5"
                     >
                       <p className="font-mono text-meta tracking-label uppercase text-text-meta">
                         {d.role} · {d.year}
@@ -326,7 +326,7 @@ export default function AboutPage() {
             <div className="mt-24">
               <Link
                 href="/work/"
-                className="group inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+                className="group inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-ink hover:text-accent-text transition-colors duration-fast ease-out"
               >
                 All the work
                 <span aria-hidden="true" className="inline-block transition-transform duration-base ease-gh-glide group-hover:translate-x-1 group-focus-visible:translate-x-1">{'→'}</span>
@@ -349,7 +349,7 @@ export default function AboutPage() {
 
           <Link
             href="/"
-            className="group mt-12 px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+            className="group mt-12 px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-ink hover:text-accent-text transition-colors duration-fast ease-out"
           >
             <span aria-hidden="true" className="inline-block transition-transform duration-base ease-gh-glide group-hover:-translate-x-1 group-focus-visible:-translate-x-1">{'←'}</span>
             Back to home

@@ -68,7 +68,7 @@ export function Footer() {
           <div className="flex flex-col gap-3">
             <Link
               href="/"
-              className="link-draw inline-block font-serif font-normal text-step-3 text-near-black leading-none self-start"
+              className="link-draw inline-block font-serif font-normal text-step-3 text-ink leading-none self-start"
             >
               {profile.name}
             </Link>
@@ -96,7 +96,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/"
-                  className="link-draw font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+                  className="link-draw font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out"
                 >
                   Home
                 </Link>
@@ -104,7 +104,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/work/"
-                  className="link-draw font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+                  className="link-draw font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out"
                 >
                   The Work
                 </Link>
@@ -112,7 +112,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/certificates/"
-                  className="link-draw font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+                  className="link-draw font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out"
                 >
                   Credentials
                 </Link>
@@ -120,7 +120,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/about/"
-                  className="link-draw font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+                  className="link-draw font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out"
                 >
                   A Brief Account
                 </Link>
@@ -128,7 +128,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/blog/"
-                  className="link-draw font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+                  className="link-draw font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out"
                 >
                   Notes
                 </Link>
@@ -136,7 +136,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/contact/"
-                  className="link-draw font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+                  className="link-draw font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out"
                 >
                   Let&apos;s talk
                 </Link>
@@ -144,7 +144,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/accessibility/"
-                  className="link-draw font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+                  className="link-draw font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out"
                 >
                   Accessibility
                 </Link>
@@ -152,7 +152,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/colophon/"
-                  className="link-draw font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+                  className="link-draw font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out"
                 >
                   Colophon
                 </Link>
@@ -179,7 +179,7 @@ export function Footer() {
                 href={linkedin.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="link-draw font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out inline-flex items-center gap-1 self-start"
+                className="link-draw font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out inline-flex items-center gap-1 self-start"
               >
                 <span>Full history on LinkedIn</span>
                 {/* UP-11: no colour override — the ↗ takes its label's colour.
@@ -216,7 +216,7 @@ export function Footer() {
                       // hover unifies to accent-text in dark so it matches the others.
                       s.platform.toLowerCase() === 'github'
                         ? 'text-accent-text hover:text-terracotta dark:hover:text-accent-text'
-                        : 'text-near-black hover:text-accent-text',
+                        : 'text-ink hover:text-accent-text',
                     )}
                   >
                     <span>{PLATFORM_LABELS[s.platform] ?? s.platform}</span>

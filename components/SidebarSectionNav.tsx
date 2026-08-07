@@ -91,7 +91,7 @@ export function SidebarSectionNav() {
                   'group relative inline-flex items-center pl-3',
                   'font-mono text-meta tracking-label uppercase',
                   'transition-colors duration-fast ease-out',
-                  isActive ? 'text-near-black' : 'text-text-meta hover:text-near-black',
+                  isActive ? 'text-ink' : 'text-text-meta hover:text-ink',
                 )}
               >
                 {/* Quiet active marker — a 2px terracotta bar that scales in from

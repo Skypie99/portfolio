@@ -39,7 +39,7 @@ const base =
   'h-14 px-7 ' +
   'rounded-pill ' +
   'font-mono text-label tracking-label uppercase ' +
-  'text-near-black ' +
+  'text-ink ' +
   'border ' +
   'transition-[background-color,border-color,box-shadow,transform] duration-base ease-out ' +
   'hover:shadow-soft hover:-translate-y-px ' +

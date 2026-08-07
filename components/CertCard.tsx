@@ -101,7 +101,7 @@ export function CertCard({ certificate: c }: { certificate: Certificate }) {
           </p>
 
           {/* Title — h3 per Alex F-C4-2 (h1 page → h2 sr-only section → h3 card) */}
-          <h3 className="mb-3 font-serif font-normal text-step-2 leading-tight text-near-black nums-lining">
+          <h3 className="mb-3 font-serif font-normal text-step-2 leading-tight text-ink nums-lining">
             {c.title}
           </h3>
 

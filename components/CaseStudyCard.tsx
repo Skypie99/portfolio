@@ -87,13 +87,13 @@ export function CaseStudyCard({ title, category, description, href, media, links
       <div className="relative z-10 flex flex-1 flex-col p-7 md:max-lg:p-8 lg:p-12">
         <span
           aria-hidden="true"
-          className="font-serif font-light text-card-numeral leading-none tabular-nums text-near-black/30 origin-top-left transition duration-slow ease-gh-glide group-hover:text-near-black/45 motion-safe:group-hover:scale-[1.04]"
+          className="font-serif font-light text-card-numeral leading-none tabular-nums text-ink/30 origin-top-left transition duration-slow ease-gh-glide group-hover:text-ink/45 motion-safe:group-hover:scale-[1.04]"
         >
           {numeral}
         </span>
 
         <div className="mt-auto flex flex-col gap-4">
-          <h3 className="font-serif font-light text-card-title text-near-black">
+          <h3 className="font-serif font-light text-card-title text-ink">
             <Link
               href={href}
               aria-label={`${title} — read the case study`}
@@ -153,7 +153,7 @@ export function CaseStudyCard({ title, category, description, href, media, links
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Open ${demoLink.label.toLowerCase()} for ${title} (opens in new tab)`}
-                    className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                    className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
                   >
                     {/* label-derived: "Live" for live products, "Demo" for
                         not-yet-live ones (e.g. Mutual Mesh) */}
@@ -166,7 +166,7 @@ export function CaseStudyCard({ title, category, description, href, media, links
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`View ${title} source on GitHub (opens in new tab)`}
-                    className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-near-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                    className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
                   >
                     GitHub <span aria-hidden="true">↗</span>
                   </a>

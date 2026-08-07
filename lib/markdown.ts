@@ -63,7 +63,7 @@ export function slugify(text: string): string {
 
 /** Shared className for inline `code` spans in the markdown renderer. */
 export const INLINE_CODE_CLASS =
-  'font-mono text-[0.85em] rounded px-1.5 py-0.5 bg-[rgb(var(--rgb-ink)/0.06)] text-near-black break-words';
+  'font-mono text-[0.85em] rounded px-1.5 py-0.5 bg-[rgb(var(--rgb-ink)/0.06)] text-ink break-words';
 
 function escapeHtml(s: string): string {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
