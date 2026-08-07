@@ -180,7 +180,7 @@ export default function HomePage() {
           // rendered size, so the ascent reads straight off the class.
           'px-gutter py-20 lg:py-24',
           'world-surface-cool',
-          'border-t border-wa-teal-soft/40',
+          'border-t border-cool-soft/40',
         )}
       >
         {/* layered golden-hour depth — far tier, drifts on scroll, static under RM */}
@@ -220,7 +220,7 @@ export default function HomePage() {
               This string is TWINNED with components/A11yReceipts.tsx, whose
               comment records it as "home's showcase grammar verbatim" — the two
               must move together or that claim goes false at mobile. */}
-          <div className="grid grid-cols-1 min-[480px]:grid-cols-2 lg:grid-cols-3 gap-px bg-wa-teal-soft/30 border border-wa-teal-soft/50 rounded-lg overflow-hidden shadow-md">
+          <div className="grid grid-cols-1 min-[480px]:grid-cols-2 lg:grid-cols-3 gap-px bg-cool-soft/30 border border-cool-soft/50 rounded-lg overflow-hidden shadow-md">
             {showcaseChips.map(({ stat, label, project, href, tags }, i) => {
               // C-22: split off the LAST word so it + the arrow can be bound in a
               // whitespace-nowrap span — a soft-wrap opportunity sits before the
@@ -597,7 +597,7 @@ export default function HomePage() {
           'px-gutter',
           'py-24 lg:py-32',
           'world-surface-cool-pale',
-          'border-t border-wa-teal-soft/50',
+          'border-t border-cool-soft/50',
           'relative overflow-hidden',
         )}
       >

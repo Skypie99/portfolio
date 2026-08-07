@@ -92,7 +92,7 @@ export function A11yReceipts({ data, className }: { data: A11yReceiptsData; clas
           overflowed their padding box (invisibly — they ate the right padding
           rather than crossing an edge, which is why the audit's overflow probe
           read zero). Every width >=480 is byte-identical. */}
-      <div className="grid grid-cols-1 min-[480px]:grid-cols-2 lg:grid-cols-3 gap-px bg-wa-teal-soft/30 border border-wa-teal-soft/50 rounded-lg overflow-hidden shadow-md">
+      <div className="grid grid-cols-1 min-[480px]:grid-cols-2 lg:grid-cols-3 gap-px bg-cool-soft/30 border border-cool-soft/50 rounded-lg overflow-hidden shadow-md">
         {data.receipts.map((r, i) => (
           <Reveal
             key={r.label}

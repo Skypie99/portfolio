@@ -45,11 +45,13 @@ export function SidebarNotesLink() {
          the one. It reads as a miss from the ratified sweep in 6e0f54f, which
          normalised eyebrows to accent-ink but listed only app/*.tsx. Against
          that, b4e3ff3 deliberately darkened this label to wa-teal-deep "so
-         they stay AA-readable on the teal". Two recorded intents disagree, so
+         they stay AA-readable on the teal" — the token now spelled
+         `text-cool-deep`, same --rgb-cool-deep triplet, renamed by UP-06/P10.
+         Two recorded intents disagree, so
          the one-class change is filed as a fork, not taken here.
          Measured cost if she wants it: accent-ink on this rail = 6.11:1 light /
          8.99:1 dark, both clear. See DECISIONS §P `P7-UP-36-GRAMMAR`. */
-      className="group font-mono text-meta tracking-label uppercase text-wa-teal-deep inline-flex items-center gap-1"
+      className="group font-mono text-meta tracking-label uppercase text-cool-deep inline-flex items-center gap-1"
     >
       <span
         className={cn(

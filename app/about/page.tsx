@@ -149,7 +149,7 @@ export default function AboutPage() {
 
           {/* Peach-cream callout panel — Dani §3.6. Hairline dividers
               between steps preserved from Cycle 7 (Stone decorative). */}
-          <div className="bg-wa-teal-wash border border-wa-teal-soft/50 rounded-lg p-12 md:p-24">
+          <div className="bg-wash-cool border border-cool-soft/50 rounded-lg p-12 md:p-24">
             <ol className="flex flex-col divide-y divide-border-decorative">
               <li className="py-12 first:pt-0 last:pb-0">
                 <Reveal index={0}>

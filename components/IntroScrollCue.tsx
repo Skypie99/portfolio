@@ -16,7 +16,7 @@ import { useEffect, useRef } from 'react';
  * affordance" and that went stale when the 2026-07-19 work-of-art pass replaced
  * the ↓ with the drawn chevron below. The WORD is shared; the glyph deliberately
  * is not, and neither is the colour (this cue is bone over the theme-invariant
- * film, the Hero's arrow is text-wa-teal on a themed surface). MOTION_SYSTEM §15
+ * film, the Hero's arrow is text-cool on a themed surface). MOTION_SYSTEM §15
  * already treats them as two objects, and it reconciled a sibling stale claim in
  * this same component once before ("0.9" described the Hero's cue, not this one).
  *

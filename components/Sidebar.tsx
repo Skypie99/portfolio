@@ -39,7 +39,7 @@ export function Sidebar() {
         'h-screen',
         'p-12',
         'bg-rail',
-        'border-r border-wa-teal-soft/50',
+        'border-r border-cool-soft/50',
         // Short-viewport steps (globals.css R4): tightens gap/py below 900px
         // viewport height + overflow-y:auto floor, so the bottom CTA always
         // renders. No effect at >=900px heights.
