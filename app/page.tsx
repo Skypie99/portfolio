@@ -196,7 +196,7 @@ export default function HomePage() {
             <h2 className="font-serif font-light text-step-4 ember mb-3 max-w-2xl leading-[1.1] text-balance">
               Built, shipped, and open.
             </h2>
-            <p className="font-sans font-light text-body text-charcoal mb-24 max-w-[540px] text-pretty">
+            <p className="font-sans font-light text-body text-ink-muted mb-24 max-w-[540px] text-pretty">
               Real products on the open internet. Each one accessible by design.
             </p>
           </Reveal>
@@ -475,7 +475,7 @@ export default function HomePage() {
               {' '}{profile.location}, mostly on AI tooling, accessibility
               infrastructure, and the systems that make a product feel calm.
             </p>
-            <p className="font-sans font-light text-prose text-charcoal leading-[1.65] text-pretty">
+            <p className="font-sans font-light text-prose text-ink-muted leading-[1.65] text-pretty">
               I keep a written record of how each thing was made. The
               documentation is part of the deliverable, not an afterthought.
             </p>

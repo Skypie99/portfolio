@@ -165,7 +165,7 @@ export function Footer() {
             <h2 className="font-mono text-label tracking-label uppercase text-text-meta">
               About
             </h2>
-            <p className="font-sans text-body-sm text-charcoal leading-[1.65] text-pretty">
+            <p className="font-sans text-body-sm text-ink-muted leading-[1.65] text-pretty">
               {profile.name} builds small, careful AI tools. Accessible by
               default, useful by design, so no one&apos;s left out. Built in
               public, honest about what ships — five of six live on the open

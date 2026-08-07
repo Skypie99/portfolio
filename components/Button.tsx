@@ -47,7 +47,7 @@ const base =
   // Alex BLK-3 ratified pick A: disabled state uses charcoal + 50% opacity
   // (~4.3:1 contrast — meets WCAG normal-text minimum) instead of pebble
   // which would have failed contrast. Applies to native <button disabled>.
-  'disabled:text-charcoal disabled:opacity-50 ' +
+  'disabled:text-ink-muted disabled:opacity-50 ' +
   'disabled:cursor-not-allowed disabled:hover:bg-cream disabled:hover:shadow-none disabled:hover:translate-y-0';
 
 const widthClasses = (full: boolean) =>
@@ -56,11 +56,11 @@ const widthClasses = (full: boolean) =>
 const variants: Record<Variant, string> = {
   primary:
     'bg-cream border-border-interactive ' +
-    'hover:bg-blush hover:border-charcoal ' +
+    'hover:bg-blush hover:border-ink-muted ' +
     'active:bg-peach-cream',
   ghost:
     'bg-transparent border-border-interactive ' +
-    'hover:bg-warm-white hover:border-charcoal ' +
+    'hover:bg-warm-white hover:border-ink-muted ' +
     // disabled ghost stays transparent (override the base's disabled:hover:bg-cream)
     'disabled:hover:bg-transparent disabled:hover:border-border-interactive',
 };

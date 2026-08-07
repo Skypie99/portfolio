@@ -76,7 +76,7 @@ export function A11yReceipts({ data, className }: { data: A11yReceiptsData; clas
           <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
           Measured, not claimed
         </h2>
-        <p className="font-sans font-light text-prose text-charcoal leading-[1.65] max-w-measure-lead mb-12 text-pretty">
+        <p className="font-sans font-light text-prose text-ink-muted leading-[1.65] max-w-measure-lead mb-12 text-pretty">
           Real numbers from a real run — measured {data.measuredDate}, method below. Not a
           live gate yet; a snapshot you can re-run.
         </p>

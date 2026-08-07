@@ -111,7 +111,7 @@ export function CaseStudyCard({ title, category, description, href, media, links
               sentences ("vanilla JS, zero dependencies", "zero cloud, instant
               runs."); clamping amputated them on the work grid. Un-clamped they
               stand at their natural height (a build-time change → CLS 0). */}
-          <p className="font-sans font-light text-body-sm leading-[1.65] text-charcoal text-pretty">
+          <p className="font-sans font-light text-body-sm leading-[1.65] text-ink-muted text-pretty">
             {description}
           </p>
 

@@ -52,7 +52,7 @@ export function NumberedStep({ number, title, body, highlight = false, className
         <h3 className="font-serif font-normal text-step-2 tracking-[-0.01em] leading-[1.15] text-near-black text-balance">
           {title}
         </h3>
-        <p className="font-sans font-light text-body text-charcoal leading-[1.65] max-w-measure text-pretty">
+        <p className="font-sans font-light text-body text-ink-muted leading-[1.65] max-w-measure text-pretty">
           {body}
         </p>
       </div>
