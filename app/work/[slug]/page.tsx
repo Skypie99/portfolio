@@ -245,8 +245,8 @@ export default async function WorkDetailPage({
       <section className="px-gutter py-16 md:py-24 lg:py-32 world-surface">
         <div className="max-w-content mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8 md:mb-12">
-            <ol className="inline-flex items-center gap-2 font-mono text-meta tracking-label uppercase text-text-meta">
-              <li>
+            <ol className="flex items-center gap-2 font-mono text-meta tracking-label uppercase text-text-meta">
+              <li className="shrink-0">
                 <Link
                   href="/work/"
                   className="link-draw inline-block text-text-meta"
@@ -258,10 +258,10 @@ export default async function WorkDetailPage({
                   crumb lost its path between two floating labels. Lift to
                   stone-strong in dark for the same faint-hairline the light theme
                   keeps (decorative parity, not an a11y gate). */}
-              <li aria-hidden="true" className="text-stone dark:text-stone-strong">
+              <li aria-hidden="true" className="shrink-0 text-stone dark:text-stone-strong">
                 {'/'}
               </li>
-              <li aria-current="page" className="text-near-black truncate max-w-[240px] lg:max-w-[420px] xl:max-w-[560px]">
+              <li aria-current="page" className="text-near-black truncate min-w-0 max-w-[240px] lg:max-w-[420px] xl:max-w-[560px]">
                 {d.title}
               </li>
             </ol>
