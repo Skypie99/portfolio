@@ -117,7 +117,11 @@ desktop-only, locked.
 
 ---
 
-### ⛔ Item 6 · `every-room-its-postcard` — REFUSED AS SPECIFIED (blocked on a Sky ratify)
+### ⛔ Item 6 · `every-room-its-postcard` — REFUSED, then **HELD by Sky (2026-08-09)**
+
+> **SKY'S RULING (2026-08-09): HOLD THE LINE.** The OG system stays the ratified 3-grammar set
+> (name · artifact · measurement). Item 6 is closed on the restraint list — **do not re-propose it.**
+> PROTECT-70 stands. The five content rooms keep the home name plate by design.
 
 **Not built, on purpose.** Item 6 asks to give `/certificates/`, `/contact/`, `/about/`, `/colophon/` and
 `/blog/` their own bespoke OG cards, reading their sharing of the home card as a defect ("a shared business
@@ -176,8 +180,8 @@ premises to not survive checking, found before Wave 2 fired.
    Rollback: `git reset --hard f39b1ab && git push --force-with-lease`. Per-item revert is one `git revert`.
    *All three are additive/defensive — the defect fix changes a hover colour, items 7 & 10 add media blocks
    that are inert on the default screen render (axe 0/32 and overflow 0/68 unchanged across all three).*
-2. **Item 6 — hold or ratify.** See §2. Recommended: hold. If ratify, tell me which rooms and what each
-   unfurls; I build exactly that.
+2. **Item 6 — ✅ DECIDED 2026-08-09: HELD.** Sky ruled hold-the-line; PROTECT-70 stands, item 6 is closed,
+   do not re-propose. (No work; the OG system stays a clean 3-grammar set.)
 3. **The two Wave-1 mockup picks are still open** (they moved with the rebase, both still one clean merge):
    glass `luxe/w1-finish-the-glass` (yes/no), hamburger A/B/C (`captures/hamburger-candidates.png`).
 4. **`--color-link-hover` is now guarded** — the two-tier link-draw response (block/keyboard get the line,
