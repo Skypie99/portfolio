@@ -80,7 +80,7 @@ export default function CertificatesPage() {
           </SettleHeading>
           <p className="font-sans font-light text-prose text-ink-muted leading-[1.65] max-w-measure-lead text-pretty">
             Selected credentials and certifications. A short paper trail of the
-            things I&apos;ve studied formally — most of the learning happens in
+            things I’ve studied formally — most of the learning happens in
             the work, not on paper.
           </p>
         </div>

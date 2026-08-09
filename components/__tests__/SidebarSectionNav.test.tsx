@@ -40,7 +40,7 @@ vi.mock('@/lib/motion', () => ({
 import { SidebarSectionNav } from '@/components/SidebarSectionNav';
 import { ROUTE_SECTIONS, sectionsForRoute, INDEXED_ROUTES } from '@/lib/sectionNav';
 
-const HOME_LABELS = ['The Work', 'Method', 'A Brief Account', 'Credentials', "Let's talk"];
+const HOME_LABELS = ['The Work', 'Method', 'A Brief Account', 'Credentials', "Let’s talk"];
 
 /**
  * Rendered outside the app, next/link normalizes `/about/#x` to `/about#x`;
@@ -81,7 +81,7 @@ describe('SidebarSectionNav — the homepage index is unchanged', () => {
     }
     expect(screen.getByRole('link', { name: 'The Work' })).toHaveAttribute('href', '/#work');
     expect(screen.getByRole('link', { name: 'A Brief Account' })).toHaveAttribute('href', '/#about');
-    expect(screen.getByRole('link', { name: "Let's talk" })).toHaveAttribute('href', '/#contact');
+    expect(screen.getByRole('link', { name: "Let’s talk" })).toHaveAttribute('href', '/#contact');
   });
 
   it('keeps the visible "On this page" label string exactly', () => {
