@@ -14,15 +14,16 @@
  *     estate, this was the only one with that break.
  * `.link-draw-group` fixes both by keying the trigger to the `.group` anchor.
  *
- * The load-bearing assertion here is the NEGATIVE one: the rider must never
- * grow a `color` declaration. `--color-link-hover` is rgb(178 81 40), which
- * measures 4.422:1 on `bg-rail` — below the 4.5:1 floor for this 19px regular
- * title. Widening the underline's trigger is safe (a 1px decorative line only
- * owes 3:1); widening the COLOUR's trigger would push a sub-AA state onto
- * whole-block hover and, for the first time, onto keyboard users. axe cannot
- * catch it — axe-core's color-contrast rule evaluates resting computed style
- * and does not simulate :hover, which is exactly how 4.422:1 survived this
- * long. So the guard has to be here, in source.
+ * The NEGATIVE assertion — the rider must not grow a `color` declaration —
+ * began as an a11y floor: the hover colour was rgb(178 81 40), 4.422:1 on
+ * `bg-rail` and sub-AA on five light surfaces, so widening its trigger onto
+ * whole-block hover and the keyboard would have shipped a sub-AA state axe
+ * cannot see (it does not simulate :hover). Luxe W2 fixed that at the token
+ * (`--color-link-hover` → `--rgb-link-hover` = rgb(120 62 38), ≥5.47:1
+ * everywhere, guarded in ink-contrast.test.ts). So this is now a DESIGN pin,
+ * not a contrast one: the two-tier response (line for block/keyboard, line +
+ * colour for pointer-on-word) is deliberate, and unifying it is Sky's call.
+ * Keeping the assertion means that unification happens on purpose, not by drift.
  *
  * The CSS assertions read globals.css as text rather than asserting computed
  * style: jsdom does not implement the cascade for a stylesheet this component
@@ -100,15 +101,16 @@ describe('SidebarFeatured — the rider in globals.css', () => {
     expect(GLOBALS).toContain('.group:focus-visible > .link-draw-group');
   });
 
-  it('never gains a colour declaration (the sub-AA hover guard)', () => {
+  it('stays state-only — the two-tier response is a deliberate design pin', () => {
     const start = GLOBALS.indexOf('.group:hover > .link-draw-group');
     expect(start).toBeGreaterThan(-1);
     const block = GLOBALS.slice(start, GLOBALS.indexOf('}', start) + 1);
     expect(
       block,
-      'The link-draw-group rider must stay state-only. --color-link-hover is ' +
-        '4.422:1 on bg-rail, under the 4.5:1 floor for the 19px title — adding ' +
-        'color here hands a sub-AA state to whole-block hover and to keyboard users.',
+      'The link-draw-group rider is intentionally line-only: block hover and the ' +
+        'keyboard get the underline, the pointer-on-word gets line + colour. The ' +
+        'hover colour is now AA-safe everywhere (luxe W2), so unifying the tiers ' +
+        'is a design decision — make it on purpose, not by adding color: here.',
     ).not.toContain('color:');
   });
 

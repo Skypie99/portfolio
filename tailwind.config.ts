@@ -106,7 +106,7 @@ const config: Config = {
         'accent-primary':     'rgb(var(--rgb-accent) / <alpha-value>)',
         'accent-text':        'rgb(var(--rgb-accent-ink) / <alpha-value>)',
         link:                 'rgb(var(--rgb-accent-ink) / <alpha-value>)',
-        'link-hover':         'rgb(var(--rgb-accent-hover) / <alpha-value>)',
+        'link-hover':         'rgb(var(--rgb-link-hover) / <alpha-value>)',
       },
       fontFamily: {
         serif: ['var(--font-cormorant)', 'Garamond', 'Georgia', 'serif'],
