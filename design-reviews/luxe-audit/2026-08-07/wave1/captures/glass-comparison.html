@@ -1,0 +1,99 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>LUXE-2 · finish-the-glass — warm vs current</title>
+<!--
+  MOCKUP GATE for luxe Wave 1, item 2 `finish-the-glass`.
+  Both states come from ONE build (design-reviews/.../tools/glass-compare.mjs);
+  the warm state is a runtime style injection of exactly the two declarations
+  under review, so nothing else can differ between the pairs below.
+-->
+<style>
+  body { margin:0; padding:36px; background:rgb(238 236 230); color:rgb(28 32 34);
+         font:400 14px/1.55 ui-sans-serif,-apple-system,system-ui,sans-serif; }
+  h1 { font:300 27px/1.2 ui-serif,Georgia,serif; margin:0 0 6px; }
+  .sub { color:rgb(28 32 34/.62); margin:0 0 8px; max-width:informal; max-width:900px; }
+  code { font:500 12.5px ui-monospace,monospace; background:rgb(28 32 34/.06); padding:1px 5px; border-radius:3px; }
+  h2 { font:500 11px/1 ui-monospace,monospace; letter-spacing:.14em; text-transform:uppercase;
+       color:rgb(28 32 34/.55); margin:38px 0 14px; }
+  .pair { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  figure { margin:0; }
+  figcaption { font:500 11px/1 ui-monospace,monospace; letter-spacing:.1em; text-transform:uppercase;
+               color:rgb(28 32 34/.55); margin:0 0 8px; }
+  img { width:100%; display:block; border-radius:8px; border:1px solid rgb(28 32 34/.12); }
+  .zoomwrap { width:100%; aspect-ratio:16/7; overflow:hidden; border-radius:8px;
+              border:1px solid rgb(28 32 34/.12); position:relative; background:#fff; }
+  .zoomwrap img { position:absolute; width:400%; border:0; border-radius:0; left:-30%; top:-70%; }
+  table { border-collapse:collapse; margin-top:10px; font-size:13px; }
+  th,td { text-align:left; padding:5px 20px 5px 0; border-bottom:1px solid rgb(28 32 34/.1); }
+  th { font:500 10.5px ui-monospace,monospace; letter-spacing:.1em; text-transform:uppercase; color:rgb(28 32 34/.55); }
+  .good { color:rgb(38 104 74); font-weight:500; }
+  .swatchrow { display:flex; gap:26px; align-items:center; margin-top:12px; flex-wrap:wrap; }
+  .sw { display:flex; align-items:center; gap:9px; font:500 12px ui-monospace,monospace; }
+  .chip { width:38px; height:38px; border-radius:7px; border:1px solid rgb(28 32 34/.15); }
+</style>
+
+<h1>finish-the-glass — warm vs current</h1>
+<p class="sub">
+  Two declarations change, light theme only:
+  the pane tint <code>rgb(252 251 255 / .42)</code> → <code>rgb(255 252 244 / .42)</code>
+  and the specular glint <code>rgb(206 228 244 / .26)</code> → <code>rgb(250 226 196 / .26)</code>.
+  Dark glass is byte-untouched (already warm at <code>rgb(38 31 24 / .52)</code>).
+  This completes UP-19, which warmed the <em>rim</em> and left a warm rim around a blue-white pane.
+</p>
+
+<div class="swatchrow">
+  <div class="sw"><span class="chip" style="background:#FCFBFF"></span>pane now · #FCFBFF (B&gt;R)</div>
+  <div class="sw"><span class="chip" style="background:#FFFCF4"></span>pane warm · #FFFCF4 (R&gt;B)</div>
+  <div class="sw"><span class="chip" style="background:#CEE4F4"></span>glint now · #CEE4F4</div>
+  <div class="sw"><span class="chip" style="background:#FAE2C4"></span>glint warm · #FAE2C4</div>
+  <div class="sw"><span class="chip" style="background:#FAF8F1"></span>the canvas it floats on · #FAF8F1</div>
+</div>
+
+<h2>The work cards — glass on the page canvas (where the split actually shows)</h2>
+<div class="pair">
+  <figure><figcaption>current</figcaption><img src="glass-work-cards--current.png" alt=""></figure>
+  <figure><figcaption>warm</figcaption><img src="glass-work-cards--warm.png" alt=""></figure>
+</div>
+
+<h2>Certificates</h2>
+<div class="pair">
+  <figure><figcaption>current</figcaption><img src="glass-certificates--current.png" alt=""></figure>
+  <figure><figcaption>warm</figcaption><img src="glass-certificates--warm.png" alt=""></figure>
+</div>
+
+<h2>At 4× — the pane tint itself</h2>
+<div class="pair">
+  <figure><figcaption>current</figcaption><div class="zoomwrap"><img src="glass-work-cards--current.png" alt=""></div></figure>
+  <figure><figcaption>warm</figcaption><div class="zoomwrap"><img src="glass-work-cards--warm.png" alt=""></div></figure>
+</div>
+
+<h2>The identity chip — and why it is the WEAKEST place to judge this</h2>
+<p class="sub">
+  The ledger leads with the chip as “the first pixel of every arrival.” It is — but the chip's glass floats over the
+  <em>cinematic desert frame</em>, which is already deep orange, so a 42%-alpha white shifted 6/255 toward warm is
+  invisible there. Only <strong>3.6%</strong> of this frame's pixels change at all. Judge the item on the cards above,
+  not here.
+</p>
+<div class="pair">
+  <figure><figcaption>current</figcaption><img src="glass-home-identity-chip--current.png" alt=""></figure>
+  <figure><figcaption>warm</figcaption><img src="glass-home-identity-chip--warm.png" alt=""></figure>
+</div>
+
+<h2>What it costs — measured, not asserted</h2>
+<table>
+  <tr><th>Measure</th><th>Result</th></tr>
+  <tr><td>Text nodes on glass measured in BOTH states</td><td>75</td></tr>
+  <tr><td>New AA failures introduced</td><td class="good">0</td></tr>
+  <tr><td>Direction of every contrast delta</td><td class="good">positive (warm is very slightly <em>better</em>)</td></tr>
+  <tr><td>Largest ratio movement</td><td>+0.028</td></tr>
+  <tr><td>Lowest ratio after warm</td><td class="good">5.237 “Expo” (floor 4.5)</td></tr>
+  <tr><td>Max per-channel pixel shift</td><td>6 / 255</td></tr>
+  <tr><td>Frame area changed — work cards / certificates / chip</td><td>29.4% / 40.6% / 3.6%</td></tr>
+  <tr><td>axe strict, 16 routes × 2 themes</td><td class="good">0 violations</td></tr>
+</table>
+<p class="sub" style="margin-top:14px">
+  <strong>The decision is taste, not safety.</strong> The change is broad in area and shallow in depth: a 6/255 hue
+  shift over roughly a third of the glass-bearing viewport, with no a11y cost in either direction. The case for it is
+  that the estate currently wears two temperatures of glass in one material. The case against it is that a cool cast in
+  glass is defensible material realism — real glass is slightly blue — which is exactly why this is gated to your eye.
+</p>

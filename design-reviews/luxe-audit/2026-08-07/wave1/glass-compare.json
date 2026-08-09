@@ -1,0 +1,4382 @@
+{
+  "meta": {
+    "engine": "Chromium (playwright-core) headless, 1440x900 DSF2, light theme — NOT Safari/WebKit",
+    "under_review": {
+      "pane": {
+        "current": "rgb(252 251 255 / 0.42)",
+        "proposed": "rgb(255 252 244 / 0.42)"
+      },
+      "glint": {
+        "current": "rgb(206 228 244 / 0.26)",
+        "proposed": "rgb(250 226 196 / 0.26)"
+      }
+    }
+  },
+  "contrast": [
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Sky Halisky",
+      "fontPx": 12,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 13.166,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "AI Builder",
+      "fontPx": 10,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 13.166,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Featured",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.922,
+      "backdrop": [
+        253.1,
+        252.4,
+        251.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Solo builder",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.962,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "AccessMap",
+      "fontPx": 37.44,
+      "large": true,
+      "floor": 3,
+      "ratio": 13.166,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Mobile app for flagging accessibility barrie",
+      "fontPx": 14,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.596,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Expo",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.23,
+      "backdrop": [
+        187.2,
+        212.4,
+        214.4
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "React Native",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 9.43,
+      "backdrop": [
+        226.9,
+        211.6,
+        185.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Supabase",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.127,
+      "backdrop": [
+        207.4,
+        229.2,
+        215.2
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "TypeScript",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.586,
+      "backdrop": [
+        199.6,
+        218.5,
+        211.4
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "View project",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.742,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Live",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.962,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "GitHub",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.962,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Solo builder",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.962,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Claude Corp",
+      "fontPx": 37.44,
+      "large": true,
+      "floor": 3,
+      "ratio": 13.166,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "A 15-role AI team governed by a written Cons",
+      "fontPx": 14,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.596,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Claude Code",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 8.976,
+      "backdrop": [
+        217,
+        206.3,
+        201
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "MCP",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.127,
+      "backdrop": [
+        207.4,
+        229.2,
+        215.2
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Multi-agent orchestration",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.23,
+      "backdrop": [
+        187.2,
+        212.4,
+        214.4
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "View project",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.742,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Live",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.962,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "GitHub",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.962,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Solo builder",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.962,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Claude Corp Dashboard",
+      "fontPx": 37.44,
+      "large": true,
+      "floor": 3,
+      "ratio": 13.166,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "A live command center for an AI agent team —",
+      "fontPx": 14,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.596,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Next.js",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 9.43,
+      "backdrop": [
+        226.9,
+        211.6,
+        185.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "React",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.586,
+      "backdrop": [
+        199.6,
+        218.5,
+        211.4
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "TypeScript",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.586,
+      "backdrop": [
+        199.6,
+        218.5,
+        211.4
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Tailwind",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.586,
+      "backdrop": [
+        199.6,
+        218.5,
+        211.4
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "View project",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.742,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Live",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.962,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Solo builder",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.962,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Prompt Library",
+      "fontPx": 37.44,
+      "large": true,
+      "floor": 3,
+      "ratio": 13.166,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Local-first AI prompt manager. Your prompts,",
+      "fontPx": 14,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.596,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Next.js 15",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 8.976,
+      "backdrop": [
+        217,
+        206.3,
+        201
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "TypeScript",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.586,
+      "backdrop": [
+        199.6,
+        218.5,
+        211.4
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Vitest",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.127,
+      "backdrop": [
+        207.4,
+        229.2,
+        215.2
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "localStorage",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.127,
+      "backdrop": [
+        207.4,
+        229.2,
+        215.2
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "View project",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.742,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Live",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.962,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "GitHub",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.962,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Solo builder",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.962,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Ghost Code",
+      "fontPx": 37.44,
+      "large": true,
+      "floor": 3,
+      "ratio": 13.166,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Retro arcade trainer for CLI commands — guid",
+      "fontPx": 14,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.596,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Vanilla JS",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.127,
+      "backdrop": [
+        207.4,
+        229.2,
+        215.2
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "HTML",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.127,
+      "backdrop": [
+        207.4,
+        229.2,
+        215.2
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "CSS",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 8.976,
+      "backdrop": [
+        217,
+        206.3,
+        201
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "GitHub Pages",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.127,
+      "backdrop": [
+        207.4,
+        229.2,
+        215.2
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "View project",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.742,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Live",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.962,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "GitHub",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.962,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Solo builder",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.962,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Mutual Mesh",
+      "fontPx": 37.44,
+      "large": true,
+      "floor": 3,
+      "ratio": 13.166,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Privacy-first mutual-aid marketplace for foo",
+      "fontPx": 14,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.596,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Expo",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.23,
+      "backdrop": [
+        187.2,
+        212.4,
+        214.4
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "React Native",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 9.43,
+      "backdrop": [
+        226.9,
+        211.6,
+        185.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Supabase",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.127,
+      "backdrop": [
+        207.4,
+        229.2,
+        215.2
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "TypeScript",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.586,
+      "backdrop": [
+        199.6,
+        218.5,
+        211.4
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "View project",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.742,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "Demo",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.962,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "text": "GitHub",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.962,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Sky Halisky",
+      "fontPx": 12,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 13.194,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "AI Builder",
+      "fontPx": 10,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 13.194,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Featured",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.929,
+      "backdrop": [
+        253.7,
+        252.6,
+        249.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Solo builder",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.975,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "AccessMap",
+      "fontPx": 37.44,
+      "large": true,
+      "floor": 3,
+      "ratio": 13.194,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Mobile app for flagging accessibility barrie",
+      "fontPx": 14,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.612,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Expo",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.237,
+      "backdrop": [
+        188,
+        212.7,
+        211.4
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "React Native",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 9.448,
+      "backdrop": [
+        227.7,
+        211.8,
+        182.6
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Supabase",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.137,
+      "backdrop": [
+        208.3,
+        229.5,
+        211.7
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "TypeScript",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.593,
+      "backdrop": [
+        200.3,
+        218.8,
+        208.8
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "View project",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.757,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Live",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.975,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "GitHub",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.975,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Solo builder",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.975,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Claude Corp",
+      "fontPx": 37.44,
+      "large": true,
+      "floor": 3,
+      "ratio": 13.194,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "A 15-role AI team governed by a written Cons",
+      "fontPx": 14,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.612,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Claude Code",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 8.993,
+      "backdrop": [
+        217.9,
+        206.6,
+        197.8
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "MCP",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.137,
+      "backdrop": [
+        208.3,
+        229.5,
+        211.7
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Multi-agent orchestration",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.237,
+      "backdrop": [
+        188,
+        212.7,
+        211.4
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "View project",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.757,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Live",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.975,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "GitHub",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.975,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Solo builder",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.975,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Claude Corp Dashboard",
+      "fontPx": 37.44,
+      "large": true,
+      "floor": 3,
+      "ratio": 13.194,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "A live command center for an AI agent team —",
+      "fontPx": 14,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.612,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Next.js",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 9.448,
+      "backdrop": [
+        227.7,
+        211.8,
+        182.6
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "React",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.593,
+      "backdrop": [
+        200.3,
+        218.8,
+        208.8
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "TypeScript",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.593,
+      "backdrop": [
+        200.3,
+        218.8,
+        208.8
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Tailwind",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.593,
+      "backdrop": [
+        200.3,
+        218.8,
+        208.8
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "View project",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.757,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Live",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.975,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Solo builder",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.975,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Prompt Library",
+      "fontPx": 37.44,
+      "large": true,
+      "floor": 3,
+      "ratio": 13.194,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Local-first AI prompt manager. Your prompts,",
+      "fontPx": 14,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.612,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Next.js 15",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 8.993,
+      "backdrop": [
+        217.9,
+        206.6,
+        197.8
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "TypeScript",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.593,
+      "backdrop": [
+        200.3,
+        218.8,
+        208.8
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Vitest",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.137,
+      "backdrop": [
+        208.3,
+        229.5,
+        211.7
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "localStorage",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.137,
+      "backdrop": [
+        208.3,
+        229.5,
+        211.7
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "View project",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.757,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Live",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.975,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "GitHub",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.975,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Solo builder",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.975,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Ghost Code",
+      "fontPx": 37.44,
+      "large": true,
+      "floor": 3,
+      "ratio": 13.194,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Retro arcade trainer for CLI commands — guid",
+      "fontPx": 14,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.612,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Vanilla JS",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.137,
+      "backdrop": [
+        208.3,
+        229.5,
+        211.7
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "HTML",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.137,
+      "backdrop": [
+        208.3,
+        229.5,
+        211.7
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "CSS",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 8.993,
+      "backdrop": [
+        217.9,
+        206.6,
+        197.8
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "GitHub Pages",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.137,
+      "backdrop": [
+        208.3,
+        229.5,
+        211.7
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "View project",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.757,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Live",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.975,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "GitHub",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.975,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Solo builder",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.975,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Mutual Mesh",
+      "fontPx": 37.44,
+      "large": true,
+      "floor": 3,
+      "ratio": 13.194,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Privacy-first mutual-aid marketplace for foo",
+      "fontPx": 14,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.612,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Expo",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.237,
+      "backdrop": [
+        188,
+        212.7,
+        211.4
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "React Native",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 9.448,
+      "backdrop": [
+        227.7,
+        211.8,
+        182.6
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Supabase",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.137,
+      "backdrop": [
+        208.3,
+        229.5,
+        211.7
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "TypeScript",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.593,
+      "backdrop": [
+        200.3,
+        218.8,
+        208.8
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "View project",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.757,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "Demo",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.975,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "text": "GitHub",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.975,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "Sky Halisky",
+      "fontPx": 12,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 13.166,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "AI Builder",
+      "fontPx": 10,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 13.166,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "AccessMap",
+      "fontPx": 37.44,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.617,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "Mobile app for flagging accessibility barrie",
+      "fontPx": 14,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.279,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "Read more",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.461,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "Live",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "GitHub",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "Claude Corp",
+      "fontPx": 37.44,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.617,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "A 15-role AI team governed by a written Cons",
+      "fontPx": 14,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.279,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "Read more",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.461,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "Live",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "GitHub",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "Claude Corp Dashboard",
+      "fontPx": 37.44,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.617,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "A live command center for an AI agent team —",
+      "fontPx": 14,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.279,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "Read more",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.461,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "Live",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "Prompt Library",
+      "fontPx": 37.44,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.617,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "Local-first AI prompt manager. Your prompts,",
+      "fontPx": 14,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.279,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "Read more",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.461,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "Live",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "GitHub",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "Ghost Code",
+      "fontPx": 37.44,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.617,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "Retro arcade trainer for CLI commands — guid",
+      "fontPx": 14,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.279,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "Read more",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.461,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "Live",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "GitHub",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "Mutual Mesh",
+      "fontPx": 37.44,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.617,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "Privacy-first mutual-aid marketplace for foo",
+      "fontPx": 14,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.279,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "Read more",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.461,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "Demo",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "text": "GitHub",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "Sky Halisky",
+      "fontPx": 12,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 13.194,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "AI Builder",
+      "fontPx": 10,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 13.194,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "AccessMap",
+      "fontPx": 37.44,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.645,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "Mobile app for flagging accessibility barrie",
+      "fontPx": 14,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.295,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "Read more",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.475,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "Live",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "GitHub",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "Claude Corp",
+      "fontPx": 37.44,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.645,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "A 15-role AI team governed by a written Cons",
+      "fontPx": 14,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.295,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "Read more",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.475,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "Live",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "GitHub",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "Claude Corp Dashboard",
+      "fontPx": 37.44,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.645,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "A live command center for an AI agent team —",
+      "fontPx": 14,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.295,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "Read more",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.475,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "Live",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "Prompt Library",
+      "fontPx": 37.44,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.645,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "Local-first AI prompt manager. Your prompts,",
+      "fontPx": 14,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.295,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "Read more",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.475,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "Live",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "GitHub",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "Ghost Code",
+      "fontPx": 37.44,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.645,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "Retro arcade trainer for CLI commands — guid",
+      "fontPx": 14,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.295,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "Read more",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.475,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "Live",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "GitHub",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "Mutual Mesh",
+      "fontPx": 37.44,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.645,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "Privacy-first mutual-aid marketplace for foo",
+      "fontPx": 14,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.295,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "Read more",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 6.475,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "Demo",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "text": "GitHub",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "Sky Halisky",
+      "fontPx": 12,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 13.166,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "AI Builder",
+      "fontPx": 10,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 13.166,
+      "backdrop": [
+        250.8,
+        249.3,
+        246.9
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "Anthropic",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "Introduction to Model Context Protocol",
+      "fontPx": 24,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.617,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "ISSUED JUNE 2026",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "Verify",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.498,
+      "backdrop": [
+        250,
+        248,
+        241
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "Anthropic",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "AI Fluency Framework & Foundations",
+      "fontPx": 24,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.617,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "ISSUED MAY 2026",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "Verify",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.498,
+      "backdrop": [
+        250,
+        248,
+        241
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "Anthropic",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "Introduction to Claude Cowork",
+      "fontPx": 24,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.617,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "ISSUED MAY 2026",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "Verify",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.498,
+      "backdrop": [
+        250,
+        248,
+        241
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "Anthropic",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "Claude 101",
+      "fontPx": 24,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.617,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "ISSUED MAY 2026",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "Verify",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.498,
+      "backdrop": [
+        250,
+        248,
+        241
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "Anthropic",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "Claude Code in Action",
+      "fontPx": 24,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.617,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "ISSUED MAY 2026",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "Verify",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.498,
+      "backdrop": [
+        250,
+        248,
+        241
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "Anthropic",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "Claude Code 101",
+      "fontPx": 24,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.617,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "ISSUED MAY 2026",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "Verify",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.498,
+      "backdrop": [
+        250,
+        248,
+        241
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "Google",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "Google Prompting Essentials Specialization",
+      "fontPx": 24,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.617,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "ISSUED JULY 2025",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "Verify",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.498,
+      "backdrop": [
+        250,
+        248,
+        241
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "University of Michigan",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "Programming for Everybody (Getting Started w",
+      "fontPx": 24,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.617,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "ISSUED JUNE 2025",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "Verify",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.498,
+      "backdrop": [
+        250,
+        248,
+        241
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "DeepLearning.AI",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "AI For Everyone",
+      "fontPx": 24,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.617,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "ISSUED JUNE 2025",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.713,
+      "backdrop": [
+        248.5,
+        244,
+        237.8
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "text": "Verify",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.498,
+      "backdrop": [
+        250,
+        248,
+        241
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "Sky Halisky",
+      "fontPx": 12,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 13.194,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "AI Builder",
+      "fontPx": 10,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 13.194,
+      "backdrop": [
+        252.1,
+        249.7,
+        242.3
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "Anthropic",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "Introduction to Model Context Protocol",
+      "fontPx": 24,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.645,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "ISSUED JUNE 2026",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "Verify",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.498,
+      "backdrop": [
+        250,
+        248,
+        241
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "Anthropic",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "AI Fluency Framework & Foundations",
+      "fontPx": 24,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.645,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "ISSUED MAY 2026",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "Verify",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.498,
+      "backdrop": [
+        250,
+        248,
+        241
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "Anthropic",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "Introduction to Claude Cowork",
+      "fontPx": 24,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.645,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "ISSUED MAY 2026",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "Verify",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.498,
+      "backdrop": [
+        250,
+        248,
+        241
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "Anthropic",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "Claude 101",
+      "fontPx": 24,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.645,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "ISSUED MAY 2026",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "Verify",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.498,
+      "backdrop": [
+        250,
+        248,
+        241
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "Anthropic",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "Claude Code in Action",
+      "fontPx": 24,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.645,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "ISSUED MAY 2026",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "Verify",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.498,
+      "backdrop": [
+        250,
+        248,
+        241
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "Anthropic",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "Claude Code 101",
+      "fontPx": 24,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.645,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "ISSUED MAY 2026",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "Verify",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.498,
+      "backdrop": [
+        250,
+        248,
+        241
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "Google",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "Google Prompting Essentials Specialization",
+      "fontPx": 24,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.645,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "ISSUED JULY 2025",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "Verify",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.498,
+      "backdrop": [
+        250,
+        248,
+        241
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "University of Michigan",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "Programming for Everybody (Getting Started w",
+      "fontPx": 24,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.645,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "ISSUED JUNE 2025",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "Verify",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.498,
+      "backdrop": [
+        250,
+        248,
+        241
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "DeepLearning.AI",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "AI For Everyone",
+      "fontPx": 24,
+      "large": true,
+      "floor": 3,
+      "ratio": 12.645,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "ISSUED JUNE 2025",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 5.726,
+      "backdrop": [
+        249.7,
+        244.4,
+        233.2
+      ]
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "text": "Verify",
+      "fontPx": 11,
+      "large": false,
+      "floor": 4.5,
+      "ratio": 7.498,
+      "backdrop": [
+        250,
+        248,
+        241
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "view": "home-identity-chip",
+      "state": "current",
+      "file": "design-reviews/luxe-audit/2026-08-07/wave1/captures/glass-home-identity-chip--current.png",
+      "note": "the identity chip — first pixel of every arrival"
+    },
+    {
+      "view": "home-identity-chip",
+      "state": "warm",
+      "file": "design-reviews/luxe-audit/2026-08-07/wave1/captures/glass-home-identity-chip--warm.png",
+      "note": "the identity chip — first pixel of every arrival"
+    },
+    {
+      "view": "work-cards",
+      "state": "current",
+      "file": "design-reviews/luxe-audit/2026-08-07/wave1/captures/glass-work-cards--current.png",
+      "note": "the work cards"
+    },
+    {
+      "view": "work-cards",
+      "state": "warm",
+      "file": "design-reviews/luxe-audit/2026-08-07/wave1/captures/glass-work-cards--warm.png",
+      "note": "the work cards"
+    },
+    {
+      "view": "certificates",
+      "state": "current",
+      "file": "design-reviews/luxe-audit/2026-08-07/wave1/captures/glass-certificates--current.png",
+      "note": "certificate glass"
+    },
+    {
+      "view": "certificates",
+      "state": "warm",
+      "file": "design-reviews/luxe-audit/2026-08-07/wave1/captures/glass-certificates--warm.png",
+      "note": "certificate glass"
+    }
+  ],
+  "deltas": [
+    {
+      "node": "Expo",
+      "floor": 4.5,
+      "current": 5.23,
+      "warm": 5.237,
+      "delta": 0.007,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Multi-agent orchestration",
+      "floor": 4.5,
+      "current": 5.23,
+      "warm": 5.237,
+      "delta": 0.007,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "TypeScript",
+      "floor": 4.5,
+      "current": 5.586,
+      "warm": 5.593,
+      "delta": 0.007,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "React",
+      "floor": 4.5,
+      "current": 5.586,
+      "warm": 5.593,
+      "delta": 0.007,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Tailwind",
+      "floor": 4.5,
+      "current": 5.586,
+      "warm": 5.593,
+      "delta": 0.007,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Live",
+      "floor": 4.5,
+      "current": 5.713,
+      "warm": 5.726,
+      "delta": 0.013,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "GitHub",
+      "floor": 4.5,
+      "current": 5.713,
+      "warm": 5.726,
+      "delta": 0.013,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Demo",
+      "floor": 4.5,
+      "current": 5.713,
+      "warm": 5.726,
+      "delta": 0.013,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Anthropic",
+      "floor": 4.5,
+      "current": 5.713,
+      "warm": 5.726,
+      "delta": 0.013,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "ISSUED JUNE 2026",
+      "floor": 4.5,
+      "current": 5.713,
+      "warm": 5.726,
+      "delta": 0.013,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "ISSUED MAY 2026",
+      "floor": 4.5,
+      "current": 5.713,
+      "warm": 5.726,
+      "delta": 0.013,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Google",
+      "floor": 4.5,
+      "current": 5.713,
+      "warm": 5.726,
+      "delta": 0.013,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "ISSUED JULY 2025",
+      "floor": 4.5,
+      "current": 5.713,
+      "warm": 5.726,
+      "delta": 0.013,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "University of Michigan",
+      "floor": 4.5,
+      "current": 5.713,
+      "warm": 5.726,
+      "delta": 0.013,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "ISSUED JUNE 2025",
+      "floor": 4.5,
+      "current": 5.713,
+      "warm": 5.726,
+      "delta": 0.013,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "DeepLearning.AI",
+      "floor": 4.5,
+      "current": 5.713,
+      "warm": 5.726,
+      "delta": 0.013,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Solo builder",
+      "floor": 4.5,
+      "current": 5.962,
+      "warm": 5.975,
+      "delta": 0.013,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Live",
+      "floor": 4.5,
+      "current": 5.962,
+      "warm": 5.975,
+      "delta": 0.013,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "GitHub",
+      "floor": 4.5,
+      "current": 5.962,
+      "warm": 5.975,
+      "delta": 0.013,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Demo",
+      "floor": 4.5,
+      "current": 5.962,
+      "warm": 5.975,
+      "delta": 0.013,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Supabase",
+      "floor": 4.5,
+      "current": 6.127,
+      "warm": 6.137,
+      "delta": 0.01,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "MCP",
+      "floor": 4.5,
+      "current": 6.127,
+      "warm": 6.137,
+      "delta": 0.01,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Vitest",
+      "floor": 4.5,
+      "current": 6.127,
+      "warm": 6.137,
+      "delta": 0.01,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "localStorage",
+      "floor": 4.5,
+      "current": 6.127,
+      "warm": 6.137,
+      "delta": 0.01,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Vanilla JS",
+      "floor": 4.5,
+      "current": 6.127,
+      "warm": 6.137,
+      "delta": 0.01,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "HTML",
+      "floor": 4.5,
+      "current": 6.127,
+      "warm": 6.137,
+      "delta": 0.01,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "GitHub Pages",
+      "floor": 4.5,
+      "current": 6.127,
+      "warm": 6.137,
+      "delta": 0.01,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Read more",
+      "floor": 4.5,
+      "current": 6.461,
+      "warm": 6.475,
+      "delta": 0.014,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "View project",
+      "floor": 4.5,
+      "current": 6.742,
+      "warm": 6.757,
+      "delta": 0.015,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Featured",
+      "floor": 4.5,
+      "current": 6.922,
+      "warm": 6.929,
+      "delta": 0.007,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Mobile app for flagging accessibility barrie",
+      "floor": 4.5,
+      "current": 7.279,
+      "warm": 7.295,
+      "delta": 0.016,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "A 15-role AI team governed by a written Cons",
+      "floor": 4.5,
+      "current": 7.279,
+      "warm": 7.295,
+      "delta": 0.016,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "A live command center for an AI agent team —",
+      "floor": 4.5,
+      "current": 7.279,
+      "warm": 7.295,
+      "delta": 0.016,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Local-first AI prompt manager. Your prompts,",
+      "floor": 4.5,
+      "current": 7.279,
+      "warm": 7.295,
+      "delta": 0.016,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Retro arcade trainer for CLI commands — guid",
+      "floor": 4.5,
+      "current": 7.279,
+      "warm": 7.295,
+      "delta": 0.016,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Privacy-first mutual-aid marketplace for foo",
+      "floor": 4.5,
+      "current": 7.279,
+      "warm": 7.295,
+      "delta": 0.016,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Verify",
+      "floor": 4.5,
+      "current": 7.498,
+      "warm": 7.498,
+      "delta": 0,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Mobile app for flagging accessibility barrie",
+      "floor": 4.5,
+      "current": 7.596,
+      "warm": 7.612,
+      "delta": 0.016,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "A 15-role AI team governed by a written Cons",
+      "floor": 4.5,
+      "current": 7.596,
+      "warm": 7.612,
+      "delta": 0.016,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "A live command center for an AI agent team —",
+      "floor": 4.5,
+      "current": 7.596,
+      "warm": 7.612,
+      "delta": 0.016,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Local-first AI prompt manager. Your prompts,",
+      "floor": 4.5,
+      "current": 7.596,
+      "warm": 7.612,
+      "delta": 0.016,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Retro arcade trainer for CLI commands — guid",
+      "floor": 4.5,
+      "current": 7.596,
+      "warm": 7.612,
+      "delta": 0.016,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Privacy-first mutual-aid marketplace for foo",
+      "floor": 4.5,
+      "current": 7.596,
+      "warm": 7.612,
+      "delta": 0.016,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Claude Code",
+      "floor": 4.5,
+      "current": 8.976,
+      "warm": 8.993,
+      "delta": 0.017,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Next.js 15",
+      "floor": 4.5,
+      "current": 8.976,
+      "warm": 8.993,
+      "delta": 0.017,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "CSS",
+      "floor": 4.5,
+      "current": 8.976,
+      "warm": 8.993,
+      "delta": 0.017,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "React Native",
+      "floor": 4.5,
+      "current": 9.43,
+      "warm": 9.448,
+      "delta": 0.018,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Next.js",
+      "floor": 4.5,
+      "current": 9.43,
+      "warm": 9.448,
+      "delta": 0.018,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "AccessMap",
+      "floor": 3,
+      "current": 12.617,
+      "warm": 12.645,
+      "delta": 0.028,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Claude Corp",
+      "floor": 3,
+      "current": 12.617,
+      "warm": 12.645,
+      "delta": 0.028,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Claude Corp Dashboard",
+      "floor": 3,
+      "current": 12.617,
+      "warm": 12.645,
+      "delta": 0.028,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Prompt Library",
+      "floor": 3,
+      "current": 12.617,
+      "warm": 12.645,
+      "delta": 0.028,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Ghost Code",
+      "floor": 3,
+      "current": 12.617,
+      "warm": 12.645,
+      "delta": 0.028,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Mutual Mesh",
+      "floor": 3,
+      "current": 12.617,
+      "warm": 12.645,
+      "delta": 0.028,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Introduction to Model Context Protocol",
+      "floor": 3,
+      "current": 12.617,
+      "warm": 12.645,
+      "delta": 0.028,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "AI Fluency Framework & Foundations",
+      "floor": 3,
+      "current": 12.617,
+      "warm": 12.645,
+      "delta": 0.028,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Introduction to Claude Cowork",
+      "floor": 3,
+      "current": 12.617,
+      "warm": 12.645,
+      "delta": 0.028,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Claude 101",
+      "floor": 3,
+      "current": 12.617,
+      "warm": 12.645,
+      "delta": 0.028,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Claude Code in Action",
+      "floor": 3,
+      "current": 12.617,
+      "warm": 12.645,
+      "delta": 0.028,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Claude Code 101",
+      "floor": 3,
+      "current": 12.617,
+      "warm": 12.645,
+      "delta": 0.028,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Google Prompting Essentials Specialization",
+      "floor": 3,
+      "current": 12.617,
+      "warm": 12.645,
+      "delta": 0.028,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Programming for Everybody (Getting Started w",
+      "floor": 3,
+      "current": 12.617,
+      "warm": 12.645,
+      "delta": 0.028,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "AI For Everyone",
+      "floor": 3,
+      "current": 12.617,
+      "warm": 12.645,
+      "delta": 0.028,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Sky Halisky",
+      "floor": 4.5,
+      "current": 13.166,
+      "warm": 13.194,
+      "delta": 0.028,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "AI Builder",
+      "floor": 4.5,
+      "current": 13.166,
+      "warm": 13.194,
+      "delta": 0.028,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "AccessMap",
+      "floor": 3,
+      "current": 13.166,
+      "warm": 13.194,
+      "delta": 0.028,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Claude Corp",
+      "floor": 3,
+      "current": 13.166,
+      "warm": 13.194,
+      "delta": 0.028,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Claude Corp Dashboard",
+      "floor": 3,
+      "current": 13.166,
+      "warm": 13.194,
+      "delta": 0.028,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Prompt Library",
+      "floor": 3,
+      "current": 13.166,
+      "warm": 13.194,
+      "delta": 0.028,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Ghost Code",
+      "floor": 3,
+      "current": 13.166,
+      "warm": 13.194,
+      "delta": 0.028,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Mutual Mesh",
+      "floor": 3,
+      "current": 13.166,
+      "warm": 13.194,
+      "delta": 0.028,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Sky Halisky",
+      "floor": 4.5,
+      "current": 13.166,
+      "warm": 13.194,
+      "delta": 0.028,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "AI Builder",
+      "floor": 4.5,
+      "current": 13.166,
+      "warm": 13.194,
+      "delta": 0.028,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "Sky Halisky",
+      "floor": 4.5,
+      "current": 13.166,
+      "warm": 13.194,
+      "delta": 0.028,
+      "currentPasses": true,
+      "warmPasses": true
+    },
+    {
+      "node": "AI Builder",
+      "floor": 4.5,
+      "current": 13.166,
+      "warm": 13.194,
+      "delta": 0.028,
+      "currentPasses": true,
+      "warmPasses": true
+    }
+  ],
+  "verdict": {
+    "measuredNodes": 75,
+    "newFailures": 0,
+    "worstAfter": {
+      "node": "Expo",
+      "ratio": 5.237,
+      "floor": 4.5
+    },
+    "maxAbsDelta": 0.028
+  }
+}

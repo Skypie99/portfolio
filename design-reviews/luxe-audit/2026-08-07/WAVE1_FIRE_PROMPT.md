@@ -1,0 +1,8 @@
+# WAVE 1 FIRE PROMPT — copy-paste this whole block into a fresh window when ready
+
+RUN — LUXE LEDGER WAVE 1 [single sitting · build train · ~/Portfolio]
+READ FIRST, in order: `design-reviews/luxe-audit/2026-08-07/ELEVATION_LEDGER.md` (items 1–5 are the scope; their build cards are the spec) · `00_dedup-register.md` (the do-not-touch universe) · `CLOSEOUT.md` §3 (limitations) · the PROTECT floors at the top of the ledger.
+PRE-FLIGHT GATE: confirm live == main == the polish train is MERGED (item 2 `finish-the-glass` stacks on UP-19 — if the polish stack is NOT yet on main, build items 1/3/4/5 and STOP item 2 as BLOCKED-ON-MERGE, no workarounds).
+SCOPE (one commit per item, in this order): 1 `curly-the-estate` · 2 `finish-the-glass` (MOCKUP-GATE: render warm vs current, STOP for Sky's eye before committing) · 3 `the-hand-answers` · 4 `a-drawn-hamburger` (MOCKUP-GATE: 2–3 glyph candidates, STOP for Sky's pick) · 5 `rag-finish`.
+LAWS: branch `luxe/w1-<slug>` per item or one `luxe/wave1` train — STOP ON BRANCH, Sky merges (Const. Art. 1). Zero content/*.json byte edits (item 1 is render-layer only + a vitest guard). Gates green at every stop: lint · typecheck · build · vitest (518·1·1·54 baseline) · check:overflow 0 · axe strict 0 · CLS ≤ 0.004. Mockup-gated items ship captures to `design-reviews/luxe-audit/2026-08-07/wave1/` and record PENDING-SKY-PICK rather than guessing.
+OUTPUT: `design-reviews/luxe-audit/2026-08-07/wave1/REPORT.md` — per-item before/after receipts, conservation table (5/5 mapped), decisions-for-Sky section. UNATTENDED: bank questions, never stop to ask mid-item except the two mockup gates.
