@@ -1,0 +1,190 @@
+/*
+ * archive.css — the Studio Archive's own look, ported from the single-file
+ * prototype and scoped entirely under #studio-archive-root / .studio-archive so
+ * it never touches the rest of skypistudio.com. This is a DOCUMENTED deviation
+ * from the repo's "Tailwind only" rule: the archive's design language (Georgia
+ * serif, sanguine, the pigment-stick vocabulary) IS the requirement, and it is
+ * carried verbatim rather than reconstructed in utilities.
+ *
+ * The prototype's :root custom properties are scoped to the archive root, so
+ * they are inherited only within the archive subtree — no global leak.
+ *
+ * (P1 skeleton: tokens + root + typography + auth. The gallery / vault / range
+ * component rules land with the UI in P4.)
+ */
+
+#studio-archive-root {
+  --night: #17181a;
+  --panel: #1f2023;
+  --paper: #e7e2d4;
+  --paperDim: #d9d3c2;
+  --sang: #a8542f;
+  --ink: #3a3a36;
+  --inkSoft: #757266;
+  --chalk: #d6d3c6;
+  --chalkDim: #8f8d84;
+  --line: #2c2d30;
+}
+
+/* Belt (defence-in-depth): if the site chrome ever renders on /archive before
+   ChromeGate resolves, at least keep the page from flashing a light background. */
+body:has(#studio-archive-root) {
+  background: #17181a;
+}
+
+.studio-archive {
+  min-height: 100vh;
+  background: var(--night);
+  color: var(--chalk);
+  font-family: Georgia, serif;
+  padding-bottom: 90px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.studio-archive *,
+.studio-archive *::before,
+.studio-archive *::after {
+  box-sizing: border-box;
+}
+
+.studio-archive .sa-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.studio-archive .sa-serif {
+  font-family: Georgia, serif;
+  font-style: italic;
+}
+
+.studio-archive .sa-dim {
+  color: var(--chalkDim);
+}
+
+.studio-archive button {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+.studio-archive input {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  color: var(--ink);
+  background: #fbf9f2;
+  border: 1px solid var(--paperDim);
+  border-radius: 6px;
+  padding: 10px 12px;
+  width: 100%;
+}
+
+.studio-archive button:focus-visible,
+.studio-archive input:focus-visible {
+  outline: 2px solid var(--sang);
+  outline-offset: 2px;
+}
+
+/* ---- sign-in ---- */
+.studio-archive .sa-auth {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.studio-archive .sa-card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--paper);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+.studio-archive .sa-card-kicker {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.studio-archive .sa-card-lede {
+  font-size: 13px;
+  color: var(--inkSoft);
+  margin: 8px 0 18px;
+}
+
+.studio-archive .sa-label {
+  font-size: 9px;
+  color: var(--inkSoft);
+  display: block;
+  margin: 12px 0 4px;
+}
+
+.studio-archive .sa-btn {
+  margin-top: 12px;
+  width: 100%;
+  border-radius: 999px;
+  padding: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  background: var(--sang);
+  color: var(--paper);
+}
+
+.studio-archive .sa-btn:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.studio-archive .sa-btn-ghost {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--chalkDim);
+  width: auto;
+  padding: 10px 16px;
+}
+
+.studio-archive .sa-code-form {
+  margin-top: 4px;
+  border-top: 1px solid var(--paperDim);
+  padding-top: 6px;
+}
+
+.studio-archive .sa-notice {
+  font-size: 12px;
+  color: var(--inkSoft);
+  margin-top: 12px;
+}
+
+.studio-archive .sa-error {
+  font-size: 9px;
+  color: var(--sang);
+  margin-top: 10px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ---- signed-in placeholder (P4 replaces this) ---- */
+.studio-archive .sa-placeholder {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+  padding: 24px;
+}
+
+.studio-archive .sa-placeholder .sa-mono {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--chalk);
+}
