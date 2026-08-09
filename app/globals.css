@@ -2243,6 +2243,44 @@ html.dark ::selection {
 }
 
 /* ------------------------------------------------------------------
+   `.link-draw-group` — the block answers as one door (luxe Wave 1, item 3).
+
+   Opt-in rider for the ONE `.link-draw` in the estate mounted on an inner
+   <span> instead of on the link itself (components/SidebarFeatured.tsx; the
+   other 29 sites sit directly on an <a>/<Link>). That nesting silently costs
+   two things, and this rule buys both back:
+     (1) a descendant is NOT :hover when the pointer is over a SIBLING, so the
+         Featured block's underline answered only the title's own line box —
+         hovering the role line or the "Open it" row drew nothing;
+     (2) a <span> can never match :focus-visible, so the keyboard got the ring
+         but never the line. That was the family's only hover/focus parity
+         break — 1 of 30 call sites.
+   The trigger moves to the `.group` ancestor (the anchor).
+
+   DELIBERATELY STATE-ONLY — it does NOT repeat `.link-draw:hover`'s
+   `color: var(--color-link-hover)`. Measured 2026-08-07: that colour is
+   rgb(178 81 40), which is 4.422:1 on `bg-rail` rgb(230 241 234) — under the
+   4.5:1 floor for this 19px regular title (`text-display-s` is not WCAG large
+   text). Widening its TRIGGER would have handed a sub-AA state to whole-block
+   hover and, for the first time, to keyboard users. The 1px line is
+   decorative and clears the 3:1 non-text floor on every surface, so the LINE
+   widens and the COLOUR channel does not. Do not add `color` here without a
+   ratified pass on `--color-link-hover` — it is under 4.5:1 on 5 of 7 light
+   surfaces (canvas-alt 4.402 · surface-warm 4.492 · rail 4.422 · panel-cool
+   3.709 · wash-cool 4.461; canvas 4.819 and surface 5.121 pass, dark is clean
+   at 5.496–6.553) and is NOT covered by lib/__tests__/ink-contrast.test.ts.
+
+   Paints nothing on its own: it requires `.link-draw` on the same element,
+   which supplies the gradient, position, padding and both durations — so no
+   new token, no new geometry, and the reduced-motion clamp at the bottom of
+   this file snaps it exactly as it snaps the pointer path.
+   ------------------------------------------------------------------ */
+.group:hover > .link-draw-group,
+.group:focus-visible > .link-draw-group {
+  background-size: 100% 1px;
+}
+
+/* ------------------------------------------------------------------
    Living caustic — organic-pass 2026-06-03, signature move #1 ("one sun").
    The liquid-glass card's cursor specular (.glass-card::after) glides with
    the pointer via useSpotlight's --mx/--my. These two CardField layers — the
