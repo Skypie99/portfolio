@@ -21,14 +21,17 @@ async function dataUrlToBlob(dataUrl: string): Promise<Blob> {
 }
 
 export const photoBase = (uid: string, artId: string) => `${uid}/${artId}`;
+/** Swatch objects nest under a `supply/` segment so a supply id can never collide
+ *  with an artwork id at the same key; the first segment stays the uid, so the
+ *  existing `{uid}/…` storage RLS still scopes it to the owner. */
+export const swatchBase = (uid: string, supplyId: string) => `${uid}/supply/${supplyId}`;
 
 /**
- * Upload the display JPEG, then the thumb. Returns the base path on full
+ * Upload the display JPEG, then the thumb, to `base`. Returns the base on full
  * success. On thumb failure the display object is removed again so no orphan is
  * left, and the error is rethrown (the row is never written by this function).
  */
-export async function uploadPhoto(uid: string, artId: string, processed: ProcessedImage): Promise<string> {
-  const base = photoBase(uid, artId);
+async function uploadPair(base: string, processed: ProcessedImage): Promise<string> {
   const storage = getSupabase().storage.from(BUCKET);
   const displayBlob = await dataUrlToBlob(processed.display);
   const thumbBlob = await dataUrlToBlob(processed.thumb);
@@ -45,6 +48,16 @@ export async function uploadPhoto(uid: string, artId: string, processed: Process
   invalidateSignedUrl(displayPath(base));
   invalidateSignedUrl(thumbPath(base));
   return base;
+}
+
+/** Upload an artwork's photo. Returns the `{uid}/{artId}` base on full success. */
+export async function uploadPhoto(uid: string, artId: string, processed: ProcessedImage): Promise<string> {
+  return uploadPair(photoBase(uid, artId), processed);
+}
+
+/** Upload a supply's real-swatch photo. Returns the `{uid}/supply/{supplyId}` base. */
+export async function uploadSupplySwatch(uid: string, supplyId: string, processed: ProcessedImage): Promise<string> {
+  return uploadPair(swatchBase(uid, supplyId), processed);
 }
 
 /** Delete both objects for a photo. The caller nulls photo_path first. */

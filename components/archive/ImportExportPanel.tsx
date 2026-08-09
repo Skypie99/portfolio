@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 import * as data from '@/lib/archive/data';
-import { removePhotoObjects } from '@/lib/archive/image';
+import { removePhotoObjects, swatchBase } from '@/lib/archive/image';
 import { type ImportResult, parseBackup, type PhotoPair } from '@/lib/archive/importExport';
 import { displayPath, thumbPath } from '@/lib/archive/photos';
 import { getSupabase } from '@/lib/archive/supabaseClient';
@@ -88,6 +88,30 @@ async function uploadImportedPhoto(uid: string, artId: string, pair: PhotoPair):
   return displayOk && thumbOk && hasAny ? base : null;
 }
 
+/** Same as uploadImportedPhoto, but writes to a supply's `{uid}/supply/{id}` key. */
+async function uploadImportedSwatch(uid: string, supplyId: string, pair: PhotoPair): Promise<string | null> {
+  const base = swatchBase(uid, supplyId);
+  const storage = getSupabase().storage.from(BUCKET);
+  let displayOk = pair.display === undefined;
+  let thumbOk = pair.thumb === undefined;
+  if (pair.display) {
+    const r = await storage.upload(displayPath(base), await dataUrlToBlob(pair.display), {
+      upsert: true,
+      contentType: 'image/jpeg',
+    });
+    displayOk = !r.error;
+  }
+  if (pair.thumb) {
+    const r = await storage.upload(thumbPath(base), await dataUrlToBlob(pair.thumb), {
+      upsert: true,
+      contentType: 'image/jpeg',
+    });
+    thumbOk = !r.error;
+  }
+  const hasAny = Boolean(pair.display || pair.thumb);
+  return displayOk && thumbOk && hasAny ? base : null;
+}
+
 export function ImportExportPanel({ mode, onClose }: { mode: 'export' | 'import'; onClose: () => void }) {
   const { state, reload } = useArchive();
   const [busy, setBusy] = useState(false);
@@ -100,6 +124,7 @@ export function ImportExportPanel({ mode, onClose }: { mode: 'export' | 'import'
   const [importError, setImportError] = useState('');
   const [confirmText, setConfirmText] = useState('');
   const [failures, setFailures] = useState<string[]>([]);
+  const [swatchFailures, setSwatchFailures] = useState<string[]>([]);
   const [done, setDone] = useState(false);
 
   /** Build the v2 backup as Blob PARTS (never one giant string) and download it. */
@@ -131,6 +156,26 @@ export function ImportExportPanel({ mode, onClose }: { mode: 'export' | 'import'
         });
         collected.forEach(([artId, pair], idx) => {
           parts.push((idx === 0 ? '' : ',') + JSON.stringify(artId) + ':' + JSON.stringify(pair));
+        });
+      }
+      parts.push('},"swatches":{');
+      if (withPhotos) {
+        const withSwatch = state.supplies.filter((s) => s.swatch_path);
+        const collected: Array<[string, PhotoPair]> = [];
+        let n = 0;
+        await pool(withSwatch, async (s) => {
+          const base = s.swatch_path as string;
+          const pair: PhotoPair = {};
+          const t = await downloadObject(thumbPath(base));
+          if (t) pair.thumb = t;
+          const d = await downloadObject(displayPath(base));
+          if (d) pair.display = d;
+          if (pair.thumb || pair.display) collected.push([s.id, pair]);
+          n += 1;
+          setProgress(`gathering swatches… ${n}/${withSwatch.length}`);
+        });
+        collected.forEach(([supplyId, pair], idx) => {
+          parts.push((idx === 0 ? '' : ',') + JSON.stringify(supplyId) + ':' + JSON.stringify(pair));
         });
       }
       parts.push('}}');
@@ -182,6 +227,23 @@ export function ImportExportPanel({ mode, onClose }: { mode: 'export' | 'import'
     return failed;
   }
 
+  async function uploadImportSwatches(uid: string, entries: Array<[string, PhotoPair]>): Promise<string[]> {
+    const failed: string[] = [];
+    let n = 0;
+    await pool(entries, async ([supplyId, pair]) => {
+      try {
+        const base = await uploadImportedSwatch(uid, supplyId, pair);
+        if (base) await data.setSupplySwatchPath(supplyId, base);
+        else failed.push(supplyId);
+      } catch {
+        failed.push(supplyId);
+      }
+      n += 1;
+      setProgress(`uploading swatches… ${n}/${entries.length}`);
+    });
+    return failed;
+  }
+
   async function runImport() {
     if (!parsed) return;
     setBusy(true);
@@ -195,16 +257,19 @@ export function ImportExportPanel({ mode, onClose }: { mode: 'export' | 'import'
       setProgress('clearing the old catalogue…');
       // remove old objects derived from the CURRENT rows (no orphans)
       for (const a of state.arts) if (a.photo_path) await removePhotoObjects(a.photo_path).catch(() => {});
+      for (const s of state.supplies) if (s.swatch_path) await removePhotoObjects(s.swatch_path).catch(() => {});
       await data.wipeAll();
 
       setProgress('loading the imported catalogue…');
       await data.bulkInsert({
-        supplies: parsed.data.supplies,
+        supplies: parsed.data.supplies.map((s) => ({ ...s, swatch_path: null })),
         arts: parsed.data.arts.map((a) => ({ ...a, photo_path: null })),
       });
 
       const failed = await uploadImportPhotos(uid, Object.entries(parsed.photos));
       setFailures(failed);
+      const swFailed = await uploadImportSwatches(uid, Object.entries(parsed.swatches));
+      setSwatchFailures(swFailed);
       setProgress('');
       setDone(true);
       await reload();
@@ -300,7 +365,18 @@ export function ImportExportPanel({ mode, onClose }: { mode: 'export' | 'import'
               <p className="sa-notice sa-serif">
                 Ready to import <strong>{parsed.data.supplies.length}</strong> colours and{' '}
                 <strong>{parsed.data.arts.length}</strong> artworks
-                {Object.keys(parsed.photos).length > 0 ? ` (${Object.keys(parsed.photos).length} with photos)` : ''}.
+                {[
+                  Object.keys(parsed.photos).length ? `${Object.keys(parsed.photos).length} with photos` : '',
+                  Object.keys(parsed.swatches).length ? `${Object.keys(parsed.swatches).length} swatches` : '',
+                ].filter(Boolean).length
+                  ? ` (${[
+                      Object.keys(parsed.photos).length ? `${Object.keys(parsed.photos).length} with photos` : '',
+                      Object.keys(parsed.swatches).length ? `${Object.keys(parsed.swatches).length} swatches` : '',
+                    ]
+                      .filter(Boolean)
+                      .join(', ')})`
+                  : ''}
+                .
               </p>
               {parsed.warnings.length > 0 && (
                 <ul className="sa-warns">
@@ -334,7 +410,15 @@ export function ImportExportPanel({ mode, onClose }: { mode: 'export' | 'import'
           {done && (
             <>
               <p className="sa-notice sa-serif">
-                Imported. {failures.length === 0 ? 'All photos restored.' : `${failures.length} photo(s) could not be restored.`}
+                Imported.{' '}
+                {failures.length === 0 && swatchFailures.length === 0
+                  ? 'All photos and swatches restored.'
+                  : [
+                      failures.length ? `${failures.length} photo(s)` : '',
+                      swatchFailures.length ? `${swatchFailures.length} swatch(es)` : '',
+                    ]
+                      .filter(Boolean)
+                      .join(' and ') + ' could not be restored.'}
               </p>
               {failures.length > 0 && (
                 <button className="sa-pill sang" type="button" style={{ width: '100%', padding: 12 }} onClick={() => void retryFailures()} disabled={busy}>

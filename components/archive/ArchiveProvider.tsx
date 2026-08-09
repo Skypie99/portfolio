@@ -3,7 +3,7 @@
 import { createContext, type ReactNode, useCallback, useContext, useEffect, useReducer } from 'react';
 
 import * as data from '@/lib/archive/data';
-import { removePhotoObjects, uploadPhoto } from '@/lib/archive/image';
+import { removePhotoObjects, uploadPhoto, uploadSupplySwatch } from '@/lib/archive/image';
 import type { ProcessedImage } from '@/lib/archive/media';
 import type { Artwork, Supply } from '@/lib/archive/types';
 
@@ -106,8 +106,10 @@ type ArchiveContextValue = {
   setSupFilter: (medium: string) => void;
   setQuery: (query: string) => void;
   saveSupply: (s: Supply) => Promise<void>;
-  removeSupply: (id: string) => Promise<void>;
+  removeSupply: (s: Supply) => Promise<void>;
   toggleSwatched: (s: Supply) => Promise<void>;
+  attachSwatch: (s: Supply, processed: ProcessedImage) => Promise<void>;
+  removeSwatch: (s: Supply) => Promise<void>;
   saveArtwork: (a: Artwork) => Promise<void>;
   removeArtwork: (a: Artwork) => Promise<void>;
   attachPhoto: (a: Artwork, processed: ProcessedImage) => Promise<void>;
@@ -149,15 +151,31 @@ export function ArchiveProvider({ children }: { children: ReactNode }) {
     dispatch({ type: 'UPSERT_SUPPLY', supply: s });
   }, []);
 
-  const removeSupply = useCallback(async (id: string) => {
-    await data.deleteSupply(id);
-    dispatch({ type: 'REMOVE_SUPPLY', id });
+  const removeSupply = useCallback(async (s: Supply) => {
+    await data.deleteSupply(s.id); // row first (join cascades)
+    if (s.swatch_path) await removePhotoObjects(s.swatch_path).catch(() => {}); // then swatch objects
+    dispatch({ type: 'REMOVE_SUPPLY', id: s.id });
   }, []);
 
   const toggleSwatched = useCallback(async (s: Supply) => {
     const next = !s.swatched;
     await data.setSwatched(s.id, next);
     dispatch({ type: 'UPSERT_SUPPLY', supply: { ...s, swatched: next } });
+  }, []);
+
+  const attachSwatch = useCallback(async (s: Supply, processed: ProcessedImage) => {
+    const uid = await data.currentUid();
+    const base = await uploadSupplySwatch(uid, s.id, processed); // display → thumb, both or nothing
+    await data.setSupplySwatchPath(s.id, base); // row set only after uploads; also flips swatched
+    dispatch({ type: 'UPSERT_SUPPLY', supply: { ...s, swatch_path: base, swatched: true } });
+    dispatch({ type: 'PHOTO_BUST' }); // re-sign card thumbs (replace reuses the object key)
+  }, []);
+
+  const removeSwatch = useCallback(async (s: Supply) => {
+    await data.setSupplySwatchPath(s.id, null); // row first
+    if (s.swatch_path) await removePhotoObjects(s.swatch_path).catch(() => {}); // then objects
+    dispatch({ type: 'UPSERT_SUPPLY', supply: { ...s, swatch_path: null } });
+    dispatch({ type: 'PHOTO_BUST' });
   }, []);
 
   const saveArtwork = useCallback(async (a: Artwork) => {
@@ -197,6 +215,8 @@ export function ArchiveProvider({ children }: { children: ReactNode }) {
     saveSupply,
     removeSupply,
     toggleSwatched,
+    attachSwatch,
+    removeSwatch,
     saveArtwork,
     removeArtwork,
     attachPhoto,

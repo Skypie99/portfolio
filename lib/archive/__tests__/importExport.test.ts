@@ -162,7 +162,7 @@ describe('export → import round-trip', () => {
   it('is loss-free for data + photos', () => {
     const data: ArchiveData = {
       supplies: [
-        { id: 'sup-a', name: 'Sanguine', brand: 'Conté', medium: 'Conté', hex: '#a8542f', notes: 'warm', swatched: true },
+        { id: 'sup-a', name: 'Sanguine', brand: 'Conté', medium: 'Conté', hex: '#a8542f', notes: 'warm', swatched: true, swatch_path: null },
       ],
       arts: [
         {
@@ -183,6 +183,23 @@ describe('export → import round-trip', () => {
     const round = parseBackup(serializeExport(buildExportV2(data, photos, '2026-08-08T12:00:00Z')));
     expect(round.data).toEqual(data);
     expect(round.photos).toEqual(photos);
+    expect(round.warnings).toEqual([]);
+  });
+
+  it('round-trips supply swatches in the swatches block (path re-derived on import)', () => {
+    const data: ArchiveData = {
+      supplies: [
+        { id: 'sup-a', name: 'Sanguine', brand: 'Conté', medium: 'Conté', hex: '#a8542f', notes: '', swatched: true, swatch_path: 'someuid/supply/sup-a' },
+      ],
+      arts: [],
+    };
+    const swatches = { 'sup-a': { thumb: IMG, display: IMG } };
+
+    const round = parseBackup(serializeExport(buildExportV2(data, {}, '2026-08-08T12:00:00Z', swatches)));
+    expect(round.swatches).toEqual(swatches);
+    // the stored path is not trusted across users — import clears it, then the
+    // swatch image is re-uploaded under the importing user's own key.
+    expect(round.data.supplies[0].swatch_path).toBeNull();
     expect(round.warnings).toEqual([]);
   });
 });

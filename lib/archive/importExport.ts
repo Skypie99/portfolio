@@ -21,13 +21,17 @@ import type { ArchiveData, Artwork, Supply } from './types';
 
 export type PhotoPair = { thumb?: string; display?: string };
 export type PhotosMap = Record<string, PhotoPair>;
-export type ImportResult = { data: ArchiveData; photos: PhotosMap; warnings: string[] };
+/** Supply-id → real-swatch image pair. Same shape as PhotosMap, kept separate so
+ *  artwork photos and supply swatches never share a key namespace. */
+export type SwatchMap = Record<string, PhotoPair>;
+export type ImportResult = { data: ArchiveData; photos: PhotosMap; swatches: SwatchMap; warnings: string[] };
 export type ArchiveExportV2 = {
   format: 'studio-archive-v2';
   exported_at: string;
   supplies: Supply[];
   artworks: Artwork[];
   photos: PhotosMap;
+  swatches: SwatchMap;
 };
 
 /** Only these image data URLs may enter the store or Storage. */
@@ -49,6 +53,10 @@ const supplySchema = z.object({
   hex: z.string().default('#888888'),
   notes: z.string().default(''),
   swatched: z.boolean().default(false),
+  // Accepted for shape-completeness but ignored on import: the swatch object is
+  // re-uploaded under the importing user's own key, then the path is re-derived
+  // (mirrors how artwork photo_path is handled).
+  swatch_path: z.string().nullable().default(null),
 });
 
 const v2ArtworkSchema = z.object({
@@ -71,6 +79,7 @@ const v2Schema = z.object({
   supplies: z.array(supplySchema),
   artworks: z.array(v2ArtworkSchema),
   photos: z.record(photoPairSchema).default({}),
+  swatches: z.record(photoPairSchema).default({}),
 });
 
 const legacyArtSchema = z.object({
@@ -114,7 +123,19 @@ function normSupply(s: SupplyInput, warnings: string[]): Supply {
     hex: parsed ?? '#888888',
     notes: s.notes,
     swatched: s.swatched,
+    swatch_path: null, // re-derived after the swatch image is re-uploaded on import
   };
+}
+
+/** Build a validated {supplyId → image pair} map from a backup's swatches block. */
+function collectSwatches(raw: Record<string, { thumb?: string; display?: string }>, warnings: string[]): SwatchMap {
+  const out: SwatchMap = {};
+  for (const [supplyId, pair] of Object.entries(raw)) {
+    const thumb = keepImage(pair.thumb, supplyId, 'thumbnail', warnings);
+    const display = keepImage(pair.display, supplyId, 'full image', warnings);
+    if (thumb || display) out[supplyId] = { ...(thumb ? { thumb } : {}), ...(display ? { display } : {}) };
+  }
+  return out;
 }
 
 function normPalette(pal: string[], artLabel: string, warnings: string[]): string[] {
@@ -184,7 +205,8 @@ function fromV2(obj: Record<string, unknown>): ImportResult {
     const display = keepImage(pair.display, artId, 'full image', warnings);
     if (thumb || display) photos[artId] = { ...(thumb ? { thumb } : {}), ...(display ? { display } : {}) };
   }
-  return { data: { supplies, arts }, photos, warnings };
+  const swatches = collectSwatches(v.swatches, warnings);
+  return { data: { supplies, arts }, photos, swatches, warnings };
 }
 
 function fromLegacy(obj: Record<string, unknown>): ImportResult {
@@ -212,7 +234,7 @@ function fromLegacy(obj: Record<string, unknown>): ImportResult {
     };
   });
   pruneDanglingSupplies(supplies, arts, warnings);
-  return { data: { supplies, arts }, photos, warnings };
+  return { data: { supplies, arts }, photos, swatches: {}, warnings };
 }
 
 // ---------------------------------------------------------------- public API
@@ -239,7 +261,12 @@ export function parseBackup(text: string): ImportResult {
   return normalizeBackup(raw);
 }
 
-export function buildExportV2(data: ArchiveData, photos: PhotosMap, exportedAt: string): ArchiveExportV2 {
+export function buildExportV2(
+  data: ArchiveData,
+  photos: PhotosMap,
+  exportedAt: string,
+  swatches: SwatchMap = {},
+): ArchiveExportV2 {
   return {
     format: 'studio-archive-v2',
     exported_at: exportedAt,
@@ -256,6 +283,7 @@ export function buildExportV2(data: ArchiveData, photos: PhotosMap, exportedAt: 
       photo_path: a.photo_path,
     })),
     photos,
+    swatches,
   };
 }
 
