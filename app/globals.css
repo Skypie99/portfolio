@@ -494,6 +494,63 @@ body {
   outline-offset: var(--focus-ring-offset, 2px);
 }
 
+/* ==================================================================
+   BEYOND THE FLOOR — contrast preferences as designed peers (luxe W2, item 7).
+
+   The estate meets AA everywhere (5.9–14.7:1). What it did not do — before this
+   block — is ANSWER a reader who has asked their OS for more. `prefers-contrast`
+   and `forced-colors` rules were both zero. This is the same philosophy the
+   reduced-motion contract already proves: a preference is a designed peer, not
+   an absence. Both blocks are ADDITIVE — with no preference set they never
+   match, so default rendering is byte-identical.
+   ------------------------------------------------------------------ */
+
+/* (1) prefers-contrast: more — the muted inks step toward the body ink and the
+   decorative hairline adopts the interactive line. TOKEN-LAYER ONLY: nothing
+   here changes geometry, only the value behind a handful of --rgb-* tokens, so
+   every component that reads them tightens at once. Measured on canvas:
+   light muted 7.5→10.2:1, meta 5.9→8.6:1; dark meta 7.8→10.7:1 — all already
+   over AA, lifted further because the reader asked. */
+@media (prefers-contrast: more) {
+  :root {
+    --rgb-ink-muted: 50 64 58;    /* body-muted → +2.7 ratio */
+    --rgb-ink-meta:  60 76 69;    /* metadata/eyebrow → +2.7 ratio */
+    --rgb-line:      140 148 132; /* decorative hairline = the interactive line */
+  }
+  html.dark {
+    --rgb-ink-muted: 205 214 208;
+    --rgb-ink-meta:  190 204 198;
+    --rgb-line:      74 86 82;
+  }
+}
+
+/* (2) forced-colors: active — Windows High Contrast and kin strip
+   background-images and box-shadows and repaint text/border/link in the user's
+   system palette. Two things break under that and are rescued here; everything
+   else already degrades correctly (outline-based focus survives, currentColor
+   icons follow CanvasText, real borders map to system colours):
+
+   · GRADIENT-CLIPPED TEXT GOES INVISIBLE. `.ember` / `.ember-moss` paint the
+     display headings and stat numbers with a clipped gradient over
+     `color: transparent`; strip the gradient and the text is gone. Restore a
+     system fill. (The cinematic title carve `.cdesert-title-mark::after` has the
+     same shape but lives behind the LOCKED desktop intro and is decorative —
+     banked for Sky, not touched here.)
+   · GLASS LOSES ITS EDGE. `.glass-card` reads as a panel through a translucent
+     fill + inset shadow, both stripped in forced-colors; give it a real border
+     so cards stay bounded regions rather than dissolving into the page. */
+@media (forced-colors: active) {
+  .ember,
+  .ember-moss {
+    -webkit-text-fill-color: CanvasText;
+    color: CanvasText;
+    background-image: none;
+  }
+  .glass-card {
+    border: 1px solid CanvasText;
+  }
+}
+
 /* The skip-link's :focus state is in components/SkipLink.tsx via Tailwind. */
 
 /* ------------------------------------------------------------------
