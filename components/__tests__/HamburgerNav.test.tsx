@@ -219,3 +219,64 @@ describe('HamburgerNav', () => {
     expect(document.body.style.overflow).toBe('');
   });
 });
+
+/**
+ * LUXE-4 "The Horizon" (Sky's pick, 2026-08-09) — the drawn hamburger glyph.
+ *
+ * Pins the geometry that makes it candidate B and NOT the old default: three
+ * round-capped line spans, the outer two full-width, the middle deliberately
+ * SHORTER (the sun's proportion) and lighter and centred. And it pins that the
+ * open/close X choreography was preserved byte-for-byte — the whole point of the
+ * pick was "only the ink changes." The choreography classes are conditional
+ * (they render only when open), so that half is checked against the source, the
+ * way this repo's other CSS/markup guards do.
+ */
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+
+describe('HamburgerNav — the drawn glyph (LUXE-4 The Horizon)', () => {
+  afterEach(cleanup);
+
+  function lineSpans(): HTMLElement[] {
+    const { container } = render(<HamburgerNav />);
+    const glyph = container.querySelector('span[aria-hidden="true"].relative.block');
+    expect(glyph, 'the 22x14 glyph frame must exist').toBeTruthy();
+    return Array.from(glyph!.querySelectorAll(':scope > span')) as HTMLElement[];
+  }
+
+  it('draws three round-capped line spans (no square ends)', () => {
+    const spans = lineSpans();
+    expect(spans).toHaveLength(3);
+    for (const s of spans) {
+      expect(s.className, 'every line is round-capped').toContain('rounded-full');
+      expect(s.className, 'no line keeps the old 1px square rule').not.toMatch(/(^|\s)h-px(\s|$)/);
+    }
+  });
+
+  it('gives the middle rule the sun’s shorter, lighter, centred proportion', () => {
+    const [, mid] = lineSpans();
+    expect(mid.className).toContain('w-[13.5px]'); // ~0.61 of the 22px arms (sun = 0.62)
+    expect(mid.className).toContain('-translate-x-1/2'); // centred like the favicon's horizons
+    expect(mid.className).toContain('h-[1.25px]'); // lighter than the 1.5px arms
+  });
+
+  it('keeps the outer arms full-width and equal so the X stays symmetric', () => {
+    const [top, , bot] = lineSpans();
+    for (const s of [top, bot]) {
+      expect(s.className).toContain('left-0');
+      expect(s.className).toContain('right-0');
+      expect(s.className).toContain('h-[1.5px]');
+    }
+  });
+
+  it('preserves the exact open/close X choreography (only the ink changed)', () => {
+    const src = readFileSync(join(process.cwd(), 'components', 'HamburgerNav.tsx'), 'utf8');
+    // the two arms still rotate to the cross, the middle still fades — same
+    // states, same timing tokens as before the pick.
+    expect(src).toContain("open ? 'top-1.5 rotate-45' : 'top-0'");
+    expect(src).toContain("open ? 'top-1.5 -rotate-45' : 'top-3'");
+    expect(src).toContain("open ? 'opacity-0' : 'opacity-100'");
+    expect(src).toContain('transition-[transform,top] duration-base');
+    expect(src).toContain('transition-opacity duration-base');
+  });
+});
