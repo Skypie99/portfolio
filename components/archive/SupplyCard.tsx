@@ -3,24 +3,32 @@
 import { useState } from 'react';
 
 import { isLight, valueOf } from '@/lib/archive/color';
+import { thumbPath } from '@/lib/archive/photos';
 import type { Supply } from '@/lib/archive/types';
 
 import { useArchive } from './ArchiveProvider';
 import { TwoTapButton } from './TwoTapButton';
+import { useSignedUrl } from './useSignedUrl';
 
 /** A pigment-stick flip card: front = stick + name/brand/medium + swatched dot;
- *  back = V/hex/name/usage/notes + paper toggle, edit, two-tap delete. */
+ *  back = the real swatch photo (when set) + V/hex/name/usage/notes, with paper
+ *  toggle, open-details, edit, and two-tap delete. */
 export function SupplyCard({
   supply,
   usedIn,
+  bust = 0,
+  onOpen,
   onEdit,
 }: {
   supply: Supply;
   usedIn: number;
+  bust?: number;
+  onOpen: () => void;
   onEdit: () => void;
 }) {
   const { toggleSwatched, removeSupply } = useArchive();
   const [flipped, setFlipped] = useState(false);
+  const swatchUrl = useSignedUrl(supply.swatch_path ? thumbPath(supply.swatch_path) : null, bust);
 
   const v = valueOf(supply.hex);
   const light = isLight(supply.hex);
@@ -50,6 +58,10 @@ export function SupplyCard({
 
         <div className="sa-face back" style={{ background: grad }}>
           <button type="button" className="sa-cardback-body" onClick={() => setFlipped((f) => !f)}>
+            {swatchUrl && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img className="sa-swatchstrip" src={swatchUrl} alt={`swatch of ${supply.name}`} />
+            )}
             <span className="sa-mono" style={{ fontSize: 16, fontWeight: 700, color: fg }}>
               V {v}
             </span>
@@ -80,6 +92,9 @@ export function SupplyCard({
             >
               {supply.swatched ? 'paper ✓' : 'paper ○'}
             </button>
+            <button type="button" className="sa-mono sa-backbtn" style={{ background: btnBg, color: fg }} onClick={onOpen}>
+              open
+            </button>
             <button type="button" className="sa-mono sa-backbtn" style={{ background: btnBg, color: fg }} onClick={onEdit}>
               edit
             </button>
@@ -92,7 +107,7 @@ export function SupplyCard({
               style={{ background: btnBg, color: fg }}
               armedStyle={{ background: 'var(--sang)', color: 'var(--on-sang)' }}
               resetSignal={flipped}
-              onConfirm={() => void removeSupply(supply.id)}
+              onConfirm={() => void removeSupply(supply)}
             />
           </div>
         </div>

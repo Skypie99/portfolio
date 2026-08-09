@@ -11,6 +11,7 @@ const sup = (over: Partial<Supply>): Supply => ({
   hex: '#888888',
   notes: '',
   swatched: false,
+  swatch_path: null,
   ...over,
 });
 const art = (over: Partial<Artwork>): Artwork => ({
