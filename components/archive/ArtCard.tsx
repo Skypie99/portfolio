@@ -14,15 +14,18 @@ import { useSignedUrl } from './useSignedUrl';
 export function ArtCard({
   art,
   index,
+  bust,
   onOpen,
 }: {
   art: Artwork;
   index: number;
+  /** Store-level photo generation; bumps re-sign the thumb after a replace. */
+  bust: number;
   onOpen: (art: Artwork) => void;
 }) {
   const ref = useRef<HTMLButtonElement>(null);
   const inView = useInView(ref);
-  const url = useSignedUrl(inView && art.photo_path ? thumbPath(art.photo_path) : null);
+  const url = useSignedUrl(inView && art.photo_path ? thumbPath(art.photo_path) : null, bust);
 
   return (
     <button ref={ref} type="button" className="sa-artcard" onClick={() => onOpen(art)}>

@@ -17,8 +17,15 @@
   --paper: #e7e2d4;
   --paperDim: #d9d3c2;
   --sang: #a8542f;
+  /* Accessible sanguine variants: the base --sang fails WCAG AA as small text
+     (both on the dark surfaces and on paper), so text uses a lighter tint on
+     dark (--sang-text), a darker tint on paper (--sang-ink), and a near-white
+     for text ON a sanguine fill (--on-sang). Fills/borders still use --sang. */
+  --sang-text: #cf7a52;
+  --sang-ink: #8f4224;
+  --on-sang: #f7f4ec;
   --ink: #3a3a36;
-  --inkSoft: #757266;
+  --inkSoft: #5c594d;
   --chalk: #d6d3c6;
   --chalkDim: #8f8d84;
   --line: #2c2d30;
@@ -163,11 +170,11 @@ body:has(#studio-archive-root) {
 .studio-archive .sa-chip.on {
   background: var(--sang);
   border-color: var(--sang);
-  color: var(--paper);
+  color: var(--on-sang);
 }
 .studio-archive .sa-chip.add {
   border: 1px dashed var(--sang);
-  color: var(--sang);
+  color: var(--sang-text);
 }
 
 /* ---- search ---- */
@@ -367,6 +374,10 @@ body:has(#studio-archive-root) {
   border-radius: 6px;
   padding: 6px 8px;
   font-size: 8px;
+  min-height: 24px; /* WCAG 2.2 SC 2.5.8 target size */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ---- overlays + sheets (editors) ---- */
@@ -516,7 +527,7 @@ body:has(#studio-archive-root) {
 }
 .studio-archive .sa-pill.sang {
   background: var(--sang);
-  color: var(--paper);
+  color: var(--on-sang);
   font-weight: 700;
 }
 .studio-archive .sa-pill.ghost {
@@ -587,7 +598,7 @@ body:has(#studio-archive-root) {
   border-radius: 10px;
   padding: 10px 12px;
   font-size: 9px;
-  color: var(--sang);
+  color: var(--sang-text);
   font-weight: 700;
 }
 
@@ -682,7 +693,7 @@ body:has(#studio-archive-root) {
   font-size: 10px;
   font-weight: 700;
   background: var(--sang);
-  color: var(--paper);
+  color: var(--on-sang);
 }
 .studio-archive .sa-btn:disabled {
   opacity: 0.55;
@@ -707,7 +718,7 @@ body:has(#studio-archive-root) {
 }
 .studio-archive .sa-error {
   font-size: 9px;
-  color: var(--sang);
+  color: var(--sang-ink);
   margin-top: 10px;
   text-transform: none;
   letter-spacing: 0;

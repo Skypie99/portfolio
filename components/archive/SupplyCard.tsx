@@ -90,7 +90,8 @@ export function SupplyCard({
               className="sa-mono sa-backbtn"
               armedClassName="sa-mono sa-backbtn"
               style={{ background: btnBg, color: fg }}
-              armedStyle={{ background: 'var(--sang)', color: 'var(--paper)' }}
+              armedStyle={{ background: 'var(--sang)', color: 'var(--on-sang)' }}
+              resetSignal={flipped}
               onConfirm={() => void removeSupply(supply.id)}
             />
           </div>

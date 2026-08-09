@@ -110,6 +110,16 @@ describe('v2 import', () => {
     expect(result.data.arts[0].palette).toHaveLength(8);
     expect(result.warnings.some((w) => /trimmed to 8/.test(w))).toBe(true);
   });
+
+  it('prunes artwork supply refs absent from the backup (prevents a mid-import FK failure)', () => {
+    const result = normalizeBackup({
+      format: 'studio-archive-v2',
+      supplies: [{ id: 'sup-a', name: 'A', medium: 'Ink', hex: '#a8542f' }],
+      artworks: [{ id: 'art-10', sort_order: 10, title: 'X', medium: 'Ink', supplies: ['sup-a', 'sup-ghost'] }],
+    });
+    expect(result.data.arts[0].supplies).toEqual(['sup-a']);
+    expect(result.warnings.some((w) => /not in this backup/.test(w))).toBe(true);
+  });
 });
 
 describe('legacy import (the prototype format)', () => {

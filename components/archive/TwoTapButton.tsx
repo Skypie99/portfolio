@@ -17,6 +17,7 @@ export function TwoTapButton({
   armedStyle,
   disarmMs = 3000,
   ariaLabel,
+  resetSignal,
 }: {
   idleLabel: string;
   armedLabel: string;
@@ -27,6 +28,8 @@ export function TwoTapButton({
   armedStyle?: React.CSSProperties;
   disarmMs?: number;
   ariaLabel?: string;
+  /** When this value changes (e.g. the card flips away), a pending arm clears. */
+  resetSignal?: unknown;
 }) {
   const [armed, setArmed] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -34,6 +37,12 @@ export function TwoTapButton({
   useEffect(() => () => {
     if (timer.current) clearTimeout(timer.current);
   }, []);
+
+  // An external change (a card flipping away, a tab switch) cancels a pending arm.
+  useEffect(() => {
+    setArmed(false);
+    if (timer.current) clearTimeout(timer.current);
+  }, [resetSignal]);
 
   const click = useCallback(() => {
     if (armed) {

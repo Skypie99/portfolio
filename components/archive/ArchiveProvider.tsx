@@ -19,6 +19,9 @@ type State = {
   artFilter: string;
   supFilter: string;
   query: string;
+  /** Bumped on any photo add/replace/remove so grid thumbs re-sign (a replace
+   *  reuses the same object key, so photo_path alone can't trigger a refresh). */
+  photoBust: number;
 };
 
 type Action =
@@ -32,7 +35,8 @@ type Action =
   | { type: 'UPSERT_SUPPLY'; supply: Supply }
   | { type: 'REMOVE_SUPPLY'; id: string }
   | { type: 'UPSERT_ARTWORK'; artwork: Artwork }
-  | { type: 'REMOVE_ARTWORK'; id: string };
+  | { type: 'REMOVE_ARTWORK'; id: string }
+  | { type: 'PHOTO_BUST' };
 
 export const initialState: State = {
   status: 'loading',
@@ -43,6 +47,7 @@ export const initialState: State = {
   artFilter: 'All',
   supFilter: 'All',
   query: '',
+  photoBust: 0,
 };
 
 function upsertById<T extends { id: string }>(list: T[], item: T): T[] {
@@ -86,6 +91,8 @@ export function reducer(state: State, action: Action): State {
       return { ...state, arts: upsertById(state.arts, action.artwork) };
     case 'REMOVE_ARTWORK':
       return { ...state, arts: state.arts.filter((a) => a.id !== action.id) };
+    case 'PHOTO_BUST':
+      return { ...state, photoBust: state.photoBust + 1 };
     default:
       return state;
   }
@@ -170,12 +177,14 @@ export function ArchiveProvider({ children }: { children: ReactNode }) {
     const palette = processed.palette ?? a.palette; // photo auto-overwrites the palette
     await data.setArtworkPhotoAndPalette(a.id, base, palette); // row set only after uploads
     dispatch({ type: 'UPSERT_ARTWORK', artwork: { ...a, photo_path: base, palette } });
+    dispatch({ type: 'PHOTO_BUST' }); // re-sign grid thumbs (replace reuses the object key)
   }, []);
 
   const removePhoto = useCallback(async (a: Artwork) => {
     await data.setArtworkPhotoPath(a.id, null); // row first
     if (a.photo_path) await removePhotoObjects(a.photo_path).catch(() => {}); // then objects
     dispatch({ type: 'UPSERT_ARTWORK', artwork: { ...a, photo_path: null } });
+    dispatch({ type: 'PHOTO_BUST' });
   }, []);
 
   const value: ArchiveContextValue = {
