@@ -161,6 +161,17 @@ const BINDING_SURFACES: ReadonlyArray<{
   { token: 'rgb-accent-ink', scope: 'root', panel: 'rgb-wash-cool', alphaVar: 'surface-alpha-cool', backdrop: [194.0, 176.0, 136.0], measured: [226, 228, 216], where: '"Shipped" eyebrow — world-surface-cool' },
   { token: 'rgb-ink-meta', scope: 'root', panel: 'rgb-canvas-alt', alphaVar: 'surface-alpha-alt', backdrop: [195.0, 148.11, 94.22], measured: [236, 221, 199], where: 'showcase date meta — world-surface-alt' },
   { token: 'rgb-accent-ink', scope: 'dark', panel: 'rgb-canvas-alt', alphaVar: 'surface-alpha-alt', backdrop: [205.88, 171.75, 131.38], measured: [89, 74, 57], where: 'prose link on /work/accessmap/ — world-surface-alt over the night world' },
+
+  // --rgb-link-hover (luxe W2, 2026-08-09) — the link HOVER ink, decoupled from
+  // --rgb-accent-hover and deepened so it clears AA everywhere a link can hover.
+  // Same three composited world surfaces as the resting link above (a hover
+  // colour is only ever seen where the resting link already renders), plus the
+  // dark case. The first row is the binding one — world-surface-cool-pale is the
+  // lightest surface, so it is the floor the deepen was tuned against.
+  { token: 'rgb-link-hover', scope: 'root', panel: 'rgb-panel-cool', alphaVar: 'surface-alpha-coolpale', backdrop: [234.41, 179.94, 147.29], measured: [215, 209, 190], where: 'link hover on world-surface-cool-pale (the binding floor)' },
+  { token: 'rgb-link-hover', scope: 'root', panel: 'rgb-canvas-alt', alphaVar: 'surface-alpha-alt', backdrop: [206.11, 159.22, 116.44], measured: [238, 223, 203], where: 'Footer + more-work link hover — world-surface-alt' },
+  { token: 'rgb-link-hover', scope: 'root', panel: 'rgb-wash-cool', alphaVar: 'surface-alpha-cool', backdrop: [194.0, 176.0, 136.0], measured: [226, 228, 216], where: 'Shipped-band link hover — world-surface-cool' },
+  { token: 'rgb-link-hover', scope: 'dark', panel: 'rgb-canvas-alt', alphaVar: 'surface-alpha-alt', backdrop: [205.88, 171.75, 131.38], measured: [89, 74, 57], where: 'dark prose/footer link hover — world-surface-alt over the night world' },
 ];
 
 /**
@@ -222,6 +233,19 @@ describe('ink tokens clear WCAG AA on the surfaces they are actually painted on'
     expect(readToken('rgb-accent-ink', 'root')).toEqual([135, 71, 45]);
     expect(readToken('rgb-ink-meta', 'root')).toEqual([84, 100, 93]);
     expect(readToken('rgb-accent-ink', 'dark')).toEqual([231, 181, 147]);
+    // luxe W2: the deepened link-hover ink. Light deepens from resting; dark keeps
+    // its already-deepening value. A change here needs a fresh AA re-derivation.
+    expect(readToken('rgb-link-hover', 'root')).toEqual([120, 62, 38]);
+    expect(readToken('rgb-link-hover', 'dark')).toEqual([240, 196, 166]);
+  });
+
+  // luxe W2 non-vacuity: the OLD link hover reused --rgb-accent-hover and failed on
+  // the binding surface in BOTH themes — 178 81 40 on the light cool-pale composite,
+  // and 218 138 92 on the lit dark world-surface-alt. Proving both fail here means
+  // this suite catches the exact regressions the fix closed rather than passing blind.
+  it('rejects the pre-fix link-hover on its binding surface, both themes (non-vacuity)', () => {
+    expect(contrast([178, 81, 40], [215, 209, 190])).toBeLessThan(AA_SMALL); // old light
+    expect(contrast([218, 138, 92], [89, 74, 57])).toBeLessThan(AA_SMALL); // old dark
   });
 
   // The floors themselves must not silently move: prove the maths still fails the
