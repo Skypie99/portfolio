@@ -150,24 +150,40 @@ export function HamburgerNav() {
           {/* Dani §3.5 — lines shift to terracotta on hover via bg-current,
               inheriting from the parent button's text-color transition
               (which is duration-fast). The line spans themselves transition
-              only transform/top/opacity for the open/close choreography. */}
+              only transform/top/opacity for the open/close choreography.
+
+              LUXE-4 "The Horizon" (2026-08-09, Sky's pick) — the glyph borrows
+              the SUN's own proportions, not just its round cap. The favicon/chip
+              sun is two round-capped horizon lines that are deliberately UNEQUAL
+              (app/icon.svg:7-8, mirrored at RunwayIdentity.tsx:91-102): 21 units
+              at 1.7 weight over 13 units at 1.5, both centred on x=16. Mapped
+              onto this 22px mark: the outer rules stay full-width at 1.5px and
+              the MIDDLE rule becomes 13.5px / 1.25px, centred (13.5/22 = 0.614
+              vs the sun's 0.619; 1.25/1.5 = 0.833 vs 0.882). Round caps replace
+              the site's one square-ended mark. The variation lives on the MIDDLE
+              rule ON PURPOSE: that is the rule that fades to nothing on open, so
+              the X is still built from two IDENTICAL 22px arms and can never read
+              lopsided. The 6px pitch is NOT borrowed — it is load-bearing for the
+              morph (both arms travel to the same centre). Same three elements,
+              same top/rotate/opacity states, same property lists, same
+              duration-base + ease-out. */}
           <span
             className={cn(
-              'absolute left-0 right-0 h-px bg-current ease-out',
+              'absolute left-0 right-0 h-[1.5px] rounded-full bg-current ease-out',
               'transition-[transform,top] duration-base',
               open ? 'top-1.5 rotate-45' : 'top-0',
             )}
           />
           <span
             className={cn(
-              'absolute left-0 right-0 top-1.5 h-px bg-current ease-out',
+              'absolute left-1/2 -translate-x-1/2 w-[13.5px] top-1.5 h-[1.25px] rounded-full bg-current ease-out',
               'transition-opacity duration-base',
               open ? 'opacity-0' : 'opacity-100',
             )}
           />
           <span
             className={cn(
-              'absolute left-0 right-0 h-px bg-current ease-out',
+              'absolute left-0 right-0 h-[1.5px] rounded-full bg-current ease-out',
               'transition-[transform,top] duration-base',
               open ? 'top-1.5 -rotate-45' : 'top-3',
             )}
