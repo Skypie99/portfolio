@@ -3167,3 +3167,175 @@ html.dark .ts-matte-well {
 html.dark .ts-float {
   border-color: rgb(255 240 214 / 0.10);
 }
+
+/* ==================================================================
+   PRINTS LIKE A BOOK — the designed paper rendering (luxe W2, item 10).
+
+   Print rules were: 0. A recruiter's ⌘P on the flagship printed sidebar chrome,
+   dark backgrounds at the UA's mercy, and glass panels as grey soup — the one
+   rendering of the site nobody designed, on the surface most likely to be FILED.
+   This is a designed ink-on-paper layer in the house grammar. It is INERT ON
+   SCREEN (everything lives inside @media print) and adds zero screen specificity.
+
+   Approach: force the paper palette at the TOKEN layer so every component
+   re-inks at once (no per-component print overrides), hide the chrome, flatten
+   decorative depth, keep the plates/ledgers/figures as designed artifacts, set
+   generous @page margins, reveal external destinations a reader can't click,
+   and let the Footer's postmark end the document.
+   ------------------------------------------------------------------ */
+@media print {
+  @page {
+    margin: 18mm 16mm;
+  }
+
+  /* Paper palette — forced on BOTH themes so a dark-mode ⌘P still prints ink on
+     white. Surfaces go opaque (alpha → 1) over white, inks go to near-black, the
+     warm inline accent stays (it reads correctly on paper). Only the tokens that
+     drive print appearance are re-declared; the rest are inert once chrome and
+     depth are gone. */
+  :root,
+  html.dark {
+    --rgb-canvas: 255 255 255;
+    --rgb-canvas-alt: 250 250 247;
+    --rgb-surface: 255 255 255;
+    --rgb-surface-warm: 250 250 247;
+    --rgb-surface-mid: 255 255 255;
+    --rgb-panel-cool: 249 249 246;
+    --rgb-wash-cool: 250 250 247;
+    --rgb-rail: 255 255 255;
+    --rgb-ink: 26 28 27;
+    --rgb-ink-muted: 58 62 60;
+    --rgb-ink-meta: 78 82 80;
+    --rgb-line: 202 202 196;
+    --rgb-line-strong: 120 122 116;
+    /* Force the warm accent to its PAPER (light) values — otherwise a dark-mode
+       ⌘P keeps the dark peach accent-ink (231 181 147), which is ~1.3:1 on white
+       and prints as a ghost. accent-ink at 135 71 45 is 6.6:1 on white and
+       carries the house warmth into the headings and inline links. */
+    --rgb-accent: 168 88 55;
+    --rgb-accent-hover: 120 62 38;
+    --rgb-accent-ink: 135 71 45;
+    --surface-alpha: 1;
+    --surface-alpha-alt: 1;
+    --surface-alpha-cool: 1;
+    --surface-alpha-coolpale: 1;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+  }
+  /* the global film grain + any body wash */
+  body::before,
+  body::after {
+    display: none !important;
+  }
+
+  /* Chrome that has no place on paper. Targeted by landmark / house class so a
+     component refactor that renames an inner node still prints clean. The
+     cinematic intro (.cdesert-stage) and its scroll cue would otherwise print as
+     tall dark voids on the home page's first sheets. */
+  .world-backdrop,
+  nav[aria-label="Site navigation"],
+  .cdesert-stage,
+  .intro-scroll-cue,
+  [data-runway-identity],
+  .footer-alpenglow,
+  [aria-controls="primary-menu"],
+  #primary-menu {
+    display: none !important;
+  }
+
+  /* Flatten the depth vocabulary — sepia shadows, lifts, backdrop blurs all read
+     as grey haze on paper. Structure survives through borders, not shadows. */
+  *,
+  *::before,
+  *::after {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+  .glass-card {
+    background: #fff !important;
+    border: 1px solid rgb(var(--rgb-line)) !important;
+  }
+  /* Ambient decorative gradients that paint from hardcoded warm rgba (not tokens)
+     and so survive the palette reset — most visibly when a dark-mode ⌘P keeps the
+     html.dark candlelight pool and glass rim. Kill their PAINT, keep their box (no
+     reflow). The designed pull-quote ornament (.pull-quote::before) is content and
+     is deliberately NOT in this list. */
+  [data-band-anchor]::before,
+  [data-band-anchor]::after,
+  .glass-card::before,
+  .glass-card::after,
+  .world-backdrop::after {
+    background: none !important;
+    box-shadow: none !important;
+  }
+  /* Full-bleed ambient WASH layers — decorative aria-hidden gradient panes
+     (the home hero's warm/cool wash, the ambient-drift sun field) carry their
+     gradient as an INLINE style the token reset can't reach. They share one
+     honest signature: aria-hidden + pointer-events-none + absolute. Strip the
+     image only, so the tiny bg-COLOR marks (terracotta eyebrow dots) survive. */
+  [aria-hidden="true"].pointer-events-none.absolute,
+  .ambient-drift {
+    background-image: none !important;
+  }
+  /* Decorative 1px seam hairlines (the home section's terracotta gradient ticks)
+     — ornamental, and a stray tick at the sheet margin is not a designed mark. */
+  [class*="w-px"][class*="bg-gradient-to-"],
+  [class*="h-px"][class*="bg-gradient-to-"] {
+    background-image: none !important;
+  }
+
+  /* Gradient-clipped display text → solid ink (same failure mode as forced
+     colors: strip the gradient and color:transparent is invisible). */
+  .ember,
+  .ember-moss {
+    -webkit-text-fill-color: rgb(var(--rgb-accent-ink)) !important;
+    color: rgb(var(--rgb-accent-ink)) !important;
+    background: none !important;
+  }
+
+  /* Keep the designed artifacts whole across page breaks — a museum plate, a
+     pull-quote, a figure, a numbered step or a calibration row should never be
+     guillotined by a sheet edge. */
+  figure,
+  blockquote,
+  img,
+  .glass-card,
+  [class*="plate"],
+  [class*="ledger"],
+  [class*="record"] {
+    break-inside: avoid;
+  }
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+
+  /* Reveal where a link actually goes — a reader on paper cannot click. Only
+     genuinely external destinations (not on-site anchors), only in the content
+     column, set in the mono voice at a whisper so it reads as a margin note. */
+  main a[href^="http"]:not([href*="skypistudio.com"])::after {
+    content: " (" attr(href) ")";
+    font-family: var(--font-dm-mono), ui-monospace, monospace;
+    font-size: 0.72em;
+    letter-spacing: 0.02em;
+    color: rgb(var(--rgb-ink-meta));
+    word-break: break-all;
+  }
+
+  /* The reading measure widens to the sheet; underlines that were hover-only on
+     screen have no state on paper, so links carry a static underline instead. */
+  main {
+    max-width: none !important;
+  }
+  main a[href] {
+    text-decoration: underline;
+    text-decoration-thickness: 0.5px;
+    text-underline-offset: 2px;
+  }
+}
