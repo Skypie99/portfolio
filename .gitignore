@@ -26,3 +26,8 @@ proof-masters/*
 # the encoded siblings in public/showcase/ ship. (design-reviews/ itself stays
 # untracked by convention; this line makes a stray add harmless.)
 design-reviews/showcase-refresh/masters/
+
+# Studio Archive seed: the prototype's personal catalogue, extracted by
+# scripts/archive/extract-seed.mjs for one-time import. This repo is public and
+# the data is Sky's — only the extractor script ships, never its output.
+scripts/archive/out/
