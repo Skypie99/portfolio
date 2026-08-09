@@ -1,0 +1,204 @@
+{
+  "meta": {
+    "engine": "Chromium (playwright-core) headless, DSF2, 1440x900 — NOT Safari/WebKit",
+    "axeCore": "4.11.4",
+    "rules": "defaults + label-content-name-mismatch enabled + color-contrast enabled",
+    "when": "item5-rag-finish"
+  },
+  "axe": {
+    "home__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "home__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "about__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "about__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "accessibility__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "accessibility__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "blog__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "blog__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "blog-building-accessmap__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "blog-building-accessmap__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "certificates__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "certificates__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "colophon__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "colophon__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "contact__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "contact__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "work__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "work__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "work-accessmap__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast",
+        "video-caption"
+      ]
+    },
+    "work-accessmap__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "work-claude-corp__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "work-claude-corp__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "work-dashboard__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "work-dashboard__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "work-prompt-library__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "work-prompt-library__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "work-ghost-code__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast",
+        "video-caption"
+      ]
+    },
+    "work-ghost-code__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "work-mutual-mesh__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "work-mutual-mesh__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "404__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "404__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    }
+  }
+}

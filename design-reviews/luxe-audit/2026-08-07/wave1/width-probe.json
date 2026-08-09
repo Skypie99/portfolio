@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "engine": "Chromium headless 1440x900",
+    "band": "66-75 cpl",
+    "when": "item5"
+  },
+  "probes": [
+    {
+      "target": "/about/ body prose (max-w-measure-lead, 640px today)",
+      "width": 706,
+      "runs": 10,
+      "worstCpl": 88,
+      "meanCpl": 78.4,
+      "inBand": false
+    },
+    {
+      "target": "/about/ body prose (max-w-measure-lead, 640px today)",
+      "width": 640,
+      "runs": 10,
+      "worstCpl": 88,
+      "meanCpl": 78.4,
+      "inBand": false
+    },
+    {
+      "target": "/about/ body prose (max-w-measure-lead, 640px today)",
+      "width": 612,
+      "runs": 10,
+      "worstCpl": 84,
+      "meanCpl": 73.8,
+      "inBand": false
+    },
+    {
+      "target": "/about/ body prose (max-w-measure-lead, 640px today)",
+      "width": 580,
+      "runs": 10,
+      "worstCpl": 76,
+      "meanCpl": 69.7,
+      "inBand": false
+    },
+    {
+      "target": "/about/ body prose (max-w-measure-lead, 640px today)",
+      "width": 560,
+      "runs": 10,
+      "worstCpl": 76,
+      "meanCpl": 66.9,
+      "inBand": false
+    },
+    {
+      "target": "/about/ body prose (max-w-measure-lead, 640px today)",
+      "width": 545,
+      "runs": 10,
+      "worstCpl": 72,
+      "meanCpl": 64.8,
+      "inBand": true
+    },
+    {
+      "target": "/about/ body prose (max-w-measure-lead, 640px today)",
+      "width": 520,
+      "runs": 10,
+      "worstCpl": 69,
+      "meanCpl": 61.4,
+      "inBand": true
+    },
+    {
+      "target": "process steps (max-w-measure, --measure 65ch → 706px today)",
+      "width": 706,
+      "runs": 4,
+      "worstCpl": 94,
+      "meanCpl": 83.1,
+      "inBand": false
+    },
+    {
+      "target": "process steps (max-w-measure, --measure 65ch → 706px today)",
+      "width": 640,
+      "runs": 4,
+      "worstCpl": 94,
+      "meanCpl": 83.1,
+      "inBand": false
+    },
+    {
+      "target": "process steps (max-w-measure, --measure 65ch → 706px today)",
+      "width": 612,
+      "runs": 4,
+      "worstCpl": 94,
+      "meanCpl": 83.1,
+      "inBand": false
+    },
+    {
+      "target": "process steps (max-w-measure, --measure 65ch → 706px today)",
+      "width": 580,
+      "runs": 4,
+      "worstCpl": 94,
+      "meanCpl": 81.3,
+      "inBand": false
+    },
+    {
+      "target": "process steps (max-w-measure, --measure 65ch → 706px today)",
+      "width": 560,
+      "runs": 4,
+      "worstCpl": 94,
+      "meanCpl": 81.3,
+      "inBand": false
+    },
+    {
+      "target": "process steps (max-w-measure, --measure 65ch → 706px today)",
+      "width": 545,
+      "runs": 4,
+      "worstCpl": 94,
+      "meanCpl": 81.3,
+      "inBand": false
+    },
+    {
+      "target": "process steps (max-w-measure, --measure 65ch → 706px today)",
+      "width": 520,
+      "runs": 4,
+      "worstCpl": 94,
+      "meanCpl": 81.3,
+      "inBand": false
+    }
+  ]
+}

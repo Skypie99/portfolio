@@ -1,0 +1,221 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>LUXE-4 · a-drawn-hamburger — candidate sheet</title>
+<!--
+  MOCKUP GATE for luxe Wave 1, item 4 `a-drawn-hamburger`.
+
+  Standalone on purpose: candidate C changes MARKUP (filled <svg> paths, not
+  background rects), so unlike the glass item this comparison cannot be produced
+  by injecting CSS into the real build. Every mark below is reproduced at its
+  true size (22x14 CSS px inside the real 44px disc) with the estate's real
+  tokens inlined, so what you are looking at is the geometry that would ship.
+
+  MEASURED CONTEXT (933c59a):
+    · Today's mark = three spans, h-px (1.000 CSS px), bg-current, SQUARE ends.
+    · Every other stroked mark on the site is round-capped: app/icon.svg,
+      RunwayIdentity.tsx (the sun), IntroScrollCue.tsx (the UP-39-ratified
+      chevron), Icon.tsx, ThemeToggle.tsx, CredentialBadge.tsx.
+      The hamburger's square ends are the SOLE exception sitewide.
+    · Effective stroke weights in the estate's chrome band: chevron 1.500 CSS px,
+      ThemeToggle 1.200, Icon.tsx 1.021. Today's hamburger sits at 1.000, just
+      under the floor of that band. All three candidates use 1.5px, which lands
+      exactly on the ratified chevron.
+    · The sun's own grammar is UNEQUAL lines: 21 units @1.7 over 13 units @1.5,
+      both centred (length ratio 0.619, weight ratio 0.882). Candidate B borrows
+      those ratios; the hamburger today is 22/22/22 at 1/1/1.
+
+  The OPEN column is the close (X) state. All three candidates preserve the
+  existing choreography byte-for-byte — same top/rotate/opacity classes, same
+  transition property lists, same duration-base + ease-out.
+-->
+<style>
+  :root {
+    --ink: rgb(28 32 34);
+    --canvas: rgb(250 248 241);
+    --terracotta: rgb(178 81 40);
+    --border: rgb(28 32 34 / 0.12);
+    --meta: rgb(28 32 34 / 0.55);
+  }
+  .dark {
+    --ink: rgb(232 230 225);
+    --canvas: rgb(21 25 26);
+    --terracotta: rgb(218 138 92);
+    --border: rgb(232 230 225 / 0.14);
+    --meta: rgb(232 230 225 / 0.55);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 40px;
+    font: 400 14px/1.5 ui-sans-serif, -apple-system, system-ui, sans-serif;
+    background: rgb(240 238 232);
+    color: rgb(28 32 34);
+  }
+  h1 { font: 300 26px/1.2 ui-serif, Georgia, serif; margin: 0 0 4px; }
+  .sub { color: rgb(28 32 34 / .6); margin: 0 0 28px; font-size: 13px; }
+  .themes { display: flex; gap: 28px; flex-wrap: wrap; }
+  .panel { background: var(--canvas); color: var(--ink); border-radius: 14px; padding: 26px 28px 30px; flex: 1 1 480px; }
+  .panel h2 { font: 500 11px/1 ui-monospace, monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--meta); margin: 0 0 22px; }
+  table { border-collapse: collapse; width: 100%; }
+  th { font: 500 10px/1 ui-monospace, monospace; letter-spacing: .12em; text-transform: uppercase; color: var(--meta); text-align: left; padding: 0 0 14px; font-weight: 500; }
+  td { padding: 14px 0; border-top: 1px solid var(--border); vertical-align: middle; }
+  td.name { width: 40%; }
+  .label { font: 500 12px/1.35 ui-sans-serif, system-ui, sans-serif; color: var(--ink); }
+  .note { font-size: 11px; color: var(--meta); margin-top: 3px; line-height: 1.45; }
+
+  /* The real trigger: a 44px disc with the scrim, exactly as HamburgerNav ships it. */
+  .disc {
+    width: 44px; height: 44px; border-radius: 999px;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: rgb(250 248 241 / .9);
+    border: 1px solid var(--border);
+    color: var(--ink);
+  }
+  .dark .disc { background: rgb(21 25 26 / .9); }
+  .disc:hover { color: var(--terracotta); }
+  .glyph { position: relative; display: block; width: 22px; height: 14px; }
+  .bar { position: absolute; left: 0; right: 0; background: currentColor; }
+
+  /* ── today ─────────────────────────────────────────────────────────── */
+  .today .bar { height: 1px; }
+  .today .b1 { top: 0px; } .today .b2 { top: 6px; } .today .b3 { top: 12px; }
+  .today.open .b1 { top: 6px; transform: rotate(45deg); }
+  .today.open .b2 { opacity: 0; }
+  .today.open .b3 { top: 6px; transform: rotate(-45deg); }
+
+  /* ── A · Round Hand ────────────────────────────────────────────────── */
+  .candA .bar { height: 1.5px; border-radius: 999px; }
+  .candA .b1 { top: 0px; } .candA .b2 { top: 6px; } .candA .b3 { top: 12px; }
+  .candA.open .b1 { top: 6px; transform: rotate(45deg); }
+  .candA.open .b2 { opacity: 0; }
+  .candA.open .b3 { top: 6px; transform: rotate(-45deg); }
+
+  /* ── B · The Horizon ───────────────────────────────────────────────── */
+  .candB .bar { height: 1.5px; border-radius: 999px; }
+  .candB .b1 { top: 0px; } .candB .b3 { top: 12px; }
+  .candB .b2 {
+    top: 6px; height: 1.25px; left: 50%; right: auto;
+    width: 13.5px; transform: translateX(-50%);
+  }
+  .candB.open .b1 { top: 6px; transform: rotate(45deg); }
+  .candB.open .b2 { opacity: 0; }
+  .candB.open .b3 { top: 6px; transform: rotate(-45deg); }
+
+  /* ── C · The Drawn Rule ────────────────────────────────────────────── */
+  .candC .bar { height: 2px; background: none; }
+  .candC .bar svg { display: block; width: 100%; height: 100%; }
+  .candC .b1 { top: -0.25px; } .candC .b2 { top: 5.75px; } .candC .b3 { top: 11.75px; }
+  .candC.open .b1 { top: 5.75px; transform: rotate(45deg); }
+  .candC.open .b2 { opacity: 0; }
+  .candC.open .b3 { top: 5.75px; transform: rotate(-45deg); }
+
+  .zoomrow { margin-top: 34px; }
+  .zoom { transform: scale(6); transform-origin: left center; image-rendering: auto; }
+  .zoomcell { height: 96px; display: flex; align-items: center; overflow: hidden; }
+</style>
+
+<h1>a-drawn-hamburger — candidate sheet</h1>
+<p class="sub">
+  Real size, real disc, real scrim. <strong>Closed</strong> is the menu mark; <strong>open</strong> is the close (X).
+  All three candidates keep today's choreography exactly — only the ink changes.
+  Bottom block is the same four marks at 6&times; for the caps and tapers.
+</p>
+
+<div class="themes">
+  <div class="panel" id="light">
+    <h2>Light</h2>
+    <table>
+      <tr><th>Candidate</th><th>Closed</th><th>Open (X)</th></tr>
+
+      <tr><td class="name">
+        <div class="label">Today — three default rules</div>
+        <div class="note">1.000px, square ends. The only ink on the site with square ends.</div>
+      </td>
+      <td><span class="disc"><span class="glyph today"><i class="bar b1"></i><i class="bar b2"></i><i class="bar b3"></i></span></span></td>
+      <td><span class="disc"><span class="glyph today open"><i class="bar b1"></i><i class="bar b2"></i><i class="bar b3"></i></span></span></td></tr>
+
+      <tr><td class="name">
+        <div class="label">A — Round Hand</div>
+        <div class="note">Caps only. 1.5px, round ends. One property changed, and it is the one the whole estate already agrees on.</div>
+      </td>
+      <td><span class="disc"><span class="glyph candA"><i class="bar b1"></i><i class="bar b2"></i><i class="bar b3"></i></span></span></td>
+      <td><span class="disc"><span class="glyph candA open"><i class="bar b1"></i><i class="bar b2"></i><i class="bar b3"></i></span></span></td></tr>
+
+      <tr><td class="name">
+        <div class="label">B — The Horizon</div>
+        <div class="note">Borrows the sun's own proportions: middle rule 13.5px @1.25 against 22px @1.5, centred (0.614 / 0.833 vs the sun's 0.619 / 0.882). The short rule is the one that fades, so the X stays symmetric.</div>
+      </td>
+      <td><span class="disc"><span class="glyph candB"><i class="bar b1"></i><i class="bar b2"></i><i class="bar b3"></i></span></span></td>
+      <td><span class="disc"><span class="glyph candB open"><i class="bar b1"></i><i class="bar b2"></i><i class="bar b3"></i></span></span></td></tr>
+
+      <tr><td class="name">
+        <div class="label">C — The Drawn Rule</div>
+        <div class="note">True taper: width varies along each run, tapers opposed so both heavy ends land at the TOP of the X — the weight of two downstrokes. The estate has no taper anywhere; this adds vocabulary rather than conforming to it.</div>
+      </td>
+      <td><span class="disc"><span class="glyph candC">
+        <i class="bar b1"><svg viewBox="0 0 22 2"><path d="M1.1 0.28 Q11.08 0.32 21.05 0.44 Q21.72 0.94 21.05 1.44 Q11.08 1.68 1.1 1.84 Q0.06 1.06 1.1 0.28 Z" fill="currentColor"/></svg></i>
+        <i class="bar b2"><svg viewBox="0 0 22 2"><path d="M1.1 0.42 Q11.08 0.34 21.05 0.46 Q21.62 0.98 21.05 1.5 Q11.08 1.62 1.1 1.5 Q0.5 0.96 1.1 0.42 Z" fill="currentColor"/></svg></i>
+        <i class="bar b3"><svg viewBox="0 0 22 2"><path d="M1.1 0.44 Q11.08 0.32 21.05 0.28 Q22.06 1.06 21.05 1.84 Q11.08 1.68 1.1 1.44 Q0.38 0.94 1.1 0.44 Z" fill="currentColor"/></svg></i>
+      </span></span></td>
+      <td><span class="disc"><span class="glyph candC open">
+        <i class="bar b1"><svg viewBox="0 0 22 2"><path d="M1.1 0.28 Q11.08 0.32 21.05 0.44 Q21.72 0.94 21.05 1.44 Q11.08 1.68 1.1 1.84 Q0.06 1.06 1.1 0.28 Z" fill="currentColor"/></svg></i>
+        <i class="bar b2"><svg viewBox="0 0 22 2"><path d="M1.1 0.42 Q11.08 0.34 21.05 0.46 Q21.62 0.98 21.05 1.5 Q11.08 1.62 1.1 1.5 Q0.5 0.96 1.1 0.42 Z" fill="currentColor"/></svg></i>
+        <i class="bar b3"><svg viewBox="0 0 22 2"><path d="M1.1 0.44 Q11.08 0.32 21.05 0.28 Q22.06 1.06 21.05 1.84 Q11.08 1.68 1.1 1.44 Q0.38 0.94 1.1 0.44 Z" fill="currentColor"/></svg></i>
+      </span></span></td></tr>
+    </table>
+
+    <div class="zoomrow">
+      <h2>At 6&times; — the caps and the taper</h2>
+      <table>
+        <tr><td class="name"><div class="label">Today</div></td><td class="zoomcell"><span class="zoom"><span class="glyph today"><i class="bar b1"></i><i class="bar b2"></i><i class="bar b3"></i></span></span></td></tr>
+        <tr><td class="name"><div class="label">A — Round Hand</div></td><td class="zoomcell"><span class="zoom"><span class="glyph candA"><i class="bar b1"></i><i class="bar b2"></i><i class="bar b3"></i></span></span></td></tr>
+        <tr><td class="name"><div class="label">B — The Horizon</div></td><td class="zoomcell"><span class="zoom"><span class="glyph candB"><i class="bar b1"></i><i class="bar b2"></i><i class="bar b3"></i></span></span></td></tr>
+        <tr><td class="name"><div class="label">C — The Drawn Rule</div></td><td class="zoomcell"><span class="zoom"><span class="glyph candC">
+          <i class="bar b1"><svg viewBox="0 0 22 2"><path d="M1.1 0.28 Q11.08 0.32 21.05 0.44 Q21.72 0.94 21.05 1.44 Q11.08 1.68 1.1 1.84 Q0.06 1.06 1.1 0.28 Z" fill="currentColor"/></svg></i>
+          <i class="bar b2"><svg viewBox="0 0 22 2"><path d="M1.1 0.42 Q11.08 0.34 21.05 0.46 Q21.62 0.98 21.05 1.5 Q11.08 1.62 1.1 1.5 Q0.5 0.96 1.1 0.42 Z" fill="currentColor"/></svg></i>
+          <i class="bar b3"><svg viewBox="0 0 22 2"><path d="M1.1 0.44 Q11.08 0.32 21.05 0.28 Q22.06 1.06 21.05 1.84 Q11.08 1.68 1.1 1.44 Q0.38 0.94 1.1 0.44 Z" fill="currentColor"/></svg></i>
+        </span></span></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="panel dark" id="dark">
+    <h2>Dark</h2>
+    <table>
+      <tr><th>Candidate</th><th>Closed</th><th>Open (X)</th></tr>
+      <tr><td class="name"><div class="label">Today</div></td>
+        <td><span class="disc"><span class="glyph today"><i class="bar b1"></i><i class="bar b2"></i><i class="bar b3"></i></span></span></td>
+        <td><span class="disc"><span class="glyph today open"><i class="bar b1"></i><i class="bar b2"></i><i class="bar b3"></i></span></span></td></tr>
+      <tr><td class="name"><div class="label">A — Round Hand</div></td>
+        <td><span class="disc"><span class="glyph candA"><i class="bar b1"></i><i class="bar b2"></i><i class="bar b3"></i></span></span></td>
+        <td><span class="disc"><span class="glyph candA open"><i class="bar b1"></i><i class="bar b2"></i><i class="bar b3"></i></span></span></td></tr>
+      <tr><td class="name"><div class="label">B — The Horizon</div></td>
+        <td><span class="disc"><span class="glyph candB"><i class="bar b1"></i><i class="bar b2"></i><i class="bar b3"></i></span></span></td>
+        <td><span class="disc"><span class="glyph candB open"><i class="bar b1"></i><i class="bar b2"></i><i class="bar b3"></i></span></span></td></tr>
+      <tr><td class="name"><div class="label">C — The Drawn Rule</div></td>
+        <td><span class="disc"><span class="glyph candC">
+          <i class="bar b1"><svg viewBox="0 0 22 2"><path d="M1.1 0.28 Q11.08 0.32 21.05 0.44 Q21.72 0.94 21.05 1.44 Q11.08 1.68 1.1 1.84 Q0.06 1.06 1.1 0.28 Z" fill="currentColor"/></svg></i>
+          <i class="bar b2"><svg viewBox="0 0 22 2"><path d="M1.1 0.42 Q11.08 0.34 21.05 0.46 Q21.62 0.98 21.05 1.5 Q11.08 1.62 1.1 1.5 Q0.5 0.96 1.1 0.42 Z" fill="currentColor"/></svg></i>
+          <i class="bar b3"><svg viewBox="0 0 22 2"><path d="M1.1 0.44 Q11.08 0.32 21.05 0.28 Q22.06 1.06 21.05 1.84 Q11.08 1.68 1.1 1.44 Q0.38 0.94 1.1 0.44 Z" fill="currentColor"/></svg></i>
+        </span></span></td>
+        <td><span class="disc"><span class="glyph candC open">
+          <i class="bar b1"><svg viewBox="0 0 22 2"><path d="M1.1 0.28 Q11.08 0.32 21.05 0.44 Q21.72 0.94 21.05 1.44 Q11.08 1.68 1.1 1.84 Q0.06 1.06 1.1 0.28 Z" fill="currentColor"/></svg></i>
+          <i class="bar b2"><svg viewBox="0 0 22 2"><path d="M1.1 0.42 Q11.08 0.34 21.05 0.46 Q21.62 0.98 21.05 1.5 Q11.08 1.62 1.1 1.5 Q0.5 0.96 1.1 0.42 Z" fill="currentColor"/></svg></i>
+          <i class="bar b3"><svg viewBox="0 0 22 2"><path d="M1.1 0.44 Q11.08 0.32 21.05 0.28 Q22.06 1.06 21.05 1.84 Q11.08 1.68 1.1 1.44 Q0.38 0.94 1.1 0.44 Z" fill="currentColor"/></svg></i>
+        </span></span></td></tr>
+    </table>
+
+    <div class="zoomrow">
+      <h2>At 6&times;</h2>
+      <table>
+        <tr><td class="name"><div class="label">Today</div></td><td class="zoomcell"><span class="zoom"><span class="glyph today"><i class="bar b1"></i><i class="bar b2"></i><i class="bar b3"></i></span></span></td></tr>
+        <tr><td class="name"><div class="label">A</div></td><td class="zoomcell"><span class="zoom"><span class="glyph candA"><i class="bar b1"></i><i class="bar b2"></i><i class="bar b3"></i></span></span></td></tr>
+        <tr><td class="name"><div class="label">B</div></td><td class="zoomcell"><span class="zoom"><span class="glyph candB"><i class="bar b1"></i><i class="bar b2"></i><i class="bar b3"></i></span></span></td></tr>
+        <tr><td class="name"><div class="label">C</div></td><td class="zoomcell"><span class="zoom"><span class="glyph candC">
+          <i class="bar b1"><svg viewBox="0 0 22 2"><path d="M1.1 0.28 Q11.08 0.32 21.05 0.44 Q21.72 0.94 21.05 1.44 Q11.08 1.68 1.1 1.84 Q0.06 1.06 1.1 0.28 Z" fill="currentColor"/></svg></i>
+          <i class="bar b2"><svg viewBox="0 0 22 2"><path d="M1.1 0.42 Q11.08 0.34 21.05 0.46 Q21.62 0.98 21.05 1.5 Q11.08 1.62 1.1 1.5 Q0.5 0.96 1.1 0.42 Z" fill="currentColor"/></svg></i>
+          <i class="bar b3"><svg viewBox="0 0 22 2"><path d="M1.1 0.44 Q11.08 0.32 21.05 0.28 Q22.06 1.06 21.05 1.84 Q11.08 1.68 1.1 1.44 Q0.38 0.94 1.1 0.44 Z" fill="currentColor"/></svg></i>
+        </span></span></td></tr>
+      </table>
+    </div>
+  </div>
+</div>
