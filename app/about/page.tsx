@@ -93,7 +93,7 @@ export default function AboutPage() {
           <div className="max-w-measure-lead flex flex-col gap-8">
             <p className="font-sans font-light text-step-1 text-ink-muted text-pretty">
               I came to software through problems I wanted to solve. Most of them
-              involved accessibility — tools that should have been better but weren&apos;t.
+              involved accessibility — tools that should have been better but weren’t.
               I decided to make some that were.
             </p>
 
@@ -209,7 +209,7 @@ export default function AboutPage() {
               deserve navigation tools designed for them, not adapted for them.
             </p>
             <p className="font-sans font-light text-body text-ink-muted leading-[1.65]">
-              The user&apos;s data is theirs. Prompt Library stores everything
+              The user’s data is theirs. Prompt Library stores everything
               locally — no backend, no account, no server. If the data is not
               necessary, do not collect it.
             </p>

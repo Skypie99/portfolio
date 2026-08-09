@@ -69,7 +69,7 @@ export default function ContactPage() {
         <div className="relative z-10 max-w-content mx-auto">
           <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
             <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
-            Let&apos;s talk
+            Let’s talk
           </p>
           <SettleHeading
             className="font-serif font-light text-display ember max-w-3xl mb-12 text-balance"

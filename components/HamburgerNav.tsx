@@ -31,7 +31,7 @@ const NAV_ITEMS: NavItem[] = [
   { href: '/#about',        label: 'A Brief Account' },
   { href: '/#certificates', label: 'Credentials'     },
   { href: '/blog/',         label: 'Notes'           },
-  { href: '/#contact',      label: "Let's talk"      },
+  { href: '/#contact',      label: "Let’s talk"      },
 ];
 
 export function HamburgerNav() {

@@ -619,12 +619,12 @@ export default function HomePage() {
           <Reveal variant="scene" className="flex flex-col items-start gap-12">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink flex items-center gap-2">
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
-              Let&apos;s talk
+              Let’s talk
             </p>
             <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
               Have something worth building?
               <br />
-              Let&apos;s talk about it.
+              Let’s talk about it.
             </h2>
           </Reveal>
           <Reveal index={1}>

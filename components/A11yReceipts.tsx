@@ -3,6 +3,7 @@ import { Fragment } from 'react';
 import { CountUpStat } from '@/components/CountUpStat';
 import { Reveal } from '@/components/Reveal';
 import { cn } from '@/lib/cn';
+import { smartPunctuation } from '@/lib/markdown';
 import type { A11yReceipts as A11yReceiptsData } from '@/lib/schema';
 
 /** Home's stat-figure rotation (app/page.tsx STAT_EMBER) — the receipts strip
@@ -108,7 +109,13 @@ export function A11yReceipts({ data, className }: { data: A11yReceiptsData; clas
             <p aria-hidden="true" className="font-mono text-label text-sage-text uppercase tracking-label mb-2">
               {r.label}
             </p>
-            <p className="font-mono text-meta text-text-meta">{r.sub}</p>
+            {/* curly-the-estate (luxe Wave 1): the sub is authored prose, not a
+                code specimen, so it takes the house apostrophe like every other
+                prose surface — "the portfolio's own suite" was the last straight
+                U+0027 rendering from content JSON. Mono TYPEFACE is not a mono
+                CONTEXT: `code` spans keep their literal glyphs via
+                INLINE_CODE_CLASS and never route through this transform. */}
+            <p className="font-mono text-meta text-text-meta">{smartPunctuation(r.sub)}</p>
           </Reveal>
         ))}
       </div>

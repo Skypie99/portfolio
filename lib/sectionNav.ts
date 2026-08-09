@@ -73,7 +73,7 @@ const ROUTE_SECTIONS = {
     { id: 'process', label: 'Method', href: '/#process' },
     { id: 'about', label: 'A Brief Account', href: '/#about' },
     { id: 'certificates', label: 'Credentials', href: '/#certificates' },
-    { id: 'contact', label: "Let's talk", href: '/#contact' },
+    { id: 'contact', label: "Let’s talk", href: '/#contact' },
   ],
 
   // /about — eyebrow grammar. Four in-page sections. Two bands are curated out,
