@@ -16,6 +16,8 @@ export type Supply = {
   hex: string;
   notes: string;
   swatched: boolean;
+  /** Storage object key `{uid}/supply/{id}` base for the real swatch photo, or null. */
+  swatch_path: string | null;
 };
 
 export type Artwork = {
