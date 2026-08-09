@@ -48,8 +48,25 @@ export function SidebarFeatured({ featured }: { featured: Deliverable | null }) 
       className="group flex flex-col gap-1.5 text-ink transition-colors duration-fast ease-out"
     >
       {/* Half-rank below the wordmark — one serif crown per rail (HI-3).
-          Matches the slot's own fallback rank. */}
-      <span className="link-draw inline-block font-serif font-normal text-display-s leading-tight">
+          Matches the slot's own fallback rank.
+
+          `link-draw-group` (defined beside `.link-draw` in globals.css) moves
+          the underline's TRIGGER from this span to the anchor, so the block is
+          one door: hovering the role line or the "Open it" row draws the same
+          line the title does, and the KEYBOARD gets it too. A <span> can never
+          match :focus-visible, so before this the focus path got the ring but
+          never the line — this was the estate's only such break in the
+          link-draw family (1 of 30 call sites; the other 29 sit on the link
+          itself). The rider is deliberately state-only and adds NO colour: the
+          measurement and the reason are recorded in globals.css. Do not
+          "complete" it by adding `color` there.
+
+          `self-start` because this span is a flex item of the `flex flex-col`
+          anchor — flex blockifies `inline-block`, and align-items:stretch was
+          sizing it to the full 184px rail column (280px w-sidebar − 2×48px
+          p-12), so the 1px line drew ~184px under a ~90px word. Same idiom as
+          Footer.tsx's and app/page.tsx's link-draw links. */}
+      <span className="link-draw link-draw-group self-start inline-block font-serif font-normal text-display-s leading-tight">
         {featured.title}
       </span>
       <span className="rail-trim font-sans text-body-sm text-ink-muted">
