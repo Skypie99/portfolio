@@ -203,17 +203,17 @@ export default function AboutPage() {
           </Reveal>
 
           <Reveal variant="depth" className="max-w-measure-lead flex flex-col gap-8">
-            <p className="font-sans font-light text-body text-ink-muted leading-[1.65]">
+            <p className="font-sans font-light text-body text-ink-muted leading-[1.65] text-pretty">
               WCAG 2.2 AA on every interface. Not because it is required.
               Because it is correct. AccessMap exists because disabled people
               deserve navigation tools designed for them, not adapted for them.
             </p>
-            <p className="font-sans font-light text-body text-ink-muted leading-[1.65]">
+            <p className="font-sans font-light text-body text-ink-muted leading-[1.65] text-pretty">
               The user’s data is theirs. Prompt Library stores everything
               locally — no backend, no account, no server. If the data is not
               necessary, do not collect it.
             </p>
-            <p className="font-sans font-light text-body text-ink-muted leading-[1.65]">
+            <p className="font-sans font-light text-body text-ink-muted leading-[1.65] text-pretty">
               I would rather take longer and do it correctly than ship fast and
               apologise. This is not a principle from a book. It came from
               shipping things that were not ready.
@@ -250,17 +250,17 @@ export default function AboutPage() {
           </Reveal>
 
           <Reveal variant="depth" className="max-w-measure-lead flex flex-col gap-8">
-            <p className="font-sans font-light text-body text-ink-muted leading-[1.65]">
+            <p className="font-sans font-light text-body text-ink-muted leading-[1.65] text-pretty">
               I am not a trained software engineer. I came to coding through
               building — I had ideas I wanted to exist. That is still how this
               works.
             </p>
-            <p className="font-sans font-light text-body text-ink-muted leading-[1.65]">
+            <p className="font-sans font-light text-body text-ink-muted leading-[1.65] text-pretty">
               Right now: TypeScript, React Native, multi-agent systems that
               stay safe unsupervised. Each project teaches something the last
               one did not.
             </p>
-            <p className="font-sans font-light text-body text-ink-muted leading-[1.65]">
+            <p className="font-sans font-light text-body text-ink-muted leading-[1.65] text-pretty">
               I am looking for collaborators and clients who read the
               documentation, ask good questions, and care how things turn out.
               Write to me if that sounds like you.
@@ -310,7 +310,7 @@ export default function AboutPage() {
                       <h3 className="font-serif font-normal text-step-2 leading-tight">
                         {d.title}
                       </h3>
-                      <p className="font-sans font-light text-body text-ink-muted leading-[1.65] max-w-[540px]">
+                      <p className="font-sans font-light text-body text-ink-muted leading-[1.65] max-w-[540px] text-pretty">
                         {d.summary}
                       </p>
                       <span className="font-mono text-meta tracking-label uppercase text-accent-text mt-2 inline-flex items-center gap-1 transition-transform duration-fast ease-out group-hover:translate-x-1 group-focus-visible:translate-x-1">
