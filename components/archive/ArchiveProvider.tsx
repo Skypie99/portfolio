@@ -34,7 +34,7 @@ type Action =
   | { type: 'UPSERT_ARTWORK'; artwork: Artwork }
   | { type: 'REMOVE_ARTWORK'; id: string };
 
-const initial: State = {
+export const initialState: State = {
   status: 'loading',
   error: '',
   supplies: [],
@@ -53,7 +53,7 @@ function upsertById<T extends { id: string }>(list: T[], item: T): T[] {
   return next;
 }
 
-function reducer(state: State, action: Action): State {
+export function reducer(state: State, action: Action): State {
   switch (action.type) {
     case 'LOADING':
       return { ...state, status: 'loading', error: '' };
@@ -116,7 +116,7 @@ export function useArchive(): ArchiveContextValue {
 }
 
 export function ArchiveProvider({ children }: { children: ReactNode }) {
-  const [state, dispatch] = useReducer(reducer, initial);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   const reload = useCallback(async () => {
     dispatch({ type: 'LOADING' });
