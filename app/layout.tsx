@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 
 import { cormorant, dmMono, dmSans } from '@/app/fonts';
+import { ChromeGate } from '@/components/ChromeGate';
 import { Footer } from '@/components/Footer';
 // HamburgerNav is loaded via a Client wrapper (HamburgerNavMount) so the
 // `next/dynamic({ ssr: false })` boundary lives in a Client Component — Next
@@ -62,13 +63,28 @@ import './tokens-phase2.css';
  *
  * Referrer-Policy ships in both dev + prod via metadata.referrer.
  */
+// The archive (/archive) is the site's one dynamic surface: its client talks to
+// a Supabase project (auth, REST, Storage) and photos load from signed Storage
+// URLs. The exact project origin — and only that — is derived from
+// NEXT_PUBLIC_SUPABASE_URL and appended to connect-src (calls) + img-src (photos).
+// Absent/invalid env adds nothing, so the rest of the site's policy is unchanged.
+const SUPABASE_ORIGIN = (() => {
+  const raw = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  if (!raw) return '';
+  try {
+    return new URL(raw).origin;
+  } catch {
+    return '';
+  }
+})();
+
 const PROD_CSP = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-inline'",
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob:",
+  ["img-src 'self' data: blob:", SUPABASE_ORIGIN].filter(Boolean).join(' '),
   "font-src 'self'",
-  "connect-src 'self'",
+  ["connect-src 'self'", SUPABASE_ORIGIN].filter(Boolean).join(' '),
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",
@@ -203,15 +219,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               golden-hour → night desert behind ALL content. Fixed, z-index:-1,
               aria-hidden; the locked intro + the now-translucent panels sit on
               top of it. Renders behind everything; never covers content. */}
-          <WorldBackdrop />
+          <ChromeGate>
+            <WorldBackdrop />
+          </ChromeGate>
           {/* Filmic page transitions: one capture-phase nav interceptor that
               wraps same-origin client navigations in a native View Transition
               cross-dissolve. Renders null; degrades to plain navigation. */}
           <ViewTransitions />
           <SkipLink />
-          <HamburgerNavMount />
+          <ChromeGate>
+            <HamburgerNavMount />
+          </ChromeGate>
           <div className="flex flex-col md:flex-row min-h-screen">
-            <Sidebar />
+            <ChromeGate>
+              <Sidebar />
+            </ChromeGate>
             {/* C-71: <main> wraps ONLY the page content; the Footer is its sibling
                 in this column wrapper (which keeps main's old classes + the same
                 child order, so the render is byte-identical). This lifts the
@@ -223,7 +245,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <main id="main" tabIndex={-1} className="flex-1">
                 {children}
               </main>
-              <Footer />
+              <ChromeGate>
+                <Footer />
+              </ChromeGate>
             </div>
           </div>
         </ThemeProvider>
