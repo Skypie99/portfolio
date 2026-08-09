@@ -17,7 +17,7 @@ Sky's public-facing AI portfolio. Static Next.js 15 site deployed to GitHub Page
 - **Vitest** + **@testing-library/react** — component + integration tests
 - **GitHub Pages** — hosting (auto-deploy via `.github/workflows/deploy.yml` on push to `main`)
 
-No backend. No database. No auth.
+No backend, database, or auth — **except `/archive`** (the Studio Archive), a self-contained Supabase-backed island. See "The Studio Archive" at the end of this file.
 
 ---
 
@@ -102,7 +102,7 @@ npm run build   # outputs to out/ (static export)
 # GitHub Actions picks it up automatically on push
 ```
 
-The site lives at `/portfolio/` on GitHub Pages. `basePath` is set to `/portfolio` in production and `''` in dev — never hardcode the base path in links, use Next.js `<Link>` and relative paths.
+The site serves at the **domain root** (`https://skypistudio.com/…`). There is **no `basePath`** — `next.config.mjs` sets none. (Earlier docs claimed `/portfolio`; that is stale — don't reintroduce it or hardcode any base path.) Use Next.js `<Link>` and relative paths.
 
 `trailingSlash: true` is required — GH Pages serves `/work/` via `/work/index.html`.
 
@@ -141,8 +141,8 @@ There's no deploy gate. Always run `npm run build && npm test` locally before pu
 ### 2. `output: 'export'` bans runtime Next.js features
 No `next/image` optimization (images are `unoptimized: true`), no API routes, no server actions, no middleware at runtime. Everything must be statically generatable.
 
-### 3. `basePath: '/portfolio'` in production
-Dev runs without basePath. `<Link href="/about">` works in both environments — Next.js prepends basePath automatically. Never manually prepend `/portfolio/` to a path.
+### 3. No basePath — the site serves at the domain root
+`next.config.mjs` sets no `basePath`; the site serves at `https://skypistudio.com/…`. Some older docs/comments say `/portfolio` — that is **stale**; don't reintroduce it or hardcode any base path. Use `<Link>` and relative paths.
 
 ### 4. Featured-slot invariant
 Exactly 0 or 1 deliverable may have `featured: true`. Adding a second throws at build time with a clear error message. If you want to change the featured project, set the old one to `false` first.
@@ -155,3 +155,16 @@ The `headers()` block in `next.config.mjs` is present for when we migrate off Gi
 
 ### 7. Static-integrity test runs a full build
 `npm run test:static` calls `npm run build` first. Don't run it in hot loops — it's slow. Use `npm test` for the fast component tests during development.
+
+---
+
+## The Studio Archive (`/archive`)
+
+A private, auth-gated personal art catalogue at `skypistudio.com/archive` — the one Supabase-backed island in this otherwise static, backend-less site. It reimplements a single-file prototype so Sky's catalogue opens from any device.
+
+- **Stack island:** Supabase (Postgres + Storage + magic-link/OTP auth) via `@supabase/supabase-js`, 100% client-side (`output: 'export'` = no server). **RLS is the security boundary**; the anon key is publishable by design.
+- **Code:** `app/archive/` (route + `archive.css`), `components/archive/*`, `lib/archive/*` (pure logic is unit-tested), `supabase/migrations/*`, `scripts/archive/extract-seed.mjs`.
+- **Documented deviations from this repo's conventions — `/archive` only:** (1) **scoped raw CSS** in `app/archive/archive.css`, every rule under `.studio-archive`/`#studio-archive-root`, `sa-`-prefixed — the archive's design language IS the requirement. (2) **inline `style=`** in archive components (ported positioning). Confined to `/archive`; the rest of the site stays Tailwind-only.
+- **Chrome:** `/archive` hides the site chrome via `components/ChromeGate.tsx`; it is registered in `UNINDEXED_ROUTES` and ships `noindex`.
+- **Env:** `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_ANON_KEY` — repo Actions **Variables** for deploy, `.env.local` for dev (see `.env.example`). Never a `service_role` key.
+- **Runbook:** `docs/ARCHIVE_RUNBOOK.md` (deploy, unpause, custom SMTP, second user).
