@@ -175,12 +175,21 @@ export function sectionIdsForRoute(pathname: string): readonly string[] {
 /** Every indexed route — the guard sweeps this, so a new route can't be forgotten. */
 export const INDEXED_ROUTES = Object.keys(ROUTE_SECTIONS) as readonly string[];
 
-/** Routes that mount the rail but are deliberately NOT indexed. Asserted by the guard. */
+/**
+ * Routes that render inside the shell but carry NO "On this page" index. Asserted
+ * by the guard (T6): each must be a real built route, and none may ship a rail.
+ *
+ * /work, /certificates, /blog, /contact mount the rail with too few sections to
+ * index. /archive is different in kind — it suppresses the whole site chrome
+ * (ChromeGate), so it mounts no rail at all; it is listed here so the guard keeps
+ * asserting the route exists and never grows an index.
+ */
 export const UNINDEXED_ROUTES: readonly string[] = Object.freeze([
   '/work',
   '/certificates',
   '/blog',
   '/contact',
+  '/archive',
 ]);
 
 /**
