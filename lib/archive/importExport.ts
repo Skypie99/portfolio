@@ -142,6 +142,24 @@ function keepImage(url: string | null | undefined, label: string, kind: 'thumbna
   return undefined;
 }
 
+/**
+ * Drop any supply id an artwork references that isn't in the backup's own
+ * supplies. Done at parse time — BEFORE the destructive import wipes anything —
+ * so the artwork_supplies FK can never fail mid-import and strand a wiped
+ * catalogue. Mutates each artwork's freshly-built supplies array.
+ */
+function pruneDanglingSupplies(supplies: Supply[], arts: Artwork[], warnings: string[]): void {
+  const ids = new Set(supplies.map((s) => s.id));
+  for (const a of arts) {
+    const before = a.supplies.length;
+    a.supplies = a.supplies.filter((id) => ids.has(id));
+    const dropped = before - a.supplies.length;
+    if (dropped > 0) {
+      warnings.push(`Artwork "${a.title || a.id}" referenced ${dropped} colour(s) not in this backup — those links were dropped.`);
+    }
+  }
+}
+
 function fromV2(obj: Record<string, unknown>): ImportResult {
   const parsed = v2Schema.safeParse(obj);
   if (!parsed.success) throw new Error(`that v2 backup is malformed — ${firstIssue(parsed.error)}`);
@@ -159,6 +177,7 @@ function fromV2(obj: Record<string, unknown>): ImportResult {
     supplies: a.supplies,
     photo_path: null,
   }));
+  pruneDanglingSupplies(supplies, arts, warnings);
   const photos: PhotosMap = {};
   for (const [artId, pair] of Object.entries(v.photos)) {
     const thumb = keepImage(pair.thumb, artId, 'thumbnail', warnings);
@@ -192,6 +211,7 @@ function fromLegacy(obj: Record<string, unknown>): ImportResult {
       photo_path: null,
     };
   });
+  pruneDanglingSupplies(supplies, arts, warnings);
   return { data: { supplies, arts }, photos, warnings };
 }
 

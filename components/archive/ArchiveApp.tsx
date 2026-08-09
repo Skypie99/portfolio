@@ -35,11 +35,15 @@ function Shell() {
   const withPhotos = state.arts.filter((a) => a.photo_path).length;
 
   if (state.status === 'loading') {
-    return <div className="sa-status sa-mono sa-dim">opening the studio…</div>;
+    return (
+      <div className="sa-status sa-mono sa-dim" role="status" aria-live="polite">
+        opening the studio…
+      </div>
+    );
   }
   if (state.status === 'error') {
     return (
-      <div className="sa-status">
+      <div className="sa-status" role="alert">
         <div>
           <p className="sa-mono">could not open the archive</p>
           <p className="sa-serif sa-dim">{state.error}</p>

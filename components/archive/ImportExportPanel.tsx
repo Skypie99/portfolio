@@ -65,23 +65,27 @@ async function downloadObject(path: string): Promise<string | null> {
 async function uploadImportedPhoto(uid: string, artId: string, pair: PhotoPair): Promise<string | null> {
   const base = `${uid}/${artId}`;
   const storage = getSupabase().storage.from(BUCKET);
-  let ok = false;
+  // Track each requested image independently: return the base only when EVERY
+  // image the pair carries uploaded (a thumb failure after a display success
+  // must count as a failure, not a silent half-restore).
+  let displayOk = pair.display === undefined;
+  let thumbOk = pair.thumb === undefined;
   if (pair.display) {
     const r = await storage.upload(displayPath(base), await dataUrlToBlob(pair.display), {
       upsert: true,
       contentType: 'image/jpeg',
     });
-    if (r.error) return null;
-    ok = true;
+    displayOk = !r.error;
   }
   if (pair.thumb) {
     const r = await storage.upload(thumbPath(base), await dataUrlToBlob(pair.thumb), {
       upsert: true,
       contentType: 'image/jpeg',
     });
-    if (!r.error) ok = true;
+    thumbOk = !r.error;
   }
-  return ok ? base : null;
+  const hasAny = Boolean(pair.display || pair.thumb);
+  return displayOk && thumbOk && hasAny ? base : null;
 }
 
 export function ImportExportPanel({ mode, onClose }: { mode: 'export' | 'import'; onClose: () => void }) {
@@ -93,6 +97,7 @@ export function ImportExportPanel({ mode, onClose }: { mode: 'export' | 'import'
   const [pasted, setPasted] = useState('');
   const [parsed, setParsed] = useState<ImportResult | null>(null);
   const [parseError, setParseError] = useState('');
+  const [importError, setImportError] = useState('');
   const [confirmText, setConfirmText] = useState('');
   const [failures, setFailures] = useState<string[]>([]);
   const [done, setDone] = useState(false);
@@ -181,6 +186,7 @@ export function ImportExportPanel({ mode, onClose }: { mode: 'export' | 'import'
     if (!parsed) return;
     setBusy(true);
     setDone(false);
+    setImportError('');
     try {
       setProgress('backing up your current data first…');
       await runExport(true); // forced fresh backup before anything destructive
@@ -203,7 +209,15 @@ export function ImportExportPanel({ mode, onClose }: { mode: 'export' | 'import'
       setDone(true);
       await reload();
     } catch (e) {
-      setProgress(e instanceof Error ? e.message : 'import failed');
+      // A full backup was downloaded (step 1) before anything was touched, so
+      // the user can always recover — say so explicitly, and resync the UI with
+      // whatever actually landed in the DB.
+      const msg = e instanceof Error ? e.message : 'import failed';
+      setProgress('');
+      setImportError(
+        `Import didn't finish (${msg}). A full backup of your previous data was downloaded before anything changed — re-import that file to restore.`,
+      );
+      await reload().catch(() => {});
     } finally {
       setBusy(false);
     }
@@ -272,6 +286,12 @@ export function ImportExportPanel({ mode, onClose }: { mode: 'export' | 'import'
           {parseError && (
             <p className="sa-error sa-mono" role="alert">
               {parseError}
+            </p>
+          )}
+
+          {importError && (
+            <p className="sa-error sa-mono" role="alert">
+              {importError}
             </p>
           )}
 

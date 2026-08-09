@@ -44,6 +44,8 @@ export function RangeTab() {
           return (
             <div
               key={i.id}
+              role="img"
+              aria-label={`${i.name}, value ${v}`}
               title={`${i.name} · V${v}`}
               style={{
                 position: 'absolute',
@@ -106,6 +108,8 @@ export function RangeTab() {
           return (
             <div
               key={i.id}
+              role="img"
+              aria-label={`${i.name}, a chromatic colour`}
               title={i.name}
               style={{
                 position: 'absolute',

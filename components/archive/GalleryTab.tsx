@@ -46,7 +46,7 @@ export function GalleryTab() {
       {list.length ? (
         <div className="sa-grid">
           {list.map((art, idx) => (
-            <ArtCard key={art.id} art={art} index={idx} onOpen={(a) => setOpenId(a.id)} />
+            <ArtCard key={art.id} art={art} index={idx} bust={state.photoBust} onOpen={(a) => setOpenId(a.id)} />
           ))}
         </div>
       ) : (

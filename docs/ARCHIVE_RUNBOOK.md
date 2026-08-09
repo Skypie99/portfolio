@@ -120,6 +120,6 @@ The archive's pure logic (colour maths, range map, search, import/export, catalo
 | Route + styles | `app/archive/page.tsx`, `app/archive/archive.css` |
 | UI components | `components/archive/*`, `components/ChromeGate.tsx` |
 | Logic + data | `lib/archive/*` |
-| Database schema | `supabase/migrations/20260808000000_studio_archive_init.sql` |
+| Database schema | `supabase/migrations/` (schema + RLS in `…_init.sql`; storage.objects policies split into `…_storage_policies.sql`) |
 | Seed extractor | `scripts/archive/extract-seed.mjs` |
 | Keepalive + deploy | `.github/workflows/supabase-keepalive.yml`, `.github/workflows/deploy.yml` |

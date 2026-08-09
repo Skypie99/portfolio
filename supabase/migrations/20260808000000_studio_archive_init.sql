@@ -9,19 +9,19 @@
 -- policy is `to authenticated` and scoped to the caller's own rows. No anon
 -- policies exist, so the anon key can read nothing.
 --
--- Applied to the NEW dedicated project only (never AccessMap prod). If the
--- storage.objects policy block fails on ownership under the MCP role, run just
--- that block from the dashboard SQL editor (see the note above it).
+-- Applied to the NEW dedicated project only (never AccessMap prod). The
+-- storage.objects RLS policies are a SEPARATE migration
+-- (20260808000100_studio_archive_storage_policies.sql) because creating policies
+-- on storage.objects can require table ownership; keeping them out of THIS file
+-- means a storage-policy failure can't roll back this schema — a multi-statement
+-- migration runs as one implicit transaction, so a late failure would otherwise
+-- undo the tables/RLS created earlier in the same call.
 --
 -- ROLLBACK (manual, reverse dependency order):
 --   drop table if exists public.artwork_supplies;
 --   drop table if exists public.artworks;
 --   drop table if exists public.supplies;
 --   drop function if exists public.archive_set_updated_at();
---   drop policy if exists "archive_photos_select" on storage.objects;
---   drop policy if exists "archive_photos_insert" on storage.objects;
---   drop policy if exists "archive_photos_update" on storage.objects;
---   drop policy if exists "archive_photos_delete" on storage.objects;
 --   delete from storage.buckets where id = 'artwork-photos';
 -- ============================================================================
 
@@ -134,24 +134,12 @@ create policy artwork_supplies_delete on public.artwork_supplies
 
 -- ---- storage: private photo bucket -------------------------------------------
 -- 5 MB cap, JPEG only. Object keys are `{uid}/{artId}/thumb.jpg|display.jpg`, so
--- the first path segment is the owner's uid — the policies below enforce that.
+-- the first path segment is the owner's uid. Inserting the bucket row applies
+-- fine under the migration role.
+--
+-- The four storage.objects RLS policies that enforce that uid folder live in the
+-- SEPARATE migration 20260808000100_studio_archive_storage_policies.sql — see the
+-- header of this file for why they are split out.
 insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
 values ('artwork-photos', 'artwork-photos', false, 5242880, array['image/jpeg'])
 on conflict (id) do nothing;
-
--- NOTE: if these four policies error with "must be owner of table objects" under
--- the MCP role, run THIS block alone from the dashboard SQL editor (Sky's
--- session owns storage). Everything above applies fine via apply_migration.
-create policy "archive_photos_select" on storage.objects
-  for select to authenticated
-  using (bucket_id = 'artwork-photos' and (storage.foldername(name))[1] = (select auth.uid())::text);
-create policy "archive_photos_insert" on storage.objects
-  for insert to authenticated
-  with check (bucket_id = 'artwork-photos' and (storage.foldername(name))[1] = (select auth.uid())::text);
-create policy "archive_photos_update" on storage.objects
-  for update to authenticated
-  using (bucket_id = 'artwork-photos' and (storage.foldername(name))[1] = (select auth.uid())::text)
-  with check (bucket_id = 'artwork-photos' and (storage.foldername(name))[1] = (select auth.uid())::text);
-create policy "archive_photos_delete" on storage.objects
-  for delete to authenticated
-  using (bucket_id = 'artwork-photos' and (storage.foldername(name))[1] = (select auth.uid())::text);

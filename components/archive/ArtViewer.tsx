@@ -25,13 +25,15 @@ export function ArtViewer({
   const displayUrl = useSignedUrl(art.photo_path ? displayPath(art.photo_path) : null, bust);
 
   const modalRef = useRef<HTMLDivElement>(null);
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
 
   useEffect(() => {
     const opener = document.activeElement as HTMLElement | null;
     modalRef.current?.focus();
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        onClose();
+        onCloseRef.current();
         return;
       }
       if (e.key !== 'Tab' || !modalRef.current) return;
@@ -61,7 +63,9 @@ export function ArtViewer({
       document.removeEventListener('keydown', onKey);
       if (opener && typeof opener.focus === 'function') opener.focus();
     };
-  }, [onClose]);
+    // Mount-only: focus setup / trap / restore. onClose is read live via a ref,
+    // so unrelated store re-renders never re-run this and steal focus.
+  }, []);
 
   const sups = art.supplies
     .map((id) => state.supplies.find((s) => s.id === id))
