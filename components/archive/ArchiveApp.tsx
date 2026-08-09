@@ -1,33 +1,113 @@
 'use client';
 
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 
-import { AuthGate } from '@/components/archive/AuthGate';
 import { getSupabase } from '@/lib/archive/supabaseClient';
 
-/**
- * Root of the Studio Archive client app. Owns the dark studio surface
- * (#studio-archive-root) and gates everything behind AuthGate.
- *
- * P4 fills the authed region with the real gallery / vault / range-map UI
- * (via ArchiveProvider); for now it is a signed-in placeholder so the route
- * builds and the auth flow can be exercised end-to-end.
- */
-export function ArchiveApp() {
+import { ArchiveProvider, type Tab, useArchive } from './ArchiveProvider';
+import { AuthGate } from './AuthGate';
+import { GalleryTab } from './GalleryTab';
+import { ImportExportPanel } from './ImportExportPanel';
+import { RangeTab } from './RangeTab';
+import { SearchBar } from './SearchBar';
+import { VaultTab } from './VaultTab';
+
+const TABS: ReadonlyArray<readonly [Tab, string]> = [
+  ['archive', 'archive'],
+  ['vault', 'supplies'],
+  ['map', 'range map'],
+];
+
+function SignOut({ className }: { className: string }) {
   const signOut = useCallback(async () => {
     await getSupabase().auth.signOut();
   }, []);
+  return (
+    <button type="button" className={className} onClick={() => void signOut()}>
+      sign out
+    </button>
+  );
+}
 
+function Shell() {
+  const { state, setTab } = useArchive();
+  const [panel, setPanel] = useState<'export' | 'import' | null>(null);
+  const withPhotos = state.arts.filter((a) => a.photo_path).length;
+
+  if (state.status === 'loading') {
+    return <div className="sa-status sa-mono sa-dim">opening the studio…</div>;
+  }
+  if (state.status === 'error') {
+    return (
+      <div className="sa-status">
+        <div>
+          <p className="sa-mono">could not open the archive</p>
+          <p className="sa-serif sa-dim">{state.error}</p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <header className="sa-hdr">
+        <div className="sa-hdr-row">
+          <div>
+            <div className="sa-hdr-title sa-mono">EX. 07 — THE STUDIO ARCHIVE</div>
+            <div className="sa-hdr-stats sa-mono">
+              {state.arts.length} works · {withPhotos} with photos · {state.supplies.length} colours
+            </div>
+          </div>
+          <SignOut className="sa-signout sa-mono" />
+        </div>
+        <div className="sa-hdr-lede sa-serif">
+          every piece in order · tap to open · attach a photo and the palette reads itself
+        </div>
+      </header>
+
+      <nav className="sa-tabs" aria-label="Archive sections">
+        {TABS.map(([id, label]) => (
+          <button
+            key={id}
+            type="button"
+            className={`sa-tab${state.tab === id ? ' on' : ''}`}
+            aria-pressed={state.tab === id}
+            onClick={() => setTab(id)}
+          >
+            {label}
+          </button>
+        ))}
+      </nav>
+
+      {state.tab !== 'map' && <SearchBar />}
+
+      {state.tab === 'archive' && <GalleryTab />}
+      {state.tab === 'vault' && <VaultTab />}
+      {state.tab === 'map' && <RangeTab />}
+
+      <div className="sa-footer">
+        <button className="sa-chip" type="button" onClick={() => setPanel('export')}>
+          export data
+        </button>
+        <button className="sa-chip" type="button" onClick={() => setPanel('import')}>
+          import data
+        </button>
+        <SignOut className="sa-signout sa-mono" />
+      </div>
+
+      {panel && <ImportExportPanel mode={panel} onClose={() => setPanel(null)} />}
+    </>
+  );
+}
+
+/** Root of the Studio Archive client app: dark studio surface → auth → store → UI. */
+export function ArchiveApp() {
   return (
     <div id="studio-archive-root" className="studio-archive">
       <AuthGate>
-        <div className="sa-placeholder">
-          <p className="sa-mono">the studio archive</p>
-          <p className="sa-serif sa-dim">signed in — the catalogue UI lands here next.</p>
-          <button className="sa-btn sa-btn-ghost" type="button" onClick={signOut}>
-            sign out
-          </button>
-        </div>
+        <ArchiveProvider>
+          <Shell />
+        </ArchiveProvider>
       </AuthGate>
     </div>
   );
