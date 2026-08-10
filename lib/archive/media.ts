@@ -77,6 +77,7 @@ function renderScaled(
   img: HTMLImageElement,
   maxDim: number,
   quality: number,
+  format = 'image/jpeg',
 ): { canvas: HTMLCanvasElement; dataUrl: string } {
   const scale = Math.min(1, maxDim / Math.max(img.width, img.height)); // never upscale
   const canvas = document.createElement('canvas');
@@ -84,22 +85,25 @@ function renderScaled(
   canvas.height = Math.round(img.height * scale);
   const ctx = canvas.getContext('2d');
   if (ctx) ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-  return { canvas, dataUrl: canvas.toDataURL('image/jpeg', quality) };
+  return { canvas, dataUrl: canvas.toDataURL(format, quality) };
 }
 
 /**
  * Turn a picked File into a thumb + display JPEG (data URLs) and read the thumb's
  * palette. Resolves null if the file could not be decoded. Browser-only.
  */
-export function processImage(file: File): Promise<ProcessedImage | null> {
+export function processImage(file: File, opts: { png?: boolean } = {}): Promise<ProcessedImage | null> {
+  // PNG keeps transparency (for cut-out object photos that float on the card);
+  // JPEG (default) is smaller for opaque swatches/artwork and carries the palette.
+  const format = opts.png ? 'image/png' : 'image/jpeg';
   return new Promise((resolve) => {
     const reader = new FileReader();
     reader.onload = () => {
       const img = new Image();
       img.onload = () => {
-        const thumb = renderScaled(img, THUMB.maxDim, THUMB.quality);
-        const display = renderScaled(img, DISPLAY.maxDim, DISPLAY.quality);
-        resolve({ thumb: thumb.dataUrl, display: display.dataUrl, palette: extractPalette(thumb.canvas) });
+        const thumb = renderScaled(img, THUMB.maxDim, THUMB.quality, format);
+        const display = renderScaled(img, DISPLAY.maxDim, DISPLAY.quality, format);
+        resolve({ thumb: thumb.dataUrl, display: display.dataUrl, palette: opts.png ? null : extractPalette(thumb.canvas) });
       };
       img.onerror = () => resolve(null);
       img.src = reader.result as string;
