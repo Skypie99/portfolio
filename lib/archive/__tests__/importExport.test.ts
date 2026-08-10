@@ -162,7 +162,7 @@ describe('export → import round-trip', () => {
   it('is loss-free for data + photos', () => {
     const data: ArchiveData = {
       supplies: [
-        { id: 'sup-a', name: 'Sanguine', brand: 'Conté', medium: 'Conté', hex: '#a8542f', notes: 'warm', swatched: true, swatch_path: null },
+        { id: 'sup-a', name: 'Sanguine', brand: 'Conté', medium: 'Conté', hex: '#a8542f', notes: 'warm', swatched: true, swatch_path: null, object_path: null },
       ],
       arts: [
         {
@@ -189,7 +189,7 @@ describe('export → import round-trip', () => {
   it('round-trips supply swatches in the swatches block (path re-derived on import)', () => {
     const data: ArchiveData = {
       supplies: [
-        { id: 'sup-a', name: 'Sanguine', brand: 'Conté', medium: 'Conté', hex: '#a8542f', notes: '', swatched: true, swatch_path: 'someuid/supply/sup-a' },
+        { id: 'sup-a', name: 'Sanguine', brand: 'Conté', medium: 'Conté', hex: '#a8542f', notes: '', swatched: true, swatch_path: 'someuid/supply/sup-a', object_path: null },
       ],
       arts: [],
     };

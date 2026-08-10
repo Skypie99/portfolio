@@ -14,10 +14,13 @@ export function PhotoButton({
   hasPhoto,
   onProcessed,
   className = 'sa-pill sang',
+  png = false,
 }: {
   hasPhoto: boolean;
   onProcessed: (processed: ProcessedImage) => Promise<void> | void;
   className?: string;
+  /** Keep transparency (PNG) — for cut-out object photos. Default JPEG. */
+  png?: boolean;
 }) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [busy, setBusy] = useState(false);
@@ -28,7 +31,7 @@ export function PhotoButton({
     if (!file) return;
     setBusy(true);
     try {
-      const res = await processImage(file);
+      const res = await processImage(file, { png });
       if (res) await onProcessed(res);
     } finally {
       setBusy(false);
