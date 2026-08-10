@@ -18,6 +18,9 @@ export type Supply = {
   swatched: boolean;
   /** Storage object key `{uid}/supply/{id}` base for the real swatch photo, or null. */
   swatch_path: string | null;
+  /** Storage object key `{uid}/object/{id}` base for the cut-out art-supply photo
+   *  shown on the card front (with the Spotlight hover motion), or null. */
+  object_path: string | null;
 };
 
 export type Artwork = {

@@ -89,6 +89,7 @@ export function SupplySheet({
         // keep the stored swatch path through the row write; attach/remove below
         // finalise it (mirrors how the artwork editor defers photo work to save).
         swatch_path: dropSwatch ? null : draft.swatch_path,
+        object_path: draft.object_path,
       };
       await saveSupply(supply);
       if (pendingSwatch) await attachSwatch(supply, pendingSwatch);

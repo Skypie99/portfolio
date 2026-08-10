@@ -262,7 +262,7 @@ export function ImportExportPanel({ mode, onClose }: { mode: 'export' | 'import'
 
       setProgress('loading the imported catalogue…');
       await data.bulkInsert({
-        supplies: parsed.data.supplies.map((s) => ({ ...s, swatch_path: null })),
+        supplies: parsed.data.supplies.map((s) => ({ ...s, swatch_path: null, object_path: null })),
         arts: parsed.data.arts.map((a) => ({ ...a, photo_path: null })),
       });
 

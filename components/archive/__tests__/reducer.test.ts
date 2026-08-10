@@ -12,6 +12,7 @@ const sup = (id: string, over: Partial<Supply> = {}): Supply => ({
   notes: '',
   swatched: false,
   swatch_path: null,
+  object_path: null,
   ...over,
 });
 const art = (id: string, supplies: string[] = [], over: Partial<Artwork> = {}): Artwork => ({
