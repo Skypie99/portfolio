@@ -34,15 +34,15 @@ export const objectBase = (uid: string, supplyId: string) => `${uid}/object/${su
  * success. On thumb failure the display object is removed again so no orphan is
  * left, and the error is rethrown (the row is never written by this function).
  */
-async function uploadPair(base: string, processed: ProcessedImage): Promise<string> {
+async function uploadPair(base: string, processed: ProcessedImage, contentType = 'image/jpeg'): Promise<string> {
   const storage = getSupabase().storage.from(BUCKET);
   const displayBlob = await dataUrlToBlob(processed.display);
   const thumbBlob = await dataUrlToBlob(processed.thumb);
 
-  const up1 = await storage.upload(displayPath(base), displayBlob, { upsert: true, contentType: 'image/jpeg' });
+  const up1 = await storage.upload(displayPath(base), displayBlob, { upsert: true, contentType });
   if (up1.error) throw up1.error;
 
-  const up2 = await storage.upload(thumbPath(base), thumbBlob, { upsert: true, contentType: 'image/jpeg' });
+  const up2 = await storage.upload(thumbPath(base), thumbBlob, { upsert: true, contentType });
   if (up2.error) {
     await storage.remove([displayPath(base)]).catch(() => {});
     throw up2.error;
@@ -65,7 +65,7 @@ export async function uploadSupplySwatch(uid: string, supplyId: string, processe
 
 /** Upload a supply's cut-out object photo. Returns the `{uid}/object/{supplyId}` base. */
 export async function uploadSupplyObject(uid: string, supplyId: string, processed: ProcessedImage): Promise<string> {
-  return uploadPair(objectBase(uid, supplyId), processed);
+  return uploadPair(objectBase(uid, supplyId), processed, 'image/png');
 }
 
 /** Delete both objects for a photo. The caller nulls photo_path first. */

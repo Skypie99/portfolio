@@ -15,3 +15,9 @@
 
 alter table public.supplies
   add column if not exists object_path text;
+
+-- Object cut-outs are transparent PNGs (so the supply floats with no box behind
+-- it during the Spotlight motion). The bucket was JPEG-only; allow PNG too.
+update storage.buckets
+  set allowed_mime_types = array['image/jpeg', 'image/png']
+  where id = 'artwork-photos';

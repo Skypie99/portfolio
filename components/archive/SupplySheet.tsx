@@ -31,7 +31,7 @@ export function SupplySheet({
   onClose: () => void;
   onDone: () => void;
 }) {
-  const { saveSupply, attachSwatch, removeSwatch } = useArchive();
+  const { saveSupply, attachSwatch, removeSwatch, attachObject, removeObject } = useArchive();
   const [name, setName] = useState(draft.name);
   const [brand, setBrand] = useState(draft.brand);
   const [medium, setMedium] = useState(draft.medium);
@@ -47,6 +47,10 @@ export function SupplySheet({
   const [pendingSwatch, setPendingSwatch] = useState<ProcessedImage | null>(null);
   const [swatchThumbPreview, setSwatchThumbPreview] = useState<string | null>(null);
   const [dropSwatch, setDropSwatch] = useState(false);
+  // object-photo editing (the cut-out supply shown on the card front)
+  const [pendingObject, setPendingObject] = useState<ProcessedImage | null>(null);
+  const [objectThumbPreview, setObjectThumbPreview] = useState<string | null>(null);
+  const [dropObject, setDropObject] = useState(false);
 
   const options = useMemo(() => {
     const base = [...MEDIA] as string[];
@@ -63,10 +67,21 @@ export function SupplySheet({
   const swatchPreview = swatchThumbPreview ?? storedSwatch;
   const hasSwatch = Boolean(pendingSwatch) || showStored;
 
+  const showStoredObj = Boolean(draft.object_path) && !dropObject && !objectThumbPreview;
+  const storedObject = useSignedUrl(showStoredObj ? thumbPath(draft.object_path as string) : null);
+  const objectPreview = objectThumbPreview ?? storedObject;
+  const hasObject = Boolean(pendingObject) || showStoredObj;
+
   function clearSwatch() {
     setPendingSwatch(null);
     setSwatchThumbPreview(null);
     setDropSwatch(Boolean(draft.swatch_path)); // only need a delete if one is stored
+  }
+
+  function clearObject() {
+    setPendingObject(null);
+    setObjectThumbPreview(null);
+    setDropObject(Boolean(draft.object_path));
   }
 
   async function save() {
@@ -89,13 +104,15 @@ export function SupplySheet({
         // keep the stored swatch path through the row write; attach/remove below
         // finalise it (mirrors how the artwork editor defers photo work to save).
         swatch_path: dropSwatch ? null : draft.swatch_path,
-        object_path: draft.object_path,
+        object_path: dropObject ? null : draft.object_path,
       };
       await saveSupply(supply);
       if (pendingSwatch) await attachSwatch(supply, pendingSwatch);
       // removeSwatch needs the OLD path to delete the objects, so hand it the
       // original swatch_path (the row was just written with null).
       else if (dropSwatch && draft.swatch_path) await removeSwatch({ ...supply, swatch_path: draft.swatch_path });
+      if (pendingObject) await attachObject(supply, pendingObject);
+      else if (dropObject && draft.object_path) await removeObject({ ...supply, object_path: draft.object_path });
       onDone();
     } catch (e) {
       setError(e instanceof Error ? e.message : 'could not save');
@@ -196,6 +213,54 @@ export function SupplySheet({
             onClick={clearSwatch}
           >
             remove swatch
+          </button>
+        )}
+      </div>
+
+      <span className="sa-lbl">art-supply photo — the pencil / bar itself (floats on hover)</span>
+      <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+        {objectPreview ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={objectPreview}
+            alt=""
+            style={{ width: 64, height: 64, objectFit: 'contain', borderRadius: 8, border: '1px solid var(--paperDim)', background: '#26232b' }}
+          />
+        ) : (
+          <div
+            style={{
+              width: 64,
+              height: 64,
+              borderRadius: 8,
+              border: '1px dashed var(--paperDim)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexShrink: 0,
+            }}
+          >
+            <span className="sa-mono" style={{ fontSize: 8, color: 'var(--inkSoft)' }}>
+              none
+            </span>
+          </div>
+        )}
+        <PhotoButton
+          png
+          hasPhoto={hasObject}
+          onProcessed={(res) => {
+            setPendingObject(res);
+            setObjectThumbPreview(res.thumb);
+            setDropObject(false);
+          }}
+        />
+        {hasObject && (
+          <button
+            type="button"
+            className="sa-pill"
+            style={{ padding: '8px 12px', border: '1px solid var(--paperDim)', color: 'var(--inkSoft)' }}
+            onClick={clearObject}
+          >
+            remove photo
           </button>
         )}
       </div>
