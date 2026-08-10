@@ -27,6 +27,7 @@ function newSupplyDraft(filter: string): Supply {
     notes: '',
     swatched: false,
     swatch_path: null,
+    object_path: null,
   };
 }
 

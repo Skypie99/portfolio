@@ -11,7 +11,7 @@
 import type { ArchiveData, Artwork, Supply } from './types';
 import { getSupabase } from './supabaseClient';
 
-type SupplyRow = Supply & { user_id?: string; swatch_path?: string | null };
+type SupplyRow = Supply & { user_id?: string; swatch_path?: string | null; object_path?: string | null };
 type ArtworkRow = {
   id: string;
   sort_order: number;
@@ -58,6 +58,7 @@ export async function fetchAll(): Promise<ArchiveData> {
     notes: r.notes,
     swatched: r.swatched,
     swatch_path: r.swatch_path ?? null,
+    object_path: r.object_path ?? null,
   }));
 
   const arts: Artwork[] = ((artRes.data ?? []) as ArtworkRow[]).map((r) => ({
@@ -112,6 +113,12 @@ export async function setSwatched(id: string, swatched: boolean): Promise<void> 
 export async function setSupplySwatchPath(id: string, swatchPath: string | null): Promise<void> {
   const patch = swatchPath ? { swatch_path: swatchPath, swatched: true } : { swatch_path: null };
   const { error } = await getSupabase().from('supplies').update(patch).eq('id', id);
+  if (error) throw error;
+}
+
+/** Set (or clear) a supply's cut-out object-photo base (shown on the card front). */
+export async function setSupplyObjectPath(id: string, objectPath: string | null): Promise<void> {
+  const { error } = await getSupabase().from('supplies').update({ object_path: objectPath }).eq('id', id);
   if (error) throw error;
 }
 
