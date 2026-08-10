@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { isLight, valueOf } from '@/lib/archive/color';
 import { thumbPath } from '@/lib/archive/photos';
@@ -31,6 +31,47 @@ export function SupplyCard({
   const swatchUrl = useSignedUrl(supply.swatch_path ? thumbPath(supply.swatch_path) : null, bust);
   const objectUrl = useSignedUrl(supply.object_path ? thumbPath(supply.object_path) : null, bust);
 
+  // --- per-object hover sizing -------------------------------------------------
+  // Every tool should get as BIG as it can on hover without touching the card
+  // edges or the label. A pencil is thin and a Conté bar is chunky, so one fixed
+  // scale can't do that for both: we solve each object's own best fit from its
+  // real aspect ratio. Rotated by θ, an object of height h and aspect r=w/h spans
+  //   Wrot = h(r·cosθ + sinθ)   Hrot = h(r·sinθ + cosθ)
+  // so the largest h that fits the free area (card minus margins and the compact
+  // label) is the min of the two solved bounds. Exposed as a CSS var so the hover
+  // rule and the sway keyframes animate it as a transform (cheap + smooth).
+  const frontRef = useRef<HTMLButtonElement>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
+  const [hoverScale, setHoverScale] = useState<number | null>(null);
+
+  const fitObject = useCallback(() => {
+    const front = frontRef.current;
+    const img = imgRef.current;
+    if (!front || !img || !img.naturalWidth || !img.naturalHeight) return;
+    const ROT = 47; // matches the CSS pose
+    const MARGIN_X = 12;
+    const MARGIN_Y = 10;
+    const LABEL_H = 22; // compact (name-only) label on hover
+    const LABEL_GAP = 10;
+    const REST_H = 118; // the at-rest height in archive.css
+    const th = (ROT * Math.PI) / 180;
+    const cos = Math.abs(Math.cos(th));
+    const sin = Math.abs(Math.sin(th));
+    const availW = front.offsetWidth - 2 * MARGIN_X;
+    const availH = front.offsetHeight - LABEL_H - LABEL_GAP - MARGIN_Y;
+    if (availW <= 0 || availH <= 0) return;
+    const r = img.naturalWidth / img.naturalHeight;
+    const h = Math.min(availW / (r * cos + sin), availH / (r * sin + cos));
+    setHoverScale(Math.max(1, +(h / REST_H).toFixed(3)));
+  }, []);
+
+  useEffect(() => {
+    if (!objectUrl) return;
+    fitObject();
+    window.addEventListener('resize', fitObject);
+    return () => window.removeEventListener('resize', fitObject);
+  }, [fitObject, objectUrl]);
+
   const v = valueOf(supply.hex);
   const light = isLight(supply.hex);
   const fg = light ? 'var(--ink)' : '#f0ede2';
@@ -41,16 +82,18 @@ export function SupplyCard({
     <div className="sa-flipwrap">
       <div className={`sa-flip${flipped ? ' on' : ''}`}>
         <button
+          ref={frontRef}
           type="button"
           className={`sa-face front${objectUrl ? ' has-obj' : ''}`}
           aria-label={`${supply.name} — flip for details`}
           onClick={() => setFlipped((f) => !f)}
+          style={hoverScale ? ({ ['--sa-obj-scale' as string]: String(hoverScale) } as React.CSSProperties) : undefined}
         >
           {objectUrl ? (
             <>
               <span className="sa-objglow" aria-hidden="true" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img className="sa-obj" src={objectUrl} alt={supply.name} />
+              <img className="sa-obj" ref={imgRef} src={objectUrl} alt={supply.name} onLoad={fitObject} />
               <div className="sa-objmeta">
                 <span className="sa-face-name sa-mono">{supply.name}</span>
                 {supply.brand && <span className="sa-face-brand sa-serif">{supply.brand}</span>}

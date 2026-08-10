@@ -679,8 +679,8 @@ body:has(#studio-archive-root) {
 /* Hover: the tool grows and rotates right, laying almost corner-to-corner with a
    little room before the edges — the WHOLE tool stays visible (Sky-tuned live). */
 .studio-archive .sa-face.front.has-obj:hover .sa-obj {
-  top: 43%;
-  transform: translate(-50%, -50%) rotateZ(47deg) scale(1.6);
+  top: 42.5%; /* centred in the space freed by the compact label */
+  transform: translate(-50%, -50%) rotateZ(47deg) scale(var(--sa-obj-scale, 1.6));
   filter: drop-shadow(-10px 16px 16px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 14px rgba(201, 162, 79, 0.28));
   animation: sa-obj-sway 3.6s ease-in-out 0.6s infinite;
 }
@@ -700,20 +700,29 @@ body:has(#studio-archive-root) {
   width: 100%;
   margin-top: 6px;
 }
-.studio-archive .sa-face.front.has-obj:hover .sa-objmeta .sa-face-name {
-  color: var(--chalk);
+/* On hover the label compacts to just the NAME — that's what you scan for when
+   hunting a supply — which frees the vertical room the tool grows into. */
+.studio-archive .sa-objmeta .sa-face-brand,
+.studio-archive .sa-objmeta .sa-face-foot {
+  transition: opacity 0.3s ease;
+}
+.studio-archive .sa-face.front.has-obj:hover .sa-objmeta {
+  bottom: 6px;
 }
 .studio-archive .sa-face.front.has-obj:hover .sa-objmeta .sa-face-brand,
-.studio-archive .sa-face.front.has-obj:hover .sa-objmeta .sa-face-medium {
-  color: var(--chalkDim);
+.studio-archive .sa-face.front.has-obj:hover .sa-objmeta .sa-face-foot {
+  display: none;
+}
+.studio-archive .sa-face.front.has-obj:hover .sa-objmeta .sa-face-name {
+  color: var(--chalk);
 }
 @keyframes sa-obj-sway {
   0%,
   100% {
-    transform: translate(-50%, -50%) rotateZ(47deg) scale(1.6);
+    transform: translate(-50%, -50%) rotateZ(47deg) scale(var(--sa-obj-scale, 1.6));
   }
   50% {
-    transform: translate(-50%, -51%) rotateZ(44.5deg) scale(1.62);
+    transform: translate(-50%, -51%) rotateZ(45deg) scale(calc(var(--sa-obj-scale, 1.6) * 1.012));
   }
 }
 @keyframes sa-obj-pulse {
