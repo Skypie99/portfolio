@@ -29,6 +29,7 @@ export function SupplyCard({
   const { toggleSwatched, removeSupply } = useArchive();
   const [flipped, setFlipped] = useState(false);
   const swatchUrl = useSignedUrl(supply.swatch_path ? thumbPath(supply.swatch_path) : null, bust);
+  const objectUrl = useSignedUrl(supply.object_path ? thumbPath(supply.object_path) : null, bust);
 
   const v = valueOf(supply.hex);
   const light = isLight(supply.hex);
@@ -41,19 +42,37 @@ export function SupplyCard({
       <div className={`sa-flip${flipped ? ' on' : ''}`}>
         <button
           type="button"
-          className="sa-face front"
+          className={`sa-face front${objectUrl ? ' has-obj' : ''}`}
           aria-label={`${supply.name} — flip for details`}
           onClick={() => setFlipped((f) => !f)}
         >
-          <div className="sa-stickwrap">
-            <div className="sa-stick" style={{ background: supply.hex }} />
-          </div>
-          <span className="sa-face-name sa-mono">{supply.name}</span>
-          {supply.brand && <span className="sa-face-brand sa-serif">{supply.brand}</span>}
-          <div className="sa-face-foot">
-            <span className="sa-face-medium sa-mono">{supply.medium}</span>
-            <span className={`sa-dot${supply.swatched ? ' on' : ''}`} />
-          </div>
+          {objectUrl ? (
+            <>
+              <span className="sa-objglow" aria-hidden="true" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img className="sa-obj" src={objectUrl} alt={supply.name} />
+              <div className="sa-objmeta">
+                <span className="sa-face-name sa-mono">{supply.name}</span>
+                {supply.brand && <span className="sa-face-brand sa-serif">{supply.brand}</span>}
+                <div className="sa-face-foot">
+                  <span className="sa-face-medium sa-mono">{supply.medium}</span>
+                  <span className={`sa-dot${supply.swatched ? ' on' : ''}`} />
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="sa-stickwrap">
+                <div className="sa-stick" style={{ background: supply.hex }} />
+              </div>
+              <span className="sa-face-name sa-mono">{supply.name}</span>
+              {supply.brand && <span className="sa-face-brand sa-serif">{supply.brand}</span>}
+              <div className="sa-face-foot">
+                <span className="sa-face-medium sa-mono">{supply.medium}</span>
+                <span className={`sa-dot${supply.swatched ? ' on' : ''}`} />
+              </div>
+            </>
+          )}
         </button>
 
         <div className="sa-face back" style={{ background: grad }}>

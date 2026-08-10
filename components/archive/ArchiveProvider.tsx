@@ -3,7 +3,7 @@
 import { createContext, type ReactNode, useCallback, useContext, useEffect, useReducer } from 'react';
 
 import * as data from '@/lib/archive/data';
-import { removePhotoObjects, uploadPhoto, uploadSupplySwatch } from '@/lib/archive/image';
+import { removePhotoObjects, uploadPhoto, uploadSupplyObject, uploadSupplySwatch } from '@/lib/archive/image';
 import type { ProcessedImage } from '@/lib/archive/media';
 import type { Artwork, Supply } from '@/lib/archive/types';
 
@@ -110,6 +110,8 @@ type ArchiveContextValue = {
   toggleSwatched: (s: Supply) => Promise<void>;
   attachSwatch: (s: Supply, processed: ProcessedImage) => Promise<void>;
   removeSwatch: (s: Supply) => Promise<void>;
+  attachObject: (s: Supply, processed: ProcessedImage) => Promise<void>;
+  removeObject: (s: Supply) => Promise<void>;
   saveArtwork: (a: Artwork) => Promise<void>;
   removeArtwork: (a: Artwork) => Promise<void>;
   attachPhoto: (a: Artwork, processed: ProcessedImage) => Promise<void>;
@@ -154,6 +156,7 @@ export function ArchiveProvider({ children }: { children: ReactNode }) {
   const removeSupply = useCallback(async (s: Supply) => {
     await data.deleteSupply(s.id); // row first (join cascades)
     if (s.swatch_path) await removePhotoObjects(s.swatch_path).catch(() => {}); // then swatch objects
+    if (s.object_path) await removePhotoObjects(s.object_path).catch(() => {}); // and object objects
     dispatch({ type: 'REMOVE_SUPPLY', id: s.id });
   }, []);
 
@@ -175,6 +178,21 @@ export function ArchiveProvider({ children }: { children: ReactNode }) {
     await data.setSupplySwatchPath(s.id, null); // row first
     if (s.swatch_path) await removePhotoObjects(s.swatch_path).catch(() => {}); // then objects
     dispatch({ type: 'UPSERT_SUPPLY', supply: { ...s, swatch_path: null } });
+    dispatch({ type: 'PHOTO_BUST' });
+  }, []);
+
+  const attachObject = useCallback(async (s: Supply, processed: ProcessedImage) => {
+    const uid = await data.currentUid();
+    const base = await uploadSupplyObject(uid, s.id, processed); // display → thumb, both or nothing
+    await data.setSupplyObjectPath(s.id, base); // row set only after uploads
+    dispatch({ type: 'UPSERT_SUPPLY', supply: { ...s, object_path: base } });
+    dispatch({ type: 'PHOTO_BUST' });
+  }, []);
+
+  const removeObject = useCallback(async (s: Supply) => {
+    await data.setSupplyObjectPath(s.id, null); // row first
+    if (s.object_path) await removePhotoObjects(s.object_path).catch(() => {}); // then objects
+    dispatch({ type: 'UPSERT_SUPPLY', supply: { ...s, object_path: null } });
     dispatch({ type: 'PHOTO_BUST' });
   }, []);
 
@@ -217,6 +235,8 @@ export function ArchiveProvider({ children }: { children: ReactNode }) {
     toggleSwatched,
     attachSwatch,
     removeSwatch,
+    attachObject,
+    removeObject,
     saveArtwork,
     removeArtwork,
     attachPhoto,

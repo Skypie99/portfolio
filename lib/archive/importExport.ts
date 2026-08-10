@@ -57,6 +57,7 @@ const supplySchema = z.object({
   // re-uploaded under the importing user's own key, then the path is re-derived
   // (mirrors how artwork photo_path is handled).
   swatch_path: z.string().nullable().default(null),
+  object_path: z.string().nullable().default(null),
 });
 
 const v2ArtworkSchema = z.object({
@@ -124,6 +125,7 @@ function normSupply(s: SupplyInput, warnings: string[]): Supply {
     notes: s.notes,
     swatched: s.swatched,
     swatch_path: null, // re-derived after the swatch image is re-uploaded on import
+    object_path: null, // objects aren't carried in the backup yet; re-attach after import
   };
 }
 

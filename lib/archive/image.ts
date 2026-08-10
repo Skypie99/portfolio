@@ -25,6 +25,9 @@ export const photoBase = (uid: string, artId: string) => `${uid}/${artId}`;
  *  with an artwork id at the same key; the first segment stays the uid, so the
  *  existing `{uid}/…` storage RLS still scopes it to the owner. */
 export const swatchBase = (uid: string, supplyId: string) => `${uid}/supply/${supplyId}`;
+/** Art-supply object photos nest under an `object/` segment (front-of-card image);
+ *  first segment stays the uid so the existing `{uid}/…` storage RLS covers it. */
+export const objectBase = (uid: string, supplyId: string) => `${uid}/object/${supplyId}`;
 
 /**
  * Upload the display JPEG, then the thumb, to `base`. Returns the base on full
@@ -58,6 +61,11 @@ export async function uploadPhoto(uid: string, artId: string, processed: Process
 /** Upload a supply's real-swatch photo. Returns the `{uid}/supply/{supplyId}` base. */
 export async function uploadSupplySwatch(uid: string, supplyId: string, processed: ProcessedImage): Promise<string> {
   return uploadPair(swatchBase(uid, supplyId), processed);
+}
+
+/** Upload a supply's cut-out object photo. Returns the `{uid}/object/{supplyId}` base. */
+export async function uploadSupplyObject(uid: string, supplyId: string, processed: ProcessedImage): Promise<string> {
+  return uploadPair(objectBase(uid, supplyId), processed);
 }
 
 /** Delete both objects for a photo. The caller nulls photo_path first. */
