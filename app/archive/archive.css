@@ -666,23 +666,25 @@ body:has(#studio-archive-root) {
 .studio-archive .sa-obj {
   position: absolute;
   left: 50%;
-  top: 46%;
-  height: 150px;
+  top: 37%; /* sits clear of the label at rest */
+  height: 118px;
   width: auto;
   max-width: 82%;
   object-fit: contain;
   transform: translate(-50%, -50%);
-  transform-origin: 50% 82%;
   filter: drop-shadow(0 8px 9px rgba(0, 0, 0, 0.3));
-  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.5s;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.5s, top 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
   will-change: transform;
 }
+/* Hover: the tool grows and rotates right, laying almost corner-to-corner with a
+   little room before the edges — the WHOLE tool stays visible (Sky-tuned live). */
 .studio-archive .sa-face.front.has-obj:hover .sa-obj {
-  top: 50%;
-  transform: translate(-50%, -50%) scale(1.35) rotateZ(9deg) rotateY(-20deg);
+  top: 43%;
+  transform: translate(-50%, -50%) rotateZ(47deg) scale(1.6);
   filter: drop-shadow(-10px 16px 16px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 14px rgba(201, 162, 79, 0.28));
-  animation: sa-obj-sway 3.4s ease-in-out 0.6s infinite;
+  animation: sa-obj-sway 3.6s ease-in-out 0.6s infinite;
 }
+/* Label stays put and readable on the dark stage — it's how Sky finds a supply. */
 .studio-archive .sa-objmeta {
   position: absolute;
   left: 0;
@@ -693,23 +695,25 @@ body:has(#studio-archive-root) {
   align-items: center;
   text-align: center;
   padding: 0 10px;
-  transition: transform 0.5s cubic-bezier(0.22, 0.9, 0.24, 1), opacity 0.4s;
 }
 .studio-archive .sa-objmeta .sa-face-foot {
   width: 100%;
   margin-top: 6px;
 }
-.studio-archive .sa-face.front.has-obj:hover .sa-objmeta {
-  transform: translateY(28px);
-  opacity: 0;
+.studio-archive .sa-face.front.has-obj:hover .sa-objmeta .sa-face-name {
+  color: var(--chalk);
+}
+.studio-archive .sa-face.front.has-obj:hover .sa-objmeta .sa-face-brand,
+.studio-archive .sa-face.front.has-obj:hover .sa-objmeta .sa-face-medium {
+  color: var(--chalkDim);
 }
 @keyframes sa-obj-sway {
   0%,
   100% {
-    transform: translate(-50%, -50%) scale(1.35) rotateZ(9deg) rotateY(-20deg);
+    transform: translate(-50%, -50%) rotateZ(47deg) scale(1.6);
   }
   50% {
-    transform: translate(-50%, -52%) scale(1.38) rotateZ(6deg) rotateY(-13deg);
+    transform: translate(-50%, -51%) rotateZ(44.5deg) scale(1.62);
   }
 }
 @keyframes sa-obj-pulse {
