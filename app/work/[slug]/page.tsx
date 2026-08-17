@@ -38,44 +38,44 @@ function toCategory(id: string): CaseStudyCategory {
 }
 
 /**
- * AccessMapTestReceipt (T7 / SK-01) — SCAFFOLD, deliberately unfinished.
+ * AccessMapTestReceipt (T7 / SK-01) — the receipted count. The scaffold this
+ * replaced shipped a TKTK placeholder; it is now reconciled.
  *
- * The homepage chip's "1,680 tests passing" is the site's biggest number and
- * its least-receipted one: it links here, where the number was never mentioned,
- * while the site meticulously receipts its own 325. The figure is also
- * contradicted across sources (README/CI say 1,120; the local suite is ~1,857;
- * the /accessibility receipts JSON explicitly disclaims 1,680). An agent cannot
- * invent a receipt for a number it cannot verify — so this ships the MECHANISM
- * (a dated receipt door in the house's method-line grammar) with the count and
- * its artifact link as an unmistakable PLACEHOLDER Sky reconciles before merge.
- * Nothing here fabricates a number, a CI run, or a receipts JSON; the token and
- * the in-page anchor are both real and build-valid. Distinct from the
- * /accessibility 325 strip (PROTECT-36/37), which stays untouched.
- * Exported for the scaffold test; a non-reserved export the router ignores.
+ * The homepage chip's "2,900+ tests passing" is the site's biggest number, so it
+ * links here, where the exact figure is pinned to a dated run a stranger can
+ * repeat. Measured 2026-08-16 from a fresh anonymous clone of the public repo:
+ * 204 suites, 2,971 passing, 32 todo, 0 failing. The chip states a floor because
+ * the suite grows most weeks; this strip states the exact figure and the date it
+ * was true. Nothing here fabricates a CI URL or a receipts artifact: the claim
+ * is reproducible by command, and the in-page anchor is real and build-valid.
+ * Distinct from the /accessibility 325 strip (PROTECT-36/37), which stays
+ * untouched.
+ * Exported for its test; a non-reserved export the router ignores.
  */
 export function AccessMapTestReceipt() {
   return (
     <section className="px-gutter py-12 lg:py-16 world-surface border-t border-border-decorative">
       <div className="max-w-content mx-auto">
         <p className="max-w-measure-wide font-mono text-meta tracking-label uppercase text-text-meta leading-[2]">
-          <code className={INLINE_CODE_CLASS}>TKTK_ACCESSMAP_TEST_COUNT</code> tests passing
+          2,971 tests passing
           <span aria-hidden="true"> · </span>{' '}
           <a
             href="#accessmap-test-count-method"
             className="link-draw text-accent-text hover:text-accent-text"
           >
-            not yet reconciled — method
+            measured 2026-08-16, method
           </a>
         </p>
         <p
           id="accessmap-test-count-method"
           className="scroll-mt-24 mt-2 max-w-measure-wide font-mono text-meta text-text-meta leading-[1.7]"
         >
-          Placeholder — not a shipped figure. The homepage chip says 1,680; this
-          repo{'’'}s CI says 1,120; the local suite runs closer to 1,857. One
-          artifact-backed count gets pinned here, with a link to the run that
-          proves it. (Separate from the portfolio{'’'}s own measured 325 on
-          the accessibility page.)
+          Run from a fresh clone of the public repo, not a local best case:{' '}
+          <code className={INLINE_CODE_CLASS}>npm ci</code> then{' '}
+          <code className={INLINE_CODE_CLASS}>npx jest --ci -w 3</code>. That run
+          reported 204 suites, 2,971 passing, 32 todo, 0 failing. The homepage
+          chip says 2,900+ because the suite grows most weeks. (Separate from the
+          portfolio{'’'}s own measured 325 on the accessibility page.)
         </p>
       </div>
     </section>
@@ -628,10 +628,10 @@ export default async function WorkDetailPage({
         </section>
       )}
 
-      {/* T7 / SK-01: receipt-the-1,680 door — one tap from the homepage chip's
-          headline number to its proof, on the chip's own destination. SCAFFOLD:
-          the count + artifact link are a clearly-marked placeholder Sky pins
-          before merge (see AccessMapTestReceipt). AccessMap-only. */}
+      {/* T7 / SK-01: the receipt door — one tap from the homepage chip's headline
+          number to its proof, on the chip's own destination. Reconciled
+          2026-08-16: the exact count and the command that reproduces it (see
+          AccessMapTestReceipt). AccessMap-only. */}
       {d.id === 'accessmap' && <AccessMapTestReceipt />}
 
       {/* In-body product shots — Show-the-work 2026-06-04. The section renders

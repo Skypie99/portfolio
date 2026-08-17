@@ -4,7 +4,9 @@ A warm-minimal showcase of Sky's AI deliverables and certificates. ffern.co-insp
 
 ## Status
 
-Cycle 4-6 build complete on `cycle/auto-2026-05-23`. Shell + homepage + work index + work detail (5 prerendered slugs) + certificates + about + contact all built, all gates green (lint / typecheck / 17 tests / build), 0 critical / 0 high `npm audit --omit=dev`. Site is feature-complete for v1; `main` is unborn until Sky merges, and deploy is dormant until Sky completes the one-time GitHub setup (see **Deploy** below).
+Live at [skypistudio.com](https://skypistudio.com). Pushing to `main` deploys through GitHub Actions in about two minutes; there is no staging step.
+
+Gates green from a fresh clone, measured 2026-08-16: lint, typecheck, and **567 tests** across 62 files (`npm ci && npx vitest run`). Building first unskips the static-integrity checks that need a real `out/` directory, and the count becomes **611** (`npm run build && npx vitest run`).
 
 ## Quick start
 
@@ -18,7 +20,7 @@ Static-export preview (matches what GitHub Pages will serve):
 ```bash
 cd ~/Portfolio
 npm run build
-npx serve out -p 3001     # http://localhost:3001/portfolio/
+npx serve out -p 3001     # http://localhost:3001/
 ```
 
 ## Pages
@@ -27,13 +29,13 @@ npx serve out -p 3001     # http://localhost:3001/portfolio/
 |---|---|
 | `/` | Homepage — hero, selected work list, numbered steps, CTA |
 | `/work` | Index of all deliverables (cards from `content/deliverables.json`) |
-| `/work/[slug]` | Detail page per deliverable. 5 prerendered slugs: `accessmap`, `claude-corp`, `claude-corp-dashboard`, `prompt-library`, `mutual-mesh` |
+| `/work/[slug]` | Detail page per deliverable. 6 prerendered slugs: `accessmap`, `claude-corp`, `dashboard`, `prompt-library`, `ghost-code`, `mutual-mesh` |
 | `/certificates` | Issued credentials with badge, issuer, date |
 | `/about` | Bio + "how I work" numbered steps |
 | `/contact` | Mailto CTA + socials |
 | `/_not-found` | Custom 404 with editorial styling |
 
-`basePath` is `/portfolio` in production and empty in dev — so dev URLs sit at the root (`http://localhost:3000`) but the production build serves under `https://<user>.github.io/portfolio/`.
+There is **no `basePath`**. The site serves at the domain root (`https://skypistudio.com/…`) in production and at `http://localhost:3000` in dev. Older notes claiming a `/portfolio` base path are stale; do not reintroduce one or hardcode a base path anywhere.
 
 ## Scripts
 
@@ -44,13 +46,13 @@ npx serve out -p 3001     # http://localhost:3001/portfolio/
 | `npm run start` | `next start` — **do not use** (static export has no Node server; left in package.json by `create-next-app`) |
 | `npm run lint` | `next lint` with `plugin:jsx-a11y/recommended` (Note: `next lint` deprecated in Next 16 — future migration item) |
 | `npm run typecheck` | `tsc --noEmit` in strict mode |
-| `npm run test` | Vitest single run (17 tests across 4 files) |
+| `npm run test` | Vitest single run (567 tests across 62 files; 611 if you `npm run build` first) |
 | `npm run test:watch` | Vitest watch mode |
 | `npm run test:ui` | Vitest browser UI |
 
 ## Deploy
 
-GitHub Actions → GitHub Pages via `.github/workflows/deploy.yml` (push-to-main trigger + `workflow_dispatch`). Workflow is **DORMANT** — exists on disk, fires only after Sky completes the one-time setup.
+GitHub Actions → GitHub Pages via `.github/workflows/deploy.yml` (push-to-main trigger + `workflow_dispatch`). The workflow is **LIVE**: every push to `main` publishes to skypistudio.com in about two minutes, with no manual step and no rollback prompt.
 
 Sky's manual steps (5 bullets, ~3 minutes) live in **`docs/DEPLOY_PLAN.md` → Status — Cycle 4 → "Sky still does manually"**. Includes repo creation, push, and `Settings → Pages → Source: GitHub Actions`. Rollback playbook is in `DEPLOY_PLAN.md` §6.
 
