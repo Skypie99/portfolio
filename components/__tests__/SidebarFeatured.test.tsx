@@ -47,7 +47,7 @@ import type { Deliverable } from '@/lib/schema';
 const GLOBALS = readFileSync(join(process.cwd(), 'app', 'globals.css'), 'utf8');
 
 const FEATURED = {
-  id: 'accessmap',
+  id: 'flagstone',
   title: 'Flagstone',
   role: 'Solo builder',
 } as unknown as Deliverable;
@@ -78,7 +78,7 @@ describe('SidebarFeatured — the block answers as one door', () => {
   it('still withdraws the CTA nudge on the featured project’s own route', () => {
     // §7.2: a room knows you walked through it. The rider must not have
     // disturbed the existing stilling contract.
-    pathnameMock.mockReturnValue('/work/accessmap/');
+    pathnameMock.mockReturnValue('/work/flagstone/');
     render(<SidebarFeatured featured={FEATURED} />);
     const cta = screen.getByText('Open it');
     expect(cta.className).not.toContain('group-hover:translate-x-1');

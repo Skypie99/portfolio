@@ -4,7 +4,7 @@
  *
  * Fences (mechanical, not just discipline):
  *  - any click/fill step whose target matches FORBIDDEN_TARGETS throws BEFORE
- *    acting (AccessMap talks to production Supabase; reads only, always);
+ *    acting (Flagstone talks to production Supabase; reads only, always);
  *  - non-GET requests to *.supabase.co are aborted and recorded — a scene that
  *    attempted one FAILS loudly;
  *  - Nominatim gets at most one request per run (rate-limit courtesy).

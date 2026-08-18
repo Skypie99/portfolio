@@ -22,12 +22,12 @@ import {
 // ────────────────────────────────────────────────────────────────────────────
 
 const goodHeroImage = {
-  src: '/images/deliverables/accessmap/hero.jpg',
+  src: '/images/deliverables/flagstone/hero.jpg',
   alt: 'Warm-toned mockup of the Flagstone mobile interface',
 };
 
 const goodDeliverable = {
-  id: 'accessmap',
+  id: 'flagstone',
   title: 'Flagstone',
   summary: 'A privacy-respecting accessibility-flagging app for disabled users.',
   role: 'Solo builder',
@@ -80,7 +80,7 @@ describe('DeliverableSchema — happy path', () => {
       ...goodDeliverable,
       gallery: [
         {
-          src: '/images/deliverables/accessmap/screen1.jpg',
+          src: '/images/deliverables/flagstone/screen1.jpg',
           alt: 'Screenshot of the map view in Flagstone',
           caption: 'The main map interface.',
         },
@@ -99,17 +99,17 @@ describe('DeliverableSchema — happy path', () => {
 
 describe('DeliverableSchema — id slug validation', () => {
   it('rejects an id with uppercase letters', () => {
-    const bad = { ...goodDeliverable, id: 'AccessMap' };
+    const bad = { ...goodDeliverable, id: 'Flagstone' };
     expect(DeliverableSchema.safeParse(bad).success).toBe(false);
   });
 
   it('rejects an id with a leading hyphen', () => {
-    const bad = { ...goodDeliverable, id: '-accessmap' };
+    const bad = { ...goodDeliverable, id: '-flagstone' };
     expect(DeliverableSchema.safeParse(bad).success).toBe(false);
   });
 
   it('rejects an id with a trailing hyphen', () => {
-    const bad = { ...goodDeliverable, id: 'accessmap-' };
+    const bad = { ...goodDeliverable, id: 'flagstone-' };
     expect(DeliverableSchema.safeParse(bad).success).toBe(false);
   });
 
@@ -173,7 +173,7 @@ describe('DeliverableSchema — heroImage path rule', () => {
   it('rejects a heroImage src that does not start with /images/', () => {
     const bad = {
       ...goodDeliverable,
-      heroImage: { ...goodHeroImage, src: 'images/deliverables/accessmap/hero.jpg' },
+      heroImage: { ...goodHeroImage, src: 'images/deliverables/flagstone/hero.jpg' },
     };
     expect(DeliverableSchema.safeParse(bad).success).toBe(false);
   });
@@ -181,7 +181,7 @@ describe('DeliverableSchema — heroImage path rule', () => {
   it('rejects a heroImage src not under /images/deliverables/<slug>/', () => {
     const bad = {
       ...goodDeliverable,
-      heroImage: { ...goodHeroImage, src: '/images/certificates/accessmap/hero.jpg' },
+      heroImage: { ...goodHeroImage, src: '/images/certificates/flagstone/hero.jpg' },
     };
     expect(DeliverableSchema.safeParse(bad).success).toBe(false);
   });

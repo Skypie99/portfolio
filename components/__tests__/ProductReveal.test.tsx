@@ -26,7 +26,7 @@ describe('ProductReveal', () => {
     // CSS layer — presence here, visibility owned by html.dark in globals.css.
     const hero = render(
       <ProductReveal
-        slug="accessmap"
+        slug="flagstone"
         title="Flagstone"
         context="hero"
         bare
@@ -39,7 +39,7 @@ describe('ProductReveal', () => {
 
     const card = render(
       <ProductReveal
-        slug="accessmap"
+        slug="flagstone"
         title="Flagstone"
         context="card"
         media={{ alt: 'Flagstone map view with accessibility pins' }}
@@ -51,7 +51,7 @@ describe('ProductReveal', () => {
   it('renders the golden-hour placeholder (no <img>) when no real src is given', () => {
     const { container } = render(
       <ProductReveal
-        slug="accessmap"
+        slug="flagstone"
         title="Flagstone"
         eyebrow="Solo builder"
         context="hero"
@@ -128,7 +128,7 @@ describe('ProductReveal', () => {
   it('shot empty state is the designed silhouette, not a loading skeleton (L3-02)', () => {
     const { container } = render(
       <ProductReveal
-        slug="accessmap"
+        slug="flagstone"
         title="Flagstone"
         context="shot"
         media={{ alt: 'Flagstone report flow' }}
@@ -162,13 +162,13 @@ describe('ProductReveal — proof pipeline (P2-A)', () => {
   it('hero real image loads eager + fetchpriority=high (L7-02)', () => {
     render(
       <ProductReveal
-        slug="accessmap"
+        slug="flagstone"
         title="Flagstone"
         context="hero"
         media={{
-          src: '/images/deliverables/accessmap/screen-map.png',
-          avif: '/images/deliverables/accessmap/screen-map.avif',
-          webp: '/images/deliverables/accessmap/screen-map.webp',
+          src: '/images/deliverables/flagstone/screen-map.png',
+          avif: '/images/deliverables/flagstone/screen-map.avif',
+          webp: '/images/deliverables/flagstone/screen-map.webp',
           alt: 'Flagstone map with a verified No ramp barrier flagged downtown',
         }}
       />,
@@ -200,11 +200,11 @@ describe('ProductReveal — proof pipeline (P2-A)', () => {
     const lqip = 'data:image/webp;base64,LQIPTESTTOKEN==';
     const { container } = render(
       <ProductReveal
-        slug="accessmap"
+        slug="flagstone"
         title="Flagstone"
         context="hero"
         media={{
-          src: '/images/deliverables/accessmap/screen-map.png',
+          src: '/images/deliverables/flagstone/screen-map.png',
           lqip,
           alt: 'Flagstone map with a verified No ramp barrier flagged downtown',
         }}

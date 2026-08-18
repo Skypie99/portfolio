@@ -74,7 +74,7 @@ export const git = (repo, ...args) =>
  */
 export const PROJECTS = [
   {
-    slug: 'accessmap',
+    slug: 'flagstone',
     title: 'Flagstone',
     priority: 1,
     repo: '/Users/skypie/AccessMap',

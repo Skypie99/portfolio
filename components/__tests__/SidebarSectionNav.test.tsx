@@ -207,7 +207,7 @@ describe('SidebarSectionNav — routes with no index render nothing', () => {
     expect(container).toBeEmptyDOMElement();
   });
 
-  it.each(['/blog/building-accessmap/', '/work/accessmap/'])(
+  it.each(['/blog/building-flagstone/', '/work/flagstone/'])(
     'steps aside on the long-form route %s so SidebarArticleNav owns the slot',
     (pathname) => {
       pathnameMock.mockReturnValue(pathname);

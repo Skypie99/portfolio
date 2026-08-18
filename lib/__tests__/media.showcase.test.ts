@@ -8,28 +8,28 @@ import type { Deliverable } from '../schema';
  *  hrefs only when the hero is truly themed (never a raw fallback). */
 
 const themed = {
-  src: '/showcase/accessmap/map-overview.light.phone.webp',
-  avif: '/showcase/accessmap/map-overview.light.phone.avif',
-  webp: '/showcase/accessmap/map-overview.light.phone.webp',
+  src: '/showcase/flagstone/map-overview.light.phone.webp',
+  avif: '/showcase/flagstone/map-overview.light.phone.avif',
+  webp: '/showcase/flagstone/map-overview.light.phone.webp',
   alt: 'The Flagstone barrier map, severity pins over street tiles',
   dark: {
-    src: '/showcase/accessmap/map-overview.dark.phone.webp',
-    avif: '/showcase/accessmap/map-overview.dark.phone.avif',
-    webp: '/showcase/accessmap/map-overview.dark.phone.webp',
+    src: '/showcase/flagstone/map-overview.dark.phone.webp',
+    avif: '/showcase/flagstone/map-overview.dark.phone.avif',
+    webp: '/showcase/flagstone/map-overview.dark.phone.webp',
   },
   chrome: 'device',
 } as NonNullable<Deliverable['heroShot']>;
 
 const d = (over: Partial<Deliverable>) =>
   ({
-    heroImage: { src: '/images/deliverables/accessmap/hero.svg', alt: 'Warm Flagstone mockup' },
+    heroImage: { src: '/images/deliverables/flagstone/hero.svg', alt: 'Warm Flagstone mockup' },
     ...over,
   }) as Deliverable;
 
 describe('themed media threading', () => {
   it('heroMedia threads dark + chrome', () => {
     const m = heroMedia(d({ heroShot: themed }));
-    expect(m.dark?.avif).toBe('/showcase/accessmap/map-overview.dark.phone.avif');
+    expect(m.dark?.avif).toBe('/showcase/flagstone/map-overview.dark.phone.avif');
     expect(m.chrome).toBe('device');
     expect(m.matte).toBeUndefined();
   });

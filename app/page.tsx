@@ -83,7 +83,7 @@ export default function HomePage() {
       stat: '2,900+',
       label: 'tests passing',
       project: 'Flagstone',
-      href: '/work/accessmap/',
+      href: '/work/flagstone/',
       tags: ['Mobile', 'WCAG AA', 'Open source'],
     },
     {

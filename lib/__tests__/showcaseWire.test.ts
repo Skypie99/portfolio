@@ -6,15 +6,15 @@ import { applyShowcase, themedShot, type ShowcaseManifest } from '../showcaseWir
  *  touch deliverables.json (alt law + path law + themed refines fail HERE). */
 
 const still = (scene: string, theme: string, viewport = 'phone') => ({
-  project: 'accessmap',
+  project: 'flagstone',
   scene,
   theme: theme as 'light' | 'dark' | 'matte',
   viewport,
   altText: 'The Flagstone barrier map, severity pins over street tiles',
   files: {
     shipped: [
-      { path: `/showcase/accessmap/${scene}.${theme}.${viewport}.avif`, bytes: 30000 },
-      { path: `/showcase/accessmap/${scene}.${theme}.${viewport}.webp`, bytes: 45000 },
+      { path: `/showcase/flagstone/${scene}.${theme}.${viewport}.avif`, bytes: 30000 },
+      { path: `/showcase/flagstone/${scene}.${theme}.${viewport}.webp`, bytes: 45000 },
     ],
     lqip: 'data:image/webp;base64,AAAA',
   },
@@ -25,15 +25,15 @@ const manifest: ShowcaseManifest = {
     still('map-overview', 'light'),
     still('map-overview', 'dark'),
     {
-      project: 'accessmap',
+      project: 'flagstone',
       scene: 'clip:drawer-spring',
       theme: 'dark',
       viewport: 'phone',
       clip: {
         id: 'drawer-spring',
-        mp4: { path: '/showcase/accessmap/clips/drawer-spring.dark.phone.mp4', bytes: 90000 },
+        mp4: { path: '/showcase/flagstone/clips/drawer-spring.dark.phone.mp4', bytes: 90000 },
         webm: null,
-        posters: [{ path: '/showcase/accessmap/clips/drawer-spring.dark.phone-poster.avif', bytes: 18000 }],
+        posters: [{ path: '/showcase/flagstone/clips/drawer-spring.dark.phone-poster.avif', bytes: 18000 }],
       },
     },
   ],
@@ -41,15 +41,15 @@ const manifest: ShowcaseManifest = {
 
 describe('showcaseWire', () => {
   it('builds a themed shot: light base (webp src) + dark twin', () => {
-    const shot = themedShot(manifest, 'accessmap', { scene: 'map-overview' });
-    expect(shot.src).toBe('/showcase/accessmap/map-overview.light.phone.webp');
+    const shot = themedShot(manifest, 'flagstone', { scene: 'map-overview' });
+    expect(shot.src).toBe('/showcase/flagstone/map-overview.light.phone.webp');
     expect(shot.avif).toContain('.light.');
     expect((shot.dark as { avif?: string }).avif).toContain('.dark.');
     expect(shot.lqip).toContain('data:image/webp');
   });
 
   it('the alt override (Sky refinement) wins over the manifest draft', () => {
-    const shot = themedShot(manifest, 'accessmap', {
+    const shot = themedShot(manifest, 'flagstone', {
       scene: 'map-overview',
       alt: 'Severity-coloured pins across downtown Kelowna at dusk',
     });
@@ -58,13 +58,13 @@ describe('showcaseWire', () => {
 
   it('throws when the dark capture is missing', () => {
     const m: ShowcaseManifest = { captures: [still('tasks', 'light')] };
-    expect(() => themedShot(m, 'accessmap', { scene: 'tasks' })).toThrow(/no dark capture/);
+    expect(() => themedShot(m, 'flagstone', { scene: 'tasks' })).toThrow(/no dark capture/);
   });
 
   it('wires a clip as base video (poster + mp4, webm omitted when dropped)', () => {
     const shot = themedShot(
       manifest,
-      'accessmap',
+      'flagstone',
       { scene: 'map-overview' },
       { video: { clip: 'drawer-spring', alt: 'The navigation drawer springing open and away' } },
     );
@@ -72,7 +72,7 @@ describe('showcaseWire', () => {
     expect(shot.video).toBeUndefined();
     const darkWired = themedShot(
       manifest,
-      'accessmap',
+      'flagstone',
       { scene: 'map-overview' },
       { video: { clip: 'drawer-spring', alt: 'The navigation drawer springing open and away' }, darkVideo: true },
     );
@@ -83,27 +83,27 @@ describe('showcaseWire', () => {
   it('applyShowcase validates patches and rejects an alt-law violation', () => {
     const legacy = [
       {
-        id: 'accessmap',
+        id: 'flagstone',
         title: 'Flagstone',
         summary: 'Mobile app for flagging accessibility barriers on a real map.',
         role: 'Solo builder',
         tech: ['Expo'],
         year: 2026,
-        heroImage: { src: '/images/deliverables/accessmap/hero.svg', alt: 'Warm Flagstone mockup' },
+        heroImage: { src: '/images/deliverables/flagstone/hero.svg', alt: 'Warm Flagstone mockup' },
         tags: ['accessibility'],
         featured: true,
       },
     ];
     const good = applyShowcase(legacy, {
-      accessmap: { heroShot: themedShot(manifest, 'accessmap', { scene: 'map-overview' }), ogTheme: 'dark' },
+      flagstone: { heroShot: themedShot(manifest, 'flagstone', { scene: 'map-overview' }), ogTheme: 'dark' },
     });
     expect(good[0].heroShot?.dark).toBeTruthy();
     expect(good[0].ogTheme).toBe('dark');
 
     expect(() =>
       applyShowcase(legacy, {
-        accessmap: {
-          heroShot: { ...themedShot(manifest, 'accessmap', { scene: 'map-overview' }), alt: 'image of a map' },
+        flagstone: {
+          heroShot: { ...themedShot(manifest, 'flagstone', { scene: 'map-overview' }), alt: 'image of a map' },
         },
       }),
     ).toThrow(/DeliverableSchema/);

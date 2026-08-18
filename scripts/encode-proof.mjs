@@ -6,7 +6,7 @@
  * L7-02 whale can never ship silently.
  *
  * ── WHY ─────────────────────────────────────────────────────────────────────
- * The flagship proof image (accessmap/screen-map.png) is a 1,068 KiB PNG that
+ * The flagship proof image (flagstone/screen-map.png) is a 1,068 KiB PNG that
  * lazy-loads above the fold → ~11.4 s throttled LCP (audit finding L7-02). The
  * locked intro's plates already prove the fix: AVIF + WebP at ~80% lighter, crisp
  * edges via 4:4:4 chroma. This script gives deliverable proof media the SAME
@@ -37,7 +37,7 @@
  *     [--kind hero|shot|card] [--name screen-map] [--widths 1280,960] [--dry] [--json]
  *
  * Examples:
- *   node scripts/encode-proof.mjs accessmap public/images/deliverables/accessmap/screen-map.png --kind hero
+ *   node scripts/encode-proof.mjs flagstone public/images/deliverables/flagstone/screen-map.png --kind hero
  *   node scripts/encode-proof.mjs ghost-code proof-masters/ghost-code/round.png --kind shot --json
  */
 

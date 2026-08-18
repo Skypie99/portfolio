@@ -19,8 +19,8 @@
       "notes": [],
       "bankedAt": "2026-07-31"
     },
-    "accessmap": {
-      "slug": "accessmap",
+    "flagstone": {
+      "slug": "flagstone",
       "repo": "/Users/skypie/AccessMap",
       "projectBranch": "shipready/3-polish-submission",
       "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
@@ -89,7 +89,7 @@
   },
   "captures": [
     {
-      "project": "accessmap",
+      "project": "flagstone",
       "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
       "projectBranch": "shipready/3-polish-submission",
       "scene": "clip:drawer-spring",
@@ -114,25 +114,25 @@
           "rawStartS": 2.1
         },
         "mp4": {
-          "path": "/showcase/accessmap/clips/drawer-spring.dark.phone.mp4",
+          "path": "/showcase/flagstone/clips/drawer-spring.dark.phone.mp4",
           "bytes": 78583
         },
         "webm": {
-          "path": "/showcase/accessmap/clips/drawer-spring.dark.phone.webm",
+          "path": "/showcase/flagstone/clips/drawer-spring.dark.phone.webm",
           "bytes": 92970
         },
         "webmDropReason": null,
         "posters": [
           {
-            "path": "/showcase/accessmap/clips/drawer-spring.dark.phone-poster.avif",
+            "path": "/showcase/flagstone/clips/drawer-spring.dark.phone-poster.avif",
             "bytes": 7476
           },
           {
-            "path": "/showcase/accessmap/clips/drawer-spring.dark.phone-poster.webp",
+            "path": "/showcase/flagstone/clips/drawer-spring.dark.phone-poster.webp",
             "bytes": 8960
           },
           {
-            "path": "/showcase/accessmap/clips/drawer-spring.dark.phone-poster.jpg",
+            "path": "/showcase/flagstone/clips/drawer-spring.dark.phone-poster.jpg",
             "bytes": 11023
           }
         ],
@@ -140,7 +140,7 @@
       }
     },
     {
-      "project": "accessmap",
+      "project": "flagstone",
       "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
       "projectBranch": "shipready/3-polish-submission",
       "scene": "clip:drawer-spring",
@@ -165,25 +165,25 @@
           "rawStartS": 2.1
         },
         "mp4": {
-          "path": "/showcase/accessmap/clips/drawer-spring.light.phone.mp4",
+          "path": "/showcase/flagstone/clips/drawer-spring.light.phone.mp4",
           "bytes": 89275
         },
         "webm": {
-          "path": "/showcase/accessmap/clips/drawer-spring.light.phone.webm",
+          "path": "/showcase/flagstone/clips/drawer-spring.light.phone.webm",
           "bytes": 88768
         },
         "webmDropReason": null,
         "posters": [
           {
-            "path": "/showcase/accessmap/clips/drawer-spring.light.phone-poster.avif",
+            "path": "/showcase/flagstone/clips/drawer-spring.light.phone-poster.avif",
             "bytes": 7869
           },
           {
-            "path": "/showcase/accessmap/clips/drawer-spring.light.phone-poster.webp",
+            "path": "/showcase/flagstone/clips/drawer-spring.light.phone-poster.webp",
             "bytes": 10100
           },
           {
-            "path": "/showcase/accessmap/clips/drawer-spring.light.phone-poster.jpg",
+            "path": "/showcase/flagstone/clips/drawer-spring.light.phone-poster.jpg",
             "bytes": 12355
           }
         ],
@@ -191,7 +191,7 @@
       }
     },
     {
-      "project": "accessmap",
+      "project": "flagstone",
       "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
       "projectBranch": "shipready/3-polish-submission",
       "scene": "clip:map-browse",
@@ -216,25 +216,25 @@
           "rawStartS": 9.7
         },
         "mp4": {
-          "path": "/showcase/accessmap/clips/map-browse.dark.phone.mp4",
+          "path": "/showcase/flagstone/clips/map-browse.dark.phone.mp4",
           "bytes": 163939
         },
         "webm": {
-          "path": "/showcase/accessmap/clips/map-browse.dark.phone.webm",
+          "path": "/showcase/flagstone/clips/map-browse.dark.phone.webm",
           "bytes": 167270
         },
         "webmDropReason": null,
         "posters": [
           {
-            "path": "/showcase/accessmap/clips/map-browse.dark.phone-poster.avif",
+            "path": "/showcase/flagstone/clips/map-browse.dark.phone-poster.avif",
             "bytes": 22476
           },
           {
-            "path": "/showcase/accessmap/clips/map-browse.dark.phone-poster.webp",
+            "path": "/showcase/flagstone/clips/map-browse.dark.phone-poster.webp",
             "bytes": 25924
           },
           {
-            "path": "/showcase/accessmap/clips/map-browse.dark.phone-poster.jpg",
+            "path": "/showcase/flagstone/clips/map-browse.dark.phone-poster.jpg",
             "bytes": 27433
           }
         ],
@@ -242,7 +242,7 @@
       }
     },
     {
-      "project": "accessmap",
+      "project": "flagstone",
       "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
       "projectBranch": "shipready/3-polish-submission",
       "scene": "clip:map-browse",
@@ -267,25 +267,25 @@
           "rawStartS": 9.5
         },
         "mp4": {
-          "path": "/showcase/accessmap/clips/map-browse.light.phone.mp4",
+          "path": "/showcase/flagstone/clips/map-browse.light.phone.mp4",
           "bytes": 196093
         },
         "webm": {
-          "path": "/showcase/accessmap/clips/map-browse.light.phone.webm",
+          "path": "/showcase/flagstone/clips/map-browse.light.phone.webm",
           "bytes": 209147
         },
         "webmDropReason": null,
         "posters": [
           {
-            "path": "/showcase/accessmap/clips/map-browse.light.phone-poster.avif",
+            "path": "/showcase/flagstone/clips/map-browse.light.phone-poster.avif",
             "bytes": 28064
           },
           {
-            "path": "/showcase/accessmap/clips/map-browse.light.phone-poster.webp",
+            "path": "/showcase/flagstone/clips/map-browse.light.phone-poster.webp",
             "bytes": 31078
           },
           {
-            "path": "/showcase/accessmap/clips/map-browse.light.phone-poster.jpg",
+            "path": "/showcase/flagstone/clips/map-browse.light.phone-poster.jpg",
             "bytes": 30726
           }
         ],
@@ -293,7 +293,7 @@
       }
     },
     {
-      "project": "accessmap",
+      "project": "flagstone",
       "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
       "projectBranch": "shipready/3-polish-submission",
       "scene": "clip:report-walk",
@@ -320,25 +320,25 @@
           "rawStartS": 4.6
         },
         "mp4": {
-          "path": "/showcase/accessmap/clips/report-walk.light.phone.mp4",
+          "path": "/showcase/flagstone/clips/report-walk.light.phone.mp4",
           "bytes": 92847
         },
         "webm": {
-          "path": "/showcase/accessmap/clips/report-walk.light.phone.webm",
+          "path": "/showcase/flagstone/clips/report-walk.light.phone.webm",
           "bytes": 94256
         },
         "webmDropReason": null,
         "posters": [
           {
-            "path": "/showcase/accessmap/clips/report-walk.light.phone-poster.avif",
+            "path": "/showcase/flagstone/clips/report-walk.light.phone-poster.avif",
             "bytes": 21869
           },
           {
-            "path": "/showcase/accessmap/clips/report-walk.light.phone-poster.webp",
+            "path": "/showcase/flagstone/clips/report-walk.light.phone-poster.webp",
             "bytes": 21384
           },
           {
-            "path": "/showcase/accessmap/clips/report-walk.light.phone-poster.jpg",
+            "path": "/showcase/flagstone/clips/report-walk.light.phone-poster.jpg",
             "bytes": 26164
           }
         ],
@@ -346,7 +346,7 @@
       }
     },
     {
-      "project": "accessmap",
+      "project": "flagstone",
       "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
       "projectBranch": "shipready/3-polish-submission",
       "scene": "clip:theme-flip",
@@ -371,25 +371,25 @@
           "rawStartS": 3.3
         },
         "mp4": {
-          "path": "/showcase/accessmap/clips/theme-flip.light.phone.mp4",
+          "path": "/showcase/flagstone/clips/theme-flip.light.phone.mp4",
           "bytes": 56634
         },
         "webm": {
-          "path": "/showcase/accessmap/clips/theme-flip.light.phone.webm",
+          "path": "/showcase/flagstone/clips/theme-flip.light.phone.webm",
           "bytes": 61389
         },
         "webmDropReason": null,
         "posters": [
           {
-            "path": "/showcase/accessmap/clips/theme-flip.light.phone-poster.avif",
+            "path": "/showcase/flagstone/clips/theme-flip.light.phone-poster.avif",
             "bytes": 15063
           },
           {
-            "path": "/showcase/accessmap/clips/theme-flip.light.phone-poster.webp",
+            "path": "/showcase/flagstone/clips/theme-flip.light.phone-poster.webp",
             "bytes": 21532
           },
           {
-            "path": "/showcase/accessmap/clips/theme-flip.light.phone-poster.jpg",
+            "path": "/showcase/flagstone/clips/theme-flip.light.phone-poster.jpg",
             "bytes": 24903
           }
         ],
@@ -397,7 +397,7 @@
       }
     },
     {
-      "project": "accessmap",
+      "project": "flagstone",
       "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
       "projectBranch": "shipready/3-polish-submission",
       "scene": "drawer-open",
@@ -418,12 +418,12 @@
         },
         "shipped": [
           {
-            "path": "/showcase/accessmap/drawer-open.dark.phone.avif",
+            "path": "/showcase/flagstone/drawer-open.dark.phone.avif",
             "bytes": 9408,
             "quality": 52
           },
           {
-            "path": "/showcase/accessmap/drawer-open.dark.phone.webp",
+            "path": "/showcase/flagstone/drawer-open.dark.phone.webp",
             "bytes": 20798
           }
         ],
@@ -431,7 +431,7 @@
       }
     },
     {
-      "project": "accessmap",
+      "project": "flagstone",
       "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
       "projectBranch": "shipready/3-polish-submission",
       "scene": "drawer-open",
@@ -452,12 +452,12 @@
         },
         "shipped": [
           {
-            "path": "/showcase/accessmap/drawer-open.light.phone.avif",
+            "path": "/showcase/flagstone/drawer-open.light.phone.avif",
             "bytes": 10616,
             "quality": 52
           },
           {
-            "path": "/showcase/accessmap/drawer-open.light.phone.webp",
+            "path": "/showcase/flagstone/drawer-open.light.phone.webp",
             "bytes": 22652
           }
         ],
@@ -465,7 +465,7 @@
       }
     },
     {
-      "project": "accessmap",
+      "project": "flagstone",
       "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
       "projectBranch": "shipready/3-polish-submission",
       "scene": "guest-profile",
@@ -487,7 +487,7 @@
       }
     },
     {
-      "project": "accessmap",
+      "project": "flagstone",
       "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
       "projectBranch": "shipready/3-polish-submission",
       "scene": "guest-profile",
@@ -509,7 +509,7 @@
       }
     },
     {
-      "project": "accessmap",
+      "project": "flagstone",
       "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
       "projectBranch": "shipready/3-polish-submission",
       "scene": "map-overview",
@@ -530,12 +530,12 @@
         },
         "shipped": [
           {
-            "path": "/showcase/accessmap/map-overview.dark.desktop.avif",
+            "path": "/showcase/flagstone/map-overview.dark.desktop.avif",
             "bytes": 28494,
             "quality": 52
           },
           {
-            "path": "/showcase/accessmap/map-overview.dark.desktop.webp",
+            "path": "/showcase/flagstone/map-overview.dark.desktop.webp",
             "bytes": 47528
           }
         ],
@@ -543,7 +543,7 @@
       }
     },
     {
-      "project": "accessmap",
+      "project": "flagstone",
       "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
       "projectBranch": "shipready/3-polish-submission",
       "scene": "map-overview",
@@ -564,12 +564,12 @@
         },
         "shipped": [
           {
-            "path": "/showcase/accessmap/map-overview.dark.phone.avif",
+            "path": "/showcase/flagstone/map-overview.dark.phone.avif",
             "bytes": 46087,
             "quality": 52
           },
           {
-            "path": "/showcase/accessmap/map-overview.dark.phone.webp",
+            "path": "/showcase/flagstone/map-overview.dark.phone.webp",
             "bytes": 70314
           }
         ],
@@ -577,7 +577,7 @@
       }
     },
     {
-      "project": "accessmap",
+      "project": "flagstone",
       "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
       "projectBranch": "shipready/3-polish-submission",
       "scene": "map-overview",
@@ -598,12 +598,12 @@
         },
         "shipped": [
           {
-            "path": "/showcase/accessmap/map-overview.light.desktop.avif",
+            "path": "/showcase/flagstone/map-overview.light.desktop.avif",
             "bytes": 40930,
             "quality": 52
           },
           {
-            "path": "/showcase/accessmap/map-overview.light.desktop.webp",
+            "path": "/showcase/flagstone/map-overview.light.desktop.webp",
             "bytes": 64120
           }
         ],
@@ -611,7 +611,7 @@
       }
     },
     {
-      "project": "accessmap",
+      "project": "flagstone",
       "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
       "projectBranch": "shipready/3-polish-submission",
       "scene": "map-overview",
@@ -632,12 +632,12 @@
         },
         "shipped": [
           {
-            "path": "/showcase/accessmap/map-overview.light.phone.avif",
+            "path": "/showcase/flagstone/map-overview.light.phone.avif",
             "bytes": 51187,
             "quality": 52
           },
           {
-            "path": "/showcase/accessmap/map-overview.light.phone.webp",
+            "path": "/showcase/flagstone/map-overview.light.phone.webp",
             "bytes": 79880
           }
         ],
@@ -645,7 +645,7 @@
       }
     },
     {
-      "project": "accessmap",
+      "project": "flagstone",
       "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
       "projectBranch": "shipready/3-polish-submission",
       "scene": "nearby-flags-sheet",
@@ -666,12 +666,12 @@
         },
         "shipped": [
           {
-            "path": "/showcase/accessmap/nearby-flags-sheet.dark.phone.avif",
+            "path": "/showcase/flagstone/nearby-flags-sheet.dark.phone.avif",
             "bytes": 24782,
             "quality": 52
           },
           {
-            "path": "/showcase/accessmap/nearby-flags-sheet.dark.phone.webp",
+            "path": "/showcase/flagstone/nearby-flags-sheet.dark.phone.webp",
             "bytes": 49300
           }
         ],
@@ -679,7 +679,7 @@
       }
     },
     {
-      "project": "accessmap",
+      "project": "flagstone",
       "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
       "projectBranch": "shipready/3-polish-submission",
       "scene": "nearby-flags-sheet",
@@ -700,12 +700,12 @@
         },
         "shipped": [
           {
-            "path": "/showcase/accessmap/nearby-flags-sheet.light.phone.avif",
+            "path": "/showcase/flagstone/nearby-flags-sheet.light.phone.avif",
             "bytes": 25805,
             "quality": 52
           },
           {
-            "path": "/showcase/accessmap/nearby-flags-sheet.light.phone.webp",
+            "path": "/showcase/flagstone/nearby-flags-sheet.light.phone.webp",
             "bytes": 49252
           }
         ],
@@ -713,7 +713,7 @@
       }
     },
     {
-      "project": "accessmap",
+      "project": "flagstone",
       "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
       "projectBranch": "shipready/3-polish-submission",
       "scene": "report-composed",
@@ -734,12 +734,12 @@
         },
         "shipped": [
           {
-            "path": "/showcase/accessmap/report-composed.dark.phone.avif",
+            "path": "/showcase/flagstone/report-composed.dark.phone.avif",
             "bytes": 29671,
             "quality": 52
           },
           {
-            "path": "/showcase/accessmap/report-composed.dark.phone.webp",
+            "path": "/showcase/flagstone/report-composed.dark.phone.webp",
             "bytes": 58546
           }
         ],
@@ -747,7 +747,7 @@
       }
     },
     {
-      "project": "accessmap",
+      "project": "flagstone",
       "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
       "projectBranch": "shipready/3-polish-submission",
       "scene": "report-composed",
@@ -768,12 +768,12 @@
         },
         "shipped": [
           {
-            "path": "/showcase/accessmap/report-composed.light.phone.avif",
+            "path": "/showcase/flagstone/report-composed.light.phone.avif",
             "bytes": 33587,
             "quality": 52
           },
           {
-            "path": "/showcase/accessmap/report-composed.light.phone.webp",
+            "path": "/showcase/flagstone/report-composed.light.phone.webp",
             "bytes": 61532
           }
         ],
@@ -781,7 +781,7 @@
       }
     },
     {
-      "project": "accessmap",
+      "project": "flagstone",
       "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
       "projectBranch": "shipready/3-polish-submission",
       "scene": "settings-appearance",
@@ -802,12 +802,12 @@
         },
         "shipped": [
           {
-            "path": "/showcase/accessmap/settings-appearance.dark.phone.avif",
+            "path": "/showcase/flagstone/settings-appearance.dark.phone.avif",
             "bytes": 24729,
             "quality": 52
           },
           {
-            "path": "/showcase/accessmap/settings-appearance.dark.phone.webp",
+            "path": "/showcase/flagstone/settings-appearance.dark.phone.webp",
             "bytes": 48092
           }
         ],
@@ -815,7 +815,7 @@
       }
     },
     {
-      "project": "accessmap",
+      "project": "flagstone",
       "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
       "projectBranch": "shipready/3-polish-submission",
       "scene": "settings-appearance",
@@ -836,12 +836,12 @@
         },
         "shipped": [
           {
-            "path": "/showcase/accessmap/settings-appearance.light.phone.avif",
+            "path": "/showcase/flagstone/settings-appearance.light.phone.avif",
             "bytes": 24556,
             "quality": 52
           },
           {
-            "path": "/showcase/accessmap/settings-appearance.light.phone.webp",
+            "path": "/showcase/flagstone/settings-appearance.light.phone.webp",
             "bytes": 46790
           }
         ],
@@ -849,7 +849,7 @@
       }
     },
     {
-      "project": "accessmap",
+      "project": "flagstone",
       "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
       "projectBranch": "shipready/3-polish-submission",
       "scene": "tasks",
@@ -870,12 +870,12 @@
         },
         "shipped": [
           {
-            "path": "/showcase/accessmap/tasks.dark.phone.avif",
+            "path": "/showcase/flagstone/tasks.dark.phone.avif",
             "bytes": 33651,
             "quality": 52
           },
           {
-            "path": "/showcase/accessmap/tasks.dark.phone.webp",
+            "path": "/showcase/flagstone/tasks.dark.phone.webp",
             "bytes": 60564
           }
         ],
@@ -883,7 +883,7 @@
       }
     },
     {
-      "project": "accessmap",
+      "project": "flagstone",
       "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
       "projectBranch": "shipready/3-polish-submission",
       "scene": "tasks",
@@ -904,12 +904,12 @@
         },
         "shipped": [
           {
-            "path": "/showcase/accessmap/tasks.light.phone.avif",
+            "path": "/showcase/flagstone/tasks.light.phone.avif",
             "bytes": 33206,
             "quality": 52
           },
           {
-            "path": "/showcase/accessmap/tasks.light.phone.webp",
+            "path": "/showcase/flagstone/tasks.light.phone.webp",
             "bytes": 61854
           }
         ],
@@ -917,7 +917,7 @@
       }
     },
     {
-      "project": "accessmap",
+      "project": "flagstone",
       "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
       "projectBranch": "shipready/3-polish-submission",
       "scene": "terms",
@@ -939,7 +939,7 @@
       }
     },
     {
-      "project": "accessmap",
+      "project": "flagstone",
       "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
       "projectBranch": "shipready/3-polish-submission",
       "scene": "terms",

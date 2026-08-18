@@ -10,7 +10,7 @@ import type { ShowcaseChrome } from '@/components/ProductReveal';
  *   'matte'  — the exhibit mat (.ts-matte): the capture presented as a framed
  *              print on site-token surfaces.
  *
- * THE MOCKUP GATE (Sky decides): all three render over the real AccessMap
+ * THE MOCKUP GATE (Sky decides): all three render over the real Flagstone
  * assets on the real pages; Sky's pick locks this constant in a one-line
  * commit. Until then it stays 'device' — today's look. Per-scene `chrome` in
  * deliverables.json remains the escape hatch either way.
