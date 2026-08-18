@@ -47,8 +47,8 @@ import type { Deliverable } from '@/lib/schema';
 const GLOBALS = readFileSync(join(process.cwd(), 'app', 'globals.css'), 'utf8');
 
 const FEATURED = {
-  id: 'accessmap',
-  title: 'AccessMap',
+  id: 'flagstone',
+  title: 'Flagstone',
   role: 'Solo builder',
 } as unknown as Deliverable;
 
@@ -63,7 +63,7 @@ describe('SidebarFeatured — the block answers as one door', () => {
     // gradient/position/padding/durations all come from `.link-draw`. Dropping
     // either class silently kills the underline, so the PAIR is the contract.
     render(<SidebarFeatured featured={FEATURED} />);
-    const title = screen.getByText('AccessMap');
+    const title = screen.getByText('Flagstone');
     expect(title.className).toContain('link-draw');
     expect(title.className).toContain('link-draw-group');
   });
@@ -72,13 +72,13 @@ describe('SidebarFeatured — the block answers as one door', () => {
     // Without self-start the span is a stretched flex item and the 1px line
     // draws the full 184px rail column under a ~90px word.
     render(<SidebarFeatured featured={FEATURED} />);
-    expect(screen.getByText('AccessMap').className).toContain('self-start');
+    expect(screen.getByText('Flagstone').className).toContain('self-start');
   });
 
   it('still withdraws the CTA nudge on the featured project’s own route', () => {
     // §7.2: a room knows you walked through it. The rider must not have
     // disturbed the existing stilling contract.
-    pathnameMock.mockReturnValue('/work/accessmap/');
+    pathnameMock.mockReturnValue('/work/flagstone/');
     render(<SidebarFeatured featured={FEATURED} />);
     const cta = screen.getByText('Open it');
     expect(cta.className).not.toContain('group-hover:translate-x-1');

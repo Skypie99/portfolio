@@ -168,7 +168,7 @@ export const DeliverableSchema = z.object({
   cardImage: ShotImageSchema.optional(),
   /** Optional "museum plate" beneath the hero well (FT-3/FT-10) — the artifact's
    *  own ledger line at reading size, plus the place it was mapped. Data-gated:
-   *  renders only where present (accessmap today). Mono-meta furniture, never
+   *  renders only where present (flagstone today). Mono-meta furniture, never
    *  quotation-styled (one pull-quote per essay holds). */
   heroPlate: z
     .object({

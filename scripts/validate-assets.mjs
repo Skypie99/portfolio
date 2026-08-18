@@ -194,7 +194,7 @@ function checkDeliverableProof(publicDir) {
  *
  * This checker did not exist, and its absence is why a live 404 shipped: showcase
  * commit 593eebe deleted card-flag.{jpg,avif,webp} while blog.json kept referencing
- * all three, and /blog/building-accessmap/ served a broken hero to production. Every
+ * all three, and /blog/building-flagstone/ served a broken hero to production. Every
  * gate stayed green because this validator covered certificates.json and
  * deliverables.json only — blog.json had no build-time asset check at all.
  *

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--
+      REDIRECT STUB — /work/accessmap/ → /work/flagstone/
+
+      AccessMap was renamed Flagstone (App Store name collision with the
+      University of Washington's AccessMap). This file exists so the old URL,
+      which is real, is in the wild, and was in the sitemap, still lands
+      somewhere instead of 404ing.
+
+      Why a meta refresh and not a 301: this site is a Next.js static export
+      served by GitHub Pages. There is no server, no _redirects file, and
+      next.config.mjs `redirects()` does nothing under `output: 'export'`.
+      Next copies public/ into out/ verbatim, so this hand-written file is
+      served at the old path. A meta refresh is weaker than a 301 — it passes
+      less link equity and search engines treat it as a soft signal — and that
+      is the honest ceiling on this host, not a choice.
+
+      It declares NO Open Graph identity on purpose: a signpost is not a page,
+      and giving it a share card would make the old URL compete with the new
+      one. The canonical below is what consolidates them.
+    -->
+    <meta http-equiv="refresh" content="0; url=/work/flagstone/" />
+    <link rel="canonical" href="https://skypistudio.com/work/flagstone/" />
+
+    <title>Moved to /work/flagstone/ — Sky Halisky</title>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        background: #faf6f1;
+        color: #2b2320;
+        font: 1rem/1.7 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
+      main { max-width: 34rem; }
+      a { color: #a4552b; }
+      @media (prefers-color-scheme: dark) {
+        body { background: #17130f; color: #ece3d9; }
+        a { color: #e0a173; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>This case study moved</h1>
+      <p>
+        AccessMap is now called Flagstone, and this page moved with it. If you
+        are not redirected automatically,
+        <a href="/work/flagstone/">continue to the Flagstone case study</a>.
+      </p>
+    </main>
+  </body>
+</html>

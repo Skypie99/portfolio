@@ -299,7 +299,7 @@ The part you feel before you can name it: one continuous golden-hour desert that
 
 ## The quiet systems
 
-A few details that repeat on purpose. The page titles wear an **ember** gradient — a warm rust-to-gold wash, with cool teal and moss variants so the warmth has something to lean on. Each project signs its own name with a **signature hue** from the same golden-hour family — terracotta for AccessMap, phantom cyan for Ghost Code, clay-rose for Mutual Mesh — and sits in a frame true to its medium: a phone, a browser window, a clean plate. Even the numerals are deliberate — lined up while they count, old-style once they settle into prose.
+A few details that repeat on purpose. The page titles wear an **ember** gradient — a warm rust-to-gold wash, with cool teal and moss variants so the warmth has something to lean on. Each project signs its own name with a **signature hue** from the same golden-hour family — terracotta for Flagstone, phantom cyan for Ghost Code, clay-rose for Mutual Mesh — and sits in a frame true to its medium: a phone, a browser window, a clean plate. Even the numerals are deliberate — lined up while they count, old-style once they settle into prose.
 
 ## How it was made
 

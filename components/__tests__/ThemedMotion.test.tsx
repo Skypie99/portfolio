@@ -36,8 +36,8 @@ const mm = (reduce: boolean) =>
   }));
 
 const clip = {
-  light: { mp4: '/showcase/accessmap/clips/drawer.light.phone.mp4', poster: '/showcase/accessmap/clips/drawer.light.phone-poster.avif' },
-  dark: { mp4: '/showcase/accessmap/clips/drawer.dark.phone.mp4', poster: '/showcase/accessmap/clips/drawer.dark.phone-poster.avif' },
+  light: { mp4: '/showcase/flagstone/clips/drawer.light.phone.mp4', poster: '/showcase/flagstone/clips/drawer.light.phone-poster.avif' },
+  dark: { mp4: '/showcase/flagstone/clips/drawer.dark.phone.mp4', poster: '/showcase/flagstone/clips/drawer.dark.phone-poster.avif' },
   alt: 'The navigation drawer springing open over the home screen',
 };
 

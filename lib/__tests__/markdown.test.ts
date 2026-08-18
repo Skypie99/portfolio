@@ -37,7 +37,7 @@ describe('bindSoloLetters', () => {
 
 describe('bindSeparatorDash', () => {
   it('glues a spaced em-dash to the preceding word, keeping the trailing space', () => {
-    expect(bindSeparatorDash('AccessMap — A')).toBe(`AccessMap${NBSP}— A`);
+    expect(bindSeparatorDash('Flagstone — A')).toBe(`Flagstone${NBSP}— A`);
   });
 
   it('handles a spaced en-dash the same way', () => {
@@ -59,12 +59,12 @@ describe('bindSeparatorDash', () => {
 });
 
 describe('composed crown transform (the real blog title)', () => {
-  const RAW = 'Building AccessMap — A Lesson in Shipping Something That Matters';
+  const RAW = 'Building Flagstone — A Lesson in Shipping Something That Matters';
 
-  it('binds the separator dash to AccessMap AND the solo "A" to Lesson', () => {
+  it('binds the separator dash to Flagstone AND the solo "A" to Lesson', () => {
     const out = bindSeparatorDash(bindSoloLetters(RAW));
     expect(out).toBe(
-      `Building AccessMap${NBSP}— A${NBSP}Lesson in Shipping Something That Matters`,
+      `Building Flagstone${NBSP}— A${NBSP}Lesson in Shipping Something That Matters`,
     );
     // The character immediately before the em-dash must be a NBSP (U+00A0 = 160),
     // never a plain space — that is the no-JS proof the dash can't start a line.

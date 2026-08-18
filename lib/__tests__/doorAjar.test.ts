@@ -34,8 +34,8 @@ afterEach(() => {
 
 describe('doorAjar (record → apply)', () => {
   it('marks the departed room card hook on a return home', () => {
-    const card = addCardHook('/work/accessmap/');
-    recordDeparture('/work/accessmap/', '/');
+    const card = addCardHook('/work/flagstone/');
+    recordDeparture('/work/flagstone/', '/');
     applyDoorAjar('/');
     expect(card.hasAttribute('data-door-ajar')).toBe(true);
   });
@@ -48,23 +48,23 @@ describe('doorAjar (record → apply)', () => {
   });
 
   it('NEVER marks a bare href match — opt-in hooks only (the stretched-link chips stay unpositioned)', () => {
-    const chip = addBareLink('/work/accessmap/');
-    const card = addCardHook('/work/accessmap/');
-    recordDeparture('/work/accessmap/', '/');
+    const chip = addBareLink('/work/flagstone/');
+    const card = addCardHook('/work/flagstone/');
+    recordDeparture('/work/flagstone/', '/');
     applyDoorAjar('/');
     expect(chip.hasAttribute('data-door-ajar')).toBe(false);
     expect(card.hasAttribute('data-door-ajar')).toBe(true);
   });
 
   it('does nothing when the destination shows no cards', () => {
-    const card = addCardHook('/work/accessmap/');
-    recordDeparture('/work/accessmap/', '/about/');
+    const card = addCardHook('/work/flagstone/');
+    recordDeparture('/work/flagstone/', '/about/');
     applyDoorAjar('/about/');
     expect(card.hasAttribute('data-door-ajar')).toBe(false);
   });
 
   it('does nothing when the origin is not a case-study room', () => {
-    const card = addCardHook('/work/accessmap/');
+    const card = addCardHook('/work/flagstone/');
     recordDeparture('/about/', '/');
     applyDoorAjar('/');
     expect(card.hasAttribute('data-door-ajar')).toBe(false);
@@ -73,8 +73,8 @@ describe('doorAjar (record → apply)', () => {
   it('consumes WITHOUT marking when the committed path differs from the recorded destination (the popstate leak, closed)', () => {
     // A click toward '/' that never commits must not leak its mark onto a
     // later Back/Forward arrival at a card page.
-    const card = addCardHook('/work/accessmap/');
-    recordDeparture('/work/accessmap/', '/');
+    const card = addCardHook('/work/flagstone/');
+    recordDeparture('/work/flagstone/', '/');
     applyDoorAjar('/work/'); // a different commit than the recorded destination
     expect(card.hasAttribute('data-door-ajar')).toBe(false);
 
@@ -83,8 +83,8 @@ describe('doorAjar (record → apply)', () => {
   });
 
   it('is consumed on apply — a later arrival shows nothing (in-memory truth)', () => {
-    const card = addCardHook('/work/accessmap/');
-    recordDeparture('/work/accessmap/', '/');
+    const card = addCardHook('/work/flagstone/');
+    recordDeparture('/work/flagstone/', '/');
     applyDoorAjar('/');
     card.removeAttribute('data-door-ajar');
     applyDoorAjar('/'); // e.g. a re-render / a later commit with no new departure
@@ -92,8 +92,8 @@ describe('doorAjar (record → apply)', () => {
   });
 
   it('clears a stale mark on the next commit (present-until-next-nav)', () => {
-    const card = addCardHook('/work/accessmap/');
-    recordDeparture('/work/accessmap/', '/');
+    const card = addCardHook('/work/flagstone/');
+    recordDeparture('/work/flagstone/', '/');
     applyDoorAjar('/');
     expect(card.hasAttribute('data-door-ajar')).toBe(true);
 
@@ -103,8 +103,8 @@ describe('doorAjar (record → apply)', () => {
   });
 
   it('normalizes trailing slashes on the destination', () => {
-    const card = addCardHook('/work/accessmap/');
-    recordDeparture('/work/accessmap/', '/work');
+    const card = addCardHook('/work/flagstone/');
+    recordDeparture('/work/flagstone/', '/work');
     applyDoorAjar('/work');
     expect(card.hasAttribute('data-door-ajar')).toBe(true);
   });

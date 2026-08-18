@@ -34,18 +34,18 @@ class MockIO {
 
 const themed = {
   light: {
-    src: '/showcase/accessmap/map.light.phone.webp',
-    avif: '/showcase/accessmap/map.light.phone.avif',
-    webp: '/showcase/accessmap/map.light.phone.webp',
+    src: '/showcase/flagstone/map.light.phone.webp',
+    avif: '/showcase/flagstone/map.light.phone.avif',
+    webp: '/showcase/flagstone/map.light.phone.webp',
     lqip: 'data:image/webp;base64,LIGHT',
   },
   dark: {
-    src: '/showcase/accessmap/map.dark.phone.webp',
-    avif: '/showcase/accessmap/map.dark.phone.avif',
-    webp: '/showcase/accessmap/map.dark.phone.webp',
+    src: '/showcase/flagstone/map.dark.phone.webp',
+    avif: '/showcase/flagstone/map.dark.phone.avif',
+    webp: '/showcase/flagstone/map.dark.phone.webp',
     lqip: 'data:image/webp;base64,DARK',
   },
-  alt: 'The AccessMap barrier map, severity pins over street tiles',
+  alt: 'The Flagstone barrier map, severity pins over street tiles',
 };
 
 describe('ThemedShowcase', () => {

@@ -2,7 +2,7 @@
  * The enfilade's direction rule (R4/BP1 · P04) — PREFIX-PARENT ONLY.
  *
  * Directional meaning exists only when one pathname is an ancestor of the
- * other along one axis (`/work/` ↔ `/work/accessmap/`, `/` ↔ `/work/`):
+ * other along one axis (`/work/` ↔ `/work/flagstone/`, `/` ↔ `/work/`):
  * going deeper is a DESCEND, stepping back up through a link is an ASCEND.
  * Every other pair — cross-section jumps, equal-depth hops — returns null
  * and keeps the plain gold dissolve, because fabricated architecture would
