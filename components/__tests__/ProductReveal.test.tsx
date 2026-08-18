@@ -27,10 +27,10 @@ describe('ProductReveal', () => {
     const hero = render(
       <ProductReveal
         slug="accessmap"
-        title="AccessMap"
+        title="Flagstone"
         context="hero"
         bare
-        media={{ alt: 'AccessMap map view with accessibility pins' }}
+        media={{ alt: 'Flagstone map view with accessibility pins' }}
       />,
     );
     expect(hero.container.querySelector('.pr-lamp')).not.toBeNull();
@@ -40,9 +40,9 @@ describe('ProductReveal', () => {
     const card = render(
       <ProductReveal
         slug="accessmap"
-        title="AccessMap"
+        title="Flagstone"
         context="card"
-        media={{ alt: 'AccessMap map view with accessibility pins' }}
+        media={{ alt: 'Flagstone map view with accessibility pins' }}
       />,
     );
     expect(card.container.querySelector('.pr-lamp')).toBeNull();
@@ -52,10 +52,10 @@ describe('ProductReveal', () => {
     const { container } = render(
       <ProductReveal
         slug="accessmap"
-        title="AccessMap"
+        title="Flagstone"
         eyebrow="Solo builder"
         context="hero"
-        media={{ alt: 'AccessMap map view with accessibility pins' }}
+        media={{ alt: 'Flagstone map view with accessibility pins' }}
       />,
     );
 
@@ -63,7 +63,7 @@ describe('ProductReveal', () => {
     expect(container.querySelector('img')).toBeNull();
     // The hero placeholder draws the product wordmark (decorative; the page's
     // real <h1> lives in the case-study column).
-    expect(screen.getByText('AccessMap')).toBeInTheDocument();
+    expect(screen.getByText('Flagstone')).toBeInTheDocument();
   });
 
   it('renders a real <img> carrying the alt when a src is provided', () => {
@@ -129,9 +129,9 @@ describe('ProductReveal', () => {
     const { container } = render(
       <ProductReveal
         slug="accessmap"
-        title="AccessMap"
+        title="Flagstone"
         context="shot"
-        media={{ alt: 'AccessMap report flow' }}
+        media={{ alt: 'Flagstone report flow' }}
       />,
     );
 
@@ -140,7 +140,7 @@ describe('ProductReveal', () => {
     expect(placeholder).not.toBeNull();
     // It carries no <img> and no wordmark …
     expect(container.querySelector('img')).toBeNull();
-    expect(screen.queryByText('AccessMap')).not.toBeInTheDocument();
+    expect(screen.queryByText('Flagstone')).not.toBeInTheDocument();
     // … and the retired skeleton grammar (window-chrome dots + wireframe text
     // bars, which were <span> Bars) is gone: the designed still has no bars.
     expect(placeholder!.querySelectorAll('span').length).toBe(0);
@@ -163,17 +163,17 @@ describe('ProductReveal — proof pipeline (P2-A)', () => {
     render(
       <ProductReveal
         slug="accessmap"
-        title="AccessMap"
+        title="Flagstone"
         context="hero"
         media={{
           src: '/images/deliverables/accessmap/screen-map.png',
           avif: '/images/deliverables/accessmap/screen-map.avif',
           webp: '/images/deliverables/accessmap/screen-map.webp',
-          alt: 'AccessMap map with a verified No ramp barrier flagged downtown',
+          alt: 'Flagstone map with a verified No ramp barrier flagged downtown',
         }}
       />,
     );
-    const img = screen.getByRole('img', { name: /accessmap map/i });
+    const img = screen.getByRole('img', { name: /flagstone map/i });
     expect(img).toHaveAttribute('loading', 'eager');
     expect(img).toHaveAttribute('fetchpriority', 'high');
     expect(img).toHaveAttribute('decoding', 'async');
@@ -201,18 +201,18 @@ describe('ProductReveal — proof pipeline (P2-A)', () => {
     const { container } = render(
       <ProductReveal
         slug="accessmap"
-        title="AccessMap"
+        title="Flagstone"
         context="hero"
         media={{
           src: '/images/deliverables/accessmap/screen-map.png',
           lqip,
-          alt: 'AccessMap map with a verified No ramp barrier flagged downtown',
+          alt: 'Flagstone map with a verified No ramp barrier flagged downtown',
         }}
       />,
     );
     // The LQIP paints as a background-image on an aria-hidden layer in the well.
     expect(container.innerHTML).toContain('LQIPTESTTOKEN');
-    const img = screen.getByRole('img', { name: /accessmap map/i });
+    const img = screen.getByRole('img', { name: /flagstone map/i });
     // No blur-to-sharp reveal: the image itself carries no transition/animation.
     expect(img.className).not.toMatch(/transition|animate/);
   });

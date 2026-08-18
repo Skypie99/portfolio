@@ -60,23 +60,23 @@ describe('HeroImageSettle', () => {
 
 describe('HeroTitleSettle', () => {
   it('renders an <h1> with the entrance class', () => {
-    const { container } = render(<HeroTitleSettle>AccessMap</HeroTitleSettle>);
+    const { container } = render(<HeroTitleSettle>Flagstone</HeroTitleSettle>);
     const h1 = container.querySelector('h1');
     expect(h1).toBeInTheDocument();
     expect(h1).toHaveClass('hero-settle-title');
-    expect(screen.getByText('AccessMap')).toBeInTheDocument();
+    expect(screen.getByText('Flagstone')).toBeInTheDocument();
   });
 
   it('accepts and forwards className', () => {
     const { container } = render(
-      <HeroTitleSettle className="font-serif ember">AccessMap</HeroTitleSettle>,
+      <HeroTitleSettle className="font-serif ember">Flagstone</HeroTitleSettle>,
     );
     expect(container.firstChild).toHaveClass('font-serif');
     expect(container.firstChild).toHaveClass('ember');
   });
 
   it('ships no inline opacity (visible-at-rest markup)', () => {
-    const { container } = render(<HeroTitleSettle>AccessMap</HeroTitleSettle>);
+    const { container } = render(<HeroTitleSettle>Flagstone</HeroTitleSettle>);
     expectNoInlineOpacity(container.firstElementChild);
   });
 });

@@ -97,7 +97,7 @@
       "theme": "dark",
       "viewport": "phone",
       "route": "/",
-      "altText": "AccessMap's navigation drawer springing open over the home screen, resting a beat, then sliding away.",
+      "altText": "Flagstone's navigation drawer springing open over the home screen, resting a beat, then sliding away.",
       "determinism": "structural",
       "flags": [],
       "files": {
@@ -148,7 +148,7 @@
       "theme": "light",
       "viewport": "phone",
       "route": "/",
-      "altText": "AccessMap's navigation drawer springing open over the home screen, resting a beat, then sliding away.",
+      "altText": "Flagstone's navigation drawer springing open over the home screen, resting a beat, then sliding away.",
       "determinism": "structural",
       "flags": [],
       "files": {
@@ -199,7 +199,7 @@
       "theme": "dark",
       "viewport": "phone",
       "route": "/",
-      "altText": "Panning across the AccessMap barrier map and zooming in — severity pins holding their place over the streets.",
+      "altText": "Panning across the Flagstone barrier map and zooming in — severity pins holding their place over the streets.",
       "determinism": "structural",
       "flags": [],
       "files": {
@@ -250,7 +250,7 @@
       "theme": "light",
       "viewport": "phone",
       "route": "/",
-      "altText": "Panning across the AccessMap barrier map and zooming in — severity pins holding their place over the streets.",
+      "altText": "Panning across the Flagstone barrier map and zooming in — severity pins holding their place over the streets.",
       "determinism": "structural",
       "flags": [],
       "files": {
@@ -354,7 +354,7 @@
       "theme": "light",
       "viewport": "phone",
       "route": "/",
-      "altText": "AccessMap's Appearance control flipping the whole app dark and back to light, every surface re-theming in place.",
+      "altText": "Flagstone's Appearance control flipping the whole app dark and back to light, every surface re-theming in place.",
       "determinism": "structural",
       "flags": [],
       "files": {
@@ -405,7 +405,7 @@
       "theme": "dark",
       "viewport": "phone",
       "route": "/",
-      "altText": "AccessMap's navigation drawer slid open over the dimmed home screen — frosted-glass rows for Resources, How to help, About and Settings.",
+      "altText": "Flagstone's navigation drawer slid open over the dimmed home screen — frosted-glass rows for Resources, How to help, About and Settings.",
       "determinism": "structural",
       "flags": [],
       "files": {
@@ -439,7 +439,7 @@
       "theme": "light",
       "viewport": "phone",
       "route": "/",
-      "altText": "AccessMap's navigation drawer slid open over the dimmed home screen — frosted-glass rows for Resources, How to help, About and Settings.",
+      "altText": "Flagstone's navigation drawer slid open over the dimmed home screen — frosted-glass rows for Resources, How to help, About and Settings.",
       "determinism": "structural",
       "flags": [],
       "files": {
@@ -517,7 +517,7 @@
       "theme": "dark",
       "viewport": "desktop",
       "route": "/",
-      "altText": "AccessMap's full map — severity-coloured barrier pins over street tiles of downtown Kelowna, a nearest-barrier banner up top and rounded zoom controls at the edge.",
+      "altText": "Flagstone's full map — severity-coloured barrier pins over street tiles of downtown Kelowna, a nearest-barrier banner up top and rounded zoom controls at the edge.",
       "determinism": "structural",
       "flags": [],
       "files": {
@@ -551,7 +551,7 @@
       "theme": "dark",
       "viewport": "phone",
       "route": "/",
-      "altText": "AccessMap's full map — severity-coloured barrier pins over street tiles of downtown Kelowna, a nearest-barrier banner up top and rounded zoom controls at the edge.",
+      "altText": "Flagstone's full map — severity-coloured barrier pins over street tiles of downtown Kelowna, a nearest-barrier banner up top and rounded zoom controls at the edge.",
       "determinism": "structural",
       "flags": [],
       "files": {
@@ -585,7 +585,7 @@
       "theme": "light",
       "viewport": "desktop",
       "route": "/",
-      "altText": "AccessMap's full map — severity-coloured barrier pins over street tiles of downtown Kelowna, a nearest-barrier banner up top and rounded zoom controls at the edge.",
+      "altText": "Flagstone's full map — severity-coloured barrier pins over street tiles of downtown Kelowna, a nearest-barrier banner up top and rounded zoom controls at the edge.",
       "determinism": "structural",
       "flags": [],
       "files": {
@@ -619,7 +619,7 @@
       "theme": "light",
       "viewport": "phone",
       "route": "/",
-      "altText": "AccessMap's full map — severity-coloured barrier pins over street tiles of downtown Kelowna, a nearest-barrier banner up top and rounded zoom controls at the edge.",
+      "altText": "Flagstone's full map — severity-coloured barrier pins over street tiles of downtown Kelowna, a nearest-barrier banner up top and rounded zoom controls at the edge.",
       "determinism": "structural",
       "flags": [],
       "files": {
@@ -789,7 +789,7 @@
       "theme": "dark",
       "viewport": "phone",
       "route": "/",
-      "altText": "AccessMap's Appearance setting — a three-segment Light, Dark, System control with the active segment raised: the app documenting its own theming.",
+      "altText": "Flagstone's Appearance setting — a three-segment Light, Dark, System control with the active segment raised: the app documenting its own theming.",
       "determinism": "structural",
       "flags": [],
       "files": {
@@ -823,7 +823,7 @@
       "theme": "light",
       "viewport": "phone",
       "route": "/",
-      "altText": "AccessMap's Appearance setting — a three-segment Light, Dark, System control with the active segment raised: the app documenting its own theming.",
+      "altText": "Flagstone's Appearance setting — a three-segment Light, Dark, System control with the active segment raised: the app documenting its own theming.",
       "determinism": "structural",
       "flags": [],
       "files": {
