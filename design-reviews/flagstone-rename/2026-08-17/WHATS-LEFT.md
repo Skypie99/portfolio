@@ -40,3 +40,37 @@
 ## Frozen on purpose — not misses
 
 `https://github.com/Skypie99/AccessMap` (repo kept its name) · `https://accessmap.skypistudio.com` (live host, pinned app-side) · `masters/accessmap/…` capture sources · `public/receipts/a11y-2026-07-09.json` (a dated measurement; renaming its route keys would make it claim a measurement that never happened) · the two redirect stubs, which *are* the old URLs.
+
+---
+
+# ADDENDUM — 2026-08-17, the optional pass
+
+## Done and live
+
+**Console warning cleared.** One React error fired on every page load: *"Invalid DOM property `fetchpriority`. Did you mean `fetchPriority`?"*. Two of the three call sites carried comments asserting the opposite — that lowercase was the warning-free form. That was **wrong on React 18.3.1**: 18.3 is the release that added the warning to nudge toward React 19, and lowercase is what it fires on. All three moved to camelCase, verified by loading the page and reading a clean console. The comments now say what is true, and the `as unknown as` casts are gone because React's own types accept the camelCase prop.
+
+**Instructions that no longer worked, fixed.** The rename quietly falsified anything written against the old slug:
+- `docs/showcase-factory.md` told you to run `--project accessmap` — which now matches nothing and simply fails
+- `SHOW_WORK_PLAN.md` (the live image-swap guide, referenced by UI_SYSTEM and MOTION_SYSTEM) pointed every path at a directory that no longer exists
+- `README.md` listed `accessmap` among the prerendered slugs, and its Branch state section still called `main` "unborn" — on the branch that now publishes on every push
+
+Left alone on purpose: `FEATURES.md`'s `~/AccessMap/qa-reports/…` pointer and every `github.com/Skypie99/AccessMap` link — that repo kept its name.
+
+Shipped as `b151570`.
+
+## 🛑 The full re-capture was tried and DISCARDED — read this before anyone retries it
+
+Re-shooting all 23 scenes at current `main` produced **worse imagery than what is shipped**, because **production currently has no flag data**:
+
+| Scene | Shipped (good) | Re-captured (regression) |
+|---|---|---|
+| `map-overview` — the case-study **hero** | severity-coloured pins over downtown Kelowna | **"0 flags · No barriers reported here yet"** — the empty state |
+| `tasks` | a populated barrier list with severity chips | **"All caught up"** — the empty state |
+
+The alt text would have become false too: it promises "severity-coloured barrier pins" and "a nearest-barrier banner", neither of which appears in an empty map. So the capture was discarded and the shipped images stand.
+
+**This validates the 2026-07-31 gate pick.** Those images date from when prod had data; they are currently irreplaceable.
+
+**Consequence — the images and the app build are now decoupled.** Everything except the drawer was shot at the older `5ab3f0c` build. That mix is invisible today, and fixing it is blocked on data, not on code.
+
+**Precondition for any future re-capture:** seed or restore production flag data first (this is the same blocker as the store dossier's MUST-1 junk-data cleanup). Re-capturing before that will silently replace good screenshots with empty states, and every gate will stay green while it happens — nothing in the pipeline knows an empty map is wrong.
