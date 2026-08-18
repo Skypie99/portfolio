@@ -93,7 +93,7 @@ screenshot is a **one-line swap** with **zero CLS** (see `SHOW_WORK_PLAN.md`):
 or `aspect-[4/3]` (window/plate REAL-shot heroes; data-known at build, real shots widen the frame to
 `w-[94%]`), owned by `HeroImageSettle`; work-card band `16/10` atop the glass inscription (Sky's call —
 all text stays on glass, AA preserved; card grows with a `min-h` floor); in-body shot `16/10`.
-**Device frames** (`lib/signature.ts → frameForSlug`, hero only): `phone` (AccessMap, Mutual Mesh),
+**Device frames** (`lib/signature.ts → frameForSlug`, hero only): `phone` (Flagstone, Mutual Mesh),
 `window`/terminal (Prompt Library, Claude Corp), `plate` (Ghost Code). Pure CSS, `.panel-lit`,
 `--shadow-lg`, both themes via `--rgb-*`.
 **Legibility:** `.pr-scrim` (tokenized `--scrim`) guards ≥4.5:1 for any text over a future bright
@@ -243,7 +243,7 @@ All zero-copy — visible characters are byte-identical; only spans/utilities ch
 1. **`text-balance` heading family** — added to the eight `text-step-4 … max-w-2xl` section heads that
    lacked it (the three carrying an authored `<br/>` are excluded, since balance can move a line Sky wrote).
 2. **`bindSeparatorDash` (TY-6) NBSP-weld** — welds an em-dash to its preceding word so a line never
-   *starts* with a dangling separator (this is why a line ending "AccessMap —" is the rule working, not a
+   *starts* with a dangling separator (this is why a line ending "Flagstone —" is the rule working, not a
    defect).
 3. **`text-pretty` on mono figcaptions** — pulls one word down on long uppercase-mono captions; line count
    (and height, and CLS) unchanged.

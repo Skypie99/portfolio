@@ -29,7 +29,7 @@ npx serve out -p 3001     # http://localhost:3001/
 |---|---|
 | `/` | Homepage — hero, selected work list, numbered steps, CTA |
 | `/work` | Index of all deliverables (cards from `content/deliverables.json`) |
-| `/work/[slug]` | Detail page per deliverable. 6 prerendered slugs: `accessmap`, `claude-corp`, `dashboard`, `prompt-library`, `ghost-code`, `mutual-mesh` |
+| `/work/[slug]` | Detail page per deliverable. 6 prerendered slugs: `flagstone`, `claude-corp`, `dashboard`, `prompt-library`, `ghost-code`, `mutual-mesh` |
 | `/certificates` | Issued credentials with badge, issuer, date |
 | `/about` | Bio + "how I work" numbered steps |
 | `/contact` | Mailto CTA + socials |
@@ -108,13 +108,20 @@ Cycle briefings and per-role validation reports. The most recent compiled briefi
 
 ## Branch state
 
-`cycle/auto-2026-05-23` carries the entire Day-0 + Cycle 2/3 + Cycle 4-6 build. `main` is intentionally unborn until Sky blesses the initial state — per Constitution v1.3 Art. 1, only Sky merges to `main`.
+`main` is the live branch — every push to it publishes. Work happens on a
+prefixed branch (`fix/…`, `rename/…`, `polish/…`) and only Sky merges, per
+Constitution Art. 1. The Day-0 `cycle/auto-2026-05-23` branch is long since
+merged; earlier notes here calling `main` "unborn" were years of drift.
 
 ## How to review
 
 ```bash
-git log --oneline cycle/auto-2026-05-23
-git diff cycle/auto-2026-05-23            # against working tree if main is still unborn
+git log --oneline main..<branch>          # what the branch adds
+git diff main..<branch> --stat            # the shape of it
 ```
 
-Read `qa-reports/cycle-2026-05-23-eve.md` first; the C4-6 per-role reports are referenced from there.
+Then the gates, all three, before anything merges:
+
+```bash
+npm run typecheck && npm run build && npx vitest run
+```

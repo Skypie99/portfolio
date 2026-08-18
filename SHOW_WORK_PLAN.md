@@ -23,7 +23,7 @@ Per-product **device frame** (hero only) reads true to the medium:
 
 | Product | Frame | Hero today |
 |---|---|---|
-| AccessMap | `phone` | placeholder |
+| Flagstone | `phone` | placeholder |
 | Mutual Mesh | `phone` | placeholder |
 | Prompt Library | `window` | placeholder |
 | Claude Corp | `window` | placeholder |
@@ -42,17 +42,17 @@ Find the product and add **one block** next to its existing `heroImage`:
 
 ```jsonc
 {
-  "id": "accessmap",
-  "heroImage": { "src": "/images/deliverables/accessmap/hero.svg", "alt": "…" },
+  "id": "flagstone",
+  "heroImage": { "src": "/images/deliverables/flagstone/hero.svg", "alt": "…" },
 
   "heroShot": {
-    "src": "/images/deliverables/accessmap/screen-map.png",
-    "alt": "AccessMap map view with three barrier pins and a report sheet open"
+    "src": "/images/deliverables/flagstone/screen-map.png",
+    "alt": "Flagstone map view with three barrier pins and a report sheet open"
   }
 }
 ```
 
-- Drop the image file at `public/images/deliverables/accessmap/screen-map.png`
+- Drop the image file at `public/images/deliverables/flagstone/screen-map.png`
   (any name; **must** live under `/images/deliverables/<slug>/`).
 - The screenshot appears inside the **same** device frame — zero layout shift.
 - `alt` is required (4–200 chars, can't start with "image/picture/photo of").
@@ -65,8 +65,8 @@ caption written. To make one real, **add the `src` line** to that entry:
 ```jsonc
 "shots": [
   {
-    "src": "/images/deliverables/accessmap/shot-report.png",   // ← the one line you add
-    "alt": "AccessMap reporting flow — choosing a barrier type and adding a short note",
+    "src": "/images/deliverables/flagstone/shot-report.png",   // ← the one line you add
+    "alt": "Flagstone reporting flow — choosing a barrier type and adding a short note",
     "caption": "Reporting a broken curb cut in three taps."
   },
   { "alt": "…", "caption": "…" }    // still a placeholder until you add its src
@@ -80,10 +80,10 @@ If you generate responsive siblings, add them and they're served first
 
 ```jsonc
 "heroShot": {
-  "src":  "/images/deliverables/accessmap/screen-map.png",
-  "avif": "/images/deliverables/accessmap/screen-map.avif",
-  "webp": "/images/deliverables/accessmap/screen-map.webp",
-  "alt":  "AccessMap map view …"
+  "src":  "/images/deliverables/flagstone/screen-map.png",
+  "avif": "/images/deliverables/flagstone/screen-map.avif",
+  "webp": "/images/deliverables/flagstone/screen-map.webp",
+  "alt":  "Flagstone map view …"
 }
 ```
 
