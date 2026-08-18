@@ -57,7 +57,7 @@ export function generateMetadata(): Metadata {
  *
  * Section order (all anchor-linked from the hamburger nav):
  *  #hero          — Hero (F-01)
- *  #work          — All deliverables (six)
+ *  #work          — All deliverables (five)
  *  #process       — Discover / Build / Ship
  *  #about         — Bio
  *  #certificates  — Credential list
@@ -106,13 +106,6 @@ export default function HomePage() {
       project: 'Ghost Code',
       href: '/work/ghost-code/',
       tags: ['Vanilla JS', 'Zero deps'],
-    },
-    {
-      stat: '0',
-      label: 'addresses stored',
-      project: 'Mutual Mesh',
-      href: '/work/mutual-mesh/',
-      tags: ['Privacy-first', 'Invite-only', 'EXIF-strip'],
     },
     {
       stat: '2.2 AA',
@@ -164,7 +157,7 @@ export default function HomePage() {
           avatarAlt="Sky Halisky"
           eyebrow="Portfolio — 2026"
           heading="An accessibility map. A multi-agent system. A web-based prompt library."
-          subhead="Six projects built, five live on the open web. Accessibility first, built for everyone."
+          subhead="Five projects built, all five live on the open web. Accessibility first, built for everyone."
           ctaLabel="See the work."
           ctaHref="#work"
         />
@@ -240,7 +233,7 @@ export default function HomePage() {
                   // their ~90px box at 375 without folding; md+ keeps p-7.
                   'group relative flex flex-col bg-surface-mid p-6 md:p-7',
                   // An odd trailing chip spans its 2-col / 3-col (lg+) row so no
-                  // bare grid cell shows through. With six chips the grid is a
+                  // bare grid cell shows through. With five chips the grid is a
                   // clean 3×2 and `odd:` self-disables on its own.
                   // UP-23: gated at min-[480px] so it cannot fire in the 1-col
                   // band. Inert today (6 chips = even), but an item spanning 2

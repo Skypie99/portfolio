@@ -117,8 +117,8 @@ export default function AboutPage() {
             </p>
             <p className="font-sans font-light text-prose text-ink-muted leading-[1.65] text-pretty">
               Right now: an accessibility map. A multi-agent system that ships real
-              commits. A local-first prompt manager. A community mesh built for
-              privacy. A command-line trainer. All of them open source.
+              commits. A local-first prompt manager. A command-line trainer.
+              All of them open source.
             </p>
           </div>
         </div>

@@ -735,6 +735,10 @@ describe.runIf(OUT_EXISTS)('Gap 8 — renamed URLs still resolve', () => {
   const MOVES = [
     { from: '/work/accessmap/', to: '/work/flagstone/' },
     { from: '/blog/building-accessmap/', to: '/blog/building-flagstone/' },
+    // Not a rename — Mutual Mesh was WITHDRAWN 2026-08-18 and has no successor
+    // page, so its old URL lands on the work index rather than 404ing. Same
+    // stub mechanism, same guard.
+    { from: '/work/mutual-mesh/', to: '/work/' },
   ];
 
   it.each(MOVES)('$from still resolves and points at $to', ({ from, to }) => {
