@@ -1,7 +1,7 @@
 [
   {
     "id": "accessmap",
-    "title": "AccessMap",
+    "title": "Flagstone",
     "summary": "Mobile app for flagging accessibility barriers — broken ramps, missing tactile paths — pinned to a real city map. Privacy-first: no tracking, no data sold.",
     "role": "Solo builder",
     "tech": [
@@ -13,11 +13,11 @@
     "year": 2026,
     "heroImage": {
       "src": "/images/deliverables/accessmap/hero.svg",
-      "alt": "Warm-toned mockup of the AccessMap mobile interface showing accessibility flags pinned to a city map"
+      "alt": "Warm-toned mockup of the Flagstone mobile interface showing accessibility flags pinned to a city map"
     },
     "heroShot": {
       "src": "/showcase/accessmap/map-overview.light.phone.webp",
-      "alt": "AccessMap's full map — severity-coloured barrier pins over street tiles of downtown Kelowna, a nearest-barrier banner up top and rounded zoom controls at the edge.",
+      "alt": "Flagstone's full map — severity-coloured barrier pins over street tiles of downtown Kelowna, a nearest-barrier banner up top and rounded zoom controls at the edge.",
       "avif": "/showcase/accessmap/map-overview.light.phone.avif",
       "webp": "/showcase/accessmap/map-overview.light.phone.webp",
       "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAwBACdASoUACsAPxF6sVEsKCSisBVaqYAiCWUAAJRfXcR0LayXH5e1NeQA/u/XyHCSMQalheBQMpfugq916K0++GpIkN7SWrFsrkiBbu5gAAAA",
@@ -30,7 +30,7 @@
     },
     "cardImage": {
       "src": "/showcase/accessmap/map-overview.light.phone.webp",
-      "alt": "AccessMap's live barrier map — severity pins over downtown Kelowna street tiles, the flag count and filter controls up top.",
+      "alt": "Flagstone's live barrier map — severity pins over downtown Kelowna street tiles, the flag count and filter controls up top.",
       "focal": "50% 30%",
       "avif": "/showcase/accessmap/map-overview.light.phone.avif",
       "webp": "/showcase/accessmap/map-overview.light.phone.webp",
@@ -50,7 +50,7 @@
     "shots": [
       {
         "src": "/showcase/accessmap/drawer-open.light.phone.webp",
-        "alt": "AccessMap's navigation drawer slid open over the dimmed home screen — frosted-glass rows for Resources, How to help, About and Settings.",
+        "alt": "Flagstone's navigation drawer slid open over the dimmed home screen — frosted-glass rows for Resources, How to help, About and Settings.",
         "caption": "The navigation drawer on spring physics — the material world in motion.",
         "focal": "50% 24%",
         "avif": "/showcase/accessmap/drawer-open.light.phone.avif",
@@ -60,7 +60,7 @@
           "mp4": "/showcase/accessmap/clips/drawer-spring.light.phone.mp4",
           "webm": "/showcase/accessmap/clips/drawer-spring.light.phone.webm",
           "poster": "/showcase/accessmap/clips/drawer-spring.light.phone-poster.avif",
-          "alt": "AccessMap's navigation drawer springing open over the home screen, resting a beat, then sliding away."
+          "alt": "Flagstone's navigation drawer springing open over the home screen, resting a beat, then sliding away."
         },
         "dark": {
           "src": "/showcase/accessmap/drawer-open.dark.phone.webp",

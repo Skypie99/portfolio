@@ -205,7 +205,7 @@ export default function AboutPage() {
           <Reveal variant="depth" className="max-w-measure-lead flex flex-col gap-8">
             <p className="font-sans font-light text-body text-ink-muted leading-[1.65] text-pretty">
               WCAG 2.2 AA on every interface. Not because it is required.
-              Because it is correct. AccessMap exists because disabled people
+              Because it is correct. Flagstone exists because disabled people
               deserve navigation tools designed for them, not adapted for them.
             </p>
             <p className="font-sans font-light text-body text-ink-muted leading-[1.65] text-pretty">

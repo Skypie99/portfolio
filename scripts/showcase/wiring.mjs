@@ -22,7 +22,7 @@ export const WIRING = [
       scene: 'map-overview',
       viewport: 'phone',
       focal: '50% 30%',
-      alt: "AccessMap's live barrier map — severity pins over downtown Kelowna street tiles, the flag count and filter controls up top.",
+      alt: "Flagstone's live barrier map — severity pins over downtown Kelowna street tiles, the flag count and filter controls up top.",
     },
     shots: [
       {
@@ -32,7 +32,7 @@ export const WIRING = [
         caption: 'The navigation drawer on spring physics — the material world in motion.',
         video: {
           clip: 'drawer-spring',
-          alt: "AccessMap's navigation drawer springing open over the home screen, resting a beat, then sliding away.",
+          alt: "Flagstone's navigation drawer springing open over the home screen, resting a beat, then sliding away.",
         },
         darkVideo: true,
       },

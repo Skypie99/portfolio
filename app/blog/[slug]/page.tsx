@@ -298,7 +298,7 @@ export default async function BlogPostPage({
               second symptom, "a hanging em-dash", is not a defect at all —
               bindSeparatorDash (lib/markdown.ts, TY-6) NBSP-welds the dash to the
               word before it precisely so a line can never START with one, and line 2
-              ending "AccessMap —" is that rule working. The one form that cures 375
+              ending "Flagstone —" is that rule working. The one form that cures 375
               (`text-step-3 sm:…`) costs a +84.3% size step across 639→640, the
               estate's first TYPOGRAPHIC `sm:` (the only two `sm:` uses today are
               layout), and a tracking mismatch: `.settle-heading` (built CSS offset

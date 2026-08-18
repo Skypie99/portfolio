@@ -22,14 +22,14 @@ vi.mock('@/lib/content', () => ({
   }),
   getFeaturedDeliverable: () => ({
     id: 'accessmap',
-    title: 'AccessMap',
+    title: 'Flagstone',
     summary: 'Privacy-respecting accessibility flagging app.',
     role: 'Solo builder',
     tech: ['Expo', 'React Native', 'Supabase', 'TypeScript'],
     year: 2026,
     heroImage: {
       src: '/images/deliverables/accessmap/hero.jpg',
-      alt: 'Warm-toned mockup of the AccessMap mobile interface',
+      alt: 'Warm-toned mockup of the Flagstone mobile interface',
     },
     tags: ['accessibility', 'mobile', 'privacy'],
     featured: true,
@@ -54,7 +54,7 @@ describe('Sidebar', () => {
     render(<Sidebar />);
     // The title appears inside the Featured slot; the heading text should be
     // visible verbatim from the mocked deliverable.
-    expect(screen.getByText('AccessMap')).toBeInTheDocument();
+    expect(screen.getByText('Flagstone')).toBeInTheDocument();
     // Featured label proves we hit the populated branch (not the "Latest" fallback).
     expect(screen.getByText(/^featured$/i)).toBeInTheDocument();
   });

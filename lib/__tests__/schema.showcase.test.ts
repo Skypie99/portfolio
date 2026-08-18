@@ -12,12 +12,12 @@ import { DeliverableSchema } from '../schema';
 
 const base = {
   id: 'accessmap',
-  title: 'AccessMap',
+  title: 'Flagstone',
   summary: 'Mobile app for flagging accessibility barriers on a real city map.',
   role: 'Solo builder',
   tech: ['Expo'],
   year: 2026,
-  heroImage: { src: '/images/deliverables/accessmap/hero.svg', alt: 'Warm mockup of the AccessMap interface' },
+  heroImage: { src: '/images/deliverables/accessmap/hero.svg', alt: 'Warm mockup of the Flagstone interface' },
   tags: ['accessibility'],
   featured: true,
 };
@@ -26,7 +26,7 @@ const themedShot = {
   src: '/showcase/accessmap/map-overview.light.phone.webp',
   avif: '/showcase/accessmap/map-overview.light.phone.avif',
   webp: '/showcase/accessmap/map-overview.light.phone.webp',
-  alt: 'The AccessMap barrier map in daylight, severity pins over street tiles',
+  alt: 'The Flagstone barrier map in daylight, severity pins over street tiles',
   dark: {
     src: '/showcase/accessmap/map-overview.dark.phone.webp',
     avif: '/showcase/accessmap/map-overview.dark.phone.avif',

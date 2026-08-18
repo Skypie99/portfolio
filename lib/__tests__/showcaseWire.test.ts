@@ -10,7 +10,7 @@ const still = (scene: string, theme: string, viewport = 'phone') => ({
   scene,
   theme: theme as 'light' | 'dark' | 'matte',
   viewport,
-  altText: 'The AccessMap barrier map, severity pins over street tiles',
+  altText: 'The Flagstone barrier map, severity pins over street tiles',
   files: {
     shipped: [
       { path: `/showcase/accessmap/${scene}.${theme}.${viewport}.avif`, bytes: 30000 },
@@ -84,12 +84,12 @@ describe('showcaseWire', () => {
     const legacy = [
       {
         id: 'accessmap',
-        title: 'AccessMap',
+        title: 'Flagstone',
         summary: 'Mobile app for flagging accessibility barriers on a real map.',
         role: 'Solo builder',
         tech: ['Expo'],
         year: 2026,
-        heroImage: { src: '/images/deliverables/accessmap/hero.svg', alt: 'Warm AccessMap mockup' },
+        heroImage: { src: '/images/deliverables/accessmap/hero.svg', alt: 'Warm Flagstone mockup' },
         tags: ['accessibility'],
         featured: true,
       },

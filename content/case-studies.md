@@ -1,6 +1,6 @@
 # Case Studies
 
-## 1. AccessMap
+## 1. Flagstone
 
 **Problem**
 I was learning to code by building a real product, which meant I needed both a use case and accountability. Disabled friends in Vancouver were frustrated: when they hit a broken ramp or missing curb cut, reporting it meant navigating the city's bureaucratic feedback forms or hoping someone in power noticed. They had to describe the problem over and over. There was no community loop—no way to signal "this is still broken" or "someone's already fixed it." I saw the gap and knew I could build a faster channel.
@@ -23,7 +23,7 @@ Launched with 3 testers. Within weeks, peer verification kicked in—people were
 ## 2. Claude Corp
 
 **Problem**
-I had built AccessMap solo, but bigger projects need more hands. I started working with collaborators and hit the wall immediately: without clear decision rights, we debated scope constantly. One person would start building while another thought we were still in design. No clear escalation path. I realized multi-agent systems need *rules*, not just good intentions.
+I had built Flagstone solo, but bigger projects need more hands. I started working with collaborators and hit the wall immediately: without clear decision rights, we debated scope constantly. One person would start building while another thought we were still in design. No clear escalation path. I realized multi-agent systems need *rules*, not just good intentions.
 
 **Process**
 I drafted a Constitution—literally, like a government document. Each role has explicit domain boundaries (design, security, testing, deployment). Morgan (the PM) routes decisions to the domain expert instead of guessing. Sky (me) holds the final call on trade-offs. The system is strict: agents can't self-approve major decisions. It sounds heavyweight, but the rules actually freed people—they knew their lanes and could move fast within them.

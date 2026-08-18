@@ -11,7 +11,7 @@ const themed = {
   src: '/showcase/accessmap/map-overview.light.phone.webp',
   avif: '/showcase/accessmap/map-overview.light.phone.avif',
   webp: '/showcase/accessmap/map-overview.light.phone.webp',
-  alt: 'The AccessMap barrier map, severity pins over street tiles',
+  alt: 'The Flagstone barrier map, severity pins over street tiles',
   dark: {
     src: '/showcase/accessmap/map-overview.dark.phone.webp',
     avif: '/showcase/accessmap/map-overview.dark.phone.avif',
@@ -22,7 +22,7 @@ const themed = {
 
 const d = (over: Partial<Deliverable>) =>
   ({
-    heroImage: { src: '/images/deliverables/accessmap/hero.svg', alt: 'Warm AccessMap mockup' },
+    heroImage: { src: '/images/deliverables/accessmap/hero.svg', alt: 'Warm Flagstone mockup' },
     ...over,
   }) as Deliverable;
 

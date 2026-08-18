@@ -8,7 +8,7 @@ import { describe, expect, it } from 'vitest';
 import { heroMedia, heroPreloadLink } from '@/lib/media';
 
 const base = {
-  heroImage: { src: '/images/deliverables/accessmap/hero.svg', alt: 'AccessMap mockup' },
+  heroImage: { src: '/images/deliverables/accessmap/hero.svg', alt: 'Flagstone mockup' },
 };
 
 describe('heroPreloadLink', () => {
@@ -18,7 +18,7 @@ describe('heroPreloadLink', () => {
       heroShot: {
         src: '/images/deliverables/accessmap/screen-map.png',
         avif: '/images/deliverables/accessmap/screen-map.avif',
-        alt: 'AccessMap map with a verified No ramp barrier',
+        alt: 'Flagstone map with a verified No ramp barrier',
       },
     });
     expect(p).toEqual({
@@ -44,7 +44,7 @@ describe('heroMedia threads the proof fields', () => {
         avif: '/images/deliverables/accessmap/screen-map.avif',
         webp: '/images/deliverables/accessmap/screen-map.webp',
         lqip: 'data:image/webp;base64,ABC',
-        alt: 'AccessMap map with a verified No ramp barrier',
+        alt: 'Flagstone map with a verified No ramp barrier',
       },
     });
     expect(m.avif).toBe('/images/deliverables/accessmap/screen-map.avif');

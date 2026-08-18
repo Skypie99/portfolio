@@ -45,7 +45,7 @@ const themed = {
     webp: '/showcase/accessmap/map.dark.phone.webp',
     lqip: 'data:image/webp;base64,DARK',
   },
-  alt: 'The AccessMap barrier map, severity pins over street tiles',
+  alt: 'The Flagstone barrier map, severity pins over street tiles',
 };
 
 describe('ThemedShowcase', () => {

@@ -27,7 +27,7 @@ import BlogIndexPage from '@/app/blog/page';
 const TWO_POSTS = [
   {
     id: 'building-accessmap',
-    title: 'Building AccessMap: A Guide to Accessibility Apps',
+    title: 'Building Flagstone: A Guide to Accessibility Apps',
     summary: 'How I built a crowdsourced accessibility mapping app.',
     publishedDate: '2026-05-30',
     tags: ['accessibility', 'expo'],
@@ -63,7 +63,7 @@ describe('BlogIndexPage', () => {
     mockGetBlogPosts.mockReturnValue(TWO_POSTS);
     render(<BlogIndexPage />);
     expect(
-      screen.getByRole('heading', { name: /building accessmap/i }),
+      screen.getByRole('heading', { name: /building flagstone/i }),
     ).toBeInTheDocument();
     expect(
       screen.getByRole('heading', { name: /second post about react native/i }),

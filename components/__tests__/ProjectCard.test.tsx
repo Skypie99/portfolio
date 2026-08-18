@@ -19,14 +19,14 @@ import type { Deliverable } from '@/lib/schema';
 
 const baseDeliverable: Deliverable = {
   id: 'accessmap',
-  title: 'AccessMap',
+  title: 'Flagstone',
   summary: 'Privacy-respecting accessibility flagging app for disabled users navigating the city.',
   role: 'Solo builder',
   tech: ['Expo', 'React Native', 'Supabase', 'TypeScript'],
   year: 2026,
   heroImage: {
     src: '/images/deliverables/accessmap/hero.jpg',
-    alt: 'Warm-toned mockup of the AccessMap mobile interface',
+    alt: 'Warm-toned mockup of the Flagstone mobile interface',
   },
   tags: ['accessibility', 'mobile', 'privacy'],
   featured: false,
@@ -46,7 +46,7 @@ describe('ProjectCard', () => {
     expect(
       screen.getByRole('heading', {
         level: 3,
-        name: /AccessMap.*Solo builder.*2026/i,
+        name: /Flagstone.*Solo builder.*2026/i,
       }),
     ).toBeInTheDocument();
 
@@ -66,7 +66,7 @@ describe('ProjectCard', () => {
     // L6-03 (SC 2.5.3 Label in Name): the CTA's accessible name now leads with
     // its visible label ("View project") — see components/ProjectCard.tsx.
     const caseStudyLink = screen.getByRole('link', {
-      name: /view project.*accessmap.*case study/i,
+      name: /view project.*flagstone.*case study/i,
     });
     // Next.js Link normalises trailing slashes in the jsdom test environment.
     expect(caseStudyLink).toHaveAttribute('href', expect.stringContaining('/work/accessmap'));
@@ -78,7 +78,7 @@ describe('ProjectCard', () => {
     // The title link's accessible name is "<title> — <role>, <year>" so
     // screen-reader users hear the same context sighted users see in the card body.
     const link = screen.getByRole('link', {
-      name: /accessmap.*solo builder.*2026/i,
+      name: /flagstone.*solo builder.*2026/i,
     });
     expect(link).toBeInTheDocument();
   });
@@ -93,7 +93,7 @@ describe('ProjectCard', () => {
     render(<ProjectCard deliverable={withDemo} />);
 
     const demoLink = screen.getByRole('link', {
-      name: /open live demo for accessmap/i,
+      name: /open live demo for flagstone/i,
     });
     expect(demoLink).toHaveAttribute('href', 'https://access-map-tau.vercel.app');
     expect(demoLink).toHaveAttribute('target', '_blank');
@@ -110,7 +110,7 @@ describe('ProjectCard', () => {
     render(<ProjectCard deliverable={withGithub} />);
 
     const githubLink = screen.getByRole('link', {
-      name: /view accessmap source on github/i,
+      name: /view flagstone source on github/i,
     });
     expect(githubLink).toHaveAttribute('href', 'https://github.com/Skypie99/AccessMap');
   });

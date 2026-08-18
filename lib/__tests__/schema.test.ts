@@ -23,12 +23,12 @@ import {
 
 const goodHeroImage = {
   src: '/images/deliverables/accessmap/hero.jpg',
-  alt: 'Warm-toned mockup of the AccessMap mobile interface',
+  alt: 'Warm-toned mockup of the Flagstone mobile interface',
 };
 
 const goodDeliverable = {
   id: 'accessmap',
-  title: 'AccessMap',
+  title: 'Flagstone',
   summary: 'A privacy-respecting accessibility-flagging app for disabled users.',
   role: 'Solo builder',
   tech: ['Expo', 'React Native', 'Supabase', 'TypeScript'],
@@ -81,7 +81,7 @@ describe('DeliverableSchema — happy path', () => {
       gallery: [
         {
           src: '/images/deliverables/accessmap/screen1.jpg',
-          alt: 'Screenshot of the map view in AccessMap',
+          alt: 'Screenshot of the map view in Flagstone',
           caption: 'The main map interface.',
         },
       ],
