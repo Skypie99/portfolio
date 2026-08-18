@@ -325,7 +325,7 @@ describe.runIf(OUT_EXISTS)('Sidebar section index tells the truth about its rout
   });
 
   it('T7 — long-form routes still leave the slot to SidebarArticleNav', () => {
-    for (const route of ['blog/building-accessmap', 'work/accessmap']) {
+    for (const route of ['blog/building-flagstone', 'work/flagstone']) {
       const html = readFileSync(join(OUT_DIR, route, 'index.html'), 'utf8');
       // The article index is read from the DOM after hydration, so the static
       // HTML carries its height reserve and no section index.

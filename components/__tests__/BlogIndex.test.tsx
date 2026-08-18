@@ -26,8 +26,8 @@ import BlogIndexPage from '@/app/blog/page';
 
 const TWO_POSTS = [
   {
-    id: 'building-accessmap',
-    title: 'Building AccessMap: A Guide to Accessibility Apps',
+    id: 'building-flagstone',
+    title: 'Building Flagstone: A Guide to Accessibility Apps',
     summary: 'How I built a crowdsourced accessibility mapping app.',
     publishedDate: '2026-05-30',
     tags: ['accessibility', 'expo'],
@@ -63,7 +63,7 @@ describe('BlogIndexPage', () => {
     mockGetBlogPosts.mockReturnValue(TWO_POSTS);
     render(<BlogIndexPage />);
     expect(
-      screen.getByRole('heading', { name: /building accessmap/i }),
+      screen.getByRole('heading', { name: /building flagstone/i }),
     ).toBeInTheDocument();
     expect(
       screen.getByRole('heading', { name: /second post about react native/i }),
@@ -86,10 +86,10 @@ describe('BlogIndexPage', () => {
     const postLinks = screen.getAllByRole('link', { name: /read more/i });
     // Two posts → two links
     expect(postLinks).toHaveLength(2);
-    // First link points to building-accessmap.
+    // First link points to building-flagstone.
     // Note: Next.js <Link> in jsdom renders the href without the trailing slash —
     // trailingSlash is a static-export build feature, not a runtime Link behaviour.
-    expect(postLinks[0]).toHaveAttribute('href', '/blog/building-accessmap');
+    expect(postLinks[0]).toHaveAttribute('href', '/blog/building-flagstone');
   });
 
   it('shows post count in the eyebrow label', () => {

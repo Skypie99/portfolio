@@ -14,7 +14,7 @@ export type DeviceFrameKind = 'phone' | 'window' | 'plate' | 'none';
 
 /** Per-project signature hue (warm golden-hour family) for the caustic + world. */
 export const SIGNATURE: Record<string, string> = {
-  'accessmap': '224 150 90', // terracotta-amber
+  'flagstone': '224 150 90', // terracotta-amber
   'claude-corp': '206 134 78', // deep amber
   'dashboard': '190 146 102', // steel-amber — the navy-and-amber dashboard's quieter light
   'prompt-library': '236 186 118', // gold
@@ -35,7 +35,7 @@ export const BLUE = '150 188 214'; // soft sky-blue
 
 /** The signature hue for a slug/category, defaulting to the warm house amber. */
 export function signatureFor(slug: string): string {
-  return SIGNATURE[slug] ?? SIGNATURE['accessmap'];
+  return SIGNATURE[slug] ?? SIGNATURE['flagstone'];
 }
 
 /**
@@ -44,7 +44,7 @@ export function signatureFor(slug: string): string {
  * deliverable slug and the short CaseStudyCard category ('ghost', 'mutual').
  */
 const FRAME_FOR_SLUG: Record<string, DeviceFrameKind> = {
-  'accessmap': 'phone',
+  'flagstone': 'phone',
   'mutual-mesh': 'phone',
   'mutual': 'phone',
   'prompt-library': 'window',

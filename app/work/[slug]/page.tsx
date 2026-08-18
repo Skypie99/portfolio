@@ -23,22 +23,22 @@ import { renderMarkdownProse } from '@/components/MarkdownProse';
 
 type RouteParams = { slug: string };
 
-type CaseStudyCategory = 'accessmap' | 'claude-corp' | 'dashboard' | 'prompt-library' | 'ghost' | 'mutual';
+type CaseStudyCategory = 'flagstone' | 'claude-corp' | 'dashboard' | 'prompt-library' | 'ghost' | 'mutual';
 
 function toCategory(id: string): CaseStudyCategory {
   const map: Record<string, CaseStudyCategory> = {
-    'accessmap': 'accessmap',
+    'flagstone': 'flagstone',
     'claude-corp': 'claude-corp',
     'dashboard': 'dashboard',
     'prompt-library': 'prompt-library',
     'ghost-code': 'ghost',
     'mutual-mesh': 'mutual',
   };
-  return map[id] ?? 'accessmap';
+  return map[id] ?? 'flagstone';
 }
 
 /**
- * AccessMapTestReceipt (T7 / SK-01) — the receipted count. The scaffold this
+ * FlagstoneTestReceipt (T7 / SK-01) — the receipted count. The scaffold this
  * replaced shipped a TKTK placeholder; it is now reconciled.
  *
  * The homepage chip's "2,900+ tests passing" is the site's biggest number, so it
@@ -52,7 +52,7 @@ function toCategory(id: string): CaseStudyCategory {
  * untouched.
  * Exported for its test; a non-reserved export the router ignores.
  */
-export function AccessMapTestReceipt() {
+export function FlagstoneTestReceipt() {
   return (
     <section className="px-gutter py-12 lg:py-16 world-surface border-t border-border-decorative">
       <div className="max-w-content mx-auto">
@@ -60,14 +60,14 @@ export function AccessMapTestReceipt() {
           2,971 tests passing
           <span aria-hidden="true"> · </span>{' '}
           <a
-            href="#accessmap-test-count-method"
+            href="#flagstone-test-count-method"
             className="link-draw text-accent-text hover:text-accent-text"
           >
             measured 2026-08-16, method
           </a>
         </p>
         <p
-          id="accessmap-test-count-method"
+          id="flagstone-test-count-method"
           className="scroll-mt-24 mt-2 max-w-measure-wide font-mono text-meta text-text-meta leading-[1.7]"
         >
           Run from a fresh clone of the public repo, not a local best case:{' '}
@@ -328,7 +328,7 @@ export default async function WorkDetailPage({
             {/* FT-3/FT-10 — the museum plate. A static mono-meta plate as a plain
                 grid sibling directly beneath the hero well (NOT inside the aspect
                 box). On phones it follows the well (order-2), above the metadata;
-                at lg it is placed at col-1/row-2 — snug beneath accessmap's 4/5
+                at lg it is placed at col-1/row-2 — snug beneath flagstone's 4/5
                 phone well. UP-31 (ui-polish 2026-08-01) corrects two claims this
                 comment used to make: the well is NOT taller than its column (560
                 vs 972.30px at 1440) and it DOES ride the sticky, so row 1 was
@@ -338,7 +338,7 @@ export default async function WorkDetailPage({
                 column spans both rows, which collapses row 1 to the well and
                 delivers the stated intent: a 48.00px gap, the grid's own
                 gap-y-12, identical to what 375 already rendered.
-                Data-gated on d.heroPlate → accessmap only; every other
+                Data-gated on d.heroPlate → flagstone only; every other
                 deliverable renders nothing here and its grid is unchanged. Mono
                 register, NEVER quotation-styled (the one pull-quote per essay
                 lives in Reflection). It seats the artifact's own severity ledger
@@ -403,7 +403,7 @@ export default async function WorkDetailPage({
                     same row), so a "·" would add a third mark in a third hue.
                     The dots are untouched — DECISIONS §P P4-UP-27-DOTS is an OPEN
                     Sky fork about the dot logic on this exact page.
-                    Renders two kickers on accessmap ONLY (schema: exactly one
+                    Renders two kickers on flagstone ONLY (schema: exactly one
                     `featured`); the other five slugs have a single visible child
                     here at lg, where contents-vs-flex is a measured no-op. */}
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
@@ -631,8 +631,8 @@ export default async function WorkDetailPage({
       {/* T7 / SK-01: the receipt door — one tap from the homepage chip's headline
           number to its proof, on the chip's own destination. Reconciled
           2026-08-16: the exact count and the command that reproduces it (see
-          AccessMapTestReceipt). AccessMap-only. */}
-      {d.id === 'accessmap' && <AccessMapTestReceipt />}
+          FlagstoneTestReceipt). Flagstone-only. */}
+      {d.id === 'flagstone' && <FlagstoneTestReceipt />}
 
       {/* In-body product shots — Show-the-work 2026-06-04. The section renders
           only once at least one shot carries real media (src or video); until

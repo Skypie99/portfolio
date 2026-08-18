@@ -9,7 +9,7 @@ import { navDirection } from '@/lib/navDirection';
 
 describe('navDirection (prefix-parent only)', () => {
   it('descends from a section into its child', () => {
-    expect(navDirection('/work/', '/work/accessmap/')).toBe('descend');
+    expect(navDirection('/work/', '/work/flagstone/')).toBe('descend');
   });
 
   it('descends from home into a section (home is the ancestor of everything)', () => {
@@ -17,27 +17,27 @@ describe('navDirection (prefix-parent only)', () => {
   });
 
   it('descends across more than one level when the ancestor line holds', () => {
-    expect(navDirection('/', '/work/accessmap/')).toBe('descend');
+    expect(navDirection('/', '/work/flagstone/')).toBe('descend');
   });
 
   it('ascends back up the same line (the breadcrumb tap)', () => {
-    expect(navDirection('/work/accessmap/', '/work/')).toBe('ascend');
+    expect(navDirection('/work/flagstone/', '/work/')).toBe('ascend');
   });
 
   it('ascends from a blog post to the blog index', () => {
-    expect(navDirection('/blog/building-accessmap/', '/blog/')).toBe('ascend');
+    expect(navDirection('/blog/building-flagstone/', '/blog/')).toBe('ascend');
   });
 
   it('returns null for equal-depth siblings (never fabricate architecture)', () => {
-    expect(navDirection('/work/accessmap/', '/work/dashboard/')).toBeNull();
+    expect(navDirection('/work/flagstone/', '/work/dashboard/')).toBeNull();
   });
 
   it('returns null for a cross-section jump', () => {
-    expect(navDirection('/work/accessmap/', '/about/')).toBeNull();
+    expect(navDirection('/work/flagstone/', '/about/')).toBeNull();
   });
 
   it('returns null for a deeper cross-section pair that shares no line', () => {
-    expect(navDirection('/blog/building-accessmap/', '/work/')).toBeNull();
+    expect(navDirection('/blog/building-flagstone/', '/work/')).toBeNull();
   });
 
   it('returns null for the identical path', () => {
@@ -45,7 +45,7 @@ describe('navDirection (prefix-parent only)', () => {
   });
 
   it('normalizes trailing slashes (dev and hand-typed hrefs may omit them)', () => {
-    expect(navDirection('/work', '/work/accessmap')).toBe('descend');
-    expect(navDirection('/work/accessmap', '/work/')).toBe('ascend');
+    expect(navDirection('/work', '/work/flagstone')).toBe('descend');
+    expect(navDirection('/work/flagstone', '/work/')).toBe('ascend');
   });
 });

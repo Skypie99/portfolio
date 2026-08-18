@@ -111,7 +111,7 @@ export function generateMetadata(): Metadata {
   const profile = getProfile();
   const siteUrl = 'https://skypistudio.com';
   const description =
-    'Sky Halisky is an AI builder crafting accessible, privacy-first tools from the Okanagan Valley, BC. Creator of AccessMap, the Prompt Library, and more.';
+    'Sky Halisky is an AI builder crafting accessible, privacy-first tools from the Okanagan Valley, BC. Creator of Flagstone, the Prompt Library, and more.';
   return {
     title: `${profile.name} — AI Portfolio`,
     description,
@@ -199,7 +199,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               url: 'https://skypistudio.com',
               jobTitle: 'AI Builder',
               description:
-                'AI builder based in the Okanagan Valley, British Columbia. Creator of AccessMap, Claude Corp, the Prompt Library, and more.',
+                'AI builder based in the Okanagan Valley, British Columbia. Creator of Flagstone, Claude Corp, the Prompt Library, and more.',
               sameAs: [
                 'https://github.com/skypie99',
                 'https://www.linkedin.com/in/skyler-halisky',

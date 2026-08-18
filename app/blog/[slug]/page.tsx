@@ -18,19 +18,19 @@ import type { BlogPost } from '@/lib/schema';
 
 type RouteParams = { slug: string };
 
-type CaseStudyCategory = 'accessmap' | 'claude-corp' | 'dashboard' | 'prompt-library' | 'ghost' | 'mutual';
+type CaseStudyCategory = 'flagstone' | 'claude-corp' | 'dashboard' | 'prompt-library' | 'ghost' | 'mutual';
 
 /** id → CaseStudyCard category (mirrors app/work/[slug]/page.tsx). */
 function toCategory(id: string): CaseStudyCategory {
   const map: Record<string, CaseStudyCategory> = {
-    'accessmap': 'accessmap',
+    'flagstone': 'flagstone',
     'claude-corp': 'claude-corp',
     'dashboard': 'dashboard',
     'prompt-library': 'prompt-library',
     'ghost-code': 'ghost',
     'mutual-mesh': 'mutual',
   };
-  return map[id] ?? 'accessmap';
+  return map[id] ?? 'flagstone';
 }
 
 /**
@@ -298,7 +298,7 @@ export default async function BlogPostPage({
               second symptom, "a hanging em-dash", is not a defect at all —
               bindSeparatorDash (lib/markdown.ts, TY-6) NBSP-welds the dash to the
               word before it precisely so a line can never START with one, and line 2
-              ending "AccessMap —" is that rule working. The one form that cures 375
+              ending "Flagstone —" is that rule working. The one form that cures 375
               (`text-step-3 sm:…`) costs a +84.3% size step across 639→640, the
               estate's first TYPOGRAPHIC `sm:` (the only two `sm:` uses today are
               layout), and a tracking mismatch: `.settle-heading` (built CSS offset

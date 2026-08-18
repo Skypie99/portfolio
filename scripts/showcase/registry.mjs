@@ -9,7 +9,7 @@
  *
  * TRUTH LAW: scenes photograph the app as it is — no fixtures, no staging.
  * SAFETY: the driver refuses any step whose target matches FORBIDDEN_TARGETS
- * (AccessMap talks to production Supabase; reads only, always).
+ * (Flagstone talks to production Supabase; reads only, always).
  */
 
 import { execFileSync } from 'node:child_process';
@@ -74,15 +74,21 @@ export const git = (repo, ...args) =>
  */
 export const PROJECTS = [
   {
-    slug: 'accessmap',
-    title: 'AccessMap',
+    slug: 'flagstone',
+    title: 'Flagstone',
     priority: 1,
     repo: '/Users/skypie/AccessMap',
     source: {
       kind: 'worktree',
-      ref: 'shipready/3-polish-submission',
-      sha: '5ab3f0c', // Sky-pinned 2026-07-31
-      fallback: { ref: 'main', sha: '512494a', drops: ['terms'], note: 'proven export route' },
+      // Repinned 2026-08-17 for the Flagstone rename. The previous pin
+      // (shipready/3-polish-submission @ 5ab3f0c, Sky-pinned 2026-07-31)
+      // predates the rename — it has zero 'Flagstone' strings in src/, so
+      // rebuilding from it reproduces the old AccessMap wordmark in every
+      // shot that shows the drawer. main @ 8cdd643 carries the merged rename
+      // (46 src files) and is what the live demo serves.
+      ref: 'main',
+      sha: '8cdd643',
+      fallback: { ref: 'shipready/3-polish-submission', sha: '5ab3f0c', drops: ['terms'], note: 'pre-rename pin — old wordmark; last resort only' },
     },
     build: {
       kind: 'expo-export',
@@ -116,7 +122,7 @@ export const PROJECTS = [
         ],
         ship: true,
         shipKind: 'hero',
-        alt: "AccessMap's full map — severity-coloured barrier pins over street tiles of downtown Kelowna, a nearest-barrier banner up top and rounded zoom controls at the edge.",
+        alt: "Flagstone's full map — severity-coloured barrier pins over street tiles of downtown Kelowna, a nearest-barrier banner up top and rounded zoom controls at the edge.",
       },
       {
         id: 'drawer-open',
@@ -125,7 +131,7 @@ export const PROJECTS = [
         nav: [{ clickLabel: 'Open navigation menu' }, { wait: 800 }],
         ship: true,
         shipKind: 'shot',
-        alt: "AccessMap's navigation drawer slid open over the dimmed home screen — frosted-glass rows for Resources, How to help, About and Settings.",
+        alt: "Flagstone's navigation drawer slid open over the dimmed home screen — frosted-glass rows for Resources, How to help, About and Settings.",
       },
       {
         id: 'nearby-flags-sheet',
@@ -189,7 +195,7 @@ export const PROJECTS = [
         nav: [{ clickLabel: 'Open navigation menu' }, { wait: 800 }, { clickText: 'Settings' }, { wait: 1400 }],
         ship: true,
         shipKind: 'shot',
-        alt: "AccessMap's Appearance setting — a three-segment Light, Dark, System control with the active segment raised: the app documenting its own theming.",
+        alt: "Flagstone's Appearance setting — a three-segment Light, Dark, System control with the active segment raised: the app documenting its own theming.",
       },
       {
         id: 'terms',
@@ -224,7 +230,7 @@ export const PROJECTS = [
         ],
         targetS: 4,
         posterAt: 1.2,
-        alt: "AccessMap's navigation drawer springing open over the home screen, resting a beat, then sliding away.",
+        alt: "Flagstone's navigation drawer springing open over the home screen, resting a beat, then sliding away.",
       },
       {
         id: 'map-browse',
@@ -242,7 +248,7 @@ export const PROJECTS = [
         ],
         targetS: 6,
         posterAt: 'end',
-        alt: 'Panning across the AccessMap barrier map and zooming in — severity pins holding their place over the streets.',
+        alt: 'Panning across the Flagstone barrier map and zooming in — severity pins holding their place over the streets.',
       },
       {
         id: 'report-walk',
@@ -283,7 +289,7 @@ export const PROJECTS = [
         ],
         targetS: 5,
         posterAt: 0.5,
-        alt: "AccessMap's Appearance control flipping the whole app dark and back to light, every surface re-theming in place.",
+        alt: "Flagstone's Appearance control flipping the whole app dark and back to light, every surface re-theming in place.",
       },
     ],
     // Registry rows the web cannot prove — recorded honestly, never attempted:

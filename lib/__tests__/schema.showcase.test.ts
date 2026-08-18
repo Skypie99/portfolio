@@ -11,39 +11,39 @@ import { DeliverableSchema } from '../schema';
  */
 
 const base = {
-  id: 'accessmap',
-  title: 'AccessMap',
+  id: 'flagstone',
+  title: 'Flagstone',
   summary: 'Mobile app for flagging accessibility barriers on a real city map.',
   role: 'Solo builder',
   tech: ['Expo'],
   year: 2026,
-  heroImage: { src: '/images/deliverables/accessmap/hero.svg', alt: 'Warm mockup of the AccessMap interface' },
+  heroImage: { src: '/images/deliverables/flagstone/hero.svg', alt: 'Warm mockup of the Flagstone interface' },
   tags: ['accessibility'],
   featured: true,
 };
 
 const themedShot = {
-  src: '/showcase/accessmap/map-overview.light.phone.webp',
-  avif: '/showcase/accessmap/map-overview.light.phone.avif',
-  webp: '/showcase/accessmap/map-overview.light.phone.webp',
-  alt: 'The AccessMap barrier map in daylight, severity pins over street tiles',
+  src: '/showcase/flagstone/map-overview.light.phone.webp',
+  avif: '/showcase/flagstone/map-overview.light.phone.avif',
+  webp: '/showcase/flagstone/map-overview.light.phone.webp',
+  alt: 'The Flagstone barrier map in daylight, severity pins over street tiles',
   dark: {
-    src: '/showcase/accessmap/map-overview.dark.phone.webp',
-    avif: '/showcase/accessmap/map-overview.dark.phone.avif',
-    webp: '/showcase/accessmap/map-overview.dark.phone.webp',
+    src: '/showcase/flagstone/map-overview.dark.phone.webp',
+    avif: '/showcase/flagstone/map-overview.dark.phone.avif',
+    webp: '/showcase/flagstone/map-overview.dark.phone.webp',
   },
 };
 
 describe('themed showcase schema', () => {
   it('accepts a themed shot with a /showcase/ dark twin', () => {
     const parsed = DeliverableSchema.parse({ ...base, heroShot: themedShot });
-    expect(parsed.heroShot?.dark?.avif).toBe('/showcase/accessmap/map-overview.dark.phone.avif');
+    expect(parsed.heroShot?.dark?.avif).toBe('/showcase/flagstone/map-overview.dark.phone.avif');
   });
 
   it('accepts the legacy /images/deliverables/ tree in the same fields', () => {
     const parsed = DeliverableSchema.parse({
       ...base,
-      heroShot: { ...themedShot, src: '/images/deliverables/accessmap/screen-map.png', avif: undefined, webp: undefined, dark: undefined },
+      heroShot: { ...themedShot, src: '/images/deliverables/flagstone/screen-map.png', avif: undefined, webp: undefined, dark: undefined },
     });
     expect(parsed.heroShot?.src).toContain('/images/deliverables/');
   });

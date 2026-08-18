@@ -1,6 +1,6 @@
 {
   "schema": "showcase-manifest/1",
-  "generatedAt": "2026-08-01",
+  "generatedAt": "2026-08-18",
   "factory": {
     "script": "scripts/capture-showcase.mjs",
     "engine": "playwright-core 1.61.1 / chromium-1228 (Chromium — Safari/WebKit stays a device gate)",
@@ -19,11 +19,11 @@
       "notes": [],
       "bankedAt": "2026-07-31"
     },
-    "accessmap": {
-      "slug": "accessmap",
+    "flagstone": {
+      "slug": "flagstone",
       "repo": "/Users/skypie/AccessMap",
-      "projectBranch": "shipready/3-polish-submission",
-      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "main",
+      "projectSha": "8cdd64371be674fd3aa8db6d22132f4803f13f11",
       "shaDecision": "sky-pinned",
       "determinism": "structural",
       "bankOnly": false,
@@ -32,7 +32,7 @@
         "report submission end-state"
       ],
       "notes": [],
-      "bankedAt": "2026-07-31"
+      "bankedAt": "2026-08-18"
     },
     "prompt-library": {
       "slug": "prompt-library",
@@ -88,878 +88,6 @@
     }
   },
   "captures": [
-    {
-      "project": "accessmap",
-      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
-      "projectBranch": "shipready/3-polish-submission",
-      "scene": "clip:drawer-spring",
-      "capturedAt": "2026-07-31",
-      "theme": "dark",
-      "viewport": "phone",
-      "route": "/",
-      "altText": "AccessMap's navigation drawer springing open over the home screen, resting a beat, then sliding away.",
-      "determinism": "structural",
-      "flags": [],
-      "files": {
-        "master": {
-          "path": "masters/accessmap/clips/drawer-spring.dark.phone.raw.webm",
-          "sha256": "4718562bf8a5b2e8da44ad4cdab6d719bfabcc64987192c1f2ec5b3378f7b880",
-          "bytes": 311312
-        }
-      },
-      "clip": {
-        "id": "drawer-spring",
-        "durationS": 3.6,
-        "trim": {
-          "rawStartS": 2.1
-        },
-        "mp4": {
-          "path": "/showcase/accessmap/clips/drawer-spring.dark.phone.mp4",
-          "bytes": 78583
-        },
-        "webm": {
-          "path": "/showcase/accessmap/clips/drawer-spring.dark.phone.webm",
-          "bytes": 92970
-        },
-        "webmDropReason": null,
-        "posters": [
-          {
-            "path": "/showcase/accessmap/clips/drawer-spring.dark.phone-poster.avif",
-            "bytes": 7476
-          },
-          {
-            "path": "/showcase/accessmap/clips/drawer-spring.dark.phone-poster.webp",
-            "bytes": 8960
-          },
-          {
-            "path": "/showcase/accessmap/clips/drawer-spring.dark.phone-poster.jpg",
-            "bytes": 11023
-          }
-        ],
-        "needsCaptions": true
-      }
-    },
-    {
-      "project": "accessmap",
-      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
-      "projectBranch": "shipready/3-polish-submission",
-      "scene": "clip:drawer-spring",
-      "capturedAt": "2026-07-31",
-      "theme": "light",
-      "viewport": "phone",
-      "route": "/",
-      "altText": "AccessMap's navigation drawer springing open over the home screen, resting a beat, then sliding away.",
-      "determinism": "structural",
-      "flags": [],
-      "files": {
-        "master": {
-          "path": "masters/accessmap/clips/drawer-spring.light.phone.raw.webm",
-          "sha256": "852783568312e03e43130ec2e398a94f4db1386bf369bd4f0f55bc4439b38725",
-          "bytes": 317304
-        }
-      },
-      "clip": {
-        "id": "drawer-spring",
-        "durationS": 3.6,
-        "trim": {
-          "rawStartS": 2.1
-        },
-        "mp4": {
-          "path": "/showcase/accessmap/clips/drawer-spring.light.phone.mp4",
-          "bytes": 89275
-        },
-        "webm": {
-          "path": "/showcase/accessmap/clips/drawer-spring.light.phone.webm",
-          "bytes": 88768
-        },
-        "webmDropReason": null,
-        "posters": [
-          {
-            "path": "/showcase/accessmap/clips/drawer-spring.light.phone-poster.avif",
-            "bytes": 7869
-          },
-          {
-            "path": "/showcase/accessmap/clips/drawer-spring.light.phone-poster.webp",
-            "bytes": 10100
-          },
-          {
-            "path": "/showcase/accessmap/clips/drawer-spring.light.phone-poster.jpg",
-            "bytes": 12355
-          }
-        ],
-        "needsCaptions": true
-      }
-    },
-    {
-      "project": "accessmap",
-      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
-      "projectBranch": "shipready/3-polish-submission",
-      "scene": "clip:map-browse",
-      "capturedAt": "2026-07-31",
-      "theme": "dark",
-      "viewport": "phone",
-      "route": "/",
-      "altText": "Panning across the AccessMap barrier map and zooming in — severity pins holding their place over the streets.",
-      "determinism": "structural",
-      "flags": [],
-      "files": {
-        "master": {
-          "path": "masters/accessmap/clips/map-browse.dark.phone.raw.webm",
-          "sha256": "b9d84f257b634e5e4c8c9b254297c43f6634fb37e438defbe13c4792625d4734",
-          "bytes": 1073766
-        }
-      },
-      "clip": {
-        "id": "map-browse",
-        "durationS": 5.1,
-        "trim": {
-          "rawStartS": 9.7
-        },
-        "mp4": {
-          "path": "/showcase/accessmap/clips/map-browse.dark.phone.mp4",
-          "bytes": 163939
-        },
-        "webm": {
-          "path": "/showcase/accessmap/clips/map-browse.dark.phone.webm",
-          "bytes": 167270
-        },
-        "webmDropReason": null,
-        "posters": [
-          {
-            "path": "/showcase/accessmap/clips/map-browse.dark.phone-poster.avif",
-            "bytes": 22476
-          },
-          {
-            "path": "/showcase/accessmap/clips/map-browse.dark.phone-poster.webp",
-            "bytes": 25924
-          },
-          {
-            "path": "/showcase/accessmap/clips/map-browse.dark.phone-poster.jpg",
-            "bytes": 27433
-          }
-        ],
-        "needsCaptions": true
-      }
-    },
-    {
-      "project": "accessmap",
-      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
-      "projectBranch": "shipready/3-polish-submission",
-      "scene": "clip:map-browse",
-      "capturedAt": "2026-07-31",
-      "theme": "light",
-      "viewport": "phone",
-      "route": "/",
-      "altText": "Panning across the AccessMap barrier map and zooming in — severity pins holding their place over the streets.",
-      "determinism": "structural",
-      "flags": [],
-      "files": {
-        "master": {
-          "path": "masters/accessmap/clips/map-browse.light.phone.raw.webm",
-          "sha256": "899cd337cad578a46ca21797fc9ad713419d327089d97d001e1917cd3cbfd2f4",
-          "bytes": 1090027
-        }
-      },
-      "clip": {
-        "id": "map-browse",
-        "durationS": 5.3,
-        "trim": {
-          "rawStartS": 9.5
-        },
-        "mp4": {
-          "path": "/showcase/accessmap/clips/map-browse.light.phone.mp4",
-          "bytes": 196093
-        },
-        "webm": {
-          "path": "/showcase/accessmap/clips/map-browse.light.phone.webm",
-          "bytes": 209147
-        },
-        "webmDropReason": null,
-        "posters": [
-          {
-            "path": "/showcase/accessmap/clips/map-browse.light.phone-poster.avif",
-            "bytes": 28064
-          },
-          {
-            "path": "/showcase/accessmap/clips/map-browse.light.phone-poster.webp",
-            "bytes": 31078
-          },
-          {
-            "path": "/showcase/accessmap/clips/map-browse.light.phone-poster.jpg",
-            "bytes": 30726
-          }
-        ],
-        "needsCaptions": true
-      }
-    },
-    {
-      "project": "accessmap",
-      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
-      "projectBranch": "shipready/3-polish-submission",
-      "scene": "clip:report-walk",
-      "capturedAt": "2026-07-31",
-      "theme": "light",
-      "viewport": "phone",
-      "route": "/",
-      "altText": "Opening the Report a barrier flow, choosing Blocked path and severity 4 — stopping at the ready-to-send form.",
-      "determinism": "structural",
-      "flags": [
-        "submission NEEDS-DEVICE"
-      ],
-      "files": {
-        "master": {
-          "path": "masters/accessmap/clips/report-walk.light.phone.raw.webm",
-          "sha256": "74d9596588470c2db8e62179a061bee82afd516462671bb30b5420c6fbd81f58",
-          "bytes": 436168
-        }
-      },
-      "clip": {
-        "id": "report-walk",
-        "durationS": 6.2,
-        "trim": {
-          "rawStartS": 4.6
-        },
-        "mp4": {
-          "path": "/showcase/accessmap/clips/report-walk.light.phone.mp4",
-          "bytes": 92847
-        },
-        "webm": {
-          "path": "/showcase/accessmap/clips/report-walk.light.phone.webm",
-          "bytes": 94256
-        },
-        "webmDropReason": null,
-        "posters": [
-          {
-            "path": "/showcase/accessmap/clips/report-walk.light.phone-poster.avif",
-            "bytes": 21869
-          },
-          {
-            "path": "/showcase/accessmap/clips/report-walk.light.phone-poster.webp",
-            "bytes": 21384
-          },
-          {
-            "path": "/showcase/accessmap/clips/report-walk.light.phone-poster.jpg",
-            "bytes": 26164
-          }
-        ],
-        "needsCaptions": true
-      }
-    },
-    {
-      "project": "accessmap",
-      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
-      "projectBranch": "shipready/3-polish-submission",
-      "scene": "clip:theme-flip",
-      "capturedAt": "2026-07-31",
-      "theme": "light",
-      "viewport": "phone",
-      "route": "/",
-      "altText": "AccessMap's Appearance control flipping the whole app dark and back to light, every surface re-theming in place.",
-      "determinism": "structural",
-      "flags": [],
-      "files": {
-        "master": {
-          "path": "masters/accessmap/clips/theme-flip.light.phone.raw.webm",
-          "sha256": "568a8d2ce8f76d643775bad8e03d60d0bd573da52a6242fff03ffa637a2f0b08",
-          "bytes": 383956
-        }
-      },
-      "clip": {
-        "id": "theme-flip",
-        "durationS": 4.1,
-        "trim": {
-          "rawStartS": 3.3
-        },
-        "mp4": {
-          "path": "/showcase/accessmap/clips/theme-flip.light.phone.mp4",
-          "bytes": 56634
-        },
-        "webm": {
-          "path": "/showcase/accessmap/clips/theme-flip.light.phone.webm",
-          "bytes": 61389
-        },
-        "webmDropReason": null,
-        "posters": [
-          {
-            "path": "/showcase/accessmap/clips/theme-flip.light.phone-poster.avif",
-            "bytes": 15063
-          },
-          {
-            "path": "/showcase/accessmap/clips/theme-flip.light.phone-poster.webp",
-            "bytes": 21532
-          },
-          {
-            "path": "/showcase/accessmap/clips/theme-flip.light.phone-poster.jpg",
-            "bytes": 24903
-          }
-        ],
-        "needsCaptions": true
-      }
-    },
-    {
-      "project": "accessmap",
-      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
-      "projectBranch": "shipready/3-polish-submission",
-      "scene": "drawer-open",
-      "capturedAt": "2026-07-31",
-      "theme": "dark",
-      "viewport": "phone",
-      "route": "/",
-      "altText": "AccessMap's navigation drawer slid open over the dimmed home screen — frosted-glass rows for Resources, How to help, About and Settings.",
-      "determinism": "structural",
-      "flags": [],
-      "files": {
-        "master": {
-          "path": "masters/accessmap/drawer-open.dark.phone.png",
-          "sha256": "a9421a8176a5417fd9376057bddc7c73901880bc7f793b938a702fe0996fd8b3",
-          "bytes": 191294,
-          "width": 780,
-          "height": 1688
-        },
-        "shipped": [
-          {
-            "path": "/showcase/accessmap/drawer-open.dark.phone.avif",
-            "bytes": 9408,
-            "quality": 52
-          },
-          {
-            "path": "/showcase/accessmap/drawer-open.dark.phone.webp",
-            "bytes": 20798
-          }
-        ],
-        "lqip": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAAAQAwCdASoUACsAPxGEulcsKCWkpWgBgCIJZwAALKezlywA/u8NwIAHTI4jhMnZO6iFkcO4fYkIOflkcAA="
-      }
-    },
-    {
-      "project": "accessmap",
-      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
-      "projectBranch": "shipready/3-polish-submission",
-      "scene": "drawer-open",
-      "capturedAt": "2026-07-31",
-      "theme": "light",
-      "viewport": "phone",
-      "route": "/",
-      "altText": "AccessMap's navigation drawer slid open over the dimmed home screen — frosted-glass rows for Resources, How to help, About and Settings.",
-      "determinism": "structural",
-      "flags": [],
-      "files": {
-        "master": {
-          "path": "masters/accessmap/drawer-open.light.phone.png",
-          "sha256": "f6dce2722fe59566db7656c6e65239371627bd0efa61bb8528ff8882cfbd734a",
-          "bytes": 227173,
-          "width": 780,
-          "height": 1688
-        },
-        "shipped": [
-          {
-            "path": "/showcase/accessmap/drawer-open.light.phone.avif",
-            "bytes": 10616,
-            "quality": 52
-          },
-          {
-            "path": "/showcase/accessmap/drawer-open.light.phone.webp",
-            "bytes": 22652
-          }
-        ],
-        "lqip": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADQBACdASoUACsAPxF0r1AsJyQitVQIAYAiCWcA0bwLGZmS0skTc73/wxCzp9iYAAD+303oTVXQ57Om3+HurWwi+eYCaYC63SvzVSD4MjnD5nuJ1WXzAAAA"
-      }
-    },
-    {
-      "project": "accessmap",
-      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
-      "projectBranch": "shipready/3-polish-submission",
-      "scene": "guest-profile",
-      "capturedAt": "2026-07-31",
-      "theme": "dark",
-      "viewport": "phone",
-      "route": "/",
-      "altText": "The signed-out Profile screen — an editorial header, a sign-in invitation card, and contribution stats held as quiet placeholders.",
-      "determinism": "structural",
-      "flags": [],
-      "files": {
-        "master": {
-          "path": "masters/accessmap/guest-profile.dark.phone.png",
-          "sha256": "fe60cbec4a250e61e8b31acfdc2fe61501782dedd627774b0ae0ed8460426d52",
-          "bytes": 746016,
-          "width": 780,
-          "height": 1688
-        }
-      }
-    },
-    {
-      "project": "accessmap",
-      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
-      "projectBranch": "shipready/3-polish-submission",
-      "scene": "guest-profile",
-      "capturedAt": "2026-07-31",
-      "theme": "light",
-      "viewport": "phone",
-      "route": "/",
-      "altText": "The signed-out Profile screen — an editorial header, a sign-in invitation card, and contribution stats held as quiet placeholders.",
-      "determinism": "structural",
-      "flags": [],
-      "files": {
-        "master": {
-          "path": "masters/accessmap/guest-profile.light.phone.png",
-          "sha256": "2f0d4f2ee947e34a90773423ba290f63523ff9b07e2d9a976994289ebe143612",
-          "bytes": 1026685,
-          "width": 780,
-          "height": 1688
-        }
-      }
-    },
-    {
-      "project": "accessmap",
-      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
-      "projectBranch": "shipready/3-polish-submission",
-      "scene": "map-overview",
-      "capturedAt": "2026-07-31",
-      "theme": "dark",
-      "viewport": "desktop",
-      "route": "/",
-      "altText": "AccessMap's full map — severity-coloured barrier pins over street tiles of downtown Kelowna, a nearest-barrier banner up top and rounded zoom controls at the edge.",
-      "determinism": "structural",
-      "flags": [],
-      "files": {
-        "master": {
-          "path": "masters/accessmap/map-overview.dark.desktop.png",
-          "sha256": "912722a5051c5680c7c9889742c79ababde1d929be0b7e1fc8ec7bac991bb710",
-          "bytes": 879837,
-          "width": 2880,
-          "height": 1800
-        },
-        "shipped": [
-          {
-            "path": "/showcase/accessmap/map-overview.dark.desktop.avif",
-            "bytes": 28494,
-            "quality": 52
-          },
-          {
-            "path": "/showcase/accessmap/map-overview.dark.desktop.webp",
-            "bytes": 47528
-          }
-        ],
-        "lqip": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAACwAgCdASoUAA0APxFysVC/pqSisAgD8CIJZwAAeyAA/u9fulQznVZ/m5c3F10QHzH0vAAA"
-      }
-    },
-    {
-      "project": "accessmap",
-      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
-      "projectBranch": "shipready/3-polish-submission",
-      "scene": "map-overview",
-      "capturedAt": "2026-07-31",
-      "theme": "dark",
-      "viewport": "phone",
-      "route": "/",
-      "altText": "AccessMap's full map — severity-coloured barrier pins over street tiles of downtown Kelowna, a nearest-barrier banner up top and rounded zoom controls at the edge.",
-      "determinism": "structural",
-      "flags": [],
-      "files": {
-        "master": {
-          "path": "masters/accessmap/map-overview.dark.phone.png",
-          "sha256": "283fa2aab87bbc5161f516cf1ac52c217e70b4f9217f44779b04584c5d62cdbe",
-          "bytes": 322609,
-          "width": 780,
-          "height": 1688
-        },
-        "shipped": [
-          {
-            "path": "/showcase/accessmap/map-overview.dark.phone.avif",
-            "bytes": 46087,
-            "quality": 52
-          },
-          {
-            "path": "/showcase/accessmap/map-overview.dark.phone.webp",
-            "bytes": 70314
-          }
-        ],
-        "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAACwBACdASoUACsAPwFurFArJqQisA1RYCAJY2hwXMYT/rSVh6g9kx6tfLUlwMYAAP7vpmaTBcxq86PT7eO3cX2vWNxA6algNxXN6Mvr5G4adSz4b1O2fYNmdtX/gYAmMgb/WSWgAAA="
-      }
-    },
-    {
-      "project": "accessmap",
-      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
-      "projectBranch": "shipready/3-polish-submission",
-      "scene": "map-overview",
-      "capturedAt": "2026-07-31",
-      "theme": "light",
-      "viewport": "desktop",
-      "route": "/",
-      "altText": "AccessMap's full map — severity-coloured barrier pins over street tiles of downtown Kelowna, a nearest-barrier banner up top and rounded zoom controls at the edge.",
-      "determinism": "structural",
-      "flags": [],
-      "files": {
-        "master": {
-          "path": "masters/accessmap/map-overview.light.desktop.png",
-          "sha256": "b50498dacdf00d5cb9480095d446db75d87ddb0336983cb36974d3b2e5f2f6ea",
-          "bytes": 1396377,
-          "width": 2880,
-          "height": 1800
-        },
-        "shipped": [
-          {
-            "path": "/showcase/accessmap/map-overview.light.desktop.avif",
-            "bytes": 40930,
-            "quality": 52
-          },
-          {
-            "path": "/showcase/accessmap/map-overview.light.desktop.webp",
-            "bytes": 64120
-          }
-        ],
-        "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAAAwAwCdASoUAA0APxF0sFC4pqSisAgDECIJZwAAetEx8bdAAP7uzdt/KunrxpUBdcvAAA=="
-      }
-    },
-    {
-      "project": "accessmap",
-      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
-      "projectBranch": "shipready/3-polish-submission",
-      "scene": "map-overview",
-      "capturedAt": "2026-07-31",
-      "theme": "light",
-      "viewport": "phone",
-      "route": "/",
-      "altText": "AccessMap's full map — severity-coloured barrier pins over street tiles of downtown Kelowna, a nearest-barrier banner up top and rounded zoom controls at the edge.",
-      "determinism": "structural",
-      "flags": [],
-      "files": {
-        "master": {
-          "path": "masters/accessmap/map-overview.light.phone.png",
-          "sha256": "457b8fc76219e60d832936cdc5c871afc8a4fadfc4a48ca419923b0de4e73fdb",
-          "bytes": 474372,
-          "width": 780,
-          "height": 1688
-        },
-        "shipped": [
-          {
-            "path": "/showcase/accessmap/map-overview.light.phone.avif",
-            "bytes": 51187,
-            "quality": 52
-          },
-          {
-            "path": "/showcase/accessmap/map-overview.light.phone.webp",
-            "bytes": 79880
-          }
-        ],
-        "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAwBACdASoUACsAPxF6sVEsKCSisBVaqYAiCWUAAJRfXcR0LayXH5e1NeQA/u/XyHCSMQalheBQMpfugq916K0++GpIkN7SWrFsrkiBbu5gAAAA"
-      }
-    },
-    {
-      "project": "accessmap",
-      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
-      "projectBranch": "shipready/3-polish-submission",
-      "scene": "nearby-flags-sheet",
-      "capturedAt": "2026-07-31",
-      "theme": "dark",
-      "viewport": "phone",
-      "route": "/",
-      "altText": "The Nearby flags sheet raised over the map — grabber bar on top, then barrier cards carrying severity out of 5, status and distance.",
-      "determinism": "structural",
-      "flags": [],
-      "files": {
-        "master": {
-          "path": "masters/accessmap/nearby-flags-sheet.dark.phone.png",
-          "sha256": "4d11ce633a9b1ff9208d82e7fc5ce9f80d56693e37c3c09dbf4983e1d5fee470",
-          "bytes": 137914,
-          "width": 780,
-          "height": 1688
-        },
-        "shipped": [
-          {
-            "path": "/showcase/accessmap/nearby-flags-sheet.dark.phone.avif",
-            "bytes": 24782,
-            "quality": 52
-          },
-          {
-            "path": "/showcase/accessmap/nearby-flags-sheet.dark.phone.webp",
-            "bytes": 49300
-          }
-        ],
-        "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQBACdASoUACsAPxGAtFWsJ6SjJWsxgCIJZwDSrAtucieMl3cpXyYXEAD+2ORkvVRtJndFN+L3oWj5ISWeqCxGU5oqGpfU5pinAdlAAAA="
-      }
-    },
-    {
-      "project": "accessmap",
-      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
-      "projectBranch": "shipready/3-polish-submission",
-      "scene": "nearby-flags-sheet",
-      "capturedAt": "2026-07-31",
-      "theme": "light",
-      "viewport": "phone",
-      "route": "/",
-      "altText": "The Nearby flags sheet raised over the map — grabber bar on top, then barrier cards carrying severity out of 5, status and distance.",
-      "determinism": "structural",
-      "flags": [],
-      "files": {
-        "master": {
-          "path": "masters/accessmap/nearby-flags-sheet.light.phone.png",
-          "sha256": "b9b03ee21bab96e7c6d1f94d1a9073d89522e9c2cfb2b0cb27e0799d156631fb",
-          "bytes": 132782,
-          "width": 780,
-          "height": 1688
-        },
-        "shipped": [
-          {
-            "path": "/showcase/accessmap/nearby-flags-sheet.light.phone.avif",
-            "bytes": 25805,
-            "quality": 52
-          },
-          {
-            "path": "/showcase/accessmap/nearby-flags-sheet.light.phone.webp",
-            "bytes": 49252
-          }
-        ],
-        "lqip": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAABQBACdASoUACsAPxF6slKsJ6SipW5hgCIJZwDSrAt2cDno3svzKkOFbZZAAP7qdsffgs2H36/EcHpCy5AKWOoAtV17MYxVv94HLIetWfYhozqt6/nEQAAA"
-      }
-    },
-    {
-      "project": "accessmap",
-      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
-      "projectBranch": "shipready/3-polish-submission",
-      "scene": "report-composed",
-      "capturedAt": "2026-07-31",
-      "theme": "dark",
-      "viewport": "phone",
-      "route": "/",
-      "altText": "The Report a barrier sheet fully composed — Blocked path chosen, severity 4 set, a one-line description in place, and the Submit button lit but deliberately unpressed.",
-      "determinism": "structural",
-      "flags": [],
-      "files": {
-        "master": {
-          "path": "masters/accessmap/report-composed.dark.phone.png",
-          "sha256": "77daa210f27e35bfa6b658cfadcc3d2928c39047e0e1eeae8065895d8425f3c8",
-          "bytes": 224710,
-          "width": 780,
-          "height": 1688
-        },
-        "shipped": [
-          {
-            "path": "/showcase/accessmap/report-composed.dark.phone.avif",
-            "bytes": 29671,
-            "quality": 52
-          },
-          {
-            "path": "/showcase/accessmap/report-composed.dark.phone.webp",
-            "bytes": 58546
-          }
-        ],
-        "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAABQBQCdASoUACsAPvVop1AqpqOiurmYAVAeiUAQXKEVyv9k1huoZlScTF3a0qwQNruNsgAA/vDJ2K9sRWNP84dzhPE6PfjH64Lb6s5UokB3k/RJfK3oRm3mZyPlLmO2ghAdN1uwKEJUDuhcjFnA6iCyx+AAAA=="
-      }
-    },
-    {
-      "project": "accessmap",
-      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
-      "projectBranch": "shipready/3-polish-submission",
-      "scene": "report-composed",
-      "capturedAt": "2026-07-31",
-      "theme": "light",
-      "viewport": "phone",
-      "route": "/",
-      "altText": "The Report a barrier sheet fully composed — Blocked path chosen, severity 4 set, a one-line description in place, and the Submit button lit but deliberately unpressed.",
-      "determinism": "structural",
-      "flags": [],
-      "files": {
-        "master": {
-          "path": "masters/accessmap/report-composed.light.phone.png",
-          "sha256": "6fffb6abb807ddc2c14d476e4cd812676a308f60d770a01ddcbacd3365bf32da",
-          "bytes": 262735,
-          "width": 780,
-          "height": 1688
-        },
-        "shipped": [
-          {
-            "path": "/showcase/accessmap/report-composed.light.phone.avif",
-            "bytes": 33587,
-            "quality": 52
-          },
-          {
-            "path": "/showcase/accessmap/report-composed.light.phone.webp",
-            "bytes": 61532
-          }
-        ],
-        "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAACwBACdASoUACsAPw1wrVAsJqQitVQMAYAhiUAZ+4yv7JOFbrFHMCwuIxrmmAyUANxlZ1/ynJiBM3ZLd0ZURXNpuwG2Xtefg2HNST18mLQ0zHPD6aMlaDQJfa51//molIgGvPAeui67GFo7YK4Hf0LdQAA="
-      }
-    },
-    {
-      "project": "accessmap",
-      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
-      "projectBranch": "shipready/3-polish-submission",
-      "scene": "settings-appearance",
-      "capturedAt": "2026-07-31",
-      "theme": "dark",
-      "viewport": "phone",
-      "route": "/",
-      "altText": "AccessMap's Appearance setting — a three-segment Light, Dark, System control with the active segment raised: the app documenting its own theming.",
-      "determinism": "structural",
-      "flags": [],
-      "files": {
-        "master": {
-          "path": "masters/accessmap/settings-appearance.dark.phone.png",
-          "sha256": "1e8f80269b2967a87074aeda7a7eff1b61a1da8eaa0e4e18196ae8860b985477",
-          "bytes": 625141,
-          "width": 780,
-          "height": 1688
-        },
-        "shipped": [
-          {
-            "path": "/showcase/accessmap/settings-appearance.dark.phone.avif",
-            "bytes": 24729,
-            "quality": 52
-          },
-          {
-            "path": "/showcase/accessmap/settings-appearance.dark.phone.webp",
-            "bytes": 48092
-          }
-        ],
-        "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAwBQCdASoUACsAPxF+sVQsKCQjKrgKAYAiCWcAyJgLNsl91sZNrCmQuRKnTDPv8RYQgAD+0MGoQNHCjOGojKbSZt8WPRxSdduOLzHIdXLYO7PKqJGV8V469suB8gfO1y/gmDOwAAA="
-      }
-    },
-    {
-      "project": "accessmap",
-      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
-      "projectBranch": "shipready/3-polish-submission",
-      "scene": "settings-appearance",
-      "capturedAt": "2026-07-31",
-      "theme": "light",
-      "viewport": "phone",
-      "route": "/",
-      "altText": "AccessMap's Appearance setting — a three-segment Light, Dark, System control with the active segment raised: the app documenting its own theming.",
-      "determinism": "structural",
-      "flags": [],
-      "files": {
-        "master": {
-          "path": "masters/accessmap/settings-appearance.light.phone.png",
-          "sha256": "1d9d2560a76463167ef42390e1579a3248882b8d2d2310f06dfc26af905ae770",
-          "bytes": 680652,
-          "width": 780,
-          "height": 1688
-        },
-        "shipped": [
-          {
-            "path": "/showcase/accessmap/settings-appearance.light.phone.avif",
-            "bytes": 24556,
-            "quality": 52
-          },
-          {
-            "path": "/showcase/accessmap/settings-appearance.light.phone.webp",
-            "bytes": 46790
-          }
-        ],
-        "lqip": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAACwAwCdASoUACsAPxF8s1QsJ6QjJWzJgCIJZwDN/At1omzkeDgL4AD+xw1WD2OKvESK8jzW1vF5hd5v4oT7Qyr9N5IDh/rGgx1NOBlzgbsAAA=="
-      }
-    },
-    {
-      "project": "accessmap",
-      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
-      "projectBranch": "shipready/3-polish-submission",
-      "scene": "tasks",
-      "capturedAt": "2026-07-31",
-      "theme": "dark",
-      "viewport": "phone",
-      "route": "/",
-      "altText": "The Tasks screen — open barrier reports as frosted-glass rows with category icon, severity, status pill and age, under the filter controls.",
-      "determinism": "structural",
-      "flags": [],
-      "files": {
-        "master": {
-          "path": "masters/accessmap/tasks.dark.phone.png",
-          "sha256": "f051239d511ac434e51d57071825c766aa33f4be502a792226519f0951c0280b",
-          "bytes": 401763,
-          "width": 780,
-          "height": 1688
-        },
-        "shipped": [
-          {
-            "path": "/showcase/accessmap/tasks.dark.phone.avif",
-            "bytes": 33651,
-            "quality": 52
-          },
-          {
-            "path": "/showcase/accessmap/tasks.dark.phone.webp",
-            "bytes": 60564
-          }
-        ],
-        "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAAAQBQCdASoUACsAPwVsqFArpiiisA1RcCCJYwC7M22DSwvZAJexBplJOc8Wq1ZCmk6IAP7c484DrNcP6adtKLm5K6/TVLSjL+Ua/qWHlci/xiFvRdtqRH8bXyG+IJtEc0CZfvzPf7qM18wJggqoDfWplDUZ+F73igB3aktNAAA="
-      }
-    },
-    {
-      "project": "accessmap",
-      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
-      "projectBranch": "shipready/3-polish-submission",
-      "scene": "tasks",
-      "capturedAt": "2026-07-31",
-      "theme": "light",
-      "viewport": "phone",
-      "route": "/",
-      "altText": "The Tasks screen — open barrier reports as frosted-glass rows with category icon, severity, status pill and age, under the filter controls.",
-      "determinism": "structural",
-      "flags": [],
-      "files": {
-        "master": {
-          "path": "masters/accessmap/tasks.light.phone.png",
-          "sha256": "8d9f23103bda46f2c77faabb1a1cc250572811dc0022d687d9167bdc01cff1b4",
-          "bytes": 426043,
-          "width": 780,
-          "height": 1688
-        },
-        "shipped": [
-          {
-            "path": "/showcase/accessmap/tasks.light.phone.avif",
-            "bytes": 33206,
-            "quality": 52
-          },
-          {
-            "path": "/showcase/accessmap/tasks.light.phone.webp",
-            "bytes": 61854
-          }
-        ],
-        "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAAAQBQCdASoUACsAPxF8sVEsKCSjsBqoAYAiCWMAx+Q6aUJPeKmsv2tub8YGxT8+IUwAAP7n7MNy/nsUZpRpMnUhsyq8gmJOXggEfCMHLMTRwd2/k87aJl8JhfxkaeuVXLcEwd4thSw85/YZfEDpMM9qTsugAA=="
-      }
-    },
-    {
-      "project": "accessmap",
-      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
-      "projectBranch": "shipready/3-polish-submission",
-      "scene": "terms",
-      "capturedAt": "2026-07-31",
-      "theme": "dark",
-      "viewport": "phone",
-      "route": "/",
-      "altText": "The Terms and Community Guidelines sheet — plain-language sections set in the editorial type, scrollable as a full page sheet.",
-      "determinism": "structural",
-      "flags": [],
-      "files": {
-        "master": {
-          "path": "masters/accessmap/terms.dark.phone.png",
-          "sha256": "4f9d17f85d9f480ec22dd7db09423f9addbb834aa1ea072b5a641698f7939805",
-          "bytes": 976244,
-          "width": 780,
-          "height": 1688
-        }
-      }
-    },
-    {
-      "project": "accessmap",
-      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
-      "projectBranch": "shipready/3-polish-submission",
-      "scene": "terms",
-      "capturedAt": "2026-07-31",
-      "theme": "light",
-      "viewport": "phone",
-      "route": "/",
-      "altText": "The Terms and Community Guidelines sheet — plain-language sections set in the editorial type, scrollable as a full page sheet.",
-      "determinism": "structural",
-      "flags": [],
-      "files": {
-        "master": {
-          "path": "masters/accessmap/terms.light.phone.png",
-          "sha256": "8e6860949215b6ccd7db13ae0b519a44afe66ef366a8701b88f863e368845385",
-          "bytes": 1244584,
-          "width": 780,
-          "height": 1688
-        }
-      }
-    },
     {
       "project": "claude-corp",
       "projectSha": "7e961a3357a0db6bdb652fa3127be0b398dec95f",
@@ -1726,6 +854,878 @@
           }
         ],
         "lqip": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAAAwAwCdASoUACsAPxGAuFYsJ6UjpWmZgCIJaQDR+BEM0ASgAP7u7rcM0J9JVMJhU14yoejndOzo0r//CsGQsgAA"
+      }
+    },
+    {
+      "project": "flagstone",
+      "projectSha": "8cdd64371be674fd3aa8db6d22132f4803f13f11",
+      "projectBranch": "main",
+      "scene": "clip:drawer-spring",
+      "capturedAt": "2026-08-18",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "Flagstone's navigation drawer springing open over the home screen, resting a beat, then sliding away.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/flagstone/clips/drawer-spring.dark.phone.raw.webm",
+          "sha256": "83c8021088fde83c8540a4fece2809f9628513a0eb44ccd62f6e06efb4af9752",
+          "bytes": 286209
+        }
+      },
+      "clip": {
+        "id": "drawer-spring",
+        "durationS": 3.6,
+        "trim": {
+          "rawStartS": 2.5
+        },
+        "mp4": {
+          "path": "/showcase/flagstone/clips/drawer-spring.dark.phone.mp4",
+          "bytes": 46490
+        },
+        "webm": {
+          "path": "/showcase/flagstone/clips/drawer-spring.dark.phone.webm",
+          "bytes": 56692
+        },
+        "webmDropReason": null,
+        "posters": [
+          {
+            "path": "/showcase/flagstone/clips/drawer-spring.dark.phone-poster.avif",
+            "bytes": 7158
+          },
+          {
+            "path": "/showcase/flagstone/clips/drawer-spring.dark.phone-poster.webp",
+            "bytes": 8654
+          },
+          {
+            "path": "/showcase/flagstone/clips/drawer-spring.dark.phone-poster.jpg",
+            "bytes": 10638
+          }
+        ],
+        "needsCaptions": true
+      }
+    },
+    {
+      "project": "flagstone",
+      "projectSha": "8cdd64371be674fd3aa8db6d22132f4803f13f11",
+      "projectBranch": "main",
+      "scene": "clip:drawer-spring",
+      "capturedAt": "2026-08-18",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "Flagstone's navigation drawer springing open over the home screen, resting a beat, then sliding away.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/flagstone/clips/drawer-spring.light.phone.raw.webm",
+          "sha256": "a505a44e031850a1cf8c55da49fe032f48fbfc337388a418411e0ce9e091cf30",
+          "bytes": 270038
+        }
+      },
+      "clip": {
+        "id": "drawer-spring",
+        "durationS": 3.6,
+        "trim": {
+          "rawStartS": 2.3
+        },
+        "mp4": {
+          "path": "/showcase/flagstone/clips/drawer-spring.light.phone.mp4",
+          "bytes": 68866
+        },
+        "webm": {
+          "path": "/showcase/flagstone/clips/drawer-spring.light.phone.webm",
+          "bytes": 75355
+        },
+        "webmDropReason": null,
+        "posters": [
+          {
+            "path": "/showcase/flagstone/clips/drawer-spring.light.phone-poster.avif",
+            "bytes": 8175
+          },
+          {
+            "path": "/showcase/flagstone/clips/drawer-spring.light.phone-poster.webp",
+            "bytes": 9582
+          },
+          {
+            "path": "/showcase/flagstone/clips/drawer-spring.light.phone-poster.jpg",
+            "bytes": 11572
+          }
+        ],
+        "needsCaptions": true
+      }
+    },
+    {
+      "project": "flagstone",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "clip:map-browse",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "Panning across the Flagstone barrier map and zooming in — severity pins holding their place over the streets.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/clips/map-browse.dark.phone.raw.webm",
+          "sha256": "b9d84f257b634e5e4c8c9b254297c43f6634fb37e438defbe13c4792625d4734",
+          "bytes": 1073766
+        }
+      },
+      "clip": {
+        "id": "map-browse",
+        "durationS": 5.1,
+        "trim": {
+          "rawStartS": 9.7
+        },
+        "mp4": {
+          "path": "/showcase/flagstone/clips/map-browse.dark.phone.mp4",
+          "bytes": 163939
+        },
+        "webm": {
+          "path": "/showcase/flagstone/clips/map-browse.dark.phone.webm",
+          "bytes": 167270
+        },
+        "webmDropReason": null,
+        "posters": [
+          {
+            "path": "/showcase/flagstone/clips/map-browse.dark.phone-poster.avif",
+            "bytes": 22476
+          },
+          {
+            "path": "/showcase/flagstone/clips/map-browse.dark.phone-poster.webp",
+            "bytes": 25924
+          },
+          {
+            "path": "/showcase/flagstone/clips/map-browse.dark.phone-poster.jpg",
+            "bytes": 27433
+          }
+        ],
+        "needsCaptions": true
+      }
+    },
+    {
+      "project": "flagstone",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "clip:map-browse",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "Panning across the Flagstone barrier map and zooming in — severity pins holding their place over the streets.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/clips/map-browse.light.phone.raw.webm",
+          "sha256": "899cd337cad578a46ca21797fc9ad713419d327089d97d001e1917cd3cbfd2f4",
+          "bytes": 1090027
+        }
+      },
+      "clip": {
+        "id": "map-browse",
+        "durationS": 5.3,
+        "trim": {
+          "rawStartS": 9.5
+        },
+        "mp4": {
+          "path": "/showcase/flagstone/clips/map-browse.light.phone.mp4",
+          "bytes": 196093
+        },
+        "webm": {
+          "path": "/showcase/flagstone/clips/map-browse.light.phone.webm",
+          "bytes": 209147
+        },
+        "webmDropReason": null,
+        "posters": [
+          {
+            "path": "/showcase/flagstone/clips/map-browse.light.phone-poster.avif",
+            "bytes": 28064
+          },
+          {
+            "path": "/showcase/flagstone/clips/map-browse.light.phone-poster.webp",
+            "bytes": 31078
+          },
+          {
+            "path": "/showcase/flagstone/clips/map-browse.light.phone-poster.jpg",
+            "bytes": 30726
+          }
+        ],
+        "needsCaptions": true
+      }
+    },
+    {
+      "project": "flagstone",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "clip:report-walk",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "Opening the Report a barrier flow, choosing Blocked path and severity 4 — stopping at the ready-to-send form.",
+      "determinism": "structural",
+      "flags": [
+        "submission NEEDS-DEVICE"
+      ],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/clips/report-walk.light.phone.raw.webm",
+          "sha256": "74d9596588470c2db8e62179a061bee82afd516462671bb30b5420c6fbd81f58",
+          "bytes": 436168
+        }
+      },
+      "clip": {
+        "id": "report-walk",
+        "durationS": 6.2,
+        "trim": {
+          "rawStartS": 4.6
+        },
+        "mp4": {
+          "path": "/showcase/flagstone/clips/report-walk.light.phone.mp4",
+          "bytes": 92847
+        },
+        "webm": {
+          "path": "/showcase/flagstone/clips/report-walk.light.phone.webm",
+          "bytes": 94256
+        },
+        "webmDropReason": null,
+        "posters": [
+          {
+            "path": "/showcase/flagstone/clips/report-walk.light.phone-poster.avif",
+            "bytes": 21869
+          },
+          {
+            "path": "/showcase/flagstone/clips/report-walk.light.phone-poster.webp",
+            "bytes": 21384
+          },
+          {
+            "path": "/showcase/flagstone/clips/report-walk.light.phone-poster.jpg",
+            "bytes": 26164
+          }
+        ],
+        "needsCaptions": true
+      }
+    },
+    {
+      "project": "flagstone",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "clip:theme-flip",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "Flagstone's Appearance control flipping the whole app dark and back to light, every surface re-theming in place.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/clips/theme-flip.light.phone.raw.webm",
+          "sha256": "568a8d2ce8f76d643775bad8e03d60d0bd573da52a6242fff03ffa637a2f0b08",
+          "bytes": 383956
+        }
+      },
+      "clip": {
+        "id": "theme-flip",
+        "durationS": 4.1,
+        "trim": {
+          "rawStartS": 3.3
+        },
+        "mp4": {
+          "path": "/showcase/flagstone/clips/theme-flip.light.phone.mp4",
+          "bytes": 56634
+        },
+        "webm": {
+          "path": "/showcase/flagstone/clips/theme-flip.light.phone.webm",
+          "bytes": 61389
+        },
+        "webmDropReason": null,
+        "posters": [
+          {
+            "path": "/showcase/flagstone/clips/theme-flip.light.phone-poster.avif",
+            "bytes": 15063
+          },
+          {
+            "path": "/showcase/flagstone/clips/theme-flip.light.phone-poster.webp",
+            "bytes": 21532
+          },
+          {
+            "path": "/showcase/flagstone/clips/theme-flip.light.phone-poster.jpg",
+            "bytes": 24903
+          }
+        ],
+        "needsCaptions": true
+      }
+    },
+    {
+      "project": "flagstone",
+      "projectSha": "8cdd64371be674fd3aa8db6d22132f4803f13f11",
+      "projectBranch": "main",
+      "scene": "drawer-open",
+      "capturedAt": "2026-08-18",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "Flagstone's navigation drawer slid open over the dimmed home screen — frosted-glass rows for Resources, How to help, About and Settings.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/flagstone/drawer-open.dark.phone.png",
+          "sha256": "aba9741af9802919ad4d3ca7fc4a0a1a6402c8501f005a379fd17a658f849d84",
+          "bytes": 232102,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/flagstone/drawer-open.dark.phone.avif",
+            "bytes": 9080,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/flagstone/drawer-open.dark.phone.webp",
+            "bytes": 20316
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAABQAwCdASoUACsAPxGEtVasKCSjpWmZgCIJZwDJiBBZPqGcAAD+7w3AgAdL3HxBkqpXi1SQ42I+MTQu1sWzfQAA"
+      }
+    },
+    {
+      "project": "flagstone",
+      "projectSha": "8cdd64371be674fd3aa8db6d22132f4803f13f11",
+      "projectBranch": "main",
+      "scene": "drawer-open",
+      "capturedAt": "2026-08-18",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "Flagstone's navigation drawer slid open over the dimmed home screen — frosted-glass rows for Resources, How to help, About and Settings.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/flagstone/drawer-open.light.phone.png",
+          "sha256": "d44a00b1a911c4bad6227db784d12732baf2cce78ad7380e97fce94531c3a906",
+          "bytes": 275886,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/flagstone/drawer-open.light.phone.avif",
+            "bytes": 9987,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/flagstone/drawer-open.light.phone.webp",
+            "bytes": 21642
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAACQBACdASoUACsAPwFwrVArJySitVv4AWAgCWcA0bwhPregxtBWjzfBRPQX4AAA/udmVmggYyezTPh7oVuvtaUXdnird3u626rXPEZy6oYLAlNV+uNgAA=="
+      }
+    },
+    {
+      "project": "flagstone",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "guest-profile",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The signed-out Profile screen — an editorial header, a sign-in invitation card, and contribution stats held as quiet placeholders.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/guest-profile.dark.phone.png",
+          "sha256": "fe60cbec4a250e61e8b31acfdc2fe61501782dedd627774b0ae0ed8460426d52",
+          "bytes": 746016,
+          "width": 780,
+          "height": 1688
+        }
+      }
+    },
+    {
+      "project": "flagstone",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "guest-profile",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The signed-out Profile screen — an editorial header, a sign-in invitation card, and contribution stats held as quiet placeholders.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/guest-profile.light.phone.png",
+          "sha256": "2f0d4f2ee947e34a90773423ba290f63523ff9b07e2d9a976994289ebe143612",
+          "bytes": 1026685,
+          "width": 780,
+          "height": 1688
+        }
+      }
+    },
+    {
+      "project": "flagstone",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "map-overview",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "Flagstone's full map — severity-coloured barrier pins over street tiles of downtown Kelowna, a nearest-barrier banner up top and rounded zoom controls at the edge.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/map-overview.dark.desktop.png",
+          "sha256": "912722a5051c5680c7c9889742c79ababde1d929be0b7e1fc8ec7bac991bb710",
+          "bytes": 879837,
+          "width": 2880,
+          "height": 1800
+        },
+        "shipped": [
+          {
+            "path": "/showcase/flagstone/map-overview.dark.desktop.avif",
+            "bytes": 28494,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/flagstone/map-overview.dark.desktop.webp",
+            "bytes": 47528
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAACwAgCdASoUAA0APxFysVC/pqSisAgD8CIJZwAAeyAA/u9fulQznVZ/m5c3F10QHzH0vAAA"
+      }
+    },
+    {
+      "project": "flagstone",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "map-overview",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "Flagstone's full map — severity-coloured barrier pins over street tiles of downtown Kelowna, a nearest-barrier banner up top and rounded zoom controls at the edge.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/map-overview.dark.phone.png",
+          "sha256": "283fa2aab87bbc5161f516cf1ac52c217e70b4f9217f44779b04584c5d62cdbe",
+          "bytes": 322609,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/flagstone/map-overview.dark.phone.avif",
+            "bytes": 46087,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/flagstone/map-overview.dark.phone.webp",
+            "bytes": 70314
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAACwBACdASoUACsAPwFurFArJqQisA1RYCAJY2hwXMYT/rSVh6g9kx6tfLUlwMYAAP7vpmaTBcxq86PT7eO3cX2vWNxA6algNxXN6Mvr5G4adSz4b1O2fYNmdtX/gYAmMgb/WSWgAAA="
+      }
+    },
+    {
+      "project": "flagstone",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "map-overview",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "Flagstone's full map — severity-coloured barrier pins over street tiles of downtown Kelowna, a nearest-barrier banner up top and rounded zoom controls at the edge.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/map-overview.light.desktop.png",
+          "sha256": "b50498dacdf00d5cb9480095d446db75d87ddb0336983cb36974d3b2e5f2f6ea",
+          "bytes": 1396377,
+          "width": 2880,
+          "height": 1800
+        },
+        "shipped": [
+          {
+            "path": "/showcase/flagstone/map-overview.light.desktop.avif",
+            "bytes": 40930,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/flagstone/map-overview.light.desktop.webp",
+            "bytes": 64120
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAAAwAwCdASoUAA0APxF0sFC4pqSisAgDECIJZwAAetEx8bdAAP7uzdt/KunrxpUBdcvAAA=="
+      }
+    },
+    {
+      "project": "flagstone",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "map-overview",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "Flagstone's full map — severity-coloured barrier pins over street tiles of downtown Kelowna, a nearest-barrier banner up top and rounded zoom controls at the edge.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/map-overview.light.phone.png",
+          "sha256": "457b8fc76219e60d832936cdc5c871afc8a4fadfc4a48ca419923b0de4e73fdb",
+          "bytes": 474372,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/flagstone/map-overview.light.phone.avif",
+            "bytes": 51187,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/flagstone/map-overview.light.phone.webp",
+            "bytes": 79880
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAwBACdASoUACsAPxF6sVEsKCSisBVaqYAiCWUAAJRfXcR0LayXH5e1NeQA/u/XyHCSMQalheBQMpfugq916K0++GpIkN7SWrFsrkiBbu5gAAAA"
+      }
+    },
+    {
+      "project": "flagstone",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "nearby-flags-sheet",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The Nearby flags sheet raised over the map — grabber bar on top, then barrier cards carrying severity out of 5, status and distance.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/nearby-flags-sheet.dark.phone.png",
+          "sha256": "4d11ce633a9b1ff9208d82e7fc5ce9f80d56693e37c3c09dbf4983e1d5fee470",
+          "bytes": 137914,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/flagstone/nearby-flags-sheet.dark.phone.avif",
+            "bytes": 24782,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/flagstone/nearby-flags-sheet.dark.phone.webp",
+            "bytes": 49300
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQBACdASoUACsAPxGAtFWsJ6SjJWsxgCIJZwDSrAtucieMl3cpXyYXEAD+2ORkvVRtJndFN+L3oWj5ISWeqCxGU5oqGpfU5pinAdlAAAA="
+      }
+    },
+    {
+      "project": "flagstone",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "nearby-flags-sheet",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The Nearby flags sheet raised over the map — grabber bar on top, then barrier cards carrying severity out of 5, status and distance.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/nearby-flags-sheet.light.phone.png",
+          "sha256": "b9b03ee21bab96e7c6d1f94d1a9073d89522e9c2cfb2b0cb27e0799d156631fb",
+          "bytes": 132782,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/flagstone/nearby-flags-sheet.light.phone.avif",
+            "bytes": 25805,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/flagstone/nearby-flags-sheet.light.phone.webp",
+            "bytes": 49252
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAABQBACdASoUACsAPxF6slKsJ6SipW5hgCIJZwDSrAt2cDno3svzKkOFbZZAAP7qdsffgs2H36/EcHpCy5AKWOoAtV17MYxVv94HLIetWfYhozqt6/nEQAAA"
+      }
+    },
+    {
+      "project": "flagstone",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "report-composed",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The Report a barrier sheet fully composed — Blocked path chosen, severity 4 set, a one-line description in place, and the Submit button lit but deliberately unpressed.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/report-composed.dark.phone.png",
+          "sha256": "77daa210f27e35bfa6b658cfadcc3d2928c39047e0e1eeae8065895d8425f3c8",
+          "bytes": 224710,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/flagstone/report-composed.dark.phone.avif",
+            "bytes": 29671,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/flagstone/report-composed.dark.phone.webp",
+            "bytes": 58546
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAABQBQCdASoUACsAPvVop1AqpqOiurmYAVAeiUAQXKEVyv9k1huoZlScTF3a0qwQNruNsgAA/vDJ2K9sRWNP84dzhPE6PfjH64Lb6s5UokB3k/RJfK3oRm3mZyPlLmO2ghAdN1uwKEJUDuhcjFnA6iCyx+AAAA=="
+      }
+    },
+    {
+      "project": "flagstone",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "report-composed",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The Report a barrier sheet fully composed — Blocked path chosen, severity 4 set, a one-line description in place, and the Submit button lit but deliberately unpressed.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/report-composed.light.phone.png",
+          "sha256": "6fffb6abb807ddc2c14d476e4cd812676a308f60d770a01ddcbacd3365bf32da",
+          "bytes": 262735,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/flagstone/report-composed.light.phone.avif",
+            "bytes": 33587,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/flagstone/report-composed.light.phone.webp",
+            "bytes": 61532
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAACwBACdASoUACsAPw1wrVAsJqQitVQMAYAhiUAZ+4yv7JOFbrFHMCwuIxrmmAyUANxlZ1/ynJiBM3ZLd0ZURXNpuwG2Xtefg2HNST18mLQ0zHPD6aMlaDQJfa51//molIgGvPAeui67GFo7YK4Hf0LdQAA="
+      }
+    },
+    {
+      "project": "flagstone",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "settings-appearance",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "Flagstone's Appearance setting — a three-segment Light, Dark, System control with the active segment raised: the app documenting its own theming.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/settings-appearance.dark.phone.png",
+          "sha256": "1e8f80269b2967a87074aeda7a7eff1b61a1da8eaa0e4e18196ae8860b985477",
+          "bytes": 625141,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/flagstone/settings-appearance.dark.phone.avif",
+            "bytes": 24729,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/flagstone/settings-appearance.dark.phone.webp",
+            "bytes": 48092
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAwBQCdASoUACsAPxF+sVQsKCQjKrgKAYAiCWcAyJgLNsl91sZNrCmQuRKnTDPv8RYQgAD+0MGoQNHCjOGojKbSZt8WPRxSdduOLzHIdXLYO7PKqJGV8V469suB8gfO1y/gmDOwAAA="
+      }
+    },
+    {
+      "project": "flagstone",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "settings-appearance",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "Flagstone's Appearance setting — a three-segment Light, Dark, System control with the active segment raised: the app documenting its own theming.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/settings-appearance.light.phone.png",
+          "sha256": "1d9d2560a76463167ef42390e1579a3248882b8d2d2310f06dfc26af905ae770",
+          "bytes": 680652,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/flagstone/settings-appearance.light.phone.avif",
+            "bytes": 24556,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/flagstone/settings-appearance.light.phone.webp",
+            "bytes": 46790
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAACwAwCdASoUACsAPxF8s1QsJ6QjJWzJgCIJZwDN/At1omzkeDgL4AD+xw1WD2OKvESK8jzW1vF5hd5v4oT7Qyr9N5IDh/rGgx1NOBlzgbsAAA=="
+      }
+    },
+    {
+      "project": "flagstone",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "tasks",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The Tasks screen — open barrier reports as frosted-glass rows with category icon, severity, status pill and age, under the filter controls.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/tasks.dark.phone.png",
+          "sha256": "f051239d511ac434e51d57071825c766aa33f4be502a792226519f0951c0280b",
+          "bytes": 401763,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/flagstone/tasks.dark.phone.avif",
+            "bytes": 33651,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/flagstone/tasks.dark.phone.webp",
+            "bytes": 60564
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAAAQBQCdASoUACsAPwVsqFArpiiisA1RcCCJYwC7M22DSwvZAJexBplJOc8Wq1ZCmk6IAP7c484DrNcP6adtKLm5K6/TVLSjL+Ua/qWHlci/xiFvRdtqRH8bXyG+IJtEc0CZfvzPf7qM18wJggqoDfWplDUZ+F73igB3aktNAAA="
+      }
+    },
+    {
+      "project": "flagstone",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "tasks",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The Tasks screen — open barrier reports as frosted-glass rows with category icon, severity, status pill and age, under the filter controls.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/tasks.light.phone.png",
+          "sha256": "8d9f23103bda46f2c77faabb1a1cc250572811dc0022d687d9167bdc01cff1b4",
+          "bytes": 426043,
+          "width": 780,
+          "height": 1688
+        },
+        "shipped": [
+          {
+            "path": "/showcase/flagstone/tasks.light.phone.avif",
+            "bytes": 33206,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/flagstone/tasks.light.phone.webp",
+            "bytes": 61854
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAAAQBQCdASoUACsAPxF8sVEsKCSjsBqoAYAiCWMAx+Q6aUJPeKmsv2tub8YGxT8+IUwAAP7n7MNy/nsUZpRpMnUhsyq8gmJOXggEfCMHLMTRwd2/k87aJl8JhfxkaeuVXLcEwd4thSw85/YZfEDpMM9qTsugAA=="
+      }
+    },
+    {
+      "project": "flagstone",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "terms",
+      "capturedAt": "2026-07-31",
+      "theme": "dark",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The Terms and Community Guidelines sheet — plain-language sections set in the editorial type, scrollable as a full page sheet.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/terms.dark.phone.png",
+          "sha256": "4f9d17f85d9f480ec22dd7db09423f9addbb834aa1ea072b5a641698f7939805",
+          "bytes": 976244,
+          "width": 780,
+          "height": 1688
+        }
+      }
+    },
+    {
+      "project": "flagstone",
+      "projectSha": "5ab3f0c4103035973e08919db4d079adb8780a82",
+      "projectBranch": "shipready/3-polish-submission",
+      "scene": "terms",
+      "capturedAt": "2026-07-31",
+      "theme": "light",
+      "viewport": "phone",
+      "route": "/",
+      "altText": "The Terms and Community Guidelines sheet — plain-language sections set in the editorial type, scrollable as a full page sheet.",
+      "determinism": "structural",
+      "flags": [],
+      "files": {
+        "master": {
+          "path": "masters/accessmap/terms.light.phone.png",
+          "sha256": "8e6860949215b6ccd7db13ae0b519a44afe66ef366a8701b88f863e368845385",
+          "bytes": 1244584,
+          "width": 780,
+          "height": 1688
+        }
       }
     },
     {
@@ -2600,13 +2600,13 @@
       "files": 140,
       "stillAvifMB": 1.39,
       "stillFallbackMB": 2.32,
-      "clipMp4MB": 0.69,
-      "clipWebmMB": 0.75,
+      "clipMp4MB": 0.64,
+      "clipWebmMB": 0.7,
       "posterMB": 0.42
     },
     "maxStillAvifKB": 50,
     "maxClipMp4KB": 191,
-    "treeTotalMB": 5.57,
+    "treeTotalMB": 5.64,
     "targetMB": 8,
     "hardCapMB": 10,
     "withinTarget": true,

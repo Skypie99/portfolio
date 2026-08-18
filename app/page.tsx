@@ -37,7 +37,7 @@ import { OG_CARD } from '@/lib/og';
 export function generateMetadata(): Metadata {
   const profile = getProfile();
   const description =
-    'Sky Halisky is an AI builder crafting accessible, privacy-first tools from the Okanagan Valley, BC. Creator of AccessMap, the Prompt Library, and more.';
+    'Sky Halisky is an AI builder crafting accessible, privacy-first tools from the Okanagan Valley, BC. Creator of Flagstone, the Prompt Library, and more.';
   return {
     openGraph: {
       type: 'website',
@@ -82,8 +82,8 @@ export default function HomePage() {
     {
       stat: '2,900+',
       label: 'tests passing',
-      project: 'AccessMap',
-      href: '/work/accessmap/',
+      project: 'Flagstone',
+      href: '/work/flagstone/',
       tags: ['Mobile', 'WCAG AA', 'Open source'],
     },
     {
