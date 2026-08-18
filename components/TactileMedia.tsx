@@ -5,9 +5,15 @@ import type { ImgHTMLAttributes } from 'react';
 import { cn } from '@/lib/cn';
 import { useParallax } from '@/lib/motion';
 
-/** Lowercase `fetchpriority` — React 18.3 renders the camelCase prop verbatim +
- *  warns; the lowercase HTML attribute is correct + warning-free (see L7-02). */
-const HIGH_FETCH_PRIORITY = { fetchpriority: 'high' } as unknown as ImgHTMLAttributes<HTMLImageElement>;
+/** camelCase `fetchPriority`. The older note here claimed the reverse — that
+ *  lowercase was the warning-free form — and it was wrong on React 18.3.1:
+ *  the lowercase prop is what triggers "Invalid DOM property `fetchpriority`.
+ *  Did you mean `fetchPriority`?" in the console, and 18.3 is the release that
+ *  added that warning to nudge toward React 19. Verified by loading the page:
+ *  camelCase renders `fetchPriority="high"` (HTML attributes are matched
+ *  case-insensitively, so the preload scanner still reads it) and the console
+ *  is clean. Its own types accept it, so the cast is gone too. (L7-02) */
+const HIGH_FETCH_PRIORITY = { fetchPriority: 'high' } as ImgHTMLAttributes<HTMLImageElement>;
 
 type TactileMediaProps = {
   src: string;

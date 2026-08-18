@@ -12,8 +12,8 @@ Useful forms:
 
 ```bash
 node scripts/capture-showcase.mjs --dry                       # print the job plan, touch nothing
-node scripts/capture-showcase.mjs --project accessmap         # one project
-node scripts/capture-showcase.mjs --project accessmap --scene map-overview
+node scripts/capture-showcase.mjs --project flagstone         # one project
+node scripts/capture-showcase.mjs --project flagstone --scene map-overview
 node scripts/capture-showcase.mjs --resume                    # reuse existing masters, re-encode + re-bank
 node scripts/capture-showcase.mjs --verify                    # run 2 → determinism diff + receipt
 node scripts/og-cards.mjs                                     # re-cut the dark 1200×630 unfurl JPGs
@@ -46,7 +46,7 @@ npm run build`). Nothing else — paths in deliverables.json are stable.
 - Dirty or mid-train repos build from disposable worktrees (node_modules
   arrives as an APFS clonefile copy — Metro resolves by realpath, symlinks
   break it); `.env` is copied byte-for-byte, chmod 600, removed at teardown.
-- Never `expo start --web` for AccessMap — `expo export` is the lucide-safe
+- Never `expo start --web` for Flagstone — `expo export` is the lucide-safe
   route. Never a non-demo Dashboard build (it reads private state); the
   factory captures the live public demo instead.
 - Budgets are hard: stills ≤150 KB AVIF (whale guard exits non-zero), clips

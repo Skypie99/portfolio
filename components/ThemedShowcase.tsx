@@ -92,7 +92,7 @@ function VariantLayer({ variant, theme, alt, fit, position, eager, sizes, imgRef
       height={800}
       loading="lazy"
       decoding="async"
-      {...(eager ? ({ fetchpriority: 'high' } as Record<string, string>) : {})}
+      {...(eager ? { fetchPriority: 'high' as const } : {})}
       style={position ? { objectPosition: position } : undefined}
       className={cn('absolute inset-0 h-full w-full', fitClass)}
     />

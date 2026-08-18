@@ -130,9 +130,11 @@ const DEPTH: Record<ProductRevealContext, number> = { hero: 0.06, card: 0.04, sh
 
 /** Lowercase `fetchpriority` for the eager hero <img> (L7-02). React 18.3 renders
  *  the camelCase `fetchPriority` prop verbatim + logs a dev warning; the lowercase
- *  HTML attribute is correct, warning-free, and lands in the SSR HTML where the
- *  browser's preload scanner reads it. */
-const HIGH_FETCH_PRIORITY = { fetchpriority: 'high' } as unknown as ImgHTMLAttributes<HTMLImageElement>;
+ *  attribute lands in the SSR HTML where the browser's preload scanner reads it.
+ *  Corrected 2026-08-17: the form that is warning-free on React 18.3.1 is the
+ *  camelCase one — lowercase is what React warns about. Verified in the console,
+ *  not assumed. */
+const HIGH_FETCH_PRIORITY = { fetchPriority: 'high' } as ImgHTMLAttributes<HTMLImageElement>;
 
 const FRAME_PLACEMENT: Record<Exclude<DeviceFrameKind, 'none'>, string> = {
   phone: 'absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2',

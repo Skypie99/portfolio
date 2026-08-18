@@ -7,11 +7,11 @@ Fill in the four GitHub URLs before sending.
 
 You are working on the portfolio site at ~/Portfolio/ on branch `feature/single-scroll-2026-05-24`.
 
-The homepage is already a single scrollable page with 4 projects: AccessMap, Claude Corp, Prompt Library, Mutual Mesh.
+The homepage is already a single scrollable page with 4 projects: Flagstone, Claude Corp, Prompt Library, Mutual Mesh.
 
 Your job is to wire real GitHub repository links into the project cards. Here are the URLs (Sky fills these in):
 
-- AccessMap:      https://github.com/___________
+- Flagstone:      https://github.com/___________
 - Claude Corp:    https://github.com/___________
 - Prompt Library: https://github.com/___________
 - Mutual Mesh:    https://github.com/___________
