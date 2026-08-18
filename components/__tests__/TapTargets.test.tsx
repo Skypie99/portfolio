@@ -47,13 +47,13 @@ const links: Deliverable['links'] = [
 ];
 
 const deliverable: Deliverable = {
-  id: 'accessmap',
+  id: 'flagstone',
   title: 'Flagstone',
   summary: 'Privacy-respecting accessibility flagging app for disabled users navigating the city.',
   role: 'Solo builder',
   tech: ['Expo', 'React Native'],
   year: 2026,
-  heroImage: { src: '/images/deliverables/accessmap/hero.jpg', alt: 'Warm-toned mockup of the Flagstone interface' },
+  heroImage: { src: '/images/deliverables/flagstone/hero.jpg', alt: 'Warm-toned mockup of the Flagstone interface' },
   tags: ['accessibility'],
   featured: false,
   links,
@@ -88,14 +88,14 @@ describe('card action rows carry the one-sided 44px tap extension (UP-02 / F7-2)
 
   it('CaseStudyCard: the leading "Read more" link grows UP', () => {
     render(
-      <CaseStudyCard title="Flagstone" category="accessmap" description="A map-first mobile app." href="/work/accessmap/" links={links} />,
+      <CaseStudyCard title="Flagstone" category="flagstone" description="A map-first mobile app." href="/work/flagstone/" links={links} />,
     );
     expectExtended(screen.getByRole('link', { name: /read more.*flagstone case study/i }), 'up');
   });
 
   it('CaseStudyCard: the trailing external links grow DOWN', () => {
     render(
-      <CaseStudyCard title="Flagstone" category="accessmap" description="A map-first mobile app." href="/work/accessmap/" links={links} />,
+      <CaseStudyCard title="Flagstone" category="flagstone" description="A map-first mobile app." href="/work/flagstone/" links={links} />,
     );
     expectExtended(screen.getByRole('link', { name: /open live demo for flagstone/i }), 'down');
     expectExtended(screen.getByRole('link', { name: /view flagstone source on github/i }), 'down');

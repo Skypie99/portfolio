@@ -18,19 +18,19 @@ import type { BlogPost } from '@/lib/schema';
 
 type RouteParams = { slug: string };
 
-type CaseStudyCategory = 'accessmap' | 'claude-corp' | 'dashboard' | 'prompt-library' | 'ghost' | 'mutual';
+type CaseStudyCategory = 'flagstone' | 'claude-corp' | 'dashboard' | 'prompt-library' | 'ghost' | 'mutual';
 
 /** id → CaseStudyCard category (mirrors app/work/[slug]/page.tsx). */
 function toCategory(id: string): CaseStudyCategory {
   const map: Record<string, CaseStudyCategory> = {
-    'accessmap': 'accessmap',
+    'flagstone': 'flagstone',
     'claude-corp': 'claude-corp',
     'dashboard': 'dashboard',
     'prompt-library': 'prompt-library',
     'ghost-code': 'ghost',
     'mutual-mesh': 'mutual',
   };
-  return map[id] ?? 'accessmap';
+  return map[id] ?? 'flagstone';
 }
 
 /**

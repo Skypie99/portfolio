@@ -27,7 +27,7 @@ const BANK_ROOT =
 
 /** slug → the hero scene whose dark desktop master feeds the unfurl. */
 const OG_SOURCES = {
-  'accessmap': 'map-overview',
+  'flagstone': 'map-overview',
   'prompt-library': 'home',
   'claude-corp': 'hero-pipeline',
   'dashboard': 'command-center',

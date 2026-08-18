@@ -160,7 +160,7 @@ const BINDING_SURFACES: ReadonlyArray<{
   { token: 'rgb-accent-ink', scope: 'root', panel: 'rgb-canvas-alt', alphaVar: 'surface-alpha-alt', backdrop: [206.11, 159.22, 116.44], measured: [238, 223, 203], where: '"More work" eyebrow — world-surface-alt (work pages)' },
   { token: 'rgb-accent-ink', scope: 'root', panel: 'rgb-wash-cool', alphaVar: 'surface-alpha-cool', backdrop: [194.0, 176.0, 136.0], measured: [226, 228, 216], where: '"Shipped" eyebrow — world-surface-cool' },
   { token: 'rgb-ink-meta', scope: 'root', panel: 'rgb-canvas-alt', alphaVar: 'surface-alpha-alt', backdrop: [195.0, 148.11, 94.22], measured: [236, 221, 199], where: 'showcase date meta — world-surface-alt' },
-  { token: 'rgb-accent-ink', scope: 'dark', panel: 'rgb-canvas-alt', alphaVar: 'surface-alpha-alt', backdrop: [205.88, 171.75, 131.38], measured: [89, 74, 57], where: 'prose link on /work/accessmap/ — world-surface-alt over the night world' },
+  { token: 'rgb-accent-ink', scope: 'dark', panel: 'rgb-canvas-alt', alphaVar: 'surface-alpha-alt', backdrop: [205.88, 171.75, 131.38], measured: [89, 74, 57], where: 'prose link on /work/flagstone/ — world-surface-alt over the night world' },
 
   // --rgb-link-hover (luxe W2, 2026-08-09) — the link HOVER ink, decoupled from
   // --rgb-accent-hover and deepened so it clears AA everywhere a link can hover.

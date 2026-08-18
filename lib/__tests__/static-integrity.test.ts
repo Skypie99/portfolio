@@ -107,7 +107,7 @@ function extractAnchors(html: string): Array<{ href: string; rel: string | undef
 /**
  * The Next.js static export for this site uses basePath=/portfolio in
  * production. Internal hrefs in ./out/ therefore look like:
- *   /portfolio/work/accessmap/
+ *   /portfolio/work/flagstone/
  *   /portfolio/
  * Strip the basePath prefix to get a path we can look up in ./out/.
  */
@@ -457,8 +457,22 @@ describe.runIf(OUT_EXISTS)('Gap 6 — share-card identity', () => {
   // not impersonation. Excluded deliberately, never silently.
   const IS_404 = (f: string) => /(^|\/)404(\.html|\/index\.html)$/.test(f.replace(OUT_DIR, ''));
 
+  // A redirect stub is a signpost left at an old URL, not a route with an
+  // identity of its own. It is a hand-written file in public/ (see
+  // public/work/accessmap/index.html) carrying a meta refresh and a canonical
+  // to its destination, and it declares NO og block on purpose: giving the old
+  // URL a share card would make it compete with the new one, which is the
+  // precise failure this guard exists to catch. Excluded deliberately, never
+  // silently.
+  //
+  // Keyed on CONTENT, not on a path allowlist — so a new stub is covered the
+  // day it is written, and a file that stops being a stub re-enters the guard
+  // on its own rather than sitting exempt in a list nobody rereads.
+  const IS_REDIRECT_STUB = (f: string) =>
+    /<meta\s+http-equiv="refresh"/i.test(readFileSync(f, 'utf8'));
+
   function realRoutes(): string[] {
-    return collectHtmlFiles(OUT_DIR).filter((f) => !IS_404(f));
+    return collectHtmlFiles(OUT_DIR).filter((f) => !IS_404(f) && !IS_REDIRECT_STUB(f));
   }
 
   it('every route declares og:url, and it is the route’s OWN url', () => {
@@ -548,7 +562,7 @@ describe.runIf(OUT_EXISTS)('Gap 4 — referenced image asset existence', () => {
    * test did not exist. That gap is exactly how a live 404 survived: showcase
    * commit `593eebe` deleted `card-flag.{jpg,avif,webp}` while
    * `content/blog.json` kept referencing all three, so
-   * `/blog/building-accessmap/` shipped a broken hero to production and every
+   * `/blog/building-flagstone/` shipped a broken hero to production and every
    * gate stayed green. Nothing validated content images — `static-integrity`
    * covered hrefs and share cards, and `asset-integrity`'s badge check is an
    * `it.todo`.
@@ -695,6 +709,77 @@ describe.runIf(OUT_EXISTS)('Gap 7 — share-card images', () => {
       ).toBe(true);
     }
     expect(checked.size, 'expected at least one .png card alias').toBeGreaterThan(0);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Gap 8 — the rename's redirect stubs still redirect
+//
+// AccessMap was renamed Flagstone on 2026-08-17 and its URLs moved with it.
+// `/work/accessmap/` and `/blog/building-accessmap/` are real URLs that were
+// live, were in the sitemap, and may be linked from anywhere. They keep
+// resolving only because of two hand-written files in public/, which Next
+// copies into out/ verbatim.
+//
+// Nothing else in the build knows those files matter: they are not routes, no
+// import references them, and no other test would notice their deletion. A
+// tidy-up that removed public/work/ would silently 404 every inbound link to
+// the case study, and every gate would stay green — which is exactly the shape
+// of failure this suite exists to prevent. Hence: assert them against the
+// BUILT artifact, not the source.
+// ---------------------------------------------------------------------------
+
+describe.runIf(OUT_EXISTS)('Gap 8 — renamed URLs still resolve', () => {
+  const SITE_ORIGIN = 'https://skypistudio.com';
+
+  const MOVES = [
+    { from: '/work/accessmap/', to: '/work/flagstone/' },
+    { from: '/blog/building-accessmap/', to: '/blog/building-flagstone/' },
+  ];
+
+  it.each(MOVES)('$from still resolves and points at $to', ({ from, to }) => {
+    assertOutDirExists();
+
+    const stub = join(OUT_DIR, from, 'index.html');
+    expect(existsSync(stub), `the redirect stub for ${from} is missing from the build`).toBe(true);
+
+    const html = readFileSync(stub, 'utf8');
+
+    // 1. The redirect itself, at zero delay.
+    expect(html, `${from} lost its meta refresh`).toMatch(
+      new RegExp(`<meta\\s+http-equiv="refresh"\\s+content="0;\\s*url=${to}"`, 'i'),
+    );
+
+    // 2. The canonical, so the two URLs consolidate on the new one.
+    expect(html, `${from} lost its canonical`).toContain(
+      `<link rel="canonical" href="${SITE_ORIGIN}${to}" />`,
+    );
+
+    // 3. A real, visible, plain anchor — the fallback for anyone whose meta
+    //    refresh is blocked (some privacy extensions, some readers). Without
+    //    this the page is a dead end for exactly the users least able to
+    //    recover from one.
+    expect(html, `${from} has no plain <a> fallback`).toMatch(
+      new RegExp(`<a href="${to}">[^<]+</a>`),
+    );
+  });
+
+  it.each(MOVES)('$to — the destination of $from — actually exists', ({ to }) => {
+    expect(existsSync(join(OUT_DIR, to, 'index.html')), `${to} did not build`).toBe(true);
+  });
+
+  it('the sitemap lists the new URLs and does not advertise the stubs', () => {
+    const sitemap = join(OUT_DIR, 'sitemap.xml');
+    expect(existsSync(sitemap), 'expected a built sitemap.xml').toBe(true);
+    const xml = readFileSync(sitemap, 'utf8');
+
+    for (const { from, to } of MOVES) {
+      expect(xml, `sitemap is missing ${to}`).toContain(`${SITE_ORIGIN}${to}`);
+      // A redirect stub is a courtesy to existing links, not a URL to promote.
+      expect(xml, `sitemap still advertises the retired ${from}`).not.toContain(
+        `${SITE_ORIGIN}${from}`,
+      );
+    }
   });
 });
 

@@ -18,14 +18,14 @@ import { ProjectCard } from '@/components/ProjectCard';
 import type { Deliverable } from '@/lib/schema';
 
 const baseDeliverable: Deliverable = {
-  id: 'accessmap',
+  id: 'flagstone',
   title: 'Flagstone',
   summary: 'Privacy-respecting accessibility flagging app for disabled users navigating the city.',
   role: 'Solo builder',
   tech: ['Expo', 'React Native', 'Supabase', 'TypeScript'],
   year: 2026,
   heroImage: {
-    src: '/images/deliverables/accessmap/hero.jpg',
+    src: '/images/deliverables/flagstone/hero.jpg',
     alt: 'Warm-toned mockup of the Flagstone mobile interface',
   },
   tags: ['accessibility', 'mobile', 'privacy'],
@@ -62,14 +62,14 @@ describe('ProjectCard', () => {
     render(<ProjectCard deliverable={baseDeliverable} />);
 
     // Wave 1: card has multiple links; the primary one is the case-study link
-    // and the title link, both pointing to /work/accessmap/.
+    // and the title link, both pointing to /work/flagstone/.
     // L6-03 (SC 2.5.3 Label in Name): the CTA's accessible name now leads with
     // its visible label ("View project") — see components/ProjectCard.tsx.
     const caseStudyLink = screen.getByRole('link', {
       name: /view project.*flagstone.*case study/i,
     });
     // Next.js Link normalises trailing slashes in the jsdom test environment.
-    expect(caseStudyLink).toHaveAttribute('href', expect.stringContaining('/work/accessmap'));
+    expect(caseStudyLink).toHaveAttribute('href', expect.stringContaining('/work/flagstone'));
   });
 
   it('exposes an accessible name summarising the destination (Alex §4.4)', () => {

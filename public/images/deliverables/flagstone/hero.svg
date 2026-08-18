@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
-  <title>AccessMap — accessibility-flagging app hero illustration</title>
+  <title>Flagstone — accessibility-flagging app hero illustration</title>
   <defs>
     <!-- Warm cream background -->
     <pattern id="am-grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -99,5 +99,5 @@
   <rect x="0" y="450" width="800" height="50" fill="#FAF9F5" opacity="0.0"/>
 
   <!-- Word mark -->
-  <text x="400" y="448" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="400" letter-spacing="4" fill="#7F4323" text-anchor="middle" opacity="0.5">ACCESSMAP</text>
+  <text x="400" y="448" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="400" letter-spacing="4" fill="#7F4323" text-anchor="middle" opacity="0.5">FLAGSTONE</text>
 </svg>

@@ -5,7 +5,7 @@
  * authored here and must stay TRUE to the frame they sit under.
  *
  * Curation notes:
- *  - accessmap cardImage = the themed map pair (SKY'S GATE PICK 2026-07-31,
+ *  - flagstone cardImage = the themed map pair (SKY'S GATE PICK 2026-07-31,
  *    superseding the FT-1 flag crop — the card re-themes with the site).
  *  - shots[0] carries the drawer-spring clip in BOTH themes (poster-first,
  *    RM-safe); the report walk's submission remains NEEDS-DEVICE and is not
@@ -14,9 +14,9 @@
 
 export const WIRING = [
   {
-    slug: 'accessmap',
+    slug: 'flagstone',
     ogTheme: 'dark',
-    ogCard: '/showcase/accessmap/og-card.jpg',
+    ogCard: '/showcase/flagstone/og-card.jpg',
     heroShot: { scene: 'map-overview', viewport: 'phone' },
     cardImage: {
       scene: 'map-overview',

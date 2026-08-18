@@ -21,14 +21,14 @@ vi.mock('@/lib/content', () => ({
     socials: [],
   }),
   getFeaturedDeliverable: () => ({
-    id: 'accessmap',
+    id: 'flagstone',
     title: 'Flagstone',
     summary: 'Privacy-respecting accessibility flagging app.',
     role: 'Solo builder',
     tech: ['Expo', 'React Native', 'Supabase', 'TypeScript'],
     year: 2026,
     heroImage: {
-      src: '/images/deliverables/accessmap/hero.jpg',
+      src: '/images/deliverables/flagstone/hero.jpg',
       alt: 'Warm-toned mockup of the Flagstone mobile interface',
     },
     tags: ['accessibility', 'mobile', 'privacy'],

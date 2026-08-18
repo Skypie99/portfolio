@@ -8,18 +8,18 @@ import { Reveal } from '@/components/Reveal';
 import { cardMedia } from '@/lib/media';
 import type { Deliverable } from '@/lib/schema';
 
-type Category = 'accessmap' | 'claude-corp' | 'dashboard' | 'prompt-library' | 'ghost' | 'mutual';
+type Category = 'flagstone' | 'claude-corp' | 'dashboard' | 'prompt-library' | 'ghost' | 'mutual';
 
 function toCategory(id: string): Category {
   const map: Record<string, Category> = {
-    'accessmap': 'accessmap',
+    'flagstone': 'flagstone',
     'claude-corp': 'claude-corp',
     'dashboard': 'dashboard',
     'prompt-library': 'prompt-library',
     'ghost-code': 'ghost',
     'mutual-mesh': 'mutual',
   };
-  return map[id] ?? 'accessmap';
+  return map[id] ?? 'flagstone';
 }
 
 /**

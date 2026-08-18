@@ -26,7 +26,7 @@ import BlogIndexPage from '@/app/blog/page';
 
 const TWO_POSTS = [
   {
-    id: 'building-accessmap',
+    id: 'building-flagstone',
     title: 'Building Flagstone: A Guide to Accessibility Apps',
     summary: 'How I built a crowdsourced accessibility mapping app.',
     publishedDate: '2026-05-30',
@@ -86,10 +86,10 @@ describe('BlogIndexPage', () => {
     const postLinks = screen.getAllByRole('link', { name: /read more/i });
     // Two posts → two links
     expect(postLinks).toHaveLength(2);
-    // First link points to building-accessmap.
+    // First link points to building-flagstone.
     // Note: Next.js <Link> in jsdom renders the href without the trailing slash —
     // trailingSlash is a static-export build feature, not a runtime Link behaviour.
-    expect(postLinks[0]).toHaveAttribute('href', '/blog/building-accessmap');
+    expect(postLinks[0]).toHaveAttribute('href', '/blog/building-flagstone');
   });
 
   it('shows post count in the eyebrow label', () => {

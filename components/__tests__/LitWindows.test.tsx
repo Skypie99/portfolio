@@ -15,7 +15,7 @@ import { LitWindows } from '@/components/LitWindows';
 import { getDeliverables } from '@/lib/content';
 
 const LIT = [
-  '/work/accessmap/',
+  '/work/flagstone/',
   '/work/claude-corp/',
   '/work/prompt-library/',
   '/work/ghost-code/',

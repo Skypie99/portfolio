@@ -52,7 +52,7 @@ describe('DatedStatusNote (T11 / SK-02)', () => {
 });
 
 describe('the "What\'s next" dated-status seam (real content/blog.json)', () => {
-  const post = getBlogPosts().find((p) => p.id === 'building-accessmap');
+  const post = getBlogPosts().find((p) => p.id === 'building-flagstone');
 
   it('the post exists and still carries the time-bound status claim', () => {
     expect(post).toBeTruthy();

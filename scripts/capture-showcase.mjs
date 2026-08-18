@@ -8,7 +8,7 @@
  * factory is the deliverable; the photos are its output.
  *
  *   node scripts/capture-showcase.mjs                  # full run, priority order
- *     [--project accessmap[,ghost-code]] [--scene map-overview]
+ *     [--project flagstone[,ghost-code]] [--scene map-overview]
  *     [--theme light|dark] [--stills-only] [--clips-only]
  *     [--resume]   reuse existing masters, re-encode + re-bank
  *     [--verify]   re-capture masters into a mirror + determinism diff

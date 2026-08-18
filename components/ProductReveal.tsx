@@ -234,7 +234,7 @@ function HeroScreenFill({ sig, title, eyebrow }: { sig: string; title: string; e
  *  dialect of a *failed load* — in favour of the pr-world treatment the heroes
  *  own: a clean device silhouette resting on the golden-hour stage, lit by the
  *  project's own --pr-sig, a *designed* still awaiting its subject. Portrait for
- *  phone products (AccessMap), landscape for the web ones — so an unfilled slot
+ *  phone products (Flagstone), landscape for the web ones — so an unfilled slot
  *  still reads product-true. Pure static paint (no <img>, no text, no keyframes)
  *  → zero CLS, reduced-motion-safe, rest-visible. */
 function BandHint({ sig, frame }: { sig: string; frame: DeviceFrameKind }) {
