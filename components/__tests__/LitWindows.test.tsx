@@ -1,6 +1,6 @@
 /**
  * The lit windows (R4/BP6 · P01) — component + source contract.
- * Six labeled, enterable links in declared DOM order; the lit map bound to
+ * One labeled, enterable link per work in declared DOM order; the lit map bound to
  * the passed litHrefs (the showcase strip's own claim); the dark window
  * enterable and plainly named; visibility/physics CSS-owned (dark-only gate,
  * --day-night rest fallback, no keyframes, 44px hits).
@@ -14,12 +14,14 @@ import { cleanup, render, screen } from '@testing-library/react';
 import { LitWindows } from '@/components/LitWindows';
 import { getDeliverables } from '@/lib/content';
 
+// Mirrors what app/page.tsx passes: showcaseChips.map(c => c.href). Mutual Mesh
+// was withdrawn 2026-08-18, so the strip carries four project chips; Dashboard
+// has never had one, which is why it is the window that stays dark.
 const LIT = [
   '/work/flagstone/',
   '/work/claude-corp/',
   '/work/prompt-library/',
   '/work/ghost-code/',
-  '/work/mutual-mesh/',
 ];
 
 afterEach(() => {
@@ -43,12 +45,12 @@ describe('LitWindows', () => {
     }
   });
 
-  it('lights exactly the showcase five and leaves the sixth dark — and ENTERABLE', () => {
+  it('lights exactly the showcase chips and leaves the unchipped work dark — and ENTERABLE', () => {
     render(<LitWindows deliverables={deliverables} litHrefs={LIT} />);
     const links = screen.getAllByRole('link');
     const lit = links.filter((a) => a.hasAttribute('data-lit'));
     const dark = links.filter((a) => !a.hasAttribute('data-lit'));
-    expect(lit).toHaveLength(5);
+    expect(lit).toHaveLength(4);
     expect(dark).toHaveLength(1);
     expect(dark[0].getAttribute('href')?.replace(/\/$/, '')).toBe('/work/dashboard');
     expect(dark[0].getAttribute('aria-label')).toBe('Claude Corp Dashboard — dark');

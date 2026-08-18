@@ -168,7 +168,7 @@ export function Footer() {
             <p className="font-sans text-body-sm text-ink-muted leading-[1.65] text-pretty">
               {profile.name} builds small, careful AI tools. Accessible by
               default, useful by design, so no one’s left out. Built in
-              public, honest about what ships — five of six live on the open
+              public, honest about what ships — every one of them live on the open
               internet.
             </p>
             {/* L3-03: the quiet career-document pointer — the fullest history
