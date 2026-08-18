@@ -1,5 +1,20 @@
 RUN — THE FLAGSTONE URL MIGRATION [single phase · one branch · Sky merges] WHAT THIS IS: Sky's app was renamed AccessMap → Flagstone (App Store name collision with the University of Washington's AccessMap). The portfolio's visitor-facing COPY has already shipped as Flagstone. What is left is the structural half: the URL `https://skypistudio.com/work/accessmap/` still says accessmap, and so does the blog post URL, every image directory, and every id/category key that routes off the slug. This run moves them, and — the part that makes it safe — keeps every old URL resolving. Repo: `~/Portfolio` (Next.js 15, `output: 'export'`, static export to GitHub Pages, no server). Live: https://skypistudio.com
 
+★ ⛔ PRECONDITION — CHECK THIS FIRST, IT DECIDES WHERE YOU BRANCH FROM.
+
+This run must sit ON TOP of the copy rename, which as of 2026-08-17 is **not on `main`**. It lives on branch `rename/flagstone-site-2026-08-17` (commits `d07c42f` + `283152c`). Two things follow, and getting them wrong wastes the whole run:
+
+1. **The `CLOSE-OUT.md` this prompt tells you to read only exists on that branch.** If `design-reviews/flagstone-rename/2026-08-17/CLOSE-OUT.md` is missing, you are on the wrong base — stop and say so rather than proceeding blind.
+2. **You would collide with it.** Both passes edit `content/deliverables.json`, `content/showcase.manifest.json`, `content/blog.json`, `scripts/showcase/registry.mjs`, `wiring.mjs` and a dozen test files. Branching off a `main` that lacks the copy rename guarantees conflicts and can silently revert the copy work.
+
+So: run `git log --oneline -1 rename/flagstone-site-2026-08-17` and `git branch --contains d07c42f`.
+* If `main` **already contains** `d07c42f` (Sky merged it), branch off `main`.
+* If it does **not**, branch off `rename/flagstone-site-2026-08-17` instead, and say so in the report — Sky then merges one stacked branch rather than two.
+
+Either way the new branch is named `rename/flagstone-slug-2026-08-17`.
+
+⚠ **Do not run this concurrently with a showcase re-capture.** Step 1 does `git mv public/showcase/accessmap …`; a capture writing into that directory at the same time will corrupt both. If a capture is in flight, wait for it.
+
 ★ START HERE: read `design-reviews/flagstone-rename/2026-08-17/CLOSE-OUT.md` in this repo. It records exactly what the copy pass changed and, more importantly, the identifier/name split it followed. Do not re-litigate that split — inherit it.
 
 ★ THE LAWS (what makes this migration safe rather than merely done):
@@ -25,7 +40,7 @@ RUN — THE FLAGSTONE URL MIGRATION [single phase · one branch · Sky merges] W
 * Serve `out/` locally and fetch **both** `/work/accessmap/` and `/work/flagstone/` (and both blog URLs). Old must land on new; new must render. Paste the evidence.
 * Confirm the 63 moved assets actually resolve in the built output — a renamed directory with a stale reference is a broken image, and the schema will not catch a `/showcase/` path.
 
-★ FENCES: branch only, off current `main`, named `rename/flagstone-slug-2026-08-17`. **Do not merge and do not push — Sky merges.** Do not rename the GitHub repo. Do not touch the live host or any Supabase configuration. Do not edit `~/AccessMap`. Leave the three permanently-dirty files in this repo (`.claude/launch.json`, `DECISIONS_LOG.md`, `PROJECT_STATE.md`) uncommitted and untouched — stage only files you deliberately changed. ⚠ This repo's working tree is dirty by default, so any `git pull --rebase` you run needs `git -c rebase.autoStash=true`.
+★ FENCES: branch only, named `rename/flagstone-slug-2026-08-17`, off whichever base the PRECONDITION resolved to (NOT blindly `main`). **Do not merge and do not push — Sky merges.** Do not rename the GitHub repo. Do not touch the live host or any Supabase configuration. Do not edit `~/AccessMap`. Leave the three permanently-dirty files in this repo (`.claude/launch.json`, `DECISIONS_LOG.md`, `PROJECT_STATE.md`) uncommitted and untouched — stage only files you deliberately changed. ⚠ This repo's working tree is dirty by default, so any `git pull --rebase` you run needs `git -c rebase.autoStash=true`.
 
 ★ CLOSE-OUT: write `design-reviews/flagstone-rename/2026-08-17/SLUG-MIGRATION-REPORT.md` — what moved · the surviving-`accessmap` account with a reason for each · the gate results verbatim · the both-URLs-resolve proof · the honest note that a meta refresh is not a 301 · anything you banked rather than guessed. Then STOP and hand Sky the merge command.
 

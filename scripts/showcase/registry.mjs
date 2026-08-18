@@ -80,9 +80,15 @@ export const PROJECTS = [
     repo: '/Users/skypie/AccessMap',
     source: {
       kind: 'worktree',
-      ref: 'shipready/3-polish-submission',
-      sha: '5ab3f0c', // Sky-pinned 2026-07-31
-      fallback: { ref: 'main', sha: '512494a', drops: ['terms'], note: 'proven export route' },
+      // Repinned 2026-08-17 for the Flagstone rename. The previous pin
+      // (shipready/3-polish-submission @ 5ab3f0c, Sky-pinned 2026-07-31)
+      // predates the rename — it has zero 'Flagstone' strings in src/, so
+      // rebuilding from it reproduces the old AccessMap wordmark in every
+      // shot that shows the drawer. main @ 8cdd643 carries the merged rename
+      // (46 src files) and is what the live demo serves.
+      ref: 'main',
+      sha: '8cdd643',
+      fallback: { ref: 'shipready/3-polish-submission', sha: '5ab3f0c', drops: ['terms'], note: 'pre-rename pin — old wordmark; last resort only' },
     },
     build: {
       kind: 'expo-export',
