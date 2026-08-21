@@ -30,7 +30,8 @@ const goodDeliverable = {
   id: 'flagstone',
   title: 'Flagstone',
   summary: 'A privacy-respecting accessibility-flagging app for disabled users.',
-  role: 'Solo builder',
+  role: 'Solo builder · AI-assisted',
+  status: 'Live — public, no backend',
   tech: ['Expo', 'React Native', 'Supabase', 'TypeScript'],
   year: 2026,
   heroImage: goodHeroImage,
@@ -208,6 +209,36 @@ describe('DeliverableSchema — links refine (at most one demo)', () => {
       ],
     };
     expect(DeliverableSchema.safeParse(ok).success).toBe(true);
+  });
+});
+
+describe('DeliverableSchema — status is required (truth pass 2026-08-21)', () => {
+  // `status` is REQUIRED, not optional, and the schema is the enforcement
+  // point. The failure mode this field guards against is OMISSION — a project
+  // page that says nothing about its state lets the reader assume users — and
+  // an optional field is silently omittable. Fail the build instead.
+  it('rejects a deliverable with no status', () => {
+    const { status, ...noStatus } = goodDeliverable;
+    expect(DeliverableSchema.safeParse(noStatus).success).toBe(false);
+  });
+
+  it('rejects a status too short to say anything', () => {
+    expect(
+      DeliverableSchema.safeParse({ ...goodDeliverable, status: 'Up' }).success,
+    ).toBe(false);
+  });
+
+  it('caps status at 48 chars, where the card inscription reflows', () => {
+    // Past 48 the ProjectCard status line wraps unevenly across the grid and
+    // the mt-auto equal-height inscription (TY-2) stops holding.
+    expect(
+      DeliverableSchema.safeParse({ ...goodDeliverable, status: 'x'.repeat(48) })
+        .success,
+    ).toBe(true);
+    expect(
+      DeliverableSchema.safeParse({ ...goodDeliverable, status: 'x'.repeat(49) })
+        .success,
+    ).toBe(false);
   });
 });
 

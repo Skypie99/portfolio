@@ -3,7 +3,8 @@
     "id": "flagstone",
     "title": "Flagstone",
     "summary": "Mobile app for flagging accessibility barriers — broken ramps, missing tactile paths — pinned to a real city map. Privacy-first: no tracking, no data sold.",
-    "role": "Solo builder",
+    "role": "Solo builder · AI-assisted",
+    "status": "Pre-launch — App Store submission in progress",
     "tech": [
       "Expo",
       "React Native",
@@ -131,7 +132,8 @@
     "id": "claude-corp",
     "title": "Claude Corp",
     "summary": "A 15-role AI team governed by a written Constitution. Each agent owns a domain; an orchestrator runs the cycles. The infrastructure behind this portfolio.",
-    "role": "Solo builder",
+    "role": "Solo builder · AI-assisted",
+    "status": "In active use — my own system, no outside users",
     "tech": [
       "Claude Code",
       "MCP",
@@ -211,7 +213,8 @@
     "id": "dashboard",
     "title": "Claude Corp Dashboard",
     "summary": "A live command center for an AI agent team — agent feed, decision queue, blocker board, health scores. Fully drivable demo running on synthetic data.",
-    "role": "Solo builder",
+    "role": "Solo builder · AI-assisted",
+    "status": "Live demo — synthetic data",
     "tech": [
       "Next.js",
       "React",
@@ -302,7 +305,8 @@
     "id": "prompt-library",
     "title": "Prompt Library",
     "summary": "Local-first AI prompt manager. Your prompts, your API key, your browser — zero cloud, instant runs.",
-    "role": "Solo builder",
+    "role": "Solo builder · AI-assisted",
+    "status": "Live — public, no backend",
     "tech": [
       "Next.js 15",
       "TypeScript",
@@ -384,7 +388,8 @@
     "id": "ghost-code",
     "title": "Ghost Code",
     "summary": "Retro arcade trainer for CLI commands — guide the Phantom, capture the right token. 56 cards, vanilla JS, zero dependencies, runs in any browser.",
-    "role": "Solo builder",
+    "role": "Solo builder · AI-assisted",
+    "status": "Live — public, no backend",
     "tech": [
       "Vanilla JS",
       "HTML",

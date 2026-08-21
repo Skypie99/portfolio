@@ -90,6 +90,16 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
               <span aria-hidden="true" className="inline-block h-1 w-1 rounded-full bg-terracotta" />
               {d.role} · {d.year}
             </p>
+            {/* Status (truth pass 2026-08-21) — its OWN line, not appended to
+                the role/year kicker, which is already at its length ceiling at
+                320. No dot: the kicker above owns the row's one terracotta mark,
+                and a second mark here would read as a second field of equal
+                weight. Un-uppercased and normal-case against the kicker's
+                tracking-label caps, so the two lines stay distinguishable at a
+                glance. Every deliverable carries one (schema-required), so all
+                cards gain the same line and the mt-auto equal-height inscription
+                is preserved. */}
+            <p className="font-mono text-meta text-text-meta">{d.status}</p>
             <h3
               className="font-serif font-light text-card-title text-ink"
             >

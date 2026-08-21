@@ -21,7 +21,8 @@ function makeDeliverable(n: number, featured: boolean): Deliverable {
     id: slug,
     title: `Test Project ${n}`,
     summary: 'A test deliverable summary long enough for the schema.',
-    role: 'Solo builder',
+    role: 'Solo builder · AI-assisted',
+    status: 'Live — public, no backend',
     tech: ['TypeScript'],
     year: 2026,
     heroImage: {
