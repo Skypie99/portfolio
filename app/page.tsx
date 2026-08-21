@@ -444,7 +444,8 @@ export default function HomePage() {
               reports skipped a content filter that signed-in reports run. It
               was written up and deliberately left unpatched, because deciding
               what to filter on a submit form is a moderation policy, not a bug
-              fix. It is still open, and it is still mine.
+              fix. It waited for me instead of being quietly patched, and the
+              filter runs on both paths now.
             </Reveal>
             <Reveal index={4} variant="depth" as="p">
               The honest limit: these fences are prompt-level, not
