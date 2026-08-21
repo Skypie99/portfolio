@@ -485,6 +485,22 @@ export default async function WorkDetailPage({
               <div className="flex flex-col gap-12 order-3 lg:order-none md:max-lg:grid md:max-lg:grid-cols-2 md:max-lg:gap-8">
                 {/* Role / Year */}
                 <dl className="grid grid-cols-2 gap-8 border-t border-border-decorative pt-8 md:max-lg:col-span-2">
+                  {/* Status leads the ledger (truth pass 2026-08-21) and spans
+                      both columns. It is not a third peer of Role/Year: it is
+                      the one line that tells a reader whether this thing has
+                      users, and until it existed the page let them assume. It
+                      is deliberately NOT in the kicker row above — that row's
+                      own comment records an OPEN Sky fork on its dot logic
+                      (DECISIONS §P P4-UP-27-DOTS) and already warns against a
+                      third mark in a third hue. */}
+                  <div className="col-span-2">
+                    <dt className="font-mono text-meta tracking-label uppercase text-text-meta mb-1">
+                      Status
+                    </dt>
+                    <dd className="font-sans text-body text-near-black">
+                      {d.status}
+                    </dd>
+                  </div>
                   <div>
                     <dt className="font-mono text-meta tracking-label uppercase text-text-meta mb-1">
                       Role

@@ -97,6 +97,66 @@ describe('getFeaturedDeliverable', () => {
   });
 });
 
+describe('status invariant (truth pass 2026-08-21)', () => {
+  /**
+   * WHY THIS TEST EXISTS
+   * --------------------
+   * Before the truth pass, every project rendered "Role: Solo builder" and
+   * nothing else about its state, and the homepage said "all five live on the
+   * open web". All five URLs did return 200 — but "live" reads as *live with
+   * users*, and four were demos or personal tools while the flagship had never
+   * shipped at all. The site never corrected that reading, so the reader made
+   * the generous inference and the site kept it.
+   *
+   * DeliverableSchema now requires `status`, so a missing one already fails the
+   * Zod parse in content.ts. This test exists for the failure mode the schema
+   * cannot see: a status that is *present and empty of meaning*. A new project
+   * added in a hurry with status "Live" passes min(4) and re-introduces exactly
+   * the ambiguity the field was added to remove. So the assertions below are
+   * about substance, not presence.
+   */
+  it('gives every deliverable a status', () => {
+    const deliverables = getDeliverables();
+    for (const d of deliverables) {
+      expect(d.status, `${d.id} has no status`).toBeTruthy();
+      expect(d.status.trim().length, `${d.id} status is blank`).toBeGreaterThan(3);
+    }
+  });
+
+  it('never lets a bare "live" stand as the whole status', () => {
+    // "Live" alone is the claim this field was created to qualify. Anything
+    // starting with it must go on to say what kind of live: "Live demo —
+    // synthetic data", "Live — public, no backend".
+    const deliverables = getDeliverables();
+    for (const d of deliverables) {
+      const s = d.status.trim().toLowerCase();
+      if (s.startsWith('live')) {
+        expect(
+          s.length,
+          `${d.id}: "${d.status}" says live and stops — qualify it (demo? synthetic data? no backend?)`,
+        ).toBeGreaterThan('live'.length + 4);
+      }
+    }
+  });
+
+  it('states the role as AI-assisted rather than bare "Solo builder"', () => {
+    // The portfolio used to read "Solo builder" against 1,700+ commits in 91
+    // days produced by a governed agent system. A reader who takes it literally
+    // forms an expectation that will not survive a technical screen; a reader
+    // who suspects AI gets no account of how the work is directed. Neither
+    // reading is one the site should be leaving to chance.
+    const deliverables = getDeliverables();
+    for (const d of deliverables) {
+      expect(d.role, `${d.id} role is the bare, unqualified claim`).not.toBe(
+        'Solo builder',
+      );
+      expect(d.role.toLowerCase(), `${d.id} role omits the AI disclosure`).toContain(
+        'ai-assisted',
+      );
+    }
+  });
+});
+
 describe('featured-slot invariant (Dana DATA_SHAPE.md §6)', () => {
   it('has exactly one deliverable with featured: true', () => {
     // Sidebar/About both rely on at-most-one featured — two would silently

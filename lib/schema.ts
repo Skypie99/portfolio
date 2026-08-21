@@ -146,6 +146,16 @@ export const DeliverableSchema = z.object({
   title: z.string().min(4).max(80),
   summary: z.string().min(10).max(160),
   role: z.string().min(2).max(60),
+  /** REQUIRED status line (truth pass 2026-08-21). Every project answers the
+   *  question the reader is actually asking — "does this have users?" — before
+   *  they have to infer it. "Live" on its own reads as *live with people on it*;
+   *  four of the five are demos or personal tools and one has not shipped, and
+   *  nothing on the site used to correct that reading. Required, not optional,
+   *  precisely because the failure mode is omission: a new deliverable with no
+   *  status inherits the old ambiguity silently, so Zod fails the build instead.
+   *  Kept to 48 chars so the card's inscription line does not wrap differently
+   *  per project and break the equal-height grid (TY-2 / ProjectCard mt-auto). */
+  status: z.string().min(4).max(48),
   tech: z.array(z.string().min(1).max(40)).min(1).max(8),
   year: z
     .number()

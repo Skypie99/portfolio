@@ -21,7 +21,8 @@ const baseDeliverable: Deliverable = {
   id: 'flagstone',
   title: 'Flagstone',
   summary: 'Privacy-respecting accessibility flagging app for disabled users navigating the city.',
-  role: 'Solo builder',
+  role: 'Solo builder · AI-assisted',
+  status: 'Live — public, no backend',
   tech: ['Expo', 'React Native', 'Supabase', 'TypeScript'],
   year: 2026,
   heroImage: {
