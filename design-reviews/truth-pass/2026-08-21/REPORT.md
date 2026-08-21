@@ -4,7 +4,7 @@
 **Phases run:** 1, 2, 3, 4, 5 (all five)
 **`main` was not touched.** `main` == `origin/main` == `cf7148c`, unchanged. Nothing pushed, deployed, or sent.
 
-Five commits, one per phase:
+One commit per phase, then this report, then Sky's decisions:
 
 | # | Hash | Subject |
 |---|---|---|
@@ -13,6 +13,10 @@ Five commits, one per phase:
 | 3 | `204f62d` | feat(home): how the work actually gets made |
 | 4 | `b12aa58` | feat(work): my role, on the three that carry the most weight |
 | 5 | `4483161` | feat(work): rebuild the Flagstone case study on what is actually true |
+| — | `1cfed10` | docs(truth): close-out report |
+| 6 | `1798a26` | feat(truth): Sky's calls on the six open decisions |
+
+**Decisions resolved 2026-08-21** — six of the seven taken as recommended; §4 records each outcome. Everything below the gate table reflects the post-decision state.
 
 ---
 
@@ -79,27 +83,27 @@ Not true, and publishing it would have created a *new* false claim inside the pa
 **P-4 · "1,710 commits in 91 days."**
 Close, and now stale: AccessMap is at **1,713** commits, first 2026-05-22, most recent 2026-08-21. Published as *"more than 1,700"* — a floor that stays true as the count grows, the same pattern the homepage test chip already uses.
 
-### DELIBERATELY NOT FIXED (7) — the prompt's do-not-touch list, all confirmed intact
+### DELIBERATELY NOT FIXED (5) — the prompt's do-not-touch list, all confirmed intact
 
 | Item | Verified |
 |---|---|
 | Test-count chip (`FlagstoneTestReceipt`) | Untouched. `2,971 / 2026-08-16` still pinned; `3,286` appears nowhere in source; 0 chip lines in the branch diff. |
 | `/accessibility/` | 0 files changed. |
 | Cinematic intro | Untouched, not gated. |
-| Hero subhead | Untouched — alternatives drafted, §4. |
-| Three competing taglines | All three untouched — §4. |
 | Resume / LinkedIn | Not opened. Separate surfaces. |
 | Historical audit bundles | Not rewritten. AccessMap-era records left as records. |
 
+The **hero subhead** and the **three taglines** were on this list through Phase 5 — drafted-but-untouched, pending Sky. Both were decided on 2026-08-21 and moved to FIXED; see §4.4 and §4.6.
+
 No formatter sweep was run. No bulk reformat. `content/deliverables.json` round-trips byte-identically through `json.dumps(indent=2, ensure_ascii=False)`, which is how every content edit was applied without reflowing the file.
 
-### NEEDS SKY (7)
+### NEEDS SKY (1, down from 7)
 
-See §4. Nothing in this bucket was decided unilaterally.
+Six were put to Sky on 2026-08-21 and all six came back as recommended — see §4 for each outcome. **One remains: the Prompt Library LICENSE**, which lives in a different repo, is a rights decision, and needs a push. Nothing in this bucket was ever decided unilaterally.
 
-### NOT APPLICABLE (1)
+### NOT APPLICABLE (0, down from 1)
 
-**Replacing `#process`.** The prompt allowed replacing it "if that section is genuinely thin". It is generic, but replacing it would delete Sky's existing designed content and is a taste call, not a truth call. The new band was **inserted between `#work` and `#process`** — the prompt's first option — so cutting `#process` remains available and remains Sky's.
+**Replacing `#process`** sat here through Phase 5. The prompt allowed replacing it "if that section is genuinely thin", but deleting Sky's existing designed content is a taste call, not a truth call, so the new band was **inserted between `#work` and `#process`** — the prompt's first option — leaving the cut available and hers. She took it on 2026-08-21; `#process` is now cut. See §4.7.
 
 ### 2.1 · Two duplications this pass created, and closed
 
@@ -146,6 +150,18 @@ Phase 5's first draft said the report mechanism was *"days from shipping"* dead.
 | `/work/claude-corp/` | `## My role` (~240 w) |
 | `/work/dashboard/` | `## My role` (198 w) |
 
+### Decision round (`1798a26`)
+
+| Location | Old | New |
+|---|---|---|
+| Homepage hero subhead | "Five projects built, all five **live** on the open web. Accessibility first, built for everyone." | "Five projects built, all five on the open web. **One heading to the App Store.** Accessibility first, built for everyone." |
+| `/work/claude-corp/` | "…when the system finds a new failure mode. **A redacted excerpt is the next thing I plan to put online.**" | "…when the system finds a new failure mode." |
+| `/work/claude-corp/` links | `GitHub → github.com/Skypie99/Claude_Corp` · `Live demo → claudecorp.skypistudio.com` | `Live demo → claudecorp.skypistudio.com` (GitHub link removed; Links block no longer renders) |
+| Sidebar, every desktop route | "Technology designed with accessibility in mind." | *(removed)* |
+| HamburgerNav, every route <768 | "Technology designed with accessibility in mind." | *(removed)* |
+| Homepage `#process` | "Method / Three quiet steps, repeated carefully." + Discover, Build, Ship & stay curious | *(section removed)* |
+| Homepage rail | The Work · How the work gets made · **Method** · A Brief Account · Credentials · Let's talk | The Work · How the work gets made · A Brief Account · Credentials · Let's talk |
+
 ### Ban-list
 
 Clean across all five bodies and the new homepage band: no *leveraged, cutting-edge, revolutionary, seamless, innovative, ecosystem, transformative, passionate about, journey, empower*. `"platform"` survives only inside "cross-platform development", the literal technical term. The last "passionate about" on the site was removed in Phase 5.
@@ -154,43 +170,47 @@ Punctuation follows the house rule: straight apostrophes are authored in `delive
 
 ---
 
-## 4 · Decisions for Sky
+## 4 · Decisions — resolved 2026-08-21
 
-**1 · Prompt Library LICENSE — the one that is still a live falsehood-shaped hole**
-The claim is gone from the site, but the repo still reports `license: null` with no LICENSE file, which legally means *all rights reserved*. AccessMap carries MIT; this one carries nothing.
-**Recommendation:** add MIT to `Skypie99/Prompt_Library` to match, then the stronger sentence ("open-source under MIT") becomes available and true. Licensing is a rights decision and not mine to make, so the site currently claims nothing.
-**Also, same click:** the repo's public description reads **"prompt libary"** — a typo on the first thing anyone sees. Verified live via the GitHub API. Not a portfolio file, so untouched.
+Sky took all six open calls as recommended, in commit `1798a26`. One remains, outside this repo.
 
-**2 · Claude Corp "GitHub" link — left unchanged deliberately**
-`links[0]` still points `GitHub → github.com/Skypie99/Claude_Corp`. That repo is the marketing site (`index.html`, `CNAME`, `og-image.png`, `robots.txt`, `sitemap.xml`, `404.html`, `LICENSE`, `README.md`). A technical reader clicks a link labelled *GitHub* on your differentiator specifically to see the thing, and finds a landing page.
-**Options:** (a) relabel to `Site`; (b) remove it — a `Live demo` link to the same content already exists, so `GitHub` is currently the second link to one destination; (c) point it at a new public repo holding a redacted Constitution excerpt, which would make it the only inspectable artifact behind your central claim.
-**Recommendation: (b) now, (c) when the excerpt exists.** Not chosen unilaterally — no existing source establishes the intended label.
+| # | Decision | Outcome |
+|---|---|---|
+| 1 | Prompt Library LICENSE | **STILL OPEN** — different repo, needs a push |
+| 2 | Claude Corp "GitHub" link | **Removed** |
+| 3 | "…plan to put online" sentence | **Cut** |
+| 4 | Hero subhead | **Minimal fix applied** |
+| 5 | Role string | **Kept** as `Solo builder · AI-assisted` |
+| 6 | Three competing taglines | **Sidebar line cut** — from both chrome surfaces |
+| 7 | `#process` | **Cut** |
 
-**3 · The sentence that commits you — raise deliberately**
-The F-2 replacement ends: *"A redacted excerpt is the next thing I plan to put online."* That is not false, but it is a **public commitment to a future action**, and if it doesn't happen it becomes exactly the kind of stale claim this pass exists to remove. No date is promised, per instruction.
-**Options:** keep it as written (it is a real intention and it dates itself softly); or drop the last sentence and end on "…when the system finds a new failure mode."
-**Recommendation:** keep it only if you intend to do it within a couple of months. Otherwise drop the sentence — it costs nothing.
+**1 · Prompt Library LICENSE — the only one still open**
+`Skypie99/Prompt_Library` reports `license: null` with no LICENSE file, which legally means *all rights reserved*. AccessMap carries MIT; this one carries nothing. The false claim is gone from the site and it now claims nothing — honest, but weaker than the truth could be. Adding MIT unlocks the stronger true sentence ("open-source under MIT"). It is a rights decision, in a repo outside this one, and needs a push, so it stays with Sky.
+**Same click:** the repo's public description reads **"prompt libary"** — a typo, live, on the first thing a visitor to the repo sees. Verified via the GitHub API.
 
-**4 · Hero subhead — untouched, two alternatives drafted**
-Current: *"Five projects built, all five live on the open web. Accessibility first, built for everyone."*
-All five URLs really do return 200, so it is not false. It is **misread**: "live" implies users. The per-project status lines now correct that one click in, but the hero is the most-read sentence on the site.
-- **A (minimal):** "Five projects built. Four live on the open web, one heading to the App Store. Accessibility first, built for everyone."
-- **B (leads with the differentiator):** "Five products, built by directing AI agents inside a system I designed to catch their mistakes. Accessibility first, built for everyone."
+**2 · Claude Corp "GitHub" link — REMOVED**
+It pointed at `Skypie99/Claude_Corp`, which is the marketing site (`index.html`, `CNAME`, `og-image.png`, `robots.txt`, `sitemap.xml`, `404.html`, `LICENSE`, `README.md`), and a `Live demo` link already went to that same destination — two links to one place, one of them promising source and delivering a landing page. Removing loses nothing.
+Layout was checked rather than assumed: claude-corp now has no non-demo link, so its Links block disappears and the Tech row takes `md:max-lg:col-span-2` — verified at parity with dashboard, which was already in that state. The behaviour is data-driven and needed no code change; the `C-52` comment claiming "dashboard is the only deliverable with no non-demo links" did, and got one.
+**Deferred option (c):** point it at a public repo holding a redacted Constitution excerpt, when one exists. That would make it the only inspectable artifact behind the site's central claim.
 
-A is the safe correction; B is the positioning move the audit recommends. Not changed — the hero is yours.
+**3 · The sentence that commits you — CUT**
+*"A redacted excerpt is the next thing I plan to put online."* True as an intention, but the only forward-looking promise on the site, and an unkept one decays into exactly the kind of stale claim this branch opened by deleting three of. The paragraph now ends on the durable half: *"…it changes when the system finds a new failure mode."*
 
-**5 · Role string — shipped as `Solo builder · AI-assisted`**
-26 chars, inside the schema's 60-char cap. Alternatives if you want a different register: `Solo — AI-assisted` (18) · `Director & sole reviewer` (24, drops the AI word entirely, which I would not recommend — disclosure is the point) · `Solo builder · AI-directed` (26, claims more agency).
-A `content.test.ts` invariant now fails the suite if any role reverts to bare `Solo builder`, so changing the wording is fine but silently dropping the disclosure is not.
+**4 · Hero subhead — MINIMAL FIX APPLIED**
+Was: *"Five projects built, all five live on the open web. Accessibility first, built for everyone."*
+Now: *"Five projects built, all five on the open web. One heading to the App Store. Accessibility first, built for everyone."*
+Not a falsehood fix — every URL returns 200 — but "live" reads as *live with users*. The sentence now carries the one status that stops the generous inference at the door, rather than one click in. The bigger swing (leading with the AI-direction differentiator) was drafted and declined for now.
 
-**6 · Three competing taglines — all three left standing**
-`profile.json` "AI tools built with intention." · `Sidebar.tsx` "Technology designed with accessibility in mind." · `app/page.tsx` hero "Building accessible, AI-native product."
-Three positions on one page. Not consolidated — silently picking one is authorship, not a truth fix.
-**Recommendation:** cut the Sidebar line. It is the most generic of the three, it appears in persistent chrome on every route, and it is the only one that could belong to anyone.
+**5 · Role string — KEPT**
+`Solo builder · AI-assisted`, 26 chars, inside the schema's 60-char cap. Discloses without branding. A `content.test.ts` invariant fails the suite if any role reverts to bare `Solo builder`, so changing the *wording* later is free; silently dropping the disclosure is not.
 
-**7 · `#process` — kept, and now arguably redundant**
-"Three quiet steps, repeated carefully" (Discover / Build / Ship & stay curious) sits directly below the new `#how-i-work` band, which says something specific about the same subject. Reading them in sequence, the new one does the work and the old one restates it generically.
-**Recommendation:** cut `#process`, or cut it to one line. Removing it also removes a rail entry, so it is a real design decision — yours, not mine.
+**6 · Three competing taglines — SIDEBAR LINE CUT, FROM BOTH SURFACES**
+The three were: `profile.json` → Footer, every page ("AI tools built with intention."); `Sidebar.tsx` → persistent left rail, top-left, every desktop route ("Technology designed with accessibility in mind."); `app/page.tsx` → homepage hero ("Building accessible, AI-native product.").
+The Sidebar line was cut: most-repeated, most generic, and the only one that dropped the AI half of the work. **It also rendered in `HamburgerNav.tsx`** — the sub-768 nav — which the brief did not name. Cutting only the desktop copy would have left it live on mobile and called the decision done, so both went. Verified: 0 hits across every built page. The Sidebar docblock described a line that no longer renders and was updated.
+
+**7 · `#process` — CUT**
+"Three quiet steps, repeated carefully" (Discover / Build / Ship & stay curious) sat directly beneath the new `#how-i-work` band and restated it generically — *"The work speaks for itself"* against a band that shows the work. The `NumberedStep` import went with it; the component stays, and `/about` still uses it for its own Method section, a different route, untouched.
+**The rail moved twice on this branch.** `how-i-work` in (Phase 3), `process` out (this commit) — so home is back at 5 *by way of 6*, not by never having moved. The `sectionNav` map, `HOME_LABELS`, and the count assertion were updated together, because guard T4 asserts the map matches the built HTML in both directions and would have failed either half alone. `/about` keeps its own Method entry; the test asserting it is scoped to that route.
 
 ### Follow-up, not a decision
 
@@ -220,14 +240,27 @@ That is safe as of close-out: nothing was pushed, `main` has no commits from thi
 To drop a single phase instead, revert its commit — they are independent in that later phases do not depend on earlier ones compiling differently, with one exception: **Phase 4 edited copy that Phase 1 wrote** (the Flagstone "Where it stands" trim). Reverting Phase 1 alone would conflict. Revert in reverse order:
 
 ```bash
-git -C ~/Portfolio revert --no-edit 4483161 b12aa58 204f62d 44dac7b a03a0b7
+git -C ~/Portfolio revert --no-edit 1798a26 4483161 b12aa58 204f62d 44dac7b a03a0b7
 ```
 
 To keep Phases 1–2 only (the unconditional truth fix) and drop the rest:
 
 ```bash
-git -C ~/Portfolio revert --no-edit 4483161 b12aa58 204f62d
+git -C ~/Portfolio revert --no-edit 1798a26 4483161 b12aa58 204f62d
 ```
+
+**All three sequences above were executed on throwaway branches and verified, not reasoned about.** The full revert and the keep-Phases-1–2 revert both complete cleanly, exit 0, no conflicts.
+
+`1798a26` (the decision round) must come out **before** `204f62d`: it cut `#process` and re-pointed the rail that Phase 3 registered, so the two commits edit the same regions. Reverting Phase 3 while the decision round still stands does **not** produce a silently-wrong tree — it stops immediately with three conflicts, measured:
+
+```
+CONFLICT (content): Merge conflict in app/page.tsx
+CONFLICT (content): Merge conflict in components/__tests__/SidebarSectionNav.test.tsx
+CONFLICT (content): Merge conflict in lib/sectionNav.ts
+error: could not revert 204f62d... feat(home): how the work actually gets made
+```
+
+Recover with `git revert --abort`. Reverse order avoids it entirely.
 
 `--no-edit` is on every command deliberately: a revert without it opens `vi` and leaves the operation staged-but-uncommitted.
 
@@ -238,5 +271,6 @@ git -C ~/Portfolio revert --no-edit 4483161 b12aa58 204f62d
 Not in scope for this pass, but found while verifying and worth writing down:
 
 - **`Skypie99/Prompt_Library` public description reads "prompt libary."** Typo, live, first thing a visitor to the repo sees.
-- **The Constitution remains publicly uninspectable.** Its only remote is a private backup. Every claim the site makes about the governance system is currently unfalsifiable by a reader — which the new homepage band now states plainly rather than papering over, but stating it is not the same as fixing it. The redacted excerpt is the fix.
+- **The Constitution remains publicly uninspectable.** Its only remote is a private backup. Every claim the site makes about the governance system is currently unfalsifiable by a reader — which the new homepage band states plainly rather than papering over, but stating it is not the same as fixing it. A redacted public excerpt is the fix, and it is now the thing that would let the Claude Corp card carry a real source link again (§4.2, deferred option c). Note the site no longer *promises* that excerpt — the commitment sentence was cut (§4.3) — so publishing it is an option, not a debt.
+- **`Skypie99/Prompt_Library` has no LICENSE.** The last open decision. All-rights-reserved by default; the site claims nothing rather than something false, which is honest but weaker than the truth could be.
 - **`content/case-studies.md` is gone but its claims were never live.** Nothing on the site ever rendered it. It is deleted so nobody rebuilds a page from it.
