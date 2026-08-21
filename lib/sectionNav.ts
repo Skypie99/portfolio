@@ -66,10 +66,17 @@ export type RailSection = {
 
 /** One entry per route that has a real, multi-section index. */
 const ROUTE_SECTIONS = {
-  // Home — unchanged. These five labels are home's five section eyebrows
-  // (app/page.tsx), and the ids are its <section> ids.
+  // Home — six labels, each one of home's section eyebrows verbatim
+  // (app/page.tsx), and the ids are its <section> ids. `how-i-work` joined in
+  // the truth pass (2026-08-21): it is a principal section, not chrome, so it
+  // is INDEXED rather than declared unindexed. Rule 1 holds — the label is the
+  // eyebrow the band actually renders, byte-for-byte, not a summary of it.
+  // Order follows the DOM (guard T5 asserts the rendered rail matches this
+  // list IN ORDER), so it sits between The Work and Method exactly as the page
+  // does.
   '/': [
     { id: 'work', label: 'The Work', href: '/#work' },
+    { id: 'how-i-work', label: 'How the work gets made', href: '/#how-i-work' },
     { id: 'process', label: 'Method', href: '/#process' },
     { id: 'about', label: 'A Brief Account', href: '/#about' },
     { id: 'certificates', label: 'Credentials', href: '/#certificates' },

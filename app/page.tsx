@@ -371,6 +371,92 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── How the work gets made ───────────────────────────────────
+          Truth pass 2026-08-21. The site named five products and a 15-role
+          agent system as a sixth project, and left the reader to work out the
+          relationship between them. Every card said "Solo builder". A reader
+          who took that literally formed an expectation a technical screen would
+          break; a reader who suspected AI got no account of how the work is
+          directed, which is the more unflattering inference of the two.
+
+          Sits between the work and the method: the reader has just seen what
+          was built, and asks how, before being told the three steps.
+
+          Prose, not NumberedSteps — this is an account, and the numbered-step
+          furniture below already owns that grammar. Every claim here is
+          checkable against the Constitution (~/.claude/CONSTITUTION.md) or the
+          decision logs, including the two that qualify themselves: the Art. 17
+          merge carve-out and the prompt-level limit. Those two ARE the section
+          — an ungated version of this copy would be the same unfalsifiable
+          claim the page is replacing. */}
+      <section
+        id="how-i-work"
+        className={cn(
+          'relative isolate overflow-hidden',
+          'px-gutter',
+          'py-24 lg:py-32',
+          'world-surface',
+          'border-t border-border-decorative',
+        )}
+      >
+        <ParallaxWash depth="far" />
+        <div className="relative z-10 max-w-content mx-auto">
+          <Reveal variant="scene" className="mb-12 pl-4 border-l-2 border-terracotta">
+            <p className="flex items-center gap-2 font-mono text-label tracking-label uppercase text-accent-ink mb-4">
+              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
+              How the work gets made
+            </p>
+            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-[1.1] text-balance">
+              I direct AI agents, and I built the system that keeps them honest.
+            </h2>
+          </Reveal>
+
+          <div className="max-w-measure-wide flex flex-col gap-6 font-sans font-light text-body leading-[1.7] text-ink-muted text-pretty">
+            <Reveal index={0} variant="depth" as="p">
+              The projects above were implemented by AI agents working inside a
+              governance system I designed: fifteen roles with explicit domain
+              boundaries, and a written constitution that outranks any
+              individual role or prompt. The agents do the implementation, the
+              tests, and most of the diagnosis. I set the problem, make the
+              architectural calls, and gate what lands.
+            </Reveal>
+            <Reveal index={1} variant="depth" as="p">
+              The constraints are what make the output reviewable. Database
+              migrations are files with a rollback, never applied changes — no
+              agent has written to a production database. None handles
+              credentials, and none sends anything outside the repository.
+              Exactly one of the fifteen may message me; the rest write to files
+              I read on my own schedule. Merges to{' '}
+              <code className="font-mono text-body-sm">main</code> are mine,
+              with one narrow gated exception I granted to a single project.
+            </Reveal>
+            <Reveal index={2} variant="depth" as="p">
+              Here is the system working. An agent fixing something unrelated
+              added two background-location permission strings to{' '}
+              <code className="font-mono text-body-sm">app.json</code>. The
+              privacy role blocked it: the app uses no background-location APIs,
+              so declaring them would invite an App Store 5.1.1 rejection and
+              ask for a permission the product does not need. Both keys were
+              removed; neither reached{' '}
+              <code className="font-mono text-body-sm">main</code>.
+            </Reveal>
+            <Reveal index={3} variant="depth" as="p">
+              And here is what it hands back. A review found that anonymous
+              reports skipped a content filter that signed-in reports run. It
+              was written up and deliberately left unpatched, because deciding
+              what to filter on a submit form is a moderation policy, not a bug
+              fix. It is still open, and it is still mine.
+            </Reveal>
+            <Reveal index={4} variant="depth" as="p">
+              The honest limit: these fences are prompt-level, not
+              sandbox-level. It is one person{'\u2019'}s system, tested across
+              one person{'\u2019'}s projects, and some of the governance
+              overhead does not pay for itself.
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* ── Process ──────────────────────────────────────────────────── */}
       <section
         id="process"
