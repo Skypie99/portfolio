@@ -40,7 +40,18 @@ vi.mock('@/lib/motion', () => ({
 import { SidebarSectionNav } from '@/components/SidebarSectionNav';
 import { ROUTE_SECTIONS, sectionsForRoute, INDEXED_ROUTES } from '@/lib/sectionNav';
 
-const HOME_LABELS = ['The Work', 'Method', 'A Brief Account', 'Credentials', "Let’s talk"];
+const HOME_LABELS = [
+  'The Work',
+  // Truth pass 2026-08-21. This array is a literal, not a read of the map, so
+  // it is what makes the loops below a real assertion rather than a tautology —
+  // which also means a new rail entry that is not added here is a section the
+  // suite silently stops checking. `how-i-work` is that entry. DOM order.
+  'How the work gets made',
+  'Method',
+  'A Brief Account',
+  'Credentials',
+  "Let’s talk",
+];
 
 /**
  * Rendered outside the app, next/link normalizes `/about/#x` to `/about#x`;
@@ -71,7 +82,7 @@ afterEach(() => {
 });
 
 describe('SidebarSectionNav — the homepage index is unchanged', () => {
-  it('renders the "On this page" landmark with all five section links', () => {
+  it('renders the "On this page" landmark with every section link', () => {
     render(<SidebarSectionNav />);
     const nav = screen.getByRole('navigation', { name: /on this page/i });
     expect(nav).toBeInTheDocument();
@@ -177,7 +188,10 @@ describe('SidebarSectionNav — the index describes the route you are on (UP-10)
 
   it('resolves a route with and without its trailing slash identically', () => {
     expect(sectionsForRoute('/about')).toBe(sectionsForRoute('/about/'));
-    expect(sectionsForRoute('/')).toHaveLength(5);
+    // Counts are asserted deliberately: the rail is curated, so a section
+    // JOINING or LEAVING it should be a decision someone made, not a diff
+    // that slid through. Home went 5 -> 6 in the truth pass (`how-i-work`).
+    expect(sectionsForRoute('/')).toHaveLength(6);
     expect(sectionsForRoute('/about')).toHaveLength(4);
   });
 
