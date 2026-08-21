@@ -8,7 +8,6 @@ import { CountUpStat } from '@/components/CountUpStat';
 import { Hero } from '@/components/Hero';
 import { IntroScrollCue } from '@/components/IntroScrollCue';
 import { LitWindows } from '@/components/LitWindows';
-import { NumberedStep } from '@/components/NumberedStep';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { ProjectCard } from '@/components/ProjectCard';
 import { RailInert } from '@/components/RailInert';
@@ -157,7 +156,7 @@ export default function HomePage() {
           avatarAlt="Sky Halisky"
           eyebrow="Portfolio — 2026"
           heading="An accessibility map. A multi-agent system. A web-based prompt library."
-          subhead="Five projects built, all five live on the open web. Accessibility first, built for everyone."
+          subhead="Five projects built, all five on the open web. One heading to the App Store. Accessibility first, built for everyone."
           ctaLabel="See the work."
           ctaHref="#work"
         />
@@ -452,63 +451,6 @@ export default function HomePage() {
               sandbox-level. It is one person{'\u2019'}s system, tested across
               one person{'\u2019'}s projects, and some of the governance
               overhead does not pay for itself.
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Process ──────────────────────────────────────────────────── */}
-      <section
-        id="process"
-        className={cn(
-          'relative isolate overflow-hidden',
-          'px-gutter',
-          'py-24 lg:py-32',
-          'world-surface-alt',
-          'border-t border-border-decorative',
-        )}
-      >
-        {/* layered golden-hour depth behind the method panel — far tier, RM-static */}
-        <ParallaxWash depth="far" />
-        <div className="relative z-10 max-w-content mx-auto">
-          <Reveal variant="scene" className="mb-24 pl-4 border-l-2 border-terracotta">
-            <p className="flex items-center gap-2 font-mono text-label tracking-label uppercase text-accent-ink mb-4">
-              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
-              Method
-            </p>
-            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-[1.1] text-balance">
-              Three quiet steps, repeated carefully.
-            </h2>
-          </Reveal>
-
-          {/* Warm-white panel — hairline rules between steps.
-              Each NumberedStep staggered 80ms apart (index * 0.08s in Reveal). */}
-          <div className="bg-surface-mid rounded-lg p-12 md:p-24 border border-stone dark:border-line-strong/75 space-y-12 shadow-lg dark:shadow-md">
-            <Reveal index={0} variant="depth">
-              <NumberedStep
-                number="01"
-                title="Discover"
-                body="Start with the smallest honest version of the problem. The people who will live with the thing know more than the ones who will fund it."
-                highlight
-              />
-            </Reveal>
-            <div aria-hidden="true" className="rule-ember" />
-            <Reveal index={1} variant="depth">
-              <NumberedStep
-                number="02"
-                title="Build"
-                body="One slice at a time. Type-safe, accessible from the first line, no shortcuts that leave people out."
-                highlight
-              />
-            </Reveal>
-            <div aria-hidden="true" className="rule-ember" />
-            <Reveal index={2} variant="depth">
-              <NumberedStep
-                number="03"
-                title="Ship & stay curious"
-                body="Get it into the world, notice what's not working and what could be, and keep refining until it earns its place. The work speaks for itself."
-                highlight
-              />
             </Reveal>
           </div>
         </div>

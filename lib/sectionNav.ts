@@ -66,18 +66,18 @@ export type RailSection = {
 
 /** One entry per route that has a real, multi-section index. */
 const ROUTE_SECTIONS = {
-  // Home — six labels, each one of home's section eyebrows verbatim
-  // (app/page.tsx), and the ids are its <section> ids. `how-i-work` joined in
-  // the truth pass (2026-08-21): it is a principal section, not chrome, so it
-  // is INDEXED rather than declared unindexed. Rule 1 holds — the label is the
-  // eyebrow the band actually renders, byte-for-byte, not a summary of it.
-  // Order follows the DOM (guard T5 asserts the rendered rail matches this
-  // list IN ORDER), so it sits between The Work and Method exactly as the page
-  // does.
+  // Home — five labels, each one of home's section eyebrows verbatim
+  // (app/page.tsx), and the ids are its <section> ids. Truth pass 2026-08-21
+  // swapped one for another: `how-i-work` joined, and `process` ("Method" —
+  // Discover / Build / Ship & stay curious) was cut, because it restated the
+  // new band generically and sat directly beneath it. Rule 1 holds — the label
+  // is the eyebrow the band actually renders, byte-for-byte. Order follows the
+  // DOM; guard T5 asserts the rendered rail matches this list IN ORDER, and T4
+  // asserts no id'd band on the route is missing from it.
+  // (Note /about keeps its OWN `#method` entry — different route, still live.)
   '/': [
     { id: 'work', label: 'The Work', href: '/#work' },
     { id: 'how-i-work', label: 'How the work gets made', href: '/#how-i-work' },
-    { id: 'process', label: 'Method', href: '/#process' },
     { id: 'about', label: 'A Brief Account', href: '/#about' },
     { id: 'certificates', label: 'Credentials', href: '/#certificates' },
     { id: 'contact', label: "Let’s talk", href: '/#contact' },

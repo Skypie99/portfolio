@@ -47,7 +47,8 @@ const HOME_LABELS = [
   // which also means a new rail entry that is not added here is a section the
   // suite silently stops checking. `how-i-work` is that entry. DOM order.
   'How the work gets made',
-  'Method',
+  // 'Method' left with #process in the truth pass (2026-08-21). /about keeps
+  // its own Method entry, asserted separately in the non-home block below.
   'A Brief Account',
   'Credentials',
   "Let’s talk",
@@ -190,8 +191,9 @@ describe('SidebarSectionNav — the index describes the route you are on (UP-10)
     expect(sectionsForRoute('/about')).toBe(sectionsForRoute('/about/'));
     // Counts are asserted deliberately: the rail is curated, so a section
     // JOINING or LEAVING it should be a decision someone made, not a diff
-    // that slid through. Home went 5 -> 6 in the truth pass (`how-i-work`).
-    expect(sectionsForRoute('/')).toHaveLength(6);
+    // that slid through. The truth pass did both — `how-i-work` in, `process`
+    // out — so home is back at 5 by way of 6, not by never having moved.
+    expect(sectionsForRoute('/')).toHaveLength(5);
     expect(sectionsForRoute('/about')).toHaveLength(4);
   });
 

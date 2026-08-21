@@ -14,7 +14,11 @@ import { getFeaturedDeliverable, getProfile } from '@/lib/content';
  * hidden on mobile (the hamburger overlay takes its place).
  *
  * 2026-06-10 voice pass: the rail reads like a proper brand mark, quieter.
- *  - Wordmark + brand line ("Technology designed with accessibility in mind.")
+ *  - Wordmark. The generic brand line that used to sit here ("Technology
+ *    designed with accessibility in mind.") was cut in the truth pass
+ *    2026-08-21: it was the most-repeated of three competing taglines and
+ *    the only one that dropped the AI half of what Sky actually does. The
+ *    hero positioning line carries the position now, in one place.
  *  - Featured callout preserved
  *  - Clean "Write to me." CTA pinned to the bottom — no © / location clutter
  *
@@ -58,9 +62,6 @@ export function Sidebar() {
         >
           {profile.wordmarkText}
         </Link>
-        <p className="font-mono text-meta tracking-label uppercase text-text-meta leading-snug text-balance">
-          Technology designed with accessibility in mind.
-        </p>
         {/* Light/dark theme toggle */}
         <ThemeToggle withLabel className="mt-2" />
       </div>
