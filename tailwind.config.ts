@@ -183,6 +183,9 @@ const config: Config = {
         '50': '12.5rem', // 200px = 50 × 0.25rem
         gutter: '2rem',
         sidebar: '280px',
+        // Phase A — codifies --section-y (see globals.css for why it isn't
+        // wired into any call site yet). Reachable as py-section-y etc.
+        'section-y': 'var(--section-y)',
       },
       // Phase A — var-backed (was 5 literal strings duplicating app/globals.css
       // by coincidence, not by reference). {4, 8, 16, 22, pill}, one system.

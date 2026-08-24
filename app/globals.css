@@ -267,6 +267,17 @@
      phase — see the Phase A close-out 🔴. */
   --measure-heading: 672px;
   --gutter:      var(--space-8); /* 2rem/32px — unchanged px; honest key after §7.4 */
+  /* Phase A (05_DESIGN_SYSTEM.md §Spacing) — codifies the site's dominant
+     section vertical-padding rhythm as a named, fluid token. Purely additive
+     and NOT wired into any call site this phase: the near-universal current
+     pattern is the discrete `py-24 lg:py-32` (96px -> jumps to 128px exactly
+     at the lg breakpoint); this clamp interpolates smoothly across the whole
+     viewport range instead, which is a real rendered-value change at every
+     intermediate width, not a notation change — exactly what this item's own
+     "do NOT change: the visual rhythm itself" rules out. Defined here so a
+     later phase that's actually touching section rhythm can adopt it
+     deliberately. See the Phase A close-out 🔴. */
+  --section-y: clamp(6rem, 10vw, 8rem);
 
   /* Shadows */
   --shadow-soft: 0 1px 2px rgba(35, 36, 32, 0.04),
