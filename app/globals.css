@@ -358,6 +358,10 @@
   --z-raised:  10;
   --z-sticky:  30;
   --z-overlay: 80;
+  /* Phase A — additive rung (does not renumber the others): fixed UI chrome
+     that must beat any full-screen overlay but stay under the pointer-inert
+     grain. Today's one consumer is HamburgerNav's trigger button. */
+  --z-chrome:  90;
   --z-grain:   100;
 
   /* ==================================================================
@@ -711,7 +715,7 @@ body::after {
   content: '';
   position: fixed;
   inset: 0;
-  z-index: 100;
+  z-index: var(--z-grain); /* Phase A: was a hardcoded 100 — the ladder's own top rung, now a real consumer of it */
   pointer-events: none;
   opacity: 0.08;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23g)'/%3E%3C/svg%3E");
