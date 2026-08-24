@@ -276,6 +276,11 @@
 
   --lh-tight:   1.1;
   --lh-snug:    1.2;
+  /* Phase A (OCD #1) — the long-form prose leading, looser than --lh-body
+     (1.65). Was three identical hand-written leading-[1.75] call sites
+     (MarkdownProse's case + blog variants, the /accessibility RM-only line)
+     before this consolidation. */
+  --lh-prose:   1.75;
   --ls-display:    -0.02em; /* card numeral + nav item (also display/step-5 tier) */
   --ls-hero:       -0.025em;
   --ls-card-title: -0.022em; /* §7.4 TY-8 — promoted off-token trackings */

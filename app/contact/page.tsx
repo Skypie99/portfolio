@@ -130,7 +130,7 @@ export default function ContactPage() {
                 <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 Elsewhere
               </p>
-              <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight text-balance">
+              <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-heading text-balance">
                 Find me in other quiet corners.
               </h2>
             </Reveal>
