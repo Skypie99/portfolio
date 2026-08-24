@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — Flagstone</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="stylesheet" href="../assets/site.css" />
+  <script>
+    /* Paint the saved theme before first render so returning visitors never
+       see a flash of the default. Full logic lives in ../assets/a11y.js. */
+    (function(){try{var p=JSON.parse(localStorage.getItem('flagstone-a11y-prefs')||'{}');var d=document.documentElement;
+    if(p.size)d.style.fontSize=p.size+'%';
+    var dark=p.dark===null||p.dark===undefined?(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches):p.dark;
+    d.setAttribute('data-theme',dark?'dark':'light');
+    d.setAttribute('data-contrast',p.contrast?'high':'normal');
+    d.setAttribute('data-reading',p.reading?'on':'off');
+    d.setAttribute('data-motion',p.motion?'reduced':'normal');}catch(e){}})();
+  </script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="page">
+  <nav class="masthead" aria-label="Primary">
+    <a class="brand" href="../">
+      <img src="../assets/logo-mark-white.svg" alt="" width="32" height="40" />
+      <span>Flagstone</span>
+    </a>
+    <ul class="site-nav">
+      <li><a href="./" aria-current="page">Support</a></li>
+      <li><a href="../privacy/">Privacy</a></li>
+      <li><a href="../accessibility/">Accessibility</a></li>
+      <li><a href="../terms/">Terms &amp; Guidelines</a></li>
+    </ul>
+  </nav>
+  <div class="hero">
+  <h1>Support</h1>
+  <p class="tagline">We're here to help. Find answers below or get in touch.</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <div id="a11y-mount"></div>
+
+  <main id="main">
+
+  <div class="about">
+    <h2>About Flagstone</h2>
+    <p>Flagstone is a crowdsourced mobile app for mapping accessibility barriers in the real world. Users drop pins at locations where there's an accessibility issue — a missing ramp, a broken sidewalk, an inaccessible parking spot — and the community verifies, resolves, or rejects those reports. The goal is to make cities and neighborhoods easier to navigate for everyone.</p>
+  </div>
+
+  <h2>How to Report a Bug</h2>
+  <p>If you've found something that isn't working correctly, we'd love to know about it.</p>
+  <ul>
+    <li><strong>Email us</strong> at <a href="mailto:support@skypistudio.com">support@skypistudio.com</a> with a description of what happened and your device/OS version</li>
+    <li><a href="https://github.com/Skypie99/AccessMap/issues" target="_blank" rel="noopener"><strong>Open a GitHub issue</strong></a> — include steps to reproduce, screenshots if possible, and your device type</li>
+  </ul>
+  <p>We aim to respond to bug reports within 3–5 business days.</p>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <h3>How do I report an accessibility barrier?</h3>
+    <p>Open the app and tap the <strong>+</strong> button (bottom-right of the map screen). Choose the barrier category (ramp, sidewalk, parking, etc.), set the severity, write a short description, and optionally add a photo. Tap <strong>Submit</strong> — your flag will appear on the map immediately. Other users can then verify or resolve it.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>How do I delete my account?</h3>
+    <p>Go to <strong>Profile → Settings → Account → Delete Account</strong>. This permanently deletes your email, display name, all flags you've submitted, and all associated photos. This action cannot be undone. If you'd prefer, you can also email us at <a href="mailto:support@skypistudio.com">support@skypistudio.com</a> and we'll delete it for you within 30 days.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Why does the app need my location?</h3>
+    <p>Flagstone uses your location <strong>only while the app is open</strong> — to center the map on where you are and to make it easier to place flags at the right spot. We never access your location in the background, and we never store or share your device's real-time location. When you submit a flag, we only store the specific latitude/longitude you chose for that flag.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Are my photos private?</h3>
+    <p>Photos attached to flags are <strong>publicly visible</strong> on the map — anyone using Flagstone can see them. Before storing your photo, we automatically strip all EXIF metadata (including GPS coordinates, timestamps, and camera model) so none of that information is ever stored or visible to others.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>What do the flag statuses mean?</h3>
+    <p><strong>Open</strong> — newly submitted, needs community verification. <strong>Verified</strong> — at least one other user has confirmed the barrier exists. <strong>Resolved</strong> — the barrier has been fixed or removed. <strong>Rejected</strong> — the flag was determined to be inaccurate or a duplicate.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>How do I earn points?</h3>
+    <p>You earn points by contributing to the community: <strong>+5</strong> when a flag you submitted gets verified, <strong>+10</strong> when it gets resolved. You also earn <strong>+2</strong> for verifying someone else's flag and <strong>+5</strong> for resolving one. Points reflect your community contribution and appear on your profile.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Does the app work on web / without the mobile app?</h3>
+    <p>Yes — Flagstone has a web version that runs in any modern browser. You can view the map without an account. Reporting and verifying flags requires signing in, which works the same way on web as in the mobile app.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Is Flagstone available on Android?</h3>
+    <p>The iOS app is the primary release. An Android version is planned — check back for updates or join the beta testing program by emailing us.</p>
+  </div>
+
+  <div class="contact-card">
+    <h2>Still need help?</h2>
+    <p>We're happy to assist. Email us and we'll get back to you within 3–5 business days.</p>
+    <a class="contact-link" href="mailto:support@skypistudio.com">Email Support</a>
+    <p style="margin-top:1rem; font-size:0.875rem; color:var(--fg-faint);">
+      For bug reports and feature requests, you can also open an issue on
+      <a href="https://github.com/Skypie99/AccessMap/issues" target="_blank" rel="noopener">GitHub</a>.
+    </p>
+  </div>
+
+  </main>
+</div>
+
+<footer class="page">
+  <nav aria-label="Site">
+    <strong>Flagstone</strong> &nbsp;|&nbsp;
+    Support &nbsp;|&nbsp;
+    <a href="../privacy/">Privacy Policy</a> &nbsp;|&nbsp;
+    <a href="../accessibility/">Accessibility</a> &nbsp;|&nbsp;
+    <a href="../terms/">Terms &amp; Community Guidelines</a>
+  </nav>
+  <p style="margin-top:0.5rem;">© 2026 Flagstone. All rights reserved.</p>
+</footer>
+
+<script src="../assets/a11y.js" defer></script>
+</body>
+</html>
