@@ -240,6 +240,17 @@ const config: Config = {
         // Overhaul 2026-06-03 — hairline divider (decorative only).
         hairline: '0.5px',
       },
+      // Phase A — the z-ladder was 100% orphaned (zero var(--z-*) consumers
+      // anywhere; z-index was hand-numbered everywhere instead). Stacking
+      // documented in one place; does NOT renumber the existing order.
+      zIndex: {
+        base: 'var(--z-base)',
+        raised: 'var(--z-raised)',
+        sticky: 'var(--z-sticky)',
+        overlay: 'var(--z-overlay)',
+        chrome: 'var(--z-chrome)',
+        grain: 'var(--z-grain)',
+      },
     },
   },
   plugins: [],
