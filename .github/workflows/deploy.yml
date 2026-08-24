@@ -8,10 +8,14 @@
 #   - deploy.yml (this file) ONLY builds + ships what Sky has already merged.
 #     No lint, no test, no typecheck here — that's ci.yml's job.
 #
-# Triggers:
-#   - push -> main: fires whenever Sky merges a cycle/* branch into main.
+# Triggers (CI-GATED since 2026-08-23, Sky's ruling — CI-DEPLOY-UNGATED is resolved):
+#   - workflow_run on "CI": fires only after ci.yml completes on main, and the
+#     build job runs only when CI concluded success. A red CI = no deploy; the
+#     old version stays up. This closes the gap where a push could deploy a
+#     build that CI later failed.
 #   - workflow_dispatch: manual re-deploy button in the Actions tab (e.g. for
-#     §6.2 emergency rollback by re-running the last good run).
+#     §6.2 emergency rollback by re-running the last good run). The manual
+#     path is deliberately ungated — it exists for emergencies.
 #
 # Permissions (top-level, GH-Pages requirements):
 #   - contents: read   — checkout the code.
@@ -25,7 +29,9 @@
 name: Deploy
 
 on:
-  push:
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
     branches: [main]
   workflow_dispatch:
 
@@ -42,9 +48,18 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    # The gate: deploy only what CI has proven. Manual dispatch stays open as
+    # the emergency path (it deploys the current main tip, ungated on purpose).
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      github.event.workflow_run.conclusion == 'success'
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          # workflow_run events carry the SHA that CI actually verified — deploy
+          # exactly that. Falls back to the default-branch tip for dispatch.
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
 
       - name: Setup Node
         uses: actions/setup-node@v6
