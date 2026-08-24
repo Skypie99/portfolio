@@ -101,7 +101,11 @@ export function CaseStudyCard({ title, category, description, href, media, links
                  ProjectCard) — one bar per card, beside the title, FT-9's
                  placement. */
               data-door-target={href}
-              className="rounded-sm transition-colors duration-fast ease-out hover:text-accent-text focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta"
+              /* Phase A (A11): was outline-offset-4, the one card-title link off
+                 the site's single 2px ring offset — no comment justified the wider
+                 gap, and the title sits 16px (gap-4) from the rule below either
+                 way, so 2px vs 4px changes nothing about collision. Unified. */
+              className="rounded-sm transition-colors duration-fast ease-out hover:text-accent-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
             >
               {title}
             </Link>
@@ -141,7 +145,7 @@ export function CaseStudyCard({ title, category, description, href, media, links
                  this a real, clickable, SR-rotor-visible link (NOT aria-hidden, NOT a
                  whole-card link). One stop per neighbour card, both names preserved. */
               tabIndex={-1}
-              className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:-top-[21px] after:bottom-0 after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-base ease-gh-glide hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+              className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:-top-[21px] after:bottom-0 after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-base ease-gh-glide hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
             >
               Read more <span aria-hidden="true">→</span>
             </Link>
@@ -153,7 +157,7 @@ export function CaseStudyCard({ title, category, description, href, media, links
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Open ${demoLink.label.toLowerCase()} for ${title} (opens in new tab)`}
-                    className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                    className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
                   >
                     {/* label-derived: "Live" for live products, "Demo" for
                         not-yet-live ones (e.g. Mutual Mesh) */}
@@ -166,7 +170,7 @@ export function CaseStudyCard({ title, category, description, href, media, links
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`View ${title} source on GitHub (opens in new tab)`}
-                    className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                    className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
                   >
                     GitHub <span aria-hidden="true">↗</span>
                   </a>
