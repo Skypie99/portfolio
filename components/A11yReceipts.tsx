@@ -92,14 +92,20 @@ export function A11yReceipts({ data, className }: { data: A11yReceiptsData; clas
           own hyphen; at 320 the label, the sub and the "0.003" figure all
           overflowed their padding box (invisibly — they ate the right padding
           rather than crossing an edge, which is why the audit's overflow probe
-          read zero). Every width >=480 is byte-identical. */}
+          read zero). Every width >=480 is byte-identical.
+          Phase A (A10): the cell padding had drifted from the twin claim above —
+          app/page.tsx's C-22 reclaimed base cell width (p-8 -> p-6) so its tag
+          pills fit their ~90px box at 375, but this grid was never given the
+          same fix and stayed at p-8. Restored to p-6 md:p-7 so the two grids are
+          actually byte-identical at the padding that the mobile-collapse
+          reasoning above depends on. */}
       <div className="grid grid-cols-1 min-[480px]:grid-cols-2 lg:grid-cols-3 gap-px bg-cool-soft/30 border border-cool-soft/50 rounded-lg overflow-hidden shadow-md">
         {data.receipts.map((r, i) => (
           <Reveal
             key={r.label}
             index={Math.min(i, 4)}
             variant="depth"
-            className={cn('flex flex-col bg-surface-mid p-8 md:p-7', 'group')}
+            className={cn('flex flex-col bg-surface-mid p-6 md:p-7', 'group')}
           >
             <CountUpStat value={r.value} emberClass={STAT_EMBER[i % STAT_EMBER.length]} label={r.label} />
             {/* W5-02: CountUpStat's sr-only name is already "{value} {label}", so
