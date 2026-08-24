@@ -40,8 +40,8 @@ export function ContactEmail({
 
   useEffect(() => {
     // Parts assembled at runtime — never in static HTML
-    const user = ['skyler', 'halisky'].join('');
-    const domain = ['gmail', 'com'].join('.');
+    const user = ['hello'].join('');
+    const domain = ['skypistudio', 'com'].join('.');
     setEmail(`${user}@${domain}`);
   }, []);
 

@@ -12,8 +12,8 @@ export function FooterEmail() {
   const [email, setEmail] = useState<string | null>(null);
 
   useEffect(() => {
-    const user = ['skyler', 'halisky'].join('');
-    const domain = ['gmail', 'com'].join('.');
+    const user = ['hello'].join('');
+    const domain = ['skypistudio', 'com'].join('.');
     setEmail(`${user}@${domain}`);
   }, []);
 
