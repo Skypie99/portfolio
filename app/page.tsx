@@ -90,7 +90,9 @@ export default function HomePage() {
       label: 'AI agents',
       project: 'Claude Corp',
       href: '/work/claude-corp/',
-      tags: ['MCP', 'Real commits'],
+      // 0183678 (F7-resolved): 'MCP' was unbacked — not demonstrable in any
+      // linked repo. 'Open source' holds (Claude_Corp carries a real LICENSE).
+      tags: ['Open source', 'Real commits'],
     },
     {
       stat: '100%',
