@@ -77,29 +77,31 @@ const config: Config = {
         // PATTERN. `cool-pale` and `cool-wash` are registered nowhere, so
         // following the pattern emits nothing and the colour vanishes with no
         // type or test failure. The mapping is per-row, below, not a rule.
+        // Phase A (A14) — shrunk from 30 to 10 survivors. Each of the 20
+        // removed keys was verified EMPIRICALLY (grepped across app/ +
+        // components/ + lib/, all real Tailwind-prefix forms) to have zero
+        // live call sites before deletion — not assumed from a stale
+        // comment. 6 (wa-teal-deep/-plain/-mid/-soft/-pale/-wash) were still
+        // marked "call sites migrated by P10; retire after showcase merge"
+        // as if pending — the showcase train has since merged and the
+        // re-count found zero; that comment was stale, not aspirational.
+        // 4 more (wa-rose/-mid/-soft/-pale) and 2 (amber, pebble) had zero
+        // real call sites at all, only a stray same-word comment in
+        // amber's/pebble's case. lib/cn.ts's CUSTOM_COLOR_TOKENS updated in
+        // the same commit (amber/pebble removed; the deleted wa-* names were
+        // never in that list). Every survivor below now carries the
+        // established "legacy alias — canonical: X" comment.
         cream:          'rgb(var(--rgb-canvas) / <alpha-value>)',      // legacy alias — canonical: canvas; call sites migrated by P10; retire after showcase merge
         'warm-white':   'rgb(var(--rgb-canvas-alt) / <alpha-value>)',  // legacy alias — canonical: canvas-alt; call sites migrated by P10; retire after showcase merge
-        blush:          'rgb(var(--rgb-surface) / <alpha-value>)',
-        'peach-cream':  'rgb(var(--rgb-surface-warm) / <alpha-value>)',
-        amber:          'rgb(var(--rgb-accent-soft) / <alpha-value>)',
-        terracotta:     'rgb(var(--rgb-accent) / <alpha-value>)',
-        umber:          'rgb(var(--rgb-accent-ink) / <alpha-value>)',
-        stone:          'rgb(var(--rgb-line) / <alpha-value>)',
-        'stone-strong': 'rgb(var(--rgb-line-strong) / <alpha-value>)',
-        pebble:         'rgb(var(--rgb-pebble) / <alpha-value>)',
-        'sage-text':    'rgb(var(--rgb-ink-meta) / <alpha-value>)',
+        blush:          'rgb(var(--rgb-surface) / <alpha-value>)',          // legacy alias — canonical: surface; 1 live call site (Button.tsx)
+        'peach-cream':  'rgb(var(--rgb-surface-warm) / <alpha-value>)',     // legacy alias — canonical: surface-warm; 1 live call site (Button.tsx)
+        terracotta:     'rgb(var(--rgb-accent) / <alpha-value>)',           // legacy alias — canonical: accent; 54+ live call sites, largest survivor
+        umber:          'rgb(var(--rgb-accent-ink) / <alpha-value>)',       // legacy alias — canonical: accent-ink; 12 live call sites
+        stone:          'rgb(var(--rgb-line) / <alpha-value>)',             // legacy alias — canonical: line; 15 live call sites
+        'stone-strong': 'rgb(var(--rgb-line-strong) / <alpha-value>)',      // legacy alias — canonical: line-strong; 6 live call sites
+        'sage-text':    'rgb(var(--rgb-ink-meta) / <alpha-value>)',         // legacy alias — canonical: ink-meta; 3 live call sites
         charcoal:       'rgb(var(--rgb-ink-muted) / <alpha-value>)',  // legacy alias — canonical: ink-muted; call sites migrated by P10; retire after showcase merge
-        'near-black':   'rgb(var(--rgb-ink) / <alpha-value>)',
-        'wa-teal-deep': 'rgb(var(--rgb-cool-deep) / <alpha-value>)',  // legacy alias — canonical: cool-deep; call sites migrated by P10; retire after showcase merge
-        'wa-teal':      'rgb(var(--rgb-cool) / <alpha-value>)',  // legacy alias — canonical: cool; call sites migrated by P10; retire after showcase merge
-        'wa-teal-mid':  'rgb(var(--rgb-cool-mid) / <alpha-value>)',  // legacy alias — canonical: cool-mid; call sites migrated by P10; retire after showcase merge
-        'wa-teal-soft': 'rgb(var(--rgb-cool-soft) / <alpha-value>)',  // legacy alias — canonical: cool-soft; call sites migrated by P10; retire after showcase merge
-        'wa-teal-pale': 'rgb(var(--rgb-panel-cool) / <alpha-value>)',  // legacy alias — canonical: panel-cool  ⚠ NOT cool-pale; call sites migrated by P10; retire after showcase merge
-        'wa-teal-wash': 'rgb(var(--rgb-wash-cool) / <alpha-value>)',  // legacy alias — canonical: wash-cool  ⚠ NOT cool-wash; call sites migrated by P10; retire after showcase merge
-        'wa-rose':      'rgb(var(--rgb-rose) / <alpha-value>)',
-        'wa-rose-mid':  'rgb(var(--rgb-rose) / <alpha-value>)',
-        'wa-rose-soft': 'rgb(var(--rgb-cool-soft) / <alpha-value>)',
-        'wa-rose-pale': 'rgb(var(--rgb-rose-pale) / <alpha-value>)',
+        'near-black':   'rgb(var(--rgb-ink) / <alpha-value>)',              // legacy alias — canonical: ink; 9 live call sites (the showcase-owned app/work/[slug]/page.tsx x8, per UI_SYSTEM.md)
         'text-meta':    'rgb(var(--rgb-ink-meta) / <alpha-value>)',
         'border-decorative':  'rgb(var(--rgb-line) / <alpha-value>)',
         'border-interactive': 'rgb(var(--rgb-line-strong) / <alpha-value>)',

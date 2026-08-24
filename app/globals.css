@@ -185,29 +185,20 @@
   --color-foil:               rgb(var(--rgb-foil));
   --color-decorative-sage:    rgb(var(--rgb-cool-soft));
 
-  /* --- Legacy raw names → mapped to roles (kept for compat; flip too) --- */
-  --color-cream:        rgb(var(--rgb-canvas));
-  --color-warm-white:   rgb(var(--rgb-canvas-alt));
-  --color-blush:        rgb(var(--rgb-surface));
-  --color-peach-cream:  rgb(var(--rgb-surface-warm));
-  --color-near-black:   rgb(var(--rgb-ink));
-  --color-charcoal:     rgb(var(--rgb-ink-muted));
-  --color-sage-text:    rgb(var(--rgb-ink-meta));
-  --color-sage:         rgb(var(--rgb-cool-soft));
-  --color-stone:        rgb(var(--rgb-line));
-  --color-stone-strong: rgb(var(--rgb-line-strong));
-  --color-pebble:       rgb(var(--rgb-pebble));
-  --color-terracotta:   rgb(var(--rgb-accent));
-  --color-umber:        rgb(var(--rgb-accent-ink));
-  --color-amber:        rgb(var(--rgb-accent-soft));
-  --color-wa-teal-deep: rgb(var(--rgb-cool-deep));
-  --color-wa-teal:      rgb(var(--rgb-cool));
-  --color-wa-teal-mid:  rgb(var(--rgb-cool-mid));
-  --color-wa-teal-soft: rgb(var(--rgb-cool-soft));
-  --color-wa-teal-pale: rgb(var(--rgb-panel-cool));
-  --color-wa-teal-wash: rgb(var(--rgb-wash-cool));
-  --color-wa-rose:      rgb(var(--rgb-rose));
-  --color-wa-rose-pale: rgb(var(--rgb-rose-pale));
+  /* --- Legacy raw names → mapped to roles (kept for compat; flip too) ---
+     Phase A (A14) — shrunk from 22 to 6 survivors. This is a SEPARATE
+     mechanism from the tailwind.config.ts legacy color keys above (Tailwind
+     classes like `bg-terracotta` resolve straight to --rgb-accent; they
+     never go through these --color-* vars at all) — so "alive as a
+     Tailwind class" and "alive as a --color-* var" are independent facts.
+     Verified empirically: only var(--color-X) direct consumers (all in
+     app/tokens-phase2.css) were kept; the 16 removed had zero. */
+  --color-cream:        rgb(var(--rgb-canvas));         /* 2 live var() consumers */
+  --color-warm-white:   rgb(var(--rgb-canvas-alt));     /* 2 live var() consumers */
+  --color-blush:        rgb(var(--rgb-surface));        /* 1 live var() consumer */
+  --color-near-black:   rgb(var(--rgb-ink));            /* 3 live var() consumers */
+  --color-stone-strong: rgb(var(--rgb-line-strong));    /* 1 live var() consumer */
+  --color-pebble:       rgb(var(--rgb-pebble));         /* 1 live var() consumer (tokens-phase2.css --card-border-hover) */
 
   /* Type scale */
   --fs-display-s: 1.1875rem;

@@ -17,10 +17,12 @@ import { extendTailwindMerge } from 'tailwind-merge';
 const CUSTOM_COLOR_TOKENS = [
   // Foundations
   'cream', 'warm-white', 'blush', 'peach-cream',
-  // Terracotta scale
-  'sand', 'amber', 'terracotta', 'umber', 'bark',
-  // Neutrals
-  'stone', 'stone-strong', 'pebble', 'sage', 'sage-text', 'charcoal', 'near-black',
+  // Terracotta scale (Phase A/A14: 'amber' removed — zero live call sites,
+  // deleted from tailwind.config.ts in the same commit)
+  'sand', 'terracotta', 'umber', 'bark',
+  // Neutrals (Phase A/A14: 'pebble' removed — zero live call sites,
+  // deleted from tailwind.config.ts in the same commit)
+  'stone', 'stone-strong', 'sage', 'sage-text', 'charcoal', 'near-black',
   // Semantic (note: 'text-meta' here is the color alias #5C5D54;
   // `text-meta` as a font-size lives in CUSTOM_FONT_SIZES below)
   'text-meta', 'border-decorative', 'border-interactive',
