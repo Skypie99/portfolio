@@ -221,11 +221,19 @@
   --space-20: 5rem;
   --space-50: 12.5rem;
 
-  /* Radii */
+  /* Radii — {4, 8, 16, 22, pill}, one naming system (Phase A). */
   --radius-sm:   4px;
   --radius-md:   8px;
   --radius-lg:  16px;
-  --radius-pill: 999px;
+  /* Promoted from a Tailwind-only literal (was never a CSS var) — the
+     liquid-glass card corner (ProjectCard/CaseStudyCard/CertCard). */
+  --radius-card: 22px;
+  /* Was 999px — a literal mirror mismatch against Tailwind's own
+     '9999px' (below). Both already render identically for every real
+     consumer (border-radius clamps to 50% of element size, and nothing
+     here is 999px tall), so this closes the token/value gap with zero
+     visual change. */
+  --radius-pill: 9999px;
 
   /* Borders */
   --border-hairline:    1px solid var(--color-border-decorative);
@@ -475,6 +483,13 @@ html.dark {
   --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.45);
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.50);
   --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.55);
+  /* Phase A — --shadow-soft had NO dark override at all (unlike its sm/md/
+     lg/xl siblings above), so the Button/CredentialBadge hover elevation
+     was invisible in dark mode. Same geometry as light, opacity deepened
+     ~8x (matching the sm token's own light->dark ratio) and shifted to
+     pure black, consistent with the sibling ramp's own pattern. */
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.32),
+                 0 4px 12px rgba(0, 0, 0, 0.28);
   --scrim:     rgb(0 0 0 / 0.60);
 }
 

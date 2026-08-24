@@ -184,12 +184,14 @@ const config: Config = {
         gutter: '2rem',
         sidebar: '280px',
       },
+      // Phase A — var-backed (was 5 literal strings duplicating app/globals.css
+      // by coincidence, not by reference). {4, 8, 16, 22, pill}, one system.
       borderRadius: {
-        sm: '4px',
-        md: '8px',
-        lg: '16px',
-        card: '22px', // liquid-glass card corner (ProjectCard/CaseStudyCard/CertCard)
-        pill: '9999px',
+        sm: 'var(--radius-sm)',
+        md: 'var(--radius-md)',
+        lg: 'var(--radius-lg)',
+        card: 'var(--radius-card)',
+        pill: 'var(--radius-pill)',
       },
       maxWidth: {
         content: '1120px',
@@ -223,7 +225,9 @@ const config: Config = {
         'gh-arrive': 'var(--ease-gh-arrive)',
       },
       boxShadow: {
-        soft: '0 1px 2px rgba(35,36,32,0.04), 0 4px 12px rgba(35,36,32,0.03)',
+        // Phase A — was a literal string (no html.dark override existed to
+        // point at); var-backed now, matching sm/md/lg/xl below.
+        soft: 'var(--shadow-soft)',
         // Overhaul 2026-06-03 — layered warm ramp (var-backed; flips dark
         // via the html.dark override in globals.css). Overrides Tailwind's
         // unused core sm/md/lg/xl with our warm system.
