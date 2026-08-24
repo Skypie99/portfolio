@@ -4,7 +4,7 @@ Sky's public-facing AI portfolio. Static Next.js 15 site deployed to GitHub Page
 
 **Live:** https://skypistudio.com
 **Local path:** `~/Portfolio`
-**Owner:** skylerhalisky@gmail.com
+**Owner:** hello@skypistudio.com
 
 ---
 
