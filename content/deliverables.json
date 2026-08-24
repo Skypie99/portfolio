@@ -136,7 +136,6 @@
     "status": "In active use — my own system, no outside users",
     "tech": [
       "Claude Code",
-      "MCP",
       "Multi-agent orchestration"
     ],
     "year": 2026,
@@ -192,6 +191,11 @@
         "label": "Live demo",
         "href": "https://claudecorp.skypistudio.com",
         "type": "demo"
+      },
+      {
+        "label": "Real commits (AccessMap)",
+        "href": "https://github.com/Skypie99/AccessMap/commits/main",
+        "type": "other"
       }
     ],
     "tags": [
