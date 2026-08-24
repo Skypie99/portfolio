@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accessibility — Flagstone</title>
+  <meta name="description" content="Flagstone's accessibility statement: which assistive technologies the app supports, what we're still working on, and how to tell us when we get it wrong." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="stylesheet" href="../assets/site.css" />
+  <script>
+    /* Paint the saved theme before first render so returning visitors never
+       see a flash of the default. Full logic lives in ../assets/a11y.js. */
+    (function(){try{var p=JSON.parse(localStorage.getItem('flagstone-a11y-prefs')||'{}');var d=document.documentElement;
+    if(p.size)d.style.fontSize=p.size+'%';
+    var dark=p.dark===null||p.dark===undefined?(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches):p.dark;
+    d.setAttribute('data-theme',dark?'dark':'light');
+    d.setAttribute('data-contrast',p.contrast?'high':'normal');
+    d.setAttribute('data-reading',p.reading?'on':'off');
+    d.setAttribute('data-motion',p.motion?'reduced':'normal');}catch(e){}})();
+  </script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="page">
+  <nav class="masthead" aria-label="Primary">
+    <a class="brand" href="../">
+      <img src="../assets/logo-mark-white.svg" alt="" width="32" height="40" />
+      <span>Flagstone</span>
+    </a>
+    <ul class="site-nav">
+      <li><a href="../support/">Support</a></li>
+      <li><a href="../privacy/">Privacy</a></li>
+      <li><a href="./" aria-current="page">Accessibility</a></li>
+      <li><a href="../terms/">Terms &amp; Guidelines</a></li>
+    </ul>
+  </nav>
+  <div class="hero">
+  <h1>Accessibility</h1>
+  <p class="tagline">An app about accessibility barriers has no business being one.</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <div id="a11y-mount"></div>
+
+  <main id="main">
+
+  <div class="about">
+    <h2>Our commitment</h2>
+    <p style="margin-bottom:0;">
+      Flagstone exists so people can find out whether a place will work for them before
+      they travel to it. The people who most need that answer are disabled people — so
+      the app itself is built to be used with a screen reader, at large text sizes, with
+      reduced motion, and without relying on colour to carry meaning. We target
+      <strong>WCAG 2.2 Level AA</strong> and Apple's
+      <a href="https://developer.apple.com/accessibility/" target="_blank" rel="noopener">iOS accessibility guidelines</a>.
+    </p>
+  </div>
+
+  <h2>What the app supports</h2>
+
+  <div class="table-wrap">
+    <table>
+      <caption class="visually-hidden">Accessibility features supported by the Flagstone iOS app</caption>
+      <thead>
+        <tr><th scope="col">Feature</th><th scope="col">Status</th><th scope="col">What that means here</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">VoiceOver</th>
+          <td class="yes">Supported</td>
+          <td>Every control has a spoken label, role, and where useful a hint. Status changes, filter results, and errors are announced. Photos carry descriptions written by the person who uploaded them.</td>
+        </tr>
+        <tr>
+          <th scope="row">Larger Text</th>
+          <td class="yes">Supported</td>
+          <td>Text scales with your Dynamic Type setting, including the accessibility sizes. Layouts reflow rather than clip.</td>
+        </tr>
+        <tr>
+          <th scope="row">Dark Interface</th>
+          <td class="yes">Supported</td>
+          <td>A full dark theme that follows your system setting, plus a manual toggle in Settings.</td>
+        </tr>
+        <tr>
+          <th scope="row">Sufficient Contrast</th>
+          <td class="yes">Supported</td>
+          <td>Text and controls meet WCAG AA contrast ratios in both light and dark themes. Automated tests block changes that would regress this.</td>
+        </tr>
+        <tr>
+          <th scope="row">Differentiate Without Colour Alone</th>
+          <td class="yes">Supported</td>
+          <td>Severity is shown as a number and a word, not just a colour. Status uses labelled badges. Links carry underlines.</td>
+        </tr>
+        <tr>
+          <th scope="row">Reduced Motion</th>
+          <td class="yes">Supported</td>
+          <td>When Reduce Motion is on, map and sheet animations are shortened or replaced with cross-fades.</td>
+        </tr>
+        <tr>
+          <th scope="row">Captions &amp; Audio Descriptions</th>
+          <td class="na">Not applicable</td>
+          <td>Flagstone contains no video or audio content, so there is nothing to caption or describe.</td>
+        </tr>
+        <tr>
+          <th scope="row">Voice Control</th>
+          <td class="na">Under evaluation</td>
+          <td>Controls are labelled in ways that should work with Voice Control, but we haven't finished testing it end to end, so we don't yet claim it.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Designed for the way people actually use it</h2>
+  <ul>
+    <li><strong>You can browse without an account.</strong> Reading the map — the part most people need — never requires signing up.</li>
+    <li><strong>Touch targets are at least 44&nbsp;×&nbsp;44 points</strong>, the size Apple recommends for reliable tapping.</li>
+    <li><strong>Reports say what they mean.</strong> Severity carries a plain-language consequence, not just a number.</li>
+    <li><strong>We never claim a place has no barriers</strong> — only that nobody has reported one. An empty map means missing data, and the app says so.</li>
+    <li><strong>Photos are optional and described.</strong> A photo is never the only way information is conveyed.</li>
+  </ul>
+
+  <h2>Known gaps</h2>
+  <p>We would rather list these than pretend they don't exist:</p>
+  <ul>
+    <li>Voice Control has not been fully tested (see above).</li>
+    <li>Photo descriptions are optional, so older reports and reports from people who skipped the field may have no description beyond the barrier's own text.</li>
+    <li>The map itself is inherently visual. We pair it with a text list of nearby barriers, including distances, so the map is never the only route to the information — but a spatial view is still easier for sighted users.</li>
+    <li>Flagstone is available in English only at present.</li>
+  </ul>
+
+  <h2>Assistive technologies we test with</h2>
+  <p>
+    VoiceOver on iOS, Dynamic Type at accessibility sizes, Reduce Motion, Dark Mode,
+    and colour-vision simulation for the common forms of colour blindness. Testing is
+    done on physical hardware, not only the simulator.
+  </p>
+
+  <div class="contact-card">
+    <h2>Tell us where we got it wrong</h2>
+    <p>
+      If something in Flagstone is difficult or impossible for you to use, that's a bug
+      and we want to hear about it. Please include the device and which assistive
+      technology you were using if you can — but a plain description is completely fine
+      too, and no report is too small.
+    </p>
+    <a class="contact-link" href="mailto:support@skypistudio.com?subject=Flagstone%20accessibility%20feedback">Email us about accessibility</a>
+    <p style="margin-top:1rem; font-size:0.875rem; color:var(--fg-faint);">
+      We aim to respond within 3–5 business days. You can also report issues on
+      <a href="https://github.com/Skypie99/AccessMap/issues" target="_blank" rel="noopener">GitHub</a>,
+      or use the Feedback option inside the app.
+    </p>
+  </div>
+
+  <p style="margin-top:2rem; font-size:0.875rem; color:var(--fg-faint);">
+    Last reviewed: 19 August 2026. We review this statement with each significant release.
+  </p>
+
+  </main>
+</div>
+
+<footer class="page">
+  <nav aria-label="Site">
+    <strong>Flagstone</strong> &nbsp;|&nbsp;
+    <a href="../support/">Support</a> &nbsp;|&nbsp;
+    <a href="../privacy/">Privacy Policy</a> &nbsp;|&nbsp;
+    Accessibility &nbsp;|&nbsp;
+    <a href="../terms/">Terms &amp; Community Guidelines</a>
+  </nav>
+  <p style="margin-top:0.5rem;">© 2026 Flagstone. All rights reserved.</p>
+</footer>
+
+<script src="../assets/a11y.js" defer></script>
+
+</body>
+</html>

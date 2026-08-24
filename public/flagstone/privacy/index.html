@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy — Flagstone</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="stylesheet" href="../assets/site.css" />
+<script>
+  /* Paint the saved theme before first render so returning visitors never
+     see a flash of the default. Full logic lives in ../assets/a11y.js. */
+  (function(){try{var p=JSON.parse(localStorage.getItem('flagstone-a11y-prefs')||'{}');var d=document.documentElement;
+  if(p.size)d.style.fontSize=p.size+'%';
+  var dark=p.dark===null||p.dark===undefined?(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches):p.dark;
+  d.setAttribute('data-theme',dark?'dark':'light');
+  d.setAttribute('data-contrast',p.contrast?'high':'normal');
+  d.setAttribute('data-reading',p.reading?'on':'off');
+  d.setAttribute('data-motion',p.motion?'reduced':'normal');}catch(e){}})();
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="page">
+  <nav class="masthead" aria-label="Primary">
+    <a class="brand" href="../">
+      <img src="../assets/logo-mark-white.svg" alt="" width="32" height="40" />
+      <span>Flagstone</span>
+    </a>
+    <ul class="site-nav">
+      <li><a href="../support/">Support</a></li>
+      <li><a href="./" aria-current="page">Privacy</a></li>
+      <li><a href="../accessibility/">Accessibility</a></li>
+      <li><a href="../terms/">Terms &amp; Guidelines</a></li>
+    </ul>
+  </nav>
+  <div class="hero">
+  <h1>Privacy Policy</h1>
+  <p class="meta">Last updated: July 31, 2026 &nbsp;|&nbsp; Version 1.1</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <div id="a11y-mount"></div>
+
+  <main id="main">
+
+<div class="callout">
+  <strong>Short version:</strong> We collect only what's needed to make the map work. We never sell your data. You can delete your account any time from your Profile — your personal details go, and anything you contributed stays only with your name removed.
+</div>
+
+<h2>Overview</h2>
+<p>Flagstone is a community tool for mapping accessibility barriers. This policy explains what we collect, why, and how to control your information.</p>
+
+<h2>What We Collect</h2>
+
+<h3>When you browse the map (no account needed)</h3>
+<p><strong>Nothing.</strong> You can view flags without logging in and we don't track you.</p>
+
+<h3>When you create an account</h3>
+<ul>
+  <li><strong>Email address</strong> — for sign-in and optional notifications only</li>
+  <li><strong>Display name</strong> — shown on flags you verify or report (you choose this)</li>
+</ul>
+
+<h3>When you report or verify a flag</h3>
+<ul>
+  <li><strong>Location</strong> — the latitude/longitude where you submit the flag (placed on the map)</li>
+  <li><strong>Description</strong> — the text you write about the accessibility barrier</li>
+  <li><strong>Category</strong> — which type of barrier (ramp, parking, etc.)</li>
+  <li><strong>Severity</strong> — how much of a problem it is (1-5 scale)</li>
+  <li><strong>Photos</strong> — if you choose to add them
+    <ul>
+      <li>GPS metadata is <strong>automatically removed</strong> from all photos before they're stored</li>
+      <li>Camera metadata, timestamps, and other EXIF data are stripped before upload</li>
+      <li>We keep only the image itself, not the metadata</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>Automatically collected</h3>
+<p>Almost nothing. There is no usage analytics and no crash reporting in the app: nothing about how you use it is collected, transmitted, or stored.</p>
+<ul>
+  <li><strong>Timestamps</strong> — when you created your account and when you take actions</li>
+  </ul>
+
+<h3>What we never collect</h3>
+<ul>
+  <li>Analytics about how you use the app, or which screens you visit</li>
+  <li>Crash or error reports</li>
+  <li>Your device's location in the background</li>
+  <li>Contacts, camera roll, or other device data</li>
+  <li>Payment information (we don't charge)</li>
+  <li>GPS coordinates or camera metadata from your photos</li>
+</ul>
+
+<h2>How We Use Your Data</h2>
+
+<table>
+  <thead>
+    <tr><th>Your Data</th><th>What We Do With It</th><th>Who Sees It</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Email</td><td>Sign-in, password reset, optional notifications</td><td>Only you (never visible on the map)</td></tr>
+    <tr><td>Display name</td><td>Shown on flags you report/verify</td><td>Other app users</td></tr>
+    <tr><td>Flag location</td><td>Placed as a marker on the map</td><td>Other app users</td></tr>
+    <tr><td>Flag description + category</td><td>Shown on the map when people tap the marker</td><td>Other app users</td></tr>
+    <tr><td>Photos</td><td>Displayed in flag details (public-readable in Storage)</td><td>Other app users</td></tr>
+    <tr><td>Usage data</td><td>Fixing bugs, improving the app, understanding feature adoption</td><td>Internal team only</td></tr>
+  </tbody>
+</table>
+
+<p><strong>We do not:</strong></p>
+<ul>
+  <li>Sell or share your data with third parties (except our cloud provider, Supabase, which is contractually bound)</li>
+  <li>Use your data for advertising</li>
+  <li>Share your email with other users</li>
+  <li>Analyze your flag history to profile you</li>
+</ul>
+
+<h2>Your Rights &amp; Controls</h2>
+
+<h3>Manage Your Account</h3>
+<ul>
+  <li><strong>Edit your profile</strong> — change display name or avatar anytime in Settings</li>
+  <li><strong>Delete a flag</strong> — remove any flag you submitted via the flag's detail screen</li>
+  <li><strong>Manage notifications</strong> — opt in/out anytime in Settings</li>
+  <li><strong>Delete your account</strong> — Profile &gt; Delete Account
+    <ul>
+      <li>Your account and personal details go — email, display name, avatar</li>
+      <li>Reports and comments you contributed may stay in the app with your name removed, so the community's record of barriers stays whole</li>
+      <li>Photos attached to your reports may remain unless you delete the report itself first</li>
+      <li><strong>This action cannot be undone</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<h3>Data Access &amp; Portability</h3>
+<ul>
+  <li><strong>See your data</strong> — all your personal data is visible in the app (profile, flags, activity)</li>
+  <li><strong>Export data</strong> — contact us at <a href="mailto:support@skypistudio.com">support@skypistudio.com</a> to request a copy of all your data</li>
+</ul>
+
+<h3>Privacy by Region</h3>
+
+<p><span class="tag">GDPR</span> If you're in the EU/EEA:</p>
+<ul>
+  <li><strong>Right to access</strong> — request a copy of your data via the contact email below</li>
+  <li><strong>Right to erasure</strong> ("right to be forgotten") — use Delete Account in-app, or contact us</li>
+  <li><strong>Right to restrict processing</strong> — contact us to restrict how we use your data</li>
+  <li><strong>Right to portability</strong> — request your data in a portable format (CSV, JSON)</li>
+  <li><strong>Right to object</strong> — contact us to object to certain data uses</li>
+</ul>
+
+<p><span class="tag">CCPA</span> If you're in California:</p>
+<ul>
+  <li><strong>Right to know</strong> — request what personal information we collect about you</li>
+  <li><strong>Right to delete</strong> — use Delete Account in-app, or contact us</li>
+  <li><strong>Right to opt-out</strong> — we do not sell personal information</li>
+  <li><strong>Right to non-discrimination</strong> — we won't discriminate for exercising your rights</li>
+</ul>
+
+<p><span class="tag">PIPEDA</span> If you're in Canada:</p>
+<ul>
+  <li><strong>Right to access</strong> — request a copy of your personal data</li>
+  <li><strong>Right to correction</strong> — ask us to correct inaccurate data</li>
+  <li><strong>Right to complaint</strong> — contact the Privacy Commissioner of Canada if you believe we've violated PIPEDA</li>
+</ul>
+
+<h2>How We Store &amp; Protect Your Data</h2>
+
+<h3>Storage Location</h3>
+<ul>
+  <li>Your data is stored by <strong>Supabase</strong>, our cloud database provider</li>
+  <li>Data is <strong>encrypted at rest</strong> (AES-256) and <strong>in transit</strong> (TLS 1.2+)</li>
+  <li>Passwords are never stored — managed by Supabase Auth</li>
+</ul>
+
+<h3>Data Retention</h3>
+<table>
+  <thead>
+    <tr><th>Type of Data</th><th>How Long We Keep It</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Account (email, display name, avatar)</td><td>Until you delete your account</td></tr>
+    <tr><td>Flags you submit</td><td>Until resolved + 90 days (then archived)</td></tr>
+    <tr><td>Flag photos</td><td>Until the flag is deleted</td></tr>
+    <tr><td>Audit logs (for security)</td><td>30 days</td></tr>
+  </tbody>
+</table>
+
+<h2>Third-Party Services</h2>
+
+<h3>Supabase (Cloud Database &amp; Storage)</h3>
+<p>We use Supabase to host our database and file storage. Supabase is contractually bound to protect your data under GDPR/CCPA. <a href="https://supabase.com/privacy" target="_blank" rel="noopener">Supabase Privacy Policy</a></p>
+
+<h3>Expo / EAS (App Distribution)</h3>
+<p>We use Expo Application Services to build and distribute the app. Expo may receive your device type and app version during updates. <a href="https://expo.dev/privacy" target="_blank" rel="noopener">Expo Privacy Policy</a></p>
+
+<h3>OpenStreetMap Nominatim (Address Search)</h3>
+<p>When you type into the address-search field, the text you type is sent to OpenStreetMap's Nominatim service to look up the place. That search text is the only thing Nominatim receives — no account details, no device identifiers, and never your GPS location. <a href="https://osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener">OSM Foundation Privacy Policy</a></p>
+
+<h3>No Other Sharing</h3>
+<p>We do not share data with advertisers, analytics companies, or data brokers. We will not sell your data under any circumstance.</p>
+
+<h2>Photo Privacy Details</h2>
+<p>When you upload a photo:</p>
+<ol>
+  <li>We re-process the image to strip all EXIF metadata (GPS coordinates, timestamps, camera model, lens info)</li>
+  <li>On iOS/Android: we use the device's native media library for re-processing</li>
+  <li>On web: we use canvas to re-render, which naturally strips all metadata</li>
+  <li>Photos are stored in Supabase Storage with <strong>public read access</strong> — anyone on the map can see them</li>
+  <li>Only you can delete your photos</li>
+</ol>
+
+<h2>Children &amp; Minors</h2>
+<p>Flagstone is not directed at children under 13. We do not knowingly collect personal information from children under 13. If we learn that we've collected data from a child under 13, we'll delete it immediately. If you believe a child under 13 has created an account, please contact us at <a href="mailto:support@skypistudio.com">support@skypistudio.com</a>.</p>
+
+<h2>Changes to This Policy</h2>
+<p>If we make material changes, we will update the "Last updated" date, notify you via in-app message and email, and ask you to re-accept the new policy if required.</p>
+
+<h2>Contact &amp; Data Requests</h2>
+<ul>
+  <li><strong>Email:</strong> <a href="mailto:support@skypistudio.com">support@skypistudio.com</a></li>
+  <li><strong>Response time:</strong> We aim to respond within 30 days</li>
+</ul>
+<p>For data subject requests (GDPR / CCPA / PIPEDA), include one of the following in your email subject line:</p>
+<ul>
+  <li><em>Data Subject Access Request</em> — to see your data</li>
+  <li><em>Data Deletion Request</em> — to delete your data</li>
+  <li><em>Data Portability Request</em> — to export your data</li>
+</ul>
+
+  </main>
+</div>
+
+<footer class="page">
+  <nav aria-label="Site">
+    <strong>Flagstone</strong> &nbsp;|&nbsp;
+    <a href="../support/">Support</a> &nbsp;|&nbsp;
+    Privacy Policy &nbsp;|&nbsp;
+    <a href="../accessibility/">Accessibility</a> &nbsp;|&nbsp;
+    <a href="../terms/">Terms &amp; Community Guidelines</a>
+  </nav>
+  <p style="margin-top:8px;">&copy; 2026 Flagstone. All rights reserved.</p>
+</footer>
+
+<script src="../assets/a11y.js" defer></script>
+</body>
+</html>
