@@ -142,7 +142,7 @@ export default function AboutPage() {
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Method
             </p>
-            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-[1.1] text-balance">
+            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-heading text-balance">
               Three quiet steps, repeated carefully.
             </h2>
           </Reveal>
@@ -197,7 +197,7 @@ export default function AboutPage() {
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Principles
             </p>
-            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight text-balance">
+            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-heading text-balance">
               Accessibility. Privacy. No shortcuts.
             </h2>
           </Reveal>
@@ -244,7 +244,7 @@ export default function AboutPage() {
                   A. "Still learning out loud. Shipping anyway."
                   C. "Self-taught, shipping in public. Getting better on purpose."
                 Original: "Still a beginner. Getting better on purpose." */}
-            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight text-balance">
+            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-heading text-balance">
               Learning in public. Shipping on purpose.
             </h2>
           </Reveal>
@@ -284,7 +284,7 @@ export default function AboutPage() {
                 <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 The Work
               </p>
-              <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-[1.1] text-balance">
+              <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-heading text-balance">
                 A handful of things.
               </h2>
             </Reveal>
@@ -339,7 +339,7 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="px-gutter py-24 lg:py-32 world-surface border-t border-border-decorative">
         <Reveal className="max-w-content mx-auto flex flex-col items-start gap-12">
-          <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
+          <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-heading">
             Want to work together?
             <br />
             Let{'’'}s talk.

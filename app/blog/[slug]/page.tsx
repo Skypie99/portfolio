@@ -362,7 +362,7 @@ export default async function BlogPostPage({
                 <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 Keep reading
               </p>
-              <h2 className="font-serif font-light text-step-4 text-ink max-w-2xl leading-tight mb-12 text-balance">
+              <h2 className="font-serif font-light text-step-4 text-ink max-w-2xl leading-heading mb-12 text-balance">
                 Continue reading.
               </h2>
               {/* One deliberate handoff — a single-column max-width so it reads as

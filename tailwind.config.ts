@@ -154,6 +154,25 @@ const config: Config = {
         body: '0.0156em', // +0.25px
         label: '0.125em', // +2px
       },
+      lineHeight: {
+        // Phase A (OCD #2) — the unified section-H2 leading. NOT named `snug`:
+        // Tailwind's own stock `snug` (1.375) already has two live consumers
+        // (Hero.tsx, work/[slug]/page.tsx) that rely on that default value —
+        // shadowing the key would have silently changed both. `heading` is a
+        // new, non-colliding name for the same --lh-snug token.
+        heading: 'var(--lh-snug)', // 1.2
+        // Phase A (OCD #1) — gives --lh-body real consumers. Also folded into
+        // the `body`/`prose` fontSize tuples below (their own baked lineHeight
+        // now points at the same token), so most `leading-[1.65]` calls sites
+        // were redundant and were deleted rather than migrated here; this
+        // utility remains for the few genuine overrides (text-body-sm wanting
+        // the looser body value instead of its own baked 1.6).
+        body: 'var(--lh-body)', // 1.65
+        // Phase A (OCD #1) — long-form markdown/prose paragraphs deliberately
+        // loosen past --lh-body (1.65 → 1.75); 3 real call sites shared this
+        // exact value before migration (MarkdownProse ×2, /accessibility ×1).
+        prose: 'var(--lh-prose)', // 1.75
+      },
       spacing: {
         // §7.4 — honest namespace: numeral × 0.25rem = rendered size (the natural
         // Tailwind ramp). The inverted overrides (5→1.5rem … 20→12.5rem) are gone, so
