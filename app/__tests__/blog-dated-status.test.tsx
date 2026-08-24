@@ -7,8 +7,9 @@
  *      snapshot label, not an apologetic/urgent badge.
  *   2. The seam the page splices at is real and correctly ordered: the shared
  *      renderMarkdownProse output for the real post emits a heading with
- *      id="what-s-next" whose very next block is the stale "TestFlight is live"
- *      claim — so splice(seam + 1) lands the stamp exactly between the heading
+ *      id="what-s-next" whose very next block is the dated "TestFlight is live"
+ *      status claim (corrected to verified facts in R2-T1, still time-bound) —
+ *      so splice(seam + 1) lands the stamp exactly between the heading
  *      and the claim. The figure seam ("what-shipped") is a distinct, earlier
  *      seam, left untouched (regression guard on the existing S12 splice).
  */
@@ -56,7 +57,11 @@ describe('the "What\'s next" dated-status seam (real content/blog.json)', () => 
 
   it('the post exists and still carries the time-bound status claim', () => {
     expect(post).toBeTruthy();
-    expect(post!.content).toContain('review is pending');
+    // R2-T1 (2026-08-23): the claim was corrected to Sky's verified facts —
+    // one TestFlight build reached one outside tester; nothing submitted.
+    // The pin follows the corrected time-bound phrase; the intent (this post
+    // carries a dated status claim the splice must stamp) is unchanged.
+    expect(post!.content).toContain('nothing has been submitted yet');
   });
 
   it('emits heading#what-s-next whose next block is the "TestFlight is live" claim', () => {
