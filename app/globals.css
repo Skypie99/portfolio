@@ -125,6 +125,18 @@
   --rgb-earth:        216 199 166;   /* card backdrop — sandstone tan */
   --rgb-earth-deep:   197 177 141;   /* card backdrop — deeper clay */
 
+  /* Phase A (05_DESIGN_SYSTEM.md §Colour) — the receipt reads as a second
+     paper stock, distinct from --rgb-canvas/--rgb-surface-warm. Value given
+     by the design system doc. Unconsumed until the Receipt component (A15)
+     is wired into a page (Phase C+). */
+  --rgb-receipt:      247 243 233;
+  /* --rgb-receipt-rule was specified only qualitatively ("pine-leaning
+     hairline") — no exact triplet given. Derived here as --rgb-line blended
+     ~25% toward --rgb-cool-deep (pine), cooler/greener than the standard
+     bone hairline so the receipt's rule reads as its own stock. Confirm
+     visually once Receipt actually renders (Phase C+); not guard-pinned. */
+  --rgb-receipt-rule: 170 186 170;
+
   /* --- Convenience colors (auto-follow triplets; used by plain CSS) --- */
   --color-bg:                 rgb(var(--rgb-canvas));
   --color-bg-alt:             rgb(var(--rgb-canvas-alt));
@@ -439,6 +451,12 @@ html.dark {
   --rgb-cool-deep:    154 215 217;
   --rgb-cool-mid:     90 170 174;
   --rgb-cool-soft:    74 111 112;
+
+  /* Phase A — dark receipt stock. Value given by the design system doc. */
+  --rgb-receipt:      26 31 30;
+  /* Derived (see the light comment above) — --rgb-line(dark) blended ~25%
+     toward --rgb-cool-deep(dark-era pine equivalent). */
+  --rgb-receipt-rule: 45 61 60;
 
   --rgb-gold:         201 168 95;    /* gold glow lifted */
   --rgb-foil:         180 176 194;
