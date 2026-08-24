@@ -78,7 +78,7 @@ export default function CertificatesPage() {
           >
             Credentials
           </SettleHeading>
-          <p className="font-sans font-light text-prose text-ink-muted leading-[1.65] max-w-measure-lead text-pretty">
+          <p className="font-sans font-light text-prose text-ink-muted max-w-measure-lead text-pretty">
             Selected credentials and certifications. A short paper trail of the
             things I’ve studied formally — most of the learning happens in
             the work, not on paper.

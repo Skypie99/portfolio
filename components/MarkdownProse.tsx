@@ -65,12 +65,12 @@ const VARIANT_CLASSES: Record<ProseVariant, { h2: string; h3: string; p: string 
   case: {
     h2: 'font-serif font-light text-case-h2 text-ink mt-24 mb-4 first:mt-0 serif-display',
     h3: 'font-serif font-light text-case-h3 text-ink mt-12 mb-3 serif-display',
-    p: 'font-sans font-light text-prose text-ink-muted leading-[1.75] text-pretty nums-oldstyle [hanging-punctuation:first_allow-end]',
+    p: 'font-sans font-light text-prose text-ink-muted leading-prose text-pretty nums-oldstyle [hanging-punctuation:first_allow-end]',
   },
   blog: {
     h2: 'font-serif font-light text-prose-h2 text-ink mt-24 mb-6 first:mt-0 serif-display',
     h3: 'font-serif font-light text-prose-h3 text-ink mt-12 mb-4 serif-display',
-    p: 'font-sans font-light text-prose text-ink-muted leading-[1.75] text-pretty nums-oldstyle [hanging-punctuation:first_allow-end]',
+    p: 'font-sans font-light text-prose text-ink-muted leading-prose text-pretty nums-oldstyle [hanging-punctuation:first_allow-end]',
   },
 };
 

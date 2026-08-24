@@ -98,6 +98,8 @@ export default function AboutPage() {
             </p>
 
             {/* Pull-quote — editorial accent, carries the thesis */}
+            {/* leading-[1.4]: a per-quote tuned value, not a token candidate —
+                the sibling pull-quote on the homepage carries its own tuned 1.45. */}
             <blockquote className="pull-quote nums-oldstyle pl-3 font-serif font-light text-step-2 text-ink leading-[1.4] text-balance">
               {/* C-49: text-balance preferred the hyphen break "add-/on." at 375.
                   A nowrap span keeps the pivot compound whole (identical block
@@ -106,16 +108,16 @@ export default function AboutPage() {
             </blockquote>
             <span aria-hidden="true" className="rule-ember block h-px w-32" />
 
-            <p className="font-sans font-light text-prose text-ink-muted leading-[1.65] text-pretty">
+            <p className="font-sans font-light text-prose text-ink-muted text-pretty">
               I work from {profile.location}. Mostly on AI-assisted tooling,
               accessibility infrastructure, and community software. I prefer
               learning in public.
             </p>
-            <p className="font-sans font-light text-prose text-ink-muted leading-[1.65] text-pretty">
+            <p className="font-sans font-light text-prose text-ink-muted text-pretty">
               I keep a written record of how each thing was made. The documentation
               is part of the deliverable, not an afterthought.
             </p>
-            <p className="font-sans font-light text-prose text-ink-muted leading-[1.65] text-pretty">
+            <p className="font-sans font-light text-prose text-ink-muted text-pretty">
               Right now: an accessibility map. A multi-agent system that ships real
               commits. A local-first prompt manager. A command-line trainer.
               All of them open source.
@@ -203,17 +205,17 @@ export default function AboutPage() {
           </Reveal>
 
           <Reveal variant="depth" className="max-w-measure-lead flex flex-col gap-8">
-            <p className="font-sans font-light text-body text-ink-muted leading-[1.65] text-pretty">
+            <p className="font-sans font-light text-body text-ink-muted text-pretty">
               WCAG 2.2 AA on every interface. Not because it is required.
               Because it is correct. Flagstone exists because disabled people
               deserve navigation tools designed for them, not adapted for them.
             </p>
-            <p className="font-sans font-light text-body text-ink-muted leading-[1.65] text-pretty">
+            <p className="font-sans font-light text-body text-ink-muted text-pretty">
               The user’s data is theirs. Prompt Library stores everything
               locally — no backend, no account, no server. If the data is not
               necessary, do not collect it.
             </p>
-            <p className="font-sans font-light text-body text-ink-muted leading-[1.65] text-pretty">
+            <p className="font-sans font-light text-body text-ink-muted text-pretty">
               I would rather take longer and do it correctly than ship fast and
               apologise. This is not a principle from a book. It came from
               shipping things that were not ready.
@@ -250,17 +252,17 @@ export default function AboutPage() {
           </Reveal>
 
           <Reveal variant="depth" className="max-w-measure-lead flex flex-col gap-8">
-            <p className="font-sans font-light text-body text-ink-muted leading-[1.65] text-pretty">
+            <p className="font-sans font-light text-body text-ink-muted text-pretty">
               I am not a trained software engineer. I came to coding through
               building — I had ideas I wanted to exist. That is still how this
               works.
             </p>
-            <p className="font-sans font-light text-body text-ink-muted leading-[1.65] text-pretty">
+            <p className="font-sans font-light text-body text-ink-muted text-pretty">
               Right now: TypeScript, React Native, multi-agent systems that
               stay safe unsupervised. Each project teaches something the last
               one did not.
             </p>
-            <p className="font-sans font-light text-body text-ink-muted leading-[1.65] text-pretty">
+            <p className="font-sans font-light text-body text-ink-muted text-pretty">
               I am looking for collaborators and clients who read the
               documentation, ask good questions, and care how things turn out.
               Write to me if that sounds like you.
@@ -310,7 +312,7 @@ export default function AboutPage() {
                       <h3 className="font-serif font-normal text-step-2 leading-tight">
                         {d.title}
                       </h3>
-                      <p className="font-sans font-light text-body text-ink-muted leading-[1.65] max-w-[540px] text-pretty">
+                      <p className="font-sans font-light text-body text-ink-muted max-w-[540px] text-pretty">
                         {d.summary}
                       </p>
                       <span className="font-mono text-meta tracking-label uppercase text-accent-text mt-2 inline-flex items-center gap-1 transition-transform duration-fast ease-out group-hover:translate-x-1 group-focus-visible:translate-x-1">

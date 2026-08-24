@@ -56,7 +56,7 @@ export function FlagstoneTestReceipt() {
   return (
     <section className="px-gutter py-12 lg:py-16 world-surface border-t border-border-decorative">
       <div className="max-w-content mx-auto">
-        <p className="max-w-measure-wide font-mono text-meta tracking-label uppercase text-text-meta leading-[2]">
+        <p className="max-w-measure-wide font-mono text-meta tracking-label uppercase text-text-meta leading-loose">
           2,971 tests passing
           <span aria-hidden="true"> · </span>{' '}
           <a
@@ -66,6 +66,9 @@ export function FlagstoneTestReceipt() {
             measured 2026-08-16, method
           </a>
         </p>
+        {/* leading-[1.7]: a singular tuned value on this mono meta caption —
+            coincides numerically, but not semantically, with the sans-body
+            leading-[1.7] on the homepage's "how I work" essay. */}
         <p
           id="flagstone-test-count-method"
           className="scroll-mt-24 mt-2 max-w-measure-wide font-mono text-meta text-text-meta leading-[1.7]"
@@ -689,7 +692,7 @@ export default async function WorkDetailPage({
                       className="rounded-2xl border border-border-decorative"
                     />
                     {shot.caption && (
-                      <figcaption className="font-sans text-body-sm text-charcoal leading-[1.6] text-pretty">
+                      <figcaption className="font-sans text-body-sm text-charcoal text-pretty">
                         {smartPunctuation(shot.caption)}
                       </figcaption>
                     )}
@@ -739,7 +742,7 @@ export default async function WorkDetailPage({
                     </span>
                   </div>
                   {img.caption && (
-                    <p className="font-sans text-body-sm text-charcoal leading-[1.6]">
+                    <p className="font-sans text-body-sm text-charcoal">
                       {smartPunctuation(img.caption)}
                     </p>
                   )}
