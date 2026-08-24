@@ -232,6 +232,20 @@
   --content-max: 1120px;
   --measure:      65ch;   /* optimal body measure (~60–75 chars) */
   --measure-wide: 60ch;   /* long-form prose (blog/case-study body) — TY-5: re-derived from 72ch (rendered ~782px) to ≈650px (verified computed), the house optimum (was rendering ~90–96 real chars) */
+  /* Phase A — Sky's ratified reading-measure ruling (13_DECISIONS.md #4b):
+     "B (~545px, 66–75cpl) — more editorial, professional, curated." Was a
+     hardcoded '640px' Tailwind literal with no backing CSS var (a fourth,
+     unnamed member of the measure family); now a real token, joining
+     --measure/--measure-wide/--measure-heading in one vocabulary. Also
+     absorbs the four max-w-[540px]/[520px] lead-paragraph call sites that
+     were hand-approximating this same target width. */
+  --measure-lead: 545px;
+  /* Phase A — replaces the de-facto stock max-w-2xl heading measure (17
+     section-H2 call sites, all measured at exactly 672px = Tailwind's own
+     2xl). max-w-3xl (768px, the bigger page-title SettleHeadings) is a
+     DIFFERENT, wider heading tier and is deliberately left unmigrated this
+     phase — see the Phase A close-out 🔴. */
+  --measure-heading: 672px;
   --gutter:      var(--space-8); /* 2rem/32px — unchanged px; honest key after §7.4 */
 
   /* Shadows */

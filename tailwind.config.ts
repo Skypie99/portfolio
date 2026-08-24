@@ -195,7 +195,10 @@ const config: Config = {
         content: '1120px',
         measure: 'var(--measure)',
         'measure-wide': 'var(--measure-wide)',
-        'measure-lead': '640px', // lead/intro paragraph width (was a hardcoded max-w-[640px])
+        // Phase A — was a hardcoded '640px' literal with no CSS var; now
+        // var-backed at Sky's ratified ~545px (13_DECISIONS.md #4b).
+        'measure-lead': 'var(--measure-lead)',
+        'measure-heading': 'var(--measure-heading)',
       },
       transitionDuration: {
         fast: '180ms',

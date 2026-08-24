@@ -130,7 +130,7 @@ export default function ContactPage() {
                 <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 Elsewhere
               </p>
-              <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-heading text-balance">
+              <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance">
                 Find me in other quiet corners.
               </h2>
             </Reveal>
@@ -138,10 +138,12 @@ export default function ContactPage() {
             {/* UP-48 (ui-polish 2026-08-01): no measure cap on this grid. The
                 removed max-w-2xl held the list to 672px inside a 1096px content
                 row, so the two hairline-topped columns stopped at 60% and left a
-                424px void that read as an empty third slot. max-w-2xl is the
-                estate's HEADING measure — of its 19 uses, 18 are on an h2 and
-                this <ul> was the lone exception. Below lg the grid is one column
-                and the cap never bound, so nothing moves at 375. */}
+                424px void that read as an empty third slot. That class (now
+                max-w-measure-heading, --measure-heading, Phase A) is the estate's
+                HEADING measure — re-counted at Phase A: 17 uses, all on an h2;
+                this <ul> was already the lone non-heading exception before this
+                token existed. Below lg the grid is one column and the cap never
+                bound, so nothing moves at 375. */}
             <ul className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {profile.socials.map((s, i) => (
                 <li key={s.url} className="group border-t border-border-decorative pt-4">
