@@ -77,7 +77,7 @@ export function A11yReceipts({ data, className }: { data: A11yReceiptsData; clas
           <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
           Measured, not claimed
         </h2>
-        <p className="font-sans font-light text-prose text-ink-muted leading-[1.65] max-w-measure-lead mb-12 text-pretty">
+        <p className="font-sans font-light text-prose text-ink-muted max-w-measure-lead mb-12 text-pretty">
           Real numbers from a real run — measured {data.measuredDate}, method below. Not a
           live gate yet; a snapshot you can re-run.
         </p>
@@ -125,7 +125,7 @@ export function A11yReceipts({ data, className }: { data: A11yReceiptsData; clas
           only — never inside a compound token, and never leaving a "·" adrift
           at the start of a line. See MethodSegment for the mechanism and for
           why the audit's per-SEGMENT nowrap was measured and rejected. */}
-      <p className="mt-6 font-mono text-meta tracking-label uppercase text-text-meta leading-[2]">
+      <p className="mt-6 font-mono text-meta tracking-label uppercase text-text-meta leading-loose">
         Measured {data.measuredDate}
         <MethodSegment>
           <a

@@ -106,7 +106,7 @@ export default function WorkIndexPage() {
               The Work
             </SettleHeading>
           </div>
-          <p className="font-sans font-light text-prose text-ink-muted leading-[1.65] max-w-measure-lead mt-8 text-pretty">
+          <p className="font-sans font-light text-prose text-ink-muted max-w-measure-lead mt-8 text-pretty">
             A small body of AI-assisted tools and reference materials. Built
             slowly, documented honestly, sized to a single careful hand.
           </p>

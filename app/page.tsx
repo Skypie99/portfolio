@@ -488,6 +488,8 @@ export default function HomePage() {
 
           <Reveal variant="depth" className="max-w-measure flex flex-col gap-8">
             {/* Pull-quote accent — editorial tone-setter */}
+            {/* leading-[1.45]: a per-quote tuned value, not a token candidate —
+                the sibling pull-quote on /about carries its own tuned 1.4. */}
             <blockquote className="pull-quote nums-oldstyle pl-3 font-serif font-light italic text-step-2 text-ink leading-[1.45] text-balance">
               One careful deliverable beats a dozen rough ones.
             </blockquote>
@@ -499,7 +501,7 @@ export default function HomePage() {
               {' '}{profile.location}, mostly on AI tooling, accessibility
               infrastructure, and the systems that make a product feel calm.
             </p>
-            <p className="font-sans font-light text-prose text-ink-muted leading-[1.65] text-pretty">
+            <p className="font-sans font-light text-prose text-ink-muted text-pretty">
               I keep a written record of how each thing was made. The
               documentation is part of the deliverable, not an afterthought.
             </p>

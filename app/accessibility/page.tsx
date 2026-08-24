@@ -116,7 +116,7 @@ export default function AccessibilityPage() {
                   markdown string: the single site-wide inline parser has no RM-gating
                   syntax, so a markdown line would render for EVERYONE and invert it. */}
               {/* T9 — Sky's line (picked in-chat 2026-07-19, option 1 verbatim). */}
-              <p className="hidden motion-reduce:block font-sans font-light text-prose text-ink-muted leading-[1.75] text-pretty">
+              <p className="hidden motion-reduce:block font-sans font-light text-prose text-ink-muted leading-prose text-pretty">
                 You’re reading this because your system asked for less motion.
                 The site listened — everything is already in place.
               </p>
