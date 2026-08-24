@@ -187,10 +187,10 @@ export default function HomePage() {
               Shipped
             </p>
             {/* Heading */}
-            <h2 className="font-serif font-light text-step-4 ember mb-3 max-w-2xl leading-heading text-balance">
+            <h2 className="font-serif font-light text-step-4 ember mb-3 max-w-measure-heading leading-heading text-balance">
               Built, shipped, and open.
             </h2>
-            <p className="font-sans font-light text-body text-ink-muted mb-24 max-w-[540px] text-pretty">
+            <p className="font-sans font-light text-body text-ink-muted mb-24 max-w-measure-lead text-pretty">
               Real products on the open internet. Each one accessible by design.
             </p>
           </Reveal>
@@ -339,7 +339,7 @@ export default function HomePage() {
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               The Work
             </p>
-            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-heading text-balance">
+            <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance">
               A handful of things, made with intention.
             </h2>
           </Reveal>
@@ -407,7 +407,7 @@ export default function HomePage() {
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               How the work gets made
             </p>
-            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-heading text-balance">
+            <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance">
               I direct AI agents, and I built the system that keeps them honest.
             </h2>
           </Reveal>
@@ -478,10 +478,11 @@ export default function HomePage() {
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               A Brief Account
             </p>
-            {/* C-23: max-w-2xl matches the five sibling section H2s (:151/:261/:313/
-                :424/:518) — the About head was the lone one off the shared 672px grid.
-                Byte-identical render today; restores the grid so future copy can't drift. */}
-            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-heading text-balance">
+            {/* C-23: max-w-measure-heading (was max-w-2xl, Phase A) matches the five
+                sibling section H2s (:151/:261/:313/:424/:518) — the About head was the
+                lone one off the shared 672px grid. Byte-identical render; restores the
+                grid so future copy can't drift. */}
+            <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance">
               The work is careful. The record is honest.
             </h2>
           </Reveal>
@@ -537,7 +538,7 @@ export default function HomePage() {
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Credentials
             </p>
-            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-heading text-balance">
+            <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance">
               Credentials, earned in order.
             </h2>
           </Reveal>
@@ -647,7 +648,7 @@ export default function HomePage() {
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Let’s talk
             </p>
-            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-heading">
+            <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading">
               Have something worth building?
               <br />
               Let’s talk about it.

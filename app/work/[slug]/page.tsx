@@ -673,7 +673,7 @@ export default async function WorkDetailPage({
                 <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 Inside the build
               </p>
-              <h2 className="font-serif font-light text-step-4 text-near-black mb-24 max-w-2xl leading-heading text-balance">
+              <h2 className="font-serif font-light text-step-4 text-near-black mb-24 max-w-measure-heading leading-heading text-balance">
                 See it in motion.
               </h2>
             </Reveal>
@@ -716,7 +716,7 @@ export default async function WorkDetailPage({
                 <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 Gallery
               </p>
-              <h2 className="font-serif font-light text-step-4 text-near-black mb-24 max-w-2xl leading-heading text-balance">
+              <h2 className="font-serif font-light text-step-4 text-near-black mb-24 max-w-measure-heading leading-heading text-balance">
                 A closer look.
               </h2>
             </Reveal>
@@ -771,7 +771,7 @@ export default async function WorkDetailPage({
                 <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 More work
               </p>
-              <h2 className="font-serif font-light text-step-4 text-near-black max-w-2xl leading-heading mb-24 text-balance">
+              <h2 className="font-serif font-light text-step-4 text-near-black max-w-measure-heading leading-heading mb-24 text-balance">
                 Continue reading.
               </h2>
             </Reveal>
@@ -831,11 +831,12 @@ export default async function WorkDetailPage({
               byte moves and the sanctioned presentation-entity exception went
               unused. Note the h2 is a fit-content flex item under items-start
               (capped by max-content at 373.44px), not container-bound — which is
-              why max-w-2xl never binds here and why 1440 is safe. Zero colour
+              why max-w-measure-heading (was max-w-2xl) never binds here and why
+              1440 is safe. Zero colour
               TOKENS move, but the re-flow does slide "this?" along the fixed
               .ember ramp (t 0.136 → 0.318: rgb +2,+6,+8 light / −4,−6,−4 dark),
               so the both-theme captures show a hue delta with no new pair. */}
-          <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-heading text-balance">
+          <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance">
             Have something like this?
             <br />
             Write to me.
