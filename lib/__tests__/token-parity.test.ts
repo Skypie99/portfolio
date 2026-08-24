@@ -37,7 +37,7 @@ const DARK_BLOCK = GLOBALS.match(/html\.dark\s*\{([\s\S]*?)\n\}/)?.[1] ?? '';
 // Tailwind fontSize key  →  backing CSS var is always `--fs-<key>`.
 const TYPE_STEPS = ['step-1', 'step-2', 'step-3', 'step-4', 'step-5', 'display', 'hero'];
 const EASINGS = ['entrance', 'exit', 'snap'];
-const SHADOWS = ['sm', 'md', 'lg', 'xl'];
+const SHADOWS = ['sm', 'md', 'lg', 'xl', 'soft'];
 
 describe('token parity — modular type scale', () => {
   it.each(TYPE_STEPS)('--fs-%s is defined in globals.css', (key) => {

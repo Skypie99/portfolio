@@ -685,11 +685,14 @@ export default async function WorkDetailPage({
                       is present it carries the description, so the plate's alt is
                       emptied to stop AT hearing the scene twice (de-dup alt/caption). */}
                   <figure className="m-0 flex flex-col gap-3">
+                    {/* Phase A: className was rounded-2xl — Tailwind's stock 16px
+                        utility, coincidentally value-identical to this project's
+                        own named rounded-lg (16px). Use the named token. */}
                     <ShotProductReveal
                       slug={d.id}
                       title={d.title}
                       media={{ src: shot.src, alt: shot.caption ? '' : shot.alt, avif: shot.avif, webp: shot.webp, focal: shot.focal, lqip: shot.lqip, video: shot.video }}
-                      className="rounded-2xl border border-border-decorative"
+                      className="rounded-lg border border-border-decorative"
                     />
                     {shot.caption && (
                       <figcaption className="font-sans text-body-sm text-charcoal text-pretty">
