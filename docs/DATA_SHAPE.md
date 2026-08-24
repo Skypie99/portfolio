@@ -234,7 +234,7 @@ Placeholders — Sky replaces with real content. All examples are **valid agains
   "wordmarkText": "SKY HALISKY",
   "tagline": "Building careful AI work, one calm deliverable at a time.",
   "location": "Canada",
-  "contactEmail": "skylerhalisky@gmail.com",
+  "contactEmail": "hello@skypistudio.com",
   "socials": [
     {
       "platform": "github",

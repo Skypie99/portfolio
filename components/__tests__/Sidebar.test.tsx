@@ -17,7 +17,7 @@ vi.mock('@/lib/content', () => ({
     wordmarkText: 'Sky Halisky',
     tagline: 'Building thoughtful AI work, one careful deliverable at a time.',
     location: 'Canada',
-    contactEmail: 'skylerhalisky@gmail.com',
+    contactEmail: 'hello@skypistudio.com',
     socials: [],
   }),
   getFeaturedDeliverable: () => ({

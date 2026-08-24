@@ -68,7 +68,7 @@ export default function RunwayPage() {
           </SettleHeading>
           <p className="font-sans font-light text-step-1 text-ink-muted max-w-measure-wide text-pretty">
             I made this while applying for the Consumer Support Specialist role. It is a
-            proof of use, not a reel. I bought a Pro plan on Friday, gave myself a real
+            proof of use, not a reel. I bought a Pro plan on Saturday, gave myself a real
             assignment instead of a tour, and this is what came out of the weekend.
           </p>
         </div>
@@ -102,8 +102,8 @@ export default function RunwayPage() {
               <span aria-hidden="true">&middot;</span> 45 seconds{' '}
               <span aria-hidden="true">&middot;</span> first weekend on a Runway Pro plan.
               <br />
-              Every frame generated in Runway: Gen-4.5, Gen-4 Turbo, and Seedance 2.5,
-              across text-to-video and image-to-video, then upscaled. The input plates
+              Every frame generated in Runway: Gen-4.5, Gen-4 Turbo, Seedance 2.0, and
+              Seedance 2.5, across text-to-video and image-to-video, then upscaled. The input plates
               were composited in Python, and the reversals, colour match, and assembly
               were done with ffmpeg, both written with Claude Code. Sound and titling
               finished in CapCut, once the credits ran out.
