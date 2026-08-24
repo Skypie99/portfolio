@@ -38,7 +38,7 @@ describe('Footer', () => {
   it('renders the tagline under the name and the Okanagan line, sans status clutter', () => {
     render(<Footer />);
     expect(
-      screen.getByText('AI tools built with intention.'),
+      screen.getByText('Small, exact software, documented honestly.'),
     ).toBeInTheDocument();
     expect(
       screen.getByText(/Built in the Okanagan Valley, British Columbia\./),
