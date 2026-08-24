@@ -137,6 +137,18 @@
      visually once Receipt actually renders (Phase C+); not guard-pinned. */
   --rgb-receipt-rule: 170 186 170;
 
+  /* Phase A (A12) — .ember-teal/-gold/-moss re-based off 6 hardcoded hex
+     literals (with hand-written dark twins) onto role triplets, matching
+     how every other themed colour in this file works. Values are the exact
+     hexes converted to RGB — pure notation change, zero visual difference.
+     The .ember gradient itself (terracotta) is untouched, per PROTECT. */
+  --rgb-ember-teal-a: 74 143 160;   /* #4A8FA0 */
+  --rgb-ember-teal-b: 47 87 77;     /* #2F574D */
+  --rgb-ember-gold-a: 190 130 48;   /* #BE8230 */
+  --rgb-ember-gold-b: 157 45 5;     /* #9D2D05 */
+  --rgb-ember-moss-a: 78 158 110;   /* #4E9E6E */
+  --rgb-ember-moss-b: 35 91 62;     /* #235B3E */
+
   /* --- Convenience colors (auto-follow triplets; used by plain CSS) --- */
   --color-bg:                 rgb(var(--rgb-canvas));
   --color-bg-alt:             rgb(var(--rgb-canvas-alt));
@@ -480,6 +492,15 @@ html.dark {
   /* Derived (see the light comment above) — --rgb-line(dark) blended ~25%
      toward --rgb-cool-deep(dark-era pine equivalent). */
   --rgb-receipt-rule: 45 61 60;
+
+  /* Phase A (A12) — dark twins for the ember-teal/gold/moss triplets above,
+     exact hexes converted (were separate html.dark .ember-* rules). */
+  --rgb-ember-teal-a: 143 208 210;  /* #8FD0D2 */
+  --rgb-ember-teal-b: 95 169 171;   /* #5FA9AB */
+  --rgb-ember-gold-a: 231 192 122;  /* #E7C07A */
+  --rgb-ember-gold-b: 207 122 79;   /* #CF7A4F */
+  --rgb-ember-moss-a: 134 214 164;  /* #86D6A4 */
+  --rgb-ember-moss-b: 78 158 110;   /* #4E9E6E */
 
   --rgb-gold:         201 168 95;    /* gold glow lifted */
   --rgb-foil:         180 176 194;
@@ -1025,12 +1046,13 @@ html.dark .shadow-warm {
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
-.ember-teal { background-image: linear-gradient(100deg, #4A8FA0 0%, #2F574D 100%); }
-.ember-gold { background-image: linear-gradient(100deg, #BE8230 0%, #9D2D05 100%); }
-.ember-moss { background-image: linear-gradient(100deg, #4E9E6E 0%, #235B3E 100%); }
-html.dark .ember-teal { background-image: linear-gradient(100deg, #8FD0D2 0%, #5FA9AB 100%); }
-html.dark .ember-gold { background-image: linear-gradient(100deg, #E7C07A 0%, #CF7A4F 100%); }
-html.dark .ember-moss { background-image: linear-gradient(100deg, #86D6A4 0%, #4E9E6E 100%); }
+/* Phase A (A12): re-based onto --rgb-ember-*-a/b role triplets (:root above
+   this block, html.dark override earlier in the file) — the dark twins
+   auto-flip now, so the 3 separate html.dark .ember-* rules that used to
+   carry them are gone; this is the entire mechanism. */
+.ember-teal { background-image: linear-gradient(100deg, rgb(var(--rgb-ember-teal-a)) 0%, rgb(var(--rgb-ember-teal-b)) 100%); }
+.ember-gold { background-image: linear-gradient(100deg, rgb(var(--rgb-ember-gold-a)) 0%, rgb(var(--rgb-ember-gold-b)) 100%); }
+.ember-moss { background-image: linear-gradient(100deg, rgb(var(--rgb-ember-moss-a)) 0%, rgb(var(--rgb-ember-moss-b)) 100%); }
 
 /* Modern text-wrap utilities — let the browser pick clean line breaks
    for headlines and balanced ragged-right for body copy. No JS. */
