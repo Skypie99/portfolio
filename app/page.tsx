@@ -263,7 +263,7 @@ export default function HomePage() {
                   <Link
                     href={href}
                     aria-label={`${project} — ${stat} ${label}`}
-                    className="rounded-sm transition-colors duration-fast ease-out after:absolute after:inset-0 after:content-[''] group-hover:text-accent-text focus-visible:text-accent-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                    className="rounded-sm transition-colors duration-fast ease-out after:absolute after:inset-0 after:content-[''] group-hover:text-accent-text focus-visible:text-accent-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
                   >
                     {head}
                     {/* C-22: last word + arrow bound so the → never strands. */}
@@ -608,7 +608,7 @@ export default function HomePage() {
           <Reveal className="mt-16">
             <Link
               href="/certificates/"
-              className="group inline-flex items-center gap-1.5 px-1 py-[15px] -mx-1 -my-[15px] rounded-sm font-mono text-meta tracking-label uppercase text-accent-text transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+              className="group inline-flex items-center gap-1.5 px-1 py-[15px] -mx-1 -my-[15px] rounded-sm font-mono text-meta tracking-label uppercase text-accent-text transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
             >
               See the credential badges
               <span aria-hidden="true">{'→'}</span>

@@ -110,7 +110,9 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
                    lib/doorAjar marks only [data-door-target], never bare
                    hrefs (the stretched-link chips must stay unpositioned). */
                 data-door-target={`/work/${d.id}/`}
-                className="rounded-sm transition-colors duration-fast ease-out hover:text-accent-text focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta"
+                /* Phase A (A11): was outline-offset-4 — see CaseStudyCard's
+                   identical title-link fix for the reasoning. */
+                className="rounded-sm transition-colors duration-fast ease-out hover:text-accent-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
               >
                 {d.title}
               </Link>
@@ -167,7 +169,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
                    visible label ("View project") so speech-input users can act
                    on what they see. Extra context follows the visible words. */
                 aria-label={`View project — ${d.title} case study`}
-                className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:-top-[21px] after:bottom-0 after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-base ease-gh-glide hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:-top-[21px] after:bottom-0 after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-base ease-gh-glide hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
               >
                 View project <span aria-hidden="true">→</span>
               </Link>
@@ -184,7 +186,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Open ${demoLink.label.toLowerCase()} for ${d.title} (opens in new tab)`}
-                      className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                      className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
                     >
                       {/* label-derived: "Live" for live products, "Demo" for
                           not-yet-live ones (e.g. Mutual Mesh) */}
@@ -197,7 +199,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`View ${d.title} source on GitHub (opens in new tab)`}
-                      className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                      className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
                     >
                       GitHub <span aria-hidden="true">↗</span>
                     </a>
