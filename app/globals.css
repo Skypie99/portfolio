@@ -117,6 +117,12 @@
   --rgb-cool-mid:     69 144 154;    /* lagoon — icons (≥3:1 UI) */
   --rgb-cool-soft:    137 181 168;   /* seafoam — soft cool borders */
 
+  /* Phase A (A13) — GOLD RULE, measured on the approved system-sheet board
+     (2026-08-23): this light value is 2.45:1 on canvas — below even the 3:1
+     non-text floor (dark passes at 7.80:1). Gold must NEVER carry text or
+     meaning alone in light mode; ceremony use is always ink-paired. This
+     documents a real, pre-existing defect risk — the value itself is
+     unchanged (see UI_SYSTEM.md for the full rule). */
   --rgb-gold:         191 155 93;    /* golden-hour glow */
   --rgb-foil:         164 160 178;   /* twilight lavender-grey */
   --rgb-rose:         138 106 94;    /* muted warm (was dusty rose) */

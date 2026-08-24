@@ -27,6 +27,10 @@ surface-warm** (panels), accent (terracotta — restrained: CTAs, chrome, emphas
 gold, line / line-strong (borders). Decorative one-offs must be `--rgb-*` triplets so they flip — no
 raw hex in components.
 
+**Gold rule (Phase A, measured on the approved system-sheet board, 2026-08-23):** light-mode gold
+(`--rgb-gold`) is **2.45:1 on canvas** — below even the 3:1 non-text floor (dark passes at 7.80:1).
+Gold never carries text or meaning alone in light mode; ceremony use is always ink-paired.
+
 ## Dark mode (DESIGNED, not inverted)
 - **Surface ladder:** canvas `21 25 26` < canvas-alt `26 31 32` < **surface-mid `37 43 45`** (raised
   panels) < surface `30 36 38`. Panels that should "lift" use `bg-surface-mid` (light value = cream, so
