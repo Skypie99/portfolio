@@ -23,7 +23,7 @@ import { renderMarkdownProse } from '@/components/MarkdownProse';
 
 type RouteParams = { slug: string };
 
-type CaseStudyCategory = 'flagstone' | 'claude-corp' | 'dashboard' | 'prompt-library' | 'ghost' | 'mutual';
+type CaseStudyCategory = 'flagstone' | 'claude-corp' | 'dashboard' | 'prompt-library' | 'ghost';
 
 function toCategory(id: string): CaseStudyCategory {
   const map: Record<string, CaseStudyCategory> = {
@@ -32,7 +32,6 @@ function toCategory(id: string): CaseStudyCategory {
     'dashboard': 'dashboard',
     'prompt-library': 'prompt-library',
     'ghost-code': 'ghost',
-    'mutual-mesh': 'mutual',
   };
   return map[id] ?? 'flagstone';
 }
@@ -56,7 +55,7 @@ export function FlagstoneTestReceipt() {
   return (
     <section className="px-gutter py-12 lg:py-16 world-surface border-t border-border-decorative">
       <div className="max-w-content mx-auto">
-        <p className="max-w-measure-wide font-mono text-meta tracking-label uppercase text-text-meta leading-[2]">
+        <p className="max-w-measure-wide font-mono text-meta tracking-label uppercase text-text-meta leading-loose">
           2,971 tests passing
           <span aria-hidden="true"> · </span>{' '}
           <a
@@ -66,6 +65,9 @@ export function FlagstoneTestReceipt() {
             measured 2026-08-16, method
           </a>
         </p>
+        {/* leading-[1.7]: a singular tuned value on this mono meta caption —
+            coincides numerically, but not semantically, with the sans-body
+            leading-[1.7] on the homepage's "how I work" essay. */}
         <p
           id="flagstone-test-count-method"
           className="scroll-mt-24 mt-2 max-w-measure-wide font-mono text-meta text-text-meta leading-[1.7]"
@@ -670,7 +672,7 @@ export default async function WorkDetailPage({
                 <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 Inside the build
               </p>
-              <h2 className="font-serif font-light text-step-4 text-near-black mb-24 max-w-2xl leading-tight text-balance">
+              <h2 className="font-serif font-light text-step-4 text-near-black mb-24 max-w-measure-heading leading-heading text-balance">
                 See it in motion.
               </h2>
             </Reveal>
@@ -682,14 +684,17 @@ export default async function WorkDetailPage({
                       is present it carries the description, so the plate's alt is
                       emptied to stop AT hearing the scene twice (de-dup alt/caption). */}
                   <figure className="m-0 flex flex-col gap-3">
+                    {/* Phase A: className was rounded-2xl — Tailwind's stock 16px
+                        utility, coincidentally value-identical to this project's
+                        own named rounded-lg (16px). Use the named token. */}
                     <ShotProductReveal
                       slug={d.id}
                       title={d.title}
                       media={{ src: shot.src, alt: shot.caption ? '' : shot.alt, avif: shot.avif, webp: shot.webp, focal: shot.focal, lqip: shot.lqip, video: shot.video }}
-                      className="rounded-2xl border border-border-decorative"
+                      className="rounded-lg border border-border-decorative"
                     />
                     {shot.caption && (
-                      <figcaption className="font-sans text-body-sm text-charcoal leading-[1.6] text-pretty">
+                      <figcaption className="font-sans text-body-sm text-charcoal text-pretty">
                         {smartPunctuation(shot.caption)}
                       </figcaption>
                     )}
@@ -713,7 +718,7 @@ export default async function WorkDetailPage({
                 <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 Gallery
               </p>
-              <h2 className="font-serif font-light text-step-4 text-near-black mb-24 max-w-2xl leading-tight text-balance">
+              <h2 className="font-serif font-light text-step-4 text-near-black mb-24 max-w-measure-heading leading-heading text-balance">
                 A closer look.
               </h2>
             </Reveal>
@@ -739,7 +744,7 @@ export default async function WorkDetailPage({
                     </span>
                   </div>
                   {img.caption && (
-                    <p className="font-sans text-body-sm text-charcoal leading-[1.6]">
+                    <p className="font-sans text-body-sm text-charcoal">
                       {smartPunctuation(img.caption)}
                     </p>
                   )}
@@ -768,7 +773,7 @@ export default async function WorkDetailPage({
                 <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 More work
               </p>
-              <h2 className="font-serif font-light text-step-4 text-near-black max-w-2xl leading-tight mb-24 text-balance">
+              <h2 className="font-serif font-light text-step-4 text-near-black max-w-measure-heading leading-heading mb-24 text-balance">
                 Continue reading.
               </h2>
             </Reveal>
@@ -828,11 +833,12 @@ export default async function WorkDetailPage({
               byte moves and the sanctioned presentation-entity exception went
               unused. Note the h2 is a fit-content flex item under items-start
               (capped by max-content at 373.44px), not container-bound — which is
-              why max-w-2xl never binds here and why 1440 is safe. Zero colour
+              why max-w-measure-heading (was max-w-2xl) never binds here and why
+              1440 is safe. Zero colour
               TOKENS move, but the re-flow does slide "this?" along the fixed
               .ember ramp (t 0.136 → 0.318: rgb +2,+6,+8 light / −4,−6,−4 dark),
               so the both-theme captures show a hue delta with no new pair. */}
-          <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight text-balance">
+          <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance">
             Have something like this?
             <br />
             Write to me.

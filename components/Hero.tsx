@@ -143,7 +143,7 @@ export function Hero({
         <p
           className={cn(
             'font-sans font-light text-step-1 text-ink-muted',
-            'max-w-[520px]',
+            'max-w-measure-lead',
             'mb-16',
             'text-pretty',
           )}

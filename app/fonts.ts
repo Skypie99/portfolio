@@ -23,7 +23,12 @@ export const dmSans = DM_Sans({
 
 export const dmMono = DM_Mono({
   subsets: ['latin'],
-  weight: ['400'],
+  // Phase A (A15): 500 added for the new Receipt component's figure —
+  // 05_DESIGN_SYSTEM.md reserves it for "receipt figures + plate line 1".
+  // Without a loaded 500, `font-medium` on DM Mono would silently no-op to
+  // 400 rather than fake-bold (font-synthesis-weight: none is set globally,
+  // globals.css:body — the same guard that bans synthesized DM Sans bold).
+  weight: ['400', '500'],
   variable: '--font-dm-mono',
   display: 'swap',
 });

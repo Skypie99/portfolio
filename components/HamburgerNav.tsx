@@ -126,11 +126,12 @@ export function HamburgerNav() {
         tabIndex={open ? -1 : undefined}
         onClick={() => setOpen((v) => !v)}
         className={cn(
-          // z-[90]: above the homepage's pinned desert stage (frozen z-50 —
-          // a later-in-DOM z-tie left real taps dead at page top), below the
-          // pointer-inert film grain (z-100). The frosted bg is designed to
-          // sit on anything.
-          'fixed top-4 right-4 z-[90]',
+          // z-chrome (90, Phase A — was the arbitrary z-[90]): above the
+          // homepage's pinned desert stage (frozen z-50 — a later-in-DOM
+          // z-tie left real taps dead at page top), below the pointer-inert
+          // film grain (z-grain/100). The frosted bg is designed to sit on
+          // anything.
+          'fixed top-4 right-4 z-chrome',
           'inline-flex items-center justify-center',
           'h-11 w-11', // 44x44 hit area per Alex §3.5 option 1
           'bg-canvas/90 backdrop-blur-sm',
@@ -140,9 +141,10 @@ export function HamburgerNav() {
           'transition-colors duration-fast ease-out',
           // Sidebar handles desktop navigation; hamburger is mobile-only.
           'md:hidden',
-          // IN-3: while the dialog is open this trigger (z-90) sits directly
-          // over the in-dialog close button (z-80) — make it inert so the close
-          // button wins the hit-test. Stays mounted so focus returns here on close.
+          // IN-3: while the dialog is open this trigger (z-chrome/90) sits
+          // directly over the in-dialog close button (z-overlay/80) — make it
+          // inert so the close button wins the hit-test. Stays mounted so
+          // focus returns here on close.
           open && 'pointer-events-none opacity-0',
         )}
       >
@@ -204,13 +206,14 @@ export function HamburgerNav() {
             exit={reduceMotion ? { opacity: 1 } : { opacity: 0, y: 8 }}
             transition={{ duration: reduceMotion ? 0 : 0.28, ease: [0.4, 0, 0.2, 1] }}
             className={cn(
-              // z-[80] (--z-overlay): the drawer must beat the pinned desert
-              // stage (z-50) too — lifting only the trigger would open an
-              // INVISIBLE dialog under the stage at page top, with a live
-              // focus trap inside it. Stays below the trigger (z-[90]) so
-              // the close position keeps winning the hit-test, and below
-              // the pointer-inert grain (z-100).
-              'fixed inset-0 z-[80]',
+              // z-overlay (80, Phase A — was the arbitrary z-[80]): the
+              // drawer must beat the pinned desert stage (z-50) too — lifting
+              // only the trigger would open an INVISIBLE dialog under the
+              // stage at page top, with a live focus trap inside it. Stays
+              // below the trigger (z-chrome/90) so the close position keeps
+              // winning the hit-test, and below the pointer-inert grain
+              // (z-grain/100).
+              'fixed inset-0 z-overlay',
               // Fully opaque so the modal completely occludes the fixed
               // WorldBackdrop (z-index:-1) behind it. A translucent fill let the
               // night-sky gradient bleed through — and the /92 opacity modifier
@@ -243,7 +246,10 @@ export function HamburgerNav() {
                 // scroll container would scroll away with the content and become
                 // unreachable at the exact short heights this fix targets.
                 // Byte-identical at ≥812-tall (no scroll → same origin). Kept
-                // below the trigger's z-[90] so the trigger wins the outer hit-test.
+                // below the trigger's z-chrome/90 so the trigger wins the outer
+                // hit-test. This element's own z-[1] is a local value (not a
+                // ladder rung) — disambiguates it from other children of this
+                // same stacking context only; out of the A8 ladder's scope.
                 'fixed top-4 right-4 z-[1]',
                 'inline-flex items-center justify-center',
                 'h-11 w-11',

@@ -187,10 +187,10 @@ export default function HomePage() {
               Shipped
             </p>
             {/* Heading */}
-            <h2 className="font-serif font-light text-step-4 ember mb-3 max-w-2xl leading-[1.1] text-balance">
+            <h2 className="font-serif font-light text-step-4 ember mb-3 max-w-measure-heading leading-heading text-balance">
               Built, shipped, and open.
             </h2>
-            <p className="font-sans font-light text-body text-ink-muted mb-24 max-w-[540px] text-pretty">
+            <p className="font-sans font-light text-body text-ink-muted mb-24 max-w-measure-lead text-pretty">
               Real products on the open internet. Each one accessible by design.
             </p>
           </Reveal>
@@ -263,7 +263,7 @@ export default function HomePage() {
                   <Link
                     href={href}
                     aria-label={`${project} — ${stat} ${label}`}
-                    className="rounded-sm transition-colors duration-fast ease-out after:absolute after:inset-0 after:content-[''] group-hover:text-accent-text focus-visible:text-accent-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                    className="rounded-sm transition-colors duration-fast ease-out after:absolute after:inset-0 after:content-[''] group-hover:text-accent-text focus-visible:text-accent-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
                   >
                     {head}
                     {/* C-22: last word + arrow bound so the → never strands. */}
@@ -339,7 +339,7 @@ export default function HomePage() {
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               The Work
             </p>
-            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight text-balance">
+            <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance">
               A handful of things, made with intention.
             </h2>
           </Reveal>
@@ -407,7 +407,7 @@ export default function HomePage() {
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               How the work gets made
             </p>
-            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-[1.1] text-balance">
+            <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance">
               I direct AI agents, and I built the system that keeps them honest.
             </h2>
           </Reveal>
@@ -478,16 +478,19 @@ export default function HomePage() {
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               A Brief Account
             </p>
-            {/* C-23: max-w-2xl matches the five sibling section H2s (:151/:261/:313/
-                :424/:518) — the About head was the lone one off the shared 672px grid.
-                Byte-identical render today; restores the grid so future copy can't drift. */}
-            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-[1.1] text-balance">
+            {/* C-23: max-w-measure-heading (was max-w-2xl, Phase A) matches the five
+                sibling section H2s (:151/:261/:313/:424/:518) — the About head was the
+                lone one off the shared 672px grid. Byte-identical render; restores the
+                grid so future copy can't drift. */}
+            <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance">
               The work is careful. The record is honest.
             </h2>
           </Reveal>
 
           <Reveal variant="depth" className="max-w-measure flex flex-col gap-8">
             {/* Pull-quote accent — editorial tone-setter */}
+            {/* leading-[1.45]: a per-quote tuned value, not a token candidate —
+                the sibling pull-quote on /about carries its own tuned 1.4. */}
             <blockquote className="pull-quote nums-oldstyle pl-3 font-serif font-light italic text-step-2 text-ink leading-[1.45] text-balance">
               One careful deliverable beats a dozen rough ones.
             </blockquote>
@@ -499,7 +502,7 @@ export default function HomePage() {
               {' '}{profile.location}, mostly on AI tooling, accessibility
               infrastructure, and the systems that make a product feel calm.
             </p>
-            <p className="font-sans font-light text-prose text-ink-muted leading-[1.65] text-pretty">
+            <p className="font-sans font-light text-prose text-ink-muted text-pretty">
               I keep a written record of how each thing was made. The
               documentation is part of the deliverable, not an afterthought.
             </p>
@@ -535,7 +538,7 @@ export default function HomePage() {
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Credentials
             </p>
-            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-[1.1] text-balance">
+            <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance">
               Credentials, earned in order.
             </h2>
           </Reveal>
@@ -584,11 +587,17 @@ export default function HomePage() {
                       aria-label={`View credential: ${c.title} from ${c.issuer} (opens in new tab)`}
                       /* L5-07: px/py + negative margins lift the tap box with
                          zero layout shift. F7-1 (a11y 07-31): py-1 gave ~23px;
-                         py-[15px] reaches the house 44 floor. Measured room to
-                         the nearest interactive neighbour is 123px (1280) /
-                         170px (375), so the grown box still collides with
-                         nothing. */
-                      className="px-1 py-[15px] -mx-1 -my-[15px] font-mono text-meta tracking-label uppercase text-accent-text inline-flex items-center gap-1 transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 shrink-0"
+                         py-[15px] reached the house 44 floor at 44.39px.
+                         Phase A (A9, gate-driven): the approved system-sheet
+                         board calls this exact "15px oddball" out by name as
+                         a --space-4 (16px) migration; py-4 lands at ~46px,
+                         still comfortably past the floor, with 1px more room
+                         each side than the original hand-tuned value — a
+                         reachable-through-tokens value, not a precision
+                         regression. Measured room to the nearest interactive
+                         neighbour is 123px (1280) / 170px (375), so the
+                         grown box still collides with nothing. */
+                      className="px-1 py-4 -mx-1 -my-4 font-mono text-meta tracking-label uppercase text-accent-text inline-flex items-center gap-1 transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 shrink-0"
                     >
                       View
                       {/* CO-8: ↗ external-link glyph (was the internal →) */}
@@ -605,7 +614,10 @@ export default function HomePage() {
           <Reveal className="mt-16">
             <Link
               href="/certificates/"
-              className="group inline-flex items-center gap-1.5 px-1 py-[15px] -mx-1 -my-[15px] rounded-sm font-mono text-meta tracking-label uppercase text-accent-text transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+              // Phase A (A9, gate-driven): same py-[15px] -> py-4 migration as
+              // the "View" link above — the approved board names this exact
+              // 15px value as a --space-4 oddball.
+              className="group inline-flex items-center gap-1.5 px-1 py-4 -mx-1 -my-4 rounded-sm font-mono text-meta tracking-label uppercase text-accent-text transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
             >
               See the credential badges
               <span aria-hidden="true">{'→'}</span>
@@ -645,7 +657,7 @@ export default function HomePage() {
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Let’s talk
             </p>
-            <h2 className="font-serif font-light text-step-4 ember max-w-2xl leading-tight">
+            <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading">
               Have something worth building?
               <br />
               Let’s talk about it.
