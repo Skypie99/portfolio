@@ -133,14 +133,9 @@ export function Footer() {
                   Notes
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/contact/"
-                  className="link-draw font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out"
-                >
-                  Let’s talk
-                </Link>
-              </li>
+              {/* B5 (Phase B, THE ROOM G1.3): promoted ahead of the closing CTA —
+                  grouped with Notes as the site's other standalone read, rather
+                  than trailing last in the column. */}
               <li>
                 <Link
                   href="/accessibility/"
@@ -155,6 +150,14 @@ export function Footer() {
                   className="link-draw font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out"
                 >
                   Colophon
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact/"
+                  className="link-draw font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out"
+                >
+                  Let’s talk
                 </Link>
               </li>
             </ul>
