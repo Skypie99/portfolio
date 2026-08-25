@@ -49,10 +49,12 @@ export function NumberedStep({ number, title, body, highlight = false, className
             than a named token by design — --ls-heading holds this exact value, but
             exposing it as `tracking-heading` is a tailwind.config change that
             belongs to the naming pass (UP-03 · DECISIONS §P P1-UP-03-FORM). */}
+        {/* leading-[1.15]: a singular tuned value (no token matches; unrelated
+            to the stale, disconnected --lh-display). */}
         <h3 className="font-serif font-normal text-step-2 tracking-[-0.01em] leading-[1.15] text-ink text-balance">
           {title}
         </h3>
-        <p className="font-sans font-light text-body text-ink-muted leading-[1.65] max-w-measure text-pretty">
+        <p className="font-sans font-light text-body text-ink-muted max-w-measure text-pretty">
           {body}
         </p>
       </div>

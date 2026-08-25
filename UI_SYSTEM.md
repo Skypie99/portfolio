@@ -12,13 +12,22 @@ The cinematic intro (globals.css 966→EOF, `--font-cormorant`, `--sidebar-w`) i
 - **Line-height:** tighter as size grows (`--lh-tight 1.1` display, `--lh-snug 1.2` sub-head, `1.65` body).
 - **Tracking:** negative on large serif (`--ls-hero -0.025em`, `--ls-display -0.02em`); positive on
   caps/labels (`tracking-label .125em`). Use Tailwind `tracking-*`, not inline `style`.
-- **Measure:** body prose = `max-w-measure` (**65ch**); long-form = `max-w-measure-wide` (**72ch**).
+- **Measure:** body prose = `max-w-measure` (**65ch**); long-form = `max-w-measure-wide` (**60ch**,
+  re-derived from 72ch, TY-5); lead/intro paragraphs = `max-w-measure-lead` (Phase A: **~545px**,
+  Sky's ratified reading-measure ruling — was a hardcoded, un-tokened 640px); section-H2s =
+  `max-w-measure-heading` (Phase A: **672px**).
 - **Micro-typo:** curly quotes `" "` + em/en dashes `— –` in content; `tabular-nums` on numerals;
   `text-balance` on headings, `text-pretty` on body; `font-optical-sizing: auto` (global).
 
 ## Spacing & grid
-`--space-1…20`; sections `py-24 lg:py-32` (the standard rhythm); `px-gutter` (`--gutter` = 2rem);
-content column `max-w-content` (1120px) centered; gutters never exceed the content frame.
+`--space-1…20` and `--space-50`; sections `py-24 lg:py-32` (the standard rhythm — Phase A codified
+this as `--section-y: clamp(6rem,10vw,8rem)`, not yet consumed by any call site since it changes
+the rendered value at every width between the two breakpoints, not just the notation); `px-gutter`
+(`--gutter` = 2rem); content column `max-w-content` (1120px) centered; gutters never exceed the
+content frame. Phase A also migrated the two `py-[15px] -my-[15px]` touch-target "oddballs" on the
+homepage (named explicitly on the approved system-sheet board) to `py-4 -my-4` — landing ~1px past
+the calculated 44px floor per side rather than exactly on it, a token-reachability trade the board
+called for.
 
 ## Color
 Warm-tinted neutrals (never pure #000/#fff) via `--rgb-*` triplets that flip in `html.dark`:
@@ -27,17 +36,24 @@ surface-warm** (panels), accent (terracotta — restrained: CTAs, chrome, emphas
 gold, line / line-strong (borders). Decorative one-offs must be `--rgb-*` triplets so they flip — no
 raw hex in components.
 
+**Gold rule (Phase A, measured on the approved system-sheet board, 2026-08-23):** light-mode gold
+(`--rgb-gold`) is **2.45:1 on canvas** — below even the 3:1 non-text floor (dark passes at 7.80:1).
+Gold never carries text or meaning alone in light mode; ceremony use is always ink-paired.
+
 ## Dark mode (DESIGNED, not inverted)
-- **Surface ladder:** canvas `21 25 26` < canvas-alt `26 31 32` < **surface-mid `37 43 45`** (raised
-  panels) < surface `30 36 38`. Panels that should "lift" use `bg-surface-mid` (light value = cream, so
-  light mode is unchanged; dark value lifts above the section).
+- **Surface ladder:** canvas `21 25 26` < canvas-alt `34 28 22` (warmed, not lifted — UP-20; see the
+  in-source comment at its globals.css definition for the full luminance-vs-hue reasoning) <
+  **surface-mid `41 48 51`** (raised panels) < surface `30 36 38`. Panels that should "lift" use
+  `bg-surface-mid` (light value = cream, so light mode is unchanged; dark value lifts above the section).
 - Accent luminance lifted in dark (`--rgb-accent 207 122 79`). Prefer **light hairline borders** over
   heavy shadows for elevation on dark surfaces. Full AA parity with light.
 
 ## Radii & elevation
-`--radius-sm 4 / md 8 / lg 16 / pill 999`; cards `rounded-[22px]` (liquid-glass, approved). Shadows
-`--shadow-sm/md/lg/xl` (warm-tinted light; lighter/contained in dark). One soft, layered ramp — no
-harsh drop shadows.
+`--radius-sm 4 / md 8 / lg 16 / card 22 / pill 9999` (Phase A: `pill` was `999` — a literal mismatch
+against Tailwind's own `9999px`, fixed with zero visual change; `card` promoted from a Tailwind-only
+literal to a real CSS var); cards `rounded-card` (liquid-glass, approved). Shadows `--shadow-sm/md/
+lg/xl/soft` (warm-tinted light; lighter/contained in dark — Phase A gave `soft` its long-missing dark
+twin). One soft, layered ramp — no harsh drop shadows.
 
 ## Components (one cohesive set; states complete)
 - **Focus ring:** 2px terracotta, 2px offset, consistent across all interactive elements (`:focus-visible`).

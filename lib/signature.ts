@@ -20,8 +20,6 @@ export const SIGNATURE: Record<string, string> = {
   'prompt-library': '236 186 118', // gold
   'ghost-code': '72 195 210', // phantom cyan
   'ghost': '72 195 210',
-  'mutual-mesh': '202 142 114', // clay-rose
-  'mutual': '202 142 114',
   // Certificate issuers — same warm family, distinct per issuer so the
   // credential cards read a touch different without leaving golden-hour.
   'anthropic': '214 132 88', // clay-terracotta
@@ -41,12 +39,10 @@ export function signatureFor(slug: string): string {
 /**
  * The device frame a product reads true in — mobile apps get a phone, web
  * tools / CLIs a window, the arcade game a clean plate. Accepts both the full
- * deliverable slug and the short CaseStudyCard category ('ghost', 'mutual').
+ * deliverable slug and the short CaseStudyCard category ('ghost').
  */
 const FRAME_FOR_SLUG: Record<string, DeviceFrameKind> = {
   'flagstone': 'phone',
-  'mutual-mesh': 'phone',
-  'mutual': 'phone',
   'prompt-library': 'window',
   'claude-corp': 'window',
   'dashboard': 'window',

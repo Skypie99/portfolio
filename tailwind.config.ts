@@ -52,6 +52,9 @@ const config: Config = {
         rail:           'rgb(var(--rgb-rail) / <alpha-value>)',
         earth:          'rgb(var(--rgb-earth) / <alpha-value>)',
         'earth-deep':   'rgb(var(--rgb-earth-deep) / <alpha-value>)',
+        // Phase A (A5 defined the vars; A15's Receipt is the first consumer).
+        receipt:        'rgb(var(--rgb-receipt) / <alpha-value>)',
+        'receipt-rule': 'rgb(var(--rgb-receipt-rule) / <alpha-value>)',
 
         // ── Raw brand paint — FIXED hue, does NOT flip ──────────────
         // Decorative fills / tags / gradients only; never body text.
@@ -77,29 +80,31 @@ const config: Config = {
         // PATTERN. `cool-pale` and `cool-wash` are registered nowhere, so
         // following the pattern emits nothing and the colour vanishes with no
         // type or test failure. The mapping is per-row, below, not a rule.
+        // Phase A (A14) — shrunk from 30 to 10 survivors. Each of the 20
+        // removed keys was verified EMPIRICALLY (grepped across app/ +
+        // components/ + lib/, all real Tailwind-prefix forms) to have zero
+        // live call sites before deletion — not assumed from a stale
+        // comment. 6 (wa-teal-deep/-plain/-mid/-soft/-pale/-wash) were still
+        // marked "call sites migrated by P10; retire after showcase merge"
+        // as if pending — the showcase train has since merged and the
+        // re-count found zero; that comment was stale, not aspirational.
+        // 4 more (wa-rose/-mid/-soft/-pale) and 2 (amber, pebble) had zero
+        // real call sites at all, only a stray same-word comment in
+        // amber's/pebble's case. lib/cn.ts's CUSTOM_COLOR_TOKENS updated in
+        // the same commit (amber/pebble removed; the deleted wa-* names were
+        // never in that list). Every survivor below now carries the
+        // established "legacy alias — canonical: X" comment.
         cream:          'rgb(var(--rgb-canvas) / <alpha-value>)',      // legacy alias — canonical: canvas; call sites migrated by P10; retire after showcase merge
         'warm-white':   'rgb(var(--rgb-canvas-alt) / <alpha-value>)',  // legacy alias — canonical: canvas-alt; call sites migrated by P10; retire after showcase merge
-        blush:          'rgb(var(--rgb-surface) / <alpha-value>)',
-        'peach-cream':  'rgb(var(--rgb-surface-warm) / <alpha-value>)',
-        amber:          'rgb(var(--rgb-accent-soft) / <alpha-value>)',
-        terracotta:     'rgb(var(--rgb-accent) / <alpha-value>)',
-        umber:          'rgb(var(--rgb-accent-ink) / <alpha-value>)',
-        stone:          'rgb(var(--rgb-line) / <alpha-value>)',
-        'stone-strong': 'rgb(var(--rgb-line-strong) / <alpha-value>)',
-        pebble:         'rgb(var(--rgb-pebble) / <alpha-value>)',
-        'sage-text':    'rgb(var(--rgb-ink-meta) / <alpha-value>)',
+        blush:          'rgb(var(--rgb-surface) / <alpha-value>)',          // legacy alias — canonical: surface; 1 live call site (Button.tsx)
+        'peach-cream':  'rgb(var(--rgb-surface-warm) / <alpha-value>)',     // legacy alias — canonical: surface-warm; 1 live call site (Button.tsx)
+        terracotta:     'rgb(var(--rgb-accent) / <alpha-value>)',           // legacy alias — canonical: accent; 54+ live call sites, largest survivor
+        umber:          'rgb(var(--rgb-accent-ink) / <alpha-value>)',       // legacy alias — canonical: accent-ink; 12 live call sites
+        stone:          'rgb(var(--rgb-line) / <alpha-value>)',             // legacy alias — canonical: line; 15 live call sites
+        'stone-strong': 'rgb(var(--rgb-line-strong) / <alpha-value>)',      // legacy alias — canonical: line-strong; 6 live call sites
+        'sage-text':    'rgb(var(--rgb-ink-meta) / <alpha-value>)',         // legacy alias — canonical: ink-meta; 3 live call sites
         charcoal:       'rgb(var(--rgb-ink-muted) / <alpha-value>)',  // legacy alias — canonical: ink-muted; call sites migrated by P10; retire after showcase merge
-        'near-black':   'rgb(var(--rgb-ink) / <alpha-value>)',
-        'wa-teal-deep': 'rgb(var(--rgb-cool-deep) / <alpha-value>)',  // legacy alias — canonical: cool-deep; call sites migrated by P10; retire after showcase merge
-        'wa-teal':      'rgb(var(--rgb-cool) / <alpha-value>)',  // legacy alias — canonical: cool; call sites migrated by P10; retire after showcase merge
-        'wa-teal-mid':  'rgb(var(--rgb-cool-mid) / <alpha-value>)',  // legacy alias — canonical: cool-mid; call sites migrated by P10; retire after showcase merge
-        'wa-teal-soft': 'rgb(var(--rgb-cool-soft) / <alpha-value>)',  // legacy alias — canonical: cool-soft; call sites migrated by P10; retire after showcase merge
-        'wa-teal-pale': 'rgb(var(--rgb-panel-cool) / <alpha-value>)',  // legacy alias — canonical: panel-cool  ⚠ NOT cool-pale; call sites migrated by P10; retire after showcase merge
-        'wa-teal-wash': 'rgb(var(--rgb-wash-cool) / <alpha-value>)',  // legacy alias — canonical: wash-cool  ⚠ NOT cool-wash; call sites migrated by P10; retire after showcase merge
-        'wa-rose':      'rgb(var(--rgb-rose) / <alpha-value>)',
-        'wa-rose-mid':  'rgb(var(--rgb-rose) / <alpha-value>)',
-        'wa-rose-soft': 'rgb(var(--rgb-cool-soft) / <alpha-value>)',
-        'wa-rose-pale': 'rgb(var(--rgb-rose-pale) / <alpha-value>)',
+        'near-black':   'rgb(var(--rgb-ink) / <alpha-value>)',              // legacy alias — canonical: ink; 9 live call sites (the showcase-owned app/work/[slug]/page.tsx x8, per UI_SYSTEM.md)
         'text-meta':    'rgb(var(--rgb-ink-meta) / <alpha-value>)',
         'border-decorative':  'rgb(var(--rgb-line) / <alpha-value>)',
         'border-interactive': 'rgb(var(--rgb-line-strong) / <alpha-value>)',
@@ -116,8 +121,8 @@ const config: Config = {
       fontSize: {
         // Per Dani §2.2 (display-l / display-m retired in Phase 7 — zero usages; display-s kept 7× active)
         'display-s': ['1.1875rem', { lineHeight: '1.2' }], // 19px
-        body: ['1rem', { lineHeight: '1.65' }], // 16px
-        prose: ['1.0625rem', { lineHeight: '1.65' }], // 17px — comfortable long-form reading size
+        body: ['1rem', { lineHeight: 'var(--lh-body)' }], // 16px
+        prose: ['1.0625rem', { lineHeight: 'var(--lh-body)' }], // 17px — comfortable long-form reading size
         'body-sm': ['0.875rem', { lineHeight: '1.6' }], // 14px
         label: ['0.75rem', { lineHeight: '1.4' }], // 12px
         meta: ['0.6875rem', { lineHeight: '1.4' }], // 11px
@@ -154,6 +159,25 @@ const config: Config = {
         body: '0.0156em', // +0.25px
         label: '0.125em', // +2px
       },
+      lineHeight: {
+        // Phase A (OCD #2) — the unified section-H2 leading. NOT named `snug`:
+        // Tailwind's own stock `snug` (1.375) already has two live consumers
+        // (Hero.tsx, work/[slug]/page.tsx) that rely on that default value —
+        // shadowing the key would have silently changed both. `heading` is a
+        // new, non-colliding name for the same --lh-snug token.
+        heading: 'var(--lh-snug)', // 1.2
+        // Phase A (OCD #1) — gives --lh-body real consumers. Also folded into
+        // the `body`/`prose` fontSize tuples below (their own baked lineHeight
+        // now points at the same token), so most `leading-[1.65]` calls sites
+        // were redundant and were deleted rather than migrated here; this
+        // utility remains for the few genuine overrides (text-body-sm wanting
+        // the looser body value instead of its own baked 1.6).
+        body: 'var(--lh-body)', // 1.65
+        // Phase A (OCD #1) — long-form markdown/prose paragraphs deliberately
+        // loosen past --lh-body (1.65 → 1.75); 3 real call sites shared this
+        // exact value before migration (MarkdownProse ×2, /accessibility ×1).
+        prose: 'var(--lh-prose)', // 1.75
+      },
       spacing: {
         // §7.4 — honest namespace: numeral × 0.25rem = rendered size (the natural
         // Tailwind ramp). The inverted overrides (5→1.5rem … 20→12.5rem) are gone, so
@@ -164,19 +188,27 @@ const config: Config = {
         '50': '12.5rem', // 200px = 50 × 0.25rem
         gutter: '2rem',
         sidebar: '280px',
+        // Phase A — codifies --section-y (see globals.css for why it isn't
+        // wired into any call site yet). Reachable as py-section-y etc.
+        'section-y': 'var(--section-y)',
       },
+      // Phase A — var-backed (was 5 literal strings duplicating app/globals.css
+      // by coincidence, not by reference). {4, 8, 16, 22, pill}, one system.
       borderRadius: {
-        sm: '4px',
-        md: '8px',
-        lg: '16px',
-        card: '22px', // liquid-glass card corner (ProjectCard/CaseStudyCard/CertCard)
-        pill: '9999px',
+        sm: 'var(--radius-sm)',
+        md: 'var(--radius-md)',
+        lg: 'var(--radius-lg)',
+        card: 'var(--radius-card)',
+        pill: 'var(--radius-pill)',
       },
       maxWidth: {
         content: '1120px',
         measure: 'var(--measure)',
         'measure-wide': 'var(--measure-wide)',
-        'measure-lead': '640px', // lead/intro paragraph width (was a hardcoded max-w-[640px])
+        // Phase A — was a hardcoded '640px' literal with no CSS var; now
+        // var-backed at Sky's ratified ~545px (13_DECISIONS.md #4b).
+        'measure-lead': 'var(--measure-lead)',
+        'measure-heading': 'var(--measure-heading)',
       },
       transitionDuration: {
         fast: '180ms',
@@ -201,7 +233,9 @@ const config: Config = {
         'gh-arrive': 'var(--ease-gh-arrive)',
       },
       boxShadow: {
-        soft: '0 1px 2px rgba(35,36,32,0.04), 0 4px 12px rgba(35,36,32,0.03)',
+        // Phase A — was a literal string (no html.dark override existed to
+        // point at); var-backed now, matching sm/md/lg/xl below.
+        soft: 'var(--shadow-soft)',
         // Overhaul 2026-06-03 — layered warm ramp (var-backed; flips dark
         // via the html.dark override in globals.css). Overrides Tailwind's
         // unused core sm/md/lg/xl with our warm system.
@@ -213,6 +247,17 @@ const config: Config = {
       borderWidth: {
         // Overhaul 2026-06-03 — hairline divider (decorative only).
         hairline: '0.5px',
+      },
+      // Phase A — the z-ladder was 100% orphaned (zero var(--z-*) consumers
+      // anywhere; z-index was hand-numbered everywhere instead). Stacking
+      // documented in one place; does NOT renumber the existing order.
+      zIndex: {
+        base: 'var(--z-base)',
+        raised: 'var(--z-raised)',
+        sticky: 'var(--z-sticky)',
+        overlay: 'var(--z-overlay)',
+        chrome: 'var(--z-chrome)',
+        grain: 'var(--z-grain)',
       },
     },
   },

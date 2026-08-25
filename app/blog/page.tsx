@@ -79,11 +79,11 @@ export default function BlogIndexPage() {
             Notes — {posts.length} {posts.length === 1 ? 'entry' : 'entries'}
           </p>
           <SettleHeading
-            className="font-serif font-light text-display ember max-w-3xl mb-12 text-balance"
+            className="font-serif font-light text-display ember max-w-measure-heading mb-12 text-balance"
           >
             Notes
           </SettleHeading>
-          <p className="font-sans font-light text-prose text-ink-muted leading-[1.65] max-w-measure-lead text-pretty">
+          <p className="font-sans font-light text-prose text-ink-muted max-w-measure-lead text-pretty">
             On accessibility, AI-assisted building, and what it means to
             make things carefully — one project at a time.
           </p>
@@ -189,7 +189,7 @@ export default function BlogIndexPage() {
                       </h3>
 
                       {/* Summary */}
-                      <p className="font-sans font-light text-prose text-ink-muted leading-[1.65] max-w-measure-lead text-pretty">
+                      <p className="font-sans font-light text-prose text-ink-muted max-w-measure-lead text-pretty">
                         {bindSeparatorDash(post.summary)}
                       </p>
 

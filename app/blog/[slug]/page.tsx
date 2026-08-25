@@ -18,7 +18,7 @@ import type { BlogPost } from '@/lib/schema';
 
 type RouteParams = { slug: string };
 
-type CaseStudyCategory = 'flagstone' | 'claude-corp' | 'dashboard' | 'prompt-library' | 'ghost' | 'mutual';
+type CaseStudyCategory = 'flagstone' | 'claude-corp' | 'dashboard' | 'prompt-library' | 'ghost';
 
 /** id → CaseStudyCard category (mirrors app/work/[slug]/page.tsx). */
 function toCategory(id: string): CaseStudyCategory {
@@ -28,7 +28,6 @@ function toCategory(id: string): CaseStudyCategory {
     'dashboard': 'dashboard',
     'prompt-library': 'prompt-library',
     'ghost-code': 'ghost',
-    'mutual-mesh': 'mutual',
   };
   return map[id] ?? 'flagstone';
 }
@@ -305,7 +304,7 @@ export default async function BlogPostPage({
               43925) outranks `.text-step-3` (20824) at equal specificity, so the
               heading would render step-3's size at display-tier tracking. Sky's call. */}
           <SettleHeading
-            className="font-serif font-light text-display md:text-step-5 lg:text-display ember max-w-3xl mb-16 text-balance"
+            className="font-serif font-light text-display md:text-step-5 lg:text-display ember max-w-measure-heading mb-16 text-balance"
           >
             {bindSeparatorDash(bindSoloLetters(post.title))}
           </SettleHeading>
@@ -362,7 +361,7 @@ export default async function BlogPostPage({
                 <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 Keep reading
               </p>
-              <h2 className="font-serif font-light text-step-4 text-ink max-w-2xl leading-tight mb-12 text-balance">
+              <h2 className="font-serif font-light text-step-4 text-ink max-w-measure-heading leading-heading mb-12 text-balance">
                 Continue reading.
               </h2>
               {/* One deliberate handoff — a single-column max-width so it reads as

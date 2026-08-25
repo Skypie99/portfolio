@@ -249,7 +249,10 @@ function BandHint({ sig, frame }: { sig: string; frame: DeviceFrameKind }) {
     >
       <div
         className={cn(
-          'panel-lit relative overflow-hidden rounded-[1.35rem] border',
+          // Phase A: was rounded-[1.35rem] (21.6px) — a stray 0.4px off the
+          // card radius token. Pre-flagged + pre-recommended in the phase
+          // brief's own example 🔴 (imperceptible, removes a stray value).
+          'panel-lit relative overflow-hidden rounded-card border',
           portrait ? 'h-[82%] aspect-[9/19]' : 'h-[66%] w-[64%]',
         )}
         style={{

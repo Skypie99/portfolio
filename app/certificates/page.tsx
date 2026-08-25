@@ -74,11 +74,11 @@ export default function CertificatesPage() {
             Credentials — {certificates.length}
           </p>
           <SettleHeading
-            className="font-serif font-light text-display ember max-w-3xl mb-12 text-balance"
+            className="font-serif font-light text-display ember max-w-measure-heading mb-12 text-balance"
           >
             Credentials
           </SettleHeading>
-          <p className="font-sans font-light text-prose text-ink-muted leading-[1.65] max-w-measure-lead text-pretty">
+          <p className="font-sans font-light text-prose text-ink-muted max-w-measure-lead text-pretty">
             Selected credentials and certifications. A short paper trail of the
             things I’ve studied formally — most of the learning happens in
             the work, not on paper.

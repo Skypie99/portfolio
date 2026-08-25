@@ -174,11 +174,11 @@ describe('HamburgerNav', () => {
     const user = userEvent.setup();
     render(<HamburgerNav />);
     const trigger = screen.getByRole('button', { name: /open navigation menu/i });
-    expect(trigger.className).toContain('z-[90]');
+    expect(trigger.className).toContain('z-chrome');
 
     await user.click(trigger);
     const dialog = await screen.findByRole('dialog', { name: /primary menu/i });
-    expect(dialog.className).toContain('z-[80]');
+    expect(dialog.className).toContain('z-overlay');
   });
 
   it('gives the overlay an internal scroll path so the toggle is reachable on short viewports (L5-02)', async () => {
