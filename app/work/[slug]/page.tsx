@@ -23,7 +23,7 @@ import { renderMarkdownProse } from '@/components/MarkdownProse';
 
 type RouteParams = { slug: string };
 
-type CaseStudyCategory = 'flagstone' | 'claude-corp' | 'dashboard' | 'prompt-library' | 'ghost' | 'mutual';
+type CaseStudyCategory = 'flagstone' | 'claude-corp' | 'dashboard' | 'prompt-library' | 'ghost';
 
 function toCategory(id: string): CaseStudyCategory {
   const map: Record<string, CaseStudyCategory> = {
@@ -32,7 +32,6 @@ function toCategory(id: string): CaseStudyCategory {
     'dashboard': 'dashboard',
     'prompt-library': 'prompt-library',
     'ghost-code': 'ghost',
-    'mutual-mesh': 'mutual',
   };
   return map[id] ?? 'flagstone';
 }
