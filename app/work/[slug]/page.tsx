@@ -936,6 +936,16 @@ export default async function WorkDetailPage({
                     {shot.caption && (
                       <figcaption className="font-sans text-body-sm text-charcoal text-pretty">
                         {smartPunctuation(shot.caption)}
+                        {/* D7 — surface what the manifest already records: every
+                            Flagstone shot now carries its own capture date + commit
+                            (schema-optional; absent for every other deliverable's
+                            shots, so this line simply doesn't render there). */}
+                        {shot.capturedDate && (
+                          <span className="mt-1 block font-mono text-meta tracking-label uppercase text-text-meta">
+                            captured {shot.capturedDate}
+                            {shot.commit && <> · {shot.commit}</>}
+                          </span>
+                        )}
                       </figcaption>
                     )}
                   </figure>
