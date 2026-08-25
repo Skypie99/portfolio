@@ -1,8 +1,10 @@
 # Phase B — The Global Shell — CLOSE-OUT
 
-**Branch:** `room/pB-shell` (4 commits, one per shipped item). **STOP — not merged, not pushed.**
-**Date:** 2026-08-25 (single continuous session).
-**Gate at close:** `npm run typecheck && npm run build && npx vitest run` — **all green.** Typecheck 0 errors. Build: compiled successfully, 26/26 static pages exported, same 6 pre-existing warnings as Phase A (the documented "headers won't work with output:export" notice). Tests: **70 files, 684 passed / 1 skipped / 1 todo** (baseline from Phase A's own close-out was 69/678/1/1 — the delta is exactly this phase's new `IntroSkip.test.tsx`, 6 tests. No other count moved).
+**Branch:** `room/pB-shell` (8 commits: 4 shipped-without-asking + 1 close-out + 4 Sky-ratified decisions). **STOP — not merged, not pushed.**
+**Date:** 2026-08-25 (single continuous session, decisions ratified live in-chat the same session).
+**Gate at close:** `npm run typecheck && npm run build && npx vitest run` — **all green** both before and after the ratified decisions landed. Typecheck 0 errors. Build: compiled successfully, 26/26 static pages exported, same 6 pre-existing warnings as Phase A (the documented "headers won't work with output:export" notice). Tests: **70 files, 684 passed / 1 skipped / 1 todo** (baseline from Phase A's own close-out was 69/678/1/1 — the delta is exactly this phase's new `IntroSkip.test.tsx`, 6 tests. No other count moved — B2/B6a/B3's decision commits below all re-colour or re-draw existing elements, none add or remove a guard).
+
+**All five open decisions below were put to Sky directly in-chat (not left for async pickup) and ratified the same session** — see "Decisions ratified" after the 🔴 section, which records exactly what shipped as a result. The 🔴 section itself is kept verbatim as it was presented, since it's the record of what was asked and why.
 
 ---
 
@@ -120,6 +122,20 @@ Per the standing rule (surface clearly, always recommend, never bury): B2 was in
 
 ---
 
+## Decisions ratified (same session, in-chat)
+
+| Decision | Sky's pick | Shipped as |
+|---|---|---|
+| B2 — link colour family | Fix the Notes link only (both recommendations) | `34589d6` — `SidebarRailLinks.tsx`, `text-cool-deep` → `text-accent-text`. UP-26 untouched. |
+| B3 — ThemeToggle icon | Draw it | `96eda25` — the candidate already sitting uncommitted in `ThemeToggle.tsx` was committed as-is, no further changes. |
+| B6a — footer accent | Ink at rest, accent on hover | `8304176` — `Footer.tsx`, GitHub's special case deleted; all three ELSEWHERE links now share one rule. |
+| B6b — colophon pill | Leave as shipped | No commit — the existing pill/quiet-mono split stands. |
+| B6c — specimen size | Leave as shipped | No commit — the 12px specimen and the page's own copy both stand as they were. |
+
+Every ratified change re-styled or re-drew an existing element — none added, removed, or needed to migrate a guard. Full gate re-run after all four commits: still 70 files / 684 / 1 / 1, typecheck 0, build clean.
+
+---
+
 ## Found that the brief didn't predict
 
 1. **The line-number citation had drifted.** "`Sidebar.tsx:57`" pointed at a comment, not code — Phase A's 18 commits shifted every line number in files it touched. Re-derived the actual defect from the *description* ("missing-`self-start` condition... draws the full 183px column") and measured it directly (183px box vs 113.74px text) rather than trusting the stale line ref.
@@ -131,4 +147,4 @@ Per the standing rule (surface clearly, always recommend, never bury): B2 was in
 
 ## Files changed
 
-7 files, +226/−7, across 4 commits (`307672c`, `9e4655c`, `413a87a`, `28c281d`). One additional file (`components/ThemeToggle.tsx`) sits modified but **uncommitted** — the B3 icon candidate, pending the decision above. Full list: `git diff main..HEAD --stat` on this branch.
+10 files touched across 8 commits (`307672c`, `9e4655c`, `413a87a`, `28c281d`, `41499e5`, `34589d6`, `8304176`, `96eda25`) — 7 from the shipped-without-asking items + this report, 3 more from the ratified decisions (`SidebarRailLinks.tsx`, `Footer.tsx` again, `ThemeToggle.tsx`). Nothing left uncommitted at close. Full list: `git diff main..HEAD --stat` on this branch.
