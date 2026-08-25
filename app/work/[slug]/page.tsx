@@ -324,6 +324,7 @@ export default async function WorkDetailPage({
                 title={d.title}
                 eyebrow={d.role}
                 media={media}
+                liftClassName={d.id === 'flagstone' ? 'pr-stone-settle' : undefined}
               />
             </HeroImageSettle>
 
