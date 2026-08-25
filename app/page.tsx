@@ -718,8 +718,17 @@ export default function HomePage() {
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               The Record
             </p>
+            {/* The h2 earns its place by naming the row no other portfolio
+                has. Its first draft, "Measured, not claimed.", was the only
+                FRAGMENT among six full-sentence H2s on this page, and it
+                restated — more weakly — "The record is honest." from the band
+                two below it. It was also already /accessibility/'s own section
+                heading (A11yReceipts), which is untouched and keeps it.
+                Note for whoever edits next: "everything here is dated" was
+                considered and rejected as false — two of the four rows carry a
+                STATE (open, closed), not a date. */}
             <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance">
-              Measured, not claimed.
+              The last thing I got wrong is in here too.
             </h2>
           </Reveal>
 
