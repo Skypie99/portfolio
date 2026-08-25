@@ -863,115 +863,24 @@ export default function HomePage() {
               The full account
               <span aria-hidden="true">{'→'}</span>
             </Link>
-          </Reveal>
-        </div>
-      </section>
 
-      {/* ── Certificates ─────────────────────────────────────────────── */}
-      <section
-        id="certificates"
-        className={cn(
-          'relative isolate overflow-hidden',
-          'px-gutter',
-          'py-24 lg:py-32',
-          'world-surface-alt',
-          'border-t border-border-decorative',
-        )}
-      >
-        {/* golden-hour light continuity (wow 2026-06-04) — the only homepage
-            scroll section that lacked a warm wash; the sun is now in every room.
-            far tier, drifts on scroll, static under reduced motion. */}
-        <ParallaxWash depth="far" />
-        <div className="relative z-10 max-w-content mx-auto">
-          <Reveal variant="scene" className="mb-24 pl-4 border-l-2 border-terracotta">
-            <p className="flex items-center gap-2 font-mono text-label tracking-label uppercase text-accent-ink mb-4">
-              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
-              Credentials
+            {/* Credentials, demoted (C6). The band this replaces spent an
+                eyebrow, a display H2 and nine dated rows — 1,741px at 1440 —
+                on a list that already has a dedicated page, with the
+                hand-drawn badges the homepage digest never showed.
+                Nothing is rewritten: the line IS the retired band's own H2
+                ("Credentials, earned in order."), the count is read from
+                content/certificates.json so it cannot drift from the page it
+                points at, and the door keeps the band's existing CTA string.
+                A band became a sentence. */}
+            <p className="font-sans font-light text-body-sm leading-body text-ink-muted text-pretty">
+              Credentials, earned in order — {certificates.length} of them, with issuers and
+              dates.{' '}
+              <Link href="/certificates/" className="link-draw text-accent-text">
+                See the credential badges
+                <span aria-hidden="true" className="ml-1">{'→'}</span>
+              </Link>
             </p>
-            <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance">
-              Credentials, earned in order.
-            </h2>
-          </Reveal>
-
-          {/* divide-y preserved on the <ul>; Reveal wraps each li's inner
-              content so the divider border lives on the <li>, not the wrapper. */}
-          <ul className="flex flex-col divide-y divide-stone/70">
-            {certificates.map((c, i) => (
-              <li key={c.id} className="py-12 first:pt-0 last:pb-0 group">
-                {/* MO-4: cap the stagger so a fold-edge row never holds at
-                    opacity 0 after an anchor jump (site idiom Math.min(i, 4)). */}
-                <Reveal index={Math.min(i, 4)} variant="depth">
-                  <div className="flex flex-col lg:flex-row lg:items-baseline gap-2 lg:gap-24 transition-transform duration-base ease-out group-hover:translate-x-1">
-                    <p className="font-mono text-meta tracking-label uppercase text-text-meta lg:w-40 shrink-0">
-                      {c.issuer}
-                    </p>
-                    <div className="flex-1 flex flex-col gap-1">
-                      <h3 className="font-serif font-normal text-step-2 text-ink leading-tight nums-lining transition-colors duration-fast ease-out group-hover:text-accent-text">
-                        {c.title}
-                      </h3>
-                      <p className="font-mono text-meta tracking-label uppercase text-text-meta">
-                        {new Date(c.issuedDate).toLocaleDateString('en-CA', {
-                          year: 'numeric',
-                          month: 'long',
-                        })}
-                        {c.expiresDate && (
-                          <>
-                            {' '}· expires{' '}
-                            {new Date(c.expiresDate).toLocaleDateString('en-CA', {
-                              year: 'numeric',
-                              month: 'long',
-                            })}
-                          </>
-                        )}
-                      </p>
-                    </div>
-                    <Link
-                      href={c.credentialUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      // CO-8: the new-tab cue lives in the aria-label, which
-                      // overrides children for the accessible name (the rich
-                      // credential title is kept). No sr-only "(opens in new tab)"
-                      // span: with an explicit label it never reaches the name, yet
-                      // axe counts it as visible text → label-content-name-mismatch.
-                      aria-label={`View credential: ${c.title} from ${c.issuer} (opens in new tab)`}
-                      /* L5-07: px/py + negative margins lift the tap box with
-                         zero layout shift. F7-1 (a11y 07-31): py-1 gave ~23px;
-                         py-[15px] reached the house 44 floor at 44.39px.
-                         Phase A (A9, gate-driven): the approved system-sheet
-                         board calls this exact "15px oddball" out by name as
-                         a --space-4 (16px) migration; py-4 lands at ~46px,
-                         still comfortably past the floor, with 1px more room
-                         each side than the original hand-tuned value — a
-                         reachable-through-tokens value, not a precision
-                         regression. Measured room to the nearest interactive
-                         neighbour is 123px (1280) / 170px (375), so the
-                         grown box still collides with nothing. */
-                      className="px-1 py-4 -mx-1 -my-4 font-mono text-meta tracking-label uppercase text-accent-text inline-flex items-center gap-1 transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 shrink-0"
-                    >
-                      View
-                      {/* CO-8: ↗ external-link glyph (was the internal →) */}
-                      <span aria-hidden="true">{'↗'}</span>
-                    </Link>
-                  </div>
-                </Reveal>
-              </li>
-            ))}
-          </ul>
-          {/* C-81: a real page-door to the dedicated credentials room — the
-              hand-drawn badges live there, not in this text digest. Internal →
-              grammar (↗ is reserved for external), padded tap box (L5-07). */}
-          <Reveal className="mt-16">
-            <Link
-              href="/certificates/"
-              // Phase A (A9, gate-driven): same py-[15px] -> py-4 migration as
-              // the "View" link above — the approved board names this exact
-              // 15px value as a --space-4 oddball.
-              className="group inline-flex items-center gap-1.5 px-1 py-4 -mx-1 -my-4 rounded-sm font-mono text-meta tracking-label uppercase text-accent-text transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
-            >
-              See the credential badges
-              <span aria-hidden="true">{'→'}</span>
-            </Link>
           </Reveal>
         </div>
       </section>
