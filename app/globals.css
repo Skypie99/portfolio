@@ -1337,6 +1337,28 @@ html.reveal-rearm .reveal:not(.reveal-shown) {
 }
 
 /* ------------------------------------------------------------------
+   THE ROOM / Phase D · D1 — the flagship's OWN arrival: "the stone laid."
+   Flagstone-only (page.tsx passes liftClassName="pr-stone-settle" to
+   HeroProductReveal for d.id === 'flagstone'; every other case study keeps
+   the site-wide .pr-hero-lift above, untouched). One decisive settle
+   in place of the ambient depth-parallax lift: opacity .55 + scale 1.08 →
+   rest, 180ms, ease-out — then holds still forever (Flagship Standard #6:
+   at most one signature beat). Same selector specificity as .pr-hero-lift
+   (both single classes); this rule sits LATER in the cascade so it wins the
+   `animation` property on elements carrying both classes — nothing else
+   .pr-hero-lift sets is touched. RM: no rule applies → transform/opacity
+   rest at their base values → pre-settled, identical meaning, nothing lost.
+   ------------------------------------------------------------------ */
+@keyframes stone-laid-settle {
+  from { opacity: .55; transform: scale(1.08); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pr-stone-settle {
+    animation: stone-laid-settle 180ms var(--ease-gh-settle) both;
+  }
+}
+
+/* ------------------------------------------------------------------
    ProductReveal — cinematic product media + golden-hour placeholder
    (Show-the-work 2026-06-04). Styling for components/ProductReveal.tsx +
    DeviceFrame.tsx. These rules live in the SITE-UI region — deliberately

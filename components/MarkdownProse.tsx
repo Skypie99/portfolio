@@ -22,8 +22,13 @@ const PROSE_LINK_CLASS =
  * Links: external (http/https) open in a new tab with the sr-only cue + rel
  * guard (Alex §4.5); root-relative use next/link; everything else stays a
  * plain anchor. Every prose link carries a persistent underline (see above).
+ *
+ * Exported (THE ROOM/Phase D) so a caller can render inline-only fragments
+ * outside the block splitter below — e.g. a bespoke per-paragraph treatment
+ * within one already-parsed section — without re-implementing bold/italic/
+ * code/link parsing. Pure function; no behavior change for existing callers.
  */
-function parseInline(text: string): ReactNode[] {
+export function parseInline(text: string): ReactNode[] {
   const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`|\[[^\]]+\]\([^)]+\))/g);
   return parts.map((part, i) => {
     if (part.startsWith('**') && part.endsWith('**'))
@@ -74,6 +79,12 @@ const VARIANT_CLASSES: Record<ProseVariant, { h2: string; h3: string; p: string 
   },
 };
 
+/** THE ROOM/Phase D — the 'case' variant's paragraph class, exported so a
+ *  bespoke section renderer (e.g. My role's sideheads) can match the shared
+ *  prose voice exactly instead of duplicating the string. Single source of
+ *  truth stays VARIANT_CLASSES; this is a read-only reference to it. */
+export const CASE_PROSE_P_CLASS = VARIANT_CLASSES.case.p;
+
 /**
  * renderMarkdownProse — the ONE long-form renderer (Z7/CO-6). Reading-order
  * choreography (wow 2026-06-04, SM4): each blank-line block self-reveals as it
@@ -93,7 +104,21 @@ const VARIANT_CLASSES: Record<ProseVariant, { h2: string; h3: string; p: string 
  * byte-identical to before this pass (lists/quotes/links are purely additive) — a
  * vitest snapshot guards it.
  */
-export function renderMarkdownProse(markdown: string, variant: ProseVariant): ReactNode[] {
+export function renderMarkdownProse(
+  markdown: string,
+  variant: ProseVariant,
+  options?: {
+    /** THE ROOM/Phase D — off for every call after the article's true
+     *  opening paragraph, when a caller renders a body in per-section
+     *  chunks (Flagstone's staged sections) instead of one flat string.
+     *  `firstPara` below is local to EACH call, so without this a section's
+     *  own opening paragraph would qualify for the same drop-cap the
+     *  article's real first paragraph gets. Default true — every existing
+     *  single-call site (the other five case studies, every blog post) is
+     *  unaffected. */
+    dropCapEligible?: boolean;
+  },
+): ReactNode[] {
   const c = VARIANT_CLASSES[variant];
   const blocks = markdown.split(/\n{2,}/).map((b) => b.trim()).filter(Boolean);
   let firstPara = true;
@@ -171,7 +196,8 @@ export function renderMarkdownProse(markdown: string, variant: ProseVariant): Re
     const plain = block.replace(/[*_`~[\]()>#]/g, '').trim();
     const plainLen = plain.length;
     const opensWithContraction = /['’]/.test(plain.split(/\s+/)[0] ?? '');
-    const dropCap = firstPara && plainLen >= 180 && !opensWithContraction;
+    const dropCap =
+      (options?.dropCapEligible ?? true) && firstPara && plainLen >= 180 && !opensWithContraction;
     firstPara = false;
     return (
       <Reveal
