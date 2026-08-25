@@ -87,6 +87,7 @@ const ROUTE_SECTIONS = {
   '/': [
     { id: 'flagship', label: 'Featured — the flagship', href: '/#flagship' },
     { id: 'work', label: 'The Work', href: '/#work' },
+    { id: 'record', label: 'The Record', href: '/#record' },
     { id: 'how-i-work', label: 'How the work gets made', href: '/#how-i-work' },
     { id: 'about', label: 'A Brief Account', href: '/#about' },
     { id: 'certificates', label: 'Credentials', href: '/#certificates' },
