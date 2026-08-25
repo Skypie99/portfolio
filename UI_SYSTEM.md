@@ -24,7 +24,10 @@ The cinematic intro (globals.css 966→EOF, `--font-cormorant`, `--sidebar-w`) i
 this as `--section-y: clamp(6rem,10vw,8rem)`, not yet consumed by any call site since it changes
 the rendered value at every width between the two breakpoints, not just the notation); `px-gutter`
 (`--gutter` = 2rem); content column `max-w-content` (1120px) centered; gutters never exceed the
-content frame.
+content frame. Phase A also migrated the two `py-[15px] -my-[15px]` touch-target "oddballs" on the
+homepage (named explicitly on the approved system-sheet board) to `py-4 -my-4` — landing ~1px past
+the calculated 44px floor per side rather than exactly on it, a token-reachability trade the board
+called for.
 
 ## Color
 Warm-tinted neutrals (never pure #000/#fff) via `--rgb-*` triplets that flip in `html.dark`:
