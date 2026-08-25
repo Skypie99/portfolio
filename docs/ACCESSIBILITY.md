@@ -1,5 +1,16 @@
 # ACCESSIBILITY.md — AI Portfolio Website
 
+> ⚠️ **HISTORICAL — Phase A (A17) truth-pass note, 2026-08-24.** This is a Day-0 audit of the
+> project's ORIGINAL hex palette (`#232420` near-black, `#FAF9F5` cream, `#B35F32` terracotta,
+> `#717267` sage, `#DCDCD6` stone…) and its original component set (a fixed sidebar + hamburger,
+> no dark mode, no golden-hour world). Both were fully superseded by the 2026-06-02 golden-hour
+> `--rgb-*` triplet overhaul and everything built since — none of the hex codes, blocking findings,
+> or "decisions for Sky" below describe the live site. Kept as a historical record of the Day-0
+> process (this codebase's convention: decisions are archived, not deleted), not as current
+> guidance. **For the real, current accessibility posture:** `lib/__tests__/ink-contrast.test.ts`
+> (the live contrast guard, derived from real tokens) and the `/accessibility` page's own statement
+> (`lib/content.ts` → `getAccessibilityStatementParts`).
+
 **Author:** Alex (Accessibility Engineer)
 **Cycle:** `cycle/auto-2026-05-23` (Day-0)
 **Standard:** WCAG 2.2 Level AA (Constitution v1.3 Art. 7 — accessibility is a non-negotiable pillar).
