@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import type { CSSProperties } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 
 import { Button } from '@/components/Button';
 import { CaseStudyCard } from '@/components/CaseStudyCard';
 import { ContactEmail } from '@/components/ContactEmail';
+import { Exhibit } from '@/components/Exhibit';
 import { HeroImageSettle, HeroTitleSettle } from '@/components/HeroSettle';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { HeroProductReveal, ShotProductReveal } from '@/components/ProductReveal';
@@ -19,7 +20,8 @@ import { ThemedHeroPreload } from '@/components/ThemedHeroPreload';
 import { cardMedia, heroMedia, heroPreloadLink, heroPreloadLinks } from '@/lib/media';
 import { OG_CARD } from '@/lib/og';
 import { frameForSlug, signatureFor } from '@/lib/signature';
-import { renderMarkdownProse } from '@/components/MarkdownProse';
+import { CASE_PROSE_P_CLASS, parseInline, renderMarkdownProse } from '@/components/MarkdownProse';
+import type { Deliverable } from '@/lib/schema';
 
 type RouteParams = { slug: string };
 
@@ -81,6 +83,229 @@ export function FlagstoneTestReceipt() {
         </p>
       </div>
     </section>
+  );
+}
+
+/**
+ * THE ROOM/Phase D — Flagstone-only case-study body staging (D3–D6). The
+ * body markdown itself is byte-frozen (14_PROTECTION_MANIFEST); everything
+ * below changes HOW it is chunked for rendering and what non-markdown
+ * furniture rides alongside three of its sections. Every other deliverable
+ * keeps the single `renderMarkdownProse(d.body, 'case')` call this file
+ * used before this phase — untouched, byte-identical output.
+ */
+
+/** Splits a case-study body at its `## ` boundaries. Pure read-time string
+ *  slicing — content/deliverables.json's stored body is never mutated. */
+function splitBodyIntoSections(body: string): { heading: string; content: string }[] {
+  return body
+    .split(/\n(?=## )/)
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .map((part) => {
+      const m = /^## (.+?)\n([\s\S]*)$/.exec(part);
+      return m ? { heading: m[1].trim(), content: m[2].trim() } : { heading: '', content: part };
+    });
+}
+
+/**
+ * D6 — "My role"'s three bold leads (**Mine.** / **The agents'.** / **What I
+ * check.**) become mono sideheads: a small uppercase label above the
+ * paragraph instead of an inline bold run. Zero copy change — the same
+ * words, the same paragraph text, run through the SAME parseInline used
+ * everywhere else; only the container swaps from an inline <strong> to a
+ * standalone label. A paragraph without a bold lead (none currently lack
+ * one) falls through to the ordinary treatment rather than silently
+ * dropping text.
+ */
+function renderRoleSection(content: string): ReactNode {
+  const paragraphs = content
+    .split(/\n{2,}/)
+    .map((p) => p.trim())
+    .filter(Boolean);
+  return (
+    <div className="contents">
+      {paragraphs.map((p, i) => {
+        const lead = /^\*\*([^*]+)\*\*\s*([\s\S]*)$/.exec(p);
+        if (!lead) {
+          return (
+            <Reveal key={`role-${i}`} as="p" variant="depth" index={i} className={CASE_PROSE_P_CLASS}>
+              {parseInline(p)}
+            </Reveal>
+          );
+        }
+        return (
+          <Reveal key={`role-${i}`} as="div" variant="depth" index={i} className="flex flex-col gap-2">
+            <p className="font-mono text-meta tracking-label uppercase text-accent-ink">
+              {smartPunctuation(lead[1])}
+            </p>
+            <p className={CASE_PROSE_P_CLASS}>{parseInline(lead[2])}</p>
+          </Reveal>
+        );
+      })}
+    </div>
+  );
+}
+
+/**
+ * D5 — ONE inline SVG for "The approach": a report forks into two
+ * independent database write paths (signed / anonymous), both enforced by
+ * Postgres Row Level Security. Token-coloured geometry (rounded rects +
+ * rules; the two paths take the accent token, everything else neutral ink)
+ * — no illustration. aria-hidden: the diagram restates in geometry what the
+ * visible figcaption already states in full sentences, so the figcaption —
+ * reachable in normal reading order — is the real text alternative, never
+ * crammed into an <img alt>.
+ */
+function FlagstoneApproachDiagram() {
+  return (
+    <figure className="max-w-measure-wide m-0 flex flex-col gap-4">
+      <svg viewBox="0 0 560 210" aria-hidden="true" className="h-auto w-full max-w-[420px]">
+        <rect x="190" y="10" width="180" height="44" rx="8" className="fill-none stroke-ink" strokeWidth="1.5" />
+        <text x="280" y="37" textAnchor="middle" className="fill-ink font-mono text-[12px]">
+          Report submitted
+        </text>
+
+        <path d="M280,54 L280,72 L120,72 L120,90" className="fill-none stroke-ink-meta" strokeWidth="1.25" />
+        <path d="M280,54 L280,72 L440,72 L440,90" className="fill-none stroke-ink-meta" strokeWidth="1.25" />
+
+        <rect x="30" y="92" width="180" height="44" rx="8" className="fill-accent-ink/[0.08] stroke-accent-ink" strokeWidth="1.5" />
+        <text x="120" y="119" textAnchor="middle" className="fill-ink font-mono text-[11px]">
+          Signed write path
+        </text>
+
+        <rect x="350" y="92" width="180" height="44" rx="8" className="fill-accent-ink/[0.08] stroke-accent-ink" strokeWidth="1.5" />
+        <text x="440" y="119" textAnchor="middle" className="fill-ink font-mono text-[11px]">
+          Anonymous write path
+        </text>
+
+        <path d="M120,136 L120,154 L280,154 L280,172" className="fill-none stroke-ink-meta" strokeWidth="1.25" />
+        <path d="M440,136 L440,154 L280,154 L280,172" className="fill-none stroke-ink-meta" strokeWidth="1.25" />
+
+        <rect x="150" y="174" width="260" height="30" rx="6" className="fill-ink/[0.05] stroke-ink" strokeWidth="1.5" />
+        <text x="280" y="194" textAnchor="middle" className="fill-ink font-mono text-[11px]">
+          Postgres · Row Level Security
+        </text>
+      </svg>
+      <figcaption className="font-sans text-body-sm text-charcoal text-pretty">
+        Two write paths, not one path with an <code className={INLINE_CODE_CLASS}>anonymous</code> flag
+        on it: a signed-in report and an anonymous report reach Postgres through separate code, and Row
+        Level Security enforces both. A flag is a value a later read can forget to check; a second path
+        cannot be entered by accident.
+      </figcaption>
+    </figure>
+  );
+}
+
+/**
+ * D4 — "What went wrong" gets its evidence: the Exhibit furniture (A15)
+ * wrapping the report-composed capture — the Submit affordance the defect
+ * made unreachable — with a FIG tag, one leader line, and a dated caption.
+ * Media is read from the deliverable's own `shots` (never re-declared) so it
+ * stays wired to whatever content/deliverables.json ships for this scene.
+ * `theme="both"`: the capture carries a dark twin that swaps client-side
+ * with the site's theme (ThemedShowcase); a hardcoded "light"/"dark" label
+ * would read false in whichever theme ISN'T showing — the exact bug Phase
+ * C's close-out caught for the homepage's own capture caption. `capturedDate`
+ * is read from the shot's own D7 field so the two dates can't drift apart;
+ * the literal fallback matches what the manifest recorded for this scene at
+ * the time this phase was built, kept only as a belt for an unpopulated field.
+ */
+function FlagstoneDefectExhibit({ shots }: { shots: Deliverable['shots'] }) {
+  const shot = shots?.find((s) => s.src?.includes('report-composed'));
+  if (!shot) return null;
+  return (
+    <Exhibit
+      scene="report-composed"
+      theme="both"
+      capturedDate={shot.capturedDate ?? '2026-07-31'}
+      claim="The Submit affordance this defect made unreachable — every path to it now proven by a test that fails against the old arrangement."
+      leaderLines={[{ style: { top: '92%', left: '48%', width: '2.75rem' } }]}
+      className="max-w-[19rem]"
+    >
+      <ShotProductReveal
+        slug="flagstone"
+        title="Flagstone"
+        media={{
+          src: shot.src,
+          alt: shot.alt,
+          avif: shot.avif,
+          webp: shot.webp,
+          lqip: shot.lqip,
+          focal: shot.focal,
+          dark: shot.dark,
+          chrome: shot.chrome,
+        }}
+        className="rounded-lg border border-border-decorative"
+      />
+    </Exhibit>
+  );
+}
+
+/** Ties D4/D5/D6 to their sections; every section not named below renders
+ *  through the ordinary path, chunk-for-chunk equivalent to the single-call
+ *  renderer (dropCapEligible keeps the drop cap on the ARTICLE's true
+ *  opening paragraph only — see renderMarkdownProse's option doc). */
+function renderFlagstoneBody(body: string, shots: Deliverable['shots']): ReactNode {
+  const sections = splitBodyIntoSections(body);
+  return sections.map((s, i) => {
+    if (s.heading === 'My role') {
+      return (
+        <div key={s.heading} className="contents">
+          {renderMarkdownProse(`## ${s.heading}`, 'case')}
+          {renderRoleSection(s.content)}
+        </div>
+      );
+    }
+    const blocks = renderMarkdownProse(`## ${s.heading}\n\n${s.content}`, 'case', {
+      dropCapEligible: i === 0,
+    });
+    if (s.heading === 'The approach') {
+      return (
+        <div key={s.heading} className="contents">
+          {blocks}
+          <FlagstoneApproachDiagram />
+        </div>
+      );
+    }
+    if (s.heading === 'What went wrong') {
+      return (
+        <div key={s.heading} className="contents">
+          {blocks}
+          <FlagstoneDefectExhibit shots={shots} />
+        </div>
+      );
+    }
+    return (
+      <div key={s.heading} className="contents">
+        {blocks}
+      </div>
+    );
+  });
+}
+
+/**
+ * D3 — the case-study sign-off (FT-7), extracted so it can render in either
+ * of two positions: right after the essay (every deliverable but Flagstone,
+ * unchanged from before this phase) or after the Receipt (Flagstone — D3
+ * moves the page's hardest number before the reader is shown the door).
+ * Markup/copy byte-identical to what this file rendered inline before.
+ */
+function CaseStudySignOff() {
+  return (
+    <Reveal variant="depth" className="max-w-measure-wide mt-16 lg:mt-20 flex flex-col gap-5">
+      <hr className="w-full border-0 border-t border-border-decorative" />
+      <p className="font-mono text-meta tracking-label uppercase text-text-meta">
+        — Sky Halisky · Okanagan Valley, British{' '}Columbia
+      </p>
+      <Link
+        href="/about/"
+        className="link-draw self-start font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+      >
+        A Brief Account
+        <span aria-hidden="true"> →</span>
+      </Link>
+    </Reveal>
   );
 }
 
@@ -622,7 +847,7 @@ export default async function WorkDetailPage({
                 prose) — see renderMarkdown — so the body has internal cinematic
                 choreography instead of one undifferentiated fade. */}
             <article aria-label={`${d.title} case study`} className="max-w-measure-wide flex flex-col gap-8">
-              {renderMarkdownProse(d.body, 'case')}
+              {d.id === 'flagstone' ? renderFlagstoneBody(d.body!, d.shots) : renderMarkdownProse(d.body!, 'case')}
             </article>
 
             {/* FT-7 — close the essay like an essay. A designed sign-off (never
@@ -632,6 +857,7 @@ export default async function WorkDetailPage({
                 label — closing the long person-route gap at the conviction peak.
                 No bio sentence, no availability signal. Reveal holds DOM space by
                 opacity (RM / no-JS → full presence) → CLS 0. */}
+            {d.id !== 'flagstone' && (
             <Reveal
               variant="depth"
               className="max-w-measure-wide mt-16 lg:mt-20 flex flex-col gap-5"
@@ -648,6 +874,7 @@ export default async function WorkDetailPage({
                 <span aria-hidden="true"> →</span>
               </Link>
             </Reveal>
+            )}
           </div>
         </section>
       )}
@@ -655,8 +882,20 @@ export default async function WorkDetailPage({
       {/* T7 / SK-01: the receipt door — one tap from the homepage chip's headline
           number to its proof, on the chip's own destination. Reconciled
           2026-08-16: the exact count and the command that reproduces it (see
-          FlagstoneTestReceipt). Flagstone-only. */}
-      {d.id === 'flagstone' && <FlagstoneTestReceipt />}
+          FlagstoneTestReceipt). Flagstone-only.
+          D3/Phase D: the sign-off now follows it (proof before farewell) — same
+          markup as every other deliverable keeps right after its essay, just
+          the later of its two possible positions. */}
+      {d.id === 'flagstone' && (
+        <>
+          <FlagstoneTestReceipt />
+          <section className="px-gutter py-12 lg:py-16 world-surface border-t border-border-decorative">
+            <div className="max-w-content mx-auto">
+              <CaseStudySignOff />
+            </div>
+          </section>
+        </>
+      )}
 
       {/* In-body product shots — Show-the-work 2026-06-04. The section renders
           only once at least one shot carries real media (src or video); until
