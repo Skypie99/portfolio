@@ -7,6 +7,7 @@ import { ContentReveal } from '@/components/ContentReveal';
 import { CountUpStat } from '@/components/CountUpStat';
 import { Hero } from '@/components/Hero';
 import { IntroScrollCue } from '@/components/IntroScrollCue';
+import { IntroSkip } from '@/components/IntroSkip';
 import { LitWindows } from '@/components/LitWindows';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { ProjectCard } from '@/components/ProjectCard';
@@ -147,6 +148,10 @@ export default function HomePage() {
           pinned intro, a fixed sibling of the film (never a child). Retires when
           the content below arrives; the locked intro is untouched. */}
       <IntroScrollCue />
+      {/* P2-6 (Phase B): a real, clickable escape from the pinned film for
+          pointer/touch visitors — the sr-only SkipLink already covers
+          keyboard. Fixed sibling, never a child of the cinematic. */}
+      <IntroSkip />
 
       <ContentReveal>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
