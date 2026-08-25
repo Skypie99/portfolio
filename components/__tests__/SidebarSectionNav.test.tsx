@@ -192,8 +192,11 @@ describe('SidebarSectionNav — the index describes the route you are on (UP-10)
     // Counts are asserted deliberately: the rail is curated, so a section
     // JOINING or LEAVING it should be a decision someone made, not a diff
     // that slid through. The truth pass did both — `how-i-work` in, `process`
-    // out — so home is back at 5 by way of 6, not by never having moved.
-    expect(sectionsForRoute('/')).toHaveLength(5);
+    // out — so home went back to 5 by way of 6, not by never having moved.
+    // THE ROOM Phase C moved it again, one band per commit: C2 added
+    // `flagship` (5 → 6). C5 adds `record` and C6 drops `certificates`, so
+    // home settles at 6 — a different six from the one above.
+    expect(sectionsForRoute('/')).toHaveLength(6);
     expect(sectionsForRoute('/about')).toHaveLength(4);
   });
 
