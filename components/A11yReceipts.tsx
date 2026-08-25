@@ -83,22 +83,29 @@ export function A11yReceipts({ data, className }: { data: A11yReceiptsData; clas
         </p>
       </Reveal>
 
-      {/* 3×2 receipts grid — home's showcase grammar verbatim (app/page.tsx).
-          UP-29 / UP-23 (ui-polish 2026-08-01): BOTH grids collapse to one column
-          below 480px, and these two container strings must stay byte-identical —
-          changing one without the other silently falsifies the "verbatim" claim
-          this comment makes. At 375 the 2-col cell's 90px content box drove three
+      {/* 3×2 receipts grid.
+          ⚠ THE TWIN IS GONE (THE ROOM Phase C / C4, 2026-08-25): this grid used
+          to be "home's showcase grammar verbatim", and the paired comment in
+          app/page.tsx said the two container strings must move together. The
+          homepage's stat-chip band has been retired into three `Receipt`s, so
+          there is nothing left to stay byte-identical WITH — this grid is now
+          the only page that speaks this grammar, and it owns it outright. The
+          rendered output here is unchanged; only the claim below is corrected.
+          Everything from here down is the ORIGINAL reasoning, kept because it
+          is still why this grid is shaped the way it is:
+          UP-29 / UP-23 (ui-polish 2026-08-01): BOTH grids collapsed to one column
+          below 480px. At 375 the 2-col cell's 90px content box drove three
           of the six mono labels to three lines and split "reduced-motion" at its
           own hyphen; at 320 the label, the sub and the "0.003" figure all
           overflowed their padding box (invisibly — they ate the right padding
           rather than crossing an edge, which is why the audit's overflow probe
-          read zero). Every width >=480 is byte-identical.
+          read zero).
           Phase A (A10): the cell padding had drifted from the twin claim above —
           app/page.tsx's C-22 reclaimed base cell width (p-8 -> p-6) so its tag
           pills fit their ~90px box at 375, but this grid was never given the
-          same fix and stayed at p-8. Restored to p-6 md:p-7 so the two grids are
-          actually byte-identical at the padding that the mobile-collapse
-          reasoning above depends on. */}
+          same fix and stayed at p-8. Restored to p-6 md:p-7. The twin it was
+          matched to no longer exists; the value stays because p-6 is what the
+          375 reasoning above needs, not because anything is being mirrored. */}
       <div className="grid grid-cols-1 min-[480px]:grid-cols-2 lg:grid-cols-3 gap-px bg-cool-soft/30 border border-cool-soft/50 rounded-lg overflow-hidden shadow-md">
         {data.receipts.map((r, i) => (
           <Reveal

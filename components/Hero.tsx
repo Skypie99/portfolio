@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import { Button } from '@/components/Button';
 import { cn } from '@/lib/cn';
 
@@ -17,6 +19,16 @@ type HeroProps = {
   positioning?: string;
   avatarSrc?: string;
   avatarAlt?: string;
+  /**
+   * Proof slot (C4, THE ROOM Phase C) — the three curated receipts that
+   * replaced the five-chip band. They belong to the HERO, inside its own
+   * content column, because the point of the move is that the hardest
+   * numbers on the site arrive with the introduction instead of a band
+   * later. Rendered OUTSIDE the `hero-scroll-fade` group on purpose: the
+   * CTA fades on scroll and the evidence must not. Omitted → the hero is
+   * byte-identical to before (the Hero smoke fixture passes nothing).
+   */
+  receipts?: ReactNode;
 };
 
 /**
@@ -43,6 +55,7 @@ export function Hero({
   positioning,
   avatarSrc,
   avatarAlt,
+  receipts,
 }: HeroProps) {
   return (
     <section
@@ -173,6 +186,8 @@ export function Hero({
             </span>
           </a>
         </div>
+
+        {receipts}
       </div>
     </section>
   );
