@@ -109,6 +109,17 @@ const ShotImageSchema = z
     /** Per-scene presentation chrome override (the mockup-gate axis). Absent →
      *  the site-wide SHOWCASE_CHROME default. */
     chrome: z.enum(['device', 'float', 'matte']).optional(),
+    /** THE ROOM/Phase D (D7) — captured YYYY-MM-DD, read from the capture
+     *  factory's manifest at wire time (content/showcase.manifest.json's
+     *  `capturedAt`, hand-staged this phase; content/deliverables.json stays
+     *  the only source read at runtime — see lib/showcaseWire.ts's docblock).
+     *  Optional: absent for every shot not yet dated this way. */
+    capturedDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
+    /** THE ROOM/Phase D (D7) — the short commit SHA the capture was taken
+     *  at (the manifest's `projectSha`, first 8 chars — same truncation
+     *  C_CLOSEOUT.md already used for a manifest SHA in prose). Optional,
+     *  paired with capturedDate; a caption never shows one without the other. */
+    commit: z.string().regex(/^[0-9a-f]{7,8}$/).optional(),
     width: z.number().int().positive().optional(),
     height: z.number().int().positive().optional(),
   })
