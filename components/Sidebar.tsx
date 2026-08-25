@@ -58,7 +58,13 @@ export function Sidebar() {
       <div className="flex flex-col gap-3">
         <Link
           href="/"
-          className="link-draw inline-block font-serif font-normal text-step-2 leading-none text-ink"
+          // B3 (Phase B, wave-1 banked question, luxe-audit wave1/REPORT.md #4):
+          // this flex column's default align-items:stretch was widening the link
+          // to the full 183px content column regardless of `inline-block`, so its
+          // `.link-draw` underline drew ~69px past "Sky Halisky"'s own 113.7px of
+          // text — measured, not assumed. self-start is the same fix already used
+          // for the identical condition on Footer's LinkedIn link.
+          className="link-draw inline-block self-start font-serif font-normal text-step-2 leading-none text-ink"
         >
           {profile.wordmarkText}
         </Link>

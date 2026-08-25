@@ -3112,6 +3112,27 @@ html.dark ::selection {
 html.dark .runway-identity-chip {
   outline-color: rgb(255 214 170 / 0.10); /* warm bone on dark glass */
 }
+/* B1 (Phase B): .glass-card's fill is tuned for the cinematic backdrop it
+   usually sits over — with nothing behind it to refract on a flat page, the
+   PAGE variant's chip fill measured 1.034:1 (light) / 1.121:1 (dark) against
+   canvas (RunwayIdentity.tsx's own docblock). Opacity can't rescue this: the
+   fill is a near-canvas cream/near-canvas dark-warm tint, and canvas already
+   sits at the extreme light/dark end of the scale, so a fully OPAQUE version
+   of the same tint still measures 1.036:1 / 1.089:1 — mathematically a
+   near-canvas hue cannot cross a real contrast floor by opacity alone.
+   Scoped to `--page` only; the homepage's glass-over-film chip is untouched.
+   Two changes, no new colour introduced: (1) opaque fill, so the page can't
+   bleed through and wash out the drop shadow; (2) the existing warm hairline
+   raised from a 12%/10% whisper to a real edge — 0.85/0.5 alpha measures
+   3.34:1 / 4.15:1 against canvas, clearing the 3:1 non-text UI floor. */
+.runway-identity--page .runway-identity-chip {
+  background: rgb(255 252 244);
+  outline-color: rgb(179 95 64 / 0.85);
+}
+html.dark .runway-identity--page .runway-identity-chip {
+  background: rgb(38 31 24);
+  outline-color: rgb(255 214 170 / 0.5);
+}
 .runway-identity-sun {
   display: flex;
   flex: 0 0 auto;

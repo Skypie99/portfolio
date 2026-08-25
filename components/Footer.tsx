@@ -133,14 +133,9 @@ export function Footer() {
                   Notes
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/contact/"
-                  className="link-draw font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out"
-                >
-                  Let’s talk
-                </Link>
-              </li>
+              {/* B5 (Phase B, THE ROOM G1.3): promoted ahead of the closing CTA —
+                  grouped with Notes as the site's other standalone read, rather
+                  than trailing last in the column. */}
               <li>
                 <Link
                   href="/accessibility/"
@@ -155,6 +150,14 @@ export function Footer() {
                   className="link-draw font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out"
                 >
                   Colophon
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact/"
+                  className="link-draw font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out"
+                >
+                  Let’s talk
                 </Link>
               </li>
             </ul>
@@ -212,11 +215,11 @@ export function Footer() {
                     className={cn(
                       'link-draw font-sans text-body-sm inline-flex items-center gap-1',
                       'transition-colors duration-fast ease-out',
-                      // GitHub gets terracotta — elevated brand presence (resting);
-                      // hover unifies to accent-text in dark so it matches the others.
-                      s.platform.toLowerCase() === 'github'
-                        ? 'text-accent-text hover:text-terracotta dark:hover:text-accent-text'
-                        : 'text-ink hover:text-accent-text',
+                      // B6a (Phase B, resolves UP-11-SET): Sky ratified unifying
+                      // the set, 2026-08-25 — GitHub's prior lone-accent-at-rest
+                      // treatment is gone; all three ELSEWHERE links now share
+                      // one rule, matching email/LinkedIn's existing pattern.
+                      'text-ink hover:text-accent-text',
                     )}
                   >
                     <span>{PLATFORM_LABELS[s.platform] ?? s.platform}</span>
