@@ -304,7 +304,7 @@ export default async function BlogPostPage({
               43925) outranks `.text-step-3` (20824) at equal specificity, so the
               heading would render step-3's size at display-tier tracking. Sky's call. */}
           <SettleHeading
-            className="font-serif font-light text-display md:text-step-5 lg:text-display ember max-w-3xl mb-16 text-balance"
+            className="font-serif font-light text-display md:text-step-5 lg:text-display ember max-w-measure-heading mb-16 text-balance"
           >
             {bindSeparatorDash(bindSoloLetters(post.title))}
           </SettleHeading>

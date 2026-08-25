@@ -79,7 +79,7 @@ export default function BlogIndexPage() {
             Notes — {posts.length} {posts.length === 1 ? 'entry' : 'entries'}
           </p>
           <SettleHeading
-            className="font-serif font-light text-display ember max-w-3xl mb-12 text-balance"
+            className="font-serif font-light text-display ember max-w-measure-heading mb-12 text-balance"
           >
             Notes
           </SettleHeading>

@@ -101,7 +101,7 @@ export default function WorkIndexPage() {
               The Work — {deliverables.length} deliverable{deliverables.length === 1 ? '' : 's'}
             </p>
             <SettleHeading
-              className="font-serif font-light text-display ember max-w-3xl mb-12 text-balance"
+              className="font-serif font-light text-display ember max-w-measure-heading mb-12 text-balance"
             >
               The Work
             </SettleHeading>

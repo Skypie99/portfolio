@@ -83,7 +83,7 @@ export default function AccessibilityPage() {
             />
             Accessibility
           </p>
-          <SettleHeading className="font-serif font-light text-display ember max-w-3xl mb-16 text-balance">
+          <SettleHeading className="font-serif font-light text-display ember max-w-measure-heading mb-16 text-balance">
             {bindSeparatorDash(bindSoloLetters('Accessibility is where I begin.'))}
           </SettleHeading>
           <p className="font-sans font-light text-step-1 text-ink-muted max-w-measure-wide text-pretty">
