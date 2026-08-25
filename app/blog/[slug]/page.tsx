@@ -18,7 +18,7 @@ import type { BlogPost } from '@/lib/schema';
 
 type RouteParams = { slug: string };
 
-type CaseStudyCategory = 'flagstone' | 'claude-corp' | 'dashboard' | 'prompt-library' | 'ghost' | 'mutual';
+type CaseStudyCategory = 'flagstone' | 'claude-corp' | 'dashboard' | 'prompt-library' | 'ghost';
 
 /** id → CaseStudyCard category (mirrors app/work/[slug]/page.tsx). */
 function toCategory(id: string): CaseStudyCategory {
@@ -28,7 +28,6 @@ function toCategory(id: string): CaseStudyCategory {
     'dashboard': 'dashboard',
     'prompt-library': 'prompt-library',
     'ghost-code': 'ghost',
-    'mutual-mesh': 'mutual',
   };
   return map[id] ?? 'flagstone';
 }
