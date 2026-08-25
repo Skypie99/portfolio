@@ -52,6 +52,9 @@ const config: Config = {
         rail:           'rgb(var(--rgb-rail) / <alpha-value>)',
         earth:          'rgb(var(--rgb-earth) / <alpha-value>)',
         'earth-deep':   'rgb(var(--rgb-earth-deep) / <alpha-value>)',
+        // Phase A (A5 defined the vars; A15's Receipt is the first consumer).
+        receipt:        'rgb(var(--rgb-receipt) / <alpha-value>)',
+        'receipt-rule': 'rgb(var(--rgb-receipt-rule) / <alpha-value>)',
 
         // ── Raw brand paint — FIXED hue, does NOT flip ──────────────
         // Decorative fills / tags / gradients only; never body text.
