@@ -63,7 +63,7 @@ export default function RunwayPage() {
             <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
             For the Runway team
           </p>
-          <SettleHeading className="font-serif font-light text-display ember max-w-3xl mb-16 text-balance">
+          <SettleHeading className="font-serif font-light text-display ember max-w-measure-heading mb-16 text-balance">
             Hi, Runway.
           </SettleHeading>
           <p className="font-sans font-light text-step-1 text-ink-muted max-w-measure-wide text-pretty">

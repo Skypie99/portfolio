@@ -271,12 +271,19 @@
      absorbs the four max-w-[540px]/[520px] lead-paragraph call sites that
      were hand-approximating this same target width. */
   --measure-lead: 545px;
-  /* Phase A — replaces the de-facto stock max-w-2xl heading measure (17
-     section-H2 call sites, all measured at exactly 672px = Tailwind's own
-     2xl). max-w-3xl (768px, the bigger page-title SettleHeadings) is a
-     DIFFERENT, wider heading tier and is deliberately left unmigrated this
-     phase — see the Phase A close-out 🔴. */
-  --measure-heading: 672px;
+  /* Phase A — unified heading measure, resolving the close-out's 🔴. Was two
+     de-facto stock values: max-w-2xl (672px, 17 section-H2s) and max-w-3xl
+     (768px, 9 page-title SettleHeadings). Neither tracks its heading's own
+     font-size clamp, so the split reads as incidental Tailwind-scale
+     drift, not a deliberate two-tier system — the brief's own text and the
+     approved system-sheet board both name BOTH classes as being replaced by
+     ONE token. Set to 768 (the larger value): widening the 17 H2s can only
+     loosen their wrap, never break it, while narrowing the 9 display
+     headings risked forcing an extra line-wrap on real copy. Verified
+     visually (built out/, both the longest real heading — a 67-char blog
+     title — and a short one) before this value was chosen; see the Phase A
+     close-out for detail. */
+  --measure-heading: 768px;
   --gutter:      var(--space-8); /* 2rem/32px — unchanged px; honest key after §7.4 */
   /* Phase A (05_DESIGN_SYSTEM.md §Spacing) — codifies the site's dominant
      section vertical-padding rhythm as a named, fluid token. Purely additive
