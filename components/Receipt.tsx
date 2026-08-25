@@ -10,8 +10,15 @@ type ReceiptProps = {
   /** "measured" = run against this site directly. "reported" = project-
    *  claimed, with a method. Tier is carried by the WORD, never colour alone. */
   tier: 'measured' | 'reported';
-  /** ISO date (YYYY-MM-DD) the figure was measured/reported. */
-  date: string;
+  /** ISO date (YYYY-MM-DD) the figure was measured/reported.
+   *  OPTIONAL, and the omission is meaningful rather than lazy: an
+   *  append-only ledger row that has not closed yet has no date to give, and
+   *  inventing one (its predecessor's close, say) would be the exact kind of
+   *  almost-true number this component exists to prevent. With no date the
+   *  line reads `reported · the record` — tier, then method, and nothing
+   *  claimed in between. Board 01 pane A draws that receipt this way.
+   *  (C4, THE ROOM Phase C — the homepage's calibration-round receipt.) */
+  date?: string;
   /** Optional link to the method/evidence — the command or artifact that
    *  reproduces the figure. */
   methodHref?: string;
@@ -45,7 +52,8 @@ export function Receipt({ value, label, tier, date, methodHref, methodLabel, cla
         {label}
       </p>
       <p className="font-mono text-meta tracking-label uppercase text-text-meta">
-        {tier} {date}
+        {tier}
+        {date ? ` ${date}` : ''}
         {methodHref && (
           <>
             <span aria-hidden="true"> · </span>

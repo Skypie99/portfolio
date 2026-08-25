@@ -41,16 +41,27 @@ import { SidebarSectionNav } from '@/components/SidebarSectionNav';
 import { ROUTE_SECTIONS, sectionsForRoute, INDEXED_ROUTES } from '@/lib/sectionNav';
 
 const HOME_LABELS = [
+  // THE ROOM Phase C, 2026-08-25. DOM order, and every string here is the
+  // byte-exact eyebrow its band renders (lib/sectionNav.ts rule 1; the built-
+  // HTML guard checks that half in section-anchors T2).
+  //
+  // This array is a literal, not a read of the map, so it is what makes the
+  // loops below a real assertion rather than a tautology — which also means a
+  // new rail entry that is not added here is a section the suite silently
+  // stops checking. The C2 and C5 entries below are exactly that case: adding
+  // a label to the map does not fail these loops, so `flagship` and `record`
+  // rode in unchecked until C6 removed one and the guard finally spoke. They
+  // are added here in the same commit that fixed it, not left for later.
+  'Featured — the flagship', // C2 — the flagship room
   'The Work',
-  // Truth pass 2026-08-21. This array is a literal, not a read of the map, so
-  // it is what makes the loops below a real assertion rather than a tautology —
-  // which also means a new rail entry that is not added here is a section the
-  // suite silently stops checking. `how-i-work` is that entry. DOM order.
+  'The Record', // C5 — the ledger
+  // Truth pass 2026-08-21 added this one; 'Method' left with #process in the
+  // same pass. /about keeps its own Method entry, asserted separately in the
+  // non-home block below.
   'How the work gets made',
-  // 'Method' left with #process in the truth pass (2026-08-21). /about keeps
-  // its own Method entry, asserted separately in the non-home block below.
   'A Brief Account',
-  'Credentials',
+  // 'Credentials' left with the band in C6 — the homepage anchor no longer
+  // exists and the menu entry points at /certificates/ instead.
   "Let’s talk",
 ];
 
@@ -170,7 +181,9 @@ describe('SidebarSectionNav — the index describes the route you are on (UP-10)
     for (const [, href] of renderedEntries() ?? []) {
       expect(href).toMatch(/^\/about#/);
     }
-    expect(screen.queryByRole('link', { name: 'Credentials' })).not.toBeInTheDocument();
+    // 'The Record' replaces 'Credentials' as the home-only tell (C6 retired
+    // that entry, which made the old assertion vacuous rather than wrong).
+    expect(screen.queryByRole('link', { name: 'The Record' })).not.toBeInTheDocument();
     expect(screen.queryByRole('link', { name: 'A Brief Account' })).not.toBeInTheDocument();
     expect(screen.queryByRole('link', { name: 'Method' })).toBeInTheDocument();
   });
@@ -192,8 +205,12 @@ describe('SidebarSectionNav — the index describes the route you are on (UP-10)
     // Counts are asserted deliberately: the rail is curated, so a section
     // JOINING or LEAVING it should be a decision someone made, not a diff
     // that slid through. The truth pass did both — `how-i-work` in, `process`
-    // out — so home is back at 5 by way of 6, not by never having moved.
-    expect(sectionsForRoute('/')).toHaveLength(5);
+    // out — so home went back to 5 by way of 6, not by never having moved.
+    // THE ROOM Phase C moved it again, one band per commit: C2 added
+    // `flagship` (5 → 6), C5 added `record` (6 → 7), C6 dropped `certificates`
+    // (7 → 6). Home settles at six — a different six from the one above:
+    // flagship · work · record · how-i-work · about · contact.
+    expect(sectionsForRoute('/')).toHaveLength(6);
     expect(sectionsForRoute('/about')).toHaveLength(4);
   });
 
