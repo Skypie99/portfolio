@@ -31,6 +31,13 @@ const NAV_ITEMS: NavItem[] = [
   { href: '/#about',        label: 'A Brief Account' },
   { href: '/#certificates', label: 'Credentials'     },
   { href: '/blog/',         label: 'Notes'           },
+  // B5 (Phase B, THE ROOM G1.3): promoted out of footer-only reach — until
+  // now neither the rail nor this menu carried a direct link, so /accessibility/
+  // and /colophon/ were reachable only by scrolling to the footer. Grouped with
+  // Notes (its own standalone page, not a homepage anchor) and ahead of the
+  // closing CTA.
+  { href: '/accessibility/', label: 'Accessibility'  },
+  { href: '/colophon/',     label: 'Colophon'        },
   { href: '/#contact',      label: "Let’s talk"      },
 ];
 
