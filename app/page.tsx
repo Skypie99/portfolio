@@ -619,7 +619,22 @@ export default function HomePage() {
                           <Link
                             href="#flagship"
                             aria-label={`${d.title} — the flagship room, above`}
-                            className="rounded-sm transition-colors duration-fast ease-out text-accent-text hover:text-accent-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
+                            /* This is the one STANDALONE small link in the
+                               band — every other new link on this page is
+                               inline in a sentence and takes WCAG 2.5.8's
+                               inline exception. Its own box measures 14px
+                               tall, so it gets the house 44 floor the way
+                               TapTargets.test.tsx says to reach it: a
+                               stretched ::after, never padding, because
+                               `*:focus-visible` traces the element's own
+                               border box and padding would draw a 44px ring
+                               around a 14px label. 14 + 15 + 15 = 44.
+                               Symmetric is safe HERE (unlike the card action
+                               rows the guard was written for): the row's own
+                               py-6 leaves 24px of dead band each side, and
+                               the nearest other target is the title link
+                               32px away horizontally. */
+                            className="relative rounded-sm transition-colors duration-fast ease-out text-accent-text hover:text-accent-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary after:content-[''] after:absolute after:inset-x-0 after:-top-[15px] after:-bottom-[15px]"
                           >
                             Featured — above
                             <span aria-hidden="true" className="ml-1.5">{'↑'}</span>
