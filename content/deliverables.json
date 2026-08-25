@@ -42,8 +42,7 @@
         "avif": "/showcase/flagstone/map-overview.dark.phone.avif",
         "webp": "/showcase/flagstone/map-overview.dark.phone.webp",
         "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAACwBACdASoUACsAPwFurFArJqQisA1RYCAJY2hwXMYT/rSVh6g9kx6tfLUlwMYAAP7vpmaTBcxq86PT7eO3cX2vWNxA6algNxXN6Mvr5G4adSz4b1O2fYNmdtX/gYAmMgb/WSWgAAA="
-      },
-      "chrome": "device"
+      }
     },
     "heroPlate": {
       "severity": "SEVERITY 4 · VERIFIED",
@@ -76,7 +75,6 @@
             "poster": "/showcase/flagstone/clips/drawer-spring.dark.phone-poster.avif"
           }
         },
-        "chrome": "device",
         "capturedDate": "2026-08-18",
         "commit": "8cdd6437"
       },
@@ -94,7 +92,6 @@
           "webp": "/showcase/flagstone/report-composed.dark.phone.webp",
           "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAABQBQCdASoUACsAPvVop1AqpqOiurmYAVAeiUAQXKEVyv9k1huoZlScTF3a0qwQNruNsgAA/vDJ2K9sRWNP84dzhPE6PfjH64Lb6s5UokB3k/RJfK3oRm3mZyPlLmO2ghAdN1uwKEJUDuhcjFnA6iCyx+AAAA=="
         },
-        "chrome": "device",
         "capturedDate": "2026-07-31",
         "commit": "5ab3f0c4"
       },
@@ -112,7 +109,6 @@
           "webp": "/showcase/flagstone/tasks.dark.phone.webp",
           "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAAAQBQCdASoUACsAPwVsqFArpiiisA1RcCCJYwC7M22DSwvZAJexBplJOc8Wq1ZCmk6IAP7c484DrNcP6adtKLm5K6/TVLSjL+Ua/qWHlci/xiFvRdtqRH8bXyG+IJtEc0CZfvzPf7qM18wJggqoDfWplDUZ+F73igB3aktNAAA="
         },
-        "chrome": "device",
         "capturedDate": "2026-07-31",
         "commit": "5ab3f0c4"
       }
