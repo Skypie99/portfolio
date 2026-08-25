@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import type { CSSProperties } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 
 import { CinematicDesert } from '@/components/cinematic/CinematicDesert';
 import { ContactEmail } from '@/components/ContactEmail';
@@ -147,6 +147,116 @@ export default function HomePage() {
           date: lastClosedRound.closed,
         }
       : null;
+
+  /**
+   * The Record (C5) — the ledger, most-recent first, one order at every width.
+   *
+   * What is verified RIGHT NOW: the round that is open, the last defect found
+   * and fixed, and the site's own measured numbers with the day they were
+   * measured. The bug row is the point — a portfolio that publishes its own
+   * defect ledger above the fold — and it is why this band is not a second
+   * printing of the hero strip. Deliberately NOT here: the `2,900+` and `0`
+   * the hero already headlines two screens up. The hero states the proof; this
+   * states the record; restating the same two figures in both would be the
+   * disease this phase treats, and /accessibility/#receipts holds all six
+   * measured numbers for anyone who wants the rest.
+   *
+   * `2.2 AA — the bar I build to` re-homes here from the retired chip band.
+   * The label is SKY-RATIFIED (2026-07-13, T10 W4-02: it replaced "WCAG
+   * conformance", which overclaimed against the /accessibility/ statement) and
+   * survives this move byte-for-byte, still pointing at /accessibility/.
+   */
+  const a11yByLabel = (label: string) => a11y.receipts.find((r) => r.label === label);
+  const focusStops = a11yByLabel('focus stops visible');
+  const contrastTier = a11yByLabel('measured, both themes');
+
+  const recordRows: {
+    key: string;
+    figure: string;
+    what: ReactNode;
+    when?: string;
+    open?: boolean;
+    tone?: 'defect';
+  }[] = [
+    ...(calibration
+      ? [
+          {
+            key: 'calibration',
+            figure: `Round ${calibration.value}`,
+            what: (
+              <>
+                {openRound ? `${openRound.title} — ${openRound.counts.join(' · ')}` : calibration.label}
+                {' · '}
+                <Link href="/colophon/#calibration" className="link-draw text-accent-text">
+                  the record
+                </Link>
+              </>
+            ),
+            when: calibration.date,
+            open: Boolean(openRound),
+          },
+        ]
+      : []),
+    {
+      key: 'defect',
+      figure: 'Last defect',
+      /* The board's own wording for this row (board 01, pane A), and every
+         clause of it is checkable against the case study's `What went wrong`
+         — which is where the link goes. The subject is set in the house
+         serif italic, the one place this ledger leaves mono. */
+      what: (
+        <>
+          <em className="font-serif italic text-ink">the dead Report button</em>
+          {' — found by a simulator walk, fixed by one moved closing tag, re-proven by a test that fails against the old arrangement · '}
+          <Link href="/work/flagstone/#what-went-wrong" className="link-draw text-accent-text">
+            the account
+          </Link>
+        </>
+      ),
+      when: 'closed',
+      tone: 'defect' as const,
+    },
+    ...(contrastTier
+      ? [
+          {
+            key: 'contrast',
+            figure: '2.2 AA',
+            /* SKY-RATIFIED LABEL, moved verbatim from the retired chip band
+               (2026-07-13, T10 W4-02). It must not be reworded, and it must
+               keep pointing at /accessibility/. */
+            what: (
+              <>
+                {'the bar I build to — '}
+                {contrastTier.sub}
+                {' · '}
+                <Link href="/accessibility/" className="link-draw text-accent-text">
+                  the statement
+                </Link>
+              </>
+            ),
+            when: a11y.measuredDate,
+          },
+        ]
+      : []),
+    ...(focusStops
+      ? [
+          {
+            key: 'focus',
+            figure: focusStops.value,
+            what: (
+              <>
+                {`${focusStops.label} — ${focusStops.sub}`}
+                {' · '}
+                <Link href="/accessibility/#receipts" className="link-draw text-accent-text">
+                  evidence
+                </Link>
+              </>
+            ),
+            when: a11y.measuredDate,
+          },
+        ]
+      : []),
+  ];
 
   return (
     <>
@@ -527,6 +637,88 @@ export default function HomePage() {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      {/* ── The Record ────────────────────────────────────────────────
+          C5 (board 01, pane A). A designed ledger of what is verified right
+          now, sitting one band below the work rather than at the foot of the
+          page — the most distinctive thing here is the LAST ROW: a portfolio
+          that publishes its own defect ledger, in the open, above the fold.
+
+          Order is most-recent first, and it is ONE order at every width: the
+          round that is open, the defect that closed, then the measured numbers
+          with the day they were measured. Desktop reads as three columns —
+          figure · what was checked · when. Below lg each row stacks into three
+          lines rather than compressing into a table; a table is what this is
+          NOT (pane C), because a 375 reader wants the sentence, not a grid.
+
+          Rows are read from content/rounds.json and content/a11y-receipts.json,
+          so the band restates nothing: close Round IV and open Round V in the
+          ledger and this row follows, with no edit here. */}
+      <section
+        id="record"
+        className={cn(
+          'relative isolate overflow-hidden',
+          'px-gutter',
+          'py-24 lg:py-32',
+          'world-surface-cool',
+          'border-t border-cool-soft/40',
+        )}
+      >
+        <ParallaxWash depth="far" tone="teal" />
+        <div className="relative z-10 max-w-content mx-auto">
+          <Reveal variant="scene" className="mb-12 pl-4 border-l-2 border-terracotta">
+            <p className="flex items-center gap-2 font-mono text-label tracking-label uppercase text-accent-ink mb-4">
+              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
+              The Record
+            </p>
+            <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance">
+              Measured, not claimed.
+            </h2>
+          </Reveal>
+
+          {/* role="list" IS load-bearing: Tailwind preflight sets
+              list-style:none on every ul, which is the condition that makes
+              Safari/VoiceOver drop list semantics — same reasoning, and the
+              same one-line lint exemption, as CalibrationRecord. */}
+          {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
+          <ul role="list" className="flex flex-col max-w-[880px]">
+            {recordRows.map((row, i) => (
+              <li
+                key={row.key}
+                className="border-t border-receipt-rule/30 first:border-t-0 first:pt-0 py-5 last:pb-0"
+              >
+                <Reveal
+                  index={Math.min(i, 4)}
+                  variant="depth"
+                  className="flex flex-col gap-1.5 lg:flex-row lg:items-baseline lg:gap-x-6 lg:gap-y-0"
+                >
+                  <span
+                    className={cn(
+                      'shrink-0 lg:w-40 font-mono font-medium text-body-sm tabular-nums',
+                      row.tone === 'defect' ? 'text-cool-deep' : 'text-accent-text',
+                    )}
+                  >
+                    {row.figure}
+                  </span>
+                  <span className="min-w-0 lg:flex-1 font-sans font-light text-body-sm leading-body text-ink-muted text-pretty">
+                    {row.what}
+                  </span>
+                  <span className="shrink-0 lg:ml-auto font-mono text-meta tracking-label uppercase text-text-meta tabular-nums">
+                    {row.open ? (
+                      <>
+                        <span aria-hidden="true" className="mr-2 inline-block h-1 w-1 rounded-full bg-terracotta align-middle" />
+                        open
+                      </>
+                    ) : (
+                      row.when
+                    )}
+                  </span>
+                </Reveal>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
