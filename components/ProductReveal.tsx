@@ -118,6 +118,13 @@ export type ProductRevealProps = {
   /** Override eager loading. Defaults to true for the hero (above-fold LCP,
    *  L7-02), false for cards/shots. */
   eager?: boolean;
+  /** THE ROOM/Phase D — additional class merged onto the `bare` hero's
+   *  `.pr-hero-lift` host. The site-wide lift (1200ms, scale 1.045) is the
+   *  default signature move; a flagship case study can override it with its
+   *  OWN settle (e.g. `.pr-stone-settle`, globals.css) — a later same-
+   *  specificity rule wins the `animation` property, nothing else on the
+   *  host changes. No-op when absent (every other case study, byte-identical). */
+  liftClassName?: string;
 };
 
 const ASPECT: Record<ProductRevealContext, string> = {
@@ -372,6 +379,7 @@ export function ProductReveal({
   className,
   bare = false,
   eager: eagerProp,
+  liftClassName,
 }: ProductRevealProps) {
   const sig = signatureFor(slug);
   const kind: DeviceFrameKind = frame ?? (context === 'hero' ? frameForSlug(slug) : 'none');
@@ -495,7 +503,7 @@ export function ProductReveal({
         // behind it (HeroImageSettle), landing the subject ONTO a held stage,
         // without ever touching the frame's own -translate-x/y-1/2 centering.
         // RM/no-JS: no animation → transform:none → byte-identical to today.
-        <div className="pr-hero-lift absolute inset-0">
+        <div className={cn('pr-hero-lift absolute inset-0', liftClassName)}>
           <FramedArtifact
             kind={kind}
             hasReal={hasReal}
