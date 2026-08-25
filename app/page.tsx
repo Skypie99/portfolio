@@ -97,12 +97,31 @@ export default function HomePage() {
    * the foot of this file). Four of five — Dashboard has never had a chip, and
    * is the window that stays dark. Changing a `lit` here changes the horizon.
    */
+  /**
+   * The three chip figures that belong to a PROJECT rather than to this site
+   * (C4's "trivia demotes into the rows that own it"), carried verbatim —
+   * `stat + label`, exactly as the retired band said them. The other two chips
+   * became instruments: `2,900+ tests passing` is a hero receipt and
+   * `2.2 AA — the bar I build to` is a Record row.
+   *
+   * These are here rather than in deliverables.json because they were never
+   * deliverable data: they were the homepage band's own hand-set copy, and
+   * moving them into the schema would be inventing a field to hold a claim
+   * nobody has re-verified. Dashboard has no entry because it never had a chip.
+   */
+  const CHIP_NOTE: Record<string, string> = {
+    'claude-corp': '15 AI agents',
+    'prompt-library': '100% static',
+    'ghost-code': '56 command cards',
+  };
+
   const workIndex = [flagship, ...rest].filter((d): d is NonNullable<typeof d> => Boolean(d)).map((d, i) => ({
     d,
     numeral: String(i + 1).padStart(2, '0'),
     href: `/work/${d.id}/`,
     isFlagship: d === flagship,
     lit: d.id !== 'dashboard',
+    note: CHIP_NOTE[d.id],
   }));
 
   /**
@@ -582,7 +601,7 @@ export default function HomePage() {
               flex track. Nothing is truncated and nothing scrolls sideways at
               any width — the row simply grows taller when the copy needs it. */}
           <ol className="flex flex-col">
-            {workIndex.map(({ d, numeral, href, isFlagship }, i) => (
+            {workIndex.map(({ d, numeral, href, isFlagship, note }, i) => (
               <li
                 key={d.id}
                 className="group border-t border-border-decorative last:border-b"
@@ -614,7 +633,8 @@ export default function HomePage() {
                       </p>
                     </div>
                     <div className="mt-3 flex flex-wrap items-baseline gap-x-4 gap-y-1 lg:mt-0 lg:contents">
-                      <p className="lg:flex-1 font-mono text-meta tracking-label uppercase text-text-meta text-pretty">
+                      <div className="lg:flex-1 flex flex-col gap-1.5">
+                      <p className="font-mono text-meta tracking-label uppercase text-text-meta text-pretty">
                         {isFlagship ? (
                           <Link
                             href="#flagship"
@@ -643,6 +663,16 @@ export default function HomePage() {
                           d.status
                         )}
                       </p>
+                      {/* The chip's own figure, demoted (C4's conservation
+                          rider). Accent register, not the status grey, so it
+                          reads as a measured figure rather than a second
+                          status — which is what it is. */}
+                      {note && (
+                        <p className="font-mono text-meta tracking-label uppercase text-accent-text tabular-nums">
+                          {note}
+                        </p>
+                      )}
+                      </div>
                       <p className="shrink-0 lg:w-16 lg:text-right font-mono text-meta tracking-label uppercase text-text-meta tabular-nums">
                         {d.year}
                       </p>
