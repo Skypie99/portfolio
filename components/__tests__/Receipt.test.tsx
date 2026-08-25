@@ -60,6 +60,22 @@ describe('Receipt', () => {
     expect(screen.getByRole('link', { name: 'measured 2026-08-16, method' })).toBeInTheDocument();
   });
 
+  it('renders tier + method with NO date — the open-ledger row (C4)', () => {
+    render(
+      <Receipt
+        value="IV"
+        label="calibration round, open"
+        tier="reported"
+        methodHref="/colophon/#calibration"
+        methodLabel="the record"
+      />,
+    );
+    // Tier word alone, then the method anchor — no invented date between them.
+    expect(screen.getByText(/^reported/)).toBeInTheDocument();
+    expect(screen.getByText(/^reported/).textContent).not.toMatch(/\d{4}-\d{2}-\d{2}/);
+    expect(screen.getByRole('link', { name: 'the record' })).toBeInTheDocument();
+  });
+
   it('figure carries tabular-nums so digits never jitter', () => {
     render(<Receipt value="2,971" label="tests passing" tier="measured" date="2026-08-16" />);
     expect(screen.getByText('2,971')).toHaveClass('tabular-nums');

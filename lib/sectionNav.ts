@@ -44,10 +44,11 @@
  *     its own table of contents, or print one label twice in the persistent
  *     chrome pointing at two different targets.
  *
- * Curation, not a dump: home carries `div#hero` and `section#showcase` — the
- * latter with a real name ("Shipped") — and lists neither, so the index has
+ * Curation, not a dump: home carried `div#hero` and `section#showcase` — the
+ * latter with a real name ("Shipped") — and listed neither, so the index has
  * always meant "this page's principal sections". A back-link / CTA closer is
- * chrome, not a section.
+ * chrome, not a section. (`#showcase` was retired outright by THE ROOM Phase
+ * C; `#hero` remains the one curated-out band on home.)
  *
  * hrefs are route-absolute (`/about/#method`, matching home's `/#work`) so one
  * grammar covers both same-page and cross-page entries and next/link resolves
@@ -66,20 +67,29 @@ export type RailSection = {
 
 /** One entry per route that has a real, multi-section index. */
 const ROUTE_SECTIONS = {
-  // Home — five labels, each one of home's section eyebrows verbatim
-  // (app/page.tsx), and the ids are its <section> ids. Truth pass 2026-08-21
-  // swapped one for another: `how-i-work` joined, and `process` ("Method" —
-  // Discover / Build / Ship & stay curious) was cut, because it restated the
-  // new band generically and sat directly beneath it. Rule 1 holds — the label
-  // is the eyebrow the band actually renders, byte-for-byte. Order follows the
-  // DOM; guard T5 asserts the rendered rail matches this list IN ORDER, and T4
-  // asserts no id'd band on the route is missing from it.
+  // Home — one label per section eyebrow, verbatim (app/page.tsx), and the ids
+  // are its <section> ids. Truth pass 2026-08-21 swapped one for another:
+  // `how-i-work` joined, and `process` ("Method" — Discover / Build / Ship &
+  // stay curious) was cut, because it restated the new band generically and sat
+  // directly beneath it. Rule 1 holds — the label is the eyebrow the band
+  // actually renders, byte-for-byte. Order follows the DOM; guard T5 asserts the
+  // rendered rail matches this list IN ORDER, and T4 asserts no id'd band on the
+  // route is missing from it.
   // (Note /about keeps its OWN `#method` entry — different route, still live.)
+  //
+  // THE ROOM Phase C (2026-08-25) re-cut the homepage's hierarchy, and this map
+  // moved with it band by band, in each band's own commit — the precedent set by
+  // round 1 of the truth pass, which hit this same guard:
+  //   + `flagship`  C2 — the featured work gets a room, first past the hero
+  //   + `record`    C5 — the site's own ledger, above the fold
+  //   − `showcase`  C4 — the five stat chips retired into three hero receipts
+  //   − `certificates` C6 — demoted to one line inside A Brief Account
   '/': [
+    { id: 'flagship', label: 'Featured — the flagship', href: '/#flagship' },
     { id: 'work', label: 'The Work', href: '/#work' },
+    { id: 'record', label: 'The Record', href: '/#record' },
     { id: 'how-i-work', label: 'How the work gets made', href: '/#how-i-work' },
     { id: 'about', label: 'A Brief Account', href: '/#about' },
-    { id: 'certificates', label: 'Credentials', href: '/#certificates' },
     { id: 'contact', label: "Let’s talk", href: '/#contact' },
   ],
 
@@ -201,17 +211,25 @@ export const UNINDEXED_ROUTES: readonly string[] = Object.freeze([
 
 /**
  * Bands that carry an id but are deliberately kept OUT of the index — the
- * curation, written down. Home's `#showcase` (the "Shipped" strip) has been
- * unlisted since the index shipped, and `#hero` likewise; the index has always
- * meant "this page's principal sections", not "every anchor". `#hero` is a
- * <div>, not a <section>, which is why the guard's band scan matches both.
+ * curation, written down. `#hero` has been unlisted since the index shipped;
+ * the index has always meant "this page's principal sections", not "every
+ * anchor". `#hero` is a <div>, not a <section>, which is why the guard's band
+ * scan matches both.
  *
  * The built-HTML guard asserts that the id'd bands on a route are exactly
  * (mapped ∪ this list), so a NEW id'd band cannot join a page without someone
  * deciding, in writing, whether it belongs in the index.
+ *
+ * THE ROOM Phase C / C4: `showcase` LEFT this list. It is not a demotion from
+ * "unindexed" to something quieter — the band does not exist any more, its five
+ * stat chips having become three receipts inside `#hero`. The list must shrink
+ * with it, because T4 asserts the declared ids in BOTH directions: an id
+ * declared here that the page no longer renders fails the guard just as loudly
+ * as an undeclared band that appears. The brief for this phase expected
+ * `#showcase` to stay declared; the guard is right and the brief was not.
  */
 export const UNINDEXED_SECTION_IDS: Record<string, readonly string[]> = Object.freeze({
-  '/': Object.freeze(['hero', 'showcase']),
+  '/': Object.freeze(['hero']),
 });
 
 export { ROUTE_SECTIONS };
