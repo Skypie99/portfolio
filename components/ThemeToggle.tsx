@@ -15,6 +15,13 @@ import { cn } from '@/lib/cn';
  * icon is aria-hidden (the label is the accessible name).
  */
 
+// B3 candidate (Phase B, wave-1 banked question): drawn to match the house
+// sun family — RunwayIdentity's disc-over-two-horizon-lines (app/icon.svg,
+// RunwayIdentity.tsx:87-103) and HamburgerNav's LUXE-4 "Horizon" glyph, which
+// already borrows the same proportions. currentColor keeps it theming with
+// the button's ink token (RunwayIdentity's sun is deliberately NOT tokenized
+// because it rides the intro's fixed palette — this is chrome, not a fixed
+// mark, so it should flip). Not yet chosen — see ThemeToggle candidate below.
 function SunIcon() {
   return (
     <svg
@@ -26,12 +33,17 @@ function SunIcon() {
       strokeLinejoin="round"
       className="h-[18px] w-[18px]"
     >
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+      <circle cx="12" cy="8.5" r="4.25" />
+      <line x1="4" y1="15.5" x2="20" y2="15.5" strokeWidth="1.7" />
+      <line x1="7.5" y1="18.5" x2="16.5" y2="18.5" strokeWidth="1.3" />
     </svg>
   );
 }
 
+// The sun's necessary dark-mode partner — no house moon exists yet, so this is
+// original: a crescent (the standard two-arc technique, own proportions) over
+// the same two horizon lines, so the pair reads as one object across day/night
+// rather than two unrelated glyphs.
 function MoonIcon() {
   return (
     <svg
@@ -43,7 +55,9 @@ function MoonIcon() {
       strokeLinejoin="round"
       className="h-[18px] w-[18px]"
     >
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+      <path d="M13.5 4 A4.6 4.6 0 1 0 13.5 13.2 A4 4 0 1 1 13.5 4 Z" />
+      <line x1="4" y1="15.5" x2="20" y2="15.5" strokeWidth="1.7" />
+      <line x1="7.5" y1="18.5" x2="16.5" y2="18.5" strokeWidth="1.3" />
     </svg>
   );
 }
