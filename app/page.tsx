@@ -1,15 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import type { CSSProperties } from 'react';
 
 import { CinematicDesert } from '@/components/cinematic/CinematicDesert';
 import { ContactEmail } from '@/components/ContactEmail';
 import { ContentReveal } from '@/components/ContentReveal';
 import { CountUpStat } from '@/components/CountUpStat';
 import { Hero } from '@/components/Hero';
+import { HeroImageSettle } from '@/components/HeroSettle';
 import { IntroScrollCue } from '@/components/IntroScrollCue';
 import { IntroSkip } from '@/components/IntroSkip';
 import { LitWindows } from '@/components/LitWindows';
 import { ParallaxWash } from '@/components/ParallaxWash';
+import { Plate } from '@/components/Plate';
+import { HeroProductReveal } from '@/components/ProductReveal';
 import { ProjectCard } from '@/components/ProjectCard';
 import { RailInert } from '@/components/RailInert';
 import { Reveal } from '@/components/Reveal';
@@ -18,7 +22,9 @@ import { RunwayIdentityRelease } from '@/components/RunwayIdentityRelease';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
 import { getCertificates, getDeliverables, getProfile } from '@/lib/content';
+import { heroMedia } from '@/lib/media';
 import { OG_CARD } from '@/lib/og';
+import { signatureFor } from '@/lib/signature';
 
 /**
  * TA-11 (truth audit 2026-07-31) — the homepage's share card, restated here
@@ -73,6 +79,14 @@ export default function HomePage() {
   const profile = getProfile();
   const deliverables = getDeliverables();
   const certificates = getCertificates();
+
+  /** The flagship — the ONE deliverable carrying `featured: true` (the
+   *  featured-slot invariant; DeliverableSchema keeps it at exactly one).
+   *  Read by slot, never by index, so re-ordering deliverables.json can't
+   *  silently promote a different project into the room. */
+  const flagship = deliverables.find((d) => d.featured);
+  /** Everything the flagship room does NOT already carry. */
+  const rest = deliverables.filter((d) => d !== flagship);
 
   /** Showcase stat chips — hardcoded per spec. L3-09: each chip is now a quiet
    *  door to the proof it names (project chips → their case study, the a11y chip
@@ -314,6 +328,183 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── The Flagship Room ─────────────────────────────────────────
+          C2 (THE ROOM Phase C · board 01, panes A + C). The homepage's ONE
+          loud moment. Flagstone used to hold the featured slot in a grid of
+          five cards; it now has a room, immediately after the hero, so the
+          first thing past the film is a real artifact with a human claim
+          attached to it.
+
+          The plate is A15's `Plate` reading `d.heroPlate` — the SAME
+          component and the SAME data /work/flagstone/ renders, so the three
+          mono lines are word-identical to the case study BY CONSTRUCTION,
+          not by a copy anyone has to keep in sync. Register note: the
+          concept board drew plate line 2 as serif italic; the shipped
+          component's mono line wins, because the case study's own comment
+          rules that plate "Mono register, NEVER quotation-styled" and
+          word-identical has to mean look-identical too.
+
+          Desktop: words in the left column (header · plate), then status,
+          the one pull-line and the door beneath them; the capture rides the
+          right column across all three rows on its own signature-hue plinth
+          (224 150 90, lib/signature.ts).
+          375 (pane C): plate-first — words before pixels — then the
+          full-bleed capture, then the status. The pull-line drops below lg:
+          it lives on the case page, and the phone arrival is about what the
+          artifact IS, not about the essay.
+
+          NOT here, deliberately: a second `2,900+` receipt. The brief's C2
+          list asks for one, but C4 sends that exact datum to the hero strip
+          and pane A draws the room without it — printing the site's biggest
+          number twice inside two bands is the disease this phase treats.
+          Surfaced as a 🔴 in the close-out rather than decided silently. */}
+      {flagship && (
+        <section
+          id="flagship"
+          className={cn(
+            'relative isolate overflow-hidden',
+            'px-gutter',
+            'py-24 lg:py-32',
+            'world-surface-alt',
+            'border-t border-border-decorative',
+          )}
+        >
+          <ParallaxWash depth="far" />
+          <div className="relative z-10 max-w-content mx-auto">
+            <div
+              className={cn(
+                'grid grid-cols-1 gap-y-10',
+                'lg:grid-cols-[1.15fr_0.85fr] lg:gap-x-16 lg:items-center',
+              )}
+            >
+              {/* The left column is ONE box at lg and `display: contents`
+                  below it — the house idiom from app/work/[slug]/page.tsx,
+                  and the reason it is here rather than three row-placed grid
+                  items: a capture spanning three auto tracks has its
+                  intrinsic height distributed ACROSS them (CSS Grid §12.5),
+                  which inflated the header→plate→status gaps to ~100px
+                  (measured, 1440). As one flex column it is content-sized and
+                  `items-center` seats it against the capture, while `contents`
+                  lets the capture slot BETWEEN the plate and the status at 375
+                  (board 01, pane C) without re-parenting anything. */}
+              <div className="contents lg:flex lg:flex-col lg:gap-8">
+                {/* 1 · the header. Same eyebrow+rule grammar as every other
+                    band, and the eyebrow IS the rail's label for this anchor
+                    (lib/sectionNav.ts, guard T2 — byte-for-byte). */}
+                <Reveal
+                  variant="scene"
+                  className="order-1 flex flex-col pl-4 border-l-2 border-terracotta"
+                >
+                  <p className="flex items-center gap-2 font-mono text-label tracking-label uppercase text-accent-ink mb-4">
+                    <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
+                    Featured — the flagship
+                  </p>
+                  <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance">
+                    {flagship.title}
+                  </h2>
+                </Reveal>
+
+                {/* 2 · the museum plate — the human claim, before any pixels. */}
+                {flagship.heroPlate && (
+                  <Reveal
+                    variant="depth"
+                    index={0}
+                    className="order-2"
+                  >
+                    <Plate
+                      claim={flagship.heroPlate.severity}
+                      caption={flagship.heroPlate.caption}
+                      placeDate={flagship.heroPlate.provenance}
+                      sig={signatureFor(flagship.id)}
+                    />
+                  </Reveal>
+                )}
+
+                {/* 4 · status, the one pull-line, the door. (The numbers are
+                    VISUAL order — 3, the capture, is a sibling of this wrapper
+                    and slots in above at 375.) */}
+                <Reveal
+                  variant="depth"
+                  index={2}
+                  className="order-4 flex flex-col items-start gap-5"
+                >
+                  <p className="font-mono text-meta tracking-label uppercase text-text-meta">
+                    Status{' '}
+                    <span aria-hidden="true">—</span>{' '}
+                    <span className="text-cool-deep normal-case tracking-normal">{flagship.status}</span>
+                  </p>
+                  {/* The one pull-line, quoted from the case study's own
+                      `What went wrong`. Below lg it is not rendered at all
+                      (pane C) — the sentence is not lost, it is one tap away in
+                      the essay this band links to. */}
+                  <blockquote className="hidden lg:block pull-quote pl-3 font-serif font-light italic text-step-1 text-ink-muted leading-[1.45] max-w-[44ch] text-balance">
+                    It had unit tests. They passed.
+                    <cite className="not-italic block mt-2 font-mono text-meta tracking-label uppercase text-text-meta">
+                      from What went wrong
+                    </cite>
+                  </blockquote>
+                  <Link
+                    href={`/work/${flagship.id}/`}
+                    className="link-draw inline-flex items-center gap-2 px-1 py-4 -mx-1 -my-4 font-mono text-label tracking-label uppercase text-accent-text"
+                  >
+                    Read the case study
+                    <span aria-hidden="true">{'→'}</span>
+                  </Link>
+                </Reveal>
+              </div>
+
+              {/* 3 · the capture, device-true, on the signature-hue plinth.
+                  No bordered well and no earth gradient (pane A's `.phonewell`
+                  is the phone standing in the room's own light, not a framed
+                  picture) — the aspect box exists only because a `bare`
+                  HeroProductReveal positions its frame absolutely and needs a
+                  sized, relative parent.
+                  `eager={false}` overrides the hero-context default: this well
+                  sits a full band below the fold on the homepage, so an eager
+                  fetchpriority=high here would compete with the real LCP. */}
+              <Reveal
+                variant="depth"
+                index={1}
+                className="order-3 lg:order-none"
+              >
+                <HeroImageSettle className="group relative w-full aspect-[4/5] overflow-hidden flex items-center justify-center">
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0"
+                    style={
+                      {
+                        '--pr-sig': signatureFor(flagship.id),
+                        background:
+                          'radial-gradient(58% 52% at 50% 56%, rgb(var(--pr-sig) / 0.22), rgb(var(--pr-sig) / 0.07) 58%, transparent 78%)',
+                      } as CSSProperties
+                    }
+                  />
+                  <HeroProductReveal
+                    slug={flagship.id}
+                    title={flagship.title}
+                    eyebrow={flagship.role}
+                    media={heroMedia(flagship)}
+                    eager={false}
+                  />
+                </HeroImageSettle>
+                {/* Dated from content/showcase.manifest.json (map-overview,
+                    phone, projectSha 5ab3f0c4, capturedAt 2026-07-31) — the
+                    manifest is deliberately NOT read at runtime
+                    (lib/showcaseWire.ts), so the date is transcribed here the
+                    same way FlagstoneTestReceipt transcribes its run date.
+                    The THEME is not named: the capture is a light/dark twin
+                    pair and ThemedShowcase swaps it with the site, so naming
+                    one would go false in the other. */}
+                <p className="mt-4 text-center font-mono text-meta tracking-label uppercase text-text-meta">
+                  Real capture · map-overview · captured{' '}
+                  <time dateTime="2026-07-31">2026-07-31</time>
+                </p>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ── Work — Luxury cards with app mockups ─────────────────────── */}
       <section
         id="work"
@@ -349,23 +540,21 @@ export default function HomePage() {
             </h2>
           </Reveal>
 
+          {/* C2 (THE ROOM Phase C): the featured card slot is GONE — the
+              flagship has a room of its own, one band above, and printing its
+              card here again would be the third mention of the same project on
+              one scroll. The remaining four keep the 2-col grid until C3 turns
+              this band into the index.
+              An odd trailing card spans the full row in the featured horizontal
+              layout so it bookends the grid instead of dangling beside an empty
+              cell; self-disables at even counts (four today → inert). */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Featured card — full width, col-span preserved via className */}
-            {deliverables[0] && (
-              <Reveal variant="depth" className="lg:col-span-2" index={0}>
-                <ProjectCard deliverable={deliverables[0]} wide index={0} />
-              </Reveal>
-            )}
-            {/* Remaining cards in the 2-col grid. An odd trailing card spans
-                the full row in the featured horizontal layout (the variant
-                proven full-width two rows up) so it bookends the grid instead
-                of dangling beside an empty cell. Self-disables at even counts. */}
-            {deliverables.slice(1).map((d, i, rest) => {
-              const lone = i === rest.length - 1 && rest.length % 2 === 1;
+            {rest.map((d, i, row) => {
+              const lone = i === row.length - 1 && row.length % 2 === 1;
               return (
                 <Reveal
                   key={d.id}
-                  index={i + 1}
+                  index={i}
                   variant="depth"
                   className={lone ? 'lg:col-span-2' : undefined}
                 >

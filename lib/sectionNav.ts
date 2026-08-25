@@ -66,16 +66,25 @@ export type RailSection = {
 
 /** One entry per route that has a real, multi-section index. */
 const ROUTE_SECTIONS = {
-  // Home — five labels, each one of home's section eyebrows verbatim
-  // (app/page.tsx), and the ids are its <section> ids. Truth pass 2026-08-21
-  // swapped one for another: `how-i-work` joined, and `process` ("Method" —
-  // Discover / Build / Ship & stay curious) was cut, because it restated the
-  // new band generically and sat directly beneath it. Rule 1 holds — the label
-  // is the eyebrow the band actually renders, byte-for-byte. Order follows the
-  // DOM; guard T5 asserts the rendered rail matches this list IN ORDER, and T4
-  // asserts no id'd band on the route is missing from it.
+  // Home — one label per section eyebrow, verbatim (app/page.tsx), and the ids
+  // are its <section> ids. Truth pass 2026-08-21 swapped one for another:
+  // `how-i-work` joined, and `process` ("Method" — Discover / Build / Ship &
+  // stay curious) was cut, because it restated the new band generically and sat
+  // directly beneath it. Rule 1 holds — the label is the eyebrow the band
+  // actually renders, byte-for-byte. Order follows the DOM; guard T5 asserts the
+  // rendered rail matches this list IN ORDER, and T4 asserts no id'd band on the
+  // route is missing from it.
   // (Note /about keeps its OWN `#method` entry — different route, still live.)
+  //
+  // THE ROOM Phase C (2026-08-25) re-cut the homepage's hierarchy, and this map
+  // moved with it band by band, in each band's own commit — the precedent set by
+  // round 1 of the truth pass, which hit this same guard:
+  //   + `flagship`  C2 — the featured work gets a room, first past the hero
+  //   + `record`    C5 — the site's own ledger, above the fold
+  //   − `showcase`  C4 — the five stat chips retired into three hero receipts
+  //   − `certificates` C6 — demoted to one line inside A Brief Account
   '/': [
+    { id: 'flagship', label: 'Featured — the flagship', href: '/#flagship' },
     { id: 'work', label: 'The Work', href: '/#work' },
     { id: 'how-i-work', label: 'How the work gets made', href: '/#how-i-work' },
     { id: 'about', label: 'A Brief Account', href: '/#about' },
