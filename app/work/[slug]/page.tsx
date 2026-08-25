@@ -160,7 +160,13 @@ function renderRoleSection(content: string): ReactNode {
 function FlagstoneApproachDiagram() {
   return (
     <figure className="max-w-measure-wide m-0 flex flex-col gap-4">
-      <svg viewBox="0 0 560 210" aria-hidden="true" className="h-auto w-full max-w-[420px]">
+      <svg
+        viewBox="0 0 560 210"
+        width="560"
+        height="210"
+        aria-hidden="true"
+        className="h-auto w-full max-w-[420px]"
+      >
         <rect x="190" y="10" width="180" height="44" rx="8" className="fill-none stroke-ink" strokeWidth="1.5" />
         <text x="280" y="37" textAnchor="middle" className="fill-ink font-mono text-[12px]">
           Report submitted
