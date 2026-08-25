@@ -14,7 +14,6 @@ import { LitWindows } from '@/components/LitWindows';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { Plate } from '@/components/Plate';
 import { HeroProductReveal } from '@/components/ProductReveal';
-import { ProjectCard } from '@/components/ProjectCard';
 import { RailInert } from '@/components/RailInert';
 import { Reveal } from '@/components/Reveal';
 import { RunwayIdentity } from '@/components/RunwayIdentity';
@@ -87,6 +86,25 @@ export default function HomePage() {
   const flagship = deliverables.find((d) => d.featured);
   /** Everything the flagship room does NOT already carry. */
   const rest = deliverables.filter((d) => d !== flagship);
+
+  /**
+   * The work index (C3) — the page's canonical five-project list, flagship
+   * first so its row can cross-reference the room above it. Built from
+   * `flagship` + `rest` rather than from deliverables order, so a re-ordered
+   * deliverables.json can never put the room and row 01 out of step.
+   *
+   * `lit` is the datum the retired showcase chips used to carry, and the row
+   * list is now where it lives: it is what LitWindows reads (see the strip at
+   * the foot of this file). Four of five — Dashboard has never had a chip, and
+   * is the window that stays dark. Changing a `lit` here changes the horizon.
+   */
+  const workIndex = [flagship, ...rest].filter((d): d is NonNullable<typeof d> => Boolean(d)).map((d, i) => ({
+    d,
+    numeral: String(i + 1).padStart(2, '0'),
+    href: `/work/${d.id}/`,
+    isFlagship: d === flagship,
+    lit: d.id !== 'dashboard',
+  }));
 
   /** Showcase stat chips — hardcoded per spec. L3-09: each chip is now a quiet
    *  door to the proof it names (project chips → their case study, the a11y chip
@@ -540,29 +558,77 @@ export default function HomePage() {
             </h2>
           </Reveal>
 
-          {/* C2 (THE ROOM Phase C): the featured card slot is GONE — the
-              flagship has a room of its own, one band above, and printing its
-              card here again would be the third mention of the same project on
-              one scroll. The remaining four keep the 2-col grid until C3 turns
-              this band into the index.
-              An odd trailing card spans the full row in the featured horizontal
-              layout so it bookends the grid instead of dangling beside an empty
-              cell; self-disables at even counts (four today → inert). */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {rest.map((d, i, row) => {
-              const lone = i === row.length - 1 && row.length % 2 === 1;
-              return (
+          {/* C3 — the index. Five liquid-glass cards became five quiet
+              status-bearing rows: numeral · title · one line · status · year.
+              The full cards did not die, they moved: /work/ keeps its
+              promenade, untouched, and this band stops being the second of
+              three places the homepage names the same five projects.
+
+              Row 01 is the flagship, and its status cell is the cross-
+              reference back up to the room rather than a repeat of the status
+              the room already prints in full.
+
+              ROWS AT EVERY WIDTH. Below lg the status+year wrapper is a
+              wrapping baseline line under the title; at lg `lg:contents`
+              dissolves it so status and year become columns of the row's own
+              flex track. Nothing is truncated and nothing scrolls sideways at
+              any width — the row simply grows taller when the copy needs it. */}
+          <ol className="flex flex-col">
+            {workIndex.map(({ d, numeral, href, isFlagship }, i) => (
+              <li
+                key={d.id}
+                className="group border-t border-border-decorative last:border-b"
+              >
+                {/* MO-4: cap the stagger (site idiom Math.min(i, 4)). */}
                 <Reveal
-                  key={d.id}
-                  index={i}
+                  index={Math.min(i, 4)}
                   variant="depth"
-                  className={lone ? 'lg:col-span-2' : undefined}
+                  className="flex items-baseline gap-4 lg:gap-6 py-6"
                 >
-                  <ProjectCard deliverable={d} index={i + 1} wide={lone} />
+                  <span
+                    aria-hidden="true"
+                    className="w-8 lg:w-12 shrink-0 font-serif font-light text-step-1 leading-none tabular-nums text-ink/30 transition-colors duration-base ease-out group-hover:text-ink/45"
+                  >
+                    {numeral}
+                  </span>
+                  <div className="min-w-0 flex-1 flex flex-col lg:flex-row lg:items-baseline lg:gap-8">
+                    <div className="min-w-0 lg:flex-[1.6] flex flex-col gap-1.5">
+                      <h3 className="font-serif font-light text-step-1 leading-heading text-ink">
+                        <Link
+                          href={href}
+                          className="rounded-sm transition-colors duration-fast ease-out hover:text-accent-text focus-visible:text-accent-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
+                        >
+                          {d.title}
+                        </Link>
+                      </h3>
+                      <p className="font-sans font-light text-body-sm leading-body text-ink-muted text-pretty">
+                        {d.summary}
+                      </p>
+                    </div>
+                    <div className="mt-3 flex flex-wrap items-baseline gap-x-4 gap-y-1 lg:mt-0 lg:contents">
+                      <p className="lg:flex-1 font-mono text-meta tracking-label uppercase text-text-meta text-pretty">
+                        {isFlagship ? (
+                          <Link
+                            href="#flagship"
+                            aria-label={`${d.title} — the flagship room, above`}
+                            className="rounded-sm transition-colors duration-fast ease-out text-accent-text hover:text-accent-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
+                          >
+                            Featured — above
+                            <span aria-hidden="true" className="ml-1.5">{'↑'}</span>
+                          </Link>
+                        ) : (
+                          d.status
+                        )}
+                      </p>
+                      <p className="shrink-0 lg:w-16 lg:text-right font-mono text-meta tracking-label uppercase text-text-meta tabular-nums">
+                        {d.year}
+                      </p>
+                    </div>
+                  </div>
                 </Reveal>
-              );
-            })}
-          </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
