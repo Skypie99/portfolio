@@ -5,7 +5,6 @@ import type { CSSProperties } from 'react';
 import { CinematicDesert } from '@/components/cinematic/CinematicDesert';
 import { ContactEmail } from '@/components/ContactEmail';
 import { ContentReveal } from '@/components/ContentReveal';
-import { CountUpStat } from '@/components/CountUpStat';
 import { Hero } from '@/components/Hero';
 import { HeroImageSettle } from '@/components/HeroSettle';
 import { IntroScrollCue } from '@/components/IntroScrollCue';
@@ -15,12 +14,12 @@ import { ParallaxWash } from '@/components/ParallaxWash';
 import { Plate } from '@/components/Plate';
 import { HeroProductReveal } from '@/components/ProductReveal';
 import { RailInert } from '@/components/RailInert';
+import { Receipt } from '@/components/Receipt';
 import { Reveal } from '@/components/Reveal';
 import { RunwayIdentity } from '@/components/RunwayIdentity';
 import { RunwayIdentityRelease } from '@/components/RunwayIdentityRelease';
-import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
-import { getCertificates, getDeliverables, getProfile } from '@/lib/content';
+import { getA11yReceipts, getCertificates, getDeliverables, getProfile, getRounds } from '@/lib/content';
 import { heroMedia } from '@/lib/media';
 import { OG_CARD } from '@/lib/og';
 import { signatureFor } from '@/lib/signature';
@@ -106,57 +105,48 @@ export default function HomePage() {
     lit: d.id !== 'dashboard',
   }));
 
-  /** Showcase stat chips — hardcoded per spec. L3-09: each chip is now a quiet
-   *  door to the proof it names (project chips → their case study, the a11y chip
-   *  → the /accessibility/ statement) — same composition, only the system's own
-   *  link affordances added. */
-  const showcaseChips = [
-    {
-      stat: '2,900+',
-      label: 'tests passing',
-      project: 'Flagstone',
-      href: '/work/flagstone/',
-      tags: ['Mobile', 'WCAG AA', 'Open source'],
-    },
-    {
-      stat: '15',
-      label: 'AI agents',
-      project: 'Claude Corp',
-      href: '/work/claude-corp/',
-      // 0183678 (F7-resolved): 'MCP' was unbacked — not demonstrable in any
-      // linked repo. 'Open source' holds (Claude_Corp carries a real LICENSE).
-      tags: ['Open source', 'Real commits'],
-    },
-    {
-      stat: '100%',
-      label: 'static',
-      project: 'Prompt Library',
-      href: '/work/prompt-library/',
-      tags: ['No backend', 'Browser-only'],
-    },
-    {
-      stat: '56',
-      label: 'command cards',
-      project: 'Ghost Code',
-      href: '/work/ghost-code/',
-      tags: ['Vanilla JS', 'Zero deps'],
-    },
-    {
-      stat: '2.2 AA',
-      // Sky-ratified 2026-07-13 (T10 W4-02): 'the bar I build to' replaces 'WCAG
-      // conformance' — "conformance" is a WCAG term for a MET standard, which overclaimed
-      // vs the /accessibility/ statement ("self-assessed, not certified; not a badge I
-      // have been given"); this echoes that page's own words ("AA is the bar I design and
-      // build against").
-      label: 'the bar I build to',
-      project: 'Born accessible',
-      href: '/accessibility/',
-      tags: ['Screen-reader', '44pt targets', 'Reduced-motion'],
-    },
-  ] as const;
+  /**
+   * The hero's three receipts (C4) — what the five stat chips became.
+   *
+   * The chips were a band of five figures with no dates and no method: the
+   * site's biggest numbers, stated. A `Receipt` is the documentary register
+   * instead — figure, what it measures, the tier WORD ("measured" = run
+   * against this site, "reported" = project-claimed with a method), the date
+   * it was true, and a door to the method. Three, curated, in the hero's own
+   * column: tests · axe · the calibration round.
+   *
+   * Every chip datum is conserved; the two that are not receipts moved into
+   * the rows and the Record band that own them (see build-reports/C_CLOSEOUT.md
+   * for the conservation table). Nothing here is re-authored: `2,900+` and
+   * `tests passing` are the chip's own ratified strings, and the axe figure,
+   * its method line and its date come straight from content/a11y-receipts.json.
+   */
+  const a11y = getA11yReceipts();
+  const axe = a11y.receipts.find((r) => r.label === 'axe violations');
+  const rounds = getRounds();
 
-  /** Each stat number takes a different desert hue — a teal + orange spread. */
-  const STAT_EMBER = ['ember', 'ember-teal', 'ember-gold', 'ember-moss'];
+  /**
+   * The calibration receipt reads the ledger rather than restating it, so it
+   * stays true through whichever way the open-Round-IV decision goes: while a
+   * round is open it prints that round with no date (a row that has not closed
+   * has none to give — see Receipt's `date`); once none is open it prints the
+   * last one that closed, with its close date.
+   */
+  const openRound = rounds.find((r) => !r.closed);
+  const lastClosedRound = [...rounds].reverse().find((r) => r.closed);
+  const calibration = openRound
+    ? {
+        value: openRound.numeral,
+        label: `calibration round, open — ${openRound.counts[0]}`,
+        date: undefined as string | undefined,
+      }
+    : lastClosedRound
+      ? {
+          value: lastClosedRound.numeral,
+          label: `calibration rounds, none open — ${lastClosedRound.counts[0]}`,
+          date: lastClosedRound.closed,
+        }
+      : null;
 
   return (
     <>
@@ -198,153 +188,61 @@ export default function HomePage() {
           subhead="Five projects built, all five on the open web. One heading to the App Store. Accessibility first, built for everyone."
           ctaLabel="See the work."
           ctaHref="#work"
+          receipts={
+            <div className="mt-16 max-w-[880px]">
+              {/* Three receipts, one grid. Individually bordered on their own
+                  receipt paper stock rather than the retired chip band's
+                  hairline-joined cells: the chips read as one instrument
+                  panel, three receipts read as three pieces of evidence,
+                  which is the whole point of the change.
+                  The 3-up waits until lg, and the reason is the RAIL: from md
+                  up the shell spends 280px on the sidebar, so a 768 viewport
+                  leaves this column 424px and a `sm:` 3-up measured 131px per
+                  cell — an 83px content box, which folded the mono labels and
+                  pushed 15px of copy out of its padding box. A media query
+                  cannot see the container, so the breakpoint has to be picked
+                  from the column width the rail leaves behind. Stacked below
+                  lg is board 01 pane C's "no 3-up squeeze" anyway. */}
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                <Receipt
+                  value="2,900+"
+                  label="tests passing — Flagstone"
+                  /* "reported": run against the Flagstone repo, not this
+                     site. The figure is the chip's own ratified floor
+                     (the suite grows most weeks); the exact 2,971 and the
+                     command that reproduces it live behind `method`. */
+                  tier="reported"
+                  date="2026-08-16"
+                  methodHref="/work/flagstone/#flagstone-test-count-method"
+                />
+                {axe && (
+                  <Receipt
+                    value={axe.value}
+                    label={`${axe.label} — ${axe.sub}`}
+                    /* "measured": run against THIS site. Figure, method line
+                       and date all read from content/a11y-receipts.json, so
+                       the next verification run moves this receipt. */
+                    tier="measured"
+                    date={a11y.measuredDate}
+                    methodHref="/accessibility/#receipts"
+                    methodLabel="evidence"
+                  />
+                )}
+                {calibration && (
+                  <Receipt
+                    value={calibration.value}
+                    label={calibration.label}
+                    tier="reported"
+                    date={calibration.date}
+                    methodHref="/colophon/#calibration"
+                    methodLabel="the record"
+                  />
+                )}
+              </div>
+            </div>
+          }
         />
       </div>
-
-      {/* ── Live Projects Showcase Strip ──────────────────────────────── */}
-      <section
-        id="showcase"
-        className={cn(
-          'relative isolate overflow-hidden',
-          // SP-4: ascending — 80px below lg (py-20 = 5rem) → 96px at lg
-          // (py-24 = 6rem). Honest scale (§7.4): the numeral now tracks the
-          // rendered size, so the ascent reads straight off the class.
-          'px-gutter py-20 lg:py-24',
-          'world-surface-cool',
-          'border-t border-cool-soft/40',
-        )}
-      >
-        {/* layered golden-hour depth — far tier, drifts on scroll, static under RM */}
-        <ParallaxWash depth="far" tone="teal" />
-        <div className="relative z-10 max-w-content mx-auto">
-          <Reveal variant="scene">
-            {/* Section label */}
-            <p className="font-mono text-label text-accent-ink uppercase tracking-label mb-3 flex items-center gap-2">
-              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
-              Shipped
-            </p>
-            {/* Heading */}
-            <h2 className="font-serif font-light text-step-4 ember mb-3 max-w-measure-heading leading-heading text-balance">
-              Built, shipped, and open.
-            </h2>
-            <p className="font-sans font-light text-body text-ink-muted mb-24 max-w-measure-lead text-pretty">
-              Real products on the open internet. Each one accessible by design.
-            </p>
-          </Reveal>
-
-          {/* Stat grid — ONE column below 480, 2-up to lg, then the 3×2
-              vertical-rule layout for editorial weight.
-              UP-23 (ui-polish 2026-08-01): at 375 the 2-up cell left a 106px
-              text box, so chips folded inside their pills (OPEN/SOURCE,
-              44PT/TARGETS), mono labels broke (TESTS/PASSING) and the serif
-              link wrapped mid-name — the page's one genuinely cheap moment.
-              The measured fold threshold is ~435px, so the collapse alone
-              covers the whole failing band and the phase's second prescription
-              (whitespace-nowrap on the pills) is a measured no-op above it —
-              deliberately NOT shipped, because TagPill is shared and a global
-              nowrap overflows ProjectCard at 320 and /work/claude-corp/ at 768
-              on "Multi-agent orchestration". Every width >=480 is byte-identical.
-              Nothing needed re-drawing for the 1-col case: the hairlines are
-              `gap-px` over the container's own background, which is
-              axis-agnostic — 2 horizontal seams + 1 vertical at 375 become 5
-              horizontal seams and none vertical, by the same mechanism.
-              This string is TWINNED with components/A11yReceipts.tsx, whose
-              comment records it as "home's showcase grammar verbatim" — the two
-              must move together or that claim goes false at mobile. */}
-          <div className="grid grid-cols-1 min-[480px]:grid-cols-2 lg:grid-cols-3 gap-px bg-cool-soft/30 border border-cool-soft/50 rounded-lg overflow-hidden shadow-md">
-            {showcaseChips.map(({ stat, label, project, href, tags }, i) => {
-              // C-22: split off the LAST word so it + the arrow can be bound in a
-              // whitespace-nowrap span — a soft-wrap opportunity sits before the
-              // inline-block arrow at 375 and NBSP can't suppress it. Earlier words
-              // still wrap. head keeps its trailing space.
-              const lastSpace = project.lastIndexOf(' ');
-              const head = lastSpace === -1 ? '' : project.slice(0, lastSpace + 1);
-              const tail = lastSpace === -1 ? project : project.slice(lastSpace + 1);
-              return (
-              <Reveal
-                key={project}
-                // MO-4: cap the stagger (site idiom, work/[slug]/page.tsx:42-44)
-                index={Math.min(i, 4)}
-                variant="depth"
-                className={cn(
-                  // C-22: reclaim base cell width (p-8→p-6) so the tag pills fit
-                  // their ~90px box at 375 without folding; md+ keeps p-7.
-                  'group relative flex flex-col bg-surface-mid p-6 md:p-7',
-                  // An odd trailing chip spans its 2-col / 3-col (lg+) row so no
-                  // bare grid cell shows through. With five chips the grid is a
-                  // clean 3×2 and `odd:` self-disables on its own.
-                  // UP-23: gated at min-[480px] so it cannot fire in the 1-col
-                  // band. Inert today (6 chips = even), but an item spanning 2
-                  // columns in a 1-col grid ADDS an implicit second column
-                  // (CSS Grid §8.5), so a future 7th chip would silently make
-                  // the phone band a lopsided 2-up. Zero pixels while even.
-                  'min-[480px]:last:odd:col-span-2 lg:last:odd:col-span-1',
-                  // L3-09: the whole chip is a quiet door — hover AND focus-within
-                  // warm the surface (the site's glass-card focus idiom), so a
-                  // keyboard visitor sees the same lift a pointer does.
-                  'transition-colors duration-base ease-out hover:bg-surface focus-within:bg-surface',
-                )}
-              >
-                <CountUpStat
-                  value={stat}
-                  emberClass={STAT_EMBER[i % STAT_EMBER.length]}
-                  label={label}
-                />
-                <p className="font-mono text-label text-sage-text uppercase tracking-label mb-4">
-                  {label}
-                </p>
-                {/* L3-09: project name is the chip's link; a stretched ::after
-                    makes the entire cell a tap target without changing a pixel of
-                    the composition. → is the site's internal-nav grammar. */}
-                <p className="font-serif text-prose text-ink mb-3">
-                  <Link
-                    href={href}
-                    aria-label={`${project} — ${stat} ${label}`}
-                    className="rounded-sm transition-colors duration-fast ease-out after:absolute after:inset-0 after:content-[''] group-hover:text-accent-text focus-visible:text-accent-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
-                  >
-                    {head}
-                    {/* C-22: last word + arrow bound so the → never strands. */}
-                    <span className="whitespace-nowrap">
-                      {tail}
-                      <span
-                        aria-hidden="true"
-                        className="ml-1.5 inline-block text-accent-text opacity-70 transition-transform duration-base ease-gh-glide group-hover:translate-x-0.5"
-                      >
-                        {'→'}
-                      </span>
-                    </span>
-                  </Link>
-                </p>
-                {/* UP-47 (ui-polish 2026-08-01): deliberately NOT bottom-anchored.
-                    The cell's slack is set by its grid row's tallest cell and is
-                    CONSERVED either way — `mt-auto` only chose to park it ABOVE the
-                    chips, which made a lone chip row sit level with its neighbours'
-                    SECOND row. `mt-1` over the link's own `mb-3` puts the chips a
-                    flat 16px under their link in every cell (flex-item margins do
-                    not collapse), which is the design authority's stated target; the
-                    slack then falls BELOW, trading a ragged interior bottom for a
-                    level top — the phase file pre-accepts exactly that. Cost, stated
-                    because it is real: +4px per grid row of section height (+8px at
-                    lg, +12px on phones). Magnitude correction for the record: the
-                    audit's "~80px dead band" is a deviceScaleFactor-2 IMAGE-pixel
-                    reading of a 43.39 CSS px gap; the true max anywhere is 55.44px,
-                    and the gap is already 0 at 320/480/640/768 — so this item is a
-                    no-op at those widths, and with UP-23's collapse in front of it a
-                    no-op at every width below 480. The three card components keep
-                    their own recorded mt-auto; this is the stat grid only. */}
-                <ul className="flex flex-wrap gap-1.5 mt-1" aria-label={`Tags for ${project}`}>
-                  {tags.map((tag) => (
-                    <li key={tag}>
-                      <TagPill>{tag}</TagPill>
-                    </li>
-                  ))}
-                </ul>
-              </Reveal>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
       {/* ── The Flagship Room ─────────────────────────────────────────
           C2 (THE ROOM Phase C · board 01, panes A + C). The homepage's ONE
@@ -934,9 +832,13 @@ export default function HomePage() {
 
       </ContentReveal>
 
-      {/* The lit windows (R4/BP6 · P01) — the door's night reveal, bound to the
-          showcase strip's own "five live" claim (one source with the hero
-          sentence; DECISIONS §S). Height-0 row → zero layout, CLS 0.
+      {/* The lit windows (R4/BP6 · P01) — the door's night reveal. Its lit map
+          was bound to the showcase strip's hrefs; C4 retired that strip, so the
+          binding moved DOWN to the work index — the surviving list of the five,
+          which this page actually renders (`workIndex[].lit`, declared beside
+          the rows). Same four lit, same one dark, byte-identical output; what
+          changed is which visible list it can never drift from.
+          Height-0 row → zero layout, CLS 0.
           OUTSIDE <ContentReveal> on purpose (batch-skeptic HIGH): the reveal
           wrapper's persistent inline transform creates a stacking context that
           let the footer paint AND hit-test above the windows on desktop —
@@ -945,7 +847,7 @@ export default function HomePage() {
           else changes. */}
       <LitWindows
         deliverables={deliverables}
-        litHrefs={showcaseChips.map((c) => c.href)}
+        litHrefs={workIndex.filter((r) => r.lit).map((r) => r.href)}
       />
     </>
   );

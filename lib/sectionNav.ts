@@ -44,10 +44,11 @@
  *     its own table of contents, or print one label twice in the persistent
  *     chrome pointing at two different targets.
  *
- * Curation, not a dump: home carries `div#hero` and `section#showcase` — the
- * latter with a real name ("Shipped") — and lists neither, so the index has
+ * Curation, not a dump: home carried `div#hero` and `section#showcase` — the
+ * latter with a real name ("Shipped") — and listed neither, so the index has
  * always meant "this page's principal sections". A back-link / CTA closer is
- * chrome, not a section.
+ * chrome, not a section. (`#showcase` was retired outright by THE ROOM Phase
+ * C; `#hero` remains the one curated-out band on home.)
  *
  * hrefs are route-absolute (`/about/#method`, matching home's `/#work`) so one
  * grammar covers both same-page and cross-page entries and next/link resolves
@@ -210,17 +211,25 @@ export const UNINDEXED_ROUTES: readonly string[] = Object.freeze([
 
 /**
  * Bands that carry an id but are deliberately kept OUT of the index — the
- * curation, written down. Home's `#showcase` (the "Shipped" strip) has been
- * unlisted since the index shipped, and `#hero` likewise; the index has always
- * meant "this page's principal sections", not "every anchor". `#hero` is a
- * <div>, not a <section>, which is why the guard's band scan matches both.
+ * curation, written down. `#hero` has been unlisted since the index shipped;
+ * the index has always meant "this page's principal sections", not "every
+ * anchor". `#hero` is a <div>, not a <section>, which is why the guard's band
+ * scan matches both.
  *
  * The built-HTML guard asserts that the id'd bands on a route are exactly
  * (mapped ∪ this list), so a NEW id'd band cannot join a page without someone
  * deciding, in writing, whether it belongs in the index.
+ *
+ * THE ROOM Phase C / C4: `showcase` LEFT this list. It is not a demotion from
+ * "unindexed" to something quieter — the band does not exist any more, its five
+ * stat chips having become three receipts inside `#hero`. The list must shrink
+ * with it, because T4 asserts the declared ids in BOTH directions: an id
+ * declared here that the page no longer renders fails the guard just as loudly
+ * as an undeclared band that appears. The brief for this phase expected
+ * `#showcase` to stay declared; the guard is right and the brief was not.
  */
 export const UNINDEXED_SECTION_IDS: Record<string, readonly string[]> = Object.freeze({
-  '/': Object.freeze(['hero', 'showcase']),
+  '/': Object.freeze(['hero']),
 });
 
 export { ROUTE_SECTIONS };

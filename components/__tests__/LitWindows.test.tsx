@@ -1,7 +1,8 @@
 /**
  * The lit windows (R4/BP6 · P01) — component + source contract.
  * One labeled, enterable link per work in declared DOM order; the lit map bound to
- * the passed litHrefs (the showcase strip's own claim); the dark window
+ * the passed litHrefs (the work index's own `lit` flags since THE ROOM Phase C /
+ * C4 — the showcase strip that used to carry them is retired); the dark window
  * enterable and plainly named; visibility/physics CSS-owned (dark-only gate,
  * --day-night rest fallback, no keyframes, 44px hits).
  */
@@ -14,9 +15,11 @@ import { cleanup, render, screen } from '@testing-library/react';
 import { LitWindows } from '@/components/LitWindows';
 import { getDeliverables } from '@/lib/content';
 
-// Mirrors what app/page.tsx passes: showcaseChips.map(c => c.href). Mutual Mesh
-// was withdrawn 2026-08-18, so the strip carries four project chips; Dashboard
-// has never had one, which is why it is the window that stays dark.
+// Mirrors what app/page.tsx passes: workIndex.filter(r => r.lit).map(r => r.href).
+// Mutual Mesh was withdrawn 2026-08-18, so four of the five are lit; Dashboard
+// has never been one of them, which is why it is the window that stays dark.
+// (Before C4 the same four arrived as showcaseChips.map(c => c.href) — the
+// source moved, the set did not.)
 const LIT = [
   '/work/flagstone/',
   '/work/claude-corp/',

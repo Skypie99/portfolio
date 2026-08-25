@@ -11,10 +11,13 @@ import { signatureFor } from '@/lib/signature';
  * web stays dark. WM-3's seat completed: dusk at the door, and what the dusk
  * reveals.
  *
- * The lit map is BOUND to the hero sentence's own claim: the page passes the
- * showcase strip's hrefs as `litHrefs` (the "all five live on the open web"
- * rendered as data), so the sentence, the strip, and the windows can never
- * disagree — one source, edited together (DECISIONS §S delegation record).
+ * The lit map is BOUND to a list the page actually renders, so the claim and
+ * the windows can never disagree — one source, edited together (DECISIONS §S
+ * delegation record). That list was the showcase strip's hrefs; THE ROOM Phase
+ * C (C4) retired the strip, and the binding moved DOWN to the work index
+ * (`workIndex[].lit` in app/page.tsx), which is the surviving list of the five.
+ * Same four lit, same one dark — what changed is which visible list this can
+ * never drift from.
  *
  * Five real links, five honest tab stops (the pitch's named price), 44px hit
  * areas, plain-fact accessible names. Visibility is CSS-owned: dark register
