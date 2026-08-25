@@ -136,12 +136,14 @@
      by the design system doc. Unconsumed until the Receipt component (A15)
      is wired into a page (Phase C+). */
   --rgb-receipt:      247 243 233;
-  /* --rgb-receipt-rule was specified only qualitatively ("pine-leaning
-     hairline") — no exact triplet given. Derived here as --rgb-line blended
-     ~25% toward --rgb-cool-deep (pine), cooler/greener than the standard
-     bone hairline so the receipt's rule reads as its own stock. Confirm
-     visually once Receipt actually renders (Phase C+); not guard-pinned. */
-  --rgb-receipt-rule: 170 186 170;
+  /* Corrected against the approved system-sheet board (the A-phase gate,
+     mockups/04-system-sheet.html) — its embedded receipt-rule swatch is
+     `66 122 111`, i.e. --rgb-cool verbatim, not a blend. My first pass here
+     (before comparing against the board) derived a much lighter guess from
+     --rgb-line, since the design-system doc only described this
+     qualitatively ("pine-leaning hairline"). The board is authoritative:
+     the rule is simply pine, full strength. */
+  --rgb-receipt-rule: 66 122 111;
 
   /* Phase A (A12) — .ember-teal/-gold/-moss re-based off 6 hardcoded hex
      literals (with hand-written dark twins) onto role triplets, matching
@@ -486,9 +488,10 @@ html.dark {
 
   /* Phase A — dark receipt stock. Value given by the design system doc. */
   --rgb-receipt:      26 31 30;
-  /* Derived (see the light comment above) — --rgb-line(dark) blended ~25%
-     toward --rgb-cool-deep(dark-era pine equivalent). */
-  --rgb-receipt-rule: 45 61 60;
+  /* Corrected against the approved board (see the light comment above) —
+     dark receipt-rule is `111 191 194`, i.e. --rgb-cool (dark, "lagoon
+     lifted") verbatim. */
+  --rgb-receipt-rule: 111 191 194;
 
   /* Phase A (A12) — dark twins for the ember-teal/gold/moss triplets above,
      exact hexes converted (were separate html.dark .ember-* rules). */

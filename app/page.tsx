@@ -587,11 +587,17 @@ export default function HomePage() {
                       aria-label={`View credential: ${c.title} from ${c.issuer} (opens in new tab)`}
                       /* L5-07: px/py + negative margins lift the tap box with
                          zero layout shift. F7-1 (a11y 07-31): py-1 gave ~23px;
-                         py-[15px] reaches the house 44 floor. Measured room to
-                         the nearest interactive neighbour is 123px (1280) /
-                         170px (375), so the grown box still collides with
-                         nothing. */
-                      className="px-1 py-[15px] -mx-1 -my-[15px] font-mono text-meta tracking-label uppercase text-accent-text inline-flex items-center gap-1 transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 shrink-0"
+                         py-[15px] reached the house 44 floor at 44.39px.
+                         Phase A (A9, gate-driven): the approved system-sheet
+                         board calls this exact "15px oddball" out by name as
+                         a --space-4 (16px) migration; py-4 lands at ~46px,
+                         still comfortably past the floor, with 1px more room
+                         each side than the original hand-tuned value — a
+                         reachable-through-tokens value, not a precision
+                         regression. Measured room to the nearest interactive
+                         neighbour is 123px (1280) / 170px (375), so the
+                         grown box still collides with nothing. */
+                      className="px-1 py-4 -mx-1 -my-4 font-mono text-meta tracking-label uppercase text-accent-text inline-flex items-center gap-1 transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 shrink-0"
                     >
                       View
                       {/* CO-8: ↗ external-link glyph (was the internal →) */}
@@ -608,7 +614,10 @@ export default function HomePage() {
           <Reveal className="mt-16">
             <Link
               href="/certificates/"
-              className="group inline-flex items-center gap-1.5 px-1 py-[15px] -mx-1 -my-[15px] rounded-sm font-mono text-meta tracking-label uppercase text-accent-text transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
+              // Phase A (A9, gate-driven): same py-[15px] -> py-4 migration as
+              // the "View" link above — the approved board names this exact
+              // 15px value as a --space-4 oddball.
+              className="group inline-flex items-center gap-1.5 px-1 py-4 -mx-1 -my-4 rounded-sm font-mono text-meta tracking-label uppercase text-accent-text transition-transform duration-fast ease-out hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
             >
               See the credential badges
               <span aria-hidden="true">{'→'}</span>
