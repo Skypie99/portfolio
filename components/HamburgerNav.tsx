@@ -26,10 +26,14 @@ type NavItem = { href: string; label: string };
 const NAV_ITEMS: NavItem[] = [
   { href: '/',              label: 'Home'         },
   { href: '/#work',         label: 'The Work'        },
-  // CO-9: A Brief Account before Credentials — matches the rail's order and the
-  // homepage physical order (#work → #about → #certificates).
+  // CO-9: A Brief Account before Credentials — matched the rail's order and the
+  // homepage physical order (#work → #about → #certificates). THE ROOM Phase C
+  // (C6) demoted the homepage credentials BAND to a line inside A Brief
+  // Account, so `/#certificates` no longer exists as an anchor and this entry
+  // now points at the dedicated page it always described. The order is
+  // unchanged, and so is the label.
   { href: '/#about',        label: 'A Brief Account' },
-  { href: '/#certificates', label: 'Credentials'     },
+  { href: '/certificates/', label: 'Credentials'     },
   { href: '/blog/',         label: 'Notes'           },
   // B5 (Phase B, THE ROOM G1.3): promoted out of footer-only reach — until
   // now neither the rail nor this menu carried a direct link, so /accessibility/

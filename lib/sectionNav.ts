@@ -90,7 +90,6 @@ const ROUTE_SECTIONS = {
     { id: 'record', label: 'The Record', href: '/#record' },
     { id: 'how-i-work', label: 'How the work gets made', href: '/#how-i-work' },
     { id: 'about', label: 'A Brief Account', href: '/#about' },
-    { id: 'certificates', label: 'Credentials', href: '/#certificates' },
     { id: 'contact', label: "Let’s talk", href: '/#contact' },
   ],
 
