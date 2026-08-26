@@ -5,7 +5,7 @@ Four programs (ui-polish, R4, a11y-QA, THE ROOM A–I) accumulated roughly **fif
 
 Everything this program measured is **Chromium**. Every row below is something Chromium structurally cannot answer.
 
-**This is now live.** THE ROOM shipped 2026-08-26 (`main` `41ae4db`) — everything below is on the real site, not a preview. Chromium has already confirmed, against production: 25 URLs all 200 · 17 routes with zero console errors · exactly one `<h1>` on 16 of 17 · axe clean everywhere except `/archive/`'s sign-in card (🔴 9, a private page). **Every row below is something Chromium structurally cannot answer, on the live site.**
+**This is now live.** THE ROOM shipped 2026-08-26 (`main` `a58ecf1`) — everything below is on the real site, not a preview. Chromium has already confirmed, against production: 25 URLs all 200 · 17 routes with zero console errors · exactly one `<h1>` on 16 of 17 · axe clean everywhere except `/archive/`'s sign-in card (🔴 9, a private page). **Every row below is something Chromium structurally cannot answer, on the live site.**
 
 **Setup:** iPhone, Safari, `skypistudio.com`. Mac for Part 3. Toggle shorthand — **VO** VoiceOver · **AXT** Larger Text (top-3 size) · **RT** Reduce Transparency · **RM** Reduce Motion.
 
