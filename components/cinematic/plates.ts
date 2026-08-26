@@ -457,25 +457,65 @@ function swapExt(src: string, ext: string): string {
 }
 
 /**
+ * Full-tier encode width per plane id (mirrors scripts/encode-planes.mjs's
+ * PLANES manifest) + whether a half-resolution "-mobile" variant exists
+ * (scripts/encode-planes-mobile.mjs — only the 4 planes actually used in
+ * ACTIVE_SCENES get one; the dropped DAWN scene + static-only sky/fg planes
+ * don't need it, nothing shrinks them further). Used to build accurate `w`
+ * descriptors for the responsive srcset below.
+ */
+const FULL_WIDTH: Record<string, number> = {
+  'dawn-sky': 1536,
+  'mid-sky': 1536,
+  'arrival-sky': 1536,
+  'dawn-mid': 2048,
+  'mid-mid': 2048,
+  'arrival-cliff': 2048,
+  'dawn-fg': 2304,
+  'mid-fg': 2304,
+  'arrival-fg': 2304,
+};
+
+const MOBILE_WIDTH: Record<string, number> = {
+  'mid-sky': 768,
+  'mid-mid': 1024,
+  'arrival-cliff': 1024,
+  'mid-fg': 1152,
+};
+
+/**
  * The responsive source set for a plane's <picture>:
- *   { avif, webp } → modern formats (AVIF primary, WebP fallback), derived from
- *                    the plateSrc stem. ~all 2026 browsers take one or the other,
- *                    alpha intact.
+ *   { avifSrcSet, webpSrcSet } → width-descriptor srcsets ("…-mobile.avif 768w,
+ *                    …avif 1536w") for the 4 live-scene planes that have a
+ *                    mobile tier; a single-width srcset (just the "w" hint,
+ *                    no smaller alternative) for every other plane, so the
+ *                    <source>/sizes="100vw" contract is uniform either way.
  *   { fallback }   → the <img> src (WebP for real art; the SVG for placeholders).
- * For placeholders (grey SVGs) there are no raster variants — avif/webp are null
- * and the SVG is served directly.
+ * For placeholders (grey SVGs) there are no raster variants — both srcsets are
+ * null and the SVG is served directly.
  */
 export function sourcesFor(plate: Plate): {
-  avif: string | null;
-  webp: string | null;
+  avifSrcSet: string | null;
+  webpSrcSet: string | null;
   fallback: string;
 } {
   if (USE_PLACEHOLDERS) {
-    return { avif: null, webp: null, fallback: plate.placeholderSrc };
+    return { avifSrcSet: null, webpSrcSet: null, fallback: plate.placeholderSrc };
   }
+  const full = FULL_WIDTH[plate.id];
+  const mobile = MOBILE_WIDTH[plate.id];
+  const buildSrcSet = (ext: string) => {
+    const fullEntry = `${swapExt(plate.plateSrc, ext)} ${full ?? 2048}w`;
+    if (!mobile) return fullEntry;
+    const mobilePath = swapExt(plate.plateSrc, ext).replace(new RegExp(`\.${ext}$`), `-mobile.${ext}`);
+    // Smaller width FIRST — srcset order doesn't matter to the browser (it
+    // picks by width/DPR math against `sizes`), but listing mobile-first
+    // matches reading order for anyone diffing/reviewing this file.
+    return `${mobilePath} ${mobile}w, ${fullEntry}`;
+  };
   return {
-    avif: swapExt(plate.plateSrc, 'avif'),
-    webp: swapExt(plate.plateSrc, 'webp'),
+    avifSrcSet: buildSrcSet('avif'),
+    webpSrcSet: buildSrcSet('webp'),
     fallback: swapExt(plate.plateSrc, 'webp'),
   };
 }
