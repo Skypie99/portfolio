@@ -2919,6 +2919,47 @@ html.dark ::selection {
   background: linear-gradient(180deg, #847f97 0%, #9a7a6e 50%, #5e3e32 100%);
 }
 
+/* -- .method-seg (K5, THE ROOM Phase J 2026-08-26) — UP-14c's no-mid-token
+   break, with a floor under it.
+
+   UP-14c (ui-polish 2026-08-01) made every word of the /accessibility/ method
+   line its own `white-space: nowrap` span so a hyphenated axe rule name can
+   never split as "COLOR-/CONTRAST". Correct, and its own docblock measured the
+   widest unbreakable unit at 231.3px against a 256px column at 320 — at 100%
+   text. At 200% root text on a 375px screen that unit is ~462px, and because
+   html/body carry `overflow-x: clip` (the full-bleed guard) the tail is CUT,
+   not scrollable: 151.6px of the line unreachable, measured by
+   build-reports/J_zoom200-census.mjs.
+
+   No CSS expresses "nowrap unless it cannot fit". The closest correct thing is
+   to release nowrap when the column has become narrow RELATIVE TO ITS OWN TYPE
+   — which is exactly what an `em` length inside a container query measures,
+   because `em` there resolves against the container's font size rather than the
+   browser's initial one. (A media query's `em` does NOT: it is pinned to the
+   initial font size and is blind to root-font scaling. That distinction is the
+   whole mechanism.)
+
+   Measured against this line's real geometry — 311px column, 12px mono meta:
+     100% text → 311/12  ≈ 25.9em  → nowrap KEPT   (unit 231px fits 311px)
+     125% text → 311/15  ≈ 20.7em  → nowrap KEPT   (289px fits 311px)
+     150% text → 311/18  ≈ 17.3em  → RELEASED      (347px would clip)
+     200% text → 311/24  ≈ 13.0em  → RELEASED      (462px was clipping)
+   So the contract holds at every size where it CAN hold, and yields only where
+   the alternative is words the reader cannot reach. Sky ruled the trade
+   (2026-08-26): a hyphen break costs less than lost text. -- */
+.method-line {
+  container-type: inline-size;
+  container-name: methodline;
+}
+.method-seg {
+  white-space: nowrap;
+}
+@container methodline (max-width: 20em) {
+  .method-seg {
+    white-space: normal;
+  }
+}
+
 /* -- A SCENE GROUP: one beat's full depth stack + its sun, stacked full-bleed.
    GSAP cross-dissolves the whole group's opacity on the dissolve windows so the
    three beats fade through one another (no cut). Each group is its own stacking
