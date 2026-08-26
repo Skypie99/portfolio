@@ -50,7 +50,8 @@ export function Exhibit({ children, scene, theme, capturedDate, claim, leaderLin
       </div>
       <figcaption className="flex flex-col gap-1">
         <p className="font-mono text-meta tracking-label uppercase text-text-meta">
-          {`FIG · ${scene} · ${theme} · captured ${capturedDate}`}
+          {`FIG · ${scene} · ${theme} · captured `}
+          <time dateTime={capturedDate}>{capturedDate}</time>
         </p>
         <p className="font-sans text-body-sm text-charcoal">{claim}</p>
       </figcaption>

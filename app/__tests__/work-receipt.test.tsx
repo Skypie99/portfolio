@@ -58,6 +58,14 @@ describe('FlagstoneTestReceipt (T7 / SK-01 receipt)', () => {
     expect(text).toMatch(/0 failing/i);
   });
 
+  it('wraps the measurement date in a real <time> element (H1)', () => {
+    const { container } = render(<FlagstoneTestReceipt />);
+    const time = container.querySelector('time');
+    expect(time).not.toBeNull();
+    expect(time).toHaveAttribute('dateTime', '2026-08-16');
+    expect(time?.textContent).toBe('2026-08-16');
+  });
+
   it('fabricates no CI URL or receipts artifact', () => {
     const { container } = render(<FlagstoneTestReceipt />);
     // no external link masquerading as a real, clickable proof

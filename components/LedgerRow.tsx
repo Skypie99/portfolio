@@ -44,7 +44,7 @@ export function LedgerRow({ numeral, title, date, open = false, className }: Led
         </span>
       ) : date ? (
         <span className="ml-auto font-mono text-meta tracking-label uppercase text-text-meta tabular-nums">
-          {date}
+          <time dateTime={date}>{date}</time>
         </span>
       ) : null}
     </li>

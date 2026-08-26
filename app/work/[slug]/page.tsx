@@ -68,7 +68,7 @@ export function FlagstoneTestReceipt() {
             href="#flagstone-test-count-method"
             className="link-draw method-draw text-accent-text hover:text-accent-text"
           >
-            measured 2026-08-16, method
+            measured <time dateTime="2026-08-16">2026-08-16</time>, method
           </a>
         </p>
         {/* leading-[1.7]: a singular tuned value on this mono meta caption —
