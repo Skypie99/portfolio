@@ -167,6 +167,15 @@ export const DeliverableSchema = z.object({
    *  Kept to 48 chars so the card's inscription line does not wrap differently
    *  per project and break the equal-height grid (TY-2 / ProjectCard mt-auto). */
   status: z.string().min(4).max(48),
+  /** THE ROOM/Phase E (E2) — optional ISO date the project's live/primary
+   *  link was last confirmed to resolve (an HTTP check, not a content or
+   *  a11y audit — see /work/'s status line for that distinction). Absent =
+   *  not yet checked this way. Deliberately separate from `status`, which
+   *  stays Sky's protected wording. */
+  verifiedDate: z
+    .string()
+    .regex(/^\d{4}-\d{2}-\d{2}$/, 'must be ISO date YYYY-MM-DD')
+    .optional(),
   tech: z.array(z.string().min(1).max(40)).min(1).max(8),
   year: z
     .number()
@@ -303,6 +312,20 @@ const BlogFigureSchema = ImageSchema.extend({
   lqip: z.string().optional(),
   caption: z.string().max(160).optional(),
   afterHeading: z.string().min(2).max(80).optional(),
+  /** THE ROOM/Phase E (E5) — optional dark-mode twin. Mirrors the FIELD
+   *  SHAPE of ShotImageSchema's ThemedDarkSchema (src/avif/webp/lqip), not
+   *  its path rule or video support: blog figures are hand-placed under
+   *  /images/, never sourced from the capture factory's /showcase/ tree,
+   *  and never carry motion. Absent (every figure today) → the light `src`
+   *  renders in both themes, byte-identical to pre-E5 output. */
+  dark: z
+    .object({
+      src: z.string().startsWith('/images/').optional(),
+      avif: z.string().startsWith('/images/').optional(),
+      webp: z.string().startsWith('/images/').optional(),
+      lqip: z.string().optional(),
+    })
+    .optional(),
 });
 
 export const BlogPostSchema = z.object({
