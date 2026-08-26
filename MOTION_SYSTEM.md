@@ -360,3 +360,30 @@ no new imagery), **D4** (floor handoff), and the **"AI Builder" identity** every
   keyframe ends at 1 and always has — "0.9" described the Hero's cue).
 - **Identity:** the badge + OG card + JSON-LD jobTitle + all page descriptions read
   "AI Builder"/"AI builder" (Title Case on the chip + jobTitle, lowercase in prose).
+
+## §16 — THE ROOM / Phase G (2026-08-25) — three additions, and no more
+
+The plan's motion clause amends this constitution exactly three times. Everything
+below is CSS or the existing `lib/motion.ts` hooks — no animation library was
+added, the protected cinematic is byte-untouched (zero `components/cinematic/**`
+files and zero `.cdesert-*` / `intro-cue` / `runway` rules changed), and every
+addition ships its reduced-motion behaviour in the same commit.
+
+| Move | Where | Motion | Reduced motion |
+|---|---|---|---|
+| **G1 · the dusk-turn** | `ThemeToggle.tsx` writes `data-theme-turn`; the rules live in `globals.css` beside the route dissolve | the theme flip DISSOLVES THROUGH the world's own dusk. The two rooms are sequenced, not blended — the room you leave is gone by 42%, the room you enter begins at 58% — and between them the page passes through a full-viewport sky painted statically on `::view-transition`: `--sky-dusk-1/2/3 → --sky-day-4 → --sky-dusk-4` going dark (indigo-plum → wine → ember horizon → night), the light room's own warm family going back. Explicit toggle only, never on scroll, never ambient. 420ms (`--dur-transition`), `--ease-gh-glide`, **opacity is the only animated property** | **instant flip, no sweep.** Three independent gates: `ThemeToggle` never calls `startViewTransition` under RM (so no pseudo tree exists and the sky is never painted), the whole CSS block sits inside `no-preference`, and the pre-existing `reduce` guard snaps the root snapshots to 0.01ms |
+| **G2 · the method underline** | `.method-pair` / `.method-draw` in `globals.css`; `Receipt`, `A11yReceipts`, `FlagstoneTestReceipt` | every measured number underlines to its method on **hover and focus-within** — the figure and the command that reproduces it behave as one instrument. 180ms (`--dur-fast`), line only, never colour. A rider on `link-draw`, exactly the `.link-draw-group` idiom | the method link is **ordinary always-visible text** in every state, so touch and RM lose nothing; the global floor collapses the draw to an instant state change |
+| **G3 · the settle audit** | the duration ramp itself | not a new move — the ramp regained the seventh rung the approved system sheet names (`--dur-settle: 560ms`) and four literals joined it: `.settle-heading`, `.pr-stone-settle` (the flagship's "stone laid"), `.pr-hero-lift`'s offset, and the `:target` arrival. One rendered value changed: 300 → 280ms | unchanged — every one of them already sat inside `no-preference` |
+
+**The ramp is now guarded.** `token-parity.test.ts` has never covered durations,
+which is how the strays accumulated beside a tokenised ramp with nothing failing.
+`lib/__tests__/duration-ramp.test.ts` closes it: every authored duration in
+`globals.css` must be a ramp token or one of four enumerated survivors carrying
+its reason, and the survivor list is itself guarded against rot.
+
+**Left alone, on purpose.** `intro-cue-rise`'s 600ms entrance and its 700ms delay
+are still literals: PROTECT-66 sanctions the intro cue's **exit** duration only
+(already `var(--dur-fast)`), and two refinements of exactly this kind are on
+record as blocked governance violations, reverted before merge. `app/archive/**`
+is the Studio Archive art surface and is outside this ramp entirely.
+
