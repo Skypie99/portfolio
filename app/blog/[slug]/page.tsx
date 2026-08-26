@@ -32,11 +32,68 @@ function toCategory(id: string): CaseStudyCategory {
   return map[id] ?? 'flagstone';
 }
 
+/** A light or dark figure variant — the fields ProseFigure needs to paint one
+ *  <picture> stack. Shared by the base figure and its optional `dark` twin. */
+type ProseFigureVariant = { src?: string; avif?: string; webp?: string; lqip?: string };
+
+/** One variant's LQIP-under-picture stack (THE ROOM/Phase E, E5) — extracted
+ *  so the light and dark branches below render identically, never drift. */
+function ProseFigureVariantStack({
+  variant,
+  alt,
+  width,
+  height,
+}: {
+  variant: ProseFigureVariant;
+  alt: string;
+  width?: number;
+  height?: number;
+}) {
+  if (!variant.src) return null;
+  return (
+    <>
+      {variant.lqip && (
+        <div
+          aria-hidden="true"
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url("${variant.lqip}")`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
+      )}
+      <picture>
+        {variant.avif && <source type="image/avif" srcSet={variant.avif} />}
+        {variant.webp && <source type="image/webp" srcSet={variant.webp} />}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={variant.src}
+          alt={alt}
+          width={width}
+          height={height}
+          loading="lazy"
+          decoding="async"
+          className="relative h-full w-full object-cover"
+        />
+      </picture>
+    </>
+  );
+}
+
 /**
  * ProseFigure (L3-06 / S12) — one product figure in the essay, in a reserved-aspect
  * well so it costs zero CLS, shipped through the site's AVIF/WebP <picture> +
  * inline-LQIP grammar (mirrors ProductReveal's StaticShot). Page-level, not coupled
  * into the shared renderer — the page splices it in at the figure's `afterHeading`.
+ *
+ * THE ROOM/Phase E (E5): an optional `dark` twin (BlogFigureSchema) renders via
+ * plain `dark:` visibility classes, not ThemedShowcase's client-side arm/dissolve
+ * pipeline — that machinery is built for absolutely-positioned hero/card wells;
+ * an in-essay figure is ordinary document flow and doesn't warrant converting
+ * this server component to a client one. No figure ships a dark twin yet, so
+ * the no-dark branch below is exercised today and is byte-identical to before.
  */
 function ProseFigure({ figure }: { figure: NonNullable<BlogPost['figure']> }) {
   const ratio = figure.width && figure.height ? `${figure.width} / ${figure.height}` : '1315 / 713';
@@ -46,32 +103,18 @@ function ProseFigure({ figure }: { figure: NonNullable<BlogPost['figure']> }) {
         className="relative overflow-hidden rounded-md border border-border-decorative"
         style={{ aspectRatio: ratio }}
       >
-        {figure.lqip && (
-          <div
-            aria-hidden="true"
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `url("${figure.lqip}")`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-            }}
-          />
+        {figure.dark?.src ? (
+          <>
+            <div className="dark:hidden">
+              <ProseFigureVariantStack variant={figure} alt={figure.alt} width={figure.width} height={figure.height} />
+            </div>
+            <div className="hidden dark:block">
+              <ProseFigureVariantStack variant={figure.dark} alt={figure.alt} width={figure.width} height={figure.height} />
+            </div>
+          </>
+        ) : (
+          <ProseFigureVariantStack variant={figure} alt={figure.alt} width={figure.width} height={figure.height} />
         )}
-        <picture>
-          {figure.avif && <source type="image/avif" srcSet={figure.avif} />}
-          {figure.webp && <source type="image/webp" srcSet={figure.webp} />}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={figure.src}
-            alt={figure.alt}
-            width={figure.width}
-            height={figure.height}
-            loading="lazy"
-            decoding="async"
-            className="relative h-full w-full object-cover"
-          />
-        </picture>
       </div>
       {figure.caption && (
         /* UP-14(a) (ui-polish 2026-08-01): text-pretty — UI_SYSTEM §Micro-typo

@@ -303,6 +303,20 @@ const BlogFigureSchema = ImageSchema.extend({
   lqip: z.string().optional(),
   caption: z.string().max(160).optional(),
   afterHeading: z.string().min(2).max(80).optional(),
+  /** THE ROOM/Phase E (E5) — optional dark-mode twin. Mirrors the FIELD
+   *  SHAPE of ShotImageSchema's ThemedDarkSchema (src/avif/webp/lqip), not
+   *  its path rule or video support: blog figures are hand-placed under
+   *  /images/, never sourced from the capture factory's /showcase/ tree,
+   *  and never carry motion. Absent (every figure today) → the light `src`
+   *  renders in both themes, byte-identical to pre-E5 output. */
+  dark: z
+    .object({
+      src: z.string().startsWith('/images/').optional(),
+      avif: z.string().startsWith('/images/').optional(),
+      webp: z.string().startsWith('/images/').optional(),
+      lqip: z.string().optional(),
+    })
+    .optional(),
 });
 
 export const BlogPostSchema = z.object({
