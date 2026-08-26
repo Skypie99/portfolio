@@ -113,6 +113,8 @@ export function GalleryWall({ deliverables }: { deliverables: Deliverable[] }) {
                   category={toCategory(d.id)}
                   description={d.summary}
                   href={`/work/${d.id}/`}
+                  status={d.status}
+                  verifiedDate={d.verifiedDate}
                   media={cardMedia(d)}
                   links={d.links}
                   index={i}

@@ -14,6 +14,15 @@ type CaseStudyCardProps = {
   category: 'flagstone' | 'claude-corp' | 'dashboard' | 'prompt-library' | 'ghost';
   description: string;
   href: string;
+  /** THE ROOM/Phase E (E2) — the deliverable's own protected status string,
+   *  rendered exactly as ProjectCard renders `d.status`: un-uppercased,
+   *  same classes, no reword. Omit to render nothing (existing callers that
+   *  don't pass it are unaffected). */
+  status?: string;
+  /** THE ROOM/Phase E (E2) — ISO date the live link was last confirmed to
+   *  resolve (an HTTP check; see DeliverableSchema.verifiedDate). Renders
+   *  only when `status` is also present. */
+  verifiedDate?: string;
   /** Product media for the band (Show-the-work 2026-06-04). Omit → the
    *  golden-hour placeholder; pass `{ src }` to drop in a real screenshot. */
   media?: ProductRevealMedia;
@@ -42,7 +51,7 @@ type CaseStudyCardProps = {
  * → --mx/--my). The card is no longer one whole link — the title and each action
  * are their own focus targets (no nested anchors).
  */
-export function CaseStudyCard({ title, category, description, href, media, links, index = 0, wide = false, mediaSide = 'left', className }: CaseStudyCardProps) {
+export function CaseStudyCard({ title, category, description, href, status, verifiedDate, media, links, index = 0, wide = false, mediaSide = 'left', className }: CaseStudyCardProps) {
   const numeral = String(index + 1).padStart(2, '0');
   const githubLink = links?.find((l) => l.type === 'github');
   const demoLink = links?.find((l) => l.type === 'demo');
@@ -93,6 +102,20 @@ export function CaseStudyCard({ title, category, description, href, media, links
         </span>
 
         <div className="mt-auto flex flex-col gap-4">
+          {/* THE ROOM/Phase E (E2): /work/ rendered only the summary, less
+              than the homepage cards (ProjectCard:102 shows d.status). Same
+              classes as that line, verbatim — un-uppercased, same tier, so
+              status reads as its own field rather than shouting a kicker.
+              verifiedDate is new to this card entirely: a second, equally
+              quiet line, only when status is present. */}
+          {status && (
+            <div className="flex flex-col gap-1">
+              <p className="font-mono text-meta text-text-meta">{status}</p>
+              {verifiedDate && (
+                <p className="font-mono text-meta text-text-meta">{`Verified ${verifiedDate}`}</p>
+              )}
+            </div>
+          )}
           <h3 className="font-serif font-light text-card-title text-ink">
             <Link
               href={href}

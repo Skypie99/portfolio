@@ -167,6 +167,15 @@ export const DeliverableSchema = z.object({
    *  Kept to 48 chars so the card's inscription line does not wrap differently
    *  per project and break the equal-height grid (TY-2 / ProjectCard mt-auto). */
   status: z.string().min(4).max(48),
+  /** THE ROOM/Phase E (E2) — optional ISO date the project's live/primary
+   *  link was last confirmed to resolve (an HTTP check, not a content or
+   *  a11y audit — see /work/'s status line for that distinction). Absent =
+   *  not yet checked this way. Deliberately separate from `status`, which
+   *  stays Sky's protected wording. */
+  verifiedDate: z
+    .string()
+    .regex(/^\d{4}-\d{2}-\d{2}$/, 'must be ISO date YYYY-MM-DD')
+    .optional(),
   tech: z.array(z.string().min(1).max(40)).min(1).max(8),
   year: z
     .number()
