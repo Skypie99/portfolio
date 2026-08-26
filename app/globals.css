@@ -398,7 +398,10 @@
      ADDITIVE: every name here is NEW. A softened, CALM sibling of the
      locked landing's vocabulary — the intro's quint S-curve
      cubic-bezier(0.83,0,0.17,1) is studied but NEVER reused here.
-     Mirrored in tailwind.config.ts (ease-gh-* / duration-transition|scene).
+     The EASINGS are mirrored in tailwind.config.ts (ease-gh-*). The scene
+     and settle DURATION rungs deliberately are not: they are consumed only
+     as var(--dur-…) by hand-authored CSS in this file, so their Tailwind
+     keys had zero call sites and were removed (G3 — see the note there).
      Full reference + reduced-motion variants: MOTION_SYSTEM.md.
      ================================================================== */
   /* Golden-hour easings — the intro's "camera" weight, gentler. */
@@ -409,6 +412,15 @@
   /* Scene duration tier (beside --dur-fast/base/slow/reveal above). */
   --dur-transition: 420ms;   /* route-change crossfade */
   --dur-scene:      1200ms;  /* large section reveal — slower reads more cinematic */
+  /* THE ROOM / Phase G · G3 — the seventh rung the approved system sheet
+     names ("180 fast · 280 base · 520 slow · 900 reveal · 420 transition ·
+     1200 scene · NEW 560 settle", board 04, ratified 13_DECISIONS #2).
+     560ms was already in the sheet as a LITERAL on .settle-heading, carried
+     over from the framer tween that rule replaced; naming it is what makes
+     the ramp complete instead of "the ramp, plus one number". CSS-authored
+     surfaces only — see the note in tailwind.config.ts for why the scene and
+     settle tiers deliberately have no Tailwind mirror. */
+  --dur-settle:     560ms;   /* a heading arriving alone — longer tail than --dur-slow */
   /* Stagger rhythm. */
   --stagger-step:   80ms;    /* matches <Reveal index> today */
   --stagger-scene:  120ms;   /* larger choreographed sequences */
@@ -958,7 +970,10 @@ article h2[id]:target::before {
   article h2[id]:target::before {
     /* var(--ease-entrance): the site's arrivals DECELERATE in; ease-in made
        this the only element that accelerated into visibility (clockwork r1). */
-    animation: target-arrival 300ms var(--ease-entrance);
+    /* G3: 300ms was a stray between the base and slow rungs; it joins the
+       nearest tier. −20ms (7%) on a 2px gutter bar's fade — the arrival's
+       job is to say "this is the anchor you asked for", and it still does. */
+    animation: target-arrival var(--dur-base) var(--ease-entrance);
   }
 }
 @keyframes target-arrival {
@@ -1252,6 +1267,12 @@ html.reveal-rearm .reveal:not(.reveal-shown) {
    --dur-slow + 150ms delay       (HeroTitleSettle, same curve)
    --dur-reveal / --ease-out      (HeroImageSettle, was [0.22,1,0.36,1])
    ------------------------------------------------------------------ */
+/* G3 — this keyframe is intentionally driven at TWO named tiers, and that is
+   now a stated design fact rather than the accidental 560-vs-520 split it was:
+   .settle-heading is a route h1 arriving ALONE and takes the longer --dur-settle
+   tail; .hero-settle-title arrives as one beat of a composed hero and takes
+   --dur-slow plus its own offset. One gesture, two contexts, two rungs — no
+   longer one rung and one literal. */
 @keyframes settle-title {
   from {
     opacity: 0;
@@ -1279,10 +1300,17 @@ html.reveal-rearm .reveal:not(.reveal-shown) {
 }
 @media (prefers-reduced-motion: no-preference) {
   .settle-heading {
-    animation: settle-title 560ms var(--ease-entrance) both;
+    animation: settle-title var(--dur-settle) var(--ease-entrance) both;
   }
   .hero-settle-title {
     animation: settle-title var(--dur-slow) var(--ease-entrance) both;
+    /* G3 SURVIVOR, kept deliberately. 150ms is not a rung and there is no
+       delay tier above --stagger-scene (120ms). It is not rhythm — it is this
+       ONE composition's offset: the hero title, its image (--dur-reveal, no
+       delay) and the framed artifact (--dur-scene + --stagger-scene) are
+       choreographed against each other, and moving the title to 120ms would
+       retime a settled three-part arrival to satisfy a naming rule. The
+       system sheet's stray list (300 / 560 / 600 / 120) does not include it. */
     animation-delay: 150ms;
   }
   .hero-settle-img {
@@ -1332,7 +1360,10 @@ html.reveal-rearm .reveal:not(.reveal-shown) {
 }
 @media (prefers-reduced-motion: no-preference) {
   .pr-hero-lift {
-    animation: pr-hero-lift var(--dur-scene) var(--ease-gh-settle) 120ms both;
+    /* G3: the 120ms offset is exactly --stagger-scene, and semantically it
+       IS one — the hero is a short sequence of a few big blocks (world, then
+       frame) and this is the frame's beat in it. Same value, now named. */
+    animation: pr-hero-lift var(--dur-scene) var(--ease-gh-settle) var(--stagger-scene) both;
   }
 }
 
@@ -1354,7 +1385,15 @@ html.reveal-rearm .reveal:not(.reveal-shown) {
 }
 @media (prefers-reduced-motion: no-preference) {
   .pr-stone-settle {
-    animation: stone-laid-settle 180ms var(--ease-gh-settle) both;
+    /* G3: the codex's 180ms and the ramp's micro rung are the SAME number, so
+       this now reads from the rung — which is what makes "the flagship's one
+       loud beat is on the site's own ramp" checkable rather than a claim.
+       DELIBERATE COUPLING, stated because it is not free: if --dur-fast is
+       ever retuned, this settle moves with it and the citation to Flagstone's
+       own art-direction codex silently stops being true. lib/__tests__/
+       duration-ramp.test.ts pins --dur-fast at 180ms and names this rule in
+       its failure message, so that retune trips a test instead of drifting. */
+    animation: stone-laid-settle var(--dur-fast) var(--ease-gh-settle) both;
   }
 }
 
