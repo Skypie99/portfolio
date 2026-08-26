@@ -3,7 +3,6 @@ import Link from 'next/link';
 
 import { SettleHeading } from '@/components/HeroSettle';
 import { ContactEmail } from '@/components/ContactEmail';
-import { NumberedStep } from '@/components/NumberedStep';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { Reveal } from '@/components/Reveal';
 import { RunwayIdentity } from '@/components/RunwayIdentity';
@@ -37,8 +36,10 @@ export function generateMetadata(): Metadata {
 }
 
 /**
- * /about — F-07. Sky's story + "How I work" reuses the <NumberedStep />
- * component, then a "What I'm working on" block surfaces up to 3 deliverables
+ * /about — F-07. Sky's story. The #method band defers to the front page's
+ * canonical #how-i-work account (L4, 2026-08-26) rather than paraphrasing it;
+ * it no longer uses <NumberedStep />, which stays live on / and /colophon.
+ * After it, a "What I'm working on" block surfaces up to 3 deliverables
  * — the featured one first, then year-desc — linked into /work/[slug].
  * Restrained ffern-style copy — short sentences, no fluff.
  *
@@ -145,42 +146,49 @@ export default function AboutPage() {
               Method
             </p>
             <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance">
-              Three quiet steps, repeated carefully.
+              How the work gets made is written down once.
             </h2>
           </Reveal>
 
-          {/* Peach-cream callout panel — Dani §3.6. Hairline dividers
-              between steps preserved from Cycle 7 (Stone decorative). */}
+          {/* L4 / C7 (THE ROOM) — this band used to carry three NumberedSteps
+              titled "Three quiet steps, repeated carefully." They were a
+              generic paraphrase of the canonical account on the front page's
+              #how-i-work band, which is byte-frozen and the real one. Three
+              competing accounts of the same thing is the hierarchy problem
+              this program spent eleven phases treating, so the band defers
+              instead of restating.
+
+              Phase C drafted this and deliberately did NOT apply it — "draft
+              it and surface it; do not silently rewrite Sky's prose." Sky
+              picked Draft A on 2026-08-26.
+
+              The eyebrow stays "Method": it is the rail's byte-exact label for
+              /about/#method (section-nav-anchors T2 checks it), so changing it
+              would need its own sectionNav migration. The section id is
+              untouched for the same reason. */}
           <div className="bg-wash-cool border border-cool-soft/50 rounded-lg p-12 md:p-24">
-            <ol className="flex flex-col divide-y divide-border-decorative">
-              <li className="py-12 first:pt-0 last:pb-0">
-                <Reveal index={0}>
-                  <NumberedStep
-                    number="01"
-                    title="Describe the problem."
-                    body="Use Claude Code as the primary building environment. Read the output. Course-correct when something is wrong."
-                  />
-                </Reveal>
-              </li>
-              <li className="py-12 first:pt-0 last:pb-0">
-                <Reveal index={1}>
-                  <NumberedStep
-                    number="02"
-                    title="Assemble the team."
-                    body="For larger work, fifteen agents — each with a defined role, operating from a written constitution. Nothing is decided by accident."
-                  />
-                </Reveal>
-              </li>
-              <li className="py-12 first:pt-0 last:pb-0">
-                <Reveal index={2}>
-                  <NumberedStep
-                    number="03"
-                    title="Do not ship until you have used it."
-                    body="Then write down what broke, what surprised you, and what the next person will need to know."
-                  />
-                </Reveal>
-              </li>
-            </ol>
+            <Reveal index={0} className="flex flex-col gap-8">
+              <p className="font-sans font-light text-prose text-ink-muted max-w-measure-lead text-pretty">
+                There is one account of my method on this site, and it is on the
+                front page: the governance system the agents work inside, the
+                constraints that make the output reviewable, a case where the
+                system blocked something it should have, and the limit I have
+                not solved.
+              </p>
+              <p className="font-sans font-light text-prose text-ink-muted max-w-measure-lead text-pretty">
+                I would rather it exist once, accurately, than three times in
+                three shortened forms.
+              </p>
+              <Link
+                href="/#how-i-work"
+                className="link-draw group inline-flex items-center gap-2 self-start font-mono text-label tracking-label uppercase text-accent-text"
+              >
+                Read how the work gets made
+                <span aria-hidden="true" className="transition-transform duration-fast ease-out group-hover:translate-x-0.5 group-focus-visible:translate-x-0.5">
+                  →
+                </span>
+              </Link>
+            </Reveal>
           </div>
         </div>
       </section>
