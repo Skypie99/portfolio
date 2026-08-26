@@ -1,0 +1,138 @@
+{
+  "darkKeyboard": {
+    "404": {
+      "stops": 22,
+      "noring": 0
+    },
+    "home": {
+      "stops": 22,
+      "noring": 0
+    },
+    "about": {
+      "stops": 11,
+      "noring": 0
+    },
+    "accessibility": {
+      "stops": 27,
+      "noring": 0
+    },
+    "blog": {
+      "stops": 24,
+      "noring": 0
+    },
+    "blog-building-flagstone": {
+      "stops": 29,
+      "noring": 0
+    },
+    "certificates": {
+      "stops": 7,
+      "noring": 0
+    },
+    "colophon": {
+      "stops": 28,
+      "noring": 0
+    },
+    "contact": {
+      "stops": 24,
+      "noring": 0
+    },
+    "work": {
+      "stops": 33,
+      "noring": 0
+    },
+    "work-flagstone": {
+      "stops": 38,
+      "noring": 0
+    },
+    "work-claude-corp": {
+      "stops": 34,
+      "noring": 0
+    },
+    "work-dashboard": {
+      "stops": 34,
+      "noring": 0
+    },
+    "work-prompt-library": {
+      "stops": 34,
+      "noring": 0
+    },
+    "work-ghost-code": {
+      "stops": 34,
+      "noring": 0
+    },
+    "runway": {
+      "stops": 7,
+      "noring": 0
+    },
+    "archive": {
+      "stops": 3,
+      "noring": 0
+    },
+    "__summary": {
+      "totalStops": 411,
+      "withoutRing": 0,
+      "distinctRings": [
+        "outline 2px solid rgb(207, 122, 79)",
+        "outline 2px solid rgb(185, 99, 64)"
+      ]
+    }
+  },
+  "lqip": {
+    "home": {
+      "throttle": "400kbps / 400ms RTT (CDP)",
+      "at900ms": {
+        "imgs": 7,
+        "complete": 1,
+        "lqipBackings": 2,
+        "wellsWithReservedBox": 6,
+        "anyZeroHeightWell": 1
+      },
+      "at10s": {
+        "imgs": 7,
+        "complete": 2
+      }
+    },
+    "work-flagstone": {
+      "throttle": "400kbps / 400ms RTT (CDP)",
+      "at900ms": {
+        "imgs": 10,
+        "complete": 0,
+        "lqipBackings": 13,
+        "wellsWithReservedBox": 6,
+        "anyZeroHeightWell": 4
+      },
+      "at10s": {
+        "imgs": 10,
+        "complete": 1
+      }
+    },
+    "work": {
+      "throttle": "400kbps / 400ms RTT (CDP)",
+      "at900ms": {
+        "imgs": 10,
+        "complete": 0,
+        "lqipBackings": 15,
+        "wellsWithReservedBox": 5,
+        "anyZeroHeightWell": 5
+      },
+      "at10s": {
+        "imgs": 10,
+        "complete": 5
+      }
+    },
+    "certificates": {
+      "throttle": "400kbps / 400ms RTT (CDP)",
+      "at900ms": {
+        "imgs": 9,
+        "complete": 0,
+        "lqipBackings": 9,
+        "wellsWithReservedBox": 9,
+        "anyZeroHeightWell": 0
+      },
+      "at10s": {
+        "imgs": 9,
+        "complete": 7
+      }
+    }
+  }
+}

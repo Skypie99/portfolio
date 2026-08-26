@@ -1,0 +1,217 @@
+{
+  "meta": {
+    "engine": "Chromium (playwright-core 1.61.1) headless — NOT Safari/WebKit",
+    "when": "2026-08-26",
+    "base": "http://localhost:3005"
+  },
+  "routes": {
+    "home__light__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "home__dark__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "about__light__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "about__dark__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "accessibility__light__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "accessibility__dark__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "archive__light__1440": {
+      "consoleErrors": [
+        "Error: supabaseUrl is required.\n    at http://localhost:3005/_next/static/chunks/920-1414f4441ab3676c.js:11:40694\n    at new tS (http://localhost:3005/_next/static/chunks/920-1414f4441ab3676c.js:11:40945)\n    at tO (http://localhost:3005/_next/static/chunks/920-1414f4441ab3676c.js:11:45760)\n    at d (http://localhost:3005/_next/static/chunks/app/archive/page-081c0132d432558d.js:1:298)\n    at http://localhost:3005/_next/static/chunks/app/archive/page-081c0132d432558d.js:1:8699\n    at o1 (http://localhost:3005/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:88951)\n    at uE (http://localhost:3005/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104843)\n    at ux (http://localhost:3005/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104727)\n    at uE (http://localhost:3005/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104888)\n    at ux (http://localhost:3005/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104727)"
+      ],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "archive__dark__1440": {
+      "consoleErrors": [
+        "Error: supabaseUrl is required.\n    at http://localhost:3005/_next/static/chunks/920-1414f4441ab3676c.js:11:40694\n    at new tS (http://localhost:3005/_next/static/chunks/920-1414f4441ab3676c.js:11:40945)\n    at tO (http://localhost:3005/_next/static/chunks/920-1414f4441ab3676c.js:11:45760)\n    at d (http://localhost:3005/_next/static/chunks/app/archive/page-081c0132d432558d.js:1:298)\n    at http://localhost:3005/_next/static/chunks/app/archive/page-081c0132d432558d.js:1:8699\n    at o1 (http://localhost:3005/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:88951)\n    at uE (http://localhost:3005/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104843)\n    at ux (http://localhost:3005/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104727)\n    at uE (http://localhost:3005/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104888)\n    at ux (http://localhost:3005/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104727)"
+      ],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "blog__light__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "blog__dark__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "blog-building-flagstone__light__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "blog-building-flagstone__dark__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "certificates__light__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "certificates__dark__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "colophon__light__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "colophon__dark__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "contact__light__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "contact__dark__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "runway__light__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "runway__dark__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "work__light__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "work__dark__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "work-flagstone__light__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "work-flagstone__dark__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "work-claude-corp__light__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "work-claude-corp__dark__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "work-dashboard__light__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "work-dashboard__dark__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "work-prompt-library__light__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "work-prompt-library__dark__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "work-ghost-code__light__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "work-ghost-code__dark__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "404__light__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    },
+    "404__dark__1440": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "http4xx5xx": [],
+      "consoleWarnings": 0
+    }
+  }
+}
