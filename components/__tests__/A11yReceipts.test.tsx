@@ -79,3 +79,50 @@ describe('A11yReceipts SSR', () => {
     expect(html).not.toContain('opacity: 0');
   });
 });
+
+/**
+ * THE ROOM / Phase G · G2 — the method underline, many-to-one.
+ *
+ * This strip is the one place where six figures share ONE method line, so the
+ * pair has to actually CONTAIN both halves for `.method-pair:hover` to reach
+ * the anchor. A wrapper that closed in the wrong place would still render
+ * fine and silently break the tic — hence the containment assertion rather
+ * than a class-presence one.
+ */
+describe('A11yReceipts — the G2 method underline', () => {
+  const data = getA11yReceipts();
+
+  it('one method pair CONTAINS both the figure grid and the evidence anchor', () => {
+    const host = document.createElement('div');
+    host.innerHTML = renderToString(<A11yReceipts data={data} />);
+    const pair = host.querySelector('.method-pair');
+    expect(pair).not.toBeNull();
+
+    // Both halves of the relation live inside the same pair.
+    expect(pair!.querySelector('.grid')).not.toBeNull();
+    const link = pair!.querySelector<HTMLAnchorElement>(`a[href="${data.evidencePath}"]`);
+    expect(link).not.toBeNull();
+    expect(link!.className).toContain('method-draw');
+    expect(link!.className).toContain('link-draw');
+
+    // Every published figure sits inside the pair too — all six, not just the
+    // first cell (a wrapper opened one element too late would still pass the
+    // grid check above).
+    for (const r of data.receipts) expect(pair!.textContent).toContain(r.value);
+  });
+
+  it('the evidence door is already open at rest — no hover gating', () => {
+    const html = renderToString(<A11yReceipts data={data} />);
+    // Rendered as ordinary text, in the a11y tree, with no visibility gate.
+    expect(html).toContain('Evidence JSON');
+    expect(html).not.toMatch(/class="[^"]*\b(sr-only|invisible|opacity-0)\b[^"]*"[^>]*>\s*Evidence JSON/);
+  });
+
+  it('the wrapper is UNSTYLED — .method-pair must never carry layout', () => {
+    const host = document.createElement('div');
+    host.innerHTML = renderToString(<A11yReceipts data={data} />);
+    // Layout-neutrality is the whole reason this extra div was allowed in;
+    // a future utility class added here would be a real regression.
+    expect(host.querySelector('.method-pair')!.getAttribute('class')).toBe('method-pair');
+  });
+});

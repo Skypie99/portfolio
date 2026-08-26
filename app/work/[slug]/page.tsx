@@ -57,12 +57,16 @@ export function FlagstoneTestReceipt() {
   return (
     <section className="px-gutter py-12 lg:py-16 world-surface border-t border-border-decorative">
       <div className="max-w-content mx-auto">
-        <p className="max-w-measure-wide font-mono text-meta tracking-label uppercase text-text-meta leading-loose">
+        {/* G2 (THE ROOM Phase G): the figure and its method already share this
+            one line, so the line IS the method pair — hovering "2,971 tests
+            passing" draws the underline on the door to the command that
+            reproduces it. The link stays ordinary always-visible text. */}
+        <p className="method-pair max-w-measure-wide font-mono text-meta tracking-label uppercase text-text-meta leading-loose">
           2,971 tests passing
           <span aria-hidden="true"> · </span>{' '}
           <a
             href="#flagstone-test-count-method"
-            className="link-draw text-accent-text hover:text-accent-text"
+            className="link-draw method-draw text-accent-text hover:text-accent-text"
           >
             measured 2026-08-16, method
           </a>

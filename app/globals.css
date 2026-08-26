@@ -2607,6 +2607,73 @@ html.dark ::selection {
 }
 
 /* ------------------------------------------------------------------
+   THE ROOM / Phase G · G2 — THE METHOD UNDERLINE.
+
+   The site-wide tic that rewards the skeptic: every measured number
+   underlines to its method. Land on a figure and the door to its proof
+   draws itself; the number and the command that reproduces it behave as
+   ONE instrument rather than a claim with some fine print near it.
+   Comprehension motion, not decoration — it says "this figure has a
+   method, and it is right here."
+
+   Two classes, the second an opt-in rider on the first (exactly the
+   `.link-draw-group` idiom directly above):
+     `.method-pair` — the unit that owns a figure AND its method link.
+     `.method-draw`  — goes on the method anchor, BESIDE `link-draw`.
+                       Paints nothing on its own; it needs `link-draw`
+                       on the same element for the gradient to exist.
+
+   180ms (--dur-fast), per the design system's motion clause — faster
+   than `link-draw`'s stock 280ms draw, because this fires from a hover
+   the visitor did not aim at the link itself, so it must have already
+   answered by the time their eye arrives. Overriding the transition
+   here also keeps the DIRECT hover on these anchors at the same 180ms,
+   so one tic never runs at two speeds. The other 29 `link-draw` sites
+   are untouched.
+
+   DELIBERATELY STATE-ONLY, matching `.link-draw-group`: the pair-
+   triggered answer is the LINE, never a colour change. Measured on the
+   built page rather than assumed — on all three call sites today there
+   is no colour tier to reserve anyway, because each anchor pins
+   `hover:text-accent-text`, whose utility overrides `.link-draw:hover`'s
+   `--color-link-hover` deepen (rgb 135 71 45 in BOTH states, verified in
+   Chromium). That is pre-existing and deliberate: these method links stay
+   in accent ink whatever the pointer does. Keeping the pair rule colour-
+   free means a broad hover region can only ever add the one new signal it
+   promises, and cannot surprise a future call site by deepening ink under
+   a whole card.
+
+   `color` still has to appear in the transition below even though it is
+   inert on today's anchors: the shorthand REPLACES `.link-draw`'s own
+   transition, so dropping it would leave colour with no transition at all
+   the moment a call site does let the deepen through.
+
+   :focus-within is the keyboard's half of "hover AND focus" — the
+   figures themselves are not focusable (they are text), so tabbing to
+   the method link is what lights the pair. The anchor's own
+   `link-draw:focus-visible` still fires alongside, giving the keyboard
+   the louder tier.
+
+   TOUCH + REDUCED MOTION — the underline is never the only signal. In
+   all three call sites the method link is rendered as ordinary, always-
+   visible, always-in-the-a11y-tree text in the site's accent ink; the
+   line is an enhancement on top of a door that is already open. Touch
+   never hovers and loses nothing. Under reduced motion the global floor
+   (`transition-duration: .01ms !important`) collapses the draw to an
+   instant state change — the underline still appears on hover, it just
+   does not travel. Guarded in Receipt.test.tsx / A11yReceipts.test.tsx.
+   ------------------------------------------------------------------ */
+.method-draw {
+  transition:
+    background-size var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out);
+}
+.method-pair:hover .method-draw,
+.method-pair:focus-within .method-draw {
+  background-size: 100% 1px;
+}
+
+/* ------------------------------------------------------------------
    Living caustic — organic-pass 2026-06-03, signature move #1 ("one sun").
    The liquid-glass card's cursor specular (.glass-card::after) glides with
    the pointer via useSpotlight's --mx/--my. These two CardField layers — the
