@@ -960,7 +960,14 @@ export default async function WorkDetailPage({
                             shots, so this line simply doesn't render there). */}
                         {shot.capturedDate && (
                           <span className="mt-1 block font-mono text-meta tracking-label uppercase text-text-meta">
-                            captured {shot.capturedDate}
+                            {/* J1 (Phase J) — H1 wrapped every date on the site in a
+                                real <time>, but this caption was added by D7 AFTER
+                                H1's sweep list was written, so three dates on the
+                                flagship page were still shipping as bare text.
+                                Rendered characters are byte-identical; only the
+                                element around them changed. */}
+                            captured{' '}
+                            <time dateTime={shot.capturedDate}>{shot.capturedDate}</time>
                             {shot.commit && <> · {shot.commit}</>}
                           </span>
                         )}
