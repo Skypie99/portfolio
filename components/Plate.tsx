@@ -21,12 +21,10 @@ type PlateProps = {
  * artifact caption · place/date. Project heroes ONLY, never cards — see
  * CaseStudyCard/ProjectCard for the card register instead.
  *
- * Generalizes the inline plate markup in app/work/[slug]/page.tsx
- * (Flagstone's d.heroPlate block) byte-for-byte: same classes, same
- * structure, same .pr-plate-lit hairline mechanism. Not yet wired into any
- * page (Phase A) — the inline version stays exactly as-is until a later
- * phase swaps it for this component, and the two must render
- * word-identically when that happens.
+ * Wired into the homepage Flagship Room (Phase C) and, since the Phase H
+ * follow-up dedup pass, into /work/[slug] (Flagstone's d.heroPlate block)
+ * too — the same three mono lines render from the SAME component in both
+ * places now, not two hand-kept-in-sync copies.
  */
 export function Plate({ claim, caption, placeDate, sig, className }: PlateProps) {
   return (
