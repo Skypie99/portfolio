@@ -38,9 +38,12 @@ type ReceiptProps = {
  * underline. The link itself is always visible text, so touch and reduced-
  * motion visitors lose nothing. See the G2 block in globals.css.
  *
- * Replaces the hardcoded FlagstoneTestReceipt JSX (app/work/[slug]/page.tsx)
- * and the homepage/A11yReceipts chip band in spirit, generalized into one
- * component. Not yet wired into any page (Phase A) — that's Phase C+.
+ * Generalizes the homepage/A11yReceipts chip band's figure-and-method idea
+ * into one component; wired into the homepage hero in Phase C (C4). Despite
+ * the shared "evidence" concept, this does NOT replace FlagstoneTestReceipt
+ * (app/work/[slug]/page.tsx) — that strip carries a paragraph of methodology
+ * prose this card has no slot for. See FlagstoneTestReceipt's own docblock
+ * for the reasoning (reviewed and kept separate, Phase H follow-up).
  */
 export function Receipt({ value, label, tier, date, methodHref, methodLabel, className }: ReceiptProps) {
   return (
