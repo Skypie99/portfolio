@@ -34,19 +34,40 @@ const STAT_EMBER = ['ember', 'ember-teal', 'ember-gold', 'ember-moss'];
  * spare. `lib/schema.ts` caps a method string at 90 chars but does not cap a
  * single TOKEN, so a future 90-character hyphenated word would overflow; the
  * longest today is 27 chars / ~215px.
+ *
+ * K5 (THE ROOM Phase J, 2026-08-26) — THAT ARITHMETIC WAS ONLY EVER DONE AT
+ * 100% TEXT. Phase J's element-level zoom census (the first non-vacuous 200%
+ * measurement this repo has taken — `documentElement.scrollWidth` cannot fail
+ * here, see J_zoom200-census.mjs) found 151.6px of this line clipped and
+ * UNREACHABLE at 375px with 200% root text, both themes: the same 231.3px unit
+ * is ~462px once text doubles, and `overflow-x: clip` cuts rather than scrolls.
+ *
+ * The nowrap now lives in `.method-seg` (app/globals.css), which releases it
+ * inside a CONTAINER QUERY measured in `em`. Two dead ends were tried and
+ * rejected first, both recorded so nobody re-walks them:
+ *   · a Tailwind `max-[16em]:` variant — this project's `screens` config mixes
+ *     units, so Tailwind refuses to generate `min-*`/`max-*` arbitrary variants
+ *     at all and says so in a build warning. The class silently never existed.
+ *   · a plain `@media (max-width: …em)` — `em` in a MEDIA query resolves against
+ *     the browser's initial font size, not the root font-size, so it cannot see
+ *     text scaling at all. It would have looked right and done nothing.
+ * `em` inside a `@container` query resolves against the CONTAINER's own font
+ * size, which is the thing that scales. That is the only one of the three that
+ * responds to the actual failure condition — and Phase J's census re-run proves
+ * it: 2 crossings before, 0 after.
  */
 function MethodSegment({ children }: { children: React.ReactNode }) {
   const words = typeof children === 'string' ? children.split(' ') : null;
   return (
     <>
       {' '}
-      <span className="whitespace-nowrap">
+      <span className="method-seg">
         <span aria-hidden="true">·</span> {words ? words[0] : children}
       </span>
       {words?.slice(1).map((word, i) => (
         <Fragment key={`${word}-${i}`}>
           {' '}
-          <span className="whitespace-nowrap">{word}</span>
+          <span className="method-seg">{word}</span>
         </Fragment>
       ))}
     </>
@@ -77,8 +98,15 @@ export function A11yReceipts({ data, className }: { data: A11yReceiptsData; clas
           <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
           Measured, not claimed
         </h2>
+        {/* J2 (Phase J, 2026-08-26) — both dates on this strip render inside a
+            real <time>. H1 wrapped the site's dates component by component from
+            a list written before this strip was re-examined, so these two were
+            the last bare ones on an app route. The rendered characters are
+            byte-identical: this page's statement copy is byte-frozen (PROTECT),
+            and only the element around the date changed. */}
         <p className="font-sans font-light text-prose text-ink-muted max-w-measure-lead mb-12 text-pretty">
-          Real numbers from a real run — measured {data.measuredDate}, method below. Not a
+          Real numbers from a real run — measured{' '}
+          <time dateTime={data.measuredDate}>{data.measuredDate}</time>, method below. Not a
           live gate yet; a snapshot you can re-run.
         </p>
       </Reveal>
@@ -147,8 +175,8 @@ export function A11yReceipts({ data, className }: { data: A11yReceiptsData; clas
             only — never inside a compound token, and never leaving a "·" adrift
             at the start of a line. See MethodSegment for the mechanism and for
             why the audit's per-SEGMENT nowrap was measured and rejected. */}
-        <p className="mt-6 font-mono text-meta tracking-label uppercase text-text-meta leading-loose">
-          Measured {data.measuredDate}
+        <p className="method-line mt-6 font-mono text-meta tracking-label uppercase text-text-meta leading-loose">
+          Measured <time dateTime={data.measuredDate}>{data.measuredDate}</time>
           <MethodSegment>
             <a
               href={data.evidencePath}

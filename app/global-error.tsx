@@ -13,9 +13,13 @@
  * the app stylesheet, which may be the thing that didn't arrive. It renders its
  * own <html>/<body> (it replaces the root layout) and shows no stack trace.
  *
- * TODO(Sky): the eyebrow / heading / body copy below are on-brand placeholders
- * in the 404 voice — replace with your final wording before merge. Colours,
- * layout, exits, and the CSS-independence are the load-bearing parts.
+ * COPY: RATIFIED 2026-08-26 (THE ROOM Phase J). The eyebrow / heading / body
+ * below shipped 2026-07-04 marked "on-brand placeholders … replace with your
+ * final wording before merge" — and then merged, and stayed live on every
+ * route's crash path for seven weeks while appearing in no ledger. Phase J's
+ * sweep for deferred markers found it; Sky read it and adopted it as written,
+ * so these are final words now, not scaffolding. Colours, layout, exits, and
+ * the CSS-independence remain the load-bearing parts.
  */
 export default function GlobalError({
   reset,
@@ -64,7 +68,6 @@ export default function GlobalError({
               margin: '0 0 1.5rem',
             }}
           >
-            {/* TODO(Sky): final eyebrow copy */}
             Sky Halisky
           </p>
           <h1
@@ -78,11 +81,9 @@ export default function GlobalError({
               margin: '0 0 1rem',
             }}
           >
-            {/* TODO(Sky): final heading copy */}
             Something went sideways.
           </h1>
           <p style={{ fontSize: 17, lineHeight: 1.65, maxWidth: 460, margin: '0 0 2rem' }}>
-            {/* TODO(Sky): final body copy */}
             A part of this page didn{'’'}t load. Reloading usually fixes it
             {'—'} and the homepage and the work index are both one tap away.
           </p>

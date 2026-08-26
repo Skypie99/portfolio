@@ -1,0 +1,350 @@
+{
+  "meta": {
+    "engine": "Chromium (playwright-core) headless — NOT WebKit",
+    "method": "element-level visible-box census, borrowed from scripts/overflow-census.mjs; non-vacuity planted per frame",
+    "zoom": "documentElement.style.fontSize = 200%",
+    "when": "2026-08-26"
+  },
+  "frames": {
+    "home__light__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "home__light__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "home__dark__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "home__dark__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "about__light__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "about__light__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "about__dark__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "about__dark__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "accessibility__light__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "accessibility__light__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "accessibility__dark__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "accessibility__dark__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "archive__light__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "archive__light__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "archive__dark__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "archive__dark__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "blog__light__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "blog__light__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "blog__dark__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "blog__dark__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "blog-building-flagstone__light__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "blog-building-flagstone__light__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "blog-building-flagstone__dark__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "blog-building-flagstone__dark__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "certificates__light__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "certificates__light__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "certificates__dark__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "certificates__dark__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "colophon__light__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "colophon__light__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "colophon__dark__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "colophon__dark__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "contact__light__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "contact__light__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "contact__dark__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "contact__dark__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "runway__light__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "runway__light__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "runway__dark__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "runway__dark__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "work__light__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "work__light__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "work__dark__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "work__dark__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "work-flagstone__light__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "work-flagstone__light__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "work-flagstone__dark__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "work-flagstone__dark__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "work-claude-corp__light__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "work-claude-corp__light__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "work-claude-corp__dark__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "work-claude-corp__dark__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "work-dashboard__light__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "work-dashboard__light__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "work-dashboard__dark__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "work-dashboard__dark__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "work-prompt-library__light__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "work-prompt-library__light__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "work-prompt-library__dark__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "work-prompt-library__dark__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "work-ghost-code__light__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "work-ghost-code__light__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "work-ghost-code__dark__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "work-ghost-code__dark__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "404__light__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "404__light__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    },
+    "404__dark__1440": {
+      "vw": 1440,
+      "findings": [],
+      "plantCaught": true
+    },
+    "404__dark__375": {
+      "vw": 375,
+      "findings": [],
+      "plantCaught": true
+    }
+  }
+}

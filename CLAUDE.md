@@ -99,7 +99,8 @@ Alt text must be 4–200 chars and must NOT start with "image of", "picture of",
 
 ```
 npm run build   # outputs to out/ (static export)
-# GitHub Actions picks it up automatically on push
+# Pushing to main runs CI (lint · typecheck · test · build); Deploy runs
+# only after CI succeeds — see .github/workflows/deploy.yml
 ```
 
 The site serves at the **domain root** (`https://skypistudio.com/…`). There is **no `basePath`** — `next.config.mjs` sets none. (Earlier docs claimed `/portfolio`; that is stale — don't reintroduce it or hardcode any base path.) Use Next.js `<Link>` and relative paths.
@@ -135,8 +136,8 @@ Always run `npm run typecheck` before declaring something done.
 
 ## Gotchas (load-bearing)
 
-### 1. Push to `main` is instant production
-There's no deploy gate. Always run `npm run build && npm test` locally before pushing. A broken build silently leaves the old version up — no rollback notice.
+### 1. Push to `main` deploys — but CI gates it
+`.github/workflows/deploy.yml` triggers on `workflow_run` of **CI** completing, and its build job runs only `if github.event.workflow_run.conclusion == 'success'` (or a manual `workflow_dispatch`, which is the deliberate ungated emergency path). So a push that fails lint, typecheck, tests, or build **never reaches production** — the previous version simply stays up, with no rollback notice. There is still no staging environment, and a green CI run deploys within ~2 minutes of the push. Run `npm run typecheck && npm test && npm run build` locally anyway; finding it here is faster than finding it in Actions.
 
 ### 2. `output: 'export'` bans runtime Next.js features
 No `next/image` optimization (images are `unoptimized: true`), no API routes, no server actions, no middleware at runtime. Everything must be statically generatable.

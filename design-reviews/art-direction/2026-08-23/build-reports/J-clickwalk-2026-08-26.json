@@ -1,0 +1,490 @@
+{
+  "walks": [
+    {
+      "from": "/",
+      "label": "nav@home",
+      "status": "ERROR",
+      "href": "/",
+      "err": "TimeoutError: elementHandle.click: Timeout 6000ms exceeded.\nCall log:\n  - attempting click"
+    },
+    {
+      "from": "/",
+      "label": "nav@home",
+      "status": "ERROR",
+      "href": "/work/flagstone/",
+      "err": "TimeoutError: elementHandle.click: Timeout 6000ms exceeded.\nCall log:\n  - attempting click"
+    },
+    {
+      "from": "/",
+      "label": "nav@home",
+      "status": "ERROR",
+      "href": "/#flagship",
+      "err": "TimeoutError: elementHandle.click: Timeout 6000ms exceeded.\nCall log:\n  - attempting click"
+    },
+    {
+      "from": "/",
+      "label": "nav@home",
+      "status": "ERROR",
+      "href": "/#work",
+      "err": "TimeoutError: elementHandle.click: Timeout 6000ms exceeded.\nCall log:\n  - attempting click"
+    },
+    {
+      "from": "/",
+      "label": "nav@home",
+      "status": "ERROR",
+      "href": "/#record",
+      "err": "TimeoutError: elementHandle.click: Timeout 6000ms exceeded.\nCall log:\n  - attempting click"
+    },
+    {
+      "from": "/",
+      "label": "nav@home",
+      "status": "ERROR",
+      "href": "/#how-i-work",
+      "err": "TimeoutError: elementHandle.click: Timeout 6000ms exceeded.\nCall log:\n  - attempting click"
+    },
+    {
+      "from": "/",
+      "label": "nav@home",
+      "status": "ERROR",
+      "href": "/#about",
+      "err": "TimeoutError: elementHandle.click: Timeout 6000ms exceeded.\nCall log:\n  - attempting click"
+    },
+    {
+      "from": "/",
+      "label": "nav@home",
+      "status": "ERROR",
+      "href": "/#contact",
+      "err": "TimeoutError: elementHandle.click: Timeout 6000ms exceeded.\nCall log:\n  - attempting click"
+    },
+    {
+      "from": "/",
+      "label": "nav@home",
+      "status": "ERROR",
+      "href": "/blog/",
+      "err": "TimeoutError: elementHandle.click: Timeout 6000ms exceeded.\nCall log:\n  - attempting click"
+    },
+    {
+      "from": "/",
+      "label": "nav@home",
+      "status": "OK",
+      "href": "/contact/",
+      "text": "Write to me.",
+      "landed": "/contact/",
+      "anchor": null
+    },
+    {
+      "from": "/",
+      "label": "footer@home",
+      "status": "OK",
+      "href": "/",
+      "text": "Sky Halisky",
+      "landed": "/",
+      "anchor": null
+    },
+    {
+      "from": "/",
+      "label": "footer@home",
+      "status": "OK",
+      "href": "/",
+      "text": "Home",
+      "landed": "/",
+      "anchor": null
+    },
+    {
+      "from": "/",
+      "label": "footer@home",
+      "status": "OK",
+      "href": "/work/",
+      "text": "The Work",
+      "landed": "/work/",
+      "anchor": null
+    },
+    {
+      "from": "/",
+      "label": "footer@home",
+      "status": "OK",
+      "href": "/certificates/",
+      "text": "Credentials",
+      "landed": "/certificates/",
+      "anchor": null
+    },
+    {
+      "from": "/",
+      "label": "footer@home",
+      "status": "OK",
+      "href": "/about/",
+      "text": "A Brief Account",
+      "landed": "/about/",
+      "anchor": null
+    },
+    {
+      "from": "/",
+      "label": "footer@home",
+      "status": "OK",
+      "href": "/blog/",
+      "text": "Notes",
+      "landed": "/blog/",
+      "anchor": null
+    },
+    {
+      "from": "/",
+      "label": "footer@home",
+      "status": "OK",
+      "href": "/accessibility/",
+      "text": "Accessibility",
+      "landed": "/accessibility/",
+      "anchor": null
+    },
+    {
+      "from": "/",
+      "label": "footer@home",
+      "status": "OK",
+      "href": "/colophon/",
+      "text": "Colophon",
+      "landed": "/colophon/",
+      "anchor": null
+    },
+    {
+      "from": "/",
+      "label": "footer@home",
+      "status": "OK",
+      "href": "/contact/",
+      "text": "Let’s talk",
+      "landed": "/contact/",
+      "anchor": null
+    },
+    {
+      "from": "/",
+      "label": "main@home",
+      "status": "OK",
+      "href": "#hero",
+      "text": "Skip intro↓",
+      "landed": "/#hero",
+      "anchor": "AT TOP (0px)"
+    },
+    {
+      "from": "/",
+      "label": "main@home",
+      "status": "OK",
+      "href": "#work",
+      "text": "See the work.",
+      "landed": "/#work",
+      "anchor": "AT TOP (0px)"
+    },
+    {
+      "from": "/",
+      "label": "main@home",
+      "status": "OK",
+      "href": "#work",
+      "text": "Scroll↓",
+      "landed": "/#work",
+      "anchor": "AT TOP (0px)"
+    },
+    {
+      "from": "/",
+      "label": "main@home",
+      "status": "OK",
+      "href": "/work/flagstone/#flagstone-test-count-method",
+      "text": "method",
+      "landed": "/work/flagstone/#flagstone-test-count-method",
+      "anchor": "AT TOP (96px)"
+    },
+    {
+      "from": "/",
+      "label": "main@home",
+      "status": "OK",
+      "href": "/accessibility/#receipts",
+      "text": "evidence",
+      "landed": "/accessibility/#receipts",
+      "anchor": "AT TOP (69px)"
+    },
+    {
+      "from": "/",
+      "label": "main@home",
+      "status": "OK",
+      "href": "/colophon/#calibration",
+      "text": "the record",
+      "landed": "/colophon/#calibration",
+      "anchor": "AT TOP (96px)"
+    },
+    {
+      "from": "/",
+      "label": "main@home",
+      "status": "OK",
+      "href": "/work/flagstone/",
+      "text": "Read the case study→",
+      "landed": "/work/flagstone/",
+      "anchor": null
+    },
+    {
+      "from": "/",
+      "label": "main@home",
+      "status": "OK",
+      "href": "/work/flagstone/",
+      "text": "Flagstone",
+      "landed": "/work/flagstone/",
+      "anchor": null
+    },
+    {
+      "from": "/",
+      "label": "main@home",
+      "status": "OK",
+      "href": "#flagship",
+      "text": "Featured — above↑",
+      "landed": "/#flagship",
+      "anchor": "AT TOP (0px)"
+    },
+    {
+      "from": "/",
+      "label": "main@home",
+      "status": "OK",
+      "href": "/work/claude-corp/",
+      "text": "Claude Corp",
+      "landed": "/work/claude-corp/",
+      "anchor": null
+    },
+    {
+      "from": "/",
+      "label": "main@home",
+      "status": "OK",
+      "href": "/work/dashboard/",
+      "text": "Claude Corp Dashboard",
+      "landed": "/work/dashboard/",
+      "anchor": null
+    },
+    {
+      "from": "/",
+      "label": "main@home",
+      "status": "OK",
+      "href": "/work/prompt-library/",
+      "text": "Prompt Library",
+      "landed": "/work/prompt-library/",
+      "anchor": null
+    },
+    {
+      "from": "/",
+      "label": "main@home",
+      "status": "OK",
+      "href": "/work/ghost-code/",
+      "text": "Ghost Code",
+      "landed": "/work/ghost-code/",
+      "anchor": null
+    },
+    {
+      "from": "/",
+      "label": "main@home",
+      "status": "OK",
+      "href": "/colophon/#calibration",
+      "text": "the record",
+      "landed": "/colophon/#calibration",
+      "anchor": "AT TOP (96px)"
+    },
+    {
+      "from": "/",
+      "label": "main@home",
+      "status": "OK",
+      "href": "/work/flagstone/#what-went-wrong",
+      "text": "the account",
+      "landed": "/work/flagstone/#what-went-wrong",
+      "anchor": "AT TOP (113px)"
+    },
+    {
+      "from": "/",
+      "label": "main@home",
+      "status": "OK",
+      "href": "/accessibility/",
+      "text": "the statement",
+      "landed": "/accessibility/",
+      "anchor": null
+    },
+    {
+      "from": "/",
+      "label": "main@home",
+      "status": "OK",
+      "href": "/accessibility/#receipts",
+      "text": "evidence",
+      "landed": "/accessibility/#receipts",
+      "anchor": "AT TOP (69px)"
+    },
+    {
+      "from": "/",
+      "label": "main@home",
+      "status": "OK",
+      "href": "/about/",
+      "text": "The full account→",
+      "landed": "/about/",
+      "anchor": null
+    },
+    {
+      "from": "/",
+      "label": "main@home",
+      "status": "OK",
+      "href": "/certificates/",
+      "text": "See the credential badges→",
+      "landed": "/certificates/",
+      "anchor": null
+    },
+    {
+      "from": "/work/flagstone/",
+      "label": "main@flagstone",
+      "status": "OK",
+      "href": "/work/",
+      "text": "The Work",
+      "landed": "/work/",
+      "anchor": null
+    },
+    {
+      "from": "/work/flagstone/",
+      "label": "main@flagstone",
+      "status": "OK",
+      "href": "#flagstone-test-count-method",
+      "text": "measured 2026-08-16, method",
+      "landed": "/work/flagstone/#flagstone-test-count-method",
+      "anchor": "AT TOP (96px)"
+    },
+    {
+      "from": "/work/flagstone/",
+      "label": "main@flagstone",
+      "status": "OK",
+      "href": "/about/",
+      "text": "A Brief Account →",
+      "landed": "/about/",
+      "anchor": null
+    },
+    {
+      "from": "/work/flagstone/",
+      "label": "main@flagstone",
+      "status": "OK",
+      "href": "/work/claude-corp/",
+      "text": "Claude Corp",
+      "landed": "/work/claude-corp/",
+      "anchor": null
+    },
+    {
+      "from": "/work/flagstone/",
+      "label": "main@flagstone",
+      "status": "OK",
+      "href": "/work/claude-corp/",
+      "text": "Read more →",
+      "landed": "/work/claude-corp/",
+      "anchor": null
+    },
+    {
+      "from": "/work/flagstone/",
+      "label": "main@flagstone",
+      "status": "OK",
+      "href": "/work/dashboard/",
+      "text": "Claude Corp Dashboard",
+      "landed": "/work/dashboard/",
+      "anchor": null
+    },
+    {
+      "from": "/work/flagstone/",
+      "label": "main@flagstone",
+      "status": "OK",
+      "href": "/work/dashboard/",
+      "text": "Read more →",
+      "landed": "/work/dashboard/",
+      "anchor": null
+    },
+    {
+      "from": "/work/",
+      "label": "main@work",
+      "status": "OK",
+      "href": "/work/flagstone/",
+      "text": "Flagstone",
+      "landed": "/work/flagstone/",
+      "anchor": null
+    },
+    {
+      "from": "/work/",
+      "label": "main@work",
+      "status": "OK",
+      "href": "/work/flagstone/",
+      "text": "Read more →",
+      "landed": "/work/flagstone/",
+      "anchor": null
+    },
+    {
+      "from": "/work/",
+      "label": "main@work",
+      "status": "OK",
+      "href": "/work/claude-corp/",
+      "text": "Claude Corp",
+      "landed": "/work/claude-corp/",
+      "anchor": null
+    },
+    {
+      "from": "/work/",
+      "label": "main@work",
+      "status": "OK",
+      "href": "/work/claude-corp/",
+      "text": "Read more →",
+      "landed": "/work/claude-corp/",
+      "anchor": null
+    },
+    {
+      "from": "/work/",
+      "label": "main@work",
+      "status": "OK",
+      "href": "/work/dashboard/",
+      "text": "Claude Corp Dashboard",
+      "landed": "/work/dashboard/",
+      "anchor": null
+    },
+    {
+      "from": "/work/",
+      "label": "main@work",
+      "status": "OK",
+      "href": "/work/dashboard/",
+      "text": "Read more →",
+      "landed": "/work/dashboard/",
+      "anchor": null
+    },
+    {
+      "from": "/work/",
+      "label": "main@work",
+      "status": "OK",
+      "href": "/work/prompt-library/",
+      "text": "Prompt Library",
+      "landed": "/work/prompt-library/",
+      "anchor": null
+    },
+    {
+      "from": "/work/",
+      "label": "main@work",
+      "status": "OK",
+      "href": "/work/prompt-library/",
+      "text": "Read more →",
+      "landed": "/work/prompt-library/",
+      "anchor": null
+    },
+    {
+      "from": "/work/",
+      "label": "main@work",
+      "status": "OK",
+      "href": "/work/ghost-code/",
+      "text": "Ghost Code",
+      "landed": "/work/ghost-code/",
+      "anchor": null
+    },
+    {
+      "from": "/work/",
+      "label": "main@work",
+      "status": "OK",
+      "href": "/work/ghost-code/",
+      "text": "Read more →",
+      "landed": "/work/ghost-code/",
+      "anchor": null
+    },
+    {
+      "from": "/work/",
+      "label": "main@work",
+      "status": "OK",
+      "href": "/",
+      "text": "←Back to home",
+      "landed": "/",
+      "anchor": null
+    }
+  ]
+}
