@@ -73,6 +73,17 @@ export function generateMetadata(): Metadata {
  *  - Contact section adds eyebrow label + email address display
  *  - Process/Certificates alternate to bg-warm-white for rhythm
  */
+
+/**
+ * H1 (THE ROOM Phase H) — Record band dates. `row.when` mixes real ISO
+ * dates (rounds.json / a11y-receipts.json) with the literal status word
+ * `'closed'` (the defect row) — wrapping the word in `<time>` would emit an
+ * invalid `dateTime`, so only the ISO-shaped values get wrapped.
+ */
+function renderRecordWhen(when: string) {
+  return /^\d{4}-\d{2}-\d{2}$/.test(when) ? <time dateTime={when}>{when}</time> : when;
+}
+
 export default function HomePage() {
   const profile = getProfile();
   const deliverables = getDeliverables();
@@ -674,7 +685,7 @@ export default function HomePage() {
                       )}
                       </div>
                       <p className="shrink-0 lg:w-16 lg:text-right font-mono text-meta tracking-label uppercase text-text-meta tabular-nums">
-                        {d.year}
+                        <time dateTime={String(d.year)}>{d.year}</time>
                       </p>
                     </div>
                   </div>
@@ -766,7 +777,7 @@ export default function HomePage() {
                         open
                       </>
                     ) : (
-                      row.when
+                      row.when && renderRecordWhen(row.when)
                     )}
                   </span>
                 </Reveal>

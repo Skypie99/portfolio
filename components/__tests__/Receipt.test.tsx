@@ -16,15 +16,26 @@ afterEach(() => {
 
 describe('Receipt', () => {
   it('renders the figure, label, and tier word as real text', () => {
-    render(<Receipt value="2,971" label="tests passing" tier="measured" date="2026-08-16" />);
+    const { container } = render(<Receipt value="2,971" label="tests passing" tier="measured" date="2026-08-16" />);
     expect(screen.getByText('2,971')).toBeInTheDocument();
     expect(screen.getByText('tests passing')).toBeInTheDocument();
-    expect(screen.getByText(/measured 2026-08-16/)).toBeInTheDocument();
+    // H1: date now lives in a nested <time>, so the combined line is only
+    // readable off .textContent — getByText only sees a node's own direct
+    // text-node children, not a descendant element's text.
+    expect(container.textContent).toMatch(/measured 2026-08-16/);
   });
 
   it('renders "reported" tier text for project-claimed figures', () => {
-    render(<Receipt value="100%" label="static" tier="reported" date="2026-06-01" />);
-    expect(screen.getByText(/reported 2026-06-01/)).toBeInTheDocument();
+    const { container } = render(<Receipt value="100%" label="static" tier="reported" date="2026-06-01" />);
+    expect(container.textContent).toMatch(/reported 2026-06-01/);
+  });
+
+  it('wraps the date in a <time> element with a matching dateTime (H1)', () => {
+    const { container } = render(<Receipt value="2,971" label="tests passing" tier="measured" date="2026-08-16" />);
+    const time = container.querySelector('time');
+    expect(time).not.toBeNull();
+    expect(time).toHaveAttribute('dateTime', '2026-08-16');
+    expect(time?.textContent).toBe('2026-08-16');
   });
 
   it('renders no method link when methodHref is omitted', () => {
