@@ -62,4 +62,21 @@ describe('LedgerRow', () => {
     renderRow({ numeral: '06', title: 'Round Six' });
     expect(screen.queryByText('open')).not.toBeInTheDocument();
   });
+
+  it('overrides the sr-only numeral word via numeralLabel (CalibrationRecord uses "Round")', () => {
+    renderRow({ numeral: 'IV', title: 'Round Four', numeralLabel: 'Round' });
+    expect(screen.getByText('Round IV')).toHaveClass('sr-only');
+    expect(screen.queryByText('Row IV')).not.toBeInTheDocument();
+  });
+
+  it('renders optional trailing content from `after`, inside the row', () => {
+    const { container } = renderRow({
+      numeral: '01',
+      title: 'Round One',
+      after: <span data-testid="counts">53 findings · 53 accounted</span>,
+    });
+    const after = screen.getByTestId('counts');
+    expect(after).toBeInTheDocument();
+    expect(container.querySelector('li')).toContainElement(after);
+  });
 });
