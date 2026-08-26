@@ -53,15 +53,7 @@
     },
     "accessibility__light__375": {
       "vw": 375,
-      "findings": [
-        {
-          "tag": "span",
-          "cls": "whitespace-nowrap",
-          "over": 151.56,
-          "left": 64,
-          "text": "· label-content-name-mismatch"
-        }
-      ],
+      "findings": [],
       "plantCaught": true
     },
     "accessibility__dark__1440": {
@@ -71,15 +63,7 @@
     },
     "accessibility__dark__375": {
       "vw": 375,
-      "findings": [
-        {
-          "tag": "span",
-          "cls": "whitespace-nowrap",
-          "over": 151.56,
-          "left": 64,
-          "text": "· label-content-name-mismatch"
-        }
-      ],
+      "findings": [],
       "plantCaught": true
     },
     "archive__light__1440": {
@@ -269,15 +253,7 @@
     },
     "work-claude-corp__light__375": {
       "vw": 375,
-      "findings": [
-        {
-          "tag": "a",
-          "cls": "group.link-draw.font-sans",
-          "over": 34.42,
-          "left": 64,
-          "text": "otherReal commits (AccessMap)↗(opens in "
-        }
-      ],
+      "findings": [],
       "plantCaught": true
     },
     "work-claude-corp__dark__1440": {
@@ -287,15 +263,7 @@
     },
     "work-claude-corp__dark__375": {
       "vw": 375,
-      "findings": [
-        {
-          "tag": "a",
-          "cls": "group.link-draw.font-sans",
-          "over": 34.42,
-          "left": 64,
-          "text": "otherReal commits (AccessMap)↗(opens in "
-        }
-      ],
+      "findings": [],
       "plantCaught": true
     },
     "work-dashboard__light__1440": {
