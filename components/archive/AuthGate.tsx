@@ -107,7 +107,23 @@ export function AuthGate({ children }: { children: ReactNode }) {
   return (
     <div className="sa-auth">
       <div className="sa-card">
-        <div className="sa-mono sa-card-kicker">THE STUDIO ARCHIVE</div>
+        {/* L1 (2026-08-26) — an <h1>, not a <div>. Live axe found this card
+            shipping ZERO headings (`page-has-heading-one`, both themes), and no
+            local scan could ever have caught it: without a .env.local the
+            Supabase client throws and /archive/ renders global-error.tsx, which
+            HAS an h1 — so every local run in every phase of THE ROOM scored the
+            error boundary and passed. Found by pointing the same rig at
+            production after the deploy.
+            The tag is the only change. `.sa-card-kicker` carries font-size,
+            weight and colour, and Tailwind's preflight (globals.css is imported
+            by the root layout, which /archive sits under) zeroes heading margin
+            and inherits font-size/weight — so this is pixel-identical, verified
+            by computed-style diff against live rather than assumed.
+            Sky unlocked this one element; the /archive island stays PROTECT
+            read-only otherwise. The kicker rather than the lede because it is
+            the page's NAME, which is what a screen-reader user landing on a
+            sign-in wall needs announced first. */}
+        <h1 className="sa-mono sa-card-kicker">THE STUDIO ARCHIVE</h1>
         <p className="sa-serif sa-card-lede">Your catalogue, on any device. Sign in to open it.</p>
 
         <form onSubmit={sendLink}>
