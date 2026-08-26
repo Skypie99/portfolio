@@ -398,7 +398,10 @@
      ADDITIVE: every name here is NEW. A softened, CALM sibling of the
      locked landing's vocabulary — the intro's quint S-curve
      cubic-bezier(0.83,0,0.17,1) is studied but NEVER reused here.
-     Mirrored in tailwind.config.ts (ease-gh-* / duration-transition|scene).
+     The EASINGS are mirrored in tailwind.config.ts (ease-gh-*). The scene
+     and settle DURATION rungs deliberately are not: they are consumed only
+     as var(--dur-…) by hand-authored CSS in this file, so their Tailwind
+     keys had zero call sites and were removed (G3 — see the note there).
      Full reference + reduced-motion variants: MOTION_SYSTEM.md.
      ================================================================== */
   /* Golden-hour easings — the intro's "camera" weight, gentler. */
@@ -409,6 +412,15 @@
   /* Scene duration tier (beside --dur-fast/base/slow/reveal above). */
   --dur-transition: 420ms;   /* route-change crossfade */
   --dur-scene:      1200ms;  /* large section reveal — slower reads more cinematic */
+  /* THE ROOM / Phase G · G3 — the seventh rung the approved system sheet
+     names ("180 fast · 280 base · 520 slow · 900 reveal · 420 transition ·
+     1200 scene · NEW 560 settle", board 04, ratified 13_DECISIONS #2).
+     560ms was already in the sheet as a LITERAL on .settle-heading, carried
+     over from the framer tween that rule replaced; naming it is what makes
+     the ramp complete instead of "the ramp, plus one number". CSS-authored
+     surfaces only — see the note in tailwind.config.ts for why the scene and
+     settle tiers deliberately have no Tailwind mirror. */
+  --dur-settle:     560ms;   /* a heading arriving alone — longer tail than --dur-slow */
   /* Stagger rhythm. */
   --stagger-step:   80ms;    /* matches <Reveal index> today */
   --stagger-scene:  120ms;   /* larger choreographed sequences */
@@ -958,7 +970,10 @@ article h2[id]:target::before {
   article h2[id]:target::before {
     /* var(--ease-entrance): the site's arrivals DECELERATE in; ease-in made
        this the only element that accelerated into visibility (clockwork r1). */
-    animation: target-arrival 300ms var(--ease-entrance);
+    /* G3: 300ms was a stray between the base and slow rungs; it joins the
+       nearest tier. −20ms (7%) on a 2px gutter bar's fade — the arrival's
+       job is to say "this is the anchor you asked for", and it still does. */
+    animation: target-arrival var(--dur-base) var(--ease-entrance);
   }
 }
 @keyframes target-arrival {
@@ -1252,6 +1267,12 @@ html.reveal-rearm .reveal:not(.reveal-shown) {
    --dur-slow + 150ms delay       (HeroTitleSettle, same curve)
    --dur-reveal / --ease-out      (HeroImageSettle, was [0.22,1,0.36,1])
    ------------------------------------------------------------------ */
+/* G3 — this keyframe is intentionally driven at TWO named tiers, and that is
+   now a stated design fact rather than the accidental 560-vs-520 split it was:
+   .settle-heading is a route h1 arriving ALONE and takes the longer --dur-settle
+   tail; .hero-settle-title arrives as one beat of a composed hero and takes
+   --dur-slow plus its own offset. One gesture, two contexts, two rungs — no
+   longer one rung and one literal. */
 @keyframes settle-title {
   from {
     opacity: 0;
@@ -1279,10 +1300,17 @@ html.reveal-rearm .reveal:not(.reveal-shown) {
 }
 @media (prefers-reduced-motion: no-preference) {
   .settle-heading {
-    animation: settle-title 560ms var(--ease-entrance) both;
+    animation: settle-title var(--dur-settle) var(--ease-entrance) both;
   }
   .hero-settle-title {
     animation: settle-title var(--dur-slow) var(--ease-entrance) both;
+    /* G3 SURVIVOR, kept deliberately. 150ms is not a rung and there is no
+       delay tier above --stagger-scene (120ms). It is not rhythm — it is this
+       ONE composition's offset: the hero title, its image (--dur-reveal, no
+       delay) and the framed artifact (--dur-scene + --stagger-scene) are
+       choreographed against each other, and moving the title to 120ms would
+       retime a settled three-part arrival to satisfy a naming rule. The
+       system sheet's stray list (300 / 560 / 600 / 120) does not include it. */
     animation-delay: 150ms;
   }
   .hero-settle-img {
@@ -1332,7 +1360,10 @@ html.reveal-rearm .reveal:not(.reveal-shown) {
 }
 @media (prefers-reduced-motion: no-preference) {
   .pr-hero-lift {
-    animation: pr-hero-lift var(--dur-scene) var(--ease-gh-settle) 120ms both;
+    /* G3: the 120ms offset is exactly --stagger-scene, and semantically it
+       IS one — the hero is a short sequence of a few big blocks (world, then
+       frame) and this is the frame's beat in it. Same value, now named. */
+    animation: pr-hero-lift var(--dur-scene) var(--ease-gh-settle) var(--stagger-scene) both;
   }
 }
 
@@ -1354,7 +1385,15 @@ html.reveal-rearm .reveal:not(.reveal-shown) {
 }
 @media (prefers-reduced-motion: no-preference) {
   .pr-stone-settle {
-    animation: stone-laid-settle 180ms var(--ease-gh-settle) both;
+    /* G3: the codex's 180ms and the ramp's micro rung are the SAME number, so
+       this now reads from the rung — which is what makes "the flagship's one
+       loud beat is on the site's own ramp" checkable rather than a claim.
+       DELIBERATE COUPLING, stated because it is not free: if --dur-fast is
+       ever retuned, this settle moves with it and the citation to Flagstone's
+       own art-direction codex silently stops being true. lib/__tests__/
+       duration-ramp.test.ts pins --dur-fast at 180ms and names this rule in
+       its failure message, so that retune trips a test instead of drifting. */
+    animation: stone-laid-settle var(--dur-fast) var(--ease-gh-settle) both;
   }
 }
 
@@ -1977,6 +2016,121 @@ html.dark .lit-windows {
   @keyframes enfilade-advance-to-meet { from { transform: scale(0.985); } }
 }
 
+/* ------------------------------------------------------------------
+   THE ROOM / Phase G · G1 — THE DUSK-TURN.
+
+   The theme flip as a dissolve THROUGH the world's own dusk. Explicit
+   toggle only — never on scroll, never ambient (restraint law). Same
+   420ms scene budget as every other transition; reduced motion gets an
+   instant flip (three independent gates, listed at the bottom).
+
+   WHY THIS EXISTS: the flip used to ride the generic route dissolve
+   above — a plain cross-fade of two frames whose LAYOUT is identical
+   and whose only difference is colour, plus a 0.10-alpha gold field.
+   Sky reviewed it and was right: "the transition is currently so subtle
+   that it is effectively invisible... small gray rectangles/pixels
+   [rather] than an intentional gradient." A cross-fade between two
+   near-identical frames has nothing to show; the eye reads mush.
+
+   THE FIX — a real value journey, not a louder fade. The two rooms are
+   sequenced rather than blended: the room you leave thins away over the
+   front of the turn, the room you enter resolves over the back of it,
+   and in between the page passes through an actual dusk (or dawn) sky.
+   That sky is painted ONCE, statically, on ::view-transition — the
+   overlay root, which sits UNDER the snapshot pair — so the "sweep" is
+   a full-viewport vertical ramp the snapshots uncover, and the only
+   animated property in the whole move is `opacity` (compositor-only,
+   §7 contract). Board 02 pane B2 is the storyboard.
+
+   THE COLOUR IS THE SITE'S OWN. Nothing is invented: the dark leg is
+   --sky-dusk-1/2/3 → --sky-day-4 → --sky-dusk-4 (indigo-plum → wine →
+   ember horizon → deep earth → night) — literally the ramp WorldBackdrop
+   already crossfades through at --day-night 0.5, which is why it reads
+   as this world turning rather than as a colour effect. The pseudos'
+   styles resolve AFTER the callback has toggled .dark, so each leg
+   automatically picks up the DESTINATION room's palette: you dissolve
+   through the dusk of the room you are entering.
+
+   THE TWO LEGS ARE DELIBERATELY ASYMMETRIC, and that asymmetry is the
+   world's existing law, not a compromise. The continuous-world block
+   (~line 1560) states it: light is "deliberately GENTLER than the dark
+   arc: less luminance travel, warm throughout (no cool twilight)... The
+   DRAMATIC deep world lives in dark mode." So dark→light runs a DAWN
+   through the light room's own warm family (--sky-day-1 → --sky-sun →
+   --sky-day-3 → --rgb-earth → --rgb-earth-deep) — real travel, ~0.85
+   down to ~0.45 relative luminance, but airy where the dusk is deep.
+   The light theme's own --sky-dusk-* stops are NOT used here: they sit
+   within 6 RGB points of each other (250 224 196 → 238 211 184), i.e.
+   a flat cream, which would reproduce the exact invisibility Sky
+   rejected.
+
+   REDUCED MOTION — instant flip, no sweep, three independent gates:
+     1. ThemeToggle checks prefers-reduced-motion and calls setTheme()
+        WITHOUT startViewTransition, so no pseudo tree is ever built.
+     2. This entire block is inside `no-preference` — nothing below can
+        match, so the sky is never even painted.
+     3. The `reduce` guard below already snaps every root snapshot to
+        0.01ms.
+   Nothing is lost but the poetry: the theme still flips, instantly.
+
+   Specificity note: these selectors tie with the enfilade block above
+   (0,1,2) and win on SOURCE ORDER — which is why this block sits after
+   it. A theme flip never sets data-nav-direction (only the nav
+   interceptor does, and it self-heals a stale one), so the two never
+   actually collide; the ordering is a belt-and-braces guarantee.
+
+   Reversible: delete this block + the data-theme-turn writes in
+   ThemeToggle.tsx and the flip is byte-identical to the shipped
+   route dissolve.
+   ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: no-preference) {
+  /* The sky the page passes through. Static paint on the overlay root,
+     UNDER the snapshot pair — uncovered, never animated. */
+  html[data-theme-turn='dark']::view-transition {
+    background: linear-gradient(
+      180deg,
+      rgb(var(--sky-dusk-1)) 0%,    /* indigo-plum, high sky */
+      rgb(var(--sky-dusk-2)) 34%,   /* wine */
+      rgb(var(--sky-dusk-3)) 52%,   /* the ember horizon */
+      rgb(var(--sky-day-4)) 72%,    /* deep earth below the light */
+      rgb(var(--sky-dusk-4)) 100%   /* night */
+    );
+  }
+  html[data-theme-turn='light']::view-transition {
+    background: linear-gradient(
+      180deg,
+      rgb(var(--sky-day-1)) 0%,     /* high cream sky */
+      rgb(var(--sky-sun)) 32%,      /* the sun band */
+      rgb(var(--sky-day-3)) 52%,    /* peach horizon */
+      rgb(var(--rgb-earth)) 74%,    /* sandstone ground */
+      rgb(var(--rgb-earth-deep)) 100%
+    );
+  }
+
+  /* The two rooms, sequenced. Authoring `animation` on these pseudos
+     REPLACES the UA's own cross-fade keyframes (the same composition
+     rule the enfilade block documents), so the fades are explicit.
+     The hold segments are what open the window onto the sky above:
+     the old room is gone by 42% (~176ms — board pane B2's middle
+     frame) and the new room does not begin until 58% (~244ms). */
+  html[data-theme-turn]::view-transition-old(root) {
+    animation: theme-turn-out var(--dur-transition) var(--ease-gh-glide) both;
+  }
+  html[data-theme-turn]::view-transition-new(root) {
+    animation: theme-turn-in var(--dur-transition) var(--ease-gh-glide) both;
+  }
+  @keyframes theme-turn-out {
+    0%   { opacity: 1; }
+    42%  { opacity: 0; }
+    100% { opacity: 0; }
+  }
+  @keyframes theme-turn-in {
+    0%   { opacity: 0; }
+    58%  { opacity: 0; }
+    100% { opacity: 1; }
+  }
+}
+
 /* Reduced motion → INSTANT CUT. Snap the root snapshots (the VT pseudos are
    NOT matched by the global *,::before,::after reduced-motion rule below, so
    they need their own guard) and drop the gold. This also neutralizes the
@@ -2488,6 +2642,73 @@ html.dark ::selection {
    ------------------------------------------------------------------ */
 .group:hover > .link-draw-group,
 .group:focus-visible > .link-draw-group {
+  background-size: 100% 1px;
+}
+
+/* ------------------------------------------------------------------
+   THE ROOM / Phase G · G2 — THE METHOD UNDERLINE.
+
+   The site-wide tic that rewards the skeptic: every measured number
+   underlines to its method. Land on a figure and the door to its proof
+   draws itself; the number and the command that reproduces it behave as
+   ONE instrument rather than a claim with some fine print near it.
+   Comprehension motion, not decoration — it says "this figure has a
+   method, and it is right here."
+
+   Two classes, the second an opt-in rider on the first (exactly the
+   `.link-draw-group` idiom directly above):
+     `.method-pair` — the unit that owns a figure AND its method link.
+     `.method-draw`  — goes on the method anchor, BESIDE `link-draw`.
+                       Paints nothing on its own; it needs `link-draw`
+                       on the same element for the gradient to exist.
+
+   180ms (--dur-fast), per the design system's motion clause — faster
+   than `link-draw`'s stock 280ms draw, because this fires from a hover
+   the visitor did not aim at the link itself, so it must have already
+   answered by the time their eye arrives. Overriding the transition
+   here also keeps the DIRECT hover on these anchors at the same 180ms,
+   so one tic never runs at two speeds. The other 29 `link-draw` sites
+   are untouched.
+
+   DELIBERATELY STATE-ONLY, matching `.link-draw-group`: the pair-
+   triggered answer is the LINE, never a colour change. Measured on the
+   built page rather than assumed — on all three call sites today there
+   is no colour tier to reserve anyway, because each anchor pins
+   `hover:text-accent-text`, whose utility overrides `.link-draw:hover`'s
+   `--color-link-hover` deepen (rgb 135 71 45 in BOTH states, verified in
+   Chromium). That is pre-existing and deliberate: these method links stay
+   in accent ink whatever the pointer does. Keeping the pair rule colour-
+   free means a broad hover region can only ever add the one new signal it
+   promises, and cannot surprise a future call site by deepening ink under
+   a whole card.
+
+   `color` still has to appear in the transition below even though it is
+   inert on today's anchors: the shorthand REPLACES `.link-draw`'s own
+   transition, so dropping it would leave colour with no transition at all
+   the moment a call site does let the deepen through.
+
+   :focus-within is the keyboard's half of "hover AND focus" — the
+   figures themselves are not focusable (they are text), so tabbing to
+   the method link is what lights the pair. The anchor's own
+   `link-draw:focus-visible` still fires alongside, giving the keyboard
+   the louder tier.
+
+   TOUCH + REDUCED MOTION — the underline is never the only signal. In
+   all three call sites the method link is rendered as ordinary, always-
+   visible, always-in-the-a11y-tree text in the site's accent ink; the
+   line is an enhancement on top of a door that is already open. Touch
+   never hovers and loses nothing. Under reduced motion the global floor
+   (`transition-duration: .01ms !important`) collapses the draw to an
+   instant state change — the underline still appears on hover, it just
+   does not travel. Guarded in Receipt.test.tsx / A11yReceipts.test.tsx.
+   ------------------------------------------------------------------ */
+.method-draw {
+  transition:
+    background-size var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out);
+}
+.method-pair:hover .method-draw,
+.method-pair:focus-within .method-draw {
   background-size: 100% 1px;
 }
 

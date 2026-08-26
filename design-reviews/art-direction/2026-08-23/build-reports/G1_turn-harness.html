@@ -1,0 +1,101 @@
+<!doctype html>
+<!--
+  THE ROOM / Phase G · G1 — the dusk-turn composite harness.
+
+  RUN:  npm run build
+        cp design-reviews/art-direction/2026-08-23/build-reports/G1_turn-harness.html out/_g1-turn-harness.html
+        open http://localhost:3005/_g1-turn-harness.html?leg=dark&p=0.5
+        (the `portfolio-out` launch config serves out/ on 3005)
+        …then DELETE out/_g1-turn-harness.html before running the gate —
+        lib/__tests__/static-integrity.test.ts sweeps every .html in out/ and
+        will correctly fail a page that is not a real route.
+
+  PARAMS: leg=dark (light->dark, dusk) | leg=light (dark->light, dawn)
+          p=0..1   progress through the 420ms turn
+
+  WHY IT EXISTS: startViewTransition is SKIPPED outright when the document is
+  hidden, and a headless Browser pane is permanently hidden — so the live turn
+  cannot be exercised there at all. This composites the same layers the VT
+  composites: the real ::view-transition gradient (read out of the built
+  stylesheet via CSSOM, never retyped, and evaluated inside a frame pinned to
+  the destination theme so its var()s resolve in the right scope), with the
+  real page in each theme above it at exactly the opacity theme-turn-out /
+  theme-turn-in give at time p — including the real --ease-gh-glide curve.
+  The arithmetic is the browser's; only the clock is held.
+-->
+<html><head><meta charset="utf-8"><title>G1 dusk-turn — composite harness</title>
+<style>
+  html,body{margin:0;height:100%;background:#000;overflow:hidden}
+  #sky{position:fixed;inset:0;z-index:0}
+  .room{position:fixed;inset:0;z-index:1}
+  .room iframe{width:100%;height:100%;border:0;display:block}
+  #hud{position:fixed;left:0;right:0;bottom:0;z-index:9;font:12px ui-monospace,monospace;
+       background:#000c;color:#fff;padding:6px 10px;letter-spacing:.06em}
+</style></head><body>
+<div id="sky"></div>
+<div class="room" id="old"><iframe id="fold" src="/about/"></iframe></div>
+<div class="room" id="new"><iframe id="fnew" src="/about/"></iframe></div>
+<div id="hud">loading…</div>
+<script>
+// ── the REAL shipped rule, read out of the built stylesheet inside the iframe ──
+function shippedRule(doc, selector) {
+  for (const s of doc.styleSheets) {
+    let rules; try { rules = s.cssRules; } catch { continue; }
+    for (const r of rules) for (const q of (r.cssRules ? [...r.cssRules] : [r]))
+      if (q.selectorText === selector) return q.style.background;
+  }
+  return null;
+}
+// cubic-bezier(0.5, 0, 0.1, 1) — --ease-gh-glide, the real curve on both keyframes
+function bez(x1,y1,x2,y2){ return t => { if(t<=0)return 0; if(t>=1)return 1;
+  const cx=3*x1, bx=3*(x2-x1)-cx, ax=1-cx-bx, cy=3*y1, by=3*(y2-y1)-cy, ay=1-cy-by;
+  let u=t; for(let i=0;i<10;i++){ const x=((ax*u+bx)*u+cx)*u-t, d=(3*ax*u+2*bx)*u+cx;
+    if(Math.abs(x)<1e-7)break; u-=x/(d||1e-6);} return ((ay*u+by)*u+cy)*u; };}
+const glide = bez(0.5,0,0.1,1);
+// theme-turn-out: 1 -> 0 across 0%..42%   |   theme-turn-in: 0 -> 1 across 58%..100%
+const oldOpacity = p => p >= 0.42 ? 0 : 1 - glide(p / 0.42);
+const newOpacity = p => p <= 0.58 ? 0 : glide((p - 0.58) / 0.42);
+
+const q   = new URLSearchParams(location.search);
+const leg = q.get('leg') || 'dark';          // 'dark' = light->dark, 'light' = dark->light
+const p   = parseFloat(q.get('p') || '0');   // progress 0..1
+const fromDark = leg === 'light';            // the theme of the room you LEAVE
+
+// next-themes re-asserts .dark on hydration, so PIN each frame's theme for good.
+function pin(frame, dark) {
+  const d = frame.contentDocument, el = d.documentElement;
+  const assert = () => {
+    if (el.classList.contains('dark') !== dark) el.classList.toggle('dark', dark);
+    if (el.style.colorScheme !== (dark ? 'dark' : 'light')) el.style.colorScheme = dark ? 'dark' : 'light';
+  };
+  assert();
+  new MutationObserver(assert).observe(el, { attributes: true, attributeFilter: ['class', 'style'] });
+  return d;
+}
+
+let ready = 0;
+function paint() {
+  if (++ready < 2) return;
+  pin(fold, fromDark);
+  const d = pin(fnew, !fromDark);
+  // The destination room's sky — literally html[data-theme-turn=<leg>]::view-transition,
+  // read from the shipped CSS. Its var()s must resolve in the DESTINATION theme's
+  // scope, so evaluate it inside the frame that is already pinned to that theme.
+  const decl = shippedRule(d, 'html[data-theme-turn="' + leg + '"]::view-transition');
+  const probe = d.createElement('div');
+  probe.style.background = decl; d.body.appendChild(probe);
+  document.getElementById('sky').style.background =
+    getComputedStyle(probe).backgroundImage;         // var()s resolved to real rgb()
+  probe.remove();
+
+  document.getElementById('old').style.opacity = oldOpacity(p);
+  document.getElementById('new').style.opacity = newOpacity(p);
+  document.getElementById('hud').textContent =
+    (leg === 'dark' ? 'LIGHT → DARK (dusk)' : 'DARK → LIGHT (dawn)') +
+    '  ·  t = ' + Math.round(p * 420) + 'ms of 420  ·  ' + Math.round(p * 100) + '%' +
+    '  ·  leaving ' + oldOpacity(p).toFixed(2) + '  ·  entering ' + newOpacity(p).toFixed(2) +
+    '  ·  SKY VISIBLE ' + Math.round((1 - oldOpacity(p)) * (1 - newOpacity(p)) * 100) + '%' +
+    (decl ? '' : '  ·  ⚠ RULE NOT FOUND');
+}
+fold.onload = paint; fnew.onload = paint;
+</script></body></html>
