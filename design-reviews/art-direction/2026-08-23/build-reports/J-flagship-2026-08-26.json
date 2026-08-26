@@ -1,0 +1,182 @@
+{
+  "flagstone": {
+    "375": {
+      "firstVP": {
+        "capture": 2,
+        "plate": 0,
+        "timeEl": [],
+        "h1": [
+          "Flagstone"
+        ]
+      },
+      "h1Count": 1,
+      "bodyH2": [
+        "The problem",
+        "The approach",
+        "Where it stands",
+        "My role",
+        "What went wrong",
+        "Reflection",
+        "See it in motion.",
+        "Continue reading.",
+        "Have something like this?Write to me."
+      ],
+      "times": [
+        {
+          "dt": "2026-07-31",
+          "text": "2026-07-31"
+        },
+        {
+          "dt": "2026-08-16",
+          "text": "2026-08-16"
+        }
+      ],
+      "imgCount": 10,
+      "imgsWithCaption": 4,
+      "imgsWithSizeAttrs": 10,
+      "overflow": {
+        "overflows": false,
+        "sw": 375,
+        "cw": 375,
+        "offenders": [
+          "DIV.pointer-events-none",
+          "DIV.pointer-events-none",
+          "DIV.absolute"
+        ]
+      },
+      "tabularNumeralNodes": 2,
+      "signoffPresent": false,
+      "whatWentWrong": true,
+      "docHeight": 12753
+    },
+    "1440": {
+      "firstVP": {
+        "capture": 2,
+        "plate": 1,
+        "timeEl": [],
+        "h1": [
+          "Flagstone"
+        ]
+      },
+      "h1Count": 1,
+      "bodyH2": [
+        "The problem",
+        "The approach",
+        "Where it stands",
+        "My role",
+        "What went wrong",
+        "Reflection",
+        "See it in motion.",
+        "Continue reading.",
+        "Have something like this?Write to me."
+      ],
+      "times": [
+        {
+          "dt": "2026-07-31",
+          "text": "2026-07-31"
+        },
+        {
+          "dt": "2026-08-16",
+          "text": "2026-08-16"
+        }
+      ],
+      "imgCount": 10,
+      "imgsWithCaption": 4,
+      "imgsWithSizeAttrs": 10,
+      "overflow": {
+        "overflows": false,
+        "sw": 1440,
+        "cw": 1440,
+        "offenders": [
+          "DIV.pointer-events-none",
+          "DIV.pointer-events-none",
+          "DIV.absolute"
+        ]
+      },
+      "tabularNumeralNodes": 2,
+      "signoffPresent": false,
+      "whatWentWrong": true,
+      "docHeight": 9493
+    }
+  },
+  "claude-corp": {
+    "375": {
+      "firstVP": {
+        "capture": 1,
+        "plate": 0,
+        "timeEl": [],
+        "h1": [
+          "Claude Corp"
+        ]
+      },
+      "h1Count": 1,
+      "bodyH2": [
+        "The problem",
+        "The approach",
+        "What shipped",
+        "My role",
+        "Reflection",
+        "See it in motion.",
+        "Continue reading.",
+        "Have something like this?Write to me."
+      ],
+      "times": [],
+      "imgCount": 7,
+      "imgsWithCaption": 1,
+      "imgsWithSizeAttrs": 7,
+      "overflow": {
+        "overflows": false,
+        "sw": 375,
+        "cw": 375,
+        "offenders": [
+          "DIV.pointer-events-none",
+          "DIV.pointer-events-none",
+          "DIV.absolute"
+        ]
+      },
+      "tabularNumeralNodes": 2,
+      "signoffPresent": false,
+      "whatWentWrong": false,
+      "docHeight": 9271
+    },
+    "1440": {
+      "firstVP": {
+        "capture": 1,
+        "plate": 0,
+        "timeEl": [],
+        "h1": [
+          "Claude Corp"
+        ]
+      },
+      "h1Count": 1,
+      "bodyH2": [
+        "The problem",
+        "The approach",
+        "What shipped",
+        "My role",
+        "Reflection",
+        "See it in motion.",
+        "Continue reading.",
+        "Have something like this?Write to me."
+      ],
+      "times": [],
+      "imgCount": 7,
+      "imgsWithCaption": 1,
+      "imgsWithSizeAttrs": 7,
+      "overflow": {
+        "overflows": false,
+        "sw": 1440,
+        "cw": 1440,
+        "offenders": [
+          "DIV.pointer-events-none",
+          "DIV.pointer-events-none",
+          "DIV.pointer-events-none"
+        ]
+      },
+      "tabularNumeralNodes": 2,
+      "signoffPresent": false,
+      "whatWentWrong": false,
+      "docHeight": 7312
+    }
+  }
+}

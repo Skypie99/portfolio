@@ -46,7 +46,7 @@ app/work/[slug]/page.tsx:108-113,148-150 AND app/blog/[slug]/page.tsx:23-24,127-
 
 ## DECISIONS FOR SKY (proposed, not implemented)
 1. **Is the Dashboard product #6?** Implemented the count-free copy (Option B — true either way). If you want it counted: flip the three strings to "Six", add a Dashboard GitHub link to deliverables.json (repo URL needed from you — without it "All open source" is wrong), and approve a 6th showcase cell (spec ready: chip object + `lg:grid-cols-6`; cells get ~17% narrower).
-2. **In-body "See it in motion" galleries** remain designed placeholders for accessmap/claude-corp/prompt-library/ghost-code/mutual-mesh (dashboard has 3 real shots). One-line swaps in deliverables.json when you have screenshots. (Known deferred item — unchanged.)
+2. **In-body "See it in motion" galleries** remain designed placeholders for flagstone/claude-corp/prompt-library/ghost-code (dashboard has 3 real shots). One-line swaps in deliverables.json when you have screenshots. (Known deferred item — unchanged.)
 3. **No-JS grid exposure (follow-up, NOT this pass):** WorkFilterGrid + AnimatedCertGrid also SSR `opacity:0` cards (framer useInView). Recovery works with JS; scripting:none users see empty grids. Fix would touch filter/AnimatePresence interaction code → separate proposal (F5).
 4. **SVG OG images on sub-pages** — pre-existing, still out of scope.
 

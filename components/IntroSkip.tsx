@@ -55,6 +55,14 @@ export function IntroSkip() {
       ref={ref}
       href="#hero"
       className={cn(
+        // z-55 is the landing's own documented "above the pinned stage (z-50)"
+        // layer — globals.css already places IntroScrollCue and the runway mark
+        // there for the same reason. Deliberately NOT a --z-* ladder rung: that
+        // ladder's own comment says it names the layers AROUND the frozen
+        // landing numbering (cdesert pin 50 / title 60 / finish 70) and does not
+        // renumber them. Phase J's arbitrary-value census flagged this as the
+        // one member of that family with no reason written down; the value is
+        // right, the note was missing.
         'fixed z-[55]',
         'bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-[max(1.25rem,env(safe-area-inset-right))]',
         'inline-flex h-11 items-center gap-2 rounded-pill px-4',

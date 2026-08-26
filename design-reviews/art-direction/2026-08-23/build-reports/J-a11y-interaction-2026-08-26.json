@@ -1,0 +1,672 @@
+{
+  "meta": {
+    "engine": "Chromium (playwright-core 1.61.1) headless — NOT Safari/WebKit",
+    "when": "2026-08-26"
+  },
+  "keyboard": {
+    "404": {
+      "stops": 22,
+      "focusVisibleStops": 22,
+      "stopsWithoutRing": 0,
+      "offenders": [],
+      "rings": [
+        "outline 2px solid rgb(185, 99, 64)"
+      ]
+    },
+    "home": {
+      "stops": 34,
+      "focusVisibleStops": 34,
+      "stopsWithoutRing": 0,
+      "offenders": [],
+      "rings": [
+        "outline 2px solid rgb(185, 99, 64)"
+      ]
+    },
+    "about": {
+      "stops": 29,
+      "focusVisibleStops": 29,
+      "stopsWithoutRing": 0,
+      "offenders": [],
+      "rings": [
+        "outline 2px solid rgb(185, 99, 64)"
+      ]
+    },
+    "accessibility": {
+      "stops": 27,
+      "focusVisibleStops": 27,
+      "stopsWithoutRing": 0,
+      "offenders": [],
+      "rings": [
+        "outline 2px solid rgb(185, 99, 64)"
+      ]
+    },
+    "archive": {
+      "stops": 3,
+      "focusVisibleStops": 3,
+      "stopsWithoutRing": 0,
+      "offenders": [],
+      "rings": [
+        "outline 2px solid rgb(185, 99, 64)"
+      ]
+    },
+    "blog": {
+      "stops": 24,
+      "focusVisibleStops": 24,
+      "stopsWithoutRing": 0,
+      "offenders": [],
+      "rings": [
+        "outline 2px solid rgb(185, 99, 64)"
+      ]
+    },
+    "blog-building-flagstone": {
+      "stops": 29,
+      "focusVisibleStops": 29,
+      "stopsWithoutRing": 0,
+      "offenders": [],
+      "rings": [
+        "outline 2px solid rgb(185, 99, 64)"
+      ]
+    },
+    "certificates": {
+      "stops": 29,
+      "focusVisibleStops": 29,
+      "stopsWithoutRing": 0,
+      "offenders": [],
+      "rings": [
+        "outline 2px solid rgb(185, 99, 64)"
+      ]
+    },
+    "colophon": {
+      "stops": 28,
+      "focusVisibleStops": 28,
+      "stopsWithoutRing": 0,
+      "offenders": [],
+      "rings": [
+        "outline 2px solid rgb(185, 99, 64)"
+      ]
+    },
+    "contact": {
+      "stops": 24,
+      "focusVisibleStops": 24,
+      "stopsWithoutRing": 0,
+      "offenders": [],
+      "rings": [
+        "outline 2px solid rgb(185, 99, 64)"
+      ]
+    },
+    "runway": {
+      "stops": 7,
+      "focusVisibleStops": 7,
+      "stopsWithoutRing": 0,
+      "offenders": [],
+      "rings": [
+        "outline 2px solid rgb(185, 99, 64)"
+      ]
+    },
+    "work": {
+      "stops": 33,
+      "focusVisibleStops": 33,
+      "stopsWithoutRing": 0,
+      "offenders": [],
+      "rings": [
+        "outline 2px solid rgb(185, 99, 64)"
+      ]
+    },
+    "work-flagstone": {
+      "stops": 38,
+      "focusVisibleStops": 38,
+      "stopsWithoutRing": 0,
+      "offenders": [],
+      "rings": [
+        "outline 2px solid rgb(185, 99, 64)"
+      ]
+    },
+    "work-claude-corp": {
+      "stops": 34,
+      "focusVisibleStops": 34,
+      "stopsWithoutRing": 0,
+      "offenders": [],
+      "rings": [
+        "outline 2px solid rgb(185, 99, 64)"
+      ]
+    },
+    "work-dashboard": {
+      "stops": 34,
+      "focusVisibleStops": 34,
+      "stopsWithoutRing": 0,
+      "offenders": [],
+      "rings": [
+        "outline 2px solid rgb(185, 99, 64)"
+      ]
+    },
+    "work-prompt-library": {
+      "stops": 34,
+      "focusVisibleStops": 34,
+      "stopsWithoutRing": 0,
+      "offenders": [],
+      "rings": [
+        "outline 2px solid rgb(185, 99, 64)"
+      ]
+    },
+    "work-ghost-code": {
+      "stops": 34,
+      "focusVisibleStops": 34,
+      "stopsWithoutRing": 0,
+      "offenders": [],
+      "rings": [
+        "outline 2px solid rgb(185, 99, 64)"
+      ]
+    }
+  },
+  "reflow": {
+    "404": {
+      "at320": {
+        "overflow": false,
+        "sw": 320,
+        "cw": 320,
+        "worst": [
+          "div.world-sun"
+        ]
+      },
+      "at200pct": {
+        "overflow": false,
+        "sw": 1440,
+        "cw": 1440
+      }
+    },
+    "home": {
+      "at320": {
+        "overflow": false,
+        "sw": 320,
+        "cw": 320,
+        "worst": [
+          "div.world-sun",
+          "img.cdesert-layer",
+          "img.cdesert-layer"
+        ]
+      },
+      "at200pct": {
+        "overflow": false,
+        "sw": 1440,
+        "cw": 1440
+      }
+    },
+    "about": {
+      "at320": {
+        "overflow": false,
+        "sw": 320,
+        "cw": 320,
+        "worst": [
+          "div.world-sun",
+          "div.pointer-events-none"
+        ]
+      },
+      "at200pct": {
+        "overflow": false,
+        "sw": 1440,
+        "cw": 1440
+      }
+    },
+    "accessibility": {
+      "at320": {
+        "overflow": false,
+        "sw": 320,
+        "cw": 320,
+        "worst": [
+          "div.world-sun"
+        ]
+      },
+      "at200pct": {
+        "overflow": false,
+        "sw": 1440,
+        "cw": 1440
+      }
+    },
+    "archive": {
+      "at320": {
+        "overflow": false,
+        "sw": 320,
+        "cw": 320,
+        "worst": []
+      },
+      "at200pct": {
+        "overflow": false,
+        "sw": 1440,
+        "cw": 1440
+      }
+    },
+    "blog": {
+      "at320": {
+        "overflow": false,
+        "sw": 320,
+        "cw": 320,
+        "worst": [
+          "div.world-sun",
+          "div.pointer-events-none"
+        ]
+      },
+      "at200pct": {
+        "overflow": false,
+        "sw": 1440,
+        "cw": 1440
+      }
+    },
+    "blog-building-flagstone": {
+      "at320": {
+        "overflow": false,
+        "sw": 320,
+        "cw": 320,
+        "worst": [
+          "div.world-sun"
+        ]
+      },
+      "at200pct": {
+        "overflow": false,
+        "sw": 1440,
+        "cw": 1440
+      }
+    },
+    "certificates": {
+      "at320": {
+        "overflow": false,
+        "sw": 320,
+        "cw": 320,
+        "worst": [
+          "div.world-sun",
+          "div.pointer-events-none"
+        ]
+      },
+      "at200pct": {
+        "overflow": false,
+        "sw": 1440,
+        "cw": 1440
+      }
+    },
+    "colophon": {
+      "at320": {
+        "overflow": false,
+        "sw": 320,
+        "cw": 320,
+        "worst": [
+          "div.world-sun"
+        ]
+      },
+      "at200pct": {
+        "overflow": false,
+        "sw": 1440,
+        "cw": 1440
+      }
+    },
+    "contact": {
+      "at320": {
+        "overflow": false,
+        "sw": 320,
+        "cw": 320,
+        "worst": [
+          "div.world-sun",
+          "div.pointer-events-none"
+        ]
+      },
+      "at200pct": {
+        "overflow": false,
+        "sw": 1440,
+        "cw": 1440
+      }
+    },
+    "runway": {
+      "at320": {
+        "overflow": false,
+        "sw": 320,
+        "cw": 320,
+        "worst": [
+          "div.world-sun"
+        ]
+      },
+      "at200pct": {
+        "overflow": false,
+        "sw": 1440,
+        "cw": 1440
+      }
+    },
+    "work": {
+      "at320": {
+        "overflow": false,
+        "sw": 320,
+        "cw": 320,
+        "worst": [
+          "div.world-sun",
+          "div.pointer-events-none",
+          "div.pointer-events-none"
+        ]
+      },
+      "at200pct": {
+        "overflow": false,
+        "sw": 1440,
+        "cw": 1440
+      }
+    },
+    "work-flagstone": {
+      "at320": {
+        "overflow": false,
+        "sw": 320,
+        "cw": 320,
+        "worst": [
+          "div.world-sun",
+          "div.pointer-events-none",
+          "div.pointer-events-none"
+        ]
+      },
+      "at200pct": {
+        "overflow": false,
+        "sw": 1440,
+        "cw": 1440
+      }
+    },
+    "work-claude-corp": {
+      "at320": {
+        "overflow": false,
+        "sw": 320,
+        "cw": 320,
+        "worst": [
+          "div.world-sun",
+          "div.pointer-events-none",
+          "div.pointer-events-none"
+        ]
+      },
+      "at200pct": {
+        "overflow": false,
+        "sw": 1440,
+        "cw": 1440
+      }
+    },
+    "work-dashboard": {
+      "at320": {
+        "overflow": false,
+        "sw": 320,
+        "cw": 320,
+        "worst": [
+          "div.world-sun",
+          "div.pointer-events-none",
+          "div.pointer-events-none"
+        ]
+      },
+      "at200pct": {
+        "overflow": false,
+        "sw": 1440,
+        "cw": 1440
+      }
+    },
+    "work-prompt-library": {
+      "at320": {
+        "overflow": false,
+        "sw": 320,
+        "cw": 320,
+        "worst": [
+          "div.world-sun",
+          "div.pointer-events-none",
+          "div.pointer-events-none"
+        ]
+      },
+      "at200pct": {
+        "overflow": false,
+        "sw": 1440,
+        "cw": 1440
+      }
+    },
+    "work-ghost-code": {
+      "at320": {
+        "overflow": false,
+        "sw": 320,
+        "cw": 320,
+        "worst": [
+          "div.world-sun",
+          "div.pointer-events-none",
+          "div.pointer-events-none"
+        ]
+      },
+      "at200pct": {
+        "overflow": false,
+        "sw": 1440,
+        "cw": 1440
+      }
+    }
+  },
+  "reducedMotion": {
+    "404": {
+      "mediaMatches": true,
+      "running": 0,
+      "hiddenReveals": 0,
+      "revealCount": 2,
+      "invisibleText": 0
+    },
+    "home": {
+      "mediaMatches": true,
+      "running": 0,
+      "hiddenReveals": 0,
+      "revealCount": 27,
+      "invisibleText": 0
+    },
+    "about": {
+      "mediaMatches": true,
+      "running": 0,
+      "hiddenReveals": 0,
+      "revealCount": 14,
+      "invisibleText": 0
+    },
+    "accessibility": {
+      "mediaMatches": true,
+      "running": 0,
+      "hiddenReveals": 0,
+      "revealCount": 23,
+      "invisibleText": 0
+    },
+    "archive": {
+      "mediaMatches": true,
+      "running": 0,
+      "hiddenReveals": 0,
+      "revealCount": 0,
+      "invisibleText": 0
+    },
+    "blog": {
+      "mediaMatches": true,
+      "running": 0,
+      "hiddenReveals": 0,
+      "revealCount": 2,
+      "invisibleText": 0
+    },
+    "blog-building-flagstone": {
+      "mediaMatches": true,
+      "running": 0,
+      "hiddenReveals": 0,
+      "revealCount": 23,
+      "invisibleText": 0
+    },
+    "certificates": {
+      "mediaMatches": true,
+      "running": 0,
+      "hiddenReveals": 0,
+      "revealCount": 10,
+      "invisibleText": 0
+    },
+    "colophon": {
+      "mediaMatches": true,
+      "running": 0,
+      "hiddenReveals": 0,
+      "revealCount": 13,
+      "invisibleText": 0
+    },
+    "contact": {
+      "mediaMatches": true,
+      "running": 0,
+      "hiddenReveals": 0,
+      "revealCount": 4,
+      "invisibleText": 0
+    },
+    "runway": {
+      "mediaMatches": true,
+      "running": 0,
+      "hiddenReveals": 0,
+      "revealCount": 1,
+      "invisibleText": 0
+    },
+    "work": {
+      "mediaMatches": true,
+      "running": 0,
+      "hiddenReveals": 0,
+      "revealCount": 6,
+      "invisibleText": 0
+    },
+    "work-flagstone": {
+      "mediaMatches": true,
+      "running": 0,
+      "hiddenReveals": 0,
+      "revealCount": 30,
+      "invisibleText": 0
+    },
+    "work-claude-corp": {
+      "mediaMatches": true,
+      "running": 0,
+      "hiddenReveals": 0,
+      "revealCount": 23,
+      "invisibleText": 0
+    },
+    "work-dashboard": {
+      "mediaMatches": true,
+      "running": 0,
+      "hiddenReveals": 0,
+      "revealCount": 24,
+      "invisibleText": 0
+    },
+    "work-prompt-library": {
+      "mediaMatches": true,
+      "running": 0,
+      "hiddenReveals": 0,
+      "revealCount": 19,
+      "invisibleText": 0
+    },
+    "work-ghost-code": {
+      "mediaMatches": true,
+      "running": 0,
+      "hiddenReveals": 0,
+      "revealCount": 19,
+      "invisibleText": 0
+    }
+  },
+  "hoverFocusParity": {
+    "home": {
+      "checked": 48,
+      "hoverChanges": 40,
+      "focusChanges": 34,
+      "mismatches": []
+    },
+    "work-flagstone": {
+      "checked": 38,
+      "hoverChanges": 33,
+      "focusChanges": 20,
+      "mismatches": []
+    },
+    "about": {
+      "checked": 27,
+      "hoverChanges": 24,
+      "focusChanges": 14,
+      "mismatches": []
+    },
+    "colophon": {
+      "checked": 26,
+      "hoverChanges": 23,
+      "focusChanges": 15,
+      "mismatches": []
+    },
+    "work": {
+      "checked": 36,
+      "hoverChanges": 29,
+      "focusChanges": 14,
+      "mismatches": []
+    }
+  },
+  "methodLinks": {
+    "home": {
+      "links": [
+        {
+          "href": "/work/flagstone/#flagstone-test-count-method",
+          "text": "method",
+          "visibleAtRest": true,
+          "w": 48,
+          "h": 16,
+          "tabbable": true,
+          "hitH": 16,
+          "targetOK": false
+        },
+        {
+          "href": "/accessibility/#receipts",
+          "text": "evidence",
+          "visibleAtRest": true,
+          "w": 64,
+          "h": 16,
+          "tabbable": true,
+          "hitH": 16,
+          "targetOK": false
+        },
+        {
+          "href": "/accessibility/#receipts",
+          "text": "evidence",
+          "visibleAtRest": true,
+          "w": 60,
+          "h": 20,
+          "tabbable": true,
+          "hitH": 20,
+          "targetOK": false
+        }
+      ],
+      "tap": {
+        "hash": "#flagstone-test-count-method",
+        "url": "/work/flagstone/#flagstone-test-count-method"
+      }
+    },
+    "work-flagstone": {
+      "links": [
+        {
+          "href": "#flagstone-test-count-method",
+          "text": "measured 2026-08-16, method",
+          "visibleAtRest": true,
+          "w": 215,
+          "h": 16,
+          "tabbable": true,
+          "hitH": 16,
+          "targetOK": false
+        }
+      ],
+      "tap": {
+        "hash": "#flagstone-test-count-method",
+        "url": "/work/flagstone/#flagstone-test-count-method"
+      }
+    },
+    "accessibility": {
+      "links": [
+        {
+          "href": "/accessibility/#receipts",
+          "text": "Measured, not claimed",
+          "visibleAtRest": true,
+          "w": 179,
+          "h": 15,
+          "tabbable": true,
+          "hitH": 15,
+          "targetOK": false
+        },
+        {
+          "href": "/receipts/a11y-2026-08-25.json",
+          "text": "Evidence JSON",
+          "visibleAtRest": true,
+          "w": 104,
+          "h": 16,
+          "tabbable": true,
+          "hitH": 16,
+          "targetOK": false
+        }
+      ],
+      "tap": {
+        "error": "TimeoutError: elementHandle.scrollIntoViewIfNeeded: Timeout 30000ms exceeded.\nCall log:\n  - attempting scroll into view "
+      }
+    }
+  }
+}

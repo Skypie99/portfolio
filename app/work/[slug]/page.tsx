@@ -95,7 +95,7 @@ export function FlagstoneTestReceipt() {
           <code className={INLINE_CODE_CLASS}>npm ci</code> then{' '}
           <code className={INLINE_CODE_CLASS}>npx jest --ci -w 3</code>. That run
           reported 204 suites, 2,971 passing, 32 todo, 0 failing. The homepage
-          chip says 2,900+ because the suite grows most weeks. (Separate from the
+          receipt says 2,900+ because the suite grows most weeks. (Separate from the
           portfolio{'’'}s own measured 763 on the accessibility page.)
         </p>
       </div>
@@ -799,11 +799,24 @@ export default async function WorkDetailPage({
                     <ul className="flex flex-col gap-2">
                       {otherLinks.map((l, i) => (
                         <Reveal key={l.href} as="li" index={i}>
+                          {/* K6 (THE ROOM Phase J) — `inline-flex` never wraps
+                              (flex-wrap's initial value is nowrap) and an
+                              inline-level box is sized by its content, not by
+                              its parent, so a long label + the ↗ laid out as one
+                              unbreakable line. Measured: "Real commits
+                              (AccessMap) ↗" is 280px at 100% (fits 375) and
+                              345px at 200%, running 34.4px past the viewport
+                              where `overflow-x: clip` cut the arrow off
+                              entirely. `max-w-full` constrains it to the row so
+                              the label wraps normally; `flex-wrap` keeps the
+                              arrow from being orphaned onto a line of its own.
+                              Zero effect at any width where the link already
+                              fits — which is every width at 100% text. */}
                           <a
                             href={l.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group link-draw font-sans text-body text-accent-text inline-flex items-center gap-2"
+                            className="group link-draw font-sans text-body text-accent-text inline-flex flex-wrap items-center gap-2 max-w-full"
                           >
                             {/* C-17/W5-03: the mono type-eyebrow adds info only
                                 when the category differs from the name — for
@@ -960,7 +973,14 @@ export default async function WorkDetailPage({
                             shots, so this line simply doesn't render there). */}
                         {shot.capturedDate && (
                           <span className="mt-1 block font-mono text-meta tracking-label uppercase text-text-meta">
-                            captured {shot.capturedDate}
+                            {/* J1 (Phase J) — H1 wrapped every date on the site in a
+                                real <time>, but this caption was added by D7 AFTER
+                                H1's sweep list was written, so three dates on the
+                                flagship page were still shipping as bare text.
+                                Rendered characters are byte-identical; only the
+                                element around them changed. */}
+                            captured{' '}
+                            <time dateTime={shot.capturedDate}>{shot.capturedDate}</time>
                             {shot.commit && <> · {shot.commit}</>}
                           </span>
                         )}

@@ -3,6 +3,17 @@ const nextConfig = {
   // Static export for GitHub Pages (per Rory's DEPLOY_PLAN.md)
   output: 'export',
 
+  // K7 (THE ROOM Phase J, 2026-08-26) — pin the workspace root to THIS repo.
+  // A stray ~/package-lock.json + ~/node_modules (dated 2026-05-28, three
+  // months before this program and nothing to do with it) made Next infer the
+  // HOME DIRECTORY as the workspace root and print a warning on every build.
+  // Proven not to be this program's doing before silencing it rather than
+  // after: `git diff 52bd0ef..HEAD -- next.config.mjs` was empty, and the
+  // program's only package.json change was `+ axe-core` (H3). The stray files
+  // live outside this repo and are not ours to delete; this is the one-line
+  // fix Next's own warning recommends.
+  outputFileTracingRoot: import.meta.dirname,
+
   // GH Pages can't run the Image Optimization API; ship raw <img> tags
   images: { unoptimized: true },
 

@@ -1,10 +1,3 @@
-# ---- NEEDS-SKY COPY (placeholder — not final) ----
-# The mechanism is wired: this file serves at https://skypistudio.com/humans.txt
-# and the document head links to it via <link rel="author" href="/humans.txt">.
-# Sky writes the real copy — a dry stack / type / pointer to /colophon/, no
-# self-praise, the same grounded register as the colophon — then deletes this
-# header. Lines tagged (NEEDS-SKY) are hers to finalize or cut.
-
 /* MAINTAINER */
   Sky Halisky
   Okanagan Valley, British Columbia
@@ -16,6 +9,3 @@
 
 /* TYPE */
   Cormorant · DM Sans · DM Mono
-
-/* NOTES */
-  (NEEDS-SKY) — a plain line or two, or nothing at all.
