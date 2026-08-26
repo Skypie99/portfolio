@@ -215,9 +215,22 @@ const config: Config = {
         base: '280ms',
         slow: '520ms',
         reveal: '900ms',
-        // Motion-polish 2026-06-03 — scene tier (var-backed; globals.css)
-        transition: 'var(--dur-transition)', // route-change crossfade
-        scene: 'var(--dur-scene)', // large section reveal
+        // THE ROOM / Phase G · G3 — `transition` and `scene` were REMOVED here.
+        // They were registered in the 2026-06-03 motion-polish pass to mirror the
+        // scene tier, and in the two years of work since they never acquired a
+        // single call site: both tiers are consumed exclusively as var(--dur-…)
+        // inside hand-authored CSS in globals.css (the route dissolve, the
+        // dusk-turn, .pr-hero-lift), which never routes through Tailwind. The
+        // same is true of the new --dur-settle rung, which is why it is not
+        // mirrored here either. This is not a narrowing of the ramp — globals.css
+        // remains the source of truth and carries all seven rungs; it is the
+        // mirror declining to carry keys nothing can reach through it.
+        // Re-adding is one line if a component ever genuinely needs one.
+        // NOTE, reported not acted on: `reveal` above is in the identical
+        // condition (zero call sites; --dur-reveal is CSS-only today). The
+        // phase brief named `transition` and `scene` specifically, so `reveal`
+        // is left standing rather than removed on my own authority — see
+        // G_CLOSEOUT.md.
       },
       transitionTimingFunction: {
         out: 'cubic-bezier(0.22, 1, 0.36, 1)',

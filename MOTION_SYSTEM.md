@@ -59,11 +59,17 @@ A small named set so the whole site feels related. Use Tailwind utilities
 | micro | `--dur-base` | 280ms | card lift, pill activate |
 | standard | `--dur-slow` | 520ms | image scale, overlay |
 | standard | `--dur-reveal` | 900ms | default scroll reveal |
-| **scene** | `--dur-transition` | **420ms** | route-change crossfade |
+| **standard** | `--dur-settle` | **560ms** | a heading arriving alone — longer tail than slow *(G3)* |
+| **scene** | `--dur-transition` | **420ms** | route-change crossfade · the dusk-turn |
 | **scene** | `--dur-scene` | **1200ms** | large section-header reveal (slower = more cinematic) |
 | ambient | `--dur-ambient` | 26s | autonomous golden drift |
 
-Tailwind: `duration-transition`, `duration-scene` (plus existing `duration-fast/base/slow/reveal`).
+Tailwind mirrors `duration-fast/base/slow/reveal` only. `transition`, `scene` and
+`settle` are **not** mirrored — all three are consumed exclusively as `var(--dur-…)`
+by hand-authored CSS in `globals.css`, so their Tailwind keys had zero call sites.
+`duration-transition` / `duration-scene` were removed in G3; `--dur-settle` was never
+given one. Re-adding any of them is one line. (`duration-reveal` is in the same
+zero-call-site condition and is left standing — see `build-reports/G_CLOSEOUT.md`.)
 
 ---
 
