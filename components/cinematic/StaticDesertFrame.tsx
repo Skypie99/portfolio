@@ -43,12 +43,29 @@ export function StaticDesertFrame() {
             ? plate.scaleTo
             : plate.scaleFrom + (plate.scaleTo - plate.scaleFrom) * 0.85;
           const y = plate.yFrom + (plate.yTo - plate.yFrom) * 0.85;
-          const { avif, webp } = sourcesFor(plate);
+          const { avifSrcSet, webpSrcSet } = sourcesFor(plate);
           return (
             <Fragment key={plate.id}>
             <picture>
-              {avif && <source type="image/avif" srcSet={avif} />}
-              {webp && <source type="image/webp" srcSet={webp} />}
+              {/* CONFLICT RESOLUTION (2026-08-26, Sky-unlocked): both sides of
+                  this hunk were legitimate and neither was reverted.
+                  · main's side is the art pass — each plate wrapped in a
+                    <Fragment> so the landed rim-glow can be a SIBLING of the
+                    <picture> (a div is invalid picture content). The key moved
+                    to the Fragment when that happened. Kept exactly.
+                  · perf/trim-hero-weight's side is the mobile tier — sourcesFor()
+                    now returns srcSets rather than single srcs, and each <source>
+                    declares sizes="100vw", the same full-bleed contract Layer.tsx
+                    uses. Kept exactly.
+                  The old `avif`/`webp` names had to go regardless: the
+                  destructure four lines up auto-merged to the srcSet names, so
+                  main's identifiers no longer exist. That is the whole conflict —
+                  a rename crossing a re-wrap, not a disagreement.
+                  sizes="100vw" earns its place here too: the static frame is what
+                  reduced-motion visitors see, and it benefits from the mobile
+                  tier wherever one exists (arrival-cliff, mid-fg). */}
+              {avifSrcSet && <source type="image/avif" srcSet={avifSrcSet} sizes="100vw" />}
+              {webpSrcSet && <source type="image/webp" srcSet={webpSrcSet} sizes="100vw" />}
               <img
                 src={srcFor(plate)}
                 alt=""
