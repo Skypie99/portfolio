@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "engine": "Chromium 1228 (playwright-core 1.61.1) headless, DSF2 — NOT Safari/WebKit",
+    "axeCore": "4.11.4",
+    "rules": "defaults + label-content-name-mismatch enabled + color-contrast enabled",
+    "when": "2026-08-26 LIVE"
+  },
+  "axe": {
+    "home__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "home__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "about__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "about__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "accessibility__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "accessibility__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "archive__light": {
+      "violations": [
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "help": "Page should contain a level-one heading",
+          "nodes": 1,
+          "sample": [
+            {
+              "target": "html",
+              "summary": "Fix all of the following:\n  Page must have a level-one heading"
+            }
+          ]
+        }
+      ],
+      "incompleteIds": []
+    },
+    "archive__dark": {
+      "violations": [
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "help": "Page should contain a level-one heading",
+          "nodes": 1,
+          "sample": [
+            {
+              "target": "html",
+              "summary": "Fix all of the following:\n  Page must have a level-one heading"
+            }
+          ]
+        }
+      ],
+      "incompleteIds": []
+    },
+    "blog__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "blog__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "blog-building-flagstone__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "blog-building-flagstone__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "certificates__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "certificates__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "colophon__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "colophon__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "contact__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "contact__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "runway__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast",
+        "video-caption"
+      ]
+    },
+    "runway__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast",
+        "video-caption"
+      ]
+    },
+    "work__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "work__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "work-flagstone__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast",
+        "video-caption"
+      ]
+    },
+    "work-flagstone__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "work-claude-corp__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "work-claude-corp__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "work-dashboard__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "work-dashboard__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "work-prompt-library__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "work-prompt-library__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "work-ghost-code__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast",
+        "video-caption"
+      ]
+    },
+    "work-ghost-code__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "404__light": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    },
+    "404__dark": {
+      "violations": [],
+      "incompleteIds": [
+        "color-contrast"
+      ]
+    }
+  }
+}

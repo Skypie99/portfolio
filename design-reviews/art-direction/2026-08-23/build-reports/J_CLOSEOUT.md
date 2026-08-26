@@ -438,6 +438,36 @@ Methodology stated so it can be re-run: every Tailwind arbitrary-bracket utility
 
 ---
 
+## ✅ Verified on LIVE production, 2026-08-26 — and the one thing it found
+
+The push landed (`2b9b768`, CI success → Deploy success, run `33011970899`). Rather than trust a green check, the rigs were re-pointed at `https://skypistudio.com`:
+
+```
+25 URLs (17 routes + 3 redirect stubs + sitemap + both feeds + humans.txt + the OG png)   all 200
+17 routes, real browser, scrolled through          0 console errors · 0 page errors · 0 4xx/5xx
+exactly one <h1>                                   16 of 17 routes
+axe, 17 routes × 2 themes, strict                  2 violations — both the same one, below
+humans.txt                                         the placeholder header is gone from production
+Record band                                        "Round V · The Room — 11 phases · 10 shipped · 1 held", open
+all five retired chip figures                      still present, once each, in the live rendered text
+```
+
+### 🔴 9 · `/archive/`'s sign-in card has no `<h1>` — and this is the limit Phase J said it could not test, closing itself
+
+**What:** live `/archive/` renders the real sign-in card (production has the Supabase credentials that this machine does not), and it ships **zero headings**. `THE STUDIO ARCHIVE` is a `div.sa-card-kicker` and `Your catalogue, on any device.` is a `p.sa-card-lede` (`components/archive/AuthGate.tsx:110-111`). axe flags `page-has-heading-one`, moderate, both themes.
+
+**Why nobody saw it, in eleven phases:** with no `.env.local`, `createClient('','')` throws and `/archive/` renders `global-error.tsx` — which *does* carry an `<h1>` ("Something went sideways."). **So every local scan of `/archive/` in every phase of this program, mine included, scored the error boundary and passed.** This close-out's honest-limits section said exactly that — *"`/archive/`'s real sign-in UI was not verified by this program, on any engine"* — and pointing the same rig at production is what closed it. A limit you write down is a limit somebody can go and close.
+
+**Severity, stated plainly and not inflated:** `page-has-heading-one` is an axe best-practice rule, not a WCAG A or AA failure. The page is `noindex`, unlinked from every nav, footer and sitemap, and gated behind a magic link — it is Sky's own catalogue, not a public surface. **Nothing else on it flagged**, and the rest of the estate is clean on live.
+
+**Not fixed here, deliberately:** `14_PROTECTION_MANIFEST.md` puts *"the `/archive` island entire"* on the read-only list — `app/archive/`, `components/archive/`, `lib/archive/`, `supabase/`, and its scoped-CSS deviations. This is precisely the kind of change that list exists to stop an agent making on its own authority.
+
+> **Recommendation:** promote the kicker or the lede to a real heading — `sa-card-kicker` → `<h1 className="sa-mono sa-card-kicker">`, one element, no CSS change, no visible change (the class carries the styling, not the tag). The lede is the better *reading* as an h1 but the kicker is the better *label*; either satisfies the rule and it is a taste call inside a protected island, so it is Sky's.
+> **Alternative:** leave it — a private, noindexed, credential-gated page failing a best-practice rule harms nobody, and the island is protected for good reasons.
+> **Your choice:** `[<h1> ON THE KICKER (recommended)]` · `[<h1> ON THE LEDE]` · `[LEAVE IT]`
+
+---
+
 ## Honest limits — what was NOT verified, on which engine, and what stays Sky's
 
 1. **Everything above is Chromium** (`playwright-core` 1.61.1, headless). Safari/WebKit — `backdrop-filter`, `100vh` against the collapsing address bar, iOS `:active`, OLED rendering, real touch feel, `startViewTransition` behaviour, the OG unfurl — is a device row and is never asserted here.
