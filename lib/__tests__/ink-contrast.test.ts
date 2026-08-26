@@ -256,3 +256,37 @@ describe('ink tokens clear WCAG AA on the surfaces they are actually painted on'
     expect(contrast([224, 160, 116], [89, 74, 57])).toBeLessThan(AA_SMALL);
   });
 });
+
+/**
+ * H2 (THE ROOM Phase H) — the receipt paper stock (--rgb-receipt /
+ * --rgb-receipt-rule, A5). Unlike world-surface-*, `bg-receipt` is painted
+ * at full opacity — no consumer anywhere applies a `bg-receipt/NN` opacity
+ * modifier (grepped empirically across app/ + components/) — so there is no
+ * panel×alpha compositing to derive: the inks sit directly on --rgb-receipt.
+ * Every ink token Receipt.tsx actually paints on it is checked here, in both
+ * themes, plus the card's own border as a non-text (WCAG 1.4.11) boundary.
+ */
+const RECEIPT_INKS: ReadonlyArray<{ token: string; where: string }> = [
+  { token: 'rgb-ink', where: 'the value figure' },
+  { token: 'rgb-ink-meta', where: 'the label / tier+date line' },
+  { token: 'rgb-accent-ink', where: 'the method link' },
+];
+
+describe('ink tokens clear WCAG AA on the receipt paper stock (--rgb-receipt)', () => {
+  for (const scope of ['root', 'dark'] as const) {
+    it.each(RECEIPT_INKS)(`--$token (${scope}) ≥ 4.5:1 on --rgb-receipt — $where`, ({ token }) => {
+      const ink = readToken(token, scope);
+      const bg = readToken('rgb-receipt', scope);
+      expect(contrast(ink, bg)).toBeGreaterThanOrEqual(AA_SMALL);
+    });
+  }
+
+  it.each(['root', 'dark'] as const)(
+    '--rgb-receipt-rule (%s) ≥ 3:1 against --rgb-receipt — the card boundary (WCAG 1.4.11)',
+    (scope) => {
+      const rule = readToken('rgb-receipt-rule', scope);
+      const bg = readToken('rgb-receipt', scope);
+      expect(contrast(rule, bg)).toBeGreaterThanOrEqual(3);
+    },
+  );
+});

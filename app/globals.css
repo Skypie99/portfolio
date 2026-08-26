@@ -656,6 +656,12 @@ body {
   .glass-card {
     border: 1px solid CanvasText;
   }
+  /* H2 (THE ROOM Phase H) — the receipt card (bg-receipt) has the same
+     custom-border-color problem .glass-card had: forced-colors strips it
+     without an explicit CanvasText rescue. */
+  .bg-receipt {
+    border: 1px solid CanvasText;
+  }
 }
 
 /* The skip-link's :focus state is in components/SkipLink.tsx via Tailwind. */

@@ -130,4 +130,8 @@ describe('forced-colors: active — the estate does not vanish', () => {
   it('restores a real border on glass so cards stay bounded', () => {
     expect(fcBody).toMatch(/\.glass-card\s*\{[^}]*border:\s*1px solid CanvasText/s);
   });
+
+  it('restores a real border on the receipt card too (H2 — the new furniture)', () => {
+    expect(fcBody).toMatch(/\.bg-receipt\s*\{[^}]*border:\s*1px solid CanvasText/s);
+  });
 });
