@@ -399,6 +399,12 @@ export const PROJECTS = [
     scenes: [
       { id: 'hero-pipeline', viewports: ['phone', 'desktop'], themes: 'both', nav: [{ wait: 1200 }], ship: true, shipKind: 'hero', alt: 'The Claude Corp front door — the editorial hero over the agent pipeline diagram, fifteen roles feeding one governed main branch.' },
       { id: 'team', viewports: ['phone', 'desktop'], themes: 'both', nav: [{ scrollTo: '#team' }, { wait: 900 }], ship: true, shipKind: 'shot', alt: 'The fifteen-role team grid — each agent card naming its craft, from Quinn on product through Morgan on reporting.' },
+      // THE ROOM/Phase E (E3, 2026-08-25): CP-2 (the 07-16 corp-page audit's
+      // "three dead shots" finding) was already fixed the prior Aug 1 wiring
+      // wave — 'team' above is the one real, live slot. proof/not-found stay
+      // ship:false on Sky's explicit call: one strong shot is enough, adding
+      // these two isn't a fix for anything anymore. See E_CLOSEOUT.md's E3
+      // section if that call ever needs revisiting.
       { id: 'proof', viewports: ['desktop'], themes: 'both', nav: [{ scrollTo: '#proof' }, { wait: 900 }], ship: false, shipKind: 'shot', alt: 'The proof section — shipped-work receipts lined up under the governance rules that produced them.' },
       { id: 'not-found', viewports: ['desktop'], themes: 'both', path: '/404.html', nav: [{ wait: 800 }], ship: false, shipKind: 'shot', alt: 'Claude Corp’s designed 404 — the ink-and-cream register holding on the lost-route page.' },
     ],
