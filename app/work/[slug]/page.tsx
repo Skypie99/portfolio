@@ -799,11 +799,24 @@ export default async function WorkDetailPage({
                     <ul className="flex flex-col gap-2">
                       {otherLinks.map((l, i) => (
                         <Reveal key={l.href} as="li" index={i}>
+                          {/* K6 (THE ROOM Phase J) — `inline-flex` never wraps
+                              (flex-wrap's initial value is nowrap) and an
+                              inline-level box is sized by its content, not by
+                              its parent, so a long label + the ↗ laid out as one
+                              unbreakable line. Measured: "Real commits
+                              (AccessMap) ↗" is 280px at 100% (fits 375) and
+                              345px at 200%, running 34.4px past the viewport
+                              where `overflow-x: clip` cut the arrow off
+                              entirely. `max-w-full` constrains it to the row so
+                              the label wraps normally; `flex-wrap` keeps the
+                              arrow from being orphaned onto a line of its own.
+                              Zero effect at any width where the link already
+                              fits — which is every width at 100% text. */}
                           <a
                             href={l.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group link-draw font-sans text-body text-accent-text inline-flex items-center gap-2"
+                            className="group link-draw font-sans text-body text-accent-text inline-flex flex-wrap items-center gap-2 max-w-full"
                           >
                             {/* C-17/W5-03: the mono type-eyebrow adds info only
                                 when the category differs from the name — for
