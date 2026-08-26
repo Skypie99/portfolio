@@ -49,8 +49,8 @@ function toCategory(id: string): CaseStudyCategory {
  * the suite grows most weeks; this strip states the exact figure and the date it
  * was true. Nothing here fabricates a CI URL or a receipts artifact: the claim
  * is reproducible by command, and the in-page anchor is real and build-valid.
- * Distinct from the /accessibility 325 strip (PROTECT-36/37), which stays
- * untouched.
+ * Distinct from the /accessibility 763 strip (PROTECT-36/37, refreshed H3),
+ * which stays untouched by this route's own count.
  * Exported for its test; a non-reserved export the router ignores.
  */
 export function FlagstoneTestReceipt() {
@@ -83,7 +83,7 @@ export function FlagstoneTestReceipt() {
           <code className={INLINE_CODE_CLASS}>npx jest --ci -w 3</code>. That run
           reported 204 suites, 2,971 passing, 32 todo, 0 failing. The homepage
           chip says 2,900+ because the suite grows most weeks. (Separate from the
-          portfolio{'’'}s own measured 325 on the accessibility page.)
+          portfolio{'’'}s own measured 763 on the accessibility page.)
         </p>
       </div>
     </section>
