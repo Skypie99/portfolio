@@ -77,8 +77,15 @@ export function A11yReceipts({ data, className }: { data: A11yReceiptsData; clas
           <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
           Measured, not claimed
         </h2>
+        {/* J2 (Phase J, 2026-08-26) — both dates on this strip render inside a
+            real <time>. H1 wrapped the site's dates component by component from
+            a list written before this strip was re-examined, so these two were
+            the last bare ones on an app route. The rendered characters are
+            byte-identical: this page's statement copy is byte-frozen (PROTECT),
+            and only the element around the date changed. */}
         <p className="font-sans font-light text-prose text-ink-muted max-w-measure-lead mb-12 text-pretty">
-          Real numbers from a real run — measured {data.measuredDate}, method below. Not a
+          Real numbers from a real run — measured{' '}
+          <time dateTime={data.measuredDate}>{data.measuredDate}</time>, method below. Not a
           live gate yet; a snapshot you can re-run.
         </p>
       </Reveal>
@@ -148,7 +155,7 @@ export function A11yReceipts({ data, className }: { data: A11yReceiptsData; clas
             at the start of a line. See MethodSegment for the mechanism and for
             why the audit's per-SEGMENT nowrap was measured and rejected. */}
         <p className="mt-6 font-mono text-meta tracking-label uppercase text-text-meta leading-loose">
-          Measured {data.measuredDate}
+          Measured <time dateTime={data.measuredDate}>{data.measuredDate}</time>
           <MethodSegment>
             <a
               href={data.evidencePath}
