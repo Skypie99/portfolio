@@ -468,6 +468,41 @@ all five retired chip figures                      still present, once each, in 
 
 ---
 
+## ✅ CLOSED ON LIVE — the L-wave, and a clean estate
+
+Sky ruled the last four blocks on 2026-08-26; all four shipped and were verified **on production**, not locally.
+
+| | Ruling | Shipped as | Verified live |
+|---|---|---|---|
+| **🔴 9** `/archive/` had no `<h1>` | `<h1>` on the kicker | **L1** — `sa-card-kicker` `div` → `h1`, plus the first test file `AuthGate` has ever had (3 tests, mutation-tested) | **0 axe violations both themes**, one h1, and computed geometry **`rect [554,363,332,20]` — byte-identical to the DIV measured before the change.** Pixel-identical, proven end to end. |
+| `/about#method` | **Draft A** | **L4** — the band defers to the front page's canonical account; eyebrow and section id kept (guarded by section-nav-anchors T2); `NumberedStep`'s now-dead import removed | renders on live, rail anchor intact |
+| Five carried decisions | **Ratify all five** | **L3** — twelve rows in `DECISIONS_LOG.md`, each carrying the *measurement* that justifies it, not just the verdict | — |
+| `perf/trim-hero-weight` | **Unlock, I resolve and prep** | **L2** — branch `perf/mobile-plates-2026-08-26`, conflict resolved, **STOPPED for Sky** | measured below |
+
+**Estate after the L-wave, measured against `https://skypistudio.com`:**
+```
+axe, 17 routes × 2 themes, strict     0 violations across 34 scans
+17 routes, real browser, scrolled     0 console errors · 0 page errors · 0 4xx/5xx
+exactly one <h1>                      17 of 17 — /archive/ was the last one missing
+```
+
+### L2 · the mobile plates, measured — and the part it does *not* fix
+
+The conflict was exactly what Phase I predicted, and neither side was reverted: `main`'s Fragment-wrapped rim-glow **and** the branch's srcset both survive intact. The old `avif`/`webp` identifiers had to go regardless — the destructure four lines above auto-merged to the srcSet names, so main's names no longer existed. A rename crossing a re-wrap, not a disagreement.
+
+| Network trace, same page, same build, DPR 1 | before | after | |
+|---|---|---|---|
+| phone 375px, cinematic plates | 587 KB | **243 KB** | **−344 KB (−58.7%)** |
+| desktop 1440px | 587 KB | 587 KB | **0 — no regression** |
+
+**58.7% is not 100%, and the remainder has a specific cause.** Of the 243 KB a phone still downloads, **144 KB is one fetch of the full 2048w `arrival-cliff.avif` that `srcset` structurally cannot reach**: it is a CSS `mask-image` on `.cdesert-cliff-glow`, delivered through `image-set()`, which selects on DPR and MIME type only — never on viewport width. Swapping it under a width media query would take a phone from 243 KB to **~141 KB** (another 42%), but that edits the `.cdesert-*` CSS range, which is a **different unlock** from the one granted. Reported, not taken.
+
+One cosmetic note, since "measured" should include the unflattering bits: `mid-fg`'s mobile plate is 1152×987/2 → 494 where an exact half is 493.5 — a **0.1% aspect difference** from rounding, invisible under the plates' `inset:0` + scaled transforms. Every other plate matches its full tier's aspect exactly.
+
+**The branch is stopped, not merged** — `perf/mobile-plates-2026-08-26`, gate green (typecheck 0 · lint clean · build 26/26 + 3/3 · 80 files / 773 pass · First Load JS 171 kB unchanged).
+
+---
+
 ## Honest limits — what was NOT verified, on which engine, and what stays Sky's
 
 1. **Everything above is Chromium** (`playwright-core` 1.61.1, headless). Safari/WebKit — `backdrop-filter`, `100vh` against the collapsing address bar, iOS `:active`, OLED rendering, real touch feel, `startViewTransition` behaviour, the OG unfurl — is a device row and is never asserted here.
