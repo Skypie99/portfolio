@@ -62,6 +62,19 @@ function MoonIcon() {
   );
 }
 
+/**
+ * THE ROOM / Phase G · G1 — the dusk-turn's ownership counter.
+ *
+ * `data-theme-turn` is a GLOBAL attribute on <html>, but ThemeToggle mounts
+ * more than once (the header rail and the hamburger sheet both render one).
+ * A module-level counter — not a per-component ref — is therefore the correct
+ * scope: whichever toggle fires last owns the attribute, and an earlier turn's
+ * `finished` handler must not strip the marker out from under a turn that has
+ * already started. Same race, and the same fix, that ViewTransitions.tsx
+ * documents for data-nav-direction.
+ */
+let turnSeq = 0;
+
 type Props = { className?: string; withLabel?: boolean };
 
 export function ThemeToggle({ className, withLabel = false }: Props) {
@@ -72,11 +85,16 @@ export function ThemeToggle({ className, withLabel = false }: Props) {
   const isDark = mounted && resolvedTheme === 'dark';
   const next = isDark ? 'light' : 'dark';
 
-  // S19 (L4-03): flipping the theme joins the route-dissolve language — one
-  // full-surface golden cross-dissolve (the ::view-transition(root) block in
-  // globals.css: --dur-transition on --ease-gh-glide). Reduced motion and
-  // engines without the API keep today's instant snap (the ::view-transition
-  // 0.01ms guard is layer 3 of the RM contract; this JS gate is belt-and-braces).
+  // S19 (L4-03): flipping the theme joins the route-dissolve language — same
+  // 420ms scene budget, same --ease-gh-glide (the ::view-transition block in
+  // globals.css). THE ROOM / Phase G · G1 gave it its own choreography on top
+  // of that: rather than cross-fading two frames that differ only in colour
+  // (which Sky reviewed as "effectively invisible"), the turn now DISSOLVES
+  // THROUGH the world's own dusk — see the G1 block in globals.css for the
+  // full rationale. Reduced motion and engines without the API keep today's
+  // instant snap (the ::view-transition 0.01ms guard is layer 3 of the RM
+  // contract; this JS gate is belt-and-braces, and it also means the dusk
+  // sky is never painted for an RM visitor because no pseudo tree exists).
   const flip = () => {
     const reduce =
       typeof window !== 'undefined' &&
@@ -91,7 +109,8 @@ export function ThemeToggle({ className, withLabel = false }: Props) {
       setTheme(next);
       return;
     }
-    startViewTransition.call(document, () => {
+    const seq = ++turnSeq;
+    const transition = startViewTransition.call(document, () => {
       // Paint is suspended while a VT callback runs, so we cannot wait for
       // next-themes' post-commit effect to apply the class (a rAF/paint resolver
       // would never fire — see ViewTransitions.tsx). Toggle the class synchronously
@@ -101,8 +120,29 @@ export function ThemeToggle({ className, withLabel = false }: Props) {
       const root = document.documentElement;
       root.classList.toggle('dark', next === 'dark');
       root.style.colorScheme = next;
+      // G1 (the dusk-turn): mark WHICH WAY the world is turning, so the
+      // ::view-transition block in globals.css can paint the destination
+      // room's own dusk (→ dark) or dawn (→ light) sky under the snapshots.
+      // Written HERE, inside the callback, for the same reason the class is:
+      // the pseudo-elements' styles resolve against the post-callback DOM.
+      root.dataset.themeTurn = next;
       setTheme(next);
-    });
+    }) as { finished?: Promise<unknown> } | undefined;
+
+    // Clear the marker when the turn ends — but only if no LATER turn has
+    // claimed it since (see turnSeq above). `finished` rejects if the
+    // transition is skipped, so both paths clear.
+    const release = () => {
+      if (turnSeq === seq) delete document.documentElement.dataset.themeTurn;
+    };
+    const finished = transition?.finished;
+    if (finished && typeof finished.then === 'function') {
+      finished.then(release, release);
+    } else {
+      // No `finished` to await (a partial implementation, or a test double):
+      // the marker must not be left on <html> forever.
+      release();
+    }
   };
 
   // showcase/theme-sync: hovering/focusing/touching the toggle is INTENT — it

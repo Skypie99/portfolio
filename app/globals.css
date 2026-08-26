@@ -1977,6 +1977,121 @@ html.dark .lit-windows {
   @keyframes enfilade-advance-to-meet { from { transform: scale(0.985); } }
 }
 
+/* ------------------------------------------------------------------
+   THE ROOM / Phase G · G1 — THE DUSK-TURN.
+
+   The theme flip as a dissolve THROUGH the world's own dusk. Explicit
+   toggle only — never on scroll, never ambient (restraint law). Same
+   420ms scene budget as every other transition; reduced motion gets an
+   instant flip (three independent gates, listed at the bottom).
+
+   WHY THIS EXISTS: the flip used to ride the generic route dissolve
+   above — a plain cross-fade of two frames whose LAYOUT is identical
+   and whose only difference is colour, plus a 0.10-alpha gold field.
+   Sky reviewed it and was right: "the transition is currently so subtle
+   that it is effectively invisible... small gray rectangles/pixels
+   [rather] than an intentional gradient." A cross-fade between two
+   near-identical frames has nothing to show; the eye reads mush.
+
+   THE FIX — a real value journey, not a louder fade. The two rooms are
+   sequenced rather than blended: the room you leave thins away over the
+   front of the turn, the room you enter resolves over the back of it,
+   and in between the page passes through an actual dusk (or dawn) sky.
+   That sky is painted ONCE, statically, on ::view-transition — the
+   overlay root, which sits UNDER the snapshot pair — so the "sweep" is
+   a full-viewport vertical ramp the snapshots uncover, and the only
+   animated property in the whole move is `opacity` (compositor-only,
+   §7 contract). Board 02 pane B2 is the storyboard.
+
+   THE COLOUR IS THE SITE'S OWN. Nothing is invented: the dark leg is
+   --sky-dusk-1/2/3 → --sky-day-4 → --sky-dusk-4 (indigo-plum → wine →
+   ember horizon → deep earth → night) — literally the ramp WorldBackdrop
+   already crossfades through at --day-night 0.5, which is why it reads
+   as this world turning rather than as a colour effect. The pseudos'
+   styles resolve AFTER the callback has toggled .dark, so each leg
+   automatically picks up the DESTINATION room's palette: you dissolve
+   through the dusk of the room you are entering.
+
+   THE TWO LEGS ARE DELIBERATELY ASYMMETRIC, and that asymmetry is the
+   world's existing law, not a compromise. The continuous-world block
+   (~line 1560) states it: light is "deliberately GENTLER than the dark
+   arc: less luminance travel, warm throughout (no cool twilight)... The
+   DRAMATIC deep world lives in dark mode." So dark→light runs a DAWN
+   through the light room's own warm family (--sky-day-1 → --sky-sun →
+   --sky-day-3 → --rgb-earth → --rgb-earth-deep) — real travel, ~0.85
+   down to ~0.45 relative luminance, but airy where the dusk is deep.
+   The light theme's own --sky-dusk-* stops are NOT used here: they sit
+   within 6 RGB points of each other (250 224 196 → 238 211 184), i.e.
+   a flat cream, which would reproduce the exact invisibility Sky
+   rejected.
+
+   REDUCED MOTION — instant flip, no sweep, three independent gates:
+     1. ThemeToggle checks prefers-reduced-motion and calls setTheme()
+        WITHOUT startViewTransition, so no pseudo tree is ever built.
+     2. This entire block is inside `no-preference` — nothing below can
+        match, so the sky is never even painted.
+     3. The `reduce` guard below already snaps every root snapshot to
+        0.01ms.
+   Nothing is lost but the poetry: the theme still flips, instantly.
+
+   Specificity note: these selectors tie with the enfilade block above
+   (0,1,2) and win on SOURCE ORDER — which is why this block sits after
+   it. A theme flip never sets data-nav-direction (only the nav
+   interceptor does, and it self-heals a stale one), so the two never
+   actually collide; the ordering is a belt-and-braces guarantee.
+
+   Reversible: delete this block + the data-theme-turn writes in
+   ThemeToggle.tsx and the flip is byte-identical to the shipped
+   route dissolve.
+   ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: no-preference) {
+  /* The sky the page passes through. Static paint on the overlay root,
+     UNDER the snapshot pair — uncovered, never animated. */
+  html[data-theme-turn='dark']::view-transition {
+    background: linear-gradient(
+      180deg,
+      rgb(var(--sky-dusk-1)) 0%,    /* indigo-plum, high sky */
+      rgb(var(--sky-dusk-2)) 34%,   /* wine */
+      rgb(var(--sky-dusk-3)) 52%,   /* the ember horizon */
+      rgb(var(--sky-day-4)) 72%,    /* deep earth below the light */
+      rgb(var(--sky-dusk-4)) 100%   /* night */
+    );
+  }
+  html[data-theme-turn='light']::view-transition {
+    background: linear-gradient(
+      180deg,
+      rgb(var(--sky-day-1)) 0%,     /* high cream sky */
+      rgb(var(--sky-sun)) 32%,      /* the sun band */
+      rgb(var(--sky-day-3)) 52%,    /* peach horizon */
+      rgb(var(--rgb-earth)) 74%,    /* sandstone ground */
+      rgb(var(--rgb-earth-deep)) 100%
+    );
+  }
+
+  /* The two rooms, sequenced. Authoring `animation` on these pseudos
+     REPLACES the UA's own cross-fade keyframes (the same composition
+     rule the enfilade block documents), so the fades are explicit.
+     The hold segments are what open the window onto the sky above:
+     the old room is gone by 42% (~176ms — board pane B2's middle
+     frame) and the new room does not begin until 58% (~244ms). */
+  html[data-theme-turn]::view-transition-old(root) {
+    animation: theme-turn-out var(--dur-transition) var(--ease-gh-glide) both;
+  }
+  html[data-theme-turn]::view-transition-new(root) {
+    animation: theme-turn-in var(--dur-transition) var(--ease-gh-glide) both;
+  }
+  @keyframes theme-turn-out {
+    0%   { opacity: 1; }
+    42%  { opacity: 0; }
+    100% { opacity: 0; }
+  }
+  @keyframes theme-turn-in {
+    0%   { opacity: 0; }
+    58%  { opacity: 0; }
+    100% { opacity: 1; }
+  }
+}
+
 /* Reduced motion → INSTANT CUT. Snap the root snapshots (the VT pseudos are
    NOT matched by the global *,::before,::after reduced-motion rule below, so
    they need their own guard) and drop the gold. This also neutralizes the
