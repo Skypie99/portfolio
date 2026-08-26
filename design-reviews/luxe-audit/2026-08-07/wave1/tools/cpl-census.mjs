@@ -44,13 +44,19 @@ const BASE = `http://127.0.0.1:${PORT}`;
 const REPORT_PATH = process.argv[2] || path.join(ROOT, 'design-reviews/luxe-audit/2026-08-07/wave1/cpl-report.json');
 const STAMP = process.argv[3] || 'unstamped';
 
-/** Routes and the prose selectors worth measuring. */
+/**
+ * Routes and the prose selectors worth measuring. H6 (THE ROOM Phase H):
+ * work-accessmap → work-flagstone (the project rename) and
+ * blog-building-accessmap → blog-building-flagstone, matching run-axe.mjs.
+ * work-flagstone is the one H6 explicitly names ("the Flagstone case study
+ * and /about especially").
+ */
 const TARGETS = [
   ['home', '/', 'main p, main li'],
   ['about', '/about/', 'main p, main li'],
-  ['work-accessmap', '/work/accessmap/', 'main p, main li'],
+  ['work-flagstone', '/work/flagstone/', 'main p, main li'],
   ['contact', '/contact/', 'main p'],
-  ['blog-building-accessmap', '/blog/building-accessmap/', 'main p, main li'],
+  ['blog-building-flagstone', '/blog/building-flagstone/', 'main p, main li'],
   ['certificates', '/certificates/', 'main p'],
   ['work', '/work/', 'main p'],
 ];
