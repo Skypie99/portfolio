@@ -1,7 +1,19 @@
 # Phase J — Final QA & Close-out — THE ROOM
 
-**Branch:** `room/pJ-qa` (6 fixes + 2 records) · **Date:** 2026-08-26 · **Base:** `main` @ `a5a46a1`
-**STOP — not merged, not pushed.**
+**Branch:** `room/pJ-qa` (J1–J6, then K1–K8 after Sky's rulings) · **Date:** 2026-08-26 · **Base:** `main` @ `a5a46a1`
+**MERGED to `main` and PUSHED 2026-08-26 on Sky's explicit instruction** (sprint merge exception, 2026-08-25 → ~08-27). What went live was named before the push was run and the deploy was verified after.
+
+**Gate at merge, after the K-wave:**
+```
+typecheck 0 · lint ✔ 0 warnings · build 26/26 + 3/3, no warning but the documented headers notice
+vitest 79 files / 770 pass / 1 skip / 0 todo
+axe 0 violations · 34 scans (17 routes × 2 themes, strict)
+keyboard 463/463 ringed stops · reduced motion 17/17 at rest · 320px + 200% reflow clean
+overflow census ✅ 100/100 frames, plant caught every frame
+zoom-200 census ✅ 68/68 frames, plant caught every frame — 2 crossings before K5/K6, 0 after
+CLS worst 0.0039 (work-flagstone@768) · homepage First Load JS 171 kB (was 173 pre-program)
+console 32/34 clean; the 2 are /archive/'s known no-.env.local condition
+```
 
 Depends on A–E, G, H, I merged. **F (the art wing) is HELD by Sky and out of scope — its absence is expected, not an omission.**
 
@@ -441,7 +453,44 @@ Methodology stated so it can be re-run: every Tailwind arbitrary-bracket utility
 
 ---
 
-## 🔴 DECISIONS FOR SKY
+## ✅ RESOLVED — Sky's rulings, 2026-08-26
+
+**Every 🔴 below was put to Sky in one block the same day and answered.** The eight are kept verbatim underneath as the record of what was asked and why; this table is what happened, and the K-wave commits that did it.
+
+| 🔴 | Sky's ruling | Shipped as |
+|---|---|---|
+| **1** · Round IV open in the ledger | **Close IV, open V** | **K3** — IV closed `2026-08-26` with `15 proposed · 9 chosen` untouched and `9 shipped · 9 accounted` appended (append-only, never rewrite a closed row). V opens as **The Room** — `11 phases · 10 shipped · 1 held` + `axe 0 violations · 34 scans`, both measured. It is genuinely open: **Phase F is held**, and the round closes when F fires. |
+| **2** · `global-error.tsx` placeholder copy | **Adopt as final** | **K2** — four `TODO(Sky)` markers deleted, docblock rewritten to record the ratification. Not one visible character changed; the file just stops calling its own copy provisional. |
+| **3** · `chore/stale-mutual-mesh-refs` | **Merge it** | `9d2c400` — README's route table now says **5** prerendered slugs, which is what the build actually emits. Also drops a dead capture-registry entry pointing at the backend-deleted MutualMesh repo. |
+| **4** · Published test count 763 vs the live suite | **Leave it dated** | No commit, by ruling. The receipt says `763`, *measured 2026-08-25* — a dated measurement that lags is the honest form, and **J3** now makes it impossible for the case study to cite a figure `/accessibility/` doesn't publish. |
+| **5** · "the homepage **chip** says 2,900+" | **Change the word** | **K4** — `chip` → `receipt`. One word inside PROTECT's byte-frozen method text, which is exactly why it was asked rather than taken. No guard moves. |
+| **6** · The `public/` tree budget's scope | **Exclude noindexed pages** | Recorded here, no file moves either way. `public/` is **8.42 MB** excluding `/runway`'s single unlinked, `noindex`, metadata-preload video (17.23 MB, 67% of the tree) — over by 5%, not by 220%. |
+| **7** · `/accessibility/` clipping 151.6px at 200% text | **Let it break** | **K5** — and it took three attempts to find a mechanism that actually works. See below; both dead ends are recorded in the code so nobody re-walks them. |
+| **8** · `Real commits (AccessMap)` | **Keep the label, fix the overflow** | **K6** for the overflow. The label stands: the link opens a repo genuinely still named `AccessMap` — a case-sensitive path that also lives in the privacy URL Apple holds — so relabelling it "Flagstone" would trade one mismatch for a worse one. |
+
+### 🔴 7 is worth reading even though it is closed
+
+The first two fixes for it were wrong, and only measurement caught that:
+
+1. **A Tailwind `max-[16em]:` arbitrary variant.** This project's `screens` config mixes units, so Tailwind **refuses to generate `min-*`/`max-*` arbitrary variants at all** — it says so in a build warning, and the class silently never existed. Caught by reading the build output rather than assuming the class had worked.
+2. **A plain `@media (max-width: …em)`.** `em` in a *media* query resolves against the browser's **initial** font size, not the root font-size — so it is structurally blind to text scaling. It would have looked correct in review and done nothing at all.
+3. **`em` inside a `@container` query** — which resolves against the *container's own* font size, the thing that actually scales. This is the only one of the three that measures the real failure condition.
+
+Proven, not asserted: the census re-run reports **2 crossings before, 0 after**, with its non-vacuity plant caught on 68/68 frames.
+
+### And three more, found only because Sky asked "what else has been deferred"
+
+| | Found | Shipped as |
+|---|---|---|
+| **`humans.txt`** | Live at `skypistudio.com/humans.txt` — **verified with a 200 from production** — opening with six lines of agent-to-Sky scaffolding headed *"NEEDS-SKY COPY (placeholder — not final)"*. The document head links to it via `<link rel="author">`, so the people most likely to open it are exactly the people it was worst for. **In no ledger of any program.** | **K1** — header and the empty `/* NOTES */` section removed. Everything left was already true and already hers. |
+| **The stray-lockfile warning** | Every build printed it. | **K7** — `outputFileTracingRoot`, after proving the stray `~/package-lock.json` (2026-05-28) predates the program by three months. |
+| **Three "permanently dirty" state files** | Memory recorded them as permanent dirt and every session stepped around them. Two were stale, one was harmful: `PROJECT_STATE.md` had been a month stale and still said the **register fork was OPEN** (Sky closed it 2026-08-23), still listed **T7/T9/T18 as live placeholders** (two were resolved weeks ago, the third was T18 — real, and fixed by K1 today), and still pointed at the **superseded** R3 device checklist. `.claude/launch.json` still served `out/` with the single-threaded Python server that fabricated this phase's 16 false axe violations. | **K8** — all three resolved, corrections shown struck-through rather than quietly overwritten. |
+
+**Privacy claim re-verified while sweeping, because `Footer.tsx`'s own comment asks for it before shipping:** "No analytics. No cookies." holds — 0 analytics dependencies, 0 third-party `<script src>` in the built HTML, 0 third-party requests across 102 page loads, and the only `document.cookie` / `Set-Cookie` strings in the entire codebase are inside the comment that asks you to check.
+
+---
+
+## 🔴 DECISIONS FOR SKY — as asked, kept for the record
 
 Ordered by what blocks the push.
 
