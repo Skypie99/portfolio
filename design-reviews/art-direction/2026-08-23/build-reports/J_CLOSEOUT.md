@@ -1,6 +1,6 @@
 # Phase J — Final QA & Close-out — THE ROOM
 
-**Branch:** `room/pJ-qa` (5 commits + these two documents) · **Date:** 2026-08-26 · **Base:** `main` @ `a5a46a1`
+**Branch:** `room/pJ-qa` (6 fixes + 2 records) · **Date:** 2026-08-26 · **Base:** `main` @ `a5a46a1`
 **STOP — not merged, not pushed.**
 
 Depends on A–E, G, H, I merged. **F (the art wing) is HELD by Sky and out of scope — its absence is expected, not an omission.**
@@ -25,7 +25,8 @@ This matters beyond this phase: every prior phase's rig ran against that same se
 
 ```
 npm run typecheck                    0 errors
-npx vitest run                       79 files · 768 passed · 1 skipped · 1 todo (770)
+npm run lint                         ✔ no ESLint warnings or errors
+npx vitest run                       79 files · 770 passed · 1 skipped · 0 todo (771)
 npm run build                        compiled clean · 26/26 static · 3/3 export
   prebuild validate-assets           9 certs · 5 cinematic plates · 125 deliverable siblings · 3 blog figures
   postbuild                          /500 ghost pruned · 2 OG .png aliases written
@@ -34,7 +35,7 @@ console, 17 routes × 2 themes        32/34 loads: 0 console errors, 0 page erro
 console, 17 × 2 × 3 widths           102 loads, 6 errors, all the same /archive/ cause
 ```
 
-**Test count moved 765 → 768** across this phase: +2 from J2's Gap-9 guard, +1 from J3.
+**Test count moved 765 → 770** across this phase: +2 from J2's Gap-9 guard, +1 from J3, +2 from J6 — **and the `1 todo` that had been printing on every run for months is gone.** It was `asset-integrity`'s badge guard, disabled with the note "add real badge PNGs … to un-todo this guard". The badges arrived; nobody re-read the note. See J6.
 
 **"Zero new warnings" — one warning is present and it is not new.** The build prints, besides the long-standing `headers` + `output: export` notice:
 
@@ -48,7 +49,8 @@ That lockfile is `~/package-lock.json`, dated **2026-05-28** — three months be
 
 - `static-integrity` full: **27 tests + 1 skip** (25 + J2's Gap 9 pair), run against a fresh `out/` (note: in a bare `npx vitest run` this file executes *before* the build in the same command, so it was re-run standalone after `npm run build` — the numbers above are the post-build run).
   Covers: every internal href resolves in `out/` · external links carry `rel="noopener noreferrer"` · pre-paint reveal guard in `<head>` on every reveal-bearing page · per-route `og:url` is the route's own · `og:site_name`/`og:locale` never dropped by a leaf · no interior route wears the homepage's OG title · every local `<img src>`/`<source srcset>` resolves · every share-card image resolves and has a real image extension · **each `.png` alias byte-identical** to the generated card · sitemap lists the new URLs and does not advertise the stubs. Plus the new **Gap 9** (below).
-- `section-nav-anchors` **27/27**, `smart-punctuation` **11/11**, `asset-integrity` 2 (1 skipped — it needs an asset this environment doesn't have, skipped loudly, not silently).
+- `section-nav-anchors` **27/27**, `smart-punctuation` **11/11**, `asset-integrity` **3/3** (was 1 test + 1 permanently-todo'd guard until J6).
+- The one remaining `1 skipped` in the whole suite is `static-integrity`'s own deliberate, labelled skip for when `out/` does not exist — it does exist here, so the skip is a different case inside that file, not a silenced check.
 - **The three redirect stubs are intact and byte-identical to the pre-program baseline** (proven by a full built-HTML diff, §3): `/work/accessmap/` → `/work/flagstone/`, `/work/mutual-mesh/` → `/work/`, `/blog/building-accessmap/` → `/blog/building-flagstone/` — each with `<meta http-equiv="refresh">`, a correct `<link rel="canonical">`, a plain `<a>` fallback, and absent from the 14-URL sitemap.
 - **Manual click-walk, real clicks in a real browser:** nav + footer + work-index rows + case-study cross-links from `/`, `/work/flagstone/`, `/work/`. **47 landed correctly** (path + anchor within 160px of viewport top). **9 "failures" were all the homepage rail during the pinned film** — see §7, where it turns out to be a pre-existing condition the program measurably *improved*.
 
@@ -315,7 +317,7 @@ truth R2's remaining **content rulings** (Sky) · **P1-2** redacted Constitution
 
 ### ⚠ Unaccounted — the findings
 
-The brief said an unaccounted item is the finding, not an embarrassment. Six.
+The brief said an unaccounted item is the finding, not an embarrassment. Seven.
 
 **U1 · `global-error.tsx` carries a `TODO(Sky)` that says "before merge", and it merged.**
 > *"TODO(Sky): the eyebrow / heading / body copy below are on-brand placeholders in the 404 voice — replace with your final wording before merge."*
@@ -335,6 +337,9 @@ The number survived — it is Hero receipt 1, conserved and re-verified above �
 `content/deliverables.json`'s claude-corp `links[]` carries the **visible label** `Real commits (AccessMap)` — the only place on the site where a reader meets the pre-rename name. Phase E touched claude-corp content and did not catch it; the identity sweep's ledger counts it among its ~120 remaining edits but nothing in THE ROOM's ledger claims it.
 
 **The `href` beside it is correct and must not change:** the repo really is still `github.com/Skypie99/AccessMap` — a case-sensitive path that also appears in the privacy URL Apple holds. So this is not a find-and-replace: a reader who clicks a link labelled "Flagstone" would land on a repo called AccessMap, which is a *different* mismatch. Which of the two inconsistencies to keep is a copy judgement, and the copy is Sky's. Reported, unchanged. (The three `AccessMap` URLs inside the Flagstone case-study body are hrefs, not labels, and are correct as they stand.)
+
+**U7 · A guard has been switched off since before this program, and `npm test` said so on every run. Fixed (J6).**
+`asset-integrity.test.ts` shipped `it.todo('every badgeImage.src in certificates.json exists in public/')` with the note *"add real badge PNGs … to un-todo this guard."* The badges arrived — every build's own prebuild prints "all 9 certificate badge image(s) found in public/", and I1 added AVIF/WebP siblings for one. So the guard sat disabled while the thing it guarded was correct, and the `1 todo` in every test summary for months was that. Enabled in **J6**, extended to the sibling formats (I1 made those a live code path), given a non-vacuity companion, and mutation-tested. **Also worth naming: four of the nine phase close-outs of this program were untracked files on one machine** — A/B/G/I committed theirs, C/D/E/H did not, and no `.gitignore` rule covers them. Preserved in `28f1593`, byte-unaltered.
 
 **U5 · The repo's own `CLAUDE.md` told the next agent there is no deploy gate. Fixed (J5).**
 Gotcha 1 read, verbatim: *"Push to `main` is instant production. There's no deploy gate."* **Phase 0 of this program changed exactly that** — `.github/workflows/deploy.yml` now triggers on `workflow_run` of **CI** and its build job runs only `if github.event.workflow_run.conclusion == 'success'` (with `workflow_dispatch` as the deliberate ungated emergency path). A17's docs truth pass covered `UI_SYSTEM.md`, `ACCESSIBILITY.md` and the token blocks; `CLAUDE.md` was not in its scope, and Phase 0's close-out recorded the CI change without re-reading the instructions it contradicted.
@@ -544,16 +549,24 @@ The pre-program baseline used for §3 and §6 is a worktree at `52bd0ef`; recrea
 
 ## STOP
 
-Branch **`room/pJ-qa`**, 5 commits + 2 documents. **Not merged, not pushed.**
+Branch **`room/pJ-qa`**, 9 commits (six fixes, three records). **Not merged, not pushed.**
 
 ```
-41a36b9  J5 — CLAUDE.md still tells the next agent there is no deploy gate
-84b34de  J4 — the census's two undocumented survivors get their reasons written down
-33b34b7  J3 — tie the case study's portfolio test count to the page it cites
-81a540d  J2 — /accessibility/'s two measured dates, and the guard that ends the class
-b4f9e61  J1 — the flagship's three capture dates become real <time> elements
+967ed11  docs — close-out final numbers (this line included)
+518363e  J6  — enable the badge guard that has been disabled since its blocker went away
+28f1593  docs — commit the four close-outs that exist only on this machine
+afec1b9  docs — the Phase J close-out, the ONE device session, and the rigs
+41a36b9  J5  — CLAUDE.md still tells the next agent there is no deploy gate
+84b34de  J4  — the census's two undocumented survivors get their reasons written down
+33b34b7  J3  — tie the case study's portfolio test count to the page it cites
+81a540d  J2  — /accessibility/'s two measured dates, and the guard that ends the class
+b4f9e61  J1  — the flagship's three capture dates become real <time> elements
 ```
 
-7 files, +141 / −6. Four of the five commits are guards, comments, or a doc correction; **the only rendered-markup changes are J1 and J2, and both were proven to change zero rendered characters** — the built-HTML text diff against the pre-program baseline is identical before and after each. Nothing on any page moved.
+**The only rendered-markup changes in the whole branch are J1 and J2, and both were proven to change zero rendered characters** — the built-HTML text diff against the pre-program baseline is byte-for-byte identical before and after each. Everything else is a guard (J3, J6), a comment (J4), a factual doc correction (J5), or a record. **Nothing on any page moved.**
+
+Final gate on this branch: `typecheck 0 · lint clean · build 26/26 + 3/3 · 79 files / 770 passed / 1 skipped / 0 todo`.
+
+One commit is separable on purpose: `28f1593` only preserves four other phases' close-outs that were living untracked in this working directory. Drop it if they were kept out of history deliberately — nothing else depends on it.
 
 **`main` is 18 commits ahead of `origin/main` and unpushed by design.** Push is deploy, and this phase was the gate on it. 🔴 1 is the one that should be answered before the push; 🔴 2 is the one that should probably be answered *with* it.
