@@ -42,7 +42,7 @@ export function CertCard({ certificate: c }: { certificate: Certificate }) {
       // ledger row — badge well left, text right — instead of the inherited
       // phone stack whose aspect-square well filled a whole tablet screen per
       // credential. lg returns to the 3-column vertical card untouched.
-      className="glass-card group relative isolate flex h-full flex-col overflow-hidden rounded-card p-12 md:max-lg:p-8"
+      className="glass-card group relative isolate flex h-full flex-col overflow-hidden rounded-card p-7 md:p-9 lg:p-10"
     >
       <CardField slug={issuerKey(c.issuer)} />
 
@@ -101,7 +101,7 @@ export function CertCard({ certificate: c }: { certificate: Certificate }) {
           </p>
 
           {/* Title — h3 per Alex F-C4-2 (h1 page → h2 sr-only section → h3 card) */}
-          <h3 className="mb-3 font-serif font-normal text-step-2 leading-tight text-ink nums-lining">
+          <h3 className="mb-3 font-serif font-light text-card-title text-ink nums-lining">
             {c.title}
           </h3>
 
