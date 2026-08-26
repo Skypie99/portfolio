@@ -112,7 +112,10 @@ export function CaseStudyCard({ title, category, description, href, status, veri
             <div className="flex flex-col gap-1">
               <p className="font-mono text-meta text-text-meta">{status}</p>
               {verifiedDate && (
-                <p className="font-mono text-meta text-text-meta">{`Verified ${verifiedDate}`}</p>
+                <p className="font-mono text-meta text-text-meta">
+                  {'Verified '}
+                  <time dateTime={verifiedDate}>{verifiedDate}</time>
+                </p>
               )}
             </div>
           )}

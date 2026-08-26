@@ -73,6 +73,17 @@ export function generateMetadata(): Metadata {
  *  - Contact section adds eyebrow label + email address display
  *  - Process/Certificates alternate to bg-warm-white for rhythm
  */
+
+/**
+ * H1 (THE ROOM Phase H) — Record band dates. `row.when` mixes real ISO
+ * dates (rounds.json / a11y-receipts.json) with the literal status word
+ * `'closed'` (the defect row) — wrapping the word in `<time>` would emit an
+ * invalid `dateTime`, so only the ISO-shaped values get wrapped.
+ */
+function renderRecordWhen(when: string) {
+  return /^\d{4}-\d{2}-\d{2}$/.test(when) ? <time dateTime={when}>{when}</time> : when;
+}
+
 export default function HomePage() {
   const profile = getProfile();
   const deliverables = getDeliverables();
@@ -614,7 +625,19 @@ export default function HomePage() {
                 >
                   <span
                     aria-hidden="true"
-                    className="w-8 lg:w-12 shrink-0 font-serif font-light text-step-1 leading-none tabular-nums text-ink/30 transition-colors duration-base ease-out group-hover:text-ink/45"
+                    /* H3 (THE ROOM Phase H): the axe re-audit measured this
+                       numeral's rest state at 1.8:1 light / 2.46:1 dark —
+                       aria-hidden doesn't exempt VISUALLY-legible text from
+                       1.4.3 (only from the AT tree), and at text-step-1
+                       (20px normal) it doesn't clear the large-text 3:1
+                       floor either. text-ink/30 -> /70 clears 4.5:1 in both
+                       themes with real margin (5.13 / 7.70); the hover step
+                       moves with it (45 -> 85) so hover still darkens
+                       rather than fading. CaseStudyCard's own ghosted
+                       numeral (same /30 pattern) is untouched — its larger
+                       text-card-numeral size already clears 3:1, confirmed
+                       by 0 axe violations on /work and every case page. */
+                    className="w-8 lg:w-12 shrink-0 font-serif font-light text-step-1 leading-none tabular-nums text-ink/70 transition-colors duration-base ease-out group-hover:text-ink/85"
                   >
                     {numeral}
                   </span>
@@ -638,7 +661,15 @@ export default function HomePage() {
                         {isFlagship ? (
                           <Link
                             href="#flagship"
-                            aria-label={`${d.title} — the flagship room, above`}
+                            /* H3 (THE ROOM Phase H) — SC 2.5.3 Label in Name
+                               + axe label-content-name-mismatch: the old
+                               aria-label ("Flagstone — the flagship room,
+                               above") shared no words with the visible text
+                               ("Featured — above"), a live violation the H3
+                               re-audit caught. The accessible name now
+                               computes from visible content instead; this
+                               row's own title link, immediately before this
+                               one, already announces which project. */
                             /* This is the one STANDALONE small link in the
                                band — every other new link on this page is
                                inline in a sentence and takes WCAG 2.5.8's
@@ -674,7 +705,7 @@ export default function HomePage() {
                       )}
                       </div>
                       <p className="shrink-0 lg:w-16 lg:text-right font-mono text-meta tracking-label uppercase text-text-meta tabular-nums">
-                        {d.year}
+                        <time dateTime={String(d.year)}>{d.year}</time>
                       </p>
                     </div>
                   </div>
@@ -766,7 +797,7 @@ export default function HomePage() {
                         open
                       </>
                     ) : (
-                      row.when
+                      row.when && renderRecordWhen(row.when)
                     )}
                   </span>
                 </Reveal>

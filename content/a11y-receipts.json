@@ -1,8 +1,8 @@
 {
-  "measuredDate": "2026-07-09",
-  "evidencePath": "/receipts/a11y-2026-07-09.json",
+  "measuredDate": "2026-08-25",
+  "evidencePath": "/receipts/a11y-2026-08-25.json",
   "method": [
-    "axe-core 4.11.4 — 16 routes × 2 themes",
+    "axe-core 4.11.4 — 17 routes × 2 themes",
     "label-content-name-mismatch + color-contrast on",
     "reduced-motion, scroll-settled",
     "Chromium — not WebKit"
@@ -11,7 +11,7 @@
     {
       "value": "0",
       "label": "axe violations",
-      "sub": "16 routes × 2 themes, strict rules"
+      "sub": "17 routes × 2 themes, strict rules"
     },
     {
       "value": "6",
@@ -24,7 +24,7 @@
       "sub": "pixel-contrast at the measured coordinates"
     },
     {
-      "value": "325",
+      "value": "763",
       "label": "tests passing",
       "sub": "the portfolio's own suite"
     },
@@ -34,7 +34,7 @@
       "sub": "every tab stop, keyboard-traced"
     },
     {
-      "value": "0.003",
+      "value": "0.0039",
       "label": "worst-case CLS",
       "sub": "worst route, production build — floor 0.004"
     }
