@@ -460,29 +460,6 @@ export const PROJECTS = [
     ],
     clips: [],
   },
-
-  {
-    slug: 'mutual-mesh',
-    title: 'Mutual Mesh',
-    priority: 7,
-    repo: '/Users/skypie/MutualMesh',
-    source: { kind: 'worktree', ref: 'main', sha: '93f5928' },
-    build: {
-      kind: 'expo-export',
-      cmd: ['npx', '--no-install', 'expo', 'export', '--platform', 'web', '--output-dir'],
-      linkNodeModules: true,
-      timeoutMs: 10 * 60 * 1000, // ONE timeboxed attempt; on failure → manifest UNCHANGED + reason
-    },
-    serve: { kind: 'static', port: 8126 },
-    theme: { colorSchemeEmulation: true, seeds: () => ({}) },
-    determinism: 'structural',
-    stretch: true,
-    readySelector: 'body',
-    scenes: [
-      { id: 'home', viewports: ['phone', 'desktop'], themes: 'both', nav: [{ wait: 2000 }], ship: false, shipKind: 'shot', alt: 'Mutual Mesh’s home feed — neighbours’ offers and asks stacked as cards, ready to match.' },
-    ],
-    clips: [],
-  },
 ];
 
 export const projectBySlug = (slug) => PROJECTS.find((p) => p.slug === slug);
