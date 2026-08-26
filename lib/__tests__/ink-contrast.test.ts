@@ -290,3 +290,33 @@ describe('ink tokens clear WCAG AA on the receipt paper stock (--rgb-receipt)', 
     },
   );
 });
+
+/**
+ * H3 (THE ROOM Phase H) — the homepage work-index row numeral
+ * (text-ink/NN, aria-hidden but still visually legible at text-step-1/20px
+ * normal, so 1.4.3 still applies and it doesn't clear the large-text 3:1
+ * exemption). The pre-fix /30 measured 1.8:1 light / 2.46:1 dark on axe;
+ * --rgb-canvas is confirmed (not derived) as the real measured backdrop —
+ * axe's own reported background hex matched --rgb-canvas exactly, both
+ * themes. CaseStudyCard's own ghosted numeral (same /30 idiom, larger type)
+ * is untouched — proven fine by 0 axe violations on every /work route.
+ */
+describe('the homepage work-index numeral (text-ink/70) clears WCAG AA on canvas', () => {
+  const REST_ALPHA = 0.7;
+
+  it.each(['root', 'dark'] as const)('ink at 70%% opacity (%s) ≥ 4.5:1 on canvas', (scope) => {
+    const ink = readToken('rgb-ink', scope);
+    const canvas = readToken('rgb-canvas', scope);
+    const composited = composite(ink, REST_ALPHA, canvas);
+    expect(contrast(composited, canvas)).toBeGreaterThanOrEqual(AA_SMALL);
+  });
+
+  it('rejects the pre-fix 30% opacity on canvas, both themes (non-vacuity)', () => {
+    for (const scope of ['root', 'dark'] as const) {
+      const ink = readToken('rgb-ink', scope);
+      const canvas = readToken('rgb-canvas', scope);
+      const composited = composite(ink, 0.3, canvas);
+      expect(contrast(composited, canvas)).toBeLessThan(AA_SMALL);
+    }
+  });
+});
