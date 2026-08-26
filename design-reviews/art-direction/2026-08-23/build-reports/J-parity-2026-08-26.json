@@ -1,0 +1,458 @@
+{
+  "home": {
+    "total": 48,
+    "hoverOnlyCount": 11,
+    "hoverOnly": [
+      {
+        "text": "Featured — the flagship",
+        "cls": "group relative inline-flex items-center pl-3 font-mono text-meta track",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "The Work",
+        "cls": "group relative inline-flex items-center pl-3 font-mono text-meta track",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "The Record",
+        "cls": "group relative inline-flex items-center pl-3 font-mono text-meta track",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "How the work gets made",
+        "cls": "group relative inline-flex items-center pl-3 font-mono text-meta track",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "A Brief Account",
+        "cls": "group relative inline-flex items-center pl-3 font-mono text-meta track",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "Write to me.",
+        "cls": "group inline-flex items-center justify-center gap-3 h-14 px-7 rounded-",
+        "hoverProps": [
+          "backgroundColor",
+          "transform"
+        ]
+      },
+      {
+        "text": "Skip intro↓",
+        "cls": "fixed z-[55] bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-[",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "See the work.",
+        "cls": "group inline-flex items-center justify-center gap-3 h-14 px-7 rounded-",
+        "hoverProps": [
+          "backgroundColor",
+          "transform"
+        ]
+      },
+      {
+        "text": "Scroll↓",
+        "cls": "inline-flex flex-col items-center gap-1.5 font-mono text-meta tracking",
+        "hoverProps": [
+          "opacity"
+        ]
+      },
+      {
+        "text": "Featured — above↑",
+        "cls": "relative rounded-sm transition-colors duration-fast ease-out text-acce",
+        "hoverProps": [
+          "color"
+        ]
+      }
+    ]
+  },
+  "work-flagstone": {
+    "total": 38,
+    "hoverOnlyCount": 13,
+    "hoverOnly": [
+      {
+        "text": "The problem",
+        "cls": "group relative inline-flex items-start pl-3 font-mono text-meta tracki",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "The approach",
+        "cls": "group relative inline-flex items-start pl-3 font-mono text-meta tracki",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "Where it stands",
+        "cls": "group relative inline-flex items-start pl-3 font-mono text-meta tracki",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "What went wrong",
+        "cls": "group relative inline-flex items-start pl-3 font-mono text-meta tracki",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "Reflection",
+        "cls": "group relative inline-flex items-start pl-3 font-mono text-meta tracki",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "Write to me.",
+        "cls": "group inline-flex items-center justify-center gap-3 h-14 px-7 rounded-",
+        "hoverProps": [
+          "backgroundColor",
+          "transform"
+        ]
+      },
+      {
+        "text": "Live map↗",
+        "cls": "group inline-flex items-center justify-center gap-3 h-14 px-7 rounded-",
+        "hoverProps": [
+          "backgroundColor",
+          "transform"
+        ]
+      },
+      {
+        "text": "",
+        "cls": "absolute bottom-3 right-3 z-10 inline-flex h-11 w-11 items-center just",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "Claude Corp",
+        "cls": "rounded-sm transition-colors duration-fast ease-out hover:text-accent-",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "Live ↗",
+        "cls": "relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:to",
+        "hoverProps": [
+          "color"
+        ]
+      }
+    ]
+  },
+  "about": {
+    "total": 27,
+    "hoverOnlyCount": 10,
+    "hoverOnly": [
+      {
+        "text": "Method",
+        "cls": "group relative inline-flex items-center pl-3 font-mono text-meta track",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "Principles",
+        "cls": "group relative inline-flex items-center pl-3 font-mono text-meta track",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "Currently",
+        "cls": "group relative inline-flex items-center pl-3 font-mono text-meta track",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "Write to me.",
+        "cls": "group inline-flex items-center justify-center gap-3 h-14 px-7 rounded-",
+        "hoverProps": [
+          "backgroundColor",
+          "transform"
+        ]
+      },
+      {
+        "text": "Solo builder · AI-assisted · 2026Flagsto",
+        "cls": "group flex flex-col gap-2 text-ink hover:text-accent-text transition-[",
+        "hoverProps": [
+          "color",
+          "transform"
+        ]
+      },
+      {
+        "text": "Solo builder · AI-assisted · 2026Claude ",
+        "cls": "group flex flex-col gap-2 text-ink hover:text-accent-text transition-[",
+        "hoverProps": [
+          "color",
+          "transform"
+        ]
+      },
+      {
+        "text": "Solo builder · AI-assisted · 2026Claude ",
+        "cls": "group flex flex-col gap-2 text-ink hover:text-accent-text transition-[",
+        "hoverProps": [
+          "color",
+          "transform"
+        ]
+      },
+      {
+        "text": "All the work→",
+        "cls": "group inline-flex items-center gap-2 font-mono text-label tracking-lab",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "Email meEmail hello@skypistudio.com",
+        "cls": "group inline-flex items-center justify-center gap-3 h-14 px-7 rounded-",
+        "hoverProps": [
+          "backgroundColor",
+          "transform"
+        ]
+      },
+      {
+        "text": "←Back to home",
+        "cls": "group mt-12 px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 f",
+        "hoverProps": [
+          "color"
+        ]
+      }
+    ]
+  },
+  "colophon": {
+    "total": 26,
+    "hoverOnlyCount": 8,
+    "hoverOnly": [
+      {
+        "text": "The stack",
+        "cls": "group relative inline-flex items-center pl-3 font-mono text-meta track",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "The world",
+        "cls": "group relative inline-flex items-center pl-3 font-mono text-meta track",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "The quiet systems",
+        "cls": "group relative inline-flex items-center pl-3 font-mono text-meta track",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "How it was made",
+        "cls": "group relative inline-flex items-center pl-3 font-mono text-meta track",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "The type, set live",
+        "cls": "group relative inline-flex items-center pl-3 font-mono text-meta track",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "Calibration record",
+        "cls": "group relative inline-flex items-center pl-3 font-mono text-meta track",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "Write to me.",
+        "cls": "group inline-flex items-center justify-center gap-3 h-14 px-7 rounded-",
+        "hoverProps": [
+          "backgroundColor",
+          "transform"
+        ]
+      },
+      {
+        "text": "Read the accessibility statement→",
+        "cls": "group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mo",
+        "hoverProps": [
+          "color"
+        ]
+      }
+    ]
+  },
+  "work": {
+    "total": 36,
+    "hoverOnlyCount": 15,
+    "hoverOnly": [
+      {
+        "text": "Write to me.",
+        "cls": "group inline-flex items-center justify-center gap-3 h-14 px-7 rounded-",
+        "hoverProps": [
+          "backgroundColor",
+          "transform"
+        ]
+      },
+      {
+        "text": "Flagstone",
+        "cls": "rounded-sm transition-colors duration-fast ease-out hover:text-accent-",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "Live ↗",
+        "cls": "relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:to",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "GitHub ↗",
+        "cls": "relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:to",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "Claude Corp",
+        "cls": "rounded-sm transition-colors duration-fast ease-out hover:text-accent-",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "Live ↗",
+        "cls": "relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:to",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "Claude Corp Dashboard",
+        "cls": "rounded-sm transition-colors duration-fast ease-out hover:text-accent-",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "Live ↗",
+        "cls": "relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:to",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "Prompt Library",
+        "cls": "rounded-sm transition-colors duration-fast ease-out hover:text-accent-",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "Live ↗",
+        "cls": "relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:to",
+        "hoverProps": [
+          "color"
+        ]
+      }
+    ]
+  },
+  "accessibility": {
+    "total": 25,
+    "hoverOnlyCount": 7,
+    "hoverOnly": [
+      {
+        "text": "What I built in",
+        "cls": "group relative inline-flex items-center pl-3 font-mono text-meta track",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "Measured, not claimed",
+        "cls": "group relative inline-flex items-center pl-3 font-mono text-meta track",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "What I have not done",
+        "cls": "group relative inline-flex items-center pl-3 font-mono text-meta track",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "Found a barrier? Tell me.",
+        "cls": "group relative inline-flex items-center pl-3 font-mono text-meta track",
+        "hoverProps": [
+          "color"
+        ]
+      },
+      {
+        "text": "Write to me.",
+        "cls": "group inline-flex items-center justify-center gap-3 h-14 px-7 rounded-",
+        "hoverProps": [
+          "backgroundColor",
+          "transform"
+        ]
+      },
+      {
+        "text": "Get in touch",
+        "cls": "group inline-flex items-center justify-center gap-3 h-14 px-7 rounded-",
+        "hoverProps": [
+          "backgroundColor",
+          "transform"
+        ]
+      },
+      {
+        "text": "←Back to home",
+        "cls": "group inline-flex items-center gap-2 font-mono text-meta tracking-labe",
+        "hoverProps": [
+          "color"
+        ]
+      }
+    ]
+  },
+  "accessibilityTapProbe": [
+    {
+      "href": "/accessibility/#receipts",
+      "text": "Measured, not claimed",
+      "w": 0,
+      "h": 0,
+      "display": "inline-flex",
+      "visibility": "visible",
+      "opacity": "1",
+      "hiddenAncestor": "NAV.hidden.md:flex"
+    },
+    {
+      "href": "/receipts/a11y-2026-08-25.json",
+      "text": "Evidence JSON",
+      "w": 104,
+      "h": 16,
+      "display": "inline",
+      "visibility": "visible",
+      "opacity": "1",
+      "hiddenAncestor": null
+    }
+  ]
+}
