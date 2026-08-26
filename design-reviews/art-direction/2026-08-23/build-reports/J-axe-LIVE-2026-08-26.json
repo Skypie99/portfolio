@@ -3,7 +3,7 @@
     "engine": "Chromium 1228 (playwright-core 1.61.1) headless, DSF2 — NOT Safari/WebKit",
     "axeCore": "4.11.4",
     "rules": "defaults + label-content-name-mismatch enabled + color-contrast enabled",
-    "when": "2026-08-26 LIVE"
+    "when": "2026-08-26 LIVE FINAL"
   },
   "axe": {
     "home__light": {
@@ -43,37 +43,11 @@
       ]
     },
     "archive__light": {
-      "violations": [
-        {
-          "id": "page-has-heading-one",
-          "impact": "moderate",
-          "help": "Page should contain a level-one heading",
-          "nodes": 1,
-          "sample": [
-            {
-              "target": "html",
-              "summary": "Fix all of the following:\n  Page must have a level-one heading"
-            }
-          ]
-        }
-      ],
+      "violations": [],
       "incompleteIds": []
     },
     "archive__dark": {
-      "violations": [
-        {
-          "id": "page-has-heading-one",
-          "impact": "moderate",
-          "help": "Page should contain a level-one heading",
-          "nodes": 1,
-          "sample": [
-            {
-              "target": "html",
-              "summary": "Fix all of the following:\n  Page must have a level-one heading"
-            }
-          ]
-        }
-      ],
+      "violations": [],
       "incompleteIds": []
     },
     "blog__light": {
