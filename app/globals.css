@@ -3029,6 +3029,21 @@ html.dark ::selection {
     mask-repeat: no-repeat;
     mix-blend-mode: screen;       /* additive light on the rock, kept in-palette by the multiply grade above */
   }
+  /* PERF (2026-08-26): on phones <picture> now fetches the mobile-tier
+     arrival-cliff plate (plates.ts MOBILE_WIDTH), so the mask's own
+     image-set() was the last thing still requesting the full 2048w file —
+     a second, uncached download on top of what <picture> already paid for.
+     Point it at the same mobile-tier asset to restore the original
+     cache-hit design this rule's own comment describes. Same crop
+     (mask-size/position unchanged) at a lower source resolution. */
+  @media (max-width: 767px) {
+    .cdesert-cliff-glow {
+      mask-image: image-set(
+        url('/images/cinematic/arrival-cliff-mobile.avif') type('image/avif'),
+        url('/images/cinematic/arrival-cliff-mobile.webp') type('image/webp')
+      );
+    }
+  }
 }
 /* static-frame rest: the landed gold, calmer than the live peak */
 .cdesert-cliff-glow--landed { opacity: 0.5; }
