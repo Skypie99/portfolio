@@ -29,7 +29,7 @@ npx serve out -p 3001     # http://localhost:3001/
 |---|---|
 | `/` | Homepage — hero, selected work list, numbered steps, CTA |
 | `/work` | Index of all deliverables (cards from `content/deliverables.json`) |
-| `/work/[slug]` | Detail page per deliverable. 6 prerendered slugs: `flagstone`, `claude-corp`, `dashboard`, `prompt-library`, `ghost-code`, `mutual-mesh` |
+| `/work/[slug]` | Detail page per deliverable. 5 prerendered slugs: `flagstone`, `claude-corp`, `dashboard`, `prompt-library`, `ghost-code` |
 | `/certificates` | Issued credentials with badge, issuer, date |
 | `/about` | Bio + "how I work" numbered steps |
 | `/contact` | Mailto CTA + socials |
