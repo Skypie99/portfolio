@@ -10,8 +10,12 @@
     },
     {
       "name": "portfolio-out",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "3005", "--directory", "out"],
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "design-reviews/art-direction/2026-08-23/build-reports/J_serve-out.mjs",
+        "out",
+        "3005"
+      ],
       "port": 3005,
       "autoPort": true
     }

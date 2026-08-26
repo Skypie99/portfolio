@@ -1,8 +1,35 @@
 # PROJECT_STATE — portfolio
 
-_Last compiled: 2026-06-19 (truth-reconcile) — superseding 2026-06-10 by Rory (Release)_
+_Last compiled: 2026-08-26 (THE ROOM Phase J close) — superseding the 2026-07-16 Morgan cycle refresh, which sat uncommitted and went a month stale_
 
-## Latest Live State — main `80334ad` (== origin/main), 2026-06-19
+## Latest State — THE ROOM complete, `main` merged 2026-08-26
+
+**THE ROOM (The Instrument Room, with the Hand)** — the art-direction program approved 2026-08-23 — is finished. Phases **0 · A · B · C · D · E · G · H · I · J are merged on `main`.** Phase **F (the art wing) is HELD** by Sky: it fires only when a real body of curated work exists, and no placeholder artwork ships, ever.
+
+**Gate at close (on `main`):** typecheck 0 · lint clean · build 26/26 static + 3/3 export, no warnings beyond the documented `headers` + `output: export` notice · **vitest 79 files / 770 pass / 1 skip / 0 todo** · **axe 0 violations across 17 routes × 2 themes** · keyboard **463/463 light + 411/411 dark focus stops, one 2px ring per theme** · **reduced motion emulated for real, 17/17 routes at rest** · 320px and 200%-text reflow clean by element-level census with a per-frame non-vacuity plant · CLS worst 0.0039 (`work-flagstone@768`, run-to-run variable and hugging the 0.004 floor) · homepage First Load JS **173 → 171 kB**.
+
+**Start here before touching this program again:**
+`design-reviews/art-direction/2026-08-23/build-reports/J_CLOSEOUT.md` — the ten gates with real numbers, the full conservation table by ID, the guard-migration ledger, the census (187 → 156 arbitrary values), both flagship scorecards, and the honest-limits section.
+
+### What is actually open
+
+- **Sky's ONE device session** — `design-reviews/art-direction/2026-08-23/build-reports/DEVICE_SESSION.md`, 16 rows, ~30 minutes. It **replaces** the ~50 device rows scattered across four programs (`a11y-qa/…/DEVICE_SCRIPT.md`, `ui-polish/…/REPORT.md`, `r4-gallery/04_r4-curation.md`, and the R3 `DEVICE-GATE-CHECKLIST.md`) — none of which were ever run. **Do not re-point anyone at those files.** Rows 6, 8 and 14 carry live decisions.
+- **Needs Sky's words, numbers, or an asset** (no agent may supply these): BP9's curator's line (`GalleryWall.tsx`, deliberately empty) · UP-18 badge art for the two full-bleed badges (`CertCard.tsx`) · E1's four `heroPlate` blocks (drafted, awaiting approval) · CP-3 Claude Corp's current hero stats · E8's colophon P10/P11 copy · `humans.txt`'s optional `/* NOTES */` line.
+- **Carried decisions that block nothing:** BP4's exhibit lamp (built both ways, captured both, recommendation AS-BUILT) · `/about#method` (two drafts written, unapplied) · `intro-cue-rise` 600ms vs PROTECT-66 (recommendation LEAVE IT) · `browserslist` (measured; recommendation LEAVE IT) · the `public/` tree budget's scope vs the noindexed `/runway` video.
+- **`perf/trim-hero-weight`** — a real mobile-tier srcset for the cinematic plates, stranded 263 commits behind with one genuine conflict in `components/cinematic/StaticDesertFrame.tsx` (PROTECT). Needs Sky's unlock; recommendation UNLOCK. Its own session, not a wrap-up item.
+
+### Corrections to what this file used to say
+
+Four claims here were false by the time anyone read them again, which is the reason for this rewrite:
+
+- ~~"Current production = main `544dc1b`"~~ — the R3 arrival train has been superseded by five later trains.
+- ~~"3 un-ratified placeholders STILL LIVE: T7 · T9 · T18"~~ — **T7** (the TKTK test count) was reconciled 2026-08-16 into a dated receipt; **T9** (the reduced-motion bracket line) was filled with Sky's own words 2026-07-19; **T18** (`humans.txt`'s "NEEDS-SKY COPY (placeholder — not final)" header) was still live on production until Phase J's sweep found it and K1 removed it, 2026-08-26.
+- ~~"Register fork (R3 DECISIONS #1): OPEN, default (a)-INFUSE"~~ — **CLOSED 2026-08-23.** Sky ruled **light arrival** at THE ROOM's mockup gate, from two finished arrivals boarded at equal fidelity. See `13_DECISIONS.md`.
+- ~~"NEXT = Sky's ONE device session per `r3-audit/build-plan/DEVICE-GATE-CHECKLIST.md`"~~ — superseded by `DEVICE_SESSION.md` above.
+
+---
+
+## Prior Live State — main `80334ad` (== origin/main), 2026-06-19
 
 **Current production = main `80334ad`** (HEAD == origin/main; GitHub Pages live at https://skypistudio.com). **Gates green: 293 tests across 30 files** · lint 0 · typecheck 0 · build + static-integrity clean. Both deep polish sweeps and the attribution pass are **merged + live** as of 2026-06-19:
 
