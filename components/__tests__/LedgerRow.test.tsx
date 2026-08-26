@@ -40,10 +40,15 @@ describe('LedgerRow', () => {
     expect(screen.getByText('Row IV')).toHaveClass('sr-only');
   });
 
-  it('renders the date, right-aligned, when open is false', () => {
+  it('renders the date, right-aligned, as a real <time> element, when open is false', () => {
     renderRow({ numeral: '01', title: 'Round One', date: '2026-05-23' });
+    // H1: date now lives in a nested <time> — getByText resolves to the
+    // <time> itself (RTL only reads a node's own direct text-node
+    // children), so the ml-auto class is asserted on its ancestor span.
     const date = screen.getByText('2026-05-23');
-    expect(date).toHaveClass('ml-auto');
+    expect(date.tagName).toBe('TIME');
+    expect(date).toHaveAttribute('dateTime', '2026-05-23');
+    expect(date.closest('span')).toHaveClass('ml-auto');
     expect(screen.queryByText('open')).not.toBeInTheDocument();
   });
 

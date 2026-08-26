@@ -24,12 +24,27 @@ function Capture({ alt = '' }: { alt?: string }) {
 
 describe('Exhibit', () => {
   it('renders the FIG tag as "FIG · scene · theme · captured date"', () => {
-    render(
+    const { container } = render(
       <Exhibit scene="onboarding" theme="dark" capturedDate="2026-08-20" claim="Loads in under 2s.">
         <Capture />
       </Exhibit>,
     );
-    expect(screen.getByText('FIG · onboarding · dark · captured 2026-08-20')).toBeInTheDocument();
+    // H1: capturedDate now lives in a nested <time> — getNodeText only
+    // reads a node's own direct text-node children, so the combined line
+    // is only readable off .textContent, not getByText.
+    expect(container.textContent).toContain('FIG · onboarding · dark · captured 2026-08-20');
+  });
+
+  it('wraps capturedDate in a <time> element with a matching dateTime (H1)', () => {
+    const { container } = render(
+      <Exhibit scene="onboarding" theme="dark" capturedDate="2026-08-20" claim="Loads in under 2s.">
+        <Capture />
+      </Exhibit>,
+    );
+    const time = container.querySelector('time');
+    expect(time).not.toBeNull();
+    expect(time).toHaveAttribute('dateTime', '2026-08-20');
+    expect(time?.textContent).toBe('2026-08-20');
   });
 
   it('always renders the claim as real text, independent of leader lines', () => {

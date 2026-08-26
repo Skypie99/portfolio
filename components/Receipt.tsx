@@ -63,7 +63,12 @@ export function Receipt({ value, label, tier, date, methodHref, methodLabel, cla
       </p>
       <p className="font-mono text-meta tracking-label uppercase text-text-meta">
         {tier}
-        {date ? ` ${date}` : ''}
+        {date && (
+          <>
+            {' '}
+            <time dateTime={date}>{date}</time>
+          </>
+        )}
         {methodHref && (
           <>
             <span aria-hidden="true"> · </span>

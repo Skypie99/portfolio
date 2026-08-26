@@ -73,7 +73,7 @@ export function CalibrationRecord({ rounds }: { rounds: Round[] }) {
                   which is correct for a right-aligned value column. */}
               {r.closed ? (
                 <span className="ml-auto font-mono text-meta tracking-label uppercase text-text-meta tabular-nums">
-                  {r.closed}
+                  <time dateTime={r.closed}>{r.closed}</time>
                 </span>
               ) : (
                 /* UP-43(c): items-baseline, not items-center. Under items-center no
