@@ -10,6 +10,7 @@ import { Exhibit } from '@/components/Exhibit';
 import { HeroImageSettle, HeroTitleSettle } from '@/components/HeroSettle';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { HeroProductReveal, ShotProductReveal } from '@/components/ProductReveal';
+import { Plate } from '@/components/Plate';
 import { Reveal } from '@/components/Reveal';
 import { TactileMedia } from '@/components/TactileMedia';
 import { TagPill } from '@/components/TagPill';
@@ -52,6 +53,18 @@ function toCategory(id: string): CaseStudyCategory {
  * Distinct from the /accessibility 763 strip (PROTECT-36/37, refreshed H3),
  * which stays untouched by this route's own count.
  * Exported for its test; a non-reserved export the router ignores.
+ *
+ * NOT a `<Receipt>` (components/Receipt.tsx), despite sharing the same
+ * evidence idea (figure · tier/date · method door) — reviewed for
+ * consolidation in THE ROOM's Phase H follow-up dedup pass (2026-08-25) and
+ * kept separate on purpose. Receipt is a three-line bordered card built for
+ * the homepage's grouped hero stats; this strip is one flowing meta line
+ * plus a full paragraph of run instructions and the exact suite breakdown —
+ * the reproduction steps a stranger actually needs, which Receipt has no
+ * slot for. Forcing this into Receipt would mean either dropping that
+ * paragraph (a real loss) or growing Receipt a prose slot none of its other
+ * three call sites need. If Receipt ever grows a body/description slot for
+ * an unrelated reason, revisit — don't force it for this alone.
  */
 export function FlagstoneTestReceipt() {
   return (
@@ -582,25 +595,20 @@ export default async function WorkDetailPage({
                 lives in Reflection). It seats the artifact's own severity ledger
                 line at reading size and names the place she mapped (the SR-only
                 provenance the raster bakes in illegibly). SSR'd static → CLS 0. */}
+            {/* R4/BP4: the plate borrows the room's own light — --pr-sig
+                scopes the dark-only hairline warmth (pr-plate-lit) inside
+                Plate. THE ROOM Phase H follow-up: this used to be an inline
+                copy of Plate's markup; it now renders the same component the
+                homepage Flagship Room uses (app/page.tsx), so the two are
+                word-identical by construction instead of by hand-kept sync. */}
             {d.heroPlate && (
-              <div
-                className="order-2 lg:order-none lg:col-start-1 lg:row-start-2 flex flex-col gap-3 max-w-measure-wide"
-                /* R4/BP4: the plate borrows the room's own light — --pr-sig
-                   scopes the dark-only hairline warmth (pr-plate-lit) below. */
-                style={{ '--pr-sig': signatureFor(d.id) } as CSSProperties}
-              >
-                <div className="flex flex-col gap-1.5">
-                  <p className="pr-plate-lit font-mono text-meta tracking-label uppercase text-accent-text">
-                    {d.heroPlate.severity}
-                  </p>
-                  <p className="font-mono text-body-sm text-near-black leading-snug">
-                    {smartPunctuation(d.heroPlate.caption)}
-                  </p>
-                </div>
-                <p className="font-mono text-meta tracking-label uppercase text-text-meta">
-                  {d.heroPlate.provenance}
-                </p>
-              </div>
+              <Plate
+                claim={d.heroPlate.severity}
+                caption={d.heroPlate.caption}
+                placeDate={d.heroPlate.provenance}
+                sig={signatureFor(d.id)}
+                className="order-2 lg:order-none lg:col-start-1 lg:row-start-2"
+              />
             )}
 
             {/* Details — the right column at lg (sticky moved onto the media
