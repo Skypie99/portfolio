@@ -124,7 +124,9 @@
     "credentialId": "5Z1UGVB7BO2N",
     "badgeImage": {
       "src": "/images/certificates/deeplearning-ai-for-everyone-2025/badge.png",
-      "alt": "DeepLearning.AI AI For Everyone completion badge"
+      "alt": "DeepLearning.AI AI For Everyone completion badge",
+      "avif": "/images/certificates/deeplearning-ai-for-everyone-2025/badge.avif",
+      "webp": "/images/certificates/deeplearning-ai-for-everyone-2025/badge.webp"
     },
     "tags": ["ai", "deeplearning", "foundations"]
   }
