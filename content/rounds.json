@@ -3,23 +3,45 @@
     "numeral": "I",
     "title": "Correct",
     "closed": "2026-07-09",
-    "counts": ["53 findings · 53 accounted", "axe 0 violations · 32 scans"]
+    "counts": [
+      "53 findings · 53 accounted",
+      "axe 0 violations · 32 scans"
+    ]
   },
   {
     "numeral": "II",
     "title": "Belief",
     "closed": "2026-07-16",
-    "counts": ["179 findings · 179 accounted", "axe 0 violations · 32 scans"]
+    "counts": [
+      "179 findings · 179 accounted",
+      "axe 0 violations · 32 scans"
+    ]
   },
   {
     "numeral": "III",
     "title": "Art",
     "closed": "2026-07-17",
-    "counts": ["4 movements · 4 accounted", "CLS 0.00142 · floor 0.004", "axe 0 violations · 32 scans"]
+    "counts": [
+      "4 movements · 4 accounted",
+      "CLS 0.00142 · floor 0.004",
+      "axe 0 violations · 32 scans"
+    ]
   },
   {
     "numeral": "IV",
     "title": "Weight",
-    "counts": ["15 proposed · 9 chosen"]
+    "closed": "2026-08-26",
+    "counts": [
+      "15 proposed · 9 chosen",
+      "9 shipped · 9 accounted"
+    ]
+  },
+  {
+    "numeral": "V",
+    "title": "The Room",
+    "counts": [
+      "11 phases · 10 shipped · 1 held",
+      "axe 0 violations · 34 scans"
+    ]
   }
 ]
