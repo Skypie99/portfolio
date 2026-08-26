@@ -93,8 +93,13 @@
   /* Badge accent color (umber for checkmark icon) */
   --badge-accent:     var(--color-accent-deep);
 
-  /* Badge text color */
-  --badge-text:       var(--color-text-muted);
+  /* Badge text color — THE ROOM/Phase E (E6): was --color-text-muted, which
+     read as too quiet at rest for UP-24's "is the ~10px affordance visible
+     enough" question (2026-08-01, left OPEN as Sky's taste call). Now shares
+     --color-accent-deep with the badge's own border + checkmark icon, so all
+     three pieces read as one accent-toned mark at rest instead of a muted
+     label inside an accent frame. Sky's pick among 4 drafted options. */
+  --badge-text:       var(--color-accent-deep);
   --badge-text-hover: var(--color-text);
 
   /* ------------------------------------------------------------------
