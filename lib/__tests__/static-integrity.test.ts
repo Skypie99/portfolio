@@ -787,3 +787,71 @@ describe.runIf(OUT_EXISTS)('Gap 8 — renamed URLs still resolve', () => {
   });
 });
 
+
+// ---------------------------------------------------------------------------
+// Gap 9 — every rendered date is a real <time> element
+//
+// THE ROOM Phase J, 2026-08-26. OCD checklist item 8 ("Dates in <time>, one
+// format, never 'Aug 16'") was implemented in Phase H (H1), component by
+// component, from a list written before Phase D existed. D7 then added
+// `captured <date> · <commit>` captions to Flagstone's three shots, and the
+// A11yReceipts strip had carried its own "Measured <date>" line all along —
+// so three dates on the FLAGSHIP page and two on /accessibility/ were still
+// shipping as bare text after H1 declared "no gap left unfilled". Nothing
+// caught it, because every H1 guard was a per-component unit test asserting a
+// date it already knew about; none of them could see a date nobody had listed.
+//
+// This is the invariant version of that rule: whatever component renders it,
+// an ISO date in the rendered text of an app route must sit inside a <time>.
+//
+// SCOPE, stated rather than allow-listed away:
+//   · <script>/<style>/<head> are stripped — the RSC payload and OG metadata
+//     carry raw ISO strings that are data, not rendered text.
+//   · out/flagstone/** is excluded: a separately authored static legal surface
+//     (Terms/Privacy/Support "Effective <date> · v1.0"), not a Next route, and
+//     byte-frozen since before this program.
+//   · The three redirect stubs are excluded: <meta refresh> courtesy pages
+//     whose single explanatory sentence is byte-frozen.
+// ---------------------------------------------------------------------------
+describe.runIf(OUT_EXISTS)('Gap 9 — rendered dates are <time> elements', () => {
+  const EXCLUDED_PREFIXES = ['flagstone/', 'work/accessmap/', 'work/mutual-mesh/', 'blog/building-accessmap/'];
+  const ISO_DATE = /\b20\d{2}-\d{2}-\d{2}\b/g;
+
+  it('no ISO date appears in an app route’s rendered text outside a <time>', () => {
+    const offenders: { file: string; context: string }[] = [];
+
+    for (const htmlFile of collectHtmlFiles(OUT_DIR)) {
+      const rel = htmlFile.replace(OUT_DIR + '/', '');
+      if (EXCLUDED_PREFIXES.some((p) => rel.startsWith(p))) continue;
+
+      let body = readFileSync(htmlFile, 'utf8');
+      body = body.replace(/<head[\s\S]*?<\/head>/gi, ' ');
+      body = body.replace(/<script[\s\S]*?<\/script>/gi, ' ');
+      body = body.replace(/<style[\s\S]*?<\/style>/gi, ' ');
+      // Remove every <time>…</time> — what remains is text that should carry no date.
+      body = body.replace(/<time[\s\S]*?<\/time>/gi, ' ');
+      // Hrefs and filenames legitimately contain dates (e.g. the evidence JSON).
+      body = body.replace(/(href|src|content)="[^"]*"/gi, ' ');
+
+      for (const m of body.matchAll(ISO_DATE)) {
+        const raw = body.slice(Math.max(0, m.index! - 80), m.index! + 30);
+        offenders.push({
+          file: rel,
+          context: raw.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim(),
+        });
+      }
+    }
+
+    expect(
+      offenders,
+      `bare date(s) outside <time>:\n${offenders.map((o) => `  ${o.file}: …${o.context}`).join('\n')}`,
+    ).toEqual([]);
+  });
+
+  it('is not vacuous — the flagship page really does render dated captions', () => {
+    const flagstone = readFileSync(join(OUT_DIR, 'work/flagstone/index.html'), 'utf8');
+    // D7's three capture captions + the receipt's own measurement date.
+    expect((flagstone.match(/<time[\s>]/gi) ?? []).length).toBeGreaterThanOrEqual(4);
+    expect(flagstone).toMatch(/captured\s*<time/i);
+  });
+});
