@@ -493,6 +493,11 @@ export default function HomePage() {
                       `What went wrong`. Below lg it is not rendered at all
                       (pane C) — the sentence is not lost, it is one tap away in
                       the essay this band links to. */}
+                  {/* leading-[1.45]: the same per-quote tuned value the Record
+                      band's pull-quote carries, and a token candidate for the
+                      same reason it isn't one there — see the note on that
+                      blockquote. Written down here too so a future leading
+                      sweep reads a reason on both, not on one. */}
                   <blockquote className="hidden lg:block pull-quote pl-3 font-serif font-light italic text-step-1 text-ink-muted leading-[1.45] max-w-[44ch] text-balance">
                     It had unit tests. They passed.
                     <cite className="not-italic block mt-2 font-mono text-meta tracking-label uppercase text-text-meta">
