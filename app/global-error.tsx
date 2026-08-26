@@ -27,7 +27,13 @@ export default function GlobalError({
   const CANVAS = '#FAF8F1'; // --rgb-canvas
   const INK = '#20302C'; // --rgb-ink
   const META = '#5A6B64'; // --rgb-ink-meta
-  const ACCENT = '#B96340'; // --rgb-accent (CTA / ≥large text)
+  const ACCENT = '#B96340'; // --rgb-accent (CTA / ≥large text) — fine for the H1 heading below.
+  // H3 (THE ROOM Phase H): the "Try again" button pairs CANVAS text on an
+  // ACCENT fill at 15px normal — the axe re-audit measured that pairing at
+  // 4.02:1, under the 4.5 floor ("≥large text" doesn't cover a button
+  // label). ACCENT itself is untouched; this is ACCENT darkened until
+  // CANVAS-on-it clears AA (5.26:1), for the button fill only.
+  const ACCENT_BUTTON = '#9D5436';
   const LINK = '#A35636'; // --rgb-accent-ink (small links, ≥4.5:1)
 
   return (
@@ -89,7 +95,7 @@ export default function GlobalError({
                 fontSize: 15,
                 padding: '0.7rem 1.4rem',
                 cursor: 'pointer',
-                background: ACCENT,
+                background: ACCENT_BUTTON,
                 color: CANVAS,
                 border: 'none',
                 borderRadius: 999,
