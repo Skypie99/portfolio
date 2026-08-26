@@ -106,52 +106,62 @@ export function A11yReceipts({ data, className }: { data: A11yReceiptsData; clas
           same fix and stayed at p-8. Restored to p-6 md:p-7. The twin it was
           matched to no longer exists; the value stays because p-6 is what the
           375 reasoning above needs, not because anything is being mirrored. */}
-      <div className="grid grid-cols-1 min-[480px]:grid-cols-2 lg:grid-cols-3 gap-px bg-cool-soft/30 border border-cool-soft/50 rounded-lg overflow-hidden shadow-md">
-        {data.receipts.map((r, i) => (
-          <Reveal
-            key={r.label}
-            index={Math.min(i, 4)}
-            variant="depth"
-            className={cn('flex flex-col bg-surface-mid p-6 md:p-7', 'group')}
-          >
-            <CountUpStat value={r.value} emberClass={STAT_EMBER[i % STAT_EMBER.length]} label={r.label} />
-            {/* W5-02: CountUpStat's sr-only name is already "{value} {label}", so
-                this visible caption would make AT hear the label a second time.
-                aria-hidden keeps the caption on screen while the sr-only name stays
-                the single canonical announcement (the figure above is aria-hidden too). */}
-            <p aria-hidden="true" className="font-mono text-label text-sage-text uppercase tracking-label mb-2">
-              {r.label}
-            </p>
-            {/* curly-the-estate (luxe Wave 1): the sub is authored prose, not a
-                code specimen, so it takes the house apostrophe like every other
-                prose surface — "the portfolio's own suite" was the last straight
-                U+0027 rendering from content JSON. Mono TYPEFACE is not a mono
-                CONTEXT: `code` spans keep their literal glyphs via
-                INLINE_CODE_CLASS and never route through this transform. */}
-            <p className="font-mono text-meta text-text-meta">{smartPunctuation(r.sub)}</p>
-          </Reveal>
-        ))}
-      </div>
+      {/* G2 (THE ROOM Phase G) — the method pair. Six figures share ONE method
+          line, and it sits directly beneath them, so the grid and that line are
+          the instrument: land on any figure and the door to the evidence draws
+          itself. An UNSTYLED wrapper on purpose — `.method-pair` declares no
+          layout, and a plain block box around two block-level siblings with no
+          margins of its own leaves the rendered box tree unchanged (verified
+          against the pre-phase out/ capture, byte-identical but for the two
+          class hooks). */}
+      <div className="method-pair">
+        <div className="grid grid-cols-1 min-[480px]:grid-cols-2 lg:grid-cols-3 gap-px bg-cool-soft/30 border border-cool-soft/50 rounded-lg overflow-hidden shadow-md">
+          {data.receipts.map((r, i) => (
+            <Reveal
+              key={r.label}
+              index={Math.min(i, 4)}
+              variant="depth"
+              className={cn('flex flex-col bg-surface-mid p-6 md:p-7', 'group')}
+            >
+              <CountUpStat value={r.value} emberClass={STAT_EMBER[i % STAT_EMBER.length]} label={r.label} />
+              {/* W5-02: CountUpStat's sr-only name is already "{value} {label}", so
+                  this visible caption would make AT hear the label a second time.
+                  aria-hidden keeps the caption on screen while the sr-only name stays
+                  the single canonical announcement (the figure above is aria-hidden too). */}
+              <p aria-hidden="true" className="font-mono text-label text-sage-text uppercase tracking-label mb-2">
+                {r.label}
+              </p>
+              {/* curly-the-estate (luxe Wave 1): the sub is authored prose, not a
+                  code specimen, so it takes the house apostrophe like every other
+                  prose surface — "the portfolio's own suite" was the last straight
+                  U+0027 rendering from content JSON. Mono TYPEFACE is not a mono
+                  CONTEXT: `code` spans keep their literal glyphs via
+                  INLINE_CODE_CLASS and never route through this transform. */}
+              <p className="font-mono text-meta text-text-meta">{smartPunctuation(r.sub)}</p>
+            </Reveal>
+          ))}
+        </div>
 
-      {/* Method line — the receipt's fine print + the evidence artifact.
-          UP-14(c) (ui-polish 2026-08-01): this line now breaks BETWEEN words
-          only — never inside a compound token, and never leaving a "·" adrift
-          at the start of a line. See MethodSegment for the mechanism and for
-          why the audit's per-SEGMENT nowrap was measured and rejected. */}
-      <p className="mt-6 font-mono text-meta tracking-label uppercase text-text-meta leading-loose">
-        Measured {data.measuredDate}
-        <MethodSegment>
-          <a
-            href={data.evidencePath}
-            className="link-draw text-accent-text hover:text-accent-text"
-          >
-            Evidence JSON
-          </a>
-        </MethodSegment>
-        {data.method.map((m) => (
-          <MethodSegment key={m}>{m}</MethodSegment>
-        ))}
-      </p>
+        {/* Method line — the receipt's fine print + the evidence artifact.
+            UP-14(c) (ui-polish 2026-08-01): this line now breaks BETWEEN words
+            only — never inside a compound token, and never leaving a "·" adrift
+            at the start of a line. See MethodSegment for the mechanism and for
+            why the audit's per-SEGMENT nowrap was measured and rejected. */}
+        <p className="mt-6 font-mono text-meta tracking-label uppercase text-text-meta leading-loose">
+          Measured {data.measuredDate}
+          <MethodSegment>
+            <a
+              href={data.evidencePath}
+              className="link-draw method-draw text-accent-text hover:text-accent-text"
+            >
+              Evidence JSON
+            </a>
+          </MethodSegment>
+          {data.method.map((m) => (
+            <MethodSegment key={m}>{m}</MethodSegment>
+          ))}
+        </p>
+      </div>
     </div>
   );
 }

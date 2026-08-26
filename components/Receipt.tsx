@@ -33,6 +33,11 @@ type ReceiptProps = {
  * anchor. Reads as a second paper stock (--rgb-receipt /
  * --rgb-receipt-rule, A5) — evidence, not decoration.
  *
+ * Carries the G2 method underline (Phase G): the card is a `.method-pair`, so
+ * hovering the FIGURE — or tabbing into the card — draws the method link's
+ * underline. The link itself is always visible text, so touch and reduced-
+ * motion visitors lose nothing. See the G2 block in globals.css.
+ *
  * Replaces the hardcoded FlagstoneTestReceipt JSX (app/work/[slug]/page.tsx)
  * and the homepage/A11yReceipts chip band in spirit, generalized into one
  * component. Not yet wired into any page (Phase A) — that's Phase C+.
@@ -42,6 +47,11 @@ export function Receipt({ value, label, tier, date, methodHref, methodLabel, cla
     <div
       className={cn(
         'flex flex-col gap-2 bg-receipt border border-receipt-rule rounded-md p-6',
+        // G2 (THE ROOM Phase G): the card is the method PAIR — the figure and
+        // the door to its proof are one instrument, so landing anywhere on the
+        // receipt draws the method's underline. No-op when methodHref is absent
+        // (nothing carries .method-draw to answer).
+        'method-pair',
         className,
       )}
     >
@@ -57,7 +67,10 @@ export function Receipt({ value, label, tier, date, methodHref, methodLabel, cla
         {methodHref && (
           <>
             <span aria-hidden="true"> · </span>
-            <a href={methodHref} className="link-draw text-accent-text hover:text-accent-text">
+            <a
+              href={methodHref}
+              className="link-draw method-draw text-accent-text hover:text-accent-text"
+            >
               {methodLabel ?? 'method'}
             </a>
           </>
