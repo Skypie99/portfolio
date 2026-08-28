@@ -93,7 +93,9 @@ export default function AboutPage() {
           {/* Story paragraphs */}
           <div className="max-w-measure-lead flex flex-col gap-8">
             <p className="font-sans font-light text-step-1 text-ink-muted text-pretty">
-              I came to software through problems I wanted to solve. Most of them
+              By day, I’m a senior technical-support specialist — the escalation
+              point for enterprise accounts, and the person who trains the team. I
+              came to software through problems I wanted to solve. Most of them
               involved accessibility — tools that should have been better but weren’t.
               I decided to make some that were.
             </p>
@@ -121,7 +123,7 @@ export default function AboutPage() {
             <p className="font-sans font-light text-prose text-ink-muted text-pretty">
               Right now: an accessibility map. A multi-agent system that ships real
               commits. A local-first prompt manager. A command-line trainer.
-              All of them open source.
+              All of them documented in the open.
             </p>
           </div>
         </div>
