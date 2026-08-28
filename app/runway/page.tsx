@@ -71,6 +71,13 @@ export default function RunwayPage() {
             proof of use, not a reel. I bought a Pro plan on Saturday, gave myself a real
             assignment instead of a tour, and this is what came out of the weekend.
           </p>
+          <p className="font-sans font-light text-prose text-ink-muted max-w-measure-wide text-pretty mt-6">
+            I spend my days in technical support, so I did not just take the tour — I
+            paid attention to where the product created friction, the way a support
+            person can&rsquo;t help but do. That instinct is the part I would bring to
+            your team: turning what trips up a brand-new user into something support and
+            product can act on.
+          </p>
         </div>
       </section>
 
@@ -86,7 +93,7 @@ export default function RunwayPage() {
                 playsInline
                 preload="metadata"
                 poster="/images/runway/poster.jpg"
-                aria-label="Amazon Night Flight, a 45 second short film"
+                aria-label="Amazon Night Flight, a 46 second short film"
                 className="block w-full h-auto"
               >
                 <source src="/videos/amazon-night-flight.mp4" type="video/mp4" />
@@ -99,7 +106,7 @@ export default function RunwayPage() {
             </div>
             <figcaption className="font-sans font-light text-sm leading-relaxed text-ink-muted mt-4 max-w-measure-wide">
               <strong className="font-light text-ink">Amazon Night Flight</strong>{' '}
-              <span aria-hidden="true">&middot;</span> 45 seconds{' '}
+              <span aria-hidden="true">&middot;</span> 46 seconds{' '}
               <span aria-hidden="true">&middot;</span> first weekend on a Runway Pro plan.
               <br />
               Every frame generated in Runway: Gen-4.5, Gen-4 Turbo, Seedance 2.0, and
