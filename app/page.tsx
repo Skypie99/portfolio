@@ -320,7 +320,7 @@ export default function HomePage() {
       <div id="hero">
         <Hero
           name="Sky Halisky"
-          positioning="Building accessible, AI-native product. Open to thoughtful product collaborations."
+          positioning="Senior technical-support specialist. I turn recurring user friction into documentation, QA, and the tools that fix it."
           avatarSrc="/images/headshot.jpg"
           avatarAlt="Sky Halisky"
           eyebrow="Portfolio — 2026"
