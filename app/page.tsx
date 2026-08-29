@@ -293,7 +293,7 @@ export default function HomePage() {
       {/* ── Identity mark — holds the top-left through the wordless runway so
           who-this-is registers at first paint (L1-01 / S17). Fixed sibling of
           the intro, never a child of it; the locked intro is untouched. ── */}
-      <RunwayIdentity name="Sky Halisky" roleLabel="AI Builder" />
+      <RunwayIdentity name="Sky Halisky" roleLabel="Technical Support · AI Builder" />
       {/* The retirement lives HERE, not inside RunwayIdentity, because it is a
           client component and a static import would ship it to every route that
           mounts the mark -- proven in the built chunks, not assumed (UP-38). */}
@@ -864,8 +864,9 @@ export default function HomePage() {
             <Reveal index={1} variant="depth" as="p">
               The constraints are what make the output reviewable. Database
               migrations are files with a rollback, never applied changes — no
-              agent has written to a production database. None handles
-              credentials, and none sends anything outside the repository.
+              agent applies one to production, or sends anything outside the
+              repository, without my explicit authorization under a narrow,
+              mechanically gated exception. None handles credentials.
               Exactly one of the fifteen may message me; the rest write to files
               I read on my own schedule. Merges to{' '}
               <code className="font-mono text-body-sm">main</code> are mine,
