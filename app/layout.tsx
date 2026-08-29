@@ -197,7 +197,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               '@type': 'Person',
               name: 'Sky Halisky',
               url: 'https://skypistudio.com',
-              jobTitle: 'AI Builder',
+              jobTitle: 'Technical Support · AI Builder',
               description:
                 'AI builder based in the Okanagan Valley, British Columbia. Creator of Flagstone, Claude Corp, the Prompt Library, and more.',
               sameAs: [

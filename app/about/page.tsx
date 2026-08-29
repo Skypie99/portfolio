@@ -94,7 +94,7 @@ export default function AboutPage() {
           <div className="max-w-measure-lead flex flex-col gap-8">
             <p className="font-sans font-light text-step-1 text-ink-muted text-pretty">
               By day, I’m a senior technical-support specialist — the escalation
-              point for enterprise accounts, and the person who trains the team. I
+              point for enterprise accounts, and I train and coach teammates. I
               came to software through problems I wanted to solve. Most of them
               involved accessibility — tools that should have been better but weren’t.
               I decided to make some that were.
@@ -222,7 +222,9 @@ export default function AboutPage() {
             </p>
             <p className="font-sans font-light text-body text-ink-muted text-pretty">
               The user’s data is theirs. Prompt Library stores everything
-              locally — no backend, no account, no server. If the data is not
+              locally — no backend of mine, no account, no telemetry. Runs go
+              directly from the browser to Anthropic with the user’s own key;
+              nothing passes through a server I control. If the data is not
               necessary, do not collect it.
             </p>
             <p className="font-sans font-light text-body text-ink-muted text-pretty">
