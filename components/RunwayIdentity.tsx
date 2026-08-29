@@ -49,11 +49,11 @@
  * inside the first viewport. The exclusion is deliberate and lives in the call
  * sites rather than in a selector so it stays greppable.
  *
- * The strings are NOT re-authored: `name` defaults to the same bytes as
- * content/profile.json's `name` and `wordmarkText` ("Sky Halisky"), and
- * "AI Builder" is the estate-wide identity string MOTION_SYSTEM section 15
- * records. Nothing here is new copy; it is existing copy on a route that
- * rendered none.
+ * `name` defaults to the same bytes as content/profile.json's `name` and
+ * `wordmarkText` ("Sky Halisky"). `roleLabel` carries the site's locked
+ * recruiter-facing identity, "Technical Support · AI Builder" (corrected
+ * 2026-08-28 — MOTION_SYSTEM section 15 originally recorded "AI Builder"
+ * alone, which undersold the support role this mark exists to signal).
  *
  * The material is honest about what it does NOT carry over: `.glass-card` is a
  * LENS. Over the dark film it reads as a chip; over a flat page it has almost
@@ -65,7 +65,7 @@
  */
 export function RunwayIdentity({
   name = 'Sky Halisky',
-  roleLabel = 'AI Builder',
+  roleLabel = 'Technical Support · AI Builder',
   variant = 'runway',
 }: {
   name?: string;
