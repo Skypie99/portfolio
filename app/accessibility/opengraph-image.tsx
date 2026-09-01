@@ -31,7 +31,7 @@ export const dynamic = 'force-static';
  */
 
 export const alt =
-  'Accessibility, measured — 0 axe violations across 32 scans, AA both themes, reduced motion first-class. A snapshot you can re-run.';
+  'Accessibility, measured: 0 axe violations across 32 scans, AA both themes, reduced motion first-class. A snapshot you can re-run.';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -144,7 +144,7 @@ export default function Image() {
               color: '#5c5348',
             }}
           >
-            <div>CHROMIUM — NOT WEBKIT</div>
+            <div>CHROMIUM: NOT WEBKIT</div>
             <div style={{ marginTop: 5 }}>A SNAPSHOT YOU CAN RE-RUN</div>
           </div>
           <div style={{ fontSize: 18, letterSpacing: 2, color: '#B35F40', marginTop: 8 }}>

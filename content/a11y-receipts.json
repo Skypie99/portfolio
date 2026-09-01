@@ -2,10 +2,10 @@
   "measuredDate": "2026-08-25",
   "evidencePath": "/receipts/a11y-2026-08-25.json",
   "method": [
-    "axe-core 4.11.4 — 17 routes × 2 themes",
+    "axe-core 4.11.4 across 17 routes × 2 themes",
     "label-content-name-mismatch + color-contrast on",
     "reduced-motion, scroll-settled",
-    "Chromium — not WebKit"
+    "Chromium, not WebKit"
   ],
   "receipts": [
     {
@@ -36,7 +36,7 @@
     {
       "value": "0.0039",
       "label": "worst-case CLS",
-      "sub": "worst route, production build — floor 0.004"
+      "sub": "worst route, production build, floor 0.004"
     }
   ]
 }

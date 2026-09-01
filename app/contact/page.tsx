@@ -14,9 +14,9 @@ import { OG_CARD } from '@/lib/og';
 export function generateMetadata(): Metadata {
   const profile = getProfile();
   const description =
-    'Write to Sky Halisky — AI builder based in the Okanagan Valley, British Columbia.';
+    'Write to Sky Halisky: AI builder based in the Okanagan Valley, British Columbia.';
   return {
-    title: `Contact — ${profile.name}`,
+    title: `Contact: ${profile.name}`,
     description,
     // TA-10 (truth audit 2026-07-31): see /certificates — same inheritance
     // defect. Without its own block this route unfurled as the homepage, which
@@ -26,15 +26,15 @@ export function generateMetadata(): Metadata {
     openGraph: {
       type: 'website',
       url: '/contact/',
-      siteName: 'Sky Halisky — AI Portfolio',
+      siteName: 'Sky Halisky: AI Portfolio',
       locale: 'en_CA',
-      title: `Contact — ${profile.name}`,
+      title: `Contact: ${profile.name}`,
       description,
       images: [OG_CARD],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `Contact — ${profile.name}`,
+      title: `Contact: ${profile.name}`,
       description,
     },
   };

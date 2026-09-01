@@ -113,15 +113,15 @@ export function generateMetadata(): Metadata {
   const description =
     'Sky Halisky is an AI builder crafting accessible, privacy-first tools from the Okanagan Valley, BC. Creator of Flagstone, the Prompt Library, and more.';
   return {
-    title: `${profile.name} — AI Portfolio`,
+    title: `${profile.name}: AI Portfolio`,
     description,
     metadataBase: new URL(siteUrl),
     referrer: 'strict-origin-when-cross-origin',
     openGraph: {
       type: 'website',
       url: siteUrl,
-      siteName: `${profile.name} — AI Portfolio`,
-      title: `${profile.name} — AI Portfolio`,
+      siteName: `${profile.name}: AI Portfolio`,
+      title: `${profile.name}: AI Portfolio`,
       description,
       locale: 'en_CA',
       // TA-11: point at the `.png` alias so GH Pages sends image/png rather
@@ -134,7 +134,7 @@ export function generateMetadata(): Metadata {
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${profile.name} — AI Portfolio`,
+      title: `${profile.name}: AI Portfolio`,
       description,
       // Twitter falls back to openGraph.images when it declares none of its own.
     },

@@ -46,9 +46,9 @@ export function generateMetadata(): Metadata {
     openGraph: {
       type: 'website',
       url: 'https://skypistudio.com',
-      siteName: `${profile.name} — AI Portfolio`,
+      siteName: `${profile.name}: AI Portfolio`,
       locale: 'en_CA',
-      title: `${profile.name} — AI Portfolio`,
+      title: `${profile.name}: AI Portfolio`,
       description,
       images: [OG_CARD],
     },
@@ -167,13 +167,13 @@ export default function HomePage() {
   const calibration = openRound
     ? {
         value: openRound.numeral,
-        label: `calibration round, open — ${openRound.counts[0]}`,
+        label: `calibration round, open: ${openRound.counts[0]}`,
         date: undefined as string | undefined,
       }
     : lastClosedRound
       ? {
           value: lastClosedRound.numeral,
-          label: `calibration rounds, none open — ${lastClosedRound.counts[0]}`,
+          label: `calibration rounds, none open: ${lastClosedRound.counts[0]}`,
           date: lastClosedRound.closed,
         }
       : null;
@@ -215,7 +215,7 @@ export default function HomePage() {
             figure: `Round ${calibration.value}`,
             what: (
               <>
-                {openRound ? `${openRound.title} — ${openRound.counts.join(' · ')}` : calibration.label}
+                {openRound ? `${openRound.title}: ${openRound.counts.join(' · ')}` : calibration.label}
                 {' · '}
                 <Link href="/colophon/#calibration" className="link-draw text-accent-text">
                   the record
@@ -237,7 +237,7 @@ export default function HomePage() {
       what: (
         <>
           <em className="font-serif italic text-ink">the dead Report button</em>
-          {' — found by a simulator walk, fixed by one moved closing tag, re-proven by a test that fails against the old arrangement · '}
+          {': found by a simulator walk, fixed by one moved closing tag, re-proven by a test that fails against the old arrangement · '}
           <Link href="/work/flagstone/#what-went-wrong" className="link-draw text-accent-text">
             the account
           </Link>
@@ -256,7 +256,7 @@ export default function HomePage() {
                keep pointing at /accessibility/. */
             what: (
               <>
-                {'the bar I build to — '}
+                {'the bar I build to: '}
                 {contrastTier.sub}
                 {' · '}
                 <Link href="/accessibility/" className="link-draw text-accent-text">
@@ -275,7 +275,7 @@ export default function HomePage() {
             figure: focusStops.value,
             what: (
               <>
-                {`${focusStops.label} — ${focusStops.sub}`}
+                {`${focusStops.label}: ${focusStops.sub}`}
                 {' · '}
                 <Link href="/accessibility/#receipts" className="link-draw text-accent-text">
                   evidence
@@ -323,7 +323,7 @@ export default function HomePage() {
           positioning="Senior technical-support specialist. I turn recurring user friction into documentation, QA, and the tools that fix it."
           avatarSrc="/images/headshot.jpg"
           avatarAlt="Sky Halisky"
-          eyebrow="Portfolio — 2026"
+          eyebrow="Portfolio: 2026"
           heading="An accessibility map. A multi-agent system. A web-based prompt library."
           subhead="Five projects built, all five on the open web. One submitted to Apple for App Store review. Accessibility first, built for everyone."
           ctaLabel="See the work."
@@ -346,7 +346,7 @@ export default function HomePage() {
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                 <Receipt
                   value="2,900+"
-                  label="tests passing — Flagstone"
+                  label="tests passing: Flagstone"
                   /* "reported": run against the Flagstone repo, not this
                      site. The figure is the chip's own ratified floor
                      (the suite grows most weeks); the exact 2,971 and the
@@ -358,7 +358,7 @@ export default function HomePage() {
                 {axe && (
                   <Receipt
                     value={axe.value}
-                    label={`${axe.label} — ${axe.sub}`}
+                    label={`${axe.label}: ${axe.sub}`}
                     /* "measured": run against THIS site. Figure, method line
                        and date all read from content/a11y-receipts.json, so
                        the next verification run moves this receipt. */
@@ -453,7 +453,7 @@ export default function HomePage() {
                 >
                   <p className="flex items-center gap-2 font-mono text-label tracking-label uppercase text-accent-ink mb-4">
                     <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
-                    Featured — the flagship
+                    Featured: the flagship
                   </p>
                   <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance">
                     {flagship.title}
@@ -486,7 +486,7 @@ export default function HomePage() {
                 >
                   <p className="font-mono text-meta tracking-label uppercase text-text-meta">
                     Status{' '}
-                    <span aria-hidden="true">—</span>{' '}
+                    <span aria-hidden="true">: </span>{' '}
                     <span className="text-cool-deep normal-case tracking-normal">{flagship.status}</span>
                   </p>
                   {/* The one pull-line, quoted from the case study's own
@@ -686,7 +686,7 @@ export default function HomePage() {
                                32px away horizontally. */
                             className="relative rounded-sm transition-colors duration-fast ease-out text-accent-text hover:text-accent-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary after:content-[''] after:absolute after:inset-x-0 after:-top-[15px] after:-bottom-[15px]"
                           >
-                            Featured — above
+                            Featured: above
                             <span aria-hidden="true" className="ml-1.5">{'↑'}</span>
                           </Link>
                         ) : (
@@ -857,7 +857,7 @@ export default function HomePage() {
             </Reveal>
             <Reveal index={1} variant="depth" as="p">
               The constraints are what make the output reviewable. Database
-              migrations are files with a rollback, never applied changes — no
+              migrations are files with a rollback, never applied changes: no
               agent applies one to production, or sends anything outside the
               repository, without my explicit authorization under a narrow,
               mechanically gated exception. None handles credentials.
@@ -959,7 +959,7 @@ export default function HomePage() {
                 points at, and the door keeps the band's existing CTA string.
                 A band became a sentence. */}
             <p className="font-sans font-light text-body-sm leading-body text-ink-muted text-pretty">
-              Credentials, earned in order — {certificates.length} of them, with issuers and
+              Credentials, earned in order: {certificates.length} of them, with issuers and
               dates.{' '}
               <Link href="/certificates/" className="link-draw text-accent-text">
                 See the credential badges

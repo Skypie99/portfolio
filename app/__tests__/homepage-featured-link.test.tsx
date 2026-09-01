@@ -29,25 +29,25 @@ beforeAll(() => {
 
 afterEach(cleanup);
 
-describe('Homepage work index — the "Featured — above" link', () => {
+describe('Homepage work index: the "Featured: above" link', () => {
   it("carries no aria-label that could diverge from its visible text", () => {
     render(<HomePage />);
-    const link = screen.getByRole('link', { name: /Featured — above/ });
+    const link = screen.getByRole('link', { name: /Featured: above/ });
     expect(link).not.toHaveAttribute('aria-label');
   });
 
   it('its accessible name is built from real visible text, matching what a sighted reader sees', () => {
     render(<HomePage />);
-    const link = screen.getByRole('link', { name: /Featured — above/ });
+    const link = screen.getByRole('link', { name: /Featured: above/ });
     // The visible words ("Featured — above") must be the accessible name —
     // not replaced by unrelated wording, which is exactly what the old
     // aria-label did.
-    expect(link.textContent?.trim().replace(/\s+/g, ' ')).toMatch(/^Featured — above/);
+    expect(link.textContent?.trim().replace(/\s+/g, ' ')).toMatch(/^Featured: above/);
   });
 
   it('points at the flagship section', () => {
     render(<HomePage />);
-    const link = screen.getByRole('link', { name: /Featured — above/ });
+    const link = screen.getByRole('link', { name: /Featured: above/ });
     expect(link).toHaveAttribute('href', '#flagship');
   });
 });

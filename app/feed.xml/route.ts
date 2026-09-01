@@ -32,7 +32,7 @@ function rfc822(isoDate: string): string {
 export function GET(): Response {
   const profile = getProfile();
   const posts = getBlogPosts();
-  const title = `Notes — ${profile.name}`;
+  const title = `Notes: ${profile.name}`;
   const lastBuild = posts[0] ? rfc822(posts[0].publishedDate) : new Date(0).toUTCString();
 
   const items = posts

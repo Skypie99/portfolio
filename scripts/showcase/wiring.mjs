@@ -43,7 +43,7 @@ export const WIRING = [
     cardImage: currentExplore,
     heroPlate: {
       severity: 'SEVERITY 3 OF 5 · MODERATE · VERIFIED',
-      caption: 'Steep grade — a real barrier report expanded on the map.',
+      caption: 'Steep grade: a real barrier report expanded on the map.',
       provenance: 'CURRENT EXPLORE SCREEN · FLAGSTONE',
     },
     shots: [
@@ -52,7 +52,7 @@ export const WIRING = [
         scene: 'drawer-open',
         viewport: 'phone',
         focal: '50% 24%',
-        caption: 'The navigation drawer on spring physics — the material world in motion.',
+        caption: 'The navigation drawer on spring physics, the material world in motion.',
         video: {
           clip: 'drawer-spring',
           alt: "Flagstone's navigation drawer springing open over the home screen, resting a beat, then sliding away.",
@@ -65,7 +65,7 @@ export const WIRING = [
           avif: '/showcase/flagstone/report-current.phone.avif',
           webp: '/showcase/flagstone/report-current.phone.webp',
           alt: "Flagstone's Report a flag form showing location, quick-fill templates, category options, severity choices, and a description field.",
-          caption: 'Reporting a barrier — quick-fill templates, category, severity, and description.',
+          caption: 'Reporting a barrier: quick-fill templates, category, severity, and description.',
           lqip: 'data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAAAQAwCdASoUABgAPxF8r1MsJ6SiqA1RgCIJZwDPZBhuRJgA/u8jCPFCassXSMzYuzg8fi8zn5+VLgz1KkfWITVwAAA=',
           focal: '50% 50%',
         },
@@ -76,7 +76,7 @@ export const WIRING = [
           avif: '/showcase/flagstone/community-current.phone.avif',
           webp: '/showcase/flagstone/community-current.phone.webp',
           alt: "Flagstone's Review barriers screen showing No ramp and Steep grade reports with severity, descriptions, and Verify, Resolved, and Details actions.",
-          caption: 'Community review — neighbours verify barriers and mark resolved reports.',
+          caption: 'Community review: neighbours verify barriers and mark resolved reports.',
           lqip: 'data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAACQBACdASoUABYAPwVsrVArpiQisAwBcCCJZQC26VyDCX7+qZW2mTGsjZFa+AAA/sOapayQEYlCwJQItGPtT2bfQZmg8SDKSadBGa3fdUlgeDS2nCq7wHbxuewAAA==',
           focal: '50% 50%',
         },
@@ -93,13 +93,13 @@ export const WIRING = [
       scene: 'home',
       viewport: 'desktop',
       focal: '50% 18%',
-      alt: 'The Prompt Library home — search and category chips over the prompt grid, the featured card leading.',
+      alt: 'The Prompt Library home, with search and category chips over the prompt grid and the featured card leading.',
     },
     shots: [
       {
         scene: 'prompt-detail',
         viewport: 'desktop',
-        caption: 'A prompt opened — variables to fill, the copy control waiting.',
+        caption: 'A prompt opened, with variables to fill and the copy control waiting.',
       },
     ],
   },
@@ -113,7 +113,7 @@ export const WIRING = [
       scene: 'hero-pipeline',
       viewport: 'desktop',
       focal: '50% 12%',
-      alt: 'The Claude Corp front door — the fifteen-role pipeline under the editorial hero.',
+      alt: 'The Claude Corp front door, with the fifteen-role pipeline under the editorial hero.',
     },
     shots: [
       {
@@ -134,18 +134,18 @@ export const WIRING = [
       scene: 'command-center',
       viewport: 'desktop',
       focal: '50% 14%',
-      alt: 'The Dashboard command center — project health, agent activity and pending decisions on one calm board.',
+      alt: 'The Dashboard command center, showing project health, agent activity and pending decisions on one calm board.',
     },
     shots: [
       {
         scene: 'think-tank',
         viewport: 'desktop',
-        caption: 'The Think Tank — ideas triaged into Do it, Later and Skip.',
+        caption: 'The Think Tank: ideas triaged into Do it, Later and Skip.',
       },
       {
         scene: 'dispatch',
         viewport: 'desktop',
-        caption: 'The Dispatch queue — agent work lined up with its receipts.',
+        caption: 'The Dispatch queue, with agent work lined up alongside its receipts.',
       },
     ],
   },
@@ -161,16 +161,16 @@ export const WIRING = [
       scene: 'board',
       viewport: 'desktop',
       focal: '50% 40%',
-      alt: 'A Ghost Code round mid-chase — the Phantom in the maze with the command prompt waiting below.',
+      alt: 'A Ghost Code round mid-chase, with the Phantom in the maze and the command prompt waiting below.',
     },
     shots: [
       {
         scene: 'board',
         viewport: 'desktop',
-        caption: 'A seeded round in motion — same maze, both themes.',
+        caption: 'A seeded round in motion: same maze, both themes.',
         video: {
           clip: 'round',
-          alt: 'A Ghost Code round in motion — the Phantom on patrol while the code prompt waits below.',
+          alt: 'A Ghost Code round in motion, with the Phantom on patrol while the code prompt waits below.',
         },
         darkVideo: true,
       },

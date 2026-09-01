@@ -13,24 +13,24 @@ import { OG_CARD } from '@/lib/og';
 export function generateMetadata(): Metadata {
   const profile = getProfile();
   const description =
-    'How this site was made — the stack, the type, the golden-hour world, and the quiet systems behind it.';
+    'How this site was made: the stack, the type, the golden-hour world, and the quiet systems behind it.';
   return {
-    title: `Colophon — ${profile.name}`,
+    title: `Colophon: ${profile.name}`,
     description,
     openGraph: {
       type: 'website',
       // TA-10: a leaf openGraph REPLACES the root's wholesale (W0-04) — url,
       // siteName and locale restated so they survive on this route's share.
       url: '/colophon/',
-      siteName: 'Sky Halisky — AI Portfolio',
+      siteName: 'Sky Halisky: AI Portfolio',
       locale: 'en_CA',
-      title: `Colophon — ${profile.name}`,
+      title: `Colophon: ${profile.name}`,
       description,
       images: [OG_CARD],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `Colophon — ${profile.name}`,
+      title: `Colophon: ${profile.name}`,
       description,
     },
   };
@@ -52,7 +52,7 @@ const TYPE_SPECIMENS: { sample: string; sampleClass: string; family: string; rol
     role: 'serif crowns',
   },
   {
-    sample: 'Calm, readable body text — kept light so long-form never tires the eye.',
+    sample: 'Calm, readable body text: kept light so long-form never tires the eye.',
     // C-88: the block is titled "the type, set live" — the 'body' specimen must
     // render at the real long-form body size (text-prose, 17px), not the lead
     // tier (text-step-1, 20px) it was mistakenly set at.

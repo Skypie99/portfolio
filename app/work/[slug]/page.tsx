@@ -265,7 +265,7 @@ function CaseStudySignOff() {
     <Reveal variant="depth" className="max-w-measure-wide mt-16 lg:mt-20 flex flex-col gap-5">
       <hr className="w-full border-0 border-t border-border-decorative" />
       <p className="font-mono text-meta tracking-label uppercase text-text-meta">
-        — Sky Halisky · Okanagan Valley, British{' '}Columbia
+        Sky Halisky · Okanagan Valley, British{' '}Columbia
       </p>
       <Link
         href="/about/"
@@ -295,13 +295,13 @@ export async function generateMetadata({
   const { slug } = await params;
   const d = getDeliverables().find((x) => x.id === slug);
   if (!d) {
-    return { title: 'Work — not found' };
+    return { title: 'Work: not found' };
   }
   return {
     // L1-03: the browser-tab title adopts the identity string this page's own
     // og:title already carries (below) — signed tabs, not anonymous inventory
     // labels, on the exact pages recruiters get deep-linked to.
-    title: `${d.title} — Sky Halisky`,
+    title: `${d.title}: Sky Halisky`,
     description: d.summary,
     openGraph: {
       type: 'article',
@@ -311,9 +311,9 @@ export async function generateMetadata({
       // every /work/* share. url is the route's OWN (resolved against
       // metadataBase), never the root's homepage url.
       url: `/work/${slug}/`,
-      siteName: 'Sky Halisky — AI Portfolio',
+      siteName: 'Sky Halisky: AI Portfolio',
       locale: 'en_CA',
-      title: `${d.title} — Sky Halisky`,
+      title: `${d.title}: Sky Halisky`,
       description: d.summary,
       // FT-1/W0-01/02: the share unfurl deposits the WORK, resolved absolute via
       // metadataBase. Precedence (showcase/theme-sync): the dedicated ogCard —
@@ -331,7 +331,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${d.title} — Sky Halisky`,
+      title: `${d.title}: Sky Halisky`,
       description: d.summary,
     },
   };
@@ -846,7 +846,7 @@ export default async function WorkDetailPage({
             >
               <hr className="w-full border-0 border-t border-border-decorative" />
               <p className="font-mono text-meta tracking-label uppercase text-text-meta">
-                — Sky Halisky · Okanagan Valley, British{' '}Columbia
+                Sky Halisky · Okanagan Valley, British{' '}Columbia
               </p>
               <Link
                 href="/about/"

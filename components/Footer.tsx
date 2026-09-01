@@ -81,7 +81,7 @@ export function Footer() {
                 here from the bottom strip; zero new words, only adjacency. */}
             <p className="font-mono text-meta tracking-label uppercase text-text-meta inline-flex items-center gap-2">
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
-              SkyPi Studio — Est. 2026
+              SkyPi Studio: Est. 2026
             </p>
           </div>
         </div>
@@ -171,7 +171,7 @@ export function Footer() {
             <p className="font-sans text-body-sm text-ink-muted leading-body text-pretty">
               {profile.name} builds small, careful AI tools. Accessible by
               default, useful by design, so no one’s left out. Built in
-              public, honest about what ships — every one of them live on the open
+              public, honest about what ships: every one of them live on the open
               internet.
             </p>
             {/* L3-03: the quiet career-document pointer — the fullest history

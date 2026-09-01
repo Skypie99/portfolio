@@ -52,7 +52,7 @@ const HOME_LABELS = [
   // a label to the map does not fail these loops, so `flagship` and `record`
   // rode in unchecked until C6 removed one and the guard finally spoke. They
   // are added here in the same commit that fixed it, not left for later.
-  'Featured — the flagship', // C2 — the flagship room
+  'Featured: the flagship', // C2 — the flagship room
   'The Work',
   'The Record', // C5 — the ledger
   // Truth pass 2026-08-21 added this one; 'Method' left with #process in the
@@ -93,7 +93,7 @@ afterEach(() => {
   cleanup();
 });
 
-describe('SidebarSectionNav — the homepage index is unchanged', () => {
+describe('SidebarSectionNav: the homepage index is unchanged', () => {
   it('renders the "On this page" landmark with every section link', () => {
     render(<SidebarSectionNav />);
     const nav = screen.getByRole('navigation', { name: /on this page/i });
@@ -134,7 +134,7 @@ describe('SidebarSectionNav — the homepage index is unchanged', () => {
   });
 });
 
-describe('SidebarSectionNav — the index describes the route you are on (UP-10)', () => {
+describe('SidebarSectionNav: the index describes the route you are on (UP-10)', () => {
   it.each([
     [
       '/about/',
@@ -214,7 +214,7 @@ describe('SidebarSectionNav — the index describes the route you are on (UP-10)
     expect(sectionsForRoute('/about')).toHaveLength(4);
   });
 
-  it('an empty pathname gets NO index — it must never fall back to home\'s', () => {
+  it('an empty pathname gets NO index: it must never fall back to home\'s', () => {
     // usePathname is typed `string | null`; the component's `?? ''` fallback
     // would otherwise render the homepage index, with live scroll-spy, on an
     // unknown route — a miniature of the bug UP-10 removes.
@@ -225,14 +225,14 @@ describe('SidebarSectionNav — the index describes the route you are on (UP-10)
   });
 });
 
-describe('SidebarSectionNav — routes with no index render nothing', () => {
+describe('SidebarSectionNav: routes with no index render nothing', () => {
   it.each([
     ['/work/', 'a single gallery band; its only other heading is sr-only'],
     ['/certificates/', 'a single credential grid; its only other heading is sr-only'],
     ['/blog/', 'a single post list; its only other heading is sr-only'],
-    ['/contact/', 'one named band under its title band — a one-item list is not an index'],
+    ['/contact/', 'one named band under its title band: a one-item list is not an index'],
     ['/some-unmapped-route/', 'the 404 and anything unmapped'],
-  ])('%s renders no "On this page" block at all — %s', (pathname) => {
+  ])('%s renders no "On this page" block at all: %s', (pathname) => {
     pathnameMock.mockReturnValue(pathname);
     const { container } = render(<SidebarSectionNav />);
     expect(screen.queryByRole('navigation', { name: /on this page/i })).not.toBeInTheDocument();
@@ -251,7 +251,7 @@ describe('SidebarSectionNav — routes with no index render nothing', () => {
 });
 
 describe('sectionNav map invariants', () => {
-  it('every href is its own route plus its own id — no cross-route anchors', () => {
+  it('every href is its own route plus its own id: no cross-route anchors', () => {
     for (const route of INDEXED_ROUTES) {
       const sections = ROUTE_SECTIONS[route as keyof typeof ROUTE_SECTIONS];
       const prefix = route === '/' ? '/' : `${route}/`;

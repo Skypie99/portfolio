@@ -76,7 +76,7 @@ describe('ThemedMotion', () => {
       expect(v.getAttribute('playsinline')).not.toBeNull();
       expect(v.getAttribute('aria-label')).toBe(clip.alt);
     }
-    const btn = getByRole('button', { name: `Play animation — ${clip.alt}` });
+    const btn = getByRole('button', { name: `Play animation: ${clip.alt}` });
     expect(btn.className).toContain('h-11');
     expect(btn.className).toContain('w-11');
   });
@@ -95,19 +95,19 @@ describe('ThemedMotion', () => {
     expect(pauseSpy).toHaveBeenCalled();
   });
 
-  it('NEVER autoplays under reduced motion — the poster stands, deliberate play remains', () => {
+  it('NEVER autoplays under reduced motion: the poster stands, deliberate play remains', () => {
     window.matchMedia = mm(true) as unknown as typeof window.matchMedia;
     const { getByRole } = render(<ThemedMotion {...clip} fit="cover" />);
     enter();
     expect(playSpy).not.toHaveBeenCalled();
-    fireEvent.click(getByRole('button', { name: `Play animation — ${clip.alt}` }));
+    fireEvent.click(getByRole('button', { name: `Play animation: ${clip.alt}` }));
     expect(playSpy).toHaveBeenCalledTimes(1);
   });
 
   it('a user pause is sticky against viewport re-entry', () => {
     const { getByRole } = render(<ThemedMotion {...clip} fit="cover" />);
     enter();
-    fireEvent.click(getByRole('button', { name: `Pause animation — ${clip.alt}` }));
+    fireEvent.click(getByRole('button', { name: `Pause animation: ${clip.alt}` }));
     playSpy.mockClear();
     exit();
     enter();

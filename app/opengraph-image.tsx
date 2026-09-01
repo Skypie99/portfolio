@@ -18,7 +18,7 @@ export const dynamic = 'force-static';
  * update layout.tsx metadata.openGraph.images to point at the generated path.
  */
 
-export const alt = 'Sky Halisky — AI builder · accessible, privacy-first tools';
+export const alt = 'Sky Halisky: AI builder · accessible, privacy-first tools';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 

@@ -30,7 +30,7 @@ describe('Footer', () => {
 
   it('renders the studio mark without a © notice (2026-06-10 voice pass)', () => {
     render(<Footer />);
-    expect(screen.getByText(/SkyPi Studio — Est\. 2026/)).toBeInTheDocument();
+    expect(screen.getByText(/SkyPi Studio: Est\. 2026/)).toBeInTheDocument();
     // The © line was retired with the voice pass — quiet luxury, less is more.
     expect(screen.queryByText(/©/)).not.toBeInTheDocument();
   });

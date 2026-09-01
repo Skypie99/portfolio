@@ -84,8 +84,8 @@ export default function GlobalError({
             Something went sideways.
           </h1>
           <p style={{ fontSize: 17, lineHeight: 1.65, maxWidth: 460, margin: '0 0 2rem' }}>
-            A part of this page didn{'’'}t load. Reloading usually fixes it
-            {'—'} and the homepage and the work index are both one tap away.
+            A part of this page didn{'’'}t load. Reloading usually fixes it, and
+            the homepage and work index are both one tap away.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.25rem', alignItems: 'center' }}>
             <button

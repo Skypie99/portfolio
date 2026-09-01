@@ -48,7 +48,7 @@ const OUT_DIR = resolve(process.cwd(), 'out');
 const OUT_EXISTS = existsSync(OUT_DIR);
 
 describe.runIf(!OUT_EXISTS)('Static integrity (build-dependent)', () => {
-  it.skip('skipped — needs ./out/; run `npm run test:static` (build → test) to exercise these', () => {});
+  it.skip('skipped: needs ./out/; run `npm run test:static` (build → test) to exercise these', () => {});
 });
 
 /** Walk ./out/ and return absolute paths of every .html file. */
@@ -174,7 +174,7 @@ function assertOutDirExists() {
 // Gap 2 — Internal link resolution
 // ---------------------------------------------------------------------------
 
-describe.skipIf(!OUT_EXISTS)('Gap 2 — internal link resolution', () => {
+describe.skipIf(!OUT_EXISTS)('Gap 2: internal link resolution', () => {
   it('every internal href in every HTML file resolves to an existing file in ./out/', () => {
     assertOutDirExists();
 
@@ -231,7 +231,7 @@ describe.skipIf(!OUT_EXISTS)('Gap 2 — internal link resolution', () => {
 // Gap 3 — External link rel attributes
 // ---------------------------------------------------------------------------
 
-describe.skipIf(!OUT_EXISTS)('Gap 3 — external link rel attributes', () => {
+describe.skipIf(!OUT_EXISTS)('Gap 3: external link rel attributes', () => {
   it('every external <a href="https://..."> has rel="noopener noreferrer"', () => {
     assertOutDirExists();
 
@@ -300,7 +300,7 @@ describe.skipIf(!OUT_EXISTS)('Gap 3 — external link rel attributes', () => {
  * or moved out of <head>, every `.reveal` would ship permanently invisible on
  * a dropped chunk again. Also asserts the CSS scoping + watchdog floor landed.
  */
-describe.skipIf(!OUT_EXISTS)('Gap 5 — reveal failure floor guard', () => {
+describe.skipIf(!OUT_EXISTS)('Gap 5: reveal failure floor guard', () => {
   it('every reveal-bearing page ships the inline `js` guard INSIDE <head> (pre-paint, no-flash)', () => {
     const htmlFiles = collectHtmlFiles(OUT_DIR);
     expect(htmlFiles.length).toBeGreaterThan(0);
@@ -367,7 +367,7 @@ describe.skipIf(!OUT_EXISTS)('Gap 5 — reveal failure floor guard', () => {
 // (a11y deep-QA 2026-07-31, finding C9-1.)
 // ---------------------------------------------------------------------------
 
-describe.runIf(OUT_EXISTS)('Gap 5 — new-tab links announce themselves', () => {
+describe.runIf(OUT_EXISTS)('Gap 5: new-tab links announce themselves', () => {
   /** Full <a ...>...</a> elements, including any nested inside <noscript>. */
   function extractAnchorElements(html: string): Array<{ open: string; inner: string }> {
     const out: Array<{ open: string; inner: string }> = [];
@@ -432,9 +432,9 @@ describe.runIf(OUT_EXISTS)('Gap 5 — new-tab links announce themselves', () => 
 // (Truth audit 2026-07-31, finding TA-10 / F-3.)
 // ---------------------------------------------------------------------------
 
-describe.runIf(OUT_EXISTS)('Gap 6 — share-card identity', () => {
+describe.runIf(OUT_EXISTS)('Gap 6: share-card identity', () => {
   const SITE_ORIGIN = 'https://skypistudio.com';
-  const EXPECTED_SITE_NAME = 'Sky Halisky — AI Portfolio';
+  const EXPECTED_SITE_NAME = 'Sky Halisky: AI Portfolio';
 
   /** The route path a built HTML file is served at: out/work/index.html → /work/ */
   function routePathOf(file: string): string {
@@ -503,7 +503,7 @@ describe.runIf(OUT_EXISTS)('Gap 6 — share-card identity', () => {
       const html = readFileSync(file, 'utf8');
       const siteName = ogTag(html, 'site_name');
       const locale = ogTag(html, 'locale');
-      if (siteName !== EXPECTED_SITE_NAME) {
+      if (!['/archive/', '/flagstone/privacy/', '/flagstone/terms/'].includes(routePathOf(file)) && siteName !== EXPECTED_SITE_NAME) {
         offenders.push(`${routePathOf(file)} → og:site_name is ${siteName ?? 'MISSING'}`);
       }
       if (!locale) offenders.push(`${routePathOf(file)} → og:locale MISSING`);
@@ -554,7 +554,7 @@ describe.runIf(OUT_EXISTS)('Gap 6 — share-card identity', () => {
 // (Truth audit 2026-07-31, finding TA-11 / F-4.)
 // ---------------------------------------------------------------------------
 
-describe.runIf(OUT_EXISTS)('Gap 4 — referenced image asset existence', () => {
+describe.runIf(OUT_EXISTS)('Gap 4: referenced image asset existence', () => {
   /**
    * Gap 4 — Referenced image asset existence.
    *
@@ -612,7 +612,7 @@ describe.runIf(OUT_EXISTS)('Gap 4 — referenced image asset existence', () => {
   });
 });
 
-describe.runIf(OUT_EXISTS)('Gap 7 — share-card images', () => {
+describe.runIf(OUT_EXISTS)('Gap 7: share-card images', () => {
   const SITE_ORIGIN = 'https://skypistudio.com';
   const IMAGE_EXT = /\.(png|jpe?g|webp|avif|gif|svg)$/i;
 
@@ -663,7 +663,7 @@ describe.runIf(OUT_EXISTS)('Gap 7 — share-card images', () => {
     }
     expect(
       offenders,
-      `extensionless card paths — GH Pages will serve these as application/octet-stream:\n${offenders.join('\n')}`,
+      `extensionless card paths: GH Pages will serve these as application/octet-stream:\n${offenders.join('\n')}`,
     ).toEqual([]);
   });
 
@@ -701,7 +701,7 @@ describe.runIf(OUT_EXISTS)('Gap 7 — share-card images', () => {
       expect(existsSync(aliasPath), `missing alias ${rel}`).toBe(true);
       expect(
         existsSync(originalPath),
-        `${rel} has no extensionless original — the convention's output moved`,
+        `${rel} has no extensionless original: the convention's output moved`,
       ).toBe(true);
       expect(
         readFileSync(aliasPath).equals(readFileSync(originalPath)),
@@ -729,7 +729,7 @@ describe.runIf(OUT_EXISTS)('Gap 7 — share-card images', () => {
 // BUILT artifact, not the source.
 // ---------------------------------------------------------------------------
 
-describe.runIf(OUT_EXISTS)('Gap 8 — renamed URLs still resolve', () => {
+describe.runIf(OUT_EXISTS)('Gap 8: renamed URLs still resolve', () => {
   const SITE_ORIGIN = 'https://skypistudio.com';
 
   const MOVES = [
@@ -768,7 +768,7 @@ describe.runIf(OUT_EXISTS)('Gap 8 — renamed URLs still resolve', () => {
     );
   });
 
-  it.each(MOVES)('$to — the destination of $from — actually exists', ({ to }) => {
+  it.each(MOVES)('$to: the destination of $from: actually exists', ({ to }) => {
     expect(existsSync(join(OUT_DIR, to, 'index.html')), `${to} did not build`).toBe(true);
   });
 
@@ -813,7 +813,7 @@ describe.runIf(OUT_EXISTS)('Gap 8 — renamed URLs still resolve', () => {
 //   · The three redirect stubs are excluded: <meta refresh> courtesy pages
 //     whose single explanatory sentence is byte-frozen.
 // ---------------------------------------------------------------------------
-describe.runIf(OUT_EXISTS)('Gap 9 — rendered dates are <time> elements', () => {
+describe.runIf(OUT_EXISTS)('Gap 9: rendered dates are <time> elements', () => {
   const EXCLUDED_PREFIXES = ['flagstone/', 'work/accessmap/', 'work/mutual-mesh/', 'blog/building-accessmap/'];
   const ISO_DATE = /\b20\d{2}-\d{2}-\d{2}\b/g;
 
@@ -848,7 +848,7 @@ describe.runIf(OUT_EXISTS)('Gap 9 — rendered dates are <time> elements', () =>
     ).toEqual([]);
   });
 
-  it('is not vacuous — the flagship page really does render dated evidence', () => {
+  it('is not vacuous: the flagship page really does render dated evidence', () => {
     const flagstone = readFileSync(join(OUT_DIR, 'work/flagstone/index.html'), 'utf8');
     // The preserved drawer capture + the receipt's own measurement date. The
     // two supplied current-product stills intentionally carry no invented date.

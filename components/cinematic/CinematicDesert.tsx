@@ -558,7 +558,7 @@ export function CinematicDesert() {
 
   return (
     <div ref={scope} data-narrow={narrow ? '' : undefined}>
-      <section className="cdesert-stage" aria-label="SkyPi Studio — desert title scene">
+      <section className="cdesert-stage" aria-label="SkyPi Studio: desert title scene">
         <div ref={pinRef} className="cdesert-pin">
           {/* stacked scene groups, each its own depth stack + sun. Render order
               (= z) is SCENES order: [MID, ARRIVAL, FLOOR] — the persistent floor

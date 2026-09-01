@@ -1,6 +1,6 @@
 {
   "measuredDate": "2026-08-25",
-  "claim": "Real numbers from a real run — a snapshot you can re-run. Not a live CI gate.",
+  "claim": "Real numbers from a real run: a snapshot you can re-run. Not a live CI gate.",
   "summary": {
     "axe violations": {
       "value": 0,
@@ -8,15 +8,15 @@
     },
     "reduced-motion layers": {
       "value": 6,
-      "detail": "usePrefersReducedMotion hook · global 0.01ms CSS rule · .reveal rest-visible floors · @media (scripting:none) no-JS floors · framer useReducedMotion · motion-safe media wrappers — the rest state is the visible state under every gate"
+      "detail": "usePrefersReducedMotion hook · global 0.01ms CSS rule · .reveal rest-visible floors · @media (scripting:none) no-JS floors · framer useReducedMotion · motion-safe media wrappers: the rest state is the visible state under every gate"
     },
     "measured, both themes": {
       "value": "AA",
-      "detail": "axe color-contrast enabled across all 34 scans (light + dark, theme-applied + settled) — 0 contrast violations; the dark-mode contrast repair holds"
+      "detail": "axe color-contrast enabled across all 34 scans (light + dark, theme-applied + settled): 0 contrast violations; the dark-mode contrast repair holds"
     },
     "tests passing": {
       "value": 763,
-      "detail": "the portfolio's own vitest suite (component + integration + static floors) — not the AccessMap project's 1,680"
+      "detail": "the portfolio's own vitest suite (component + integration + static floors): not the AccessMap project's 1,680"
     },
     "focus stops visible": {
       "value": "100%",
@@ -24,12 +24,12 @@
     },
     "worst-case CLS": {
       "value": "0.0039",
-      "detail": "worst route × width: work-flagstone@768 = 0.00390 — production build, buffered layout-shift observer, scroll-through; floor 0.004"
+      "detail": "worst route × width: work-flagstone@768 = 0.00390: production build, buffered layout-shift observer, scroll-through; floor 0.004"
     }
   },
   "method": {
-    "engine": "Chromium 1228 (playwright-core 1.61.1) headless, DSF2 — NOT Safari/WebKit",
-    "honesty": "Chromium — NOT Safari/WebKit. Static production build served locally. Re-run: npm run build, serve out/ on :3005, then node design-reviews/uplift/assets/p3/run-axe.mjs and node design-reviews/uplift/assets/p5/run-cls.mjs.",
+    "engine": "Chromium 1228 (playwright-core 1.61.1) headless, DSF2: NOT Safari/WebKit",
+    "honesty": "Chromium: NOT Safari/WebKit. Static production build served locally. Re-run: npm run build, serve out/ on :3005, then node design-reviews/uplift/assets/p3/run-axe.mjs and node design-reviews/uplift/assets/p5/run-cls.mjs.",
     "rules": "defaults + label-content-name-mismatch enabled + color-contrast enabled",
     "when": "2026-08-25"
   },

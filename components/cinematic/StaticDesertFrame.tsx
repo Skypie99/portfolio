@@ -30,7 +30,7 @@ function endOpacity(plate: Plate): number {
 
 export function StaticDesertFrame() {
   return (
-    <section className="cdesert-static" aria-label="SkyPi Studio — desert title scene">
+    <section className="cdesert-static" aria-label="SkyPi Studio: desert title scene">
       <div className="cdesert-static-stage">
         {/* plates, frozen near their arrival transforms */}
         {PLATES.map((plate, i) => {

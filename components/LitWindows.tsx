@@ -48,7 +48,7 @@ export function LitWindows({ deliverables, litHrefs }: LitWindowsProps) {
           <Link
             key={d.id}
             href={href}
-            aria-label={`${d.title} — ${lit ? STATE_WORD.lit : STATE_WORD.dark}`}
+            aria-label={`${d.title}: ${lit ? STATE_WORD.lit : STATE_WORD.dark}`}
             data-lit={lit ? '' : undefined}
             className="lit-window"
             style={{ '--lw-sig': signatureFor(d.id), '--lw-x': SEATS[i] ?? `${10 + i * 15}%` } as CSSProperties}

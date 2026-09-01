@@ -14,9 +14,9 @@ import { ACCESSIBILITY_OG_CARD } from '@/lib/og';
 export function generateMetadata(): Metadata {
   const profile = getProfile();
   const description =
-    'How this site is built to be accessible — the specific choices, the honest limits, and how to report a barrier.';
+    'How this site is built to be accessible: the specific choices, the honest limits, and how to report a barrier.';
   return {
-    title: `Accessibility — ${profile.name}`,
+    title: `Accessibility: ${profile.name}`,
     description,
     openGraph: {
       type: 'website',
@@ -26,15 +26,15 @@ export function generateMetadata(): Metadata {
       // OWN measurement plate (app/accessibility/opengraph-image.tsx — the
       // receipt unfurls, P05).
       url: '/accessibility/',
-      siteName: 'Sky Halisky — AI Portfolio',
+      siteName: 'Sky Halisky: AI Portfolio',
       locale: 'en_CA',
-      title: `Accessibility — ${profile.name}`,
+      title: `Accessibility: ${profile.name}`,
       description,
       images: [ACCESSIBILITY_OG_CARD],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `Accessibility — ${profile.name}`,
+      title: `Accessibility: ${profile.name}`,
       description,
     },
   };
@@ -118,7 +118,7 @@ export default function AccessibilityPage() {
               {/* T9 — Sky's line (picked in-chat 2026-07-19, option 1 verbatim). */}
               <p className="hidden motion-reduce:block font-sans font-light text-prose text-ink-muted leading-prose text-pretty">
                 You’re reading this because your system asked for less motion.
-                The site listened — everything is already in place.
+                The site listened: everything is already in place.
               </p>
             </div>
             <A11yReceipts data={receipts} className="my-12" />

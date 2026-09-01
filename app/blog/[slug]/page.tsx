@@ -177,7 +177,7 @@ export async function generateMetadata({
   if (!post) return { title: 'Post not found' };
   const profile = getProfile();
   return {
-    title: `${post.title} — ${profile.name}`,
+    title: `${post.title}: ${profile.name}`,
     description: post.summary,
     openGraph: {
       type: 'article',
@@ -185,16 +185,16 @@ export async function generateMetadata({
       // siteName and locale restated so they survive on this route's share.
       // url is the POST's own, never the root's homepage url.
       url: `/blog/${slug}/`,
-      siteName: 'Sky Halisky — AI Portfolio',
+      siteName: 'Sky Halisky: AI Portfolio',
       locale: 'en_CA',
-      title: `${post.title} — ${profile.name}`,
+      title: `${post.title}: ${profile.name}`,
       description: post.summary,
       publishedTime: post.publishedDate,
       images: [{ ...OG_CARD, alt: post.title }],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${post.title} — ${profile.name}`,
+      title: `${post.title}: ${profile.name}`,
       description: post.summary,
     },
     // C-93: feed autodiscovery — the essay advertises the Notes feeds so a reader

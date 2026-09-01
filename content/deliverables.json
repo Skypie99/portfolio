@@ -2,7 +2,7 @@
   {
     "id": "flagstone",
     "title": "Flagstone",
-    "summary": "Mobile app for flagging accessibility barriers — broken ramps, missing tactile paths — pinned to a real city map. Privacy-first: no tracking, no data sold.",
+    "summary": "Mobile app for flagging accessibility barriers, from broken ramps to missing tactile paths, on a real city map. Privacy-first: no tracking, no data sold.",
     "role": "Solo builder · AI-assisted",
     "status": "App Store review submitted · August 2026",
     "verifiedDate": "2026-08-31",
@@ -37,14 +37,14 @@
     },
     "heroPlate": {
       "severity": "SEVERITY 3 OF 5 · MODERATE · VERIFIED",
-      "caption": "Steep grade — a real barrier report expanded on the map.",
+      "caption": "Steep grade: a real barrier report expanded on the map.",
       "provenance": "CURRENT EXPLORE SCREEN · FLAGSTONE"
     },
     "shots": [
       {
         "src": "/showcase/flagstone/drawer-open.light.phone.webp",
-        "alt": "Flagstone's navigation drawer slid open over the dimmed home screen — frosted-glass rows for Resources, How to help, About and Settings.",
-        "caption": "The navigation drawer on spring physics — the material world in motion.",
+        "alt": "Flagstone's navigation drawer slid open over the dimmed home screen, with frosted-glass rows for Resources, How to help, About, and Settings.",
+        "caption": "The navigation drawer on spring physics, with the material world in motion.",
         "focal": "50% 24%",
         "avif": "/showcase/flagstone/drawer-open.light.phone.avif",
         "webp": "/showcase/flagstone/drawer-open.light.phone.webp",
@@ -72,7 +72,7 @@
       {
         "src": "/showcase/flagstone/report-current.phone.webp",
         "alt": "Flagstone's Report a flag form showing location, quick-fill templates, category options, severity choices, and a description field.",
-        "caption": "Reporting a barrier — quick-fill templates, category, severity, and description.",
+        "caption": "Reporting a barrier: quick-fill templates, category, severity, and description.",
         "focal": "50% 50%",
         "avif": "/showcase/flagstone/report-current.phone.avif",
         "webp": "/showcase/flagstone/report-current.phone.webp",
@@ -81,7 +81,7 @@
       {
         "src": "/showcase/flagstone/community-current.phone.webp",
         "alt": "Flagstone's Review barriers screen showing No ramp and Steep grade reports with severity, descriptions, and Verify, Resolved, and Details actions.",
-        "caption": "Community review — neighbours verify barriers and mark resolved reports.",
+        "caption": "Community review: neighbours verify barriers and mark resolved reports.",
         "focal": "50% 50%",
         "avif": "/showcase/flagstone/community-current.phone.avif",
         "webp": "/showcase/flagstone/community-current.phone.webp",
@@ -106,7 +106,7 @@
       "privacy"
     ],
     "featured": true,
-    "body": "## The problem\n\nWhen someone who depends on accessible routes meets a broken ramp or a missing curb cut, reporting it means a municipal form: describe the problem, submit, wait, hear nothing. Nobody else finds out. There is no way to signal that a barrier is still there, or to confirm that someone fixed it, so one obstacle gets reported by ten people who never learn about each other — and each of them files it from a place they physically go, which is its own disclosure. I met this gap working with the vision loss community. It is the reason for the app.\n\n## The approach\n\nI chose React Native and Expo to force myself to learn cross-platform development while shipping something real. Supabase handled auth and the database so I could focus on the domain problem instead of infrastructure. The pivotal call was implementing [Postgres Row Level Security](https://github.com/Skypie99/AccessMap/tree/main/supabase/migrations) from day one. Barriers are meant to be seen — a shared map is the whole point — but only the person who filed a report can edit its content; status changes like verifying it or marking it fixed are open to the community that shares the map. That wasn't an afterthought; it shaped every feature that followed.\n\nThe hardest part wasn't the code. My first designs missed what users actually wanted. They didn't just want to report problems — they wanted to *verify* them, share workarounds, celebrate fixes together. That insight changed everything.\n\n## Where it stands\n\nA map-first mobile app where accessibility barriers are pinned to real city locations: report one, verify someone else's, follow up when it gets fixed. The [web build](https://flagstone.skypistudio.com) is browsable today. The iOS app has not shipped — it was submitted to Apple for App Store review on August 31, 2026. Before submission, one early TestFlight build reached a single outside tester. Apple approval and public App Store availability have not been established.\n\nSo there are no users yet, and no outcomes to report. What exists instead is evidence: a test suite in the low thousands, with the exact figure and the date it was measured receipted below, and a four-wave simulator walk that produced 48 findings and accounted for every one of them. What the privacy model does, and why it is shaped that way, is below.\n\n## My role\n\n**Mine.** Anonymous reporting gets its own write path rather than an `anonymous` flag on the shared one. A flag is a value some later code path can forget to read; a second path cannot be entered by accident. The cost is that two paths drift, and they have — I take that trade because drift shows up in review and a missed flag does not.\n\nThe photo scrubber fails closed: if the location data cannot be verified gone, the upload aborts. The alternative was to carry on with the original bytes, which is what an earlier version silently did — the library call it trusted returns nothing at all, so the \"stripped\" result was always undefined and the untouched buffer went up. For an app where people photograph places they physically go, a false rejection is an annoyance and a false acceptance is a disclosure.\n\n**The agents'.** Effectively all of the implementation, the whole test suite, and most of the diagnosis, across more than 1,700 commits. The simulator walk above was theirs too — they found what it found.\n\n**What I check.** I gate what lands, and I read the failures rather than the summaries. When an audit reports 48 findings, the four I read first are the ones it closed as \"not a fix — the premise did not hold,\" because a process that cannot report a negative is not a process.\n\n## What went wrong\n\nA simulator walk found the flag detail sheet's Report button rendering, looking enabled, taking the tap, and doing nothing. It is the Apple 1.2(b) objectionable-content sheet, and that screen is its only mount point in the whole app, for flags and for comments — so the report mechanism of a product built on things strangers submit was dead in every path, and would have shipped that way.\n\nIt had unit tests. They passed. They mounted the sheet on its own, and the defect was in *where the parent mounted it*, which a child's test cannot see by construction. Four comments in the code asserted the broken arrangement was proven practice, each citing another, and the one citation that pointed outside the ring pointed at a screen where that arrangement is correct for a reason that did not apply here.\n\nThe structural fix was one line: a closing tag moved from before the pair of sheets to after them. The comments were rewritten as part of the bug, because they were the reason it kept coming back — the repo had already solved this same iOS error twice, and the correct pattern was sitting three lines above the broken one in the same file. The replacement test renders the parent instead of the child, and it was checked the only way that means anything: it fails against the old arrangement.\n\n## Reflection\n\n> Building this reinforced something I already believed: privacy isn't a feature you add later — it's a foundation, especially when the people using your app are sharing vulnerable information about the barriers they face every day.",
+    "body": "## The problem\n\nWhen someone who depends on accessible routes meets a broken ramp or a missing curb cut, reporting it means a municipal form. Describe the problem, submit, wait, hear nothing. Nobody else finds out. There is no way to signal that a barrier is still there, or to confirm that someone fixed it, so one obstacle gets reported by ten people who never learn about each other, and each of them files it from a place they physically go, which is its own disclosure. I met this gap working with the vision loss community. It is the reason for the app.\n\n## The approach\n\nI chose React Native and Expo to force myself to learn cross-platform development while shipping something real. Supabase handled auth and the database so I could focus on the domain problem instead of infrastructure. The pivotal call was implementing [Postgres Row Level Security](https://github.com/Skypie99/AccessMap/tree/main/supabase/migrations) from day one. Barriers are meant to be seen. A shared map is the whole point, but only the person who filed a report can edit its content; status changes like verifying it or marking it fixed are open to the community that shares the map. That wasn't an afterthought; it shaped every feature that followed.\n\nThe hardest part wasn't the code. My first designs missed what users actually wanted. They didn't just want to report problems. They wanted to *verify* them, share workarounds, celebrate fixes together. That insight changed everything.\n\n## Where it stands\n\nA map-first mobile app where accessibility barriers are pinned to real city locations. Report one, verify someone else's, and follow up when it gets fixed. The [web build](https://flagstone.skypistudio.com) is browsable today. The iOS app has not shipped. It was submitted to Apple for App Store review on August 31, 2026. Before submission, one early TestFlight build reached a single outside tester. Apple approval and public App Store availability have not been established.\n\nSo there are no users yet, and no outcomes to report. What exists instead is evidence: a test suite in the low thousands, with the exact figure and the date it was measured receipted below, and a four-wave simulator walk that produced 48 findings and accounted for every one of them. What the privacy model does, and why it is shaped that way, is below.\n\n## My role\n\n**Mine.** Anonymous reporting gets its own write path rather than an `anonymous` flag on the shared one. A flag is a value some later code path can forget to read; a second path cannot be entered by accident. The cost is that two paths drift, and they have. I take that trade because drift shows up in review and a missed flag does not.\n\nThe photo scrubber fails closed: if the location data cannot be verified gone, the upload aborts. The alternative was to carry on with the original bytes, which is what an earlier version silently did. The library call it trusted returns nothing at all, so the \"stripped\" result was always undefined and the untouched buffer went up. For an app where people photograph places they physically go, a false rejection is an annoyance and a false acceptance is a disclosure.\n\n**The agents'.** Effectively all of the implementation, the whole test suite, and most of the diagnosis, across more than 1,700 commits. The simulator walk above was theirs too. They found what it found.\n\n**What I check.** I gate what lands, and I read the failures rather than the summaries. When an audit reports 48 findings, the four I read first are the ones it closed as \"not a fix: the premise did not hold,\" because a process that cannot report a negative is not a process.\n\n## What went wrong\n\nA simulator walk found the flag detail sheet's Report button rendering, looking enabled, taking the tap, and doing nothing. It is the Apple 1.2(b) objectionable-content sheet, and that screen is its only mount point in the whole app, for flags and for comments, so the report mechanism of a product built on things strangers submit was dead in every path, and would have shipped that way.\n\nIt had unit tests. They passed. They mounted the sheet on its own, and the defect was in *where the parent mounted it*, which a child's test cannot see by construction. Four comments in the code asserted the broken arrangement was proven practice, each citing another, and the one citation that pointed outside the ring pointed at a screen where that arrangement is correct for a reason that did not apply here.\n\nThe structural fix was one line: a closing tag moved from before the pair of sheets to after them. The comments were rewritten as part of the bug, because they were the reason it kept coming back. The repo had already solved this same iOS error twice, and the correct pattern was sitting three lines above the broken one in the same file. The replacement test renders the parent instead of the child, and it was checked the only way that means anything: it fails against the old arrangement.\n\n## Reflection\n\n> Building this reinforced something I already believed: privacy isn't a feature you add later. It's a foundation, especially when the people using your app are sharing vulnerable information about the barriers they face every day.",
     "ogTheme": "dark",
     "ogCard": "/showcase/flagstone/og-card.jpg"
   },
@@ -115,7 +115,7 @@
     "title": "Claude Corp",
     "summary": "A 15-role AI team governed by a written Constitution. Each agent owns a domain; an orchestrator runs the cycles. The infrastructure behind this portfolio.",
     "role": "Solo builder · AI-assisted",
-    "status": "In active use — my own system, no outside users",
+    "status": "In active use: my system only",
     "verifiedDate": "2026-08-25",
     "tech": [
       "Claude Code",
@@ -124,11 +124,11 @@
     "year": 2026,
     "heroImage": {
       "src": "/images/deliverables/claude-corp/hero.svg",
-      "alt": "A minimal orchestration diagram — eight named role nodes ringed around a central hub styled as a Constitution icon, the Claude Corp wordmark set below"
+      "alt": "A minimal orchestration diagram with eight named role nodes around a central hub styled as a Constitution icon, with the Claude Corp wordmark below"
     },
     "heroShot": {
       "src": "/showcase/claude-corp/hero-pipeline.light.desktop.webp",
-      "alt": "The Claude Corp front door — the editorial hero over the agent pipeline diagram, fifteen roles feeding one governed main branch.",
+      "alt": "The Claude Corp front door, with the editorial hero over the agent pipeline diagram and fifteen roles feeding one governed main branch.",
       "avif": "/showcase/claude-corp/hero-pipeline.light.desktop.avif",
       "webp": "/showcase/claude-corp/hero-pipeline.light.desktop.webp",
       "lqip": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAAAwAwCdASoUAA0APxFysFCsJqSisAgBgCIJZwDE2C0HlrAAAP7ubh/WwQtuQ4o8OlLUyjaVXCpWQAAA",
@@ -141,7 +141,7 @@
     },
     "cardImage": {
       "src": "/showcase/claude-corp/hero-pipeline.light.desktop.webp",
-      "alt": "The Claude Corp front door — the fifteen-role pipeline under the editorial hero.",
+      "alt": "The Claude Corp front door, with the fifteen-role pipeline under the editorial hero.",
       "focal": "50% 12%",
       "avif": "/showcase/claude-corp/hero-pipeline.light.desktop.avif",
       "webp": "/showcase/claude-corp/hero-pipeline.light.desktop.webp",
@@ -156,7 +156,7 @@
     "shots": [
       {
         "src": "/showcase/claude-corp/team.light.desktop.webp",
-        "alt": "The fifteen-role team grid — each agent card naming its craft, from Quinn on product through Morgan on reporting.",
+        "alt": "The fifteen-role team grid, with each agent card naming its craft from Quinn on product through Morgan on reporting.",
         "caption": "Fifteen roles, one governed main branch.",
         "avif": "/showcase/claude-corp/team.light.desktop.avif",
         "webp": "/showcase/claude-corp/team.light.desktop.webp",
@@ -187,16 +187,16 @@
       "process"
     ],
     "featured": false,
-    "body": "## The problem\n\nBuilding solo is manageable. Bigger projects are not. When I started coordinating AI agents for more complex work, I hit the same wall every time: without clear decision rights, scope debates never ended. One agent would start building while another assumed we were still in design. No escalation path. No clear lanes. Multi-agent systems need rules, not just good intentions.\n\n## The approach\n\nI drafted a Constitution — literally, like a governing document. Each of the 15 roles has explicit domain boundaries: Dani owns design, Steve owns security, Rory owns the deployment pipeline. Morgan (the PM) routes decisions to the right domain instead of letting them pile up. My role is final call on trade-offs and on anything that reaches production.\n\nThe system is strict by design — agents can't self-approve major decisions. That sounds heavyweight, but written rules actually freed everyone. When you know your lane, you can move fast inside it. I came to think of governance as infrastructure: code needs architecture, teams need constitutions.\n\n## What shipped\n\nA 15-role AI team governed by a written Constitution, with an orchestrator that runs cycles and routes work. Each role has its own command file, a defined scope, and a QA report trail. This portfolio — the one you're reading — was built and maintained entirely within Claude Corp. The Constitution is a working document, not a published one — it changes when the system finds a new failure mode.\n\n## My role\n\n**Mine.** The design, and specifically the parts that remove discretion. Sessions die mid-task and lose their place. Agents overstate what they finished. A stray instruction sitting in a file an agent reads can try to redirect it. Each of those got a rule rather than a habit. The authority order settles any conflict — my intent, then the Constitution, then role files, then skills — and no agent may amend the Constitution to win one. One role may message me; the other fourteen write to files I read on my own schedule. Recovery resumes from the last checkpoint instead of restarting, and gives up after three attempts on the same node instead of looping. The flexible version — let each agent judge when to escalate — is the one I rejected every time, because judgement is the thing I cannot verify at scale.\n\n**What it does without me.** Before starting, a role scans for another agent's open branch or a fix already shipped, and writes a conflict report instead of duplicating the work. It caught a session that reported pushing a commit to a `main` that was still three commits behind — the claim was confident and wrong, and reconciliation, not trust, is what found it.\n\n**What I check.** The escalations, and the reports of work *not* done. A system that only ever tells me it succeeded is one I have no way to audit.\n\n## Reflection\n\n> The biggest unlock wasn't any individual role — it was realizing that the rules are what make speed possible.\n\nI'd build the governance layer first next time, before writing a single line of application code.",
+    "body": "## The problem\n\nBuilding solo is manageable. Bigger projects are not. When I started coordinating AI agents for more complex work, I hit the same wall every time: without clear decision rights, scope debates never ended. One agent would start building while another assumed we were still in design. No escalation path. No clear lanes. Multi-agent systems need rules, not just good intentions.\n\n## The approach\n\nI drafted a Constitution: literally, like a governing document. Each of the 15 roles has explicit domain boundaries: Dani owns design, Steve owns security, Rory owns the deployment pipeline. Morgan (the PM) routes decisions to the right domain instead of letting them pile up. My role is final call on trade-offs and on anything that reaches production.\n\nThe system is strict by design: agents can't self-approve major decisions. That sounds heavyweight, but written rules actually freed everyone. When you know your lane, you can move fast inside it. I came to think of governance as infrastructure: code needs architecture, teams need constitutions.\n\n## What shipped\n\nA 15-role AI team governed by a written Constitution, with an orchestrator that runs cycles and routes work. Each role has its own command file, a defined scope, and a QA report trail. This portfolio, the one you're reading, was built and maintained entirely within Claude Corp. The Constitution is a working document, not a published one. It changes when the system finds a new failure mode.\n\n## My role\n\n**Mine.** The design, and specifically the parts that remove discretion. Sessions die mid-task and lose their place. Agents overstate what they finished. A stray instruction sitting in a file an agent reads can try to redirect it. Each of those got a rule rather than a habit. The authority order settles any conflict: my intent, then the Constitution, then role files, then skills. No agent may amend the Constitution to win one. One role may message me; the other fourteen write to files I read on my own schedule. Recovery resumes from the last checkpoint instead of restarting, and gives up after three attempts on the same node instead of looping. The flexible version, letting each agent judge when to escalate, is the one I rejected every time, because judgement is the thing I cannot verify at scale.\n\n**What it does without me.** Before starting, a role scans for another agent's open branch or a fix already shipped, and writes a conflict report instead of duplicating the work. It caught a session that reported pushing a commit to a `main` that was still three commits behind: the claim was confident and wrong, and reconciliation, not trust, is what found it.\n\n**What I check.** The escalations, and the reports of work *not* done. A system that only ever tells me it succeeded is one I have no way to audit.\n\n## Reflection\n\n> The biggest unlock wasn't any individual role: it was realizing that the rules are what make speed possible.\n\nI'd build the governance layer first next time, before writing a single line of application code.",
     "ogTheme": "dark",
     "ogCard": "/showcase/claude-corp/og-card.jpg"
   },
   {
     "id": "dashboard",
     "title": "Claude Corp Dashboard",
-    "summary": "A live command center for an AI agent team — agent feed, decision queue, blocker board, health scores. Fully drivable demo running on synthetic data.",
+    "summary": "A live command center for an AI agent team with an agent feed, decision queue, blocker board, and health scores. Fully drivable demo running on synthetic data.",
     "role": "Solo builder · AI-assisted",
-    "status": "Live demo — synthetic data",
+    "status": "Live demo with synthetic data",
     "verifiedDate": "2026-08-25",
     "tech": [
       "Next.js",
@@ -212,7 +212,7 @@
     },
     "heroShot": {
       "src": "/showcase/dashboard/command-center.light.desktop.webp",
-      "alt": "The Dashboard command center — project health, agent activity and pending decisions on one calm board.",
+      "alt": "The Dashboard command center, showing project health, agent activity and pending decisions on one calm board.",
       "avif": "/showcase/dashboard/command-center.light.desktop.avif",
       "webp": "/showcase/dashboard/command-center.light.desktop.webp",
       "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwC+SDKUAAD+7xZ/NZFb30c5AAAA",
@@ -225,7 +225,7 @@
     },
     "cardImage": {
       "src": "/showcase/dashboard/command-center.light.desktop.webp",
-      "alt": "The Dashboard command center — project health, agent activity and pending decisions on one calm board.",
+      "alt": "The Dashboard command center, showing project health, agent activity and pending decisions on one calm board.",
       "focal": "50% 14%",
       "avif": "/showcase/dashboard/command-center.light.desktop.avif",
       "webp": "/showcase/dashboard/command-center.light.desktop.webp",
@@ -240,8 +240,8 @@
     "shots": [
       {
         "src": "/showcase/dashboard/think-tank.light.desktop.webp",
-        "alt": "The Think Tank board — ideas triaged into Do it, Later and Skip lanes with their leverage notes.",
-        "caption": "The Think Tank — ideas triaged into Do it, Later and Skip.",
+        "alt": "The Think Tank board, with ideas triaged into Do it, Later and Skip lanes with their leverage notes.",
+        "caption": "The Think Tank: ideas triaged into Do it, Later and Skip.",
         "avif": "/showcase/dashboard/think-tank.light.desktop.avif",
         "webp": "/showcase/dashboard/think-tank.light.desktop.webp",
         "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwDA3C0kAAD+70dpzID7d6oAAA==",
@@ -254,8 +254,8 @@
       },
       {
         "src": "/showcase/dashboard/dispatch.light.desktop.webp",
-        "alt": "The Dispatch queue — work items lined up with status, owner and the relay controls held safely off.",
-        "caption": "The Dispatch queue — agent work lined up with its receipts.",
+        "alt": "The Dispatch queue, with work items lined up with status, owner and the relay controls held safely off.",
+        "caption": "The Dispatch queue, with agent work lined up alongside its receipts.",
         "avif": "/showcase/dashboard/dispatch.light.desktop.avif",
         "webp": "/showcase/dashboard/dispatch.light.desktop.webp",
         "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAAAwAwCdASoUAA0APxFysVCsJqSisAgBgCIJZwDCgC0HcTJgAP7vbwvjsqiRwP3GLAA=",
@@ -280,16 +280,16 @@
       "tools"
     ],
     "featured": false,
-    "body": "## The problem\n\nI'd been coordinating a small team of AI agents — a project manager, engineers, a designer, a security reviewer — across several projects at once. The work was getting done, but I had nowhere to actually *see* it. Who's active right now? What decisions are waiting on me? Which blocker is about to slip? It all lived in scattered reports and commit logs. I wanted a cockpit.\n\n## The approach\n\nI built it in Next.js as a server-rendered dashboard that turns the team's real activity — reports, decisions, blockers — into an agent feed, a decision queue, a blocker board, per-project health grades, and velocity charts.\n\nThe interesting problem was privacy. The real data is sensitive: security findings, private notes, internal decisions. It can never be published. So the public demo runs in a hard-locked demo mode — every data reader short-circuits to a synthetic snapshot before it can touch a real file, the write path is severed so nothing persists, and a build guard refuses to ship the public build unless demo mode is on. The real, full-data version is never part of the public build.\n\n## What shipped\n\nA genuinely drivable demo. Sign in as a guest, approve a decision, triage a blocker, watch the agent feed update — all on synthetic data that resets each session. Fifteen roles, live status, seven-day insights, and per-project health scores, in light or dark.\n\n## My role\n\n**Mine.** The seam. The real data here — security findings, private notes, decisions in flight — can never be published, but a demo nobody can click proves nothing. I chose three independent layers over one switch. Every data reader short-circuits to a synthetic snapshot before it can reach a real file. The write path is severed, so an approve button returns a plausible answer and persists nothing. And the build itself refuses to produce a deploy until it is told which kind it is — public demo or private real — and refuses a real one outright if the login gate is off.\n\nThe alternative was a single demo-mode flag, which is one misconfigured environment variable away from serving my actual findings to the open internet. Three layers means any one of them can fail without leaking.\n\n**The agents'.** All three layers, and the guard test that reads the published snapshot back and fails if anything in it looks real.\n\n**What I check.** That the layers are genuinely independent — that no two of them fail for the same reason. A defence in depth whose layers share a cause is one layer wearing three coats.\n\n## Reflection\n\nThe build taught me that *make it public* and *keep it private* aren't opposites. With the right seam, you can ship a faithful, interactive demo while the sensitive version stays private.\n\n> That separation turned out to be the whole design.",
+    "body": "## The problem\n\nI'd been coordinating a small team of AI agents, including a project manager, engineers, a designer, and a security reviewer, across several projects at once. The work was getting done, but I had nowhere to actually *see* it. Who's active right now? What decisions are waiting on me? Which blocker is about to slip? It all lived in scattered reports and commit logs. I wanted a cockpit.\n\n## The approach\n\nI built it in Next.js as a server-rendered dashboard that turns the team's real activity, reports, decisions, and blockers, into an agent feed, a decision queue, a blocker board, per-project health grades, and velocity charts.\n\nThe interesting problem was privacy. The real data is sensitive: security findings, private notes, internal decisions. It can never be published. So the public demo runs in a hard-locked demo mode: every data reader short-circuits to a synthetic snapshot before it can touch a real file, the write path is severed so nothing persists, and a build guard refuses to ship the public build unless demo mode is on. The real, full-data version is never part of the public build.\n\n## What shipped\n\nA genuinely drivable demo. Sign in as a guest, approve a decision, triage a blocker, watch the agent feed update. All on synthetic data that resets each session. Fifteen roles, live status, seven-day insights, and per-project health scores, in light or dark.\n\n## My role\n\n**Mine.** The seam. The real data here, including security findings, private notes, and decisions in flight, can never be published, but a demo nobody can click proves nothing. I chose three independent layers over one switch. Every data reader short-circuits to a synthetic snapshot before it can reach a real file. The write path is severed, so an approve button returns a plausible answer and persists nothing. And the build itself refuses to produce a deploy until it is told which kind it is, public demo or private real, and refuses a real one outright if the login gate is off.\n\nThe alternative was a single demo-mode flag, which is one misconfigured environment variable away from serving my actual findings to the open internet. Three layers means any one of them can fail without leaking.\n\n**The agents'.** All three layers, and the guard test that reads the published snapshot back and fails if anything in it looks real.\n\n**What I check.** That the layers are genuinely independent: that no two of them fail for the same reason. A defence in depth whose layers share a cause is one layer wearing three coats.\n\n## Reflection\n\nThe build taught me that *make it public* and *keep it private* aren't opposites. With the right seam, you can ship a faithful, interactive demo while the sensitive version stays private.\n\n> That separation turned out to be the whole design.",
     "ogTheme": "dark",
     "ogCard": "/showcase/dashboard/og-card.jpg"
   },
   {
     "id": "prompt-library",
     "title": "Prompt Library",
-    "summary": "Local-first AI prompt manager. Your prompts, your API key, your browser — no backend of mine; each run goes straight to Anthropic.",
+    "summary": "Local-first AI prompt manager. Your prompts, your API key, and your browser, with no backend of mine; each run goes straight to Anthropic.",
     "role": "Solo builder · AI-assisted",
-    "status": "Live — public, no backend",
+    "status": "Live, public, and without a backend",
     "verifiedDate": "2026-08-25",
     "tech": [
       "Next.js 15",
@@ -305,7 +305,7 @@
     },
     "heroShot": {
       "src": "/showcase/prompt-library/home.light.desktop.webp",
-      "alt": "The Prompt Library home — search bar and category chips over a grid of prompt cards, the featured card leading.",
+      "alt": "The Prompt Library home, with a search bar and category chips over a grid of prompt cards and the featured card leading.",
       "avif": "/showcase/prompt-library/home.light.desktop.avif",
       "webp": "/showcase/prompt-library/home.light.desktop.webp",
       "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZQC/OC0kAAD+70NE0Whk0FQFcAAA",
@@ -318,7 +318,7 @@
     },
     "cardImage": {
       "src": "/showcase/prompt-library/home.light.desktop.webp",
-      "alt": "The Prompt Library home — search and category chips over the prompt grid, the featured card leading.",
+      "alt": "The Prompt Library home, with search and category chips over the prompt grid and the featured card leading.",
       "focal": "50% 18%",
       "avif": "/showcase/prompt-library/home.light.desktop.avif",
       "webp": "/showcase/prompt-library/home.light.desktop.webp",
@@ -333,8 +333,8 @@
     "shots": [
       {
         "src": "/showcase/prompt-library/prompt-detail.light.desktop.webp",
-        "alt": "A prompt opened in the library — variable fields ready to fill above the monospace prompt preview and its copy control.",
-        "caption": "A prompt opened — variables to fill, the copy control waiting.",
+        "alt": "A prompt opened in the library, with variable fields ready to fill above the monospace prompt preview and its copy control.",
+        "caption": "A prompt opened, with variables to fill and the copy control waiting.",
         "avif": "/showcase/prompt-library/prompt-detail.light.desktop.avif",
         "webp": "/showcase/prompt-library/prompt-detail.light.desktop.webp",
         "lqip": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAABQAwCdASoUAA0APxF0tFEsJqUisAgBgCIJZwAASrdfNhngAAD8XJ/73MCe5oEWgVu9UeVBIo2t23PiUkvAAA==",
@@ -364,16 +364,16 @@
       "local-first"
     ],
     "featured": false,
-    "body": "## The problem\n\nMy AI prompts were scattered across notes, markdown files, and memory. I needed one searchable place to keep them — and a hard requirement: no backend of my own in the middle. Prompts would live in the browser, not a database I ran; the API key would call the model directly, never routed through a server of mine. The privacy constraint wasn't a nice-to-have; it was the whole product.\n\n## The approach\n\nBuilt in Next.js 15 with localStorage as the entire data layer. One constraint — \"no server of mine ever sees your data\" — became the governing design principle. Search? localStorage query. Tags, favorites, import, export, dark mode — all local-first. I shipped across 20 stacked branches over several months, adding features without ever standing up a server.\n\nThe constraint forced discipline. You can't cheat with a backend. Every feature had to be thoughtfully scoped because there was nowhere to offload decisions.\n\n## What shipped\n\nA local-first prompt manager with full-text search, tag filtering, favorites, bulk import/export, and dark mode. Zero backend. Deployed as a static site on GitHub Pages and open-sourced under a permissive license.\n\n## Reflection\n\n> \"No server\" turned out to be the constraint that kept me honest — every feature had to earn its place with nowhere to offload the hard decisions.\n\nI built this because my own prompts were scattered everywhere. I'd keep the constraint and drop the notes app.",
+    "body": "## The problem\n\nMy AI prompts were scattered across notes, markdown files, and memory. I needed one searchable place to keep them, and a hard requirement: no backend of my own in the middle. Prompts would live in the browser, not a database I ran; the API key would call the model directly, never routed through a server of mine. The privacy constraint wasn't a nice-to-have; it was the whole product.\n\n## The approach\n\nBuilt in Next.js 15 with localStorage as the entire data layer. One constraint: \"no server of mine ever sees your data\": became the governing design principle. Search? localStorage query. Tags, favorites, import, export, dark mode: all local-first. I shipped across 20 stacked branches over several months, adding features without ever standing up a server.\n\nThe constraint forced discipline. You can't cheat with a backend. Every feature had to be thoughtfully scoped because there was nowhere to offload decisions.\n\n## What shipped\n\nA local-first prompt manager with full-text search, tag filtering, favorites, bulk import/export, and dark mode. Zero backend. Deployed as a static site on GitHub Pages and open-sourced under a permissive license.\n\n## Reflection\n\n> \"No server\" turned out to be the constraint that kept me honest: every feature had to earn its place with nowhere to offload the hard decisions.\n\nI built this because my own prompts were scattered everywhere. I'd keep the constraint and drop the notes app.",
     "ogTheme": "dark",
     "ogCard": "/showcase/prompt-library/og-card.jpg"
   },
   {
     "id": "ghost-code",
     "title": "Ghost Code",
-    "summary": "Retro arcade trainer for CLI commands — guide the Phantom, capture the right token. 56 cards, vanilla JS, zero dependencies, runs in any browser.",
+    "summary": "Retro arcade trainer for CLI commands. Guide the Phantom and capture the right token. 56 cards, vanilla JS, zero dependencies, and runs in any browser.",
     "role": "Solo builder · AI-assisted",
-    "status": "Live — public, no backend",
+    "status": "Live, public, and without a backend",
     "verifiedDate": "2026-08-25",
     "tech": [
       "Vanilla JS",
@@ -384,11 +384,11 @@
     "year": 2026,
     "heroImage": {
       "src": "/images/deliverables/ghost-code/hero.webp",
-      "alt": "Ghost Code arcade screen — the neon Phantom mascot hovering between four command-token answers, score and spirit-life HUD in a synthwave cabinet"
+      "alt": "Ghost Code arcade screen with the neon Phantom mascot hovering between four command-token answers, score, and spirit-life HUD in a synthwave cabinet"
     },
     "heroShot": {
       "src": "/showcase/ghost-code/title.light.desktop.webp",
-      "alt": "Ghost Code’s title screen — the arcade cabinet framing the Phantom mascot, Start and Settings glowing below the wordmark.",
+      "alt": "Ghost Code’s title screen, with the arcade cabinet framing the Phantom mascot and Start and Settings glowing below the wordmark.",
       "avif": "/showcase/ghost-code/title.light.desktop.avif",
       "webp": "/showcase/ghost-code/title.light.desktop.webp",
       "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJaQDG9DBsAAD+70aSc5OMpoAAAA==",
@@ -401,7 +401,7 @@
     },
     "cardImage": {
       "src": "/showcase/ghost-code/board.light.desktop.webp",
-      "alt": "A Ghost Code round mid-chase — the Phantom in the maze with the command prompt waiting below.",
+      "alt": "A Ghost Code round mid-chase, with the Phantom in the maze and the command prompt waiting below.",
       "focal": "50% 40%",
       "avif": "/showcase/ghost-code/board.light.desktop.avif",
       "webp": "/showcase/ghost-code/board.light.desktop.webp",
@@ -416,8 +416,8 @@
     "shots": [
       {
         "src": "/showcase/ghost-code/board.light.desktop.webp",
-        "alt": "A Ghost Code round in play — the maze board mid-chase with the code prompt beneath and score and streak counters keeping pace.",
-        "caption": "A seeded round in motion — same maze, both themes.",
+        "alt": "A Ghost Code round in play, with the maze board mid-chase, the code prompt beneath, and score and streak counters keeping pace.",
+        "caption": "A seeded round in motion: same maze, both themes.",
         "avif": "/showcase/ghost-code/board.light.desktop.avif",
         "webp": "/showcase/ghost-code/board.light.desktop.webp",
         "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADQAgCdASoUAA0APxFysVCsJqSisAgBgCIJaQAAe/QAAP7vr4rPc0ojUCXgAA==",
@@ -425,7 +425,7 @@
           "mp4": "/showcase/ghost-code/clips/round.light.phone.mp4",
           "webm": "/showcase/ghost-code/clips/round.light.phone.webm",
           "poster": "/showcase/ghost-code/clips/round.light.phone-poster.avif",
-          "alt": "A Ghost Code round in motion — the Phantom on patrol while the code prompt waits below."
+          "alt": "A Ghost Code round in motion, with the Phantom on patrol while the code prompt waits below."
         },
         "dark": {
           "src": "/showcase/ghost-code/board.dark.desktop.webp",
@@ -458,7 +458,7 @@
       "learning"
     ],
     "featured": false,
-    "body": "## The problem\n\nLearning Claude Code, macOS shortcuts, and Git felt like grinding through flashcards — and flashcards are forgettable. The commands only stick when your hands have run them under pressure. I wanted a way to turn command memorization into something you'd actually want to come back to, without any server, account, or install.\n\n## The approach\n\nI built an original arcade game from scratch in vanilla JS: no frameworks, no build step, nothing to install — you open it straight in the browser. The Phantom — an original character I designed — floats through a synthwave cabinet. Four command tokens appear each round; capture the right one, dodge the wrong ones. Wrong answers cost a spirit life. The constraint of zero dependencies forced every feature to be exactly as heavy as it needed to be, nothing more.\n\nDesigning the Phantom was as important as the game loop. A mascot with personality keeps you playing. I went through six character iterations before landing on the neon ghost silhouette — distinct, playful, and readable at small sizes.\n\n## What shipped\n\nFifty-six command cards spanning Claude Code, macOS, and Git — organized so earlier rounds are forgiving, later rounds are unforgiving. WCAG AA-accessible: keyboard-navigable, sufficient contrast throughout, no motion traps. A tiny static deploy to GitHub Pages; no backend, no account, no tracking. The Phantom is entirely original.\n\n## Reflection\n\n> The best constraint I gave myself was \"zero dependencies.\"\n\nIt eliminated every architectural debate and forced the game to be exactly what it needed to be. I'd reach for that constraint more often.",
+    "body": "## The problem\n\nLearning Claude Code, macOS shortcuts, and Git felt like grinding through flashcards. Flashcards are forgettable. The commands only stick when your hands have run them under pressure. I wanted a way to turn command memorization into something you'd actually want to come back to, without any server, account, or install.\n\n## The approach\n\nI built an original arcade game from scratch in vanilla JS: no frameworks, no build step, nothing to install. You open it straight in the browser. The Phantom, an original character I designed, floats through a synthwave cabinet. Four command tokens appear each round; capture the right one, dodge the wrong ones. Wrong answers cost a spirit life. The constraint of zero dependencies forced every feature to be exactly as heavy as it needed to be, nothing more.\n\nDesigning the Phantom was as important as the game loop. A mascot with personality keeps you playing. I went through six character iterations before landing on the neon ghost silhouette, distinct, playful, and readable at small sizes.\n\n## What shipped\n\nFifty-six command cards spanning Claude Code, macOS, and Git, organized so earlier rounds are forgiving, later rounds are unforgiving. WCAG AA accessible: keyboard-navigable, sufficient contrast throughout, no motion traps. A tiny static deploy to GitHub Pages; no backend, no account, no tracking. The Phantom is entirely original.\n\n## Reflection\n\n> The best constraint I gave myself was \"zero dependencies.\"\n\nIt eliminated every architectural debate and forced the game to be exactly what it needed to be. I'd reach for that constraint more often.",
     "ogTheme": "dark",
     "ogCard": "/showcase/ghost-code/og-card.jpg"
   }
