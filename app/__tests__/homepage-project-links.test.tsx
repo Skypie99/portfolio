@@ -29,6 +29,7 @@ describe('Homepage work-index project affordances', () => {
       expect(cta).toHaveAttribute('href', expect.stringMatching(/^\/work\//));
       expect(cta).toHaveAttribute('tabindex', '-1');
       expect(cta).toHaveTextContent('View project');
+      expect(cta).toHaveClass('h-11', 'border', 'rounded-pill');
     }
   });
 
