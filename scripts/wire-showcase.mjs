@@ -7,9 +7,13 @@
  *   node scripts/wire-showcase.mjs scripts/showcase/wiring.mjs [--dry]
  *
  * The spec module exports WIRING: an array of
- *   { slug, ogTheme?, heroShot?, cardImage?, shots?: [...] }
- * where each media value is a SceneRef ({ scene, viewport?, alt?, caption?,
- * focal?, chrome?, matte?, video?: { clip, alt }, darkVideo? }).
+ *   { slug, ogTheme?, heroShot?, cardImage?, heroPlate?, shots?: [...] }
+ * where each media value is either a SceneRef ({ scene, viewport?, alt?,
+ * caption?, focal?, chrome?, matte?, video?: { clip, alt }, darkVideo? }) or
+ * an `{ asset }` record for an externally supplied screenshot already encoded
+ * through scripts/encode-proof.mjs. A ref may opt into `preserveExisting` when
+ * a scoped refresh must keep one already-wired motion asset byte-for-byte.
+ * Every route finishes at the same schema gate.
  *
  * lib/showcaseWire.ts is TypeScript; this CLI bundles it once with the repo's
  * own esbuild (a vitest transitive — no installs) into a temp ESM file.
@@ -57,15 +61,21 @@ async function main() {
   const patches = {};
   for (const w of WIRING) {
     const patch = {};
-    const build = (ref) =>
-      themedShot(manifest, w.slug, ref, {
-        matte: ref.matte,
-        video: ref.video,
-        darkVideo: ref.darkVideo,
-      });
-    if (w.heroShot) patch.heroShot = build(w.heroShot);
-    if (w.cardImage) patch.cardImage = build(w.cardImage);
-    if (w.shots) patch.shots = w.shots.map(build);
+    const existing = deliverables.find((d) => d.id === w.slug);
+    const build = (ref, existingMedia) =>
+      ref.preserveExisting && existingMedia
+        ? { ...existingMedia }
+        : ref.asset
+        ? { ...ref.asset }
+        : themedShot(manifest, w.slug, ref, {
+            matte: ref.matte,
+            video: ref.video,
+            darkVideo: ref.darkVideo,
+          });
+    if (w.heroShot) patch.heroShot = build(w.heroShot, existing?.heroShot);
+    if (w.cardImage) patch.cardImage = build(w.cardImage, existing?.cardImage);
+    if (w.heroPlate) patch.heroPlate = { ...w.heroPlate };
+    if (w.shots) patch.shots = w.shots.map((ref, i) => build(ref, existing?.shots?.[i]));
     if (w.ogTheme) patch.ogTheme = w.ogTheme;
     if (w.ogCard) patch.ogCard = w.ogCard;
     patches[w.slug] = patch;

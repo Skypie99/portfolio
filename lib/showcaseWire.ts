@@ -134,6 +134,7 @@ export function themedShot(
 export type DeliverablePatch = {
   heroShot?: Record<string, unknown>;
   cardImage?: Record<string, unknown>;
+  heroPlate?: Record<string, unknown>;
   shots?: Record<string, unknown>[];
   ogTheme?: 'light' | 'dark';
 };

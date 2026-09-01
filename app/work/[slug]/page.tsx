@@ -6,7 +6,6 @@ import type { CSSProperties, ReactNode } from 'react';
 import { Button } from '@/components/Button';
 import { CaseStudyCard } from '@/components/CaseStudyCard';
 import { ContactEmail } from '@/components/ContactEmail';
-import { Exhibit } from '@/components/Exhibit';
 import { HeroImageSettle, HeroTitleSettle } from '@/components/HeroSettle';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { HeroProductReveal, ShotProductReveal } from '@/components/ProductReveal';
@@ -220,56 +219,11 @@ function FlagstoneApproachDiagram() {
   );
 }
 
-/**
- * D4 — "What went wrong" gets its evidence: the Exhibit furniture (A15)
- * wrapping the report-composed capture — the Submit affordance the defect
- * made unreachable — with a FIG tag, one leader line, and a dated caption.
- * Media is read from the deliverable's own `shots` (never re-declared) so it
- * stays wired to whatever content/deliverables.json ships for this scene.
- * `theme="both"`: the capture carries a dark twin that swaps client-side
- * with the site's theme (ThemedShowcase); a hardcoded "light"/"dark" label
- * would read false in whichever theme ISN'T showing — the exact bug Phase
- * C's close-out caught for the homepage's own capture caption. `capturedDate`
- * is read from the shot's own D7 field so the two dates can't drift apart;
- * the literal fallback matches what the manifest recorded for this scene at
- * the time this phase was built, kept only as a belt for an unpopulated field.
- */
-function FlagstoneDefectExhibit({ shots }: { shots: Deliverable['shots'] }) {
-  const shot = shots?.find((s) => s.src?.includes('report-composed'));
-  if (!shot) return null;
-  return (
-    <Exhibit
-      scene="report-composed"
-      theme="both"
-      capturedDate={shot.capturedDate ?? '2026-07-31'}
-      claim="The Submit affordance this defect made unreachable — every path to it now proven by a test that fails against the old arrangement."
-      leaderLines={[{ style: { top: '92%', left: '48%', width: '2.75rem' } }]}
-      className="max-w-[19rem]"
-    >
-      <ShotProductReveal
-        slug="flagstone"
-        title="Flagstone"
-        media={{
-          src: shot.src,
-          alt: shot.alt,
-          avif: shot.avif,
-          webp: shot.webp,
-          lqip: shot.lqip,
-          focal: shot.focal,
-          dark: shot.dark,
-          chrome: shot.chrome,
-        }}
-        className="rounded-lg border border-border-decorative"
-      />
-    </Exhibit>
-  );
-}
-
-/** Ties D4/D5/D6 to their sections; every section not named below renders
+/** Ties D5/D6 to their sections; every section not named below renders
  *  through the ordinary path, chunk-for-chunk equivalent to the single-call
  *  renderer (dropCapEligible keeps the drop cap on the ARTICLE's true
  *  opening paragraph only — see renderMarkdownProse's option doc). */
-function renderFlagstoneBody(body: string, shots: Deliverable['shots']): ReactNode {
+function renderFlagstoneBody(body: string): ReactNode {
   const sections = splitBodyIntoSections(body);
   return sections.map((s, i) => {
     if (s.heading === 'My role') {
@@ -288,14 +242,6 @@ function renderFlagstoneBody(body: string, shots: Deliverable['shots']): ReactNo
         <div key={s.heading} className="contents">
           {blocks}
           <FlagstoneApproachDiagram />
-        </div>
-      );
-    }
-    if (s.heading === 'What went wrong') {
-      return (
-        <div key={s.heading} className="contents">
-          {blocks}
-          <FlagstoneDefectExhibit shots={shots} />
         </div>
       );
     }
@@ -538,14 +484,14 @@ export default async function WorkDetailPage({
                 first thumb-flick; at lg it returns to the left column. The
                 reserved-aspect class + mount settle stay owned by HeroImageSettle
                 → zero CLS.
-                L2-03/S15: at lg the STICKY lives here (swapped off the details
-                column, classes only — never re-parented): the shorter media well
-                now rides along the metadata scan instead of stranding a dead
-                quadrant under the frame. Phone-aspect wells (4/5) are taller
-                than their columns, so sticky never engages there. */}
+                L2-03/S15: at lg the STICKY lives here for the other case studies.
+                Flagstone is intentionally normal-flow: its phone well staying
+                pinned while the title and metadata moved made the hero read as
+                two disconnected scroll planes. */}
             <HeroImageSettle
               className={cn(
-                'group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none lg:sticky lg:top-24 shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]',
+                'group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]',
+                d.id !== 'flagstone' && 'lg:sticky lg:top-24',
                 wideHero ? 'aspect-[4/3]' : 'aspect-[4/5]',
               )}
             >
@@ -622,8 +568,10 @@ export default async function WorkDetailPage({
                 only reason the plate ever hung 460px below the frame it
                 annotates. This column's own rect is byte-identical before and
                 after (top 200, h 972.30 at 1440); only the plate moves. The
-                well's sticky still engages, with its travel reduced from 547.58
-                to 412.30px at 1440 — exactly the dead band that was removed. */}
+                well's sticky still engages on the other case studies, with its
+                travel reduced from 547.58 to 412.30px at 1440 — exactly the
+                dead band that was removed. Flagstone's normal-flow exception
+                is declared on the media well above. */}
             <div
               className={cn(
                 'contents lg:flex lg:flex-col lg:gap-12',
@@ -697,7 +645,10 @@ export default async function WorkDetailPage({
                 {/* HeroTitleSettle: carves in after the image (delay 150ms),
                     tightening letter-spacing from 0.12em to -0.02em. */}
                 <HeroTitleSettle
-                  className="font-serif font-light text-display ember text-balance"
+                  className={cn(
+                    'font-serif font-light text-display ember text-balance',
+                    d.id === 'flagstone' && 'leading-[1.15]',
+                  )}
                 >
                   {d.title}
                 </HeroTitleSettle>
@@ -878,7 +829,7 @@ export default async function WorkDetailPage({
                 prose) — see renderMarkdown — so the body has internal cinematic
                 choreography instead of one undifferentiated fade. */}
             <article aria-label={`${d.title} case study`} className="max-w-measure-wide flex flex-col gap-8">
-              {d.id === 'flagstone' ? renderFlagstoneBody(d.body!, d.shots) : renderMarkdownProse(d.body!, 'case')}
+              {d.id === 'flagstone' ? renderFlagstoneBody(d.body!) : renderMarkdownProse(d.body!, 'case')}
             </article>
 
             {/* FT-7 — close the essay like an essay. A designed sign-off (never
@@ -961,8 +912,24 @@ export default async function WorkDetailPage({
                     <ShotProductReveal
                       slug={d.id}
                       title={d.title}
-                      media={{ src: shot.src, alt: shot.caption ? '' : shot.alt, avif: shot.avif, webp: shot.webp, focal: shot.focal, lqip: shot.lqip, video: shot.video }}
-                      className="rounded-lg border border-border-decorative"
+                      media={{
+                        src: shot.src,
+                        alt: shot.caption ? '' : shot.alt,
+                        avif: shot.avif,
+                        webp: shot.webp,
+                        focal: shot.focal,
+                        lqip: shot.lqip,
+                        video: shot.video,
+                        precropped:
+                          d.id === 'flagstone' &&
+                          Boolean(shot.src?.includes('-current.phone')),
+                      }}
+                      className={cn(
+                        'rounded-lg border border-border-decorative',
+                        d.id === 'flagstone' &&
+                          shot.src?.includes('-current.phone') &&
+                          'aspect-[7/8]',
+                      )}
                     />
                     {shot.caption && (
                       <figcaption className="font-sans text-body-sm text-charcoal text-pretty">

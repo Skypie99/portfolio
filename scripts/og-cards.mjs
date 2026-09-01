@@ -8,9 +8,10 @@
  * feeds while dark survives them; unfurl fetchers are format-conservative, so
  * the og raster is always a JPG even though the on-site cards ride AVIF/WebP.
  * Source of truth: content/showcase.manifest.json (the dark desktop master of
- * each project's hero scene).
+ * each project's hero scene), except for a supplied current-product master
+ * explicitly listed in OG_MASTER_OVERRIDES.
  *
- *   node scripts/og-cards.mjs
+ *   node scripts/og-cards.mjs [--project flagstone]
  */
 
 import fs from 'node:fs';
@@ -34,18 +35,33 @@ const OG_SOURCES = {
   'ghost-code': 'board',
 };
 
+/** Supplied, canonical masters which intentionally supersede a historical
+ * manifest capture. Paths are relative to BANK_ROOT, like manifest masters. */
+const OG_MASTER_OVERRIDES = {
+  flagstone: 'masters/flagstone/explore-current.phone.png',
+};
+
+const projectArg = process.argv.indexOf('--project');
+const onlyProject = projectArg >= 0 ? process.argv[projectArg + 1] : undefined;
+if (projectArg >= 0 && !onlyProject) {
+  console.error('[og-cards] --project requires a slug');
+  process.exit(2);
+}
+
 const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'content', 'showcase.manifest.json'), 'utf8'));
 
 let total = 0;
 for (const [slug, scene] of Object.entries(OG_SOURCES)) {
+  if (onlyProject && slug !== onlyProject) continue;
   const row = manifest.captures.find(
     (c) => c.project === slug && c.scene === scene && c.theme === 'dark' && c.viewport === 'desktop' && !c.clip,
   );
-  if (!row?.files?.master?.path) {
+  const sourcePath = OG_MASTER_OVERRIDES[slug] ?? row?.files?.master?.path;
+  if (!sourcePath) {
     console.error(`[og-cards] SKIP ${slug} — no dark desktop master for ${scene}`);
     continue;
   }
-  const master = path.resolve(BANK_ROOT, row.files.master.path);
+  const master = path.resolve(BANK_ROOT, sourcePath);
   const outDir = path.join(ROOT, 'public', 'showcase', slug);
   fs.mkdirSync(outDir, { recursive: true });
   const out = path.join(outDir, 'og-card.jpg');
@@ -55,6 +71,9 @@ for (const [slug, scene] of Object.entries(OG_SOURCES)) {
     .toFile(out);
   const bytes = fs.statSync(out).size;
   total += bytes;
-  console.log(`[og-cards] ${slug}/og-card.jpg  ${(bytes / 1024).toFixed(0)}KB  (from ${scene}.dark.desktop)`);
+  const sourceLabel = OG_MASTER_OVERRIDES[slug]
+    ? path.basename(OG_MASTER_OVERRIDES[slug])
+    : `${scene}.dark.desktop`;
+  console.log(`[og-cards] ${slug}/og-card.jpg  ${(bytes / 1024).toFixed(0)}KB  (from ${sourceLabel})`);
 }
 console.log(`[og-cards] total ${(total / 1024).toFixed(0)}KB`);
