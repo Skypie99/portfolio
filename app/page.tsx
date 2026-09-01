@@ -548,17 +548,11 @@ export default function HomePage() {
                     eager={false}
                   />
                 </HeroImageSettle>
-                {/* Dated from content/showcase.manifest.json (map-overview,
-                    phone, projectSha 5ab3f0c4, capturedAt 2026-07-31) — the
-                    manifest is deliberately NOT read at runtime
-                    (lib/showcaseWire.ts), so the date is transcribed here the
-                    same way FlagstoneTestReceipt transcribes its run date.
-                    The THEME is not named: the capture is a light/dark twin
-                    pair and ThemedShowcase swaps it with the site, so naming
-                    one would go false in the other. */}
+                {/* The supplied submitted-era Explore screenshot has no
+                    independently proven capture date. Keep this screenshot-
+                    specific label truthful and date-free. */}
                 <p className="mt-4 text-center font-mono text-meta tracking-label uppercase text-text-meta">
-                  Real capture · map-overview · captured{' '}
-                  <time dateTime="2026-07-31">2026-07-31</time>
+                  Current product capture · Explore
                 </p>
               </Reveal>
             </div>
