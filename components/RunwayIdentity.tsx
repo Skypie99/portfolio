@@ -50,10 +50,9 @@
  * sites rather than in a selector so it stays greppable.
  *
  * `name` defaults to the same bytes as content/profile.json's `name` and
- * `wordmarkText` ("Sky Halisky"). `roleLabel` carries the site's locked
- * recruiter-facing identity, "Technical Support · AI Builder" (corrected
- * 2026-08-28 — MOTION_SYSTEM section 15 originally recorded "AI Builder"
- * alone, which undersold the support role this mark exists to signal).
+ * `wordmarkText` ("Sky Halisky"). The two role lines preserve Technical
+ * Support as the primary professional identity and describe the builder side
+ * without presenting it as a conventional AI engineering job title.
  *
  * The material is honest about what it does NOT carry over: `.glass-card` is a
  * LENS. Over the dark film it reads as a chip; over a flat page it has almost
@@ -65,11 +64,9 @@
  */
 export function RunwayIdentity({
   name = 'Sky Halisky',
-  roleLabel = 'Technical Support · AI Builder',
   variant = 'runway',
 }: {
   name?: string;
-  roleLabel?: string;
   /** 'runway' = home's mark over the cinematic (retires); 'page' = the subpage
       chip (mobile-only, no retirement, no client boundary). */
   variant?: 'runway' | 'page';
@@ -104,7 +101,8 @@ export function RunwayIdentity({
         </span>
         <span className="runway-identity-lines">
           <span className="runway-identity-name">{name}</span>
-          <span className="runway-identity-role">{roleLabel}</span>
+          <span className="runway-identity-role">Technical Support</span>
+          <span className="runway-identity-role runway-identity-role--tertiary">AI-assisted Builder</span>
         </span>
       </span>
     </div>

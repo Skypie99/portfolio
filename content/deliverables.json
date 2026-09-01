@@ -42,32 +42,20 @@
     },
     "shots": [
       {
-        "src": "/showcase/flagstone/drawer-open.light.phone.webp",
-        "alt": "Flagstone's navigation drawer slid open over the dimmed home screen, with frosted-glass rows for Resources, How to help, About, and Settings.",
-        "caption": "The navigation drawer on spring physics, with the material world in motion.",
-        "focal": "50% 24%",
-        "avif": "/showcase/flagstone/drawer-open.light.phone.avif",
-        "webp": "/showcase/flagstone/drawer-open.light.phone.webp",
-        "lqip": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADQBACdASoUACsAPxF0r1AsJyQitVQIAYAiCWcA0bwLGZmS0skTc73/wxCzp9iYAAD+303oTVXQ57Om3+HurWwi+eYCaYC63SvzVSD4MjnD5nuJ1WXzAAAA",
+        "src": "/showcase/flagstone/clips/report-flow-current.dark.phone-poster.webp",
+        "alt": "Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "caption": "From map pin to report form, the current reporting flow in motion.",
+        "focal": "50% 38%",
+        "avif": "/showcase/flagstone/clips/report-flow-current.dark.phone-poster.avif",
+        "webp": "/showcase/flagstone/clips/report-flow-current.dark.phone-poster.webp",
         "video": {
-          "mp4": "/showcase/flagstone/clips/drawer-spring.light.phone.mp4",
-          "webm": "/showcase/flagstone/clips/drawer-spring.light.phone.webm",
-          "poster": "/showcase/flagstone/clips/drawer-spring.light.phone-poster.avif",
-          "alt": "Flagstone's navigation drawer springing open over the home screen, resting a beat, then sliding away."
+          "mp4": "/showcase/flagstone/clips/report-flow-current.dark.phone.mp4",
+          "webm": "/showcase/flagstone/clips/report-flow-current.dark.phone.webm",
+          "poster": "/showcase/flagstone/clips/report-flow-current.dark.phone-poster.avif",
+          "alt": "Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map."
         },
-        "dark": {
-          "src": "/showcase/flagstone/drawer-open.dark.phone.webp",
-          "avif": "/showcase/flagstone/drawer-open.dark.phone.avif",
-          "webp": "/showcase/flagstone/drawer-open.dark.phone.webp",
-          "lqip": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAAAQAwCdASoUACsAPxGEulcsKCWkpWgBgCIJZwAALKezlywA/u8NwIAHTI4jhMnZO6iFkcO4fYkIOflkcAA=",
-          "video": {
-            "mp4": "/showcase/flagstone/clips/drawer-spring.dark.phone.mp4",
-            "webm": "/showcase/flagstone/clips/drawer-spring.dark.phone.webm",
-            "poster": "/showcase/flagstone/clips/drawer-spring.dark.phone-poster.avif"
-          }
-        },
-        "capturedDate": "2026-08-18",
-        "commit": "8cdd6437"
+        "matte": "dark-mono",
+        "capturedDate": "2026-09-01"
       },
       {
         "src": "/showcase/flagstone/report-current.phone.webp",

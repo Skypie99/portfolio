@@ -8,9 +8,8 @@
  *  - flagstone hero/card = the submitted-era Explore capture supplied by Sky
  *    on 2026-09-01. It is a real dark product screen in both site themes, not a
  *    recoloured light/dark pair.
- *  - shots[0] carries the drawer-spring clip in BOTH themes (poster-first,
- *    RM-safe); the report walk's submission remains NEEDS-DEVICE and is not
- *    embedded.
+ *  - shots[0] carries Sky's current reporting-flow recording (poster-first,
+ *    RM-safe) as an honest dark-mono exhibit in both site themes.
  */
 
 const suppliedFlagstoneShot = ({ name, alt, caption, lqip, focal, chrome }) => ({
@@ -48,16 +47,22 @@ export const WIRING = [
     },
     shots: [
       {
-        preserveExisting: true,
-        scene: 'drawer-open',
-        viewport: 'phone',
-        focal: '50% 24%',
-        caption: 'The navigation drawer on spring physics, the material world in motion.',
-        video: {
-          clip: 'drawer-spring',
-          alt: "Flagstone's navigation drawer springing open over the home screen, resting a beat, then sliding away.",
+        asset: {
+          src: '/showcase/flagstone/clips/report-flow-current.dark.phone-poster.webp',
+          avif: '/showcase/flagstone/clips/report-flow-current.dark.phone-poster.avif',
+          webp: '/showcase/flagstone/clips/report-flow-current.dark.phone-poster.webp',
+          alt: 'Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.',
+          caption: 'From map pin to report form, the current reporting flow in motion.',
+          focal: '50% 38%',
+          matte: 'dark-mono',
+          capturedDate: '2026-09-01',
+          video: {
+            mp4: '/showcase/flagstone/clips/report-flow-current.dark.phone.mp4',
+            webm: '/showcase/flagstone/clips/report-flow-current.dark.phone.webm',
+            poster: '/showcase/flagstone/clips/report-flow-current.dark.phone-poster.avif',
+            alt: 'Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.',
+          },
         },
-        darkVideo: true,
       },
       {
         asset: {
@@ -88,7 +93,11 @@ export const WIRING = [
     slug: 'prompt-library',
     ogTheme: 'dark',
     ogCard: '/showcase/prompt-library/og-card.jpg',
-    heroShot: { scene: 'home', viewport: 'desktop' },
+    heroShot: {
+      scene: 'home',
+      viewport: 'desktop',
+      alt: 'The Prompt Library home, with a search bar and category chips over a grid of prompt cards and the featured card leading.',
+    },
     cardImage: {
       scene: 'home',
       viewport: 'desktop',
@@ -99,6 +108,7 @@ export const WIRING = [
       {
         scene: 'prompt-detail',
         viewport: 'desktop',
+        alt: 'A prompt opened in the library, with variable fields ready to fill above the monospace prompt preview and its copy control.',
         caption: 'A prompt opened, with variables to fill and the copy control waiting.',
       },
     ],
@@ -108,7 +118,11 @@ export const WIRING = [
     slug: 'claude-corp',
     ogTheme: 'dark',
     ogCard: '/showcase/claude-corp/og-card.jpg',
-    heroShot: { scene: 'hero-pipeline', viewport: 'desktop' },
+    heroShot: {
+      scene: 'hero-pipeline',
+      viewport: 'desktop',
+      alt: 'The Claude Corp front door, with the editorial hero over the agent pipeline diagram and fifteen roles feeding one governed main branch.',
+    },
     cardImage: {
       scene: 'hero-pipeline',
       viewport: 'desktop',
@@ -119,6 +133,7 @@ export const WIRING = [
       {
         scene: 'team',
         viewport: 'desktop',
+        alt: 'The fifteen-role team grid, with each agent card naming its craft from Quinn on product through Morgan on reporting.',
         caption: 'Fifteen roles, one governed main branch.',
       },
     ],
@@ -129,7 +144,11 @@ export const WIRING = [
     slug: 'dashboard',
     ogTheme: 'dark',
     ogCard: '/showcase/dashboard/og-card.jpg',
-    heroShot: { scene: 'command-center', viewport: 'desktop' },
+    heroShot: {
+      scene: 'command-center',
+      viewport: 'desktop',
+      alt: 'The Dashboard command center, showing project health, agent activity and pending decisions on one calm board.',
+    },
     cardImage: {
       scene: 'command-center',
       viewport: 'desktop',
@@ -140,11 +159,13 @@ export const WIRING = [
       {
         scene: 'think-tank',
         viewport: 'desktop',
+        alt: 'The Think Tank board, with ideas triaged into Do it, Later and Skip lanes with their leverage notes.',
         caption: 'The Think Tank: ideas triaged into Do it, Later and Skip.',
       },
       {
         scene: 'dispatch',
         viewport: 'desktop',
+        alt: 'The Dispatch queue, with work items lined up with status, owner and the relay controls held safely off.',
         caption: 'The Dispatch queue, with agent work lined up alongside its receipts.',
       },
     ],
@@ -156,7 +177,11 @@ export const WIRING = [
     slug: 'ghost-code',
     ogTheme: 'dark',
     ogCard: '/showcase/ghost-code/og-card.jpg',
-    heroShot: { scene: 'title', viewport: 'desktop' },
+    heroShot: {
+      scene: 'title',
+      viewport: 'desktop',
+      alt: 'Ghost Code’s title screen, with the arcade cabinet framing the Phantom mascot and Start and Settings glowing below the wordmark.',
+    },
     cardImage: {
       scene: 'board',
       viewport: 'desktop',
@@ -167,6 +192,7 @@ export const WIRING = [
       {
         scene: 'board',
         viewport: 'desktop',
+        alt: 'A Ghost Code round in play, with the maze board mid-chase, the code prompt beneath, and score and streak counters keeping pace.',
         caption: 'A seeded round in motion: same maze, both themes.',
         video: {
           clip: 'round',

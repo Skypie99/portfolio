@@ -293,7 +293,7 @@ export default function HomePage() {
       {/* ── Identity mark — holds the top-left through the wordless runway so
           who-this-is registers at first paint (L1-01 / S17). Fixed sibling of
           the intro, never a child of it; the locked intro is untouched. ── */}
-      <RunwayIdentity name="Sky Halisky" roleLabel="Technical Support · AI Builder" />
+      <RunwayIdentity name="Sky Halisky" />
       {/* The retirement lives HERE, not inside RunwayIdentity, because it is a
           client component and a static import would ship it to every route that
           mounts the mark -- proven in the built chunks, not assumed (UP-38). */}
@@ -489,21 +489,6 @@ export default function HomePage() {
                     <span aria-hidden="true">: </span>{' '}
                     <span className="text-cool-deep normal-case tracking-normal">{flagship.status}</span>
                   </p>
-                  {/* The one pull-line, quoted from the case study's own
-                      `What went wrong`. Below lg it is not rendered at all
-                      (pane C) — the sentence is not lost, it is one tap away in
-                      the essay this band links to. */}
-                  {/* leading-[1.45]: the same per-quote tuned value the Record
-                      band's pull-quote carries, and a token candidate for the
-                      same reason it isn't one there — see the note on that
-                      blockquote. Written down here too so a future leading
-                      sweep reads a reason on both, not on one. */}
-                  <blockquote className="hidden lg:block pull-quote pl-3 font-serif font-light italic text-step-1 text-ink-muted leading-[1.45] max-w-[44ch] text-balance">
-                    It had unit tests. They passed.
-                    <cite className="not-italic block mt-2 font-mono text-meta tracking-label uppercase text-text-meta">
-                      from What went wrong
-                    </cite>
-                  </blockquote>
                   <Link
                     href={`/work/${flagship.id}/`}
                     className="link-draw inline-flex items-center gap-2 px-1 py-4 -mx-1 -my-4 font-mono text-label tracking-label uppercase text-accent-text"
@@ -645,6 +630,7 @@ export default function HomePage() {
                       <h3 className="font-serif font-light text-step-1 leading-heading text-ink">
                         <Link
                           href={href}
+                          aria-label={`View ${d.title} project`}
                           className="rounded-sm transition-colors duration-fast ease-out hover:text-accent-text focus-visible:text-accent-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
                         >
                           {d.title}
@@ -653,6 +639,15 @@ export default function HomePage() {
                       <p className="font-sans font-light text-body-sm leading-body text-ink-muted text-pretty">
                         {d.summary}
                       </p>
+                      <Link
+                        href={href}
+                        aria-label={`View project: ${d.title} case study`}
+                        tabIndex={-1}
+                        className="link-draw inline-flex w-fit items-center gap-2 px-1 py-2 -mx-1 -my-2 font-mono text-meta tracking-label uppercase text-accent-text"
+                      >
+                        View project
+                        <span aria-hidden="true">{'→'}</span>
+                      </Link>
                     </div>
                     <div className="mt-3 flex flex-wrap items-baseline gap-x-4 gap-y-1 lg:mt-0 lg:contents">
                       <div className="lg:flex-1 flex flex-col gap-1.5">

@@ -16,9 +16,13 @@ describe('Flagstone recruiter first impression', () => {
     expect(flagstone?.heroShot?.capturedDate).toBeUndefined();
   });
 
-  it('preserves the motion clip and refreshes only the reporting and community stills', () => {
-    expect(flagstone?.shots?.[0]?.src).toContain('/drawer-open.');
-    expect(flagstone?.shots?.[0]?.video?.mp4).toContain('/drawer-spring.');
+  it('uses the current reporting flow rather than the retired drawer clip', () => {
+    expect(flagstone?.shots?.[0]?.src).toContain('/report-flow-current.');
+    expect(flagstone?.shots?.[0]?.video?.mp4).toContain('/report-flow-current.');
+    expect(flagstone?.shots?.[0]?.caption).toBe('From map pin to report form, the current reporting flow in motion.');
+    expect(flagstone?.shots?.[0]?.capturedDate).toBe('2026-09-01');
+    expect(flagstone?.shots?.[0]?.commit).toBeUndefined();
+    expect(flagstone?.shots?.[0]?.video?.alt).toContain('Report a flag form');
     expect(flagstone?.shots?.[1]?.src).toBe('/showcase/flagstone/report-current.phone.webp');
     expect(flagstone?.shots?.[1]?.alt).toContain('Report a flag form');
     expect(flagstone?.shots?.[2]?.src).toBe('/showcase/flagstone/community-current.phone.webp');

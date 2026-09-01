@@ -927,7 +927,7 @@ export default async function WorkDetailPage({
                       className={cn(
                         'rounded-lg border border-border-decorative',
                         d.id === 'flagstone' &&
-                          shot.src?.includes('-current.phone') &&
+                          (shot.src?.includes('-current.phone') || Boolean(shot.video)) &&
                           'aspect-[7/8]',
                       )}
                     />
