@@ -105,7 +105,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
             >
               <Link
                 href={`/work/${d.id}/`}
-                aria-label={`${d.title} — ${d.role}, ${d.year}`}
+                aria-label={`${d.title}: ${d.role}, ${d.year}`}
                 /* The door ajar (R4/BP2): the card's ONE opt-in mark hook —
                    lib/doorAjar marks only [data-door-target], never bare
                    hrefs (the stretched-link chips must stay unpositioned). */
@@ -168,7 +168,7 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
                 /* SC 2.5.3 Label in Name: the accessible name must contain the
                    visible label ("View project") so speech-input users can act
                    on what they see. Extra context follows the visible words. */
-                aria-label={`View project — ${d.title} case study`}
+                aria-label={`View project: ${d.title} case study`}
                 className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:-top-[21px] after:bottom-0 after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-base ease-gh-glide hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
               >
                 View project <span aria-hidden="true">→</span>

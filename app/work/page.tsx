@@ -12,9 +12,9 @@ import { OG_CARD } from '@/lib/og';
 
 export function generateMetadata(): Metadata {
   const profile = getProfile();
-  const description = 'Projects by Sky Halisky — AI builder. Accessibility mapping, multi-agent systems, prompt management, and more.';
+  const description = 'Projects by Sky Halisky: AI builder. Accessibility mapping, multi-agent systems, prompt management, and more.';
   return {
-    title: `Selected Work — ${profile.name}`,
+    title: `Selected Work: ${profile.name}`,
     description,
     openGraph: {
       type: 'website',
@@ -22,15 +22,15 @@ export function generateMetadata(): Metadata {
       // siteName and locale must be restated here or they drop out of this
       // route's share card entirely. url is this route's OWN.
       url: '/work/',
-      siteName: 'Sky Halisky — AI Portfolio',
+      siteName: 'Sky Halisky: AI Portfolio',
       locale: 'en_CA',
-      title: `Selected Work — ${profile.name}`,
+      title: `Selected Work: ${profile.name}`,
       description,
       images: [OG_CARD],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `Selected Work — ${profile.name}`,
+      title: `Selected Work: ${profile.name}`,
       description,
     },
   };
@@ -98,7 +98,7 @@ export default function WorkIndexPage() {
           <div className="pl-4 border-l-2 border-terracotta">
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
-              The Work — {deliverables.length} deliverable{deliverables.length === 1 ? '' : 's'}
+              The Work: {deliverables.length} deliverable{deliverables.length === 1 ? '' : 's'}
             </p>
             <SettleHeading
               className="font-serif font-light text-display ember max-w-measure-heading mb-12 text-balance"
@@ -134,7 +134,7 @@ export default function WorkIndexPage() {
             // Empty-state per F-04 acceptance criteria — composed treatment (EmptyState).
             <EmptyState
               title="Deliverables coming soon."
-              note="New work is being written up — built slowly, documented honestly. Check back shortly."
+              note="New work is being written up: built slowly, documented honestly. Check back shortly."
             />
           ) : (
             // The gallery wall (R4/BP9 · P03) — the promenade replaces the

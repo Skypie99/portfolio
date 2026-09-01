@@ -122,7 +122,7 @@ export function CaseStudyCard({ title, category, description, href, status, veri
           <h3 className="font-serif font-light text-card-title text-ink">
             <Link
               href={href}
-              aria-label={`${title} — read the case study`}
+              aria-label={`${title}: read the case study`}
               /* The door ajar (R4/BP2): the card's ONE opt-in mark hook (see
                  ProjectCard) — one bar per card, beside the title, FT-9's
                  placement. */
@@ -164,7 +164,7 @@ export function CaseStudyCard({ title, category, description, href, status, veri
             <Link
               href={href}
               /* SC 2.5.3 Label in Name: the visible words lead the accessible name. */
-              aria-label={`Read more — ${title} case study`}
+              aria-label={`Read more: ${title} case study`}
               /* C-55: the title link above already spends one tab stop on this exact
                  href — two stops per neighbour card is the only redundancy in the
                  journey. tabIndex={-1} drops the SECOND keyboard stop while keeping

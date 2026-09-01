@@ -41,7 +41,7 @@ export const OG_CARD = {
   height: 630,
   // Mirrors app/opengraph-image.tsx's own `alt` export. Restated rather than
   // imported so importers don't pull next/og + node:fs into their module graph.
-  alt: 'Sky Halisky — AI builder · accessible, privacy-first tools',
+  alt: 'Sky Halisky: AI builder · accessible, privacy-first tools',
   type: 'image/png',
 } as const;
 

@@ -44,11 +44,11 @@ describe('LitWindows', () => {
       deliverables.map((d) => `/work/${d.id}`),
     );
     for (const a of links) {
-      expect(a.getAttribute('aria-label')).toMatch(/ — (lit|dark)$/);
+      expect(a.getAttribute('aria-label')).toMatch(/: (lit|dark)$/);
     }
   });
 
-  it('lights exactly the showcase chips and leaves the unchipped work dark — and ENTERABLE', () => {
+  it('lights exactly the showcase chips and leaves the unchipped work dark: and ENTERABLE', () => {
     render(<LitWindows deliverables={deliverables} litHrefs={LIT} />);
     const links = screen.getAllByRole('link');
     const lit = links.filter((a) => a.hasAttribute('data-lit'));
@@ -56,7 +56,7 @@ describe('LitWindows', () => {
     expect(lit).toHaveLength(4);
     expect(dark).toHaveLength(1);
     expect(dark[0].getAttribute('href')?.replace(/\/$/, '')).toBe('/work/dashboard');
-    expect(dark[0].getAttribute('aria-label')).toBe('Claude Corp Dashboard — dark');
+    expect(dark[0].getAttribute('aria-label')).toBe('Claude Corp Dashboard: dark');
     expect(dark[0].getAttribute('href')).toBeTruthy(); // the dark window opens too
   });
 
@@ -70,7 +70,7 @@ describe('LitWindows', () => {
   });
 });
 
-describe('lit windows — CSS source contract', () => {
+describe('lit windows: CSS source contract', () => {
   const css = readFileSync(join(process.cwd(), 'app', 'globals.css'), 'utf8');
 
   it('is dark-register-only and zero-layout', () => {
@@ -79,7 +79,7 @@ describe('lit windows — CSS source contract', () => {
     expect(css).toMatch(/html\.dark \.lit-windows\s*\{[^}]*display: block/);
   });
 
-  it('rides the day-night writer with the house rest fallback — no keyframes', () => {
+  it('rides the day-night writer with the house rest fallback: no keyframes', () => {
     expect(css).toMatch(
       /\.lit-window\s*\{[^}]*var\(--day-night, var\(--day-night-rest\)\)/,
     );

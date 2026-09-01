@@ -7,7 +7,7 @@ import { Reveal } from '@/components/Reveal';
 import { RunwayIdentity } from '@/components/RunwayIdentity';
 
 export const metadata: Metadata = {
-  title: '404 — Page not found',
+  title: '404: Page not found',
   description: 'That page doesn’t exist. Browse the selected work or head back home.',
 };
 
@@ -49,7 +49,7 @@ export default function NotFound() {
 
           <Reveal>
             <p className="font-sans font-light text-prose text-ink-muted max-w-measure-lead mb-16 text-pretty">
-              The page you{'’'}re looking for doesn{'’'}t exist — or it moved.
+              The page you{'’'}re looking for doesn{'’'}t exist, or it moved.
               The homepage is the best place to start, and the work index has
               every deliverable.
             </p>

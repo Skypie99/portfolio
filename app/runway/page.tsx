@@ -28,7 +28,7 @@ const LINK_CLASS =
  */
 export function generateMetadata(): Metadata {
   const profile = getProfile();
-  const title = `Hi, Runway. — ${profile.name}`;
+  const title = `Hi, Runway: ${profile.name}`;
   const description =
     'A short film made in Runway, built while applying for the Consumer Support Specialist role.';
   return {
@@ -38,7 +38,7 @@ export function generateMetadata(): Metadata {
     openGraph: {
       type: 'website',
       url: '/runway/',
-      siteName: 'Sky Halisky — AI Portfolio',
+      siteName: 'Sky Halisky: AI Portfolio',
       locale: 'en_CA',
       title,
       description,
@@ -72,7 +72,7 @@ export default function RunwayPage() {
             assignment instead of a tour, and this is what came out of the weekend.
           </p>
           <p className="font-sans font-light text-prose text-ink-muted max-w-measure-wide text-pretty mt-6">
-            I spend my days in technical support, so I did not just take the tour — I
+            I spend my days in technical support, so I did not just take the tour: I
             paid attention to where the product created friction, the way a support
             person can&rsquo;t help but do. That instinct is the part I would bring to
             your team: turning what trips up a brand-new user into something support and

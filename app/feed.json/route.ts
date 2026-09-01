@@ -20,7 +20,7 @@ export function GET(): Response {
 
   const feed = {
     version: 'https://jsonfeed.org/version/1.1',
-    title: `Notes — ${profile.name}`,
+    title: `Notes: ${profile.name}`,
     home_page_url: `${BASE}/blog/`,
     feed_url: `${BASE}/feed.json`,
     description: FEED_DESCRIPTION,

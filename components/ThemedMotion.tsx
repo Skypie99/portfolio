@@ -277,7 +277,7 @@ export function ThemedMotion({
         <button
           type="button"
           onClick={toggle}
-          aria-label={`${playing ? 'Pause' : 'Play'} animation — ${alt}`}
+          aria-label={`${playing ? 'Pause' : 'Play'} animation: ${alt}`}
           className={cn(
             'absolute bottom-3 right-3 z-10 inline-flex h-11 w-11 items-center justify-center rounded-pill',
             'border border-line bg-[rgb(var(--rgb-surface)/0.72)] text-ink-meta backdrop-blur-md',

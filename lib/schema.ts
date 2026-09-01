@@ -149,7 +149,7 @@ const ShotImageSchema = z
   )
   .refine(
     (img) => !(img.dark && img.matte),
-    'dark and matte are mutually exclusive — a scene is themed OR mono, never both',
+    'dark and matte are mutually exclusive: a scene is themed OR mono, never both',
   );
 
 export const DeliverableSchema = z.object({

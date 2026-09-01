@@ -14,22 +14,22 @@ export function generateMetadata(): Metadata {
   const profile = getProfile();
   const description = 'Sky Halisky. AI builder. Okanagan Valley, British Columbia.';
   return {
-    title: `About — ${profile.name}`,
+    title: `About: ${profile.name}`,
     description,
     openGraph: {
       type: 'website',
       // TA-10: a leaf openGraph REPLACES the root's wholesale (W0-04) — url,
       // siteName and locale restated so they survive on this route's share.
       url: '/about/',
-      siteName: 'Sky Halisky — AI Portfolio',
+      siteName: 'Sky Halisky: AI Portfolio',
       locale: 'en_CA',
-      title: `About — ${profile.name}`,
+      title: `About: ${profile.name}`,
       description,
       images: [OG_CARD],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `About — ${profile.name}`,
+      title: `About: ${profile.name}`,
       description,
     },
   };
@@ -93,10 +93,10 @@ export default function AboutPage() {
           {/* Story paragraphs */}
           <div className="max-w-measure-lead flex flex-col gap-8">
             <p className="font-sans font-light text-step-1 text-ink-muted text-pretty">
-              By day, I’m a senior technical-support specialist — the escalation
+              By day, I’m a senior technical-support specialist: the escalation
               point for enterprise accounts, and I train and coach teammates. I
               came to software through problems I wanted to solve. Most of them
-              involved accessibility — tools that should have been better but weren’t.
+              involved accessibility: tools that should have been better but weren’t.
               I decided to make some that were.
             </p>
 
@@ -222,7 +222,7 @@ export default function AboutPage() {
             </p>
             <p className="font-sans font-light text-body text-ink-muted text-pretty">
               The user’s data is theirs. Prompt Library stores everything
-              locally — no backend of mine, no account, no telemetry. Runs go
+              locally: no backend of mine, no account, no telemetry. Runs go
               directly from the browser to Anthropic with the user’s own key;
               nothing passes through a server I control. If the data is not
               necessary, do not collect it.
@@ -266,7 +266,7 @@ export default function AboutPage() {
           <Reveal variant="depth" className="max-w-measure-lead flex flex-col gap-8">
             <p className="font-sans font-light text-body text-ink-muted text-pretty">
               I am not a trained software engineer. I came to coding through
-              building — I had ideas I wanted to exist. That is still how this
+              building: I had ideas I wanted to exist. That is still how this
               works.
             </p>
             <p className="font-sans font-light text-body text-ink-muted text-pretty">

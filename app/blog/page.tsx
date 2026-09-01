@@ -16,7 +16,7 @@ export function generateMetadata(): Metadata {
   const profile = getProfile();
   const description = 'Notes by Sky Halisky on AI, accessibility, and building things.';
   return {
-    title: `Notes — ${profile.name}`,
+    title: `Notes: ${profile.name}`,
     description,
     // Feed autodiscovery (§8.4) — browsers/readers find the RSS + JSON feeds.
     alternates: {
@@ -30,15 +30,15 @@ export function generateMetadata(): Metadata {
       // TA-10: a leaf openGraph REPLACES the root's wholesale (W0-04) — url,
       // siteName and locale restated so they survive on this route's share.
       url: '/blog/',
-      siteName: 'Sky Halisky — AI Portfolio',
+      siteName: 'Sky Halisky: AI Portfolio',
       locale: 'en_CA',
-      title: `Notes — ${profile.name}`,
+      title: `Notes: ${profile.name}`,
       description,
       images: [OG_CARD],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `Notes — ${profile.name}`,
+      title: `Notes: ${profile.name}`,
       description,
     },
   };
@@ -76,7 +76,7 @@ export default function BlogIndexPage() {
         <div className="relative z-10 max-w-content mx-auto">
           <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
             <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
-            Notes — {posts.length} {posts.length === 1 ? 'entry' : 'entries'}
+            Notes: {posts.length} {posts.length === 1 ? 'entry' : 'entries'}
           </p>
           <SettleHeading
             className="font-serif font-light text-display ember max-w-measure-heading mb-12 text-balance"
@@ -85,7 +85,7 @@ export default function BlogIndexPage() {
           </SettleHeading>
           <p className="font-sans font-light text-prose text-ink-muted max-w-measure-lead text-pretty">
             On accessibility, AI-assisted building, and what it means to
-            make things carefully — one project at a time.
+            make things carefully: one project at a time.
           </p>
           {/* Quiet feed affordance (§8.4) — follow without an algorithm in the middle. */}
           <p className="mt-8 font-mono text-meta tracking-label uppercase text-text-meta flex items-center gap-3">

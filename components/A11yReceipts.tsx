@@ -105,7 +105,7 @@ export function A11yReceipts({ data, className }: { data: A11yReceiptsData; clas
             byte-identical: this page's statement copy is byte-frozen (PROTECT),
             and only the element around the date changed. */}
         <p className="font-sans font-light text-prose text-ink-muted max-w-measure-lead mb-12 text-pretty">
-          Real numbers from a real run — measured{' '}
+          Real numbers from a real run: measured{' '}
           <time dateTime={data.measuredDate}>{data.measuredDate}</time>, method below. Not a
           live gate yet; a snapshot you can re-run.
         </p>

@@ -85,7 +85,7 @@ const ROUTE_SECTIONS = {
   //   − `showcase`  C4 — the five stat chips retired into three hero receipts
   //   − `certificates` C6 — demoted to one line inside A Brief Account
   '/': [
-    { id: 'flagship', label: 'Featured — the flagship', href: '/#flagship' },
+    { id: 'flagship', label: 'Featured: the flagship', href: '/#flagship' },
     { id: 'work', label: 'The Work', href: '/#work' },
     { id: 'record', label: 'The Record', href: '/#record' },
     { id: 'how-i-work', label: 'How the work gets made', href: '/#how-i-work' },

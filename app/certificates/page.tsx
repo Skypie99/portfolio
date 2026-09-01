@@ -13,9 +13,9 @@ import { OG_CARD } from '@/lib/og';
 export function generateMetadata(): Metadata {
   const profile = getProfile();
   const description =
-    'Credentials earned by Sky Halisky — Anthropic, Google, University of Michigan, DeepLearning.AI.';
+    'Credentials earned by Sky Halisky: Anthropic, Google, University of Michigan, DeepLearning.AI.';
   return {
-    title: `Credentials — ${profile.name}`,
+    title: `Credentials: ${profile.name}`,
     description,
     // TA-10 (truth audit 2026-07-31): with no openGraph/twitter block of its
     // own, this route inherited the ROOT layout's wholesale — og:url included —
@@ -27,15 +27,15 @@ export function generateMetadata(): Metadata {
     openGraph: {
       type: 'website',
       url: '/certificates/',
-      siteName: 'Sky Halisky — AI Portfolio',
+      siteName: 'Sky Halisky: AI Portfolio',
       locale: 'en_CA',
-      title: `Credentials — ${profile.name}`,
+      title: `Credentials: ${profile.name}`,
       description,
       images: [OG_CARD],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `Credentials — ${profile.name}`,
+      title: `Credentials: ${profile.name}`,
       description,
     },
   };
@@ -71,7 +71,7 @@ export default function CertificatesPage() {
         <div className="relative z-10 max-w-content mx-auto">
           <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
             <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
-            Credentials — {certificates.length}
+            Credentials: {certificates.length}
           </p>
           <SettleHeading
             className="font-serif font-light text-display ember max-w-measure-heading mb-12 text-balance"
@@ -80,7 +80,7 @@ export default function CertificatesPage() {
           </SettleHeading>
           <p className="font-sans font-light text-prose text-ink-muted max-w-measure-lead text-pretty">
             Selected credentials and certifications. A short paper trail of the
-            things I’ve studied formally — most of the learning happens in
+            things I’ve studied formally: most of the learning happens in
             the work, not on paper.
           </p>
         </div>
@@ -104,7 +104,7 @@ export default function CertificatesPage() {
           {certificates.length === 0 ? (
             <EmptyState
               title="Credentials coming soon."
-              note="A short paper trail of formal study will appear here — most of the learning happens in the work."
+              note="A short paper trail of formal study will appear here: most of the learning happens in the work."
             />
           ) : (
             // AnimatedCertGrid owns its entrance (per-card weighted cascade).
