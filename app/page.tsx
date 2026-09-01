@@ -325,7 +325,7 @@ export default function HomePage() {
           avatarAlt="Sky Halisky"
           eyebrow="Portfolio — 2026"
           heading="An accessibility map. A multi-agent system. A web-based prompt library."
-          subhead="Five projects built, all five on the open web. One heading to the App Store. Accessibility first, built for everyone."
+          subhead="Five projects built, all five on the open web. One submitted to Apple for App Store review. Accessibility first, built for everyone."
           ctaLabel="See the work."
           ctaHref="#work"
           receipts={
