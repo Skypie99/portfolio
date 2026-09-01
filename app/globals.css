@@ -3400,8 +3400,8 @@ html.dark ::selection {
 .runway-identity-chip {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.5rem 0.85rem;
+  gap: 0.52rem;
+  padding: 0.45rem 0.72rem;
   border-radius: 13px;
 }
 /* Warm inner hairline (art pass) — the film's clay, one whisper of an accent.
@@ -3445,7 +3445,7 @@ html.dark .runway-identity--page .runway-identity-chip {
 .runway-identity-lines {
   display: flex;
   flex-direction: column;
-  gap: 0.22rem;
+  gap: 0.1rem;
 }
 .runway-identity-name,
 .runway-identity-role {
@@ -3460,9 +3460,13 @@ html.dark .runway-identity--page .runway-identity-chip {
   color: var(--color-near-black); /* theme-aware ink; flips light <-> dark with the glass */
 }
 .runway-identity-role {
-  font-size: 0.625rem; /* clearly secondary */
-  letter-spacing: 0.15em;
-  color: rgb(var(--rgb-ink) / 0.84); /* theme-aware, well above AA on the frost (art pass: 0.8→0.84 — the "AI Builder" line earns a touch more presence; contrast strictly ↑) */
+  font-size: 0.6rem; /* clearly secondary */
+  letter-spacing: 0.1em;
+  color: rgb(var(--rgb-ink) / 0.84); /* theme-aware, well above AA on the frost */
+}
+.runway-identity-role--tertiary {
+  font-size: 0.5625rem;
+  letter-spacing: 0.09em;
 }
 
 /* ── Intro scroll-continuation cue (T6 / W2-01) ─────────────────────────────

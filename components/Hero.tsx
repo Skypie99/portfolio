@@ -86,21 +86,6 @@ export function Hero({
       <div aria-hidden="true" className="hero-wash hero-bg-drift absolute inset-0 pointer-events-none" />
 
       <div className="max-w-content w-full relative">
-        {/* Right-edge spine — closes the wide-screen void by anchoring the
-            negative space with a quiet vertical rule: two hairlines converging
-            on the brand terracotta dot (rhyming the eyebrow rule + CTA dot
-            below). Decorative (aria-hidden), lg+ only, vertically centred so it
-            stays clear of the upper-right hero-wash bloom; a mark, never a fill,
-            so it never competes with the revealed world. */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute right-0 top-1/2 hidden -translate-y-1/2 lg:flex flex-col items-center gap-3"
-        >
-          <span className="h-28 w-px bg-gradient-to-b from-transparent to-terracotta/40" />
-          <span className="h-1.5 w-1.5 rounded-full bg-terracotta/70" />
-          <span className="h-28 w-px bg-gradient-to-t from-transparent to-terracotta/40" />
-        </div>
-
         {/* Attribution nameplate — face + name + soft positioning line, so a
             first-time visitor knows whose work this is the moment the hero
             settles. Rest-visible: the wash bloom carries the arrival. */}
