@@ -328,7 +328,10 @@ export default function AboutPage() {
                         {d.summary}
                       </p>
                       <span className="font-mono text-meta tracking-label uppercase text-accent-text mt-2 inline-flex items-center gap-1 transition-transform duration-fast ease-out group-hover:translate-x-1 group-focus-visible:translate-x-1">
-                        Continue
+                        {/* Cook Out P2 · Part B: "View project" is the locked
+                            recruiter-facing internal-case-study vocabulary
+                            (was "Continue"). */}
+                        View project
                         <span aria-hidden="true">{'→'}</span>
                       </span>
                     </Link>

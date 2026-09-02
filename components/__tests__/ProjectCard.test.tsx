@@ -116,6 +116,28 @@ describe('ProjectCard', () => {
     expect(githubLink).toHaveAttribute('href', 'https://github.com/Skypie99/AccessMap');
   });
 
+  it('gives the card exactly one keyboard destination for the case study (Cook Out P2 · Part B: no duplicate consecutive stops)', () => {
+    const withLinks = {
+      ...baseDeliverable,
+      links: [
+        { label: 'Live demo', href: 'https://access-map-tau.vercel.app', type: 'demo' as const },
+        { label: 'GitHub', href: 'https://github.com/Skypie99/AccessMap', type: 'github' as const },
+      ],
+    };
+    render(<ProjectCard deliverable={withLinks} />);
+
+    // The title IS the one real keyboard stop for the case study…
+    const titleLink = screen.getByRole('link', { name: /flagstone.*solo builder.*2026/i });
+    expect(titleLink).not.toHaveAttribute('tabindex');
+    // …the visible "View project" quick link is SR-visible but keyboard-skipped —
+    // one stop per card, not two, for the identical destination.
+    const viewProject = screen.getByRole('link', { name: /view project.*flagstone.*case study/i });
+    expect(viewProject).toHaveAttribute('tabindex', '-1');
+    // Demo and GitHub each stay their own, separately actionable stop.
+    expect(screen.getByRole('link', { name: /open live demo for flagstone/i })).not.toHaveAttribute('tabindex');
+    expect(screen.getByRole('link', { name: /view flagstone source on github/i })).not.toHaveAttribute('tabindex');
+  });
+
   it('renders the Featured badge when featured is true', () => {
     const { rerender } = render(<ProjectCard deliverable={baseDeliverable} />);
 

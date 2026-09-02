@@ -495,3 +495,76 @@ describe('ViewTransitions interceptor', () => {
     }
   });
 });
+
+/**
+ * Cook Out P2 · Part A — hash-vs-scroll-restoration ownership.
+ *
+ * Reproduced live (not this interceptor's doing — a same-page hash click is
+ * explicitly left to the browser above): a one-shot in-page anchor jump
+ * (Skip intro → #hero, a sidebar section-nav link, …) leaves its hash sitting
+ * in that history entry's URL. The framework re-applies "scroll to the URL's
+ * hash" on every route commit, including a Back — so returning to that entry
+ * later re-jumps to the anchor instead of restoring the real prior scroll
+ * depth. These tests cover the actual, testable contract: once a hash's
+ * one-time job is done, `ViewTransitions` drops it from the CURRENT entry via
+ * `replaceState` (same index, `history.state` passed through untouched) so a
+ * later Back finds a plain URL and native `scrollRestoration: 'auto'` owns
+ * the position again.
+ */
+describe('ViewTransitions hash-restoration ownership (Cook Out P2 · Part A)', () => {
+  afterEach(() => {
+    window.history.pushState({}, '', '/');
+  });
+
+  it('strips a hash already present at mount, preserving history.state', async () => {
+    cleanup(); // drop the beforeEach instance — this test controls the mount
+    const state = { fromRouter: true };
+    window.history.pushState(state, '', '/#hero');
+    const replaceSpy = vi.spyOn(window.history, 'replaceState');
+
+    render(<ViewTransitions />);
+    await Promise.resolve(); // flush the queueMicrotask in stripHash
+    await Promise.resolve();
+
+    expect(replaceSpy).toHaveBeenCalledWith(state, '', '/');
+    expect(window.location.hash).toBe('');
+    replaceSpy.mockRestore();
+  });
+
+  it('strips the hash on every subsequent hashchange (a sidebar section-nav jump)', async () => {
+    // beforeEach already mounted one instance at '/' — this is the live case:
+    // the hash appears WHILE mounted, same as clicking an in-page anchor.
+    const state = { fromRouter: 2 };
+    window.history.pushState(state, '', '/about/#work');
+    const replaceSpy = vi.spyOn(window.history, 'replaceState');
+
+    window.dispatchEvent(new Event('hashchange'));
+    await Promise.resolve();
+    await Promise.resolve();
+
+    expect(replaceSpy).toHaveBeenCalledWith(state, '', '/about/');
+    replaceSpy.mockRestore();
+  });
+
+  it('does nothing when there is no hash to strip (no-op guard)', async () => {
+    const replaceSpy = vi.spyOn(window.history, 'replaceState');
+
+    window.dispatchEvent(new Event('hashchange')); // fires with no hash present
+    await Promise.resolve();
+    await Promise.resolve();
+
+    expect(replaceSpy).not.toHaveBeenCalled();
+    replaceSpy.mockRestore();
+  });
+
+  it('leaves an already-clean URL alone after ordinary route navigation (no phantom strips)', async () => {
+    const replaceSpy = vi.spyOn(window.history, 'replaceState');
+
+    clickAnchor({ href: '/work/access-map/' });
+    await Promise.resolve();
+    await Promise.resolve();
+
+    expect(replaceSpy).not.toHaveBeenCalled();
+    replaceSpy.mockRestore();
+  });
+});

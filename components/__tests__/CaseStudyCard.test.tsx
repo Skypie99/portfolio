@@ -43,4 +43,33 @@ describe('CaseStudyCard', () => {
     render(<CaseStudyCard {...BASE_PROPS} />);
     expect(screen.getByRole('heading', { level: 3, name: /Flagstone/ })).toBeInTheDocument();
   });
+
+  it('uses "View project" as the locked recruiter-facing doorway vocabulary (Cook Out P2 · Part B)', () => {
+    render(<CaseStudyCard {...BASE_PROPS} />);
+    expect(
+      screen.getByRole('link', { name: /view project: flagstone case study/i }),
+    ).toBeInTheDocument();
+  });
+
+  it('gives the card exactly one keyboard destination for the case study (no duplicate consecutive stops)', () => {
+    render(
+      <CaseStudyCard
+        {...BASE_PROPS}
+        links={[
+          { label: 'Live demo', href: 'https://flagstone.skypistudio.com', type: 'demo' },
+          { label: 'GitHub', href: 'https://github.com/Skypie99/AccessMap', type: 'github' },
+        ]}
+      />,
+    );
+    // The title IS the one real keyboard stop for the case study…
+    const titleLink = screen.getByRole('link', { name: /flagstone: read the case study/i });
+    expect(titleLink).not.toHaveAttribute('tabindex');
+    // …the visible "View project" quick link is SR-visible but keyboard-skipped —
+    // one stop per card, not two, for the identical destination.
+    const viewProject = screen.getByRole('link', { name: /view project: flagstone case study/i });
+    expect(viewProject).toHaveAttribute('tabindex', '-1');
+    // Demo and GitHub each stay their own, separately actionable stop.
+    expect(screen.getByRole('link', { name: /open live demo for flagstone/i })).not.toHaveAttribute('tabindex');
+    expect(screen.getByRole('link', { name: /view flagstone source on github/i })).not.toHaveAttribute('tabindex');
+  });
 });
