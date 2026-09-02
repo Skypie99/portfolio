@@ -119,12 +119,12 @@
       "alt": "The Claude Corp front door, with the editorial hero over the agent pipeline diagram and fifteen roles feeding one governed main branch.",
       "avif": "/showcase/claude-corp/hero-pipeline.light.desktop.avif",
       "webp": "/showcase/claude-corp/hero-pipeline.light.desktop.webp",
-      "lqip": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAAAwAwCdASoUAA0APxFysFCsJqSisAgBgCIJZwDE2C0HlrAAAP7ubh/WwQtuQ4o8OlLUyjaVXCpWQAAA",
+      "lqip": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAAAQAwCdASoUAA0APxFysFAsJqSisAgBgCIJZwDE2C0HagAA/u45mPn6fUHQYlvM2zaggVgabO1VJggA",
       "dark": {
         "src": "/showcase/claude-corp/hero-pipeline.dark.desktop.webp",
         "avif": "/showcase/claude-corp/hero-pipeline.dark.desktop.avif",
         "webp": "/showcase/claude-corp/hero-pipeline.dark.desktop.webp",
-        "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAABQAwCdASoUAA0APxFysVCsJqSisAgBgCIJZwAAW+i3kccLgAD+6Mmt8ToMv9QYHbQDxjN63DdYAA=="
+        "lqip": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAABQAwCdASoUAA0APxFysFCsJqSisAgBgCIJZwAAW+k57sRFYAD+6Mmt8PPhlR7OFdNQvnoiEAA="
       }
     },
     "cardImage": {
@@ -133,12 +133,12 @@
       "focal": "50% 12%",
       "avif": "/showcase/claude-corp/hero-pipeline.light.desktop.avif",
       "webp": "/showcase/claude-corp/hero-pipeline.light.desktop.webp",
-      "lqip": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAAAwAwCdASoUAA0APxFysFCsJqSisAgBgCIJZwDE2C0HlrAAAP7ubh/WwQtuQ4o8OlLUyjaVXCpWQAAA",
+      "lqip": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAAAQAwCdASoUAA0APxFysFAsJqSisAgBgCIJZwDE2C0HagAA/u45mPn6fUHQYlvM2zaggVgabO1VJggA",
       "dark": {
         "src": "/showcase/claude-corp/hero-pipeline.dark.desktop.webp",
         "avif": "/showcase/claude-corp/hero-pipeline.dark.desktop.avif",
         "webp": "/showcase/claude-corp/hero-pipeline.dark.desktop.webp",
-        "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAABQAwCdASoUAA0APxFysVCsJqSisAgBgCIJZwAAW+i3kccLgAD+6Mmt8ToMv9QYHbQDxjN63DdYAA=="
+        "lqip": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAABQAwCdASoUAA0APxFysFCsJqSisAgBgCIJZwAAW+k57sRFYAD+6Mmt8PPhlR7OFdNQvnoiEAA="
       }
     },
     "shots": [
@@ -296,12 +296,12 @@
       "alt": "The Prompt Library home, with a search bar and category chips over a grid of prompt cards and the featured card leading.",
       "avif": "/showcase/prompt-library/home.light.desktop.avif",
       "webp": "/showcase/prompt-library/home.light.desktop.webp",
-      "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZQC/OC0kAAD+70NE0Whk0FQFcAAA",
+      "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysVAsJqSisAgBgCIJZQC/OC0kAAD+70NBToZNBUBXAAAA",
       "dark": {
         "src": "/showcase/prompt-library/home.dark.desktop.webp",
         "avif": "/showcase/prompt-library/home.dark.desktop.avif",
         "webp": "/showcase/prompt-library/home.dark.desktop.webp",
-        "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwDG9DBsAAD+75zzZSCePfEHqAAA"
+        "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysVAsJqSisAgBgCIJZwDImDBsAAD+754pkdIK2oZsI4AA"
       }
     },
     "cardImage": {
@@ -310,12 +310,12 @@
       "focal": "50% 18%",
       "avif": "/showcase/prompt-library/home.light.desktop.avif",
       "webp": "/showcase/prompt-library/home.light.desktop.webp",
-      "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZQC/OC0kAAD+70NE0Whk0FQFcAAA",
+      "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysVAsJqSisAgBgCIJZQC/OC0kAAD+70NBToZNBUBXAAAA",
       "dark": {
         "src": "/showcase/prompt-library/home.dark.desktop.webp",
         "avif": "/showcase/prompt-library/home.dark.desktop.avif",
         "webp": "/showcase/prompt-library/home.dark.desktop.webp",
-        "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwDG9DBsAAD+75zzZSCePfEHqAAA"
+        "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysVAsJqSisAgBgCIJZwDImDBsAAD+754pkdIK2oZsI4AA"
       }
     },
     "shots": [
@@ -376,7 +376,7 @@
     },
     "heroShot": {
       "src": "/showcase/ghost-code/title.light.desktop.webp",
-      "alt": "Ghost Code’s title screen, with the arcade cabinet framing the Phantom mascot and Start and Settings glowing below the wordmark.",
+      "alt": "Ghost Code’s title screen: the Phantom mark beside the wordmark, three mastery counters, a one-line how to play, and Press Start with a theme control below.",
       "avif": "/showcase/ghost-code/title.light.desktop.avif",
       "webp": "/showcase/ghost-code/title.light.desktop.webp",
       "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJaQDG9DBsAAD+70aSc5OMpoAAAA==",
@@ -389,7 +389,7 @@
     },
     "cardImage": {
       "src": "/showcase/ghost-code/board.light.desktop.webp",
-      "alt": "A Ghost Code round mid-chase, with the Phantom in the maze and the command prompt waiting below.",
+      "alt": "A Ghost Code round in play, with the Phantom at the centre of four command tokens and the prompt above.",
       "focal": "50% 40%",
       "avif": "/showcase/ghost-code/board.light.desktop.avif",
       "webp": "/showcase/ghost-code/board.light.desktop.webp",
@@ -404,8 +404,8 @@
     "shots": [
       {
         "src": "/showcase/ghost-code/board.light.desktop.webp",
-        "alt": "A Ghost Code round in play, with the maze board mid-chase, the code prompt beneath, and score and streak counters keeping pace.",
-        "caption": "A seeded round in motion: same maze, both themes.",
+        "alt": "A Ghost Code round in play, with the Phantom at the centre of four command tokens, the prompt above, and score and streak counters keeping pace.",
+        "caption": "A seeded round in motion: the same board, both themes.",
         "avif": "/showcase/ghost-code/board.light.desktop.avif",
         "webp": "/showcase/ghost-code/board.light.desktop.webp",
         "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADQAgCdASoUAA0APxFysVCsJqSisAgBgCIJaQAAe/QAAP7vr4rPc0ojUCXgAA==",
@@ -413,7 +413,7 @@
           "mp4": "/showcase/ghost-code/clips/round.light.phone.mp4",
           "webm": "/showcase/ghost-code/clips/round.light.phone.webm",
           "poster": "/showcase/ghost-code/clips/round.light.phone-poster.avif",
-          "alt": "A Ghost Code round in motion, with the Phantom on patrol while the code prompt waits below."
+          "alt": "A Ghost Code round in motion, with the Phantom moving between four command tokens while the prompt reads above."
         },
         "dark": {
           "src": "/showcase/ghost-code/board.dark.desktop.webp",
@@ -446,7 +446,7 @@
       "learning"
     ],
     "featured": false,
-    "body": "## The problem\n\nCommand-line fluency does not come from reading about commands. It comes from running them, under a little pressure, until your hands know them. I wanted that fluency in the terminal, in Git, and in Claude Code, and studying a list was not getting me there. So instead of only drilling commands, I built the thing I would practise with: a small game I would actually open again. It was my first real build, and it was meant to be.\n\n## The approach\n\nA prompt appears, four command tokens float in a maze, and you steer the Phantom to the right one. Arcade mode keeps score and takes a spirit for every miss. Learn mode drops the pressure and escalates instead: a retry, then a hint, then the answer. A card counts as mastered after three correct answers, which is a plain local counter rather than anything adaptive, and cards you have not mastered come up more often.\n\nThe runtime is one HTML file and a deck file. No framework, no build step, no dependencies, no server. That rule meant every feature cost exactly what it weighed, and it kept the whole game readable in one sitting, which is what a practice project needed to be. The reason to build it, the scope of the deck, and that rule were mine; most of the implementation, the deck validator, and the accessibility audits were the agents', and I played every build.\n\n## What shipped\n\nFifty-six cards across Claude Code, the macOS terminal, and Git (20, 20, and 16), with a decoy set for each. Keyboard-first play: number keys for the tokens, arrows to move focus, and single keys for the 50/50 lifeline, category, mode, theme, pause, and help. Touch and swipe on phones. Light, dark, and system themes with no flash on load. Progress persists in the browser under one storage key, and nothing is sent anywhere. A GitHub Actions check validates the deck on every push, so a duplicate ID or a decoy that is also the answer cannot land. Built against WCAG 2.2 AA: a live region announces state to screen readers, reduced motion is honoured from the system setting or an in-app toggle, and high-contrast mode is supported.\n\n## Reflection\n\n> The best constraint I gave myself was \"zero dependencies.\"\n\nIt kept a first project the right size, and it set the pattern the later ones follow: ship something small and real, then widen it deliberately.",
+    "body": "## The problem\n\nCommand-line fluency does not come from reading about commands. It comes from running them, under a little pressure, until your hands know them. I wanted that fluency in the terminal, in Git, and in Claude Code, and studying a list was not getting me there. So instead of only drilling commands, I built the thing I would practise with: a small game I would actually open again. It was my first real build, and it was meant to be.\n\n## The approach\n\nA prompt appears, four command tokens surround the Phantom, and you steer it to the right one. Arcade mode keeps score and takes a spirit for every miss. Learn mode drops the pressure and escalates instead: a hint with the first retry, a second try, then the answer. A card counts as mastered after three correct answers, which is a plain local counter rather than anything adaptive, and cards you have not mastered come up more often.\n\nThe runtime is one HTML file and a deck file. No framework, no build step, no dependencies, no server. That rule meant every feature cost exactly what it weighed, and it kept the whole game readable in one sitting, which is what a practice project needed to be. The reason to build it, the scope of the deck, and that rule were mine; most of the implementation, the deck validator, and the accessibility audits were the agents', and I played every build.\n\n## What shipped\n\nFifty-six cards across Claude Code, the macOS terminal, and Git (20, 20, and 16), with a decoy set for each. Keyboard-first play: number keys for the tokens, arrows to move focus, and single keys for the 50/50 lifeline, category, mode, theme, pause, and help. Touch and swipe on phones. Light, dark, and system themes with no flash on load. Progress persists in the browser under one storage key and is never sent anywhere. A GitHub Actions check validates the deck on every push, so a duplicate ID or a decoy that is also the answer cannot land. Built against WCAG 2.2 AA: a live region announces state to screen readers, reduced motion is honoured from the system setting or an in-app toggle, and high-contrast mode is supported.\n\n## Reflection\n\n> The best constraint I gave myself was \"zero dependencies.\"\n\nIt kept a first project the right size, and it set the pattern the later ones follow: ship something small and real, then widen it deliberately.",
     "ogTheme": "dark",
     "ogCard": "/showcase/ghost-code/og-card.jpg"
   }

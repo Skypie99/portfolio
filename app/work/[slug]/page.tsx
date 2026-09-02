@@ -405,16 +405,20 @@ export default async function WorkDetailPage({
 
   return (
     <>
-      {themedPreloads && <ThemedHeroPreload links={themedPreloads} />}
-      {heroPreload && (
-        <link
-          rel="preload"
-          as={heroPreload.as}
-          href={heroPreload.href}
-          type={heroPreload.type}
-          fetchPriority={heroPreload.fetchPriority}
-        />
-      )}
+      {/* Cook Out P8 (final acceptance): this inline JSON-LD script is
+          deliberately the segment's FIRST rendered node. Next's post-navigation
+          scroll handler (layout-router handlePotentialScroll) starts at the
+          segment's first DOM node and walks nextElementSibling until it finds a
+          visible box before scrolling to top. React 19 hoists the preload
+          <link> below into <head>, so with the link first the walk ran through
+          head-only siblings, hit null, and gave up: every arrival at
+          /work/flagstone/ from a scrolled page kept the old offset (reproduced
+          at 375, 768 and 1440, both themes, reduced motion, no view
+          transitions). The four themed routes never showed it because their
+          ThemedHeroPreload is a body-level <script>. A body script is skipped
+          as a zero-rect node and its next sibling is the first section, so the
+          handler scrolls. Order-only change; the head output is identical.
+          Guarded by lib/__tests__/case-study-arrival-top.test.ts. */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -432,6 +436,16 @@ export default async function WorkDetailPage({
           }),
         }}
       />
+      {themedPreloads && <ThemedHeroPreload links={themedPreloads} />}
+      {heroPreload && (
+        <link
+          rel="preload"
+          as={heroPreload.as}
+          href={heroPreload.href}
+          type={heroPreload.type}
+          fetchPriority={heroPreload.fetchPriority}
+        />
+      )}
       {/* Main content — breadcrumb leads (404 model), then hero + details.
           Cycle 19 breadcrumb 'The Work / <Title>': only 'The Work' links; the
           current slug is plain text (aria-current). Relocated INTO the content
