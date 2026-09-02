@@ -3686,6 +3686,29 @@ html.dark .ts-float {
     display: none !important;
   }
 
+  /* Cook Out P8 (final acceptance): paper is a rest frame, not a scroll. The
+     scroll-reveal choreography is armed under html.js and released only by an
+     IntersectionObserver, which print layout never fires, so a page printed
+     or saved to PDF before being scrolled printed its reveals at opacity 0
+     (measured: / 25 of 25 blocks blank, /about/ 11 of 11, /work/flagstone/
+     30 of 31). Same override the reduced-motion block above carries: every
+     reveal variant rests visible, flat and unfiltered on paper. Guarded by
+     lib/__tests__/print-reveal-visibility.test.ts. */
+  .reveal,
+  html.js .reveal,
+  html.js .reveal-scene,
+  html.js .reveal-depth,
+  html.js .reveal-carve {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+  .cinematic-content-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
   /* Chrome that has no place on paper. Targeted by landmark / house class so a
      component refactor that renames an inner node still prints clean. The
      cinematic intro (.cdesert-stage) and its scroll cue would otherwise print as
