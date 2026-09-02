@@ -90,10 +90,10 @@
   "captures": [
     {
       "project": "claude-corp",
-      "projectSha": "7e961a3357a0db6bdb652fa3127be0b398dec95f",
+      "projectSha": "9612389bdfdb6cab1613f266c207ebfb8eb00c70",
       "projectBranch": "main",
       "scene": "hero-pipeline",
-      "capturedAt": "2026-07-31",
+      "capturedAt": "2026-09-02",
       "theme": "dark",
       "viewport": "desktop",
       "route": "/",
@@ -103,23 +103,23 @@
       "files": {
         "master": {
           "path": "masters/claude-corp/hero-pipeline.dark.desktop.png",
-          "sha256": "868b42aaaeae7abafe1b5917455c3b2e5eb7bd7dfbdeb0fc93c01bad7e384575",
-          "bytes": 2591058,
+          "sha256": "a206e3be4a15283bce20214f3ef5aff30d0b8ee60f1a57e03571522c255c4288",
+          "bytes": 2666061,
           "width": 2880,
           "height": 1800
         },
         "shipped": [
           {
             "path": "/showcase/claude-corp/hero-pipeline.dark.desktop.avif",
-            "bytes": 22850,
+            "bytes": 24566,
             "quality": 52
           },
           {
             "path": "/showcase/claude-corp/hero-pipeline.dark.desktop.webp",
-            "bytes": 36950
+            "bytes": 40288
           }
         ],
-        "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAABQAwCdASoUAA0APxFysVCsJqSisAgBgCIJZwAAW+i3kccLgAD+6Mmt8ToMv9QYHbQDxjN63DdYAA=="
+        "lqip": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAABQAwCdASoUAA0APxFysFCsJqSisAgBgCIJZwAAW+k57sRFYAD+6Mmt8PPhlR7OFdNQvnoiEAA="
       }
     },
     {
@@ -158,10 +158,10 @@
     },
     {
       "project": "claude-corp",
-      "projectSha": "7e961a3357a0db6bdb652fa3127be0b398dec95f",
+      "projectSha": "9612389bdfdb6cab1613f266c207ebfb8eb00c70",
       "projectBranch": "main",
       "scene": "hero-pipeline",
-      "capturedAt": "2026-07-31",
+      "capturedAt": "2026-09-02",
       "theme": "light",
       "viewport": "desktop",
       "route": "/",
@@ -171,23 +171,23 @@
       "files": {
         "master": {
           "path": "masters/claude-corp/hero-pipeline.light.desktop.png",
-          "sha256": "96d9c74cea74cb59b1c34941ab8414b92b128f46810b61f7168d3a498d73d7fd",
-          "bytes": 1533155,
+          "sha256": "5ca83476b2b635cb6fdac24559498db135487dd282547d6ee23315ea527f7eaf",
+          "bytes": 1566994,
           "width": 2880,
           "height": 1800
         },
         "shipped": [
           {
             "path": "/showcase/claude-corp/hero-pipeline.light.desktop.avif",
-            "bytes": 22510,
+            "bytes": 24123,
             "quality": 52
           },
           {
             "path": "/showcase/claude-corp/hero-pipeline.light.desktop.webp",
-            "bytes": 36178
+            "bytes": 39256
           }
         ],
-        "lqip": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAAAwAwCdASoUAA0APxFysFCsJqSisAgBgCIJZwDE2C0HlrAAAP7ubh/WwQtuQ4o8OlLUyjaVXCpWQAAA"
+        "lqip": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAAAQAwCdASoUAA0APxFysFAsJqSisAgBgCIJZwDE2C0HagAA/u45mPn6fUHQYlvM2zaggVgabO1VJggA"
       }
     },
     {
@@ -2348,10 +2348,10 @@
     },
     {
       "project": "prompt-library",
-      "projectSha": "052b37a8aa0b6aea09efb636bf9d26ad7d63ef88",
+      "projectSha": "78b961ec6f3dd05c5ffc8dae4c948a76eb1ab8c4",
       "projectBranch": "main",
       "scene": "home",
-      "capturedAt": "2026-07-31",
+      "capturedAt": "2026-09-02",
       "theme": "dark",
       "viewport": "desktop",
       "route": "/",
@@ -2361,23 +2361,23 @@
       "files": {
         "master": {
           "path": "masters/prompt-library/home.dark.desktop.png",
-          "sha256": "983029bbf03aeff271ea06d005ae31e1137a046de27372ea5f2e37ce122a6c57",
-          "bytes": 276865,
+          "sha256": "e25795d3327122ef52dab5930705fed4992ccafb00da9d00e2c99b10e87c0158",
+          "bytes": 279437,
           "width": 2880,
           "height": 1800
         },
         "shipped": [
           {
             "path": "/showcase/prompt-library/home.dark.desktop.avif",
-            "bytes": 24637,
+            "bytes": 25955,
             "quality": 52
           },
           {
             "path": "/showcase/prompt-library/home.dark.desktop.webp",
-            "bytes": 36790
+            "bytes": 38272
           }
         ],
-        "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwDG9DBsAAD+75zzZSCePfEHqAAA"
+        "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysVAsJqSisAgBgCIJZwDImDBsAAD+754pkdIK2oZsI4AA"
       }
     },
     {
@@ -2416,10 +2416,10 @@
     },
     {
       "project": "prompt-library",
-      "projectSha": "052b37a8aa0b6aea09efb636bf9d26ad7d63ef88",
+      "projectSha": "78b961ec6f3dd05c5ffc8dae4c948a76eb1ab8c4",
       "projectBranch": "main",
       "scene": "home",
-      "capturedAt": "2026-07-31",
+      "capturedAt": "2026-09-02",
       "theme": "light",
       "viewport": "desktop",
       "route": "/",
@@ -2429,23 +2429,23 @@
       "files": {
         "master": {
           "path": "masters/prompt-library/home.light.desktop.png",
-          "sha256": "c707d05e3a031ee0fe7f700de3a49f731abe7595b7276322959d855184ba273f",
-          "bytes": 432397,
+          "sha256": "b957238d964a0ba957beca6815c7504f5ba6a48619cc2194afc479d0aa7d3609",
+          "bytes": 439040,
           "width": 2880,
           "height": 1800
         },
         "shipped": [
           {
             "path": "/showcase/prompt-library/home.light.desktop.avif",
-            "bytes": 24138,
+            "bytes": 24303,
             "quality": 52
           },
           {
             "path": "/showcase/prompt-library/home.light.desktop.webp",
-            "bytes": 37710
+            "bytes": 39208
           }
         ],
-        "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZQC/OC0kAAD+70NE0Whk0FQFcAAA"
+        "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysVAsJqSisAgBgCIJZQC/OC0kAAD+70NBToZNBUBXAAAA"
       }
     },
     {
