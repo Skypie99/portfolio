@@ -3569,6 +3569,18 @@ html.dark .runway-identity--page .runway-identity-chip {
 .ts-layer--dark { display: none; }
 html.dark .ts-layer--dark { display: block; }
 html.dark .ts-layer--light { display: none; }
+/* Cook Out P2 · Part C — the matte carve-out. The three rules above are the
+   DUAL-THEME contract: two real layers, one hidden. A MONO/matte capture
+   (.ts-matte, below — ThemedMotion and ThemedShowcase's single-variant path)
+   has only ONE layer, always rendered `theme="light"` because it's the sole
+   source, never a light/dark pair — it is themeless media on a themed site,
+   not a light-mode asset. `html.dark .ts-layer--light` above doesn't know
+   that distinction and was hiding this project's only layer in dark mode
+   (blank matte + live play/pause, no frame — the reproduced defect). Scoped
+   under `.ts-matte`, MORE specific than the line it corrects, no `!important`
+   needed. No `.ts-matte .ts-layer--dark` rule: matte never renders a dark
+   variant, so there is no such node to gate. */
+html.dark .ts-matte .ts-layer--light { display: block; }
 
 /* The exhibit mat for MONO-theme projects: an honest presentation of a
    single-theme capture, built ENTIRELY from flipping site tokens so it sits

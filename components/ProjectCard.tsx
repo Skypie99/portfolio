@@ -169,6 +169,12 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
                    visible label ("View project") so speech-input users can act
                    on what they see. Extra context follows the visible words. */
                 aria-label={`View project: ${d.title} case study`}
+                /* Cook Out P2 · Part B: the title link above already spends one
+                   tab stop on this exact href — CaseStudyCard's C-55 fix,
+                   applied here too. tabIndex={-1} drops the redundant SECOND
+                   keyboard stop while keeping this a real, clickable,
+                   SR-rotor-visible link (NOT aria-hidden, NOT a whole-card link). */
+                tabIndex={-1}
                 className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:-top-[21px] after:bottom-0 after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-base ease-gh-glide hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
               >
                 View project <span aria-hidden="true">→</span>

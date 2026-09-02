@@ -216,7 +216,7 @@ export default function AboutPage() {
 
           <Reveal variant="depth" className="max-w-measure-lead flex flex-col gap-8">
             <p className="font-sans font-light text-body text-ink-muted text-pretty">
-              WCAG 2.2 AA on every interface. Not because it is required.
+              I build and test against WCAG 2.2 AA on every interface. Not because it is required.
               Because it is correct. Flagstone exists because disabled people
               deserve navigation tools designed for them, not adapted for them.
             </p>
@@ -270,9 +270,9 @@ export default function AboutPage() {
               works.
             </p>
             <p className="font-sans font-light text-body text-ink-muted text-pretty">
-              Right now: TypeScript, React Native, multi-agent systems that
-              stay safe unsupervised. Each project teaches something the last
-              one did not.
+              Right now: TypeScript, React Native, and multi-agent systems that
+              stay inside their rules when I am not watching. Each project
+              teaches something the last one did not.
             </p>
             <p className="font-sans font-light text-body text-ink-muted text-pretty">
               I am looking for collaborators and clients who read the
@@ -328,7 +328,10 @@ export default function AboutPage() {
                         {d.summary}
                       </p>
                       <span className="font-mono text-meta tracking-label uppercase text-accent-text mt-2 inline-flex items-center gap-1 transition-transform duration-fast ease-out group-hover:translate-x-1 group-focus-visible:translate-x-1">
-                        Continue
+                        {/* Cook Out P2 · Part B: "View project" is the locked
+                            recruiter-facing internal-case-study vocabulary
+                            (was "Continue"). */}
+                        View project
                         <span aria-hidden="true">{'→'}</span>
                       </span>
                     </Link>

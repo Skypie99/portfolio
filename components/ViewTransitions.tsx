@@ -16,6 +16,40 @@ type ViewTransitionLike = {
 /** Intentionally ignore an expected (post-navigation) transition rejection. */
 const noop = (): void => {};
 
+/**
+ * Cook Out P2 · Part A — the hash-vs-scroll-restoration ownership fix.
+ *
+ * Root cause (reproduced, not the VT interceptor): a one-shot in-page anchor
+ * (Skip intro → #hero, a sidebar section-nav jump, …) is a real fragment
+ * navigation — the browser jumps to it and leaves `#hero` sitting in that
+ * history entry's URL. `ViewTransitions` never even sees these clicks (the
+ * click handler below explicitly returns on same-path + hash — native
+ * fragment scroll, not a page transition), so nothing here was ever fighting
+ * it. The actual collision is with Back: `history.scrollRestoration` is
+ * 'auto', but the framework re-runs its own "scroll to the URL's hash"
+ * handling on every route commit, including a popstate — so returning to an
+ * entry that still carries a stale hash re-jumps to that anchor instead of
+ * restoring the real prior offset. Reproduced: Home, skip intro, scroll deep,
+ * open a project, Back → landed at the `#hero` band, not the departure depth.
+ *
+ * Fix: once a hash's one-time job (the browser's native jump, already done
+ * by the time this runs) is served, drop it from the CURRENT entry via
+ * `replaceState` — same index, no new entry — so a later Back finds a plain
+ * URL and native scroll-restoration owns the position again. `hashchange`
+ * fires the instant the browser has already updated `location.hash` (and
+ * performed the jump), so there is no delay to tune — this is ownership, not
+ * a timing guess. `history.state` is passed through untouched: it's the
+ * framework's own router state, not ours to clobber.
+ */
+function stripHash(): void {
+  if (!window.location.hash) return;
+  queueMicrotask(() => {
+    if (!window.location.hash) return;
+    const { pathname, search } = window.location;
+    window.history.replaceState(window.history.state, '', pathname + search);
+  });
+}
+
 /** Backstop for the update-callback resolver: a stuck navigation must never
  *  ride the UA's ~4s DOM-update timeout (frozen page, hard cut). Well under
  *  4s, generous enough for an uncached static-route fetch; firing early
@@ -94,6 +128,17 @@ export function ViewTransitions() {
     // on the following commit). First mount is a no-op (no departure recorded).
     if (pathname != null) applyDoorAjar(pathname);
   }, [pathname, settlePending]);
+
+  // The hash strip (Cook Out P2 · Part A): catches every subsequent in-page
+  // anchor jump, plus whatever hash the document happened to load or arrive
+  // with (mount-time call) — so no path back into a stale-hash entry survives
+  // this component's lifetime. Mount-once: a hash click doesn't change
+  // `pathname`, so this cannot live on the route-commit effect above.
+  useEffect(() => {
+    stripHash();
+    window.addEventListener('hashchange', stripHash);
+    return () => window.removeEventListener('hashchange', stripHash);
+  }, []);
 
   useEffect(() => {
     function onClick(e: MouseEvent) {

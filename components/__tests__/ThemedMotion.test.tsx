@@ -134,4 +134,28 @@ describe('ThemedMotion', () => {
     expect(container.querySelector('.ts-matte-well')).toBeTruthy();
     expect(container.querySelectorAll('video')).toHaveLength(1);
   });
+
+  it('matte mode\'s video stays visible in dark theme (Cook Out P2 · Part C regression)', () => {
+    // A DOM test proving the node merely exists is insufficient — that is
+    // exactly how the reproduced defect escaped (a real qa-reports receipt).
+    // The matte video is tagged `.ts-layer--light` (the single-source, no-twin
+    // convention) — assert the SCOPED override this fix adds in globals.css
+    // (`html.dark .ts-matte .ts-layer--light { display: block; }`) actually
+    // targets this exact class combination, not merely that a video exists.
+    act(() => {
+      document.documentElement.classList.add('dark');
+    });
+    try {
+      const { container } = render(
+        <ThemedMotion light={clip.light} matte="dark-mono" alt={clip.alt} fit="cover" />,
+      );
+      const matte = container.querySelector('.ts-matte');
+      const layer = matte?.querySelector('.ts-layer--light');
+      expect(layer, 'matte video must carry .ts-layer--light for the scoped CSS override to reach it').toBeTruthy();
+      expect(matte?.querySelector('.ts-layer--dark')).toBeNull(); // matte never renders a dark twin
+      expect(layer?.querySelector('video')).toBeTruthy();
+    } finally {
+      document.documentElement.classList.remove('dark');
+    }
+  });
 });
