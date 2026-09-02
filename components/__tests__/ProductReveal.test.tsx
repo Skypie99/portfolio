@@ -289,3 +289,124 @@ describe('ProductReveal — proof pipeline (P2-A)', () => {
     expect(container.innerHTML).not.toContain('SHOULDNOTAPPEAR');
   });
 });
+
+/**
+ * Cook Out · Dark Shot Forwarding Repair — the routing invariant behind the
+ * `dark: shot.dark` forwarding fix in app/work/[slug]/page.tsx. The call-site
+ * guard (lib/__tests__/shot-dark-forwarding.test.ts) proves the field reaches
+ * this component; this block proves what the component DOES with it — a media
+ * object carrying `dark` must enter the dual-theme ThemedShowcase/ThemedMotion
+ * path with one layer per theme — and that the two paths the fix must not
+ * disturb (single-source legacy media, Prompt 2's matte) are unchanged.
+ */
+describe('ProductReveal — a dark twin routes into the dual-theme path (Cook Out dark-shot forwarding)', () => {
+  const still = {
+    src: '/showcase/dashboard/think-tank.light.desktop.webp',
+    avif: '/showcase/dashboard/think-tank.light.desktop.avif',
+    webp: '/showcase/dashboard/think-tank.light.desktop.webp',
+    lqip: 'data:image/webp;base64,LIGHTLQIP',
+    alt: 'The Think Tank triage board',
+  };
+  const darkStill = {
+    src: '/showcase/dashboard/think-tank.dark.desktop.webp',
+    avif: '/showcase/dashboard/think-tank.dark.desktop.avif',
+    webp: '/showcase/dashboard/think-tank.dark.desktop.webp',
+    lqip: 'data:image/webp;base64,DARKLQIP',
+  };
+  const clip = {
+    mp4: '/showcase/ghost-code/clips/round.light.phone.mp4',
+    webm: '/showcase/ghost-code/clips/round.light.phone.webm',
+    poster: '/showcase/ghost-code/clips/round.light.phone-poster.avif',
+    alt: 'A Ghost Code round in motion',
+  };
+  const darkClip = {
+    mp4: '/showcase/ghost-code/clips/round.dark.phone.mp4',
+    webm: '/showcase/ghost-code/clips/round.dark.phone.webm',
+    poster: '/showcase/ghost-code/clips/round.dark.phone-poster.avif',
+  };
+
+  it('a still with a dark twin renders ThemedShowcase in themed mode: one layer per theme, each sourcing its own variant', () => {
+    const { container } = render(
+      <ProductReveal slug="dashboard" title="Dashboard" context="shot" media={{ ...still, dark: darkStill }} />,
+    );
+    expect(container.querySelector('[data-themed-showcase]')).toHaveAttribute('data-themed-showcase', 'themed');
+    expect(container.querySelector('[data-themed-motion]')).toBeNull();
+    const light = container.querySelector('.ts-layer--light');
+    const dark = container.querySelector('.ts-layer--dark');
+    expect(light?.querySelector('img')).toHaveAttribute('src', still.src);
+    expect(dark?.querySelector('img')).toHaveAttribute('src', darkStill.src);
+    expect(dark?.querySelector('source[type="image/avif"]')).toHaveAttribute('srcset', darkStill.avif);
+    expect(dark?.innerHTML).toContain('DARKLQIP');
+    // Exactly the pair — and never the matte mat, which is for mono captures.
+    expect(container.querySelectorAll('img')).toHaveLength(2);
+    expect(container.querySelector('.ts-matte')).toBeNull();
+  });
+
+  it('a clip with a dark clip renders ThemedMotion in themed mode: the dark <video> sources the dark mp4/webm/poster', () => {
+    const { container } = render(
+      <ProductReveal
+        slug="ghost-code"
+        title="Ghost Code"
+        context="shot"
+        media={{ ...still, alt: clip.alt, video: clip, dark: { ...darkStill, video: darkClip } }}
+      />,
+    );
+    expect(container.querySelector('[data-themed-motion]')).toHaveAttribute('data-themed-motion', 'themed');
+    expect(container.querySelectorAll('video')).toHaveLength(2);
+    const dark = container.querySelector('.ts-layer--dark video');
+    expect(dark).toHaveAttribute('poster', darkClip.poster);
+    expect(dark?.querySelector('source[type="video/mp4"]')).toHaveAttribute('src', darkClip.mp4);
+    expect(dark?.querySelector('source[type="video/webm"]')).toHaveAttribute('src', darkClip.webm);
+    expect(container.querySelector('.ts-layer--light video source[type="video/mp4"]')).toHaveAttribute('src', clip.mp4);
+    // A video replaces the still entirely — in BOTH layers.
+    expect(container.querySelector('img')).toBeNull();
+  });
+
+  it('the dark layer is what the dark-theme CSS gate reveals — a pair always offers a --dark layer to switch TO', () => {
+    // globals.css: `.ts-layer--dark { display:none }` / `html.dark .ts-layer--dark
+    // { display:block }` / `html.dark .ts-layer--light { display:none }`. The
+    // reproduced defect was a lone `ts-layer--light` in dark theme (hidden, no
+    // twin) — a real pair must render exactly one light and one dark layer.
+    const { container } = render(
+      <ProductReveal slug="claude-corp" title="Claude Corp" context="shot" media={{ ...still, dark: darkStill }} />,
+    );
+    const layers = Array.from(container.querySelectorAll('.ts-layer'));
+    expect(layers.map((l) => l.classList.contains('ts-layer--dark'))).toEqual([false, true]);
+    expect(layers.map((l) => l.classList.contains('ts-layer--light'))).toEqual([true, false]);
+  });
+
+  it('single-source media (no dark, no matte) still takes the legacy path untouched: no themed host, no layers, one <img>', () => {
+    const { container } = render(
+      <ProductReveal slug="prompt-library" title="Prompt Library" context="shot" media={{ ...still }} />,
+    );
+    expect(container.querySelector('[data-themed-showcase]')).toBeNull();
+    expect(container.querySelector('[data-themed-motion]')).toBeNull();
+    expect(container.querySelector('.ts-layer')).toBeNull();
+    expect(container.querySelectorAll('img')).toHaveLength(1);
+    expect(container.querySelector('img')).toHaveAttribute('src', still.src);
+  });
+
+  it('a single-source clip still takes ThemedMotion single mode: one <video>, no dark layer', () => {
+    const { container } = render(
+      <ProductReveal slug="ghost-code" title="Ghost Code" context="shot" media={{ alt: clip.alt, video: clip }} />,
+    );
+    expect(container.querySelector('[data-themed-motion]')).toHaveAttribute('data-themed-motion', 'single');
+    expect(container.querySelectorAll('video')).toHaveLength(1);
+    expect(container.querySelector('.ts-layer--dark')).toBeNull();
+  });
+
+  it('matte media still takes the matte path (Prompt 2 · Part C): one layer on the exhibit mat, no dark layer', () => {
+    const { container } = render(
+      <ProductReveal
+        slug="flagstone"
+        title="Flagstone"
+        context="shot"
+        media={{ alt: clip.alt, video: clip, matte: 'dark-mono' }}
+      />,
+    );
+    expect(container.querySelector('[data-themed-motion]')).toHaveAttribute('data-themed-motion', 'matte');
+    expect(container.querySelector('.ts-matte .ts-matte-well video')).not.toBeNull();
+    expect(container.querySelectorAll('video')).toHaveLength(1);
+    expect(container.querySelector('.ts-layer--dark')).toBeNull();
+  });
+});

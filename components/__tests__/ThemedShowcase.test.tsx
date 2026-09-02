@@ -128,6 +128,26 @@ describe('ThemedShowcase', () => {
     expect((container.querySelector('[data-themed-showcase]') as HTMLElement).dataset.matte).toBe('dark-mono');
   });
 
+  it('matte mode\'s layer stays reachable by the dark-theme override (Cook Out P2 · Part C regression)', () => {
+    // Same shared contract as ThemedMotion's matte path (globals.css:
+    // `html.dark .ts-matte .ts-layer--light { display: block; }`) — assert
+    // the class combination that rule targets is actually present, not just
+    // that AN image exists (a DOM-presence-only test is how this escaped).
+    document.documentElement.classList.add('dark');
+    try {
+      const { container } = render(
+        <ThemedShowcase light={themed.light} matte="dark-mono" alt={themed.alt} fit="cover" />,
+      );
+      const matte = container.querySelector('.ts-matte');
+      const layer = matte?.querySelector('.ts-layer--light');
+      expect(layer, 'matte layer must carry .ts-layer--light for the scoped CSS override to reach it').toBeTruthy();
+      expect(matte?.querySelector('.ts-layer--dark')).toBeNull(); // matte never renders a dark twin
+      expect(layer?.querySelector('img')).toBeTruthy();
+    } finally {
+      document.documentElement.classList.remove('dark');
+    }
+  });
+
   it('single-variant passthrough renders one layer and installs no observer', () => {
     const { container } = render(<ThemedShowcase light={themed.light} alt={themed.alt} fit="contain" />);
     expect(container.querySelectorAll('img')).toHaveLength(1);

@@ -491,9 +491,12 @@ export default function HomePage() {
                   </p>
                   <Link
                     href={`/work/${flagship.id}/`}
+                    /* Cook Out P2 · Part B: "View project" is the locked
+                       recruiter-facing internal-case-study vocabulary
+                       (was "Read the case study"). */
                     className="link-draw inline-flex items-center gap-2 px-1 py-4 -mx-1 -my-4 font-mono text-label tracking-label uppercase text-accent-text"
                   >
-                    Read the case study
+                    View project
                     <span aria-hidden="true">{'→'}</span>
                   </Link>
                 </Reveal>

@@ -44,12 +44,13 @@ type CaseStudyCardProps = {
 /**
  * CaseStudyCard — a liquid-glass panel. Mirrors ProjectCard's language: a ghosted
  * serif numeral on the open top glass, then the title, a fine accent rule, a
- * one-line description, and a footer action row — "Read more →" plus LIVE ↗ /
- * GITHUB ↗ quick links (L3-04: the featured card's grammar, so a live demo is one
- * tap from the grid, not buried inside the case study). Ink tokens, AA in both
- * modes. A cursor-follow specular glides across the frosted surface (useSpotlight
- * → --mx/--my). The card is no longer one whole link — the title and each action
- * are their own focus targets (no nested anchors).
+ * one-line description, and a footer action row — "View project →" (Cook Out P2 ·
+ * Part B: the locked recruiter-facing doorway vocabulary, was "Read more →") plus
+ * LIVE ↗ / GITHUB ↗ quick links (L3-04: the featured card's grammar, so a live
+ * demo is one tap from the grid, not buried inside the case study). Ink tokens, AA
+ * in both modes. A cursor-follow specular glides across the frosted surface
+ * (useSpotlight → --mx/--my). The card is no longer one whole link — the title and
+ * each action are their own focus targets (no nested anchors).
  */
 export function CaseStudyCard({ title, category, description, href, status, verifiedDate, media, links, index = 0, wide = false, mediaSide = 'left', className }: CaseStudyCardProps) {
   const numeral = String(index + 1).padStart(2, '0');
@@ -163,8 +164,10 @@ export function CaseStudyCard({ title, category, description, href, status, veri
           <div className="mt-1 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-[rgb(var(--rgb-ink)/0.1)] pt-4">
             <Link
               href={href}
-              /* SC 2.5.3 Label in Name: the visible words lead the accessible name. */
-              aria-label={`Read more: ${title} case study`}
+              /* SC 2.5.3 Label in Name: the visible words lead the accessible name.
+                 Cook Out P2 · Part B: "View project" is the locked recruiter-facing
+                 internal-case-study vocabulary (was "Read more"). */
+              aria-label={`View project: ${title} case study`}
               /* C-55: the title link above already spends one tab stop on this exact
                  href — two stops per neighbour card is the only redundancy in the
                  journey. tabIndex={-1} drops the SECOND keyboard stop while keeping
@@ -173,7 +176,7 @@ export function CaseStudyCard({ title, category, description, href, status, veri
               tabIndex={-1}
               className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:-top-[21px] after:bottom-0 after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-base ease-gh-glide hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
             >
-              Read more <span aria-hidden="true">→</span>
+              View project <span aria-hidden="true">→</span>
             </Link>
             {(demoLink || githubLink) && (
               <span className="ml-auto flex items-center gap-x-6">
