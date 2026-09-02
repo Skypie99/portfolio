@@ -180,23 +180,23 @@ export const WIRING = [
     heroShot: {
       scene: 'title',
       viewport: 'desktop',
-      alt: 'Ghost Code’s title screen, with the arcade cabinet framing the Phantom mascot and Start and Settings glowing below the wordmark.',
+      alt: 'Ghost Code’s title screen: the Phantom mark beside the wordmark, three mastery counters, a one-line how to play, and Press Start with a theme control below.',
     },
     cardImage: {
       scene: 'board',
       viewport: 'desktop',
       focal: '50% 40%',
-      alt: 'A Ghost Code round mid-chase, with the Phantom in the maze and the command prompt waiting below.',
+      alt: 'A Ghost Code round in play, with the Phantom at the centre of four command tokens and the prompt above.',
     },
     shots: [
       {
         scene: 'board',
         viewport: 'desktop',
-        alt: 'A Ghost Code round in play, with the maze board mid-chase, the code prompt beneath, and score and streak counters keeping pace.',
-        caption: 'A seeded round in motion: same maze, both themes.',
+        alt: 'A Ghost Code round in play, with the Phantom at the centre of four command tokens, the prompt above, and score and streak counters keeping pace.',
+        caption: 'A seeded round in motion: the same board, both themes.',
         video: {
           clip: 'round',
-          alt: 'A Ghost Code round in motion, with the Phantom on patrol while the code prompt waits below.',
+          alt: 'A Ghost Code round in motion, with the Phantom moving between four command tokens while the prompt reads above.',
         },
         darkVideo: true,
       },

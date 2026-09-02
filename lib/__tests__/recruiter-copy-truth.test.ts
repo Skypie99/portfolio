@@ -217,6 +217,20 @@ describe('recruiter copy truth guards (Prompt 3)', () => {
     expect(copy).not.toMatch(/spaced repetition|adaptive learning|AI-driven/i);
   });
 
+  it('Ghost Code: media descriptions match the shipped product (Cook Out P8)', () => {
+    // P8 found the alts, caption and body describing an arcade cabinet, a
+    // Settings control and a maze that the shipped game does not have (the
+    // title screen is a bordered card with Press Start and a theme control; the
+    // board is the Phantom at the centre of four command tokens). Descriptive
+    // strings are recruiter copy too, heard by screen readers, so they are
+    // guarded alongside the prose.
+    const g = byId('ghost-code');
+    const described = deliverableStrings(g).map((s) => s.text).join('\n');
+    expect(described).not.toMatch(/maze|arcade cabinet|cabinet framing/i);
+    expect(g.heroShot?.alt).toMatch(/Press Start/);
+    expect(g.cardImage?.alt).toMatch(/four command tokens/);
+  });
+
   it('Studio Archive stays unlisted: not a deliverable, not linked from the public chrome, noindex', () => {
     expect(deliverables.some((d) => /archive/i.test(`${d.id} ${d.title}`))).toBe(false);
     expect(UNINDEXED_ROUTES).toContain('/archive');
