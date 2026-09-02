@@ -920,6 +920,17 @@ export default async function WorkDetailPage({
                         focal: shot.focal,
                         lqip: shot.lqip,
                         video: shot.video,
+                        /* Cook Out P2 · Part C — the actual wiring gap: `matte`
+                           was dropped here, so ProductReveal's `isThemed` check
+                           (media.dark || media.matte) never fired and this shot
+                           fell through to the theme-blind "single" video path —
+                           which still tags its layer `ts-layer--light` and gets
+                           hidden by the SAME dark-theme rule as an unfixed matte
+                           (the reproduced blank card). Forwarding it routes
+                           Flagstone's reporting-flow clip through the matte path
+                           the globals.css fix above actually protects. Scoped to
+                           this one field: no other current shot sets `matte`. */
+                        matte: shot.matte,
                         precropped:
                           d.id === 'flagstone' &&
                           Boolean(shot.src?.includes('-current.phone')),

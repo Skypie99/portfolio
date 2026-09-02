@@ -1,8 +1,8 @@
 /**
  * Tap-target extension guard — UP-02 / F7-2 (ui-polish 2026-08-01).
  *
- * The card action rows ("View project →" / "Read more →" plus the Live ↗ /
- * GitHub ↗ group) measure 23.391px tall as border boxes. The house 44 floor is
+ * The card action rows ("View project →" plus the Live ↗ / GitHub ↗ group)
+ * measure 23.391px tall as border boxes. The house 44 floor is
  * reached with a ONE-SIDED stretched ::after, and the direction is not a style
  * choice — it is the whole correctness argument:
  *
@@ -87,11 +87,11 @@ describe('card action rows carry the one-sided 44px tap extension (UP-02 / F7-2)
     expectExtended(screen.getByRole('link', { name: /view flagstone source on github/i }), 'down');
   });
 
-  it('CaseStudyCard: the leading "Read more" link grows UP', () => {
+  it('CaseStudyCard: the leading "View project" link grows UP', () => {
     render(
       <CaseStudyCard title="Flagstone" category="flagstone" description="A map-first mobile app." href="/work/flagstone/" links={links} />,
     );
-    expectExtended(screen.getByRole('link', { name: /read more.*flagstone case study/i }), 'up');
+    expectExtended(screen.getByRole('link', { name: /view project.*flagstone case study/i }), 'up');
   });
 
   it('CaseStudyCard: the trailing external links grow DOWN', () => {
