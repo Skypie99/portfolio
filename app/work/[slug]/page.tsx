@@ -920,6 +920,15 @@ export default async function WorkDetailPage({
                         focal: shot.focal,
                         lqip: shot.lqip,
                         video: shot.video,
+                        /* Cook Out · dark-shot forwarding — the dual-theme twin of the
+                           `matte` gap below: `dark` was dropped here too, so the four
+                           projects whose shots carry a dark twin (claude-corp, dashboard,
+                           prompt-library, ghost-code) never reached ThemedShowcase /
+                           ThemedMotion's themed path — stills kept the LIGHT capture in
+                           dark theme, and the ghost-code clip (a lone `ts-layer--light`
+                           in the "single" path) went blank. Reproduced live before the
+                           fix; guarded in lib/__tests__/shot-dark-forwarding.test.ts. */
+                        dark: shot.dark,
                         /* Cook Out P2 · Part C — the actual wiring gap: `matte`
                            was dropped here, so ProductReveal's `isThemed` check
                            (media.dark || media.matte) never fired and this shot
