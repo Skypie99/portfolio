@@ -13,6 +13,7 @@ import { LitWindows } from '@/components/LitWindows';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { Plate } from '@/components/Plate';
 import { HeroProductReveal } from '@/components/ProductReveal';
+import { ProjectDoorwayButton } from '@/components/ProjectDoorwayButton';
 import { RailInert } from '@/components/RailInert';
 import { Receipt } from '@/components/Receipt';
 import { Reveal } from '@/components/Reveal';
@@ -489,16 +490,16 @@ export default function HomePage() {
                     <span aria-hidden="true">: </span>{' '}
                     <span className="text-cool-deep normal-case tracking-normal">{flagship.status}</span>
                   </p>
-                  <Link
-                    href={`/work/${flagship.id}/`}
-                    /* Cook Out P2 · Part B: "View project" is the locked
-                       recruiter-facing internal-case-study vocabulary
-                       (was "Read the case study"). */
-                    className="link-draw inline-flex items-center gap-2 px-1 py-4 -mx-1 -my-4 font-mono text-label tracking-label uppercase text-accent-text"
-                  >
-                    View project
-                    <span aria-hidden="true">{'→'}</span>
-                  </Link>
+                  {/* Portfolio 3.0 Phase 02 · F-014/GATE-FLAGSTONE-CTA-PARITY:
+                      the flagship room's doorway is the SAME shared
+                      ProjectDoorwayButton as every homepage row's "View
+                      project" pill (components/ProjectDoorwayButton.tsx) —
+                      no Flagstone-specific visual treatment. This is the
+                      first (and only, within this room) link to
+                      /work/flagstone/, so it keeps its native tab stop and
+                      its accessible name is the visible "View project" text
+                      (no aria-label override needed). */}
+                  <ProjectDoorwayButton href={`/work/${flagship.id}/`} />
                 </Reveal>
               </div>
 
@@ -642,16 +643,14 @@ export default function HomePage() {
                       <p className="font-sans font-light text-body-sm leading-body text-ink-muted text-pretty">
                         {d.summary}
                       </p>
-                      <Link
+                      {/* Redundant with the title link immediately above
+                          (same destination) — kept out of tab order so
+                          keyboard users get one stop per row, not two. */}
+                      <ProjectDoorwayButton
                         href={href}
                         aria-label={`View project: ${d.title} case study`}
                         tabIndex={-1}
-                        className="group inline-flex h-11 w-fit items-center gap-2 rounded-pill border border-border-interactive bg-canvas px-4 font-mono text-label tracking-label uppercase text-ink shadow-soft transition-[background-color,border-color,box-shadow,transform] duration-base ease-out hover:-translate-y-px hover:border-ink-muted hover:bg-blush hover:shadow-soft focus-visible:-translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
-                      >
-                        <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-terracotta transition-[width,height] duration-base ease-out group-hover:h-2 group-hover:w-2" />
-                        View project
-                        <span aria-hidden="true">{'→'}</span>
-                      </Link>
+                      />
                     </div>
                     <div className="mt-3 flex flex-wrap items-baseline gap-x-4 gap-y-1 lg:mt-0 lg:contents">
                       <div className="lg:flex-1 flex flex-col gap-1.5">
