@@ -8,6 +8,7 @@ import { RunwayIdentity } from '@/components/RunwayIdentity';
 import { cn } from '@/lib/cn';
 import { getColophon, getProfile, getRounds } from '@/lib/content';
 import { bindSeparatorDash, bindSoloLetters } from '@/lib/markdown';
+import { canonicalFor } from '@/lib/metadata';
 import { OG_CARD } from '@/lib/og';
 
 export function generateMetadata(): Metadata {
@@ -17,6 +18,9 @@ export function generateMetadata(): Metadata {
   return {
     title: `Colophon: ${profile.name}`,
     description,
+    alternates: {
+      canonical: canonicalFor('/colophon/'),
+    },
     openGraph: {
       type: 'website',
       // TA-10: a leaf openGraph REPLACES the root's wholesale (W0-04) — url,

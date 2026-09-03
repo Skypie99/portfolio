@@ -10,6 +10,7 @@ import { RunwayIdentity } from '@/components/RunwayIdentity';
 import { cn } from '@/lib/cn';
 import { getBlogPosts, getProfile } from '@/lib/content';
 import { bindSeparatorDash, bindSoloLetters } from '@/lib/markdown';
+import { canonicalFor } from '@/lib/metadata';
 import { OG_CARD } from '@/lib/og';
 
 export function generateMetadata(): Metadata {
@@ -20,6 +21,7 @@ export function generateMetadata(): Metadata {
     description,
     // Feed autodiscovery (§8.4) — browsers/readers find the RSS + JSON feeds.
     alternates: {
+      canonical: canonicalFor('/blog/'),
       types: {
         'application/rss+xml': '/feed.xml',
         'application/feed+json': '/feed.json',

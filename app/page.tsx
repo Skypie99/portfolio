@@ -22,6 +22,7 @@ import { RunwayIdentityRelease } from '@/components/RunwayIdentityRelease';
 import { cn } from '@/lib/cn';
 import { getA11yReceipts, getCertificates, getDeliverables, getProfile, getRounds } from '@/lib/content';
 import { heroMedia } from '@/lib/media';
+import { canonicalFor } from '@/lib/metadata';
 import { OG_CARD } from '@/lib/og';
 import { signatureFor } from '@/lib/signature';
 
@@ -44,6 +45,9 @@ export function generateMetadata(): Metadata {
   const description =
     'Sky Halisky is an AI builder crafting accessible, privacy-first tools from the Okanagan Valley, BC. Creator of Flagstone, the Prompt Library, and more.';
   return {
+    alternates: {
+      canonical: canonicalFor('/'),
+    },
     openGraph: {
       type: 'website',
       url: 'https://skypistudio.com',

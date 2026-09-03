@@ -9,6 +9,7 @@ import { Reveal } from '@/components/Reveal';
 import { RunwayIdentity } from '@/components/RunwayIdentity';
 import { cn } from '@/lib/cn';
 import { getProfile } from '@/lib/content';
+import { canonicalFor } from '@/lib/metadata';
 import { OG_CARD } from '@/lib/og';
 
 export function generateMetadata(): Metadata {
@@ -18,6 +19,9 @@ export function generateMetadata(): Metadata {
   return {
     title: `Contact: ${profile.name}`,
     description,
+    alternates: {
+      canonical: canonicalFor('/contact/'),
+    },
     // TA-10 (truth audit 2026-07-31): see /certificates — same inheritance
     // defect. Without its own block this route unfurled as the homepage, which
     // is the one page a recruiter sharing a contact link does NOT mean to send.

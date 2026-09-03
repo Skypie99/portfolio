@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { SettleHeading } from '@/components/HeroSettle';
 import { RunwayIdentity } from '@/components/RunwayIdentity';
 import { getProfile } from '@/lib/content';
+import { canonicalFor } from '@/lib/metadata';
 import { OG_CARD } from '@/lib/og';
 
 /**
@@ -35,6 +36,12 @@ export function generateMetadata(): Metadata {
     title,
     description,
     robots: { index: false, follow: false },
+    // F-028: same self-canonical requirement as app/archive/page.tsx —
+    // without it this noindex route would silently inherit the root
+    // layout's `/` canonical and falsely claim to BE the homepage.
+    alternates: {
+      canonical: canonicalFor('/runway/'),
+    },
     openGraph: {
       type: 'website',
       url: '/runway/',

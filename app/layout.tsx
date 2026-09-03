@@ -16,6 +16,7 @@ import { ViewTransitions } from '@/components/ViewTransitions';
 import { WorldBackdrop } from '@/components/WorldBackdrop';
 import { cn } from '@/lib/cn';
 import { getProfile } from '@/lib/content';
+import { canonicalFor } from '@/lib/metadata';
 import { OG_CARD } from '@/lib/og';
 
 import './globals.css';
@@ -117,6 +118,11 @@ export function generateMetadata(): Metadata {
     description,
     metadataBase: new URL(siteUrl),
     referrer: 'strict-origin-when-cross-origin',
+    // F-028: the root default (only the `/` route relies on inheriting
+    // this — every other indexable route below restates its own).
+    alternates: {
+      canonical: canonicalFor('/'),
+    },
     openGraph: {
       type: 'website',
       url: siteUrl,

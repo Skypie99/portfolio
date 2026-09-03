@@ -248,6 +248,36 @@ describe('recruiter copy truth guards (Prompt 3)', () => {
     }
   });
 
+  it('never claims a second, public Studio Archive edition (Phase 01 F-023 stays open)', () => {
+    // Portfolio 3.0 Phase 01 verified only ONE Studio Archive surface exists
+    // (private, auth-gated, at /archive) — a planning-stage assumption of a
+    // separate "private authoring + public view-only" edition could not be
+    // reproduced, and no Skypie99/studio-archive repository was found. F-023
+    // stays OPEN/DEFERRED until direct evidence establishes a second surface.
+    // This guard fails the day anyone adds copy that presupposes that second
+    // surface as fact, so the claim can't drift ahead of the evidence again.
+    const publicSurfaceFiles = [
+      'app/page.tsx',
+      'app/work/page.tsx',
+      'app/about/page.tsx',
+      'app/colophon/page.tsx',
+      'components/Footer.tsx',
+      'components/HamburgerNav.tsx',
+      'components/Sidebar.tsx',
+      'components/SidebarRailLinks.tsx',
+    ];
+    for (const file of publicSurfaceFiles) {
+      const text = read(file);
+      expect(text, `${file} claims a public/view-only Studio Archive edition`).not.toMatch(
+        /(public|view-only|view only)[\s\S]{0,40}studio archive|studio archive[\s\S]{0,40}(public|view-only|view only)\s+(edition|surface|version|site|catalogue)/i,
+      );
+    }
+    // And the archive route itself must keep describing itself as private,
+    // never as one of two editions.
+    const archiveSource = read('app/archive/page.tsx');
+    expect(archiveSource).not.toMatch(/two[\s-]+surface|second edition|public edition/i);
+  });
+
   it('current-facing product naming is Flagstone, never AccessMap', () => {
     for (const d of deliverables) {
       for (const s of deliverableStrings(d)) {

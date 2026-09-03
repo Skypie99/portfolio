@@ -475,6 +475,20 @@ describe.runIf(OUT_EXISTS)('Gap 6: share-card identity', () => {
     return collectHtmlFiles(OUT_DIR).filter((f) => !IS_404(f) && !IS_REDIRECT_STUB(f));
   }
 
+  // public/flagstone/** is a separate, hand-authored static microsite (the
+  // Flagstone app's own marketing/privacy/terms/support pages, copied
+  // verbatim into ./out/flagstone/ — not a Next.js app/ route, and not owned
+  // by this portfolio's metadata layer). It already hand-writes its own
+  // og:url; a self-canonical for it is a Flagstone-project concern, out of
+  // scope for Portfolio 3.0 Phase 02. Excluded from the canonical guard only
+  // (still covered by every other guard in this file, since it is real,
+  // linked, reachable HTML).
+  const IS_FLAGSTONE_SUBSITE = (f: string) => f.replace(OUT_DIR, '').startsWith('/flagstone/');
+
+  function canonicalRoutes(): string[] {
+    return realRoutes().filter((f) => !IS_FLAGSTONE_SUBSITE(f));
+  }
+
   it('every route declares og:url, and it is the route’s OWN url', () => {
     assertOutDirExists();
     const routes = realRoutes();
@@ -494,6 +508,38 @@ describe.runIf(OUT_EXISTS)('Gap 6: share-card identity', () => {
     expect(
       offenders,
       `routes whose share card names the wrong page:\n${offenders.join('\n')}`,
+    ).toEqual([]);
+  });
+
+  // Portfolio 3.0 Phase 02 · F-028: every real route (including noindex ones
+  // like /archive/ and /runway/, which self-declare rather than rely on
+  // non-inheritance — same TA-10-class defect as og:url above) must emit
+  // exactly one <link rel="canonical"> pointing at ITS OWN absolute url.
+  // 404 and redirect stubs are excluded for the same documented reasons the
+  // og:url check above excludes them.
+  it('every route declares exactly one self-canonical link (F-028)', () => {
+    assertOutDirExists();
+    const routes = canonicalRoutes();
+    expect(routes.length).toBeGreaterThan(0);
+
+    const offenders: string[] = [];
+    for (const file of routes) {
+      const html = readFileSync(file, 'utf8');
+      const expected = SITE_ORIGIN + routePathOf(file);
+      const matches = [
+        ...html.matchAll(/<link\s+rel="canonical"\s+href="([^"]+)"/gi),
+      ].map((m) => m[1]);
+      if (matches.length === 0) {
+        offenders.push(`${routePathOf(file)} → canonical MISSING (expected ${expected})`);
+      } else if (matches.length > 1) {
+        offenders.push(`${routePathOf(file)} → ${matches.length} canonical links (expected exactly 1)`);
+      } else if (matches[0] !== expected) {
+        offenders.push(`${routePathOf(file)} → canonical is "${matches[0]}", expected "${expected}"`);
+      }
+    }
+    expect(
+      offenders,
+      `routes with a missing/duplicate/wrong self-canonical:\n${offenders.join('\n')}`,
     ).toEqual([]);
   });
 

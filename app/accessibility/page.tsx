@@ -9,6 +9,7 @@ import { RunwayIdentity } from '@/components/RunwayIdentity';
 import { cn } from '@/lib/cn';
 import { getA11yReceipts, getAccessibilityStatementParts, getProfile } from '@/lib/content';
 import { bindSeparatorDash, bindSoloLetters } from '@/lib/markdown';
+import { canonicalFor } from '@/lib/metadata';
 import { ACCESSIBILITY_OG_CARD } from '@/lib/og';
 
 export function generateMetadata(): Metadata {
@@ -18,6 +19,9 @@ export function generateMetadata(): Metadata {
   return {
     title: `Accessibility: ${profile.name}`,
     description,
+    alternates: {
+      canonical: canonicalFor('/accessibility/'),
+    },
     openGraph: {
       type: 'website',
       // W0-04 (R4/BP8): the leaf openGraph REPLACES the root's wholesale —
