@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 import { ArchiveApp } from '@/components/archive/ArchiveApp';
 import { getProfile } from '@/lib/content';
+import { canonicalFor } from '@/lib/metadata';
 import { OG_CARD } from '@/lib/og';
 
 import './archive.css';
@@ -24,6 +25,13 @@ export function generateMetadata(): Metadata {
     title,
     description,
     robots: { index: false, follow: false },
+    // F-028: without its own self-canonical this noindex route would
+    // silently inherit the root layout's `/` canonical (the same
+    // TA-10-class inheritance defect the openGraph block below already
+    // guards against) and falsely claim to BE the homepage.
+    alternates: {
+      canonical: canonicalFor('/archive/'),
+    },
     openGraph: {
       type: 'website',
       url: '/archive/',

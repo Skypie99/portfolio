@@ -8,6 +8,7 @@ import { ParallaxWash } from '@/components/ParallaxWash';
 import { RunwayIdentity } from '@/components/RunwayIdentity';
 import { cn } from '@/lib/cn';
 import { getDeliverables, getProfile } from '@/lib/content';
+import { canonicalFor } from '@/lib/metadata';
 import { OG_CARD } from '@/lib/og';
 
 export function generateMetadata(): Metadata {
@@ -16,6 +17,9 @@ export function generateMetadata(): Metadata {
   return {
     title: `Selected Work: ${profile.name}`,
     description,
+    alternates: {
+      canonical: canonicalFor('/work/'),
+    },
     openGraph: {
       type: 'website',
       // TA-10: a leaf openGraph REPLACES the root's wholesale (W0-04), so url,

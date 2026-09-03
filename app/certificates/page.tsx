@@ -8,6 +8,7 @@ import { ParallaxWash } from '@/components/ParallaxWash';
 import { RunwayIdentity } from '@/components/RunwayIdentity';
 import { cn } from '@/lib/cn';
 import { getCertificates, getProfile } from '@/lib/content';
+import { canonicalFor } from '@/lib/metadata';
 import { OG_CARD } from '@/lib/og';
 
 export function generateMetadata(): Metadata {
@@ -17,6 +18,9 @@ export function generateMetadata(): Metadata {
   return {
     title: `Credentials: ${profile.name}`,
     description,
+    alternates: {
+      canonical: canonicalFor('/certificates/'),
+    },
     // TA-10 (truth audit 2026-07-31): with no openGraph/twitter block of its
     // own, this route inherited the ROOT layout's wholesale — og:url included —
     // so an unfurl of /certificates/ announced itself as the homepage, title

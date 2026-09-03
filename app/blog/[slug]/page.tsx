@@ -13,6 +13,7 @@ import { cn } from '@/lib/cn';
 import { getAllBlogPostSlugs, getBlogPosts, getDeliverables, getProfile } from '@/lib/content';
 import { bindSeparatorDash, bindSoloLetters } from '@/lib/markdown';
 import { cardMedia } from '@/lib/media';
+import { canonicalFor } from '@/lib/metadata';
 import { OG_CARD } from '@/lib/og';
 import type { BlogPost } from '@/lib/schema';
 
@@ -200,6 +201,7 @@ export async function generateMetadata({
     // C-93: feed autodiscovery — the essay advertises the Notes feeds so a reader
     // or crawler finds them from the post itself.
     alternates: {
+      canonical: canonicalFor(`/blog/${slug}/`),
       types: {
         'application/feed+json': '/feed.json',
         'application/rss+xml': '/feed.xml',

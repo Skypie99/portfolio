@@ -18,6 +18,7 @@ import { INLINE_CODE_CLASS, smartPunctuation } from '@/lib/markdown';
 import { getDeliverables } from '@/lib/content';
 import { ThemedHeroPreload } from '@/components/ThemedHeroPreload';
 import { cardMedia, heroMedia, heroPreloadLink, heroPreloadLinks } from '@/lib/media';
+import { canonicalFor } from '@/lib/metadata';
 import { OG_CARD } from '@/lib/og';
 import { frameForSlug, signatureFor } from '@/lib/signature';
 import { CASE_PROSE_P_CLASS, parseInline, renderMarkdownProse } from '@/components/MarkdownProse';
@@ -303,6 +304,9 @@ export async function generateMetadata({
     // labels, on the exact pages recruiters get deep-linked to.
     title: `${d.title}: Sky Halisky`,
     description: d.summary,
+    alternates: {
+      canonical: canonicalFor(`/work/${slug}/`),
+    },
     openGraph: {
       type: 'article',
       // W0-04: Next.js shallow-merges openGraph per top-level key, so this leaf
