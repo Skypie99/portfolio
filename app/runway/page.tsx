@@ -45,7 +45,7 @@ export function generateMetadata(): Metadata {
     openGraph: {
       type: 'website',
       url: '/runway/',
-      siteName: 'Sky Halisky: AI Portfolio',
+      siteName: 'Sky Halisky: Senior Technical Support',
       locale: 'en_CA',
       title,
       description,

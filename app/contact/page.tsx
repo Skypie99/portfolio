@@ -15,7 +15,7 @@ import { OG_CARD } from '@/lib/og';
 export function generateMetadata(): Metadata {
   const profile = getProfile();
   const description =
-    'Write to Sky Halisky: AI builder based in the Okanagan Valley, British Columbia.';
+    'Write to Sky Halisky, senior technical-support specialist in the Okanagan Valley, British Columbia.';
   return {
     title: `Contact: ${profile.name}`,
     description,
@@ -30,7 +30,7 @@ export function generateMetadata(): Metadata {
     openGraph: {
       type: 'website',
       url: '/contact/',
-      siteName: 'Sky Halisky: AI Portfolio',
+      siteName: 'Sky Halisky: Senior Technical Support',
       locale: 'en_CA',
       title: `Contact: ${profile.name}`,
       description,
@@ -84,6 +84,9 @@ export default function ContactPage() {
             Accessible technology, built with care. Thoughtful product
             collaborations. Learning out loud, one project at a time. I read
             every message that comes through.
+          </p>
+          <p className="font-sans font-light text-prose text-ink-muted max-w-measure-lead mb-4 text-pretty">
+            Open to senior support roles, and to professional conversations.
           </p>
           <p className="font-sans font-light text-prose text-ink-muted max-w-measure-lead mb-16 text-pretty">
             The socials below also work, for everything else.

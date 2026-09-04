@@ -434,7 +434,7 @@ describe.runIf(OUT_EXISTS)('Gap 5: new-tab links announce themselves', () => {
 
 describe.runIf(OUT_EXISTS)('Gap 6: share-card identity', () => {
   const SITE_ORIGIN = 'https://skypistudio.com';
-  const EXPECTED_SITE_NAME = 'Sky Halisky: AI Portfolio';
+  const EXPECTED_SITE_NAME = 'Sky Halisky: Senior Technical Support';
 
   /** The route path a built HTML file is served at: out/work/index.html → /work/ */
   function routePathOf(file: string): string {

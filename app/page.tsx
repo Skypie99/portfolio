@@ -9,6 +9,7 @@ import { Hero } from '@/components/Hero';
 import { HeroImageSettle } from '@/components/HeroSettle';
 import { IntroScrollCue } from '@/components/IntroScrollCue';
 import { IntroSkip } from '@/components/IntroSkip';
+import { LedgerRow } from '@/components/LedgerRow';
 import { LitWindows } from '@/components/LitWindows';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { Plate } from '@/components/Plate';
@@ -40,10 +41,61 @@ import { signatureFor } from '@/lib/signature';
  * static-integrity suite pins them against this page's own <title> and meta
  * description so the two declarations cannot drift apart unnoticed.
  */
+/**
+ * The Support Operating Record (Portfolio 3.0 · Phase 03, F-006/RC-002).
+ *
+ * The hero states the professional identity in one protected sentence
+ * (PR-004). This band is that sentence given a body: the five lanes the
+ * support work actually runs on, so a recruiter who reads only the hero and
+ * this list can classify the candidate without inferring anything.
+ *
+ * SOURCING RULE, and it is load-bearing: every lane traces to already-public
+ * copy or to owner-supplied, owner-approved fact. Lanes 01/04 are the live
+ * About-page sentences; 05 is the hero's own clause plus the accessibility
+ * chain the About page already states; 02/03 are Sky's own words, supplied
+ * and approved 2026-09-03 under the Phase 01 contract's fact rules.
+ *
+ * DELIBERATELY NUMBERLESS. No ticket volume, CSAT, SLA, tenure, team size,
+ * employer or account appears here, because none is sourced (contract §14).
+ * The closing line says so out loud, so the absence reads as a privacy
+ * choice rather than a thin record.
+ *
+ * NOT "The Record" (#record): that band is a defect/audit ledger with
+ * figures, dates and an open-state chip. This one carries prose lanes and no
+ * figures at all, and sits three sections earlier.
+ */
+const supportLanes: { numeral: string; title: string; line: string }[] = [
+  {
+    numeral: '01',
+    title: 'Escalation',
+    line: 'The escalation point for enterprise accounts.',
+  },
+  {
+    numeral: '02',
+    title: 'Troubleshooting',
+    line: 'Compare cases to separate one-off user error from a repeatable pattern. Reproduce where possible, then isolate variables: app state, device behavior, account state, connectivity, workflow steps. The output is a likely cause, or the right escalation path.',
+  },
+  {
+    numeral: '03',
+    title: 'Documentation and QA',
+    line: 'Reproducible steps, expected versus actual behavior, the conditions that matter, and any workaround or known limitation. Fixes and workflows get verified against the original support scenario and its nearby edge cases before anything is called resolved.',
+  },
+  {
+    numeral: '04',
+    title: 'Training',
+    line: 'Training and coaching teammates.',
+  },
+  {
+    numeral: '05',
+    title: 'Support to product',
+    line: 'And the tools that fix it. Flagstone is the clearest case: accessibility software built because disabled people deserve navigation tools designed for them, not adapted for them.',
+  },
+];
+
 export function generateMetadata(): Metadata {
   const profile = getProfile();
   const description =
-    'Sky Halisky is an AI builder crafting accessible, privacy-first tools from the Okanagan Valley, BC. Creator of Flagstone, the Prompt Library, and more.';
+    'Sky Halisky is a senior technical-support specialist who turns recurring user friction into documentation, QA, and the AI-assisted tools that fix it.';
   return {
     alternates: {
       canonical: canonicalFor('/'),
@@ -51,9 +103,9 @@ export function generateMetadata(): Metadata {
     openGraph: {
       type: 'website',
       url: 'https://skypistudio.com',
-      siteName: `${profile.name}: AI Portfolio`,
+      siteName: `${profile.name}: Senior Technical Support`,
       locale: 'en_CA',
-      title: `${profile.name}: AI Portfolio`,
+      title: `${profile.name}: Senior Technical Support`,
       description,
       images: [OG_CARD],
     },
@@ -326,9 +378,19 @@ export default function HomePage() {
         <Hero
           name="Sky Halisky"
           positioning="Senior technical-support specialist. I turn recurring user friction into documentation, QA, and the tools that fix it."
+          imprint="SkyPi Studio is Skyler (Sky) Halisky. One person, not an agency."
           avatarSrc="/images/headshot.jpg"
           avatarAlt="Sky Halisky"
-          eyebrow="Portfolio: 2026"
+          /* Phase 03 (c2). The blinded 15-second test had the Support
+             Operations hiring manager answer "software/AI builder" first:
+             the protected positioning sentence is small caption type and
+             loses the visual competition against the display H1 below it,
+             which names three projects. This eyebrow is mono caps directly
+             above that H1, so it puts the profession into the hierarchy at
+             the point where the read was actually going wrong. It carried
+             no information before ("Portfolio: 2026"), is used in exactly
+             one place, and is pinned by no test. */
+          eyebrow="Senior technical support · Portfolio 2026"
           heading="An accessibility map. A multi-agent system. A web-based prompt library."
           subhead="Five projects built, all five on the open web. One submitted to Apple for App Store review. Accessibility first, built for everyone."
           ctaLabel="See the work."
@@ -552,6 +614,83 @@ export default function HomePage() {
           </div>
         </section>
       )}
+
+      {/* ── The Support Operating Record ──────────────────────────────
+          Phase 03 (F-006, RC-002). Placed HERE, after the flagship and
+          before the work index, for two reasons that pull against each
+          other and both had to hold: the master plan's invariant 9 keeps
+          Flagstone first past the film, so nothing may precede it; and
+          T-046 wants the support claim strengthened while the hero is still
+          in the reader's head. Directly after the one loud moment is the
+          only slot that satisfies both. Reading order becomes: the hero
+          claims the role, the flagship proves the capability, this band
+          says what the role actually consists of, then the rest of the work.
+
+          Surface is cool-pale rather than the plain canvas #work uses: the
+          flagship above is `world-surface-alt`, so plain canvas here would
+          leave this band and #work as one continuous field separated by a
+          hairline. Cool-pale also puts it in the same register as #record,
+          which is correct — both are evidence bands.
+
+          LedgerRow with no `date` and no `open` renders no right-hand
+          column, which is what makes this read as a list of lanes rather
+          than a second dated ledger. */}
+      <section
+        id="support-work"
+        className={cn(
+          'relative isolate overflow-hidden',
+          'px-gutter',
+          'py-24 lg:py-32',
+          'world-surface-cool-pale',
+          'border-t border-cool-soft/50',
+        )}
+      >
+        <ParallaxWash depth="far" tone="teal" />
+        <div className="relative z-10 max-w-content mx-auto">
+          <Reveal variant="scene" className="mb-12 pl-4 border-l-2 border-terracotta">
+            {/* This eyebrow string is ALSO the sidebar rail's label for this
+                section (lib/sectionNav.ts). sectionNav rule 1 forbids invented
+                labels, and section-nav-anchors.test.ts T2 asserts the label
+                against the page's own rendered text, so the two must stay
+                byte-identical. Edit both or neither. */}
+            <p className="flex items-center gap-2 font-mono text-label tracking-label uppercase text-accent-ink mb-4">
+              <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
+              The support work
+            </p>
+            <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance">
+              This is the job the projects come from.
+            </h2>
+          </Reveal>
+
+          {/* role="list" IS load-bearing: Tailwind preflight sets
+              list-style:none on every ul, which is the condition that makes
+              Safari/VoiceOver drop list semantics — same reasoning and the
+              same one-line exemption as The Record and CalibrationRecord. */}
+          {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
+          <ul role="list" className="flex flex-col max-w-measure-wide">
+            {supportLanes.map((lane) => (
+              <LedgerRow
+                key={lane.numeral}
+                numeral={lane.numeral}
+                title={lane.title}
+                numeralLabel="Lane"
+                after={
+                  <span className="basis-full font-sans font-light text-body-sm leading-body text-ink-muted text-pretty">
+                    {lane.line}
+                  </span>
+                }
+              />
+            ))}
+          </ul>
+
+          {/* The absence of numbers is the point, and saying so is what keeps
+              it from reading as a thin record. No support metric is sourced
+              (Phase 01 contract §14), so none is printed. */}
+          <p className="mt-10 max-w-measure-wide font-mono text-meta tracking-label uppercase text-text-meta leading-relaxed">
+            No metrics here. Employer, account and volume detail stays private.
+          </p>
+        </div>
+      </section>
 
       {/* ── Work — Luxury cards with app mockups ─────────────────────── */}
       <section

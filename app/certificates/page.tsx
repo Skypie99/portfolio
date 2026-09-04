@@ -31,7 +31,7 @@ export function generateMetadata(): Metadata {
     openGraph: {
       type: 'website',
       url: '/certificates/',
-      siteName: 'Sky Halisky: AI Portfolio',
+      siteName: 'Sky Halisky: Senior Technical Support',
       locale: 'en_CA',
       title: `Credentials: ${profile.name}`,
       description,
@@ -83,7 +83,8 @@ export default function CertificatesPage() {
             Credentials
           </SettleHeading>
           <p className="font-sans font-light text-prose text-ink-muted max-w-measure-lead text-pretty">
-            Selected credentials and certifications. A short paper trail of the
+            Selected credentials and certifications, alongside senior
+            technical-support work. A short paper trail of the
             things I’ve studied formally: most of the learning happens in
             the work, not on paper.
           </p>

@@ -53,6 +53,11 @@ const HOME_LABELS = [
   // rode in unchecked until C6 removed one and the guard finally spoke. They
   // are added here in the same commit that fixed it, not left for later.
   'Featured: the flagship', // C2 — the flagship room
+  // Portfolio 3.0 Phase 03: the Support Operating Record. Placed between the
+  // flagship and the work index because invariant 9 keeps Flagstone first past
+  // the film, and T-046 wanted the support claim reinforced while the hero is
+  // still in the reader's head. Byte-exact against the band's own eyebrow.
+  'The support work',
   'The Work',
   'The Record', // C5 — the ledger
   // Truth pass 2026-08-21 added this one; 'Method' left with #process in the
@@ -208,9 +213,10 @@ describe('SidebarSectionNav: the index describes the route you are on (UP-10)', 
     // out — so home went back to 5 by way of 6, not by never having moved.
     // THE ROOM Phase C moved it again, one band per commit: C2 added
     // `flagship` (5 → 6), C5 added `record` (6 → 7), C6 dropped `certificates`
-    // (7 → 6). Home settles at six — a different six from the one above:
-    // flagship · work · record · how-i-work · about · contact.
-    expect(sectionsForRoute('/')).toHaveLength(6);
+    // (7 → 6). Portfolio 3.0 Phase 03 then added `support-work` (6 → 7), the
+    // Support Operating Record. Home is at seven:
+    // flagship · support-work · work · record · how-i-work · about · contact.
+    expect(sectionsForRoute('/')).toHaveLength(7);
     expect(sectionsForRoute('/about')).toHaveLength(4);
   });
 

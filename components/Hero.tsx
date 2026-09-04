@@ -17,6 +17,19 @@ type HeroProps = {
    */
   name?: string;
   positioning?: string;
+  /**
+   * One-line imprint under the positioning sentence (Portfolio 3.0 Phase 03,
+   * F-002). The cinematic title card shows "SkyPi Studio" as the largest text
+   * on the opening screen and, being protected (PR-001), cannot explain
+   * itself. Phase 03's blinded 10-second test found 3 of 3 reviewers unable
+   * to tell whether that was a person's practice or an agency. This line is
+   * the fix, and it lives HERE rather than on /about because the identity
+   * contract (§7) requires the relationship to be made explicit in the
+   * section immediately following the one that introduces the mark, and
+   * because a 10-second reader never reaches /about. Omitted → the hero is
+   * byte-identical to before.
+   */
+  imprint?: string;
   avatarSrc?: string;
   avatarAlt?: string;
   /**
@@ -53,6 +66,7 @@ export function Hero({
   ctaHref,
   name,
   positioning,
+  imprint,
   avatarSrc,
   avatarAlt,
   receipts,
@@ -108,6 +122,14 @@ export function Hero({
               {positioning && (
                 <p className="font-sans font-light text-body-sm leading-snug text-ink-muted text-pretty max-w-[44ch]">
                   {positioning}
+                </p>
+              )}
+              {imprint && (
+                /* Mono, meta scale: the imprint is a credit line, not prose,
+                   and the register keeps it from competing with the
+                   positioning sentence above it (PR-004, byte-identical). */
+                <p className="mt-1.5 font-mono text-meta tracking-label uppercase text-text-meta">
+                  {imprint}
                 </p>
               )}
             </div>

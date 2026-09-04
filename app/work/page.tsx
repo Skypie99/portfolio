@@ -13,7 +13,7 @@ import { OG_CARD } from '@/lib/og';
 
 export function generateMetadata(): Metadata {
   const profile = getProfile();
-  const description = 'Projects by Sky Halisky: AI builder. Accessibility mapping, multi-agent systems, prompt management, and more.';
+  const description = 'Projects by Sky Halisky, senior technical-support specialist. Accessibility mapping, multi-agent systems, prompt management, and more.';
   return {
     title: `Selected Work: ${profile.name}`,
     description,
@@ -26,7 +26,7 @@ export function generateMetadata(): Metadata {
       // siteName and locale must be restated here or they drop out of this
       // route's share card entirely. url is this route's OWN.
       url: '/work/',
-      siteName: 'Sky Halisky: AI Portfolio',
+      siteName: 'Sky Halisky: Senior Technical Support',
       locale: 'en_CA',
       title: `Selected Work: ${profile.name}`,
       description,

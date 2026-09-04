@@ -32,7 +32,7 @@ export function generateMetadata(): Metadata {
       // TA-10: a leaf openGraph REPLACES the root's wholesale (W0-04) — url,
       // siteName and locale restated so they survive on this route's share.
       url: '/blog/',
-      siteName: 'Sky Halisky: AI Portfolio',
+      siteName: 'Sky Halisky: Senior Technical Support',
       locale: 'en_CA',
       title: `Notes: ${profile.name}`,
       description,

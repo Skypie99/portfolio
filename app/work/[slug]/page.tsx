@@ -315,7 +315,7 @@ export async function generateMetadata({
       // every /work/* share. url is the route's OWN (resolved against
       // metadataBase), never the root's homepage url.
       url: `/work/${slug}/`,
-      siteName: 'Sky Halisky: AI Portfolio',
+      siteName: 'Sky Halisky: Senior Technical Support',
       locale: 'en_CA',
       title: `${d.title}: Sky Halisky`,
       description: d.summary,

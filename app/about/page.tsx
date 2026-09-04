@@ -13,7 +13,7 @@ import { OG_CARD } from '@/lib/og';
 
 export function generateMetadata(): Metadata {
   const profile = getProfile();
-  const description = 'Sky Halisky. AI builder. Okanagan Valley, British Columbia.';
+  const description = 'Sky Halisky. Senior technical-support specialist. Okanagan Valley, British Columbia.';
   return {
     title: `About: ${profile.name}`,
     description,
@@ -25,7 +25,7 @@ export function generateMetadata(): Metadata {
       // TA-10: a leaf openGraph REPLACES the root's wholesale (W0-04) — url,
       // siteName and locale restated so they survive on this route's share.
       url: '/about/',
-      siteName: 'Sky Halisky: AI Portfolio',
+      siteName: 'Sky Halisky: Senior Technical Support',
       locale: 'en_CA',
       title: `About: ${profile.name}`,
       description,
@@ -91,11 +91,14 @@ export default function AboutPage() {
           <SettleHeading
             className="font-serif font-light text-display ember max-w-measure-heading mb-16 text-balance"
           >
-            I build things with AI.
+            Support is the work and inspiration, building tools to solve problems and reduce friction.
           </SettleHeading>
 
           {/* Story paragraphs */}
           <div className="max-w-measure-lead flex flex-col gap-8">
+            <p className="font-sans font-light text-step-1 text-ink-muted text-pretty">
+              I am Skyler Halisky. Most people call me Sky.
+            </p>
             <p className="font-sans font-light text-step-1 text-ink-muted text-pretty">
               By day, I’m a senior technical-support specialist: the escalation
               point for enterprise accounts, and I train and coach teammates. I
@@ -277,6 +280,12 @@ export default function AboutPage() {
               Right now: TypeScript, React Native, and multi-agent systems that
               stay inside their rules when I am not watching. Each project
               teaches something the last one did not.
+            </p>
+            <p className="font-sans font-light text-body text-ink-muted text-pretty">
+              The work I am aimed at is senior technical and product support:
+              escalation, support tooling, support operations. Adjacent to it,
+              and evidenced by the projects above: QA, accessibility, and
+              privacy-aware systems work.
             </p>
             <p className="font-sans font-light text-body text-ink-muted text-pretty">
               I am looking for collaborators and clients who read the
