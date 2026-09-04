@@ -112,9 +112,9 @@ export function generateMetadata(): Metadata {
   const profile = getProfile();
   const siteUrl = 'https://skypistudio.com';
   const description =
-    'Sky Halisky is an AI builder crafting accessible, privacy-first tools from the Okanagan Valley, BC. Creator of Flagstone, the Prompt Library, and more.';
+    'Sky Halisky is a senior technical-support specialist who turns recurring user friction into documentation, QA, and the AI-assisted tools that fix it.';
   return {
-    title: `${profile.name}: AI Portfolio`,
+    title: `${profile.name}: Senior Technical Support`,
     description,
     metadataBase: new URL(siteUrl),
     referrer: 'strict-origin-when-cross-origin',
@@ -126,8 +126,8 @@ export function generateMetadata(): Metadata {
     openGraph: {
       type: 'website',
       url: siteUrl,
-      siteName: `${profile.name}: AI Portfolio`,
-      title: `${profile.name}: AI Portfolio`,
+      siteName: `${profile.name}: Senior Technical Support`,
+      title: `${profile.name}: Senior Technical Support`,
       description,
       locale: 'en_CA',
       // TA-11: point at the `.png` alias so GH Pages sends image/png rather
@@ -140,7 +140,7 @@ export function generateMetadata(): Metadata {
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${profile.name}: AI Portfolio`,
+      title: `${profile.name}: Senior Technical Support`,
       description,
       // Twitter falls back to openGraph.images when it declares none of its own.
     },
@@ -202,10 +202,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               '@context': 'https://schema.org',
               '@type': 'Person',
               name: 'Sky Halisky',
+              alternateName: 'Skyler Halisky',
               url: 'https://skypistudio.com',
-              jobTitle: 'Technical Support · AI Builder',
+              jobTitle: 'Senior Technical Support Specialist',
               description:
-                'AI builder based in the Okanagan Valley, British Columbia. Creator of Flagstone, Claude Corp, the Prompt Library, and more.',
+                'Senior technical-support specialist in the Okanagan Valley, British Columbia. Builds AI-assisted accessibility and developer tools, including Flagstone, Claude Corp, and the Prompt Library.',
               sameAs: [
                 'https://github.com/skypie99',
                 'https://www.linkedin.com/in/skyler-halisky',

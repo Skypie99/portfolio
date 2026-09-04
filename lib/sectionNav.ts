@@ -86,6 +86,7 @@ const ROUTE_SECTIONS = {
   //   − `certificates` C6 — demoted to one line inside A Brief Account
   '/': [
     { id: 'flagship', label: 'Featured: the flagship', href: '/#flagship' },
+    { id: 'support-work', label: 'The support work', href: '/#support-work' },
     { id: 'work', label: 'The Work', href: '/#work' },
     { id: 'record', label: 'The Record', href: '/#record' },
     { id: 'how-i-work', label: 'How the work gets made', href: '/#how-i-work' },

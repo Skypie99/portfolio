@@ -30,7 +30,7 @@ export function generateMetadata(): Metadata {
       // OWN measurement plate (app/accessibility/opengraph-image.tsx — the
       // receipt unfurls, P05).
       url: '/accessibility/',
-      siteName: 'Sky Halisky: AI Portfolio',
+      siteName: 'Sky Halisky: Senior Technical Support',
       locale: 'en_CA',
       title: `Accessibility: ${profile.name}`,
       description,

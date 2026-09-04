@@ -186,7 +186,7 @@ export async function generateMetadata({
       // siteName and locale restated so they survive on this route's share.
       // url is the POST's own, never the root's homepage url.
       url: `/blog/${slug}/`,
-      siteName: 'Sky Halisky: AI Portfolio',
+      siteName: 'Sky Halisky: Senior Technical Support',
       locale: 'en_CA',
       title: `${post.title}: ${profile.name}`,
       description: post.summary,
