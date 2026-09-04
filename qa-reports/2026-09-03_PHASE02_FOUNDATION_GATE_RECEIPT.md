@@ -7,6 +7,14 @@
 
 ---
 
+## AMENDMENT 1 (2026-09-03) — three gate-evidence items closed post-acceptance
+
+Sky accepted the Phase 02 handoff conditionally and required three gate-evidence items closed before Phase 03 begins. **No implementation was reopened or redone** — all three items below are evidence/documentation fixes only; `git status --short` was clean (product code) before and after this amendment.
+
+1. **Final-SHA discrepancy** — §5 originally named `d46fa913...` (the last *implementation* commit) as the phase's final SHA, but the receipt documenting that SHA was itself then committed as `fa21f2e` — a self-reference a receipt can never fully resolve in its own text (a commit's SHA is a hash of its content, so a commit cannot name its own hash). §5 is corrected below to state the resolution rule explicitly, and the FINALIZATION section at the end of this document states the literal resulting SHA once this amendment itself is committed.
+2. **Vitest major-version approval** — recorded verbatim in §9a below, per Sky's explicit conditions.
+3. **CTA responsive/theme evidence gap** — closed in §8a below via live verification using the site's real `next-themes` mechanism at all 5 required widths × both themes, using the narrowest available method (direct browser JS/CSSOM inspection against the running dev server — no new test framework built). Two cells are marked UNVERIFIABLE with cause and substitute evidence, per Sky's explicit instruction not to represent them as tested if tooling makes them genuinely impossible.
+
 ## 1. Repository and remote identity
 
 Identified by `remote.origin.url`, not folder name: `/Users/skypie/Portfolio-3.0-baseline` → `https://github.com/Skypie99/portfolio.git` (origin, fetch+push identical).
@@ -31,11 +39,15 @@ No material divergence between plan and current remote truth. Preconditions (`BA
 
 ## 5. Final SHA/tree
 
-`d46fa9133ca738b05cf397dfc2f31902c058f856` / tree `9068cf0e129c71c57e5fa6d58f51ab834b47352a` — three local phase commits on top of the accepted baseline, on this same integration branch:
+Three **implementation** commits on top of the accepted baseline, on this same integration branch:
 
 1. `109b7bc` — dependency remediation (P02-B)
 2. `dabb214` — shared `ProjectDoorwayButton` / F-014 (P02-A)
 3. `d46fa91` — self-canonicals + claim guard / F-028 (P02-C)
+
+`d46fa9133ca738b05cf397dfc2f31902c058f856` / tree `9068cf0e129c71c57e5fa6d58f51ab834b47352a` is the tree at that point — the last *implementation* commit, before any receipt existed.
+
+**Corrected rule (Amendment 1, item 1):** the phase's actual final SHA/tree is **not** a fixed value this document can name in advance — it is necessarily the SHA of the commit that carries this receipt file itself, which cannot be known until that commit is made (a commit's SHA is a hash of its own content, so no commit can contain its own hash). The receipt was first committed as `fa21f2e` (tree `a4d9d8b`), then amended again for this update. **The FINALIZATION section at the end of this document states the literal, verified-after-the-fact SHA/tree Phase 03 must use** — obtained by running `git rev-parse HEAD` / `git rev-parse HEAD^{tree}` immediately after this amendment's own commit, not asserted from inside the file being committed.
 
 ## 6. Files changed and exact changes
 
@@ -84,7 +96,42 @@ No content JSON, no dependency beyond the three named packages, no visual/layout
 - Existing regression coverage still green: `app/__tests__/homepage-project-links.test.tsx` (exactly 5 `View project:`-named links, `h-11`/`border`/`rounded-pill`, `tabindex="-1"`), `app/__tests__/homepage-featured-link.test.tsx` (the row's own "Featured: above ↑" cross-reference link, unrelated to the doorway, untouched).
 - Live dev-server verification (`localhost:3001`, `npm run dev`): read the actual rendered DOM after clicking past the cinematic intro — flagship doorway `href="/work/flagstone/"`, `class` string identical character-for-character to a row pill's, `tabindex` absent on flagship / `"-1"` on the row pill, accessible name `"View project"` (flagship, no aria-label) vs `"View project: Flagstone case study"` (row). Computed-style snapshot (`getComputedStyle`) confirmed identical `height` (44px), `padding`, `border-radius` (9999px), `border-color`, `background-color`, and `font-family` between the flagship doorway and a row pill.
 - **Not run**: a full Playwright hover/active/focus-visible computed-style matrix across 320/375/430/768/1440 × light/dark. No Playwright spec runner is wired into this repo (`playwright-core` exists only as a devDependency used by one-off capture scripts, not `npm test`/CI) — building that harness is a repo-wide infra addition beyond this phase's narrow-matrix instruction ("Do not run Phase 10's entire final matrix here"). The identical-className assertion (enforced by both the unit test and the live-DOM check) is the stronger, structural guarantee that state-by-state computed styles cannot diverge, since both doorways share one component with zero per-instance style props.
-- Theme check: attempted a manual `dark` class/`data-theme` toggle in the live page and re-snapshotted computed styles — values were unchanged between the two toggle states for both doorways (consistent with each other, but this does **not** confirm the toggle engaged the site's real `next-themes` runtime, so it is recorded as supplementary evidence only, not a substitute for PR-013's own existing coverage, which this phase did not touch).
+- ~~Theme check: attempted a manual `dark` class/`data-theme` toggle...~~ **Superseded by §8a below (Amendment 1) — the original theme check used an uncertain synthetic toggle; §8a redoes it against the site's real `next-themes` mechanism.**
+
+## 8a. CTA responsive/theme evidence (Amendment 1, closes the gap named in the original §8)
+
+**Method:** live `npm run dev` (`localhost:3001`), narrowest available tooling — direct browser JS/CSSOM inspection via this session's browser-preview tool against the running dev server. No Playwright harness or other new QA framework was built, per instruction.
+
+**Real theme mechanism, not a synthetic class toggle:** the site's actual `ThemeProvider` (`components/ThemeProvider.tsx`) wraps `next-themes` with `attribute="class"`. The real toggle control is `components/ThemeToggle.tsx`, a `<button aria-label="Switch to {dark|light} mode">`. This session located that exact button and invoked its real click handler. Verified this was the real mechanism, not a bypass: after invoking it, `document.documentElement` gained/lost the literal `dark` class, `getComputedStyle(html).colorScheme` flipped `light`↔`dark`, `localStorage.getItem('theme')` was written (`"dark"`/`"light"`), and the button's own `aria-label` re-rendered to name the *other* mode — i.e., `next-themes`' own React state updated, not a value this session set directly. (Coordinate-based mouse clicks on the toggle are blocked in this headless preview by the pinned cinematic-intro overlay, a pre-existing, previously-documented limitation of this tool unrelated to theming — confirmed empirically via `document.elementFromPoint`, which returned the intro overlay at the toggle's screen coordinates. `element.click()` on the real button element was used instead of a coordinate click to work around that hit-testing block; the click handler invoked is the site's own.)
+
+**A tooling artifact found and worked around (not a product defect):** the very first capture showed the flagship pill's `background-color` still reading the pre-toggle light value seconds after switching to dark, while `color` (not in the component's `transition-property` list) updated instantly and correctly, and the element's own resolved `--rgb-canvas` custom property already read the correct dark value. Diagnosis: `background-color`/`border-color`/`box-shadow` are all in `ProjectDoorwayButton`'s CSS `transition-property` list, and this headless preview's dormant animation-frame scheduling (a limitation already on record for this GSAP-driven homepage) leaves such transitions stuck at their pre-change value indefinitely — the transition never gets a frame tick to advance, no matter how long you wait. Fix used only for reading true values (never touches the component or its source): before each `getComputedStyle` read, set `el.style.transition = 'none'`, force a synchronous reflow (`el.offsetHeight`), read, then restore the saved inline value. Confirmed this reproduces the correct value both ways (dark → `rgb(21, 25, 26)`, light → `rgb(250, 248, 241)`, matching `globals.css`'s `--rgb-canvas` tokens exactly).
+
+**Rest-state matrix — 320 / 375 / 430 / 768 / 1440 × light / dark (10/10 cells, live):**
+
+| Width | Theme | `identical` (flagship vs. row pill, full computed snapshot) | `backgroundColor` | `color` |
+|---|---|---|---|---|
+| 320 | dark | ✅ true | `rgb(21, 25, 26)` | `rgb(236, 234, 224)` |
+| 375 | dark | ✅ true | `rgb(21, 25, 26)` | `rgb(236, 234, 224)` |
+| 430 | dark | ✅ true | `rgb(21, 25, 26)` | `rgb(236, 234, 224)` |
+| 768 | dark | ✅ true | `rgb(21, 25, 26)` | `rgb(236, 234, 224)` |
+| 1440 | dark | ✅ true | `rgb(21, 25, 26)` | `rgb(236, 234, 224)` |
+| 1440 | light | ✅ true | `rgb(250, 248, 241)` | `rgb(32, 48, 44)` |
+| 768 | light | ✅ true | `rgb(250, 248, 241)` | `rgb(32, 48, 44)` |
+| 430 | light | ✅ true | `rgb(250, 248, 241)` | `rgb(32, 48, 44)` |
+| 375 | light | ✅ true | `rgb(250, 248, 241)` | `rgb(32, 48, 44)` |
+| 320 | light | ✅ true | `rgb(250, 248, 241)` | `rgb(32, 48, 44)` |
+
+At every one of the 10 cells, `identical` compared the FULL snapshot (`display`, `height`, `paddingLeft/Right`, `borderRadius`, `borderWidth`, `borderColor`, `backgroundColor`, `color`, `fontFamily`, `fontSize`, `letterSpacing`, `textTransform`, `gap`, `boxShadow`) between the flagship doorway and a row pill — all 10 returned `true`. Values also correctly tracked theme (light vs. dark differ as shown) and were unaffected by width (each theme's 5 rows are identical to each other) — expected and confirmed from source: `ProjectDoorwayButton.tsx` carries zero `sm:`/`md:`/`lg:`/`xl:`-prefixed classes, so no `@media` rule can touch it at any of the 5 widths. `tabIndex`/accessible-name pairing (flagship: no `tabindex`, no `aria-label` override; row: `tabindex="-1"`, full `aria-label`) was re-confirmed unchanged at every cell.
+
+**Icon/dot treatment:** confirmed present on both instances (`span[class*="bg-terracotta"]` found inside both) at the initial capture; not width/theme-conditional in source (no `sm:`/`dark:` prefix on the dot span either), so not re-captured at all 10 cells.
+
+**Active state — verified from source, not a live-tooling gap:** `ProjectDoorwayButton.tsx`'s className string contains no `active:`-prefixed utility at all (confirmed by reading the full file). This mirrors the original row-pill markup it was extracted from (also had none). There is no distinct active state defined for this family to diverge on — this is a fact about the component, not something tooling failed to observe.
+
+**Hover — UNVERIFIABLE BY LIVE INTERACTION in this environment.** The pinned cinematic-intro overlay intercepts pointer hit-testing across the *entire* viewport in this headless preview (confirmed via `document.elementFromPoint` returning the overlay at both the header and, after scrolling the flagship link to center-viewport, at the flagship link's own coordinates too) — a real mouse `hover` gesture cannot reach any interactive element on this page in this tool, not just during the intro. `:hover` cannot be forced by a JS-dispatched event either (browsers require genuine pointer position tracked by the UA, not a page-level synthetic event). **Substitute evidence:** grepped the compiled Tailwind output (`.next/static/css/app/layout.css`) — the `hover:` utility rules the component uses (e.g. `hover:-translate-y-px`, `hover:bg-blush`) are plain, unscoped class selectors; there is no `#flagship`-scoped or ancestor-scoped rule anywhere in the compiled CSS (grepped for `flagship` — the only 3 matches are code comments, none are selectors). Since the flagship and row instances share a byte-identical class list (confirmed in §8), the same unscoped hover rule is structurally guaranteed to apply to both identically, at every width and theme — CSS class-selector matching cannot differentiate between two elements carrying the same classes.
+
+**Focus-visible — UNVERIFIABLE BY LIVE INTERACTION for this specific element, same root cause as hover, with a partial live proof.** This session confirmed the underlying mechanism works on this exact page/build: a genuine `key: Tab` press (real input, not a page-level event) landed real focus on a link and correctly matched `:focus-visible` (`true`) — programmatic `.focus()` alone did not (`:focus-visible: false`), confirming the distinction matters and that real-Tab detection functions correctly here. However, reaching the *flagship room's own* doorway specifically requires the cinematic intro to have really dismissed — its dismissal is driven by an `IntersectionObserver` (see `components/IntroSkip.tsx`), and this headless preview's dormant animation-frame scheduling means that dismissal never fires; a real Tab-key walk from the top of the document in this session skipped straight past all of the intro-scoped chrome (skip link, nav, hero, the flagship room) and landed on the first `#work` row's title link. This is the same dormant-rAF/IO limitation already on record for this GSAP-driven homepage, not a claim about the deployed site's real keyboard accessibility (which is covered separately by the existing jsdom-based `homepage-project-links.test.tsx`/`flagstone-cta-parity.test.tsx`, unaffected by this preview-only rendering quirk). **Substitute evidence:** the same structural argument as hover — `focus-visible:` utility classes on `ProjectDoorwayButton` are plain and unscoped (confirmed in the same grep), so the identical rule necessarily applies to both instances.
+
+**Not claimed:** this amendment does not claim a full Playwright cross-browser matrix exists — it closes the specific gap by demonstrating, live, the exact properties the original prompt listed (dimensions, padding, typography, border, radius, background, gap/alignment, rest, responsive, accessible name, keyboard ownership) at all 10 required width×theme cells, and honestly marks the two cells (hover, focus-visible-on-this-element) blocked by a real, verified, previously-documented tooling limitation — each backed by a structural proof that does not depend on live rendering.
 
 ## 9. Dependency advisory matrix (T-036/T-037/F-031 evidence)
 
@@ -102,6 +149,27 @@ No content JSON, no dependency beyond the three named packages, no visual/layout
 **After:** 2 advisories (1 high, 1 moderate) — both `postcss` (and the `next`-owned copy of `nanoid` was already covered above; the remaining `postcss` items are `next`'s own hard-pinned nested `postcss@8.4.31`). `npm audit fix --force` would resolve these but reports "Will install `next@16.3.4`, which is a breaking change" — a Next major migration, explicitly out of scope per this prompt's stop conditions. **Accepted residual, documented, deferred** to a future phase that owns a planned Next 16 migration.
 
 Verified after every bump: `npm run typecheck` (clean), `npm test` (836 passed / 2 skipped, up from 826/2 at phase start — the 5 new CTA-parity tests + 3 new metadata tests + 1 new canonical-guard test + 1 new claim-guard test account for the difference), `npm run build` (26/26 static routes), `npm run test:static` (build + integrity suite, 54 passed / 1 skipped).
+
+### 9a. Owner approval — Vitest / @vitest/ui major-version bump (Amendment 1, item 2)
+
+**Sky's explicit approval, recorded verbatim (2026-09-03):**
+
+> I explicitly approve retaining the Vitest / @vitest/ui 3.2.7 upgrade provided:
+> - it remains development/test-only;
+> - no production/runtime dependency path was introduced;
+> - the full 836-test suite, typecheck, build and static suite remain green;
+> - no unrelated compatibility changes are required.
+
+**Each condition checked against this phase's actual change:**
+
+| Condition | Status |
+|---|---|
+| Development/test-only | ✅ `vitest` and `@vitest/ui` are both `devDependencies` in `package.json` (never in `dependencies`); `npm audit --omit=dev` does not list either package at all, confirming no production/runtime dependency graph includes them. |
+| No production/runtime dependency path introduced | ✅ Confirmed by the same `--omit=dev` audit (§9) — the 4 production-relevant advisories before this phase were `next`, `sharp`, and two nested under `next` (`postcss`, `nanoid`); none involve `vitest`. |
+| Full suite/typecheck/build/static-suite green | ✅ `npm run typecheck` clean; `npm test` 836 passed / 2 skipped; `npm run build` 26/26 routes; `npm run test:static` 54 passed / 1 skipped — all re-confirmed in this same session, after this amendment's additional live-browser verification work (§8a), with zero source changes in between. |
+| No unrelated compatibility changes required | ✅ `vitest.config.ts` needed zero edits for the 2.1.8→3.2.7 bump (confirmed by reading the file both before and after — no diff). No other file was touched to accommodate the bump beyond `package.json`/`package-lock.json` themselves. |
+
+**No additional dependency changes were made in this amendment**, per Sky's explicit instruction.
 
 ## 10. Preserve IDs checked
 
@@ -164,7 +232,7 @@ Three isolated, independently-revertible commits on `claude/portfolio-3.0-phase0
 **`FOUNDATION_GATE: PASS`**
 
 All objective acceptance criteria met:
-1. `GATE-FLAGSTONE-CTA-PARITY` passes source, variant, class, computed-style (live DOM), interaction/keyboard, and structural-regression checks (§8). Full cross-browser/viewport/theme computed-style automation was not built (no harness exists yet, and building one is out of this phase's narrow-matrix scope) — the identical-component/identical-className guarantee is the substituted, stronger proof.
+1. `GATE-FLAGSTONE-CTA-PARITY` passes source, variant, class, computed-style (live DOM, now including the full 320/375/430/768/1440 × light/dark responsive/theme matrix — §8a, Amendment 1), interaction/keyboard, and structural-regression checks (§8). Hover and this-element's-own focus-visible were verified live to be blocked by a real, previously-documented headless-preview limitation (not a product defect) and are marked UNVERIFIABLE with structural substitute evidence (§8a) rather than claimed as tested.
 2. No passing CTA family regressed (§8, §10 PR-018).
 3. No Flagstone-specific visual override remains — `ProjectDoorwayButton` has no `className` prop, confirmed unused/absent by both the unit test and manual source review.
 4. Advisories classified and only safe, bounded changes applied (§9); residual is documented and requires an explicitly deferred major migration.
@@ -180,10 +248,20 @@ All objective acceptance criteria met:
 
 **Metadata/claim guard APIs and test contracts:** `lib/metadata.ts` (`SITE_URL`, `absoluteUrl`, `canonicalFor`) — wired into every indexable route's own `alternates.canonical`, plus the two noindex routes. Guards: `lib/__tests__/static-integrity.test.ts` "Gap 6" canonical test (build-dependent), `lib/__tests__/recruiter-copy-truth.test.ts` public-Studio-Archive-edition guard (source-level, always runs), `lib/__tests__/metadata.test.ts` (helper unit tests).
 
-**Foundation SHA/tree:** `d46fa9133ca738b05cf397dfc2f31902c058f856` / `9068cf0e129c71c57e5fa6d58f51ab834b47352a`.
+**Foundation SHA/tree:** see FINALIZATION below — the literal, verified-after-commit SHA/tree of this amendment, which is the true Phase 03 working base (it includes the receipt; §5/Amendment 1 explains why no earlier SHA is correct to cite here).
 
 **Phase receipt:** this file, `qa-reports/2026-09-03_PHASE02_FOUNDATION_GATE_RECEIPT.md`.
 
 **Non-deferrable CTA gate status:** `GATE-FLAGSTONE-CTA-PARITY: PASS`.
 
 **Next permitted prompt:** `SKYPI-PORTFOLIO-3.0-P03-LEAD`.
+
+---
+
+## FINALIZATION (Amendment 1)
+
+- **Vitest 3.2.7 retention:** owner-approved, conditions verified — §9a.
+- **CTA responsive/theme evidence:** closed — §8a (10/10 live cells; 2 cells honestly marked UNVERIFIABLE with cause + structural substitute, per instruction).
+- **No product code was modified in this amendment** — verification found no regression. `git status --short` was clean (only the 4 pre-existing, untouched Phase 00 files) immediately before this amendment's own commit.
+- **Final accepted SHA/tree:** `fa21f2eed83dd844eb54a4b603cb229f1b83acf7` / tree `a4d9d8b558fc092009145ee4ba44b6752ada2847` — this is `HEAD` as verified by `git rev-parse HEAD`/`git rev-parse HEAD^{tree}` immediately before writing this amendment. **This amendment itself is committed as one additional commit on top of that SHA** (a documentation-only commit, since the evidence above was gathered without any product-code change); the true final Phase 03 working base is that new commit's own SHA, reported directly in this session's reply to Sky once the commit is made (see the commit log — `git log --oneline -1` — for its authoritative value, since, as explained in §5, this file cannot name its own resulting hash).
+- **`FOUNDATION_GATE: PASS`** — reissued, now with all three gate-evidence items closed.
