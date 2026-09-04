@@ -44,7 +44,9 @@ Identified by remote URL, not by folder name, per the current-truth rule.
 
 ## 5. Files changed and exact changes
 
-Committed as `2c86dba1c0e7170c812c9d03acde7b0961bded22` / tree `cd41a0eae1d68481d9820cdb6e970a788b8eadb7` on `claude/portfolio-3.0-phase00-baseline-20260903`, per Sky's explicit commit authorization (2026-09-03). **No push, no merge, no deploy.**
+Committed as **`cbd36df2aa9d092d2d25a70fc37d2a6ba4ffae62`** / tree `d81333e5f5fe28602e1c59ed5c3540c31412d4e1` on `claude/portfolio-3.0-phase00-baseline-20260903`, per Sky's explicit commit authorization (2026-09-03). **No push, no merge, no deploy.**
+
+(A receipt cannot name its own commit's SHA without changing it, so the line above was corrected in one trivial follow-up commit. `cbd36df` is the commit that carries all Phase 03 source and evidence; the follow-up touches only this sentence.)
 
 `git diff --stat` for that commit:
 
@@ -384,7 +386,7 @@ Protection for `components/cinematic/**` is convention-only in this repo (no lin
 
 ## 13. Rollback reference
 
-`git revert 2c86dba1c0e7170c812c9d03acde7b0961bded22` is sufficient and complete. Every change is copy, metadata, one **additive optional** component prop, one nav-map entry, and tests. No migration, no dependency change, no deploy, no data, nothing stateful.
+`git revert cbd36df2aa9d092d2d25a70fc37d2a6ba4ffae62` is sufficient and complete (plus the one-line follow-up commit, if reverting the documentation too). Every change is copy, metadata, one **additive optional** component prop, one nav-map entry, and tests. No migration, no dependency change, no deploy, no data, nothing stateful.
 
 The rollback point is the accepted Phase 02 state, `622797ebc42085bf0138a2ded6925f5c9c6e4bc6` / tree `dca3dd238162ddb6e7814bc0575e036faa933d90`, which received no writes and remains reachable. Nothing was pushed, so `origin/main` is untouched at `19d946c9c48b325bce5d3a9f292d2cb48450cf01` and production is unaffected.
 
@@ -396,7 +398,7 @@ The rollback point is the accepted Phase 02 state, `622797ebc42085bf0138a2ded692
 | Push / merge / deploy / visibility | **NONE** — none attempted, none authorized. `origin/main` remains `19d946c9…`; production unaffected |
 | External sends | **NONE** |
 | Other repositories written | **NONE** |
-| Local, inside this worktree | source edits (§5); one local commit `2c86dba` on the integration branch; `rm -rf out` + `npm run build` four times (gitignored); evidence written under `qa-reports/` |
+| Local, inside this worktree | source edits (§5); two local commits on the integration branch (`cbd36df` + a one-line receipt correction); `rm -rf out` + `npm run build` four times (gitignored); evidence written under `qa-reports/` |
 | Local, outside the repo | screenshots, capture/axe scripts, and review JSON under the session scratchpad only |
 
 `npm ci` was **not** re-run; no dependency was added, removed, or upgraded.
