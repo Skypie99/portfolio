@@ -1,0 +1,112 @@
+{
+  "result": "PASS",
+  "contrastSamples": [
+    {
+      "route": "/flagstone/",
+      "color": "rgb(255, 255, 255)",
+      "opacity": 0.92,
+      "background": "rgb(21, 88, 204)",
+      "theme": "light",
+      "ratio": 5.644812255597836
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "color": "rgb(255, 255, 255)",
+      "opacity": 0.92,
+      "background": "rgb(21, 88, 204)",
+      "theme": "light",
+      "ratio": 5.644812255597836
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "color": "rgb(255, 255, 255)",
+      "opacity": 0.92,
+      "background": "rgb(21, 88, 204)",
+      "theme": "light",
+      "ratio": 5.644812255597836
+    },
+    {
+      "route": "/flagstone/support/",
+      "color": "rgb(255, 255, 255)",
+      "opacity": 0.92,
+      "background": "rgb(21, 88, 204)",
+      "theme": "light",
+      "ratio": 5.644812255597836
+    },
+    {
+      "route": "/flagstone/terms/",
+      "color": "rgb(255, 255, 255)",
+      "opacity": 0.92,
+      "background": "rgb(21, 88, 204)",
+      "theme": "light",
+      "ratio": 5.644812255597836
+    },
+    {
+      "route": "/flagstone/",
+      "color": "rgb(8, 17, 31)",
+      "opacity": 0.92,
+      "background": "rgb(110, 163, 255)",
+      "theme": "dark",
+      "ratio": 6.735135070943732
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "color": "rgb(8, 17, 31)",
+      "opacity": 0.92,
+      "background": "rgb(110, 163, 255)",
+      "theme": "dark",
+      "ratio": 6.735135070943732
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "color": "rgb(8, 17, 31)",
+      "opacity": 0.92,
+      "background": "rgb(110, 163, 255)",
+      "theme": "dark",
+      "ratio": 6.735135070943732
+    },
+    {
+      "route": "/flagstone/support/",
+      "color": "rgb(8, 17, 31)",
+      "opacity": 0.92,
+      "background": "rgb(110, 163, 255)",
+      "theme": "dark",
+      "ratio": 6.735135070943732
+    },
+    {
+      "route": "/flagstone/terms/",
+      "color": "rgb(8, 17, 31)",
+      "opacity": 0.92,
+      "background": "rgb(110, 163, 255)",
+      "theme": "dark",
+      "ratio": 6.735135070943732
+    }
+  ],
+  "interactions": [
+    {
+      "theme": "light",
+      "action": "pointer Skip intro",
+      "hash": "",
+      "heroVisible": true
+    },
+    {
+      "theme": "light",
+      "action": "keyboard skip to main",
+      "firstFocus": "Skip to main content",
+      "hash": "#main"
+    },
+    {
+      "theme": "dark",
+      "action": "pointer Skip intro",
+      "hash": "",
+      "heroVisible": true
+    },
+    {
+      "theme": "dark",
+      "action": "keyboard skip to main",
+      "firstFocus": "Skip to main content",
+      "hash": "#main"
+    }
+  ],
+  "scope": "Owned header-pair regression at393px both themes; actual pointer intro skip and keyboard skip, no broad P04 re-audit"
+}

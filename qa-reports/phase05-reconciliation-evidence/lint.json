@@ -1,0 +1,12 @@
+{
+  "name": "lint",
+  "command": [
+    "npm",
+    "run",
+    "lint"
+  ],
+  "cwd": "/Users/skypie/Portfolio-codex/portfolio-3.0-phase05-reconciled-20260904",
+  "exit": 0,
+  "seconds": 4.59,
+  "log": "/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/reconciliation/lint.log"
+}

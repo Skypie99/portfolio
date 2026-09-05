@@ -1,0 +1,11 @@
+{
+  "name": "full-tests",
+  "command": [
+    "npm",
+    "test"
+  ],
+  "cwd": "/Users/skypie/Portfolio-codex/portfolio-3.0-phase05-reconciled-20260904",
+  "exit": 0,
+  "seconds": 14.2,
+  "log": "/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/reconciliation/full-tests.log"
+}

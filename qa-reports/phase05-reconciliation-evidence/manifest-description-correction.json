@@ -1,0 +1,15 @@
+{
+  "reason": "Concrete banked provenance inconsistency found in independent reconciliation; align metadata with already-approved actual Dispatch capture and rendered alt",
+  "changes": [
+    {
+      "theme": "dark",
+      "before": "The Dispatch queue \u2014 work items lined up with status, owner and the relay controls held safely off. Synthetic local candidate.",
+      "after": "The synthetic Dispatch queue, showing invented work items with owners, statuses and dependencies. Local candidate."
+    },
+    {
+      "theme": "light",
+      "before": "The Dispatch queue \u2014 work items lined up with status, owner and the relay controls held safely off. Synthetic local candidate.",
+      "after": "The synthetic Dispatch queue, showing invented work items with owners, statuses and dependencies. Local candidate."
+    }
+  ]
+}

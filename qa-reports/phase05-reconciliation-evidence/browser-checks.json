@@ -1,0 +1,1070 @@
+{
+  "method": "Fresh Chromium contexts, loopback-only Node static server; 6routes x2themes x2widths; reduced motion; no external endpoint rerun",
+  "result": "PASS",
+  "scenarios": [
+    {
+      "theme": "light",
+      "width": 375,
+      "route": "/work/dashboard/",
+      "title": "Claude Corp Dashboard: Sky Halisky",
+      "documentWidth": 375,
+      "errors": [],
+      "external": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3345/showcase/dashboard/command-center.light.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Dashboard command center, showing project health, agent activity and pending decisions on one calm board."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/dashboard/think-tank.light.desktop.avif",
+          "naturalWidth": 1600,
+          "naturalHeight": 1000,
+          "alt": ""
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/dashboard/dispatch.light.desktop.avif",
+          "naturalWidth": 1600,
+          "naturalHeight": 1000,
+          "alt": ""
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/prompt-library/home.light.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Prompt Library home, with search and category chips over the prompt grid and the featured card leading."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/ghost-code/board.light.desktop.avif",
+          "naturalWidth": 1600,
+          "naturalHeight": 1000,
+          "alt": "A Ghost Code round in play, with the Phantom at the centre of four command tokens and the prompt above."
+        }
+      ],
+      "badExternalLinks": []
+    },
+    {
+      "theme": "light",
+      "width": 375,
+      "route": "/work/claude-corp/",
+      "title": "Claude Corp: Sky Halisky",
+      "documentWidth": 375,
+      "errors": [],
+      "external": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3345/showcase/claude-corp/hero-pipeline.light.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Claude Corp orchestration pipeline below the hero introduction, with Sky setting intent and retaining merge approval."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/claude-corp/team.light.desktop.avif",
+          "naturalWidth": 1600,
+          "naturalHeight": 1000,
+          "alt": ""
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/dashboard/command-center.light.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Dashboard command center, showing project health, agent activity and pending decisions on one calm board."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/prompt-library/home.light.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Prompt Library home, with search and category chips over the prompt grid and the featured card leading."
+        }
+      ],
+      "badExternalLinks": []
+    },
+    {
+      "theme": "light",
+      "width": 375,
+      "route": "/work/prompt-library/",
+      "title": "Prompt Library: Sky Halisky",
+      "documentWidth": 375,
+      "errors": [],
+      "external": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3345/showcase/prompt-library/home.light.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Prompt Library home, with a search bar and category chips over a grid of prompt cards and the featured card leading."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/prompt-library/prompt-detail.light.desktop.avif",
+          "naturalWidth": 1600,
+          "naturalHeight": 1000,
+          "alt": ""
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/ghost-code/board.light.desktop.avif",
+          "naturalWidth": 1600,
+          "naturalHeight": 1000,
+          "alt": "A Ghost Code round in play, with the Phantom at the centre of four command tokens and the prompt above."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/flagstone/explore-current.phone.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 2803,
+          "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation."
+        }
+      ],
+      "badExternalLinks": []
+    },
+    {
+      "theme": "light",
+      "width": 375,
+      "route": "/work/ghost-code/",
+      "title": "Ghost Code: Sky Halisky",
+      "documentWidth": 375,
+      "errors": [],
+      "external": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3345/showcase/ghost-code/title.light.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "Ghost Code’s title screen: the Phantom mark beside the wordmark, three mastery counters, a one-line how to play, and Press Start with a theme control below."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/flagstone/explore-current.phone.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 2803,
+          "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/claude-corp/hero-pipeline.light.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Claude Corp pipeline, from human intent through fifteen AI roles to human merge approval."
+        }
+      ],
+      "badExternalLinks": []
+    },
+    {
+      "theme": "light",
+      "width": 375,
+      "route": "/work/flagstone/",
+      "title": "Flagstone: Sky Halisky",
+      "documentWidth": 375,
+      "errors": [],
+      "external": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3345/showcase/flagstone/explore-current.phone.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 2803,
+          "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/flagstone/report-current.phone.avif",
+          "naturalWidth": 1257,
+          "naturalHeight": 1489,
+          "alt": ""
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/flagstone/community-current.phone.avif",
+          "naturalWidth": 1320,
+          "naturalHeight": 1480,
+          "alt": ""
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/claude-corp/hero-pipeline.light.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Claude Corp pipeline, from human intent through fifteen AI roles to human merge approval."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/dashboard/command-center.light.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Dashboard command center, showing project health, agent activity and pending decisions on one calm board."
+        }
+      ],
+      "badExternalLinks": []
+    },
+    {
+      "theme": "light",
+      "width": 375,
+      "route": "/",
+      "title": "Sky Halisky: Senior Technical Support",
+      "documentWidth": 375,
+      "errors": [],
+      "external": [],
+      "skipIntroCount": 0,
+      "doorwayCount": 6,
+      "doorwayClasses": [
+        "group inline-flex h-11 w-fit items-center gap-2 rounded-pill border border-border-interactive bg-canvas px-4 font-mono text-label tracking-label uppercase text-ink shadow-soft transition-[background-color,border-color,box-shadow,transform] duration-base ease-out hover:-translate-y-px hover:border-ink-muted hover:bg-blush hover:shadow-soft focus-visible:-translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
+      ],
+      "doorwayStyles": [
+        {
+          "height": "44px",
+          "padding": "0px 16px",
+          "border": "1px solid rgb(140, 148, 132)",
+          "borderRadius": "9999px",
+          "font": "",
+          "background": "rgb(250, 248, 241)",
+          "color": "rgb(32, 48, 44)"
+        },
+        {
+          "height": "44px",
+          "padding": "0px 16px",
+          "border": "1px solid rgb(140, 148, 132)",
+          "borderRadius": "9999px",
+          "font": "",
+          "background": "rgb(250, 248, 241)",
+          "color": "rgb(32, 48, 44)"
+        },
+        {
+          "height": "44px",
+          "padding": "0px 16px",
+          "border": "1px solid rgb(140, 148, 132)",
+          "borderRadius": "9999px",
+          "font": "",
+          "background": "rgb(250, 248, 241)",
+          "color": "rgb(32, 48, 44)"
+        },
+        {
+          "height": "44px",
+          "padding": "0px 16px",
+          "border": "1px solid rgb(140, 148, 132)",
+          "borderRadius": "9999px",
+          "font": "",
+          "background": "rgb(250, 248, 241)",
+          "color": "rgb(32, 48, 44)"
+        },
+        {
+          "height": "44px",
+          "padding": "0px 16px",
+          "border": "1px solid rgb(140, 148, 132)",
+          "borderRadius": "9999px",
+          "font": "",
+          "background": "rgb(250, 248, 241)",
+          "color": "rgb(32, 48, 44)"
+        },
+        {
+          "height": "44px",
+          "padding": "0px 16px",
+          "border": "1px solid rgb(140, 148, 132)",
+          "borderRadius": "9999px",
+          "font": "",
+          "background": "rgb(250, 248, 241)",
+          "color": "rgb(32, 48, 44)"
+        }
+      ],
+      "firstWorkHref": "/work/flagstone/",
+      "images": [
+        {
+          "src": "http://127.0.0.1:3345/showcase/flagstone/explore-current.phone.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 2803,
+          "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation."
+        }
+      ],
+      "badExternalLinks": []
+    },
+    {
+      "theme": "light",
+      "width": 1440,
+      "route": "/work/dashboard/",
+      "title": "Claude Corp Dashboard: Sky Halisky",
+      "documentWidth": 1440,
+      "errors": [],
+      "external": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3345/showcase/dashboard/command-center.light.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Dashboard command center, showing project health, agent activity and pending decisions on one calm board."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/dashboard/think-tank.light.desktop.avif",
+          "naturalWidth": 1600,
+          "naturalHeight": 1000,
+          "alt": ""
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/dashboard/dispatch.light.desktop.avif",
+          "naturalWidth": 1600,
+          "naturalHeight": 1000,
+          "alt": ""
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/prompt-library/home.light.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Prompt Library home, with search and category chips over the prompt grid and the featured card leading."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/ghost-code/board.light.desktop.avif",
+          "naturalWidth": 1600,
+          "naturalHeight": 1000,
+          "alt": "A Ghost Code round in play, with the Phantom at the centre of four command tokens and the prompt above."
+        }
+      ],
+      "badExternalLinks": []
+    },
+    {
+      "theme": "light",
+      "width": 1440,
+      "route": "/work/claude-corp/",
+      "title": "Claude Corp: Sky Halisky",
+      "documentWidth": 1440,
+      "errors": [],
+      "external": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3345/showcase/claude-corp/hero-pipeline.light.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Claude Corp orchestration pipeline below the hero introduction, with Sky setting intent and retaining merge approval."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/claude-corp/team.light.desktop.avif",
+          "naturalWidth": 1600,
+          "naturalHeight": 1000,
+          "alt": ""
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/dashboard/command-center.light.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Dashboard command center, showing project health, agent activity and pending decisions on one calm board."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/prompt-library/home.light.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Prompt Library home, with search and category chips over the prompt grid and the featured card leading."
+        }
+      ],
+      "badExternalLinks": []
+    },
+    {
+      "theme": "light",
+      "width": 1440,
+      "route": "/work/prompt-library/",
+      "title": "Prompt Library: Sky Halisky",
+      "documentWidth": 1440,
+      "errors": [],
+      "external": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3345/showcase/prompt-library/home.light.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Prompt Library home, with a search bar and category chips over a grid of prompt cards and the featured card leading."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/prompt-library/prompt-detail.light.desktop.avif",
+          "naturalWidth": 1600,
+          "naturalHeight": 1000,
+          "alt": ""
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/ghost-code/board.light.desktop.avif",
+          "naturalWidth": 1600,
+          "naturalHeight": 1000,
+          "alt": "A Ghost Code round in play, with the Phantom at the centre of four command tokens and the prompt above."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/flagstone/explore-current.phone.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 2803,
+          "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation."
+        }
+      ],
+      "badExternalLinks": []
+    },
+    {
+      "theme": "light",
+      "width": 1440,
+      "route": "/work/ghost-code/",
+      "title": "Ghost Code: Sky Halisky",
+      "documentWidth": 1440,
+      "errors": [],
+      "external": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3345/showcase/ghost-code/title.light.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "Ghost Code’s title screen: the Phantom mark beside the wordmark, three mastery counters, a one-line how to play, and Press Start with a theme control below."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/flagstone/explore-current.phone.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 2803,
+          "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/claude-corp/hero-pipeline.light.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Claude Corp pipeline, from human intent through fifteen AI roles to human merge approval."
+        }
+      ],
+      "badExternalLinks": []
+    },
+    {
+      "theme": "light",
+      "width": 1440,
+      "route": "/work/flagstone/",
+      "title": "Flagstone: Sky Halisky",
+      "documentWidth": 1440,
+      "errors": [],
+      "external": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3345/showcase/flagstone/explore-current.phone.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 2803,
+          "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/flagstone/report-current.phone.avif",
+          "naturalWidth": 1257,
+          "naturalHeight": 1489,
+          "alt": ""
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/flagstone/community-current.phone.avif",
+          "naturalWidth": 1320,
+          "naturalHeight": 1480,
+          "alt": ""
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/claude-corp/hero-pipeline.light.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Claude Corp pipeline, from human intent through fifteen AI roles to human merge approval."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/dashboard/command-center.light.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Dashboard command center, showing project health, agent activity and pending decisions on one calm board."
+        }
+      ],
+      "badExternalLinks": []
+    },
+    {
+      "theme": "light",
+      "width": 1440,
+      "route": "/",
+      "title": "Sky Halisky: Senior Technical Support",
+      "documentWidth": 1440,
+      "errors": [],
+      "external": [],
+      "skipIntroCount": 0,
+      "doorwayCount": 6,
+      "doorwayClasses": [
+        "group inline-flex h-11 w-fit items-center gap-2 rounded-pill border border-border-interactive bg-canvas px-4 font-mono text-label tracking-label uppercase text-ink shadow-soft transition-[background-color,border-color,box-shadow,transform] duration-base ease-out hover:-translate-y-px hover:border-ink-muted hover:bg-blush hover:shadow-soft focus-visible:-translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
+      ],
+      "doorwayStyles": [
+        {
+          "height": "44px",
+          "padding": "0px 16px",
+          "border": "1px solid rgb(140, 148, 132)",
+          "borderRadius": "9999px",
+          "font": "",
+          "background": "rgb(250, 248, 241)",
+          "color": "rgb(32, 48, 44)"
+        },
+        {
+          "height": "44px",
+          "padding": "0px 16px",
+          "border": "1px solid rgb(140, 148, 132)",
+          "borderRadius": "9999px",
+          "font": "",
+          "background": "rgb(250, 248, 241)",
+          "color": "rgb(32, 48, 44)"
+        },
+        {
+          "height": "44px",
+          "padding": "0px 16px",
+          "border": "1px solid rgb(140, 148, 132)",
+          "borderRadius": "9999px",
+          "font": "",
+          "background": "rgb(250, 248, 241)",
+          "color": "rgb(32, 48, 44)"
+        },
+        {
+          "height": "44px",
+          "padding": "0px 16px",
+          "border": "1px solid rgb(140, 148, 132)",
+          "borderRadius": "9999px",
+          "font": "",
+          "background": "rgb(250, 248, 241)",
+          "color": "rgb(32, 48, 44)"
+        },
+        {
+          "height": "44px",
+          "padding": "0px 16px",
+          "border": "1px solid rgb(140, 148, 132)",
+          "borderRadius": "9999px",
+          "font": "",
+          "background": "rgb(250, 248, 241)",
+          "color": "rgb(32, 48, 44)"
+        },
+        {
+          "height": "44px",
+          "padding": "0px 16px",
+          "border": "1px solid rgb(140, 148, 132)",
+          "borderRadius": "9999px",
+          "font": "",
+          "background": "rgb(250, 248, 241)",
+          "color": "rgb(32, 48, 44)"
+        }
+      ],
+      "firstWorkHref": "/work/flagstone/",
+      "images": [
+        {
+          "src": "http://127.0.0.1:3345/showcase/flagstone/explore-current.phone.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 2803,
+          "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation."
+        }
+      ],
+      "badExternalLinks": []
+    },
+    {
+      "theme": "dark",
+      "width": 375,
+      "route": "/work/dashboard/",
+      "title": "Claude Corp Dashboard: Sky Halisky",
+      "documentWidth": 375,
+      "errors": [],
+      "external": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3345/showcase/dashboard/command-center.dark.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Dashboard command center, showing project health, agent activity and pending decisions on one calm board."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/dashboard/think-tank.dark.desktop.avif",
+          "naturalWidth": 1600,
+          "naturalHeight": 1000,
+          "alt": ""
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/dashboard/dispatch.dark.desktop.avif",
+          "naturalWidth": 1600,
+          "naturalHeight": 1000,
+          "alt": ""
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/prompt-library/home.dark.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Prompt Library home, with search and category chips over the prompt grid and the featured card leading."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/ghost-code/board.dark.desktop.avif",
+          "naturalWidth": 1600,
+          "naturalHeight": 1000,
+          "alt": "A Ghost Code round in play, with the Phantom at the centre of four command tokens and the prompt above."
+        }
+      ],
+      "badExternalLinks": []
+    },
+    {
+      "theme": "dark",
+      "width": 375,
+      "route": "/work/claude-corp/",
+      "title": "Claude Corp: Sky Halisky",
+      "documentWidth": 375,
+      "errors": [],
+      "external": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3345/showcase/claude-corp/hero-pipeline.dark.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Claude Corp orchestration pipeline below the hero introduction, with Sky setting intent and retaining merge approval."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/claude-corp/team.dark.desktop.avif",
+          "naturalWidth": 1600,
+          "naturalHeight": 1000,
+          "alt": ""
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/dashboard/command-center.dark.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Dashboard command center, showing project health, agent activity and pending decisions on one calm board."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/prompt-library/home.dark.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Prompt Library home, with search and category chips over the prompt grid and the featured card leading."
+        }
+      ],
+      "badExternalLinks": []
+    },
+    {
+      "theme": "dark",
+      "width": 375,
+      "route": "/work/prompt-library/",
+      "title": "Prompt Library: Sky Halisky",
+      "documentWidth": 375,
+      "errors": [],
+      "external": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3345/showcase/prompt-library/home.dark.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Prompt Library home, with a search bar and category chips over a grid of prompt cards and the featured card leading."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/prompt-library/prompt-detail.dark.desktop.avif",
+          "naturalWidth": 1600,
+          "naturalHeight": 1000,
+          "alt": ""
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/ghost-code/board.dark.desktop.avif",
+          "naturalWidth": 1600,
+          "naturalHeight": 1000,
+          "alt": "A Ghost Code round in play, with the Phantom at the centre of four command tokens and the prompt above."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/flagstone/explore-current.phone.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 2803,
+          "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation."
+        }
+      ],
+      "badExternalLinks": []
+    },
+    {
+      "theme": "dark",
+      "width": 375,
+      "route": "/work/ghost-code/",
+      "title": "Ghost Code: Sky Halisky",
+      "documentWidth": 375,
+      "errors": [],
+      "external": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3345/showcase/ghost-code/title.dark.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "Ghost Code’s title screen: the Phantom mark beside the wordmark, three mastery counters, a one-line how to play, and Press Start with a theme control below."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/flagstone/explore-current.phone.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 2803,
+          "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/claude-corp/hero-pipeline.dark.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Claude Corp pipeline, from human intent through fifteen AI roles to human merge approval."
+        }
+      ],
+      "badExternalLinks": []
+    },
+    {
+      "theme": "dark",
+      "width": 375,
+      "route": "/work/flagstone/",
+      "title": "Flagstone: Sky Halisky",
+      "documentWidth": 375,
+      "errors": [],
+      "external": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3345/showcase/flagstone/explore-current.phone.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 2803,
+          "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/flagstone/report-current.phone.avif",
+          "naturalWidth": 1257,
+          "naturalHeight": 1489,
+          "alt": ""
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/flagstone/community-current.phone.avif",
+          "naturalWidth": 1320,
+          "naturalHeight": 1480,
+          "alt": ""
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/claude-corp/hero-pipeline.dark.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Claude Corp pipeline, from human intent through fifteen AI roles to human merge approval."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/dashboard/command-center.dark.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Dashboard command center, showing project health, agent activity and pending decisions on one calm board."
+        }
+      ],
+      "badExternalLinks": []
+    },
+    {
+      "theme": "dark",
+      "width": 375,
+      "route": "/",
+      "title": "Sky Halisky: Senior Technical Support",
+      "documentWidth": 375,
+      "errors": [],
+      "external": [],
+      "skipIntroCount": 0,
+      "doorwayCount": 6,
+      "doorwayClasses": [
+        "group inline-flex h-11 w-fit items-center gap-2 rounded-pill border border-border-interactive bg-canvas px-4 font-mono text-label tracking-label uppercase text-ink shadow-soft transition-[background-color,border-color,box-shadow,transform] duration-base ease-out hover:-translate-y-px hover:border-ink-muted hover:bg-blush hover:shadow-soft focus-visible:-translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
+      ],
+      "doorwayStyles": [
+        {
+          "height": "44px",
+          "padding": "0px 16px",
+          "border": "1px solid rgb(74, 86, 82)",
+          "borderRadius": "9999px",
+          "font": "",
+          "background": "rgb(21, 25, 26)",
+          "color": "rgb(236, 234, 224)"
+        },
+        {
+          "height": "44px",
+          "padding": "0px 16px",
+          "border": "1px solid rgb(74, 86, 82)",
+          "borderRadius": "9999px",
+          "font": "",
+          "background": "rgb(21, 25, 26)",
+          "color": "rgb(236, 234, 224)"
+        },
+        {
+          "height": "44px",
+          "padding": "0px 16px",
+          "border": "1px solid rgb(74, 86, 82)",
+          "borderRadius": "9999px",
+          "font": "",
+          "background": "rgb(21, 25, 26)",
+          "color": "rgb(236, 234, 224)"
+        },
+        {
+          "height": "44px",
+          "padding": "0px 16px",
+          "border": "1px solid rgb(74, 86, 82)",
+          "borderRadius": "9999px",
+          "font": "",
+          "background": "rgb(21, 25, 26)",
+          "color": "rgb(236, 234, 224)"
+        },
+        {
+          "height": "44px",
+          "padding": "0px 16px",
+          "border": "1px solid rgb(74, 86, 82)",
+          "borderRadius": "9999px",
+          "font": "",
+          "background": "rgb(21, 25, 26)",
+          "color": "rgb(236, 234, 224)"
+        },
+        {
+          "height": "44px",
+          "padding": "0px 16px",
+          "border": "1px solid rgb(74, 86, 82)",
+          "borderRadius": "9999px",
+          "font": "",
+          "background": "rgb(21, 25, 26)",
+          "color": "rgb(236, 234, 224)"
+        }
+      ],
+      "firstWorkHref": "/work/flagstone/",
+      "images": [
+        {
+          "src": "http://127.0.0.1:3345/showcase/flagstone/explore-current.phone.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 2803,
+          "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation."
+        }
+      ],
+      "badExternalLinks": []
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "route": "/work/dashboard/",
+      "title": "Claude Corp Dashboard: Sky Halisky",
+      "documentWidth": 1440,
+      "errors": [],
+      "external": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3345/showcase/dashboard/command-center.dark.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Dashboard command center, showing project health, agent activity and pending decisions on one calm board."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/dashboard/think-tank.dark.desktop.avif",
+          "naturalWidth": 1600,
+          "naturalHeight": 1000,
+          "alt": ""
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/dashboard/dispatch.dark.desktop.avif",
+          "naturalWidth": 1600,
+          "naturalHeight": 1000,
+          "alt": ""
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/prompt-library/home.dark.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Prompt Library home, with search and category chips over the prompt grid and the featured card leading."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/ghost-code/board.dark.desktop.avif",
+          "naturalWidth": 1600,
+          "naturalHeight": 1000,
+          "alt": "A Ghost Code round in play, with the Phantom at the centre of four command tokens and the prompt above."
+        }
+      ],
+      "badExternalLinks": []
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "route": "/work/claude-corp/",
+      "title": "Claude Corp: Sky Halisky",
+      "documentWidth": 1440,
+      "errors": [],
+      "external": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3345/showcase/claude-corp/hero-pipeline.dark.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Claude Corp orchestration pipeline below the hero introduction, with Sky setting intent and retaining merge approval."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/claude-corp/team.dark.desktop.avif",
+          "naturalWidth": 1600,
+          "naturalHeight": 1000,
+          "alt": ""
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/dashboard/command-center.dark.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Dashboard command center, showing project health, agent activity and pending decisions on one calm board."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/prompt-library/home.dark.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Prompt Library home, with search and category chips over the prompt grid and the featured card leading."
+        }
+      ],
+      "badExternalLinks": []
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "route": "/work/prompt-library/",
+      "title": "Prompt Library: Sky Halisky",
+      "documentWidth": 1440,
+      "errors": [],
+      "external": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3345/showcase/prompt-library/home.dark.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Prompt Library home, with a search bar and category chips over a grid of prompt cards and the featured card leading."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/prompt-library/prompt-detail.dark.desktop.avif",
+          "naturalWidth": 1600,
+          "naturalHeight": 1000,
+          "alt": ""
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/ghost-code/board.dark.desktop.avif",
+          "naturalWidth": 1600,
+          "naturalHeight": 1000,
+          "alt": "A Ghost Code round in play, with the Phantom at the centre of four command tokens and the prompt above."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/flagstone/explore-current.phone.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 2803,
+          "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation."
+        }
+      ],
+      "badExternalLinks": []
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "route": "/work/ghost-code/",
+      "title": "Ghost Code: Sky Halisky",
+      "documentWidth": 1440,
+      "errors": [],
+      "external": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3345/showcase/ghost-code/title.dark.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "Ghost Code’s title screen: the Phantom mark beside the wordmark, three mastery counters, a one-line how to play, and Press Start with a theme control below."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/flagstone/explore-current.phone.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 2803,
+          "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/claude-corp/hero-pipeline.dark.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Claude Corp pipeline, from human intent through fifteen AI roles to human merge approval."
+        }
+      ],
+      "badExternalLinks": []
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "route": "/work/flagstone/",
+      "title": "Flagstone: Sky Halisky",
+      "documentWidth": 1440,
+      "errors": [],
+      "external": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3345/showcase/flagstone/explore-current.phone.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 2803,
+          "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/flagstone/report-current.phone.avif",
+          "naturalWidth": 1257,
+          "naturalHeight": 1489,
+          "alt": ""
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/flagstone/community-current.phone.avif",
+          "naturalWidth": 1320,
+          "naturalHeight": 1480,
+          "alt": ""
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/claude-corp/hero-pipeline.dark.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Claude Corp pipeline, from human intent through fifteen AI roles to human merge approval."
+        },
+        {
+          "src": "http://127.0.0.1:3345/showcase/dashboard/command-center.dark.desktop.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 806,
+          "alt": "The Dashboard command center, showing project health, agent activity and pending decisions on one calm board."
+        }
+      ],
+      "badExternalLinks": []
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "route": "/",
+      "title": "Sky Halisky: Senior Technical Support",
+      "documentWidth": 1440,
+      "errors": [],
+      "external": [],
+      "skipIntroCount": 0,
+      "doorwayCount": 6,
+      "doorwayClasses": [
+        "group inline-flex h-11 w-fit items-center gap-2 rounded-pill border border-border-interactive bg-canvas px-4 font-mono text-label tracking-label uppercase text-ink shadow-soft transition-[background-color,border-color,box-shadow,transform] duration-base ease-out hover:-translate-y-px hover:border-ink-muted hover:bg-blush hover:shadow-soft focus-visible:-translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
+      ],
+      "doorwayStyles": [
+        {
+          "height": "44px",
+          "padding": "0px 16px",
+          "border": "1px solid rgb(74, 86, 82)",
+          "borderRadius": "9999px",
+          "font": "",
+          "background": "rgb(21, 25, 26)",
+          "color": "rgb(236, 234, 224)"
+        },
+        {
+          "height": "44px",
+          "padding": "0px 16px",
+          "border": "1px solid rgb(74, 86, 82)",
+          "borderRadius": "9999px",
+          "font": "",
+          "background": "rgb(21, 25, 26)",
+          "color": "rgb(236, 234, 224)"
+        },
+        {
+          "height": "44px",
+          "padding": "0px 16px",
+          "border": "1px solid rgb(74, 86, 82)",
+          "borderRadius": "9999px",
+          "font": "",
+          "background": "rgb(21, 25, 26)",
+          "color": "rgb(236, 234, 224)"
+        },
+        {
+          "height": "44px",
+          "padding": "0px 16px",
+          "border": "1px solid rgb(74, 86, 82)",
+          "borderRadius": "9999px",
+          "font": "",
+          "background": "rgb(21, 25, 26)",
+          "color": "rgb(236, 234, 224)"
+        },
+        {
+          "height": "44px",
+          "padding": "0px 16px",
+          "border": "1px solid rgb(74, 86, 82)",
+          "borderRadius": "9999px",
+          "font": "",
+          "background": "rgb(21, 25, 26)",
+          "color": "rgb(236, 234, 224)"
+        },
+        {
+          "height": "44px",
+          "padding": "0px 16px",
+          "border": "1px solid rgb(74, 86, 82)",
+          "borderRadius": "9999px",
+          "font": "",
+          "background": "rgb(21, 25, 26)",
+          "color": "rgb(236, 234, 224)"
+        }
+      ],
+      "firstWorkHref": "/work/flagstone/",
+      "images": [
+        {
+          "src": "http://127.0.0.1:3345/showcase/flagstone/explore-current.phone.avif",
+          "naturalWidth": 1290,
+          "naturalHeight": 2803,
+          "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation."
+        }
+      ],
+      "badExternalLinks": []
+    }
+  ]
+}

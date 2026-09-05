@@ -1,0 +1,32 @@
+{
+  "sourceSHA": "b784ac2221dd9522a04ae5ba17afa8d87cb5552c",
+  "sourceTree": "85989ef579def09f72f9c38a8aa1347c0892cd1d",
+  "parent": "ceea4044ac53ac412feb33cf644705a53bec574d",
+  "branch": "codex/portfolio-3.0-phase05-reconciled-20260904",
+  "worktree": "/Users/skypie/Portfolio-codex/portfolio-3.0-phase05-reconciled-20260904",
+  "status": "",
+  "changedFiles": [
+    "content/deliverables.json",
+    "content/showcase.manifest.json",
+    "public/showcase/claude-corp/hero-pipeline.dark.desktop.avif",
+    "public/showcase/claude-corp/hero-pipeline.dark.desktop.webp",
+    "public/showcase/claude-corp/hero-pipeline.light.desktop.avif",
+    "public/showcase/claude-corp/hero-pipeline.light.desktop.webp",
+    "public/showcase/claude-corp/team.dark.desktop.avif",
+    "public/showcase/claude-corp/team.dark.desktop.webp",
+    "public/showcase/claude-corp/team.light.desktop.avif",
+    "public/showcase/claude-corp/team.light.desktop.webp",
+    "public/showcase/dashboard/command-center.dark.desktop.avif",
+    "public/showcase/dashboard/command-center.dark.desktop.webp",
+    "public/showcase/dashboard/command-center.light.desktop.avif",
+    "public/showcase/dashboard/command-center.light.desktop.webp",
+    "public/showcase/dashboard/dispatch.dark.desktop.avif",
+    "public/showcase/dashboard/dispatch.dark.desktop.webp",
+    "public/showcase/dashboard/dispatch.light.desktop.avif",
+    "public/showcase/dashboard/dispatch.light.desktop.webp",
+    "public/showcase/dashboard/think-tank.dark.desktop.avif",
+    "public/showcase/dashboard/think-tank.dark.desktop.webp",
+    "public/showcase/dashboard/think-tank.light.desktop.avif",
+    "public/showcase/dashboard/think-tank.light.desktop.webp"
+  ]
+}
