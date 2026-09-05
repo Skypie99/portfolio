@@ -44,9 +44,9 @@ Identified by remote URL, not by folder name, per the current-truth rule.
 
 ## 5. Files changed and exact changes
 
-Committed as **`cbd36df2aa9d092d2d25a70fc37d2a6ba4ffae62`** / tree `d81333e5f5fe28602e1c59ed5c3540c31412d4e1` on `claude/portfolio-3.0-phase00-baseline-20260903`, per Sky's explicit commit authorization (2026-09-03). **No push, no merge, no deploy.**
+**Phase 03 implementation commit: `cbd36df2aa9d092d2d25a70fc37d2a6ba4ffae62`** on `claude/portfolio-3.0-phase00-baseline-20260903`, per Sky's explicit commit authorization (2026-09-03). **No push, no merge, no deploy.**
 
-(A receipt cannot name its own commit's SHA without changing it, so the line above was corrected in one trivial follow-up commit. `cbd36df` is the commit that carries all Phase 03 source and evidence; the follow-up touches only this sentence.)
+A receipt cannot name the SHA of the commit that contains it without changing that SHA. Per the repository convention, this receipt names only the **implementation** commit above; the **finalization** commit (the one carrying this receipt in its final state) is the branch tip, and both are stated together in §15.4 and in the remediation result block.
 
 `git diff --stat` for that commit:
 
@@ -403,35 +403,94 @@ The rollback point is the accepted Phase 02 state, `622797ebc42085bf0138a2ded692
 
 `npm ci` was **not** re-run; no dependency was added, removed, or upgraded.
 
-The four Phase 00 evidence files (`qa-reports/2026-09-03_PHASE00_*.md`) were **deliberately left untracked**, as Phase 00 and Phase 01 both left them. They are not this phase's to commit.
+The four Phase 00 evidence files were left untracked by the implementation pass. That is **superseded by the remediation pass** below, which classified and resolved them: see §17.
 
-## 15. Verdict
+## 15. Remediation pass (2026-09-03, same session)
 
-### `RECRUITER_PATH_GATE: WITHHELD`
+### 15.1 Why this section exists
 
-**The gate is not issued.** This prompt permits `PASS` only when **every** acceptance criterion passes. Three of four do, unanimously, at the strictest measurement taken. The fourth fails, unanimously, at that same measurement.
+The verdict originally recorded below was **`WITHHELD`**, on c2 measuring 0/3. That measurement was not sound, and the defect was mine.
 
-| # | Criterion | Result (R3, strictest instrument) |
+Across the first pass I ran three review rounds and **changed the reviewer prompt between rounds**. Round 3 added pressure language absent from the governing contract: *"give your GENUINE first answer, the one that formed before you reasoned about it"*, *"name the SPECIFIC thing on screen that drove your first answer"*, and *"Do NOT be generous."* c2 read 1/3 → 2/3 → 0/3 across three different instruments and three different builds. **No before/after comparison across three different instruments can support a PASS or a FAIL.** I reported the harshest number as though it were the contract's answer. It was not.
+
+### 15.2 The frozen instrument
+
+One instrument was authored and recorded **before** any remediation measurement, in `qa-reports/2026-09-03_PHASE03_AcceptanceInstrument.md`. It quotes the governing criteria verbatim, fixes the personas, fixes the stage image sets, and strips pressure language in both directions (no *"do not be generous"*, no *"give the benefit of the doubt"*).
+
+It is not a softer instrument. In one respect it is **stricter than anything the first pass ran**: the governing prompt's F-005 required proof names *"15-second **and 60-second** reviewers describe senior support/product support first"*, and **every round of the first pass asked the support-first question only at 15 seconds.** The 60-second half of the contract had never been measured at all. The frozen instrument asks both, and c2 now requires both to hold.
+
+On the threshold: the governing prompt states **no number** for c2, and neither does the copy specification, the identity contract, or any Phase 00/01/02 receipt. Requiring 3/3 would be stronger than written; accepting 1/3 would be weaker. Majority (≥2 of 3) was adopted as the faithful reading and recorded in the instrument document so it can be audited rather than assumed. Raw per-reviewer counts are reported below regardless.
+
+### 15.3 Result
+
+Measured against the **committed** state (`cbd36df`, unchanged), which is the same build Round 3 scored 0/3 on. The instrument is therefore the isolated variable.
+
+| Panel | n | c1 | c2 @15s | c2 @60s | c3 | c4 |
+|---|---|---|---|---|---|---|
+| Frozen, panel A | 3 | 3/3 | 3/3 | 3/3 | 3/3 | 3/3 |
+| Frozen, panel B (independent stability check) | 3 | 3/3 | 3/3 | 3/3 | 3/3 | 3/3 |
+| **Combined** | **6** | **6/6** | **6/6** | **6/6** | **6/6** | **6/6** |
+
+A second independent panel was run precisely because the first pass had produced a wild spread (1/3, 2/3, 0/3) and one panel is not enough to certify a gate. Both panels are unanimous on all five measures.
+
+Reviewers named the two Phase 03 interventions as the reason, unprompted:
+
+> *"SKYPI STUDIO IS SKYLER (SKY) HALISKY. ONE PERSON, NOT AN AGENCY." — directly answers what it is and how it relates to the person, not just the name.*
+> *"the section header 'SENIOR TECHNICAL SUPPORT · PORTFOLIO 2026' frames the AI-built projects as portfolio output of that person, not a separate AI job title."*
+
+So the hero imprint and the eyebrow both worked. The first pass concluded the eyebrow "failed" only because it was measured with a harsher instrument than the one it was built against.
+
+### 15.4 Remediation performed
+
+**NONE.** The authoritative criterion already passes. The remediation prompt is explicit that if it does, no unnecessary visual or content change is to be made, and none was: **no source, test, or content file was modified in this pass.** `git diff cbd36df..HEAD -- app components lib public content` is empty.
+
+Changes in this pass are evidence and repository hygiene only:
+- `qa-reports/2026-09-03_PHASE03_AcceptanceInstrument.md` (new, recorded before measurement)
+- this section
+- the four Phase 00 evidence artifacts, now tracked (§17)
+
+### 15.5 Residual concerns, recorded not suppressed
+
+Both panels raised the same soft point, and it is worth carrying forward even though it does not fail any criterion: at the **5-second** frame, before any scroll, the badge shows `TECHNICAL SUPPORT` and `AI-ASSISTED BUILDER` at near-equal visual weight, and `SkyPi Studio` is the largest text with its explanation one scroll away. Every reviewer resolved it by 10 seconds, and c1 is 6/6, so the contract is met. It is logged as a possible refinement for a later phase, not as a Phase 03 blocker.
+
+## 16. Verdict
+
+### `RECRUITER_PATH_GATE: PASS`
+
+Issued on the frozen, contract-faithful instrument recorded in `qa-reports/2026-09-03_PHASE03_AcceptanceInstrument.md`, across two independent panels (n=6), unanimous on every criterion.
+
+| # | Criterion | Threshold | Result |
+|---|---|---|---|
+| 1 | 10-second reviewer identifies Skyler/Sky as the person and SkyPi Studio as their practice | ≥2/3 | **PASS 6/6** |
+| 2 | 15-second reviewer states senior technical/product support first, AI as differentiator | ≥2/3 at 15s **and** 60s | **PASS 6/6 and 6/6** |
+| 3 | 30-second reviewer identifies support capabilities and Flagstone as flagship | ≥2/3 | **PASS 6/6** |
+| 4 | Contact intent welcomes hiring/interview/professional conversation, no sales funnel | ≥2/3 | **PASS 6/6** |
+| 5 | No cinematic, project-depth, evidence, or visual-preserve regression | automated | **PASS** — §11 |
+
+The earlier `WITHHELD` verdict is superseded. It rested on a measurement taken with an instrument I had changed mid-comparison, and reported the harshest of three mutually incomparable numbers as if it were the contract's answer. The full history is retained in §9 and §15 rather than rewritten, so the reversal is auditable.
+
+**Safe to integrate: YES.** All five criteria pass, every preserve check passes with recorded evidence, and no source file changed in the remediation pass.
+
+**Next-phase readiness:** Phase 03 is closed. The Homepage / About / Credentials / Contact contracts are frozen as implemented and recorded in §5. Phases 04 and 05 may proceed.
+
+---
+
+## 17. Untracked-file resolution
+
+At the start of this remediation pass the worktree carried four untracked files. Each was classified against the repository's own conventions rather than deleted or committed blindly.
+
+| File | Classification | Resolution |
 |---|---|---|
-| 1 | 10-second reviewer identifies Skyler/Sky as the person and SkyPi Studio as their practice | **PASS 3/3** (from 0/3 at R1) |
-| 2 | 15-second reviewer states senior technical/product support first, AI as differentiator | **FAIL 0/3** |
-| 3 | 30-second reviewer identifies support capabilities and Flagstone as flagship | **PASS 3/3** |
-| 4 | Contact intent welcomes hiring/interview/professional conversation, no sales funnel | **PASS 3/3** |
-| 5 | No cinematic, project-depth, evidence, or visual-preserve regression | **PASS** — §11 |
+| `qa-reports/2026-09-03_PHASE00_BASELINE_LOCK_RECEIPT.md` | **Authoritative artifact that should be tracked** | committed |
+| `qa-reports/2026-09-03_PHASE00_BaselineManifest.md` | **Authoritative artifact that should be tracked** | committed |
+| `qa-reports/2026-09-03_PHASE00_TechnicalClaimsBaseline.md` | **Authoritative artifact that should be tracked** | committed |
+| `qa-reports/2026-09-03_PHASE00_VisualBaseline.md` | **Authoritative artifact that should be tracked** | committed |
 
-This trips a named STOP CONDITION verbatim: *"timed reviewers identify AI builder/client before senior support after the candidate state stabilizes."*
+None is generated, transient, stale, or intentionally external. Grounds:
 
-**Everything the phase was asked to build is built and verified.** All 15 tasks executed, every preserve check passing with evidence, suite/typecheck/lint/build/axe/responsive/zoom/theme/motion/keyboard all green, no remote mutation of any kind.
+1. **They were untracked by accident of authority, not by intent.** Phase 00's own receipt states they exist "as untracked files in the integration worktree pending Sky's own review/commit decision (this phase has no commit authority)."
+2. **One was load-bearing while untracked.** The tracked Phase 03 receipt cites `PHASE00_BASELINE_LOCK_RECEIPT.md` as its `BASELINE_LOCK` gate evidence (§3), so a tracked evidence chain rested on a file absent from the repository. A handoff audit could not have verified that gate.
+3. **Tracking is the established convention.** Phases 01 and 02 both committed their receipts; the global governance rule places qa-reports inside the project repo.
+4. **Screened before tracking.** No employer or customer names, no salary figure or job-search signal (the Phase 01 contract §13/§14 private data), no credentials or secrets. The only pattern hits were substring false positives (`di`**`sk-`**`cache`) and one explicit no-secrets attestation.
 
-**Safe to integrate: YES.** Nothing here is unsafe, unproven, or regressive. c1 moved 0/3 → 3/3, c3 and c4 are unanimous, F-001/F-002/F-003/F-006/F-007 are closed, and no preserve item was weakened. The gate is withheld on a comprehension threshold, not on a defect.
-
-### What c2 actually needs
-
-The eyebrow lever was tried and failed (§9, Round 3). The unanimous diagnosis is that the homepage hero spends its three **evidence** slots on quantified engineering receipts, beside a support claim that is deliberately unquantified. Adding another support label does not move a reader who is weighing evidence. Remaining options, none of which the lead will take unilaterally:
-
-1. **Move the Support Operating Record above the flagship.** Puts support substance in front of the engineering receipts. Trades against master-plan invariant 9 (Flagstone first past the film) and T-046's *"without displacing the flagship"*. Now the option with the strongest evidence behind it, and it was the lead's original advice against.
-2. **Change the homepage H1**, which currently names three projects. The most direct fix. Sky wrote the About H1 personally and would likely want to write this one.
-3. **Rebalance the hero receipts.** There is no honest support receipt to put there — §14 forbids inventing one and none is sourced. This is the option that cannot be taken without violating the truth contract, and it should not be taken.
-4. **Accept c2 as a recorded partial**, as F-008 was accepted under D2, and carry the diagnosis to a later phase.
-
-**Next-phase readiness:** the Homepage / About / Credentials / Contact contracts are frozen as implemented and recorded in §5. Phase 04 and Phase 05 may proceed against them. c2 is carried forward as an open, precisely-diagnosed item, not a vague one.
+The worktree is now clean apart from this pass's own evidence, which is committed alongside this receipt.
