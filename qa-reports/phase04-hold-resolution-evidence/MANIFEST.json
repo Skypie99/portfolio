@@ -1,0 +1,882 @@
+{
+  "candidateSHA": "2e62dd069816986c0f2e3253ba7e48e69b450d7f",
+  "candidateTree": "b2ab11701c338e686307e82298c88fe8f98277ff",
+  "observedAt": "2026-09-05T04:40:49.619144+00:00",
+  "files": [
+    {
+      "path": "accessibility-classification.json",
+      "bytes": 55085,
+      "sha256": "227077022ea1176ae32cd02aa9c04e95f13938097c18263b1b9386de92be45f4"
+    },
+    {
+      "path": "after/1024-dark-case-study.png",
+      "bytes": 643172,
+      "sha256": "d1632378b086b0b3a6eff08b20ef75cec7558a089a01ece5a391fe3208cff49f"
+    },
+    {
+      "path": "after/1024-dark-flagship.png",
+      "bytes": 541507,
+      "sha256": "4c02310af27279afafab489b2e18dbb5ce059902437cd758e605394840ae7b28"
+    },
+    {
+      "path": "after/1024-dark-flagstone-accessibility.png",
+      "bytes": 107619,
+      "sha256": "07eff72b365a42cdbacc3de57413e6a321a51783e4d92c00a2d05cd5c2fe8e60"
+    },
+    {
+      "path": "after/1024-dark-flagstone-privacy.png",
+      "bytes": 85549,
+      "sha256": "be285838bb2a4d637848004cded57754a1b474eaeb1abe4a41ad5acc444facdb"
+    },
+    {
+      "path": "after/1024-dark-flagstone-support.png",
+      "bytes": 101893,
+      "sha256": "5de9c2e0135378c64d3b2898a749e0dced6e2ecdbc3b3bb13cac9c19fb894330"
+    },
+    {
+      "path": "after/1024-dark-flagstone-terms.png",
+      "bytes": 99344,
+      "sha256": "065f52573a8dc57ca0da6ba65fdea0c078868895684c52f6ab1a474fb72394dd"
+    },
+    {
+      "path": "after/1024-dark-flagstone.png",
+      "bytes": 86452,
+      "sha256": "abb28aed1776d00884c05d5d9876cc1c4ae05256c2a0feed6fc59c258a9bc3b7"
+    },
+    {
+      "path": "after/1024-light-case-study.png",
+      "bytes": 656671,
+      "sha256": "41f151516788bed5fb2f5d49c2f26255c08d7764b213e29bb03bd35cf63af3a6"
+    },
+    {
+      "path": "after/1024-light-flagship.png",
+      "bytes": 451403,
+      "sha256": "44c7b9d86fa81dfb80d224398c20d13b7d6b5b2c5963c05bf30ccd3d6c131c27"
+    },
+    {
+      "path": "after/1024-light-flagstone-accessibility.png",
+      "bytes": 104594,
+      "sha256": "5a597ba0663db721297b56be6c47c359280f6f261c25867aa088a5a4c15bc20d"
+    },
+    {
+      "path": "after/1024-light-flagstone-privacy.png",
+      "bytes": 82133,
+      "sha256": "83b9e037c65ead5d33dada85c03990fcd682591bb4f6581f3dd6bb48b70fd6f0"
+    },
+    {
+      "path": "after/1024-light-flagstone-support.png",
+      "bytes": 96887,
+      "sha256": "1f43e9c7bd6125842e8cb30704ce43a4ff1601aecf9d0250aa9fbcf30bb7c6c7"
+    },
+    {
+      "path": "after/1024-light-flagstone-terms.png",
+      "bytes": 93410,
+      "sha256": "3d8e68fdb0cc018260dda4958442190c5d9352d954ec1addfcae39227d7572cb"
+    },
+    {
+      "path": "after/1024-light-flagstone.png",
+      "bytes": 83947,
+      "sha256": "af949e8e1a617614b09bb4db8490b1bc8c47f95dbd337421b91d3f563a144b7f"
+    },
+    {
+      "path": "after/1280-dark-case-study.png",
+      "bytes": 808197,
+      "sha256": "8ea91345605817b9849ec03679b1860c55bca79ede69e0cb9b63aa9e1406a3b9"
+    },
+    {
+      "path": "after/1280-dark-flagship.png",
+      "bytes": 841180,
+      "sha256": "b3b5d4946626b47e10c98a80daddebfce84af629e08d96286468c5567f82b301"
+    },
+    {
+      "path": "after/1280-dark-flagstone-accessibility.png",
+      "bytes": 109472,
+      "sha256": "22e03997c5f0876214373fbc96aa194e08acc330a0c9acb03a09368ca030980e"
+    },
+    {
+      "path": "after/1280-dark-flagstone-privacy.png",
+      "bytes": 87243,
+      "sha256": "b2970eb99d38fca959e3140d879d235e42fa89fd914f6ef291dd9adde31437b1"
+    },
+    {
+      "path": "after/1280-dark-flagstone-support.png",
+      "bytes": 103749,
+      "sha256": "9ea212748b023631de76cafafd5b89a46450a179f27fb1399bb038df3257a1d1"
+    },
+    {
+      "path": "after/1280-dark-flagstone-terms.png",
+      "bytes": 101302,
+      "sha256": "16c730d2a62f17a5a9307fe3225e57169deebdbf5cf07b270992eb42560dbf74"
+    },
+    {
+      "path": "after/1280-dark-flagstone.png",
+      "bytes": 88088,
+      "sha256": "6c13dc9e6d2791ea2d02a14b8bb051071aed6a7e0512b2a1a79941298d871d70"
+    },
+    {
+      "path": "after/1280-light-case-study.png",
+      "bytes": 864592,
+      "sha256": "7715ac6090362058421dcfee72f8f61da169678fee02d84313b7e111a8a565e2"
+    },
+    {
+      "path": "after/1280-light-flagship.png",
+      "bytes": 741716,
+      "sha256": "c9acf43cc452a2fd7718f62c71d9f66d97545b6c4fcd3eaef7300072572000df"
+    },
+    {
+      "path": "after/1280-light-flagstone-accessibility.png",
+      "bytes": 106470,
+      "sha256": "af7f4d899e51ee174c98b10d33f2268f07739c9eaa19b7b440637c5401788fb9"
+    },
+    {
+      "path": "after/1280-light-flagstone-privacy.png",
+      "bytes": 83840,
+      "sha256": "0be44fcf254cb0f9ffd6b77c89206331782bb8a0a9df29fbdf92f4a8f0f99d88"
+    },
+    {
+      "path": "after/1280-light-flagstone-support.png",
+      "bytes": 98890,
+      "sha256": "6cf9c46263d3f519bb8d1a4861e3743b9765b4baadfbc7edc2cb9eaac3300ac2"
+    },
+    {
+      "path": "after/1280-light-flagstone-terms.png",
+      "bytes": 95582,
+      "sha256": "74bd0a88075968e5da26f9a7b83ac4564aa2704c72a98ad7d2c8e028ee1b4f8e"
+    },
+    {
+      "path": "after/1280-light-flagstone.png",
+      "bytes": 85705,
+      "sha256": "f60bc8ebd93fdaf213b7b8514dad26fd13ddb6667ea9bd80ed2b962b7d003001"
+    },
+    {
+      "path": "after/1440-dark-case-study.png",
+      "bytes": 939527,
+      "sha256": "ae233a77d2e078a3f577f69fc55f8ac468b332731b7e1c6afe0aec014c4a0159"
+    },
+    {
+      "path": "after/1440-dark-flagship.png",
+      "bytes": 1069640,
+      "sha256": "3f766e627a055eadcec5dfb9eb79854d90b74280fc425147bab820af0a5dfbf3"
+    },
+    {
+      "path": "after/1440-dark-flagstone-accessibility.png",
+      "bytes": 111503,
+      "sha256": "225747125789553f82dcacb571fb5a0cfd9062d7797f98a6d1a78462b8b2f0f7"
+    },
+    {
+      "path": "after/1440-dark-flagstone-privacy.png",
+      "bytes": 89001,
+      "sha256": "553a238f08ceec9bd535e1e28aebd26c6b90e71f0f1a8c21902cc88c3cf42b6d"
+    },
+    {
+      "path": "after/1440-dark-flagstone-support.png",
+      "bytes": 105726,
+      "sha256": "28295c41845515fe1b71c660f26d8e219cd78ead31fa6caedd6f3c7325602756"
+    },
+    {
+      "path": "after/1440-dark-flagstone-terms.png",
+      "bytes": 103151,
+      "sha256": "b1ca50b2e2787c7e8cad44af1864e3990d5bfe8a94e6b9c0d4499706beadf385"
+    },
+    {
+      "path": "after/1440-dark-flagstone.png",
+      "bytes": 89588,
+      "sha256": "70e1dc640050bf97a72f1ec599c47afc5be8e00a865e94e24f9d1b93cdec840b"
+    },
+    {
+      "path": "after/1440-light-case-study.png",
+      "bytes": 995428,
+      "sha256": "50254ff3ef1b6eb3cbabbaaad24cd5803fa1bf606e197ee11da69db65443742c"
+    },
+    {
+      "path": "after/1440-light-flagship.png",
+      "bytes": 939682,
+      "sha256": "70a32b676a20ccc8631c3acdaad0023f75f345a7b9ed81ca3ffa2ce7317a7713"
+    },
+    {
+      "path": "after/1440-light-flagstone-accessibility.png",
+      "bytes": 108692,
+      "sha256": "faf3c288b3a64e014a3255eca9b4268ed7b24d84d520ad883296a11e5b2cb8eb"
+    },
+    {
+      "path": "after/1440-light-flagstone-privacy.png",
+      "bytes": 85767,
+      "sha256": "0648c2ff91bf934e008432b0a48021757927203d1d1ecefb4defae7ce63fd4d1"
+    },
+    {
+      "path": "after/1440-light-flagstone-support.png",
+      "bytes": 100901,
+      "sha256": "cb10ebca5b7e956f1f2e9e25de8529134c307fff838c72064d61a181cb0c0594"
+    },
+    {
+      "path": "after/1440-light-flagstone-terms.png",
+      "bytes": 97558,
+      "sha256": "9debf67df2a5f5272c98bc30ba0ffa3ca19cca91f96286d41fde43898edfa81f"
+    },
+    {
+      "path": "after/1440-light-flagstone.png",
+      "bytes": 87316,
+      "sha256": "227884a9da3c79f83be229133cfdef035a7a3d5eca67256a0e2d6543f196c470"
+    },
+    {
+      "path": "after/320-dark-case-study.png",
+      "bytes": 324086,
+      "sha256": "7b918ee9c931b1bcd5fa4ccb7fae8a1620ebd6634ce0e2e5e2fd391d47e784b8"
+    },
+    {
+      "path": "after/320-dark-flagship.png",
+      "bytes": 393756,
+      "sha256": "bda39c7799f819eb3f5618804d9d9e39c8c7121bc343f6a8b28fc4568d8dd6ed"
+    },
+    {
+      "path": "after/320-dark-flagstone-accessibility.png",
+      "bytes": 54986,
+      "sha256": "1386031bdf4281bd871452cc584389c5cc4fc44c6a1bbba433d25d528820f776"
+    },
+    {
+      "path": "after/320-dark-flagstone-privacy.png",
+      "bytes": 48108,
+      "sha256": "cf9608d4cb60629280429f2bd072bc02ffe76f4bc8740365af407574330a5c22"
+    },
+    {
+      "path": "after/320-dark-flagstone-support.png",
+      "bytes": 54213,
+      "sha256": "2392279648d681607f1d61e869821db105bbe72e90d2b265ff8c2127e30b61f6"
+    },
+    {
+      "path": "after/320-dark-flagstone-terms.png",
+      "bytes": 47431,
+      "sha256": "a7ebbdc1ee2757c2d8e66e627a4000bade606a0eb5e5ed631e1df1ee2fd9664f"
+    },
+    {
+      "path": "after/320-dark-flagstone.png",
+      "bytes": 50031,
+      "sha256": "3fc594873be30cd13e167ad8b81b3035655eb10b6fbab6ed739dfcacd3a0196d"
+    },
+    {
+      "path": "after/320-light-case-study.png",
+      "bytes": 319312,
+      "sha256": "a76bffa9a16c1c0876bf92a1fd6505f7458f64ad39341946c4fe2c65a41036cb"
+    },
+    {
+      "path": "after/320-light-flagship.png",
+      "bytes": 328406,
+      "sha256": "c2b1ee8696c2bb1c04c3756b87d14c67a8a54116eaf0465ff31c1653dd5741a8"
+    },
+    {
+      "path": "after/320-light-flagstone-accessibility.png",
+      "bytes": 52066,
+      "sha256": "f085615ebec82a78574dd0484ec53132a7b4a8ab5308504260cf0e78cf31f21b"
+    },
+    {
+      "path": "after/320-light-flagstone-privacy.png",
+      "bytes": 47240,
+      "sha256": "51bb2819f21403613182bb7d315955d0b409cc020354b770b0ffe617dcdf6bfb"
+    },
+    {
+      "path": "after/320-light-flagstone-support.png",
+      "bytes": 52782,
+      "sha256": "3453e44aab159f7477c425fc9740faa045b04ea12bb9b5c1f102b68339f5f811"
+    },
+    {
+      "path": "after/320-light-flagstone-terms.png",
+      "bytes": 46566,
+      "sha256": "def474a64c490b7d85595d17591e7e672a21f5d3b12892ba045c1e5ac2aae8c8"
+    },
+    {
+      "path": "after/320-light-flagstone.png",
+      "bytes": 47477,
+      "sha256": "50e23a12ad34dcdf3a90c6526a97e98da1de47475eece396c85c8a241aaeb922"
+    },
+    {
+      "path": "after/375-dark-case-study.png",
+      "bytes": 366173,
+      "sha256": "f98f2d8e897601feed5f5b557ae7cca0a26fa7d77ee8649aae0128575a3bf4b9"
+    },
+    {
+      "path": "after/375-dark-flagship.png",
+      "bytes": 457091,
+      "sha256": "5d7acc4286aa2deb8fa8041054bc8148fbf9cacef11054f6073c2918f2bf5687"
+    },
+    {
+      "path": "after/375-dark-flagstone-accessibility.png",
+      "bytes": 62971,
+      "sha256": "96043063b9ddf6a2cddf8e3f7065d24830cd11e5b139e3a021910590d7b6dc98"
+    },
+    {
+      "path": "after/375-dark-flagstone-privacy.png",
+      "bytes": 58856,
+      "sha256": "8814bfd3bf4f0d0082d8133e3a7942e6a21e22e2d8a13721e8315135d0c23a59"
+    },
+    {
+      "path": "after/375-dark-flagstone-support.png",
+      "bytes": 59659,
+      "sha256": "a57398a7562ae78c5debf8dc48dacade9768f4e048b14ea3db6b8b495d4aab6a"
+    },
+    {
+      "path": "after/375-dark-flagstone-terms.png",
+      "bytes": 59070,
+      "sha256": "90909c7e51dfb83c0be5932a75b8a6ccb96aa60c96e986afb9be8ab7d74eb4cc"
+    },
+    {
+      "path": "after/375-dark-flagstone.png",
+      "bytes": 51825,
+      "sha256": "5869cd223d82454091df11d66f7005bea73d85104d88054429e9330164e9f5cd"
+    },
+    {
+      "path": "after/375-light-case-study.png",
+      "bytes": 367630,
+      "sha256": "a6ddabf7f312b28899fb46d9ada2921e38bf0b857447eb3ab42ea701259a6102"
+    },
+    {
+      "path": "after/375-light-flagship.png",
+      "bytes": 384133,
+      "sha256": "d665397069e7262db9b74149e17430ef488a0d2b9a482c0d412a7a1b998a3c97"
+    },
+    {
+      "path": "after/375-light-flagstone-accessibility.png",
+      "bytes": 61459,
+      "sha256": "a51fb51565c6e0cc44c2a8bcd4a7921cdcdd705b1ea00a09a8584575b3ae2b6a"
+    },
+    {
+      "path": "after/375-light-flagstone-privacy.png",
+      "bytes": 56377,
+      "sha256": "53af71f87bc71ccbe3fdc28d032f0473502f46bc0ece332c72ab2078a92ec2cf"
+    },
+    {
+      "path": "after/375-light-flagstone-support.png",
+      "bytes": 58807,
+      "sha256": "46a946a2a97a64d8e42ba3b385b1fb442f45f8e84a70024422b17e16cfaead07"
+    },
+    {
+      "path": "after/375-light-flagstone-terms.png",
+      "bytes": 56611,
+      "sha256": "015ecf2c1c766dc30583bae9ab2c2797639439c987135adcf7847956c88fd1b9"
+    },
+    {
+      "path": "after/375-light-flagstone.png",
+      "bytes": 49124,
+      "sha256": "fd7f8f6839c7754582117025c89d8841a2521df7b22eb3f7cd5652e3d8b7d708"
+    },
+    {
+      "path": "after/393-dark-case-study.png",
+      "bytes": 388799,
+      "sha256": "95ca0adf469c336c67b963c7995f36fe46421bb1578659ca2fc839ce0fd8f756"
+    },
+    {
+      "path": "after/393-dark-flagship.png",
+      "bytes": 482068,
+      "sha256": "a05477ed0549d05e768290f8c9c8e87304f4835061971e60a52affe6d01faac6"
+    },
+    {
+      "path": "after/393-dark-flagstone-accessibility.png",
+      "bytes": 64748,
+      "sha256": "376f4f90c13e0bb9852917fc2520954ba1774a51e1e11a7ad69d12ef51f34f23"
+    },
+    {
+      "path": "after/393-dark-flagstone-privacy.png",
+      "bytes": 59970,
+      "sha256": "59d491b540a6782f2556c711b9bdebc99825939215a813bb79fa1f0dda157174"
+    },
+    {
+      "path": "after/393-dark-flagstone-support.png",
+      "bytes": 58850,
+      "sha256": "a708ec0d0066a7fc4069f087470a6024a363d8dc020517006c9009b7d4fc46c5"
+    },
+    {
+      "path": "after/393-dark-flagstone-terms.png",
+      "bytes": 62797,
+      "sha256": "e01654258eda8e403a69525e3551599fc71526554f65d8695485f38197638911"
+    },
+    {
+      "path": "after/393-dark-flagstone.png",
+      "bytes": 57574,
+      "sha256": "535ea84b8ba68311d5c9d48b79ae4d2159d378b0d7dd4d3b16b89d6502d30d43"
+    },
+    {
+      "path": "after/393-light-case-study.png",
+      "bytes": 389504,
+      "sha256": "ea1ae3fc40a385a6e13c6b2a25e44ba6919a524f864da5e6009faacda1213c0b"
+    },
+    {
+      "path": "after/393-light-flagship.png",
+      "bytes": 405698,
+      "sha256": "b3965242c095bc6957d28fd6cfc531869d45be60fdf354e09db129143bb7b6c6"
+    },
+    {
+      "path": "after/393-light-flagstone-accessibility.png",
+      "bytes": 63617,
+      "sha256": "c98a288635eea49fc486aa231bedbea34c9d4b4941bc758f3e356bba4725289d"
+    },
+    {
+      "path": "after/393-light-flagstone-privacy.png",
+      "bytes": 57550,
+      "sha256": "6df36a0866518634019103d09014b62fabdb3a6e07166895f9f28cde8a3401e2"
+    },
+    {
+      "path": "after/393-light-flagstone-support.png",
+      "bytes": 57325,
+      "sha256": "1368f83ef75de1055e2976e7dc480d6408d4d1c99da34cdf9ed66359ecc70e94"
+    },
+    {
+      "path": "after/393-light-flagstone-terms.png",
+      "bytes": 59985,
+      "sha256": "5af43f0122ba77402734a937957f9066935781efe8156b047c18c52f08394dfe"
+    },
+    {
+      "path": "after/393-light-flagstone.png",
+      "bytes": 54694,
+      "sha256": "e8af2f900af43b9f164dd8faa48a77ac528361ac440974e77add21fc1f506472"
+    },
+    {
+      "path": "after/430-dark-case-study.png",
+      "bytes": 411907,
+      "sha256": "f29c0e935ca51b0b592a1581e2a7ea985f88d9b17de0ddfb426edc18e77da0b6"
+    },
+    {
+      "path": "after/430-dark-flagship.png",
+      "bytes": 538459,
+      "sha256": "c4d2a5635ef64408ca08c7de3c193b660556003f89e8b8de9829ab7847f1dbc2"
+    },
+    {
+      "path": "after/430-dark-flagstone-accessibility.png",
+      "bytes": 69557,
+      "sha256": "dd0c5b7d9f390127ad1c7192d5a43a7cdc668f354d9ed05f1bf8bb61b24f8471"
+    },
+    {
+      "path": "after/430-dark-flagstone-privacy.png",
+      "bytes": 64537,
+      "sha256": "cbf48206ad87b6043a1903cb80fd54f86af3b7722d771f1a181517bc5fb1df88"
+    },
+    {
+      "path": "after/430-dark-flagstone-support.png",
+      "bytes": 67426,
+      "sha256": "373649e88a9ebcb8434dec33ca58cf034f439b8c235bb83dca6bdebf3cd43b6e"
+    },
+    {
+      "path": "after/430-dark-flagstone-terms.png",
+      "bytes": 73080,
+      "sha256": "5396db3164f1d10a56fd2f2b310bd622a422fc0e9bfdc8d7f872750729121cd0"
+    },
+    {
+      "path": "after/430-dark-flagstone.png",
+      "bytes": 64977,
+      "sha256": "642bbb3b243770483795f71396d9ef9d243c2e51fc00d73428bb42b38ec225de"
+    },
+    {
+      "path": "after/430-light-case-study.png",
+      "bytes": 419207,
+      "sha256": "1db27d7fb7ce2310a383644d1f5de51fbd9bef10ba527df5e2f9a6d103d0bc79"
+    },
+    {
+      "path": "after/430-light-flagship.png",
+      "bytes": 454613,
+      "sha256": "c6b14d2144d24917cc9a4d318db001292d01549c8769ef325510a1d82da9c764"
+    },
+    {
+      "path": "after/430-light-flagstone-accessibility.png",
+      "bytes": 68623,
+      "sha256": "a78e567424361e86ba9ee04e887ad32e00d07f6150d2a0aa7a027c81ea011a4f"
+    },
+    {
+      "path": "after/430-light-flagstone-privacy.png",
+      "bytes": 61790,
+      "sha256": "ef66dcc75fe1cbdd16df7a806f1f70080718545b37afc1762f07039b4e64ae56"
+    },
+    {
+      "path": "after/430-light-flagstone-support.png",
+      "bytes": 66063,
+      "sha256": "5904e4e6731af2bf83ec3dea2d9f1a74f2f9e8f54a3d4924360ceafe17d45a12"
+    },
+    {
+      "path": "after/430-light-flagstone-terms.png",
+      "bytes": 68849,
+      "sha256": "0d97b232711367e16e341db31b3a2471ff26076a02c45fd79418293b18dc3314"
+    },
+    {
+      "path": "after/430-light-flagstone.png",
+      "bytes": 61375,
+      "sha256": "ebc0771319fd6c77c064c60098b8b6fb475e905c596b4f0ae879375241570689"
+    },
+    {
+      "path": "after/768-dark-case-study.png",
+      "bytes": 639350,
+      "sha256": "f419ef01ada5396eea9e71860ef0147c39c2753048c173af0f32f123f15c5146"
+    },
+    {
+      "path": "after/768-dark-flagship.png",
+      "bytes": 622127,
+      "sha256": "cf577e8196068b5b5d0fc70bdfad20cb2fd2e40139821fe953e8f7e1e11b5f9c"
+    },
+    {
+      "path": "after/768-dark-flagstone-accessibility.png",
+      "bytes": 104372,
+      "sha256": "e7391489324f5de15062ea71334e6365dfe6ce6abdadc3a664a6a4932178dea3"
+    },
+    {
+      "path": "after/768-dark-flagstone-privacy.png",
+      "bytes": 82913,
+      "sha256": "632fc15a4e293b353da09b0df39f6c13e821d32fe596b38de3e1bd82c64148c8"
+    },
+    {
+      "path": "after/768-dark-flagstone-support.png",
+      "bytes": 98878,
+      "sha256": "62c3d4cd77f95d95ef383a7776333d17c1e11e0204875b7177d75d857d4f48b4"
+    },
+    {
+      "path": "after/768-dark-flagstone-terms.png",
+      "bytes": 96069,
+      "sha256": "86366fe76a8f1f9282ec0802f4822c0f80dfc3c74e9a0c2b69964fdb4da193f3"
+    },
+    {
+      "path": "after/768-dark-flagstone.png",
+      "bytes": 83706,
+      "sha256": "7347836a75cc43bafda758e7457e8aa432592951d5564ad7882d8d5dca25d95b"
+    },
+    {
+      "path": "after/768-light-case-study.png",
+      "bytes": 624732,
+      "sha256": "921e1ac37d018a267446ba8d91653af4e13283d5d3f00c51e0d2d723c66aab0a"
+    },
+    {
+      "path": "after/768-light-flagship.png",
+      "bytes": 530414,
+      "sha256": "2ecdf3c56d42b5d352755c27d38747952a22d51f80aa1a2e950a71cdf1750d36"
+    },
+    {
+      "path": "after/768-light-flagstone-accessibility.png",
+      "bytes": 101276,
+      "sha256": "58528b51fd9a34d886b9c7a8a74cc0e99f2ab3255090130805c90595be867cf8"
+    },
+    {
+      "path": "after/768-light-flagstone-privacy.png",
+      "bytes": 79117,
+      "sha256": "2a81ff0f5cbe91202d1e9659b78e1e19f7fd0bc797c7d6ed09664e0e83bc3d53"
+    },
+    {
+      "path": "after/768-light-flagstone-support.png",
+      "bytes": 93601,
+      "sha256": "4994e89a4b7e89de0e97a5358b988424c35ecda9b84fd2169cb8353eeb7ba501"
+    },
+    {
+      "path": "after/768-light-flagstone-terms.png",
+      "bytes": 89723,
+      "sha256": "2737b94f156a013b840f080044339270d6def674d9c50a79dde3895250e1f036"
+    },
+    {
+      "path": "after/768-light-flagstone.png",
+      "bytes": 81105,
+      "sha256": "bb066832ea61f698f6be1184e213a66d0136b74001f6b2638523f1fbe1b4eba7"
+    },
+    {
+      "path": "after/matrix.json",
+      "bytes": 1032675,
+      "sha256": "0f678970bf4739d6d2d423d5bfc8d4902125f1eddd0f81f4aabeb04d97e12c4d"
+    },
+    {
+      "path": "build.txt",
+      "bytes": 4364,
+      "sha256": "848156b62b2b210b8388e0c11bbfa8cdd3e0f9b52b96a93759ff742adad3bcd9"
+    },
+    {
+      "path": "guards.txt",
+      "bytes": 690,
+      "sha256": "81aa8b8b0b6e23a730718117f88d8421bda41eea13b602d518a4b79e18144993"
+    },
+    {
+      "path": "historical-prefix.json",
+      "bytes": 188,
+      "sha256": "f530aaf5d14adeff06a2da366c0464515f6f95aa6c60c279cdc042e2e573943f"
+    },
+    {
+      "path": "interactions/checks.json",
+      "bytes": 32927,
+      "sha256": "d54f43072ed4d9cab7408fb3ed6d9d4c9cb6dc8e715eac4cfa4208ae84082e5b"
+    },
+    {
+      "path": "interactions/dark-about-reflow640.png",
+      "bytes": 182913,
+      "sha256": "faffccb76df101d4e74e480c176e0e940bb79c03dac31ca39e4569fb13e09a90"
+    },
+    {
+      "path": "interactions/dark-flagstone-accessibility-reflow640.png",
+      "bytes": 38046,
+      "sha256": "d0c01010c5b5c4379664f8822a3126abc3614da51c79871a3a2268371c078c8b"
+    },
+    {
+      "path": "interactions/dark-flagstone-accessibility-text200.png",
+      "bytes": 35430,
+      "sha256": "3ae99bc8076011b6f323947d219df02371fa275e04f0c81126449da28d33cc63"
+    },
+    {
+      "path": "interactions/dark-flagstone-privacy-reflow640.png",
+      "bytes": 35070,
+      "sha256": "163830184727fbc600dfad11eb867ddb06fcae237c77d369245e170814411207"
+    },
+    {
+      "path": "interactions/dark-flagstone-privacy-text200.png",
+      "bytes": 36459,
+      "sha256": "dc3f7aca9f1b2268e2bf340e972d0bffcf9be235bd542b854e86bb28faaf2dd6"
+    },
+    {
+      "path": "interactions/dark-flagstone-reflow640.png",
+      "bytes": 31088,
+      "sha256": "0a369ac06a212bca1a04134d7fa94affe317a90f347619ec68e9ff7cd1f0531e"
+    },
+    {
+      "path": "interactions/dark-flagstone-support-reflow640.png",
+      "bytes": 35426,
+      "sha256": "bd8202f8c3d3221a18b936bd96646b803f5477c45e129a6a43cd12c2c18a2042"
+    },
+    {
+      "path": "interactions/dark-flagstone-support-text200.png",
+      "bytes": 35674,
+      "sha256": "f49cece6a286aa14757bea99c5892f53747d7b031a60ff6f88291c7c5db379a5"
+    },
+    {
+      "path": "interactions/dark-flagstone-terms-reflow640.png",
+      "bytes": 36507,
+      "sha256": "bf0e1cf174621a19c2f4ddd64ed7c22d43f1fdc1fdd8b1734a084c43131c0a24"
+    },
+    {
+      "path": "interactions/dark-flagstone-terms-text200.png",
+      "bytes": 33424,
+      "sha256": "45bb1f84e2bb0199d4a559df5779fe1729097e82ed722aa190f150c8ec7bd941"
+    },
+    {
+      "path": "interactions/dark-flagstone-text200.png",
+      "bytes": 23309,
+      "sha256": "1f1f59b6239faf4df33bbfdb4bc8782f284e40acdd5d75dd2f3be1194a5c4247"
+    },
+    {
+      "path": "interactions/dark-home-reflow640.png",
+      "bytes": 436588,
+      "sha256": "f6d8cdd3c062432be97cd159153fdcba2fa47d96ba9e9cfdb04475c61c9428c3"
+    },
+    {
+      "path": "interactions/dark-professional-bridge.png",
+      "bytes": 318608,
+      "sha256": "2b47d524b741ac6b4bd6f19d2a87adb687b4ff15a3005a1d5ba8a4f92996721e"
+    },
+    {
+      "path": "interactions/dark-work-flagstone-reflow640.png",
+      "bytes": 168062,
+      "sha256": "bf2ba5c15d9f15b981570e46e37c58b986d79578e6b1fc4037c8b9e222ec5a39"
+    },
+    {
+      "path": "interactions/light-about-reflow640.png",
+      "bytes": 227634,
+      "sha256": "0f772e2d836ba603c77d08d83f276a555db9f1ab0b565046dfa0933ae269ebaf"
+    },
+    {
+      "path": "interactions/light-flagstone-accessibility-reflow640.png",
+      "bytes": 37860,
+      "sha256": "0be9cb4c0300613ba8837e837b80da057619cc3bc06fc9319f7ec39fa90c1a69"
+    },
+    {
+      "path": "interactions/light-flagstone-accessibility-text200.png",
+      "bytes": 35407,
+      "sha256": "f762c8c1bae30ed0c7baf6c6095528ab351be21e664369c04162373ad81671cb"
+    },
+    {
+      "path": "interactions/light-flagstone-privacy-reflow640.png",
+      "bytes": 34834,
+      "sha256": "3ac821199d7af346338c55bb57479ecee4160a2b32ada57babbbb96edcfc58e7"
+    },
+    {
+      "path": "interactions/light-flagstone-privacy-text200.png",
+      "bytes": 36310,
+      "sha256": "eeeac2e12530d041f320bb858cdbb252faf94c69a14ca8c6c32639b619936595"
+    },
+    {
+      "path": "interactions/light-flagstone-reflow640.png",
+      "bytes": 32371,
+      "sha256": "016cc23cf2dbc14160f1969800d57a594485004c733c14ad315faedc18c1325f"
+    },
+    {
+      "path": "interactions/light-flagstone-support-reflow640.png",
+      "bytes": 35212,
+      "sha256": "fc8c3b0649e19100535288a56725a36b007c81d98f1df9c52ff846dd65b75698"
+    },
+    {
+      "path": "interactions/light-flagstone-support-text200.png",
+      "bytes": 35467,
+      "sha256": "69b4fbb393a45fa1ffa2d1f7321f11f3d6091acb8533386a3f06004bbb38c978"
+    },
+    {
+      "path": "interactions/light-flagstone-terms-reflow640.png",
+      "bytes": 36536,
+      "sha256": "0f36b4e251d7ec5cdf88b41d738e6100f62972bc69430850c20ffc6dd17c50dd"
+    },
+    {
+      "path": "interactions/light-flagstone-terms-text200.png",
+      "bytes": 33442,
+      "sha256": "8c2ba9c1eca76966665c0335907f05ae6ed8e014fd21e8b2f9c057c6b4107d35"
+    },
+    {
+      "path": "interactions/light-flagstone-text200.png",
+      "bytes": 23530,
+      "sha256": "5c2dbb7c81544849f1dfd8931dceaa6b26fb1eb6c5bb13f6351f359331ffcaca"
+    },
+    {
+      "path": "interactions/light-home-reflow640.png",
+      "bytes": 423505,
+      "sha256": "6b540f354e5ff2a33e4fb59b19ba3ecfbd39c009b22294a79f8bd5a257c69148"
+    },
+    {
+      "path": "interactions/light-professional-bridge.png",
+      "bytes": 319249,
+      "sha256": "9a661f09329804199bdfd80c890cb45242aa6a27e6ecfa2e7b736b878aa9a6e0"
+    },
+    {
+      "path": "interactions/light-work-flagstone-reflow640.png",
+      "bytes": 203153,
+      "sha256": "388afa8f549550a664ddfd31076f6a9d8a5e6d06462bcb0a72308047d1cdf86f"
+    },
+    {
+      "path": "interactions.txt",
+      "bytes": 67,
+      "sha256": "b1c925d0e3f48c4b4e87c0d8a4b25920620b20c3f22269331bf7b62e51be1508"
+    },
+    {
+      "path": "lint.txt",
+      "bytes": 457,
+      "sha256": "ead72901953d2a96607d49b4a216f8dc5dafdfd83c57eff9cd9ec41671c6b4be"
+    },
+    {
+      "path": "matrix-summary.json",
+      "bytes": 9915,
+      "sha256": "2089fe67a9eae5e9c1335303fb68be0861e35e5b73b4ecb5e387bd26448fb97c"
+    },
+    {
+      "path": "matrix.cjs",
+      "bytes": 5822,
+      "sha256": "4a002e21e4f272c662d6d2ce5f825b5dd94143ffa09865aa6c419fc1ad1983cd"
+    },
+    {
+      "path": "matrix.txt",
+      "bytes": 413,
+      "sha256": "b01b8ddfff0de6dfb25a720ec8afe36c721a21aeeb3573142ac0afd7251aee18"
+    },
+    {
+      "path": "native/accessibility-light-200-bottom.png",
+      "bytes": 89951,
+      "sha256": "17de49483f43798b5382993f97a39b2012d102c03c6523f82848238604d0f919"
+    },
+    {
+      "path": "native/accessibility-light-200.png",
+      "bytes": 86418,
+      "sha256": "ac02bfa732da4bfc4a87677d2d53d9adea498d2aaccea9a18c8c041514578562"
+    },
+    {
+      "path": "native/case-200-ax.json",
+      "bytes": 17336,
+      "sha256": "60105ff0c634cabe7617d3a7fd7d5211b95c896613f00c1a5aa1dbc2d8e103a9"
+    },
+    {
+      "path": "native/case-200-bottom.png",
+      "bytes": 113455,
+      "sha256": "c63cc62c4e0ec24da2f5e77bfee2a54d7310a6b37ed085a2ff7fc57e3325b631"
+    },
+    {
+      "path": "native/case-200.png",
+      "bytes": 130560,
+      "sha256": "e54c65d9bf48865c83d6ca9f82c4f7c321be20d62b7371180ff83b0d31a0dd15"
+    },
+    {
+      "path": "native/home-200-ax.json",
+      "bytes": 16025,
+      "sha256": "a6c81b2a1b6812ec5f490b7688ebba4cc5201c917477dd9bc63cc2b1f2b8131c"
+    },
+    {
+      "path": "native/home-200-cta.png",
+      "bytes": 111183,
+      "sha256": "c0d7f4abbcac9fd4c1f26331a1a83db75a747ac907183e844425a15cc40cd167"
+    },
+    {
+      "path": "native/home-200.png",
+      "bytes": 113503,
+      "sha256": "eeca23d8d50e689a8d99e45b5e96e49089c472490591cc82581903e469816240"
+    },
+    {
+      "path": "native/landing-dark-200.png",
+      "bytes": 80732,
+      "sha256": "0fdfd5669f9214e2f9cc41d19658cd959253535603845b680c14071906b381c1"
+    },
+    {
+      "path": "native/landing-light-200.png",
+      "bytes": 119110,
+      "sha256": "ba03f6c1c5b57ef22655a4c2dc55fe52c05900010d4d19d6f1e78c0e8a61cf4f"
+    },
+    {
+      "path": "native/native-cta-activation.json",
+      "bytes": 17329,
+      "sha256": "a4e92b268bb983bba07dbab141dd33aa1e9bb32f1eeddaa1b6a98dc1a46341f1"
+    },
+    {
+      "path": "native/native-zoom-indicator-200.png",
+      "bytes": 6116,
+      "sha256": "e01e6a07c8408733fabc194085ae8674acf6b9683e94cca0980148f7bed53acf"
+    },
+    {
+      "path": "native/privacy-200-ax.json",
+      "bytes": 19333,
+      "sha256": "804412368aadb2903ee1204bc54cd5a01e65e1728432ca5d3d0b7de081e35cbd"
+    },
+    {
+      "path": "native/privacy-light-200-bottom.png",
+      "bytes": 101565,
+      "sha256": "1058cbd4e80c25a77153866459747f88df52057dcbc4f39390f7cc8bc42ca1df"
+    },
+    {
+      "path": "native/privacy-light-200.png",
+      "bytes": 86090,
+      "sha256": "79ca161ec7550c1ae3e739d54b9a7d69ba21d1a9c3d37a0ece121fc89aed97f8"
+    },
+    {
+      "path": "native/support-light-200.png",
+      "bytes": 82559,
+      "sha256": "d781ff7d4a238a1054d431818deca3e6792ae1cbcff79b4b646620179f4c62b1"
+    },
+    {
+      "path": "native/terms-light-200-bottom.png",
+      "bytes": 93749,
+      "sha256": "d5b7319849b972051041cf416ec64afb287648ff3e182f80e87523684f4b7093"
+    },
+    {
+      "path": "native/terms-light-200.png",
+      "bytes": 86983,
+      "sha256": "41bcb4ac45d86c07c061f393a9d096876c1a36321de95b7e57726f3cb3b0355e"
+    },
+    {
+      "path": "native-zoom.json",
+      "bytes": 1876,
+      "sha256": "cd8a5778751b9f8d2d8f8d8332ae5cffbdb8c78b6f7f20976eac54aca08fb314"
+    },
+    {
+      "path": "resolution-interactions.cjs",
+      "bytes": 7067,
+      "sha256": "adfd0dbfd4ca4509a7d2d88c6032b6f10d38bebb6d7dcc87d18b15103d4aecf0"
+    },
+    {
+      "path": "source-preservation.json",
+      "bytes": 553,
+      "sha256": "cf24a2198b7aeabff02fca9688ad44d10c9f7c24c76c40ddc58e14ebe0b20e82"
+    },
+    {
+      "path": "status-and-links.json",
+      "bytes": 1908,
+      "sha256": "99258bb8ed7475e1a746e74fcf9afeb545eb71fff1c2fe2c621ef3b7a05c89f2"
+    },
+    {
+      "path": "tests.txt",
+      "bytes": 33001,
+      "sha256": "5ecb3d0f6ecd657eebe9a1b07d2e7023c2b1b2cc7c5321ed94702d6f72a7c470"
+    },
+    {
+      "path": "typecheck.txt",
+      "bytes": 44,
+      "sha256": "f14ef40859900d419ab65d126c5ab35c927117381f731752bce59bd935da25d2"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "observedAt": "2026-09-05T04:40:49.619144+00:00",
+  "candidateSHA": "2e62dd069816986c0f2e3253ba7e48e69b450d7f",
+  "candidateTree": "b2ab11701c338e686307e82298c88fe8f98277ff",
+  "currentAppleOutcome": "UNVERIFIED; no owner response available",
+  "applePrimaryEvidence": {
+    "submissionReceipt": "Thank You for Submitting Your App",
+    "receivedAt": "2026-09-01T07:03:52Z",
+    "freshSearch": "from:(apple.com) (Flagstone OR \"com.accessmap.app\") after:2026/08/30",
+    "matchingMessages": 4,
+    "laterOutcomeFound": false,
+    "boundary": "Absence of later mail is not current review status. No raw private mail, headers, addresses or authentication data retained."
+  },
+  "appStoreConnect": "Direct native Chrome navigation reached /login?targetUrl=%2Fapps&authResult=FAILED. Sign-in required; no credentials handled.",
+  "localReleaseRecord": {
+    "ref": "AccessMap origin/main:release/current.json",
+    "version": "4.1.1",
+    "build": 33,
+    "status": "submitted_for_review",
+    "lastVerified": "2026-09-02T06:15:01Z",
+    "boundary": "Read again, not a new Apple status observation."
+  },
+  "copyChanged": false,
+  "links": [
+    {
+      "url": "https://osmfoundation.org/wiki/Privacy_Policy",
+      "result": "PASS",
+      "method": "Direct web.open primary page; returned Privacy Policy - OpenStreetMap Foundation, 276 lines. Introduction identifies policy applicable to OSMF activities. No legal interpretation or full page reproduction."
+    },
+    {
+      "url": "https://www.linkedin.com/in/skyler-halisky",
+      "result": "REACHABLE_AUTHWALL; PROFILE UNVERIFIED",
+      "method": "Direct web.open returned 999. Direct native Chromium navigation reached LinkedIn Sign Up / Join LinkedIn, with sessionRedirect identifying the exact requested profile. No sign-in or account creation. Transport reachability is proven; profile identity/content behind authentication is not."
+    }
+  ]
+}

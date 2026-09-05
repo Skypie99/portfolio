@@ -1,0 +1,17 @@
+after 320 light captured
+after 320 dark captured
+after 375 light captured
+after 375 dark captured
+after 393 light captured
+after 393 dark captured
+after 430 light captured
+after 430 dark captured
+after 768 light captured
+after 768 dark captured
+after 1024 light captured
+after 1024 dark captured
+after 1280 light captured
+after 1280 dark captured
+after 1440 light captured
+after 1440 dark captured
+COMPLETE after

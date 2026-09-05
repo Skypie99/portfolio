@@ -1,0 +1,26 @@
+{
+  "observedAt": "2026-09-05T04:40:49.619144+00:00",
+  "candidateSHA": "2e62dd069816986c0f2e3253ba7e48e69b450d7f",
+  "candidateTree": "b2ab11701c338e686307e82298c88fe8f98277ff",
+  "browser": "Google Chrome for Testing 149.0.7827.55, macOS native app controlled through CUA",
+  "nativeZoom": 200,
+  "method": "Command+0 then five Command+plus increments. Native toolbar explicitly exposed Zoom: 200%; bubble screenshot and full AX evidence retained. No CSS zoom, CDP page scale or viewport proxy used for this result.",
+  "capturedRoutes": [
+    "/#flagship",
+    "/work/flagstone/",
+    "/flagstone/",
+    "/flagstone/support/",
+    "/flagstone/privacy/",
+    "/flagstone/accessibility/",
+    "/flagstone/terms/"
+  ],
+  "scope": "Native smoke: five light utility headers; landing dark header; dark Portfolio flagship and case study. Selected lower content/footer samples. All standard light/dark responsive and interaction checks separately rerun in automated matrix.",
+  "result": "PASS for scoped native zoom smoke; owned header text remained readable and wrapped, homepage doorway reachable and pointer activation navigated to /work/flagstone with 200% still shown.",
+  "capturePixels": [
+    896,
+    768
+  ],
+  "limits": "896x768 is screenshot raster geometry, not a claimed CSS viewport or device pixel ratio. No instrumented native DOM width metric, full-route pixel census, AT or multi-engine certification. Existing automated 640px reflow result remains separately labeled proxy. No whole-site accessibility PASS.",
+  "environmentNotes": "Regular Chrome had foreground-change rejections; isolated signed-out testing app used. Initial case captures before settled navigation and attempted support bottom capture were replaced/omitted. A stale index opened a browser menu; native Cancel dismissed it. Zoom restored to 100% after evidence.",
+  "remoteWrites": "NONE"
+}

@@ -1,0 +1,525 @@
+{
+  "cta": [
+    {
+      "width": 320,
+      "theme": "light",
+      "state": "default",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 320,
+      "theme": "light",
+      "state": "hover",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 320,
+      "theme": "light",
+      "state": "active",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 320,
+      "theme": "light",
+      "state": "focus",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "state": "default",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "state": "hover",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "state": "active",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "state": "focus",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 375,
+      "theme": "light",
+      "state": "default",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 375,
+      "theme": "light",
+      "state": "hover",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 375,
+      "theme": "light",
+      "state": "active",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 375,
+      "theme": "light",
+      "state": "focus",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 375,
+      "theme": "dark",
+      "state": "default",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 375,
+      "theme": "dark",
+      "state": "hover",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 375,
+      "theme": "dark",
+      "state": "active",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 375,
+      "theme": "dark",
+      "state": "focus",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 393,
+      "theme": "light",
+      "state": "default",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 393,
+      "theme": "light",
+      "state": "hover",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 393,
+      "theme": "light",
+      "state": "active",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 393,
+      "theme": "light",
+      "state": "focus",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 393,
+      "theme": "dark",
+      "state": "default",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 393,
+      "theme": "dark",
+      "state": "hover",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 393,
+      "theme": "dark",
+      "state": "active",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 393,
+      "theme": "dark",
+      "state": "focus",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 430,
+      "theme": "light",
+      "state": "default",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 430,
+      "theme": "light",
+      "state": "hover",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 430,
+      "theme": "light",
+      "state": "active",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 430,
+      "theme": "light",
+      "state": "focus",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 430,
+      "theme": "dark",
+      "state": "default",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 430,
+      "theme": "dark",
+      "state": "hover",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 430,
+      "theme": "dark",
+      "state": "active",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 430,
+      "theme": "dark",
+      "state": "focus",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 768,
+      "theme": "light",
+      "state": "default",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 768,
+      "theme": "light",
+      "state": "hover",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 768,
+      "theme": "light",
+      "state": "active",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 768,
+      "theme": "light",
+      "state": "focus",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 768,
+      "theme": "dark",
+      "state": "default",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 768,
+      "theme": "dark",
+      "state": "hover",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 768,
+      "theme": "dark",
+      "state": "active",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 768,
+      "theme": "dark",
+      "state": "focus",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 1024,
+      "theme": "light",
+      "state": "default",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 1024,
+      "theme": "light",
+      "state": "hover",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 1024,
+      "theme": "light",
+      "state": "active",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 1024,
+      "theme": "light",
+      "state": "focus",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 1024,
+      "theme": "dark",
+      "state": "default",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 1024,
+      "theme": "dark",
+      "state": "hover",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 1024,
+      "theme": "dark",
+      "state": "active",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 1024,
+      "theme": "dark",
+      "state": "focus",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 1280,
+      "theme": "light",
+      "state": "default",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 1280,
+      "theme": "light",
+      "state": "hover",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 1280,
+      "theme": "light",
+      "state": "active",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 1280,
+      "theme": "light",
+      "state": "focus",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 1280,
+      "theme": "dark",
+      "state": "default",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 1280,
+      "theme": "dark",
+      "state": "hover",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 1280,
+      "theme": "dark",
+      "state": "active",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 1280,
+      "theme": "dark",
+      "state": "focus",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "state": "default",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "state": "hover",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "state": "active",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "state": "focus",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "state": "default",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "state": "hover",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "state": "active",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "state": "focus",
+      "instances": 6,
+      "equal": true,
+      "stateObserved": true
+    }
+  ],
+  "contrast": {
+    "light": [
+      5.644812255597836
+    ],
+    "dark": [
+      6.735135070943732
+    ]
+  },
+  "overflow": []
+}
