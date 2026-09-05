@@ -6,10 +6,15 @@
  * semantics: unlike the decorative "Scroll" cue, this is a real control and
  * must carry a real href, a real accessible name, and no aria-hidden.
  */
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { cleanup, render, screen } from '@testing-library/react';
 
 import { IntroSkip } from '@/components/IntroSkip';
+
+const introSkipSource = readFileSync(resolve(process.cwd(), 'components/IntroSkip.tsx'), 'utf8');
 
 type IOEntry = { isIntersecting: boolean; intersectionRatio: number };
 type IOCallback = (entries: IOEntry[]) => void;
@@ -57,6 +62,12 @@ describe('IntroSkip — a real control, not decoration', () => {
     const link = screen.getByRole('link', { name: /skip intro/i });
     expect(link).toHaveAttribute('href', '#hero');
     expect(link).not.toHaveAttribute('aria-hidden');
+    expect(link.tabIndex).toBe(0);
+  });
+
+  it('leaves scroll, history, and focus ownership with the native fragment link', () => {
+    expect(introSkipSource).not.toMatch(/\bonClick\b/);
+    expect(introSkipSource).not.toMatch(/scrollIntoView|window\.scrollTo|\.focus\(/);
   });
 
   it('observes the same retirement target IntroScrollCue uses', () => {

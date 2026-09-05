@@ -374,7 +374,7 @@ export default function HomePage() {
 
       <ContentReveal>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <div id="hero">
+      <div id="hero" tabIndex={-1}>
         <Hero
           name="Sky Halisky"
           positioning="Senior technical-support specialist. I turn recurring user friction into documentation, QA, and the tools that fix it."
