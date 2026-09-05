@@ -1,0 +1,1 @@
+Initial sandboxed Node static server start failed: listen EPERM 127.0.0.1:3345. No server started. Retried with explicit loopback-server sandbox approval; no app/source change.

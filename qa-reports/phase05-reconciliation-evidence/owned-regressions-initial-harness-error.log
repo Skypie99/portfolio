@@ -1,0 +1,1 @@
+First owned-regression harness timed out waiting for #hero to persist. Existing ViewTransitions.tsx:45-49 intentionally clears fragment hashes after native navigation. Corrected harness checks actual hero arrival/scroll and main focus, without changing application source.

@@ -48,8 +48,8 @@
     },
     {
       "file": "full-tests.log",
-      "sha256": "4efa19033e8d72826c437b47b2e3f59510996580e4b11c882712569a58ac518d",
-      "bytes": 34122
+      "sha256": "8ceb82e8c9d3a824cbef57803682a6a1212fbfa743dcbc4aa538199b30d7aa71",
+      "bytes": 34121
     },
     {
       "file": "independent-review.md",
@@ -118,8 +118,8 @@
     },
     {
       "file": "typecheck.log",
-      "sha256": "8c6924519e1001756d339813f41ffe9347639fb7aa116c103e465a1142678e7d",
-      "bytes": 45
+      "sha256": "f14ef40859900d419ab65d126c5ab35c927117381f731752bce59bd935da25d2",
+      "bytes": 44
     },
     {
       "file": "verified-source-commit.json",
