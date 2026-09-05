@@ -1,0 +1,22 @@
+[
+  {
+    "url": "https://skypistudio.com/flagstone/",
+    "status": 200
+  },
+  {
+    "url": "https://skypistudio.com/flagstone/accessibility/",
+    "status": 200
+  },
+  {
+    "url": "https://skypistudio.com/flagstone/privacy/",
+    "status": 200
+  },
+  {
+    "url": "https://skypistudio.com/flagstone/support/",
+    "status": 200
+  },
+  {
+    "url": "https://skypistudio.com/flagstone/terms/",
+    "status": 200
+  }
+]

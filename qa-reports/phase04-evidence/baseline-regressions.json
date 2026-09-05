@@ -1,0 +1,912 @@
+[
+  {
+    "theme": "light",
+    "route": "/flagstone/",
+    "axe": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          {
+            "target": [
+              ".tagline"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #edf3fe, background color: #1c6ef3, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              ".home-card[href$=\"support/\"] > h2"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 12.8pt (17px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              ".home-card[href$=\"privacy/\"] > h2"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 12.8pt (17px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              ".home-card[href$=\"accessibility/\"] > h2"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 12.8pt (17px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              ".home-card[href$=\"terms/\"] > h2"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 12.8pt (17px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "nav[aria-label=\"Site\"] > a[href$=\"support/\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "nav[aria-label=\"Site\"] > a[href$=\"privacy/\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "nav[aria-label=\"Site\"] > a[href$=\"accessibility/\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "nav[aria-label=\"Site\"] > a[href$=\"terms/\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "text200": {
+      "scrollWidth": 484,
+      "clientWidth": 393,
+      "overflow": true,
+      "offenders": [
+        {
+          "tag": "INPUT",
+          "class": "",
+          "id": "a11y-size",
+          "right": 416,
+          "text": ""
+        },
+        {
+          "tag": "A",
+          "class": "home-card",
+          "id": "",
+          "right": 484,
+          "text": "\n        Support\n        How the app works, frequently asked questions"
+        },
+        {
+          "tag": "H2",
+          "class": "",
+          "id": "",
+          "right": 434,
+          "text": "Support"
+        },
+        {
+          "tag": "P",
+          "class": "",
+          "id": "",
+          "right": 434,
+          "text": "How the app works, frequently asked questions, and how to reach us."
+        },
+        {
+          "tag": "A",
+          "class": "home-card",
+          "id": "",
+          "right": 484,
+          "text": "\n        Privacy Policy\n        What we collect (very little), what we"
+        },
+        {
+          "tag": "H2",
+          "class": "",
+          "id": "",
+          "right": 434,
+          "text": "Privacy Policy"
+        },
+        {
+          "tag": "P",
+          "class": "",
+          "id": "",
+          "right": 434,
+          "text": "What we collect (very little), what we never collect, and your rights."
+        },
+        {
+          "tag": "A",
+          "class": "home-card",
+          "id": "",
+          "right": 484,
+          "text": "\n        Accessibility\n        What the app supports, how we test, and"
+        },
+        {
+          "tag": "H2",
+          "class": "",
+          "id": "",
+          "right": 434,
+          "text": "Accessibility"
+        },
+        {
+          "tag": "P",
+          "class": "",
+          "id": "",
+          "right": 434,
+          "text": "What the app supports, how we test, and where we still fall short."
+        },
+        {
+          "tag": "A",
+          "class": "home-card",
+          "id": "",
+          "right": 484,
+          "text": "\n        Terms & Community Guidelines\n        What you can post, what "
+        },
+        {
+          "tag": "H2",
+          "class": "",
+          "id": "",
+          "right": 434,
+          "text": "Terms & Community Guidelines"
+        }
+      ]
+    }
+  },
+  {
+    "theme": "light",
+    "route": "/flagstone/accessibility/",
+    "axe": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          {
+            "target": [
+              ".tagline"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #edf3fe, background color: #1c6ef3, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              ".about > h2"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.25 (foreground color: #1c6ef3, background color: #f0f7ff, font size: 12.8pt (17px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              ".about > p > a[target=\"_blank\"][rel=\"noopener noreferrer\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.25 (foreground color: #1c6ef3, background color: #f0f7ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "p:nth-child(4) > a[target=\"_blank\"][rel=\"noopener noreferrer\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "nav[aria-label=\"Site\"] > a[href$=\"support/\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "nav[aria-label=\"Site\"] > a[href$=\"privacy/\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "nav[aria-label=\"Site\"] > a[href$=\"terms/\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "text200": {
+      "scrollWidth": 393,
+      "clientWidth": 393,
+      "overflow": false,
+      "offenders": [
+        {
+          "tag": "INPUT",
+          "class": "",
+          "id": "a11y-size",
+          "right": 416,
+          "text": ""
+        },
+        {
+          "tag": "TABLE",
+          "class": "",
+          "id": "",
+          "right": 659.765625,
+          "text": "\n      Accessibility features supported by the Flagstone iOS app\n     "
+        },
+        {
+          "tag": "THEAD",
+          "class": "",
+          "id": "",
+          "right": 659.765625,
+          "text": "\n        FeatureStatusWhat that means here\n      "
+        },
+        {
+          "tag": "TR",
+          "class": "",
+          "id": "",
+          "right": 659.765625,
+          "text": "FeatureStatusWhat that means here"
+        },
+        {
+          "tag": "TH",
+          "class": "",
+          "id": "",
+          "right": 471.640625,
+          "text": "Status"
+        },
+        {
+          "tag": "TH",
+          "class": "",
+          "id": "",
+          "right": 659.765625,
+          "text": "What that means here"
+        },
+        {
+          "tag": "TBODY",
+          "class": "",
+          "id": "",
+          "right": 659.765625,
+          "text": "\n        \n          VoiceOver\n          Supported\n          Every cont"
+        },
+        {
+          "tag": "TR",
+          "class": "",
+          "id": "",
+          "right": 659.765625,
+          "text": "\n          VoiceOver\n          Supported\n          Every control has a"
+        },
+        {
+          "tag": "TD",
+          "class": "yes",
+          "id": "",
+          "right": 471.640625,
+          "text": "Supported"
+        },
+        {
+          "tag": "TD",
+          "class": "",
+          "id": "",
+          "right": 659.765625,
+          "text": "Every control has a spoken label, role, and where useful a hint. Statu"
+        },
+        {
+          "tag": "TR",
+          "class": "",
+          "id": "",
+          "right": 659.765625,
+          "text": "\n          Larger Text\n          Supported\n          Text scales with "
+        },
+        {
+          "tag": "TD",
+          "class": "yes",
+          "id": "",
+          "right": 471.640625,
+          "text": "Supported"
+        }
+      ]
+    }
+  },
+  {
+    "theme": "light",
+    "route": "/flagstone/privacy/",
+    "axe": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          {
+            "target": [
+              ".meta"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #edf3fe, background color: #1c6ef3, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "nav[aria-label=\"Site\"] > a[href$=\"support/\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "nav[aria-label=\"Site\"] > a[href$=\"accessibility/\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "nav[aria-label=\"Site\"] > a[href$=\"terms/\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "text200": {
+      "scrollWidth": 555,
+      "clientWidth": 393,
+      "overflow": true,
+      "offenders": [
+        {
+          "tag": "INPUT",
+          "class": "",
+          "id": "a11y-size",
+          "right": 416,
+          "text": ""
+        },
+        {
+          "tag": "TABLE",
+          "class": "",
+          "id": "",
+          "right": 554.671875,
+          "text": "\n  \n    Your DataWhat We Do With ItWho Sees It\n  \n  \n    EmailSign-in,"
+        },
+        {
+          "tag": "THEAD",
+          "class": "",
+          "id": "",
+          "right": 554.671875,
+          "text": "\n    Your DataWhat We Do With ItWho Sees It\n  "
+        },
+        {
+          "tag": "TR",
+          "class": "",
+          "id": "",
+          "right": 554.671875,
+          "text": "Your DataWhat We Do With ItWho Sees It"
+        },
+        {
+          "tag": "TH",
+          "class": "",
+          "id": "",
+          "right": 425.046875,
+          "text": "What We Do With It"
+        },
+        {
+          "tag": "TH",
+          "class": "",
+          "id": "",
+          "right": 554.671875,
+          "text": "Who Sees It"
+        },
+        {
+          "tag": "TBODY",
+          "class": "",
+          "id": "",
+          "right": 554.671875,
+          "text": "\n    EmailSign-in, password reset, optional notificationsOnly you (nev"
+        },
+        {
+          "tag": "TR",
+          "class": "",
+          "id": "",
+          "right": 554.671875,
+          "text": "EmailSign-in, password reset, optional notificationsOnly you (never vi"
+        },
+        {
+          "tag": "TD",
+          "class": "",
+          "id": "",
+          "right": 425.046875,
+          "text": "Sign-in, password reset, optional notifications"
+        },
+        {
+          "tag": "TD",
+          "class": "",
+          "id": "",
+          "right": 554.671875,
+          "text": "Only you (never visible on the map)"
+        },
+        {
+          "tag": "TR",
+          "class": "",
+          "id": "",
+          "right": 554.671875,
+          "text": "Display nameShown on flags you report/verifyOther app users"
+        },
+        {
+          "tag": "TD",
+          "class": "",
+          "id": "",
+          "right": 425.046875,
+          "text": "Shown on flags you report/verify"
+        }
+      ]
+    }
+  },
+  {
+    "theme": "light",
+    "route": "/flagstone/support/",
+    "axe": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          {
+            "target": [
+              ".tagline"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #edf3fe, background color: #1c6ef3, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              ".about > h2"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.25 (foreground color: #1c6ef3, background color: #f0f7ff, font size: 12.8pt (17px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "p:nth-child(4) > a[target=\"_blank\"][rel=\"noopener noreferrer\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "nav[aria-label=\"Site\"] > a[href$=\"privacy/\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "nav[aria-label=\"Site\"] > a[href$=\"accessibility/\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "nav[aria-label=\"Site\"] > a[href$=\"terms/\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "text200": {
+      "scrollWidth": 434,
+      "clientWidth": 393,
+      "overflow": true,
+      "offenders": [
+        {
+          "tag": "INPUT",
+          "class": "",
+          "id": "a11y-size",
+          "right": 416,
+          "text": ""
+        },
+        {
+          "tag": "A",
+          "class": "",
+          "id": "",
+          "right": 434.0625,
+          "text": "support@skypistudio.com"
+        },
+        {
+          "tag": "A",
+          "class": "",
+          "id": "",
+          "right": 421.03125,
+          "text": "support@skypistudio.com"
+        }
+      ]
+    }
+  },
+  {
+    "theme": "light",
+    "route": "/flagstone/terms/",
+    "axe": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          {
+            "target": [
+              ".tagline"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #edf3fe, background color: #1c6ef3, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              ".callout > h2"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.25 (foreground color: #1c6ef3, background color: #f0f7ff, font size: 12.8pt (17px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "nav[aria-label=\"Site\"] > a[href$=\"support/\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "nav[aria-label=\"Site\"] > a[href$=\"privacy/\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              "nav[aria-label=\"Site\"] > a[href$=\"accessibility/\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "text200": {
+      "scrollWidth": 400,
+      "clientWidth": 393,
+      "overflow": true,
+      "offenders": [
+        {
+          "tag": "INPUT",
+          "class": "",
+          "id": "a11y-size",
+          "right": 416,
+          "text": ""
+        },
+        {
+          "tag": "A",
+          "class": "",
+          "id": "",
+          "right": 394.0625,
+          "text": "support@skypistudio.com"
+        }
+      ]
+    }
+  },
+  {
+    "theme": "dark",
+    "route": "/flagstone/",
+    "axe": [],
+    "text200": {
+      "scrollWidth": 484,
+      "clientWidth": 393,
+      "overflow": true,
+      "offenders": [
+        {
+          "tag": "INPUT",
+          "class": "",
+          "id": "a11y-size",
+          "right": 416,
+          "text": ""
+        },
+        {
+          "tag": "A",
+          "class": "home-card",
+          "id": "",
+          "right": 484,
+          "text": "\n        Support\n        How the app works, frequently asked questions"
+        },
+        {
+          "tag": "H2",
+          "class": "",
+          "id": "",
+          "right": 434,
+          "text": "Support"
+        },
+        {
+          "tag": "P",
+          "class": "",
+          "id": "",
+          "right": 434,
+          "text": "How the app works, frequently asked questions, and how to reach us."
+        },
+        {
+          "tag": "A",
+          "class": "home-card",
+          "id": "",
+          "right": 484,
+          "text": "\n        Privacy Policy\n        What we collect (very little), what we"
+        },
+        {
+          "tag": "H2",
+          "class": "",
+          "id": "",
+          "right": 434,
+          "text": "Privacy Policy"
+        },
+        {
+          "tag": "P",
+          "class": "",
+          "id": "",
+          "right": 434,
+          "text": "What we collect (very little), what we never collect, and your rights."
+        },
+        {
+          "tag": "A",
+          "class": "home-card",
+          "id": "",
+          "right": 484,
+          "text": "\n        Accessibility\n        What the app supports, how we test, and"
+        },
+        {
+          "tag": "H2",
+          "class": "",
+          "id": "",
+          "right": 434,
+          "text": "Accessibility"
+        },
+        {
+          "tag": "P",
+          "class": "",
+          "id": "",
+          "right": 434,
+          "text": "What the app supports, how we test, and where we still fall short."
+        },
+        {
+          "tag": "A",
+          "class": "home-card",
+          "id": "",
+          "right": 484,
+          "text": "\n        Terms & Community Guidelines\n        What you can post, what "
+        },
+        {
+          "tag": "H2",
+          "class": "",
+          "id": "",
+          "right": 434,
+          "text": "Terms & Community Guidelines"
+        }
+      ]
+    }
+  },
+  {
+    "theme": "dark",
+    "route": "/flagstone/accessibility/",
+    "axe": [],
+    "text200": {
+      "scrollWidth": 393,
+      "clientWidth": 393,
+      "overflow": false,
+      "offenders": [
+        {
+          "tag": "INPUT",
+          "class": "",
+          "id": "a11y-size",
+          "right": 416,
+          "text": ""
+        },
+        {
+          "tag": "TABLE",
+          "class": "",
+          "id": "",
+          "right": 659.765625,
+          "text": "\n      Accessibility features supported by the Flagstone iOS app\n     "
+        },
+        {
+          "tag": "THEAD",
+          "class": "",
+          "id": "",
+          "right": 659.765625,
+          "text": "\n        FeatureStatusWhat that means here\n      "
+        },
+        {
+          "tag": "TR",
+          "class": "",
+          "id": "",
+          "right": 659.765625,
+          "text": "FeatureStatusWhat that means here"
+        },
+        {
+          "tag": "TH",
+          "class": "",
+          "id": "",
+          "right": 471.640625,
+          "text": "Status"
+        },
+        {
+          "tag": "TH",
+          "class": "",
+          "id": "",
+          "right": 659.765625,
+          "text": "What that means here"
+        },
+        {
+          "tag": "TBODY",
+          "class": "",
+          "id": "",
+          "right": 659.765625,
+          "text": "\n        \n          VoiceOver\n          Supported\n          Every cont"
+        },
+        {
+          "tag": "TR",
+          "class": "",
+          "id": "",
+          "right": 659.765625,
+          "text": "\n          VoiceOver\n          Supported\n          Every control has a"
+        },
+        {
+          "tag": "TD",
+          "class": "yes",
+          "id": "",
+          "right": 471.640625,
+          "text": "Supported"
+        },
+        {
+          "tag": "TD",
+          "class": "",
+          "id": "",
+          "right": 659.765625,
+          "text": "Every control has a spoken label, role, and where useful a hint. Statu"
+        },
+        {
+          "tag": "TR",
+          "class": "",
+          "id": "",
+          "right": 659.765625,
+          "text": "\n          Larger Text\n          Supported\n          Text scales with "
+        },
+        {
+          "tag": "TD",
+          "class": "yes",
+          "id": "",
+          "right": 471.640625,
+          "text": "Supported"
+        }
+      ]
+    }
+  },
+  {
+    "theme": "dark",
+    "route": "/flagstone/privacy/",
+    "axe": [],
+    "text200": {
+      "scrollWidth": 555,
+      "clientWidth": 393,
+      "overflow": true,
+      "offenders": [
+        {
+          "tag": "INPUT",
+          "class": "",
+          "id": "a11y-size",
+          "right": 416,
+          "text": ""
+        },
+        {
+          "tag": "TABLE",
+          "class": "",
+          "id": "",
+          "right": 554.671875,
+          "text": "\n  \n    Your DataWhat We Do With ItWho Sees It\n  \n  \n    EmailSign-in,"
+        },
+        {
+          "tag": "THEAD",
+          "class": "",
+          "id": "",
+          "right": 554.671875,
+          "text": "\n    Your DataWhat We Do With ItWho Sees It\n  "
+        },
+        {
+          "tag": "TR",
+          "class": "",
+          "id": "",
+          "right": 554.671875,
+          "text": "Your DataWhat We Do With ItWho Sees It"
+        },
+        {
+          "tag": "TH",
+          "class": "",
+          "id": "",
+          "right": 425.046875,
+          "text": "What We Do With It"
+        },
+        {
+          "tag": "TH",
+          "class": "",
+          "id": "",
+          "right": 554.671875,
+          "text": "Who Sees It"
+        },
+        {
+          "tag": "TBODY",
+          "class": "",
+          "id": "",
+          "right": 554.671875,
+          "text": "\n    EmailSign-in, password reset, optional notificationsOnly you (nev"
+        },
+        {
+          "tag": "TR",
+          "class": "",
+          "id": "",
+          "right": 554.671875,
+          "text": "EmailSign-in, password reset, optional notificationsOnly you (never vi"
+        },
+        {
+          "tag": "TD",
+          "class": "",
+          "id": "",
+          "right": 425.046875,
+          "text": "Sign-in, password reset, optional notifications"
+        },
+        {
+          "tag": "TD",
+          "class": "",
+          "id": "",
+          "right": 554.671875,
+          "text": "Only you (never visible on the map)"
+        },
+        {
+          "tag": "TR",
+          "class": "",
+          "id": "",
+          "right": 554.671875,
+          "text": "Display nameShown on flags you report/verifyOther app users"
+        },
+        {
+          "tag": "TD",
+          "class": "",
+          "id": "",
+          "right": 425.046875,
+          "text": "Shown on flags you report/verify"
+        }
+      ]
+    }
+  },
+  {
+    "theme": "dark",
+    "route": "/flagstone/support/",
+    "axe": [],
+    "text200": {
+      "scrollWidth": 434,
+      "clientWidth": 393,
+      "overflow": true,
+      "offenders": [
+        {
+          "tag": "INPUT",
+          "class": "",
+          "id": "a11y-size",
+          "right": 416,
+          "text": ""
+        },
+        {
+          "tag": "A",
+          "class": "",
+          "id": "",
+          "right": 434.0625,
+          "text": "support@skypistudio.com"
+        },
+        {
+          "tag": "A",
+          "class": "",
+          "id": "",
+          "right": 421.03125,
+          "text": "support@skypistudio.com"
+        }
+      ]
+    }
+  },
+  {
+    "theme": "dark",
+    "route": "/flagstone/terms/",
+    "axe": [],
+    "text200": {
+      "scrollWidth": 400,
+      "clientWidth": 393,
+      "overflow": true,
+      "offenders": [
+        {
+          "tag": "INPUT",
+          "class": "",
+          "id": "a11y-size",
+          "right": 416,
+          "text": ""
+        },
+        {
+          "tag": "A",
+          "class": "",
+          "id": "",
+          "right": 394.0625,
+          "text": "support@skypistudio.com"
+        }
+      ]
+    }
+  }
+]

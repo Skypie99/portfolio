@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-09-04 America/Vancouver",
+  "AccessMapOriginMain": "70b52a30e9fff0f7d538509b110212bb8d872391",
+  "primaryFile": "release/current.json",
+  "primaryStatus": "submitted_for_review",
+  "primarySubmittedAt": null,
+  "primaryLastVerified": "2026-09-02T06:15:01Z",
+  "version": "4.1.1",
+  "iosBuild": 33,
+  "appSource": "f5594171e75bc5ec92a87d0392c361601ddedfba",
+  "webSource": "ebf091c21066d39898160b1357bde0aa35bdb8bf",
+  "AppleEmail": {
+    "sender": "App Store Connect, Apple",
+    "subject": "Thank You for Submitting Your App",
+    "receivedUTC": "2026-09-01T07:03:52Z",
+    "receivedVancouver": "2026-09-01T00:03:52-07:00",
+    "establishes": "Apple received Flagstone Accessibility Map for review",
+    "doesNotEstablish": "Exact submission action time, current review outcome, approval, release, adoption"
+  },
+  "currentASC": "Unavailable: unauthenticated browser redirected to login; no credentials handled",
+  "statusCopy": "Unchanged; August 31 remains accepted first-party history. Email receipt timestamp is not itself the submission action timestamp. Owner clarification pending.",
+  "result": "HOLD"
+}

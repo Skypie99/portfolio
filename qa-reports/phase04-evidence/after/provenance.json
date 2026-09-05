@@ -1,0 +1,7 @@
+{
+  "sourceSHA": "1514a19ee3b8a64a3578199f1e3e9d9326cb4f99",
+  "sourceTree": "b5601cfe381d1aa1959267c9bcc16559efd9df38",
+  "builtSourceSHA": "7e2e3b3ae2f706ce7462a2af98a3dea6bb28d6c0",
+  "subsequentDiff": "One test-only optional-body correction; app/components/lib production modules/public/content unchanged",
+  "captureHarness": "Chromium 149.0.7827.55 via playwright-core; Node server on 127.0.0.1; all runtime browser contexts ephemeral, no credentials loaded"
+}
