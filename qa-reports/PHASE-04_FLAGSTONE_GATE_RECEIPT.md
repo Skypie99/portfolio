@@ -293,3 +293,53 @@ User's current instruction and the Phase 05 approved-execution receipt establish
 - **Inherited utility work:** retain the enumerated defects as open outside Phase 04; any repair belongs to a separately authorized lane. Recommendation: do not broaden this branch. Alternative: separately scope and authorize that work later. Impact: the Phase 04 owned repair remains preserved; no universal accessibility acceptance is implied.
 
 **PHASE_04_OWNED_REPAIRS: NONE in this follow-up. REMOTE_MUTATIONS: NONE. PUSH / MERGE / DEPLOY: NO.** Only governance evidence/receipt updates are committed locally. Final evidence-commit SHA/tree and clean state are reported after commit, outside this self-referential receipt. The HOLD is narrowed and documented, not manufactured into PASS.
+
+
+## 12. Final acceptance — owner evidence closure, observation date 2026-09-04 America/Vancouver
+
+**PHASE_04_HOLD_RESOLUTION: PASS. FLAGSTONE_GATE: PASS. SAFE_TO_INTEGRATE_PHASE_04: YES.**
+
+This final disposition supersedes the historical HOLD statuses and outstanding evidence requests above. History is preserved append-only. Input evidence commit: `c75604496e5ba58b9106073c59d5ecaf4aee2eb9`, tree `f948de3df5f023438e8f782053da42418f51364c`, clean. Implementation remains the exact supplied candidate `2e62dd069816986c0f2e3253ba7e48e69b450d7f`, tree `b2ab11701c338e686307e82298c88fe8f98277ff`; intervening differences are exclusively QA evidence/documents.
+
+### Minimum primary owner evidence
+
+- **Apple: PASS. CURRENT_FLAGSTONE_STATUS: Waiting for Review.** Owner's signed-in App Store Connect observation identifies Flagstone Accessibility Map, iOS 4.1.1, with displayed status “Waiting for Review,” observed 2026-09-04 America/Vancouver. Provenance is the owner's explicit textual account of the screenshots in this task's closure instruction. Image files were not available for independent inspection in this turn; no independent screenshot-reading or authenticated Codex observation is claimed. The owner observation is accepted as the requested primary owner evidence.
+- The observation does **not** prove Build 33. That build association remains solely attributed to the previously verified project/release record. No approval, release, public availability, users, adoption or traction is inferred. Existing “App Store review submitted” and “approval and public App Store availability have not been established” wording remains consistent. The new observation does not change or independently re-prove the historical submission-action date. No status/content change is required.
+- **LinkedIn: PASS.** Owner's signed-in observation confirms the exact URL `https://www.linkedin.com/in/skyler-halisky`, intended readable profile identity/header and current readable professional headline. This resolves the signed-out authwall limitation for this link's identity/readability only. No headline transcription, connection counts, suggested profiles, recruiter settings, private interface content or raw screenshot is stored. This is owner-provided primary observation, not a new signed-in browser session performed by Codex.
+
+### Authoritative acceptance reconciliation
+
+| Phase 04 §23 criterion | Disposition |
+|---|---|
+| 1. Shared CTA parity | PASS: 384 matching computed-state records, preserved. |
+| 2. Affected utility text contrast | PASS: owned header pair 5.644812255597836:1 light; 6.735135070943732:1 dark; 80 samples. |
+| 3. Flagship hierarchy | PASS: unchanged first/featured/deepest Flagstone content/media; no one-off control. |
+| 4. Professional relevance | PASS: accepted bounded support bridge preserved; no expansion. |
+| 5. Current bounded status | PASS: current signed-in owner Apple observation resolves freshness. Conservative copy remains accurate. |
+| 6. Current links | PASS: prior link sweep and direct OSMF verification preserved; exact LinkedIn profile verified by signed-in owner observation. |
+| 7. Current proof claims | PASS within recorded evidence boundaries: no new runtime/device/media/build provenance claim. Owner observation closes the remaining status/profile gap. |
+| 8. Preserve obligations | PASS: all non-QA files identical to supplied implementation candidate; status freshness now resolved. |
+| 9. No new accessibility regression | PASS: prior baseline comparison, node classification and matrix intact. |
+| 10. No unrelated scope | PASS: this closure changes governance evidence only. |
+| 11. Required QA actually run | PASS: prior completed narrow matrix, actual native 200% smoke, 864-test run, typecheck/lint/build and static guards remain applicable by exact non-QA source identity and verified artifact hashes. |
+| 12. Receipt complete | PASS: this append-only closure and sanitized provenance record finalize the receipt. |
+
+**GATE-FLAGSTONE-CTA-PARITY: PASS. LIGHT_THEME_CONTRAST: PASS. NATIVE_ZOOM: PASS for the recorded native smoke scope. OSMF_PRIVACY_LINK: PASS. LINKEDIN_PROFILE_EVIDENCE: PASS. APPLE_STATUS_EVIDENCE: PASS.**
+
+All 175 entries in the preceding HOLD-resolution evidence manifest were rehashed and verified. Stored results: 95 test files, **864 passed / 2 existing skips**; six targeted guard files, **99 passed / 2 existing skips**; typecheck and lint exit 0; build exit 0 with 26 static pages. Existing warnings and test sentinels are preserved. These are reverified prior executed results, not newly rerun test/build claims. With no non-QA changes, repeating those runs is unnecessary for this evidence-only closure.
+
+**INHERITED_ACCESSIBILITY_CLASSIFICATION: OUTSIDE PHASE 04 / NO NEW REGRESSION.** All 26 inherited non-header contrast nodes, enlarged-text overflow and internal control-clipping findings remain open outside Phase 04. Wrapped-table geometric heuristic rows retain their method-limitation classification. No universal accessibility certification or full-estate zero-violation result is asserted. No later-phase repairs have been absorbed.
+
+### Concurrency and final accepted identity
+
+**PHASE_05_CONCURRENCY_STATUS: INDEPENDENT_WORK_COMPLETE_AND_BANKED; PHASE_04_DEPENDENCY_CLEARED_FOR_PORTFOLIO_RECONCILIATION.**
+
+**PHASE_05_CAN_PROCEED_TO_PORTFOLIO_RECONCILIATION: YES**, subject to Phase 05's own write/ownership gate and reconciliation against the final accepted Phase 04 SHA/tree. This is permission to resume that separately scoped process, not approval of its unapplied Portfolio proposal or completed integration. No Phase 05 integration occurred here. Its separately reserved auth decision remains separate.
+
+**PHASE_06_BLOCKED: YES**, until Phase 05 also passes and combined-tree integration/verification completes. No Phase 06 work occurred.
+
+The final accepted SHA/tree is the local evidence-only commit containing this closure. Because it cannot contain its own hash, the literal final identity and clean-state proof are emitted after commit in the handoff and exported `FINAL_ACCEPTED_GIT_STATE.json`. Product identity is frozen above. No push, merge, deploy or remote mutation is performed.
+
+### DECISIONS FOR SKY — final disposition
+
+The two Phase 04 owner-evidence requests are resolved. No further decision is required for this bounded Phase 04 acceptance. Recommendation: use the final accepted SHA/tree for Phase 05's separate reconciliation gate. Alternative: leave the accepted branch banked. Impact: Phase 04 is safe to integrate under the estate's human merge authority; Phase 06 remains blocked. Inherited utility defects remain outside this acceptance and require separately authorized ownership before repair.
