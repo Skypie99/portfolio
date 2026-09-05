@@ -1359,8 +1359,8 @@
     },
     {
       "path": "logs/build-final.log",
-      "bytes": 4370,
-      "sha256": "83652b1aef4718fe81db720e0ffb27149588264434f5c574e64bcc8af2c6e1b4"
+      "bytes": 4364,
+      "sha256": "74f85c6fed4883f672074cbed79fedfd2084ac821b3096222363464eba712bbb"
     },
     {
       "path": "logs/lint-final.log",
@@ -1369,23 +1369,23 @@
     },
     {
       "path": "logs/static-final.log",
-      "bytes": 691,
-      "sha256": "0ff0d9e2a46027acb002f4b6ff8c70f4c327e9694c676ae3fc617b71d8d4f78d"
+      "bytes": 690,
+      "sha256": "1c78511d30b9915f814d082ea7acc0317ff6c43633f8b2b717ab132f1280cd42"
     },
     {
       "path": "logs/tests-final.log",
-      "bytes": 33001,
-      "sha256": "ce053c2870de4f93b128ee879cb6a9830bc10ee16b06854234a21703450a3440"
+      "bytes": 33000,
+      "sha256": "8de9a1fb5e4570578bce53023469f4a1536c67e8aaf3d25f7c26f762956a7569"
     },
     {
       "path": "logs/tests-initial.log",
-      "bytes": 33979,
-      "sha256": "5075b79fc17e5ff887910d9499da448e5d351077d57022185e3b4963b8d1f548"
+      "bytes": 33978,
+      "sha256": "e7233a54a8d7bb95996cceefe462be61b8328bd3416f442a275ae4be96b7904e"
     },
     {
       "path": "logs/typecheck-final.log",
-      "bytes": 45,
-      "sha256": "8c6924519e1001756d339813f41ffe9347639fb7aa116c103e465a1142678e7d"
+      "bytes": 44,
+      "sha256": "f14ef40859900d419ab65d126c5ab35c927117381f731752bce59bd935da25d2"
     },
     {
       "path": "preserve.json",
@@ -1402,5 +1402,6 @@
       "bytes": 1135,
       "sha256": "0e65030f76de45e392d28351256c606ae80a764b90366a10620aa592933a429a"
     }
-  ]
+  ],
+  "logNormalization": "Terminal carriage returns and trailing whitespace/blank EOF lines normalized; all diagnostic and result text retained."
 }
