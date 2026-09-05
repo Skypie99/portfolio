@@ -1,0 +1,39 @@
+{
+  "sourceSHA": "1514a19ee3b8a64a3578199f1e3e9d9326cb4f99",
+  "sourceTree": "b5601cfe381d1aa1959267c9bcc16559efd9df38",
+  "lightBefore": 4.131045055794928,
+  "lightAfter": 5.644812255597836,
+  "darkBeforeAndAfter": 6.735135070943732,
+  "fontSize": "15px",
+  "fontWeight": "400",
+  "opacity": 0.92,
+  "beforeLightBackground": "rgb(28, 110, 243)",
+  "afterLightBackground": "rgb(21, 88, 204)",
+  "effectiveLightBefore": [
+    236.84,
+    243.4,
+    254.04
+  ],
+  "effectiveLightAfter": [
+    236.28,
+    241.64,
+    250.92
+  ],
+  "routeCount": 5,
+  "widths": [
+    320,
+    375,
+    393,
+    430,
+    768,
+    1024,
+    1280,
+    1440
+  ],
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "headerRectanglesIdentical": true,
+  "darkScreenshotsByteIdentical": true
+}

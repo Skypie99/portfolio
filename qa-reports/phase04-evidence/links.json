@@ -1,0 +1,630 @@
+{
+  "at": "2026-09-05T02:10:33.856Z",
+  "internal": [
+    {
+      "route": "/work/flagstone/",
+      "href": "#main",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/work/flagstone/",
+      "href": "/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/work/flagstone/",
+      "href": "/work/flagstone/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/work/flagstone/",
+      "href": "/blog/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/work/flagstone/",
+      "href": "/contact/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/work/flagstone/",
+      "href": "/work/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/work/flagstone/",
+      "href": "#flagstone-test-count-method",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/work/flagstone/",
+      "href": "/about/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/work/flagstone/",
+      "href": "/work/claude-corp/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/work/flagstone/",
+      "href": "/work/claude-corp/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/work/flagstone/",
+      "href": "/work/dashboard/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/work/flagstone/",
+      "href": "/work/dashboard/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/work/flagstone/",
+      "href": "/contact/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/work/flagstone/",
+      "href": "/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/work/flagstone/",
+      "href": "/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/work/flagstone/",
+      "href": "/work/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/work/flagstone/",
+      "href": "/certificates/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/work/flagstone/",
+      "href": "/about/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/work/flagstone/",
+      "href": "/blog/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/work/flagstone/",
+      "href": "/accessibility/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/work/flagstone/",
+      "href": "/colophon/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/work/flagstone/",
+      "href": "/contact/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/work/flagstone/",
+      "href": "/contact/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/",
+      "href": "#main",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/",
+      "href": "./",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/",
+      "href": "support/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/",
+      "href": "privacy/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/",
+      "href": "accessibility/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/",
+      "href": "terms/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/",
+      "href": "support/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/",
+      "href": "privacy/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/",
+      "href": "accessibility/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/",
+      "href": "terms/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/",
+      "href": "support/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/",
+      "href": "privacy/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/",
+      "href": "accessibility/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/",
+      "href": "terms/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "href": "#main",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "href": "../",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "href": "../support/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "href": "../privacy/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "href": "./",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "href": "../terms/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "href": "mailto:support@skypistudio.com?subject=Flagstone%20accessibility%20feedback",
+      "kind": "mailto",
+      "result": "syntax only; no send"
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "href": "../support/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "href": "../privacy/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "href": "../terms/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "href": "#main",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "href": "../",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "href": "../support/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "href": "./",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "href": "../accessibility/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "href": "../terms/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "href": "mailto:support@skypistudio.com",
+      "kind": "mailto",
+      "result": "syntax only; no send"
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "href": "mailto:support@skypistudio.com",
+      "kind": "mailto",
+      "result": "syntax only; no send"
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "href": "mailto:support@skypistudio.com",
+      "kind": "mailto",
+      "result": "syntax only; no send"
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "href": "../support/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "href": "../accessibility/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "href": "../terms/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/support/",
+      "href": "#main",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/support/",
+      "href": "../",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/support/",
+      "href": "./",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/support/",
+      "href": "../privacy/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/support/",
+      "href": "../accessibility/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/support/",
+      "href": "../terms/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/support/",
+      "href": "mailto:support@skypistudio.com",
+      "kind": "mailto",
+      "result": "syntax only; no send"
+    },
+    {
+      "route": "/flagstone/support/",
+      "href": "mailto:support@skypistudio.com",
+      "kind": "mailto",
+      "result": "syntax only; no send"
+    },
+    {
+      "route": "/flagstone/support/",
+      "href": "mailto:support@skypistudio.com",
+      "kind": "mailto",
+      "result": "syntax only; no send"
+    },
+    {
+      "route": "/flagstone/support/",
+      "href": "../privacy/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/support/",
+      "href": "../accessibility/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/support/",
+      "href": "../terms/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/terms/",
+      "href": "#main",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/terms/",
+      "href": "../",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/terms/",
+      "href": "../support/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/terms/",
+      "href": "../privacy/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/terms/",
+      "href": "../accessibility/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/terms/",
+      "href": "./",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/terms/",
+      "href": "mailto:support@skypistudio.com",
+      "kind": "mailto",
+      "result": "syntax only; no send"
+    },
+    {
+      "route": "/flagstone/terms/",
+      "href": "../support/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/terms/",
+      "href": "../privacy/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    },
+    {
+      "route": "/flagstone/terms/",
+      "href": "../accessibility/",
+      "kind": "internal",
+      "exists": true,
+      "anchor": true
+    }
+  ],
+  "external": [
+    {
+      "url": "https://flagstone.skypistudio.com",
+      "status": 200,
+      "finalUrl": "https://flagstone.skypistudio.com/"
+    },
+    {
+      "url": "https://github.com/Skypie99/AccessMap",
+      "status": 200,
+      "finalUrl": "https://github.com/Skypie99/AccessMap"
+    },
+    {
+      "url": "https://flagstone.skypistudio.com/",
+      "status": 200,
+      "finalUrl": "https://flagstone.skypistudio.com/"
+    },
+    {
+      "url": "https://github.com/Skypie99/AccessMap/tree/main/supabase/migrations",
+      "status": 200,
+      "finalUrl": "https://github.com/Skypie99/AccessMap/tree/main/supabase/migrations"
+    },
+    {
+      "url": "https://claudecorp.skypistudio.com/",
+      "status": 200,
+      "finalUrl": "https://claudecorp.skypistudio.com/"
+    },
+    {
+      "url": "https://dashboard.skypistudio.com/",
+      "status": 200,
+      "finalUrl": "https://dashboard.skypistudio.com/"
+    },
+    {
+      "url": "https://github.com/skypie99",
+      "status": 200,
+      "finalUrl": "https://github.com/skypie99"
+    },
+    {
+      "url": "https://www.linkedin.com/in/skyler-halisky",
+      "status": 999,
+      "finalUrl": "https://www.linkedin.com/in/skyler-halisky"
+    },
+    {
+      "url": "https://developer.apple.com/accessibility/",
+      "status": 200,
+      "finalUrl": "https://developer.apple.com/documentation/accessibility"
+    },
+    {
+      "url": "https://github.com/Skypie99/AccessMap/issues",
+      "status": 200,
+      "finalUrl": "https://github.com/Skypie99/AccessMap/issues"
+    },
+    {
+      "url": "https://supabase.com/privacy",
+      "status": 200,
+      "finalUrl": "https://supabase.com/privacy"
+    },
+    {
+      "url": "https://expo.dev/privacy",
+      "status": 200,
+      "finalUrl": "https://expo.dev/privacy"
+    },
+    {
+      "url": "https://osmfoundation.org/wiki/Privacy_Policy",
+      "error": "fetch failed"
+    }
+  ]
+}

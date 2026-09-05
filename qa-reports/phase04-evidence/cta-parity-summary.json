@@ -1,0 +1,519 @@
+{
+  "sourceSHA": "1514a19ee3b8a64a3578199f1e3e9d9326cb4f99",
+  "sourceTree": "b5601cfe381d1aa1959267c9bcc16559efd9df38",
+  "gate": "PASS",
+  "rows": [
+    {
+      "width": 320,
+      "theme": "light",
+      "state": "default",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 320,
+      "theme": "light",
+      "state": "hover",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 320,
+      "theme": "light",
+      "state": "active",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 320,
+      "theme": "light",
+      "state": "focus",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "state": "default",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "state": "hover",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "state": "active",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "state": "focus",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 375,
+      "theme": "light",
+      "state": "default",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 375,
+      "theme": "light",
+      "state": "hover",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 375,
+      "theme": "light",
+      "state": "active",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 375,
+      "theme": "light",
+      "state": "focus",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 375,
+      "theme": "dark",
+      "state": "default",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 375,
+      "theme": "dark",
+      "state": "hover",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 375,
+      "theme": "dark",
+      "state": "active",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 375,
+      "theme": "dark",
+      "state": "focus",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 393,
+      "theme": "light",
+      "state": "default",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 393,
+      "theme": "light",
+      "state": "hover",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 393,
+      "theme": "light",
+      "state": "active",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 393,
+      "theme": "light",
+      "state": "focus",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 393,
+      "theme": "dark",
+      "state": "default",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 393,
+      "theme": "dark",
+      "state": "hover",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 393,
+      "theme": "dark",
+      "state": "active",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 393,
+      "theme": "dark",
+      "state": "focus",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 430,
+      "theme": "light",
+      "state": "default",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 430,
+      "theme": "light",
+      "state": "hover",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 430,
+      "theme": "light",
+      "state": "active",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 430,
+      "theme": "light",
+      "state": "focus",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 430,
+      "theme": "dark",
+      "state": "default",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 430,
+      "theme": "dark",
+      "state": "hover",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 430,
+      "theme": "dark",
+      "state": "active",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 430,
+      "theme": "dark",
+      "state": "focus",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 768,
+      "theme": "light",
+      "state": "default",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 768,
+      "theme": "light",
+      "state": "hover",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 768,
+      "theme": "light",
+      "state": "active",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 768,
+      "theme": "light",
+      "state": "focus",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 768,
+      "theme": "dark",
+      "state": "default",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 768,
+      "theme": "dark",
+      "state": "hover",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 768,
+      "theme": "dark",
+      "state": "active",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 768,
+      "theme": "dark",
+      "state": "focus",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 1024,
+      "theme": "light",
+      "state": "default",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 1024,
+      "theme": "light",
+      "state": "hover",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 1024,
+      "theme": "light",
+      "state": "active",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 1024,
+      "theme": "light",
+      "state": "focus",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 1024,
+      "theme": "dark",
+      "state": "default",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 1024,
+      "theme": "dark",
+      "state": "hover",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 1024,
+      "theme": "dark",
+      "state": "active",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 1024,
+      "theme": "dark",
+      "state": "focus",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 1280,
+      "theme": "light",
+      "state": "default",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 1280,
+      "theme": "light",
+      "state": "hover",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 1280,
+      "theme": "light",
+      "state": "active",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 1280,
+      "theme": "light",
+      "state": "focus",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 1280,
+      "theme": "dark",
+      "state": "default",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 1280,
+      "theme": "dark",
+      "state": "hover",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 1280,
+      "theme": "dark",
+      "state": "active",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 1280,
+      "theme": "dark",
+      "state": "focus",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "state": "default",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "state": "hover",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "state": "active",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "state": "focus",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "state": "default",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "state": "hover",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "state": "active",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "state": "focus",
+      "instances": 6,
+      "identical": true,
+      "pseudoActive": true
+    }
+  ]
+}

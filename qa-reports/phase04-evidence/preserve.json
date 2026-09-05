@@ -1,0 +1,26 @@
+{
+  "baseSHA": "3a3ffb0009c68221319a8e2616a5810edcbe0433",
+  "baseTree": "ee3404e31a99c64912af165e963360e5e5d8fa7a",
+  "candidateSHA": "1514a19ee3b8a64a3578199f1e3e9d9326cb4f99",
+  "candidateTree": "b5601cfe381d1aa1959267c9bcc16559efd9df38",
+  "otherDeliverablesIdentical": true,
+  "flagstoneMetadataMediaStatusIdentical": true,
+  "flagstoneOriginalBodyIdenticalAfterRemovingOnlyBridge": true,
+  "flagstoneFirstAndFeatured": true,
+  "flagstoneDeepestBody": true,
+  "unchangedSource": {
+    "components/cinematic": true,
+    "app/page.tsx": true,
+    "components/ProjectDoorwayButton.tsx": true,
+    "app/work/[slug]/page.tsx": true,
+    "app/globals.css": true,
+    "tailwind.config.ts": true,
+    "components/RunwayIdentity.tsx": true,
+    "public/flagstone/index.html": true,
+    "public/flagstone/accessibility/index.html": true,
+    "public/flagstone/privacy/index.html": true,
+    "public/flagstone/support/index.html": true,
+    "public/flagstone/terms/index.html": true
+  },
+  "diffCheck": true
+}

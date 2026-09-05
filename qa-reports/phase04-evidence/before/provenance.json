@@ -1,0 +1,49 @@
+{
+  "sourceSHA": "3a3ffb0009c68221319a8e2616a5810edcbe0433",
+  "sourceTree": "ee3404e31a99c64912af165e963360e5e5d8fa7a",
+  "beforeBuild": "Inherited frozen handoff out; owned utility HTML/CSS/JS verified byte-identical to exact base. Home/case-study build provenance inherited from Phase03 receipt, not regenerated in Phase04.",
+  "utilityIdentity": [
+    {
+      "file": "public/flagstone/index.html",
+      "sourceSha256": "da2462289287ad3852d50532386467af8de73de58fa65c318ca048189240c377",
+      "builtSha256": "da2462289287ad3852d50532386467af8de73de58fa65c318ca048189240c377",
+      "identical": true
+    },
+    {
+      "file": "public/flagstone/privacy/index.html",
+      "sourceSha256": "348eab03fc9a5f1b7c5fca59bbc7d6d1f24af01ad7556e27d1c1248ea0e8a62d",
+      "builtSha256": "348eab03fc9a5f1b7c5fca59bbc7d6d1f24af01ad7556e27d1c1248ea0e8a62d",
+      "identical": true
+    },
+    {
+      "file": "public/flagstone/terms/index.html",
+      "sourceSha256": "4af36755d092f818cd45fb836df4843a9b489c87ae01630d79c6c94b287c867b",
+      "builtSha256": "4af36755d092f818cd45fb836df4843a9b489c87ae01630d79c6c94b287c867b",
+      "identical": true
+    },
+    {
+      "file": "public/flagstone/support/index.html",
+      "sourceSha256": "45b875505a440d83034e0e1db0728c3716a7a82d923782cafea162dce422d0d9",
+      "builtSha256": "45b875505a440d83034e0e1db0728c3716a7a82d923782cafea162dce422d0d9",
+      "identical": true
+    },
+    {
+      "file": "public/flagstone/accessibility/index.html",
+      "sourceSha256": "c006b8da336a4a90dedd4ee59fd6505005eb278f095785167e73b3853334149d",
+      "builtSha256": "c006b8da336a4a90dedd4ee59fd6505005eb278f095785167e73b3853334149d",
+      "identical": true
+    },
+    {
+      "file": "public/flagstone/assets/site.css",
+      "sourceSha256": "1a50a56f1e3d352825008f54cbd2f103f8bdd3ff54a0c159a14200b648d85f6a",
+      "builtSha256": "1a50a56f1e3d352825008f54cbd2f103f8bdd3ff54a0c159a14200b648d85f6a",
+      "identical": true
+    },
+    {
+      "file": "public/flagstone/assets/a11y.js",
+      "sourceSha256": "faa059ec8b354da70f49bcfbfae2355f8d838a3dde7cea3a7cd4609b6440bcaf",
+      "builtSha256": "faa059ec8b354da70f49bcfbfae2355f8d838a3dde7cea3a7cd4609b6440bcaf",
+      "identical": true
+    }
+  ]
+}
