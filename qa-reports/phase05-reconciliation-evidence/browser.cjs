@@ -1,0 +1,23 @@
+const {chromium}=require('/Users/skypie/Portfolio-codex/portfolio-3.0-phase05-reconciled-20260904/node_modules/playwright-core');const fs=require('fs');const assert=require('assert');
+const out='/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/reconciliation';const origin='http://127.0.0.1:3345';
+(async()=>{const browser=await chromium.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});const results=[];try{
+for(const theme of ['light','dark'])for(const width of [375,1440]){const c=await browser.newContext({viewport:{width,height:900},colorScheme:theme,reducedMotion:'reduce'});await c.addInitScript(t=>localStorage.setItem('theme',t),theme);const page=await c.newPage();let errors=[],external=[];page.on('pageerror',e=>errors.push(String(e)));await page.route('**/*',r=>{if(new URL(r.request().url()).origin===origin)return r.continue();external.push(new URL(r.request().url()).origin);return r.abort();});
+for(const route of ['/work/dashboard/','/work/claude-corp/','/work/prompt-library/','/work/ghost-code/','/work/flagstone/','/']){errors=[];external=[];await page.goto(origin+route,{waitUntil:'networkidle'});await page.evaluate(()=>document.fonts.ready);assert(await page.locator('main').count());assert((await page.locator('body').innerText()).length>100);assert.equal(await page.locator('[data-nextjs-dialog],.vite-error-overlay').count(),0);
+const info={theme,width,route,title:await page.title(),documentWidth:await page.evaluate(()=>document.documentElement.scrollWidth),errors,external};assert(info.documentWidth<=width,JSON.stringify(info));
+if(route==='/work/dashboard/'){const body=await page.locator('main').innerText();assert(body.includes('making blockers visible, routing decisions'));assert(body.includes('share mode configuration'));assert(!body.includes('Three layers means any one'));assert(body.includes('Local candidate captured September 5, 2026.')||body.includes('local candidate captured September 5, 2026.'));}
+if(route==='/work/flagstone/'){assert((await page.locator('main').innerText()).includes('This is the support work Flagstone demonstrates:'));}
+if(route==='/'){
+ const skip=page.getByRole('button',{name:/skip intro/i});info.skipIntroCount=await skip.count();if(await skip.count()){await skip.first().click();}
+ const doors=page.locator('a').filter({hasText:/^View project\s*→?$/});info.doorwayCount=await doors.count();assert.equal(info.doorwayCount,6);
+ info.doorwayClasses=await doors.evaluateAll(es=>[...new Set(es.map(e=>e.className))]);assert.equal(info.doorwayClasses.length,1);
+ info.doorwayStyles=await doors.evaluateAll(es=>es.map(e=>{let s=getComputedStyle(e);return {height:s.height,padding:s.padding,border:s.border,borderRadius:s.borderRadius,font:s.font,background:s.backgroundColor,color:s.color};}));assert(info.doorwayStyles.every(x=>JSON.stringify(x)===JSON.stringify(info.doorwayStyles[0])));
+ info.firstWorkHref=await page.locator('a[href="/work/flagstone/"]').first().getAttribute('href');
+}
+const imgs=page.locator('main img[src*="/showcase/"]:visible');info.images=[];
+for(let i=0;i<await imgs.count();i++){const im=imgs.nth(i);await im.scrollIntoViewIfNeeded();await im.evaluate(el=>el.decode());info.images.push(await im.evaluate(el=>({src:el.currentSrc,naturalWidth:el.naturalWidth,naturalHeight:el.naturalHeight,alt:el.alt})));}
+assert(info.images.every(x=>x.naturalWidth>0));if(route==='/work/dashboard/')assert(info.images.length>=3);if(route==='/work/claude-corp/')assert(info.images.length>=2);info.badExternalLinks=await page.locator('main a[target="_blank"]').evaluateAll(es=>es.filter(e=>!e.rel.includes('noopener')||!e.rel.includes('noreferrer')).map(e=>e.href));assert.equal(info.badExternalLinks.length,0);
+await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));if(route==='/work/dashboard/'||route==='/work/claude-corp/'||route==='/')await page.screenshot({path:`${out}/browser-${route==='/'?'home':route.split('/')[2]}-${theme}-${width}.png`});assert.equal(errors.length,0,JSON.stringify(errors));assert.equal(external.length,0,JSON.stringify(external));results.push(info);
+}
+await c.close();}
+fs.writeFileSync(out+'/browser-checks.json',JSON.stringify({method:'Fresh Chromium contexts, loopback-only Node static server; 6routes x2themes x2widths; reduced motion; no external endpoint rerun',result:'PASS',scenarios:results},null,2));console.log('PASS24 local combined route/theme/width scenarios; images,claims,doorways,links,errors checked');
+} catch(e){fs.writeFileSync(out+'/browser-checks.json',JSON.stringify({result:'FAIL',error:String(e),scenarios:results},null,2));throw e;}finally{await browser.close();}})();

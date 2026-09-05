@@ -1,0 +1,129 @@
+{
+  "result": "PASS",
+  "acceptedP04": "ceea4044ac53ac412feb33cf644705a53bec574d",
+  "acceptedP04Tree": "2c350cad76563d52dcf987e57cc0bc8d64cf874a",
+  "changedSourceFiles": [
+    "content/deliverables.json",
+    "content/showcase.manifest.json",
+    "public/showcase/claude-corp/hero-pipeline.dark.desktop.avif",
+    "public/showcase/claude-corp/hero-pipeline.dark.desktop.webp",
+    "public/showcase/claude-corp/hero-pipeline.light.desktop.avif",
+    "public/showcase/claude-corp/hero-pipeline.light.desktop.webp",
+    "public/showcase/claude-corp/team.dark.desktop.avif",
+    "public/showcase/claude-corp/team.dark.desktop.webp",
+    "public/showcase/claude-corp/team.light.desktop.avif",
+    "public/showcase/claude-corp/team.light.desktop.webp",
+    "public/showcase/dashboard/command-center.dark.desktop.avif",
+    "public/showcase/dashboard/command-center.dark.desktop.webp",
+    "public/showcase/dashboard/command-center.light.desktop.avif",
+    "public/showcase/dashboard/command-center.light.desktop.webp",
+    "public/showcase/dashboard/dispatch.dark.desktop.avif",
+    "public/showcase/dashboard/dispatch.dark.desktop.webp",
+    "public/showcase/dashboard/dispatch.light.desktop.avif",
+    "public/showcase/dashboard/dispatch.light.desktop.webp",
+    "public/showcase/dashboard/think-tank.dark.desktop.avif",
+    "public/showcase/dashboard/think-tank.dark.desktop.webp",
+    "public/showcase/dashboard/think-tank.light.desktop.avif",
+    "public/showcase/dashboard/think-tank.light.desktop.webp"
+  ],
+  "changedProjectFields": {
+    "claude-corp": [
+      "heroShot",
+      "cardImage",
+      "shots"
+    ],
+    "dashboard": [
+      "heroShot",
+      "cardImage",
+      "shots",
+      "body"
+    ]
+  },
+  "FlagstoneObjectExact": true,
+  "P04AboutContrastTestsAndCinematicExact": true,
+  "statusesLinksDatesRolesFeaturedAndOrderExact": true,
+  "changedManifestRows": [
+    [
+      "claude-corp",
+      "hero-pipeline",
+      "dark"
+    ],
+    [
+      "claude-corp",
+      "hero-pipeline",
+      "light"
+    ],
+    [
+      "claude-corp",
+      "team",
+      "dark"
+    ],
+    [
+      "claude-corp",
+      "team",
+      "light"
+    ],
+    [
+      "dashboard",
+      "command-center",
+      "dark"
+    ],
+    [
+      "dashboard",
+      "command-center",
+      "light"
+    ],
+    [
+      "dashboard",
+      "dispatch",
+      "dark"
+    ],
+    [
+      "dashboard",
+      "dispatch",
+      "light"
+    ],
+    [
+      "dashboard",
+      "think-tank",
+      "dark"
+    ],
+    [
+      "dashboard",
+      "think-tank",
+      "light"
+    ]
+  ],
+  "bodyLengths": {
+    "flagstone": 6628,
+    "claude-corp": 3818,
+    "dashboard": 3533,
+    "prompt-library": 2860,
+    "ghost-code": 2329
+  },
+  "fileSha256": {
+    "content/deliverables.json": "3282ab37d1b7f80eb0e92454ba6e59e69d5eb678e8cdc6ef27f9e5f62b2272ac",
+    "content/showcase.manifest.json": "73287f62c06ea3ec4b79663408b30a67055abf1d2bad44179db92a63ad2e4cd1",
+    "public/showcase/claude-corp/hero-pipeline.dark.desktop.avif": "9b568f5637076378a8d60ed314683f13e455ff30c16985ad217f7c43165b4b4e",
+    "public/showcase/claude-corp/hero-pipeline.dark.desktop.webp": "77e7bc77c62d1c900f15d24da74dff24db2d2325dc7601ad4d2b4d5d4bd53943",
+    "public/showcase/claude-corp/hero-pipeline.light.desktop.avif": "4fb02f80e10ca7268458d3816bc1b537a1060d2ca5136f4d3c7cad0d8a06c8a5",
+    "public/showcase/claude-corp/hero-pipeline.light.desktop.webp": "96389ba982e431ef573eb965db6df09649cab96cf2772d455f238a71fcddc655",
+    "public/showcase/claude-corp/team.dark.desktop.avif": "ee0a0276786512641b5e239fe7dd744c457c92aafb285ece22dd1a5649f525eb",
+    "public/showcase/claude-corp/team.dark.desktop.webp": "eefe7f9c9fb58a78cd2c6917506927f19cea2820f816891217c496da8736b317",
+    "public/showcase/claude-corp/team.light.desktop.avif": "b774ed0b07be876cc4ed51f00362d2033099708e7eb9a457685416fe5ab95270",
+    "public/showcase/claude-corp/team.light.desktop.webp": "3d14c6e6a508381d82755b56bb4e74b0f5ccf04611618058937dff47bbfdf1bb",
+    "public/showcase/dashboard/command-center.dark.desktop.avif": "94f8605a43b945d2e98c9ef7ab97d8e7987618787df605928cd7988e960f0d07",
+    "public/showcase/dashboard/command-center.dark.desktop.webp": "fc55ac1bf68f1123027341838a02afb794d259f7928b9b21c535c5dd0d97d080",
+    "public/showcase/dashboard/command-center.light.desktop.avif": "fae0038bbe24244b894e5722e7b3687cb20a4c5155ba6160d0fd1f3fbd4919fb",
+    "public/showcase/dashboard/command-center.light.desktop.webp": "9541e57c9978690a857fe105dd4f69129ca40ca6272d192701721290dba8f181",
+    "public/showcase/dashboard/dispatch.dark.desktop.avif": "1835d4af2e4abf3503cb8d0e98b9306e40fd2c972c8e13cc95394be4da192d8b",
+    "public/showcase/dashboard/dispatch.dark.desktop.webp": "259a1d467af37d0a766522661bc056fb14e946508964b186f0cbb03e67f1ee11",
+    "public/showcase/dashboard/dispatch.light.desktop.avif": "8a7c044b20941bfd66bd88882034c0c9a583b519c4f2c44a987a0f04e4570323",
+    "public/showcase/dashboard/dispatch.light.desktop.webp": "a3413b2bef9deaea5e7c58e25b1d6a13405eda12a06babab2955542738aa2405",
+    "public/showcase/dashboard/think-tank.dark.desktop.avif": "01d5b5dbeefb53c7be5cdb3ffd65a87c0af84e959563719facff2763003b26d4",
+    "public/showcase/dashboard/think-tank.dark.desktop.webp": "08ae8b743b8ed010179d10c069486aa38f6ae57c9ef8ba42c90ec9bfcb6c2060",
+    "public/showcase/dashboard/think-tank.light.desktop.avif": "8f6d3d6622cfe72dbf83f6b359bf7a24903cec7c385e89993de8a43d1c60ae4d",
+    "public/showcase/dashboard/think-tank.light.desktop.webp": "9c7fc5acace3208615ad7748ce33ae32c4da174ebf07578865fdbc63160614aa"
+  },
+  "workingDiffSha256": "c226a79ce968a741e58efb2ea79b0f5dd72750c9efdba0fe3774cb7bf71dc864"
+}

@@ -1,0 +1,130 @@
+{
+  "scope": "Phase05 combined reconciliation evidence; raw outputs retained in task outputs/reconciliation; committed logs normalize terminal trailing whitespace only",
+  "files": [
+    {
+      "file": "P05_PORTFOLIO_WRITE_GATE.json",
+      "sha256": "4947c1d6f6360a05a06cb17dd034055191133a3dcdd319b85690012c53c19bce",
+      "bytes": 37293
+    },
+    {
+      "file": "browser-checks-initial-hidden-theme.json",
+      "sha256": "5878d1b7cad4ca45d07943b7655cadaff7afd8a3e6948ae0682d7433744a0a53",
+      "bytes": 845
+    },
+    {
+      "file": "browser-checks.json",
+      "sha256": "55d6f6d54a704b1a371c77805b00faa1b2287f92af3f84a04688916771cfc5ec",
+      "bytes": 40591
+    },
+    {
+      "file": "browser-claude-corp-dark-375.png",
+      "sha256": "b226027f4e279e6ff5baf43ee4e8145dfccb8890f88e2807e689d22e2bce3cbd",
+      "bytes": 317358
+    },
+    {
+      "file": "browser-dashboard-light-1440.png",
+      "sha256": "0584efa45a3eb8f4aabb17ee33e2c43ec9513281cb3b9f2a1466481fb8a1e467",
+      "bytes": 864727
+    },
+    {
+      "file": "browser-server-initial-error.log",
+      "sha256": "87fd4ff49792c64a6ca3a1bcaf0829a5051c6f91d301453ecbb7e1090c68cea3",
+      "bytes": 177
+    },
+    {
+      "file": "browser.cjs",
+      "sha256": "61b0231cd5fd4786adbc544629ecac6ed18331aa07df92ae20d033f454059859",
+      "bytes": 4704
+    },
+    {
+      "file": "final-preservation.json",
+      "sha256": "0bb59f3c12df4ef7fe16bbd3b172096657acc21b0bbaea0d4996301f84a1d0ef",
+      "bytes": 5631
+    },
+    {
+      "file": "full-tests.json",
+      "sha256": "d01fe816937b7ea4e8595523cfb9f2ec1fbd1833b3921f848cb6144a71d1def5",
+      "bytes": 308
+    },
+    {
+      "file": "full-tests.log",
+      "sha256": "4efa19033e8d72826c437b47b2e3f59510996580e4b11c882712569a58ac518d",
+      "bytes": 34122
+    },
+    {
+      "file": "independent-review.md",
+      "sha256": "b5de3c0570ffafe083b845371d863f878daf942b9f5250580a3cc1d6b4285de1",
+      "bytes": 5782
+    },
+    {
+      "file": "intake-and-reconciliation-plan.json",
+      "sha256": "50568fcd3f496063dcf5eb88e00a7717b65ef60bd1fb0e8e5d64bfae24123ca1",
+      "bytes": 37452
+    },
+    {
+      "file": "lint.json",
+      "sha256": "764119a28299e215372c9ddf883f55ff5873b0a294ce540678450cc6865182cf",
+      "bytes": 307
+    },
+    {
+      "file": "lint.log",
+      "sha256": "336efd7a3219ae0959396280c747a35d06586be76b03c6e65464b527d8dfa77e",
+      "bytes": 457
+    },
+    {
+      "file": "manifest-description-correction.json",
+      "sha256": "3171e66c33dd94daa618cb652953834472932e7acc0b99653025e8f104e578bd",
+      "bytes": 831
+    },
+    {
+      "file": "owned-regressions-initial-harness-error.log",
+      "sha256": "06e65064da53db0247afee052c7fc7b3b454f17a9afde7ac85a744949fc45b7f",
+      "bytes": 273
+    },
+    {
+      "file": "owned-regressions.cjs",
+      "sha256": "a48bc751f5fc31ff9ffe25ec21da8f2828a5f977f491b5d64caca92fa7c8ffc7",
+      "bytes": 3221
+    },
+    {
+      "file": "owned-regressions.json",
+      "sha256": "bf9d9502c65e184525f5c3661dda4fd92a85abcb7fb34a1fc6e8b746ebd0d85a",
+      "bytes": 2785
+    },
+    {
+      "file": "preservation.py",
+      "sha256": "e6888defcd427b77475b565f8d15de8e0cd6537142a60fd6429d7dedd95bf4d3",
+      "bytes": 3283
+    },
+    {
+      "file": "serve.cjs",
+      "sha256": "7d73e1585d33fe48d9e2477986e25f022960826698c754352a15594101a92a22",
+      "bytes": 1093
+    },
+    {
+      "file": "static-build.json",
+      "sha256": "776781fe590cf3392880fd947559cddce6bb66b8471ccc555b0c2db37479ea08",
+      "bytes": 331
+    },
+    {
+      "file": "static-build.log",
+      "sha256": "681a797e8306293bac75b25dbc33820067532bd852a78a563bfd71382579a0e4",
+      "bytes": 4931
+    },
+    {
+      "file": "typecheck.json",
+      "sha256": "f422b4250ad2c00a949ad09b50084764cac1feddeb3ff3c887dc109c540d47bf",
+      "bytes": 322
+    },
+    {
+      "file": "typecheck.log",
+      "sha256": "8c6924519e1001756d339813f41ffe9347639fb7aa116c103e465a1142678e7d",
+      "bytes": 45
+    },
+    {
+      "file": "verified-source-commit.json",
+      "sha256": "8752ffa812851aa823a92893b6b3c93cbfc3b91f18ede66e00176a34c5f621c7",
+      "bytes": 1702
+    }
+  ]
+}
