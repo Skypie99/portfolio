@@ -116,44 +116,44 @@
     },
     "heroShot": {
       "src": "/showcase/claude-corp/hero-pipeline.light.desktop.webp",
-      "alt": "The Claude Corp front door, with the editorial hero over the agent pipeline diagram and fifteen roles feeding one governed main branch.",
+      "alt": "The Claude Corp orchestration pipeline below the hero introduction, with Sky setting intent and retaining merge approval.",
       "avif": "/showcase/claude-corp/hero-pipeline.light.desktop.avif",
       "webp": "/showcase/claude-corp/hero-pipeline.light.desktop.webp",
-      "lqip": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAAAQAwCdASoUAA0APxFysFAsJqSisAgBgCIJZwDE2C0HagAA/u45mPn6fUHQYlvM2zaggVgabO1VJggA",
+      "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADwAgCdASoUAA0APxFysVCsJqSisAgBgCIJZwDA3C0kAAD+7pijEWdzf1g4L7fmAAA=",
       "dark": {
         "src": "/showcase/claude-corp/hero-pipeline.dark.desktop.webp",
         "avif": "/showcase/claude-corp/hero-pipeline.dark.desktop.avif",
         "webp": "/showcase/claude-corp/hero-pipeline.dark.desktop.webp",
-        "lqip": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAABQAwCdASoUAA0APxFysFCsJqSisAgBgCIJZwAAW+k57sRFYAD+6Mmt8PPhlR7OFdNQvnoiEAA="
+        "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADwAgCdASoUAA0APxFysFAsJqSjMAgBgCIJZwDE2C5JAAD+7tfZtIk9HYyCh4h4AAA="
       }
     },
     "cardImage": {
       "src": "/showcase/claude-corp/hero-pipeline.light.desktop.webp",
-      "alt": "The Claude Corp front door, with the fifteen-role pipeline under the editorial hero.",
+      "alt": "The Claude Corp pipeline, from human intent through fifteen AI roles to human merge approval.",
       "focal": "50% 12%",
       "avif": "/showcase/claude-corp/hero-pipeline.light.desktop.avif",
       "webp": "/showcase/claude-corp/hero-pipeline.light.desktop.webp",
-      "lqip": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAAAQAwCdASoUAA0APxFysFAsJqSisAgBgCIJZwDE2C0HagAA/u45mPn6fUHQYlvM2zaggVgabO1VJggA",
+      "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADwAgCdASoUAA0APxFysVCsJqSisAgBgCIJZwDA3C0kAAD+7pijEWdzf1g4L7fmAAA=",
       "dark": {
         "src": "/showcase/claude-corp/hero-pipeline.dark.desktop.webp",
         "avif": "/showcase/claude-corp/hero-pipeline.dark.desktop.avif",
         "webp": "/showcase/claude-corp/hero-pipeline.dark.desktop.webp",
-        "lqip": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAABQAwCdASoUAA0APxFysFCsJqSisAgBgCIJZwAAW+k57sRFYAD+6Mmt8PPhlR7OFdNQvnoiEAA="
+        "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADwAgCdASoUAA0APxFysFAsJqSjMAgBgCIJZwDE2C5JAAD+7tfZtIk9HYyCh4h4AAA="
       }
     },
     "shots": [
       {
         "src": "/showcase/claude-corp/team.light.desktop.webp",
-        "alt": "The fifteen-role team grid, with each agent card naming its craft from Quinn on product through Morgan on reporting.",
-        "caption": "Fifteen roles, one governed main branch.",
+        "alt": "Part of the fifteen-role team grid, including Steve’s revised safety-review and blocker responsibilities.",
+        "caption": "The role grid distinguishes review responsibilities. Local candidate captured September 5, 2026.",
         "avif": "/showcase/claude-corp/team.light.desktop.avif",
         "webp": "/showcase/claude-corp/team.light.desktop.webp",
-        "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAACwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwAAeyAA/u6S6PUztUEzQoAAAA==",
+        "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADQAgCdASoUAA0APxFysVCsJqSisAgBgCIJZwAAe/QAAP7uja5wrAvV2HkAAA==",
         "dark": {
           "src": "/showcase/claude-corp/team.dark.desktop.webp",
           "avif": "/showcase/claude-corp/team.dark.desktop.avif",
           "webp": "/showcase/claude-corp/team.dark.desktop.webp",
-          "lqip": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwDE2C0kAAD+7q2OgXNbtkakiadcLXN6HwAA"
+          "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAgCdASoUAA0APxF0sFCsJqSisAgBgCIJZwDE2C0kAAD+7q1Qogt9zxRnct/eh8AAAA=="
         }
       }
     ],
@@ -203,12 +203,12 @@
       "alt": "The Dashboard command center, showing project health, agent activity and pending decisions on one calm board.",
       "avif": "/showcase/dashboard/command-center.light.desktop.avif",
       "webp": "/showcase/dashboard/command-center.light.desktop.webp",
-      "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwC+SDKUAAD+7xZ/NZFb30c5AAAA",
+      "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysFAsJqSjMAgBgCIJZwC/ODKtAAD+7xZ/OPUj0HuUdggA",
       "dark": {
         "src": "/showcase/dashboard/command-center.dark.desktop.webp",
         "avif": "/showcase/dashboard/command-center.dark.desktop.avif",
         "webp": "/showcase/dashboard/command-center.dark.desktop.webp",
-        "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAgCdASoUAA0APxFysFAwpqSisAgCECIJaQDLLC5JAAD+7ZpVBZuQEeGsIRv1JCgAAA=="
+        "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJaQDLLC5JAAD+7ZgcRqYTyy3OJP/YDwAAAA=="
       }
     },
     "cardImage": {
@@ -217,19 +217,19 @@
       "focal": "50% 14%",
       "avif": "/showcase/dashboard/command-center.light.desktop.avif",
       "webp": "/showcase/dashboard/command-center.light.desktop.webp",
-      "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwC+SDKUAAD+7xZ/NZFb30c5AAAA",
+      "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysFAsJqSjMAgBgCIJZwC/ODKtAAD+7xZ/OPUj0HuUdggA",
       "dark": {
         "src": "/showcase/dashboard/command-center.dark.desktop.webp",
         "avif": "/showcase/dashboard/command-center.dark.desktop.avif",
         "webp": "/showcase/dashboard/command-center.dark.desktop.webp",
-        "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAgCdASoUAA0APxFysFAwpqSisAgCECIJaQDLLC5JAAD+7ZpVBZuQEeGsIRv1JCgAAA=="
+        "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJaQDLLC5JAAD+7ZgcRqYTyy3OJP/YDwAAAA=="
       }
     },
     "shots": [
       {
         "src": "/showcase/dashboard/think-tank.light.desktop.webp",
         "alt": "The Think Tank board, with ideas triaged into Do it, Later and Skip lanes with their leverage notes.",
-        "caption": "The Think Tank: ideas triaged into Do it, Later and Skip.",
+        "caption": "The Think Tank: ideas triaged into Do it, Later and Skip. Synthetic local candidate captured September 5, 2026.",
         "avif": "/showcase/dashboard/think-tank.light.desktop.avif",
         "webp": "/showcase/dashboard/think-tank.light.desktop.webp",
         "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwDA3C0kAAD+70dpzID7d6oAAA==",
@@ -242,16 +242,16 @@
       },
       {
         "src": "/showcase/dashboard/dispatch.light.desktop.webp",
-        "alt": "The Dispatch queue, with work items lined up with status, owner and the relay controls held safely off.",
-        "caption": "The Dispatch queue, with agent work lined up alongside its receipts.",
+        "alt": "The synthetic Dispatch queue, showing invented work items with owners, statuses and dependencies.",
+        "caption": "Invented work items, owners, statuses and dependencies in the Dispatch queue. Local candidate captured September 5, 2026.",
         "avif": "/showcase/dashboard/dispatch.light.desktop.avif",
         "webp": "/showcase/dashboard/dispatch.light.desktop.webp",
-        "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAAAwAwCdASoUAA0APxFysVCsJqSisAgBgCIJZwDCgC0HcTJgAP7vbwvjsqiRwP3GLAA=",
+        "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADQAgCdASoUAA0APxFysFAsJqSisAgBgCIJaQAAfj4AAP7vbwsTK9da+EJ8fCf4AAA=",
         "dark": {
           "src": "/showcase/dashboard/dispatch.dark.desktop.webp",
           "avif": "/showcase/dashboard/dispatch.dark.desktop.avif",
           "webp": "/showcase/dashboard/dispatch.dark.desktop.webp",
-          "lqip": "data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAACwAgCdASoUAA0APxFysFCsJqSisAgBgCIJZwAAeyAA/u2XqUVNyAAA"
+          "lqip": "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAADwAgCdASoUAA0APxFysVAsJqSisAgBgCIJZwDLLC0kAAD+7VGvaMbGAAA="
         }
       }
     ],
@@ -268,7 +268,7 @@
       "tools"
     ],
     "featured": false,
-    "body": "## The problem\n\nI'd been coordinating a small team of AI agents, including a project manager, engineers, a designer, and a security reviewer, across several projects at once. The work was getting done, but I had nowhere to actually *see* it. Who's active right now? What decisions are waiting on me? Which blocker is about to slip? It all lived in scattered reports and commit logs. I wanted a cockpit.\n\n## The approach\n\nThe dashboard reads the team's own artifacts, the QA reports, decisions, and blockers every role writes, and turns them into an operator's view: an agent feed, a \"What Needs You\" ledger of the decisions waiting on me, a blocker board, a health grade per project, and velocity over the last week and month. It is a server-rendered Next.js app. In private use it runs against real state, behind a sign-in that admits exactly one GitHub account, mine.\n\nThe interesting problem was making any of it public. The real data is sensitive: security findings, private notes, decisions in flight. It can never be published, but a demo nobody can click proves nothing. So there are two builds of one codebase. The public demo runs in a hard-locked demo mode: every data reader short-circuits to a synthetic snapshot before it can touch a real file, every write returns a plausible answer and persists nothing, and a build guard refuses to produce a public build at all unless demo mode is on.\n\n## What shipped\n\nA public demo you can drive. Sign in as a guest, approve or defer a decision, triage a blocker, open the command palette, export the reports view as CSV, switch themes. A Think Tank board that sorts ideas into Do it, Later, and Skip, and a dispatch queue with its relay activity. Fifteen agents in the feed and a health grade per project, all on synthetic data that resets each session. The demo says it is a demo, and it dates the snapshot it was built from, so nobody mistakes the numbers for live operations.\n\n## My role\n\n**Mine.** The seam. The real data here, including security findings, private notes, and decisions in flight, can never be published, but a demo nobody can click proves nothing. I chose three independent layers over one switch. Every data reader short-circuits to a synthetic snapshot before it can reach a real file. The write path is severed, so an approve button returns a plausible answer and persists nothing. And the build itself refuses to produce a deploy until it is told which kind it is, public demo or private real, and refuses a real one outright if the login gate is off.\n\nThe alternative was a single demo-mode flag, which is one misconfigured environment variable away from serving my actual findings to the open internet. Three layers means any one of them can fail without leaking.\n\n**The agents'.** All three layers, and the guard that reads the published snapshot back and fails the build if anything in it looks real.\n\n**What I check.** That the layers are genuinely independent: that no two of them fail for the same reason. A defence in depth whose layers share a cause is one layer wearing three coats.\n\n## Reflection\n\nThe build taught me that *make it public* and *keep it private* aren't opposites. With the right seam, you can ship a faithful, interactive demo while the sensitive version stays private.\n\n> That separation turned out to be the whole design.",
+    "body": "## The problem\n\nI'd been coordinating a small team of AI agents, including a project manager, engineers, a designer, and a security reviewer, across several projects at once. The work was getting done, but I had nowhere to actually *see* it. Who's active right now? What decisions are waiting on me? Which blocker is about to slip? It all lived in scattered reports and commit logs. I wanted a cockpit.\n\n## The approach\n\nThe dashboard reads the team's own artifacts, the QA reports, decisions, and blockers every role writes, and turns them into an operator's view: an agent feed, a \"What Needs You\" ledger of the decisions waiting on me, a blocker board, a health grade per project, and velocity over the last week and month. It is a server-rendered Next.js app. In private use it runs against real state, behind a sign-in that admits exactly one GitHub account, mine.\n\nThe interesting problem was making any of it public. The real data is sensitive: security findings, private notes, decisions in flight. It can never be published, but a demo nobody can click proves nothing. So there are two builds of one codebase. The public demo runs in a hard-locked demo mode: every data reader short-circuits to a synthetic snapshot before it can touch a real file, every write returns a plausible answer and persists nothing, and a build guard refuses to produce a public build at all unless demo mode is on.\n\nThis demonstrates the support-operations work of making blockers visible, routing decisions, and keeping evidence close to each handoff.\n\n## What shipped\n\nA public demo you can drive. Sign in as a guest, approve or defer a decision, triage a blocker, open the command palette, export the reports view as CSV, switch themes. A Think Tank board that sorts ideas into Do it, Later, and Skip, and a dispatch queue with its relay activity. Fifteen agents in the feed and a health grade per project, all on synthetic data that resets each session. The demo says it is a demo, and it dates the snapshot it was built from, so nobody mistakes the numbers for live operations.\n\n## My role\n\n**Mine.** The seam. The real data here, including security findings, private notes, and decisions in flight, can never be published, but a demo nobody can click proves nothing. I chose a synthetic snapshot, demo-mode read and write paths, and a build guard. Every data reader short-circuits to a synthetic snapshot before it can reach a real file. The write path is severed, so an approve button returns a plausible answer and persists nothing. And the build itself refuses to produce a deploy until it is told which kind it is, public demo or private real, and refuses a real one outright if the login gate is off.\n\nThe alternative was a single demo-mode flag, which is one misconfigured environment variable away from serving my actual findings to the open internet. These controls cover different points in the path, but they share mode configuration.\n\n**The agents'.** All three layers, and the guard that reads the published snapshot back and fails the build if anything in it looks real.\n\n**What I check.** That the synthetic build passes its positive checks and refuses unauthorized modes. Those checks verify the tested conditions; they do not establish independent failure tolerance.\n\n## Reflection\n\nThe build taught me that *make it public* and *keep it private* aren't opposites. With the right seam, you can ship a faithful, interactive demo while the sensitive version stays private.\n\n> That separation turned out to be the whole design.",
     "ogTheme": "dark",
     "ogCard": "/showcase/dashboard/og-card.jpg"
   },

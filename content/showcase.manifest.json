@@ -1,6 +1,6 @@
 {
   "schema": "showcase-manifest/1",
-  "generatedAt": "2026-08-18",
+  "generatedAt": "2026-09-05",
   "factory": {
     "script": "scripts/capture-showcase.mjs",
     "engine": "playwright-core 1.61.1 / chromium-1228 (Chromium — Safari/WebKit stays a device gate)",
@@ -9,15 +9,17 @@
   "projects": {
     "claude-corp": {
       "slug": "claude-corp",
-      "repo": "/Users/skypie/Claude_Corp",
-      "projectBranch": "main",
-      "projectSha": "7e961a3357a0db6bdb652fa3127be0b398dec95f",
-      "shaDecision": "inplace",
+      "repo": "/Users/skypie/Claude_Corp-codex/portfolio-3.0-p05-20260904",
+      "projectBranch": "codex/portfolio-3.0-p05-20260904",
+      "projectSha": "4a0398054ff14be4bdd0bbdcbae392bd30a88553",
+      "shaDecision": "local-approved-candidate",
       "determinism": "byte-expected",
-      "bankOnly": false,
+      "bankOnly": true,
       "needsDevice": [],
-      "notes": [],
-      "bankedAt": "2026-07-31"
+      "notes": [
+        "Phase 05 local source capture; not deployed. Only named desktop capture rows refreshed; older rows retain their historical provenance."
+      ],
+      "bankedAt": "2026-09-05"
     },
     "flagstone": {
       "slug": "flagstone",
@@ -74,52 +76,53 @@
     },
     "dashboard": {
       "slug": "dashboard",
-      "repo": "/Users/skypie/Dashboard",
-      "projectBranch": "origin/main",
-      "projectSha": "b8bd3a97ffa59fd7479c0036bcf369f7c3a19d65",
-      "shaDecision": "live-capture",
+      "repo": "/Users/skypie/Dashboard-codex/portfolio-3.0-p05-20260904",
+      "projectBranch": "codex/portfolio-3.0-p05-20260904",
+      "projectSha": "00cc9151242a436b99f425c294847f3881ac0f5c",
+      "shaDecision": "local-approved-candidate",
       "determinism": "demo-snapshot",
-      "bankOnly": false,
+      "bankOnly": true,
       "needsDevice": [],
       "notes": [
-        "captured from the LIVE deployment at https://dashboard.skypistudio.com (local build impossible: missing dep, installs forbidden); sha recorded from origin/main"
+        "Phase 05 local source capture; not deployed. Only named desktop capture rows refreshed; older rows retain their historical provenance."
       ],
-      "bankedAt": "2026-07-31"
+      "bankedAt": "2026-09-05"
     }
   },
   "captures": [
     {
       "project": "claude-corp",
-      "projectSha": "9612389bdfdb6cab1613f266c207ebfb8eb00c70",
-      "projectBranch": "main",
+      "projectSha": "4a0398054ff14be4bdd0bbdcbae392bd30a88553",
+      "projectBranch": "codex/portfolio-3.0-p05-20260904",
       "scene": "hero-pipeline",
-      "capturedAt": "2026-09-02",
+      "capturedAt": "2026-09-05",
       "theme": "dark",
       "viewport": "desktop",
       "route": "/",
-      "altText": "The Claude Corp front door — the editorial hero over the agent pipeline diagram, fifteen roles feeding one governed main branch.",
+      "altText": "The Claude Corp orchestration pipeline below the hero introduction, with Sky retaining merge approval.",
       "determinism": "byte-expected",
-      "flags": [],
+      "flags": [
+        "local-approved-candidate; not deployed"
+      ],
       "files": {
         "master": {
-          "path": "masters/claude-corp/hero-pipeline.dark.desktop.png",
-          "sha256": "a206e3be4a15283bce20214f3ef5aff30d0b8ee60f1a57e03571522c255c4288",
-          "bytes": 2666061,
+          "path": "/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/p05-b/approved-execution/media-masters/final/claude-hero-pipeline-dark-1440x900-dpr2.png",
+          "sha256": "048450b35f361ca714c220bc876660a016b5c0da7cddb7316eadf1eb5eb04625",
+          "bytes": 2579515,
           "width": 2880,
           "height": 1800
         },
         "shipped": [
           {
             "path": "/showcase/claude-corp/hero-pipeline.dark.desktop.avif",
-            "bytes": 24566,
-            "quality": 52
+            "bytes": 24454
           },
           {
             "path": "/showcase/claude-corp/hero-pipeline.dark.desktop.webp",
-            "bytes": 40288
+            "bytes": 34034
           }
         ],
-        "lqip": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAABQAwCdASoUAA0APxFysFCsJqSisAgBgCIJZwAAW+k57sRFYAD+6Mmt8PPhlR7OFdNQvnoiEAA="
+        "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADwAgCdASoUAA0APxFysFAsJqSjMAgBgCIJZwDE2C5JAAD+7tfZtIk9HYyCh4h4AAA="
       }
     },
     {
@@ -158,36 +161,37 @@
     },
     {
       "project": "claude-corp",
-      "projectSha": "9612389bdfdb6cab1613f266c207ebfb8eb00c70",
-      "projectBranch": "main",
+      "projectSha": "4a0398054ff14be4bdd0bbdcbae392bd30a88553",
+      "projectBranch": "codex/portfolio-3.0-p05-20260904",
       "scene": "hero-pipeline",
-      "capturedAt": "2026-09-02",
+      "capturedAt": "2026-09-05",
       "theme": "light",
       "viewport": "desktop",
       "route": "/",
-      "altText": "The Claude Corp front door — the editorial hero over the agent pipeline diagram, fifteen roles feeding one governed main branch.",
+      "altText": "The Claude Corp orchestration pipeline below the hero introduction, with Sky retaining merge approval.",
       "determinism": "byte-expected",
-      "flags": [],
+      "flags": [
+        "local-approved-candidate; not deployed"
+      ],
       "files": {
         "master": {
-          "path": "masters/claude-corp/hero-pipeline.light.desktop.png",
-          "sha256": "5ca83476b2b635cb6fdac24559498db135487dd282547d6ee23315ea527f7eaf",
-          "bytes": 1566994,
+          "path": "/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/p05-b/approved-execution/media-masters/final/claude-hero-pipeline-light-1440x900-dpr2.png",
+          "sha256": "6ebe752a17b64a72afd2f50162c59c6ebf8cf2376628a2aca3e3468a43f729b5",
+          "bytes": 1426581,
           "width": 2880,
           "height": 1800
         },
         "shipped": [
           {
             "path": "/showcase/claude-corp/hero-pipeline.light.desktop.avif",
-            "bytes": 24123,
-            "quality": 52
+            "bytes": 23330
           },
           {
             "path": "/showcase/claude-corp/hero-pipeline.light.desktop.webp",
-            "bytes": 39256
+            "bytes": 33058
           }
         ],
-        "lqip": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAAAQAwCdASoUAA0APxFysFAsJqSisAgBgCIJZwDE2C0HagAA/u45mPn6fUHQYlvM2zaggVgabO1VJggA"
+        "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADwAgCdASoUAA0APxFysVCsJqSisAgBgCIJZwDA3C0kAAD+7pijEWdzf1g4L7fmAAA="
       }
     },
     {
@@ -314,36 +318,37 @@
     },
     {
       "project": "claude-corp",
-      "projectSha": "7e961a3357a0db6bdb652fa3127be0b398dec95f",
-      "projectBranch": "main",
+      "projectSha": "4a0398054ff14be4bdd0bbdcbae392bd30a88553",
+      "projectBranch": "codex/portfolio-3.0-p05-20260904",
       "scene": "team",
-      "capturedAt": "2026-07-31",
+      "capturedAt": "2026-09-05",
       "theme": "dark",
       "viewport": "desktop",
       "route": "/",
-      "altText": "The fifteen-role team grid — each agent card naming its craft, from Quinn on product through Morgan on reporting.",
+      "altText": "Part of the fifteen-role team grid, including revised safety-review responsibilities.",
       "determinism": "byte-expected",
-      "flags": [],
+      "flags": [
+        "local-approved-candidate; not deployed"
+      ],
       "files": {
         "master": {
-          "path": "masters/claude-corp/team.dark.desktop.png",
-          "sha256": "7b65f9dfd416e5b19b6f6dd9f43e16b22bfb612245a9bd8c793be32fb07e2dab",
-          "bytes": 3679643,
+          "path": "/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/p05-b/approved-execution/media-masters/final/claude-team-dark-1440x900-dpr2.png",
+          "sha256": "a8feaa010c695b4fce618e9bc43e2274a91a4f0830c654cc29b960630968339b",
+          "bytes": 3427752,
           "width": 2880,
           "height": 1800
         },
         "shipped": [
           {
             "path": "/showcase/claude-corp/team.dark.desktop.avif",
-            "bytes": 50910,
-            "quality": 52
+            "bytes": 40625
           },
           {
             "path": "/showcase/claude-corp/team.dark.desktop.webp",
-            "bytes": 78680
+            "bytes": 66586
           }
         ],
-        "lqip": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwDE2C0kAAD+7q2OgXNbtkakiadcLXN6HwAA"
+        "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAgCdASoUAA0APxF0sFCsJqSisAgBgCIJZwDE2C0kAAD+7q1Qogt9zxRnct/eh8AAAA=="
       }
     },
     {
@@ -382,36 +387,37 @@
     },
     {
       "project": "claude-corp",
-      "projectSha": "7e961a3357a0db6bdb652fa3127be0b398dec95f",
-      "projectBranch": "main",
+      "projectSha": "4a0398054ff14be4bdd0bbdcbae392bd30a88553",
+      "projectBranch": "codex/portfolio-3.0-p05-20260904",
       "scene": "team",
-      "capturedAt": "2026-07-31",
+      "capturedAt": "2026-09-05",
       "theme": "light",
       "viewport": "desktop",
       "route": "/",
-      "altText": "The fifteen-role team grid — each agent card naming its craft, from Quinn on product through Morgan on reporting.",
+      "altText": "Part of the fifteen-role team grid, including revised safety-review responsibilities.",
       "determinism": "byte-expected",
-      "flags": [],
+      "flags": [
+        "local-approved-candidate; not deployed"
+      ],
       "files": {
         "master": {
-          "path": "masters/claude-corp/team.light.desktop.png",
-          "sha256": "9c119e9997861aff52f71cfe24081d3637e00c12858f3334e90bbd81dabcd7b5",
-          "bytes": 2131864,
+          "path": "/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/p05-b/approved-execution/media-masters/final/claude-team-light-1440x900-dpr2.png",
+          "sha256": "4af01a21e24b090013f571a34feaa28a707abd9cd56d428ef900afa90b10e936",
+          "bytes": 1698481,
           "width": 2880,
           "height": 1800
         },
         "shipped": [
           {
             "path": "/showcase/claude-corp/team.light.desktop.avif",
-            "bytes": 50734,
-            "quality": 52
+            "bytes": 40093
           },
           {
             "path": "/showcase/claude-corp/team.light.desktop.webp",
-            "bytes": 79172
+            "bytes": 66414
           }
         ],
-        "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAACwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwAAeyAA/u6S6PUztUEzQoAAAA=="
+        "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADQAgCdASoUAA0APxFysVCsJqSisAgBgCIJZwAAe/QAAP7uja5wrAvV2HkAAA=="
       }
     },
     {
@@ -450,36 +456,37 @@
     },
     {
       "project": "dashboard",
-      "projectSha": "b8bd3a97ffa59fd7479c0036bcf369f7c3a19d65",
-      "projectBranch": "origin/main",
+      "projectSha": "00cc9151242a436b99f425c294847f3881ac0f5c",
+      "projectBranch": "codex/portfolio-3.0-p05-20260904",
       "scene": "command-center",
-      "capturedAt": "2026-07-31",
+      "capturedAt": "2026-09-05",
       "theme": "dark",
       "viewport": "desktop",
       "route": "/",
-      "altText": "The Dashboard command center — project health, agent activity and pending decisions on one calm board.",
+      "altText": "The Dashboard command center — project health, agent activity and pending decisions on one calm board. Synthetic local candidate.",
       "determinism": "demo-snapshot",
-      "flags": [],
+      "flags": [
+        "local-approved-candidate; not deployed"
+      ],
       "files": {
         "master": {
-          "path": "masters/dashboard/command-center.dark.desktop.png",
-          "sha256": "8e6226026c18469f1c66069746558484642db7908bb958a406078885ec08769b",
-          "bytes": 4176505,
+          "path": "/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/p05-a/approved-execution/media-masters/final/command-center-dark.png",
+          "sha256": "f561d2d50206acccb7e350dbff092ea377bea79329701216cce65602c5eb1359",
+          "bytes": 4201133,
           "width": 2880,
           "height": 1800
         },
         "shipped": [
           {
             "path": "/showcase/dashboard/command-center.dark.desktop.avif",
-            "bytes": 26488,
-            "quality": 52
+            "bytes": 31126
           },
           {
             "path": "/showcase/dashboard/command-center.dark.desktop.webp",
-            "bytes": 38456
+            "bytes": 41020
           }
         ],
-        "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAgCdASoUAA0APxFysFAwpqSisAgCECIJaQDLLC5JAAD+7ZpVBZuQEeGsIRv1JCgAAA=="
+        "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJaQDLLC5JAAD+7ZgcRqYTyy3OJP/YDwAAAA=="
       }
     },
     {
@@ -518,36 +525,37 @@
     },
     {
       "project": "dashboard",
-      "projectSha": "b8bd3a97ffa59fd7479c0036bcf369f7c3a19d65",
-      "projectBranch": "origin/main",
+      "projectSha": "00cc9151242a436b99f425c294847f3881ac0f5c",
+      "projectBranch": "codex/portfolio-3.0-p05-20260904",
       "scene": "command-center",
-      "capturedAt": "2026-07-31",
+      "capturedAt": "2026-09-05",
       "theme": "light",
       "viewport": "desktop",
       "route": "/",
-      "altText": "The Dashboard command center — project health, agent activity and pending decisions on one calm board.",
+      "altText": "The Dashboard command center — project health, agent activity and pending decisions on one calm board. Synthetic local candidate.",
       "determinism": "demo-snapshot",
-      "flags": [],
+      "flags": [
+        "local-approved-candidate; not deployed"
+      ],
       "files": {
         "master": {
-          "path": "masters/dashboard/command-center.light.desktop.png",
-          "sha256": "88c8aeaef5bca760de810714de635938ea5d6bfd29cbf3a7dbbe96f84e32aab4",
-          "bytes": 2952721,
+          "path": "/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/p05-a/approved-execution/media-masters/final/command-center-light.png",
+          "sha256": "7681eddc098a3aecedc6f60ce9614ad2ea4f9156b1c64d9086e8edae1af03f96",
+          "bytes": 2978177,
           "width": 2880,
           "height": 1800
         },
         "shipped": [
           {
             "path": "/showcase/dashboard/command-center.light.desktop.avif",
-            "bytes": 24996,
-            "quality": 52
+            "bytes": 27634
           },
           {
             "path": "/showcase/dashboard/command-center.light.desktop.webp",
-            "bytes": 39034
+            "bytes": 41348
           }
         ],
-        "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwC+SDKUAAD+7xZ/NZFb30c5AAAA"
+        "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysFAsJqSjMAgBgCIJZwC/ODKtAAD+7xZ/OPUj0HuUdggA"
       }
     },
     {
@@ -586,36 +594,37 @@
     },
     {
       "project": "dashboard",
-      "projectSha": "b8bd3a97ffa59fd7479c0036bcf369f7c3a19d65",
-      "projectBranch": "origin/main",
+      "projectSha": "00cc9151242a436b99f425c294847f3881ac0f5c",
+      "projectBranch": "codex/portfolio-3.0-p05-20260904",
       "scene": "dispatch",
-      "capturedAt": "2026-07-31",
+      "capturedAt": "2026-09-05",
       "theme": "dark",
       "viewport": "desktop",
       "route": "/dispatch",
-      "altText": "The Dispatch queue — work items lined up with status, owner and the relay controls held safely off.",
+      "altText": "The synthetic Dispatch queue, showing invented work items with owners, statuses and dependencies. Local candidate.",
       "determinism": "demo-snapshot",
-      "flags": [],
+      "flags": [
+        "local-approved-candidate; not deployed"
+      ],
       "files": {
         "master": {
-          "path": "masters/dashboard/dispatch.dark.desktop.png",
-          "sha256": "217d8bfb268cfec4db778a1718c20b8f47b747f4de415511de323a88c09f7edd",
-          "bytes": 3093676,
+          "path": "/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/p05-a/approved-execution/media-masters/final/dispatch-dark.png",
+          "sha256": "b8912701556446021b6c430dbb8d51a478ca2506c5718cbd0912b3ed09735a0c",
+          "bytes": 2588885,
           "width": 2880,
           "height": 1800
         },
         "shipped": [
           {
             "path": "/showcase/dashboard/dispatch.dark.desktop.avif",
-            "bytes": 34675,
-            "quality": 52
+            "bytes": 42254
           },
           {
             "path": "/showcase/dashboard/dispatch.dark.desktop.webp",
-            "bytes": 51408
+            "bytes": 55440
           }
         ],
-        "lqip": "data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAACwAgCdASoUAA0APxFysFCsJqSisAgBgCIJZwAAeyAA/u2XqUVNyAAA"
+        "lqip": "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAADwAgCdASoUAA0APxFysVAsJqSisAgBgCIJZwDLLC0kAAD+7VGvaMbGAAA="
       }
     },
     {
@@ -654,36 +663,37 @@
     },
     {
       "project": "dashboard",
-      "projectSha": "b8bd3a97ffa59fd7479c0036bcf369f7c3a19d65",
-      "projectBranch": "origin/main",
+      "projectSha": "00cc9151242a436b99f425c294847f3881ac0f5c",
+      "projectBranch": "codex/portfolio-3.0-p05-20260904",
       "scene": "dispatch",
-      "capturedAt": "2026-07-31",
+      "capturedAt": "2026-09-05",
       "theme": "light",
       "viewport": "desktop",
       "route": "/dispatch",
-      "altText": "The Dispatch queue — work items lined up with status, owner and the relay controls held safely off.",
+      "altText": "The synthetic Dispatch queue, showing invented work items with owners, statuses and dependencies. Local candidate.",
       "determinism": "demo-snapshot",
-      "flags": [],
+      "flags": [
+        "local-approved-candidate; not deployed"
+      ],
       "files": {
         "master": {
-          "path": "masters/dashboard/dispatch.light.desktop.png",
-          "sha256": "bada40fcd3eb06f603098cb14aeabee4886779a1d4d0703fabe933d57b6f57f9",
-          "bytes": 1971511,
+          "path": "/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/p05-a/approved-execution/media-masters/final/dispatch-light.png",
+          "sha256": "8df68cfe6cd42cba58772c51dd932d2167a4ca9f029ef73ceb7a011443ee8681",
+          "bytes": 1802424,
           "width": 2880,
           "height": 1800
         },
         "shipped": [
           {
             "path": "/showcase/dashboard/dispatch.light.desktop.avif",
-            "bytes": 32604,
-            "quality": 52
+            "bytes": 37578
           },
           {
             "path": "/showcase/dashboard/dispatch.light.desktop.webp",
-            "bytes": 51560
+            "bytes": 57444
           }
         ],
-        "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAAAwAwCdASoUAA0APxFysVCsJqSisAgBgCIJZwDCgC0HcTJgAP7vbwvjsqiRwP3GLAA="
+        "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADQAgCdASoUAA0APxFysFAsJqSisAgBgCIJaQAAfj4AAP7vbwsTK9da+EJ8fCf4AAA="
       }
     },
     {
@@ -722,33 +732,34 @@
     },
     {
       "project": "dashboard",
-      "projectSha": "b8bd3a97ffa59fd7479c0036bcf369f7c3a19d65",
-      "projectBranch": "origin/main",
+      "projectSha": "00cc9151242a436b99f425c294847f3881ac0f5c",
+      "projectBranch": "codex/portfolio-3.0-p05-20260904",
       "scene": "think-tank",
-      "capturedAt": "2026-07-31",
+      "capturedAt": "2026-09-05",
       "theme": "dark",
       "viewport": "desktop",
       "route": "/think-tank",
-      "altText": "The Think Tank board — ideas triaged into Do it, Later and Skip lanes with their leverage notes.",
+      "altText": "The Think Tank board — ideas triaged into Do it, Later and Skip lanes with their leverage notes. Synthetic local candidate.",
       "determinism": "demo-snapshot",
-      "flags": [],
+      "flags": [
+        "local-approved-candidate; not deployed"
+      ],
       "files": {
         "master": {
-          "path": "masters/dashboard/think-tank.dark.desktop.png",
-          "sha256": "34e1fce0006a0938eeb3ebdaba715f43e85b0604476c3b1a524d966e8936370d",
-          "bytes": 3356361,
+          "path": "/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/p05-a/approved-execution/media-masters/final/think-tank-dark.png",
+          "sha256": "84b157cb678c920eaba06d00a83f20db0bcb28d904dbf354724992e865d75a41",
+          "bytes": 3355493,
           "width": 2880,
           "height": 1800
         },
         "shipped": [
           {
             "path": "/showcase/dashboard/think-tank.dark.desktop.avif",
-            "bytes": 35935,
-            "quality": 52
+            "bytes": 38411
           },
           {
             "path": "/showcase/dashboard/think-tank.dark.desktop.webp",
-            "bytes": 53090
+            "bytes": 52738
           }
         ],
         "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJaQDLLC0kAAD+7Z0K3QbCLgAAAA=="
@@ -790,33 +801,34 @@
     },
     {
       "project": "dashboard",
-      "projectSha": "b8bd3a97ffa59fd7479c0036bcf369f7c3a19d65",
-      "projectBranch": "origin/main",
+      "projectSha": "00cc9151242a436b99f425c294847f3881ac0f5c",
+      "projectBranch": "codex/portfolio-3.0-p05-20260904",
       "scene": "think-tank",
-      "capturedAt": "2026-07-31",
+      "capturedAt": "2026-09-05",
       "theme": "light",
       "viewport": "desktop",
       "route": "/think-tank",
-      "altText": "The Think Tank board — ideas triaged into Do it, Later and Skip lanes with their leverage notes.",
+      "altText": "The Think Tank board — ideas triaged into Do it, Later and Skip lanes with their leverage notes. Synthetic local candidate.",
       "determinism": "demo-snapshot",
-      "flags": [],
+      "flags": [
+        "local-approved-candidate; not deployed"
+      ],
       "files": {
         "master": {
-          "path": "masters/dashboard/think-tank.light.desktop.png",
-          "sha256": "f67e349ade4a762f74c4b57d11aaaa1a4dfcfb66b23892f1416cc024b2fb53e0",
-          "bytes": 2186850,
+          "path": "/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/p05-a/approved-execution/media-masters/final/think-tank-light.png",
+          "sha256": "605641392a4d2310547a4efd3e703d4dc293206168036c5842dfb1562b3de977",
+          "bytes": 2183377,
           "width": 2880,
           "height": 1800
         },
         "shipped": [
           {
             "path": "/showcase/dashboard/think-tank.light.desktop.avif",
-            "bytes": 33131,
-            "quality": 52
+            "bytes": 35008
           },
           {
             "path": "/showcase/dashboard/think-tank.light.desktop.webp",
-            "bytes": 52964
+            "bytes": 52800
           }
         ],
         "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwDA3C0kAAD+70dpzID7d6oAAA=="
