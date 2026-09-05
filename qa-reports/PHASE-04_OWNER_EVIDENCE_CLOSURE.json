@@ -1,0 +1,28 @@
+{
+  "observationDate": "2026-09-04",
+  "timezone": "America/Vancouver",
+  "source": "Owner closure instruction in this task, reporting signed-in screenshot observations. No independent image inspection in this turn.",
+  "apple": {
+    "app": "Flagstone Accessibility Map",
+    "platformVersion": "iOS 4.1.1",
+    "displayedStatus": "Waiting for Review",
+    "result": "PASS",
+    "buildNumberVisibleClaim": false,
+    "build33Provenance": "Previously verified project/release evidence only"
+  },
+  "linkedin": {
+    "url": "https://www.linkedin.com/in/skyler-halisky",
+    "intendedProfileHeaderReadable": true,
+    "currentProfessionalHeadlineReadable": true,
+    "result": "PASS",
+    "retainedPrivateInterfaceData": false
+  },
+  "priorEvidenceCommit": "c75604496e5ba58b9106073c59d5ecaf4aee2eb9",
+  "priorManifestEntriesVerified": 175,
+  "nonQADiffFromImplementationCandidate": "EMPTY",
+  "priorReceiptBytes": 38106,
+  "priorReceiptSha256": "5bfb4afaa018f87f014c116229f30e18a71fc0f6d3b8eb84992001fcb343fab3",
+  "priorReceiptPrefixPreserved": true,
+  "newRepairs": [],
+  "remoteMutations": "NONE"
+}
