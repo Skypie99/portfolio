@@ -1,0 +1,15 @@
+
+ RUN  v3.2.7 /Users/skypie/Portfolio-codex/portfolio-3.0-phase04-20260904
+
+ ✓ lib/__tests__/support-first-hierarchy.test.ts (16 tests) 23ms
+ ✓ lib/__tests__/section-nav-anchors.test.ts (27 tests) 31ms
+ ✓ lib/__tests__/flagstone-professional-bridge.test.ts (2 tests) 10ms
+ ✓ lib/__tests__/smart-punctuation.test.ts (11 tests) 81ms
+ ✓ lib/__tests__/recruiter-copy-truth.test.ts (17 tests | 1 skipped) 47ms
+ ✓ lib/__tests__/static-integrity.test.ts (28 tests | 1 skipped) 294ms
+
+ Test Files  6 passed (6)
+      Tests  99 passed | 2 skipped (101)
+   Start at  19:15:05
+   Duration  1.47s (transform 447ms, setup 690ms, collect 843ms, tests 486ms, environment 3.72s, prepare 471ms)
+
