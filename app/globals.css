@@ -721,6 +721,30 @@ h1, h2, h3, h4, h5, h6 {
 /* Hero radial wash — warm amber from upper-right, teal whisper from
    lower-left. The teal-to-amber diagonal is the WA signature duality:
    cool distance behind, warm foreground. No JS, pure CSS. */
+
+/* Phase 07 — Skip Intro arrives through the existing native #hero fragment.
+   The hero's landing pad is deliberately tall on small screens so a natural
+   scroll release has room to settle; a direct anchor jump would otherwise
+   leave the support-first role sentence below the usable viewport's upper
+   half. Move only the fragment landing position at <768px — not the hero's
+   layout, first frame, focus, history, or the 768px-and-up composition.
+   The plain length is the fallback; Safari's safe-area value supplies extra
+   clearance when a top inset reduces the usable visual viewport. */
+@media (max-width: 767px) {
+  #hero {
+    scroll-margin-top: -220px;
+    scroll-margin-top: calc(-220px - env(safe-area-inset-top));
+  }
+}
+
+/* The fragment destination is deliberately a non-tab-stop focus target. When
+   a keyboard user arrives through Skip Intro, mark the first visible identity
+   block rather than drawing an ambiguous outline around the hero's full height. */
+#hero:focus-visible [data-hero-identity] {
+  outline: 2px solid rgb(var(--rgb-accent));
+  outline-offset: 6px;
+}
+
 .hero-wash {
   /* LIGHT — BOLD golden hour: a hot sun bloom + broad glow spilling from the
      upper-right, terracotta depth ringing it, warm ground light rising from

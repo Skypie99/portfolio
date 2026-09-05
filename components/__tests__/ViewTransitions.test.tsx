@@ -118,6 +118,13 @@ describe('ViewTransitions interceptor', () => {
     expect(pushMock).not.toHaveBeenCalled();
   });
 
+  it('does NOT intercept the exact Skip Intro #hero fragment', () => {
+    // Phase 07 adjusts the target in CSS only; the native fragment still owns
+    // landing, browser history, and focus behavior.
+    clickAnchor({ href: '/#hero' });
+    expect(pushMock).not.toHaveBeenCalled();
+  });
+
   it('attaches a rejection handler to every View Transition promise (no uncaught TimeoutError)', () => {
     // Regression guard for the live `TimeoutError: Transition was aborted because
     // of timeout in DOM update` console spew. jsdom has no startViewTransition;

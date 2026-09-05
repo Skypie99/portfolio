@@ -104,7 +104,7 @@ export function Hero({
             first-time visitor knows whose work this is the moment the hero
             settles. Rest-visible: the wash bloom carries the arrival. */}
         {name && (
-          <div className="mb-10 flex items-center gap-4">
+          <div data-hero-identity className="mb-10 flex items-center gap-4">
             {avatarSrc && (
               // eslint-disable-next-line @next/next/no-img-element
               <img
