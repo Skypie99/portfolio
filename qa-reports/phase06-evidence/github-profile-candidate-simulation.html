@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Local simulation — Skyler Halisky GitHub candidate</title>
+    <style>
+      :root { color-scheme: light; --line:#d0d7de; --ink:#1f2328; --muted:#59636e; --blue:#0969da; --paper:#fff; --wash:#f6f8fa; }
+      * { box-sizing: border-box; }
+      body { margin:0; color:var(--ink); background:var(--paper); font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+      .simulation { padding:10px 24px; color:#fff; background:#9a3412; font-weight:700; letter-spacing:.04em; text-align:center; }
+      header { height:64px; padding:16px 28px; background:#0d1117; color:#fff; display:flex; align-items:center; gap:26px; font-weight:600; }
+      header .mark { width:32px; height:32px; border-radius:50%; display:grid; place-items:center; color:#0d1117; background:#fff; font-weight:800; }
+      header .search { margin-left:auto; width:280px; padding:7px 12px; color:#b7bdc4; border:1px solid #30363d; border-radius:7px; }
+      nav { padding:18px 40px 0 360px; border-bottom:1px solid var(--line); display:flex; gap:28px; }
+      nav span:first-child { padding-bottom:14px; border-bottom:2px solid #fd8c73; font-weight:600; }
+      main { width:min(1220px,calc(100% - 48px)); margin:0 auto; display:grid; grid-template-columns:270px 1fr; gap:40px; padding:34px 0 64px; }
+      .avatar { width:250px; height:250px; border-radius:50%; background:linear-gradient(145deg,#172554,#0f766e); color:#fff; display:grid; place-items:center; font:700 72px/1 Georgia,serif; border:1px solid var(--line); }
+      h1 { margin:18px 0 0; font-size:26px; line-height:1.2; }
+      .handle { color:var(--muted); font-size:20px; }
+      .bio { margin:18px 0; font-size:16px; }
+      .profile-link { color:var(--blue); font-weight:600; }
+      h2 { margin:0 0 14px; font-size:17px; }
+      .pins { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+      .card { min-height:138px; padding:18px; border:1px solid var(--line); border-radius:8px; }
+      .card h3 { margin:0 0 8px; color:var(--blue); font-size:16px; }
+      .card p { margin:0 0 14px; color:var(--muted); }
+      .badge { float:right; padding:2px 8px; color:var(--muted); border:1px solid var(--line); border-radius:999px; font-size:12px; }
+      .profile-readme { margin-top:28px; padding:24px 28px; border:1px solid var(--line); border-radius:8px; }
+      .profile-readme h2 { font-size:26px; border-bottom:1px solid var(--line); padding-bottom:12px; }
+      .profile-readme h3 { margin-top:24px; font-size:20px; }
+      .profile-readme li { margin:8px 0; }
+      a { color:var(--blue); text-decoration:none; }
+      @media (max-width: 800px) { nav { padding-left:24px; } main { grid-template-columns:1fr; } .avatar { width:140px; height:140px; } .pins { grid-template-columns:1fr; } }
+    </style>
+  </head>
+  <body>
+    <div class="simulation">LOCAL CANDIDATE SIMULATION — NOT LIVE GITHUB</div>
+    <header><div class="mark">GH</div><span>Platform</span><span>Solutions</span><span>Resources</span><span>Open Source</span><div class="search">Search</div></header>
+    <nav><span>Overview</span><span>Repositories</span><span>Projects</span><span>Packages</span><span>Stars</span></nav>
+    <main>
+      <aside>
+        <div class="avatar" aria-label="Candidate avatar placeholder">SH</div>
+        <h1>Skyler Halisky</h1>
+        <div class="handle">Skypie99</div>
+        <p class="bio">Senior technical/product support · investigation, QA, systems thinking · building Flagstone and practical tools with AI assistance at SkyPi Studio</p>
+        <p>BC Canada</p>
+        <a class="profile-link" href="https://skypistudio.com">skypistudio.com</a>
+      </aside>
+      <section>
+        <h2>Pinned</h2>
+        <div class="pins">
+          <article class="card"><span class="badge">Public</span><h3>AccessMap</h3><p><strong>Flagstone is the product.</strong> It is a community-powered map for reporting and verifying accessibility barriers. AccessMap is the repository and retained technical identifier.</p></article>
+          <article class="card"><span class="badge">Public</span><h3>portfolio</h3><p>Skyler Halisky’s support-first portfolio: product investigation, QA, systems thinking, and AI-assisted building.</p></article>
+          <article class="card"><span class="badge">Public</span><h3>Prompt_Library</h3><p>Local-first browser prompt manager with reusable variables and direct, user-initiated Anthropic API calls.</p></article>
+          <article class="card"><span class="badge">Public</span><h3>Claude_Corp</h3><p>A 15-role AI collaboration framework with written governance, bounded delegation, and human release authority.</p></article>
+          <article class="card"><span class="badge">Public</span><h3>ghost-code</h3><p>Browser-based terminal command trainer for Claude Code, macOS Terminal, and Git.</p></article>
+        </div>
+        <article class="profile-readme">
+          <h2>Skyler Halisky</h2>
+          <p>I work in senior technical/product support, connecting investigation, escalation, QA, documentation, and systems thinking.</p>
+          <p>SkyPi Studio is my authored umbrella practice. I use AI-assisted building as leverage: I set product intent, evidence standards, privacy and accessibility boundaries, and release decisions while tools assist with implementation and review.</p>
+          <h3>Selected work</h3>
+          <ul>
+            <li><strong>Flagstone</strong> (repository: AccessMap) — my flagship community-powered accessibility-map project.</li>
+            <li><strong>Portfolio</strong> — a support-first index of my current work and evidence.</li>
+            <li><strong>Prompt Library</strong> — a local-first browser prompt manager.</li>
+            <li><strong>Claude Corp</strong> — a 15-role AI collaboration framework with written governance and human release authority.</li>
+            <li><strong>Ghost Code</strong> — a browser-based terminal-command trainer.</li>
+          </ul>
+          <p><a href="https://skypistudio.com">Portfolio</a> · <a href="https://skypistudio.com/contact">Contact</a></p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
