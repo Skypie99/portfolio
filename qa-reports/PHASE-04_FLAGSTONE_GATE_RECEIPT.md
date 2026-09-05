@@ -151,6 +151,8 @@ There is no sixth utility build-log page. Generated `/blog/building-flagstone/` 
 | axe | 16 candidate scans at 393px, light/dark. Home/case-study/About: no reported violations. Five light utility pages: **26 inherited non-header color-contrast nodes remain**. All dark utility scans: zero reported violations. |
 | Screen readers / real devices / other engines | VoiceOver/NVDA/JAWS, physical touch devices, Safari/WebKit and Firefox unrun. No claim of those results. |
 
+QA logs are explicitly tracked despite the repository’s general log-ignore rule. Terminal carriage returns and trailing whitespace/blank EOF lines were normalized for patch hygiene; diagnostic/result text is retained. The raw-log staging pass reported seven whitespace diagnostics; the normalized final diff check passes.
+
 Test logs contain one React `fetchPriority` warning and 38 `useLayoutEffect` server-render warnings in both the initial and integrated runs. They are recorded non-failing warnings, not hidden or relabeled as clean-console results.
 
 Browser: Chromium **149.0.7827.55**, controlled through the installed `playwright-core`; capture deviceScaleFactor **1**, viewport height **900px** for the main matrix, reduced-motion preference. Interaction checks use **393×852** and the documented 640×450 reflow equivalent.
