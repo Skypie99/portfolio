@@ -1,5 +1,36 @@
 # PROJECT_STATE — portfolio
 
+## Current accepted local candidate — 2026-09-04
+
+This section supersedes present-tense status readings below without deleting or rewriting the historical record.
+
+| Field | Current accepted value |
+|---|---|
+| Phase 06 entry commit | `2c89a8e24e1b6693bd4c9239a55d796a64ca0355` |
+| Tree | `49b6d9feb3a348981668d6dad2aa088c03a2df7d` |
+| Phase 04 | PASS |
+| Phase 05 | PASS |
+| Combined Phase 04 + 05 verification | PASS |
+| Recruiter path | PASS |
+| Foundation gate | PASS |
+| Flagstone gate | PASS |
+| Remote mutation | NONE |
+| Push / `main` merge / deploy | NO / NO / NO |
+
+The accepted local candidate is not the deployed site. The repository’s normal production path is `main` → successful `CI` workflow → GitHub Pages deployment; manual `workflow_dispatch` remains an explicit ungated emergency path. There is no staging environment, and only Sky merges or pushes `main`.
+
+The current accepted deliverable set is Flagstone, Claude Corp, Claude Corp Dashboard, Prompt Library, and Ghost Code, in that order. The candidate contains 14 sitemap-listed content routes, two separate noindex routes (`/archive/` and `/runway/`), five static Flagstone utility pages, and generated feed/sitemap endpoints.
+
+Accepted local verification dated 2026-09-04 used `npm run typecheck`, `npm run lint`, `npm run test:static`, and `npm test` after the build. Typecheck and lint passed; the full Vitest scope was 95 files with 864 passes and 2 existing skips out of 866 tests. The focused static scope was 2 files with 54 passes and 1 existing skip and is included in—not additive to—the full total. The build generated 26 static pages with the documented static-export header warnings.
+
+Flagstone’s owner-provided App Store Connect state on 2026-09-04 is iOS 4.1.1, **Waiting for Review**. This does not prove Build 33, approval, release, App Store availability, users, adoption, traction, or certification.
+
+Sky owns problem selection, architecture and policy, human judgment, verification, merge, release, and deployment. AI agents perform implementation, diagnosis, testing, and drafting within Sky’s constraints.
+
+### Historical record preserved below
+
+Cook Out receipts, THE ROOM, earlier waves, old deployment snapshots, historical test totals, and their original evidence remain below. Their dates and methods remain part of the record; they are not rewritten as current.
+
 _Last compiled: 2026-08-26 (THE ROOM Phase J close) — superseding the 2026-07-16 Morgan cycle refresh, which sat uncommitted and went a month stale_
 
 ## Latest State — THE ROOM complete, `main` merged 2026-08-26
