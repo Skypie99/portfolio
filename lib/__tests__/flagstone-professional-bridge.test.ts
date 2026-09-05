@@ -8,7 +8,7 @@ import { getDeliverables } from '@/lib/content';
 describe('Phase 04 Flagstone professional relevance and claim boundaries', () => {
   it('keeps one support bridge beside the specific failure evidence and preserves the role partition', () => {
     const flagstone = getDeliverables().find((d) => d.id === 'flagstone')!;
-    const body = flagstone.body;
+    const body = flagstone.body ?? '';
     const bridge = body.indexOf('This is the support work Flagstone demonstrates:');
     expect(body.match(/This is the support work Flagstone demonstrates:/g)).toHaveLength(1);
     expect(bridge).toBeGreaterThan(body.indexOf('## What went wrong'));
