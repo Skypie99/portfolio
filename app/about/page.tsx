@@ -223,8 +223,8 @@ export default function AboutPage() {
 
           <Reveal variant="depth" className="max-w-measure-lead flex flex-col gap-8">
             <p className="font-sans font-light text-body text-ink-muted text-pretty">
-              I build and test against WCAG 2.2 AA on every interface. Not because it is required.
-              Because it is correct. Flagstone exists because disabled people
+              Flagstone is built and tested against WCAG 2.2 AA, with the methods and
+              limitations documented in its case study. Flagstone exists because disabled people
               deserve navigation tools designed for them, not adapted for them.
             </p>
             <p className="font-sans font-light text-body text-ink-muted text-pretty">
