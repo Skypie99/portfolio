@@ -1,4 +1,64 @@
-# AI Portfolio
+# Skyler Halisky — support-first portfolio
+
+Skyler Halisky works in senior technical/product support. Through SkyPi Studio—his authored umbrella practice, not an agency—he connects investigation, escalation, QA, documentation, accessibility, systems thinking, and AI-assisted product building.
+
+## Current accepted local state — 2026-09-04
+
+This repository’s Phase 06 entry base is commit `2c89a8e24e1b6693bd4c9239a55d796a64ca0355`, tree `49b6d9feb3a348981668d6dad2aa088c03a2df7d`. It combines the accepted Phase 04 Flagstone work and Phase 05 supporting-project work. It is a local accepted candidate: it has not been pushed, merged to `main`, or deployed.
+
+Public site: [skypistudio.com](https://skypistudio.com). The live site and this local candidate are separate evidence surfaces; this README does not claim deployed parity for the candidate.
+
+### Current project set
+
+The accepted candidate presents five projects, in this order:
+
+1. **Flagstone** — the flagship accessibility-reporting map. Owner-provided App Store Connect evidence dated 2026-09-04 records Flagstone Accessibility Map, iOS 4.1.1, as **Waiting for Review**. That observation does not independently prove Build 33, approval, release, availability, users, or adoption.
+2. **Claude Corp** — written governance, bounded AI operations, review, and human authority.
+3. **Claude Corp Dashboard** — support-operations visibility through a private operator app and a public synthetic-data demo.
+4. **Prompt Library** — a local-first prompt product with no backend operated by Sky.
+5. **Ghost Code** — a scoped learning product demonstrating progression and deliberate constraints.
+
+### Current route set
+
+| Surface | Routes |
+|---|---|
+| Indexed portfolio content | `/`, `/work/`, `/work/flagstone/`, `/work/claude-corp/`, `/work/dashboard/`, `/work/prompt-library/`, `/work/ghost-code/`, `/about/`, `/accessibility/`, `/blog/`, `/blog/building-flagstone/`, `/certificates/`, `/colophon/`, `/contact/` |
+| Separate noindex surfaces | `/archive/` is the private, auth-gated Studio Archive island; `/runway/` is an unlisted proof-of-use route |
+| Flagstone utility pages | `/flagstone/`, `/flagstone/accessibility/`, `/flagstone/privacy/`, `/flagstone/support/`, `/flagstone/terms/` |
+| Generated machine endpoints | `/feed.xml`, `/feed.json`, `/sitemap.xml` |
+
+### Build and deployment
+
+The site is Next.js 15 with `output: 'export'`, `trailingSlash: true`, and no `basePath`. GitHub Pages serves the generated `out/` directory at the domain root.
+
+A push to `main` starts the production path. CI runs lint, typecheck, a build-backed test run, and a final build. The normal deploy workflow runs only after the `CI` workflow completes successfully on `main`; a failed CI run leaves the previous site in place. `workflow_dispatch` remains a deliberately ungated emergency/manual deployment path. There is no staging environment. Only Sky merges or pushes `main`.
+
+The `headers()` block in `next.config.mjs` is documentation for a future hosting layer; GitHub Pages does not apply those runtime headers to this static export.
+
+### Accepted local verification
+
+On 2026-09-04, against the accepted candidate above:
+
+- `npm run typecheck`: PASS.
+- `npm run lint`: PASS, with no ESLint warnings or errors.
+- `npm run test:static`: PASS after a fresh static build; 2 Vitest files, 54 passed and 1 existing skip.
+- `npm test`, run after the build: PASS; 95 Vitest files, 864 passed and 2 existing skips out of 866 tests.
+- The build generated 26 static pages and retained the documented static-export header warnings.
+
+The focused static result is included in the full post-build suite and is not added to the 864 total.
+
+### How the work is made
+
+Sky chooses the problems, architecture, policy, constraints, and release decisions. AI agents implement, diagnose, test, and draft within those constraints. Sky performs human review and verification and exclusively controls merge, release, and deployment.
+
+### Links
+
+- [Live portfolio](https://skypistudio.com)
+- [GitHub](https://github.com/Skypie99)
+- [LinkedIn](https://www.linkedin.com/in/skyler-halisky)
+- [Contact](https://skypistudio.com/contact/)
+
+> Historical repository documentation follows. Its dated plans, Cook Out receipts, earlier wave records, and test results remain useful archaeology. Any older section labelled “current,” “latest,” or “live” applies only to its own stated date and is superseded by the current layer above.
 
 A warm-minimal showcase of Sky's AI deliverables and certificates. ffern.co-inspired.
 
