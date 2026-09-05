@@ -1,0 +1,8 @@
+{
+  "candidateSHA": "2e62dd069816986c0f2e3253ba7e48e69b450d7f",
+  "candidateTree": "b2ab11701c338e686307e82298c88fe8f98277ff",
+  "productDiffFromCandidate": "EMPTY",
+  "baselineCSSDelta": "Only header.page background uses existing --brand-deep; dark override uses existing --brand. Non-header rules and all five utility HTML files unchanged.",
+  "earlierEvidencePreserved": true,
+  "phase05ReceiptSource": "/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/approved-execution/PHASE-05_SUPPORTING_PROOF_GATE_RECEIPT.md"
+}

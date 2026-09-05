@@ -1,0 +1,1090 @@
+{
+  "at": "2026-09-05T04:22:39.668Z",
+  "axe": [
+    {
+      "theme": "light",
+      "route": "/",
+      "width": 393,
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 107
+        }
+      ],
+      "passes": 26
+    },
+    {
+      "theme": "light",
+      "route": "/work/flagstone/",
+      "width": 393,
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 84
+        },
+        {
+          "id": "video-caption",
+          "count": 1
+        }
+      ],
+      "passes": 27
+    },
+    {
+      "theme": "light",
+      "route": "/about/",
+      "width": 393,
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 33
+        }
+      ],
+      "passes": 23
+    },
+    {
+      "theme": "light",
+      "route": "/flagstone/",
+      "width": 393,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            {
+              "target": [
+                ".home-card[href$=\"support/\"] > h2"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 12.8pt (17px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".home-card[href$=\"privacy/\"] > h2"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 12.8pt (17px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".home-card[href$=\"accessibility/\"] > h2"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 12.8pt (17px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".home-card[href$=\"terms/\"] > h2"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 12.8pt (17px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "nav[aria-label=\"Site\"] > a[href$=\"support/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "nav[aria-label=\"Site\"] > a[href$=\"privacy/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "nav[aria-label=\"Site\"] > a[href$=\"accessibility/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "nav[aria-label=\"Site\"] > a[href$=\"terms/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 1
+        }
+      ],
+      "passes": 25
+    },
+    {
+      "theme": "light",
+      "route": "/flagstone/accessibility/",
+      "width": 393,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            {
+              "target": [
+                ".about > h2"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.25 (foreground color: #1c6ef3, background color: #f0f7ff, font size: 12.8pt (17px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".about > p > a[target=\"_blank\"][rel=\"noopener noreferrer\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.25 (foreground color: #1c6ef3, background color: #f0f7ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "p:nth-child(4) > a[target=\"_blank\"][rel=\"noopener noreferrer\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "nav[aria-label=\"Site\"] > a[href$=\"support/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "nav[aria-label=\"Site\"] > a[href$=\"privacy/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "nav[aria-label=\"Site\"] > a[href$=\"terms/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 1
+        }
+      ],
+      "passes": 28
+    },
+    {
+      "theme": "light",
+      "route": "/flagstone/privacy/",
+      "width": 393,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            {
+              "target": [
+                "nav[aria-label=\"Site\"] > a[href$=\"support/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "nav[aria-label=\"Site\"] > a[href$=\"accessibility/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "nav[aria-label=\"Site\"] > a[href$=\"terms/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 1
+        }
+      ],
+      "passes": 28
+    },
+    {
+      "theme": "light",
+      "route": "/flagstone/support/",
+      "width": 393,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            {
+              "target": [
+                ".about > h2"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.25 (foreground color: #1c6ef3, background color: #f0f7ff, font size: 12.8pt (17px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "p:nth-child(4) > a[target=\"_blank\"][rel=\"noopener noreferrer\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "nav[aria-label=\"Site\"] > a[href$=\"privacy/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "nav[aria-label=\"Site\"] > a[href$=\"accessibility/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "nav[aria-label=\"Site\"] > a[href$=\"terms/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 1
+        }
+      ],
+      "passes": 26
+    },
+    {
+      "theme": "light",
+      "route": "/flagstone/terms/",
+      "width": 393,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            {
+              "target": [
+                ".callout > h2"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.25 (foreground color: #1c6ef3, background color: #f0f7ff, font size: 12.8pt (17px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "nav[aria-label=\"Site\"] > a[href$=\"support/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "nav[aria-label=\"Site\"] > a[href$=\"privacy/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "nav[aria-label=\"Site\"] > a[href$=\"accessibility/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 1
+        }
+      ],
+      "passes": 26
+    },
+    {
+      "theme": "dark",
+      "route": "/",
+      "width": 393,
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 107
+        }
+      ],
+      "passes": 26
+    },
+    {
+      "theme": "dark",
+      "route": "/work/flagstone/",
+      "width": 393,
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 84
+        },
+        {
+          "id": "video-caption",
+          "count": 1
+        }
+      ],
+      "passes": 27
+    },
+    {
+      "theme": "dark",
+      "route": "/about/",
+      "width": 393,
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 39
+        }
+      ],
+      "passes": 23
+    },
+    {
+      "theme": "dark",
+      "route": "/flagstone/",
+      "width": 393,
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 1
+        }
+      ],
+      "passes": 25
+    },
+    {
+      "theme": "dark",
+      "route": "/flagstone/accessibility/",
+      "width": 393,
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 1
+        }
+      ],
+      "passes": 28
+    },
+    {
+      "theme": "dark",
+      "route": "/flagstone/privacy/",
+      "width": 393,
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 1
+        }
+      ],
+      "passes": 28
+    },
+    {
+      "theme": "dark",
+      "route": "/flagstone/support/",
+      "width": 393,
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 1
+        }
+      ],
+      "passes": 26
+    },
+    {
+      "theme": "dark",
+      "route": "/flagstone/terms/",
+      "width": 393,
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 1
+        }
+      ],
+      "passes": 26
+    }
+  ],
+  "smoke": [
+    {
+      "theme": "light",
+      "route": "/",
+      "type": "forced-colors",
+      "active": true,
+      "overflow": false,
+      "focus": "A",
+      "outline": "solid"
+    },
+    {
+      "theme": "light",
+      "route": "/",
+      "type": "200% browser-zoom reflow equivalent (1280 physical to 640 CSS px; not native browser zoom)",
+      "scrollWidth": 640,
+      "clientWidth": 640
+    },
+    {
+      "theme": "light",
+      "route": "/work/flagstone/",
+      "type": "forced-colors",
+      "active": true,
+      "overflow": false,
+      "focus": "A",
+      "outline": "solid"
+    },
+    {
+      "theme": "light",
+      "route": "/work/flagstone/",
+      "type": "200% browser-zoom reflow equivalent (1280 physical to 640 CSS px; not native browser zoom)",
+      "scrollWidth": 640,
+      "clientWidth": 640
+    },
+    {
+      "theme": "light",
+      "route": "/about/",
+      "type": "forced-colors",
+      "active": true,
+      "overflow": false,
+      "focus": "A",
+      "outline": "solid"
+    },
+    {
+      "theme": "light",
+      "route": "/about/",
+      "type": "200% browser-zoom reflow equivalent (1280 physical to 640 CSS px; not native browser zoom)",
+      "scrollWidth": 640,
+      "clientWidth": 640
+    },
+    {
+      "theme": "light",
+      "route": "/flagstone/",
+      "type": "native text-size control 200%",
+      "size": "200%",
+      "overflow": true,
+      "headerFont": "30px"
+    },
+    {
+      "theme": "light",
+      "route": "/flagstone/",
+      "type": "site high contrast toggle",
+      "value": "high"
+    },
+    {
+      "theme": "light",
+      "route": "/flagstone/",
+      "type": "forced-colors",
+      "active": true,
+      "overflow": false,
+      "focus": "BUTTON",
+      "outline": "solid"
+    },
+    {
+      "theme": "light",
+      "route": "/flagstone/",
+      "type": "200% browser-zoom reflow equivalent (1280 physical to 640 CSS px; not native browser zoom)",
+      "scrollWidth": 640,
+      "clientWidth": 640
+    },
+    {
+      "theme": "light",
+      "route": "/flagstone/accessibility/",
+      "type": "native text-size control 200%",
+      "size": "200%",
+      "overflow": false,
+      "headerFont": "30px"
+    },
+    {
+      "theme": "light",
+      "route": "/flagstone/accessibility/",
+      "type": "site high contrast toggle",
+      "value": "high"
+    },
+    {
+      "theme": "light",
+      "route": "/flagstone/accessibility/",
+      "type": "forced-colors",
+      "active": true,
+      "overflow": false,
+      "focus": "BUTTON",
+      "outline": "solid"
+    },
+    {
+      "theme": "light",
+      "route": "/flagstone/accessibility/",
+      "type": "200% browser-zoom reflow equivalent (1280 physical to 640 CSS px; not native browser zoom)",
+      "scrollWidth": 640,
+      "clientWidth": 640
+    },
+    {
+      "theme": "light",
+      "route": "/flagstone/privacy/",
+      "type": "native text-size control 200%",
+      "size": "200%",
+      "overflow": true,
+      "headerFont": "30px"
+    },
+    {
+      "theme": "light",
+      "route": "/flagstone/privacy/",
+      "type": "site high contrast toggle",
+      "value": "high"
+    },
+    {
+      "theme": "light",
+      "route": "/flagstone/privacy/",
+      "type": "forced-colors",
+      "active": true,
+      "overflow": false,
+      "focus": "BUTTON",
+      "outline": "solid"
+    },
+    {
+      "theme": "light",
+      "route": "/flagstone/privacy/",
+      "type": "200% browser-zoom reflow equivalent (1280 physical to 640 CSS px; not native browser zoom)",
+      "scrollWidth": 640,
+      "clientWidth": 640
+    },
+    {
+      "theme": "light",
+      "route": "/flagstone/support/",
+      "type": "native text-size control 200%",
+      "size": "200%",
+      "overflow": true,
+      "headerFont": "30px"
+    },
+    {
+      "theme": "light",
+      "route": "/flagstone/support/",
+      "type": "site high contrast toggle",
+      "value": "high"
+    },
+    {
+      "theme": "light",
+      "route": "/flagstone/support/",
+      "type": "forced-colors",
+      "active": true,
+      "overflow": false,
+      "focus": "BUTTON",
+      "outline": "solid"
+    },
+    {
+      "theme": "light",
+      "route": "/flagstone/support/",
+      "type": "200% browser-zoom reflow equivalent (1280 physical to 640 CSS px; not native browser zoom)",
+      "scrollWidth": 640,
+      "clientWidth": 640
+    },
+    {
+      "theme": "light",
+      "route": "/flagstone/terms/",
+      "type": "native text-size control 200%",
+      "size": "200%",
+      "overflow": true,
+      "headerFont": "30px"
+    },
+    {
+      "theme": "light",
+      "route": "/flagstone/terms/",
+      "type": "site high contrast toggle",
+      "value": "high"
+    },
+    {
+      "theme": "light",
+      "route": "/flagstone/terms/",
+      "type": "forced-colors",
+      "active": true,
+      "overflow": false,
+      "focus": "BUTTON",
+      "outline": "solid"
+    },
+    {
+      "theme": "light",
+      "route": "/flagstone/terms/",
+      "type": "200% browser-zoom reflow equivalent (1280 physical to 640 CSS px; not native browser zoom)",
+      "scrollWidth": 640,
+      "clientWidth": 640
+    },
+    {
+      "theme": "dark",
+      "route": "/",
+      "type": "forced-colors",
+      "active": true,
+      "overflow": false,
+      "focus": "A",
+      "outline": "solid"
+    },
+    {
+      "theme": "dark",
+      "route": "/",
+      "type": "200% browser-zoom reflow equivalent (1280 physical to 640 CSS px; not native browser zoom)",
+      "scrollWidth": 640,
+      "clientWidth": 640
+    },
+    {
+      "theme": "dark",
+      "route": "/work/flagstone/",
+      "type": "forced-colors",
+      "active": true,
+      "overflow": false,
+      "focus": "A",
+      "outline": "solid"
+    },
+    {
+      "theme": "dark",
+      "route": "/work/flagstone/",
+      "type": "200% browser-zoom reflow equivalent (1280 physical to 640 CSS px; not native browser zoom)",
+      "scrollWidth": 640,
+      "clientWidth": 640
+    },
+    {
+      "theme": "dark",
+      "route": "/about/",
+      "type": "forced-colors",
+      "active": true,
+      "overflow": false,
+      "focus": "A",
+      "outline": "solid"
+    },
+    {
+      "theme": "dark",
+      "route": "/about/",
+      "type": "200% browser-zoom reflow equivalent (1280 physical to 640 CSS px; not native browser zoom)",
+      "scrollWidth": 640,
+      "clientWidth": 640
+    },
+    {
+      "theme": "dark",
+      "route": "/flagstone/",
+      "type": "native text-size control 200%",
+      "size": "200%",
+      "overflow": true,
+      "headerFont": "30px"
+    },
+    {
+      "theme": "dark",
+      "route": "/flagstone/",
+      "type": "site high contrast toggle",
+      "value": "high"
+    },
+    {
+      "theme": "dark",
+      "route": "/flagstone/",
+      "type": "forced-colors",
+      "active": true,
+      "overflow": false,
+      "focus": "BUTTON",
+      "outline": "solid"
+    },
+    {
+      "theme": "dark",
+      "route": "/flagstone/",
+      "type": "200% browser-zoom reflow equivalent (1280 physical to 640 CSS px; not native browser zoom)",
+      "scrollWidth": 640,
+      "clientWidth": 640
+    },
+    {
+      "theme": "dark",
+      "route": "/flagstone/accessibility/",
+      "type": "native text-size control 200%",
+      "size": "200%",
+      "overflow": false,
+      "headerFont": "30px"
+    },
+    {
+      "theme": "dark",
+      "route": "/flagstone/accessibility/",
+      "type": "site high contrast toggle",
+      "value": "high"
+    },
+    {
+      "theme": "dark",
+      "route": "/flagstone/accessibility/",
+      "type": "forced-colors",
+      "active": true,
+      "overflow": false,
+      "focus": "BUTTON",
+      "outline": "solid"
+    },
+    {
+      "theme": "dark",
+      "route": "/flagstone/accessibility/",
+      "type": "200% browser-zoom reflow equivalent (1280 physical to 640 CSS px; not native browser zoom)",
+      "scrollWidth": 640,
+      "clientWidth": 640
+    },
+    {
+      "theme": "dark",
+      "route": "/flagstone/privacy/",
+      "type": "native text-size control 200%",
+      "size": "200%",
+      "overflow": true,
+      "headerFont": "30px"
+    },
+    {
+      "theme": "dark",
+      "route": "/flagstone/privacy/",
+      "type": "site high contrast toggle",
+      "value": "high"
+    },
+    {
+      "theme": "dark",
+      "route": "/flagstone/privacy/",
+      "type": "forced-colors",
+      "active": true,
+      "overflow": false,
+      "focus": "BUTTON",
+      "outline": "solid"
+    },
+    {
+      "theme": "dark",
+      "route": "/flagstone/privacy/",
+      "type": "200% browser-zoom reflow equivalent (1280 physical to 640 CSS px; not native browser zoom)",
+      "scrollWidth": 640,
+      "clientWidth": 640
+    },
+    {
+      "theme": "dark",
+      "route": "/flagstone/support/",
+      "type": "native text-size control 200%",
+      "size": "200%",
+      "overflow": true,
+      "headerFont": "30px"
+    },
+    {
+      "theme": "dark",
+      "route": "/flagstone/support/",
+      "type": "site high contrast toggle",
+      "value": "high"
+    },
+    {
+      "theme": "dark",
+      "route": "/flagstone/support/",
+      "type": "forced-colors",
+      "active": true,
+      "overflow": false,
+      "focus": "BUTTON",
+      "outline": "solid"
+    },
+    {
+      "theme": "dark",
+      "route": "/flagstone/support/",
+      "type": "200% browser-zoom reflow equivalent (1280 physical to 640 CSS px; not native browser zoom)",
+      "scrollWidth": 640,
+      "clientWidth": 640
+    },
+    {
+      "theme": "dark",
+      "route": "/flagstone/terms/",
+      "type": "native text-size control 200%",
+      "size": "200%",
+      "overflow": true,
+      "headerFont": "30px"
+    },
+    {
+      "theme": "dark",
+      "route": "/flagstone/terms/",
+      "type": "site high contrast toggle",
+      "value": "high"
+    },
+    {
+      "theme": "dark",
+      "route": "/flagstone/terms/",
+      "type": "forced-colors",
+      "active": true,
+      "overflow": false,
+      "focus": "BUTTON",
+      "outline": "solid"
+    },
+    {
+      "theme": "dark",
+      "route": "/flagstone/terms/",
+      "type": "200% browser-zoom reflow equivalent (1280 physical to 640 CSS px; not native browser zoom)",
+      "scrollWidth": 640,
+      "clientWidth": 640
+    },
+    {
+      "route": "/",
+      "type": "standard-motion",
+      "reduced": false,
+      "overflow": false,
+      "skipLinks": [
+        "Skip intro↓"
+      ]
+    },
+    {
+      "route": "/work/flagstone/",
+      "type": "standard-motion",
+      "reduced": false,
+      "overflow": false,
+      "skipLinks": []
+    },
+    {
+      "route": "/flagstone/",
+      "type": "standard-motion",
+      "reduced": false,
+      "overflow": false,
+      "skipLinks": []
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "type": "standard-motion",
+      "reduced": false,
+      "overflow": false,
+      "skipLinks": []
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "type": "standard-motion",
+      "reduced": false,
+      "overflow": false,
+      "skipLinks": []
+    },
+    {
+      "route": "/flagstone/support/",
+      "type": "standard-motion",
+      "reduced": false,
+      "overflow": false,
+      "skipLinks": []
+    },
+    {
+      "route": "/flagstone/terms/",
+      "type": "standard-motion",
+      "reduced": false,
+      "overflow": false,
+      "skipLinks": []
+    }
+  ],
+  "activation": [
+    {
+      "theme": "light",
+      "mode": "keyboard",
+      "found": true,
+      "url": "http://127.0.0.1:4405/work/flagstone",
+      "tabStops": [
+        {
+          "text": "Skip to main content",
+          "href": "#main",
+          "isFlagship": false,
+          "focusVisible": true
+        },
+        {
+          "text": "",
+          "href": null,
+          "isFlagship": false,
+          "focusVisible": true
+        },
+        {
+          "text": "Skip intro↓",
+          "href": "#hero",
+          "isFlagship": false,
+          "focusVisible": true
+        },
+        {
+          "text": "See the work.",
+          "href": "#work",
+          "isFlagship": false,
+          "focusVisible": true
+        },
+        {
+          "text": "Scroll↓",
+          "href": "#work",
+          "isFlagship": false,
+          "focusVisible": true
+        },
+        {
+          "text": "method",
+          "href": "/work/flagstone/#flagstone-test-count-method",
+          "isFlagship": false,
+          "focusVisible": true
+        },
+        {
+          "text": "evidence",
+          "href": "/accessibility/#receipts",
+          "isFlagship": false,
+          "focusVisible": true
+        },
+        {
+          "text": "the record",
+          "href": "/colophon/#calibration",
+          "isFlagship": false,
+          "focusVisible": true
+        },
+        {
+          "text": "View project→",
+          "href": "/work/flagstone/",
+          "isFlagship": true,
+          "focusVisible": true
+        }
+      ]
+    },
+    {
+      "theme": "light",
+      "mode": "pointer",
+      "url": "http://127.0.0.1:4405/work/flagstone"
+    },
+    {
+      "theme": "light",
+      "mode": "touch",
+      "url": "http://127.0.0.1:4405/work/flagstone"
+    },
+    {
+      "theme": "light",
+      "mode": "duplicate-row-touch",
+      "url": "http://127.0.0.1:4405/work/flagstone"
+    },
+    {
+      "theme": "dark",
+      "mode": "keyboard",
+      "found": true,
+      "url": "http://127.0.0.1:4405/work/flagstone",
+      "tabStops": [
+        {
+          "text": "Skip to main content",
+          "href": "#main",
+          "isFlagship": false,
+          "focusVisible": true
+        },
+        {
+          "text": "",
+          "href": null,
+          "isFlagship": false,
+          "focusVisible": true
+        },
+        {
+          "text": "Skip intro↓",
+          "href": "#hero",
+          "isFlagship": false,
+          "focusVisible": true
+        },
+        {
+          "text": "See the work.",
+          "href": "#work",
+          "isFlagship": false,
+          "focusVisible": true
+        },
+        {
+          "text": "Scroll↓",
+          "href": "#work",
+          "isFlagship": false,
+          "focusVisible": true
+        },
+        {
+          "text": "method",
+          "href": "/work/flagstone/#flagstone-test-count-method",
+          "isFlagship": false,
+          "focusVisible": true
+        },
+        {
+          "text": "evidence",
+          "href": "/accessibility/#receipts",
+          "isFlagship": false,
+          "focusVisible": true
+        },
+        {
+          "text": "the record",
+          "href": "/colophon/#calibration",
+          "isFlagship": false,
+          "focusVisible": true
+        },
+        {
+          "text": "View project→",
+          "href": "/work/flagstone/",
+          "isFlagship": true,
+          "focusVisible": true
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "mode": "pointer",
+      "url": "http://127.0.0.1:4405/work/flagstone"
+    },
+    {
+      "theme": "dark",
+      "mode": "touch",
+      "url": "http://127.0.0.1:4405/work/flagstone"
+    },
+    {
+      "theme": "dark",
+      "mode": "duplicate-row-touch",
+      "url": "http://127.0.0.1:4405/work/flagstone"
+    }
+  ],
+  "typography": [
+    {
+      "theme": "light",
+      "route": "/",
+      "font-serif": "\"Cormorant Garamond\", \"Cormorant Garamond Fallback\", Garamond, Georgia, serif",
+      "font-sans": "\"DM Sans\", \"DM Sans Fallback\", -apple-system, \"system-ui\", sans-serif",
+      "font-mono": "\"DM Mono\", \"DM Mono Fallback\", ui-monospace, monospace"
+    },
+    {
+      "theme": "light",
+      "route": "/about/",
+      "font-serif": "\"Cormorant Garamond\", \"Cormorant Garamond Fallback\", Garamond, Georgia, serif",
+      "font-sans": "\"DM Sans\", \"DM Sans Fallback\", -apple-system, \"system-ui\", sans-serif",
+      "font-mono": "\"DM Mono\", \"DM Mono Fallback\", ui-monospace, monospace"
+    },
+    {
+      "theme": "light",
+      "route": "/work/flagstone/",
+      "font-serif": "\"Cormorant Garamond\", \"Cormorant Garamond Fallback\", Garamond, Georgia, serif",
+      "font-sans": "\"DM Sans\", \"DM Sans Fallback\", -apple-system, \"system-ui\", sans-serif",
+      "font-mono": "\"DM Mono\", \"DM Mono Fallback\", ui-monospace, monospace"
+    },
+    {
+      "theme": "light",
+      "route": "/work/",
+      "font-serif": "\"Cormorant Garamond\", \"Cormorant Garamond Fallback\", Garamond, Georgia, serif",
+      "font-sans": "\"DM Sans\", \"DM Sans Fallback\", -apple-system, \"system-ui\", sans-serif",
+      "font-mono": "\"DM Mono\", \"DM Mono Fallback\", ui-monospace, monospace"
+    },
+    {
+      "theme": "light",
+      "route": "/contact/",
+      "font-serif": "\"Cormorant Garamond\", \"Cormorant Garamond Fallback\", Garamond, Georgia, serif",
+      "font-sans": "\"DM Sans\", \"DM Sans Fallback\", -apple-system, \"system-ui\", sans-serif",
+      "font-mono": "\"DM Mono\", \"DM Mono Fallback\", ui-monospace, monospace"
+    },
+    {
+      "theme": "dark",
+      "route": "/",
+      "font-serif": "\"Cormorant Garamond\", \"Cormorant Garamond Fallback\", Garamond, Georgia, serif",
+      "font-sans": "\"DM Sans\", \"DM Sans Fallback\", -apple-system, \"system-ui\", sans-serif",
+      "font-mono": "\"DM Mono\", \"DM Mono Fallback\", ui-monospace, monospace"
+    },
+    {
+      "theme": "dark",
+      "route": "/about/",
+      "font-serif": "\"Cormorant Garamond\", \"Cormorant Garamond Fallback\", Garamond, Georgia, serif",
+      "font-sans": "\"DM Sans\", \"DM Sans Fallback\", -apple-system, \"system-ui\", sans-serif",
+      "font-mono": "\"DM Mono\", \"DM Mono Fallback\", ui-monospace, monospace"
+    },
+    {
+      "theme": "dark",
+      "route": "/work/flagstone/",
+      "font-serif": "\"Cormorant Garamond\", \"Cormorant Garamond Fallback\", Garamond, Georgia, serif",
+      "font-sans": "\"DM Sans\", \"DM Sans Fallback\", -apple-system, \"system-ui\", sans-serif",
+      "font-mono": "\"DM Mono\", \"DM Mono Fallback\", ui-monospace, monospace"
+    },
+    {
+      "theme": "dark",
+      "route": "/work/",
+      "font-serif": "\"Cormorant Garamond\", \"Cormorant Garamond Fallback\", Garamond, Georgia, serif",
+      "font-sans": "\"DM Sans\", \"DM Sans Fallback\", -apple-system, \"system-ui\", sans-serif",
+      "font-mono": "\"DM Mono\", \"DM Mono Fallback\", ui-monospace, monospace"
+    },
+    {
+      "theme": "dark",
+      "route": "/contact/",
+      "font-serif": "\"Cormorant Garamond\", \"Cormorant Garamond Fallback\", Garamond, Georgia, serif",
+      "font-sans": "\"DM Sans\", \"DM Sans Fallback\", -apple-system, \"system-ui\", sans-serif",
+      "font-mono": "\"DM Mono\", \"DM Mono Fallback\", ui-monospace, monospace"
+    }
+  ],
+  "browser": "149.0.7827.55"
+}

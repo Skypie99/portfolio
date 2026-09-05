@@ -231,3 +231,65 @@ Phase 05: concurrency was permitted by the supplied Phase 04 prompt but no activ
 3. **Complete native zoom and remaining live-link verification.** Recommendation: rerun native browser 200% zoom when a controllable browser is available, and recheck the unverified external links. Why: CSS-pixel reflow evidence and network errors cannot be labeled a completed native-zoom or link check. Alternative: keep explicit unrun/unverified entries and Phase 04 HOLD. Impact: remaining evidence work; no speculative source edits needed.
 
 No new deferral was approved. The lead issues **HOLD**, preserving the useful completed repair without turning partial QA into a Phase 04 PASS.
+
+
+## 11. Phase 04 HOLD-resolution follow-up — 2026-09-04 Vancouver
+
+**PHASE_04_HOLD_RESOLUTION: HOLD. FLAGSTONE_GATE: HOLD. SAFE_TO_INTEGRATE_PHASE_04: NO.**
+
+This section supersedes the earlier blocker dispositions and Phase 05 concurrency observation; the historical receipt and all earlier evidence remain unchanged above. Input candidate is exactly `2e62dd069816986c0f2e3253ba7e48e69b450d7f`, tree `b2ab11701c338e686307e82298c88fe8f98277ff`, initially clean. This follow-up changes evidence only. All product, content, CSS and test source remain byte-identical to that candidate. No accepted work was reimplemented.
+
+### Resolved and remaining evidence
+
+| Recorded blocker | Current disposition |
+|---|---|
+| Current Apple / Flagstone outcome | **HOLD.** Fresh bounded Apple email search again finds submission receipt plus three TestFlight notices, no later outcome. Direct native App Store Connect visit requires sign-in. The September 2 release record was reread and remains historical primary project evidence, not today's Apple outcome. Owner was asked for current displayed status; no answer was available. Current exact review outcome remains unverified. Status copy stays unchanged. |
+| Native browser 200% zoom | **PASS for scoped native smoke.** Actual native Chrome for Testing 149.0.7827.55 toolbar reports 200%; saved bubble, AX records and screenshots cover homepage flagship, case study and all five utility headers. Header copy wraps visibly; native pointer activation opens the case study while retaining 200%. This replaces the prior unrun native check, not the separately labeled reflow proxy. Native screenshot raster is 896×768; CSS viewport/DPR and full-page native DOM overflow were not instrumented. |
+| OpenStreetMap Foundation privacy | **PASS.** Direct primary URL returns the titled privacy policy and its OSMF scope. Prior timeout resolved through the web reader. |
+| LinkedIn profile | **PARTIAL.** Direct native navigation reaches LinkedIn's authwall and retains the exact profile as its redirect destination. HTTP reader still returns 999. Reachability is verified, profile identity/content remains inaccessible signed out. No dead-link defect inferred and no speculative replacement. Criterion 6's current profile claim remains unproven. |
+| Inherited accessibility | **Classification complete; zero newly introduced failures.** Details below. No later-phase repairs absorbed. |
+
+Primary link: [OSMF privacy policy](https://osmfoundation.org/wiki/Privacy_Policy). Exact LinkedIn target: [Skyler Halisky profile](https://www.linkedin.com/in/skyler-halisky). Sanitized methods and boundaries: `phase04-hold-resolution-evidence/status-and-links.json`. No private mail, authentication material or signed-in account content is committed.
+
+### Classification and acceptance interpretation
+
+`phase04-hold-resolution-evidence/accessibility-classification.json` identifies all 26 remaining contrast nodes individually and classifies all 82 recorded text-resize geometric-offender rows across both themes. These are rows/elements, not 82 independent failures.
+
+1. **Phase 04-owned and blocking:** none remaining. The five inherited header tagline/meta failures were Phase 04-owned and are already repaired in the supplied candidate. Current light contrast is **5.644812255597836:1**, dark **6.735135070943732:1**, all 80 samples pass. No repeat repair.
+2. **Inherited and outside Phase 04 scope:** all 26 light non-header contrast nodes (landing 8, accessibility 6, privacy 3, support 5, terms 4). Each target matches the frozen baseline. Owners are unchanged brand/body/footer/callout/home-card rules and unchanged markup. Actual enlarged-text overflow remains on landing, privacy, support and terms in both themes: grid minimum, unwrapped privacy table and unbreakable email links. The previous receipt's generalized email explanation for privacy is corrected: its observed 555px width is driven by the unwrapped data table. The range control's 10rem minimum exceeds the clipped panel at 200% and remains an inherited internal-clipping issue, even where document overflow is false. These defects remain open outside this phase, not fixed or globally waived.
+3. **Test-method / environment limitation:** the accessibility route's 22 table-related geometric rows across themes lie inside the existing `.table-wrap { overflow-x: auto; }`. Right edges beyond the document do not themselves prove lost content or page overflow. Its document width remains 393px. Do not convert those heuristic rows into 22 product defects. Likewise, a document-width check does not certify the internally clipped range control. Native CSS viewport/DPR measurements are uninstrumented, while actual browser zoom itself is verified. Apple sign-in and LinkedIn authwall constrain evidence, not candidate behavior.
+4. **Genuine regression introduced by Phase 04:** none demonstrated. Fresh candidate scans reproduce exactly the 26 previously known non-header nodes; baseline comparison has zero new targets. Enlarged-text route outcomes match baseline. Source diff proves all implicated non-header rules, utility HTML and display-control script unchanged.
+
+The authoritative Phase 04 contract §23 requires no **new** accessibility regression (criterion 9), no unrelated scope absorption (10), required QA actually run (11), and the affected header-pair contrast repair (2). It does not authorize a global utility cleanup. Original §25 stopped systemic out-of-scope implementation; this user follow-up expressly authorizes classification and independent acceptance work, with repairs limited to Phase 04 ownership. These inherited defects therefore do not become Phase 04-owned repairs or justify repeating accepted implementation. No full-estate zero-axe/WCAG PASS is claimed. The gate still cannot PASS: exact current Apple outcome and LinkedIn profile evidence do not satisfy criteria 5–7. No environment exception or substitute evidence has been invented to waive them.
+
+### Rerun narrow acceptance matrix
+
+| Gate | Fresh result |
+|---|---|
+| Full `npm test` | Exit 0; **95 files, 864 passed, 2 existing skips**. Same sentinel skips and non-failing React warnings retained. |
+| `npm run typecheck` | Exit 0. |
+| `npm run lint` | Exit 0; no ESLint warnings/errors. Existing CLI/config notices recorded. |
+| `npm run build` | Exit 0; **26 static pages**; asset validation and postbuild pass. Local only. |
+| Six targeted static/claim/bridge guards | See `guards.txt`: rerun against rebuilt output. |
+| CTA parity | **PASS**, 16 width/theme combinations × 6 doorways × 4 states = 384 matching records; all active/focus states observed. Detail-family source unchanged; prior accepted 320-state detail parity preserved, not relabeled a new rerun. |
+| Contrast / responsive | **PASS for owned pair**, 80 utility samples, eight widths 320–1440, both themes; zero standard document overflow for home, case study or utility routes. |
+| Keyboard / pointer / emulated touch / forced colors / high contrast / motion | Existing narrow interaction harness rerun in both themes; activation and smoke outcomes retained in `interactions/checks.json`. |
+| Text resize / axe | Actual site 200% text setting rerun at 393px both themes. Four inherited route-overflow outcomes, 26 inherited light non-header nodes; no new findings. |
+| Native zoom | Actual native 200% smoke recorded separately, including successful homepage-to-case-study activation. Not a CSS scaling substitute. |
+| Preservation | Product diff from supplied candidate empty. CTA, 5.64:1 repair, copy, status, media, other projects, cinematic and shared components unchanged. Original evidence preserved. |
+
+Commands and real output are in `phase04-hold-resolution-evidence/*.txt`; terminal carriage returns/trailing whitespace normalized only. Capture harnesses, fresh matrices, classification and native proof accompany them. Automated matrix used the preexisting accepted product build whose source equals this candidate; the fresh rebuild then passed and targeted built-output guards were rerun. Native homepage/activation proof continued after the rebuild. No claim that a screenshot proves a complete native overflow census, another engine, physical device, screen reader or production acceptance.
+
+### PHASE_05_CONCURRENCY_STATUS
+
+**INDEPENDENT_WORK_COMPLETE_AND_BANKED; PORTFOLIO_INTEGRATION_WAITING_ON_PHASE_04_ACCEPTANCE.**
+
+User's current instruction and the Phase 05 approved-execution receipt establish completed independent work: Dashboard candidate `00cc9151242a436b99f425c294847f3881ac0f5c`, Claude wording `4a0398054ff14be4bdd0bbdcbae392bd30a88553`, and the unapplied Portfolio copy/media proposal. This is receipt-derived concurrency status, not a new independent acceptance of those repos. No work was redone there. Auth trial patch remains separately reserved and unapplied. Phase 05 must rederive accepted Phase 04 SHA/tree and its Portfolio write gate before reconciliation. **PHASE_05_CAN_PROCEED_TO_PORTFOLIO_RECONCILIATION: NO.** Phase 06 remains blocked.
+
+### DECISIONS FOR SKY — superseding follow-up
+
+- **Current Apple review status:** provide a current App Store Connect observation for Flagstone 4.1.1, with observation date. Recommendation: retain unchanged bounded copy until then. Alternative: keep the evidence-only candidate banked. Impact: Phase 04 stays HOLD; no credentials or status guess requested.
+- **LinkedIn proof:** a readable primary profile observation is still needed to verify identity/content. Recommendation: retain the current URL while its authwall blocks inspection. Alternative: leave this evidence item unverified. Impact: no unsupported broken-link finding or link replacement, and no full current-link PASS.
+- **Inherited utility work:** retain the enumerated defects as open outside Phase 04; any repair belongs to a separately authorized lane. Recommendation: do not broaden this branch. Alternative: separately scope and authorize that work later. Impact: the Phase 04 owned repair remains preserved; no universal accessibility acceptance is implied.
+
+**PHASE_04_OWNED_REPAIRS: NONE in this follow-up. REMOTE_MUTATIONS: NONE. PUSH / MERGE / DEPLOY: NO.** Only governance evidence/receipt updates are committed locally. Final evidence-commit SHA/tree and clean state are reported after commit, outside this self-referential receipt. The HOLD is narrowed and documented, not manufactured into PASS.

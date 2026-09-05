@@ -1,0 +1,1447 @@
+{
+  "candidateSHA": "2e62dd069816986c0f2e3253ba7e48e69b450d7f",
+  "baselineSHA": "3a3ffb0009c68221319a8e2616a5810edcbe0433",
+  "contrastNodes": [
+    {
+      "route": "/flagstone/",
+      "theme": "light",
+      "rule": "color-contrast",
+      "target": [
+        ".home-card[href$=\"support/\"] > h2"
+      ],
+      "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 12.8pt (17px), font weight: bold). Expected contrast ratio of 4.5:1",
+      "classification": 2,
+      "disposition": "Inherited and outside Phase 04 header pair; unchanged rule, markup and tokens. Open; no repair or universal accessibility PASS."
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "light",
+      "rule": "color-contrast",
+      "target": [
+        ".home-card[href$=\"privacy/\"] > h2"
+      ],
+      "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 12.8pt (17px), font weight: bold). Expected contrast ratio of 4.5:1",
+      "classification": 2,
+      "disposition": "Inherited and outside Phase 04 header pair; unchanged rule, markup and tokens. Open; no repair or universal accessibility PASS."
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "light",
+      "rule": "color-contrast",
+      "target": [
+        ".home-card[href$=\"accessibility/\"] > h2"
+      ],
+      "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 12.8pt (17px), font weight: bold). Expected contrast ratio of 4.5:1",
+      "classification": 2,
+      "disposition": "Inherited and outside Phase 04 header pair; unchanged rule, markup and tokens. Open; no repair or universal accessibility PASS."
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "light",
+      "rule": "color-contrast",
+      "target": [
+        ".home-card[href$=\"terms/\"] > h2"
+      ],
+      "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 12.8pt (17px), font weight: bold). Expected contrast ratio of 4.5:1",
+      "classification": 2,
+      "disposition": "Inherited and outside Phase 04 header pair; unchanged rule, markup and tokens. Open; no repair or universal accessibility PASS."
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "light",
+      "rule": "color-contrast",
+      "target": [
+        "nav[aria-label=\"Site\"] > a[href$=\"support/\"]"
+      ],
+      "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "classification": 2,
+      "disposition": "Inherited and outside Phase 04 header pair; unchanged rule, markup and tokens. Open; no repair or universal accessibility PASS."
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "light",
+      "rule": "color-contrast",
+      "target": [
+        "nav[aria-label=\"Site\"] > a[href$=\"privacy/\"]"
+      ],
+      "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "classification": 2,
+      "disposition": "Inherited and outside Phase 04 header pair; unchanged rule, markup and tokens. Open; no repair or universal accessibility PASS."
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "light",
+      "rule": "color-contrast",
+      "target": [
+        "nav[aria-label=\"Site\"] > a[href$=\"accessibility/\"]"
+      ],
+      "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "classification": 2,
+      "disposition": "Inherited and outside Phase 04 header pair; unchanged rule, markup and tokens. Open; no repair or universal accessibility PASS."
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "light",
+      "rule": "color-contrast",
+      "target": [
+        "nav[aria-label=\"Site\"] > a[href$=\"terms/\"]"
+      ],
+      "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "classification": 2,
+      "disposition": "Inherited and outside Phase 04 header pair; unchanged rule, markup and tokens. Open; no repair or universal accessibility PASS."
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "light",
+      "rule": "color-contrast",
+      "target": [
+        ".about > h2"
+      ],
+      "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.25 (foreground color: #1c6ef3, background color: #f0f7ff, font size: 12.8pt (17px), font weight: bold). Expected contrast ratio of 4.5:1",
+      "classification": 2,
+      "disposition": "Inherited and outside Phase 04 header pair; unchanged rule, markup and tokens. Open; no repair or universal accessibility PASS."
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "light",
+      "rule": "color-contrast",
+      "target": [
+        ".about > p > a[target=\"_blank\"][rel=\"noopener noreferrer\"]"
+      ],
+      "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.25 (foreground color: #1c6ef3, background color: #f0f7ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "classification": 2,
+      "disposition": "Inherited and outside Phase 04 header pair; unchanged rule, markup and tokens. Open; no repair or universal accessibility PASS."
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "light",
+      "rule": "color-contrast",
+      "target": [
+        "p:nth-child(4) > a[target=\"_blank\"][rel=\"noopener noreferrer\"]"
+      ],
+      "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "classification": 2,
+      "disposition": "Inherited and outside Phase 04 header pair; unchanged rule, markup and tokens. Open; no repair or universal accessibility PASS."
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "light",
+      "rule": "color-contrast",
+      "target": [
+        "nav[aria-label=\"Site\"] > a[href$=\"support/\"]"
+      ],
+      "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "classification": 2,
+      "disposition": "Inherited and outside Phase 04 header pair; unchanged rule, markup and tokens. Open; no repair or universal accessibility PASS."
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "light",
+      "rule": "color-contrast",
+      "target": [
+        "nav[aria-label=\"Site\"] > a[href$=\"privacy/\"]"
+      ],
+      "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "classification": 2,
+      "disposition": "Inherited and outside Phase 04 header pair; unchanged rule, markup and tokens. Open; no repair or universal accessibility PASS."
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "light",
+      "rule": "color-contrast",
+      "target": [
+        "nav[aria-label=\"Site\"] > a[href$=\"terms/\"]"
+      ],
+      "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "classification": 2,
+      "disposition": "Inherited and outside Phase 04 header pair; unchanged rule, markup and tokens. Open; no repair or universal accessibility PASS."
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "light",
+      "rule": "color-contrast",
+      "target": [
+        "nav[aria-label=\"Site\"] > a[href$=\"support/\"]"
+      ],
+      "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "classification": 2,
+      "disposition": "Inherited and outside Phase 04 header pair; unchanged rule, markup and tokens. Open; no repair or universal accessibility PASS."
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "light",
+      "rule": "color-contrast",
+      "target": [
+        "nav[aria-label=\"Site\"] > a[href$=\"accessibility/\"]"
+      ],
+      "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "classification": 2,
+      "disposition": "Inherited and outside Phase 04 header pair; unchanged rule, markup and tokens. Open; no repair or universal accessibility PASS."
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "light",
+      "rule": "color-contrast",
+      "target": [
+        "nav[aria-label=\"Site\"] > a[href$=\"terms/\"]"
+      ],
+      "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "classification": 2,
+      "disposition": "Inherited and outside Phase 04 header pair; unchanged rule, markup and tokens. Open; no repair or universal accessibility PASS."
+    },
+    {
+      "route": "/flagstone/support/",
+      "theme": "light",
+      "rule": "color-contrast",
+      "target": [
+        ".about > h2"
+      ],
+      "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.25 (foreground color: #1c6ef3, background color: #f0f7ff, font size: 12.8pt (17px), font weight: bold). Expected contrast ratio of 4.5:1",
+      "classification": 2,
+      "disposition": "Inherited and outside Phase 04 header pair; unchanged rule, markup and tokens. Open; no repair or universal accessibility PASS."
+    },
+    {
+      "route": "/flagstone/support/",
+      "theme": "light",
+      "rule": "color-contrast",
+      "target": [
+        "p:nth-child(4) > a[target=\"_blank\"][rel=\"noopener noreferrer\"]"
+      ],
+      "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "classification": 2,
+      "disposition": "Inherited and outside Phase 04 header pair; unchanged rule, markup and tokens. Open; no repair or universal accessibility PASS."
+    },
+    {
+      "route": "/flagstone/support/",
+      "theme": "light",
+      "rule": "color-contrast",
+      "target": [
+        "nav[aria-label=\"Site\"] > a[href$=\"privacy/\"]"
+      ],
+      "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "classification": 2,
+      "disposition": "Inherited and outside Phase 04 header pair; unchanged rule, markup and tokens. Open; no repair or universal accessibility PASS."
+    },
+    {
+      "route": "/flagstone/support/",
+      "theme": "light",
+      "rule": "color-contrast",
+      "target": [
+        "nav[aria-label=\"Site\"] > a[href$=\"accessibility/\"]"
+      ],
+      "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "classification": 2,
+      "disposition": "Inherited and outside Phase 04 header pair; unchanged rule, markup and tokens. Open; no repair or universal accessibility PASS."
+    },
+    {
+      "route": "/flagstone/support/",
+      "theme": "light",
+      "rule": "color-contrast",
+      "target": [
+        "nav[aria-label=\"Site\"] > a[href$=\"terms/\"]"
+      ],
+      "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "classification": 2,
+      "disposition": "Inherited and outside Phase 04 header pair; unchanged rule, markup and tokens. Open; no repair or universal accessibility PASS."
+    },
+    {
+      "route": "/flagstone/terms/",
+      "theme": "light",
+      "rule": "color-contrast",
+      "target": [
+        ".callout > h2"
+      ],
+      "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.25 (foreground color: #1c6ef3, background color: #f0f7ff, font size: 12.8pt (17px), font weight: bold). Expected contrast ratio of 4.5:1",
+      "classification": 2,
+      "disposition": "Inherited and outside Phase 04 header pair; unchanged rule, markup and tokens. Open; no repair or universal accessibility PASS."
+    },
+    {
+      "route": "/flagstone/terms/",
+      "theme": "light",
+      "rule": "color-contrast",
+      "target": [
+        "nav[aria-label=\"Site\"] > a[href$=\"support/\"]"
+      ],
+      "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "classification": 2,
+      "disposition": "Inherited and outside Phase 04 header pair; unchanged rule, markup and tokens. Open; no repair or universal accessibility PASS."
+    },
+    {
+      "route": "/flagstone/terms/",
+      "theme": "light",
+      "rule": "color-contrast",
+      "target": [
+        "nav[aria-label=\"Site\"] > a[href$=\"privacy/\"]"
+      ],
+      "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "classification": 2,
+      "disposition": "Inherited and outside Phase 04 header pair; unchanged rule, markup and tokens. Open; no repair or universal accessibility PASS."
+    },
+    {
+      "route": "/flagstone/terms/",
+      "theme": "light",
+      "rule": "color-contrast",
+      "target": [
+        "nav[aria-label=\"Site\"] > a[href$=\"accessibility/\"]"
+      ],
+      "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #1c6ef3, background color: #f8fafc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "classification": 2,
+      "disposition": "Inherited and outside Phase 04 header pair; unchanged rule, markup and tokens. Open; no repair or universal accessibility PASS."
+    }
+  ],
+  "textResizeOffenders": [
+    {
+      "route": "/flagstone/",
+      "theme": "light",
+      "offender": {
+        "tag": "INPUT",
+        "class": "",
+        "id": "a11y-size",
+        "right": 416,
+        "text": ""
+      },
+      "classification": 2,
+      "reason": "Range min-width:10rem and clipped .a11y-panel are inherited; geometric exposure is not document overflow. Internal clipping remains an inherited defect outside Phase 04.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "light",
+      "offender": {
+        "tag": "A",
+        "class": "home-card",
+        "id": "",
+        "right": 484,
+        "text": "\n        Support\n        How the app works, frequently asked questions"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "light",
+      "offender": {
+        "tag": "H2",
+        "class": "",
+        "id": "",
+        "right": 434,
+        "text": "Support"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "light",
+      "offender": {
+        "tag": "P",
+        "class": "",
+        "id": "",
+        "right": 434,
+        "text": "How the app works, frequently asked questions, and how to reach us."
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "light",
+      "offender": {
+        "tag": "A",
+        "class": "home-card",
+        "id": "",
+        "right": 484,
+        "text": "\n        Privacy Policy\n        What we collect (very little), what we"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "light",
+      "offender": {
+        "tag": "H2",
+        "class": "",
+        "id": "",
+        "right": 434,
+        "text": "Privacy Policy"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "light",
+      "offender": {
+        "tag": "P",
+        "class": "",
+        "id": "",
+        "right": 434,
+        "text": "What we collect (very little), what we never collect, and your rights."
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "light",
+      "offender": {
+        "tag": "A",
+        "class": "home-card",
+        "id": "",
+        "right": 484,
+        "text": "\n        Accessibility\n        What the app supports, how we test, and"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "light",
+      "offender": {
+        "tag": "H2",
+        "class": "",
+        "id": "",
+        "right": 434,
+        "text": "Accessibility"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "light",
+      "offender": {
+        "tag": "P",
+        "class": "",
+        "id": "",
+        "right": 434,
+        "text": "What the app supports, how we test, and where we still fall short."
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "light",
+      "offender": {
+        "tag": "A",
+        "class": "home-card",
+        "id": "",
+        "right": 484,
+        "text": "\n        Terms & Community Guidelines\n        What you can post, what "
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "light",
+      "offender": {
+        "tag": "H2",
+        "class": "",
+        "id": "",
+        "right": 434,
+        "text": "Terms & Community Guidelines"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "light",
+      "offender": {
+        "tag": "INPUT",
+        "class": "",
+        "id": "a11y-size",
+        "right": 416,
+        "text": ""
+      },
+      "classification": 2,
+      "reason": "Range min-width:10rem and clipped .a11y-panel are inherited; geometric exposure is not document overflow. Internal clipping remains an inherited defect outside Phase 04.",
+      "documentOverflow": false
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "light",
+      "offender": {
+        "tag": "TABLE",
+        "class": "",
+        "id": "",
+        "right": 659.765625,
+        "text": "\n      Accessibility features supported by the Flagstone iOS app\n     "
+      },
+      "classification": 3,
+      "reason": "Geometric offender heuristic ignores .table-wrap overflow-x:auto; does not establish document overflow or lost content. No failure inferred from this row.",
+      "documentOverflow": false
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "light",
+      "offender": {
+        "tag": "THEAD",
+        "class": "",
+        "id": "",
+        "right": 659.765625,
+        "text": "\n        FeatureStatusWhat that means here\n      "
+      },
+      "classification": 3,
+      "reason": "Geometric offender heuristic ignores .table-wrap overflow-x:auto; does not establish document overflow or lost content. No failure inferred from this row.",
+      "documentOverflow": false
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "light",
+      "offender": {
+        "tag": "TR",
+        "class": "",
+        "id": "",
+        "right": 659.765625,
+        "text": "FeatureStatusWhat that means here"
+      },
+      "classification": 3,
+      "reason": "Geometric offender heuristic ignores .table-wrap overflow-x:auto; does not establish document overflow or lost content. No failure inferred from this row.",
+      "documentOverflow": false
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "light",
+      "offender": {
+        "tag": "TH",
+        "class": "",
+        "id": "",
+        "right": 471.640625,
+        "text": "Status"
+      },
+      "classification": 3,
+      "reason": "Geometric offender heuristic ignores .table-wrap overflow-x:auto; does not establish document overflow or lost content. No failure inferred from this row.",
+      "documentOverflow": false
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "light",
+      "offender": {
+        "tag": "TH",
+        "class": "",
+        "id": "",
+        "right": 659.765625,
+        "text": "What that means here"
+      },
+      "classification": 3,
+      "reason": "Geometric offender heuristic ignores .table-wrap overflow-x:auto; does not establish document overflow or lost content. No failure inferred from this row.",
+      "documentOverflow": false
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "light",
+      "offender": {
+        "tag": "TBODY",
+        "class": "",
+        "id": "",
+        "right": 659.765625,
+        "text": "\n        \n          VoiceOver\n          Supported\n          Every cont"
+      },
+      "classification": 3,
+      "reason": "Geometric offender heuristic ignores .table-wrap overflow-x:auto; does not establish document overflow or lost content. No failure inferred from this row.",
+      "documentOverflow": false
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "light",
+      "offender": {
+        "tag": "TR",
+        "class": "",
+        "id": "",
+        "right": 659.765625,
+        "text": "\n          VoiceOver\n          Supported\n          Every control has a"
+      },
+      "classification": 3,
+      "reason": "Geometric offender heuristic ignores .table-wrap overflow-x:auto; does not establish document overflow or lost content. No failure inferred from this row.",
+      "documentOverflow": false
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "light",
+      "offender": {
+        "tag": "TD",
+        "class": "yes",
+        "id": "",
+        "right": 471.640625,
+        "text": "Supported"
+      },
+      "classification": 3,
+      "reason": "Geometric offender heuristic ignores .table-wrap overflow-x:auto; does not establish document overflow or lost content. No failure inferred from this row.",
+      "documentOverflow": false
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "light",
+      "offender": {
+        "tag": "TD",
+        "class": "",
+        "id": "",
+        "right": 659.765625,
+        "text": "Every control has a spoken label, role, and where useful a hint. Statu"
+      },
+      "classification": 3,
+      "reason": "Geometric offender heuristic ignores .table-wrap overflow-x:auto; does not establish document overflow or lost content. No failure inferred from this row.",
+      "documentOverflow": false
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "light",
+      "offender": {
+        "tag": "TR",
+        "class": "",
+        "id": "",
+        "right": 659.765625,
+        "text": "\n          Larger Text\n          Supported\n          Text scales with "
+      },
+      "classification": 3,
+      "reason": "Geometric offender heuristic ignores .table-wrap overflow-x:auto; does not establish document overflow or lost content. No failure inferred from this row.",
+      "documentOverflow": false
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "light",
+      "offender": {
+        "tag": "TD",
+        "class": "yes",
+        "id": "",
+        "right": 471.640625,
+        "text": "Supported"
+      },
+      "classification": 3,
+      "reason": "Geometric offender heuristic ignores .table-wrap overflow-x:auto; does not establish document overflow or lost content. No failure inferred from this row.",
+      "documentOverflow": false
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "light",
+      "offender": {
+        "tag": "INPUT",
+        "class": "",
+        "id": "a11y-size",
+        "right": 416,
+        "text": ""
+      },
+      "classification": 2,
+      "reason": "Range min-width:10rem and clipped .a11y-panel are inherited; geometric exposure is not document overflow. Internal clipping remains an inherited defect outside Phase 04.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "light",
+      "offender": {
+        "tag": "TABLE",
+        "class": "",
+        "id": "",
+        "right": 554.671875,
+        "text": "\n  \n    Your DataWhat We Do With ItWho Sees It\n  \n  \n    EmailSign-in,"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "light",
+      "offender": {
+        "tag": "THEAD",
+        "class": "",
+        "id": "",
+        "right": 554.671875,
+        "text": "\n    Your DataWhat We Do With ItWho Sees It\n  "
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "light",
+      "offender": {
+        "tag": "TR",
+        "class": "",
+        "id": "",
+        "right": 554.671875,
+        "text": "Your DataWhat We Do With ItWho Sees It"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "light",
+      "offender": {
+        "tag": "TH",
+        "class": "",
+        "id": "",
+        "right": 425.046875,
+        "text": "What We Do With It"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "light",
+      "offender": {
+        "tag": "TH",
+        "class": "",
+        "id": "",
+        "right": 554.671875,
+        "text": "Who Sees It"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "light",
+      "offender": {
+        "tag": "TBODY",
+        "class": "",
+        "id": "",
+        "right": 554.671875,
+        "text": "\n    EmailSign-in, password reset, optional notificationsOnly you (nev"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "light",
+      "offender": {
+        "tag": "TR",
+        "class": "",
+        "id": "",
+        "right": 554.671875,
+        "text": "EmailSign-in, password reset, optional notificationsOnly you (never vi"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "light",
+      "offender": {
+        "tag": "TD",
+        "class": "",
+        "id": "",
+        "right": 425.046875,
+        "text": "Sign-in, password reset, optional notifications"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "light",
+      "offender": {
+        "tag": "TD",
+        "class": "",
+        "id": "",
+        "right": 554.671875,
+        "text": "Only you (never visible on the map)"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "light",
+      "offender": {
+        "tag": "TR",
+        "class": "",
+        "id": "",
+        "right": 554.671875,
+        "text": "Display nameShown on flags you report/verifyOther app users"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "light",
+      "offender": {
+        "tag": "TD",
+        "class": "",
+        "id": "",
+        "right": 425.046875,
+        "text": "Shown on flags you report/verify"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/support/",
+      "theme": "light",
+      "offender": {
+        "tag": "INPUT",
+        "class": "",
+        "id": "a11y-size",
+        "right": 416,
+        "text": ""
+      },
+      "classification": 2,
+      "reason": "Range min-width:10rem and clipped .a11y-panel are inherited; geometric exposure is not document overflow. Internal clipping remains an inherited defect outside Phase 04.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/support/",
+      "theme": "light",
+      "offender": {
+        "tag": "A",
+        "class": "",
+        "id": "",
+        "right": 434.0625,
+        "text": "support@skypistudio.com"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/support/",
+      "theme": "light",
+      "offender": {
+        "tag": "A",
+        "class": "",
+        "id": "",
+        "right": 421.03125,
+        "text": "support@skypistudio.com"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/terms/",
+      "theme": "light",
+      "offender": {
+        "tag": "INPUT",
+        "class": "",
+        "id": "a11y-size",
+        "right": 416,
+        "text": ""
+      },
+      "classification": 2,
+      "reason": "Range min-width:10rem and clipped .a11y-panel are inherited; geometric exposure is not document overflow. Internal clipping remains an inherited defect outside Phase 04.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/terms/",
+      "theme": "light",
+      "offender": {
+        "tag": "A",
+        "class": "",
+        "id": "",
+        "right": 394.0625,
+        "text": "support@skypistudio.com"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "dark",
+      "offender": {
+        "tag": "INPUT",
+        "class": "",
+        "id": "a11y-size",
+        "right": 416,
+        "text": ""
+      },
+      "classification": 2,
+      "reason": "Range min-width:10rem and clipped .a11y-panel are inherited; geometric exposure is not document overflow. Internal clipping remains an inherited defect outside Phase 04.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "dark",
+      "offender": {
+        "tag": "A",
+        "class": "home-card",
+        "id": "",
+        "right": 484,
+        "text": "\n        Support\n        How the app works, frequently asked questions"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "dark",
+      "offender": {
+        "tag": "H2",
+        "class": "",
+        "id": "",
+        "right": 434,
+        "text": "Support"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "dark",
+      "offender": {
+        "tag": "P",
+        "class": "",
+        "id": "",
+        "right": 434,
+        "text": "How the app works, frequently asked questions, and how to reach us."
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "dark",
+      "offender": {
+        "tag": "A",
+        "class": "home-card",
+        "id": "",
+        "right": 484,
+        "text": "\n        Privacy Policy\n        What we collect (very little), what we"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "dark",
+      "offender": {
+        "tag": "H2",
+        "class": "",
+        "id": "",
+        "right": 434,
+        "text": "Privacy Policy"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "dark",
+      "offender": {
+        "tag": "P",
+        "class": "",
+        "id": "",
+        "right": 434,
+        "text": "What we collect (very little), what we never collect, and your rights."
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "dark",
+      "offender": {
+        "tag": "A",
+        "class": "home-card",
+        "id": "",
+        "right": 484,
+        "text": "\n        Accessibility\n        What the app supports, how we test, and"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "dark",
+      "offender": {
+        "tag": "H2",
+        "class": "",
+        "id": "",
+        "right": 434,
+        "text": "Accessibility"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "dark",
+      "offender": {
+        "tag": "P",
+        "class": "",
+        "id": "",
+        "right": 434,
+        "text": "What the app supports, how we test, and where we still fall short."
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "dark",
+      "offender": {
+        "tag": "A",
+        "class": "home-card",
+        "id": "",
+        "right": 484,
+        "text": "\n        Terms & Community Guidelines\n        What you can post, what "
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "dark",
+      "offender": {
+        "tag": "H2",
+        "class": "",
+        "id": "",
+        "right": 434,
+        "text": "Terms & Community Guidelines"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "dark",
+      "offender": {
+        "tag": "INPUT",
+        "class": "",
+        "id": "a11y-size",
+        "right": 416,
+        "text": ""
+      },
+      "classification": 2,
+      "reason": "Range min-width:10rem and clipped .a11y-panel are inherited; geometric exposure is not document overflow. Internal clipping remains an inherited defect outside Phase 04.",
+      "documentOverflow": false
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "dark",
+      "offender": {
+        "tag": "TABLE",
+        "class": "",
+        "id": "",
+        "right": 659.765625,
+        "text": "\n      Accessibility features supported by the Flagstone iOS app\n     "
+      },
+      "classification": 3,
+      "reason": "Geometric offender heuristic ignores .table-wrap overflow-x:auto; does not establish document overflow or lost content. No failure inferred from this row.",
+      "documentOverflow": false
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "dark",
+      "offender": {
+        "tag": "THEAD",
+        "class": "",
+        "id": "",
+        "right": 659.765625,
+        "text": "\n        FeatureStatusWhat that means here\n      "
+      },
+      "classification": 3,
+      "reason": "Geometric offender heuristic ignores .table-wrap overflow-x:auto; does not establish document overflow or lost content. No failure inferred from this row.",
+      "documentOverflow": false
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "dark",
+      "offender": {
+        "tag": "TR",
+        "class": "",
+        "id": "",
+        "right": 659.765625,
+        "text": "FeatureStatusWhat that means here"
+      },
+      "classification": 3,
+      "reason": "Geometric offender heuristic ignores .table-wrap overflow-x:auto; does not establish document overflow or lost content. No failure inferred from this row.",
+      "documentOverflow": false
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "dark",
+      "offender": {
+        "tag": "TH",
+        "class": "",
+        "id": "",
+        "right": 471.640625,
+        "text": "Status"
+      },
+      "classification": 3,
+      "reason": "Geometric offender heuristic ignores .table-wrap overflow-x:auto; does not establish document overflow or lost content. No failure inferred from this row.",
+      "documentOverflow": false
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "dark",
+      "offender": {
+        "tag": "TH",
+        "class": "",
+        "id": "",
+        "right": 659.765625,
+        "text": "What that means here"
+      },
+      "classification": 3,
+      "reason": "Geometric offender heuristic ignores .table-wrap overflow-x:auto; does not establish document overflow or lost content. No failure inferred from this row.",
+      "documentOverflow": false
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "dark",
+      "offender": {
+        "tag": "TBODY",
+        "class": "",
+        "id": "",
+        "right": 659.765625,
+        "text": "\n        \n          VoiceOver\n          Supported\n          Every cont"
+      },
+      "classification": 3,
+      "reason": "Geometric offender heuristic ignores .table-wrap overflow-x:auto; does not establish document overflow or lost content. No failure inferred from this row.",
+      "documentOverflow": false
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "dark",
+      "offender": {
+        "tag": "TR",
+        "class": "",
+        "id": "",
+        "right": 659.765625,
+        "text": "\n          VoiceOver\n          Supported\n          Every control has a"
+      },
+      "classification": 3,
+      "reason": "Geometric offender heuristic ignores .table-wrap overflow-x:auto; does not establish document overflow or lost content. No failure inferred from this row.",
+      "documentOverflow": false
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "dark",
+      "offender": {
+        "tag": "TD",
+        "class": "yes",
+        "id": "",
+        "right": 471.640625,
+        "text": "Supported"
+      },
+      "classification": 3,
+      "reason": "Geometric offender heuristic ignores .table-wrap overflow-x:auto; does not establish document overflow or lost content. No failure inferred from this row.",
+      "documentOverflow": false
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "dark",
+      "offender": {
+        "tag": "TD",
+        "class": "",
+        "id": "",
+        "right": 659.765625,
+        "text": "Every control has a spoken label, role, and where useful a hint. Statu"
+      },
+      "classification": 3,
+      "reason": "Geometric offender heuristic ignores .table-wrap overflow-x:auto; does not establish document overflow or lost content. No failure inferred from this row.",
+      "documentOverflow": false
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "dark",
+      "offender": {
+        "tag": "TR",
+        "class": "",
+        "id": "",
+        "right": 659.765625,
+        "text": "\n          Larger Text\n          Supported\n          Text scales with "
+      },
+      "classification": 3,
+      "reason": "Geometric offender heuristic ignores .table-wrap overflow-x:auto; does not establish document overflow or lost content. No failure inferred from this row.",
+      "documentOverflow": false
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "dark",
+      "offender": {
+        "tag": "TD",
+        "class": "yes",
+        "id": "",
+        "right": 471.640625,
+        "text": "Supported"
+      },
+      "classification": 3,
+      "reason": "Geometric offender heuristic ignores .table-wrap overflow-x:auto; does not establish document overflow or lost content. No failure inferred from this row.",
+      "documentOverflow": false
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "dark",
+      "offender": {
+        "tag": "INPUT",
+        "class": "",
+        "id": "a11y-size",
+        "right": 416,
+        "text": ""
+      },
+      "classification": 2,
+      "reason": "Range min-width:10rem and clipped .a11y-panel are inherited; geometric exposure is not document overflow. Internal clipping remains an inherited defect outside Phase 04.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "dark",
+      "offender": {
+        "tag": "TABLE",
+        "class": "",
+        "id": "",
+        "right": 554.671875,
+        "text": "\n  \n    Your DataWhat We Do With ItWho Sees It\n  \n  \n    EmailSign-in,"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "dark",
+      "offender": {
+        "tag": "THEAD",
+        "class": "",
+        "id": "",
+        "right": 554.671875,
+        "text": "\n    Your DataWhat We Do With ItWho Sees It\n  "
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "dark",
+      "offender": {
+        "tag": "TR",
+        "class": "",
+        "id": "",
+        "right": 554.671875,
+        "text": "Your DataWhat We Do With ItWho Sees It"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "dark",
+      "offender": {
+        "tag": "TH",
+        "class": "",
+        "id": "",
+        "right": 425.046875,
+        "text": "What We Do With It"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "dark",
+      "offender": {
+        "tag": "TH",
+        "class": "",
+        "id": "",
+        "right": 554.671875,
+        "text": "Who Sees It"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "dark",
+      "offender": {
+        "tag": "TBODY",
+        "class": "",
+        "id": "",
+        "right": 554.671875,
+        "text": "\n    EmailSign-in, password reset, optional notificationsOnly you (nev"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "dark",
+      "offender": {
+        "tag": "TR",
+        "class": "",
+        "id": "",
+        "right": 554.671875,
+        "text": "EmailSign-in, password reset, optional notificationsOnly you (never vi"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "dark",
+      "offender": {
+        "tag": "TD",
+        "class": "",
+        "id": "",
+        "right": 425.046875,
+        "text": "Sign-in, password reset, optional notifications"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "dark",
+      "offender": {
+        "tag": "TD",
+        "class": "",
+        "id": "",
+        "right": 554.671875,
+        "text": "Only you (never visible on the map)"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "dark",
+      "offender": {
+        "tag": "TR",
+        "class": "",
+        "id": "",
+        "right": 554.671875,
+        "text": "Display nameShown on flags you report/verifyOther app users"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "dark",
+      "offender": {
+        "tag": "TD",
+        "class": "",
+        "id": "",
+        "right": 425.046875,
+        "text": "Shown on flags you report/verify"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/support/",
+      "theme": "dark",
+      "offender": {
+        "tag": "INPUT",
+        "class": "",
+        "id": "a11y-size",
+        "right": 416,
+        "text": ""
+      },
+      "classification": 2,
+      "reason": "Range min-width:10rem and clipped .a11y-panel are inherited; geometric exposure is not document overflow. Internal clipping remains an inherited defect outside Phase 04.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/support/",
+      "theme": "dark",
+      "offender": {
+        "tag": "A",
+        "class": "",
+        "id": "",
+        "right": 434.0625,
+        "text": "support@skypistudio.com"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/support/",
+      "theme": "dark",
+      "offender": {
+        "tag": "A",
+        "class": "",
+        "id": "",
+        "right": 421.03125,
+        "text": "support@skypistudio.com"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/terms/",
+      "theme": "dark",
+      "offender": {
+        "tag": "INPUT",
+        "class": "",
+        "id": "a11y-size",
+        "right": 416,
+        "text": ""
+      },
+      "classification": 2,
+      "reason": "Range min-width:10rem and clipped .a11y-panel are inherited; geometric exposure is not document overflow. Internal clipping remains an inherited defect outside Phase 04.",
+      "documentOverflow": true
+    },
+    {
+      "route": "/flagstone/terms/",
+      "theme": "dark",
+      "offender": {
+        "tag": "A",
+        "class": "",
+        "id": "",
+        "right": 394.0625,
+        "text": "support@skypistudio.com"
+      },
+      "classification": 2,
+      "reason": "Inherited grid minimum, unwrapped privacy table, or unbreakable mail link; baseline overflow reproduced, all relevant rules/markup unchanged.",
+      "documentOverflow": true
+    }
+  ],
+  "contrastRemaining": 26,
+  "newContrastNodes": 0,
+  "ownedBlockingDefects": 0,
+  "genuinePhase04Regressions": 0,
+  "ownedResolved": "Five inherited header nodes were Phase 04-owned and repaired in the candidate; 5.644812255597836:1 light, 6.735135070943732:1 dark. No repeat repair."
+}
