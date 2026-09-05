@@ -151,11 +151,12 @@ summary:focus-visible {
 /* ---------------- Page chrome ---------------- */
 
 header.page {
-  background: var(--brand);
+  background: var(--brand-deep);
   color: var(--brand-ink);
   padding: 0 0 2rem;
   text-align: center;
 }
+:root[data-theme="dark"] header.page { background: var(--brand); }
 
 /* Masthead — logo + primary nav, on every page. */
 .masthead {
