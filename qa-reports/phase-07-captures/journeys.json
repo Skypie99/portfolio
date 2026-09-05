@@ -1,0 +1,110 @@
+{
+  "sourceCommit": "d1c15f9cd33051edff3f053ad20c4b2ce0c1cfe4",
+  "viewport": "375x812",
+  "steps": [
+    {
+      "step": "start",
+      "url": "http://127.0.0.1:3028/?phase07=history-start",
+      "hash": "",
+      "heroTop": 2436,
+      "roleTop": 2970,
+      "roleFraction": 3.6576354679802954,
+      "scrollMarginTop": "-220px",
+      "activeTag": "BODY",
+      "focusedHero": false,
+      "heroFocusVisible": false,
+      "documentScrollWidth": 375,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      }
+    },
+    {
+      "step": "skip",
+      "url": "http://127.0.0.1:3028/?phase07=history-start",
+      "hash": "",
+      "heroTop": -220,
+      "roleTop": 314,
+      "roleFraction": 0.3866995073891626,
+      "scrollMarginTop": "-220px",
+      "activeTag": "DIV",
+      "focusedHero": true,
+      "heroFocusVisible": false,
+      "documentScrollWidth": 375,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      }
+    },
+    {
+      "step": "back",
+      "navigation": "none",
+      "url": "http://127.0.0.1:3028/?phase07=history-start",
+      "hash": "",
+      "heroTop": 2436,
+      "roleTop": 2970,
+      "roleFraction": 3.6576354679802954,
+      "scrollMarginTop": "-220px",
+      "activeTag": "DIV",
+      "focusedHero": true,
+      "heroFocusVisible": false,
+      "documentScrollWidth": 375,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      }
+    },
+    {
+      "step": "forward",
+      "navigation": "none",
+      "url": "http://127.0.0.1:3028/?phase07=history-start",
+      "hash": "",
+      "heroTop": -220,
+      "roleTop": 314,
+      "roleFraction": 0.3866995073891626,
+      "scrollMarginTop": "-220px",
+      "activeTag": "DIV",
+      "focusedHero": true,
+      "heroFocusVisible": false,
+      "documentScrollWidth": 375,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      }
+    },
+    {
+      "step": "reload",
+      "url": "http://127.0.0.1:3028/?phase07=history-start",
+      "hash": "",
+      "heroTop": -220,
+      "roleTop": 314,
+      "roleFraction": 0.3866995073891626,
+      "scrollMarginTop": "-220px",
+      "activeTag": "BODY",
+      "focusedHero": false,
+      "heroFocusVisible": false,
+      "documentScrollWidth": 375,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      }
+    },
+    {
+      "step": "deep-link",
+      "url": "http://127.0.0.1:3028/?phase07=deep-link",
+      "hash": "",
+      "heroTop": -220,
+      "roleTop": 314,
+      "roleFraction": 0.3866995073891626,
+      "scrollMarginTop": "-220px",
+      "activeTag": "DIV",
+      "focusedHero": true,
+      "heroFocusVisible": true,
+      "documentScrollWidth": 375,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      }
+    }
+  ]
+}
