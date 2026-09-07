@@ -1,3 +1,4 @@
+// @vitest-environment node
 /**
  * AnimatedCertGrid floor tests — defects repair R2 (2026-06-12).
  *

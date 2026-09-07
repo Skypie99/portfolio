@@ -1,0 +1,8 @@
+{
+  "testReact": "18.3.1",
+  "next": "15.5.25",
+  "nextAppRouterAliases": "next/dist/build/create-compiler-aliases.js:251-263",
+  "nextBundledReactClientVersion": "19.2.0-canary-0bdb9206-20250818",
+  "nativeFetchPriorityMapping": "next/dist/compiled/react-dom/cjs/react-dom-client.development.js:22392 fetchpriority -> fetchPriority",
+  "disposition": "Product source camelCase preserved; package React18 Vitest mismatch retained without suppression; owner test-runtime alignment decision pending."
+}
