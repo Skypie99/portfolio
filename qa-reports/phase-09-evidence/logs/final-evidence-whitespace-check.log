@@ -1,0 +1,12 @@
+qa-reports/PHASE-09C_PERFORMANCE_INTEGRITY_RECEIPT.md:95: new blank line at EOF.
+qa-reports/PHASE-09_TECHNICAL_INTEGRITY_RECEIPT.md:3: trailing whitespace.
++**TECHNICAL_INTEGRITY_GATE: HOLD**  
+qa-reports/PHASE-09_TECHNICAL_INTEGRITY_RECEIPT.md:4: trailing whitespace.
++**SAFE_TO_INTEGRATE: NO — full phase acceptance withheld**  
+qa-reports/phase-09-evidence/logs/pre-canonical-build-final.log:24: trailing whitespace.
++   Generating static pages (6/26) 
+qa-reports/phase-09-evidence/logs/pre-canonical-build-final.log:25: trailing whitespace.
++   Generating static pages (12/26) 
+qa-reports/phase-09-evidence/logs/pre-canonical-build-final.log:26: trailing whitespace.
++   Generating static pages (19/26) 
+qa-reports/phase-09-evidence/logs/pre-canonical-tests-final.log:133: new blank line at EOF.

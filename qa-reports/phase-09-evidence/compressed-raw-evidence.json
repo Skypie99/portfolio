@@ -1,0 +1,30 @@
+[
+  {
+    "file": "performance.json.gz",
+    "uncompressedBytes": 6485537,
+    "uncompressedSHA256": "44f39bc07f5156470e7fe9863943fc27d4a78648976aa0c9c6a3c98111358058",
+    "compressedBytes": 377032,
+    "compressedSHA256": "4974c258e2cea22c21fb88ad824d68ef31c00aeb99382860a19bc20e7b2f8004"
+  },
+  {
+    "file": "performance-final-only.json.gz",
+    "uncompressedBytes": 2970163,
+    "uncompressedSHA256": "710e753928cd335156e89294578197699675a55223ea628cf942f8a9628ab1c6",
+    "compressedBytes": 171382,
+    "compressedSHA256": "d211e929e53fd9303ca4cb76483b4dcd6463f367d79172b82db29195165c5cba"
+  },
+  {
+    "file": "performance-home-confirmation.json.gz",
+    "uncompressedBytes": 613620,
+    "uncompressedSHA256": "0a5e8b967e1e074ffe41c6fb3494ee50795ba22a8cca83e782e91e6eba893a48",
+    "compressedBytes": 37011,
+    "compressedSHA256": "8da03acc843e860b23f32043adaa94dd03a8e20514f190e24588525e4df66d59"
+  },
+  {
+    "file": "pre-canonical-performance.json.gz",
+    "uncompressedBytes": 5877129,
+    "uncompressedSHA256": "55d883a5e6768ea055584b7cc34013c231825ae12c60ba418f7d57a14382615f",
+    "compressedBytes": 345187,
+    "compressedSHA256": "43050032dfd76d1df13b5bf86b54237c946c3a9d9f5bc10598b4935a8116b374"
+  }
+]

@@ -1,0 +1,79 @@
+{
+  "destination": "qa-reports/phase-09-evidence/artifact.json",
+  "files": 350,
+  "routes": 26,
+  "issues": [
+    {
+      "route": "/archive/",
+      "kind": "h1-count",
+      "value": 0
+    }
+  ],
+  "artifactDigest": "444c1108258451fa7917c0266e384e51c6e970f0158bc008a4183f7cbcd43c86",
+  "sums": {
+    "(extensionless)": {
+      "count": 4,
+      "bytes": 141207
+    },
+    ".html": {
+      "count": 26,
+      "bytes": 1783633
+    },
+    ".js": {
+      "count": 45,
+      "bytes": 1485124
+    },
+    ".css": {
+      "count": 5,
+      "bytes": 134079
+    },
+    ".woff2": {
+      "count": 16,
+      "bytes": 308960
+    },
+    ".txt": {
+      "count": 18,
+      "bytes": 877306
+    },
+    ".png": {
+      "count": 13,
+      "bytes": 744368
+    },
+    ".json": {
+      "count": 3,
+      "bytes": 16206
+    },
+    ".xml": {
+      "count": 2,
+      "bytes": 3539
+    },
+    ".svg": {
+      "count": 14,
+      "bytes": 35045
+    },
+    ".avif": {
+      "count": 83,
+      "bytes": 2706955
+    },
+    ".webp": {
+      "count": 84,
+      "bytes": 4181900
+    },
+    ".md": {
+      "count": 1,
+      "bytes": 2768
+    },
+    ".jpg": {
+      "count": 17,
+      "bytes": 657117
+    },
+    ".mp4": {
+      "count": 10,
+      "bytes": 19456874
+    },
+    ".webm": {
+      "count": 9,
+      "bytes": 1892155
+    }
+  }
+}

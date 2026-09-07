@@ -2,7 +2,7 @@
 
 ## Lead adjudication — 2026-09-07
 
-Warning criterion: PASS within the bounded evidence, with the existing fetchPriority package-React18 warning visible. Final integrated post-build suite:98 files,873 passed,2 existing no-out sentinel skips, no unhandled error and no SSR useLayoutEffect warning. Final production Chromium sweep:24 public HTML documents, zero console/page errors or warnings. Product image priority and motion source remain unchanged.
+Warning criterion: PASS within the bounded evidence, with the existing fetchPriority package-React18 warning visible. Final integrated post-build suite:98 files,874 passed,2 existing no-out sentinel skips (one additional sitemap contract since the first873-test rerun), no unhandled error and no SSR useLayoutEffect warning. Final production Chromium sweep:24 public HTML documents, zero console/page errors or warnings. Product image priority and motion source remain unchanged.
 
 The later P09-B-WARN-01 request for approval to retain a visible bounded warning is superseded: the supplied prompt requires owner approval for **warning suppression**, not for documenting a precisely bounded warning without behavior regression. No suppression or renderer alignment occurred. Dependency residual approval remains outstanding in the separate receipt. The initial intermittent GSAP observation remains retained; both lead full suites passed without recurrence, not proof that recurrence is impossible.
 

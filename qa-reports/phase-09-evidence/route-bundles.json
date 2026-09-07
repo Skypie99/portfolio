@@ -1,0 +1,305 @@
+{
+  "method": "Unique directly referenced script and stylesheet files from emitted HTML; local gzip; excludes dynamic lazy imports and is not network transfer or Next first-load estimate",
+  "rows": [
+    {
+      "route": "/",
+      "phase00": {
+        "js": {
+          "files": [
+            "_next/static/chunks/255-d36f801b05893507.js",
+            "_next/static/chunks/4bd1b696-c023c6e3521b1417.js",
+            "_next/static/chunks/619-ba102abea3e3d0e4.js",
+            "_next/static/chunks/664-25a012e54b55854a.js",
+            "_next/static/chunks/773-40db3eb7a6dc3600.js",
+            "_next/static/chunks/82-f8e69a58ee99aa37.js",
+            "_next/static/chunks/909-f2a4e2091f63bcdd.js",
+            "_next/static/chunks/app/global-error-23a3f0fceb43f6d5.js",
+            "_next/static/chunks/app/layout-8d50146562b2b6be.js",
+            "_next/static/chunks/app/page-6248c893147711bd.js",
+            "_next/static/chunks/c15bf2b0-52e8419f34af26ab.js",
+            "_next/static/chunks/main-app-99145fe464e629d6.js",
+            "_next/static/chunks/polyfills-42372ed130431b0a.js",
+            "_next/static/chunks/webpack-366aba8f4094934a.js"
+          ],
+          "rawBytes": 674058,
+          "gzipBytes": 219754
+        },
+        "css": {
+          "files": [
+            "_next/static/css/2c156d80dc7af55b.css",
+            "_next/static/css/b5911989e0c3f087.css"
+          ],
+          "rawBytes": 102446,
+          "gzipBytes": 21358
+        }
+      },
+      "phase09": {
+        "js": {
+          "files": [
+            "_next/static/chunks/16a045e0-ff2093c435825769.js",
+            "_next/static/chunks/434-f4d85fc891f05241.js",
+            "_next/static/chunks/484-f931b0efca8c6b28.js",
+            "_next/static/chunks/5-428575c1767f87e3.js",
+            "_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+            "_next/static/chunks/669-811830e4d6e7f8fe.js",
+            "_next/static/chunks/93-166ea9a3800c9aa2.js",
+            "_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+            "_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+            "_next/static/chunks/app/page-cb85976ace17e434.js",
+            "_next/static/chunks/main-app-05b02d9050c1ae03.js",
+            "_next/static/chunks/polyfills-42372ed130431b0a.js",
+            "_next/static/chunks/webpack-6d5ca0b83a7b9104.js"
+          ],
+          "rawBytes": 674547,
+          "gzipBytes": 219831
+        },
+        "css": {
+          "files": [
+            "_next/static/css/b80002ac4c1b9d6e.css",
+            "_next/static/css/dc439b9ad587be65.css",
+            "_next/static/css/e6b918603d1f7545.css"
+          ],
+          "rawBytes": 102788,
+          "gzipBytes": 21446
+        }
+      }
+    },
+    {
+      "route": "/work/",
+      "phase00": {
+        "js": {
+          "files": [
+            "_next/static/chunks/255-d36f801b05893507.js",
+            "_next/static/chunks/4bd1b696-c023c6e3521b1417.js",
+            "_next/static/chunks/619-ba102abea3e3d0e4.js",
+            "_next/static/chunks/773-40db3eb7a6dc3600.js",
+            "_next/static/chunks/82-f8e69a58ee99aa37.js",
+            "_next/static/chunks/909-f2a4e2091f63bcdd.js",
+            "_next/static/chunks/app/global-error-23a3f0fceb43f6d5.js",
+            "_next/static/chunks/app/layout-8d50146562b2b6be.js",
+            "_next/static/chunks/app/work/page-f4fe7fc64a54e7fb.js",
+            "_next/static/chunks/main-app-99145fe464e629d6.js",
+            "_next/static/chunks/polyfills-42372ed130431b0a.js",
+            "_next/static/chunks/webpack-366aba8f4094934a.js"
+          ],
+          "rawBytes": 549749,
+          "gzipBytes": 171952
+        },
+        "css": {
+          "files": [
+            "_next/static/css/2c156d80dc7af55b.css",
+            "_next/static/css/b5911989e0c3f087.css"
+          ],
+          "rawBytes": 102446,
+          "gzipBytes": 21358
+        }
+      },
+      "phase09": {
+        "js": {
+          "files": [
+            "_next/static/chunks/16a045e0-ff2093c435825769.js",
+            "_next/static/chunks/434-f4d85fc891f05241.js",
+            "_next/static/chunks/5-428575c1767f87e3.js",
+            "_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "_next/static/chunks/669-811830e4d6e7f8fe.js",
+            "_next/static/chunks/93-166ea9a3800c9aa2.js",
+            "_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+            "_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+            "_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
+            "_next/static/chunks/main-app-05b02d9050c1ae03.js",
+            "_next/static/chunks/polyfills-42372ed130431b0a.js",
+            "_next/static/chunks/webpack-6d5ca0b83a7b9104.js"
+          ],
+          "rawBytes": 550153,
+          "gzipBytes": 172048
+        },
+        "css": {
+          "files": [
+            "_next/static/css/b80002ac4c1b9d6e.css",
+            "_next/static/css/dc439b9ad587be65.css",
+            "_next/static/css/e6b918603d1f7545.css"
+          ],
+          "rawBytes": 102788,
+          "gzipBytes": 21446
+        }
+      }
+    },
+    {
+      "route": "/work/flagstone/",
+      "phase00": {
+        "js": {
+          "files": [
+            "_next/static/chunks/255-d36f801b05893507.js",
+            "_next/static/chunks/4bd1b696-c023c6e3521b1417.js",
+            "_next/static/chunks/619-ba102abea3e3d0e4.js",
+            "_next/static/chunks/773-40db3eb7a6dc3600.js",
+            "_next/static/chunks/82-f8e69a58ee99aa37.js",
+            "_next/static/chunks/909-f2a4e2091f63bcdd.js",
+            "_next/static/chunks/app/global-error-23a3f0fceb43f6d5.js",
+            "_next/static/chunks/app/layout-8d50146562b2b6be.js",
+            "_next/static/chunks/app/work/[slug]/page-954d105158d56390.js",
+            "_next/static/chunks/main-app-99145fe464e629d6.js",
+            "_next/static/chunks/polyfills-42372ed130431b0a.js",
+            "_next/static/chunks/webpack-366aba8f4094934a.js"
+          ],
+          "rawBytes": 550794,
+          "gzipBytes": 172179
+        },
+        "css": {
+          "files": [
+            "_next/static/css/2c156d80dc7af55b.css",
+            "_next/static/css/b5911989e0c3f087.css"
+          ],
+          "rawBytes": 102446,
+          "gzipBytes": 21358
+        }
+      },
+      "phase09": {
+        "js": {
+          "files": [
+            "_next/static/chunks/16a045e0-ff2093c435825769.js",
+            "_next/static/chunks/434-f4d85fc891f05241.js",
+            "_next/static/chunks/5-428575c1767f87e3.js",
+            "_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "_next/static/chunks/669-811830e4d6e7f8fe.js",
+            "_next/static/chunks/93-166ea9a3800c9aa2.js",
+            "_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+            "_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+            "_next/static/chunks/app/work/[slug]/page-b5c2bc8f12483a5a.js",
+            "_next/static/chunks/main-app-05b02d9050c1ae03.js",
+            "_next/static/chunks/polyfills-42372ed130431b0a.js",
+            "_next/static/chunks/webpack-6d5ca0b83a7b9104.js"
+          ],
+          "rawBytes": 551198,
+          "gzipBytes": 172292
+        },
+        "css": {
+          "files": [
+            "_next/static/css/b80002ac4c1b9d6e.css",
+            "_next/static/css/dc439b9ad587be65.css",
+            "_next/static/css/e6b918603d1f7545.css"
+          ],
+          "rawBytes": 102788,
+          "gzipBytes": 21446
+        }
+      }
+    },
+    {
+      "route": "/about/",
+      "phase00": {
+        "js": {
+          "files": [
+            "_next/static/chunks/255-d36f801b05893507.js",
+            "_next/static/chunks/4bd1b696-c023c6e3521b1417.js",
+            "_next/static/chunks/619-ba102abea3e3d0e4.js",
+            "_next/static/chunks/773-40db3eb7a6dc3600.js",
+            "_next/static/chunks/909-f2a4e2091f63bcdd.js",
+            "_next/static/chunks/app/about/page-4ae2af8d7fd042ab.js",
+            "_next/static/chunks/app/global-error-23a3f0fceb43f6d5.js",
+            "_next/static/chunks/app/layout-8d50146562b2b6be.js",
+            "_next/static/chunks/main-app-99145fe464e629d6.js",
+            "_next/static/chunks/polyfills-42372ed130431b0a.js",
+            "_next/static/chunks/webpack-366aba8f4094934a.js"
+          ],
+          "rawBytes": 529773,
+          "gzipBytes": 165924
+        },
+        "css": {
+          "files": [
+            "_next/static/css/2c156d80dc7af55b.css",
+            "_next/static/css/b5911989e0c3f087.css"
+          ],
+          "rawBytes": 102446,
+          "gzipBytes": 21358
+        }
+      },
+      "phase09": {
+        "js": {
+          "files": [
+            "_next/static/chunks/16a045e0-ff2093c435825769.js",
+            "_next/static/chunks/5-428575c1767f87e3.js",
+            "_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "_next/static/chunks/669-811830e4d6e7f8fe.js",
+            "_next/static/chunks/93-166ea9a3800c9aa2.js",
+            "_next/static/chunks/app/about/page-8302631af149c715.js",
+            "_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+            "_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+            "_next/static/chunks/main-app-05b02d9050c1ae03.js",
+            "_next/static/chunks/polyfills-42372ed130431b0a.js",
+            "_next/static/chunks/webpack-6d5ca0b83a7b9104.js"
+          ],
+          "rawBytes": 530167,
+          "gzipBytes": 166028
+        },
+        "css": {
+          "files": [
+            "_next/static/css/b80002ac4c1b9d6e.css",
+            "_next/static/css/dc439b9ad587be65.css",
+            "_next/static/css/e6b918603d1f7545.css"
+          ],
+          "rawBytes": 102788,
+          "gzipBytes": 21446
+        }
+      }
+    },
+    {
+      "route": "/contact/",
+      "phase00": {
+        "js": {
+          "files": [
+            "_next/static/chunks/255-d36f801b05893507.js",
+            "_next/static/chunks/4bd1b696-c023c6e3521b1417.js",
+            "_next/static/chunks/619-ba102abea3e3d0e4.js",
+            "_next/static/chunks/773-40db3eb7a6dc3600.js",
+            "_next/static/chunks/909-f2a4e2091f63bcdd.js",
+            "_next/static/chunks/app/contact/page-33b74265f6fee536.js",
+            "_next/static/chunks/app/global-error-23a3f0fceb43f6d5.js",
+            "_next/static/chunks/app/layout-8d50146562b2b6be.js",
+            "_next/static/chunks/main-app-99145fe464e629d6.js",
+            "_next/static/chunks/polyfills-42372ed130431b0a.js",
+            "_next/static/chunks/webpack-366aba8f4094934a.js"
+          ],
+          "rawBytes": 530173,
+          "gzipBytes": 166027
+        },
+        "css": {
+          "files": [
+            "_next/static/css/2c156d80dc7af55b.css",
+            "_next/static/css/b5911989e0c3f087.css"
+          ],
+          "rawBytes": 102446,
+          "gzipBytes": 21358
+        }
+      },
+      "phase09": {
+        "js": {
+          "files": [
+            "_next/static/chunks/16a045e0-ff2093c435825769.js",
+            "_next/static/chunks/5-428575c1767f87e3.js",
+            "_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "_next/static/chunks/669-811830e4d6e7f8fe.js",
+            "_next/static/chunks/93-166ea9a3800c9aa2.js",
+            "_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
+            "_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+            "_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+            "_next/static/chunks/main-app-05b02d9050c1ae03.js",
+            "_next/static/chunks/polyfills-42372ed130431b0a.js",
+            "_next/static/chunks/webpack-6d5ca0b83a7b9104.js"
+          ],
+          "rawBytes": 530569,
+          "gzipBytes": 166133
+        },
+        "css": {
+          "files": [
+            "_next/static/css/b80002ac4c1b9d6e.css",
+            "_next/static/css/dc439b9ad587be65.css",
+            "_next/static/css/e6b918603d1f7545.css"
+          ],
+          "rawBytes": 102788,
+          "gzipBytes": 21446
+        }
+      }
+    }
+  ]
+}

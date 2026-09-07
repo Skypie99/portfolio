@@ -1,0 +1,3021 @@
+{
+  "metadata": {
+    "date": "2026-09-07T11:31:39.868Z",
+    "browser": "149.0.7827.55",
+    "candidateArtifactDigest": "aba823c2678fc2dc793922c207e1426d40f0df5b981c99060be64645d2abddab",
+    "candidateSourceSHA": "34cdd66fdb376d33fb83a576163a5bb74d4da71c",
+    "mode": "same-session sequential comparison after final canonical rebuild",
+    "method": "5 seconds after load; no scroll or interaction; normal motion; light OS theme; fixed-window long-task excess above 50ms after FCP (not Lighthouse TBT/INP); ResourceTiming totals exclude main document, matching Phase00 definition; local uncompressed static server with 1h cache; fresh=new context, warm=reload in same context",
+    "desktop": "1440x900 DPR1, unthrottled loopback and CPU",
+    "mobile": "390x844 DPR3 mobile touch, 4x CPU slowdown, 150ms latency, 1.6Mbps down/750Kbps up via CDP",
+    "iterations": 3,
+    "baselineMetadata": {
+      "date": "2026-09-07T11:13:06.602Z",
+      "browser": "149.0.7827.55",
+      "method": "5 seconds after load; no scroll or interaction; normal motion; light OS theme; fixed-window long-task excess above 50ms after FCP (not Lighthouse TBT/INP); ResourceTiming totals exclude main document, matching Phase00 definition; local uncompressed static server with 1h cache; fresh=new context, warm=reload in same context",
+      "desktop": "1440x900 DPR1, unthrottled loopback and CPU",
+      "mobile": "390x844 DPR3 mobile touch, 4x CPU slowdown, 150ms latency, 1.6Mbps down/750Kbps up via CDP",
+      "iterations": 3
+    },
+    "baselineSourceSHA": "19d946c9c48b325bce5d3a9f292d2cb48450cf01",
+    "baselineArtifactDigest": "f89fe2d42b4e585b609d9d8fe091c571c1bd50068edeca9a6b501aa131525971",
+    "note": "Reuse sixty exact Phase00 baseline rows from prior interleaved run; sixty fresh final-candidate rows after canonical rebuild. Pre-canonical candidate rows remain in separate historical file and are excluded from final results. Added twelve paired mobile-Home confirmation rows after a long-task outlier; six repetitions for mobile Home, three for all other groups. No rows discarded.",
+    "confirmationMetadata": {
+      "date": "2026-09-07T11:40:30.261Z",
+      "browser": "149.0.7827.55",
+      "candidateArtifactDigest": "aba823c2678fc2dc793922c207e1426d40f0df5b981c99060be64645d2abddab",
+      "candidateSourceSHA": "34cdd66fdb376d33fb83a576163a5bb74d4da71c",
+      "mode": "home-mobile-paired",
+      "method": "5 seconds after load; no scroll or interaction; normal motion; light OS theme; fixed-window long-task excess above 50ms after FCP (not Lighthouse TBT/INP); ResourceTiming totals exclude main document, matching Phase00 definition; local uncompressed static server with 1h cache; fresh=new context, warm=reload in same context",
+      "desktop": "1440x900 DPR1, unthrottled loopback and CPU",
+      "mobile": "390x844 DPR3 mobile touch, 4x CPU slowdown, 150ms latency, 1.6Mbps down/750Kbps up via CDP",
+      "iterations": 3
+    }
+  },
+  "cellCount": 132,
+  "groups": [
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "route": "/",
+      "device": "desktop",
+      "condition": "fresh",
+      "count": 3,
+      "lcp": {
+        "median": 272,
+        "min": 252,
+        "max": 284
+      },
+      "cls": {
+        "median": 9.769643775720166e-06,
+        "min": 9.769643775720166e-06,
+        "max": 9.769643775720166e-06
+      },
+      "longTaskExcessMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requestCount": {
+        "median": 33,
+        "min": 33,
+        "max": 33
+      },
+      "transferBytes": {
+        "median": 1498116,
+        "min": 1498116,
+        "max": 1498116
+      },
+      "encodedBytes": {
+        "median": 1636208,
+        "min": 1636208,
+        "max": 1636208
+      },
+      "cachedResourceCount": {
+        "median": 1,
+        "min": 1,
+        "max": 1
+      },
+      "responseStartMs": {
+        "median": 7.5999999940395355,
+        "min": 3.9000000059604645,
+        "max": 32.400000005960464
+      },
+      "domContentLoadedMs": {
+        "median": 62.29999998211861,
+        "min": 49,
+        "max": 189
+      },
+      "loadMs": {
+        "median": 189.09999999403954,
+        "min": 155.80000001192093,
+        "max": 191.7999999821186
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "route": "/",
+      "device": "desktop",
+      "condition": "warm",
+      "count": 3,
+      "lcp": {
+        "median": 136,
+        "min": 136,
+        "max": 172
+      },
+      "cls": {
+        "median": 9.769643775720166e-06,
+        "min": 9.769643775720166e-06,
+        "max": 9.769643775720166e-06
+      },
+      "longTaskExcessMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requestCount": {
+        "median": 33,
+        "min": 33,
+        "max": 33
+      },
+      "transferBytes": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "encodedBytes": {
+        "median": 1488516,
+        "min": 1488516,
+        "max": 1488516
+      },
+      "cachedResourceCount": {
+        "median": 32,
+        "min": 32,
+        "max": 32
+      },
+      "responseStartMs": {
+        "median": 1.9000000059604645,
+        "min": 1.9000000059604645,
+        "max": 2.199999988079071
+      },
+      "domContentLoadedMs": {
+        "median": 47.20000001788139,
+        "min": 45.69999998807907,
+        "max": 47.80000001192093
+      },
+      "loadMs": {
+        "median": 61.30000001192093,
+        "min": 59.79999998211861,
+        "max": 63.599999994039536
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "route": "/work/",
+      "device": "desktop",
+      "condition": "fresh",
+      "count": 3,
+      "lcp": {
+        "median": 140,
+        "min": 136,
+        "max": 252
+      },
+      "cls": {
+        "median": 9.769643775720166e-06,
+        "min": 0,
+        "max": 9.769643775720166e-06
+      },
+      "longTaskExcessMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requestCount": {
+        "median": 34,
+        "min": 34,
+        "max": 34
+      },
+      "transferBytes": {
+        "median": 1334172,
+        "min": 1334172,
+        "max": 1334172
+      },
+      "encodedBytes": {
+        "median": 1323972,
+        "min": 1323972,
+        "max": 1323972
+      },
+      "cachedResourceCount": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "responseStartMs": {
+        "median": 3,
+        "min": 2.600000023841858,
+        "max": 11.199999988079071
+      },
+      "domContentLoadedMs": {
+        "median": 52.19999998807907,
+        "min": 43.60000002384186,
+        "max": 66.39999997615814
+      },
+      "loadMs": {
+        "median": 107.7000000178814,
+        "min": 101.19999998807907,
+        "max": 217.5
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "route": "/work/",
+      "device": "desktop",
+      "condition": "warm",
+      "count": 3,
+      "lcp": {
+        "median": 152,
+        "min": 128,
+        "max": 164
+      },
+      "cls": {
+        "median": 9.769643775720166e-06,
+        "min": 0,
+        "max": 9.769643775720166e-06
+      },
+      "longTaskExcessMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requestCount": {
+        "median": 34,
+        "min": 34,
+        "max": 34
+      },
+      "transferBytes": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "encodedBytes": {
+        "median": 1323972,
+        "min": 1323972,
+        "max": 1323972
+      },
+      "cachedResourceCount": {
+        "median": 34,
+        "min": 34,
+        "max": 34
+      },
+      "responseStartMs": {
+        "median": 1.7000000178813934,
+        "min": 1.5999999940395355,
+        "max": 2.7999999821186066
+      },
+      "domContentLoadedMs": {
+        "median": 56.29999998211861,
+        "min": 50.69999998807907,
+        "max": 56.30000001192093
+      },
+      "loadMs": {
+        "median": 71.40000000596046,
+        "min": 69.69999998807907,
+        "max": 77.89999997615814
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "route": "/work/flagstone/",
+      "device": "desktop",
+      "condition": "fresh",
+      "count": 3,
+      "lcp": {
+        "median": 216,
+        "min": 188,
+        "max": 272
+      },
+      "cls": {
+        "median": 0.0012997089317960176,
+        "min": 0.0012997089317960176,
+        "max": 0.0012997089317960176
+      },
+      "longTaskExcessMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requestCount": {
+        "median": 31,
+        "min": 31,
+        "max": 31
+      },
+      "transferBytes": {
+        "median": 1258795,
+        "min": 1258795,
+        "max": 1258795
+      },
+      "encodedBytes": {
+        "median": 1249495,
+        "min": 1249495,
+        "max": 1249495
+      },
+      "cachedResourceCount": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "responseStartMs": {
+        "median": 3.899999976158142,
+        "min": 2.9000000059604645,
+        "max": 6.299999982118607
+      },
+      "domContentLoadedMs": {
+        "median": 55.099999994039536,
+        "min": 50.599999994039536,
+        "max": 69
+      },
+      "loadMs": {
+        "median": 163,
+        "min": 123.5,
+        "max": 211.2999999821186
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "route": "/work/flagstone/",
+      "device": "desktop",
+      "condition": "warm",
+      "count": 3,
+      "lcp": {
+        "median": 140,
+        "min": 132,
+        "max": 164
+      },
+      "cls": {
+        "median": 0.0012997089317960176,
+        "min": 0.0012997089317960176,
+        "max": 0.0012997089317960176
+      },
+      "longTaskExcessMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requestCount": {
+        "median": 31,
+        "min": 31,
+        "max": 31
+      },
+      "transferBytes": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "encodedBytes": {
+        "median": 1249495,
+        "min": 1249495,
+        "max": 1249495
+      },
+      "cachedResourceCount": {
+        "median": 31,
+        "min": 31,
+        "max": 31
+      },
+      "responseStartMs": {
+        "median": 2.199999988079071,
+        "min": 1.5999999940395355,
+        "max": 3.2999999821186066
+      },
+      "domContentLoadedMs": {
+        "median": 58.5,
+        "min": 55.599999994039536,
+        "max": 75.39999997615814
+      },
+      "loadMs": {
+        "median": 83.09999999403954,
+        "min": 80.2000000178814,
+        "max": 104.7999999821186
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "route": "/about/",
+      "device": "desktop",
+      "condition": "fresh",
+      "count": 3,
+      "lcp": {
+        "median": 136,
+        "min": 96,
+        "max": 388
+      },
+      "cls": {
+        "median": 9.769643775720166e-06,
+        "min": 9.769643775720166e-06,
+        "max": 9.769643775720166e-06
+      },
+      "longTaskExcessMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requestCount": {
+        "median": 29,
+        "min": 29,
+        "max": 29
+      },
+      "transferBytes": {
+        "median": 1103524,
+        "min": 1103524,
+        "max": 1103524
+      },
+      "encodedBytes": {
+        "median": 1094824,
+        "min": 1094824,
+        "max": 1094824
+      },
+      "cachedResourceCount": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "responseStartMs": {
+        "median": 3.0999999940395355,
+        "min": 2,
+        "max": 24.900000005960464
+      },
+      "domContentLoadedMs": {
+        "median": 42.69999998807907,
+        "min": 42.69999998807907,
+        "max": 200.80000001192093
+      },
+      "loadMs": {
+        "median": 82.2999999821186,
+        "min": 80.19999998807907,
+        "max": 246.19999998807907
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "route": "/about/",
+      "device": "desktop",
+      "condition": "warm",
+      "count": 3,
+      "lcp": {
+        "median": 112,
+        "min": 104,
+        "max": 472
+      },
+      "cls": {
+        "median": 9.769643775720166e-06,
+        "min": 9.769643775720166e-06,
+        "max": 9.769643775720166e-06
+      },
+      "longTaskExcessMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requestCount": {
+        "median": 30,
+        "min": 30,
+        "max": 30
+      },
+      "transferBytes": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "encodedBytes": {
+        "median": 1094824,
+        "min": 1094824,
+        "max": 1094824
+      },
+      "cachedResourceCount": {
+        "median": 29,
+        "min": 29,
+        "max": 29
+      },
+      "responseStartMs": {
+        "median": 1.9000000059604645,
+        "min": 1.399999976158142,
+        "max": 41
+      },
+      "domContentLoadedMs": {
+        "median": 49.69999998807907,
+        "min": 45.29999998211861,
+        "max": 276.80000001192093
+      },
+      "loadMs": {
+        "median": 60.900000005960464,
+        "min": 54.79999998211861,
+        "max": 452.2000000178814
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "route": "/contact/",
+      "device": "desktop",
+      "condition": "fresh",
+      "count": 3,
+      "lcp": {
+        "median": 264,
+        "min": 104,
+        "max": 344
+      },
+      "cls": {
+        "median": 9.769643775720166e-06,
+        "min": 0,
+        "max": 9.769643775720166e-06
+      },
+      "longTaskExcessMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requestCount": {
+        "median": 29,
+        "min": 29,
+        "max": 29
+      },
+      "transferBytes": {
+        "median": 1103924,
+        "min": 1103924,
+        "max": 1103924
+      },
+      "encodedBytes": {
+        "median": 1095224,
+        "min": 1095224,
+        "max": 1095224
+      },
+      "cachedResourceCount": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "responseStartMs": {
+        "median": 8.300000011920929,
+        "min": 2.199999988079071,
+        "max": 15.699999988079071
+      },
+      "domContentLoadedMs": {
+        "median": 71.19999998807907,
+        "min": 69.40000000596046,
+        "max": 103.69999998807907
+      },
+      "loadMs": {
+        "median": 135,
+        "min": 93,
+        "max": 194.7999999821186
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "route": "/contact/",
+      "device": "desktop",
+      "condition": "warm",
+      "count": 3,
+      "lcp": {
+        "median": 128,
+        "min": 112,
+        "max": 152
+      },
+      "cls": {
+        "median": 0,
+        "min": 0,
+        "max": 9.769643775720166e-06
+      },
+      "longTaskExcessMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requestCount": {
+        "median": 30,
+        "min": 30,
+        "max": 30
+      },
+      "transferBytes": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "encodedBytes": {
+        "median": 1095224,
+        "min": 1095224,
+        "max": 1095224
+      },
+      "cachedResourceCount": {
+        "median": 29,
+        "min": 29,
+        "max": 29
+      },
+      "responseStartMs": {
+        "median": 2.0999999940395355,
+        "min": 1.9000000059604645,
+        "max": 2.800000011920929
+      },
+      "domContentLoadedMs": {
+        "median": 49,
+        "min": 47.60000002384186,
+        "max": 55.30000001192093
+      },
+      "loadMs": {
+        "median": 61.099999994039536,
+        "min": 57.80000001192093,
+        "max": 68.80000001192093
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "route": "/",
+      "device": "mobile",
+      "condition": "fresh",
+      "count": 6,
+      "lcp": {
+        "median": 7330.0,
+        "min": 6616,
+        "max": 7400
+      },
+      "cls": {
+        "median": 0.0,
+        "min": 0,
+        "max": 0
+      },
+      "longTaskExcessMs": {
+        "median": 41.5,
+        "min": 25,
+        "max": 82
+      },
+      "requestCount": {
+        "median": 29.0,
+        "min": 29,
+        "max": 29
+      },
+      "transferBytes": {
+        "median": 1416753.0,
+        "min": 1416753,
+        "max": 1416753
+      },
+      "encodedBytes": {
+        "median": 1408053.0,
+        "min": 1408053,
+        "max": 1408053
+      },
+      "cachedResourceCount": {
+        "median": 0.0,
+        "min": 0,
+        "max": 0
+      },
+      "responseStartMs": {
+        "median": 4.850000008940697,
+        "min": 1.4000000059604645,
+        "max": 21.899999976158142
+      },
+      "domContentLoadedMs": {
+        "median": 2289.9000000059605,
+        "min": 2095.4000000059605,
+        "max": 2446.800000011921
+      },
+      "loadMs": {
+        "median": 7550.0999999940395,
+        "min": 7515.699999988079,
+        "max": 7644.0999999940395
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "route": "/",
+      "device": "mobile",
+      "condition": "warm",
+      "count": 6,
+      "lcp": {
+        "median": 418.0,
+        "min": 316,
+        "max": 508
+      },
+      "cls": {
+        "median": 0.0,
+        "min": 0,
+        "max": 0
+      },
+      "longTaskExcessMs": {
+        "median": 0.0,
+        "min": 0,
+        "max": 0
+      },
+      "requestCount": {
+        "median": 29.0,
+        "min": 29,
+        "max": 29
+      },
+      "transferBytes": {
+        "median": 0.0,
+        "min": 0,
+        "max": 0
+      },
+      "encodedBytes": {
+        "median": 1364886.0,
+        "min": 1364886,
+        "max": 1364886
+      },
+      "cachedResourceCount": {
+        "median": 28.0,
+        "min": 28,
+        "max": 28
+      },
+      "responseStartMs": {
+        "median": 1.8500000089406967,
+        "min": 1.2999999821186066,
+        "max": 7.199999988079071
+      },
+      "domContentLoadedMs": {
+        "median": 245.79999999701977,
+        "min": 234.90000000596046,
+        "max": 283.69999998807907
+      },
+      "loadMs": {
+        "median": 322.70000000298023,
+        "min": 299.2999999821186,
+        "max": 396.40000000596046
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "route": "/work/",
+      "device": "mobile",
+      "condition": "fresh",
+      "count": 3,
+      "lcp": {
+        "median": 6272,
+        "min": 6212,
+        "max": 6280
+      },
+      "cls": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "longTaskExcessMs": {
+        "median": 58,
+        "min": 27,
+        "max": 67
+      },
+      "requestCount": {
+        "median": 26,
+        "min": 26,
+        "max": 26
+      },
+      "transferBytes": {
+        "median": 1032341,
+        "min": 1032341,
+        "max": 1032341
+      },
+      "encodedBytes": {
+        "median": 1024541,
+        "min": 1024541,
+        "max": 1024541
+      },
+      "cachedResourceCount": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "responseStartMs": {
+        "median": 3.4000000059604645,
+        "min": 3.2999999821186066,
+        "max": 4.200000017881393
+      },
+      "domContentLoadedMs": {
+        "median": 2224.5999999940395,
+        "min": 2160.5999999940395,
+        "max": 2441.5
+      },
+      "loadMs": {
+        "median": 5172.4000000059605,
+        "min": 5129.0999999940395,
+        "max": 5183.799999982119
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "route": "/work/",
+      "device": "mobile",
+      "condition": "warm",
+      "count": 3,
+      "lcp": {
+        "median": 420,
+        "min": 408,
+        "max": 492
+      },
+      "cls": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "longTaskExcessMs": {
+        "median": 0,
+        "min": 0,
+        "max": 13
+      },
+      "requestCount": {
+        "median": 26,
+        "min": 26,
+        "max": 27
+      },
+      "transferBytes": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "encodedBytes": {
+        "median": 1024541,
+        "min": 1024541,
+        "max": 1024541
+      },
+      "cachedResourceCount": {
+        "median": 26,
+        "min": 26,
+        "max": 26
+      },
+      "responseStartMs": {
+        "median": 6.699999988079071,
+        "min": 3.5,
+        "max": 37.900000005960464
+      },
+      "domContentLoadedMs": {
+        "median": 281.89999997615814,
+        "min": 244.30000001192093,
+        "max": 379.90000000596046
+      },
+      "loadMs": {
+        "median": 306.7999999821186,
+        "min": 292.59999999403954,
+        "max": 380.5
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "route": "/work/flagstone/",
+      "device": "mobile",
+      "condition": "fresh",
+      "count": 3,
+      "lcp": {
+        "median": 2480,
+        "min": 2412,
+        "max": 2780
+      },
+      "cls": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "longTaskExcessMs": {
+        "median": 26,
+        "min": 26,
+        "max": 38
+      },
+      "requestCount": {
+        "median": 25,
+        "min": 25,
+        "max": 25
+      },
+      "transferBytes": {
+        "median": 1006433,
+        "min": 1006433,
+        "max": 1006433
+      },
+      "encodedBytes": {
+        "median": 998933,
+        "min": 998933,
+        "max": 998933
+      },
+      "cachedResourceCount": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "responseStartMs": {
+        "median": 3,
+        "min": 2.9000000059604645,
+        "max": 4.5999999940395355
+      },
+      "domContentLoadedMs": {
+        "median": 2519.5,
+        "min": 2413.5,
+        "max": 2809.7999999821186
+      },
+      "loadMs": {
+        "median": 5036,
+        "min": 5033.0999999940395,
+        "max": 5054.5999999940395
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "route": "/work/flagstone/",
+      "device": "mobile",
+      "condition": "warm",
+      "count": 3,
+      "lcp": {
+        "median": 408,
+        "min": 348,
+        "max": 596
+      },
+      "cls": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "longTaskExcessMs": {
+        "median": 0,
+        "min": 0,
+        "max": 106
+      },
+      "requestCount": {
+        "median": 26,
+        "min": 26,
+        "max": 26
+      },
+      "transferBytes": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "encodedBytes": {
+        "median": 998933,
+        "min": 998933,
+        "max": 998933
+      },
+      "cachedResourceCount": {
+        "median": 25,
+        "min": 25,
+        "max": 25
+      },
+      "responseStartMs": {
+        "median": 7.800000011920929,
+        "min": 2.9000000059604645,
+        "max": 31.30000001192093
+      },
+      "domContentLoadedMs": {
+        "median": 390.90000000596046,
+        "min": 264.5,
+        "max": 563.1000000238419
+      },
+      "loadMs": {
+        "median": 408.40000000596046,
+        "min": 349.5,
+        "max": 641.2000000178814
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "route": "/about/",
+      "device": "mobile",
+      "condition": "fresh",
+      "count": 3,
+      "lcp": {
+        "median": 1984,
+        "min": 1856,
+        "max": 2000
+      },
+      "cls": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "longTaskExcessMs": {
+        "median": 64,
+        "min": 25,
+        "max": 72
+      },
+      "requestCount": {
+        "median": 20,
+        "min": 20,
+        "max": 20
+      },
+      "transferBytes": {
+        "median": 753026,
+        "min": 753026,
+        "max": 753026
+      },
+      "encodedBytes": {
+        "median": 747026,
+        "min": 747026,
+        "max": 747026
+      },
+      "cachedResourceCount": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "responseStartMs": {
+        "median": 4.9000000059604645,
+        "min": 4.199999988079071,
+        "max": 10.5
+      },
+      "domContentLoadedMs": {
+        "median": 1953.5,
+        "min": 1788.9000000059605,
+        "max": 1956.2000000178814
+      },
+      "loadMs": {
+        "median": 4084.800000011921,
+        "min": 4033.5999999940395,
+        "max": 4095.100000023842
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "route": "/about/",
+      "device": "mobile",
+      "condition": "warm",
+      "count": 3,
+      "lcp": {
+        "median": 304,
+        "min": 260,
+        "max": 852
+      },
+      "cls": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "longTaskExcessMs": {
+        "median": 0,
+        "min": 0,
+        "max": 217
+      },
+      "requestCount": {
+        "median": 21,
+        "min": 21,
+        "max": 21
+      },
+      "transferBytes": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "encodedBytes": {
+        "median": 747026,
+        "min": 747026,
+        "max": 747026
+      },
+      "cachedResourceCount": {
+        "median": 20,
+        "min": 20,
+        "max": 20
+      },
+      "responseStartMs": {
+        "median": 8.100000023841858,
+        "min": 1.0999999940395355,
+        "max": 35.5
+      },
+      "domContentLoadedMs": {
+        "median": 284,
+        "min": 186.69999998807907,
+        "max": 489.60000002384186
+      },
+      "loadMs": {
+        "median": 284.80000001192093,
+        "min": 246.39999997615814,
+        "max": 827.2000000178814
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "route": "/contact/",
+      "device": "mobile",
+      "condition": "fresh",
+      "count": 3,
+      "lcp": {
+        "median": 2088,
+        "min": 1852,
+        "max": 2344
+      },
+      "cls": {
+        "median": 0.0003061201689464896,
+        "min": 0.0003061201689464896,
+        "max": 0.0003061201689464896
+      },
+      "longTaskExcessMs": {
+        "median": 228,
+        "min": 33,
+        "max": 268
+      },
+      "requestCount": {
+        "median": 20,
+        "min": 20,
+        "max": 20
+      },
+      "transferBytes": {
+        "median": 753426,
+        "min": 753426,
+        "max": 753426
+      },
+      "encodedBytes": {
+        "median": 747426,
+        "min": 747426,
+        "max": 747426
+      },
+      "cachedResourceCount": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "responseStartMs": {
+        "median": 8.900000005960464,
+        "min": 3.5999999940395355,
+        "max": 14
+      },
+      "domContentLoadedMs": {
+        "median": 2067.4000000059605,
+        "min": 1814.4000000059605,
+        "max": 2078.300000011921
+      },
+      "loadMs": {
+        "median": 4004.2000000178814,
+        "min": 3953.5999999940395,
+        "max": 4045.0999999940395
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "route": "/contact/",
+      "device": "mobile",
+      "condition": "warm",
+      "count": 3,
+      "lcp": {
+        "median": 464,
+        "min": 288,
+        "max": 620
+      },
+      "cls": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "longTaskExcessMs": {
+        "median": 2,
+        "min": 0,
+        "max": 110
+      },
+      "requestCount": {
+        "median": 21,
+        "min": 21,
+        "max": 21
+      },
+      "transferBytes": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "encodedBytes": {
+        "median": 747426,
+        "min": 747426,
+        "max": 747426
+      },
+      "cachedResourceCount": {
+        "median": 20,
+        "min": 20,
+        "max": 20
+      },
+      "responseStartMs": {
+        "median": 8,
+        "min": 1.7000000178813934,
+        "max": 30
+      },
+      "domContentLoadedMs": {
+        "median": 357.59999999403954,
+        "min": 198.90000000596046,
+        "max": 419.19999998807907
+      },
+      "loadMs": {
+        "median": 442.19999998807907,
+        "min": 249.60000002384186,
+        "max": 638.6999999880791
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "route": "/",
+      "device": "desktop",
+      "condition": "fresh",
+      "count": 3,
+      "lcp": {
+        "median": 224,
+        "min": 224,
+        "max": 292
+      },
+      "cls": {
+        "median": 9.769643775720166e-06,
+        "min": 9.769643775720166e-06,
+        "max": 9.769643775720166e-06
+      },
+      "longTaskExcessMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requestCount": {
+        "median": 34,
+        "min": 34,
+        "max": 34
+      },
+      "transferBytes": {
+        "median": 1500658,
+        "min": 1500658,
+        "max": 1500658
+      },
+      "encodedBytes": {
+        "median": 1638450,
+        "min": 1638450,
+        "max": 1638450
+      },
+      "cachedResourceCount": {
+        "median": 1,
+        "min": 1,
+        "max": 1
+      },
+      "responseStartMs": {
+        "median": 2,
+        "min": 1.7000000178813934,
+        "max": 6.300000011920929
+      },
+      "domContentLoadedMs": {
+        "median": 59.20000001788139,
+        "min": 47.400000005960464,
+        "max": 201.80000001192093
+      },
+      "loadMs": {
+        "median": 144.2000000178814,
+        "min": 127.5,
+        "max": 201.90000000596046
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "route": "/",
+      "device": "desktop",
+      "condition": "warm",
+      "count": 3,
+      "lcp": {
+        "median": 144,
+        "min": 136,
+        "max": 148
+      },
+      "cls": {
+        "median": 9.769643775720166e-06,
+        "min": 9.769643775720166e-06,
+        "max": 9.769643775720166e-06
+      },
+      "longTaskExcessMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requestCount": {
+        "median": 34,
+        "min": 34,
+        "max": 34
+      },
+      "transferBytes": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "encodedBytes": {
+        "median": 1490758,
+        "min": 1490758,
+        "max": 1490758
+      },
+      "cachedResourceCount": {
+        "median": 33,
+        "min": 33,
+        "max": 33
+      },
+      "responseStartMs": {
+        "median": 2.0999999940395355,
+        "min": 1.800000011920929,
+        "max": 2.699999988079071
+      },
+      "domContentLoadedMs": {
+        "median": 53.5,
+        "min": 49.19999998807907,
+        "max": 54.5
+      },
+      "loadMs": {
+        "median": 67.09999999403954,
+        "min": 62.80000001192093,
+        "max": 69.39999997615814
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "route": "/work/",
+      "device": "desktop",
+      "condition": "fresh",
+      "count": 3,
+      "lcp": {
+        "median": 192,
+        "min": 156,
+        "max": 240
+      },
+      "cls": {
+        "median": 0,
+        "min": 0,
+        "max": 9.769643775720166e-06
+      },
+      "longTaskExcessMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requestCount": {
+        "median": 35,
+        "min": 35,
+        "max": 35
+      },
+      "transferBytes": {
+        "median": 1344783,
+        "min": 1344783,
+        "max": 1344783
+      },
+      "encodedBytes": {
+        "median": 1334283,
+        "min": 1334283,
+        "max": 1334283
+      },
+      "cachedResourceCount": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "responseStartMs": {
+        "median": 2.0999999940395355,
+        "min": 1.5999999940395355,
+        "max": 4.200000017881393
+      },
+      "domContentLoadedMs": {
+        "median": 51.5,
+        "min": 43.5,
+        "max": 52.10000002384186
+      },
+      "loadMs": {
+        "median": 172.5,
+        "min": 126.19999998807907,
+        "max": 212.5
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "route": "/work/",
+      "device": "desktop",
+      "condition": "warm",
+      "count": 3,
+      "lcp": {
+        "median": 152,
+        "min": 136,
+        "max": 196
+      },
+      "cls": {
+        "median": 9.769643775720166e-06,
+        "min": 0,
+        "max": 9.769643775720166e-06
+      },
+      "longTaskExcessMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requestCount": {
+        "median": 35,
+        "min": 35,
+        "max": 35
+      },
+      "transferBytes": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "encodedBytes": {
+        "median": 1334283,
+        "min": 1334283,
+        "max": 1334283
+      },
+      "cachedResourceCount": {
+        "median": 35,
+        "min": 35,
+        "max": 35
+      },
+      "responseStartMs": {
+        "median": 2.0999999940395355,
+        "min": 1.199999988079071,
+        "max": 2.800000011920929
+      },
+      "domContentLoadedMs": {
+        "median": 54,
+        "min": 49.19999998807907,
+        "max": 58
+      },
+      "loadMs": {
+        "median": 77.80000001192093,
+        "min": 63.5,
+        "max": 85.10000002384186
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "route": "/work/flagstone/",
+      "device": "desktop",
+      "condition": "fresh",
+      "count": 3,
+      "lcp": {
+        "median": 196,
+        "min": 156,
+        "max": 252
+      },
+      "cls": {
+        "median": 0.0012997089317960176,
+        "min": 0.0012997089317960176,
+        "max": 0.0012997089317960176
+      },
+      "longTaskExcessMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requestCount": {
+        "median": 32,
+        "min": 32,
+        "max": 32
+      },
+      "transferBytes": {
+        "median": 1267899,
+        "min": 1267899,
+        "max": 1267899
+      },
+      "encodedBytes": {
+        "median": 1258299,
+        "min": 1258299,
+        "max": 1258299
+      },
+      "cachedResourceCount": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "responseStartMs": {
+        "median": 3.5999999940395355,
+        "min": 1.5,
+        "max": 4.0999999940395355
+      },
+      "domContentLoadedMs": {
+        "median": 76,
+        "min": 54.5,
+        "max": 90.19999998807907
+      },
+      "loadMs": {
+        "median": 138.7999999821186,
+        "min": 116.80000001192093,
+        "max": 146.5
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "route": "/work/flagstone/",
+      "device": "desktop",
+      "condition": "warm",
+      "count": 3,
+      "lcp": {
+        "median": 132,
+        "min": 132,
+        "max": 136
+      },
+      "cls": {
+        "median": 0.0012997089317960176,
+        "min": 0,
+        "max": 0.0012997089317960176
+      },
+      "longTaskExcessMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requestCount": {
+        "median": 32,
+        "min": 32,
+        "max": 32
+      },
+      "transferBytes": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "encodedBytes": {
+        "median": 1258299,
+        "min": 1258299,
+        "max": 1258299
+      },
+      "cachedResourceCount": {
+        "median": 32,
+        "min": 32,
+        "max": 32
+      },
+      "responseStartMs": {
+        "median": 2.0999999940395355,
+        "min": 1.5999999940395355,
+        "max": 3.199999988079071
+      },
+      "domContentLoadedMs": {
+        "median": 58.39999997615814,
+        "min": 51,
+        "max": 62.5
+      },
+      "loadMs": {
+        "median": 79.40000000596046,
+        "min": 73,
+        "max": 86.39999997615814
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "route": "/about/",
+      "device": "desktop",
+      "condition": "fresh",
+      "count": 3,
+      "lcp": {
+        "median": 136,
+        "min": 120,
+        "max": 192
+      },
+      "cls": {
+        "median": 9.769643775720166e-06,
+        "min": 0,
+        "max": 9.769643775720166e-06
+      },
+      "longTaskExcessMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requestCount": {
+        "median": 30,
+        "min": 30,
+        "max": 30
+      },
+      "transferBytes": {
+        "median": 1112397,
+        "min": 1112397,
+        "max": 1112397
+      },
+      "encodedBytes": {
+        "median": 1103397,
+        "min": 1103397,
+        "max": 1103397
+      },
+      "cachedResourceCount": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "responseStartMs": {
+        "median": 1.4000000059604645,
+        "min": 1.199999988079071,
+        "max": 2.899999976158142
+      },
+      "domContentLoadedMs": {
+        "median": 48,
+        "min": 42.400000005960464,
+        "max": 49.19999998807907
+      },
+      "loadMs": {
+        "median": 85,
+        "min": 78.30000001192093,
+        "max": 152.5
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "route": "/about/",
+      "device": "desktop",
+      "condition": "warm",
+      "count": 3,
+      "lcp": {
+        "median": 120,
+        "min": 116,
+        "max": 124
+      },
+      "cls": {
+        "median": 9.769643775720166e-06,
+        "min": 9.769643775720166e-06,
+        "max": 9.769643775720166e-06
+      },
+      "longTaskExcessMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requestCount": {
+        "median": 31,
+        "min": 31,
+        "max": 31
+      },
+      "transferBytes": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "encodedBytes": {
+        "median": 1103397,
+        "min": 1103397,
+        "max": 1103397
+      },
+      "cachedResourceCount": {
+        "median": 30,
+        "min": 30,
+        "max": 30
+      },
+      "responseStartMs": {
+        "median": 1.699999988079071,
+        "min": 1.5,
+        "max": 2.7000000178813934
+      },
+      "domContentLoadedMs": {
+        "median": 52.79999998211861,
+        "min": 50.900000005960464,
+        "max": 57.900000005960464
+      },
+      "loadMs": {
+        "median": 63.099999994039536,
+        "min": 60.69999998807907,
+        "max": 67.80000001192093
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "route": "/contact/",
+      "device": "desktop",
+      "condition": "fresh",
+      "count": 3,
+      "lcp": {
+        "median": 100,
+        "min": 100,
+        "max": 108
+      },
+      "cls": {
+        "median": 9.769643775720166e-06,
+        "min": 9.769643775720166e-06,
+        "max": 9.769643775720166e-06
+      },
+      "longTaskExcessMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requestCount": {
+        "median": 30,
+        "min": 30,
+        "max": 30
+      },
+      "transferBytes": {
+        "median": 1112799,
+        "min": 1112799,
+        "max": 1112799
+      },
+      "encodedBytes": {
+        "median": 1103799,
+        "min": 1103799,
+        "max": 1103799
+      },
+      "cachedResourceCount": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "responseStartMs": {
+        "median": 1.4000000059604645,
+        "min": 1.300000011920929,
+        "max": 1.4000000059604645
+      },
+      "domContentLoadedMs": {
+        "median": 45.400000005960464,
+        "min": 44.79999998211861,
+        "max": 45.79999998211861
+      },
+      "loadMs": {
+        "median": 91.90000000596046,
+        "min": 89.60000002384186,
+        "max": 103.2999999821186
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "route": "/contact/",
+      "device": "desktop",
+      "condition": "warm",
+      "count": 3,
+      "lcp": {
+        "median": 120,
+        "min": 112,
+        "max": 272
+      },
+      "cls": {
+        "median": 9.769643775720166e-06,
+        "min": 9.769643775720166e-06,
+        "max": 9.769643775720166e-06
+      },
+      "longTaskExcessMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requestCount": {
+        "median": 31,
+        "min": 31,
+        "max": 31
+      },
+      "transferBytes": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "encodedBytes": {
+        "median": 1103799,
+        "min": 1103799,
+        "max": 1103799
+      },
+      "cachedResourceCount": {
+        "median": 30,
+        "min": 30,
+        "max": 30
+      },
+      "responseStartMs": {
+        "median": 3.300000011920929,
+        "min": 1.2000000178813934,
+        "max": 16.099999994039536
+      },
+      "domContentLoadedMs": {
+        "median": 60.400000005960464,
+        "min": 48.80000001192093,
+        "max": 160.90000000596046
+      },
+      "loadMs": {
+        "median": 76.90000000596046,
+        "min": 58.5,
+        "max": 247.30000001192093
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "route": "/",
+      "device": "mobile",
+      "condition": "fresh",
+      "count": 6,
+      "lcp": {
+        "median": 6576.0,
+        "min": 6504,
+        "max": 6712
+      },
+      "cls": {
+        "median": 0.0,
+        "min": 0,
+        "max": 0
+      },
+      "longTaskExcessMs": {
+        "median": 44.5,
+        "min": 25,
+        "max": 275
+      },
+      "requestCount": {
+        "median": 30.0,
+        "min": 30,
+        "max": 30
+      },
+      "transferBytes": {
+        "median": 1417886.0,
+        "min": 1417886,
+        "max": 1417886
+      },
+      "encodedBytes": {
+        "median": 1408886.0,
+        "min": 1408886,
+        "max": 1408886
+      },
+      "cachedResourceCount": {
+        "median": 0.0,
+        "min": 0,
+        "max": 0
+      },
+      "responseStartMs": {
+        "median": 3.6000000089406967,
+        "min": 1.4000000059604645,
+        "max": 5
+      },
+      "domContentLoadedMs": {
+        "median": 2296.6499999910593,
+        "min": 2200.800000011921,
+        "max": 2566
+      },
+      "loadMs": {
+        "median": 7655.20000000298,
+        "min": 7635.300000011921,
+        "max": 7676.0999999940395
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "route": "/",
+      "device": "mobile",
+      "condition": "warm",
+      "count": 6,
+      "lcp": {
+        "median": 428.0,
+        "min": 316,
+        "max": 528
+      },
+      "cls": {
+        "median": 0.0,
+        "min": 0,
+        "max": 0
+      },
+      "longTaskExcessMs": {
+        "median": 45.5,
+        "min": 0,
+        "max": 151
+      },
+      "requestCount": {
+        "median": 30.0,
+        "min": 30,
+        "max": 30
+      },
+      "transferBytes": {
+        "median": 0.0,
+        "min": 0,
+        "max": 0
+      },
+      "encodedBytes": {
+        "median": 1365719.0,
+        "min": 1365719,
+        "max": 1365719
+      },
+      "cachedResourceCount": {
+        "median": 29.0,
+        "min": 29,
+        "max": 29
+      },
+      "responseStartMs": {
+        "median": 4.699999988079071,
+        "min": 1.5,
+        "max": 12.5
+      },
+      "domContentLoadedMs": {
+        "median": 355.8999999910593,
+        "min": 239.59999999403954,
+        "max": 506.7999999821186
+      },
+      "loadMs": {
+        "median": 506.6499999910593,
+        "min": 303.5,
+        "max": 637.6999999880791
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "route": "/work/",
+      "device": "mobile",
+      "condition": "fresh",
+      "count": 3,
+      "lcp": {
+        "median": 6240,
+        "min": 6240,
+        "max": 6272
+      },
+      "cls": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "longTaskExcessMs": {
+        "median": 27,
+        "min": 27,
+        "max": 34
+      },
+      "requestCount": {
+        "median": 27,
+        "min": 27,
+        "max": 27
+      },
+      "transferBytes": {
+        "median": 1036135,
+        "min": 1036135,
+        "max": 1036135
+      },
+      "encodedBytes": {
+        "median": 1028035,
+        "min": 1028035,
+        "max": 1028035
+      },
+      "cachedResourceCount": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "responseStartMs": {
+        "median": 1.4000000059604645,
+        "min": 1.300000011920929,
+        "max": 1.699999988079071
+      },
+      "domContentLoadedMs": {
+        "median": 2219.4000000059605,
+        "min": 2093.5,
+        "max": 2252.899999976158
+      },
+      "loadMs": {
+        "median": 5168.9000000059605,
+        "min": 5167.699999988079,
+        "max": 5174.799999982119
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "route": "/work/",
+      "device": "mobile",
+      "condition": "warm",
+      "count": 3,
+      "lcp": {
+        "median": 384,
+        "min": 380,
+        "max": 504
+      },
+      "cls": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "longTaskExcessMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requestCount": {
+        "median": 27,
+        "min": 27,
+        "max": 28
+      },
+      "transferBytes": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "encodedBytes": {
+        "median": 1028035,
+        "min": 1028035,
+        "max": 1028035
+      },
+      "cachedResourceCount": {
+        "median": 27,
+        "min": 27,
+        "max": 27
+      },
+      "responseStartMs": {
+        "median": 1.9000000059604645,
+        "min": 1.2999999821186066,
+        "max": 9.300000011920929
+      },
+      "domContentLoadedMs": {
+        "median": 237.59999999403954,
+        "min": 225,
+        "max": 262.59999999403954
+      },
+      "loadMs": {
+        "median": 282.19999998807907,
+        "min": 267.90000000596046,
+        "max": 386.80000001192093
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "route": "/work/flagstone/",
+      "device": "mobile",
+      "condition": "fresh",
+      "count": 3,
+      "lcp": {
+        "median": 2604,
+        "min": 2600,
+        "max": 2656
+      },
+      "cls": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "longTaskExcessMs": {
+        "median": 30,
+        "min": 25,
+        "max": 34
+      },
+      "requestCount": {
+        "median": 26,
+        "min": 26,
+        "max": 26
+      },
+      "transferBytes": {
+        "median": 1008608,
+        "min": 1008608,
+        "max": 1008608
+      },
+      "encodedBytes": {
+        "median": 1000808,
+        "min": 1000808,
+        "max": 1000808
+      },
+      "cachedResourceCount": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "responseStartMs": {
+        "median": 1.4000000059604645,
+        "min": 1.2999999821186066,
+        "max": 1.5999999940395355
+      },
+      "domContentLoadedMs": {
+        "median": 2624.0999999940395,
+        "min": 2616.0999999940395,
+        "max": 2673.2999999821186
+      },
+      "loadMs": {
+        "median": 5056.5999999940395,
+        "min": 5051.9000000059605,
+        "max": 5067.299999982119
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "route": "/work/flagstone/",
+      "device": "mobile",
+      "condition": "warm",
+      "count": 3,
+      "lcp": {
+        "median": 280,
+        "min": 268,
+        "max": 284
+      },
+      "cls": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "longTaskExcessMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requestCount": {
+        "median": 27,
+        "min": 26,
+        "max": 27
+      },
+      "transferBytes": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "encodedBytes": {
+        "median": 1000808,
+        "min": 1000808,
+        "max": 1000808
+      },
+      "cachedResourceCount": {
+        "median": 26,
+        "min": 26,
+        "max": 26
+      },
+      "responseStartMs": {
+        "median": 2.0999999940395355,
+        "min": 1.399999976158142,
+        "max": 2.800000011920929
+      },
+      "domContentLoadedMs": {
+        "median": 252.2000000178814,
+        "min": 251.30000001192093,
+        "max": 255.89999997615814
+      },
+      "loadMs": {
+        "median": 295.5,
+        "min": 289,
+        "max": 322.19999998807907
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "route": "/about/",
+      "device": "mobile",
+      "condition": "fresh",
+      "count": 3,
+      "lcp": {
+        "median": 1912,
+        "min": 1836,
+        "max": 1952
+      },
+      "cls": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "longTaskExcessMs": {
+        "median": 28,
+        "min": 26,
+        "max": 29
+      },
+      "requestCount": {
+        "median": 21,
+        "min": 21,
+        "max": 21
+      },
+      "transferBytes": {
+        "median": 754064,
+        "min": 754064,
+        "max": 754064
+      },
+      "encodedBytes": {
+        "median": 747764,
+        "min": 747764,
+        "max": 747764
+      },
+      "cachedResourceCount": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "responseStartMs": {
+        "median": 1.5999999940395355,
+        "min": 1.4000000059604645,
+        "max": 1.7000000178813934
+      },
+      "domContentLoadedMs": {
+        "median": 1871.5,
+        "min": 1784.7999999821186,
+        "max": 1900.2000000178814
+      },
+      "loadMs": {
+        "median": 3918.300000011921,
+        "min": 3907.7999999821186,
+        "max": 4060.5
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "route": "/about/",
+      "device": "mobile",
+      "condition": "warm",
+      "count": 3,
+      "lcp": {
+        "median": 256,
+        "min": 252,
+        "max": 280
+      },
+      "cls": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "longTaskExcessMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requestCount": {
+        "median": 22,
+        "min": 22,
+        "max": 22
+      },
+      "transferBytes": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "encodedBytes": {
+        "median": 747764,
+        "min": 747764,
+        "max": 747764
+      },
+      "cachedResourceCount": {
+        "median": 21,
+        "min": 21,
+        "max": 21
+      },
+      "responseStartMs": {
+        "median": 1.4000000059604645,
+        "min": 1,
+        "max": 2.5999999940395355
+      },
+      "domContentLoadedMs": {
+        "median": 242.40000000596046,
+        "min": 191.59999999403954,
+        "max": 262.30000001192093
+      },
+      "loadMs": {
+        "median": 254,
+        "min": 243,
+        "max": 262.7000000178814
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "route": "/contact/",
+      "device": "mobile",
+      "condition": "fresh",
+      "count": 3,
+      "lcp": {
+        "median": 1800,
+        "min": 1744,
+        "max": 1940
+      },
+      "cls": {
+        "median": 0.0003061201689464896,
+        "min": 0.0003061201689464896,
+        "max": 0.0003061201689464896
+      },
+      "longTaskExcessMs": {
+        "median": 25,
+        "min": 25,
+        "max": 37
+      },
+      "requestCount": {
+        "median": 21,
+        "min": 21,
+        "max": 21
+      },
+      "transferBytes": {
+        "median": 754466,
+        "min": 754466,
+        "max": 754466
+      },
+      "encodedBytes": {
+        "median": 748166,
+        "min": 748166,
+        "max": 748166
+      },
+      "cachedResourceCount": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "responseStartMs": {
+        "median": 2.2000000178813934,
+        "min": 1.5999999940395355,
+        "max": 2.600000023841858
+      },
+      "domContentLoadedMs": {
+        "median": 1763.2000000178814,
+        "min": 1710.5999999940395,
+        "max": 1898.4000000059605
+      },
+      "loadMs": {
+        "median": 3922.100000023842,
+        "min": 3904.199999988079,
+        "max": 3951.5999999940395
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "route": "/contact/",
+      "device": "mobile",
+      "condition": "warm",
+      "count": 3,
+      "lcp": {
+        "median": 284,
+        "min": 284,
+        "max": 364
+      },
+      "cls": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "longTaskExcessMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requestCount": {
+        "median": 22,
+        "min": 22,
+        "max": 22
+      },
+      "transferBytes": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "encodedBytes": {
+        "median": 748166,
+        "min": 748166,
+        "max": 748166
+      },
+      "cachedResourceCount": {
+        "median": 21,
+        "min": 21,
+        "max": 21
+      },
+      "responseStartMs": {
+        "median": 9.599999994039536,
+        "min": 2.2000000178813934,
+        "max": 25.700000017881393
+      },
+      "domContentLoadedMs": {
+        "median": 270,
+        "min": 199.2000000178814,
+        "max": 294.7000000178814
+      },
+      "loadMs": {
+        "median": 270.69999998807907,
+        "min": 253.2000000178814,
+        "max": 351.10000002384186
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "route": "/",
+      "device": "desktop",
+      "condition": "fresh",
+      "lcp": {
+        "phase00": 272,
+        "phase09": 224,
+        "delta": -48,
+        "percent": -17.647058823529413
+      },
+      "cls": {
+        "phase00": 9.769643775720166e-06,
+        "phase09": 9.769643775720166e-06,
+        "delta": 0.0,
+        "percent": 0.0
+      },
+      "longTaskExcessMs": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 33,
+        "phase09": 34,
+        "delta": 1,
+        "percent": 3.0303030303030303
+      },
+      "transferBytes": {
+        "phase00": 1498116,
+        "phase09": 1500658,
+        "delta": 2542,
+        "percent": 0.1696797844759685
+      }
+    },
+    {
+      "route": "/",
+      "device": "desktop",
+      "condition": "warm",
+      "lcp": {
+        "phase00": 136,
+        "phase09": 144,
+        "delta": 8,
+        "percent": 5.88235294117647
+      },
+      "cls": {
+        "phase00": 9.769643775720166e-06,
+        "phase09": 9.769643775720166e-06,
+        "delta": 0.0,
+        "percent": 0.0
+      },
+      "longTaskExcessMs": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 33,
+        "phase09": 34,
+        "delta": 1,
+        "percent": 3.0303030303030303
+      },
+      "transferBytes": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      }
+    },
+    {
+      "route": "/work/",
+      "device": "desktop",
+      "condition": "fresh",
+      "lcp": {
+        "phase00": 140,
+        "phase09": 192,
+        "delta": 52,
+        "percent": 37.142857142857146
+      },
+      "cls": {
+        "phase00": 9.769643775720166e-06,
+        "phase09": 0,
+        "delta": -9.769643775720166e-06,
+        "percent": -100.0
+      },
+      "longTaskExcessMs": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 34,
+        "phase09": 35,
+        "delta": 1,
+        "percent": 2.941176470588235
+      },
+      "transferBytes": {
+        "phase00": 1334172,
+        "phase09": 1344783,
+        "delta": 10611,
+        "percent": 0.7953247407380758
+      }
+    },
+    {
+      "route": "/work/",
+      "device": "desktop",
+      "condition": "warm",
+      "lcp": {
+        "phase00": 152,
+        "phase09": 152,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "cls": {
+        "phase00": 9.769643775720166e-06,
+        "phase09": 9.769643775720166e-06,
+        "delta": 0.0,
+        "percent": 0.0
+      },
+      "longTaskExcessMs": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 34,
+        "phase09": 35,
+        "delta": 1,
+        "percent": 2.941176470588235
+      },
+      "transferBytes": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      }
+    },
+    {
+      "route": "/work/flagstone/",
+      "device": "desktop",
+      "condition": "fresh",
+      "lcp": {
+        "phase00": 216,
+        "phase09": 196,
+        "delta": -20,
+        "percent": -9.25925925925926
+      },
+      "cls": {
+        "phase00": 0.0012997089317960176,
+        "phase09": 0.0012997089317960176,
+        "delta": 0.0,
+        "percent": 0.0
+      },
+      "longTaskExcessMs": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 31,
+        "phase09": 32,
+        "delta": 1,
+        "percent": 3.225806451612903
+      },
+      "transferBytes": {
+        "phase00": 1258795,
+        "phase09": 1267899,
+        "delta": 9104,
+        "percent": 0.7232313442617742
+      }
+    },
+    {
+      "route": "/work/flagstone/",
+      "device": "desktop",
+      "condition": "warm",
+      "lcp": {
+        "phase00": 140,
+        "phase09": 132,
+        "delta": -8,
+        "percent": -5.714285714285714
+      },
+      "cls": {
+        "phase00": 0.0012997089317960176,
+        "phase09": 0.0012997089317960176,
+        "delta": 0.0,
+        "percent": 0.0
+      },
+      "longTaskExcessMs": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 31,
+        "phase09": 32,
+        "delta": 1,
+        "percent": 3.225806451612903
+      },
+      "transferBytes": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      }
+    },
+    {
+      "route": "/about/",
+      "device": "desktop",
+      "condition": "fresh",
+      "lcp": {
+        "phase00": 136,
+        "phase09": 136,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "cls": {
+        "phase00": 9.769643775720166e-06,
+        "phase09": 9.769643775720166e-06,
+        "delta": 0.0,
+        "percent": 0.0
+      },
+      "longTaskExcessMs": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 29,
+        "phase09": 30,
+        "delta": 1,
+        "percent": 3.4482758620689653
+      },
+      "transferBytes": {
+        "phase00": 1103524,
+        "phase09": 1112397,
+        "delta": 8873,
+        "percent": 0.804060446351869
+      }
+    },
+    {
+      "route": "/about/",
+      "device": "desktop",
+      "condition": "warm",
+      "lcp": {
+        "phase00": 112,
+        "phase09": 120,
+        "delta": 8,
+        "percent": 7.142857142857142
+      },
+      "cls": {
+        "phase00": 9.769643775720166e-06,
+        "phase09": 9.769643775720166e-06,
+        "delta": 0.0,
+        "percent": 0.0
+      },
+      "longTaskExcessMs": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 30,
+        "phase09": 31,
+        "delta": 1,
+        "percent": 3.3333333333333335
+      },
+      "transferBytes": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      }
+    },
+    {
+      "route": "/contact/",
+      "device": "desktop",
+      "condition": "fresh",
+      "lcp": {
+        "phase00": 264,
+        "phase09": 100,
+        "delta": -164,
+        "percent": -62.121212121212125
+      },
+      "cls": {
+        "phase00": 9.769643775720166e-06,
+        "phase09": 9.769643775720166e-06,
+        "delta": 0.0,
+        "percent": 0.0
+      },
+      "longTaskExcessMs": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 29,
+        "phase09": 30,
+        "delta": 1,
+        "percent": 3.4482758620689653
+      },
+      "transferBytes": {
+        "phase00": 1103924,
+        "phase09": 1112799,
+        "delta": 8875,
+        "percent": 0.8039502719390104
+      }
+    },
+    {
+      "route": "/contact/",
+      "device": "desktop",
+      "condition": "warm",
+      "lcp": {
+        "phase00": 128,
+        "phase09": 120,
+        "delta": -8,
+        "percent": -6.25
+      },
+      "cls": {
+        "phase00": 0,
+        "phase09": 9.769643775720166e-06,
+        "delta": 9.769643775720166e-06,
+        "percent": null
+      },
+      "longTaskExcessMs": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 30,
+        "phase09": 31,
+        "delta": 1,
+        "percent": 3.3333333333333335
+      },
+      "transferBytes": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      }
+    },
+    {
+      "route": "/",
+      "device": "mobile",
+      "condition": "fresh",
+      "lcp": {
+        "phase00": 7330.0,
+        "phase09": 6576.0,
+        "delta": -754.0,
+        "percent": -10.28649386084584
+      },
+      "cls": {
+        "phase00": 0.0,
+        "phase09": 0.0,
+        "delta": 0.0,
+        "percent": null
+      },
+      "longTaskExcessMs": {
+        "phase00": 41.5,
+        "phase09": 44.5,
+        "delta": 3.0,
+        "percent": 7.228915662650602
+      },
+      "requestCount": {
+        "phase00": 29.0,
+        "phase09": 30.0,
+        "delta": 1.0,
+        "percent": 3.4482758620689653
+      },
+      "transferBytes": {
+        "phase00": 1416753.0,
+        "phase09": 1417886.0,
+        "delta": 1133.0,
+        "percent": 0.07997159702502836
+      }
+    },
+    {
+      "route": "/",
+      "device": "mobile",
+      "condition": "warm",
+      "lcp": {
+        "phase00": 418.0,
+        "phase09": 428.0,
+        "delta": 10.0,
+        "percent": 2.3923444976076556
+      },
+      "cls": {
+        "phase00": 0.0,
+        "phase09": 0.0,
+        "delta": 0.0,
+        "percent": null
+      },
+      "longTaskExcessMs": {
+        "phase00": 0.0,
+        "phase09": 45.5,
+        "delta": 45.5,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 29.0,
+        "phase09": 30.0,
+        "delta": 1.0,
+        "percent": 3.4482758620689653
+      },
+      "transferBytes": {
+        "phase00": 0.0,
+        "phase09": 0.0,
+        "delta": 0.0,
+        "percent": null
+      }
+    },
+    {
+      "route": "/work/",
+      "device": "mobile",
+      "condition": "fresh",
+      "lcp": {
+        "phase00": 6272,
+        "phase09": 6240,
+        "delta": -32,
+        "percent": -0.5102040816326531
+      },
+      "cls": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "longTaskExcessMs": {
+        "phase00": 58,
+        "phase09": 27,
+        "delta": -31,
+        "percent": -53.44827586206896
+      },
+      "requestCount": {
+        "phase00": 26,
+        "phase09": 27,
+        "delta": 1,
+        "percent": 3.8461538461538463
+      },
+      "transferBytes": {
+        "phase00": 1032341,
+        "phase09": 1036135,
+        "delta": 3794,
+        "percent": 0.36751422252918364
+      }
+    },
+    {
+      "route": "/work/",
+      "device": "mobile",
+      "condition": "warm",
+      "lcp": {
+        "phase00": 420,
+        "phase09": 384,
+        "delta": -36,
+        "percent": -8.571428571428571
+      },
+      "cls": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "longTaskExcessMs": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 26,
+        "phase09": 27,
+        "delta": 1,
+        "percent": 3.8461538461538463
+      },
+      "transferBytes": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      }
+    },
+    {
+      "route": "/work/flagstone/",
+      "device": "mobile",
+      "condition": "fresh",
+      "lcp": {
+        "phase00": 2480,
+        "phase09": 2604,
+        "delta": 124,
+        "percent": 5.0
+      },
+      "cls": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "longTaskExcessMs": {
+        "phase00": 26,
+        "phase09": 30,
+        "delta": 4,
+        "percent": 15.384615384615385
+      },
+      "requestCount": {
+        "phase00": 25,
+        "phase09": 26,
+        "delta": 1,
+        "percent": 4.0
+      },
+      "transferBytes": {
+        "phase00": 1006433,
+        "phase09": 1008608,
+        "delta": 2175,
+        "percent": 0.2161097658761189
+      }
+    },
+    {
+      "route": "/work/flagstone/",
+      "device": "mobile",
+      "condition": "warm",
+      "lcp": {
+        "phase00": 408,
+        "phase09": 280,
+        "delta": -128,
+        "percent": -31.372549019607842
+      },
+      "cls": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "longTaskExcessMs": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 26,
+        "phase09": 27,
+        "delta": 1,
+        "percent": 3.8461538461538463
+      },
+      "transferBytes": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      }
+    },
+    {
+      "route": "/about/",
+      "device": "mobile",
+      "condition": "fresh",
+      "lcp": {
+        "phase00": 1984,
+        "phase09": 1912,
+        "delta": -72,
+        "percent": -3.6290322580645165
+      },
+      "cls": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "longTaskExcessMs": {
+        "phase00": 64,
+        "phase09": 28,
+        "delta": -36,
+        "percent": -56.25
+      },
+      "requestCount": {
+        "phase00": 20,
+        "phase09": 21,
+        "delta": 1,
+        "percent": 5.0
+      },
+      "transferBytes": {
+        "phase00": 753026,
+        "phase09": 754064,
+        "delta": 1038,
+        "percent": 0.13784384602922076
+      }
+    },
+    {
+      "route": "/about/",
+      "device": "mobile",
+      "condition": "warm",
+      "lcp": {
+        "phase00": 304,
+        "phase09": 256,
+        "delta": -48,
+        "percent": -15.789473684210526
+      },
+      "cls": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "longTaskExcessMs": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 21,
+        "phase09": 22,
+        "delta": 1,
+        "percent": 4.761904761904762
+      },
+      "transferBytes": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      }
+    },
+    {
+      "route": "/contact/",
+      "device": "mobile",
+      "condition": "fresh",
+      "lcp": {
+        "phase00": 2088,
+        "phase09": 1800,
+        "delta": -288,
+        "percent": -13.793103448275861
+      },
+      "cls": {
+        "phase00": 0.0003061201689464896,
+        "phase09": 0.0003061201689464896,
+        "delta": 0.0,
+        "percent": 0.0
+      },
+      "longTaskExcessMs": {
+        "phase00": 228,
+        "phase09": 25,
+        "delta": -203,
+        "percent": -89.03508771929825
+      },
+      "requestCount": {
+        "phase00": 20,
+        "phase09": 21,
+        "delta": 1,
+        "percent": 5.0
+      },
+      "transferBytes": {
+        "phase00": 753426,
+        "phase09": 754466,
+        "delta": 1040,
+        "percent": 0.1380361176810994
+      }
+    },
+    {
+      "route": "/contact/",
+      "device": "mobile",
+      "condition": "warm",
+      "lcp": {
+        "phase00": 464,
+        "phase09": 284,
+        "delta": -180,
+        "percent": -38.793103448275865
+      },
+      "cls": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "longTaskExcessMs": {
+        "phase00": 2,
+        "phase09": 0,
+        "delta": -2,
+        "percent": -100.0
+      },
+      "requestCount": {
+        "phase00": 21,
+        "phase09": 22,
+        "delta": 1,
+        "percent": 4.761904761904762
+      },
+      "transferBytes": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      }
+    }
+  ],
+  "errors": []
+}

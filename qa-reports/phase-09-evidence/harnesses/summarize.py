@@ -1,7 +1,8 @@
-import collections, json, pathlib, statistics
+import collections, gzip, json, pathlib, statistics, urllib.parse
 
 p = pathlib.Path('qa-reports/phase-09-evidence')
-performance = json.loads((p / 'performance.json').read_text())
+raw_path = p / 'performance.json'
+performance = json.loads(raw_path.read_text() if raw_path.exists() else gzip.decompress(raw_path.with_suffix('.json.gz').read_bytes()))
 groups = collections.defaultdict(list)
 for row in performance['rows']:
     groups[(row['target'], row['route'], row['device'], row['condition'])].append(row)
@@ -29,7 +30,7 @@ for row in summary:
 errors=[{k:r.get(k) for k in ['target','route','device','condition','rep','error','errors','failed','responses']} for r in performance['rows'] if r.get('error') or r.get('errors') or r.get('failed') or r.get('responses')]
 report=dict(metadata=performance['metadata'],cellCount=len(performance['rows']),groups=summary,comparisons=comparisons,errors=errors)
 (p/'performance-summary.json').write_text(json.dumps(report,indent=2))
-lines=['# September 7 paired local lab performance','', 'Medians of three runs per artifact/device/cache/route. See performance.json for every raw row and exact method. Milliseconds for LCP and fixed-window long-task excess; the latter is not Lighthouse TBT or INP. No field Core Web Vitals claim.','', '| Route | Device | Cache | P00 LCP | P09 LCP (min–max) | P09 CLS | P00/P09 long-task excess | Requests P00/P09 | Resource transfer bytes P00/P09 |','|---|---|---|---:|---:|---:|---:|---:|---:|']
+lines=['# September 7 same-method local artifact comparison','', 'Medians of three runs per artifact/device/cache/route, with six runs per artifact for mobile Home after a targeted outlier recheck. See performance.json.gz for every raw row and exact method. Milliseconds for LCP and fixed-window long-task excess; the latter is not Lighthouse TBT or INP. No field Core Web Vitals claim.','', '| Route | Device | Cache | P00 LCP | P09 LCP (min–max) | P09 CLS | P00/P09 long-task excess | Requests P00/P09 | Resource transfer bytes P00/P09 |','|---|---|---|---:|---:|---:|---:|---:|---:|']
 for c in comparisons:
     r=by_key[('phase09-candidate',c['route'],c['device'],c['condition'])]
     if not r['lcp']: continue
@@ -41,4 +42,16 @@ for label,extensions in [('JavaScript',['.js']),('CSS',['.css']),('Fonts',['.wof
     def total(data): return sum(data['sums'].get(e,{}).get('bytes',0) for e in extensions)
     a=total(old);b=total(new);bundle.append(dict(category=label,phase00Bytes=a,phase09Bytes=b,deltaBytes=b-a,deltaPercent=(b-a)/a*100))
 (p/'bundle-comparison.json').write_text(json.dumps({'method':'Uncompressed exported file totals, not per-route transfer; Phase00 exact original deployed artifact versus final local build','rows':bundle},indent=2))
+route_bundles=[]
+for route in ['/', '/work/', '/work/flagstone/', '/about/', '/contact/']:
+    row={'route':route}
+    for key,data in [('phase00',old),('phase09',new)]:
+        document=next(r for r in data['routes'] if r['route']==route)
+        files={f['path']:f for f in data['files']}
+        row[key]={}
+        for kind,prop in [('js','scripts'),('css','styles')]:
+            names=sorted(set(urllib.parse.unquote(u.split('?')[0].lstrip('/')) for u in document[prop]))
+            row[key][kind]={'files':names,'rawBytes':sum(files[n]['bytes'] for n in names),'gzipBytes':sum(files[n]['gzip'] for n in names)}
+    route_bundles.append(row)
+(p/'route-bundles.json').write_text(json.dumps({'method':'Unique directly referenced script and stylesheet files from emitted HTML; local gzip; excludes dynamic lazy imports and is not network transfer or Next first-load estimate','rows':route_bundles},indent=2))
 print(json.dumps({'cells':len(performance['rows']),'groups':len(summary),'errors':len(errors),'comparisons':comparisons,'bundle':bundle},indent=2))

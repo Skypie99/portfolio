@@ -1,14 +1,21 @@
 {
   "base": "eb67733403ba434cb8de94003037666f80aa6592",
-  "candidate": "d680cbcb5cdf8016f71a84b1476fb03867be9e52",
+  "candidate": "34cdd66fdb376d33fb83a576163a5bb74d4da71c",
   "sourceFilesChanged": [
     "app/layout.tsx",
+    "app/sitemap.ts",
     "components/__tests__/A11yReceipts.test.tsx",
     "components/__tests__/AnimatedCertGrid.test.tsx",
     "components/__tests__/GalleryWall.ssr.test.tsx",
     "components/__tests__/GalleryWall.test.tsx",
+    "lib/__tests__/static-integrity.test.ts",
     "lib/metadata.ts",
-    "next.config.mjs"
+    "next.config.mjs",
+    "public/flagstone/accessibility/index.html",
+    "public/flagstone/index.html",
+    "public/flagstone/privacy/index.html",
+    "public/flagstone/support/index.html",
+    "public/flagstone/terms/index.html"
   ],
   "preservedByteIdentical": {
     "components/cinematic": true,
@@ -20,7 +27,6 @@
     "components/ProductReveal.tsx": true,
     "components/ThemedShowcase.tsx": true,
     "lib/content.ts": true,
-    "public/flagstone": true,
     "app/archive": true,
     "lib/archive": true,
     "content": true,
@@ -37,11 +43,11 @@
     "components/ProductReveal.tsx": true,
     "components/ThemedShowcase.tsx": true,
     "lib/content.ts": true,
-    "public/flagstone": true,
     "app/archive": true,
     "lib/archive": true,
     "content": true,
     "package.json": true,
     "package-lock.json": true
-  }
+  },
+  "utilityHTML": "See utility-exact-preserve.json: removing only the new canonical restores original bytes for all five pages"
 }

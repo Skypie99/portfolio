@@ -1,0 +1,1 @@
+Initial route bundle normalization raised KeyError for URL-encoded app/work/%5Bslug%5D/page-954d105158d56390.js. The filesystem uses literal [slug]. summarize.py now URL-decodes referenced paths before lookup; this was an evidence-script issue, not a missing runtime asset. No partial route-bundle output was accepted.
