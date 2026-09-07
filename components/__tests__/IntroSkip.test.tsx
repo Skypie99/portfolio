@@ -1,10 +1,10 @@
 /**
  * IntroSkip tests — P2-6 (Phase B).
  *
- * Mirrors IntroScrollCue's retirement-contract tests (same IntersectionObserver
- * mock, same `.cinematic-content-reveal` target), but asserts the OPPOSITE nav
- * semantics: unlike the decorative "Scroll" cue, this is a real control and
- * must carry a real href, a real accessible name, and no aria-hidden.
+ * Unlike the decorative "Scroll" cue, this is a real control and must carry a
+ * real href, a real accessible name, and no aria-hidden. Retirement belongs to
+ * the substantive identity landing, not the first intersecting pixel of the
+ * page-sized content wrapper.
  */
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -22,10 +22,12 @@ type IOCallback = (entries: IOEntry[]) => void;
 let ioCallback: IOCallback | null = null;
 let observedTargets: Element[] = [];
 let disconnectCount = 0;
+let ioOptions: IntersectionObserverInit | undefined;
 
 class MockIntersectionObserver {
-  constructor(cb: IOCallback) {
+  constructor(cb: IOCallback, options?: IntersectionObserverInit) {
     ioCallback = cb;
+    ioOptions = options;
   }
   observe(el: Element) {
     observedTargets.push(el);
@@ -36,16 +38,17 @@ class MockIntersectionObserver {
   }
 }
 
-function addContentWrapper() {
-  const content = document.createElement('div');
-  content.className = 'cinematic-content-reveal';
-  document.body.appendChild(content);
+function addIdentityLanding() {
+  const identity = document.createElement('div');
+  identity.setAttribute('data-hero-identity', '');
+  document.body.appendChild(identity);
 }
 
 beforeEach(() => {
   ioCallback = null;
   observedTargets = [];
   disconnectCount = 0;
+  ioOptions = undefined;
   vi.stubGlobal('IntersectionObserver', MockIntersectionObserver);
 });
 
@@ -57,7 +60,7 @@ afterEach(() => {
 
 describe('IntroSkip — a real control, not decoration', () => {
   it('is a real link to #hero with a real accessible name', () => {
-    addContentWrapper();
+    addIdentityLanding();
     render(<IntroSkip />);
     const link = screen.getByRole('link', { name: /skip intro/i });
     expect(link).toHaveAttribute('href', '#hero');
@@ -70,38 +73,42 @@ describe('IntroSkip — a real control, not decoration', () => {
     expect(introSkipSource).not.toMatch(/scrollIntoView|window\.scrollTo|\.focus\(/);
   });
 
-  it('observes the same retirement target IntroScrollCue uses', () => {
-    addContentWrapper();
+  it('observes the substantive identity landing rather than the large content wrapper', () => {
+    addIdentityLanding();
     render(<IntroSkip />);
     expect(ioCallback).not.toBeNull();
-    expect(observedTargets[0]?.className).toBe('cinematic-content-reveal');
+    expect(observedTargets[0]).toHaveAttribute('data-hero-identity');
+    expect(ioOptions?.threshold).toEqual([0, 0.75]);
   });
 });
 
 describe('IntroSkip — retirement contract', () => {
-  it('retires when content intersects with a real ratio, and returns off-screen', () => {
-    addContentWrapper();
+  it('retires when most of the identity is visible, and returns before the landing', () => {
+    addIdentityLanding();
     render(<IntroSkip />);
     const link = screen.getByRole('link', { name: /skip intro/i });
 
-    ioCallback!([{ isIntersecting: true, intersectionRatio: 0.5 }]);
+    ioCallback!([{ isIntersecting: true, intersectionRatio: 0.75 }]);
     expect(link).toHaveAttribute('data-skip-done');
 
     ioCallback!([{ isIntersecting: false, intersectionRatio: 0 }]);
     expect(link).not.toHaveAttribute('data-skip-done');
   });
 
-  it('stays present on the exact 0px edge-touch (reduced-motion static frame)', () => {
-    addContentWrapper();
+  it('stays present for a trivial or partial identity intersection', () => {
+    addIdentityLanding();
     render(<IntroSkip />);
     const link = screen.getByRole('link', { name: /skip intro/i });
 
     ioCallback!([{ isIntersecting: true, intersectionRatio: 0 }]);
     expect(link).not.toHaveAttribute('data-skip-done');
+
+    ioCallback!([{ isIntersecting: true, intersectionRatio: 0.74 }]);
+    expect(link).not.toHaveAttribute('data-skip-done');
   });
 
   it('disconnects the observer on unmount', () => {
-    addContentWrapper();
+    addIdentityLanding();
     const { unmount } = render(<IntroSkip />);
     unmount();
     expect(disconnectCount).toBe(1);
@@ -109,7 +116,7 @@ describe('IntroSkip — retirement contract', () => {
 
   it('does not crash when IntersectionObserver is unavailable', () => {
     vi.stubGlobal('IntersectionObserver', undefined);
-    addContentWrapper();
+    addIdentityLanding();
     expect(() => render(<IntroSkip />)).not.toThrow();
   });
 });
