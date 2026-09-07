@@ -1,0 +1,443 @@
+{
+  "measured_utc": "2026-09-07T11:10:21.864486+00:00",
+  "method": "Python HTMLParser, ElementTree, JSON; read-only static export",
+  "out": "/Users/skypie/Portfolio-codex/portfolio-3.0-phase09-20260907/out",
+  "routes": [
+    {
+      "route": "/404/",
+      "file": "404/index.html",
+      "sha256": "d381fb7334dfcad2397b6c507564f9299d9e34d3b31d7ba413ab4bbf6b180093",
+      "category": "error",
+      "canonicals": [
+        "https://skypistudio.com/"
+      ],
+      "robots": [
+        "noindex"
+      ],
+      "refresh": [],
+      "sitemap": false,
+      "meta_csp": true,
+      "structured_types": [
+        "Person"
+      ]
+    },
+    {
+      "route": "/404.html",
+      "file": "404.html",
+      "sha256": "d381fb7334dfcad2397b6c507564f9299d9e34d3b31d7ba413ab4bbf6b180093",
+      "category": "error",
+      "canonicals": [
+        "https://skypistudio.com/"
+      ],
+      "robots": [
+        "noindex"
+      ],
+      "refresh": [],
+      "sitemap": false,
+      "meta_csp": true,
+      "structured_types": [
+        "Person"
+      ]
+    },
+    {
+      "route": "/about/",
+      "file": "about/index.html",
+      "sha256": "f86ed0c962d9043dd3d6ca7fb20052502202faf2a64e731738bb14f97cb0f422",
+      "category": "indexable",
+      "canonicals": [
+        "https://skypistudio.com/about/"
+      ],
+      "robots": [],
+      "refresh": [],
+      "sitemap": true,
+      "meta_csp": true,
+      "structured_types": [
+        "Person"
+      ]
+    },
+    {
+      "route": "/accessibility/",
+      "file": "accessibility/index.html",
+      "sha256": "ebce920c935ee055f4ecb1fac81676af88a715d6ec4fd2dde1b756e9232120bc",
+      "category": "indexable",
+      "canonicals": [
+        "https://skypistudio.com/accessibility/"
+      ],
+      "robots": [],
+      "refresh": [],
+      "sitemap": true,
+      "meta_csp": true,
+      "structured_types": [
+        "Person"
+      ]
+    },
+    {
+      "route": "/archive/",
+      "file": "archive/index.html",
+      "sha256": "c63c7af66a046026a1e6a3cd425048787a8fe9d131b1df311a9b5b15e01b74a5",
+      "category": "noindex",
+      "canonicals": [
+        "https://skypistudio.com/archive/"
+      ],
+      "robots": [
+        "noindex, nofollow"
+      ],
+      "refresh": [],
+      "sitemap": false,
+      "meta_csp": true,
+      "structured_types": [
+        "Person"
+      ]
+    },
+    {
+      "route": "/blog/building-accessmap/",
+      "file": "blog/building-accessmap/index.html",
+      "sha256": "4567b0371aa00e160ab39b8e6b927ccffc40a970c123288173217ac8306e51c4",
+      "category": "redirect",
+      "canonicals": [
+        "https://skypistudio.com/blog/building-flagstone/"
+      ],
+      "robots": [],
+      "refresh": [
+        "0; url=/blog/building-flagstone/"
+      ],
+      "sitemap": false,
+      "meta_csp": false,
+      "structured_types": []
+    },
+    {
+      "route": "/blog/building-flagstone/",
+      "file": "blog/building-flagstone/index.html",
+      "sha256": "c284cead9255f299ad5910e5011e72c4668d449d2f33b7d28db54ac5f1a972f0",
+      "category": "indexable",
+      "canonicals": [
+        "https://skypistudio.com/blog/building-flagstone/"
+      ],
+      "robots": [],
+      "refresh": [],
+      "sitemap": true,
+      "meta_csp": true,
+      "structured_types": [
+        "Person",
+        "BlogPosting"
+      ]
+    },
+    {
+      "route": "/blog/",
+      "file": "blog/index.html",
+      "sha256": "721b7b616644122b2886e15353e71ef9da4975a580426d305491dd2b106c3971",
+      "category": "indexable",
+      "canonicals": [
+        "https://skypistudio.com/blog/"
+      ],
+      "robots": [],
+      "refresh": [],
+      "sitemap": true,
+      "meta_csp": true,
+      "structured_types": [
+        "Person"
+      ]
+    },
+    {
+      "route": "/certificates/",
+      "file": "certificates/index.html",
+      "sha256": "63a87c15d2a05a86db844609efb07bd783be3d85377508a8e932020093484d23",
+      "category": "indexable",
+      "canonicals": [
+        "https://skypistudio.com/certificates/"
+      ],
+      "robots": [],
+      "refresh": [],
+      "sitemap": true,
+      "meta_csp": true,
+      "structured_types": [
+        "Person"
+      ]
+    },
+    {
+      "route": "/colophon/",
+      "file": "colophon/index.html",
+      "sha256": "3ad26022364c270d14e3b01c45f3b9d6da72ffd61a427011b0c9f019b7501ae8",
+      "category": "indexable",
+      "canonicals": [
+        "https://skypistudio.com/colophon/"
+      ],
+      "robots": [],
+      "refresh": [],
+      "sitemap": true,
+      "meta_csp": true,
+      "structured_types": [
+        "Person"
+      ]
+    },
+    {
+      "route": "/contact/",
+      "file": "contact/index.html",
+      "sha256": "fa28c61e172f9b17890883aae47b73940c15a79b7658583bd84ea7c5f63e4070",
+      "category": "indexable",
+      "canonicals": [
+        "https://skypistudio.com/contact/"
+      ],
+      "robots": [],
+      "refresh": [],
+      "sitemap": true,
+      "meta_csp": true,
+      "structured_types": [
+        "Person"
+      ]
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "file": "flagstone/accessibility/index.html",
+      "sha256": "cf4377389761fb260261d709244624dc865f5e67f46693a8faf235b68ceebcd5",
+      "category": "indexable",
+      "canonicals": [],
+      "robots": [],
+      "refresh": [],
+      "sitemap": false,
+      "meta_csp": false,
+      "structured_types": []
+    },
+    {
+      "route": "/flagstone/",
+      "file": "flagstone/index.html",
+      "sha256": "b55c6770cafeeb82d0be0fc02b44db88c197729b549c464d9915e94acf002dad",
+      "category": "indexable",
+      "canonicals": [],
+      "robots": [],
+      "refresh": [],
+      "sitemap": false,
+      "meta_csp": false,
+      "structured_types": []
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "file": "flagstone/privacy/index.html",
+      "sha256": "1227e7384e0817acd88bedb1a1bcb0a2e99321e4b18a87c3fbb48b710ed1b1c7",
+      "category": "indexable",
+      "canonicals": [],
+      "robots": [],
+      "refresh": [],
+      "sitemap": false,
+      "meta_csp": false,
+      "structured_types": []
+    },
+    {
+      "route": "/flagstone/support/",
+      "file": "flagstone/support/index.html",
+      "sha256": "6248f6ea68a83f6027ed6fc357f7ec2e19b9bc594362662f051cc13398d808a6",
+      "category": "indexable",
+      "canonicals": [],
+      "robots": [],
+      "refresh": [],
+      "sitemap": false,
+      "meta_csp": false,
+      "structured_types": []
+    },
+    {
+      "route": "/flagstone/terms/",
+      "file": "flagstone/terms/index.html",
+      "sha256": "9259becba4c91fc6f4bdb2dff8c0e8d4eb7aebed57745f67633671044d5c795f",
+      "category": "indexable",
+      "canonicals": [],
+      "robots": [],
+      "refresh": [],
+      "sitemap": false,
+      "meta_csp": false,
+      "structured_types": []
+    },
+    {
+      "route": "/",
+      "file": "index.html",
+      "sha256": "42433bc4d750a133a46f3394d4301c5dafab837440d31eb84ded3a3fe72a3801",
+      "category": "indexable",
+      "canonicals": [
+        "https://skypistudio.com/"
+      ],
+      "robots": [],
+      "refresh": [],
+      "sitemap": true,
+      "meta_csp": true,
+      "structured_types": [
+        "Person"
+      ]
+    },
+    {
+      "route": "/runway/",
+      "file": "runway/index.html",
+      "sha256": "f29530a8b0a1d948a0a1c733b2f19ac01ea33f66bc330ea7373ff794416d9552",
+      "category": "noindex",
+      "canonicals": [
+        "https://skypistudio.com/runway/"
+      ],
+      "robots": [
+        "noindex, nofollow"
+      ],
+      "refresh": [],
+      "sitemap": false,
+      "meta_csp": true,
+      "structured_types": [
+        "Person"
+      ]
+    },
+    {
+      "route": "/work/accessmap/",
+      "file": "work/accessmap/index.html",
+      "sha256": "6a763d3ebd8bb2fa6541dcda5184d1cbe15618e8867661e415c6c2b9d0445bca",
+      "category": "redirect",
+      "canonicals": [
+        "https://skypistudio.com/work/flagstone/"
+      ],
+      "robots": [],
+      "refresh": [
+        "0; url=/work/flagstone/"
+      ],
+      "sitemap": false,
+      "meta_csp": false,
+      "structured_types": []
+    },
+    {
+      "route": "/work/claude-corp/",
+      "file": "work/claude-corp/index.html",
+      "sha256": "0e94a646e14c8f8aece5393bde0254511a92e243e228e181c5330ea6b31e5938",
+      "category": "indexable",
+      "canonicals": [
+        "https://skypistudio.com/work/claude-corp/"
+      ],
+      "robots": [],
+      "refresh": [],
+      "sitemap": true,
+      "meta_csp": true,
+      "structured_types": [
+        "Person",
+        "SoftwareApplication"
+      ]
+    },
+    {
+      "route": "/work/dashboard/",
+      "file": "work/dashboard/index.html",
+      "sha256": "ce6aa733253526ac2995758d64b3fb1e6c8b8de9bef333c0b8029c5ad64a5d00",
+      "category": "indexable",
+      "canonicals": [
+        "https://skypistudio.com/work/dashboard/"
+      ],
+      "robots": [],
+      "refresh": [],
+      "sitemap": true,
+      "meta_csp": true,
+      "structured_types": [
+        "Person",
+        "SoftwareApplication"
+      ]
+    },
+    {
+      "route": "/work/flagstone/",
+      "file": "work/flagstone/index.html",
+      "sha256": "6ecbce468df0fa10c6cc1d5be0c5d2e468d00e2194c0c39b71392f2b5f2d6be5",
+      "category": "indexable",
+      "canonicals": [
+        "https://skypistudio.com/work/flagstone/"
+      ],
+      "robots": [],
+      "refresh": [],
+      "sitemap": true,
+      "meta_csp": true,
+      "structured_types": [
+        "Person",
+        "SoftwareApplication"
+      ]
+    },
+    {
+      "route": "/work/ghost-code/",
+      "file": "work/ghost-code/index.html",
+      "sha256": "19bbbec6253051ac9d395e2f7a82215117cb029bd1f091a47844590b088259be",
+      "category": "indexable",
+      "canonicals": [
+        "https://skypistudio.com/work/ghost-code/"
+      ],
+      "robots": [],
+      "refresh": [],
+      "sitemap": true,
+      "meta_csp": true,
+      "structured_types": [
+        "Person",
+        "SoftwareApplication"
+      ]
+    },
+    {
+      "route": "/work/",
+      "file": "work/index.html",
+      "sha256": "a7c9c9611ea911b81c25159cbc6d02d8374e35a76a953e59b3932bd1fe8af34d",
+      "category": "indexable",
+      "canonicals": [
+        "https://skypistudio.com/work/"
+      ],
+      "robots": [],
+      "refresh": [],
+      "sitemap": true,
+      "meta_csp": true,
+      "structured_types": [
+        "Person"
+      ]
+    },
+    {
+      "route": "/work/mutual-mesh/",
+      "file": "work/mutual-mesh/index.html",
+      "sha256": "08a75553c7497fe256f80a9d43102e9aaa5a163666576ab9aaca46d8a64e7521",
+      "category": "redirect",
+      "canonicals": [
+        "https://skypistudio.com/work/"
+      ],
+      "robots": [],
+      "refresh": [
+        "0; url=/work/"
+      ],
+      "sitemap": false,
+      "meta_csp": false,
+      "structured_types": []
+    },
+    {
+      "route": "/work/prompt-library/",
+      "file": "work/prompt-library/index.html",
+      "sha256": "321766dde5348a207162373c228f96fec6a57840824e8481763dbc8fc63a73e5",
+      "category": "indexable",
+      "canonicals": [
+        "https://skypistudio.com/work/prompt-library/"
+      ],
+      "robots": [],
+      "refresh": [],
+      "sitemap": true,
+      "meta_csp": true,
+      "structured_types": [
+        "Person",
+        "SoftwareApplication"
+      ]
+    }
+  ],
+  "sitemap": [
+    "https://skypistudio.com/",
+    "https://skypistudio.com/work/",
+    "https://skypistudio.com/about/",
+    "https://skypistudio.com/certificates/",
+    "https://skypistudio.com/blog/",
+    "https://skypistudio.com/contact/",
+    "https://skypistudio.com/accessibility/",
+    "https://skypistudio.com/colophon/",
+    "https://skypistudio.com/work/flagstone/",
+    "https://skypistudio.com/work/claude-corp/",
+    "https://skypistudio.com/work/dashboard/",
+    "https://skypistudio.com/work/prompt-library/",
+    "https://skypistudio.com/work/ghost-code/",
+    "https://skypistudio.com/blog/building-flagstone/"
+  ],
+  "robots": "User-agent: *\nAllow: /\n\nSitemap: https://skypistudio.com/sitemap.xml\n",
+  "feed_urls": [
+    "https://skypistudio.com/blog/building-flagstone/"
+  ],
+  "rss_urls": [
+    "https://skypistudio.com/blog/building-flagstone/"
+  ],
+  "feed_rss_parity": true,
+  "feed_urls_in_sitemap": true,
+  "cross_host_canonicals": []
+}

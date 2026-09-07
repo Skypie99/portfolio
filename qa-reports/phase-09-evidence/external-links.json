@@ -1,0 +1,191 @@
+{
+  "date": "2026-09-07T11:07:41.970666+00:00",
+  "artifactDigest": "6e6d44f7321d81ee12a28906248ef4436944183795fab449049770c828bd0734",
+  "method": "Public HEAD, normal TLS, redirects followed, 20s cap; status is endpoint observation, not authenticated access or GET/content proof",
+  "rows": [
+    {
+      "url": "https://claudecorp.skypistudio.com/",
+      "status": "200",
+      "final": "https://claudecorp.skypistudio.com/",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://dashboard.skypistudio.com/",
+      "status": "200",
+      "final": "https://dashboard.skypistudio.com/",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://developer.apple.com/accessibility/",
+      "status": "200",
+      "final": "https://developer.apple.com/documentation/accessibility",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://expo.dev/privacy",
+      "status": "200",
+      "final": "https://expo.dev/privacy",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://flagstone.skypistudio.com/",
+      "status": "200",
+      "final": "https://flagstone.skypistudio.com/",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://ghostcode.skypistudio.com/",
+      "status": "200",
+      "final": "https://ghostcode.skypistudio.com/",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/Skypie99/AccessMap",
+      "status": "200",
+      "final": "https://github.com/Skypie99/AccessMap",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/Skypie99/AccessMap/commits/main",
+      "status": "200",
+      "final": "https://github.com/Skypie99/AccessMap/commits/main",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/Skypie99/AccessMap/issues",
+      "status": "200",
+      "final": "https://github.com/Skypie99/AccessMap/issues",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/Skypie99/AccessMap/tree/main/supabase/migrations",
+      "status": "200",
+      "final": "https://github.com/Skypie99/AccessMap/tree/main/supabase/migrations",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/Skypie99/Prompt_Library",
+      "status": "200",
+      "final": "https://github.com/Skypie99/Prompt_Library",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/Skypie99/ghost-code",
+      "status": "200",
+      "final": "https://github.com/Skypie99/ghost-code",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/skypie99",
+      "status": "200",
+      "final": "https://github.com/skypie99",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://osmfoundation.org/wiki/Privacy_Policy",
+      "status": "200",
+      "final": "https://osmfoundation.org/wiki/Privacy_Policy",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://prompts.skypistudio.com/",
+      "status": "200",
+      "final": "https://prompts.skypistudio.com/",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://supabase.com/privacy",
+      "status": "200",
+      "final": "https://supabase.com/privacy",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://verify.skilljar.com/c/397oybawccv4",
+      "status": "200",
+      "final": "https://verify.skilljar.com/c/397oybawccv4",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://verify.skilljar.com/c/9twktanftgpq",
+      "status": "200",
+      "final": "https://verify.skilljar.com/c/9twktanftgpq",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://verify.skilljar.com/c/ad8ot95z543s",
+      "status": "200",
+      "final": "https://verify.skilljar.com/c/ad8ot95z543s",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://verify.skilljar.com/c/cxrwvg7sz5w6",
+      "status": "200",
+      "final": "https://verify.skilljar.com/c/cxrwvg7sz5w6",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://verify.skilljar.com/c/ef3fxd6rptc5",
+      "status": "200",
+      "final": "https://verify.skilljar.com/c/ef3fxd6rptc5",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://verify.skilljar.com/c/rgnu9r9tyfoj",
+      "status": "200",
+      "final": "https://verify.skilljar.com/c/rgnu9r9tyfoj",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://www.coursera.org/account/accomplishments/records/5Z1UGVB7BO2N",
+      "status": "200",
+      "final": "https://www.coursera.org/account/accomplishments/verify/5Z1UGVB7BO2N",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://www.coursera.org/account/accomplishments/records/LNNCK1O38M7U",
+      "status": "200",
+      "final": "https://www.coursera.org/account/accomplishments/verify/LNNCK1O38M7U",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://www.coursera.org/account/accomplishments/specialization/MIQJBUVPS86V",
+      "status": "200",
+      "final": "https://www.coursera.org/account/accomplishments/specialization/MIQJBUVPS86V",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://www.linkedin.com/in/skyler-halisky",
+      "status": "999",
+      "final": "https://www.linkedin.com/in/skyler-halisky",
+      "exit": 0,
+      "error": ""
+    }
+  ],
+  "verifiedFinalArtifactDigest": "444c1108258451fa7917c0266e384e51c6e970f0158bc008a4183f7cbcd43c86",
+  "bindingNote": "URL set rechecked after final build and equals the checked pre-final set"
+}

@@ -1,0 +1,47 @@
+{
+  "base": "eb67733403ba434cb8de94003037666f80aa6592",
+  "candidate": "d680cbcb5cdf8016f71a84b1476fb03867be9e52",
+  "sourceFilesChanged": [
+    "app/layout.tsx",
+    "components/__tests__/A11yReceipts.test.tsx",
+    "components/__tests__/AnimatedCertGrid.test.tsx",
+    "components/__tests__/GalleryWall.ssr.test.tsx",
+    "components/__tests__/GalleryWall.test.tsx",
+    "lib/metadata.ts",
+    "next.config.mjs"
+  ],
+  "preservedByteIdentical": {
+    "components/cinematic": true,
+    "components/ProjectDoorwayButton.tsx": true,
+    "app/page.tsx": true,
+    "app/globals.css": true,
+    "components/IntroSkip.tsx": true,
+    "components/Reveal.tsx": true,
+    "components/ProductReveal.tsx": true,
+    "components/ThemedShowcase.tsx": true,
+    "lib/content.ts": true,
+    "public/flagstone": true,
+    "app/archive": true,
+    "lib/archive": true,
+    "content": true,
+    "package.json": true,
+    "package-lock.json": true
+  },
+  "pathExists": {
+    "components/cinematic": true,
+    "components/ProjectDoorwayButton.tsx": true,
+    "app/page.tsx": true,
+    "app/globals.css": true,
+    "components/IntroSkip.tsx": true,
+    "components/Reveal.tsx": true,
+    "components/ProductReveal.tsx": true,
+    "components/ThemedShowcase.tsx": true,
+    "lib/content.ts": true,
+    "public/flagstone": true,
+    "app/archive": true,
+    "lib/archive": true,
+    "content": true,
+    "package.json": true,
+    "package-lock.json": true
+  }
+}

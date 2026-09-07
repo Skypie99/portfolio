@@ -1,0 +1,139 @@
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v3.2.7 /Users/skypie/Portfolio-codex/portfolio-3.0-phase09-20260907
+
+ ✓ lib/__tests__/recruiter-copy-truth.test.ts (17 tests | 1 skipped) 63ms
+ ✓ components/__tests__/CaseStudyCard.test.tsx (5 tests) 657ms
+   ✓ CaseStudyCard > renders verifiedDate as a real <time> element, prefixed "Verified"  390ms
+ ✓ components/__tests__/HamburgerNav.test.tsx (12 tests) 866ms
+ ✓ app/__tests__/homepage-numeral-contrast.test.tsx (1 test) 925ms
+   ✓ Homepage work-index numeral opacity > every row numeral renders at text-ink/70 (rest) and text-ink/85 (hover), never the pre-fix /30 or /45  924ms
+ ✓ app/__tests__/homepage-project-links.test.tsx (2 tests) 1456ms
+   ✓ Homepage work-index project affordances > renders one visible View project CTA for every project destination  1040ms
+   ✓ Homepage work-index project affordances > keeps the project titles as the five keyboard destinations  410ms
+ ✓ app/__tests__/flagstone-cta-parity.test.tsx (5 tests) 1773ms
+   ✓ GATE-FLAGSTONE-CTA-PARITY — shared ProjectDoorwayButton > renders exactly 6 doorway pills (5 rows + flagship) sharing one identical className  949ms
+   ✓ GATE-FLAGSTONE-CTA-PARITY — shared ProjectDoorwayButton > gives the flagship its own doorway with no aria-label override and a real tab stop  460ms
+   ✓ GATE-FLAGSTONE-CTA-PARITY — shared ProjectDoorwayButton > keeps the 5 row pills as redundant (tabindex=-1) stops behind their row title link  358ms
+ ✓ app/__tests__/homepage-featured-link.test.tsx (3 tests) 1898ms
+   ✓ Homepage work index: the "Featured: above" link > carries no aria-label that could diverge from its visible text  1039ms
+   ✓ Homepage work index: the "Featured: above" link > its accessible name is built from real visible text, matching what a sighted reader sees  622ms
+ ✓ components/__tests__/BlogIndex.test.tsx (8 tests) 1614ms
+   ✓ BlogIndexPage > renders the page heading  845ms
+   ✓ BlogIndexPage > renders all post titles as headings  375ms
+ ✓ components/__tests__/ProjectCard.test.tsx (9 tests) 671ms
+   ✓ ProjectCard > renders title, role, and year from props  534ms
+ ✓ components/__tests__/ThemeToggle.test.tsx (6 tests) 280ms
+ ✓ components/__tests__/TapTargets.test.tsx (4 tests) 714ms
+   ✓ card action rows carry the one-sided 44px tap extension (UP-02 / F7-2) > ProjectCard: the leading "View project" link grows UP  604ms
+ ✓ components/__tests__/ThemedMotion.test.tsx (8 tests) 311ms
+ ✓ components/__tests__/SidebarSectionNav.test.tsx (20 tests) 785ms
+   ✓ SidebarSectionNav: the homepage index is unchanged > renders the "On this page" landmark with every section link  541ms
+ ✓ components/cinematic/__tests__/CinematicDesert.test.tsx (3 tests) 525ms
+   ✓ CinematicDesert (reduced motion) > renders the static arrival frame without throwing when reduced motion is preferred  305ms
+ ✓ components/__tests__/SidebarFeatured.test.tsx (10 tests) 430ms
+ ✓ app/__tests__/homepage-dates.test.tsx (2 tests) 1270ms
+   ✓ Homepage — work-index years and Record-band dates render as <time> > renders every work-index row year as a real <time> element  1078ms
+ ✓ components/__tests__/Sidebar.test.tsx (7 tests) 365ms
+ ✓ components/__tests__/Hero.test.tsx (3 tests) 185ms
+ ✓ components/__tests__/LitWindows.test.tsx (6 tests) 195ms
+ ✓ components/__tests__/Reveal.test.tsx (8 tests) 155ms
+ ✓ components/__tests__/Footer.test.tsx (4 tests) 256ms
+ ✓ components/__tests__/HeroSettle.test.tsx (11 tests) 96ms
+ ✓ components/__tests__/MarkdownProse.test.tsx (10 tests) 94ms
+ ✓ components/__tests__/GalleryWall.test.tsx (7 tests) 390ms
+   ✓ GalleryWall > hangs all six full-width in order with catalog numbers 01→06  300ms
+stderr | components/__tests__/ProductReveal.test.tsx > ProductReveal > renders a real <img> carrying the alt when a src is provided
+Warning: React does not recognize the `fetchPriority` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `fetchpriority` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+    at img
+    at StaticShot (/Users/skypie/Portfolio-codex/portfolio-3.0-phase09-20260907/components/ProductReveal.tsx:211:3)
+    at div
+    at div
+    at DeviceFrame (/Users/skypie/Portfolio-codex/portfolio-3.0-phase09-20260907/components/DeviceFrame.tsx:6:24)
+    at FramedArtifact (/Users/skypie/Portfolio-codex/portfolio-3.0-phase09-20260907/components/ProductReveal.tsx:53:3)
+    at div
+    at ProductReveal (/Users/skypie/Portfolio-codex/portfolio-3.0-phase09-20260907/components/ProductReveal.tsx:295:3)
+
+ ✓ components/__tests__/ProductReveal.test.tsx (18 tests) 461ms
+ ✓ components/__tests__/Exhibit.test.tsx (6 tests) 73ms
+ ✓ components/__tests__/CalibrationRecord.test.tsx (3 tests) 147ms
+ ✓ components/archive/__tests__/AuthGate.test.tsx (3 tests) 302ms
+ ✓ components/__tests__/NumberedStep.test.tsx (3 tests) 130ms
+ ✓ components/__tests__/IntroSkip.test.tsx (7 tests) 154ms
+ ✓ components/__tests__/Receipt.test.tsx (11 tests) 389ms
+ ✓ components/__tests__/LedgerRow.test.tsx (7 tests) 87ms
+ ✓ components/__tests__/Button.test.tsx (3 tests) 274ms
+ ✓ app/__tests__/blog-dated-status.test.tsx (6 tests) 299ms
+ ✓ components/__tests__/SkipLink.test.tsx (2 tests) 154ms
+ ✓ components/__tests__/RunwayIdentityRelease.test.tsx (5 tests) 141ms
+ ✓ lib/__tests__/flagstone-utility-contrast.test.ts (12 tests) 108ms
+ ✓ components/__tests__/TagPill.test.tsx (5 tests) 53ms
+ ✓ components/__tests__/RunwayIdentity.test.tsx (1 test) 54ms
+ ✓ components/__tests__/IntroScrollCue.test.tsx (10 tests) 100ms
+ ✓ components/__tests__/ViewTransitions.test.tsx (27 tests) 198ms
+ ✓ components/__tests__/CountUpStat.test.tsx (6 tests) 62ms
+ ✓ lib/__tests__/ink-contrast.test.ts (33 tests) 24ms
+ ✓ components/__tests__/RailInert.test.tsx (4 tests) 21ms
+ ✓ lib/__tests__/content.test.ts (10 tests) 38ms
+ ✓ components/__tests__/ContentReveal.test.tsx (2 tests) 90ms
+ ✓ components/__tests__/Plate.test.tsx (3 tests) 71ms
+ ✓ lib/__tests__/print-layer.test.ts (8 tests) 7ms
+ ✓ lib/__tests__/useActiveSection.test.tsx (4 tests) 16ms
+ ✓ app/__tests__/work-receipt.test.tsx (8 tests) 75ms
+ ✓ lib/__tests__/duration-ramp.test.ts (14 tests) 6ms
+ ✓ components/__tests__/ThemedShowcase.test.tsx (8 tests) 187ms
+ ✓ lib/archive/__tests__/importExport.test.ts (14 tests) 82ms
+ ✓ lib/__tests__/smart-punctuation.test.ts (11 tests) 94ms
+ ✓ components/__tests__/RevealAlive.test.tsx (3 tests) 57ms
+ ✓ lib/__tests__/schema.test.ts (32 tests) 11ms
+ ✓ lib/__tests__/doorAjar.test.ts (9 tests) 67ms
+ ✓ lib/__tests__/glassPress.test.ts (5 tests) 18ms
+ ✓ lib/__tests__/shot-dark-forwarding.test.ts (3 tests) 11ms
+ ✓ lib/__tests__/cn.test.ts (14 tests) 56ms
+ ✓ lib/__tests__/blog.test.ts (11 tests) 4ms
+ ✓ lib/archive/__tests__/catalog.test.ts (7 tests) 10ms
+ ✓ lib/__tests__/support-first-hierarchy.test.ts (16 tests) 28ms
+ ✓ lib/archive/__tests__/range.test.ts (10 tests) 4ms
+ ✓ components/archive/__tests__/reducer.test.ts (6 tests) 4ms
+ ✓ lib/archive/__tests__/color.test.ts (19 tests) 6ms
+ ✓ lib/__tests__/ember-large-text.test.ts (3 tests) 19ms
+ ✓ lib/__tests__/matte-theme-invariance.test.ts (4 tests) 4ms
+ ✓ lib/__tests__/token-parity.test.ts (110 tests) 44ms
+ ✓ app/__tests__/flagstone-first-impression.test.ts (3 tests) 7ms
+ ✓ lib/__tests__/showcaseWire.test.ts (6 tests) 8ms
+ ✓ lib/archive/__tests__/search.test.ts (10 tests) 5ms
+ ✓ app/__tests__/flagstone-release-status.test.ts (4 tests) 4ms
+ ✓ app/__tests__/global-error.test.tsx (6 tests) 5ms
+ ✓ lib/__tests__/contrast-preferences.test.ts (10 tests) 35ms
+ ✓ lib/__tests__/schema.showcase.test.ts (8 tests) 10ms
+ ✓ lib/__tests__/flagstone-professional-bridge.test.ts (2 tests) 12ms
+ ✓ lib/__tests__/dusk-turn.test.ts (14 tests) 3ms
+ ✓ lib/__tests__/rounds.test.ts (4 tests) 6ms
+ ✓ lib/__tests__/print-reveal-visibility.test.ts (2 tests) 3ms
+ ✓ lib/__tests__/method-underline.test.ts (9 tests) 83ms
+ ✓ lib/__tests__/markdown.test.ts (11 tests) 11ms
+ ✓ lib/archive/__tests__/media.test.ts (6 tests) 4ms
+ ✓ lib/__tests__/section-nav-anchors.test.ts (27 tests) 40ms
+ ✓ lib/__tests__/metadata.test.ts (3 tests) 11ms
+ ✓ lib/__tests__/shot-matte-forwarding.test.ts (1 test) 2ms
+ ✓ lib/__tests__/asset-integrity.test.ts (3 tests) 8ms
+ ✓ lib/__tests__/exhibitLamp.test.ts (4 tests) 5ms
+ ✓ lib/__tests__/media.showcase.test.ts (4 tests) 4ms
+ ✓ lib/__tests__/media.test.ts (3 tests) 3ms
+ ✓ lib/__tests__/navDirection.test.ts (10 tests) 4ms
+ ✓ components/__tests__/IntroHandoff.test.ts (4 tests) 3ms
+ ✓ lib/__tests__/case-study-arrival-top.test.ts (3 tests) 2ms
+ ✓ lib/__tests__/accessibility-statement-scope.test.ts (1 test) 1ms
+ ✓ components/__tests__/AnimatedCertGrid.test.tsx (2 tests) 15ms
+ ✓ components/__tests__/GalleryWall.ssr.test.tsx (1 test) 33ms
+ ✓ lib/__tests__/static-integrity.test.ts (28 tests | 1 skipped) 200ms
+ ✓ components/__tests__/A11yReceipts.test.tsx (9 tests) 26ms
+
+ Test Files  98 passed (98)
+      Tests  873 passed | 2 skipped (875)
+   Start at  04:08:10
+   Duration  21.00s (transform 3.41s, setup 8.05s, collect 20.71s, tests 20.77s, environment 60.53s, prepare 8.28s)
+
