@@ -17,35 +17,42 @@ import { cn } from '@/lib/cn';
  * to native fragment-scroll (samePath && url.hash → not intercepted), so it
  * needs no special handling and works with JS disabled.
  *
- * Retirement mirrors IntroScrollCue's own IntersectionObserver on
- * `.cinematic-content-reveal` (same top-open + strict-intersection guards,
- * C-20/C-21/C-22) — once there is nothing left to skip, it disappears rather
- * than floating over the real page. Unlike the decorative "Scroll" cue, this
- * IS a control: real text, a real href, the site's focus-visible ring, and a
- * 44px tap target — it must never be pointer-events:none or aria-hidden.
+ * Retirement observes the actual `[data-hero-identity]` landing rather than
+ * the page-sized `.cinematic-content-reveal` wrapper. A wrapper can intersect
+ * by a few pixels while the person's name and role remain below the viewport;
+ * the skip is still needed then. Once most of the compact identity block is
+ * visible, there is no intro left to bypass and the control steps aside. The
+ * top-open root keeps it retired after the identity scrolls above the viewport.
+ * Unlike the decorative "Scroll" cue, this IS a control: real text, a real
+ * href, the site's focus-visible ring, and a 44px tap target — it must never be
+ * pointer-events:none or aria-hidden while the landing has not been reached.
  */
 export function IntroSkip() {
   const ref = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     if (typeof IntersectionObserver === 'undefined') return;
-    const content = document.querySelector('.cinematic-content-reveal');
+    const identity = document.querySelector('[data-hero-identity]');
     const el = ref.current;
-    if (!content || !el) return;
+    if (!identity || !el) return;
 
     const io = new IntersectionObserver(
       ([entry]) => {
         el.toggleAttribute(
           'data-skip-done',
-          entry.isIntersecting && entry.intersectionRatio > 0,
+          entry.isIntersecting && entry.intersectionRatio >= 0.75,
         );
       },
       {
-        threshold: [0, 0.001, 0.01, 0.05],
+        // Re-evaluate when a useful majority of the compact identity block is
+        // visible. Requiring 100% would make retirement brittle on short
+        // viewports or wrapped text; the wrapper-edge false positive is gone
+        // because the observed target is now the identity itself.
+        threshold: [0, 0.75],
         rootMargin: '100000px 0px 0px 0px',
       },
     );
-    io.observe(content);
+    io.observe(identity);
 
     return () => io.disconnect();
   }, []);
