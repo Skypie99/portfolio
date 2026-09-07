@@ -276,3 +276,11 @@ This applies to the exact local static candidate `d6e378a4f5b76682a3a9b821e7d90c
 - **Next baseline:** retained Phase 07 branch at closure commit, with implementation source `d6e378a` and this documentation closure following it. `SKYPI-PORTFOLIO-3.0-P08-LEAD` is permitted but has not been started.
 
 No integration, merge, push, deployment, production mutation, visibility change, or Phase 08 work is included in this closeout.
+
+## Subsequent authorized local integration — 2026-09-07
+
+After Phase 07 closed, the owner explicitly authorized the final **local-only** integration step. The registered private Portfolio 3.0 integration worktree `/Users/skypie/Portfolio-3.0-baseline`, branch `claude/portfolio-3.0-phase00-baseline-20260903`, was clean at predecessor `3a3ffb0009c68221319a8e2616a5810edcbe0433` / tree `ee3404e31a99c64912af165e963360e5e5d8fa7a`.
+
+That predecessor was verified as an ancestor of the accepted closure. `git merge --ff-only 6844856db67e87e58775174cb73dd06adc33ac92` advanced the private branch without a merge commit, conflict resolution, reset, rebase, or history rewrite. It includes the accepted Phase 07 implementation commits `d1c15f9`, `a531953`, `0679c4f`, and `d6e378a`, their evidence commits, and the Phase 07 closure receipt. The implementation paths `app`, `components`, `content`, `lib`, and `public` are byte-identical between accepted `d6e378a` and the integrated closure; later commits are QA evidence only.
+
+At the fast-forward completion, integration HEAD was `6844856db67e87e58775174cb73dd06adc33ac92` / tree `26580ceabb993017b0eb741ed34193dc53e6d665`. `npm run typecheck` passed in the integration worktree. No remote mutation, push, default-branch merge, deployment, visibility change, or Phase 08 work occurred. See `2026-09-07_Codex_Phase07LocalIntegration.md` for the final documentation-only integration record and final branch head.
