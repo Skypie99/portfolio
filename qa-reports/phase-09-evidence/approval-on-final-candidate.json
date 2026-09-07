@@ -1,0 +1,8 @@
+{
+  "baseSourceSHA": "d680cbcb5cdf8016f71a84b1476fb03867be9e52",
+  "prospectiveTree": "9b53c506ba4c878c9e46f46b392ed443dd5400cf",
+  "patchSha256": "35729e25bff77ee787b497a5a531d587025dca14214160a119d49f739f964eeb",
+  "policy": "UNAPPROVED",
+  "appliedToRealIndexOrWorktree": false,
+  "validation": "Exact patch application to disposable index on frozen accepted test/comment candidate passes; lane separately built and tested patch on original P08 product state."
+}

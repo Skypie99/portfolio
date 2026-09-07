@@ -1,0 +1,4150 @@
+{
+  "date": "2026-09-07T11:12:43.842Z",
+  "browser": "149.0.7827.55",
+  "artifactDigest": "444c1108258451fa7917c0266e384e51c6e970f0158bc008a4183f7cbcd43c86",
+  "method": "desktop1440x900 light normal motion, natural scroll; public HTML incl404/redirects; private Archive and unlisted Runway excluded from runtime, retained in static scan; no form submissions",
+  "rows": [
+    {
+      "route": "/404.html",
+      "redirect": null,
+      "url": "http://127.0.0.1:3049/404.html",
+      "title": "404: Page not found",
+      "h1": [
+        "Nothing here."
+      ],
+      "brokenImages": [],
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/0e96d314a90a6138-s.p.woff2",
+          "bytes": 8688
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
+          "bytes": 37776
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
+          "bytes": 8724
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
+          "bytes": 13732
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
+          "bytes": 8825
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
+          "bytes": 91933
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
+          "bytes": 2030
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
+          "bytes": 3513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+          "bytes": 173019
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
+          "bytes": 513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
+          "bytes": 8535
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
+          "bytes": 20634
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+          "bytes": 7434
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+          "bytes": 24162
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+          "bytes": 51544
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
+          "bytes": 15092
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
+          "bytes": 18683
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
+        },
+        {
+          "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
+          "bytes": 638
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/996.3e98c9faf716433c.js",
+          "bytes": 113094
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
+          "bytes": 5447
+        },
+        {
+          "url": "http://127.0.0.1:3049/index.txt?_rsc=0JRbJX4JgpfuvHsr",
+          "bytes": 82239
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/flagstone/index.txt?_rsc=0JRbJX4JgpfuvHsr",
+          "bytes": 73136
+        },
+        {
+          "url": "http://127.0.0.1:3049/blog/index.txt?_rsc=0JRbJX4JgpfuvHsr",
+          "bytes": 41126
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/index.txt?_rsc=0JRbJX4JgpfuvHsr",
+          "bytes": 75471
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
+          "bytes": 863
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
+          "bytes": 8869
+        },
+        {
+          "url": "http://127.0.0.1:3049/certificates/index.txt?_rsc=0JRbJX4JgpfuvHsr",
+          "bytes": 42067
+        },
+        {
+          "url": "http://127.0.0.1:3049/about/index.txt?_rsc=0JRbJX4JgpfuvHsr",
+          "bytes": 49110
+        },
+        {
+          "url": "http://127.0.0.1:3049/accessibility/index.txt?_rsc=0JRbJX4JgpfuvHsr",
+          "bytes": 51825
+        },
+        {
+          "url": "http://127.0.0.1:3049/colophon/index.txt?_rsc=0JRbJX4JgpfuvHsr",
+          "bytes": 52563
+        },
+        {
+          "url": "http://127.0.0.1:3049/contact/index.txt?_rsc=0JRbJX4JgpfuvHsr",
+          "bytes": 40393
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
+          "bytes": 14290
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/certificates/page-91fbf2c2e199170d.js",
+          "bytes": 6782
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
+          "bytes": 3975
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
+          "bytes": 1682
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
+          "bytes": 226
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
+          "bytes": 4377
+        }
+      ],
+      "canonical": [
+        "https://skypistudio.com/"
+      ],
+      "status": 200,
+      "errors": [],
+      "failed": [],
+      "responses": []
+    },
+    {
+      "route": "/404/",
+      "redirect": null,
+      "url": "http://127.0.0.1:3049/404/",
+      "title": "404: Page not found",
+      "h1": [
+        "Nothing here."
+      ],
+      "brokenImages": [],
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/0e96d314a90a6138-s.p.woff2",
+          "bytes": 8688
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
+          "bytes": 37776
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
+          "bytes": 8724
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
+          "bytes": 13732
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
+          "bytes": 8825
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
+          "bytes": 91933
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
+          "bytes": 2030
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
+          "bytes": 3513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+          "bytes": 173019
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
+          "bytes": 8535
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
+          "bytes": 513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
+          "bytes": 20634
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+          "bytes": 7434
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+          "bytes": 24162
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+          "bytes": 51544
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
+          "bytes": 15092
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
+          "bytes": 18683
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/996.3e98c9faf716433c.js",
+          "bytes": 113094
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
+          "bytes": 5447
+        },
+        {
+          "url": "http://127.0.0.1:3049/index.txt?_rsc=0JRbJX4JgpfuvHsr",
+          "bytes": 82239
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/flagstone/index.txt?_rsc=0JRbJX4JgpfuvHsr",
+          "bytes": 73136
+        },
+        {
+          "url": "http://127.0.0.1:3049/blog/index.txt?_rsc=0JRbJX4JgpfuvHsr",
+          "bytes": 41126
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/index.txt?_rsc=0JRbJX4JgpfuvHsr",
+          "bytes": 75471
+        },
+        {
+          "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
+          "bytes": 638
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
+          "bytes": 863
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
+          "bytes": 8869
+        },
+        {
+          "url": "http://127.0.0.1:3049/certificates/index.txt?_rsc=0JRbJX4JgpfuvHsr",
+          "bytes": 42067
+        },
+        {
+          "url": "http://127.0.0.1:3049/about/index.txt?_rsc=0JRbJX4JgpfuvHsr",
+          "bytes": 49110
+        },
+        {
+          "url": "http://127.0.0.1:3049/accessibility/index.txt?_rsc=0JRbJX4JgpfuvHsr",
+          "bytes": 51825
+        },
+        {
+          "url": "http://127.0.0.1:3049/colophon/index.txt?_rsc=0JRbJX4JgpfuvHsr",
+          "bytes": 52563
+        },
+        {
+          "url": "http://127.0.0.1:3049/contact/index.txt?_rsc=0JRbJX4JgpfuvHsr",
+          "bytes": 40393
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
+          "bytes": 14290
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/certificates/page-91fbf2c2e199170d.js",
+          "bytes": 6782
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
+          "bytes": 3975
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
+          "bytes": 1682
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
+          "bytes": 226
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
+          "bytes": 4377
+        }
+      ],
+      "canonical": [
+        "https://skypistudio.com/"
+      ],
+      "status": 200,
+      "errors": [],
+      "failed": [],
+      "responses": []
+    },
+    {
+      "route": "/about/",
+      "redirect": null,
+      "url": "http://127.0.0.1:3049/about/",
+      "title": "About: Skyler Halisky",
+      "h1": [
+        "Support is the work and inspiration, building tools to solve problems and reduce friction."
+      ],
+      "brokenImages": [],
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/0e96d314a90a6138-s.p.woff2",
+          "bytes": 8688
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
+          "bytes": 37776
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
+          "bytes": 8724
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
+          "bytes": 13732
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
+          "bytes": 8825
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
+          "bytes": 91933
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
+          "bytes": 2030
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
+          "bytes": 3513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+          "bytes": 173019
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
+          "bytes": 8535
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
+          "bytes": 513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
+          "bytes": 20634
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+          "bytes": 7434
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
+          "bytes": 3975
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+          "bytes": 24162
+        },
+        {
+          "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
+          "bytes": 638
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/996.3e98c9faf716433c.js",
+          "bytes": 113094
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
+          "bytes": 5447
+        },
+        {
+          "url": "http://127.0.0.1:3049/index.txt?_rsc=_paE49VugaXyxB1G",
+          "bytes": 82239
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/flagstone/index.txt?_rsc=_paE49VugaXyxB1G",
+          "bytes": 73136
+        },
+        {
+          "url": "http://127.0.0.1:3049/blog/index.txt?_rsc=_paE49VugaXyxB1G",
+          "bytes": 41126
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
+          "bytes": 15092
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+          "bytes": 51544
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
+          "bytes": 18683
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
+          "bytes": 863
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/claude-corp/index.txt?_rsc=_paE49VugaXyxB1G",
+          "bytes": 60316
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/dashboard/index.txt?_rsc=_paE49VugaXyxB1G",
+          "bytes": 61044
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/index.txt?_rsc=_paE49VugaXyxB1G",
+          "bytes": 75471
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
+          "bytes": 8869
+        },
+        {
+          "url": "http://127.0.0.1:3049/certificates/index.txt?_rsc=_paE49VugaXyxB1G",
+          "bytes": 42067
+        },
+        {
+          "url": "http://127.0.0.1:3049/accessibility/index.txt?_rsc=_paE49VugaXyxB1G",
+          "bytes": 51825
+        },
+        {
+          "url": "http://127.0.0.1:3049/colophon/index.txt?_rsc=_paE49VugaXyxB1G",
+          "bytes": 52563
+        },
+        {
+          "url": "http://127.0.0.1:3049/contact/index.txt?_rsc=_paE49VugaXyxB1G",
+          "bytes": 40393
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
+          "bytes": 14290
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/certificates/page-91fbf2c2e199170d.js",
+          "bytes": 6782
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
+          "bytes": 226
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
+          "bytes": 1682
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
+          "bytes": 4377
+        }
+      ],
+      "canonical": [
+        "https://skypistudio.com/about/"
+      ],
+      "status": 200,
+      "errors": [],
+      "failed": [],
+      "responses": []
+    },
+    {
+      "route": "/accessibility/",
+      "redirect": null,
+      "url": "http://127.0.0.1:3049/accessibility/",
+      "title": "Accessibility: Skyler Halisky",
+      "h1": [
+        "Accessibility is where I begin."
+      ],
+      "brokenImages": [],
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/0e96d314a90a6138-s.p.woff2",
+          "bytes": 8688
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
+          "bytes": 8724
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
+          "bytes": 37776
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
+          "bytes": 8825
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
+          "bytes": 91933
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
+          "bytes": 13732
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
+          "bytes": 2030
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
+          "bytes": 3513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
+          "bytes": 513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
+          "bytes": 20634
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
+          "bytes": 8535
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+          "bytes": 173019
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+          "bytes": 7434
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
+          "bytes": 1682
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+          "bytes": 24162
+        },
+        {
+          "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
+          "bytes": 638
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/996.3e98c9faf716433c.js",
+          "bytes": 113094
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
+          "bytes": 5447
+        },
+        {
+          "url": "http://127.0.0.1:3049/index.txt?_rsc=p6JBf-Gtq-35482P",
+          "bytes": 82239
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/flagstone/index.txt?_rsc=p6JBf-Gtq-35482P",
+          "bytes": 73136
+        },
+        {
+          "url": "http://127.0.0.1:3049/blog/index.txt?_rsc=p6JBf-Gtq-35482P",
+          "bytes": 41126
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
+          "bytes": 15092
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+          "bytes": 51544
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
+          "bytes": 18683
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
+          "bytes": 863
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/index.txt?_rsc=p6JBf-Gtq-35482P",
+          "bytes": 75471
+        },
+        {
+          "url": "http://127.0.0.1:3049/certificates/index.txt?_rsc=p6JBf-Gtq-35482P",
+          "bytes": 42067
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
+          "bytes": 14290
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/certificates/page-91fbf2c2e199170d.js",
+          "bytes": 6782
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
+          "bytes": 8869
+        },
+        {
+          "url": "http://127.0.0.1:3049/about/index.txt?_rsc=p6JBf-Gtq-35482P",
+          "bytes": 49110
+        },
+        {
+          "url": "http://127.0.0.1:3049/colophon/index.txt?_rsc=p6JBf-Gtq-35482P",
+          "bytes": 52563
+        },
+        {
+          "url": "http://127.0.0.1:3049/contact/index.txt?_rsc=p6JBf-Gtq-35482P",
+          "bytes": 40393
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
+          "bytes": 3975
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
+          "bytes": 226
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
+          "bytes": 4377
+        }
+      ],
+      "canonical": [
+        "https://skypistudio.com/accessibility/"
+      ],
+      "status": 200,
+      "errors": [],
+      "failed": [],
+      "responses": []
+    },
+    {
+      "route": "/blog/building-accessmap/",
+      "redirect": "0; url=/blog/building-flagstone/",
+      "url": "http://127.0.0.1:3049/blog/building-flagstone/",
+      "title": "Building Flagstone: A Lesson in Shipping Something That Matters: Skyler Halisky",
+      "h1": [
+        "Building Flagstone: A Lesson in Shipping Something That Matters"
+      ],
+      "brokenImages": [],
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/0e96d314a90a6138-s.p.woff2",
+          "bytes": 8688
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
+          "bytes": 37776
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
+          "bytes": 8724
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
+          "bytes": 8825
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
+          "bytes": 91933
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
+          "bytes": 13732
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
+          "bytes": 2030
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
+          "bytes": 3513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+          "bytes": 173019
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
+          "bytes": 513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
+          "bytes": 8535
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
+          "bytes": 20634
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+          "bytes": 7434
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/%5Bslug%5D/page-031d981fbc8f599b.js",
+          "bytes": 6087
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+          "bytes": 24162
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
+          "bytes": 15092
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
+        },
+        {
+          "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
+          "bytes": 638
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/996.3e98c9faf716433c.js",
+          "bytes": 113094
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
+          "bytes": 5447
+        },
+        {
+          "url": "http://127.0.0.1:3049/index.txt?_rsc=_gnoNjP8yS2iw3zb",
+          "bytes": 82239
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/flagstone/index.txt?_rsc=_gnoNjP8yS2iw3zb",
+          "bytes": 73136
+        },
+        {
+          "url": "http://127.0.0.1:3049/blog/index.txt?_rsc=_gnoNjP8yS2iw3zb",
+          "bytes": 41126
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+          "bytes": 51544
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
+          "bytes": 18683
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
+          "bytes": 863
+        },
+        {
+          "url": "http://127.0.0.1:3049/images/deliverables/flagstone/card-flag.avif",
+          "bytes": 28184
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/flagstone/explore-current.phone.avif",
+          "bytes": 126271
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/index.txt?_rsc=_gnoNjP8yS2iw3zb",
+          "bytes": 75471
+        },
+        {
+          "url": "http://127.0.0.1:3049/certificates/index.txt?_rsc=_gnoNjP8yS2iw3zb",
+          "bytes": 42067
+        },
+        {
+          "url": "http://127.0.0.1:3049/about/index.txt?_rsc=_gnoNjP8yS2iw3zb",
+          "bytes": 49110
+        },
+        {
+          "url": "http://127.0.0.1:3049/accessibility/index.txt?_rsc=_gnoNjP8yS2iw3zb",
+          "bytes": 51825
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
+          "bytes": 8869
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
+          "bytes": 1682
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
+          "bytes": 14290
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/certificates/page-91fbf2c2e199170d.js",
+          "bytes": 6782
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
+          "bytes": 3975
+        },
+        {
+          "url": "http://127.0.0.1:3049/colophon/index.txt?_rsc=_gnoNjP8yS2iw3zb",
+          "bytes": 52563
+        },
+        {
+          "url": "http://127.0.0.1:3049/contact/index.txt?_rsc=_gnoNjP8yS2iw3zb",
+          "bytes": 40393
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
+          "bytes": 4377
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
+          "bytes": 226
+        }
+      ],
+      "canonical": [
+        "https://skypistudio.com/blog/building-flagstone/"
+      ],
+      "status": 200,
+      "errors": [],
+      "failed": [],
+      "responses": []
+    },
+    {
+      "route": "/blog/building-flagstone/",
+      "redirect": null,
+      "url": "http://127.0.0.1:3049/blog/building-flagstone/",
+      "title": "Building Flagstone: A Lesson in Shipping Something That Matters: Skyler Halisky",
+      "h1": [
+        "Building Flagstone: A Lesson in Shipping Something That Matters"
+      ],
+      "brokenImages": [],
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/0e96d314a90a6138-s.p.woff2",
+          "bytes": 8688
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
+          "bytes": 37776
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
+          "bytes": 8825
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
+          "bytes": 13732
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
+          "bytes": 8724
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
+          "bytes": 91933
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
+          "bytes": 2030
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
+          "bytes": 3513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+          "bytes": 173019
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
+          "bytes": 513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
+          "bytes": 8535
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
+          "bytes": 20634
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+          "bytes": 7434
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+          "bytes": 24162
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
+          "bytes": 15092
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/%5Bslug%5D/page-031d981fbc8f599b.js",
+          "bytes": 6087
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
+        },
+        {
+          "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
+          "bytes": 638
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/996.3e98c9faf716433c.js",
+          "bytes": 113094
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
+          "bytes": 5447
+        },
+        {
+          "url": "http://127.0.0.1:3049/index.txt?_rsc=_gnoNjP8yS2iw3zb",
+          "bytes": 82239
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/flagstone/index.txt?_rsc=_gnoNjP8yS2iw3zb",
+          "bytes": 73136
+        },
+        {
+          "url": "http://127.0.0.1:3049/blog/index.txt?_rsc=_gnoNjP8yS2iw3zb",
+          "bytes": 41126
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+          "bytes": 51544
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
+          "bytes": 18683
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
+          "bytes": 863
+        },
+        {
+          "url": "http://127.0.0.1:3049/images/deliverables/flagstone/card-flag.avif",
+          "bytes": 28184
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/flagstone/explore-current.phone.avif",
+          "bytes": 126271
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/index.txt?_rsc=_gnoNjP8yS2iw3zb",
+          "bytes": 75471
+        },
+        {
+          "url": "http://127.0.0.1:3049/certificates/index.txt?_rsc=_gnoNjP8yS2iw3zb",
+          "bytes": 42067
+        },
+        {
+          "url": "http://127.0.0.1:3049/about/index.txt?_rsc=_gnoNjP8yS2iw3zb",
+          "bytes": 49110
+        },
+        {
+          "url": "http://127.0.0.1:3049/accessibility/index.txt?_rsc=_gnoNjP8yS2iw3zb",
+          "bytes": 51825
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
+          "bytes": 8869
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
+          "bytes": 14290
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/certificates/page-91fbf2c2e199170d.js",
+          "bytes": 6782
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
+          "bytes": 3975
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
+          "bytes": 1682
+        },
+        {
+          "url": "http://127.0.0.1:3049/colophon/index.txt?_rsc=_gnoNjP8yS2iw3zb",
+          "bytes": 52563
+        },
+        {
+          "url": "http://127.0.0.1:3049/contact/index.txt?_rsc=_gnoNjP8yS2iw3zb",
+          "bytes": 40393
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
+          "bytes": 226
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
+          "bytes": 4377
+        }
+      ],
+      "canonical": [
+        "https://skypistudio.com/blog/building-flagstone/"
+      ],
+      "status": 200,
+      "errors": [],
+      "failed": [],
+      "responses": []
+    },
+    {
+      "route": "/blog/",
+      "redirect": null,
+      "url": "http://127.0.0.1:3049/blog/",
+      "title": "Notes: Skyler Halisky",
+      "h1": [
+        "Notes"
+      ],
+      "brokenImages": [],
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/0e96d314a90a6138-s.p.woff2",
+          "bytes": 8688
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
+          "bytes": 37776
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
+          "bytes": 8724
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
+          "bytes": 13732
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
+          "bytes": 8825
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
+          "bytes": 91933
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
+          "bytes": 2030
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
+          "bytes": 3513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+          "bytes": 173019
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
+          "bytes": 513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
+          "bytes": 8535
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
+          "bytes": 20634
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+          "bytes": 7434
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+          "bytes": 24162
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
+          "bytes": 863
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
+        },
+        {
+          "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
+          "bytes": 638
+        },
+        {
+          "url": "http://127.0.0.1:3049/index.txt?_rsc=fvVk386B7PbQRK64",
+          "bytes": 82239
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/flagstone/index.txt?_rsc=fvVk386B7PbQRK64",
+          "bytes": 73136
+        },
+        {
+          "url": "http://127.0.0.1:3049/blog/building-flagstone/index.txt?_rsc=fvVk386B7PbQRK64",
+          "bytes": 56486
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/index.txt?_rsc=fvVk386B7PbQRK64",
+          "bytes": 75471
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
+          "bytes": 5447
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/996.3e98c9faf716433c.js",
+          "bytes": 113094
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+          "bytes": 51544
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
+          "bytes": 15092
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
+          "bytes": 18683
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/%5Bslug%5D/page-031d981fbc8f599b.js",
+          "bytes": 6087
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
+          "bytes": 8869
+        },
+        {
+          "url": "http://127.0.0.1:3049/certificates/index.txt?_rsc=fvVk386B7PbQRK64",
+          "bytes": 42067
+        },
+        {
+          "url": "http://127.0.0.1:3049/accessibility/index.txt?_rsc=fvVk386B7PbQRK64",
+          "bytes": 51825
+        },
+        {
+          "url": "http://127.0.0.1:3049/about/index.txt?_rsc=fvVk386B7PbQRK64",
+          "bytes": 49110
+        },
+        {
+          "url": "http://127.0.0.1:3049/colophon/index.txt?_rsc=fvVk386B7PbQRK64",
+          "bytes": 52563
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
+          "bytes": 14290
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/certificates/page-91fbf2c2e199170d.js",
+          "bytes": 6782
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
+          "bytes": 1682
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
+          "bytes": 3975
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
+          "bytes": 226
+        },
+        {
+          "url": "http://127.0.0.1:3049/contact/index.txt?_rsc=fvVk386B7PbQRK64",
+          "bytes": 40393
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
+          "bytes": 4377
+        }
+      ],
+      "canonical": [
+        "https://skypistudio.com/blog/"
+      ],
+      "status": 200,
+      "errors": [],
+      "failed": [],
+      "responses": []
+    },
+    {
+      "route": "/certificates/",
+      "redirect": null,
+      "url": "http://127.0.0.1:3049/certificates/",
+      "title": "Credentials: Skyler Halisky",
+      "h1": [
+        "Credentials"
+      ],
+      "brokenImages": [],
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/0e96d314a90a6138-s.p.woff2",
+          "bytes": 8688
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
+          "bytes": 37776
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
+          "bytes": 13732
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
+          "bytes": 8724
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
+          "bytes": 8825
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
+          "bytes": 91933
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
+          "bytes": 2030
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
+          "bytes": 3513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+          "bytes": 173019
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
+          "bytes": 513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
+          "bytes": 8535
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
+          "bytes": 20634
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+          "bytes": 7434
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+          "bytes": 24162
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
+          "bytes": 14290
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/certificates/page-91fbf2c2e199170d.js",
+          "bytes": 6782
+        },
+        {
+          "url": "http://127.0.0.1:3049/images/certificates/anthropic-mcp-intro-2026/badge.avif",
+          "bytes": 4050
+        },
+        {
+          "url": "http://127.0.0.1:3049/images/certificates/anthropic-ai-fluency-2026/badge.avif",
+          "bytes": 4784
+        },
+        {
+          "url": "http://127.0.0.1:3049/images/certificates/anthropic-cowork-intro-2026/badge.avif",
+          "bytes": 11965
+        },
+        {
+          "url": "http://127.0.0.1:3049/images/certificates/anthropic-claude-101-2026/badge.avif",
+          "bytes": 6294
+        },
+        {
+          "url": "http://127.0.0.1:3049/images/certificates/anthropic-claude-code-in-action-2026/badge.avif",
+          "bytes": 4448
+        },
+        {
+          "url": "http://127.0.0.1:3049/images/certificates/anthropic-claude-code-101-2026/badge.avif",
+          "bytes": 3789
+        },
+        {
+          "url": "http://127.0.0.1:3049/images/certificates/google-prompting-essentials-2025/badge.png",
+          "bytes": 126950
+        },
+        {
+          "url": "http://127.0.0.1:3049/images/certificates/umich-python-2025/badge.png",
+          "bytes": 68492
+        },
+        {
+          "url": "http://127.0.0.1:3049/images/certificates/deeplearning-ai-for-everyone-2025/badge.avif",
+          "bytes": 10740
+        },
+        {
+          "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
+          "bytes": 638
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/996.3e98c9faf716433c.js",
+          "bytes": 113094
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
+          "bytes": 5447
+        },
+        {
+          "url": "http://127.0.0.1:3049/index.txt?_rsc=Ee5HBWak51lnqgnN",
+          "bytes": 82239
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/flagstone/index.txt?_rsc=Ee5HBWak51lnqgnN",
+          "bytes": 73136
+        },
+        {
+          "url": "http://127.0.0.1:3049/blog/index.txt?_rsc=Ee5HBWak51lnqgnN",
+          "bytes": 41126
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+          "bytes": 51544
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
+          "bytes": 15092
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
+          "bytes": 18683
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
+          "bytes": 863
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/index.txt?_rsc=Ee5HBWak51lnqgnN",
+          "bytes": 75471
+        },
+        {
+          "url": "http://127.0.0.1:3049/accessibility/index.txt?_rsc=Ee5HBWak51lnqgnN",
+          "bytes": 51825
+        },
+        {
+          "url": "http://127.0.0.1:3049/about/index.txt?_rsc=Ee5HBWak51lnqgnN",
+          "bytes": 49110
+        },
+        {
+          "url": "http://127.0.0.1:3049/colophon/index.txt?_rsc=Ee5HBWak51lnqgnN",
+          "bytes": 52563
+        },
+        {
+          "url": "http://127.0.0.1:3049/contact/index.txt?_rsc=Ee5HBWak51lnqgnN",
+          "bytes": 40393
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
+          "bytes": 1682
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
+          "bytes": 8869
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
+          "bytes": 3975
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
+          "bytes": 226
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
+          "bytes": 4377
+        }
+      ],
+      "canonical": [
+        "https://skypistudio.com/certificates/"
+      ],
+      "status": 200,
+      "errors": [],
+      "failed": [],
+      "responses": []
+    },
+    {
+      "route": "/colophon/",
+      "redirect": null,
+      "url": "http://127.0.0.1:3049/colophon/",
+      "title": "Colophon: Skyler Halisky",
+      "h1": [
+        "How this was made."
+      ],
+      "brokenImages": [],
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/0e96d314a90a6138-s.p.woff2",
+          "bytes": 8688
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
+          "bytes": 37776
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
+          "bytes": 8724
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
+          "bytes": 13732
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
+          "bytes": 8825
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
+          "bytes": 2030
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
+          "bytes": 91933
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
+          "bytes": 3513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+          "bytes": 173019
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
+          "bytes": 513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
+          "bytes": 8535
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
+          "bytes": 20634
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+          "bytes": 7434
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+          "bytes": 24162
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
+          "bytes": 226
+        },
+        {
+          "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
+          "bytes": 638
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/996.3e98c9faf716433c.js",
+          "bytes": 113094
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
+          "bytes": 5447
+        },
+        {
+          "url": "http://127.0.0.1:3049/index.txt?_rsc=e2nUY1lHbfCd5Yay",
+          "bytes": 82239
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/flagstone/index.txt?_rsc=e2nUY1lHbfCd5Yay",
+          "bytes": 73136
+        },
+        {
+          "url": "http://127.0.0.1:3049/blog/index.txt?_rsc=e2nUY1lHbfCd5Yay",
+          "bytes": 41126
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
+          "bytes": 15092
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
+          "bytes": 863
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+          "bytes": 51544
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
+          "bytes": 18683
+        },
+        {
+          "url": "http://127.0.0.1:3049/accessibility/index.txt?_rsc=e2nUY1lHbfCd5Yay",
+          "bytes": 51825
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
+          "bytes": 1682
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/index.txt?_rsc=e2nUY1lHbfCd5Yay",
+          "bytes": 75471
+        },
+        {
+          "url": "http://127.0.0.1:3049/certificates/index.txt?_rsc=e2nUY1lHbfCd5Yay",
+          "bytes": 42067
+        },
+        {
+          "url": "http://127.0.0.1:3049/about/index.txt?_rsc=e2nUY1lHbfCd5Yay",
+          "bytes": 49110
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
+          "bytes": 8869
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
+          "bytes": 14290
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/certificates/page-91fbf2c2e199170d.js",
+          "bytes": 6782
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
+          "bytes": 3975
+        },
+        {
+          "url": "http://127.0.0.1:3049/contact/index.txt?_rsc=e2nUY1lHbfCd5Yay",
+          "bytes": 40393
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
+          "bytes": 4377
+        }
+      ],
+      "canonical": [
+        "https://skypistudio.com/colophon/"
+      ],
+      "status": 200,
+      "errors": [],
+      "failed": [],
+      "responses": []
+    },
+    {
+      "route": "/contact/",
+      "redirect": null,
+      "url": "http://127.0.0.1:3049/contact/",
+      "title": "Contact: Skyler Halisky",
+      "h1": [
+        "Write to me."
+      ],
+      "brokenImages": [],
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/0e96d314a90a6138-s.p.woff2",
+          "bytes": 8688
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
+          "bytes": 37776
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
+          "bytes": 13732
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
+          "bytes": 8724
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
+          "bytes": 8825
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
+          "bytes": 2030
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
+          "bytes": 91933
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
+          "bytes": 3513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+          "bytes": 173019
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
+          "bytes": 513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
+          "bytes": 8535
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
+          "bytes": 20634
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+          "bytes": 7434
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+          "bytes": 24162
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
+          "bytes": 4377
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
+        },
+        {
+          "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
+          "bytes": 638
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/996.3e98c9faf716433c.js",
+          "bytes": 113094
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
+          "bytes": 5447
+        },
+        {
+          "url": "http://127.0.0.1:3049/index.txt?_rsc=8k6vkql5ktX3Dkf2",
+          "bytes": 82239
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/flagstone/index.txt?_rsc=8k6vkql5ktX3Dkf2",
+          "bytes": 73136
+        },
+        {
+          "url": "http://127.0.0.1:3049/blog/index.txt?_rsc=8k6vkql5ktX3Dkf2",
+          "bytes": 41126
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
+          "bytes": 15092
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+          "bytes": 51544
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
+          "bytes": 18683
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
+          "bytes": 863
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/index.txt?_rsc=8k6vkql5ktX3Dkf2",
+          "bytes": 75471
+        },
+        {
+          "url": "http://127.0.0.1:3049/certificates/index.txt?_rsc=8k6vkql5ktX3Dkf2",
+          "bytes": 42067
+        },
+        {
+          "url": "http://127.0.0.1:3049/about/index.txt?_rsc=8k6vkql5ktX3Dkf2",
+          "bytes": 49110
+        },
+        {
+          "url": "http://127.0.0.1:3049/accessibility/index.txt?_rsc=8k6vkql5ktX3Dkf2",
+          "bytes": 51825
+        },
+        {
+          "url": "http://127.0.0.1:3049/colophon/index.txt?_rsc=8k6vkql5ktX3Dkf2",
+          "bytes": 52563
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
+          "bytes": 8869
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
+          "bytes": 14290
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/certificates/page-91fbf2c2e199170d.js",
+          "bytes": 6782
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
+          "bytes": 3975
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
+          "bytes": 1682
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
+          "bytes": 226
+        }
+      ],
+      "canonical": [
+        "https://skypistudio.com/contact/"
+      ],
+      "status": 200,
+      "errors": [],
+      "failed": [],
+      "responses": []
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "redirect": null,
+      "url": "http://127.0.0.1:3049/flagstone/accessibility/",
+      "title": "Accessibility: Flagstone",
+      "h1": [
+        "Accessibility"
+      ],
+      "brokenImages": [],
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3049/flagstone/assets/site.css",
+          "bytes": 16093
+        },
+        {
+          "url": "http://127.0.0.1:3049/flagstone/assets/logo-mark-white.svg",
+          "bytes": 669
+        },
+        {
+          "url": "http://127.0.0.1:3049/flagstone/assets/a11y.js",
+          "bytes": 7807
+        },
+        {
+          "url": "http://127.0.0.1:3049/flagstone/assets/favicon.svg",
+          "bytes": 853
+        }
+      ],
+      "canonical": [],
+      "status": 200,
+      "errors": [],
+      "failed": [],
+      "responses": []
+    },
+    {
+      "route": "/flagstone/",
+      "redirect": null,
+      "url": "http://127.0.0.1:3049/flagstone/",
+      "title": "Flagstone: community-powered accessibility map",
+      "h1": [
+        "Know before you go."
+      ],
+      "brokenImages": [],
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3049/flagstone/assets/site.css",
+          "bytes": 16093
+        },
+        {
+          "url": "http://127.0.0.1:3049/flagstone/assets/logo-mark-white.svg",
+          "bytes": 669
+        },
+        {
+          "url": "http://127.0.0.1:3049/flagstone/assets/a11y.js",
+          "bytes": 7807
+        },
+        {
+          "url": "http://127.0.0.1:3049/flagstone/assets/favicon.svg",
+          "bytes": 853
+        }
+      ],
+      "canonical": [],
+      "status": 200,
+      "errors": [],
+      "failed": [],
+      "responses": []
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "redirect": null,
+      "url": "http://127.0.0.1:3049/flagstone/privacy/",
+      "title": "Privacy Policy — Flagstone",
+      "h1": [
+        "Privacy Policy"
+      ],
+      "brokenImages": [],
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3049/flagstone/assets/site.css",
+          "bytes": 16093
+        },
+        {
+          "url": "http://127.0.0.1:3049/flagstone/assets/logo-mark-white.svg",
+          "bytes": 669
+        },
+        {
+          "url": "http://127.0.0.1:3049/flagstone/assets/a11y.js",
+          "bytes": 7807
+        },
+        {
+          "url": "http://127.0.0.1:3049/flagstone/assets/favicon.svg",
+          "bytes": 853
+        }
+      ],
+      "canonical": [],
+      "status": 200,
+      "errors": [],
+      "failed": [],
+      "responses": []
+    },
+    {
+      "route": "/flagstone/support/",
+      "redirect": null,
+      "url": "http://127.0.0.1:3049/flagstone/support/",
+      "title": "Support: Flagstone",
+      "h1": [
+        "Support"
+      ],
+      "brokenImages": [],
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3049/flagstone/assets/site.css",
+          "bytes": 16093
+        },
+        {
+          "url": "http://127.0.0.1:3049/flagstone/assets/logo-mark-white.svg",
+          "bytes": 669
+        },
+        {
+          "url": "http://127.0.0.1:3049/flagstone/assets/a11y.js",
+          "bytes": 7807
+        },
+        {
+          "url": "http://127.0.0.1:3049/flagstone/assets/favicon.svg",
+          "bytes": 853
+        }
+      ],
+      "canonical": [],
+      "status": 200,
+      "errors": [],
+      "failed": [],
+      "responses": []
+    },
+    {
+      "route": "/flagstone/terms/",
+      "redirect": null,
+      "url": "http://127.0.0.1:3049/flagstone/terms/",
+      "title": "Terms & Community Guidelines — Flagstone",
+      "h1": [
+        "Terms & Community Guidelines"
+      ],
+      "brokenImages": [],
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3049/flagstone/assets/site.css",
+          "bytes": 16093
+        },
+        {
+          "url": "http://127.0.0.1:3049/flagstone/assets/logo-mark-white.svg",
+          "bytes": 669
+        },
+        {
+          "url": "http://127.0.0.1:3049/flagstone/assets/a11y.js",
+          "bytes": 7807
+        },
+        {
+          "url": "http://127.0.0.1:3049/flagstone/assets/favicon.svg",
+          "bytes": 853
+        }
+      ],
+      "canonical": [],
+      "status": 200,
+      "errors": [],
+      "failed": [],
+      "responses": []
+    },
+    {
+      "route": "/",
+      "redirect": null,
+      "url": "http://127.0.0.1:3049/",
+      "title": "Skyler Halisky: Senior Technical Support",
+      "h1": [
+        "An accessibility map. A multi-agent system. A web-based prompt library."
+      ],
+      "brokenImages": [],
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/0e96d314a90a6138-s.p.woff2",
+          "bytes": 8688
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
+          "bytes": 37776
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
+          "bytes": 8724
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
+          "bytes": 13732
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
+        },
+        {
+          "url": "http://127.0.0.1:3049/images/headshot.jpg",
+          "bytes": 20206
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
+          "bytes": 2030
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
+          "bytes": 91933
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
+          "bytes": 8825
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
+          "bytes": 3513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+          "bytes": 173019
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
+          "bytes": 513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
+          "bytes": 8535
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
+          "bytes": 20634
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+          "bytes": 7434
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+          "bytes": 24162
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+          "bytes": 51544
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
+          "bytes": 15092
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
+          "bytes": 18683
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
+        },
+        {
+          "url": "http://127.0.0.1:3049/images/cinematic/mid-sky.avif",
+          "bytes": 20908
+        },
+        {
+          "url": "http://127.0.0.1:3049/images/cinematic/mid-mid.avif",
+          "bytes": 151327
+        },
+        {
+          "url": "http://127.0.0.1:3049/images/cinematic/arrival-cliff.avif",
+          "bytes": 147692
+        },
+        {
+          "url": "http://127.0.0.1:3049/images/cinematic/mid-fg.avif",
+          "bytes": 133442
+        },
+        {
+          "url": "http://127.0.0.1:3049/images/cinematic/arrival-cliff.avif",
+          "bytes": 147692
+        },
+        {
+          "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
+          "bytes": 638
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/996.3e98c9faf716433c.js",
+          "bytes": 113094
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
+          "bytes": 5447
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/flagstone/index.txt?_rsc=1p-R_iEY6bj0jY31",
+          "bytes": 73136
+        },
+        {
+          "url": "http://127.0.0.1:3049/blog/index.txt?_rsc=1p-R_iEY6bj0jY31",
+          "bytes": 41126
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
+          "bytes": 863
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/flagstone/explore-current.phone.avif",
+          "bytes": 126271
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/claude-corp/index.txt?_rsc=1p-R_iEY6bj0jY31",
+          "bytes": 60316
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/dashboard/index.txt?_rsc=1p-R_iEY6bj0jY31",
+          "bytes": 61044
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/prompt-library/index.txt?_rsc=1p-R_iEY6bj0jY31",
+          "bytes": 58924
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/ghost-code/index.txt?_rsc=1p-R_iEY6bj0jY31",
+          "bytes": 57909
+        },
+        {
+          "url": "http://127.0.0.1:3049/colophon/index.txt?_rsc=1p-R_iEY6bj0jY31#calibration",
+          "bytes": 52563
+        },
+        {
+          "url": "http://127.0.0.1:3049/accessibility/index.txt?_rsc=1p-R_iEY6bj0jY31",
+          "bytes": 51825
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
+          "bytes": 226
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
+          "bytes": 1682
+        },
+        {
+          "url": "http://127.0.0.1:3049/about/index.txt?_rsc=1p-R_iEY6bj0jY31",
+          "bytes": 49110
+        },
+        {
+          "url": "http://127.0.0.1:3049/certificates/index.txt?_rsc=1p-R_iEY6bj0jY31",
+          "bytes": 42067
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
+          "bytes": 3975
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
+          "bytes": 14290
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/certificates/page-91fbf2c2e199170d.js",
+          "bytes": 6782
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/index.txt?_rsc=1p-R_iEY6bj0jY31",
+          "bytes": 75471
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
+          "bytes": 8869
+        },
+        {
+          "url": "http://127.0.0.1:3049/contact/index.txt?_rsc=1p-R_iEY6bj0jY31",
+          "bytes": 40393
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
+          "bytes": 4377
+        }
+      ],
+      "canonical": [
+        "https://skypistudio.com/"
+      ],
+      "status": 200,
+      "errors": [],
+      "failed": [],
+      "responses": []
+    },
+    {
+      "route": "/work/accessmap/",
+      "redirect": "0; url=/work/flagstone/",
+      "url": "http://127.0.0.1:3049/work/flagstone/",
+      "title": "Flagstone: Skyler Halisky",
+      "h1": [
+        "Flagstone"
+      ],
+      "brokenImages": [],
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/0e96d314a90a6138-s.p.woff2",
+          "bytes": 8688
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
+          "bytes": 8724
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
+          "bytes": 37776
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
+          "bytes": 13732
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
+          "bytes": 8825
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
+          "bytes": 91933
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
+          "bytes": 2030
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
+          "bytes": 3513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+          "bytes": 173019
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
+          "bytes": 513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
+          "bytes": 8535
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
+          "bytes": 20634
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+          "bytes": 7434
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+          "bytes": 24162
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
+          "bytes": 15092
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/flagstone/explore-current.phone.avif",
+          "bytes": 126271
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/flagstone/clips/report-flow-current.dark.phone-poster.avif",
+          "bytes": 21402
+        },
+        {
+          "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
+          "bytes": 638
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/996.3e98c9faf716433c.js",
+          "bytes": 113094
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
+          "bytes": 5447
+        },
+        {
+          "url": "http://127.0.0.1:3049/index.txt?_rsc=9ymjXCYNC0qbZodK",
+          "bytes": 82239
+        },
+        {
+          "url": "http://127.0.0.1:3049/blog/index.txt?_rsc=9ymjXCYNC0qbZodK",
+          "bytes": 41126
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/index.txt?_rsc=9ymjXCYNC0qbZodK",
+          "bytes": 75471
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+          "bytes": 51544
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
+          "bytes": 18683
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
+          "bytes": 863
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
+          "bytes": 8869
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/flagstone/report-current.phone.avif",
+          "bytes": 30677
+        },
+        {
+          "url": "http://127.0.0.1:3049/about/index.txt?_rsc=9ymjXCYNC0qbZodK",
+          "bytes": 49110
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
+          "bytes": 3975
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/flagstone/community-current.phone.avif",
+          "bytes": 33079
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/flagstone/clips/report-flow-current.dark.phone.mp4",
+          "bytes": 716526
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/claude-corp/hero-pipeline.light.desktop.avif",
+          "bytes": 23330
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/dashboard/command-center.light.desktop.avif",
+          "bytes": 27634
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/dashboard/command-center.dark.desktop.avif",
+          "bytes": 31126
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/claude-corp/hero-pipeline.dark.desktop.avif",
+          "bytes": 24454
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/claude-corp/index.txt?_rsc=9ymjXCYNC0qbZodK",
+          "bytes": 60316
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/dashboard/index.txt?_rsc=9ymjXCYNC0qbZodK",
+          "bytes": 61044
+        },
+        {
+          "url": "http://127.0.0.1:3049/certificates/index.txt?_rsc=9ymjXCYNC0qbZodK",
+          "bytes": 42067
+        },
+        {
+          "url": "http://127.0.0.1:3049/accessibility/index.txt?_rsc=9ymjXCYNC0qbZodK",
+          "bytes": 51825
+        },
+        {
+          "url": "http://127.0.0.1:3049/colophon/index.txt?_rsc=9ymjXCYNC0qbZodK",
+          "bytes": 52563
+        },
+        {
+          "url": "http://127.0.0.1:3049/contact/index.txt?_rsc=9ymjXCYNC0qbZodK",
+          "bytes": 40393
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
+          "bytes": 14290
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/certificates/page-91fbf2c2e199170d.js",
+          "bytes": 6782
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
+          "bytes": 1682
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
+          "bytes": 226
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
+          "bytes": 4377
+        }
+      ],
+      "canonical": [
+        "https://skypistudio.com/work/flagstone/"
+      ],
+      "status": 200,
+      "errors": [],
+      "failed": [],
+      "responses": []
+    },
+    {
+      "route": "/work/claude-corp/",
+      "redirect": null,
+      "url": "http://127.0.0.1:3049/work/claude-corp/",
+      "title": "Claude Corp: Skyler Halisky",
+      "h1": [
+        "Claude Corp"
+      ],
+      "brokenImages": [],
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/0e96d314a90a6138-s.p.woff2",
+          "bytes": 8688
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
+          "bytes": 8724
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
+          "bytes": 37776
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
+          "bytes": 13732
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
+          "bytes": 8825
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
+          "bytes": 91933
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
+          "bytes": 2030
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
+          "bytes": 3513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+          "bytes": 173019
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
+          "bytes": 20634
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
+          "bytes": 8535
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
+          "bytes": 513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+          "bytes": 7434
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+          "bytes": 24162
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
+          "bytes": 15092
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/claude-corp/hero-pipeline.light.desktop.avif",
+          "bytes": 23330
+        },
+        {
+          "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
+          "bytes": 638
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/996.3e98c9faf716433c.js",
+          "bytes": 113094
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
+          "bytes": 5447
+        },
+        {
+          "url": "http://127.0.0.1:3049/index.txt?_rsc=oMXVChDaHQfM9FkG",
+          "bytes": 82239
+        },
+        {
+          "url": "http://127.0.0.1:3049/blog/index.txt?_rsc=oMXVChDaHQfM9FkG",
+          "bytes": 41126
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/index.txt?_rsc=oMXVChDaHQfM9FkG",
+          "bytes": 75471
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/flagstone/index.txt?_rsc=oMXVChDaHQfM9FkG",
+          "bytes": 73136
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/claude-corp/hero-pipeline.dark.desktop.avif",
+          "bytes": 24454
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+          "bytes": 51544
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
+          "bytes": 18683
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
+          "bytes": 863
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
+          "bytes": 8869
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/claude-corp/team.light.desktop.avif",
+          "bytes": 40093
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/dashboard/command-center.light.desktop.avif",
+          "bytes": 27634
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/prompt-library/home.light.desktop.avif",
+          "bytes": 24303
+        },
+        {
+          "url": "http://127.0.0.1:3049/about/index.txt?_rsc=oMXVChDaHQfM9FkG",
+          "bytes": 49110
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
+          "bytes": 3975
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/claude-corp/team.dark.desktop.avif",
+          "bytes": 40625
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/dashboard/index.txt?_rsc=oMXVChDaHQfM9FkG",
+          "bytes": 61044
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/prompt-library/index.txt?_rsc=oMXVChDaHQfM9FkG",
+          "bytes": 58924
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/dashboard/command-center.dark.desktop.avif",
+          "bytes": 31126
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/prompt-library/home.dark.desktop.avif",
+          "bytes": 25955
+        },
+        {
+          "url": "http://127.0.0.1:3049/certificates/index.txt?_rsc=oMXVChDaHQfM9FkG",
+          "bytes": 42067
+        },
+        {
+          "url": "http://127.0.0.1:3049/accessibility/index.txt?_rsc=oMXVChDaHQfM9FkG",
+          "bytes": 51825
+        },
+        {
+          "url": "http://127.0.0.1:3049/colophon/index.txt?_rsc=oMXVChDaHQfM9FkG",
+          "bytes": 52563
+        },
+        {
+          "url": "http://127.0.0.1:3049/contact/index.txt?_rsc=oMXVChDaHQfM9FkG",
+          "bytes": 40393
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
+          "bytes": 14290
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/certificates/page-91fbf2c2e199170d.js",
+          "bytes": 6782
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
+          "bytes": 1682
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
+          "bytes": 4377
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
+          "bytes": 226
+        }
+      ],
+      "canonical": [
+        "https://skypistudio.com/work/claude-corp/"
+      ],
+      "status": 200,
+      "errors": [],
+      "failed": [],
+      "responses": []
+    },
+    {
+      "route": "/work/dashboard/",
+      "redirect": null,
+      "url": "http://127.0.0.1:3049/work/dashboard/",
+      "title": "Claude Corp Dashboard: Skyler Halisky",
+      "h1": [
+        "Claude Corp Dashboard"
+      ],
+      "brokenImages": [],
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/0e96d314a90a6138-s.p.woff2",
+          "bytes": 8688
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
+          "bytes": 37776
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
+          "bytes": 8724
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
+          "bytes": 13732
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
+          "bytes": 91933
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
+          "bytes": 8825
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
+          "bytes": 2030
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
+          "bytes": 3513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
+          "bytes": 513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
+          "bytes": 8535
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
+          "bytes": 20634
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+          "bytes": 173019
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+          "bytes": 7434
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+          "bytes": 24162
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
+          "bytes": 15092
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/dashboard/command-center.light.desktop.avif",
+          "bytes": 27634
+        },
+        {
+          "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
+          "bytes": 638
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/996.3e98c9faf716433c.js",
+          "bytes": 113094
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
+          "bytes": 5447
+        },
+        {
+          "url": "http://127.0.0.1:3049/index.txt?_rsc=eGTaZSr5aKej6mxg",
+          "bytes": 82239
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/flagstone/index.txt?_rsc=eGTaZSr5aKej6mxg",
+          "bytes": 73136
+        },
+        {
+          "url": "http://127.0.0.1:3049/blog/index.txt?_rsc=eGTaZSr5aKej6mxg",
+          "bytes": 41126
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/index.txt?_rsc=eGTaZSr5aKej6mxg",
+          "bytes": 75471
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/dashboard/command-center.dark.desktop.avif",
+          "bytes": 31126
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+          "bytes": 51544
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
+          "bytes": 18683
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
+          "bytes": 863
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
+          "bytes": 8869
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/dashboard/think-tank.light.desktop.avif",
+          "bytes": 35008
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/dashboard/dispatch.light.desktop.avif",
+          "bytes": 37578
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/prompt-library/home.light.desktop.avif",
+          "bytes": 24303
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/ghost-code/board.light.desktop.avif",
+          "bytes": 13247
+        },
+        {
+          "url": "http://127.0.0.1:3049/about/index.txt?_rsc=eGTaZSr5aKej6mxg",
+          "bytes": 49110
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/dashboard/think-tank.dark.desktop.avif",
+          "bytes": 38411
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/dashboard/dispatch.dark.desktop.avif",
+          "bytes": 42254
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
+          "bytes": 3975
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/ghost-code/board.dark.desktop.avif",
+          "bytes": 12619
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/prompt-library/home.dark.desktop.avif",
+          "bytes": 25955
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/prompt-library/index.txt?_rsc=eGTaZSr5aKej6mxg",
+          "bytes": 58924
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/ghost-code/index.txt?_rsc=eGTaZSr5aKej6mxg",
+          "bytes": 57909
+        },
+        {
+          "url": "http://127.0.0.1:3049/certificates/index.txt?_rsc=eGTaZSr5aKej6mxg",
+          "bytes": 42067
+        },
+        {
+          "url": "http://127.0.0.1:3049/accessibility/index.txt?_rsc=eGTaZSr5aKej6mxg",
+          "bytes": 51825
+        },
+        {
+          "url": "http://127.0.0.1:3049/contact/index.txt?_rsc=eGTaZSr5aKej6mxg",
+          "bytes": 40393
+        },
+        {
+          "url": "http://127.0.0.1:3049/colophon/index.txt?_rsc=eGTaZSr5aKej6mxg",
+          "bytes": 52563
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
+          "bytes": 14290
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/certificates/page-91fbf2c2e199170d.js",
+          "bytes": 6782
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
+          "bytes": 1682
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
+          "bytes": 4377
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
+          "bytes": 226
+        }
+      ],
+      "canonical": [
+        "https://skypistudio.com/work/dashboard/"
+      ],
+      "status": 200,
+      "errors": [],
+      "failed": [],
+      "responses": []
+    },
+    {
+      "route": "/work/flagstone/",
+      "redirect": null,
+      "url": "http://127.0.0.1:3049/work/flagstone/",
+      "title": "Flagstone: Skyler Halisky",
+      "h1": [
+        "Flagstone"
+      ],
+      "brokenImages": [],
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/0e96d314a90a6138-s.p.woff2",
+          "bytes": 8688
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
+          "bytes": 37776
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
+          "bytes": 8724
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
+          "bytes": 13732
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
+          "bytes": 8825
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
+          "bytes": 91933
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
+          "bytes": 2030
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
+          "bytes": 3513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+          "bytes": 173019
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
+          "bytes": 513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
+          "bytes": 8535
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
+          "bytes": 20634
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+          "bytes": 7434
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+          "bytes": 24162
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
+          "bytes": 15092
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/flagstone/explore-current.phone.avif",
+          "bytes": 126271
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/flagstone/clips/report-flow-current.dark.phone-poster.avif",
+          "bytes": 21402
+        },
+        {
+          "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
+          "bytes": 638
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/996.3e98c9faf716433c.js",
+          "bytes": 113094
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
+          "bytes": 5447
+        },
+        {
+          "url": "http://127.0.0.1:3049/index.txt?_rsc=9ymjXCYNC0qbZodK",
+          "bytes": 82239
+        },
+        {
+          "url": "http://127.0.0.1:3049/blog/index.txt?_rsc=9ymjXCYNC0qbZodK",
+          "bytes": 41126
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/index.txt?_rsc=9ymjXCYNC0qbZodK",
+          "bytes": 75471
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
+          "bytes": 863
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
+          "bytes": 8869
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+          "bytes": 51544
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
+          "bytes": 18683
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/flagstone/report-current.phone.avif",
+          "bytes": 30677
+        },
+        {
+          "url": "http://127.0.0.1:3049/about/index.txt?_rsc=9ymjXCYNC0qbZodK",
+          "bytes": 49110
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
+          "bytes": 3975
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/flagstone/community-current.phone.avif",
+          "bytes": 33079
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/flagstone/clips/report-flow-current.dark.phone.mp4",
+          "bytes": 716526
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/claude-corp/hero-pipeline.light.desktop.avif",
+          "bytes": 23330
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/dashboard/command-center.light.desktop.avif",
+          "bytes": 27634
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/claude-corp/hero-pipeline.dark.desktop.avif",
+          "bytes": 24454
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/dashboard/command-center.dark.desktop.avif",
+          "bytes": 31126
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/claude-corp/index.txt?_rsc=9ymjXCYNC0qbZodK",
+          "bytes": 60316
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/dashboard/index.txt?_rsc=9ymjXCYNC0qbZodK",
+          "bytes": 61044
+        },
+        {
+          "url": "http://127.0.0.1:3049/certificates/index.txt?_rsc=9ymjXCYNC0qbZodK",
+          "bytes": 42067
+        },
+        {
+          "url": "http://127.0.0.1:3049/accessibility/index.txt?_rsc=9ymjXCYNC0qbZodK",
+          "bytes": 51825
+        },
+        {
+          "url": "http://127.0.0.1:3049/colophon/index.txt?_rsc=9ymjXCYNC0qbZodK",
+          "bytes": 52563
+        },
+        {
+          "url": "http://127.0.0.1:3049/contact/index.txt?_rsc=9ymjXCYNC0qbZodK",
+          "bytes": 40393
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
+          "bytes": 14290
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/certificates/page-91fbf2c2e199170d.js",
+          "bytes": 6782
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
+          "bytes": 1682
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
+          "bytes": 226
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
+          "bytes": 4377
+        }
+      ],
+      "canonical": [
+        "https://skypistudio.com/work/flagstone/"
+      ],
+      "status": 200,
+      "errors": [],
+      "failed": [],
+      "responses": []
+    },
+    {
+      "route": "/work/ghost-code/",
+      "redirect": null,
+      "url": "http://127.0.0.1:3049/work/ghost-code/",
+      "title": "Ghost Code: Skyler Halisky",
+      "h1": [
+        "Ghost Code"
+      ],
+      "brokenImages": [],
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/0e96d314a90a6138-s.p.woff2",
+          "bytes": 8688
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
+          "bytes": 8724
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
+          "bytes": 37776
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
+          "bytes": 13732
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
+          "bytes": 8825
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
+          "bytes": 91933
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
+          "bytes": 2030
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
+          "bytes": 3513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+          "bytes": 173019
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
+          "bytes": 513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
+          "bytes": 8535
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+          "bytes": 7434
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+          "bytes": 24162
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
+          "bytes": 20634
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
+          "bytes": 15092
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/ghost-code/title.light.desktop.avif",
+          "bytes": 13138
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/ghost-code/clips/round.light.phone-poster.avif",
+          "bytes": 9871
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/ghost-code/clips/round.dark.phone-poster.avif",
+          "bytes": 11114
+        },
+        {
+          "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
+          "bytes": 638
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/996.3e98c9faf716433c.js",
+          "bytes": 113094
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
+          "bytes": 5447
+        },
+        {
+          "url": "http://127.0.0.1:3049/index.txt?_rsc=VpmHg1piavgWU9IX",
+          "bytes": 82239
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/flagstone/index.txt?_rsc=VpmHg1piavgWU9IX",
+          "bytes": 73136
+        },
+        {
+          "url": "http://127.0.0.1:3049/blog/index.txt?_rsc=VpmHg1piavgWU9IX",
+          "bytes": 41126
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/index.txt?_rsc=VpmHg1piavgWU9IX",
+          "bytes": 75471
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/ghost-code/title.dark.desktop.avif",
+          "bytes": 13772
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+          "bytes": 51544
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
+          "bytes": 18683
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
+          "bytes": 863
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
+          "bytes": 8869
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/flagstone/explore-current.phone.avif",
+          "bytes": 126271
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/claude-corp/hero-pipeline.light.desktop.avif",
+          "bytes": 23330
+        },
+        {
+          "url": "http://127.0.0.1:3049/about/index.txt?_rsc=VpmHg1piavgWU9IX",
+          "bytes": 49110
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/ghost-code/clips/round.light.phone.mp4",
+          "bytes": 22361
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
+          "bytes": 3975
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/claude-corp/hero-pipeline.dark.desktop.avif",
+          "bytes": 24454
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/claude-corp/index.txt?_rsc=VpmHg1piavgWU9IX",
+          "bytes": 60316
+        },
+        {
+          "url": "http://127.0.0.1:3049/certificates/index.txt?_rsc=VpmHg1piavgWU9IX",
+          "bytes": 42067
+        },
+        {
+          "url": "http://127.0.0.1:3049/colophon/index.txt?_rsc=VpmHg1piavgWU9IX",
+          "bytes": 52563
+        },
+        {
+          "url": "http://127.0.0.1:3049/accessibility/index.txt?_rsc=VpmHg1piavgWU9IX",
+          "bytes": 51825
+        },
+        {
+          "url": "http://127.0.0.1:3049/contact/index.txt?_rsc=VpmHg1piavgWU9IX",
+          "bytes": 40393
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
+          "bytes": 14290
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/certificates/page-91fbf2c2e199170d.js",
+          "bytes": 6782
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
+          "bytes": 226
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
+          "bytes": 1682
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
+          "bytes": 4377
+        }
+      ],
+      "canonical": [
+        "https://skypistudio.com/work/ghost-code/"
+      ],
+      "status": 200,
+      "errors": [],
+      "failed": [],
+      "responses": []
+    },
+    {
+      "route": "/work/",
+      "redirect": null,
+      "url": "http://127.0.0.1:3049/work/",
+      "title": "Selected Work: Skyler Halisky",
+      "h1": [
+        "The Work"
+      ],
+      "brokenImages": [],
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/0e96d314a90a6138-s.p.woff2",
+          "bytes": 8688
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
+          "bytes": 8724
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
+          "bytes": 37776
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
+          "bytes": 8825
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
+          "bytes": 91933
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
+          "bytes": 13732
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
+          "bytes": 2030
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
+          "bytes": 3513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+          "bytes": 173019
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
+          "bytes": 8535
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
+          "bytes": 513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
+          "bytes": 20634
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+          "bytes": 7434
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+          "bytes": 24162
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
+          "bytes": 8869
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
+          "bytes": 15092
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/claude-corp/hero-pipeline.light.desktop.avif",
+          "bytes": 23330
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/flagstone/explore-current.phone.avif",
+          "bytes": 126271
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/dashboard/command-center.light.desktop.avif",
+          "bytes": 27634
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/prompt-library/home.light.desktop.avif",
+          "bytes": 24303
+        },
+        {
+          "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
+          "bytes": 638
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/996.3e98c9faf716433c.js",
+          "bytes": 113094
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
+          "bytes": 5447
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/flagstone/index.txt?_rsc=pr4DvEzldVayAFzQ",
+          "bytes": 73136
+        },
+        {
+          "url": "http://127.0.0.1:3049/index.txt?_rsc=pr4DvEzldVayAFzQ",
+          "bytes": 82239
+        },
+        {
+          "url": "http://127.0.0.1:3049/blog/index.txt?_rsc=pr4DvEzldVayAFzQ",
+          "bytes": 41126
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/claude-corp/hero-pipeline.dark.desktop.avif",
+          "bytes": 24454
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+          "bytes": 51544
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
+          "bytes": 18683
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
+          "bytes": 863
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/ghost-code/board.light.desktop.avif",
+          "bytes": 13247
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/claude-corp/index.txt?_rsc=pr4DvEzldVayAFzQ",
+          "bytes": 60316
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/dashboard/index.txt?_rsc=pr4DvEzldVayAFzQ",
+          "bytes": 61044
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/dashboard/command-center.dark.desktop.avif",
+          "bytes": 31126
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/prompt-library/index.txt?_rsc=pr4DvEzldVayAFzQ",
+          "bytes": 58924
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/prompt-library/home.dark.desktop.avif",
+          "bytes": 25955
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/ghost-code/board.dark.desktop.avif",
+          "bytes": 12619
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/ghost-code/index.txt?_rsc=pr4DvEzldVayAFzQ",
+          "bytes": 57909
+        },
+        {
+          "url": "http://127.0.0.1:3049/certificates/index.txt?_rsc=pr4DvEzldVayAFzQ",
+          "bytes": 42067
+        },
+        {
+          "url": "http://127.0.0.1:3049/about/index.txt?_rsc=pr4DvEzldVayAFzQ",
+          "bytes": 49110
+        },
+        {
+          "url": "http://127.0.0.1:3049/accessibility/index.txt?_rsc=pr4DvEzldVayAFzQ",
+          "bytes": 51825
+        },
+        {
+          "url": "http://127.0.0.1:3049/colophon/index.txt?_rsc=pr4DvEzldVayAFzQ",
+          "bytes": 52563
+        },
+        {
+          "url": "http://127.0.0.1:3049/contact/index.txt?_rsc=pr4DvEzldVayAFzQ",
+          "bytes": 40393
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
+          "bytes": 14290
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/certificates/page-91fbf2c2e199170d.js",
+          "bytes": 6782
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
+          "bytes": 3975
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
+          "bytes": 1682
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
+          "bytes": 226
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
+          "bytes": 4377
+        }
+      ],
+      "canonical": [
+        "https://skypistudio.com/work/"
+      ],
+      "status": 200,
+      "errors": [],
+      "failed": [],
+      "responses": []
+    },
+    {
+      "route": "/work/mutual-mesh/",
+      "redirect": "0; url=/work/",
+      "url": "http://127.0.0.1:3049/work/",
+      "title": "Selected Work: Skyler Halisky",
+      "h1": [
+        "The Work"
+      ],
+      "brokenImages": [],
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/0e96d314a90a6138-s.p.woff2",
+          "bytes": 8688
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
+          "bytes": 37776
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
+          "bytes": 8825
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
+          "bytes": 8724
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
+          "bytes": 13732
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
+          "bytes": 91933
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
+          "bytes": 2030
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
+          "bytes": 3513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+          "bytes": 173019
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
+          "bytes": 513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
+          "bytes": 8535
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+          "bytes": 7434
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+          "bytes": 24162
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
+          "bytes": 15092
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
+          "bytes": 20634
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
+          "bytes": 8869
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/claude-corp/hero-pipeline.light.desktop.avif",
+          "bytes": 23330
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/flagstone/explore-current.phone.avif",
+          "bytes": 126271
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/dashboard/command-center.light.desktop.avif",
+          "bytes": 27634
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/prompt-library/home.light.desktop.avif",
+          "bytes": 24303
+        },
+        {
+          "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
+          "bytes": 638
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/996.3e98c9faf716433c.js",
+          "bytes": 113094
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
+          "bytes": 5447
+        },
+        {
+          "url": "http://127.0.0.1:3049/index.txt?_rsc=pr4DvEzldVayAFzQ",
+          "bytes": 82239
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/flagstone/index.txt?_rsc=pr4DvEzldVayAFzQ",
+          "bytes": 73136
+        },
+        {
+          "url": "http://127.0.0.1:3049/blog/index.txt?_rsc=pr4DvEzldVayAFzQ",
+          "bytes": 41126
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/claude-corp/hero-pipeline.dark.desktop.avif",
+          "bytes": 24454
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+          "bytes": 51544
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
+          "bytes": 18683
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
+          "bytes": 863
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/ghost-code/board.light.desktop.avif",
+          "bytes": 13247
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/claude-corp/index.txt?_rsc=pr4DvEzldVayAFzQ",
+          "bytes": 60316
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/dashboard/index.txt?_rsc=pr4DvEzldVayAFzQ",
+          "bytes": 61044
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/dashboard/command-center.dark.desktop.avif",
+          "bytes": 31126
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/prompt-library/index.txt?_rsc=pr4DvEzldVayAFzQ",
+          "bytes": 58924
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/ghost-code/board.dark.desktop.avif",
+          "bytes": 12619
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/prompt-library/home.dark.desktop.avif",
+          "bytes": 25955
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/ghost-code/index.txt?_rsc=pr4DvEzldVayAFzQ",
+          "bytes": 57909
+        },
+        {
+          "url": "http://127.0.0.1:3049/certificates/index.txt?_rsc=pr4DvEzldVayAFzQ",
+          "bytes": 42067
+        },
+        {
+          "url": "http://127.0.0.1:3049/accessibility/index.txt?_rsc=pr4DvEzldVayAFzQ",
+          "bytes": 51825
+        },
+        {
+          "url": "http://127.0.0.1:3049/about/index.txt?_rsc=pr4DvEzldVayAFzQ",
+          "bytes": 49110
+        },
+        {
+          "url": "http://127.0.0.1:3049/colophon/index.txt?_rsc=pr4DvEzldVayAFzQ",
+          "bytes": 52563
+        },
+        {
+          "url": "http://127.0.0.1:3049/contact/index.txt?_rsc=pr4DvEzldVayAFzQ",
+          "bytes": 40393
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
+          "bytes": 14290
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/certificates/page-91fbf2c2e199170d.js",
+          "bytes": 6782
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
+          "bytes": 1682
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
+          "bytes": 3975
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
+          "bytes": 226
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
+          "bytes": 4377
+        }
+      ],
+      "canonical": [
+        "https://skypistudio.com/work/"
+      ],
+      "status": 200,
+      "errors": [],
+      "failed": [],
+      "responses": []
+    },
+    {
+      "route": "/work/prompt-library/",
+      "redirect": null,
+      "url": "http://127.0.0.1:3049/work/prompt-library/",
+      "title": "Prompt Library: Skyler Halisky",
+      "h1": [
+        "Prompt Library"
+      ],
+      "brokenImages": [],
+      "resources": [
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/0e96d314a90a6138-s.p.woff2",
+          "bytes": 8688
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
+          "bytes": 37776
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
+          "bytes": 8825
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
+          "bytes": 91933
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
+          "bytes": 2030
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
+          "bytes": 8724
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
+          "bytes": 13732
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
+          "bytes": 3513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
+          "bytes": 513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+          "bytes": 173019
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
+          "bytes": 8535
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
+          "bytes": 20634
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+          "bytes": 7434
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+          "bytes": 24162
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
+          "bytes": 15092
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/prompt-library/home.light.desktop.avif",
+          "bytes": 24303
+        },
+        {
+          "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
+          "bytes": 638
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/996.3e98c9faf716433c.js",
+          "bytes": 113094
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
+          "bytes": 5447
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/flagstone/index.txt?_rsc=5h4H3AMwn5vgE511",
+          "bytes": 73136
+        },
+        {
+          "url": "http://127.0.0.1:3049/index.txt?_rsc=5h4H3AMwn5vgE511",
+          "bytes": 82239
+        },
+        {
+          "url": "http://127.0.0.1:3049/blog/index.txt?_rsc=5h4H3AMwn5vgE511",
+          "bytes": 41126
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/index.txt?_rsc=5h4H3AMwn5vgE511",
+          "bytes": 75471
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/prompt-library/home.dark.desktop.avif",
+          "bytes": 25955
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
+          "bytes": 863
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
+          "bytes": 8869
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+          "bytes": 51544
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
+          "bytes": 18683
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/prompt-library/prompt-detail.light.desktop.avif",
+          "bytes": 19843
+        },
+        {
+          "url": "http://127.0.0.1:3049/about/index.txt?_rsc=5h4H3AMwn5vgE511",
+          "bytes": 49110
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
+          "bytes": 3975
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/ghost-code/board.light.desktop.avif",
+          "bytes": 13247
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/flagstone/explore-current.phone.avif",
+          "bytes": 126271
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/prompt-library/prompt-detail.dark.desktop.avif",
+          "bytes": 18645
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/ghost-code/board.dark.desktop.avif",
+          "bytes": 12619
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/ghost-code/index.txt?_rsc=5h4H3AMwn5vgE511",
+          "bytes": 57909
+        },
+        {
+          "url": "http://127.0.0.1:3049/certificates/index.txt?_rsc=5h4H3AMwn5vgE511",
+          "bytes": 42067
+        },
+        {
+          "url": "http://127.0.0.1:3049/accessibility/index.txt?_rsc=5h4H3AMwn5vgE511",
+          "bytes": 51825
+        },
+        {
+          "url": "http://127.0.0.1:3049/colophon/index.txt?_rsc=5h4H3AMwn5vgE511",
+          "bytes": 52563
+        },
+        {
+          "url": "http://127.0.0.1:3049/contact/index.txt?_rsc=5h4H3AMwn5vgE511",
+          "bytes": 40393
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
+          "bytes": 14290
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/certificates/page-91fbf2c2e199170d.js",
+          "bytes": 6782
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
+          "bytes": 1682
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
+          "bytes": 226
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
+          "bytes": 4377
+        }
+      ],
+      "canonical": [
+        "https://skypistudio.com/work/prompt-library/"
+      ],
+      "status": 200,
+      "errors": [],
+      "failed": [],
+      "responses": []
+    }
+  ]
+}

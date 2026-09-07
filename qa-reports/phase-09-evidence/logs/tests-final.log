@@ -1,0 +1,133 @@
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v3.2.7 /Users/skypie/Portfolio-codex/portfolio-3.0-phase09-20260907
+
+ ✓ components/__tests__/HamburgerNav.test.tsx (12 tests) 560ms
+ ✓ components/__tests__/BlogIndex.test.tsx (8 tests) 789ms
+   ✓ BlogIndexPage > renders the page heading  351ms
+ ✓ app/__tests__/homepage-numeral-contrast.test.tsx (1 test) 638ms
+   ✓ Homepage work-index numeral opacity > every row numeral renders at text-ink/70 (rest) and text-ink/85 (hover), never the pre-fix /30 or /45  636ms
+ ✓ app/__tests__/homepage-dates.test.tsx (2 tests) 824ms
+   ✓ Homepage — work-index years and Record-band dates render as <time> > renders every work-index row year as a real <time> element  522ms
+ ✓ app/__tests__/homepage-project-links.test.tsx (2 tests) 896ms
+   ✓ Homepage work-index project affordances > renders one visible View project CTA for every project destination  704ms
+ ✓ app/__tests__/flagstone-cta-parity.test.tsx (5 tests) 949ms
+   ✓ GATE-FLAGSTONE-CTA-PARITY — shared ProjectDoorwayButton > renders exactly 6 doorway pills (5 rows + flagship) sharing one identical className  668ms
+ ✓ app/__tests__/homepage-featured-link.test.tsx (3 tests) 1244ms
+   ✓ Homepage work index: the "Featured: above" link > carries no aria-label that could diverge from its visible text  674ms
+   ✓ Homepage work index: the "Featured: above" link > its accessible name is built from real visible text, matching what a sighted reader sees  371ms
+stderr | components/__tests__/ProductReveal.test.tsx > ProductReveal > renders a real <img> carrying the alt when a src is provided
+Warning: React does not recognize the `fetchPriority` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `fetchpriority` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+    at img
+    at StaticShot (/Users/skypie/Portfolio-codex/portfolio-3.0-phase09-20260907/components/ProductReveal.tsx:211:3)
+    at div
+    at div
+    at DeviceFrame (/Users/skypie/Portfolio-codex/portfolio-3.0-phase09-20260907/components/DeviceFrame.tsx:6:24)
+    at FramedArtifact (/Users/skypie/Portfolio-codex/portfolio-3.0-phase09-20260907/components/ProductReveal.tsx:53:3)
+    at div
+    at ProductReveal (/Users/skypie/Portfolio-codex/portfolio-3.0-phase09-20260907/components/ProductReveal.tsx:295:3)
+
+ ✓ components/__tests__/TapTargets.test.tsx (4 tests) 431ms
+ ✓ components/__tests__/ProductReveal.test.tsx (18 tests) 581ms
+ ✓ components/__tests__/ProjectCard.test.tsx (9 tests) 592ms
+   ✓ ProjectCard > renders title, role, and year from props  349ms
+ ✓ components/__tests__/CaseStudyCard.test.tsx (5 tests) 544ms
+   ✓ CaseStudyCard > renders verifiedDate as a real <time> element, prefixed "Verified"  333ms
+ ✓ components/__tests__/SidebarSectionNav.test.tsx (20 tests) 900ms
+   ✓ SidebarSectionNav: the index describes the route you are on (UP-10) > lights the active section on a non-home route (the onHome gate is gone)  361ms
+ ✓ components/cinematic/__tests__/CinematicDesert.test.tsx (3 tests) 533ms
+   ✓ CinematicDesert (reduced motion) > renders the static arrival frame without throwing when reduced motion is preferred  369ms
+ ✓ components/__tests__/SidebarFeatured.test.tsx (10 tests) 88ms
+ ✓ components/__tests__/Receipt.test.tsx (11 tests) 139ms
+ ✓ components/__tests__/ThemedMotion.test.tsx (8 tests) 133ms
+ ✓ components/__tests__/Sidebar.test.tsx (7 tests) 142ms
+ ✓ app/__tests__/blog-dated-status.test.tsx (6 tests) 110ms
+ ✓ components/archive/__tests__/AuthGate.test.tsx (3 tests) 225ms
+ ✓ components/__tests__/GalleryWall.test.tsx (7 tests) 295ms
+ ✓ components/__tests__/ThemeToggle.test.tsx (6 tests) 308ms
+ ✓ components/__tests__/Button.test.tsx (3 tests) 161ms
+ ✓ components/__tests__/ViewTransitions.test.tsx (27 tests) 121ms
+ ✓ components/__tests__/LitWindows.test.tsx (6 tests) 174ms
+ ✓ components/__tests__/ThemedShowcase.test.tsx (8 tests) 128ms
+ ✓ lib/__tests__/static-integrity.test.ts (28 tests | 1 skipped) 382ms
+ ✓ components/__tests__/Footer.test.tsx (4 tests) 351ms
+ ✓ components/__tests__/Hero.test.tsx (3 tests) 280ms
+ ✓ components/__tests__/Reveal.test.tsx (8 tests) 154ms
+ ✓ components/__tests__/RunwayIdentityRelease.test.tsx (5 tests) 21ms
+ ✓ components/__tests__/SkipLink.test.tsx (2 tests) 55ms
+ ✓ components/__tests__/IntroSkip.test.tsx (7 tests) 115ms
+ ✓ components/__tests__/NumberedStep.test.tsx (3 tests) 67ms
+ ✓ components/__tests__/CalibrationRecord.test.tsx (3 tests) 99ms
+ ✓ lib/__tests__/flagstone-utility-contrast.test.ts (12 tests) 82ms
+ ✓ lib/__tests__/smart-punctuation.test.ts (11 tests) 43ms
+ ✓ components/__tests__/HeroSettle.test.tsx (11 tests) 90ms
+ ✓ components/__tests__/IntroScrollCue.test.tsx (10 tests) 150ms
+ ✓ components/__tests__/MarkdownProse.test.tsx (10 tests) 72ms
+ ✓ components/__tests__/ContentReveal.test.tsx (2 tests) 36ms
+ ✓ components/__tests__/LedgerRow.test.tsx (7 tests) 57ms
+ ✓ lib/__tests__/method-underline.test.ts (9 tests) 11ms
+ ✓ lib/archive/__tests__/importExport.test.ts (14 tests) 174ms
+ ✓ components/__tests__/Plate.test.tsx (3 tests) 53ms
+ ✓ app/__tests__/work-receipt.test.tsx (8 tests) 197ms
+ ✓ components/__tests__/Exhibit.test.tsx (6 tests) 208ms
+ ✓ lib/__tests__/doorAjar.test.ts (9 tests) 23ms
+ ✓ lib/__tests__/recruiter-copy-truth.test.ts (17 tests | 1 skipped) 62ms
+ ✓ components/__tests__/CountUpStat.test.tsx (6 tests) 106ms
+ ✓ lib/__tests__/cn.test.ts (14 tests) 20ms
+ ✓ components/__tests__/RevealAlive.test.tsx (3 tests) 18ms
+ ✓ lib/__tests__/token-parity.test.ts (110 tests) 15ms
+ ✓ components/__tests__/TagPill.test.tsx (5 tests) 50ms
+ ✓ components/__tests__/RunwayIdentity.test.tsx (1 test) 71ms
+ ✓ lib/__tests__/section-nav-anchors.test.ts (27 tests) 39ms
+ ✓ lib/__tests__/content.test.ts (10 tests) 84ms
+ ✓ lib/__tests__/contrast-preferences.test.ts (10 tests) 8ms
+ ✓ lib/__tests__/support-first-hierarchy.test.ts (16 tests) 16ms
+ ✓ lib/__tests__/ink-contrast.test.ts (33 tests) 33ms
+ ✓ lib/__tests__/ember-large-text.test.ts (3 tests) 27ms
+ ✓ lib/__tests__/glassPress.test.ts (5 tests) 12ms
+ ✓ components/__tests__/RailInert.test.tsx (4 tests) 20ms
+ ✓ lib/__tests__/flagstone-professional-bridge.test.ts (2 tests) 9ms
+ ✓ lib/__tests__/shot-dark-forwarding.test.ts (3 tests) 5ms
+ ✓ lib/__tests__/useActiveSection.test.tsx (4 tests) 28ms
+ ✓ lib/__tests__/metadata.test.ts (3 tests) 4ms
+ ✓ lib/__tests__/markdown.test.ts (11 tests) 4ms
+ ✓ lib/archive/__tests__/catalog.test.ts (7 tests) 14ms
+ ✓ lib/__tests__/schema.test.ts (32 tests) 15ms
+ ✓ lib/__tests__/showcaseWire.test.ts (6 tests) 7ms
+ ✓ lib/__tests__/schema.showcase.test.ts (8 tests) 10ms
+ ✓ lib/__tests__/asset-integrity.test.ts (3 tests) 4ms
+ ✓ lib/__tests__/print-layer.test.ts (8 tests) 7ms
+ ✓ lib/__tests__/rounds.test.ts (4 tests) 5ms
+ ✓ app/__tests__/flagstone-first-impression.test.ts (3 tests) 2ms
+ ✓ lib/archive/__tests__/color.test.ts (19 tests) 5ms
+ ✓ lib/__tests__/duration-ramp.test.ts (14 tests) 5ms
+ ✓ app/__tests__/global-error.test.tsx (6 tests) 4ms
+ ✓ lib/archive/__tests__/search.test.ts (10 tests) 3ms
+ ✓ lib/__tests__/exhibitLamp.test.ts (4 tests) 4ms
+ ✓ lib/__tests__/matte-theme-invariance.test.ts (4 tests) 2ms
+ ✓ app/__tests__/flagstone-release-status.test.ts (4 tests) 5ms
+ ✓ components/archive/__tests__/reducer.test.ts (6 tests) 3ms
+ ✓ lib/archive/__tests__/range.test.ts (10 tests) 6ms
+ ✓ lib/__tests__/media.showcase.test.ts (4 tests) 9ms
+ ✓ lib/__tests__/navDirection.test.ts (10 tests) 4ms
+ ✓ lib/__tests__/blog.test.ts (11 tests) 8ms
+ ✓ lib/archive/__tests__/media.test.ts (6 tests) 4ms
+ ✓ lib/__tests__/media.test.ts (3 tests) 4ms
+ ✓ lib/__tests__/dusk-turn.test.ts (14 tests) 26ms
+ ✓ components/__tests__/IntroHandoff.test.ts (4 tests) 15ms
+ ✓ lib/__tests__/print-reveal-visibility.test.ts (2 tests) 5ms
+ ✓ lib/__tests__/shot-matte-forwarding.test.ts (1 test) 2ms
+ ✓ lib/__tests__/case-study-arrival-top.test.ts (3 tests) 2ms
+ ✓ components/__tests__/GalleryWall.ssr.test.tsx (1 test) 29ms
+ ✓ components/__tests__/AnimatedCertGrid.test.tsx (2 tests) 18ms
+ ✓ lib/__tests__/accessibility-statement-scope.test.ts (1 test) 3ms
+ ✓ components/__tests__/A11yReceipts.test.tsx (9 tests) 50ms
+
+ Test Files  98 passed (98)
+      Tests  873 passed | 2 skipped (875)
+   Start at  04:10:22
+   Duration  16.77s (transform 3.35s, setup 7.04s, collect 18.09s, tests 15.14s, environment 44.20s, prepare 7.33s)
+

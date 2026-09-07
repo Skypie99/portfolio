@@ -1,0 +1,10 @@
+{
+  "date": "2026-09-07",
+  "artifactId": 9870638981,
+  "source": "retained Phase00 scratchpad copy (remote expired=true)",
+  "sha256": "9eb7b5696e6f5381eb98cd77e5b8d0433ec432a650caf86fcd46fb1a74d2e11d",
+  "expectedMatched": true,
+  "zipBytes": 30848225,
+  "head": "19d946c9c48b325bce5d3a9f292d2cb48450cf01",
+  "out": "/Users/skypie/Documents/Codex/2026-09-07/files-pasted-by-the-user-skypi/work/phase00/out"
+}
