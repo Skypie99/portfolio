@@ -42,6 +42,28 @@ const EM_DASH = '—';
 
 const read = (p: string): string => readFileSync(resolve(ROOT, p), 'utf8');
 
+describe('P10-R-COPY-001 current public README/profile punctuation', () => {
+  const historyBoundary = '> Historical repository documentation follows.';
+
+  it.each(['README.md', 'qa-reports/phase06-candidates/GITHUB_PROFILE_README.md'])(
+    '%s carries no em dash or double-hyphen prose punctuation',
+    (file) => {
+      let current = read(file);
+      if (file === 'README.md') {
+        // Phase 06 preserved the older README below this explicit boundary.
+        expect(current.split(historyBoundary)).toHaveLength(2);
+        current = current.slice(0, current.indexOf(historyBoundary));
+      }
+      expect(current).not.toContain(EM_DASH);
+      const prose = current
+        .replace(/```[\s\S]*?```/g, '')
+        .replace(/`[^`\n]*`/g, '')
+        .replace(/^\|[\s|:-]+\|\s*$/gm, ''); // Markdown table delimiters are syntax.
+      expect(prose).not.toContain('--');
+    },
+  );
+});
+
 /** Every human-readable string a deliverable ships to a visitor. */
 function deliverableStrings(d: Deliverable): { where: string; text: string }[] {
   const out: { where: string; text: string }[] = [];

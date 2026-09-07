@@ -1,8 +1,8 @@
-# Skyler Halisky — support-first portfolio
+# Skyler Halisky: support-first portfolio
 
-Skyler Halisky works in senior technical/product support. Through SkyPi Studio—his authored umbrella practice, not an agency—he connects investigation, escalation, QA, documentation, accessibility, systems thinking, and AI-assisted product building.
+Skyler Halisky works in senior technical/product support. Through SkyPi Studio (his authored umbrella practice, not an agency), he connects investigation, escalation, QA, documentation, accessibility, systems thinking, and AI-assisted product building.
 
-## Current accepted local state — 2026-09-04
+## Current accepted local state: 2026-09-04
 
 This repository’s Phase 06 entry base is commit `2c89a8e24e1b6693bd4c9239a55d796a64ca0355`, tree `49b6d9feb3a348981668d6dad2aa088c03a2df7d`. It combines the accepted Phase 04 Flagstone work and Phase 05 supporting-project work. It is a local accepted candidate: it has not been pushed, merged to `main`, or deployed.
 
@@ -12,11 +12,11 @@ Public site: [skypistudio.com](https://skypistudio.com). The live site and this 
 
 The accepted candidate presents five projects, in this order:
 
-1. **Flagstone** — the flagship accessibility-reporting map. Owner-provided App Store Connect evidence dated 2026-09-04 records Flagstone Accessibility Map, iOS 4.1.1, as **Waiting for Review**. That observation does not independently prove Build 33, approval, release, availability, users, or adoption.
-2. **Claude Corp** — written governance, bounded AI operations, review, and human authority.
-3. **Claude Corp Dashboard** — support-operations visibility through a private operator app and a public synthetic-data demo.
-4. **Prompt Library** — a local-first prompt product with no backend operated by Sky.
-5. **Ghost Code** — a scoped learning product demonstrating progression and deliberate constraints.
+1. **Flagstone**: the flagship accessibility-reporting map. Owner-provided App Store Connect evidence dated 2026-09-04 records Flagstone Accessibility Map, iOS 4.1.1, as **Waiting for Review**. That observation does not independently prove Build 33, approval, release, availability, users, or adoption.
+2. **Claude Corp**: written governance, bounded AI operations, review, and human authority.
+3. **Claude Corp Dashboard**: support-operations visibility through a private operator app and a public synthetic-data demo.
+4. **Prompt Library**: a local-first prompt product with no backend operated by Sky.
+5. **Ghost Code**: a scoped learning product demonstrating progression and deliberate constraints.
 
 ### Current route set
 
