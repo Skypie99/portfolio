@@ -1,0 +1,15 @@
+{
+  "recordedUTC": "2026-09-07T14:58:51.593905+00:00",
+  "HEAD": "59c167987b4b16b9dbec51a6d6f79a5eac570cb7",
+  "tree": "72a82e06441c19c9281c053d15672dc285c423dc",
+  "files": {
+    "package.json": "0873e584f59ccf53fbf57894324472f92e4c0dcd86169efda76b845809627c43",
+    "package-lock.json": "f2fddca2ad910888dc361b2a7342fa56b7037276949d19b781bf10d12086182c",
+    "next.config.mjs": "8317d94ba08e64b993be5f91b4495d82405e2b8ccb7c58105488c89cf3f29616",
+    "qa-reports/phase-09-b/audit-full-final.json": "461ccfcc07dc0074e8ce62e99456e5eef9ea4b96e6cca0091e8f890962a1bd25",
+    "qa-reports/phase-09-b/audit-production-final.json": "461ccfcc07dc0074e8ce62e99456e5eef9ea4b96e6cca0091e8f890962a1bd25"
+  },
+  "package_config_diff_from_source": "",
+  "audit_rerun": false,
+  "installation_or_update": false
+}

@@ -1,0 +1,3852 @@
+{
+  "records": 32,
+  "groups": {
+    "fresh/phase00-exact-deployed-artifact": {
+      "longTaskExcessMs": {
+        "values": [
+          139,
+          49,
+          75,
+          38,
+          391,
+          31,
+          28,
+          313
+        ],
+        "median": 62.0,
+        "min": 28,
+        "max": 391
+      },
+      "lcp": {
+        "values": [
+          6896,
+          7284,
+          7676,
+          7240,
+          7324,
+          7244,
+          7380,
+          6356
+        ],
+        "median": 7264.0,
+        "min": 6356,
+        "max": 7676
+      },
+      "cls": {
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "median": 0.0,
+        "min": 0,
+        "max": 0
+      },
+      "transferBytes": {
+        "values": [
+          1416753,
+          1416753,
+          1416753,
+          1416753,
+          1416753,
+          1416753,
+          1416753,
+          1416753
+        ],
+        "median": 1416753.0,
+        "min": 1416753,
+        "max": 1416753
+      }
+    },
+    "fresh/phase09-candidate": {
+      "longTaskExcessMs": {
+        "values": [
+          99,
+          77,
+          56,
+          33,
+          130,
+          129,
+          242,
+          102
+        ],
+        "median": 100.5,
+        "min": 33,
+        "max": 242
+      },
+      "lcp": {
+        "values": [
+          6580,
+          6728,
+          6900,
+          6644,
+          6540,
+          6552,
+          6504,
+          6688
+        ],
+        "median": 6612.0,
+        "min": 6504,
+        "max": 6900
+      },
+      "cls": {
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "median": 0.0,
+        "min": 0,
+        "max": 0
+      },
+      "transferBytes": {
+        "values": [
+          1417886,
+          1417886,
+          1417886,
+          1417886,
+          1417886,
+          1417886,
+          1417886,
+          1417886
+        ],
+        "median": 1417886.0,
+        "min": 1417886,
+        "max": 1417886
+      }
+    },
+    "warm/phase00-exact-deployed-artifact": {
+      "longTaskExcessMs": {
+        "values": [
+          57,
+          0,
+          0,
+          45,
+          25,
+          0,
+          0,
+          966
+        ],
+        "median": 12.5,
+        "min": 0,
+        "max": 966
+      },
+      "lcp": {
+        "values": [
+          628,
+          484,
+          432,
+          528,
+          488,
+          456,
+          308,
+          920
+        ],
+        "median": 486.0,
+        "min": 308,
+        "max": 920
+      },
+      "cls": {
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "median": 0.0,
+        "min": 0,
+        "max": 0
+      },
+      "transferBytes": {
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "median": 0.0,
+        "min": 0,
+        "max": 0
+      }
+    },
+    "warm/phase09-candidate": {
+      "longTaskExcessMs": {
+        "values": [
+          0,
+          0,
+          0,
+          114,
+          0,
+          152,
+          133,
+          0
+        ],
+        "median": 0.0,
+        "min": 0,
+        "max": 152
+      },
+      "lcp": {
+        "values": [
+          512,
+          460,
+          356,
+          524,
+          540,
+          584,
+          564,
+          440
+        ],
+        "median": 518.0,
+        "min": 356,
+        "max": 584
+      },
+      "cls": {
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "median": 0.0,
+        "min": 0,
+        "max": 0
+      },
+      "transferBytes": {
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "median": 0.0,
+        "min": 0,
+        "max": 0
+      }
+    }
+  },
+  "pairedWarmDeltas": {
+    "longTaskExcessMs": {
+      "values": [
+        -57,
+        0,
+        0,
+        69,
+        -25,
+        152,
+        133,
+        -966
+      ],
+      "median": 0.0,
+      "positiveCount": 3,
+      "negativeCount": 3,
+      "equalCount": 2
+    },
+    "lcp": {
+      "values": [
+        -116,
+        -24,
+        -76,
+        -4,
+        52,
+        128,
+        256,
+        -480
+      ],
+      "median": -14.0,
+      "positiveCount": 3,
+      "negativeCount": 5,
+      "equalCount": 0
+    }
+  },
+  "longFrameAttribution": [
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 1,
+      "frame": {
+        "startTime": 211.9000000357628,
+        "duration": 2037.7999999523163,
+        "blockingDuration": 93.9,
+        "renderStart": 2129.300000011921,
+        "styleAndLayoutStart": 2129.300000011921,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 2119.400000035763,
+            "duration": 6.699999988079071,
+            "invoker": "http://127.0.0.1:3048/",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 2119.400000035763,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 1,
+      "frame": {
+        "startTime": 2260,
+        "duration": 155,
+        "blockingDuration": 102.2,
+        "renderStart": 2275.5,
+        "styleAndLayoutStart": 2275.5,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 1,
+      "frame": {
+        "startTime": 7063.800000011921,
+        "duration": 158.10000002384186,
+        "blockingDuration": 107.3,
+        "renderStart": 7221.699999988079,
+        "styleAndLayoutStart": 7221.800000011921,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7063.800000011921,
+            "duration": 155.5,
+            "invoker": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 7063.800000011921,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 1,
+      "frame": {
+        "startTime": 7614,
+        "duration": 124.5,
+        "blockingDuration": 69.5,
+        "renderStart": 7688.699999988079,
+        "styleAndLayoutStart": 7732.600000023842,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7614,
+            "duration": 5,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7614,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7619,
+            "duration": 69.60000002384186,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7619,
+            "forcedStyleAndLayoutDuration": 19,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7689.699999988079,
+            "duration": 29.600000023841858,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7689.699999988079,
+            "forcedStyleAndLayoutDuration": 9.1,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/c15bf2b0-52e8419f34af26ab.js",
+            "sourceFunctionName": "r",
+            "sourceCharPosition": 14198
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7719.300000011921,
+            "duration": 13.300000011920929,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7719.300000011921,
+            "forcedStyleAndLayoutDuration": 5.4,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/664-25a012e54b55854a.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 14946
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 1,
+      "frame": {
+        "startTime": 7743.900000035763,
+        "duration": 71.69999998807907,
+        "blockingDuration": 21.5,
+        "renderStart": 7759.800000011921,
+        "styleAndLayoutStart": 7795.300000011921,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7743.900000035763,
+            "duration": 15.699999988079071,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7743.900000035763,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7759.900000035763,
+            "duration": 35.19999998807907,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7759.900000035763,
+            "forcedStyleAndLayoutDuration": 34,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/773-40db3eb7a6dc3600.js",
+            "sourceFunctionName": "c",
+            "sourceCharPosition": 2557
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 1,
+      "frame": {
+        "startTime": 7818.5,
+        "duration": 103.60000002384186,
+        "blockingDuration": 24.2,
+        "renderStart": 7883.100000023842,
+        "styleAndLayoutStart": 7918.900000035763,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7822.199999988079,
+            "duration": 24.100000023841858,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7822.199999988079,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7883.199999988079,
+            "duration": 35.700000047683716,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7883.199999988079,
+            "forcedStyleAndLayoutDuration": 35.6,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/773-40db3eb7a6dc3600.js",
+            "sourceFunctionName": "c",
+            "sourceCharPosition": 2557
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 2,
+      "frame": {
+        "startTime": 181,
+        "duration": 2022,
+        "blockingDuration": 154.3,
+        "renderStart": 2009,
+        "styleAndLayoutStart": 2009,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 2,
+      "frame": {
+        "startTime": 6943.699999988079,
+        "duration": 100.5,
+        "blockingDuration": 49.4,
+        "renderStart": 7044,
+        "styleAndLayoutStart": 7044.099999964237,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 6943.699999988079,
+            "duration": 97.09999996423721,
+            "invoker": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 6943.699999988079,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 2,
+      "frame": {
+        "startTime": 7612,
+        "duration": 78.5,
+        "blockingDuration": 22.8,
+        "renderStart": 7657.599999964237,
+        "styleAndLayoutStart": 7690.399999976158,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7612,
+            "duration": 5.199999988079071,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7612,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7617.199999988079,
+            "duration": 39.89999997615814,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7617.199999988079,
+            "forcedStyleAndLayoutDuration": 4.1,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7657.599999964237,
+            "duration": 22.80000001192093,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7657.599999964237,
+            "forcedStyleAndLayoutDuration": 7.5,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/c15bf2b0-52e8419f34af26ab.js",
+            "sourceFunctionName": "r",
+            "sourceCharPosition": 14198
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7680.399999976158,
+            "duration": 9.899999976158142,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7680.399999976158,
+            "forcedStyleAndLayoutDuration": 3.1,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/664-25a012e54b55854a.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 14946
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 3,
+      "frame": {
+        "startTime": 183,
+        "duration": 2102.699999988079,
+        "blockingDuration": 129.3,
+        "renderStart": 2116.899999976158,
+        "styleAndLayoutStart": 2116.899999976158,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 3,
+      "frame": {
+        "startTime": 7081.299999952316,
+        "duration": 105.70000004768372,
+        "blockingDuration": 54.9,
+        "renderStart": 7186.899999976158,
+        "styleAndLayoutStart": 7186.899999976158,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7081.299999952316,
+            "duration": 102.30000001192093,
+            "invoker": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 7081.299999952316,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 3,
+      "frame": {
+        "startTime": 7526,
+        "duration": 112.79999995231628,
+        "blockingDuration": 57.5,
+        "renderStart": 7602.299999952316,
+        "styleAndLayoutStart": 7636.199999988079,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7526,
+            "duration": 5.099999964237213,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7526,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7531.199999988079,
+            "duration": 71,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7531.199999988079,
+            "forcedStyleAndLayoutDuration": 18.4,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7602.299999952316,
+            "duration": 22.80000001192093,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7602.299999952316,
+            "forcedStyleAndLayoutDuration": 6.9,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/c15bf2b0-52e8419f34af26ab.js",
+            "sourceFunctionName": "r",
+            "sourceCharPosition": 14198
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7625.099999964237,
+            "duration": 11,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7625.099999964237,
+            "forcedStyleAndLayoutDuration": 4,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/664-25a012e54b55854a.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 14946
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 3,
+      "frame": {
+        "startTime": 7644.799999952316,
+        "duration": 52.10000002384186,
+        "blockingDuration": 1.4,
+        "renderStart": 7658.5,
+        "styleAndLayoutStart": 7681,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7644.799999952316,
+            "duration": 13,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7644.799999952316,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7658.599999964237,
+            "duration": 21.80000001192093,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7658.599999964237,
+            "forcedStyleAndLayoutDuration": 20.5,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/773-40db3eb7a6dc3600.js",
+            "sourceFunctionName": "c",
+            "sourceCharPosition": 2557
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 4,
+      "frame": {
+        "startTime": 179.9000000357628,
+        "duration": 2110.699999988079,
+        "blockingDuration": 146.2,
+        "renderStart": 2104.5,
+        "styleAndLayoutStart": 2104.5,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 4,
+      "frame": {
+        "startTime": 7100.900000035763,
+        "duration": 89.19999998807907,
+        "blockingDuration": 38.4,
+        "renderStart": 7190,
+        "styleAndLayoutStart": 7190,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7100.900000035763,
+            "duration": 85.39999997615814,
+            "invoker": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 7101.199999988079,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 4,
+      "frame": {
+        "startTime": 7536.100000023842,
+        "duration": 91.39999997615814,
+        "blockingDuration": 35.9,
+        "renderStart": 7592,
+        "styleAndLayoutStart": 7625.400000035763,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7536.100000023842,
+            "duration": 5.5,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7536.100000023842,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7541.600000023842,
+            "duration": 50.39999997615814,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7541.600000023842,
+            "forcedStyleAndLayoutDuration": 19.6,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7592,
+            "duration": 21.900000035762787,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7592,
+            "forcedStyleAndLayoutDuration": 7.2,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/c15bf2b0-52e8419f34af26ab.js",
+            "sourceFunctionName": "r",
+            "sourceCharPosition": 14198
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7613.900000035763,
+            "duration": 11.5,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7613.900000035763,
+            "forcedStyleAndLayoutDuration": 4.8,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/664-25a012e54b55854a.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 14946
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 4,
+      "frame": {
+        "startTime": 7631.300000011921,
+        "duration": 50.39999997615814,
+        "blockingDuration": 0.4,
+        "renderStart": 7640.600000023842,
+        "styleAndLayoutStart": 7666.100000023842,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7631.600000023842,
+            "duration": 9,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7631.600000023842,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7640.800000011921,
+            "duration": 24.80000001192093,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7640.800000011921,
+            "forcedStyleAndLayoutDuration": 24.6,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/773-40db3eb7a6dc3600.js",
+            "sourceFunctionName": "c",
+            "sourceCharPosition": 2557
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 5,
+      "frame": {
+        "startTime": 180.19999998807907,
+        "duration": 2171.100000023842,
+        "blockingDuration": 261.2,
+        "renderStart": 2078.100000023842,
+        "styleAndLayoutStart": 2080.199999988079,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 2011.3999999761581,
+            "duration": 34.10000002384186,
+            "invoker": "http://127.0.0.1:3048/",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 2022.199999988079,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 2052.300000011921,
+            "duration": 22.899999976158142,
+            "invoker": "http://127.0.0.1:3048/",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 2055.100000023842,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 5,
+      "frame": {
+        "startTime": 2391.399999976158,
+        "duration": 88.10000002384186,
+        "blockingDuration": 28.4,
+        "renderStart": 2419.100000023842,
+        "styleAndLayoutStart": 2419.100000023842,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 5,
+      "frame": {
+        "startTime": 2495.199999988079,
+        "duration": 227.9000000357628,
+        "blockingDuration": 168.1,
+        "renderStart": 2578.899999976158,
+        "styleAndLayoutStart": 2579.5,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 2573,
+            "duration": 5.800000011920929,
+            "invoker": "http://127.0.0.1:3048/_next/static/chunks/webpack-366aba8f4094934a.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 2573,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/webpack-366aba8f4094934a.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 5,
+      "frame": {
+        "startTime": 7048,
+        "duration": 208.10000002384186,
+        "blockingDuration": 155.4,
+        "renderStart": 7255.399999976158,
+        "styleAndLayoutStart": 7255.399999976158,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7048,
+            "duration": 201,
+            "invoker": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 7048,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 5,
+      "frame": {
+        "startTime": 7438,
+        "duration": 181.5,
+        "blockingDuration": 123.6,
+        "renderStart": 7562.199999988079,
+        "styleAndLayoutStart": 7611.600000023842,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7438,
+            "duration": 5.5,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7438,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7443.5,
+            "duration": 116.19999998807907,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7443.5,
+            "forcedStyleAndLayoutDuration": 39.6,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7562.199999988079,
+            "duration": 39.19999998807907,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7562.199999988079,
+            "forcedStyleAndLayoutDuration": 17.1,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/c15bf2b0-52e8419f34af26ab.js",
+            "sourceFunctionName": "r",
+            "sourceCharPosition": 14198
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7601.600000023842,
+            "duration": 10,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7601.600000023842,
+            "forcedStyleAndLayoutDuration": 4.5,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/664-25a012e54b55854a.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 14946
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 5,
+      "frame": {
+        "startTime": 7632.800000011921,
+        "duration": 75.09999996423721,
+        "blockingDuration": 22.8,
+        "renderStart": 7650.899999976158,
+        "styleAndLayoutStart": 7691.300000011921,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7632.899999976158,
+            "duration": 15.900000035762787,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7632.899999976158,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7651,
+            "duration": 40.10000002384186,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7651,
+            "forcedStyleAndLayoutDuration": 38.6,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/773-40db3eb7a6dc3600.js",
+            "sourceFunctionName": "c",
+            "sourceCharPosition": 2557
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 5,
+      "frame": {
+        "startTime": 7710.5,
+        "duration": 104.69999998807907,
+        "blockingDuration": 27.6,
+        "renderStart": 7765,
+        "styleAndLayoutStart": 7765.5,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7711.5,
+            "duration": 14.699999988079071,
+            "invoker": "DOMWindow.onload",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7711.5,
+            "forcedStyleAndLayoutDuration": 7.3,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/664-25a012e54b55854a.js",
+            "sourceFunctionName": "tX",
+            "sourceCharPosition": 15259
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7735.5,
+            "duration": 27.30000001192093,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7735.5,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 6,
+      "frame": {
+        "startTime": 182,
+        "duration": 2108.199999988079,
+        "blockingDuration": 133.8,
+        "renderStart": 2116.599999964237,
+        "styleAndLayoutStart": 2116.599999964237,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 6,
+      "frame": {
+        "startTime": 7112,
+        "duration": 82.69999998807907,
+        "blockingDuration": 32.2,
+        "renderStart": 7193.799999952316,
+        "styleAndLayoutStart": 7193.799999952316,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7112,
+            "duration": 79.09999996423721,
+            "invoker": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 7112.5,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 6,
+      "frame": {
+        "startTime": 7523.799999952316,
+        "duration": 71.10000002384186,
+        "blockingDuration": 15.6,
+        "renderStart": 7561.599999964237,
+        "styleAndLayoutStart": 7594,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7523.799999952316,
+            "duration": 5.5,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7523.799999952316,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7529.299999952316,
+            "duration": 32.30000001192093,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7529.299999952316,
+            "forcedStyleAndLayoutDuration": 3.1,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7561.599999964237,
+            "duration": 20.19999998807907,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7561.599999964237,
+            "forcedStyleAndLayoutDuration": 5.6,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/c15bf2b0-52e8419f34af26ab.js",
+            "sourceFunctionName": "r",
+            "sourceCharPosition": 14198
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7581.799999952316,
+            "duration": 12.200000047683716,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7581.799999952316,
+            "forcedStyleAndLayoutDuration": 3.9,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/664-25a012e54b55854a.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 14946
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 7,
+      "frame": {
+        "startTime": 179.5999999642372,
+        "duration": 2002.800000011921,
+        "blockingDuration": 38.5,
+        "renderStart": 2103.899999976158,
+        "styleAndLayoutStart": 2103.899999976158,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 7,
+      "frame": {
+        "startTime": 7066.699999988079,
+        "duration": 79.59999996423721,
+        "blockingDuration": 29.5,
+        "renderStart": 7145.299999952316,
+        "styleAndLayoutStart": 7145.299999952316,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7066.699999988079,
+            "duration": 76.69999998807907,
+            "invoker": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 7066.799999952316,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 7,
+      "frame": {
+        "startTime": 7539.5,
+        "duration": 74.09999996423721,
+        "blockingDuration": 15.4,
+        "renderStart": 7582,
+        "styleAndLayoutStart": 7613.399999976158,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7539.5,
+            "duration": 7.799999952316284,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7539.5,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7548.199999988079,
+            "duration": 33.80000001192093,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7548.199999988079,
+            "forcedStyleAndLayoutDuration": 4.4,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7582,
+            "duration": 19.599999964237213,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7582,
+            "forcedStyleAndLayoutDuration": 5.5,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/c15bf2b0-52e8419f34af26ab.js",
+            "sourceFunctionName": "r",
+            "sourceCharPosition": 14198
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7601.599999964237,
+            "duration": 11.800000011920929,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7601.599999964237,
+            "forcedStyleAndLayoutDuration": 4.8,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/664-25a012e54b55854a.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 14946
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 8,
+      "frame": {
+        "startTime": 180.20000004768372,
+        "duration": 2051.399999976158,
+        "blockingDuration": 89.2,
+        "renderStart": 2103.800000011921,
+        "styleAndLayoutStart": 2103.800000011921,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 8,
+      "frame": {
+        "startTime": 2235.400000035763,
+        "duration": 133.5,
+        "blockingDuration": 81.6,
+        "renderStart": 2247.2000000476837,
+        "styleAndLayoutStart": 2247.2000000476837,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 8,
+      "frame": {
+        "startTime": 7095.300000011921,
+        "duration": 210.19999998807907,
+        "blockingDuration": 158,
+        "renderStart": 7305.100000023842,
+        "styleAndLayoutStart": 7305.400000035763,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7095.300000011921,
+            "duration": 204,
+            "invoker": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 7095.300000011921,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 8,
+      "frame": {
+        "startTime": 7582.900000035763,
+        "duration": 213.69999998807907,
+        "blockingDuration": 158.3,
+        "renderStart": 7737.800000011921,
+        "styleAndLayoutStart": 7788.600000023842,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7582.900000035763,
+            "duration": 5.399999976158142,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7582.900000035763,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7588.300000011921,
+            "duration": 149.4000000357628,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7588.300000011921,
+            "forcedStyleAndLayoutDuration": 67.9,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7737.800000011921,
+            "duration": 37.30000001192093,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7737.800000011921,
+            "forcedStyleAndLayoutDuration": 13.2,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/c15bf2b0-52e8419f34af26ab.js",
+            "sourceFunctionName": "r",
+            "sourceCharPosition": 14198
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7775.100000023842,
+            "duration": 13.399999976158142,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7775.100000023842,
+            "forcedStyleAndLayoutDuration": 5.3,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/664-25a012e54b55854a.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 14946
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 8,
+      "frame": {
+        "startTime": 7813.400000035763,
+        "duration": 84.59999996423721,
+        "blockingDuration": 33.9,
+        "renderStart": 7835.100000023842,
+        "styleAndLayoutStart": 7879.100000023842,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7815,
+            "duration": 20.100000023841858,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7815,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7835.300000011921,
+            "duration": 42.90000003576279,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7835.300000011921,
+            "forcedStyleAndLayoutDuration": 41.6,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/773-40db3eb7a6dc3600.js",
+            "sourceFunctionName": "c",
+            "sourceCharPosition": 2557
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 8,
+      "frame": {
+        "startTime": 7901.300000011921,
+        "duration": 103.69999998807907,
+        "blockingDuration": 39.3,
+        "renderStart": 7940.600000023842,
+        "styleAndLayoutStart": 7996.300000011921,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7914.300000011921,
+            "duration": 24.80000001192093,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7914.300000011921,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7940.700000047684,
+            "duration": 55.59999996423721,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7940.700000047684,
+            "forcedStyleAndLayoutDuration": 55.5,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/773-40db3eb7a6dc3600.js",
+            "sourceFunctionName": "c",
+            "sourceCharPosition": 2557
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "fresh",
+      "rep": 8,
+      "frame": {
+        "startTime": 8073.800000011921,
+        "duration": 51.80000001192093,
+        "blockingDuration": 1.2,
+        "renderStart": 8124.800000011921,
+        "styleAndLayoutStart": 8125.100000023842,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 1,
+      "frame": {
+        "startTime": 205.79999995231628,
+        "duration": 2079,
+        "blockingDuration": 89.4,
+        "renderStart": 2167.399999976158,
+        "styleAndLayoutStart": 2167.399999976158,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 2157.699999988079,
+            "duration": 6.5,
+            "invoker": "http://127.0.0.1:3049/",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 2158.699999988079,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 1,
+      "frame": {
+        "startTime": 2297.099999964237,
+        "duration": 137.30000001192093,
+        "blockingDuration": 85.4,
+        "renderStart": 2313.599999964237,
+        "styleAndLayoutStart": 2313.599999964237,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 1,
+      "frame": {
+        "startTime": 2444.899999976158,
+        "duration": 56.10000002384186,
+        "blockingDuration": 0.4,
+        "renderStart": 2457.7999999523163,
+        "styleAndLayoutStart": 2457.899999976158,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 1,
+      "frame": {
+        "startTime": 7180.899999976158,
+        "duration": 138.60000002384186,
+        "blockingDuration": 87.4,
+        "renderStart": 7319.299999952316,
+        "styleAndLayoutStart": 7319.299999952316,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7180.899999976158,
+            "duration": 135.5,
+            "invoker": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 7181,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 1,
+      "frame": {
+        "startTime": 7454.799999952316,
+        "duration": 100.80000001192093,
+        "blockingDuration": 50.7,
+        "renderStart": 7517.399999976158,
+        "styleAndLayoutStart": 7554.5,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7454.799999952316,
+            "duration": 62.60000002384186,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7454.799999952316,
+            "forcedStyleAndLayoutDuration": 7.3,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 95406
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7517.399999976158,
+            "duration": 26,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7517.399999976158,
+            "forcedStyleAndLayoutDuration": 6.7,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+            "sourceFunctionName": "r",
+            "sourceCharPosition": 14198
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7543.399999976158,
+            "duration": 11.100000023841858,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7543.399999976158,
+            "forcedStyleAndLayoutDuration": 5.2,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 34652
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 2,
+      "frame": {
+        "startTime": 181.80000001192093,
+        "duration": 2155.399999976158,
+        "blockingDuration": 163.2,
+        "renderStart": 2134.100000023842,
+        "styleAndLayoutStart": 2134.100000023842,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 2,
+      "frame": {
+        "startTime": 7126.100000023842,
+        "duration": 121.69999998807907,
+        "blockingDuration": 71.1,
+        "renderStart": 7247.699999988079,
+        "styleAndLayoutStart": 7247.800000011921,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7126.100000023842,
+            "duration": 119,
+            "invoker": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 7126.100000023842,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 2,
+      "frame": {
+        "startTime": 7618.300000011921,
+        "duration": 92.69999998807907,
+        "blockingDuration": 42.6,
+        "renderStart": 7675.399999976158,
+        "styleAndLayoutStart": 7709.300000011921,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7618.300000011921,
+            "duration": 57.09999996423721,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7618.300000011921,
+            "forcedStyleAndLayoutDuration": 13.2,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 95406
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7675.5,
+            "duration": 22.600000023841858,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7675.5,
+            "forcedStyleAndLayoutDuration": 8.3,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+            "sourceFunctionName": "r",
+            "sourceCharPosition": 14198
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7698.100000023842,
+            "duration": 11.199999988079071,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7698.100000023842,
+            "forcedStyleAndLayoutDuration": 3.3,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 34652
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 3,
+      "frame": {
+        "startTime": 197.80000001192093,
+        "duration": 2153.699999988079,
+        "blockingDuration": 157.6,
+        "renderStart": 2159.100000023842,
+        "styleAndLayoutStart": 2159.199999988079,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 3,
+      "frame": {
+        "startTime": 7190.199999988079,
+        "duration": 108.20000004768372,
+        "blockingDuration": 58.1,
+        "renderStart": 7297.199999988079,
+        "styleAndLayoutStart": 7298,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7190.199999988079,
+            "duration": 104.80000001192093,
+            "invoker": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 7190.900000035763,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 3,
+      "frame": {
+        "startTime": 7612.800000011921,
+        "duration": 78,
+        "blockingDuration": 23,
+        "renderStart": 7655.199999988079,
+        "styleAndLayoutStart": 7689.800000011921,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7617.800000011921,
+            "duration": 37.39999997615814,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7617.800000011921,
+            "forcedStyleAndLayoutDuration": 3.6,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 95406
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7656,
+            "duration": 24.100000023841858,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7656,
+            "forcedStyleAndLayoutDuration": 7,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+            "sourceFunctionName": "r",
+            "sourceCharPosition": 14198
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7680.100000023842,
+            "duration": 9.699999988079071,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7680.100000023842,
+            "forcedStyleAndLayoutDuration": 4.4,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 34652
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 4,
+      "frame": {
+        "startTime": 179.0999999642372,
+        "duration": 2114.600000023842,
+        "blockingDuration": 153.8,
+        "renderStart": 2100,
+        "styleAndLayoutStart": 2100,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 4,
+      "frame": {
+        "startTime": 7124.699999988079,
+        "duration": 84.39999997615814,
+        "blockingDuration": 34.4,
+        "renderStart": 7208.199999988079,
+        "styleAndLayoutStart": 7208.300000011921,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7124.699999988079,
+            "duration": 81,
+            "invoker": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 7124.899999976158,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 4,
+      "frame": {
+        "startTime": 7703.899999976158,
+        "duration": 63.19999998807907,
+        "blockingDuration": 13.2,
+        "renderStart": 7737.199999988079,
+        "styleAndLayoutStart": 7766.300000011921,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7703.899999976158,
+            "duration": 33.30000001192093,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7703.899999976158,
+            "forcedStyleAndLayoutDuration": 4.5,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 95406
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7737.300000011921,
+            "duration": 19.399999976158142,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7737.300000011921,
+            "forcedStyleAndLayoutDuration": 6.2,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+            "sourceFunctionName": "r",
+            "sourceCharPosition": 14198
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7756.699999988079,
+            "duration": 9.600000023841858,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7756.699999988079,
+            "forcedStyleAndLayoutDuration": 4.2,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 34652
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 5,
+      "frame": {
+        "startTime": 210.9000000357628,
+        "duration": 2059.899999976158,
+        "blockingDuration": 99,
+        "renderStart": 2139.900000035763,
+        "styleAndLayoutStart": 2140,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 2131.2000000476837,
+            "duration": 5.699999988079071,
+            "invoker": "http://127.0.0.1:3049/",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 2131.800000011921,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 5,
+      "frame": {
+        "startTime": 2281.600000023842,
+        "duration": 155.39999997615814,
+        "blockingDuration": 102.4,
+        "renderStart": 2296,
+        "styleAndLayoutStart": 2296,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 5,
+      "frame": {
+        "startTime": 7201.100000023842,
+        "duration": 151.69999998807907,
+        "blockingDuration": 100.6,
+        "renderStart": 7352,
+        "styleAndLayoutStart": 7352.700000047684,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7201.100000023842,
+            "duration": 147.39999997615814,
+            "invoker": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 7201.100000023842,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 5,
+      "frame": {
+        "startTime": 7616.100000023842,
+        "duration": 124.60000002384186,
+        "blockingDuration": 73,
+        "renderStart": 7699.300000011921,
+        "styleAndLayoutStart": 7740,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7616.100000023842,
+            "duration": 81.60000002384186,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7616.100000023842,
+            "forcedStyleAndLayoutDuration": 27.1,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 95406
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7699.400000035763,
+            "duration": 27,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7699.400000035763,
+            "forcedStyleAndLayoutDuration": 8.8,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+            "sourceFunctionName": "r",
+            "sourceCharPosition": 14198
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7726.5,
+            "duration": 13.400000035762787,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7726.5,
+            "forcedStyleAndLayoutDuration": 4.1,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 34652
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 6,
+      "frame": {
+        "startTime": 198,
+        "duration": 2054.5,
+        "blockingDuration": 78.1,
+        "renderStart": 2138.099999964237,
+        "styleAndLayoutStart": 2138.099999964237,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 2128.2999999523163,
+            "duration": 6.200000047683716,
+            "invoker": "http://127.0.0.1:3049/",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 2129.099999964237,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 6,
+      "frame": {
+        "startTime": 2261.899999976158,
+        "duration": 146,
+        "blockingDuration": 94.5,
+        "renderStart": 2273.7999999523163,
+        "styleAndLayoutStart": 2273.7999999523163,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 6,
+      "frame": {
+        "startTime": 7167.599999964237,
+        "duration": 101.69999998807907,
+        "blockingDuration": 51.6,
+        "renderStart": 7269.199999988079,
+        "styleAndLayoutStart": 7269.199999988079,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7167.599999964237,
+            "duration": 99,
+            "invoker": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 7167.799999952316,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 6,
+      "frame": {
+        "startTime": 7713.699999988079,
+        "duration": 175.5,
+        "blockingDuration": 125.5,
+        "renderStart": 7835.899999976158,
+        "styleAndLayoutStart": 7885.5,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7713.699999988079,
+            "duration": 122.19999998807907,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7713.699999988079,
+            "forcedStyleAndLayoutDuration": 24.2,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 95406
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7835.899999976158,
+            "duration": 35.80000001192093,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7835.899999976158,
+            "forcedStyleAndLayoutDuration": 10.5,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+            "sourceFunctionName": "r",
+            "sourceCharPosition": 14198
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7871.899999976158,
+            "duration": 13.600000023841858,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7871.899999976158,
+            "forcedStyleAndLayoutDuration": 6.6,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 34652
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 6,
+      "frame": {
+        "startTime": 7892.799999952316,
+        "duration": 63.5,
+        "blockingDuration": 6.5,
+        "renderStart": 7914.799999952316,
+        "styleAndLayoutStart": 7939.399999976158,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7893.899999976158,
+            "duration": 15,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7893.899999976158,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 95406
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7914.899999976158,
+            "duration": 24.399999976158142,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7914.899999976158,
+            "forcedStyleAndLayoutDuration": 22.8,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+            "sourceFunctionName": "c",
+            "sourceCharPosition": 2559
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 7,
+      "frame": {
+        "startTime": 180.9000000357628,
+        "duration": 2012.2999999523163,
+        "blockingDuration": 64.1,
+        "renderStart": 2089.199999988079,
+        "styleAndLayoutStart": 2089.199999988079,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 7,
+      "frame": {
+        "startTime": 7112.5,
+        "duration": 208.4000000357628,
+        "blockingDuration": 156.9,
+        "renderStart": 7320,
+        "styleAndLayoutStart": 7320,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7112.5,
+            "duration": 203.10000002384186,
+            "invoker": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 7113.100000023842,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 7,
+      "frame": {
+        "startTime": 7683.300000011921,
+        "duration": 180.30000001192093,
+        "blockingDuration": 118.7,
+        "renderStart": 7812.199999988079,
+        "styleAndLayoutStart": 7856.400000035763,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7683.300000011921,
+            "duration": 5.100000023841858,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7683.300000011921,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 95406
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7694.900000035763,
+            "duration": 117.29999995231628,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7694.900000035763,
+            "forcedStyleAndLayoutDuration": 49.1,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 95406
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7812.199999988079,
+            "duration": 32.200000047683716,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7812.199999988079,
+            "forcedStyleAndLayoutDuration": 12.9,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+            "sourceFunctionName": "r",
+            "sourceCharPosition": 14198
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7844.400000035763,
+            "duration": 12,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7844.400000035763,
+            "forcedStyleAndLayoutDuration": 4.4,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 34652
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 7,
+      "frame": {
+        "startTime": 7874.800000011921,
+        "duration": 81.60000002384186,
+        "blockingDuration": 17.3,
+        "renderStart": 7906.600000023842,
+        "styleAndLayoutStart": 7940,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7874.800000011921,
+            "duration": 14.100000023841858,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7874.800000011921,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 95406
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7906.699999988079,
+            "duration": 33,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7906.699999988079,
+            "forcedStyleAndLayoutDuration": 30.8,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+            "sourceFunctionName": "c",
+            "sourceCharPosition": 2559
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 7,
+      "frame": {
+        "startTime": 7958.900000035763,
+        "duration": 73.19999998807907,
+        "blockingDuration": 18.4,
+        "renderStart": 7978.800000011921,
+        "styleAndLayoutStart": 8023.100000023842,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7961.600000023842,
+            "duration": 15.099999964237213,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7961.600000023842,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 95406
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7978.800000011921,
+            "duration": 44.30000001192093,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7978.800000011921,
+            "forcedStyleAndLayoutDuration": 44.3,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+            "sourceFunctionName": "c",
+            "sourceCharPosition": 2559
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 8,
+      "frame": {
+        "startTime": 200.39999997615814,
+        "duration": 2072.199999988079,
+        "blockingDuration": 99.4,
+        "renderStart": 2133.800000011921,
+        "styleAndLayoutStart": 2133.800000011921,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 8,
+      "frame": {
+        "startTime": 2283,
+        "duration": 126.89999997615814,
+        "blockingDuration": 75.3,
+        "renderStart": 2292.899999976158,
+        "styleAndLayoutStart": 2293.300000011921,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 8,
+      "frame": {
+        "startTime": 7166.199999988079,
+        "duration": 135.10000002384186,
+        "blockingDuration": 84.3,
+        "renderStart": 7301.199999988079,
+        "styleAndLayoutStart": 7301.199999988079,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7166.199999988079,
+            "duration": 131.39999997615814,
+            "invoker": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 7166.199999988079,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "fresh",
+      "rep": 8,
+      "frame": {
+        "startTime": 7696.800000011921,
+        "duration": 108.29999995231628,
+        "blockingDuration": 52.3,
+        "renderStart": 7771,
+        "styleAndLayoutStart": 7804.899999976158,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7696.800000011921,
+            "duration": 5.399999976158142,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7696.800000011921,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 95406
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7702.199999988079,
+            "duration": 68.39999997615814,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 7702.199999988079,
+            "forcedStyleAndLayoutDuration": 10.1,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 95406
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7771,
+            "duration": 23.399999976158142,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7771,
+            "forcedStyleAndLayoutDuration": 8.6,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+            "sourceFunctionName": "r",
+            "sourceCharPosition": 14198
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 7794.399999976158,
+            "duration": 10.5,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 7794.399999976158,
+            "forcedStyleAndLayoutDuration": 5.7,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 34652
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "warm",
+      "rep": 1,
+      "frame": {
+        "startTime": 474.19999998807907,
+        "duration": 105.90000003576279,
+        "blockingDuration": 44.1,
+        "renderStart": 571.6999999880791,
+        "styleAndLayoutStart": 572.6000000238419,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "warm",
+      "rep": 1,
+      "frame": {
+        "startTime": 587.6000000238419,
+        "duration": 78.59999996423721,
+        "blockingDuration": 25.6,
+        "renderStart": 612.4000000357628,
+        "styleAndLayoutStart": 612.5,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "warm",
+      "rep": 1,
+      "frame": {
+        "startTime": 674.6999999880791,
+        "duration": 64.20000004768372,
+        "blockingDuration": 13.4,
+        "renderStart": 736.1000000238419,
+        "styleAndLayoutStart": 738.3000000119209,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 674.8000000119209,
+            "duration": 57.60000002384186,
+            "invoker": "http://127.0.0.1:3048/_next/static/chunks/webpack-366aba8f4094934a.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 674.8000000119209,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/webpack-366aba8f4094934a.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "warm",
+      "rep": 1,
+      "frame": {
+        "startTime": 829.5,
+        "duration": 68.10000002384186,
+        "blockingDuration": 17.8,
+        "renderStart": 868.1000000238419,
+        "styleAndLayoutStart": 897.5,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 829.5,
+            "duration": 38.10000002384186,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 829.5,
+            "forcedStyleAndLayoutDuration": 4,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 868.1000000238419,
+            "duration": 18.69999998807907,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 868.1000000238419,
+            "forcedStyleAndLayoutDuration": 6.8,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/c15bf2b0-52e8419f34af26ab.js",
+            "sourceFunctionName": "r",
+            "sourceCharPosition": 14198
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 886.8000000119209,
+            "duration": 9.899999976158142,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 886.8000000119209,
+            "forcedStyleAndLayoutDuration": 4.8,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/664-25a012e54b55854a.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 14946
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "warm",
+      "rep": 2,
+      "frame": {
+        "startTime": 225.30000001192093,
+        "duration": 106.19999998807907,
+        "blockingDuration": 17.1,
+        "renderStart": 294.60000002384186,
+        "styleAndLayoutStart": 294.60000002384186,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 239.4000000357628,
+            "duration": 7.899999976158142,
+            "invoker": "http://127.0.0.1:3048/_next/static/chunks/4bd1b696-c023c6e3521b1417.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 239.4000000357628,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/4bd1b696-c023c6e3521b1417.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 247.30000001192093,
+            "duration": 6.100000023841858,
+            "invoker": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 248.19999998807907,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "warm",
+      "rep": 3,
+      "frame": {
+        "startTime": 234.60000002384186,
+        "duration": 149.80000001192093,
+        "blockingDuration": 61.9,
+        "renderStart": 315.60000002384186,
+        "styleAndLayoutStart": 315.69999998807907,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 249.80000001192093,
+            "duration": 6.5,
+            "invoker": "http://127.0.0.1:3048/_next/static/chunks/4bd1b696-c023c6e3521b1417.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 249.80000001192093,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/4bd1b696-c023c6e3521b1417.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 256.30000001192093,
+            "duration": 6.300000011920929,
+            "invoker": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 256.30000001192093,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "warm",
+      "rep": 3,
+      "frame": {
+        "startTime": 449.10000002384186,
+        "duration": 53.89999997615814,
+        "blockingDuration": 3.3,
+        "renderStart": 473.5,
+        "styleAndLayoutStart": 502.19999998807907,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 449.10000002384186,
+            "duration": 23.899999976158142,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 449.10000002384186,
+            "forcedStyleAndLayoutDuration": 4.1,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 473.5,
+            "duration": 18.400000035762787,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 473.5,
+            "forcedStyleAndLayoutDuration": 6.4,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/c15bf2b0-52e8419f34af26ab.js",
+            "sourceFunctionName": "r",
+            "sourceCharPosition": 14198
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 491.9000000357628,
+            "duration": 10.199999988079071,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 491.9000000357628,
+            "forcedStyleAndLayoutDuration": 4.1,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/664-25a012e54b55854a.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 14946
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "warm",
+      "rep": 4,
+      "frame": {
+        "startTime": 393.19999998807907,
+        "duration": 98.80000001192093,
+        "blockingDuration": 48.6,
+        "renderStart": 404,
+        "styleAndLayoutStart": 404,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "warm",
+      "rep": 5,
+      "frame": {
+        "startTime": 328.7999999523163,
+        "duration": 102.5,
+        "blockingDuration": 27.5,
+        "renderStart": 364.0999999642372,
+        "styleAndLayoutStart": 364.0999999642372,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 328.89999997615814,
+            "duration": 9.300000011920929,
+            "invoker": "http://127.0.0.1:3048/_next/static/chunks/4bd1b696-c023c6e3521b1417.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 329,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/4bd1b696-c023c6e3521b1417.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 338.19999998807907,
+            "duration": 5.199999988079071,
+            "invoker": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 338.19999998807907,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "warm",
+      "rep": 5,
+      "frame": {
+        "startTime": 441.39999997615814,
+        "duration": 86.80000001192093,
+        "blockingDuration": 35.9,
+        "renderStart": 459.5999999642372,
+        "styleAndLayoutStart": 460.39999997615814,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "warm",
+      "rep": 8,
+      "frame": {
+        "startTime": 502.39999997615814,
+        "duration": 151.19999998807907,
+        "blockingDuration": 85.3,
+        "renderStart": 569.1999999880791,
+        "styleAndLayoutStart": 569.3000000119209,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 554.1999999880791,
+            "duration": 5,
+            "invoker": "http://127.0.0.1:3048/",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 555.3999999761581,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "warm",
+      "rep": 8,
+      "frame": {
+        "startTime": 743.6999999880791,
+        "duration": 101.19999998807907,
+        "blockingDuration": 33.6,
+        "renderStart": 841.1999999880791,
+        "styleAndLayoutStart": 841.1999999880791,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "warm",
+      "rep": 8,
+      "frame": {
+        "startTime": 854.3000000119209,
+        "duration": 543.8999999761581,
+        "blockingDuration": 490.8,
+        "renderStart": 868.5,
+        "styleAndLayoutStart": 868.5999999642372,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "warm",
+      "rep": 8,
+      "frame": {
+        "startTime": 1537.800000011921,
+        "duration": 339.0999999642372,
+        "blockingDuration": 238.6,
+        "renderStart": 1864.300000011921,
+        "styleAndLayoutStart": 1875.8999999761581,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 1581.3999999761581,
+            "duration": 264.5,
+            "invoker": "http://127.0.0.1:3048/_next/static/chunks/webpack-366aba8f4094934a.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 1592.5999999642372,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/webpack-366aba8f4094934a.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "warm",
+      "rep": 8,
+      "frame": {
+        "startTime": 1984.300000011921,
+        "duration": 82.89999997615814,
+        "blockingDuration": 8.1,
+        "renderStart": 2065.800000011921,
+        "styleAndLayoutStart": 2066.199999988079,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 2057.800000011921,
+            "duration": 7.899999976158142,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 2057.800000011921,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "warm",
+      "rep": 8,
+      "frame": {
+        "startTime": 2157.5,
+        "duration": 105.89999997615814,
+        "blockingDuration": 54.4,
+        "renderStart": 2261.800000011921,
+        "styleAndLayoutStart": 2262.699999988079,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "warm",
+      "rep": 8,
+      "frame": {
+        "startTime": 2285.800000011921,
+        "duration": 162.69999998807907,
+        "blockingDuration": 106.7,
+        "renderStart": 2375.800000011921,
+        "styleAndLayoutStart": 2443,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 2286.199999988079,
+            "duration": 5.199999988079071,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 2286.199999988079,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 2291.899999976158,
+            "duration": 83.69999998807907,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 2291.899999976158,
+            "forcedStyleAndLayoutDuration": 30.4,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 2375.800000011921,
+            "duration": 48.5,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 2375.800000011921,
+            "forcedStyleAndLayoutDuration": 15.4,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/c15bf2b0-52e8419f34af26ab.js",
+            "sourceFunctionName": "r",
+            "sourceCharPosition": 14198
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 2424.399999976158,
+            "duration": 17.900000035762787,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 2424.399999976158,
+            "forcedStyleAndLayoutDuration": 5.1,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/664-25a012e54b55854a.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 14946
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "warm",
+      "rep": 8,
+      "frame": {
+        "startTime": 2454.099999964237,
+        "duration": 101.20000004768372,
+        "blockingDuration": 50.1,
+        "renderStart": 2483.199999988079,
+        "styleAndLayoutStart": 2529.5,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 2454.899999976158,
+            "duration": 27.30000001192093,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 2454.899999976158,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 2485.300000011921,
+            "duration": 42.5,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 2485.300000011921,
+            "forcedStyleAndLayoutDuration": 42,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/773-40db3eb7a6dc3600.js",
+            "sourceFunctionName": "c",
+            "sourceCharPosition": 2557
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase00-exact-deployed-artifact",
+      "condition": "warm",
+      "rep": 8,
+      "frame": {
+        "startTime": 2558.899999976158,
+        "duration": 55.10000002384186,
+        "blockingDuration": 2.2,
+        "renderStart": 2579.699999988079,
+        "styleAndLayoutStart": 2579.800000011921,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 2561,
+            "duration": 17.30000001192093,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 2561,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3048/_next/static/chunks/255-d36f801b05893507.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 114733
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "warm",
+      "rep": 1,
+      "frame": {
+        "startTime": 283.4000000357628,
+        "duration": 75.39999997615814,
+        "blockingDuration": 9.9,
+        "renderStart": 324.30000001192093,
+        "styleAndLayoutStart": 324.30000001192093,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 283.4000000357628,
+            "duration": 5.699999988079071,
+            "invoker": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 283.4000000357628,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "warm",
+      "rep": 1,
+      "frame": {
+        "startTime": 407.9000000357628,
+        "duration": 61.39999997615814,
+        "blockingDuration": 1.2,
+        "renderStart": 439.5,
+        "styleAndLayoutStart": 469.2000000476837,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 417.10000002384186,
+            "duration": 21.5,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 417.10000002384186,
+            "forcedStyleAndLayoutDuration": 3.9,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 95406
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 440,
+            "duration": 17.5,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 440,
+            "forcedStyleAndLayoutDuration": 7.4,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+            "sourceFunctionName": "r",
+            "sourceCharPosition": 14198
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 457.60000002384186,
+            "duration": 11.600000023841858,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 457.60000002384186,
+            "forcedStyleAndLayoutDuration": 5.6,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 34652
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "warm",
+      "rep": 2,
+      "frame": {
+        "startTime": 211.0999999642372,
+        "duration": 99.69999998807907,
+        "blockingDuration": 9.8,
+        "renderStart": 278.89999997615814,
+        "styleAndLayoutStart": 278.89999997615814,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 228.79999995231628,
+            "duration": 7.200000047683716,
+            "invoker": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 228.79999995231628,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 236,
+            "duration": 5.5,
+            "invoker": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 236,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "warm",
+      "rep": 3,
+      "frame": {
+        "startTime": 202.79999995231628,
+        "duration": 100.30000001192093,
+        "blockingDuration": 12.3,
+        "renderStart": 272,
+        "styleAndLayoutStart": 272,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 217.79999995231628,
+            "duration": 6.600000023841858,
+            "invoker": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 218.29999995231628,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 224.39999997615814,
+            "duration": 5.399999976158142,
+            "invoker": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 224.39999997615814,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "warm",
+      "rep": 4,
+      "frame": {
+        "startTime": 281.5,
+        "duration": 188.89999997615814,
+        "blockingDuration": 117,
+        "renderStart": 314.5,
+        "styleAndLayoutStart": 314.60000002384186,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 281.60000002384186,
+            "duration": 6.699999988079071,
+            "invoker": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 281.60000002384186,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 288.80000001192093,
+            "duration": 5,
+            "invoker": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 288.80000001192093,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "warm",
+      "rep": 5,
+      "frame": {
+        "startTime": 300.89999997615814,
+        "duration": 182.10000002384186,
+        "blockingDuration": 109.7,
+        "renderStart": 333.89999997615814,
+        "styleAndLayoutStart": 334.5,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 301,
+            "duration": 6,
+            "invoker": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 301,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 307.69999998807907,
+            "duration": 5.5,
+            "invoker": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 307.69999998807907,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "warm",
+      "rep": 5,
+      "frame": {
+        "startTime": 586.3000000119209,
+        "duration": 65.5,
+        "blockingDuration": 15.5,
+        "renderStart": 615,
+        "styleAndLayoutStart": 651,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 586.3000000119209,
+            "duration": 28.69999998807907,
+            "invoker": "MessagePort.onmessage",
+            "invokerType": "event-listener",
+            "windowAttribution": "self",
+            "executionStart": 586.3000000119209,
+            "forcedStyleAndLayoutDuration": 5.9,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "w",
+            "sourceCharPosition": 95406
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 615.0999999642372,
+            "duration": 23.400000035762787,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 615.0999999642372,
+            "forcedStyleAndLayoutDuration": 8.4,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+            "sourceFunctionName": "r",
+            "sourceCharPosition": 14198
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 638.5,
+            "duration": 12.5,
+            "invoker": "FrameRequestCallback",
+            "invokerType": "user-callback",
+            "windowAttribution": "self",
+            "executionStart": 638.5,
+            "forcedStyleAndLayoutDuration": 4.6,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 34652
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "warm",
+      "rep": 6,
+      "frame": {
+        "startTime": 393.5,
+        "duration": 132.89999997615814,
+        "blockingDuration": 53.5,
+        "renderStart": 433.0999999642372,
+        "styleAndLayoutStart": 433.0999999642372,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 394.39999997615814,
+            "duration": 9.100000023841858,
+            "invoker": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 395.2999999523163,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 403.5,
+            "duration": 6.599999964237213,
+            "invoker": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 403.5,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "warm",
+      "rep": 6,
+      "frame": {
+        "startTime": 537.0999999642372,
+        "duration": 157.69999998807907,
+        "blockingDuration": 106.3,
+        "renderStart": 549.8999999761581,
+        "styleAndLayoutStart": 550,
+        "scripts": []
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "warm",
+      "rep": 7,
+      "frame": {
+        "startTime": 301.19999998807907,
+        "duration": 208.69999998807907,
+        "blockingDuration": 134.9,
+        "renderStart": 335.7999999523163,
+        "styleAndLayoutStart": 335.7999999523163,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 301.19999998807907,
+            "duration": 8,
+            "invoker": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 301.19999998807907,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 309.2999999523163,
+            "duration": 5.600000023841858,
+            "invoker": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 309.2999999523163,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    },
+    {
+      "target": "phase09-candidate",
+      "condition": "warm",
+      "rep": 8,
+      "frame": {
+        "startTime": 200.10000002384186,
+        "duration": 105,
+        "blockingDuration": 15.4,
+        "renderStart": 263.2000000476837,
+        "styleAndLayoutStart": 263.2000000476837,
+        "scripts": [
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 215.9000000357628,
+            "duration": 7.599999964237213,
+            "invoker": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 215.9000000357628,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          },
+          {
+            "name": "script",
+            "entryType": "script",
+            "startTime": 224.30000001192093,
+            "duration": 5.300000011920929,
+            "invoker": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "invokerType": "classic-script",
+            "windowAttribution": "self",
+            "executionStart": 224.4000000357628,
+            "forcedStyleAndLayoutDuration": 0,
+            "pauseDuration": 0,
+            "sourceURL": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+            "sourceFunctionName": "",
+            "sourceCharPosition": 0
+          }
+        ]
+      }
+    }
+  ]
+}

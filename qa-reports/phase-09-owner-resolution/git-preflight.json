@@ -1,0 +1,24 @@
+{
+  "primary": {
+    "head": "7dc04ff2be3d8754516cb218bc4f4a08079dfcd3",
+    "tree": "ac7adaf89ed19e9313140c0ba891787a92515f27",
+    "branch": "main",
+    "statusLineCount": 166,
+    "status": "Existing untracked estate files; primary is read-only"
+  },
+  "privateIntegration": {
+    "head": "eb67733403ba434cb8de94003037666f80aa6592",
+    "tree": "1746309ac60e57cda3873119d19248a905056896",
+    "branch": "claude/portfolio-3.0-phase00-baseline-20260903",
+    "statusLineCount": 0,
+    "status": ""
+  },
+  "evidence": {
+    "head": "59c167987b4b16b9dbec51a6d6f79a5eac570cb7",
+    "tree": "72a82e06441c19c9281c053d15672dc285c423dc",
+    "branch": "codex/portfolio-3.0-phase09-20260907",
+    "statusLineCount": 1,
+    "status": "?? qa-reports/phase-09-owner-resolution/"
+  },
+  "sourceChangesAfterCandidate": ""
+}

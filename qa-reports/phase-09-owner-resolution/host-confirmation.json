@@ -1,0 +1,32 @@
+{
+  "at": "2026-09-07T14:58:16.173422+00:00",
+  "method": "GET, standard TLS, allowlisted security headers only; no cookies recorded",
+  "observations": [
+    {
+      "url": "http://skypistudio.com/",
+      "status": 200,
+      "finalURL": "http://skypistudio.com/",
+      "headers": {
+        "Strict-Transport-Security": null,
+        "Content-Security-Policy": null,
+        "X-Content-Type-Options": null,
+        "X-Frame-Options": null,
+        "Referrer-Policy": null,
+        "Permissions-Policy": null
+      }
+    },
+    {
+      "url": "https://skypistudio.com/",
+      "status": 200,
+      "finalURL": "https://skypistudio.com/",
+      "headers": {
+        "Strict-Transport-Security": null,
+        "Content-Security-Policy": null,
+        "X-Content-Type-Options": null,
+        "X-Frame-Options": null,
+        "Referrer-Policy": null,
+        "Permissions-Policy": null
+      }
+    }
+  ]
+}
