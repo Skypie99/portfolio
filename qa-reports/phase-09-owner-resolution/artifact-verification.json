@@ -1,0 +1,12 @@
+{
+  "artifact": {
+    "verifiedFiles": 350,
+    "root": "/Users/skypie/Documents/Codex/2026-09-07/files-pasted-by-the-user-skypi/work/owner-resolution/final-export",
+    "digest": "aba823c2678fc2dc793922c207e1426d40f0df5b981c99060be64645d2abddab"
+  },
+  "phase00-artifact": {
+    "verifiedFiles": 348,
+    "root": "/Users/skypie/Documents/Codex/2026-09-07/files-pasted-by-the-user-skypi/work/phase00/out",
+    "digest": "f89fe2d42b4e585b609d9d8fe091c571c1bd50068edeca9a6b501aa131525971"
+  }
+}

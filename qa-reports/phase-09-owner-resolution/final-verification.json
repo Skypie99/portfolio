@@ -1,0 +1,26 @@
+{
+  "sourceSHA": "34cdd66fdb376d33fb83a576163a5bb74d4da71c",
+  "sourceTree": "a2e30b84ec4ef15b59a7f06daa0cd93947d3521b",
+  "nonQADiff": "EMPTY",
+  "originalEvidence": "Only three parent receipts extended; every other original tracked artifact unchanged",
+  "originalReceiptsPreserved": {
+    "qa-reports/PHASE-09C_PERFORMANCE_INTEGRITY_RECEIPT.md": "d5628143984b0d9e5dc6848102ec56823167425f8425a0a1d1f4010a6926ad91",
+    "qa-reports/PHASE-09_DECISIONS_FOR_SKY.md": "60bf332789896eb9f30da1b0349460ba0ef1d1339682bcd60c077c77f7e8f6a8",
+    "qa-reports/PHASE-09_TECHNICAL_INTEGRITY_RECEIPT.md": "260b8d0876d2a0effc009ae64881f8a287c38d8871fdbd38b05c0aa9e9c81f57"
+  },
+  "artifactFinalRecheck": {
+    "files": 350,
+    "mismatches": 0,
+    "extraOrMissingFiles": 0
+  },
+  "phase00-artifactFinalRecheck": {
+    "files": 348,
+    "mismatches": 0,
+    "extraOrMissingFiles": 0
+  },
+  "ownedServersStopped": [
+    26382,
+    26395
+  ],
+  "browser": "Dedicated headless browser closed after all32 records; harness exit0"
+}

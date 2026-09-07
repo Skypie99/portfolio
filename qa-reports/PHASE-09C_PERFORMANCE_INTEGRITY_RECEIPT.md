@@ -1,3 +1,11 @@
+# Current owner adjudication — 2026-09-07
+
+P09-C: OWNER ACCEPTED WITH MEASUREMENT UNCERTAINTY. PERFORMANCE_REGRESSION: NOT ESTABLISHED. One32-record confirmation is documented in phase-09-owner-resolution/performance-disposition.md; original132 records and earlier HOLD observations below are unchanged. No performance source changes. Parent gate remains HOLD for dependency conditions2/3 only.
+
+---
+
+# Preserved HOLD-era receipt (unchanged)
+
 # Phase 09-C Performance and Integrity Receipt
 
 P09-C / T137–142 / F035 / RC010. Date: 2026-09-07. **P09-C: HOLD for performance-confidence disposition. Integrity checks PASS within stated scope.** No parent-gate authority.

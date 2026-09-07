@@ -1,3 +1,11 @@
+# Current owner decision state — 2026-09-07
+
+Host: OWNER ACCEPTED with mandatory Phase11 HTTPS enforcement verification. Performance: OWNER ACCEPTED WITH MEASUREMENT UNCERTAINTY; regression NOT ESTABLISHED. Dependency: HOLD because acceptance conditions2/3 cannot be reconfirmed. Recommendation: authorize isolated Next15-scoped PostCSS8.5.28 override validation; alternative: explicitly revise acceptance to tolerate the untested narrower option. No package change made. See phase-09-owner-resolution/dependency-owner-conditions.md and release-candidate-risk-register.md. Earlier decisions below are preserved history.
+
+---
+
+# Preserved HOLD-era decision packet (unchanged)
+
 # Phase09 — decisions for Sky
 
 Phase09 source fixes and all authorized measurements are banked. The gate remains HOLD for two risk decisions and a measured performance-confidence limit. No further source approval is requested for the canonical correction or bounded visible React test warning. No production action has been taken.

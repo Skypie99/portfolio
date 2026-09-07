@@ -1,3 +1,31 @@
+# Current owner adjudication — 2026-09-07
+
+**TECHNICAL_INTEGRITY_GATE: HOLD**
+**SAFE_TO_INTEGRATE: NO**
+**SAFE_FOR_P10_BASELINE: NO**
+
+Only DEPENDENCY_RESIDUAL remains HOLD. Host and performance dispositions below are now explicitly owner accepted. Historical observations and previous HOLD statements follow unchanged; they describe the earlier decision state, not additional current holds. No Phase10 work.
+
+- HOST_SECURITY_DISPOSITION: OWNER ACCEPTED. Current HTTP200 reachability remains accurately recorded. Mandatory Phase11 release control: actual host HTTP→HTTPS enforcement must be verified before final production acceptance. Source configuration is not enforcement. F-029, T-133/T-134 and acceptance criterion4 permit this documented host-owned disposition; no Phase09 enforcement/deployment requirement exists.
+- DEPENDENCY_RESIDUAL: HOLD. Conditions1/4/5 confirmed;2/3 not established. Patched same-major PostCSS8.5.28 and parent-scoped npm overrides exist. Compatibility with Next15's processor is untested; neither safety nor absence of a safe minor remedy has been established. npm fixAvailable:false does not prove Next16/broader architecture is necessary. Next16 DEFERRED / NOT AUTHORIZED IN PORTFOLIO3.0. Exact four GHSAs/severities and dependency path retained in the additive risk register and dependency report.
+- MOBILE_HOME_PERFORMANCE: OWNER ACCEPTED WITH MEASUREMENT UNCERTAINTY. PERFORMANCE_REGRESSION: NOT ESTABLISHED. One bounded eight-pair/32-record confirmation completed; warm excess baseline[57,0,0,45,25,0,0,966], candidate[0,0,0,114,0,152,133,0]ms. Paired delta median0ms, three positive/three negative/two equal. Attribution did not establish a consistent candidate source cause. Original132 records, baseline six0ms and candidate45.5ms median with91/117/151ms spikes remain unchanged. Not INP or field CWV.
+
+## Current identity and verification
+
+Source candidate remains34cdd66fdb376d33fb83a576163a5bb74d4da71c; tree a2e30b84ec4ef15b59a7f06daa0cd93947d3521b. It is not fully phase-accepted while the dependency hold remains. Starting evidence tip59c167987b4b16b9dbec51a6d6f79a5eac570cb7, tree72a82e06441c19c9281c053d15672dc285c423dc. Continued the same evidence branch codex/portfolio-3.0-phase09-20260907 in isolated owner-resolution worktree. Final receipt commit SHA is reported externally to avoid a self-referential commit. Private integration remains eb67733403ba434cb8de94003037666f80aa6592 /1746309ac60e57cda3873119d19248a905056896.
+
+No product/test/package/config source changed. Prior exact-source verification remains:874 tests PASS,2 existing skips,98 files; build/lint/typecheck PASS. No unrelated matrix rerun. Fresh checks: source diff against34cdd66 empty outside QA;348 baseline/350 candidate export files verified;32/32 bounded navigation records pass; original receipts preserved as unchanged suffixes; evidence whitespace check. GATE-FLAGSTONE-CTA-PARITY, PHASE_07_INTRO_PRESERVE and PHASE_08_ACCESSIBILITY_PRESERVE remain PASS within prior scope, without new AT/field certification.
+
+Evidence: phase-09-owner-resolution/{host-disposition.md,dependency-owner-conditions.md,performance-disposition.md,release-candidate-risk-register.md} and underlying JSON/logs/harness. All prior evidence preserved. No push, merge, deployment or remote mutation.
+
+## DECISIONS FOR SKY
+
+Remaining decision: authorize the narrow Next15-scoped PostCSS8.5.28 override evaluation, or revise the conditional residual acceptance to acknowledge that narrower option is untested. Recommendation: evaluate that isolated manifest/lock candidate with audit/build/relevant tests before asserting a major migration is necessary. Alternative: explicitly accept the exact existing residual despite an unevaluated minor option. Impact: Phase09/P10 baseline remains HOLD; no dependency upgrade has been made. This is missing compatibility evidence, not a claim that an override is already safe.
+
+---
+
+# Preserved HOLD-era receipt (unchanged)
+
 # PHASE-09 Technical Integrity Receipt
 
 **TECHNICAL_INTEGRITY_GATE: HOLD**  
