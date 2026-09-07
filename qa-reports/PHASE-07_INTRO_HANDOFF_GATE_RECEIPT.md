@@ -6,16 +6,16 @@
 PROMPT_ID: SKYPI-PORTFOLIO-3.0-P07
 PHASE: 07 — Narrow-Screen Intro Handoff and Interaction Precision
 OWNER_VISUAL_APPROVAL: YES — original 2026-09-05; revised candidate 2026-09-07, “ok its PERFECT”
-INTRO_HANDOFF_GATE: HOLD — IPHONE VISUALS ACCEPTED; REMAINING DEVICE CHECKLIST CONFIRMATION PENDING
-SAFE_TO_INTEGRATE: NO — evidence gaps listed below remain
-NEXT_PHASE: NOT AUTHORIZED
+INTRO_HANDOFF_GATE: PASS — OWNER-SUPPLIED PHYSICAL IPHONE SAFARI EVIDENCE COMPLETE
+SAFE_TO_INTEGRATE: YES — ACCEPTED LOCAL CANDIDATE; NO INTEGRATION PERFORMED
+NEXT_PHASE: SKYPI-PORTFOLIO-3.0-P08-LEAD PERMITTED, NOT STARTED
 REMOTE_MUTATIONS: NONE
 PUSH: NO
 MERGE: NO
 DEPLOY: NO
 ```
 
-Sky approved the original visual candidate and has now approved the revised candidate `d6e378a` on the physical iPhone. The latest screenshots show the beige strip removed and the higher, revised portrait identity clearly visible below Safari's top controls. Those visual defects are accepted as resolved in the observed dark-portrait states. This receipt does not infer that the unpictured Back/Forward, reload/repeat, theme, and rotation checklist actions were performed; one explicit owner confirmation of those actions remains before the full phase gate can close. Earlier repair failures and local measurements are retained below as history.
+Sky approved the original visual candidate and then approved the revised candidate `d6e378a` on the physical iPhone. The latest screenshots show the beige strip removed and the higher, revised portrait identity clearly visible below Safari's top controls. The owner subsequently confirmed that Back/Forward, reload and repeat Skip Intro, both themes, and portrait → landscape → portrait all worked normally with no layout or interaction issues. The physical-device acceptance criteria are complete. Earlier repair failures and local measurements are retained below as history.
 
 ## Identity, lineage, and worktree safety
 
@@ -171,7 +171,7 @@ All listed arrival frames reported `documentScrollWidth === viewport width`, zer
 | PR-013 — theme-specific atmosphere | PASS (local Chromium) | Light and dark first/arrival captures cover 320, 360, 375, 393, 430, 768, 1024, 1280, 1440, and 1728. |
 | PR-014 — reduced motion | PASS (local Chromium) | Dedicated 375px reduced-motion arrival capture; content and state communication are complete. |
 | PR-015 — intentional negative space | PASS (local Chromium) | CSS affects fragment landing only below 768px; paired 768/1024/1280/1440/1728 captures retain `0px` margin. |
-| PR-019 — navigation, focus, history | PASS (local Chromium); pending WebKit | Native-link source guards, 40 focused tests, no-JS, keyboard, touch, Back, Forward, reload, deep-link, and no-VT browser evidence all pass locally. Mobile WebKit/iOS remains unverified. |
+| PR-019 — navigation, focus, history | PASS | Native-link source guards, 40 focused tests, no-JS, keyboard, touch, Back, Forward, reload, deep-link, and no-VT browser evidence pass locally. The owner confirmed the corresponding Back/Forward, reload/repeat, theme, and orientation journey on physical iPhone Safari. |
 
 ## Verification run on candidate `d1c15f9`
 
@@ -186,13 +186,11 @@ All listed arrival frames reported `documentScrollWidth === viewport width`, zer
 | `git diff --check` | PASS — no whitespace errors in the source candidate. |
 | `npm run check:overflow` | NOT RUN TO COMPLETION — exits 2 with `[overflow] static fixture never came up.` Its configured helper `design-reviews/showcase-refresh/tools/static-serve.mjs` is absent. The committed browser-matrix audit is not a substitute for the repository wrapper, though it recorded zero visible overflow elements and a non-vacuity probe in every captured arrival frame. |
 
-## Required QA coverage not complete
+## Required QA coverage complete
 
-The following boundary prevents a PASS gate. It is documented rather than inferred.
+1. **T-109/T-111 owner checklist closure: PASS.** `IMG_8190.PNG`, `IMG_8191.PNG`, and the owner's “PERFECT” approval establish the current candidate's visible portrait seam, landing, identity, and shown browser-chrome clearance. The owner then confirmed that Back/Forward, reload and repeat Skip Intro, both themes, and portrait → landscape → portrait worked normally with no layout or interaction issues. Earlier short-landscape approval and current local history/orientation checks support, but do not replace, that physical-device report.
 
-1. **T-109/T-111 owner checklist closure:** `IMG_8190.PNG`, `IMG_8191.PNG`, and the owner's “PERFECT” approval now accept the current candidate's visible portrait seam, landing, and identity. The images establish the shown dark-portrait browser-chrome clearance, not unpictured interaction history or both-theme/orientation coverage. Explicit confirmation that Back/Forward, reload and repeat Skip Intro, both themes, and portrait → landscape → portrait behaved normally remains pending. No further screenshots are required if the owner can confirm those actions verbally. Earlier short-landscape approval and current local history/orientation checks are retained but are not represented as new physical-device actions.
-
-The committed packet includes paired first/arrival captures for every listed Phase 07 viewport, two stable narrow-width arrival runs per theme, touch, keyboard, reduced-motion, no-JavaScript, no-View-Transition, Back, Forward, reload, and deep-link evidence. These local observations do not eliminate the mobile-WebKit limitation or the owner-observed defects.
+The committed packet includes paired first/arrival captures for every listed Phase 07 viewport, two stable narrow-width arrival runs per theme, touch, keyboard, reduced-motion, no-JavaScript, no-View-Transition, Back, Forward, reload, deep-link, and the completed owner iPhone Safari evidence.
 
 ## Rollback and side effects
 
@@ -209,17 +207,11 @@ PRODUCTION_SIDE_EFFECTS: NONE
 
 ## DECISIONS FOR SKY
 
-### Confirm the remaining physical-device checklist before allowing a PASS gate
+### Physical-device checklist — resolved
 
-**Decision:** confirm whether the unpictured checklist actions were completed successfully on the current `d6e378a` iPhone Safari candidate.
+**Decision:** accepted. The owner confirmed that Back/Forward, reload and repeat Skip Intro, both themes, and portrait → landscape → portrait all worked normally on the current physical-iPhone candidate, with no layout or interaction issues.
 
-**Recommendation:** one verbal confirmation covering Back/Forward, reload/repeat Skip Intro, both themes, and portrait → landscape → portrait. The supplied screenshots already establish visual approval; no additional captures are needed unless a defect was observed.
-
-**Why:** still screenshots cannot prove browser history, repeat activation, or states not pictured. Local Chromium results remain separate from owner-supplied physical-device observations.
-
-**Alternative:** retain `INTRO_HANDOFF_GATE: HOLD` and treat `d6e378a` only as a local repair candidate.
-
-**Impact:** no Phase 08 handoff or local integration is authorized until this decision is resolved and the WebKit evidence is retained.
+**Impact:** the physical Safari evidence boundary is closed. `INTRO_HANDOFF_GATE: PASS`; the accepted local candidate is safe for a later owner-controlled integration. No integration, merge, push, deploy, or Phase 08 action was performed in resolving this decision.
 
 ### Site-wide overflow wrapper maintenance — separated from completed Phase 07 coverage
 
@@ -255,7 +247,7 @@ The owner also explicitly requested **Skyler Halisky** as the portfolio's primar
 
 Final local gates: lint and typecheck pass; 96 test files pass with 870 passed/2 skipped; rebuilt static integrity passes with 54 passed/1 skipped. The final post-commit browser matrix passes all 23 cells. All six simulated seam gaps are effectively zero. At 440px portrait, identity top is `121.80px`; landscape remains `27.31px` and desktop `201.80px`. Intermediate test-cleanup failures and background-prefetch timeouts are disclosed in the linked report, along with the successful final reruns.
 
-`INTRO_HANDOFF_GATE: HOLD` remains in force. No push, merge, deploy, production change, Phase 08 work, or waiver of device evidence is authorized or performed.
+At the time of this third repair record the gate remained HOLD. The owner later supplied the full physical-device checklist confirmation recorded below, which supersedes that temporary status and closes the gate as PASS. No push, merge, deploy, production change, integration, or Phase 08 work was performed.
 
 ## Owner visual acceptance of the repaired candidate — 2026-09-07
 
@@ -263,4 +255,24 @@ The owner supplied `IMG_8190.PNG` (cinematic transition) and `IMG_8191.PNG` (por
 
 The original files remain unchanged in Downloads. Hashes, source/artifact attribution, acceptance limits, and final local check results are recorded in [the owner-acceptance report](2026-09-07_Codex_Phase07OwnerAcceptance.md). Current implementation still matches `d6e378a`; the served HTML still hashes to `cd5995bb292327521bf3656a0e67f196e65119846e426c2eee67a83737910ece`. No implementation edits occurred during this acceptance turn.
 
-Formal phase status remains HOLD only for the explicit remaining physical-device checklist confirmation described above. No Phase 08 handoff or integration has occurred.
+The owner later confirmed the previously unpictured device checklist: Back/Forward, reload and repeat Skip Intro, both themes, and portrait → landscape → portrait all worked normally with no layout or interaction issues. This closes the final evidence boundary. `INTRO_HANDOFF_GATE: PASS`; no Phase 08 handoff, integration, merge, push, or deployment has occurred.
+
+## Final owner physical-device confirmation and Phase 07 closeout — 2026-09-07
+
+The owner explicitly confirmed:
+
+> Back/Forward, reload and repeat Skip Intro all worked normally. Both themes worked normally, and portrait → landscape → portrait returned correctly with no layout or interaction issues.
+
+This applies to the exact local static candidate `d6e378a4f5b76682a3a9b821e7d90c12e255be76`, tree `52c276e537fdd06603c5e91dbea48c4b4fef66c2`, which was served at the numbered-port LAN URL and separately verified to match the built artifact. Together with `IMG_8190.PNG` and `IMG_8191.PNG`, it completes T-109 and T-111 without manufacturing unobserved Safari evidence.
+
+### Final handoff — Phase 07 closed
+
+- **Accepted source:** `d6e378a4f5b76682a3a9b821e7d90c12e255be76`
+- **Accepted tree:** `52c276e537fdd06603c5e91dbea48c4b4fef66c2`
+- **Chosen mechanism:** narrow-phone ScrollTrigger pin release ends at the actual `100svh` pin height; native `/#hero` link, browser history, and focus behavior remain owned by the platform. The earlier `100dvh` cascade override and forced phone-WebP workaround did not resolve the observed seam and were removed.
+- **Measurements and captures:** current static-browser evidence is under `qa-reports/phase-07-repair3/`; primary portrait role positions are in `metrics.json`; owner captures are `IMG_8190.PNG` and `IMG_8191.PNG` with hashes in `2026-09-07_Codex_Phase07OwnerAcceptance.md`.
+- **History, focus, motion, and Safari:** local native-link, keyboard focus, reduced-motion, no-JS, no-View-Transition, history, and repeat-visit checks pass; owner supplied physical-iPhone Safari confirmation covers visual seam/arrival, Back/Forward, reload/repeat, both themes, and orientation return.
+- **Preserves:** first frame, support-first sentence, native semantics, theme atmosphere, reduced-motion completeness, 768px-and-wider composition, and no horizontal overflow all pass within the scoped Phase 07 evidence. The broader all-routes overflow wrapper has a separately documented readiness timeout and is not represented as a full-site PASS.
+- **Next baseline:** retained Phase 07 branch at closure commit, with implementation source `d6e378a` and this documentation closure following it. `SKYPI-PORTFOLIO-3.0-P08-LEAD` is permitted but has not been started.
+
+No integration, merge, push, deployment, production mutation, visibility change, or Phase 08 work is included in this closeout.
