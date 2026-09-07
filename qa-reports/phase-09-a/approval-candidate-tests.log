@@ -1,0 +1,12 @@
+
+ RUN  v3.2.7 /Users/skypie/Portfolio-codex/portfolio-3.0-p09-a-20260907
+
+ ✓ lib/__tests__/metadata.test.ts (3 tests) 2ms
+ ✓ lib/__tests__/section-nav-anchors.test.ts (27 tests) 18ms
+ ✓ lib/__tests__/static-integrity.test.ts (28 tests | 1 skipped) 210ms
+
+ Test Files  3 passed (3)
+      Tests  57 passed | 1 skipped (58)
+   Start at  04:11:41
+   Duration  1.08s (transform 111ms, setup 207ms, collect 143ms, tests 231ms, environment 1.17s, prepare 343ms)
+
