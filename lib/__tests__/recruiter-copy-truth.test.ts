@@ -104,6 +104,9 @@ const PROHIBITED_CI: RegExp[] = [
   /approved by Apple/i,
   /live private data/i,
   /real operational data/i,
+  // P10-A-001: the Wave 4 ledger does not support this fixed/open aggregate.
+  /46 (?:of them )?fixed/i,
+  /2 deliberately left open/i,
 ];
 /** Case-sensitive doorway labels retired by Prompt 2 (the card title's
  *  lowercase "read the case study" accessible name is a P2-accepted pattern). */
@@ -169,11 +172,13 @@ describe('recruiter copy truth guards (Prompt 3)', () => {
 
   it('Flagstone: no unqualified "every finding fixed" claim, and no invented test total in the body', () => {
     const body = byId('flagstone').body ?? '';
-    // The 48-finding simulator walk left two findings deliberately open; the
-    // body must keep saying so rather than "accounted for every one".
+    // P10-A-001: Wave 4 records mixed and overlapping dispositions, not a
+    // fixed/open split. Pin the reconciled claim at its content ownership layer.
+    // Evidence: qa-reports/phase04-p10-a-001-evidence/disposition-reconciliation.json.
     expect(body).not.toMatch(/accounted for every one/i);
-    expect(body).toMatch(/48 findings/);
-    expect(body).toMatch(/2 deliberately left open/);
+    expect(body).toContain(
+      '48 findings tracked across four repair waves, with fixes, partial fixes, outstanding device checks and deliberate scope decisions',
+    );
     // The exact test figure lives only in the dated receipt strip on the page.
     expect(body).not.toMatch(/\b\d{1,2},\d{3} tests\b/);
   });
