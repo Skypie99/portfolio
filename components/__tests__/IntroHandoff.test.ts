@@ -28,6 +28,24 @@ describe('Phase 07 native intro handoff', () => {
     );
   });
 
+  it('brings the native handoff into short touch-landscape view without changing pointer desktop geometry', () => {
+    const match = css.match(
+      /@media \(orientation: landscape\) and \(max-height: 500px\) and \(hover: none\) and \(pointer: coarse\) \{\s*#hero \{([\s\S]*?)\n  \}\n\}/,
+    );
+
+    expect(match, 'the short touch-landscape #hero landing rule must exist').toBeTruthy();
+    expect(match?.[1]).toContain('scroll-margin-top: -310px;');
+    expect(match?.[1]).toContain(
+      'scroll-margin-top: calc(-310px - env(safe-area-inset-top));',
+    );
+  });
+
+  it('keeps the narrow cinematic pin as tall as Safari\'s live viewport when dvh is available', () => {
+    expect(css).toMatch(
+      /@media \(max-width: 767px\) and \(hover: none\) and \(pointer: coarse\) \{\s*@supports \(height: 100dvh\) \{\s*\.cdesert-pin \{\s*height: 100dvh;/,
+    );
+  });
+
   it('keeps the fragment destination reachable without adding a tab stop', () => {
     expect(home).toContain('<div id="hero" tabIndex={-1}>');
   });

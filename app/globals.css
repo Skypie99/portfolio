@@ -727,13 +727,26 @@ h1, h2, h3, h4, h5, h6 {
    scroll release has room to settle; a direct anchor jump would otherwise
    leave the support-first role sentence below the usable viewport's upper
    half. Move only the fragment landing position at <768px — not the hero's
-   layout, first frame, focus, history, or the 768px-and-up composition.
+   layout, first frame, focus, history, or the 768px-and-up pointer/fine
+   composition. The short touch-landscape exception below handles the iPhone
+   browser-chrome geometry that crosses the 768px layout boundary.
    The plain length is the fallback; Safari's safe-area value supplies extra
    clearance when a top inset reduces the usable visual viewport. */
 @media (max-width: 767px) {
   #hero {
     scroll-margin-top: -220px;
     scroll-margin-top: calc(-220px - env(safe-area-inset-top));
+  }
+}
+
+/* A modern iPhone is wide enough in landscape to enter the desktop layout,
+   but its short touch viewport still needs the first identity and heading in
+   view after the native fragment jump. Keep pointer/fine desktop geometry
+   untouched; this affects only short, touch-driven landscape viewports. */
+@media (orientation: landscape) and (max-height: 500px) and (hover: none) and (pointer: coarse) {
+  #hero {
+    scroll-margin-top: -310px;
+    scroll-margin-top: calc(-310px - env(safe-area-inset-top));
   }
 }
 
@@ -2845,6 +2858,19 @@ html.dark ::selection {
 @media (max-width: 767px) {
   .cdesert-stage {
     height: 300vh;
+  }
+}
+
+/* Phase 07 device repair: `svh` is intentionally stable, but it can become
+   shorter than Safari's live visual viewport after its browser chrome moves.
+   On narrow touch phones, use `dvh` when available so the pinned film remains
+   painted through the visible viewport instead of exposing the page beneath it.
+   Browsers without `dvh` retain the established 100svh fallback above. */
+@media (max-width: 767px) and (hover: none) and (pointer: coarse) {
+  @supports (height: 100dvh) {
+    .cdesert-pin {
+      height: 100dvh;
+    }
   }
 }
 
