@@ -17,7 +17,7 @@
  ⚠ Specified "headers" will not automatically work with "output: export". See more info here: https://nextjs.org/docs/messages/export-no-custom-routes
  ⚠ Specified "headers" will not automatically work with "output: export". See more info here: https://nextjs.org/docs/messages/export-no-custom-routes
  ⚠ Specified "headers" will not automatically work with "output: export". See more info here: https://nextjs.org/docs/messages/export-no-custom-routes
- ✓ Compiled successfully in 3.1s
+ ✓ Compiled successfully in 2.9s
    Linting and checking validity of types ...
    Collecting page data ...
    Generating static pages (0/26) ...
@@ -63,7 +63,7 @@ Route (app)                                  Size  First Load JS
   └ other shared chunks (total)           2.01 kB
 
 Route (pages)                                Size  First Load JS
-─ ○ /500 (416 ms)                           225 B        83.3 kB
+─ ○ /500                                    225 B        83.3 kB
 + First Load JS shared by all             83.1 kB
   ├ chunks/framework-4622f80c22420dd9.js  44.9 kB
   ├ chunks/main-24cd98dc762bc8aa.js       36.2 kB

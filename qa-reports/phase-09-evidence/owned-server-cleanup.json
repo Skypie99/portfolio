@@ -1,0 +1,14 @@
+[
+  {
+    "port": 3049,
+    "pid": 96462,
+    "verifiedOwnedCommand": "node qa-reports/phase-09-evidence/harnesses/serve.cjs out 3049",
+    "signal": "SIGTERM"
+  },
+  {
+    "port": 3048,
+    "pid": 97152,
+    "verifiedOwnedCommand": "node qa-reports/phase-09-evidence/harnesses/serve.cjs /Users/skypie/Documents/Codex/2026-09-07/files-pasted-by-the-user-skypi/work/phase00/out 3048",
+    "signal": "SIGTERM"
+  }
+]

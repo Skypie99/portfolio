@@ -1,12 +1,12 @@
 {
-  "measured_utc": "2026-09-07T11:28:50.443752+00:00",
+  "measured_utc": "2026-09-07T11:10:21.864486+00:00",
   "method": "Python HTMLParser, ElementTree, JSON; read-only static export",
   "out": "/Users/skypie/Portfolio-codex/portfolio-3.0-phase09-20260907/out",
   "routes": [
     {
       "route": "/404/",
       "file": "404/index.html",
-      "sha256": "dd16ffc36f8b19aab1b14ed228ffca7c4ccee12ced7d35b5ae2b699c739dc073",
+      "sha256": "d381fb7334dfcad2397b6c507564f9299d9e34d3b31d7ba413ab4bbf6b180093",
       "category": "error",
       "canonicals": [
         "https://skypistudio.com/"
@@ -24,7 +24,7 @@
     {
       "route": "/404.html",
       "file": "404.html",
-      "sha256": "dd16ffc36f8b19aab1b14ed228ffca7c4ccee12ced7d35b5ae2b699c739dc073",
+      "sha256": "d381fb7334dfcad2397b6c507564f9299d9e34d3b31d7ba413ab4bbf6b180093",
       "category": "error",
       "canonicals": [
         "https://skypistudio.com/"
@@ -42,7 +42,7 @@
     {
       "route": "/about/",
       "file": "about/index.html",
-      "sha256": "10d57436d5429e359b5da2bbb8f3ff021727207f344063e111b2350d7a8cf826",
+      "sha256": "f86ed0c962d9043dd3d6ca7fb20052502202faf2a64e731738bb14f97cb0f422",
       "category": "indexable",
       "canonicals": [
         "https://skypistudio.com/about/"
@@ -58,7 +58,7 @@
     {
       "route": "/accessibility/",
       "file": "accessibility/index.html",
-      "sha256": "6590ed928e61f41641cd3697c87e2ae73016f52810678cfc7b5de0a1f8a47734",
+      "sha256": "ebce920c935ee055f4ecb1fac81676af88a715d6ec4fd2dde1b756e9232120bc",
       "category": "indexable",
       "canonicals": [
         "https://skypistudio.com/accessibility/"
@@ -74,7 +74,7 @@
     {
       "route": "/archive/",
       "file": "archive/index.html",
-      "sha256": "426a8c4a55af40800d53cc71b94f64fd3d3b6d7a35a717aa29a91f808f9a2398",
+      "sha256": "c63c7af66a046026a1e6a3cd425048787a8fe9d131b1df311a9b5b15e01b74a5",
       "category": "noindex",
       "canonicals": [
         "https://skypistudio.com/archive/"
@@ -108,7 +108,7 @@
     {
       "route": "/blog/building-flagstone/",
       "file": "blog/building-flagstone/index.html",
-      "sha256": "a82e8485a5f40b88920a307ecf916244615caed3954929cc47ce782e2ebafde4",
+      "sha256": "c284cead9255f299ad5910e5011e72c4668d449d2f33b7d28db54ac5f1a972f0",
       "category": "indexable",
       "canonicals": [
         "https://skypistudio.com/blog/building-flagstone/"
@@ -125,7 +125,7 @@
     {
       "route": "/blog/",
       "file": "blog/index.html",
-      "sha256": "5b1786d8a43dcf77227e04210c4b4c713f9ef3b54e768b72db9f5dc603a5c9cd",
+      "sha256": "721b7b616644122b2886e15353e71ef9da4975a580426d305491dd2b106c3971",
       "category": "indexable",
       "canonicals": [
         "https://skypistudio.com/blog/"
@@ -141,7 +141,7 @@
     {
       "route": "/certificates/",
       "file": "certificates/index.html",
-      "sha256": "897c677f3618d9c04d71b81e2ed486fae10bb3fef5a3926955e96be97cc19f19",
+      "sha256": "63a87c15d2a05a86db844609efb07bd783be3d85377508a8e932020093484d23",
       "category": "indexable",
       "canonicals": [
         "https://skypistudio.com/certificates/"
@@ -157,7 +157,7 @@
     {
       "route": "/colophon/",
       "file": "colophon/index.html",
-      "sha256": "988053cf3321f9309f0c24609f7d3f3a2c236b7fe564dc166020fc4e3b1ce1d6",
+      "sha256": "3ad26022364c270d14e3b01c45f3b9d6da72ffd61a427011b0c9f019b7501ae8",
       "category": "indexable",
       "canonicals": [
         "https://skypistudio.com/colophon/"
@@ -173,7 +173,7 @@
     {
       "route": "/contact/",
       "file": "contact/index.html",
-      "sha256": "56dfde694d40be8ef6c125ce033af607d18cd794fd239b69cd1301cb2090688b",
+      "sha256": "fa28c61e172f9b17890883aae47b73940c15a79b7658583bd84ea7c5f63e4070",
       "category": "indexable",
       "canonicals": [
         "https://skypistudio.com/contact/"
@@ -189,77 +189,67 @@
     {
       "route": "/flagstone/accessibility/",
       "file": "flagstone/accessibility/index.html",
-      "sha256": "facbedf889f73d8a9ee3bcf9711ea2f77585f50bd2a021b70c3995b6dca81a32",
+      "sha256": "cf4377389761fb260261d709244624dc865f5e67f46693a8faf235b68ceebcd5",
       "category": "indexable",
-      "canonicals": [
-        "https://skypistudio.com/flagstone/accessibility/"
-      ],
+      "canonicals": [],
       "robots": [],
       "refresh": [],
-      "sitemap": true,
+      "sitemap": false,
       "meta_csp": false,
       "structured_types": []
     },
     {
       "route": "/flagstone/",
       "file": "flagstone/index.html",
-      "sha256": "8e88e2cd41f740176e87537e94476d5cd17d8c42f5035b3ea3ef45e4e36514dd",
+      "sha256": "b55c6770cafeeb82d0be0fc02b44db88c197729b549c464d9915e94acf002dad",
       "category": "indexable",
-      "canonicals": [
-        "https://skypistudio.com/flagstone/"
-      ],
+      "canonicals": [],
       "robots": [],
       "refresh": [],
-      "sitemap": true,
+      "sitemap": false,
       "meta_csp": false,
       "structured_types": []
     },
     {
       "route": "/flagstone/privacy/",
       "file": "flagstone/privacy/index.html",
-      "sha256": "2d521f380724e844c480fee55aceab00df3ec9bab10862ead2f73548168bd3dc",
+      "sha256": "1227e7384e0817acd88bedb1a1bcb0a2e99321e4b18a87c3fbb48b710ed1b1c7",
       "category": "indexable",
-      "canonicals": [
-        "https://skypistudio.com/flagstone/privacy/"
-      ],
+      "canonicals": [],
       "robots": [],
       "refresh": [],
-      "sitemap": true,
+      "sitemap": false,
       "meta_csp": false,
       "structured_types": []
     },
     {
       "route": "/flagstone/support/",
       "file": "flagstone/support/index.html",
-      "sha256": "51ca67efd559b5d180ebf9b0427656ac2db79b3d4485f79460f2e12cb1386c81",
+      "sha256": "6248f6ea68a83f6027ed6fc357f7ec2e19b9bc594362662f051cc13398d808a6",
       "category": "indexable",
-      "canonicals": [
-        "https://skypistudio.com/flagstone/support/"
-      ],
+      "canonicals": [],
       "robots": [],
       "refresh": [],
-      "sitemap": true,
+      "sitemap": false,
       "meta_csp": false,
       "structured_types": []
     },
     {
       "route": "/flagstone/terms/",
       "file": "flagstone/terms/index.html",
-      "sha256": "f47373acd8b93cc796d21fdec28a38d067bf2c241558768c6017633990aa8205",
+      "sha256": "9259becba4c91fc6f4bdb2dff8c0e8d4eb7aebed57745f67633671044d5c795f",
       "category": "indexable",
-      "canonicals": [
-        "https://skypistudio.com/flagstone/terms/"
-      ],
+      "canonicals": [],
       "robots": [],
       "refresh": [],
-      "sitemap": true,
+      "sitemap": false,
       "meta_csp": false,
       "structured_types": []
     },
     {
       "route": "/",
       "file": "index.html",
-      "sha256": "c29880c16e5c3c9b41c976a0a0e5a7ba62e6c540e70a9339e202602332d99305",
+      "sha256": "42433bc4d750a133a46f3394d4301c5dafab837440d31eb84ded3a3fe72a3801",
       "category": "indexable",
       "canonicals": [
         "https://skypistudio.com/"
@@ -275,7 +265,7 @@
     {
       "route": "/runway/",
       "file": "runway/index.html",
-      "sha256": "ffab57bb3adb2c836c4538a24bb33cfba97cfeaae4d8b837771b28e9c30077f0",
+      "sha256": "f29530a8b0a1d948a0a1c733b2f19ac01ea33f66bc330ea7373ff794416d9552",
       "category": "noindex",
       "canonicals": [
         "https://skypistudio.com/runway/"
@@ -309,7 +299,7 @@
     {
       "route": "/work/claude-corp/",
       "file": "work/claude-corp/index.html",
-      "sha256": "d2307a1e5adc8d04b13957b90c5931b712a1772b755eb6bb46d1f0c320fe8162",
+      "sha256": "0e94a646e14c8f8aece5393bde0254511a92e243e228e181c5330ea6b31e5938",
       "category": "indexable",
       "canonicals": [
         "https://skypistudio.com/work/claude-corp/"
@@ -326,7 +316,7 @@
     {
       "route": "/work/dashboard/",
       "file": "work/dashboard/index.html",
-      "sha256": "b275b16850cdad9f15abad2393de341a59fd466a698c0106446aec3cf36fb13a",
+      "sha256": "ce6aa733253526ac2995758d64b3fb1e6c8b8de9bef333c0b8029c5ad64a5d00",
       "category": "indexable",
       "canonicals": [
         "https://skypistudio.com/work/dashboard/"
@@ -343,7 +333,7 @@
     {
       "route": "/work/flagstone/",
       "file": "work/flagstone/index.html",
-      "sha256": "59b9f93f1a795e5f8c36f3cb675a8ac1820c1ab4aa096622be203cb19adc2e1a",
+      "sha256": "6ecbce468df0fa10c6cc1d5be0c5d2e468d00e2194c0c39b71392f2b5f2d6be5",
       "category": "indexable",
       "canonicals": [
         "https://skypistudio.com/work/flagstone/"
@@ -360,7 +350,7 @@
     {
       "route": "/work/ghost-code/",
       "file": "work/ghost-code/index.html",
-      "sha256": "0f284288c364660453fb8384ed267423418830f62f0458be6fdfea7f3cf2cbcf",
+      "sha256": "19bbbec6253051ac9d395e2f7a82215117cb029bd1f091a47844590b088259be",
       "category": "indexable",
       "canonicals": [
         "https://skypistudio.com/work/ghost-code/"
@@ -377,7 +367,7 @@
     {
       "route": "/work/",
       "file": "work/index.html",
-      "sha256": "de65d20adf253e4be189e5c5c1b9186a4b9b8e8ee1400e2cca0293634f907ada",
+      "sha256": "a7c9c9611ea911b81c25159cbc6d02d8374e35a76a953e59b3932bd1fe8af34d",
       "category": "indexable",
       "canonicals": [
         "https://skypistudio.com/work/"
@@ -409,7 +399,7 @@
     {
       "route": "/work/prompt-library/",
       "file": "work/prompt-library/index.html",
-      "sha256": "e896c2671df911b06e8f134cd07b95ef00e6a04bc35bafa82138c9f30a430a04",
+      "sha256": "321766dde5348a207162373c228f96fec6a57840824e8481763dbc8fc63a73e5",
       "category": "indexable",
       "canonicals": [
         "https://skypistudio.com/work/prompt-library/"
@@ -433,11 +423,6 @@
     "https://skypistudio.com/contact/",
     "https://skypistudio.com/accessibility/",
     "https://skypistudio.com/colophon/",
-    "https://skypistudio.com/flagstone/",
-    "https://skypistudio.com/flagstone/accessibility/",
-    "https://skypistudio.com/flagstone/privacy/",
-    "https://skypistudio.com/flagstone/support/",
-    "https://skypistudio.com/flagstone/terms/",
     "https://skypistudio.com/work/flagstone/",
     "https://skypistudio.com/work/claude-corp/",
     "https://skypistudio.com/work/dashboard/",

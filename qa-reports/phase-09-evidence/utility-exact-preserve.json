@@ -1,0 +1,22 @@
+[
+  {
+    "file": "public/flagstone/index.html",
+    "removingOnlyNewCanonicalRestoresExactOriginalBytes": true
+  },
+  {
+    "file": "public/flagstone/accessibility/index.html",
+    "removingOnlyNewCanonicalRestoresExactOriginalBytes": true
+  },
+  {
+    "file": "public/flagstone/privacy/index.html",
+    "removingOnlyNewCanonicalRestoresExactOriginalBytes": true
+  },
+  {
+    "file": "public/flagstone/support/index.html",
+    "removingOnlyNewCanonicalRestoresExactOriginalBytes": true
+  },
+  {
+    "file": "public/flagstone/terms/index.html",
+    "removingOnlyNewCanonicalRestoresExactOriginalBytes": true
+  }
+]

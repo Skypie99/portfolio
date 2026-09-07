@@ -1,0 +1,12 @@
+{"target":"phase00-exact-deployed-artifact","route":"/","device":"mobile","condition":"fresh","rep":1,"lcp":7292,"cls":0,"longTaskExcessMs":68,"transferBytes":1416753,"errors":0,"failed":0}
+{"target":"phase00-exact-deployed-artifact","route":"/","device":"mobile","condition":"warm","rep":1,"lcp":316,"cls":0,"longTaskExcessMs":0,"transferBytes":0,"errors":0,"failed":0}
+{"target":"phase09-candidate","route":"/","device":"mobile","condition":"fresh","rep":1,"lcp":6504,"cls":0,"longTaskExcessMs":25,"transferBytes":1417886,"errors":0,"failed":0}
+{"target":"phase09-candidate","route":"/","device":"mobile","condition":"warm","rep":1,"lcp":528,"cls":0,"longTaskExcessMs":0,"transferBytes":0,"errors":0,"failed":0}
+{"target":"phase09-candidate","route":"/","device":"mobile","condition":"fresh","rep":2,"lcp":6636,"cls":0,"longTaskExcessMs":168,"transferBytes":1417886,"errors":0,"failed":0}
+{"target":"phase09-candidate","route":"/","device":"mobile","condition":"warm","rep":2,"lcp":520,"cls":0,"longTaskExcessMs":91,"transferBytes":0,"errors":0,"failed":0}
+{"target":"phase00-exact-deployed-artifact","route":"/","device":"mobile","condition":"fresh","rep":2,"lcp":6616,"cls":0,"longTaskExcessMs":55,"transferBytes":1416753,"errors":0,"failed":0}
+{"target":"phase00-exact-deployed-artifact","route":"/","device":"mobile","condition":"warm","rep":2,"lcp":412,"cls":0,"longTaskExcessMs":0,"transferBytes":0,"errors":0,"failed":0}
+{"target":"phase00-exact-deployed-artifact","route":"/","device":"mobile","condition":"fresh","rep":3,"lcp":7368,"cls":0,"longTaskExcessMs":25,"transferBytes":1416753,"errors":0,"failed":0}
+{"target":"phase00-exact-deployed-artifact","route":"/","device":"mobile","condition":"warm","rep":3,"lcp":424,"cls":0,"longTaskExcessMs":0,"transferBytes":0,"errors":0,"failed":0}
+{"target":"phase09-candidate","route":"/","device":"mobile","condition":"fresh","rep":3,"lcp":6628,"cls":0,"longTaskExcessMs":45,"transferBytes":1417886,"errors":0,"failed":0}
+{"target":"phase09-candidate","route":"/","device":"mobile","condition":"warm","rep":3,"lcp":316,"cls":0,"longTaskExcessMs":117,"transferBytes":0,"errors":0,"failed":0}

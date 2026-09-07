@@ -1,5 +1,11 @@
 # Phase 09-A SEO / headers receipt
 
+## Lead adjudication — final canonical maintenance authorized
+
+The initial extra P09-A-001 approval requirement below is superseded. The supplied prompt requires canonical/indexing approval only where a delegated contract requires it; none was found. T130/T132 already authorize correctness maintenance for these five existing public, indexable pages, with no conflicting noindex/unlisted intent. The earlier Phase02 test exclusion was a lane-scope exclusion, not policy. The lead therefore applied the tested patch as authorized maintenance in source commit fb3e2e6, retaining surrounding HTML indentation. No legal wording, indexing status, auth/data behavior, or private Archive change. Final build/static/performance binding is recorded in the parent receipt.
+
+P09-A canonical/sitemap work is implemented; host/security disposition remains HOLD. The historical patch, prospective tree and local validation below are retained as evidence, not an outstanding approval request or the final candidate identity.
+
 Prompt: SKYPI-PORTFOLIO-3.0-P09-A-SEO-HEADERS. Date: 2026-09-07. **Lane: HOLD; evidence/comment-only commit safe for lead review.** This lane does not issue the parent gate.
 
 ## Provenance and scope

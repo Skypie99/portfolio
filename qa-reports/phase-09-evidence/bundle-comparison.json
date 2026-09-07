@@ -1,0 +1,47 @@
+{
+  "method": "Uncompressed exported file totals, not per-route transfer; Phase00 exact original deployed artifact versus final local build",
+  "rows": [
+    {
+      "category": "JavaScript",
+      "phase00Bytes": 1484736,
+      "phase09Bytes": 1485124,
+      "deltaBytes": 388,
+      "deltaPercent": 0.026132591922065605
+    },
+    {
+      "category": "CSS",
+      "phase00Bytes": 132641,
+      "phase09Bytes": 134079,
+      "deltaBytes": 1438,
+      "deltaPercent": 1.0841293416062907
+    },
+    {
+      "category": "Fonts",
+      "phase00Bytes": 308960,
+      "phase09Bytes": 308960,
+      "deltaBytes": 0,
+      "deltaPercent": 0.0
+    },
+    {
+      "category": "Images",
+      "phase00Bytes": 8340684,
+      "phase09Bytes": 8325385,
+      "deltaBytes": -15299,
+      "deltaPercent": -0.18342620341449214
+    },
+    {
+      "category": "Video",
+      "phase00Bytes": 21349029,
+      "phase09Bytes": 21349029,
+      "deltaBytes": 0,
+      "deltaPercent": 0.0
+    },
+    {
+      "category": "HTML",
+      "phase00Bytes": 1752283,
+      "phase09Bytes": 1784012,
+      "deltaBytes": 31729,
+      "deltaPercent": 1.810723496147597
+    }
+  ]
+}

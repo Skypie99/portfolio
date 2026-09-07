@@ -3,16 +3,19 @@
 const fs = require('node:fs');
 const { chromium } = require('playwright-core');
 const executablePath = '/Users/skypie/Library/Caches/ms-playwright/chromium-1228/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing';
-const routes = ['/', '/work/', '/work/flagstone/', '/about/', '/contact/'];
+const routes = process.argv[4] === 'home-mobile-paired' ? ['/'] : ['/', '/work/', '/work/flagstone/', '/about/', '/contact/'];
+const devices = process.argv[4] === 'home-mobile-paired' ? ['mobile'] : ['desktop','mobile'];
 const output = process.argv[2] || 'qa-reports/phase-09-evidence/performance.json';
 const iterations = Number(process.argv[3] || 3);
-const targets = [{label:'phase00-exact-deployed-artifact',base:'http://127.0.0.1:3048'}, {label:'phase09-candidate',base:'http://127.0.0.1:3049'}];
+const allTargets = [{label:'phase00-exact-deployed-artifact',base:'http://127.0.0.1:3048'}, {label:'phase09-candidate',base:'http://127.0.0.1:3049'}];
+const targets = process.argv[4] === 'final-only' ? [allTargets[1]] : allTargets;
 const rows = [];
 (async()=>{
   const browser = await chromium.launch({executablePath,headless:true});
-  const metadata = {date:new Date().toISOString(),browser:browser.version(),method:'5 seconds after load; no scroll or interaction; normal motion; light OS theme; fixed-window long-task excess above 50ms after FCP (not Lighthouse TBT/INP); ResourceTiming totals exclude main document, matching Phase00 definition; local uncompressed static server with 1h cache; fresh=new context, warm=reload in same context',desktop:'1440x900 DPR1, unthrottled loopback and CPU',mobile:'390x844 DPR3 mobile touch, 4x CPU slowdown, 150ms latency, 1.6Mbps down/750Kbps up via CDP',iterations};
+  const artifact = JSON.parse(fs.readFileSync('qa-reports/phase-09-evidence/artifact.json','utf8'));
+  const metadata = {date:new Date().toISOString(),browser:browser.version(),candidateArtifactDigest:artifact.artifactDigest,candidateSourceSHA:artifact.head,mode:process.argv[4]||'paired',method:'5 seconds after load; no scroll or interaction; normal motion; light OS theme; fixed-window long-task excess above 50ms after FCP (not Lighthouse TBT/INP); ResourceTiming totals exclude main document, matching Phase00 definition; local uncompressed static server with 1h cache; fresh=new context, warm=reload in same context',desktop:'1440x900 DPR1, unthrottled loopback and CPU',mobile:'390x844 DPR3 mobile touch, 4x CPU slowdown, 150ms latency, 1.6Mbps down/750Kbps up via CDP',iterations};
   // Alternate artifacts per repetition and device to reduce temporal bias.
-  for(let rep=1;rep<=iterations;rep++) for(const device of ['desktop','mobile']) for(const route of routes) for(const target of (rep%2 ? targets : [...targets].reverse())) {
+  for(let rep=1;rep<=iterations;rep++) for(const device of devices) for(const route of routes) for(const target of (rep%2 ? targets : [...targets].reverse())) {
     const context = await browser.newContext({viewport:device==='mobile'?{width:390,height:844}:{width:1440,height:900},deviceScaleFactor:device==='mobile'?3:1,isMobile:device==='mobile',hasTouch:device==='mobile',colorScheme:'light',reducedMotion:'no-preference'});
     await context.addInitScript(()=>{
       window.__lab = {lcp:[],shifts:[],longTasks:[],events:[]};

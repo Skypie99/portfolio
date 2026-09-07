@@ -9,7 +9,7 @@
       "value": 0
     }
   ],
-  "artifactDigest": "aba823c2678fc2dc793922c207e1426d40f0df5b981c99060be64645d2abddab",
+  "artifactDigest": "444c1108258451fa7917c0266e384e51c6e970f0158bc008a4183f7cbcd43c86",
   "sums": {
     "(extensionless)": {
       "count": 4,
@@ -17,7 +17,7 @@
     },
     ".html": {
       "count": 26,
-      "bytes": 1784012
+      "bytes": 1783633
     },
     ".js": {
       "count": 45,
@@ -45,7 +45,7 @@
     },
     ".xml": {
       "count": 2,
-      "bytes": 3870
+      "bytes": 3539
     },
     ".svg": {
       "count": 14,

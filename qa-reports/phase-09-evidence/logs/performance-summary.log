@@ -1,0 +1,751 @@
+{
+  "cells": 132,
+  "groups": 40,
+  "errors": 0,
+  "comparisons": [
+    {
+      "route": "/",
+      "device": "desktop",
+      "condition": "fresh",
+      "lcp": {
+        "phase00": 272,
+        "phase09": 224,
+        "delta": -48,
+        "percent": -17.647058823529413
+      },
+      "cls": {
+        "phase00": 9.769643775720166e-06,
+        "phase09": 9.769643775720166e-06,
+        "delta": 0.0,
+        "percent": 0.0
+      },
+      "longTaskExcessMs": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 33,
+        "phase09": 34,
+        "delta": 1,
+        "percent": 3.0303030303030303
+      },
+      "transferBytes": {
+        "phase00": 1498116,
+        "phase09": 1500658,
+        "delta": 2542,
+        "percent": 0.1696797844759685
+      }
+    },
+    {
+      "route": "/",
+      "device": "desktop",
+      "condition": "warm",
+      "lcp": {
+        "phase00": 136,
+        "phase09": 144,
+        "delta": 8,
+        "percent": 5.88235294117647
+      },
+      "cls": {
+        "phase00": 9.769643775720166e-06,
+        "phase09": 9.769643775720166e-06,
+        "delta": 0.0,
+        "percent": 0.0
+      },
+      "longTaskExcessMs": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 33,
+        "phase09": 34,
+        "delta": 1,
+        "percent": 3.0303030303030303
+      },
+      "transferBytes": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      }
+    },
+    {
+      "route": "/work/",
+      "device": "desktop",
+      "condition": "fresh",
+      "lcp": {
+        "phase00": 140,
+        "phase09": 192,
+        "delta": 52,
+        "percent": 37.142857142857146
+      },
+      "cls": {
+        "phase00": 9.769643775720166e-06,
+        "phase09": 0,
+        "delta": -9.769643775720166e-06,
+        "percent": -100.0
+      },
+      "longTaskExcessMs": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 34,
+        "phase09": 35,
+        "delta": 1,
+        "percent": 2.941176470588235
+      },
+      "transferBytes": {
+        "phase00": 1334172,
+        "phase09": 1344783,
+        "delta": 10611,
+        "percent": 0.7953247407380758
+      }
+    },
+    {
+      "route": "/work/",
+      "device": "desktop",
+      "condition": "warm",
+      "lcp": {
+        "phase00": 152,
+        "phase09": 152,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "cls": {
+        "phase00": 9.769643775720166e-06,
+        "phase09": 9.769643775720166e-06,
+        "delta": 0.0,
+        "percent": 0.0
+      },
+      "longTaskExcessMs": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 34,
+        "phase09": 35,
+        "delta": 1,
+        "percent": 2.941176470588235
+      },
+      "transferBytes": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      }
+    },
+    {
+      "route": "/work/flagstone/",
+      "device": "desktop",
+      "condition": "fresh",
+      "lcp": {
+        "phase00": 216,
+        "phase09": 196,
+        "delta": -20,
+        "percent": -9.25925925925926
+      },
+      "cls": {
+        "phase00": 0.0012997089317960176,
+        "phase09": 0.0012997089317960176,
+        "delta": 0.0,
+        "percent": 0.0
+      },
+      "longTaskExcessMs": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 31,
+        "phase09": 32,
+        "delta": 1,
+        "percent": 3.225806451612903
+      },
+      "transferBytes": {
+        "phase00": 1258795,
+        "phase09": 1267899,
+        "delta": 9104,
+        "percent": 0.7232313442617742
+      }
+    },
+    {
+      "route": "/work/flagstone/",
+      "device": "desktop",
+      "condition": "warm",
+      "lcp": {
+        "phase00": 140,
+        "phase09": 132,
+        "delta": -8,
+        "percent": -5.714285714285714
+      },
+      "cls": {
+        "phase00": 0.0012997089317960176,
+        "phase09": 0.0012997089317960176,
+        "delta": 0.0,
+        "percent": 0.0
+      },
+      "longTaskExcessMs": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 31,
+        "phase09": 32,
+        "delta": 1,
+        "percent": 3.225806451612903
+      },
+      "transferBytes": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      }
+    },
+    {
+      "route": "/about/",
+      "device": "desktop",
+      "condition": "fresh",
+      "lcp": {
+        "phase00": 136,
+        "phase09": 136,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "cls": {
+        "phase00": 9.769643775720166e-06,
+        "phase09": 9.769643775720166e-06,
+        "delta": 0.0,
+        "percent": 0.0
+      },
+      "longTaskExcessMs": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 29,
+        "phase09": 30,
+        "delta": 1,
+        "percent": 3.4482758620689653
+      },
+      "transferBytes": {
+        "phase00": 1103524,
+        "phase09": 1112397,
+        "delta": 8873,
+        "percent": 0.804060446351869
+      }
+    },
+    {
+      "route": "/about/",
+      "device": "desktop",
+      "condition": "warm",
+      "lcp": {
+        "phase00": 112,
+        "phase09": 120,
+        "delta": 8,
+        "percent": 7.142857142857142
+      },
+      "cls": {
+        "phase00": 9.769643775720166e-06,
+        "phase09": 9.769643775720166e-06,
+        "delta": 0.0,
+        "percent": 0.0
+      },
+      "longTaskExcessMs": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 30,
+        "phase09": 31,
+        "delta": 1,
+        "percent": 3.3333333333333335
+      },
+      "transferBytes": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      }
+    },
+    {
+      "route": "/contact/",
+      "device": "desktop",
+      "condition": "fresh",
+      "lcp": {
+        "phase00": 264,
+        "phase09": 100,
+        "delta": -164,
+        "percent": -62.121212121212125
+      },
+      "cls": {
+        "phase00": 9.769643775720166e-06,
+        "phase09": 9.769643775720166e-06,
+        "delta": 0.0,
+        "percent": 0.0
+      },
+      "longTaskExcessMs": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 29,
+        "phase09": 30,
+        "delta": 1,
+        "percent": 3.4482758620689653
+      },
+      "transferBytes": {
+        "phase00": 1103924,
+        "phase09": 1112799,
+        "delta": 8875,
+        "percent": 0.8039502719390104
+      }
+    },
+    {
+      "route": "/contact/",
+      "device": "desktop",
+      "condition": "warm",
+      "lcp": {
+        "phase00": 128,
+        "phase09": 120,
+        "delta": -8,
+        "percent": -6.25
+      },
+      "cls": {
+        "phase00": 0,
+        "phase09": 9.769643775720166e-06,
+        "delta": 9.769643775720166e-06,
+        "percent": null
+      },
+      "longTaskExcessMs": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 30,
+        "phase09": 31,
+        "delta": 1,
+        "percent": 3.3333333333333335
+      },
+      "transferBytes": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      }
+    },
+    {
+      "route": "/",
+      "device": "mobile",
+      "condition": "fresh",
+      "lcp": {
+        "phase00": 7330.0,
+        "phase09": 6576.0,
+        "delta": -754.0,
+        "percent": -10.28649386084584
+      },
+      "cls": {
+        "phase00": 0.0,
+        "phase09": 0.0,
+        "delta": 0.0,
+        "percent": null
+      },
+      "longTaskExcessMs": {
+        "phase00": 41.5,
+        "phase09": 44.5,
+        "delta": 3.0,
+        "percent": 7.228915662650602
+      },
+      "requestCount": {
+        "phase00": 29.0,
+        "phase09": 30.0,
+        "delta": 1.0,
+        "percent": 3.4482758620689653
+      },
+      "transferBytes": {
+        "phase00": 1416753.0,
+        "phase09": 1417886.0,
+        "delta": 1133.0,
+        "percent": 0.07997159702502836
+      }
+    },
+    {
+      "route": "/",
+      "device": "mobile",
+      "condition": "warm",
+      "lcp": {
+        "phase00": 418.0,
+        "phase09": 428.0,
+        "delta": 10.0,
+        "percent": 2.3923444976076556
+      },
+      "cls": {
+        "phase00": 0.0,
+        "phase09": 0.0,
+        "delta": 0.0,
+        "percent": null
+      },
+      "longTaskExcessMs": {
+        "phase00": 0.0,
+        "phase09": 45.5,
+        "delta": 45.5,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 29.0,
+        "phase09": 30.0,
+        "delta": 1.0,
+        "percent": 3.4482758620689653
+      },
+      "transferBytes": {
+        "phase00": 0.0,
+        "phase09": 0.0,
+        "delta": 0.0,
+        "percent": null
+      }
+    },
+    {
+      "route": "/work/",
+      "device": "mobile",
+      "condition": "fresh",
+      "lcp": {
+        "phase00": 6272,
+        "phase09": 6240,
+        "delta": -32,
+        "percent": -0.5102040816326531
+      },
+      "cls": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "longTaskExcessMs": {
+        "phase00": 58,
+        "phase09": 27,
+        "delta": -31,
+        "percent": -53.44827586206896
+      },
+      "requestCount": {
+        "phase00": 26,
+        "phase09": 27,
+        "delta": 1,
+        "percent": 3.8461538461538463
+      },
+      "transferBytes": {
+        "phase00": 1032341,
+        "phase09": 1036135,
+        "delta": 3794,
+        "percent": 0.36751422252918364
+      }
+    },
+    {
+      "route": "/work/",
+      "device": "mobile",
+      "condition": "warm",
+      "lcp": {
+        "phase00": 420,
+        "phase09": 384,
+        "delta": -36,
+        "percent": -8.571428571428571
+      },
+      "cls": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "longTaskExcessMs": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 26,
+        "phase09": 27,
+        "delta": 1,
+        "percent": 3.8461538461538463
+      },
+      "transferBytes": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      }
+    },
+    {
+      "route": "/work/flagstone/",
+      "device": "mobile",
+      "condition": "fresh",
+      "lcp": {
+        "phase00": 2480,
+        "phase09": 2604,
+        "delta": 124,
+        "percent": 5.0
+      },
+      "cls": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "longTaskExcessMs": {
+        "phase00": 26,
+        "phase09": 30,
+        "delta": 4,
+        "percent": 15.384615384615385
+      },
+      "requestCount": {
+        "phase00": 25,
+        "phase09": 26,
+        "delta": 1,
+        "percent": 4.0
+      },
+      "transferBytes": {
+        "phase00": 1006433,
+        "phase09": 1008608,
+        "delta": 2175,
+        "percent": 0.2161097658761189
+      }
+    },
+    {
+      "route": "/work/flagstone/",
+      "device": "mobile",
+      "condition": "warm",
+      "lcp": {
+        "phase00": 408,
+        "phase09": 280,
+        "delta": -128,
+        "percent": -31.372549019607842
+      },
+      "cls": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "longTaskExcessMs": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 26,
+        "phase09": 27,
+        "delta": 1,
+        "percent": 3.8461538461538463
+      },
+      "transferBytes": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      }
+    },
+    {
+      "route": "/about/",
+      "device": "mobile",
+      "condition": "fresh",
+      "lcp": {
+        "phase00": 1984,
+        "phase09": 1912,
+        "delta": -72,
+        "percent": -3.6290322580645165
+      },
+      "cls": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "longTaskExcessMs": {
+        "phase00": 64,
+        "phase09": 28,
+        "delta": -36,
+        "percent": -56.25
+      },
+      "requestCount": {
+        "phase00": 20,
+        "phase09": 21,
+        "delta": 1,
+        "percent": 5.0
+      },
+      "transferBytes": {
+        "phase00": 753026,
+        "phase09": 754064,
+        "delta": 1038,
+        "percent": 0.13784384602922076
+      }
+    },
+    {
+      "route": "/about/",
+      "device": "mobile",
+      "condition": "warm",
+      "lcp": {
+        "phase00": 304,
+        "phase09": 256,
+        "delta": -48,
+        "percent": -15.789473684210526
+      },
+      "cls": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "longTaskExcessMs": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "requestCount": {
+        "phase00": 21,
+        "phase09": 22,
+        "delta": 1,
+        "percent": 4.761904761904762
+      },
+      "transferBytes": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      }
+    },
+    {
+      "route": "/contact/",
+      "device": "mobile",
+      "condition": "fresh",
+      "lcp": {
+        "phase00": 2088,
+        "phase09": 1800,
+        "delta": -288,
+        "percent": -13.793103448275861
+      },
+      "cls": {
+        "phase00": 0.0003061201689464896,
+        "phase09": 0.0003061201689464896,
+        "delta": 0.0,
+        "percent": 0.0
+      },
+      "longTaskExcessMs": {
+        "phase00": 228,
+        "phase09": 25,
+        "delta": -203,
+        "percent": -89.03508771929825
+      },
+      "requestCount": {
+        "phase00": 20,
+        "phase09": 21,
+        "delta": 1,
+        "percent": 5.0
+      },
+      "transferBytes": {
+        "phase00": 753426,
+        "phase09": 754466,
+        "delta": 1040,
+        "percent": 0.1380361176810994
+      }
+    },
+    {
+      "route": "/contact/",
+      "device": "mobile",
+      "condition": "warm",
+      "lcp": {
+        "phase00": 464,
+        "phase09": 284,
+        "delta": -180,
+        "percent": -38.793103448275865
+      },
+      "cls": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "longTaskExcessMs": {
+        "phase00": 2,
+        "phase09": 0,
+        "delta": -2,
+        "percent": -100.0
+      },
+      "requestCount": {
+        "phase00": 21,
+        "phase09": 22,
+        "delta": 1,
+        "percent": 4.761904761904762
+      },
+      "transferBytes": {
+        "phase00": 0,
+        "phase09": 0,
+        "delta": 0,
+        "percent": null
+      }
+    }
+  ],
+  "bundle": [
+    {
+      "category": "JavaScript",
+      "phase00Bytes": 1484736,
+      "phase09Bytes": 1485124,
+      "deltaBytes": 388,
+      "deltaPercent": 0.026132591922065605
+    },
+    {
+      "category": "CSS",
+      "phase00Bytes": 132641,
+      "phase09Bytes": 134079,
+      "deltaBytes": 1438,
+      "deltaPercent": 1.0841293416062907
+    },
+    {
+      "category": "Fonts",
+      "phase00Bytes": 308960,
+      "phase09Bytes": 308960,
+      "deltaBytes": 0,
+      "deltaPercent": 0.0
+    },
+    {
+      "category": "Images",
+      "phase00Bytes": 8340684,
+      "phase09Bytes": 8325385,
+      "deltaBytes": -15299,
+      "deltaPercent": -0.18342620341449214
+    },
+    {
+      "category": "Video",
+      "phase00Bytes": 21349029,
+      "phase09Bytes": 21349029,
+      "deltaBytes": 0,
+      "deltaPercent": 0.0
+    },
+    {
+      "category": "HTML",
+      "phase00Bytes": 1752283,
+      "phase09Bytes": 1784012,
+      "deltaBytes": 31729,
+      "deltaPercent": 1.810723496147597
+    }
+  ]
+}

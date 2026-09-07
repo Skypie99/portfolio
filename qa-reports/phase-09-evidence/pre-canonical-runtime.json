@@ -1,7 +1,7 @@
 {
-  "date": "2026-09-07T11:31:28.467Z",
+  "date": "2026-09-07T11:12:43.842Z",
   "browser": "149.0.7827.55",
-  "artifactDigest": "aba823c2678fc2dc793922c207e1426d40f0df5b981c99060be64645d2abddab",
+  "artifactDigest": "444c1108258451fa7917c0266e384e51c6e970f0158bc008a4183f7cbcd43c86",
   "method": "desktop1440x900 light normal motion, natural scroll; public HTML incl404/redirects; private Archive and unlisted Runway excluded from runtime, retained in static scan; no form submissions",
   "rows": [
     {
@@ -55,24 +55,24 @@
           "bytes": 173019
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
-          "bytes": 173927
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
           "bytes": 513
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
           "bytes": 8535
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
-          "bytes": 7434
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
           "bytes": 20634
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+          "bytes": 7434
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
@@ -83,32 +83,32 @@
           "bytes": 51544
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
-          "bytes": 15092
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
-          "bytes": 1861
+          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
+          "bytes": 15092
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
           "bytes": 18683
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
-          "bytes": 63036
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
         },
         {
           "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
           "bytes": 638
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
-          "bytes": 5447
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/996.3e98c9faf716433c.js",
           "bytes": 113094
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
+          "bytes": 5447
         },
         {
           "url": "http://127.0.0.1:3049/index.txt?_rsc=0JRbJX4JgpfuvHsr",
@@ -127,12 +127,12 @@
           "bytes": 75471
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
-          "bytes": 9914
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
           "bytes": 863
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
@@ -159,10 +159,6 @@
           "bytes": 40393
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
-          "bytes": 3975
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
           "bytes": 14290
         },
@@ -171,12 +167,16 @@
           "bytes": 6782
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
-          "bytes": 226
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
+          "bytes": 3975
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
           "bytes": 1682
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
+          "bytes": 226
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
@@ -214,10 +214,6 @@
           "bytes": 8724
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
-          "bytes": 39304
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
           "bytes": 13732
         },
@@ -226,36 +222,40 @@
           "bytes": 8825
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
-          "bytes": 2030
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
           "bytes": 91933
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
+          "bytes": 2030
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
           "bytes": 3513
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
+        },
+        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
           "bytes": 173019
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
           "bytes": 8535
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
-          "bytes": 20634
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
           "bytes": 513
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
-          "bytes": 173927
+          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
+          "bytes": 20634
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
@@ -266,28 +266,24 @@
           "bytes": 24162
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
-          "bytes": 18683
+          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+          "bytes": 51544
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
           "bytes": 15092
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
-          "bytes": 51544
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
           "bytes": 63036
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
-          "bytes": 1861
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
+          "bytes": 18683
         },
         {
-          "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
-          "bytes": 638
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/996.3e98c9faf716433c.js",
@@ -302,16 +298,24 @@
           "bytes": 82239
         },
         {
-          "url": "http://127.0.0.1:3049/blog/index.txt?_rsc=0JRbJX4JgpfuvHsr",
-          "bytes": 41126
-        },
-        {
           "url": "http://127.0.0.1:3049/work/flagstone/index.txt?_rsc=0JRbJX4JgpfuvHsr",
           "bytes": 73136
         },
         {
+          "url": "http://127.0.0.1:3049/blog/index.txt?_rsc=0JRbJX4JgpfuvHsr",
+          "bytes": 41126
+        },
+        {
           "url": "http://127.0.0.1:3049/work/index.txt?_rsc=0JRbJX4JgpfuvHsr",
           "bytes": 75471
+        },
+        {
+          "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
+          "bytes": 638
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
@@ -320,10 +324,6 @@
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
           "bytes": 8869
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
-          "bytes": 9914
         },
         {
           "url": "http://127.0.0.1:3049/certificates/index.txt?_rsc=0JRbJX4JgpfuvHsr",
@@ -405,12 +405,12 @@
           "bytes": 13732
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
-          "bytes": 8825
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
           "bytes": 39304
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
+          "bytes": 8825
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
@@ -425,6 +425,10 @@
           "bytes": 3513
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+          "bytes": 173019
+        },
+        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
           "bytes": 8535
         },
@@ -433,44 +437,40 @@
           "bytes": 513
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
-          "bytes": 20634
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
           "bytes": 173927
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
-          "bytes": 173019
+          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
+          "bytes": 20634
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
           "bytes": 7434
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
-          "bytes": 24162
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
           "bytes": 3975
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
-          "bytes": 1861
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+          "bytes": 24162
         },
         {
           "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
           "bytes": 638
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
-          "bytes": 5447
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/996.3e98c9faf716433c.js",
           "bytes": 113094
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
+          "bytes": 5447
         },
         {
           "url": "http://127.0.0.1:3049/index.txt?_rsc=_paE49VugaXyxB1G",
@@ -485,24 +485,24 @@
           "bytes": 41126
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
-          "bytes": 51544
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
-          "bytes": 63036
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
           "bytes": 15092
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+          "bytes": 51544
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
           "bytes": 18683
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
-          "bytes": 9914
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
@@ -549,12 +549,12 @@
           "bytes": 6782
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
-          "bytes": 1682
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
           "bytes": 226
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
+          "bytes": 1682
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
@@ -584,12 +584,12 @@
           "bytes": 8688
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
-          "bytes": 37776
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
           "bytes": 8724
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
+          "bytes": 37776
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
@@ -604,44 +604,40 @@
           "bytes": 13732
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
-          "bytes": 39304
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
           "bytes": 2030
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
           "bytes": 3513
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
-          "bytes": 173019
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
           "bytes": 513
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
-          "bytes": 173927
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
-          "bytes": 8535
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
           "bytes": 20634
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
-          "bytes": 7434
+          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
+          "bytes": 8535
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
-          "bytes": 24162
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+          "bytes": 173019
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+          "bytes": 7434
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
@@ -652,16 +648,20 @@
           "bytes": 1861
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+          "bytes": 24162
+        },
+        {
           "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
           "bytes": 638
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
-          "bytes": 5447
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/996.3e98c9faf716433c.js",
           "bytes": 113094
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
+          "bytes": 5447
         },
         {
           "url": "http://127.0.0.1:3049/index.txt?_rsc=p6JBf-Gtq-35482P",
@@ -676,24 +676,24 @@
           "bytes": 41126
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
-          "bytes": 51544
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
-          "bytes": 63036
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
           "bytes": 15092
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+          "bytes": 51544
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
           "bytes": 18683
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
-          "bytes": 9914
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
@@ -708,16 +708,16 @@
           "bytes": 42067
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
-          "bytes": 8869
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
           "bytes": 14290
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/certificates/page-91fbf2c2e199170d.js",
           "bytes": 6782
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
+          "bytes": 8869
         },
         {
           "url": "http://127.0.0.1:3049/about/index.txt?_rsc=p6JBf-Gtq-35482P",
@@ -732,16 +732,16 @@
           "bytes": 40393
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
+          "bytes": 3975
+        },
+        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
           "bytes": 226
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
           "bytes": 4377
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
-          "bytes": 3975
         }
       ],
       "canonical": [
@@ -767,16 +767,12 @@
           "bytes": 8688
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
-          "bytes": 8724
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
           "bytes": 37776
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
-          "bytes": 13732
+          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
+          "bytes": 8724
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
@@ -785,6 +781,10 @@
         {
           "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
           "bytes": 91933
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
+          "bytes": 13732
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
@@ -799,6 +799,10 @@
           "bytes": 3513
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
+        },
+        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
           "bytes": 173019
         },
@@ -807,20 +811,20 @@
           "bytes": 513
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
-          "bytes": 173927
+          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
+          "bytes": 8535
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
           "bytes": 20634
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
-          "bytes": 8535
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
           "bytes": 7434
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/%5Bslug%5D/page-031d981fbc8f599b.js",
+          "bytes": 6087
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
@@ -833,10 +837,6 @@
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
           "bytes": 1861
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/%5Bslug%5D/page-031d981fbc8f599b.js",
-          "bytes": 6087
         },
         {
           "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
@@ -863,12 +863,12 @@
           "bytes": 41126
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
-          "bytes": 63036
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
           "bytes": 51544
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
@@ -911,6 +911,10 @@
           "bytes": 8869
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
+          "bytes": 1682
+        },
+        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
           "bytes": 14290
         },
@@ -923,10 +927,6 @@
           "bytes": 3975
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
-          "bytes": 1682
-        },
-        {
           "url": "http://127.0.0.1:3049/colophon/index.txt?_rsc=_gnoNjP8yS2iw3zb",
           "bytes": 52563
         },
@@ -935,12 +935,12 @@
           "bytes": 40393
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
-          "bytes": 226
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
           "bytes": 4377
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
+          "bytes": 226
         }
       ],
       "canonical": [
@@ -970,16 +970,16 @@
           "bytes": 37776
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
-          "bytes": 8724
+          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
+          "bytes": 8825
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
           "bytes": 13732
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
-          "bytes": 8825
+          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
+          "bytes": 8724
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
@@ -998,32 +998,32 @@
           "bytes": 3513
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+          "bytes": 173019
+        },
+        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
           "bytes": 513
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
-          "bytes": 173019
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
           "bytes": 8535
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
-          "bytes": 7434
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
           "bytes": 20634
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
-          "bytes": 24162
+          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+          "bytes": 7434
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
-          "bytes": 173927
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+          "bytes": 24162
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
@@ -1062,20 +1062,20 @@
           "bytes": 41126
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
-          "bytes": 9914
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
           "bytes": 51544
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
+          "bytes": 18683
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
           "bytes": 63036
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
-          "bytes": 18683
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
@@ -1165,16 +1165,12 @@
           "bytes": 8688
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
-          "bytes": 8825
+          "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
+          "bytes": 37776
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
           "bytes": 8724
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
-          "bytes": 37776
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
@@ -1183,6 +1179,10 @@
         {
           "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
           "bytes": 39304
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
+          "bytes": 8825
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
@@ -1201,20 +1201,16 @@
           "bytes": 173019
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
+          "bytes": 513
+        },
+        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
           "bytes": 8535
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
           "bytes": 20634
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
-          "bytes": 513
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
-          "bytes": 24162
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
@@ -1225,24 +1221,20 @@
           "bytes": 173927
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
-          "bytes": 1861
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+          "bytes": 24162
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
           "bytes": 863
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
+        },
+        {
           "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
           "bytes": 638
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/996.3e98c9faf716433c.js",
-          "bytes": 113094
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
-          "bytes": 5447
         },
         {
           "url": "http://127.0.0.1:3049/index.txt?_rsc=fvVk386B7PbQRK64",
@@ -1253,12 +1245,20 @@
           "bytes": 73136
         },
         {
+          "url": "http://127.0.0.1:3049/blog/building-flagstone/index.txt?_rsc=fvVk386B7PbQRK64",
+          "bytes": 56486
+        },
+        {
           "url": "http://127.0.0.1:3049/work/index.txt?_rsc=fvVk386B7PbQRK64",
           "bytes": 75471
         },
         {
-          "url": "http://127.0.0.1:3049/blog/building-flagstone/index.txt?_rsc=fvVk386B7PbQRK64",
-          "bytes": 56486
+          "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
+          "bytes": 5447
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/996.3e98c9faf716433c.js",
+          "bytes": 113094
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
@@ -1281,16 +1281,20 @@
           "bytes": 9914
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
-          "bytes": 8869
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/%5Bslug%5D/page-031d981fbc8f599b.js",
           "bytes": 6087
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
+          "bytes": 8869
+        },
+        {
           "url": "http://127.0.0.1:3049/certificates/index.txt?_rsc=fvVk386B7PbQRK64",
           "bytes": 42067
+        },
+        {
+          "url": "http://127.0.0.1:3049/accessibility/index.txt?_rsc=fvVk386B7PbQRK64",
+          "bytes": 51825
         },
         {
           "url": "http://127.0.0.1:3049/about/index.txt?_rsc=fvVk386B7PbQRK64",
@@ -1301,10 +1305,6 @@
           "bytes": 52563
         },
         {
-          "url": "http://127.0.0.1:3049/accessibility/index.txt?_rsc=fvVk386B7PbQRK64",
-          "bytes": 51825
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
           "bytes": 14290
         },
@@ -1313,16 +1313,16 @@
           "bytes": 6782
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
+          "bytes": 1682
+        },
+        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
           "bytes": 3975
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
           "bytes": 226
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
-          "bytes": 1682
         },
         {
           "url": "http://127.0.0.1:3049/contact/index.txt?_rsc=fvVk386B7PbQRK64",
@@ -1360,20 +1360,20 @@
           "bytes": 37776
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
-          "bytes": 8724
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
           "bytes": 13732
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
-          "bytes": 39304
+          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
+          "bytes": 8724
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
           "bytes": 8825
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
@@ -1392,20 +1392,20 @@
           "bytes": 173019
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
-          "bytes": 8535
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
-          "bytes": 20634
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
           "bytes": 513
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
+          "bytes": 8535
+        },
+        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
           "bytes": 173927
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
+          "bytes": 20634
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
@@ -1416,12 +1416,12 @@
           "bytes": 24162
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
-          "bytes": 1861
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
           "bytes": 14290
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/certificates/page-91fbf2c2e199170d.js",
@@ -1432,24 +1432,16 @@
           "bytes": 4050
         },
         {
-          "url": "http://127.0.0.1:3049/images/certificates/anthropic-cowork-intro-2026/badge.avif",
-          "bytes": 11965
-        },
-        {
           "url": "http://127.0.0.1:3049/images/certificates/anthropic-ai-fluency-2026/badge.avif",
           "bytes": 4784
         },
         {
+          "url": "http://127.0.0.1:3049/images/certificates/anthropic-cowork-intro-2026/badge.avif",
+          "bytes": 11965
+        },
+        {
           "url": "http://127.0.0.1:3049/images/certificates/anthropic-claude-101-2026/badge.avif",
           "bytes": 6294
-        },
-        {
-          "url": "http://127.0.0.1:3049/images/certificates/umich-python-2025/badge.png",
-          "bytes": 68492
-        },
-        {
-          "url": "http://127.0.0.1:3049/images/certificates/google-prompting-essentials-2025/badge.png",
-          "bytes": 126950
         },
         {
           "url": "http://127.0.0.1:3049/images/certificates/anthropic-claude-code-in-action-2026/badge.avif",
@@ -1458,6 +1450,14 @@
         {
           "url": "http://127.0.0.1:3049/images/certificates/anthropic-claude-code-101-2026/badge.avif",
           "bytes": 3789
+        },
+        {
+          "url": "http://127.0.0.1:3049/images/certificates/google-prompting-essentials-2025/badge.png",
+          "bytes": 126950
+        },
+        {
+          "url": "http://127.0.0.1:3049/images/certificates/umich-python-2025/badge.png",
+          "bytes": 68492
         },
         {
           "url": "http://127.0.0.1:3049/images/certificates/deeplearning-ai-for-everyone-2025/badge.avif",
@@ -1488,14 +1488,6 @@
           "bytes": 41126
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
-          "bytes": 15092
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
-          "bytes": 9914
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
           "bytes": 51544
         },
@@ -1504,8 +1496,16 @@
           "bytes": 63036
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
+          "bytes": 15092
+        },
+        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
           "bytes": 18683
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
@@ -1516,12 +1516,12 @@
           "bytes": 75471
         },
         {
-          "url": "http://127.0.0.1:3049/about/index.txt?_rsc=Ee5HBWak51lnqgnN",
-          "bytes": 49110
-        },
-        {
           "url": "http://127.0.0.1:3049/accessibility/index.txt?_rsc=Ee5HBWak51lnqgnN",
           "bytes": 51825
+        },
+        {
+          "url": "http://127.0.0.1:3049/about/index.txt?_rsc=Ee5HBWak51lnqgnN",
+          "bytes": 49110
         },
         {
           "url": "http://127.0.0.1:3049/colophon/index.txt?_rsc=Ee5HBWak51lnqgnN",
@@ -1532,6 +1532,10 @@
           "bytes": 40393
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
+          "bytes": 1682
+        },
+        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
           "bytes": 8869
         },
@@ -1540,16 +1544,12 @@
           "bytes": 3975
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
-          "bytes": 4377
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
-          "bytes": 1682
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
           "bytes": 226
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
+          "bytes": 4377
         }
       ],
       "canonical": [
@@ -1583,36 +1583,36 @@
           "bytes": 8724
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
-          "bytes": 8825
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
           "bytes": 13732
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
+          "bytes": 8825
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
           "bytes": 39304
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
-          "bytes": 91933
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
           "bytes": 2030
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
+          "bytes": 91933
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
           "bytes": 3513
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
-          "bytes": 513
+          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+          "bytes": 173019
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
-          "bytes": 20634
+          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
+          "bytes": 513
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
@@ -1623,24 +1623,24 @@
           "bytes": 8535
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
-          "bytes": 173019
+          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
+          "bytes": 20634
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
           "bytes": 7434
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
-          "bytes": 226
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+          "bytes": 24162
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
           "bytes": 1861
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
-          "bytes": 24162
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
+          "bytes": 226
         },
         {
           "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
@@ -1667,20 +1667,8 @@
           "bytes": 41126
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
-          "bytes": 51544
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
-          "bytes": 63036
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
           "bytes": 15092
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
-          "bytes": 18683
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
@@ -1689,6 +1677,18 @@
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
           "bytes": 863
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+          "bytes": 51544
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
+          "bytes": 18683
         },
         {
           "url": "http://127.0.0.1:3049/accessibility/index.txt?_rsc=e2nUY1lHbfCd5Yay",
@@ -1715,16 +1715,16 @@
           "bytes": 8869
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
-          "bytes": 3975
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
           "bytes": 14290
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/certificates/page-91fbf2c2e199170d.js",
           "bytes": 6782
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
+          "bytes": 3975
         },
         {
           "url": "http://127.0.0.1:3049/contact/index.txt?_rsc=e2nUY1lHbfCd5Yay",
@@ -1758,12 +1758,12 @@
           "bytes": 8688
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
-          "bytes": 13732
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
           "bytes": 37776
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
+          "bytes": 13732
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
@@ -1774,10 +1774,6 @@
           "bytes": 8825
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
-          "bytes": 39304
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
           "bytes": 2030
         },
@@ -1786,12 +1782,12 @@
           "bytes": 91933
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
-          "bytes": 3513
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
-          "bytes": 173927
+          "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
+          "bytes": 3513
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
@@ -1802,10 +1798,6 @@
           "bytes": 513
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
-          "bytes": 7434
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
           "bytes": 8535
         },
@@ -1814,12 +1806,20 @@
           "bytes": 20634
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
-          "bytes": 4377
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+          "bytes": 7434
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
           "bytes": 24162
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
+          "bytes": 4377
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
@@ -1850,6 +1850,14 @@
           "bytes": 41126
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
+          "bytes": 15092
+        },
+        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
           "bytes": 51544
         },
@@ -1858,16 +1866,8 @@
           "bytes": 63036
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
-          "bytes": 15092
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
           "bytes": 18683
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
-          "bytes": 9914
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
@@ -1894,6 +1894,10 @@
           "bytes": 52563
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
+          "bytes": 8869
+        },
+        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
           "bytes": 14290
         },
@@ -1904,10 +1908,6 @@
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
           "bytes": 3975
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
-          "bytes": 8869
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
@@ -1953,9 +1953,7 @@
           "bytes": 853
         }
       ],
-      "canonical": [
-        "https://skypistudio.com/flagstone/accessibility/"
-      ],
+      "canonical": [],
       "status": 200,
       "errors": [],
       "failed": [],
@@ -1988,9 +1986,7 @@
           "bytes": 853
         }
       ],
-      "canonical": [
-        "https://skypistudio.com/flagstone/"
-      ],
+      "canonical": [],
       "status": 200,
       "errors": [],
       "failed": [],
@@ -2023,9 +2019,7 @@
           "bytes": 853
         }
       ],
-      "canonical": [
-        "https://skypistudio.com/flagstone/privacy/"
-      ],
+      "canonical": [],
       "status": 200,
       "errors": [],
       "failed": [],
@@ -2058,9 +2052,7 @@
           "bytes": 853
         }
       ],
-      "canonical": [
-        "https://skypistudio.com/flagstone/support/"
-      ],
+      "canonical": [],
       "status": 200,
       "errors": [],
       "failed": [],
@@ -2093,9 +2085,7 @@
           "bytes": 853
         }
       ],
-      "canonical": [
-        "https://skypistudio.com/flagstone/terms/"
-      ],
+      "canonical": [],
       "status": 200,
       "errors": [],
       "failed": [],
@@ -2116,16 +2106,12 @@
           "bytes": 8688
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
-          "bytes": 8724
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
           "bytes": 37776
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
-          "bytes": 8825
+          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
+          "bytes": 8724
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
@@ -2148,6 +2134,10 @@
           "bytes": 91933
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
+          "bytes": 8825
+        },
+        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
           "bytes": 3513
         },
@@ -2160,16 +2150,16 @@
           "bytes": 513
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
+        },
+        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
           "bytes": 8535
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
           "bytes": 20634
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
-          "bytes": 173927
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
@@ -2184,20 +2174,20 @@
           "bytes": 51544
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
-          "bytes": 15092
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
-          "bytes": 1861
+          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
+          "bytes": 15092
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
           "bytes": 18683
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
-          "bytes": 63036
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
         },
         {
           "url": "http://127.0.0.1:3049/images/cinematic/mid-sky.avif",
@@ -2208,12 +2198,12 @@
           "bytes": 151327
         },
         {
-          "url": "http://127.0.0.1:3049/images/cinematic/mid-fg.avif",
-          "bytes": 133442
-        },
-        {
           "url": "http://127.0.0.1:3049/images/cinematic/arrival-cliff.avif",
           "bytes": 147692
+        },
+        {
+          "url": "http://127.0.0.1:3049/images/cinematic/mid-fg.avif",
+          "bytes": 133442
         },
         {
           "url": "http://127.0.0.1:3049/images/cinematic/arrival-cliff.avif",
@@ -2292,16 +2282,16 @@
           "bytes": 42067
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
+          "bytes": 3975
+        },
+        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
           "bytes": 14290
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/certificates/page-91fbf2c2e199170d.js",
           "bytes": 6782
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
-          "bytes": 3975
         },
         {
           "url": "http://127.0.0.1:3049/work/index.txt?_rsc=1p-R_iEY6bj0jY31",
@@ -2379,20 +2369,16 @@
           "bytes": 173019
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
-          "bytes": 173927
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
           "bytes": 513
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
-          "bytes": 8535
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
-          "bytes": 24162
+          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
+          "bytes": 8535
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
@@ -2403,16 +2389,20 @@
           "bytes": 7434
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+          "bytes": 24162
+        },
+        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
           "bytes": 15092
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
-          "bytes": 1861
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
           "bytes": 9914
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
         },
         {
           "url": "http://127.0.0.1:3049/showcase/flagstone/explore-current.phone.avif",
@@ -2447,20 +2437,20 @@
           "bytes": 75471
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
-          "bytes": 863
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
           "bytes": 51544
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
           "bytes": 18683
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
-          "bytes": 63036
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
+          "bytes": 863
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
@@ -2495,12 +2485,12 @@
           "bytes": 27634
         },
         {
-          "url": "http://127.0.0.1:3049/showcase/claude-corp/hero-pipeline.dark.desktop.avif",
-          "bytes": 24454
-        },
-        {
           "url": "http://127.0.0.1:3049/showcase/dashboard/command-center.dark.desktop.avif",
           "bytes": 31126
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/claude-corp/hero-pipeline.dark.desktop.avif",
+          "bytes": 24454
         },
         {
           "url": "http://127.0.0.1:3049/work/claude-corp/index.txt?_rsc=9ymjXCYNC0qbZodK",
@@ -2535,16 +2525,16 @@
           "bytes": 6782
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
+          "bytes": 1682
+        },
+        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
           "bytes": 226
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
           "bytes": 4377
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
-          "bytes": 1682
         }
       ],
       "canonical": [
@@ -2578,12 +2568,12 @@
           "bytes": 37776
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
-          "bytes": 13732
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
           "bytes": 39304
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
+          "bytes": 13732
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
@@ -2606,24 +2596,24 @@
           "bytes": 173019
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
-          "bytes": 513
+          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
+          "bytes": 20634
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
           "bytes": 8535
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
-          "bytes": 173927
+          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
+          "bytes": 513
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
           "bytes": 7434
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
-          "bytes": 20634
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
@@ -2634,12 +2624,12 @@
           "bytes": 15092
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
-          "bytes": 9914
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
           "bytes": 1861
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
         },
         {
           "url": "http://127.0.0.1:3049/showcase/claude-corp/hero-pipeline.light.desktop.avif",
@@ -2662,16 +2652,16 @@
           "bytes": 82239
         },
         {
-          "url": "http://127.0.0.1:3049/work/flagstone/index.txt?_rsc=oMXVChDaHQfM9FkG",
-          "bytes": 73136
-        },
-        {
           "url": "http://127.0.0.1:3049/blog/index.txt?_rsc=oMXVChDaHQfM9FkG",
           "bytes": 41126
         },
         {
           "url": "http://127.0.0.1:3049/work/index.txt?_rsc=oMXVChDaHQfM9FkG",
           "bytes": 75471
+        },
+        {
+          "url": "http://127.0.0.1:3049/work/flagstone/index.txt?_rsc=oMXVChDaHQfM9FkG",
+          "bytes": 73136
         },
         {
           "url": "http://127.0.0.1:3049/showcase/claude-corp/hero-pipeline.dark.desktop.avif",
@@ -2682,12 +2672,12 @@
           "bytes": 51544
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
-          "bytes": 18683
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
           "bytes": 63036
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
+          "bytes": 18683
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
@@ -2730,12 +2720,12 @@
           "bytes": 58924
         },
         {
-          "url": "http://127.0.0.1:3049/showcase/prompt-library/home.dark.desktop.avif",
-          "bytes": 25955
-        },
-        {
           "url": "http://127.0.0.1:3049/showcase/dashboard/command-center.dark.desktop.avif",
           "bytes": 31126
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/prompt-library/home.dark.desktop.avif",
+          "bytes": 25955
         },
         {
           "url": "http://127.0.0.1:3049/certificates/index.txt?_rsc=oMXVChDaHQfM9FkG",
@@ -2746,12 +2736,12 @@
           "bytes": 51825
         },
         {
-          "url": "http://127.0.0.1:3049/contact/index.txt?_rsc=oMXVChDaHQfM9FkG",
-          "bytes": 40393
-        },
-        {
           "url": "http://127.0.0.1:3049/colophon/index.txt?_rsc=oMXVChDaHQfM9FkG",
           "bytes": 52563
+        },
+        {
+          "url": "http://127.0.0.1:3049/contact/index.txt?_rsc=oMXVChDaHQfM9FkG",
+          "bytes": 40393
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
@@ -2797,72 +2787,72 @@
           "bytes": 8688
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
-          "bytes": 8724
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
           "bytes": 37776
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
+          "bytes": 8724
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
           "bytes": 13732
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
-          "bytes": 39304
+          "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
+          "bytes": 91933
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
           "bytes": 8825
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
-          "bytes": 2030
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
-          "bytes": 91933
+          "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
+          "bytes": 2030
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
           "bytes": 3513
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
-          "bytes": 173019
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
           "bytes": 513
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
-          "bytes": 8535
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
-          "bytes": 7434
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
-          "bytes": 20634
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
           "bytes": 173927
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
-          "bytes": 15092
+          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
+          "bytes": 8535
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
+          "bytes": 20634
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+          "bytes": 173019
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+          "bytes": 7434
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+          "bytes": 24162
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
           "bytes": 9914
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
-          "bytes": 24162
+          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
+          "bytes": 15092
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
@@ -2957,12 +2947,12 @@
           "bytes": 3975
         },
         {
-          "url": "http://127.0.0.1:3049/showcase/prompt-library/home.dark.desktop.avif",
-          "bytes": 25955
-        },
-        {
           "url": "http://127.0.0.1:3049/showcase/ghost-code/board.dark.desktop.avif",
           "bytes": 12619
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/prompt-library/home.dark.desktop.avif",
+          "bytes": 25955
         },
         {
           "url": "http://127.0.0.1:3049/work/prompt-library/index.txt?_rsc=eGTaZSr5aKej6mxg",
@@ -2981,12 +2971,12 @@
           "bytes": 51825
         },
         {
-          "url": "http://127.0.0.1:3049/colophon/index.txt?_rsc=eGTaZSr5aKej6mxg",
-          "bytes": 52563
-        },
-        {
           "url": "http://127.0.0.1:3049/contact/index.txt?_rsc=eGTaZSr5aKej6mxg",
           "bytes": 40393
+        },
+        {
+          "url": "http://127.0.0.1:3049/colophon/index.txt?_rsc=eGTaZSr5aKej6mxg",
+          "bytes": 52563
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/413-6225b3109b44bdeb.js",
@@ -3001,12 +2991,12 @@
           "bytes": 1682
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
-          "bytes": 226
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
           "bytes": 4377
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
+          "bytes": 226
         }
       ],
       "canonical": [
@@ -3032,12 +3022,16 @@
           "bytes": 8688
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
+          "bytes": 37776
+        },
+        {
           "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
           "bytes": 8724
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
-          "bytes": 37776
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
@@ -3052,10 +3046,6 @@
           "bytes": 91933
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
-          "bytes": 39304
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
           "bytes": 2030
         },
@@ -3064,12 +3054,12 @@
           "bytes": 3513
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
-          "bytes": 173927
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
           "bytes": 173019
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
@@ -3136,8 +3126,12 @@
           "bytes": 75471
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
-          "bytes": 63036
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
+          "bytes": 863
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
+          "bytes": 8869
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
@@ -3148,12 +3142,8 @@
           "bytes": 18683
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
-          "bytes": 863
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
-          "bytes": 8869
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
         },
         {
           "url": "http://127.0.0.1:3049/showcase/flagstone/report-current.phone.avif",
@@ -3184,12 +3174,12 @@
           "bytes": 27634
         },
         {
-          "url": "http://127.0.0.1:3049/showcase/dashboard/command-center.dark.desktop.avif",
-          "bytes": 31126
-        },
-        {
           "url": "http://127.0.0.1:3049/showcase/claude-corp/hero-pipeline.dark.desktop.avif",
           "bytes": 24454
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/dashboard/command-center.dark.desktop.avif",
+          "bytes": 31126
         },
         {
           "url": "http://127.0.0.1:3049/work/claude-corp/index.txt?_rsc=9ymjXCYNC0qbZodK",
@@ -3259,6 +3249,10 @@
           "bytes": 8688
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
+          "bytes": 8724
+        },
+        {
           "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
           "bytes": 37776
         },
@@ -3267,16 +3261,12 @@
           "bytes": 13732
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
-          "bytes": 8724
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
           "bytes": 8825
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
-          "bytes": 39304
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
@@ -3295,10 +3285,6 @@
           "bytes": 173019
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
-          "bytes": 173927
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
           "bytes": 513
         },
@@ -3307,28 +3293,32 @@
           "bytes": 8535
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
-          "bytes": 20634
+          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+          "bytes": 7434
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
+          "bytes": 173927
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
           "bytes": 24162
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
-          "bytes": 7434
+          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
+          "bytes": 20634
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
           "bytes": 15092
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
-          "bytes": 1861
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
           "bytes": 9914
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
         },
         {
           "url": "http://127.0.0.1:3049/showcase/ghost-code/title.light.desktop.avif",
@@ -3379,20 +3369,20 @@
           "bytes": 51544
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
-          "bytes": 18683
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
           "bytes": 63036
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
-          "bytes": 8869
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
+          "bytes": 18683
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
           "bytes": 863
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
+          "bytes": 8869
         },
         {
           "url": "http://127.0.0.1:3049/showcase/flagstone/explore-current.phone.avif",
@@ -3427,12 +3417,12 @@
           "bytes": 42067
         },
         {
-          "url": "http://127.0.0.1:3049/accessibility/index.txt?_rsc=VpmHg1piavgWU9IX",
-          "bytes": 51825
-        },
-        {
           "url": "http://127.0.0.1:3049/colophon/index.txt?_rsc=VpmHg1piavgWU9IX",
           "bytes": 52563
+        },
+        {
+          "url": "http://127.0.0.1:3049/accessibility/index.txt?_rsc=VpmHg1piavgWU9IX",
+          "bytes": 51825
         },
         {
           "url": "http://127.0.0.1:3049/contact/index.txt?_rsc=VpmHg1piavgWU9IX",
@@ -3447,12 +3437,12 @@
           "bytes": 6782
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
-          "bytes": 1682
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
           "bytes": 226
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
+          "bytes": 1682
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
@@ -3482,20 +3472,12 @@
           "bytes": 8688
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
-          "bytes": 37776
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
           "bytes": 8724
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
-          "bytes": 13732
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
-          "bytes": 39304
+          "url": "http://127.0.0.1:3049/_next/static/media/7b89a4fd5e90ede0-s.p.woff2",
+          "bytes": 37776
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
@@ -3506,16 +3488,20 @@
           "bytes": 91933
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
+          "bytes": 13732
+        },
+        {
           "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
           "bytes": 2030
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
           "bytes": 3513
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
-          "bytes": 513
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
@@ -3530,28 +3516,36 @@
           "bytes": 173927
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
-          "bytes": 7434
+          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
+          "bytes": 513
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
           "bytes": 20634
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
+          "bytes": 7434
+        },
+        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
           "bytes": 24162
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
-          "bytes": 15092
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
           "bytes": 8869
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
-          "bytes": 1861
+          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
+          "bytes": 15092
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/claude-corp/hero-pipeline.light.desktop.avif",
+          "bytes": 23330
         },
         {
           "url": "http://127.0.0.1:3049/showcase/flagstone/explore-current.phone.avif",
@@ -3560,10 +3554,6 @@
         {
           "url": "http://127.0.0.1:3049/showcase/dashboard/command-center.light.desktop.avif",
           "bytes": 27634
-        },
-        {
-          "url": "http://127.0.0.1:3049/showcase/claude-corp/hero-pipeline.light.desktop.avif",
-          "bytes": 23330
         },
         {
           "url": "http://127.0.0.1:3049/showcase/prompt-library/home.light.desktop.avif",
@@ -3582,12 +3572,12 @@
           "bytes": 5447
         },
         {
-          "url": "http://127.0.0.1:3049/index.txt?_rsc=pr4DvEzldVayAFzQ",
-          "bytes": 82239
-        },
-        {
           "url": "http://127.0.0.1:3049/work/flagstone/index.txt?_rsc=pr4DvEzldVayAFzQ",
           "bytes": 73136
+        },
+        {
+          "url": "http://127.0.0.1:3049/index.txt?_rsc=pr4DvEzldVayAFzQ",
+          "bytes": 82239
         },
         {
           "url": "http://127.0.0.1:3049/blog/index.txt?_rsc=pr4DvEzldVayAFzQ",
@@ -3598,20 +3588,20 @@
           "bytes": 24454
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
-          "bytes": 51544
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
+          "bytes": 9914
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
-          "bytes": 63036
+          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+          "bytes": 51544
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
           "bytes": 18683
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/%5Bslug%5D/page-b5c2bc8f12483a5a.js",
-          "bytes": 9914
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
@@ -3682,12 +3672,12 @@
           "bytes": 3975
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
-          "bytes": 226
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
           "bytes": 1682
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
+          "bytes": 226
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
@@ -3721,6 +3711,10 @@
           "bytes": 37776
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
+          "bytes": 8825
+        },
+        {
           "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
           "bytes": 8724
         },
@@ -3729,16 +3723,12 @@
           "bytes": 13732
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
-          "bytes": 8825
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/css/e6b918603d1f7545.css",
           "bytes": 91933
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
-          "bytes": 39304
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/css/b80002ac4c1b9d6e.css",
@@ -3749,52 +3739,52 @@
           "bytes": 3513
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
-          "bytes": 513
+          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+          "bytes": 173019
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
           "bytes": 173927
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
+          "bytes": 513
+        },
+        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
           "bytes": 8535
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
-          "bytes": 173019
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
-          "bytes": 20634
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/93-166ea9a3800c9aa2.js",
           "bytes": 7434
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
-          "bytes": 1861
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
+          "bytes": 24162
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
           "bytes": 15092
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
+          "bytes": 20634
+        },
+        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
           "bytes": 8869
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
-          "bytes": 24162
-        },
-        {
-          "url": "http://127.0.0.1:3049/showcase/flagstone/explore-current.phone.avif",
-          "bytes": 126271
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
+          "bytes": 1861
         },
         {
           "url": "http://127.0.0.1:3049/showcase/claude-corp/hero-pipeline.light.desktop.avif",
           "bytes": 23330
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/flagstone/explore-current.phone.avif",
+          "bytes": 126271
         },
         {
           "url": "http://127.0.0.1:3049/showcase/dashboard/command-center.light.desktop.avif",
@@ -3805,16 +3795,16 @@
           "bytes": 24303
         },
         {
+          "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
+          "bytes": 638
+        },
+        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/996.3e98c9faf716433c.js",
           "bytes": 113094
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/458.dd6fd4f749462625.js",
           "bytes": 5447
-        },
-        {
-          "url": "http://127.0.0.1:3049/icon.svg?9d3bba2a7d86c1d6",
-          "bytes": 638
         },
         {
           "url": "http://127.0.0.1:3049/index.txt?_rsc=pr4DvEzldVayAFzQ",
@@ -3873,12 +3863,12 @@
           "bytes": 58924
         },
         {
-          "url": "http://127.0.0.1:3049/showcase/prompt-library/home.dark.desktop.avif",
-          "bytes": 25955
-        },
-        {
           "url": "http://127.0.0.1:3049/showcase/ghost-code/board.dark.desktop.avif",
           "bytes": 12619
+        },
+        {
+          "url": "http://127.0.0.1:3049/showcase/prompt-library/home.dark.desktop.avif",
+          "bytes": 25955
         },
         {
           "url": "http://127.0.0.1:3049/work/ghost-code/index.txt?_rsc=pr4DvEzldVayAFzQ",
@@ -3889,12 +3879,12 @@
           "bytes": 42067
         },
         {
-          "url": "http://127.0.0.1:3049/about/index.txt?_rsc=pr4DvEzldVayAFzQ",
-          "bytes": 49110
-        },
-        {
           "url": "http://127.0.0.1:3049/accessibility/index.txt?_rsc=pr4DvEzldVayAFzQ",
           "bytes": 51825
+        },
+        {
+          "url": "http://127.0.0.1:3049/about/index.txt?_rsc=pr4DvEzldVayAFzQ",
+          "bytes": 49110
         },
         {
           "url": "http://127.0.0.1:3049/colophon/index.txt?_rsc=pr4DvEzldVayAFzQ",
@@ -3913,20 +3903,20 @@
           "bytes": 6782
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
-          "bytes": 3975
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/accessibility/page-e87f8a80468a11b5.js",
           "bytes": 1682
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
-          "bytes": 4377
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/about/page-8302631af149c715.js",
+          "bytes": 3975
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/colophon/page-81eb5c8f07cdf2f8.js",
           "bytes": 226
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/contact/page-0f7885b2ff6cd0d9.js",
+          "bytes": 4377
         }
       ],
       "canonical": [
@@ -3956,18 +3946,6 @@
           "bytes": 37776
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
-          "bytes": 8724
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
-          "bytes": 13732
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
-          "bytes": 39304
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/css/dc439b9ad587be65.css",
           "bytes": 8825
         },
@@ -3980,20 +3958,36 @@
           "bytes": 2030
         },
         {
+          "url": "http://127.0.0.1:3049/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2",
+          "bytes": 8724
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/e18f83c737786aa7-s.p.woff2",
+          "bytes": 39304
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/media/db53f00563e2ca03-s.p.woff2",
+          "bytes": 13732
+        },
+        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/webpack-6d5ca0b83a7b9104.js",
           "bytes": 3513
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
-          "bytes": 173019
+          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
+          "bytes": 513
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/63-9bba43e74bb4f0b2.js",
           "bytes": 173927
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/main-app-05b02d9050c1ae03.js",
-          "bytes": 513
+          "url": "http://127.0.0.1:3049/_next/static/chunks/16a045e0-ff2093c435825769.js",
+          "bytes": 173019
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
+          "bytes": 8535
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/669-811830e4d6e7f8fe.js",
@@ -4004,10 +3998,6 @@
           "bytes": 7434
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/5-428575c1767f87e3.js",
-          "bytes": 8535
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/layout-c4edcf96ae5aa2bb.js",
           "bytes": 24162
         },
@@ -4016,12 +4006,12 @@
           "bytes": 9914
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
-          "bytes": 15092
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/global-error-5fe735b8877927c4.js",
           "bytes": 1861
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/434-f4d85fc891f05241.js",
+          "bytes": 15092
         },
         {
           "url": "http://127.0.0.1:3049/showcase/prompt-library/home.light.desktop.avif",
@@ -4040,12 +4030,12 @@
           "bytes": 5447
         },
         {
-          "url": "http://127.0.0.1:3049/index.txt?_rsc=5h4H3AMwn5vgE511",
-          "bytes": 82239
-        },
-        {
           "url": "http://127.0.0.1:3049/work/flagstone/index.txt?_rsc=5h4H3AMwn5vgE511",
           "bytes": 73136
+        },
+        {
+          "url": "http://127.0.0.1:3049/index.txt?_rsc=5h4H3AMwn5vgE511",
+          "bytes": 82239
         },
         {
           "url": "http://127.0.0.1:3049/blog/index.txt?_rsc=5h4H3AMwn5vgE511",
@@ -4060,24 +4050,24 @@
           "bytes": 25955
         },
         {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
-          "bytes": 51544
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
-          "bytes": 18683
-        },
-        {
-          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
-          "bytes": 63036
-        },
-        {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/blog/page-a6de5e4da2058daf.js",
           "bytes": 863
         },
         {
           "url": "http://127.0.0.1:3049/_next/static/chunks/app/work/page-e429a3c85b83c51e.js",
           "bytes": 8869
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/6545ffdc-f4b6801f44533a7c.js",
+          "bytes": 51544
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/484-f931b0efca8c6b28.js",
+          "bytes": 63036
+        },
+        {
+          "url": "http://127.0.0.1:3049/_next/static/chunks/app/page-cb85976ace17e434.js",
+          "bytes": 18683
         },
         {
           "url": "http://127.0.0.1:3049/showcase/prompt-library/prompt-detail.light.desktop.avif",

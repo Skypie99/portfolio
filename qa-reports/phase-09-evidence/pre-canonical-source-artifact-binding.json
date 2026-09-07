@@ -1,0 +1,18 @@
+{
+  "date": "2026-09-07",
+  "buildSourceSHA": "d680cbcb5cdf8016f71a84b1476fb03867be9e52",
+  "buildSourceTree": "e9418b9c1154a9ad99475008a9719e2bd296e571",
+  "artifactDigest": "444c1108258451fa7917c0266e384e51c6e970f0158bc008a4183f7cbcd43c86",
+  "samePathTypeHashesVsP08": {
+    ".js": true,
+    ".css": true,
+    ".woff2": true,
+    ".mp4": true,
+    ".webm": true,
+    ".avif": true,
+    ".webp": true,
+    ".jpg": true,
+    ".png": true
+  },
+  "note": "Next per-build ID and sitemap timestamp regenerate HTML/RSC/manifests. All same-path JS/CSS/font/media hashes equal P08; no product behavior change. Final runtime/tests run on fresh build anyway."
+}
