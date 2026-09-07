@@ -10,6 +10,8 @@ This final disposition supersedes the pre-approval HOLD, pending-commit disposit
 
 The private integration worktree `/Users/skypie/Portfolio-3.0-baseline`, branch `claude/portfolio-3.0-phase00-baseline-20260903`, was freshly verified clean at `47c3d67c5fabd358c4cfc689d294c8395e65c494`, with no interrupted operation. `git merge --ff-only f85cde880b491d3fe47cc10eca50b5dabfeff3e5` succeeded without conflict or history rewrite. Post-integration `npm run typecheck` passed. The first invocation ran in the projectless workspace and returned “Missing script: typecheck”; it made no product change and was rerun successfully in the actual integration worktree. Both logs are retained.
 
+The documentation-only staged diff check reported intentional Markdown hard-break trailing spaces in this receipt and its preserved pre-approval copy; the product-source diff check passed. These formatting warnings do not change runtime evidence. Command logs are explicitly retained despite the repository’s generic log ignore rule.
+
 The documentation closure is separate from the product-source commit. Its exact final integration HEAD/tree are recorded in the external final operational handoff after the receipt commit, avoiding a self-referential commit hash. All implementation evidence remains bound to the exact approved source tree above via `phase-08-evidence/approved-source-identity.json` and the retained raw bundle's matching file/build hashes.
 
 ### Final gate adjudication
