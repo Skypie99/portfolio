@@ -1,0 +1,631 @@
+{
+  "method": "Native macOS Command+Plus five steps after Command+0 in dedicated Chrome for Testing local-only window; DPR ratio2 verified",
+  "before": {
+    "url": "http://127.0.0.1:3038/accessibility/",
+    "innerWidth": 1280,
+    "innerHeight": 757,
+    "outerWidth": 1280,
+    "outerHeight": 900,
+    "dpr": 2,
+    "visualScale": 1
+  },
+  "reset": {
+    "url": "http://127.0.0.1:3038/accessibility/",
+    "innerWidth": 1280,
+    "innerHeight": 757,
+    "outerWidth": 1280,
+    "outerHeight": 900,
+    "dpr": 2,
+    "visualScale": 1
+  },
+  "zoomed": {
+    "url": "http://127.0.0.1:3038/accessibility/",
+    "innerWidth": 640,
+    "innerHeight": 378,
+    "outerWidth": 1280,
+    "outerHeight": 900,
+    "dpr": 4,
+    "visualScale": 1
+  },
+  "rows": [
+    {
+      "route": "/",
+      "theme": "light",
+      "metrics": {
+        "url": "http://127.0.0.1:3038/",
+        "innerWidth": 640,
+        "innerHeight": 378,
+        "outerWidth": 1280,
+        "outerHeight": 900,
+        "dpr": 4,
+        "visualScale": 1
+      },
+      "geometry": {
+        "docWidth": 640,
+        "headings": [
+          {
+            "text": "An accessibility map. A multi-agent system. A web-based prompt library.",
+            "width": 464.0234375
+          }
+        ],
+        "text": "SkyPi Studio\n\nSkyler Halisky\n\nSenior technical-support specialist. I turn recurring user friction into documentation, QA, and the tools that fix it.\n\nSkyPi Studio is one person.\n\nSenior technical support · Portfolio 2026\n\nAn accessibility map. A multi-agent system. A web-based prompt library.\n\nFive "
+      },
+      "tableChecks": [],
+      "elementCensus": {
+        "scrollWidthReading": {
+          "docW": 640,
+          "winW": 640,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      }
+    },
+    {
+      "route": "/accessibility/",
+      "theme": "light",
+      "metrics": {
+        "url": "http://127.0.0.1:3038/accessibility/",
+        "innerWidth": 640,
+        "innerHeight": 378,
+        "outerWidth": 1280,
+        "outerHeight": 900,
+        "dpr": 4,
+        "visualScale": 1
+      },
+      "geometry": {
+        "docWidth": 640,
+        "headings": [
+          {
+            "text": "Accessibility is where I begin.",
+            "width": 576
+          }
+        ],
+        "text": "Skyler Halisky\nTechnical Support\nAI-assisted Builder\n\nACCESSIBILITY\n\nAccessibility is where I begin.\n\nHonest about what this site does for accessibility, and what it does not yet.\n\nThis site is built to be used by everyone, including people who navigate with a keyboard, a screen reader, or with moti"
+      },
+      "tableChecks": [],
+      "elementCensus": {
+        "scrollWidthReading": {
+          "docW": 640,
+          "winW": 640,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      }
+    },
+    {
+      "route": "/work/flagstone/",
+      "theme": "light",
+      "metrics": {
+        "url": "http://127.0.0.1:3038/work/flagstone/",
+        "innerWidth": 640,
+        "innerHeight": 378,
+        "outerWidth": 1280,
+        "outerHeight": 900,
+        "dpr": 4,
+        "visualScale": 1
+      },
+      "geometry": {
+        "docWidth": 640,
+        "headings": [
+          {
+            "text": "Flagstone",
+            "width": 576
+          }
+        ],
+        "text": "THE WORK\n/\nFLAGSTONE\n\nSEVERITY 3 OF 5 · MODERATE · VERIFIED\n\nSteep grade: a real barrier report expanded on the map.\n\nCURRENT EXPLORE SCREEN · FLAGSTONE\n\nFEATURED\n\nSOLO BUILDER · AI-ASSISTED\n\nSKYLER HALISKY\n\nFlagstone\n\nCommunity map of accessibility barriers: report a broken ramp, verify a neighbour"
+      },
+      "tableChecks": [],
+      "elementCensus": {
+        "scrollWidthReading": {
+          "docW": 640,
+          "winW": 640,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      }
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "light",
+      "metrics": {
+        "url": "http://127.0.0.1:3038/flagstone/",
+        "innerWidth": 640,
+        "innerHeight": 378,
+        "outerWidth": 1280,
+        "outerHeight": 900,
+        "dpr": 4,
+        "visualScale": 1
+      },
+      "geometry": {
+        "docWidth": 640,
+        "headings": [
+          {
+            "text": "Know before you go.",
+            "width": 592
+          }
+        ],
+        "text": "Every report on Flagstone is a real barrier, described by a real person, and verified by the community. Browse the map without an account; sign in only when you want to report, verify, or comment. No ads, no analytics, no trackers.\n\nSupport\n\nHow the app works, frequently asked questions, and how to "
+      },
+      "tableChecks": [],
+      "elementCensus": {
+        "scrollWidthReading": {
+          "docW": 640,
+          "winW": 640,
+          "over": false,
+          "vacuous": false
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      }
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "light",
+      "metrics": {
+        "url": "http://127.0.0.1:3038/flagstone/accessibility/",
+        "innerWidth": 640,
+        "innerHeight": 378,
+        "outerWidth": 1280,
+        "outerHeight": 900,
+        "dpr": 4,
+        "visualScale": 1
+      },
+      "geometry": {
+        "docWidth": 640,
+        "headings": [
+          {
+            "text": "Accessibility",
+            "width": 592
+          }
+        ],
+        "text": "Our commitment\n\nFlagstone exists so people can find out whether a place will work for them before they travel to it. The people who most need that answer are disabled people, so the app itself is built to be used with a screen reader, at large text sizes, with reduced motion, and without relying on "
+      },
+      "tableChecks": [
+        {
+          "text": "Accessibility features supported by the Flagstone iOS app\nFeature\tStatus\tWhat that means here\nVoiceOver\tSupported\tEvery control has a spoken label, role, and where useful a hint. Status changes, filter results, and errors are announced. Photos carry descriptions written by the person who uploaded them.\nLarger Text\tSupported\tText scales with your Dynamic Type setting, including the accessibility sizes. Layouts reflow rather than clip.\nDark Interface\tSupported\tA full dark theme that follows your system setting, plus a manual toggle in Settings.\nSufficient Contrast\tSupported\tText and controls meet WCAG AA contrast ratios in both light and dark themes. Automated tests block changes that would regress this.\nDifferentiate Without Colour Alone\tSupported\tSeverity is shown as a number and a word, not just a colour. Status uses labelled badges. Links carry underlines.\nReduced Motion\tSupported\tWhen Reduce Motion is on, map and sheet animations are shortened or replaced with cross-fades.\nCaptions & Audio Descriptions\tNot applicable\tFlagstone contains no video or audio content, so there is nothing to caption or describe.\nVoice Control\tUnder evaluation\tControls are labelled in ways that should work with Voice Control, but we haven’t finished testing it end to end, so we don’t yet claim it.",
+          "width": 592,
+          "parentWidth": 592,
+          "parentScroll": 592,
+          "overflow": "auto"
+        }
+      ],
+      "elementCensus": {
+        "scrollWidthReading": {
+          "docW": 640,
+          "winW": 640,
+          "over": false,
+          "vacuous": false
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      }
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "light",
+      "metrics": {
+        "url": "http://127.0.0.1:3038/flagstone/privacy/",
+        "innerWidth": 640,
+        "innerHeight": 378,
+        "outerWidth": 1280,
+        "outerHeight": 900,
+        "dpr": 4,
+        "visualScale": 1
+      },
+      "geometry": {
+        "docWidth": 640,
+        "headings": [
+          {
+            "text": "Privacy Policy",
+            "width": 592
+          }
+        ],
+        "text": "Short version: We collect only what’s needed to make the map work. We never sell your data. You can delete your account any time from your Profile — your personal details go, and anything you contributed stays only with your name removed.\nOverview\n\nFlagstone is a community tool for mapping accessibi"
+      },
+      "tableChecks": [
+        {
+          "text": "Your Data\tWhat We Do With It\tWho Sees It\nEmail\tSign-in, password reset, optional notifications\tOnly you (never visible on the map)\nDisplay name\tShown on flags you report/verify\tOther app users\nFlag location\tPlaced as a marker on the map\tOther app users\nFlag description + category\tShown on the map when people tap the marker\tOther app users\nPhotos\tDisplayed in flag details (public-readable in Storage)\tOther app users\nUsage data\tFixing bugs, improving the app, understanding feature adoption\tInternal team only",
+          "width": 592,
+          "parentWidth": 592,
+          "parentScroll": 592,
+          "overflow": "auto"
+        },
+        {
+          "text": "Type of Data\tHow Long We Keep It\nAccount (email, display name, avatar)\tUntil you delete your account\nFlags you submit\tUntil resolved + 90 days (then archived)\nFlag photos\tUntil the flag is deleted\nAudit logs (for security)\t30 days",
+          "width": 592,
+          "parentWidth": 592,
+          "parentScroll": 592,
+          "overflow": "auto"
+        }
+      ],
+      "elementCensus": {
+        "scrollWidthReading": {
+          "docW": 640,
+          "winW": 640,
+          "over": false,
+          "vacuous": false
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      }
+    },
+    {
+      "route": "/flagstone/support/",
+      "theme": "light",
+      "metrics": {
+        "url": "http://127.0.0.1:3038/flagstone/support/",
+        "innerWidth": 640,
+        "innerHeight": 378,
+        "outerWidth": 1280,
+        "outerHeight": 900,
+        "dpr": 4,
+        "visualScale": 1
+      },
+      "geometry": {
+        "docWidth": 640,
+        "headings": [
+          {
+            "text": "Support",
+            "width": 592
+          }
+        ],
+        "text": "About Flagstone\n\nFlagstone is a crowdsourced mobile app for mapping accessibility barriers in the real world. Users drop pins at locations where there’s an accessibility issue, such as a missing ramp, a broken sidewalk, or an inaccessible parking spot. The community verifies, resolves, or rejects th"
+      },
+      "tableChecks": [],
+      "elementCensus": {
+        "scrollWidthReading": {
+          "docW": 640,
+          "winW": 640,
+          "over": false,
+          "vacuous": false
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      }
+    },
+    {
+      "route": "/flagstone/terms/",
+      "theme": "light",
+      "metrics": {
+        "url": "http://127.0.0.1:3038/flagstone/terms/",
+        "innerWidth": 640,
+        "innerHeight": 378,
+        "outerWidth": 1280,
+        "outerHeight": 900,
+        "dpr": 4,
+        "visualScale": 1
+      },
+      "geometry": {
+        "docWidth": 640,
+        "headings": [
+          {
+            "text": "Terms & Community Guidelines",
+            "width": 592
+          }
+        ],
+        "text": "The short version\n\nReport real barriers honestly. Keep people out of your photos. Don’t post anything hateful, harassing, or deliberately false. Everything can be reported in the app, and reports are reviewed within 24 hours.\n\nWhat Flagstone is.\n\nFlagstone is a community map of accessibility barrier"
+      },
+      "tableChecks": [],
+      "elementCensus": {
+        "scrollWidthReading": {
+          "docW": 640,
+          "winW": 640,
+          "over": false,
+          "vacuous": false
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      }
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "metrics": {
+        "url": "http://127.0.0.1:3038/",
+        "innerWidth": 640,
+        "innerHeight": 378,
+        "outerWidth": 1280,
+        "outerHeight": 900,
+        "dpr": 4,
+        "visualScale": 1
+      },
+      "geometry": {
+        "docWidth": 640,
+        "headings": [
+          {
+            "text": "An accessibility map. A multi-agent system. A web-based prompt library.",
+            "width": 464.0234375
+          }
+        ],
+        "text": "SkyPi Studio\n\nSkyler Halisky\n\nSenior technical-support specialist. I turn recurring user friction into documentation, QA, and the tools that fix it.\n\nSkyPi Studio is one person.\n\nSenior technical support · Portfolio 2026\n\nAn accessibility map. A multi-agent system. A web-based prompt library.\n\nFive "
+      },
+      "tableChecks": [],
+      "elementCensus": {
+        "scrollWidthReading": {
+          "docW": 640,
+          "winW": 640,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      }
+    },
+    {
+      "route": "/accessibility/",
+      "theme": "dark",
+      "metrics": {
+        "url": "http://127.0.0.1:3038/accessibility/",
+        "innerWidth": 640,
+        "innerHeight": 378,
+        "outerWidth": 1280,
+        "outerHeight": 900,
+        "dpr": 4,
+        "visualScale": 1
+      },
+      "geometry": {
+        "docWidth": 640,
+        "headings": [
+          {
+            "text": "Accessibility is where I begin.",
+            "width": 576
+          }
+        ],
+        "text": "Skyler Halisky\nTechnical Support\nAI-assisted Builder\n\nACCESSIBILITY\n\nAccessibility is where I begin.\n\nHonest about what this site does for accessibility, and what it does not yet.\n\nThis site is built to be used by everyone, including people who navigate with a keyboard, a screen reader, or with moti"
+      },
+      "tableChecks": [],
+      "elementCensus": {
+        "scrollWidthReading": {
+          "docW": 640,
+          "winW": 640,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      }
+    },
+    {
+      "route": "/work/flagstone/",
+      "theme": "dark",
+      "metrics": {
+        "url": "http://127.0.0.1:3038/work/flagstone/",
+        "innerWidth": 640,
+        "innerHeight": 378,
+        "outerWidth": 1280,
+        "outerHeight": 900,
+        "dpr": 4,
+        "visualScale": 1
+      },
+      "geometry": {
+        "docWidth": 640,
+        "headings": [
+          {
+            "text": "Flagstone",
+            "width": 576
+          }
+        ],
+        "text": "THE WORK\n/\nFLAGSTONE\n\nSEVERITY 3 OF 5 · MODERATE · VERIFIED\n\nSteep grade: a real barrier report expanded on the map.\n\nCURRENT EXPLORE SCREEN · FLAGSTONE\n\nFEATURED\n\nSOLO BUILDER · AI-ASSISTED\n\nSKYLER HALISKY\n\nFlagstone\n\nCommunity map of accessibility barriers: report a broken ramp, verify a neighbour"
+      },
+      "tableChecks": [],
+      "elementCensus": {
+        "scrollWidthReading": {
+          "docW": 640,
+          "winW": 640,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      }
+    },
+    {
+      "route": "/flagstone/",
+      "theme": "dark",
+      "metrics": {
+        "url": "http://127.0.0.1:3038/flagstone/",
+        "innerWidth": 640,
+        "innerHeight": 378,
+        "outerWidth": 1280,
+        "outerHeight": 900,
+        "dpr": 4,
+        "visualScale": 1
+      },
+      "geometry": {
+        "docWidth": 640,
+        "headings": [
+          {
+            "text": "Know before you go.",
+            "width": 592
+          }
+        ],
+        "text": "Every report on Flagstone is a real barrier, described by a real person, and verified by the community. Browse the map without an account; sign in only when you want to report, verify, or comment. No ads, no analytics, no trackers.\n\nSupport\n\nHow the app works, frequently asked questions, and how to "
+      },
+      "tableChecks": [],
+      "elementCensus": {
+        "scrollWidthReading": {
+          "docW": 640,
+          "winW": 640,
+          "over": false,
+          "vacuous": false
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      }
+    },
+    {
+      "route": "/flagstone/accessibility/",
+      "theme": "dark",
+      "metrics": {
+        "url": "http://127.0.0.1:3038/flagstone/accessibility/",
+        "innerWidth": 640,
+        "innerHeight": 378,
+        "outerWidth": 1280,
+        "outerHeight": 900,
+        "dpr": 4,
+        "visualScale": 1
+      },
+      "geometry": {
+        "docWidth": 640,
+        "headings": [
+          {
+            "text": "Accessibility",
+            "width": 592
+          }
+        ],
+        "text": "Our commitment\n\nFlagstone exists so people can find out whether a place will work for them before they travel to it. The people who most need that answer are disabled people, so the app itself is built to be used with a screen reader, at large text sizes, with reduced motion, and without relying on "
+      },
+      "tableChecks": [
+        {
+          "text": "Accessibility features supported by the Flagstone iOS app\nFeature\tStatus\tWhat that means here\nVoiceOver\tSupported\tEvery control has a spoken label, role, and where useful a hint. Status changes, filter results, and errors are announced. Photos carry descriptions written by the person who uploaded them.\nLarger Text\tSupported\tText scales with your Dynamic Type setting, including the accessibility sizes. Layouts reflow rather than clip.\nDark Interface\tSupported\tA full dark theme that follows your system setting, plus a manual toggle in Settings.\nSufficient Contrast\tSupported\tText and controls meet WCAG AA contrast ratios in both light and dark themes. Automated tests block changes that would regress this.\nDifferentiate Without Colour Alone\tSupported\tSeverity is shown as a number and a word, not just a colour. Status uses labelled badges. Links carry underlines.\nReduced Motion\tSupported\tWhen Reduce Motion is on, map and sheet animations are shortened or replaced with cross-fades.\nCaptions & Audio Descriptions\tNot applicable\tFlagstone contains no video or audio content, so there is nothing to caption or describe.\nVoice Control\tUnder evaluation\tControls are labelled in ways that should work with Voice Control, but we haven’t finished testing it end to end, so we don’t yet claim it.",
+          "width": 592,
+          "parentWidth": 592,
+          "parentScroll": 592,
+          "overflow": "auto"
+        }
+      ],
+      "elementCensus": {
+        "scrollWidthReading": {
+          "docW": 640,
+          "winW": 640,
+          "over": false,
+          "vacuous": false
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      }
+    },
+    {
+      "route": "/flagstone/privacy/",
+      "theme": "dark",
+      "metrics": {
+        "url": "http://127.0.0.1:3038/flagstone/privacy/",
+        "innerWidth": 640,
+        "innerHeight": 378,
+        "outerWidth": 1280,
+        "outerHeight": 900,
+        "dpr": 4,
+        "visualScale": 1
+      },
+      "geometry": {
+        "docWidth": 640,
+        "headings": [
+          {
+            "text": "Privacy Policy",
+            "width": 592
+          }
+        ],
+        "text": "Short version: We collect only what’s needed to make the map work. We never sell your data. You can delete your account any time from your Profile — your personal details go, and anything you contributed stays only with your name removed.\nOverview\n\nFlagstone is a community tool for mapping accessibi"
+      },
+      "tableChecks": [
+        {
+          "text": "Your Data\tWhat We Do With It\tWho Sees It\nEmail\tSign-in, password reset, optional notifications\tOnly you (never visible on the map)\nDisplay name\tShown on flags you report/verify\tOther app users\nFlag location\tPlaced as a marker on the map\tOther app users\nFlag description + category\tShown on the map when people tap the marker\tOther app users\nPhotos\tDisplayed in flag details (public-readable in Storage)\tOther app users\nUsage data\tFixing bugs, improving the app, understanding feature adoption\tInternal team only",
+          "width": 592,
+          "parentWidth": 592,
+          "parentScroll": 592,
+          "overflow": "auto"
+        },
+        {
+          "text": "Type of Data\tHow Long We Keep It\nAccount (email, display name, avatar)\tUntil you delete your account\nFlags you submit\tUntil resolved + 90 days (then archived)\nFlag photos\tUntil the flag is deleted\nAudit logs (for security)\t30 days",
+          "width": 592,
+          "parentWidth": 592,
+          "parentScroll": 592,
+          "overflow": "auto"
+        }
+      ],
+      "elementCensus": {
+        "scrollWidthReading": {
+          "docW": 640,
+          "winW": 640,
+          "over": false,
+          "vacuous": false
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      }
+    },
+    {
+      "route": "/flagstone/support/",
+      "theme": "dark",
+      "metrics": {
+        "url": "http://127.0.0.1:3038/flagstone/support/",
+        "innerWidth": 640,
+        "innerHeight": 378,
+        "outerWidth": 1280,
+        "outerHeight": 900,
+        "dpr": 4,
+        "visualScale": 1
+      },
+      "geometry": {
+        "docWidth": 640,
+        "headings": [
+          {
+            "text": "Support",
+            "width": 592
+          }
+        ],
+        "text": "About Flagstone\n\nFlagstone is a crowdsourced mobile app for mapping accessibility barriers in the real world. Users drop pins at locations where there’s an accessibility issue, such as a missing ramp, a broken sidewalk, or an inaccessible parking spot. The community verifies, resolves, or rejects th"
+      },
+      "tableChecks": [],
+      "elementCensus": {
+        "scrollWidthReading": {
+          "docW": 640,
+          "winW": 640,
+          "over": false,
+          "vacuous": false
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      }
+    },
+    {
+      "route": "/flagstone/terms/",
+      "theme": "dark",
+      "metrics": {
+        "url": "http://127.0.0.1:3038/flagstone/terms/",
+        "innerWidth": 640,
+        "innerHeight": 378,
+        "outerWidth": 1280,
+        "outerHeight": 900,
+        "dpr": 4,
+        "visualScale": 1
+      },
+      "geometry": {
+        "docWidth": 640,
+        "headings": [
+          {
+            "text": "Terms & Community Guidelines",
+            "width": 592
+          }
+        ],
+        "text": "The short version\n\nReport real barriers honestly. Keep people out of your photos. Don’t post anything hateful, harassing, or deliberately false. Everything can be reported in the app, and reports are reviewed within 24 hours.\n\nWhat Flagstone is.\n\nFlagstone is a community map of accessibility barrier"
+      },
+      "tableChecks": [],
+      "elementCensus": {
+        "scrollWidthReading": {
+          "docW": 640,
+          "winW": 640,
+          "over": false,
+          "vacuous": false
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      }
+    }
+  ],
+  "restored": {
+    "url": "http://127.0.0.1:3038/flagstone/terms/",
+    "innerWidth": 640,
+    "innerHeight": 378,
+    "outerWidth": 1280,
+    "outerHeight": 900,
+    "dpr": 4,
+    "visualScale": 1
+  }
+}

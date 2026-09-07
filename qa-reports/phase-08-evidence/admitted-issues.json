@@ -1,0 +1,125 @@
+{
+  "sourceSha": "47c3d67c5fabd358c4cfc689d294c8395e65c494",
+  "sourceTree": "098ec9e6793e88d30172a65f3d35f67e26a3194f",
+  "issues": [
+    {
+      "id": "P08-001",
+      "severity": "P1",
+      "routes": "all five Flagstone utility routes",
+      "state": "settled light theme, normal contrast, 320/1440",
+      "reproduction": "Load each utility page in light mode; inspect body/callout/card/footer nodes in settled axe evidence.",
+      "evidence": "26 distinct nodes, #1c6ef3 text on #f8fafc or #f0f7ff; about 4.38:1 or 4.25:1. Open-panel scans additionally reproduce five light readout nodes on --surface; same root cause, same local correction.",
+      "rootCause": "Body role selectors reuse brand blue against tinted surfaces.",
+      "owners": [
+        "public/flagstone/assets/site.css"
+      ],
+      "preserve": [
+        "PR-002",
+        "PR-013",
+        "PR-017"
+      ],
+      "rerun": "all five utility pages both themes and display modes; header/color/font/dimension preservation; axe",
+      "disposition": "PASS / CLOSED \u2014 owner-approved commit f85cde880b491d3fe47cc10eca50b5dabfeff3e5; impacted reruns passed",
+      "priorEvidenceImpact": "Phase04 utility responsive/contrast/mode evidence must rerun; Phase07 intro mechanism and shared CTA source unaffected."
+    },
+    {
+      "id": "P08-002",
+      "severity": "P1",
+      "routes": "/flagstone/",
+      "state": "390px, supported text size200%, both themes",
+      "reproduction": "Open Display settings, focus Text size slider, press End.",
+      "evidence": "document width484 vs viewport390.",
+      "rootCause": "14rem grid track minimum becomes448px.",
+      "owners": [
+        "public/flagstone/assets/site.css"
+      ],
+      "preserve": [
+        "PR-003",
+        "PR-015",
+        "PR-017"
+      ],
+      "rerun": "utility responsive/text200/boundary cells, normal layout identity",
+      "disposition": "PASS / CLOSED \u2014 owner-approved commit f85cde880b491d3fe47cc10eca50b5dabfeff3e5; impacted reruns passed",
+      "priorEvidenceImpact": "Phase04 utility responsive/contrast/mode evidence must rerun; Phase07 intro mechanism and shared CTA source unaffected."
+    },
+    {
+      "id": "P08-003",
+      "severity": "P1",
+      "routes": "/flagstone/support/, /flagstone/terms/ (also preserve privacy email wrapping)",
+      "state": "390px, text200%, both themes",
+      "reproduction": "Set Text size200%; inspect mailto text at document edge.",
+      "evidence": "support434px and terms400px document width vs390px viewport.",
+      "rootCause": "Email strings have no permissible wrap opportunity.",
+      "owners": [
+        "public/flagstone/assets/site.css"
+      ],
+      "preserve": [
+        "PR-003",
+        "PR-017"
+      ],
+      "rerun": "all utility email targets text200/spacing, link names and destinations unchanged",
+      "disposition": "PASS / CLOSED \u2014 owner-approved commit f85cde880b491d3fe47cc10eca50b5dabfeff3e5; impacted reruns passed",
+      "priorEvidenceImpact": "Phase04 utility responsive/contrast/mode evidence must rerun; Phase07 intro mechanism and shared CTA source unaffected."
+    },
+    {
+      "id": "P08-004",
+      "severity": "P1",
+      "routes": "/flagstone/privacy/",
+      "state": "390px, text200%, both themes",
+      "reproduction": "Set Text size200%; inspect the two data tables.",
+      "evidence": "document width555 vs viewport390; tables lack existing scroll containment.",
+      "rootCause": "Unwrapped semantic tables impose min-content width on page.",
+      "owners": [
+        "public/flagstone/privacy/index.html",
+        "public/flagstone/assets/site.css"
+      ],
+      "preserve": [
+        "PR-003",
+        "PR-015",
+        "PR-017"
+      ],
+      "rerun": "named keyboard-scroll regions, complete table content, exact text/link identity, utility modes. Static layout only; no privacy claims/data behavior change.",
+      "disposition": "PASS / CLOSED \u2014 owner-approved commit f85cde880b491d3fe47cc10eca50b5dabfeff3e5; impacted reruns passed",
+      "priorEvidenceImpact": "Phase04 utility responsive/contrast/mode evidence must rerun; Phase07 intro mechanism and shared CTA source unaffected."
+    },
+    {
+      "id": "P08-005",
+      "severity": "P1",
+      "routes": "all five utility routes",
+      "state": "390px, text200%, open Display settings",
+      "reproduction": "Set Text size200%, focus slider and inspect both endpoints.",
+      "evidence": "range320px, containing row198px; right end clipped by panel.",
+      "rootCause": "10rem minimum exceeds available flex width while panel clips overflow.",
+      "owners": [
+        "public/flagstone/assets/site.css"
+      ],
+      "preserve": [
+        "PR-017"
+      ],
+      "rerun": "range containment, keyboard Home/End, pointer endpoints, all utility modes",
+      "disposition": "PASS / CLOSED \u2014 owner-approved commit f85cde880b491d3fe47cc10eca50b5dabfeff3e5; impacted reruns passed",
+      "priorEvidenceImpact": "Phase04 utility responsive/contrast/mode evidence must rerun; Phase07 intro mechanism and shared CTA source unaffected."
+    },
+    {
+      "id": "P08-006",
+      "finding": "F-021",
+      "severity": "P1",
+      "routes": "/accessibility/",
+      "state": "public accessibility statement",
+      "reproduction": "Read the Readable text in both themes paragraph against baseline contrast and settled scan incompletes.",
+      "evidence": "Baseline utility violations contradicted Every text role; 3104 gradient-related incomplete node observations across84 settled scans cannot prove every visual state.",
+      "rootCause": "Universal text-role claim exceeds the measured scope.",
+      "owners": [
+        "lib/content.ts",
+        "lib/__tests__/accessibility-statement-scope.test.ts"
+      ],
+      "preserve": [
+        "PR-003",
+        "PR-017"
+      ],
+      "priorEvidenceImpact": "Rerun accessibility page responsive/boundary/theme/reduced motion/settled axe; shared typography unchanged.",
+      "rerun": "Accessibility page matrix and claim regression test.",
+      "disposition": "PASS / CLOSED \u2014 owner-approved commit f85cde880b491d3fe47cc10eca50b5dabfeff3e5; impacted reruns passed"
+    }
+  ]
+}

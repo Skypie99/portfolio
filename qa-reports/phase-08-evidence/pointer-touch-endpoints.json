@@ -1,0 +1,312 @@
+[
+  {
+    "route": "/flagstone/",
+    "theme": "light",
+    "results": [
+      {
+        "method": "click",
+        "endpoint": "max",
+        "value": "200"
+      },
+      {
+        "method": "click",
+        "endpoint": "min",
+        "value": "100"
+      },
+      {
+        "method": "tap",
+        "endpoint": "max",
+        "value": "200"
+      },
+      {
+        "method": "tap",
+        "endpoint": "min",
+        "value": "100"
+      }
+    ],
+    "tables": []
+  },
+  {
+    "route": "/flagstone/",
+    "theme": "dark",
+    "results": [
+      {
+        "method": "click",
+        "endpoint": "max",
+        "value": "200"
+      },
+      {
+        "method": "click",
+        "endpoint": "min",
+        "value": "100"
+      },
+      {
+        "method": "tap",
+        "endpoint": "max",
+        "value": "200"
+      },
+      {
+        "method": "tap",
+        "endpoint": "min",
+        "value": "100"
+      }
+    ],
+    "tables": []
+  },
+  {
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "results": [
+      {
+        "method": "click",
+        "endpoint": "max",
+        "value": "200"
+      },
+      {
+        "method": "click",
+        "endpoint": "min",
+        "value": "100"
+      },
+      {
+        "method": "tap",
+        "endpoint": "max",
+        "value": "200"
+      },
+      {
+        "method": "tap",
+        "endpoint": "min",
+        "value": "100"
+      }
+    ],
+    "tables": [
+      {
+        "label": null,
+        "left": 376,
+        "max": 376,
+        "atEnd": true
+      }
+    ]
+  },
+  {
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "results": [
+      {
+        "method": "click",
+        "endpoint": "max",
+        "value": "200"
+      },
+      {
+        "method": "click",
+        "endpoint": "min",
+        "value": "100"
+      },
+      {
+        "method": "tap",
+        "endpoint": "max",
+        "value": "200"
+      },
+      {
+        "method": "tap",
+        "endpoint": "min",
+        "value": "100"
+      }
+    ],
+    "tables": [
+      {
+        "label": null,
+        "left": 376,
+        "max": 376,
+        "atEnd": true
+      }
+    ]
+  },
+  {
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "results": [
+      {
+        "method": "click",
+        "endpoint": "max",
+        "value": "200"
+      },
+      {
+        "method": "click",
+        "endpoint": "min",
+        "value": "100"
+      },
+      {
+        "method": "tap",
+        "endpoint": "max",
+        "value": "200"
+      },
+      {
+        "method": "tap",
+        "endpoint": "min",
+        "value": "100"
+      }
+    ],
+    "tables": [
+      {
+        "label": "How we use your data",
+        "left": 271,
+        "max": 271,
+        "atEnd": true
+      },
+      {
+        "label": "Data retention",
+        "left": 49,
+        "max": 49,
+        "atEnd": true
+      }
+    ]
+  },
+  {
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "results": [
+      {
+        "method": "click",
+        "endpoint": "max",
+        "value": "200"
+      },
+      {
+        "method": "click",
+        "endpoint": "min",
+        "value": "100"
+      },
+      {
+        "method": "tap",
+        "endpoint": "max",
+        "value": "200"
+      },
+      {
+        "method": "tap",
+        "endpoint": "min",
+        "value": "100"
+      }
+    ],
+    "tables": [
+      {
+        "label": "How we use your data",
+        "left": 271,
+        "max": 271,
+        "atEnd": true
+      },
+      {
+        "label": "Data retention",
+        "left": 49,
+        "max": 49,
+        "atEnd": true
+      }
+    ]
+  },
+  {
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "results": [
+      {
+        "method": "click",
+        "endpoint": "max",
+        "value": "200"
+      },
+      {
+        "method": "click",
+        "endpoint": "min",
+        "value": "100"
+      },
+      {
+        "method": "tap",
+        "endpoint": "max",
+        "value": "200"
+      },
+      {
+        "method": "tap",
+        "endpoint": "min",
+        "value": "100"
+      }
+    ],
+    "tables": []
+  },
+  {
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "results": [
+      {
+        "method": "click",
+        "endpoint": "max",
+        "value": "200"
+      },
+      {
+        "method": "click",
+        "endpoint": "min",
+        "value": "100"
+      },
+      {
+        "method": "tap",
+        "endpoint": "max",
+        "value": "200"
+      },
+      {
+        "method": "tap",
+        "endpoint": "min",
+        "value": "100"
+      }
+    ],
+    "tables": []
+  },
+  {
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "results": [
+      {
+        "method": "click",
+        "endpoint": "max",
+        "value": "200"
+      },
+      {
+        "method": "click",
+        "endpoint": "min",
+        "value": "100"
+      },
+      {
+        "method": "tap",
+        "endpoint": "max",
+        "value": "200"
+      },
+      {
+        "method": "tap",
+        "endpoint": "min",
+        "value": "100"
+      }
+    ],
+    "tables": []
+  },
+  {
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "results": [
+      {
+        "method": "click",
+        "endpoint": "max",
+        "value": "200"
+      },
+      {
+        "method": "click",
+        "endpoint": "min",
+        "value": "100"
+      },
+      {
+        "method": "tap",
+        "endpoint": "max",
+        "value": "200"
+      },
+      {
+        "method": "tap",
+        "endpoint": "min",
+        "value": "100"
+      }
+    ],
+    "tables": []
+  }
+]

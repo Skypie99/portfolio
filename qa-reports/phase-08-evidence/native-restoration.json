@@ -1,0 +1,10 @@
+{
+  "restored": {
+    "innerWidth": 1280,
+    "outerWidth": 1280,
+    "dpr": 2,
+    "scale": 1
+  },
+  "expectedDpr": 2,
+  "pass": true
+}

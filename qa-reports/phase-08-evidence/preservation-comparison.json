@@ -1,0 +1,5634 @@
+{
+  "cells": 360,
+  "errors": [],
+  "overflowCells": [],
+  "rangeFailures": [],
+  "probeFailures": [],
+  "endpointFailures": [],
+  "headerDeltas": [],
+  "fontDeltas": [],
+  "darkOrHighContrastColorDeltas": [],
+  "colorDeltas": [
+    {
+      "id": "_flagstone_-light-320-text200",
+      "tag": "H2",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-text200",
+      "tag": "H2",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-text200",
+      "tag": "H2",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-text200",
+      "tag": "H2",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-text200",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-text200",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-text200",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-text200",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-normal",
+      "tag": "H2",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-normal",
+      "tag": "H2",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-normal",
+      "tag": "H2",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-normal",
+      "tag": "H2",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-normal",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-normal",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-normal",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-normal",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-reading",
+      "tag": "H2",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-reading",
+      "tag": "H2",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-reading",
+      "tag": "H2",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-reading",
+      "tag": "H2",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-reading",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-reading",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-reading",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-reading",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-spacing",
+      "tag": "H2",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-spacing",
+      "tag": "H2",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-spacing",
+      "tag": "H2",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-spacing",
+      "tag": "H2",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-spacing",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-spacing",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-spacing",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-320-spacing",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-normal",
+      "tag": "H2",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-normal",
+      "tag": "H2",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-normal",
+      "tag": "H2",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-normal",
+      "tag": "H2",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-normal",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-normal",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-normal",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-normal",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-text200",
+      "tag": "H2",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-text200",
+      "tag": "H2",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-text200",
+      "tag": "H2",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-text200",
+      "tag": "H2",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-text200",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-text200",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-text200",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-text200",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-reading",
+      "tag": "H2",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-reading",
+      "tag": "H2",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-reading",
+      "tag": "H2",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-reading",
+      "tag": "H2",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-reading",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-reading",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-reading",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-reading",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-spacing",
+      "tag": "H2",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-spacing",
+      "tag": "H2",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-spacing",
+      "tag": "H2",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-spacing",
+      "tag": "H2",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-spacing",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-spacing",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-spacing",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-390-spacing",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-normal",
+      "tag": "H2",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-normal",
+      "tag": "H2",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-normal",
+      "tag": "H2",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-normal",
+      "tag": "H2",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-normal",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-normal",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-normal",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-normal",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-text200",
+      "tag": "H2",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-text200",
+      "tag": "H2",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-text200",
+      "tag": "H2",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-text200",
+      "tag": "H2",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-text200",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-text200",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-text200",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-text200",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-reading",
+      "tag": "H2",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-reading",
+      "tag": "H2",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-reading",
+      "tag": "H2",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-reading",
+      "tag": "H2",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-reading",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-reading",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-reading",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-reading",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-spacing",
+      "tag": "H2",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-spacing",
+      "tag": "H2",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-spacing",
+      "tag": "H2",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-spacing",
+      "tag": "H2",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-spacing",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-spacing",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-spacing",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-599-spacing",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-normal",
+      "tag": "H2",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-normal",
+      "tag": "H2",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-normal",
+      "tag": "H2",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-normal",
+      "tag": "H2",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-normal",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-normal",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-normal",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-normal",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-text200",
+      "tag": "H2",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-text200",
+      "tag": "H2",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-text200",
+      "tag": "H2",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-text200",
+      "tag": "H2",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-text200",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-text200",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-text200",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-text200",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-reading",
+      "tag": "H2",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-reading",
+      "tag": "H2",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-reading",
+      "tag": "H2",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-reading",
+      "tag": "H2",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-reading",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-reading",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-reading",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-reading",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-spacing",
+      "tag": "H2",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-spacing",
+      "tag": "H2",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-spacing",
+      "tag": "H2",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-spacing",
+      "tag": "H2",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-spacing",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-spacing",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-spacing",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-600-spacing",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-normal",
+      "tag": "H2",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-normal",
+      "tag": "H2",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-normal",
+      "tag": "H2",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-normal",
+      "tag": "H2",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-normal",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-normal",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-normal",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-normal",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-text200",
+      "tag": "H2",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-text200",
+      "tag": "H2",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-text200",
+      "tag": "H2",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-text200",
+      "tag": "H2",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-text200",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-text200",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-text200",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-text200",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-reading",
+      "tag": "H2",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-reading",
+      "tag": "H2",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-reading",
+      "tag": "H2",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-reading",
+      "tag": "H2",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-reading",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-reading",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-reading",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-reading",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-spacing",
+      "tag": "H2",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-spacing",
+      "tag": "H2",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-spacing",
+      "tag": "H2",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-spacing",
+      "tag": "H2",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-spacing",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-spacing",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-spacing",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-601-spacing",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-normal",
+      "tag": "H2",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-normal",
+      "tag": "H2",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-normal",
+      "tag": "H2",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-normal",
+      "tag": "H2",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-normal",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-normal",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-normal",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-normal",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-text200",
+      "tag": "H2",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-text200",
+      "tag": "H2",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-text200",
+      "tag": "H2",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-text200",
+      "tag": "H2",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-text200",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-text200",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-text200",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-text200",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-reading",
+      "tag": "H2",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-reading",
+      "tag": "H2",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-reading",
+      "tag": "H2",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-reading",
+      "tag": "H2",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-reading",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-reading",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-reading",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-reading",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-spacing",
+      "tag": "H2",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-spacing",
+      "tag": "H2",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-spacing",
+      "tag": "H2",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-spacing",
+      "tag": "H2",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-spacing",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-spacing",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-spacing",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_-light-1440-spacing",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-320-normal",
+      "tag": "H2",
+      "text": "Our commitment",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-320-normal",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-320-normal",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-320-normal",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-320-normal",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-320-normal",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-320-text200",
+      "tag": "H2",
+      "text": "Our commitment",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-320-text200",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-320-text200",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-320-text200",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-320-text200",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-320-text200",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-320-reading",
+      "tag": "H2",
+      "text": "Our commitment",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-320-reading",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-320-reading",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-320-reading",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-320-reading",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-320-reading",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-320-spacing",
+      "tag": "H2",
+      "text": "Our commitment",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-320-spacing",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-320-spacing",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-320-spacing",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-320-spacing",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-320-spacing",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-390-normal",
+      "tag": "H2",
+      "text": "Our commitment",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-390-normal",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-390-normal",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-390-normal",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-390-normal",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-390-normal",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-390-text200",
+      "tag": "H2",
+      "text": "Our commitment",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-390-text200",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-390-text200",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-390-text200",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-390-text200",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-390-text200",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-390-reading",
+      "tag": "H2",
+      "text": "Our commitment",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-390-reading",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-390-reading",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-390-reading",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-390-reading",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-390-reading",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-599-normal",
+      "tag": "H2",
+      "text": "Our commitment",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-599-normal",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-599-normal",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-599-normal",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-599-normal",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-599-normal",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-390-spacing",
+      "tag": "H2",
+      "text": "Our commitment",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-390-spacing",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-390-spacing",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-390-spacing",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-390-spacing",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-390-spacing",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-599-text200",
+      "tag": "H2",
+      "text": "Our commitment",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-599-text200",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-599-text200",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-599-text200",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-599-text200",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-599-text200",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-599-reading",
+      "tag": "H2",
+      "text": "Our commitment",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-599-reading",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-599-reading",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-599-reading",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-599-reading",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-599-reading",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-600-normal",
+      "tag": "H2",
+      "text": "Our commitment",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-600-normal",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-600-normal",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-600-normal",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-600-normal",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-600-normal",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-599-spacing",
+      "tag": "H2",
+      "text": "Our commitment",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-599-spacing",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-599-spacing",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-599-spacing",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-599-spacing",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-599-spacing",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-600-text200",
+      "tag": "H2",
+      "text": "Our commitment",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-600-text200",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-600-text200",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-600-text200",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-600-text200",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-600-text200",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-600-reading",
+      "tag": "H2",
+      "text": "Our commitment",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-600-reading",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-600-reading",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-600-reading",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-600-reading",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-600-reading",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-601-normal",
+      "tag": "H2",
+      "text": "Our commitment",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-601-normal",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-601-normal",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-601-normal",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-601-normal",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-601-normal",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-600-spacing",
+      "tag": "H2",
+      "text": "Our commitment",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-600-spacing",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-600-spacing",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-600-spacing",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-600-spacing",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-600-spacing",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-601-text200",
+      "tag": "H2",
+      "text": "Our commitment",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-601-text200",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-601-text200",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-601-text200",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-601-text200",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-601-text200",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-601-reading",
+      "tag": "H2",
+      "text": "Our commitment",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-601-reading",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-601-reading",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-601-reading",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-601-reading",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-601-reading",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-601-spacing",
+      "tag": "H2",
+      "text": "Our commitment",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-601-spacing",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-601-spacing",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-601-spacing",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-601-spacing",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-601-spacing",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-1440-normal",
+      "tag": "H2",
+      "text": "Our commitment",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-1440-normal",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-1440-normal",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-1440-normal",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-1440-normal",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-1440-normal",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-1440-text200",
+      "tag": "H2",
+      "text": "Our commitment",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-1440-text200",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-1440-text200",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-1440-text200",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-1440-text200",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-1440-text200",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-1440-reading",
+      "tag": "H2",
+      "text": "Our commitment",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-1440-reading",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-1440-reading",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-1440-reading",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-1440-reading",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-1440-reading",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-1440-spacing",
+      "tag": "H2",
+      "text": "Our commitment",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-1440-spacing",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-1440-spacing",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-1440-spacing",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-1440-spacing",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_accessibility_-light-1440-spacing",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-320-normal",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-320-normal",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-320-normal",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-320-text200",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-320-text200",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-320-text200",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-320-reading",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-320-reading",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-320-reading",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-320-spacing",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-320-spacing",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-320-spacing",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-390-text200",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-390-text200",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-390-text200",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-390-normal",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-390-normal",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-390-normal",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-390-spacing",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-390-spacing",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-390-spacing",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-390-reading",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-390-reading",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-390-reading",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-599-normal",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-599-normal",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-599-normal",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-599-text200",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-599-text200",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-599-text200",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-599-reading",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-599-reading",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-599-reading",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-599-spacing",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-599-spacing",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-599-spacing",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-600-normal",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-600-normal",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-600-normal",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-600-text200",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-600-text200",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-600-text200",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-600-reading",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-600-reading",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-600-reading",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-600-spacing",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-600-spacing",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-600-spacing",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-601-text200",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-601-text200",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-601-text200",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-601-normal",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-601-normal",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-601-normal",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-601-reading",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-601-reading",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-601-reading",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-601-spacing",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-601-spacing",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-601-spacing",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-1440-normal",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-1440-normal",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-1440-normal",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-1440-text200",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-1440-text200",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-1440-text200",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-1440-reading",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-1440-reading",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-1440-reading",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-1440-spacing",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-1440-spacing",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_privacy_-light-1440-spacing",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-320-normal",
+      "tag": "H2",
+      "text": "About Flagstone",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-320-normal",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-320-normal",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-320-normal",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-320-normal",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-320-text200",
+      "tag": "H2",
+      "text": "About Flagstone",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-320-text200",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-320-text200",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-320-text200",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-320-text200",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-320-reading",
+      "tag": "H2",
+      "text": "About Flagstone",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-320-reading",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-320-reading",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-320-reading",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-320-reading",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-320-spacing",
+      "tag": "H2",
+      "text": "About Flagstone",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-320-spacing",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-320-spacing",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-320-spacing",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-320-spacing",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-390-normal",
+      "tag": "H2",
+      "text": "About Flagstone",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-390-normal",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-390-normal",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-390-normal",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-390-normal",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-390-text200",
+      "tag": "H2",
+      "text": "About Flagstone",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-390-text200",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-390-text200",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-390-text200",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-390-text200",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-390-reading",
+      "tag": "H2",
+      "text": "About Flagstone",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-390-reading",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-390-reading",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-390-reading",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-390-reading",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-390-spacing",
+      "tag": "H2",
+      "text": "About Flagstone",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-390-spacing",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-390-spacing",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-390-spacing",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-390-spacing",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-599-normal",
+      "tag": "H2",
+      "text": "About Flagstone",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-599-normal",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-599-normal",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-599-normal",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-599-normal",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-599-text200",
+      "tag": "H2",
+      "text": "About Flagstone",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-599-text200",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-599-text200",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-599-text200",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-599-text200",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-599-reading",
+      "tag": "H2",
+      "text": "About Flagstone",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-599-reading",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-599-reading",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-599-reading",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-599-reading",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-599-spacing",
+      "tag": "H2",
+      "text": "About Flagstone",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-599-spacing",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-599-spacing",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-599-spacing",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-599-spacing",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-600-normal",
+      "tag": "H2",
+      "text": "About Flagstone",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-600-normal",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-600-normal",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-600-normal",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-600-normal",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-600-text200",
+      "tag": "H2",
+      "text": "About Flagstone",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-600-text200",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-600-text200",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-600-text200",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-600-text200",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-600-reading",
+      "tag": "H2",
+      "text": "About Flagstone",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-600-reading",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-600-reading",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-600-reading",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-600-reading",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-600-spacing",
+      "tag": "H2",
+      "text": "About Flagstone",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-600-spacing",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-600-spacing",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-600-spacing",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-600-spacing",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-601-normal",
+      "tag": "H2",
+      "text": "About Flagstone",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-601-normal",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-601-normal",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-601-normal",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-601-normal",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-601-text200",
+      "tag": "H2",
+      "text": "About Flagstone",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-601-text200",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-601-text200",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-601-text200",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-601-text200",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-601-reading",
+      "tag": "H2",
+      "text": "About Flagstone",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-601-reading",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-601-reading",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-601-reading",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-601-reading",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-601-spacing",
+      "tag": "H2",
+      "text": "About Flagstone",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-601-spacing",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-601-spacing",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-601-spacing",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-601-spacing",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-1440-normal",
+      "tag": "H2",
+      "text": "About Flagstone",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-1440-normal",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-1440-normal",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-1440-normal",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-1440-normal",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-1440-text200",
+      "tag": "H2",
+      "text": "About Flagstone",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-1440-text200",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-1440-text200",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-1440-text200",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-1440-text200",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-1440-reading",
+      "tag": "H2",
+      "text": "About Flagstone",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-1440-reading",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-1440-reading",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-1440-reading",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-1440-reading",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-1440-spacing",
+      "tag": "H2",
+      "text": "About Flagstone",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-1440-spacing",
+      "tag": "SPAN",
+      "text": "(opens in new tab)",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-1440-spacing",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-1440-spacing",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_support_-light-1440-spacing",
+      "tag": "A",
+      "text": "Terms & Community Guidelines",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-320-normal",
+      "tag": "H2",
+      "text": "The short version",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-320-normal",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-320-normal",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-320-normal",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-320-text200",
+      "tag": "H2",
+      "text": "The short version",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-320-text200",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-320-text200",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-320-text200",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-320-reading",
+      "tag": "H2",
+      "text": "The short version",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-320-reading",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-320-reading",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-320-reading",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-320-spacing",
+      "tag": "H2",
+      "text": "The short version",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-320-spacing",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-320-spacing",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-320-spacing",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-390-normal",
+      "tag": "H2",
+      "text": "The short version",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-390-normal",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-390-normal",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-390-normal",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-390-text200",
+      "tag": "H2",
+      "text": "The short version",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-390-text200",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-390-text200",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-390-text200",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-390-reading",
+      "tag": "H2",
+      "text": "The short version",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-390-reading",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-390-reading",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-390-reading",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-599-normal",
+      "tag": "H2",
+      "text": "The short version",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-599-normal",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-599-normal",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-599-normal",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-390-spacing",
+      "tag": "H2",
+      "text": "The short version",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-390-spacing",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-390-spacing",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-390-spacing",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-599-text200",
+      "tag": "H2",
+      "text": "The short version",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-599-text200",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-599-text200",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-599-text200",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-599-reading",
+      "tag": "H2",
+      "text": "The short version",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-599-reading",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-599-reading",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-599-reading",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-600-normal",
+      "tag": "H2",
+      "text": "The short version",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-600-normal",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-600-normal",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-600-normal",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-599-spacing",
+      "tag": "H2",
+      "text": "The short version",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-599-spacing",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-599-spacing",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-599-spacing",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-600-text200",
+      "tag": "H2",
+      "text": "The short version",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-600-text200",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-600-text200",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-600-text200",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-600-reading",
+      "tag": "H2",
+      "text": "The short version",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-600-reading",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-600-reading",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-600-reading",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-600-spacing",
+      "tag": "H2",
+      "text": "The short version",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-600-spacing",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-600-spacing",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-600-spacing",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-601-normal",
+      "tag": "H2",
+      "text": "The short version",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-601-normal",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-601-normal",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-601-normal",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-601-text200",
+      "tag": "H2",
+      "text": "The short version",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-601-text200",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-601-text200",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-601-text200",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-601-reading",
+      "tag": "H2",
+      "text": "The short version",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-601-reading",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-601-reading",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-601-reading",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-601-spacing",
+      "tag": "H2",
+      "text": "The short version",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-601-spacing",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-601-spacing",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-601-spacing",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-1440-normal",
+      "tag": "H2",
+      "text": "The short version",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-1440-normal",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-1440-normal",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-1440-normal",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-1440-text200",
+      "tag": "H2",
+      "text": "The short version",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-1440-text200",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-1440-text200",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-1440-text200",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-1440-reading",
+      "tag": "H2",
+      "text": "The short version",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-1440-reading",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-1440-reading",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-1440-reading",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-1440-spacing",
+      "tag": "H2",
+      "text": "The short version",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-1440-spacing",
+      "tag": "A",
+      "text": "Support",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-1440-spacing",
+      "tag": "A",
+      "text": "Privacy Policy",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "id": "_flagstone_terms_-light-1440-spacing",
+      "tag": "A",
+      "text": "Accessibility",
+      "before": "rgb(28, 110, 243)",
+      "after": "rgb(21, 88, 204)",
+      "backgroundBefore": "rgba(0, 0, 0, 0)",
+      "backgroundAfter": "rgba(0, 0, 0, 0)"
+    }
+  ],
+  "axeCounts": {
+    "region": 60,
+    "color-contrast": 10,
+    "scrollable-region-focusable": 6
+  }
+}
