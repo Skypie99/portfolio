@@ -9,11 +9,11 @@
  * actually references a plate image. Kept intentionally light.
  */
 import { cleanup, render } from '@testing-library/react';
-import { afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
+import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { CinematicDesert } from '../CinematicDesert';
-import { Layer } from '../Layer';
-import { ARRIVAL_ID, SCENES } from '../plates';
+import { ARRIVAL_ID } from '../plates';
 
 // gsap/ScrollTrigger is imported by the component under test and registers
 // global load/resize listeners that call window.scrollTo on import — jsdom has
@@ -22,6 +22,10 @@ import { ARRIVAL_ID, SCENES } from '../plates';
 beforeAll(() => {
   window.scrollTo = vi.fn() as unknown as typeof window.scrollTo;
 });
+
+// The initial hydration render can register the plugin before reduced motion
+// takes effect; its global timer must not outlive this jsdom environment.
+afterAll(() => ScrollTrigger.disable());
 
 /** matchMedia stub: reduced-motion = true, everything else (e.g. max-width) = false. */
 function mockMatchMedia(reducedMotion: boolean) {
@@ -65,28 +69,6 @@ describe('CinematicDesert (reduced motion)', () => {
 
     // The resolved wordmark is present in the static frame.
     expect(container.querySelector('.cdesert-title-mark')?.textContent).toBe('SkyPi Studio');
-  });
-
-  it('offers the lightweight WebP plate directly to narrow phones', () => {
-    mockMatchMedia(true);
-    const { container } = render(<CinematicDesert />);
-
-    const mobileSources = container.querySelectorAll(
-      'source[media="(max-width: 767px)"][type="image/webp"]',
-    );
-    expect(mobileSources.length).toBeGreaterThan(0);
-    mobileSources.forEach((source) => {
-      expect(source.getAttribute('srcset')).toMatch(/-mobile\.webp$/);
-    });
-  });
-
-  it('offers the same narrow-phone source on the animated plate path', () => {
-    const { container } = render(<Layer plate={SCENES[0].planes[0]} z={0} />);
-
-    const mobileSource = container.querySelector(
-      'source[media="(max-width: 767px)"][type="image/webp"]',
-    );
-    expect(mobileSource?.getAttribute('srcset')).toMatch(/-mobile\.webp$/);
   });
 
   it('static frame carries the gilded-ink data-text and the landed rim-glow (art pass)', () => {

@@ -734,8 +734,8 @@ h1, h2, h3, h4, h5, h6 {
    clearance when a top inset reduces the usable visual viewport. */
 @media (max-width: 767px) {
   #hero {
-    scroll-margin-top: -300px;
-    scroll-margin-top: calc(-300px - env(safe-area-inset-top));
+    scroll-margin-top: -360px;
+    scroll-margin-top: calc(-360px - env(safe-area-inset-top));
   }
 }
 
@@ -2861,19 +2861,6 @@ html.dark ::selection {
   }
 }
 
-/* Phase 07 device repair: `svh` is intentionally stable, but it can become
-   shorter than Safari's live visual viewport after its browser chrome moves.
-   On narrow touch phones, use `dvh` when available so the pinned film remains
-   painted through the visible viewport instead of exposing the page beneath it.
-   Browsers without `dvh` retain the established 100svh fallback above. */
-@media (max-width: 767px) and (hover: none) and (pointer: coarse) {
-  @supports (height: 100dvh) {
-    .cdesert-pin {
-      height: 100dvh;
-    }
-  }
-}
-
 /* -- Scene-group cull (PERF 2026-06-02): when a beat's group opacity reaches 0
    (fully faded out, or not yet faded in) the engine adds this class so its 3
    planes drop OUT of the composite entirely — the GPU never rasterises or blends
@@ -3500,18 +3487,17 @@ html.dark .runway-identity--page .runway-identity-chip {
 .runway-identity-name,
 .runway-identity-role {
   font-family: var(--font-dm-mono), ui-monospace, monospace;
-  text-transform: uppercase;
   line-height: 1;
   font-weight: 400;
 }
 .runway-identity-name {
   font-size: 0.75rem; /* == text-label */
-  letter-spacing: 0.13em;
+  letter-spacing: 0.025em;
   color: var(--color-near-black); /* theme-aware ink; flips light <-> dark with the glass */
 }
 .runway-identity-role {
   font-size: 0.6rem; /* clearly secondary */
-  letter-spacing: 0.1em;
+  letter-spacing: 0.025em;
   color: rgb(var(--rgb-ink) / 0.84); /* theme-aware, well above AA on the frost */
 }
 .runway-identity-role--tertiary {

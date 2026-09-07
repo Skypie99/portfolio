@@ -13,8 +13,9 @@
  * matchMedia to report prefers-reduced-motion, so the component takes its
  * contractual static-frame path and never touches GSAP at all.
  */
-import { afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
+import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
 import { cleanup, render } from '@testing-library/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import HomePage from '@/app/page';
 
@@ -33,6 +34,10 @@ beforeAll(() => {
 });
 
 afterEach(cleanup);
+
+// The first hydration render may register ScrollTrigger before the reduced-
+// motion effect runs. Stop its global timer before jsdom removes rAF.
+afterAll(() => ScrollTrigger.disable());
 
 describe('Homepage — work-index years and Record-band dates render as <time>', () => {
   it('renders every work-index row year as a real <time> element', () => {

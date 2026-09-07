@@ -125,10 +125,7 @@ export function Hero({
                 </p>
               )}
               {imprint && (
-                /* Mono, meta scale: the imprint is a credit line, not prose,
-                   and the register keeps it from competing with the
-                   positioning sentence above it (PR-004, byte-identical). */
-                <p className="mt-1.5 font-mono text-meta tracking-label uppercase text-text-meta">
+                <p className="mt-1.5 font-sans text-body-sm leading-snug text-text-meta">
                   {imprint}
                 </p>
               )}
@@ -138,7 +135,7 @@ export function Hero({
 
         {/* Eyebrow + terracotta brand rule */}
         <div className="hero-scroll-fade mb-12">
-          <p className="font-mono text-label tracking-label uppercase text-text-meta mb-3">
+          <p className="font-mono text-label text-text-meta mb-3">
             {eyebrow}
           </p>
           {/* Terracotta horizontal rule — brand anchor, ties to CTA dot pattern */}

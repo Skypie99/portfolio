@@ -50,7 +50,7 @@
  * sites rather than in a selector so it stays greppable.
  *
  * `name` defaults to the same bytes as content/profile.json's `name` and
- * `wordmarkText` ("Sky Halisky"). The two role lines preserve Technical
+ * `wordmarkText` ("Skyler Halisky"). The two role lines preserve Technical
  * Support as the primary professional identity and describe the builder side
  * without presenting it as a conventional AI engineering job title.
  *
@@ -63,7 +63,7 @@
  * one line per call site.
  */
 export function RunwayIdentity({
-  name = 'Sky Halisky',
+  name = 'Skyler Halisky',
   variant = 'runway',
 }: {
   name?: string;

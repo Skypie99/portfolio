@@ -76,21 +76,21 @@ describe('Phase 03 — the hero keeps its protected support-first sentence', () 
 });
 
 describe('Phase 03 — identity architecture (F-001, F-002)', () => {
-  it('publishes the formal name as structured-data alternateName', () => {
+  it('uses the owner-approved formal name as the primary portfolio identity', () => {
     const layout = read('app/layout.tsx');
-    expect(layout).toMatch(/alternateName:\s*'Skyler Halisky'/);
-    // The visible wordmark stays the familiar short form (contract §6).
-    expect(read('content/profile.json')).toMatch(/"wordmarkText":\s*"Sky Halisky"/);
+    expect(layout).toMatch(/name:\s*'Skyler Halisky'/);
+    expect(layout).toMatch(/alternateName:\s*'Sky'/);
+    expect(read('content/profile.json')).toMatch(/"wordmarkText":\s*"Skyler Halisky"/);
   });
 
-  it('states the Skyler / Sky / SkyPi relationship on exactly one page, in the hero', () => {
+  it('states the owner-approved one-person studio credit once, in the hero', () => {
     // Placement is evidence-driven, not stylistic: the Phase 03 blinded
     // 10-second test had 3 of 3 reviewers unable to tell whether "SkyPi
     // Studio" (the largest text on the protected opening frame) was a person
     // or an agency, because the explanation was on /about, ~60 seconds in.
     // It now sits in the homepage hero. Exactly ONE page may carry it
     // (T-043/T-050 forbid repeating it mechanically).
-    const marker = 'SkyPi Studio is Skyler (Sky) Halisky';
+    const marker = 'SkyPi Studio is one person.';
     const pagesWithIt = RECRUITER_PAGES.filter((p) => normalize(read(p)).includes(marker));
     expect(pagesWithIt, `expected exactly one page to carry the relationship sentence, got: ${pagesWithIt.join(', ')}`).toEqual([
       'app/page.tsx',
@@ -99,9 +99,9 @@ describe('Phase 03 — identity architecture (F-001, F-002)', () => {
 
   it('introduces the formal name on the About page without repeating the studio line', () => {
     const about = normalize(read('app/about/page.tsx'));
-    expect(about).toContain('I am Skyler Halisky. Most people call me Sky.');
+    expect(about).toContain('I am Skyler Halisky.');
     expect(about, 'the SkyPi relationship line must live in exactly one place').not.toContain(
-      'SkyPi Studio is Skyler (Sky) Halisky',
+      'SkyPi Studio is one person.',
     );
   });
 

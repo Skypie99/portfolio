@@ -15,7 +15,7 @@ import { OG_CARD } from '@/lib/og';
 
 export function generateMetadata(): Metadata {
   const profile = getProfile();
-  const description = 'Notes by Sky Halisky on AI, accessibility, and building things.';
+  const description = 'Notes by Skyler Halisky on AI, accessibility, and building things.';
   return {
     title: `Notes: ${profile.name}`,
     description,
@@ -32,7 +32,7 @@ export function generateMetadata(): Metadata {
       // TA-10: a leaf openGraph REPLACES the root's wholesale (W0-04) — url,
       // siteName and locale restated so they survive on this route's share.
       url: '/blog/',
-      siteName: 'Sky Halisky: Senior Technical Support',
+      siteName: 'Skyler Halisky: Senior Technical Support',
       locale: 'en_CA',
       title: `Notes: ${profile.name}`,
       description,

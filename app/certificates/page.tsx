@@ -14,7 +14,7 @@ import { OG_CARD } from '@/lib/og';
 export function generateMetadata(): Metadata {
   const profile = getProfile();
   const description =
-    'Credentials earned by Sky Halisky: Anthropic, Google, University of Michigan, DeepLearning.AI.';
+    'Credentials earned by Skyler Halisky: Anthropic, Google, University of Michigan, DeepLearning.AI.';
   return {
     title: `Credentials: ${profile.name}`,
     description,
@@ -31,7 +31,7 @@ export function generateMetadata(): Metadata {
     openGraph: {
       type: 'website',
       url: '/certificates/',
-      siteName: 'Sky Halisky: Senior Technical Support',
+      siteName: 'Skyler Halisky: Senior Technical Support',
       locale: 'en_CA',
       title: `Credentials: ${profile.name}`,
       description,

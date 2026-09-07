@@ -35,7 +35,7 @@ export function generateMetadata(): Metadata {
     openGraph: {
       type: 'website',
       url: '/archive/',
-      siteName: 'Sky Halisky: Senior Technical Support',
+      siteName: 'Skyler Halisky: Senior Technical Support',
       locale: 'en_CA',
       title,
       description,

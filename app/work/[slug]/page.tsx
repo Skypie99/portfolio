@@ -266,7 +266,7 @@ function CaseStudySignOff() {
     <Reveal variant="depth" className="max-w-measure-wide mt-16 lg:mt-20 flex flex-col gap-5">
       <hr className="w-full border-0 border-t border-border-decorative" />
       <p className="font-mono text-meta tracking-label uppercase text-text-meta">
-        Sky Halisky · Okanagan Valley, British{' '}Columbia
+        Skyler Halisky · Okanagan Valley, British{' '}Columbia
       </p>
       <Link
         href="/about/"
@@ -302,7 +302,7 @@ export async function generateMetadata({
     // L1-03: the browser-tab title adopts the identity string this page's own
     // og:title already carries (below) — signed tabs, not anonymous inventory
     // labels, on the exact pages recruiters get deep-linked to.
-    title: `${d.title}: Sky Halisky`,
+    title: `${d.title}: Skyler Halisky`,
     description: d.summary,
     alternates: {
       canonical: canonicalFor(`/work/${slug}/`),
@@ -315,9 +315,9 @@ export async function generateMetadata({
       // every /work/* share. url is the route's OWN (resolved against
       // metadataBase), never the root's homepage url.
       url: `/work/${slug}/`,
-      siteName: 'Sky Halisky: Senior Technical Support',
+      siteName: 'Skyler Halisky: Senior Technical Support',
       locale: 'en_CA',
-      title: `${d.title}: Sky Halisky`,
+      title: `${d.title}: Skyler Halisky`,
       description: d.summary,
       // FT-1/W0-01/02: the share unfurl deposits the WORK, resolved absolute via
       // metadataBase. Precedence (showcase/theme-sync): the dedicated ogCard —
@@ -335,7 +335,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${d.title}: Sky Halisky`,
+      title: `${d.title}: Skyler Halisky`,
       description: d.summary,
     },
   };
@@ -434,7 +434,7 @@ export default async function WorkDetailPage({
             url: `https://skypistudio.com/work/${d.id}/`,
             author: {
               '@type': 'Person',
-              name: 'Sky Halisky',
+              name: 'Skyler Halisky',
               url: 'https://skypistudio.com',
             },
           }),
@@ -656,7 +656,7 @@ export default async function WorkDetailPage({
                       aria-hidden="true"
                       className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta"
                     />
-                    Sky Halisky
+                    Skyler Halisky
                   </p>
                 </div>
 
@@ -864,7 +864,7 @@ export default async function WorkDetailPage({
             >
               <hr className="w-full border-0 border-t border-border-decorative" />
               <p className="font-mono text-meta tracking-label uppercase text-text-meta">
-                Sky Halisky · Okanagan Valley, British{' '}Columbia
+                Skyler Halisky · Okanagan Valley, British{' '}Columbia
               </p>
               <Link
                 href="/about/"
