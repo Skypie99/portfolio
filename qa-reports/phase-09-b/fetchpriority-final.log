@@ -1,0 +1,22 @@
+
+ RUN  v3.2.7 /Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907
+
+ ✓ components/__tests__/ThemedShowcase.test.tsx (8 tests) 33ms
+stderr | components/__tests__/ProductReveal.test.tsx > ProductReveal > renders a real <img> carrying the alt when a src is provided
+Warning: React does not recognize the `fetchPriority` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `fetchpriority` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+    at img
+    at StaticShot (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/ProductReveal.tsx:211:3)
+    at div
+    at div
+    at DeviceFrame (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/DeviceFrame.tsx:6:24)
+    at FramedArtifact (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/ProductReveal.tsx:53:3)
+    at div
+    at ProductReveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/ProductReveal.tsx:295:3)
+
+ ✓ components/__tests__/ProductReveal.test.tsx (18 tests) 114ms
+
+ Test Files  2 passed (2)
+      Tests  26 passed (26)
+   Start at  04:05:16
+   Duration  913ms (transform 108ms, setup 72ms, collect 226ms, tests 146ms, environment 389ms, prepare 91ms)
+
