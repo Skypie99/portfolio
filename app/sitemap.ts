@@ -27,6 +27,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/colophon/`, lastModified: now, changeFrequency: 'yearly', priority: 0.5 },
   ];
 
+  // Public Flagstone utility pages are copied from public/ into the export.
+  const flagstone: MetadataRoute.Sitemap = [
+    '/flagstone/',
+    '/flagstone/accessibility/',
+    '/flagstone/privacy/',
+    '/flagstone/support/',
+    '/flagstone/terms/',
+  ].map((path) => ({ url: `${BASE}${path}` }));
+
   const work: MetadataRoute.Sitemap = getDeliverables().map((d) => ({
     url: `${BASE}/work/${d.id}/`,
     lastModified: now,
@@ -41,5 +50,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...work, ...posts];
+  return [...staticRoutes, ...flagstone, ...work, ...posts];
 }

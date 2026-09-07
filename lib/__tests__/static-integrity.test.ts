@@ -475,18 +475,9 @@ describe.runIf(OUT_EXISTS)('Gap 6: share-card identity', () => {
     return collectHtmlFiles(OUT_DIR).filter((f) => !IS_404(f) && !IS_REDIRECT_STUB(f));
   }
 
-  // public/flagstone/** is a separate, hand-authored static microsite (the
-  // Flagstone app's own marketing/privacy/terms/support pages, copied
-  // verbatim into ./out/flagstone/ — not a Next.js app/ route, and not owned
-  // by this portfolio's metadata layer). It already hand-writes its own
-  // og:url; a self-canonical for it is a Flagstone-project concern, out of
-  // scope for Portfolio 3.0 Phase 02. Excluded from the canonical guard only
-  // (still covered by every other guard in this file, since it is real,
-  // linked, reachable HTML).
-  const IS_FLAGSTONE_SUBSITE = (f: string) => f.replace(OUT_DIR, '').startsWith('/flagstone/');
-
+  // All reachable non-redirect HTML, including the public Flagstone utilities.
   function canonicalRoutes(): string[] {
-    return realRoutes().filter((f) => !IS_FLAGSTONE_SUBSITE(f));
+    return realRoutes();
   }
 
   it('every route declares og:url, and it is the route’s OWN url', () => {
