@@ -25,8 +25,8 @@ import './tokens-phase2.css';
 /**
  * Steve §Cycle 12 — meta-CSP + meta-referrer.
  *
- * GH Pages can't send real CSP/HSTS HTTP headers (no server-side
- * header control), so we ship a meta-equivalent CSP via <meta
+ * This static export cannot configure host-level CSP/HSTS response headers,
+ * so we ship a document-level CSP via <meta
  * http-equiv> in <head>. Less strict than HTTP CSP (no report-uri, and
  * meta delivery drops frame-ancestors outright — see the ABSENT note
  * below), but covers script/style/font/img/object.
@@ -60,7 +60,8 @@ import './tokens-phase2.css';
  * protection. Its real home is the headers() block in next.config.mjs,
  * which now carries Content-Security-Policy: frame-ancestors 'none'
  * beside the legacy X-Frame-Options: DENY — documentation-only while we
- * are on GH Pages (gotcha 6), live the day we leave.
+ * are on GH Pages (gotcha 6). A future host must execute Next's server
+ * configuration or explicitly set equivalent response headers.
  *
  * Referrer-Policy ships in both dev + prod via metadata.referrer.
  */
