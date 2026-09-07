@@ -1,0 +1,10 @@
+
+ RUN  v3.2.7 /Users/skypie/Portfolio-codex/portfolio-3.0-phase08-20260907
+
+ ✓ lib/__tests__/flagstone-utility-contrast.test.ts (12 tests) 29ms
+
+ Test Files  1 passed (1)
+      Tests  12 passed (12)
+   Start at  03:33:53
+   Duration  853ms (transform 40ms, setup 78ms, collect 23ms, tests 29ms, environment 431ms, prepare 74ms)
+
