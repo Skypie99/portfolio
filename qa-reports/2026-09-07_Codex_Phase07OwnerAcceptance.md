@@ -2,9 +2,9 @@
 
 ## Outcome
 
-**Owner-approved visual result; full phase gate awaiting one device-checklist confirmation.** The owner supplied real-iPhone Safari screenshots and said, “ok its PERFECT are we done this phase?” The portrait seam, higher landing, full name, one-person credit, and normal-case identity presentation are accepted in the shown states. No source repair is needed or authorized by this evidence review.
+**Phase 07 accepted and closed.** The owner supplied real-iPhone Safari screenshots and said, “ok its PERFECT are we done this phase?” The portrait seam, higher landing, full name, one-person credit, and normal-case identity presentation are accepted in the shown states. The owner then explicitly confirmed that Back/Forward, reload and repeat Skip Intro, both themes, and portrait → landscape → portrait all worked normally with no layout or interaction issues. No source repair was needed or authorized by this evidence review.
 
-`INTRO_HANDOFF_GATE: HOLD` is retained solely because the message does not explicitly state whether the unpictured history, repeat, theme, and orientation checklist actions were all performed. These are not inferred from the images. A verbal confirmation is sufficient; no additional screenshots are required unless a defect was observed.
+`INTRO_HANDOFF_GATE: PASS`. The screenshot evidence establishes the shown visual states and the owner's subsequent report establishes the previously unpictured interaction, theme, and orientation checks. No extra device evidence has been inferred.
 
 ## Branch, SHA, and changes
 
@@ -50,12 +50,10 @@ Coverage: two consecutive runs per light/dark primary viewport at 320×720, 360�
 
 Browser-verification skill guidance was used for this last local check. The optional `agent-browser` CLI is unavailable; the repository's existing Playwright-based instrument and a documentation-scoped readiness harness were used. The broader site-wide wrapper failure remains banked as maintenance outside the Phase 07 homepage acceptance scope; it is not erased, called green, or repaired here.
 
-## What's left
+## Final owner confirmation
 
-One owner confirmation of Back/Forward, reload and repeat Skip Intro, both themes, and portrait → landscape → portrait on the current physical-iPhone candidate. Final gate adjudication follows that report; no new design work is proposed.
+The owner explicitly confirmed: “Back/Forward, reload and repeat Skip Intro all worked normally. Both themes worked normally, and portrait → landscape → portrait returned correctly with no layout or interaction issues.” This closes the only remaining Phase 07 evidence boundary.
 
 ## DECISIONS FOR SKY
 
-**Decision:** did all unpictured device-checklist actions work normally? **Recommendation:** confirm verbally if Back/Forward, reload/repeat, both themes, and rotation all passed. **Why:** screenshots prove the shown visuals, not the action sequence or states not pictured. **Alternative:** retain HOLD and finish any skipped checks when convenient. **Impact:** a truthful successful confirmation permits final gate adjudication; a reported defect requires a bounded proposal and explicit repair authorization before source edits. No additional screenshots are needed for a clean result.
-
-The broader site-wide overflow wrapper can be repaired in a separate maintenance scope before a future all-routes/pre-merge check. The assigned Phase 07 overflow coverage now has a passing exact-detector run; no maintenance source change is needed for this phase's visual work.
+No decision is outstanding for Phase 07. The broader site-wide overflow wrapper can be repaired in a separate maintenance scope before a future all-routes/pre-merge check. The assigned Phase 07 overflow coverage has a passing exact-detector run; no maintenance source change was made for this phase's visual work.
