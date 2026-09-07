@@ -32,16 +32,21 @@ export const Layer = forwardRef<HTMLImageElement, LayerProps>(function Layer(
   ref,
 ) {
   const startOpacity = plate.opacity ? plate.opacity.from : 1;
-  const { avifSrcSet, webpSrcSet } = sourcesFor(plate);
+  const { phoneWebp, avifSrcSet, webpSrcSet } = sourcesFor(plate);
 
   return (
     <picture>
-      {/* sizes="100vw" — every plane is a full-bleed object-fit:cover layer
+      {/* The first source pins narrow phones to the existing lightweight WebP
+          tier, avoiding oversized transparent textures in mobile Safari. The
+          remaining sizes="100vw" sets keep the established responsive choice
+          for wider viewports. Every plane is a full-bleed object-fit:cover layer
           (.cdesert-layer: width/height:100% of the absolutely-positioned
           scene), so it's always exactly the viewport width. That, plus the
-          srcset's "w" descriptors, lets the browser pick the half-resolution
-          "-mobile" variant on phones instead of always fetching the full
+          srcset's "w" descriptors, lets wider browsers choose the appropriate
           desktop-magnification tier (2026-07-14 perf pass). */}
+      {phoneWebp && (
+        <source media="(max-width: 767px)" type="image/webp" srcSet={phoneWebp} />
+      )}
       {avifSrcSet && <source type="image/avif" srcSet={avifSrcSet} sizes="100vw" />}
       {webpSrcSet && <source type="image/webp" srcSet={webpSrcSet} sizes="100vw" />}
       <img

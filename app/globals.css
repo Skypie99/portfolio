@@ -734,8 +734,8 @@ h1, h2, h3, h4, h5, h6 {
    clearance when a top inset reduces the usable visual viewport. */
 @media (max-width: 767px) {
   #hero {
-    scroll-margin-top: -220px;
-    scroll-margin-top: calc(-220px - env(safe-area-inset-top));
+    scroll-margin-top: -300px;
+    scroll-margin-top: calc(-300px - env(safe-area-inset-top));
   }
 }
 

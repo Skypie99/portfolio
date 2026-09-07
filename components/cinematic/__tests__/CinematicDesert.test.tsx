@@ -12,7 +12,8 @@ import { cleanup, render } from '@testing-library/react';
 import { afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
 
 import { CinematicDesert } from '../CinematicDesert';
-import { ARRIVAL_ID } from '../plates';
+import { Layer } from '../Layer';
+import { ARRIVAL_ID, SCENES } from '../plates';
 
 // gsap/ScrollTrigger is imported by the component under test and registers
 // global load/resize listeners that call window.scrollTo on import — jsdom has
@@ -66,6 +67,28 @@ describe('CinematicDesert (reduced motion)', () => {
     expect(container.querySelector('.cdesert-title-mark')?.textContent).toBe('SkyPi Studio');
   });
 
+  it('offers the lightweight WebP plate directly to narrow phones', () => {
+    mockMatchMedia(true);
+    const { container } = render(<CinematicDesert />);
+
+    const mobileSources = container.querySelectorAll(
+      'source[media="(max-width: 767px)"][type="image/webp"]',
+    );
+    expect(mobileSources.length).toBeGreaterThan(0);
+    mobileSources.forEach((source) => {
+      expect(source.getAttribute('srcset')).toMatch(/-mobile\.webp$/);
+    });
+  });
+
+  it('offers the same narrow-phone source on the animated plate path', () => {
+    const { container } = render(<Layer plate={SCENES[0].planes[0]} z={0} />);
+
+    const mobileSource = container.querySelector(
+      'source[media="(max-width: 767px)"][type="image/webp"]',
+    );
+    expect(mobileSource?.getAttribute('srcset')).toMatch(/-mobile\.webp$/);
+  });
+
   it('static frame carries the gilded-ink data-text and the landed rim-glow (art pass)', () => {
     mockMatchMedia(true);
     const { container } = render(<CinematicDesert />);
@@ -82,4 +105,3 @@ describe('CinematicDesert (reduced motion)', () => {
     expect(glow?.classList.contains('cdesert-cliff-glow--landed')).toBe(true);
   });
 });
-
