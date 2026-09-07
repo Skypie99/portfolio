@@ -117,7 +117,8 @@ body {
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
-summary:focus-visible {
+summary:focus-visible,
+.table-wrap[tabindex]:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 3px;
   border-radius: 0.25rem;
@@ -359,6 +360,7 @@ a:hover { color: var(--brand-deep); }
 /* ---------------- Tables ---------------- */
 
 .table-wrap { overflow-x: auto; margin-bottom: 1.25rem; }
+.table-wrap[tabindex] > table { margin-bottom: 0; }
 table {
   width: 100%;
   border-collapse: collapse;
@@ -391,7 +393,7 @@ h2, h3 { scroll-margin-top: 1.5rem; }
 .home-hero img.mark { width: 4rem; height: 5rem; margin-bottom: 0.75rem; }
 .home-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(14rem, 100%), 1fr));
   gap: 1rem;
   margin-top: 2rem;
 }
@@ -479,7 +481,8 @@ h2, h3 { scroll-margin-top: 1.5rem; }
 }
 .a11y-panel input[type="range"] {
   flex: 1 1 12rem;
-  min-width: 10rem;
+  min-width: min(10rem, 100%);
+  max-width: 100%;
   height: 2.75rem;
   accent-color: var(--brand);
   background: transparent;
@@ -559,3 +562,19 @@ h2, h3 { scroll-margin-top: 1.5rem; }
   .a11y-panel, .skip-link { display: none; }
   body { background: #fff; color: #000; }
 }
+
+/* Keep normal light-theme text legible on tinted utility surfaces without
+   changing the brand fill or the authored dark/high-contrast palettes. */
+:root:not([data-theme="dark"]):not([data-contrast="high"]) footer.page a,
+:root:not([data-theme="dark"]):not([data-contrast="high"]) .about a,
+:root:not([data-theme="dark"]):not([data-contrast="high"]) .contact-card p a,
+:root:not([data-theme="dark"]):not([data-contrast="high"]) .callout a,
+:root:not([data-theme="dark"]):not([data-contrast="high"]) .about h2,
+:root:not([data-theme="dark"]):not([data-contrast="high"]) .callout h2,
+:root:not([data-theme="dark"]):not([data-contrast="high"]) .home-card h2,
+:root:not([data-theme="dark"]):not([data-contrast="high"]) .a11y-readout {
+  color: var(--brand-deep);
+}
+
+/* Long contact addresses remain readable with the site's enlarged text. */
+main a[href^="mailto:"] { overflow-wrap: anywhere; }
