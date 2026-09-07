@@ -32,7 +32,7 @@ import { useEffect } from 'react';
  * though it has no pin or timeline. Direct `toggleAttribute` on the
  * server-rendered nav (`[data-rail]`) keeps Sidebar a server component;
  * React 18 has no `inert` prop and never reconciles an attribute it didn't
- * render. Unmount (client navigation away) disconnects and releases —
+ * render. Unmount (client navigation away) disconnects and releases;
  * non-home routes are never inert.
  */
 export function RailInert() {
