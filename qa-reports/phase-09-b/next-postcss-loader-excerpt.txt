@@ -1,0 +1,17 @@
+    const loaderSpan = this.currentTraceSpan.traceChild('postcss-loader');
+    const callback = this.async();
+    loaderSpan.traceAsyncFn(async ()=>{
+        const options = this.getOptions();
+        const file = this.resourcePath;
+        const useSourceMap = typeof options.sourceMap !== 'undefined' ? options.sourceMap : this.sourceMap;
+        const processOptions = {
+            from: file,
+            to: file
+        };
+        if (useSourceMap) {
+            processOptions.map = {
+                inline: false,
+                annotation: false,
+                ...processOptions.map
+            };
+        }

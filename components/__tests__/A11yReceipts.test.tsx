@@ -1,3 +1,4 @@
+// @vitest-environment node
 /**
  * A11yReceipts floor tests (S6 / L6-02 enhancement).
  *
@@ -13,6 +14,14 @@
  */
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { createRequire } from 'node:module';
+
+// Parse server HTML locally without installing a global window: Reveal must
+// select its real server effect branch when its module is imported.
+const { JSDOM } = createRequire(import.meta.url)('jsdom') as {
+  JSDOM: new () => { window: { document: Document } };
+};
+const document = new JSDOM().window.document;
 
 import { describe, expect, it } from 'vitest';
 import { renderToString } from 'react-dom/server';

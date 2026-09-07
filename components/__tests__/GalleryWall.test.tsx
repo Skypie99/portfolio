@@ -9,7 +9,6 @@
  * has no lone card), and the filter choreography.
  */
 import { describe, expect, it, afterEach } from 'vitest';
-import { renderToString } from 'react-dom/server';
 import { cleanup, render, waitFor } from '@testing-library/react';
 
 import { GalleryWall } from '@/components/GalleryWall';
@@ -44,13 +43,6 @@ afterEach(() => {
 });
 
 describe('GalleryWall', () => {
-  it('SSR emits every plate visible — no inline opacity:0 (RM/no-JS floor)', () => {
-    const html = renderToString(<GalleryWall deliverables={six} />);
-    expect(html).not.toContain('opacity:0');
-    expect(html).not.toContain('opacity: 0');
-    for (let n = 1; n <= 6; n++) expect(html).toContain(`Test Project ${n}`);
-  });
-
   it('hangs all six full-width in order with catalog numbers 01→06', () => {
     const { container } = render(<GalleryWall deliverables={six} />);
     const rows = container.querySelectorAll('ul > li');
