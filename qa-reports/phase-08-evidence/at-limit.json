@@ -1,0 +1,8 @@
+{
+  "environment": "macOS VoiceOver",
+  "initialRunning": false,
+  "attempt": "Launched VoiceOver after checking it was not active; startup opened VoiceOver Quickstart rather than a controllable reading session. AppleScript phrase query did not return.",
+  "result": "UNRUN / ENVIRONMENT LIMIT",
+  "cleanup": "Terminated only the newly launched Quickstart process and its pending osascript query. No VoiceOver configuration, privacy permission, or security setting changed.",
+  "scope": "DOM/AX and keyboard evidence is not screen-reader evidence. Phase10 final AT certification remains required."
+}

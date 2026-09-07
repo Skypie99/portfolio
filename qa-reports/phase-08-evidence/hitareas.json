@@ -1,0 +1,2000 @@
+[
+  {
+    "route": "/work/",
+    "text": "Skip to main content",
+    "href": "#main",
+    "width": 1,
+    "height": 1,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": false,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "BODY"
+  },
+  {
+    "route": "/work/",
+    "text": "View project →",
+    "href": "/work/flagstone/",
+    "width": 125.890625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "-21px",
+      "bottom": "0px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": true,
+    "inline": false,
+    "parent": "DIV"
+  },
+  {
+    "route": "/work/",
+    "text": "Live ↗",
+    "href": "https://flagstone.skypistudio.com",
+    "width": 53.90625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "0px",
+      "bottom": "-21px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": true,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "SPAN"
+  },
+  {
+    "route": "/work/",
+    "text": "GitHub ↗",
+    "href": "https://github.com/Skypie99/AccessMap",
+    "width": 69.859375,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "0px",
+      "bottom": "-21px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": true,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "SPAN"
+  },
+  {
+    "route": "/work/",
+    "text": "View project →",
+    "href": "/work/claude-corp/",
+    "width": 125.890625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "-21px",
+      "bottom": "0px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": true,
+    "inline": false,
+    "parent": "DIV"
+  },
+  {
+    "route": "/work/",
+    "text": "Live ↗",
+    "href": "https://claudecorp.skypistudio.com",
+    "width": 53.90625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "0px",
+      "bottom": "-21px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": true,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "SPAN"
+  },
+  {
+    "route": "/work/",
+    "text": "View project →",
+    "href": "/work/dashboard/",
+    "width": 125.890625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "-21px",
+      "bottom": "0px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": true,
+    "inline": false,
+    "parent": "DIV"
+  },
+  {
+    "route": "/work/",
+    "text": "Live ↗",
+    "href": "https://dashboard.skypistudio.com",
+    "width": 53.90625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "0px",
+      "bottom": "-21px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": true,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "SPAN"
+  },
+  {
+    "route": "/work/",
+    "text": "View project →",
+    "href": "/work/prompt-library/",
+    "width": 125.890625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "-21px",
+      "bottom": "0px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": true,
+    "inline": false,
+    "parent": "DIV"
+  },
+  {
+    "route": "/work/",
+    "text": "Live ↗",
+    "href": "https://prompts.skypistudio.com",
+    "width": 53.90625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "0px",
+      "bottom": "-21px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": true,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "SPAN"
+  },
+  {
+    "route": "/work/",
+    "text": "GitHub ↗",
+    "href": "https://github.com/Skypie99/Prompt_Library",
+    "width": 69.859375,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "0px",
+      "bottom": "-21px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": true,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "SPAN"
+  },
+  {
+    "route": "/work/",
+    "text": "View project →",
+    "href": "/work/ghost-code/",
+    "width": 125.890625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "-21px",
+      "bottom": "0px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": true,
+    "inline": false,
+    "parent": "DIV"
+  },
+  {
+    "route": "/work/",
+    "text": "Live ↗",
+    "href": "https://ghostcode.skypistudio.com",
+    "width": 53.90625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "0px",
+      "bottom": "-21px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": true,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "SPAN"
+  },
+  {
+    "route": "/work/",
+    "text": "GitHub ↗",
+    "href": "https://github.com/Skypie99/ghost-code",
+    "width": 69.859375,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "0px",
+      "bottom": "-21px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": true,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "SPAN"
+  },
+  {
+    "route": "/work/",
+    "text": "Home",
+    "href": "/",
+    "width": 38.859375,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/",
+    "text": "The Work",
+    "href": "/work/",
+    "width": 62.109375,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/",
+    "text": "Credentials",
+    "href": "/certificates/",
+    "width": 75.65625,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/",
+    "text": "A Brief Account",
+    "href": "/about/",
+    "width": 103.65625,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/",
+    "text": "Notes",
+    "href": "/blog/",
+    "width": 38.734375,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/",
+    "text": "Accessibility",
+    "href": "/accessibility/",
+    "width": 83.8125,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/",
+    "text": "Colophon",
+    "href": "/colophon/",
+    "width": 64.203125,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/",
+    "text": "Let’s talk",
+    "href": "/contact/",
+    "width": 57.96875,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/",
+    "text": "hello@skypistudio.com",
+    "href": "mailto:hello@skypistudio.com",
+    "width": 153.46875,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/blog/",
+    "text": "Skip to main content",
+    "href": "#main",
+    "width": 1,
+    "height": 1,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": false,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "BODY"
+  },
+  {
+    "route": "/blog/",
+    "text": "RSS",
+    "href": "/feed.xml",
+    "width": 23.9375,
+    "height": 17.390625,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "P"
+  },
+  {
+    "route": "/blog/",
+    "text": "JSON",
+    "href": "/feed.json",
+    "width": 31.90625,
+    "height": 17.390625,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "P"
+  },
+  {
+    "route": "/blog/",
+    "text": "Home",
+    "href": "/",
+    "width": 38.859375,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/blog/",
+    "text": "The Work",
+    "href": "/work/",
+    "width": 62.109375,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/blog/",
+    "text": "Credentials",
+    "href": "/certificates/",
+    "width": 75.65625,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/blog/",
+    "text": "A Brief Account",
+    "href": "/about/",
+    "width": 103.65625,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/blog/",
+    "text": "Notes",
+    "href": "/blog/",
+    "width": 38.734375,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/blog/",
+    "text": "Accessibility",
+    "href": "/accessibility/",
+    "width": 83.8125,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/blog/",
+    "text": "Colophon",
+    "href": "/colophon/",
+    "width": 64.203125,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/blog/",
+    "text": "Let’s talk",
+    "href": "/contact/",
+    "width": 57.96875,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/blog/",
+    "text": "hello@skypistudio.com",
+    "href": "mailto:hello@skypistudio.com",
+    "width": 153.46875,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/flagstone/",
+    "text": "Skip to main content",
+    "href": "#main",
+    "width": 1,
+    "height": 1,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": false,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "BODY"
+  },
+  {
+    "route": "/work/flagstone/",
+    "text": "The Work",
+    "href": "/work/",
+    "width": 63.8125,
+    "height": 17.390625,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/flagstone/",
+    "text": "web build (opens in new tab)",
+    "href": "https://flagstone.skypistudio.com",
+    "width": 77.546875,
+    "height": 22,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "P"
+  },
+  {
+    "route": "/work/flagstone/",
+    "text": "View project →",
+    "href": "/work/claude-corp/",
+    "width": 125.890625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "-21px",
+      "bottom": "0px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": true,
+    "inline": false,
+    "parent": "DIV"
+  },
+  {
+    "route": "/work/flagstone/",
+    "text": "Live ↗",
+    "href": "https://claudecorp.skypistudio.com",
+    "width": 53.90625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "0px",
+      "bottom": "-21px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": true,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "SPAN"
+  },
+  {
+    "route": "/work/flagstone/",
+    "text": "View project →",
+    "href": "/work/dashboard/",
+    "width": 125.890625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "-21px",
+      "bottom": "0px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": true,
+    "inline": false,
+    "parent": "DIV"
+  },
+  {
+    "route": "/work/flagstone/",
+    "text": "Live ↗",
+    "href": "https://dashboard.skypistudio.com",
+    "width": 53.90625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "0px",
+      "bottom": "-21px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": true,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "SPAN"
+  },
+  {
+    "route": "/work/flagstone/",
+    "text": "Home",
+    "href": "/",
+    "width": 38.859375,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/flagstone/",
+    "text": "The Work",
+    "href": "/work/",
+    "width": 62.109375,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/flagstone/",
+    "text": "Credentials",
+    "href": "/certificates/",
+    "width": 75.65625,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/flagstone/",
+    "text": "A Brief Account",
+    "href": "/about/",
+    "width": 103.65625,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/flagstone/",
+    "text": "Notes",
+    "href": "/blog/",
+    "width": 38.734375,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/flagstone/",
+    "text": "Accessibility",
+    "href": "/accessibility/",
+    "width": 83.8125,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/dashboard/",
+    "text": "Skip to main content",
+    "href": "#main",
+    "width": 1,
+    "height": 1,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": false,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "BODY"
+  },
+  {
+    "route": "/work/dashboard/",
+    "text": "The Work",
+    "href": "/work/",
+    "width": 63.8125,
+    "height": 17.390625,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/dashboard/",
+    "text": "View project →",
+    "href": "/work/prompt-library/",
+    "width": 125.890625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "-21px",
+      "bottom": "0px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": true,
+    "inline": false,
+    "parent": "DIV"
+  },
+  {
+    "route": "/work/dashboard/",
+    "text": "Live ↗",
+    "href": "https://prompts.skypistudio.com",
+    "width": 53.90625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "0px",
+      "bottom": "-21px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": true,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "SPAN"
+  },
+  {
+    "route": "/work/dashboard/",
+    "text": "GitHub ↗",
+    "href": "https://github.com/Skypie99/Prompt_Library",
+    "width": 69.859375,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "0px",
+      "bottom": "-21px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": true,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "SPAN"
+  },
+  {
+    "route": "/work/dashboard/",
+    "text": "View project →",
+    "href": "/work/ghost-code/",
+    "width": 125.890625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "-21px",
+      "bottom": "0px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": true,
+    "inline": false,
+    "parent": "DIV"
+  },
+  {
+    "route": "/work/dashboard/",
+    "text": "Live ↗",
+    "href": "https://ghostcode.skypistudio.com",
+    "width": 53.90625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "0px",
+      "bottom": "-21px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": true,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "SPAN"
+  },
+  {
+    "route": "/work/dashboard/",
+    "text": "GitHub ↗",
+    "href": "https://github.com/Skypie99/ghost-code",
+    "width": 69.859375,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "0px",
+      "bottom": "-21px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": true,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "SPAN"
+  },
+  {
+    "route": "/work/dashboard/",
+    "text": "Home",
+    "href": "/",
+    "width": 38.859375,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/dashboard/",
+    "text": "The Work",
+    "href": "/work/",
+    "width": 62.109375,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/dashboard/",
+    "text": "Credentials",
+    "href": "/certificates/",
+    "width": 75.65625,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/dashboard/",
+    "text": "A Brief Account",
+    "href": "/about/",
+    "width": 103.65625,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/dashboard/",
+    "text": "Notes",
+    "href": "/blog/",
+    "width": 38.734375,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/dashboard/",
+    "text": "Accessibility",
+    "href": "/accessibility/",
+    "width": 83.8125,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/dashboard/",
+    "text": "Colophon",
+    "href": "/colophon/",
+    "width": 64.203125,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/claude-corp/",
+    "text": "Skip to main content",
+    "href": "#main",
+    "width": 1,
+    "height": 1,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": false,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "BODY"
+  },
+  {
+    "route": "/work/claude-corp/",
+    "text": "The Work",
+    "href": "/work/",
+    "width": 63.8125,
+    "height": 17.390625,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/claude-corp/",
+    "text": "View project →",
+    "href": "/work/dashboard/",
+    "width": 125.890625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "-21px",
+      "bottom": "0px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": true,
+    "inline": false,
+    "parent": "DIV"
+  },
+  {
+    "route": "/work/claude-corp/",
+    "text": "Live ↗",
+    "href": "https://dashboard.skypistudio.com",
+    "width": 53.90625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "0px",
+      "bottom": "-21px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": true,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "SPAN"
+  },
+  {
+    "route": "/work/claude-corp/",
+    "text": "View project →",
+    "href": "/work/prompt-library/",
+    "width": 125.890625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "-21px",
+      "bottom": "0px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": true,
+    "inline": false,
+    "parent": "DIV"
+  },
+  {
+    "route": "/work/claude-corp/",
+    "text": "Live ↗",
+    "href": "https://prompts.skypistudio.com",
+    "width": 53.90625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "0px",
+      "bottom": "-21px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": true,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "SPAN"
+  },
+  {
+    "route": "/work/claude-corp/",
+    "text": "GitHub ↗",
+    "href": "https://github.com/Skypie99/Prompt_Library",
+    "width": 69.859375,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "0px",
+      "bottom": "-21px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": true,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "SPAN"
+  },
+  {
+    "route": "/work/claude-corp/",
+    "text": "Home",
+    "href": "/",
+    "width": 38.859375,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/claude-corp/",
+    "text": "The Work",
+    "href": "/work/",
+    "width": 62.109375,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/claude-corp/",
+    "text": "Credentials",
+    "href": "/certificates/",
+    "width": 75.65625,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/claude-corp/",
+    "text": "A Brief Account",
+    "href": "/about/",
+    "width": 103.65625,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/claude-corp/",
+    "text": "Notes",
+    "href": "/blog/",
+    "width": 38.734375,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/claude-corp/",
+    "text": "Accessibility",
+    "href": "/accessibility/",
+    "width": 83.8125,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/claude-corp/",
+    "text": "Colophon",
+    "href": "/colophon/",
+    "width": 64.203125,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/claude-corp/",
+    "text": "Let’s talk",
+    "href": "/contact/",
+    "width": 57.96875,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/claude-corp/",
+    "text": "hello@skypistudio.com",
+    "href": "mailto:hello@skypistudio.com",
+    "width": 153.46875,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/ghost-code/",
+    "text": "Skip to main content",
+    "href": "#main",
+    "width": 1,
+    "height": 1,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": false,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "BODY"
+  },
+  {
+    "route": "/work/ghost-code/",
+    "text": "The Work",
+    "href": "/work/",
+    "width": 63.8125,
+    "height": 17.390625,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/ghost-code/",
+    "text": "View project →",
+    "href": "/work/flagstone/",
+    "width": 125.890625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "-21px",
+      "bottom": "0px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": true,
+    "inline": false,
+    "parent": "DIV"
+  },
+  {
+    "route": "/work/ghost-code/",
+    "text": "Live ↗",
+    "href": "https://flagstone.skypistudio.com",
+    "width": 53.90625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "0px",
+      "bottom": "-21px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": true,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "SPAN"
+  },
+  {
+    "route": "/work/ghost-code/",
+    "text": "GitHub ↗",
+    "href": "https://github.com/Skypie99/AccessMap",
+    "width": 69.859375,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "0px",
+      "bottom": "-21px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": true,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "SPAN"
+  },
+  {
+    "route": "/work/ghost-code/",
+    "text": "View project →",
+    "href": "/work/claude-corp/",
+    "width": 125.890625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "-21px",
+      "bottom": "0px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": true,
+    "inline": false,
+    "parent": "DIV"
+  },
+  {
+    "route": "/work/ghost-code/",
+    "text": "Live ↗",
+    "href": "https://claudecorp.skypistudio.com",
+    "width": 53.90625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "0px",
+      "bottom": "-21px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": true,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "SPAN"
+  },
+  {
+    "route": "/work/ghost-code/",
+    "text": "Home",
+    "href": "/",
+    "width": 38.859375,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/ghost-code/",
+    "text": "The Work",
+    "href": "/work/",
+    "width": 62.109375,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/ghost-code/",
+    "text": "Credentials",
+    "href": "/certificates/",
+    "width": 75.65625,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/ghost-code/",
+    "text": "A Brief Account",
+    "href": "/about/",
+    "width": 103.65625,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/ghost-code/",
+    "text": "Notes",
+    "href": "/blog/",
+    "width": 38.734375,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/ghost-code/",
+    "text": "Accessibility",
+    "href": "/accessibility/",
+    "width": 83.8125,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/ghost-code/",
+    "text": "Colophon",
+    "href": "/colophon/",
+    "width": 64.203125,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/ghost-code/",
+    "text": "Let’s talk",
+    "href": "/contact/",
+    "width": 57.96875,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/prompt-library/",
+    "text": "Skip to main content",
+    "href": "#main",
+    "width": 1,
+    "height": 1,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": false,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "BODY"
+  },
+  {
+    "route": "/work/prompt-library/",
+    "text": "The Work",
+    "href": "/work/",
+    "width": 63.8125,
+    "height": 17.390625,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/prompt-library/",
+    "text": "View project →",
+    "href": "/work/ghost-code/",
+    "width": 125.890625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "-21px",
+      "bottom": "0px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": true,
+    "inline": false,
+    "parent": "DIV"
+  },
+  {
+    "route": "/work/prompt-library/",
+    "text": "Live ↗",
+    "href": "https://ghostcode.skypistudio.com",
+    "width": 53.90625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "0px",
+      "bottom": "-21px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": true,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "SPAN"
+  },
+  {
+    "route": "/work/prompt-library/",
+    "text": "GitHub ↗",
+    "href": "https://github.com/Skypie99/ghost-code",
+    "width": 69.859375,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "0px",
+      "bottom": "-21px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": true,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "SPAN"
+  },
+  {
+    "route": "/work/prompt-library/",
+    "text": "View project →",
+    "href": "/work/flagstone/",
+    "width": 125.890625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "-21px",
+      "bottom": "0px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": true,
+    "inline": false,
+    "parent": "DIV"
+  },
+  {
+    "route": "/work/prompt-library/",
+    "text": "Live ↗",
+    "href": "https://flagstone.skypistudio.com",
+    "width": 53.90625,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "0px",
+      "bottom": "-21px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": true,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "SPAN"
+  },
+  {
+    "route": "/work/prompt-library/",
+    "text": "GitHub ↗",
+    "href": "https://github.com/Skypie99/AccessMap",
+    "width": 69.859375,
+    "height": 23.390625,
+    "after": {
+      "content": "\"\"",
+      "top": "0px",
+      "bottom": "-21px",
+      "height": "44.3906px"
+    },
+    "centerHit": true,
+    "belowHit": true,
+    "aboveHit": false,
+    "inline": false,
+    "parent": "SPAN"
+  },
+  {
+    "route": "/work/prompt-library/",
+    "text": "Home",
+    "href": "/",
+    "width": 38.859375,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/prompt-library/",
+    "text": "The Work",
+    "href": "/work/",
+    "width": 62.109375,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/prompt-library/",
+    "text": "Credentials",
+    "href": "/certificates/",
+    "width": 75.65625,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/prompt-library/",
+    "text": "A Brief Account",
+    "href": "/about/",
+    "width": 103.65625,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/prompt-library/",
+    "text": "Notes",
+    "href": "/blog/",
+    "width": 38.734375,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/prompt-library/",
+    "text": "Accessibility",
+    "href": "/accessibility/",
+    "width": 83.8125,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/prompt-library/",
+    "text": "Colophon",
+    "href": "/colophon/",
+    "width": 64.203125,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/prompt-library/",
+    "text": "Let’s talk",
+    "href": "/contact/",
+    "width": 57.96875,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  },
+  {
+    "route": "/work/prompt-library/",
+    "text": "hello@skypistudio.com",
+    "href": "mailto:hello@skypistudio.com",
+    "width": 153.46875,
+    "height": 20,
+    "after": {
+      "content": "none",
+      "top": "auto",
+      "bottom": "auto",
+      "height": "auto"
+    },
+    "centerHit": true,
+    "belowHit": false,
+    "aboveHit": false,
+    "inline": true,
+    "parent": "LI"
+  }
+]

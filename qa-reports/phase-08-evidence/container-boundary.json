@@ -1,0 +1,122 @@
+[
+  {
+    "theme": "light",
+    "scale": 100,
+    "offset": -1,
+    "font": 11,
+    "width": 219,
+    "whiteSpace": "normal",
+    "text": "· Evidence JSON",
+    "overflow": false
+  },
+  {
+    "theme": "light",
+    "scale": 100,
+    "offset": 0,
+    "font": 11,
+    "width": 220,
+    "whiteSpace": "normal",
+    "text": "· Evidence JSON",
+    "overflow": false
+  },
+  {
+    "theme": "light",
+    "scale": 100,
+    "offset": 1,
+    "font": 11,
+    "width": 221,
+    "whiteSpace": "nowrap",
+    "text": "· Evidence JSON",
+    "overflow": true
+  },
+  {
+    "theme": "light",
+    "scale": 200,
+    "offset": -1,
+    "font": 22,
+    "width": 439,
+    "whiteSpace": "normal",
+    "text": "· Evidence JSON",
+    "overflow": false
+  },
+  {
+    "theme": "light",
+    "scale": 200,
+    "offset": 0,
+    "font": 22,
+    "width": 440,
+    "whiteSpace": "normal",
+    "text": "· Evidence JSON",
+    "overflow": false
+  },
+  {
+    "theme": "light",
+    "scale": 200,
+    "offset": 1,
+    "font": 22,
+    "width": 441,
+    "whiteSpace": "nowrap",
+    "text": "· Evidence JSON",
+    "overflow": true
+  },
+  {
+    "theme": "dark",
+    "scale": 100,
+    "offset": -1,
+    "font": 11,
+    "width": 219,
+    "whiteSpace": "normal",
+    "text": "· Evidence JSON",
+    "overflow": false
+  },
+  {
+    "theme": "dark",
+    "scale": 100,
+    "offset": 0,
+    "font": 11,
+    "width": 220,
+    "whiteSpace": "normal",
+    "text": "· Evidence JSON",
+    "overflow": false
+  },
+  {
+    "theme": "dark",
+    "scale": 100,
+    "offset": 1,
+    "font": 11,
+    "width": 221,
+    "whiteSpace": "nowrap",
+    "text": "· Evidence JSON",
+    "overflow": true
+  },
+  {
+    "theme": "dark",
+    "scale": 200,
+    "offset": -1,
+    "font": 22,
+    "width": 439,
+    "whiteSpace": "normal",
+    "text": "· Evidence JSON",
+    "overflow": false
+  },
+  {
+    "theme": "dark",
+    "scale": 200,
+    "offset": 0,
+    "font": 22,
+    "width": 440,
+    "whiteSpace": "normal",
+    "text": "· Evidence JSON",
+    "overflow": false
+  },
+  {
+    "theme": "dark",
+    "scale": 200,
+    "offset": 1,
+    "font": 22,
+    "width": 441,
+    "whiteSpace": "nowrap",
+    "text": "· Evidence JSON",
+    "overflow": true
+  }
+]

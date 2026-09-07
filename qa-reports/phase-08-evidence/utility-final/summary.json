@@ -1,0 +1,8472 @@
+[
+  {
+    "id": "_flagstone_-light-320-text200",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 320,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_-light-320-normal",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 320,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_-light-320-high",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 320,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-320-forced",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 320,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_-light-320-reading",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 320,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-320-spacing",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 320,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-390-normal",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 390,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-390-text200",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 390,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-390-high",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 390,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-390-forced",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 390,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-390-reading",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 390,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-390-spacing",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 390,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-599-normal",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 599,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-599-text200",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 599,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-599-high",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 599,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-599-forced",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 599,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-599-reading",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 599,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-599-spacing",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 599,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-600-normal",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 600,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-600-text200",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 600,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-600-high",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 600,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-600-forced",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 600,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-600-reading",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 600,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-600-spacing",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 600,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-601-normal",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 601,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-601-text200",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 601,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-601-high",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 601,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-601-forced",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 601,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-601-reading",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 601,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-601-spacing",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 601,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-1440-normal",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_-light-1440-text200",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_-light-1440-high",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-1440-forced",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_-light-1440-reading",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-light-1440-spacing",
+    "route": "/flagstone/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-320-normal",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_-dark-320-text200",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_-dark-320-high",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-320-reading",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-320-forced",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            ".brand > span"
+          ],
+          [
+            "li:nth-child(1) > a[href$=\"support/\"]"
+          ],
+          [
+            "li:nth-child(2) > a[href$=\"privacy/\"]"
+          ],
+          [
+            "li:nth-child(3) > a[href$=\"accessibility/\"]"
+          ],
+          [
+            "li:nth-child(4) > a[href$=\"terms/\"]"
+          ],
+          [
+            "h1"
+          ],
+          [
+            ".tagline"
+          ],
+          [
+            "#a11y-dark"
+          ]
+        ]
+      },
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_-dark-320-spacing",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-390-normal",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-390-text200",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-390-high",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-390-forced",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-390-reading",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-390-spacing",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-599-normal",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-599-text200",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-599-high",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-599-forced",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-599-reading",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-599-spacing",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-600-normal",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-600-text200",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-600-high",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-600-reading",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-600-forced",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-601-normal",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-600-spacing",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-601-text200",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-601-high",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-601-reading",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-601-forced",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-601-spacing",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-1440-normal",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_-dark-1440-high",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-1440-text200",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_-dark-1440-reading",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_-dark-1440-forced",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            ".brand > span"
+          ],
+          [
+            "li:nth-child(1) > a[href$=\"support/\"]"
+          ],
+          [
+            "li:nth-child(2) > a[href$=\"privacy/\"]"
+          ],
+          [
+            "li:nth-child(3) > a[href$=\"accessibility/\"]"
+          ],
+          [
+            "li:nth-child(4) > a[href$=\"terms/\"]"
+          ],
+          [
+            "h1"
+          ],
+          [
+            ".tagline"
+          ],
+          [
+            "#a11y-dark"
+          ]
+        ]
+      },
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_-dark-1440-spacing",
+    "route": "/flagstone/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_accessibility_-light-320-normal",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 320,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 330,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "after": 9
+      }
+    ],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            "p:nth-child(4) > a[target=\"_blank\"][rel=\"noopener noreferrer\"]"
+          ]
+        ]
+      },
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      },
+      {
+        "id": "scrollable-region-focusable",
+        "nodes": [
+          [
+            ".table-wrap"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-320-text200",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 320,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 248,
+        "scroll": 624,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "after": 13
+      }
+    ],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      },
+      {
+        "id": "scrollable-region-focusable",
+        "nodes": [
+          [
+            ".table-wrap"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-320-high",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 320,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 338,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "after": 14
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-320-forced",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 320,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 330,
+        "left": 0,
+        "label": null,
+        "outline": "rgba(5, 0, 73, 0.8) auto 1px",
+        "after": 12
+      }
+    ],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      },
+      {
+        "id": "scrollable-region-focusable",
+        "nodes": [
+          [
+            ".table-wrap"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-320-reading",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 320,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 369,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "after": 8
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-320-spacing",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 320,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 401,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "after": 14
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-390-normal",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 390,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 354,
+        "scroll": 354,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(26, 26, 26) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-390-text200",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 390,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 318,
+        "scroll": 624,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "after": 14
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-390-high",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 390,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 354,
+        "scroll": 354,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 0, 0) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-390-reading",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 390,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 354,
+        "scroll": 369,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "after": 3
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-390-forced",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 390,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 354,
+        "scroll": 354,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 0, 0) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-599-normal",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 599,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(26, 26, 26) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-390-spacing",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 390,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 354,
+        "scroll": 401,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "after": 13
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-599-text200",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 599,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 527,
+        "scroll": 624,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "after": 13
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-599-high",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 599,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 0, 0) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-599-forced",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 599,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 0, 0) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-599-reading",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 599,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(26, 26, 26) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-600-normal",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 600,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(26, 26, 26) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-599-spacing",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 599,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(26, 26, 26) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-600-text200",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 600,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 528,
+        "scroll": 624,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "after": 14
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-600-high",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 600,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 0, 0) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-600-forced",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 600,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 0, 0) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-600-reading",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 600,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(26, 26, 26) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-601-normal",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 601,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(26, 26, 26) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-600-spacing",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 600,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(26, 26, 26) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-601-high",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 601,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 0, 0) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-601-text200",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 601,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 505,
+        "scroll": 683,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "after": 12
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-601-forced",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 601,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 0, 0) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-601-reading",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 601,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(26, 26, 26) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-601-spacing",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 601,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(26, 26, 26) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-1440-normal",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(26, 26, 26) none 3px",
+        "after": 0
+      }
+    ],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            "p:nth-child(4) > a[target=\"_blank\"][rel=\"noopener noreferrer\"]"
+          ]
+        ]
+      },
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-1440-high",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 0, 0) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-1440-text200",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 1344,
+        "scroll": 1344,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(26, 26, 26) none 3px",
+        "after": 0
+      }
+    ],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-1440-reading",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(26, 26, 26) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-1440-forced",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 0, 0) none 3px",
+        "after": 0
+      }
+    ],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-light-1440-spacing",
+    "route": "/flagstone/accessibility/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(26, 26, 26) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-320-normal",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 330,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "after": 10
+      }
+    ],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      },
+      {
+        "id": "scrollable-region-focusable",
+        "nodes": [
+          [
+            ".table-wrap"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-320-high",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 338,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "after": 11
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-320-text200",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 248,
+        "scroll": 624,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "after": 12
+      }
+    ],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      },
+      {
+        "id": "scrollable-region-focusable",
+        "nodes": [
+          [
+            ".table-wrap"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-320-reading",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 369,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "after": 19
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-320-forced",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 330,
+        "left": 0,
+        "label": null,
+        "outline": "rgba(0, 230, 255, 0.8) auto 1px",
+        "after": 16
+      }
+    ],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            ".brand > span"
+          ],
+          [
+            "li:nth-child(1) > a[href$=\"support/\"]"
+          ],
+          [
+            "li:nth-child(2) > a[href$=\"privacy/\"]"
+          ],
+          [
+            "a[href=\"./\"]"
+          ],
+          [
+            "li:nth-child(4) > a[href$=\"terms/\"]"
+          ],
+          [
+            "h1"
+          ],
+          [
+            ".tagline"
+          ],
+          [
+            "#a11y-dark"
+          ],
+          [
+            ".contact-link"
+          ]
+        ]
+      },
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      },
+      {
+        "id": "scrollable-region-focusable",
+        "nodes": [
+          [
+            ".table-wrap"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-320-spacing",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 401,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "after": 14
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-390-normal",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 354,
+        "scroll": 354,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(232, 237, 245) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-390-high",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 354,
+        "scroll": 354,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(255, 255, 255) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-390-text200",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 318,
+        "scroll": 624,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "after": 14
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-390-reading",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 354,
+        "scroll": 369,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "after": 4
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-390-forced",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 354,
+        "scroll": 354,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(255, 255, 255) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-599-normal",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(232, 237, 245) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-390-spacing",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 354,
+        "scroll": 401,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "after": 12
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-599-text200",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 527,
+        "scroll": 624,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "after": 14
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-599-high",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(255, 255, 255) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-599-forced",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(255, 255, 255) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-599-reading",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(232, 237, 245) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-600-normal",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(232, 237, 245) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-599-spacing",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(232, 237, 245) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-600-text200",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 528,
+        "scroll": 624,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "after": 11
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-600-high",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(255, 255, 255) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-600-reading",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(232, 237, 245) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-600-forced",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(255, 255, 255) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-601-normal",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(232, 237, 245) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-600-spacing",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(232, 237, 245) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-601-high",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(255, 255, 255) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-601-text200",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 505,
+        "scroll": 683,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "after": 13
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-601-reading",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(232, 237, 245) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-601-forced",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(255, 255, 255) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-601-spacing",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(232, 237, 245) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-1440-normal",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(232, 237, 245) none 3px",
+        "after": 0
+      }
+    ],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-1440-high",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(255, 255, 255) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-1440-text200",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 1344,
+        "scroll": 1344,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(232, 237, 245) none 3px",
+        "after": 0
+      }
+    ],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-1440-reading",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(232, 237, 245) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-1440-forced",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(255, 255, 255) none 3px",
+        "after": 0
+      }
+    ],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            ".brand > span"
+          ],
+          [
+            "li:nth-child(1) > a[href$=\"support/\"]"
+          ],
+          [
+            "li:nth-child(2) > a[href$=\"privacy/\"]"
+          ],
+          [
+            "a[href=\"./\"]"
+          ],
+          [
+            "li:nth-child(4) > a[href$=\"terms/\"]"
+          ],
+          [
+            "h1"
+          ],
+          [
+            ".tagline"
+          ],
+          [
+            "#a11y-dark"
+          ],
+          [
+            ".contact-link"
+          ]
+        ]
+      },
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_accessibility_-dark-1440-spacing",
+    "route": "/flagstone/accessibility/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": false,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": null,
+        "outline": "rgb(232, 237, 245) none 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-320-normal",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 320,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 284,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 284,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-320-text200",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 320,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 248,
+        "scroll": 519,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 12
+      },
+      {
+        "focused": true,
+        "client": 248,
+        "scroll": 297,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-320-high",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 320,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 284,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 284,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-320-reading",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 320,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 302,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 6
+      },
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 284,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-320-forced",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 320,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 284,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgba(5, 0, 73, 0.8) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 284,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgba(5, 0, 73, 0.8) solid 3px",
+        "after": 0
+      }
+    ],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-320-spacing",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 320,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 328,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 11
+      },
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 284,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-390-text200",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 390,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 318,
+        "scroll": 519,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 14
+      },
+      {
+        "focused": true,
+        "client": 318,
+        "scroll": 318,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-390-high",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 390,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 354,
+        "scroll": 354,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 354,
+        "scroll": 354,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-390-forced",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 390,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 354,
+        "scroll": 354,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgba(5, 0, 73, 0.8) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 354,
+        "scroll": 354,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgba(5, 0, 73, 0.8) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-390-normal",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 390,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 354,
+        "scroll": 354,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 354,
+        "scroll": 354,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-390-spacing",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 390,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 354,
+        "scroll": 354,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 354,
+        "scroll": 354,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-390-reading",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 390,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 354,
+        "scroll": 354,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 354,
+        "scroll": 354,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-599-normal",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 599,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-599-text200",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 599,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 527,
+        "scroll": 527,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 527,
+        "scroll": 527,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-599-high",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 599,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-599-forced",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 599,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgba(5, 0, 73, 0.8) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgba(5, 0, 73, 0.8) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-599-reading",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 599,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-599-spacing",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 599,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-600-normal",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 600,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-600-text200",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 600,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 528,
+        "scroll": 528,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 528,
+        "scroll": 528,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-600-high",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 600,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-600-forced",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 600,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgba(5, 0, 73, 0.8) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgba(5, 0, 73, 0.8) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-600-reading",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 600,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-600-spacing",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 600,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-601-text200",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 601,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 505,
+        "scroll": 571,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 12
+      },
+      {
+        "focused": true,
+        "client": 505,
+        "scroll": 505,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-601-normal",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 601,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-601-high",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 601,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-601-forced",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 601,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgba(5, 0, 73, 0.8) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgba(5, 0, 73, 0.8) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-601-reading",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 601,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-601-spacing",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 601,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-1440-normal",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-1440-text200",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 1344,
+        "scroll": 1344,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 1344,
+        "scroll": 1344,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-1440-high",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-1440-forced",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgba(5, 0, 73, 0.8) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgba(5, 0, 73, 0.8) solid 3px",
+        "after": 0
+      }
+    ],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-1440-reading",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-light-1440-spacing",
+    "route": "/flagstone/privacy/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-320-normal",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 284,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 284,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-320-text200",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 248,
+        "scroll": 519,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 13
+      },
+      {
+        "focused": true,
+        "client": 248,
+        "scroll": 297,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 10
+      }
+    ],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-320-high",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 284,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 284,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-320-reading",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 302,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 6
+      },
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 284,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-320-forced",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 284,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgba(0, 230, 255, 0.8) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 284,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgba(0, 230, 255, 0.8) solid 3px",
+        "after": 0
+      }
+    ],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            ".brand > span"
+          ],
+          [
+            "li:nth-child(1) > a[href$=\"support/\"]"
+          ],
+          [
+            "a[href=\"./\"]"
+          ],
+          [
+            "li:nth-child(3) > a[href$=\"accessibility/\"]"
+          ],
+          [
+            "li:nth-child(4) > a[href$=\"terms/\"]"
+          ],
+          [
+            "h1"
+          ],
+          [
+            ".meta"
+          ],
+          [
+            "#a11y-dark"
+          ]
+        ]
+      },
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-320-spacing",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 328,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 12
+      },
+      {
+        "focused": true,
+        "client": 284,
+        "scroll": 284,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-390-normal",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 354,
+        "scroll": 354,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 354,
+        "scroll": 354,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-390-high",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 354,
+        "scroll": 354,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 354,
+        "scroll": 354,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-390-text200",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 318,
+        "scroll": 519,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 14
+      },
+      {
+        "focused": true,
+        "client": 318,
+        "scroll": 318,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-390-reading",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 354,
+        "scroll": 354,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 354,
+        "scroll": 354,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-390-forced",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 354,
+        "scroll": 354,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgba(0, 230, 255, 0.8) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 354,
+        "scroll": 354,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgba(0, 230, 255, 0.8) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-599-normal",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-390-spacing",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 354,
+        "scroll": 354,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 354,
+        "scroll": 354,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-599-text200",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 527,
+        "scroll": 527,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 527,
+        "scroll": 527,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-599-high",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-599-reading",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-599-forced",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgba(0, 230, 255, 0.8) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgba(0, 230, 255, 0.8) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-599-spacing",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 563,
+        "scroll": 563,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-600-normal",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-600-text200",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 528,
+        "scroll": 528,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 528,
+        "scroll": 528,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-600-high",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-600-forced",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgba(0, 230, 255, 0.8) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgba(0, 230, 255, 0.8) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-600-reading",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-600-spacing",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 564,
+        "scroll": 564,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-601-normal",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-601-text200",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 505,
+        "scroll": 571,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 11
+      },
+      {
+        "focused": true,
+        "client": 505,
+        "scroll": 505,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-601-high",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-601-reading",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-601-forced",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgba(0, 230, 255, 0.8) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgba(0, 230, 255, 0.8) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-601-spacing",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 553,
+        "scroll": 553,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-1440-normal",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-1440-text200",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 1344,
+        "scroll": 1344,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 1344,
+        "scroll": 1344,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-1440-high",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-1440-reading",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-1440-forced",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgba(0, 230, 255, 0.8) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgba(0, 230, 255, 0.8) solid 3px",
+        "after": 0
+      }
+    ],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            ".brand > span"
+          ],
+          [
+            "li:nth-child(1) > a[href$=\"support/\"]"
+          ],
+          [
+            "a[href=\"./\"]"
+          ],
+          [
+            "li:nth-child(3) > a[href$=\"accessibility/\"]"
+          ],
+          [
+            "li:nth-child(4) > a[href$=\"terms/\"]"
+          ],
+          [
+            "h1"
+          ],
+          [
+            ".meta"
+          ],
+          [
+            "#a11y-dark"
+          ]
+        ]
+      },
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_privacy_-dark-1440-spacing",
+    "route": "/flagstone/privacy/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [
+      {
+        "focused": true,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": "How we use your data",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      },
+      {
+        "focused": true,
+        "client": 712,
+        "scroll": 712,
+        "left": 0,
+        "label": "Data retention",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "after": 0
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_support_-light-320-normal",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 320,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            "p:nth-child(4) > a[target=\"_blank\"][rel=\"noopener noreferrer\"]"
+          ]
+        ]
+      },
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_support_-light-320-high",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 320,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-320-text200",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 320,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_support_-light-320-reading",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 320,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-320-forced",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 320,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_support_-light-320-spacing",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 320,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-390-normal",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 390,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-390-text200",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 390,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-390-high",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 390,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-390-forced",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 390,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-390-reading",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 390,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-390-spacing",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 390,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-599-normal",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 599,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-599-text200",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 599,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-599-high",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 599,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-599-forced",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 599,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-599-reading",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 599,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-599-spacing",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 599,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-600-normal",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 600,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-600-text200",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 600,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-600-high",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 600,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-600-forced",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 600,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-600-reading",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 600,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-600-spacing",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 600,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-601-normal",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 601,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-601-text200",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 601,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-601-high",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 601,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-601-reading",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 601,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-601-forced",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 601,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-601-spacing",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 601,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-1440-normal",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            "p:nth-child(4) > a[target=\"_blank\"][rel=\"noopener noreferrer\"]"
+          ]
+        ]
+      },
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_support_-light-1440-text200",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_support_-light-1440-high",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-1440-reading",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-light-1440-forced",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_support_-light-1440-spacing",
+    "route": "/flagstone/support/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-320-normal",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_support_-dark-320-text200",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_support_-dark-320-high",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-320-reading",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-320-forced",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            ".brand > span"
+          ],
+          [
+            "a[href=\"./\"]"
+          ],
+          [
+            "li:nth-child(2) > a[href$=\"privacy/\"]"
+          ],
+          [
+            "li:nth-child(3) > a[href$=\"accessibility/\"]"
+          ],
+          [
+            "li:nth-child(4) > a[href$=\"terms/\"]"
+          ],
+          [
+            "h1"
+          ],
+          [
+            ".tagline"
+          ],
+          [
+            "#a11y-dark"
+          ],
+          [
+            ".contact-link"
+          ]
+        ]
+      },
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_support_-dark-320-spacing",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-390-normal",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-390-text200",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-390-high",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-390-reading",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-390-forced",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-599-normal",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-390-spacing",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-599-text200",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-599-high",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-599-forced",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-599-reading",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-600-normal",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-599-spacing",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-600-text200",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-600-high",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-600-forced",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-600-reading",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-601-normal",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-600-spacing",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-601-text200",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-601-high",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-601-forced",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-601-reading",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-601-spacing",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-1440-normal",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_support_-dark-1440-high",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-1440-text200",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_support_-dark-1440-reading",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_support_-dark-1440-forced",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            ".brand > span"
+          ],
+          [
+            "a[href=\"./\"]"
+          ],
+          [
+            "li:nth-child(2) > a[href$=\"privacy/\"]"
+          ],
+          [
+            "li:nth-child(3) > a[href$=\"accessibility/\"]"
+          ],
+          [
+            "li:nth-child(4) > a[href$=\"terms/\"]"
+          ],
+          [
+            "h1"
+          ],
+          [
+            ".tagline"
+          ],
+          [
+            "#a11y-dark"
+          ],
+          [
+            ".contact-link"
+          ]
+        ]
+      },
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_support_-dark-1440-spacing",
+    "route": "/flagstone/support/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-320-normal",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 320,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_terms_-light-320-text200",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 320,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_terms_-light-320-high",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 320,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-320-reading",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 320,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-320-forced",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 320,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_terms_-light-320-spacing",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 320,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-390-normal",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 390,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-390-text200",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 390,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-390-high",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 390,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-390-forced",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 390,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-390-reading",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 390,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-599-normal",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 599,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-390-spacing",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 390,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-599-text200",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 599,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-599-high",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 599,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-599-forced",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 599,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-599-reading",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 599,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-600-normal",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 600,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-599-spacing",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 599,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-600-text200",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 600,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-600-high",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 600,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-600-forced",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 600,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-600-reading",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 600,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-600-spacing",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 600,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-601-normal",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 601,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-601-text200",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 601,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-601-high",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 601,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-601-forced",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 601,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-601-reading",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 601,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-601-spacing",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 601,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-1440-normal",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_terms_-light-1440-text200",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_terms_-light-1440-high",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-1440-reading",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-light-1440-forced",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_terms_-light-1440-spacing",
+    "route": "/flagstone/terms/",
+    "theme": "light",
+    "width": 1440,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-320-normal",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_terms_-dark-320-text200",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_terms_-dark-320-high",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-320-forced",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            ".brand > span"
+          ],
+          [
+            "li:nth-child(1) > a[href$=\"support/\"]"
+          ],
+          [
+            "li:nth-child(2) > a[href$=\"privacy/\"]"
+          ],
+          [
+            "li:nth-child(3) > a[href$=\"accessibility/\"]"
+          ],
+          [
+            "a[href=\"./\"]"
+          ],
+          [
+            "h1"
+          ],
+          [
+            ".tagline"
+          ],
+          [
+            "#a11y-dark"
+          ]
+        ]
+      },
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_terms_-dark-320-reading",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-320-spacing",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 320,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-390-normal",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-390-high",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-390-text200",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-390-forced",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-390-reading",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-599-normal",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-390-spacing",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 390,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-599-text200",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-599-high",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-599-reading",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-599-forced",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-600-normal",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-599-spacing",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 599,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-600-text200",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-600-high",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-600-forced",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-600-reading",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-601-normal",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-600-spacing",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 600,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-601-text200",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-601-high",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-601-forced",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-601-reading",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-601-spacing",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 601,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-1440-normal",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "normal",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_terms_-dark-1440-high",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "high",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-1440-text200",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "text200",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_terms_-dark-1440-reading",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "reading",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  },
+  {
+    "id": "_flagstone_terms_-dark-1440-forced",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "forced",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": [],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            ".brand > span"
+          ],
+          [
+            "li:nth-child(1) > a[href$=\"support/\"]"
+          ],
+          [
+            "li:nth-child(2) > a[href$=\"privacy/\"]"
+          ],
+          [
+            "li:nth-child(3) > a[href$=\"accessibility/\"]"
+          ],
+          [
+            "a[href=\"./\"]"
+          ],
+          [
+            "h1"
+          ],
+          [
+            ".tagline"
+          ],
+          [
+            "#a11y-dark"
+          ]
+        ]
+      },
+      {
+        "id": "region",
+        "nodes": [
+          [
+            ".a11y-note"
+          ],
+          [
+            "label"
+          ],
+          [
+            "#a11y-size"
+          ],
+          [
+            ".a11y-control:nth-child(3)"
+          ],
+          [
+            ".a11y-control:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "_flagstone_terms_-dark-1440-spacing",
+    "route": "/flagstone/terms/",
+    "theme": "dark",
+    "width": 1440,
+    "mode": "spacing",
+    "offenders": 0,
+    "probe": true,
+    "rangeContained": true,
+    "min": "100",
+    "max": "200",
+    "tables": []
+  }
+]
