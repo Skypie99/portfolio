@@ -25,8 +25,9 @@ const nextConfig = {
   // NOTE: headers() is defined here for documentation, but for `output: 'export'`
   // these are NOT applied at runtime — GitHub Pages serves static files only.
   // Steve: production headers (CSP, Permissions-Policy, etc.) must be set at the
-  // hosting layer (CDN / GH Pages custom 404 won't add headers either). When/if
-  // we migrate off GH Pages, this block will start taking effect automatically.
+  // hosting layer (CDN / GH Pages custom 404 won't add headers either). A future
+  // host must run Next's server or explicitly configure equivalent headers;
+  // moving the static export alone does not activate this block.
   async headers() {
     return [
       {
