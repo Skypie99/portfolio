@@ -18,7 +18,7 @@ export const dynamic = 'force-static';
  * update layout.tsx metadata.openGraph.images to point at the generated path.
  */
 
-export const alt = 'Sky Halisky: senior technical support · accessible, privacy-first tools';
+export const alt = 'Skyler Halisky: senior technical support · accessible, privacy-first tools';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -118,7 +118,7 @@ export default function Image() {
             (L8-03 rider). iMessage/Slack unfurl near-square, keeping roughly the
             centre 630px (x≈285–915) of the 1200×630 card; anchored at left:112 the
             wordmark clipped to "…Halisky". At left:300 / maxWidth:560 the whole
-            "Sky Halisky" survives a centre-square crop, while the full card stays
+            "Skyler Halisky" survives a centre-square crop, while the full card stays
             bottom-anchored and the sun/rules keep the right third. */}
         <div
           style={{
@@ -158,7 +158,7 @@ export default function Image() {
               display: 'flex',
             }}
           >
-            Sky Halisky
+            Skyler Halisky
           </div>
 
           {/* Tagline */}

@@ -297,7 +297,7 @@ export function HamburgerNav() {
                 aria-hidden: decorative — the dialog aria-label already names this
                 as "Primary menu"; the wordmark text adds no navigational meaning. */}
             <p aria-hidden="true" className="font-serif font-normal text-display-s text-ink mb-16 select-none">
-              Sky Halisky
+              Skyler Halisky
             </p>
             <nav aria-label="Site" className="w-full max-w-content">
               <p className="font-mono text-label tracking-label uppercase text-text-meta mb-16 flex items-center gap-2">

@@ -13,8 +13,8 @@ import { cleanup, render, screen } from '@testing-library/react';
 
 vi.mock('@/lib/content', () => ({
   getProfile: () => ({
-    name: 'Sky Halisky',
-    wordmarkText: 'Sky Halisky',
+    name: 'Skyler Halisky',
+    wordmarkText: 'Skyler Halisky',
     tagline: 'Building thoughtful AI work, one careful deliverable at a time.',
     location: 'Canada',
     contactEmail: 'hello@skypistudio.com',
@@ -45,7 +45,7 @@ afterEach(() => {
 describe('Sidebar', () => {
   it('renders the wordmark as a link to the home page', () => {
     render(<Sidebar />);
-    const wordmark = screen.getByRole('link', { name: /sky halisky/i });
+    const wordmark = screen.getByRole('link', { name: /skyler halisky/i });
     expect(wordmark).toBeInTheDocument();
     expect(wordmark).toHaveAttribute('href', '/');
   });
@@ -67,7 +67,7 @@ describe('Sidebar', () => {
 
   it('wordmark carries the link-draw editorial hover pattern (Cycle 18)', () => {
     render(<Sidebar />);
-    const wordmark = screen.getByRole('link', { name: /sky halisky/i });
+    const wordmark = screen.getByRole('link', { name: /skyler halisky/i });
     expect(wordmark).toHaveClass('link-draw');
   });
 

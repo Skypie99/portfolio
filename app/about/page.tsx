@@ -13,7 +13,7 @@ import { OG_CARD } from '@/lib/og';
 
 export function generateMetadata(): Metadata {
   const profile = getProfile();
-  const description = 'Sky Halisky. Senior technical-support specialist. Okanagan Valley, British Columbia.';
+  const description = 'Skyler Halisky. Senior technical-support specialist. Okanagan Valley, British Columbia.';
   return {
     title: `About: ${profile.name}`,
     description,
@@ -25,7 +25,7 @@ export function generateMetadata(): Metadata {
       // TA-10: a leaf openGraph REPLACES the root's wholesale (W0-04) — url,
       // siteName and locale restated so they survive on this route's share.
       url: '/about/',
-      siteName: 'Sky Halisky: Senior Technical Support',
+      siteName: 'Skyler Halisky: Senior Technical Support',
       locale: 'en_CA',
       title: `About: ${profile.name}`,
       description,
@@ -97,7 +97,7 @@ export default function AboutPage() {
           {/* Story paragraphs */}
           <div className="max-w-measure-lead flex flex-col gap-8">
             <p className="font-sans font-light text-step-1 text-ink-muted text-pretty">
-              I am Skyler Halisky. Most people call me Sky.
+              I am Skyler Halisky.
             </p>
             <p className="font-sans font-light text-step-1 text-ink-muted text-pretty">
               By day, I’m a senior technical-support specialist: the escalation

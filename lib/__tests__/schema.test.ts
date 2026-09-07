@@ -53,8 +53,8 @@ const goodCertificate = {
 };
 
 const goodProfile = {
-  name: 'Sky Halisky',
-  wordmarkText: 'Sky Halisky',
+  name: 'Skyler Halisky',
+  wordmarkText: 'Skyler Halisky',
   tagline: 'Building AI tools with care.',
   location: 'Vancouver, BC',
   contactEmail: 'sky@example.com',

@@ -12,7 +12,7 @@ export const dynamic = 'force-static';
 
 const BASE = 'https://skypistudio.com';
 const FEED_DESCRIPTION =
-  'Notes by Sky Halisky on AI, accessibility, and building things.';
+  'Notes by Skyler Halisky on AI, accessibility, and building things.';
 
 export function GET(): Response {
   const profile = getProfile();

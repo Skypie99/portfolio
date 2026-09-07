@@ -158,6 +158,7 @@ export function CinematicDesert() {
       const stage = scope.current?.querySelector('.cdesert-stage');
       const pin = pinRef.current;
       if (!stage || !pin) return;
+      const phoneViewport = window.matchMedia('(max-width: 767px)');
 
       // ── SCENE CULLING (PERF 2026-06-02) ──────────────────────────────────
       // Drive each group's composite on/off from master progress. Toggling the
@@ -204,7 +205,12 @@ export function CinematicDesert() {
         scrollTrigger: {
           trigger: stage,
           start: 'top top',
-          end: 'bottom bottom',
+          // On phones the film is 100svh, while ScrollTrigger measures its
+          // viewport with 100vh. End at the film's own bottom so its released
+          // edge meets the hero without exposing the unused stage beneath it.
+          end: () => phoneViewport.matches
+            ? `bottom top+=${pin.offsetHeight}`
+            : 'bottom bottom',
           pin,
           pinSpacing: true,
           scrub: 1.0,

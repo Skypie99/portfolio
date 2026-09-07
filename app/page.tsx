@@ -95,7 +95,7 @@ const supportLanes: { numeral: string; title: string; line: string }[] = [
 export function generateMetadata(): Metadata {
   const profile = getProfile();
   const description =
-    'Sky Halisky is a senior technical-support specialist who turns recurring user friction into documentation, QA, and the AI-assisted tools that fix it.';
+    'Skyler Halisky is a senior technical-support specialist who turns recurring user friction into documentation, QA, and the AI-assisted tools that fix it.';
   return {
     alternates: {
       canonical: canonicalFor('/'),
@@ -350,7 +350,7 @@ export default function HomePage() {
       {/* ── Identity mark — holds the top-left through the wordless runway so
           who-this-is registers at first paint (L1-01 / S17). Fixed sibling of
           the intro, never a child of it; the locked intro is untouched. ── */}
-      <RunwayIdentity name="Sky Halisky" />
+      <RunwayIdentity name="Skyler Halisky" />
       {/* The retirement lives HERE, not inside RunwayIdentity, because it is a
           client component and a static import would ship it to every route that
           mounts the mark -- proven in the built chunks, not assumed (UP-38). */}
@@ -376,11 +376,11 @@ export default function HomePage() {
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <div id="hero" tabIndex={-1}>
         <Hero
-          name="Sky Halisky"
+          name="Skyler Halisky"
           positioning="Senior technical-support specialist. I turn recurring user friction into documentation, QA, and the tools that fix it."
-          imprint="SkyPi Studio is Skyler (Sky) Halisky. One person, not an agency."
+          imprint="SkyPi Studio is one person."
           avatarSrc="/images/headshot.jpg"
-          avatarAlt="Sky Halisky"
+          avatarAlt="Skyler Halisky"
           /* Phase 03 (c2). The blinded 15-second test had the Support
              Operations hiring manager answer "software/AI builder" first:
              the protected positioning sentence is small caption type and

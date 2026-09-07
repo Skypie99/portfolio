@@ -15,7 +15,7 @@ import { OG_CARD } from '@/lib/og';
 export function generateMetadata(): Metadata {
   const profile = getProfile();
   const description =
-    'Write to Sky Halisky, senior technical-support specialist in the Okanagan Valley, British Columbia.';
+    'Write to Skyler Halisky, senior technical-support specialist in the Okanagan Valley, British Columbia.';
   return {
     title: `Contact: ${profile.name}`,
     description,
@@ -30,7 +30,7 @@ export function generateMetadata(): Metadata {
     openGraph: {
       type: 'website',
       url: '/contact/',
-      siteName: 'Sky Halisky: Senior Technical Support',
+      siteName: 'Skyler Halisky: Senior Technical Support',
       locale: 'en_CA',
       title: `Contact: ${profile.name}`,
       description,

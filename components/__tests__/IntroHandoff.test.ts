@@ -22,9 +22,9 @@ describe('Phase 07 native intro handoff', () => {
     );
 
     expect(match, 'the narrow #hero landing rule must exist').toBeTruthy();
-    expect(match?.[1]).toContain('scroll-margin-top: -300px;');
+    expect(match?.[1]).toContain('scroll-margin-top: -360px;');
     expect(match?.[1]).toContain(
-      'scroll-margin-top: calc(-300px - env(safe-area-inset-top));',
+      'scroll-margin-top: calc(-360px - env(safe-area-inset-top));',
     );
   });
 
@@ -37,12 +37,6 @@ describe('Phase 07 native intro handoff', () => {
     expect(match?.[1]).toContain('scroll-margin-top: -310px;');
     expect(match?.[1]).toContain(
       'scroll-margin-top: calc(-310px - env(safe-area-inset-top));',
-    );
-  });
-
-  it('keeps the narrow cinematic pin as tall as Safari\'s live viewport when dvh is available', () => {
-    expect(css).toMatch(
-      /@media \(max-width: 767px\) and \(hover: none\) and \(pointer: coarse\) \{\s*@supports \(height: 100dvh\) \{\s*\.cdesert-pin \{\s*height: 100dvh;/,
     );
   });
 

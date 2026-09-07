@@ -112,7 +112,7 @@ export function generateMetadata(): Metadata {
   const profile = getProfile();
   const siteUrl = 'https://skypistudio.com';
   const description =
-    'Sky Halisky is a senior technical-support specialist who turns recurring user friction into documentation, QA, and the AI-assisted tools that fix it.';
+    'Skyler Halisky is a senior technical-support specialist who turns recurring user friction into documentation, QA, and the AI-assisted tools that fix it.';
   return {
     title: `${profile.name}: Senior Technical Support`,
     description,
@@ -201,8 +201,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Person',
-              name: 'Sky Halisky',
-              alternateName: 'Skyler Halisky',
+              name: 'Skyler Halisky',
+              alternateName: 'Sky',
               url: 'https://skypistudio.com',
               jobTitle: 'Senior Technical Support Specialist',
               description:

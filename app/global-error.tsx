@@ -68,7 +68,7 @@ export default function GlobalError({
               margin: '0 0 1.5rem',
             }}
           >
-            Sky Halisky
+            Skyler Halisky
           </p>
           <h1
             style={{

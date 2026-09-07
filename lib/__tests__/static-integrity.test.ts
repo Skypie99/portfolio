@@ -434,7 +434,7 @@ describe.runIf(OUT_EXISTS)('Gap 5: new-tab links announce themselves', () => {
 
 describe.runIf(OUT_EXISTS)('Gap 6: share-card identity', () => {
   const SITE_ORIGIN = 'https://skypistudio.com';
-  const EXPECTED_SITE_NAME = 'Sky Halisky: Senior Technical Support';
+  const EXPECTED_SITE_NAME = 'Skyler Halisky: Senior Technical Support';
 
   /** The route path a built HTML file is served at: out/work/index.html → /work/ */
   function routePathOf(file: string): string {
@@ -559,7 +559,7 @@ describe.runIf(OUT_EXISTS)('Gap 6: share-card identity', () => {
 
   it('no interior route wears the homepage’s og:title or twitter:title', () => {
     // The precise impersonation lock: /certificates/ and /contact/ used to
-    // announce themselves as "Sky Halisky — AI Portfolio" with the homepage's
+    // announce themselves as "Skyler Halisky — AI Portfolio" with the homepage's
     // description attached.
     const home = join(OUT_DIR, 'index.html');
     assertOutDirExists();

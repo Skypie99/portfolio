@@ -1,5 +1,5 @@
 /* MAINTAINER */
-  Sky Halisky
+  Skyler Halisky
   Okanagan Valley, British Columbia
   Colophon: https://skypistudio.com/colophon/
 

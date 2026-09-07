@@ -12,8 +12,8 @@ const mockGetBlogPosts = vi.fn();
 
 vi.mock('@/lib/content', () => ({
   getProfile: () => ({
-    name: 'Sky Halisky',
-    wordmarkText: 'Sky Halisky',
+    name: 'Skyler Halisky',
+    wordmarkText: 'Skyler Halisky',
     tagline: 'Building thoughtful AI work.',
     location: 'Canada',
     contactEmail: 'sky@example.com',
