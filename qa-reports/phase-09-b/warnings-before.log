@@ -1,0 +1,396 @@
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v3.2.7 /Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907
+
+ ✓ components/__tests__/SidebarSectionNav.test.tsx (20 tests) 225ms
+ ✓ components/__tests__/Footer.test.tsx (4 tests) 130ms
+ ✓ app/__tests__/homepage-numeral-contrast.test.tsx (1 test) 286ms
+ ✓ app/__tests__/homepage-dates.test.tsx (2 tests) 432ms
+   ✓ Homepage — work-index years and Record-band dates render as <time> > renders every work-index row year as a real <time> element  337ms
+ ✓ app/__tests__/flagstone-cta-parity.test.tsx (5 tests) 584ms
+   ✓ GATE-FLAGSTONE-CTA-PARITY — shared ProjectDoorwayButton > renders exactly 6 doorway pills (5 rows + flagship) sharing one identical className  304ms
+ ✓ app/__tests__/homepage-project-links.test.tsx (2 tests) 608ms
+   ✓ Homepage work-index project affordances > renders one visible View project CTA for every project destination  376ms
+ ✓ app/__tests__/homepage-featured-link.test.tsx (3 tests) 716ms
+   ✓ Homepage work index: the "Featured: above" link > carries no aria-label that could diverge from its visible text  399ms
+stderr | components/__tests__/GalleryWall.test.tsx > GalleryWall > SSR emits every plate visible — no inline opacity:0 (RM/no-JS floor)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at li
+    at ul
+    at div
+    at GalleryWall (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/GalleryWall.tsx:25:24)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at li
+    at ul
+    at div
+    at GalleryWall (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/GalleryWall.tsx:25:24)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at li
+    at ul
+    at div
+    at GalleryWall (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/GalleryWall.tsx:25:24)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at li
+    at ul
+    at div
+    at GalleryWall (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/GalleryWall.tsx:25:24)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at li
+    at ul
+    at div
+    at GalleryWall (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/GalleryWall.tsx:25:24)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at li
+    at ul
+    at div
+    at GalleryWall (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/GalleryWall.tsx:25:24)
+
+ ✓ components/__tests__/NumberedStep.test.tsx (3 tests) 81ms
+ ✓ components/__tests__/Sidebar.test.tsx (7 tests) 158ms
+ ✓ components/__tests__/TapTargets.test.tsx (4 tests) 240ms
+ ✓ components/__tests__/GalleryWall.test.tsx (8 tests) 285ms
+ ✓ components/__tests__/ProjectCard.test.tsx (9 tests) 276ms
+ ✓ components/__tests__/CaseStudyCard.test.tsx (5 tests) 281ms
+ ✓ components/__tests__/HamburgerNav.test.tsx (12 tests) 387ms
+stderr | components/__tests__/ProductReveal.test.tsx > ProductReveal > renders a real <img> carrying the alt when a src is provided
+Warning: React does not recognize the `fetchPriority` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `fetchpriority` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+    at img
+    at StaticShot (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/ProductReveal.tsx:211:3)
+    at div
+    at div
+    at DeviceFrame (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/DeviceFrame.tsx:6:24)
+    at FramedArtifact (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/ProductReveal.tsx:53:3)
+    at div
+    at ProductReveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/ProductReveal.tsx:295:3)
+
+ ✓ components/__tests__/ThemedMotion.test.tsx (8 tests) 222ms
+ ↓ lib/__tests__/static-integrity.test.ts (28 tests | 28 skipped)
+ ✓ components/__tests__/ProductReveal.test.tsx (18 tests) 321ms
+ ✓ components/__tests__/Hero.test.tsx (3 tests) 154ms
+ ✓ components/__tests__/BlogIndex.test.tsx (8 tests) 280ms
+ ✓ components/cinematic/__tests__/CinematicDesert.test.tsx (3 tests) 216ms
+ ✓ components/__tests__/ThemeToggle.test.tsx (6 tests) 237ms
+ ✓ components/__tests__/Receipt.test.tsx (11 tests) 84ms
+ ✓ components/archive/__tests__/AuthGate.test.tsx (3 tests) 91ms
+ ✓ components/__tests__/CalibrationRecord.test.tsx (3 tests) 101ms
+ ✓ components/__tests__/Reveal.test.tsx (8 tests) 128ms
+ ✓ components/__tests__/LitWindows.test.tsx (6 tests) 135ms
+ ✓ components/__tests__/SidebarFeatured.test.tsx (10 tests) 168ms
+ ✓ components/__tests__/ViewTransitions.test.tsx (27 tests) 54ms
+ ✓ components/__tests__/SkipLink.test.tsx (2 tests) 64ms
+ ✓ components/__tests__/Button.test.tsx (3 tests) 72ms
+ ✓ app/__tests__/work-receipt.test.tsx (8 tests) 37ms
+ ✓ components/__tests__/MarkdownProse.test.tsx (10 tests) 104ms
+ ✓ components/__tests__/IntroSkip.test.tsx (7 tests) 89ms
+ ✓ components/__tests__/ThemedShowcase.test.tsx (8 tests) 152ms
+ ✓ components/__tests__/LedgerRow.test.tsx (7 tests) 65ms
+ ✓ components/__tests__/RunwayIdentityRelease.test.tsx (5 tests) 64ms
+stderr | lib/__tests__/smart-punctuation.test.ts > the house apostrophe — rendered > has a source guard regardless, and scans ./out/ when a build exists
+[smart-punctuation] no ./out/ — the rendered-prose scan below did NOT run. Use `npm run test:static` (build → test) to exercise it. The source guard above ran and is the one CI relies on.
+
+ ✓ lib/__tests__/smart-punctuation.test.ts (11 tests | 1 skipped) 25ms
+ ✓ components/__tests__/Plate.test.tsx (3 tests) 42ms
+ ✓ app/__tests__/blog-dated-status.test.tsx (6 tests) 72ms
+ ✓ lib/__tests__/flagstone-utility-contrast.test.ts (12 tests) 63ms
+stderr | components/__tests__/A11yReceipts.test.tsx
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at div
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at div
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at div
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at div
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at div
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at div
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+
+stderr | components/__tests__/A11yReceipts.test.tsx > A11yReceipts — the G2 method underline > one method pair CONTAINS both the figure grid and the evidence anchor
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at div
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at div
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at div
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at div
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at div
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at div
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+
+stderr | components/__tests__/A11yReceipts.test.tsx > A11yReceipts — the G2 method underline > the evidence door is already open at rest — no hover gating
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at div
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at div
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at div
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at div
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at div
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at div
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+
+stderr | components/__tests__/A11yReceipts.test.tsx > A11yReceipts — the G2 method underline > the wrapper is UNSTYLED — .method-pair must never carry layout
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at div
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at div
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at div
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at div
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at div
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at div
+    at div
+    at div
+    at A11yReceipts (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/A11yReceipts.tsx:50:25)
+
+ ✓ components/__tests__/A11yReceipts.test.tsx (9 tests) 125ms
+ ✓ components/__tests__/IntroScrollCue.test.tsx (10 tests) 59ms
+ ✓ components/__tests__/TagPill.test.tsx (5 tests) 64ms
+ ✓ components/__tests__/Exhibit.test.tsx (6 tests) 90ms
+stderr | components/__tests__/AnimatedCertGrid.test.tsx > AnimatedCertGrid > SSR emits every card visible — no inline opacity:0 (RM/no-JS floor)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at ul
+    at AnimatedCertGrid (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/AnimatedCertGrid.tsx:9:29)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at ul
+    at AnimatedCertGrid (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/AnimatedCertGrid.tsx:9:29)
+
+stderr | components/__tests__/AnimatedCertGrid.test.tsx > AnimatedCertGrid > grid items are Reveal list items carrying the depth register
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at ul
+    at AnimatedCertGrid (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/AnimatedCertGrid.tsx:9:29)
+Warning: useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.
+    at Reveal (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/Reveal.tsx:25:3)
+    at ul
+    at AnimatedCertGrid (/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/components/AnimatedCertGrid.tsx:9:29)
+
+ ✓ components/__tests__/AnimatedCertGrid.test.tsx (2 tests) 40ms
+ ✓ lib/__tests__/useActiveSection.test.tsx (4 tests) 35ms
+ ✓ components/__tests__/HeroSettle.test.tsx (11 tests) 102ms
+ ✓ components/__tests__/CountUpStat.test.tsx (6 tests) 51ms
+stderr | lib/__tests__/section-nav-anchors.test.ts > Sidebar section index — guard mode > has a map to check, and runs against ./out/ when a build exists
+[section-nav-anchors] no ./out/ — the built-HTML checks below did NOT run. Use `npm run test:static` (build → test) to exercise them.
+
+ ✓ lib/__tests__/section-nav-anchors.test.ts (27 tests | 26 skipped) 2ms
+ ✓ lib/__tests__/ink-contrast.test.ts (33 tests) 49ms
+ ✓ lib/__tests__/content.test.ts (10 tests) 43ms
+ ✓ components/__tests__/RunwayIdentity.test.tsx (1 test) 61ms
+ ✓ components/__tests__/RailInert.test.tsx (4 tests) 48ms
+ ✓ lib/__tests__/ember-large-text.test.ts (3 tests) 8ms
+ ✓ lib/__tests__/cn.test.ts (14 tests) 12ms
+ ✓ lib/__tests__/support-first-hierarchy.test.ts (16 tests) 9ms
+ ✓ lib/__tests__/doorAjar.test.ts (9 tests) 17ms
+ ✓ lib/archive/__tests__/importExport.test.ts (14 tests) 27ms
+ ✓ components/__tests__/ContentReveal.test.tsx (2 tests) 46ms
+ ✓ lib/__tests__/flagstone-professional-bridge.test.ts (2 tests) 5ms
+ ✓ lib/__tests__/schema.test.ts (32 tests) 15ms
+ ✓ lib/__tests__/glassPress.test.ts (5 tests) 14ms
+ ✓ lib/__tests__/markdown.test.ts (11 tests) 3ms
+ ✓ lib/__tests__/token-parity.test.ts (110 tests) 7ms
+ ✓ lib/archive/__tests__/catalog.test.ts (7 tests) 11ms
+ ✓ components/__tests__/RevealAlive.test.tsx (3 tests) 20ms
+ ✓ lib/__tests__/print-reveal-visibility.test.ts (2 tests) 3ms
+ ✓ lib/__tests__/schema.showcase.test.ts (8 tests) 5ms
+ ✓ lib/__tests__/dusk-turn.test.ts (14 tests) 4ms
+ ✓ lib/__tests__/contrast-preferences.test.ts (10 tests) 6ms
+ ✓ lib/__tests__/shot-dark-forwarding.test.ts (3 tests) 13ms
+ ✓ components/archive/__tests__/reducer.test.ts (6 tests) 9ms
+ ✓ lib/archive/__tests__/search.test.ts (10 tests) 7ms
+ ✓ lib/__tests__/duration-ramp.test.ts (14 tests) 34ms
+ ✓ lib/__tests__/blog.test.ts (11 tests) 12ms
+ ✓ lib/archive/__tests__/range.test.ts (10 tests) 10ms
+ ✓ lib/__tests__/method-underline.test.ts (9 tests) 3ms
+ ✓ lib/__tests__/print-layer.test.ts (8 tests) 39ms
+ ✓ lib/__tests__/media.test.ts (3 tests) 2ms
+ ✓ app/__tests__/global-error.test.tsx (6 tests) 6ms
+ ✓ app/__tests__/flagstone-release-status.test.ts (4 tests) 6ms
+ ✓ lib/__tests__/showcaseWire.test.ts (6 tests) 7ms
+ ✓ lib/__tests__/matte-theme-invariance.test.ts (4 tests) 7ms
+ ✓ app/__tests__/flagstone-first-impression.test.ts (3 tests) 7ms
+ ✓ lib/__tests__/metadata.test.ts (3 tests) 3ms
+ ✓ lib/__tests__/rounds.test.ts (4 tests) 4ms
+ ✓ lib/archive/__tests__/color.test.ts (19 tests) 7ms
+ ✓ lib/__tests__/asset-integrity.test.ts (3 tests) 2ms
+ ✓ lib/archive/__tests__/media.test.ts (6 tests) 3ms
+ ✓ lib/__tests__/exhibitLamp.test.ts (4 tests) 2ms
+ ✓ lib/__tests__/navDirection.test.ts (10 tests) 2ms
+ ✓ components/__tests__/IntroHandoff.test.ts (4 tests) 2ms
+ ✓ lib/__tests__/media.showcase.test.ts (4 tests) 2ms
+ ✓ lib/__tests__/accessibility-statement-scope.test.ts (1 test) 1ms
+ ✓ lib/__tests__/shot-matte-forwarding.test.ts (1 test) 2ms
+ ✓ lib/__tests__/case-study-arrival-top.test.ts (3 tests) 1ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  lib/__tests__/recruiter-copy-truth.test.ts [ lib/__tests__/recruiter-copy-truth.test.ts ]
+Error: ENOENT: no such file or directory, scandir '/Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907/out'
+ ❯ collectHtml lib/__tests__/recruiter-copy-truth.test.ts:75:23
+     73| function collectHtml(dir: string): string[] {
+     74|   const results: string[] = [];
+     75|   for (const entry of readdirSync(dir)) {
+       |                       ^
+     76|     const full = join(dir, entry);
+     77|     if (statSync(full).isDirectory()) results.push(...collectHtml(full…
+ ❯ lib/__tests__/recruiter-copy-truth.test.ts:308:17
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
+
+Vitest caught 1 unhandled error during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+ReferenceError: requestAnimationFrame is not defined
+ ❯ Timeout._sync [as _onTimeout] ../../Portfolio-3.0-baseline/node_modules/gsap/ScrollTrigger.js:372:48
+    370|     _rafID,
+    371|     _sync = function _sync() {
+    372|   return _getTime() - _lastScrollTime > 34 && (_rafID || (_rafID = req…
+       |                                                ^
+    373| },
+    374|     _onScroll = function _onScroll() {
+ ❯ listOnTimeout node:internal/timers:605:17
+ ❯ processTimers node:internal/timers:541:7
+
+This error originated in "app/__tests__/homepage-dates.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+This error was caught after test environment was torn down. Make sure to cancel any running tasks before test finishes:
+- cancel timeouts using clearTimeout and clearInterval
+- wait for promises to resolve using the await keyword
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+
+ Test Files  1 failed | 95 passed | 1 skipped (97)
+      Tests  803 passed | 55 skipped (858)
+     Errors  1 error
+   Start at  04:00:37
+   Duration  13.27s (transform 2.64s, setup 5.25s, collect 12.86s, tests 8.90s, environment 36.43s, prepare 5.64s)
+

@@ -1,0 +1,13 @@
+
+ RUN  v3.2.7 /Users/skypie/Portfolio-codex/portfolio-3.0-p09-b-20260907
+
+ ✓ components/__tests__/AnimatedCertGrid.test.tsx (2 tests) 12ms
+ ✓ components/__tests__/GalleryWall.ssr.test.tsx (1 test) 21ms
+ ✓ components/__tests__/A11yReceipts.test.tsx (9 tests) 25ms
+ ✓ components/__tests__/GalleryWall.test.tsx (7 tests) 122ms
+
+ Test Files  4 passed (4)
+      Tests  19 passed (19)
+   Start at  04:05:14
+   Duration  1.06s (transform 274ms, setup 325ms, collect 899ms, tests 181ms, environment 453ms, prepare 314ms)
+
