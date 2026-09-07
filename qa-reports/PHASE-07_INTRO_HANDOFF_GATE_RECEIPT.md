@@ -6,7 +6,7 @@
 PROMPT_ID: SKYPI-PORTFOLIO-3.0-P07
 PHASE: 07 — Narrow-Screen Intro Handoff and Interaction Precision
 OWNER_VISUAL_APPROVAL: YES — 2026-09-05, “approve Phase 07 visual”
-INTRO_HANDOFF_GATE: HOLD — NOT ISSUED AS PASS
+INTRO_HANDOFF_GATE: HOLD — DEVICE REPAIR AWAITS IPHONE SAFARI RETEST
 SAFE_TO_INTEGRATE: NO — evidence gaps listed below remain
 NEXT_PHASE: NOT AUTHORIZED
 REMOTE_MUTATIONS: NONE
@@ -15,7 +15,7 @@ MERGE: NO
 DEPLOY: NO
 ```
 
-Sky approved the final visual candidate before the local source commit. The candidate is locally committed and all available source/build/test gates below passed. This receipt deliberately does **not** issue `INTRO_HANDOFF_GATE: PASS`: mobile WebKit/iOS safe-area behavior was unavailable. A local commit does not turn that missing observation into proof.
+Sky approved the final visual candidate before the local source commit. The original candidate is locally committed and all available source/build/test gates below passed. This receipt deliberately does **not** issue `INTRO_HANDOFF_GATE: PASS`: owner-supplied mobile Safari evidence subsequently found a browser-chrome/cinematic underfill defect and a short-landscape handoff defect. The repair must be rerun on the physical device; a local commit and non-iOS browser measurements do not establish a PASS.
 
 ## Identity, lineage, and worktree safety
 
@@ -56,6 +56,43 @@ The primary checkout and every other worktree were left untouched. No reset, reb
   - Guards that the exact `/#hero` link is not intercepted by View Transitions.
 
 `components/cinematic/**`, first-frame copy, support-first role sentence, tablet/desktop CSS layout, routes, dependencies, production configuration, and remote state are untouched.
+
+## Owner-supplied iPhone Safari evidence and repair candidate — 2026-09-07
+
+### Observations supplied by the owner
+
+The owner supplied six physical-iPhone Safari captures after using the local site. They establish these real-device observations:
+
+1. The initial portrait intro and the intended portrait handoff composition are visually understood and recorded.
+2. During the portrait cinematic, a wide pale/beige strip exposed beneath the film. It should not be visible.
+3. In short landscape, native Skip Intro landed at the top of `#hero`, leaving the identity block at or below the visible fold and the headline off-screen. The owner supplied the intended landscape composition: the identity block and headline must both arrive visibly.
+
+The address bar shown in the captures is the bare local IP (`10.0.0.22`) rather than the previously issued numbered static-server URL. A later read-only attempt to reach that bare-IP endpoint failed after the temporary server was gone, so the capture's exact served HTML cannot be re-hashed retrospectively. This is a provenance limitation, not a reason to discard the owner's visual defect report or infer a PASS.
+
+### Authorized, bounded repair
+
+Source repair commit: `a53195326aae13adfabea07dbb6cddbfe7f428a1` — `fix(intro): repair iPhone Safari handoff`.
+
+- `app/globals.css`
+  - Keeps the approved portrait `#hero` native-fragment offset unchanged at `-220px` below 768px.
+  - Adds a `-310px` offset only for short, coarse-pointer, no-hover landscape viewports. It does not change fine-pointer desktop geometry.
+  - On narrow touch phones that support it, makes the pinned cinematic use `100dvh`, retaining `100svh` as the fallback. This is intended to keep Safari browser-chrome changes from exposing the page behind the film.
+- `components/__tests__/IntroHandoff.test.ts`
+  - Guards the new short touch-landscape offset and the `100dvh` fallback contract.
+
+No file under `components/cinematic/**` was modified. This repair is intentionally not an adjudication that the physical Safari strip is fixed: only the owner can establish that by repeating the device journey on the rebuilt static artifact.
+
+### Local repair-candidate checks
+
+These are geometry and static-artifact checks only, not iPhone Safari acceptance evidence:
+
+| Surface | Result |
+| --- | --- |
+| Built static CSS | Contains the `-310px` short touch-landscape offset and `100dvh` narrow-touch pin rule. |
+| Touch 956 × 440 local browser | Native Skip Intro: identity top `27px`, headline top `243px`, `scroll-margin-top: -310px`. |
+| Touch 440 × 844 local browser | Preserved portrait handoff: `scroll-margin-top: -220px`. |
+| Fine-pointer 1440 × 900 local browser | Preserved desktop behavior: `scroll-margin-top: 0px`. |
+| Available local WebKit runtime | Not installed; no WebKit result is claimed. |
 
 ### Findings and mechanism
 
@@ -120,9 +157,9 @@ All listed arrival frames reported `documentScrollWidth === viewport width`, zer
 
 The following boundary prevents a PASS gate. It is documented rather than inferred.
 
-1. **T-111:** mobile Safari/iOS safe-area and browser-chrome behavior was not run. `CoreSimulatorService` was unavailable and no physical device was supplied. A prior desktop-WebKit/local check is not evidence of the committed candidate’s narrow iOS behavior. The recorded Chromium `env(safe-area-inset-top)` fallback and desktop measurements do not establish real-device WebKit support.
+1. **T-111:** the owner now supplied mobile Safari/iOS evidence, and it exposed two defects. The repair source commit `a531953` needs a repeat physical-iPhone Safari run that specifically confirms: no pale strip through the cinematic; portrait stays correct; short-landscape Skip Intro shows identity plus headline; Back/Forward and reload remain sane. Local browser checks and the recorded `env(safe-area-inset-top)` fallback do not establish real-device WebKit support.
 
-The committed packet now includes paired first/arrival captures for every listed Phase 07 viewport, two stable narrow-width arrival runs per theme, touch, keyboard, reduced-motion, no-JavaScript, no-View-Transition, Back, Forward, reload, and deep-link evidence. These local observations do not eliminate the mobile-WebKit limitation.
+The committed packet includes paired first/arrival captures for every listed Phase 07 viewport, two stable narrow-width arrival runs per theme, touch, keyboard, reduced-motion, no-JavaScript, no-View-Transition, Back, Forward, reload, and deep-link evidence. These local observations do not eliminate the mobile-WebKit limitation or the owner-observed defects.
 
 ## Rollback and side effects
 
@@ -130,21 +167,22 @@ The committed packet now includes paired first/arrival captures for every listed
 ROLLBACK_REFERENCE: ec82ece9b056688970c14805ed05290b986b4149
 ROLLBACK_ACTION: revert the local candidate commit; do not reset or rewrite history
 SOURCE_COMMIT_CREATED: d1c15f9cd33051edff3f053ad20c4b2ce0c1cfe4
+REPAIR_SOURCE_COMMIT_CREATED: a53195326aae13adfabea07dbb6cddbfe7f428a1
 REMOTE_SIDE_EFFECTS: NONE
 PRODUCTION_SIDE_EFFECTS: NONE
 ```
 
 ## DECISIONS FOR SKY
 
-### Complete mobile WebKit proof before allowing a PASS gate
+### Repeat mobile WebKit proof for the repair candidate before allowing a PASS gate
 
-**Decision:** provide a real iPhone/iOS Safari path or explicitly direct how to handle the unavailable-device evidence.
+**Decision:** provide a real iPhone/iOS Safari result for source commit `a531953` before changing this gate.
 
-**Recommendation:** run the committed candidate on a real iPhone Safari, recording narrow-width Skip Intro arrival, safe-area/browser-chrome behavior, keyboard/VoiceOver focus continuity where available, and the history journey. Then retain the recording and measurements before issuing PASS.
+**Recommendation:** run the rebuilt static repair candidate on a real iPhone Safari, recording the cinematic with browser chrome visible, portrait and landscape Skip Intro arrival, safe-area behavior, keyboard/VoiceOver focus continuity where available, and the history journey. Then retain the observations before issuing PASS.
 
-**Why:** the Phase 07 change intentionally relies on native fragment geometry and `env(safe-area-inset-top)`. Chromium and source tests do not establish iOS WebKit behavior.
+**Why:** the repair intentionally relies on native fragment geometry, `env(safe-area-inset-top)`, and `dvh` behavior. Chromium and source tests do not establish iOS WebKit behavior.
 
-**Alternative:** retain `INTRO_HANDOFF_GATE: HOLD` and treat `d1c15f9` only as a local candidate.
+**Alternative:** retain `INTRO_HANDOFF_GATE: HOLD` and treat `a531953` only as a local repair candidate.
 
 **Impact:** no Phase 08 handoff or local integration is authorized until this decision is resolved and the WebKit evidence is retained.
 
