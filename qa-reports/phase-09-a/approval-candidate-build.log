@@ -1,0 +1,84 @@
+
+> portfolio@0.1.0 prebuild
+> node scripts/validate-assets.mjs
+
+[validate-assets] OK — all 9 certificate badge image(s) found in public/.
+[validate-assets] OK — all 5 cinematic real plate (AVIF+WebP)(s) found in public/.
+[validate-assets] OK — all 107 declared deliverable proof sibling(s) found in public/.
+[validate-assets] OK — all 3 blog figure image(s) found in public/.
+
+> portfolio@0.1.0 build
+> next build
+
+ ⚠ Specified "headers" will not automatically work with "output: export". See more info here: https://nextjs.org/docs/messages/export-no-custom-routes
+   ▲ Next.js 15.5.25
+
+   Creating an optimized production build ...
+ ⚠ Specified "headers" will not automatically work with "output: export". See more info here: https://nextjs.org/docs/messages/export-no-custom-routes
+ ⚠ Specified "headers" will not automatically work with "output: export". See more info here: https://nextjs.org/docs/messages/export-no-custom-routes
+ ⚠ Specified "headers" will not automatically work with "output: export". See more info here: https://nextjs.org/docs/messages/export-no-custom-routes
+ ✓ Compiled successfully in 7.1s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/26) ...
+   Generating static pages (6/26) 
+   Generating static pages (12/26) 
+   Generating static pages (19/26) 
+ ✓ Generating static pages (26/26)
+   Finalizing page optimization ...
+   Collecting build traces ...
+ ⚠ rewrites, redirects, and headers are not applied when exporting your application, detected (headers). See more info here: https://nextjs.org/docs/messages/export-no-custom-routes
+   Exporting (0/3) ...
+ ✓ Exporting (3/3)
+
+Route (app)                                  Size  First Load JS
+┌ ○ /                                     50.8 kB         171 kB
+├ ○ /_not-found                             138 B         103 kB
+├ ○ /about                                1.65 kB         117 kB
+├ ○ /accessibility                          958 B         117 kB
+├ ○ /accessibility/opengraph-image          138 B         103 kB
+├ ○ /apple-icon.png                           0 B            0 B
+├ ○ /archive                                92 kB         195 kB
+├ ○ /blog                                   518 B         116 kB
+├ ● /blog/[slug]                          2.15 kB         122 kB
+├   └ /blog/building-flagstone
+├ ○ /certificates                         8.19 kB         124 kB
+├ ○ /colophon                               173 B         116 kB
+├ ○ /contact                              1.75 kB         117 kB
+├ ○ /feed.json                              138 B         103 kB
+├ ○ /feed.xml                               138 B         103 kB
+├ ○ /icon.svg                                 0 B            0 B
+├ ○ /opengraph-image                        138 B         103 kB
+├ ○ /runway                                 161 B         106 kB
+├ ○ /sitemap.xml                            138 B         103 kB
+├ ○ /work                                 3.09 kB         123 kB
+└ ● /work/[slug]                          3.33 kB         124 kB
+    ├ /work/flagstone
+    ├ /work/claude-corp
+    ├ /work/dashboard
+    └ [+2 more paths]
++ First Load JS shared by all              103 kB
+  ├ chunks/16a045e0-ff2093c435825769.js   54.2 kB
+  ├ chunks/63-9bba43e74bb4f0b2.js         46.4 kB
+  └ other shared chunks (total)           2.01 kB
+
+Route (pages)                                Size  First Load JS
+─ ○ /500 (420 ms)                           225 B        83.3 kB
++ First Load JS shared by all             83.1 kB
+  ├ chunks/framework-4622f80c22420dd9.js  44.9 kB
+  ├ chunks/main-24cd98dc762bc8aa.js       36.2 kB
+  └ other shared chunks (total)           1.98 kB
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+
+> portfolio@0.1.0 postbuild
+> node scripts/prune-500.mjs && node scripts/og-png-alias.mjs
+
+[prune-500] pruned the unreachable /500 ghost:
+  - route-dir: 500
+  - page-chunk: _next/static/chunks/pages/500-5153ffc2a7869c47.js
+[og-png-alias] gave each OG card a real .png path (image/png on GH Pages):
+  - accessibility/opengraph-image -> accessibility/opengraph-image.png (48428 B)
+  - opengraph-image -> opengraph-image.png (92763 B)

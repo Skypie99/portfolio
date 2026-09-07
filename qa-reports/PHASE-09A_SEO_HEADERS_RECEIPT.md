@@ -101,3 +101,16 @@ Metadata helper comments are not part of this patch-only tree. The lead must rec
 Safe to integrate **evidence and helper-comment commit only** after lead review; **lane completion HOLD**. Branch commit identity is obtained with `git log -1` after this receipt commit; a file cannot embed its own resulting commit/tree. Restore/revert that documentation commit to roll back the applied lane. Delete no prior evidence. Apply no banked patch without approval.
 
 Remote mutations: NONE. Push: NO. Merge to main: NO. Deploy: NO. Phase 10 not started.
+
+## Addendum: prospective candidate validation (2026-09-07)
+
+The lead requested authorized local testing of the exact banked patch without adopting the policy or committing gated source. The exact patch was temporarily applied in this lane only, built and tested, then reversed with `git apply --reverse` after `--reverse --check` passed. `git diff --exit-code -- app/sitemap.ts lib/__tests__/static-integrity.test.ts public/flagstone` then returned 0, proving all seven candidate source files restored to their prior committed state. No gated source commit exists. This supersedes the earlier UNRUN validation entry only; owner indexing/host decisions remain HOLD.
+
+Actual results against the prospective implementation:
+
+- `npm run build`: PASS, exit 0, static export and postbuild complete. Existing `headers` under `output: export` notices retained. See `approval-candidate-build.log`.
+- `npx vitest run lib/__tests__/metadata.test.ts lib/__tests__/static-integrity.test.ts lib/__tests__/section-nav-anchors.test.ts`: 3 files passed; **57 passed, 1 existing skip**. See `approval-candidate-tests.log`.
+- Fresh export scan: **26 HTML, 19 sitemap entries, zero missing indexable canonicals, zero cross-host canonicals**, RSS/JSON feed parity true. Every indexable route is in sitemap; no redirect/noindex/error route is. Exact emitted HTML digests and matrix: `approval-candidate-export.json`; assertion result `approval-candidate-sitemap.log`.
+- `npm run typecheck`: PASS, exit 0. See `approval-candidate-typecheck.log`.
+
+The unchanged patch SHA-256 and patch-only prospective tree above remain authoritative. The generated ignored local `out/` now describes the approval candidate, not the restored source; it must never be reused as the lead's accepted artifact. Final policy remains unapproved, patch remains banked and unapplied, and applied runtime source remains identical to the lane's prior documentation commit. No new scope or policy choice was added.
