@@ -207,7 +207,7 @@ I build to **WCAG 2.2 Level AA**. To be clear about that word: this site has not
 
 **A focus ring you can actually see.** Move through the page by keyboard and the focused element gets a 2px terracotta outline that traces its own shape: pills stay pill-shaped, cards keep their corners. It clears the contrast WCAG asks of a focus indicator, in both the light and dark themes.
 
-**Readable text in both themes.** Every text role (body, captions, links) meets WCAG AA contrast against its background, in light mode and dark mode alike.
+**Readable text in both themes.** I target WCAG AA contrast for body text, captions and links in light and dark themes. The 7 September 2026 hardening review covered 20 public content pages, the 404 page and three legacy redirects, using automated scans in both themes and targeted keyboard, reflow and contrast checks. These results are scoped evidence, not proof of contrast in every visual state or accessibility certification.
 
 **Real structure underneath.** The page is built from honest landmarks (navigation, main, footer) in a sensible reading order, with a heading hierarchy a screen reader can move through. Links that open a new tab say so.
 

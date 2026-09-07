@@ -146,3 +146,36 @@ describe('Flagstone utility route inventory', () => {
     expect(generator).not.toContain('header.page');
   });
 });
+
+describe('Flagstone utility tinted-surface text contrast', () => {
+  const root = cssBlock(':root {');
+  const light = ':root:not([data-theme="dark"]):not([data-contrast="high"])';
+
+  it('keeps normal-size text above AA with margin on both tinted surfaces', () => {
+    const roles = ['footer.page a', '.about a', '.contact-card p a', '.callout a', '.about h2', '.callout h2', '.home-card h2', '.a11y-readout'];
+    for (const role of roles) {
+      expect(declaration(cssBlock(`${light} ${role}`), 'color')).toBe('var(--brand-deep)');
+    }
+    const ink = rgbToken(root, '--brand-deep');
+    for (const surface of ['--surface', '--surface-tint']) {
+      const background = rgbToken(root, surface);
+      expect(contrast(ink, background)).toBeGreaterThanOrEqual(5.5);
+      expect(contrast(rgbToken(root, '--brand'), background)).toBeLessThan(4.5);
+    }
+  });
+
+  it('keeps each privacy table in a named keyboard-reachable region', () => {
+    const html = readFileSync(join(FLAGSTONE_ROOT, 'privacy/index.html'), 'utf8');
+    const page = new DOMParser().parseFromString(html, 'text/html');
+    const tables = [...page.querySelectorAll('table')];
+    expect(tables).toHaveLength(2);
+    for (const table of tables) {
+      const region = table.parentElement!;
+      expect(region.getAttribute('role')).toBe('region');
+      expect(region.getAttribute('aria-label')?.trim()).toBeTruthy();
+      expect(region.tabIndex).toBe(0);
+      expect(table.querySelectorAll('thead th').length).toBeGreaterThan(1);
+      expect(table.querySelectorAll('tbody tr').length).toBeGreaterThan(0);
+    }
+  });
+});
