@@ -22,9 +22,9 @@ describe('Phase 07 native intro handoff', () => {
     );
 
     expect(match, 'the narrow #hero landing rule must exist').toBeTruthy();
-    expect(match?.[1]).toContain('scroll-margin-top: -220px;');
+    expect(match?.[1]).toContain('scroll-margin-top: -300px;');
     expect(match?.[1]).toContain(
-      'scroll-margin-top: calc(-220px - env(safe-area-inset-top));',
+      'scroll-margin-top: calc(-300px - env(safe-area-inset-top));',
     );
   });
 

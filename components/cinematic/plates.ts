@@ -484,7 +484,9 @@ const MOBILE_WIDTH: Record<string, number> = {
 };
 
 /**
- * The responsive source set for a plane's <picture>:
+ * The responsive sources for a plane's <picture>:
+ *   { phoneWebp } → the direct lightweight WebP for a narrow-phone media source;
+ *                    null for plates without a mobile tier.
  *   { avifSrcSet, webpSrcSet } → width-descriptor srcsets ("…-mobile.avif 768w,
  *                    …avif 1536w") for the 4 live-scene planes that have a
  *                    mobile tier; a single-width srcset (just the "w" hint,
@@ -495,25 +497,38 @@ const MOBILE_WIDTH: Record<string, number> = {
  * null and the SVG is served directly.
  */
 export function sourcesFor(plate: Plate): {
+  phoneWebp: string | null;
   avifSrcSet: string | null;
   webpSrcSet: string | null;
   fallback: string;
 } {
   if (USE_PLACEHOLDERS) {
-    return { avifSrcSet: null, webpSrcSet: null, fallback: plate.placeholderSrc };
+    return {
+      phoneWebp: null,
+      avifSrcSet: null,
+      webpSrcSet: null,
+      fallback: plate.placeholderSrc,
+    };
   }
   const full = FULL_WIDTH[plate.id];
   const mobile = MOBILE_WIDTH[plate.id];
+  const mobilePath = (ext: string) =>
+    swapExt(plate.plateSrc, ext).replace(new RegExp(`\\.${ext}$`), `-mobile.${ext}`);
   const buildSrcSet = (ext: string) => {
     const fullEntry = `${swapExt(plate.plateSrc, ext)} ${full ?? 2048}w`;
     if (!mobile) return fullEntry;
-    const mobilePath = swapExt(plate.plateSrc, ext).replace(new RegExp(`\.${ext}$`), `-mobile.${ext}`);
     // Smaller width FIRST — srcset order doesn't matter to the browser (it
     // picks by width/DPR math against `sizes`), but listing mobile-first
     // matches reading order for anyone diffing/reviewing this file.
-    return `${mobilePath} ${mobile}w, ${fullEntry}`;
+    return `${mobilePath(ext)} ${mobile}w, ${fullEntry}`;
   };
   return {
+    // Mobile Safari can otherwise choose the full-width AVIF at a 3x device
+    // pixel ratio, defeating the phone tier and asking WebKit to composite
+    // several large transformed alpha textures. Give narrow phones a direct
+    // WebP source before the general AVIF/WebP sets; wider viewports retain the
+    // established format and responsive-selection order.
+    phoneWebp: mobile ? mobilePath('webp') : null,
     avifSrcSet: buildSrcSet('avif'),
     webpSrcSet: buildSrcSet('webp'),
     fallback: swapExt(plate.plateSrc, 'webp'),

@@ -43,7 +43,7 @@ export function StaticDesertFrame() {
             ? plate.scaleTo
             : plate.scaleFrom + (plate.scaleTo - plate.scaleFrom) * 0.85;
           const y = plate.yFrom + (plate.yTo - plate.yFrom) * 0.85;
-          const { avifSrcSet, webpSrcSet } = sourcesFor(plate);
+          const { phoneWebp, avifSrcSet, webpSrcSet } = sourcesFor(plate);
           return (
             <Fragment key={plate.id}>
             <picture>
@@ -54,9 +54,9 @@ export function StaticDesertFrame() {
                     <picture> (a div is invalid picture content). The key moved
                     to the Fragment when that happened. Kept exactly.
                   · perf/trim-hero-weight's side is the mobile tier — sourcesFor()
-                    now returns srcSets rather than single srcs, and each <source>
-                    declares sizes="100vw", the same full-bleed contract Layer.tsx
-                    uses. Kept exactly.
+                    returns a direct narrow-phone source plus responsive srcSets,
+                    and the general sources declare sizes="100vw", the same
+                    full-bleed contract Layer.tsx uses. Kept exactly.
                   The old `avif`/`webp` names had to go regardless: the
                   destructure four lines up auto-merged to the srcSet names, so
                   main's identifiers no longer exist. That is the whole conflict —
@@ -64,6 +64,9 @@ export function StaticDesertFrame() {
                   sizes="100vw" earns its place here too: the static frame is what
                   reduced-motion visitors see, and it benefits from the mobile
                   tier wherever one exists (arrival-cliff, mid-fg). */}
+              {phoneWebp && (
+                <source media="(max-width: 767px)" type="image/webp" srcSet={phoneWebp} />
+              )}
               {avifSrcSet && <source type="image/avif" srcSet={avifSrcSet} sizes="100vw" />}
               {webpSrcSet && <source type="image/webp" srcSet={webpSrcSet} sizes="100vw" />}
               <img
