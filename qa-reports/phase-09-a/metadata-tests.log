@@ -1,0 +1,10 @@
+
+ RUN  v3.2.7 /Users/skypie/Portfolio-codex/portfolio-3.0-p09-a-20260907
+
+ ✓ lib/__tests__/metadata.test.ts (3 tests) 2ms
+
+ Test Files  1 passed (1)
+      Tests  3 passed (3)
+   Start at  04:03:06
+   Duration  733ms (transform 25ms, setup 54ms, collect 10ms, tests 2ms, environment 283ms, prepare 48ms)
+
