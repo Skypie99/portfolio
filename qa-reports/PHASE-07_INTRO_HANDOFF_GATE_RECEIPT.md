@@ -6,7 +6,7 @@
 PROMPT_ID: SKYPI-PORTFOLIO-3.0-P07
 PHASE: 07 — Narrow-Screen Intro Handoff and Interaction Precision
 OWNER_VISUAL_APPROVAL: YES — 2026-09-05, “approve Phase 07 visual”
-INTRO_HANDOFF_GATE: HOLD — SECOND DEVICE REPAIR AWAITS IPHONE SAFARI RETEST
+INTRO_HANDOFF_GATE: HOLD — THIRD DEVICE REPAIR AND OWNER COPY UPDATE AWAIT IPHONE SAFARI RETEST
 SAFE_TO_INTEGRATE: NO — evidence gaps listed below remain
 NEXT_PHASE: NOT AUTHORIZED
 REMOTE_MUTATIONS: NONE
@@ -188,7 +188,7 @@ All listed arrival frames reported `documentScrollWidth === viewport width`, zer
 
 The following boundary prevents a PASS gate. It is documented rather than inferred.
 
-1. **T-111:** the owner supplied mobile Safari/iOS evidence and confirmed the first repair's short-landscape landing, but the portrait cinematic band persisted and the portrait landing needed refinement. Second repair `0679c4f` needs a repeat physical-iPhone Safari run that specifically confirms: no pale strip through the cinematic; the portrait Skip Intro composition is improved and clear of Safari chrome/safe areas; the already accepted landscape landing remains intact; Back/Forward and reload remain sane. Local browser checks do not establish real-device WebKit support.
+1. **T-111:** the owner supplied mobile Safari/iOS evidence and confirmed the first repair's short-landscape landing, but the portrait cinematic band persisted through the second repair and the portrait landing needed further refinement. Third repair `d6e378a` needs a repeat physical-iPhone Safari run that specifically confirms: no pale strip through the cinematic; the portrait Skip Intro composition is improved and clear of Safari chrome/safe areas; the already accepted landscape landing remains intact; Back/Forward and reload remain sane. Local browser checks do not establish real-device WebKit support. See the appended third-repair record below; earlier candidate-specific measurements are retained as history, not current acceptance.
 
 The committed packet includes paired first/arrival captures for every listed Phase 07 viewport, two stable narrow-width arrival runs per theme, touch, keyboard, reduced-motion, no-JavaScript, no-View-Transition, Back, Forward, reload, and deep-link evidence. These local observations do not eliminate the mobile-WebKit limitation or the owner-observed defects.
 
@@ -200,6 +200,7 @@ ROLLBACK_ACTION: revert the local candidate commit; do not reset or rewrite hist
 SOURCE_COMMIT_CREATED: d1c15f9cd33051edff3f053ad20c4b2ce0c1cfe4
 REPAIR_SOURCE_COMMIT_CREATED: a53195326aae13adfabea07dbb6cddbfe7f428a1
 SECOND_REPAIR_SOURCE_COMMIT_CREATED: 0679c4f79c52cd49b50ac85f4b93d6f136c63c0c
+THIRD_REPAIR_SOURCE_COMMIT_CREATED: d6e378a4f5b76682a3a9b821e7d90c12e255be76
 REMOTE_SIDE_EFFECTS: NONE
 PRODUCTION_SIDE_EFFECTS: NONE
 ```
@@ -208,13 +209,13 @@ PRODUCTION_SIDE_EFFECTS: NONE
 
 ### Repeat mobile WebKit proof for the repair candidate before allowing a PASS gate
 
-**Decision:** provide a real iPhone/iOS Safari result for source commit `0679c4f` before changing this gate.
+**Decision:** provide a real iPhone/iOS Safari result for source commit `d6e378a` before changing this gate.
 
 **Recommendation:** run the rebuilt static repair candidate on a real iPhone Safari, recording the cinematic with browser chrome visible, portrait and landscape Skip Intro arrival, safe-area behavior, keyboard/VoiceOver focus continuity where available, and the history journey. Then retain the observations before issuing PASS.
 
-**Why:** the repair relies on native fragment geometry, safe-area/viewport behavior, and Safari's compositing of the phone-specific source. Chromium and source tests do not establish iOS WebKit behavior.
+**Why:** the repair relies on native fragment geometry and the relationship between Safari's small viewport and ScrollTrigger's pin-release endpoint. Chromium and source tests do not establish iOS WebKit behavior.
 
-**Alternative:** retain `INTRO_HANDOFF_GATE: HOLD` and treat `0679c4f` only as a local repair candidate.
+**Alternative:** retain `INTRO_HANDOFF_GATE: HOLD` and treat `d6e378a` only as a local repair candidate.
 
 **Impact:** no Phase 08 handoff or local integration is authorized until this decision is resolved and the WebKit evidence is retained.
 
@@ -229,3 +230,27 @@ PRODUCTION_SIDE_EFFECTS: NONE
 **Alternative:** leave the wrapper unrun and preserve the exact failure plus supplemental audit in this receipt.
 
 **Impact:** the source candidate remains unchanged, but a future final gate needs a clear overflow-wrapper disposition.
+
+## Third owner retest, reproduced seam, and approved identity revision — 2026-09-07
+
+Current source: `d6e378a4f5b76682a3a9b821e7d90c12e255be76` (`fix(intro): close Safari seam and simplify identity`). Source tree: `52c276e537fdd06603c5e91dbea48c4b4fef66c2`.
+
+The owner supplied `IMG_8188.PNG` and `IMG_8189.PNG`: the beige strip still existed; the portrait identity was higher but could move up further. These are physical-device defect observations, not successful acceptance. The original images stay in the owner's Downloads folder; their hashes and provenance limitations are recorded in [the third-repair QA report](2026-09-07_Codex_Phase07SeamAndIdentity.md).
+
+The owner also explicitly requested **Skyler Halisky** as the portfolio's primary name on mobile and desktop, removal of the Sky/Skyler explanation and agency phrase, a one-person studio credit, and less intense casing. This supersedes the earlier short-name/imprint copy contract for these surfaces; the support-first role sentence is unchanged. Final visual acceptance of this revised candidate is still pending.
+
+### Reproduced mechanism and bounded source repair
+
+- The phone pin is `100svh`, but the existing `end: 'bottom bottom'` is measured by ScrollTrigger against its `100vh` viewport. A controlled 40px small/large viewport mismatch exposed 40px of stage below the released pin; an 80px mismatch exposed 80px. The bright world backdrop in that unused stage is the strip, not a separate beige DOM bar. `elementsFromPoint` identified the exposed stage.
+- Narrow-phone pin release now uses `bottom top+=${pin.offsetHeight}`, matching the pin's actual height. Wider layouts keep `bottom bottom`. The pin, native anchor/history/focus mechanism, imagery, and animation choreography remain in place.
+- The earlier ineffective `100dvh` override is removed: the later base `100svh` declaration won the cascade. The unconfirmed phone-WebP workaround is also removed, restoring the previous responsive AVIF/WebP selection without changing asset bytes.
+- Portrait landing changes from `-300px` to `-360px`, retaining the safe-area adjustment. The owner-accepted short-landscape rule remains `-310px`; fine-pointer desktop remains `0px`.
+- The name is **Skyler Halisky** across displayed identity, page/share metadata, bylines, feeds, and fallback identity. The hero credit is exactly **SkyPi Studio is one person.** Hero credit/eyebrow and the intro identity badge no longer force uppercase. Other navigation typography is not redesigned.
+
+### Evidence boundary
+
+[The current evidence folder](phase-07-repair3/) contains a reproducible static-browser matrix, baseline seam screenshot, current screenshots, metrics, and artifact hash verification. The viewport mismatch is deliberately simulated in desktop Chromium; it is **not** represented as a physical Safari run. The built static HTML served over the LAN hashes identically to `out/index.html`, and its source matches the committed candidate.
+
+Final local gates: lint and typecheck pass; 96 test files pass with 870 passed/2 skipped; rebuilt static integrity passes with 54 passed/1 skipped. The final post-commit browser matrix passes all 23 cells. All six simulated seam gaps are effectively zero. At 440px portrait, identity top is `121.80px`; landscape remains `27.31px` and desktop `201.80px`. Intermediate test-cleanup failures and background-prefetch timeouts are disclosed in the linked report, along with the successful final reruns.
+
+`INTRO_HANDOFF_GATE: HOLD` remains in force. No push, merge, deploy, production change, Phase 08 work, or waiver of device evidence is authorized or performed.

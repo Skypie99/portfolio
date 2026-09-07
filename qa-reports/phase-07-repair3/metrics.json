@@ -1,0 +1,476 @@
+{
+  "sourceHead": "d6e378a4f5b76682a3a9b821e7d90c12e255be76",
+  "browser": "Desktop Chromium; svh/vh mismatch simulated; not physical Safari evidence",
+  "results": [
+    {
+      "label": "seam-dark-0",
+      "simulatedSmallViewportDeficit": 0,
+      "seam": {
+        "pinBottom": 620.0009765625,
+        "stageBottom": 620,
+        "heroTop": 620,
+        "gap": -0.0009765625
+      }
+    },
+    {
+      "label": "seam-dark-40",
+      "simulatedSmallViewportDeficit": 40,
+      "seam": {
+        "pinBottom": 620.0009765625,
+        "stageBottom": 620,
+        "heroTop": 620,
+        "gap": -0.0009765625
+      }
+    },
+    {
+      "label": "seam-dark-80",
+      "simulatedSmallViewportDeficit": 80,
+      "seam": {
+        "pinBottom": 620.0009765625,
+        "stageBottom": 620,
+        "heroTop": 620,
+        "gap": -0.0009765625
+      }
+    },
+    {
+      "label": "portrait-dark-320",
+      "landing": {
+        "viewport": [
+          320,
+          844
+        ],
+        "scrollY": 2892,
+        "margin": "-360px",
+        "identityTop": 140,
+        "roleTop": 174,
+        "headingTop": 472.59375,
+        "name": "Skyler Halisky",
+        "imprint": "SkyPi Studio is one person.",
+        "creditCasing": "none",
+        "focus": true,
+        "focusVisible": false,
+        "overflow": 0,
+        "title": "Skyler Halisky: Senior Technical Support"
+      },
+      "steps": [],
+      "errors": []
+    },
+    {
+      "label": "portrait-dark-375",
+      "landing": {
+        "viewport": [
+          375,
+          844
+        ],
+        "scrollY": 2892,
+        "margin": "-360px",
+        "identityTop": 140,
+        "roleTop": 174,
+        "headingTop": 398.046875,
+        "name": "Skyler Halisky",
+        "imprint": "SkyPi Studio is one person.",
+        "creditCasing": "none",
+        "focus": true,
+        "focusVisible": false,
+        "overflow": 0,
+        "title": "Skyler Halisky: Senior Technical Support"
+      },
+      "steps": [],
+      "errors": []
+    },
+    {
+      "label": "portrait-dark-393",
+      "landing": {
+        "viewport": [
+          393,
+          844
+        ],
+        "scrollY": 2892,
+        "margin": "-360px",
+        "identityTop": 134.953125,
+        "roleTop": 168.953125,
+        "headingTop": 393,
+        "name": "Skyler Halisky",
+        "imprint": "SkyPi Studio is one person.",
+        "creditCasing": "none",
+        "focus": true,
+        "focusVisible": false,
+        "overflow": 0,
+        "title": "Skyler Halisky: Senior Technical Support"
+      },
+      "steps": [],
+      "errors": []
+    },
+    {
+      "label": "portrait-dark-430",
+      "landing": {
+        "viewport": [
+          430,
+          844
+        ],
+        "scrollY": 2892,
+        "margin": "-360px",
+        "identityTop": 124.59375,
+        "roleTop": 158.59375,
+        "headingTop": 382.640625,
+        "name": "Skyler Halisky",
+        "imprint": "SkyPi Studio is one person.",
+        "creditCasing": "none",
+        "focus": true,
+        "focusVisible": false,
+        "overflow": 0,
+        "title": "Skyler Halisky: Senior Technical Support"
+      },
+      "steps": [],
+      "errors": []
+    },
+    {
+      "label": "portrait-dark-440",
+      "landing": {
+        "viewport": [
+          440,
+          844
+        ],
+        "scrollY": 2892,
+        "margin": "-360px",
+        "identityTop": 121.796875,
+        "roleTop": 155.796875,
+        "headingTop": 379.84375,
+        "name": "Skyler Halisky",
+        "imprint": "SkyPi Studio is one person.",
+        "creditCasing": "none",
+        "focus": true,
+        "focusVisible": false,
+        "overflow": 0,
+        "title": "Skyler Halisky: Senior Technical Support"
+      },
+      "steps": [
+        {
+          "step": "back",
+          "y": 0
+        },
+        {
+          "step": "forward",
+          "y": 2892
+        },
+        {
+          "step": "reload",
+          "y": 2892
+        },
+        {
+          "step": "rotate-landscape",
+          "identityTop": 27.3125,
+          "margin": "-310px"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "label": "landscape-dark",
+      "landing": {
+        "viewport": [
+          956,
+          440
+        ],
+        "scrollY": 1982,
+        "margin": "-310px",
+        "identityTop": 27.3125,
+        "roleTop": 61.3125,
+        "headingTop": 246.859375,
+        "name": "Skyler Halisky",
+        "imprint": "SkyPi Studio is one person.",
+        "creditCasing": "none",
+        "focus": true,
+        "focusVisible": false,
+        "overflow": 0,
+        "title": "Skyler Halisky: Senior Technical Support"
+      },
+      "steps": [],
+      "errors": []
+    },
+    {
+      "label": "desktop-dark",
+      "landing": {
+        "viewport": [
+          1440,
+          900
+        ],
+        "scrollY": 3420,
+        "margin": "0px",
+        "identityTop": 201.796875,
+        "roleTop": 235.796875,
+        "headingTop": 421.34375,
+        "name": "Skyler Halisky",
+        "imprint": "SkyPi Studio is one person.",
+        "creditCasing": "none",
+        "focus": true,
+        "focusVisible": false,
+        "overflow": 0,
+        "title": "Skyler Halisky: Senior Technical Support"
+      },
+      "steps": [],
+      "errors": []
+    },
+    {
+      "label": "seam-light-0",
+      "simulatedSmallViewportDeficit": 0,
+      "seam": {
+        "pinBottom": 620.0009765625,
+        "stageBottom": 620,
+        "heroTop": 620,
+        "gap": -0.0009765625
+      }
+    },
+    {
+      "label": "seam-light-40",
+      "simulatedSmallViewportDeficit": 40,
+      "seam": {
+        "pinBottom": 620.0009765625,
+        "stageBottom": 620,
+        "heroTop": 620,
+        "gap": -0.0009765625
+      }
+    },
+    {
+      "label": "seam-light-80",
+      "simulatedSmallViewportDeficit": 80,
+      "seam": {
+        "pinBottom": 620.0009765625,
+        "stageBottom": 620,
+        "heroTop": 620,
+        "gap": -0.0009765625
+      }
+    },
+    {
+      "label": "portrait-light-320",
+      "landing": {
+        "viewport": [
+          320,
+          844
+        ],
+        "scrollY": 2892,
+        "margin": "-360px",
+        "identityTop": 140,
+        "roleTop": 174,
+        "headingTop": 472.59375,
+        "name": "Skyler Halisky",
+        "imprint": "SkyPi Studio is one person.",
+        "creditCasing": "none",
+        "focus": true,
+        "focusVisible": false,
+        "overflow": 0,
+        "title": "Skyler Halisky: Senior Technical Support"
+      },
+      "steps": [],
+      "errors": []
+    },
+    {
+      "label": "portrait-light-375",
+      "landing": {
+        "viewport": [
+          375,
+          844
+        ],
+        "scrollY": 2892,
+        "margin": "-360px",
+        "identityTop": 140,
+        "roleTop": 174,
+        "headingTop": 398.046875,
+        "name": "Skyler Halisky",
+        "imprint": "SkyPi Studio is one person.",
+        "creditCasing": "none",
+        "focus": true,
+        "focusVisible": false,
+        "overflow": 0,
+        "title": "Skyler Halisky: Senior Technical Support"
+      },
+      "steps": [],
+      "errors": []
+    },
+    {
+      "label": "portrait-light-393",
+      "landing": {
+        "viewport": [
+          393,
+          844
+        ],
+        "scrollY": 2892,
+        "margin": "-360px",
+        "identityTop": 134.953125,
+        "roleTop": 168.953125,
+        "headingTop": 393,
+        "name": "Skyler Halisky",
+        "imprint": "SkyPi Studio is one person.",
+        "creditCasing": "none",
+        "focus": true,
+        "focusVisible": false,
+        "overflow": 0,
+        "title": "Skyler Halisky: Senior Technical Support"
+      },
+      "steps": [],
+      "errors": []
+    },
+    {
+      "label": "portrait-light-430",
+      "landing": {
+        "viewport": [
+          430,
+          844
+        ],
+        "scrollY": 2892,
+        "margin": "-360px",
+        "identityTop": 124.59375,
+        "roleTop": 158.59375,
+        "headingTop": 382.640625,
+        "name": "Skyler Halisky",
+        "imprint": "SkyPi Studio is one person.",
+        "creditCasing": "none",
+        "focus": true,
+        "focusVisible": false,
+        "overflow": 0,
+        "title": "Skyler Halisky: Senior Technical Support"
+      },
+      "steps": [],
+      "errors": []
+    },
+    {
+      "label": "portrait-light-440",
+      "landing": {
+        "viewport": [
+          440,
+          844
+        ],
+        "scrollY": 2892,
+        "margin": "-360px",
+        "identityTop": 121.796875,
+        "roleTop": 155.796875,
+        "headingTop": 379.84375,
+        "name": "Skyler Halisky",
+        "imprint": "SkyPi Studio is one person.",
+        "creditCasing": "none",
+        "focus": true,
+        "focusVisible": false,
+        "overflow": 0,
+        "title": "Skyler Halisky: Senior Technical Support"
+      },
+      "steps": [],
+      "errors": []
+    },
+    {
+      "label": "landscape-light",
+      "landing": {
+        "viewport": [
+          956,
+          440
+        ],
+        "scrollY": 1982,
+        "margin": "-310px",
+        "identityTop": 27.3125,
+        "roleTop": 61.3125,
+        "headingTop": 246.859375,
+        "name": "Skyler Halisky",
+        "imprint": "SkyPi Studio is one person.",
+        "creditCasing": "none",
+        "focus": true,
+        "focusVisible": false,
+        "overflow": 0,
+        "title": "Skyler Halisky: Senior Technical Support"
+      },
+      "steps": [],
+      "errors": []
+    },
+    {
+      "label": "desktop-light",
+      "landing": {
+        "viewport": [
+          1440,
+          900
+        ],
+        "scrollY": 3420,
+        "margin": "0px",
+        "identityTop": 201.796875,
+        "roleTop": 235.796875,
+        "headingTop": 421.34375,
+        "name": "Skyler Halisky",
+        "imprint": "SkyPi Studio is one person.",
+        "creditCasing": "none",
+        "focus": true,
+        "focusVisible": false,
+        "overflow": 0,
+        "title": "Skyler Halisky: Senior Technical Support"
+      },
+      "steps": [],
+      "errors": []
+    },
+    {
+      "label": "reduced-motion",
+      "landing": {
+        "viewport": [
+          375,
+          812
+        ],
+        "scrollY": 1172,
+        "margin": "-360px",
+        "identityTop": 140,
+        "roleTop": 174,
+        "headingTop": 398.046875,
+        "name": "Skyler Halisky",
+        "imprint": "SkyPi Studio is one person.",
+        "creditCasing": "none",
+        "focus": true,
+        "focusVisible": false,
+        "overflow": 0,
+        "title": "Skyler Halisky: Senior Technical Support"
+      },
+      "steps": [],
+      "errors": []
+    },
+    {
+      "label": "keyboard",
+      "landing": {
+        "viewport": [
+          375,
+          812
+        ],
+        "scrollY": 2796,
+        "margin": "-360px",
+        "identityTop": 140,
+        "roleTop": 174,
+        "headingTop": 398.046875,
+        "name": "Skyler Halisky",
+        "imprint": "SkyPi Studio is one person.",
+        "creditCasing": "none",
+        "focus": true,
+        "focusVisible": true,
+        "overflow": 0,
+        "title": "Skyler Halisky: Senior Technical Support"
+      },
+      "steps": [],
+      "errors": []
+    },
+    {
+      "label": "no-js",
+      "landing": {
+        "viewport": [
+          375,
+          812
+        ],
+        "scrollY": 2796,
+        "margin": "-360px",
+        "identityTop": 140,
+        "roleTop": 174,
+        "headingTop": 398.046875,
+        "name": "Skyler Halisky",
+        "imprint": "SkyPi Studio is one person.",
+        "creditCasing": "none",
+        "focus": true,
+        "focusVisible": false,
+        "overflow": 0,
+        "title": "Skyler Halisky: Senior Technical Support"
+      },
+      "steps": [],
+      "errors": []
+    }
+  ],
+  "failures": []
+}
