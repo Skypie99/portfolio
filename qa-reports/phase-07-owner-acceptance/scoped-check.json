@@ -1,0 +1,937 @@
+{
+  "sourceCommit": "d6e378a4f5b76682a3a9b821e7d90c12e255be76",
+  "instrumentSha256": "5e3515ad0339fddca634c28336d64c8d349ff0c90d21bae2a2543f9ff4502dfe",
+  "browser": "Desktop Chrome; not new physical Safari evidence",
+  "rows": [
+    {
+      "width": 320,
+      "height": 720,
+      "colorScheme": "light",
+      "run": 1,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 320,
+          "winW": 320,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 320,
+          "winW": 320,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 140,
+        "roleTop": 174,
+        "heroMargin": "-360px"
+      }
+    },
+    {
+      "width": 320,
+      "height": 720,
+      "colorScheme": "light",
+      "run": 2,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 320,
+          "winW": 320,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 320,
+          "winW": 320,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 140,
+        "roleTop": 174,
+        "heroMargin": "-360px"
+      }
+    },
+    {
+      "width": 320,
+      "height": 720,
+      "colorScheme": "dark",
+      "run": 1,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 320,
+          "winW": 320,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 320,
+          "winW": 320,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 140,
+        "roleTop": 174,
+        "heroMargin": "-360px"
+      }
+    },
+    {
+      "width": 320,
+      "height": 720,
+      "colorScheme": "dark",
+      "run": 2,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 320,
+          "winW": 320,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 320,
+          "winW": 320,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 140,
+        "roleTop": 174,
+        "heroMargin": "-360px"
+      }
+    },
+    {
+      "width": 360,
+      "height": 800,
+      "colorScheme": "light",
+      "run": 1,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 360,
+          "winW": 360,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 360,
+          "winW": 360,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 140,
+        "roleTop": 174,
+        "heroMargin": "-360px"
+      }
+    },
+    {
+      "width": 360,
+      "height": 800,
+      "colorScheme": "light",
+      "run": 2,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 360,
+          "winW": 360,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 360,
+          "winW": 360,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 140,
+        "roleTop": 174,
+        "heroMargin": "-360px"
+      }
+    },
+    {
+      "width": 360,
+      "height": 800,
+      "colorScheme": "dark",
+      "run": 1,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 360,
+          "winW": 360,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 360,
+          "winW": 360,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 140,
+        "roleTop": 174,
+        "heroMargin": "-360px"
+      }
+    },
+    {
+      "width": 360,
+      "height": 800,
+      "colorScheme": "dark",
+      "run": 2,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 360,
+          "winW": 360,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 360,
+          "winW": 360,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 140,
+        "roleTop": 174,
+        "heroMargin": "-360px"
+      }
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "colorScheme": "light",
+      "run": 1,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 375,
+          "winW": 375,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 375,
+          "winW": 375,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 140,
+        "roleTop": 174,
+        "heroMargin": "-360px"
+      }
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "colorScheme": "light",
+      "run": 2,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 375,
+          "winW": 375,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 375,
+          "winW": 375,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 140,
+        "roleTop": 174,
+        "heroMargin": "-360px"
+      }
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "colorScheme": "dark",
+      "run": 1,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 375,
+          "winW": 375,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 375,
+          "winW": 375,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 140,
+        "roleTop": 174,
+        "heroMargin": "-360px"
+      }
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "colorScheme": "dark",
+      "run": 2,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 375,
+          "winW": 375,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 375,
+          "winW": 375,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 140,
+        "roleTop": 174,
+        "heroMargin": "-360px"
+      }
+    },
+    {
+      "width": 393,
+      "height": 852,
+      "colorScheme": "light",
+      "run": 1,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 393,
+          "winW": 393,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 393,
+          "winW": 393,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 134.953125,
+        "roleTop": 168.953125,
+        "heroMargin": "-360px"
+      }
+    },
+    {
+      "width": 393,
+      "height": 852,
+      "colorScheme": "light",
+      "run": 2,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 393,
+          "winW": 393,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 393,
+          "winW": 393,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 134.953125,
+        "roleTop": 168.953125,
+        "heroMargin": "-360px"
+      }
+    },
+    {
+      "width": 393,
+      "height": 852,
+      "colorScheme": "dark",
+      "run": 1,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 393,
+          "winW": 393,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 393,
+          "winW": 393,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 134.953125,
+        "roleTop": 168.953125,
+        "heroMargin": "-360px"
+      }
+    },
+    {
+      "width": 393,
+      "height": 852,
+      "colorScheme": "dark",
+      "run": 2,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 393,
+          "winW": 393,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 393,
+          "winW": 393,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 134.953125,
+        "roleTop": 168.953125,
+        "heroMargin": "-360px"
+      }
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "colorScheme": "light",
+      "run": 1,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 430,
+          "winW": 430,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 430,
+          "winW": 430,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 124.59375,
+        "roleTop": 158.59375,
+        "heroMargin": "-360px"
+      }
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "colorScheme": "light",
+      "run": 2,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 430,
+          "winW": 430,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 430,
+          "winW": 430,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 124.59375,
+        "roleTop": 158.59375,
+        "heroMargin": "-360px"
+      }
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "colorScheme": "dark",
+      "run": 1,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 430,
+          "winW": 430,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 430,
+          "winW": 430,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 124.59375,
+        "roleTop": 158.59375,
+        "heroMargin": "-360px"
+      }
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "colorScheme": "dark",
+      "run": 2,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 430,
+          "winW": 430,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 430,
+          "winW": 430,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 124.59375,
+        "roleTop": 158.59375,
+        "heroMargin": "-360px"
+      }
+    },
+    {
+      "width": 768,
+      "height": 900,
+      "colorScheme": "light",
+      "run": 1,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 768,
+          "winW": 768,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 768,
+          "winW": 768,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 389.953125,
+        "roleTop": 423.953125,
+        "heroMargin": "0px"
+      }
+    },
+    {
+      "width": 768,
+      "height": 900,
+      "colorScheme": "dark",
+      "run": 1,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 768,
+          "winW": 768,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 768,
+          "winW": 768,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 389.953125,
+        "roleTop": 423.953125,
+        "heroMargin": "0px"
+      }
+    },
+    {
+      "width": 1024,
+      "height": 900,
+      "colorScheme": "light",
+      "run": 1,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 1024,
+          "winW": 1024,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 1024,
+          "winW": 1024,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 318.265625,
+        "roleTop": 352.265625,
+        "heroMargin": "0px"
+      }
+    },
+    {
+      "width": 1024,
+      "height": 900,
+      "colorScheme": "dark",
+      "run": 1,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 1024,
+          "winW": 1024,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 1024,
+          "winW": 1024,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 318.265625,
+        "roleTop": 352.265625,
+        "heroMargin": "0px"
+      }
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "colorScheme": "light",
+      "run": 1,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 1280,
+          "winW": 1280,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 1280,
+          "winW": 1280,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 246.59375,
+        "roleTop": 280.59375,
+        "heroMargin": "0px"
+      }
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "colorScheme": "dark",
+      "run": 1,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 1280,
+          "winW": 1280,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 1280,
+          "winW": 1280,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 246.59375,
+        "roleTop": 280.59375,
+        "heroMargin": "0px"
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "colorScheme": "light",
+      "run": 1,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 1440,
+          "winW": 1440,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 1440,
+          "winW": 1440,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 201.796875,
+        "roleTop": 235.796875,
+        "heroMargin": "0px"
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "colorScheme": "dark",
+      "run": 1,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 1440,
+          "winW": 1440,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 1440,
+          "winW": 1440,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 201.796875,
+        "roleTop": 235.796875,
+        "heroMargin": "0px"
+      }
+    },
+    {
+      "width": 1728,
+      "height": 900,
+      "colorScheme": "light",
+      "run": 1,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 1728,
+          "winW": 1728,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 1728,
+          "winW": 1728,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 200,
+        "roleTop": 234,
+        "heroMargin": "0px"
+      }
+    },
+    {
+      "width": 1728,
+      "height": 900,
+      "colorScheme": "dark",
+      "run": 1,
+      "initial": {
+        "scrollWidthReading": {
+          "docW": 1728,
+          "winW": 1728,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "arrival": {
+        "scrollWidthReading": {
+          "docW": 1728,
+          "winW": 1728,
+          "over": false,
+          "vacuous": true
+        },
+        "offenders": [],
+        "nonVacuityProof": true
+      },
+      "geometry": {
+        "identityTop": 200,
+        "roleTop": 234,
+        "heroMargin": "0px"
+      }
+    }
+  ]
+}
