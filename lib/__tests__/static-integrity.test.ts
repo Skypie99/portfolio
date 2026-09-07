@@ -534,6 +534,22 @@ describe.runIf(OUT_EXISTS)('Gap 6: share-card identity', () => {
     ).toEqual([]);
   });
 
+  it('the sitemap lists exactly the indexable real routes, including static utilities', () => {
+    assertOutDirExists();
+    const indexable = realRoutes().filter((file) => {
+      const metaTags = readFileSync(file, 'utf8').match(/<meta\b[^>]*>/gi) ?? [];
+      return !metaTags.some(
+        (tag) => /\bname="robots"/i.test(tag) && /\bcontent="[^"]*\bnoindex\b/i.test(tag),
+      );
+    });
+    expect(indexable.length).toBeGreaterThan(0);
+    const expected = indexable.map((file) => SITE_ORIGIN + routePathOf(file)).sort();
+    const xml = readFileSync(join(OUT_DIR, 'sitemap.xml'), 'utf8');
+    const actual = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]).sort();
+    // Exact equality also rejects duplicate URLs and private/redirect entries.
+    expect(actual).toEqual(expected);
+  });
+
   it('every route keeps og:site_name and og:locale (they drop when a leaf replaces the root block)', () => {
     const offenders: string[] = [];
     for (const file of realRoutes()) {
