@@ -1,6 +1,6 @@
 # Phase 07 — iPhone Safari Device Repair
 
-## What changed
+## First repair
 
 - `app/globals.css`
   - Preserves the approved portrait native-fragment landing offset (`-220px`).
@@ -11,7 +11,20 @@
 - `qa-reports/PHASE-07_INTRO_HANDOFF_GATE_RECEIPT.md`
   - Records the owner-supplied physical device failure, its exact claim boundary, and the repair candidate as HOLD.
 
-No `components/cinematic/**` file, copy, dependency, route, production setting, remote, or primary checkout was changed.
+No `components/cinematic/**` file, copy, dependency, route, production setting, remote, or primary checkout was changed by the first repair.
+
+## Second owner retest and repair
+
+The owner's second physical-iPhone Safari capture set confirmed the landscape landing is now correct. Portrait lands successfully but lower than desired, and the pale cinematic band remains. This disproves the first repair's viewport-height hypothesis as a complete fix.
+
+Second source repair `0679c4f79c52cd49b50ac85f4b93d6f136c63c0c`:
+
+- moves only the portrait native-fragment offset from `-220px` to `-300px`;
+- preserves the accepted short-landscape `-310px` rule;
+- gives sub-768px phones a direct source for the existing lightweight `-mobile.webp` cinematic plates on both animated and reduced-motion paths;
+- leaves wider landscape and desktop image selection, animation choreography, assets, copy, routes, dependencies, production configuration, and remote state unchanged.
+
+The phone-specific source avoids having high-DPR portrait Safari select and composite the full-width AVIF alpha plates. This is an evidence-backed repair hypothesis, not physical-device proof; the owner must retest the exact static artifact.
 
 ## Evidence and claim boundary
 
@@ -31,6 +44,7 @@ The screenshot address bar showed bare `10.0.0.22`, not the earlier numbered sta
 | Branch | `codex/portfolio-3.0-phase07-20260905` |
 | Original Phase 07 source | `d1c15f9cd33051edff3f053ad20c4b2ce0c1cfe4` |
 | Repair source | `a53195326aae13adfabea07dbb6cddbfe7f428a1` — `fix(intro): repair iPhone Safari handoff` |
+| Second repair source | `0679c4f79c52cd49b50ac85f4b93d6f136c63c0c` — `fix(intro): harden iPhone cinematic handoff` |
 | Previous evidence receipt | `03a1ccdb35ba1c77051ab4fa3e91580e9d434aed` |
 | Remote / production actions | none |
 
@@ -53,6 +67,23 @@ The screenshot address bar showed bare `10.0.0.22`, not the earlier numbered sta
 
 The local browser runtime used for geometry was Chrome, not iPhone Safari. The available Playwright WebKit runtime was not installed. Neither is presented as mobile-Safari acceptance proof.
 
+### Second-repair verification
+
+| Check | Result |
+| --- | --- |
+| Focused Vitest | PASS — 2 files, 10 tests |
+| `npm run typecheck` | PASS |
+| `npm run lint` | PASS — existing Next lint deprecation/export-header notices only |
+| `npm run build` after source commit | PASS — exact committed static export completed |
+| `npm test -- --run` | PASS — 96 files; 873 passed, 2 skipped. Existing React SSR and `fetchPriority` warnings only. |
+| `npm run test:static` | PASS — rebuilt static export; 54 passed, 1 skipped. |
+| `git diff --check` | PASS |
+| High-DPR Chrome portrait, 440 × 844 | All four live planes select `-mobile.webp`; identity `182px`; headline `451px`; margin `-300px`. |
+| High-DPR Chrome landscape, 956 × 440 | Preserves full AVIF path; identity `27px`; headline `243px`; margin `-310px`. |
+| Chrome desktop, 1440 × 900 | Preserves full AVIF path and `0px` margin. |
+
+The second repair intentionally modifies three protected cinematic implementation files under explicit owner authorization to fix the owner-observed mobile defect. No cinematic asset or choreography value changed.
+
 ## Gate
 
 ```text
@@ -65,13 +96,13 @@ The repair needs a repeat on the physical iPhone Safari before the strip, safe-a
 
 ## Rollback
 
-Revert `a53195326aae13adfabea07dbb6cddbfe7f428a1`; do not reset or rewrite history. The source changes are limited to the two files above.
+Revert `0679c4f79c52cd49b50ac85f4b93d6f136c63c0c` to remove only the second repair, or revert `a53195326aae13adfabea07dbb6cddbfe7f428a1` as well to remove both device repairs. Do not reset or rewrite history.
 
 ## DECISIONS FOR SKY
 
 ### Repeat the repair candidate on the physical iPhone before gate adjudication
 
-**Decision:** whether the new static artifact eliminates the cinematic strip and lands correctly in portrait and short landscape.
+**Decision:** whether the second-repair static artifact eliminates the cinematic strip, improves portrait landing, and preserves the already accepted short-landscape result.
 
 **Recommendation:** retest the freshly built local URL once in portrait and once in landscape, then report the observed results in this task.
 
