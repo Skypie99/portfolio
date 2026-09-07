@@ -1,0 +1,106 @@
+--- a/public/flagstone/accessibility/index.html
++++ b/public/flagstone/accessibility/index.html
+@@ -5,7 +5,8 @@
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Accessibility: Flagstone</title>
+   <meta name="description" content="Flagstone’s accessibility statement: which assistive technologies the app supports, what we’re still working on, and how to tell us when we get it wrong." />
+-  <meta property="og:type" content="website" />
++  <link rel="canonical" href="https://skypistudio.com/flagstone/accessibility/" />
++<meta property="og:type" content="website" />
+   <meta property="og:url" content="https://skypistudio.com/flagstone/accessibility/" />
+   <meta property="og:title" content="Accessibility: Flagstone" />
+   <meta property="og:description" content="Flagstone’s accessibility statement: which assistive technologies the app supports, what we’re still working on, and how to tell us when we get it wrong." />
+--- a/public/flagstone/index.html
++++ b/public/flagstone/index.html
+@@ -5,7 +5,8 @@
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Flagstone: community-powered accessibility map</title>
+   <meta name="description" content="Flagstone is a community map of accessibility barriers. Find out whether a place will work for you before you travel to it." />
+-  <meta property="og:type" content="website" />
++  <link rel="canonical" href="https://skypistudio.com/flagstone/" />
++<meta property="og:type" content="website" />
+   <meta property="og:url" content="https://skypistudio.com/flagstone/" />
+   <meta property="og:title" content="Flagstone: community-powered accessibility map" />
+   <meta property="og:description" content="Flagstone is a community map of accessibility barriers. Find out whether a place will work for you before you travel to it." />
+--- a/public/flagstone/privacy/index.html
++++ b/public/flagstone/privacy/index.html
+@@ -5,6 +5,7 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Privacy Policy — Flagstone</title>
+ <meta name="description" content="What Flagstone collects, what it never collects, and your privacy rights." />
++<link rel="canonical" href="https://skypistudio.com/flagstone/privacy/" />
+ <meta property="og:type" content="website" />
+ <meta property="og:url" content="https://skypistudio.com/flagstone/privacy/" />
+ <meta property="og:title" content="Privacy Policy — Flagstone" />
+--- a/public/flagstone/support/index.html
++++ b/public/flagstone/support/index.html
+@@ -5,7 +5,8 @@
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Support: Flagstone</title>
+   <meta name="description" content="How Flagstone works, frequently asked questions, and how to reach us." />
+-  <meta property="og:type" content="website" />
++  <link rel="canonical" href="https://skypistudio.com/flagstone/support/" />
++<meta property="og:type" content="website" />
+   <meta property="og:url" content="https://skypistudio.com/flagstone/support/" />
+   <meta property="og:title" content="Support: Flagstone" />
+   <meta property="og:description" content="How Flagstone works, frequently asked questions, and how to reach us." />
+--- a/public/flagstone/terms/index.html
++++ b/public/flagstone/terms/index.html
+@@ -5,7 +5,8 @@
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Terms &amp; Community Guidelines — Flagstone</title>
+   <meta name="description" content="Flagstone’s terms of use and community guidelines: what you can post, what isn’t allowed, how moderation works, and how to reach us." />
+-  <meta property="og:type" content="website" />
++  <link rel="canonical" href="https://skypistudio.com/flagstone/terms/" />
++<meta property="og:type" content="website" />
+   <meta property="og:url" content="https://skypistudio.com/flagstone/terms/" />
+   <meta property="og:title" content="Terms &amp; Community Guidelines — Flagstone" />
+   <meta property="og:description" content="Flagstone’s terms of use and community guidelines: what you can post, what isn’t allowed, how moderation works, and how to reach us." />
+--- a/app/sitemap.ts
++++ b/app/sitemap.ts
+@@ -27,6 +27,15 @@
+     { url: `${BASE}/colophon/`, lastModified: now, changeFrequency: 'yearly', priority: 0.5 },
+   ];
+ 
++  // Public Flagstone utility pages are copied from public/ into the export.
++  const flagstone: MetadataRoute.Sitemap = [
++    '/flagstone/',
++    '/flagstone/accessibility/',
++    '/flagstone/privacy/',
++    '/flagstone/support/',
++    '/flagstone/terms/',
++  ].map((path) => ({ url: `${BASE}${path}` }));
++
+   const work: MetadataRoute.Sitemap = getDeliverables().map((d) => ({
+     url: `${BASE}/work/${d.id}/`,
+     lastModified: now,
+@@ -41,5 +50,5 @@
+     priority: 0.6,
+   }));
+ 
+-  return [...staticRoutes, ...work, ...posts];
++  return [...staticRoutes, ...flagstone, ...work, ...posts];
+ }
+--- a/lib/__tests__/static-integrity.test.ts
++++ b/lib/__tests__/static-integrity.test.ts
+@@ -475,18 +475,9 @@
+     return collectHtmlFiles(OUT_DIR).filter((f) => !IS_404(f) && !IS_REDIRECT_STUB(f));
+   }
+ 
+-  // public/flagstone/** is a separate, hand-authored static microsite (the
+-  // Flagstone app's own marketing/privacy/terms/support pages, copied
+-  // verbatim into ./out/flagstone/ — not a Next.js app/ route, and not owned
+-  // by this portfolio's metadata layer). It already hand-writes its own
+-  // og:url; a self-canonical for it is a Flagstone-project concern, out of
+-  // scope for Portfolio 3.0 Phase 02. Excluded from the canonical guard only
+-  // (still covered by every other guard in this file, since it is real,
+-  // linked, reachable HTML).
+-  const IS_FLAGSTONE_SUBSITE = (f: string) => f.replace(OUT_DIR, '').startsWith('/flagstone/');
+-
++  // All reachable non-redirect HTML, including the public Flagstone utilities.
+   function canonicalRoutes(): string[] {
+-    return realRoutes().filter((f) => !IS_FLAGSTONE_SUBSITE(f));
++    return realRoutes();
+   }
+ 
+   it('every route declares og:url, and it is the route’s OWN url', () => {

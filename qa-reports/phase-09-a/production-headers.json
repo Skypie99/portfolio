@@ -1,0 +1,126 @@
+[
+  {
+    "url": "https://skypistudio.com/",
+    "measured_utc": "2026-09-07T11:01:52.423734+00:00",
+    "method": "GET; follow redirects; default TLS verification",
+    "status": 200,
+    "final_url": "https://skypistudio.com/",
+    "headers": {
+      "server": "GitHub.com",
+      "content-type": "text/html; charset=utf-8",
+      "cache-control": "max-age=600",
+      "via": "1.1 varnish"
+    }
+  },
+  {
+    "url": "https://skypistudio.com/work/",
+    "measured_utc": "2026-09-07T11:01:52.424083+00:00",
+    "method": "GET; follow redirects; default TLS verification",
+    "status": 200,
+    "final_url": "https://skypistudio.com/work/",
+    "headers": {
+      "server": "GitHub.com",
+      "content-type": "text/html; charset=utf-8",
+      "cache-control": "max-age=600",
+      "via": "1.1 varnish"
+    }
+  },
+  {
+    "url": "https://skypistudio.com/flagstone/",
+    "measured_utc": "2026-09-07T11:01:52.424175+00:00",
+    "method": "GET; follow redirects; default TLS verification",
+    "status": 200,
+    "final_url": "https://skypistudio.com/flagstone/",
+    "headers": {
+      "server": "GitHub.com",
+      "content-type": "text/html; charset=utf-8",
+      "cache-control": "max-age=600",
+      "via": "1.1 varnish"
+    }
+  },
+  {
+    "url": "https://skypistudio.com/robots.txt",
+    "measured_utc": "2026-09-07T11:01:52.424269+00:00",
+    "method": "GET; follow redirects; default TLS verification",
+    "status": 200,
+    "final_url": "https://skypistudio.com/robots.txt",
+    "headers": {
+      "server": "GitHub.com",
+      "content-type": "text/plain; charset=utf-8",
+      "cache-control": "max-age=600",
+      "via": "1.1 varnish"
+    }
+  },
+  {
+    "url": "https://skypistudio.com/sitemap.xml",
+    "measured_utc": "2026-09-07T11:01:52.424325+00:00",
+    "method": "GET; follow redirects; default TLS verification",
+    "status": 200,
+    "final_url": "https://skypistudio.com/sitemap.xml",
+    "headers": {
+      "server": "GitHub.com",
+      "content-type": "application/xml",
+      "cache-control": "max-age=600",
+      "via": "1.1 varnish"
+    }
+  },
+  {
+    "url": "http://skypistudio.com/",
+    "measured_utc": "2026-09-07T11:01:52.860461+00:00",
+    "method": "GET; follow redirects; default TLS verification",
+    "status": 200,
+    "final_url": "http://skypistudio.com/",
+    "headers": {
+      "server": "GitHub.com",
+      "content-type": "text/html; charset=utf-8",
+      "cache-control": "max-age=600",
+      "via": "1.1 varnish"
+    }
+  },
+  {
+    "url": "https://www.skypistudio.com/",
+    "measured_utc": "2026-09-07T11:01:52.872599+00:00",
+    "method": "GET; follow redirects; default TLS verification",
+    "status": 200,
+    "final_url": "https://skypistudio.com/",
+    "headers": {
+      "server": "GitHub.com",
+      "content-type": "text/html; charset=utf-8",
+      "cache-control": "max-age=600",
+      "via": "1.1 varnish"
+    }
+  },
+  {
+    "url": "https://skypie99.github.io/portfolio/",
+    "measured_utc": "2026-09-07T11:01:52.873854+00:00",
+    "method": "GET; follow redirects; default TLS verification",
+    "status": 200,
+    "final_url": "http://skypistudio.com/",
+    "headers": {
+      "server": "GitHub.com",
+      "content-type": "text/html; charset=utf-8",
+      "cache-control": "max-age=600",
+      "via": "1.1 varnish"
+    }
+  },
+  {
+    "url": "https://skypie99.github.io/studio-archive/",
+    "measured_utc": "2026-09-07T11:01:52.997472+00:00",
+    "method": "GET; follow redirects; default TLS verification",
+    "status": 200,
+    "final_url": "https://skypie99.github.io/studio-archive/",
+    "headers": {
+      "server": "GitHub.com",
+      "content-type": "text/html; charset=utf-8",
+      "strict-transport-security": "max-age=31556952",
+      "cache-control": "max-age=600",
+      "via": "1.1 varnish"
+    }
+  },
+  {
+    "url": "https://archive.skypistudio.com/",
+    "measured_utc": "2026-09-07T11:01:53.078867+00:00",
+    "method": "GET; follow redirects; default TLS verification",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'archive.skypistudio.com'. (_ssl.c:1081)>"
+  }
+]

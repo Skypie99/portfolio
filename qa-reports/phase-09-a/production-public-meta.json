@@ -1,0 +1,32 @@
+[
+  {
+    "url": "https://skypistudio.com/",
+    "metadata": [
+      {
+        "http-equiv": "Content-Security-Policy",
+        "content": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://zhpoqbrhaztejmtfjyad.supabase.co; font-src 'self'; connect-src 'self' https://zhpoqbrhaztejmtfjyad.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self'"
+      },
+      {
+        "name": "referrer",
+        "content": "strict-origin-when-cross-origin"
+      }
+    ]
+  },
+  {
+    "url": "https://skypistudio.com/flagstone/",
+    "metadata": []
+  },
+  {
+    "url": "https://skypie99.github.io/studio-archive/",
+    "metadata": [
+      {
+        "rel": "canonical",
+        "href": "https://archive.skypistudio.com"
+      },
+      {
+        "name": "robots",
+        "content": "index, follow"
+      }
+    ]
+  }
+]
