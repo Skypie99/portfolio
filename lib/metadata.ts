@@ -10,10 +10,10 @@
  * TA-10-class inheritance trap this codebase already documents for
  * `openGraph` (see app/about/page.tsx and siblings).
  *
- * Deliberately excluded (do not call this for): `/archive` and `/runway`
- * (both `robots: { index: false }`), and legacy redirect stubs, which carry
- * their own hand-written canonical pointing at their destination, not
- * themselves (see lib/__tests__/static-integrity.test.ts).
+ * `/archive` and `/runway` also declare self-canonicals to avoid inheriting
+ * the homepage canonical; both retain `robots: { index: false }`. A
+ * canonical does not grant indexability. Legacy redirect stubs carry their
+ * own hand-written destination canonical (see static-integrity.test.ts).
  */
 
 export const SITE_URL = 'https://skypistudio.com';

@@ -1,0 +1,8 @@
+{
+  "base_sha": "eb67733403ba434cb8de94003037666f80aa6592",
+  "base_tree": "1746309ac60e57cda3873119d19248a905056896",
+  "prospective_tree": "659f842f842cc435e94a3f70bfa7854718b950b7",
+  "patch_sha256": "35729e25bff77ee787b497a5a531d587025dca14214160a119d49f739f964eeb",
+  "status": "UNAPPLIED; OWNER APPROVAL REQUIRED",
+  "validation": "git apply --check PASS; git apply --cached into disposable index and write-tree PASS; no working source mutation"
+}
