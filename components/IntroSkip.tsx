@@ -24,7 +24,7 @@ import { cn } from '@/lib/cn';
  * visible, there is no intro left to bypass and the control steps aside. The
  * top-open root keeps it retired after the identity scrolls above the viewport.
  * Unlike the decorative "Scroll" cue, this IS a control: real text, a real
- * href, the site's focus-visible ring, and a 44px tap target — it must never be
+ * href, the site's focus-visible ring, and a 44px tap target; it must never be
  * pointer-events:none or aria-hidden while the landing has not been reached.
  */
 export function IntroSkip() {
