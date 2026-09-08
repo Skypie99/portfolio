@@ -54,7 +54,7 @@ function gradientTokens(rule: string): string[] {
   return [...rule.matchAll(/rgb\(var\(--([^)]+)\)\)/g)].map((match) => match[1]);
 }
 
-describe('P10-CONT-CONTRAST-002 — Contact heading owns a scoped contrast repair', () => {
+describe('P10-CONT-CONTRAST-002: Contact heading owns a scoped contrast repair', () => {
   it('keeps the exact h2 copy and adds the unique class only at the owning call site', () => {
     const heading = /<h2 className="([^"]*\bcontact-heading-ember\b[^"]*)">([\s\S]*?)<\/h2>/.exec(HOME);
     expect(heading, 'the homepage Contact h2 must own the scoped repair class').toBeTruthy();
