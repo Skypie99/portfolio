@@ -865,6 +865,28 @@ html.dark .support-heading-ember {
   );
 }
 
+/* The homepage Contact heading crosses a moving translucent cool-pale surface.
+   Its shared ember stops did not hold the 3:1 large-text floor in every tested
+   state, so only this heading uses the established deeper warm ramp already
+   proven on the same surface family. */
+.contact-heading-ember {
+  background-image: linear-gradient(
+    100deg,
+    rgb(var(--rgb-accent-ink)) 0%,
+    rgb(var(--rgb-link-hover)) 50%,
+    rgb(var(--rgb-accent-ink)) 100%
+  );
+}
+
+html.dark .contact-heading-ember {
+  background-image: linear-gradient(
+    100deg,
+    rgb(var(--rgb-link-hover)) 0%,
+    rgb(var(--rgb-ink)) 50%,
+    rgb(var(--rgb-link-hover)) 100%
+  );
+}
+
 /* Gradient hairline rule — terracotta fading out. Use for section accents. */
 .rule-ember {
   border: 0;

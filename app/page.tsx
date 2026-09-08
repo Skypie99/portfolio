@@ -1142,7 +1142,7 @@ export default function HomePage() {
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Let’s talk
             </p>
-            <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading">
+            <h2 className="font-serif font-light text-step-4 ember contact-heading-ember max-w-measure-heading leading-heading">
               Have something worth building?
               <br />
               Let’s talk about it.
