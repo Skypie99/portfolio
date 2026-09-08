@@ -657,7 +657,7 @@ export default function HomePage() {
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               The support work
             </p>
-            <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance">
+            <h2 className="font-serif font-light text-step-4 ember support-heading-ember max-w-measure-heading leading-heading text-balance">
               This is the job the projects come from.
             </h2>
           </Reveal>
