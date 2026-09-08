@@ -116,11 +116,14 @@ export default function RunwayPage() {
               <span aria-hidden="true">&middot;</span> 46 seconds{' '}
               <span aria-hidden="true">&middot;</span> first weekend on a Runway Pro plan.
               <br />
-              Every frame generated in Runway: Gen-4.5, Gen-4 Turbo, Seedance 2.0, and
-              Seedance 2.5, across text-to-video and image-to-video, then upscaled. The input plates
-              were composited in Python, and the reversals, colour match, and assembly
-              were done with ffmpeg, both written with Claude Code. Sound and titling
-              finished in CapCut, once the credits ran out.
+              Every moving shot was generated in Runway using Gen-4.5, Gen-4 Turbo,
+              Seedance 2.0, and Seedance 2.5, across text-to-video and image-to-video,
+              then upscaled. For the title shots, I created the still input plates with
+              Claude Cowork, using Python to composite the lettering from duckweed and
+              plankton sampled from the film’s own frames. The reversals and colour
+              matching were handled with ffmpeg workflows written with Claude Code.
+              Final assembly, soundtrack, and titling were done in CapCut once the
+              Runway credits ran out.
             </figcaption>
           </figure>
 
@@ -129,16 +132,18 @@ export default function RunwayPage() {
               How the words got there
             </h2>
             <p className="font-sans font-light text-prose text-ink-muted">
-              Video models do not spell. So the words are never generated. I built HI
-              RUNWAY and I&rsquo;M SKYLER by hand into still input plates, using duckweed
-              and plankton sampled from the film&rsquo;s own frames, then prompted those
-              plates to <em>dissolve</em> apart and reversed the clips in the edit. What
+              Video models do not spell reliably, so I did not ask the model to generate
+              the lettering. I used Claude Cowork to create <strong>HI RUNWAY</strong> and{' '}
+              <strong>I’M SKYLER</strong> as still input plates, building the letters from
+              duckweed and plankton sampled from the film’s own frames. I then used those
+              plates as image-to-video inputs in Runway and prompted them to{' '}
+              <em>dissolve</em> apart. I reversed the resulting clips in the edit, so what
               you see assembling was really coming apart.
             </p>
             <p className="font-sans font-light text-prose text-ink-muted">
-              Everything else is straight out of the models: the river, the descent
-              through the canopy, the plunge, the night vision, the burst back into the
-              moonlight.
+              Everything else in those shots comes from the models: the river, the
+              descent through the canopy, the plunge, the night vision, and the burst
+              back into moonlight.
             </p>
           </div>
 
