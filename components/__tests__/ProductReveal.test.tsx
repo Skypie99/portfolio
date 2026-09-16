@@ -342,6 +342,49 @@ describe('ProductReveal — a dark twin routes into the dual-theme path (Cook Ou
     expect(container.querySelector('.ts-matte')).toBeNull();
   });
 
+  it('uses an authentic phone card sibling in a CSS-gated reserved layer', () => {
+    const mobile = {
+      src: '/showcase/dashboard/command-center.light.phone.webp',
+      avif: '/showcase/dashboard/command-center.light.phone.avif',
+      alt: 'The Dashboard command center on a phone',
+      dark: {
+        src: '/showcase/dashboard/command-center.dark.phone.webp',
+        avif: '/showcase/dashboard/command-center.dark.phone.avif',
+      },
+    };
+    const { container } = render(
+      <ProductReveal
+        slug="dashboard"
+        title="Dashboard"
+        context="card"
+        media={{ ...still, dark: darkStill, mobile }}
+      />,
+    );
+    expect(container.querySelector('[data-card-art-directed="phone"]')).toHaveClass('pr-card-art-directed');
+    expect(container.querySelector('.pr-card-media--desktop img')).toHaveAttribute('src', still.src);
+    expect(container.querySelector('.pr-card-media--mobile .ts-layer--light img')).toHaveAttribute('src', mobile.src);
+    expect(container.querySelector('.pr-card-media--mobile .ts-layer--dark img')).toHaveAttribute('src', mobile.dark.src);
+  });
+
+  it('keeps a single authentic phone capture out of the themed-layer gate', () => {
+    const mobile = {
+      src: '/showcase/flagstone/explore-current.phone.webp',
+      avif: '/showcase/flagstone/explore-current.phone.avif',
+      alt: 'Flagstone Explore map on a phone',
+    };
+    const { container } = render(
+      <ProductReveal
+        slug="flagstone"
+        title="Flagstone"
+        context="card"
+        media={{ ...still, mobile }}
+      />,
+    );
+    const mobileLayer = container.querySelector('.pr-card-media--mobile');
+    expect(mobileLayer?.querySelector('[data-themed-showcase]')).toBeNull();
+    expect(mobileLayer?.querySelector('img')).toHaveAttribute('src', mobile.src);
+  });
+
   it('a clip with a dark clip renders ThemedMotion in themed mode: the dark <video> sources the dark mp4/webm/poster', () => {
     const { container } = render(
       <ProductReveal

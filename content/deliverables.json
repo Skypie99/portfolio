@@ -35,6 +35,15 @@
       "lqip": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAAAQBgCdASoUACsAPxF6rVKsJ6OiqqwBgCIJQBS78BA+33iL2FhHYeZF7vIaluGgOgikWwVcN5VX4VAA/ZecdcGttJtB54ffqN3sWClvc8ztAHYfya0XDR0FSi1NaQNp154obXLGI0aot5zL+z43ab11jzlMshKMgGa/drMB3MPow7jvcjki3y+jfFfmZoAA+9dFxSdQTnxhDVonvFuQAA==",
       "chrome": "device"
     },
+    "mobileCardImage": {
+      "src": "/showcase/flagstone/explore-current.phone.webp",
+      "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+      "focal": "50% 31%",
+      "avif": "/showcase/flagstone/explore-current.phone.avif",
+      "webp": "/showcase/flagstone/explore-current.phone.webp",
+      "lqip": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAAAQBgCdASoUACsAPxF6rVKsJ6OiqqwBgCIJQBS78BA+33iL2FhHYeZF7vIaluGgOgikWwVcN5VX4VAA/ZecdcGttJtB54ffqN3sWClvc8ztAHYfya0XDR0FSi1NaQNp154obXLGI0aot5zL+z43ab11jzlMshKMgGa/drMB3MPow7jvcjki3y+jfFfmZoAA+9dFxSdQTnxhDVonvFuQAA==",
+      "chrome": "device"
+    },
     "heroPlate": {
       "severity": "SEVERITY 3 OF 5 · MODERATE · VERIFIED",
       "caption": "Steep grade: a real barrier report expanded on the map.",
@@ -116,7 +125,7 @@
     },
     "heroShot": {
       "src": "/showcase/claude-corp/hero-pipeline.light.desktop.webp",
-      "alt": "The Claude Corp orchestration pipeline below the hero introduction, with Sky setting intent and retaining merge approval.",
+      "alt": "The Claude Corp front door, with the editorial hero over the agent pipeline diagram and fifteen roles feeding one governed main branch.",
       "avif": "/showcase/claude-corp/hero-pipeline.light.desktop.avif",
       "webp": "/showcase/claude-corp/hero-pipeline.light.desktop.webp",
       "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADwAgCdASoUAA0APxFysVCsJqSisAgBgCIJZwDA3C0kAAD+7pijEWdzf1g4L7fmAAA=",
@@ -129,7 +138,7 @@
     },
     "cardImage": {
       "src": "/showcase/claude-corp/hero-pipeline.light.desktop.webp",
-      "alt": "The Claude Corp pipeline, from human intent through fifteen AI roles to human merge approval.",
+      "alt": "The Claude Corp front door, with the fifteen-role pipeline under the editorial hero.",
       "focal": "50% 12%",
       "avif": "/showcase/claude-corp/hero-pipeline.light.desktop.avif",
       "webp": "/showcase/claude-corp/hero-pipeline.light.desktop.webp",
@@ -141,11 +150,24 @@
         "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADwAgCdASoUAA0APxFysFAsJqSjMAgBgCIJZwDE2C5JAAD+7tfZtIk9HYyCh4h4AAA="
       }
     },
+    "mobileCardImage": {
+      "src": "/showcase/claude-corp/hero-pipeline.light.phone.webp",
+      "alt": "The Claude Corp front door on a phone, with the editorial hero and the governed agent pipeline below it.",
+      "avif": "/showcase/claude-corp/hero-pipeline.light.phone.avif",
+      "webp": "/showcase/claude-corp/hero-pipeline.light.phone.webp",
+      "lqip": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAABQBQCdASoUACsAPvVmqVAqpaQiurmYAVAeiWUAAFF6974V/flIsdzwumAqTwCJDLfTuoAA/t8d1xkjJRHoWfaXalpxdua736nMotDYWRd6HTW2f4gRT967s/71SfF/0V5gKzamxhs1fRD9btMdPGE1fBtrwAAA",
+      "dark": {
+        "src": "/showcase/claude-corp/hero-pipeline.dark.phone.webp",
+        "avif": "/showcase/claude-corp/hero-pipeline.dark.phone.avif",
+        "webp": "/showcase/claude-corp/hero-pipeline.dark.phone.webp",
+        "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAACwBQCdASoUACsAPvVoqFAqpiQiurmYAVAeiWUAz6AhuloIifk/vkW8mIazUe66y79jsh/J3AAA/ujlpQKDwtly/4G3rEQhEMJmPnAwOU5iu3sl5WvLM7nTcpiZYSAsUvrq11gtB4hzoIAcvv/nAAAA"
+      }
+    },
     "shots": [
       {
         "src": "/showcase/claude-corp/team.light.desktop.webp",
-        "alt": "Part of the fifteen-role team grid, including Steve’s revised safety-review and blocker responsibilities.",
-        "caption": "The role grid distinguishes review responsibilities. Local candidate captured September 5, 2026.",
+        "alt": "The fifteen-role team grid, with each agent card naming its craft from Quinn on product through Morgan on reporting.",
+        "caption": "Fifteen roles, one governed main branch.",
         "avif": "/showcase/claude-corp/team.light.desktop.avif",
         "webp": "/showcase/claude-corp/team.light.desktop.webp",
         "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADQAgCdASoUAA0APxFysVCsJqSisAgBgCIJZwAAe/QAAP7uja5wrAvV2HkAAA==",
@@ -225,11 +247,24 @@
         "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJaQDLLC5JAAD+7ZgcRqYTyy3OJP/YDwAAAA=="
       }
     },
+    "mobileCardImage": {
+      "src": "/showcase/dashboard/command-center.light.phone.webp",
+      "alt": "The Dashboard command center on a phone, showing project health, agent activity, and pending decisions in a focused view.",
+      "avif": "/showcase/dashboard/command-center.light.phone.avif",
+      "webp": "/showcase/dashboard/command-center.light.phone.webp",
+      "lqip": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAABQBACdASoUACsAPxF2r1IsLSQisBVaqaAiCWkAACovpicbZyjPkSN4+HAAAP7vSXClXdK/IAl/ugeW7EZga7fGxVTBeUDwAAA=",
+      "dark": {
+        "src": "/showcase/dashboard/command-center.dark.phone.webp",
+        "avif": "/showcase/dashboard/command-center.dark.phone.avif",
+        "webp": "/showcase/dashboard/command-center.dark.phone.webp",
+        "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADwAwCdASoUACsAPxGEuVcsKCWkpWgBgCIJZwDRgAt1ebNINAliX5pwAP7YuqsHzsBymLajS7tCKpp35SWhL8n9orYUxuAA"
+      }
+    },
     "shots": [
       {
         "src": "/showcase/dashboard/think-tank.light.desktop.webp",
         "alt": "The Think Tank board, with ideas triaged into Do it, Later and Skip lanes with their leverage notes.",
-        "caption": "The Think Tank: ideas triaged into Do it, Later and Skip. Synthetic local candidate captured September 5, 2026.",
+        "caption": "The Think Tank: ideas triaged into Do it, Later and Skip.",
         "avif": "/showcase/dashboard/think-tank.light.desktop.avif",
         "webp": "/showcase/dashboard/think-tank.light.desktop.webp",
         "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADwAgCdASoUAA0APxFysFAsJqSisAgBgCIJZwDA3C0kAAD+70dpzID7d6oAAA==",
@@ -242,8 +277,8 @@
       },
       {
         "src": "/showcase/dashboard/dispatch.light.desktop.webp",
-        "alt": "The synthetic Dispatch queue, showing invented work items with owners, statuses and dependencies.",
-        "caption": "Invented work items, owners, statuses and dependencies in the Dispatch queue. Local candidate captured September 5, 2026.",
+        "alt": "The Dispatch queue, with work items lined up with status, owner and the relay controls held safely off.",
+        "caption": "The Dispatch queue, with agent work lined up alongside its receipts.",
         "avif": "/showcase/dashboard/dispatch.light.desktop.avif",
         "webp": "/showcase/dashboard/dispatch.light.desktop.webp",
         "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADQAgCdASoUAA0APxFysFAsJqSisAgBgCIJaQAAfj4AAP7vbwsTK9da+EJ8fCf4AAA=",
@@ -316,6 +351,19 @@
         "avif": "/showcase/prompt-library/home.dark.desktop.avif",
         "webp": "/showcase/prompt-library/home.dark.desktop.webp",
         "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysVAsJqSisAgBgCIJZwDImDBsAAD+754pkdIK2oZsI4AA"
+      }
+    },
+    "mobileCardImage": {
+      "src": "/showcase/prompt-library/home.light.phone.webp",
+      "alt": "The Prompt Library home on a phone, with search, category chips, and prompt cards in a readable single-column view.",
+      "avif": "/showcase/prompt-library/home.light.phone.avif",
+      "webp": "/showcase/prompt-library/home.light.phone.webp",
+      "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACwAwCdASoUACsAPxGCuFYsKCUjpWmZgCIJZwDQVA4bADE1uxCCAAD+7mYdebmQ7UV7sQZ+HqD3Vaccu/EIRMfQ4nRp4QAA",
+      "dark": {
+        "src": "/showcase/prompt-library/home.dark.phone.webp",
+        "avif": "/showcase/prompt-library/home.dark.phone.avif",
+        "webp": "/showcase/prompt-library/home.dark.phone.webp",
+        "lqip": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACwAwCdASoUACsAPxF+t1SsKCUkJWsxgCIJZwAAK+8ANVhk+biyYAD+7wbcR8QSeR5gphyTA2lTVjrQeXulFI1FfdZJQMmpcQAAAA=="
       }
     },
     "shots": [
@@ -399,6 +447,19 @@
         "avif": "/showcase/ghost-code/board.dark.desktop.avif",
         "webp": "/showcase/ghost-code/board.dark.desktop.webp",
         "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADwAgCdASoUAA0APxFysVCsJqSisAgBgCIJaQDG9DBsAAD+7wyvSX2mpsX5so0AAAA="
+      }
+    },
+    "mobileCardImage": {
+      "src": "/showcase/ghost-code/board.light.phone.webp",
+      "alt": "A Ghost Code round on a phone, with the Phantom, four command tokens, prompt, and score in a focused play view.",
+      "avif": "/showcase/ghost-code/board.light.phone.avif",
+      "webp": "/showcase/ghost-code/board.light.phone.webp",
+      "lqip": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAwAwCdASoUACsAPxGCt1YsKCUjpWmZgCIJaQDSrA8duyCAAP7vHoedYQDsZ91u9Qvp2aYaQ4qYTEuD3a5HBAGObfr7CieMA9RmvAAA",
+      "dark": {
+        "src": "/showcase/ghost-code/board.dark.phone.webp",
+        "avif": "/showcase/ghost-code/board.dark.phone.avif",
+        "webp": "/showcase/ghost-code/board.dark.phone.webp",
+        "lqip": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADQAwCdASoUACsAPxGCtFasKCSjpWmZgCIJaQDRvBEL94BLj8ASF0AA/u4bDwZoH7en2q+01O5hA+xt5XGm/S/hx3+X8B+u7OiUY/qliAAAAA=="
       }
     },
     "shots": [

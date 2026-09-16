@@ -94,7 +94,22 @@ export function heroMedia(d: HeroSource): ProductRevealMedia {
   };
 }
 
-type CardSource = Pick<Deliverable, 'heroImage' | 'heroShot' | 'cardImage'>;
+type CardSource = Pick<Deliverable, 'heroImage' | 'heroShot' | 'cardImage' | 'mobileCardImage'>;
+
+function mobileCardMedia(d: CardSource): ProductRevealMedia['mobile'] {
+  if (!d.mobileCardImage?.src) return undefined;
+  return {
+    src: d.mobileCardImage.src,
+    alt: d.mobileCardImage.alt,
+    avif: d.mobileCardImage.avif,
+    webp: d.mobileCardImage.webp,
+    lqip: d.mobileCardImage.lqip,
+    focal: d.mobileCardImage.focal,
+    dark: d.mobileCardImage.dark,
+    matte: d.mobileCardImage.matte,
+    chrome: d.mobileCardImage.chrome,
+  };
+}
 
 /**
  * Media for a work CARD. A dedicated, pre-cropped `cardImage` wins (shown exactly
@@ -117,8 +132,9 @@ export function cardMedia(d: CardSource): ProductRevealMedia {
       dark: d.cardImage.dark,
       matte: d.cardImage.matte,
       chrome: d.cardImage.chrome,
+      mobile: mobileCardMedia(d),
       precropped: true,
     };
   }
-  return { ...heroMedia(d), precropped: true };
+  return { ...heroMedia(d), mobile: mobileCardMedia(d), precropped: true };
 }

@@ -104,7 +104,7 @@ export function Hero({
             first-time visitor knows whose work this is the moment the hero
             settles. Rest-visible: the wash bloom carries the arrival. */}
         {name && (
-          <div data-hero-identity className="mb-10 flex items-center gap-4">
+          <div data-hero-identity className="mb-4 flex items-center gap-4 sm:mb-10">
             {avatarSrc && (
               // eslint-disable-next-line @next/next/no-img-element
               <img
@@ -134,7 +134,7 @@ export function Hero({
         )}
 
         {/* Eyebrow + terracotta brand rule */}
-        <div className="hero-scroll-fade mb-12">
+        <div className="hero-scroll-fade mb-4 sm:mb-12">
           <p className="font-mono text-label text-text-meta mb-3">
             {eyebrow}
           </p>
@@ -147,11 +147,16 @@ export function Hero({
             'hero-scroll-translate',
             'font-serif font-light',
             'text-hero',
-            'leading-[1.0]',
+            'leading-[1.02] sm:leading-[1.0]',
             'ember',
-            'mb-7',
+            'mb-4 max-[375px]:mb-3 sm:mb-7',
             'max-w-[16ch]',
             'text-balance',
+            // Narrow phones need a genuine display step, not seven compressed
+            // 48px lines. 375px keeps a 40px display; the 320px stress width
+            // uses 35px so the same sentence settles into five calm lines.
+            // The relative default still respects user font size.
+            'max-[375px]:text-[2.5rem] max-[375px]:leading-[1.1] max-[359px]:text-[2.1875rem]',
           )}
         >
           {heading}
@@ -159,16 +164,16 @@ export function Hero({
 
         <p
           className={cn(
-            'font-sans font-light text-step-1 text-ink-muted',
+            'font-sans font-light text-step-1 text-ink-muted max-[375px]:text-[1.125rem]',
             'max-w-measure-lead',
-            'mb-16',
+            'mb-5 max-[375px]:mb-3 sm:mb-16',
             'text-pretty',
           )}
         >
           {subhead}
         </p>
 
-        <div className="hero-scroll-fade flex flex-col items-start gap-16">
+        <div className="hero-scroll-fade flex flex-col items-start gap-12 sm:gap-16">
           <Button href={ctaHref}>{ctaLabel}</Button>
 
           {/* Scroll indicator — subtle affordance to continue reading.
@@ -176,7 +181,7 @@ export function Hero({
               Changed to opacity-90 (5.04:1 — PASS) while keeping the subtle feel. */}
           <a
             href="#work"
-            aria-label="Scroll to work section"
+            aria-label="Explore projects"
             className={cn(
               'inline-flex flex-col items-center gap-1.5',
               'font-mono text-meta tracking-label uppercase text-text-meta',
@@ -184,7 +189,7 @@ export function Hero({
               'transition-opacity duration-base ease-out',
             )}
           >
-            <span>Scroll</span>
+            <span>Explore projects</span>
             <span aria-hidden="true" className="text-cool text-body leading-none">
               {'↓'}
             </span>

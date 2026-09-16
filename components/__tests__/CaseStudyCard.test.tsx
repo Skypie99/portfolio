@@ -44,6 +44,19 @@ describe('CaseStudyCard', () => {
     expect(screen.getByRole('heading', { level: 3, name: /Flagstone/ })).toBeInTheDocument();
   });
 
+  it('puts the mobile project introduction before its evidence and restores media-first order at md+', () => {
+    const { container } = render(<CaseStudyCard {...BASE_PROPS} />);
+    const title = screen.getByRole('heading', { level: 3, name: /Flagstone/ });
+    const media = container.querySelector('.case-study-card-media');
+    const copy = container.querySelector('.case-study-card-copy');
+
+    expect(media).not.toBeNull();
+    expect(copy).not.toBeNull();
+    expect(title.compareDocumentPosition(media!)).toBe(Node.DOCUMENT_POSITION_FOLLOWING);
+    expect(copy).toHaveClass('order-1', 'md:order-2');
+    expect(media).toHaveClass('order-2', 'md:order-1');
+  });
+
   it('uses "View project" as the locked recruiter-facing doorway vocabulary (Cook Out P2 · Part B)', () => {
     render(<CaseStudyCard {...BASE_PROPS} />);
     expect(

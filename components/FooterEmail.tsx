@@ -24,7 +24,7 @@ export function FooterEmail() {
          so carry no explicit aria-label (the name = the visible text); post-hydration
          "Send email to <addr>" contains the visible address. */
       aria-label={email ? `Send email to ${email}` : undefined}
-      className="link-draw font-sans text-body-sm text-ink break-all"
+      className="link-draw inline-flex min-h-11 items-center -mx-2 px-2 font-sans text-body-sm text-ink break-all md:min-h-0 md:mx-0 md:px-0"
     >
       {email ?? 'Email me'}
     </a>

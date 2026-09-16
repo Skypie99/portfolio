@@ -53,6 +53,24 @@ describe('themed media threading', () => {
     expect(m.dark?.src).toContain('.dark.');
   });
 
+  it('cardMedia threads an authentic phone-composed sibling without changing desktop media', () => {
+    const mobileCardImage = {
+      src: '/showcase/prompt-library/home.light.phone.webp',
+      avif: '/showcase/prompt-library/home.light.phone.avif',
+      webp: '/showcase/prompt-library/home.light.phone.webp',
+      alt: 'The Prompt Library home on a phone, with search and prompt cards in a readable view',
+      dark: {
+        src: '/showcase/prompt-library/home.dark.phone.webp',
+        avif: '/showcase/prompt-library/home.dark.phone.avif',
+        webp: '/showcase/prompt-library/home.dark.phone.webp',
+      },
+    } as NonNullable<Deliverable['mobileCardImage']>;
+    const m = cardMedia(d({ cardImage: themed, mobileCardImage }));
+    expect(m.src).toContain('map-overview.light.phone');
+    expect(m.mobile?.src).toContain('prompt-library/home.light.phone');
+    expect(m.mobile?.dark?.src).toContain('.dark.phone');
+  });
+
   it('heroPreloadLinks returns both avif hrefs only when both variants exist', () => {
     const links = heroPreloadLinks(d({ heroShot: themed }));
     expect(links?.light.href).toContain('.light.');

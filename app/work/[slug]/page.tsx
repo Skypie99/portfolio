@@ -846,7 +846,13 @@ export default async function WorkDetailPage({
             {/* Each block self-reveals in reading order (carve on H2s, depth on
                 prose) — see renderMarkdown — so the body has internal cinematic
                 choreography instead of one undifferentiated fade. */}
-            <article aria-label={`${d.title} case study`} className="max-w-measure-wide flex flex-col gap-8">
+            <article
+              aria-label={`${d.title} case study`}
+              className={cn(
+                'max-w-measure-wide flex flex-col gap-8',
+                d.id === 'flagstone' && 'tablet-prose-measure',
+              )}
+            >
               {d.id === 'flagstone' ? renderFlagstoneBody(d.body!) : renderMarkdownProse(d.body!, 'case')}
             </article>
 

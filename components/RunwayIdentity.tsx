@@ -24,9 +24,10 @@
  * the site says whose it is).
  *
  * Two differences from the runway mount, both forced by measurement:
- *  1. NO retirement. On a route with no cinematic there is nothing to retire
- *     from. RunwayIdentityRelease is therefore NOT imported here at all -- it is
- *     mounted beside this component at home's own call site (app/page.tsx).
+ *  1. The page variant is retired against the first readable heading by a
+ *     narrowly mounted RunwayIdentityRelease leaf. It uses the chip and heading
+ *     geometry rather than a copied document offset, so prose never moves under
+ *     a persistent fixed mark on a narrow route.
  *
  *     THAT PLACEMENT IS LOAD-BEARING AND WAS CORRECTED ON MEASUREMENT. The
  *     first cut kept the import here and rendered it behind a `variant` check,
@@ -68,7 +69,7 @@ export function RunwayIdentity({
 }: {
   name?: string;
   /** 'runway' = home's mark over the cinematic (retires); 'page' = the subpage
-      chip (mobile-only, no retirement, no client boundary). */
+      chip (mobile-only; retirement is mounted only by affected page routes). */
   variant?: 'runway' | 'page';
 }) {
   const onRunway = variant === 'runway';

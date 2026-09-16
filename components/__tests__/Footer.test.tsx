@@ -56,4 +56,13 @@ describe('Footer', () => {
     expect(emailLink).toBeDefined();
     expect(emailLink).toHaveClass('link-draw');
   });
+
+  it('distinguishes the project index from the homepage work anchor', () => {
+    render(<Footer />);
+    const index = screen.getByRole('link', { name: 'All projects' });
+    // Next normalizes the trailing slash in jsdom; the source route remains
+    // the dedicated index, not the homepage #work anchor.
+    expect(index).toHaveAttribute('href', expect.stringMatching(/^\/work\/?$/));
+    expect(index).toHaveClass('min-h-11');
+  });
 });

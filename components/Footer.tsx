@@ -5,6 +5,11 @@ import { Reveal } from '@/components/Reveal';
 import { cn } from '@/lib/cn';
 import { getProfile } from '@/lib/content';
 
+/* A mobile-only comfort target. Its negative inline margin keeps the visible
+ * editorial grid unchanged while the actual first-tap area reaches 44px. */
+const FOOTER_NAV_LINK =
+  'link-draw inline-flex min-h-11 items-center -mx-2 px-2 font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out md:min-h-0 md:mx-0 md:px-0';
+
 /** Proper brand casing for social platforms — profile.json's `platform` is
  *  a schema-locked lowercase enum, so the display label is mapped at render
  *  ("Github"/"Linkedin" via CSS `capitalize` read as typos to a careful eye). */
@@ -96,7 +101,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/"
-                  className="link-draw font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out"
+                  className={FOOTER_NAV_LINK}
                 >
                   Home
                 </Link>
@@ -104,15 +109,15 @@ export function Footer() {
               <li>
                 <Link
                   href="/work/"
-                  className="link-draw font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out"
+                  className={FOOTER_NAV_LINK}
                 >
-                  The Work
+                  All projects
                 </Link>
               </li>
               <li>
                 <Link
                   href="/certificates/"
-                  className="link-draw font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out"
+                  className={FOOTER_NAV_LINK}
                 >
                   Credentials
                 </Link>
@@ -120,7 +125,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/about/"
-                  className="link-draw font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out"
+                  className={FOOTER_NAV_LINK}
                 >
                   A Brief Account
                 </Link>
@@ -128,7 +133,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/blog/"
-                  className="link-draw font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out"
+                  className={FOOTER_NAV_LINK}
                 >
                   Notes
                 </Link>
@@ -139,7 +144,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/accessibility/"
-                  className="link-draw font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out"
+                  className={FOOTER_NAV_LINK}
                 >
                   Accessibility
                 </Link>
@@ -147,7 +152,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/colophon/"
-                  className="link-draw font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out"
+                  className={FOOTER_NAV_LINK}
                 >
                   Colophon
                 </Link>
@@ -155,7 +160,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/contact/"
-                  className="link-draw font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out"
+                  className={FOOTER_NAV_LINK}
                 >
                   Let’s talk
                 </Link>
@@ -182,7 +187,7 @@ export function Footer() {
                 href={linkedin.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="link-draw font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out inline-flex items-center gap-1 self-start"
+                className="link-draw inline-flex min-h-11 items-center gap-1 self-start -mx-2 px-2 font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out md:min-h-0 md:mx-0 md:px-0"
               >
                 <span>Full history on LinkedIn</span>
                 {/* UP-11: no colour override — the ↗ takes its label's colour.
@@ -213,7 +218,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={cn(
-                      'link-draw font-sans text-body-sm inline-flex items-center gap-1',
+                      'link-draw inline-flex min-h-11 items-center gap-1 -mx-2 px-2 font-sans text-body-sm md:min-h-0 md:mx-0 md:px-0',
                       'transition-colors duration-fast ease-out',
                       // B6a (Phase B, resolves UP-11-SET): Sky ratified unifying
                       // the set, 2026-08-25 — GitHub's prior lone-accent-at-rest

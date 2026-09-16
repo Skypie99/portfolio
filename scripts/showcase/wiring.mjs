@@ -40,6 +40,9 @@ export const WIRING = [
     ogCard: '/showcase/flagstone/og-card.jpg',
     heroShot: currentExplore,
     cardImage: currentExplore,
+    // The actual portrait capture is intentionally retained on phone rather
+    // than squeezed into the desktop card band's landscape crop.
+    mobileCardImage: currentExplore,
     heroPlate: {
       severity: 'SEVERITY 3 OF 5 · MODERATE · VERIFIED',
       caption: 'Steep grade: a real barrier report expanded on the map.',
@@ -104,6 +107,11 @@ export const WIRING = [
       focal: '50% 18%',
       alt: 'The Prompt Library home, with search and category chips over the prompt grid and the featured card leading.',
     },
+    mobileCardImage: {
+      scene: 'home',
+      viewport: 'phone',
+      alt: 'The Prompt Library home on a phone, with search, category chips, and prompt cards in a readable single-column view.',
+    },
     shots: [
       {
         scene: 'prompt-detail',
@@ -128,6 +136,11 @@ export const WIRING = [
       viewport: 'desktop',
       focal: '50% 12%',
       alt: 'The Claude Corp front door, with the fifteen-role pipeline under the editorial hero.',
+    },
+    mobileCardImage: {
+      scene: 'hero-pipeline',
+      viewport: 'phone',
+      alt: 'The Claude Corp front door on a phone, with the editorial hero and the governed agent pipeline below it.',
     },
     shots: [
       {
@@ -154,6 +167,11 @@ export const WIRING = [
       viewport: 'desktop',
       focal: '50% 14%',
       alt: 'The Dashboard command center, showing project health, agent activity and pending decisions on one calm board.',
+    },
+    mobileCardImage: {
+      scene: 'command-center',
+      viewport: 'phone',
+      alt: 'The Dashboard command center on a phone, showing project health, agent activity, and pending decisions in a focused view.',
     },
     shots: [
       {
@@ -187,6 +205,11 @@ export const WIRING = [
       viewport: 'desktop',
       focal: '50% 40%',
       alt: 'A Ghost Code round in play, with the Phantom at the centre of four command tokens and the prompt above.',
+    },
+    mobileCardImage: {
+      scene: 'board',
+      viewport: 'phone',
+      alt: 'A Ghost Code round on a phone, with the Phantom, four command tokens, prompt, and score in a focused play view.',
     },
     shots: [
       {

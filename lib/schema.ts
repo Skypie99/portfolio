@@ -196,6 +196,10 @@ export const DeliverableSchema = z.object({
    *  no re-zoom); otherwise they fall back to the hero image, focal-cropped. Let
    *  a tall phone hero stay whole while the card shows a wide, framed crop. */
   cardImage: ShotImageSchema.optional(),
+  /** Phone-specific card evidence. This is an authentic capture of the same
+   *  project, selected for the narrow card's readable composition while
+   *  `cardImage` remains the desktop presentation. */
+  mobileCardImage: ShotImageSchema.optional(),
   /** Optional "museum plate" beneath the hero well (FT-3/FT-10) — the artifact's
    *  own ledger line at reading size, plus the place it was mapped. Data-gated:
    *  renders only where present (flagstone today). Mono-meta furniture, never

@@ -6,6 +6,7 @@ import { GalleryWall } from '@/components/GalleryWall';
 import { SettleHeading } from '@/components/HeroSettle';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { RunwayIdentity } from '@/components/RunwayIdentity';
+import { RunwayIdentityRelease } from '@/components/RunwayIdentityRelease';
 import { cn } from '@/lib/cn';
 import { getDeliverables, getProfile } from '@/lib/content';
 import { canonicalFor } from '@/lib/metadata';
@@ -62,6 +63,7 @@ export default function WorkIndexPage() {
           320/375/414. Same mark home's runway uses; hidden from md up, where
           the rail starts signing. */}
       <RunwayIdentity variant="page" />
+      <RunwayIdentityRelease variant="page" />
       {/* Page header */}
       <section
         className={cn(
