@@ -391,7 +391,7 @@ export default function HomePage() {
              no information before ("Portfolio: 2026"), is used in exactly
              one place, and is pinned by no test. */
           eyebrow="Senior technical support · Portfolio 2026"
-          heading="An accessibility map. A multi-agent system. A web-based prompt library."
+          heading="An accessibility map. A multi‑agent system. A web-based prompt library."
           subhead="Five projects built, all five on the open web. One submitted to Apple for App Store review. Accessibility first, built for everyone."
           ctaLabel="See the work."
           ctaHref="#work"
@@ -987,7 +987,7 @@ export default function HomePage() {
             </h2>
           </Reveal>
 
-          <div className="max-w-measure-wide flex flex-col gap-6 font-sans font-light text-body leading-[1.7] text-ink-muted text-pretty">
+          <div className="tablet-prose-measure max-w-measure-wide flex flex-col gap-6 font-sans font-light text-body leading-[1.7] text-ink-muted text-pretty">
             <Reveal index={0} variant="depth" as="p">
               The projects above were implemented by AI agents working inside a
               governance system I designed: fifteen roles with explicit domain

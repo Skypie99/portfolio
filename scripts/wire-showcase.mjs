@@ -7,7 +7,7 @@
  *   node scripts/wire-showcase.mjs scripts/showcase/wiring.mjs [--dry]
  *
  * The spec module exports WIRING: an array of
- *   { slug, ogTheme?, heroShot?, cardImage?, heroPlate?, shots?: [...] }
+ *   { slug, ogTheme?, heroShot?, cardImage?, mobileCardImage?, heroPlate?, shots?: [...] }
  * where each media value is either a SceneRef ({ scene, viewport?, alt?,
  * caption?, focal?, chrome?, matte?, video?: { clip, alt }, darkVideo? }) or
  * an `{ asset }` record for an externally supplied screenshot already encoded
@@ -74,6 +74,7 @@ async function main() {
           });
     if (w.heroShot) patch.heroShot = build(w.heroShot, existing?.heroShot);
     if (w.cardImage) patch.cardImage = build(w.cardImage, existing?.cardImage);
+    if (w.mobileCardImage) patch.mobileCardImage = build(w.mobileCardImage, existing?.mobileCardImage);
     if (w.heroPlate) patch.heroPlate = { ...w.heroPlate };
     if (w.shots) patch.shots = w.shots.map((ref, i) => build(ref, existing?.shots?.[i]));
     if (w.ogTheme) patch.ogTheme = w.ogTheme;

@@ -739,6 +739,19 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* At the two shortest supported portrait widths, the normal landing leaves
+   the next action beyond the fold even after the display type has stepped
+   down. Move the same native fragment a further 140px so the entire identity
+   block remains on screen while the primary CTA has a complete 56px target.
+   This is a landing adjustment only: no timer, duplicate control, or custom
+   scroll/focus path replaces the browser's anchor behaviour. */
+@media (max-width: 375px) {
+  #hero {
+    scroll-margin-top: -500px;
+    scroll-margin-top: calc(-500px - env(safe-area-inset-top));
+  }
+}
+
 /* A modern iPhone is wide enough in landscape to enter the desktop layout,
    but its short touch viewport still needs the first identity and heading in
    view after the native fragment jump. Keep pointer/fine desktop geometry
@@ -948,6 +961,28 @@ html.dark .contact-heading-ember {
     padding-right: 0.24em;
   }
 }
+/* On a phone, a three-line initial turns the opening into a 20-character
+   channel. Keep the editorial opening, but let it occupy two calm lines. The
+   float fallback gets a proportionate smaller footprint; initial-letter engines
+   retain their own line-metric sizing below. */
+@media (max-width: 767px) {
+  .drop-cap::first-letter {
+    font-size: clamp(2.65rem, 11vw, 3rem);
+    line-height: 0.8;
+    padding-right: 0.12em;
+  }
+}
+@supports (initial-letter: 2 2) or (-webkit-initial-letter: 2 2) {
+  @media (max-width: 767px) {
+    .drop-cap::first-letter {
+      -webkit-initial-letter: 2 2;
+      initial-letter: 2 2;
+      font-size: inherit;
+      line-height: normal;
+      padding-right: 0.22em;
+    }
+  }
+}
 
 /* Pull-quote — serif italic jewellery with an oversized faded quote mark. */
 .pull-quote {
@@ -1026,6 +1061,16 @@ blockquote.pull-quote {
 }
 .prose-list > li::marker {
   color: rgb(var(--rgb-accent));
+}
+
+/* The rail makes 1024px a handoff width, not a wide desktop column. These two
+   measured long-form blocks are already constrained by the available column at
+   768px; a 34em cap only takes effect through the tablet handoff and releases
+   again before the full desktop composition. */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .tablet-prose-measure {
+    max-width: 34em;
+  }
 }
 
 /* FT-9 — :target arrival marker. When a deep-link (or an in-page TOC click)
@@ -1511,6 +1556,25 @@ html.reveal-rearm .reveal:not(.reveal-shown) {
     rgb(var(--rgb-gold) / 0.42) 78%,
     transparent
   );
+}
+/* Mobile evidence is captured and framed for its own readable composition.
+   Both layers share the reserved card box; one is display-gated, which keeps
+   the inactive alt out of the accessibility tree and prevents any layout shift. */
+.pr-card-media--mobile {
+  display: none;
+}
+@media (max-width: 767px) {
+  .pr-card-art-directed {
+    /* A 3:4 card keeps about 61% of a native phone capture's height in view,
+       versus about 29% in the inherited 16:10 band. */
+    aspect-ratio: 3 / 4;
+  }
+  .pr-card-media--desktop {
+    display: none;
+  }
+  .pr-card-media--mobile {
+    display: block;
+  }
 }
 /* C-16: on a designed empty well the golden-hour hairline shows THROUGH the
    translucent BandHint silhouette, reading as a dead scanline across the device.
@@ -2862,6 +2926,22 @@ html.dark ::selection {
     display: none;
   }
 }
+/* A coarse-pointer landscape viewport can be shorter than the rail itself.
+   Nested scrolling technically reaches the last control, but gives no affordance
+   and traps that route's navigation in a second scroll context. Let the rail
+   become an ordinary in-flow column for that compact physical shape instead;
+   page scrolling now reveals every item and the normal tablet/desktop rail is
+   unchanged. */
+@media (min-width: 768px) and (max-height: 450px) and (hover: none) and (pointer: coarse) {
+  .rail-nav {
+    position: relative;
+    top: auto;
+    align-self: flex-start;
+    height: auto;
+    min-height: 0;
+    overflow-y: visible;
+  }
+}
 
 /* ContentReveal: skip the scroll-driven fade on mobile — content is already
    near the viewport fold and should just appear when the user scrolls to it */
@@ -3476,6 +3556,12 @@ html.dark ::selection {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-6px);
+}
+/* Interior content must never wait underneath the fixed chip for an exit fade.
+   The page observer fires against the chip's own lower boundary, and this
+   intentional snap preserves a clear reading lane even during a fast fling. */
+.runway-identity--page {
+  transition: none;
 }
 .runway-identity-chip {
   display: inline-flex;

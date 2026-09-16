@@ -79,6 +79,12 @@ describe('themed showcase schema', () => {
     expect(parsed.heroShot?.chrome).toBe('float');
   });
 
+  it('accepts a phone-composed card sibling under the same evidence schema', () => {
+    const parsed = DeliverableSchema.parse({ ...base, cardImage: themedShot, mobileCardImage: themedShot });
+    expect(parsed.mobileCardImage?.src).toContain('/showcase/flagstone/');
+    expect(parsed.mobileCardImage?.dark?.webp).toContain('.dark.');
+  });
+
   it('rejects paths outside both trees', () => {
     const r = DeliverableSchema.safeParse({
       ...base,

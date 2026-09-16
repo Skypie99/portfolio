@@ -28,6 +28,18 @@ describe('Phase 07 native intro handoff', () => {
     );
   });
 
+  it('gives the two short portrait widths a measured native landing override', () => {
+    const match = css.match(
+      /@media \(max-width: 375px\) \{\s*#hero \{([\s\S]*?)\n  \}\n\}/,
+    );
+
+    expect(match, 'the short-phone #hero landing rule must exist').toBeTruthy();
+    expect(match?.[1]).toContain('scroll-margin-top: -500px;');
+    expect(match?.[1]).toContain(
+      'scroll-margin-top: calc(-500px - env(safe-area-inset-top));',
+    );
+  });
+
   it('brings the native handoff into short touch-landscape view without changing pointer desktop geometry', () => {
     const match = css.match(
       /@media \(orientation: landscape\) and \(max-height: 500px\) and \(hover: none\) and \(pointer: coarse\) \{\s*#hero \{([\s\S]*?)\n  \}\n\}/,

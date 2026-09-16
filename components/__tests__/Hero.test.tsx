@@ -54,4 +54,14 @@ describe('Hero', () => {
     expect(dot).not.toBeNull();
     expect(dot).not.toHaveClass('cta-dot-pulse');
   });
+
+  it('keeps the measured short-phone display step local to the hero headline', () => {
+    render(<Hero {...fixture} />);
+    const heading = screen.getByRole('heading', { level: 1 });
+    expect(heading).toHaveClass(
+      'max-[375px]:text-[2.5rem]',
+      'max-[375px]:leading-[1.1]',
+      'max-[359px]:text-[2.1875rem]',
+    );
+  });
 });

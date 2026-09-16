@@ -7,6 +7,7 @@ import { ParallaxWash } from '@/components/ParallaxWash';
 import { Reveal } from '@/components/Reveal';
 import { TagPill } from '@/components/TagPill';
 import { RunwayIdentity } from '@/components/RunwayIdentity';
+import { RunwayIdentityRelease } from '@/components/RunwayIdentityRelease';
 import { cn } from '@/lib/cn';
 import { getBlogPosts, getProfile } from '@/lib/content';
 import { bindSeparatorDash, bindSoloLetters } from '@/lib/markdown';
@@ -63,6 +64,7 @@ export default function BlogIndexPage() {
           320/375/414. Same mark home's runway uses; hidden from md up, where
           the rail starts signing. */}
       <RunwayIdentity variant="page" />
+      <RunwayIdentityRelease variant="page" />
       {/* Page header */}
       <section
         className={cn(

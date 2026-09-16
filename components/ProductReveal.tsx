@@ -64,6 +64,21 @@ export type ShowcaseMatte = 'light-mono' | 'dark-mono';
 /** Presentation chrome (the mockup-gate axis): device frame / clean float / exhibit mat. */
 export type ShowcaseChrome = 'device' | 'float' | 'matte';
 
+/** A phone-composed sibling of a desktop card capture. It intentionally shares
+ * the same evidence contract, but lets cards switch sources without a fake crop
+ * or a second interaction model. */
+export type ProductRevealMobileMedia = {
+  src?: string;
+  alt: string;
+  avif?: string;
+  webp?: string;
+  lqip?: string;
+  focal?: string;
+  dark?: ThemedVariant;
+  matte?: ShowcaseMatte;
+  chrome?: ShowcaseChrome;
+};
+
 export type ProductRevealMedia = {
   /** Absence => render the placeholder and emit NO <img> (unless `video`). */
   src?: string;
@@ -97,6 +112,9 @@ export type ProductRevealMedia = {
   matte?: ShowcaseMatte;
   /** Per-scene chrome override; absent → the site-wide SHOWCASE_CHROME. */
   chrome?: ShowcaseChrome;
+  /** Authentic phone-composed card sibling. Used only by card context below
+   * md; desktop media and every hero/shot remain untouched. */
+  mobile?: ProductRevealMobileMedia;
 };
 
 export type ProductRevealProps = {
@@ -486,6 +504,47 @@ export function ProductReveal({
     />
   );
 
+  // V4-MOB-02: card evidence has its own phone composition when supplied by
+  // the capture manifest. Both sources stay in the reserved well; CSS chooses
+  // exactly one at the breakpoint, so no layout shift or interaction fork is
+  // introduced. Videos keep their existing single presentation.
+  const mobileCardScreen =
+    context === 'card' && !hasVideo && media.mobile?.src ? (
+      media.mobile.dark || media.mobile.matte ? (
+        <ThemedShowcase
+          light={{
+            src: media.mobile.src,
+            avif: media.mobile.avif,
+            webp: media.mobile.webp,
+            lqip: media.mobile.lqip,
+          }}
+          dark={media.mobile.dark}
+          matte={media.mobile.matte}
+          alt={media.mobile.alt}
+          fit="cover"
+          position={media.mobile.focal}
+          eager={eager}
+        />
+      ) : (
+        // A single authentic capture is theme-invariant evidence, not a
+        // one-sided themed pair. Keep it in the established static-image path
+        // so dark mode cannot CSS-gate its only layer away.
+        <StaticShot
+          src={media.mobile.src}
+          alt={media.mobile.alt}
+          sources={
+            media.mobile.avif || media.mobile.webp
+              ? { avif: media.mobile.avif, webp: media.mobile.webp }
+              : undefined
+          }
+          fit="cover"
+          position={media.mobile.focal}
+          eager={eager}
+          lqip={media.mobile.lqip}
+        />
+      )
+    ) : null;
+
   const layers = (
     <>
       <div aria-hidden="true" className="pr-world absolute inset-0" />
@@ -495,7 +554,18 @@ export function ProductReveal({
           paint behind the frame; light theme renders nothing (display:none). */}
       {bare && <div aria-hidden="true" className="pr-lamp pointer-events-none absolute inset-0" />}
       {kind === 'none' ? (
-        <div className="absolute inset-0 overflow-hidden">{screen}</div>
+        <div className="absolute inset-0 overflow-hidden">
+          {mobileCardScreen ? (
+            <>
+              <div className="pr-card-media--desktop absolute inset-0">{screen}</div>
+              <div data-card-art-direction="phone" className="pr-card-media--mobile absolute inset-0">
+                {mobileCardScreen}
+              </div>
+            </>
+          ) : (
+            screen
+          )}
+        </div>
       ) : bare ? (
         // §5.6: the case-study hero only. An independent arrival host — same box
         // (absolute inset-0), no centering transform of its own — so it can lift
@@ -533,7 +603,13 @@ export function ProductReveal({
 
   return (
     <div
-      className={cn('group relative isolate overflow-hidden', ASPECT[context], className)}
+      data-card-art-directed={mobileCardScreen ? 'phone' : undefined}
+      className={cn(
+        'group relative isolate overflow-hidden',
+        ASPECT[context],
+        mobileCardScreen && 'pr-card-art-directed',
+        className,
+      )}
       style={style}
     >
       {layers}

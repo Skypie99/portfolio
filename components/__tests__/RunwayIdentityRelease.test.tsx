@@ -17,16 +17,22 @@ import { cleanup, render } from '@testing-library/react';
 
 import { RunwayIdentityRelease } from '@/components/RunwayIdentityRelease';
 
-type IOEntry = { isIntersecting: boolean; intersectionRatio: number };
+type IOEntry = {
+  isIntersecting: boolean;
+  intersectionRatio: number;
+  boundingClientRect?: Pick<DOMRect, 'top'>;
+};
 type IOCallback = (entries: IOEntry[]) => void;
 
 let ioCallback: IOCallback | null = null;
+let ioCallbacks: IOCallback[] = [];
 let observedTargets: Element[] = [];
 let disconnectCount = 0;
 
 class MockIntersectionObserver {
   constructor(cb: IOCallback) {
     ioCallback = cb;
+    ioCallbacks.push(cb);
   }
   observe(el: Element) {
     observedTargets.push(el);
@@ -52,8 +58,34 @@ function addFixtures({ withMark = true } = {}) {
   return mark;
 }
 
+/** Page fixtures expose the chip and heading geometry that page-mode derives
+ * its retirement boundary from. */
+function addPageFixtures() {
+  let headingTop = 129;
+  const main = document.createElement('main');
+  const heading = document.createElement('h1');
+  heading.textContent = 'Readable route heading';
+  heading.getBoundingClientRect = () =>
+    ({ top: headingTop, bottom: headingTop + 48, height: 48 } as DOMRect);
+  main.appendChild(heading);
+  document.body.appendChild(main);
+
+  const mark = document.createElement('div');
+  mark.setAttribute('data-runway-identity', '');
+  mark.getBoundingClientRect = () => ({ top: 14, bottom: 62, height: 48 } as DOMRect);
+  document.body.appendChild(mark);
+
+  return {
+    mark,
+    setHeadingTop(top: number) {
+      headingTop = top;
+    },
+  };
+}
+
 beforeEach(() => {
   ioCallback = null;
+  ioCallbacks = [];
   observedTargets = [];
   disconnectCount = 0;
   vi.stubGlobal('IntersectionObserver', MockIntersectionObserver);
@@ -116,5 +148,27 @@ describe('RunwayIdentityRelease', () => {
     vi.stubGlobal('IntersectionObserver', undefined);
     addFixtures();
     expect(() => render(<RunwayIdentityRelease />)).not.toThrow();
+  });
+
+  it('retires a page chip before its heading reaches the chip, then restores only after a full-chip buffer', () => {
+    const { mark, setHeadingTop } = addPageFixtures();
+    render(<RunwayIdentityRelease variant="page" />);
+
+    // Chip bottom 62 + 18px safety buffer = 80px retirement line. The return
+    // boundary adds the chip's 48px height, so it is 128px: no threshold flicker.
+    expect(ioCallbacks).toHaveLength(2);
+    expect(mark.hasAttribute('data-runway-done')).toBe(false);
+
+    setHeadingTop(79);
+    ioCallbacks[0]!([{ isIntersecting: false, intersectionRatio: 0, boundingClientRect: { top: 79 } }]);
+    expect(mark.hasAttribute('data-runway-done')).toBe(true);
+
+    setHeadingTop(90);
+    ioCallbacks[1]!([{ isIntersecting: false, intersectionRatio: 0, boundingClientRect: { top: 90 } }]);
+    expect(mark.hasAttribute('data-runway-done')).toBe(true);
+
+    setHeadingTop(128);
+    ioCallbacks[1]!([{ isIntersecting: true, intersectionRatio: 1, boundingClientRect: { top: 128 } }]);
+    expect(mark.hasAttribute('data-runway-done')).toBe(false);
   });
 });

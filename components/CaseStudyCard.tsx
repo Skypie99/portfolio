@@ -80,21 +80,9 @@ export function CaseStudyCard({ title, category, description, href, status, veri
     >
       <CardField slug={category} />
 
-      {/* Show-the-work 2026-06-04: cinematic product band (placeholder now).
-          L5-03 md band: the band takes the left 2/5 and stretches to the row's
-          height (aspect released) — mirrors ProjectCard's wide treatment. */}
-      <CardProductReveal
-        slug={category}
-        title={title}
-        media={media ?? { alt: title }}
-        className={cn(
-          'shrink-0 border-b border-[rgb(var(--rgb-ink)/0.08)] md:max-lg:w-2/5 md:max-lg:self-stretch md:max-lg:aspect-auto md:max-lg:border-b-0 md:max-lg:border-r',
-          wide && cn('lg:self-stretch lg:aspect-auto lg:border-b-0', wellClass),
-          wide && (mediaSide === 'right' ? 'lg:border-l' : 'lg:border-r'),
-        )}
-      />
-
-      <div className="relative z-10 flex flex-1 flex-col p-7 md:max-lg:p-8 lg:p-12">
+      {/* V4-MOB-11: on a phone, the readable project introduction leads the
+          evidence. md+ restores the original media-first gallery composition. */}
+      <div className="case-study-card-copy relative z-10 order-1 flex flex-1 flex-col p-7 md:order-2 md:max-lg:p-8 lg:p-12">
         <span
           aria-hidden="true"
           className="font-serif font-light text-card-numeral leading-none tabular-nums text-ink/30 origin-top-left transition duration-slow ease-gh-glide group-hover:text-ink/45 motion-safe:group-hover:scale-[1.04]"
@@ -209,6 +197,19 @@ export function CaseStudyCard({ title, category, description, href, status, veri
           </div>
         </div>
       </div>
+
+      {/* Show-the-work 2026-06-04: cinematic product band. L5-03 md band keeps
+          its established left-side well; mobile follows the readable title. */}
+      <CardProductReveal
+        slug={category}
+        title={title}
+        media={media ?? { alt: title }}
+        className={cn(
+          'case-study-card-media order-2 shrink-0 border-b border-[rgb(var(--rgb-ink)/0.08)] md:order-1 md:max-lg:w-2/5 md:max-lg:self-stretch md:max-lg:aspect-auto md:max-lg:border-b-0 md:max-lg:border-r',
+          wide && cn('lg:self-stretch lg:aspect-auto lg:border-b-0', wellClass),
+          wide && (mediaSide === 'right' ? 'lg:border-l' : 'lg:border-r'),
+        )}
+      />
     </div>
   );
 }

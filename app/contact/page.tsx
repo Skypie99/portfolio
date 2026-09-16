@@ -7,6 +7,7 @@ import { SettleHeading } from '@/components/HeroSettle';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { Reveal } from '@/components/Reveal';
 import { RunwayIdentity } from '@/components/RunwayIdentity';
+import { RunwayIdentityRelease } from '@/components/RunwayIdentityRelease';
 import { cn } from '@/lib/cn';
 import { getProfile } from '@/lib/content';
 import { canonicalFor } from '@/lib/metadata';
@@ -65,6 +66,7 @@ export default function ContactPage() {
           320/375/414. Same mark home's runway uses; hidden from md up, where
           the rail starts signing. */}
       <RunwayIdentity variant="page" />
+      <RunwayIdentityRelease variant="page" />
       {/* Page header + primary CTA */}
       <section data-band-anchor className="relative isolate overflow-hidden px-gutter py-24 lg:py-32 world-surface">
         {/* golden-hour light continuity — the invitation reads warm, matching
