@@ -1033,8 +1033,10 @@ export default function HomePage() {
               filter runs on both paths now.
             </Reveal>
             <Reveal index={4} variant="depth" as="p">
-              The honest limit: these fences are prompt-level, not
-              sandbox-level. It is one person{'\u2019'}s system, tested across
+              <span className="block border-l-2 border-terracotta pl-4 py-3 mb-6 font-serif text-step-2 leading-heading text-near-black">
+                The honest limit: these fences are prompt-level, not sandbox-level.
+              </span>{' '}
+              It is one person{'\u2019'}s system, tested across
               one person{'\u2019'}s projects, and some of the governance
               overhead does not pay for itself.
             </Reveal>
