@@ -5,7 +5,7 @@ import { cn } from '@/lib/cn';
 
 type HeroProps = {
   eyebrow: string;
-  heading: string;
+  heading: ReactNode;
   subhead: string;
   ctaLabel: string;
   ctaHref: string;
@@ -112,6 +112,7 @@ export function Hero({
                 alt={avatarAlt ?? name}
                 width={80}
                 height={80}
+                loading="lazy"
                 className="h-20 w-20 shrink-0 rounded-full object-cover ring-1 ring-terracotta/25"
               />
             )}
@@ -150,7 +151,7 @@ export function Hero({
             'leading-[1.02] sm:leading-[1.0]',
             'ember',
             'mb-4 max-[375px]:mb-3 sm:mb-7',
-            'max-w-[16ch]',
+            'max-w-[16ch] xl:max-w-[24ch]',
             'text-balance',
             // Narrow phones need a genuine display step, not seven compressed
             // 48px lines. 375px keeps a 40px display; the 320px stress width

@@ -9,6 +9,7 @@ import { Footer } from '@/components/Footer';
 // (~45 KB) out of the homepage First Load JS (Peter C2 perf).
 import { HamburgerNavMount } from '@/components/HamburgerNavMount';
 import { RevealAlive } from '@/components/RevealAlive';
+import { RouteFocus } from '@/components/RouteFocus';
 import { Sidebar } from '@/components/Sidebar';
 import { SkipLink } from '@/components/SkipLink';
 import { ThemeProvider } from '@/components/ThemeProvider';
@@ -235,6 +236,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               cross-dissolve. Renders null; degrades to plain navigation. */}
           <ViewTransitions />
           <SkipLink />
+          <ChromeGate>
+            <RouteFocus />
+          </ChromeGate>
           <ChromeGate>
             <HamburgerNavMount />
           </ChromeGate>
