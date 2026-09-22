@@ -13,9 +13,16 @@ describe('Phase 04 Flagstone professional relevance and claim boundaries', () =>
     expect(body.match(/This is the support work Flagstone demonstrates:/g)).toHaveLength(1);
     expect(bridge).toBeGreaterThan(body.indexOf('## What went wrong'));
     expect(bridge).toBeLessThan(body.indexOf('## Reflection'));
+    // P1.A 2026-09-17: the last string used to be 'there is no adoption to
+    // report'. What this guard actually pins is the CLAIM BOUNDARY (the page
+    // never converts the project into traction it cannot evidence), not that
+    // particular sentence. The boundary is unchanged; its reason is not. It
+    // used to be "the review has not completed"; the app shipped 2026-09-15,
+    // so it is now "the launch is recent and the store reports zero ratings".
+    // The phrase carrying the boundary moved with it.
     for (const evidence of ['**Mine.**', "**The agents'.**", '**What I check.**',
       'renders the parent instead of the child', 'fails against the old arrangement',
-      'there is no adoption to report']) {
+      'not yet meaningful']) {
       expect(body).toContain(evidence);
     }
   });

@@ -392,7 +392,7 @@ export default function HomePage() {
              one place, and is pinned by no test. */
           eyebrow="Senior technical support · Portfolio 2026"
           heading="An accessibility map. A multi‑agent system. A web-based prompt library."
-          subhead="Five projects built, all five on the open web. One submitted to Apple for App Store review. Accessibility first, built for everyone."
+          subhead="Five projects built, all five on the open web. One is on the App Store in the US and Canada. Accessibility first, built for everyone."
           ctaLabel="See the work."
           ctaHref="#work"
           receipts={
