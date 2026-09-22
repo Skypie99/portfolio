@@ -85,4 +85,26 @@ describe('themed media threading', () => {
     );
     expect(noAvif).toBeNull();
   });
+
+  it('shows selected artwork in the case-study hero while work cards keep captured evidence', () => {
+    const artwork = {
+      src: '/images/deliverables/claude-corp/branch-atlas.light.webp',
+      avif: '/images/deliverables/claude-corp/branch-atlas.light.avif',
+      webp: '/images/deliverables/claude-corp/branch-atlas.light.webp',
+      alt: 'Concept diagram of fifteen separate role paths ending at a review gate',
+      label: 'Concept diagram',
+      dark: {
+        src: '/images/deliverables/claude-corp/branch-atlas.dark.webp',
+        avif: '/images/deliverables/claude-corp/branch-atlas.dark.avif',
+        webp: '/images/deliverables/claude-corp/branch-atlas.dark.webp',
+      },
+    } as NonNullable<Deliverable['heroArtwork']>;
+    const item = d({ heroShot: themed, heroArtwork: artwork, cardImage: themed });
+
+    expect(heroMedia(item)).toMatchObject({ src: artwork.src, alt: artwork.alt, dark: artwork.dark });
+    expect(heroPreloadLinks(item)?.light.href).toBe(artwork.avif);
+    expect(heroPreloadLinks(item)?.dark.href).toBe(artwork.dark.avif);
+    expect(cardMedia(item).src).toBe(themed.src);
+    expect(cardMedia(d({ heroShot: themed, heroArtwork: artwork })).src).toBe(themed.src);
+  });
 });

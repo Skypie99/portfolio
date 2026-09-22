@@ -27,7 +27,7 @@ import { createRequire } from 'node:module';
 import {
   BANK_ROOT, MASTERS_ROOT, RECEIPTS_ROOT, PROJECTS, VIEWPORTS,
 } from './showcase/registry.mjs';
-import { bankProject, compareRuns, isoDate, printBudget, readManifest, writeManifest } from './showcase/manifest.mjs';
+import { bankProject, compareRuns, isoDate, printBudget, readManifest, sha256, writeManifest } from './showcase/manifest.mjs';
 import { launchBrowser, makeContext, runNav, settleTheme, shoot, assertNoViolations } from './showcase/driver.mjs';
 import { runBuild, startServer, startStaticServer, stopServer, waitReady, portInUse } from './showcase/servers.mjs';
 import { addWorktree, copyEnv, describeRepoState, linkNodeModules, mainMatchesOrigin, removeWorktree, resolveSha } from './showcase/worktree.mjs';
@@ -35,6 +35,7 @@ import { encodeClip, encodeStill, masterInfo } from './showcase/media.mjs';
 
 const require = createRequire(import.meta.url);
 const ffmpegPath = require('ffmpeg-static');
+const sharp = require('sharp');
 
 function parseArgs(argv) {
   const o = { projects: null, scene: null, theme: null, stillsOnly: false, clipsOnly: false, resume: false, verify: false, dry: false, headed: false };
@@ -129,6 +130,7 @@ async function buildAndServe(project, src, notes) {
   }
 
   if (b.kind === 'next-build') {
+    if (b.linkNodeModules) linkNodeModules(project.repo, src.rootDir);
     await runBuild(b.cmd[0], b.cmd.slice(1), { cwd: src.rootDir, timeoutMs: b.timeoutMs, name: `${project.slug}-build` });
     const dir = path.join(src.rootDir, b.outDir);
     const server = startStaticServer(dir, port);
@@ -177,7 +179,26 @@ async function captureStills({ project, src, baseUrl, browser, args, mastersRoot
         const masterPath = path.join(mastersRoot, project.slug, `${stem}.png`);
         fs.mkdirSync(path.dirname(masterPath), { recursive: true });
         const exists = fs.existsSync(masterPath);
-        if (!(args.resume && exists)) {
+        let regionProof = null;
+        if (scene.sourceCapture) {
+          const manifest = readManifest();
+          const source = manifest.captures.find((r) =>
+            r.project === project.slug && r.scene === scene.sourceCapture.scene &&
+            r.theme === theme && r.viewport === scene.sourceCapture.viewport);
+          if (!source?.files?.master) throw new Error(`approved source capture missing for ${project.slug}/${stem}`);
+          if (source.projectSha !== scene.sourceCapture.projectSha) throw new Error(`source SHA drift for ${project.slug}/${stem}`);
+          const original = source.files.master;
+          const sourcePath = path.isAbsolute(original.path) ? original.path : path.join(BANK_ROOT, original.path);
+          if (!fs.existsSync(sourcePath) || sha256(sourcePath) !== original.sha256) throw new Error(`source master hash mismatch for ${project.slug}/${stem}`);
+          const rect = scene.captureRegion;
+          const valid = rect && ['left', 'top', 'width', 'height'].every((key) => Number.isInteger(rect[key])) &&
+            rect.left >= 0 && rect.top >= 0 && rect.width > 0 && rect.height > 0 &&
+            rect.left + rect.width <= original.width && rect.top + rect.height <= original.height;
+          if (!valid) throw new Error(`invalid source crop for ${project.slug}/${stem}`);
+          if (!(args.resume && exists)) await sharp(sourcePath).extract(rect).png().toFile(masterPath);
+          regionProof = { sourceScene: source.scene, sourceViewport: source.viewport, sourcePath, sourceSha256: original.sha256, sourceProjectSha: source.projectSha, rect };
+        }
+        if (!scene.sourceCapture && !(args.resume && exists)) {
           // Per-scene isolation: one scene failing must never kill the project.
           // On failure, bank a FAILED frame + the page's accessible names so the
           // fix is a diagnosis, not a guess — then continue.
@@ -191,7 +212,20 @@ async function captureStills({ project, src, baseUrl, browser, args, mastersRoot
             if (project.readyText) await page.getByText(project.readyText, { exact: false }).first().waitFor({ timeout: 30_000 }).catch(() => {});
             try {
               await runNav(page, ctx, scene.nav ?? []);
-              await shoot(page, masterPath, { settleMs: scene.settle ?? 450 });
+              if (scene.captureRegion?.selector) {
+                const target = page.locator(scene.captureRegion.selector).first();
+                await target.scrollIntoViewIfNeeded();
+                await page.evaluate(() => document.fonts?.ready);
+                await page.evaluate(() => document.activeElement?.blur?.());
+                await page.evaluate(() => new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+                await page.waitForTimeout(scene.settle ?? 450);
+                const box = await target.boundingBox();
+                if (!box || box.width <= 0 || box.height <= 0) throw new Error(`capture region absent: ${scene.captureRegion.selector}`);
+                await target.screenshot({ path: masterPath });
+                regionProof = { selector: scene.captureRegion.selector, boundsCss: box };
+              } else {
+                await shoot(page, masterPath, { settleMs: scene.settle ?? 450 });
+              }
               assertNoViolations(ctx, `${project.slug}/${stem}`);
             } catch (err) {
               await page.screenshot({ path: masterPath.replace(/\.png$/, '.FAILED.png') }).catch(() => {});
@@ -219,6 +253,7 @@ async function captureStills({ project, src, baseUrl, browser, args, mastersRoot
         const master = await masterInfo(masterPath);
         const row = baseRow(project, src, scene.id, theme, vpName, scene, [...(scene.flags ?? [])]);
         row.files = { master };
+        if (regionProof) row.captureRegion = regionProof;
         // Verify mode compares masters ONLY — it must never re-encode into the
         // shipped tree (run 2's animation-pixel drift would silently replace
         // the canonical, manifest-recorded assets).
@@ -350,10 +385,19 @@ async function runProject(project, args, { mastersRoot }) {
       return { ok: true, dry: true };
     }
 
-    src = await resolveSource(project, notes);
+    const selectedScenes = project.scenes.filter((scene) => !args.scene || scene.id === args.scene);
+    const approvedMasterOnly = args.stillsOnly && selectedScenes.length > 0 && selectedScenes.every((scene) => scene.sourceCapture);
+    if (approvedMasterOnly) {
+      const sourceMeta = readManifest().projects[project.slug];
+      if (!sourceMeta) throw new Error(`approved project metadata missing for ${project.slug}`);
+      src = { rootDir: null, sha: sourceMeta.projectSha, branch: sourceMeta.projectBranch, worktree: null, decision: sourceMeta.shaDecision };
+      notes.push('candidate derived from approved existing master; no live source opened');
+    } else {
+      src = await resolveSource(project, notes);
+    }
 
     try {
-      served = await buildAndServe(project, src, notes);
+      if (!approvedMasterOnly) served = await buildAndServe(project, src, notes);
     } catch (err) {
       const fb = project.source.fallback;
       if (!fb) throw err;
@@ -366,8 +410,8 @@ async function runProject(project, args, { mastersRoot }) {
       served = await buildAndServe(project, src, notes);
     }
 
-    browser = await launchBrowser({ headless: !args.headed });
-    if (!args.clipsOnly) await captureStills({ project, src, baseUrl: served.baseUrl, browser, args, mastersRoot, rows });
+    if (!approvedMasterOnly) browser = await launchBrowser({ headless: !args.headed });
+    if (!args.clipsOnly) await captureStills({ project, src, baseUrl: served?.baseUrl, browser, args, mastersRoot, rows });
     if (!args.stillsOnly && !args.verify) await captureClips({ project, src, baseUrl: served.baseUrl, browser, args, mastersRoot, rows });
 
     if (!args.verify) {

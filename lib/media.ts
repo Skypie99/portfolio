@@ -4,10 +4,10 @@
  * cards (ProjectCard) and the work-index cards (CaseStudyCard), so the whole
  * site reads consistently and a real screenshot is a one-line swap in the JSON.
  *
- * The contract: `heroShot.src` (a real screenshot) wins; otherwise the legacy
- * `heroImage` is used ONLY if it's a real raster — the four `.svg` mockups are
- * treated as placeholders so they render the new golden-hour world instead of a
- * flat illustration. `undefined` => ProductReveal paints the placeholder.
+ * Owner-selected `heroArtwork` can lead a case study as a labelled illustration.
+ * Otherwise `heroShot.src` (a real screenshot) wins; the legacy `heroImage` is
+ * used only if it's a real raster. Dedicated cards and gallery shots retain
+ * authentic product evidence.
  */
 
 import type { ProductRevealMedia } from '@/components/ProductReveal';
@@ -17,22 +17,23 @@ import type { Deliverable } from './schema';
 /** SVG heroes are illustrative mockups → treated as placeholders, not screenshots. */
 export const isPlaceholderAsset = (src?: string): boolean => !src || src.endsWith('.svg');
 
-type HeroSource = Pick<Deliverable, 'heroImage' | 'heroShot'>;
+type HeroSource = Pick<Deliverable, 'heroImage' | 'heroShot' | 'heroArtwork'>;
 
-/** The best REAL hero image src for a deliverable, or `undefined` → placeholder. */
+/** The selected hero image src, or `undefined` → placeholder. */
 export function realHeroSrc(d: HeroSource): string | undefined {
-  return d.heroShot?.src ?? (isPlaceholderAsset(d.heroImage.src) ? undefined : d.heroImage.src);
+  return d.heroArtwork?.src ?? d.heroShot?.src ?? (isPlaceholderAsset(d.heroImage.src) ? undefined : d.heroImage.src);
 }
 
 /** Alt text ready for the (future) real image; falls back to the hero's alt. */
 export function heroAlt(d: HeroSource): string {
-  return d.heroShot?.alt ?? d.heroImage.alt;
+  return d.heroArtwork?.alt ?? d.heroShot?.alt ?? d.heroImage.alt;
 }
 
-/** Future responsive sources for the hero screenshot (absent until generated). */
+/** Responsive sources for the selected hero image. */
 export function heroSources(d: HeroSource): { avif?: string; webp?: string } | undefined {
-  if (!d.heroShot?.avif && !d.heroShot?.webp) return undefined;
-  return { avif: d.heroShot?.avif, webp: d.heroShot?.webp };
+  const source = d.heroArtwork ?? d.heroShot;
+  if (!source?.avif && !source?.webp) return undefined;
+  return { avif: source.avif, webp: source.webp };
 }
 
 /** Preload descriptor for a case-study hero's AVIF — its LCP element (L7-02).
@@ -49,7 +50,7 @@ export function heroSources(d: HeroSource): { avif?: string; webp?: string } | u
 export type HeroPreload = { href: string; as: 'image'; type: string; fetchPriority: 'high' };
 
 export function heroPreloadLink(d: HeroSource): HeroPreload | null {
-  const avif = d.heroShot?.avif;
+  const avif = d.heroArtwork?.avif ?? d.heroShot?.avif;
   if (!avif) return null;
   return { href: avif, as: 'image', type: 'image/avif', fetchPriority: 'high' };
 }
@@ -60,8 +61,8 @@ export function heroPreloadLink(d: HeroSource): HeroPreload | null {
  *  runtime, picked by the same theme signal next-themes reads pre-hydration.
  *  Null when the hero isn't themed → callers keep the static heroPreloadLink. */
 export function heroPreloadLinks(d: HeroSource): { light: HeroPreload; dark: HeroPreload } | null {
-  const light = d.heroShot?.avif;
-  const dark = d.heroShot?.dark?.avif;
+  const light = d.heroArtwork?.avif ?? d.heroShot?.avif;
+  const dark = d.heroArtwork?.dark?.avif ?? d.heroShot?.dark?.avif;
   if (!light || !dark) return null;
   return {
     light: { href: light, as: 'image', type: 'image/avif', fetchPriority: 'high' },
@@ -70,27 +71,26 @@ export function heroPreloadLinks(d: HeroSource): { light: HeroPreload; dark: Her
 }
 
 /**
- * The full ProductReveal media object for a deliverable — one source of truth for
- * the case-study hero AND both card types. Carries the real src (or undefined →
- * placeholder), alt, responsive sources, and the `focal` crop used by the
- * full-bleed card/shot band (the device-framed hero ignores focal — it shows the
- * whole screen).
+ * The full ProductReveal media object for a case-study hero. Authored art may
+ * lead here; cardMedia keeps the separate product-evidence source. Carries the
+ * src (or undefined → placeholder), alt, responsive sources, and any focal crop.
  */
 export function heroMedia(d: HeroSource): ProductRevealMedia {
   const sources = heroSources(d);
+  const active = d.heroArtwork ?? d.heroShot;
   return {
     src: realHeroSrc(d),
     alt: heroAlt(d),
     avif: sources?.avif,
     webp: sources?.webp,
-    lqip: d.heroShot?.lqip,
-    video: d.heroShot?.video,
-    focal: d.heroShot?.focal,
+    lqip: d.heroArtwork ? undefined : d.heroShot?.lqip,
+    video: d.heroArtwork ? undefined : d.heroShot?.video,
+    focal: d.heroArtwork ? undefined : d.heroShot?.focal,
     // Theme-synced twin + mono matting + chrome (showcase/theme-sync) — pure
     // threading; ProductReveal decides how (and whether) to render them.
-    dark: d.heroShot?.dark,
-    matte: d.heroShot?.matte,
-    chrome: d.heroShot?.chrome,
+    dark: active?.dark,
+    matte: d.heroArtwork ? undefined : d.heroShot?.matte,
+    chrome: d.heroArtwork ? 'float' : d.heroShot?.chrome,
   };
 }
 
@@ -117,7 +117,7 @@ function mobileCardMedia(d: CardSource): ProductRevealMedia['mobile'] {
  * shows a wide framed crop. Otherwise the card falls back to the hero image —
  * still a static cover crop (precropped), never TactileMedia's hover parallax, so
  * every card plate reads with the same no-hover reach [C-19]; landscape heroShots
- * fit the band fine.
+ * fit the band fine. Hero-only artwork never flows into this fallback.
  */
 export function cardMedia(d: CardSource): ProductRevealMedia {
   if (d.cardImage?.src) {
@@ -136,5 +136,5 @@ export function cardMedia(d: CardSource): ProductRevealMedia {
       precropped: true,
     };
   }
-  return { ...heroMedia(d), mobile: mobileCardMedia(d), precropped: true };
+  return { ...heroMedia({ ...d, heroArtwork: undefined }), mobile: mobileCardMedia(d), precropped: true };
 }

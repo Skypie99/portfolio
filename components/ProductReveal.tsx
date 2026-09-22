@@ -45,6 +45,8 @@ export type ProductRevealVideo = {
   captions?: string;
   /** Required — describes the clip for the a11y tree (meaning never needs motion). */
   alt: string;
+  /** An authored still-first clip may require the viewer to choose Play. */
+  autoplay?: boolean;
 };
 
 /** The DARK twin of a themed scene (showcase/theme-sync): file paths + LQIP +
@@ -444,6 +446,7 @@ export function ProductReveal({
         captions={media.video?.captions}
         fit={themedFit}
         position={kind !== 'none' ? undefined : media.focal}
+        autoplay={media.video?.autoplay !== false}
       />
     ) : (
       <ThemedShowcase
@@ -471,6 +474,7 @@ export function ProductReveal({
       captions={media.video?.captions}
       fit={kind !== 'none' ? 'contain' : 'cover'}
       position={kind !== 'none' ? undefined : media.focal}
+      autoplay={media.video?.autoplay !== false}
     />
   ) : !hasReal ? (
     kind === 'none' ? (
