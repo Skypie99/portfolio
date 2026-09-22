@@ -534,10 +534,9 @@ export default async function WorkDetailPage({
                   } as CSSProperties
                 }
               />
-              {/* Show-the-work: a real screenshot drops into the SAME frame via
-                  d.heroShot with zero layout shift. The aspect well (4:5 portrait;
-                  4:3 for window/plate real shots) + the mount settle stay owned by
-                  HeroImageSettle. */}
+              {/* Selected artwork or an authentic hero screenshot occupies the
+                  same reserved frame. The visible label distinguishes artwork
+                  from the retained product captures. */}
               <HeroProductReveal
                 slug={d.id}
                 title={d.title}
@@ -545,6 +544,11 @@ export default async function WorkDetailPage({
                 media={media}
                 liftClassName={d.id === 'flagstone' ? 'pr-stone-settle' : undefined}
               />
+              {d.heroArtwork && (
+                <span className="absolute right-2 top-2 z-20 rounded border border-[#C8C8B8] bg-[#FAF8F1] px-2 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-[#20302C] dark:border-[#708175] dark:bg-[#202925] dark:text-[#ECEAE0]">
+                  {d.heroArtwork.label}
+                </span>
+              )}
             </HeroImageSettle>
 
             {/* FT-3/FT-10 — the museum plate. A static mono-meta plate as a plain
@@ -962,10 +966,10 @@ export default async function WorkDetailPage({
                 Inside the build
               </p>
               <h2 className="font-serif font-light text-step-4 text-near-black mb-24 max-w-measure-heading leading-heading text-balance">
-                See it in motion.
+                {d.shots?.some((shot) => Boolean(shot.video)) ? 'See it in motion.' : 'A closer look.'}
               </h2>
             </Reveal>
-            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+            <ul className={cn('grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24', d.id === 'ghost-code' && 'lg:grid-cols-1')}>
               {d.shots.map((shot, i) => (
                 <Reveal key={shot.alt} index={i} as="li">
                   {/* C-54: bind plate + caption programmatically (figure/figcaption)
@@ -1016,6 +1020,8 @@ export default async function WorkDetailPage({
                         d.id === 'flagstone' &&
                           (shot.src?.includes('-current.phone') || Boolean(shot.video)) &&
                           'aspect-[7/8]',
+                        d.id === 'ghost-code' && shot.video &&
+                          'aspect-[390/844] w-full max-w-[390px] mx-auto',
                       )}
                     />
                     {shot.caption && (

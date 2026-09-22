@@ -64,6 +64,7 @@ const ProofVideoSchema = z.object({
   poster: AssetPath,
   captions: AssetPath.optional(),
   alt: AltTextSchema,
+  autoplay: z.boolean().optional(),
 });
 
 /** The DARK twin of a themed scene (showcase/theme-sync). Carries only what
@@ -152,6 +153,25 @@ const ShotImageSchema = z
     'dark and matte are mutually exclusive: a scene is themed OR mono, never both',
   );
 
+/** Owner-selected explanatory artwork. Kept separate from heroShot so an
+ * illustration can never silently inherit the product-screenshot contract. */
+const HeroArtworkPath = z.string().regex(
+  /^\/images\/deliverables\/[a-z0-9-]+\/[^/]+\.(avif|webp)$/,
+  'hero artwork must be an optimized image under its deliverable directory',
+);
+const HeroArtworkSchema = z.object({
+  src: HeroArtworkPath,
+  avif: HeroArtworkPath,
+  webp: HeroArtworkPath,
+  alt: AltTextSchema,
+  label: z.enum(['Concept diagram', 'Card illustration']),
+  dark: z.object({
+    src: HeroArtworkPath,
+    avif: HeroArtworkPath,
+    webp: HeroArtworkPath,
+  }),
+});
+
 export const DeliverableSchema = z.object({
   id: SlugSchema,
   title: z.string().min(4).max(80),
@@ -191,6 +211,7 @@ export const DeliverableSchema = z.object({
    *  no `src` — => the golden-hour placeholder renders in the device frame. The
    *  one-line swap to "show" the product: add this with a real `src` + `alt`. */
   heroShot: ShotImageSchema.optional(),
+  heroArtwork: HeroArtworkSchema.optional(),
   /** Optional PRE-CROPPED image for the work-card FRONT (distinct from the
    *  hero/page image). When present, the cards show this exactly (static cover,
    *  no re-zoom); otherwise they fall back to the hero image, focal-cropped. Let

@@ -49,6 +49,7 @@ export type ThemedMotionProps = {
   captions?: string;
   fit: 'cover' | 'contain';
   position?: string;
+  autoplay?: boolean;
   className?: string;
 };
 
@@ -124,6 +125,7 @@ export function ThemedMotion({
   captions,
   fit,
   position,
+  autoplay = true,
   className,
 }: ThemedMotionProps) {
   const hostRef = useRef<HTMLDivElement>(null);
@@ -173,7 +175,7 @@ export function ThemedMotion({
         if (intersectingRef.current) {
           const el = activeVideo();
           if (el) el.preload = 'metadata';
-          if (!reduced && !userPausedRef.current) play();
+          if (autoplay && !reduced && !userPausedRef.current) play();
         } else {
           pause();
         }
@@ -183,7 +185,7 @@ export function ThemedMotion({
     io.observe(host);
     return () => io.disconnect();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [reduced]);
+  }, [reduced, autoplay]);
 
   // Theme continuity: the class flips inside the VT callback (no React event) —
   // observe it, pause the hidden twin, hand the clock to the visible one.

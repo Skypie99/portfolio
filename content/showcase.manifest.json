@@ -1,6 +1,6 @@
 {
   "schema": "showcase-manifest/1",
-  "generatedAt": "2026-09-05",
+  "generatedAt": "2026-09-22",
   "factory": {
     "script": "scripts/capture-showcase.mjs",
     "engine": "playwright-core 1.61.1 / chromium-1228 (Chromium — Safari/WebKit stays a device gate)",
@@ -9,17 +9,17 @@
   "projects": {
     "claude-corp": {
       "slug": "claude-corp",
-      "repo": "/Users/skypie/Claude_Corp-codex/portfolio-3.0-p05-20260904",
+      "repo": "/Users/skypie/Claude_Corp",
       "projectBranch": "codex/portfolio-3.0-p05-20260904",
       "projectSha": "4a0398054ff14be4bdd0bbdcbae392bd30a88553",
       "shaDecision": "local-approved-candidate",
       "determinism": "byte-expected",
-      "bankOnly": true,
+      "bankOnly": false,
       "needsDevice": [],
       "notes": [
-        "Phase 05 local source capture; not deployed. Only named desktop capture rows refreshed; older rows retain their historical provenance."
+        "candidate derived from approved existing master; no live source opened"
       ],
-      "bankedAt": "2026-09-05"
+      "bankedAt": "2026-09-22"
     },
     "flagstone": {
       "slug": "flagstone",
@@ -39,16 +39,14 @@
     "prompt-library": {
       "slug": "prompt-library",
       "repo": "/Users/skypie/Documents/Claude/Projects/Prompt Library Tool",
-      "projectBranch": "main",
-      "projectSha": "052b37a8aa0b6aea09efb636bf9d26ad7d63ef88",
-      "shaDecision": "inplace",
+      "projectBranch": "32fcf8d189926fe8e39005f1b5440967059bdfd8",
+      "projectSha": "32fcf8d189926fe8e39005f1b5440967059bdfd8",
+      "shaDecision": "sky-pinned",
       "determinism": "byte-expected",
       "bankOnly": false,
       "needsDevice": [],
-      "notes": [
-        "3 tracked file(s) modified in checkout (doc-level dirt tolerated, recorded)"
-      ],
-      "bankedAt": "2026-07-31"
+      "notes": [],
+      "bankedAt": "2026-09-22"
     },
     "pet-paradise": {
       "slug": "pet-paradise",
@@ -76,17 +74,17 @@
     },
     "dashboard": {
       "slug": "dashboard",
-      "repo": "/Users/skypie/Dashboard-codex/portfolio-3.0-p05-20260904",
+      "repo": "/Users/skypie/Dashboard",
       "projectBranch": "codex/portfolio-3.0-p05-20260904",
       "projectSha": "00cc9151242a436b99f425c294847f3881ac0f5c",
       "shaDecision": "local-approved-candidate",
       "determinism": "demo-snapshot",
-      "bankOnly": true,
+      "bankOnly": false,
       "needsDevice": [],
       "notes": [
-        "Phase 05 local source capture; not deployed. Only named desktop capture rows refreshed; older rows retain their historical provenance."
+        "candidate derived from approved existing master; no live source opened"
       ],
-      "bankedAt": "2026-09-05"
+      "bankedAt": "2026-09-22"
     }
   },
   "captures": [
@@ -269,6 +267,202 @@
           "bytes": 127673,
           "width": 2880,
           "height": 1800
+        }
+      }
+    },
+    {
+      "project": "claude-corp",
+      "projectSha": "4a0398054ff14be4bdd0bbdcbae392bd30a88553",
+      "projectBranch": "codex/portfolio-3.0-p05-20260904",
+      "scene": "p2-morgan-to-roles",
+      "capturedAt": "2026-09-22",
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "Two real orchestration stages: Morgan plans and routes work to fifteen specialist roles building in parallel.",
+      "determinism": "byte-expected",
+      "flags": [
+        "P2-CANDIDATE"
+      ],
+      "files": {
+        "master": {
+          "path": "masters/claude-corp/p2-morgan-to-roles.dark.desktop.png",
+          "sha256": "2b4674dce2a745c119852c779e7a379ef03f0056c47a3d41f80b73f22074108f",
+          "bytes": 56857,
+          "width": 750,
+          "height": 390
+        },
+        "shipped": [
+          {
+            "path": "/showcase/claude-corp/p2-morgan-to-roles.dark.desktop.avif",
+            "bytes": 5831,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/claude-corp/p2-morgan-to-roles.dark.desktop.webp",
+            "bytes": 9354
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACwAgCdASoUAAoAPxFwsFAsJiSisAgBgCIJZwAAeyAA/u7eVrrH6GIQ8eKsygAA"
+      },
+      "captureRegion": {
+        "sourceScene": "hero-pipeline",
+        "sourceViewport": "desktop",
+        "sourcePath": "/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/p05-b/approved-execution/media-masters/final/claude-hero-pipeline-dark-1440x900-dpr2.png",
+        "sourceSha256": "048450b35f361ca714c220bc876660a016b5c0da7cddb7316eadf1eb5eb04625",
+        "sourceProjectSha": "4a0398054ff14be4bdd0bbdcbae392bd30a88553",
+        "rect": {
+          "left": 870,
+          "top": 1230,
+          "width": 750,
+          "height": 390
+        }
+      }
+    },
+    {
+      "project": "claude-corp",
+      "projectSha": "4a0398054ff14be4bdd0bbdcbae392bd30a88553",
+      "projectBranch": "codex/portfolio-3.0-p05-20260904",
+      "scene": "p2-morgan-to-roles",
+      "capturedAt": "2026-09-22",
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "Two real orchestration stages: Morgan plans and routes work to fifteen specialist roles building in parallel.",
+      "determinism": "byte-expected",
+      "flags": [
+        "P2-CANDIDATE"
+      ],
+      "files": {
+        "master": {
+          "path": "masters/claude-corp/p2-morgan-to-roles.light.desktop.png",
+          "sha256": "1400207744a8805c25a4d2b91faf41bb8eecd99099760b1cff08a67b23ea1437",
+          "bytes": 48780,
+          "width": 750,
+          "height": 390
+        },
+        "shipped": [
+          {
+            "path": "/showcase/claude-corp/p2-morgan-to-roles.light.desktop.avif",
+            "bytes": 5864,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/claude-corp/p2-morgan-to-roles.light.desktop.webp",
+            "bytes": 9354
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAgCdASoUAAoAPxFwsFAsJiSisAgBgCIJZwDA3DKUAAD+7yGrWxcQEVI5YjDzpmAAAA=="
+      },
+      "captureRegion": {
+        "sourceScene": "hero-pipeline",
+        "sourceViewport": "desktop",
+        "sourcePath": "/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/p05-b/approved-execution/media-masters/final/claude-hero-pipeline-light-1440x900-dpr2.png",
+        "sourceSha256": "6ebe752a17b64a72afd2f50162c59c6ebf8cf2376628a2aca3e3468a43f729b5",
+        "sourceProjectSha": "4a0398054ff14be4bdd0bbdcbae392bd30a88553",
+        "rect": {
+          "left": 870,
+          "top": 1230,
+          "width": 750,
+          "height": 390
+        }
+      }
+    },
+    {
+      "project": "claude-corp",
+      "projectSha": "4a0398054ff14be4bdd0bbdcbae392bd30a88553",
+      "projectBranch": "codex/portfolio-3.0-p05-20260904",
+      "scene": "p2-roles-to-safety",
+      "capturedAt": "2026-09-22",
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "Two real orchestration stages: fifteen specialist roles build in parallel, then Safety applies the seven-layer compiler.",
+      "determinism": "byte-expected",
+      "flags": [
+        "P2-CANDIDATE"
+      ],
+      "files": {
+        "master": {
+          "path": "masters/claude-corp/p2-roles-to-safety.dark.desktop.png",
+          "sha256": "b15a6aa9e2e3b9913441e18465ec457559ca99c14f2a553079c7bad9db875404",
+          "bytes": 49264,
+          "width": 750,
+          "height": 390
+        },
+        "shipped": [
+          {
+            "path": "/showcase/claude-corp/p2-roles-to-safety.dark.desktop.avif",
+            "bytes": 5804,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/claude-corp/p2-roles-to-safety.dark.desktop.webp",
+            "bytes": 9208
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADQAgCdASoUAAoAPxFysVCsJqSisAgBgCIJaQAAfj4AAP7u2SL5uWcvJHgXQAAA"
+      },
+      "captureRegion": {
+        "sourceScene": "hero-pipeline",
+        "sourceViewport": "desktop",
+        "sourcePath": "/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/p05-b/approved-execution/media-masters/final/claude-hero-pipeline-dark-1440x900-dpr2.png",
+        "sourceSha256": "048450b35f361ca714c220bc876660a016b5c0da7cddb7316eadf1eb5eb04625",
+        "sourceProjectSha": "4a0398054ff14be4bdd0bbdcbae392bd30a88553",
+        "rect": {
+          "left": 1280,
+          "top": 1230,
+          "width": 750,
+          "height": 390
+        }
+      }
+    },
+    {
+      "project": "claude-corp",
+      "projectSha": "4a0398054ff14be4bdd0bbdcbae392bd30a88553",
+      "projectBranch": "codex/portfolio-3.0-p05-20260904",
+      "scene": "p2-roles-to-safety",
+      "capturedAt": "2026-09-22",
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "Two real orchestration stages: fifteen specialist roles build in parallel, then Safety applies the seven-layer compiler.",
+      "determinism": "byte-expected",
+      "flags": [
+        "P2-CANDIDATE"
+      ],
+      "files": {
+        "master": {
+          "path": "masters/claude-corp/p2-roles-to-safety.light.desktop.png",
+          "sha256": "2ab901d76582fc4d67d65d91597c14473dca6a1c177927ddab82255c00dc05c7",
+          "bytes": 46477,
+          "width": 750,
+          "height": 390
+        },
+        "shipped": [
+          {
+            "path": "/showcase/claude-corp/p2-roles-to-safety.light.desktop.avif",
+            "bytes": 5724,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/claude-corp/p2-roles-to-safety.light.desktop.webp",
+            "bytes": 9088
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAgCdASoUAAoAPxFysFAsJqSisAgBgCIJZwDG9DLxQAD+7yGrTqcZf/ksH70T1KlAAA=="
+      },
+      "captureRegion": {
+        "sourceScene": "hero-pipeline",
+        "sourceViewport": "desktop",
+        "sourcePath": "/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/p05-b/approved-execution/media-masters/final/claude-hero-pipeline-light-1440x900-dpr2.png",
+        "sourceSha256": "6ebe752a17b64a72afd2f50162c59c6ebf8cf2376628a2aca3e3468a43f729b5",
+        "sourceProjectSha": "4a0398054ff14be4bdd0bbdcbae392bd30a88553",
+        "rect": {
+          "left": 1280,
+          "top": 1230,
+          "width": 750,
+          "height": 390
         }
       }
     },
@@ -728,6 +922,104 @@
           }
         ],
         "lqip": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAAAQAwCdASoUACsAPxF6tFQsJ7AopWzKACIJZwAALwIoxZAA/u8f+G6zPO8ludBXQxsw6JlgEuGivZG9JBO8R0AA"
+      }
+    },
+    {
+      "project": "dashboard",
+      "projectSha": "00cc9151242a436b99f425c294847f3881ac0f5c",
+      "projectBranch": "codex/portfolio-3.0-p05-20260904",
+      "scene": "p2-command-disclosed",
+      "capturedAt": "2026-09-22",
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "The locally approved Dashboard command center, including the DEMO badge and synthetic-data disclosure.",
+      "determinism": "demo-snapshot",
+      "flags": [
+        "P2-CANDIDATE"
+      ],
+      "files": {
+        "master": {
+          "path": "masters/dashboard/p2-command-disclosed.dark.desktop.png",
+          "sha256": "798a5858f41a86b9ef6f10050ac95301f8d7feb14b5b7e52d1e2e9f8fb74981c",
+          "bytes": 1315766,
+          "width": 1370,
+          "height": 1000
+        },
+        "shipped": [
+          {
+            "path": "/showcase/dashboard/p2-command-disclosed.dark.desktop.avif",
+            "bytes": 18523,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/dashboard/p2-command-disclosed.dark.desktop.webp",
+            "bytes": 24484
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAAAQAwCdASoUAA8APxFysFAsJqSisAgBgCIJZwAAW9NuJmAA/s1DCvxEejvr7jjzvuwptF+Ye5kAAA=="
+      },
+      "captureRegion": {
+        "sourceScene": "command-center",
+        "sourceViewport": "desktop",
+        "sourcePath": "/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/p05-a/approved-execution/media-masters/final/command-center-dark.png",
+        "sourceSha256": "f561d2d50206acccb7e350dbff092ea377bea79329701216cce65602c5eb1359",
+        "sourceProjectSha": "00cc9151242a436b99f425c294847f3881ac0f5c",
+        "rect": {
+          "left": 480,
+          "top": 0,
+          "width": 1370,
+          "height": 1000
+        }
+      }
+    },
+    {
+      "project": "dashboard",
+      "projectSha": "00cc9151242a436b99f425c294847f3881ac0f5c",
+      "projectBranch": "codex/portfolio-3.0-p05-20260904",
+      "scene": "p2-command-disclosed",
+      "capturedAt": "2026-09-22",
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "The locally approved Dashboard command center, including the DEMO badge and synthetic-data disclosure.",
+      "determinism": "demo-snapshot",
+      "flags": [
+        "P2-CANDIDATE"
+      ],
+      "files": {
+        "master": {
+          "path": "masters/dashboard/p2-command-disclosed.light.desktop.png",
+          "sha256": "a0e277cb856923b610a4ba45409d3551ade1e845e1f716d4b5d87c940e2c2f9d",
+          "bytes": 796695,
+          "width": 1370,
+          "height": 1000
+        },
+        "shipped": [
+          {
+            "path": "/showcase/dashboard/p2-command-disclosed.light.desktop.avif",
+            "bytes": 13678,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/dashboard/p2-command-disclosed.light.desktop.webp",
+            "bytes": 19686
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAABQAwCdASoUAA8APxFysFAwpqSisAgCECIJZwDG9DKKvqLMAAD+7xuV1FRndi3MvLZOQAAA"
+      },
+      "captureRegion": {
+        "sourceScene": "command-center",
+        "sourceViewport": "desktop",
+        "sourcePath": "/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/p05-a/approved-execution/media-masters/final/command-center-light.png",
+        "sourceSha256": "7681eddc098a3aecedc6f60ce9614ad2ea4f9156b1c64d9086e8edae1af03f96",
+        "sourceProjectSha": "00cc9151242a436b99f425c294847f3881ac0f5c",
+        "rect": {
+          "left": 480,
+          "top": 0,
+          "width": 1370,
+          "height": 1000
+        }
       }
     },
     {
@@ -2540,6 +2832,186 @@
     },
     {
       "project": "prompt-library",
+      "projectSha": "32fcf8d189926fe8e39005f1b5440967059bdfd8",
+      "projectBranch": "32fcf8d189926fe8e39005f1b5440967059bdfd8",
+      "scene": "p2-featured-card",
+      "capturedAt": "2026-09-22",
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "The featured Prompt Library card, with its category, reusable prompt title, description, and tags.",
+      "determinism": "byte-expected",
+      "flags": [
+        "P2-CANDIDATE"
+      ],
+      "files": {
+        "master": {
+          "path": "masters/prompt-library/p2-featured-card.dark.desktop.png",
+          "sha256": "cb560ba5c98ce44319113974352c4e90eee53c051296335d4a19e1a73a6c271e",
+          "bytes": 37599,
+          "width": 704,
+          "height": 430
+        },
+        "shipped": [
+          {
+            "path": "/showcase/prompt-library/p2-featured-card.dark.desktop.avif",
+            "bytes": 7482,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/prompt-library/p2-featured-card.dark.desktop.webp",
+            "bytes": 11856
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADQAgCdASoUAAwAPxFysVAsJqSisAgBgCIJZwAAhAwAAP7vMmtPBE1KcBAAAA=="
+      },
+      "captureRegion": {
+        "selector": "button[aria-label^=\"Open featured prompt:\"]",
+        "boundsCss": {
+          "x": 856,
+          "y": 245.125,
+          "width": 352,
+          "height": 214.75
+        }
+      }
+    },
+    {
+      "project": "prompt-library",
+      "projectSha": "32fcf8d189926fe8e39005f1b5440967059bdfd8",
+      "projectBranch": "32fcf8d189926fe8e39005f1b5440967059bdfd8",
+      "scene": "p2-featured-card",
+      "capturedAt": "2026-09-22",
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "The featured Prompt Library card, with its category, reusable prompt title, description, and tags.",
+      "determinism": "byte-expected",
+      "flags": [
+        "P2-CANDIDATE"
+      ],
+      "files": {
+        "master": {
+          "path": "masters/prompt-library/p2-featured-card.light.desktop.png",
+          "sha256": "e26f370760cbbb3d30652785f23a037c7160ede966ce24cfca11548d2fc8704e",
+          "bytes": 37844,
+          "width": 704,
+          "height": 430
+        },
+        "shipped": [
+          {
+            "path": "/showcase/prompt-library/p2-featured-card.light.desktop.avif",
+            "bytes": 7833,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/prompt-library/p2-featured-card.light.desktop.webp",
+            "bytes": 13256
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAAwAPxFysFAsJqSisAgBgCIJZwC+SDKUAAD+728GSzzOiPKBAAAA"
+      },
+      "captureRegion": {
+        "selector": "button[aria-label^=\"Open featured prompt:\"]",
+        "boundsCss": {
+          "x": 856,
+          "y": 245.125,
+          "width": 352,
+          "height": 214.75
+        }
+      }
+    },
+    {
+      "project": "prompt-library",
+      "projectSha": "32fcf8d189926fe8e39005f1b5440967059bdfd8",
+      "projectBranch": "32fcf8d189926fe8e39005f1b5440967059bdfd8",
+      "scene": "p2-variable-panel",
+      "capturedAt": "2026-09-22",
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "Variable fields and run controls for an opened Prompt Library prompt.",
+      "determinism": "byte-expected",
+      "flags": [
+        "P2-CANDIDATE"
+      ],
+      "files": {
+        "master": {
+          "path": "masters/prompt-library/p2-variable-panel.dark.desktop.png",
+          "sha256": "f3466684dee69d87ebd42ed3a544431016e9caebb21c254b64ab184d550706e7",
+          "bytes": 58167,
+          "width": 894,
+          "height": 678
+        },
+        "shipped": [
+          {
+            "path": "/showcase/prompt-library/p2-variable-panel.dark.desktop.avif",
+            "bytes": 10555,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/prompt-library/p2-variable-panel.dark.desktop.webp",
+            "bytes": 19650
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAABwAwCdASoUAA8APxF0sVCsJqSisAgBgCIJQBdgBaDuXvi8d5AA/u8NQxvJsICcTbkhKBlqgtz1UXQi19MeipbMNIAAAA=="
+      },
+      "captureRegion": {
+        "selector": "[role=\"region\"][aria-label=\"Prompt preview\"] + div",
+        "boundsCss": {
+          "x": 720,
+          "y": 341.5,
+          "width": 447,
+          "height": 338
+        }
+      }
+    },
+    {
+      "project": "prompt-library",
+      "projectSha": "32fcf8d189926fe8e39005f1b5440967059bdfd8",
+      "projectBranch": "32fcf8d189926fe8e39005f1b5440967059bdfd8",
+      "scene": "p2-variable-panel",
+      "capturedAt": "2026-09-22",
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "/",
+      "altText": "Variable fields and run controls for an opened Prompt Library prompt.",
+      "determinism": "byte-expected",
+      "flags": [
+        "P2-CANDIDATE"
+      ],
+      "files": {
+        "master": {
+          "path": "masters/prompt-library/p2-variable-panel.light.desktop.png",
+          "sha256": "d343aeb6376ab0d09562c41c3e57b91b2d3a33e37290a1175e825642bedcbbed",
+          "bytes": 57990,
+          "width": 894,
+          "height": 678
+        },
+        "shipped": [
+          {
+            "path": "/showcase/prompt-library/p2-variable-panel.light.desktop.avif",
+            "bytes": 11337,
+            "quality": 52
+          },
+          {
+            "path": "/showcase/prompt-library/p2-variable-panel.light.desktop.webp",
+            "bytes": 20876
+          }
+        ],
+        "lqip": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADQAwCdASoUAA8APxFwsFAsJiSisAgBgCIJYwC7ACHfu+6qUQQZCigA/up2R1u3D9kBmyIgxtgkYOG8OPakTBix4YAAAA=="
+      },
+      "captureRegion": {
+        "selector": "[role=\"region\"][aria-label=\"Prompt preview\"] + div",
+        "boundsCss": {
+          "x": 720,
+          "y": 341.5,
+          "width": 447,
+          "height": 338
+        }
+      }
+    },
+    {
+      "project": "prompt-library",
       "projectSha": "052b37a8aa0b6aea09efb636bf9d26ad7d63ef88",
       "projectBranch": "main",
       "scene": "prompt-detail",
@@ -2609,19 +3081,19 @@
   ],
   "budget": {
     "shipped": {
-      "files": 140,
-      "stillAvifMB": 1.39,
-      "stillFallbackMB": 2.32,
+      "files": 160,
+      "stillAvifMB": 1.49,
+      "stillFallbackMB": 2.45,
       "clipMp4MB": 0.64,
       "clipWebmMB": 0.7,
       "posterMB": 0.42
     },
     "maxStillAvifKB": 50,
     "maxClipMp4KB": 191,
-    "treeTotalMB": 5.64,
+    "treeTotalMB": 8.26,
     "targetMB": 8,
     "hardCapMB": 10,
-    "withinTarget": true,
+    "withinTarget": false,
     "withinHardCap": true
   },
   "determinismProof": {

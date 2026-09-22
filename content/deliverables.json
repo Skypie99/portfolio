@@ -141,6 +141,18 @@
         "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADwAgCdASoUAA0APxFysFAsJqSjMAgBgCIJZwDE2C5JAAD+7tfZtIk9HYyCh4h4AAA="
       }
     },
+    "heroArtwork": {
+      "src": "/images/deliverables/claude-corp/branch-atlas.light.webp",
+      "avif": "/images/deliverables/claude-corp/branch-atlas.light.avif",
+      "webp": "/images/deliverables/claude-corp/branch-atlas.light.webp",
+      "alt": "Concept diagram of Morgan routing work through fifteen separate role paths to a review gate, with Sky holding the merge.",
+      "label": "Concept diagram",
+      "dark": {
+        "src": "/images/deliverables/claude-corp/branch-atlas.dark.webp",
+        "avif": "/images/deliverables/claude-corp/branch-atlas.dark.avif",
+        "webp": "/images/deliverables/claude-corp/branch-atlas.dark.webp"
+      }
+    },
     "cardImage": {
       "src": "/showcase/claude-corp/hero-pipeline.light.desktop.webp",
       "alt": "The Claude Corp front door, with the fifteen-role pipeline under the editorial hero.",
@@ -344,6 +356,18 @@
         "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoUAA0APxFysVAsJqSisAgBgCIJZwDImDBsAAD+754pkdIK2oZsI4AA"
       }
     },
+    "heroArtwork": {
+      "src": "/images/deliverables/prompt-library/ui-ux-refinement.light.webp",
+      "avif": "/images/deliverables/prompt-library/ui-ux-refinement.light.avif",
+      "webp": "/images/deliverables/prompt-library/ui-ux-refinement.light.webp",
+      "alt": "Illustrated featured card for UI/UX Refinement Pass, showing the UI/UX category and the tags App, UI, and UX.",
+      "label": "Card illustration",
+      "dark": {
+        "src": "/images/deliverables/prompt-library/ui-ux-refinement.dark.webp",
+        "avif": "/images/deliverables/prompt-library/ui-ux-refinement.dark.avif",
+        "webp": "/images/deliverables/prompt-library/ui-ux-refinement.dark.webp"
+      }
+    },
     "cardImage": {
       "src": "/showcase/prompt-library/home.light.desktop.webp",
       "alt": "The Prompt Library home, with search and category chips over the prompt grid and the featured card leading.",
@@ -479,6 +503,7 @@
           "mp4": "/showcase/ghost-code/clips/round.light.phone.mp4",
           "webm": "/showcase/ghost-code/clips/round.light.phone.webm",
           "poster": "/showcase/ghost-code/clips/round.light.phone-poster.avif",
+          "autoplay": false,
           "alt": "A Ghost Code round in motion, with the Phantom moving between four command tokens while the prompt reads above."
         },
         "dark": {
