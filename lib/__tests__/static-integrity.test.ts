@@ -901,11 +901,10 @@ describe.runIf(OUT_EXISTS)('Gap 9: rendered dates are <time> elements', () => {
     ).toEqual([]);
   });
 
-  it('is not vacuous: the flagship page really does render dated evidence', () => {
+  it('keeps the flagship product gallery undated while retaining the receipt date', () => {
     const flagstone = readFileSync(join(OUT_DIR, 'work/flagstone/index.html'), 'utf8');
-    // The current reporting-flow capture + the receipt's own measurement date.
-    // The two supplied current-product stills intentionally carry no invented date.
-    expect((flagstone.match(/<time[\s>]/gi) ?? []).length).toBeGreaterThanOrEqual(2);
-    expect(flagstone).toContain('captured<!-- --> <time dateTime="2026-09-01"');
+    expect((flagstone.match(/<time[\s>]/gi) ?? []).length).toBeGreaterThanOrEqual(1);
+    expect(flagstone).toContain('<time dateTime="2026-08-16">2026-08-16</time>');
+    expect(flagstone).not.toContain('captured<!-- --> <time');
   });
 });

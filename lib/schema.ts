@@ -232,6 +232,13 @@ export const DeliverableSchema = z.object({
       provenance: z.string().min(2).max(80),
     })
     .optional(),
+  heroCaption: z
+    .object({
+      eyebrow: z.string().min(2).max(40),
+      line: z.string().min(2).max(120),
+      currency: z.string().min(2).max(60),
+    })
+    .optional(),
   /** Optional 2–3 in-body product shots. Each renders a beautiful placeholder
    *  until its `src` is filled in (drop-in, no layout shift). */
   shots: z.array(ShotImageSchema).max(3).optional(),

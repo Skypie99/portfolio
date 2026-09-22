@@ -224,8 +224,62 @@ function FlagstoneApproachDiagram() {
  *  through the ordinary path, chunk-for-chunk equivalent to the single-call
  *  renderer (dropCapEligible keeps the drop cap on the ARTICLE's true
  *  opening paragraph only — see renderMarkdownProse's option doc). */
-function renderFlagstoneBody(body: string): ReactNode {
-  const sections = splitBodyIntoSections(body);
+function CaseProof({ d }: { d: Deliverable }) {
+  if (!d.shots?.some((shot) => shot.src || shot.video)) return null;
+  return (
+    <div className="my-8 lg:my-12" aria-label={`${d.title} product evidence`}>
+      <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-6">
+        Inside the build
+      </p>
+      <h3 className="font-serif font-light text-step-2 text-near-black mb-8">
+        {d.shots.some((shot) => Boolean(shot.video)) ? 'See it in motion.' : 'A closer look.'}
+      </h3>
+      <ul className={cn('grid grid-cols-1 lg:grid-cols-2 gap-12', d.id === 'ghost-code' && 'lg:grid-cols-1')}>
+        {d.shots.map((shot, i) => (
+          <Reveal key={shot.alt} index={i} as="li">
+            <figure className="m-0 flex flex-col gap-3">
+              <ShotProductReveal
+                slug={d.id}
+                title={d.title}
+                media={{
+                  src: shot.src,
+                  alt: shot.caption ? '' : shot.alt,
+                  avif: shot.avif,
+                  webp: shot.webp,
+                  focal: shot.focal,
+                  lqip: shot.lqip,
+                  video: shot.video,
+                  dark: shot.dark,
+                  matte: shot.matte,
+                  precropped: d.id === 'flagstone' && Boolean(shot.src?.includes('-current.phone')),
+                }}
+                className={cn(
+                  'rounded-lg border border-border-decorative',
+                  d.id === 'flagstone' && (shot.src?.includes('-current.phone') || Boolean(shot.video)) && 'aspect-[7/8]',
+                  d.id === 'ghost-code' && shot.video && 'aspect-[390/844] w-full max-w-[390px] mx-auto',
+                )}
+              />
+              {shot.caption && (
+                <figcaption className="font-sans text-body-sm text-charcoal text-pretty">
+                  {smartPunctuation(shot.caption)}
+                  {shot.capturedDate && (
+                    <span className="mt-1 block font-mono text-meta tracking-label uppercase text-text-meta">
+                      captured{' '}<time dateTime={shot.capturedDate}>{shot.capturedDate}</time>
+                      {shot.commit && <> · {shot.commit}</>}
+                    </span>
+                  )}
+                </figcaption>
+              )}
+            </figure>
+          </Reveal>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function renderFlagstoneBody(d: Deliverable): ReactNode {
+  const sections = splitBodyIntoSections(d.body!);
   return sections.map((s, i) => {
     if (s.heading === 'My role') {
       return (
@@ -235,20 +289,40 @@ function renderFlagstoneBody(body: string): ReactNode {
         </div>
       );
     }
-    const blocks = renderMarkdownProse(`## ${s.heading}\n\n${s.content}`, 'case', {
-      dropCapEligible: i === 0,
-    });
     if (s.heading === 'The approach') {
+      const [opening, ...remaining] = s.content.split(/\n{2,}/);
       return (
         <div key={s.heading} className="contents">
-          {blocks}
+          {renderMarkdownProse(`## ${s.heading}\n\n${opening}`, 'case')}
+          <CaseProof d={d} />
+          {renderMarkdownProse(remaining.join('\n\n'), 'case', { dropCapEligible: false })}
           <FlagstoneApproachDiagram />
         </div>
       );
     }
+    const blocks = renderMarkdownProse(`## ${s.heading}\n\n${s.content}`, 'case', {
+      dropCapEligible: i === 0,
+    });
     return (
       <div key={s.heading} className="contents">
         {blocks}
+      </div>
+    );
+  });
+}
+
+function renderCaseBody(d: Deliverable): ReactNode {
+  const proofSection = d.id === 'dashboard' ? 'What shipped' : 'The approach';
+  return splitBodyIntoSections(d.body!).map((s, i) => {
+    if (s.heading !== proofSection) {
+      return <div key={s.heading} className="contents">{renderMarkdownProse(`## ${s.heading}\n\n${s.content}`, 'case', { dropCapEligible: i === 0 })}</div>;
+    }
+    const [opening, ...remaining] = s.content.split(/\n{2,}/);
+    return (
+      <div key={s.heading} className="contents">
+        {renderMarkdownProse(`## ${s.heading}\n\n${opening}`, 'case', { dropCapEligible: i === 0 })}
+        <CaseProof d={d} />
+        {remaining.length > 0 && renderMarkdownProse(remaining.join('\n\n'), 'case', { dropCapEligible: false })}
       </div>
     );
   });
@@ -686,6 +760,14 @@ export default async function WorkDetailPage({
                   {d.summary}
                 </p>
 
+                {d.heroCaption && (
+                  <div className="border-l-2 border-terracotta pl-4 flex flex-col gap-1" aria-label="Hero caption">
+                    <p className="font-mono text-meta tracking-label uppercase text-accent-ink">{d.heroCaption.eyebrow}</p>
+                    <p className="font-sans text-body-sm text-charcoal">{d.heroCaption.line}</p>
+                    <p className="font-mono text-meta tracking-label uppercase text-text-meta">{d.heroCaption.currency}</p>
+                  </div>
+                )}
+
                 {/* L3-04(b): live-demo pill — sits with the claim it proves.
                     P1.A: the App Store pill joins it as a peer when the
                     deliverable has one.
@@ -820,7 +902,7 @@ export default async function WorkDetailPage({
                               inline-level box is sized by its content, not by
                               its parent, so a long label + the ↗ laid out as one
                               unbreakable line. Measured: "Real commits
-                              (AccessMap) ↗" is 280px at 100% (fits 375) and
+                              (AccessMap) ↗" was 280px at 100% (fits 375) and
                               345px at 200%, running 34.4px past the viewport
                               where `overflow-x: clip` cut the arrow off
                               entirely. `max-w-full` constrains it to the row so
@@ -900,7 +982,7 @@ export default async function WorkDetailPage({
                 d.id === 'flagstone' && 'tablet-prose-measure',
               )}
             >
-              {d.id === 'flagstone' ? renderFlagstoneBody(d.body!) : renderMarkdownProse(d.body!, 'case')}
+              {d.id === 'flagstone' ? renderFlagstoneBody(d) : renderCaseBody(d)}
             </article>
 
             {/* FT-7 — close the essay like an essay. A designed sign-off (never
@@ -948,110 +1030,6 @@ export default async function WorkDetailPage({
             </div>
           </section>
         </>
-      )}
-
-      {/* In-body product shots — Show-the-work 2026-06-04. The section renders
-          only once at least one shot carries real media (src or video); until
-          then it stays hidden rather than staging empty "designed" wells (W3-01).
-          A real screenshot dropping into d.shots[i].src auto-restores it with no
-          layout shift (one-line swap — see SHOW_WORK_PLAN.md). The section sits
-          in the same warm light (ParallaxWash) as the body. */}
-      {d.shots?.some((s) => s.src || s.video) && (
-        <section className="relative overflow-hidden px-gutter py-24 lg:py-32 world-surface border-t border-border-decorative">
-          <ParallaxWash depth="far" />
-          <div className="relative z-10 max-w-content mx-auto">
-            <Reveal variant="scene">
-              <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
-                <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
-                Inside the build
-              </p>
-              <h2 className="font-serif font-light text-step-4 text-near-black mb-24 max-w-measure-heading leading-heading text-balance">
-                {d.shots?.some((shot) => Boolean(shot.video)) ? 'See it in motion.' : 'A closer look.'}
-              </h2>
-            </Reveal>
-            <ul className={cn('grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24', d.id === 'ghost-code' && 'lg:grid-cols-1')}>
-              {d.shots.map((shot, i) => (
-                <Reveal key={shot.alt} index={i} as="li">
-                  {/* C-54: bind plate + caption programmatically (figure/figcaption)
-                      — the template's signature the flagships inherit. When a caption
-                      is present it carries the description, so the plate's alt is
-                      emptied to stop AT hearing the scene twice (de-dup alt/caption). */}
-                  <figure className="m-0 flex flex-col gap-3">
-                    {/* Phase A: className was rounded-2xl — Tailwind's stock 16px
-                        utility, coincidentally value-identical to this project's
-                        own named rounded-lg (16px). Use the named token. */}
-                    <ShotProductReveal
-                      slug={d.id}
-                      title={d.title}
-                      media={{
-                        src: shot.src,
-                        alt: shot.caption ? '' : shot.alt,
-                        avif: shot.avif,
-                        webp: shot.webp,
-                        focal: shot.focal,
-                        lqip: shot.lqip,
-                        video: shot.video,
-                        /* Cook Out · dark-shot forwarding — the dual-theme twin of the
-                           `matte` gap below: `dark` was dropped here too, so the four
-                           projects whose shots carry a dark twin (claude-corp, dashboard,
-                           prompt-library, ghost-code) never reached ThemedShowcase /
-                           ThemedMotion's themed path — stills kept the LIGHT capture in
-                           dark theme, and the ghost-code clip (a lone `ts-layer--light`
-                           in the "single" path) went blank. Reproduced live before the
-                           fix; guarded in lib/__tests__/shot-dark-forwarding.test.ts. */
-                        dark: shot.dark,
-                        /* Cook Out P2 · Part C — the actual wiring gap: `matte`
-                           was dropped here, so ProductReveal's `isThemed` check
-                           (media.dark || media.matte) never fired and this shot
-                           fell through to the theme-blind "single" video path —
-                           which still tags its layer `ts-layer--light` and gets
-                           hidden by the SAME dark-theme rule as an unfixed matte
-                           (the reproduced blank card). Forwarding it routes
-                           Flagstone's reporting-flow clip through the matte path
-                           the globals.css fix above actually protects. Scoped to
-                           this one field: no other current shot sets `matte`. */
-                        matte: shot.matte,
-                        precropped:
-                          d.id === 'flagstone' &&
-                          Boolean(shot.src?.includes('-current.phone')),
-                      }}
-                      className={cn(
-                        'rounded-lg border border-border-decorative',
-                        d.id === 'flagstone' &&
-                          (shot.src?.includes('-current.phone') || Boolean(shot.video)) &&
-                          'aspect-[7/8]',
-                        d.id === 'ghost-code' && shot.video &&
-                          'aspect-[390/844] w-full max-w-[390px] mx-auto',
-                      )}
-                    />
-                    {shot.caption && (
-                      <figcaption className="font-sans text-body-sm text-charcoal text-pretty">
-                        {smartPunctuation(shot.caption)}
-                        {/* D7 — surface what the manifest already records: every
-                            Flagstone shot now carries its own capture date + commit
-                            (schema-optional; absent for every other deliverable's
-                            shots, so this line simply doesn't render there). */}
-                        {shot.capturedDate && (
-                          <span className="mt-1 block font-mono text-meta tracking-label uppercase text-text-meta">
-                            {/* J1 (Phase J) — H1 wrapped every date on the site in a
-                                real <time>, but this caption was added by D7 AFTER
-                                H1's sweep list was written, so three dates on the
-                                flagship page were still shipping as bare text.
-                                Rendered characters are byte-identical; only the
-                                element around them changed. */}
-                            captured{' '}
-                            <time dateTime={shot.capturedDate}>{shot.capturedDate}</time>
-                            {shot.commit && <> · {shot.commit}</>}
-                          </span>
-                        )}
-                      </figcaption>
-                    )}
-                  </figure>
-                </Reveal>
-              ))}
-            </ul>
-          </div>
-        </section>
       )}
 
       {/* Optional gallery */}
@@ -1103,51 +1081,7 @@ export default async function WorkDetailPage({
         </section>
       )}
 
-      {/* Other work — CaseStudyCard replaces the simpler inline link cards */}
-      {others.length > 0 && (
-        <section
-          className={cn(
-            'relative overflow-hidden',
-            'px-gutter py-24 lg:py-32',
-            // Dani wave4: warm-white for section variety between cream main and gallery.
-            'world-surface-alt border-t border-border-decorative',
-          )}
-        >
-          {/* golden-hour light continuity — the glass cards sit in warm light, not a bare field. */}
-          <ParallaxWash depth="far" />
-          <div className="relative z-10 max-w-content mx-auto">
-            <Reveal variant="scene">
-              <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
-                <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
-                More work
-              </p>
-              <h2 className="font-serif font-light text-step-4 text-near-black max-w-measure-heading leading-heading mb-24 text-balance">
-                Continue reading.
-              </h2>
-            </Reveal>
-
-            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
-              {others.map((o, i) => (
-                <Reveal key={o.id} index={i} as="li">
-                  {/* UP-33: h-full fills the stretched 2-up row so both card feet line up — it activates the card's own mt-auto footer; tailwind-merge keeps min-h-[22rem]. */}
-                  <CaseStudyCard
-                    title={o.title}
-                    category={toCategory(o.id)}
-                    description={o.summary}
-                    href={`/work/${o.id}/`}
-                    media={cardMedia(o)}
-                    links={o.links}
-                    index={allDeliverables.findIndex((x) => x.id === o.id)}
-                    className="h-full"
-                  />
-                </Reveal>
-              ))}
-            </ul>
-          </div>
-        </section>
-      )}
-
-      {/* Closing CTA */}
+      {/* Contact invitation before the final related-project cards */}
       <section
         className={cn(
           'relative overflow-hidden',
@@ -1196,6 +1130,50 @@ export default async function WorkDetailPage({
           <ContactEmail subject={`About ${d.title}`} dotColor={`rgb(${signatureFor(d.id)})`} />
         </Reveal>
       </section>
+      {/* Other work — CaseStudyCard replaces the simpler inline link cards */}
+      {others.length > 0 && (
+        <section
+          className={cn(
+            'relative overflow-hidden',
+            'px-gutter py-24 lg:py-32',
+            // Dani wave4: warm-white for section variety between cream main and gallery.
+            'world-surface-alt border-t border-border-decorative',
+          )}
+        >
+          {/* golden-hour light continuity — the glass cards sit in warm light, not a bare field. */}
+          <ParallaxWash depth="far" />
+          <div className="relative z-10 max-w-content mx-auto">
+            <Reveal variant="scene">
+              <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
+                <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
+                More work
+              </p>
+              <h2 className="font-serif font-light text-step-4 text-near-black max-w-measure-heading leading-heading mb-24 text-balance">
+                Continue reading.
+              </h2>
+            </Reveal>
+
+            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+              {others.map((o, i) => (
+                <Reveal key={o.id} index={i} as="li">
+                  {/* UP-33: h-full fills the stretched 2-up row so both card feet line up — it activates the card's own mt-auto footer; tailwind-merge keeps min-h-[22rem]. */}
+                  <CaseStudyCard
+                    title={o.title}
+                    category={toCategory(o.id)}
+                    description={o.summary}
+                    href={`/work/${o.id}/`}
+                    media={cardMedia(o)}
+                    links={o.links}
+                    index={allDeliverables.findIndex((x) => x.id === o.id)}
+                    className="h-full"
+                  />
+                </Reveal>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
     </>
   );
 }

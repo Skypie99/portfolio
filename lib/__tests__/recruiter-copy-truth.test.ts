@@ -327,6 +327,12 @@ describe('recruiter copy truth guards (Prompt 3)', () => {
     for (const d of deliverables) {
       for (const s of deliverableStrings(d)) {
         if (s.where.endsWith('.body')) continue; // bodies may cite the GitHub repo URL by its real name
+        // P3 exception: this one link names the historical repo so its destination is unsurprising.
+        if (s.where === 'claude-corp.links[1].label') {
+          expect(s.text).toBe('Flagstone commits (AccessMap)');
+          expect(d.links?.[1].href).toBe('https://github.com/Skypie99/AccessMap/commits/main');
+          continue;
+        }
         expect(s.text, `${s.where}`).not.toContain('AccessMap');
       }
     }

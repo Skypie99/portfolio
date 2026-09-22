@@ -20,7 +20,7 @@ describe('Flagstone recruiter first impression', () => {
     expect(flagstone?.shots?.[0]?.src).toContain('/report-flow-current.');
     expect(flagstone?.shots?.[0]?.video?.mp4).toContain('/report-flow-current.');
     expect(flagstone?.shots?.[0]?.caption).toBe('From map pin to report form, the current reporting flow in motion.');
-    expect(flagstone?.shots?.[0]?.capturedDate).toBe('2026-09-01');
+    expect(flagstone?.shots?.[0]?.capturedDate).toBeUndefined();
     expect(flagstone?.shots?.[0]?.commit).toBeUndefined();
     expect(flagstone?.shots?.[0]?.video?.alt).toContain('Report a flag form');
     expect(flagstone?.shots?.[1]?.src).toBe('/showcase/flagstone/report-current.phone.webp');
