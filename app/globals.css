@@ -3674,6 +3674,16 @@ html.dark .runway-identity--page .runway-identity-chip {
   opacity: 0;
   visibility: hidden;
 }
+/* On narrow phones the cue shares the Skip intro control's bottom edge.
+   Give the decorative cue the left corner and keep the control at right. */
+@media (max-width: 420px) {
+  .intro-scroll-cue {
+    right: auto;
+    left: 0;
+    padding-left: max(1.25rem, env(safe-area-inset-left));
+    justify-content: flex-start;
+  }
+}
 /* The glyph fades up after a short beat so it reads as part of the film's own
    settle, not a UI element racing the first frame. COMMENT-TRUTH (art pass):
    the intro-cue-rise keyframe ends at opacity 1 (and always has — the R2-P4
@@ -3709,6 +3719,16 @@ html.dark .runway-identity--page .runway-identity-chip {
     animation: none;
     opacity: 1;
     transform: none;
+  }
+}
+
+/* Three credential columns fit at normal text size. The root font size grows
+   at text zoom; require a readable minimum card width, then let the grid
+   fall to two columns before its Verify pills run past the viewport. The
+   calc term caps auto-fit at three columns on wide screens (two 4rem gaps). */
+@media (min-width: 1024px) {
+  .cert-grid {
+    grid-template-columns: repeat(auto-fit, minmax(max(11.5rem, calc((100% - 8rem) / 3)), 1fr));
   }
 }
 

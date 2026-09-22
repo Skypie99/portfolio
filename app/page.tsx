@@ -22,6 +22,7 @@ import { RunwayIdentity } from '@/components/RunwayIdentity';
 import { RunwayIdentityRelease } from '@/components/RunwayIdentityRelease';
 import { cn } from '@/lib/cn';
 import { getA11yReceipts, getCertificates, getDeliverables, getProfile, getRounds } from '@/lib/content';
+import { bindSoloLetters } from '@/lib/markdown';
 import { heroMedia } from '@/lib/media';
 import { canonicalFor } from '@/lib/metadata';
 import { OG_CARD } from '@/lib/og';
@@ -391,7 +392,13 @@ export default function HomePage() {
              no information before ("Portfolio: 2026"), is used in exactly
              one place, and is pinned by no test. */
           eyebrow="Senior technical support · Portfolio 2026"
-          heading="An accessibility map. A multi‑agent system. A web-based prompt library."
+          heading={
+            <>
+              <span className="block">An accessibility map.</span>{' '}
+              <span className="block">{bindSoloLetters('A multi‑agent system.')}</span>{' '}
+              <span className="block">{bindSoloLetters('A web-based prompt library.')}</span>
+            </>
+          }
           subhead="Five projects built, all five on the open web. One is on the App Store in the US and Canada. Accessibility first, built for everyone."
           ctaLabel="See the work."
           ctaHref="#work"
@@ -437,7 +444,7 @@ export default function HomePage() {
                 )}
                 {calibration && (
                   <Receipt
-                    value={calibration.value}
+                    value={`Round ${calibration.value}`}
                     label={calibration.label}
                     tier="reported"
                     date={calibration.date}

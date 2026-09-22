@@ -295,14 +295,14 @@ export default async function BlogPostPage({
         <div className="max-w-content mx-auto">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="mb-24">
-            <ol className="flex items-center gap-2 font-mono text-meta tracking-label uppercase text-text-meta">
+            <ol className="flex flex-wrap items-center gap-2 font-mono text-meta tracking-label uppercase text-text-meta">
               <li className="shrink-0">
                 <Link href="/blog/" className="link-draw inline-block text-text-meta">
                   Notes
                 </Link>
               </li>
               <li aria-hidden="true" className="shrink-0 text-stone dark:text-stone-strong">{'/'}</li>
-              <li aria-current="page" className="text-ink truncate min-w-0 max-w-[240px] lg:max-w-[420px] xl:max-w-[560px]">
+              <li aria-current="page" className="text-ink min-w-0 max-w-full break-words">
                 {post.title}
               </li>
             </ol>
