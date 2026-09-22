@@ -6,7 +6,10 @@
  * receipt). These guards keep the governance-critical truths from drifting
  * back, one invariant per test, without snapshotting whole paragraphs:
  *
- *   - Flagstone's App Store state stays "submitted", never released/approved.
+ *   - Flagstone's App Store state stays TRUE. Inverted 2026-09-17 (P1.A):
+ *     the app went live on 2026-09-15, so availability language is now
+ *     required rather than banned, and the banned half moved to ADOPTION
+ *     claims, which the store's own zero-rating record cannot support.
  *   - Prompt Library's privacy wording names the Anthropic call and never
  *     claims that nothing leaves the browser.
  *   - The Dashboard's public demo stays clearly synthetic.
@@ -121,9 +124,18 @@ const PROHIBITED_CI: RegExp[] = [
   /nothing leaves (?:your|the) (?:browser|machine|computer)/i,
   /fully autonomous/i,
   /all open source/i,
-  /released on the App Store/i,
-  /available on the App Store/i,
-  /approved by Apple/i,
+  // P1.A 2026-09-17: the three App Store status bans that used to live here
+  // (/released on the App Store/, /available on the App Store/, /approved by
+  // Apple/) are GONE, because all three became true on 2026-09-15 and a guard
+  // that bans a true statement is a guard that enforces an understatement.
+  // What replaces them is the claim class that is still unevidenced: adoption.
+  // Verified at source 2026-09-17 — the iTunes lookup for com.accessmap.app
+  // reports userRatingCount 0 in both the US and CA storefronts.
+  /\b[\d,.]+\+?\s*(?:downloads|installs|active users)\b/i,
+  /\b(?:thousands|millions|hundreds) of (?:downloads|installs|users)\b/i,
+  /\b(?:monthly|daily|weekly) active users\b/i,
+  /\b(?:MAU|DAU|WAU)\b/,
+  /\b(?:top|no\.?|#)\s*\d+\b[^.]{0,40}\bApp Store\b/i,
   /live private data/i,
   /real operational data/i,
   // P10-A-001: the Wave 4 ledger does not support this fixed/open aggregate.
@@ -184,12 +196,18 @@ describe('recruiter copy truth guards (Prompt 3)', () => {
     expect(offenders, offenders.join('\n')).toEqual([]);
   });
 
-  it('Flagstone: submission stays a submission, not an approval or a release', () => {
+  it('Flagstone: a release stays a release, and a release is not adoption', () => {
     const f = byId('flagstone');
     const copy = `${f.status}\n${f.summary}\n${f.body ?? ''}`;
-    expect(f.status).toMatch(/submitted/i);
-    expect(copy).toMatch(/Apple approval and public App Store availability have not been established/);
-    expect(copy).not.toMatch(/approved|released on|available on the App Store|download(?:able)? from the App Store/i);
+    // The app is public: say so, with its real storefront scope.
+    expect(f.status).toMatch(/App Store/i);
+    expect(copy).toMatch(/available on the App Store/i);
+    expect(copy).toMatch(/United States and Canada/);
+    // The retired understatements are now false and must not return.
+    expect(copy).not.toMatch(/has not shipped|approval[^.]{0,40}not been established/i);
+    // And shipping is not traction. This is the half that still constrains.
+    expect(copy).toMatch(/not yet meaningful/);
+    expect(copy).not.toMatch(/\b[\d,.]+\+?\s*(?:downloads|installs|active users)\b/i);
   });
 
   it('Flagstone: no unqualified "every finding fixed" claim, and no invented test total in the body', () => {
@@ -322,6 +340,10 @@ describe('recruiter copy truth guards (Prompt 3)', () => {
       for (const l of d.links ?? []) {
         if (l.type === 'demo') expect(l.label, `${d.id} demo label`).toBe('Live demo');
         if (l.type === 'github') expect(l.label, `${d.id} github label`).toBe('GitHub');
+        // P1.A: the App Store doorway gets one wording too, for the same reason
+        // the other two do: one label per destination type, site-wide.
+        if (l.type === 'appstore')
+          expect(l.label, `${d.id} appstore label`).toBe('Get it on the App Store');
       }
     }
   });

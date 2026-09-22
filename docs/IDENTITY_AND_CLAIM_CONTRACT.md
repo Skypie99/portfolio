@@ -143,9 +143,9 @@ Required distinctions for any future governance copy:
 
 ## 19. Product-status vocabulary
 
-- **Submitted** — sent for review, no outcome yet (Flagstone's current status).
-- **Approved** — a platform has affirmatively approved, distinct from submitted. Not currently true for any project; must not be implied.
-- **Released** — publicly available through the relevant store/channel. Not currently true for Flagstone.
+- **Submitted** — sent for review, no outcome yet. Not currently true for any project (Flagstone's submission completed; see **Released**).
+- **Approved** — a platform has affirmatively approved, distinct from submitted. True for Flagstone as of 2026-09-15.
+- **Released** — publicly available through the relevant store/channel. **True for Flagstone as of 2026-09-15**, in the US and Canada storefronts only. "Released" does not license any adoption claim; see §20.
 - **Live web** — reachable at a public URL right now (Portfolio, Ghost Code, Prompt Library, Claude Corp public site, Dashboard's public demo).
 - **Private** — not publicly reachable at all (the Dashboard operator app itself; the Studio Archive).
 - **Public** — reachable without authentication.
@@ -157,7 +157,15 @@ No project may be described with a stronger status word than its most recent pri
 
 ## 20. Flagstone release-status rule
 
-Current, verified status: **App Store review submitted, August 2026** (`content/deliverables.json`: `"status": "App Store review submitted · August 2026"`, `"verifiedDate": "2026-08-31"`). No approval, release, users, or adoption may be stated or implied. This status is **date-sensitive** — any phase that touches Flagstone copy again must re-check `release/current.json` in the AccessMap repo before publishing, not assume this document's snapshot still holds.
+Current, verified status: **live on the App Store, US and Canada, since 2026-09-15** (`content/deliverables.json`: `"status": "On the App Store · US and Canada · Sept 2026"`, `"verifiedDate": "2026-09-17"`). Updated by P1.A (`qa-reports/2026-09-17_P1A_FlagstoneReleaseTruth.md`), which inverted this section's previous rule.
+
+**Primary source for the release**, checked directly on 2026-09-17: the iTunes lookup for bundle `com.accessmap.app` returns `trackId 6774709116`, `version 4.1.1`, `formattedPrice Free`, `releaseDate 2026-09-15T21:21:25Z`, `sellerName Skyler Halisky`. Storefront scope was checked against twelve storefronts: `us` and `ca` return a result, `gb au de fr jp mx nz ie in br` return none. The app is therefore **not worldwide**, and copy must not imply it is.
+
+**What may now be stated:** approval, release, and public availability, scoped to the US and Canada.
+
+**What still may not be stated, and this is now the load-bearing half of the rule:** any adoption, download, install, rating, ranking, chart-position or user-count claim, in any rounded or qualified form. The same lookup reports `userRatingCount 0` and `averageUserRating 0` in both storefronts. There is no usage to describe, and the recent launch is precisely the moment the temptation to invent some is highest. Copy must say plainly that metrics are not yet meaningful and will be published when real usage exists.
+
+This status remains **date-sensitive** — but note the failure this section already recorded once: between 2026-09-15 and 2026-09-17 the site published "the iOS app has not shipped" while the app was public, and two test files actively *enforced* that untruth. A pin on a time-bound fact must be inverted in the same commit as the copy it guards. Re-check the store record, not this document's snapshot, before publishing.
 
 ## 21. Test-count rule
 
@@ -200,7 +208,7 @@ This directly conflicts with this phase's assigned finding **F-023**, which asse
 | "there is no server, no database, and no account: nothing to run, and nothing to breach" | `lib/content.ts:290` (Colophon) | **Narrow/fix at source.** Already flagged in the repo's own truth manifest as a confirmed factual contradiction with `/archive`. Not re-litigated here; carried forward as an open item for the copy-implementation phase. |
 | "all roles inherit it as hard law" / "Enforces Constitution safety rules" | `Claude_Corp/README.md` (public repo) | **Narrow.** See §18. |
 | "AI Portfolio" as the site's own self-description (page-title suffix, JSON-LD `jobTitle: "Technical Support · AI Builder"`) | `app/layout.tsx` | **Reorder, don't remove.** Not false, but per F-003 it foregrounds a trend label over the primary professional identity. §5–10 already establish the correct hierarchy; a later phase should lead metadata with Sky/support, AI as capability. |
-| "App Store review submitted" | `content/deliverables.json` | **Proven.** Matches `release/current.json` per the truth manifest. No change needed. |
+| "On the App Store · US and Canada · Sept 2026" | `content/deliverables.json` | **Proven.** Verified 2026-09-17 against the App Store record itself (id6774709116, v4.1.1, released 2026-09-15; `us`/`ca` only). Supersedes the previous "App Store review submitted" row, which was true when written and false from 2026-09-15. |
 | "Community map... Privacy-first: no ads, no analytics, no trackers" | `content/deliverables.json` (Flagstone) | **Proven** for the technical claims (no analytics SDKs present); "no data sold" portion is a business claim not independently verifiable from code, per the truth manifest — leave as is, not strengthened. |
 | "shipped across 20 stacked branches" (Prompt Library) | `content/deliverables.json:355` | **Unverified**, per truth manifest §5. Not re-verified in this pass; flagged, not removed (out of scope to fix in Phase 01), for the technical-integrity phase to confirm or soften. |
 | "48 findings... accounted for every one" / "1,700+ commits" (Flagstone) | `content/deliverables.json` | **Prohibited from strengthening**, per truth manifest §6 item 4 — already flagged there, carried forward, not re-implemented here. |
@@ -211,7 +219,7 @@ This directly conflicts with this phase's assigned finding **F-023**, which asse
 |---|---|---|
 | PR-004 (support-first hero sentence) | Not edited by this phase | PASS — untouched |
 | PR-005 (human-first identity, SkyPi as authored world not agency) | §4, §7 | PASS — contract explicitly forbids the agency reading |
-| PR-007 (Flagstone conservative status) | §20 | PASS — restates current submitted-only status, no strengthening |
+| PR-007 (Flagstone conservative status) | §20 | PASS — the status is now "released", which is the conservative reading of the store record; the conservatism moved to the adoption ban, where the evidence is still absent |
 | PR-009 (dated, method-specific evidence) | §21 | PASS — rule requires exactly this |
 | PR-010 (honest AI contribution partition) | §17 | PASS |
 | PR-011 (human authority, bounded autonomy) | §17, §18 | PASS |

@@ -389,7 +389,14 @@ export default async function WorkDetailPage({
   // the below-fold LINKS list into a primary pill in the hero details column. The
   // remaining links (GitHub, write-ups) keep the list; the demo no longer doubles.
   const demoLink = d.links?.find((l) => l.type === 'demo');
-  const otherLinks = d.links?.filter((l) => l.type !== 'demo') ?? [];
+  // P1.A (2026-09-17): 'appstore' joins 'demo' as a PROMOTED link. Flagstone
+  // shipped on 2026-09-15, and the shipped binary is at least as strong a proof
+  // as the running web build, so it sits beside it rather than in the below-fold
+  // Links list. Excluded from `otherLinks` for the same reason 'demo' is: a
+  // promoted link that also stayed in the list would render twice.
+  const appStoreLink = d.links?.find((l) => l.type === 'appstore');
+  const otherLinks =
+    d.links?.filter((l) => l.type !== 'demo' && l.type !== 'appstore') ?? [];
   // L7-02 / C-03: preload the case-study hero's AVIF (its LCP element) as a JSX
   // <link> hoisted into THIS page's <head> — NOT via ReactDOM.preload(). The
   // imperative preload is emitted as an RSC flight hint Next applies even when the
@@ -675,19 +682,55 @@ export default async function WorkDetailPage({
                   {d.summary}
                 </p>
 
-                {/* L3-04(b): live-demo pill — sits with the claim it proves. */}
-                {demoLink && (
-                  <div>
-                    <Button
-                      href={demoLink.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      variant="primary"
-                      aria-label={`${demoLink.label} for ${d.title} (opens in new tab)`}
-                    >
-                      {demoLink.label}
-                      <span aria-hidden="true" className="ml-1">{'↗'}</span>
-                    </Button>
+                {/* L3-04(b): live-demo pill — sits with the claim it proves.
+                    P1.A: the App Store pill joins it as a peer when the
+                    deliverable has one.
+
+                    MEASURED, so nobody re-derives it: the pair STACKS at every
+                    current breakpoint, and that is the details column's measure
+                    talking, not a missing class. Button is `w-full md:w-auto`,
+                    so below md both go full-width (equal, aligned, no two-up
+                    squeeze at 320/375/393). From md up they are auto-width at
+                    169px and 290.8px, needing 475.9px with the 16px gap — and
+                    this column is 424px at 768, 240px at 1024, 368px at 1280,
+                    448px at 1440 and 460px at 1920. It is never wide enough, so
+                    `flex-wrap` resolves them to a stack. The row classes are
+                    kept deliberately: they are what should happen if the label
+                    or the measure ever changes, and they cost nothing today.
+                    Do NOT "fix" the stack by shortening the label (pinned by
+                    lib/__tests__/recruiter-copy-truth.test.ts) or by trimming
+                    Button's padding (that is a redesign of every pill on the
+                    site to win one row here).
+
+                    Both use variant="primary": `ghost` exists in Button but is
+                    used nowhere on the site, so reaching for it here would be
+                    inventing a second weight class, not adding a link. */}
+                {(demoLink || appStoreLink) && (
+                  <div className="flex flex-col md:flex-row md:flex-wrap gap-4">
+                    {demoLink && (
+                      <Button
+                        href={demoLink.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        variant="primary"
+                        aria-label={`${demoLink.label} for ${d.title} (opens in new tab)`}
+                      >
+                        {demoLink.label}
+                        <span aria-hidden="true" className="ml-1">{'↗'}</span>
+                      </Button>
+                    )}
+                    {appStoreLink && (
+                      <Button
+                        href={appStoreLink.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        variant="primary"
+                        aria-label={`${appStoreLink.label} for ${d.title} (opens in new tab)`}
+                      >
+                        {appStoreLink.label}
+                        <span aria-hidden="true" className="ml-1">{'↗'}</span>
+                      </Button>
+                    )}
                   </div>
                 )}
               </div>

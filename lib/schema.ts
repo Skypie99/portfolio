@@ -160,8 +160,8 @@ export const DeliverableSchema = z.object({
   /** REQUIRED status line (truth pass 2026-08-21). Every project answers the
    *  question the reader is actually asking — "does this have users?" — before
    *  they have to infer it. "Live" on its own reads as *live with people on it*;
-   *  four of the five are demos or personal tools and one has not shipped, and
-   *  nothing on the site used to correct that reading. Required, not optional,
+   *  four of the five are demos or personal tools, and nothing on the site
+   *  used to correct that reading. Required, not optional,
    *  precisely because the failure mode is omission: a new deliverable with no
    *  status inherits the old ambiguity silently, so Zod fails the build instead.
    *  Kept to 48 chars so the card's inscription line does not wrap differently
@@ -219,7 +219,15 @@ export const DeliverableSchema = z.object({
       z.object({
         label: z.string().min(2).max(30),
         href: z.string().url().startsWith('https://'),
-        type: z.enum(['github', 'demo', 'writeup', 'video', 'other']),
+        /** 'appstore' added 2026-09-17 (P1.A release-truth repair). Flagstone
+         *  shipped to the App Store on 2026-09-15, and the case study had no
+         *  way to carry that doorway: every existing type either belongs in
+         *  the below-fold Links list or is the single promoted 'demo' pill.
+         *  'appstore' is promoted beside the demo pill instead, so the two
+         *  strongest proofs (the running web build, the shipped binary) sit
+         *  together. Like 'demo' it is excluded from the Links list, so it
+         *  never renders twice. */
+        type: z.enum(['github', 'demo', 'writeup', 'video', 'other', 'appstore']),
       }),
     )
     .max(5)
