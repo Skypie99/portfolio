@@ -325,6 +325,7 @@ export function HamburgerNav() {
                       <Link
                         href={item.href}
                         onClick={close}
+                        aria-label={item.href === '/#about' || item.href === '/#contact' ? `${item.label}, home page section` : undefined}
                         aria-current={isActive ? 'page' : undefined}
                         className={cn(
                           'group inline-flex items-baseline gap-6',

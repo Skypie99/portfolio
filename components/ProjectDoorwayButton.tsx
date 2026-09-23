@@ -31,11 +31,11 @@ export function ProjectDoorwayButton({
       href={href}
       aria-label={ariaLabel}
       tabIndex={tabIndex}
-      className="group inline-flex h-11 w-fit items-center gap-2 rounded-pill border border-border-interactive bg-canvas px-4 font-mono text-label tracking-label uppercase text-ink shadow-soft transition-[background-color,border-color,box-shadow,transform] duration-base ease-out hover:-translate-y-px hover:border-ink-muted hover:bg-blush hover:shadow-soft focus-visible:-translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
+      className="group inline-flex h-11 w-fit items-center gap-2 rounded-pill border border-border-interactive bg-canvas px-4 font-mono text-label tracking-label uppercase text-ink shadow-soft transition-[background-color,border-color,box-shadow] duration-base ease-out hover:border-ink-muted hover:bg-blush hover:shadow-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
     >
       <span
         aria-hidden="true"
-        className="h-1.5 w-1.5 rounded-full bg-terracotta transition-[width,height] duration-base ease-out group-hover:h-2 group-hover:w-2"
+        className="h-1.5 w-1.5 rounded-full bg-terracotta transition-[width,height] duration-base ease-out group-hover:h-2 group-hover:w-2 group-active:!h-1.5 group-active:!w-1.5"
       />
       View project
       <span aria-hidden="true">{'→'}</span>

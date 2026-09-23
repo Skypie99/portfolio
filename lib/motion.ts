@@ -377,18 +377,18 @@ export function useMagnetic<T extends HTMLElement = HTMLElement>(strength = 0.22
 }
 
 /* ────────────────────────────────────────────────────────────────────
- * useScrollProgress — page scroll fraction (0→1) as a CSS variable
- * (high-end polish 2026-06-03). Sets `--scroll-progress` on <html> via
- * ONE rAF-throttled scroll listener, so consumers can drive a
- * compositor-only `transform: scaleY(var(--scroll-progress))` (e.g. the
- * sidebar progress hairline) with ZERO React re-renders. Reduced motion →
- * no-op (the var stays unset → indicator collapses to 0). SSR-safe.
+ * useScrollProgress — fallback for browsers without native root scroll
+ * timelines. Sets `--scroll-progress` on <html> through the shared frame
+ * clock, with no React re-renders. Reduced motion → no-op. SSR-safe.
  * ──────────────────────────────────────────────────────────────────── */
 export function useScrollProgress() {
   const reduced = usePrefersReducedMotion();
 
   useEffect(() => {
     if (reduced || typeof window === 'undefined') return;
+    // Native scroll timelines keep the rail's decorative fill off the shared
+    // frame clock and avoid a changing inherited property on <html>.
+    if (typeof CSS !== 'undefined' && typeof CSS.supports === 'function' && CSS.supports('animation-timeline: scroll(root)')) return;
     const root = document.documentElement;
     // Rides the shared motion clock (motion-clockwork 2026-07-19): measured in
     // the read phase, written in the write phase, same tick as parallax +

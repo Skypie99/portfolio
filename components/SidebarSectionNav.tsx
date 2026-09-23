@@ -86,6 +86,7 @@ export function SidebarSectionNav() {
             <li key={s.id}>
               <Link
                 href={s.href}
+                aria-label={s.href === '/#about' || s.href === '/#contact' ? `${s.label}, home page section` : undefined}
                 aria-current={isActive ? 'true' : undefined}
                 className={cn(
                   'group relative inline-flex items-center pl-3',
