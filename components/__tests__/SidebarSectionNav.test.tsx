@@ -70,6 +70,11 @@ const HOME_LABELS = [
   "Let’s talk",
 ];
 
+const linkName = (label: string) =>
+  label === 'A Brief Account' || label === 'Let’s talk'
+    ? `${label}, home page section`
+    : label;
+
 /**
  * Rendered outside the app, next/link normalizes `/about/#x` to `/about#x`;
  * the real export re-adds the slash (`trailingSlash: true`) and ships
@@ -105,11 +110,11 @@ describe('SidebarSectionNav: the homepage index is unchanged', () => {
     expect(nav).toBeInTheDocument();
 
     for (const label of HOME_LABELS) {
-      expect(screen.getByRole('link', { name: label })).toBeInTheDocument();
+      expect(screen.getByRole('link', { name: linkName(label) })).toBeInTheDocument();
     }
     expect(screen.getByRole('link', { name: 'The Work' })).toHaveAttribute('href', '/#work');
-    expect(screen.getByRole('link', { name: 'A Brief Account' })).toHaveAttribute('href', '/#about');
-    expect(screen.getByRole('link', { name: "Let’s talk" })).toHaveAttribute('href', '/#contact');
+    expect(screen.getByRole('link', { name: linkName('A Brief Account') })).toHaveAttribute('href', '/#about');
+    expect(screen.getByRole('link', { name: linkName('Let’s talk') })).toHaveAttribute('href', '/#contact');
   });
 
   it('keeps the visible "On this page" label string exactly', () => {
@@ -121,7 +126,7 @@ describe('SidebarSectionNav: the homepage index is unchanged', () => {
   it('marks nothing active by default (no section in view yet)', () => {
     render(<SidebarSectionNav />);
     for (const label of HOME_LABELS) {
-      expect(screen.getByRole('link', { name: label })).not.toHaveAttribute('aria-current');
+      expect(screen.getByRole('link', { name: linkName(label) })).not.toHaveAttribute('aria-current');
     }
   });
 
@@ -129,12 +134,12 @@ describe('SidebarSectionNav: the homepage index is unchanged', () => {
     activeMock.mockReturnValue('about');
     render(<SidebarSectionNav />);
 
-    expect(screen.getByRole('link', { name: 'A Brief Account' })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: linkName('A Brief Account') })).toHaveAttribute(
       'aria-current',
       'true',
     );
     for (const label of HOME_LABELS.filter((l) => l !== 'A Brief Account')) {
-      expect(screen.getByRole('link', { name: label })).not.toHaveAttribute('aria-current');
+      expect(screen.getByRole('link', { name: linkName(label) })).not.toHaveAttribute('aria-current');
     }
   });
 });

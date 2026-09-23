@@ -2905,6 +2905,23 @@ html.dark ::selection {
    fits. At >=900px viewport heights neither query matches: the rail is
    pixel-identical to its designed rhythm. Horizontal padding untouched.
    ------------------------------------------------------------------ */
+.sidebar-progress-fill {
+  transform: scaleY(var(--scroll-progress, 0));
+}
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: scroll(root)) {
+    .sidebar-progress-fill {
+      animation: sidebar-progress-fill linear both;
+      animation-timeline: scroll(root);
+      animation-duration: auto;
+    }
+  }
+}
+@keyframes sidebar-progress-fill {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
 @media (max-height: 899px) {
   .rail-nav {
     gap: 2rem;
@@ -3295,7 +3312,6 @@ html.dark ::selection {
   margin-left: -35vmax;
   margin-top: -35vmax;
   pointer-events: none;
-  will-change: transform, opacity;
   opacity: 0;
   background: none; /* no bloom paints — even wash carries all warmth */
 }

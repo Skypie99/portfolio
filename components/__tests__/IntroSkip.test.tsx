@@ -80,6 +80,27 @@ describe('IntroSkip — a real control, not decoration', () => {
     expect(observedTargets[0]).toHaveAttribute('data-hero-identity');
     expect(ioOptions?.threshold).toEqual([0, 0.75]);
   });
+
+  it('moves only the mobile retirement boundary while keeping the desktop observer unchanged', () => {
+    const matchMedia = vi.fn().mockImplementation(() => ({
+      matches: true,
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+    }));
+    vi.stubGlobal('matchMedia', matchMedia);
+    addIdentityLanding();
+    const { unmount } = render(<IntroSkip />);
+    expect(ioOptions?.rootMargin).toBe('100000px 0px 80px 0px');
+    unmount();
+
+    matchMedia.mockImplementation(() => ({
+      matches: false,
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+    }));
+    render(<IntroSkip />);
+    expect(ioOptions?.rootMargin).toBe('100000px 0px 0px 0px');
+  });
 });
 
 describe('IntroSkip — retirement contract', () => {

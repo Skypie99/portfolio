@@ -36,25 +36,33 @@ export function IntroSkip() {
     const el = ref.current;
     if (!identity || !el) return;
 
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        el.toggleAttribute(
-          'data-skip-done',
-          entry.isIntersecting && entry.intersectionRatio >= 0.75,
-        );
-      },
-      {
-        // Re-evaluate when a useful majority of the compact identity block is
-        // visible. Requiring 100% would make retirement brittle on short
-        // viewports or wrapped text; the wrapper-edge false positive is gone
-        // because the observed target is now the identity itself.
-        threshold: [0, 0.75],
-        rootMargin: '100000px 0px 0px 0px',
-      },
-    );
-    io.observe(identity);
+    const mobile = window.matchMedia?.('(max-width: 767px)');
+    let io: IntersectionObserver;
+    const observe = () => {
+      io?.disconnect();
+      io = new IntersectionObserver(
+        ([entry]) => {
+          el.toggleAttribute(
+            'data-skip-done',
+            entry.isIntersecting && entry.intersectionRatio >= 0.75,
+          );
+        },
+        {
+          threshold: [0, 0.75],
+          // On phones, retire 80px earlier so the fixed control clears the
+          // entering identity text. Desktop keeps its accepted handoff.
+          rootMargin: mobile?.matches ? '100000px 0px 80px 0px' : '100000px 0px 0px 0px',
+        },
+      );
+      io.observe(identity);
+    };
+    observe();
+    mobile?.addEventListener('change', observe);
 
-    return () => io.disconnect();
+    return () => {
+      mobile?.removeEventListener('change', observe);
+      io.disconnect();
+    };
   }, []);
 
   return (

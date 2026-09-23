@@ -9,6 +9,7 @@ import { Hero } from '@/components/Hero';
 import { HeroImageSettle } from '@/components/HeroSettle';
 import { IntroScrollCue } from '@/components/IntroScrollCue';
 import { IntroSkip } from '@/components/IntroSkip';
+import { AmbientDrift } from '@/components/AmbientDrift';
 import { LedgerRow } from '@/components/LedgerRow';
 import { LitWindows } from '@/components/LitWindows';
 import { ParallaxWash } from '@/components/ParallaxWash';
@@ -1135,15 +1136,7 @@ export default function HomePage() {
             field on an ultra-slow autonomous loop, echoing the landing's sun at
             rest. CSS/compositor-only; freezes to a static glow under reduced
             motion. Uses --rgb-gold/--rgb-accent-soft so it flips in dark mode. */}
-        <div
-          aria-hidden="true"
-          className="ambient-drift pointer-events-none absolute -inset-[25%] z-0"
-          style={{
-            background:
-              'radial-gradient(55% 50% at 50% 38%, rgb(var(--rgb-gold) / 0.22), rgb(var(--rgb-accent-soft) / 0.10) 46%, transparent 70%)',
-            willChange: 'transform',
-          }}
-        />
+        <AmbientDrift />
         {/* Reveal wraps only the content div; the ambient-drift div above is left as-is */}
         <div className="relative z-10 max-w-content mx-auto flex flex-col items-start gap-12">
           <Reveal variant="scene" className="flex flex-col items-start gap-12">
