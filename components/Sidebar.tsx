@@ -44,9 +44,9 @@ export function Sidebar() {
         'p-12',
         'bg-rail',
         'border-r border-cool-soft/50',
-        // Short-viewport steps (globals.css R4): tightens gap/py below 900px
-        // viewport height + overflow-y:auto floor, so the bottom CTA always
-        // renders. No effect at >=900px heights.
+        // Short-viewport steps (globals.css R4, band extended W4-03): tightens
+        // gap/py below 950px viewport height + overflow-y:auto floor, so the
+        // bottom CTA always renders. No effect at >=950px heights.
         'rail-nav',
       )}
     >
