@@ -505,7 +505,13 @@ export default function HomePage() {
             <div
               className={cn(
                 'grid grid-cols-1 gap-y-10',
-                'lg:grid-cols-[1.15fr_0.85fr] lg:gap-x-16 lg:items-center',
+                /* W4-05 · VE01: tighter copy/media relationship — the media
+                   track gains (0.85fr → 0.9fr) and the gutter tightens one
+                   step (gap-x-16 → gap-x-12), so the capture sits closer to
+                   the copy column's terracotta rule while the grid stays
+                   asymmetric. Trial targets (C): 260–300px visible phone and
+                   48–56px heading at wide desktop — measured after. */
+                'lg:grid-cols-[1.1fr_0.9fr] lg:gap-x-12 lg:items-center',
               )}
             >
               {/* The left column is ONE box at lg and `display: contents`
@@ -530,17 +536,27 @@ export default function HomePage() {
                     <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                     Featured: the flagship
                   </p>
-                  <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance">
+                  {/* W4-05 · VE01: stronger section heading at wide desktop
+                      (step-4 39px → step-5 48.83px, inside C's 48–56px trial
+                      band). Phone keeps step-4 — the trial is wide-desktop
+                      only. This heading is the unprotected downstream
+                      flagship name, not the post-intro identity hero. */}
+                  <h2 className="font-serif font-light text-step-4 lg:text-step-5 ember max-w-measure-heading leading-heading text-balance">
                     {flagship.title}
                   </h2>
                 </Reveal>
 
-                {/* 2 · the museum plate — the human claim, before any pixels. */}
+                {/* 2 · the museum plate — the human claim, before any pixels.
+                    W4-05 · VE01: pl-[18px] seats the plate on the header's
+                    terracotta-rule TEXT edge exactly (border-l-2 + pl-4 =
+                    2 + 16 = 18px), so the copy column reads as one block
+                    hung off the existing rule — the rule is the alignment
+                    datum between label, title and plate. */}
                 {flagship.heroPlate && (
                   <Reveal
                     variant="depth"
                     index={0}
-                    className="order-2"
+                    className="order-2 pl-[18px]"
                   >
                     <Plate
                       claim={flagship.heroPlate.severity}
@@ -557,7 +573,7 @@ export default function HomePage() {
                 <Reveal
                   variant="depth"
                   index={2}
-                  className="order-4 flex flex-col items-start gap-5"
+                  className="order-4 flex flex-col items-start gap-5 pl-[18px]"
                 >
                   <p className="font-mono text-meta tracking-label uppercase text-text-meta">
                     Status{' '}
@@ -782,16 +798,36 @@ export default function HomePage() {
                   </span>
                   <div className="min-w-0 flex-1 flex flex-col lg:flex-row lg:items-baseline lg:gap-8">
                     <div className="min-w-0 lg:flex-[1.6] flex flex-col gap-1.5">
-                      <h3 className="font-serif font-light text-step-1 leading-heading text-ink">
+                      {/* W4-05 · VE02: title-first hierarchy — the row's
+                          first scan. step-2 (24px) on phone / step-3 (31px)
+                          at lg, inside C's hypotheses (23–27px phone,
+                          26–32px desktop). Scoped type on this h3 only; no
+                          global default moves. All words below unchanged. */}
+                      <h3 className="font-serif font-light text-step-2 lg:text-step-3 leading-heading text-ink">
                         <Link
                           href={href}
                           aria-label={`View ${d.title} project`}
+                          /* The return seat (W4-02 · N1): opt-in hook for
+                             lib/returnFocus — a keyboard reader who activates
+                             this row and presses history Back is reseated
+                             HERE, not on <main>, so their next Tab continues
+                             down this list instead of jumping to the hero
+                             CTA. Presence only; pointer departures and every
+                             other link are unaffected. */
+                          data-return-focus={href}
                           className="rounded-sm transition-colors duration-fast ease-out hover:text-accent-text focus-visible:text-accent-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
                         >
                           {d.title}
                         </Link>
                       </h3>
-                      <p className="font-sans font-light text-body-sm leading-body text-ink-muted text-pretty">
+                      {/* W4-05 · VE02: readable summary measure — summaries
+                          stop stretching past ~65 characters per line at wide
+                          desktop (460px at this 14px face ≈ 65 chars; the
+                          house --measure 65ch token computes to 618px here
+                          and never binds). Phone/1280 columns are already
+                          narrower, so this only firms up wide desktop.
+                          Words unchanged. */}
+                      <p className="font-sans font-light text-body-sm leading-body text-ink-muted text-pretty max-w-[460px]">
                         {d.summary}
                       </p>
                       {/* Redundant with the title link immediately above

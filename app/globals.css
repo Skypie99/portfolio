@@ -1386,6 +1386,89 @@ html.reveal-rearm .reveal:not(.reveal-shown) {
 }
 
 /* ------------------------------------------------------------------
+   W4-06 VE04/M1 — one-time evidence-arrival decorative edge
+   (components/ProofArrival.tsx). Scoped to the Flagstone first proof's
+   frame edge ONLY (`.proof-arrival-edge` is applied to that single plate).
+   The beat is border-color only — no opacity, transform, layout or content
+   change; poster, heading, figcaption and Play/Pause are never gated.
+   Same floor grammar as the Reveal primitive above: REST = SETTLED (the fine
+   warm edge), and the pre-trigger armed state exists only under `html.js`,
+   so no-JS / dead-JS / crawler visitors hold the settled edge from first
+   paint. JS visitors paint the armed neutral until hydration runs: ordinary
+   below-fold arrivals stay armed for the beat, while hash / direct-in-view
+   arrivals snap to settled at hydration (a decorative color snap only —
+   content is already fully visible; no armed-then-warm re-entry flash on the
+   ordinary path).
+   Durations are the phase contract's proposed bands (desktop 280–420ms,
+   phone 180–280ms) mapped onto the existing token ramp: --dur-transition
+   (420ms) desktop, --dur-base (280ms) phone. Easing --ease-out is the
+   early-decelerating ease-out target (unverified hypothesis until recorded
+   evidence). Edge colors: light fine terracotta (accent / 0.7), dark
+   lower-luminance warm edge (lifted accent / 0.4 against ink). Theme change
+   retargets a live transition (cancels/settles — never restarts; consume is
+   latched at trigger). */
+.proof-arrival-edge {
+  --proof-arrival-dur: var(--dur-transition);
+  border-color: rgb(var(--rgb-accent) / 0.7);
+}
+html.dark .proof-arrival-edge {
+  border-color: rgb(var(--rgb-accent) / 0.4);
+}
+
+/* Pre-trigger armed — JS-only (mirror of the html.js arming above). Neutral
+   production edge, no transition: theme changes while armed snap. */
+html.js [data-proof-arrival='armed'] .proof-arrival-edge {
+  border-color: var(--color-border-decorative);
+  transition: none;
+}
+
+/* The one-time settle — the only animated state. */
+html.js [data-proof-arrival='settling'] .proof-arrival-edge {
+  border-color: rgb(var(--rgb-accent) / 0.7);
+  transition: border-color var(--proof-arrival-dur) var(--ease-out);
+}
+html.dark.js [data-proof-arrival='settling'] .proof-arrival-edge {
+  border-color: rgb(var(--rgb-accent) / 0.4);
+}
+
+/* Instant settle paths (hash / Back-Forward / reload / repeat / uncertain
+   arrival, scroll-away finish) — rest state, no transition. */
+html.js [data-proof-arrival='settled'] .proof-arrival-edge {
+  transition: none;
+}
+
+/* Dead-JS watchdog floor — rides the reveal-failsafe class the layout.tsx
+   head script already arms: if hydration never reports alive, the edge holds
+   its settled look instead of the armed neutral. */
+html.reveal-failsafe [data-proof-arrival] .proof-arrival-edge {
+  border-color: rgb(var(--rgb-accent) / 0.7) !important;
+}
+html.dark.reveal-failsafe [data-proof-arrival] .proof-arrival-edge {
+  border-color: rgb(var(--rgb-accent) / 0.4) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Immediate final edge. Toggling reduce mid-settle snaps to rest; toggling
+     back never replays (consume is latched at trigger). */
+  .proof-arrival-edge,
+  html.js [data-proof-arrival] .proof-arrival-edge {
+    border-color: rgb(var(--rgb-accent) / 0.7) !important;
+    transition: none !important;
+  }
+  html.dark .proof-arrival-edge,
+  html.dark.js [data-proof-arrival] .proof-arrival-edge {
+    border-color: rgb(var(--rgb-accent) / 0.4) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Phone band (contract 180–280ms) — --dur-base (280ms), the band ceiling. */
+  .proof-arrival-edge {
+    --proof-arrival-dur: var(--dur-base);
+  }
+}
+
+/* ------------------------------------------------------------------
    Settle-on-arrival (components/HeroSettle.tsx) — pure-CSS entrance,
    same idiom the retired .hero-enter used (fix(settle) 2026-06-10). The REST state is
    the visible final state: the entrance exists only inside the
@@ -2893,17 +2976,22 @@ html.dark ::selection {
 
 /* ------------------------------------------------------------------
    Rail short-height steps (components/Sidebar.tsx) — defects repair R4
-   (2026-06-12). The rail is sticky top-0 h-screen: page scroll can never
-   reveal anything past its bottom edge, and its natural content height
-   (~968px with gap-10=4rem + p-8=3rem on this project's spacing scale)
-   clipped the "Write to me." CTA at common laptop heights (800/700).
+   (2026-06-12), band extended W4-03 (2026-09-24). The rail is sticky
+   top-0 h-screen: page scroll can never reveal anything past its bottom
+   edge, and its natural content height (measured 2026-09-24 on the
+   8807554 build: 950px on Home, 924px on the four longest case rails,
+   gap-16=4rem + p-12=3rem) clipped the "Write to me." CTA in the
+   900–949px interior-height band — overflow was visible there, so the
+   pill was cut off AND unreachable (POST4-A-DESK-001 / N2).
    Two hand-ordered steps tighten the vertical rhythm; the later block
    wins inside its range (source order is the cascade here — stacked
    Tailwind arbitrary variants of one property have compiler-determined
    output order, so this lives in CSS). overflow-y:auto is the fail-safe
    floor for very short viewports — it shows no scrollbar when content
-   fits. At >=900px viewport heights neither query matches: the rail is
-   pixel-identical to its designed rhythm. Horizontal padding untouched.
+   fits. Step 1 now reaches to 949px because 950px is exactly Home's
+   natural height: at >=950px viewport heights no query matches and the
+   rail is pixel-identical to its designed rhythm. Horizontal padding
+   untouched. Phone menu unaffected (.rail-nav is hidden below md).
    ------------------------------------------------------------------ */
 .sidebar-progress-fill {
   transform: scaleY(var(--scroll-progress, 0));
@@ -2922,7 +3010,7 @@ html.dark ::selection {
   to { transform: scaleY(1); }
 }
 
-@media (max-height: 899px) {
+@media (max-height: 949px) {
   .rail-nav {
     gap: 2rem;
     padding-top: 2rem;
@@ -4017,4 +4105,78 @@ html.dark .ts-float {
     text-decoration-thickness: 0.5px;
     text-underline-offset: 2px;
   }
+}
+
+/* ------------------------------------------------------------------
+   W4-05 · VE01 + VE02_M2 — Home #flagship composition and #work row
+   acknowledgement. Scoped to the two authorized surfaces; shared
+   defaults (ProductReveal/DeviceFrame/ProjectDoorwayButton/Reveal,
+   global tokens) are deliberately untouched.
+
+   VE01: the flagship room's visible phone is modestly larger (the well's
+   phone frame rests at 100% of the reserved well instead of 90%). This
+   is a #flagship-only placement override — case-page heroes keep the
+   shared 90% default.
+
+   M2 (VE-02), per the frozen contract + source C: "let the existing
+   border become a fine active-row rule" and "use the existing dot as a
+   local cue". The row's OWN divider gains contrast and the EXISTING
+   doorway dot answers when one of the row's actual links is hovered,
+   focus-visible or pressed. Text and targets paint from first paint —
+   nothing here gates content. Trigger is the links only: no whole-row
+   click target, no row lift, no shared pill redesign (F-014 parity —
+   ProjectDoorwayButton.tsx is not edited; these are list-side rules).
+
+   Settling: the rule's edge/color settle is `var(--dur-fast)` = 180ms
+   (inside the 120–200ms contract; duration-ramp token, no literal),
+   then rest. The dot keeps the shared pill's own existing size
+   transition (duration-base, 280ms) — no new shared pill motion.
+   Release, blur or pointer exit reverses to neutral; CSS transitions
+   cancel in flight, so quick reversal never queues cycles. No per-frame
+   JS. Measured evidence: receipts/W4-05 (computed transition-duration
+   probe, not this comment).
+
+   Theme contract: warm ink rule in light, restrained terracotta in dark.
+   Reduced motion: the global 0.01ms transition floor (Alex §5.2) makes
+   these states immediate — rule/color feedback remains, only the settle
+   is removed.
+   ------------------------------------------------------------------ */
+
+/* VE01 — flagship capture: modest media gain in its own well. */
+#flagship .pr-frame-phone {
+  height: 100%;
+}
+
+/* M2 — the fine active-row rule (the row's existing divider). */
+#work ol > li {
+  /* --dur-fast = 180ms — the ramp rung inside M2's 120–200ms band;
+     literal durations are off-ramp (lib/__tests__/duration-ramp.test.ts).
+     Measured in evidence: computed transition-duration == 0.18s. */
+  transition: border-color var(--dur-fast) ease-out;
+}
+
+#work ol > li:has(a:hover),
+#work ol > li:has(a:focus-visible),
+#work ol > li:has(a:active) {
+  border-color: rgb(var(--rgb-ink) / 0.5);
+}
+
+html.dark #work ol > li:has(a:hover),
+html.dark #work ol > li:has(a:focus-visible),
+html.dark #work ol > li:has(a:active) {
+  border-color: rgb(var(--rgb-accent) / 0.6);
+}
+
+/* M2 — the existing doorway dot as local cue: it already answers its own
+   pill hover/press (shared component); these list-side rules give the
+   row's TITLE link (and every row link) equal clarity on focus-visible,
+   and give press the pill's own existing settle-down cue. */
+#work ol > li:has(:is(a:hover, a:focus-visible)) a.group > span[aria-hidden='true'].rounded-full {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+#work ol > li:has(a:active) a.group > span[aria-hidden='true'].rounded-full {
+  width: 0.375rem;
+  height: 0.375rem;
 }

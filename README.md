@@ -2,7 +2,19 @@
 
 Skyler Halisky works in senior technical/product support. Through SkyPi Studio (his authored umbrella practice, not an agency), he connects investigation, escalation, QA, documentation, accessibility, systems thinking, and AI-assisted product building.
 
-## Current accepted local state: 2026-09-04
+## Current state: 2026-09-24
+
+Production is commit `88075547f600c45b1cfb1c56abbabeb6a26b93e8` on `main` ("docs(qa): record Portfolio 4.0 P4 closure", 2026-09-22), deployed to [skypistudio.com](https://skypistudio.com) through the normal CI-then-deploy path on 2026-09-23. This block describes that deployed state; the dated layers below are history. For the current gate status of any commit, the durable record is the repository's [Actions history](https://github.com/Skypie99/portfolio/actions). Test counts in the historical layers below were true for their own dates and are deliberately not repeated here.
+
+The deployed site presents five projects in authored order: Flagstone, Claude Corp, Claude Corp Dashboard, Prompt Library, Ghost Code.
+
+Flagstone is released. "Flagstone Accessibility Map" (bundle `com.accessmap.app`) version 4.1.1 became available on the App Store on 2026-09-15 in the United States and Canada storefronts (read-only iTunes lookup rechecked 2026-09-24; that lookup returned no Great Britain result, which is an observation about those storefront checks, not a distribution claim). This records the release fact only: nothing here claims approval internals, user counts, adoption, or an accessibility certification.
+
+The public Claude Corp Dashboard demo at [dashboard.skypistudio.com](https://dashboard.skypistudio.com) runs on synthetic data only, is badged "Demo", and carries a scenario snapshot dated 2026-09-02. Its project names, agent counts, blockers, and decisions are historical synthetic scenario content, not live operations.
+
+## Historical accepted local state: 2026-09-04
+
+*Superseded by the current block above; content unchanged from its own date.*
 
 This repository’s Phase 06 entry base is commit `2c89a8e24e1b6693bd4c9239a55d796a64ca0355`, tree `49b6d9feb3a348981668d6dad2aa088c03a2df7d`. It combines the accepted Phase 04 Flagstone work and Phase 05 supporting-project work. It is a local accepted candidate: it has not been pushed, merged to `main`, or deployed.
 

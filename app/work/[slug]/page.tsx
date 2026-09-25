@@ -10,6 +10,7 @@ import { HeroImageSettle, HeroTitleSettle } from '@/components/HeroSettle';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { HeroProductReveal, ShotProductReveal } from '@/components/ProductReveal';
 import { Plate } from '@/components/Plate';
+import { ProofArrival } from '@/components/ProofArrival';
 import { Reveal } from '@/components/Reveal';
 import { TactileMedia } from '@/components/TactileMedia';
 import { TagPill } from '@/components/TagPill';
@@ -226,53 +227,84 @@ function FlagstoneApproachDiagram() {
  *  opening paragraph only — see renderMarkdownProse's option doc). */
 function CaseProof({ d }: { d: Deliverable }) {
   if (!d.shots?.some((shot) => shot.src || shot.video)) return null;
+  // W4-04.N3 — a SOLITARY STATIC proof capture (exactly one shot, no video)
+  // is the case's only evidence. At lg it spans the full article column
+  // (~652px, the --measure-wide band) instead of one ~300px grid track
+  // beside an empty partner track, so the 1600x1000 source rewards normal-
+  // scale inspection. Gallery exceptions keep their existing presentation:
+  // flagstone's multi-image gallery, dashboard's pair, ghost-code's portrait
+  // video (still-first) each retain the two-column / portrait treatments.
+  const solitaryStatic = d.shots.length === 1 && !d.shots.some((shot) => Boolean(shot.video));
   return (
     <div className="my-8 lg:my-12" aria-label={`${d.title} product evidence`}>
       <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-6">
         Inside the build
       </p>
-      <h3 className="font-serif font-light text-step-2 text-near-black mb-8">
+      {/* W4-04.VE03 — the solitary proof as one quiet chapter: the label,
+          heading and hairline share the figure's column edge, and the rule
+          names where the evidence starts (same hairline idiom as the case
+          sign-off). DESKTOP ONLY (lg+): phone keeps its exact baseline
+          spacing and no rule (R-DS F1). Decorative, so hidden from the a11y
+          tree (R-DS F2). Gallery/video sections keep the plain spacing. */}
+      <h3
+        className={cn(
+          'font-serif font-light text-step-2 text-near-black mb-8',
+          solitaryStatic && 'lg:mb-6',
+        )}
+      >
         {d.shots.some((shot) => Boolean(shot.video)) ? 'See it in motion.' : 'A closer look.'}
       </h3>
-      <ul className={cn('grid grid-cols-1 lg:grid-cols-2 gap-12', d.id === 'ghost-code' && 'lg:grid-cols-1')}>
-        {d.shots.map((shot, i) => (
-          <Reveal key={shot.alt} index={i} as="li">
-            <figure className="m-0 flex flex-col gap-3">
-              <ShotProductReveal
-                slug={d.id}
-                title={d.title}
-                media={{
-                  src: shot.src,
-                  alt: shot.caption ? '' : shot.alt,
-                  avif: shot.avif,
-                  webp: shot.webp,
-                  focal: shot.focal,
-                  lqip: shot.lqip,
-                  video: shot.video,
-                  dark: shot.dark,
-                  matte: shot.matte,
-                  precropped: d.id === 'flagstone' && Boolean(shot.src?.includes('-current.phone')),
-                }}
-                className={cn(
-                  'rounded-lg border border-border-decorative',
-                  d.id === 'flagstone' && (shot.src?.includes('-current.phone') || Boolean(shot.video)) && 'aspect-[7/8]',
-                  d.id === 'ghost-code' && shot.video && 'aspect-[390/844] w-full max-w-[390px] mx-auto',
-                )}
-              />
-              {shot.caption && (
-                <figcaption className="font-sans text-body-sm text-charcoal text-pretty">
-                  {smartPunctuation(shot.caption)}
-                  {shot.capturedDate && (
-                    <span className="mt-1 block font-mono text-meta tracking-label uppercase text-text-meta">
-                      captured{' '}<time dateTime={shot.capturedDate}>{shot.capturedDate}</time>
-                      {shot.commit && <> · {shot.commit}</>}
-                    </span>
+      {solitaryStatic && <hr aria-hidden="true" className="hidden lg:block w-full border-0 border-t border-border-decorative lg:mb-6" />}
+      <ul className={cn('grid grid-cols-1 lg:grid-cols-2 gap-12', d.id === 'ghost-code' && 'lg:grid-cols-1', solitaryStatic && 'lg:grid-cols-1')}>
+        {d.shots.map((shot, i) => {
+          /* W4-06 VE04/M1 — the one authorized instance: the Flagstone first
+             proof. Its generic reveal entrance is disabled (skip → settled at
+             once) and only its decorative frame edge carries the one-time
+             arrival beat (ProofArrival + .proof-arrival-edge). Every other
+             shot keeps the shared reveal verbatim. */
+          const isFirstProofArrival = d.id === 'flagstone' && i === 0;
+          return (
+            <Reveal key={shot.alt} index={i} as="li" skip={isFirstProofArrival}>
+              <ProofArrival enabled={isFirstProofArrival}>
+                <figure className="m-0 flex flex-col gap-3">
+                  <ShotProductReveal
+                    slug={d.id}
+                    title={d.title}
+                    media={{
+                      src: shot.src,
+                      alt: shot.caption ? '' : shot.alt,
+                      avif: shot.avif,
+                      webp: shot.webp,
+                      focal: shot.focal,
+                      lqip: shot.lqip,
+                      video: shot.video,
+                      dark: shot.dark,
+                      matte: shot.matte,
+                      precropped: d.id === 'flagstone' && Boolean(shot.src?.includes('-current.phone')),
+                    }}
+                    className={cn(
+                      'rounded-lg border border-border-decorative',
+                      d.id === 'flagstone' && (shot.src?.includes('-current.phone') || Boolean(shot.video)) && 'aspect-[7/8]',
+                      d.id === 'ghost-code' && shot.video && 'aspect-[390/844] w-full max-w-[390px] mx-auto',
+                      isFirstProofArrival && 'proof-arrival-edge',
+                    )}
+                  />
+                  {shot.caption && (
+                    <figcaption className="font-sans text-body-sm text-charcoal text-pretty">
+                      {smartPunctuation(shot.caption)}
+                      {shot.capturedDate && (
+                        <span className="mt-1 block font-mono text-meta tracking-label uppercase text-text-meta">
+                          captured{' '}<time dateTime={shot.capturedDate}>{shot.capturedDate}</time>
+                          {shot.commit && <> · {shot.commit}</>}
+                        </span>
+                      )}
+                    </figcaption>
                   )}
-                </figcaption>
-              )}
-            </figure>
-          </Reveal>
-        ))}
+                </figure>
+              </ProofArrival>
+            </Reveal>
+          );
+        })}
       </ul>
     </div>
   );

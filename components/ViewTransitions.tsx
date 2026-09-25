@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef } from 'react';
 
 import { applyDoorAjar, recordDeparture } from '@/lib/doorAjar';
 import { navDirection } from '@/lib/navDirection';
+import { notePushNavigation, recordReturnFocus } from '@/lib/returnFocus';
 
 /** Minimal shape of the object `document.startViewTransition()` returns. */
 type ViewTransitionLike = {
@@ -184,6 +185,18 @@ export function ViewTransitions() {
       // Recorded on EVERY taken-over branch (incl. the '/' instant cut and
       // reduced motion — the mark is presence, not motion).
       recordDeparture(window.location.pathname, url.pathname);
+
+      // The return seat (W4-02 · N1): remember the opt-in work-row link a
+      // KEYBOARD activation departed from — Enter fires this same click
+      // listener with detail === 0 — so a later history Back can reseat the
+      // reader on it (RouteFocus + lib/returnFocus). Recorded on EVERY
+      // taken-over branch, same presence-not-motion rule; pointer clicks
+      // record too, as `keyboard: false`, so they supersede (and disable)
+      // any earlier keyboard record from the same page.
+      recordReturnFocus(anchor, window.location.pathname, url.pathname, e.detail === 0);
+      // The take-over is a PUSH by construction — any popstate flag left
+      // over from a same-document history hop is now stale.
+      notePushNavigation();
 
       const reduce =
         typeof window.matchMedia === 'function' &&

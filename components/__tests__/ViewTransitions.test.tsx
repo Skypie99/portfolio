@@ -30,6 +30,11 @@ vi.mock('next/navigation', () => ({
 }));
 
 import { ViewTransitions } from '@/components/ViewTransitions';
+import {
+  _resetReturnFocusForTests,
+  notePopstate,
+  resolveArrivalFocus,
+} from '@/lib/returnFocus';
 
 const suppressNav = (e: Event) => e.preventDefault();
 
@@ -573,5 +578,111 @@ describe('ViewTransitions hash-restoration ownership (Cook Out P2 · Part A)', (
 
     expect(replaceSpy).not.toHaveBeenCalled();
     replaceSpy.mockRestore();
+  });
+});
+
+/**
+ * The return seat (W4-02 · N1) — the interceptor is the only place that
+ * sees the ACTIVATION, so it owns the recording: keyboard-synthesized
+ * clicks (detail === 0, what Enter fires) and pointer clicks (detail ≥ 1)
+ * both record on take-over, with the keyboard flag telling them apart, and
+ * the take-over clears any stale popstate flag (a push is not a pop).
+ */
+describe('ViewTransitions return-seat recording (W4-02 · N1)', () => {
+  beforeEach(() => {
+    _resetReturnFocusForTests();
+    // jsdom has no checkVisibility (and lays out nothing) — stub the guard.
+    Object.defineProperty(HTMLElement.prototype, 'checkVisibility', {
+      configurable: true,
+      value: () => true,
+    });
+  });
+
+  function rowAnchor(): HTMLAnchorElement {
+    const a = document.createElement('a');
+    a.setAttribute('href', '/work/flagstone/');
+    a.setAttribute('data-return-focus', '/work/flagstone/');
+    a.textContent = 'Flagstone';
+    document.body.appendChild(a);
+    return a;
+  }
+
+  function click(el: HTMLAnchorElement, detail: number): void {
+    el.dispatchEvent(
+      new MouseEvent('click', { bubbles: true, cancelable: true, button: 0, detail }),
+    );
+  }
+
+  afterEach(() => {
+    delete (HTMLElement.prototype as Partial<Record<'checkVisibility', unknown>>).checkVisibility;
+    _resetReturnFocusForTests();
+    document.querySelectorAll('[data-return-focus]').forEach((el) => el.remove());
+  });
+
+  it('records a KEYBOARD take-over (detail 0) so Back can reseat on the row link', () => {
+    const row = rowAnchor();
+    click(row, 0); // Enter on a focused link synthesizes detail:0
+    expect(pushMock).toHaveBeenCalledWith('/work/flagstone/'); // take-over happened
+    notePopstate();
+    expect(resolveArrivalFocus('/work/flagstone/', '/')).toBe(row);
+  });
+
+  it('records a POINTER take-over (detail 1) as keyboard:false — Back keeps focus-to-main', () => {
+    const row = rowAnchor();
+    click(row, 1);
+    expect(pushMock).toHaveBeenCalledWith('/work/flagstone/');
+    notePopstate();
+    expect(resolveArrivalFocus('/work/flagstone/', '/')).toBeNull();
+  });
+
+  it('records on the REDUCED-MOTION branch too (presence, not motion)', () => {
+    // The reduce branch takes the plain router.push path — the record must
+    // be taken before that fork, not only on the View Transition branch.
+    const realMatchMedia = window.matchMedia;
+    window.matchMedia = vi.fn().mockReturnValue({ matches: true }) as typeof window.matchMedia;
+    try {
+      const row = rowAnchor();
+      click(row, 0);
+      expect(pushMock).toHaveBeenCalledWith('/work/flagstone/');
+      notePopstate();
+      expect(resolveArrivalFocus('/work/flagstone/', '/')).toBe(row);
+    } finally {
+      window.matchMedia = realMatchMedia;
+    }
+  });
+
+  it('leaves an existing record untouched for a NON-opt-in anchor (no data-return-focus)', () => {
+    const row = rowAnchor();
+    click(row, 0); // keyboard departure from the Home row — recorded
+    const rail = document.createElement('a');
+    rail.setAttribute('href', '/work/');
+    rail.textContent = 'The Work';
+    document.body.appendChild(rail);
+    click(rail, 0); // a case-page rail hop — NOT opt-in
+    notePopstate();
+    expect(resolveArrivalFocus('/work/', '/work/flagstone/')).toBeNull();
+    notePopstate();
+    expect(resolveArrivalFocus('/work/flagstone/', '/')).toBe(row); // chair kept
+  });
+
+  it('clears a pending popstate flag on take-over (a push is not a pop)', () => {
+    const row = rowAnchor();
+    click(row, 0);
+    notePopstate(); // a stale flag from a same-document history hop
+    click(row, 0); // another take-over: the push clears it
+    expect(resolveArrivalFocus('/work/flagstone/', '/')).toBeNull(); // push, not pop
+  });
+
+  it('records NOTHING for a link it does not take over (modifier click)', () => {
+    const row = rowAnchor();
+    click(row, 0);
+    _resetReturnFocusForTests(); // isolate: only the next click may record
+    pushMock.mockClear(); // the take-over above legitimately pushed
+    row.dispatchEvent(
+      new MouseEvent('click', { bubbles: true, cancelable: true, button: 0, detail: 0, metaKey: true }),
+    );
+    expect(pushMock).not.toHaveBeenCalled();
+    notePopstate();
+    expect(resolveArrivalFocus('/work/flagstone/', '/')).toBeNull();
   });
 });
