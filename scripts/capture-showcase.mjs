@@ -12,7 +12,8 @@
  *     [--theme light|dark] [--stills-only] [--clips-only]
  *     [--resume]   reuse existing masters, re-encode + re-bank
  *     [--verify]   re-capture masters into a mirror + determinism diff
- *     [--dry]      print the resolved job plan, touch nothing
+ *     [--dry]      print the resolved job plan (read-only git; still runs the
+ *                  dependency preflight and creates the empty bank dirs)
  *     [--headed]   headless off (frozen-animation retry aid)
  *
  * Safety: guest-only, read-only on every app; the driver refuses terminal
@@ -25,7 +26,7 @@ import path from 'node:path';
 import { createRequire } from 'node:module';
 
 import {
-  BANK_ROOT, MASTERS_ROOT, RECEIPTS_ROOT, PROJECTS, VIEWPORTS,
+  BANK_ROOT, MASTERS_ROOT, RECEIPTS_ROOT, PROJECTS, VIEWPORTS, requireRepo,
 } from './showcase/registry.mjs';
 import { bankProject, compareRuns, isoDate, printBudget, readManifest, sha256, writeManifest } from './showcase/manifest.mjs';
 import { launchBrowser, makeContext, runNav, settleTheme, shoot, assertNoViolations } from './showcase/driver.mjs';
@@ -379,6 +380,7 @@ async function runProject(project, args, { mastersRoot }) {
     if (args.dry) {
       // No side effects in dry mode: resolve the SHA without creating worktrees.
       const ref = project.source.kind === 'inplace' ? 'HEAD' : project.source.ref;
+      requireRepo(project);
       const sha = resolveSha(project.repo, ref);
       const jobs = project.scenes.flatMap((s) => themesFor(s, args.theme).flatMap((t) => s.viewports.map((v) => `${s.id}.${t}.${v}`)));
       console.log(`  would capture @ ${sha.slice(0, 7)} (${ref}) via ${project.source.kind}: ${jobs.join(', ')}${project.clips?.length ? ` + clips ${project.clips.map((c) => c.id).join(',')}` : ''}`);
@@ -393,6 +395,7 @@ async function runProject(project, args, { mastersRoot }) {
       src = { rootDir: null, sha: sourceMeta.projectSha, branch: sourceMeta.projectBranch, worktree: null, decision: sourceMeta.shaDecision };
       notes.push('candidate derived from approved existing master; no live source opened');
     } else {
+      requireRepo(project);
       src = await resolveSource(project, notes);
     }
 
