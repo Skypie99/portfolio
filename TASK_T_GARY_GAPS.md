@@ -1,5 +1,7 @@
 # TASK: Gary - Portfolio Static Integrity Test Gaps (In Progress)
 
+> **Lifecycle: `SUPERSEDED`** (labelled 2026-09-26; body unchanged). A 2026-05-27 task, not open work. Both gaps it describes are covered by "Gap 2: internal link resolution" and "Gap 3: external link rel attributes" in `lib/__tests__/static-integrity.test.ts`. Kept for provenance; see [`docs/INDEX.md`](docs/INDEX.md).
+
 **Timeline:** 2026-05-27, ETA 1-2 hours
 **Blocker:** None — tests currently passing (45/45)
 **Output:** 2 new test cases + passing npm test + qa-report

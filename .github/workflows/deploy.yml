@@ -1,21 +1,29 @@
 # Deploy — build the Next.js static export and publish to GitHub Pages.
 #
-# Owned by Rory (DevOps). DORMANT until Sky pushes the repo to GitHub and
-# completes the one-time manual setup (see docs/DEPLOY_PLAN.md §3).
+# Owned by Rory (DevOps). Live: this is the production path to
+# skypistudio.com, and there is no staging environment.
 #
 # Separation of concerns:
-#   - ci.yml (Gary) gates every PR with lint + typecheck + test + build.
-#   - deploy.yml (this file) ONLY builds + ships what Sky has already merged.
-#     No lint, no test, no typecheck here — that's ci.yml's job.
+#   - ci.yml (Gary) runs lint + typecheck + test + build on PRs to main and on
+#     every push to main.
+#   - deploy.yml (this file) ONLY builds + ships a commit CI has already
+#     verified. No lint, no test, no typecheck here — that's ci.yml's job.
 #
 # Triggers (CI-GATED since 2026-08-23, Sky's ruling — CI-DEPLOY-UNGATED is resolved):
-#   - workflow_run on "CI": fires only after ci.yml completes on main, and the
-#     build job runs only when CI concluded success. A red CI = no deploy; the
-#     old version stays up. This closes the gap where a push could deploy a
-#     build that CI later failed.
-#   - workflow_dispatch: manual re-deploy button in the Actions tab (e.g. for
-#     §6.2 emergency rollback by re-running the last good run). The manual
-#     path is deliberately ungated — it exists for emergencies.
+#   - workflow_run on "CI": fires when a CI run whose head branch is main
+#     completes, and the build job runs only when that run concluded success.
+#     A red CI = no deploy; the old version stays up. This closes the gap
+#     where a push could deploy a build that CI later failed.
+#   - workflow_dispatch: manual deploy from the Actions tab. It builds the tip
+#     of the branch it is dispatched on (normally main) without waiting for
+#     CI: the deliberately ungated emergency path.
+#
+# Rollback (original playbook: docs/DEPLOY_PLAN.md §6):
+#   - Preferred: revert the bad commit on main and push; CI and then Deploy
+#     run as usual.
+#   - Emergency: re-run an earlier successful Deploy run. A re-run replays its
+#     original event, so it rebuilds and republishes the commit that run
+#     deployed.
 #
 # Permissions (top-level, GH-Pages requirements):
 #   - contents: read   — checkout the code.

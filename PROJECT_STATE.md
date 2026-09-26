@@ -1,5 +1,7 @@
 # PROJECT_STATE — portfolio
 
+> **Lifecycle: `HISTORICAL_STATE`** (labelled 2026-09-26; body unchanged). Every block below, including the "Current accepted local candidate" block dated 2026-09-04, was current only on its own date, and this file is no longer maintained. For example, it records Flagstone as "Waiting for Review", but Flagstone became available on the App Store on 2026-09-15. Current orientation is in [`README.md`](README.md), release state in GitHub Actions, and the document map in [`docs/INDEX.md`](docs/INDEX.md).
+
 ## Current accepted local candidate — 2026-09-04
 
 This section supersedes present-tense status readings below without deleting or rewriting the historical record.

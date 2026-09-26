@@ -20,7 +20,9 @@
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
     "test:static": "npm run build && vitest run lib/__tests__/static-integrity.test.ts lib/__tests__/section-nav-anchors.test.ts",
-    "check:overflow": "node scripts/overflow-census.mjs"
+    "check:overflow": "node scripts/overflow-census.mjs",
+    "qa:index": "node scripts/generate-qa-index.mjs",
+    "qa:index:check": "node scripts/generate-qa-index.mjs --check"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
