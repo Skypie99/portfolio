@@ -10,8 +10,8 @@ from `NEXT_EXACT_PHASE`, and do not redo anything under `DO_NOT_REPEAT`.
 | SOURCE_AUDIT | `SKYPI-REPO-PROFESSIONALISM-AUDIT-V2` (frozen score 78 / 100; not re-scored here) |
 | BASE_SHA | `129988b88bb6717aa65311bb7af12af8e4aa22ad` |
 | BASE_TREE | `4bccb76ab813970992e85bb4604a744b6d7f8dc8` |
-| CURRENT_HEAD | `b097fedd964797d825300181bb7e028eaae4285f` (C2) when this revision was written; C3 includes this file |
-| CURRENT_TREE | `221104af31db0c5be642c257afb29e4a50b65a71` (C2 tree) |
+| CURRENT_HEAD | `9c2862ee96d0aeea6ec98e55dee8882e5f7cefa5` (C3, the candidate) when this revision was written; C4 includes this file |
+| CURRENT_TREE | `97bf6ec3519c4c0a74000cf4e9810cb3ecf8dce4` (C3 tree) |
 
 ## COMMITS (local only; nothing pushed)
 
@@ -19,8 +19,8 @@ from `NEXT_EXACT_PHASE`, and do not redo anything under `DO_NOT_REPEAT`.
 |---|---|---|---|
 | C1 | `5e4525fda411bcff5af08bdc15f4890923a55503` | `7d4a8ff37e83cf69684216f5c5e60aa0cd29c23f` | chore(tooling): make capture tooling portable across machines |
 | C2 | `b097fedd964797d825300181bb7e028eaae4285f` | `221104af31db0c5be642c257afb29e4a50b65a71` | docs(qa): restore evidence discovery with a generated QA index |
-| C3 | pending | pending | docs(repo): clarify current truth and document lifecycle |
-| C4 | pending | pending | docs(qa): record repository professionalization closure |
+| C3 | `9c2862ee96d0aeea6ec98e55dee8882e5f7cefa5` | `97bf6ec3519c4c0a74000cf4e9810cb3ecf8dce4` | docs(repo): clarify current truth and document lifecycle (CANDIDATE) |
+| C4 | contains this file | | docs(qa): record repository professionalization closure |
 | BRANCH | `claude/portfolio-repo-professionalization-lbtdfr` |
 | WORKTREE | `/home/user/portfolio` (session-dedicated fresh cloud clone; see KNOWN_LIMITS) |
 | EXECUTION_DATE | 2026-09-26 (UTC) |
@@ -110,8 +110,9 @@ C4 receipt and closure. The candidate is C3 (repo convention: separate source an
 
 ## NEXT_EXACT_PHASE
 
-Consistency sweep (§20), change-scope tripwire (§21), validation (§22), then commits 1 to 3,
-receipt, and closure commit 4 (regenerate the QA index after staging the receipt).
+None. Implementation is complete (COMPLETE_WITH_GAPS: the dependency-backed gates were environment-blocked).
+The owner decides next steps: review, then authorize a push of the branch (nothing has been pushed), then the
+post-work re-audit. Receipt: `2026-09-26_REPOSITORY_PROFESSIONALIZATION_RECEIPT.md` (same directory).
 
 ## KNOWN_LIMITS
 
@@ -128,3 +129,4 @@ receipt, and closure commit 4 (regenerate the QA index after staging the receipt
 - Freshness gate and baseline inventory (values above are final).
 - Phases A, B, C. Rerunning the banner script is safe (it skips bannered files), but do not rerun the
   README assembler on the new README: it expects the base layout.
+- Phases D to I, the sweep, the tripwire, validation, and commits C1 to C4. Everything is committed locally.

@@ -6,11 +6,11 @@
 
 | Measure | Value |
 |---|---|
-| Tracked files under `qa-reports/` | 959 |
+| Tracked files under `qa-reports/` | 960 |
 | Top-level reports and receipts (Markdown) | 173 |
 | Evidence directories | 16 |
-| File types | png 521, md 191, json 122, log 63, mjs 21, cjs 15, txt 9, py 6, gz 5, stderr 4, html 1, patch 1 |
-| Dates named in file paths | 2026-05-23 to 2026-09-22 |
+| File types | png 521, md 192, json 122, log 63, mjs 21, cjs 15, txt 9, py 6, gz 5, stderr 4, html 1, patch 1 |
+| Dates named in file paths | 2026-05-23 to 2026-09-26 |
 
 ## How the evidence is organized
 
@@ -19,10 +19,11 @@
 - **Adding evidence.** Name a receipt `YYYY-MM-DD_<Topic>.md` and cite its raw evidence by relative path. When a new artifact would be byte-identical to one already tracked, cite the existing path with its SHA-256 (or a manifest entry) instead of committing another copy, unless a self-contained package or a before/after comparison genuinely needs the copy. Then stage the files and regenerate this index.
 - **Evidence outside this directory:** `design-reviews/` (dated review programs) and `summaries/` (June 2026 pass reports). See [`docs/INDEX.md`](../docs/INDEX.md) for how every document in the repository is classified.
 
-## Newest dated reports (15 of 140)
+## Newest dated reports (15 of 141)
 
 | Date | Report | Title |
 |---|---|---|
+| 2026-09-26 | [`repository-professionalization/2026-09-26_REPOSITORY_PROFESSIONALIZATION_RECEIPT.md`](repository-professionalization/2026-09-26_REPOSITORY_PROFESSIONALIZATION_RECEIPT.md) | Repository professionalization receipt (2026-09-26) |
 | 2026-09-22 | [`2026-09-22_Codex_P1_CoreClosure.md`](2026-09-22_Codex_P1_CoreClosure.md) | P1 core closure receipt — cinematic finding deferred |
 | 2026-09-22 | [`2026-09-22_Codex_P2Closure.md`](2026-09-22_Codex_P2Closure.md) | Portfolio 4.0 P2 closure — owner-approved evidence doctrine |
 | 2026-09-22 | [`2026-09-22_P3_ProofProximity.md`](2026-09-22_P3_ProofProximity.md) | Portfolio 4.0 P3 — Story and proof proximity |
@@ -37,7 +38,6 @@
 | 2026-09-07 | [`2026-09-07_Codex_Phase09A.md`](2026-09-07_Codex_Phase09A.md) | Phase 09-A session report |
 | 2026-09-07 | [`2026-09-07_Codex_Phase09Dependencies.md`](2026-09-07_Codex_Phase09Dependencies.md) | P09-B — Dependency advisory receipt |
 | 2026-09-07 | [`2026-09-07_Codex_Phase09OwnerResolution.md`](2026-09-07_Codex_Phase09OwnerResolution.md) | Phase09 owner hold resolution — 2026-09-07 |
-| 2026-09-07 | [`2026-09-07_Codex_Phase09Warnings.md`](2026-09-07_Codex_Phase09Warnings.md) | P09-B — Warning ownership and correction receipt |
 
 ## Phase gate receipts and packets (14)
 
@@ -76,15 +76,16 @@
 | [`phase05-reconciliation-evidence/`](phase05-reconciliation-evidence/) | 26 | json 13, log 6, cjs 3, png 2, md 1, py 1 | [`PORTFOLIO_SUPPORTING_PROJECT_ACCEPTANCE_MATRIX.md`](PORTFOLIO_SUPPORTING_PROJECT_ACCEPTANCE_MATRIX.md) |
 | [`phase06-candidates/`](phase06-candidates/) | 1 | md 1 | [`PHASE-06_GITHUB_TRUTH_GATE_RECEIPT_FINAL.md`](PHASE-06_GITHUB_TRUTH_GATE_RECEIPT_FINAL.md)<br>[`PHASE-11_REMOTE_MUTATION_MANIFEST.md`](PHASE-11_REMOTE_MUTATION_MANIFEST.md) |
 | [`phase06-evidence/`](phase06-evidence/) | 6 | md 3, json 2, html 1 | [`PHASE-06_APPROVAL_PACKET.md`](PHASE-06_APPROVAL_PACKET.md)<br>[`PHASE-06_GITHUB_TRUTH_GATE_RECEIPT.md`](PHASE-06_GITHUB_TRUTH_GATE_RECEIPT.md) |
-| [`repository-professionalization/`](repository-professionalization/) | 1 | md 1 | no top-level report |
+| [`repository-professionalization/`](repository-professionalization/) | 2 | md 2 | no top-level report |
 | [`visual-evidence/`](visual-evidence/) | 16 | png 16 | [`2026-09-01_Codex_FlagstoneFirstImpression.md`](2026-09-01_Codex_FlagstoneFirstImpression.md) |
 
-## Receipts filed inside evidence directories (2)
+## Receipts filed inside evidence directories (3)
 
 | Receipt | Title |
 |---|---|
 | [`phase-08-evidence/PREAPPROVAL_RECEIPT.md`](phase-08-evidence/PREAPPROVAL_RECEIPT.md) | PHASE-08 Responsive and Accessibility Hardening Receipt |
 | [`phase06-evidence/profile-candidate-receipt.md`](phase06-evidence/profile-candidate-receipt.md) | Phase 06 profile candidate receipt |
+| [`repository-professionalization/2026-09-26_REPOSITORY_PROFESSIONALIZATION_RECEIPT.md`](repository-professionalization/2026-09-26_REPOSITORY_PROFESSIONALIZATION_RECEIPT.md) | Repository professionalization receipt (2026-09-26) |
 
 ## Older material
 
