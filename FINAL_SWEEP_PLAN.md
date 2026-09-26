@@ -1,5 +1,7 @@
 # FINAL_SWEEP_PLAN — Light-World Reveal + Whole-Site Polish
 
+> **Lifecycle: `HISTORICAL_PLAN`** (labelled 2026-09-26; body unchanged). The 2026-06-05 plan for branch `polish/portfolio-final-sweep-2026-06-05`, kept for provenance. Its findings, line numbers, and branch instructions applied to that work at that time; it is not current instruction. See [`docs/INDEX.md`](docs/INDEX.md).
+
 **Branch:** `polish/portfolio-final-sweep-2026-06-05` (off `main` @ `74bd7e3`, trio fix merged)
 **Date:** 2026-06-05 · **Effort:** maximum / thorough final sweep
 **Do NOT merge to main** — main is Sky's gate.
