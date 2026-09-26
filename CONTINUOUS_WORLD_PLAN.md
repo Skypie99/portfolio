@@ -1,5 +1,7 @@
 # Continuous World — build plan (Direction A, "One continuous world")
 
+> **Lifecycle: `HISTORICAL_PLAN`** (labelled 2026-09-26; body unchanged). The 2026-06-05 plan for branch `feature/portfolio-continuous-world-2026-06-05`, kept for provenance. Its findings, line numbers, and branch instructions applied to that work at that time; it is not current instruction. See [`docs/INDEX.md`](docs/INDEX.md).
+
 _Created 2026-06-05. Flagship build: make the golden-hour desert a PERSISTENT, EVOLVING
 backdrop the whole post-intro page travels through. As you scroll, the sun lowers and the
 grade shifts golden → dusk → night; that day→night arc IS the light→dark transition.

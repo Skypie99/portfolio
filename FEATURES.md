@@ -1,5 +1,7 @@
 # Portfolio — feature & fix backlog
 
+> **Lifecycle: `HISTORICAL_STATE`** (labelled 2026-09-26; body unchanged). A backlog snapshot from the 2026-05-29 overnight audit, not the current to-do list: its premises of a production `/portfolio` basePath and push-triggered deploys no longer hold. For current behavior read the source and tests; for release state, GitHub Actions; for the document map, [`docs/INDEX.md`](docs/INDEX.md).
+
 The next things to fix/build, ordered by value vs. cost. One line per item —
 flesh it out when you (or an agent) picks it up. This file is the source of
 truth for what to do next; remove items once they land on `main`.

@@ -10,8 +10,17 @@ from `NEXT_EXACT_PHASE`, and do not redo anything under `DO_NOT_REPEAT`.
 | SOURCE_AUDIT | `SKYPI-REPO-PROFESSIONALISM-AUDIT-V2` (frozen score 78 / 100; not re-scored here) |
 | BASE_SHA | `129988b88bb6717aa65311bb7af12af8e4aa22ad` |
 | BASE_TREE | `4bccb76ab813970992e85bb4604a744b6d7f8dc8` |
-| CURRENT_HEAD | `129988b88bb6717aa65311bb7af12af8e4aa22ad` (no local commits yet) |
-| CURRENT_TREE | `4bccb76ab813970992e85bb4604a744b6d7f8dc8` + uncommitted work below |
+| CURRENT_HEAD | `b097fedd964797d825300181bb7e028eaae4285f` (C2) when this revision was written; C3 includes this file |
+| CURRENT_TREE | `221104af31db0c5be642c257afb29e4a50b65a71` (C2 tree) |
+
+## COMMITS (local only; nothing pushed)
+
+| # | SHA | Tree | Subject |
+|---|---|---|---|
+| C1 | `5e4525fda411bcff5af08bdc15f4890923a55503` | `7d4a8ff37e83cf69684216f5c5e60aa0cd29c23f` | chore(tooling): make capture tooling portable across machines |
+| C2 | `b097fedd964797d825300181bb7e028eaae4285f` | `221104af31db0c5be642c257afb29e4a50b65a71` | docs(qa): restore evidence discovery with a generated QA index |
+| C3 | pending | pending | docs(repo): clarify current truth and document lifecycle |
+| C4 | pending | pending | docs(qa): record repository professionalization closure |
 | BRANCH | `claude/portfolio-repo-professionalization-lbtdfr` |
 | WORKTREE | `/home/user/portfolio` (session-dedicated fresh cloud clone; see KNOWN_LIMITS) |
 | EXECUTION_DATE | 2026-09-26 (UTC) |

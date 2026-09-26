@@ -1,5 +1,7 @@
 # Show the Work, Cinematically — plan + image-swap guide
 
+> **Lifecycle: `HISTORICAL_PLAN`** (labelled 2026-09-26; body unchanged). The 2026-06-04 plan for branch `feature/portfolio-show-work-2026-06-04`, kept for provenance. Its findings, line numbers, and branch instructions applied to that work at that time; it is not current instruction. Project media is now produced by the capture factory ([`docs/showcase-factory.md`](docs/showcase-factory.md)) and wired with `scripts/wire-showcase.mjs`. See [`docs/INDEX.md`](docs/INDEX.md).
+
 **Built:** 2026-06-04 · branch `feature/portfolio-show-work-2026-06-04`
 **Component:** `components/ProductReveal.tsx` (+ `components/DeviceFrame.tsx`)
 

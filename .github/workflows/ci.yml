@@ -1,24 +1,23 @@
 # CI — lint, typecheck, test, build
 #
-# Owned by Gary (QA). Dormant until Sky pushes to GitHub.
-# Rory owns deploy.yml in a later cycle — DO NOT add a deploy job here.
+# Owned by Gary (QA). This is the release gate: deploy.yml publishes a commit
+# only after this workflow succeeds for it on main (the one exception is the
+# deliberately ungated manual workflow_dispatch in deploy.yml). Keep deploy
+# steps out of this file; deploy.yml owns publishing.
 #
 # Triggers:
-#   - pull_request -> main: gate every PR before merge.
-#   - push -> main: the workflow actually in use. This repo is merged locally
-#     and pushed straight to main, so the PR trigger never fires and only one
-#     stale branch has ever matched cycle/** — CI was, in practice, dormant
-#     while deploy.yml shipped every push to production. This does NOT gate the
-#     deploy (deploy.yml runs independently on the same push); it means a broken
-#     main is REPORTED rather than unnoticed. Making the deploy depend on CI is a
-#     policy change that can block a push, so it is Sky's call, not this fix's —
-#     see DECISIONS §P `CI-DEPLOY-UNGATED`.
-#   - push -> cycle/*: catch regressions during in-flight cycle work.
+#   - pull_request -> main: check a PR before it merges.
+#   - push -> main: the run that gates production. When it completes,
+#     deploy.yml (workflow_run) deploys the exact commit it verified, and only
+#     if it concluded success; a red run leaves the current site up. Gated
+#     since 2026-08-23 (Sky's ruling, recorded in deploy.yml).
+#   - push -> cycle/**: catch regressions during in-flight cycle work.
 #
 # Concurrency:
-#   - Group by ref so an in-flight run is cancelled when a new commit lands.
-#   - PRs and branch pushes don't fight each other (the workflow_ref includes
-#     the event type).
+#   - Group by workflow + ref so an in-flight run is cancelled when a new
+#     commit lands on the same ref.
+#   - PR runs (refs/pull/<n>/merge) and branch pushes (refs/heads/<branch>)
+#     have different refs, so they never cancel each other.
 name: CI
 
 on:
