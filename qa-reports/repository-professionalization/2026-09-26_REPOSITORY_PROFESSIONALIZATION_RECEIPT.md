@@ -1,5 +1,7 @@
 # Repository professionalization receipt (2026-09-26)
 
+> **Status: `COMPLETE`** (updated 2026-09-26, after the push; body unchanged). The body records the state at C4, `COMPLETE_WITH_GAPS`, when the dependency-backed gates could not run in the session. They have since passed in CI on the pushed branch, with the same results as `main`. See the [addendum](#addendum-ci-validation-after-the-push).
+
 | Field | Value |
 |---|---|
 | PROMPT_ID | `SKYPI-PORTFOLIO-REPOSITORY-PROFESSIONALIZATION-IMPLEMENT-V2` |
@@ -320,3 +322,54 @@ dispositions; the future of `verify-intro-focus.cjs`; whether to wire `qa:index:
 
 YES, once the owner has reviewed, pushed, merged, and deployed, as appropriate. The re-audit should run against
 the resulting remote state and may disagree with this receipt.
+
+## Addendum: CI validation after the push
+
+Added 2026-09-26 in C5. The owner authorized pushing this branch (branch only) and opened draft PR
+[#21](https://github.com/Skypie99/portfolio/pull/21) on it. Everything above this section is unchanged from C4.
+
+| Field | Value |
+|---|---|
+| STATUS | `COMPLETE`. The full validation set in §22 (typecheck, lint, build, test, test:static) has now run and passed. |
+| CI run | [`36224154486`](https://github.com/Skypie99/portfolio/actions/runs/36224154486): CI #70, event `pull_request`, attempt 1, success |
+| Head validated | `8e2c3b01f9d2a793f4fc0404e08dc0f311d3dd4c` (C4): the candidate C3 tree plus the three closure records |
+| Base comparison | [`36105193218`](https://github.com/Skypie99/portfolio/actions/runs/36105193218): CI #69, `push` of `129988b8…` to `main`, success |
+
+| Gate | CI job | Base `129988b8…` | This branch `8e2c3b01…` |
+|---|---|---|---|
+| `npm run lint` | Lint | success | success |
+| `npm run typecheck` | Typecheck | success | success |
+| `npm run build` | Build (the Test job also builds first) | success | success |
+| `npm test` | Test, after its build | 105 files; 947 passed, 2 skipped | 105 files; 947 passed, 2 skipped |
+
+CI does not call `npm run test:static` by name. That script is a build followed by `static-integrity.test.ts` and
+`section-nav-anchors.test.ts`, and the Test job runs both files after its own build: on this branch they passed
+with 29 tests (1 skipped) and 27 tests. `recruiter-copy-truth.test.ts`, the one test that reads a changed file
+(`README.md`), passed with 19 tests (1 skipped).
+
+What this changes in the body above:
+
+- **Validation results:** the five `VALIDATION_ENVIRONMENT_BLOCKED` repository gates have run and passed.
+- **Before and after metrics:** the test counts are now known: 947 passed and 2 skipped, the same as base.
+- **Known limits:** the first bullet (gates not run) is closed. The third ("Nothing was pushed") is superseded:
+  C1 to C4 were pushed to this branch. Nothing was merged, deployed, tagged, or released. `main` is still
+  `129988b8…`, and the latest Deploy run is still #177 (`36105395646`), which published `129988b8…`.
+- **Owner decisions remaining:** authorizing the push is done. The rest stand, plus reviewing, marking ready,
+  and merging PR #21.
+
+Still open, outside §22: the capture `--dry` smoke run needs `playwright-core` and the six project checkouts,
+which only Sky's machine has, so neither this session nor CI can run it. There, the registry resolves the same
+six paths as base (checked with `HOME=/Users/skypie`), so a dry run is a confirmation, not a gate. Follow-up 3
+already records a pre-existing dry-run failure for the Dashboard.
+
+| # | SHA | Tree | Subject |
+|---|---|---|---|
+| C4 | `8e2c3b01f9d2a793f4fc0404e08dc0f311d3dd4c` | `891dd44b39baa9a7fa3ee9bf9323c06dade3fe47` | docs(qa): record repository professionalization closure |
+| C5 | this commit | | docs(qa): record CI validation of the professionalization branch |
+
+C5 only adds lines to this receipt and the checkpoint. It removes none and touches no other file, so the
+34-path set, the candidate (C3), and its tree are unchanged. A commit cannot cite its own CI run; C5's run is
+reported on PR #21.
+
+POST_WORK_REAUDIT_READY: YES. Per §32, the re-audit runs against the final remote state after owner review,
+merge, and deployment as appropriate, and may disagree with this receipt.

@@ -1,5 +1,7 @@
 # Repository professionalization: implementation checkpoint
 
+> **Final state** (updated 2026-09-26, after the push; body unchanged). Nothing is left to resume. C1 to C4 were pushed to this branch on the owner's instruction, CI passed on that head, and C5 recorded the result. The body is the working record from before the push, so its "uncommitted" and "nothing pushed" notes are out of date. Current record: the [receipt addendum](2026-09-26_REPOSITORY_PROFESSIONALIZATION_RECEIPT.md#addendum-ci-validation-after-the-push).
+
 Resume aid for `SKYPI-PORTFOLIO-REPOSITORY-PROFESSIONALIZATION-IMPLEMENT-V2`.
 On resume: read this file first, verify HEAD/tree/status against it, continue
 from `NEXT_EXACT_PHASE`, and do not redo anything under `DO_NOT_REPEAT`.
