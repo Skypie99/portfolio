@@ -10,15 +10,17 @@
  * writing scripts/archive/out/seed-legacy.json (personal data; gitignored).
  *
  * Usage: node scripts/archive/extract-seed.mjs
- *   ARCHIVE_PROTOTYPE=/path/to/studio_archive.html overrides the source.
+ *   ARCHIVE_PROTOTYPE=/path/to/studio_archive.html overrides the source
+ *   (default: ~/Downloads/studio_archive.html).
  */
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { dirname, resolve } from 'node:path';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { homedir } from 'node:os';
+import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const PROTOTYPE = process.env.ARCHIVE_PROTOTYPE ?? '/Users/skypie/Downloads/studio_archive.html';
+const PROTOTYPE = process.env.ARCHIVE_PROTOTYPE ?? join(homedir(), 'Downloads', 'studio_archive.html');
 const OUT = resolve(__dirname, 'out', 'seed-legacy.json');
 
 function fail(msg) {
@@ -26,6 +28,7 @@ function fail(msg) {
   process.exit(1);
 }
 
+if (!existsSync(PROTOTYPE)) fail(`prototype not found at ${PROTOTYPE}; set ARCHIVE_PROTOTYPE=/path/to/studio_archive.html`);
 const src = readFileSync(PROTOTYPE, 'utf8');
 const start = src.indexOf('const SUPPLY_SEED = [');
 const end = src.indexOf('function esc('); // the statement immediately after ART_SEED
