@@ -9,13 +9,18 @@
  *
  * HomePage mounts CinematicDesert, which registers GSAP/ScrollTrigger on
  * mount — jsdom has no layout/rAF-driven scroll for it to run against.
- * Same fix as components/cinematic/__tests__/CinematicDesert.test.tsx: mock
- * matchMedia to report prefers-reduced-motion, so the component takes its
- * contractual static-frame path and never touches GSAP at all.
+ * Mock matchMedia to select the contractual static-frame path. The first
+ * render still registers GSAP before the reduced-motion effect runs, so the
+ * shared timer owner also shuts down plugin-global work at file teardown.
  */
-import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
 import { cleanup, render } from '@testing-library/react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+// Own timers before GSAP module evaluation, for this file only.
+await vi.hoisted(async () => {
+  const { ownGsapTimers } = await import('../../test-utils/gsap-teardown');
+  ownGsapTimers();
+});
 
 import HomePage from '@/app/page';
 
@@ -34,10 +39,6 @@ beforeAll(() => {
 });
 
 afterEach(cleanup);
-
-// The first hydration render may register ScrollTrigger before the reduced-
-// motion effect runs. Stop its global timer before jsdom removes rAF.
-afterAll(() => ScrollTrigger.disable());
 
 describe('Homepage — work-index years and Record-band dates render as <time>', () => {
   it('renders every work-index row year as a real <time> element', () => {
