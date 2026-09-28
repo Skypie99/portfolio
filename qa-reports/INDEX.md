@@ -6,11 +6,11 @@
 
 | Measure | Value |
 |---|---|
-| Tracked files under `qa-reports/` | 961 |
-| Top-level reports and receipts (Markdown) | 174 |
+| Tracked files under `qa-reports/` | 962 |
+| Top-level reports and receipts (Markdown) | 175 |
 | Evidence directories | 16 |
-| File types | png 521, md 193, json 122, log 63, mjs 21, cjs 15, txt 9, py 6, gz 5, stderr 4, html 1, patch 1 |
-| Dates named in file paths | 2026-05-23 to 2026-09-27 |
+| File types | png 521, md 194, json 122, log 63, mjs 21, cjs 15, txt 9, py 6, gz 5, stderr 4, html 1, patch 1 |
+| Dates named in file paths | 2026-05-23 to 2026-09-28 |
 
 ## How the evidence is organized
 
@@ -19,10 +19,11 @@
 - **Adding evidence.** Name a receipt `YYYY-MM-DD_<Topic>.md` and cite its raw evidence by relative path. When a new artifact would be byte-identical to one already tracked, cite the existing path with its SHA-256 (or a manifest entry) instead of committing another copy, unless a self-contained package or a before/after comparison genuinely needs the copy. Then stage the files and regenerate this index.
 - **Evidence outside this directory:** `design-reviews/` (dated review programs) and `summaries/` (June 2026 pass reports). See [`docs/INDEX.md`](../docs/INDEX.md) for how every document in the repository is classified.
 
-## Newest dated reports (15 of 142)
+## Newest dated reports (15 of 143)
 
 | Date | Report | Title |
 |---|---|---|
+| 2026-09-28 | [`2026-09-28_PostMerge_Professionalism_Repair_Receipt.md`](2026-09-28_PostMerge_Professionalism_Repair_Receipt.md) | Post-merge professionalism repair receipt (2026-09-28) |
 | 2026-09-27 | [`2026-09-27_Codex_GSAP_Timer_Race_Repair.md`](2026-09-27_Codex_GSAP_Timer_Race_Repair.md) | Portfolio GSAP timer race repair — 2026-09-27 |
 | 2026-09-26 | [`repository-professionalization/2026-09-26_REPOSITORY_PROFESSIONALIZATION_RECEIPT.md`](repository-professionalization/2026-09-26_REPOSITORY_PROFESSIONALIZATION_RECEIPT.md) | Repository professionalization receipt (2026-09-26) |
 | 2026-09-22 | [`2026-09-22_Codex_P1_CoreClosure.md`](2026-09-22_Codex_P1_CoreClosure.md) | P1 core closure receipt — cinematic finding deferred |
@@ -37,7 +38,6 @@
 | 2026-09-07 | [`2026-09-07_Codex_Phase08Hardening.md`](2026-09-07_Codex_Phase08Hardening.md) | Phase08 hardening — pre-commit approval report |
 | 2026-09-07 | [`2026-09-07_Codex_Phase09.md`](2026-09-07_Codex_Phase09.md) | Codex Phase09 — Technical Integrity |
 | 2026-09-07 | [`2026-09-07_Codex_Phase09A.md`](2026-09-07_Codex_Phase09A.md) | Phase 09-A session report |
-| 2026-09-07 | [`2026-09-07_Codex_Phase09Dependencies.md`](2026-09-07_Codex_Phase09Dependencies.md) | P09-B — Dependency advisory receipt |
 
 ## Phase gate receipts and packets (14)
 
@@ -93,7 +93,7 @@ Top-level files by the month named in their file name:
 
 | Month | Top-level files |
 |---|---|
-| 2026-09 | 40 |
+| 2026-09 | 41 |
 | 2026-08 | 2 |
 | 2026-07 | 2 |
 | 2026-06 | 19 |

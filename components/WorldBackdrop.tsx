@@ -22,7 +22,7 @@ import { useDayNight } from '@/lib/motion';
  * (`--day-night-rest`: light → golden, dark → night). The per-theme sky tokens
  * flip with `html.dark`, so light mode is the DAYLIGHT half of the world and dark
  * mode is the NIGHT half — the day→night scroll arc plays within each (the
- * light→dark transition, expressed cinematically). See CONTINUOUS_WORLD_PLAN.md.
+ * light→dark transition, expressed cinematically). See docs/history/CONTINUOUS_WORLD_PLAN.md.
  */
 export function WorldBackdrop() {
   useDayNight();
