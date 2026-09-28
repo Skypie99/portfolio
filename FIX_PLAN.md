@@ -1,5 +1,7 @@
 # FIX_PLAN — Portfolio trio (`fix/portfolio-trio-2026-06-05`)
 
+> **Lifecycle: `HISTORICAL_PLAN`** (labelled 2026-09-26; body unchanged). The 2026-06-05 plan for branch `fix/portfolio-trio-2026-06-05`, kept for provenance. Its findings, line numbers, and branch instructions applied to that work at that time; it is not current instruction. See [`docs/INDEX.md`](docs/INDEX.md).
+
 **Date:** 2026-06-05 · **Branch:** `fix/portfolio-trio-2026-06-05` off `main` (`fe22e32`) · **Do NOT merge to main.**
 **Source of truth for the gap:** `summaries/2026-06-05_Portfolio_Review_2.md` (live review, 8.5/10 → the three things between "standout" and "jaw-dropping").
 

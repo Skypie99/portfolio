@@ -1,5 +1,7 @@
 # FINAL POLISH PLAN — 2026-06-10
 
+> **Lifecycle: `HISTORICAL_PLAN`** (labelled 2026-09-26; body unchanged). The 2026-06-10 plan for branch `polish/portfolio-final-2026-06-10`, kept for provenance. Its findings, line numbers, and branch instructions applied to that work at that time; it is not current instruction. `DECISIONS_LOG.md` records that branch as merged to `main` at `80e512f` the same day. See [`docs/INDEX.md`](docs/INDEX.md).
+
 The deep final polish pass: fresh-eyes walk of the entire live site (both themes, 1440 + 390, prod static export + dev), every page including all six case studies, click-navigated through the filmic transitions. Every candidate finding below was located in code and **adversarially verified** (28-agent fleet: root-cause, per-territory locators, per-finding refuters). Items that turned out to be intent or measurement artifacts are in the honesty-gate ledger at the bottom — several of my own walk claims were corrected there.
 
 Branch: `polish/portfolio-final-2026-06-10`. Intro protected (checksum `4de1a431…`, marker-based). Gates after every commit.

@@ -1,5 +1,7 @@
 # REFINE_WOW_PLAN — skypistudio.com (2026-06-04)
 
+> **Lifecycle: `HISTORICAL_PLAN`** (labelled 2026-09-26; body unchanged). The 2026-06-04 plan, kept for provenance. Its findings, line numbers, and branch instructions applied to that work at that time; it is not current instruction. See [`docs/INDEX.md`](docs/INDEX.md).
+
 Phase-0 diagnosis for the WOW continuity pass. Goal: a real wow the moment a visitor scrolls in,
 drawn **directly from the locked intro's language**, so the site reads as one cinematic piece —
 without breaking the calm golden-hour brand or readability. The intro scene is OFF LIMITS (studied
