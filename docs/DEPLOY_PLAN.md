@@ -1,5 +1,7 @@
 # DEPLOY_PLAN.md — AI Portfolio Website
 
+> **Lifecycle: `PARTIALLY_CURRENT_REFERENCE`** (labelled 2026-09-26; body unchanged). The Day-0 deploy plan (2026-05-23) and its Cycle 4 status. Superseded: the `/portfolio` basePath (the site serves at the domain root), Node 20 (CI and Deploy use Node 24), the push-triggered "DORMANT" workflow (Deploy now runs only after a successful `CI` run on `main`), and the one-time setup steps (done). Still applicable in outline: the §6 rollback, either by reverting on `main` or by re-running an earlier successful Deploy run. Current authority: `.github/workflows/` and GitHub Actions; document map in [`INDEX.md`](INDEX.md).
+
 **Authored by:** Rory (DevOps)
 **Cycle:** `cycle/auto-2026-05-23` (Day-0 Kickoff)
 **Status:** PLAN ONLY. No workflow file written. No deploy performed. No repo created.
