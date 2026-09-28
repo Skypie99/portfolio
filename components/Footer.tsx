@@ -250,10 +250,10 @@ export function Footer() {
           {/* WM-2 \u2014 the privacy postmark. Right-hand mate of the Okanagan line in
               the same justify-between row; a separate <p> so it is its own AT-rotor
               unit (no "Okanagan Valley\u2026 No analytics." run-on). Same mono/meta
-              grammar; AA in both themes. NEEDS-SKY COPY \u2014 Sky's exact words, strict
-              receipt form: two negated nouns, four words, zero "we", zero adjectives.
-              Re-grep the privacy premise before shipping (no analytics deps, no
-              document.cookie, no Set-Cookie) so the claim stays true. */}
+              grammar; AA in both themes. Sky's exact words, strict receipt form:
+              two negated nouns, four words, zero "we", zero adjectives. Verified
+              true against source (no analytics deps, no document.cookie, no
+              Set-Cookie); re-grep before changing the claim. */}
           <p className="font-mono text-meta tracking-label uppercase text-text-meta">
             No analytics. No cookies.
           </p>

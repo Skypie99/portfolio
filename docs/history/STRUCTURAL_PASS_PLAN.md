@@ -1,6 +1,6 @@
 # STRUCTURAL_PASS_PLAN — structural/portfolio-links-rename-2026-06-10
 
-> **Lifecycle: `HISTORICAL_PLAN`** (labelled 2026-09-26; body unchanged). The 2026-06-10 plan for branch `structural/portfolio-links-rename-2026-06-10`, kept for provenance. Its findings, line numbers, and branch instructions applied to that work at that time; it is not current instruction. See [`docs/INDEX.md`](docs/INDEX.md).
+> **Lifecycle: `HISTORICAL_PLAN`** (labelled 2026-09-26; body unchanged). The 2026-06-10 plan for branch `structural/portfolio-links-rename-2026-06-10`, kept for provenance. Its findings, line numbers, and branch instructions applied to that work at that time; it is not current instruction. See [`docs/INDEX.md`](../INDEX.md).
 
 Phase-0 findings for the structural pass: certificate verify links (+3 additions),
 LinkedIn correction, "Correspond" → "Let's talk" rename, five mechanical honesty
