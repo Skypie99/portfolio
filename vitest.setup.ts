@@ -5,3 +5,14 @@
  * (toBeInTheDocument, toHaveAttribute, toHaveFocus, etc.).
  */
 import '@testing-library/jest-dom/vitest';
+
+import { expect } from 'vitest';
+
+// The direct cinematic suite is protected. Give it the same pre-import owner
+// without editing that file or changing clocks in unrelated suites.
+if (expect.getState().testPath?.replace(/\\/g, '/').endsWith(
+  '/components/cinematic/__tests__/CinematicDesert.test.tsx',
+)) {
+  const { ownGsapTimers } = await import('./test-utils/gsap-teardown');
+  ownGsapTimers();
+}
