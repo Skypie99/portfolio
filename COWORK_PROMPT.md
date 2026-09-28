@@ -1,5 +1,7 @@
 # Portfolio — GitHub Links Cowork Prompt
 
+> **Lifecycle: `HISTORICAL_PLAN`** (labelled 2026-09-26; body unchanged). A one-off prompt from May 2026 for branch `feature/single-scroll-2026-05-24`, kept for provenance. Do not paste or run it: its project set, test count, and file layout are long superseded. See [`docs/INDEX.md`](docs/INDEX.md).
+
 Paste everything below this line into Cowork. Fill in the 4 GitHub URLs first.
 
 ---
