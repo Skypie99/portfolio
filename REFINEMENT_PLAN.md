@@ -1,5 +1,7 @@
 # Refinement plan — high-end polish round (2026-06-03)
 
+> **Lifecycle: `HISTORICAL_PLAN`** (labelled 2026-09-26; body unchanged). The 2026-06-03 plan for branch `polish/portfolio-highend-2026-06-03`, kept for provenance. Its findings, line numbers, and branch instructions applied to that work at that time; it is not current instruction. See [`docs/INDEX.md`](docs/INDEX.md).
+
 Branch `polish/portfolio-highend-2026-06-03`. Lift the flat sections + a richer site-wide
 motion/continuity layer, on the existing token + motion system. **The cinematic intro is
 LOCKED** (`components/cinematic/**`, `CinematicIntro.tsx`, `globals.css` 966–EOF, tokens

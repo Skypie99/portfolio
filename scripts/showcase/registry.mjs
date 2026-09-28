@@ -13,10 +13,52 @@
  */
 
 import { execFileSync } from 'node:child_process';
+import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 export const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
+
+/** Where each project's checkout lives. SHOWCASE_REPO_<SLUG> (e.g.
+ *  SHOWCASE_REPO_PROMPT_LIBRARY) overrides; otherwise the default is Sky's
+ *  layout relative to the home directory, which on Sky's machine resolves to
+ *  exactly the paths already recorded in content/showcase.manifest.json. */
+const REPO_DEFAULTS = {
+  flagstone: 'AccessMap',
+  'prompt-library': 'Documents/Claude/Projects/Prompt Library Tool',
+  'ghost-code': 'Games/pacman-code-trainer',
+  'claude-corp': 'Claude_Corp',
+  dashboard: 'Dashboard',
+  'pet-paradise': 'luxury-dog-sitting',
+};
+
+export const repoEnvVar = (slug) => `SHOWCASE_REPO_${slug.toUpperCase().replace(/-/g, '_')}`;
+
+function projectRepo(slug) {
+  const override = process.env[repoEnvVar(slug)];
+  if (override) return path.resolve(override.replace(/^~(?=$|\/)/, os.homedir()));
+  return path.join(os.homedir(), REPO_DEFAULTS[slug]);
+}
+
+/** Fail with the project and the fix, not a raw git/ENOENT stack. Called only
+ *  where a run actually opens the project's checkout. */
+export function requireRepo(project) {
+  const envVar = repoEnvVar(project.slug);
+  const source = process.env[envVar] ? `from ${envVar}` : `default ~/${REPO_DEFAULTS[project.slug]}`;
+  const problem = !fs.existsSync(project.repo)
+    ? 'no checkout found'
+    : !fs.existsSync(path.join(project.repo, '.git'))
+      ? 'not a git checkout'
+      : null;
+  if (problem) {
+    throw new Error(
+      `project "${project.slug}": ${problem} at ${project.repo} (${source}). ` +
+        `Set ${envVar}=/absolute/path/to/its/checkout; see docs/showcase-factory.md.`,
+    );
+  }
+  return project.repo;
+}
 
 /** Masters + receipts bank. Durable across worktrees via env override:
  *  the train runs from a worktree but banks into the main checkout. */
@@ -77,7 +119,7 @@ export const PROJECTS = [
     slug: 'flagstone',
     title: 'Flagstone',
     priority: 1,
-    repo: '/Users/skypie/AccessMap',
+    repo: projectRepo('flagstone'),
     source: {
       kind: 'worktree',
       // Repinned 2026-08-17 for the Flagstone rename. The previous pin
@@ -300,7 +342,7 @@ export const PROJECTS = [
     slug: 'prompt-library',
     title: 'Prompt Library',
     priority: 2,
-    repo: '/Users/skypie/Documents/Claude/Projects/Prompt Library Tool',
+    repo: projectRepo('prompt-library'),
     source: { kind: 'worktree', ref: '32fcf8d189926fe8e39005f1b5440967059bdfd8', sha: '32fcf8d189926fe8e39005f1b5440967059bdfd8' },
     build: { kind: 'next-build', cmd: ['npx', '--no-install', 'next', 'build'], outDir: 'out', linkNodeModules: true, timeoutMs: 10 * 60 * 1000 },
     serve: { kind: 'static', port: 8083, dir: 'out' },
@@ -328,7 +370,7 @@ export const PROJECTS = [
     slug: 'ghost-code',
     title: 'Ghost Code',
     priority: 3,
-    repo: '/Users/skypie/Games/pacman-code-trainer',
+    repo: projectRepo('ghost-code'),
     source: { kind: 'worktree', ref: 'main', sha: '1e6b963' }, // 2026-07-31: toggle-reachability fix landed on top of the light-mode merge
     build: { kind: 'none' },
     serve: { kind: 'static', port: 8123 },
@@ -387,7 +429,7 @@ export const PROJECTS = [
     slug: 'claude-corp',
     title: 'Claude Corp',
     priority: 4,
-    repo: '/Users/skypie/Claude_Corp',
+    repo: projectRepo('claude-corp'),
     source: { kind: 'inplace', ref: 'main', sha: '7e961a3' },
     build: { kind: 'none' },
     serve: { kind: 'static', port: 8125 },
@@ -419,7 +461,7 @@ export const PROJECTS = [
     slug: 'dashboard',
     title: 'Dashboard',
     priority: 5,
-    repo: '/Users/skypie/Dashboard',
+    repo: projectRepo('dashboard'),
     appDir: 'dashboard-app',
     // LIVE CAPTURE (2026-07-31): main @ b8bd3a9 needs @anthropic-ai/sdk, which
     // was never installed on this machine (installs are forbidden), so a local
@@ -449,7 +491,7 @@ export const PROJECTS = [
     slug: 'pet-paradise',
     title: "Sky's Pet Paradise",
     priority: 6,
-    repo: '/Users/skypie/luxury-dog-sitting',
+    repo: projectRepo('pet-paradise'),
     source: { kind: 'inplace', ref: 'main', sha: 'a343f5c' }, // parked, no remote — bank-only per Sky
     build: { kind: 'none' },
     serve: { kind: 'static', port: 8124 },
