@@ -1,6 +1,6 @@
 # Post-merge professionalism repair receipt (2026-09-28)
 
-> **Status: `COMPLETE`** (2026-09-28, local commits only; no push, merge, deploy, tag, PR, or issue). The body below is unchanged from the first wave, which deferred F-003, F-005-forward, and F-012. Those deferrals are closed as far as is safe locally in the [continuation](#continuation-deferred-work-completion-2026-09-28). No evidence was deleted.
+> **Status: `COMPLETE`** (2026-09-28, local commits only; no push, merge, deploy, tag, PR, or issue). The body below is unchanged from the first wave, which deferred F-003, F-005-forward, and F-012. Those deferrals are closed as far as is safe locally in the [continuation](#continuation-deferred-work-completion-2026-09-28). The fresh acceptance review's HOLD items are repaired in the [acceptance-HOLD follow-up](#acceptance-hold-follow-up-historical-link-repair-2026-09-28). No evidence was deleted.
 
 | Field | Value |
 |---|---|
@@ -20,7 +20,7 @@
 | F-001 Root history debt | MEDIUM | RESOLVED | 14 dated root documents moved to `docs/history/`; `PROJECT_STATE.md.bak` and `.context-bundle.md` removed; `docs/INDEX.md` register updated; current references repointed. |
 | F-002 PR #23 post-merge truth | MEDIUM | RESOLVED | Top lifecycle status banner (`MERGED`, 2026-09-28) plus a dated post-merge addendum appended to the GSAP receipt; body preserved unchanged. |
 | F-004 `.gitignore` guidance drift | LOW | RESOLVED | Comment reworded: `design-reviews/` is tracked evidence; only `design-reviews/showcase-refresh/masters/` is excluded. |
-| F-005 Owner-path exposure | LOW | PARTIAL (forward) | One-line "paths are as-recorded" disclosure added to `docs/IDENTITY_AND_CLAIM_CONTRACT.md`, matching the truth-manifest disclosure. Regeneration of `content/showcase.manifest.json` is deferred to the next capture-factory run (owner-scoped). |
+| F-005 Owner-path exposure | LOW | PARTIAL (forward) | One-line "paths are as-recorded" disclosure added to `docs/IDENTITY_AND_CLAIM_CONTRACT.md`, matching the as-recorded note about the truth manifest in `docs/INDEX.md`. Regeneration of `content/showcase.manifest.json` is deferred to the next capture-factory run (owner-scoped). |
 | F-006 Incomplete test-directory list | LOW | RESOLVED | `test-utils/__tests__/` added to `CLAUDE.md`, with a note that it holds the GSAP timer owner. |
 | F-007 Stale placeholder comments | LOW | RESOLVED (2 of 3) | `components/ProjectCard.tsx` and `components/Footer.tsx` comments corrected. `components/CertCard.tsx` left unchanged: its NEEDS-SKY-ASSET note appears still accurate (UP-18 badge art) and already carries its tracking ID. |
 | F-008 Tracked `.bak` at root | LOW | RESOLVED | `PROJECT_STATE.md.bak` deleted (git history preserves it). |
@@ -93,7 +93,7 @@ Regenerated:
 | Item | Classification | Disposition |
 |---|---|---|
 | F-003 committed evidence mass | `SAFE_TO_IMPLEMENT_NOW` (preparatory) + `OWNER_AUTHORIZATION_REQUIRED` (removal) | Policy `docs/EVIDENCE_RETENTION.md` added; reproducible candidate census committed at `qa-reports/evidence-retention/2026-09-28_EVIDENCE_RETENTION_CANDIDATES.md`; no deletion performed. Any removal is owner-gated. |
-| F-005 owner-path exposure | `SAFE_TO_IMPLEMENT_NOW` (completed) | The audit's smallest repair accepts the manifest as an intentional as-recorded artifact and adds a disclosure note; that is done here and in the first wave. Disclosure now exists in both contract documents (`docs/IDENTITY_AND_CLAIM_CONTRACT.md`, `docs/PORTFOLIO_TRUTH_MANIFEST.md` + `docs/INDEX.md`). The optional forward step (repo-relative provenance "when the capture factory next regenerates the manifest") is deferred to the next owner-run capture: `content/showcase.manifest.json` and the capture factory are declared **PROTECTED, read-only**, and `/Users/skypie/AccessMap` is a declared non-movable identifier (`design-reviews/flagstone-rename/2026-08-17/SLUG-MIGRATION-PROMPT.md`). No generator defect found; the manifest was not hand-edited. Re-verified against shipped truth: 160/160 shipped refs resolve, budget within hard cap. |
+| F-005 owner-path exposure | `SAFE_TO_IMPLEMENT_NOW` (completed) | The audit's smallest repair accepts the manifest as an intentional as-recorded artifact and adds a disclosure note; that is done here and in the first wave. Disclosure now exists in `docs/IDENTITY_AND_CLAIM_CONTRACT.md` (its own machine paths) and in `docs/INDEX.md` (the register row about the truth manifest); the manifest document itself carries no as-recorded note and was not edited. The optional forward step (repo-relative provenance "when the capture factory next regenerates the manifest") is deferred to the next owner-run capture: `content/showcase.manifest.json` and the capture factory are declared **PROTECTED, read-only**, and `/Users/skypie/AccessMap` is a declared non-movable identifier (`design-reviews/flagstone-rename/2026-08-17/SLUG-MIGRATION-PROMPT.md`). No generator defect found; the manifest was not hand-edited. Re-verified against shipped truth: 160/160 shipped refs resolve, budget within hard cap. |
 | F-009 stale local `main` ref | `OUT_OF_SCOPE` | Machine artifact in the shared gitdir; repairing it would move `main`, which the hard boundary forbids. |
 | F-010 LICENSE / SECURITY / CONTRIBUTING | `OWNER_DECISION_REQUIRED` | Personal portfolio; default all-rights-reserved is defensible. No file added without the owner's call. |
 | F-012 accessibility test figure (763, 2026-08-25) | `ENVIRONMENT_BLOCKED` / `UNAVAILABLE` | The refresh needs a real axe/CLS measurement run; `node_modules` is absent and installs are prohibited. Static consistency verified instead (values match the raw evidence; both dated 2026-08-25). Not converted to PASS. |
@@ -152,3 +152,44 @@ The 2026-09-26 repository-professionalization receipt's "Follow-ups (observed, n
 - MEDIUM: 0 open (F-001, F-002 resolved; F-003 safe work complete, removal owner-gated).
 - LOW: 0 open (F-004, F-006, F-007, F-008 resolved; F-005 accepted as-recorded with disclosures complete).
 - NOTE: F-009, F-010, F-012 remain owner/environment items, unchanged by design.
+
+---
+
+## Acceptance-HOLD follow-up: historical-link repair (2026-09-28)
+
+> **Status: `COMPLETE`** (acceptance-HOLD follow-up; local commit only; no push, merge, deploy, tag, PR, or issue). Starting SHA `ffe404dbabae2290a44b18655957dbeb71b31a9d`. This is a separate follow-up to the fresh Portfolio acceptance review; the two sections above are unchanged. No evidence was deleted, moved, or pruned.
+
+The fresh acceptance review held the post-merge professionalism work on two documentation defects introduced by the 2026-09-28 root-to-`docs/history/` moves, plus one inaccurate provenance sentence in this receipt. All three are repaired here; nothing else was touched.
+
+### HOLD items repaired
+
+| Item | Disposition | What changed |
+|---|---|---|
+| Eight relative links in `docs/history/FINAL_POLISH_PLAN.md` | RESOLVED | Each resolved at repository root before the file moved, then broke under `docs/history/`. Only the destination paths were repointed one level deeper (`../../…`); the historical prose and link text are byte-identical. |
+| The pre-existing `components/WorkFilterGrid.tsx` citation (same document, line 24) | RESOLVED | Already broken before the move: the file was removed at HEAD by the R4/BP9 gallery-wall rebuild, so no current target exists. Preserved as historical evidence and converted from a markdown link to inline code marked non-current; no target was fabricated. |
+| F-005 provenance sentence in this receipt | CORRECTED | The as-recorded disclosure lives in `docs/INDEX.md` (the register row about the truth manifest) and in `docs/IDENTITY_AND_CLAIM_CONTRACT.md` (its own paths). It is not inside `docs/PORTFOLIO_TRUTH_MANIFEST.md`, which is unchanged. The earlier "truth-manifest disclosure" wording in the findings table is corrected to match. |
+
+### Validation (follow-up)
+
+| Check | Result |
+|---|---|
+| Link resolution, every moved historical doc (`docs/history/*.md`) | Zero newly broken links; each relative target resolves from its own file's directory. |
+| Focused check, `docs/history/FINAL_POLISH_PLAN.md` | The 8 newly broken destinations were repointed; 0 newly broken remain. The `WorkFilterGrid.tsx` citation is no longer a link. |
+| Pre-existing links elsewhere | Unchanged: 3 non-move-related, pre-existing targets (a truncated path in `design-reviews/truth-pass/2026-08-21/REPORT.md`, a root-absolute site route `/certificates`, and one placeholder hyperlink whose target is the literal `url`) are outside this repair and were not touched. |
+| `docs/INDEX.md` path validation | Every registered repository path resolves. |
+| `node scripts/generate-qa-index.mjs --check` | `qa-reports/INDEX.md is up to date.` exit 0. |
+| `git diff --check` | Exit 0 (no whitespace errors). |
+| Stale-reference search | No current surface cites a moved document at its former root path; remaining mentions are dated evidence, correct for their dates. |
+| Dependency-backed gates (`lint`, `typecheck`, `build`, `test`) | Not run: `node_modules` absent; installs prohibited for this documentation repair. |
+
+### Files changed
+
+- `docs/history/FINAL_POLISH_PLAN.md` - eight link destinations repointed; the pre-existing `WorkFilterGrid.tsx` citation de-linked and marked historical.
+- `qa-reports/2026-09-28_PostMerge_Professionalism_Repair_Receipt.md` - F-005 provenance sentence corrected and this follow-up section.
+
+### Irreversible work not performed
+
+- No evidence deleted, moved, compressed, or pruned.
+- No application behavior, content, test logic, workflow, dependency, or protected cinematic source changed.
+- No git history rewrite, force-push, or filter-branch.
+- No remote action; `main` not mutated.
