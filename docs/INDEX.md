@@ -74,6 +74,7 @@ counts and claims stay true for their dates.
 | `docs/PORTFOLIO_TRUTH_MANIFEST.md` | `CURRENT_CONTRACT` | Evidence base behind the recruiter-copy truth guards. Its machine paths are as-recorded. |
 | `docs/ARCHIVE_RUNBOOK.md` | `CURRENT_RUNBOOK` | Deploy, unpause, SMTP, and second-user procedures for `/archive`. |
 | `docs/showcase-factory.md` | `CURRENT_RUNBOOK` | The capture factory, including how to configure project locations. |
+| `docs/EVIDENCE_RETENTION.md` | `CURRENT_DOC` | Evidence-retention policy, forward rule, and the prerequisites for ever removing a dated artifact. |
 | `content/*.json` | `ACTIVE_SOURCE` | Validated at build time. `content/showcase.manifest.json` is `GENERATED` by the capture factory. |
 | `supabase/migrations/` | `ACTIVE_SOURCE` | The archive schema, append-only. |
 | `cinematic-masters/` | `ACTIVE_SOURCE` | Regeneration masters for the protected cinematic scene. Never shipped. |
@@ -86,6 +87,7 @@ counts and claims stay true for their dates.
 | `qa-reports/` dated receipts and phase evidence | `RELEASE_EVIDENCE` | Receipts, candidate SHA/tree records, accessibility proof. Never rewritten. |
 | `qa-reports/` May 2026 role and cycle reports | `HISTORICAL_RECEIPT` | Cycle briefings and per-role reports. |
 | `design-reviews/` | `HISTORICAL_RECEIPT` | Dated review programs (`<program>/<date>/`) and their raw evidence. |
+| `qa-reports/evidence-retention/` | `REFERENCE` | Dated retention census. Candidates only; no removal is authorized by it. See `docs/EVIDENCE_RETENTION.md`. |
 | `summaries/` | `HISTORICAL_RECEIPT` | June 2026 pass reports and their emails. |
 | `DECISIONS_LOG.md` | `REFERENCE` | Dated decision ledger. Each row is provenance for its date; later rows and current source override. |
 | `docs/LEARNINGS.md` | `REFERENCE` | Dated gotcha log. |

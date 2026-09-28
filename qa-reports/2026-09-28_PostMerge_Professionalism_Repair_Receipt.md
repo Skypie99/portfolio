@@ -1,6 +1,6 @@
 # Post-merge professionalism repair receipt (2026-09-28)
 
-> **Status: `COMPLETE`** (2026-09-28, local commit only; no push, merge, deploy, tag, PR, or issue). This receipt records the bounded repair of the safe, low-risk findings from `PORTFOLIO-FINAL-POSTMERGE-AUDIT-20260928-V2`. The F-003 evidence mass was deliberately deferred and untouched.
+> **Status: `COMPLETE`** (2026-09-28, local commits only; no push, merge, deploy, tag, PR, or issue). The body below is unchanged from the first wave, which deferred F-003, F-005-forward, and F-012. Those deferrals are closed as far as is safe locally in the [continuation](#continuation-deferred-work-completion-2026-09-28). No evidence was deleted.
 
 | Field | Value |
 |---|---|
@@ -81,3 +81,74 @@ Regenerated:
 - MEDIUM: 0 (F-001, F-002 addressed; F-003 deferred by design).
 - LOW: 0 open in this batch (F-004, F-006, F-007, F-008 resolved; F-005 partially, forward-only).
 - NOTE: F-009, F-010, F-012 unchanged owner calls; F-011 verified clean.
+
+---
+
+## Continuation: deferred-work completion (2026-09-28)
+
+> **Status: `COMPLETE`** (continuation; local commit only; no push, merge, deploy, tag, PR, or issue). Starting SHA `50d1b76f03f65efc967fc4b548000c5d2bc751b5`. This closes the deferred items from the first wave as far as is safe locally. No evidence was deleted, moved, or pruned.
+
+### Deferred findings considered
+
+| Item | Classification | Disposition |
+|---|---|---|
+| F-003 committed evidence mass | `SAFE_TO_IMPLEMENT_NOW` (preparatory) + `OWNER_AUTHORIZATION_REQUIRED` (removal) | Policy `docs/EVIDENCE_RETENTION.md` added; reproducible candidate census committed at `qa-reports/evidence-retention/2026-09-28_EVIDENCE_RETENTION_CANDIDATES.md`; no deletion performed. Any removal is owner-gated. |
+| F-005 owner-path exposure | `SAFE_TO_IMPLEMENT_NOW` (completed) | The audit's smallest repair accepts the manifest as an intentional as-recorded artifact and adds a disclosure note; that is done here and in the first wave. Disclosure now exists in both contract documents (`docs/IDENTITY_AND_CLAIM_CONTRACT.md`, `docs/PORTFOLIO_TRUTH_MANIFEST.md` + `docs/INDEX.md`). The optional forward step (repo-relative provenance "when the capture factory next regenerates the manifest") is deferred to the next owner-run capture: `content/showcase.manifest.json` and the capture factory are declared **PROTECTED, read-only**, and `/Users/skypie/AccessMap` is a declared non-movable identifier (`design-reviews/flagstone-rename/2026-08-17/SLUG-MIGRATION-PROMPT.md`). No generator defect found; the manifest was not hand-edited. Re-verified against shipped truth: 160/160 shipped refs resolve, budget within hard cap. |
+| F-009 stale local `main` ref | `OUT_OF_SCOPE` | Machine artifact in the shared gitdir; repairing it would move `main`, which the hard boundary forbids. |
+| F-010 LICENSE / SECURITY / CONTRIBUTING | `OWNER_DECISION_REQUIRED` | Personal portfolio; default all-rights-reserved is defensible. No file added without the owner's call. |
+| F-012 accessibility test figure (763, 2026-08-25) | `ENVIRONMENT_BLOCKED` / `UNAVAILABLE` | The refresh needs a real axe/CLS measurement run; `node_modules` is absent and installs are prohibited. Static consistency verified instead (values match the raw evidence; both dated 2026-08-25). Not converted to PASS. |
+
+### Prior-cycle follow-ups reviewed
+
+The 2026-09-26 repository-professionalization receipt's "Follow-ups (observed, not implemented)" were re-checked and dispositioned: #1 deploy hardening (implemented, confirmed by the post-merge audit), #5 `MOTION_SYSTEM.md` "placeholder now" and #9 physical root moves (closed in the first wave), #2 `check:overflow` and #6 Expo-macOS (environment-blocked), #3 `capture-showcase --dry` live-project and #4 `lib/schema.ts` header (protected surfaces), #7 `verify-intro-focus.cjs` and #8 `qa:index:check`-in-CI (owner decisions), #10 `FINAL_POLISH_PLAN.md` stale body link (historical, must not be rewritten). None is `SAFE_TO_IMPLEMENT_NOW` within this bounded repair.
+
+### Files created
+
+- `docs/EVIDENCE_RETENTION.md` - retention policy, forward rule, deletion prerequisites.
+- `qa-reports/evidence-retention/2026-09-28_EVIDENCE_RETENTION_CANDIDATES.md` - point-in-time census; candidates only, no removal authorized.
+
+### Files changed
+
+- `docs/INDEX.md` - registered the retention policy (`CURRENT_DOC`) and the census (`REFERENCE`).
+- `qa-reports/2026-09-28_PostMerge_Professionalism_Repair_Receipt.md` - this continuation section and the status-banner pointer.
+- `qa-reports/INDEX.md` - regenerated (new evidence directory).
+
+### Validation (continuation)
+
+| Check | Result |
+|---|---|
+| `git diff --check` | Exit 0 (no whitespace errors). |
+| `node scripts/validate-assets.mjs` | Exit 0; all certificate badges, cinematic plates, deliverable proofs, and blog figures found. |
+| `node scripts/generate-qa-index.mjs --check` | `qa-reports/INDEX.md is up to date.` exit 0 (after regeneration). |
+| Showcase manifest current-truth check | 86 captures, 6 projects, 160/160 shipped refs resolve; budget within hard cap (8.26 MB). |
+| A11y receipt consistency check | 6 receipts, no value drift against `public/receipts/a11y-2026-08-25.json`, dates agree. |
+| `docs/INDEX.md` path existence | Every registered path resolves. |
+| Stale-reference search (`SHOW_WORK_PLAN.md`, `CONTINUOUS_WORLD_PLAN.md`) in current surfaces | None. |
+| Dependency-backed gates (`lint`, `typecheck`, `build`, `test`) | Not run: `node_modules` absent; installs prohibited for this repair. |
+
+### Irreversible work not performed
+
+- No evidence deleted, moved, compressed, or pruned.
+- No git history rewrite, force-push, or filter-branch.
+- No remote action; `main` not mutated.
+
+### Owner-gated items
+
+- Any F-003 evidence removal (`OWNER_AUTHORIZATION_REQUIRED_FOR_IRREVERSIBLE_EVIDENCE_REMOVAL`).
+- F-010 LICENSE / SECURITY / CONTRIBUTING.
+- Professionalization follow-ups #7 (`verify-intro-focus.cjs`) and #8 (`qa:index:check` in CI).
+
+### Environment-blocked items
+
+- F-012 accessibility refresh (needs a real axe/CLS run and `node_modules`).
+- `npm run check:overflow` and the macOS-only Flagstone Expo capture (prior-cycle follow-ups #2, #6).
+
+### UltraSpeed escalations
+
+0 - no ambiguity required escalation; every disposition was reachable with the on-disk evidence and the repository's own protected-surface declarations.
+
+### Remaining findings after the continuation
+
+- MEDIUM: 0 open (F-001, F-002 resolved; F-003 safe work complete, removal owner-gated).
+- LOW: 0 open (F-004, F-006, F-007, F-008 resolved; F-005 accepted as-recorded with disclosures complete).
+- NOTE: F-009, F-010, F-012 remain owner/environment items, unchanged by design.
