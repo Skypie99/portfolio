@@ -1,5 +1,7 @@
 # VOICE_PASS_PLAN — content/portfolio-voice-pass-2026-06-10
 
+> **Lifecycle: `HISTORICAL_PLAN`** (labelled 2026-09-26; body unchanged). The 2026-06-10 plan for branch `content/portfolio-voice-pass-2026-06-10`, kept for provenance. Its findings, line numbers, and branch instructions applied to that work at that time; it is not current instruction. See [`docs/INDEX.md`](docs/INDEX.md).
+
 Phase-0 findings for the C3–C18 copy/voice pass. Every change located and verified
 against current source before editing. Full plan: `~/.claude/plans/goal-a-careful-copy-cozy-badger.md`.
 
