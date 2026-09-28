@@ -4,6 +4,12 @@ import { join } from 'node:path';
 import { afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
 import { cleanup, render, screen } from '@testing-library/react';
 
+// Own timers before GSAP module evaluation, for this file only.
+await vi.hoisted(async () => {
+  const { ownGsapTimers } = await import('../../test-utils/gsap-teardown');
+  ownGsapTimers();
+});
+
 import HomePage from '@/app/page';
 
 /**
