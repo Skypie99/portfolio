@@ -4,7 +4,7 @@
 
 **Prompt ID:** SKYPI-PORTFOLIO-3.0-P01
 **Date:** 2026-09-03
-**Author:** Claude (Sonnet 5), acting as Phase 01 editorial authority, in `/Users/skypie/Portfolio-3.0-baseline`
+**Author:** Claude (Sonnet 5), acting as Phase 01 editorial authority, in `/Users/skypie/Portfolio-3.0-baseline` (machine paths in this document are as-recorded for their date, not current checkout locations)
 
 ---
 

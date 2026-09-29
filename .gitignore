@@ -24,8 +24,8 @@ proof-masters/*
 
 # Showcase capture masters (showcase/theme-sync): raw dsf2 PNGs + raw clip webms
 # banked under design-reviews/showcase-refresh/masters/ — NEVER committed; only
-# the encoded siblings in public/showcase/ ship. (design-reviews/ itself stays
-# untracked by convention; this line makes a stray add harmless.)
+# the encoded siblings in public/showcase/ ship. (design-reviews/ is tracked
+# evidence, registered in docs/INDEX.md; this line excludes only the raw masters.)
 design-reviews/showcase-refresh/masters/
 
 # Studio Archive seed: the prototype's personal catalogue, extracted by

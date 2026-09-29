@@ -1,5 +1,7 @@
 # Portfolio GSAP timer race repair — 2026-09-27
 
+> **Status: `MERGED`** (added 2026-09-28; body unchanged). The body below records the 2026-09-27 pre-merge state, when PR #23 was an unreviewed draft and nothing had been merged. The owner reviewed and merged it on 2026-09-28 as `694b31c`; see the [addendum](#addendum-merged). Every "not merged" statement below is scoped to, and true for, 2026-09-27.
+
 ## DECISIONS FOR SKY
 
 - **Independently review draft PR #23 before merge.** Recommendation: review the scoped test-clock ownership and its negative proof, then decide whether to merge the branch. Why: local checks cover the known CI race, but bounded repeated runs cannot prove it impossible under every scheduler or platform. Alternative: leave the draft open and retain the known flaky CI risk. Impact: merging this test-only branch changes CI lifecycle ownership; it does not repair GSAP's production dependency defect.
@@ -46,3 +48,15 @@ The 31 repeated processes ran with normal Vitest file isolation; the grouped ser
 PR #21 remained draft/open at head `892e7844bb7d6d0b14d01d3526029b1305b0dc51` with its original 34-file set at the last pre-publication readback. This task did not write to its branch or files. Local `main`, cached `origin/main`, and the primary checkout's status were unchanged during implementation. AccessMap and ClaudeCorp primary HEAD/status hashes matched pre-write snapshots. This task made no writes to Agent OS, Flagstone, ClaudeCorp, scheduled jobs, or other cleanup branches. Concurrent activity outside those checked surfaces is not attributed to this task.
 
 Independent PR review remains. The underlying GSAP production dependency behavior remains a separate decision. No merge or deployment was performed. GitHub CI on the draft PR is separate from the local gates above; this report does not claim a remote CI result.
+
+---
+
+## Addendum: merged
+
+Added 2026-09-28. The owner reviewed draft PR #23 and merged it to `main` as
+`694b31c74024fed1a3a956b6dae2f6bd5449c154`; the code commit
+`1275024846ae9bf76713b328ba8b22c1b140a98f` is contained in current main, and the
+repair's owner is installed by the five homepage suites and `vitest.setup.ts`.
+Everything above is unchanged from its own date (2026-09-27); the "not merged"
+statements describe that date only. The production GSAP 3.15.0 dependency
+behavior remains the separate open decision recorded above.

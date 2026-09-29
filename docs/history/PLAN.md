@@ -1,6 +1,6 @@
 # Cycle Plan — 2026-05-23 (Day-0 Kickoff)
 
-> **Lifecycle: `HISTORICAL_PLAN`** (labelled 2026-09-26; body unchanged). The Day-0 cycle plan of 2026-05-23, kept for provenance. It predates the GitHub repository and the built site, so none of it is current instruction. See [`README.md`](README.md) and [`docs/INDEX.md`](docs/INDEX.md).
+> **Lifecycle: `HISTORICAL_PLAN`** (labelled 2026-09-26; body unchanged). The Day-0 cycle plan of 2026-05-23, kept for provenance. It predates the GitHub repository and the built site, so none of it is current instruction. See [`README.md`](../../README.md) and [`docs/INDEX.md`](../INDEX.md).
 
 **Project:** AI Portfolio Website
 **Cycle branch:** `cycle/auto-2026-05-23`

@@ -74,6 +74,7 @@ counts and claims stay true for their dates.
 | `docs/PORTFOLIO_TRUTH_MANIFEST.md` | `CURRENT_CONTRACT` | Evidence base behind the recruiter-copy truth guards. Its machine paths are as-recorded. |
 | `docs/ARCHIVE_RUNBOOK.md` | `CURRENT_RUNBOOK` | Deploy, unpause, SMTP, and second-user procedures for `/archive`. |
 | `docs/showcase-factory.md` | `CURRENT_RUNBOOK` | The capture factory, including how to configure project locations. |
+| `docs/EVIDENCE_RETENTION.md` | `CURRENT_DOC` | Evidence-retention policy, forward rule, and the prerequisites for ever removing a dated artifact. |
 | `content/*.json` | `ACTIVE_SOURCE` | Validated at build time. `content/showcase.manifest.json` is `GENERATED` by the capture factory. |
 | `supabase/migrations/` | `ACTIVE_SOURCE` | The archive schema, append-only. |
 | `cinematic-masters/` | `ACTIVE_SOURCE` | Regeneration masters for the protected cinematic scene. Never shipped. |
@@ -86,6 +87,7 @@ counts and claims stay true for their dates.
 | `qa-reports/` dated receipts and phase evidence | `RELEASE_EVIDENCE` | Receipts, candidate SHA/tree records, accessibility proof. Never rewritten. |
 | `qa-reports/` May 2026 role and cycle reports | `HISTORICAL_RECEIPT` | Cycle briefings and per-role reports. |
 | `design-reviews/` | `HISTORICAL_RECEIPT` | Dated review programs (`<program>/<date>/`) and their raw evidence. |
+| `qa-reports/evidence-retention/` | `REFERENCE` | Dated retention census. Candidates only; no removal is authorized by it. See `docs/EVIDENCE_RETENTION.md`. |
 | `summaries/` | `HISTORICAL_RECEIPT` | June 2026 pass reports and their emails. |
 | `DECISIONS_LOG.md` | `REFERENCE` | Dated decision ledger. Each row is provenance for its date; later rows and current source override. |
 | `docs/LEARNINGS.md` | `REFERENCE` | Dated gotcha log. |
@@ -95,19 +97,24 @@ counts and claims stay true for their dates.
 
 ### Historical
 
+The dated root-level history was physically moved under `docs/history/` on
+2026-09-28 so the repository root shows source before working notes. Each moved
+file keeps its lifecycle banner and body; only the banner's own relative link
+targets were adjusted for the new location. Two obsolete root artifacts,
+`PROJECT_STATE.md.bak` and `.context-bundle.md`, were removed in the same pass
+(git history preserves both).
+
 | Path | Label | Notes |
 |---|---|---|
-| `PROJECT_STATE.md` | `HISTORICAL_STATE` | Status snapshots, the newest dated 2026-09-04. |
-| `PROJECT_STATE.md.bak` | `HISTORICAL_STATE` | Backup of a 2026-05-28 snapshot. Left byte-identical. |
-| `FEATURES.md` | `HISTORICAL_STATE` | Backlog snapshot from 2026-05-29. |
-| `PLAN.md` | `HISTORICAL_PLAN` | Day-0 cycle plan, 2026-05-23. |
-| `CONTINUOUS_WORLD_PLAN.md`, `FINAL_POLISH_PLAN.md`, `FINAL_SWEEP_PLAN.md`, `FIX_PLAN.md`, `REFINEMENT_PLAN.md`, `REFINE_WOW_PLAN.md`, `SHOW_WORK_PLAN.md`, `STRUCTURAL_PASS_PLAN.md`, `VOICE_PASS_PLAN.md` | `HISTORICAL_PLAN` | Branch work plans from June 2026. |
-| `COWORK_PROMPT.md`, `docs/COWORK_GITHUB_URLS.md` | `HISTORICAL_PLAN` | One-off prompts from May 2026. |
+| `docs/history/PROJECT_STATE.md` | `HISTORICAL_STATE` | Status snapshots, the newest dated 2026-09-04. |
+| `docs/history/FEATURES.md` | `HISTORICAL_STATE` | Backlog snapshot from 2026-05-29. |
+| `docs/history/PLAN.md` | `HISTORICAL_PLAN` | Day-0 cycle plan, 2026-05-23. |
+| `docs/history/CONTINUOUS_WORLD_PLAN.md`, `docs/history/FINAL_POLISH_PLAN.md`, `docs/history/FINAL_SWEEP_PLAN.md`, `docs/history/FIX_PLAN.md`, `docs/history/REFINEMENT_PLAN.md`, `docs/history/REFINE_WOW_PLAN.md`, `docs/history/SHOW_WORK_PLAN.md`, `docs/history/STRUCTURAL_PASS_PLAN.md`, `docs/history/VOICE_PASS_PLAN.md` | `HISTORICAL_PLAN` | Branch work plans from June 2026. |
+| `docs/history/COWORK_PROMPT.md`, `docs/COWORK_GITHUB_URLS.md` | `HISTORICAL_PLAN` | One-off prompts from May 2026. |
 | `docs/FEATURES.md`, `docs/PERSONAS.md`, `docs/PROJECT_DESIGN.md`, `docs/DATA_SHAPE.md`, `docs/SCAFFOLDING_PLAN.md` | `HISTORICAL_PLAN` | Day-0 specs (2026-05-23 to 2026-05-28). |
 | `designs/CINEMATIC_INTRO.md`, `designs/home-hero-mockup.md`, `designs/phase2-design-spec.md` | `HISTORICAL_PLAN` | Design specs for past passes. |
 | `docs/ACCESSIBILITY.md` | `SUPERSEDED` | Day-0 audit. Its own banner names the current contrast guard and `/accessibility` statement. |
-| `TASK_T_GARY_GAPS.md` | `SUPERSEDED` | 2026-05-27 test task, since covered by `lib/__tests__/static-integrity.test.ts`. |
-| `.context-bundle.md` | `GENERATED_EXPIRED` | Agent boot bundle generated 2026-05-29, valid for about seven days. |
+| `docs/history/TASK_T_GARY_GAPS.md` | `SUPERSEDED` | 2026-05-27 test task, since covered by `lib/__tests__/static-integrity.test.ts`. |
 
 ## Keeping this legible
 
@@ -115,5 +122,6 @@ counts and claims stay true for their dates.
   (label, date, where current truth lives) instead of rewriting its body, and
   update its row here.
 - Date new plans and receipts in their first lines; dated receipts belong under `qa-reports/`.
-- Physical moves of historical files are deliberately deferred: many are cited by
-  path from receipts and evidence manifests.
+- Historical plans and state snapshots live under `docs/history/`. Dated receipts
+  and evidence written before 2026-09-28 still cite their then-root paths; those
+  citations are correct for their dates and are not rewritten.
