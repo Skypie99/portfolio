@@ -5,7 +5,7 @@ Sky's public-facing portfolio. Static Next.js 15 site deployed to GitHub Pages. 
 **Live:** https://skypistudio.com
 **Local path:** Sky's checkout is `~/Portfolio`; nothing depends on that path, and any clone works.
 **Owner:** hello@skypistudio.com
-**Which docs are current:** `docs/INDEX.md`. Root `*_PLAN.md`, `PROJECT_STATE.md`, and similar files are dated history (each carries a lifecycle banner).
+**Which docs are current:** `docs/INDEX.md`. The dated root-level history (`*_PLAN.md`, `PROJECT_STATE.md`, and similar) lives under `docs/history/` (each file carries a lifecycle banner).
 
 ---
 
@@ -137,7 +137,7 @@ Always run `npm run typecheck` before declaring something done; CI also runs lin
 - **Themes:** light and dark via `next-themes` (class strategy on `<html>`). Colours are `--rgb-*` custom properties defined for `:root` and `html.dark` in `app/globals.css` and exposed as Tailwind colours in `tailwind.config.ts`. Visual rules: `UI_SYSTEM.md`; motion rules: `MOTION_SYSTEM.md`.
 - Components are in `components/`, pages are in `app/`. Don't blur the line.
 - Client components (`"use client"`) only when actually needed (event handlers, browser APIs). Everything else stays server/static.
-- Tests live in `app/__tests__/`, `components/__tests__/`, and `lib/__tests__/` (Vitest runs any `**/__tests__/**/*.test.{ts,tsx}`). Match the filename of what you're testing.
+- Tests live in `app/__tests__/`, `components/__tests__/`, `lib/__tests__/`, and `test-utils/__tests__/` (Vitest runs any `**/__tests__/**/*.test.{ts,tsx}`). `test-utils/` holds shared test helpers (the GSAP timer owner, `test-utils/gsap-teardown.ts`, and its guards). Match the filename of what you're testing.
 - QA evidence goes under `qa-reports/`; follow the evidence rule in `qa-reports/INDEX.md` and regenerate that index with `npm run qa:index`.
 
 ---

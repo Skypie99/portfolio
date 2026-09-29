@@ -98,7 +98,7 @@ byte-identical. See `MOTION_SYSTEM.md` §11.
 The site now **shows** every product, not just describes it. ONE reusable component —
 `ProductReveal` (+ `DeviceFrame`) — renders product media in the golden-hour world, echoing the
 locked intro with the site's own (non-GSAP) motion. Two states share ONE reserved frame so a real
-screenshot is a **one-line swap** with **zero CLS** (see `SHOW_WORK_PLAN.md`):
+screenshot is a **one-line swap** with **zero CLS** (historical guide: `docs/history/SHOW_WORK_PLAN.md`):
 - **Placeholder** (no real `src`) — a genuinely beautiful, pure-CSS golden-hour world (`.pr-world`:
   `--rgb-gold` sun-bloom + per-product `--pr-sig` key light + cool prism `150 188 214` + `--rgb-earth`
   → `--rgb-earth-deep` ground) with a `.pr-horizon` hairline, a per-medium **device frame**, and a
@@ -137,7 +137,7 @@ the theme toggle (the user's explicit choice) is what owns every readable surfac
 (.77 / .66) — set just above the alpha each surface needs to keep **all text at WCAG AA over every
 world state** (verified by contrast pass: light body ≥9.7:1 / small-meta ≥4.5:1; dark all ≥5.2:1).
 All additive — `token-parity` green, the `.cdesert-*` / `.cinematic-*` ranges untouched. See
-`MOTION_SYSTEM.md` §13 + `CONTINUOUS_WORLD_PLAN.md`.
+`MOTION_SYSTEM.md` §13 + `docs/history/CONTINUOUS_WORLD_PLAN.md`.
 
 ## UI-polish pass (2026-08-01)
 

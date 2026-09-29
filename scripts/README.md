@@ -23,12 +23,20 @@ has been run; none of them installs anything.
 | `prune-500.mjs` | `ACTIVE_BUILD` | `postbuild` | Removes the unreachable pages-router `/500` from `out/`. Never touches the `/404` pair GitHub Pages serves. |
 | `og-png-alias.mjs` | `ACTIVE_BUILD` | `postbuild` | Copies each generated share card to a byte-identical `.png` path, so GitHub Pages serves it as an image. |
 | `generate-qa-index.mjs` | `ACTIVE_MAINTENANCE` | `npm run qa:index`; `npm run qa:index:check` | Regenerates `qa-reports/INDEX.md` from tracked files. Check mode writes nothing and exits 1 on drift. |
-| `overflow-census.mjs` | `ACTIVE_QA` (owner machine only) | `npm run build`, then `npm run check:overflow` (optionally `-- --widths 320,375,414`) | Element-level horizontal-overflow census of every built route in both themes, with a non-vacuity probe. See the known limits below. |
+| `overflow-census.mjs` | `ACTIVE_QA` (local; needs Chromium) | `npm ci`, `npm run build`, `npx playwright-core install chromium` (once), then `npm run check:overflow` (optionally `-- --widths 320,375,414`); override the port with `OVERFLOW_PORT` | Element-level horizontal-overflow census of every built route in both themes, with a non-vacuity probe. See the fresh-clone setup below. |
+| `static-serve.mjs` | `ACTIVE_QA` (helper) | `node scripts/static-serve.mjs <dir> [port]` | Dependency-free loopback static server for a built export; used by `overflow-census.mjs`. Prints the bound URL, fails clearly on a missing directory or a taken port, and shuts down cleanly on SIGTERM/SIGINT. |
 
-`overflow-census.mjs` known limits: it serves `out/` with
-`design-reviews/showcase-refresh/tools/static-serve.mjs`, which is not tracked,
-so it cannot run from a fresh clone; and it looks for Chromium only in the macOS
-Playwright cache (`~/Library/Caches/ms-playwright`).
+`overflow-census.mjs` fresh-clone setup: it serves `out/` with the tracked
+`scripts/static-serve.mjs` (no untracked helper), and resolves Chromium portably
+through `playwright-core` (`chromium.executablePath()`, honouring
+`PLAYWRIGHT_BROWSERS_PATH`), then the `PLAYWRIGHT_CHROMIUM_EXECUTABLE` override,
+then the legacy macOS Playwright cache. From a fresh clone the only extra step
+beyond `npm ci && npm run build` is to install the version-matched browser once:
+
+    npx playwright-core install chromium
+
+`--with-deps` adds the OS libraries where they are missing. Neither
+`overflow-census.mjs` nor `verify-intro-focus.cjs` (below) runs on CI.
 
 ## Media pipeline
 

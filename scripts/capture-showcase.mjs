@@ -379,7 +379,11 @@ async function runProject(project, args, { mastersRoot }) {
   try {
     if (args.dry) {
       // No side effects in dry mode: resolve the SHA without creating worktrees.
-      const ref = project.source.kind === 'inplace' ? 'HEAD' : project.source.ref;
+      // Live projects (e.g. Dashboard) carry `shaRef`, not `ref`; mirror the
+      // real path so the plan resolves a real ref instead of printing undefined.
+      const ref = project.source.kind === 'inplace'
+        ? 'HEAD'
+        : (project.source.ref ?? project.source.shaRef ?? 'HEAD');
       requireRepo(project);
       const sha = resolveSha(project.repo, ref);
       const jobs = project.scenes.flatMap((s) => themesFor(s, args.theme).flatMap((t) => s.viewports.map((v) => `${s.id}.${t}.${v}`)));

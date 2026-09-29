@@ -235,7 +235,7 @@ Plus craft: Process step dividers → `.rule-ember` gradient hairlines; About Pr
 ## §12 — Show the work, cinematically (2026-06-04) — `ProductReveal`
 
 The reusable product-media component (`components/ProductReveal.tsx` + `DeviceFrame.tsx`) that shows
-every product (placeholder now, real screenshot via a one-line swap later — see `SHOW_WORK_PLAN.md`).
+every product (real screenshot via a one-line swap; the historical guide is `docs/history/SHOW_WORK_PLAN.md`).
 It echoes the locked intro's film language with the SITE's own motion only; no GSAP, no new dependency.
 
 | Move | Where | Motion | Reduced motion / fallback |
@@ -276,7 +276,7 @@ fight (different layers). New tokens: `--day-night-rest`, `--sky-day/dusk/night-
 `--surface-alpha[-alt|-cool]` — all additive (`token-parity` green; intro untouched). Readability:
 panel alphas are tuned so ALL text clears WCAG AA over every world state in both themes (measured).
 Hook: `useDayNight` in `lib/motion.ts`; component: `components/WorldBackdrop.tsx`. See
-`CONTINUOUS_WORLD_PLAN.md`.
+`docs/history/CONTINUOUS_WORLD_PLAN.md`.
 
 ## §14 — Motion-clockwork pass (2026-07-19) — one grammar, one clock
 

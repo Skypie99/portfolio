@@ -51,8 +51,9 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
       <CardField slug={d.id} featured={d.featured} />
 
       {/* Show-the-work 2026-06-04: a cinematic product band crowns the card.
-          Placeholder now (golden-hour world); a real screenshot drops in via
-          d.heroShot — see SHOW_WORK_PLAN.md. Decorative — the inscription below
+          Ships the real capture from content/deliverables.json (d.heroShot /
+          d.cardImage / d.mobileCardImage); the original swap guide is
+          docs/history/SHOW_WORK_PLAN.md. Decorative — the inscription below
           carries the title/links, so all text stays on glass (AA preserved). */}
       <CardProductReveal
         slug={d.id}
