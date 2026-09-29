@@ -56,6 +56,12 @@
  * Both readings are printed side by side: the vacuous scrollWidth one (labelled,
  * so old numbers stay comparable) and the real element census.
  *
+ * FRESH CLONE: after `npm ci` and `npm run build`, install the browser once with
+ * `npx playwright-core install chromium`, then `npm run check:overflow`. It
+ * serves `out/` with the tracked `scripts/static-serve.mjs` (no untracked
+ * helper) and resolves Chromium portably via playwright-core, falling back to
+ * PLAYWRIGHT_CHROMIUM_EXECUTABLE and then the macOS cache.
+ *
  * NOT WIRED INTO CI. It drives a real browser via playwright-core and needs a
  * chromium binary on disk, which CI does not install. It is a local gate and a
  * pre-merge check. `npm run test` remains the CI gate.
@@ -63,6 +69,7 @@
  * Exit codes: 0 clean · 1 real overflow found · 2 broken instrument / no fixture.
  */
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
 import { createRequire } from 'node:module';
@@ -70,8 +77,10 @@ import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const OUT = path.join(ROOT, 'out');
-const PORT = Number(process.env.OVERFLOW_PORT || 3099);
-const BASE = `http://127.0.0.1:${PORT}`;
+/* Port 0 asks the OS for a free port, so a stray listener can never be mistaken
+   for our fixture. Set OVERFLOW_PORT to pin a specific port instead. */
+const PORT = process.env.OVERFLOW_PORT ? Number(process.env.OVERFLOW_PORT) : 0;
+let BASE = null;
 
 const arg = (flag, dflt) => {
   const i = process.argv.indexOf(flag);
@@ -79,6 +88,13 @@ const arg = (flag, dflt) => {
 };
 const WIDTHS = arg('--widths', '320,375').split(',').map((n) => Number(n.trim())).filter(Boolean);
 const THEMES = ['light', 'dark'];
+
+/* A width list that parses to nothing would run 0 frames and report a clean
+   site — the silent pass this whole instrument exists to prevent. */
+if (!WIDTHS.length || WIDTHS.some((w) => !Number.isFinite(w) || w <= 0)) {
+  console.error(`[overflow] invalid --widths "${arg('--widths', '')}" — pass positive comma-separated pixel widths, e.g. --widths 320,375.`);
+  process.exit(2);
+}
 
 let chromium;
 try {
@@ -88,8 +104,26 @@ try {
   process.exit(2);
 }
 
+/* Portable browser resolution. Order:
+ *   1. playwright-core's own resolver — cross-platform and honours
+ *      PLAYWRIGHT_BROWSERS_PATH. It returns the expected path even when the
+ *      browser has not been downloaded, so the existence check is required.
+ *   2. PLAYWRIGHT_CHROMIUM_EXECUTABLE — the repo's documented cross-machine
+ *      override (see scripts/verify-intro-focus.cjs and scripts/README.md);
+ *      it takes over whenever playwright-core's default is not installed.
+ *   3. The legacy macOS Playwright-cache scan, kept so an owner machine whose
+ *      installed revision predates playwright-core's expectation still resolves.
+ * If all three miss, the caller fails closed with install instructions. */
 function resolveChromium() {
-  const cache = path.join(process.env.HOME, 'Library/Caches/ms-playwright');
+  try {
+    const resolved = chromium.executablePath();
+    if (resolved && fs.existsSync(resolved)) return resolved;
+  } catch { /* playwright-core could not resolve it — fall through */ }
+
+  const override = process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE;
+  if (override && fs.existsSync(override)) return override;
+
+  const cache = path.join(os.homedir(), 'Library/Caches/ms-playwright');
   if (!fs.existsSync(cache)) return null;
   const newest = (re, rel) =>
     fs.readdirSync(cache).filter((d) => re.test(d))
@@ -198,44 +232,98 @@ async function main() {
   }
   const exe = resolveChromium();
   if (!exe) {
-    console.error('[overflow] no chromium binary found. Install one: `npx playwright install chromium`.');
+    console.error('[overflow] no chromium binary found.');
+    console.error('[overflow] install the version-matched browser once: `npx playwright-core install chromium`');
+    console.error('[overflow] (add `--with-deps` if the OS libraries are missing), or point');
+    console.error('[overflow] PLAYWRIGHT_CHROMIUM_EXECUTABLE at an existing chromium build.');
     process.exit(2);
   }
 
-  const server = spawn('node', [path.join(ROOT, 'design-reviews/showcase-refresh/tools/static-serve.mjs'), OUT, String(PORT)], { stdio: 'ignore' });
+  /* The served directory is fixture state; the tracked helper owns the listener.
+     It reports the bound URL on stdout, so BASE is whatever port we actually
+     got (ephemeral unless OVERFLOW_PORT pinned one) — never a stranger's server.
+     stderr is captured so a missing dir or a pinned-port clash is reported. */
+  const server = spawn('node', [path.join(ROOT, 'scripts/static-serve.mjs'), OUT, String(PORT)], {
+    stdio: ['ignore', 'pipe', 'pipe'],
+  });
+  const serverErr = [];
+  server.stderr.on('data', (b) => { serverErr.push(b.toString()); if (serverErr.length > 40) serverErr.shift(); });
+  server.on('error', (e) => serverErr.push(`[overflow] could not spawn the fixture server: ${e.message}\n`));
+  let serverOut = '';
+  server.stdout.on('data', (b) => {
+    serverOut += String(b);
+    const m = serverOut.match(/http:\/\/127\.0\.0\.1:(\d+)/);
+    if (m && !BASE) BASE = `http://127.0.0.1:${m[1]}`;
+  });
+
+  /* Clean teardown: SIGTERM closes the listener; SIGKILL only if it does not. */
+  const stopServer = () => {
+    if (server.exitCode !== null || server.signalCode) return;
+    try { server.kill('SIGTERM'); } catch { /* already gone */ }
+    setTimeout(() => { try { server.kill('SIGKILL'); } catch { /* gone */ } }, 1000).unref();
+  };
+
+  /* A Ctrl-C mid-run must not orphan the fixture listener. */
+  let browser = null;
+  for (const sig of ['SIGINT', 'SIGTERM']) {
+    process.on(sig, () => {
+      stopServer();
+      try { if (browser) browser.close(); } catch { /* already gone */ }
+      process.exit(130);
+    });
+  }
+
   const ready = async () => {
-    for (let i = 0; i < 40; i++) {
-      try { if ((await fetch(BASE + '/', { signal: AbortSignal.timeout(900) })).ok) return true; } catch {}
-      await new Promise((r) => setTimeout(r, 250));
+    for (let i = 0; i < 60; i++) {
+      if (server.exitCode !== null) return false;
+      if (BASE) { try { if ((await fetch(BASE + '/', { signal: AbortSignal.timeout(900) })).ok) return true; } catch {} }
+      await new Promise((r) => setTimeout(r, 100));
     }
     return false;
   };
-  if (!(await ready())) { server.kill('SIGKILL'); console.error('[overflow] static fixture never came up.'); process.exit(2); }
-
-  const browser = await chromium.launch({ executablePath: exe });
-  const urls = routes();
-  const findings = [];
-  let frames = 0, vacuousFrames = 0, proofFailures = 0;
-
-  for (const width of WIDTHS) {
-    for (const theme of THEMES) {
-      for (const url of urls) {
-        const ctx = await browser.newContext({ viewport: { width, height: 900 }, colorScheme: theme, reducedMotion: 'reduce', deviceScaleFactor: 1 });
-        const page = await ctx.newPage();
-        await page.goto(BASE + url, { waitUntil: 'networkidle' });
-        await page.waitForTimeout(250);
-        const r = await page.evaluate(CENSUS);
-        frames++;
-        if (r.scrollWidthReading.vacuous) vacuousFrames++;
-        if (!r.nonVacuityProof) proofFailures++;
-        for (const o of r.offenders) findings.push({ url, theme, width, ...o });
-        await ctx.close();
-      }
-    }
+  if (!(await ready())) {
+    console.error('[overflow] static fixture never came up (helper: scripts/static-serve.mjs).');
+    const tail = serverErr.join('').trim();
+    if (tail) console.error(tail);
+    else if (BASE) console.error(`[overflow] helper is listening on ${BASE} but GET / never returned 200 — is out/index.html present?`);
+    else console.error('[overflow] helper gave no diagnostics and no bound URL.');
+    stopServer();
+    process.exit(2);
   }
 
-  await browser.close();
-  server.kill('SIGKILL');
+  const urls = routes();
+  if (!urls.length) {
+    console.error('[overflow] no built routes found under ./out/ — the export is empty, refusing to certify.');
+    stopServer();
+    process.exit(2);
+  }
+  const findings = [];
+  let frames = 0, vacuousFrames = 0, proofFailures = 0;
+  try {
+    browser = await chromium.launch({ executablePath: exe });
+
+    for (const width of WIDTHS) {
+      for (const theme of THEMES) {
+        for (const url of urls) {
+          const ctx = await browser.newContext({ viewport: { width, height: 900 }, colorScheme: theme, reducedMotion: 'reduce', deviceScaleFactor: 1 });
+          const page = await ctx.newPage();
+          await page.goto(BASE + url, { waitUntil: 'networkidle' });
+          await page.waitForTimeout(250);
+          const r = await page.evaluate(CENSUS);
+          frames++;
+          if (r.scrollWidthReading.vacuous) vacuousFrames++;
+          if (!r.nonVacuityProof) proofFailures++;
+          for (const o of r.offenders) findings.push({ url, theme, width, ...o });
+          await ctx.close();
+        }
+      }
+    }
+  } finally {
+    /* Whatever happens above — launch failure, a mid-run throw, success — the
+       listener is released and the browser closed. */
+    try { if (browser) await browser.close(); } catch { /* report the original error */ }
+    stopServer();
+  }
 
   const worst = findings.length ? Math.max(...findings.map((f) => f.over)) : 0;
   console.log(`[overflow] ${frames} frames · ${urls.length} routes × ${THEMES.length} themes × ${WIDTHS.length} widths (${WIDTHS.join(', ')})`);
