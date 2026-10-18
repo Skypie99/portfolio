@@ -120,6 +120,9 @@ export function Hero({
               // pill after Skip, and 24px more air would spend that margin, so
               // ≤375 keeps the base 16px.
               'mb-10 max-[375px]:mb-4',
+              // 1280-class desktop only (1280–1439px wide): 8 of the 20px fit
+              // budget for the 1280×800 first screen. 1440 and up keep 40.
+              'xl:max-[1439px]:mb-8',
             )}
           >
             {avatarSrc && (
@@ -152,7 +155,8 @@ export function Hero({
         )}
 
         {/* Eyebrow + terracotta brand rule */}
-        <div className="hero-scroll-fade mb-4 sm:mb-12">
+        {/* 1280-class desktop only: 8 more of the 20px fit budget (48 → 40). */}
+        <div className="hero-scroll-fade mb-4 sm:mb-12 xl:max-[1439px]:mb-10">
           <p className="font-mono text-label text-text-meta mb-3">
             {eyebrow}
           </p>
@@ -167,7 +171,8 @@ export function Hero({
             'text-hero',
             'leading-[1.02] sm:leading-[1.0]',
             'ember',
-            'mb-4 max-[375px]:mb-3 sm:mb-7',
+            // 1280-class desktop only: the last 4 of the 20px fit budget (28 → 24).
+            'mb-4 max-[375px]:mb-3 sm:mb-7 xl:max-[1439px]:mb-6',
             'max-w-[16ch] xl:max-w-[24ch]',
             'text-balance',
             // Narrow phones need a genuine display step, not seven compressed

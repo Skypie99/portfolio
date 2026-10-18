@@ -155,3 +155,19 @@ describe('Hero — RC-2 identity gap (mobile, M-CON-001 B r2)', () => {
     expect(kicker.parentElement).toHaveClass('mb-4', 'sm:mb-12');
   });
 });
+
+describe('Hero — RC-2 1280-class fit budget', () => {
+  it('spends 8 + 8 + 4 = 20px between 1280 and 1439 only; 1440 and up keep the base rhythm', () => {
+    const { container } = render(<Hero {...rc2Props} />);
+    const identity = container.querySelector('[data-hero-identity]') as HTMLElement;
+    const eyebrowWrapper = screen.getByText(rc2Props.eyebrow).parentElement as HTMLElement;
+    const h1 = screen.getByRole('heading', { level: 1 });
+    expect(identity).toHaveClass('xl:max-[1439px]:mb-8');
+    expect(eyebrowWrapper).toHaveClass('sm:mb-12', 'xl:max-[1439px]:mb-10');
+    expect(h1).toHaveClass('sm:mb-7', 'xl:max-[1439px]:mb-6');
+    // No open-ended xl: margin on any of the three, so 1440 and up are untouched.
+    for (const el of [identity, eyebrowWrapper, h1]) {
+      expect(el.className).not.toMatch(/(^|\s)xl:mb-/);
+    }
+  });
+});
