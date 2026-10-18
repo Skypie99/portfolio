@@ -140,3 +140,56 @@ describe('Receipt — the G2 method underline', () => {
     expect(container.querySelector('.method-draw')).toBeNull();
   });
 });
+
+/**
+ * RC-2 first visual slice — the unboxed presentation.
+ *
+ * The homepage hero's evidence strip sets its receipt as one entry of a
+ * hairline ledger rather than a bordered card. `unboxed` must drop ONLY the
+ * paper (fill, border, radius, padding) and keep everything the card tests
+ * above pin: the content and its order, the <time>, the method pair and both
+ * draw classes. The default output must not move at all.
+ */
+describe('Receipt — unboxed presentation (RC-2)', () => {
+  const props = {
+    value: '0',
+    label: 'axe violations: 17 routes × 2 themes, strict rules',
+    tier: 'measured' as const,
+    date: '2026-08-25',
+    methodHref: '/accessibility/#receipts',
+    methodLabel: 'evidence',
+  };
+  const paper = ['bg-receipt', 'border', 'border-receipt-rule', 'rounded-md', 'p-6'];
+
+  it('the default is still the bordered receipt-paper card', () => {
+    const { container } = render(<Receipt {...props} />);
+    const root = container.firstElementChild as HTMLElement;
+    expect(root).toHaveClass(...paper, 'method-pair');
+  });
+
+  it('unboxed drops the paper and nothing else', () => {
+    const { container } = render(<Receipt {...props} unboxed />);
+    const root = container.firstElementChild as HTMLElement;
+    for (const cls of paper) expect(root).not.toHaveClass(cls);
+    expect(root).toHaveClass('flex', 'flex-col', 'gap-2', 'method-pair');
+    // Content and order: figure → what it measures → tier · date · method.
+    expect(root.children).toHaveLength(3);
+    expect(root.children[0]).toHaveTextContent('0');
+    expect(root.children[0]).toHaveClass('tabular-nums');
+    expect(root.children[1]).toHaveTextContent(props.label);
+    expect(root.children[2].textContent ?? '').toMatch(/^measured 2026-08-25/);
+    expect(root.querySelector('time')).toHaveAttribute('dateTime', '2026-08-25');
+    const link = screen.getByRole('link', { name: 'evidence' });
+    expect(link).toHaveAttribute('href', '/accessibility/#receipts');
+    expect(link).toHaveClass('link-draw', 'method-draw');
+  });
+
+  it('unboxed and the card render identical markup apart from the root class list', () => {
+    const card = render(<Receipt {...props} />).container.innerHTML;
+    cleanup();
+    const ledger = render(<Receipt {...props} unboxed />).container.innerHTML;
+    const withoutRootClass = (html: string) => html.replace(/^<div class="[^"]*"/, '<div');
+    expect(withoutRootClass(ledger)).toBe(withoutRootClass(card));
+    expect(ledger).not.toBe(card);
+  });
+});

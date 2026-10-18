@@ -24,6 +24,12 @@ type ReceiptProps = {
   methodHref?: string;
   /** Defaults to "method" if methodHref is given without a label. */
   methodLabel?: string;
+  /** Presentation. The default is the bordered receipt-paper card. `unboxed`
+   *  drops only the paper (no fill, border, radius or padding) so a caller can
+   *  set the receipt as one entry of a hairline ledger and own the separators;
+   *  the content, its order and the `.method-pair` hook are identical. First
+   *  consumer: the homepage hero's evidence strip (RC-2 first visual slice). */
+  unboxed?: boolean;
   className?: string;
 };
 
@@ -45,11 +51,23 @@ type ReceiptProps = {
  * prose this card has no slot for. See FlagstoneTestReceipt's own docblock
  * for the reasoning (reviewed and kept separate, Phase H follow-up).
  */
-export function Receipt({ value, label, tier, date, methodHref, methodLabel, className }: ReceiptProps) {
+export function Receipt({
+  value,
+  label,
+  tier,
+  date,
+  methodHref,
+  methodLabel,
+  unboxed = false,
+  className,
+}: ReceiptProps) {
   return (
     <div
       className={cn(
-        'flex flex-col gap-2 bg-receipt border border-receipt-rule rounded-md p-6',
+        'flex flex-col gap-2',
+        // The receipt-paper box is the default; `unboxed` is the same
+        // instrument with no paper around it (the caller draws the rules).
+        !unboxed && 'bg-receipt border border-receipt-rule rounded-md p-6',
         // G2 (THE ROOM Phase G): the card is the method PAIR — the figure and
         // the door to its proof are one instrument, so landing anywhere on the
         // receipt draws the method's underline. No-op when methodHref is absent
