@@ -1,0 +1,111 @@
+{
+ "selfCheck": {
+  "pair1": 2.0425,
+  "expected1": 2.0425,
+  "pair2": 2.8615,
+  "expected2": 2.8615
+ },
+ "themes": {
+  "light": {
+   "surface": "rgb(245 237 222)",
+   "neutralLine": "rgb(204 207 190)",
+   "aRest": "rgb(203 140 111)",
+   "bRest": "rgb(220 179 156)",
+   "captionRule": "rgb(206 179 160)",
+   "ring": "rgb(185 99 64)",
+   "pillOnPoster": "rgb(197 203 210)",
+   "ratios": {
+    "neutralLine_vs_surface": 1.36,
+    "lineStrong_vs_surface": 2.7,
+    "aRest_vs_surface": 2.39,
+    "bRest_vs_surface": 1.65,
+    "captionRule_vs_surface": 1.71,
+    "ring_vs_surface": 3.67,
+    "ring_vs_aRest": 1.53,
+    "ring_vs_bRest": 2.23,
+    "ring_vs_pillOnPoster": 2.62,
+    "ring_vs_posterMean": 2.26,
+    "inkMeta_vs_surface (labels, provenance)": 5.38,
+    "inkMuted_vs_surface (captions)": 6.85,
+    "ink_vs_surface (heading)": 11.87,
+    "accentInk_vs_surface (kicker)": 6.08,
+    "playIcon(inkMeta)_vs_pillOnPoster": 3.84,
+    "pillOnPoster_vs_posterMean": 5.91,
+    "pillBorder(line)_vs_posterMean": 6.07
+   },
+   "deltaE2000": {
+    "aRest_vs_neutralLine": 27.27,
+    "bRest_vs_neutralLine": 19.09,
+    "aRest_vs_bRest": 11.02,
+    "bRest_vs_captionRule": 4.15,
+    "aRest_vs_captionRule": 12.93,
+    "aRest_vs_lineStrong (prefers-contrast more)": 26.24,
+    "bRest_vs_lineStrong (prefers-contrast more)": 24.54
+   }
+  },
+  "dark": {
+   "surface": "rgb(34 28 22)",
+   "neutralLine": "rgb(44 52 54)",
+   "aRest": "rgb(103 66 45)",
+   "bRest": "rgb(86 56 39)",
+   "captionRule": "rgb(103 82 66)",
+   "ring": "rgb(207 122 79)",
+   "pillOnPoster": "rgb(35 46 53)",
+   "ratios": {
+    "neutralLine_vs_surface": 1.33,
+    "lineStrong_vs_surface": 2.2,
+    "aRest_vs_surface": 1.92,
+    "bRest_vs_surface": 1.6,
+    "captionRule_vs_surface": 2.29,
+    "ring_vs_surface": 5.26,
+    "ring_vs_aRest": 2.74,
+    "ring_vs_bRest": 3.29,
+    "ring_vs_pillOnPoster": 4.34,
+    "ring_vs_posterMean": 3.0,
+    "inkMeta_vs_surface (labels, provenance)": 7.43,
+    "inkMuted_vs_surface (captions)": 9.17,
+    "ink_vs_surface (heading)": 13.98,
+    "accentInk_vs_surface (kicker)": 9.17,
+    "playIcon(inkMeta)_vs_pillOnPoster": 6.13,
+    "pillOnPoster_vs_posterMean": 1.44,
+    "pillBorder(line)_vs_posterMean": 1.32
+   },
+   "deltaE2000": {
+    "aRest_vs_neutralLine": 23.39,
+    "bRest_vs_neutralLine": 20.32,
+    "aRest_vs_bRest": 4.51,
+    "bRest_vs_captionRule": 8.82,
+    "aRest_vs_captionRule": 7.57,
+    "aRest_vs_lineStrong (prefers-contrast more)": 24.59,
+    "bRest_vs_lineStrong (prefers-contrast more)": 23.22
+   },
+   "bDarkCandidates": {
+    "0.24": {
+     "rest": "rgb(76 51 36)",
+     "dE_vs_neutralLine": 18.46,
+     "ratio_vs_surface": 1.44
+    },
+    "0.28": {
+     "rest": "rgb(82 54 38)",
+     "dE_vs_neutralLine": 19.71,
+     "ratio_vs_surface": 1.54
+    },
+    "0.3": {
+     "rest": "rgb(86 56 39)",
+     "dE_vs_neutralLine": 20.32,
+     "ratio_vs_surface": 1.6
+    },
+    "0.34": {
+     "rest": "rgb(93 60 41)",
+     "dE_vs_neutralLine": 21.55,
+     "ratio_vs_surface": 1.72
+    },
+    "0.4": {
+     "rest": "rgb(103 66 45)",
+     "dE_vs_neutralLine": 23.39,
+     "ratio_vs_surface": 1.92
+    }
+   }
+  }
+ }
+}

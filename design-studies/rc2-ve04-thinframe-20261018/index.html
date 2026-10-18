@@ -1,0 +1,832 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>RC2 VE04 Thin-Frame Study</title>
+<!--
+  SKYPI RC-2 · RC2-VE04-COMP-01 · NON-PRODUCTION DESIGN STUDY (2026-10-18)
+
+  Isolated visual comparison of the Flagstone first-proof arrival treatment
+  (W4-06.VE04_M1, shipped) against the D-CON-003 A three-window proof row.
+
+  WHAT THIS FILE IS
+  · A standalone prototype. It imports nothing from the Next.js app and changes
+    nothing in it. Tokens, radii, durations, easing, the focus ring and the
+    VE04 state rules are transcribed from app/globals.css at the study
+    baseline (a5854a5) so the comparison is made in the site's own values.
+  · Media are the real Flagstone captures referenced from
+    content/deliverables.json, loaded in place from ../../public/showcase/.
+    Nothing is copied, regenerated or recoloured.
+
+  WHAT THIS FILE IS NOT
+  · It is not the production component. The "arrival beat" here plays the
+    settle TRANSITION only (armed → settling → settled, same durations and
+    easing). The production lifecycle (session consumption, hash / Back-Forward
+    / reload / restored-scroll settling, failsafe floors) is NOT reproduced and
+    nothing here should be read as evidence about it.
+  · The baseline section is a RECONSTRUCTION built from source, not a render
+    of the live site.
+
+  URL PARAMETERS (all optional)
+    theme=light|dark     mat=mat|bleed (window 01 treatment in A/B)
+    beat=auto|hold|settled (prototype beat mode)   variant=all|baseline|A|B
+    chrome=on|off (study chrome)   opt=warm-rule (B option: warm the 01 caption rule)
+
+  Fonts: the site self-hosts Cormorant Garamond, DM Sans and DM Mono through
+  next/font/google. This standalone page requests the same families from
+  Google Fonts; offline it falls back to the site's own fallback stacks.
+-->
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300&family=DM+Mono:wght@400;500&display=swap">
+<script>
+/* Mirrors app/layout.tsx: `html.js` is set during head parse so the armed
+   (pre-trigger) edge exists only for JS visitors; no-JS rests settled. */
+(function () {
+  var d = document.documentElement;
+  d.classList.add('js');
+  var q = new URLSearchParams(location.search);
+  var theme = q.get('theme');
+  if (theme !== 'light' && theme !== 'dark') {
+    theme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+  }
+  if (theme === 'dark') d.classList.add('dark');
+  d.dataset.show = q.get('variant') || 'all';
+  d.dataset.mat = q.get('mat') === 'bleed' ? 'bleed' : 'mat';
+  d.dataset.beat = ['hold', 'settled'].indexOf(q.get('beat')) >= 0 ? q.get('beat') : 'auto';
+  d.dataset.chrome = q.get('chrome') === 'off' ? 'off' : 'on';
+  if (q.get('opt') === 'warm-rule') d.dataset.optWarmRule = '1';
+})();
+</script>
+<style>
+/* ==========================================================================
+   1. TOKENS — transcribed from app/globals.css :root / html.dark (a5854a5)
+   ========================================================================== */
+:root {
+  --rgb-canvas: 250 248 241;
+  --rgb-canvas-alt: 245 237 222;
+  --rgb-surface: 255 255 255;
+  --rgb-surface-warm: 247 239 228;
+  --rgb-ink: 32 48 44;
+  --rgb-ink-muted: 70 84 77;
+  --rgb-ink-meta: 84 100 93;
+  --rgb-line: 204 207 190;
+  --rgb-line-strong: 140 148 132;
+  --rgb-accent: 185 99 64;
+  --rgb-accent-ink: 135 71 45;
+  --rgb-gold: 191 155 93;
+  --rgb-earth: 216 199 166;
+  --rgb-earth-deep: 197 177 141;
+  --pr-sig: 224 150 90;            /* lib/signature.ts → flagstone */
+
+  --shadow-lg: 0 4px 8px rgba(60, 32, 18, 0.07), 0 12px 28px rgba(60, 32, 18, 0.08);
+
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 180ms;
+  --dur-base: 280ms;
+  --dur-slow: 520ms;
+  --dur-transition: 420ms;
+
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+  --focus-ring-color: rgb(var(--rgb-accent));
+
+  --sidebar-w: 280px;
+  --content-max: 1120px;
+  --gutter: 2rem;
+
+  --font-cormorant: 'Cormorant Garamond', Garamond, Georgia, serif;
+  --font-dm-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-dm-mono: 'DM Mono', ui-monospace, monospace;
+
+  /* --- Study-only knobs (the variables under comparison) --- */
+  --ve04-a-alpha: 0.7;     /* shipped VE04 settled edge, light (globals.css .proof-arrival-edge) */
+  --ve04-b-alpha: 0.42;    /* Variant B rest line, light (brief: at or below ~0.42) */
+  --rule-alpha: 0.35;      /* thin warm caption rule (D-CON-003 A) */
+  --mat-inset: 20px;       /* window 01 exhibit mat inset in the thin-frame row */
+  color-scheme: light;
+}
+html.dark {
+  --rgb-canvas: 21 25 26;
+  --rgb-canvas-alt: 34 28 22;
+  --rgb-surface: 30 36 38;
+  --rgb-surface-warm: 38 31 27;
+  --rgb-ink: 236 234 224;
+  --rgb-ink-muted: 182 194 187;
+  --rgb-ink-meta: 159 176 169;
+  --rgb-line: 44 52 54;
+  --rgb-line-strong: 74 86 82;
+  --rgb-accent: 207 122 79;
+  --rgb-accent-ink: 231 181 147;
+  --rgb-gold: 201 168 95;
+  --rgb-earth: 44 35 26;
+  --rgb-earth-deep: 33 26 19;
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.50);
+  --ve04-a-alpha: 0.4;     /* shipped VE04 settled edge, dark */
+  --ve04-b-alpha: 0.30;    /* Variant B rest line, dark (see captures/colour-maths.md) */
+  color-scheme: dark;
+}
+/* prefers-contrast: more — token-layer only, as in globals.css */
+@media (prefers-contrast: more) {
+  :root { --rgb-ink-muted: 50 64 58; --rgb-ink-meta: 60 76 69; --rgb-line: 140 148 132; }
+  html.dark { --rgb-ink-muted: 205 214 208; --rgb-ink-meta: 190 204 198; --rgb-line: 74 86 82; }
+}
+
+/* ==========================================================================
+   2. BASE
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: rgb(var(--rgb-canvas));
+  color: rgb(var(--rgb-ink));
+  font-family: var(--font-dm-sans);
+  font-weight: 300;
+  font-synthesis: none;
+  line-height: 1.65;
+  overflow-x: clip;
+}
+img, video { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; }
+*:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+.skip {
+  position: absolute; left: 8px; top: -48px; padding: 8px 12px; z-index: 50;
+  background: rgb(var(--rgb-surface)); color: rgb(var(--rgb-ink));
+  border: 1px solid rgb(var(--rgb-line-strong)); border-radius: var(--radius-md);
+}
+.skip:focus { top: 8px; }
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* Section visibility via ?variant= (captures only; the bar does not hide) */
+html[data-show="baseline"] [data-study-variant]:not([data-study-variant="baseline"]),
+html[data-show="A"] [data-study-variant]:not([data-study-variant="A"]),
+html[data-show="B"] [data-study-variant]:not([data-study-variant="B"]) { display: none; }
+html[data-chrome="off"] .study-chrome { display: none; }
+
+/* ==========================================================================
+   3. STUDY CHROME — deliberately NOT in the site's visual language
+   ========================================================================== */
+.study-chrome {
+  font-family: var(--font-dm-mono);
+  font-size: 12px; line-height: 1.5; letter-spacing: 0.02em;
+  color: rgb(var(--rgb-ink-muted));
+}
+.study-bar {
+  border-bottom: 1px dashed rgb(var(--rgb-line-strong));
+  padding: 14px var(--gutter);
+  display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center;
+}
+.study-bar h1 { font: 400 12px/1.4 var(--font-dm-mono); letter-spacing: 0.125em; text-transform: uppercase; margin: 0; color: rgb(var(--rgb-ink)); }
+.study-bar .chip {
+  display: inline-block; padding: 2px 8px; border: 1px solid rgb(var(--rgb-line-strong));
+  border-radius: 4px; text-transform: uppercase; letter-spacing: 0.08em; font-size: 10px;
+}
+.study-bar .chip.warn { border-color: rgb(var(--rgb-accent)); color: rgb(var(--rgb-accent-ink)); }
+.ctl { display: inline-flex; align-items: center; gap: 6px; }
+.ctl > span { text-transform: uppercase; letter-spacing: 0.08em; font-size: 10px; }
+.ctl button {
+  min-height: 32px; padding: 4px 10px; border: 1px solid rgb(var(--rgb-line-strong));
+  background: transparent; border-radius: 4px; cursor: pointer; font-size: 11px;
+}
+.ctl button[aria-pressed="true"] { background: rgb(var(--rgb-ink)); color: rgb(var(--rgb-canvas)); border-color: rgb(var(--rgb-ink)); }
+.study-bar nav a { color: inherit; margin-right: 10px; }
+.study-note {
+  padding: 18px var(--gutter); max-width: 76ch;
+}
+.study-note p { margin: 0 0 8px; }
+.study-note code, .strip code, .notes code { font-family: var(--font-dm-mono); font-size: 0.95em; }
+.strip {
+  border-top: 1px dashed rgb(var(--rgb-line-strong));
+  padding: 12px var(--gutter);
+  display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: baseline;
+}
+.strip h2 { font: 500 12px/1.4 var(--font-dm-mono); letter-spacing: 0.125em; text-transform: uppercase; margin: 0; color: rgb(var(--rgb-ink)); }
+.strip .desc { flex: 1 1 36ch; max-width: 70ch; }
+.strip .state { text-transform: uppercase; letter-spacing: 0.08em; font-size: 10px; }
+.strip .state b { font-weight: 500; color: rgb(var(--rgb-accent-ink)); }
+.notes { padding: 24px var(--gutter) 64px; max-width: 76ch; }
+.notes h2 { font: 500 12px/1.4 var(--font-dm-mono); letter-spacing: 0.125em; text-transform: uppercase; color: rgb(var(--rgb-ink)); margin: 0 0 10px; }
+.notes ul { padding-left: 18px; margin: 0 0 16px; }
+.notes li { margin: 0 0 6px; }
+
+/* ==========================================================================
+   4. THE SITE FRAME (geometry stand-in) — rail 280 · gutter 32 · content 1120
+   ========================================================================== */
+.study-stage {
+  background: rgb(var(--rgb-canvas-alt));  /* ≈ world-surface-alt under the case body */
+  padding: 40px 0 44px;
+}
+.site-frame { display: grid; grid-template-columns: var(--sidebar-w) minmax(0, 1fr); }
+.site-rail { position: relative; border-right: 1px dashed rgb(var(--rgb-line)); }
+.site-rail span {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(-90deg);
+  white-space: nowrap; font: 400 10px/1 var(--font-dm-mono); letter-spacing: 0.125em;
+  text-transform: uppercase; color: rgb(var(--rgb-ink-meta) / 0.7);
+}
+.site-main { padding: 0 var(--gutter); min-width: 0; }
+.site-content { max-width: var(--content-max); margin: 0 auto; }
+@media (max-width: 1023.98px) {
+  .site-frame { grid-template-columns: minmax(0, 1fr); }
+  .site-rail { display: none; }
+}
+
+/* ==========================================================================
+   5. SHARED PROOF SECTION GRAMMAR (production classes → values)
+   ========================================================================== */
+.proof-kicker {               /* "Inside the build": font-mono text-label tracking-label uppercase text-accent-ink mb-6 */
+  font: 400 12px/1.4 var(--font-dm-mono); letter-spacing: 0.125em; text-transform: uppercase;
+  color: rgb(var(--rgb-accent-ink)); margin: 0 0 24px;
+}
+.proof-heading {              /* font-serif font-light text-step-2 text-ink mb-8 */
+  font: 300 24px/1.35 var(--font-cormorant); color: rgb(var(--rgb-ink)); margin: 0 0 32px;
+  text-wrap: balance;
+}
+figure { margin: 0; }
+.proof-caption-text {         /* font-sans text-body-sm text-ink-muted text-pretty */
+  font: 300 14px/1.6 var(--font-dm-sans); color: rgb(var(--rgb-ink-muted)); text-wrap: pretty; margin: 0;
+}
+
+/* --- the exhibit-mat + media layers (ProductReveal / ThemedMotion grammar) --- */
+.pr-world {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(120% 82% at 50% -14%, rgb(var(--rgb-gold) / 0.32), transparent 60%),
+    radial-gradient(94% 76% at 16% 6%, rgb(var(--pr-sig) / 0.26), transparent 62%),
+    radial-gradient(82% 92% at 110% 114%, rgb(150 188 214 / 0.16), transparent 60%),
+    linear-gradient(180deg, rgb(var(--rgb-earth) / 0.55), rgb(var(--rgb-earth-deep) / 0.9));
+}
+.pr-horizon {
+  position: absolute; left: 0; right: 0; top: 62%; height: 1px;
+  background: linear-gradient(90deg, transparent, rgb(var(--rgb-gold) / 0.42) 22%, rgb(var(--rgb-gold) / 0.42) 78%, transparent);
+}
+.ts-host { position: absolute; inset: 0; }
+.ts-matte {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(180deg, rgb(var(--pr-sig) / 0.10), transparent 70%), rgb(var(--rgb-surface) / 0.85);
+}
+.ts-matte-well {
+  position: relative; width: 88%; height: 84%; overflow: hidden;
+  border: 1px solid rgb(var(--rgb-ink) / 0.12); border-radius: 0.9rem;
+  box-shadow: var(--shadow-lg), inset 0 1px 0 0 rgb(255 255 255 / 0.55);
+}
+html.dark .ts-matte-well { box-shadow: var(--shadow-lg), inset 0 1px 0 0 rgb(255 240 214 / 0.08); }
+.ts-layer { position: absolute; inset: 0; }
+.media-cover { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* Play / Pause affordance — ThemedMotion.tsx: absolute bottom-3 right-3 h-11 w-11
+   rounded-pill border border-line bg-surface/0.72 text-ink-meta backdrop-blur-md */
+.ts-play {
+  position: absolute; right: 12px; bottom: 12px; z-index: 10;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; padding: 0; border-radius: var(--radius-pill);
+  border: 1px solid rgb(var(--rgb-line)); background: rgb(var(--rgb-surface) / 0.72);
+  color: rgb(var(--rgb-ink-meta)); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  cursor: pointer; transition: color var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out);
+}
+.ts-play:hover { color: rgb(var(--rgb-accent)); border-color: rgb(var(--rgb-line-strong)); }
+.ts-play svg { width: 16px; height: 16px; fill: currentColor; }
+.ts-play .i-pause { display: none; }
+[data-motion="playing"] .ts-play .i-play { display: none; }
+[data-motion="playing"] .ts-play .i-pause { display: block; }
+/* No-JS: the native controls stay (SSR path); the overlay button only exists once JS builds it. */
+
+/* ==========================================================================
+   6. BASELINE RECONSTRUCTION — CaseProof grid as shipped (app/work/[slug]/page.tsx)
+   ========================================================================== */
+.case-article { max-width: 652px; }          /* max-w-measure-wide (60ch) ≈ 652px rendered */
+.proof-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: 48px; }
+@media (min-width: 1024px) { .proof-grid { grid-template-columns: 1fr 1fr; } }
+.proof-grid figure { display: flex; flex-direction: column; gap: 12px; }
+.plate {                                   /* ShotProductReveal root: rounded-lg border border-line aspect-[7/8] */
+  position: relative; isolation: isolate; overflow: hidden;
+  aspect-ratio: 7 / 8; border: 1px solid rgb(var(--rgb-line)); border-radius: var(--radius-lg);
+}
+
+/* ==========================================================================
+   7. THIN-FRAME PROOF ROW — D-CON-003 A geometry (340 × 400 · 24 gaps · 1068)
+   ========================================================================== */
+.proof-row {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: minmax(0, 340px); row-gap: 40px; column-gap: 24px;
+  max-width: 1068px;
+}
+@media (min-width: 1024px) { .proof-row { grid-template-columns: repeat(3, minmax(0, 340px)); } }
+.proof-window { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.proof-label {                              /* numbered mono label */
+  font: 400 12px/1.4 var(--font-dm-mono); letter-spacing: 0.125em; text-transform: uppercase;
+  color: rgb(var(--rgb-ink-meta)); margin: 0;
+}
+.proof-frame {                              /* the thin frame */
+  position: relative; isolation: isolate; overflow: hidden;
+  aspect-ratio: 17 / 20; width: 100%;
+  border: 1px solid rgb(var(--rgb-line)); border-radius: var(--radius-md);
+  background: rgb(var(--rgb-surface));
+  background-clip: padding-box;   /* the translucent edge composites over the page, as the shipped plate's does */
+}
+.proof-frame.is-matte-window {
+  background: linear-gradient(180deg, rgb(var(--pr-sig) / 0.10), transparent 70%), rgb(var(--rgb-surface));
+  background-clip: padding-box;   /* restated: the shorthand above resets it */
+}
+.proof-well {                               /* window 01: the clip set into the mat */
+  position: absolute; inset: var(--mat-inset); overflow: hidden;
+  border: 1px solid rgb(var(--rgb-ink) / 0.12); border-radius: 6px;
+}
+html[data-mat="bleed"] .proof-frame.is-matte-window { background: rgb(var(--rgb-surface)); background-clip: padding-box; }
+html[data-mat="bleed"] .proof-well { inset: 0; border: 0; border-radius: 0; }
+.proof-caption {                            /* thin warm rule + descriptive caption */
+  border-top: 1px solid rgb(var(--rgb-accent-ink) / var(--rule-alpha));
+  padding-top: 10px;
+}
+.proof-provenance {                         /* one quiet provenance line */
+  grid-column: 1 / -1; margin: 8px 0 0;
+  font: 400 11px/1.4 var(--font-dm-mono); letter-spacing: 0.125em; text-transform: uppercase;
+  color: rgb(var(--rgb-ink-meta));
+}
+.proof-provenance .sha { text-transform: none; }
+/* B option (opt=warm-rule): the 01 caption rule adopts the rest-line colour */
+html[data-opt-warm-rule] [data-study-variant="B"] .proof-window[data-window="01"] .proof-caption {
+  border-top-color: rgb(var(--rgb-accent) / var(--ve04-b-alpha));
+}
+
+/* ==========================================================================
+   8. VE04 — the state rules, transcribed from globals.css (W4-06 VE04/M1)
+      with the rest alpha routed through --edge-alpha so A and B differ in
+      exactly one value. REST = SETTLED; armed exists only under html.js.
+   ========================================================================== */
+.proof-arrival-edge {
+  --proof-arrival-dur: var(--dur-transition);
+  --edge-alpha: var(--ve04-a-alpha);
+  border-color: rgb(var(--rgb-accent) / var(--edge-alpha));
+}
+[data-study-variant="B"] .proof-arrival-edge { --edge-alpha: var(--ve04-b-alpha); }
+
+html.js [data-proof-arrival='armed'] .proof-arrival-edge {
+  border-color: rgb(var(--rgb-line));
+  transition: none;
+}
+html.js [data-proof-arrival='settling'] .proof-arrival-edge {
+  border-color: rgb(var(--rgb-accent) / var(--edge-alpha));
+  transition: border-color var(--proof-arrival-dur) var(--ease-out);
+}
+html.js [data-proof-arrival='settled'] .proof-arrival-edge { transition: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .proof-arrival-edge,
+  html.js [data-proof-arrival] .proof-arrival-edge {
+    border-color: rgb(var(--rgb-accent) / var(--edge-alpha)) !important;
+    transition: none !important;
+  }
+}
+@media (max-width: 767px) {
+  .proof-arrival-edge { --proof-arrival-dur: var(--dur-base); }
+}
+
+/* ==========================================================================
+   9. SPECIMEN — the lines at true size and as blocks (same colours, no zoom)
+   ========================================================================== */
+.specimen { padding: 28px var(--gutter) 36px; background: rgb(var(--rgb-canvas-alt)); }
+.specimen-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px 24px; max-width: 1068px; }
+.swatch { display: flex; flex-direction: column; gap: 8px; }
+.swatch .line { height: 0; border-top: 1px solid var(--c); }
+.swatch .block { height: 22px; background: var(--c); border-radius: 2px; }
+.swatch .lab { font: 400 10px/1.4 var(--font-dm-mono); letter-spacing: 0.08em; text-transform: uppercase; color: rgb(var(--rgb-ink-meta)); }
+</style>
+</head>
+<body>
+<a class="skip" href="#study-main">Skip to the study</a>
+
+<header class="study-chrome study-bar" aria-label="Study controls">
+  <h1>RC2 · VE04 vs thin-frame proof row</h1>
+  <span class="chip warn">Non-production design study</span>
+  <span class="chip">Baseline a5854a5</span>
+  <div class="ctl" role="group" aria-label="Theme">
+    <span>Theme</span>
+    <button type="button" data-set-theme="light" aria-pressed="true">Light</button>
+    <button type="button" data-set-theme="dark" aria-pressed="false">Dark</button>
+  </div>
+  <div class="ctl" role="group" aria-label="Window 01 treatment">
+    <span>Window 01</span>
+    <button type="button" data-set-mat="mat" aria-pressed="true">Mat</button>
+    <button type="button" data-set-mat="bleed" aria-pressed="false">Full bleed</button>
+  </div>
+  <div class="ctl" role="group" aria-label="Prototype beat mode">
+    <span>Beat</span>
+    <button type="button" data-set-beat="auto" aria-pressed="true">Auto</button>
+    <button type="button" data-set-beat="hold" aria-pressed="false">Hold armed</button>
+    <button type="button" data-set-beat="settled" aria-pressed="false">Settled</button>
+  </div>
+  <div class="ctl"><span>Reduced motion</span> <output id="rm-state">unknown</output></div>
+  <nav aria-label="Sections"><a href="#baseline">Baseline</a><a href="#variant-a">Variant A</a><a href="#variant-b">Variant B</a><a href="#specimen">Specimen</a><a href="#notes">Notes</a></nav>
+</header>
+
+<main id="study-main">
+  <div class="study-chrome study-note">
+    <p><strong>What you are looking at.</strong> Three matched treatments of the Flagstone "Inside the build" proofs, built in the site's own tokens with the real captures. The baseline is a reconstruction of the shipped grid; A and B are the D-CON-003 A three-window row with the first window carrying the approved VE04 edge (A) or a quieter rest line (B). Variant C (retire) is discussed in the packet and is not built.</p>
+    <p><strong>The beat here is a prototype.</strong> It plays only the settle transition (420 ms desktop / 280 ms phone, <code>--ease-out</code>, border colour only). It does not reproduce the production lifecycle and must not be read as evidence about it. Reduced motion and no-JS rest on the settled edge, as in production.</p>
+  </div>
+
+  <!-- ================================================================ BASELINE -->
+  <section id="baseline" data-study-variant="baseline" aria-labelledby="h-baseline">
+    <div class="study-chrome strip">
+      <h2 id="h-baseline">Baseline · reconstruction</h2>
+      <p class="desc">Shipped treatment, rebuilt from <code>CaseProof</code> (app/work/[slug]/page.tsx) and globals.css: a two-column 48 px grid inside the 652 px article column, 7:8 plates with a 1 px line and 16 px radius, the first plate on the dark-mono exhibit mat with the VE04 edge (accent / 0.70 light · / 0.40 dark). Not a render of the live site.</p>
+      <p class="state">VE04 edge state: <b data-state-for="baseline">—</b></p>
+      <div class="ctl"><button type="button" data-replay="baseline">Replay beat (prototype only)</button><button type="button" data-arm="baseline">Hold armed</button></div>
+    </div>
+    <div class="study-stage">
+      <div class="site-frame">
+        <div class="site-rail" aria-hidden="true"><span>Site sidebar · 280 px · stand-in</span></div>
+        <div class="site-main"><div class="site-content">
+          <div class="case-article">
+            <p class="proof-kicker">Inside the build</p>
+            <h3 class="proof-heading">See it in motion.</h3>
+            <ul class="proof-grid" aria-label="Flagstone product evidence">
+              <li>
+                <div data-proof-arrival="armed" data-study-beat="prototype" data-beat-id="baseline">
+                  <figure>
+                    <div class="plate proof-arrival-edge" data-window="01">
+                      <div class="pr-world" aria-hidden="true"></div>
+                      <div class="pr-horizon" aria-hidden="true"></div>
+                      <div class="ts-host" data-motion="paused">
+                        <div class="ts-matte">
+                          <div class="ts-matte-well">
+                            <div class="ts-layer">
+                              <video class="media-cover proof-video" poster="../../public/showcase/flagstone/clips/report-flow-current.dark.phone-poster.avif" preload="none" muted loop playsinline controls aria-label="Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map." style="object-position: 50% 38%">
+                                <source src="../../public/showcase/flagstone/clips/report-flow-current.dark.phone.mp4" type="video/mp4">
+                                <source src="../../public/showcase/flagstone/clips/report-flow-current.dark.phone.webm" type="video/webm">
+                              </video>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Play/Pause button is built by JS (production: hydration swaps native controls for the overlay) -->
+                      </div>
+                    </div>
+                    <figcaption class="proof-caption-text">From map pin to report form, the current reporting flow in motion.</figcaption>
+                  </figure>
+                </div>
+              </li>
+              <li>
+                <figure>
+                  <div class="plate" data-window="02">
+                    <div class="pr-world" aria-hidden="true"></div>
+                    <div class="pr-horizon" aria-hidden="true"></div>
+                    <picture>
+                      <source type="image/avif" srcset="../../public/showcase/flagstone/report-current.phone.avif">
+                      <source type="image/webp" srcset="../../public/showcase/flagstone/report-current.phone.webp">
+                      <img class="media-cover" src="../../public/showcase/flagstone/report-current.phone.webp" alt="" width="1280" height="800" decoding="async" style="object-position: 50% 50%">
+                    </picture>
+                  </div>
+                  <figcaption class="proof-caption-text">Reporting a barrier: quick-fill templates, category, severity, and description.</figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <div class="plate" data-window="03">
+                    <div class="pr-world" aria-hidden="true"></div>
+                    <div class="pr-horizon" aria-hidden="true"></div>
+                    <picture>
+                      <source type="image/avif" srcset="../../public/showcase/flagstone/community-current.phone.avif">
+                      <source type="image/webp" srcset="../../public/showcase/flagstone/community-current.phone.webp">
+                      <img class="media-cover" src="../../public/showcase/flagstone/community-current.phone.webp" alt="" width="1280" height="800" decoding="async" style="object-position: 50% 50%">
+                    </picture>
+                  </div>
+                  <figcaption class="proof-caption-text">Community review: neighbours verify barriers and mark resolved reports.</figcaption>
+                </figure>
+              </li>
+            </ul>
+          </div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================ VARIANT A -->
+  <section id="variant-a" data-study-variant="A" aria-labelledby="h-variant-a">
+    <div class="study-chrome strip">
+      <h2 id="h-variant-a">Variant A · keep VE04</h2>
+      <p class="desc">The three-window thin-frame row. Window 01 keeps the approved VE04 edge exactly (settled rest accent / 0.70 light · / 0.40 dark; one arrival beat, border colour only). Windows 02 and 03 stay on the neutral 1 px line. The warmer, stronger first border is the row's only hierarchy cue.</p>
+      <p class="state">VE04 edge state: <b data-state-for="A">—</b></p>
+      <div class="ctl"><button type="button" data-replay="A">Replay beat (prototype only)</button><button type="button" data-arm="A">Hold armed</button></div>
+    </div>
+    <div class="study-stage">
+      <div class="site-frame">
+        <div class="site-rail" aria-hidden="true"><span>Site sidebar · 280 px · stand-in</span></div>
+        <div class="site-main"><div class="site-content">
+          <p class="proof-kicker">Inside the build</p>
+          <h3 class="proof-heading">See it in motion.</h3>
+          <ol class="proof-row" aria-label="Flagstone product evidence">
+            <li class="proof-window" data-window="01">
+              <div data-proof-arrival="armed" data-study-beat="prototype" data-beat-id="A">
+                <figure class="proof-window-inner" style="display:flex;flex-direction:column;gap:12px">
+                  <p class="proof-label">01 — Reporting flow, in motion.</p>
+                  <div class="proof-frame is-matte-window proof-arrival-edge">
+                    <div class="proof-well">
+                      <div class="ts-host" data-motion="paused">
+                        <div class="ts-layer">
+                          <video class="media-cover proof-video" poster="../../public/showcase/flagstone/clips/report-flow-current.dark.phone-poster.avif" preload="none" muted loop playsinline controls aria-label="Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map." style="object-position: 50% 38%">
+                            <source src="../../public/showcase/flagstone/clips/report-flow-current.dark.phone.mp4" type="video/mp4">
+                            <source src="../../public/showcase/flagstone/clips/report-flow-current.dark.phone.webm" type="video/webm">
+                          </video>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <figcaption class="proof-caption"><p class="proof-caption-text">From map pin to report form, the current reporting flow in motion.</p></figcaption>
+                </figure>
+              </div>
+            </li>
+            <li class="proof-window" data-window="02">
+              <figure class="proof-window-inner" style="display:flex;flex-direction:column;gap:12px">
+                <p class="proof-label">02 — Report a barrier.</p>
+                <div class="proof-frame">
+                  <picture>
+                    <source type="image/avif" srcset="../../public/showcase/flagstone/report-current.phone.avif">
+                    <source type="image/webp" srcset="../../public/showcase/flagstone/report-current.phone.webp">
+                    <img class="media-cover" src="../../public/showcase/flagstone/report-current.phone.webp" alt="" width="1280" height="800" decoding="async" style="object-position: 50% 50%">
+                  </picture>
+                </div>
+                <figcaption class="proof-caption"><p class="proof-caption-text">Reporting a barrier: quick-fill templates, category, severity, and description.</p></figcaption>
+              </figure>
+            </li>
+            <li class="proof-window" data-window="03">
+              <figure class="proof-window-inner" style="display:flex;flex-direction:column;gap:12px">
+                <p class="proof-label">03 — Community review.</p>
+                <div class="proof-frame">
+                  <picture>
+                    <source type="image/avif" srcset="../../public/showcase/flagstone/community-current.phone.avif">
+                    <source type="image/webp" srcset="../../public/showcase/flagstone/community-current.phone.webp">
+                    <img class="media-cover" src="../../public/showcase/flagstone/community-current.phone.webp" alt="" width="1280" height="800" decoding="async" style="object-position: 50% 50%">
+                  </picture>
+                </div>
+                <figcaption class="proof-caption"><p class="proof-caption-text">Community review: neighbours verify barriers and mark resolved reports.</p></figcaption>
+              </figure>
+            </li>
+            <li class="proof-provenance" aria-label="Provenance">Current Flagstone build · captures added 2026-09-07 (<span class="sha">a531953</span>) · captions as published</li>
+          </ol>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================ VARIANT B -->
+  <section id="variant-b" data-study-variant="B" aria-labelledby="h-variant-b">
+    <div class="study-chrome strip">
+      <h2 id="h-variant-b">Variant B · fold into frame grammar</h2>
+      <p class="desc">The same row. Window 01 keeps the one-time beat but settles to a quieter line inside the thin-frame language: accent / 0.42 light · / 0.30 dark. Same 1 px weight, same radius, same focus ring. The question B asks is whether the first proof still reads as the arrival, and whether the beat remains perceptible when its destination is this close to the neutral line.</p>
+      <p class="state">VE04 edge state: <b data-state-for="B">—</b></p>
+      <div class="ctl"><button type="button" data-replay="B">Replay beat (prototype only)</button><button type="button" data-arm="B">Hold armed</button></div>
+    </div>
+    <div class="study-stage">
+      <div class="site-frame">
+        <div class="site-rail" aria-hidden="true"><span>Site sidebar · 280 px · stand-in</span></div>
+        <div class="site-main"><div class="site-content">
+          <p class="proof-kicker">Inside the build</p>
+          <h3 class="proof-heading">See it in motion.</h3>
+          <ol class="proof-row" aria-label="Flagstone product evidence">
+            <li class="proof-window" data-window="01">
+              <div data-proof-arrival="armed" data-study-beat="prototype" data-beat-id="B">
+                <figure class="proof-window-inner" style="display:flex;flex-direction:column;gap:12px">
+                  <p class="proof-label">01 — Reporting flow, in motion.</p>
+                  <div class="proof-frame is-matte-window proof-arrival-edge">
+                    <div class="proof-well">
+                      <div class="ts-host" data-motion="paused">
+                        <div class="ts-layer">
+                          <video class="media-cover proof-video" poster="../../public/showcase/flagstone/clips/report-flow-current.dark.phone-poster.avif" preload="none" muted loop playsinline controls aria-label="Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map." style="object-position: 50% 38%">
+                            <source src="../../public/showcase/flagstone/clips/report-flow-current.dark.phone.mp4" type="video/mp4">
+                            <source src="../../public/showcase/flagstone/clips/report-flow-current.dark.phone.webm" type="video/webm">
+                          </video>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <figcaption class="proof-caption"><p class="proof-caption-text">From map pin to report form, the current reporting flow in motion.</p></figcaption>
+                </figure>
+              </div>
+            </li>
+            <li class="proof-window" data-window="02">
+              <figure class="proof-window-inner" style="display:flex;flex-direction:column;gap:12px">
+                <p class="proof-label">02 — Report a barrier.</p>
+                <div class="proof-frame">
+                  <picture>
+                    <source type="image/avif" srcset="../../public/showcase/flagstone/report-current.phone.avif">
+                    <source type="image/webp" srcset="../../public/showcase/flagstone/report-current.phone.webp">
+                    <img class="media-cover" src="../../public/showcase/flagstone/report-current.phone.webp" alt="" width="1280" height="800" decoding="async" style="object-position: 50% 50%">
+                  </picture>
+                </div>
+                <figcaption class="proof-caption"><p class="proof-caption-text">Reporting a barrier: quick-fill templates, category, severity, and description.</p></figcaption>
+              </figure>
+            </li>
+            <li class="proof-window" data-window="03">
+              <figure class="proof-window-inner" style="display:flex;flex-direction:column;gap:12px">
+                <p class="proof-label">03 — Community review.</p>
+                <div class="proof-frame">
+                  <picture>
+                    <source type="image/avif" srcset="../../public/showcase/flagstone/community-current.phone.avif">
+                    <source type="image/webp" srcset="../../public/showcase/flagstone/community-current.phone.webp">
+                    <img class="media-cover" src="../../public/showcase/flagstone/community-current.phone.webp" alt="" width="1280" height="800" decoding="async" style="object-position: 50% 50%">
+                  </picture>
+                </div>
+                <figcaption class="proof-caption"><p class="proof-caption-text">Community review: neighbours verify barriers and mark resolved reports.</p></figcaption>
+              </figure>
+            </li>
+            <li class="proof-provenance" aria-label="Provenance">Current Flagstone build · captures added 2026-09-07 (<span class="sha">a531953</span>) · captions as published</li>
+          </ol>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================ SPECIMEN -->
+  <section id="specimen" class="study-chrome" aria-labelledby="h-specimen">
+    <div class="strip"><h2 id="h-specimen">Specimen · the lines at true size, on the case-body surface</h2><p class="desc">Same colours the rows use; no magnification. Magnified corner crops and measured values are in <code>captures/</code>.</p></div>
+    <div class="specimen">
+      <div class="specimen-grid">
+        <div class="swatch" style="--c: rgb(var(--rgb-line))"><div class="line"></div><div class="block"></div><div class="lab">Neutral frame line · line</div></div>
+        <div class="swatch" style="--c: rgb(var(--rgb-accent) / var(--ve04-a-alpha))"><div class="line"></div><div class="block"></div><div class="lab">A rest · accent / <span data-alpha="a"></span></div></div>
+        <div class="swatch" style="--c: rgb(var(--rgb-accent) / var(--ve04-b-alpha))"><div class="line"></div><div class="block"></div><div class="lab">B rest · accent / <span data-alpha="b"></span></div></div>
+        <div class="swatch" style="--c: rgb(var(--rgb-accent-ink) / var(--rule-alpha))"><div class="line"></div><div class="block"></div><div class="lab">Caption rule · accent-ink / 0.35</div></div>
+        <div class="swatch" style="--c: rgb(var(--rgb-ink) / 0.12)"><div class="line"></div><div class="block"></div><div class="lab">Mat well edge · ink / 0.12</div></div>
+        <div class="swatch" style="--c: rgb(var(--rgb-accent))"><div class="line"></div><div class="block"></div><div class="lab">Focus ring · accent (2 px)</div></div>
+        <div class="swatch" style="--c: rgb(var(--rgb-line-strong))"><div class="line"></div><div class="block"></div><div class="lab">Interactive line · line-strong</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================ NOTES -->
+  <section id="notes" class="study-chrome notes" aria-labelledby="h-notes">
+    <h2 id="h-notes">What this prototype does not reproduce</h2>
+    <ul>
+      <li>The VE04 lifecycle: session consumption at trigger, hash / Back-Forward / reload / restored-scroll settling, the dead-JS failsafe floor, theme-change retargeting. Only the settle transition is played, once per page load per section, with a prototype-only replay.</li>
+      <li>The live page's composited world backdrop. Stages sit on the <code>canvas-alt</code> token, an approximation of <code>world-surface-alt</code>.</li>
+      <li>The Reveal entrance (fade and 16 px rise) that windows 02 and 03 have in production. Rows render settled so the only moving variable is the first window's edge.</li>
+      <li>Production autoplay. The shipped clip autoplays muted while intersecting (ThemedMotion, reduced motion excepted). Here the clip is still-first by brief: nothing plays until Play is chosen.</li>
+      <li>LQIP placeholders behind the stills, lazy loading, and the sticky user-pause memory.</li>
+    </ul>
+    <h2>Status</h2>
+    <ul>
+      <li>DESIGN_STUDY_COMPLETE for the visual comparison in this folder.</li>
+      <li>MOTION_VERIFICATION_PENDING for the production lifecycle (engineering verification, not this study).</li>
+      <li>ACCESSIBILITY_REVIEW_PENDING for assistive-technology runs; measured values in this folder are instrument readings, not conformance claims.</li>
+    </ul>
+  </section>
+</main>
+
+<script>
+(function () {
+  'use strict';
+  var d = document.documentElement;
+  var q = new URLSearchParams(location.search);
+  var mq = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+  var reduced = function () { return !!(mq && mq.matches); };
+  var SETTLE_SAFETY_MS = 900; /* components/ProofArrival.tsx */
+
+  /* ---- URL state helpers ---- */
+  function setParam(k, v) { q.set(k, v); history.replaceState(null, '', location.pathname + '?' + q.toString() + location.hash); }
+  function pressed(attr, value) {
+    document.querySelectorAll('[' + attr + ']').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute(attr) === value)); });
+  }
+
+  /* ---- Theme / mat / beat controls ---- */
+  function applyTheme(t) { d.classList.toggle('dark', t === 'dark'); pressed('data-set-theme', t); setParam('theme', t); }
+  pressed('data-set-theme', d.classList.contains('dark') ? 'dark' : 'light');
+  pressed('data-set-mat', d.dataset.mat);
+  pressed('data-set-beat', d.dataset.beat);
+  document.querySelectorAll('[data-set-theme]').forEach(function (b) { b.addEventListener('click', function () { applyTheme(b.getAttribute('data-set-theme')); }); });
+  document.querySelectorAll('[data-set-mat]').forEach(function (b) { b.addEventListener('click', function () { d.dataset.mat = b.getAttribute('data-set-mat'); pressed('data-set-mat', d.dataset.mat); setParam('mat', d.dataset.mat); }); });
+  document.querySelectorAll('[data-set-beat]').forEach(function (b) { b.addEventListener('click', function () { d.dataset.beat = b.getAttribute('data-set-beat'); pressed('data-set-beat', d.dataset.beat); setParam('beat', d.dataset.beat); initBeats(); }); });
+
+  var rmOut = document.getElementById('rm-state');
+  function paintRm() { if (rmOut) rmOut.textContent = mq ? (mq.matches ? 'reduce' : 'no-preference') : 'unavailable'; }
+  paintRm();
+
+  /* ---- Specimen alpha labels ---- */
+  function paintAlphas() {
+    var cs = getComputedStyle(d);
+    document.querySelectorAll('[data-alpha="a"]').forEach(function (s) { s.textContent = cs.getPropertyValue('--ve04-a-alpha').trim(); });
+    document.querySelectorAll('[data-alpha="b"]').forEach(function (s) { s.textContent = cs.getPropertyValue('--ve04-b-alpha').trim(); });
+  }
+  paintAlphas();
+  new MutationObserver(paintAlphas).observe(d, { attributes: true, attributeFilter: ['class'] });
+
+  /* ---- Play / Pause: hydration swaps native controls for the overlay button
+          (ThemedMotion.tsx). Still-first: nothing plays until chosen. ---- */
+  var PLAY = '<svg viewBox="0 0 24 24" class="i-play" aria-hidden="true"><path d="M8 5.5a1 1 0 0 1 1.52-.86l10 6.5a1 1 0 0 1 0 1.72l-10 6.5A1 1 0 0 1 8 18.5v-13z"/></svg>';
+  var PAUSE = '<svg viewBox="0 0 24 24" class="i-pause" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
+  document.querySelectorAll('.ts-host').forEach(function (host) {
+    var v = host.querySelector('video');
+    if (!v) return;
+    var alt = v.getAttribute('aria-label') || '';
+    v.removeAttribute('controls');
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'ts-play';
+    b.innerHTML = PLAY + PAUSE;
+    function sync() {
+      var playing = !v.paused && !v.ended;
+      host.dataset.motion = playing ? 'playing' : 'paused';
+      b.setAttribute('aria-label', (playing ? 'Pause' : 'Play') + ' animation: ' + alt);
+    }
+    b.addEventListener('click', function () {
+      if (v.paused) { v.preload = 'metadata'; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+      else { v.pause(); }
+    });
+    v.addEventListener('play', sync); v.addEventListener('pause', sync); v.addEventListener('ended', sync);
+    sync();
+    host.appendChild(b);
+  });
+
+  /* ---- Prototype beat engine: the settle transition only ---- */
+  var hosts = {};
+  document.querySelectorAll('[data-proof-arrival][data-beat-id]').forEach(function (h) {
+    hosts[h.dataset.beatId] = { el: h, timer: null, io: null };
+  });
+  function paintState(id) {
+    var out = document.querySelector('[data-state-for="' + id + '"]');
+    if (out && hosts[id]) out.textContent = hosts[id].el.dataset.proofArrival;
+  }
+  function setState(id, s) { var h = hosts[id]; if (!h) return; h.el.dataset.proofArrival = s; paintState(id); }
+  function clearTimer(h) { if (h.timer) { clearTimeout(h.timer); h.timer = null; } }
+  function settleInstant(id) { var h = hosts[id]; if (!h) return; clearTimer(h); setState(id, 'settled'); }
+  function trigger(id) {
+    var h = hosts[id]; if (!h) return false;
+    if (h.el.dataset.proofArrival !== 'armed' || reduced()) { if (reduced()) settleInstant(id); return false; }
+    setState(id, 'settling');
+    clearTimer(h);
+    h.timer = setTimeout(function () { setState(id, 'settled'); }, SETTLE_SAFETY_MS);
+    return true;
+  }
+  function arm(id) { var h = hosts[id]; if (!h) return; clearTimer(h); if (h.io) { h.io.disconnect(); h.io = null; } setState(id, reduced() ? 'settled' : 'armed'); }
+  function observe(id) {
+    var h = hosts[id]; if (!h || typeof IntersectionObserver !== 'function') { settleInstant(id); return; }
+    if (h.io) h.io.disconnect();
+    h.io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var s = h.el.dataset.proofArrival;
+        if (s === 'settled') return;
+        if (e.isIntersecting) { if (s === 'armed') trigger(id); }
+        else if (s === 'settling') settleInstant(id);
+      });
+    }, { threshold: 0.2 });
+    h.io.observe(h.el);
+  }
+  function initBeats() {
+    Object.keys(hosts).forEach(function (id) {
+      var mode = d.dataset.beat;
+      if (reduced() || mode === 'settled') { arm(id); settleInstant(id); return; }
+      arm(id);
+      if (mode === 'auto') observe(id);
+    });
+  }
+  initBeats();
+  if (mq && mq.addEventListener) mq.addEventListener('change', function () { paintRm(); if (mq.matches) Object.keys(hosts).forEach(settleInstant); });
+
+  document.querySelectorAll('[data-replay]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var id = b.getAttribute('data-replay');
+      arm(id);
+      requestAnimationFrame(function () { requestAnimationFrame(function () { trigger(id); }); });
+    });
+  });
+  document.querySelectorAll('[data-arm]').forEach(function (b) { b.addEventListener('click', function () { arm(b.getAttribute('data-arm')); }); });
+
+  /* ---- Instrument hooks for tools/capture.mjs ---- */
+  function frameOf(id) { return hosts[id] ? hosts[id].el.querySelector('.proof-arrival-edge') : null; }
+  window.__study = {
+    ids: function () { return Object.keys(hosts); },
+    state: function (id) { return hosts[id] ? hosts[id].el.dataset.proofArrival : null; },
+    arm: arm,
+    settle: settleInstant,
+    trigger: trigger,
+    edgeColor: function (id) { var f = frameOf(id); return f ? getComputedStyle(f).borderTopColor : null; },
+    edgeTransition: function (id) { var f = frameOf(id); if (!f) return null; var cs = getComputedStyle(f); return { property: cs.transitionProperty, duration: cs.transitionDuration, timing: cs.transitionTimingFunction }; },
+    /* Trigger and sample the computed border colour every animation frame for `ms`. */
+    triggerAndSample: function (id, ms) {
+      return new Promise(function (resolve) {
+        var f = frameOf(id); if (!f) { resolve([]); return; }
+        var samples = [];
+        var t0 = performance.now();
+        var ok = trigger(id);
+        (function tick() {
+          var t = performance.now() - t0;
+          samples.push({ t: Math.round(t * 10) / 10, color: getComputedStyle(f).borderTopColor, state: hosts[id].el.dataset.proofArrival });
+          if (t < ms) requestAnimationFrame(tick); else resolve({ triggered: ok, samples: samples });
+        })();
+      });
+    }
+  };
+})();
+</script>
+</body>
+</html>
