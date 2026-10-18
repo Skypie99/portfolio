@@ -109,7 +109,19 @@ export function Hero({
             first-time visitor knows whose work this is the moment the hero
             settles. Rest-visible: the wash bloom carries the arrival. */}
         {name && (
-          <div data-hero-identity className="mb-4 flex items-center gap-4 sm:mb-10">
+          <div
+            data-hero-identity
+            className={cn(
+              'flex items-center gap-4',
+              // M-CON-001 B r2 (RC-2 first visual slice): the identity block is
+              // a signature, 40px above the kicker group at every width — except
+              // the two shortest portrait widths. There the measured 375 landing
+              // rule (globals.css) promises the whole block AND a complete 56px
+              // pill after Skip, and 24px more air would spend that margin, so
+              // ≤375 keeps the base 16px.
+              'mb-10 max-[375px]:mb-4',
+            )}
+          >
             {avatarSrc && (
               // eslint-disable-next-line @next/next/no-img-element
               <img
