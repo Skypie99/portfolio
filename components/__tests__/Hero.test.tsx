@@ -142,3 +142,16 @@ describe('Hero — RC-2 landing structure (desktop, D-CON-001 B)', () => {
     expect(drifts[0]).toHaveAttribute('aria-hidden', 'true');
   });
 });
+
+describe('Hero — RC-2 identity gap (mobile, M-CON-001 B r2)', () => {
+  it('identity to kicker: 40px from 376px up, the base 16px at the two shortest portrait widths', () => {
+    const { container } = render(<Hero {...rc2Props} />);
+    const identity = container.querySelector('[data-hero-identity]') as HTMLElement;
+    expect(identity).toHaveClass('mb-10', 'max-[375px]:mb-4');
+    expect(identity).not.toHaveClass('mb-4', 'sm:mb-10');
+    // Kicker-to-rule and rule-to-H1 stay the base's 12px and 16px on phones.
+    const kicker = screen.getByText(rc2Props.eyebrow);
+    expect(kicker).toHaveClass('mb-3');
+    expect(kicker.parentElement).toHaveClass('mb-4', 'sm:mb-12');
+  });
+});
