@@ -79,6 +79,12 @@ export function Hero({
         'flex flex-col justify-center',
         'px-gutter',
         'world-surface',
+        // Bottom air (RC-2 first visual slice, D-CON-001 B). Below xl this is
+        // today's value, byte for byte; from xl the hero closes 96px above the
+        // next band — with the pill beside the lead and the strip unboxed,
+        // the base's 128px read as a trailing void. Expressed as classes so
+        // the landing pad above stays the only inline length.
+        'pb-[clamp(64px,10vw,128px)] xl:pb-24',
       )}
       style={{
         // U1 (A-01) — the landing pad. Top air sized to receive the film's exit
@@ -92,7 +98,6 @@ export function Hero({
         // Pure spacing — gravity, never capture or snap; the hero-wash bloom
         // keeps the receiving air lit.
         paddingTop: 'clamp(200px, calc(605px - 28vw), 500px)',
-        paddingBottom: 'clamp(64px, 10vw, 128px)',
       }}
     >
       {/* Warm radial wash — drifts upward on scroll for depth behind the headline.
@@ -163,38 +168,53 @@ export function Hero({
           {heading}
         </h1>
 
-        <p
-          className={cn(
-            'font-sans font-light text-step-1 text-ink-muted max-[375px]:text-[1.125rem]',
-            'max-w-measure-lead',
-            'mb-5 max-[375px]:mb-3 sm:mb-16',
-            'text-pretty',
-          )}
-        >
-          {subhead}
-        </p>
-
-        <div className="hero-scroll-fade flex flex-col items-start gap-12 sm:gap-16">
-          <Button href={ctaHref}>{ctaLabel}</Button>
-
-          {/* Scroll indicator — subtle affordance to continue reading.
-              Alex A11y 2026-05-29: was opacity-60 (2.65:1 contrast — WCAG 1.4.3 FAIL).
-              Changed to opacity-90 (5.04:1 — PASS) while keeping the subtle feel. */}
-          <a
-            href="#work"
-            aria-label="Explore projects"
+        {/* The lead row (RC-2 first visual slice, D-CON-001 B). Below xl this
+            wrapper is a plain block and nothing moves. From xl — 1280px, the
+            first Tailwind breakpoint where the 545px lead, a 48px gap and the
+            ~191px pill fit the rail-narrowed column (936px at 1280) — the lead
+            and the pill share one row: lead first in the DOM, pill second, the
+            pill's top on the lead's first line. The lead keeps its own classes
+            and does not fade; the pill keeps its hero-scroll-fade wrapper. */}
+        <div className="xl:flex xl:items-start xl:gap-12">
+          <p
             className={cn(
-              'inline-flex flex-col items-center gap-1.5',
-              'font-mono text-meta tracking-label uppercase text-text-meta',
-              'opacity-90 hover:opacity-100',
-              'transition-opacity duration-base ease-out',
+              'font-sans font-light text-step-1 text-ink-muted max-[375px]:text-[1.125rem]',
+              'max-w-measure-lead',
+              'mb-5 max-[375px]:mb-3 sm:mb-16 xl:mb-0',
+              'text-pretty',
             )}
           >
-            <span>Explore projects</span>
-            <span aria-hidden="true" className="text-cool text-body leading-none">
-              {'↓'}
-            </span>
-          </a>
+            {subhead}
+          </p>
+
+          {/* xl:mt-0.5 is B's 2px optical offset of the pill against the lead's
+              first line; shrink-0 keeps the pill whole beside the lead. */}
+          <div className="hero-scroll-fade flex flex-col items-start gap-12 sm:gap-16 xl:mt-0.5 xl:shrink-0">
+            <Button href={ctaHref}>{ctaLabel}</Button>
+
+            {/* Scroll indicator — subtle affordance to continue reading.
+                Alex A11y 2026-05-29: was opacity-60 (2.65:1 contrast — WCAG 1.4.3 FAIL).
+                Changed to opacity-90 (5.04:1 — PASS) while keeping the subtle feel.
+                From xl the pill sits beside the lead and this duplicate of its
+                destination is not rendered (display:none, so it also leaves the
+                accessibility tree); below xl it stays exactly as it was. */}
+            <a
+              href="#work"
+              aria-label="Explore projects"
+              className={cn(
+                'inline-flex flex-col items-center gap-1.5',
+                'font-mono text-meta tracking-label uppercase text-text-meta',
+                'opacity-90 hover:opacity-100',
+                'transition-opacity duration-base ease-out',
+                'xl:hidden',
+              )}
+            >
+              <span>Explore projects</span>
+              <span aria-hidden="true" className="text-cool text-body leading-none">
+                {'↓'}
+              </span>
+            </a>
+          </div>
         </div>
 
         {receipts}

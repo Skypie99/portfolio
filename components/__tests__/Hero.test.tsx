@@ -10,6 +10,7 @@
  */
 import { afterEach, describe, expect, it } from 'vitest';
 import { cleanup, render, screen } from '@testing-library/react';
+import { renderToString } from 'react-dom/server';
 
 import { Hero } from '@/components/Hero';
 
@@ -63,5 +64,81 @@ describe('Hero', () => {
       'max-[375px]:leading-[1.1]',
       'max-[359px]:text-[2.1875rem]',
     );
+  });
+});
+
+/**
+ * RC-2 first visual slice (D-CON-001 B · M-CON-001 B r2) — structure only.
+ *
+ * jsdom applies no CSS, so these pin the classes and the DOM order that the
+ * later rendered review measures; the geometry itself belongs to the browser
+ * matrix. Each case names the decision it guards.
+ */
+const rc2Props = {
+  eyebrow: 'Kicker line',
+  heading: 'A quiet statement.',
+  subhead: 'One lead sentence that explains the statement.',
+  ctaLabel: 'See it.',
+  ctaHref: '#work',
+  name: 'A Name',
+  positioning: 'One positioning sentence.',
+  imprint: 'One imprint line.',
+  avatarSrc: '/images/headshot.jpg',
+} as const;
+
+describe('Hero — RC-2 landing structure (desktop, D-CON-001 B)', () => {
+  it('from xl the lead and the pill share one row: lead first in the DOM, pill second, in a plain wrapper', () => {
+    render(<Hero {...rc2Props} />);
+    const lead = screen.getByText(rc2Props.subhead);
+    const pill = screen.getByRole('link', { name: rc2Props.ctaLabel });
+    const row = lead.parentElement as HTMLElement;
+    expect(row).toHaveClass('xl:flex', 'xl:items-start', 'xl:gap-12');
+    // A plain block below xl: every class on the wrapper is xl-scoped.
+    expect(row.className.split(/\s+/).every((c) => c.startsWith('xl:'))).toBe(true);
+    const pillWrapper = pill.parentElement as HTMLElement;
+    expect(pillWrapper.parentElement).toBe(row);
+    expect(lead.compareDocumentPosition(pill) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    // The lead gives up its bottom margin only in the row and never fades;
+    // the pill's wrapper keeps the fade, B's 2px optical offset, and never shrinks.
+    expect(lead).toHaveClass('mb-5', 'max-[375px]:mb-3', 'sm:mb-16', 'xl:mb-0');
+    expect(lead).not.toHaveClass('hero-scroll-fade');
+    expect(pillWrapper).toHaveClass('hero-scroll-fade', 'xl:mt-0.5', 'xl:shrink-0');
+  });
+
+  it('from xl the duplicate "Explore projects" link is display-none; below xl it is untouched', () => {
+    render(<Hero {...rc2Props} />);
+    const pill = screen.getByRole('link', { name: rc2Props.ctaLabel });
+    const explore = screen.getByRole('link', { name: 'Explore projects' });
+    expect(explore).toHaveAttribute('aria-label', 'Explore projects');
+    expect(explore).toHaveAttribute('href', '#work');
+    expect(explore).toHaveClass('xl:hidden');
+    expect(explore).not.toHaveClass('hidden', 'sr-only', 'invisible');
+    // Still the pill's sibling inside the fade wrapper, after the pill.
+    expect(explore.parentElement).toBe(pill.parentElement);
+    expect(pill.compareDocumentPosition(explore) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+  });
+
+  it('keeps the landing pad byte-identical and moves only the bottom padding to classes', () => {
+    const html = renderToString(<Hero {...rc2Props} />);
+    // The one inline length left on the section is the protected landing pad.
+    expect(html).toContain('style="padding-top:clamp(200px, calc(605px - 28vw), 500px)"');
+    expect(html).not.toContain('padding-bottom');
+    const { container } = render(<Hero {...rc2Props} />);
+    const section = container.querySelector('section') as HTMLElement;
+    expect(section).toHaveClass('pb-[clamp(64px,10vw,128px)]', 'xl:pb-24');
+  });
+
+  it('adds no motion: the three scroll classes stay on exactly their base elements', () => {
+    const { container } = render(<Hero {...rc2Props} />);
+    const fades = Array.from(container.querySelectorAll('.hero-scroll-fade'));
+    expect(fades).toHaveLength(2);
+    expect(fades[0]).toBe(screen.getByText(rc2Props.eyebrow).parentElement);
+    expect(fades[1]).toBe(screen.getByRole('link', { name: rc2Props.ctaLabel }).parentElement);
+    const translates = container.querySelectorAll('.hero-scroll-translate');
+    expect(translates).toHaveLength(1);
+    expect(translates[0]).toBe(screen.getByRole('heading', { level: 1 }));
+    const drifts = container.querySelectorAll('.hero-bg-drift');
+    expect(drifts).toHaveLength(1);
+    expect(drifts[0]).toHaveAttribute('aria-hidden', 'true');
   });
 });

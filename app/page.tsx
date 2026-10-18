@@ -404,7 +404,7 @@ export default function HomePage() {
           ctaLabel="See the work."
           ctaHref="#work"
           receipts={
-            <div className="mt-16 max-w-[880px]">
+            <div className="mt-16 xl:mt-18 max-w-[880px]">
               {/* Three receipts, one grid. Individually bordered on their own
                   receipt paper stock rather than the retired chip band's
                   hairline-joined cells: the chips read as one instrument
