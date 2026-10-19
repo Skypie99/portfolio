@@ -201,6 +201,28 @@ export function CinematicDesert() {
       if (!stage || !pin) return;
       const phoneViewport = window.matchMedia('(max-width: 767px)');
 
+      // ── WORLD PARKING (desktop hotfix 2026-10-19) ──────────────────────────
+      // The site's fixed world backdrop (WorldBackdrop: sky + sun, three
+      // full-viewport compositor layers, ~90 MB of GPU tiles at a 1920px DPR-2
+      // window) sits fully under the opaque pinned film, yet Chrome keeps its
+      // tiles resident — headroom the plates' per-frame zoom re-raster runs out
+      // of on large desktop screens (tiles go missing: the partial-scene
+      // dropouts). Desktop CSS hides it (html.cdesert-world-parked) while the
+      // film covers it; it returns at p≥0.98, still behind the pinned film, so
+      // its tiles are ready by the release. (Measured: 0.92 left the late,
+      // heaviest stretch of the film — glow, title carve, veil — sharing the
+      // budget with it again; 0.98 did not.) Write-guarded like applyCull:
+      // the class flips only on crossing that point. Phones never park.
+      const root = document.documentElement;
+      let worldParked = false;
+      const parkWorld = (p: number) => {
+        const park = !phoneViewport.matches && p < 0.98;
+        if (park === worldParked) return;
+        worldParked = park;
+        root.classList.toggle('cdesert-world-parked', park);
+      };
+      const unparkWorld = () => root.classList.remove('cdesert-world-parked');
+
       // ── SCENE CULLING (PERF 2026-06-02) ──────────────────────────────────
       // Drive each group's composite on/off from master progress. Toggling the
       // cull class (visibility:hidden) drops an inactive beat's 3 planes out of
@@ -264,10 +286,12 @@ export function CinematicDesert() {
           // only when a boundary is crossed) + once on mount/refresh.
           onUpdate: (self) => {
             applyCull(self.progress);
+            parkWorld(self.progress);
             breatheWake();
           },
           onRefresh: (self) => {
             applyCull(self.progress);
+            parkWorld(self.progress);
             breatheWake();
           },
         },
@@ -634,8 +658,12 @@ export function CinematicDesert() {
           }, 1200);
         };
         breatheWake(); // arm at the opening frame
-        return () => clearTimeout(idleT);
+        return () => {
+          clearTimeout(idleT);
+          unparkWorld();
+        };
       }
+      return unparkWorld;
     },
     { scope, dependencies: [animate] },
   );
