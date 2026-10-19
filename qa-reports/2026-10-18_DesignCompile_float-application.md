@@ -2,18 +2,15 @@
 
 **Route:** `/float/` (unlisted, noindex) · **Branch:** `claude/portfolio-float-application-20261018` (off `origin/main` @ 0cda7c7)
 **Worktree:** `/Users/skypie/Portfolio-float-20261018` · **Source:** `~/Downloads/IMG_8776.mov` (66 s, 4K HDR iPhone video; left untouched)
-**Status:** verified candidate, **local commits only**. Not pushed, no PR, not merged, not deployed. Nothing sent to anyone.
+**Status:** approved by Sky for publication on 2026-10-18; published through a pull request with a CI-gated merge to `main` (no admin bypass). Nothing sent to anyone.
 
 ## 1. DECISIONS FOR SKY
 
-- [ ] **Publish `/float/`** — push the branch, open a PR, let CI run, then merge (no `--admin`) so Deploy publishes it.
-  - Approve publication (Recommended) — the candidate below is fully verified.
-  - Request changes first.
-  - **Rollback:** before merge, delete the branch and worktree; after merge, `git revert -m 1 <merge-sha>` and push.
-  - **Why deferred:** outward-facing personal media on a public repo; Sky asked to approve publication.
-- [ ] **Confirm one caption word by ear (0:24–0:26)** — the captions say "both inside and outside **of** the workplace". The first transcription pass heard "outside the workplace"; three of five later readings put "of" first and the other two list it as an alternative, so the captions follow the majority. If you hear no "of", it is a one-word fix in `public/videos/hi-float.vtt` and `app/float/page.tsx`.
-- [ ] **Audio level** — speech was normalized from -28.8 to -16.0 LUFS (web speech level; peaks at -1.8 dBFS) with a fixed gain and a peak limiter. Keep it (Recommended), or ship the original quieter level.
-- [ ] **Poster frame** — the closing smile at 66.2 s (shipped). Alternative: the wave at 0.47 s (warmer, but the hand is motion-blurred and the mouth is mid-word).
+- [x] **Publish `/float/`** — approved by Sky on 2026-10-18 ("I AUTHORIZE YOU TO PUBLISH THIS PAGE").
+  - **Rollback:** `git revert -m 1 <merge-sha>` on `main` and push; CI and Deploy then republish the previous site.
+- [x] **Caption word at 0:24–0:26** — final audit kept "outside **of** the workplace": every full-recording pass over the shipped audio (two different on-device models) hears "of", and the audio has two syllables between "outside" and "workplace". No caption changes were needed (audit in the evidence folder, `caption-final-audit.md`).
+- [x] **Audio level** — kept at -16.0 LUFS (Sky: keep the improved audio).
+- [x] **Poster frame** — the closing smile at 66.2 s, as approved.
 
 ## 2. BLOCKERS / FAIL_FAST
 
@@ -70,7 +67,7 @@ No existing file outside `qa-reports/INDEX.md` was modified.
 | 4. Visual Entropy | PASS | ~86/100 (judgment) | Same three-band rhythm as `/runway/`; the only looseness is the empty space right of the video at 768–1279 in stacked mode |
 | 5. Luxury UI Score | PASS | ~85/100 (judgment) | The poster sits in the site's black rounded frame and shadow; the transcript reads as quiet prose; the copy is short |
 | 6. Regression Safety | PASS | — | Full suite + static suites green; no shared file touched |
-| 7. Compile Decision | **COMMIT** | — | UI DONE as a candidate; publication waits on Sky (section 1) |
+| 7. Compile Decision | **COMMIT** | — | UI DONE; publication approved by Sky on 2026-10-18 (section 1) |
 
 ## 7. Findings and notes
 
