@@ -1,0 +1,471 @@
+{
+  "base": "78169e94c9f2b9810d3c9cdb18c54b0cacb7e297",
+  "candidate": "fbb84c6fb0b8a607da7297d04bd99c9c94fa28d2",
+  "changedPaths": [
+    "components/Button.tsx",
+    "components/HamburgerNav.tsx",
+    "components/ProjectDoorwayButton.tsx",
+    "components/SidebarRailLinks.tsx",
+    "components/__tests__/Button.test.tsx",
+    "components/__tests__/HamburgerNav.test.tsx",
+    "components/__tests__/ProjectDoorwayButton.test.tsx",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/README.md",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/harness/axe.mjs",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/harness/harness.mjs",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/harness/probe-active2.mjs",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/harness/sequence.mjs",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/harness/sheet.mjs",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/harness/strip.mjs",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/harness/tables.mjs",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/measurements/after.measurements.json",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/measurements/axe-after.json",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/measurements/axe-before.json",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/measurements/before.measurements.json",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/measurements/css-hash-evidence-build.txt",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/measurements/css-hash-final-build.txt",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/measurements/tables.md",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sequences/after-desktop-1440-light.webm",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sequences/after-phone-393-dark.webm",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sequences/after-phone-393-light.webm",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sequences/after.sequence.json",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sequences/before.sequence.json",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sequences/strips/after-desktop-1440-light-A-doorway.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sequences/strips/after-phone-393-dark-A-doorway.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sequences/strips/after-phone-393-light-A-doorway.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sequences/strips/after-phone-393-light-B-menu-item.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sequences/strips/before-phone-393-light-A-doorway.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/1440x900-dark--button-hero.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/1440x900-dark--button.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/1440x900-dark--doorway-flagship.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/1440x900-light--button-dotcolor.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/1440x900-light--button-hero.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/1440x900-light--button.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/1440x900-light--doorway-flagship.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/320x568-dark--button.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/320x568-dark--doorway-flagship.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/320x568-dark--hamburger-close.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/320x568-dark--hamburger-item.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/320x568-dark--hamburger-trigger.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/320x568-light--button.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/320x568-light--doorway-flagship.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/320x568-light--hamburger-close.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/320x568-light--hamburger-item.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/320x568-light--hamburger-trigger.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/375x667-dark--button.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/375x667-dark--doorway-flagship.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/375x667-dark--hamburger-close.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/375x667-dark--hamburger-item.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/375x667-dark--hamburger-trigger.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/375x667-light--button.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/375x667-light--doorway-flagship.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/375x667-light--hamburger-close.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/375x667-light--hamburger-item.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/375x667-light--hamburger-trigger.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/393x852-dark--button-hero.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/393x852-dark--button.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/393x852-dark--doorway-flagship.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/393x852-dark--hamburger-close.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/393x852-dark--hamburger-item.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/393x852-dark--hamburger-trigger.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/393x852-light--button.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/393x852-light--doorway-flagship.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/393x852-light--doorway-row.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/393x852-light--hamburger-close.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/393x852-light--hamburger-item.png",
+    "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/393x852-light--hamburger-trigger.png",
+    "qa-reports/2026-10-19_InteractionRefinement.md",
+    "qa-reports/INDEX.md"
+  ],
+  "protectedPaths": [
+    {
+      "path": "app",
+      "base": "b006632241fb1308d2702fc27c2f8996cfbfc5c4",
+      "candidate": "b006632241fb1308d2702fc27c2f8996cfbfc5c4"
+    },
+    {
+      "path": "components/cinematic",
+      "base": "d71751bb1d5347fdc6d50a5d992a9f5e65cda836",
+      "candidate": "d71751bb1d5347fdc6d50a5d992a9f5e65cda836"
+    },
+    {
+      "path": "components/IntroSkip.tsx",
+      "base": "6b6ebfb39f910874d3cddf717e5ec6567bf9cdd0",
+      "candidate": "6b6ebfb39f910874d3cddf717e5ec6567bf9cdd0"
+    },
+    {
+      "path": "components/MagneticButton.tsx",
+      "base": "f8ba8f57b3072b057b64abb308e70ac8a19eed4b",
+      "candidate": "f8ba8f57b3072b057b64abb308e70ac8a19eed4b"
+    },
+    {
+      "path": "lib",
+      "base": "be88cbd6879118b491e9ea54b53e6a9a892a042e",
+      "candidate": "be88cbd6879118b491e9ea54b53e6a9a892a042e"
+    },
+    {
+      "path": "content",
+      "base": "647cac677a643185ea7adba98abd62d2471cdee5",
+      "candidate": "647cac677a643185ea7adba98abd62d2471cdee5"
+    },
+    {
+      "path": "public",
+      "base": "4495f6863158aab251224ae3675d15dcd10ce918",
+      "candidate": "4495f6863158aab251224ae3675d15dcd10ce918"
+    },
+    {
+      "path": ".github",
+      "base": "2b15d9487d261058b31e7e97204445bbbce34258",
+      "candidate": "2b15d9487d261058b31e7e97204445bbbce34258"
+    },
+    {
+      "path": "next.config.mjs",
+      "base": "05b7fee4741a74ecb52078352e34ad2129ed028a",
+      "candidate": "05b7fee4741a74ecb52078352e34ad2129ed028a"
+    },
+    {
+      "path": "tailwind.config.ts",
+      "base": "63ecd71d66e4e7e98d3bf2e228964bb09c35a7a4",
+      "candidate": "63ecd71d66e4e7e98d3bf2e228964bb09c35a7a4"
+    },
+    {
+      "path": "package.json",
+      "base": "9932e32c0c6c09b15162840d6da7eecc6d30f720",
+      "candidate": "9932e32c0c6c09b15162840d6da7eecc6d30f720"
+    },
+    {
+      "path": "package-lock.json",
+      "base": "46e68f632ef3f272b51becbe89aadd1f21103d23",
+      "candidate": "46e68f632ef3f272b51becbe89aadd1f21103d23"
+    }
+  ],
+  "allProtectedMatch": true,
+  "sourceEvidenceFiles": 65,
+  "retainedSource": [
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/README.md",
+      "sha256": "ecaf923705f81c324c5e2beea5f0a7208f41645af66bb981959f483433222ead",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/harness/axe.mjs",
+      "sha256": "610ec0c09cd0f7a83f522ab900e3cef4bd62ec889f034fddce420292e2204e18",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/harness/harness.mjs",
+      "sha256": "2b3f1971ee794817252e753c51c3bd9b6cfa660ff44c52ef360685150fad01f8",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/harness/probe-active2.mjs",
+      "sha256": "48aa22056a8d08d9c8e4f372a79476f29c83cca4ba1aeac6f23a9b0e5f4802ac",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/harness/sequence.mjs",
+      "sha256": "fa25c83db5876946e0f10b8a55472c17d53feb3aaebbde2d783488186102d448",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/harness/sheet.mjs",
+      "sha256": "b36e2191ffb3a25a8d478fb19dd2413f7e88f8a3483d5592681b666f6df73182",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/harness/strip.mjs",
+      "sha256": "32b8aea2b6bb938ce202064efe2e6b237857bce5ddf09629eac463e7ab635a75",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/harness/tables.mjs",
+      "sha256": "831ec72a40a6b0f7c3f4c43a035f513a5554de91a96ca899b33e303f7977faf6",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/measurements/after.measurements.json",
+      "sha256": "839c06ddae3763751d4484937e829ceae2aadc9922b63ebae82681eeb8de168e",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/measurements/axe-after.json",
+      "sha256": "2e4ba8238a22da5cd3e5ec521b69a0de4e93b17dcf9266140535eebd3e42addb",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/measurements/axe-before.json",
+      "sha256": "e9f99b6dbdb829ad4b1a7f97267a51d1c6a6bca5b2bf1087bdfdff98ebc7b5bf",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/measurements/before.measurements.json",
+      "sha256": "3ccb4c59c3aa85e48a29665ecb0e7858742b8780dc9e9dfa8bdbac408833b4fd",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/measurements/css-hash-evidence-build.txt",
+      "sha256": "79b6dc13c1019ff8654ef49bfcffa6770b67c9db34fc8a67816943ffcf209f78",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/measurements/css-hash-final-build.txt",
+      "sha256": "79b6dc13c1019ff8654ef49bfcffa6770b67c9db34fc8a67816943ffcf209f78",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/measurements/tables.md",
+      "sha256": "c042d4a8a9000ce344ce0b068dd2b2fab3766c36203bc7b2fec3175861d11916",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sequences/after-desktop-1440-light.webm",
+      "sha256": "a3f6764548547d68fdadff3e6aea33ac7b007efd3f8f8aa8edc8ae3f3e557edf",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sequences/after-phone-393-dark.webm",
+      "sha256": "273379e1b43fb7efa643a0280ac533ce3880cb974dd872a54fb41391b8312a00",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sequences/after-phone-393-light.webm",
+      "sha256": "4aaf2c727d17689f06bf58ff25f347034e8db557dc0790ad5499721c156312d2",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sequences/after.sequence.json",
+      "sha256": "db156d3d9bdca93495af94138f1d07490ecab822baebdd1292312f20eb636383",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sequences/before.sequence.json",
+      "sha256": "0f822034a912ae58e5c012d16da8e5ee41770c299d740c27807333840eb643e9",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sequences/strips/after-desktop-1440-light-A-doorway.png",
+      "sha256": "7a244ca49d648e3cefcc498ec552d5f44b949d2f4ed6cb8d388d4ffbfc35952e",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sequences/strips/after-phone-393-dark-A-doorway.png",
+      "sha256": "cdb50ec9a0b128acd0a4f2538befa50b6b369c4943cf127083eb425aace94e21",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sequences/strips/after-phone-393-light-A-doorway.png",
+      "sha256": "0b3dd5ea40e4e52e22b33699d3d9bc71b42b286ea034073858eb6ba9ed68edcc",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sequences/strips/after-phone-393-light-B-menu-item.png",
+      "sha256": "37643984eea97791dd6cf1696313211e208b74d325e4df29ea20d18977819fb5",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sequences/strips/before-phone-393-light-A-doorway.png",
+      "sha256": "3982531d73bb6888abfb0e3b264d4cd8ea9529bf7c46a459167b6cbeec79ffc6",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/1440x900-dark--button-hero.png",
+      "sha256": "bdf8c10e91e3fa7738b2361059923903d38f39ffd9c98e4d6e91ff93a553a901",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/1440x900-dark--button.png",
+      "sha256": "b0c54ce191091239c27ea4d9b997066400bf3e3c4ca448d77a7ddb81f6fdc63d",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/1440x900-dark--doorway-flagship.png",
+      "sha256": "8996f1947ba13ea378564827aa05a1baa967a70b41cc4885e8d2f91de12ed26e",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/1440x900-light--button-dotcolor.png",
+      "sha256": "a290abc3b0f57e462e7aacf044ab1fccb025fe995f19c1c446cc4a7d6697842f",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/1440x900-light--button-hero.png",
+      "sha256": "e506462ba9164f045e699b475f805457841ef87afce0b97451dcec7e442ccfa3",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/1440x900-light--button.png",
+      "sha256": "be0a910863d1b56f3c6e320e7fb5f6ce0be64403d56664485ff1c707c9af24f9",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/1440x900-light--doorway-flagship.png",
+      "sha256": "0e09e1c34cd08039ca17e348bf4453c90e1c59f85809b9b6320b4aac7d428579",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/320x568-dark--button.png",
+      "sha256": "f5daa56fe55ffc70b3a2ec1782337f33561f62efed58daad44c3e2ed006b34c7",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/320x568-dark--doorway-flagship.png",
+      "sha256": "9ef0515bdef770f29042cc277a0dd40565aa666951f9868d4c50314306b4c25d",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/320x568-dark--hamburger-close.png",
+      "sha256": "e6109016b9dfa5aa8c8a4e93e174955876e5abf1e4418b8ac8bf861616754e96",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/320x568-dark--hamburger-item.png",
+      "sha256": "bb40ea01eacb6be85a4575f1d9431037d5a50b2bae9569b3b11bfdf8cf22edf5",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/320x568-dark--hamburger-trigger.png",
+      "sha256": "370a27c9f80a7a628495a2b7ba946dec5ba3cc0595482142347eaf32a2da113e",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/320x568-light--button.png",
+      "sha256": "04e24d386c742462440f1d41f9e01d05b0bfa615337f26b95a33eae61e31d85e",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/320x568-light--doorway-flagship.png",
+      "sha256": "93c6ffdf7f94737d3147f64a7f4642b13837df93d5dd44ee077662e02b40c334",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/320x568-light--hamburger-close.png",
+      "sha256": "14db484f1290cccb97068d5006b852626b24713fa003b0a19f6d80e74778a90f",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/320x568-light--hamburger-item.png",
+      "sha256": "b16ee15b368e0ac981892fa6b6f60f081a5a7a905488a3c7e078a169246e6f4c",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/320x568-light--hamburger-trigger.png",
+      "sha256": "a257ec0e47a42630c10cd04fe5ace7b0484893b466a2d55d03b6f1bbacdc4692",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/375x667-dark--button.png",
+      "sha256": "c94679a5646d5d02bdd0c34f6382e65ddb6c0d6832848d267dd38bafbb2633f4",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/375x667-dark--doorway-flagship.png",
+      "sha256": "7cf814a6e13882a2f2ade2b458e93de83b9878460767cd5cae4ca270a9ee4746",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/375x667-dark--hamburger-close.png",
+      "sha256": "a149e4a7364d86710368f93d8411a58088002cf9d6a3673116bec3cbbee19151",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/375x667-dark--hamburger-item.png",
+      "sha256": "037b11b5349204caff2b273e0f9daadc81b8706b129b32152a32de26436ccaf6",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/375x667-dark--hamburger-trigger.png",
+      "sha256": "d57cbe42f962de11c5b5578537be5a5b9afe70302a7abc77f64e4b089592375e",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/375x667-light--button.png",
+      "sha256": "6627efe1107040e55998af5bb8ec27d80e0de0ad6ec4b727aa1a55e0ece93256",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/375x667-light--doorway-flagship.png",
+      "sha256": "6e2e11647bbfce6c7327d8291cbe70a123518ba2710dd9e4bb9dc91b8120d7af",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/375x667-light--hamburger-close.png",
+      "sha256": "64c43bbd74c3be8432b04bf200abf5b74822b3795c5a45b954f40858e29b2298",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/375x667-light--hamburger-item.png",
+      "sha256": "3ffd66f611f570873d2c0ac2d382baf6a50bda062651f9303e2b2c5ff6bd6687",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/375x667-light--hamburger-trigger.png",
+      "sha256": "9e9a50670f47ffeb931f969752d53a5d74954b9fc49737af94746f3371aaa50d",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/393x852-dark--button-hero.png",
+      "sha256": "df9e8b3d3dba0b98ed91e773f217076d4baf76086e07acdafe6945500791561d",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/393x852-dark--button.png",
+      "sha256": "ecb29e6769d6adec46c8276a947f021fb1b780ca20e74fa1adc5a780415836a5",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/393x852-dark--doorway-flagship.png",
+      "sha256": "e80ca80f12bb11ce82295e4c661d4cce526e000d0d8e3255f33566167bc3ff33",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/393x852-dark--hamburger-close.png",
+      "sha256": "f7393bff9437798b3a77ec2102f339843ca4d865a32a832823fe6a6564787970",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/393x852-dark--hamburger-item.png",
+      "sha256": "a51922719506583b47088243b32fa0e2ee0a226b5c4ec511dd41fc3a03eec02a",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/393x852-dark--hamburger-trigger.png",
+      "sha256": "bc6115c85e9f751c8cfb8d70f6fd328116be1f5ffbcc1722b64342a7a7019200",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/393x852-light--button.png",
+      "sha256": "87caab2d54544f7f274f6fe7410d12d1c8456a2a3ad25da2cec1ebae7041a429",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/393x852-light--doorway-flagship.png",
+      "sha256": "7b8a6bf9483a38baa95f49b2dfcbe337a09d87392beddc1cc20ad762c16f216a",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/393x852-light--doorway-row.png",
+      "sha256": "5a2f3094ff7677a7cb2f02415118505625441ddf3639ba824e13cd12dae69909",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/393x852-light--hamburger-close.png",
+      "sha256": "0b46c21d5346098b7449cace5ffc0bf140e82c94f090aa9e8c36b01011919828",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/393x852-light--hamburger-item.png",
+      "sha256": "c1b2eb46be2c28d1259c860ca72213c07f7d3c98665e3b860b01ea3e87733343",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement-evidence/sheets/393x852-light--hamburger-trigger.png",
+      "sha256": "4f4ff668100b1d77c4886117cd81ac5dc36262c8ec224bf1fcb12b53711ae0fb",
+      "blobMatches": true
+    },
+    {
+      "path": "qa-reports/2026-10-19_InteractionRefinement.md",
+      "sha256": "87c508d747e5036bc3d7b39579ff35dacbb072645f9e2d640e2295736bca837e",
+      "blobMatches": true
+    }
+  ],
+  "utilityPageSHA256": "facbedf889f73d8a9ee3bcf9711ea2f77585f50bd2a021b70c3995b6dca81a32"
+}

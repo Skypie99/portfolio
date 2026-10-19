@@ -1,0 +1,1345 @@
+{
+  "applicationSHA": "fbb84c6fb0b8a607da7297d04bd99c9c94fa28d2",
+  "baseSHA": "78169e94c9f2b9810d3c9cdb18c54b0cacb7e297",
+  "sourceSHA": "ae15dd1f65cec036dab2c534c9cec88f915209ca",
+  "branch": "codex/skypi-release4-interactions-20261019",
+  "pr": "https://github.com/Skypie99/portfolio/pull/28",
+  "readiness": "prepared with open findings; not integration accepted, owner release accepted or deployed",
+  "commands": [
+    {
+      "command": "npm test -- components/__tests__/Button.test.tsx components/__tests__/ProjectDoorwayButton.test.tsx components/__tests__/HamburgerNav.test.tsx components/__tests__/Sidebar.test.tsx components/__tests__/TapTargets.test.tsx app/__tests__/flagstone-cta-parity.test.tsx lib/__tests__/ember-large-text.test.ts --maxWorkers=2",
+      "name": "focused",
+      "started": "2026-10-19T11:40:53.885Z",
+      "seconds": 5.291,
+      "exitCode": 0,
+      "log": "qa-reports/2026-10-19_Codex_Release4Interactions-evidence/logs/focused.log"
+    },
+    {
+      "command": "npm run typecheck",
+      "name": "typecheck",
+      "started": "2026-10-19T11:40:59.180Z",
+      "seconds": 2.895,
+      "exitCode": 0,
+      "log": "qa-reports/2026-10-19_Codex_Release4Interactions-evidence/logs/typecheck.log"
+    },
+    {
+      "command": "npm run lint",
+      "name": "lint",
+      "started": "2026-10-19T11:41:02.076Z",
+      "seconds": 1.907,
+      "exitCode": 0,
+      "log": "qa-reports/2026-10-19_Codex_Release4Interactions-evidence/logs/lint.log"
+    },
+    {
+      "command": "npm run build",
+      "name": "build",
+      "started": "2026-10-19T11:41:03.984Z",
+      "seconds": 27.715,
+      "exitCode": 0,
+      "log": "qa-reports/2026-10-19_Codex_Release4Interactions-evidence/logs/build.log"
+    },
+    {
+      "command": "npm test -- --maxWorkers=2",
+      "name": "full-suite",
+      "started": "2026-10-19T11:41:31.700Z",
+      "seconds": 46.131,
+      "exitCode": 0,
+      "log": "qa-reports/2026-10-19_Codex_Release4Interactions-evidence/logs/full-suite.log"
+    }
+  ],
+  "fullSuite": {
+    "files": 114,
+    "passed": 1027,
+    "skipped": 2
+  },
+  "focused": {
+    "files": 7,
+    "passed": 52
+  },
+  "baselineRegressions": {
+    "failed": 14,
+    "passed": 19
+  },
+  "sourceEvidence": {
+    "filesIncludingReceipt": 65,
+    "sheets": 39,
+    "strips": 5,
+    "recordings": 3
+  },
+  "browsers": [
+    {
+      "engines": [
+        {
+          "name": "chromium",
+          "version": "153.0.8010.0",
+          "headless": true
+        }
+      ],
+      "os": "Linux 6.18.55 x64",
+      "profiles": [
+        {
+          "build": "candidate",
+          "browser": "chromium",
+          "width": 1440,
+          "height": 900,
+          "theme": "light",
+          "motion": "no-preference",
+          "input": "mouse",
+          "id": "candidate/chromium/1440/light/mouse",
+          "media": {
+            "hover": true,
+            "coarse": false,
+            "touch": 0,
+            "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.0 Safari/537.36"
+          }
+        },
+        {
+          "build": "candidate",
+          "browser": "chromium",
+          "width": 1440,
+          "height": 900,
+          "theme": "dark",
+          "motion": "no-preference",
+          "input": "mouse",
+          "id": "candidate/chromium/1440/dark/mouse",
+          "media": {
+            "hover": true,
+            "coarse": false,
+            "touch": 0,
+            "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.0 Safari/537.36"
+          }
+        },
+        {
+          "build": "candidate",
+          "browser": "chromium",
+          "width": 393,
+          "height": 852,
+          "theme": "light",
+          "motion": "no-preference",
+          "input": "cdp-touch",
+          "id": "candidate/chromium/393/light/cdp-touch",
+          "media": {
+            "hover": false,
+            "coarse": true,
+            "touch": 1,
+            "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.0 Safari/537.36"
+          }
+        },
+        {
+          "build": "candidate",
+          "browser": "chromium",
+          "width": 393,
+          "height": 852,
+          "theme": "dark",
+          "motion": "no-preference",
+          "input": "cdp-touch",
+          "id": "candidate/chromium/393/dark/cdp-touch",
+          "media": {
+            "hover": false,
+            "coarse": true,
+            "touch": 1,
+            "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.0 Safari/537.36"
+          }
+        },
+        {
+          "build": "candidate",
+          "browser": "chromium",
+          "width": 320,
+          "height": 568,
+          "theme": "light",
+          "motion": "no-preference",
+          "input": "cdp-touch",
+          "id": "candidate/chromium/320/light/cdp-touch",
+          "media": {
+            "hover": false,
+            "coarse": true,
+            "touch": 1,
+            "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.0 Safari/537.36"
+          }
+        },
+        {
+          "build": "candidate",
+          "browser": "chromium",
+          "width": 320,
+          "height": 568,
+          "theme": "dark",
+          "motion": "no-preference",
+          "input": "cdp-touch",
+          "id": "candidate/chromium/320/dark/cdp-touch",
+          "media": {
+            "hover": false,
+            "coarse": true,
+            "touch": 1,
+            "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.0 Safari/537.36"
+          }
+        }
+      ],
+      "readings": 182,
+      "assertions": 360,
+      "failed": [
+        {
+          "name": "candidate/chromium/393/light/cdp-touch/row/touch-dot-restored",
+          "pass": false,
+          "details": {
+            "rest": {
+              "width": 6,
+              "height": 6,
+              "fill": "rgb(185, 99, 64)",
+              "duration": "0.28s"
+            },
+            "release": {
+              "width": 8,
+              "height": 8,
+              "fill": "rgb(185, 99, 64)",
+              "duration": "0.28s"
+            }
+          }
+        },
+        {
+          "name": "candidate/chromium/393/dark/cdp-touch/row/touch-dot-restored",
+          "pass": false,
+          "details": {
+            "rest": {
+              "width": 6,
+              "height": 6,
+              "fill": "rgb(207, 122, 79)",
+              "duration": "0.28s"
+            },
+            "release": {
+              "width": 8,
+              "height": 8,
+              "fill": "rgb(207, 122, 79)",
+              "duration": "0.28s"
+            }
+          }
+        },
+        {
+          "name": "candidate/chromium/320/light/cdp-touch/row/touch-dot-restored",
+          "pass": false,
+          "details": {
+            "rest": {
+              "width": 6,
+              "height": 6,
+              "fill": "rgb(185, 99, 64)",
+              "duration": "0.28s"
+            },
+            "release": {
+              "width": 8,
+              "height": 8,
+              "fill": "rgb(185, 99, 64)",
+              "duration": "0.28s"
+            }
+          }
+        },
+        {
+          "name": "candidate/chromium/320/dark/cdp-touch/row/touch-dot-restored",
+          "pass": false,
+          "details": {
+            "rest": {
+              "width": 6,
+              "height": 6,
+              "fill": "rgb(207, 122, 79)",
+              "duration": "0.28s"
+            },
+            "release": {
+              "width": 8,
+              "height": 8,
+              "fill": "rgb(207, 122, 79)",
+              "duration": "0.28s"
+            }
+          }
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "engines": [
+        {
+          "name": "firefox",
+          "version": "153.0",
+          "headless": true
+        }
+      ],
+      "os": "Linux 6.18.55 x64",
+      "profiles": [
+        {
+          "build": "candidate",
+          "browser": "firefox",
+          "width": 1440,
+          "height": 900,
+          "theme": "light",
+          "motion": "no-preference",
+          "input": "mouse",
+          "id": "candidate/firefox/1440/light/mouse",
+          "media": {
+            "hover": true,
+            "coarse": false,
+            "touch": 0,
+            "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:153.0) Gecko/20100101 Firefox/153.0"
+          }
+        },
+        {
+          "build": "candidate",
+          "browser": "firefox",
+          "width": 1440,
+          "height": 900,
+          "theme": "dark",
+          "motion": "no-preference",
+          "input": "mouse",
+          "id": "candidate/firefox/1440/dark/mouse",
+          "media": {
+            "hover": true,
+            "coarse": false,
+            "touch": 0,
+            "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:153.0) Gecko/20100101 Firefox/153.0"
+          }
+        },
+        {
+          "build": "candidate",
+          "browser": "firefox",
+          "width": 393,
+          "height": 852,
+          "theme": "light",
+          "motion": "no-preference",
+          "input": "mouse",
+          "id": "candidate/firefox/393/light/mouse",
+          "media": {
+            "hover": true,
+            "coarse": false,
+            "touch": 0,
+            "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:153.0) Gecko/20100101 Firefox/153.0"
+          }
+        },
+        {
+          "build": "candidate",
+          "browser": "firefox",
+          "width": 393,
+          "height": 852,
+          "theme": "dark",
+          "motion": "no-preference",
+          "input": "mouse",
+          "id": "candidate/firefox/393/dark/mouse",
+          "media": {
+            "hover": true,
+            "coarse": false,
+            "touch": 0,
+            "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:153.0) Gecko/20100101 Firefox/153.0"
+          }
+        }
+      ],
+      "readings": 128,
+      "assertions": 206,
+      "failed": [
+        {
+          "name": "candidate/firefox/1440/light/mouse/button/cancel-release-clears",
+          "pass": false,
+          "details": {}
+        },
+        {
+          "name": "candidate/firefox/1440/light/mouse/doorway/cancel-release-clears",
+          "pass": false,
+          "details": {}
+        },
+        {
+          "name": "candidate/firefox/1440/light/mouse/row/cancel-release-clears",
+          "pass": false,
+          "details": {}
+        },
+        {
+          "name": "candidate/firefox/1440/light/mouse/hue/cancel-release-clears",
+          "pass": false,
+          "details": {}
+        },
+        {
+          "name": "candidate/firefox/1440/dark/mouse/button/cancel-release-clears",
+          "pass": false,
+          "details": {}
+        },
+        {
+          "name": "candidate/firefox/1440/dark/mouse/doorway/cancel-release-clears",
+          "pass": false,
+          "details": {}
+        },
+        {
+          "name": "candidate/firefox/1440/dark/mouse/row/cancel-release-clears",
+          "pass": false,
+          "details": {}
+        },
+        {
+          "name": "candidate/firefox/1440/dark/mouse/hue/cancel-release-clears",
+          "pass": false,
+          "details": {}
+        },
+        {
+          "name": "candidate/firefox/393/light/mouse/button/cancel-release-clears",
+          "pass": false,
+          "details": {}
+        },
+        {
+          "name": "candidate/firefox/393/light/mouse/doorway/cancel-release-clears",
+          "pass": false,
+          "details": {}
+        },
+        {
+          "name": "candidate/firefox/393/light/mouse/row/cancel-release-clears",
+          "pass": false,
+          "details": {}
+        },
+        {
+          "name": "candidate/firefox/393/light/mouse/close/keyboard-target",
+          "pass": false,
+          "details": {}
+        },
+        {
+          "name": "candidate/firefox/393/light/mouse/close/focus-visible",
+          "pass": false,
+          "details": {
+            "build": "candidate",
+            "browser": "firefox",
+            "width": 44,
+            "height": 44,
+            "theme": "light",
+            "motion": "no-preference",
+            "input": "mouse",
+            "id": "candidate/firefox/393/light/mouse",
+            "control": "close",
+            "state": "focus",
+            "label": "Close navigation menu",
+            "href": null,
+            "active": false,
+            "hover": false,
+            "focusVisible": false,
+            "border": "rgb(204, 207, 190)",
+            "borderWidth": "1px",
+            "fill": "rgba(0, 0, 0, 0)",
+            "color": "rgb(32, 48, 44)",
+            "outline": [
+              "none",
+              "3px",
+              "0px",
+              "rgb(32, 48, 44)"
+            ],
+            "shadow": "none",
+            "twShadow": "0 0 #0000",
+            "transform": "none",
+            "inlineTransform": "",
+            "duration": "0.18s",
+            "transition": "color, background-color, border-color",
+            "dot": null
+          }
+        },
+        {
+          "name": "candidate/firefox/393/light/mouse/item/cancel-release-clears",
+          "pass": false,
+          "details": {}
+        },
+        {
+          "name": "candidate/firefox/393/light/mouse/hue/cancel-release-clears",
+          "pass": false,
+          "details": {}
+        },
+        {
+          "name": "candidate/firefox/393/dark/mouse/button/cancel-release-clears",
+          "pass": false,
+          "details": {}
+        },
+        {
+          "name": "candidate/firefox/393/dark/mouse/doorway/cancel-release-clears",
+          "pass": false,
+          "details": {}
+        },
+        {
+          "name": "candidate/firefox/393/dark/mouse/row/cancel-release-clears",
+          "pass": false,
+          "details": {}
+        },
+        {
+          "name": "candidate/firefox/393/dark/mouse/close/keyboard-target",
+          "pass": false,
+          "details": {}
+        },
+        {
+          "name": "candidate/firefox/393/dark/mouse/close/focus-visible",
+          "pass": false,
+          "details": {
+            "build": "candidate",
+            "browser": "firefox",
+            "width": 44,
+            "height": 44,
+            "theme": "dark",
+            "motion": "no-preference",
+            "input": "mouse",
+            "id": "candidate/firefox/393/dark/mouse",
+            "control": "close",
+            "state": "focus",
+            "label": "Close navigation menu",
+            "href": null,
+            "active": false,
+            "hover": false,
+            "focusVisible": false,
+            "border": "rgb(44, 52, 54)",
+            "borderWidth": "1px",
+            "fill": "rgba(0, 0, 0, 0)",
+            "color": "rgb(236, 234, 224)",
+            "outline": [
+              "none",
+              "3px",
+              "0px",
+              "rgb(236, 234, 224)"
+            ],
+            "shadow": "none",
+            "twShadow": "0 0 #0000",
+            "transform": "none",
+            "inlineTransform": "",
+            "duration": "0.18s",
+            "transition": "color, background-color, border-color",
+            "dot": null
+          }
+        },
+        {
+          "name": "candidate/firefox/393/dark/mouse/item/cancel-release-clears",
+          "pass": false,
+          "details": {}
+        },
+        {
+          "name": "candidate/firefox/393/dark/mouse/hue/cancel-release-clears",
+          "pass": false,
+          "details": {}
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "engines": [
+        {
+          "name": "webkit",
+          "version": "26.5",
+          "headless": true
+        }
+      ],
+      "os": "Linux 6.18.55 x64",
+      "profiles": [
+        {
+          "build": "candidate",
+          "browser": "webkit",
+          "width": 1440,
+          "height": 900,
+          "theme": "light",
+          "motion": "no-preference",
+          "input": "mouse",
+          "id": "candidate/webkit/1440/light/mouse",
+          "media": {
+            "hover": true,
+            "coarse": false,
+            "touch": 0,
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.5 Safari/605.1.15"
+          }
+        },
+        {
+          "build": "candidate",
+          "browser": "webkit",
+          "width": 1440,
+          "height": 900,
+          "theme": "dark",
+          "motion": "no-preference",
+          "input": "mouse",
+          "id": "candidate/webkit/1440/dark/mouse",
+          "media": {
+            "hover": true,
+            "coarse": false,
+            "touch": 0,
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.5 Safari/605.1.15"
+          }
+        },
+        {
+          "build": "candidate",
+          "browser": "webkit",
+          "width": 393,
+          "height": 852,
+          "theme": "light",
+          "motion": "no-preference",
+          "input": "mouse",
+          "id": "candidate/webkit/393/light/mouse",
+          "media": {
+            "hover": false,
+            "coarse": true,
+            "touch": 0,
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.5 Safari/605.1.15"
+          }
+        },
+        {
+          "build": "candidate",
+          "browser": "webkit",
+          "width": 393,
+          "height": 852,
+          "theme": "dark",
+          "motion": "no-preference",
+          "input": "mouse",
+          "id": "candidate/webkit/393/dark/mouse",
+          "media": {
+            "hover": false,
+            "coarse": true,
+            "touch": 0,
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.5 Safari/605.1.15"
+          }
+        }
+      ],
+      "readings": 128,
+      "assertions": 206,
+      "failed": [
+        {
+          "name": "candidate/webkit/393/light/mouse/menu-navigation",
+          "pass": false,
+          "details": {
+            "url": "http://127.0.0.1:36737/certificates/"
+          }
+        },
+        {
+          "name": "candidate/webkit/393/dark/mouse/menu-navigation",
+          "pass": false,
+          "details": {
+            "url": "http://127.0.0.1:36737/certificates/"
+          }
+        }
+      ],
+      "pageErrors": []
+    }
+  ],
+  "axe": {
+    "engine": "Chromium 153.0.8010.0",
+    "motion": "reduce",
+    "widths": [
+      320,
+      1440
+    ],
+    "scans": 106,
+    "cleanScans": 104,
+    "violations": [
+      {
+        "route": "/flagstone/accessibility/",
+        "width": 320,
+        "theme": "light",
+        "violations": [
+          {
+            "id": "scrollable-region-focusable",
+            "impact": "serious",
+            "help": "Scrollable region must have keyboard access",
+            "nodes": [
+              {
+                "target": [
+                  ".table-wrap"
+                ],
+                "summary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "route": "/flagstone/accessibility/",
+        "width": 320,
+        "theme": "dark",
+        "violations": [
+          {
+            "id": "scrollable-region-focusable",
+            "impact": "serious",
+            "help": "Scrollable region must have keyboard access",
+            "nodes": [
+              {
+                "target": [
+                  ".table-wrap"
+                ],
+                "summary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "consoleErrors": 0,
+    "routes": [
+      "/",
+      "/404/",
+      "/about/",
+      "/accessibility/",
+      "/archive/",
+      "/blog/",
+      "/blog/building-accessmap/",
+      "/blog/building-flagstone/",
+      "/certificates/",
+      "/colophon/",
+      "/contact/",
+      "/flagstone/",
+      "/flagstone/accessibility/",
+      "/flagstone/privacy/",
+      "/flagstone/support/",
+      "/flagstone/terms/",
+      "/float/",
+      "/runway/",
+      "/tokyo-through-time/",
+      "/work/",
+      "/work/accessmap/",
+      "/work/claude-corp/",
+      "/work/dashboard/",
+      "/work/flagstone/",
+      "/work/ghost-code/",
+      "/work/mutual-mesh/",
+      "/work/prompt-library/"
+    ],
+    "archiveExcludedFromBrowserScan": true
+  },
+  "overflow": {
+    "frames": 162,
+    "routes": 27,
+    "themes": 2,
+    "widths": [
+      320,
+      393,
+      1440
+    ],
+    "findings": 0,
+    "negativeControlCaught": 162
+  },
+  "rawMatrixAssertions": 772,
+  "rawMatrixFailures": 28,
+  "candidateStateReadings": 438,
+  "supplementalChecks": [
+    {
+      "name": "reduced-held/chromium/light",
+      "pass": true,
+      "details": [
+        {
+          "afterWait": 0,
+          "active": true,
+          "dot": "6px",
+          "duration": "1e-05s",
+          "fill": "rgba(185, 99, 64, 0.1)"
+        },
+        {
+          "afterWait": 25,
+          "active": true,
+          "dot": "6px",
+          "duration": "1e-05s",
+          "fill": "rgba(185, 99, 64, 0.1)"
+        },
+        {
+          "afterWait": 75,
+          "active": true,
+          "dot": "6px",
+          "duration": "1e-05s",
+          "fill": "rgba(185, 99, 64, 0.1)"
+        },
+        {
+          "afterWait": 150,
+          "active": true,
+          "dot": "6px",
+          "duration": "1e-05s",
+          "fill": "rgba(185, 99, 64, 0.1)"
+        }
+      ]
+    },
+    {
+      "name": "native-shift-tab-close/chromium/light",
+      "pass": true,
+      "details": {
+        "focused": true,
+        "visible": true,
+        "outline": "rgb(185, 99, 64) solid 2px"
+      }
+    },
+    {
+      "name": "all-menu-targets/chromium/light",
+      "pass": true,
+      "details": [
+        {
+          "label": "01Home",
+          "height": 44,
+          "width": 196.453125
+        },
+        {
+          "label": "02The Work",
+          "height": 44,
+          "width": 207.53125
+        },
+        {
+          "label": "03A Brief Account",
+          "height": 44,
+          "width": 280.40625
+        },
+        {
+          "label": "04Credentials",
+          "height": 44,
+          "width": 225.96875
+        },
+        {
+          "label": "05Notes",
+          "height": 44,
+          "width": 157.8125
+        },
+        {
+          "label": "06Accessibility",
+          "height": 44,
+          "width": 238.6875
+        },
+        {
+          "label": "07Colophon",
+          "height": 44,
+          "width": 206.890625
+        },
+        {
+          "label": "08Let\u2019s talk",
+          "height": 44,
+          "width": 193.609375
+        }
+      ]
+    },
+    {
+      "name": "menu-exit-completes/chromium/light",
+      "pass": true,
+      "details": {
+        "msAfterRouteCommit": 19
+      }
+    },
+    {
+      "name": "reduced-held/chromium/dark",
+      "pass": true,
+      "details": [
+        {
+          "afterWait": 0,
+          "active": true,
+          "dot": "8px",
+          "duration": "1e-05s",
+          "fill": "rgb(21, 25, 26)"
+        },
+        {
+          "afterWait": 25,
+          "active": true,
+          "dot": "6px",
+          "duration": "1e-05s",
+          "fill": "rgba(207, 122, 79, 0.1)"
+        },
+        {
+          "afterWait": 75,
+          "active": true,
+          "dot": "6px",
+          "duration": "1e-05s",
+          "fill": "rgba(207, 122, 79, 0.1)"
+        },
+        {
+          "afterWait": 150,
+          "active": true,
+          "dot": "6px",
+          "duration": "1e-05s",
+          "fill": "rgba(207, 122, 79, 0.1)"
+        }
+      ]
+    },
+    {
+      "name": "native-shift-tab-close/chromium/dark",
+      "pass": true,
+      "details": {
+        "focused": true,
+        "visible": true,
+        "outline": "rgb(207, 122, 79) solid 2px"
+      }
+    },
+    {
+      "name": "all-menu-targets/chromium/dark",
+      "pass": true,
+      "details": [
+        {
+          "label": "01Home",
+          "height": 44,
+          "width": 196.453125
+        },
+        {
+          "label": "02The Work",
+          "height": 44,
+          "width": 207.53125
+        },
+        {
+          "label": "03A Brief Account",
+          "height": 44,
+          "width": 280.40625
+        },
+        {
+          "label": "04Credentials",
+          "height": 44,
+          "width": 225.96875
+        },
+        {
+          "label": "05Notes",
+          "height": 44,
+          "width": 157.8125
+        },
+        {
+          "label": "06Accessibility",
+          "height": 44,
+          "width": 238.6875
+        },
+        {
+          "label": "07Colophon",
+          "height": 44,
+          "width": 206.890625
+        },
+        {
+          "label": "08Let\u2019s talk",
+          "height": 44,
+          "width": 193.609375
+        }
+      ]
+    },
+    {
+      "name": "menu-exit-completes/chromium/dark",
+      "pass": true,
+      "details": {
+        "msAfterRouteCommit": 17
+      }
+    },
+    {
+      "name": "reduced-held/firefox/light",
+      "pass": true,
+      "details": [
+        {
+          "afterWait": 0,
+          "active": true,
+          "dot": "10px",
+          "duration": "0.00001s",
+          "fill": "rgb(255, 255, 255)"
+        },
+        {
+          "afterWait": 25,
+          "active": true,
+          "dot": "6px",
+          "duration": "0.00001s",
+          "fill": "rgba(185, 99, 64, 0.1)"
+        },
+        {
+          "afterWait": 75,
+          "active": true,
+          "dot": "6px",
+          "duration": "0.00001s",
+          "fill": "rgba(185, 99, 64, 0.1)"
+        },
+        {
+          "afterWait": 150,
+          "active": true,
+          "dot": "6px",
+          "duration": "0.00001s",
+          "fill": "rgba(185, 99, 64, 0.1)"
+        }
+      ]
+    },
+    {
+      "name": "native-shift-tab-close/firefox/light",
+      "pass": true,
+      "details": {
+        "focused": true,
+        "visible": true,
+        "outline": "rgb(185, 99, 64) solid 2px"
+      }
+    },
+    {
+      "name": "all-menu-targets/firefox/light",
+      "pass": true,
+      "details": [
+        {
+          "label": "01Home",
+          "height": 44,
+          "width": 196.26666259765625
+        },
+        {
+          "label": "02The Work",
+          "height": 44,
+          "width": 206.96665954589844
+        },
+        {
+          "label": "03A Brief Account",
+          "height": 44,
+          "width": 282.70001220703125
+        },
+        {
+          "label": "04Credentials",
+          "height": 44,
+          "width": 224.85000610351562
+        },
+        {
+          "label": "05Notes",
+          "height": 44,
+          "width": 157.93333435058594
+        },
+        {
+          "label": "06Accessibility",
+          "height": 44,
+          "width": 237.85000610351562
+        },
+        {
+          "label": "07Colophon",
+          "height": 44,
+          "width": 207.5833282470703
+        },
+        {
+          "label": "08Let\u2019s talk",
+          "height": 44,
+          "width": 194.38333129882812
+        }
+      ]
+    },
+    {
+      "name": "menu-exit-completes/firefox/light",
+      "pass": true,
+      "details": {
+        "msAfterRouteCommit": 22
+      }
+    },
+    {
+      "name": "reduced-held/firefox/dark",
+      "pass": true,
+      "details": [
+        {
+          "afterWait": 0,
+          "active": true,
+          "dot": "6px",
+          "duration": "0.00001s",
+          "fill": "rgba(207, 122, 79, 0.1)"
+        },
+        {
+          "afterWait": 25,
+          "active": true,
+          "dot": "6px",
+          "duration": "0.00001s",
+          "fill": "rgba(207, 122, 79, 0.1)"
+        },
+        {
+          "afterWait": 75,
+          "active": true,
+          "dot": "6px",
+          "duration": "0.00001s",
+          "fill": "rgba(207, 122, 79, 0.1)"
+        },
+        {
+          "afterWait": 150,
+          "active": true,
+          "dot": "6px",
+          "duration": "0.00001s",
+          "fill": "rgba(207, 122, 79, 0.1)"
+        }
+      ]
+    },
+    {
+      "name": "native-shift-tab-close/firefox/dark",
+      "pass": true,
+      "details": {
+        "focused": true,
+        "visible": true,
+        "outline": "rgb(207, 122, 79) solid 2px"
+      }
+    },
+    {
+      "name": "all-menu-targets/firefox/dark",
+      "pass": true,
+      "details": [
+        {
+          "label": "01Home",
+          "height": 44,
+          "width": 196.26666259765625
+        },
+        {
+          "label": "02The Work",
+          "height": 44,
+          "width": 206.96665954589844
+        },
+        {
+          "label": "03A Brief Account",
+          "height": 44,
+          "width": 282.70001220703125
+        },
+        {
+          "label": "04Credentials",
+          "height": 44,
+          "width": 224.85000610351562
+        },
+        {
+          "label": "05Notes",
+          "height": 44,
+          "width": 157.93333435058594
+        },
+        {
+          "label": "06Accessibility",
+          "height": 44,
+          "width": 237.85000610351562
+        },
+        {
+          "label": "07Colophon",
+          "height": 44,
+          "width": 207.5833282470703
+        },
+        {
+          "label": "08Let\u2019s talk",
+          "height": 44,
+          "width": 194.38333129882812
+        }
+      ]
+    },
+    {
+      "name": "menu-exit-completes/firefox/dark",
+      "pass": true,
+      "details": {
+        "msAfterRouteCommit": 26
+      }
+    },
+    {
+      "name": "firefox-keyboard-back/baseline",
+      "pass": false,
+      "details": {
+        "focused": false,
+        "activeLabel": "Skyler HaliskyTechnical SupportAI-assisted BuilderSkyPi StudioSkyler Halisky \u00b7 Senior technical supp",
+        "focusVisible": false
+      }
+    },
+    {
+      "name": "firefox-keyboard-back/candidate",
+      "pass": false,
+      "details": {
+        "focused": false,
+        "activeLabel": "Skyler HaliskyTechnical SupportAI-assisted BuilderSkyPi StudioSkyler Halisky \u00b7 Senior technical supp",
+        "focusVisible": false
+      }
+    },
+    {
+      "name": "reduced-held/webkit/light",
+      "pass": true,
+      "details": [
+        {
+          "afterWait": 0,
+          "active": true,
+          "dot": "8px",
+          "duration": "0.00001s",
+          "fill": "rgb(250, 248, 241)"
+        },
+        {
+          "afterWait": 25,
+          "active": true,
+          "dot": "6px",
+          "duration": "0.00001s",
+          "fill": "rgba(185, 99, 64, 0.1)"
+        },
+        {
+          "afterWait": 75,
+          "active": true,
+          "dot": "6px",
+          "duration": "0.00001s",
+          "fill": "rgba(185, 99, 64, 0.1)"
+        },
+        {
+          "afterWait": 150,
+          "active": true,
+          "dot": "6px",
+          "duration": "0.00001s",
+          "fill": "rgba(185, 99, 64, 0.1)"
+        }
+      ]
+    },
+    {
+      "name": "native-shift-tab-close/webkit/light",
+      "pass": true,
+      "details": {
+        "focused": true,
+        "visible": true,
+        "outline": "2px solid rgb(185, 99, 64)"
+      }
+    },
+    {
+      "name": "all-menu-targets/webkit/light",
+      "pass": true,
+      "details": [
+        {
+          "label": "01Home",
+          "height": 44,
+          "width": 196.25
+        },
+        {
+          "label": "02The Work",
+          "height": 44,
+          "width": 206.921875
+        },
+        {
+          "label": "03A Brief Account",
+          "height": 44,
+          "width": 282.59375
+        },
+        {
+          "label": "04Credentials",
+          "height": 44,
+          "width": 224.78125
+        },
+        {
+          "label": "05Notes",
+          "height": 44,
+          "width": 157.890625
+        },
+        {
+          "label": "06Accessibility",
+          "height": 44,
+          "width": 237.765625
+        },
+        {
+          "label": "07Colophon",
+          "height": 44,
+          "width": 207.53125
+        },
+        {
+          "label": "08Let\u2019s talk",
+          "height": 44,
+          "width": 194.3125
+        }
+      ]
+    },
+    {
+      "name": "menu-exit-completes/webkit/light",
+      "pass": true,
+      "details": {
+        "msAfterRouteCommit": 46
+      }
+    },
+    {
+      "name": "reduced-held/webkit/dark",
+      "pass": true,
+      "details": [
+        {
+          "afterWait": 0,
+          "active": true,
+          "dot": "8px",
+          "duration": "0.00001s",
+          "fill": "rgb(21, 25, 26)"
+        },
+        {
+          "afterWait": 25,
+          "active": true,
+          "dot": "6px",
+          "duration": "0.00001s",
+          "fill": "rgba(207, 122, 79, 0.1)"
+        },
+        {
+          "afterWait": 75,
+          "active": true,
+          "dot": "6px",
+          "duration": "0.00001s",
+          "fill": "rgba(207, 122, 79, 0.1)"
+        },
+        {
+          "afterWait": 150,
+          "active": true,
+          "dot": "6px",
+          "duration": "0.00001s",
+          "fill": "rgba(207, 122, 79, 0.1)"
+        }
+      ]
+    },
+    {
+      "name": "native-shift-tab-close/webkit/dark",
+      "pass": true,
+      "details": {
+        "focused": true,
+        "visible": true,
+        "outline": "2px solid rgb(207, 122, 79)"
+      }
+    },
+    {
+      "name": "all-menu-targets/webkit/dark",
+      "pass": true,
+      "details": [
+        {
+          "label": "01Home",
+          "height": 44,
+          "width": 196.25
+        },
+        {
+          "label": "02The Work",
+          "height": 44,
+          "width": 206.921875
+        },
+        {
+          "label": "03A Brief Account",
+          "height": 44,
+          "width": 282.59375
+        },
+        {
+          "label": "04Credentials",
+          "height": 44,
+          "width": 224.78125
+        },
+        {
+          "label": "05Notes",
+          "height": 44,
+          "width": 157.890625
+        },
+        {
+          "label": "06Accessibility",
+          "height": 44,
+          "width": 237.765625
+        },
+        {
+          "label": "07Colophon",
+          "height": 44,
+          "width": 207.53125
+        },
+        {
+          "label": "08Let\u2019s talk",
+          "height": 44,
+          "width": 194.3125
+        }
+      ]
+    },
+    {
+      "name": "menu-exit-completes/webkit/dark",
+      "pass": true,
+      "details": {
+        "msAfterRouteCommit": 61
+      }
+    }
+  ],
+  "stateAuditFailures": [
+    {
+      "name": "keyboard-enter-back/firefox",
+      "pass": false,
+      "details": {
+        "focused": false,
+        "visible": false,
+        "top": 408.1333312988281,
+        "bottom": 446.1333312988281
+      }
+    },
+    {
+      "name": "reduced-motion/webkit/light",
+      "pass": false,
+      "details": {
+        "duration": "0.00001s",
+        "dot": "8px",
+        "fill": "rgb(250, 248, 241)",
+        "active": true
+      }
+    },
+    {
+      "name": "reduced-motion/webkit/dark",
+      "pass": false,
+      "details": {
+        "duration": "0.00001s",
+        "dot": "10px",
+        "fill": "rgb(30, 36, 38)",
+        "active": true
+      }
+    }
+  ],
+  "openFindings": [
+    "R4-F03: inherited global row hover retains 8px dot after touch",
+    "R4-F04: inherited scrolling accessibility table has no keyboard access at 320px",
+    "R4-F05: Firefox keyboard return focus fails on main and candidate"
+  ],
+  "limitations": [
+    "No physical Safari/iOS/Android/hybrid testing",
+    "Native Firefox drag-release retains active in baseline and candidate; 18 ladder assertions remain unresolved",
+    "Touch paths separately prove held CSS and scrolling, not a physical held-to-scroll cancellation",
+    "Cinematic GPU/compositor defect untouched"
+  ]
+}
