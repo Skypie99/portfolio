@@ -91,6 +91,12 @@ export function heroMedia(d: HeroSource): ProductRevealMedia {
     dark: active?.dark,
     matte: d.heroArtwork ? undefined : d.heroShot?.matte,
     chrome: d.heroArtwork ? 'float' : d.heroShot?.chrome,
+    // The capture's declared pixel size (Flagstone first proof): a `frameWidth`
+    // hero fits its device screen to it. Artwork carries none. Spread only when
+    // declared, so every other hero's serialized props stay byte-identical.
+    ...(!d.heroArtwork && d.heroShot?.width && d.heroShot?.height
+      ? { width: d.heroShot.width, height: d.heroShot.height }
+      : {}),
   };
 }
 

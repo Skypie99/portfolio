@@ -1876,6 +1876,18 @@ html.dark .pr-plate-lit {
 .pr-screen-phone {
   border-radius: 1.5rem;
 }
+/* Capture-fitted frame (ProductReveal `frameWidth`; the Flagstone case-study
+   hero is the one call site, 2026-10-19). The call site sizes the frame by
+   WIDTH and this rule gives its screen the capture's own aspect, so the frame's
+   height follows the image and no "screen off" letterbox sliver (the #0e131a
+   above) shows above or below the real screenshot. --pr-screen-aspect is set
+   inline by ProductReveal from the capture's declared width/height
+   (deliverables.json); the fallback is the iPhone display family's 19.5:9.
+   Static paint — no duration, no token mutated — so RM / no-JS are identical. */
+.pr-frame--fit-capture > .pr-screen-phone {
+  flex: 0 0 auto;
+  aspect-ratio: var(--pr-screen-aspect, 9 / 19.5);
+}
 .pr-screen-plate {
   border-radius: 0.55rem;
 }
