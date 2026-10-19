@@ -86,4 +86,23 @@ describe('CinematicDesert (reduced motion)', () => {
     expect(glow).not.toBeNull();
     expect(glow?.classList.contains('cdesert-cliff-glow--landed')).toBe(true);
   });
+
+  it('static frame carries the signature candidate: the credit under the mark and the landed veil', () => {
+    mockMatchMedia(true);
+    const { container } = render(<CinematicDesert />);
+
+    // the credit: the person behind the mark, resolved inside the title block so
+    // the reduced-motion destination shot answers "who / what" like the live one.
+    const title = container.querySelector('.cdesert-title--resolved');
+    expect(title).not.toBeNull();
+    const credit = title?.querySelector('.cdesert-credit-line');
+    expect(credit?.textContent?.replace(/\s+/g, ' ').trim()).toBe('Skyler Halisky · Senior technical support');
+    // decorative duplicate of the runway chip + hero nameplate — never a third announcement
+    expect(title?.querySelector('.cdesert-credit')?.getAttribute('aria-hidden')).toBe('true');
+
+    // the handoff veil rests landed on the static stage (opacity comes from CSS).
+    const veil = container.querySelector('.cdesert-static-stage .cdesert-veil');
+    expect(veil).not.toBeNull();
+    expect(veil?.getAttribute('aria-hidden')).toBe('true');
+  });
 });

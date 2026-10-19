@@ -117,6 +117,12 @@ export function CinematicDesert() {
   // Work-of-art pass (Sky-ratified 2026-07-19): the cliff rim-glow layer —
   // masked by the arrival plate's own alpha, transform-synced to the cliff.
   const cliffGlowRef = useRef<HTMLDivElement>(null);
+  // Signature candidate (2026-10-19): the handoff veil + the credit under the mark.
+  // Both are scrubbed on the SAME master timeline as everything else — no second
+  // timeline, no per-frame listeners (the engine's standing contract).
+  const veilRef = useRef<HTMLDivElement>(null);
+  const creditRuleRef = useRef<HTMLSpanElement>(null);
+  const creditRef = useRef<HTMLParagraphElement>(null);
 
   // Whether to mount the animated scene. When false we render the static frame
   // and skip GSAP entirely.
@@ -517,6 +523,44 @@ export function CinematicDesert() {
         tl.to(titleRef.current, { opacity: 1, duration: 0.025 }, 0.975);
       }
 
+      // ── SIGNATURE CANDIDATE (2026-10-19): the credit resolves AFTER the mark ──
+      // "SkyPi Studio" has always landed alone; a film credit answers the two
+      // questions a recruiter brings to the frame they are left on — who, and
+      // what they do. The rule draws from its centre over p[0.925,0.985]; the
+      // credit line rises + fades up over p[0.94,1.0]. Both live INSIDE
+      // .cdesert-title, so the parent's own carve (opacity/blur) multiplies over
+      // them: nothing can show before the wordmark has condensed, and the whole
+      // block holds to p=1 exactly as the mark did before.
+      if (creditRuleRef.current) {
+        tl.fromTo(
+          creditRuleRef.current,
+          { scaleX: 0, transformOrigin: '50% 50%' },
+          { scaleX: 1, duration: 0.06, ease: 'power2.out' },
+          0.925,
+        );
+      }
+      if (creditRef.current) {
+        tl.fromTo(
+          creditRef.current,
+          { opacity: 0, yPercent: 40 },
+          { opacity: 1, yPercent: 0, duration: 0.06, ease: 'power2.out' },
+          0.94,
+        );
+      }
+
+      // ── the handoff veil: the floor melts into the page over p[0.88,1.0] ─────
+      // The film used to end on a hard edge: dark terracotta floor against the
+      // page canvas (and the rail) the instant the pin released. The veil is a
+      // theme-aware canvas gradient over the bottom of the frame (globals.css
+      // .cdesert-veil) whose OPACITY alone is scrubbed — compositor-only — so by
+      // p=1 the frame's bottom edge IS the page colour and the release reads as
+      // the same scene continuing, not a cut. It sits above the grain/vignette
+      // so the corners end clean, and below nothing that matters: the title
+      // block is at 58% and the veil is transparent there.
+      if (veilRef.current) {
+        tl.fromTo(veilRef.current, { opacity: 0 }, { opacity: 1, duration: 0.12, ease: 'sine.inOut' }, 0.88);
+      }
+
       // ── D5: the living frame (Sky-ratified 2026-07-19) ───────────────────
       // After ~1.2s of scroll rest INSIDE the pinned film (the scrub settling
       // counts as movement, so in practice ~2s after the last input), the
@@ -566,6 +610,13 @@ export function CinematicDesert() {
     <div ref={scope} data-narrow={narrow ? '' : undefined}>
       <section className="cdesert-stage" aria-label="SkyPi Studio: desert title scene">
         <div ref={pinRef} className="cdesert-pin">
+          {/* SIGNATURE CANDIDATE (2026-10-19): the inner frame. Carries the
+              opening light-up — a one-shot CSS settle (opacity + 4.5% scale on
+              --dur-scene, globals.css .cdesert-frame) so the first frame is LIT
+              rather than painted, before any JS runs. GSAP never writes to it:
+              the scene groups (D5 breathe) and the planes are its children, so
+              the two can never fight over one transform. */}
+          <div className="cdesert-frame">
           {/* stacked scene groups, each its own depth stack + sun. Render order
               (= z) is SCENES order: [MID, ARRIVAL, FLOOR] — the persistent floor
               renders last (top z) so the cliff rises out of it. */}
@@ -628,13 +679,33 @@ export function CinematicDesert() {
           <div ref={gradeRef} className="cdesert-grade" aria-hidden="true" />
           <div ref={exposureRef} className="cdesert-exposure" aria-hidden="true" />
 
-          {/* title wordmark — data-text feeds the gilded-ink ::after overlay */}
+          {/* the handoff veil — canvas-coloured melt over the floor, scrubbed
+              p[0.88,1.0]; z-index 75 (above the finish layer) so the bottom
+              corners end clean, not vignetted. */}
+          <div ref={veilRef} className="cdesert-veil" aria-hidden="true" />
+
+          {/* title wordmark — data-text feeds the gilded-ink ::after overlay.
+              The credit beneath it is the signature candidate's one line of new
+              copy: the person behind the mark, in the mono eyebrow voice. It is
+              aria-hidden on purpose — the same name + role are already in the
+              accessibility tree twice on this screen (the runway identity chip
+              at first paint, the hero nameplate one viewport later), and a
+              third announcement of the same string helps no one. */}
           <div ref={titleRef} className="cdesert-title">
             <p className="cdesert-title-mark" data-text="SkyPi Studio">SkyPi Studio</p>
+            <div className="cdesert-credit" aria-hidden="true">
+              <span ref={creditRuleRef} className="cdesert-credit-rule" />
+              <p ref={creditRef} className="cdesert-credit-line">
+                <span className="cdesert-credit-name">Skyler Halisky</span>
+                <span className="cdesert-credit-sep"> · </span>
+                <span className="cdesert-credit-role">Senior technical support</span>
+              </p>
+            </div>
           </div>
 
           {/* finishing grain / vignette / motes */}
           <FilmGrain />
+          </div>
         </div>
       </section>
     </div>
