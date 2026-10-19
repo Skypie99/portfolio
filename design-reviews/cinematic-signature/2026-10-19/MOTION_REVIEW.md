@@ -15,7 +15,7 @@ The film is a single GSAP timeline of unit length scrubbed to scroll with a 1 s 
 
 | Beat | Window | Original | Candidate | Reading |
 |---|---|---|---|---|
-| Arrival | t = 0 → 1.2 s, no scroll | Planes decode; the valley is painted. Chip visible; cue rises 0.7→1.3 s. | `.cdesert-frame` settles from the pin's warm dawn wash: opacity 0→1, scale 1.045→1 on `cubic-bezier(0.22, 0.9, 0.26, 1)`, 1200 ms (`--dur-scene`). Chip and Skip present at t = 0. | The first frame now *lands* with the same settle grammar the rest of the film uses. The cue's rise sits inside the light-up, so the two read as one gesture. Burst board 06: original is fully painted at ~0.7 s; candidate is at ~55% exposure at 0.7 s and complete by 1.5 s. |
+| Arrival | t = 0 → 1.2 s, no scroll | The pin's dawn wash until the planes decode (~0.5–1 s warm cache here), then the valley at full exposure in one frame. Chip visible; cue rises 0.7→1.3 s. | `.cdesert-frame` settles from that same dawn wash: opacity 0→1, scale 1.045→1 on `cubic-bezier(0.22, 0.9, 0.26, 1)`, 1200 ms (`--dur-scene`); the planes arrive inside the fade. Chip and Skip present at t = 0. | The first frame now *lands* with the same settle grammar the rest of the film uses, and the decode pop is gone. The cue's rise sits inside the light-up, so the two read as one gesture. Board 06 (animation paused at exact times): ≈61% at 200 ms, ≈95% at 600 ms, at rest at 1200 ms, a front-loaded settle, not a slow fade; board 07 t = 0 s caught the mid-fade live. |
 | Dolly + rise | p 0.00 → 0.845 | — | identical | Nothing was touched; the frame sequences on board 07 match beat for beat through second 8. |
 | Gold lands | p 0.70 → 0.97 | rim-glow 0→0.85, vignette arc 0→1 | identical | — |
 | Title carves | p 0.845 → 0.975 | blur 7→0, rise 5%, scaleX 1.03→1, opacity 0→1 | identical | — |
@@ -31,6 +31,7 @@ The film is a single GSAP timeline of unit length scrubbed to scroll with a 1 s 
 - **Why the veil starts at 0.88 and not later.** The carve runs 0.845→0.975. Starting the melt at 0.88 lets the paper rise *during* the title's condensation, so the landing is one composite gesture (gold up, paper up, mark in) instead of three sequential ones. Starting at 0.95 reads as an afterthought; starting at 0.80 competes with the rim-glow.
 - **Why the credit waits until 0.925 / 0.94.** The mark must be legible and still before the credit speaks. At 0.925 the carve's blur is < 1 px and its rise is < 0.5%. The rule leads the line by 0.015 (≈ 38 px of scroll on desktop) so the eye is drawn to the spot before the words arrive.
 - **Why 1200 ms for the light-up.** The film's own scene duration token. 900 ms (`--dur-reveal`) read as a web fade; 1200 ms reads as a projector reaching temperature. The cue's existing 700 ms delay was left exactly as is (PROTECT-66) and happens to land inside the window.
+- **Why this curve.** `cubic-bezier(0.22, 0.9, 0.26, 1)` reaches ≈61% at 200 ms and ≈95% at 600 ms: the picture is present almost at once and the second half of the window is pure settle (the last 5% of opacity, the last 0.2% of scale). A symmetric or linear curve of the same length read as a slow web fade.
 - **Why 4.5% scale, not more.** The frame's `transform-origin` is 50% 56% (just below centre, on the valley floor), so the settle reads as the camera dropping into its mark. 8% read as a zoom; 2% was invisible.
 
 ## 4. What the videos show that the stills do not
@@ -51,4 +52,4 @@ The film is a single GSAP timeline of unit length scrubbed to scroll with a 1 s 
 ## 6. Known motion residuals
 
 - Over the desktop rail (left 280 px) the page is the rail's soft teal, so the release still shows a faint tonal step there; the main column is seamless. A rail-side treatment would touch shared navigation and was out of scope.
-- The light-up means the first contentful paint of the largest plane is one animation frame after the planes decode (opacity 0 → first non-zero frame). Perceived "image on screen" moves ~0.6 s later; the image *data* is on screen at the same moment.
+- The light-up means the largest plane's first non-zero paint is one animation frame after it decodes (opacity 0 → first non-zero frame). Perceived "image present" moves by at most ~0.3 s (≈61% at 200 ms) and often less, because the first part of the window overlaps the decode; the image *data* is on screen at the same moment, and the original's own first frames are the dawn wash too.

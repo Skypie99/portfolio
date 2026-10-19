@@ -78,7 +78,7 @@ Low. Three files touched in the engine (`CinematicDesert.tsx`, `StaticDesertFram
 ## 9. Performance and accessibility implications
 
 - **Compositor only.** Two new full-frame layers (the frame wrapper and the veil); opacity/transform only; no layout or paint in the scroll path. The light-up is CSS and ends after 1.2 s.
-- **LCP.** The light-up starts at opacity 0, so the largest plane's first non-zero paint is one animation frame later than before; the asset decode path is unchanged.
+- **LCP.** The light-up starts at opacity 0, so the largest plane's first non-zero paint is one animation frame later than before; the asset decode path is unchanged. Measured in this container, both builds show the pin's dawn wash for the first ~0.5–1 s while the planes decode, so most of the 1200 ms overlaps a window that was never image anyway (board 06, last rows).
 - **Reduced motion.** The light-up is media-gated off; the live path never mounts under RM anyway. The static frame shows credit + veil at rest.
 - **No JS.** The light-up still runs (CSS); the credit does not show without JS on the live markup (the mark does not either, as before); the hero below is rest-visible.
 - **Contrast.** The credit uses the title's halation recipe; measured values are in `TEST_RESULTS.md` (sampled background inside the credit box at p = 1, both viewports).

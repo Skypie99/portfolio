@@ -1,0 +1,33 @@
+{
+  "hasAnimation": true,
+  "shots": [
+    {
+      "file": "anim-0000ms.png",
+      "animationTime": 0
+    },
+    {
+      "file": "anim-0200ms.png",
+      "animationTime": 200
+    },
+    {
+      "file": "anim-0400ms.png",
+      "animationTime": 400
+    },
+    {
+      "file": "anim-0600ms.png",
+      "animationTime": 600
+    },
+    {
+      "file": "anim-0800ms.png",
+      "animationTime": 800
+    },
+    {
+      "file": "anim-1000ms.png",
+      "animationTime": 1000
+    },
+    {
+      "file": "anim-1200ms.png",
+      "animationTime": 1200
+    }
+  ]
+}

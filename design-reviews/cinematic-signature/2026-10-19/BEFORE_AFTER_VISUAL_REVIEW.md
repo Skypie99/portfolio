@@ -15,11 +15,12 @@
 
 ---
 
-## 1. The opening (board 06, board 00 row 1)
+## 1. The opening (board 06, board 00 row 1, board 07 t = 0 s)
 
-**Original.** The valley is painted the instant the planes decode. In the burst the first sample (t ≈ 0) already shows the full frame.
-**Candidate.** t ≈ 0 shows the identity chip and the Skip control over the pin's warm dawn wash with no image yet; t ≈ 0.7 s shows the valley at roughly half exposure with a hair of scale still to settle; t ≈ 1.5 s is the full frame, identical to the original's. The Scroll cue arrives inside the window.
-**Reading.** The candidate's first second has intention; the original's has speed. At rest they are the same picture. This is the most subjective of the three moves and the easiest to remove (one CSS rule) if the owner prefers the instant paint.
+**Both builds, first.** The five planes decode asynchronously and paint when ready, so for the first ~0.5–1 s after navigation (warm cache, this container) *both* builds show the pin's warm dawn gradient under the chip and the Skip control; that gradient was designed as exactly this decode fallback. The wall-clock burst at the foot of board 06 shows it: sample 1 is the gradient on both sides. Headless screenshots cost ~0.7 s each here, so the burst cannot resolve the move itself; it is kept only for that finding.
+**Original.** When the planes land they appear at full exposure in one frame: a switch.
+**Candidate.** The frame runs a 1200 ms settle from first paint, so the planes arrive inside a fade already under way. Board 06's deterministic frames (the CSS animation paused at exact times after decode) show the valley at ≈61% exposure and 1.7% larger at 200 ms, ≈95% at 600 ms, and at rest at 1200 ms, identical to the original's painted frame: the curve is front-loaded, so the picture is *there* within ~0.3 s and spends the rest of the window settling. The live recording caught the same mid-fade frame in real time (board 07, t = 0 s). The Scroll cue arrives inside the window.
+**Reading.** The candidate's first second has intention; the original's has speed, though less of it than the stills suggest, because its own first frame is the gradient until decode. Perceived cost of the light-up: well under the nominal 1.2 s, since the first part overlaps the decode. This is the most subjective of the three moves and the easiest to remove (one CSS rule) if the owner prefers the pop.
 
 ## 2. The body of the film (boards 01, 03, 07)
 

@@ -1,0 +1,10 @@
+{
+  "hasAnimation": false,
+  "shots": [
+    {
+      "file": "painted.png",
+      "animationTime": null,
+      "note": "no light-up animation on this build (original): the painted first frame"
+    }
+  ]
+}

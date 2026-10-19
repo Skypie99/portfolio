@@ -1,0 +1,194 @@
+{
+  "base": "http://localhost:3101",
+  "at": "2026-10-19T07:58:18.489Z",
+  "desktop-light": {
+    "tabStops": [
+      {
+        "tag": "A",
+        "text": "Skip to main content",
+        "href": "#main",
+        "outline": "solid 2px rgb(185, 99, 64)",
+        "inViewport": true,
+        "scrollY": 0
+      },
+      {
+        "tag": "A",
+        "text": "Skip intro↓",
+        "href": "#hero",
+        "outline": "solid 2px rgb(185, 99, 64)",
+        "inViewport": true,
+        "scrollY": 0
+      },
+      {
+        "tag": "A",
+        "text": "See the work.",
+        "href": "#work",
+        "outline": "solid 2px rgb(185, 99, 64)",
+        "inViewport": true,
+        "scrollY": 3868
+      },
+      {
+        "tag": "A",
+        "text": "Explore projects↓",
+        "href": "#work",
+        "outline": "solid 2px rgb(185, 99, 64)",
+        "inViewport": true,
+        "scrollY": 3868
+      },
+      {
+        "tag": "A",
+        "text": "method",
+        "href": "/work/flagstone/#flagstone-test-count-method",
+        "outline": "solid 2px rgb(185, 99, 64)",
+        "inViewport": true,
+        "scrollY": 3868
+      },
+      {
+        "tag": "A",
+        "text": "evidence",
+        "href": "/accessibility/#receipts",
+        "outline": "solid 2px rgb(185, 99, 64)",
+        "inViewport": true,
+        "scrollY": 3868
+      }
+    ],
+    "skipVisible": true,
+    "afterSkip": {
+      "scrollY": 3420,
+      "hash": "",
+      "identityTop": 201.796875,
+      "identityVisible": true,
+      "skipRetired": true,
+      "activeTag": "DIV",
+      "activeId": "hero"
+    },
+    "consoleErrors": [],
+    "reducedMotion": {
+      "staticFrame": true,
+      "pinned": false,
+      "creditVisible": {
+        "opacity": "1",
+        "text": "Skyler Halisky · Senior technical support"
+      },
+      "veilOpacity": "1",
+      "frameAnimation": "n/a (static)"
+    },
+    "noJs": {
+      "title": "opacity 0, visibility visible",
+      "frame": "opacity 1, visibility visible",
+      "hero": "opacity 1, visibility visible",
+      "skip": "opacity 1, visibility visible",
+      "heroText": "Skyler HaliskySenior technical-support specialist. I turn re"
+    },
+    "axeOpening": [],
+    "axeLanding": [],
+    "creditContrast": {
+      "crop": {
+        "left": 508,
+        "top": 681,
+        "width": 424,
+        "height": 28
+      },
+      "bgMedianL": 0.0852,
+      "bgP90L": 0.1416,
+      "contrastVsMedian": 7.27,
+      "contrastVsP90": 5.13,
+      "note": "bone #FFF6EC vs sampled background luminance inside the credit box (p90 = brightest non-glyph ground, worst case)"
+    }
+  },
+  "mobile-light": {
+    "tabStops": [
+      {
+        "tag": "A",
+        "text": "Skip to main content",
+        "href": "#main",
+        "outline": "solid 2px rgb(185, 99, 64)",
+        "inViewport": true,
+        "scrollY": 0
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "href": null,
+        "outline": "solid 2px rgb(185, 99, 64)",
+        "inViewport": true,
+        "scrollY": 0
+      },
+      {
+        "tag": "A",
+        "text": "Skip intro↓",
+        "href": "#hero",
+        "outline": "solid 2px rgb(185, 99, 64)",
+        "inViewport": true,
+        "scrollY": 0
+      },
+      {
+        "tag": "A",
+        "text": "See the work.",
+        "href": "#work",
+        "outline": "solid 2px rgb(185, 99, 64)",
+        "inViewport": true,
+        "scrollY": 3340
+      },
+      {
+        "tag": "A",
+        "text": "Explore projects↓",
+        "href": "#work",
+        "outline": "solid 2px rgb(185, 99, 64)",
+        "inViewport": true,
+        "scrollY": 3340
+      },
+      {
+        "tag": "A",
+        "text": "method",
+        "href": "/work/flagstone/#flagstone-test-count-method",
+        "outline": "solid 2px rgb(185, 99, 64)",
+        "inViewport": true,
+        "scrollY": 3340
+      }
+    ],
+    "skipVisible": true,
+    "afterSkip": {
+      "scrollY": 2916,
+      "hash": "",
+      "identityTop": 134.953125,
+      "identityVisible": true,
+      "skipRetired": true,
+      "activeTag": "DIV",
+      "activeId": "hero"
+    },
+    "consoleErrors": [],
+    "reducedMotion": {
+      "staticFrame": true,
+      "pinned": false,
+      "creditVisible": {
+        "opacity": "1",
+        "text": "Skyler Halisky · Senior technical support"
+      },
+      "veilOpacity": "1",
+      "frameAnimation": "n/a (static)"
+    },
+    "noJs": {
+      "title": "opacity 0, visibility visible",
+      "frame": "opacity 1, visibility visible",
+      "hero": "opacity 1, visibility visible",
+      "skip": "opacity 1, visibility visible",
+      "heroText": "Skyler HaliskySenior technical-support specialist. I turn re"
+    },
+    "axeOpening": [],
+    "axeLanding": [],
+    "creditContrast": {
+      "crop": {
+        "left": 173,
+        "top": 1133,
+        "width": 441,
+        "height": 78
+      },
+      "bgMedianL": 0.08,
+      "bgP90L": 0.1515,
+      "contrastVsMedian": 7.56,
+      "contrastVsP90": 4.88,
+      "note": "bone #FFF6EC vs sampled background luminance inside the credit box (p90 = brightest non-glyph ground, worst case)"
+    }
+  }
+}
