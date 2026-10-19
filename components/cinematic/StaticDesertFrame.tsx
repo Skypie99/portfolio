@@ -104,9 +104,24 @@ export function StaticDesertFrame() {
         {/* sun-bloom REMOVED — the arrival cliff photo is already golden-lit; the
             added glow read as cheap glare (Sky, 2026-06-02). Warmth stays via grade. */}
 
-        {/* resolved wordmark — data-text feeds the gilded-ink ::after overlay */}
+        {/* the handoff veil rests LANDED here (CSS: .cdesert-static-stage
+            .cdesert-veil → opacity 1): the static destination shot's floor has
+            already melted into the page canvas, so the reduced-motion seam is
+            as soft as the live one. */}
+        <div className="cdesert-veil" aria-hidden="true" />
+
+        {/* resolved wordmark — data-text feeds the gilded-ink ::after overlay.
+            The credit rests resolved too (--resolved shows the rule + line). */}
         <div className="cdesert-title cdesert-title--resolved">
           <p className="cdesert-title-mark" data-text="SkyPi Studio">SkyPi Studio</p>
+          <div className="cdesert-credit" aria-hidden="true">
+            <span className="cdesert-credit-rule" />
+            <p className="cdesert-credit-line">
+              <span className="cdesert-credit-name">Skyler Halisky</span>
+              <span className="cdesert-credit-sep"> · </span>
+              <span className="cdesert-credit-role">Senior technical support</span>
+            </p>
+          </div>
         </div>
 
         <FilmGrain />
