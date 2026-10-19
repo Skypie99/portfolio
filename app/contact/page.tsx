@@ -2,12 +2,13 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { ContactEmail } from '@/components/ContactEmail';
+import { EditorialPlate, EditorialRise } from '@/components/EditorialPlate';
 import { PLATFORM_LABELS } from '@/components/Footer';
 import { SettleHeading } from '@/components/HeroSettle';
+import { HorizonRule } from '@/components/HorizonRule';
+import { IdentityLines } from '@/components/IdentityLines';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { Reveal } from '@/components/Reveal';
-import { RunwayIdentity } from '@/components/RunwayIdentity';
-import { RunwayIdentityRelease } from '@/components/RunwayIdentityRelease';
 import { cn } from '@/lib/cn';
 import { getProfile } from '@/lib/content';
 import { canonicalFor } from '@/lib/metadata';
@@ -45,6 +46,13 @@ export function generateMetadata(): Metadata {
   };
 }
 
+/** Editorial split from xl — see app/about/page.tsx for the full note. The
+ *  contact spread is an even 6 / 6 so the calling card has room for the full
+ *  "Email {address}" pill at 1280 without decking its label (C-70). */
+const SPLIT = 'xl:grid xl:grid-cols-12 xl:gap-x-12 xl:items-start';
+const SPLIT_HEAD = 'mb-12 xl:mb-0 xl:col-span-5';
+const SPLIT_BODY = 'xl:col-span-7';
+
 /**
  * /contact — F-08. Minimal mailto-only page (Sky decided no form this cycle).
  *
@@ -54,6 +62,15 @@ export function generateMetadata(): Metadata {
  *
  * Per Alex §4.5: every external link gets target=_blank, rel=noopener
  * noreferrer, AND an sr-only "(opens in new tab)" cue.
+ *
+ * Fable about + contact creative implementation (2026-10-18): the invitation
+ * becomes a calling card — the same EditorialPlate the About page opens with,
+ * carrying the name, the identity lines, the drawn horizon, the SAME
+ * ContactEmail button (runtime-assembled mailto, untouched) and the SAME
+ * LinkedIn pointer. The card is placed directly after the title in DOM
+ * order, so on phones the primary action rises INTO the first screen
+ * (it sat ~550px down before) and the three paragraphs follow it; from xl
+ * the card sits beside the title and prose. No copy was rewritten.
  */
 export default function ContactPage() {
   const profile = getProfile();
@@ -61,61 +78,73 @@ export default function ContactPage() {
 
   return (
     <>
-      {/* UP-38: the mobile brand chip. Measured, this route rendered ZERO
-          identity -- visible OR in the a11y tree -- before the footer at
-          320/375/414. Same mark home's runway uses; hidden from md up, where
-          the rail starts signing. */}
-      <RunwayIdentity variant="page" />
-      <RunwayIdentityRelease variant="page" />
+      {/* UP-38's mobile brand chip is not mounted on this route any more: the
+          calling card below signs the first screen with the same strings, and
+          mounting both would double-sign it (see app/about/page.tsx). */}
       {/* Page header + primary CTA */}
       <section data-band-anchor className="relative isolate overflow-hidden px-gutter py-24 lg:py-32 world-surface">
         {/* golden-hour light continuity — the invitation reads warm, matching
             every other showcase header (work, certificates). RM → static. */}
         <ParallaxWash depth="far" />
-        <div className="relative z-10 max-w-content mx-auto">
-          <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
+        <div className={cn('relative z-10 max-w-content mx-auto', SPLIT)}>
+          <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2 xl:col-span-6 xl:col-start-1 xl:row-start-1">
             <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
             Let’s talk
           </p>
           <SettleHeading
-            className="font-serif font-light text-display ember max-w-measure-heading mb-12 text-balance"
+            className="font-serif font-light text-display ember max-w-measure-heading mb-12 text-balance xl:col-span-6 xl:col-start-1 xl:row-start-2"
           >
             Write to me.
           </SettleHeading>
-          <p className="font-sans font-light text-prose text-ink-muted max-w-measure-lead mb-4 text-pretty">
-            Accessible technology, built with care. Thoughtful product
-            collaborations. Learning out loud, one project at a time. I read
-            every message that comes through.
-          </p>
-          <p className="font-sans font-light text-prose text-ink-muted max-w-measure-lead mb-4 text-pretty">
-            Open to senior support roles, and to professional conversations.
-          </p>
-          <p className="font-sans font-light text-prose text-ink-muted max-w-measure-lead mb-16 text-pretty">
-            The socials below also work, for everything else.
-          </p>
 
-          <ContactEmail />
+          {/* The calling card. The ContactEmail component is mounted exactly
+              as before (bot-safe runtime mailto; /contact/ fallback and the
+              noscript socials line before hydration), only its frame moved. */}
+          <EditorialPlate
+            arrival="mount"
+            className="mb-12 max-w-lg xl:mb-0 xl:max-w-none xl:col-span-6 xl:col-start-7 xl:row-start-2 xl:row-span-2 xl:self-start"
+          >
+            <IdentityLines name={profile.name} location={profile.location} arrival="mount" />
+            <HorizonRule arrival="mount" className="my-6 w-full" />
+            <EditorialRise timing="late">
+              <ContactEmail />
 
-          {/* L3-03: the quiet career-document pointer — employer-safe wording,
-              deliberately NOT a résumé PDF (Sky's quiet-search stance). */}
-          {linkedin && (
-            <p className="mt-8 font-mono text-meta tracking-label uppercase">
-              <a
-                href={linkedin.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-draw text-ink hover:text-accent-text transition-colors duration-fast ease-out inline-flex items-center gap-1.5"
-              >
-                <span>Full history on LinkedIn</span>
-                {/* UP-11: the ↗ takes its label's colour (C-78). This is the
-                    same link as Footer.tsx's About-column pointer, so it moves
-                    with it — leaving it muted here would have made one link
-                    render two ways. */}
-                <span aria-hidden="true">{'↗'}</span>
-                <span className="sr-only">(opens in new tab)</span>
-              </a>
+              {/* L3-03: the quiet career-document pointer — employer-safe wording,
+                  deliberately NOT a résumé PDF (Sky's quiet-search stance). */}
+              {linkedin && (
+                <p className="mt-8 font-mono text-meta tracking-label uppercase">
+                  <a
+                    href={linkedin.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-draw text-ink hover:text-accent-text transition-colors duration-fast ease-out inline-flex items-center gap-1.5"
+                  >
+                    <span>Full history on LinkedIn</span>
+                    {/* UP-11: the ↗ takes its label's colour (C-78). This is the
+                        same link as Footer.tsx's About-column pointer, so it moves
+                        with it — leaving it muted here would have made one link
+                        render two ways. */}
+                    <span aria-hidden="true">{'↗'}</span>
+                    <span className="sr-only">(opens in new tab)</span>
+                  </a>
+                </p>
+              )}
+            </EditorialRise>
+          </EditorialPlate>
+
+          <div className="xl:col-span-6 xl:col-start-1 xl:row-start-3">
+            <p className="font-sans font-light text-prose text-ink-muted max-w-measure-lead mb-4 text-pretty">
+              Accessible technology, built with care. Thoughtful product
+              collaborations. Learning out loud, one project at a time. I read
+              every message that comes through.
             </p>
-          )}
+            <p className="font-sans font-light text-prose text-ink-muted max-w-measure-lead mb-4 text-pretty">
+              Open to senior support roles, and to professional conversations.
+            </p>
+            <p className="font-sans font-light text-prose text-ink-muted max-w-measure-lead text-pretty">
+              The socials below also work, for everything else.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -133,8 +162,8 @@ export default function ContactPage() {
             'world-surface border-t border-border-decorative',
           )}
         >
-          <div className="max-w-content mx-auto">
-            <Reveal variant="scene" className="mb-24">
+          <div className={cn('max-w-content mx-auto', SPLIT)}>
+            <Reveal variant="scene" className={SPLIT_HEAD}>
               <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
                 <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 Elsewhere
@@ -142,18 +171,14 @@ export default function ContactPage() {
               <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance">
                 Find me in other quiet corners.
               </h2>
+              <HorizonRule arrival="reveal" className="mt-8 w-24" />
             </Reveal>
 
-            {/* UP-48 (ui-polish 2026-08-01): no measure cap on this grid. The
-                removed max-w-2xl held the list to 672px inside a 1096px content
-                row, so the two hairline-topped columns stopped at 60% and left a
-                424px void that read as an empty third slot. That class (now
-                max-w-measure-heading, --measure-heading, Phase A) is the estate's
-                HEADING measure — re-counted at Phase A: 17 uses, all on an h2;
-                this <ul> was already the lone non-heading exception before this
-                token existed. Below lg the grid is one column and the cap never
-                bound, so nothing moves at 375. */}
-            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* UP-48 (ui-polish 2026-08-01): no measure cap on this grid — the
+                removed max-w-2xl left a 424px void that read as an empty third
+                slot. From xl the grid now owns the right seven columns of the
+                split; below lg it is one column and the cap never bound. */}
+            <ul className={cn('grid grid-cols-1 lg:grid-cols-2 gap-8', SPLIT_BODY)}>
               {profile.socials.map((s, i) => (
                 <li key={s.url} className="group border-t border-border-decorative pt-4">
                   <Reveal index={i} variant="depth">
