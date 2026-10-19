@@ -1531,8 +1531,10 @@ html.dark.reveal-failsafe [data-proof-arrival] .proof-arrival-edge {
    tokens are not touched) gains a canvas-coloured halo filling the offset
    gap, so the indicator is two-tone and keeps ≥ 3:1 on at least one side
    whatever poster frame lies beneath it (token arithmetic: light ring vs
-   halo 3.98:1, halo vs clip ≥ 9:1; dark ring vs halo ≈ 5.5:1, ring vs clip
-   ≈ 3.1:1; pixel readings in the candidate receipt). */
+   halo 3.98:1, halo vs clip ≥ 9:1). Dark draws the ring in accent-ink: the
+   accent ring read only ~2.9:1 against this clip's navy frames and the dark
+   halo cannot help there (independent review 2026-10-18); accent-ink clears
+   3:1 against the clip and ≈ 9.6:1 against the halo. */
 .proof-row [data-themed-motion] > button {
   right: calc(var(--proof-mat-inset) + 0.75rem);
   bottom: calc(var(--proof-mat-inset) + 0.75rem);
@@ -1543,6 +1545,9 @@ html.dark .proof-row [data-themed-motion] > button {
 }
 .proof-row [data-themed-motion] > button:focus-visible {
   box-shadow: 0 0 0 var(--focus-ring-offset, 2px) rgb(var(--rgb-canvas));
+}
+html.dark .proof-row [data-themed-motion] > button:focus-visible {
+  outline-color: rgb(var(--rgb-accent-ink));
 }
 
 /* (4) Label alignment in the fluid band (1024–~1207px viewports). Below a

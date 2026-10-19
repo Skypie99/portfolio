@@ -233,11 +233,12 @@ const FLAGSTONE_PROOF_SUBJECTS: readonly string[] = [
 ];
 
 /** Verified git fact for the three "current" Flagstone captures: they
- *  entered the repository in a531953 (2026-09-07), outside the capture
- *  factory, so the showcase manifest holds no capture date for them. The
- *  provenance line states the repository date and says the capture date is
- *  not recorded; it never invents one. */
-const FLAGSTONE_PROOF_PROVENANCE = { addedDate: '2026-09-07', commit: 'a531953' } as const;
+ *  entered the repository on 2026-09-01 (the two stills in 1cfb4b1, the
+ *  clip in a4584fd), outside the capture factory, so the showcase manifest
+ *  holds no capture date for them. The provenance line states the
+ *  repository date and says the capture date is not recorded; it never
+ *  invents one. */
+const FLAGSTONE_PROOF_PROVENANCE = { addedDate: '2026-09-01', commit: '1cfb4b1' } as const;
 
 /** Ties D5/D6 to their sections; every section not named below renders
  *  through the ordinary path, chunk-for-chunk equivalent to the single-call
@@ -317,7 +318,7 @@ export function CaseProof({ d }: { d: Deliverable }) {
                   data-proof-window={isFlagstoneRow ? windowNumber : undefined}
                 >
                   {isFlagstoneRow && (
-                    <p className="font-mono text-label tracking-label uppercase text-text-meta">
+                    <p className="font-mono text-label tracking-label uppercase text-text-meta dark:text-ink">
                       {windowNumber}
                       {subject && <> · {subject}</>}
                     </p>
@@ -367,7 +368,7 @@ export function CaseProof({ d }: { d: Deliverable }) {
         })}
       </ListTag>
       {isFlagstoneRow && (
-        <p className="mt-2 font-mono text-meta tracking-label uppercase text-text-meta">
+        <p className="mt-2 font-mono text-meta tracking-label uppercase text-text-meta dark:text-ink">
           Current Flagstone build · captures in this repository since{' '}
           <time dateTime={FLAGSTONE_PROOF_PROVENANCE.addedDate}>{FLAGSTONE_PROOF_PROVENANCE.addedDate}</time>
           {' '}(<span className="normal-case">{FLAGSTONE_PROOF_PROVENANCE.commit}</span>) · capture dates not recorded

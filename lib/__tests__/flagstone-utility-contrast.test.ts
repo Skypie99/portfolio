@@ -178,4 +178,42 @@ describe('Flagstone utility tinted-surface text contrast', () => {
       expect(table.querySelectorAll('tbody tr').length).toBeGreaterThan(0);
     }
   });
+
+  it('keeps the accessibility feature table in a keyboard-reachable region named by its caption', () => {
+    const html = readFileSync(join(FLAGSTONE_ROOT, 'accessibility/index.html'), 'utf8');
+    const page = new DOMParser().parseFromString(html, 'text/html');
+    const tables = [...page.querySelectorAll('table')];
+    expect(tables).toHaveLength(1);
+    const [table] = tables;
+    const region = table.parentElement!;
+    expect(region.matches('main#main > div.table-wrap')).toBe(true);
+    expect(region.getAttribute('role')).toBe('region');
+    expect(region.tabIndex).toBe(0);
+    // Named by the table's existing caption, so there is one label, not a second typed copy.
+    expect(region.hasAttribute('aria-label')).toBe(false);
+    const labelId = region.getAttribute('aria-labelledby') ?? '';
+    expect(page.querySelectorAll(`[id="${labelId}"]`)).toHaveLength(1);
+    expect(page.getElementById(labelId)).toBe(table.caption);
+    expect(table.caption?.textContent).toBe('Accessibility features supported by the Flagstone iOS app');
+    expect([...page.querySelectorAll('[tabindex], [role="region"]')]).toEqual([region]);
+    expect([...table.querySelectorAll('thead th[scope="col"]')].map((th) => th.textContent)).toEqual([
+      'Feature',
+      'Status',
+      'What that means here',
+    ]);
+    expect([...table.querySelectorAll('tbody th[scope="row"]')].map((th) => th.textContent)).toEqual([
+      'VoiceOver',
+      'Larger Text',
+      'Dark Interface',
+      'Sufficient Contrast',
+      'Differentiate Without Colour Alone',
+      'Reduced Motion',
+      'Captions & Audio Descriptions',
+      'Voice Control',
+    ]);
+    expect(table.querySelectorAll('tbody td')).toHaveLength(16);
+    expect(region.matches('.table-wrap[tabindex]')).toBe(true);
+    expect(declaration(cssBlock('.table-wrap[tabindex]:focus-visible {'), 'outline')).toBe('3px solid var(--focus)');
+    expect(declaration(cssBlock('.table-wrap {'), 'overflow-x')).toBe('auto');
+  });
 });
