@@ -3518,6 +3518,19 @@ html.dark ::selection {
     animation: cdesert-arrive var(--dur-scene) cubic-bezier(0.22, 0.9, 0.26, 1) both;
   }
 }
+/* DESKTOP HOTFIX (2026-10-19): same light-up, nothing retained once it ends.
+   With fill `both` the finished settle keeps scale(1)/opacity 1 as live
+   animation values, and Chrome keeps compositing the frame as an ACTIVE
+   transform + opacity animation for the whole visit (LayerTree reasons,
+   measured) — over every plate. On large DPR-2 desktop windows that extra
+   tile pressure tripled the partial-scene dropouts. `backwards` still holds
+   the from-keyframe before the first frame; after the end the base style
+   (no transform, opacity 1) paints identical pixels. Phones keep `both`. */
+@media (prefers-reduced-motion: no-preference) and (min-width: 768px) {
+  .cdesert-stage .cdesert-frame {
+    animation-fill-mode: backwards;
+  }
+}
 
 /* 2 — the credit. Mono eyebrow voice (the same register the hero's eyebrow
    and the runway chip use), tracked wide like a film credit, bone over the
@@ -3772,6 +3785,18 @@ html.dark ::selection {
   }
   [data-cdesert-firstpaint] ~ .cdesert-static {
     display: block;
+  }
+}
+
+/* WORLD PARKING (desktop hotfix 2026-10-19). While the pinned film covers the
+   viewport, CinematicDesert sets html.cdesert-world-parked (it flips back at
+   p≥0.98, still behind the film). The fixed world backdrop under it cannot be
+   seen then, but its three full-viewport layers held ~90 MB of GPU tiles that
+   the plates' zoom needs on large desktop screens. Desktop only: phones never
+   get the class and have no rule. */
+@media (min-width: 768px) {
+  html.cdesert-world-parked .world-backdrop {
+    visibility: hidden;
   }
 }
 
