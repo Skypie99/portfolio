@@ -1,0 +1,662 @@
+{
+  "base": "http://localhost:3100",
+  "capturedAt": "2026-10-19T07:26:52.061Z",
+  "configs": {
+    "desktop-light": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1,
+      "scheme": "light",
+      "mobile": false,
+      "geometry": {
+        "top": 0,
+        "h": 3420,
+        "end": 2520,
+        "pinH": 900,
+        "phone": false,
+        "heroTop": 3420,
+        "vh": 900,
+        "docH": 12383
+      },
+      "frames": [
+        {
+          "file": "film-p0.00.png",
+          "kind": "film",
+          "p": 0,
+          "scrollY": 0
+        },
+        {
+          "file": "film-p0.12.png",
+          "kind": "film",
+          "p": 0.12,
+          "scrollY": 302
+        },
+        {
+          "file": "film-p0.25.png",
+          "kind": "film",
+          "p": 0.25,
+          "scrollY": 630
+        },
+        {
+          "file": "film-p0.40.png",
+          "kind": "film",
+          "p": 0.4,
+          "scrollY": 1008
+        },
+        {
+          "file": "film-p0.55.png",
+          "kind": "film",
+          "p": 0.55,
+          "scrollY": 1386
+        },
+        {
+          "file": "film-p0.70.png",
+          "kind": "film",
+          "p": 0.7,
+          "scrollY": 1764
+        },
+        {
+          "file": "film-p0.82.png",
+          "kind": "film",
+          "p": 0.82,
+          "scrollY": 2066
+        },
+        {
+          "file": "film-p0.90.png",
+          "kind": "film",
+          "p": 0.9,
+          "scrollY": 2268
+        },
+        {
+          "file": "film-p1.00.png",
+          "kind": "film",
+          "p": 1,
+          "scrollY": 2520
+        },
+        {
+          "file": "handoff-+160.png",
+          "kind": "handoff",
+          "offset": 160,
+          "scrollY": 2680
+        },
+        {
+          "file": "handoff-+420.png",
+          "kind": "handoff",
+          "offset": 420,
+          "scrollY": 2940
+        },
+        {
+          "file": "handoff-+720.png",
+          "kind": "handoff",
+          "offset": 720,
+          "scrollY": 3240
+        },
+        {
+          "file": "handoff-+1100.png",
+          "kind": "handoff",
+          "offset": 1100,
+          "scrollY": 3620
+        }
+      ],
+      "logs": [],
+      "overflow": {
+        "vw": 1440,
+        "scrollWidth": 1440,
+        "bad": []
+      }
+    },
+    "desktop-dark": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1,
+      "scheme": "dark",
+      "mobile": false,
+      "geometry": {
+        "top": 0,
+        "h": 3420,
+        "end": 2520,
+        "pinH": 900,
+        "phone": false,
+        "heroTop": 3420,
+        "vh": 900,
+        "docH": 12383
+      },
+      "frames": [
+        {
+          "file": "film-p0.00.png",
+          "kind": "film",
+          "p": 0,
+          "scrollY": 0
+        },
+        {
+          "file": "film-p0.12.png",
+          "kind": "film",
+          "p": 0.12,
+          "scrollY": 302
+        },
+        {
+          "file": "film-p0.25.png",
+          "kind": "film",
+          "p": 0.25,
+          "scrollY": 630
+        },
+        {
+          "file": "film-p0.40.png",
+          "kind": "film",
+          "p": 0.4,
+          "scrollY": 1008
+        },
+        {
+          "file": "film-p0.55.png",
+          "kind": "film",
+          "p": 0.55,
+          "scrollY": 1386
+        },
+        {
+          "file": "film-p0.70.png",
+          "kind": "film",
+          "p": 0.7,
+          "scrollY": 1764
+        },
+        {
+          "file": "film-p0.82.png",
+          "kind": "film",
+          "p": 0.82,
+          "scrollY": 2066
+        },
+        {
+          "file": "film-p0.90.png",
+          "kind": "film",
+          "p": 0.9,
+          "scrollY": 2268
+        },
+        {
+          "file": "film-p1.00.png",
+          "kind": "film",
+          "p": 1,
+          "scrollY": 2520
+        },
+        {
+          "file": "handoff-+160.png",
+          "kind": "handoff",
+          "offset": 160,
+          "scrollY": 2680
+        },
+        {
+          "file": "handoff-+420.png",
+          "kind": "handoff",
+          "offset": 420,
+          "scrollY": 2940
+        },
+        {
+          "file": "handoff-+720.png",
+          "kind": "handoff",
+          "offset": 720,
+          "scrollY": 3240
+        },
+        {
+          "file": "handoff-+1100.png",
+          "kind": "handoff",
+          "offset": 1100,
+          "scrollY": 3620
+        }
+      ],
+      "logs": [],
+      "overflow": {
+        "vw": 1440,
+        "scrollWidth": 1440,
+        "bad": []
+      }
+    },
+    "mobile-light": {
+      "width": 393,
+      "height": 852,
+      "dpr": 2,
+      "scheme": "light",
+      "mobile": true,
+      "geometry": {
+        "top": 0,
+        "h": 2556,
+        "end": 1704,
+        "pinH": 852,
+        "phone": true,
+        "heroTop": 2556,
+        "vh": 852,
+        "docH": 14446
+      },
+      "frames": [
+        {
+          "file": "film-p0.00.png",
+          "kind": "film",
+          "p": 0,
+          "scrollY": 0
+        },
+        {
+          "file": "film-p0.12.png",
+          "kind": "film",
+          "p": 0.12,
+          "scrollY": 204
+        },
+        {
+          "file": "film-p0.25.png",
+          "kind": "film",
+          "p": 0.25,
+          "scrollY": 426
+        },
+        {
+          "file": "film-p0.40.png",
+          "kind": "film",
+          "p": 0.4,
+          "scrollY": 682
+        },
+        {
+          "file": "film-p0.55.png",
+          "kind": "film",
+          "p": 0.55,
+          "scrollY": 937
+        },
+        {
+          "file": "film-p0.70.png",
+          "kind": "film",
+          "p": 0.7,
+          "scrollY": 1193
+        },
+        {
+          "file": "film-p0.82.png",
+          "kind": "film",
+          "p": 0.82,
+          "scrollY": 1397
+        },
+        {
+          "file": "film-p0.90.png",
+          "kind": "film",
+          "p": 0.9,
+          "scrollY": 1534
+        },
+        {
+          "file": "film-p1.00.png",
+          "kind": "film",
+          "p": 1,
+          "scrollY": 1704
+        },
+        {
+          "file": "handoff-+160.png",
+          "kind": "handoff",
+          "offset": 160,
+          "scrollY": 1864
+        },
+        {
+          "file": "handoff-+420.png",
+          "kind": "handoff",
+          "offset": 420,
+          "scrollY": 2124
+        },
+        {
+          "file": "handoff-+720.png",
+          "kind": "handoff",
+          "offset": 720,
+          "scrollY": 2424
+        },
+        {
+          "file": "handoff-+1100.png",
+          "kind": "handoff",
+          "offset": 1100,
+          "scrollY": 2804
+        }
+      ],
+      "logs": [],
+      "overflow": {
+        "vw": 393,
+        "scrollWidth": 393,
+        "bad": []
+      }
+    },
+    "mobile-dark": {
+      "width": 393,
+      "height": 852,
+      "dpr": 2,
+      "scheme": "dark",
+      "mobile": true,
+      "geometry": {
+        "top": 0,
+        "h": 2556,
+        "end": 1704,
+        "pinH": 852,
+        "phone": true,
+        "heroTop": 2556,
+        "vh": 852,
+        "docH": 14446
+      },
+      "frames": [
+        {
+          "file": "film-p0.00.png",
+          "kind": "film",
+          "p": 0,
+          "scrollY": 0
+        },
+        {
+          "file": "film-p0.12.png",
+          "kind": "film",
+          "p": 0.12,
+          "scrollY": 204
+        },
+        {
+          "file": "film-p0.25.png",
+          "kind": "film",
+          "p": 0.25,
+          "scrollY": 426
+        },
+        {
+          "file": "film-p0.40.png",
+          "kind": "film",
+          "p": 0.4,
+          "scrollY": 682
+        },
+        {
+          "file": "film-p0.55.png",
+          "kind": "film",
+          "p": 0.55,
+          "scrollY": 937
+        },
+        {
+          "file": "film-p0.70.png",
+          "kind": "film",
+          "p": 0.7,
+          "scrollY": 1193
+        },
+        {
+          "file": "film-p0.82.png",
+          "kind": "film",
+          "p": 0.82,
+          "scrollY": 1397
+        },
+        {
+          "file": "film-p0.90.png",
+          "kind": "film",
+          "p": 0.9,
+          "scrollY": 1534
+        },
+        {
+          "file": "film-p1.00.png",
+          "kind": "film",
+          "p": 1,
+          "scrollY": 1704
+        },
+        {
+          "file": "handoff-+160.png",
+          "kind": "handoff",
+          "offset": 160,
+          "scrollY": 1864
+        },
+        {
+          "file": "handoff-+420.png",
+          "kind": "handoff",
+          "offset": 420,
+          "scrollY": 2124
+        },
+        {
+          "file": "handoff-+720.png",
+          "kind": "handoff",
+          "offset": 720,
+          "scrollY": 2424
+        },
+        {
+          "file": "handoff-+1100.png",
+          "kind": "handoff",
+          "offset": 1100,
+          "scrollY": 2804
+        }
+      ],
+      "logs": [],
+      "overflow": {
+        "vw": 393,
+        "scrollWidth": 393,
+        "bad": []
+      }
+    },
+    "small-light": {
+      "width": 360,
+      "height": 740,
+      "dpr": 2,
+      "scheme": "light",
+      "mobile": true,
+      "geometry": {
+        "top": 0,
+        "h": 2220,
+        "end": 1480,
+        "pinH": 740,
+        "phone": true,
+        "heroTop": 2220,
+        "vh": 740,
+        "docH": 14639
+      },
+      "frames": [
+        {
+          "file": "film-p0.00.png",
+          "kind": "film",
+          "p": 0,
+          "scrollY": 0
+        },
+        {
+          "file": "film-p0.12.png",
+          "kind": "film",
+          "p": 0.12,
+          "scrollY": 178
+        },
+        {
+          "file": "film-p0.25.png",
+          "kind": "film",
+          "p": 0.25,
+          "scrollY": 370
+        },
+        {
+          "file": "film-p0.40.png",
+          "kind": "film",
+          "p": 0.4,
+          "scrollY": 592
+        },
+        {
+          "file": "film-p0.55.png",
+          "kind": "film",
+          "p": 0.55,
+          "scrollY": 814
+        },
+        {
+          "file": "film-p0.70.png",
+          "kind": "film",
+          "p": 0.7,
+          "scrollY": 1036
+        },
+        {
+          "file": "film-p0.82.png",
+          "kind": "film",
+          "p": 0.82,
+          "scrollY": 1214
+        },
+        {
+          "file": "film-p0.90.png",
+          "kind": "film",
+          "p": 0.9,
+          "scrollY": 1332
+        },
+        {
+          "file": "film-p1.00.png",
+          "kind": "film",
+          "p": 1,
+          "scrollY": 1480
+        },
+        {
+          "file": "handoff-+160.png",
+          "kind": "handoff",
+          "offset": 160,
+          "scrollY": 1640
+        },
+        {
+          "file": "handoff-+420.png",
+          "kind": "handoff",
+          "offset": 420,
+          "scrollY": 1900
+        },
+        {
+          "file": "handoff-+720.png",
+          "kind": "handoff",
+          "offset": 720,
+          "scrollY": 2200
+        },
+        {
+          "file": "handoff-+1100.png",
+          "kind": "handoff",
+          "offset": 1100,
+          "scrollY": 2580
+        }
+      ],
+      "logs": [],
+      "overflow": {
+        "vw": 360,
+        "scrollWidth": 360,
+        "bad": []
+      }
+    },
+    "small-dark": {
+      "width": 360,
+      "height": 740,
+      "dpr": 2,
+      "scheme": "dark",
+      "mobile": true,
+      "geometry": {
+        "top": 0,
+        "h": 2220,
+        "end": 1480,
+        "pinH": 740,
+        "phone": true,
+        "heroTop": 2220,
+        "vh": 740,
+        "docH": 14639
+      },
+      "frames": [
+        {
+          "file": "film-p0.00.png",
+          "kind": "film",
+          "p": 0,
+          "scrollY": 0
+        },
+        {
+          "file": "film-p0.12.png",
+          "kind": "film",
+          "p": 0.12,
+          "scrollY": 178
+        },
+        {
+          "file": "film-p0.25.png",
+          "kind": "film",
+          "p": 0.25,
+          "scrollY": 370
+        },
+        {
+          "file": "film-p0.40.png",
+          "kind": "film",
+          "p": 0.4,
+          "scrollY": 592
+        },
+        {
+          "file": "film-p0.55.png",
+          "kind": "film",
+          "p": 0.55,
+          "scrollY": 814
+        },
+        {
+          "file": "film-p0.70.png",
+          "kind": "film",
+          "p": 0.7,
+          "scrollY": 1036
+        },
+        {
+          "file": "film-p0.82.png",
+          "kind": "film",
+          "p": 0.82,
+          "scrollY": 1214
+        },
+        {
+          "file": "film-p0.90.png",
+          "kind": "film",
+          "p": 0.9,
+          "scrollY": 1332
+        },
+        {
+          "file": "film-p1.00.png",
+          "kind": "film",
+          "p": 1,
+          "scrollY": 1480
+        },
+        {
+          "file": "handoff-+160.png",
+          "kind": "handoff",
+          "offset": 160,
+          "scrollY": 1640
+        },
+        {
+          "file": "handoff-+420.png",
+          "kind": "handoff",
+          "offset": 420,
+          "scrollY": 1900
+        },
+        {
+          "file": "handoff-+720.png",
+          "kind": "handoff",
+          "offset": 720,
+          "scrollY": 2200
+        },
+        {
+          "file": "handoff-+1100.png",
+          "kind": "handoff",
+          "offset": 1100,
+          "scrollY": 2580
+        }
+      ],
+      "logs": [],
+      "overflow": {
+        "vw": 360,
+        "scrollWidth": 360,
+        "bad": []
+      }
+    },
+    "video-desktop-light": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1,
+      "scheme": "light",
+      "mobile": false,
+      "geometry": {
+        "top": 0,
+        "h": 3420,
+        "end": 2520,
+        "pinH": 900,
+        "phone": false,
+        "heroTop": 3420,
+        "vh": 900,
+        "docH": 12383
+      },
+      "video": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-desktop-light/page@e226cc311ea513305793511dd1854cff.webm",
+      "durationMs": 12000
+    },
+    "video-mobile-light": {
+      "width": 393,
+      "height": 852,
+      "dpr": 2,
+      "scheme": "light",
+      "mobile": true,
+      "geometry": {
+        "top": 0,
+        "h": 2556,
+        "end": 1704,
+        "pinH": 852,
+        "phone": true,
+        "heroTop": 2556,
+        "vh": 852,
+        "docH": 14446
+      },
+      "video": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-mobile-light/page@78dad22aa1d2ace2e944b8bf5ce6528f.webm",
+      "durationMs": 12000
+    }
+  }
+}

@@ -16,7 +16,7 @@ Start with **`boards/00-side-by-side-board.jpg`**, then the six reports:
 Evidence folders:
 
 - `boards/` — labelled comparison boards (JPEG), the primary viewing surface.
-- `frames/original/`, `frames/candidate/` — settled viewport captures at p = 0 … 1 and at +160 … +1100 px past release, six viewport/theme configs (JPEG).
+- `frames/original/`, `frames/candidate/` — settled viewport captures at p = 0, 0.55, 0.82, 0.90, 1.00 and at +160 / +420 / +720 px past release, six viewport/theme configs (JPEG); `opening-anim-*/` holds the light-up paused at exact animation times, `opening-desktop/` the wall-clock burst.
 - `motion/` — scroll-through recordings (MP4) for both builds.
 - `direction-b/` — the Direction B prototype renders.
 - `a11y/` — the accessibility probe output (keyboard path, Skip intro, reduced motion, no-JS, axe, credit contrast).

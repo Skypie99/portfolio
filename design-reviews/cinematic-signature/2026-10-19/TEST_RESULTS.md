@@ -31,13 +31,13 @@ During development one regression was caught and fixed before commit: a second `
 
 ## 3. Browser checks (headless Chromium 1194, static export served locally; `harness/capture.mjs`)
 
-Six viewport/theme configurations: 1440×900 light + dark (DPR 1), 393×852 light + dark (DPR 2, mobile emulation), 360×740 light + dark (DPR 2). Per configuration: 9 settled frames through the film (p = 0 … 1, scrub catch-up waited out) + 4 past the release, plus a 12 s recorded scroll-through at 1440 and 393.
+Six viewport/theme configurations: 1440×900 light + dark (DPR 1), 393×852 light + dark (DPR 2, mobile emulation), 360×740 light + dark (DPR 2). Per configuration: 9 settled frames through the film (p = 0 … 1, scrub catch-up waited out) + 4 past the release, plus a 12 s recorded scroll-through at 1440 and 393, a wall-clock burst of the first 1.5 s, and deterministic frames of the light-up (the CSS animation paused at 0, 200 … 1200 ms; `harness/opening-anim.mjs`). The release-edge pixel rows were read directly in the final frames: canvas on both sides of the edge at 1440 light and dark, main column and rail, and at 393.
 
 | Check | Result |
 |---|---|
 | Console errors / warnings | **0** in all 6 configurations and both recordings |
 | Page errors (uncaught exceptions, hydration) | **0** |
-| Failed requests | 1 transient `requestfailed` on a Next.js router prefetch (`/work/flagstone/index.txt?_rsc=…`) in one configuration of one run; the file exists in the export and the same prefetch succeeded in every other run and configuration. Not reproducible, unrelated to the change. |
+| Failed requests | 1 `requestfailed` per run on a Next.js router prefetch (`/work/flagstone/index.txt?_rsc=…`), in a different configuration each run (desktop-dark, then desktop-light). The URL serves 200 (78,604 bytes) from the same server; the event is the client cancelling an in-flight speculative prefetch when the harness scrolls or closes the context. Pre-existing behaviour of the router, not a resource failure, unrelated to the change. |
 | Element-level horizontal overflow (non-hidden boxes crossing the viewport edge) | **0** in all frames |
 | Hydration | production React logs no minified hydration errors (#418/#423) in any run |
 
@@ -52,7 +52,7 @@ This is an instrument reading, not a conformance statement. Human review of the 
 | Reduced motion (`prefers-reduced-motion: reduce`) | static frame rendered, no pin; credit resolved (`opacity 1`, text `Skyler Halisky · Senior technical support`); veil landed (`opacity 1`); no light-up animation exists on that path | same |
 | No JavaScript | hero identity visible (`opacity 1`), Skip intro visible, light-up runs (CSS). The wordmark/credit stay at opacity 0 on the live markup without JS, exactly as the wordmark did before this change (it is GSAP-driven). | same |
 | axe-core 4.11 (WCAG 2.x A/AA tags) at the opening frame and at p = 1 | **0 violations** | **0 violations** |
-| Credit line contrast at p = 1 (bone `#FFF6EC` vs sampled background luminance inside the credit's box; p90 = brightest non-glyph ground, worst case) | median **7.12:1**, worst-case **5.03:1** | median **7.56:1**, worst-case **4.88:1** |
+| Credit line contrast at p = 1 (bone `#FFF6EC` vs sampled background luminance inside the credit's box; p90 = brightest non-glyph ground, worst case) | median **7.27:1**, worst-case **5.13:1** | median **7.56:1**, worst-case **4.88:1** |
 
 Both worst-case readings clear 4.5:1 for the 11–12.5 px mono line. The measurement samples the rendered halation, which is the same recipe the wordmark's AA case relies on.
 

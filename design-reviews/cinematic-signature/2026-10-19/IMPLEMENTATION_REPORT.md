@@ -6,7 +6,7 @@
 |---|---|
 | **Candidate branch** | `claude/eloquent-planck-6yegy8` (the branch this cloud session was assigned; the brief's suggested name was taken as a suggestion, and no other branch was touched) |
 | **Base** | `main` at `b3e992bddf31daa86a4d471b1c38ad47f45802e7`, verified against `origin/main` at session start |
-| **Candidate commit** | the branch tip (recorded in the follow-up commit that writes this line; see `git log -2` on the branch) |
+| **Candidate commits** | `19a3f4a` (engine + reports) and the evidence commit that follows it (boards, frames, motion, prototype, probe, harness); the branch tip is the candidate |
 | **Implemented direction** | A, "The Gold Lands, the Paper Rises" (`CREATIVE_DIRECTION_A.md`) |
 | **Alternative** | B, "The Plate", visual prototype only (`CREATIVE_DIRECTION_B.md`) |
 | **Pull request** | none, by instruction. Nothing merged, nothing deployed. |

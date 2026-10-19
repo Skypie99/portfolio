@@ -1,0 +1,83 @@
+{
+  "desktop-light": [
+    {
+      "file": "open-plate.png",
+      "note": "p=0.00 · the film opens as a plate on the page; mono caption beneath",
+      "scrollY": 0
+    },
+    {
+      "file": "open-slate.png",
+      "note": "p=0.00 · alt opener: full-bleed with a film-leader slate (replaces the glass chip)",
+      "scrollY": 0
+    },
+    {
+      "file": "mid.png",
+      "note": "p=0.55 · unchanged full-bleed push (B keeps the body of the film as is)",
+      "scrollY": 1386
+    },
+    {
+      "file": "land-plate.png",
+      "note": "p=1.00 · the world contracts into a framed plate; the credit becomes its caption",
+      "scrollY": 2520
+    },
+    {
+      "file": "handoff.png",
+      "note": "release +300px · the plate scrolls up INTO the page as a figure; no seam, canvas on both sides",
+      "scrollY": 2820
+    }
+  ],
+  "desktop-dark": [
+    {
+      "file": "open-plate.png",
+      "note": "p=0.00 · the film opens as a plate on the page; mono caption beneath",
+      "scrollY": 0
+    },
+    {
+      "file": "open-slate.png",
+      "note": "p=0.00 · alt opener: full-bleed with a film-leader slate (replaces the glass chip)",
+      "scrollY": 0
+    },
+    {
+      "file": "mid.png",
+      "note": "p=0.55 · unchanged full-bleed push (B keeps the body of the film as is)",
+      "scrollY": 1386
+    },
+    {
+      "file": "land-plate.png",
+      "note": "p=1.00 · the world contracts into a framed plate; the credit becomes its caption",
+      "scrollY": 2520
+    },
+    {
+      "file": "handoff.png",
+      "note": "release +300px · the plate scrolls up INTO the page as a figure; no seam, canvas on both sides",
+      "scrollY": 2820
+    }
+  ],
+  "mobile-light": [
+    {
+      "file": "open-plate.png",
+      "note": "p=0.00 · the film opens as a plate on the page; mono caption beneath",
+      "scrollY": 0
+    },
+    {
+      "file": "open-slate.png",
+      "note": "p=0.00 · alt opener: full-bleed with a film-leader slate (replaces the glass chip)",
+      "scrollY": 0
+    },
+    {
+      "file": "mid.png",
+      "note": "p=0.55 · unchanged full-bleed push (B keeps the body of the film as is)",
+      "scrollY": 937
+    },
+    {
+      "file": "land-plate.png",
+      "note": "p=1.00 · the world contracts into a framed plate; the credit becomes its caption",
+      "scrollY": 1704
+    },
+    {
+      "file": "handoff.png",
+      "note": "release +300px · the plate scrolls up INTO the page as a figure; no seam, canvas on both sides",
+      "scrollY": 2004
+    }
+  ]
+}

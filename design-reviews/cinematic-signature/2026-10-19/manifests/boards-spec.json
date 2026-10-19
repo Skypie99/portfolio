@@ -1,0 +1,1331 @@
+{
+  "boards": [
+    {
+      "id": "01-desktop-light-film-and-handoff",
+      "title": "Desktop 1440×900 · light · film + handoff",
+      "subtitle": "Original (left) vs candidate (right), settled frames at the same scroll positions. p = scroll progress through the pinned film (0 = top, 1 = pin release).",
+      "columns": [
+        "Original",
+        "Candidate"
+      ],
+      "cellWidth": 620,
+      "rows": [
+        {
+          "label": "Opening frame",
+          "note": "p = 0.00 · the valley. The candidate LIGHTS UP into this over 1.2 s (see board 06); at rest the two are the same frame.",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/desktop-light/film-p0.00.png",
+              "caption": "ORIGINAL (main b3e992b)"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/desktop-light/film-p0.00.png",
+              "caption": "CANDIDATE (this branch)"
+            }
+          ]
+        },
+        {
+          "label": "The push",
+          "note": "p = 0.55 · unchanged by design: the dolly, the rise and the one dissolve are the owner-ratified film.",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/desktop-light/film-p0.55.png",
+              "caption": "ORIGINAL (main b3e992b)"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/desktop-light/film-p0.55.png",
+              "caption": "CANDIDATE (this branch)"
+            }
+          ]
+        },
+        {
+          "label": "The gold lands",
+          "note": "p = 0.82 · rim-glow + vignette arc as before; the veil has not started (0.88).",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/desktop-light/film-p0.82.png",
+              "caption": "ORIGINAL (main b3e992b)"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/desktop-light/film-p0.82.png",
+              "caption": "CANDIDATE (this branch)"
+            }
+          ]
+        },
+        {
+          "label": "Title carves",
+          "note": "p = 0.90 · wordmark condensing; in the candidate the floor has begun to melt and the credit rule is about to draw.",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/desktop-light/film-p0.90.png",
+              "caption": "ORIGINAL (main b3e992b)"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/desktop-light/film-p0.90.png",
+              "caption": "CANDIDATE (this branch)"
+            }
+          ]
+        },
+        {
+          "label": "THE LANDING",
+          "note": "p = 1.00 · the frame you are left on. Candidate: credit resolved under the mark; bottom of the frame IS the page colour.",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/desktop-light/film-p1.00.png",
+              "caption": "ORIGINAL (main b3e992b)"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/desktop-light/film-p1.00.png",
+              "caption": "CANDIDATE (this branch)"
+            }
+          ]
+        },
+        {
+          "label": "THE SEAM (+160 px)",
+          "note": "pin released 160 px ago · original: hard dark edge against rail + canvas. Candidate: canvas meets canvas.",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/desktop-light/handoff-+160.png",
+              "caption": "ORIGINAL (main b3e992b)"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/desktop-light/handoff-+160.png",
+              "caption": "CANDIDATE (this branch)"
+            }
+          ]
+        },
+        {
+          "label": "Handoff (+420 px)",
+          "note": "the hero nameplate enters below the film.",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/desktop-light/handoff-+420.png",
+              "caption": "ORIGINAL (main b3e992b)"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/desktop-light/handoff-+420.png",
+              "caption": "CANDIDATE (this branch)"
+            }
+          ]
+        },
+        {
+          "label": "Handoff (+720 px)",
+          "note": "the hero composes; the film's last third is paper.",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/desktop-light/handoff-+720.png",
+              "caption": "ORIGINAL (main b3e992b)"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/desktop-light/handoff-+720.png",
+              "caption": "CANDIDATE (this branch)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "02-desktop-dark-film-and-handoff",
+      "title": "Desktop 1440×900 · dark · landing + handoff",
+      "subtitle": "The film is theme-invariant; the veil and the page-side fade are token-driven, so in dark mode the floor sinks into the night canvas instead of paper.",
+      "columns": [
+        "Original",
+        "Candidate"
+      ],
+      "cellWidth": 620,
+      "rows": [
+        {
+          "label": "Opening frame",
+          "note": "p = 0.00",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/desktop-dark/film-p0.00.png",
+              "caption": "ORIGINAL (main b3e992b)"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/desktop-dark/film-p0.00.png",
+              "caption": "CANDIDATE (this branch)"
+            }
+          ]
+        },
+        {
+          "label": "THE LANDING",
+          "note": "p = 1.00",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/desktop-dark/film-p1.00.png",
+              "caption": "ORIGINAL (main b3e992b)"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/desktop-dark/film-p1.00.png",
+              "caption": "CANDIDATE (this branch)"
+            }
+          ]
+        },
+        {
+          "label": "THE SEAM (+160 px)",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/desktop-dark/handoff-+160.png",
+              "caption": "ORIGINAL (main b3e992b)"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/desktop-dark/handoff-+160.png",
+              "caption": "CANDIDATE (this branch)"
+            }
+          ]
+        },
+        {
+          "label": "Handoff (+420 px)",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/desktop-dark/handoff-+420.png",
+              "caption": "ORIGINAL (main b3e992b)"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/desktop-dark/handoff-+420.png",
+              "caption": "CANDIDATE (this branch)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "03-mobile-393-light",
+      "title": "Phone 393×852 (DPR 2) · light",
+      "subtitle": "Original vs candidate. The phone film is 300vh; the mobile plate tier is used. The credit stacks name / role on two lines under 480 px.",
+      "columns": [
+        "Original",
+        "Candidate"
+      ],
+      "cellWidth": 393,
+      "rows": [
+        {
+          "label": "Opening",
+          "note": "p = 0.00",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/mobile-light/film-p0.00.png",
+              "caption": "ORIGINAL (main b3e992b)"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/mobile-light/film-p0.00.png",
+              "caption": "CANDIDATE (this branch)"
+            }
+          ]
+        },
+        {
+          "label": "The push",
+          "note": "p = 0.55 (unchanged)",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/mobile-light/film-p0.55.png",
+              "caption": "ORIGINAL (main b3e992b)"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/mobile-light/film-p0.55.png",
+              "caption": "CANDIDATE (this branch)"
+            }
+          ]
+        },
+        {
+          "label": "Title carves",
+          "note": "p = 0.90",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/mobile-light/film-p0.90.png",
+              "caption": "ORIGINAL (main b3e992b)"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/mobile-light/film-p0.90.png",
+              "caption": "CANDIDATE (this branch)"
+            }
+          ]
+        },
+        {
+          "label": "THE LANDING",
+          "note": "p = 1.00 · credit stacks as two lines on phones",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/mobile-light/film-p1.00.png",
+              "caption": "ORIGINAL (main b3e992b)"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/mobile-light/film-p1.00.png",
+              "caption": "CANDIDATE (this branch)"
+            }
+          ]
+        },
+        {
+          "label": "THE SEAM (+160 px)",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/mobile-light/handoff-+160.png",
+              "caption": "ORIGINAL (main b3e992b)"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/mobile-light/handoff-+160.png",
+              "caption": "CANDIDATE (this branch)"
+            }
+          ]
+        },
+        {
+          "label": "Handoff (+420 px)",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/mobile-light/handoff-+420.png",
+              "caption": "ORIGINAL (main b3e992b)"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/mobile-light/handoff-+420.png",
+              "caption": "CANDIDATE (this branch)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "04-mobile-393-dark",
+      "title": "Phone 393×852 (DPR 2) · dark",
+      "subtitle": "Original vs candidate, dark scheme.",
+      "columns": [
+        "Original",
+        "Candidate"
+      ],
+      "cellWidth": 393,
+      "rows": [
+        {
+          "label": "Opening",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/mobile-dark/film-p0.00.png",
+              "caption": "ORIGINAL (main b3e992b)"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/mobile-dark/film-p0.00.png",
+              "caption": "CANDIDATE (this branch)"
+            }
+          ]
+        },
+        {
+          "label": "THE LANDING",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/mobile-dark/film-p1.00.png",
+              "caption": "ORIGINAL (main b3e992b)"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/mobile-dark/film-p1.00.png",
+              "caption": "CANDIDATE (this branch)"
+            }
+          ]
+        },
+        {
+          "label": "THE SEAM (+160 px)",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/mobile-dark/handoff-+160.png",
+              "caption": "ORIGINAL (main b3e992b)"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/mobile-dark/handoff-+160.png",
+              "caption": "CANDIDATE (this branch)"
+            }
+          ]
+        },
+        {
+          "label": "Handoff (+420 px)",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/mobile-dark/handoff-+420.png",
+              "caption": "ORIGINAL (main b3e992b)"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/mobile-dark/handoff-+420.png",
+              "caption": "CANDIDATE (this branch)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "05-small-phone-360",
+      "title": "Small phone 360×740 (DPR 2) · light + dark",
+      "subtitle": "The smaller inspection viewport. Four cells per row: original light, candidate light, original dark, candidate dark.",
+      "columns": [
+        "Original · light",
+        "Candidate · light",
+        "Original · dark",
+        "Candidate · dark"
+      ],
+      "cellWidth": 300,
+      "rows": [
+        {
+          "label": "Opening",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/small-light/film-p0.00.png",
+              "caption": "original · light"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/small-light/film-p0.00.png",
+              "caption": "candidate · light"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/small-dark/film-p0.00.png",
+              "caption": "original · dark"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/small-dark/film-p0.00.png",
+              "caption": "candidate · dark"
+            }
+          ]
+        },
+        {
+          "label": "THE LANDING",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/small-light/film-p1.00.png",
+              "caption": "original · light"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/small-light/film-p1.00.png",
+              "caption": "candidate · light"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/small-dark/film-p1.00.png",
+              "caption": "original · dark"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/small-dark/film-p1.00.png",
+              "caption": "candidate · dark"
+            }
+          ]
+        },
+        {
+          "label": "THE SEAM (+160 px)",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/small-light/handoff-+160.png",
+              "caption": "original · light"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/small-light/handoff-+160.png",
+              "caption": "candidate · light"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/small-dark/handoff-+160.png",
+              "caption": "original · dark"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/small-dark/handoff-+160.png",
+              "caption": "candidate · dark"
+            }
+          ]
+        },
+        {
+          "label": "Handoff (+420 px)",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/small-light/handoff-+420.png",
+              "caption": "original · light"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/small-light/handoff-+420.png",
+              "caption": "candidate · light"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/small-dark/handoff-+420.png",
+              "caption": "original · dark"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/small-dark/handoff-+420.png",
+              "caption": "candidate · dark"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "06-opening-light-up",
+      "title": "The opening light-up · deterministic frames of the 1200 ms settle",
+      "subtitle": "Rows 1–7: the candidate's CSS animation (.cdesert-frame, cdesert-arrive) paused at exact animation times after the planes had decoded, desktop 1440×900 and phone 393×852; the left cell is the original's painted first frame for reference. Last rows: the wall-clock burst, kept as a caveat about screenshot latency and about what the original itself shows before its planes decode. The live recording (board 07, t = 0 s) caught the same mid-fade frame in real time.",
+      "columns": [
+        "Original (painted)",
+        "Candidate · desktop",
+        "Candidate · phone"
+      ],
+      "cellWidth": 460,
+      "rows": [
+        {
+          "label": "animation time 0 ms",
+          "note": "opacity 0 · scale 1.045 — the pin's dawn wash shows through",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/opening-anim-desktop/painted.png",
+              "caption": "original · the painted first frame (no light-up); the reference for every candidate cell"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/opening-anim-desktop/anim-0000ms.png",
+              "caption": "candidate · desktop · t = 0 ms of 1200"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/opening-anim-mobile/anim-0000ms.png",
+              "caption": "candidate · phone · t = 0 ms"
+            }
+          ]
+        },
+        {
+          "label": "animation time 200 ms",
+          "note": "cubic-bezier(0.22, 0.9, 0.26, 1) is front-loaded: ≈61% exposure here",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/opening-anim-desktop/painted.png",
+              "caption": "original · the painted first frame (no light-up); the reference for every candidate cell"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/opening-anim-desktop/anim-0200ms.png",
+              "caption": "candidate · desktop · t = 200 ms of 1200"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/opening-anim-mobile/anim-0200ms.png",
+              "caption": "candidate · phone · t = 200 ms"
+            }
+          ]
+        },
+        {
+          "label": "animation time 400 ms",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/opening-anim-desktop/painted.png",
+              "caption": "original · the painted first frame (no light-up); the reference for every candidate cell"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/opening-anim-desktop/anim-0400ms.png",
+              "caption": "candidate · desktop · t = 400 ms of 1200"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/opening-anim-mobile/anim-0400ms.png",
+              "caption": "candidate · phone · t = 400 ms"
+            }
+          ]
+        },
+        {
+          "label": "animation time 600 ms",
+          "note": "≈95% exposure; the remaining 5% and the last 0.2% of scale take the second half (the settle)",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/opening-anim-desktop/painted.png",
+              "caption": "original · the painted first frame (no light-up); the reference for every candidate cell"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/opening-anim-desktop/anim-0600ms.png",
+              "caption": "candidate · desktop · t = 600 ms of 1200"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/opening-anim-mobile/anim-0600ms.png",
+              "caption": "candidate · phone · t = 600 ms"
+            }
+          ]
+        },
+        {
+          "label": "animation time 800 ms",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/opening-anim-desktop/painted.png",
+              "caption": "original · the painted first frame (no light-up); the reference for every candidate cell"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/opening-anim-desktop/anim-0800ms.png",
+              "caption": "candidate · desktop · t = 800 ms of 1200"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/opening-anim-mobile/anim-0800ms.png",
+              "caption": "candidate · phone · t = 800 ms"
+            }
+          ]
+        },
+        {
+          "label": "animation time 1000 ms",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/opening-anim-desktop/painted.png",
+              "caption": "original · the painted first frame (no light-up); the reference for every candidate cell"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/opening-anim-desktop/anim-1000ms.png",
+              "caption": "candidate · desktop · t = 1000 ms of 1200"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/opening-anim-mobile/anim-1000ms.png",
+              "caption": "candidate · phone · t = 1000 ms"
+            }
+          ]
+        },
+        {
+          "label": "animation time 1200 ms",
+          "note": "at rest — identical to the original's painted frame",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/opening-anim-desktop/painted.png",
+              "caption": "original · the painted first frame (no light-up); the reference for every candidate cell"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/opening-anim-desktop/anim-1200ms.png",
+              "caption": "candidate · desktop · t = 1200 ms of 1200"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/opening-anim-mobile/anim-1200ms.png",
+              "caption": "candidate · phone · t = 1200 ms"
+            }
+          ]
+        },
+        {
+          "label": "wall-clock sample 1",
+          "note": "screenshot REQUESTED at original 0 ms · candidate 0 ms after navigation commit; each capture completes ~0.7 s later in this container, so these cannot resolve the move. Shown for one honest reason: sample 1 is the dawn wash on BOTH builds — the planes decode asynchronously and the original also shows the gradient until they land.",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/opening-desktop/t0000.png",
+              "caption": "original · requested at 0 ms"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/opening-desktop/t0000.png",
+              "caption": "candidate · requested at 0 ms"
+            },
+            null
+          ]
+        },
+        {
+          "label": "wall-clock sample 2",
+          "note": "screenshot REQUESTED at original 1107 ms · candidate 713 ms after navigation commit; each capture completes ~0.7 s later in this container, so these cannot resolve the move. Shown for one honest reason: sample 1 is the dawn wash on BOTH builds — the planes decode asynchronously and the original also shows the gradient until they land.",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/opening-desktop/t1107.png",
+              "caption": "original · requested at 1107 ms"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/opening-desktop/t0713.png",
+              "caption": "candidate · requested at 713 ms"
+            },
+            null
+          ]
+        },
+        {
+          "label": "wall-clock sample 3",
+          "note": "screenshot REQUESTED at original 1793 ms · candidate 1499 ms after navigation commit; each capture completes ~0.7 s later in this container, so these cannot resolve the move. Shown for one honest reason: sample 1 is the dawn wash on BOTH builds — the planes decode asynchronously and the original also shows the gradient until they land.",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/opening-desktop/t1793.png",
+              "caption": "original · requested at 1793 ms"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/opening-desktop/t1499.png",
+              "caption": "candidate · requested at 1499 ms"
+            },
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "id": "07-motion-sequence-desktop-light",
+      "title": "Motion sequence · Desktop 1440×900 · one frame per second of a 12 s human-paced scroll-through",
+      "subtitle": "Extracted from the Playwright recordings (same scroll curve both sides: 1.2 s hold, eased scroll through the film, 1.2 s past release, 2 s settle). Frame N = second N of the recording. The .mp4 files sit beside this board.",
+      "columns": [
+        "Original",
+        "Candidate"
+      ],
+      "cellWidth": 620,
+      "rows": [
+        {
+          "label": "t = 0 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-desktop-light/frames/frame-01.png",
+              "caption": "original · 0 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-desktop-light/frames/frame-01.png",
+              "caption": "candidate · 0 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 1 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-desktop-light/frames/frame-02.png",
+              "caption": "original · 1 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-desktop-light/frames/frame-02.png",
+              "caption": "candidate · 1 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 2 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-desktop-light/frames/frame-03.png",
+              "caption": "original · 2 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-desktop-light/frames/frame-03.png",
+              "caption": "candidate · 2 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 3 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-desktop-light/frames/frame-04.png",
+              "caption": "original · 3 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-desktop-light/frames/frame-04.png",
+              "caption": "candidate · 3 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 4 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-desktop-light/frames/frame-05.png",
+              "caption": "original · 4 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-desktop-light/frames/frame-05.png",
+              "caption": "candidate · 4 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 5 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-desktop-light/frames/frame-06.png",
+              "caption": "original · 5 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-desktop-light/frames/frame-06.png",
+              "caption": "candidate · 5 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 6 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-desktop-light/frames/frame-07.png",
+              "caption": "original · 6 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-desktop-light/frames/frame-07.png",
+              "caption": "candidate · 6 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 7 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-desktop-light/frames/frame-08.png",
+              "caption": "original · 7 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-desktop-light/frames/frame-08.png",
+              "caption": "candidate · 7 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 8 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-desktop-light/frames/frame-09.png",
+              "caption": "original · 8 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-desktop-light/frames/frame-09.png",
+              "caption": "candidate · 8 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 9 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-desktop-light/frames/frame-10.png",
+              "caption": "original · 9 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-desktop-light/frames/frame-10.png",
+              "caption": "candidate · 9 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 10 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-desktop-light/frames/frame-11.png",
+              "caption": "original · 10 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-desktop-light/frames/frame-11.png",
+              "caption": "candidate · 10 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 11 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-desktop-light/frames/frame-12.png",
+              "caption": "original · 11 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-desktop-light/frames/frame-12.png",
+              "caption": "candidate · 11 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 12 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-desktop-light/frames/frame-13.png",
+              "caption": "original · 12 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-desktop-light/frames/frame-13.png",
+              "caption": "candidate · 12 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 13 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-desktop-light/frames/frame-14.png",
+              "caption": "original · 13 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-desktop-light/frames/frame-14.png",
+              "caption": "candidate · 13 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 14 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-desktop-light/frames/frame-15.png",
+              "caption": "original · 14 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-desktop-light/frames/frame-15.png",
+              "caption": "candidate · 14 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 15 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-desktop-light/frames/frame-16.png",
+              "caption": "original · 15 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-desktop-light/frames/frame-16.png",
+              "caption": "candidate · 15 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 16 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-desktop-light/frames/frame-17.png",
+              "caption": "original · 16 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-desktop-light/frames/frame-17.png",
+              "caption": "candidate · 16 s"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "07-motion-sequence-mobile-light",
+      "title": "Motion sequence · Phone 393×852 · one frame per second of a 12 s human-paced scroll-through",
+      "subtitle": "Extracted from the Playwright recordings (same scroll curve both sides: 1.2 s hold, eased scroll through the film, 1.2 s past release, 2 s settle). Frame N = second N of the recording. The .mp4 files sit beside this board.",
+      "columns": [
+        "Original",
+        "Candidate"
+      ],
+      "cellWidth": 393,
+      "rows": [
+        {
+          "label": "t = 0 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-mobile-light/frames/frame-01.png",
+              "caption": "original · 0 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-mobile-light/frames/frame-01.png",
+              "caption": "candidate · 0 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 1 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-mobile-light/frames/frame-02.png",
+              "caption": "original · 1 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-mobile-light/frames/frame-02.png",
+              "caption": "candidate · 1 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 2 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-mobile-light/frames/frame-03.png",
+              "caption": "original · 2 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-mobile-light/frames/frame-03.png",
+              "caption": "candidate · 2 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 3 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-mobile-light/frames/frame-04.png",
+              "caption": "original · 3 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-mobile-light/frames/frame-04.png",
+              "caption": "candidate · 3 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 4 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-mobile-light/frames/frame-05.png",
+              "caption": "original · 4 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-mobile-light/frames/frame-05.png",
+              "caption": "candidate · 4 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 5 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-mobile-light/frames/frame-06.png",
+              "caption": "original · 5 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-mobile-light/frames/frame-06.png",
+              "caption": "candidate · 5 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 6 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-mobile-light/frames/frame-07.png",
+              "caption": "original · 6 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-mobile-light/frames/frame-07.png",
+              "caption": "candidate · 6 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 7 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-mobile-light/frames/frame-08.png",
+              "caption": "original · 7 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-mobile-light/frames/frame-08.png",
+              "caption": "candidate · 7 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 8 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-mobile-light/frames/frame-09.png",
+              "caption": "original · 8 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-mobile-light/frames/frame-09.png",
+              "caption": "candidate · 8 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 9 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-mobile-light/frames/frame-10.png",
+              "caption": "original · 9 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-mobile-light/frames/frame-10.png",
+              "caption": "candidate · 9 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 10 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-mobile-light/frames/frame-11.png",
+              "caption": "original · 10 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-mobile-light/frames/frame-11.png",
+              "caption": "candidate · 10 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 11 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-mobile-light/frames/frame-12.png",
+              "caption": "original · 11 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-mobile-light/frames/frame-12.png",
+              "caption": "candidate · 11 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 12 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-mobile-light/frames/frame-13.png",
+              "caption": "original · 12 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-mobile-light/frames/frame-13.png",
+              "caption": "candidate · 12 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 13 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-mobile-light/frames/frame-14.png",
+              "caption": "original · 13 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-mobile-light/frames/frame-14.png",
+              "caption": "candidate · 13 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 14 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-mobile-light/frames/frame-15.png",
+              "caption": "original · 14 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-mobile-light/frames/frame-15.png",
+              "caption": "candidate · 14 s"
+            }
+          ]
+        },
+        {
+          "label": "t = 15 s",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/video-mobile-light/frames/frame-16.png",
+              "caption": "original · 15 s"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/video-mobile-light/frames/frame-16.png",
+              "caption": "candidate · 15 s"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "08-direction-b-the-plate-prototype",
+      "title": "DIRECTION B · \"The Plate\" · visual prototype (NOT implemented)",
+      "subtitle": "Rendered by injecting prototype CSS/DOM over the real ORIGINAL build at settled scroll positions, so composition, type and colour are real; the motion between these states is described in CREATIVE_DIRECTION_B.md, not recorded. Columns: desktop light, desktop dark, phone light.",
+      "columns": [
+        "Desktop · light",
+        "Desktop · dark",
+        "Phone · light"
+      ],
+      "cellWidth": 460,
+      "rows": [
+        {
+          "label": "open-plate",
+          "note": "p=0.00 · the film opens as a plate on the page; mono caption beneath",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/direction-b/desktop-light/open-plate.png",
+              "caption": "desktop · light"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/direction-b/desktop-dark/open-plate.png",
+              "caption": "desktop · dark"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/direction-b/mobile-light/open-plate.png",
+              "caption": "phone · light"
+            }
+          ]
+        },
+        {
+          "label": "open-slate",
+          "note": "p=0.00 · alt opener: full-bleed with a film-leader slate (replaces the glass chip)",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/direction-b/desktop-light/open-slate.png",
+              "caption": "desktop · light"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/direction-b/desktop-dark/open-slate.png",
+              "caption": "desktop · dark"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/direction-b/mobile-light/open-slate.png",
+              "caption": "phone · light"
+            }
+          ]
+        },
+        {
+          "label": "mid",
+          "note": "p=0.55 · unchanged full-bleed push (B keeps the body of the film as is)",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/direction-b/desktop-light/mid.png",
+              "caption": "desktop · light"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/direction-b/desktop-dark/mid.png",
+              "caption": "desktop · dark"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/direction-b/mobile-light/mid.png",
+              "caption": "phone · light"
+            }
+          ]
+        },
+        {
+          "label": "land-plate",
+          "note": "p=1.00 · the world contracts into a framed plate; the credit becomes its caption",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/direction-b/desktop-light/land-plate.png",
+              "caption": "desktop · light"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/direction-b/desktop-dark/land-plate.png",
+              "caption": "desktop · dark"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/direction-b/mobile-light/land-plate.png",
+              "caption": "phone · light"
+            }
+          ]
+        },
+        {
+          "label": "handoff",
+          "note": "release +300px · the plate scrolls up INTO the page as a figure; no seam, canvas on both sides",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/direction-b/desktop-light/handoff.png",
+              "caption": "desktop · light"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/direction-b/desktop-dark/handoff.png",
+              "caption": "desktop · dark"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/direction-b/mobile-light/handoff.png",
+              "caption": "phone · light"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "00-side-by-side-board",
+      "title": "SkyPi Studio · cinematic signature candidate · side-by-side",
+      "subtitle": "The four moments that changed, original vs candidate: the opening (lit vs painted), the landing (credit under the mark), the seam (canvas meets canvas), the phone landing. Full sequences are on boards 01–07; Direction B on 08.",
+      "columns": [
+        "Original",
+        "Candidate"
+      ],
+      "cellWidth": 620,
+      "rows": [
+        {
+          "label": "The opening · 600 ms in",
+          "note": "desktop light · the candidate's light-up paused at 600 of 1200 ms; the original has no such move",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/opening-anim-desktop/painted.png",
+              "caption": "original · the painted first frame (no light-up); the reference for every candidate cell"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/opening-anim-desktop/anim-0600ms.png",
+              "caption": "candidate · animation time 600 ms (≈95% exposure, the long settle still running)"
+            }
+          ]
+        },
+        {
+          "label": "The landing",
+          "note": "desktop light · p = 1.00",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/desktop-light/film-p1.00.png",
+              "caption": "ORIGINAL (main b3e992b)"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/desktop-light/film-p1.00.png",
+              "caption": "CANDIDATE (this branch)"
+            }
+          ]
+        },
+        {
+          "label": "The seam",
+          "note": "desktop light · +160 px after release",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/desktop-light/handoff-+160.png",
+              "caption": "ORIGINAL (main b3e992b)"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/desktop-light/handoff-+160.png",
+              "caption": "CANDIDATE (this branch)"
+            }
+          ]
+        },
+        {
+          "label": "The seam · dark",
+          "note": "desktop dark · +160 px after release",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/desktop-dark/handoff-+160.png",
+              "caption": "ORIGINAL (main b3e992b)"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/desktop-dark/handoff-+160.png",
+              "caption": "CANDIDATE (this branch)"
+            }
+          ]
+        },
+        {
+          "label": "Phone landing + seam",
+          "note": "393×852 light · p = 1.00 and +160 px",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/mobile-light/film-p1.00.png",
+              "caption": "original · p = 1.00"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/mobile-light/film-p1.00.png",
+              "caption": "candidate · p = 1.00"
+            }
+          ]
+        },
+        {
+          "label": "",
+          "note": "",
+          "cells": [
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/baseline/mobile-light/handoff-+160.png",
+              "caption": "original · +160 px"
+            },
+            {
+              "src": "/tmp/claude-0/-home-user-portfolio/4ed72ea2-5f08-5156-828d-da55ea1b2093/scratchpad/evidence/candidate/mobile-light/handoff-+160.png",
+              "caption": "candidate · +160 px"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
