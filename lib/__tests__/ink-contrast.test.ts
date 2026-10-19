@@ -31,6 +31,7 @@
  * Evidence + method: design-reviews/a11y-qa/2026-07-31/
  */
 
+import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
@@ -318,5 +319,76 @@ describe('the homepage work-index numeral (text-ink/70) clears WCAG AA on canvas
       const composited = composite(ink, 0.3, canvas);
       expect(contrast(composited, canvas)).toBeLessThan(AA_SMALL);
     }
+  });
+});
+
+/**
+ * Owner refinement 2026-10-18 — the homepage hero's evidence strip.
+ *
+ * The strip's receipt is unboxed (no --rgb-receipt paper), so its small type sits
+ * on the hero wash: the WorldBackdrop, the translucent world-surface and the
+ * scroll-animated .hero-wash gradients, under the fixed film grain. That stack is
+ * not derivable from tokens the way BINDING_SURFACES is, so the binding pixels are
+ * pinned from a rendered measurement instead: every pixel under every strip text
+ * line, captured with only the glyphs transparent, at 6 viewports x 2 themes x up
+ * to 6 scroll positions (Chromium, 2026-10-18; evidence in
+ * ~/SkyPi_Portfolio_Execution_Review/2026-10-18_fable-homepage-final-refinement-r1/).
+ * `noGrain` hides the film grain, which overlays text and background alike;
+ * `asPainted` keeps it on the background only, the pessimistic reading. Light binds
+ * on the darkest pixel, dark on the lightest.
+ */
+const STRIP_WASH_SURFACES: ReadonlyArray<{ scope: 'root' | 'dark'; reading: string; bg: RGB }> = [
+  { scope: 'root', reading: 'noGrain', bg: [225, 197, 179] },
+  { scope: 'root', reading: 'asPainted', bg: [222, 196, 177] },
+  { scope: 'dark', reading: 'noGrain', bg: [73, 57, 42] },
+  { scope: 'dark', reading: 'asPainted', bg: [83, 70, 56] },
+];
+
+/** The wash definition those pixels were measured on, comments and whitespace ignored. */
+const HERO_WASH_SHA256_AT_MEASUREMENT = '7242ba46bb86031ea9e9168910d1ebb6463cf30ef2ef03d5a8e04bc038548cac';
+
+describe('the hero evidence strip inks clear WCAG AA on the hero wash (owner refinement 2026-10-18)', () => {
+  it.each(STRIP_WASH_SURFACES)(
+    '--rgb-ink-muted and --rgb-link-hover ($scope, $reading) ≥ 4.5:1 on the binding pixel',
+    ({ scope, bg }) => {
+      expect(contrast(readToken('rgb-ink-muted', scope), bg)).toBeGreaterThanOrEqual(AA_SMALL);
+      expect(contrast(readToken('rgb-link-hover', scope), bg)).toBeGreaterThanOrEqual(AA_SMALL);
+    },
+  );
+
+  // The strip's previous inks (the receipt-paper pair) fail on both light readings,
+  // so this block catches a revert instead of passing blind.
+  it('rejects the paper inks the strip used before, light theme (non-vacuity)', () => {
+    for (const { bg } of STRIP_WASH_SURFACES.filter((s) => s.scope === 'root')) {
+      expect(contrast(readToken('rgb-ink-meta', 'root'), bg)).toBeLessThan(AA_SMALL);
+      expect(contrast(readToken('rgb-accent-ink', 'root'), bg)).toBeLessThan(AA_SMALL);
+    }
+  });
+
+  it('the wash those pixels were measured on has not changed (else re-measure)', () => {
+    const norm = (s: string) => s.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\s+/g, ' ').trim();
+    const parts = ['.hero-wash', 'html.dark .hero-wash', '@keyframes hero-bg-drift'].map((sel) => {
+      const blocks = blocksFor(sel);
+      expect(blocks, `${sel} must have exactly one block`).toHaveLength(1);
+      return norm(blocks[0]);
+    });
+    const sha = createHash('sha256').update(parts.join('\n')).digest('hex');
+    expect(
+      sha,
+      'The .hero-wash gradients or their hero-bg-drift animation changed since the 2026-10-18 strip ' +
+        'measurement, so STRIP_WASH_SURFACES may be stale. Re-measure the strip (rendered pixels, glyphs ' +
+        'transparent) and update the surfaces and this hash together.',
+    ).toBe(HERO_WASH_SHA256_AT_MEASUREMENT);
+    // The tokens the wash and the world-surface under it read, at measurement.
+    expect(readToken('rgb-gold', 'root')).toEqual([191, 155, 93]);
+    expect(readToken('rgb-accent', 'root')).toEqual([185, 99, 64]);
+    expect(readToken('rgb-accent-soft', 'root')).toEqual([208, 138, 87]);
+    expect(readToken('rgb-foil', 'root')).toEqual([164, 160, 178]);
+    expect(readToken('rgb-canvas', 'root')).toEqual([250, 248, 241]);
+    expect(readToken('rgb-gold', 'dark')).toEqual([201, 168, 95]);
+    expect(readToken('rgb-cool-mid', 'dark')).toEqual([90, 170, 174]);
+    expect(readToken('rgb-canvas', 'dark')).toEqual([21, 25, 26]);
+    expect(readNumber('surface-alpha', 'root')).toBe(0.62);
+    expect(readNumber('surface-alpha', 'dark')).toBe(0.68);
   });
 });

@@ -38,10 +38,15 @@ const SOURCES = [...walk('app'), ...walk('components'), ...walk('lib')].map((pat
   src: readFileSync(path, 'utf8'),
 }));
 
-/** Every className string literal that mentions method-draw, anywhere. */
+/** Every className string literal that mentions method-draw, anywhere.
+ *  Inside `className={…}` the literal may be double- or single-quoted: the
+ *  codebase writes `cn('…')`, and Receipt's method link became
+ *  `cn('link-draw method-draw', methodInk)` when its ink went conditional
+ *  (owner refinement 2026-10-18). Matching only double quotes made that site
+ *  invisible to this guard. */
 const drawSites = SOURCES.flatMap(({ path, src }) =>
-  [...src.matchAll(/className=(?:"([^"]*)"|\{[^}]*?"([^"]*)"[^}]*?\})/g)]
-    .map((m) => ({ path, cls: m[1] ?? m[2] ?? '' }))
+  [...src.matchAll(/className=(?:"([^"]*)"|\{[^}]*?(?:"([^"]*)"|'([^']*)')[^}]*?\})/g)]
+    .map((m) => ({ path, cls: m[1] ?? m[2] ?? m[3] ?? '' }))
     .filter((c) => c.cls.includes('method-draw')),
 );
 

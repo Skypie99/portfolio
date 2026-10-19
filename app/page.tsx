@@ -404,56 +404,61 @@ export default function HomePage() {
           ctaLabel="See the work."
           ctaHref="#work"
           receipts={
-            <div className="mt-16 max-w-[880px]">
-              {/* Three receipts, one grid. Individually bordered on their own
-                  receipt paper stock rather than the retired chip band's
-                  hairline-joined cells: the chips read as one instrument
-                  panel, three receipts read as three pieces of evidence,
-                  which is the whole point of the change.
-                  The 3-up waits until lg, and the reason is the RAIL: from md
-                  up the shell spends 280px on the sidebar, so a 768 viewport
-                  leaves this column 424px and a `sm:` 3-up measured 131px per
-                  cell — an 83px content box, which folded the mono labels and
-                  pushed 15px of copy out of its padding box. A media query
-                  cannot see the container, so the breakpoint has to be picked
-                  from the column width the rail leaves behind. Stacked below
-                  lg is board 01 pane C's "no 3-up squeeze" anyway. */}
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                <Receipt
-                  value="2,900+"
-                  label="tests passing: Flagstone"
-                  /* "reported": run against the Flagstone repo, not this
-                     site. The figure is the chip's own ratified floor
-                     (the suite grows most weeks); the exact 2,971 and the
-                     command that reproduces it live behind `method`. */
-                  tier="reported"
-                  date="2026-08-16"
-                  methodHref="/work/flagstone/#flagstone-test-count-method"
-                />
+            <div className="mt-16 xl:mt-18 min-[1440px]:mt-24 max-w-[880px]">
+              {/* The evidence strip (RC-2 first visual slice · D-CON-001 B and
+                  M-CON-001 B r2). One unboxed ledger entry under a mono group
+                  label, not bordered cards: a hairline, the label, then the
+                  receipt set in LedgerRow's grammar — a top rule on every entry
+                  but the first below lg, the same rule turned vertical in one
+                  row from lg. The label is a <p> and the list's accessible
+                  name, never a heading, and nothing here carries an id.
+                  Only the dated axe receipt is carried in this candidate, and
+                  its figure, method line and date all still read from
+                  content/a11y-receipts.json. The Flagstone count and the
+                  calibration round are not restated in the hero; their own
+                  records on /work/flagstone/ and /colophon/ are untouched.
+                  From xl the strip sits 72px under the lead row (B's value);
+                  below xl the base's 64px stays. From 1440px it sits 96px
+                  under (owner refinement 2026-10-18): at 72, its hairline and
+                  the cut-off tops of its label peeked 21.7px into the 1440×900
+                  first screen after Skip. At 96 the strip starts just below
+                  that fold, and 1920×1080 still shows all of it.
+                  The label and the receipt's small type are text-ink-muted, one
+                  step deeper than the text-meta they had on receipt paper: with
+                  no paper they sit on the hero wash, where text-meta measured
+                  3.77–4.15:1 in light (rendered pixels, owner refinement
+                  2026-10-18; Receipt.tsx carries the receipt's half). */}
+              <p className="font-mono text-meta tracking-label uppercase text-ink-muted border-t border-border-decorative pt-4 mb-4">
+                The record, in brief
+              </p>
+              {/* role="list" IS load-bearing: Tailwind preflight sets
+                  list-style:none on every ul, which is the condition that makes
+                  Safari/VoiceOver drop list semantics — the same one-line
+                  exemption as The Record and the support lanes. */}
+              {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
+              <ul role="list" aria-label="The record, in brief" className="flex flex-col lg:flex-row">
                 {axe && (
-                  <Receipt
-                    value={axe.value}
-                    label={`${axe.label}: ${axe.sub}`}
-                    /* "measured": run against THIS site. Figure, method line
-                       and date all read from content/a11y-receipts.json, so
-                       the next verification run moves this receipt. */
-                    tier="measured"
-                    date={a11y.measuredDate}
-                    methodHref="/accessibility/#receipts"
-                    methodLabel="evidence"
-                  />
+                  <li
+                    className={cn(
+                      'py-4 first:pt-0 last:pb-0 border-t border-border-decorative first:border-t-0',
+                      'lg:flex-1 lg:py-0 lg:px-6 lg:first:pl-0 lg:last:pr-0 lg:border-t-0 lg:border-l lg:first:border-l-0',
+                    )}
+                  >
+                    <Receipt
+                      unboxed
+                      value={axe.value}
+                      label={`${axe.label}: ${axe.sub}`}
+                      /* "measured": run against THIS site. Figure, method line
+                         and date all read from content/a11y-receipts.json, so
+                         the next verification run moves this receipt. */
+                      tier="measured"
+                      date={a11y.measuredDate}
+                      methodHref="/accessibility/#receipts"
+                      methodLabel="evidence"
+                    />
+                  </li>
                 )}
-                {calibration && (
-                  <Receipt
-                    value={`Round ${calibration.value}`}
-                    label={calibration.label}
-                    tier="reported"
-                    date={calibration.date}
-                    methodHref="/colophon/#calibration"
-                    methodLabel="the record"
-                  />
-                )}
-              </div>
+              </ul>
             </div>
           }
         />
