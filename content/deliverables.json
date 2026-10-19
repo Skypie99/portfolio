@@ -61,7 +61,8 @@
           "mp4": "/showcase/flagstone/clips/report-flow-current.dark.phone.mp4",
           "webm": "/showcase/flagstone/clips/report-flow-current.dark.phone.webm",
           "poster": "/showcase/flagstone/clips/report-flow-current.dark.phone-poster.avif",
-          "alt": "Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map."
+          "alt": "Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "autoplay": false
         },
         "matte": "dark-mono"
       },
