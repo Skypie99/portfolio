@@ -24,6 +24,14 @@ type ReceiptProps = {
   methodHref?: string;
   /** Defaults to "method" if methodHref is given without a label. */
   methodLabel?: string;
+  /** Presentation. The default is the bordered receipt-paper card. `unboxed`
+   *  drops only the paper (no fill, border, radius or padding) so a caller can
+   *  set the receipt as one entry of a hairline ledger and own the separators;
+   *  the content, its order and the `.method-pair` hook are identical. Without
+   *  the paper, the small type and the method link are set one ink deeper
+   *  (see `metaInk` below). First consumer: the homepage hero's evidence strip
+   *  (RC-2 first visual slice). */
+  unboxed?: boolean;
   className?: string;
 };
 
@@ -45,11 +53,32 @@ type ReceiptProps = {
  * prose this card has no slot for. See FlagstoneTestReceipt's own docblock
  * for the reasoning (reviewed and kept separate, Phase H follow-up).
  */
-export function Receipt({ value, label, tier, date, methodHref, methodLabel, className }: ReceiptProps) {
+export function Receipt({
+  value,
+  label,
+  tier,
+  date,
+  methodHref,
+  methodLabel,
+  unboxed = false,
+  className,
+}: ReceiptProps) {
+  // Unboxed, the small type sits on whatever the caller paints, not on the
+  // paper its inks are proven on (lib/__tests__/ink-contrast.test.ts). On the
+  // homepage hero wash, text-meta measured 3.77–4.15:1 and accent-text 4.52:1
+  // in light (rendered pixels, owner refinement 2026-10-18), so each steps one
+  // ink deeper. The link still keeps one colour at rest and on hover.
+  const metaInk = unboxed ? 'text-ink-muted' : 'text-text-meta';
+  const methodInk = unboxed
+    ? 'text-link-hover hover:text-link-hover'
+    : 'text-accent-text hover:text-accent-text';
   return (
     <div
       className={cn(
-        'flex flex-col gap-2 bg-receipt border border-receipt-rule rounded-md p-6',
+        'flex flex-col gap-2',
+        // The receipt-paper box is the default; `unboxed` is the same
+        // instrument with no paper around it (the caller draws the rules).
+        !unboxed && 'bg-receipt border border-receipt-rule rounded-md p-6',
         // G2 (THE ROOM Phase G): the card is the method PAIR — the figure and
         // the door to its proof are one instrument, so landing anywhere on the
         // receipt draws the method's underline. No-op when methodHref is absent
@@ -61,10 +90,10 @@ export function Receipt({ value, label, tier, date, methodHref, methodLabel, cla
       <p className="font-mono font-medium text-step-2 tabular-nums text-ink">
         {value}
       </p>
-      <p className="font-mono text-label tracking-label uppercase text-text-meta">
+      <p className={cn('font-mono text-label tracking-label uppercase', metaInk)}>
         {label}
       </p>
-      <p className="font-mono text-meta tracking-label uppercase text-text-meta">
+      <p className={cn('font-mono text-meta tracking-label uppercase', metaInk)}>
         {tier}
         {date && (
           <>
@@ -77,7 +106,7 @@ export function Receipt({ value, label, tier, date, methodHref, methodLabel, cla
             <span aria-hidden="true"> · </span>
             <a
               href={methodHref}
-              className="link-draw method-draw text-accent-text hover:text-accent-text"
+              className={cn('link-draw method-draw', methodInk)}
             >
               {methodLabel ?? 'method'}
             </a>
