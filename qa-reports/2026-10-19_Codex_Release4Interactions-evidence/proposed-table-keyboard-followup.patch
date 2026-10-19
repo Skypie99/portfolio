@@ -1,0 +1,11 @@
+--- a/public/flagstone/accessibility/index.html
++++ b/public/flagstone/accessibility/index.html
+@@ -69,7 +69,7 @@
+
+   <h2>What the app supports</h2>
+
+-  <div class="table-wrap">
++  <div class="table-wrap" tabindex="0" role="region" aria-label="Accessibility features supported by the Flagstone iOS app">
+     <table>
+       <caption class="visually-hidden">Accessibility features supported by the Flagstone iOS app</caption>
+       <thead>

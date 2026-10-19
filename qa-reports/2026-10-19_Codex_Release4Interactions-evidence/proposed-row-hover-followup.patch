@@ -1,0 +1,40 @@
+--- a/app/globals.css
++++ b/app/globals.css
+@@ -4322,13 +4322,26 @@
+   transition: border-color var(--dur-fast) ease-out;
+ }
+
+-#work ol > li:has(a:hover),
++/* Proposed follow-up only: gate the legacy row hover cues while keeping
++   keyboard focus and held press cues available for every input profile. */
++@media (hover: hover) {
++  #work ol > li:has(a:hover) {
++    border-color: rgb(var(--rgb-ink) / 0.5);
++  }
++  html.dark #work ol > li:has(a:hover) {
++    border-color: rgb(var(--rgb-accent) / 0.6);
++  }
++  #work ol > li:has(a:hover) a.group > span[aria-hidden='true'].rounded-full {
++    width: 0.5rem;
++    height: 0.5rem;
++  }
++}
++
+ #work ol > li:has(a:focus-visible),
+ #work ol > li:has(a:active) {
+   border-color: rgb(var(--rgb-ink) / 0.5);
+ }
+
+-html.dark #work ol > li:has(a:hover),
+ html.dark #work ol > li:has(a:focus-visible),
+ html.dark #work ol > li:has(a:active) {
+   border-color: rgb(var(--rgb-accent) / 0.6);
+@@ -4338,7 +4351,7 @@
+    pill hover/press (shared component); these list-side rules give the
+    row's TITLE link (and every row link) equal clarity on focus-visible,
+    and give press the pill's own existing settle-down cue. */
+-#work ol > li:has(:is(a:hover, a:focus-visible)) a.group > span[aria-hidden='true'].rounded-full {
++#work ol > li:has(a:focus-visible) a.group > span[aria-hidden='true'].rounded-full {
+   width: 0.5rem;
+   height: 0.5rem;
+ }
