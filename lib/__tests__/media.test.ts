@@ -52,3 +52,43 @@ describe('heroMedia threads the proof fields', () => {
     expect(m.lqip).toBe('data:image/webp;base64,ABC');
   });
 });
+
+describe('heroMedia threads the capture size (Flagstone first proof, 2026-10-19)', () => {
+  const shot = {
+    src: '/showcase/flagstone/explore-current.phone.webp',
+    alt: 'Flagstone Explore map with an expanded verified report',
+  };
+
+  it('carries width/height from heroShot so a frameWidth hero can fit its screen to the capture', () => {
+    const m = heroMedia({ ...base, heroShot: { ...shot, width: 1290, height: 2803 } });
+    expect(m.width).toBe(1290);
+    expect(m.height).toBe(2803);
+  });
+
+  it('leaves them undefined when the data declares none', () => {
+    const m = heroMedia({ ...base, heroShot: shot });
+    expect(m.width).toBeUndefined();
+    expect(m.height).toBeUndefined();
+  });
+
+  it('never borrows a screenshot size for owner artwork', () => {
+    const m = heroMedia({
+      ...base,
+      heroShot: { ...shot, width: 1290, height: 2803 },
+      heroArtwork: {
+        src: '/images/deliverables/flagstone/concept.webp',
+        avif: '/images/deliverables/flagstone/concept.avif',
+        webp: '/images/deliverables/flagstone/concept.webp',
+        alt: 'Concept drawing of the barrier map',
+        label: 'Concept diagram',
+        dark: {
+          src: '/images/deliverables/flagstone/concept.dark.webp',
+          avif: '/images/deliverables/flagstone/concept.dark.avif',
+          webp: '/images/deliverables/flagstone/concept.dark.webp',
+        },
+      },
+    });
+    expect(m.width).toBeUndefined();
+    expect(m.height).toBeUndefined();
+  });
+});

@@ -117,6 +117,12 @@ export type ProductRevealMedia = {
   /** Authentic phone-composed card sibling. Used only by card context below
    * md; desktop media and every hero/shot remain untouched. */
   mobile?: ProductRevealMobileMedia;
+  /** The capture's own pixel size (schema `width` / `height`). Read only by a
+   *  `frameWidth` hero, where it fixes the device screen's aspect so the frame's
+   *  height follows the image exactly; absent, that screen falls back to the
+   *  iPhone display family's 9/19.5 (globals.css). Ignored everywhere else. */
+  width?: number;
+  height?: number;
 };
 
 export type ProductRevealProps = {
@@ -145,6 +151,18 @@ export type ProductRevealProps = {
    *  specificity rule wins the `animation` property, nothing else on the
    *  host changes. No-op when absent (every other case study, byte-identical). */
   liftClassName?: string;
+  /** Flagstone first proof (2026-10-19) — hero art direction for the framed
+   *  artifact: Tailwind WIDTH utilities (responsive) for the device frame, e.g.
+   *  `w-[72%] sm:w-[53%] lg:w-[58%]`. When set, the frame is sized by width
+   *  instead of the well's height, and its screen holds the capture's own
+   *  aspect (`media.width/height` → `--pr-screen-aspect`, consumed by
+   *  `.pr-frame--fit-capture > .pr-screen-phone` in globals.css), so the
+   *  frame's height follows the image and no letterbox sliver shows above or
+   *  below the real screenshot. The call site still owns the well's aspect, so
+   *  it must reserve enough height for the frame it asks for. Device chrome
+   *  only (float/matte keep their own geometry). Absent → the default
+   *  well-fitted placement, byte-identical for every other call site. */
+  frameWidth?: string;
 };
 
 const ASPECT: Record<ProductRevealContext, string> = {
@@ -200,11 +218,15 @@ function FramedArtifact({
   kind,
   hasReal,
   chrome,
+  placement,
   children,
 }: {
   kind: Exclude<DeviceFrameKind, 'none'>;
   hasReal: boolean;
   chrome: 'device' | 'float' | 'matte';
+  /** Device-chrome placement override (the `frameWidth` hero); absent → the
+   *  shared FRAME_PLACEMENT / FRAME_PLACEMENT_REAL string for this kind. */
+  placement?: string;
   children: ReactNode;
 }) {
   if (chrome === 'float') {
@@ -218,7 +240,7 @@ function FramedArtifact({
     );
   }
   return (
-    <DeviceFrame kind={kind} className={(hasReal ? FRAME_PLACEMENT_REAL : FRAME_PLACEMENT)[kind]}>
+    <DeviceFrame kind={kind} className={placement ?? (hasReal ? FRAME_PLACEMENT_REAL : FRAME_PLACEMENT)[kind]}>
       {children}
     </DeviceFrame>
   );
@@ -400,6 +422,7 @@ export function ProductReveal({
   bare = false,
   eager: eagerProp,
   liftClassName,
+  frameWidth,
 }: ProductRevealProps) {
   const sig = signatureFor(slug);
   const kind: DeviceFrameKind = frame ?? (context === 'hero' ? frameForSlug(slug) : 'none');
@@ -549,6 +572,17 @@ export function ProductReveal({
       )
     ) : null;
 
+  // Capture-fitted frame (Flagstone first proof, `frameWidth`): the same
+  // centering as every placement, sized by WIDTH; `.pr-frame--fit-capture`
+  // hands the screen the capture's own aspect so the frame's height follows the
+  // image (globals.css). Device chrome only — see FramedArtifact.
+  const capturePlacement =
+    frameWidth && kind !== 'none'
+      ? cn('absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pr-frame--fit-capture', frameWidth)
+      : undefined;
+  const screenAspect =
+    capturePlacement && media.width && media.height ? `${media.width} / ${media.height}` : undefined;
+
   const layers = (
     <>
       <div aria-hidden="true" className="pr-world absolute inset-0" />
@@ -582,19 +616,23 @@ export function ProductReveal({
             kind={kind}
             hasReal={hasReal}
             chrome={isThemed ? chrome : 'device'}
+            placement={capturePlacement}
           >
             {screen}
           </FramedArtifact>
         </div>
       ) : (
-        <FramedArtifact kind={kind} hasReal={hasReal} chrome={isThemed ? chrome : 'device'}>
+        <FramedArtifact kind={kind} hasReal={hasReal} chrome={isThemed ? chrome : 'device'} placement={capturePlacement}>
           {screen}
         </FramedArtifact>
       )}
     </>
   );
 
-  const style = { '--pr-sig': sig } as CSSProperties;
+  const style = {
+    '--pr-sig': sig,
+    ...(screenAspect ? { '--pr-screen-aspect': screenAspect } : {}),
+  } as CSSProperties;
 
   // Hero: the parent HeroImageSettle well already owns aspect + group + overflow.
   if (bare) {
