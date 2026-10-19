@@ -153,6 +153,11 @@ describe('Flagstone proof row — DOM', () => {
     for (const figure of figures) {
       expect(figure.querySelector('figcaption')!.className).toContain('border-t');
       expect(figure.children[0].className, 'label legible in dark (≥ 4.5:1)').toContain('dark:text-ink');
+      // Release 3: light ink-meta labels measured 4.47:1 at worst; ink-muted ≈ 5.7:1.
+      expect(figure.children[0].className, 'label legible in light (≥ 4.5:1)').toContain('text-ink-muted');
+      expect(figure.children[0].className).not.toContain('text-text-meta');
+      // Release 3: the dark ink-muted caption measured 3.98:1 at worst; ink ≈ 6.1:1.
+      expect(figure.querySelector('figcaption')!.className, 'caption legible in dark').toContain('dark:text-ink');
     }
   });
 
@@ -160,6 +165,11 @@ describe('Flagstone proof row — DOM', () => {
     const { container } = render(<CaseProof d={flagstone} />);
     expect(text(container)).toContain('Inside the build');
     expect(text(container)).toContain('See it in motion.');
+    // Release 3: the dark accent-ink kicker measured 4.28:1 at worst; ink ≈ 6.5:1.
+    const kicker = container.firstElementChild!.firstElementChild!;
+    expect(text(kicker)).toBe('Inside the build');
+    expect(kicker.className).toContain('text-accent-ink');
+    expect(kicker.className).toContain('dark:text-ink');
     expect(container.textContent).not.toContain(EM_DASH);
     expect(container.innerHTML).not.toContain(EM_DASH);
   });
@@ -200,6 +210,9 @@ describe('Flagstone proof row — DOM', () => {
     expect(provenance!.querySelector('time')).toHaveAttribute('dateTime', '2026-09-01');
     // dark theme: ink-meta measured 3.2–4.1:1 on the case-study world surface; ink clears 4.5:1
     expect(provenance!.className).toContain('dark:text-ink');
+    // light theme: ink-meta measured 4.48:1 at worst; ink-muted ≈ 5.7:1
+    expect(provenance!.className).toContain('text-ink-muted');
+    expect(provenance!.className).not.toContain('text-text-meta');
     // The three shots still carry no capturedDate, so the figcaption's
     // per-shot provenance span renders nothing (nothing is invented).
     expect(container.querySelector('figcaption time')).toBeNull();
@@ -303,6 +316,13 @@ describe('Flagstone proof row — other case studies are untouched', () => {
     }
     expect(container.querySelector('ul + p')).toBeNull();
     expect(container.querySelector('[data-proof-arrival], .proof-arrival-edge')).toBeNull();
+    // The Release 3 contrast classes are Flagstone's row only.
+    expect(container.firstElementChild!.firstElementChild!.className).toBe(
+      'font-mono text-label tracking-label uppercase text-accent-ink mb-6',
+    );
+    for (const caption of Array.from(container.querySelectorAll('figcaption'))) {
+      expect(caption.className).not.toContain('dark:text-ink');
+    }
   });
 
   it('ghost-code keeps its portrait still-first clip in a single column', () => {
@@ -345,10 +365,35 @@ describe('Flagstone proof row — CSS scope (globals.css as text)', () => {
     expect(block).toContain('.proof-row .ts-matte-well {');
     expect(block).toContain('.proof-row [data-themed-motion] > button {');
     expect(block).toContain('html.dark .proof-row [data-themed-motion] > button {');
-    expect(block).toContain('.proof-row [data-themed-motion] > button:focus-visible {');
+    // Release 3: one ink ring in both themes over the canvas halo (no dark override).
     expect(block).toContain(
-      'html.dark .proof-row [data-themed-motion] > button:focus-visible {\n  outline-color: rgb(var(--rgb-accent-ink));\n}',
+      '.proof-row [data-themed-motion] > button:focus-visible {\n' +
+        '  outline-color: rgb(var(--rgb-ink));\n' +
+        '  box-shadow: 0 0 0 var(--focus-ring-offset, 2px) rgb(var(--rgb-canvas));\n' +
+        '}',
     );
+    expect(block).not.toContain('html.dark .proof-row [data-themed-motion] > button:focus-visible');
+  });
+
+  it('pairs the Play ring and its halo at ≥ 9:1 in both themes, so one band clears 3:1 over any frame', () => {
+    const lum = (rgb: number[]) =>
+      rgb
+        .map((c) => c / 255)
+        .map((c) => (c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4))
+        .reduce((sum, c, i) => sum + c * [0.2126, 0.7152, 0.0722][i], 0);
+    const token = (scope: string, name: string) => {
+      const open = CSS.indexOf(`${scope} {`);
+      const value = CSS.slice(open, CSS.indexOf('}', open)).match(new RegExp(`--rgb-${name}:\\s*(\\d+) (\\d+) (\\d+);`));
+      expect(value, `${scope} --rgb-${name}`).toBeTruthy();
+      return value!.slice(1, 4).map(Number);
+    };
+    for (const scope of [':root', 'html.dark']) {
+      const [ring, halo] = [lum(token(scope, 'ink')), lum(token(scope, 'canvas'))];
+      const pair = (Math.max(ring, halo) + 0.05) / (Math.min(ring, halo) + 0.05);
+      expect(pair, `${scope} ring:halo`).toBeGreaterThanOrEqual(9);
+      // The better band against any frame luminance is at least √pair.
+      expect(Math.sqrt(pair), `${scope} worst frame`).toBeGreaterThanOrEqual(3.5);
+    }
   });
 
   it('animates nothing and redefines no focus token', () => {
