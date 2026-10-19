@@ -59,10 +59,12 @@ export function SidebarWriteCta() {
       // lift/shadow invitation while keeping it a real, operable link. Geometry
       // is unchanged — only the hover response is stilled. The override rides
       // Button's own hover gate (`[@media(hover:hover)]`, 2026-10-19) so
-      // tailwind-merge collapses it against the lift it withdraws.
+      // tailwind-merge collapses it against the lift it withdraws. The custom
+      // shadow-soft token is not a default tailwind-merge shadow group, so its
+      // withdrawal must explicitly win the compiled hover cascade.
       className={
         onRoute
-          ? '[@media(hover:hover)]:hover:translate-y-0 [@media(hover:hover)]:hover:shadow-none'
+          ? '[@media(hover:hover)]:hover:translate-y-0 [@media(hover:hover)]:hover:!shadow-none'
           : undefined
       }
     >
