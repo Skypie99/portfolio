@@ -85,8 +85,28 @@ const CULL_WINDOWS: readonly { start: number; end: number }[] =
 /** Flat [sceneIndex, planeIndex] addressing for the per-plane ref grid. */
 type PlaneAddr = { s: number; p: number };
 
+/**
+ * Synchronous reduced-motion read for client effects. `useReducedMotion` is
+ * still `false` during the hydration pass (so the markup matches the server);
+ * effects that run in that pass use this so a reduced-motion visitor never
+ * wires GSAP or decodes the stage that is about to be dropped.
+ */
+function prefersReducedMotionNow(): boolean {
+  return (
+    typeof window !== 'undefined' &&
+    typeof window.matchMedia === 'function' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  );
+}
+
 export function CinematicDesert() {
   const reduce = useReducedMotion();
+  // FIRST PAINT (OPT-D-001a, 2026-10-19): until hydration resolves the
+  // preference, the server HTML and the first client render carry BOTH trees
+  // and globals.css shows one by `prefers-reduced-motion` before first paint.
+  // Declared after useReducedMotion so its effect never lands first.
+  const [hydrated, setHydrated] = useState(false);
+  useEffect(() => setHydrated(true), []);
   const [narrow, setNarrow] = useState(false);
 
   // matchMedia for the phone breakpoint. Initial `false` keeps SSR/CSR in sync;
@@ -139,7 +159,7 @@ export function CinematicDesert() {
   // hitch per scene (the "glitchy at points"). Decoding here, while the user is
   // still at the top, makes them GPU-ready so scrolling is pure compositing (~60fps).
   useEffect(() => {
-    if (!animate) return;
+    if (!animate || prefersReducedMotionNow()) return;
     let cancelled = false;
     const id = requestAnimationFrame(() => {
       if (cancelled) return;
@@ -157,6 +177,12 @@ export function CinematicDesert() {
     () => {
       if (!animate) return;
       gsap.registerPlugin(ScrollTrigger);
+      // Registration stays unconditional, as before: it is idempotent and
+      // creates no trigger, and the GSAP test teardowns call
+      // ScrollTrigger.disable(), which throws on an unregistered plugin.
+      // Everything below (config, timeline, pin, breathe) is skipped for a
+      // reduced-motion visitor during the hydration pass.
+      if (prefersReducedMotionNow()) return;
       // Mobile: ignore the iOS/Android address-bar show/hide resize so the pin
       // doesn't jump mid-scroll (r11 — the cinematic now runs on phones).
       ScrollTrigger.config({ ignoreMobileResize: true });
@@ -602,12 +628,17 @@ export function CinematicDesert() {
     { scope, dependencies: [animate] },
   );
 
-  if (!animate) {
-    return <StaticDesertFrame />;
-  }
-
-  return (
-    <div ref={scope} data-narrow={narrow ? '' : undefined}>
+  // Before hydration both trees render: the stage wrapper carries
+  // `data-cdesert-firstpaint` and the static frame follows it as a sibling,
+  // which is the shape the globals.css first-paint rules select on. After
+  // hydration only the applicable tree stays mounted. The two slots keep fixed
+  // positions, so the tree that was painted is never remounted.
+  const stage = animate ? (
+    <div
+      ref={scope}
+      data-narrow={narrow ? '' : undefined}
+      data-cdesert-firstpaint={hydrated ? undefined : ''}
+    >
       <section className="cdesert-stage" aria-label="SkyPi Studio: desert title scene">
         <div ref={pinRef} className="cdesert-pin">
           {/* SIGNATURE CANDIDATE (2026-10-19): the inner frame. Carries the
@@ -709,5 +740,12 @@ export function CinematicDesert() {
         </div>
       </section>
     </div>
+  ) : null;
+
+  return (
+    <>
+      {stage}
+      {(!hydrated || !animate) && <StaticDesertFrame />}
+    </>
   );
 }
