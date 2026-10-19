@@ -13,7 +13,7 @@
  *     plain divs so `findByRole('dialog')` is deterministic.
  */
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { cleanup, render, screen, waitFor } from '@testing-library/react';
+import { cleanup, render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { createElement, forwardRef, type ReactNode } from 'react';
 
@@ -278,5 +278,86 @@ describe('HamburgerNav — the drawn glyph (LUXE-4 The Horizon)', () => {
     expect(src).toContain("open ? 'opacity-0' : 'opacity-100'");
     expect(src).toContain('transition-[transform,top] duration-base');
     expect(src).toContain('transition-opacity duration-base');
+  });
+});
+
+/**
+ * The press language — signature-interaction refinement (2026-10-19; concept
+ * M-CON-002 A r2). The trigger, the in-dialog close button and every menu item
+ * share one press grammar with Button / ProjectDoorwayButton: immediate
+ * (half-fast in), terracotta, no movement, hover gated to hover-capable
+ * pointers, native tap highlight retired. Classes are the contract (css:false,
+ * no layout in jsdom); the rendered proof is the playwright rig under
+ * qa-reports/2026-10-19_InteractionRefinement-evidence/.
+ */
+describe('HamburgerNav — the press language', () => {
+  afterEach(cleanup);
+
+  const classesOf = (el: Element) => el.className.split(/\s+/).filter(Boolean);
+  const bareHovers = (el: Element) =>
+    classesOf(el).filter((c) => /(^|:)hover:/.test(c) && !c.startsWith('[@media(hover:hover)]:'));
+
+  it('the trigger answers a press over its frosted fill: terracotta hairline + glyph, a 10% tint laid OVER canvas/90, half-fast in', () => {
+    render(<HamburgerNav />);
+    const trigger = screen.getByRole('button', { name: /open navigation menu/i });
+    expect(trigger).toHaveClass(
+      'bg-canvas/90',
+      'active:!text-accent-primary',
+      'active:border-accent-primary',
+      'active:shadow-[inset_0_0_0_1.5rem_rgb(var(--rgb-accent)/0.1)]',
+      'active:duration-[calc(var(--dur-fast)/2)]',
+      '[-webkit-tap-highlight-color:transparent]',
+    );
+    // The tint is an inset shadow precisely so the frosted backing that lets
+    // this control sit on the film survives the press — never a bg swap.
+    expect(classesOf(trigger).filter((c) => c.startsWith('active:') && c.includes('bg-'))).toEqual([]);
+    expect(trigger).toHaveClass('transition-[color,background-color,border-color,box-shadow]');
+    expect(bareHovers(trigger)).toEqual([]);
+    expect(trigger).toHaveClass('[@media(hover:hover)]:hover:text-accent-primary');
+    // no movement on press
+    expect(trigger.className).not.toMatch(/active:!?-?(translate|scale|rotate)/);
+  });
+
+  it('the in-dialog close button and every menu item share the press language', async () => {
+    const user = userEvent.setup();
+    render(<HamburgerNav />);
+    await user.click(screen.getByRole('button', { name: /open navigation menu/i }));
+    const dialog = await screen.findByRole('dialog', { name: /primary menu/i });
+
+    const close = within(dialog).getByRole('button', { name: /close navigation menu/i });
+    expect(close).toHaveClass(
+      'active:!text-accent-primary',
+      'active:border-accent-primary',
+      'active:bg-accent/10',
+      'active:duration-[calc(var(--dur-fast)/2)]',
+      '[-webkit-tap-highlight-color:transparent]',
+    );
+    expect(bareHovers(close)).toEqual([]);
+    expect(close.className).not.toMatch(/active:!?-?(translate|scale|rotate)/);
+
+    const items = within(dialog).getAllByRole('link');
+    expect(items.length).toBeGreaterThanOrEqual(8);
+    for (const item of items) {
+      expect(item).toHaveClass(
+        'active:!text-accent-text',
+        'active:duration-[calc(var(--dur-fast)/2)]',
+        '[-webkit-tap-highlight-color:transparent]',
+        // keyboard focus keeps its accent — the press is a colour the keyboard already has, made immediate
+        'focus-visible:text-accent-text',
+      );
+      expect(bareHovers(item)).toEqual([]);
+      expect(item).toHaveClass('[@media(hover:hover)]:hover:text-accent-text');
+      // the editorial index numeral inks with the label on press, and never nudges for it
+      const numeral = item.querySelector('span[aria-hidden="true"]') as HTMLElement;
+      expect(numeral).toHaveClass(
+        'group-active:!text-accent-text',
+        'group-active:duration-[calc(var(--dur-fast)/2)]',
+        '[@media(hover:hover)]:group-hover:translate-x-1',
+        'group-focus-visible:translate-x-1',
+        'transition-[transform,color]',
+      );
+      expect(bareHovers(numeral)).toEqual([]);
+      expect(numeral.className).not.toMatch(/group-active:!?-?translate/);
+    }
   });
 });

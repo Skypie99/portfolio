@@ -1,0 +1,406 @@
+[
+  {
+    "label": "after",
+    "run": "phone-393-light",
+    "marks": [
+      {
+        "what": "settled",
+        "t": 1938
+      },
+      {
+        "what": "press",
+        "t": 1956
+      },
+      {
+        "what": "release",
+        "t": 2308
+      },
+      {
+        "what": "arrived",
+        "t": 2414
+      },
+      {
+        "what": "back",
+        "t": 3524
+      },
+      {
+        "what": "menu-open-tap",
+        "t": 5478
+      },
+      {
+        "what": "press",
+        "t": 5479
+      },
+      {
+        "what": "release",
+        "t": 5600
+      },
+      {
+        "what": "item-press",
+        "t": 7038
+      },
+      {
+        "what": "press",
+        "t": 7038
+      },
+      {
+        "what": "release",
+        "t": 7391
+      },
+      {
+        "what": "item-arrived",
+        "t": 7531
+      },
+      {
+        "what": "item-back",
+        "t": 8645
+      },
+      {
+        "what": "end",
+        "t": 10073
+      }
+    ],
+    "before": {
+      "active": false,
+      "hover": false,
+      "focus": false,
+      "focusVisible": false,
+      "borderColor": "rgb(140, 148, 132)",
+      "backgroundColor": "rgb(250, 248, 241)",
+      "transform": "none",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(35, 36, 32, 0.04) 0px 1px 2px 0px, rgba(35, 36, 32, 0.03) 0px 4px 12px 0px",
+      "dot": {
+        "width": "6px",
+        "backgroundColor": "rgb(185, 99, 64)"
+      },
+      "anyActive": false,
+      "activeElement": "BODY",
+      "path": "/"
+    },
+    "arrived": {
+      "active": false,
+      "hover": false,
+      "focus": false,
+      "focusVisible": false,
+      "borderColor": "rgb(140, 148, 132)",
+      "backgroundColor": "rgb(250, 248, 241)",
+      "transform": "none",
+      "boxShadow": "none",
+      "dot": {
+        "width": "8px",
+        "backgroundColor": "rgb(185, 99, 64)"
+      },
+      "anyActive": false,
+      "activeElement": "MAIN#main",
+      "path": "/work/flagstone/"
+    },
+    "restored": {
+      "active": false,
+      "hover": false,
+      "focus": false,
+      "focusVisible": false,
+      "borderColor": "rgb(140, 148, 132)",
+      "backgroundColor": "rgb(250, 248, 241)",
+      "transform": "none",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(35, 36, 32, 0.04) 0px 1px 2px 0px, rgba(35, 36, 32, 0.03) 0px 4px 12px 0px",
+      "dot": {
+        "width": "6px",
+        "backgroundColor": "rgb(185, 99, 64)"
+      },
+      "anyActive": false,
+      "activeElement": "MAIN#main",
+      "path": "/"
+    },
+    "restoredAway": {
+      "active": false,
+      "hover": false,
+      "focus": false,
+      "focusVisible": false,
+      "borderColor": "rgb(140, 148, 132)",
+      "backgroundColor": "rgb(250, 248, 241)",
+      "transform": "none",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(35, 36, 32, 0.04) 0px 1px 2px 0px, rgba(35, 36, 32, 0.03) 0px 4px 12px 0px",
+      "dot": {
+        "width": "6px",
+        "backgroundColor": "rgb(185, 99, 64)"
+      },
+      "anyActive": false,
+      "activeElement": "MAIN#main",
+      "path": "/"
+    },
+    "seqB": {
+      "itemBefore": {
+        "color": "rgb(32, 48, 44)"
+      },
+      "menuGone": true,
+      "triggerState": {
+        "active": false,
+        "hover": false,
+        "focus": false,
+        "focusVisible": false,
+        "borderColor": "rgb(204, 207, 190)",
+        "backgroundColor": "rgba(250, 248, 241, 0.9)",
+        "transform": "none",
+        "boxShadow": "none",
+        "dot": null,
+        "anyActive": false,
+        "activeElement": "MAIN#main",
+        "path": "/"
+      },
+      "menuStillGone": true
+    },
+    "video": "phone-393-light.webm"
+  },
+  {
+    "label": "after",
+    "run": "phone-393-dark",
+    "marks": [
+      {
+        "what": "settled",
+        "t": 1831
+      },
+      {
+        "what": "press",
+        "t": 1841
+      },
+      {
+        "what": "release",
+        "t": 2193
+      },
+      {
+        "what": "arrived",
+        "t": 2300
+      },
+      {
+        "what": "back",
+        "t": 3411
+      },
+      {
+        "what": "menu-open-tap",
+        "t": 5348
+      },
+      {
+        "what": "press",
+        "t": 5352
+      },
+      {
+        "what": "release",
+        "t": 5473
+      },
+      {
+        "what": "item-press",
+        "t": 6914
+      },
+      {
+        "what": "press",
+        "t": 6914
+      },
+      {
+        "what": "release",
+        "t": 7265
+      },
+      {
+        "what": "item-arrived",
+        "t": 7495
+      },
+      {
+        "what": "item-back",
+        "t": 8618
+      },
+      {
+        "what": "end",
+        "t": 10036
+      }
+    ],
+    "before": {
+      "active": false,
+      "hover": false,
+      "focus": false,
+      "focusVisible": false,
+      "borderColor": "rgb(74, 86, 82)",
+      "backgroundColor": "rgb(21, 25, 26)",
+      "transform": "none",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.32) 0px 1px 2px 0px, rgba(0, 0, 0, 0.28) 0px 4px 12px 0px",
+      "dot": {
+        "width": "6px",
+        "backgroundColor": "rgb(207, 122, 79)"
+      },
+      "anyActive": false,
+      "activeElement": "BODY",
+      "path": "/"
+    },
+    "arrived": {
+      "active": false,
+      "hover": false,
+      "focus": false,
+      "focusVisible": false,
+      "borderColor": "rgb(74, 86, 82)",
+      "backgroundColor": "rgb(21, 25, 26)",
+      "transform": "none",
+      "boxShadow": "none",
+      "dot": {
+        "width": "8px",
+        "backgroundColor": "rgb(207, 122, 79)"
+      },
+      "anyActive": false,
+      "activeElement": "MAIN#main",
+      "path": "/work/flagstone/"
+    },
+    "restored": {
+      "active": false,
+      "hover": false,
+      "focus": false,
+      "focusVisible": false,
+      "borderColor": "rgb(74, 86, 82)",
+      "backgroundColor": "rgb(21, 25, 26)",
+      "transform": "none",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.32) 0px 1px 2px 0px, rgba(0, 0, 0, 0.28) 0px 4px 12px 0px",
+      "dot": {
+        "width": "6px",
+        "backgroundColor": "rgb(207, 122, 79)"
+      },
+      "anyActive": false,
+      "activeElement": "MAIN#main",
+      "path": "/"
+    },
+    "restoredAway": {
+      "active": false,
+      "hover": false,
+      "focus": false,
+      "focusVisible": false,
+      "borderColor": "rgb(74, 86, 82)",
+      "backgroundColor": "rgb(21, 25, 26)",
+      "transform": "none",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.32) 0px 1px 2px 0px, rgba(0, 0, 0, 0.28) 0px 4px 12px 0px",
+      "dot": {
+        "width": "6px",
+        "backgroundColor": "rgb(207, 122, 79)"
+      },
+      "anyActive": false,
+      "activeElement": "MAIN#main",
+      "path": "/"
+    },
+    "seqB": {
+      "itemBefore": {
+        "color": "rgb(236, 234, 224)"
+      },
+      "menuGone": true,
+      "triggerState": {
+        "active": false,
+        "hover": false,
+        "focus": false,
+        "focusVisible": false,
+        "borderColor": "rgb(44, 52, 54)",
+        "backgroundColor": "rgba(21, 25, 26, 0.9)",
+        "transform": "none",
+        "boxShadow": "none",
+        "dot": null,
+        "anyActive": false,
+        "activeElement": "MAIN#main",
+        "path": "/"
+      },
+      "menuStillGone": true
+    },
+    "video": "phone-393-dark.webm"
+  },
+  {
+    "label": "after",
+    "run": "desktop-1440-light",
+    "marks": [
+      {
+        "what": "settled",
+        "t": 2195
+      },
+      {
+        "what": "press",
+        "t": 2380
+      },
+      {
+        "what": "release",
+        "t": 2755
+      },
+      {
+        "what": "arrived",
+        "t": 2925
+      },
+      {
+        "what": "back",
+        "t": 4072
+      },
+      {
+        "what": "end",
+        "t": 6278
+      }
+    ],
+    "before": {
+      "active": false,
+      "hover": false,
+      "focus": false,
+      "focusVisible": false,
+      "borderColor": "rgb(140, 148, 132)",
+      "backgroundColor": "rgb(250, 248, 241)",
+      "transform": "none",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(35, 36, 32, 0.04) 0px 1px 2px 0px, rgba(35, 36, 32, 0.03) 0px 4px 12px 0px",
+      "dot": {
+        "width": "6px",
+        "backgroundColor": "rgb(185, 99, 64)"
+      },
+      "anyActive": false,
+      "activeElement": "BODY",
+      "path": "/"
+    },
+    "arrived": {
+      "active": false,
+      "hover": false,
+      "focus": false,
+      "focusVisible": false,
+      "borderColor": "rgb(140, 148, 132)",
+      "backgroundColor": "rgb(250, 248, 241)",
+      "transform": "none",
+      "boxShadow": "none",
+      "dot": {
+        "width": "8px",
+        "backgroundColor": "rgb(185, 99, 64)"
+      },
+      "anyActive": false,
+      "activeElement": "MAIN#main",
+      "path": "/work/flagstone/"
+    },
+    "restored": {
+      "active": false,
+      "hover": false,
+      "focus": false,
+      "focusVisible": false,
+      "borderColor": "rgb(140, 148, 132)",
+      "backgroundColor": "rgb(250, 248, 241)",
+      "transform": "none",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(35, 36, 32, 0.04) 0px 1px 2px 0px, rgba(35, 36, 32, 0.03) 0px 4px 12px 0px",
+      "dot": {
+        "width": "6px",
+        "backgroundColor": "rgb(185, 99, 64)"
+      },
+      "anyActive": false,
+      "activeElement": "MAIN#main",
+      "path": "/"
+    },
+    "restoredAway": {
+      "active": false,
+      "hover": false,
+      "focus": false,
+      "focusVisible": false,
+      "borderColor": "rgb(140, 148, 132)",
+      "backgroundColor": "rgb(250, 248, 241)",
+      "transform": "none",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(35, 36, 32, 0.04) 0px 1px 2px 0px, rgba(35, 36, 32, 0.03) 0px 4px 12px 0px",
+      "dot": {
+        "width": "6px",
+        "backgroundColor": "rgb(185, 99, 64)"
+      },
+      "anyActive": false,
+      "activeElement": "MAIN#main",
+      "path": "/"
+    },
+    "seqB": null,
+    "video": "desktop-1440-light.webm"
+  }
+]
