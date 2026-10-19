@@ -1,0 +1,5922 @@
+{
+  "generated": "2026-10-19T02:02:47.981Z",
+  "chromium": "141.0.7390.37",
+  "route": "/work/flagstone/",
+  "compositions": [
+    {
+      "theme": "light",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "before": {
+        "arrival": "armed",
+        "motion": "paused",
+        "paused": true,
+        "belowFold": true
+      },
+      "beat": {
+        "samples": 92,
+        "states": [
+          {
+            "t": 2,
+            "state": "armed"
+          },
+          {
+            "t": 47,
+            "state": "settling"
+          },
+          {
+            "t": 918,
+            "state": "settled"
+          }
+        ],
+        "settlingAt": 47,
+        "settledAt": 918,
+        "colours": [
+          {
+            "at": 0,
+            "t": 0,
+            "colour": "rgb(204, 207, 190)"
+          },
+          {
+            "at": 100,
+            "t": 106,
+            "colour": "rgba(195, 154, 128, 0.827)"
+          },
+          {
+            "at": 200,
+            "t": 205,
+            "colour": "rgba(187, 112, 79, 0.725)"
+          },
+          {
+            "at": 300,
+            "t": 312,
+            "colour": "rgba(185, 101, 66, 0.706)"
+          },
+          {
+            "at": 420,
+            "t": 424,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          },
+          {
+            "at": 600,
+            "t": 600,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          },
+          {
+            "at": 900,
+            "t": 905,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          },
+          {
+            "at": "final-first-reached",
+            "t": 379,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          }
+        ],
+        "first": [
+          2,
+          "armed",
+          "rgb(204, 207, 190)"
+        ],
+        "last": [
+          1602,
+          "settled",
+          "rgba(185, 99, 64, 0.7)"
+        ]
+      },
+      "measure": {
+        "innerWidth": 1920,
+        "innerHeight": 1080,
+        "scrollWidth": 1920,
+        "clientWidth": 1920,
+        "breakout": {
+          "x": 540,
+          "y": 24.3,
+          "w": 1068,
+          "h": 625.2,
+          "right": 1608
+        },
+        "breakoutWidthCss": "1068px",
+        "list": {
+          "x": 540,
+          "y": 129.4,
+          "w": 1068,
+          "h": 496.6,
+          "right": 1608
+        },
+        "gridTemplateColumns": "340px 340px 340px",
+        "columnGap": "24px",
+        "rowGap": "40px",
+        "frames": [
+          {
+            "x": 540,
+            "y": 158.2,
+            "w": 340,
+            "h": 400,
+            "right": 880
+          },
+          {
+            "x": 904,
+            "y": 158.2,
+            "w": 340,
+            "h": 400,
+            "right": 1244
+          },
+          {
+            "x": 1268,
+            "y": 158.2,
+            "w": 340,
+            "h": 400,
+            "right": 1608
+          }
+        ],
+        "frameAspect": [
+          0.85,
+          0.85,
+          0.85
+        ],
+        "gapsBetweenFrames": [
+          24,
+          24
+        ],
+        "stacked": false,
+        "labels": [
+          {
+            "text": "01 · Reporting flow, in motion.",
+            "rect": {
+              "x": 540,
+              "y": 129.4,
+              "w": 340,
+              "h": 16.8,
+              "right": 880
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(84, 100, 93)"
+          },
+          {
+            "text": "02 · Report a barrier.",
+            "rect": {
+              "x": 904,
+              "y": 129.4,
+              "w": 340,
+              "h": 16.8,
+              "right": 1244
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(84, 100, 93)"
+          },
+          {
+            "text": "03 · Community review.",
+            "rect": {
+              "x": 1268,
+              "y": 129.4,
+              "w": 340,
+              "h": 16.8,
+              "right": 1608
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(84, 100, 93)"
+          }
+        ],
+        "captions": [
+          {
+            "lines": 2,
+            "rect": {
+              "x": 540,
+              "y": 570.2,
+              "w": 340,
+              "h": 55.8,
+              "right": 880
+            },
+            "ruleColor": "rgba(135, 71, 45, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(70, 84, 77)"
+          },
+          {
+            "lines": 2,
+            "rect": {
+              "x": 904,
+              "y": 570.2,
+              "w": 340,
+              "h": 55.8,
+              "right": 1244
+            },
+            "ruleColor": "rgba(135, 71, 45, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(70, 84, 77)"
+          },
+          {
+            "lines": 2,
+            "rect": {
+              "x": 1268,
+              "y": 570.2,
+              "w": 340,
+              "h": 55.8,
+              "right": 1608
+            },
+            "ruleColor": "rgba(135, 71, 45, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(70, 84, 77)"
+          }
+        ],
+        "article": {
+          "x": 540,
+          "y": -730.1,
+          "w": 651.8,
+          "h": 4832.6,
+          "right": 1191.8
+        },
+        "articleMaxWidth": "651.842px",
+        "column": {
+          "x": 540,
+          "y": -730.1,
+          "w": 1120,
+          "h": 4832.6,
+          "right": 1660
+        },
+        "containerType": "inline-size",
+        "frameBorder": [
+          {
+            "color": "rgba(185, 99, 64, 0.7)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(204, 207, 190)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(204, 207, 190)",
+            "width": "1px",
+            "radius": "8px"
+          }
+        ],
+        "edgeTransitionDuration": "0s",
+        "arrivalState": "settled",
+        "consumed": "1",
+        "well": {
+          "x": 561,
+          "y": 179.2,
+          "w": 298,
+          "h": 358,
+          "right": 859
+        },
+        "wellInset": {
+          "left": 21,
+          "top": 21,
+          "radius": "6px",
+          "shadow": "none"
+        },
+        "play": {
+          "rect": {
+            "x": 803,
+            "y": 481.2,
+            "w": 44,
+            "h": 44,
+            "right": 847
+          },
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "bg": "rgba(255, 255, 255, 0.72)",
+          "border": "rgb(204, 207, 190)",
+          "color": "rgb(84, 100, 93)",
+          "distanceToFrameRight": 33,
+          "distanceToFrameBottom": 33
+        },
+        "motion": "paused",
+        "video": {
+          "paused": true,
+          "currentTime": 0,
+          "preload": "metadata",
+          "autoplayAttr": false,
+          "controlsAttr": false,
+          "muted": true,
+          "loop": true,
+          "readyState": 4,
+          "currentSrc": "report-flow-current.dark.phone.webm"
+        },
+        "crossing": [],
+        "theme": "light",
+        "js": true
+      },
+      "keyboard": {
+        "atRest": {
+          "paused": true,
+          "currentTime": 0,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "tab": {
+          "tabs": 18,
+          "focusVisible": true
+        },
+        "focus": {
+          "outline": "2px solid rgb(185, 99, 64)",
+          "outlineOffset": "2px",
+          "boxShadow": "rgb(250, 248, 241) 0px 0px 0px 2px",
+          "focusVisible": true,
+          "active": true
+        },
+        "afterEnter": {
+          "paused": false,
+          "currentTime": 1.098,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondEnter": {
+          "paused": true,
+          "currentTime": 1.1,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterClick": {
+          "paused": false,
+          "currentTime": 1.807,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondClick": {
+          "paused": true,
+          "currentTime": 1.846,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        }
+      }
+    },
+    {
+      "theme": "light",
+      "viewport": [
+        1440,
+        900
+      ],
+      "before": {
+        "arrival": "armed",
+        "motion": "paused",
+        "paused": true,
+        "belowFold": true
+      },
+      "beat": {
+        "samples": 97,
+        "states": [
+          {
+            "t": 10,
+            "state": "armed"
+          },
+          {
+            "t": 37,
+            "state": "settling"
+          },
+          {
+            "t": 927,
+            "state": "settled"
+          }
+        ],
+        "settlingAt": 37,
+        "settledAt": 927,
+        "colours": [
+          {
+            "at": 0,
+            "t": 0,
+            "colour": "rgb(204, 207, 190)"
+          },
+          {
+            "at": 100,
+            "t": 106,
+            "colour": "rgba(195, 154, 128, 0.827)"
+          },
+          {
+            "at": 200,
+            "t": 207,
+            "colour": "rgba(187, 112, 79, 0.725)"
+          },
+          {
+            "at": 300,
+            "t": 307,
+            "colour": "rgba(185, 101, 66, 0.706)"
+          },
+          {
+            "at": 420,
+            "t": 423,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          },
+          {
+            "at": 600,
+            "t": 606,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          },
+          {
+            "at": 900,
+            "t": 907,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          },
+          {
+            "at": "final-first-reached",
+            "t": 373,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          }
+        ],
+        "first": [
+          10,
+          "armed",
+          "rgb(204, 207, 190)"
+        ],
+        "last": [
+          1610,
+          "settled",
+          "rgba(185, 99, 64, 0.7)"
+        ]
+      },
+      "measure": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "breakout": {
+          "x": 312,
+          "y": 24.3,
+          "w": 1068,
+          "h": 625.2,
+          "right": 1380
+        },
+        "breakoutWidthCss": "1068px",
+        "list": {
+          "x": 312,
+          "y": 129.4,
+          "w": 1068,
+          "h": 496.6,
+          "right": 1380
+        },
+        "gridTemplateColumns": "340px 340px 340px",
+        "columnGap": "24px",
+        "rowGap": "40px",
+        "frames": [
+          {
+            "x": 312,
+            "y": 158.2,
+            "w": 340,
+            "h": 400,
+            "right": 652
+          },
+          {
+            "x": 676,
+            "y": 158.2,
+            "w": 340,
+            "h": 400,
+            "right": 1016
+          },
+          {
+            "x": 1040,
+            "y": 158.2,
+            "w": 340,
+            "h": 400,
+            "right": 1380
+          }
+        ],
+        "frameAspect": [
+          0.85,
+          0.85,
+          0.85
+        ],
+        "gapsBetweenFrames": [
+          24,
+          24
+        ],
+        "stacked": false,
+        "labels": [
+          {
+            "text": "01 · Reporting flow, in motion.",
+            "rect": {
+              "x": 312,
+              "y": 129.4,
+              "w": 340,
+              "h": 16.8,
+              "right": 652
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(84, 100, 93)"
+          },
+          {
+            "text": "02 · Report a barrier.",
+            "rect": {
+              "x": 676,
+              "y": 129.4,
+              "w": 340,
+              "h": 16.8,
+              "right": 1016
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(84, 100, 93)"
+          },
+          {
+            "text": "03 · Community review.",
+            "rect": {
+              "x": 1040,
+              "y": 129.4,
+              "w": 340,
+              "h": 16.8,
+              "right": 1380
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(84, 100, 93)"
+          }
+        ],
+        "captions": [
+          {
+            "lines": 2,
+            "rect": {
+              "x": 312,
+              "y": 570.2,
+              "w": 340,
+              "h": 55.8,
+              "right": 652
+            },
+            "ruleColor": "rgba(135, 71, 45, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(70, 84, 77)"
+          },
+          {
+            "lines": 2,
+            "rect": {
+              "x": 676,
+              "y": 570.2,
+              "w": 340,
+              "h": 55.8,
+              "right": 1016
+            },
+            "ruleColor": "rgba(135, 71, 45, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(70, 84, 77)"
+          },
+          {
+            "lines": 2,
+            "rect": {
+              "x": 1040,
+              "y": 570.2,
+              "w": 340,
+              "h": 55.8,
+              "right": 1380
+            },
+            "ruleColor": "rgba(135, 71, 45, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(70, 84, 77)"
+          }
+        ],
+        "article": {
+          "x": 312,
+          "y": -730.1,
+          "w": 651.8,
+          "h": 4832.6,
+          "right": 963.8
+        },
+        "articleMaxWidth": "651.842px",
+        "column": {
+          "x": 312,
+          "y": -730.1,
+          "w": 1096,
+          "h": 4832.6,
+          "right": 1408
+        },
+        "containerType": "inline-size",
+        "frameBorder": [
+          {
+            "color": "rgba(185, 99, 64, 0.7)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(204, 207, 190)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(204, 207, 190)",
+            "width": "1px",
+            "radius": "8px"
+          }
+        ],
+        "edgeTransitionDuration": "0s",
+        "arrivalState": "settled",
+        "consumed": "1",
+        "well": {
+          "x": 333,
+          "y": 179.2,
+          "w": 298,
+          "h": 358,
+          "right": 631
+        },
+        "wellInset": {
+          "left": 21,
+          "top": 21,
+          "radius": "6px",
+          "shadow": "none"
+        },
+        "play": {
+          "rect": {
+            "x": 575,
+            "y": 481.2,
+            "w": 44,
+            "h": 44,
+            "right": 619
+          },
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "bg": "rgba(255, 255, 255, 0.72)",
+          "border": "rgb(204, 207, 190)",
+          "color": "rgb(84, 100, 93)",
+          "distanceToFrameRight": 33,
+          "distanceToFrameBottom": 33
+        },
+        "motion": "paused",
+        "video": {
+          "paused": true,
+          "currentTime": 0,
+          "preload": "metadata",
+          "autoplayAttr": false,
+          "controlsAttr": false,
+          "muted": true,
+          "loop": true,
+          "readyState": 4,
+          "currentSrc": "report-flow-current.dark.phone.webm"
+        },
+        "crossing": [],
+        "theme": "light",
+        "js": true
+      },
+      "keyboard": {
+        "atRest": {
+          "paused": true,
+          "currentTime": 0,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "tab": {
+          "tabs": 18,
+          "focusVisible": true
+        },
+        "focus": {
+          "outline": "2px solid rgb(185, 99, 64)",
+          "outlineOffset": "2px",
+          "boxShadow": "rgb(250, 248, 241) 0px 0px 0px 2px",
+          "focusVisible": true,
+          "active": true
+        },
+        "afterEnter": {
+          "paused": false,
+          "currentTime": 1.108,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondEnter": {
+          "paused": true,
+          "currentTime": 1.11,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterClick": {
+          "paused": false,
+          "currentTime": 1.816,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondClick": {
+          "paused": true,
+          "currentTime": 1.858,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        }
+      }
+    },
+    {
+      "theme": "light",
+      "viewport": [
+        1280,
+        800
+      ],
+      "before": {
+        "arrival": "armed",
+        "motion": "paused",
+        "paused": true,
+        "belowFold": true
+      },
+      "beat": {
+        "samples": 95,
+        "states": [
+          {
+            "t": 8,
+            "state": "armed"
+          },
+          {
+            "t": 44,
+            "state": "settling"
+          },
+          {
+            "t": 941,
+            "state": "settled"
+          }
+        ],
+        "settlingAt": 44,
+        "settledAt": 941,
+        "colours": [
+          {
+            "at": 0,
+            "t": 0,
+            "colour": "rgb(204, 207, 190)"
+          },
+          {
+            "at": 100,
+            "t": 114,
+            "colour": "rgba(197, 166, 142, 0.863)"
+          },
+          {
+            "at": 200,
+            "t": 214,
+            "colour": "rgba(188, 116, 83, 0.737)"
+          },
+          {
+            "at": 300,
+            "t": 314,
+            "colour": "rgba(185, 102, 67, 0.706)"
+          },
+          {
+            "at": 420,
+            "t": 430,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          },
+          {
+            "at": 600,
+            "t": 614,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          },
+          {
+            "at": 900,
+            "t": 914,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          },
+          {
+            "at": "final-first-reached",
+            "t": 397,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          }
+        ],
+        "first": [
+          8,
+          "armed",
+          "rgb(204, 207, 190)"
+        ],
+        "last": [
+          1608,
+          "settled",
+          "rgba(185, 99, 64, 0.7)"
+        ]
+      },
+      "measure": {
+        "innerWidth": 1280,
+        "innerHeight": 800,
+        "scrollWidth": 1280,
+        "clientWidth": 1280,
+        "breakout": {
+          "x": 312,
+          "y": 24,
+          "w": 936,
+          "h": 573.4,
+          "right": 1248
+        },
+        "breakoutWidthCss": "936px",
+        "list": {
+          "x": 312,
+          "y": 129.2,
+          "w": 936,
+          "h": 444.8,
+          "right": 1248
+        },
+        "gridTemplateColumns": "296px 296px 296px",
+        "columnGap": "24px",
+        "rowGap": "40px",
+        "frames": [
+          {
+            "x": 312,
+            "y": 158,
+            "w": 296,
+            "h": 348.2,
+            "right": 608
+          },
+          {
+            "x": 632,
+            "y": 158,
+            "w": 296,
+            "h": 348.2,
+            "right": 928
+          },
+          {
+            "x": 952,
+            "y": 158,
+            "w": 296,
+            "h": 348.2,
+            "right": 1248
+          }
+        ],
+        "frameAspect": [
+          0.85,
+          0.85,
+          0.85
+        ],
+        "gapsBetweenFrames": [
+          24,
+          24
+        ],
+        "stacked": false,
+        "labels": [
+          {
+            "text": "01 · Reporting flow, in motion.",
+            "rect": {
+              "x": 312,
+              "y": 129.2,
+              "w": 296,
+              "h": 16.8,
+              "right": 608
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(84, 100, 93)"
+          },
+          {
+            "text": "02 · Report a barrier.",
+            "rect": {
+              "x": 632,
+              "y": 129.2,
+              "w": 296,
+              "h": 16.8,
+              "right": 928
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(84, 100, 93)"
+          },
+          {
+            "text": "03 · Community review.",
+            "rect": {
+              "x": 952,
+              "y": 129.2,
+              "w": 296,
+              "h": 16.8,
+              "right": 1248
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(84, 100, 93)"
+          }
+        ],
+        "captions": [
+          {
+            "lines": 2,
+            "rect": {
+              "x": 312,
+              "y": 518.3,
+              "w": 296,
+              "h": 55.8,
+              "right": 608
+            },
+            "ruleColor": "rgba(135, 71, 45, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(70, 84, 77)"
+          },
+          {
+            "lines": 2,
+            "rect": {
+              "x": 632,
+              "y": 518.3,
+              "w": 296,
+              "h": 55.8,
+              "right": 928
+            },
+            "ruleColor": "rgba(135, 71, 45, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(70, 84, 77)"
+          },
+          {
+            "lines": 2,
+            "rect": {
+              "x": 952,
+              "y": 518.3,
+              "w": 296,
+              "h": 55.8,
+              "right": 1248
+            },
+            "ruleColor": "rgba(135, 71, 45, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(70, 84, 77)"
+          }
+        ],
+        "article": {
+          "x": 312,
+          "y": -730.3,
+          "w": 651.8,
+          "h": 4780.9,
+          "right": 963.8
+        },
+        "articleMaxWidth": "651.842px",
+        "column": {
+          "x": 312,
+          "y": -730.3,
+          "w": 936,
+          "h": 4780.9,
+          "right": 1248
+        },
+        "containerType": "inline-size",
+        "frameBorder": [
+          {
+            "color": "rgba(185, 99, 64, 0.7)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(204, 207, 190)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(204, 207, 190)",
+            "width": "1px",
+            "radius": "8px"
+          }
+        ],
+        "edgeTransitionDuration": "0s",
+        "arrivalState": "settled",
+        "consumed": "1",
+        "well": {
+          "x": 333,
+          "y": 179,
+          "w": 254,
+          "h": 306.2,
+          "right": 587
+        },
+        "wellInset": {
+          "left": 21,
+          "top": 21,
+          "radius": "6px",
+          "shadow": "none"
+        },
+        "play": {
+          "rect": {
+            "x": 531,
+            "y": 429.3,
+            "w": 44,
+            "h": 44,
+            "right": 575
+          },
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "bg": "rgba(255, 255, 255, 0.72)",
+          "border": "rgb(204, 207, 190)",
+          "color": "rgb(84, 100, 93)",
+          "distanceToFrameRight": 33,
+          "distanceToFrameBottom": 33
+        },
+        "motion": "paused",
+        "video": {
+          "paused": true,
+          "currentTime": 0,
+          "preload": "metadata",
+          "autoplayAttr": false,
+          "controlsAttr": false,
+          "muted": true,
+          "loop": true,
+          "readyState": 4,
+          "currentSrc": "report-flow-current.dark.phone.webm"
+        },
+        "crossing": [],
+        "theme": "light",
+        "js": true
+      },
+      "keyboard": {
+        "atRest": {
+          "paused": true,
+          "currentTime": 0,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "tab": {
+          "tabs": 18,
+          "focusVisible": true
+        },
+        "focus": {
+          "outline": "2px solid rgb(185, 99, 64)",
+          "outlineOffset": "2px",
+          "boxShadow": "rgb(250, 248, 241) 0px 0px 0px 2px",
+          "focusVisible": true,
+          "active": true
+        },
+        "afterEnter": {
+          "paused": false,
+          "currentTime": 1.107,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondEnter": {
+          "paused": true,
+          "currentTime": 1.11,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterClick": {
+          "paused": false,
+          "currentTime": 1.816,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondClick": {
+          "paused": true,
+          "currentTime": 1.86,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        }
+      }
+    },
+    {
+      "theme": "light",
+      "viewport": [
+        1024,
+        768
+      ],
+      "before": {
+        "arrival": "armed",
+        "motion": "paused",
+        "paused": true,
+        "belowFold": true
+      },
+      "beat": {
+        "samples": 97,
+        "states": [
+          {
+            "t": 0,
+            "state": "armed"
+          },
+          {
+            "t": 31,
+            "state": "settling"
+          },
+          {
+            "t": 917,
+            "state": "settled"
+          }
+        ],
+        "settlingAt": 31,
+        "settledAt": 917,
+        "colours": [
+          {
+            "at": 0,
+            "t": 0,
+            "colour": "rgb(204, 207, 190)"
+          },
+          {
+            "at": 100,
+            "t": 103,
+            "colour": "rgba(193, 143, 116, 0.8)"
+          },
+          {
+            "at": 200,
+            "t": 203,
+            "colour": "rgba(187, 108, 75, 0.72)"
+          },
+          {
+            "at": 300,
+            "t": 303,
+            "colour": "rgba(185, 100, 65, 0.706)"
+          },
+          {
+            "at": 420,
+            "t": 437,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          },
+          {
+            "at": 600,
+            "t": 602,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          },
+          {
+            "at": 900,
+            "t": 903,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          },
+          {
+            "at": "final-first-reached",
+            "t": 353,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          }
+        ],
+        "first": [
+          0,
+          "armed",
+          "rgb(204, 207, 190)"
+        ],
+        "last": [
+          1600,
+          "settled",
+          "rgba(185, 99, 64, 0.7)"
+        ]
+      },
+      "measure": {
+        "innerWidth": 1024,
+        "innerHeight": 768,
+        "scrollWidth": 1024,
+        "clientWidth": 1024,
+        "breakout": {
+          "x": 312,
+          "y": 23.9,
+          "w": 680,
+          "h": 527.6,
+          "right": 992
+        },
+        "breakoutWidthCss": "680px",
+        "list": {
+          "x": 312,
+          "y": 129.1,
+          "w": 680,
+          "h": 383.6,
+          "right": 992
+        },
+        "gridTemplateColumns": "210.656px 210.672px 210.672px",
+        "columnGap": "24px",
+        "rowGap": "40px",
+        "frames": [
+          {
+            "x": 312,
+            "y": 174.7,
+            "w": 210.7,
+            "h": 247.8,
+            "right": 522.7
+          },
+          {
+            "x": 546.7,
+            "y": 174.7,
+            "w": 210.7,
+            "h": 247.8,
+            "right": 757.3
+          },
+          {
+            "x": 781.3,
+            "y": 174.7,
+            "w": 210.7,
+            "h": 247.8,
+            "right": 992
+          }
+        ],
+        "frameAspect": [
+          0.85,
+          0.85,
+          0.85
+        ],
+        "gapsBetweenFrames": [
+          24,
+          24
+        ],
+        "stacked": false,
+        "labels": [
+          {
+            "text": "01 · Reporting flow, in motion.",
+            "rect": {
+              "x": 312,
+              "y": 129.1,
+              "w": 210.7,
+              "h": 33.6,
+              "right": 522.7
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(84, 100, 93)"
+          },
+          {
+            "text": "02 · Report a barrier.",
+            "rect": {
+              "x": 546.7,
+              "y": 129.1,
+              "w": 210.7,
+              "h": 33.6,
+              "right": 757.3
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(84, 100, 93)"
+          },
+          {
+            "text": "03 · Community review.",
+            "rect": {
+              "x": 781.3,
+              "y": 129.1,
+              "w": 210.7,
+              "h": 33.6,
+              "right": 992
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(84, 100, 93)"
+          }
+        ],
+        "captions": [
+          {
+            "lines": 3,
+            "rect": {
+              "x": 312,
+              "y": 434.5,
+              "w": 210.7,
+              "h": 78.2,
+              "right": 522.7
+            },
+            "ruleColor": "rgba(135, 71, 45, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(70, 84, 77)"
+          },
+          {
+            "lines": 3,
+            "rect": {
+              "x": 546.7,
+              "y": 434.5,
+              "w": 210.7,
+              "h": 78.2,
+              "right": 757.3
+            },
+            "ruleColor": "rgba(135, 71, 45, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(70, 84, 77)"
+          },
+          {
+            "lines": 3,
+            "rect": {
+              "x": 781.3,
+              "y": 434.5,
+              "w": 210.7,
+              "h": 78.2,
+              "right": 992
+            },
+            "ruleColor": "rgba(135, 71, 45, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(70, 84, 77)"
+          }
+        ],
+        "article": {
+          "x": 312,
+          "y": -787.2,
+          "w": 544,
+          "h": 5205.3,
+          "right": 856
+        },
+        "articleMaxWidth": "544px",
+        "column": {
+          "x": 312,
+          "y": -787.2,
+          "w": 680,
+          "h": 5205.3,
+          "right": 992
+        },
+        "containerType": "inline-size",
+        "frameBorder": [
+          {
+            "color": "rgba(185, 99, 64, 0.7)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(204, 207, 190)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(204, 207, 190)",
+            "width": "1px",
+            "radius": "8px"
+          }
+        ],
+        "edgeTransitionDuration": "0s",
+        "arrivalState": "settled",
+        "consumed": "1",
+        "well": {
+          "x": 333,
+          "y": 195.7,
+          "w": 168.7,
+          "h": 205.8,
+          "right": 501.7
+        },
+        "wellInset": {
+          "left": 21,
+          "top": 21,
+          "radius": "6px",
+          "shadow": "none"
+        },
+        "play": {
+          "rect": {
+            "x": 445.7,
+            "y": 345.5,
+            "w": 44,
+            "h": 44,
+            "right": 489.7
+          },
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "bg": "rgba(255, 255, 255, 0.72)",
+          "border": "rgb(204, 207, 190)",
+          "color": "rgb(84, 100, 93)",
+          "distanceToFrameRight": 33,
+          "distanceToFrameBottom": 33
+        },
+        "motion": "paused",
+        "video": {
+          "paused": true,
+          "currentTime": 0,
+          "preload": "metadata",
+          "autoplayAttr": false,
+          "controlsAttr": false,
+          "muted": true,
+          "loop": true,
+          "readyState": 4,
+          "currentSrc": "report-flow-current.dark.phone.webm"
+        },
+        "crossing": [],
+        "theme": "light",
+        "js": true
+      },
+      "keyboard": {
+        "atRest": {
+          "paused": true,
+          "currentTime": 0,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "tab": {
+          "tabs": 18,
+          "focusVisible": true
+        },
+        "focus": {
+          "outline": "2px solid rgb(185, 99, 64)",
+          "outlineOffset": "2px",
+          "boxShadow": "rgb(250, 248, 241) 0px 0px 0px 2px",
+          "focusVisible": true,
+          "active": true
+        },
+        "afterEnter": {
+          "paused": false,
+          "currentTime": 1.099,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondEnter": {
+          "paused": true,
+          "currentTime": 1.102,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterClick": {
+          "paused": false,
+          "currentTime": 1.812,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondClick": {
+          "paused": true,
+          "currentTime": 1.85,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        }
+      }
+    },
+    {
+      "theme": "light",
+      "viewport": [
+        393,
+        852
+      ],
+      "before": {
+        "arrival": "armed",
+        "motion": "paused",
+        "paused": true,
+        "belowFold": true
+      },
+      "beat": {
+        "samples": 96,
+        "states": [
+          {
+            "t": 7,
+            "state": "armed"
+          },
+          {
+            "t": 40,
+            "state": "settling"
+          },
+          {
+            "t": 924,
+            "state": "settled"
+          }
+        ],
+        "settlingAt": 40,
+        "settledAt": 924,
+        "colours": [
+          {
+            "at": 0,
+            "t": 0,
+            "colour": "rgb(204, 207, 190)"
+          },
+          {
+            "at": 100,
+            "t": 101,
+            "colour": "rgba(191, 134, 105, 0.776)"
+          },
+          {
+            "at": 200,
+            "t": 201,
+            "colour": "rgba(185, 102, 67, 0.706)"
+          },
+          {
+            "at": 300,
+            "t": 301,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          },
+          {
+            "at": 420,
+            "t": 434,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          },
+          {
+            "at": 600,
+            "t": 601,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          },
+          {
+            "at": 900,
+            "t": 901,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          },
+          {
+            "at": "final-first-reached",
+            "t": 251,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          }
+        ],
+        "first": [
+          7,
+          "armed",
+          "rgb(204, 207, 190)"
+        ],
+        "last": [
+          1607,
+          "settled",
+          "rgba(185, 99, 64, 0.7)"
+        ]
+      },
+      "measure": {
+        "innerWidth": 393,
+        "innerHeight": 852,
+        "scrollWidth": 393,
+        "clientWidth": 393,
+        "breakout": {
+          "x": 32,
+          "y": 23.8,
+          "w": 329,
+          "h": 1690.2,
+          "right": 361
+        },
+        "breakoutWidthCss": "329px",
+        "list": {
+          "x": 32,
+          "y": 129,
+          "w": 329,
+          "h": 1530.9,
+          "right": 361
+        },
+        "gridTemplateColumns": "329px",
+        "columnGap": "24px",
+        "rowGap": "40px",
+        "frames": [
+          {
+            "x": 32,
+            "y": 157.8,
+            "w": 329,
+            "h": 387,
+            "right": 361
+          },
+          {
+            "x": 32,
+            "y": 681.5,
+            "w": 329,
+            "h": 387,
+            "right": 361
+          },
+          {
+            "x": 32,
+            "y": 1221.1,
+            "w": 329,
+            "h": 387,
+            "right": 361
+          }
+        ],
+        "frameAspect": [
+          0.85,
+          0.85,
+          0.85
+        ],
+        "gapsBetweenFrames": [
+          -329,
+          -329
+        ],
+        "stacked": true,
+        "labels": [
+          {
+            "text": "01 · Reporting flow, in motion.",
+            "rect": {
+              "x": 32,
+              "y": 129,
+              "w": 329,
+              "h": 16.8,
+              "right": 361
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(84, 100, 93)"
+          },
+          {
+            "text": "02 · Report a barrier.",
+            "rect": {
+              "x": 32,
+              "y": 652.7,
+              "w": 329,
+              "h": 16.8,
+              "right": 361
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(84, 100, 93)"
+          },
+          {
+            "text": "03 · Community review.",
+            "rect": {
+              "x": 32,
+              "y": 1192.3,
+              "w": 329,
+              "h": 16.8,
+              "right": 361
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(84, 100, 93)"
+          }
+        ],
+        "captions": [
+          {
+            "lines": 2,
+            "rect": {
+              "x": 32,
+              "y": 556.9,
+              "w": 329,
+              "h": 55.8,
+              "right": 361
+            },
+            "ruleColor": "rgba(135, 71, 45, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(70, 84, 77)"
+          },
+          {
+            "lines": 2,
+            "rect": {
+              "x": 32,
+              "y": 1080.5,
+              "w": 329,
+              "h": 55.8,
+              "right": 361
+            },
+            "ruleColor": "rgba(135, 71, 45, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(70, 84, 77)"
+          },
+          {
+            "lines": 2,
+            "rect": {
+              "x": 32,
+              "y": 1620.1,
+              "w": 329,
+              "h": 55.8,
+              "right": 361
+            },
+            "ruleColor": "rgba(135, 71, 45, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(70, 84, 77)"
+          }
+        ],
+        "article": {
+          "x": 32,
+          "y": -1143.2,
+          "w": 329,
+          "h": 8363.6,
+          "right": 361
+        },
+        "articleMaxWidth": "651.842px",
+        "column": {
+          "x": 32,
+          "y": -1143.2,
+          "w": 329,
+          "h": 8363.6,
+          "right": 361
+        },
+        "containerType": "inline-size",
+        "frameBorder": [
+          {
+            "color": "rgba(185, 99, 64, 0.7)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(204, 207, 190)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(204, 207, 190)",
+            "width": "1px",
+            "radius": "8px"
+          }
+        ],
+        "edgeTransitionDuration": "0s",
+        "arrivalState": "settled",
+        "consumed": "1",
+        "well": {
+          "x": 53,
+          "y": 178.8,
+          "w": 287,
+          "h": 345,
+          "right": 340
+        },
+        "wellInset": {
+          "left": 21,
+          "top": 21,
+          "radius": "6px",
+          "shadow": "none"
+        },
+        "play": {
+          "rect": {
+            "x": 284,
+            "y": 467.9,
+            "w": 44,
+            "h": 44,
+            "right": 328
+          },
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "bg": "rgba(255, 255, 255, 0.72)",
+          "border": "rgb(204, 207, 190)",
+          "color": "rgb(84, 100, 93)",
+          "distanceToFrameRight": 33,
+          "distanceToFrameBottom": 33
+        },
+        "motion": "paused",
+        "video": {
+          "paused": true,
+          "currentTime": 0,
+          "preload": "metadata",
+          "autoplayAttr": false,
+          "controlsAttr": false,
+          "muted": true,
+          "loop": true,
+          "readyState": 4,
+          "currentSrc": "report-flow-current.dark.phone.webm"
+        },
+        "crossing": [],
+        "theme": "light",
+        "js": true
+      },
+      "keyboard": {
+        "atRest": {
+          "paused": true,
+          "currentTime": 0,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "tab": {
+          "tabs": 8,
+          "focusVisible": true
+        },
+        "focus": {
+          "outline": "2px solid rgb(185, 99, 64)",
+          "outlineOffset": "2px",
+          "boxShadow": "rgb(250, 248, 241) 0px 0px 0px 2px",
+          "focusVisible": true,
+          "active": true
+        },
+        "afterEnter": {
+          "paused": false,
+          "currentTime": 1.102,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondEnter": {
+          "paused": true,
+          "currentTime": 1.104,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterClick": {
+          "paused": false,
+          "currentTime": 1.81,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondClick": {
+          "paused": true,
+          "currentTime": 1.836,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        }
+      }
+    },
+    {
+      "theme": "light",
+      "viewport": [
+        375,
+        667
+      ],
+      "before": {
+        "arrival": "armed",
+        "motion": "paused",
+        "paused": true,
+        "belowFold": true
+      },
+      "beat": {
+        "samples": 97,
+        "states": [
+          {
+            "t": 14,
+            "state": "armed"
+          },
+          {
+            "t": 41,
+            "state": "settling"
+          },
+          {
+            "t": 930,
+            "state": "settled"
+          }
+        ],
+        "settlingAt": 41,
+        "settledAt": 930,
+        "colours": [
+          {
+            "at": 0,
+            "t": 0,
+            "colour": "rgb(204, 207, 190)"
+          },
+          {
+            "at": 100,
+            "t": 106,
+            "colour": "rgba(191, 134, 105, 0.776)"
+          },
+          {
+            "at": 200,
+            "t": 206,
+            "colour": "rgba(185, 102, 67, 0.706)"
+          },
+          {
+            "at": 300,
+            "t": 306,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          },
+          {
+            "at": 420,
+            "t": 423,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          },
+          {
+            "at": 600,
+            "t": 606,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          },
+          {
+            "at": 900,
+            "t": 906,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          },
+          {
+            "at": "final-first-reached",
+            "t": 256,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          }
+        ],
+        "first": [
+          14,
+          "armed",
+          "rgb(204, 207, 190)"
+        ],
+        "last": [
+          1614,
+          "settled",
+          "rgba(185, 99, 64, 0.7)"
+        ]
+      },
+      "measure": {
+        "innerWidth": 375,
+        "innerHeight": 667,
+        "scrollWidth": 375,
+        "clientWidth": 375,
+        "breakout": {
+          "x": 32,
+          "y": 24.2,
+          "w": 311,
+          "h": 1626.7,
+          "right": 343
+        },
+        "breakoutWidthCss": "311px",
+        "list": {
+          "x": 32,
+          "y": 129.4,
+          "w": 311,
+          "h": 1467.4,
+          "right": 343
+        },
+        "gridTemplateColumns": "311px",
+        "columnGap": "24px",
+        "rowGap": "40px",
+        "frames": [
+          {
+            "x": 32,
+            "y": 158.2,
+            "w": 311,
+            "h": 365.9,
+            "right": 343
+          },
+          {
+            "x": 32,
+            "y": 660.6,
+            "w": 311,
+            "h": 365.9,
+            "right": 343
+          },
+          {
+            "x": 32,
+            "y": 1179.1,
+            "w": 311,
+            "h": 365.9,
+            "right": 343
+          }
+        ],
+        "frameAspect": [
+          0.85,
+          0.85,
+          0.85
+        ],
+        "gapsBetweenFrames": [
+          -311,
+          -311
+        ],
+        "stacked": true,
+        "labels": [
+          {
+            "text": "01 · Reporting flow, in motion.",
+            "rect": {
+              "x": 32,
+              "y": 129.4,
+              "w": 311,
+              "h": 16.8,
+              "right": 343
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(84, 100, 93)"
+          },
+          {
+            "text": "02 · Report a barrier.",
+            "rect": {
+              "x": 32,
+              "y": 631.8,
+              "w": 311,
+              "h": 16.8,
+              "right": 343
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(84, 100, 93)"
+          },
+          {
+            "text": "03 · Community review.",
+            "rect": {
+              "x": 32,
+              "y": 1150.3,
+              "w": 311,
+              "h": 16.8,
+              "right": 343
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(84, 100, 93)"
+          }
+        ],
+        "captions": [
+          {
+            "lines": 2,
+            "rect": {
+              "x": 32,
+              "y": 536,
+              "w": 311,
+              "h": 55.8,
+              "right": 343
+            },
+            "ruleColor": "rgba(135, 71, 45, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(70, 84, 77)"
+          },
+          {
+            "lines": 2,
+            "rect": {
+              "x": 32,
+              "y": 1038.5,
+              "w": 311,
+              "h": 55.8,
+              "right": 343
+            },
+            "ruleColor": "rgba(135, 71, 45, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(70, 84, 77)"
+          },
+          {
+            "lines": 2,
+            "rect": {
+              "x": 32,
+              "y": 1557,
+              "w": 311,
+              "h": 55.8,
+              "right": 343
+            },
+            "ruleColor": "rgba(135, 71, 45, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(70, 84, 77)"
+          }
+        ],
+        "article": {
+          "x": 32,
+          "y": -1202.3,
+          "w": 311,
+          "h": 8619.5,
+          "right": 343
+        },
+        "articleMaxWidth": "651.842px",
+        "column": {
+          "x": 32,
+          "y": -1202.3,
+          "w": 311,
+          "h": 8619.5,
+          "right": 343
+        },
+        "containerType": "inline-size",
+        "frameBorder": [
+          {
+            "color": "rgba(185, 99, 64, 0.7)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(204, 207, 190)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(204, 207, 190)",
+            "width": "1px",
+            "radius": "8px"
+          }
+        ],
+        "edgeTransitionDuration": "0s",
+        "arrivalState": "settled",
+        "consumed": "1",
+        "well": {
+          "x": 53,
+          "y": 179.2,
+          "w": 269,
+          "h": 323.9,
+          "right": 322
+        },
+        "wellInset": {
+          "left": 21,
+          "top": 21,
+          "radius": "6px",
+          "shadow": "none"
+        },
+        "play": {
+          "rect": {
+            "x": 266,
+            "y": 447,
+            "w": 44,
+            "h": 44,
+            "right": 310
+          },
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "bg": "rgba(255, 255, 255, 0.72)",
+          "border": "rgb(204, 207, 190)",
+          "color": "rgb(84, 100, 93)",
+          "distanceToFrameRight": 33,
+          "distanceToFrameBottom": 33
+        },
+        "motion": "paused",
+        "video": {
+          "paused": true,
+          "currentTime": 0,
+          "preload": "metadata",
+          "autoplayAttr": false,
+          "controlsAttr": false,
+          "muted": true,
+          "loop": true,
+          "readyState": 4,
+          "currentSrc": "report-flow-current.dark.phone.webm"
+        },
+        "crossing": [],
+        "theme": "light",
+        "js": true
+      },
+      "keyboard": {
+        "atRest": {
+          "paused": true,
+          "currentTime": 0,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "tab": {
+          "tabs": 8,
+          "focusVisible": true
+        },
+        "focus": {
+          "outline": "2px solid rgb(185, 99, 64)",
+          "outlineOffset": "2px",
+          "boxShadow": "rgb(250, 248, 241) 0px 0px 0px 2px",
+          "focusVisible": true,
+          "active": true
+        },
+        "afterEnter": {
+          "paused": false,
+          "currentTime": 1.112,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondEnter": {
+          "paused": true,
+          "currentTime": 1.114,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterClick": {
+          "paused": false,
+          "currentTime": 1.82,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondClick": {
+          "paused": true,
+          "currentTime": 1.845,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        }
+      }
+    },
+    {
+      "theme": "light",
+      "viewport": [
+        320,
+        568
+      ],
+      "before": {
+        "arrival": "armed",
+        "motion": "paused",
+        "paused": true,
+        "belowFold": true
+      },
+      "beat": {
+        "samples": 98,
+        "states": [
+          {
+            "t": 0,
+            "state": "armed"
+          },
+          {
+            "t": 26,
+            "state": "settling"
+          },
+          {
+            "t": 917,
+            "state": "settled"
+          }
+        ],
+        "settlingAt": 26,
+        "settledAt": 917,
+        "colours": [
+          {
+            "at": 0,
+            "t": 0,
+            "colour": "rgb(204, 207, 190)"
+          },
+          {
+            "at": 100,
+            "t": 107,
+            "colour": "rgba(189, 123, 93, 0.753)"
+          },
+          {
+            "at": 200,
+            "t": 207,
+            "colour": "rgba(185, 100, 66, 0.706)"
+          },
+          {
+            "at": 300,
+            "t": 308,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          },
+          {
+            "at": 420,
+            "t": 424,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          },
+          {
+            "at": 600,
+            "t": 607,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          },
+          {
+            "at": 900,
+            "t": 907,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          },
+          {
+            "at": "final-first-reached",
+            "t": 241,
+            "colour": "rgba(185, 99, 64, 0.7)"
+          }
+        ],
+        "first": [
+          0,
+          "armed",
+          "rgb(204, 207, 190)"
+        ],
+        "last": [
+          1617,
+          "settled",
+          "rgba(185, 99, 64, 0.7)"
+        ]
+      },
+      "measure": {
+        "innerWidth": 320,
+        "innerHeight": 568,
+        "scrollWidth": 320,
+        "clientWidth": 320,
+        "breakout": {
+          "x": 32,
+          "y": 24.5,
+          "w": 256,
+          "h": 1487.2,
+          "right": 288
+        },
+        "breakoutWidthCss": "256px",
+        "list": {
+          "x": 32,
+          "y": 129.7,
+          "w": 256,
+          "h": 1312.4,
+          "right": 288
+        },
+        "gridTemplateColumns": "256px",
+        "columnGap": "24px",
+        "rowGap": "40px",
+        "frames": [
+          {
+            "x": 32,
+            "y": 175.3,
+            "w": 256,
+            "h": 301.2,
+            "right": 288
+          },
+          {
+            "x": 32,
+            "y": 613,
+            "w": 256,
+            "h": 301.2,
+            "right": 288
+          },
+          {
+            "x": 32,
+            "y": 1089.1,
+            "w": 256,
+            "h": 301.2,
+            "right": 288
+          }
+        ],
+        "frameAspect": [
+          0.85,
+          0.85,
+          0.85
+        ],
+        "gapsBetweenFrames": [
+          -256,
+          -256
+        ],
+        "stacked": true,
+        "labels": [
+          {
+            "text": "01 · Reporting flow, in motion.",
+            "rect": {
+              "x": 32,
+              "y": 129.7,
+              "w": 256,
+              "h": 33.6,
+              "right": 288
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(84, 100, 93)"
+          },
+          {
+            "text": "02 · Report a barrier.",
+            "rect": {
+              "x": 32,
+              "y": 584.2,
+              "w": 256,
+              "h": 16.8,
+              "right": 288
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(84, 100, 93)"
+          },
+          {
+            "text": "03 · Community review.",
+            "rect": {
+              "x": 32,
+              "y": 1060.3,
+              "w": 256,
+              "h": 16.8,
+              "right": 288
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(84, 100, 93)"
+          }
+        ],
+        "captions": [
+          {
+            "lines": 2,
+            "rect": {
+              "x": 32,
+              "y": 488.4,
+              "w": 256,
+              "h": 55.8,
+              "right": 288
+            },
+            "ruleColor": "rgba(135, 71, 45, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(70, 84, 77)"
+          },
+          {
+            "lines": 3,
+            "rect": {
+              "x": 32,
+              "y": 926.2,
+              "w": 256,
+              "h": 78.2,
+              "right": 288
+            },
+            "ruleColor": "rgba(135, 71, 45, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(70, 84, 77)"
+          },
+          {
+            "lines": 2,
+            "rect": {
+              "x": 32,
+              "y": 1402.3,
+              "w": 256,
+              "h": 55.8,
+              "right": 288
+            },
+            "ruleColor": "rgba(135, 71, 45, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(70, 84, 77)"
+          }
+        ],
+        "article": {
+          "x": 32,
+          "y": -1410.3,
+          "w": 256,
+          "h": 9734,
+          "right": 288
+        },
+        "articleMaxWidth": "651.842px",
+        "column": {
+          "x": 32,
+          "y": -1410.3,
+          "w": 256,
+          "h": 9734,
+          "right": 288
+        },
+        "containerType": "inline-size",
+        "frameBorder": [
+          {
+            "color": "rgba(185, 99, 64, 0.7)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(204, 207, 190)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(204, 207, 190)",
+            "width": "1px",
+            "radius": "8px"
+          }
+        ],
+        "edgeTransitionDuration": "0s",
+        "arrivalState": "settled",
+        "consumed": "1",
+        "well": {
+          "x": 53,
+          "y": 196.3,
+          "w": 214,
+          "h": 259.2,
+          "right": 267
+        },
+        "wellInset": {
+          "left": 21,
+          "top": 21,
+          "radius": "6px",
+          "shadow": "none"
+        },
+        "play": {
+          "rect": {
+            "x": 211,
+            "y": 399.4,
+            "w": 44,
+            "h": 44,
+            "right": 255
+          },
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "bg": "rgba(255, 255, 255, 0.72)",
+          "border": "rgb(204, 207, 190)",
+          "color": "rgb(84, 100, 93)",
+          "distanceToFrameRight": 33,
+          "distanceToFrameBottom": 33
+        },
+        "motion": "paused",
+        "video": {
+          "paused": true,
+          "currentTime": 0,
+          "preload": "metadata",
+          "autoplayAttr": false,
+          "controlsAttr": false,
+          "muted": true,
+          "loop": true,
+          "readyState": 4,
+          "currentSrc": "report-flow-current.dark.phone.webm"
+        },
+        "crossing": [],
+        "theme": "light",
+        "js": true
+      },
+      "keyboard": {
+        "atRest": {
+          "paused": true,
+          "currentTime": 0,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "tab": {
+          "tabs": 8,
+          "focusVisible": true
+        },
+        "focus": {
+          "outline": "2px solid rgb(185, 99, 64)",
+          "outlineOffset": "2px",
+          "boxShadow": "rgb(250, 248, 241) 0px 0px 0px 2px",
+          "focusVisible": true,
+          "active": true
+        },
+        "afterEnter": {
+          "paused": false,
+          "currentTime": 1.105,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondEnter": {
+          "paused": true,
+          "currentTime": 1.109,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterClick": {
+          "paused": false,
+          "currentTime": 1.815,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondClick": {
+          "paused": true,
+          "currentTime": 1.838,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        }
+      }
+    },
+    {
+      "theme": "dark",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "before": {
+        "arrival": "armed",
+        "motion": "paused",
+        "paused": true,
+        "belowFold": true
+      },
+      "beat": {
+        "samples": 94,
+        "states": [
+          {
+            "t": 7,
+            "state": "armed"
+          },
+          {
+            "t": 32,
+            "state": "settling"
+          },
+          {
+            "t": 941,
+            "state": "settled"
+          }
+        ],
+        "settlingAt": 32,
+        "settledAt": 941,
+        "colours": [
+          {
+            "at": 0,
+            "t": 0,
+            "colour": "rgb(44, 52, 54)"
+          },
+          {
+            "at": 100,
+            "t": 116,
+            "colour": "rgba(86, 70, 60, 0.72)"
+          },
+          {
+            "at": 200,
+            "t": 209,
+            "colour": "rgba(168, 105, 73, 0.467)"
+          },
+          {
+            "at": 300,
+            "t": 309,
+            "colour": "rgba(200, 119, 78, 0.41)"
+          },
+          {
+            "at": 420,
+            "t": 425,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          },
+          {
+            "at": 600,
+            "t": 613,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          },
+          {
+            "at": 900,
+            "t": 909,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          },
+          {
+            "at": "final-first-reached",
+            "t": 409,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          }
+        ],
+        "first": [
+          7,
+          "armed",
+          "rgb(44, 52, 54)"
+        ],
+        "last": [
+          1607,
+          "settled",
+          "rgba(207, 122, 79, 0.4)"
+        ]
+      },
+      "measure": {
+        "innerWidth": 1920,
+        "innerHeight": 1080,
+        "scrollWidth": 1920,
+        "clientWidth": 1920,
+        "breakout": {
+          "x": 540,
+          "y": 24.3,
+          "w": 1068,
+          "h": 625.2,
+          "right": 1608
+        },
+        "breakoutWidthCss": "1068px",
+        "list": {
+          "x": 540,
+          "y": 129.4,
+          "w": 1068,
+          "h": 496.6,
+          "right": 1608
+        },
+        "gridTemplateColumns": "340px 340px 340px",
+        "columnGap": "24px",
+        "rowGap": "40px",
+        "frames": [
+          {
+            "x": 540,
+            "y": 158.2,
+            "w": 340,
+            "h": 400,
+            "right": 880
+          },
+          {
+            "x": 904,
+            "y": 158.2,
+            "w": 340,
+            "h": 400,
+            "right": 1244
+          },
+          {
+            "x": 1268,
+            "y": 158.2,
+            "w": 340,
+            "h": 400,
+            "right": 1608
+          }
+        ],
+        "frameAspect": [
+          0.85,
+          0.85,
+          0.85
+        ],
+        "gapsBetweenFrames": [
+          24,
+          24
+        ],
+        "stacked": false,
+        "labels": [
+          {
+            "text": "01 · Reporting flow, in motion.",
+            "rect": {
+              "x": 540,
+              "y": 129.4,
+              "w": 340,
+              "h": 16.8,
+              "right": 880
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(159, 176, 169)"
+          },
+          {
+            "text": "02 · Report a barrier.",
+            "rect": {
+              "x": 904,
+              "y": 129.4,
+              "w": 340,
+              "h": 16.8,
+              "right": 1244
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(159, 176, 169)"
+          },
+          {
+            "text": "03 · Community review.",
+            "rect": {
+              "x": 1268,
+              "y": 129.4,
+              "w": 340,
+              "h": 16.8,
+              "right": 1608
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(159, 176, 169)"
+          }
+        ],
+        "captions": [
+          {
+            "lines": 2,
+            "rect": {
+              "x": 540,
+              "y": 570.2,
+              "w": 340,
+              "h": 55.8,
+              "right": 880
+            },
+            "ruleColor": "rgba(231, 181, 147, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(182, 194, 187)"
+          },
+          {
+            "lines": 2,
+            "rect": {
+              "x": 904,
+              "y": 570.2,
+              "w": 340,
+              "h": 55.8,
+              "right": 1244
+            },
+            "ruleColor": "rgba(231, 181, 147, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(182, 194, 187)"
+          },
+          {
+            "lines": 2,
+            "rect": {
+              "x": 1268,
+              "y": 570.2,
+              "w": 340,
+              "h": 55.8,
+              "right": 1608
+            },
+            "ruleColor": "rgba(231, 181, 147, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(182, 194, 187)"
+          }
+        ],
+        "article": {
+          "x": 540,
+          "y": -730.1,
+          "w": 651.8,
+          "h": 4832.6,
+          "right": 1191.8
+        },
+        "articleMaxWidth": "651.842px",
+        "column": {
+          "x": 540,
+          "y": -730.1,
+          "w": 1120,
+          "h": 4832.6,
+          "right": 1660
+        },
+        "containerType": "inline-size",
+        "frameBorder": [
+          {
+            "color": "rgba(207, 122, 79, 0.4)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(44, 52, 54)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(44, 52, 54)",
+            "width": "1px",
+            "radius": "8px"
+          }
+        ],
+        "edgeTransitionDuration": "0s",
+        "arrivalState": "settled",
+        "consumed": "1",
+        "well": {
+          "x": 561,
+          "y": 179.2,
+          "w": 298,
+          "h": 358,
+          "right": 859
+        },
+        "wellInset": {
+          "left": 21,
+          "top": 21,
+          "radius": "6px",
+          "shadow": "rgba(0, 0, 0, 0.5) 0px 8px 24px 0px, rgba(255, 240, 214, 0.08) 0px 1px 0px 0px inset"
+        },
+        "play": {
+          "rect": {
+            "x": 803,
+            "y": 481.2,
+            "w": 44,
+            "h": 44,
+            "right": 847
+          },
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "bg": "rgba(30, 36, 38, 0.85)",
+          "border": "rgba(236, 234, 224, 0.6)",
+          "color": "rgb(159, 176, 169)",
+          "distanceToFrameRight": 33,
+          "distanceToFrameBottom": 33
+        },
+        "motion": "paused",
+        "video": {
+          "paused": true,
+          "currentTime": 0,
+          "preload": "metadata",
+          "autoplayAttr": false,
+          "controlsAttr": false,
+          "muted": true,
+          "loop": true,
+          "readyState": 4,
+          "currentSrc": "report-flow-current.dark.phone.webm"
+        },
+        "crossing": [],
+        "theme": "dark",
+        "js": true
+      },
+      "keyboard": {
+        "atRest": {
+          "paused": true,
+          "currentTime": 0,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "tab": {
+          "tabs": 18,
+          "focusVisible": true
+        },
+        "focus": {
+          "outline": "2px solid rgb(207, 122, 79)",
+          "outlineOffset": "2px",
+          "boxShadow": "rgb(21, 25, 26) 0px 0px 0px 2px",
+          "focusVisible": true,
+          "active": true
+        },
+        "afterEnter": {
+          "paused": false,
+          "currentTime": 1.088,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondEnter": {
+          "paused": true,
+          "currentTime": 1.09,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterClick": {
+          "paused": false,
+          "currentTime": 1.798,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondClick": {
+          "paused": true,
+          "currentTime": 1.839,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        }
+      }
+    },
+    {
+      "theme": "dark",
+      "viewport": [
+        1440,
+        900
+      ],
+      "before": {
+        "arrival": "armed",
+        "motion": "paused",
+        "paused": true,
+        "belowFold": true
+      },
+      "beat": {
+        "samples": 97,
+        "states": [
+          {
+            "t": 9,
+            "state": "armed"
+          },
+          {
+            "t": 42,
+            "state": "settling"
+          },
+          {
+            "t": 942,
+            "state": "settled"
+          }
+        ],
+        "settlingAt": 42,
+        "settledAt": 942,
+        "colours": [
+          {
+            "at": 0,
+            "t": 0,
+            "colour": "rgb(44, 52, 54)"
+          },
+          {
+            "at": 100,
+            "t": 100,
+            "colour": "rgba(86, 70, 60, 0.72)"
+          },
+          {
+            "at": 200,
+            "t": 200,
+            "colour": "rgba(168, 105, 73, 0.467)"
+          },
+          {
+            "at": 300,
+            "t": 300,
+            "colour": "rgba(200, 119, 78, 0.41)"
+          },
+          {
+            "at": 420,
+            "t": 422,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          },
+          {
+            "at": 600,
+            "t": 600,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          },
+          {
+            "at": 900,
+            "t": 900,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          },
+          {
+            "at": "final-first-reached",
+            "t": 404,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          }
+        ],
+        "first": [
+          9,
+          "armed",
+          "rgb(44, 52, 54)"
+        ],
+        "last": [
+          1608,
+          "settled",
+          "rgba(207, 122, 79, 0.4)"
+        ]
+      },
+      "measure": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "breakout": {
+          "x": 312,
+          "y": 24.3,
+          "w": 1068,
+          "h": 625.2,
+          "right": 1380
+        },
+        "breakoutWidthCss": "1068px",
+        "list": {
+          "x": 312,
+          "y": 129.4,
+          "w": 1068,
+          "h": 496.6,
+          "right": 1380
+        },
+        "gridTemplateColumns": "340px 340px 340px",
+        "columnGap": "24px",
+        "rowGap": "40px",
+        "frames": [
+          {
+            "x": 312,
+            "y": 158.2,
+            "w": 340,
+            "h": 400,
+            "right": 652
+          },
+          {
+            "x": 676,
+            "y": 158.2,
+            "w": 340,
+            "h": 400,
+            "right": 1016
+          },
+          {
+            "x": 1040,
+            "y": 158.2,
+            "w": 340,
+            "h": 400,
+            "right": 1380
+          }
+        ],
+        "frameAspect": [
+          0.85,
+          0.85,
+          0.85
+        ],
+        "gapsBetweenFrames": [
+          24,
+          24
+        ],
+        "stacked": false,
+        "labels": [
+          {
+            "text": "01 · Reporting flow, in motion.",
+            "rect": {
+              "x": 312,
+              "y": 129.4,
+              "w": 340,
+              "h": 16.8,
+              "right": 652
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(159, 176, 169)"
+          },
+          {
+            "text": "02 · Report a barrier.",
+            "rect": {
+              "x": 676,
+              "y": 129.4,
+              "w": 340,
+              "h": 16.8,
+              "right": 1016
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(159, 176, 169)"
+          },
+          {
+            "text": "03 · Community review.",
+            "rect": {
+              "x": 1040,
+              "y": 129.4,
+              "w": 340,
+              "h": 16.8,
+              "right": 1380
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(159, 176, 169)"
+          }
+        ],
+        "captions": [
+          {
+            "lines": 2,
+            "rect": {
+              "x": 312,
+              "y": 570.2,
+              "w": 340,
+              "h": 55.8,
+              "right": 652
+            },
+            "ruleColor": "rgba(231, 181, 147, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(182, 194, 187)"
+          },
+          {
+            "lines": 2,
+            "rect": {
+              "x": 676,
+              "y": 570.2,
+              "w": 340,
+              "h": 55.8,
+              "right": 1016
+            },
+            "ruleColor": "rgba(231, 181, 147, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(182, 194, 187)"
+          },
+          {
+            "lines": 2,
+            "rect": {
+              "x": 1040,
+              "y": 570.2,
+              "w": 340,
+              "h": 55.8,
+              "right": 1380
+            },
+            "ruleColor": "rgba(231, 181, 147, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(182, 194, 187)"
+          }
+        ],
+        "article": {
+          "x": 312,
+          "y": -730.1,
+          "w": 651.8,
+          "h": 4832.6,
+          "right": 963.8
+        },
+        "articleMaxWidth": "651.842px",
+        "column": {
+          "x": 312,
+          "y": -730.1,
+          "w": 1096,
+          "h": 4832.6,
+          "right": 1408
+        },
+        "containerType": "inline-size",
+        "frameBorder": [
+          {
+            "color": "rgba(207, 122, 79, 0.4)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(44, 52, 54)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(44, 52, 54)",
+            "width": "1px",
+            "radius": "8px"
+          }
+        ],
+        "edgeTransitionDuration": "0s",
+        "arrivalState": "settled",
+        "consumed": "1",
+        "well": {
+          "x": 333,
+          "y": 179.2,
+          "w": 298,
+          "h": 358,
+          "right": 631
+        },
+        "wellInset": {
+          "left": 21,
+          "top": 21,
+          "radius": "6px",
+          "shadow": "rgba(0, 0, 0, 0.5) 0px 8px 24px 0px, rgba(255, 240, 214, 0.08) 0px 1px 0px 0px inset"
+        },
+        "play": {
+          "rect": {
+            "x": 575,
+            "y": 481.2,
+            "w": 44,
+            "h": 44,
+            "right": 619
+          },
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "bg": "rgba(30, 36, 38, 0.85)",
+          "border": "rgba(236, 234, 224, 0.6)",
+          "color": "rgb(159, 176, 169)",
+          "distanceToFrameRight": 33,
+          "distanceToFrameBottom": 33
+        },
+        "motion": "paused",
+        "video": {
+          "paused": true,
+          "currentTime": 0,
+          "preload": "metadata",
+          "autoplayAttr": false,
+          "controlsAttr": false,
+          "muted": true,
+          "loop": true,
+          "readyState": 4,
+          "currentSrc": "report-flow-current.dark.phone.webm"
+        },
+        "crossing": [],
+        "theme": "dark",
+        "js": true
+      },
+      "keyboard": {
+        "atRest": {
+          "paused": true,
+          "currentTime": 0,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "tab": {
+          "tabs": 18,
+          "focusVisible": true
+        },
+        "focus": {
+          "outline": "2px solid rgb(207, 122, 79)",
+          "outlineOffset": "2px",
+          "boxShadow": "rgb(21, 25, 26) 0px 0px 0px 2px",
+          "focusVisible": true,
+          "active": true
+        },
+        "afterEnter": {
+          "paused": false,
+          "currentTime": 1.111,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondEnter": {
+          "paused": true,
+          "currentTime": 1.113,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterClick": {
+          "paused": false,
+          "currentTime": 1.819,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondClick": {
+          "paused": true,
+          "currentTime": 1.864,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        }
+      }
+    },
+    {
+      "theme": "dark",
+      "viewport": [
+        1280,
+        800
+      ],
+      "before": {
+        "arrival": "armed",
+        "motion": "paused",
+        "paused": true,
+        "belowFold": true
+      },
+      "beat": {
+        "samples": 97,
+        "states": [
+          {
+            "t": 16,
+            "state": "armed"
+          },
+          {
+            "t": 49,
+            "state": "settling"
+          },
+          {
+            "t": 949,
+            "state": "settled"
+          }
+        ],
+        "settlingAt": 49,
+        "settledAt": 949,
+        "colours": [
+          {
+            "at": 0,
+            "t": 0,
+            "colour": "rgb(44, 52, 54)"
+          },
+          {
+            "at": 100,
+            "t": 100,
+            "colour": "rgba(86, 70, 60, 0.72)"
+          },
+          {
+            "at": 200,
+            "t": 200,
+            "colour": "rgba(168, 105, 73, 0.467)"
+          },
+          {
+            "at": 300,
+            "t": 300,
+            "colour": "rgba(200, 119, 78, 0.41)"
+          },
+          {
+            "at": 420,
+            "t": 434,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          },
+          {
+            "at": 600,
+            "t": 600,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          },
+          {
+            "at": 900,
+            "t": 900,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          },
+          {
+            "at": "final-first-reached",
+            "t": 400,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          }
+        ],
+        "first": [
+          16,
+          "armed",
+          "rgb(44, 52, 54)"
+        ],
+        "last": [
+          1616,
+          "settled",
+          "rgba(207, 122, 79, 0.4)"
+        ]
+      },
+      "measure": {
+        "innerWidth": 1280,
+        "innerHeight": 800,
+        "scrollWidth": 1280,
+        "clientWidth": 1280,
+        "breakout": {
+          "x": 312,
+          "y": 24,
+          "w": 936,
+          "h": 573.4,
+          "right": 1248
+        },
+        "breakoutWidthCss": "936px",
+        "list": {
+          "x": 312,
+          "y": 129.2,
+          "w": 936,
+          "h": 444.8,
+          "right": 1248
+        },
+        "gridTemplateColumns": "296px 296px 296px",
+        "columnGap": "24px",
+        "rowGap": "40px",
+        "frames": [
+          {
+            "x": 312,
+            "y": 158,
+            "w": 296,
+            "h": 348.2,
+            "right": 608
+          },
+          {
+            "x": 632,
+            "y": 158,
+            "w": 296,
+            "h": 348.2,
+            "right": 928
+          },
+          {
+            "x": 952,
+            "y": 158,
+            "w": 296,
+            "h": 348.2,
+            "right": 1248
+          }
+        ],
+        "frameAspect": [
+          0.85,
+          0.85,
+          0.85
+        ],
+        "gapsBetweenFrames": [
+          24,
+          24
+        ],
+        "stacked": false,
+        "labels": [
+          {
+            "text": "01 · Reporting flow, in motion.",
+            "rect": {
+              "x": 312,
+              "y": 129.2,
+              "w": 296,
+              "h": 16.8,
+              "right": 608
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(159, 176, 169)"
+          },
+          {
+            "text": "02 · Report a barrier.",
+            "rect": {
+              "x": 632,
+              "y": 129.2,
+              "w": 296,
+              "h": 16.8,
+              "right": 928
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(159, 176, 169)"
+          },
+          {
+            "text": "03 · Community review.",
+            "rect": {
+              "x": 952,
+              "y": 129.2,
+              "w": 296,
+              "h": 16.8,
+              "right": 1248
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(159, 176, 169)"
+          }
+        ],
+        "captions": [
+          {
+            "lines": 2,
+            "rect": {
+              "x": 312,
+              "y": 518.3,
+              "w": 296,
+              "h": 55.8,
+              "right": 608
+            },
+            "ruleColor": "rgba(231, 181, 147, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(182, 194, 187)"
+          },
+          {
+            "lines": 2,
+            "rect": {
+              "x": 632,
+              "y": 518.3,
+              "w": 296,
+              "h": 55.8,
+              "right": 928
+            },
+            "ruleColor": "rgba(231, 181, 147, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(182, 194, 187)"
+          },
+          {
+            "lines": 2,
+            "rect": {
+              "x": 952,
+              "y": 518.3,
+              "w": 296,
+              "h": 55.8,
+              "right": 1248
+            },
+            "ruleColor": "rgba(231, 181, 147, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(182, 194, 187)"
+          }
+        ],
+        "article": {
+          "x": 312,
+          "y": -730.3,
+          "w": 651.8,
+          "h": 4780.9,
+          "right": 963.8
+        },
+        "articleMaxWidth": "651.842px",
+        "column": {
+          "x": 312,
+          "y": -730.3,
+          "w": 936,
+          "h": 4780.9,
+          "right": 1248
+        },
+        "containerType": "inline-size",
+        "frameBorder": [
+          {
+            "color": "rgba(207, 122, 79, 0.4)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(44, 52, 54)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(44, 52, 54)",
+            "width": "1px",
+            "radius": "8px"
+          }
+        ],
+        "edgeTransitionDuration": "0s",
+        "arrivalState": "settled",
+        "consumed": "1",
+        "well": {
+          "x": 333,
+          "y": 179,
+          "w": 254,
+          "h": 306.2,
+          "right": 587
+        },
+        "wellInset": {
+          "left": 21,
+          "top": 21,
+          "radius": "6px",
+          "shadow": "rgba(0, 0, 0, 0.5) 0px 8px 24px 0px, rgba(255, 240, 214, 0.08) 0px 1px 0px 0px inset"
+        },
+        "play": {
+          "rect": {
+            "x": 531,
+            "y": 429.3,
+            "w": 44,
+            "h": 44,
+            "right": 575
+          },
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "bg": "rgba(30, 36, 38, 0.85)",
+          "border": "rgba(236, 234, 224, 0.6)",
+          "color": "rgb(159, 176, 169)",
+          "distanceToFrameRight": 33,
+          "distanceToFrameBottom": 33
+        },
+        "motion": "paused",
+        "video": {
+          "paused": true,
+          "currentTime": 0,
+          "preload": "metadata",
+          "autoplayAttr": false,
+          "controlsAttr": false,
+          "muted": true,
+          "loop": true,
+          "readyState": 4,
+          "currentSrc": "report-flow-current.dark.phone.webm"
+        },
+        "crossing": [],
+        "theme": "dark",
+        "js": true
+      },
+      "keyboard": {
+        "atRest": {
+          "paused": true,
+          "currentTime": 0,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "tab": {
+          "tabs": 18,
+          "focusVisible": true
+        },
+        "focus": {
+          "outline": "2px solid rgb(207, 122, 79)",
+          "outlineOffset": "2px",
+          "boxShadow": "rgb(21, 25, 26) 0px 0px 0px 2px",
+          "focusVisible": true,
+          "active": true
+        },
+        "afterEnter": {
+          "paused": false,
+          "currentTime": 1.099,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondEnter": {
+          "paused": true,
+          "currentTime": 1.1,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterClick": {
+          "paused": false,
+          "currentTime": 1.813,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondClick": {
+          "paused": true,
+          "currentTime": 1.851,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        }
+      }
+    },
+    {
+      "theme": "dark",
+      "viewport": [
+        1024,
+        768
+      ],
+      "before": {
+        "arrival": "armed",
+        "motion": "paused",
+        "paused": true,
+        "belowFold": true
+      },
+      "beat": {
+        "samples": 97,
+        "states": [
+          {
+            "t": 9,
+            "state": "armed"
+          },
+          {
+            "t": 34,
+            "state": "settling"
+          },
+          {
+            "t": 925,
+            "state": "settled"
+          }
+        ],
+        "settlingAt": 34,
+        "settledAt": 925,
+        "colours": [
+          {
+            "at": 0,
+            "t": 0,
+            "colour": "rgb(44, 52, 54)"
+          },
+          {
+            "at": 100,
+            "t": 108,
+            "colour": "rgba(117, 83, 65, 0.596)"
+          },
+          {
+            "at": 200,
+            "t": 208,
+            "colour": "rgba(183, 112, 75, 0.44)"
+          },
+          {
+            "at": 300,
+            "t": 308,
+            "colour": "rgba(204, 121, 79, 0.404)"
+          },
+          {
+            "at": 420,
+            "t": 424,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          },
+          {
+            "at": 600,
+            "t": 608,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          },
+          {
+            "at": 900,
+            "t": 908,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          },
+          {
+            "at": "final-first-reached",
+            "t": 375,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          }
+        ],
+        "first": [
+          9,
+          "armed",
+          "rgb(44, 52, 54)"
+        ],
+        "last": [
+          1608,
+          "settled",
+          "rgba(207, 122, 79, 0.4)"
+        ]
+      },
+      "measure": {
+        "innerWidth": 1024,
+        "innerHeight": 768,
+        "scrollWidth": 1024,
+        "clientWidth": 1024,
+        "breakout": {
+          "x": 312,
+          "y": 23.9,
+          "w": 680,
+          "h": 527.6,
+          "right": 992
+        },
+        "breakoutWidthCss": "680px",
+        "list": {
+          "x": 312,
+          "y": 129.1,
+          "w": 680,
+          "h": 383.6,
+          "right": 992
+        },
+        "gridTemplateColumns": "210.656px 210.672px 210.672px",
+        "columnGap": "24px",
+        "rowGap": "40px",
+        "frames": [
+          {
+            "x": 312,
+            "y": 174.7,
+            "w": 210.7,
+            "h": 247.8,
+            "right": 522.7
+          },
+          {
+            "x": 546.7,
+            "y": 174.7,
+            "w": 210.7,
+            "h": 247.8,
+            "right": 757.3
+          },
+          {
+            "x": 781.3,
+            "y": 174.7,
+            "w": 210.7,
+            "h": 247.8,
+            "right": 992
+          }
+        ],
+        "frameAspect": [
+          0.85,
+          0.85,
+          0.85
+        ],
+        "gapsBetweenFrames": [
+          24,
+          24
+        ],
+        "stacked": false,
+        "labels": [
+          {
+            "text": "01 · Reporting flow, in motion.",
+            "rect": {
+              "x": 312,
+              "y": 129.1,
+              "w": 210.7,
+              "h": 33.6,
+              "right": 522.7
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(159, 176, 169)"
+          },
+          {
+            "text": "02 · Report a barrier.",
+            "rect": {
+              "x": 546.7,
+              "y": 129.1,
+              "w": 210.7,
+              "h": 33.6,
+              "right": 757.3
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(159, 176, 169)"
+          },
+          {
+            "text": "03 · Community review.",
+            "rect": {
+              "x": 781.3,
+              "y": 129.1,
+              "w": 210.7,
+              "h": 33.6,
+              "right": 992
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(159, 176, 169)"
+          }
+        ],
+        "captions": [
+          {
+            "lines": 3,
+            "rect": {
+              "x": 312,
+              "y": 434.5,
+              "w": 210.7,
+              "h": 78.2,
+              "right": 522.7
+            },
+            "ruleColor": "rgba(231, 181, 147, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(182, 194, 187)"
+          },
+          {
+            "lines": 3,
+            "rect": {
+              "x": 546.7,
+              "y": 434.5,
+              "w": 210.7,
+              "h": 78.2,
+              "right": 757.3
+            },
+            "ruleColor": "rgba(231, 181, 147, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(182, 194, 187)"
+          },
+          {
+            "lines": 3,
+            "rect": {
+              "x": 781.3,
+              "y": 434.5,
+              "w": 210.7,
+              "h": 78.2,
+              "right": 992
+            },
+            "ruleColor": "rgba(231, 181, 147, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(182, 194, 187)"
+          }
+        ],
+        "article": {
+          "x": 312,
+          "y": -787.2,
+          "w": 544,
+          "h": 5205.3,
+          "right": 856
+        },
+        "articleMaxWidth": "544px",
+        "column": {
+          "x": 312,
+          "y": -787.2,
+          "w": 680,
+          "h": 5205.3,
+          "right": 992
+        },
+        "containerType": "inline-size",
+        "frameBorder": [
+          {
+            "color": "rgba(207, 122, 79, 0.4)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(44, 52, 54)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(44, 52, 54)",
+            "width": "1px",
+            "radius": "8px"
+          }
+        ],
+        "edgeTransitionDuration": "0s",
+        "arrivalState": "settled",
+        "consumed": "1",
+        "well": {
+          "x": 333,
+          "y": 195.7,
+          "w": 168.7,
+          "h": 205.8,
+          "right": 501.7
+        },
+        "wellInset": {
+          "left": 21,
+          "top": 21,
+          "radius": "6px",
+          "shadow": "rgba(0, 0, 0, 0.5) 0px 8px 24px 0px, rgba(255, 240, 214, 0.08) 0px 1px 0px 0px inset"
+        },
+        "play": {
+          "rect": {
+            "x": 445.7,
+            "y": 345.5,
+            "w": 44,
+            "h": 44,
+            "right": 489.7
+          },
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "bg": "rgba(30, 36, 38, 0.85)",
+          "border": "rgba(236, 234, 224, 0.6)",
+          "color": "rgb(159, 176, 169)",
+          "distanceToFrameRight": 33,
+          "distanceToFrameBottom": 33
+        },
+        "motion": "paused",
+        "video": {
+          "paused": true,
+          "currentTime": 0,
+          "preload": "metadata",
+          "autoplayAttr": false,
+          "controlsAttr": false,
+          "muted": true,
+          "loop": true,
+          "readyState": 4,
+          "currentSrc": "report-flow-current.dark.phone.webm"
+        },
+        "crossing": [],
+        "theme": "dark",
+        "js": true
+      },
+      "keyboard": {
+        "atRest": {
+          "paused": true,
+          "currentTime": 0,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "tab": {
+          "tabs": 18,
+          "focusVisible": true
+        },
+        "focus": {
+          "outline": "2px solid rgb(207, 122, 79)",
+          "outlineOffset": "2px",
+          "boxShadow": "rgb(21, 25, 26) 0px 0px 0px 2px",
+          "focusVisible": true,
+          "active": true
+        },
+        "afterEnter": {
+          "paused": false,
+          "currentTime": 1.099,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondEnter": {
+          "paused": true,
+          "currentTime": 1.101,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterClick": {
+          "paused": false,
+          "currentTime": 1.807,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondClick": {
+          "paused": true,
+          "currentTime": 1.85,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        }
+      }
+    },
+    {
+      "theme": "dark",
+      "viewport": [
+        393,
+        852
+      ],
+      "before": {
+        "arrival": "armed",
+        "motion": "paused",
+        "paused": true,
+        "belowFold": true
+      },
+      "beat": {
+        "samples": 97,
+        "states": [
+          {
+            "t": 4,
+            "state": "armed"
+          },
+          {
+            "t": 41,
+            "state": "settling"
+          },
+          {
+            "t": 937,
+            "state": "settled"
+          }
+        ],
+        "settlingAt": 41,
+        "settledAt": 937,
+        "colours": [
+          {
+            "at": 0,
+            "t": 0,
+            "colour": "rgb(44, 52, 54)"
+          },
+          {
+            "at": 100,
+            "t": 112,
+            "colour": "rgba(132, 90, 68, 0.553)"
+          },
+          {
+            "at": 200,
+            "t": 212,
+            "colour": "rgba(200, 119, 78, 0.41)"
+          },
+          {
+            "at": 300,
+            "t": 312,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          },
+          {
+            "at": 420,
+            "t": 429,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          },
+          {
+            "at": 600,
+            "t": 612,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          },
+          {
+            "at": 900,
+            "t": 912,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          },
+          {
+            "at": "final-first-reached",
+            "t": 279,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          }
+        ],
+        "first": [
+          4,
+          "armed",
+          "rgb(44, 52, 54)"
+        ],
+        "last": [
+          1603,
+          "settled",
+          "rgba(207, 122, 79, 0.4)"
+        ]
+      },
+      "measure": {
+        "innerWidth": 393,
+        "innerHeight": 852,
+        "scrollWidth": 393,
+        "clientWidth": 393,
+        "breakout": {
+          "x": 32,
+          "y": 23.8,
+          "w": 329,
+          "h": 1690.2,
+          "right": 361
+        },
+        "breakoutWidthCss": "329px",
+        "list": {
+          "x": 32,
+          "y": 129,
+          "w": 329,
+          "h": 1530.9,
+          "right": 361
+        },
+        "gridTemplateColumns": "329px",
+        "columnGap": "24px",
+        "rowGap": "40px",
+        "frames": [
+          {
+            "x": 32,
+            "y": 157.8,
+            "w": 329,
+            "h": 387,
+            "right": 361
+          },
+          {
+            "x": 32,
+            "y": 681.5,
+            "w": 329,
+            "h": 387,
+            "right": 361
+          },
+          {
+            "x": 32,
+            "y": 1221.1,
+            "w": 329,
+            "h": 387,
+            "right": 361
+          }
+        ],
+        "frameAspect": [
+          0.85,
+          0.85,
+          0.85
+        ],
+        "gapsBetweenFrames": [
+          -329,
+          -329
+        ],
+        "stacked": true,
+        "labels": [
+          {
+            "text": "01 · Reporting flow, in motion.",
+            "rect": {
+              "x": 32,
+              "y": 129,
+              "w": 329,
+              "h": 16.8,
+              "right": 361
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(159, 176, 169)"
+          },
+          {
+            "text": "02 · Report a barrier.",
+            "rect": {
+              "x": 32,
+              "y": 652.7,
+              "w": 329,
+              "h": 16.8,
+              "right": 361
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(159, 176, 169)"
+          },
+          {
+            "text": "03 · Community review.",
+            "rect": {
+              "x": 32,
+              "y": 1192.3,
+              "w": 329,
+              "h": 16.8,
+              "right": 361
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(159, 176, 169)"
+          }
+        ],
+        "captions": [
+          {
+            "lines": 2,
+            "rect": {
+              "x": 32,
+              "y": 556.9,
+              "w": 329,
+              "h": 55.8,
+              "right": 361
+            },
+            "ruleColor": "rgba(231, 181, 147, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(182, 194, 187)"
+          },
+          {
+            "lines": 2,
+            "rect": {
+              "x": 32,
+              "y": 1080.5,
+              "w": 329,
+              "h": 55.8,
+              "right": 361
+            },
+            "ruleColor": "rgba(231, 181, 147, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(182, 194, 187)"
+          },
+          {
+            "lines": 2,
+            "rect": {
+              "x": 32,
+              "y": 1620.1,
+              "w": 329,
+              "h": 55.8,
+              "right": 361
+            },
+            "ruleColor": "rgba(231, 181, 147, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(182, 194, 187)"
+          }
+        ],
+        "article": {
+          "x": 32,
+          "y": -1143.2,
+          "w": 329,
+          "h": 8363.6,
+          "right": 361
+        },
+        "articleMaxWidth": "651.842px",
+        "column": {
+          "x": 32,
+          "y": -1143.2,
+          "w": 329,
+          "h": 8363.6,
+          "right": 361
+        },
+        "containerType": "inline-size",
+        "frameBorder": [
+          {
+            "color": "rgba(207, 122, 79, 0.4)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(44, 52, 54)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(44, 52, 54)",
+            "width": "1px",
+            "radius": "8px"
+          }
+        ],
+        "edgeTransitionDuration": "0s",
+        "arrivalState": "settled",
+        "consumed": "1",
+        "well": {
+          "x": 53,
+          "y": 178.8,
+          "w": 287,
+          "h": 345,
+          "right": 340
+        },
+        "wellInset": {
+          "left": 21,
+          "top": 21,
+          "radius": "6px",
+          "shadow": "rgba(0, 0, 0, 0.5) 0px 8px 24px 0px, rgba(255, 240, 214, 0.08) 0px 1px 0px 0px inset"
+        },
+        "play": {
+          "rect": {
+            "x": 284,
+            "y": 467.9,
+            "w": 44,
+            "h": 44,
+            "right": 328
+          },
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "bg": "rgba(30, 36, 38, 0.85)",
+          "border": "rgba(236, 234, 224, 0.6)",
+          "color": "rgb(159, 176, 169)",
+          "distanceToFrameRight": 33,
+          "distanceToFrameBottom": 33
+        },
+        "motion": "paused",
+        "video": {
+          "paused": true,
+          "currentTime": 0,
+          "preload": "metadata",
+          "autoplayAttr": false,
+          "controlsAttr": false,
+          "muted": true,
+          "loop": true,
+          "readyState": 4,
+          "currentSrc": "report-flow-current.dark.phone.webm"
+        },
+        "crossing": [],
+        "theme": "dark",
+        "js": true
+      },
+      "keyboard": {
+        "atRest": {
+          "paused": true,
+          "currentTime": 0,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "tab": {
+          "tabs": 8,
+          "focusVisible": true
+        },
+        "focus": {
+          "outline": "2px solid rgb(207, 122, 79)",
+          "outlineOffset": "2px",
+          "boxShadow": "rgb(21, 25, 26) 0px 0px 0px 2px",
+          "focusVisible": true,
+          "active": true
+        },
+        "afterEnter": {
+          "paused": false,
+          "currentTime": 1.097,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondEnter": {
+          "paused": true,
+          "currentTime": 1.099,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterClick": {
+          "paused": false,
+          "currentTime": 1.805,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondClick": {
+          "paused": true,
+          "currentTime": 1.832,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        }
+      }
+    },
+    {
+      "theme": "dark",
+      "viewport": [
+        375,
+        667
+      ],
+      "before": {
+        "arrival": "armed",
+        "motion": "paused",
+        "paused": true,
+        "belowFold": true
+      },
+      "beat": {
+        "samples": 97,
+        "states": [
+          {
+            "t": 1,
+            "state": "armed"
+          },
+          {
+            "t": 32,
+            "state": "settling"
+          },
+          {
+            "t": 935,
+            "state": "settled"
+          }
+        ],
+        "settlingAt": 32,
+        "settledAt": 935,
+        "colours": [
+          {
+            "at": 0,
+            "t": 0,
+            "colour": "rgb(44, 52, 54)"
+          },
+          {
+            "at": 100,
+            "t": 102,
+            "colour": "rgba(132, 90, 67, 0.553)"
+          },
+          {
+            "at": 200,
+            "t": 202,
+            "colour": "rgba(200, 119, 78, 0.41)"
+          },
+          {
+            "at": 300,
+            "t": 302,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          },
+          {
+            "at": 420,
+            "t": 436,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          },
+          {
+            "at": 600,
+            "t": 602,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          },
+          {
+            "at": 900,
+            "t": 903,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          },
+          {
+            "at": "final-first-reached",
+            "t": 269,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          }
+        ],
+        "first": [
+          1,
+          "armed",
+          "rgb(44, 52, 54)"
+        ],
+        "last": [
+          1601,
+          "settled",
+          "rgba(207, 122, 79, 0.4)"
+        ]
+      },
+      "measure": {
+        "innerWidth": 375,
+        "innerHeight": 667,
+        "scrollWidth": 375,
+        "clientWidth": 375,
+        "breakout": {
+          "x": 32,
+          "y": 24.2,
+          "w": 311,
+          "h": 1626.7,
+          "right": 343
+        },
+        "breakoutWidthCss": "311px",
+        "list": {
+          "x": 32,
+          "y": 129.4,
+          "w": 311,
+          "h": 1467.4,
+          "right": 343
+        },
+        "gridTemplateColumns": "311px",
+        "columnGap": "24px",
+        "rowGap": "40px",
+        "frames": [
+          {
+            "x": 32,
+            "y": 158.2,
+            "w": 311,
+            "h": 365.9,
+            "right": 343
+          },
+          {
+            "x": 32,
+            "y": 660.6,
+            "w": 311,
+            "h": 365.9,
+            "right": 343
+          },
+          {
+            "x": 32,
+            "y": 1179.1,
+            "w": 311,
+            "h": 365.9,
+            "right": 343
+          }
+        ],
+        "frameAspect": [
+          0.85,
+          0.85,
+          0.85
+        ],
+        "gapsBetweenFrames": [
+          -311,
+          -311
+        ],
+        "stacked": true,
+        "labels": [
+          {
+            "text": "01 · Reporting flow, in motion.",
+            "rect": {
+              "x": 32,
+              "y": 129.4,
+              "w": 311,
+              "h": 16.8,
+              "right": 343
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(159, 176, 169)"
+          },
+          {
+            "text": "02 · Report a barrier.",
+            "rect": {
+              "x": 32,
+              "y": 631.8,
+              "w": 311,
+              "h": 16.8,
+              "right": 343
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(159, 176, 169)"
+          },
+          {
+            "text": "03 · Community review.",
+            "rect": {
+              "x": 32,
+              "y": 1150.3,
+              "w": 311,
+              "h": 16.8,
+              "right": 343
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(159, 176, 169)"
+          }
+        ],
+        "captions": [
+          {
+            "lines": 2,
+            "rect": {
+              "x": 32,
+              "y": 536,
+              "w": 311,
+              "h": 55.8,
+              "right": 343
+            },
+            "ruleColor": "rgba(231, 181, 147, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(182, 194, 187)"
+          },
+          {
+            "lines": 2,
+            "rect": {
+              "x": 32,
+              "y": 1038.5,
+              "w": 311,
+              "h": 55.8,
+              "right": 343
+            },
+            "ruleColor": "rgba(231, 181, 147, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(182, 194, 187)"
+          },
+          {
+            "lines": 2,
+            "rect": {
+              "x": 32,
+              "y": 1557,
+              "w": 311,
+              "h": 55.8,
+              "right": 343
+            },
+            "ruleColor": "rgba(231, 181, 147, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(182, 194, 187)"
+          }
+        ],
+        "article": {
+          "x": 32,
+          "y": -1202.3,
+          "w": 311,
+          "h": 8619.5,
+          "right": 343
+        },
+        "articleMaxWidth": "651.842px",
+        "column": {
+          "x": 32,
+          "y": -1202.3,
+          "w": 311,
+          "h": 8619.5,
+          "right": 343
+        },
+        "containerType": "inline-size",
+        "frameBorder": [
+          {
+            "color": "rgba(207, 122, 79, 0.4)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(44, 52, 54)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(44, 52, 54)",
+            "width": "1px",
+            "radius": "8px"
+          }
+        ],
+        "edgeTransitionDuration": "0s",
+        "arrivalState": "settled",
+        "consumed": "1",
+        "well": {
+          "x": 53,
+          "y": 179.2,
+          "w": 269,
+          "h": 323.9,
+          "right": 322
+        },
+        "wellInset": {
+          "left": 21,
+          "top": 21,
+          "radius": "6px",
+          "shadow": "rgba(0, 0, 0, 0.5) 0px 8px 24px 0px, rgba(255, 240, 214, 0.08) 0px 1px 0px 0px inset"
+        },
+        "play": {
+          "rect": {
+            "x": 266,
+            "y": 447,
+            "w": 44,
+            "h": 44,
+            "right": 310
+          },
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "bg": "rgba(30, 36, 38, 0.85)",
+          "border": "rgba(236, 234, 224, 0.6)",
+          "color": "rgb(159, 176, 169)",
+          "distanceToFrameRight": 33,
+          "distanceToFrameBottom": 33
+        },
+        "motion": "paused",
+        "video": {
+          "paused": true,
+          "currentTime": 0,
+          "preload": "metadata",
+          "autoplayAttr": false,
+          "controlsAttr": false,
+          "muted": true,
+          "loop": true,
+          "readyState": 4,
+          "currentSrc": "report-flow-current.dark.phone.webm"
+        },
+        "crossing": [],
+        "theme": "dark",
+        "js": true
+      },
+      "keyboard": {
+        "atRest": {
+          "paused": true,
+          "currentTime": 0,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "tab": {
+          "tabs": 8,
+          "focusVisible": true
+        },
+        "focus": {
+          "outline": "2px solid rgb(207, 122, 79)",
+          "outlineOffset": "2px",
+          "boxShadow": "rgb(21, 25, 26) 0px 0px 0px 2px",
+          "focusVisible": true,
+          "active": true
+        },
+        "afterEnter": {
+          "paused": false,
+          "currentTime": 1.107,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondEnter": {
+          "paused": true,
+          "currentTime": 1.109,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterClick": {
+          "paused": false,
+          "currentTime": 1.815,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondClick": {
+          "paused": true,
+          "currentTime": 1.841,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        }
+      }
+    },
+    {
+      "theme": "dark",
+      "viewport": [
+        320,
+        568
+      ],
+      "before": {
+        "arrival": "armed",
+        "motion": "paused",
+        "paused": true,
+        "belowFold": true
+      },
+      "beat": {
+        "samples": 97,
+        "states": [
+          {
+            "t": 1,
+            "state": "armed"
+          },
+          {
+            "t": 32,
+            "state": "settling"
+          },
+          {
+            "t": 934,
+            "state": "settled"
+          }
+        ],
+        "settlingAt": 32,
+        "settledAt": 934,
+        "colours": [
+          {
+            "at": 0,
+            "t": 0,
+            "colour": "rgb(44, 52, 54)"
+          },
+          {
+            "at": 100,
+            "t": 103,
+            "colour": "rgba(152, 98, 71, 0.5)"
+          },
+          {
+            "at": 200,
+            "t": 202,
+            "colour": "rgba(203, 120, 78, 0.404)"
+          },
+          {
+            "at": 300,
+            "t": 303,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          },
+          {
+            "at": 420,
+            "t": 436,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          },
+          {
+            "at": 600,
+            "t": 602,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          },
+          {
+            "at": 900,
+            "t": 902,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          },
+          {
+            "at": "final-first-reached",
+            "t": 253,
+            "colour": "rgba(207, 122, 79, 0.4)"
+          }
+        ],
+        "first": [
+          1,
+          "armed",
+          "rgb(44, 52, 54)"
+        ],
+        "last": [
+          1601,
+          "settled",
+          "rgba(207, 122, 79, 0.4)"
+        ]
+      },
+      "measure": {
+        "innerWidth": 320,
+        "innerHeight": 568,
+        "scrollWidth": 320,
+        "clientWidth": 320,
+        "breakout": {
+          "x": 32,
+          "y": 24.5,
+          "w": 256,
+          "h": 1487.2,
+          "right": 288
+        },
+        "breakoutWidthCss": "256px",
+        "list": {
+          "x": 32,
+          "y": 129.7,
+          "w": 256,
+          "h": 1312.4,
+          "right": 288
+        },
+        "gridTemplateColumns": "256px",
+        "columnGap": "24px",
+        "rowGap": "40px",
+        "frames": [
+          {
+            "x": 32,
+            "y": 175.3,
+            "w": 256,
+            "h": 301.2,
+            "right": 288
+          },
+          {
+            "x": 32,
+            "y": 613,
+            "w": 256,
+            "h": 301.2,
+            "right": 288
+          },
+          {
+            "x": 32,
+            "y": 1089.1,
+            "w": 256,
+            "h": 301.2,
+            "right": 288
+          }
+        ],
+        "frameAspect": [
+          0.85,
+          0.85,
+          0.85
+        ],
+        "gapsBetweenFrames": [
+          -256,
+          -256
+        ],
+        "stacked": true,
+        "labels": [
+          {
+            "text": "01 · Reporting flow, in motion.",
+            "rect": {
+              "x": 32,
+              "y": 129.7,
+              "w": 256,
+              "h": 33.6,
+              "right": 288
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(159, 176, 169)"
+          },
+          {
+            "text": "02 · Report a barrier.",
+            "rect": {
+              "x": 32,
+              "y": 584.2,
+              "w": 256,
+              "h": 16.8,
+              "right": 288
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(159, 176, 169)"
+          },
+          {
+            "text": "03 · Community review.",
+            "rect": {
+              "x": 32,
+              "y": 1060.3,
+              "w": 256,
+              "h": 16.8,
+              "right": 288
+            },
+            "font": "12px \"DM Mono\"",
+            "color": "rgb(159, 176, 169)"
+          }
+        ],
+        "captions": [
+          {
+            "lines": 2,
+            "rect": {
+              "x": 32,
+              "y": 488.4,
+              "w": 256,
+              "h": 55.8,
+              "right": 288
+            },
+            "ruleColor": "rgba(231, 181, 147, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(182, 194, 187)"
+          },
+          {
+            "lines": 3,
+            "rect": {
+              "x": 32,
+              "y": 926.2,
+              "w": 256,
+              "h": 78.2,
+              "right": 288
+            },
+            "ruleColor": "rgba(231, 181, 147, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(182, 194, 187)"
+          },
+          {
+            "lines": 2,
+            "rect": {
+              "x": 32,
+              "y": 1402.3,
+              "w": 256,
+              "h": 55.8,
+              "right": 288
+            },
+            "ruleColor": "rgba(231, 181, 147, 0.35)",
+            "ruleWidth": "1px",
+            "fontSize": "14px",
+            "color": "rgb(182, 194, 187)"
+          }
+        ],
+        "article": {
+          "x": 32,
+          "y": -1410.3,
+          "w": 256,
+          "h": 9734,
+          "right": 288
+        },
+        "articleMaxWidth": "651.842px",
+        "column": {
+          "x": 32,
+          "y": -1410.3,
+          "w": 256,
+          "h": 9734,
+          "right": 288
+        },
+        "containerType": "inline-size",
+        "frameBorder": [
+          {
+            "color": "rgba(207, 122, 79, 0.4)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(44, 52, 54)",
+            "width": "1px",
+            "radius": "8px"
+          },
+          {
+            "color": "rgb(44, 52, 54)",
+            "width": "1px",
+            "radius": "8px"
+          }
+        ],
+        "edgeTransitionDuration": "0s",
+        "arrivalState": "settled",
+        "consumed": "1",
+        "well": {
+          "x": 53,
+          "y": 196.3,
+          "w": 214,
+          "h": 259.2,
+          "right": 267
+        },
+        "wellInset": {
+          "left": 21,
+          "top": 21,
+          "radius": "6px",
+          "shadow": "rgba(0, 0, 0, 0.5) 0px 8px 24px 0px, rgba(255, 240, 214, 0.08) 0px 1px 0px 0px inset"
+        },
+        "play": {
+          "rect": {
+            "x": 211,
+            "y": 399.4,
+            "w": 44,
+            "h": 44,
+            "right": 255
+          },
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "bg": "rgba(30, 36, 38, 0.85)",
+          "border": "rgba(236, 234, 224, 0.6)",
+          "color": "rgb(159, 176, 169)",
+          "distanceToFrameRight": 33,
+          "distanceToFrameBottom": 33
+        },
+        "motion": "paused",
+        "video": {
+          "paused": true,
+          "currentTime": 0,
+          "preload": "metadata",
+          "autoplayAttr": false,
+          "controlsAttr": false,
+          "muted": true,
+          "loop": true,
+          "readyState": 4,
+          "currentSrc": "report-flow-current.dark.phone.webm"
+        },
+        "crossing": [],
+        "theme": "dark",
+        "js": true
+      },
+      "keyboard": {
+        "atRest": {
+          "paused": true,
+          "currentTime": 0,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "tab": {
+          "tabs": 8,
+          "focusVisible": true
+        },
+        "focus": {
+          "outline": "2px solid rgb(207, 122, 79)",
+          "outlineOffset": "2px",
+          "boxShadow": "rgb(21, 25, 26) 0px 0px 0px 2px",
+          "focusVisible": true,
+          "active": true
+        },
+        "afterEnter": {
+          "paused": false,
+          "currentTime": 1.097,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondEnter": {
+          "paused": true,
+          "currentTime": 1.099,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterClick": {
+          "paused": false,
+          "currentTime": 1.804,
+          "motion": "playing",
+          "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        },
+        "afterSecondClick": {
+          "paused": true,
+          "currentTime": 1.831,
+          "motion": "paused",
+          "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "readyState": 4,
+          "src": "report-flow-current.dark.phone.webm"
+        }
+      }
+    }
+  ],
+  "playControl": [
+    {
+      "theme": "light",
+      "viewport": [
+        1440,
+        900
+      ],
+      "dpr": 2,
+      "tabsToReach": 18,
+      "focusVisible": true,
+      "focusStyles": {
+        "outline": "2px solid rgb(185, 99, 64)",
+        "outlineOffset": "2px",
+        "boxShadow": "rgb(250, 248, 241) 0px 0px 0px 2px",
+        "focusVisible": true,
+        "active": true
+      },
+      "buttonRect": {
+        "x": 575,
+        "y": 428.2,
+        "w": 44,
+        "h": 44,
+        "right": 619
+      },
+      "pill": {
+        "rest": {
+          "body": [
+            195,
+            197,
+            203
+          ],
+          "hairline": [
+            200,
+            203,
+            190
+          ],
+          "clipBeside": [
+            53,
+            71,
+            95
+          ],
+          "clipFar": [
+            53,
+            72,
+            95
+          ],
+          "icon": [
+            88,
+            104,
+            97
+          ]
+        },
+        "focused": {
+          "body": [
+            195,
+            198,
+            203
+          ],
+          "hairline": [
+            200,
+            203,
+            190
+          ],
+          "halo": [
+            248,
+            246,
+            239
+          ],
+          "ring": [
+            184,
+            102,
+            68
+          ],
+          "clipBeside": [
+            51,
+            70,
+            94
+          ],
+          "clipFar": [
+            53,
+            72,
+            95
+          ]
+        }
+      },
+      "ratios": {
+        "rest": {
+          "hairline : clip beside": 5.74,
+          "hairline : pill body": 1.05,
+          "pill body : clip beside": 5.49,
+          "icon : pill body": 3.41
+        },
+        "focused": {
+          "ring : halo (inner side)": 3.87,
+          "ring : clip beside (outer side)": 2.31,
+          "halo : clip beside": 8.91,
+          "halo : pill hairline": 1.52
+        }
+      },
+      "computed": {
+        "rect": {
+          "x": 575,
+          "y": 428.2,
+          "w": 44,
+          "h": 44,
+          "right": 619
+        },
+        "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "bg": "rgba(255, 255, 255, 0.72)",
+        "border": "rgb(204, 207, 190)",
+        "color": "rgb(84, 100, 93)",
+        "distanceToFrameRight": 33,
+        "distanceToFrameBottom": 33
+      }
+    },
+    {
+      "theme": "light",
+      "viewport": [
+        393,
+        852
+      ],
+      "dpr": 2,
+      "tabsToReach": 8,
+      "focusVisible": true,
+      "focusStyles": {
+        "outline": "2px solid rgb(185, 99, 64)",
+        "outlineOffset": "2px",
+        "boxShadow": "rgb(250, 248, 241) 0px 0px 0px 2px",
+        "focusVisible": true,
+        "active": true
+      },
+      "buttonRect": {
+        "x": 284,
+        "y": 403.9,
+        "w": 44,
+        "h": 44,
+        "right": 328
+      },
+      "pill": {
+        "rest": {
+          "body": [
+            194,
+            197,
+            202
+          ],
+          "hairline": [
+            202,
+            205,
+            190
+          ],
+          "clipBeside": [
+            54,
+            72,
+            95
+          ],
+          "clipFar": [
+            53,
+            71,
+            94
+          ],
+          "icon": [
+            88,
+            103,
+            96
+          ]
+        },
+        "focused": {
+          "body": [
+            194,
+            197,
+            203
+          ],
+          "hairline": [
+            202,
+            205,
+            190
+          ],
+          "halo": [
+            248,
+            246,
+            239
+          ],
+          "ring": [
+            185,
+            103,
+            69
+          ],
+          "clipBeside": [
+            53,
+            73,
+            96
+          ],
+          "clipFar": [
+            53,
+            71,
+            95
+          ]
+        }
+      },
+      "ratios": {
+        "rest": {
+          "hairline : clip beside": 5.77,
+          "hairline : pill body": 1.07,
+          "pill body : clip beside": 5.39,
+          "icon : pill body": 3.44
+        },
+        "focused": {
+          "ring : halo (inner side)": 3.82,
+          "ring : clip beside (outer side)": 2.24,
+          "halo : clip beside": 8.54,
+          "halo : pill hairline": 1.5
+        }
+      },
+      "computed": {
+        "rect": {
+          "x": 284,
+          "y": 403.9,
+          "w": 44,
+          "h": 44,
+          "right": 328
+        },
+        "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "bg": "rgba(255, 255, 255, 0.72)",
+        "border": "rgb(204, 207, 190)",
+        "color": "rgb(84, 100, 93)",
+        "distanceToFrameRight": 33,
+        "distanceToFrameBottom": 33
+      }
+    },
+    {
+      "theme": "dark",
+      "viewport": [
+        1440,
+        900
+      ],
+      "dpr": 2,
+      "tabsToReach": 18,
+      "focusVisible": true,
+      "focusStyles": {
+        "outline": "2px solid rgb(207, 122, 79)",
+        "outlineOffset": "2px",
+        "boxShadow": "rgb(21, 25, 26) 0px 0px 0px 2px",
+        "focusVisible": true,
+        "active": true
+      },
+      "buttonRect": {
+        "x": 575,
+        "y": 428.2,
+        "w": 44,
+        "h": 44,
+        "right": 619
+      },
+      "pill": {
+        "rest": {
+          "body": [
+            40,
+            45,
+            50
+          ],
+          "hairline": [
+            150,
+            151,
+            148
+          ],
+          "clipBeside": [
+            54,
+            73,
+            96
+          ],
+          "clipFar": [
+            55,
+            73,
+            95
+          ],
+          "icon": [
+            160,
+            177,
+            170
+          ]
+        },
+        "focused": {
+          "body": [
+            39,
+            45,
+            49
+          ],
+          "hairline": [
+            150,
+            151,
+            147
+          ],
+          "halo": [
+            29,
+            33,
+            34
+          ],
+          "ring": [
+            206,
+            125,
+            84
+          ],
+          "clipBeside": [
+            52,
+            71,
+            95
+          ],
+          "clipFar": [
+            55,
+            73,
+            95
+          ]
+        }
+      },
+      "ratios": {
+        "rest": {
+          "hairline : clip beside": 3.14,
+          "hairline : pill body": 4.73,
+          "pill body : clip beside": 1.51,
+          "icon : pill body": 6.19
+        },
+        "focused": {
+          "ring : halo (inner side)": 5.17,
+          "ring : clip beside (outer side)": 3.02,
+          "halo : clip beside": 1.71,
+          "halo : pill hairline": 5.53
+        }
+      },
+      "computed": {
+        "rect": {
+          "x": 575,
+          "y": 428.2,
+          "w": 44,
+          "h": 44,
+          "right": 619
+        },
+        "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "bg": "rgba(30, 36, 38, 0.85)",
+        "border": "rgba(236, 234, 224, 0.6)",
+        "color": "rgb(159, 176, 169)",
+        "distanceToFrameRight": 33,
+        "distanceToFrameBottom": 33
+      }
+    },
+    {
+      "theme": "dark",
+      "viewport": [
+        393,
+        852
+      ],
+      "dpr": 2,
+      "tabsToReach": 8,
+      "focusVisible": true,
+      "focusStyles": {
+        "outline": "2px solid rgb(207, 122, 79)",
+        "outlineOffset": "2px",
+        "boxShadow": "rgb(21, 25, 26) 0px 0px 0px 2px",
+        "focusVisible": true,
+        "active": true
+      },
+      "buttonRect": {
+        "x": 284,
+        "y": 403.9,
+        "w": 44,
+        "h": 44,
+        "right": 328
+      },
+      "pill": {
+        "rest": {
+          "body": [
+            40,
+            46,
+            49
+          ],
+          "hairline": [
+            154,
+            155,
+            151
+          ],
+          "clipBeside": [
+            54,
+            73,
+            96
+          ],
+          "clipFar": [
+            54,
+            72,
+            94
+          ],
+          "icon": [
+            159,
+            176,
+            169
+          ]
+        },
+        "focused": {
+          "body": [
+            40,
+            45,
+            49
+          ],
+          "hairline": [
+            154,
+            155,
+            151
+          ],
+          "halo": [
+            29,
+            33,
+            34
+          ],
+          "ring": [
+            206,
+            125,
+            85
+          ],
+          "clipBeside": [
+            55,
+            73,
+            96
+          ],
+          "clipFar": [
+            54,
+            72,
+            95
+          ]
+        }
+      },
+      "ratios": {
+        "rest": {
+          "hairline : clip beside": 3.3,
+          "hairline : pill body": 4.92,
+          "pill body : clip beside": 1.49,
+          "icon : pill body": 6.07
+        },
+        "focused": {
+          "ring : halo (inner side)": 5.17,
+          "ring : clip beside (outer side)": 2.93,
+          "halo : clip beside": 1.77,
+          "halo : pill hairline": 5.81
+        }
+      },
+      "computed": {
+        "rect": {
+          "x": 284,
+          "y": 403.9,
+          "w": 44,
+          "h": 44,
+          "right": 328
+        },
+        "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "bg": "rgba(30, 36, 38, 0.85)",
+        "border": "rgba(236, 234, 224, 0.6)",
+        "color": "rgb(159, 176, 169)",
+        "distanceToFrameRight": 33,
+        "distanceToFrameBottom": 33
+      }
+    }
+  ],
+  "edges": [
+    {
+      "theme": "light",
+      "viewport": [
+        1440,
+        900
+      ],
+      "windowOneEdge": "rgb(202 140 112)",
+      "neutralFrameLine": "rgb(203 206 190)",
+      "captionRule": "rgb(202 169 144)",
+      "surfaceBeside": "rgb(243 229 211)",
+      "edge : surface": 2.26,
+      "neutral line : surface": 1.29,
+      "computedEdge": {
+        "color": "rgba(185, 99, 64, 0.7)",
+        "width": "1px",
+        "radius": "8px"
+      },
+      "computedNeutral": {
+        "color": "rgb(204, 207, 190)",
+        "width": "1px",
+        "radius": "8px"
+      },
+      "computedRule": "rgba(135, 71, 45, 0.35)",
+      "arrivalState": "settled"
+    },
+    {
+      "theme": "light",
+      "viewport": [
+        393,
+        852
+      ],
+      "windowOneEdge": "rgb(202 138 109)",
+      "neutralFrameLine": "rgb(203 206 190)",
+      "captionRule": "rgb(204 172 150)",
+      "surfaceBeside": "rgb(241 226 206)",
+      "edge : surface": 2.24,
+      "neutral line : surface": 1.26,
+      "computedEdge": {
+        "color": "rgba(185, 99, 64, 0.7)",
+        "width": "1px",
+        "radius": "8px"
+      },
+      "computedNeutral": {
+        "color": "rgb(204, 207, 190)",
+        "width": "1px",
+        "radius": "8px"
+      },
+      "computedRule": "rgba(135, 71, 45, 0.35)",
+      "arrivalState": "settled"
+    },
+    {
+      "theme": "dark",
+      "viewport": [
+        1440,
+        900
+      ],
+      "windowOneEdge": "rgb(117 78 60)",
+      "neutralFrameLine": "rgb(51 59 61)",
+      "captionRule": "rgb(139 109 84)",
+      "surfaceBeside": "rgb(57 45 43)",
+      "edge : surface": 1.84,
+      "neutral line : surface": 1.16,
+      "computedEdge": {
+        "color": "rgba(207, 122, 79, 0.4)",
+        "width": "1px",
+        "radius": "8px"
+      },
+      "computedNeutral": {
+        "color": "rgb(44, 52, 54)",
+        "width": "1px",
+        "radius": "8px"
+      },
+      "computedRule": "rgba(231, 181, 147, 0.35)",
+      "arrivalState": "settled"
+    },
+    {
+      "theme": "dark",
+      "viewport": [
+        393,
+        852
+      ],
+      "windowOneEdge": "rgb(120 79 60)",
+      "neutralFrameLine": "rgb(51 58 60)",
+      "captionRule": "rgb(131 101 82)",
+      "surfaceBeside": "rgb(65 50 45)",
+      "edge : surface": 1.73,
+      "neutral line : surface": 1.05,
+      "computedEdge": {
+        "color": "rgba(207, 122, 79, 0.4)",
+        "width": "1px",
+        "radius": "8px"
+      },
+      "computedNeutral": {
+        "color": "rgb(44, 52, 54)",
+        "width": "1px",
+        "radius": "8px"
+      },
+      "computedRule": "rgba(231, 181, 147, 0.35)",
+      "arrivalState": "settled"
+    }
+  ],
+  "modes": {
+    "reducedMotion_light": {
+      "atHydration": {
+        "arrival": "settled",
+        "edge": "rgba(185, 99, 64, 0.7)",
+        "transition": "none 0s"
+      },
+      "beat": {
+        "samples": 98,
+        "states": [
+          {
+            "t": 1,
+            "state": "settled"
+          }
+        ],
+        "settlingAt": null,
+        "settledAt": 1,
+        "colours": [],
+        "first": [
+          1,
+          "settled",
+          "rgba(185, 99, 64, 0.7)"
+        ],
+        "last": [
+          1604,
+          "settled",
+          "rgba(185, 99, 64, 0.7)"
+        ]
+      },
+      "inView": {
+        "paused": true,
+        "currentTime": 0,
+        "motion": "paused",
+        "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "readyState": 4,
+        "src": "report-flow-current.dark.phone.webm"
+      },
+      "afterDeliberatePlay": {
+        "paused": false,
+        "currentTime": 1.007,
+        "motion": "playing",
+        "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "readyState": 4,
+        "src": "report-flow-current.dark.phone.webm"
+      }
+    },
+    "themeFlip_light_to_dark": {
+      "beforeFlip": {
+        "paused": true,
+        "currentTime": 0,
+        "motion": "paused",
+        "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "readyState": 4,
+        "src": "report-flow-current.dark.phone.webm",
+        "theme": "light"
+      },
+      "afterFlip": {
+        "paused": true,
+        "currentTime": 0,
+        "motion": "paused",
+        "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "readyState": 4,
+        "src": "report-flow-current.dark.phone.webm",
+        "theme": "dark"
+      },
+      "edgeBefore": "rgba(185, 99, 64, 0.7)",
+      "edgeAfter": "rgba(207, 122, 79, 0.4)",
+      "playAfter": {
+        "bg": "rgba(30, 36, 38, 0.85)",
+        "border": "rgba(236, 234, 224, 0.6)"
+      }
+    },
+    "reducedMotion_dark": {
+      "atHydration": {
+        "arrival": "settled",
+        "edge": "rgba(207, 122, 79, 0.4)",
+        "transition": "none 0s"
+      },
+      "beat": {
+        "samples": 98,
+        "states": [
+          {
+            "t": 1,
+            "state": "settled"
+          }
+        ],
+        "settlingAt": null,
+        "settledAt": 1,
+        "colours": [],
+        "first": [
+          1,
+          "settled",
+          "rgba(207, 122, 79, 0.4)"
+        ],
+        "last": [
+          1603,
+          "settled",
+          "rgba(207, 122, 79, 0.4)"
+        ]
+      },
+      "inView": {
+        "paused": true,
+        "currentTime": 0,
+        "motion": "paused",
+        "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "readyState": 4,
+        "src": "report-flow-current.dark.phone.webm"
+      },
+      "afterDeliberatePlay": {
+        "paused": false,
+        "currentTime": 1.007,
+        "motion": "playing",
+        "label": "Pause animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "readyState": 4,
+        "src": "report-flow-current.dark.phone.webm"
+      }
+    },
+    "themeFlip_dark_to_light": {
+      "beforeFlip": {
+        "paused": true,
+        "currentTime": 0,
+        "motion": "paused",
+        "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "readyState": 4,
+        "src": "report-flow-current.dark.phone.webm",
+        "theme": "dark"
+      },
+      "afterFlip": {
+        "paused": true,
+        "currentTime": 0,
+        "motion": "paused",
+        "label": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "readyState": 4,
+        "src": "report-flow-current.dark.phone.webm",
+        "theme": "light"
+      },
+      "edgeBefore": "rgba(207, 122, 79, 0.4)",
+      "edgeAfter": "rgba(185, 99, 64, 0.7)",
+      "playAfter": {
+        "bg": "rgba(255, 255, 255, 0.72)",
+        "border": "rgb(204, 207, 190)"
+      }
+    },
+    "noJavaScript_light": {
+      "js": false,
+      "arrivalAttr": "armed",
+      "edgePainted": "rgba(185, 99, 64, 0.7)",
+      "nativeControls": true,
+      "overlayButton": false,
+      "autoplayAttr": false,
+      "paused": true
+    }
+  },
+  "arrivals": {
+    "firstVisitBeforeScroll": "armed",
+    "consumedAfterTrigger": "1",
+    "afterReload": {
+      "state": "settled",
+      "navType": "reload"
+    },
+    "afterBack": {
+      "state": "settled",
+      "navType": "back_forward"
+    },
+    "hashArrival": {
+      "state": "settled",
+      "hashAfterHydration": "",
+      "hostTop": 602,
+      "hostBottom": 1099,
+      "innerHeight": 900,
+      "target": true,
+      "hashAtLoad": {
+        "hash": "#the-approach",
+        "seat": true,
+        "js": true
+      }
+    }
+  },
+  "axe": [
+    {
+      "theme": "light",
+      "viewport": [
+        1440,
+        900
+      ],
+      "version": "4.11.4",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "help": "Elements must only use permitted ARIA attributes",
+          "nodes": [
+            ".my-8"
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            ".mb-6",
+            ".text-step-2.mb-8",
+            "figure[data-proof-window=\"01\"] > .text-label.text-text-meta",
+            "figure[data-proof-window=\"01\"] > .border-accent-ink\\/35.pt-2\\.5",
+            "figure[data-proof-window=\"02\"] > .text-label.text-text-meta",
+            "figure[data-proof-window=\"02\"] > .border-accent-ink\\/35.pt-2\\.5"
+          ]
+        },
+        {
+          "id": "video-caption",
+          "impact": "critical",
+          "help": "<video> elements must have captions",
+          "nodes": [
+            "video"
+          ]
+        }
+      ],
+      "passes": 17
+    },
+    {
+      "theme": "light",
+      "viewport": [
+        393,
+        852
+      ],
+      "version": "4.11.4",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "help": "Elements must only use permitted ARIA attributes",
+          "nodes": [
+            ".my-8"
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            ".mb-6",
+            ".text-step-2.mb-8",
+            "figure[data-proof-window=\"01\"] > .text-label.text-text-meta",
+            "figure[data-proof-window=\"01\"] > .border-accent-ink\\/35.pt-2\\.5",
+            "figure[data-proof-window=\"02\"] > .text-label.text-text-meta",
+            "figure[data-proof-window=\"02\"] > .border-accent-ink\\/35.pt-2\\.5"
+          ]
+        },
+        {
+          "id": "video-caption",
+          "impact": "critical",
+          "help": "<video> elements must have captions",
+          "nodes": [
+            "video"
+          ]
+        }
+      ],
+      "passes": 17
+    },
+    {
+      "theme": "dark",
+      "viewport": [
+        1440,
+        900
+      ],
+      "version": "4.11.4",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "help": "Elements must only use permitted ARIA attributes",
+          "nodes": [
+            ".my-8"
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            ".mb-6",
+            ".text-step-2.mb-8",
+            "figure[data-proof-window=\"01\"] > .text-label.text-text-meta",
+            "figure[data-proof-window=\"01\"] > .border-accent-ink\\/35.pt-2\\.5",
+            "figure[data-proof-window=\"02\"] > .text-label.text-text-meta",
+            "figure[data-proof-window=\"02\"] > .border-accent-ink\\/35.pt-2\\.5"
+          ]
+        },
+        {
+          "id": "video-caption",
+          "impact": "critical",
+          "help": "<video> elements must have captions",
+          "nodes": [
+            "video"
+          ]
+        }
+      ],
+      "passes": 17
+    },
+    {
+      "theme": "dark",
+      "viewport": [
+        393,
+        852
+      ],
+      "version": "4.11.4",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "help": "Elements must only use permitted ARIA attributes",
+          "nodes": [
+            ".my-8"
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            ".mb-6",
+            ".text-step-2.mb-8",
+            "figure[data-proof-window=\"01\"] > .text-label.text-text-meta",
+            "figure[data-proof-window=\"01\"] > .border-accent-ink\\/35.pt-2\\.5",
+            "figure[data-proof-window=\"02\"] > .text-label.text-text-meta",
+            "figure[data-proof-window=\"02\"] > .border-accent-ink\\/35.pt-2\\.5"
+          ]
+        },
+        {
+          "id": "video-caption",
+          "impact": "critical",
+          "help": "<video> elements must have captions",
+          "nodes": [
+            "video"
+          ]
+        }
+      ],
+      "passes": 17
+    }
+  ],
+  "others": [
+    {
+      "slug": "dashboard",
+      "present": true,
+      "listTag": "UL",
+      "proofRow": false,
+      "breakout": false,
+      "gridTemplateColumns": "301.906px 301.922px",
+      "items": 2,
+      "labelsAboveMedia": false,
+      "motion": null
+    },
+    {
+      "slug": "ghost-code",
+      "present": true,
+      "listTag": "UL",
+      "proofRow": false,
+      "breakout": false,
+      "gridTemplateColumns": "651.828px",
+      "items": 1,
+      "labelsAboveMedia": false,
+      "motion": "paused"
+    },
+    {
+      "slug": "claude-corp",
+      "present": true,
+      "listTag": "UL",
+      "proofRow": false,
+      "breakout": false,
+      "gridTemplateColumns": "651.828px",
+      "items": 1,
+      "labelsAboveMedia": false,
+      "motion": null
+    },
+    {
+      "slug": "tokyo-through-time",
+      "title": "Tokyo Through Time: Skyler Halisky",
+      "videos": 2,
+      "proofRow": false
+    }
+  ]
+}

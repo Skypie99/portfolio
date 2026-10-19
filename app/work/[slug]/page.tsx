@@ -221,22 +221,58 @@ function FlagstoneApproachDiagram() {
   );
 }
 
+/** Flagstone Version A (owner decision 2026-10-18) — the three proof
+ *  subjects, in shot order, for the numbered mono labels above each window.
+ *  Presentation copy, not content data: the captions stay in
+ *  deliverables.json. The separator is the site's middot, never an em dash
+ *  (recruiter-copy-truth bans em dashes on every rendered route). */
+const FLAGSTONE_PROOF_SUBJECTS: readonly string[] = [
+  'Reporting flow, in motion.',
+  'Report a barrier.',
+  'Community review.',
+];
+
+/** Verified git fact for the three "current" Flagstone captures: they
+ *  entered the repository in a531953 (2026-09-07), outside the capture
+ *  factory, so the showcase manifest holds no capture date for them. The
+ *  provenance line states the repository date and says the capture date is
+ *  not recorded; it never invents one. */
+const FLAGSTONE_PROOF_PROVENANCE = { addedDate: '2026-09-07', commit: 'a531953' } as const;
+
 /** Ties D5/D6 to their sections; every section not named below renders
  *  through the ordinary path, chunk-for-chunk equivalent to the single-call
  *  renderer (dropCapEligible keeps the drop cap on the ARTICLE's true
- *  opening paragraph only — see renderMarkdownProse's option doc). */
-function CaseProof({ d }: { d: Deliverable }) {
+ *  opening paragraph only — see renderMarkdownProse's option doc).
+ *
+ *  Exported for app/__tests__/flagstone-proof-row.test.tsx only (the page
+ *  itself is a heavy async server component; the proof block renders alone). */
+export function CaseProof({ d }: { d: Deliverable }) {
   if (!d.shots?.some((shot) => shot.src || shot.video)) return null;
   // W4-04.N3 — a SOLITARY STATIC proof capture (exactly one shot, no video)
   // is the case's only evidence. At lg it spans the full article column
   // (~652px, the --measure-wide band) instead of one ~300px grid track
   // beside an empty partner track, so the 1600x1000 source rewards normal-
   // scale inspection. Gallery exceptions keep their existing presentation:
-  // flagstone's multi-image gallery, dashboard's pair, ghost-code's portrait
-  // video (still-first) each retain the two-column / portrait treatments.
+  // dashboard's pair and ghost-code's portrait video (still-first) retain
+  // the two-column / portrait treatments; Flagstone has its own row below.
   const solitaryStatic = d.shots.length === 1 && !d.shots.some((shot) => Boolean(shot.video));
+  /* Flagstone Version A (owner decision 2026-10-18) — three equal thin-frame
+     windows (17:20, 1px line, 8px radius) in ONE row at lg+: 3 × 340px with
+     24px gaps = 1068px, numbered mono labels above, a thin warm caption rule
+     below, one provenance line. Below lg the three stack in reading order
+     (label → window → caption), capped at 340px wide. The row escapes the
+     60ch article measure through the bounded `.proof-breakout` width in
+     globals.css (a container-query width, never a negative margin or a vw
+     unit), left-aligned to the article's own edge. Window 01 keeps the VE04
+     arrival edge and lifecycle exactly (ProofArrival + .proof-arrival-edge);
+     its clip is click-to-play (`autoplay: false` in deliverables.json). */
+  const isFlagstoneRow = d.id === 'flagstone';
+  const ListTag: 'ol' | 'ul' = isFlagstoneRow ? 'ol' : 'ul';
   return (
-    <div className="my-8 lg:my-12" aria-label={`${d.title} product evidence`}>
+    <div
+      className={cn('my-8 lg:my-12', isFlagstoneRow && 'proof-breakout')}
+      aria-label={`${d.title} product evidence`}
+    >
       <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-6">
         Inside the build
       </p>
@@ -255,7 +291,15 @@ function CaseProof({ d }: { d: Deliverable }) {
         {d.shots.some((shot) => Boolean(shot.video)) ? 'See it in motion.' : 'A closer look.'}
       </h3>
       {solitaryStatic && <hr aria-hidden="true" className="hidden lg:block w-full border-0 border-t border-border-decorative lg:mb-6" />}
-      <ul className={cn('grid grid-cols-1 lg:grid-cols-2 gap-12', d.id === 'ghost-code' && 'lg:grid-cols-1', solitaryStatic && 'lg:grid-cols-1')}>
+      <ListTag
+        className={cn(
+          isFlagstoneRow
+            ? 'proof-row grid grid-cols-[minmax(0,340px)] gap-x-6 gap-y-10 lg:grid-cols-[repeat(3,minmax(0,340px))]'
+            : 'grid grid-cols-1 lg:grid-cols-2 gap-12',
+          d.id === 'ghost-code' && 'lg:grid-cols-1',
+          solitaryStatic && 'lg:grid-cols-1',
+        )}
+      >
         {d.shots.map((shot, i) => {
           /* W4-06 VE04/M1 — the one authorized instance: the Flagstone first
              proof. Its generic reveal entrance is disabled (skip → settled at
@@ -263,10 +307,21 @@ function CaseProof({ d }: { d: Deliverable }) {
              arrival beat (ProofArrival + .proof-arrival-edge). Every other
              shot keeps the shared reveal verbatim. */
           const isFirstProofArrival = d.id === 'flagstone' && i === 0;
+          const windowNumber = String(i + 1).padStart(2, '0');
+          const subject = isFlagstoneRow ? FLAGSTONE_PROOF_SUBJECTS[i] : undefined;
           return (
             <Reveal key={shot.alt} index={i} as="li" skip={isFirstProofArrival}>
               <ProofArrival enabled={isFirstProofArrival}>
-                <figure className="m-0 flex flex-col gap-3">
+                <figure
+                  className="m-0 flex flex-col gap-3"
+                  data-proof-window={isFlagstoneRow ? windowNumber : undefined}
+                >
+                  {isFlagstoneRow && (
+                    <p className="font-mono text-label tracking-label uppercase text-text-meta">
+                      {windowNumber}
+                      {subject && <> · {subject}</>}
+                    </p>
+                  )}
                   <ShotProductReveal
                     slug={d.id}
                     title={d.title}
@@ -283,14 +338,19 @@ function CaseProof({ d }: { d: Deliverable }) {
                       precropped: d.id === 'flagstone' && Boolean(shot.src?.includes('-current.phone')),
                     }}
                     className={cn(
-                      'rounded-lg border border-border-decorative',
-                      d.id === 'flagstone' && (shot.src?.includes('-current.phone') || Boolean(shot.video)) && 'aspect-[7/8]',
+                      'border border-border-decorative',
+                      isFlagstoneRow ? 'rounded-md aspect-[17/20]' : 'rounded-lg',
                       d.id === 'ghost-code' && shot.video && 'aspect-[390/844] w-full max-w-[390px] mx-auto',
                       isFirstProofArrival && 'proof-arrival-edge',
                     )}
                   />
                   {shot.caption && (
-                    <figcaption className="font-sans text-body-sm text-charcoal text-pretty">
+                    <figcaption
+                      className={cn(
+                        'font-sans text-body-sm text-charcoal text-pretty',
+                        isFlagstoneRow && 'border-t border-accent-ink/35 pt-2.5',
+                      )}
+                    >
                       {smartPunctuation(shot.caption)}
                       {shot.capturedDate && (
                         <span className="mt-1 block font-mono text-meta tracking-label uppercase text-text-meta">
@@ -305,7 +365,14 @@ function CaseProof({ d }: { d: Deliverable }) {
             </Reveal>
           );
         })}
-      </ul>
+      </ListTag>
+      {isFlagstoneRow && (
+        <p className="mt-2 font-mono text-meta tracking-label uppercase text-text-meta">
+          Current Flagstone build · captures in this repository since{' '}
+          <time dateTime={FLAGSTONE_PROOF_PROVENANCE.addedDate}>{FLAGSTONE_PROOF_PROVENANCE.addedDate}</time>
+          {' '}(<span className="normal-case">{FLAGSTONE_PROOF_PROVENANCE.commit}</span>) · capture dates not recorded
+        </p>
+      )}
     </div>
   );
 }
@@ -1003,7 +1070,10 @@ export default async function WorkDetailPage({
         <section className="px-gutter py-24 lg:py-32 world-surface-alt border-t border-border-decorative relative overflow-hidden">
           {/* Golden-hour scroll-depth behind the case-study prose */}
           <ParallaxWash depth="far" />
-          <div className="relative z-10 max-w-content mx-auto">
+          {/* Flagstone Version A: the content column is the inline-size
+              container the proof row's bounded breakout measures against
+              (`.proof-breakout-root` / `.proof-breakout`, globals.css). */}
+          <div className={cn('relative z-10 max-w-content mx-auto', d.id === 'flagstone' && 'proof-breakout-root')}>
             {/* Each block self-reveals in reading order (carve on H2s, depth on
                 prose) — see renderMarkdown — so the body has internal cinematic
                 choreography instead of one undifferentiated fade. */}
