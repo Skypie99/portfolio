@@ -152,6 +152,7 @@ describe('Flagstone proof row — DOM', () => {
     );
     for (const figure of figures) {
       expect(figure.querySelector('figcaption')!.className).toContain('border-t');
+      expect(figure.children[0].className, 'label legible in dark (≥ 4.5:1)').toContain('dark:text-ink');
     }
   });
 
@@ -193,10 +194,12 @@ describe('Flagstone proof row — DOM', () => {
     const provenance = container.querySelector('ol.proof-row + p');
     expect(provenance, 'one provenance line follows the list').not.toBeNull();
     const t = text(provenance);
-    expect(t).toContain('captures in this repository since 2026-09-07 (a531953)');
+    expect(t).toContain('captures in this repository since 2026-09-01 (1cfb4b1)');
     expect(t).toMatch(/capture dates not recorded/i);
     expect(t).not.toMatch(/captured\s+\d{4}/i);
-    expect(provenance!.querySelector('time')).toHaveAttribute('dateTime', '2026-09-07');
+    expect(provenance!.querySelector('time')).toHaveAttribute('dateTime', '2026-09-01');
+    // dark theme: ink-meta measured 3.2–4.1:1 on the case-study world surface; ink clears 4.5:1
+    expect(provenance!.className).toContain('dark:text-ink');
     // The three shots still carry no capturedDate, so the figcaption's
     // per-shot provenance span renders nothing (nothing is invented).
     expect(container.querySelector('figcaption time')).toBeNull();
@@ -343,6 +346,9 @@ describe('Flagstone proof row — CSS scope (globals.css as text)', () => {
     expect(block).toContain('.proof-row [data-themed-motion] > button {');
     expect(block).toContain('html.dark .proof-row [data-themed-motion] > button {');
     expect(block).toContain('.proof-row [data-themed-motion] > button:focus-visible {');
+    expect(block).toContain(
+      'html.dark .proof-row [data-themed-motion] > button:focus-visible {\n  outline-color: rgb(var(--rgb-accent-ink));\n}',
+    );
   });
 
   it('animates nothing and redefines no focus token', () => {
