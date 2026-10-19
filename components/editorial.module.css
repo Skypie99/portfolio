@@ -1,0 +1,218 @@
+/*
+ * editorial.module.css — the "horizon" motif shared by /about and /contact
+ * (Fable about + contact creative implementation, 2026-10-18).
+ *
+ * The favicon and the runway chip draw a terracotta sun over two clay
+ * horizon lines. These two pages borrow that mark at reading scale: a round
+ * portrait (the sun) settles over a hairline that draws itself left to right
+ * (the horizon), inside a lit paper plate. The same three gestures recur on
+ * every section header as a drawn rule, so the pages read as one piece.
+ *
+ * WHY A ROUTE-SCOPED MODULE. app/globals.css and tailwind.config.ts are
+ * protected for this assignment, and keyframes cannot be authored through
+ * Tailwind utilities without touching the config. The brief permits
+ * route-specific CSS modules; this file is consumed only by the three
+ * editorial components (EditorialPlate, HorizonRule, IdentityLines) that the
+ * About and Contact routes mount. Nothing here is reachable from any other
+ * route.
+ *
+ * CONTRACT — the same floors globals.css keeps (MOTION_SYSTEM.md §6, §7):
+ *  - every animated property is transform or opacity (compositor-only);
+ *  - every duration and delay is a ramp token (--dur-*, --stagger-*): no literals;
+ *  - the intro's quint curve is never used: gh-settle, gh-glide, entrance only;
+ *  - REST = VISIBLE. The mount choreography lives entirely inside
+ *    `prefers-reduced-motion: no-preference`, so reduced motion, print and a
+ *    browser without animations render the resting composition at once. The
+ *    ONLY scroll-armed state (the section horizon's scaleX(0)) sits under
+ *    `html.js`, with the same reveal-failsafe / reveal-seat floors the Reveal
+ *    primitive carries, so no-JS, dead-JS and hash arrivals rest drawn.
+ *  - no loops: every animation runs once, to rest.
+ */
+
+/* ── The plate: a lit paper panel ────────────────────────────────────── */
+.plate {
+  /* `position` is deliberately NOT set here: the module sheet is bundled after
+     the Tailwind utilities, so a `position` declared here would outrank the
+     caller's `relative` / responsive utilities. EditorialPlate adds `relative`. */
+  isolation: isolate;
+  overflow: clip;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgb(var(--rgb-line));
+  /* surface-mid: cream in light (reads as paper on the translucent band),
+     a raised panel in dark (UI_SYSTEM.md surface ladder). */
+  background-color: rgb(var(--rgb-surface-mid));
+}
+:global(html.dark) .plate {
+  /* light hairline over heavy shadow for elevation on dark (UI_SYSTEM.md). */
+  border-color: rgb(var(--rgb-ink) / 0.12);
+}
+
+/* The golden-hour wash: a sun bloom top-right, warm ground light bottom-left,
+   a lens-light at the top edge. Decorative, behind the content, token-only so
+   it flips with the theme. Kept clear of the text zone (left / lower-left). */
+.wash {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(58% 54% at 100% 0%, rgb(var(--rgb-gold) / 0.28) 0%, rgb(var(--rgb-gold) / 0) 62%),
+    radial-gradient(72% 48% at 6% 110%, rgb(var(--rgb-accent-soft) / 0.14) 0%, rgb(var(--rgb-accent-soft) / 0) 64%),
+    linear-gradient(180deg, rgb(var(--rgb-surface) / 0.6) 0%, rgb(var(--rgb-surface) / 0) 38%);
+}
+:global(html.dark) .wash {
+  background:
+    radial-gradient(58% 54% at 100% 0%, rgb(var(--rgb-gold) / 0.16) 0%, rgb(var(--rgb-gold) / 0) 62%),
+    radial-gradient(72% 48% at 6% 110%, rgb(var(--rgb-accent) / 0.10) 0%, rgb(var(--rgb-accent) / 0) 64%),
+    linear-gradient(180deg, rgb(var(--rgb-ink) / 0.05) 0%, rgb(var(--rgb-ink) / 0) 38%);
+}
+
+/* Interaction feedback: the plate warms a little when the visitor approaches
+   its action (pointer over it, or keyboard focus inside it). Opacity only. */
+.glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(60% 62% at 50% 104%, rgb(var(--rgb-gold) / 0.22) 0%, rgb(var(--rgb-gold) / 0) 70%);
+  transition: opacity var(--dur-slow) var(--ease-gh-glide);
+}
+.plate:hover .glow,
+.plate:focus-within .glow {
+  opacity: 1;
+}
+
+/* ── The portrait: the sun ───────────────────────────────────────────── */
+.portrait {
+  border-radius: var(--radius-pill);
+  object-fit: cover;
+  /* the homepage avatar's terracotta ring, plus a soft warm lift */
+  box-shadow:
+    0 0 0 1px rgb(var(--rgb-accent) / 0.28),
+    0 10px 28px -14px rgb(var(--rgb-accent-ink) / 0.35);
+}
+:global(html.dark) .portrait {
+  box-shadow:
+    0 0 0 1px rgb(var(--rgb-accent) / 0.4),
+    0 12px 32px -14px rgb(0 0 0 / 0.6);
+}
+
+/* ── The horizon: a hairline that draws itself ───────────────────────── */
+.horizon {
+  transform-origin: 0 50%;
+}
+
+/* ── Mount choreography (title bands only) ───────────────────────────── */
+/* Sequenced against the route h1's own settle (.settle-heading, --dur-settle):
+   the plate lands one scene-beat after the title, the portrait resolves on
+   the next beat, the lines rise in reading order, and the horizon draws last
+   and longest. Everything is at rest by ~1.6 s and never runs again.
+   `backwards`, not `both`: each keyframe set only declares `from`, so its end
+   IS the base style. Filling forwards would keep the element on a compositor
+   layer for life (grayscale-antialiased text on the plate); releasing it
+   returns the text to the same rasterisation as the rest of the page. */
+@media (prefers-reduced-motion: no-preference) {
+  .plateMount {
+    animation: plate-settle var(--dur-reveal) var(--ease-gh-settle) backwards;
+    animation-delay: var(--stagger-scene);
+  }
+  .portraitMount {
+    animation: portrait-settle var(--dur-reveal) var(--ease-entrance) backwards;
+    animation-delay: calc(2 * var(--stagger-scene));
+  }
+  .horizonMount {
+    animation: horizon-draw var(--dur-scene) var(--ease-gh-glide) backwards;
+    animation-delay: calc(3 * var(--stagger-scene));
+  }
+  .riseMount {
+    --rise-from: calc(3 * var(--stagger-scene));
+  }
+  .riseLate {
+    --rise-from: calc(3 * var(--stagger-scene) + 3 * var(--stagger-step));
+  }
+  .riseMount > * {
+    animation: rise var(--dur-slow) var(--ease-gh-settle) backwards;
+    animation-delay: var(--rise-from);
+  }
+  .riseMount > :nth-child(2) {
+    animation-delay: calc(var(--rise-from) + var(--stagger-step));
+  }
+  .riseMount > :nth-child(3) {
+    animation-delay: calc(var(--rise-from) + 2 * var(--stagger-step));
+  }
+  .riseMount > :nth-child(n + 4) {
+    animation-delay: calc(var(--rise-from) + 3 * var(--stagger-step));
+  }
+
+  /* Section horizons draw when their Reveal header arrives. The armed state
+     exists only under html.js (REST = VISIBLE for everyone else). */
+  :global(html.js) .horizonReveal {
+    transform: scaleX(0);
+    transition: transform var(--dur-scene) var(--ease-gh-glide);
+    transition-delay: var(--stagger-scene);
+  }
+  :global(html.js) :global(.reveal-shown) .horizonReveal {
+    transform: scaleX(1);
+  }
+}
+
+/* Failure floors — the same ones .reveal carries in globals.css. */
+:global(html.reveal-failsafe) .horizonReveal,
+:global(html.reveal-seat) .horizonReveal {
+  transform: scaleX(1) !important;
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plateMount,
+  .portraitMount,
+  .horizonMount,
+  .riseMount > * {
+    animation: none !important;
+  }
+  .horizonReveal {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+@media print {
+  .plateMount,
+  .portraitMount,
+  .horizonMount,
+  .riseMount > * {
+    animation: none !important;
+  }
+  .horizonReveal {
+    transform: none !important;
+  }
+  .wash,
+  .glow {
+    display: none;
+  }
+}
+
+@keyframes plate-settle {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+  }
+}
+@keyframes portrait-settle {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+@keyframes horizon-draw {
+  from {
+    transform: scaleX(0);
+  }
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
