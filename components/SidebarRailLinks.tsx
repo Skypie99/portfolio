@@ -57,8 +57,14 @@ export function SidebarWriteCta() {
       aria-current={onRoute ? 'page' : undefined}
       // On /contact/ the pinned CTA self-links (and echoes the H1); withdraw its
       // lift/shadow invitation while keeping it a real, operable link. Geometry
-      // is unchanged — only the hover response is stilled.
-      className={onRoute ? 'hover:translate-y-0 hover:shadow-none' : undefined}
+      // is unchanged — only the hover response is stilled. The override rides
+      // Button's own hover gate (`[@media(hover:hover)]`, 2026-10-19) so
+      // tailwind-merge collapses it against the lift it withdraws.
+      className={
+        onRoute
+          ? '[@media(hover:hover)]:hover:translate-y-0 [@media(hover:hover)]:hover:shadow-none'
+          : undefined
+      }
     >
       Write to me.
     </Button>

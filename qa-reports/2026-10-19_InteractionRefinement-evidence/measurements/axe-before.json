@@ -1,0 +1,147 @@
+{
+  "label": "before",
+  "runs": [
+    {
+      "profile": "393x852",
+      "theme": "light",
+      "surface": "/accessibility/",
+      "violations": [],
+      "incomplete": 1,
+      "passes": 38
+    },
+    {
+      "profile": "393x852",
+      "theme": "light",
+      "surface": "/ (flagship + work rows)",
+      "violations": [],
+      "incomplete": 1,
+      "passes": 41
+    },
+    {
+      "profile": "393x852",
+      "theme": "light",
+      "surface": "/ (primary menu open)",
+      "violations": [],
+      "incomplete": 1,
+      "passes": 43
+    },
+    {
+      "profile": "393x852",
+      "theme": "dark",
+      "surface": "/accessibility/",
+      "violations": [],
+      "incomplete": 1,
+      "passes": 38
+    },
+    {
+      "profile": "393x852",
+      "theme": "dark",
+      "surface": "/ (flagship + work rows)",
+      "violations": [],
+      "incomplete": 1,
+      "passes": 41
+    },
+    {
+      "profile": "393x852",
+      "theme": "dark",
+      "surface": "/ (primary menu open)",
+      "violations": [],
+      "incomplete": 1,
+      "passes": 43
+    },
+    {
+      "profile": "1440x900",
+      "theme": "light",
+      "surface": "/accessibility/",
+      "violations": [],
+      "incomplete": 1,
+      "passes": 38
+    },
+    {
+      "profile": "1440x900",
+      "theme": "light",
+      "surface": "/ (flagship + work rows)",
+      "violations": [],
+      "incomplete": 1,
+      "passes": 41
+    },
+    {
+      "profile": "1440x900",
+      "theme": "dark",
+      "surface": "/accessibility/",
+      "violations": [],
+      "incomplete": 1,
+      "passes": 38
+    },
+    {
+      "profile": "1440x900",
+      "theme": "dark",
+      "surface": "/ (flagship + work rows)",
+      "violations": [],
+      "incomplete": 1,
+      "passes": 41
+    }
+  ],
+  "pressContrast": [
+    {
+      "theme": "light",
+      "pressed hairline (accent) vs canvas": "4.02",
+      "pressed hairline (accent) vs 10% tint": "3.57",
+      "resting hairline (line-strong) vs canvas": "2.96",
+      "label ink vs 10% tint (pressed fill)": "11.55",
+      "label ink vs canvas (rest)": "13.00",
+      "ember dot (accent-hover) vs 10% tint": "4.28",
+      "terracotta dot vs canvas (rest)": "4.02",
+      "tint": [
+        244,
+        233,
+        223
+      ]
+    },
+    {
+      "theme": "dark",
+      "pressed hairline (accent) vs canvas": "5.52",
+      "pressed hairline (accent) vs 10% tint": "4.85",
+      "resting hairline (line-strong) vs canvas": "2.31",
+      "label ink vs 10% tint (pressed fill)": "12.89",
+      "label ink vs canvas (rest)": "14.68",
+      "ember dot (accent-hover) vs 10% tint": "5.75",
+      "terracotta dot vs canvas (rest)": "5.52",
+      "tint": [
+        40,
+        35,
+        31
+      ]
+    },
+    {
+      "theme": "light",
+      "pressed hairline (accent) vs canvas": "4.02",
+      "pressed hairline (accent) vs 10% tint": "3.57",
+      "resting hairline (line-strong) vs canvas": "2.96",
+      "label ink vs 10% tint (pressed fill)": "11.55",
+      "label ink vs canvas (rest)": "13.00",
+      "ember dot (accent-hover) vs 10% tint": "4.28",
+      "terracotta dot vs canvas (rest)": "4.02",
+      "tint": [
+        244,
+        233,
+        223
+      ]
+    },
+    {
+      "theme": "dark",
+      "pressed hairline (accent) vs canvas": "5.52",
+      "pressed hairline (accent) vs 10% tint": "4.85",
+      "resting hairline (line-strong) vs canvas": "2.31",
+      "label ink vs 10% tint (pressed fill)": "12.89",
+      "label ink vs canvas (rest)": "14.68",
+      "ember dot (accent-hover) vs 10% tint": "5.75",
+      "terracotta dot vs canvas (rest)": "5.52",
+      "tint": [
+        40,
+        35,
+        31
+      ]
+    }
+  ]
+}
