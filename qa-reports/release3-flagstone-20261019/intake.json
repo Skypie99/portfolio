@@ -1,0 +1,15 @@
+{
+  "opus": {
+    "source": "~/Portfolio-codex/flagstone-version-a-a11y-fix-20261019",
+    "saved": "~/SkyPi_Portfolio_Execution_Review/2026-10-19_flagstone-version-a-correction-r1/diff/correction-as-applied.diff",
+    "sha256": "1fee357033de816d9ad8338302facecef64dd3f5a02b2a587927443689d261bf",
+    "matches_worktree": true
+  },
+  "table": {
+    "source": "~/Portfolio-codex/syn-t-016-flagstone-table-20261018",
+    "saved": "~/SkyPi_Portfolio_Execution_Review/2026-10-18_skypi-syn-t-016-flagstone-table-r1/SYN-T-016_candidate.patch",
+    "sha256": "2213d3c360263a5cd88bcca84c8e88624081512857e7200a4a644d29f4a101fd",
+    "matches_worktree": true
+  },
+  "base": "78169e94c9f2b9810d3c9cdb18c54b0cacb7e297"
+}

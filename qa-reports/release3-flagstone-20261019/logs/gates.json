@@ -1,0 +1,37 @@
+[
+  {
+    "gate": "build",
+    "command": "npm run build",
+    "exit_code": 0,
+    "seconds": 25.0,
+    "log": "build.log"
+  },
+  {
+    "gate": "lint",
+    "command": "npm run lint",
+    "exit_code": 0,
+    "seconds": 0.8,
+    "log": "lint.log"
+  },
+  {
+    "gate": "typecheck",
+    "command": "npm run typecheck",
+    "exit_code": 0,
+    "seconds": 5.2,
+    "log": "typecheck.log"
+  },
+  {
+    "gate": "test",
+    "command": "npm test -- --maxWorkers=2 --minWorkers=1",
+    "exit_code": 0,
+    "seconds": 29.6,
+    "log": "test.log"
+  },
+  {
+    "gate": "qa-index",
+    "command": "npm run qa:index:check",
+    "exit_code": 0,
+    "seconds": 0.4,
+    "log": "qa-index.log"
+  }
+]
