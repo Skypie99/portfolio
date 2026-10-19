@@ -1527,14 +1527,16 @@ html.dark.reveal-failsafe [data-proof-arrival] .proof-arrival-edge {
    ~1.5:1 against this dark clip (study RC2-VE04-COMP-01 §9: carried by its
    icon alone), so dark gets an ink / 0.6 hairline and a slightly denser
    body; light keeps the shipped pill, which already reads ~5.8:1 against
-   the clip. FOCUS: the site ring (2px accent at a 2px offset; the global
+   the clip. FOCUS: the site ring's geometry (2px at a 2px offset; the global
    tokens are not touched) gains a canvas-coloured halo filling the offset
-   gap, so the indicator is two-tone and keeps ≥ 3:1 on at least one side
-   whatever poster frame lies beneath it (token arithmetic: light ring vs
-   halo 3.98:1, halo vs clip ≥ 9:1). Dark draws the ring in accent-ink: the
-   accent ring read only ~2.9:1 against this clip's navy frames and the dark
-   halo cannot help there (independent review 2026-10-18); accent-ink clears
-   3:1 against the clip and ≈ 9.6:1 against the halo. */
+   gap, so the indicator is two-tone. A two-tone ring keeps ≥ 3:1 on one
+   side over ANY frame only when ring:halo ≥ 9:1 (the better side is then
+   ≥ √pair; WCAG C40). The accent ring (4.0:1 to the light halo) and the
+   accent-ink ring (9.6:1 to the dark halo, 2.91:1 measured on moving
+   frames) left short sub-3:1 arcs over the playing clip (independent
+   review 2026-10-18; correction 2026-10-19). Release 3 (2026-10-19) draws
+   this one ring in ink in both themes: ring:halo 13.0:1 light, 14.7:1
+   dark, so ≥ 3.61:1 / ≥ 3.83:1 over every frame. Global tokens untouched. */
 .proof-row [data-themed-motion] > button {
   right: calc(var(--proof-mat-inset) + 0.75rem);
   bottom: calc(var(--proof-mat-inset) + 0.75rem);
@@ -1544,10 +1546,8 @@ html.dark .proof-row [data-themed-motion] > button {
   background-color: rgb(var(--rgb-surface) / 0.85);
 }
 .proof-row [data-themed-motion] > button:focus-visible {
+  outline-color: rgb(var(--rgb-ink));
   box-shadow: 0 0 0 var(--focus-ring-offset, 2px) rgb(var(--rgb-canvas));
-}
-html.dark .proof-row [data-themed-motion] > button:focus-visible {
-  outline-color: rgb(var(--rgb-accent-ink));
 }
 
 /* (4) Label alignment in the fluid band (1024–~1207px viewports). Below a

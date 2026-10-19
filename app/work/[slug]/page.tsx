@@ -274,7 +274,17 @@ export function CaseProof({ d }: { d: Deliverable }) {
       className={cn('my-8 lg:my-12', isFlagstoneRow && 'proof-breakout')}
       aria-label={`${d.title} product evidence`}
     >
-      <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-6">
+      {/* Release 3 contrast (2026-10-19), Flagstone's row only. Rendered
+          worst cases over the case-study world: light ink-meta labels and
+          provenance 4.47:1, dark ink-muted caption 3.98:1, dark accent-ink
+          kicker 4.28:1. Light labels/provenance take ink-muted (≈5.7:1);
+          dark caption and kicker take ink (≈6.1–6.5:1). */}
+      <p
+        className={cn(
+          'font-mono text-label tracking-label uppercase text-accent-ink mb-6',
+          isFlagstoneRow && 'dark:text-ink',
+        )}
+      >
         Inside the build
       </p>
       {/* W4-04.VE03 — the solitary proof as one quiet chapter: the label,
@@ -318,7 +328,7 @@ export function CaseProof({ d }: { d: Deliverable }) {
                   data-proof-window={isFlagstoneRow ? windowNumber : undefined}
                 >
                   {isFlagstoneRow && (
-                    <p className="font-mono text-label tracking-label uppercase text-text-meta dark:text-ink">
+                    <p className="font-mono text-label tracking-label uppercase text-ink-muted dark:text-ink">
                       {windowNumber}
                       {subject && <> · {subject}</>}
                     </p>
@@ -349,7 +359,7 @@ export function CaseProof({ d }: { d: Deliverable }) {
                     <figcaption
                       className={cn(
                         'font-sans text-body-sm text-charcoal text-pretty',
-                        isFlagstoneRow && 'border-t border-accent-ink/35 pt-2.5',
+                        isFlagstoneRow && 'border-t border-accent-ink/35 pt-2.5 dark:text-ink',
                       )}
                     >
                       {smartPunctuation(shot.caption)}
@@ -368,7 +378,7 @@ export function CaseProof({ d }: { d: Deliverable }) {
         })}
       </ListTag>
       {isFlagstoneRow && (
-        <p className="mt-2 font-mono text-meta tracking-label uppercase text-text-meta dark:text-ink">
+        <p className="mt-2 font-mono text-meta tracking-label uppercase text-ink-muted dark:text-ink">
           Current Flagstone build · captures in this repository since{' '}
           <time dateTime={FLAGSTONE_PROOF_PROVENANCE.addedDate}>{FLAGSTONE_PROOF_PROVENANCE.addedDate}</time>
           {' '}(<span className="normal-case">{FLAGSTONE_PROOF_PROVENANCE.commit}</span>) · capture dates not recorded
