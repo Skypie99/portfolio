@@ -148,8 +148,20 @@ export function HamburgerNav() {
           'bg-canvas/90 backdrop-blur-sm',
           'border border-border-decorative',
           'rounded-pill',
-          'text-ink hover:text-accent-primary',
-          'transition-colors duration-fast ease-out',
+          // Signature-interaction refinement (2026-10-19) — the shared press
+          // language (full rationale in Button.tsx). Hover is gated to fine
+          // pointers so a tap never leaves the glyph sitting terracotta; the
+          // press answers with the terracotta hairline + glyph and a 10% tint
+          // laid OVER the frosted canvas/90 fill (an inset spread shadow, so the
+          // backing that lets this control sit on the film is never traded
+          // away), on the half-fast rung; release settles on duration-fast.
+          // Native tap highlight retired: the designed press replaces it.
+          'text-ink [@media(hover:hover)]:hover:text-accent-primary',
+          '[-webkit-tap-highlight-color:transparent]',
+          'transition-[color,background-color,border-color,box-shadow] duration-fast ease-out',
+          'active:!text-accent-primary active:border-accent-primary',
+          'active:shadow-[inset_0_0_0_1.5rem_rgb(var(--rgb-accent)/0.1)]',
+          'active:duration-[calc(var(--dur-fast)/2)]',
           // Sidebar handles desktop navigation; hamburger is mobile-only.
           'md:hidden',
           // IN-3: while the dialog is open this trigger (z-chrome/90) sits
@@ -265,8 +277,13 @@ export function HamburgerNav() {
                 'inline-flex items-center justify-center',
                 'h-11 w-11',
                 'bg-transparent border border-border-decorative rounded-pill',
-                'text-ink hover:text-accent-primary',
-                'transition-colors duration-fast ease-out',
+                // Same press language as the trigger (see above); over the
+                // opaque dialog canvas the 10% tint can be a plain fill.
+                'text-ink [@media(hover:hover)]:hover:text-accent-primary',
+                '[-webkit-tap-highlight-color:transparent]',
+                'transition-[color,background-color,border-color] duration-fast ease-out',
+                'active:!text-accent-primary active:border-accent-primary active:bg-accent/10',
+                'active:duration-[calc(var(--dur-fast)/2)]',
               )}
             >
               <span aria-hidden="true" className="text-step-1 leading-none font-light">{'×'}</span>
@@ -330,8 +347,15 @@ export function HamburgerNav() {
                         className={cn(
                           'group inline-flex items-baseline gap-6',
                           'font-serif font-light text-nav-item text-balance',
-                          'text-ink hover:text-accent-text focus-visible:text-accent-text',
+                          // Hover gated to fine pointers (no sticky accent after a
+                          // tap); keyboard focus keeps its accent; the press answers
+                          // in accent-text immediately (half-fast in, fast out) with
+                          // no movement — the dialog's own exit is the navigation
+                          // acknowledgement.
+                          'text-ink [@media(hover:hover)]:hover:text-accent-text focus-visible:text-accent-text',
+                          '[-webkit-tap-highlight-color:transparent]',
                           'transition-colors duration-fast ease-out',
+                          'active:!text-accent-text active:duration-[calc(var(--dur-fast)/2)]',
                         )}
                       >
                         {/* Editorial index number */}
@@ -339,8 +363,11 @@ export function HamburgerNav() {
                           aria-hidden="true"
                           className={cn(
                             'font-mono text-label tracking-label w-16 text-right shrink-0',
-                            'transition-transform duration-fast ease-out',
-                            'group-hover:translate-x-1 group-focus-visible:translate-x-1',
+                            'transition-[transform,color] duration-fast ease-out',
+                            // The nudge is the invitation (fine pointers + keyboard);
+                            // the press inks the numeral with the label, no nudge.
+                            '[@media(hover:hover)]:group-hover:translate-x-1 group-focus-visible:translate-x-1',
+                            'group-active:!text-accent-text group-active:duration-[calc(var(--dur-fast)/2)]',
                             isActive ? 'text-accent-text' : 'text-text-meta',
                           )}
                         >
