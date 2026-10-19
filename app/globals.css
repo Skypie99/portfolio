@@ -3419,6 +3419,11 @@ html.dark ::selection {
   top: 58%;
   z-index: 60;
   display: flex;
+  /* signature candidate (2026-10-19): a column, so the credit stacks UNDER the
+     mark. The mark keeps its exact position (58%, centred) — the block grows
+     downward from it, onto the darker floor band. */
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   pointer-events: none;
   opacity: 0;
@@ -3481,6 +3486,147 @@ html.dark ::selection {
     text-shadow: none; /* halation lives on the base glyphs beneath */
   }
 }
+
+/* ════════════════════════════════════════════════════════════════════
+   SIGNATURE CANDIDATE (2026-10-19, Fable) — three additions to the film,
+   all inside the .cdesert-* namespace, all transform/opacity only.
+     1. .cdesert-frame   the inner frame — the OPENING LIGHT-UP (one-shot CSS)
+     2. .cdesert-credit  the CREDIT under the wordmark — who / what they do
+     3. .cdesert-veil    the HANDOFF VEIL — the floor melts into the page
+   plus the page-side half of the seam (.cinematic-content-reveal::before).
+   Reduced motion: 1 is gated off (and the live path never mounts under RM
+   anyway); 2 and 3 rest at their landed state on the static frame.
+   ════════════════════════════════════════════════════════════════════ */
+
+/* 1 — the inner frame. The film used to be PAINTED at first frame (the eager
+   planes decode and appear). It now ARRIVES: a 1200ms settle from a warm
+   near-dark (the pin's own dawn wash shows through at opacity 0) to the lit
+   valley, with a 4.5% scale settle (an out-curve) so the camera reads as landing, not
+   switching on. CSS so it runs from first paint — before hydration, before
+   any JS — and never touches GSAP's tween targets (they are its children). */
+.cdesert-frame {
+  position: absolute;
+  inset: 0;
+}
+@keyframes cdesert-arrive {
+  from { opacity: 0; transform: scale(1.045); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .cdesert-stage .cdesert-frame {
+    transform-origin: 50% 56%;
+    animation: cdesert-arrive var(--dur-scene) cubic-bezier(0.22, 0.9, 0.26, 1) both;
+  }
+}
+
+/* 2 — the credit. Mono eyebrow voice (the same register the hero's eyebrow
+   and the runway chip use), tracked wide like a film credit, bone over the
+   dark floor band with the title's own halation recipe so it holds AA over
+   any plate tone. The rule draws from its centre (GSAP scaleX); the line
+   rises + fades up a beat later. --resolved (static frame) shows both. */
+.cdesert-credit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: clamp(0.7rem, 1.4vw, 1.1rem);
+}
+.cdesert-credit-rule {
+  display: block;
+  width: clamp(48px, 6vw, 88px);
+  height: 1px;
+  background: rgb(255 246 236 / 0.78);
+  box-shadow: 0 1px 6px rgb(26 11 4 / 0.55);
+  transform: scaleX(0);
+  transform-origin: 50% 50%;
+}
+.cdesert-credit-line {
+  margin: clamp(0.5rem, 1vw, 0.8rem) 0 0;
+  font-family: var(--font-dm-mono), ui-monospace, monospace;
+  font-size: clamp(0.6875rem, 0.86vw, 0.78rem);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+  color: rgb(255 246 236 / 0.94);
+  text-shadow:
+    0 1px 2px rgb(24 10 4 / 0.95),
+    0 2px 12px rgb(26 11 4 / 0.9),
+    0 3px 28px rgb(26 11 4 / 0.75);
+  opacity: 0;
+}
+.cdesert-title--resolved .cdesert-credit-rule { transform: none; }
+.cdesert-title--resolved .cdesert-credit-line { opacity: 1; }
+/* phones: the credit stacks as two lines — name, then role — a film credit's
+   own grammar, and it keeps the tracked mono inside the 360px frame. */
+@media (max-width: 480px) {
+  .cdesert-credit-line { white-space: normal; }
+  .cdesert-credit-sep { display: none; }
+  .cdesert-credit-name,
+  .cdesert-credit-role { display: block; }
+}
+
+/* 3 — the handoff veil. A theme-aware canvas gradient over the bottom of the
+   frame: transparent through the title band, the page colour at the edge.
+   GSAP scrubs its OPACITY only (p[0.88,1.0]); it sits ABOVE the finish layer
+   (z 70) so the vignette can't darken the bottom corners back into a seam.
+   Because it ends in rgb(var(--rgb-canvas)), both themes melt into their own
+   page. The static frame rests it landed. */
+.cdesert-veil {
+  position: absolute;
+  inset: 0;
+  /* MEASURED, not theoretical (probe 2026-10-19, headless Chromium, DPR 1):
+     the TRANSFORMED plane layers paint one device row past the pin's overflow
+     clip at the release edge — the compositor rounds a transformed layer's
+     clip outward, and the pin lands on a sub-pixel top — while an untransformed
+     layer stops exactly at the edge. Hiding the planes cleared the row;
+     overflow:clip / contain:paint / clip-path on the pin or the frame did not;
+     enlarging the veil's box alone did not. Giving the veil a transform of its
+     own (a 0.2% scale from the top edge, ~1.8px of overshoot, clipped) puts it
+     in the same clip class as the planes, and the row is owned by the veil at
+     the page colour. The gradient reaches full canvas 3px early so that edge
+     is the page colour, never a 97% stop. Invisible where the bleed does not
+     occur (DPR 2 phones showed none). */
+  bottom: -2px;
+  transform: scale(1.002);
+  transform-origin: 50% 0;
+  z-index: 75;
+  pointer-events: none;
+  opacity: 0;
+  will-change: opacity;
+  background: linear-gradient(
+    180deg,
+    rgb(var(--rgb-canvas) / 0) 72%,
+    rgb(var(--rgb-canvas) / 0.18) 82%,
+    rgb(var(--rgb-canvas) / 0.55) 91%,
+    rgb(var(--rgb-canvas) / 0.92) 98%,
+    rgb(var(--rgb-canvas)) calc(100% - 3px)
+  );
+}
+.cdesert-static-stage .cdesert-veil { opacity: 1; }
+
+/* the page-side half of the seam: the content wrapper's first pixels are the
+   same canvas the veil ended on, fading into the hero's own wash over the
+   landing pad (never over text — the hero's top padding is ≥200px). Position
+   relative only: no transform, so the wrapper stays a non-containing block
+   for the fixed cues (the clockwork lesson). */
+.cinematic-content-reveal {
+  position: relative;
+}
+.cinematic-content-reveal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: clamp(120px, 18vh, 200px);
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgb(var(--rgb-canvas)) 0%, rgb(var(--rgb-canvas) / 0) 100%);
+}
+/* (on paper it is hidden by the single print layer below, listed with the
+   other chrome that has no place there — that layer stays ONE rule.) */
 
 /* -- Finishing layer container (grain + vignette + tint + motes). -- */
 .cdesert-finish {
@@ -4005,6 +4151,7 @@ html.dark .ts-float {
   .world-backdrop,
   nav[aria-label="Site navigation"],
   .cdesert-stage,
+  .cinematic-content-reveal::before,
   .intro-scroll-cue,
   [data-runway-identity],
   .footer-alpenglow,
