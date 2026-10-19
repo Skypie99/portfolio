@@ -18,6 +18,7 @@ import { useReducedMotion } from './useReducedMotion';
  * MECHANICS (one timeline, scrubbed to scroll — no per-frame listeners):
  *
  *   <section .cdesert-stage>          380vh desktop / 300vh phones ← the scroll budget
+ *    <div .cdesert-pin-spacer>        our own pin-spacer: the pin is never moved
  *     <div .cdesert-pin>              height: 100vh   ← ScrollTrigger PINS this
  *       3 SCENE GROUPS, stacked (.cdesert-scene), each:
  *         3 depth-plane <img> layers (back→front)
@@ -126,6 +127,14 @@ export function CinematicDesert() {
 
   const scope = useRef<HTMLDivElement>(null);
   const pinRef = useRef<HTMLDivElement>(null);
+  // DESKTOP HOTFIX (2026-10-19): the pin's server-rendered parent, handed to
+  // ScrollTrigger as its pin-spacer. Left to itself, ScrollTrigger builds the
+  // spacer by MOVING the pin into a new div, and moves it out and back on every
+  // refresh (creation, window load, resize, the scrollEnd after a mid-scroll
+  // load). A moved subtree restarts its CSS animations, so each move blinked
+  // the lit scene back to the dawn wash and re-ran .cdesert-frame's opening
+  // settle. Given its own spacer, ScrollTrigger only styles it — no move.
+  const pinSpacerRef = useRef<HTMLDivElement>(null);
   // per-plane <img> refs, addressed by `${sceneIndex}:${planeIndex}`
   const layerRefs = useRef<Map<string, HTMLImageElement | null>>(new Map());
   // per-scene group + sun refs
@@ -244,6 +253,9 @@ export function CinematicDesert() {
             ? `bottom top+=${pin.offsetHeight}`
             : 'bottom bottom',
           pin,
+          // already the pin's parent, so ScrollTrigger never re-parents the pin
+          // (see pinSpacerRef). null only if unmounted → ScrollTrigger's default.
+          pinSpacer: pinSpacerRef.current,
           pinSpacing: true,
           scrub: 1.0,
           anticipatePin: 1,
@@ -640,6 +652,9 @@ export function CinematicDesert() {
       data-cdesert-firstpaint={hydrated ? undefined : ''}
     >
       <section className="cdesert-stage" aria-label="SkyPi Studio: desert title scene">
+        {/* the pin-spacer, rendered by us so the pin is never moved (pinSpacerRef);
+            unstyled here — ScrollTrigger sizes it exactly like its own. */}
+        <div ref={pinSpacerRef} className="cdesert-pin-spacer">
         <div ref={pinRef} className="cdesert-pin">
           {/* SIGNATURE CANDIDATE (2026-10-19): the inner frame. Carries the
               opening light-up — a one-shot CSS settle (opacity + 4.5% scale on
@@ -737,6 +752,7 @@ export function CinematicDesert() {
           {/* finishing grain / vignette / motes */}
           <FilmGrain />
           </div>
+        </div>
         </div>
       </section>
     </div>
