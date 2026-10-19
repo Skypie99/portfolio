@@ -3753,7 +3753,27 @@ html.dark ::selection {
 }
 
 /* Reduced motion: the pin/timeline never mount because we render the static
-   frame in JS. With the motes removed there's nothing left here to freeze. */
+   frame in JS. With the motes removed there's nothing left here to freeze.
+
+   FIRST PAINT (OPT-D-001a, 2026-10-19). The preference only resolves in JS
+   after hydration, so until then CinematicDesert renders BOTH trees: the
+   stage wrapper (flagged [data-cdesert-firstpaint]) and, after it, the static
+   frame. The media query is evaluated before first paint, so each visitor
+   paints exactly one: the stage by default (also where the media feature is
+   unsupported, matching the JS fallback), the static frame under reduce.
+   display:none also keeps the unpainted twin out of the accessibility tree.
+   After hydration the component unmounts the twin and drops the flag. */
+[data-cdesert-firstpaint] ~ .cdesert-static {
+  display: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-cdesert-firstpaint] {
+    display: none;
+  }
+  [data-cdesert-firstpaint] ~ .cdesert-static {
+    display: block;
+  }
+}
 
 /* End cinematic desert ============================================== */
 
