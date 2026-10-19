@@ -1,12 +1,13 @@
 import fs from 'node:fs';
-import { spawn } from 'node:child_process';
+import { spawn, execFileSync } from 'node:child_process';
 import { chromium, firefox, webkit } from 'playwright-core';
-const OUT = 'qa-reports/2026-10-19_Codex_Release4Interactions-evidence';
+const OUT = process.env.RELEASE4_EVIDENCE_DIR || 'qa-reports/2026-10-19_Codex_Release4Interactions-evidence';
+fs.mkdirSync(OUT, { recursive: true });
 const sleep = (t) => new Promise((r) => setTimeout(r, t));
-const results = { commit: 'fbb84c6fb0b8a607da7297d04bd99c9c94fa28d2', checks: [], observations: [] };
+const results = { commit: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(), baseline: process.env.RELEASE4_BASELINE_SHA || null, checks: [], observations: [] };
 const check = (name, pass, details) => { results.checks.push({ name, pass, details }); console.log(name, pass, JSON.stringify(details)); };
 async function server(dir) { const s = spawn(process.execPath, ['scripts/static-serve.mjs', dir, '0'], { stdio: ['ignore', 'pipe', 'inherit'] }); const url = await new Promise((r) => s.stdout.once('data', (d) => r(String(d).match(/http:\/\/127\.0\.0\.1:\d+/)[0]))); return { s, url }; }
-const after = await server('out'), before = await server('../baseline-out');
+const after = await server('out'), before = await server(process.env.RELEASE4_BASELINE_OUT || '../baseline-out');
 try {
   for (const [name, engine, options] of [
     ['chromium', chromium, { executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE }],
