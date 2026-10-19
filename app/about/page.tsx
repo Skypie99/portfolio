@@ -1,14 +1,15 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-import { SettleHeading } from '@/components/HeroSettle';
 import { ContactEmail } from '@/components/ContactEmail';
+import { EditorialPlate, EditorialPortrait, EditorialRise } from '@/components/EditorialPlate';
+import { SettleHeading } from '@/components/HeroSettle';
+import { HorizonRule } from '@/components/HorizonRule';
+import { IdentityLines } from '@/components/IdentityLines';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { Reveal } from '@/components/Reveal';
-import { RunwayIdentity } from '@/components/RunwayIdentity';
-import { RunwayIdentityRelease } from '@/components/RunwayIdentityRelease';
 import { cn } from '@/lib/cn';
-import { getDeliverables, getProfile } from '@/lib/content';
+import { getCertificates, getDeliverables, getProfile } from '@/lib/content';
 import { canonicalFor } from '@/lib/metadata';
 import { OG_CARD } from '@/lib/og';
 
@@ -41,6 +42,18 @@ export function generateMetadata(): Metadata {
 }
 
 /**
+ * Editorial split (Fable about + contact, 2026-10-18). From xl the content
+ * column becomes a 12-column spread: a section header sits left (5 columns)
+ * with its drawn horizon, and the prose answers on the right (7 columns), so
+ * the desktop reads as an editorial page instead of a single stacked measure
+ * with half the frame empty. Below xl everything stacks in DOM order, which
+ * is also the reading order. Pure layout: no copy moves between sections.
+ */
+const SPLIT = 'xl:grid xl:grid-cols-12 xl:gap-x-12 xl:items-start';
+const SPLIT_HEAD = 'mb-12 xl:mb-0 xl:col-span-5';
+const SPLIT_BODY = 'xl:col-span-7';
+
+/**
  * /about — F-07. Sky's story. The #method band defers to the front page's
  * canonical #how-i-work account (L4, 2026-08-26) rather than paraphrasing it;
  * it no longer uses <NumberedStep />, which stays live on / and /colophon.
@@ -51,12 +64,20 @@ export function generateMetadata(): Metadata {
  * Server Component. The story paragraphs below are finalized copy in Sky's
  * voice; the copy can be swapped at any time without touching the layout.
  * Generous line-height (1.65) per Dani §3.
+ *
+ * Fable about + contact creative implementation (2026-10-18): the opening
+ * band gains the person — an EditorialPlate carrying the public portrait,
+ * the identity lines the runway chip already publishes, a drawn horizon and
+ * the record (project + credential counts read from content, never typed).
+ * Every story paragraph, heading, eyebrow and section id is byte-identical
+ * to the previous build; only composition and motion changed.
  */
 export default function AboutPage() {
   const profile = getProfile();
   // Up to 3 most recent deliverables — featured first if present, otherwise
   // year-desc ordering from getDeliverables(). Quiet list, no images.
   const allDeliverables = getDeliverables();
+  const certificates = getCertificates();
   const featuredFirst = (() => {
     const f = allDeliverables.find((d) => d.featured);
     const rest = allDeliverables.filter((d) => !d.featured);
@@ -66,12 +87,13 @@ export default function AboutPage() {
 
   return (
     <>
-      {/* UP-38: the mobile brand chip. Measured, this route rendered ZERO
-          identity -- visible OR in the a11y tree -- before the footer at
-          320/375/414. Same mark home's runway uses; hidden from md up, where
-          the rail starts signing. */}
-      <RunwayIdentity variant="page" />
-      <RunwayIdentityRelease variant="page" />
+      {/* UP-38's mobile brand chip (RunwayIdentity variant="page") is NOT
+          mounted on this route any more. It existed because this page rendered
+          zero identity before the footer at phone widths; the opening plate
+          below now signs the page in the first screen — portrait, name and the
+          same two role lines the chip carried — and mounting both would
+          double-sign the first screen (the exact condition UP-38 avoided at
+          md+). Revert = re-add the two mounts. */}
       {/* UP-10: the four in-page section bands below carry ids so the rail's
           "On this page" index can point at THIS page's sections instead of the
           homepage's. Attribute-only — every heading string, class and band is
@@ -83,21 +105,75 @@ export default function AboutPage() {
           always omitted), and its eyebrow "A Brief Account" is the name the
           Footer and HamburgerNav give to this whole PAGE — indexing it would
           put the page inside its own table of contents. */}
-      {/* Page header */}
+      {/* Page header — the opening spread. DOM order (also the reading and
+          phone order): eyebrow, plate, title, story. From xl the plate moves
+          beside the title into the right four columns, its top edge on the
+          title's row, and the account runs down the left past it. Focus order
+          follows DOM order: the plate's two links come after the eyebrow and
+          before the title, where the plate sits in every layout. */}
       <section data-band-anchor className="px-gutter py-24 lg:py-32 world-surface">
-        <div className="max-w-content mx-auto">
-          <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
+        <div className={cn('max-w-content mx-auto', SPLIT)}>
+          <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2 xl:col-span-8 xl:col-start-1 xl:row-start-1">
             <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
             A Brief Account
           </p>
+
+          {/* The person. Portrait = the same public headshot the homepage
+              nameplate uses (320px source, shown at 80 / 96 / 160px so it stays
+              1:1 or better on 2x and 3x screens). The record counts are read
+              from content so they cannot drift from the pages they open. */}
+          <EditorialPlate
+            arrival="mount"
+            className="mt-2 mb-10 max-w-lg xl:my-0 xl:max-w-none xl:col-span-4 xl:col-start-9 xl:row-start-2 xl:row-span-2 xl:self-start"
+          >
+            <div className="flex items-start gap-5 xl:flex-col xl:gap-6">
+              <EditorialPortrait
+                src="/images/headshot.jpg"
+                alt={profile.name}
+                size={160}
+                arrival="mount"
+                className="h-20 w-20 shrink-0 sm:h-24 sm:w-24 xl:h-40 xl:w-40"
+              />
+              <IdentityLines name={profile.name} location={profile.location} arrival="mount" />
+            </div>
+            <HorizonRule arrival="mount" className="mt-5 w-full" />
+            {/* The record: what the person has put on the public record, as
+                links into the pages that hold it. Hit areas reach 44px via the
+                estate's one-sided stretched ::after (UI_SYSTEM.md tap-target
+                recipe) — the ring and the line box stay the text's own. */}
+            {/* Rises last (after the name, the lines and the horizon's first
+                beat) so the choreography reads in document order. */}
+            <EditorialRise timing="late">
+              <p className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-meta tracking-label uppercase text-text-meta">
+                <Link
+                  href="/work/"
+                  className="link-draw relative text-accent-text after:absolute after:inset-x-0 after:-top-[14px] after:-bottom-[16px] after:content-['']"
+                >
+                  {allDeliverables.length} projects
+                </Link>
+                {/* The separator leads its clause (UI_SYSTEM.md wrap discipline #4):
+                    bonded to the second link so a 320px wrap never strands it. */}
+                <span className="whitespace-nowrap">
+                  <span aria-hidden="true">·</span>{' '}
+                  <Link
+                    href="/certificates/"
+                    className="link-draw relative text-accent-text after:absolute after:inset-x-0 after:-top-[14px] after:-bottom-[16px] after:content-['']"
+                  >
+                    {certificates.length} credentials
+                  </Link>
+                </span>
+              </p>
+            </EditorialRise>
+          </EditorialPlate>
+
           <SettleHeading
-            className="font-serif font-light text-display ember max-w-measure-heading mb-16 text-balance"
+            className="font-serif font-light text-display ember max-w-measure-heading mb-16 text-balance xl:col-span-8 xl:col-start-1 xl:row-start-2"
           >
             Support is the work and inspiration, building tools to solve problems and reduce friction.
           </SettleHeading>
 
           {/* Story paragraphs */}
-          <div className="max-w-measure-lead flex flex-col gap-8">
+          <div className="max-w-measure-lead flex flex-col gap-8 xl:col-span-8 xl:col-start-1 xl:row-start-3">
             <p className="font-sans font-light text-step-1 text-ink-muted text-pretty">
               I am Skyler Halisky.
             </p>
@@ -150,8 +226,8 @@ export default function AboutPage() {
       >
         {/* Golden-hour scroll-depth (teal, to harmonise with the panel) */}
         <ParallaxWash depth="far" tone="teal" />
-        <div className="relative z-10 max-w-content mx-auto">
-          <Reveal variant="scene" className="mb-24">
+        <div className={cn('relative z-10 max-w-content mx-auto', SPLIT)}>
+          <Reveal variant="scene" className={SPLIT_HEAD}>
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Method
@@ -159,6 +235,7 @@ export default function AboutPage() {
             <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance">
               How the work gets made is written down once.
             </h2>
+            <HorizonRule arrival="reveal" className="mt-8 w-24" />
           </Reveal>
 
           {/* L4 / C7 (THE ROOM) — this band used to carry three NumberedSteps
@@ -177,7 +254,7 @@ export default function AboutPage() {
               /about/#method (section-nav-anchors T2 checks it), so changing it
               would need its own sectionNav migration. The section id is
               untouched for the same reason. */}
-          <div className="bg-wash-cool border border-cool-soft/50 rounded-lg p-12 md:p-24">
+          <div className={cn('bg-wash-cool border border-cool-soft/50 rounded-lg p-10 md:p-14', SPLIT_BODY)}>
             <Reveal index={0} className="flex flex-col gap-8">
               <p className="font-sans font-light text-prose text-ink-muted max-w-measure-lead text-pretty">
                 There is one account of my method on this site, and it is on the
@@ -212,8 +289,8 @@ export default function AboutPage() {
           'world-surface border-t border-border-decorative',
         )}
       >
-        <div className="max-w-content mx-auto">
-          <Reveal variant="scene" className="mb-24">
+        <div className={cn('max-w-content mx-auto', SPLIT)}>
+          <Reveal variant="scene" className={SPLIT_HEAD}>
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Principles
@@ -221,9 +298,10 @@ export default function AboutPage() {
             <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance">
               Accessibility. Privacy. No shortcuts.
             </h2>
+            <HorizonRule arrival="reveal" className="mt-8 w-24" />
           </Reveal>
 
-          <Reveal variant="depth" className="max-w-measure-lead flex flex-col gap-8">
+          <Reveal variant="depth" className={cn('max-w-measure-lead flex flex-col gap-8', SPLIT_BODY)}>
             <p className="font-sans font-light text-body text-ink-muted text-pretty">
               Flagstone is built and tested against WCAG 2.2 AA, with the methods and
               limitations documented in its case study. Flagstone exists because disabled people
@@ -254,8 +332,8 @@ export default function AboutPage() {
           'world-surface-alt border-t border-border-decorative',
         )}
       >
-        <div className="max-w-content mx-auto">
-          <Reveal variant="scene" className="mb-24">
+        <div className={cn('max-w-content mx-auto', SPLIT)}>
+          <Reveal variant="scene" className={SPLIT_HEAD}>
             <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               Currently
@@ -270,9 +348,10 @@ export default function AboutPage() {
             <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance">
               Learning in public. Shipping on purpose.
             </h2>
+            <HorizonRule arrival="reveal" className="mt-8 w-24" />
           </Reveal>
 
-          <Reveal variant="depth" className="max-w-measure-lead flex flex-col gap-8">
+          <Reveal variant="depth" className={cn('max-w-measure-lead flex flex-col gap-8', SPLIT_BODY)}>
             <p className="font-sans font-light text-body text-ink-muted text-pretty">
               I am not a trained software engineer. I came to coding through
               building: I had ideas I wanted to exist. That is still how this
@@ -307,8 +386,8 @@ export default function AboutPage() {
             'world-surface border-t border-border-decorative',
           )}
         >
-          <div className="max-w-content mx-auto">
-            <Reveal variant="scene" className="mb-24">
+          <div className={cn('max-w-content mx-auto', SPLIT)}>
+            <Reveal variant="scene" className={SPLIT_HEAD}>
               <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-4 flex items-center gap-2">
                 <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
                 The Work
@@ -316,53 +395,62 @@ export default function AboutPage() {
               <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance">
                 A handful of things.
               </h2>
+              <HorizonRule arrival="reveal" className="mt-8 w-24" />
             </Reveal>
 
-            <ul className="flex flex-col gap-12 max-w-3xl">
-              {recent.map((d, i) => (
-                <li
-                  key={d.id}
-                  className="border-t border-border-decorative pt-8"
-                >
-                  <Reveal index={i}>
-                    <Link
-                      href={`/work/${d.id}/`}
-                      /* label-content-name-mismatch: this card link wraps role · year,
-                         title, summary and "Continue", so a concise "Read about <title>"
-                         name would omit most of the visible text. Name from content
-                         instead (the arrow is aria-hidden) — AT hears the full card. */
-                      className="group flex flex-col gap-2 text-ink hover:text-accent-text transition-[color,transform] duration-base ease-gh-glide hover:translate-x-0.5"
-                    >
-                      <p className="font-mono text-meta tracking-label uppercase text-text-meta">
-                        {d.role} · {d.year}
-                      </p>
-                      <h3 className="font-serif font-normal text-step-2 leading-tight">
-                        {d.title}
-                      </h3>
-                      <p className="font-sans font-light text-body text-ink-muted max-w-measure-lead text-pretty">
-                        {d.summary}
-                      </p>
-                      <span className="font-mono text-meta tracking-label uppercase text-accent-text mt-2 inline-flex items-center gap-1 transition-transform duration-fast ease-out group-hover:translate-x-1 group-focus-visible:translate-x-1">
-                        {/* Cook Out P2 · Part B: "View project" is the locked
-                            recruiter-facing internal-case-study vocabulary
-                            (was "Continue"). */}
-                        View project
-                        <span aria-hidden="true">{'→'}</span>
-                      </span>
-                    </Link>
-                  </Reveal>
-                </li>
-              ))}
-            </ul>
+            <div className={SPLIT_BODY}>
+              <ul className="flex flex-col gap-12 max-w-3xl">
+                {recent.map((d, i) => (
+                  <li
+                    key={d.id}
+                    className="border-t border-border-decorative pt-8"
+                  >
+                    <Reveal index={i}>
+                      <Link
+                        href={`/work/${d.id}/`}
+                        /* label-content-name-mismatch: this card link wraps role · year,
+                           title, summary, status and "View project", so a concise
+                           "Read about <title>" name would omit most of the visible
+                           text. Name from content instead (the arrow is aria-hidden)
+                           — AT hears the full card. */
+                        className="group flex flex-col gap-2 text-ink hover:text-accent-text transition-[color,transform] duration-base ease-gh-glide hover:translate-x-0.5"
+                      >
+                        <p className="font-mono text-meta tracking-label uppercase text-text-meta">
+                          {d.role} · {d.year}
+                        </p>
+                        <h3 className="font-serif font-normal text-step-2 leading-tight">
+                          {d.title}
+                        </h3>
+                        <p className="font-sans font-light text-body text-ink-muted max-w-measure-lead text-pretty">
+                          {d.summary}
+                        </p>
+                        {/* The project's own status line (content/deliverables.json,
+                            Sky's protected wording), rendered exactly as ProjectCard
+                            renders it: the account now shows where each thing
+                            stands, not only that it exists. */}
+                        <p className="font-mono text-meta text-text-meta">{d.status}</p>
+                        <span className="font-mono text-meta tracking-label uppercase text-accent-text mt-2 inline-flex items-center gap-1 transition-transform duration-fast ease-out group-hover:translate-x-1 group-focus-visible:translate-x-1">
+                          {/* Cook Out P2 · Part B: "View project" is the locked
+                              recruiter-facing internal-case-study vocabulary
+                              (was "Continue"). */}
+                          View project
+                          <span aria-hidden="true">{'→'}</span>
+                        </span>
+                      </Link>
+                    </Reveal>
+                  </li>
+                ))}
+              </ul>
 
-            <div className="mt-24">
-              <Link
-                href="/work/"
-                className="group inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-ink hover:text-accent-text transition-colors duration-fast ease-out"
-              >
-                All the work
-                <span aria-hidden="true" className="inline-block transition-transform duration-base ease-gh-glide group-hover:translate-x-1 group-focus-visible:translate-x-1">{'→'}</span>
-              </Link>
+              <div className="mt-16">
+                <Link
+                  href="/work/"
+                  className="group inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-ink hover:text-accent-text transition-colors duration-fast ease-out"
+                >
+                  All the work
+                  <span aria-hidden="true" className="inline-block transition-transform duration-base ease-gh-glide group-hover:translate-x-1 group-focus-visible:translate-x-1">{'→'}</span>
+                </Link>
+              </div>
             </div>
           </div>
         </section>
