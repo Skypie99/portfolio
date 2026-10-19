@@ -7,10 +7,11 @@ import { chromium, firefox, webkit } from 'playwright-core';
 // Independent integration instrument. Source Fable measurements are never
 // used as expected results. Both sites are fresh production exports.
 const ROOT = process.cwd();
-const OUT = path.resolve('qa-reports/2026-10-19_Codex_Release4Interactions-evidence');
+const OUT = path.resolve(process.env.RELEASE4_EVIDENCE_DIR || 'qa-reports/2026-10-19_Codex_Release4Interactions-evidence');
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const result = {
   commit: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
+  baseline: process.env.RELEASE4_BASELINE_SHA || null,
   os: `${os.type()} ${os.release()} ${os.arch()}`, node: process.version,
   started: new Date().toISOString(), browsers: [], profiles: [], readings: [],
   checks: [], observations: [], errors: [],
@@ -205,7 +206,7 @@ async function profile(browser, name, profile, theme, build, base) {
   finally { await context.close(); save(); }
 }
 
-const before = await serve(path.resolve('../baseline-out'));
+const before = await serve(path.resolve(process.env.RELEASE4_BASELINE_OUT || '../baseline-out'));
 const after = await serve(path.join(ROOT, 'out'));
 try {
   const selected = (process.env.RELEASE4_BROWSERS || 'chromium,firefox,webkit').split(',');
