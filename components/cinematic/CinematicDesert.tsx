@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { FilmGrain } from './FilmGrain';
 import { Layer } from './Layer';
-import { ACTIVE_SCENES, type Plate, type Scene } from './plates';
+import { ACTIVE_SCENES, PLATE_PIXELS, type Plate, type Scene } from './plates';
 import { StaticDesertFrame } from './StaticDesertFrame';
 import { useReducedMotion } from './useReducedMotion';
 
@@ -18,6 +18,7 @@ import { useReducedMotion } from './useReducedMotion';
  * MECHANICS (one timeline, scrubbed to scroll — no per-frame listeners):
  *
  *   <section .cdesert-stage>          380vh desktop / 300vh phones ← the scroll budget
+ *    <div .cdesert-pin-spacer>        our own pin-spacer: the pin is never moved
  *     <div .cdesert-pin>              height: 100vh   ← ScrollTrigger PINS this
  *       3 SCENE GROUPS, stacked (.cdesert-scene), each:
  *         3 depth-plane <img> layers (back→front)
@@ -85,6 +86,17 @@ const CULL_WINDOWS: readonly { start: number; end: number }[] =
 /** Flat [sceneIndex, planeIndex] addressing for the per-plane ref grid. */
 type PlaneAddr = { s: number; p: number };
 
+/** The plate-fit geometry, set on each fitted plane's <picture> (see fitPlates). */
+const FIT_VARS = [
+  '--cdesert-fit-k',
+  '--cdesert-fit-ox',
+  '--cdesert-fit-oy',
+  '--cdesert-fit-x',
+  '--cdesert-fit-y',
+  '--cdesert-fit-w',
+  '--cdesert-fit-h',
+] as const;
+
 /**
  * Synchronous reduced-motion read for client effects. `useReducedMotion` is
  * still `false` during the hydration pass (so the markup matches the server);
@@ -126,6 +138,14 @@ export function CinematicDesert() {
 
   const scope = useRef<HTMLDivElement>(null);
   const pinRef = useRef<HTMLDivElement>(null);
+  // DESKTOP HOTFIX (2026-10-19): the pin's server-rendered parent, handed to
+  // ScrollTrigger as its pin-spacer. Left to itself, ScrollTrigger builds the
+  // spacer by MOVING the pin into a new div, and moves it out and back on every
+  // refresh (creation, window load, resize, the scrollEnd after a mid-scroll
+  // load). A moved subtree restarts its CSS animations, so each move blinked
+  // the lit scene back to the dawn wash and re-ran .cdesert-frame's opening
+  // settle. Given its own spacer, ScrollTrigger only styles it — no move.
+  const pinSpacerRef = useRef<HTMLDivElement>(null);
   // per-plane <img> refs, addressed by `${sceneIndex}:${planeIndex}`
   const layerRefs = useRef<Map<string, HTMLImageElement | null>>(new Map());
   // per-scene group + sun refs
@@ -192,6 +212,28 @@ export function CinematicDesert() {
       if (!stage || !pin) return;
       const phoneViewport = window.matchMedia('(max-width: 767px)');
 
+      // ── WORLD PARKING (desktop hotfix 2026-10-19) ──────────────────────────
+      // The site's fixed world backdrop (WorldBackdrop: sky + sun, three
+      // full-viewport compositor layers, ~90 MB of GPU tiles at a 1920px DPR-2
+      // window) sits fully under the opaque pinned film, yet Chrome keeps its
+      // tiles resident — headroom the plates' per-frame zoom re-raster runs out
+      // of on large desktop screens (tiles go missing: the partial-scene
+      // dropouts). Desktop CSS hides it (html.cdesert-world-parked) while the
+      // film covers it; it returns at p≥0.98, still behind the pinned film, so
+      // its tiles are ready by the release. (Measured: 0.92 left the late,
+      // heaviest stretch of the film — glow, title carve, veil — sharing the
+      // budget with it again; 0.98 did not.) Write-guarded like applyCull:
+      // the class flips only on crossing that point. Phones never park.
+      const root = document.documentElement;
+      let worldParked = false;
+      const parkWorld = (p: number) => {
+        const park = !phoneViewport.matches && p < 0.98;
+        if (park === worldParked) return;
+        worldParked = park;
+        root.classList.toggle('cdesert-world-parked', park);
+      };
+      const unparkWorld = () => root.classList.remove('cdesert-world-parked');
+
       // ── SCENE CULLING (PERF 2026-06-02) ──────────────────────────────────
       // Drive each group's composite on/off from master progress. Toggling the
       // cull class (visibility:hidden) drops an inactive beat's 3 planes out of
@@ -231,6 +273,9 @@ export function CinematicDesert() {
       // D5 breathe hook — assigned after the timeline exists (it needs the
       // ScrollTrigger); called from onUpdate so any scrub movement wakes it.
       let breatheWake: () => void = () => {};
+      // PLATE FIT hook — assigned once the plate tweens exist (it keeps GSAP's
+      // parsed start state); called from onRefresh so a refresh refits.
+      let fitPlates: () => void = () => {};
 
       const tl = gsap.timeline({
         defaults: { ease: 'none' },
@@ -244,6 +289,9 @@ export function CinematicDesert() {
             ? `bottom top+=${pin.offsetHeight}`
             : 'bottom bottom',
           pin,
+          // already the pin's parent, so ScrollTrigger never re-parents the pin
+          // (see pinSpacerRef). null only if unmounted → ScrollTrigger's default.
+          pinSpacer: pinSpacerRef.current,
           pinSpacing: true,
           scrub: 1.0,
           anticipatePin: 1,
@@ -252,10 +300,13 @@ export function CinematicDesert() {
           // only when a boundary is crossed) + once on mount/refresh.
           onUpdate: (self) => {
             applyCull(self.progress);
+            parkWorld(self.progress);
             breatheWake();
           },
           onRefresh: (self) => {
+            fitPlates();
             applyCull(self.progress);
+            parkWorld(self.progress);
             breatheWake();
           },
         },
@@ -438,6 +489,101 @@ export function CinematicDesert() {
           }
         }
       });
+
+      // ── PLATE FIT (desktop hotfix 2026-10-19) ─────────────────────────────
+      // The partial-scene dropouts are Chrome running out of GPU tile memory.
+      // It re-rasterises every plate GSAP zooms at a new scale on EVERY frame
+      // (will-change: transform does not stop it) and holds 2–3 tilings of
+      // each full-viewport plate, ~100–200 MB apiece at a 1920px DPR-2 window.
+      // A plate whose box is exactly its own image pixels is a directly
+      // composited image instead: Chrome uploads it once and the GPU scales
+      // it, so the zoom never re-rasterises (~10 MB a plate). So on Chromium
+      // desktop each plate's box is laid out at its file's pixels and its
+      // <picture> scales it back up to the object-fit: cover box. Every image
+      // pixel lands where it did, zoom included: the solve below keeps the
+      // zoom centre (the film's 50%/70% point), the yPercent push and GSAP's
+      // parsed SSR-seed `y`, with the box itself on whole device pixels.
+      // Phones, Safari and Firefox keep the plain cover box, as does a window
+      // wider than a plate (its cover then fits the width, not the height).
+      const chromium = 'userAgentData' in navigator;
+      type FitTarget = {
+        img: HTMLImageElement;
+        pic: HTMLElement;
+        group: HTMLElement;
+        px: (typeof PLATE_PIXELS)[string];
+        seedY: number; // GSAP's parsed seed y, px in today's full-bleed box
+      };
+      const fitTargets: FitTarget[] = [];
+      SCENES.forEach((scene, si) => {
+        scene.planes.forEach((plate, pi) => {
+          const img = layerRefs.current.get(`${si}:${pi}`);
+          const pic = img?.parentElement;
+          const group = sceneRefs.current[si];
+          const px = PLATE_PIXELS[plate.id];
+          if (!img || !pic || pic.tagName !== 'PICTURE' || !group || !px) return;
+          fitTargets.push({ img, pic, group, px, seedY: Number(gsap.getProperty(img, 'y')) || 0 });
+        });
+      });
+      const clearFit = (t: FitTarget) => {
+        if (!t.pic.classList.contains('cdesert-plate--fit')) return false;
+        t.pic.classList.remove('cdesert-plate--fit');
+        for (const v of FIT_VARS) t.pic.style.removeProperty(v);
+        return true;
+      };
+      fitPlates = () => {
+        const dpr = window.devicePixelRatio || 1;
+        for (const t of fitTargets) {
+          const W = t.group.clientWidth;
+          const H = t.group.clientHeight;
+          const [bw, bh] = /-mobile\.[a-z0-9]+$/i.test(t.img.currentSrc) ? t.px.mobile : t.px.full;
+          const w = bw / dpr; // the box: the file's own pixels, in CSS px
+          const h = bh / dpr;
+          const k = H / h; // the cover scale: plate height → film height
+          // Only where the cover scales the plate UP (k ≥ 1): the GPU then
+          // magnifies the image exactly as the raster did; a small low-DPR
+          // window that shrinks it keeps the plain box (and has the memory).
+          if (!chromium || phoneViewport.matches || !W || !H || W * bh > H * bw || !(k >= 1)) {
+            if (clearFit(t)) gsap.set(t.img, { y: t.seedY });
+            continue;
+          }
+          // The box sits on whole device pixels next to where its 50%/70%
+          // origin belongs, and the <picture> scales about the one point that
+          // still maps that origin onto the film's 50%/70% point. (At k = 1
+          // the scale moves nothing, so there the box sits exactly in place.)
+          const snap = Math.abs(k - 1) > 1e-3;
+          const x = snap ? Math.round((W / 2 - w / 2) * dpr) / dpr : W / 2 - w / 2;
+          const y = snap ? Math.round((0.7 * H - 0.7 * h) * dpr) / dpr : 0.7 * H - 0.7 * h;
+          const ox = snap ? (x + w / 2 - W / 2 / k) / (1 - 1 / k) : W / 2;
+          const oy = snap ? (y + 0.7 * h - (0.7 * H) / k) / (1 - 1 / k) : 0.7 * H;
+          const s = t.pic.style;
+          s.setProperty('--cdesert-fit-k', String(k));
+          s.setProperty('--cdesert-fit-ox', `${ox}px`);
+          s.setProperty('--cdesert-fit-oy', `${oy}px`);
+          s.setProperty('--cdesert-fit-x', `${x}px`);
+          s.setProperty('--cdesert-fit-y', `${y}px`);
+          s.setProperty('--cdesert-fit-w', `${w}px`);
+          s.setProperty('--cdesert-fit-h', `${h}px`);
+          t.pic.classList.add('cdesert-plate--fit');
+          // the seed y is a px offset inside the box, which the <picture> now
+          // scales by k: divide it back so the screen offset stays the same
+          gsap.set(t.img, { y: t.seedY / k });
+        }
+      };
+      fitPlates();
+      // A resize changes the film box at once, ScrollTrigger refreshes ~200ms
+      // later: refit on the next frame so a resized window never shows a stale
+      // fit. (Not a per-frame listener: resize events only.)
+      let fitFrame = 0;
+      const refitSoon = () => {
+        cancelAnimationFrame(fitFrame);
+        fitFrame = requestAnimationFrame(() => fitPlates());
+      };
+      window.addEventListener('resize', refitSoon);
+      const unfitPlates = () => {
+        window.removeEventListener('resize', refitSoon);
+        cancelAnimationFrame(fitFrame);
+        fitTargets.forEach(clearFit);
+      };
 
       // ── ONE continuous hue grade: warm-morning → warm-gold across the whole p ──
       // RE-TUNED (Dani 2026-06-02): starts at 0.35, not 0. The open is warm DAYLIGHT
@@ -622,8 +768,16 @@ export function CinematicDesert() {
           }, 1200);
         };
         breatheWake(); // arm at the opening frame
-        return () => clearTimeout(idleT);
+        return () => {
+          clearTimeout(idleT);
+          unparkWorld();
+          unfitPlates();
+        };
       }
+      return () => {
+        unparkWorld();
+        unfitPlates();
+      };
     },
     { scope, dependencies: [animate] },
   );
@@ -640,6 +794,9 @@ export function CinematicDesert() {
       data-cdesert-firstpaint={hydrated ? undefined : ''}
     >
       <section className="cdesert-stage" aria-label="SkyPi Studio: desert title scene">
+        {/* the pin-spacer, rendered by us so the pin is never moved (pinSpacerRef);
+            unstyled here — ScrollTrigger sizes it exactly like its own. */}
+        <div ref={pinSpacerRef} className="cdesert-pin-spacer">
         <div ref={pinRef} className="cdesert-pin">
           {/* SIGNATURE CANDIDATE (2026-10-19): the inner frame. Carries the
               opening light-up — a one-shot CSS settle (opacity + 4.5% scale on
@@ -737,6 +894,7 @@ export function CinematicDesert() {
           {/* finishing grain / vignette / motes */}
           <FilmGrain />
           </div>
+        </div>
         </div>
       </section>
     </div>
