@@ -14,6 +14,10 @@ type PlateProps = {
    *  dark-only hairline warmth via .pr-plate-lit. Omit for no signature glow. */
   sig?: string;
   className?: string;
+  /** Render as the <figcaption> of a <figure> (the case-study hero, where the
+   *  plate captions the framed screenshot); the default <div> is the homepage
+   *  Flagship Room's standalone plate. Same three lines either way. */
+  as?: 'div' | 'figcaption';
 };
 
 /**
@@ -26,9 +30,9 @@ type PlateProps = {
  * too — the same three mono lines render from the SAME component in both
  * places now, not two hand-kept-in-sync copies.
  */
-export function Plate({ claim, caption, placeDate, sig, className }: PlateProps) {
+export function Plate({ claim, caption, placeDate, sig, className, as: Tag = 'div' }: PlateProps) {
   return (
-    <div
+    <Tag
       className={cn('flex flex-col gap-3 max-w-measure-wide', className)}
       style={sig ? ({ '--pr-sig': sig } as CSSProperties) : undefined}
     >
@@ -43,6 +47,6 @@ export function Plate({ claim, caption, placeDate, sig, className }: PlateProps)
       <p className="font-mono text-meta tracking-label uppercase text-text-meta">
         {placeDate}
       </p>
-    </div>
+    </Tag>
   );
 }

@@ -52,3 +52,27 @@ describe('Plate', () => {
     expect(root.style.getPropertyValue('--pr-sig')).toBe('224 150 90');
   });
 });
+
+/**
+ * Flagstone first proof (2026-10-19): the case-study hero renders the plate as
+ * the <figcaption> of the exhibit's <figure>; the homepage keeps the <div>.
+ */
+describe('Plate — element choice', () => {
+  it('renders a <div> by default (the homepage Flagship Room)', () => {
+    const { container } = render(<Plate claim="c" caption="cap" placeDate="p" />);
+    expect(container.firstElementChild?.tagName).toBe('DIV');
+  });
+
+  it('renders a <figcaption> when asked, with the same lines, classes and signature var', () => {
+    const { container } = render(
+      <Plate as="figcaption" claim="SEVERITY 3 OF 5" caption="Steep grade." placeDate="CURRENT EXPLORE SCREEN" sig="224 150 90" />,
+    );
+    const root = container.firstElementChild as HTMLElement;
+    expect(root.tagName).toBe('FIGCAPTION');
+    expect(root.className).toContain('max-w-measure-wide');
+    expect(root.style.getPropertyValue('--pr-sig')).toBe('224 150 90');
+    expect(screen.getByText('SEVERITY 3 OF 5')).toBeInTheDocument();
+    expect(screen.getByText('Steep grade.')).toBeInTheDocument();
+    expect(screen.getByText('CURRENT EXPLORE SCREEN')).toBeInTheDocument();
+  });
+});
