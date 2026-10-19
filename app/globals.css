@@ -1469,6 +1469,103 @@ html.dark.reveal-failsafe [data-proof-arrival] .proof-arrival-edge {
 }
 
 /* ------------------------------------------------------------------
+   Flagstone proof row — Version A, three-panel (owner decision 2026-10-18;
+   app/work/[slug]/page.tsx CaseProof, Flagstone only). The row's grid, the
+   labels, the caption rule and the provenance line are Tailwind at the call
+   site; this block holds the four things utilities cannot express: the
+   bounded width breakout, the window-01 exhibit-mat geometry, the
+   Flagstone-scoped Play/Pause repairs, and the fluid-band label alignment.
+   Every selector is scoped under
+   `.proof-row` / `.proof-breakout*`, so no other case study, matte or clip
+   changes. VE04 itself (`.proof-arrival-edge`, above) is untouched: same
+   colours (accent / 0.7 light, / 0.4 dark), same durations (--dur-transition
+   desktop, --dur-base phone), same lifecycle. Nothing here animates. */
+
+/* (1) Width breakout. The case-study article is a 60ch measure (≈652px);
+   the row wants 3 × 340 + 2 × 24 = 1068px at lg+. Flagstone's content
+   column (`.max-w-content`, carrying `.proof-breakout-root`) becomes an
+   inline-size container and the proof block takes min(1068px, that
+   column's width): never a vw unit (scrollbar error), never a negative
+   margin, so the row can never pass the column's own right edge. Its left
+   edge stays the article's left edge. At 1024–1279px the column is
+   680–935px wide, so the three windows shrink fluidly (≈210–296px) and the
+   captions wrap; at 1440 the windows are the reference 340 × 400. Browsers
+   without container-query units keep the article width (three fluid
+   columns inside the measure, nothing clipped). Below lg the block is the
+   article's width and the grid stacks the windows (call site). */
+.proof-breakout-root {
+  container-type: inline-size;
+}
+@media (min-width: 1024px) {
+  @supports (width: 1cqw) {
+    .proof-breakout {
+      width: min(1068px, 100cqw);
+    }
+  }
+}
+
+/* (2) Window 01's exhibit mat. The shipped `.ts-matte-well` is 88% × 84%
+   with a 0.9rem radius and the warm shadow ramp; Version A sets the clip
+   into a quiet 20px mat with a 6px radius and no shadow, so the thin frame
+   stays the window's only line. Same tokens as the shipped mat (surface +
+   signature tint behind, ink / 0.12 well edge). */
+.proof-row {
+  --proof-mat-inset: 20px;
+}
+.proof-row .ts-matte-well {
+  width: calc(100% - 2 * var(--proof-mat-inset));
+  height: calc(100% - 2 * var(--proof-mat-inset));
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+/* (3) The Play/Pause control, this instance only (ThemedMotion's overlay
+   button is the only <button> directly under the motion host).
+   PLACEMENT: 12px inside the mat well's bottom-right corner, so the pill and
+   its ring sit ≥ 32px from the VE04 edge and are never clipped by the frame.
+   BOUNDARY: the shipped dark-theme pill (surface / 0.72, line hairline) read
+   ~1.5:1 against this dark clip (study RC2-VE04-COMP-01 §9: carried by its
+   icon alone), so dark gets an ink / 0.6 hairline and a slightly denser
+   body; light keeps the shipped pill, which already reads ~5.8:1 against
+   the clip. FOCUS: the site ring (2px accent at a 2px offset; the global
+   tokens are not touched) gains a canvas-coloured halo filling the offset
+   gap, so the indicator is two-tone and keeps ≥ 3:1 on at least one side
+   whatever poster frame lies beneath it (token arithmetic: light ring vs
+   halo 3.98:1, halo vs clip ≥ 9:1; dark ring vs halo ≈ 5.5:1, ring vs clip
+   ≈ 3.1:1; pixel readings in the candidate receipt). */
+.proof-row [data-themed-motion] > button {
+  right: calc(var(--proof-mat-inset) + 0.75rem);
+  bottom: calc(var(--proof-mat-inset) + 0.75rem);
+}
+html.dark .proof-row [data-themed-motion] > button {
+  border-color: rgb(var(--rgb-ink) / 0.6);
+  background-color: rgb(var(--rgb-surface) / 0.85);
+}
+.proof-row [data-themed-motion] > button:focus-visible {
+  box-shadow: 0 0 0 var(--focus-ring-offset, 2px) rgb(var(--rgb-canvas));
+}
+
+/* (4) Label alignment in the fluid band (1024–~1207px viewports). Below a
+   row width of 880px the windows are narrower than 277px and the longest
+   label ("01 · Reporting flow, in motion.", measured ≈270px at DM Mono
+   12px / 0.125em) wraps to two lines, which would seat window 01 one line
+   lower than 02 and 03. Reserve two label lines for all three windows in
+   that band only: the row's own width is the constraint, so a container
+   query on the row decides, and at 1280+ (windows ≥ 296px) the rule is
+   inert and the reference geometry is untouched. 2.8em = two lines at the
+   label's 1.4 line-height. */
+@media (min-width: 1024px) {
+  .proof-row {
+    container-type: inline-size;
+  }
+  @container (max-width: 880px) {
+    .proof-row [data-proof-window] > p {
+      min-height: 2.8em;
+    }
+  }
+}
+
+/* ------------------------------------------------------------------
    Settle-on-arrival (components/HeroSettle.tsx) — pure-CSS entrance,
    same idiom the retired .hero-enter used (fix(settle) 2026-06-10). The REST state is
    the visible final state: the entrance exists only inside the
