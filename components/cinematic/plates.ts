@@ -484,6 +484,21 @@ const MOBILE_WIDTH: Record<string, number> = {
 };
 
 /**
+ * Exact pixel size of each LIVE plane's files (the full tier, and the
+ * "-mobile" tier; AVIF and WebP encode at the same size). The desktop plate
+ * fit (CinematicDesert, desktop hotfix 2026-10-19) lays a plane's box out at
+ * these pixels so Chrome can composite it straight from the image instead of
+ * re-rasterising it at every zoom step. Guarded against the real files by
+ * components/__tests__/CinematicDesertPlateFit.test.tsx.
+ */
+export const PLATE_PIXELS: Record<string, { full: readonly [number, number]; mobile: readonly [number, number] }> = {
+  'mid-sky': { full: [1536, 658], mobile: [768, 329] },
+  'mid-mid': { full: [2048, 878], mobile: [1024, 439] },
+  'arrival-cliff': { full: [2048, 878], mobile: [1024, 439] },
+  'mid-fg': { full: [2304, 987], mobile: [1152, 494] },
+};
+
+/**
  * The responsive source set for a plane's <picture>:
  *   { avifSrcSet, webpSrcSet } → width-descriptor srcsets ("…-mobile.avif 768w,
  *                    …avif 1536w") for the 4 live-scene planes that have a

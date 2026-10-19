@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { FilmGrain } from './FilmGrain';
 import { Layer } from './Layer';
-import { ACTIVE_SCENES, type Plate, type Scene } from './plates';
+import { ACTIVE_SCENES, PLATE_PIXELS, type Plate, type Scene } from './plates';
 import { StaticDesertFrame } from './StaticDesertFrame';
 import { useReducedMotion } from './useReducedMotion';
 
@@ -85,6 +85,17 @@ const CULL_WINDOWS: readonly { start: number; end: number }[] =
 
 /** Flat [sceneIndex, planeIndex] addressing for the per-plane ref grid. */
 type PlaneAddr = { s: number; p: number };
+
+/** The plate-fit geometry, set on each fitted plane's <picture> (see fitPlates). */
+const FIT_VARS = [
+  '--cdesert-fit-k',
+  '--cdesert-fit-ox',
+  '--cdesert-fit-oy',
+  '--cdesert-fit-x',
+  '--cdesert-fit-y',
+  '--cdesert-fit-w',
+  '--cdesert-fit-h',
+] as const;
 
 /**
  * Synchronous reduced-motion read for client effects. `useReducedMotion` is
@@ -262,6 +273,9 @@ export function CinematicDesert() {
       // D5 breathe hook — assigned after the timeline exists (it needs the
       // ScrollTrigger); called from onUpdate so any scrub movement wakes it.
       let breatheWake: () => void = () => {};
+      // PLATE FIT hook — assigned once the plate tweens exist (it keeps GSAP's
+      // parsed start state); called from onRefresh so a refresh refits.
+      let fitPlates: () => void = () => {};
 
       const tl = gsap.timeline({
         defaults: { ease: 'none' },
@@ -290,6 +304,7 @@ export function CinematicDesert() {
             breatheWake();
           },
           onRefresh: (self) => {
+            fitPlates();
             applyCull(self.progress);
             parkWorld(self.progress);
             breatheWake();
@@ -474,6 +489,101 @@ export function CinematicDesert() {
           }
         }
       });
+
+      // ── PLATE FIT (desktop hotfix 2026-10-19) ─────────────────────────────
+      // The partial-scene dropouts are Chrome running out of GPU tile memory.
+      // It re-rasterises every plate GSAP zooms at a new scale on EVERY frame
+      // (will-change: transform does not stop it) and holds 2–3 tilings of
+      // each full-viewport plate, ~100–200 MB apiece at a 1920px DPR-2 window.
+      // A plate whose box is exactly its own image pixels is a directly
+      // composited image instead: Chrome uploads it once and the GPU scales
+      // it, so the zoom never re-rasterises (~10 MB a plate). So on Chromium
+      // desktop each plate's box is laid out at its file's pixels and its
+      // <picture> scales it back up to the object-fit: cover box. Every image
+      // pixel lands where it did, zoom included: the solve below keeps the
+      // zoom centre (the film's 50%/70% point), the yPercent push and GSAP's
+      // parsed SSR-seed `y`, with the box itself on whole device pixels.
+      // Phones, Safari and Firefox keep the plain cover box, as does a window
+      // wider than a plate (its cover then fits the width, not the height).
+      const chromium = 'userAgentData' in navigator;
+      type FitTarget = {
+        img: HTMLImageElement;
+        pic: HTMLElement;
+        group: HTMLElement;
+        px: (typeof PLATE_PIXELS)[string];
+        seedY: number; // GSAP's parsed seed y, px in today's full-bleed box
+      };
+      const fitTargets: FitTarget[] = [];
+      SCENES.forEach((scene, si) => {
+        scene.planes.forEach((plate, pi) => {
+          const img = layerRefs.current.get(`${si}:${pi}`);
+          const pic = img?.parentElement;
+          const group = sceneRefs.current[si];
+          const px = PLATE_PIXELS[plate.id];
+          if (!img || !pic || pic.tagName !== 'PICTURE' || !group || !px) return;
+          fitTargets.push({ img, pic, group, px, seedY: Number(gsap.getProperty(img, 'y')) || 0 });
+        });
+      });
+      const clearFit = (t: FitTarget) => {
+        if (!t.pic.classList.contains('cdesert-plate--fit')) return false;
+        t.pic.classList.remove('cdesert-plate--fit');
+        for (const v of FIT_VARS) t.pic.style.removeProperty(v);
+        return true;
+      };
+      fitPlates = () => {
+        const dpr = window.devicePixelRatio || 1;
+        for (const t of fitTargets) {
+          const W = t.group.clientWidth;
+          const H = t.group.clientHeight;
+          const [bw, bh] = /-mobile\.[a-z0-9]+$/i.test(t.img.currentSrc) ? t.px.mobile : t.px.full;
+          const w = bw / dpr; // the box: the file's own pixels, in CSS px
+          const h = bh / dpr;
+          const k = H / h; // the cover scale: plate height → film height
+          // Only where the cover scales the plate UP (k ≥ 1): the GPU then
+          // magnifies the image exactly as the raster did; a small low-DPR
+          // window that shrinks it keeps the plain box (and has the memory).
+          if (!chromium || phoneViewport.matches || !W || !H || W * bh > H * bw || !(k >= 1)) {
+            if (clearFit(t)) gsap.set(t.img, { y: t.seedY });
+            continue;
+          }
+          // The box sits on whole device pixels next to where its 50%/70%
+          // origin belongs, and the <picture> scales about the one point that
+          // still maps that origin onto the film's 50%/70% point. (At k = 1
+          // the scale moves nothing, so there the box sits exactly in place.)
+          const snap = Math.abs(k - 1) > 1e-3;
+          const x = snap ? Math.round((W / 2 - w / 2) * dpr) / dpr : W / 2 - w / 2;
+          const y = snap ? Math.round((0.7 * H - 0.7 * h) * dpr) / dpr : 0.7 * H - 0.7 * h;
+          const ox = snap ? (x + w / 2 - W / 2 / k) / (1 - 1 / k) : W / 2;
+          const oy = snap ? (y + 0.7 * h - (0.7 * H) / k) / (1 - 1 / k) : 0.7 * H;
+          const s = t.pic.style;
+          s.setProperty('--cdesert-fit-k', String(k));
+          s.setProperty('--cdesert-fit-ox', `${ox}px`);
+          s.setProperty('--cdesert-fit-oy', `${oy}px`);
+          s.setProperty('--cdesert-fit-x', `${x}px`);
+          s.setProperty('--cdesert-fit-y', `${y}px`);
+          s.setProperty('--cdesert-fit-w', `${w}px`);
+          s.setProperty('--cdesert-fit-h', `${h}px`);
+          t.pic.classList.add('cdesert-plate--fit');
+          // the seed y is a px offset inside the box, which the <picture> now
+          // scales by k: divide it back so the screen offset stays the same
+          gsap.set(t.img, { y: t.seedY / k });
+        }
+      };
+      fitPlates();
+      // A resize changes the film box at once, ScrollTrigger refreshes ~200ms
+      // later: refit on the next frame so a resized window never shows a stale
+      // fit. (Not a per-frame listener: resize events only.)
+      let fitFrame = 0;
+      const refitSoon = () => {
+        cancelAnimationFrame(fitFrame);
+        fitFrame = requestAnimationFrame(() => fitPlates());
+      };
+      window.addEventListener('resize', refitSoon);
+      const unfitPlates = () => {
+        window.removeEventListener('resize', refitSoon);
+        cancelAnimationFrame(fitFrame);
+        fitTargets.forEach(clearFit);
+      };
 
       // ── ONE continuous hue grade: warm-morning → warm-gold across the whole p ──
       // RE-TUNED (Dani 2026-06-02): starts at 0.35, not 0. The open is warm DAYLIGHT
@@ -661,9 +771,13 @@ export function CinematicDesert() {
         return () => {
           clearTimeout(idleT);
           unparkWorld();
+          unfitPlates();
         };
       }
-      return unparkWorld;
+      return () => {
+        unparkWorld();
+        unfitPlates();
+      };
     },
     { scope, dependencies: [animate] },
   );

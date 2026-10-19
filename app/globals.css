@@ -3259,6 +3259,33 @@ html.dark ::selection {
   pointer-events: none;
 }
 
+/* PLATE FIT (desktop hotfix 2026-10-19). Set by CinematicDesert's fitPlates()
+   on Chromium desktop only: the plate's box is its file's own pixels
+   (--cdesert-fit-w/-h, on whole device pixels at --cdesert-fit-x/-y) and its
+   <picture> scales that box back up to the object-fit: cover box
+   (--cdesert-fit-k about --cdesert-fit-ox/-oy). The same pixels reach the
+   screen, zoom included, but a box that IS its image is composited straight
+   from it, so Chrome stops re-rasterising every plate at every zoom step
+   (the tile-memory dropouts). Phones never get the class and have no rule. */
+@media (min-width: 768px) {
+  .cdesert-stage picture.cdesert-plate--fit {
+    position: absolute;
+    inset: 0;
+    transform: scale(var(--cdesert-fit-k));
+    transform-origin: var(--cdesert-fit-ox) var(--cdesert-fit-oy);
+  }
+  .cdesert-stage .cdesert-plate--fit > .cdesert-layer {
+    inset: auto;
+    left: var(--cdesert-fit-x);
+    top: var(--cdesert-fit-y);
+    width: var(--cdesert-fit-w);
+    height: var(--cdesert-fit-h);
+    max-width: none;
+    max-height: none;
+    object-fit: fill;
+  }
+}
+
 /* -- Cliff rim-glow: THE GOLD LANDS on the crest (art pass, Sky-ratified
    2026-07-19). Masked by the arrival plate's OWN alpha — image-set() reuses the
    byte-identical file the <picture> already fetched (AVIF where the img chose
