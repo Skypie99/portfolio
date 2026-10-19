@@ -6,11 +6,11 @@
 
 | Measure | Value |
 |---|---|
-| Tracked files under `qa-reports/` | 965 |
-| Top-level reports and receipts (Markdown) | 177 |
+| Tracked files under `qa-reports/` | 966 |
+| Top-level reports and receipts (Markdown) | 178 |
 | Evidence directories | 17 |
-| File types | png 521, md 197, json 122, log 63, mjs 21, cjs 15, txt 9, py 6, gz 5, stderr 4, html 1, patch 1 |
-| Dates named in file paths | 2026-05-23 to 2026-10-18 |
+| File types | png 521, md 198, json 122, log 63, mjs 21, cjs 15, txt 9, py 6, gz 5, stderr 4, html 1, patch 1 |
+| Dates named in file paths | 2026-05-23 to 2026-10-19 |
 
 ## How the evidence is organized
 
@@ -19,10 +19,11 @@
 - **Adding evidence.** Name a receipt `YYYY-MM-DD_<Topic>.md` and cite its raw evidence by relative path. When a new artifact would be byte-identical to one already tracked, cite the existing path with its SHA-256 (or a manifest entry) instead of committing another copy, unless a self-contained package or a before/after comparison genuinely needs the copy. Then stage the files and regenerate this index.
 - **Evidence outside this directory:** `design-reviews/` (dated review programs) and `summaries/` (June 2026 pass reports). See [`docs/INDEX.md`](../docs/INDEX.md) for how every document in the repository is classified.
 
-## Newest dated reports (15 of 146)
+## Newest dated reports (15 of 147)
 
 | Date | Report | Title |
 |---|---|---|
+| 2026-10-19 | [`2026-10-19_cinematic-desktop-hotfix.md`](2026-10-19_cinematic-desktop-hotfix.md) | Cinematic desktop hotfix Report — 2026-10-19 |
 | 2026-10-18 | [`2026-10-18_DesignCompile_float-application.md`](2026-10-18_DesignCompile_float-application.md) | Design Compile Result — float-application — 2026-10-18 |
 | 2026-09-28 | [`2026-09-28_BL14_Overflow_Portability_Repair.md`](2026-09-28_BL14_Overflow_Portability_Repair.md) | BL-14 overflow-census portability repair (2026-09-28) |
 | 2026-09-28 | [`2026-09-28_PostMerge_Professionalism_Repair_Receipt.md`](2026-09-28_PostMerge_Professionalism_Repair_Receipt.md) | Post-merge professionalism repair receipt (2026-09-28) |
@@ -37,7 +38,6 @@
 | 2026-09-07 | [`2026-09-07_Codex_Phase07DeviceRepair.md`](2026-09-07_Codex_Phase07DeviceRepair.md) | Phase 07 — iPhone Safari Device Repair |
 | 2026-09-07 | [`2026-09-07_Codex_Phase07LocalIntegration.md`](2026-09-07_Codex_Phase07LocalIntegration.md) | Phase 07 — authorized local integration |
 | 2026-09-07 | [`2026-09-07_Codex_Phase07OwnerAcceptance.md`](2026-09-07_Codex_Phase07OwnerAcceptance.md) | Phase 07 — owner visual acceptance |
-| 2026-09-07 | [`2026-09-07_Codex_Phase07SeamAndIdentity.md`](2026-09-07_Codex_Phase07SeamAndIdentity.md) | Phase 07 — Safari seam repair and owner-requested identity update |
 
 ## Phase gate receipts and packets (14)
 
@@ -94,7 +94,7 @@ Top-level files by the month named in their file name:
 
 | Month | Top-level files |
 |---|---|
-| 2026-10 | 1 |
+| 2026-10 | 2 |
 | 2026-09 | 42 |
 | 2026-08 | 2 |
 | 2026-07 | 2 |
