@@ -1,0 +1,650 @@
+{
+  "base": "https://skypistudio.com",
+  "at": "2026-10-20T07:20:43.509Z",
+  "total": 70,
+  "failed": 0,
+  "results": [
+    {
+      "name": "wall editorial order + numeral (chromium light 1440)",
+      "ok": true,
+      "detail": {
+        "plates": 5,
+        "titleAboveFacts": true,
+        "numeralInk": "rgba(32, 48, 44, 0.65)",
+        "clauseSpans": 3,
+        "statusText": "On the App Store · US and Canada · Sept 2026"
+      }
+    },
+    {
+      "name": "wall no overflow (chromium light 1440)",
+      "ok": true,
+      "detail": {
+        "overflow": []
+      }
+    },
+    {
+      "name": "wall no console errors (chromium light 1440)",
+      "ok": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "wall editorial order + numeral (chromium light 393)",
+      "ok": true,
+      "detail": {
+        "plates": 5,
+        "titleAboveFacts": true,
+        "numeralInk": "rgba(32, 48, 44, 0.65)",
+        "clauseSpans": 3,
+        "statusText": "On the App Store · US and Canada · Sept 2026"
+      }
+    },
+    {
+      "name": "wall no overflow (chromium light 393)",
+      "ok": true,
+      "detail": {
+        "overflow": []
+      }
+    },
+    {
+      "name": "wall no console errors (chromium light 393)",
+      "ok": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "wall editorial order + numeral (chromium dark 1440)",
+      "ok": true,
+      "detail": {
+        "plates": 5,
+        "titleAboveFacts": true,
+        "numeralInk": "rgba(236, 234, 224, 0.65)",
+        "clauseSpans": 3,
+        "statusText": "On the App Store · US and Canada · Sept 2026"
+      }
+    },
+    {
+      "name": "wall no overflow (chromium dark 1440)",
+      "ok": true,
+      "detail": {
+        "overflow": []
+      }
+    },
+    {
+      "name": "wall no console errors (chromium dark 1440)",
+      "ok": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "wall editorial order + numeral (chromium dark 393)",
+      "ok": true,
+      "detail": {
+        "plates": 5,
+        "titleAboveFacts": true,
+        "numeralInk": "rgba(236, 234, 224, 0.65)",
+        "clauseSpans": 3,
+        "statusText": "On the App Store · US and Canada · Sept 2026"
+      }
+    },
+    {
+      "name": "wall no overflow (chromium dark 393)",
+      "ok": true,
+      "detail": {
+        "overflow": []
+      }
+    },
+    {
+      "name": "wall no console errors (chromium dark 393)",
+      "ok": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "home index layout (chromium 1440)",
+      "ok": true,
+      "detail": {
+        "rows": 5,
+        "clauseSpans": 10,
+        "yearBesideTitle": true,
+        "doorwayTabindex": "-1",
+        "doorwayText": "View project→",
+        "summaryTop": 6791.71875,
+        "statusTop": 6765.21875,
+        "doorwayTop": 6867
+      }
+    },
+    {
+      "name": "home no overflow (chromium 1440)",
+      "ok": true,
+      "detail": {
+        "overflow": []
+      }
+    },
+    {
+      "name": "home no console errors (chromium 1440)",
+      "ok": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "home index layout (chromium 393)",
+      "ok": true,
+      "detail": {
+        "rows": 5,
+        "clauseSpans": 10,
+        "yearBesideTitle": true,
+        "doorwayTabindex": "-1",
+        "doorwayText": "View project→",
+        "summaryTop": 6702.5625,
+        "statusTop": 6808.9375,
+        "doorwayTop": 6838.328125
+      }
+    },
+    {
+      "name": "home no overflow (chromium 393)",
+      "ok": true,
+      "detail": {
+        "overflow": []
+      }
+    },
+    {
+      "name": "home no console errors (chromium 393)",
+      "ok": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "home index layout (chromium 375)",
+      "ok": true,
+      "detail": {
+        "rows": 5,
+        "clauseSpans": 10,
+        "yearBesideTitle": true,
+        "doorwayTabindex": "-1",
+        "doorwayText": "View project→",
+        "summaryTop": 6115.21875,
+        "statusTop": 6244.6875,
+        "doorwayTop": 6274.078125
+      }
+    },
+    {
+      "name": "home no overflow (chromium 375)",
+      "ok": true,
+      "detail": {
+        "overflow": []
+      }
+    },
+    {
+      "name": "home no console errors (chromium 375)",
+      "ok": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "home index layout (chromium 320)",
+      "ok": true,
+      "detail": {
+        "rows": 5,
+        "clauseSpans": 10,
+        "yearBesideTitle": true,
+        "doorwayTabindex": "-1",
+        "doorwayText": "View project→",
+        "summaryTop": 6029.90625,
+        "statusTop": 6182.46875,
+        "doorwayTop": 6211.859375
+      }
+    },
+    {
+      "name": "home no overflow (chromium 320)",
+      "ok": true,
+      "detail": {
+        "overflow": []
+      }
+    },
+    {
+      "name": "home no console errors (chromium 320)",
+      "ok": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "Back after KEYBOARD departure reseats the row title at full opacity",
+      "ok": true,
+      "detail": {
+        "href2": "/work/claude-corp/",
+        "openedUrl": "https://skypistudio.com/work/claude-corp/",
+        "back": {
+          "focused": "Claude Corp",
+          "focusedTag": "A",
+          "opacity": "1",
+          "y": 6435
+        }
+      }
+    },
+    {
+      "name": "keyboard-return leg: 0 page errors",
+      "ok": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "Back after POINTER departure keeps the shipped focus-to-main orientation",
+      "ok": true,
+      "detail": {
+        "tag": "MAIN",
+        "y": 6435
+      }
+    },
+    {
+      "name": "pointer-return leg: 0 page errors",
+      "ok": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "focus floor: focused rows at full opacity with a ring",
+      "ok": true,
+      "detail": [
+        {
+          "title": "Flagstone",
+          "opacity": "1",
+          "ring": true
+        },
+        {
+          "title": "Claude Corp",
+          "opacity": "1",
+          "ring": true
+        },
+        {
+          "title": "Claude Corp Dashboar",
+          "opacity": "1",
+          "ring": true
+        },
+        {
+          "title": "Prompt Library",
+          "opacity": "1",
+          "ring": true
+        },
+        {
+          "title": "Ghost Code",
+          "opacity": "1",
+          "ring": true
+        }
+      ]
+    },
+    {
+      "name": "dusk-turn unchanged (marker written and released, choice persists, scroll held)",
+      "ok": true,
+      "detail": {
+        "midMarker": true,
+        "leg1": {
+          "theme": "dark",
+          "marker": false,
+          "stored": "dark",
+          "y": 1200
+        },
+        "leg2": {
+          "theme": "light",
+          "marker": false,
+          "stored": "light",
+          "y": 1200
+        },
+        "yBefore": 1200
+      }
+    },
+    {
+      "name": "home theme toggle keyboard activation works (past the cinematic intro)",
+      "ok": true,
+      "detail": {
+        "gate": {
+          "inert": false
+        },
+        "homeKb": {
+          "stored": "dark",
+          "marker": false,
+          "y": 6435
+        }
+      }
+    },
+    {
+      "name": "theme legs: 0 page errors",
+      "ok": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "Release 5 chapter preserved (/work/dashboard/)",
+      "ok": true,
+      "detail": {
+        "chapters": 3,
+        "otherWorkCards": 2
+      }
+    },
+    {
+      "name": "Flagstone case study preserved",
+      "ok": true,
+      "detail": {
+        "h1": "Flagstone",
+        "buttons": 43
+      }
+    },
+    {
+      "name": "/about/ preserved",
+      "ok": true,
+      "detail": {
+        "heading": "Support is the work and inspiration, bui"
+      }
+    },
+    {
+      "name": "/contact/ preserved",
+      "ok": true,
+      "detail": {
+        "heading": "Write to me."
+      }
+    },
+    {
+      "name": "cinematic hero markup present (GPU hotfix surface intact)",
+      "ok": true,
+      "detail": {
+        "cinematic": true,
+        "doorwayHeight": 44,
+        "doorwayTag": "group inline-flex h-11 w-fit items-cente"
+      }
+    },
+    {
+      "name": "Release 4 doorway pill intact (44px target)",
+      "ok": true,
+      "detail": {
+        "cinematic": true,
+        "doorwayHeight": 44,
+        "doorwayTag": "group inline-flex h-11 w-fit items-cente"
+      }
+    },
+    {
+      "name": "home: 0 page errors",
+      "ok": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "wall editorial order + numeral (webkit light 1440)",
+      "ok": true,
+      "detail": {
+        "plates": 5,
+        "titleAboveFacts": true,
+        "numeralInk": "rgba(32, 48, 44, 0.65)",
+        "clauseSpans": 3,
+        "statusText": "On the App Store · US and Canada · Sept 2026"
+      }
+    },
+    {
+      "name": "wall no overflow (webkit light 1440)",
+      "ok": true,
+      "detail": {
+        "overflow": []
+      }
+    },
+    {
+      "name": "wall no console errors (webkit light 1440)",
+      "ok": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "wall editorial order + numeral (webkit light 393)",
+      "ok": true,
+      "detail": {
+        "plates": 5,
+        "titleAboveFacts": true,
+        "numeralInk": "rgba(32, 48, 44, 0.65)",
+        "clauseSpans": 3,
+        "statusText": "On the App Store · US and Canada · Sept 2026"
+      }
+    },
+    {
+      "name": "wall no overflow (webkit light 393)",
+      "ok": true,
+      "detail": {
+        "overflow": []
+      }
+    },
+    {
+      "name": "wall no console errors (webkit light 393)",
+      "ok": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "wall editorial order + numeral (webkit dark 1440)",
+      "ok": true,
+      "detail": {
+        "plates": 5,
+        "titleAboveFacts": true,
+        "numeralInk": "rgba(236, 234, 224, 0.65)",
+        "clauseSpans": 3,
+        "statusText": "On the App Store · US and Canada · Sept 2026"
+      }
+    },
+    {
+      "name": "wall no overflow (webkit dark 1440)",
+      "ok": true,
+      "detail": {
+        "overflow": []
+      }
+    },
+    {
+      "name": "wall no console errors (webkit dark 1440)",
+      "ok": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "wall editorial order + numeral (webkit dark 393)",
+      "ok": true,
+      "detail": {
+        "plates": 5,
+        "titleAboveFacts": true,
+        "numeralInk": "rgba(236, 234, 224, 0.65)",
+        "clauseSpans": 3,
+        "statusText": "On the App Store · US and Canada · Sept 2026"
+      }
+    },
+    {
+      "name": "wall no overflow (webkit dark 393)",
+      "ok": true,
+      "detail": {
+        "overflow": []
+      }
+    },
+    {
+      "name": "wall no console errors (webkit dark 393)",
+      "ok": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "home index layout (webkit 1440)",
+      "ok": true,
+      "detail": {
+        "rows": 5,
+        "clauseSpans": 10,
+        "yearBesideTitle": true,
+        "doorwayTabindex": "-1",
+        "doorwayText": "View project→",
+        "summaryTop": 6791,
+        "statusTop": 6764.765625,
+        "doorwayTop": 6866.28125
+      }
+    },
+    {
+      "name": "home no overflow (webkit 1440)",
+      "ok": true,
+      "detail": {
+        "overflow": []
+      }
+    },
+    {
+      "name": "home no console errors (webkit 1440)",
+      "ok": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "home index layout (webkit 393)",
+      "ok": true,
+      "detail": {
+        "rows": 5,
+        "clauseSpans": 10,
+        "yearBesideTitle": true,
+        "doorwayTabindex": "-1",
+        "doorwayText": "View project→",
+        "summaryTop": 6701.78125,
+        "statusTop": 6808.15625,
+        "doorwayTop": 6837.546875
+      }
+    },
+    {
+      "name": "home no overflow (webkit 393)",
+      "ok": true,
+      "detail": {
+        "overflow": []
+      }
+    },
+    {
+      "name": "home no console errors (webkit 393)",
+      "ok": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "home index layout (webkit 375)",
+      "ok": true,
+      "detail": {
+        "rows": 5,
+        "clauseSpans": 10,
+        "yearBesideTitle": true,
+        "doorwayTabindex": "-1",
+        "doorwayText": "View project→",
+        "summaryTop": 6114.40625,
+        "statusTop": 6243.875,
+        "doorwayTop": 6273.265625
+      }
+    },
+    {
+      "name": "home no overflow (webkit 375)",
+      "ok": true,
+      "detail": {
+        "overflow": []
+      }
+    },
+    {
+      "name": "home no console errors (webkit 375)",
+      "ok": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "home index layout (webkit 320)",
+      "ok": true,
+      "detail": {
+        "rows": 5,
+        "clauseSpans": 10,
+        "yearBesideTitle": true,
+        "doorwayTabindex": "-1",
+        "doorwayText": "View project→",
+        "summaryTop": 6094.5,
+        "statusTop": 6247.0625,
+        "doorwayTop": 6276.453125
+      }
+    },
+    {
+      "name": "home no overflow (webkit 320)",
+      "ok": true,
+      "detail": {
+        "overflow": []
+      }
+    },
+    {
+      "name": "home no console errors (webkit 320)",
+      "ok": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "Release 5 chapter preserved (/work/dashboard/)",
+      "ok": true,
+      "detail": {
+        "chapters": 3,
+        "otherWorkCards": 2
+      }
+    },
+    {
+      "name": "Flagstone case study preserved",
+      "ok": true,
+      "detail": {
+        "h1": "Flagstone",
+        "buttons": 43
+      }
+    },
+    {
+      "name": "/about/ preserved",
+      "ok": true,
+      "detail": {
+        "heading": "Support is the work and inspiration, bui"
+      }
+    },
+    {
+      "name": "/contact/ preserved",
+      "ok": true,
+      "detail": {
+        "heading": "Write to me."
+      }
+    },
+    {
+      "name": "cinematic hero markup present (GPU hotfix surface intact)",
+      "ok": true,
+      "detail": {
+        "cinematic": true,
+        "doorwayHeight": 44,
+        "doorwayTag": "group inline-flex h-11 w-fit items-cente"
+      }
+    },
+    {
+      "name": "Release 4 doorway pill intact (44px target)",
+      "ok": true,
+      "detail": {
+        "cinematic": true,
+        "doorwayHeight": 44,
+        "doorwayTag": "group inline-flex h-11 w-fit items-cente"
+      }
+    },
+    {
+      "name": "home: 0 page errors",
+      "ok": true,
+      "detail": {
+        "errors": []
+      }
+    }
+  ]
+}
