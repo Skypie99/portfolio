@@ -1,5 +1,15 @@
 # Detail crops for the capture factory
 
+> **Status 2026-10-20 (MiMo integration).** DONE. The re-cut described below was completed on
+> `mimo/skypi-release5-integration-20261020` by `tools/recut-details-masters.mjs`: the same boxes
+> from the manifest-recorded 2880×1800 masters (SHA-256 verified, content-paired with the shipped
+> captures), same output names, AVIF q56 / WebP q84. The master paths resolved in two places: the
+> bank under `design-reviews/showcase-refresh/masters/` (Prompt Library) and the registered project
+> workspaces in `content/showcase.manifest.json` (Claude Corp, Dashboard). Note the bank's older
+> Sep-2 Claude Corp and Dashboard copies are NOT the sources of the shipped captures; the
+> manifest-recorded masters are. `details.json` now carries the master provenance per output. The
+> optional `captureRegion` banking below remains open.
+
 Release 5 cut its detail exhibits from the shipped captures (1290 or 1600 px wide) because the
 2880×1800 masters live only in the owner's gitignored bank. The table maps every box to master
 space (×2.232 for the 1290-wide desktop hero captures, ×1.8 for the 1600-wide desktop shots) so the

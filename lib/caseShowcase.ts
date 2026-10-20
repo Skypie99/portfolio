@@ -187,8 +187,8 @@ const SPECS: Record<string, SpecInput> = {
            was not used because its privacy line predates the truth pass. */
         phone: {
           ...twin(`${PL_IMG}/r5-featured-card.{theme}`),
-          width: 330,
-          height: 206,
+          width: 737,
+          height: 460,
           alt: 'Detail of the featured prompt card: the Learning category, the title Explain Like I’m Five, its one-line description and three tags.',
         },
         phoneLabel: 'One prompt card, as the library opens.',
@@ -205,14 +205,14 @@ const SPECS: Record<string, SpecInput> = {
           'The template on the left carries two variables and the fields on the right fill them. Copy the filled prompt, or run it with Claude: the browser sends the prompt and the user’s own key directly to Anthropic over HTTPS.',
         desktop: {
           ...twin(`${PL_IMG}/r5-prompt-open.{theme}`),
-          width: 1024,
-          height: 544,
+          width: 1843,
+          height: 979,
           alt: 'Detail of an opened prompt: the Explain Like I’m Five template with topic and audience variables, two fields to fill, Copy filled and Run with Claude.',
         },
         phone: {
           ...twin(`${PL_IMG}/r5-prompt-variables.{theme}`),
-          width: 520,
-          height: 400,
+          width: 936,
+          height: 720,
           alt: 'Detail of the variables panel: Topic to explain and Audience fields, Copy filled, Run with Claude, and the model choice.',
         },
         provenance: { capturedDate: '2026-07-31', commit: '052b37a', scene: 'prompt-detail · desktop', detail: true },
@@ -268,8 +268,8 @@ const SPECS: Record<string, SpecInput> = {
           'Five stages from intent to merge: Sky sets intent, Morgan plans and routes, fifteen roles build in parallel on scoped branches, Safety applies the seven-layer compiler, and main merges on human approval. A diagram on the public site, not telemetry.',
         desktop: {
           ...twin(`${CC_IMG}/r5-pipeline.{theme}`),
-          width: 990,
-          height: 298,
+          width: 2210,
+          height: 665,
           alt: 'Detail of the orchestration pipeline diagram: five stages, Sky sets intent, Morgan plans and routes, 15 roles build in parallel, Safety runs the 7-layer compiler, main merges on human approval.',
         },
         provenance: { capturedDate: '2026-09-05', commit: '4a03980', scene: 'hero-pipeline · desktop', detail: true, note: 'local build' },
@@ -390,8 +390,8 @@ const SPECS: Record<string, SpecInput> = {
           'The public demo says it is a demo and dates the snapshot it was built from: the DEMO badge and the synthetic-data banner sit on every screen, so nobody mistakes the numbers for live operations. Every data reader short-circuits to a synthetic snapshot before it can reach a real file.',
         desktop: {
           ...twin(`${DB_IMG}/r5-disclosure.{theme}`),
-          width: 1090,
-          height: 440,
+          width: 2433,
+          height: 982,
           alt: 'Detail of the command center: the DEMO badge and dated snapshot in the top bar, the agents-working and what-needs-you panels, and the Demo, synthetic data banner beneath.',
         },
         provenance: { capturedDate: '2026-09-05', commit: '00cc915', scene: 'command-center · desktop', detail: true, note: 'synthetic data · local build' },
@@ -405,8 +405,8 @@ const SPECS: Record<string, SpecInput> = {
           'Ideas arrive with a score and a catch, and the operator sorts each into Do it, Later or Skip; most are meant to land on Later or Skip. Synthetic ideas that reset each session.',
         desktop: {
           ...twin(`${DB_IMG}/r5-think-tank.{theme}`),
-          width: 1352,
-          height: 754,
+          width: 2434,
+          height: 1357,
           alt: 'Detail of the Think Tank board: the idea-triage header, project filters, and the first idea with its Do it, Later and Skip controls.',
         },
         phone: {
@@ -429,8 +429,8 @@ const SPECS: Record<string, SpecInput> = {
           'Work items queued for a named role, each with a status, an owner and any dependency. The relay controls stay off in the demo: approving, cancelling or re-queueing returns a plausible answer and persists nothing.',
         desktop: {
           ...twin(`${DB_IMG}/r5-dispatch.{theme}`),
-          width: 1360,
-          height: 775,
+          width: 2448,
+          height: 1395,
           alt: 'Detail of the Dispatch queue: status filters, then four queued items with their ids, statuses, owners, a dependency and Cancel controls.',
         },
         phone: {

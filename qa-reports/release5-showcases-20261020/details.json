@@ -23,8 +23,29 @@
         "webp": "/images/deliverables/prompt-library/r5-prompt-open.light.webp"
       },
       "bytes": {
-        "avif": 21279,
-        "webp": 33212
+        "avif": 33071,
+        "webp": 69556
+      },
+      "outSize": [
+        1843,
+        979
+      ],
+      "master": {
+        "source": "masters/prompt-library/prompt-detail.light.desktop.png",
+        "sha256": "1180ba43f62b7d6bdd9a7ceff03a8b0974605c0a59075a123f35d4d554948e05",
+        "sourceSize": [
+          2880,
+          1800
+        ],
+        "box": [
+          518,
+          410,
+          1843,
+          979
+        ],
+        "capturedAt": "2026-07-31",
+        "projectSha": "052b37a8aa0b6aea09efb636bf9d26ad7d63ef88",
+        "pairingMae": 0.57
       }
     },
     {
@@ -48,8 +69,29 @@
         "webp": "/images/deliverables/prompt-library/r5-prompt-open.dark.webp"
       },
       "bytes": {
-        "avif": 21728,
-        "webp": 30622
+        "avif": 31088,
+        "webp": 63800
+      },
+      "outSize": [
+        1843,
+        979
+      ],
+      "master": {
+        "source": "masters/prompt-library/prompt-detail.dark.desktop.png",
+        "sha256": "5ca34340f3b228d69f81b9500f754424c9d8318fd39756c22e088ab9a18b6a60",
+        "sourceSize": [
+          2880,
+          1800
+        ],
+        "box": [
+          518,
+          410,
+          1843,
+          979
+        ],
+        "capturedAt": "2026-07-31",
+        "projectSha": "052b37a8aa0b6aea09efb636bf9d26ad7d63ef88",
+        "pairingMae": 1.1
       }
     },
     {
@@ -73,8 +115,29 @@
         "webp": "/images/deliverables/prompt-library/r5-prompt-variables.light.webp"
       },
       "bytes": {
-        "avif": 7908,
-        "webp": 11596
+        "avif": 12188,
+        "webp": 24298
+      },
+      "outSize": [
+        936,
+        720
+      ],
+      "master": {
+        "source": "masters/prompt-library/prompt-detail.light.desktop.png",
+        "sha256": "1180ba43f62b7d6bdd9a7ceff03a8b0974605c0a59075a123f35d4d554948e05",
+        "sourceSize": [
+          2880,
+          1800
+        ],
+        "box": [
+          1426,
+          670,
+          936,
+          720
+        ],
+        "capturedAt": "2026-07-31",
+        "projectSha": "052b37a8aa0b6aea09efb636bf9d26ad7d63ef88",
+        "pairingMae": 0.57
       }
     },
     {
@@ -98,8 +161,29 @@
         "webp": "/images/deliverables/prompt-library/r5-prompt-variables.dark.webp"
       },
       "bytes": {
-        "avif": 8085,
-        "webp": 10798
+        "avif": 11216,
+        "webp": 22930
+      },
+      "outSize": [
+        936,
+        720
+      ],
+      "master": {
+        "source": "masters/prompt-library/prompt-detail.dark.desktop.png",
+        "sha256": "5ca34340f3b228d69f81b9500f754424c9d8318fd39756c22e088ab9a18b6a60",
+        "sourceSize": [
+          2880,
+          1800
+        ],
+        "box": [
+          1426,
+          670,
+          936,
+          720
+        ],
+        "capturedAt": "2026-07-31",
+        "projectSha": "052b37a8aa0b6aea09efb636bf9d26ad7d63ef88",
+        "pairingMae": 1.1
       }
     },
     {
@@ -123,8 +207,29 @@
         "webp": "/images/deliverables/prompt-library/r5-featured-card.light.webp"
       },
       "bytes": {
-        "avif": 3957,
-        "webp": 5688
+        "avif": 8986,
+        "webp": 15280
+      },
+      "outSize": [
+        737,
+        460
+      ],
+      "master": {
+        "source": "masters/prompt-library/home.light.desktop.png",
+        "sha256": "b957238d964a0ba957beca6815c7504f5ba6a48619cc2194afc479d0aa7d3609",
+        "sourceSize": [
+          2880,
+          1800
+        ],
+        "box": [
+          1697,
+          496,
+          737,
+          460
+        ],
+        "capturedAt": "2026-09-02",
+        "projectSha": "78b961ec6f3dd05c5ffc8dae4c948a76eb1ab8c4",
+        "pairingMae": 0.65
       }
     },
     {
@@ -148,8 +253,29 @@
         "webp": "/images/deliverables/prompt-library/r5-featured-card.dark.webp"
       },
       "bytes": {
-        "avif": 3984,
-        "webp": 5474
+        "avif": 8506,
+        "webp": 14398
+      },
+      "outSize": [
+        737,
+        460
+      ],
+      "master": {
+        "source": "masters/prompt-library/home.dark.desktop.png",
+        "sha256": "e25795d3327122ef52dab5930705fed4992ccafb00da9d00e2c99b10e87c0158",
+        "sourceSize": [
+          2880,
+          1800
+        ],
+        "box": [
+          1697,
+          496,
+          737,
+          460
+        ],
+        "capturedAt": "2026-09-02",
+        "projectSha": "78b961ec6f3dd05c5ffc8dae4c948a76eb1ab8c4",
+        "pairingMae": 1.35
       }
     },
     {
@@ -173,8 +299,29 @@
         "webp": "/images/deliverables/claude-corp/r5-pipeline.light.webp"
       },
       "bytes": {
-        "avif": 10042,
-        "webp": 12500
+        "avif": 20133,
+        "webp": 34998
+      },
+      "outSize": [
+        2210,
+        665
+      ],
+      "master": {
+        "source": "/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/p05-b/approved-execution/media-masters/final/claude-hero-pipeline-light-1440x900-dpr2.png",
+        "sha256": "6ebe752a17b64a72afd2f50162c59c6ebf8cf2376628a2aca3e3468a43f729b5",
+        "sourceSize": [
+          2880,
+          1800
+        ],
+        "box": [
+          335,
+          1089,
+          2210,
+          665
+        ],
+        "capturedAt": "2026-09-05",
+        "projectSha": "4a0398054ff14be4bdd0bbdcbae392bd30a88553",
+        "pairingMae": 0.94
       }
     },
     {
@@ -198,8 +345,29 @@
         "webp": "/images/deliverables/claude-corp/r5-pipeline.dark.webp"
       },
       "bytes": {
-        "avif": 10644,
-        "webp": 13036
+        "avif": 21018,
+        "webp": 35772
+      },
+      "outSize": [
+        2210,
+        665
+      ],
+      "master": {
+        "source": "/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/p05-b/approved-execution/media-masters/final/claude-hero-pipeline-dark-1440x900-dpr2.png",
+        "sha256": "048450b35f361ca714c220bc876660a016b5c0da7cddb7316eadf1eb5eb04625",
+        "sourceSize": [
+          2880,
+          1800
+        ],
+        "box": [
+          335,
+          1089,
+          2210,
+          665
+        ],
+        "capturedAt": "2026-09-05",
+        "projectSha": "4a0398054ff14be4bdd0bbdcbae392bd30a88553",
+        "pairingMae": 0.95
       }
     },
     {
@@ -273,8 +441,29 @@
         "webp": "/images/deliverables/dashboard/r5-disclosure.light.webp"
       },
       "bytes": {
-        "avif": 11593,
-        "webp": 14738
+        "avif": 28097,
+        "webp": 44498
+      },
+      "outSize": [
+        2433,
+        982
+      ],
+      "master": {
+        "source": "/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/p05-a/approved-execution/media-masters/final/command-center-light.png",
+        "sha256": "7681eddc098a3aecedc6f60ce9614ad2ea4f9156b1c64d9086e8edae1af03f96",
+        "sourceSize": [
+          2880,
+          1800
+        ],
+        "box": [
+          447,
+          0,
+          2433,
+          982
+        ],
+        "capturedAt": "2026-09-05",
+        "projectSha": "00cc9151242a436b99f425c294847f3881ac0f5c",
+        "pairingMae": 1.07
       }
     },
     {
@@ -298,8 +487,29 @@
         "webp": "/images/deliverables/dashboard/r5-disclosure.dark.webp"
       },
       "bytes": {
-        "avif": 12220,
-        "webp": 15216
+        "avif": 44971,
+        "webp": 81412
+      },
+      "outSize": [
+        2433,
+        982
+      ],
+      "master": {
+        "source": "/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/p05-a/approved-execution/media-masters/final/command-center-dark.png",
+        "sha256": "f561d2d50206acccb7e350dbff092ea377bea79329701216cce65602c5eb1359",
+        "sourceSize": [
+          2880,
+          1800
+        ],
+        "box": [
+          447,
+          0,
+          2433,
+          982
+        ],
+        "capturedAt": "2026-09-05",
+        "projectSha": "00cc9151242a436b99f425c294847f3881ac0f5c",
+        "pairingMae": 1.52
       }
     },
     {
@@ -323,8 +533,29 @@
         "webp": "/images/deliverables/dashboard/r5-think-tank.light.webp"
       },
       "bytes": {
-        "avif": 23508,
-        "webp": 36010
+        "avif": 46251,
+        "webp": 80044
+      },
+      "outSize": [
+        2434,
+        1357
+      ],
+      "master": {
+        "source": "/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/p05-a/approved-execution/media-masters/final/think-tank-light.png",
+        "sha256": "605641392a4d2310547a4efd3e703d4dc293206168036c5842dfb1562b3de977",
+        "sourceSize": [
+          2880,
+          1800
+        ],
+        "box": [
+          446,
+          137,
+          2434,
+          1357
+        ],
+        "capturedAt": "2026-09-05",
+        "projectSha": "00cc9151242a436b99f425c294847f3881ac0f5c",
+        "pairingMae": 0.86
       }
     },
     {
@@ -348,8 +579,29 @@
         "webp": "/images/deliverables/dashboard/r5-think-tank.dark.webp"
       },
       "bytes": {
-        "avif": 25768,
-        "webp": 34828
+        "avif": 73836,
+        "webp": 133296
+      },
+      "outSize": [
+        2434,
+        1357
+      ],
+      "master": {
+        "source": "/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/p05-a/approved-execution/media-masters/final/think-tank-dark.png",
+        "sha256": "84b157cb678c920eaba06d00a83f20db0bcb28d904dbf354724992e865d75a41",
+        "sourceSize": [
+          2880,
+          1800
+        ],
+        "box": [
+          446,
+          137,
+          2434,
+          1357
+        ],
+        "capturedAt": "2026-09-05",
+        "projectSha": "00cc9151242a436b99f425c294847f3881ac0f5c",
+        "pairingMae": 1.53
       }
     },
     {
@@ -373,8 +625,29 @@
         "webp": "/images/deliverables/dashboard/r5-dispatch.light.webp"
       },
       "bytes": {
-        "avif": 28128,
-        "webp": 40862
+        "avif": 49229,
+        "webp": 93994
+      },
+      "outSize": [
+        2448,
+        1395
+      ],
+      "master": {
+        "source": "/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/p05-a/approved-execution/media-masters/final/dispatch-light.png",
+        "sha256": "8df68cfe6cd42cba58772c51dd932d2167a4ca9f029ef73ceb7a011443ee8681",
+        "sourceSize": [
+          2880,
+          1800
+        ],
+        "box": [
+          432,
+          108,
+          2448,
+          1395
+        ],
+        "capturedAt": "2026-09-05",
+        "projectSha": "00cc9151242a436b99f425c294847f3881ac0f5c",
+        "pairingMae": 0.76
       }
     },
     {
@@ -398,8 +671,29 @@
         "webp": "/images/deliverables/dashboard/r5-dispatch.dark.webp"
       },
       "bytes": {
-        "avif": 28608,
-        "webp": 38396
+        "avif": 77723,
+        "webp": 128852
+      },
+      "outSize": [
+        2448,
+        1395
+      ],
+      "master": {
+        "source": "/Users/skypie/Documents/Codex/2026-09-04/files-pasted-by-the-user-skypi-2/outputs/p05-a/approved-execution/media-masters/final/dispatch-dark.png",
+        "sha256": "b8912701556446021b6c430dbb8d51a478ca2506c5718cbd0912b3ed09735a0c",
+        "sourceSize": [
+          2880,
+          1800
+        ],
+        "box": [
+          432,
+          108,
+          2448,
+          1395
+        ],
+        "capturedAt": "2026-09-05",
+        "projectSha": "00cc9151242a436b99f425c294847f3881ac0f5c",
+        "pairingMae": 1.52
       }
     },
     {
@@ -502,5 +796,10 @@
         "webp": 45276
       }
     }
-  ]
+  ],
+  "recut": {
+    "date": "2026-10-20",
+    "tool": "qa-reports/release5-showcases-20261020/tools/recut-details-masters.mjs",
+    "note": "Desktop-sourced detail crops re-cut from the manifest-recorded 2880×1800 masters at master resolution (FACTORY_RECUTS.md boxes); phone-native cuts (r5-team-phone, r5-think-tank-phone, r5-dispatch-phone) were already native and stand from the original cut. Entries carry master provenance and the pairing check."
+  }
 }
