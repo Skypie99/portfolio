@@ -1,0 +1,51 @@
+{
+  "base": "78169e94c9f2b9810d3c9cdb18c54b0cacb7e297",
+  "sourceHead": "43ef1c501b012515acc5d0313459589862c49939",
+  "contentChanges": [
+    {
+      "id": "flagstone",
+      "changedTopLevelKeys": [
+        "heroShot",
+        "shots"
+      ]
+    }
+  ],
+  "media": [
+    {
+      "file": "public/showcase/flagstone/explore-current.phone.webp",
+      "unchanged": true,
+      "sha256": "b133ba6ca2e46f5bdf2bd064141d7cff79d83579cf2c7c53ea990eaf4834579e"
+    },
+    {
+      "file": "public/showcase/flagstone/clips/report-flow-current.dark.phone-poster.webp",
+      "unchanged": true,
+      "sha256": "e9339dd6818ce613875c3c7314d677e17600731a91c1a532702a642512641372"
+    },
+    {
+      "file": "public/showcase/flagstone/report-current.phone.webp",
+      "unchanged": true,
+      "sha256": "61ba3cd7727113c957bd8ffa552c71b966062e955eec6fdf401a5c643f56c0c1"
+    },
+    {
+      "file": "public/showcase/flagstone/community-current.phone.webp",
+      "unchanged": true,
+      "sha256": "b70cfd9c435df88dda6e689d83e9c2b84ed90764ed3448a415401acde4351f9a"
+    },
+    {
+      "file": "public/showcase/flagstone/clips/report-flow-current.dark.phone.mp4",
+      "unchanged": true,
+      "sha256": "e54a62ca0c818ba57e8c815d53a2ad2b821284e6e68b487450dc58ea1e79d7e1"
+    },
+    {
+      "file": "public/showcase/flagstone/clips/report-flow-current.dark.phone.webm",
+      "unchanged": true,
+      "sha256": "be8af98e65c66ce13b33af1857c049bfec8cb1bd4d7354ebb5e6c2ecc4e6c6ac"
+    }
+  ],
+  "authenticAltPlateCaptionsUnchanged": true,
+  "captureDimensions": [
+    1290,
+    2803
+  ],
+  "autoplay": false
+}

@@ -1,0 +1,37 @@
+{
+  "testedApplicationCommit": "e3f1f1d",
+  "base": "10016243debfff0befe53e9d3af48de587303019",
+  "node": "v24.15.0",
+  "build": {
+    "command": "npm run build (CIRCLE_NODE_TOTAL=2, netguard)",
+    "exitCode": 0,
+    "durationSec": 18.8,
+    "network": {
+      "fonts.googleapis.com:443 allowed": 6,
+      "fonts.gstatic.com:443 allowed": 32
+    },
+    "blocked": []
+  },
+  "lint": "npm run lint: No ESLint warnings or errors",
+  "typecheck": "npm run typecheck: pass",
+  "whitespace": "git diff --check: pass",
+  "tests": "Test Files 118 passed (118) Tests 1056 passed | 2 skipped (1058)",
+  "browser": {
+    "chromium": "151.0.7922.34",
+    "webkit": "26.5",
+    "scenarios": 24,
+    "tables": 8,
+    "failures": [],
+    "axeViolations": 0,
+    "axeIncomplete": [
+      "aria-prohibited-attr",
+      "color-contrast",
+      "video-caption"
+    ]
+  },
+  "overflow": {
+    "repository": "npm run check:overflow: 108 frames (27 routes x 2 themes x 320/375), plant caught 108/108, no element crosses the viewport edge",
+    "wide": "216 frames (27 routes x 2 themes x 320/393/1024/1440), plant caught 216/216, no element crosses the viewport edge",
+    "noJs": "24 frames, 0 findings, 24 plants caught"
+  }
+}
