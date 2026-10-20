@@ -1,0 +1,238 @@
+[
+  {
+    "engine": "chromium",
+    "vp": [
+      1440,
+      900
+    ],
+    "rm": "no-preference",
+    "expectFit": true,
+    "version": "151.0.7922.34",
+    "atTop": {
+      "plates": 4,
+      "fit": 4,
+      "fitVars": [
+        "2.735562310030395",
+        "768px",
+        "329px"
+      ],
+      "frameAnimation": "cdesert-arrive / backwards",
+      "anim": {
+        "start": 1,
+        "cancel": 0,
+        "end": 1
+      },
+      "parked": [
+        false,
+        true
+      ],
+      "scrollY": 0
+    },
+    "after": {
+      "plates": 4,
+      "fit": 4,
+      "fitVars": [
+        "2.735562310030395",
+        "768px",
+        "329px"
+      ],
+      "frameAnimation": "cdesert-arrive / backwards",
+      "anim": {
+        "start": 1,
+        "cancel": 0,
+        "end": 1
+      },
+      "parked": [
+        false,
+        true,
+        false
+      ],
+      "scrollY": 5400
+    },
+    "errors": [],
+    "pass": true
+  },
+  {
+    "engine": "chromium",
+    "vp": [
+      1920,
+      1080
+    ],
+    "rm": "no-preference",
+    "expectFit": true,
+    "version": "151.0.7922.34",
+    "atTop": {
+      "plates": 4,
+      "fit": 4,
+      "fitVars": [
+        "3.282674772036474",
+        "768px",
+        "329px"
+      ],
+      "frameAnimation": "cdesert-arrive / backwards",
+      "anim": {
+        "start": 1,
+        "cancel": 0,
+        "end": 1
+      },
+      "parked": [
+        false,
+        true
+      ],
+      "scrollY": 0
+    },
+    "after": {
+      "plates": 4,
+      "fit": 4,
+      "fitVars": [
+        "3.282674772036474",
+        "768px",
+        "329px"
+      ],
+      "frameAnimation": "cdesert-arrive / backwards",
+      "anim": {
+        "start": 1,
+        "cancel": 0,
+        "end": 1
+      },
+      "parked": [
+        false,
+        true,
+        false
+      ],
+      "scrollY": 6480
+    },
+    "errors": [],
+    "pass": true
+  },
+  {
+    "engine": "chromium",
+    "vp": [
+      393,
+      852
+    ],
+    "rm": "no-preference",
+    "expectFit": false,
+    "mobile": true,
+    "version": "151.0.7922.34",
+    "atTop": {
+      "plates": 4,
+      "fit": 0,
+      "fitVars": null,
+      "frameAnimation": "cdesert-arrive / both",
+      "anim": {
+        "start": 1,
+        "cancel": 0,
+        "end": 1
+      },
+      "parked": [
+        false
+      ],
+      "scrollY": 0
+    },
+    "after": {
+      "plates": 4,
+      "fit": 0,
+      "fitVars": null,
+      "frameAnimation": "cdesert-arrive / both",
+      "anim": {
+        "start": 1,
+        "cancel": 0,
+        "end": 1
+      },
+      "parked": [
+        false
+      ],
+      "scrollY": 5112
+    },
+    "errors": [],
+    "pass": true
+  },
+  {
+    "engine": "webkit",
+    "vp": [
+      1440,
+      900
+    ],
+    "rm": "no-preference",
+    "expectFit": false,
+    "version": "26.5",
+    "atTop": {
+      "plates": 4,
+      "fit": 0,
+      "fitVars": null,
+      "frameAnimation": "cdesert-arrive / backwards",
+      "anim": {
+        "start": 1,
+        "cancel": 0,
+        "end": 1
+      },
+      "parked": [
+        false,
+        true
+      ],
+      "scrollY": 0
+    },
+    "after": {
+      "plates": 4,
+      "fit": 0,
+      "fitVars": null,
+      "frameAnimation": "cdesert-arrive / backwards",
+      "anim": {
+        "start": 1,
+        "cancel": 0,
+        "end": 1
+      },
+      "parked": [
+        false,
+        true,
+        false
+      ],
+      "scrollY": 5400
+    },
+    "errors": [],
+    "pass": true
+  },
+  {
+    "engine": "chromium",
+    "vp": [
+      1440,
+      900
+    ],
+    "rm": "reduce",
+    "expectFit": null,
+    "version": "151.0.7922.34",
+    "atTop": {
+      "plates": 0,
+      "fit": 0,
+      "fitVars": null,
+      "frameAnimation": null,
+      "anim": {
+        "start": 0,
+        "cancel": 0,
+        "end": 0
+      },
+      "parked": [
+        false
+      ],
+      "scrollY": 0
+    },
+    "after": {
+      "plates": 0,
+      "fit": 0,
+      "fitVars": null,
+      "frameAnimation": null,
+      "anim": {
+        "start": 0,
+        "cancel": 0,
+        "end": 0
+      },
+      "parked": [
+        false
+      ],
+      "scrollY": 5400
+    },
+    "errors": [],
+    "pass": true
+  }
+]
