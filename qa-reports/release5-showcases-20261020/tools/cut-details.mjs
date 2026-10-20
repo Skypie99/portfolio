@@ -70,13 +70,18 @@ const CUTS = {
     },
     'r5-dispatch': {
       from: 'showcase/dashboard/dispatch.{theme}.desktop.webp',
-      box: [240, 60, 1360, 800],
-      note: 'The Dispatch queue without the sidebar: status filters and the first five queued items.',
+      box: [240, 60, 1360, 775],
+      note: 'The Dispatch queue without the sidebar: status filters and the first four queued items, whole.',
     },
     'r5-think-tank-phone': {
       from: 'showcase/dashboard/think-tank.{theme}.phone.webp',
-      box: [0, 120, 780, 1440],
-      note: 'The Think Tank on a phone: the triage header, project filters and the first idea.',
+      box: [0, 720, 780, 820],
+      note: 'One idea on the phone Think Tank, with its score note, its catch and who raised it; the triage controls sit below the capture’s bottom bar. The header and the project chips above it are left out: this 2026-07-31 capture still names a project by its pre-rename name.',
+    },
+    'r5-dispatch-phone': {
+      from: 'showcase/dashboard/dispatch.{theme}.phone.webp',
+      box: [0, 120, 780, 1300],
+      note: 'The Queue Work form on a phone: the header card, the recorded-work note with the demo-mode line, and the role and project fields.',
     },
   },
 };

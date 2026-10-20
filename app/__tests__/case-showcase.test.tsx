@@ -195,16 +195,20 @@ describe('CaseShowcase — DOM', () => {
       if (onDesktop) dn += 1;
       if (onPhone) pn += 1;
       const labelText = text(kids[0]);
+      // the number: shared when both widths agree, else one span per width
+      const desktopSpans = Array.from(kids[0].querySelectorAll('span.hidden.md\\:inline')).map(text);
+      const phoneSpans = Array.from(kids[0].querySelectorAll('span.md\\:hidden')).map(text);
       if (onDesktop && onPhone && dn === pn) expect(labelText.startsWith(`${String(dn).padStart(2, '0')} · `)).toBe(true);
       else {
-        if (onDesktop) expect(text(kids[0].querySelector('.hidden.md\\:inline'))).toBe(String(dn).padStart(2, '0'));
-        if (onPhone) expect(text(kids[0].querySelector('.md\\:hidden'))).toBe(String(pn).padStart(2, '0'));
+        if (onDesktop) expect(desktopSpans[0]).toBe(String(dn).padStart(2, '0'));
+        if (onPhone) expect(phoneSpans[0]).toBe(String(pn).padStart(2, '0'));
       }
       if (!onDesktop) expect(li.className, `${ex.id} is phone-only`).toContain('md:hidden');
       if (!onPhone) expect(li.className, `${ex.id} is desktop-only`).toContain('hidden md:block');
+      // the words: one label per width when the phone shows a different scene
       if (ex.phoneLabel && ex.desktop && ex.phone) {
-        expect(text(kids[0].querySelector('.hidden.md\\:inline:last-child, span.hidden.md\\:inline'))).toContain(ex.label);
-        expect(labelText).toContain(ex.phoneLabel);
+        expect(desktopSpans.at(-1)).toBe(ex.label);
+        expect(phoneSpans.at(-1)).toBe(ex.phoneLabel);
       } else {
         expect(labelText).toContain(ex.label);
       }

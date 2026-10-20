@@ -150,6 +150,8 @@ const PL_IMG = '/images/deliverables/prompt-library';
 const CC = '/showcase/claude-corp';
 const CC_IMG = '/images/deliverables/claude-corp';
 const GC = '/showcase/ghost-code';
+const DB = '/showcase/dashboard';
+const DB_IMG = '/images/deliverables/dashboard';
 
 /** Light + dark twins of one scene under one path stem, e.g. `${PL}/home.{theme}.desktop`. */
 const twin = (stem: string, ext: 'webp' = 'webp') => ({
@@ -347,6 +349,101 @@ const SPECS: Record<string, SpecInput> = {
         clip: { shotIndex: 0, width: 390, height: 844 },
         provenance: { capturedDate: '2026-07-31', commit: '1e6b963', scene: 'round · phone clip' },
         layout: 'aside',
+      },
+    ],
+  },
+
+  /* Dashboard: the operator console at content width (the deliverable's own
+     heroShot of the command center), the phone command center below md, then
+     the demo seam at reading size and two of the operator's workflows. Every
+     capture is of the synthetic-data demo build (manifest: a locally approved
+     candidate at 00cc915 on 2026-09-05; the phone captures are the deployed
+     demo at b8bd3a9 on 2026-07-31), and every provenance line says so. No
+     private operational data is shown or implied. */
+  'dashboard': {
+    hero: {
+      desktop: {
+        ...twin(`${DB}/command-center.{theme}.desktop`),
+        width: 1290,
+        height: 806,
+        alt: 'The Dashboard command center, showing project health, agent activity and pending decisions on one calm board.',
+      },
+      phone: {
+        ...twin(`${DB}/command-center.{theme}.phone`),
+        width: 780,
+        height: 1688,
+        alt: 'The Dashboard command center on a phone, showing project health, agent activity, and pending decisions in a focused view.',
+      },
+      label: 'Public demo capture · command center · synthetic data',
+      phoneLabel: 'Public demo capture · command center, phone · synthetic data',
+      provenance: { capturedDate: '2026-09-05', commit: '00cc915', scene: 'command-center · desktop', note: 'local build' },
+      phoneProvenance: { capturedDate: '2026-07-31', commit: 'b8bd3a9', scene: 'command-center · phone' },
+    },
+    heading: 'A closer look.',
+    standfirst: 'The demo seam first, then two of the operator’s workflows, all on synthetic data.',
+    exhibits: [
+      {
+        id: 'seam',
+        kind: 'detail',
+        label: 'The demo seam, at reading size.',
+        caption:
+          'The public demo says it is a demo and dates the snapshot it was built from: the DEMO badge and the synthetic-data banner sit on every screen, so nobody mistakes the numbers for live operations. Every data reader short-circuits to a synthetic snapshot before it can reach a real file.',
+        desktop: {
+          ...twin(`${DB_IMG}/r5-disclosure.{theme}`),
+          width: 1090,
+          height: 440,
+          alt: 'Detail of the command center: the DEMO badge and dated snapshot in the top bar, the agents-working and what-needs-you panels, and the Demo, synthetic data banner beneath.',
+        },
+        provenance: { capturedDate: '2026-09-05', commit: '00cc915', scene: 'command-center · desktop', detail: true, note: 'synthetic data · local build' },
+        layout: 'inset',
+      },
+      {
+        id: 'think-tank',
+        kind: 'detail',
+        label: 'The Think Tank: ideas triaged into Do it, Later and Skip.',
+        caption:
+          'Ideas arrive with a score and a catch, and the operator sorts each into Do it, Later or Skip; most are meant to land on Later or Skip. Synthetic ideas that reset each session.',
+        desktop: {
+          ...twin(`${DB_IMG}/r5-think-tank.{theme}`),
+          width: 1352,
+          height: 754,
+          alt: 'Detail of the Think Tank board: the idea-triage header, project filters, and the first idea with its Do it, Later and Skip controls.',
+        },
+        phone: {
+          ...twin(`${DB_IMG}/r5-think-tank-phone.{theme}`),
+          width: 780,
+          height: 820,
+          alt: 'Detail of one Think Tank idea on a phone, marked Do it: its description, its score note, its catch and who raised it.',
+        },
+        phoneLabel: 'One idea, triaged on a phone.',
+        phoneCaption:
+          'An idea on the phone board, already marked Do it: its description, its score note, its catch and who raised it. Synthetic ideas that reset each session.',
+        provenance: { capturedDate: '2026-09-05', commit: '00cc915', scene: 'think-tank · desktop', detail: true, note: 'synthetic data · local build' },
+        phoneProvenance: { capturedDate: '2026-07-31', commit: 'b8bd3a9', scene: 'think-tank · phone', detail: true, note: 'synthetic data' },
+      },
+      {
+        id: 'dispatch',
+        kind: 'detail',
+        label: 'The Dispatch queue, with its receipts.',
+        caption:
+          'Work items queued for a named role, each with a status, an owner and any dependency. The relay controls stay off in the demo: approving, cancelling or re-queueing returns a plausible answer and persists nothing.',
+        desktop: {
+          ...twin(`${DB_IMG}/r5-dispatch.{theme}`),
+          width: 1360,
+          height: 775,
+          alt: 'Detail of the Dispatch queue: status filters, then four queued items with their ids, statuses, owners, a dependency and Cancel controls.',
+        },
+        phone: {
+          ...twin(`${DB_IMG}/r5-dispatch-phone.{theme}`),
+          width: 780,
+          height: 1300,
+          alt: 'Detail of the Queue Work form on a phone: the DEMO badge, the Queue Work header, the recorded-work note, and the role and project fields.',
+        },
+        phoneLabel: 'Queueing work, on a phone.',
+        phoneCaption:
+          'The queue form on a phone: a work item is addressed to a named role and project and recorded as approved work. The form itself says the rest: no agent runs yet, and in demo mode nothing is written.',
+        provenance: { capturedDate: '2026-09-05', commit: '00cc915', scene: 'dispatch · desktop', detail: true, note: 'synthetic data · local build' },
+        phoneProvenance: { capturedDate: '2026-07-31', commit: 'b8bd3a9', scene: 'dispatch · phone', detail: true, note: 'synthetic data' },
       },
     ],
   },
