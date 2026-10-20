@@ -1,0 +1,90 @@
+{
+  "dir": "/Users/skypie/Portfolio-codex/mimo-release6-20261020/out",
+  "at": "2026-10-20T06:04:47.029Z",
+  "captures": [
+    {
+      "target": "work",
+      "theme": "light",
+      "size": "1440x900@1",
+      "mode": "zoomtext",
+      "files": [
+        "/Users/skypie/Portfolio-codex/mimo-release6-20261020/qa-reports/release6-editorial-finish-2026-10-20/integrated/zoom-text/work-light-1440x900@1-zoomtext-fold.jpg",
+        "/Users/skypie/Portfolio-codex/mimo-release6-20261020/qa-reports/release6-editorial-finish-2026-10-20/integrated/zoom-text/work-light-1440x900@1-zoomtext-full.jpg",
+        "/Users/skypie/Portfolio-codex/mimo-release6-20261020/qa-reports/release6-editorial-finish-2026-10-20/integrated/zoom-text/work-light-1440x900@1-zoomtext-plate-01.jpg",
+        "/Users/skypie/Portfolio-codex/mimo-release6-20261020/qa-reports/release6-editorial-finish-2026-10-20/integrated/zoom-text/work-light-1440x900@1-zoomtext-plate-02.jpg"
+      ],
+      "errors": [],
+      "plate01": {
+        "x": 344,
+        "y": 48.328125,
+        "width": 1032,
+        "height": 916.28125
+      },
+      "plate02": {
+        "x": 344,
+        "y": 47.609375,
+        "width": 1032,
+        "height": 1054.84375
+      }
+    },
+    {
+      "target": "work",
+      "theme": "light",
+      "size": "393x852@2",
+      "mode": "zoomtext",
+      "files": [
+        "/Users/skypie/Portfolio-codex/mimo-release6-20261020/qa-reports/release6-editorial-finish-2026-10-20/integrated/zoom-text/work-light-393x852@2-zoomtext-fold.jpg",
+        "/Users/skypie/Portfolio-codex/mimo-release6-20261020/qa-reports/release6-editorial-finish-2026-10-20/integrated/zoom-text/work-light-393x852@2-zoomtext-full.jpg",
+        "/Users/skypie/Portfolio-codex/mimo-release6-20261020/qa-reports/release6-editorial-finish-2026-10-20/integrated/zoom-text/work-light-393x852@2-zoomtext-plate-01.jpg",
+        "/Users/skypie/Portfolio-codex/mimo-release6-20261020/qa-reports/release6-editorial-finish-2026-10-20/integrated/zoom-text/work-light-393x852@2-zoomtext-plate-02.jpg"
+      ],
+      "errors": [],
+      "plate01": {
+        "x": 64,
+        "y": 47.90625,
+        "width": 265,
+        "height": 1867.046875
+      },
+      "plate02": {
+        "x": 64,
+        "y": 47.953125,
+        "width": 265,
+        "height": 1883.015625
+      }
+    },
+    {
+      "target": "home-work",
+      "theme": "light",
+      "size": "1440x900@1",
+      "mode": "zoomtext",
+      "files": [
+        "/Users/skypie/Portfolio-codex/mimo-release6-20261020/qa-reports/release6-editorial-finish-2026-10-20/integrated/zoom-text/home-work-light-1440x900@1-zoomtext-fold.jpg",
+        "/Users/skypie/Portfolio-codex/mimo-release6-20261020/qa-reports/release6-editorial-finish-2026-10-20/integrated/zoom-text/home-work-light-1440x900@1-zoomtext-section.jpg"
+      ],
+      "errors": [],
+      "section": {
+        "x": 280,
+        "y": -0.375,
+        "width": 1160,
+        "height": 3807.65625
+      }
+    },
+    {
+      "target": "home-work",
+      "theme": "light",
+      "size": "393x852@2",
+      "mode": "zoomtext",
+      "files": [
+        "/Users/skypie/Portfolio-codex/mimo-release6-20261020/qa-reports/release6-editorial-finish-2026-10-20/integrated/zoom-text/home-work-light-393x852@2-zoomtext-fold.jpg",
+        "/Users/skypie/Portfolio-codex/mimo-release6-20261020/qa-reports/release6-editorial-finish-2026-10-20/integrated/zoom-text/home-work-light-393x852@2-zoomtext-section.jpg"
+      ],
+      "errors": [],
+      "section": {
+        "x": 0,
+        "y": -3881.796875,
+        "width": 393,
+        "height": 8254.421875
+      }
+    }
+  ]
+}

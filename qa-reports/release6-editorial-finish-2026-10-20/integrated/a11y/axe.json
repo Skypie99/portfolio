@@ -1,0 +1,215 @@
+{
+  "axe": "4.11.4",
+  "dir": "/Users/skypie/Portfolio-codex/mimo-release6-20261020/out",
+  "at": "2026-10-20T05:54:06.376Z",
+  "results": [
+    {
+      "surface": "work",
+      "route": "/work/",
+      "theme": "light",
+      "size": "1440x900@1",
+      "whole": {
+        "violations": [],
+        "passes": 39,
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 79
+          }
+        ]
+      },
+      "scoped": {
+        "violations": [],
+        "passes": 21,
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 62
+          }
+        ]
+      }
+    },
+    {
+      "surface": "work",
+      "route": "/work/",
+      "theme": "light",
+      "size": "393x852@2",
+      "whole": {
+        "violations": [],
+        "passes": 39,
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 78
+          }
+        ]
+      },
+      "scoped": {
+        "violations": [],
+        "passes": 21,
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 65
+          }
+        ]
+      }
+    },
+    {
+      "surface": "work",
+      "route": "/work/",
+      "theme": "dark",
+      "size": "1440x900@1",
+      "whole": {
+        "violations": [],
+        "passes": 39,
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 79
+          }
+        ]
+      },
+      "scoped": {
+        "violations": [],
+        "passes": 21,
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 62
+          }
+        ]
+      }
+    },
+    {
+      "surface": "work",
+      "route": "/work/",
+      "theme": "dark",
+      "size": "393x852@2",
+      "whole": {
+        "violations": [],
+        "passes": 39,
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 78
+          }
+        ]
+      },
+      "scoped": {
+        "violations": [],
+        "passes": 21,
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 65
+          }
+        ]
+      }
+    },
+    {
+      "surface": "home-work",
+      "route": "/",
+      "theme": "light",
+      "size": "1440x900@1",
+      "whole": {
+        "violations": [],
+        "passes": 40,
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 159
+          }
+        ]
+      },
+      "scoped": {
+        "violations": [],
+        "passes": 14,
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 48
+          }
+        ]
+      }
+    },
+    {
+      "surface": "home-work",
+      "route": "/",
+      "theme": "light",
+      "size": "393x852@2",
+      "whole": {
+        "violations": [],
+        "passes": 41,
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 161
+          }
+        ]
+      },
+      "scoped": {
+        "violations": [],
+        "passes": 14,
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 48
+          }
+        ]
+      }
+    },
+    {
+      "surface": "home-work",
+      "route": "/",
+      "theme": "dark",
+      "size": "1440x900@1",
+      "whole": {
+        "violations": [],
+        "passes": 40,
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 159
+          }
+        ]
+      },
+      "scoped": {
+        "violations": [],
+        "passes": 14,
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 48
+          }
+        ]
+      }
+    },
+    {
+      "surface": "home-work",
+      "route": "/",
+      "theme": "dark",
+      "size": "393x852@2",
+      "whole": {
+        "violations": [],
+        "passes": 41,
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 161
+          }
+        ]
+      },
+      "scoped": {
+        "violations": [],
+        "passes": 14,
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 48
+          }
+        ]
+      }
+    }
+  ]
+}

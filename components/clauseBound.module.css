@@ -1,0 +1,34 @@
+/*
+ * clauseBound.module.css — the clause hold and its width-aware release
+ * (Release 6, R6-A; the splitting rule lives in lib/clauses.ts).
+ *
+ * `.clause` keeps one short interpunct clause on a line so a narrow column
+ * breaks at the separator instead of inside a clause or between a month and
+ * its year. A character count alone is not a safe guard: under text-only
+ * enlargement the glyphs double while the column does not, and a held clause
+ * then runs past the viewport (measured at 393x852 with the root font-size at
+ * 200%: `PUBLIC SYNTHETI|` clipped at the page edge). So the hold is released
+ * by width: the status line is a size container, and once it is narrower
+ * than the widest clause the guard admits (24 characters of DM Mono at
+ * +0.125em tracking is about 17.4em of the line's own font-size) the clauses
+ * wrap word by word as they did before this release. The query is in `em`
+ * of the container, so it follows the text size, not the viewport.
+ *
+ * At 100% text the line is wider than that on every width this site renders
+ * a status in (208px of 11px text at 320 is 18.9em), so the hold stands
+ * everywhere the boards show it; engines without container queries keep the
+ * hold, which is today's behaviour plus the clause breaks.
+ */
+.line {
+  container-type: inline-size;
+}
+
+.clause {
+  white-space: nowrap;
+}
+
+@container (max-width: 17.5em) {
+  .clause {
+    white-space: normal;
+  }
+}
