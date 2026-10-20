@@ -113,9 +113,21 @@ export function CaseStudyCard({ title, category, description, href, status, veri
       {/* V4-MOB-11: on a phone, the readable project introduction leads the
           evidence. md+ restores the original media-first gallery composition. */}
       <div className="case-study-card-copy relative z-10 order-1 flex flex-1 flex-col p-7 md:order-2 md:max-lg:p-8 lg:p-12">
+        {/* Release 6 (R6-A): in the catalogue order the numeral is the
+            title's label, not a ghost behind two meta lines, so under
+            `editorial` it carries legible ink. Measured on the built page at
+            the worst backdrop pixel of the glass (the warm caustic in dark
+            mode): /30 read 1.75 to 2.09:1; /65 reads 3.54:1 on the dark phone
+            plate and 4.2 to 4.7:1 elsewhere, over the 3:1 large-text bar with
+            margin. Hover steps to /80 so it still darkens rather than fades.
+            The default string is byte-identical for every other consumer. */}
         <span
           aria-hidden="true"
-          className="font-serif font-light text-card-numeral leading-none tabular-nums text-ink/30 origin-top-left transition duration-slow ease-gh-glide group-hover:text-ink/45 motion-safe:group-hover:scale-[1.04]"
+          className={
+            editorial
+              ? 'font-serif font-light text-card-numeral leading-none tabular-nums text-ink/65 origin-top-left transition duration-slow ease-gh-glide group-hover:text-ink/80 motion-safe:group-hover:scale-[1.04]'
+              : 'font-serif font-light text-card-numeral leading-none tabular-nums text-ink/30 origin-top-left transition duration-slow ease-gh-glide group-hover:text-ink/45 motion-safe:group-hover:scale-[1.04]'
+          }
         >
           {numeral}
         </span>

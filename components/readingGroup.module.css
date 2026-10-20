@@ -41,3 +41,17 @@
 :global(html.js) .group :global(.reveal-depth:not(.reveal-shown)) {
   transform: translateY(16px) scale(0.992);
 }
+
+/* The focus floor. A keyboard reader who Tabs into a row or plate that is
+   still armed (below the pre-arm band, or inside its stagger delay) must
+   never be looking at faint content under a faint ring: the moment anything
+   inside a reveal holds focus, that reveal rests at its visible frame at
+   once, no transition. The IntersectionObserver adds `reveal-shown` on the
+   same scroll the focus caused, so the frame never fades back. (0,4,1) beats
+   every non-important hidden rule; the reduced-motion floor is already
+   `!important` and agrees with it. */
+:global(html.js) .group :global(.reveal:focus-within) {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
