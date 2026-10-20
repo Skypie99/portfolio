@@ -3,7 +3,7 @@
 import Link from 'next/link';
 
 import { CardField } from '@/components/CardField';
-import { ClauseBound } from '@/components/ClauseBound';
+import { CLAUSE_LINE_CLASS, ClauseBound } from '@/components/ClauseBound';
 import { CardProductReveal, type ProductRevealMedia } from '@/components/ProductReveal';
 import { cn } from '@/lib/cn';
 import { useSpotlight } from '@/lib/motion';
@@ -81,7 +81,9 @@ export function CaseStudyCard({ title, category, description, href, status, veri
      never splits a month from its year. */
   const facts = status ? (
     <div className="flex flex-col gap-1">
-      <p className="font-mono text-meta text-text-meta">{editorial ? <ClauseBound text={status} /> : status}</p>
+      <p className={editorial ? `font-mono text-meta text-text-meta ${CLAUSE_LINE_CLASS}` : 'font-mono text-meta text-text-meta'}>
+        {editorial ? <ClauseBound text={status} /> : status}
+      </p>
       {verifiedDate && (
         <p className="font-mono text-meta text-text-meta">
           {'Verified '}

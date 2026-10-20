@@ -3,7 +3,7 @@ import Link from 'next/link';
 import type { CSSProperties, ReactNode } from 'react';
 
 import { CinematicDesert } from '@/components/cinematic/CinematicDesert';
-import { ClauseBound } from '@/components/ClauseBound';
+import { CLAUSE_LINE_CLASS, ClauseBound } from '@/components/ClauseBound';
 import { ContactEmail } from '@/components/ContactEmail';
 import { ContentReveal } from '@/components/ContentReveal';
 import { Hero } from '@/components/Hero';
@@ -846,7 +846,11 @@ export default function HomePage() {
                           at lg, inside C's hypotheses (23–27px phone,
                           26–32px desktop). Scoped type on this h3 only; no
                           global default moves. All words below unchanged. */}
-                      <h3 className="font-serif font-light text-step-2 lg:text-step-3 leading-heading text-ink">
+                      {/* R6-A: `break-words` only ever acts when a single word is
+                          wider than the title cell (text-only zoom at phone
+                          widths); at 100% text it changes nothing. Without it
+                          the word ran under the year on the same line. */}
+                      <h3 className="font-serif font-light text-step-2 lg:text-step-3 break-words leading-heading text-ink">
                         <Link
                           href={href}
                           aria-label={`View ${d.title} project`}
@@ -889,7 +893,7 @@ export default function HomePage() {
                     </div>
                     <div className="contents">
                       <div className="col-span-2 row-start-3 mt-2 flex flex-col gap-1.5 lg:mt-0 lg:flex-1">
-                      <p className="font-mono text-meta tracking-label uppercase text-text-meta text-pretty">
+                      <p className={cn('font-mono text-meta tracking-label uppercase text-text-meta text-pretty', CLAUSE_LINE_CLASS)}>
                         {isFlagship ? (
                           <Link
                             href="#flagship"
@@ -935,7 +939,7 @@ export default function HomePage() {
                           reads as a measured figure rather than a second
                           status — which is what it is. */}
                       {note && (
-                        <p className="font-mono text-meta tracking-label uppercase text-accent-text tabular-nums">
+                        <p className={cn('font-mono text-meta tracking-label uppercase text-accent-text tabular-nums', CLAUSE_LINE_CLASS)}>
                           <ClauseBound text={note} />
                         </p>
                       )}
@@ -1023,7 +1027,7 @@ export default function HomePage() {
                   >
                     {row.figure}
                   </span>
-                  <span className="min-w-0 lg:flex-1 font-sans font-light text-body-sm leading-body text-ink-muted text-pretty">
+                  <span className={cn('min-w-0 lg:flex-1 font-sans font-light text-body-sm leading-body text-ink-muted text-pretty', CLAUSE_LINE_CLASS)}>
                     {row.what}
                   </span>
                   <span className="shrink-0 lg:ml-auto font-mono text-meta tracking-label uppercase text-text-meta tabular-nums">
