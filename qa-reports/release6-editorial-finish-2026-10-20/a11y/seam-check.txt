@@ -1,0 +1,6 @@
+[seam] /work/prompt-library/: Release 5 chapter present · 2 "Other work" cards (no status, no status) · all default variant with /30 numeral
+[seam] /work/claude-corp/: Release 5 chapter present · 2 "Other work" cards (no status, no status) · all default variant with /30 numeral
+[seam] /work/ghost-code/: Release 5 chapter present · 2 "Other work" cards (no status, no status) · all default variant with /30 numeral
+[seam] /work/dashboard/: Release 5 chapter present · 2 "Other work" cards (no status, no status) · all default variant with /30 numeral
+[seam] /work/: 5 plates · all editorial order with /65 numeral
+[seam] PASS

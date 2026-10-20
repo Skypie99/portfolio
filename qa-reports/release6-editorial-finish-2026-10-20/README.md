@@ -1,6 +1,6 @@
 # Release 6 · Editorial flow and signature finish · owner review
 
-**Date:** 2026-10-20 · **Branch:** `claude/stoic-fermat-r3s6vx` · **Baseline:** main `f29ce93b781372418cfe9d0e01ac17850a34b70e` (the latest successful Deploy, run 187) · **Final source commit:** `9198291` (the review folder follows it as the branch head) · **Deployed:** no
+**Date:** 2026-10-20 · **Branch:** `claude/stoic-fermat-r3s6vx` · **Baseline the work was built and measured on:** main `f29ce93b781372418cfe9d0e01ac17850a34b70e` (Deploy run 187) · **Integrated baseline merged in at handoff:** main `b51c742` (Release 5 on main, Deploy run 188), merge commit `e83c7fd` · **Final source commit:** `9198291` · **Deployed:** no
 
 | Package | Surfaces | Status |
 |---|---|---|
@@ -28,8 +28,8 @@ Every capture is a genuine headless-Chromium render of the built export served o
 
 ## 2. Baseline and isolation
 
-- `origin/main` was fetched at the start of the session and read `f29ce93b781372418cfe9d0e01ac17850a34b70e`; the GitHub Actions Deploy history shows run 187 published that exact commit. The session branch started at it with no divergence.
-- Release 5 (`origin/claude/inspiring-pascal-p12cfr` at `dfddbdd916eb43f4cc266774df03257aea69b228`) was re-checked at the start and again at handoff: it is **not on main** (its merge-base with main is `f08c327`, before Release 4) and no PR for it exists. It was read only. Nothing from it is imported, re-implemented or merged here, and none of its files are edited (section 8).
+- `origin/main` was fetched at the start of the session and read `f29ce93b781372418cfe9d0e01ac17850a34b70e`; the GitHub Actions Deploy history showed run 187 published that exact commit. The session branch started at it with no divergence, and every board, recording and measurement in this folder compares that main with this candidate.
+- Release 5 (`origin/claude/inspiring-pascal-p12cfr` at `dfddbdd916eb43f4cc266774df03257aea69b228`) was **not on main** when the work started (merge-base `f08c327`) and was read only; nothing from it was imported or re-implemented. **At handoff it was on main:** MiMo's PR #32 merged it as `b51c742` and Deploy run 188 published that commit at 04:25 UTC. Per the brief, the integrated baseline was then merged into this branch (`e83c7fd`, a merge, no history rewritten). The only conflict was the generated `qa-reports/INDEX.md`; no source file is touched by both releases. The merged tree was rebuilt and re-verified (section 7.1) and the runtime seam was checked directly (section 8).
 - Protected surfaces listed in the brief were not edited: the cinematic, Hero/ContentReveal, Skip Intro, the flagship room, support lanes, the Record's facts and order, How-the-work-gets-made, About, Contact, Flagstone's case study, Release 5's chapters and heroes, the Release 4 buttons and pressed dots, Float, Tokyo, `/runway/`, `/archive/`, global tokens, dependencies, workflows.
 
 ## 3. The three most noticeable improvements
@@ -93,7 +93,7 @@ Environment: Linux 6.18 container, 4 vCPU, Node 22.22, Next 15, Playwright Chrom
 | `npm run typecheck` | clean |
 | `npm run lint` (next lint + jsx-a11y) | no warnings or errors |
 | `npm run build` (static export, prebuild asset validation, postbuild prune/alias) | clean; First Load JS unchanged at 173 kB for `/` and 125 kB for `/work` (route chunk 3.88 kB → 4.17 kB); built CSS +849 bytes (the scoped module); home HTML +4.8 kB and `/work/` +0.8 kB (clause spans, grid classes) |
-| `npm test` with `out/` present (the build-dependent static-integrity and section-nav guards run, as in CI) | 121 files, 1087 tests passed, 2 skipped (the same two skips as main), 0 failed, on the final commit |
+| `npm test` with `out/` present (the build-dependent static-integrity and section-nav guards run, as in CI) | On the final source commit `9198291`: 121 files, 1087 tests passed, 2 skipped (the same two skips as main), 0 failed. On the merged tree (`e83c7fd`, Release 5 included): 122 files, 1111 tests passed, 2 skipped, 0 failed; typecheck and lint clean again. |
 | Focused guards re-run after each package: GalleryWall (DOM + SSR floor), CaseStudyCard, TapTargets, returnFocus wiring, homepage project links / numeral contrast / featured link / dates, Flagstone CTA parity, support-first hierarchy, recruiter copy truth, duration ramp, token parity, print reveal visibility, dusk-turn, ThemeToggle, clauses | all green |
 | House overflow census (`npm run check:overflow -- --widths 320,375,414`; 27 routes × 2 themes × 3 widths = 162 frames; `a11y/overflow-census.txt`) | no element crosses the viewport edge; the non-vacuity plant was caught on 162/162 frames. Needs `PLAYWRIGHT_CHROMIUM_EXECUTABLE` pointed at the container's Chromium build, since the script's version-matched lookup does not find it here. |
 
@@ -201,10 +201,11 @@ Real Safari and Firefox, VoiceOver, a physical phone's touch and scroll feel, GP
 
 ## 8. Release 5 reconciliation (for MiMo)
 
-- **Files:** zero overlap. Release 5 touches `app/work/[slug]/page.tsx`, `components/CaseShowcase.tsx`, `components/ShowcaseHero.tsx`, `components/caseShowcase.module.css`, `lib/caseShowcase.ts`, `lib/schema.ts` (one export), its test and its images. Release 6 touches none of those; Release 5 touches none of Release 6's seven files. A merge in either order applies cleanly by diff (checked with `git merge-tree` at handoff: the only conflicting path is the generated `qa-reports/INDEX.md`, which both branches regenerate; resolve it by running `npm run qa:index` after the merge).
-- **Runtime seam to re-verify after both land:** Release 5's four case studies render `CaseStudyCard` in their "Other work" band without the new `editorial` prop, so they keep today's card order by construction; open one of the four and confirm the "Other work" cards still read status above title with the /30 ghost numeral, and that `/work/` reads title first. Also confirm `lib/__tests__/clauses.test.ts` still passes once Release 5's `lib/schema.ts` export lands (it reads deliverables through `getDeliverables()` only).
-- **Order:** no dependency either way. If Release 5 integrates first, rebase or merge this branch onto the new main and re-run `npm run build && npm test`; nothing in this folder needs regenerating for that, but `tools/run-all.sh` rebuilds it in one command if a fresh board is wanted.
-- **Not done here on purpose:** no combined acceptance is claimed; Release 5 remains pending its own owner review.
+- **Files:** zero source overlap. Release 5 touches `app/work/[slug]/page.tsx`, `components/CaseShowcase.tsx`, `components/ShowcaseHero.tsx`, `components/caseShowcase.module.css`, `lib/caseShowcase.ts`, `lib/schema.ts` (one export), its test and its images. Release 6 touches none of those; Release 5 touches none of Release 6's eight files. The only shared path was the generated `qa-reports/INDEX.md`.
+- **Already merged:** main `b51c742` (Release 5 integrated) is merged into this branch at `e83c7fd`, the index regenerated, the tree rebuilt, typecheck, lint and the full suite re-run green (section 7.1). This branch therefore applies to main as a fast-forward of content; nothing is left for MiMo to reconcile by hand.
+- **Runtime seam, checked on the merged build** (`tools/seam-check.mjs`, log in `a11y/seam-check.txt`): on each of the four Release 5 routes the Release 5 chapter renders, and both "Other work" cards render CaseStudyCard's default variant (they pass no status, so no facts block exists to move; the numeral is the default /30 ghost); on `/work/` all five plates read title above the facts with the /65 numeral. The two variants coexist on one build as designed.
+- **Order from here:** integrate this branch onto main after the owner's visual review; `npm run build && npm test` on the merge, then `npm run qa:index` if any evidence moves. The boards in this folder compare against `f29ce93`; Release 5 changed only the four case-study routes, which these boards do not show, so they remain the right comparison for the two Release 6 surfaces.
+- **Not claimed:** no combined acceptance. Release 5 has its own owner review in `qa-reports/release5-showcases-20261020/`; this folder speaks only for the two Release 6 surfaces and the lines it names.
 
 ## 9. Proposed visible copy changes
 
@@ -218,4 +219,4 @@ None. Every visible string on both surfaces is byte-identical to main. The desti
 
 ## 11. Status
 
-PROTOTYPED · BUILD_VERIFIED · RENDERED · OWNER_VISUAL_REVIEW_PENDING · FINAL_INTEGRATION_PENDING · NOT_DEPLOYED. Release 5 remains pending its own integration; this folder makes no claim about the combined result beyond section 8.
+PROTOTYPED · BUILD_VERIFIED · RENDERED · OWNER_VISUAL_REVIEW_PENDING · FINAL_INTEGRATION_PENDING · NOT_DEPLOYED. Release 5 is on main and merged into this branch; this folder makes no claim about Release 5's own acceptance beyond the seam check in section 8.

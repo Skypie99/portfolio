@@ -6,10 +6,10 @@
 
 | Measure | Value |
 |---|---|
-| Tracked files under `qa-reports/` | 1919 |
+| Tracked files under `qa-reports/` | 1921 |
 | Top-level reports and receipts (Markdown) | 188 |
 | Evidence directories | 26 |
-| File types | jpg 690, png 604, md 222, json 186, mjs 70, log 63, cjs 17, txt 15, mp4 11, py 9, webm 9, gz 7, stderr 4, patch 3, sh 3, html 2, jsonl 2, (none) 1, zip 1 |
+| File types | jpg 690, png 604, md 222, json 186, mjs 71, log 63, cjs 17, txt 16, mp4 11, py 9, webm 9, gz 7, stderr 4, patch 3, sh 3, html 2, jsonl 2, (none) 1, zip 1 |
 | Dates named in file paths | 2026-05-23 to 2026-10-20 |
 
 ## How the evidence is organized
@@ -85,7 +85,7 @@
 | [`release3-final-20261019/`](release3-final-20261019/) | 48 | png 16, jpg 14, mjs 8, json 7, sh 2, jsonl 1 | [`2026-10-19_Claude_Release4Final-CombinedIntegration.md`](2026-10-19_Claude_Release4Final-CombinedIntegration.md)<br>[`2026-10-19_Claude_SkyPiRelease3Final.md`](2026-10-19_Claude_SkyPiRelease3Final.md) |
 | [`release3-flagstone-20261019/`](release3-flagstone-20261019/) | 117 | jpg 96, json 8, mjs 6, cjs 2, gz 2, html 1, jsonl 1, md 1 | [`2026-10-19_Claude_Release4Final-CombinedIntegration.md`](2026-10-19_Claude_Release4Final-CombinedIntegration.md)<br>[`2026-10-19_Claude_SkyPiRelease3Final.md`](2026-10-19_Claude_SkyPiRelease3Final.md)<br>[`2026-10-19_Codex_SkyPiRelease3FlagstoneIntegration.md`](2026-10-19_Codex_SkyPiRelease3FlagstoneIntegration.md) |
 | [`release5-showcases-20261020/`](release5-showcases-20261020/) | 309 | jpg 276, json 12, mjs 8, mp4 4, webm 4, md 3, (none) 1, txt 1 | [`2026-10-20_Mimo_Release5Integration.md`](2026-10-20_Mimo_Release5Integration.md) |
-| [`release6-editorial-finish-2026-10-20/`](release6-editorial-finish-2026-10-20/) | 178 | jpg 138, json 17, mjs 11, mp4 7, md 3, sh 1, txt 1 | [`2026-10-20_Fable_Release6EditorialFinish.md`](2026-10-20_Fable_Release6EditorialFinish.md) |
+| [`release6-editorial-finish-2026-10-20/`](release6-editorial-finish-2026-10-20/) | 180 | jpg 138, json 17, mjs 12, mp4 7, md 3, txt 2, sh 1 | [`2026-10-20_Fable_Release6EditorialFinish.md`](2026-10-20_Fable_Release6EditorialFinish.md) |
 | [`repository-professionalization/`](repository-professionalization/) | 2 | md 2 | [`2026-09-28_PostMerge_Professionalism_Repair_Receipt.md`](2026-09-28_PostMerge_Professionalism_Repair_Receipt.md) |
 | [`visual-evidence/`](visual-evidence/) | 16 | png 16 | [`2026-09-01_Codex_FlagstoneFirstImpression.md`](2026-09-01_Codex_FlagstoneFirstImpression.md) |
 
