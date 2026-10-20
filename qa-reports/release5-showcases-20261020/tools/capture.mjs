@@ -168,7 +168,8 @@ try {
             scrollWidth: document.documentElement.scrollWidth,
             innerWidth: window.innerWidth,
             h1: document.querySelector('h1')?.textContent?.trim() ?? null,
-            hiddenReveals: Array.from(document.querySelectorAll('.reveal')).filter((el) => getComputedStyle(el).opacity === '0').length,
+            // reveals still at opacity 0 after the scroll pass, ignoring ones with no box (an exhibit laid out at another width only)
+            hiddenReveals: Array.from(document.querySelectorAll('.reveal')).filter((el) => getComputedStyle(el).opacity === '0' && getComputedStyle(el).display !== 'none').length,
           }));
           manifest.push({ route, theme, size: `${w}x${h}@${dpr}`, mode, tag, ...metrics, errors });
           console.log(`[capture] ${route} ${tag} · ${metrics.scrollHeight}px tall · overflow ${metrics.scrollWidth > metrics.innerWidth ? 'YES' : 'no'} · hidden reveals ${metrics.hiddenReveals} · errors ${errors.length}`);
