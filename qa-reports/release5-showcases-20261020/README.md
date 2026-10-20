@@ -11,6 +11,12 @@
 
 This is a working design prototype on an isolated branch. It is not owner acceptance, not a release, and nothing here claims independent acceptance of its own work. No pull request has been opened for this branch; nothing has been merged or deployed.
 
+> **Integration update (2026-10-20, MiMo).** This candidate is integrated onto production main
+> (`f29ce93`) on `mimo/skypi-release5-integration-20261020` and verified there
+> ([`2026-10-20_Mimo_Release5Integration.md`](../../2026-10-20_Mimo_Release5Integration.md));
+> `FINAL_INTEGRATION_PENDING` is satisfied on that branch and the detail crops are re-cut at master
+> resolution (sections 6 and 10.3). `OWNER_VISUAL_REVIEW_PENDING` and `NOT_DEPLOYED` stand.
+
 ## 1. Start here
 
 Open the boards and the recordings; everything else in this folder is the receipt behind them.
@@ -115,7 +121,7 @@ What a visitor should understand first: an operator console with a few useful wo
 - Every exhibit is a file the site already ships under `public/showcase/<slug>/`, or a detail cut from one by `tools/cut-details.mjs` into `public/images/deliverables/<slug>/r5-*` (AVIF and WebP, light and dark). The originals are untouched; `details.json` records every source file, pixel box and byte count. Nothing was generated, reconstructed or recoloured; no app screenshot is presented as anything but what it is.
 - Dates and commits come from `content/showcase.manifest.json`: the factory's `capturedAt` and `projectSha`. Where the manifest flags a capture as a locally approved candidate rather than the deployed site (Claude Corp and Dashboard desktop captures, 2026-09-05), the line says `local build`.
 - **Not used, on purpose:** the 2026-07-31 Prompt Library phone capture of the home (its privacy line reads "your key and prompts never leave your browser", wording the truth pass retired and the guard bans in copy) and the project-filter chips of the 2026-07-31 Dashboard phone Think Tank capture (one chip names a project by its pre-rename name). Both are cropped out or replaced by a current capture, as noted in the spec.
-- **Resolution, honestly:** the factory masters (2880×1800) live only in the owner's gitignored bank, so the details were cut from the shipped files (1290 or 1600 wide). On a 1× display they are at or near native size; on a 2× display they are soft, roughly like a 1× image on a retina screen. The handoff (section 10) asks the capture factory to re-cut the same boxes from the masters.
+- **Resolution, honestly:** the factory masters (2880×1800) were believed to live only in the owner's gitignored bank, so the details were first cut from the shipped files (1290 or 1600 wide), soft on a 2× display. The masters were then located (the bank for Prompt Library, the manifest-recorded project workspaces for Claude Corp and Dashboard) and the same boxes were re-cut at master resolution on the integration branch (2026-10-20): 14 outputs now 737 to 2448 px wide, each master SHA-256-verified and pixel-paired with its shipped capture before cutting. `details.json` carries the master provenance per output. On a 2× display the details now render at or above the display's own resolution.
 - **Candidate files not used:** the inactive P2 candidates under `public/showcase/*/p2-*` (master-resolution region captures the P2 closure recorded as unapproved) were left alone. If the owner approves them, the featured-card and variables-panel details could be swapped to them in one line each (decision D3).
 
 ## 7. Motion evidence
@@ -166,7 +172,7 @@ What to re-check after both are on main: the `Live demo` pill on the two showcas
 
 1. After the owner's visual review, merge this branch after Release 4 (or before; there is no overlap). Run `npm run typecheck && npm test && npm run build` as usual.
 2. Stage this folder's evidence and run `npm run qa:index` (done in the final evidence commit on this branch; rerun after any addition).
-3. Capture factory, when the project checkouts are available: re-cut the same detail boxes from the 2880×1800 masters so the 2× display is crisp. `details.json` lists every source and box; multiply the box by 2.232 for the 1290-wide files and by 1.8 for the 1600-wide files, and keep the output file names so the spec needs no change. Optionally add the boxes as `captureRegion` scenes in `scripts/showcase/registry.mjs` so the factory banks them.
+3. ~~Capture factory, when the project checkouts are available: re-cut the same detail boxes from the 2880×1800 masters so the 2× display is crisp.~~ **Done 2026-10-20 on the integration branch** (`tools/recut-details-masters.mjs`, see `tools/FACTORY_RECUTS.md`): the same boxes re-cut from the manifest-recorded masters, same output names, spec dimensions updated to the real file pixels. Still open: optionally add the boxes as `captureRegion` scenes in `scripts/showcase/registry.mjs` so the factory banks them.
 4. Optional, if the owner wants the spec to live beside the content: lift `lib/caseShowcase.ts` into an optional `showcase` block of `DeliverableSchema`. The component already reads a validated object; only the source of the object would move.
 5. Known small debts, none blocking: on phones the themed hero preload still fetches the desktop hero AVIF (about 13 to 30 KB) that the phone hero does not show; the ledger row's `lg:` placements assume at most one non-demo links block (true for all five deliverables today).
 6. Do not change `content/deliverables.json` for this release: the chapter deliberately reads the authored clip and shot data from it and keeps the authored captions where they are.
