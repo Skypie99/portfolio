@@ -1,0 +1,4 @@
+[overflow] 162 frames · 27 routes × 2 themes × 3 widths (320, 393, 1440)
+[overflow] scrollWidth probe was VACUOUS on 132/162 frames (overflow-x:clip) — that reading is not evidence here
+[overflow] non-vacuity plant caught on 162/162 frames
+[overflow] ✅ no element crosses the viewport edge.

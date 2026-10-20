@@ -1,0 +1,2630 @@
+{
+  "commit": "21423048af219419242ba8648018d7f9ca058bf4",
+  "dirty": [
+    "M app/globals.css",
+    " M components/ViewTransitions.tsx",
+    " M components/__tests__/ViewTransitions.test.tsx",
+    " M lib/__tests__/returnFocusWiring.test.ts",
+    " M lib/returnFocus.ts",
+    "?? lib/__tests__/work-row-hover-gate.test.ts"
+  ],
+  "started": "2026-10-19T23:25:28.208Z",
+  "browsers": [
+    {
+      "name": "chromium",
+      "version": "151.0.7922.34"
+    },
+    {
+      "name": "webkit",
+      "version": "26.5"
+    }
+  ],
+  "checks": [
+    {
+      "name": "chromium/393/light/no-preference/rows-present",
+      "pass": true,
+      "details": {
+        "rows": 5
+      }
+    },
+    {
+      "name": "chromium/393/light/no-preference/row0-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/light/no-preference/row0-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/light/no-preference/row1-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/light/no-preference/row1-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/light/no-preference/row2-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/light/no-preference/row2-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/light/no-preference/row3-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/light/no-preference/row3-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/light/no-preference/row4-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/light/no-preference/row4-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/light/no-preference/negative-control-detects-legacy-rule",
+      "pass": true,
+      "details": {
+        "control": {
+          "dot": 8,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "note": "the probe is sensitive: the legacy ungated rule re-creates the 8px residue"
+      }
+    },
+    {
+      "name": "chromium/393/light/reduce/rows-present",
+      "pass": true,
+      "details": {
+        "rows": 5
+      }
+    },
+    {
+      "name": "chromium/393/light/reduce/row0-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/light/reduce/row0-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/light/reduce/row1-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/light/reduce/row1-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/light/reduce/row2-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/light/reduce/row2-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/light/reduce/row3-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/light/reduce/row3-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/light/reduce/row4-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/light/reduce/row4-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/light/reduce/negative-control-detects-legacy-rule",
+      "pass": true,
+      "details": {
+        "control": {
+          "dot": 8,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "note": "the probe is sensitive: the legacy ungated rule re-creates the 8px residue"
+      }
+    },
+    {
+      "name": "chromium/393/dark/no-preference/rows-present",
+      "pass": true,
+      "details": {
+        "rows": 5
+      }
+    },
+    {
+      "name": "chromium/393/dark/no-preference/row0-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/dark/no-preference/row0-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/dark/no-preference/row1-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/dark/no-preference/row1-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/dark/no-preference/row2-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/dark/no-preference/row2-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/dark/no-preference/row3-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/dark/no-preference/row3-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/dark/no-preference/row4-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/dark/no-preference/row4-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/dark/no-preference/negative-control-detects-legacy-rule",
+      "pass": true,
+      "details": {
+        "control": {
+          "dot": 8,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "note": "the probe is sensitive: the legacy ungated rule re-creates the 8px residue"
+      }
+    },
+    {
+      "name": "chromium/393/dark/reduce/rows-present",
+      "pass": true,
+      "details": {
+        "rows": 5
+      }
+    },
+    {
+      "name": "chromium/393/dark/reduce/row0-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/dark/reduce/row0-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/dark/reduce/row1-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/dark/reduce/row1-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/dark/reduce/row2-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/dark/reduce/row2-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/dark/reduce/row3-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/dark/reduce/row3-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/dark/reduce/row4-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/dark/reduce/row4-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/393/dark/reduce/negative-control-detects-legacy-rule",
+      "pass": true,
+      "details": {
+        "control": {
+          "dot": 8,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "note": "the probe is sensitive: the legacy ungated rule re-creates the 8px residue"
+      }
+    },
+    {
+      "name": "chromium/1440/light/rest-6px",
+      "pass": true,
+      "details": {
+        "dot": 6,
+        "rowBorder": "rgb(204, 207, 190)",
+        "hover": false,
+        "active": false,
+        "focusVisible": false,
+        "focused": false
+      }
+    },
+    {
+      "name": "chromium/1440/light/title-hover-row-cue-8px-and-rule",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "titleHover": {
+          "dot": 8,
+          "rowBorder": "rgba(32, 48, 44, 0.5)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "chromium/1440/light/doorway-hover-8px",
+      "pass": true,
+      "details": {
+        "dot": 8,
+        "rowBorder": "rgba(32, 48, 44, 0.5)",
+        "hover": true,
+        "active": false,
+        "focusVisible": false,
+        "focused": false
+      }
+    },
+    {
+      "name": "chromium/1440/light/pressed-4px",
+      "pass": true,
+      "details": {
+        "dot": 4,
+        "rowBorder": "rgba(32, 48, 44, 0.5)",
+        "hover": true,
+        "active": true,
+        "focusVisible": false,
+        "focused": true
+      }
+    },
+    {
+      "name": "chromium/1440/light/cancel-drag-away-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "cancelled": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/1440/light/title-focus-visible-row-cue-8px",
+      "pass": true,
+      "details": {
+        "tf": {
+          "dot": 8,
+          "rowBorder": "rgba(32, 48, 44, 0.5)",
+          "hover": false,
+          "active": false,
+          "focusVisible": true,
+          "focused": true
+        },
+        "focus": {
+          "dot": 8,
+          "rowBorder": "rgba(32, 48, 44, 0.5)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "chromium/1440/dark/rest-6px",
+      "pass": true,
+      "details": {
+        "dot": 6,
+        "rowBorder": "rgb(44, 52, 54)",
+        "hover": false,
+        "active": false,
+        "focusVisible": false,
+        "focused": false
+      }
+    },
+    {
+      "name": "chromium/1440/dark/title-hover-row-cue-8px-and-rule",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "titleHover": {
+          "dot": 8,
+          "rowBorder": "rgba(207, 122, 79, 0.6)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "chromium/1440/dark/doorway-hover-8px",
+      "pass": true,
+      "details": {
+        "dot": 8,
+        "rowBorder": "rgba(207, 122, 79, 0.6)",
+        "hover": true,
+        "active": false,
+        "focusVisible": false,
+        "focused": false
+      }
+    },
+    {
+      "name": "chromium/1440/dark/pressed-4px",
+      "pass": true,
+      "details": {
+        "dot": 4,
+        "rowBorder": "rgba(207, 122, 79, 0.6)",
+        "hover": true,
+        "active": true,
+        "focusVisible": false,
+        "focused": true
+      }
+    },
+    {
+      "name": "chromium/1440/dark/cancel-drag-away-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "cancelled": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "chromium/1440/dark/title-focus-visible-row-cue-8px",
+      "pass": true,
+      "details": {
+        "tf": {
+          "dot": 8,
+          "rowBorder": "rgba(207, 122, 79, 0.6)",
+          "hover": false,
+          "active": false,
+          "focusVisible": true,
+          "focused": true
+        },
+        "focus": {
+          "dot": 8,
+          "rowBorder": "rgba(207, 122, 79, 0.6)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "chromium/1440/back/enter/departure-link-focus-visible",
+      "pass": true,
+      "details": {
+        "fv": true
+      }
+    },
+    {
+      "name": "chromium/1440/back/enter/back-reseats-on-row-link",
+      "pass": true,
+      "details": {
+        "focused": true,
+        "focusVisible": true,
+        "active": "A",
+        "top": 408.21875,
+        "bottom": 446.21875
+      }
+    },
+    {
+      "name": "chromium/1440/back/firefox-shaped-detail-1/departure-link-focus-visible",
+      "pass": true,
+      "details": {
+        "fv": true
+      }
+    },
+    {
+      "name": "chromium/1440/back/firefox-shaped-detail-1/back-reseats-on-row-link",
+      "pass": true,
+      "details": {
+        "focused": true,
+        "focusVisible": true,
+        "active": "A",
+        "top": 408.21875,
+        "bottom": 446.21875
+      }
+    },
+    {
+      "name": "chromium/1440/back/pointer/pointer-back-keeps-focus-on-main",
+      "pass": true,
+      "details": {
+        "focused": false,
+        "focusVisible": false,
+        "active": "main",
+        "top": 408.21875,
+        "bottom": 446.21875
+      }
+    },
+    {
+      "name": "webkit/393/light/no-preference/rows-present",
+      "pass": true,
+      "details": {
+        "rows": 5
+      }
+    },
+    {
+      "name": "webkit/393/light/no-preference/row0-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "webkit/393/light/no-preference/row0-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/393/light/no-preference/row1-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "webkit/393/light/no-preference/row1-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/393/light/no-preference/row2-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "webkit/393/light/no-preference/row2-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/393/light/no-preference/row3-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "webkit/393/light/no-preference/row3-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/393/light/no-preference/row4-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "webkit/393/light/no-preference/row4-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/393/light/no-preference/negative-control-detects-legacy-rule",
+      "pass": true,
+      "details": {
+        "control": {
+          "dot": 8,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "note": "the probe is sensitive: the legacy ungated rule re-creates the 8px residue"
+      }
+    },
+    {
+      "name": "webkit/393/light/reduce/rows-present",
+      "pass": true,
+      "details": {
+        "rows": 5
+      }
+    },
+    {
+      "name": "webkit/393/light/reduce/row0-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "webkit/393/light/reduce/row0-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/393/light/reduce/row1-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "webkit/393/light/reduce/row1-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/393/light/reduce/row2-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "webkit/393/light/reduce/row2-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/393/light/reduce/row3-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "webkit/393/light/reduce/row3-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/393/light/reduce/row4-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "webkit/393/light/reduce/row4-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/393/light/reduce/negative-control-detects-legacy-rule",
+      "pass": true,
+      "details": {
+        "control": {
+          "dot": 8,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "note": "the probe is sensitive: the legacy ungated rule re-creates the 8px residue"
+      }
+    },
+    {
+      "name": "webkit/393/dark/no-preference/rows-present",
+      "pass": true,
+      "details": {
+        "rows": 5
+      }
+    },
+    {
+      "name": "webkit/393/dark/no-preference/row0-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "webkit/393/dark/no-preference/row0-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/393/dark/no-preference/row1-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "webkit/393/dark/no-preference/row1-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/393/dark/no-preference/row2-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "webkit/393/dark/no-preference/row2-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/393/dark/no-preference/row3-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "webkit/393/dark/no-preference/row3-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/393/dark/no-preference/row4-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "webkit/393/dark/no-preference/row4-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/393/dark/no-preference/negative-control-detects-legacy-rule",
+      "pass": true,
+      "details": {
+        "control": {
+          "dot": 8,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "note": "the probe is sensitive: the legacy ungated rule re-creates the 8px residue"
+      }
+    },
+    {
+      "name": "webkit/393/dark/reduce/rows-present",
+      "pass": true,
+      "details": {
+        "rows": 5
+      }
+    },
+    {
+      "name": "webkit/393/dark/reduce/row0-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "webkit/393/dark/reduce/row0-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/393/dark/reduce/row1-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "webkit/393/dark/reduce/row1-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/393/dark/reduce/row2-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "webkit/393/dark/reduce/row2-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/393/dark/reduce/row3-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "webkit/393/dark/reduce/row3-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/393/dark/reduce/row4-doorway/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "webkit/393/dark/reduce/row4-title/tap-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "after": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": true,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/393/dark/reduce/negative-control-detects-legacy-rule",
+      "pass": true,
+      "details": {
+        "control": {
+          "dot": 8,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "note": "the probe is sensitive: the legacy ungated rule re-creates the 8px residue"
+      }
+    },
+    {
+      "name": "webkit/1440/light/rest-6px",
+      "pass": true,
+      "details": {
+        "dot": 6,
+        "rowBorder": "rgb(204, 207, 190)",
+        "hover": false,
+        "active": false,
+        "focusVisible": false,
+        "focused": false
+      }
+    },
+    {
+      "name": "webkit/1440/light/title-hover-row-cue-8px-and-rule",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "titleHover": {
+          "dot": 8,
+          "rowBorder": "rgba(32, 48, 44, 0.5)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/1440/light/doorway-hover-8px",
+      "pass": true,
+      "details": {
+        "dot": 8,
+        "rowBorder": "rgba(32, 48, 44, 0.5)",
+        "hover": true,
+        "active": false,
+        "focusVisible": false,
+        "focused": false
+      }
+    },
+    {
+      "name": "webkit/1440/light/pressed-4px",
+      "pass": true,
+      "details": {
+        "dot": 4,
+        "rowBorder": "rgba(32, 48, 44, 0.5)",
+        "hover": true,
+        "active": true,
+        "focusVisible": false,
+        "focused": true
+      }
+    },
+    {
+      "name": "webkit/1440/light/cancel-drag-away-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "cancelled": {
+          "dot": 6,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "webkit/1440/light/title-focus-visible-row-cue-8px",
+      "pass": true,
+      "details": {
+        "tf": {
+          "dot": 8,
+          "rowBorder": "rgba(32, 48, 44, 0.5)",
+          "hover": false,
+          "active": false,
+          "focusVisible": true,
+          "focused": true
+        },
+        "focus": {
+          "dot": 8,
+          "rowBorder": "rgba(32, 48, 44, 0.5)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/1440/dark/rest-6px",
+      "pass": true,
+      "details": {
+        "dot": 6,
+        "rowBorder": "rgb(44, 52, 54)",
+        "hover": false,
+        "active": false,
+        "focusVisible": false,
+        "focused": false
+      }
+    },
+    {
+      "name": "webkit/1440/dark/title-hover-row-cue-8px-and-rule",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "titleHover": {
+          "dot": 8,
+          "rowBorder": "rgba(207, 122, 79, 0.6)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/1440/dark/doorway-hover-8px",
+      "pass": true,
+      "details": {
+        "dot": 8,
+        "rowBorder": "rgba(207, 122, 79, 0.6)",
+        "hover": true,
+        "active": false,
+        "focusVisible": false,
+        "focused": false
+      }
+    },
+    {
+      "name": "webkit/1440/dark/pressed-4px",
+      "pass": true,
+      "details": {
+        "dot": 4,
+        "rowBorder": "rgba(207, 122, 79, 0.6)",
+        "hover": true,
+        "active": true,
+        "focusVisible": false,
+        "focused": true
+      }
+    },
+    {
+      "name": "webkit/1440/dark/cancel-drag-away-returns-to-rest",
+      "pass": true,
+      "details": {
+        "rest": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        },
+        "cancelled": {
+          "dot": 6,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": true
+        }
+      }
+    },
+    {
+      "name": "webkit/1440/dark/title-focus-visible-row-cue-8px",
+      "pass": true,
+      "details": {
+        "tf": {
+          "dot": 8,
+          "rowBorder": "rgba(207, 122, 79, 0.6)",
+          "hover": false,
+          "active": false,
+          "focusVisible": true,
+          "focused": true
+        },
+        "focus": {
+          "dot": 8,
+          "rowBorder": "rgba(207, 122, 79, 0.6)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/1440/back/enter/departure-link-focus-visible",
+      "pass": true,
+      "details": {
+        "fv": true
+      }
+    },
+    {
+      "name": "webkit/1440/back/enter/back-reseats-on-row-link",
+      "pass": true,
+      "details": {
+        "focused": true,
+        "focusVisible": true,
+        "active": "A",
+        "top": 407.34521484375,
+        "bottom": 445.18603515625
+      }
+    },
+    {
+      "name": "webkit/1440/back/firefox-shaped-detail-1/departure-link-focus-visible",
+      "pass": true,
+      "details": {
+        "fv": true
+      }
+    },
+    {
+      "name": "webkit/1440/back/firefox-shaped-detail-1/back-reseats-on-row-link",
+      "pass": true,
+      "details": {
+        "focused": true,
+        "focusVisible": true,
+        "active": "A",
+        "top": 407.34521484375,
+        "bottom": 445.18603515625
+      }
+    },
+    {
+      "name": "webkit/1440/back/pointer/pointer-back-keeps-focus-on-main",
+      "pass": true,
+      "details": {
+        "focused": false,
+        "focusVisible": false,
+        "active": "main",
+        "top": 407.34521484375,
+        "bottom": 445.18603515625
+      }
+    }
+  ],
+  "observations": [
+    {
+      "name": "chromium/393/light/no-preference/negative-control",
+      "details": {
+        "stickyHoverTaps": 10,
+        "rowHovered": true,
+        "control": {
+          "dot": 8,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "chromium/393/light/reduce/negative-control",
+      "details": {
+        "stickyHoverTaps": 10,
+        "rowHovered": true,
+        "control": {
+          "dot": 8,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "chromium/393/dark/no-preference/negative-control",
+      "details": {
+        "stickyHoverTaps": 10,
+        "rowHovered": true,
+        "control": {
+          "dot": 8,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "chromium/393/dark/reduce/negative-control",
+      "details": {
+        "stickyHoverTaps": 10,
+        "rowHovered": true,
+        "control": {
+          "dot": 8,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "chromium/1440/light/drag-away-immediately-after-drop",
+      "details": {
+        "dot": 4,
+        "rowBorder": "rgb(204, 207, 190)",
+        "hover": false,
+        "active": false,
+        "focusVisible": false,
+        "focused": true
+      }
+    },
+    {
+      "name": "chromium/1440/dark/drag-away-immediately-after-drop",
+      "details": {
+        "dot": 4,
+        "rowBorder": "rgb(44, 52, 54)",
+        "hover": false,
+        "active": false,
+        "focusVisible": false,
+        "focused": true
+      }
+    },
+    {
+      "name": "webkit/393/light/no-preference/negative-control",
+      "details": {
+        "stickyHoverTaps": 10,
+        "rowHovered": true,
+        "control": {
+          "dot": 8,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/393/light/reduce/negative-control",
+      "details": {
+        "stickyHoverTaps": 10,
+        "rowHovered": true,
+        "control": {
+          "dot": 8,
+          "rowBorder": "rgb(204, 207, 190)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/393/dark/no-preference/negative-control",
+      "details": {
+        "stickyHoverTaps": 10,
+        "rowHovered": true,
+        "control": {
+          "dot": 8,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/393/dark/reduce/negative-control",
+      "details": {
+        "stickyHoverTaps": 10,
+        "rowHovered": true,
+        "control": {
+          "dot": 8,
+          "rowBorder": "rgb(44, 52, 54)",
+          "hover": false,
+          "active": false,
+          "focusVisible": false,
+          "focused": false
+        }
+      }
+    },
+    {
+      "name": "webkit/1440/light/drag-away-immediately-after-drop",
+      "details": {
+        "dot": 6,
+        "rowBorder": "rgb(204, 207, 190)",
+        "hover": false,
+        "active": false,
+        "focusVisible": false,
+        "focused": true
+      }
+    },
+    {
+      "name": "webkit/1440/dark/drag-away-immediately-after-drop",
+      "details": {
+        "dot": 6,
+        "rowBorder": "rgb(44, 52, 54)",
+        "hover": false,
+        "active": false,
+        "focusVisible": false,
+        "focused": true
+      }
+    }
+  ],
+  "errors": [],
+  "finished": "2026-10-19T23:29:14.722Z"
+}
