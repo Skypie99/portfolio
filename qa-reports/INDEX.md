@@ -6,10 +6,10 @@
 
 | Measure | Value |
 |---|---|
-| Tracked files under `qa-reports/` | 1985 |
+| Tracked files under `qa-reports/` | 1996 |
 | Top-level reports and receipts (Markdown) | 189 |
-| Evidence directories | 26 |
-| File types | jpg 745, png 604, md 223, json 192, mjs 72, log 63, cjs 17, txt 17, mp4 11, py 9, webm 9, gz 7, stderr 4, patch 3, sh 3, html 2, jsonl 2, (none) 1, zip 1 |
+| Evidence directories | 27 |
+| File types | jpg 753, png 604, md 224, json 193, mjs 73, log 63, cjs 17, txt 17, mp4 11, py 9, webm 9, gz 7, stderr 4, patch 3, sh 3, html 2, jsonl 2, (none) 1, zip 1 |
 | Dates named in file paths | 2026-05-23 to 2026-10-20 |
 
 ## How the evidence is organized
@@ -58,7 +58,7 @@
 | [`PHASE-09_TECHNICAL_INTEGRITY_RECEIPT.md`](PHASE-09_TECHNICAL_INTEGRITY_RECEIPT.md) | Current owner adjudication — 2026-09-07 |
 | [`PHASE-11_REMOTE_MUTATION_MANIFEST.md`](PHASE-11_REMOTE_MUTATION_MANIFEST.md) | Phase 11 remote mutation manifest — prepared by Phase 06 |
 
-## Evidence directories (26)
+## Evidence directories (27)
 
 | Directory | Files | Types | Cited by |
 |---|---|---|---|
@@ -86,6 +86,7 @@
 | [`release3-flagstone-20261019/`](release3-flagstone-20261019/) | 117 | jpg 96, json 8, mjs 6, cjs 2, gz 2, html 1, jsonl 1, md 1 | [`2026-10-19_Claude_Release4Final-CombinedIntegration.md`](2026-10-19_Claude_Release4Final-CombinedIntegration.md)<br>[`2026-10-19_Claude_SkyPiRelease3Final.md`](2026-10-19_Claude_SkyPiRelease3Final.md)<br>[`2026-10-19_Codex_SkyPiRelease3FlagstoneIntegration.md`](2026-10-19_Codex_SkyPiRelease3FlagstoneIntegration.md) |
 | [`release5-showcases-20261020/`](release5-showcases-20261020/) | 309 | jpg 276, json 12, mjs 8, mp4 4, webm 4, md 3, (none) 1, txt 1 | [`2026-10-20_Mimo_Release5Integration.md`](2026-10-20_Mimo_Release5Integration.md) |
 | [`release6-editorial-finish-2026-10-20/`](release6-editorial-finish-2026-10-20/) | 243 | jpg 193, json 23, mjs 13, mp4 7, md 3, txt 3, sh 1 | [`2026-10-20_Fable_Release6EditorialFinish.md`](2026-10-20_Fable_Release6EditorialFinish.md)<br>[`2026-10-20_Mimo_Release6Integration.md`](2026-10-20_Mimo_Release6Integration.md) |
+| [`release6-publication-2026-10-20/`](release6-publication-2026-10-20/) | 11 | jpg 8, json 1, md 1, mjs 1 | no top-level report |
 | [`repository-professionalization/`](repository-professionalization/) | 2 | md 2 | [`2026-09-28_PostMerge_Professionalism_Repair_Receipt.md`](2026-09-28_PostMerge_Professionalism_Repair_Receipt.md) |
 | [`visual-evidence/`](visual-evidence/) | 16 | png 16 | [`2026-09-01_Codex_FlagstoneFirstImpression.md`](2026-09-01_Codex_FlagstoneFirstImpression.md) |
 
