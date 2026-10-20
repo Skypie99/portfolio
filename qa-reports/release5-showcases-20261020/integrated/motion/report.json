@@ -1,0 +1,74 @@
+[
+  {
+    "tag": "prompt-library-light-1440x900",
+    "webm": "qa-reports/release5-showcases-20261020/integrated/motion/raw/prompt-library-light-1440x900/page@646d079367a0db7153fb86c6f3a43988.webm",
+    "mp4": "qa-reports/release5-showcases-20261020/integrated/motion/prompt-library-light-1440x900.mp4",
+    "strip": "qa-reports/release5-showcases-20261020/integrated/motion/prompt-library-light-1440x900-frames.jpg",
+    "durationS": 10.49,
+    "marksMs": {
+      "arrived": 568,
+      "glideToChapter": 2401,
+      "glideToSecond": 6675,
+      "end": 10489
+    },
+    "reducedMotion": {
+      "differingBytes": 0,
+      "runningAnimations": 0,
+      "chapterRevealsNotAtRest": 0
+    }
+  },
+  {
+    "tag": "claude-corp-light-1440x900",
+    "webm": "qa-reports/release5-showcases-20261020/integrated/motion/raw/claude-corp-light-1440x900/page@949c581fa3470971aa3b8d85e3709b48.webm",
+    "mp4": "qa-reports/release5-showcases-20261020/integrated/motion/claude-corp-light-1440x900.mp4",
+    "strip": "qa-reports/release5-showcases-20261020/integrated/motion/claude-corp-light-1440x900-frames.jpg",
+    "durationS": 11.48,
+    "marksMs": {
+      "arrived": 154,
+      "glideToChapter": 1957,
+      "glideToSecond": 6316,
+      "end": 11485
+    },
+    "reducedMotion": {
+      "differingBytes": 0,
+      "runningAnimations": 0,
+      "chapterRevealsNotAtRest": 0
+    }
+  },
+  {
+    "tag": "ghost-code-light-1440x900",
+    "webm": "qa-reports/release5-showcases-20261020/integrated/motion/raw/ghost-code-light-1440x900/page@c0abb0fe990230932e1dae24f426e0d3.webm",
+    "mp4": "qa-reports/release5-showcases-20261020/integrated/motion/ghost-code-light-1440x900.mp4",
+    "strip": "qa-reports/release5-showcases-20261020/integrated/motion/ghost-code-light-1440x900-frames.jpg",
+    "durationS": 10,
+    "marksMs": {
+      "arrived": 173,
+      "glideToChapter": 1974,
+      "glideToSecond": 6181,
+      "end": 9996
+    },
+    "reducedMotion": {
+      "differingBytes": 0,
+      "runningAnimations": 0,
+      "chapterRevealsNotAtRest": 0
+    }
+  },
+  {
+    "tag": "dashboard-light-1440x900",
+    "webm": "qa-reports/release5-showcases-20261020/integrated/motion/raw/dashboard-light-1440x900/page@48efe0b9c467ecb020b4f87ba3907f1c.webm",
+    "mp4": "qa-reports/release5-showcases-20261020/integrated/motion/dashboard-light-1440x900.mp4",
+    "strip": "qa-reports/release5-showcases-20261020/integrated/motion/dashboard-light-1440x900-frames.jpg",
+    "durationS": 10.05,
+    "marksMs": {
+      "arrived": 209,
+      "glideToChapter": 2012,
+      "glideToSecond": 6234,
+      "end": 10046
+    },
+    "reducedMotion": {
+      "differingBytes": 0,
+      "runningAnimations": 0,
+      "chapterRevealsNotAtRest": 0
+    }
+  }
+]
