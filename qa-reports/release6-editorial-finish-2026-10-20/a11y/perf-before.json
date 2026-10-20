@@ -1,0 +1,47 @@
+{
+  "dir": "/tmp/claude-0/-home-user-portfolio/d36c6a0e-892e-515a-afd4-9772ab04327a/scratchpad/out-baseline",
+  "label": "before",
+  "at": "2026-10-20T04:31:26.430Z",
+  "rows": [
+    {
+      "label": "before",
+      "surface": "work",
+      "size": "1440x900@1",
+      "nodes": 275,
+      "transitioned": 25,
+      "willChange": 0,
+      "backdrop": 5,
+      "cls": 0,
+      "shifts": 1,
+      "largestShift": {
+        "t": 491,
+        "value": 0.000009769643775720166,
+        "sources": [
+          "BUTTON.inline-flex"
+        ]
+      },
+      "longTasks": 2,
+      "longTaskMs": 175
+    },
+    {
+      "label": "before",
+      "surface": "home-work",
+      "size": "1440x900@1",
+      "nodes": 92,
+      "transitioned": 6,
+      "willChange": 0,
+      "backdrop": 0,
+      "cls": 0,
+      "shifts": 1,
+      "largestShift": {
+        "t": 679,
+        "value": 0.000009769643775720166,
+        "sources": [
+          "BUTTON.inline-flex"
+        ]
+      },
+      "longTasks": 4,
+      "longTaskMs": 448
+    }
+  ]
+}

@@ -1,0 +1,550 @@
+{
+  "dir": "/tmp/claude-0/-home-user-portfolio/d36c6a0e-892e-515a-afd4-9772ab04327a/scratchpad/out-baseline",
+  "at": "2026-10-20T04:21:20.526Z",
+  "rows": [
+    {
+      "theme": "dark",
+      "size": "1440x900@1",
+      "label": "wall · title",
+      "text": "Flagstone",
+      "color": "rgb(236, 234, 224)",
+      "fontSize": 37.44,
+      "worst": 8.52,
+      "median": 9.54,
+      "worstBackdrop": [
+        80,
+        61,
+        43
+      ],
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "size": "1440x900@1",
+      "label": "wall · description",
+      "text": "Community map of accessibility barriers: report a broken ram",
+      "color": "rgb(182, 194, 187)",
+      "fontSize": 14,
+      "worst": 5.74,
+      "median": 6.81,
+      "worstBackdrop": [
+        76,
+        60,
+        43
+      ],
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "size": "1440x900@1",
+      "label": "wall · status (facts)",
+      "text": "On the App Store · US and Canada · Sept 2026",
+      "color": "rgb(159, 176, 169)",
+      "fontSize": 11,
+      "worst": 4.5,
+      "median": 5.35,
+      "worstBackdrop": [
+        78,
+        62,
+        48
+      ],
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "size": "1440x900@1",
+      "label": "wall · verified line",
+      "text": "Verified 2026-09-17",
+      "color": "rgb(159, 176, 169)",
+      "fontSize": 11,
+      "worst": 4.51,
+      "median": 5.33,
+      "worstBackdrop": [
+        78,
+        62,
+        46
+      ],
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "size": "1440x900@1",
+      "label": "wall · View project",
+      "text": "View project →",
+      "color": "rgb(231, 181, 147)",
+      "fontSize": 11,
+      "worst": 5.91,
+      "median": 6.71,
+      "worstBackdrop": [
+        71,
+        59,
+        47
+      ],
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "size": "1440x900@1",
+      "label": "wall · numeral (decorative, large)",
+      "text": "01",
+      "color": "rgba(236, 234, 224, 0.3)",
+      "fontSize": 57.6,
+      "worst": 2.09,
+      "median": 2.25,
+      "worstBackdrop": [
+        86,
+        69,
+        51
+      ],
+      "threshold": 3,
+      "pass": false
+    },
+    {
+      "theme": "dark",
+      "size": "1440x900@1",
+      "label": "wall plate 03 · status (right-hung)",
+      "text": "Private operator app · public synthetic demo",
+      "color": "rgb(159, 176, 169)",
+      "fontSize": 11,
+      "worst": 2.62,
+      "median": 5.67,
+      "worstBackdrop": [
+        107,
+        98,
+        92
+      ],
+      "threshold": 4.5,
+      "pass": false
+    },
+    {
+      "theme": "dark",
+      "size": "1440x900@1",
+      "label": "index · title",
+      "text": "Flagstone",
+      "color": "rgb(236, 234, 224)",
+      "fontSize": 31.248,
+      "worst": 6.62,
+      "median": 7.96,
+      "worstBackdrop": [
+        92,
+        78,
+        68
+      ],
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "size": "1440x900@1",
+      "label": "index · summary",
+      "text": "Community map of accessibility barriers: report a broken ram",
+      "color": "rgb(182, 194, 187)",
+      "fontSize": 14,
+      "worst": 3.94,
+      "median": 5.14,
+      "worstBackdrop": [
+        99,
+        84,
+        74
+      ],
+      "threshold": 4.5,
+      "pass": false
+    },
+    {
+      "theme": "dark",
+      "size": "1440x900@1",
+      "label": "index · status",
+      "text": "In active use, on my projects only",
+      "color": "rgb(159, 176, 169)",
+      "fontSize": 11,
+      "worst": 4.75,
+      "median": 5.49,
+      "worstBackdrop": [
+        72,
+        59,
+        51
+      ],
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "size": "1440x900@1",
+      "label": "index · status row 03",
+      "text": "Private operator app · public synthetic demo",
+      "color": "rgb(159, 176, 169)",
+      "fontSize": 11,
+      "worst": 5.99,
+      "median": 6.94,
+      "worstBackdrop": [
+        47,
+        46,
+        43
+      ],
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "size": "1440x900@1",
+      "label": "index · note (accent)",
+      "text": "15 AI agents",
+      "color": "rgb(231, 181, 147)",
+      "fontSize": 11,
+      "worst": 5.86,
+      "median": 6.91,
+      "worstBackdrop": [
+        72,
+        59,
+        52
+      ],
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "size": "1440x900@1",
+      "label": "index · year",
+      "text": "2026",
+      "color": "rgb(159, 176, 169)",
+      "fontSize": 11,
+      "worst": 5.2,
+      "median": 5.99,
+      "worstBackdrop": [
+        61,
+        54,
+        55
+      ],
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "size": "1440x900@1",
+      "label": "index · numeral",
+      "text": "01",
+      "color": "rgba(236, 234, 224, 0.7)",
+      "fontSize": 20,
+      "worst": 5.01,
+      "median": 5.57,
+      "worstBackdrop": [
+        75,
+        64,
+        61
+      ],
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "size": "1440x900@1",
+      "label": "index · Featured: above link",
+      "text": "Featured: above↑",
+      "color": "rgb(231, 181, 147)",
+      "fontSize": 11,
+      "worst": 6.42,
+      "median": 7.3,
+      "worstBackdrop": [
+        61,
+        54,
+        55
+      ],
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "size": "1440x900@1",
+      "label": "record · open round counts",
+      "text": "The Room: 11 phases · 10 shipped · 1 held · axe 0 violations",
+      "color": "rgb(182, 194, 187)",
+      "fontSize": 14,
+      "worst": 5.8,
+      "median": 6.73,
+      "worstBackdrop": [
+        59,
+        63,
+        64
+      ],
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "size": "393x852@2",
+      "label": "wall · title",
+      "text": "Flagstone",
+      "color": "rgb(236, 234, 224)",
+      "fontSize": 29.6,
+      "worst": 7.52,
+      "median": 8.98,
+      "worstBackdrop": [
+        88,
+        69,
+        52
+      ],
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "size": "393x852@2",
+      "label": "wall · description",
+      "text": "Community map of accessibility barriers: report a broken ram",
+      "color": "rgb(182, 194, 187)",
+      "fontSize": 14,
+      "worst": 5.77,
+      "median": 6.8,
+      "worstBackdrop": [
+        77,
+        59,
+        45
+      ],
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "size": "393x852@2",
+      "label": "wall · status (facts)",
+      "text": "On the App Store · US and Canada · Sept 2026",
+      "color": "rgb(159, 176, 169)",
+      "fontSize": 11,
+      "worst": 3.65,
+      "median": 4.59,
+      "worstBackdrop": [
+        96,
+        74,
+        58
+      ],
+      "threshold": 4.5,
+      "pass": false
+    },
+    {
+      "theme": "dark",
+      "size": "393x852@2",
+      "label": "wall · verified line",
+      "text": "Verified 2026-09-17",
+      "color": "rgb(159, 176, 169)",
+      "fontSize": 11,
+      "worst": 3.94,
+      "median": 4.78,
+      "worstBackdrop": [
+        88,
+        70,
+        56
+      ],
+      "threshold": 4.5,
+      "pass": false
+    },
+    {
+      "theme": "dark",
+      "size": "393x852@2",
+      "label": "wall · View project",
+      "text": "View project →",
+      "color": "rgb(231, 181, 147)",
+      "fontSize": 11,
+      "worst": 6.15,
+      "median": 7.06,
+      "worstBackdrop": [
+        69,
+        56,
+        46
+      ],
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "size": "393x852@2",
+      "label": "wall · numeral (decorative, large)",
+      "text": "01",
+      "color": "rgba(236, 234, 224, 0.3)",
+      "fontSize": 41.6,
+      "worst": 1.89,
+      "median": 2.1,
+      "worstBackdrop": [
+        106,
+        84,
+        66
+      ],
+      "threshold": 3,
+      "pass": false
+    },
+    {
+      "theme": "dark",
+      "size": "393x852@2",
+      "label": "wall plate 03 · status (right-hung)",
+      "text": "Private operator app · public synthetic demo",
+      "color": "rgb(159, 176, 169)",
+      "fontSize": 11,
+      "worst": 2.03,
+      "median": 4.59,
+      "worstBackdrop": [
+        127,
+        115,
+        105
+      ],
+      "threshold": 4.5,
+      "pass": false
+    },
+    {
+      "theme": "dark",
+      "size": "393x852@2",
+      "label": "index · title",
+      "text": "Flagstone",
+      "color": "rgb(236, 234, 224)",
+      "fontSize": 24,
+      "worst": 6.53,
+      "median": 7.94,
+      "worstBackdrop": [
+        93,
+        79,
+        68
+      ],
+      "threshold": 3,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "size": "393x852@2",
+      "label": "index · summary",
+      "text": "Community map of accessibility barriers: report a broken ram",
+      "color": "rgb(182, 194, 187)",
+      "fontSize": 14,
+      "worst": 3.9,
+      "median": 5.96,
+      "worstBackdrop": [
+        100,
+        85,
+        71
+      ],
+      "threshold": 4.5,
+      "pass": false
+    },
+    {
+      "theme": "dark",
+      "size": "393x852@2",
+      "label": "index · status",
+      "text": "In active use, on my projects only",
+      "color": "rgb(159, 176, 169)",
+      "fontSize": 11,
+      "worst": 4.17,
+      "median": 5.26,
+      "worstBackdrop": [
+        78,
+        68,
+        62
+      ],
+      "threshold": 4.5,
+      "pass": false
+    },
+    {
+      "theme": "dark",
+      "size": "393x852@2",
+      "label": "index · status row 03",
+      "text": "Private operator app · public synthetic demo",
+      "color": "rgb(159, 176, 169)",
+      "fontSize": 11,
+      "worst": 5.12,
+      "median": 6.09,
+      "worstBackdrop": [
+        63,
+        55,
+        53
+      ],
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "size": "393x852@2",
+      "label": "index · note (accent)",
+      "text": "15 AI agents",
+      "color": "rgb(231, 181, 147)",
+      "fontSize": 11,
+      "worst": 5.07,
+      "median": 6.29,
+      "worstBackdrop": [
+        79,
+        69,
+        62
+      ],
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "size": "393x852@2",
+      "label": "index · year",
+      "text": "2026",
+      "color": "rgb(159, 176, 169)",
+      "fontSize": 11,
+      "worst": 5.66,
+      "median": 6.31,
+      "worstBackdrop": [
+        51,
+        49,
+        55
+      ],
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "size": "393x852@2",
+      "label": "index · numeral",
+      "text": "01",
+      "color": "rgba(236, 234, 224, 0.7)",
+      "fontSize": 20,
+      "worst": 4.98,
+      "median": 5.54,
+      "worstBackdrop": [
+        71,
+        66,
+        68
+      ],
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "size": "393x852@2",
+      "label": "index · Featured: above link",
+      "text": "Featured: above↑",
+      "color": "rgb(231, 181, 147)",
+      "fontSize": 11,
+      "worst": 4.64,
+      "median": 6.84,
+      "worstBackdrop": [
+        83,
+        75,
+        71
+      ],
+      "threshold": 4.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "size": "393x852@2",
+      "label": "record · open round counts",
+      "text": "The Room: 11 phases · 10 shipped · 1 held · axe 0 violations",
+      "color": "rgb(182, 194, 187)",
+      "fontSize": 14,
+      "worst": 5.54,
+      "median": 6.54,
+      "worstBackdrop": [
+        62,
+        66,
+        65
+      ],
+      "threshold": 4.5,
+      "pass": true
+    }
+  ]
+}
