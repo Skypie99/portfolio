@@ -16,7 +16,7 @@ const SlugSchema = z
     'must be kebab-case slug (lowercase + hyphens, no leading/trailing hyphen)',
   );
 
-const AltTextSchema = z
+export const AltTextSchema = z
   .string()
   .min(4, 'alt text must be at least 4 characters')
   .max(200, 'alt text must be at most 200 characters')
