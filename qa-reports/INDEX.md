@@ -6,10 +6,10 @@
 
 | Measure | Value |
 |---|---|
-| Tracked files under `qa-reports/` | 1331 |
+| Tracked files under `qa-reports/` | 1540 |
 | Top-level reports and receipts (Markdown) | 182 |
-| Evidence directories | 21 |
-| File types | png 556, jpg 276, md 205, json 139, log 63, mjs 37, cjs 17, py 9, txt 9, gz 7, stderr 4, html 2, jsonl 2, sh 2, webm 2, patch 1 |
+| Evidence directories | 22 |
+| File types | png 556, jpg 464, md 208, json 146, log 63, mjs 43, cjs 17, txt 10, py 9, gz 7, mp4 4, stderr 4, html 2, jsonl 2, sh 2, webm 2, patch 1 |
 | Dates named in file paths | 2026-05-23 to 2026-10-19 |
 
 ## How the evidence is organized
@@ -58,7 +58,7 @@
 | [`PHASE-09_TECHNICAL_INTEGRITY_RECEIPT.md`](PHASE-09_TECHNICAL_INTEGRITY_RECEIPT.md) | Current owner adjudication — 2026-09-07 |
 | [`PHASE-11_REMOTE_MUTATION_MANIFEST.md`](PHASE-11_REMOTE_MUTATION_MANIFEST.md) | Phase 11 remote mutation manifest — prepared by Phase 06 |
 
-## Evidence directories (21)
+## Evidence directories (22)
 
 | Directory | Files | Types | Cited by |
 |---|---|---|---|
@@ -81,6 +81,7 @@
 | [`phase06-evidence/`](phase06-evidence/) | 6 | md 3, json 2, html 1 | [`PHASE-06_APPROVAL_PACKET.md`](PHASE-06_APPROVAL_PACKET.md)<br>[`PHASE-06_GITHUB_TRUTH_GATE_RECEIPT.md`](PHASE-06_GITHUB_TRUTH_GATE_RECEIPT.md) |
 | [`release3-final-20261019/`](release3-final-20261019/) | 48 | png 16, jpg 14, mjs 8, json 7, sh 2, jsonl 1 | [`2026-10-19_Claude_SkyPiRelease3Final.md`](2026-10-19_Claude_SkyPiRelease3Final.md) |
 | [`release3-flagstone-20261019/`](release3-flagstone-20261019/) | 117 | jpg 96, json 8, mjs 6, cjs 2, gz 2, html 1, jsonl 1, md 1 | [`2026-10-19_Claude_SkyPiRelease3Final.md`](2026-10-19_Claude_SkyPiRelease3Final.md)<br>[`2026-10-19_Codex_SkyPiRelease3FlagstoneIntegration.md`](2026-10-19_Codex_SkyPiRelease3FlagstoneIntegration.md) |
+| [`release5-showcases-20261020/`](release5-showcases-20261020/) | 209 | jpg 188, json 7, mjs 6, mp4 4, md 3, txt 1 | no top-level report |
 | [`repository-professionalization/`](repository-professionalization/) | 2 | md 2 | [`2026-09-28_PostMerge_Professionalism_Repair_Receipt.md`](2026-09-28_PostMerge_Professionalism_Repair_Receipt.md) |
 | [`visual-evidence/`](visual-evidence/) | 16 | png 16 | [`2026-09-01_Codex_FlagstoneFirstImpression.md`](2026-09-01_Codex_FlagstoneFirstImpression.md) |
 

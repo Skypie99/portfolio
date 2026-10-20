@@ -21,20 +21,20 @@ Open the boards and the recordings; everything else in this folder is the receip
 | Normal-speed recordings of the strongest motion, plus a six-frame strip of each | `motion/<route>-light-1440x900.mp4`, `motion/<route>-light-1440x900-frames.jpg` |
 | Reduced-motion first paint of each chapter | `motion/<route>-light-1440x900-rm-120ms.jpg` and `motion/report.json` |
 | Responsive folds, both themes: 320×568, 375×667, 768×1024, 1280×800, 1920×1200 at device pixel ratio 2 where supported | `responsive/<route>/r-<theme>-<size>-fold.jpg` |
-| No-JavaScript and reduced-motion captures (1440 and 393) | `modes/<route>/light-<size>-nojs-*.jpg`, `modes/<route>/light-<size>-rm-fold.jpg` |
-| axe-core and keyboard pass | `a11y/axe.json`, `a11y/focus-*.jpg` |
+| No-JavaScript and reduced-motion captures (1440 and 393, fold and full page) | `modes/<route>/light-<size>-nojs-*.jpg`, `modes/<route>/light-<size>-rm-*.jpg` |
+| axe-core and keyboard pass, and the contrast of the chapter text over the plinth glow | `a11y/axe.json`, `a11y/focus-*.jpg`, `a11y/plinth-contrast.txt` |
 | The raw captures the boards are cut from | `baseline/` (main) and `after/` (this branch) |
 | Every detail crop, with its source box and bytes | `details.json`, cut by `tools/cut-details.mjs` |
 | Per-project checkpoints with commit SHAs and the checks run at each | `CHECKPOINTS.md` |
 
-To rebuild the evidence from a clean checkout: `npm ci`, `npm run build`, then the tools under `tools/` (each documents its own command line). They need only the pre-installed Playwright Chromium, sharp and ffmpeg; nothing is installed and nothing leaves loopback.
+To rebuild the evidence from a clean checkout: `npm ci`, `npm run build`, then the tools under `tools/` (each documents its own command line). They need only the pre-installed Playwright Chromium, sharp, ffmpeg and the repository's own axe-core devDependency; nothing is installed and nothing leaves loopback.
 
 ## 2. Baseline and isolation
 
 - `origin/main` was fetched at the start of the session and read `f08c327f0f84ac3cef9e00086ac79e93f125a8d4`, the same commit the assignment names as the last known main after Release 3.
 - The session-assigned branch `claude/inspiring-pascal-p12cfr` started at exactly that commit with no divergence in either direction, so it is isolated and carries nothing unrelated.
 - Release 4 (`claude/skypi-release4-final-20261019`, PR #31) was read only to plan reconciliation (section 9). Its branch was never edited, and none of its fixes were duplicated.
-- Commits on this branch, oldest first: `a61194a` (the chapter system, Prompt Library rendered), `e9ef17c` (Claude Corp rendered), `b6857a4` (checkpoints), `77baf35` (Ghost Code rendered, the showcase hero), `08bdb30` (Dashboard rendered). The commit that adds this README and the final evidence follows them; `CHECKPOINTS.md` lists every SHA.
+- Commits on this branch, oldest first: `a61194a` (the chapter system, Prompt Library rendered), `e9ef17c` (Claude Corp rendered), `b6857a4` (checkpoints), `77baf35` (Ghost Code rendered, the showcase hero), `08bdb30` (Dashboard rendered), `4cd2019` (review draft, responsive sweep and mode captures). The commit that adds the recordings, the axe and keyboard pass and this README's final text follows them, and `CHECKPOINTS.md` names it in its last row.
 
 ## 3. What changed
 
@@ -120,7 +120,20 @@ What a visitor should understand first: an operator console with a few useful wo
 
 ## 7. Motion evidence
 
-{{MOTION}}
+Each recording (`motion/`, 1440×900, light theme, Playwright Chromium, real time, transcoded to MP4 with a six-frame strip beside it) runs the same script: the page arrives and the hero settles (the existing world settle and frame lift, unchanged), the viewport glides to the chapter at a reading pace and holds while the exhibits step in and their plinths bloom, then on to the second exhibit. What to look for: the exhibits arrive in reading order on the shared depth reveal; each caption's horizon rule draws once its figure is in; the plinth light under each plane blooms one scene beat after the plane lands; nothing loops, nothing replays on the scroll back, and the clip on Ghost Code stays on its poster until Play.
+
+The reduced-motion check loads the same chapter with `prefers-reduced-motion: reduce`, screenshots it 120 ms after load and again at 1.6 s, and compares the two byte for byte; it also counts running animations and any chapter reveal whose computed opacity is not 1.
+
+The raw WebM recordings were transcoded and not kept; `motion/report.json` records each run's timing marks and reduced-motion counts beside the MP4 and strip, and still names the raw path each came from.
+
+| Route | Clip | Length | Reduced motion: differing pixels 120 ms vs 1.6 s | Running animations | Chapter reveals off rest |
+|---|---|---|---|---|---|
+| prompt-library | `prompt-library-light-1440x900.mp4` + `prompt-library-light-1440x900-frames.jpg` | 10.28 s | 0 | 0 | 0 |
+| claude-corp | `claude-corp-light-1440x900.mp4` + `claude-corp-light-1440x900-frames.jpg` | 10.12 s | 0 | 0 | 0 |
+| ghost-code | `ghost-code-light-1440x900.mp4` + `ghost-code-light-1440x900-frames.jpg` | 10.2 s | 0 | 0 | 0 |
+| dashboard | `dashboard-light-1440x900.mp4` + `dashboard-light-1440x900-frames.jpg` | 10.56 s | 0 | 0 | 0 |
+
+Reverse scrolling and repeated navigation were exercised in the capture pass (every page is scrolled to the bottom and back to the top before its full-page capture; no reveal re-performs, no image is lost, no layout jumps were seen in the before/after full pages). Playback was inspected at normal speed in headless Chromium only; real-device graphics performance is unverified (section 8).
 
 ## 8. Checks
 
@@ -132,12 +145,14 @@ Environment: a Linux container (6.18 kernel), Node 22.22, Playwright Chromium 11
 | `npm run lint` | clean (Next's existing `headers` export notice only) |
 | `npm test` on the final build | 119 files, 1080 tests passed, 2 skipped (the two labelled build-dependent skips in other suites) |
 | `npm run build` | static export completes; prebuild asset validation and postbuild pruning run |
+| Bundle delta against main `f08c327` (both built here with the same toolchain) | the `/work/[slug]` page chunk 11,752 to 12,629 B raw (4,074 to 4,394 B gzip); all CSS 135,396 to 138,109 B raw (27,648 to 28,158 B gzip); each showcase route's HTML grows 12 to 21 KB raw, 1.7 to 2.9 KB gzip, for the chapter markup and its picture sources; the Flagstone route's HTML differs by 144 B of asset hashes only; the 40 new image files total 954 KB on disk across both formats and both themes, and a route requests only the files its own exhibits use |
 | Build-backed guards (recruiter-copy truth, static integrity, Flagstone first proof and proof row, case-showcase built output) | 95 assertions passing on the final export; zero em dashes on every rendered route; every internal link and image resolves |
 | Capture pass, 4 routes × 2 themes × 2 sizes (1440×900, 393×852 at 2×) | no horizontal overflow, no reveal left hidden after the scroll pass, zero console errors |
-| Responsive sweep, 4 routes × 2 themes × 5 sizes | {{RESPONSIVE}} |
-| No-JavaScript and reduced-motion captures | {{MODES}} |
-| axe-core (whole page and the showcase subtree), 4 routes × 2 themes × 2 sizes | {{AXE}} |
-| Keyboard walk to the first showcase control | {{KEYBOARD}} |
+| Responsive sweep, 4 routes × 2 themes × 5 sizes | 40 frames, zero horizontal overflow, zero reveals left hidden after the scroll pass, zero console errors; the 1920×1200 at 2× folds of the two showcase heroes show the capture filling the 1120px content column, and the 320×568 folds stack cleanly |
+| No-JavaScript and reduced-motion captures | 16 frames, all complete: with JavaScript off every chapter, capture, caption and the native video controls render from the markup; under reduced motion nothing is hidden and nothing moves (`modes/`, and the 120 ms check in section 7) |
+| axe-core 4.11 (whole page and the showcase subtree), 4 routes × 2 themes × 2 sizes | 16 frames, zero violations on the whole page and zero in the showcase subtree. What axe could not decide (`incomplete`, recorded in `a11y/axe.json`, not failures): `color-contrast` on 1,248 page nodes across the 16 frames, 312 of them inside the chapters, wherever axe could not resolve the background behind the text (the page's washes and layered surfaces); the chapter text uses the Release 3 measured contrast classes and no new colour. `aria-prohibited-attr` on one element per frame: the title band's hero-caption `div` (`.border-l-2`), which carries an `aria-label` on main in exactly the same way on every non-Flagstone case study; outside the chapters and untouched by this branch. `video-caption` on the Ghost Code clip in its 4 frames: the deliverable's existing silent demonstration clip, described by its label, caption and accessible Play name, and captionless before this branch too. |
+| Keyboard walk to the first showcase control, both themes, 1440×900 and 393×852 | From the top of each page, Tab reaches the chapter's first control at the same stop in both themes: the Prompt Library doorway (`Explore Prompt Library`) after 18 stops on desktop and 6 on the phone, measured at 193×44 px; the Ghost Code Play control after 18 and 6, measured at 44×44 px. Each shows the site's own ring (`:focus-visible`, solid 2px, offset 2px, `rgb(185, 99, 64)` light and `rgb(207, 122, 79)` dark); crops in `a11y/focus-*.jpg`. Claude Corp and Dashboard add no controls to their chapters (their links stay in the title band). A first run of the same tool matched the hero's `Live demo` pill, which shares the doorway's href (169×56 px after 16 stops on desktop, 329×56 px after 4 on the phone); the selector now names the chapter doorway, and `a11y/` holds the second run. |
+| Chapter text nearest each plinth glow (the label above and the first caption line below every plane), both themes, 1440×900 and 393×852: the rendered background sampled pixel by pixel behind the hidden text with the bloom at rest, against the text's computed colour (`tools/plinth-contrast.mjs`) | every line clears 4.5:1 on every pixel; worst case 5.68:1 in light (the Dashboard first caption, `rgb(70, 84, 77)` over the glow's outer edge) and 5.98:1 in dark (the Ghost Code phone label, `rgb(236, 234, 224)`), against about 6.7:1 and 11.8:1 on the plain surface; the glow's box reaches at most 19 px into a label line and 6 px into a caption line, where the gradient is near its transparent edge; `a11y/plinth-contrast.txt` |
 
 **Unverified, needs a device session:** physical Safari and VoiceOver; real-device graphics performance of the plinth bloom and the clip; WebKit rendering (only Chromium is installed in this container; the Release 3 WebKit instruments were not runnable here); the 2× softness of the shipped-resolution details on an actual retina display.
 
@@ -150,7 +165,7 @@ What to re-check after both are on main: the `Live demo` pill on the two showcas
 ## 10. Engineering handoff (MiMo)
 
 1. After the owner's visual review, merge this branch after Release 4 (or before; there is no overlap). Run `npm run typecheck && npm test && npm run build` as usual.
-2. Stage this folder's evidence and run `npm run qa:index` (done on this branch for the files present at the time; rerun after any addition).
+2. Stage this folder's evidence and run `npm run qa:index` (done in the final evidence commit on this branch; rerun after any addition).
 3. Capture factory, when the project checkouts are available: re-cut the same detail boxes from the 2880×1800 masters so the 2× display is crisp. `details.json` lists every source and box; multiply the box by 2.232 for the 1290-wide files and by 1.8 for the 1600-wide files, and keep the output file names so the spec needs no change. Optionally add the boxes as `captureRegion` scenes in `scripts/showcase/registry.mjs` so the factory banks them.
 4. Optional, if the owner wants the spec to live beside the content: lift `lib/caseShowcase.ts` into an optional `showcase` block of `DeliverableSchema`. The component already reads a validated object; only the source of the object would move.
 5. Known small debts, none blocking: on phones the themed hero preload still fetches the desktop hero AVIF (about 13 to 30 KB) that the phone hero does not show; the ledger row's `lg:` placements assume at most one non-demo links block (true for all five deliverables today).

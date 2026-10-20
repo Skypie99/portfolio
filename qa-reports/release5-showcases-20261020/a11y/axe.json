@@ -1,0 +1,898 @@
+[
+  {
+    "route": "prompt-library",
+    "theme": "light",
+    "size": "1440x900",
+    "axe": {
+      "page": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodes": 1,
+            "targets": [
+              ".border-l-2"
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 72,
+            "targets": [
+              ".text-step-2",
+              ".link-draw-group",
+              ".rail-trim.group-hover\\:translate-x-1.group-focus-visible\\:translate-x-1 > span[aria-hidden=\"true\"]"
+            ]
+          }
+        ]
+      },
+      "showcase": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 15,
+            "targets": [
+              ".text-accent-ink.dark\\:text-ink.text-label",
+              "#a-closer-look",
+              ".max-w-measure-lead"
+            ]
+          }
+        ]
+      }
+    },
+    "keyboard": {
+      "tabs": 18,
+      "focusVisible": true,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "outlineOffset": "2px",
+      "rect": {
+        "x": 312,
+        "y": 428,
+        "w": 193,
+        "h": 44
+      },
+      "name": "Explore Prompt Library↗(opens in new tab)"
+    }
+  },
+  {
+    "route": "prompt-library",
+    "theme": "light",
+    "size": "393x852",
+    "axe": {
+      "page": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodes": 1,
+            "targets": [
+              ".border-l-2"
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 71,
+            "targets": [
+              ".inline-block.link-draw[href$=\"work/\"]",
+              "h1",
+              ".max-w-full > span:nth-child(1)"
+            ]
+          }
+        ]
+      },
+      "showcase": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 15,
+            "targets": [
+              ".text-accent-ink.dark\\:text-ink.text-label",
+              "#a-closer-look",
+              ".max-w-measure-lead"
+            ]
+          }
+        ]
+      }
+    },
+    "keyboard": {
+      "tabs": 6,
+      "focusVisible": true,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "outlineOffset": "2px",
+      "rect": {
+        "x": 32,
+        "y": 404,
+        "w": 193,
+        "h": 44
+      },
+      "name": "Explore Prompt Library↗(opens in new tab)"
+    }
+  },
+  {
+    "route": "prompt-library",
+    "theme": "dark",
+    "size": "1440x900",
+    "axe": {
+      "page": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodes": 1,
+            "targets": [
+              ".border-l-2"
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 71,
+            "targets": [
+              ".text-step-2",
+              ".link-draw-group",
+              ".rail-trim.group-hover\\:translate-x-1.group-focus-visible\\:translate-x-1 > span[aria-hidden=\"true\"]"
+            ]
+          }
+        ]
+      },
+      "showcase": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 15,
+            "targets": [
+              ".text-accent-ink.dark\\:text-ink.text-label",
+              "#a-closer-look",
+              ".max-w-measure-lead"
+            ]
+          }
+        ]
+      }
+    },
+    "keyboard": {
+      "tabs": 18,
+      "focusVisible": true,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "outlineOffset": "2px",
+      "rect": {
+        "x": 312,
+        "y": 428,
+        "w": 193,
+        "h": 44
+      },
+      "name": "Explore Prompt Library↗(opens in new tab)"
+    }
+  },
+  {
+    "route": "prompt-library",
+    "theme": "dark",
+    "size": "393x852",
+    "axe": {
+      "page": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodes": 1,
+            "targets": [
+              ".border-l-2"
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 71,
+            "targets": [
+              ".inline-block.link-draw[href$=\"work/\"]",
+              "h1",
+              ".max-w-full > span:nth-child(1)"
+            ]
+          }
+        ]
+      },
+      "showcase": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 15,
+            "targets": [
+              ".text-accent-ink.dark\\:text-ink.text-label",
+              "#a-closer-look",
+              ".max-w-measure-lead"
+            ]
+          }
+        ]
+      }
+    },
+    "keyboard": {
+      "tabs": 6,
+      "focusVisible": true,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "outlineOffset": "2px",
+      "rect": {
+        "x": 32,
+        "y": 404,
+        "w": 193,
+        "h": 44
+      },
+      "name": "Explore Prompt Library↗(opens in new tab)"
+    }
+  },
+  {
+    "route": "claude-corp",
+    "theme": "light",
+    "size": "1440x900",
+    "axe": {
+      "page": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodes": 1,
+            "targets": [
+              ".border-l-2"
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 99,
+            "targets": [
+              ".gap-3.flex-col.flex:nth-child(2) > .font-normal.leading-none[href=\"/\"]",
+              ".link-draw-group",
+              ".rail-trim.group-hover\\:translate-x-1.group-focus-visible\\:translate-x-1 > span[aria-hidden=\"true\"]"
+            ]
+          }
+        ]
+      },
+      "showcase": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 34,
+            "targets": [
+              ".reveal-scene.gap-4.reveal > .text-accent-ink.text-label.gap-2",
+              "#a-closer-look",
+              ".max-w-measure-lead"
+            ]
+          }
+        ]
+      }
+    },
+    "keyboard": null
+  },
+  {
+    "route": "claude-corp",
+    "theme": "light",
+    "size": "393x852",
+    "axe": {
+      "page": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodes": 1,
+            "targets": [
+              ".border-l-2"
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 88,
+            "targets": [
+              ".inline-block.link-draw[href$=\"work/\"]",
+              "h1",
+              ".mr-2"
+            ]
+          }
+        ]
+      },
+      "showcase": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 28,
+            "targets": [
+              ".reveal-scene.gap-4.reveal-shown > .text-accent-ink.text-label.gap-2",
+              "#a-closer-look",
+              ".max-w-measure-lead"
+            ]
+          }
+        ]
+      }
+    },
+    "keyboard": null
+  },
+  {
+    "route": "claude-corp",
+    "theme": "dark",
+    "size": "1440x900",
+    "axe": {
+      "page": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodes": 1,
+            "targets": [
+              ".border-l-2"
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 98,
+            "targets": [
+              ".gap-3.flex-col.flex:nth-child(2) > .font-normal.leading-none[href=\"/\"]",
+              ".link-draw-group",
+              ".rail-trim.group-hover\\:translate-x-1.group-focus-visible\\:translate-x-1 > span[aria-hidden=\"true\"]"
+            ]
+          }
+        ]
+      },
+      "showcase": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 34,
+            "targets": [
+              ".reveal-scene.gap-4.reveal > .text-accent-ink.text-label.gap-2",
+              "#a-closer-look",
+              ".max-w-measure-lead"
+            ]
+          }
+        ]
+      }
+    },
+    "keyboard": null
+  },
+  {
+    "route": "claude-corp",
+    "theme": "dark",
+    "size": "393x852",
+    "axe": {
+      "page": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodes": 1,
+            "targets": [
+              ".border-l-2"
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 88,
+            "targets": [
+              ".inline-block.link-draw[href$=\"work/\"]",
+              "h1",
+              ".mr-2"
+            ]
+          }
+        ]
+      },
+      "showcase": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 28,
+            "targets": [
+              ".reveal-scene.gap-4.reveal-shown > .text-accent-ink.text-label.gap-2",
+              "#a-closer-look",
+              ".max-w-measure-lead"
+            ]
+          }
+        ]
+      }
+    },
+    "keyboard": null
+  },
+  {
+    "route": "ghost-code",
+    "theme": "light",
+    "size": "1440x900",
+    "axe": {
+      "page": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodes": 1,
+            "targets": [
+              ".border-l-2"
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 69,
+            "targets": [
+              ".text-step-2",
+              ".link-draw-group",
+              ".rail-trim.group-hover\\:translate-x-1.group-focus-visible\\:translate-x-1 > span[aria-hidden=\"true\"]"
+            ]
+          },
+          {
+            "id": "video-caption",
+            "impact": "critical",
+            "nodes": 1,
+            "targets": [
+              "video[preload=\"metadata\"]"
+            ]
+          }
+        ]
+      },
+      "showcase": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 15,
+            "targets": [
+              ".text-accent-ink.dark\\:text-ink.text-label",
+              "#see-it-in-motion",
+              ".max-w-measure-lead"
+            ]
+          },
+          {
+            "id": "video-caption",
+            "impact": "critical",
+            "nodes": 1,
+            "targets": [
+              "video[preload=\"metadata\"]"
+            ]
+          }
+        ]
+      }
+    },
+    "keyboard": {
+      "tabs": 18,
+      "focusVisible": true,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "outlineOffset": "2px",
+      "rect": {
+        "x": 588,
+        "y": 428,
+        "w": 44,
+        "h": 44
+      },
+      "name": "Play animation: A Ghost Code round in motion, with the Phantom moving between four command tokens while the prompt reads above."
+    }
+  },
+  {
+    "route": "ghost-code",
+    "theme": "light",
+    "size": "393x852",
+    "axe": {
+      "page": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodes": 1,
+            "targets": [
+              ".border-l-2"
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 63,
+            "targets": [
+              ".inline-block.link-draw[href$=\"work/\"]",
+              "h1",
+              ".max-w-full > span:nth-child(1)"
+            ]
+          },
+          {
+            "id": "video-caption",
+            "impact": "critical",
+            "nodes": 1,
+            "targets": [
+              "video[preload=\"metadata\"]"
+            ]
+          }
+        ]
+      },
+      "showcase": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 9,
+            "targets": [
+              ".text-accent-ink.dark\\:text-ink.text-label",
+              "#see-it-in-motion",
+              ".max-w-measure-lead"
+            ]
+          },
+          {
+            "id": "video-caption",
+            "impact": "critical",
+            "nodes": 1,
+            "targets": [
+              "video[preload=\"metadata\"]"
+            ]
+          }
+        ]
+      }
+    },
+    "keyboard": {
+      "tabs": 6,
+      "focusVisible": true,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "outlineOffset": "2px",
+      "rect": {
+        "x": 290,
+        "y": 404,
+        "w": 44,
+        "h": 44
+      },
+      "name": "Play animation: A Ghost Code round in motion, with the Phantom moving between four command tokens while the prompt reads above."
+    }
+  },
+  {
+    "route": "ghost-code",
+    "theme": "dark",
+    "size": "1440x900",
+    "axe": {
+      "page": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodes": 1,
+            "targets": [
+              ".border-l-2"
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 69,
+            "targets": [
+              ".text-step-2",
+              ".link-draw-group",
+              ".rail-trim.group-hover\\:translate-x-1.group-focus-visible\\:translate-x-1 > span[aria-hidden=\"true\"]"
+            ]
+          },
+          {
+            "id": "video-caption",
+            "impact": "critical",
+            "nodes": 1,
+            "targets": [
+              "video[preload=\"metadata\"]"
+            ]
+          }
+        ]
+      },
+      "showcase": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 15,
+            "targets": [
+              ".text-accent-ink.dark\\:text-ink.text-label",
+              "#see-it-in-motion",
+              ".max-w-measure-lead"
+            ]
+          },
+          {
+            "id": "video-caption",
+            "impact": "critical",
+            "nodes": 1,
+            "targets": [
+              "video[preload=\"metadata\"]"
+            ]
+          }
+        ]
+      }
+    },
+    "keyboard": {
+      "tabs": 18,
+      "focusVisible": true,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "outlineOffset": "2px",
+      "rect": {
+        "x": 588,
+        "y": 428,
+        "w": 44,
+        "h": 44
+      },
+      "name": "Play animation: A Ghost Code round in motion, with the Phantom moving between four command tokens while the prompt reads above."
+    }
+  },
+  {
+    "route": "ghost-code",
+    "theme": "dark",
+    "size": "393x852",
+    "axe": {
+      "page": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodes": 1,
+            "targets": [
+              ".border-l-2"
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 63,
+            "targets": [
+              ".inline-block.link-draw[href$=\"work/\"]",
+              "h1",
+              ".max-w-full > span:nth-child(1)"
+            ]
+          },
+          {
+            "id": "video-caption",
+            "impact": "critical",
+            "nodes": 1,
+            "targets": [
+              "video[preload=\"metadata\"]"
+            ]
+          }
+        ]
+      },
+      "showcase": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 9,
+            "targets": [
+              ".text-accent-ink.dark\\:text-ink.text-label",
+              "#see-it-in-motion",
+              ".max-w-measure-lead"
+            ]
+          },
+          {
+            "id": "video-caption",
+            "impact": "critical",
+            "nodes": 1,
+            "targets": [
+              "video[preload=\"metadata\"]"
+            ]
+          }
+        ]
+      }
+    },
+    "keyboard": {
+      "tabs": 6,
+      "focusVisible": true,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "outlineOffset": "2px",
+      "rect": {
+        "x": 290,
+        "y": 404,
+        "w": 44,
+        "h": 44
+      },
+      "name": "Play animation: A Ghost Code round in motion, with the Phantom moving between four command tokens while the prompt reads above."
+    }
+  },
+  {
+    "route": "dashboard",
+    "theme": "light",
+    "size": "1440x900",
+    "axe": {
+      "page": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodes": 1,
+            "targets": [
+              ".border-l-2"
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 87,
+            "targets": [
+              ".text-step-2",
+              ".link-draw-group",
+              ".rail-trim.group-hover\\:translate-x-1.group-focus-visible\\:translate-x-1 > span[aria-hidden=\"true\"]"
+            ]
+          }
+        ]
+      },
+      "showcase": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 23,
+            "targets": [
+              ".reveal-scene.gap-4.reveal > .text-accent-ink.gap-2.text-label",
+              "#a-closer-look",
+              ".max-w-measure-lead"
+            ]
+          }
+        ]
+      }
+    },
+    "keyboard": null
+  },
+  {
+    "route": "dashboard",
+    "theme": "light",
+    "size": "393x852",
+    "axe": {
+      "page": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodes": 1,
+            "targets": [
+              ".border-l-2"
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 76,
+            "targets": [
+              ".inline-block.link-draw[href$=\"work/\"]",
+              "h1",
+              ".reveal-scene.gap-4.reveal-shown > .text-accent-ink.gap-2.text-label"
+            ]
+          }
+        ]
+      },
+      "showcase": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 17,
+            "targets": [
+              ".reveal-scene.gap-4.reveal-shown > .text-accent-ink.gap-2.text-label",
+              "#a-closer-look",
+              ".max-w-measure-lead"
+            ]
+          }
+        ]
+      }
+    },
+    "keyboard": null
+  },
+  {
+    "route": "dashboard",
+    "theme": "dark",
+    "size": "1440x900",
+    "axe": {
+      "page": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodes": 1,
+            "targets": [
+              ".border-l-2"
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 87,
+            "targets": [
+              ".text-step-2",
+              ".link-draw-group",
+              ".rail-trim.group-hover\\:translate-x-1.group-focus-visible\\:translate-x-1 > span[aria-hidden=\"true\"]"
+            ]
+          }
+        ]
+      },
+      "showcase": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 23,
+            "targets": [
+              ".reveal-scene.gap-4.reveal > .text-accent-ink.gap-2.text-label",
+              "#a-closer-look",
+              ".max-w-measure-lead"
+            ]
+          }
+        ]
+      }
+    },
+    "keyboard": null
+  },
+  {
+    "route": "dashboard",
+    "theme": "dark",
+    "size": "393x852",
+    "axe": {
+      "page": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "nodes": 1,
+            "targets": [
+              ".border-l-2"
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 76,
+            "targets": [
+              ".inline-block.link-draw[href$=\"work/\"]",
+              "h1",
+              ".reveal-scene.gap-4.reveal-shown > .text-accent-ink.gap-2.text-label"
+            ]
+          }
+        ]
+      },
+      "showcase": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 17,
+            "targets": [
+              ".reveal-scene.gap-4.reveal-shown > .text-accent-ink.gap-2.text-label",
+              "#a-closer-look",
+              ".max-w-measure-lead"
+            ]
+          }
+        ]
+      }
+    },
+    "keyboard": null
+  }
+]
