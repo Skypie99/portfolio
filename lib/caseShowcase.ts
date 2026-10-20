@@ -67,14 +67,25 @@ const LedgerRowSchema = z.object({
   text: z.string().min(10).max(240).refine(noEmDash),
 });
 
+/** A still-first clip the deliverable already authors in content/
+ *  deliverables.json (`shots[shotIndex].video`, with its dark twin, alt and
+ *  `autoplay: false`): the chapter renders that data, so the clip's alt and
+ *  playback setting stay content, guarded where they are. */
+const ClipSchema = z.object({
+  shotIndex: z.number().int().min(0).max(2),
+  width: z.number().int().positive(),
+  height: z.number().int().positive(),
+});
+
 const ExhibitSchema = z
   .object({
     id: z.string().regex(/^[a-z0-9][a-z0-9-]*$/),
-    /** A whole capture, a detail cut from one, or a ledger typeset from the
-     *  case study's own prose (never an image, so it can never be mistaken
-     *  for telemetry or a live screen). */
-    kind: z.enum(['capture', 'detail', 'ledger']),
+    /** A whole capture, a detail cut from one, a still-first clip, or a
+     *  ledger typeset from the case study's own prose (never an image, so it
+     *  can never be mistaken for telemetry or a live screen). */
+    kind: z.enum(['capture', 'detail', 'clip', 'ledger']),
     rows: z.array(LedgerRowSchema).min(2).max(6).optional(),
+    clip: ClipSchema.optional(),
     label: z.string().min(4).max(60).refine(noEmDash, 'no em dash in a label'),
     caption: z.string().min(10).max(360).refine(noEmDash, 'no em dash in a caption'),
     desktop: ImageSchema.optional(),
@@ -88,13 +99,30 @@ const ExhibitSchema = z
     /** The phone variant's own provenance when it is a different capture. */
     phoneProvenance: ProvenanceSchema.optional(),
     /** `full` spans the content column; `inset` steps in one column of
-     *  twelve at lg, so a detail reads as subordinate to the capture above. */
-    layout: z.enum(['full', 'inset']).default('full'),
+     *  twelve at lg, so a detail reads as subordinate to the capture above;
+     *  `aside` seats a portrait plane beside its caption at lg. */
+    layout: z.enum(['full', 'inset', 'aside']).default('full'),
   })
-  .refine((e) => e.kind === 'ledger' || Boolean(e.desktop || e.phone), 'an exhibit needs a desktop or a phone image')
-  .refine((e) => e.kind === 'ledger' || Boolean(e.provenance), 'a capture or detail needs its provenance')
+  .refine((e) => e.kind === 'ledger' || e.kind === 'clip' || Boolean(e.desktop || e.phone), 'an exhibit needs a desktop or a phone image')
+  .refine((e) => e.kind === 'ledger' || Boolean(e.provenance), 'a capture, detail or clip needs its provenance')
   .refine((e) => e.kind !== 'ledger' || Boolean(e.rows?.length), 'a ledger needs rows')
-  .refine((e) => e.kind !== 'ledger' || !(e.desktop || e.phone), 'a ledger carries no image');
+  .refine((e) => e.kind !== 'ledger' || !(e.desktop || e.phone), 'a ledger carries no image')
+  .refine((e) => e.kind !== 'clip' || Boolean(e.clip), 'a clip exhibit names the authored shot it plays')
+  .refine((e) => e.kind === 'clip' || !e.clip, 'only a clip exhibit carries clip data');
+
+/** The showcase hero: the capture-true, content-wide exhibit that replaces
+ *  the shared two-column hero well on a route whose first impression is a
+ *  desktop screen. Desktop shows the deliverable's own heroShot at the
+ *  capture's aspect; below md the phone-composed capture stands on the same
+ *  stage. Each carries the label and provenance printed under the well. */
+const HeroSchema = z.object({
+  desktop: ImageSchema,
+  phone: ImageSchema,
+  label: z.string().min(4).max(60).refine(noEmDash),
+  phoneLabel: z.string().min(4).max(60).refine(noEmDash),
+  provenance: ProvenanceSchema,
+  phoneProvenance: ProvenanceSchema,
+});
 
 const DoorwaySchema = z.object({
   label: z.string().min(4).max(40).refine(noEmDash),
@@ -102,6 +130,7 @@ const DoorwaySchema = z.object({
 });
 
 const SpecSchema = z.object({
+  hero: HeroSchema.optional(),
   heading: z.string().min(4).max(40).refine(noEmDash),
   standfirst: z.string().min(10).max(160).refine(noEmDash).optional(),
   exhibits: z.array(ExhibitSchema).min(1).max(4),
@@ -109,6 +138,7 @@ const SpecSchema = z.object({
 });
 
 export type ShowcaseImage = z.infer<typeof ImageSchema>;
+export type ShowcaseHero = z.infer<typeof HeroSchema>;
 export type ShowcaseProvenance = z.infer<typeof ProvenanceSchema>;
 export type ShowcaseExhibit = z.infer<typeof ExhibitSchema>;
 export type ShowcaseSpec = z.infer<typeof SpecSchema>;
@@ -119,6 +149,7 @@ const PL = '/showcase/prompt-library';
 const PL_IMG = '/images/deliverables/prompt-library';
 const CC = '/showcase/claude-corp';
 const CC_IMG = '/images/deliverables/claude-corp';
+const GC = '/showcase/ghost-code';
 
 /** Light + dark twins of one scene under one path stem, e.g. `${PL}/home.{theme}.desktop`. */
 const twin = (stem: string, ext: 'webp' = 'webp') => ({
@@ -262,6 +293,60 @@ const SPECS: Record<string, SpecInput> = {
         },
         provenance: { capturedDate: '2026-09-05', commit: '4a03980', scene: 'team · desktop', note: 'local build' },
         phoneProvenance: { capturedDate: '2026-07-31', commit: '7e961a3', scene: 'team · phone', detail: true },
+      },
+    ],
+  },
+
+  /* Ghost Code: the real game, large. The title screen is the hero at full
+     content width (the deliverable's own heroShot, capture-true), a round on
+     a phone stands in for it below md; the chapter shows the board at a size
+     where the prompt and tokens read, then the authored still-first clip
+     beside its caption. Nothing plays on its own. */
+  'ghost-code': {
+    hero: {
+      desktop: {
+        ...twin(`${GC}/title.{theme}.desktop`),
+        width: 1290,
+        height: 806,
+        alt: 'Ghost Code’s title screen: the Phantom mark beside the wordmark, three mastery counters, a one-line how to play, and Press Start with a theme control below.',
+      },
+      phone: {
+        ...twin(`${GC}/board.{theme}.phone`),
+        width: 780,
+        height: 1688,
+        alt: 'A Ghost Code round on a phone, with the Phantom, four command tokens, prompt, and score in a focused play view.',
+      },
+      label: 'Current product capture · title screen',
+      phoneLabel: 'Current product capture · a round, on a phone',
+      provenance: { capturedDate: '2026-07-31', commit: '1e6b963', scene: 'title · desktop' },
+      phoneProvenance: { capturedDate: '2026-07-31', commit: '1e6b963', scene: 'board · phone' },
+    },
+    heading: 'See it in motion.',
+    standfirst: 'A round on the board, then the Phantom in motion when you press play.',
+    exhibits: [
+      {
+        id: 'board',
+        kind: 'capture',
+        label: 'A round, in play.',
+        caption:
+          'A prompt appears, four command tokens surround the Phantom, and you steer it to the right one. Arcade mode keeps score and takes a spirit for every miss; Learn mode drops the pressure and escalates instead: a hint, a second try, then the answer.',
+        desktop: {
+          ...twin(`${GC}/board.{theme}.desktop`),
+          width: 1600,
+          height: 1000,
+          alt: 'A Ghost Code round in play, with the Phantom at the centre of four command tokens, the prompt above, and score and streak counters keeping pace.',
+        },
+        provenance: { capturedDate: '2026-07-31', commit: '1e6b963', scene: 'board · desktop' },
+      },
+      {
+        id: 'round',
+        kind: 'clip',
+        label: 'The round, in motion.',
+        caption:
+          'A seeded round of a few seconds: the Phantom moves between the four tokens while the prompt reads above, in whichever theme the page is in. Press play to run it; nothing plays on its own.',
+        clip: { shotIndex: 0, width: 390, height: 844 },
+        provenance: { capturedDate: '2026-07-31', commit: '1e6b963', scene: 'round · phone clip' },
+        layout: 'aside',
       },
     ],
   },

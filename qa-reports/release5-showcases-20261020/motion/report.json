@@ -1,0 +1,20 @@
+[
+  {
+    "tag": "ghost-code-light-1440x900",
+    "webm": "qa-reports/release5-showcases-20261020/motion/raw/ghost-code-light-1440x900/page@4ad1611a4a89448a6126eaafa0be08de.webm",
+    "mp4": "qa-reports/release5-showcases-20261020/motion/ghost-code-light-1440x900.mp4",
+    "strip": "qa-reports/release5-showcases-20261020/motion/ghost-code-light-1440x900-frames.jpg",
+    "durationS": 10.2,
+    "marksMs": {
+      "arrived": 452,
+      "glideToChapter": 2257,
+      "glideToSecond": 6474,
+      "end": 10282
+    },
+    "reducedMotion": {
+      "differingBytes": 0,
+      "runningAnimations": 0,
+      "chapterRevealsNotAtRest": 0
+    }
+  }
+]

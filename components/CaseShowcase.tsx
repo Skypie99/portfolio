@@ -3,6 +3,7 @@ import type { CSSProperties } from 'react';
 import { HorizonRule } from '@/components/HorizonRule';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { Reveal } from '@/components/Reveal';
+import { ThemedMotion } from '@/components/ThemedMotion';
 import { ThemedShowcase } from '@/components/ThemedShowcase';
 import { cn } from '@/lib/cn';
 import type { ShowcaseExhibit, ShowcaseImage, ShowcaseProvenance, ShowcaseSpec } from '@/lib/caseShowcase';
@@ -79,6 +80,34 @@ function Plane({ image, className }: { image: ShowcaseImage; className?: string 
   );
 }
 
+/** The deliverable's own still-first clip (content/deliverables.json
+ *  `shots[i].video`, with its dark twin), in the float chrome at the clip's
+ *  own aspect. ThemedMotion keeps the contract: poster first, `autoplay:
+ *  false` honoured, a visible 44px Play control, native controls without
+ *  JavaScript, nothing plays on viewport entry or on a theme flip. */
+function Clip({ d, clip }: { d: Deliverable; clip: NonNullable<ShowcaseExhibit['clip']> }) {
+  const shot = d.shots?.[clip.shotIndex];
+  const video = shot?.video;
+  if (!shot || !video) return null;
+  return (
+    <div
+      className="ts-float relative w-full"
+      style={{ aspectRatio: `${clip.width} / ${clip.height}` }}
+      data-showcase-clip={clip.shotIndex}
+    >
+      <ThemedMotion
+        light={{ mp4: video.mp4, webm: video.webm, poster: video.poster, lqip: shot.lqip }}
+        dark={shot.dark?.video ? { ...shot.dark.video, lqip: shot.dark.lqip } : undefined}
+        matte={shot.matte}
+        alt={video.alt}
+        captions={video.captions}
+        fit="contain"
+        autoplay={video.autoplay !== false}
+      />
+    </div>
+  );
+}
+
 /** A ledger typeset from the case study: numbered rows of decision, holder
  *  and one sentence. Type on the band, never a plane, so it cannot be read
  *  as a screen of the application. */
@@ -103,12 +132,14 @@ function Ledger({ rows }: { rows: NonNullable<ShowcaseExhibit['rows']> }) {
 }
 
 function Exhibit({
+  d,
   exhibit,
   index,
   desktopNumber,
   phoneNumber,
   sig,
 }: {
+  d: Deliverable;
   exhibit: ShowcaseExhibit;
   index: number;
   /** The exhibit's number in the sequence each width lays out; 0 = not shown there. */
@@ -117,8 +148,11 @@ function Exhibit({
   sig: string;
 }) {
   const isLedger = exhibit.kind === 'ledger';
+  const isClip = exhibit.kind === 'clip';
+  const everyWidth = isLedger || isClip;
   const both = Boolean(exhibit.desktop && exhibit.phone);
-  const widthClass = !isLedger && !exhibit.phone ? 'hidden md:block' : !isLedger && !exhibit.desktop ? 'md:hidden' : undefined;
+  const widthClass = !everyWidth && !exhibit.phone ? 'hidden md:block' : !everyWidth && !exhibit.desktop ? 'md:hidden' : undefined;
+  const aside = exhibit.layout === 'aside';
   const number =
     desktopNumber === phoneNumber ? (
       pad(desktopNumber)
@@ -136,12 +170,12 @@ function Exhibit({
       className={cn('m-0', widthClass, exhibit.layout === 'inset' && 'lg:ml-[8.333%] lg:w-11/12')}
     >
       <figure
-        className="m-0 flex flex-col gap-4"
+        className={cn('m-0 flex flex-col gap-4', aside && 'lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-12 lg:gap-y-4')}
         data-showcase-exhibit={exhibit.id}
         data-showcase-kind={exhibit.kind}
         style={{ '--pr-sig': sig } as CSSProperties}
       >
-        <p className={LABEL_CLASS}>
+        <p className={cn(LABEL_CLASS, aside && 'lg:col-span-12')}>
           {number}
           {' · '}
           {both && exhibit.phoneLabel ? (
@@ -155,14 +189,19 @@ function Exhibit({
         </p>
         {isLedger ? (
           <Ledger rows={exhibit.rows!} />
+        ) : isClip ? (
+          <div className={cn(styles.plane, 'relative mx-auto w-full max-w-[300px] sm:max-w-[360px]', aside && 'lg:col-span-4 lg:mx-0')}>
+            <span aria-hidden="true" className={styles.plinth} />
+            <Clip d={d} clip={exhibit.clip!} />
+          </div>
         ) : (
-          <div className={cn(styles.plane, 'relative')}>
+          <div className={cn(styles.plane, 'relative', aside && 'lg:col-span-4')}>
             <span aria-hidden="true" className={styles.plinth} />
             {exhibit.desktop && <Plane image={exhibit.desktop} className={both ? 'hidden md:block' : undefined} />}
             {exhibit.phone && <Plane image={exhibit.phone} className={both ? 'md:hidden' : undefined} />}
           </div>
         )}
-        <figcaption className="flex max-w-measure-wide flex-col gap-2">
+        <figcaption className={cn('flex max-w-measure-wide flex-col gap-2', aside && 'lg:col-span-8')}>
           <HorizonRule arrival="reveal" className="w-16" />
           <p className={cn(CAPTION_CLASS, both && exhibit.phoneCaption && 'hidden md:block')}>{exhibit.caption}</p>
           {both && exhibit.phoneCaption && <p className={cn(CAPTION_CLASS, 'md:hidden')}>{exhibit.phoneCaption}</p>}
@@ -192,8 +231,9 @@ function numbering(exhibits: ShowcaseExhibit[]): { desktop: number[]; phone: num
   const desktop: number[] = [];
   const phone: number[] = [];
   for (const ex of exhibits) {
-    const onDesktop = ex.kind === 'ledger' || Boolean(ex.desktop);
-    const onPhone = ex.kind === 'ledger' || Boolean(ex.phone);
+    const every = ex.kind === 'ledger' || ex.kind === 'clip';
+    const onDesktop = every || Boolean(ex.desktop);
+    const onPhone = every || Boolean(ex.phone);
     desktop.push(onDesktop ? ++d : 0);
     phone.push(onPhone ? ++p : 0);
   }
@@ -239,6 +279,7 @@ export function CaseShowcase({ d, spec }: { d: Deliverable; spec: ShowcaseSpec }
           {spec.exhibits.map((exhibit, i) => (
             <Exhibit
               key={exhibit.id}
+              d={d}
               exhibit={exhibit}
               index={i}
               desktopNumber={numbers.desktop[i]}
