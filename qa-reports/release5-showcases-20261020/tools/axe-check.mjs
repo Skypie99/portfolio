@@ -39,7 +39,7 @@ const SIZES = [
 const PORT = Number(process.env.CAPTURE_PORT || 3108);
 const BASE = `http://127.0.0.1:${PORT}`;
 const CONTROL = {
-  'prompt-library': 'a[href="https://prompts.skypistudio.com"]',
+  'prompt-library': '[data-case-showcase] a[href="https://prompts.skypistudio.com"]',
   'ghost-code': '[data-showcase-clip] [data-themed-motion] > button',
 };
 
