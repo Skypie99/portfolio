@@ -1,0 +1,174 @@
+{
+  "dir": "/tmp/claude-0/-home-user-portfolio/d36c6a0e-892e-515a-afd4-9772ab04327a/scratchpad/out-baseline",
+  "at": "2026-10-20T04:53:15.159Z",
+  "captures": [
+    {
+      "target": "work",
+      "theme": "light",
+      "size": "1440x900@1",
+      "mode": "normal",
+      "files": [
+        "/home/user/portfolio/qa-reports/release6-editorial-finish-2026-10-20/baseline/work-light-1440x900@1-fold.jpg",
+        "/home/user/portfolio/qa-reports/release6-editorial-finish-2026-10-20/baseline/work-light-1440x900@1-full.jpg",
+        "/home/user/portfolio/qa-reports/release6-editorial-finish-2026-10-20/baseline/work-light-1440x900@1-plate-01.jpg",
+        "/home/user/portfolio/qa-reports/release6-editorial-finish-2026-10-20/baseline/work-light-1440x900@1-plate-02.jpg"
+      ],
+      "errors": [],
+      "plate01": {
+        "x": 312,
+        "y": 48.28125,
+        "width": 1096,
+        "height": 375.25
+      },
+      "plate02": {
+        "x": 312,
+        "y": 47.53125,
+        "width": 1096,
+        "height": 398.34375
+      }
+    },
+    {
+      "target": "work",
+      "theme": "light",
+      "size": "393x852@2",
+      "mode": "normal",
+      "files": [
+        "/home/user/portfolio/qa-reports/release6-editorial-finish-2026-10-20/baseline/work-light-393x852@2-fold.jpg",
+        "/home/user/portfolio/qa-reports/release6-editorial-finish-2026-10-20/baseline/work-light-393x852@2-full.jpg",
+        "/home/user/portfolio/qa-reports/release6-editorial-finish-2026-10-20/baseline/work-light-393x852@2-plate-01.jpg",
+        "/home/user/portfolio/qa-reports/release6-editorial-finish-2026-10-20/baseline/work-light-393x852@2-plate-02.jpg"
+      ],
+      "errors": [],
+      "plate01": {
+        "x": 32,
+        "y": 48.484375,
+        "width": 329,
+        "height": 811.25
+      },
+      "plate02": {
+        "x": 32,
+        "y": 47.734375,
+        "width": 329,
+        "height": 818.953125
+      }
+    },
+    {
+      "target": "work",
+      "theme": "dark",
+      "size": "1440x900@1",
+      "mode": "normal",
+      "files": [
+        "/home/user/portfolio/qa-reports/release6-editorial-finish-2026-10-20/baseline/work-dark-1440x900@1-fold.jpg",
+        "/home/user/portfolio/qa-reports/release6-editorial-finish-2026-10-20/baseline/work-dark-1440x900@1-full.jpg",
+        "/home/user/portfolio/qa-reports/release6-editorial-finish-2026-10-20/baseline/work-dark-1440x900@1-plate-01.jpg",
+        "/home/user/portfolio/qa-reports/release6-editorial-finish-2026-10-20/baseline/work-dark-1440x900@1-plate-02.jpg"
+      ],
+      "errors": [],
+      "plate01": {
+        "x": 312,
+        "y": 48.28125,
+        "width": 1096,
+        "height": 375.25
+      },
+      "plate02": {
+        "x": 312,
+        "y": 47.53125,
+        "width": 1096,
+        "height": 398.34375
+      }
+    },
+    {
+      "target": "work",
+      "theme": "dark",
+      "size": "393x852@2",
+      "mode": "normal",
+      "files": [
+        "/home/user/portfolio/qa-reports/release6-editorial-finish-2026-10-20/baseline/work-dark-393x852@2-fold.jpg",
+        "/home/user/portfolio/qa-reports/release6-editorial-finish-2026-10-20/baseline/work-dark-393x852@2-full.jpg",
+        "/home/user/portfolio/qa-reports/release6-editorial-finish-2026-10-20/baseline/work-dark-393x852@2-plate-01.jpg",
+        "/home/user/portfolio/qa-reports/release6-editorial-finish-2026-10-20/baseline/work-dark-393x852@2-plate-02.jpg"
+      ],
+      "errors": [],
+      "plate01": {
+        "x": 32,
+        "y": 48.484375,
+        "width": 329,
+        "height": 811.25
+      },
+      "plate02": {
+        "x": 32,
+        "y": 47.734375,
+        "width": 329,
+        "height": 818.953125
+      }
+    },
+    {
+      "target": "home-work",
+      "theme": "light",
+      "size": "1440x900@1",
+      "mode": "normal",
+      "files": [
+        "/home/user/portfolio/qa-reports/release6-editorial-finish-2026-10-20/baseline/home-work-light-1440x900@1-fold.jpg",
+        "/home/user/portfolio/qa-reports/release6-editorial-finish-2026-10-20/baseline/home-work-light-1440x900@1-section.jpg"
+      ],
+      "errors": [],
+      "section": {
+        "x": 280,
+        "y": -0.453125,
+        "width": 1160,
+        "height": 1476.578125
+      }
+    },
+    {
+      "target": "home-work",
+      "theme": "light",
+      "size": "393x852@2",
+      "mode": "normal",
+      "files": [
+        "/home/user/portfolio/qa-reports/release6-editorial-finish-2026-10-20/baseline/home-work-light-393x852@2-fold.jpg",
+        "/home/user/portfolio/qa-reports/release6-editorial-finish-2026-10-20/baseline/home-work-light-393x852@2-section.jpg"
+      ],
+      "errors": [],
+      "section": {
+        "x": 0,
+        "y": -2385.78125,
+        "width": 393,
+        "height": 1844.578125
+      }
+    },
+    {
+      "target": "home-work",
+      "theme": "dark",
+      "size": "1440x900@1",
+      "mode": "normal",
+      "files": [
+        "/home/user/portfolio/qa-reports/release6-editorial-finish-2026-10-20/baseline/home-work-dark-1440x900@1-fold.jpg",
+        "/home/user/portfolio/qa-reports/release6-editorial-finish-2026-10-20/baseline/home-work-dark-1440x900@1-section.jpg"
+      ],
+      "errors": [],
+      "section": {
+        "x": 280,
+        "y": -0.453125,
+        "width": 1160,
+        "height": 1476.578125
+      }
+    },
+    {
+      "target": "home-work",
+      "theme": "dark",
+      "size": "393x852@2",
+      "mode": "normal",
+      "files": [
+        "/home/user/portfolio/qa-reports/release6-editorial-finish-2026-10-20/baseline/home-work-dark-393x852@2-fold.jpg",
+        "/home/user/portfolio/qa-reports/release6-editorial-finish-2026-10-20/baseline/home-work-dark-393x852@2-section.jpg"
+      ],
+      "errors": [],
+      "section": {
+        "x": 0,
+        "y": -2385.78125,
+        "width": 393,
+        "height": 1844.578125
+      }
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "name": "work-arrival-light-1440x900",
+  "route": "/work/",
+  "theme": "light",
+  "size": "1440x900",
+  "glideStartMs": 705,
+  "glideEndMs": 2177,
+  "totalMs": 3778,
+  "probe": "",
+  "elements": {},
+  "probeLoad": "h1, ul > li > .reveal",
+  "loadElements": [
+    {
+      "text": "The Work",
+      "firstSampleMs": 83,
+      "startOpacity": 0,
+      "firstVisibleMs": 318,
+      "halfMs": 373,
+      "fullMs": 649
+    },
+    {
+      "text": "01FlagstoneCommunity map of accessibilit",
+      "firstSampleMs": 83,
+      "startOpacity": 0,
+      "firstVisibleMs": 528,
+      "halfMs": 568,
+      "fullMs": 891
+    },
+    {
+      "text": "02Claude CorpA governed multi-agent deve",
+      "firstSampleMs": 83,
+      "startOpacity": 0,
+      "firstVisibleMs": 568,
+      "halfMs": 649,
+      "fullMs": 978
+    },
+    {
+      "text": "03Claude Corp DashboardThe operator cons",
+      "firstSampleMs": 83,
+      "startOpacity": 0,
+      "firstVisibleMs": 3046,
+      "halfMs": 3127,
+      "fullMs": 3533
+    },
+    {
+      "text": "04Prompt LibraryPrompts as reusable asse",
+      "firstSampleMs": 83,
+      "startOpacity": 0,
+      "firstVisibleMs": 3774,
+      "halfMs": 3855,
+      "fullMs": 4179
+    },
+    {
+      "text": "05Ghost CodeA terminal-command trainer a",
+      "firstSampleMs": 83,
+      "startOpacity": 0,
+      "firstVisibleMs": null,
+      "halfMs": null,
+      "fullMs": null
+    }
+  ]
+}
