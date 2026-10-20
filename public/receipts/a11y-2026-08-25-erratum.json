@@ -7,7 +7,7 @@
     {
       "field": "tests passing",
       "issue": "The comparison used a retired AccessMap test count (1,680).",
-      "correction": "The 1,680 figure was a retired AccessMap count and was not AccessMap's count on 2026-08-25. AccessMap's dated count at 2026-08-16 was 2,971 tests across 204 suites, published with its method on /work/flagstone/. The portfolio's 763 tests in this receipt is unaffected."
+      "correction": "The 1,680 figure was a retired AccessMap count and was not AccessMap's count on 2026-08-25. AccessMap's dated count at 2026-08-16 was 2,971 tests across 204 suites, published with its method on /work/flagstone/. The portfolio's 763 tests in this receipt are unaffected."
     },
     {
       "field": "focus stops visible",
