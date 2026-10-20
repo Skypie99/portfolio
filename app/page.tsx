@@ -747,10 +747,18 @@ export default function HomePage() {
         )}
       >
         {/* soft wash so the liquid-glass cards have something to refract —
-            a warm golden glow + a whisper of cool blue (decorative, static) */}
+            a warm golden glow + a whisper of cool blue (decorative, static).
+            Release 6 (R6-A): at half strength in dark mode. The gold pool over
+            the night world lifted the backdrop under row 01 to about
+            rgb(100 85 72), where the 14px summary measured 3.9:1 and the
+            "Featured: above" link 3.8:1 at their worst pixels (both themes'
+            tokens are pinned against plainer panels in ink-contrast.test.ts,
+            which this extra wash sits on top of). At 50% every index text
+            reads at or above 4.67:1 in dark mode on the built page; light mode
+            was already clear and is unchanged. */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 -z-10"
+          className="pointer-events-none absolute inset-0 -z-10 dark:opacity-50"
           style={{
             backgroundImage:
               'radial-gradient(40% 44% at 20% 26%, rgb(255 212 158 / 0.18), transparent 62%), radial-gradient(44% 48% at 86% 82%, rgb(150 188 214 / 0.18), transparent 64%)',
