@@ -1349,6 +1349,30 @@ html.reveal-rearm .reveal:not(.reveal-shown) {
   transition: none !important;
 }
 
+/* Post-Release-6 — Record band keyboard-focus floor (2026-10-20).
+   The Record band's row links (`the record`, `the account`, `the statement`,
+   `evidence`) land keyboard focus while their row's Reveal is still mid-fade:
+   measured against the Release 6 build, ancestor opacity at focus arrival was
+   0.000–0.755 across Tab and Shift+Tab entries at 1440 and 393, and the row
+   reached rest only ~900 ms later (the depth clock plus the row's stagger
+   delay). A focus ring on content the reader cannot see is a ring on nothing.
+   Same floor grammar, and same reasoning, as the Release 6 reading-group floor
+   (components/readingGroup.module.css): the moment anything inside a reveal
+   holds focus, that reveal rests at its visible frame AT ONCE, no transition.
+   The IntersectionObserver adds `reveal-shown` on the same scroll the focus
+   caused, so the frame never fades back when focus moves on.
+   Scoped to the home `#record` band ONLY. The shared Reveal defaults above are
+   byte-for-byte untouched, and the one-rule site-wide version remains deferred
+   per DECISIONS_LOG [r6-focus-floor-scoped] — this rule is not it. Pointer and
+   scrolling entrance motion is untouched (no focus, no rule). RM, print,
+   scripting:none, seat, rearm and failsafe floors all still win: they are
+   `!important` and this rule agrees with every one of them. */
+html.js #record .reveal:focus-within {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   /* RM rests visible — scoped to beat html.js (0,2,1) too, else RM-with-JS
      visitors would sit hidden until scroll. */
