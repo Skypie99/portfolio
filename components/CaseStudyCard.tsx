@@ -3,6 +3,7 @@
 import Link from 'next/link';
 
 import { CardField } from '@/components/CardField';
+import { ClauseBound } from '@/components/ClauseBound';
 import { CardProductReveal, type ProductRevealMedia } from '@/components/ProductReveal';
 import { cn } from '@/lib/cn';
 import { useSpotlight } from '@/lib/motion';
@@ -38,6 +39,14 @@ type CaseStudyCardProps = {
   wide?: boolean;
   /** Which side the media well hangs on at lg (the wall's alternation). */
   mediaSide?: 'left' | 'right';
+  /** Release 6 (R6-A) — the wall's CATALOGUE order. The copy column reads
+   *  title, the one line, then the facts (status, verified), then the action
+   *  row, instead of numeral, two meta lines, title. The description is held
+   *  to the home index's 460px reading measure and the status keeps each
+   *  short clause on one line (ClauseBound). Opt-in: GalleryWall passes it;
+   *  the case-study and blog "Other work" cards keep today's order, class for
+   *  class. */
+  editorial?: boolean;
   className?: string;
 };
 
@@ -52,7 +61,7 @@ type CaseStudyCardProps = {
  * (useSpotlight → --mx/--my). The card is no longer one whole link — the title and
  * each action are their own focus targets (no nested anchors).
  */
-export function CaseStudyCard({ title, category, description, href, status, verifiedDate, media, links, index = 0, wide = false, mediaSide = 'left', className }: CaseStudyCardProps) {
+export function CaseStudyCard({ title, category, description, href, status, verifiedDate, media, links, index = 0, wide = false, mediaSide = 'left', editorial = false, className }: CaseStudyCardProps) {
   const numeral = String(index + 1).padStart(2, '0');
   const githubLink = links?.find((l) => l.type === 'github');
   const demoLink = links?.find((l) => l.type === 'demo');
@@ -60,6 +69,27 @@ export function CaseStudyCard({ title, category, description, href, status, veri
   // The wall's well ratio per frame (R4/BP9): portrait phone frames 2/5,
   // window/plate 1/2 — the two shipped anatomies, picked per work.
   const wellClass = frameForSlug(category) === 'phone' ? 'lg:w-2/5' : 'lg:w-1/2';
+
+  /* THE ROOM/Phase E (E2): /work/ rendered only the summary, less than the
+     homepage cards (ProjectCard:102 shows d.status). Same classes as that
+     line, verbatim — un-uppercased, same tier, so status reads as its own
+     field rather than shouting a kicker. verifiedDate is new to this card
+     entirely: a second, equally quiet line, only when status is present.
+     Release 6 (R6-A): the SAME block, rendered above the title by default
+     and after the description under `editorial` (the catalogue order), where
+     the status also holds each short clause on one line so a phone column
+     never splits a month from its year. */
+  const facts = status ? (
+    <div className="flex flex-col gap-1">
+      <p className="font-mono text-meta text-text-meta">{editorial ? <ClauseBound text={status} /> : status}</p>
+      {verifiedDate && (
+        <p className="font-mono text-meta text-text-meta">
+          {'Verified '}
+          <time dateTime={verifiedDate}>{verifiedDate}</time>
+        </p>
+      )}
+    </div>
+  ) : null;
 
   return (
     <div
@@ -91,23 +121,7 @@ export function CaseStudyCard({ title, category, description, href, status, veri
         </span>
 
         <div className="mt-auto flex flex-col gap-4">
-          {/* THE ROOM/Phase E (E2): /work/ rendered only the summary, less
-              than the homepage cards (ProjectCard:102 shows d.status). Same
-              classes as that line, verbatim — un-uppercased, same tier, so
-              status reads as its own field rather than shouting a kicker.
-              verifiedDate is new to this card entirely: a second, equally
-              quiet line, only when status is present. */}
-          {status && (
-            <div className="flex flex-col gap-1">
-              <p className="font-mono text-meta text-text-meta">{status}</p>
-              {verifiedDate && (
-                <p className="font-mono text-meta text-text-meta">
-                  {'Verified '}
-                  <time dateTime={verifiedDate}>{verifiedDate}</time>
-                </p>
-              )}
-            </div>
-          )}
+          {!editorial && facts}
           <h3 className="font-serif font-light text-card-title text-ink">
             <Link
               href={href}
@@ -130,9 +144,16 @@ export function CaseStudyCard({ title, category, description, href, status, veri
               sentences ("vanilla JS, zero dependencies", "zero cloud, instant
               runs."); clamping amputated them on the work grid. Un-clamped they
               stand at their natural height (a build-time change → CLS 0). */}
-          <p className="font-sans font-light text-body-sm leading-body text-ink-muted text-pretty">
+          <p
+            className={
+              editorial
+                ? 'font-sans font-light text-body-sm leading-body text-ink-muted text-pretty max-w-[460px]'
+                : 'font-sans font-light text-body-sm leading-body text-ink-muted text-pretty'
+            }
+          >
             {description}
           </p>
+          {editorial && facts}
 
           {/* Footer action row (L3-04) — the featured card's proven grammar:
               case-study link + LIVE ↗ / GITHUB ↗ grouped so they wrap as one

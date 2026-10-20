@@ -120,6 +120,7 @@ export function GalleryWall({ deliverables }: { deliverables: Deliverable[] }) {
                   index={i}
                   wide
                   mediaSide={side}
+                  editorial
                 />
               </Reveal>
             </li>
