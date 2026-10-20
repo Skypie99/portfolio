@@ -24,10 +24,12 @@
  *  - KEYBOARD only restores. A pointer departure records `keyboard: false`
  *    and a later Back keeps today's focus-to-main orientation — the mouse
  *    reader never lost their place, and an indiscriminate restore could
- *    only surprise them. (Keyboard is detected as the activation's
- *    `detail === 0` — what Enter and AT-synthesized clicks fire; a pointer
- *    reports its click count instead. An exotic AT that activates as a
- *    pointer keeps today's behavior: degrades, never breaks.)
+ *    only surprise them. (Keyboard is detected by `isKeyboardActivation`:
+ *    the activation's `detail === 0` — what Enter fires in Chromium and
+ *    WebKit, and what AT-synthesized clicks fire — OR the anchor matching
+ *    `:focus-visible`, because Firefox's Enter-on-link click carries
+ *    `detail === 1`. An exotic AT that activates as a pointer keeps
+ *    today's behavior: degrades, never breaks.)
  *  - HISTORY-RETURN only restores: a popstate arrival back at the recorded
  *    origin — browser Back, browser Forward returning to that entry, the
  *    iOS edge-swipe. A PUSH arrival (every click the interceptor takes
@@ -84,6 +86,24 @@ export function recordReturnFocus(
   const href = anchor.getAttribute('data-return-focus');
   if (!href) return;
   seat = { origin: normalize(fromPathname), dest: normalize(toPathname), href, keyboard };
+}
+
+/**
+ * Whether a taken-over click was a keyboard (or AT) activation. `detail === 0`
+ * alone misses Firefox: Gecko dispatches Enter on a link through
+ * `Element::DispatchClickEvent`, whose click count defaults to 1 for a
+ * keyboard source, so every Firefox keyboard departure used to record as a
+ * pointer one and Back never reseated (R4-F05). The anchor's own
+ * `:focus-visible` at click time is the listener-free second signal: a
+ * keyboard reader's link shows it, a mouse or touch activation does not.
+ */
+export function isKeyboardActivation(e: MouseEvent, anchor: Element): boolean {
+  if (e.detail === 0) return true;
+  try {
+    return anchor.matches(':focus-visible');
+  } catch {
+    return false; // an engine without :focus-visible keeps the detail rule
+  }
 }
 
 /** RouteFocus's popstate listener — a history traversal is in flight. */
