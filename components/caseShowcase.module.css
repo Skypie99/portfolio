@@ -1,0 +1,87 @@
+/*
+ * caseShowcase.module.css — Release 5 project showcases (2026-10-20).
+ *
+ * Consumed only by components/CaseShowcase.tsx, which the four showcase case
+ * studies mount. Everything a Tailwind utility can express is written at the
+ * call site; this module holds the two things utilities cannot: the plinth
+ * light's bloom and its reduced-motion, no-JavaScript and print floors.
+ *
+ * CONTRACT — the same floors app/globals.css keeps (MOTION_SYSTEM.md §6, §7)
+ * and components/editorial.module.css already follows:
+ *  - opacity is the only animated property (compositor-only);
+ *  - every duration and delay is a ramp token: no literals;
+ *  - the intro's quint curve is never used: --ease-gh-settle only;
+ *  - REST = VISIBLE. The armed state exists only under `html.js` and only
+ *    inside `prefers-reduced-motion: no-preference`; reduced motion, print,
+ *    no-JS, dead-JS (`reveal-failsafe`) and hash arrivals (`reveal-seat`)
+ *    all rest lit;
+ *  - no loops: the bloom runs once, to rest, with its Reveal.
+ */
+
+/* ── The plane: the capture as a clean artifact, on a plinth of its own
+      signature light ─────────────────────────────────────────────────── */
+.plane {
+  isolation: isolate;
+}
+
+/* The plinth: the project's --pr-sig pooling under the plane, the S15 glow
+   the hero well already carries, at a quieter alpha for a reading chapter.
+   Decorative, behind the plane, pointer-inert; flips with the theme because
+   it only ever reads tokens. */
+.plinth {
+  position: absolute;
+  inset: -5% -3%;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 2.5rem;
+  background: radial-gradient(
+    62% 58% at 50% 64%,
+    rgb(var(--pr-sig, 224 150 90) / 0.2),
+    rgb(var(--pr-sig, 224 150 90) / 0.06) 55%,
+    transparent 74%
+  );
+}
+:global(html.dark) .plinth {
+  mix-blend-mode: screen;
+  background: radial-gradient(
+    62% 58% at 50% 64%,
+    rgb(var(--pr-sig, 224 150 90) / 0.16),
+    rgb(var(--pr-sig, 224 150 90) / 0.04) 55%,
+    transparent 72%
+  );
+}
+
+/* ── The bloom: the light arrives one scene beat after the plane ─────── */
+/* The plane itself rides the shared Reveal (depth variant); the plinth waits
+   for the Reveal to show and then blooms over --dur-scene, so the capture
+   lands first and its light settles around it. One beat, once. */
+@media (prefers-reduced-motion: no-preference) {
+  :global(html.js) .plinth {
+    opacity: 0;
+    transition: opacity var(--dur-scene) var(--ease-gh-settle);
+    transition-delay: var(--stagger-scene);
+  }
+  :global(html.js) :global(.reveal-shown) .plinth {
+    opacity: 1;
+  }
+}
+
+/* Failure floors — the same ones .reveal carries in globals.css. */
+:global(html.reveal-failsafe) .plinth,
+:global(html.reveal-seat) .plinth {
+  opacity: 1 !important;
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plinth {
+    opacity: 1 !important;
+    transition: none !important;
+  }
+}
+
+@media print {
+  .plinth {
+    display: none;
+  }
+}

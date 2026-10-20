@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import type { CSSProperties, ReactNode } from 'react';
 
 import { Button } from '@/components/Button';
+import { CaseShowcase } from '@/components/CaseShowcase';
 import { CaseStudyCard } from '@/components/CaseStudyCard';
 import { ContactEmail } from '@/components/ContactEmail';
 import { HeroImageSettle, HeroTitleSettle } from '@/components/HeroSettle';
@@ -11,9 +12,11 @@ import { ParallaxWash } from '@/components/ParallaxWash';
 import { HeroProductReveal, ShotProductReveal } from '@/components/ProductReveal';
 import { Plate } from '@/components/Plate';
 import { ProofArrival } from '@/components/ProofArrival';
+import { ShowcaseHeroCaption, ShowcaseHeroMedia } from '@/components/ShowcaseHero';
 import { Reveal } from '@/components/Reveal';
 import { TactileMedia } from '@/components/TactileMedia';
 import { TagPill } from '@/components/TagPill';
+import { caseShowcaseFor } from '@/lib/caseShowcase';
 import { cn } from '@/lib/cn';
 import { INLINE_CODE_CLASS, smartPunctuation } from '@/lib/markdown';
 import { getDeliverables } from '@/lib/content';
@@ -421,10 +424,15 @@ function renderFlagstoneBody(d: Deliverable): ReactNode {
   });
 }
 
-function renderCaseBody(d: Deliverable): ReactNode {
+/** `proof: false` (Release 5, 2026-10-20) renders every section through the
+ *  ordinary path: the four showcase case studies exhibit their captures in
+ *  the CaseShowcase chapter between the title band and the essay, so the
+ *  in-essay CaseProof block would show the same evidence twice. Flagstone
+ *  and any deliverable without a showcase spec keep the proof block here. */
+function renderCaseBody(d: Deliverable, { proof = true }: { proof?: boolean } = {}): ReactNode {
   const proofSection = d.id === 'dashboard' ? 'What shipped' : 'The approach';
   return splitBodyIntoSections(d.body!).map((s, i) => {
-    if (s.heading !== proofSection) {
+    if (!proof || s.heading !== proofSection) {
       return <div key={s.heading} className="contents">{renderMarkdownProse(`## ${s.heading}\n\n${s.content}`, 'case', { dropCapEligible: i === 0 })}</div>;
     }
     const [opening, ...remaining] = s.content.split(/\n{2,}/);
@@ -598,6 +606,19 @@ export default async function WorkDetailPage({
   const themedPreloads = heroPreloadLinks(d);
   const heroPreload = themedPreloads ? null : heroPreloadLink(d);
 
+  /* Release 5 project showcases (2026-10-20) — prompt-library, claude-corp,
+     ghost-code and dashboard carry a presentation spec (lib/caseShowcase.ts)
+     that mounts the CaseShowcase evidence chapter between the title band and
+     the essay and retires the in-essay CaseProof block for those four routes.
+     Flagstone and every deliverable without a spec render byte-identically. */
+  const showcase = caseShowcaseFor(d.id);
+  /* The showcase hero (ghost-code, dashboard): the first impression is a
+     desktop screen, so the well spans the content column at the capture's
+     own aspect under a compact title block, with the phone-composed capture
+     standing in below md and the metadata ledger laid out beneath the well.
+     Every other route keeps the shared two-column hero. */
+  const showcaseHero = showcase?.hero;
+
   /* Flagstone first proof (2026-10-19) — the phone hero is a capture-fitted
      exhibit. A previous mobile audit measured the real Explore screenshot at
      ~156px wide inside the 329px figure at 393 (the 9/19 frame took 90% of a
@@ -627,7 +648,15 @@ export default async function WorkDetailPage({
         !d.heroPlate && 'order-2 lg:order-none',
         'shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]',
         d.id !== 'flagstone' && 'lg:sticky lg:top-24',
-        wideHero ? 'aspect-[4/3]' : stoneExhibit ? 'aspect-[5/8] sm:aspect-[4/5] lg:aspect-[3/4]' : 'aspect-[4/5]',
+        wideHero
+          ? showcaseHero
+            ? 'aspect-[5/8] sm:aspect-[4/5] md:aspect-[16/10]'
+            : 'aspect-[4/3]'
+          : stoneExhibit ? 'aspect-[5/8] sm:aspect-[4/5] lg:aspect-[3/4]' : 'aspect-[4/5]',
+        // Release 5 showcase hero: content-wide, in flow (never sticky), and
+        // kept second in the single-column band at lg. twMerge resolves the
+        // later position/order utilities over the shared ones above.
+        showcaseHero && 'lg:static lg:order-2',
       )}
     >
       {/* S15: the plinth glow pool — the project's signature hue pooling
@@ -647,14 +676,18 @@ export default async function WorkDetailPage({
       {/* Selected artwork or an authentic hero screenshot occupies the
           same reserved frame. The visible label distinguishes artwork
           from the retained product captures. */}
-      <HeroProductReveal
-        slug={d.id}
-        title={d.title}
-        eyebrow={d.role}
-        media={media}
-        liftClassName={d.id === 'flagstone' ? 'pr-stone-settle' : undefined}
-        frameWidth={stoneExhibit ? 'w-[72%] sm:w-[53%] lg:w-[58%]' : undefined}
-      />
+      {showcaseHero ? (
+        <ShowcaseHeroMedia slug={d.id} hero={showcaseHero} />
+      ) : (
+        <HeroProductReveal
+          slug={d.id}
+          title={d.title}
+          eyebrow={d.role}
+          media={media}
+          liftClassName={d.id === 'flagstone' ? 'pr-stone-settle' : undefined}
+          frameWidth={stoneExhibit ? 'w-[72%] sm:w-[53%] lg:w-[58%]' : undefined}
+        />
+      )}
       {d.heroArtwork && (
         <span className="absolute right-2 top-2 z-20 rounded border border-[#C8C8B8] bg-[#FAF8F1] px-2 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-[#20302C] dark:border-[#708175] dark:bg-[#202925] dark:text-[#ECEAE0]">
           {d.heroArtwork.label}
@@ -746,7 +779,12 @@ export default async function WorkDetailPage({
               1 by the tall details column and hang the plate 186.50px low. The
               figure is auto-placed into col 1 exactly like the bare well was,
               so the other five deliverables emit a byte-identical grid. */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-12 lg:gap-x-50 items-start">
+          <div
+            className={cn(
+              'grid grid-cols-1 lg:grid-cols-2 gap-y-12 lg:gap-x-50 items-start',
+              showcaseHero && 'lg:grid-cols-1 lg:gap-x-0 lg:gap-y-10',
+            )}
+          >
             {/* L5-01: hero image well. On phones + tablets it rides BETWEEN the
                 title block and the metadata block (order-2) so proof crests the
                 first thumb-flick; at lg it returns to the left column. The
@@ -789,6 +827,7 @@ export default async function WorkDetailPage({
             ) : (
               heroWell
             )}
+            {showcaseHero && <ShowcaseHeroCaption hero={showcaseHero} className="order-2 -mt-6 lg:order-2" />}
 
             {/* Details — the right column at lg (sticky moved onto the media
                 well, L2-03/S15: the TALLER column scrolls free; a sticky here
@@ -800,10 +839,21 @@ export default async function WorkDetailPage({
                 inside the figure, so a single row is sized by this column and
                 the figure simply sits at the top of col 1 (items-start) — the
                 same positions as before, with one grid row instead of two. */}
-            <div className="contents lg:flex lg:flex-col lg:gap-12">
+            <div className={showcaseHero ? 'contents' : 'contents lg:flex lg:flex-col lg:gap-12'}>
               {/* Title block — leads on every viewport. Mobile air steps down
-                  (L5-04): gap-6 → md:gap-8 → lg:gap-12 (desktop unchanged). */}
-              <div className="flex flex-col gap-6 md:gap-8 lg:gap-12 order-1 lg:order-none">
+                  (L5-04): gap-6 → md:gap-8 → lg:gap-12 (desktop unchanged).
+                  Release 5 showcase hero: at lg the block is a twelve-column
+                  grid, identity (kicker, title, summary) on seven columns and
+                  the actions (hero caption, pills) on five, seated to the
+                  same baseline, so the well can start inside the first fold. */}
+              <div
+                className={
+                  showcaseHero
+                    ? 'flex flex-col gap-6 md:gap-8 lg:grid lg:grid-cols-12 lg:items-end lg:gap-x-12 lg:gap-y-0 order-1'
+                    : 'flex flex-col gap-6 md:gap-8 lg:gap-12 order-1 lg:order-none'
+                }
+              >
+                <div className={showcaseHero ? 'contents lg:col-span-7 lg:flex lg:flex-col lg:gap-8' : 'contents'}>
                 {/* FEATURED + role share ONE line at base (L5-04's two-chip void).
                     UP-32 (ui-polish 2026-08-01) extends that to EVERY width by
                     dropping the `lg:contents` this line used to carry, which had
@@ -879,7 +929,9 @@ export default async function WorkDetailPage({
                 <p className="font-sans font-light text-step-1 text-charcoal text-pretty">
                   {d.summary}
                 </p>
+                </div>
 
+                <div className={showcaseHero ? 'contents lg:col-span-5 lg:flex lg:flex-col lg:items-start lg:gap-8 lg:pb-1' : 'contents'}>
                 {d.heroCaption && (
                   <div className="border-l-2 border-terracotta pl-4 flex flex-col gap-1" aria-label="Hero caption">
                     <p className="font-mono text-meta tracking-label uppercase text-accent-ink">{d.heroCaption.eyebrow}</p>
@@ -939,6 +991,7 @@ export default async function WorkDetailPage({
                     )}
                   </div>
                 )}
+                </div>
               </div>
 
               {/* Metadata block — role/year, tech, links, tags. Follows the proof
@@ -946,9 +999,15 @@ export default async function WorkDetailPage({
                   L5-03: the md band sets the scan as a designed 2-column ledger
                   (Role/Year spanning · Tech | Links · Tags spanning) instead of
                   the inherited single phone stack. */}
-              <div className="flex flex-col gap-12 order-3 lg:order-none md:max-lg:grid md:max-lg:grid-cols-2 md:max-lg:gap-8">
+              <div
+                className={cn(
+                  'flex flex-col gap-12 order-3 lg:order-none md:max-lg:grid md:max-lg:grid-cols-2 md:max-lg:gap-8',
+                  // Release 5 showcase hero: one ledger row under the well at lg.
+                  showcaseHero && 'lg:order-3 lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-12 lg:gap-y-0',
+                )}
+              >
                 {/* Role / Year */}
-                <dl className="grid grid-cols-2 gap-8 border-t border-border-decorative pt-8 md:max-lg:col-span-2">
+                <dl className={cn('grid grid-cols-2 gap-8 border-t border-border-decorative pt-8 md:max-lg:col-span-2', showcaseHero && 'lg:col-span-5')}>
                   {/* Status leads the ledger (truth pass 2026-08-21) and spans
                       both columns. It is not a third peer of Role/Year: it is
                       the one line that tells a reader whether this thing has
@@ -992,7 +1051,12 @@ export default async function WorkDetailPage({
                     the Live demo link already covers — was removed. The
                     behaviour is data-driven, so it needed no code change; the
                     comment did.) */}
-                <div className={cn(otherLinks.length === 0 && 'md:max-lg:col-span-2')}>
+                <div
+                  className={cn(
+                    otherLinks.length === 0 && 'md:max-lg:col-span-2',
+                    showcaseHero && 'lg:col-span-3 lg:border-t lg:border-border-decorative lg:pt-8',
+                  )}
+                >
                   <p className="font-mono text-meta tracking-label uppercase text-text-meta mb-3">
                     Tech
                   </p>
@@ -1010,7 +1074,7 @@ export default async function WorkDetailPage({
                     In the md ledger it sits beside Tech, hairline dropped so the
                     two column tops align. */}
                 {otherLinks.length > 0 && (
-                  <div className="border-t border-border-decorative pt-8 md:max-lg:border-t-0 md:max-lg:pt-0">
+                  <div className={cn('border-t border-border-decorative pt-8 md:max-lg:border-t-0 md:max-lg:pt-0', showcaseHero && 'lg:col-span-2')}>
                     <p className="font-mono text-meta tracking-label uppercase text-text-meta mb-3">
                       Links
                     </p>
@@ -1067,7 +1131,7 @@ export default async function WorkDetailPage({
 
                 {/* Tags */}
                 {d.tags.length > 0 && (
-                  <div className="border-t border-border-decorative pt-8 md:max-lg:col-span-2">
+                  <div className={cn('border-t border-border-decorative pt-8 md:max-lg:col-span-2', showcaseHero && 'lg:col-span-2')}>
                     <p className="font-mono text-meta tracking-label uppercase text-text-meta mb-3">
                       Tags
                     </p>
@@ -1085,6 +1149,10 @@ export default async function WorkDetailPage({
           </div>
         </div>
       </section>
+
+      {/* Release 5 (2026-10-20): the evidence chapter, the four showcase
+          routes only — see lib/caseShowcase.ts. */}
+      {showcase && <CaseShowcase d={d} spec={showcase} />}
 
       {/* Case study body — rendered only when body content exists */}
       {d.body && (
@@ -1105,7 +1173,7 @@ export default async function WorkDetailPage({
                 d.id === 'flagstone' && 'tablet-prose-measure',
               )}
             >
-              {d.id === 'flagstone' ? renderFlagstoneBody(d) : renderCaseBody(d)}
+              {d.id === 'flagstone' ? renderFlagstoneBody(d) : renderCaseBody(d, { proof: !showcase })}
             </article>
 
             {/* FT-7 — close the essay like an essay. A designed sign-off (never
