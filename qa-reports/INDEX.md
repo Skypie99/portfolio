@@ -6,10 +6,10 @@
 
 | Measure | Value |
 |---|---|
-| Tracked files under `qa-reports/` | 1282 |
-| Top-level reports and receipts (Markdown) | 181 |
-| Evidence directories | 20 |
-| File types | png 540, jpg 262, md 204, json 132, log 63, mjs 29, cjs 17, py 9, txt 9, gz 7, stderr 4, html 2, webm 2, jsonl 1, patch 1 |
+| Tracked files under `qa-reports/` | 1331 |
+| Top-level reports and receipts (Markdown) | 182 |
+| Evidence directories | 21 |
+| File types | png 556, jpg 276, md 205, json 139, log 63, mjs 37, cjs 17, py 9, txt 9, gz 7, stderr 4, html 2, jsonl 2, sh 2, webm 2, patch 1 |
 | Dates named in file paths | 2026-05-23 to 2026-10-19 |
 
 ## How the evidence is organized
@@ -19,10 +19,11 @@
 - **Adding evidence.** Name a receipt `YYYY-MM-DD_<Topic>.md` and cite its raw evidence by relative path. When a new artifact would be byte-identical to one already tracked, cite the existing path with its SHA-256 (or a manifest entry) instead of committing another copy, unless a self-contained package or a before/after comparison genuinely needs the copy. Then stage the files and regenerate this index.
 - **Evidence outside this directory:** `design-reviews/` (dated review programs) and `summaries/` (June 2026 pass reports). See [`docs/INDEX.md`](../docs/INDEX.md) for how every document in the repository is classified.
 
-## Newest dated reports (15 of 150)
+## Newest dated reports (15 of 151)
 
 | Date | Report | Title |
 |---|---|---|
+| 2026-10-19 | [`2026-10-19_Claude_SkyPiRelease3Final.md`](2026-10-19_Claude_SkyPiRelease3Final.md) | SkyPi Release 3 — final integration and accessibility clearance |
 | 2026-10-19 | [`2026-10-19_Codex_SkyPiRelease3FlagstoneIntegration.md`](2026-10-19_Codex_SkyPiRelease3FlagstoneIntegration.md) | SkyPi Release 3 — Flagstone Integration |
 | 2026-10-19 | [`2026-10-19_Flagstone_FirstProof_Candidate.md`](2026-10-19_Flagstone_FirstProof_Candidate.md) | Flagstone first proof candidate: the capture-fitted hero exhibit (2026-10-19) |
 | 2026-10-19 | [`2026-10-19_Flagstone_VersionA_Candidate.md`](2026-10-19_Flagstone_VersionA_Candidate.md) | Flagstone Version A candidate: three-panel proof row with a click-to-play clip (2026-10-19) |
@@ -37,7 +38,6 @@
 | 2026-09-22 | [`2026-09-22_Codex_P2Closure.md`](2026-09-22_Codex_P2Closure.md) | Portfolio 4.0 P2 closure — owner-approved evidence doctrine |
 | 2026-09-22 | [`2026-09-22_P3_ProofProximity.md`](2026-09-22_P3_ProofProximity.md) | Portfolio 4.0 P3 — Story and proof proximity |
 | 2026-09-22 | [`2026-09-22_P4_SystemHygiene.md`](2026-09-22_P4_SystemHygiene.md) | Portfolio 4.0 P4 — System hygiene |
-| 2026-09-17 | [`2026-09-17_P1A_FlagstoneReleaseTruth.md`](2026-09-17_P1A_FlagstoneReleaseTruth.md) | P1.A — Flagstone Release-Truth Repair |
 
 ## Phase gate receipts and packets (14)
 
@@ -58,7 +58,7 @@
 | [`PHASE-09_TECHNICAL_INTEGRITY_RECEIPT.md`](PHASE-09_TECHNICAL_INTEGRITY_RECEIPT.md) | Current owner adjudication — 2026-09-07 |
 | [`PHASE-11_REMOTE_MUTATION_MANIFEST.md`](PHASE-11_REMOTE_MUTATION_MANIFEST.md) | Phase 11 remote mutation manifest — prepared by Phase 06 |
 
-## Evidence directories (20)
+## Evidence directories (21)
 
 | Directory | Files | Types | Cited by |
 |---|---|---|---|
@@ -79,7 +79,8 @@
 | [`phase05-reconciliation-evidence/`](phase05-reconciliation-evidence/) | 26 | json 13, log 6, cjs 3, png 2, md 1, py 1 | [`PORTFOLIO_SUPPORTING_PROJECT_ACCEPTANCE_MATRIX.md`](PORTFOLIO_SUPPORTING_PROJECT_ACCEPTANCE_MATRIX.md) |
 | [`phase06-candidates/`](phase06-candidates/) | 1 | md 1 | [`PHASE-06_GITHUB_TRUTH_GATE_RECEIPT_FINAL.md`](PHASE-06_GITHUB_TRUTH_GATE_RECEIPT_FINAL.md)<br>[`PHASE-11_REMOTE_MUTATION_MANIFEST.md`](PHASE-11_REMOTE_MUTATION_MANIFEST.md) |
 | [`phase06-evidence/`](phase06-evidence/) | 6 | md 3, json 2, html 1 | [`PHASE-06_APPROVAL_PACKET.md`](PHASE-06_APPROVAL_PACKET.md)<br>[`PHASE-06_GITHUB_TRUTH_GATE_RECEIPT.md`](PHASE-06_GITHUB_TRUTH_GATE_RECEIPT.md) |
-| [`release3-flagstone-20261019/`](release3-flagstone-20261019/) | 117 | jpg 96, json 8, mjs 6, cjs 2, gz 2, html 1, jsonl 1, md 1 | [`2026-10-19_Codex_SkyPiRelease3FlagstoneIntegration.md`](2026-10-19_Codex_SkyPiRelease3FlagstoneIntegration.md) |
+| [`release3-final-20261019/`](release3-final-20261019/) | 48 | png 16, jpg 14, mjs 8, json 7, sh 2, jsonl 1 | [`2026-10-19_Claude_SkyPiRelease3Final.md`](2026-10-19_Claude_SkyPiRelease3Final.md) |
+| [`release3-flagstone-20261019/`](release3-flagstone-20261019/) | 117 | jpg 96, json 8, mjs 6, cjs 2, gz 2, html 1, jsonl 1, md 1 | [`2026-10-19_Claude_SkyPiRelease3Final.md`](2026-10-19_Claude_SkyPiRelease3Final.md)<br>[`2026-10-19_Codex_SkyPiRelease3FlagstoneIntegration.md`](2026-10-19_Codex_SkyPiRelease3FlagstoneIntegration.md) |
 | [`repository-professionalization/`](repository-professionalization/) | 2 | md 2 | [`2026-09-28_PostMerge_Professionalism_Repair_Receipt.md`](2026-09-28_PostMerge_Professionalism_Repair_Receipt.md) |
 | [`visual-evidence/`](visual-evidence/) | 16 | png 16 | [`2026-09-01_Codex_FlagstoneFirstImpression.md`](2026-09-01_Codex_FlagstoneFirstImpression.md) |
 
@@ -97,7 +98,7 @@ Top-level files by the month named in their file name:
 
 | Month | Top-level files |
 |---|---|
-| 2026-10 | 5 |
+| 2026-10 | 6 |
 | 2026-09 | 42 |
 | 2026-08 | 2 |
 | 2026-07 | 2 |
