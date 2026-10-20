@@ -1,0 +1,456 @@
+{
+  "generatedAt": "2026-10-20",
+  "tool": "qa-reports/release5-showcases-20261020/tools/cut-details.mjs",
+  "outputs": [
+    {
+      "slug": "prompt-library",
+      "name": "r5-prompt-open",
+      "theme": "light",
+      "source": "showcase/prompt-library/prompt-detail.light.desktop.webp",
+      "sourceSize": [
+        1600,
+        1000
+      ],
+      "box": [
+        288,
+        228,
+        1024,
+        544
+      ],
+      "note": "The opened prompt: preview with {{variables}} on the left, the variable fields and run controls on the right.",
+      "files": {
+        "avif": "/images/deliverables/prompt-library/r5-prompt-open.light.avif",
+        "webp": "/images/deliverables/prompt-library/r5-prompt-open.light.webp"
+      },
+      "bytes": {
+        "avif": 21279,
+        "webp": 33212
+      }
+    },
+    {
+      "slug": "prompt-library",
+      "name": "r5-prompt-open",
+      "theme": "dark",
+      "source": "showcase/prompt-library/prompt-detail.dark.desktop.webp",
+      "sourceSize": [
+        1600,
+        1000
+      ],
+      "box": [
+        288,
+        228,
+        1024,
+        544
+      ],
+      "note": "The opened prompt: preview with {{variables}} on the left, the variable fields and run controls on the right.",
+      "files": {
+        "avif": "/images/deliverables/prompt-library/r5-prompt-open.dark.avif",
+        "webp": "/images/deliverables/prompt-library/r5-prompt-open.dark.webp"
+      },
+      "bytes": {
+        "avif": 21728,
+        "webp": 30622
+      }
+    },
+    {
+      "slug": "prompt-library",
+      "name": "r5-prompt-variables",
+      "theme": "light",
+      "source": "showcase/prompt-library/prompt-detail.light.desktop.webp",
+      "sourceSize": [
+        1600,
+        1000
+      ],
+      "box": [
+        792,
+        372,
+        520,
+        400
+      ],
+      "note": "The variables panel only, for the phone reading size.",
+      "files": {
+        "avif": "/images/deliverables/prompt-library/r5-prompt-variables.light.avif",
+        "webp": "/images/deliverables/prompt-library/r5-prompt-variables.light.webp"
+      },
+      "bytes": {
+        "avif": 7908,
+        "webp": 11596
+      }
+    },
+    {
+      "slug": "prompt-library",
+      "name": "r5-prompt-variables",
+      "theme": "dark",
+      "source": "showcase/prompt-library/prompt-detail.dark.desktop.webp",
+      "sourceSize": [
+        1600,
+        1000
+      ],
+      "box": [
+        792,
+        372,
+        520,
+        400
+      ],
+      "note": "The variables panel only, for the phone reading size.",
+      "files": {
+        "avif": "/images/deliverables/prompt-library/r5-prompt-variables.dark.avif",
+        "webp": "/images/deliverables/prompt-library/r5-prompt-variables.dark.webp"
+      },
+      "bytes": {
+        "avif": 8085,
+        "webp": 10798
+      }
+    },
+    {
+      "slug": "prompt-library",
+      "name": "r5-featured-card",
+      "theme": "light",
+      "source": "showcase/prompt-library/home.light.desktop.webp",
+      "sourceSize": [
+        1290,
+        806
+      ],
+      "box": [
+        760,
+        222,
+        330,
+        206
+      ],
+      "note": "The featured prompt card as the library opens: category, title, description and tags (the phone reading size). The 2026-07-31 phone capture of the home was not used: its privacy line predates the truth pass.",
+      "files": {
+        "avif": "/images/deliverables/prompt-library/r5-featured-card.light.avif",
+        "webp": "/images/deliverables/prompt-library/r5-featured-card.light.webp"
+      },
+      "bytes": {
+        "avif": 3957,
+        "webp": 5688
+      }
+    },
+    {
+      "slug": "prompt-library",
+      "name": "r5-featured-card",
+      "theme": "dark",
+      "source": "showcase/prompt-library/home.dark.desktop.webp",
+      "sourceSize": [
+        1290,
+        806
+      ],
+      "box": [
+        760,
+        222,
+        330,
+        206
+      ],
+      "note": "The featured prompt card as the library opens: category, title, description and tags (the phone reading size). The 2026-07-31 phone capture of the home was not used: its privacy line predates the truth pass.",
+      "files": {
+        "avif": "/images/deliverables/prompt-library/r5-featured-card.dark.avif",
+        "webp": "/images/deliverables/prompt-library/r5-featured-card.dark.webp"
+      },
+      "bytes": {
+        "avif": 3984,
+        "webp": 5474
+      }
+    },
+    {
+      "slug": "claude-corp",
+      "name": "r5-pipeline",
+      "theme": "light",
+      "source": "showcase/claude-corp/hero-pipeline.light.desktop.webp",
+      "sourceSize": [
+        1290,
+        806
+      ],
+      "box": [
+        150,
+        488,
+        990,
+        298
+      ],
+      "note": "The orchestration pipeline band from the public site: Sky, Morgan, 15 roles, Safety, main.",
+      "files": {
+        "avif": "/images/deliverables/claude-corp/r5-pipeline.light.avif",
+        "webp": "/images/deliverables/claude-corp/r5-pipeline.light.webp"
+      },
+      "bytes": {
+        "avif": 10042,
+        "webp": 12500
+      }
+    },
+    {
+      "slug": "claude-corp",
+      "name": "r5-pipeline",
+      "theme": "dark",
+      "source": "showcase/claude-corp/hero-pipeline.dark.desktop.webp",
+      "sourceSize": [
+        1290,
+        806
+      ],
+      "box": [
+        150,
+        488,
+        990,
+        298
+      ],
+      "note": "The orchestration pipeline band from the public site: Sky, Morgan, 15 roles, Safety, main.",
+      "files": {
+        "avif": "/images/deliverables/claude-corp/r5-pipeline.dark.avif",
+        "webp": "/images/deliverables/claude-corp/r5-pipeline.dark.webp"
+      },
+      "bytes": {
+        "avif": 10644,
+        "webp": 13036
+      }
+    },
+    {
+      "slug": "claude-corp",
+      "name": "r5-team-phone",
+      "theme": "light",
+      "source": "showcase/claude-corp/team.light.phone.webp",
+      "sourceSize": [
+        780,
+        1688
+      ],
+      "box": [
+        0,
+        120,
+        780,
+        1300
+      ],
+      "note": "The role grid on a phone: the section head, the role filters and the first two role cards.",
+      "files": {
+        "avif": "/images/deliverables/claude-corp/r5-team-phone.light.avif",
+        "webp": "/images/deliverables/claude-corp/r5-team-phone.light.webp"
+      },
+      "bytes": {
+        "avif": 30784,
+        "webp": 46628
+      }
+    },
+    {
+      "slug": "claude-corp",
+      "name": "r5-team-phone",
+      "theme": "dark",
+      "source": "showcase/claude-corp/team.dark.phone.webp",
+      "sourceSize": [
+        780,
+        1688
+      ],
+      "box": [
+        0,
+        120,
+        780,
+        1300
+      ],
+      "note": "The role grid on a phone: the section head, the role filters and the first two role cards.",
+      "files": {
+        "avif": "/images/deliverables/claude-corp/r5-team-phone.dark.avif",
+        "webp": "/images/deliverables/claude-corp/r5-team-phone.dark.webp"
+      },
+      "bytes": {
+        "avif": 31679,
+        "webp": 46928
+      }
+    },
+    {
+      "slug": "dashboard",
+      "name": "r5-disclosure",
+      "theme": "light",
+      "source": "showcase/dashboard/command-center.light.desktop.webp",
+      "sourceSize": [
+        1290,
+        806
+      ],
+      "box": [
+        200,
+        0,
+        1090,
+        440
+      ],
+      "note": "The demo seam at reading size: the DEMO badge, the dated snapshot, the command center and the synthetic-data banner.",
+      "files": {
+        "avif": "/images/deliverables/dashboard/r5-disclosure.light.avif",
+        "webp": "/images/deliverables/dashboard/r5-disclosure.light.webp"
+      },
+      "bytes": {
+        "avif": 11593,
+        "webp": 14738
+      }
+    },
+    {
+      "slug": "dashboard",
+      "name": "r5-disclosure",
+      "theme": "dark",
+      "source": "showcase/dashboard/command-center.dark.desktop.webp",
+      "sourceSize": [
+        1290,
+        806
+      ],
+      "box": [
+        200,
+        0,
+        1090,
+        440
+      ],
+      "note": "The demo seam at reading size: the DEMO badge, the dated snapshot, the command center and the synthetic-data banner.",
+      "files": {
+        "avif": "/images/deliverables/dashboard/r5-disclosure.dark.avif",
+        "webp": "/images/deliverables/dashboard/r5-disclosure.dark.webp"
+      },
+      "bytes": {
+        "avif": 12220,
+        "webp": 15216
+      }
+    },
+    {
+      "slug": "dashboard",
+      "name": "r5-think-tank",
+      "theme": "light",
+      "source": "showcase/dashboard/think-tank.light.desktop.webp",
+      "sourceSize": [
+        1600,
+        1000
+      ],
+      "box": [
+        248,
+        76,
+        1352,
+        754
+      ],
+      "note": "The Think Tank board without the sidebar: the triage header, project filters and the first two ideas.",
+      "files": {
+        "avif": "/images/deliverables/dashboard/r5-think-tank.light.avif",
+        "webp": "/images/deliverables/dashboard/r5-think-tank.light.webp"
+      },
+      "bytes": {
+        "avif": 23508,
+        "webp": 36010
+      }
+    },
+    {
+      "slug": "dashboard",
+      "name": "r5-think-tank",
+      "theme": "dark",
+      "source": "showcase/dashboard/think-tank.dark.desktop.webp",
+      "sourceSize": [
+        1600,
+        1000
+      ],
+      "box": [
+        248,
+        76,
+        1352,
+        754
+      ],
+      "note": "The Think Tank board without the sidebar: the triage header, project filters and the first two ideas.",
+      "files": {
+        "avif": "/images/deliverables/dashboard/r5-think-tank.dark.avif",
+        "webp": "/images/deliverables/dashboard/r5-think-tank.dark.webp"
+      },
+      "bytes": {
+        "avif": 25768,
+        "webp": 34828
+      }
+    },
+    {
+      "slug": "dashboard",
+      "name": "r5-dispatch",
+      "theme": "light",
+      "source": "showcase/dashboard/dispatch.light.desktop.webp",
+      "sourceSize": [
+        1600,
+        1000
+      ],
+      "box": [
+        240,
+        60,
+        1360,
+        800
+      ],
+      "note": "The Dispatch queue without the sidebar: status filters and the first five queued items.",
+      "files": {
+        "avif": "/images/deliverables/dashboard/r5-dispatch.light.avif",
+        "webp": "/images/deliverables/dashboard/r5-dispatch.light.webp"
+      },
+      "bytes": {
+        "avif": 28216,
+        "webp": 41176
+      }
+    },
+    {
+      "slug": "dashboard",
+      "name": "r5-dispatch",
+      "theme": "dark",
+      "source": "showcase/dashboard/dispatch.dark.desktop.webp",
+      "sourceSize": [
+        1600,
+        1000
+      ],
+      "box": [
+        240,
+        60,
+        1360,
+        800
+      ],
+      "note": "The Dispatch queue without the sidebar: status filters and the first five queued items.",
+      "files": {
+        "avif": "/images/deliverables/dashboard/r5-dispatch.dark.avif",
+        "webp": "/images/deliverables/dashboard/r5-dispatch.dark.webp"
+      },
+      "bytes": {
+        "avif": 28803,
+        "webp": 38644
+      }
+    },
+    {
+      "slug": "dashboard",
+      "name": "r5-think-tank-phone",
+      "theme": "light",
+      "source": "showcase/dashboard/think-tank.light.phone.webp",
+      "sourceSize": [
+        780,
+        1688
+      ],
+      "box": [
+        0,
+        120,
+        780,
+        1440
+      ],
+      "note": "The Think Tank on a phone: the triage header, project filters and the first idea.",
+      "files": {
+        "avif": "/images/deliverables/dashboard/r5-think-tank-phone.light.avif",
+        "webp": "/images/deliverables/dashboard/r5-think-tank-phone.light.webp"
+      },
+      "bytes": {
+        "avif": 39744,
+        "webp": 60092
+      }
+    },
+    {
+      "slug": "dashboard",
+      "name": "r5-think-tank-phone",
+      "theme": "dark",
+      "source": "showcase/dashboard/think-tank.dark.phone.webp",
+      "sourceSize": [
+        780,
+        1688
+      ],
+      "box": [
+        0,
+        120,
+        780,
+        1440
+      ],
+      "note": "The Think Tank on a phone: the triage header, project filters and the first idea.",
+      "files": {
+        "avif": "/images/deliverables/dashboard/r5-think-tank-phone.dark.avif",
+        "webp": "/images/deliverables/dashboard/r5-think-tank-phone.dark.webp"
+      },
+      "bytes": {
+        "avif": 41233,
+        "webp": 59808
+      }
+    }
+  ]
+}
