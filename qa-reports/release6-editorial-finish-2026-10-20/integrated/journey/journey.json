@@ -1,0 +1,125 @@
+{
+  "dir": "/Users/skypie/Portfolio-codex/mimo-release6-20261020/out",
+  "at": "2026-10-20T05:57:00.042Z",
+  "size": "1440x900@1",
+  "theme": "light",
+  "log": [
+    {
+      "step": "hash arrival /#work",
+      "reveals": 6,
+      "hidden": 1,
+      "hiddenWhich": [
+        "05Ghost CodeA term @top 1153px (viewport 900px)"
+      ],
+      "scrollY": 6435,
+      "workTop": 0
+    },
+    {
+      "step": "tab walk from row 01",
+      "stops": [
+        "a:View Flagstone project (ring)",
+        "a:Featured: above↑ (ring)",
+        "a:View Claude Corp project (ring)",
+        "a:View Claude Corp Dashboard project (ring)",
+        "a:View Prompt Library project (ring)",
+        "a:View Ghost Code project (ring)",
+        "a:the record (ring) FAINT",
+        "a:the account (ring) FAINT",
+        "a:the statement (ring) FAINT"
+      ]
+    },
+    {
+      "step": "opened from row 02",
+      "url": "http://127.0.0.1:3433/work/claude-corp/",
+      "focus": {
+        "tag": "main",
+        "text": "{\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplicatio",
+        "href": null,
+        "visible": true,
+        "opacity": 1,
+        "ringVisible": true,
+        "ancestorOpacity": 1
+      }
+    },
+    {
+      "step": "back to home",
+      "scrollBefore": 6316,
+      "scrollAfter": 6316,
+      "focus": {
+        "tag": "a",
+        "text": "View Claude Corp project",
+        "href": "/work/claude-corp/",
+        "visible": true,
+        "opacity": 1,
+        "ringVisible": true,
+        "ancestorOpacity": 1
+      }
+    },
+    {
+      "step": "opened plate 03 by pointer",
+      "url": "http://127.0.0.1:3433/work/dashboard/",
+      "firstVisitWallSeen": false
+    },
+    {
+      "step": "back to /work/",
+      "scrollBeforeOpen": 1177,
+      "y": 1177,
+      "wallSeen": true,
+      "hiddenPlates": 0,
+      "plateTitleY": 427
+    },
+    {
+      "step": "restored position settle watch (3 s, no input)",
+      "first": 1177,
+      "min": 1177,
+      "max": 1177,
+      "last": 1177,
+      "height": 4064
+    },
+    {
+      "step": "theme leg 1",
+      "clicked": "Switch to dark mode",
+      "dark": true,
+      "turnMarker": null,
+      "y": 1177,
+      "stored": "dark",
+      "urlUnchanged": true,
+      "scrollUnchanged": true
+    },
+    {
+      "step": "theme leg 2",
+      "clicked": "Switch to light mode",
+      "dark": false,
+      "turnMarker": null,
+      "y": 1177,
+      "stored": "light",
+      "urlUnchanged": true,
+      "scrollUnchanged": true
+    },
+    {
+      "step": "rapid double toggle",
+      "dark": true,
+      "turnMarker": null,
+      "y": 1177
+    },
+    {
+      "step": "keyboard path to contact",
+      "stops": [
+        "a:Skip to main content (ring)",
+        "a:Skyler Halisky (ring)",
+        "button:Switch to light mode (ring)",
+        "a:FlagstoneSolo builder · AI-assistedOpen it→ (ring)",
+        "a:Read the notes→ (ring)",
+        "a:Write to me. (ring)"
+      ],
+      "reached": "a:Write to me. /contact/",
+      "focusVisible": true,
+      "faint": false
+    },
+    {
+      "step": "page errors",
+      "count": 0,
+      "errors": []
+    }
+  ]
+}

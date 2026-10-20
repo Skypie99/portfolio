@@ -6,10 +6,10 @@
 
 | Measure | Value |
 |---|---|
-| Tracked files under `qa-reports/` | 1921 |
-| Top-level reports and receipts (Markdown) | 188 |
+| Tracked files under `qa-reports/` | 1985 |
+| Top-level reports and receipts (Markdown) | 189 |
 | Evidence directories | 26 |
-| File types | jpg 690, png 604, md 222, json 186, mjs 71, log 63, cjs 17, txt 16, mp4 11, py 9, webm 9, gz 7, stderr 4, patch 3, sh 3, html 2, jsonl 2, (none) 1, zip 1 |
+| File types | jpg 745, png 604, md 223, json 192, mjs 72, log 63, cjs 17, txt 17, mp4 11, py 9, webm 9, gz 7, stderr 4, patch 3, sh 3, html 2, jsonl 2, (none) 1, zip 1 |
 | Dates named in file paths | 2026-05-23 to 2026-10-20 |
 
 ## How the evidence is organized
@@ -19,12 +19,13 @@
 - **Adding evidence.** Name a receipt `YYYY-MM-DD_<Topic>.md` and cite its raw evidence by relative path. When a new artifact would be byte-identical to one already tracked, cite the existing path with its SHA-256 (or a manifest entry) instead of committing another copy, unless a self-contained package or a before/after comparison genuinely needs the copy. Then stage the files and regenerate this index.
 - **Evidence outside this directory:** `design-reviews/` (dated review programs) and `summaries/` (June 2026 pass reports). See [`docs/INDEX.md`](../docs/INDEX.md) for how every document in the repository is classified.
 
-## Newest dated reports (15 of 157)
+## Newest dated reports (15 of 158)
 
 | Date | Report | Title |
 |---|---|---|
 | 2026-10-20 | [`2026-10-20_Fable_Release6EditorialFinish.md`](2026-10-20_Fable_Release6EditorialFinish.md) | SkyPi Release 6: editorial flow and signature finish, candidate for owner review (2026-10-20) |
 | 2026-10-20 | [`2026-10-20_Mimo_Release5Integration.md`](2026-10-20_Mimo_Release5Integration.md) | SkyPi Release 5: final integration onto the Release 4 baseline (2026-10-20) |
+| 2026-10-20 | [`2026-10-20_Mimo_Release6Integration.md`](2026-10-20_Mimo_Release6Integration.md) | SkyPi Release 6: final integration onto the Release 5 baseline (2026-10-20) |
 | 2026-10-19 | [`2026-10-19_Claude_Release4Final-CombinedIntegration.md`](2026-10-19_Claude_Release4Final-CombinedIntegration.md) | SkyPi Release 4: final integration onto the Release 3 baseline (2026-10-19) |
 | 2026-10-19 | [`2026-10-19_Claude_Release4FinalIntegration.md`](2026-10-19_Claude_Release4FinalIntegration.md) | SkyPi Release 4: final integration and corrections (2026-10-19) |
 | 2026-10-19 | [`2026-10-19_Claude_SkyPiRelease3Final.md`](2026-10-19_Claude_SkyPiRelease3Final.md) | SkyPi Release 3 — final integration and accessibility clearance |
@@ -37,7 +38,6 @@
 | 2026-10-18 | [`2026-10-18_DesignCompile_float-application.md`](2026-10-18_DesignCompile_float-application.md) | Design Compile Result — float-application — 2026-10-18 |
 | 2026-09-28 | [`2026-09-28_BL14_Overflow_Portability_Repair.md`](2026-09-28_BL14_Overflow_Portability_Repair.md) | BL-14 overflow-census portability repair (2026-09-28) |
 | 2026-09-28 | [`2026-09-28_PostMerge_Professionalism_Repair_Receipt.md`](2026-09-28_PostMerge_Professionalism_Repair_Receipt.md) | Post-merge professionalism repair receipt (2026-09-28) |
-| 2026-09-28 | [`evidence-retention/2026-09-28_EVIDENCE_RETENTION_CANDIDATES.md`](evidence-retention/2026-09-28_EVIDENCE_RETENTION_CANDIDATES.md) | Evidence-retention candidate census (2026-09-28) |
 
 ## Phase gate receipts and packets (14)
 
@@ -85,7 +85,7 @@
 | [`release3-final-20261019/`](release3-final-20261019/) | 48 | png 16, jpg 14, mjs 8, json 7, sh 2, jsonl 1 | [`2026-10-19_Claude_Release4Final-CombinedIntegration.md`](2026-10-19_Claude_Release4Final-CombinedIntegration.md)<br>[`2026-10-19_Claude_SkyPiRelease3Final.md`](2026-10-19_Claude_SkyPiRelease3Final.md) |
 | [`release3-flagstone-20261019/`](release3-flagstone-20261019/) | 117 | jpg 96, json 8, mjs 6, cjs 2, gz 2, html 1, jsonl 1, md 1 | [`2026-10-19_Claude_Release4Final-CombinedIntegration.md`](2026-10-19_Claude_Release4Final-CombinedIntegration.md)<br>[`2026-10-19_Claude_SkyPiRelease3Final.md`](2026-10-19_Claude_SkyPiRelease3Final.md)<br>[`2026-10-19_Codex_SkyPiRelease3FlagstoneIntegration.md`](2026-10-19_Codex_SkyPiRelease3FlagstoneIntegration.md) |
 | [`release5-showcases-20261020/`](release5-showcases-20261020/) | 309 | jpg 276, json 12, mjs 8, mp4 4, webm 4, md 3, (none) 1, txt 1 | [`2026-10-20_Mimo_Release5Integration.md`](2026-10-20_Mimo_Release5Integration.md) |
-| [`release6-editorial-finish-2026-10-20/`](release6-editorial-finish-2026-10-20/) | 180 | jpg 138, json 17, mjs 12, mp4 7, md 3, txt 2, sh 1 | [`2026-10-20_Fable_Release6EditorialFinish.md`](2026-10-20_Fable_Release6EditorialFinish.md) |
+| [`release6-editorial-finish-2026-10-20/`](release6-editorial-finish-2026-10-20/) | 243 | jpg 193, json 23, mjs 13, mp4 7, md 3, txt 3, sh 1 | [`2026-10-20_Fable_Release6EditorialFinish.md`](2026-10-20_Fable_Release6EditorialFinish.md)<br>[`2026-10-20_Mimo_Release6Integration.md`](2026-10-20_Mimo_Release6Integration.md) |
 | [`repository-professionalization/`](repository-professionalization/) | 2 | md 2 | [`2026-09-28_PostMerge_Professionalism_Repair_Receipt.md`](2026-09-28_PostMerge_Professionalism_Repair_Receipt.md) |
 | [`visual-evidence/`](visual-evidence/) | 16 | png 16 | [`2026-09-01_Codex_FlagstoneFirstImpression.md`](2026-09-01_Codex_FlagstoneFirstImpression.md) |
 
@@ -103,7 +103,7 @@ Top-level files by the month named in their file name:
 
 | Month | Top-level files |
 |---|---|
-| 2026-10 | 12 |
+| 2026-10 | 13 |
 | 2026-09 | 42 |
 | 2026-08 | 2 |
 | 2026-07 | 2 |

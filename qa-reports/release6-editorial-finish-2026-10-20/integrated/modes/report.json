@@ -1,0 +1,126 @@
+{
+  "dir": "/Users/skypie/Portfolio-codex/mimo-release6-20261020/out",
+  "at": "2026-10-20T05:54:40.944Z",
+  "rows": [
+    {
+      "surface": "work",
+      "theme": "light",
+      "size": "1440x900@1",
+      "rmDiffPixels": 0,
+      "reveals": 5,
+      "revealsOffRest": 0,
+      "runningAnimations": 0,
+      "js": true,
+      "nojs": {
+        "reveals": 5,
+        "revealsHidden": 0,
+        "js": false
+      }
+    },
+    {
+      "surface": "work",
+      "theme": "light",
+      "size": "393x852@2",
+      "rmDiffPixels": 0,
+      "reveals": 5,
+      "revealsOffRest": 0,
+      "runningAnimations": 0,
+      "js": true,
+      "nojs": {
+        "reveals": 5,
+        "revealsHidden": 0,
+        "js": false
+      }
+    },
+    {
+      "surface": "work",
+      "theme": "dark",
+      "size": "1440x900@1",
+      "rmDiffPixels": 0,
+      "reveals": 5,
+      "revealsOffRest": 0,
+      "runningAnimations": 0,
+      "js": true,
+      "nojs": {
+        "reveals": 5,
+        "revealsHidden": 0,
+        "js": false
+      }
+    },
+    {
+      "surface": "work",
+      "theme": "dark",
+      "size": "393x852@2",
+      "rmDiffPixels": 4170,
+      "reveals": 5,
+      "revealsOffRest": 0,
+      "runningAnimations": 0,
+      "js": true,
+      "nojs": {
+        "reveals": 5,
+        "revealsHidden": 0,
+        "js": false
+      }
+    },
+    {
+      "surface": "home-work",
+      "theme": "light",
+      "size": "1440x900@1",
+      "rmDiffPixels": 0,
+      "reveals": 6,
+      "revealsOffRest": 0,
+      "runningAnimations": 0,
+      "js": true,
+      "nojs": {
+        "reveals": 6,
+        "revealsHidden": 0,
+        "js": false
+      }
+    },
+    {
+      "surface": "home-work",
+      "theme": "light",
+      "size": "393x852@2",
+      "rmDiffPixels": 4593,
+      "reveals": 6,
+      "revealsOffRest": 0,
+      "runningAnimations": 0,
+      "js": true,
+      "nojs": {
+        "reveals": 6,
+        "revealsHidden": 0,
+        "js": false
+      }
+    },
+    {
+      "surface": "home-work",
+      "theme": "dark",
+      "size": "1440x900@1",
+      "rmDiffPixels": 0,
+      "reveals": 6,
+      "revealsOffRest": 0,
+      "runningAnimations": 0,
+      "js": true,
+      "nojs": {
+        "reveals": 6,
+        "revealsHidden": 0,
+        "js": false
+      }
+    },
+    {
+      "surface": "home-work",
+      "theme": "dark",
+      "size": "393x852@2",
+      "rmDiffPixels": 4,
+      "reveals": 6,
+      "revealsOffRest": 0,
+      "runningAnimations": 0,
+      "js": true,
+      "nojs": {
+        "reveals": 6,
+        "revealsHidden": 0,
+        "js": false
+      }
+    }
+  ]
+}
