@@ -7,9 +7,11 @@ type ReceiptProps = {
   value: string;
   /** What the figure measures. */
   label: string;
-  /** "measured" = run against this site directly. "reported" = project-
-   *  claimed, with a method. Tier is carried by the WORD, never colour alone. */
-  tier: 'measured' | 'reported';
+  /** "measured" = run against this site directly. "measured earlier" = a
+   *  dated run that is explicitly historical, not the current state.
+   *  "reported" = project-claimed, with a method. Tier is carried by the WORD,
+   *  never colour alone. */
+  tier: 'measured' | 'measured earlier' | 'reported';
   /** ISO date (YYYY-MM-DD) the figure was measured/reported.
    *  OPTIONAL, and the omission is meaningful rather than lazy: an
    *  append-only ledger row that has not closed yet has no date to give, and
