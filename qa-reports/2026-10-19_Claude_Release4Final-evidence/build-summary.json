@@ -1,0 +1,232 @@
+{
+  "worktree": "/Users/skypie/Portfolio-codex/claude-release4-final-20261019",
+  "command": "npm run build",
+  "env": {
+    "NEXT_TELEMETRY_DISABLED": "1",
+    "npm_config_update_notifier": "false",
+    "npm_config_fund": "false",
+    "npm_config_audit": "false",
+    "NODE_OPTIONS": "--require <rig>/netguard.cjs"
+  },
+  "startedAt": "2026-10-19T23:09:30.124Z",
+  "finishedAt": "2026-10-19T23:09:49.366Z",
+  "durationSec": 19.2,
+  "exitCode": 0,
+  "signal": null,
+  "memoryPressure": {
+    "atStart": 1,
+    "samplesByLevel": {
+      "1": 1,
+      "2": 19
+    },
+    "abortedForCriticalPressure": false
+  },
+  "guard": {
+    "processesPreloaded": 13,
+    "dnsLookups": [
+      "fonts.googleapis.com",
+      "fonts.gstatic.com"
+    ],
+    "tcpConnectsByHostAndVerdict": {
+      "fonts.googleapis.com:443 allowed": 6,
+      "fonts.gstatic.com:443 allowed": 32
+    },
+    "blocked": []
+  },
+  "lsofCorroboration": {
+    "samples": 20,
+    "intervalMs": 1000,
+    "socketsSeen": [
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:50998->[2607:f8b0:400e:c02::5f]:443 (ESTABLISHED)",
+        "firstSeenSec": 6,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:50999->[2607:f8b0:400e:c02::5f]:443 (ESTABLISHED)",
+        "firstSeenSec": 6,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:50997->[2607:f8b0:400e:c02::5f]:443 (ESTABLISHED)",
+        "firstSeenSec": 6,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51000->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 6,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51004->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 6,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51008->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 6,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51002->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 6,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51001->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 6,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51010->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 6,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51003->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 6,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51014->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 6,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51005->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 6,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51006->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 6,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51007->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 6,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51015->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 6,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51009->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 6,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51011->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 6,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51013->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 6,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51012->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 6,
+        "samples": 2
+      },
+      {
+        "socket": "node 192.168.1.69:51021->108.177.98.95:443 (ESTABLISHED)",
+        "firstSeenSec": 10,
+        "samples": 2
+      },
+      {
+        "socket": "node 192.168.1.69:51022->108.177.98.95:443 (ESTABLISHED)",
+        "firstSeenSec": 10,
+        "samples": 2
+      },
+      {
+        "socket": "node 192.168.1.69:51023->108.177.98.95:443 (ESTABLISHED)",
+        "firstSeenSec": 10,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51026->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 10,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51034->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 10,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51027->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 10,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51028->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 10,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51024->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 10,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51025->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 10,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51029->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 10,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51030->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 10,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51031->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 10,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51032->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 10,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51033->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 10,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51035->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 10,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51036->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 10,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51037->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 10,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51038->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 10,
+        "samples": 2
+      },
+      {
+        "socket": "node [2001:569:f101:6500:2827:49bf:4e2b:8e7e]:51039->[2607:f8b0:400e:c00::5e]:443 (ESTABLISHED)",
+        "firstSeenSec": 10,
+        "samples": 2
+      }
+    ]
+  }
+}
