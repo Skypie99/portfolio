@@ -1,0 +1,7987 @@
+{
+ "baseline": {
+  "label": "baseline",
+  "base": "http://127.0.0.1:3006",
+  "route": "/work/flagstone/",
+  "runs": [
+   {
+    "viewport": {
+     "w": 1440,
+     "h": 900,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 9851,
+    "section": {
+     "x": 280,
+     "y": 0,
+     "w": 1160,
+     "h": 1386.88
+    },
+    "breadcrumb": {
+     "x": 312,
+     "y": 128,
+     "w": 1096,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 960,
+     "y": 256.78,
+     "w": 448,
+     "h": 78.19
+    },
+    "well": {
+     "x": 312,
+     "y": 193.39,
+     "w": 448,
+     "h": 560
+    },
+    "frame": {
+     "x": 417.06,
+     "y": 222.3,
+     "w": 237.88,
+     "h": 502.19
+    },
+    "screen": {
+     "x": 426.06,
+     "y": 231.3,
+     "w": 219.88,
+     "h": 484.19
+    },
+    "img": {
+     "x": 426.06,
+     "y": 231.3,
+     "w": 219.88,
+     "h": 484.19
+    },
+    "imgContent": {
+     "w": 219.88,
+     "h": 477.76,
+     "letterboxX": 0,
+     "letterboxY": 3.21,
+     "scale": 0.1704,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3006/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 312,
+     "y": 801.39,
+     "w": 448,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "237.875px",
+     "height": "502.188px",
+     "aspectRatio": "9 / 19"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 5"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 1440,
+     "clientWidth": 1440,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_1440x900",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": false,
+    "axe": {
+     "violations": [],
+     "passes": 20,
+     "incomplete": [
+      {
+       "id": "color-contrast",
+       "nodes": 8
+      }
+     ]
+    }
+   },
+   {
+    "viewport": {
+     "w": 1440,
+     "h": 900,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 9851,
+    "section": {
+     "x": 280,
+     "y": 0,
+     "w": 1160,
+     "h": 1386.88
+    },
+    "breadcrumb": {
+     "x": 312,
+     "y": 128,
+     "w": 1096,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 960,
+     "y": 256.78,
+     "w": 448,
+     "h": 78.19
+    },
+    "well": {
+     "x": 312,
+     "y": 193.39,
+     "w": 448,
+     "h": 560
+    },
+    "frame": {
+     "x": 417.06,
+     "y": 222.3,
+     "w": 237.88,
+     "h": 502.19
+    },
+    "screen": {
+     "x": 426.06,
+     "y": 231.3,
+     "w": 219.88,
+     "h": 484.19
+    },
+    "img": {
+     "x": 426.06,
+     "y": 231.3,
+     "w": 219.88,
+     "h": 484.19
+    },
+    "imgContent": {
+     "w": 219.88,
+     "h": 477.76,
+     "letterboxX": 0,
+     "letterboxY": 3.21,
+     "scale": 0.1704,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3006/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 312,
+     "y": 801.39,
+     "w": 448,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "237.875px",
+     "height": "502.188px",
+     "aspectRatio": "9 / 19"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 5"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 1440,
+     "clientWidth": 1440,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "dark_1440x900",
+    "theme": "dark",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": false,
+    "axe": {
+     "violations": [],
+     "passes": 20,
+     "incomplete": [
+      {
+       "id": "color-contrast",
+       "nodes": 7
+      }
+     ]
+    }
+   },
+   {
+    "viewport": {
+     "w": 1280,
+     "h": 800,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 9911,
+    "section": {
+     "x": 280,
+     "y": 0,
+     "w": 1000,
+     "h": 1477.66
+    },
+    "breadcrumb": {
+     "x": 312,
+     "y": 128,
+     "w": 936,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 880,
+     "y": 256.78,
+     "w": 368,
+     "h": 78.19
+    },
+    "well": {
+     "x": 312,
+     "y": 193.39,
+     "w": 368,
+     "h": 460
+    },
+    "frame": {
+     "x": 398.38,
+     "y": 217.3,
+     "w": 195.23,
+     "h": 412.19
+    },
+    "screen": {
+     "x": 407.38,
+     "y": 226.3,
+     "w": 177.23,
+     "h": 394.19
+    },
+    "img": {
+     "x": 407.38,
+     "y": 226.3,
+     "w": 177.23,
+     "h": 394.19
+    },
+    "imgContent": {
+     "w": 177.23,
+     "h": 385.11,
+     "letterboxX": 0,
+     "letterboxY": 4.54,
+     "scale": 0.1374,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3006/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 312,
+     "y": 701.39,
+     "w": 368,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "195.234px",
+     "height": "412.188px",
+     "aspectRatio": "9 / 19"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 5"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 1280,
+     "clientWidth": 1280,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_1280x800",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": false,
+    "axe": {
+     "violations": [],
+     "passes": 20,
+     "incomplete": [
+      {
+       "id": "color-contrast",
+       "nodes": 4
+      }
+     ]
+    }
+   },
+   {
+    "viewport": {
+     "w": 1280,
+     "h": 800,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 9911,
+    "section": {
+     "x": 280,
+     "y": 0,
+     "w": 1000,
+     "h": 1477.66
+    },
+    "breadcrumb": {
+     "x": 312,
+     "y": 128,
+     "w": 936,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 880,
+     "y": 256.78,
+     "w": 368,
+     "h": 78.19
+    },
+    "well": {
+     "x": 312,
+     "y": 193.39,
+     "w": 368,
+     "h": 460
+    },
+    "frame": {
+     "x": 398.38,
+     "y": 217.3,
+     "w": 195.23,
+     "h": 412.19
+    },
+    "screen": {
+     "x": 407.38,
+     "y": 226.3,
+     "w": 177.23,
+     "h": 394.19
+    },
+    "img": {
+     "x": 407.38,
+     "y": 226.3,
+     "w": 177.23,
+     "h": 394.19
+    },
+    "imgContent": {
+     "w": 177.23,
+     "h": 385.11,
+     "letterboxX": 0,
+     "letterboxY": 4.54,
+     "scale": 0.1374,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3006/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 312,
+     "y": 701.39,
+     "w": 368,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "195.234px",
+     "height": "412.188px",
+     "aspectRatio": "9 / 19"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 5"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 1280,
+     "clientWidth": 1280,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "dark_1280x800",
+    "theme": "dark",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": false,
+    "axe": {
+     "violations": [],
+     "passes": 20,
+     "incomplete": [
+      {
+       "id": "color-contrast",
+       "nodes": 4
+      }
+     ]
+    }
+   },
+   {
+    "viewport": {
+     "w": 768,
+     "h": 1024,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 12816,
+    "section": {
+     "x": 280,
+     "y": 0,
+     "w": 488,
+     "h": 1881.56
+    },
+    "breadcrumb": {
+     "x": 312,
+     "y": 96,
+     "w": 424,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 312,
+     "y": 208.78,
+     "w": 424,
+     "h": 73.59
+    },
+    "well": {
+     "x": 312,
+     "y": 646.38,
+     "w": 424,
+     "h": 530
+    },
+    "frame": {
+     "x": 411.46,
+     "y": 673.78,
+     "w": 225.08,
+     "h": 475.19
+    },
+    "screen": {
+     "x": 420.46,
+     "y": 682.78,
+     "w": 207.08,
+     "h": 457.19
+    },
+    "img": {
+     "x": 420.46,
+     "y": 682.78,
+     "w": 207.08,
+     "h": 457.19
+    },
+    "imgContent": {
+     "w": 207.08,
+     "h": 449.95,
+     "letterboxX": 0,
+     "letterboxY": 3.62,
+     "scale": 0.1605,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3006/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 312,
+     "y": 1224.38,
+     "w": 424,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "225.078px",
+     "height": "475.188px",
+     "aspectRatio": "9 / 19"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 5"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 768,
+     "clientWidth": 768,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_768x1024",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": false,
+    "axe": {
+     "violations": [],
+     "passes": 20,
+     "incomplete": [
+      {
+       "id": "color-contrast",
+       "nodes": 3
+      }
+     ]
+    }
+   },
+   {
+    "viewport": {
+     "w": 768,
+     "h": 1024,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 12816,
+    "section": {
+     "x": 280,
+     "y": 0,
+     "w": 488,
+     "h": 1881.56
+    },
+    "breadcrumb": {
+     "x": 312,
+     "y": 96,
+     "w": 424,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 312,
+     "y": 208.78,
+     "w": 424,
+     "h": 73.59
+    },
+    "well": {
+     "x": 312,
+     "y": 646.38,
+     "w": 424,
+     "h": 530
+    },
+    "frame": {
+     "x": 411.46,
+     "y": 673.78,
+     "w": 225.08,
+     "h": 475.19
+    },
+    "screen": {
+     "x": 420.46,
+     "y": 682.78,
+     "w": 207.08,
+     "h": 457.19
+    },
+    "img": {
+     "x": 420.46,
+     "y": 682.78,
+     "w": 207.08,
+     "h": 457.19
+    },
+    "imgContent": {
+     "w": 207.08,
+     "h": 449.95,
+     "letterboxX": 0,
+     "letterboxY": 3.62,
+     "scale": 0.1605,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3006/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 312,
+     "y": 1224.38,
+     "w": 424,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "225.078px",
+     "height": "475.188px",
+     "aspectRatio": "9 / 19"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 5"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 768,
+     "clientWidth": 768,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "dark_768x1024",
+    "theme": "dark",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": false,
+    "axe": {
+     "violations": [],
+     "passes": 20,
+     "incomplete": [
+      {
+       "id": "color-contrast",
+       "nodes": 3
+      }
+     ]
+    }
+   },
+   {
+    "viewport": {
+     "w": 393,
+     "h": 852,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 14717,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 393,
+     "h": 1879.81
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 329,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 176.17,
+     "w": 329,
+     "h": 52.03
+    },
+    "well": {
+     "x": 32,
+     "y": 607.2,
+     "w": 329,
+     "h": 411.25
+    },
+    "frame": {
+     "x": 109.27,
+     "y": 628.67,
+     "w": 174.45,
+     "h": 368.31
+    },
+    "screen": {
+     "x": 118.27,
+     "y": 637.67,
+     "w": 156.45,
+     "h": 350.31
+    },
+    "img": {
+     "x": 118.27,
+     "y": 637.67,
+     "w": 156.45,
+     "h": 350.31
+    },
+    "imgContent": {
+     "w": 156.45,
+     "h": 339.95,
+     "letterboxX": 0,
+     "letterboxY": 5.18,
+     "scale": 0.1213,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3006/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1066.45,
+     "w": 329,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "174.453px",
+     "height": "368.312px",
+     "aspectRatio": "9 / 19"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 5"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 393,
+     "clientWidth": 393,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_393x852",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": false,
+    "axe": {
+     "violations": [],
+     "passes": 20,
+     "incomplete": [
+      {
+       "id": "color-contrast",
+       "nodes": 6
+      }
+     ]
+    }
+   },
+   {
+    "viewport": {
+     "w": 393,
+     "h": 852,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 14717,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 393,
+     "h": 1879.81
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 329,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 176.17,
+     "w": 329,
+     "h": 52.03
+    },
+    "well": {
+     "x": 32,
+     "y": 607.2,
+     "w": 329,
+     "h": 411.25
+    },
+    "frame": {
+     "x": 109.27,
+     "y": 628.67,
+     "w": 174.45,
+     "h": 368.31
+    },
+    "screen": {
+     "x": 118.27,
+     "y": 637.67,
+     "w": 156.45,
+     "h": 350.31
+    },
+    "img": {
+     "x": 118.27,
+     "y": 637.67,
+     "w": 156.45,
+     "h": 350.31
+    },
+    "imgContent": {
+     "w": 156.45,
+     "h": 339.95,
+     "letterboxX": 0,
+     "letterboxY": 5.18,
+     "scale": 0.1213,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3006/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1066.45,
+     "w": 329,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "174.453px",
+     "height": "368.312px",
+     "aspectRatio": "9 / 19"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 5"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 393,
+     "clientWidth": 393,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "dark_393x852",
+    "theme": "dark",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": false,
+    "axe": {
+     "violations": [],
+     "passes": 20,
+     "incomplete": [
+      {
+       "id": "color-contrast",
+       "nodes": 6
+      }
+     ]
+    }
+   },
+   {
+    "viewport": {
+     "w": 375,
+     "h": 667,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 14981,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 375,
+     "h": 1879.66
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 311,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 199.56,
+     "w": 311,
+     "h": 50.98
+    },
+    "well": {
+     "x": 32,
+     "y": 629.55,
+     "w": 311,
+     "h": 388.75
+    },
+    "frame": {
+     "x": 105.07,
+     "y": 649.89,
+     "w": 164.86,
+     "h": 348.06
+    },
+    "screen": {
+     "x": 114.07,
+     "y": 658.89,
+     "w": 146.86,
+     "h": 330.06
+    },
+    "img": {
+     "x": 114.07,
+     "y": 658.89,
+     "w": 146.86,
+     "h": 330.06
+    },
+    "imgContent": {
+     "w": 146.86,
+     "h": 319.11,
+     "letterboxX": 0,
+     "letterboxY": 5.48,
+     "scale": 0.1138,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3006/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1066.3,
+     "w": 311,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "164.859px",
+     "height": "348.062px",
+     "aspectRatio": "9 / 19"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 5"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 375,
+     "clientWidth": 375,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_375x667",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": false,
+    "axe": {
+     "violations": [],
+     "passes": 20,
+     "incomplete": [
+      {
+       "id": "color-contrast",
+       "nodes": 6
+      }
+     ]
+    }
+   },
+   {
+    "viewport": {
+     "w": 375,
+     "h": 667,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 14981,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 375,
+     "h": 1879.66
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 311,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 199.56,
+     "w": 311,
+     "h": 50.98
+    },
+    "well": {
+     "x": 32,
+     "y": 629.55,
+     "w": 311,
+     "h": 388.75
+    },
+    "frame": {
+     "x": 105.07,
+     "y": 649.89,
+     "w": 164.86,
+     "h": 348.06
+    },
+    "screen": {
+     "x": 114.07,
+     "y": 658.89,
+     "w": 146.86,
+     "h": 330.06
+    },
+    "img": {
+     "x": 114.07,
+     "y": 658.89,
+     "w": 146.86,
+     "h": 330.06
+    },
+    "imgContent": {
+     "w": 146.86,
+     "h": 319.11,
+     "letterboxX": 0,
+     "letterboxY": 5.48,
+     "scale": 0.1138,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3006/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1066.3,
+     "w": 311,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "164.859px",
+     "height": "348.062px",
+     "aspectRatio": "9 / 19"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 5"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 375,
+     "clientWidth": 375,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "dark_375x667",
+    "theme": "dark",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": false,
+    "axe": {
+     "violations": [],
+     "passes": 20,
+     "incomplete": [
+      {
+       "id": "color-contrast",
+       "nodes": 6
+      }
+     ]
+    }
+   },
+   {
+    "viewport": {
+     "w": 320,
+     "h": 568,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 16109,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 320,
+     "h": 1936.69
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 256,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 199.56,
+     "w": 256,
+     "h": 50.59
+    },
+    "well": {
+     "x": 32,
+     "y": 691.16,
+     "w": 256,
+     "h": 320
+    },
+    "frame": {
+     "x": 92.22,
+     "y": 708.06,
+     "w": 135.56,
+     "h": 286.19
+    },
+    "screen": {
+     "x": 101.22,
+     "y": 717.06,
+     "w": 117.56,
+     "h": 268.19
+    },
+    "img": {
+     "x": 101.22,
+     "y": 717.06,
+     "w": 117.56,
+     "h": 268.19
+    },
+    "imgContent": {
+     "w": 117.56,
+     "h": 255.45,
+     "letterboxX": 0,
+     "letterboxY": 6.37,
+     "scale": 0.0911,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3006/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1059.16,
+     "w": 256,
+     "h": 118.06
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "135.562px",
+     "height": "286.188px",
+     "aspectRatio": "9 / 19"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 5"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 320,
+     "clientWidth": 320,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_320x568",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": false,
+    "axe": {
+     "violations": [],
+     "passes": 20,
+     "incomplete": [
+      {
+       "id": "color-contrast",
+       "nodes": 7
+      }
+     ]
+    }
+   },
+   {
+    "viewport": {
+     "w": 320,
+     "h": 568,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 16109,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 320,
+     "h": 1936.69
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 256,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 199.56,
+     "w": 256,
+     "h": 50.59
+    },
+    "well": {
+     "x": 32,
+     "y": 691.16,
+     "w": 256,
+     "h": 320
+    },
+    "frame": {
+     "x": 92.22,
+     "y": 708.06,
+     "w": 135.56,
+     "h": 286.19
+    },
+    "screen": {
+     "x": 101.22,
+     "y": 717.06,
+     "w": 117.56,
+     "h": 268.19
+    },
+    "img": {
+     "x": 101.22,
+     "y": 717.06,
+     "w": 117.56,
+     "h": 268.19
+    },
+    "imgContent": {
+     "w": 117.56,
+     "h": 255.45,
+     "letterboxX": 0,
+     "letterboxY": 6.37,
+     "scale": 0.0911,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3006/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1059.16,
+     "w": 256,
+     "h": 118.06
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "135.562px",
+     "height": "286.188px",
+     "aspectRatio": "9 / 19"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 5"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 320,
+     "clientWidth": 320,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "dark_320x568",
+    "theme": "dark",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": false,
+    "axe": {
+     "violations": [],
+     "passes": 20,
+     "incomplete": [
+      {
+       "id": "color-contrast",
+       "nodes": 7
+      }
+     ]
+    }
+   }
+  ]
+ },
+ "c200": {
+  "label": "c200",
+  "base": "http://localhost:3000",
+  "route": "/work/flagstone/",
+  "runs": [
+   {
+    "viewport": {
+     "w": 393,
+     "h": 852,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 14799,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 393,
+     "h": 1962.06
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 329,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 176.17,
+     "w": 329,
+     "h": 52.03
+    },
+    "well": {
+     "x": 32,
+     "y": 607.2,
+     "w": 329,
+     "h": 493.5
+    },
+    "frame": {
+     "x": 88.59,
+     "y": 630.05,
+     "w": 215.81,
+     "h": 447.81
+    },
+    "screen": {
+     "x": 97.59,
+     "y": 639.05,
+     "w": 197.81,
+     "h": 429.81
+    },
+    "img": {
+     "x": 97.59,
+     "y": 639.05,
+     "w": 197.81,
+     "h": 429.81
+    },
+    "imgContent": {
+     "w": 197.81,
+     "h": 429.81,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1533,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1148.7,
+     "w": 329,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "215.812px",
+     "height": "447.812px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "2 / 3"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 393,
+     "clientWidth": 393,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_393x852",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   },
+   {
+    "viewport": {
+     "w": 393,
+     "h": 852,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 14799,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 393,
+     "h": 1962.06
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 329,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 176.17,
+     "w": 329,
+     "h": 52.03
+    },
+    "well": {
+     "x": 32,
+     "y": 607.2,
+     "w": 329,
+     "h": 493.5
+    },
+    "frame": {
+     "x": 88.59,
+     "y": 630.05,
+     "w": 215.81,
+     "h": 447.81
+    },
+    "screen": {
+     "x": 97.59,
+     "y": 639.05,
+     "w": 197.81,
+     "h": 429.81
+    },
+    "img": {
+     "x": 97.59,
+     "y": 639.05,
+     "w": 197.81,
+     "h": 429.81
+    },
+    "imgContent": {
+     "w": 197.81,
+     "h": 429.81,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1533,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1148.7,
+     "w": 329,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "215.812px",
+     "height": "447.812px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "2 / 3"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 393,
+     "clientWidth": 393,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "dark_393x852",
+    "theme": "dark",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   },
+   {
+    "viewport": {
+     "w": 375,
+     "h": 667,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 15059,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 375,
+     "h": 1957.41
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 311,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 199.56,
+     "w": 311,
+     "h": 50.98
+    },
+    "well": {
+     "x": 32,
+     "y": 629.55,
+     "w": 311,
+     "h": 466.5
+    },
+    "frame": {
+     "x": 85.53,
+     "y": 651.79,
+     "w": 203.94,
+     "h": 422.02
+    },
+    "screen": {
+     "x": 94.53,
+     "y": 660.79,
+     "w": 185.94,
+     "h": 404.02
+    },
+    "img": {
+     "x": 94.53,
+     "y": 660.79,
+     "w": 185.94,
+     "h": 404.02
+    },
+    "imgContent": {
+     "w": 185.94,
+     "h": 404.02,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1441,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1144.05,
+     "w": 311,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "203.938px",
+     "height": "422.016px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "2 / 3"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 375,
+     "clientWidth": 375,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_375x667",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   },
+   {
+    "viewport": {
+     "w": 375,
+     "h": 667,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 15059,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 375,
+     "h": 1957.41
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 311,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 199.56,
+     "w": 311,
+     "h": 50.98
+    },
+    "well": {
+     "x": 32,
+     "y": 629.55,
+     "w": 311,
+     "h": 466.5
+    },
+    "frame": {
+     "x": 85.53,
+     "y": 651.79,
+     "w": 203.94,
+     "h": 422.02
+    },
+    "screen": {
+     "x": 94.53,
+     "y": 660.79,
+     "w": 185.94,
+     "h": 404.02
+    },
+    "img": {
+     "x": 94.53,
+     "y": 660.79,
+     "w": 185.94,
+     "h": 404.02
+    },
+    "imgContent": {
+     "w": 185.94,
+     "h": 404.02,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1441,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1144.05,
+     "w": 311,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "203.938px",
+     "height": "422.016px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "2 / 3"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 375,
+     "clientWidth": 375,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "dark_375x667",
+    "theme": "dark",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   },
+   {
+    "viewport": {
+     "w": 320,
+     "h": 568,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 16173,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 320,
+     "h": 2000.69
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 256,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 199.56,
+     "w": 256,
+     "h": 50.59
+    },
+    "well": {
+     "x": 32,
+     "y": 691.16,
+     "w": 256,
+     "h": 384
+    },
+    "frame": {
+     "x": 76.19,
+     "y": 711.6,
+     "w": 167.63,
+     "h": 343.11
+    },
+    "screen": {
+     "x": 85.19,
+     "y": 720.6,
+     "w": 149.63,
+     "h": 325.11
+    },
+    "img": {
+     "x": 85.19,
+     "y": 720.6,
+     "w": 149.63,
+     "h": 325.11
+    },
+    "imgContent": {
+     "w": 149.62,
+     "h": 325.11,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.116,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1123.16,
+     "w": 256,
+     "h": 118.06
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "167.625px",
+     "height": "343.109px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "2 / 3"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 320,
+     "clientWidth": 320,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_320x568",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   },
+   {
+    "viewport": {
+     "w": 320,
+     "h": 568,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 16173,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 320,
+     "h": 2000.69
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 256,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 199.56,
+     "w": 256,
+     "h": 50.59
+    },
+    "well": {
+     "x": 32,
+     "y": 691.16,
+     "w": 256,
+     "h": 384
+    },
+    "frame": {
+     "x": 76.19,
+     "y": 711.6,
+     "w": 167.63,
+     "h": 343.11
+    },
+    "screen": {
+     "x": 85.19,
+     "y": 720.6,
+     "w": 149.63,
+     "h": 325.11
+    },
+    "img": {
+     "x": 85.19,
+     "y": 720.6,
+     "w": 149.63,
+     "h": 325.11
+    },
+    "imgContent": {
+     "w": 149.62,
+     "h": 325.11,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.116,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1123.16,
+     "w": 256,
+     "h": 118.06
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "167.625px",
+     "height": "343.109px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "2 / 3"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 320,
+     "clientWidth": 320,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "dark_320x568",
+    "theme": "dark",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   }
+  ]
+ },
+ "c220": {
+  "label": "c220",
+  "base": "http://localhost:3000",
+  "route": "/work/flagstone/",
+  "runs": [
+   {
+    "viewport": {
+     "w": 393,
+     "h": 852,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 14832,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 393,
+     "h": 1994.95
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 329,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 176.17,
+     "w": 329,
+     "h": 52.03
+    },
+    "well": {
+     "x": 32,
+     "y": 607.2,
+     "w": 329,
+     "h": 526.39
+    },
+    "frame": {
+     "x": 78.78,
+     "y": 625.16,
+     "w": 235.44,
+     "h": 490.45
+    },
+    "screen": {
+     "x": 87.78,
+     "y": 634.16,
+     "w": 217.44,
+     "h": 472.45
+    },
+    "img": {
+     "x": 87.78,
+     "y": 634.16,
+     "w": 217.44,
+     "h": 472.45
+    },
+    "imgContent": {
+     "w": 217.43,
+     "h": 472.45,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1686,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1181.59,
+     "w": 329,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "235.438px",
+     "height": "490.453px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "5 / 8"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 393,
+     "clientWidth": 393,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_393x852",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   },
+   {
+    "viewport": {
+     "w": 393,
+     "h": 852,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 14832,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 393,
+     "h": 1994.95
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 329,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 176.17,
+     "w": 329,
+     "h": 52.03
+    },
+    "well": {
+     "x": 32,
+     "y": 607.2,
+     "w": 329,
+     "h": 526.39
+    },
+    "frame": {
+     "x": 78.78,
+     "y": 625.16,
+     "w": 235.44,
+     "h": 490.45
+    },
+    "screen": {
+     "x": 87.78,
+     "y": 634.16,
+     "w": 217.44,
+     "h": 472.45
+    },
+    "img": {
+     "x": 87.78,
+     "y": 634.16,
+     "w": 217.44,
+     "h": 472.45
+    },
+    "imgContent": {
+     "w": 217.43,
+     "h": 472.45,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1686,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1181.59,
+     "w": 329,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "235.438px",
+     "height": "490.453px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "5 / 8"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 393,
+     "clientWidth": 393,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "dark_393x852",
+    "theme": "dark",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   },
+   {
+    "viewport": {
+     "w": 375,
+     "h": 667,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 15090,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 375,
+     "h": 1988.5
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 311,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 199.56,
+     "w": 311,
+     "h": 50.98
+    },
+    "well": {
+     "x": 32,
+     "y": 629.55,
+     "w": 311,
+     "h": 497.59
+    },
+    "frame": {
+     "x": 76.27,
+     "y": 647.2,
+     "w": 222.47,
+     "h": 462.28
+    },
+    "screen": {
+     "x": 85.27,
+     "y": 656.2,
+     "w": 204.47,
+     "h": 444.28
+    },
+    "img": {
+     "x": 85.27,
+     "y": 656.2,
+     "w": 204.47,
+     "h": 444.28
+    },
+    "imgContent": {
+     "w": 204.47,
+     "h": 444.28,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1585,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1175.14,
+     "w": 311,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "222.469px",
+     "height": "462.281px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "5 / 8"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 375,
+     "clientWidth": 375,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_375x667",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   },
+   {
+    "viewport": {
+     "w": 375,
+     "h": 667,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 15090,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 375,
+     "h": 1988.5
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 311,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 199.56,
+     "w": 311,
+     "h": 50.98
+    },
+    "well": {
+     "x": 32,
+     "y": 629.55,
+     "w": 311,
+     "h": 497.59
+    },
+    "frame": {
+     "x": 76.27,
+     "y": 647.2,
+     "w": 222.47,
+     "h": 462.28
+    },
+    "screen": {
+     "x": 85.27,
+     "y": 656.2,
+     "w": 204.47,
+     "h": 444.28
+    },
+    "img": {
+     "x": 85.27,
+     "y": 656.2,
+     "w": 204.47,
+     "h": 444.28
+    },
+    "imgContent": {
+     "w": 204.47,
+     "h": 444.28,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1585,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1175.14,
+     "w": 311,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "222.469px",
+     "height": "462.281px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "5 / 8"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 375,
+     "clientWidth": 375,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "dark_375x667",
+    "theme": "dark",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   },
+   {
+    "viewport": {
+     "w": 320,
+     "h": 568,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 16199,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 320,
+     "h": 2026.28
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 256,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 199.56,
+     "w": 256,
+     "h": 50.59
+    },
+    "well": {
+     "x": 32,
+     "y": 691.16,
+     "w": 256,
+     "h": 409.59
+    },
+    "frame": {
+     "x": 68.56,
+     "y": 707.83,
+     "w": 182.88,
+     "h": 376.25
+    },
+    "screen": {
+     "x": 77.56,
+     "y": 716.83,
+     "w": 164.88,
+     "h": 358.25
+    },
+    "img": {
+     "x": 77.56,
+     "y": 716.83,
+     "w": 164.88,
+     "h": 358.25
+    },
+    "imgContent": {
+     "w": 164.87,
+     "h": 358.25,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1278,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1148.75,
+     "w": 256,
+     "h": 118.06
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "182.875px",
+     "height": "376.25px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "5 / 8"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 320,
+     "clientWidth": 320,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_320x568",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   },
+   {
+    "viewport": {
+     "w": 320,
+     "h": 568,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 16199,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 320,
+     "h": 2026.28
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 256,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 199.56,
+     "w": 256,
+     "h": 50.59
+    },
+    "well": {
+     "x": 32,
+     "y": 691.16,
+     "w": 256,
+     "h": 409.59
+    },
+    "frame": {
+     "x": 68.56,
+     "y": 707.83,
+     "w": 182.88,
+     "h": 376.25
+    },
+    "screen": {
+     "x": 77.56,
+     "y": 716.83,
+     "w": 164.88,
+     "h": 358.25
+    },
+    "img": {
+     "x": 77.56,
+     "y": 716.83,
+     "w": 164.88,
+     "h": 358.25
+    },
+    "imgContent": {
+     "w": 164.87,
+     "h": 358.25,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1278,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1148.75,
+     "w": 256,
+     "h": 118.06
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "182.875px",
+     "height": "376.25px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "5 / 8"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 320,
+     "clientWidth": 320,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "dark_320x568",
+    "theme": "dark",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   }
+  ]
+ },
+ "c240": {
+  "label": "c240",
+  "base": "http://localhost:3000",
+  "route": "/work/flagstone/",
+  "runs": [
+   {
+    "viewport": {
+     "w": 393,
+     "h": 852,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 14881,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 393,
+     "h": 2044.31
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 329,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 176.17,
+     "w": 329,
+     "h": 52.03
+    },
+    "well": {
+     "x": 32,
+     "y": 607.2,
+     "w": 329,
+     "h": 575.75
+    },
+    "frame": {
+     "x": 68.98,
+     "y": 628.55,
+     "w": 255.05,
+     "h": 533.06
+    },
+    "screen": {
+     "x": 77.98,
+     "y": 637.55,
+     "w": 237.05,
+     "h": 515.06
+    },
+    "img": {
+     "x": 77.98,
+     "y": 637.55,
+     "w": 237.05,
+     "h": 515.06
+    },
+    "imgContent": {
+     "w": 237.04,
+     "h": 515.06,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1838,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1230.95,
+     "w": 329,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "255.047px",
+     "height": "533.062px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 7"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 393,
+     "clientWidth": 393,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_393x852",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   },
+   {
+    "viewport": {
+     "w": 393,
+     "h": 852,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 14881,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 393,
+     "h": 2044.31
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 329,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 176.17,
+     "w": 329,
+     "h": 52.03
+    },
+    "well": {
+     "x": 32,
+     "y": 607.2,
+     "w": 329,
+     "h": 575.75
+    },
+    "frame": {
+     "x": 68.98,
+     "y": 628.55,
+     "w": 255.05,
+     "h": 533.06
+    },
+    "screen": {
+     "x": 77.98,
+     "y": 637.55,
+     "w": 237.05,
+     "h": 515.06
+    },
+    "img": {
+     "x": 77.98,
+     "y": 637.55,
+     "w": 237.05,
+     "h": 515.06
+    },
+    "imgContent": {
+     "w": 237.04,
+     "h": 515.06,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1838,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1230.95,
+     "w": 329,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "255.047px",
+     "height": "533.062px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 7"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 393,
+     "clientWidth": 393,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "dark_393x852",
+    "theme": "dark",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   },
+   {
+    "viewport": {
+     "w": 375,
+     "h": 667,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 15136,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 375,
+     "h": 2035.16
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 311,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 199.56,
+     "w": 311,
+     "h": 50.98
+    },
+    "well": {
+     "x": 32,
+     "y": 629.55,
+     "w": 311,
+     "h": 544.25
+    },
+    "frame": {
+     "x": 66.99,
+     "y": 650.38,
+     "w": 241.02,
+     "h": 502.58
+    },
+    "screen": {
+     "x": 75.99,
+     "y": 659.38,
+     "w": 223.02,
+     "h": 484.58
+    },
+    "img": {
+     "x": 75.99,
+     "y": 659.38,
+     "w": 223.02,
+     "h": 484.58
+    },
+    "imgContent": {
+     "w": 223.01,
+     "h": 484.58,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1729,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1221.8,
+     "w": 311,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "241.016px",
+     "height": "502.578px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 7"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 375,
+     "clientWidth": 375,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_375x667",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   },
+   {
+    "viewport": {
+     "w": 375,
+     "h": 667,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 15136,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 375,
+     "h": 2035.16
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 311,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 199.56,
+     "w": 311,
+     "h": 50.98
+    },
+    "well": {
+     "x": 32,
+     "y": 629.55,
+     "w": 311,
+     "h": 544.25
+    },
+    "frame": {
+     "x": 66.99,
+     "y": 650.38,
+     "w": 241.02,
+     "h": 502.58
+    },
+    "screen": {
+     "x": 75.99,
+     "y": 659.38,
+     "w": 223.02,
+     "h": 484.58
+    },
+    "img": {
+     "x": 75.99,
+     "y": 659.38,
+     "w": 223.02,
+     "h": 484.58
+    },
+    "imgContent": {
+     "w": 223.01,
+     "h": 484.58,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1729,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1221.8,
+     "w": 311,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "241.016px",
+     "height": "502.578px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 7"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 375,
+     "clientWidth": 375,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "dark_375x667",
+    "theme": "dark",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   },
+   {
+    "viewport": {
+     "w": 320,
+     "h": 568,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 16237,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 320,
+     "h": 2064.69
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 256,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 199.56,
+     "w": 256,
+     "h": 50.59
+    },
+    "well": {
+     "x": 32,
+     "y": 691.16,
+     "w": 256,
+     "h": 448
+    },
+    "frame": {
+     "x": 60.95,
+     "y": 710.48,
+     "w": 198.11,
+     "h": 409.34
+    },
+    "screen": {
+     "x": 69.95,
+     "y": 719.48,
+     "w": 180.11,
+     "h": 391.34
+    },
+    "img": {
+     "x": 69.95,
+     "y": 719.48,
+     "w": 180.11,
+     "h": 391.34
+    },
+    "imgContent": {
+     "w": 180.1,
+     "h": 391.34,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1396,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1187.16,
+     "w": 256,
+     "h": 118.06
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "198.109px",
+     "height": "409.344px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 7"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 320,
+     "clientWidth": 320,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_320x568",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   },
+   {
+    "viewport": {
+     "w": 320,
+     "h": 568,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 16237,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 320,
+     "h": 2064.69
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 256,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 199.56,
+     "w": 256,
+     "h": 50.59
+    },
+    "well": {
+     "x": 32,
+     "y": 691.16,
+     "w": 256,
+     "h": 448
+    },
+    "frame": {
+     "x": 60.95,
+     "y": 710.48,
+     "w": 198.11,
+     "h": 409.34
+    },
+    "screen": {
+     "x": 69.95,
+     "y": 719.48,
+     "w": 180.11,
+     "h": 391.34
+    },
+    "img": {
+     "x": 69.95,
+     "y": 719.48,
+     "w": 180.11,
+     "h": 391.34
+    },
+    "imgContent": {
+     "w": 180.1,
+     "h": 391.34,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1396,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1187.16,
+     "w": 256,
+     "h": 118.06
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "198.109px",
+     "height": "409.344px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 7"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 320,
+     "clientWidth": 320,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "dark_320x568",
+    "theme": "dark",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   }
+  ]
+ },
+ "c220tight": {
+  "label": "c220tight",
+  "base": "http://localhost:3000",
+  "route": "/work/flagstone/",
+  "runs": [
+   {
+    "viewport": {
+     "w": 393,
+     "h": 852,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 14812,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 393,
+     "h": 1974.95
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 329,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 176.17,
+     "w": 329,
+     "h": 52.03
+    },
+    "well": {
+     "x": 32,
+     "y": 607.2,
+     "w": 329,
+     "h": 526.39
+    },
+    "frame": {
+     "x": 78.78,
+     "y": 625.16,
+     "w": 235.44,
+     "h": 490.45
+    },
+    "screen": {
+     "x": 87.78,
+     "y": 634.16,
+     "w": 217.44,
+     "h": 472.45
+    },
+    "img": {
+     "x": 87.78,
+     "y": 634.16,
+     "w": 217.44,
+     "h": 472.45
+    },
+    "imgContent": {
+     "w": 217.43,
+     "h": 472.45,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1686,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1161.59,
+     "w": 329,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 28
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "235.438px",
+     "height": "490.453px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "5 / 8"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 393,
+     "clientWidth": 393,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_393x852",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   },
+   {
+    "viewport": {
+     "w": 393,
+     "h": 852,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 14812,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 393,
+     "h": 1974.95
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 329,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 176.17,
+     "w": 329,
+     "h": 52.03
+    },
+    "well": {
+     "x": 32,
+     "y": 607.2,
+     "w": 329,
+     "h": 526.39
+    },
+    "frame": {
+     "x": 78.78,
+     "y": 625.16,
+     "w": 235.44,
+     "h": 490.45
+    },
+    "screen": {
+     "x": 87.78,
+     "y": 634.16,
+     "w": 217.44,
+     "h": 472.45
+    },
+    "img": {
+     "x": 87.78,
+     "y": 634.16,
+     "w": 217.44,
+     "h": 472.45
+    },
+    "imgContent": {
+     "w": 217.43,
+     "h": 472.45,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1686,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1161.59,
+     "w": 329,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 28
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "235.438px",
+     "height": "490.453px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "5 / 8"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 393,
+     "clientWidth": 393,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "dark_393x852",
+    "theme": "dark",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   }
+  ]
+ },
+ "desk53": {
+  "label": "desk53",
+  "base": "http://localhost:3000",
+  "route": "/work/flagstone/",
+  "runs": [
+   {
+    "viewport": {
+     "w": 1440,
+     "h": 900,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 9851,
+    "section": {
+     "x": 280,
+     "y": 0,
+     "w": 1160,
+     "h": 1386.88
+    },
+    "breadcrumb": {
+     "x": 312,
+     "y": 128,
+     "w": 1096,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 960,
+     "y": 256.78,
+     "w": 448,
+     "h": 78.19
+    },
+    "well": {
+     "x": 312,
+     "y": 193.39,
+     "w": 448,
+     "h": 560
+    },
+    "frame": {
+     "x": 417.81,
+     "y": 227.14,
+     "w": 236.38,
+     "h": 492.5
+    },
+    "screen": {
+     "x": 426.81,
+     "y": 236.14,
+     "w": 218.38,
+     "h": 474.5
+    },
+    "img": {
+     "x": 426.81,
+     "y": 236.14,
+     "w": 218.38,
+     "h": 474.5
+    },
+    "imgContent": {
+     "w": 218.37,
+     "h": 474.5,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1693,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 312,
+     "y": 801.39,
+     "w": 448,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "236.375px",
+     "height": "492.5px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 5"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 1440,
+     "clientWidth": 1440,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_1440x900",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   },
+   {
+    "viewport": {
+     "w": 1440,
+     "h": 900,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 9851,
+    "section": {
+     "x": 280,
+     "y": 0,
+     "w": 1160,
+     "h": 1386.88
+    },
+    "breadcrumb": {
+     "x": 312,
+     "y": 128,
+     "w": 1096,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 960,
+     "y": 256.78,
+     "w": 448,
+     "h": 78.19
+    },
+    "well": {
+     "x": 312,
+     "y": 193.39,
+     "w": 448,
+     "h": 560
+    },
+    "frame": {
+     "x": 417.81,
+     "y": 227.14,
+     "w": 236.38,
+     "h": 492.5
+    },
+    "screen": {
+     "x": 426.81,
+     "y": 236.14,
+     "w": 218.38,
+     "h": 474.5
+    },
+    "img": {
+     "x": 426.81,
+     "y": 236.14,
+     "w": 218.38,
+     "h": 474.5
+    },
+    "imgContent": {
+     "w": 218.37,
+     "h": 474.5,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1693,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 312,
+     "y": 801.39,
+     "w": 448,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "236.375px",
+     "height": "492.5px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 5"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 1440,
+     "clientWidth": 1440,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "dark_1440x900",
+    "theme": "dark",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   },
+   {
+    "viewport": {
+     "w": 1280,
+     "h": 800,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 9911,
+    "section": {
+     "x": 280,
+     "y": 0,
+     "w": 1000,
+     "h": 1477.66
+    },
+    "breadcrumb": {
+     "x": 312,
+     "y": 128,
+     "w": 936,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 880,
+     "y": 256.78,
+     "w": 368,
+     "h": 78.19
+    },
+    "well": {
+     "x": 312,
+     "y": 193.39,
+     "w": 368,
+     "h": 460
+    },
+    "frame": {
+     "x": 399.02,
+     "y": 223.22,
+     "w": 193.97,
+     "h": 400.34
+    },
+    "screen": {
+     "x": 408.02,
+     "y": 232.22,
+     "w": 175.97,
+     "h": 382.34
+    },
+    "img": {
+     "x": 408.02,
+     "y": 232.22,
+     "w": 175.97,
+     "h": 382.34
+    },
+    "imgContent": {
+     "w": 175.96,
+     "h": 382.34,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1364,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 312,
+     "y": 701.39,
+     "w": 368,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "193.969px",
+     "height": "400.344px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 5"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 1280,
+     "clientWidth": 1280,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_1280x800",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   },
+   {
+    "viewport": {
+     "w": 1280,
+     "h": 800,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 9911,
+    "section": {
+     "x": 280,
+     "y": 0,
+     "w": 1000,
+     "h": 1477.66
+    },
+    "breadcrumb": {
+     "x": 312,
+     "y": 128,
+     "w": 936,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 880,
+     "y": 256.78,
+     "w": 368,
+     "h": 78.19
+    },
+    "well": {
+     "x": 312,
+     "y": 193.39,
+     "w": 368,
+     "h": 460
+    },
+    "frame": {
+     "x": 399.02,
+     "y": 223.22,
+     "w": 193.97,
+     "h": 400.34
+    },
+    "screen": {
+     "x": 408.02,
+     "y": 232.22,
+     "w": 175.97,
+     "h": 382.34
+    },
+    "img": {
+     "x": 408.02,
+     "y": 232.22,
+     "w": 175.97,
+     "h": 382.34
+    },
+    "imgContent": {
+     "w": 175.96,
+     "h": 382.34,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1364,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 312,
+     "y": 701.39,
+     "w": 368,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "193.969px",
+     "height": "400.344px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 5"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 1280,
+     "clientWidth": 1280,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "dark_1280x800",
+    "theme": "dark",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   }
+  ]
+ },
+ "desk58": {
+  "label": "desk58",
+  "base": "http://localhost:3000",
+  "route": "/work/flagstone/",
+  "runs": [
+   {
+    "viewport": {
+     "w": 1440,
+     "h": 900,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 9851,
+    "section": {
+     "x": 280,
+     "y": 0,
+     "w": 1160,
+     "h": 1386.88
+    },
+    "breadcrumb": {
+     "x": 312,
+     "y": 128,
+     "w": 1096,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 960,
+     "y": 256.78,
+     "w": 448,
+     "h": 78.19
+    },
+    "well": {
+     "x": 312,
+     "y": 193.39,
+     "w": 448,
+     "h": 560
+    },
+    "frame": {
+     "x": 406.66,
+     "y": 202.92,
+     "w": 258.67,
+     "h": 540.94
+    },
+    "screen": {
+     "x": 415.66,
+     "y": 211.92,
+     "w": 240.67,
+     "h": 522.94
+    },
+    "img": {
+     "x": 415.66,
+     "y": 211.92,
+     "w": 240.67,
+     "h": 522.94
+    },
+    "imgContent": {
+     "w": 240.67,
+     "h": 522.94,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1866,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 312,
+     "y": 801.39,
+     "w": 448,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "258.672px",
+     "height": "540.938px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 5"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 1440,
+     "clientWidth": 1440,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_1440x900",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   },
+   {
+    "viewport": {
+     "w": 1440,
+     "h": 900,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 9851,
+    "section": {
+     "x": 280,
+     "y": 0,
+     "w": 1160,
+     "h": 1386.88
+    },
+    "breadcrumb": {
+     "x": 312,
+     "y": 128,
+     "w": 1096,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 960,
+     "y": 256.78,
+     "w": 448,
+     "h": 78.19
+    },
+    "well": {
+     "x": 312,
+     "y": 193.39,
+     "w": 448,
+     "h": 560
+    },
+    "frame": {
+     "x": 406.66,
+     "y": 202.92,
+     "w": 258.67,
+     "h": 540.94
+    },
+    "screen": {
+     "x": 415.66,
+     "y": 211.92,
+     "w": 240.67,
+     "h": 522.94
+    },
+    "img": {
+     "x": 415.66,
+     "y": 211.92,
+     "w": 240.67,
+     "h": 522.94
+    },
+    "imgContent": {
+     "w": 240.67,
+     "h": 522.94,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1866,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 312,
+     "y": 801.39,
+     "w": 448,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "258.672px",
+     "height": "540.938px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 5"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 1440,
+     "clientWidth": 1440,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "dark_1440x900",
+    "theme": "dark",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   },
+   {
+    "viewport": {
+     "w": 1280,
+     "h": 800,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 9911,
+    "section": {
+     "x": 280,
+     "y": 0,
+     "w": 1000,
+     "h": 1477.66
+    },
+    "breadcrumb": {
+     "x": 312,
+     "y": 128,
+     "w": 936,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 880,
+     "y": 256.78,
+     "w": 368,
+     "h": 78.19
+    },
+    "well": {
+     "x": 312,
+     "y": 193.39,
+     "w": 368,
+     "h": 460
+    },
+    "frame": {
+     "x": 389.87,
+     "y": 203.34,
+     "w": 212.27,
+     "h": 440.11
+    },
+    "screen": {
+     "x": 398.87,
+     "y": 212.34,
+     "w": 194.27,
+     "h": 422.11
+    },
+    "img": {
+     "x": 398.87,
+     "y": 212.34,
+     "w": 194.27,
+     "h": 422.11
+    },
+    "imgContent": {
+     "w": 194.26,
+     "h": 422.11,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1506,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 312,
+     "y": 701.39,
+     "w": 368,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "212.266px",
+     "height": "440.109px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 5"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 1280,
+     "clientWidth": 1280,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_1280x800",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   },
+   {
+    "viewport": {
+     "w": 1280,
+     "h": 800,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 9911,
+    "section": {
+     "x": 280,
+     "y": 0,
+     "w": 1000,
+     "h": 1477.66
+    },
+    "breadcrumb": {
+     "x": 312,
+     "y": 128,
+     "w": 936,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 880,
+     "y": 256.78,
+     "w": 368,
+     "h": 78.19
+    },
+    "well": {
+     "x": 312,
+     "y": 193.39,
+     "w": 368,
+     "h": 460
+    },
+    "frame": {
+     "x": 389.87,
+     "y": 203.34,
+     "w": 212.27,
+     "h": 440.11
+    },
+    "screen": {
+     "x": 398.87,
+     "y": 212.34,
+     "w": 194.27,
+     "h": 422.11
+    },
+    "img": {
+     "x": 398.87,
+     "y": 212.34,
+     "w": 194.27,
+     "h": 422.11
+    },
+    "imgContent": {
+     "w": 194.26,
+     "h": 422.11,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1506,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://localhost:3000/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 312,
+     "y": 701.39,
+     "w": 368,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "212.266px",
+     "height": "440.109px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 5"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 h-[90%] aspect-[9/19] -translate-x-1/2 -translate-y-1/2",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[4/5]",
+    "overflow": {
+     "scrollWidthProbe": 1280,
+     "clientWidth": 1280,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "dark_1280x800",
+    "theme": "dark",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": true
+   }
+  ]
+ },
+ "final": {
+  "label": "final",
+  "base": "http://127.0.0.1:3005",
+  "route": "/work/flagstone/",
+  "runs": [
+   {
+    "viewport": {
+     "w": 1440,
+     "h": 900,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 9851,
+    "section": {
+     "x": 280,
+     "y": 0,
+     "w": 1160,
+     "h": 1386.88
+    },
+    "breadcrumb": {
+     "x": 312,
+     "y": 128,
+     "w": 1096,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 960,
+     "y": 256.78,
+     "w": 448,
+     "h": 78.19
+    },
+    "well": {
+     "x": 312,
+     "y": 193.39,
+     "w": 448,
+     "h": 597.33
+    },
+    "frame": {
+     "x": 406.66,
+     "y": 221.58,
+     "w": 258.67,
+     "h": 540.94
+    },
+    "screen": {
+     "x": 415.66,
+     "y": 230.58,
+     "w": 240.67,
+     "h": 522.94
+    },
+    "img": {
+     "x": 415.66,
+     "y": 230.58,
+     "w": 240.67,
+     "h": 522.94
+    },
+    "imgContent": {
+     "w": 240.67,
+     "h": 522.94,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1866,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3005/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 312,
+     "y": 838.72,
+     "w": 448,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "258.672px",
+     "height": "540.938px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "3 / 4"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pr-frame--fit-capture w-[72%] sm:w-[53%] lg:w-[58%]",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[5/8] sm:aspect-[4/5] lg:aspect-[3/4]",
+    "overflow": {
+     "scrollWidthProbe": 1440,
+     "clientWidth": 1440,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_1440x900",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": false,
+    "axe": {
+     "violations": [],
+     "passes": 20,
+     "incomplete": [
+      {
+       "id": "color-contrast",
+       "nodes": 8
+      }
+     ]
+    },
+    "keys": [
+     {
+      "tag": "a",
+      "name": "Skip to main content",
+      "y": 16,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Skyler Halisky",
+      "y": 32,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "button",
+      "name": "Switch to dark mode",
+      "y": 78,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "FlagstoneSolo builder \u00b7 AI-assistedOpen it\u2192",
+      "y": 216,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "The problem",
+      "y": 362,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "The approach",
+      "y": 396,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Where it stands",
+      "y": 430,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "My role",
+      "y": 464,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "What went wrong",
+      "y": 498,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Reflection",
+      "y": 532,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Read the notes\u2192",
+      "y": 611,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Write to me.",
+      "y": 812,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "The Work",
+      "y": 128,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Live demo for Flagstone (opens in new tab)",
+      "y": 555,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Get it on the App Store for Flagstone (opens in new tab)",
+      "y": 627,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "GitHub\u2197(opens in new tab)",
+      "y": 1097,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     }
+    ]
+   },
+   {
+    "viewport": {
+     "w": 1440,
+     "h": 900,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 9851,
+    "section": {
+     "x": 280,
+     "y": 0,
+     "w": 1160,
+     "h": 1386.88
+    },
+    "breadcrumb": {
+     "x": 312,
+     "y": 128,
+     "w": 1096,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 960,
+     "y": 256.78,
+     "w": 448,
+     "h": 78.19
+    },
+    "well": {
+     "x": 312,
+     "y": 193.39,
+     "w": 448,
+     "h": 597.33
+    },
+    "frame": {
+     "x": 406.66,
+     "y": 221.58,
+     "w": 258.67,
+     "h": 540.94
+    },
+    "screen": {
+     "x": 415.66,
+     "y": 230.58,
+     "w": 240.67,
+     "h": 522.94
+    },
+    "img": {
+     "x": 415.66,
+     "y": 230.58,
+     "w": 240.67,
+     "h": 522.94
+    },
+    "imgContent": {
+     "w": 240.67,
+     "h": 522.94,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1866,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3005/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 312,
+     "y": 838.72,
+     "w": 448,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "258.672px",
+     "height": "540.938px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "3 / 4"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pr-frame--fit-capture w-[72%] sm:w-[53%] lg:w-[58%]",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[5/8] sm:aspect-[4/5] lg:aspect-[3/4]",
+    "overflow": {
+     "scrollWidthProbe": 1440,
+     "clientWidth": 1440,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "dark_1440x900",
+    "theme": "dark",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": false,
+    "axe": {
+     "violations": [],
+     "passes": 20,
+     "incomplete": [
+      {
+       "id": "color-contrast",
+       "nodes": 7
+      }
+     ]
+    },
+    "keys": [
+     {
+      "tag": "a",
+      "name": "Skip to main content",
+      "y": 16,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Skyler Halisky",
+      "y": 32,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "button",
+      "name": "Switch to light mode",
+      "y": 78,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "FlagstoneSolo builder \u00b7 AI-assistedOpen it\u2192",
+      "y": 216,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "The problem",
+      "y": 362,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "The approach",
+      "y": 396,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Where it stands",
+      "y": 430,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "My role",
+      "y": 464,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "What went wrong",
+      "y": 498,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Reflection",
+      "y": 532,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Read the notes\u2192",
+      "y": 611,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Write to me.",
+      "y": 812,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "The Work",
+      "y": 128,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Live demo for Flagstone (opens in new tab)",
+      "y": 555,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Get it on the App Store for Flagstone (opens in new tab)",
+      "y": 627,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "GitHub\u2197(opens in new tab)",
+      "y": 1097,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     }
+    ]
+   },
+   {
+    "viewport": {
+     "w": 1280,
+     "h": 800,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 9911,
+    "section": {
+     "x": 280,
+     "y": 0,
+     "w": 1000,
+     "h": 1477.66
+    },
+    "breadcrumb": {
+     "x": 312,
+     "y": 128,
+     "w": 936,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 880,
+     "y": 256.78,
+     "w": 368,
+     "h": 78.19
+    },
+    "well": {
+     "x": 312,
+     "y": 193.39,
+     "w": 368,
+     "h": 490.66
+    },
+    "frame": {
+     "x": 389.87,
+     "y": 218.66,
+     "w": 212.27,
+     "h": 440.11
+    },
+    "screen": {
+     "x": 398.87,
+     "y": 227.66,
+     "w": 194.27,
+     "h": 422.11
+    },
+    "img": {
+     "x": 398.87,
+     "y": 227.66,
+     "w": 194.27,
+     "h": 422.11
+    },
+    "imgContent": {
+     "w": 194.26,
+     "h": 422.11,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1506,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3005/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 312,
+     "y": 732.05,
+     "w": 368,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "212.266px",
+     "height": "440.109px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "3 / 4"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pr-frame--fit-capture w-[72%] sm:w-[53%] lg:w-[58%]",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[5/8] sm:aspect-[4/5] lg:aspect-[3/4]",
+    "overflow": {
+     "scrollWidthProbe": 1280,
+     "clientWidth": 1280,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_1280x800",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": false,
+    "axe": {
+     "violations": [],
+     "passes": 20,
+     "incomplete": [
+      {
+       "id": "color-contrast",
+       "nodes": 4
+      }
+     ]
+    },
+    "keys": [
+     {
+      "tag": "a",
+      "name": "Skip to main content",
+      "y": 16,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Skyler Halisky",
+      "y": 24,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "button",
+      "name": "Switch to dark mode",
+      "y": 70,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "FlagstoneSolo builder \u00b7 AI-assistedOpen it\u2192",
+      "y": 192,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "The problem",
+      "y": 276,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "The approach",
+      "y": 310,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Where it stands",
+      "y": 344,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "My role",
+      "y": 378,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "What went wrong",
+      "y": 412,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Reflection",
+      "y": 446,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Read the notes\u2192",
+      "y": 517,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Write to me.",
+      "y": 720,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "The Work",
+      "y": 128,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Live demo for Flagstone (opens in new tab)",
+      "y": 586,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Get it on the App Store for Flagstone (opens in new tab)",
+      "y": 658,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "GitHub\u2197(opens in new tab)",
+      "y": 1187,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     }
+    ]
+   },
+   {
+    "viewport": {
+     "w": 1280,
+     "h": 800,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 9911,
+    "section": {
+     "x": 280,
+     "y": 0,
+     "w": 1000,
+     "h": 1477.66
+    },
+    "breadcrumb": {
+     "x": 312,
+     "y": 128,
+     "w": 936,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 880,
+     "y": 256.78,
+     "w": 368,
+     "h": 78.19
+    },
+    "well": {
+     "x": 312,
+     "y": 193.39,
+     "w": 368,
+     "h": 490.66
+    },
+    "frame": {
+     "x": 389.87,
+     "y": 218.66,
+     "w": 212.27,
+     "h": 440.11
+    },
+    "screen": {
+     "x": 398.87,
+     "y": 227.66,
+     "w": 194.27,
+     "h": 422.11
+    },
+    "img": {
+     "x": 398.87,
+     "y": 227.66,
+     "w": 194.27,
+     "h": 422.11
+    },
+    "imgContent": {
+     "w": 194.26,
+     "h": 422.11,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1506,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3005/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 312,
+     "y": 732.05,
+     "w": 368,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "212.266px",
+     "height": "440.109px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "3 / 4"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pr-frame--fit-capture w-[72%] sm:w-[53%] lg:w-[58%]",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[5/8] sm:aspect-[4/5] lg:aspect-[3/4]",
+    "overflow": {
+     "scrollWidthProbe": 1280,
+     "clientWidth": 1280,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "dark_1280x800",
+    "theme": "dark",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": false,
+    "axe": {
+     "violations": [],
+     "passes": 20,
+     "incomplete": [
+      {
+       "id": "color-contrast",
+       "nodes": 4
+      }
+     ]
+    },
+    "keys": [
+     {
+      "tag": "a",
+      "name": "Skip to main content",
+      "y": 16,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Skyler Halisky",
+      "y": 24,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "button",
+      "name": "Switch to light mode",
+      "y": 70,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "FlagstoneSolo builder \u00b7 AI-assistedOpen it\u2192",
+      "y": 192,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "The problem",
+      "y": 276,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "The approach",
+      "y": 310,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Where it stands",
+      "y": 344,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "My role",
+      "y": 378,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "What went wrong",
+      "y": 412,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Reflection",
+      "y": 446,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Read the notes\u2192",
+      "y": 517,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Write to me.",
+      "y": 720,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "The Work",
+      "y": 128,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Live demo for Flagstone (opens in new tab)",
+      "y": 586,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Get it on the App Store for Flagstone (opens in new tab)",
+      "y": 658,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "GitHub\u2197(opens in new tab)",
+      "y": 1187,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     }
+    ]
+   },
+   {
+    "viewport": {
+     "w": 768,
+     "h": 1024,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 12796,
+    "section": {
+     "x": 280,
+     "y": 0,
+     "w": 488,
+     "h": 1861.56
+    },
+    "breadcrumb": {
+     "x": 312,
+     "y": 96,
+     "w": 424,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 312,
+     "y": 208.78,
+     "w": 424,
+     "h": 73.59
+    },
+    "well": {
+     "x": 312,
+     "y": 646.38,
+     "w": 424,
+     "h": 530
+    },
+    "frame": {
+     "x": 412.17,
+     "y": 678.95,
+     "w": 223.66,
+     "h": 464.86
+    },
+    "screen": {
+     "x": 421.17,
+     "y": 687.95,
+     "w": 205.66,
+     "h": 446.86
+    },
+    "img": {
+     "x": 421.17,
+     "y": 687.95,
+     "w": 205.66,
+     "h": 446.86
+    },
+    "imgContent": {
+     "w": 205.65,
+     "h": 446.86,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1594,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3005/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 312,
+     "y": 1204.38,
+     "w": 424,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 28
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "223.656px",
+     "height": "464.859px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 5"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pr-frame--fit-capture w-[72%] sm:w-[53%] lg:w-[58%]",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[5/8] sm:aspect-[4/5] lg:aspect-[3/4]",
+    "overflow": {
+     "scrollWidthProbe": 768,
+     "clientWidth": 768,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_768x1024",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": false,
+    "axe": {
+     "violations": [],
+     "passes": 20,
+     "incomplete": [
+      {
+       "id": "color-contrast",
+       "nodes": 3
+      }
+     ]
+    },
+    "keys": [
+     {
+      "tag": "a",
+      "name": "Skip to main content",
+      "y": 16,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Skyler Halisky",
+      "y": 48,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "button",
+      "name": "Switch to dark mode",
+      "y": 94,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "FlagstoneSolo builder \u00b7 AI-assistedOpen it\u2192",
+      "y": 296,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "The problem",
+      "y": 474,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "The approach",
+      "y": 508,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Where it stands",
+      "y": 542,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "My role",
+      "y": 576,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "What went wrong",
+      "y": 610,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Reflection",
+      "y": 644,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Read the notes\u2192",
+      "y": 755,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Write to me.",
+      "y": 920,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "The Work",
+      "y": 96,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Live demo for Flagstone (opens in new tab)",
+      "y": 470,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Get it on the App Store for Flagstone (opens in new tab)",
+      "y": 542,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "GitHub\u2197(opens in new tab)",
+      "y": 1556,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     }
+    ]
+   },
+   {
+    "viewport": {
+     "w": 768,
+     "h": 1024,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 12796,
+    "section": {
+     "x": 280,
+     "y": 0,
+     "w": 488,
+     "h": 1861.56
+    },
+    "breadcrumb": {
+     "x": 312,
+     "y": 96,
+     "w": 424,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 312,
+     "y": 208.78,
+     "w": 424,
+     "h": 73.59
+    },
+    "well": {
+     "x": 312,
+     "y": 646.38,
+     "w": 424,
+     "h": 530
+    },
+    "frame": {
+     "x": 412.17,
+     "y": 678.95,
+     "w": 223.66,
+     "h": 464.86
+    },
+    "screen": {
+     "x": 421.17,
+     "y": 687.95,
+     "w": 205.66,
+     "h": 446.86
+    },
+    "img": {
+     "x": 421.17,
+     "y": 687.95,
+     "w": 205.66,
+     "h": 446.86
+    },
+    "imgContent": {
+     "w": 205.65,
+     "h": 446.86,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1594,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3005/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 312,
+     "y": 1204.38,
+     "w": 424,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 28
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "223.656px",
+     "height": "464.859px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "4 / 5"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pr-frame--fit-capture w-[72%] sm:w-[53%] lg:w-[58%]",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[5/8] sm:aspect-[4/5] lg:aspect-[3/4]",
+    "overflow": {
+     "scrollWidthProbe": 768,
+     "clientWidth": 768,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "dark_768x1024",
+    "theme": "dark",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": false,
+    "axe": {
+     "violations": [],
+     "passes": 20,
+     "incomplete": [
+      {
+       "id": "color-contrast",
+       "nodes": 3
+      }
+     ]
+    },
+    "keys": [
+     {
+      "tag": "a",
+      "name": "Skip to main content",
+      "y": 16,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Skyler Halisky",
+      "y": 48,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "button",
+      "name": "Switch to light mode",
+      "y": 94,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "FlagstoneSolo builder \u00b7 AI-assistedOpen it\u2192",
+      "y": 296,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "The problem",
+      "y": 474,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "The approach",
+      "y": 508,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Where it stands",
+      "y": 542,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "My role",
+      "y": 576,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "What went wrong",
+      "y": 610,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Reflection",
+      "y": 644,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Read the notes\u2192",
+      "y": 755,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Write to me.",
+      "y": 920,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "The Work",
+      "y": 96,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Live demo for Flagstone (opens in new tab)",
+      "y": 470,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Get it on the App Store for Flagstone (opens in new tab)",
+      "y": 542,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "GitHub\u2197(opens in new tab)",
+      "y": 1556,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     }
+    ]
+   },
+   {
+    "viewport": {
+     "w": 393,
+     "h": 852,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 14812,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 393,
+     "h": 1974.95
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 329,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 176.17,
+     "w": 329,
+     "h": 52.03
+    },
+    "well": {
+     "x": 32,
+     "y": 607.2,
+     "w": 329,
+     "h": 526.39
+    },
+    "frame": {
+     "x": 78.78,
+     "y": 625.16,
+     "w": 235.44,
+     "h": 490.45
+    },
+    "screen": {
+     "x": 87.78,
+     "y": 634.16,
+     "w": 217.44,
+     "h": 472.45
+    },
+    "img": {
+     "x": 87.78,
+     "y": 634.16,
+     "w": 217.44,
+     "h": 472.45
+    },
+    "imgContent": {
+     "w": 217.43,
+     "h": 472.45,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1686,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3005/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1161.59,
+     "w": 329,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 28
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "235.438px",
+     "height": "490.453px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "5 / 8"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pr-frame--fit-capture w-[72%] sm:w-[53%] lg:w-[58%]",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[5/8] sm:aspect-[4/5] lg:aspect-[3/4]",
+    "overflow": {
+     "scrollWidthProbe": 393,
+     "clientWidth": 393,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_393x852",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": false,
+    "axe": {
+     "violations": [],
+     "passes": 20,
+     "incomplete": [
+      {
+       "id": "color-contrast",
+       "nodes": 7
+      }
+     ]
+    },
+    "keys": [
+     {
+      "tag": "a",
+      "name": "Skip to main content",
+      "y": 16,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "button",
+      "name": "Open navigation menu",
+      "y": 16,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "The Work",
+      "y": 64,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Live demo for Flagstone (opens in new tab)",
+      "y": 431,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Get it on the App Store for Flagstone (opens in new tab)",
+      "y": 503,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "GitHub\u2197(opens in new tab)",
+      "y": 1749,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     }
+    ]
+   },
+   {
+    "viewport": {
+     "w": 393,
+     "h": 852,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 14812,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 393,
+     "h": 1974.95
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 329,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 176.17,
+     "w": 329,
+     "h": 52.03
+    },
+    "well": {
+     "x": 32,
+     "y": 607.2,
+     "w": 329,
+     "h": 526.39
+    },
+    "frame": {
+     "x": 78.78,
+     "y": 625.16,
+     "w": 235.44,
+     "h": 490.45
+    },
+    "screen": {
+     "x": 87.78,
+     "y": 634.16,
+     "w": 217.44,
+     "h": 472.45
+    },
+    "img": {
+     "x": 87.78,
+     "y": 634.16,
+     "w": 217.44,
+     "h": 472.45
+    },
+    "imgContent": {
+     "w": 217.43,
+     "h": 472.45,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1686,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3005/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1161.59,
+     "w": 329,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 28
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "235.438px",
+     "height": "490.453px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "5 / 8"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pr-frame--fit-capture w-[72%] sm:w-[53%] lg:w-[58%]",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[5/8] sm:aspect-[4/5] lg:aspect-[3/4]",
+    "overflow": {
+     "scrollWidthProbe": 393,
+     "clientWidth": 393,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "dark_393x852",
+    "theme": "dark",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": false,
+    "axe": {
+     "violations": [],
+     "passes": 20,
+     "incomplete": [
+      {
+       "id": "color-contrast",
+       "nodes": 7
+      }
+     ]
+    },
+    "keys": [
+     {
+      "tag": "a",
+      "name": "Skip to main content",
+      "y": 16,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "button",
+      "name": "Open navigation menu",
+      "y": 16,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "The Work",
+      "y": 64,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Live demo for Flagstone (opens in new tab)",
+      "y": 431,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Get it on the App Store for Flagstone (opens in new tab)",
+      "y": 503,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "GitHub\u2197(opens in new tab)",
+      "y": 1749,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     }
+    ]
+   },
+   {
+    "viewport": {
+     "w": 375,
+     "h": 667,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 15070,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 375,
+     "h": 1968.5
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 311,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 199.56,
+     "w": 311,
+     "h": 50.98
+    },
+    "well": {
+     "x": 32,
+     "y": 629.55,
+     "w": 311,
+     "h": 497.59
+    },
+    "frame": {
+     "x": 76.27,
+     "y": 647.2,
+     "w": 222.47,
+     "h": 462.28
+    },
+    "screen": {
+     "x": 85.27,
+     "y": 656.2,
+     "w": 204.47,
+     "h": 444.28
+    },
+    "img": {
+     "x": 85.27,
+     "y": 656.2,
+     "w": 204.47,
+     "h": 444.28
+    },
+    "imgContent": {
+     "w": 204.47,
+     "h": 444.28,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1585,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3005/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1155.14,
+     "w": 311,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 28
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "222.469px",
+     "height": "462.281px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "5 / 8"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pr-frame--fit-capture w-[72%] sm:w-[53%] lg:w-[58%]",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[5/8] sm:aspect-[4/5] lg:aspect-[3/4]",
+    "overflow": {
+     "scrollWidthProbe": 375,
+     "clientWidth": 375,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_375x667",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": false,
+    "axe": {
+     "violations": [],
+     "passes": 20,
+     "incomplete": [
+      {
+       "id": "color-contrast",
+       "nodes": 7
+      }
+     ]
+    },
+    "keys": [
+     {
+      "tag": "a",
+      "name": "Skip to main content",
+      "y": 16,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "button",
+      "name": "Open navigation menu",
+      "y": 16,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "The Work",
+      "y": 64,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Live demo for Flagstone (opens in new tab)",
+      "y": 454,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Get it on the App Store for Flagstone (opens in new tab)",
+      "y": 526,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "GitHub\u2197(opens in new tab)",
+      "y": 1742,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     }
+    ]
+   },
+   {
+    "viewport": {
+     "w": 375,
+     "h": 667,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 15070,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 375,
+     "h": 1968.5
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 311,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 199.56,
+     "w": 311,
+     "h": 50.98
+    },
+    "well": {
+     "x": 32,
+     "y": 629.55,
+     "w": 311,
+     "h": 497.59
+    },
+    "frame": {
+     "x": 76.27,
+     "y": 647.2,
+     "w": 222.47,
+     "h": 462.28
+    },
+    "screen": {
+     "x": 85.27,
+     "y": 656.2,
+     "w": 204.47,
+     "h": 444.28
+    },
+    "img": {
+     "x": 85.27,
+     "y": 656.2,
+     "w": 204.47,
+     "h": 444.28
+    },
+    "imgContent": {
+     "w": 204.47,
+     "h": 444.28,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1585,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3005/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1155.14,
+     "w": 311,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 28
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "222.469px",
+     "height": "462.281px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "5 / 8"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pr-frame--fit-capture w-[72%] sm:w-[53%] lg:w-[58%]",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[5/8] sm:aspect-[4/5] lg:aspect-[3/4]",
+    "overflow": {
+     "scrollWidthProbe": 375,
+     "clientWidth": 375,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "dark_375x667",
+    "theme": "dark",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": false,
+    "axe": {
+     "violations": [],
+     "passes": 20,
+     "incomplete": [
+      {
+       "id": "color-contrast",
+       "nodes": 7
+      }
+     ]
+    },
+    "keys": [
+     {
+      "tag": "a",
+      "name": "Skip to main content",
+      "y": 16,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "button",
+      "name": "Open navigation menu",
+      "y": 16,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "The Work",
+      "y": 64,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Live demo for Flagstone (opens in new tab)",
+      "y": 454,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Get it on the App Store for Flagstone (opens in new tab)",
+      "y": 526,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "GitHub\u2197(opens in new tab)",
+      "y": 1742,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     }
+    ]
+   },
+   {
+    "viewport": {
+     "w": 320,
+     "h": 568,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 16179,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 320,
+     "h": 2006.28
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 256,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 199.56,
+     "w": 256,
+     "h": 50.59
+    },
+    "well": {
+     "x": 32,
+     "y": 691.16,
+     "w": 256,
+     "h": 409.59
+    },
+    "frame": {
+     "x": 68.56,
+     "y": 707.83,
+     "w": 182.88,
+     "h": 376.25
+    },
+    "screen": {
+     "x": 77.56,
+     "y": 716.83,
+     "w": 164.88,
+     "h": 358.25
+    },
+    "img": {
+     "x": 77.56,
+     "y": 716.83,
+     "w": 164.88,
+     "h": 358.25
+    },
+    "imgContent": {
+     "w": 164.87,
+     "h": 358.25,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1278,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3005/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1128.75,
+     "w": 256,
+     "h": 118.06
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 28
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "182.875px",
+     "height": "376.25px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "5 / 8"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pr-frame--fit-capture w-[72%] sm:w-[53%] lg:w-[58%]",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[5/8] sm:aspect-[4/5] lg:aspect-[3/4]",
+    "overflow": {
+     "scrollWidthProbe": 320,
+     "clientWidth": 320,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_320x568",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": false,
+    "axe": {
+     "violations": [],
+     "passes": 20,
+     "incomplete": [
+      {
+       "id": "color-contrast",
+       "nodes": 4
+      }
+     ]
+    },
+    "keys": [
+     {
+      "tag": "a",
+      "name": "Skip to main content",
+      "y": 16,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "button",
+      "name": "Open navigation menu",
+      "y": 16,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "The Work",
+      "y": 64,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Live demo for Flagstone (opens in new tab)",
+      "y": 515,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Get it on the App Store for Flagstone (opens in new tab)",
+      "y": 587,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "GitHub\u2197(opens in new tab)",
+      "y": 1747,
+      "outline": "solid 2px rgb(185, 99, 64)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     }
+    ]
+   },
+   {
+    "viewport": {
+     "w": 320,
+     "h": 568,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 16179,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 320,
+     "h": 2006.28
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 256,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 199.56,
+     "w": 256,
+     "h": 50.59
+    },
+    "well": {
+     "x": 32,
+     "y": 691.16,
+     "w": 256,
+     "h": 409.59
+    },
+    "frame": {
+     "x": 68.56,
+     "y": 707.83,
+     "w": 182.88,
+     "h": 376.25
+    },
+    "screen": {
+     "x": 77.56,
+     "y": 716.83,
+     "w": 164.88,
+     "h": 358.25
+    },
+    "img": {
+     "x": 77.56,
+     "y": 716.83,
+     "w": 164.88,
+     "h": 358.25
+    },
+    "imgContent": {
+     "w": 164.87,
+     "h": 358.25,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1278,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3005/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1128.75,
+     "w": 256,
+     "h": 118.06
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 28
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "182.875px",
+     "height": "376.25px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "5 / 8"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pr-frame--fit-capture w-[72%] sm:w-[53%] lg:w-[58%]",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[5/8] sm:aspect-[4/5] lg:aspect-[3/4]",
+    "overflow": {
+     "scrollWidthProbe": 320,
+     "clientWidth": 320,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "dark_320x568",
+    "theme": "dark",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": false,
+    "axe": {
+     "violations": [],
+     "passes": 20,
+     "incomplete": [
+      {
+       "id": "color-contrast",
+       "nodes": 4
+      }
+     ]
+    },
+    "keys": [
+     {
+      "tag": "a",
+      "name": "Skip to main content",
+      "y": 16,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "button",
+      "name": "Open navigation menu",
+      "y": 16,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "The Work",
+      "y": 64,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Live demo for Flagstone (opens in new tab)",
+      "y": 515,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "Get it on the App Store for Flagstone (opens in new tab)",
+      "y": 587,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     },
+     {
+      "tag": "a",
+      "name": "GitHub\u2197(opens in new tab)",
+      "y": 1747,
+      "outline": "solid 2px rgb(207, 122, 79)",
+      "boxShadow": "none",
+      "visible": true,
+      "matchesFV": true
+     }
+    ]
+   }
+  ]
+ },
+ "final-rm": {
+  "label": "final-rm",
+  "base": "http://127.0.0.1:3005",
+  "route": "/work/flagstone/",
+  "runs": [
+   {
+    "viewport": {
+     "w": 1440,
+     "h": 900,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": true
+    },
+    "docHeight": 9851,
+    "section": {
+     "x": 280,
+     "y": 0,
+     "w": 1160,
+     "h": 1386.88
+    },
+    "breadcrumb": {
+     "x": 312,
+     "y": 128,
+     "w": 1096,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 960,
+     "y": 256.78,
+     "w": 448,
+     "h": 78.19
+    },
+    "well": {
+     "x": 312,
+     "y": 193.39,
+     "w": 448,
+     "h": 597.33
+    },
+    "frame": {
+     "x": 406.66,
+     "y": 221.58,
+     "w": 258.67,
+     "h": 540.94
+    },
+    "screen": {
+     "x": 415.66,
+     "y": 230.58,
+     "w": 240.67,
+     "h": 522.94
+    },
+    "img": {
+     "x": 415.66,
+     "y": 230.58,
+     "w": 240.67,
+     "h": 522.94
+    },
+    "imgContent": {
+     "w": 240.67,
+     "h": 522.94,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1866,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3005/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 312,
+     "y": 838.72,
+     "w": 448,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "258.672px",
+     "height": "540.938px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "3 / 4"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pr-frame--fit-capture w-[72%] sm:w-[53%] lg:w-[58%]",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[5/8] sm:aspect-[4/5] lg:aspect-[3/4]",
+    "overflow": {
+     "scrollWidthProbe": 1440,
+     "clientWidth": 1440,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "rm_light_1440x900",
+    "theme": "light",
+    "rm": true,
+    "nojs": false,
+    "cssOverride": false
+   },
+   {
+    "viewport": {
+     "w": 1440,
+     "h": 900,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": true
+    },
+    "docHeight": 9851,
+    "section": {
+     "x": 280,
+     "y": 0,
+     "w": 1160,
+     "h": 1386.88
+    },
+    "breadcrumb": {
+     "x": 312,
+     "y": 128,
+     "w": 1096,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 960,
+     "y": 256.78,
+     "w": 448,
+     "h": 78.19
+    },
+    "well": {
+     "x": 312,
+     "y": 193.39,
+     "w": 448,
+     "h": 597.33
+    },
+    "frame": {
+     "x": 406.66,
+     "y": 221.58,
+     "w": 258.67,
+     "h": 540.94
+    },
+    "screen": {
+     "x": 415.66,
+     "y": 230.58,
+     "w": 240.67,
+     "h": 522.94
+    },
+    "img": {
+     "x": 415.66,
+     "y": 230.58,
+     "w": 240.67,
+     "h": 522.94
+    },
+    "imgContent": {
+     "w": 240.67,
+     "h": 522.94,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1866,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3005/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 312,
+     "y": 838.72,
+     "w": 448,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "258.672px",
+     "height": "540.938px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "3 / 4"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pr-frame--fit-capture w-[72%] sm:w-[53%] lg:w-[58%]",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[5/8] sm:aspect-[4/5] lg:aspect-[3/4]",
+    "overflow": {
+     "scrollWidthProbe": 1440,
+     "clientWidth": 1440,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "rm_dark_1440x900",
+    "theme": "dark",
+    "rm": true,
+    "nojs": false,
+    "cssOverride": false
+   },
+   {
+    "viewport": {
+     "w": 393,
+     "h": 852,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": true
+    },
+    "docHeight": 14812,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 393,
+     "h": 1974.95
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 329,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 176.17,
+     "w": 329,
+     "h": 52.03
+    },
+    "well": {
+     "x": 32,
+     "y": 607.2,
+     "w": 329,
+     "h": 526.39
+    },
+    "frame": {
+     "x": 78.78,
+     "y": 625.16,
+     "w": 235.44,
+     "h": 490.45
+    },
+    "screen": {
+     "x": 87.78,
+     "y": 634.16,
+     "w": 217.44,
+     "h": 472.45
+    },
+    "img": {
+     "x": 87.78,
+     "y": 634.16,
+     "w": 217.44,
+     "h": 472.45
+    },
+    "imgContent": {
+     "w": 217.43,
+     "h": 472.45,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1686,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3005/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1161.59,
+     "w": 329,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 28
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "235.438px",
+     "height": "490.453px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "5 / 8"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pr-frame--fit-capture w-[72%] sm:w-[53%] lg:w-[58%]",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[5/8] sm:aspect-[4/5] lg:aspect-[3/4]",
+    "overflow": {
+     "scrollWidthProbe": 393,
+     "clientWidth": 393,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "rm_light_393x852",
+    "theme": "light",
+    "rm": true,
+    "nojs": false,
+    "cssOverride": false
+   },
+   {
+    "viewport": {
+     "w": 393,
+     "h": 852,
+     "dpr": 2
+    },
+    "html": {
+     "dark": true,
+     "js": true,
+     "reducedMotion": true
+    },
+    "docHeight": 14812,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 393,
+     "h": 1974.95
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 329,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 176.17,
+     "w": 329,
+     "h": 52.03
+    },
+    "well": {
+     "x": 32,
+     "y": 607.2,
+     "w": 329,
+     "h": 526.39
+    },
+    "frame": {
+     "x": 78.78,
+     "y": 625.16,
+     "w": 235.44,
+     "h": 490.45
+    },
+    "screen": {
+     "x": 87.78,
+     "y": 634.16,
+     "w": 217.44,
+     "h": 472.45
+    },
+    "img": {
+     "x": 87.78,
+     "y": 634.16,
+     "w": 217.44,
+     "h": 472.45
+    },
+    "imgContent": {
+     "w": 217.43,
+     "h": 472.45,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1686,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3005/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1161.59,
+     "w": 329,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 28
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "235.438px",
+     "height": "490.453px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "5 / 8"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pr-frame--fit-capture w-[72%] sm:w-[53%] lg:w-[58%]",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[5/8] sm:aspect-[4/5] lg:aspect-[3/4]",
+    "overflow": {
+     "scrollWidthProbe": 393,
+     "clientWidth": 393,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "rm_dark_393x852",
+    "theme": "dark",
+    "rm": true,
+    "nojs": false,
+    "cssOverride": false
+   }
+  ]
+ },
+ "final-nojs": {
+  "label": "final-nojs",
+  "base": "http://127.0.0.1:3005",
+  "route": "/work/flagstone/",
+  "runs": [
+   {
+    "viewport": {
+     "w": 1440,
+     "h": 900,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": false,
+     "reducedMotion": false
+    },
+    "docHeight": 9851,
+    "section": {
+     "x": 280,
+     "y": 0,
+     "w": 1160,
+     "h": 1386.88
+    },
+    "breadcrumb": {
+     "x": 312,
+     "y": 128,
+     "w": 1096,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 960,
+     "y": 256.78,
+     "w": 448,
+     "h": 78.19
+    },
+    "well": {
+     "x": 311.99,
+     "y": 193.38,
+     "w": 448.01,
+     "h": 597.35
+    },
+    "frame": {
+     "x": 406.66,
+     "y": 221.57,
+     "w": 258.68,
+     "h": 540.95
+    },
+    "screen": {
+     "x": 415.66,
+     "y": 230.57,
+     "w": 240.68,
+     "h": 522.95
+    },
+    "img": {
+     "x": 415.66,
+     "y": 230.57,
+     "w": 240.68,
+     "h": 522.95
+    },
+    "imgContent": {
+     "w": 240.67,
+     "h": 522.95,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1866,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3005/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 312,
+     "y": 838.72,
+     "w": 448,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 47.99
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "258.672px",
+     "height": "540.938px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "3 / 4"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pr-frame--fit-capture w-[72%] sm:w-[53%] lg:w-[58%]",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[5/8] sm:aspect-[4/5] lg:aspect-[3/4]",
+    "overflow": {
+     "scrollWidthProbe": 1440,
+     "clientWidth": 1440,
+     "offenders": []
+    },
+    "consoleErrors": [
+     "Failed to load resource: net::ERR_FAILED"
+    ],
+    "tag": "nojs_light_1440x900",
+    "theme": "light",
+    "rm": false,
+    "nojs": true,
+    "cssOverride": false
+   },
+   {
+    "viewport": {
+     "w": 1440,
+     "h": 900,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": false,
+     "reducedMotion": false
+    },
+    "docHeight": 9851,
+    "section": {
+     "x": 280,
+     "y": 0,
+     "w": 1160,
+     "h": 1386.88
+    },
+    "breadcrumb": {
+     "x": 312,
+     "y": 128,
+     "w": 1096,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 960,
+     "y": 256.78,
+     "w": 448,
+     "h": 78.19
+    },
+    "well": {
+     "x": 311.99,
+     "y": 193.38,
+     "w": 448.01,
+     "h": 597.35
+    },
+    "frame": {
+     "x": 406.66,
+     "y": 221.57,
+     "w": 258.68,
+     "h": 540.95
+    },
+    "screen": {
+     "x": 415.66,
+     "y": 230.57,
+     "w": 240.68,
+     "h": 522.95
+    },
+    "img": {
+     "x": 415.66,
+     "y": 230.57,
+     "w": 240.68,
+     "h": 522.95
+    },
+    "imgContent": {
+     "w": 240.67,
+     "h": 522.95,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1866,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3005/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 312,
+     "y": 838.72,
+     "w": 448,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 47.99
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "258.672px",
+     "height": "540.938px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "3 / 4"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pr-frame--fit-capture w-[72%] sm:w-[53%] lg:w-[58%]",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[5/8] sm:aspect-[4/5] lg:aspect-[3/4]",
+    "overflow": {
+     "scrollWidthProbe": 1440,
+     "clientWidth": 1440,
+     "offenders": []
+    },
+    "consoleErrors": [
+     "Failed to load resource: net::ERR_FAILED"
+    ],
+    "tag": "nojs_dark_1440x900",
+    "theme": "dark",
+    "rm": false,
+    "nojs": true,
+    "cssOverride": false
+   },
+   {
+    "viewport": {
+     "w": 393,
+     "h": 852,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": false,
+     "reducedMotion": false
+    },
+    "docHeight": 14812,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 393,
+     "h": 1974.95
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 329,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 176.17,
+     "w": 329,
+     "h": 52.03
+    },
+    "well": {
+     "x": 32,
+     "y": 607.2,
+     "w": 329,
+     "h": 526.39
+    },
+    "frame": {
+     "x": 78.78,
+     "y": 625.16,
+     "w": 235.44,
+     "h": 490.46
+    },
+    "screen": {
+     "x": 87.78,
+     "y": 634.16,
+     "w": 217.44,
+     "h": 472.46
+    },
+    "img": {
+     "x": 87.78,
+     "y": 634.16,
+     "w": 217.44,
+     "h": 472.46
+    },
+    "imgContent": {
+     "w": 217.43,
+     "h": 472.46,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1686,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3005/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1161.59,
+     "w": 329,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 28
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "235.438px",
+     "height": "490.453px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "5 / 8"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pr-frame--fit-capture w-[72%] sm:w-[53%] lg:w-[58%]",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[5/8] sm:aspect-[4/5] lg:aspect-[3/4]",
+    "overflow": {
+     "scrollWidthProbe": 393,
+     "clientWidth": 393,
+     "offenders": []
+    },
+    "consoleErrors": [
+     "Failed to load resource: net::ERR_FAILED"
+    ],
+    "tag": "nojs_light_393x852",
+    "theme": "light",
+    "rm": false,
+    "nojs": true,
+    "cssOverride": false
+   },
+   {
+    "viewport": {
+     "w": 393,
+     "h": 852,
+     "dpr": 2
+    },
+    "html": {
+     "dark": false,
+     "js": false,
+     "reducedMotion": false
+    },
+    "docHeight": 14812,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 393,
+     "h": 1974.95
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 329,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 176.17,
+     "w": 329,
+     "h": 52.03
+    },
+    "well": {
+     "x": 32,
+     "y": 607.2,
+     "w": 329,
+     "h": 526.4
+    },
+    "frame": {
+     "x": 78.78,
+     "y": 625.16,
+     "w": 235.44,
+     "h": 490.46
+    },
+    "screen": {
+     "x": 87.78,
+     "y": 634.16,
+     "w": 217.44,
+     "h": 472.46
+    },
+    "img": {
+     "x": 87.78,
+     "y": 634.16,
+     "w": 217.44,
+     "h": 472.46
+    },
+    "imgContent": {
+     "w": 217.43,
+     "h": 472.46,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1686,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3005/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1161.59,
+     "w": 329,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 28
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "235.438px",
+     "height": "490.453px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "5 / 8"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pr-frame--fit-capture w-[72%] sm:w-[53%] lg:w-[58%]",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[5/8] sm:aspect-[4/5] lg:aspect-[3/4]",
+    "overflow": {
+     "scrollWidthProbe": 393,
+     "clientWidth": 393,
+     "offenders": []
+    },
+    "consoleErrors": [
+     "Failed to load resource: net::ERR_FAILED"
+    ],
+    "tag": "nojs_dark_393x852",
+    "theme": "dark",
+    "rm": false,
+    "nojs": true,
+    "cssOverride": false
+   }
+  ]
+ },
+ "final-video": {
+  "label": "final-video",
+  "base": "http://127.0.0.1:3005",
+  "route": "/work/flagstone/",
+  "runs": [
+   {
+    "viewport": {
+     "w": 1440,
+     "h": 900,
+     "dpr": 1
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 9851,
+    "section": {
+     "x": 280,
+     "y": 0,
+     "w": 1160,
+     "h": 1386.88
+    },
+    "breadcrumb": {
+     "x": 312,
+     "y": 128,
+     "w": 1096,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 960,
+     "y": 256.78,
+     "w": 448,
+     "h": 78.19
+    },
+    "well": {
+     "x": 312,
+     "y": 193.39,
+     "w": 448,
+     "h": 597.33
+    },
+    "frame": {
+     "x": 406.66,
+     "y": 221.58,
+     "w": 258.67,
+     "h": 540.94
+    },
+    "screen": {
+     "x": 415.66,
+     "y": 230.58,
+     "w": 240.67,
+     "h": 522.94
+    },
+    "img": {
+     "x": 415.66,
+     "y": 230.58,
+     "w": 240.67,
+     "h": 522.94
+    },
+    "imgContent": {
+     "w": 240.67,
+     "h": 522.94,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1866,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3005/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 312,
+     "y": 838.72,
+     "w": 448,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 48
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "258.672px",
+     "height": "540.938px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "3 / 4"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pr-frame--fit-capture w-[72%] sm:w-[53%] lg:w-[58%]",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[5/8] sm:aspect-[4/5] lg:aspect-[3/4]",
+    "overflow": {
+     "scrollWidthProbe": 1440,
+     "clientWidth": 1440,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_1440x900",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": false
+   },
+   {
+    "viewport": {
+     "w": 393,
+     "h": 852,
+     "dpr": 1
+    },
+    "html": {
+     "dark": false,
+     "js": true,
+     "reducedMotion": false
+    },
+    "docHeight": 14812,
+    "section": {
+     "x": 0,
+     "y": 0,
+     "w": 393,
+     "h": 1974.95
+    },
+    "breadcrumb": {
+     "x": 32,
+     "y": 64,
+     "w": 329,
+     "h": 17.39
+    },
+    "h1": {
+     "x": 32,
+     "y": 176.17,
+     "w": 329,
+     "h": 52.03
+    },
+    "well": {
+     "x": 32,
+     "y": 607.2,
+     "w": 329,
+     "h": 526.39
+    },
+    "frame": {
+     "x": 78.78,
+     "y": 625.16,
+     "w": 235.44,
+     "h": 490.45
+    },
+    "screen": {
+     "x": 87.78,
+     "y": 634.16,
+     "w": 217.44,
+     "h": 472.45
+    },
+    "img": {
+     "x": 87.78,
+     "y": 634.16,
+     "w": 217.44,
+     "h": 472.45
+    },
+    "imgContent": {
+     "w": 217.43,
+     "h": 472.45,
+     "letterboxX": 0,
+     "letterboxY": 0,
+     "scale": 0.1686,
+     "natural": {
+      "w": 1290,
+      "h": 2803
+     },
+     "currentSrc": "http://127.0.0.1:3005/showcase/flagstone/explore-current.phone.avif",
+     "complete": true,
+     "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+     "loading": "eager",
+     "fetchpriority": "high"
+    },
+    "plate": {
+     "x": 32,
+     "y": 1161.59,
+     "w": 329,
+     "h": 87.28
+    },
+    "gaps": {
+     "wellBottomToPlateTop": 28
+    },
+    "frameStyle": {
+     "padding": "8px",
+     "borderRadius": "32px",
+     "border": "1px",
+     "width": "235.438px",
+     "height": "490.453px",
+     "aspectRatio": "auto"
+    },
+    "wellStyle": {
+     "aspectRatio": "5 / 8"
+    },
+    "frameClass": "pr-frame pr-frame-phone panel-lit absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pr-frame--fit-capture w-[72%] sm:w-[53%] lg:w-[58%]",
+    "wellClass": "hero-settle-img group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)] aspect-[5/8] sm:aspect-[4/5] lg:aspect-[3/4]",
+    "overflow": {
+     "scrollWidthProbe": 393,
+     "clientWidth": 393,
+     "offenders": []
+    },
+    "consoleErrors": [],
+    "tag": "light_393x852",
+    "theme": "light",
+    "rm": false,
+    "nojs": false,
+    "cssOverride": false
+   }
+  ]
+ }
+}

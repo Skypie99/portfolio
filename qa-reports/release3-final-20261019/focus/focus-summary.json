@@ -1,0 +1,501 @@
+{
+  "method": "Per-angle two-band test (Understanding 1.4.11 either-part, Technique C40): an angle passes when ring:video>=3 or (halo:video>=3 and ring:halo>=3). 360 angles per frame, DPR 2, real keyboard focus held. dense = every native frame of the 901-frame clip sought at its centre (+ poster); play = back-to-back captures during real playback after Enter. v2 fits the ring centre once from a capture with the clip hidden. BEFORE = previous ring CSS re-applied on the same export.",
+  "runs": {
+    "v1/focus-dense_chromium_dark_1440x900": {
+      "engine": "chromium",
+      "version": "151.0.7922.34",
+      "theme": "dark",
+      "viewport": [
+        1440,
+        900
+      ],
+      "ring": "2px solid rgb(236, 234, 224) @ 2px",
+      "halo": "rgb(21, 25, 26) 0px 0px 0px 2px",
+      "frames": 902,
+      "allFocused": true,
+      "minRingPresent": 1,
+      "minHaloPresent": 0.86,
+      "fitOffsetMaxCss": 0.61,
+      "minTwoBandFrac": 1,
+      "framesBelowFull": 0,
+      "maxFailDegInAFrame": 0,
+      "worstExceptionPair": null
+    },
+    "v1/focus-dense_chromium_dark_1440x900_BEFORE": {
+      "engine": "chromium",
+      "version": "151.0.7922.34",
+      "theme": "dark",
+      "viewport": [
+        1440,
+        900
+      ],
+      "ring": "2px solid rgb(231, 181, 147) @ 2px",
+      "halo": "rgb(21, 25, 26) 0px 0px 0px 2px",
+      "frames": 902,
+      "allFocused": true,
+      "minRingPresent": 1,
+      "minHaloPresent": 0.86,
+      "fitOffsetMaxCss": 0.63,
+      "minTwoBandFrac": 0.99,
+      "framesBelowFull": 2,
+      "maxFailDegInAFrame": 4,
+      "worstExceptionPair": 2.96
+    },
+    "v1/focus-dense_chromium_light_1440x900": {
+      "engine": "chromium",
+      "version": "151.0.7922.34",
+      "theme": "light",
+      "viewport": [
+        1440,
+        900
+      ],
+      "ring": "2px solid rgb(32, 48, 44) @ 2px",
+      "halo": "rgb(250, 248, 241) 0px 0px 0px 2px",
+      "frames": 902,
+      "allFocused": true,
+      "minRingPresent": 0.52,
+      "minHaloPresent": 0.2,
+      "fitOffsetMaxCss": 2.28,
+      "minTwoBandFrac": 0.61,
+      "framesBelowFull": 143,
+      "maxFailDegInAFrame": 140,
+      "worstExceptionPair": 1
+    },
+    "v1/focus-dense_chromium_light_1440x900_BEFORE": {
+      "engine": "chromium",
+      "version": "151.0.7922.34",
+      "theme": "light",
+      "viewport": [
+        1440,
+        900
+      ],
+      "ring": "2px solid rgb(185, 99, 64) @ 2px",
+      "halo": "rgb(250, 248, 241) 0px 0px 0px 2px",
+      "frames": 902,
+      "allFocused": true,
+      "minRingPresent": 1,
+      "minHaloPresent": 1,
+      "fitOffsetMaxCss": 0.46,
+      "minTwoBandFrac": 0.98,
+      "framesBelowFull": 413,
+      "maxFailDegInAFrame": 9,
+      "worstExceptionPair": 1.98
+    },
+    "v1/focus-dense_webkit_dark_393x852": {
+      "engine": "webkit",
+      "version": "26.5",
+      "theme": "dark",
+      "viewport": [
+        393,
+        852
+      ],
+      "ring": "2px solid rgb(236, 234, 224) @ 2px",
+      "halo": "rgb(21, 25, 26) 0px 0px 0px 2px",
+      "frames": 902,
+      "allFocused": true,
+      "minRingPresent": 1,
+      "minHaloPresent": 0.92,
+      "fitOffsetMaxCss": 0.17,
+      "minTwoBandFrac": 1,
+      "framesBelowFull": 0,
+      "maxFailDegInAFrame": 0,
+      "worstExceptionPair": null
+    },
+    "v1/focus-dense_webkit_light_393x852": {
+      "engine": "webkit",
+      "version": "26.5",
+      "theme": "light",
+      "viewport": [
+        393,
+        852
+      ],
+      "ring": "2px solid rgb(32, 48, 44) @ 2px",
+      "halo": "rgb(250, 248, 241) 0px 0px 0px 2px",
+      "frames": 902,
+      "allFocused": true,
+      "minRingPresent": 0.54,
+      "minHaloPresent": 0.2,
+      "fitOffsetMaxCss": 2.48,
+      "minTwoBandFrac": 0.59,
+      "framesBelowFull": 172,
+      "maxFailDegInAFrame": 147,
+      "worstExceptionPair": 1
+    },
+    "v1/focus-play_chromium_dark_1440x900": {
+      "engine": "chromium",
+      "version": "151.0.7922.34",
+      "theme": "dark",
+      "viewport": [
+        1440,
+        900
+      ],
+      "ring": "2px solid rgb(236, 234, 224) @ 2px",
+      "halo": "rgb(21, 25, 26) 0px 0px 0px 2px",
+      "frames": 452,
+      "allFocused": true,
+      "minRingPresent": 1,
+      "minHaloPresent": 0.86,
+      "fitOffsetMaxCss": 0.49,
+      "minTwoBandFrac": 1,
+      "framesBelowFull": 0,
+      "maxFailDegInAFrame": 0,
+      "worstExceptionPair": null,
+      "playback": {
+        "capturesWhilePlaying": 452,
+        "secondsCaptured": 15.1,
+        "wrapped": true,
+        "distinctFramesCovered": 452,
+        "allCapturedWhilePlaying": true
+      }
+    },
+    "v1/focus-play_chromium_light_1440x900": {
+      "engine": "chromium",
+      "version": "151.0.7922.34",
+      "theme": "light",
+      "viewport": [
+        1440,
+        900
+      ],
+      "ring": "2px solid rgb(32, 48, 44) @ 2px",
+      "halo": "rgb(250, 248, 241) 0px 0px 0px 2px",
+      "frames": 451,
+      "allFocused": true,
+      "minRingPresent": 0.66,
+      "minHaloPresent": 0.36,
+      "fitOffsetMaxCss": 1.23,
+      "minTwoBandFrac": 0.73,
+      "framesBelowFull": 70,
+      "maxFailDegInAFrame": 99,
+      "worstExceptionPair": 1.01,
+      "playback": {
+        "capturesWhilePlaying": 451,
+        "secondsCaptured": 15.1,
+        "wrapped": true,
+        "distinctFramesCovered": 450,
+        "allCapturedWhilePlaying": true
+      }
+    },
+    "v1/focus-play_webkit_dark_393x852": {
+      "engine": "webkit",
+      "version": "26.5",
+      "theme": "dark",
+      "viewport": [
+        393,
+        852
+      ],
+      "ring": "2px solid rgb(236, 234, 224) @ 2px",
+      "halo": "rgb(21, 25, 26) 0px 0px 0px 2px",
+      "frames": 343,
+      "allFocused": true,
+      "minRingPresent": 1,
+      "minHaloPresent": 0.88,
+      "fitOffsetMaxCss": 0.12,
+      "minTwoBandFrac": 1,
+      "framesBelowFull": 0,
+      "maxFailDegInAFrame": 0,
+      "worstExceptionPair": null,
+      "playback": {
+        "capturesWhilePlaying": 343,
+        "secondsCaptured": 15.1,
+        "wrapped": true,
+        "distinctFramesCovered": 342,
+        "allCapturedWhilePlaying": true
+      }
+    },
+    "v1/focus-play_webkit_light_393x852": {
+      "engine": "webkit",
+      "version": "26.5",
+      "theme": "light",
+      "viewport": [
+        393,
+        852
+      ],
+      "ring": "2px solid rgb(32, 48, 44) @ 2px",
+      "halo": "rgb(250, 248, 241) 0px 0px 0px 2px",
+      "frames": 351,
+      "allFocused": true,
+      "minRingPresent": 0.67,
+      "minHaloPresent": 0.29,
+      "fitOffsetMaxCss": 1.69,
+      "minTwoBandFrac": 0.67,
+      "framesBelowFull": 64,
+      "maxFailDegInAFrame": 118,
+      "worstExceptionPair": 1.03,
+      "playback": {
+        "capturesWhilePlaying": 351,
+        "secondsCaptured": 15.1,
+        "wrapped": true,
+        "distinctFramesCovered": 350,
+        "allCapturedWhilePlaying": true
+      }
+    },
+    "v2/focus-dense_chromium_dark_1440x900": {
+      "engine": "chromium",
+      "version": "151.0.7922.34",
+      "theme": "dark",
+      "viewport": [
+        1440,
+        900
+      ],
+      "ring": "2px solid rgb(236, 234, 224) @ 2px",
+      "halo": "rgb(21, 25, 26) 0px 0px 0px 2px",
+      "frames": 902,
+      "allFocused": true,
+      "minRingPresent": 1,
+      "minHaloPresent": 0.86,
+      "fitOffsetMaxCss": 0.41,
+      "minTwoBandFrac": 1,
+      "framesBelowFull": 0,
+      "maxFailDegInAFrame": 0,
+      "worstExceptionPair": null
+    },
+    "v2/focus-dense_chromium_dark_1440x900_BEFORE": {
+      "engine": "chromium",
+      "version": "151.0.7922.34",
+      "theme": "dark",
+      "viewport": [
+        1440,
+        900
+      ],
+      "ring": "2px solid rgb(231, 181, 147) @ 2px",
+      "halo": "rgb(21, 25, 26) 0px 0px 0px 2px",
+      "frames": 902,
+      "allFocused": true,
+      "minRingPresent": 1,
+      "minHaloPresent": 0.87,
+      "fitOffsetMaxCss": 0.47,
+      "minTwoBandFrac": 0.99,
+      "framesBelowFull": 4,
+      "maxFailDegInAFrame": 4,
+      "worstExceptionPair": 2.95
+    },
+    "v2/focus-dense_chromium_light_1440x900": {
+      "engine": "chromium",
+      "version": "151.0.7922.34",
+      "theme": "light",
+      "viewport": [
+        1440,
+        900
+      ],
+      "ring": "2px solid rgb(32, 48, 44) @ 2px",
+      "halo": "rgb(250, 248, 241) 0px 0px 0px 2px",
+      "frames": 902,
+      "allFocused": true,
+      "minRingPresent": 0.99,
+      "minHaloPresent": 1,
+      "fitOffsetMaxCss": 0.38,
+      "minTwoBandFrac": 1,
+      "framesBelowFull": 0,
+      "maxFailDegInAFrame": 0,
+      "worstExceptionPair": null
+    },
+    "v2/focus-dense_chromium_light_1440x900_BEFORE": {
+      "engine": "chromium",
+      "version": "151.0.7922.34",
+      "theme": "light",
+      "viewport": [
+        1440,
+        900
+      ],
+      "ring": "2px solid rgb(185, 99, 64) @ 2px",
+      "halo": "rgb(250, 248, 241) 0px 0px 0px 2px",
+      "frames": 902,
+      "allFocused": true,
+      "minRingPresent": 1,
+      "minHaloPresent": 1,
+      "fitOffsetMaxCss": 0.46,
+      "minTwoBandFrac": 0.98,
+      "framesBelowFull": 656,
+      "maxFailDegInAFrame": 9,
+      "worstExceptionPair": 1.95
+    },
+    "v2/focus-dense_webkit_dark_393x852": {
+      "engine": "webkit",
+      "version": "26.5",
+      "theme": "dark",
+      "viewport": [
+        393,
+        852
+      ],
+      "ring": "2px solid rgb(236, 234, 224) @ 2px",
+      "halo": "rgb(21, 25, 26) 0px 0px 0px 2px",
+      "frames": 902,
+      "allFocused": true,
+      "minRingPresent": 1,
+      "minHaloPresent": 0.92,
+      "fitOffsetMaxCss": 0.07,
+      "minTwoBandFrac": 1,
+      "framesBelowFull": 0,
+      "maxFailDegInAFrame": 0,
+      "worstExceptionPair": null
+    },
+    "v2/focus-dense_webkit_dark_393x852_BEFORE": {
+      "engine": "webkit",
+      "version": "26.5",
+      "theme": "dark",
+      "viewport": [
+        393,
+        852
+      ],
+      "ring": "2px solid rgb(231, 181, 147) @ 2px",
+      "halo": "rgb(21, 25, 26) 0px 0px 0px 2px",
+      "frames": 902,
+      "allFocused": true,
+      "minRingPresent": 1,
+      "minHaloPresent": 0.89,
+      "fitOffsetMaxCss": 0.09,
+      "minTwoBandFrac": 0.95,
+      "framesBelowFull": 31,
+      "maxFailDegInAFrame": 17,
+      "worstExceptionPair": 2.91
+    },
+    "v2/focus-dense_webkit_light_393x852": {
+      "engine": "webkit",
+      "version": "26.5",
+      "theme": "light",
+      "viewport": [
+        393,
+        852
+      ],
+      "ring": "2px solid rgb(32, 48, 44) @ 2px",
+      "halo": "rgb(250, 248, 241) 0px 0px 0px 2px",
+      "frames": 902,
+      "allFocused": true,
+      "minRingPresent": 1,
+      "minHaloPresent": 1,
+      "fitOffsetMaxCss": 0.03,
+      "minTwoBandFrac": 1,
+      "framesBelowFull": 0,
+      "maxFailDegInAFrame": 0,
+      "worstExceptionPair": null
+    },
+    "v2/focus-dense_webkit_light_393x852_BEFORE": {
+      "engine": "webkit",
+      "version": "26.5",
+      "theme": "light",
+      "viewport": [
+        393,
+        852
+      ],
+      "ring": "2px solid rgb(185, 99, 64) @ 2px",
+      "halo": "rgb(250, 248, 241) 0px 0px 0px 2px",
+      "frames": 902,
+      "allFocused": true,
+      "minRingPresent": 1,
+      "minHaloPresent": 1,
+      "fitOffsetMaxCss": 0.04,
+      "minTwoBandFrac": 0.94,
+      "framesBelowFull": 670,
+      "maxFailDegInAFrame": 23,
+      "worstExceptionPair": 1.96
+    },
+    "v2/focus-play_chromium_dark_1440x900": {
+      "engine": "chromium",
+      "version": "151.0.7922.34",
+      "theme": "dark",
+      "viewport": [
+        1440,
+        900
+      ],
+      "ring": "2px solid rgb(236, 234, 224) @ 2px",
+      "halo": "rgb(21, 25, 26) 0px 0px 0px 2px",
+      "frames": 426,
+      "allFocused": true,
+      "minRingPresent": 1,
+      "minHaloPresent": 0.86,
+      "fitOffsetMaxCss": 0.41,
+      "minTwoBandFrac": 1,
+      "framesBelowFull": 0,
+      "maxFailDegInAFrame": 0,
+      "worstExceptionPair": null,
+      "playback": {
+        "capturesWhilePlaying": 426,
+        "secondsCaptured": 15.8,
+        "wrapped": true,
+        "distinctFramesCovered": 424,
+        "allCapturedWhilePlaying": true
+      }
+    },
+    "v2/focus-play_chromium_light_1440x900": {
+      "engine": "chromium",
+      "version": "151.0.7922.34",
+      "theme": "light",
+      "viewport": [
+        1440,
+        900
+      ],
+      "ring": "2px solid rgb(32, 48, 44) @ 2px",
+      "halo": "rgb(250, 248, 241) 0px 0px 0px 2px",
+      "frames": 423,
+      "allFocused": true,
+      "minRingPresent": 0.99,
+      "minHaloPresent": 1,
+      "fitOffsetMaxCss": 0.38,
+      "minTwoBandFrac": 1,
+      "framesBelowFull": 0,
+      "maxFailDegInAFrame": 0,
+      "worstExceptionPair": null,
+      "playback": {
+        "capturesWhilePlaying": 423,
+        "secondsCaptured": 15.1,
+        "wrapped": true,
+        "distinctFramesCovered": 423,
+        "allCapturedWhilePlaying": true
+      }
+    },
+    "v2/focus-play_webkit_dark_393x852": {
+      "engine": "webkit",
+      "version": "26.5",
+      "theme": "dark",
+      "viewport": [
+        393,
+        852
+      ],
+      "ring": "2px solid rgb(236, 234, 224) @ 2px",
+      "halo": "rgb(21, 25, 26) 0px 0px 0px 2px",
+      "frames": 320,
+      "allFocused": true,
+      "minRingPresent": 1,
+      "minHaloPresent": 0.92,
+      "fitOffsetMaxCss": 0.07,
+      "minTwoBandFrac": 1,
+      "framesBelowFull": 0,
+      "maxFailDegInAFrame": 0,
+      "worstExceptionPair": null,
+      "playback": {
+        "capturesWhilePlaying": 320,
+        "secondsCaptured": 15.1,
+        "wrapped": true,
+        "distinctFramesCovered": 319,
+        "allCapturedWhilePlaying": true
+      }
+    },
+    "v2/focus-play_webkit_light_393x852": {
+      "engine": "webkit",
+      "version": "26.5",
+      "theme": "light",
+      "viewport": [
+        393,
+        852
+      ],
+      "ring": "2px solid rgb(32, 48, 44) @ 2px",
+      "halo": "rgb(250, 248, 241) 0px 0px 0px 2px",
+      "frames": 349,
+      "allFocused": true,
+      "minRingPresent": 1,
+      "minHaloPresent": 1,
+      "fitOffsetMaxCss": 0.07,
+      "minTwoBandFrac": 1,
+      "framesBelowFull": 0,
+      "maxFailDegInAFrame": 0,
+      "worstExceptionPair": null,
+      "playback": {
+        "capturesWhilePlaying": 349,
+        "secondsCaptured": 15.1,
+        "wrapped": true,
+        "distinctFramesCovered": 348,
+        "allCapturedWhilePlaying": true
+      }
+    }
+  }
+}
