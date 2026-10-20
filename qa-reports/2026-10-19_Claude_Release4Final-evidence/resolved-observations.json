@@ -1,0 +1,391 @@
+{
+  "commit": "21423048af219419242ba8648018d7f9ca058bf4",
+  "baseline": null,
+  "checks": [
+    {
+      "name": "reduced-held/chromium/light",
+      "pass": true,
+      "details": [
+        {
+          "afterWait": 0,
+          "active": true,
+          "dot": "6px",
+          "duration": "1e-05s",
+          "fill": "rgba(185, 99, 64, 0.1)"
+        },
+        {
+          "afterWait": 25,
+          "active": true,
+          "dot": "6px",
+          "duration": "1e-05s",
+          "fill": "rgba(185, 99, 64, 0.1)"
+        },
+        {
+          "afterWait": 75,
+          "active": true,
+          "dot": "6px",
+          "duration": "1e-05s",
+          "fill": "rgba(185, 99, 64, 0.1)"
+        },
+        {
+          "afterWait": 150,
+          "active": true,
+          "dot": "6px",
+          "duration": "1e-05s",
+          "fill": "rgba(185, 99, 64, 0.1)"
+        }
+      ]
+    },
+    {
+      "name": "native-shift-tab-close/chromium/light",
+      "pass": true,
+      "details": {
+        "focused": true,
+        "visible": true,
+        "outline": "rgb(185, 99, 64) solid 2px"
+      }
+    },
+    {
+      "name": "all-menu-targets/chromium/light",
+      "pass": true,
+      "details": [
+        {
+          "label": "01Home",
+          "height": 44,
+          "width": 196.25
+        },
+        {
+          "label": "02The Work",
+          "height": 44,
+          "width": 206.921875
+        },
+        {
+          "label": "03A Brief Account",
+          "height": 44,
+          "width": 282.59375
+        },
+        {
+          "label": "04Credentials",
+          "height": 44,
+          "width": 224.78125
+        },
+        {
+          "label": "05Notes",
+          "height": 44,
+          "width": 157.890625
+        },
+        {
+          "label": "06Accessibility",
+          "height": 44,
+          "width": 237.765625
+        },
+        {
+          "label": "07Colophon",
+          "height": 44,
+          "width": 207.53125
+        },
+        {
+          "label": "08Let’s talk",
+          "height": 44,
+          "width": 194.3125
+        }
+      ]
+    },
+    {
+      "name": "menu-exit-completes/chromium/light",
+      "pass": true,
+      "details": {
+        "msAfterRouteCommit": 24
+      }
+    },
+    {
+      "name": "reduced-held/chromium/dark",
+      "pass": true,
+      "details": [
+        {
+          "afterWait": 0,
+          "active": true,
+          "dot": "8px",
+          "duration": "1e-05s",
+          "fill": "rgb(21, 25, 26)"
+        },
+        {
+          "afterWait": 25,
+          "active": true,
+          "dot": "6px",
+          "duration": "1e-05s",
+          "fill": "rgba(207, 122, 79, 0.1)"
+        },
+        {
+          "afterWait": 75,
+          "active": true,
+          "dot": "6px",
+          "duration": "1e-05s",
+          "fill": "rgba(207, 122, 79, 0.1)"
+        },
+        {
+          "afterWait": 150,
+          "active": true,
+          "dot": "6px",
+          "duration": "1e-05s",
+          "fill": "rgba(207, 122, 79, 0.1)"
+        }
+      ]
+    },
+    {
+      "name": "native-shift-tab-close/chromium/dark",
+      "pass": true,
+      "details": {
+        "focused": true,
+        "visible": true,
+        "outline": "rgb(207, 122, 79) solid 2px"
+      }
+    },
+    {
+      "name": "all-menu-targets/chromium/dark",
+      "pass": true,
+      "details": [
+        {
+          "label": "01Home",
+          "height": 44,
+          "width": 196.25
+        },
+        {
+          "label": "02The Work",
+          "height": 44,
+          "width": 206.921875
+        },
+        {
+          "label": "03A Brief Account",
+          "height": 44,
+          "width": 282.59375
+        },
+        {
+          "label": "04Credentials",
+          "height": 44,
+          "width": 224.78125
+        },
+        {
+          "label": "05Notes",
+          "height": 44,
+          "width": 157.890625
+        },
+        {
+          "label": "06Accessibility",
+          "height": 44,
+          "width": 237.765625
+        },
+        {
+          "label": "07Colophon",
+          "height": 44,
+          "width": 207.53125
+        },
+        {
+          "label": "08Let’s talk",
+          "height": 44,
+          "width": 194.3125
+        }
+      ]
+    },
+    {
+      "name": "menu-exit-completes/chromium/dark",
+      "pass": true,
+      "details": {
+        "msAfterRouteCommit": 17
+      }
+    },
+    {
+      "name": "reduced-held/webkit/light",
+      "pass": true,
+      "details": [
+        {
+          "afterWait": 0,
+          "active": true,
+          "dot": "8px",
+          "duration": "0.00001s",
+          "fill": "rgb(250, 248, 241)"
+        },
+        {
+          "afterWait": 25,
+          "active": true,
+          "dot": "6px",
+          "duration": "0.00001s",
+          "fill": "rgba(185, 99, 64, 0.1)"
+        },
+        {
+          "afterWait": 75,
+          "active": true,
+          "dot": "6px",
+          "duration": "0.00001s",
+          "fill": "rgba(185, 99, 64, 0.1)"
+        },
+        {
+          "afterWait": 150,
+          "active": true,
+          "dot": "6px",
+          "duration": "0.00001s",
+          "fill": "rgba(185, 99, 64, 0.1)"
+        }
+      ]
+    },
+    {
+      "name": "native-shift-tab-close/webkit/light",
+      "pass": false,
+      "details": {
+        "focused": false,
+        "visible": false,
+        "outline": "3px none rgb(32, 48, 44)"
+      }
+    },
+    {
+      "name": "all-menu-targets/webkit/light",
+      "pass": true,
+      "details": [
+        {
+          "label": "01Home",
+          "height": 44,
+          "width": 196.25
+        },
+        {
+          "label": "02The Work",
+          "height": 44,
+          "width": 206.921875
+        },
+        {
+          "label": "03A Brief Account",
+          "height": 44,
+          "width": 282.59375
+        },
+        {
+          "label": "04Credentials",
+          "height": 44,
+          "width": 224.78125
+        },
+        {
+          "label": "05Notes",
+          "height": 44,
+          "width": 157.890625
+        },
+        {
+          "label": "06Accessibility",
+          "height": 44,
+          "width": 237.765625
+        },
+        {
+          "label": "07Colophon",
+          "height": 44,
+          "width": 207.53125
+        },
+        {
+          "label": "08Let’s talk",
+          "height": 44,
+          "width": 194.3125
+        }
+      ]
+    },
+    {
+      "name": "menu-exit-completes/webkit/light",
+      "pass": true,
+      "details": {
+        "msAfterRouteCommit": 21
+      }
+    },
+    {
+      "name": "reduced-held/webkit/dark",
+      "pass": true,
+      "details": [
+        {
+          "afterWait": 0,
+          "active": true,
+          "dot": "8px",
+          "duration": "0.00001s",
+          "fill": "rgb(21, 25, 26)"
+        },
+        {
+          "afterWait": 25,
+          "active": true,
+          "dot": "6px",
+          "duration": "0.00001s",
+          "fill": "rgba(207, 122, 79, 0.1)"
+        },
+        {
+          "afterWait": 75,
+          "active": true,
+          "dot": "6px",
+          "duration": "0.00001s",
+          "fill": "rgba(207, 122, 79, 0.1)"
+        },
+        {
+          "afterWait": 150,
+          "active": true,
+          "dot": "6px",
+          "duration": "0.00001s",
+          "fill": "rgba(207, 122, 79, 0.1)"
+        }
+      ]
+    },
+    {
+      "name": "native-shift-tab-close/webkit/dark",
+      "pass": false,
+      "details": {
+        "focused": false,
+        "visible": false,
+        "outline": "3px none rgb(236, 234, 224)"
+      }
+    },
+    {
+      "name": "all-menu-targets/webkit/dark",
+      "pass": true,
+      "details": [
+        {
+          "label": "01Home",
+          "height": 44,
+          "width": 196.25
+        },
+        {
+          "label": "02The Work",
+          "height": 44,
+          "width": 206.921875
+        },
+        {
+          "label": "03A Brief Account",
+          "height": 44,
+          "width": 282.59375
+        },
+        {
+          "label": "04Credentials",
+          "height": 44,
+          "width": 224.78125
+        },
+        {
+          "label": "05Notes",
+          "height": 44,
+          "width": 157.890625
+        },
+        {
+          "label": "06Accessibility",
+          "height": 44,
+          "width": 237.765625
+        },
+        {
+          "label": "07Colophon",
+          "height": 44,
+          "width": 207.53125
+        },
+        {
+          "label": "08Let’s talk",
+          "height": 44,
+          "width": 194.3125
+        }
+      ]
+    },
+    {
+      "name": "menu-exit-completes/webkit/dark",
+      "pass": true,
+      "details": {
+        "msAfterRouteCommit": 21
+      }
+    }
+  ],
+  "observations": []
+}

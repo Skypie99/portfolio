@@ -1,0 +1,217 @@
+{
+  "what": "held-press dot width over time under reduced motion (the audit single-rAF read)",
+  "commit": "2504cdfd2a2fdf078e60fe8561d14bc0dadee160",
+  "started": "2026-10-20T01:10:43.051Z",
+  "samples": [
+    {
+      "engine": "chromium",
+      "theme": "light",
+      "afterMs": 0,
+      "dot": "6px",
+      "duration": "1e-05s",
+      "active": true,
+      "fill": "rgba(185, 99, 64, 0.1)"
+    },
+    {
+      "engine": "chromium",
+      "theme": "light",
+      "afterMs": 5,
+      "dot": "6px",
+      "duration": "1e-05s",
+      "active": true,
+      "fill": "rgba(185, 99, 64, 0.1)"
+    },
+    {
+      "engine": "chromium",
+      "theme": "light",
+      "afterMs": 25,
+      "dot": "6px",
+      "duration": "1e-05s",
+      "active": true,
+      "fill": "rgba(185, 99, 64, 0.1)"
+    },
+    {
+      "engine": "chromium",
+      "theme": "light",
+      "afterMs": 100,
+      "dot": "6px",
+      "duration": "1e-05s",
+      "active": true,
+      "fill": "rgba(185, 99, 64, 0.1)"
+    },
+    {
+      "engine": "chromium",
+      "theme": "light",
+      "afterMs": 400,
+      "dot": "6px",
+      "duration": "1e-05s",
+      "active": true,
+      "fill": "rgba(185, 99, 64, 0.1)"
+    },
+    {
+      "engine": "chromium",
+      "theme": "light",
+      "phase": "after-release",
+      "dot": "10px",
+      "active": false
+    },
+    {
+      "engine": "chromium",
+      "theme": "dark",
+      "afterMs": 0,
+      "dot": "8px",
+      "duration": "1e-05s",
+      "active": true,
+      "fill": "rgb(21, 25, 26)"
+    },
+    {
+      "engine": "chromium",
+      "theme": "dark",
+      "afterMs": 5,
+      "dot": "8px",
+      "duration": "1e-05s",
+      "active": true,
+      "fill": "rgb(21, 25, 26)"
+    },
+    {
+      "engine": "chromium",
+      "theme": "dark",
+      "afterMs": 25,
+      "dot": "6px",
+      "duration": "1e-05s",
+      "active": true,
+      "fill": "rgba(207, 122, 79, 0.1)"
+    },
+    {
+      "engine": "chromium",
+      "theme": "dark",
+      "afterMs": 100,
+      "dot": "6px",
+      "duration": "1e-05s",
+      "active": true,
+      "fill": "rgba(207, 122, 79, 0.1)"
+    },
+    {
+      "engine": "chromium",
+      "theme": "dark",
+      "afterMs": 400,
+      "dot": "6px",
+      "duration": "1e-05s",
+      "active": true,
+      "fill": "rgba(207, 122, 79, 0.1)"
+    },
+    {
+      "engine": "chromium",
+      "theme": "dark",
+      "phase": "after-release",
+      "dot": "10px",
+      "active": false
+    },
+    {
+      "engine": "webkit",
+      "theme": "light",
+      "afterMs": 0,
+      "dot": "8px",
+      "duration": "0.00001s",
+      "active": true,
+      "fill": "rgb(250, 248, 241)"
+    },
+    {
+      "engine": "webkit",
+      "theme": "light",
+      "afterMs": 5,
+      "dot": "6px",
+      "duration": "0.00001s",
+      "active": true,
+      "fill": "rgba(185, 99, 64, 0.1)"
+    },
+    {
+      "engine": "webkit",
+      "theme": "light",
+      "afterMs": 25,
+      "dot": "6px",
+      "duration": "0.00001s",
+      "active": true,
+      "fill": "rgba(185, 99, 64, 0.1)"
+    },
+    {
+      "engine": "webkit",
+      "theme": "light",
+      "afterMs": 100,
+      "dot": "6px",
+      "duration": "0.00001s",
+      "active": true,
+      "fill": "rgba(185, 99, 64, 0.1)"
+    },
+    {
+      "engine": "webkit",
+      "theme": "light",
+      "afterMs": 400,
+      "dot": "6px",
+      "duration": "0.00001s",
+      "active": true,
+      "fill": "rgba(185, 99, 64, 0.1)"
+    },
+    {
+      "engine": "webkit",
+      "theme": "light",
+      "phase": "after-release",
+      "dot": "10px",
+      "active": false
+    },
+    {
+      "engine": "webkit",
+      "theme": "dark",
+      "afterMs": 0,
+      "dot": "8px",
+      "duration": "0.00001s",
+      "active": true,
+      "fill": "rgb(21, 25, 26)"
+    },
+    {
+      "engine": "webkit",
+      "theme": "dark",
+      "afterMs": 5,
+      "dot": "8px",
+      "duration": "0.00001s",
+      "active": true,
+      "fill": "rgb(21, 25, 26)"
+    },
+    {
+      "engine": "webkit",
+      "theme": "dark",
+      "afterMs": 25,
+      "dot": "6px",
+      "duration": "0.00001s",
+      "active": true,
+      "fill": "rgba(207, 122, 79, 0.1)"
+    },
+    {
+      "engine": "webkit",
+      "theme": "dark",
+      "afterMs": 100,
+      "dot": "6px",
+      "duration": "0.00001s",
+      "active": true,
+      "fill": "rgba(207, 122, 79, 0.1)"
+    },
+    {
+      "engine": "webkit",
+      "theme": "dark",
+      "afterMs": 400,
+      "dot": "6px",
+      "duration": "0.00001s",
+      "active": true,
+      "fill": "rgba(207, 122, 79, 0.1)"
+    },
+    {
+      "engine": "webkit",
+      "theme": "dark",
+      "phase": "after-release",
+      "dot": "10px",
+      "active": false
+    }
+  ],
+  "errors": [],
+  "finished": "2026-10-20T01:10:53.230Z"
+}
