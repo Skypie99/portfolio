@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import type { CSSProperties, ReactNode } from 'react';
 
 import { Button } from '@/components/Button';
+import { CaseShowcase } from '@/components/CaseShowcase';
 import { CaseStudyCard } from '@/components/CaseStudyCard';
 import { ContactEmail } from '@/components/ContactEmail';
 import { HeroImageSettle, HeroTitleSettle } from '@/components/HeroSettle';
@@ -14,6 +15,7 @@ import { ProofArrival } from '@/components/ProofArrival';
 import { Reveal } from '@/components/Reveal';
 import { TactileMedia } from '@/components/TactileMedia';
 import { TagPill } from '@/components/TagPill';
+import { caseShowcaseFor } from '@/lib/caseShowcase';
 import { cn } from '@/lib/cn';
 import { INLINE_CODE_CLASS, smartPunctuation } from '@/lib/markdown';
 import { getDeliverables } from '@/lib/content';
@@ -421,10 +423,15 @@ function renderFlagstoneBody(d: Deliverable): ReactNode {
   });
 }
 
-function renderCaseBody(d: Deliverable): ReactNode {
+/** `proof: false` (Release 5, 2026-10-20) renders every section through the
+ *  ordinary path: the four showcase case studies exhibit their captures in
+ *  the CaseShowcase chapter between the title band and the essay, so the
+ *  in-essay CaseProof block would show the same evidence twice. Flagstone
+ *  and any deliverable without a showcase spec keep the proof block here. */
+function renderCaseBody(d: Deliverable, { proof = true }: { proof?: boolean } = {}): ReactNode {
   const proofSection = d.id === 'dashboard' ? 'What shipped' : 'The approach';
   return splitBodyIntoSections(d.body!).map((s, i) => {
-    if (s.heading !== proofSection) {
+    if (!proof || s.heading !== proofSection) {
       return <div key={s.heading} className="contents">{renderMarkdownProse(`## ${s.heading}\n\n${s.content}`, 'case', { dropCapEligible: i === 0 })}</div>;
     }
     const [opening, ...remaining] = s.content.split(/\n{2,}/);
@@ -597,6 +604,13 @@ export default async function WorkDetailPage({
   // the exact link below, byte-identically.
   const themedPreloads = heroPreloadLinks(d);
   const heroPreload = themedPreloads ? null : heroPreloadLink(d);
+
+  /* Release 5 project showcases (2026-10-20) — prompt-library, claude-corp,
+     ghost-code and dashboard carry a presentation spec (lib/caseShowcase.ts)
+     that mounts the CaseShowcase evidence chapter between the title band and
+     the essay and retires the in-essay CaseProof block for those four routes.
+     Flagstone and every deliverable without a spec render byte-identically. */
+  const showcase = caseShowcaseFor(d.id);
 
   /* Flagstone first proof (2026-10-19) — the phone hero is a capture-fitted
      exhibit. A previous mobile audit measured the real Explore screenshot at
@@ -1086,6 +1100,10 @@ export default async function WorkDetailPage({
         </div>
       </section>
 
+      {/* Release 5 (2026-10-20): the evidence chapter, the four showcase
+          routes only — see lib/caseShowcase.ts. */}
+      {showcase && <CaseShowcase d={d} spec={showcase} />}
+
       {/* Case study body — rendered only when body content exists */}
       {d.body && (
         <section className="px-gutter py-24 lg:py-32 world-surface-alt border-t border-border-decorative relative overflow-hidden">
@@ -1105,7 +1123,7 @@ export default async function WorkDetailPage({
                 d.id === 'flagstone' && 'tablet-prose-measure',
               )}
             >
-              {d.id === 'flagstone' ? renderFlagstoneBody(d) : renderCaseBody(d)}
+              {d.id === 'flagstone' ? renderFlagstoneBody(d) : renderCaseBody(d, { proof: !showcase })}
             </article>
 
             {/* FT-7 — close the essay like an essay. A designed sign-off (never
