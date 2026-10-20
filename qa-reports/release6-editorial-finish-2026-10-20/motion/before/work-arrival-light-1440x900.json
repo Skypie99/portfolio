@@ -1,0 +1,62 @@
+{
+  "name": "work-arrival-light-1440x900",
+  "route": "/work/",
+  "theme": "light",
+  "size": "1440x900",
+  "glideStartMs": 704,
+  "glideEndMs": 2110,
+  "totalMs": 3711,
+  "probe": "",
+  "elements": {},
+  "probeLoad": "h1, ul > li > .reveal",
+  "loadElements": [
+    {
+      "text": "The Work",
+      "firstSampleMs": 65,
+      "startOpacity": 0,
+      "firstVisibleMs": 254,
+      "halfMs": 254,
+      "fullMs": 540
+    },
+    {
+      "text": "01On the App Store · US and Canada · Sep",
+      "firstSampleMs": 65,
+      "startOpacity": 0,
+      "firstVisibleMs": 379,
+      "halfMs": 500,
+      "fullMs": 1025
+    },
+    {
+      "text": "02In active use, on my projects onlyVeri",
+      "firstSampleMs": 65,
+      "startOpacity": 0,
+      "firstVisibleMs": 460,
+      "halfMs": 540,
+      "fullMs": 1065
+    },
+    {
+      "text": "03Private operator app · public syntheti",
+      "firstSampleMs": 65,
+      "startOpacity": 0,
+      "firstVisibleMs": 2897,
+      "halfMs": 3106,
+      "fullMs": 3542
+    },
+    {
+      "text": "04Live and evolving · no backend of mine",
+      "firstSampleMs": 65,
+      "startOpacity": 0,
+      "firstVisibleMs": 3582,
+      "halfMs": 3704,
+      "fullMs": 4231
+    },
+    {
+      "text": "05Complete · live · no backendVerified 2",
+      "firstSampleMs": 65,
+      "startOpacity": 0,
+      "firstVisibleMs": null,
+      "halfMs": null,
+      "fullMs": null
+    }
+  ]
+}
