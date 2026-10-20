@@ -1,0 +1,47 @@
+{
+  "dir": "/home/user/portfolio/out",
+  "label": "after",
+  "at": "2026-10-20T04:32:48.885Z",
+  "rows": [
+    {
+      "label": "after",
+      "surface": "work",
+      "size": "1440x900@1",
+      "nodes": 285,
+      "transitioned": 25,
+      "willChange": 0,
+      "backdrop": 5,
+      "cls": 0,
+      "shifts": 1,
+      "largestShift": {
+        "t": 340,
+        "value": 0.000009769643775720166,
+        "sources": [
+          "BUTTON.inline-flex"
+        ]
+      },
+      "longTasks": 1,
+      "longTaskMs": 68
+    },
+    {
+      "label": "after",
+      "surface": "home-work",
+      "size": "1440x900@1",
+      "nodes": 107,
+      "transitioned": 6,
+      "willChange": 0,
+      "backdrop": 0,
+      "cls": 0,
+      "shifts": 1,
+      "largestShift": {
+        "t": 897,
+        "value": 0.000009769643775720166,
+        "sources": [
+          "BUTTON.inline-flex"
+        ]
+      },
+      "longTasks": 5,
+      "longTaskMs": 575
+    }
+  ]
+}
