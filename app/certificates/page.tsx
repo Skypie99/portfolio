@@ -85,7 +85,7 @@ export default function CertificatesPage() {
             Credentials
           </SettleHeading>
           <p className="font-sans font-light text-prose text-ink-muted max-w-measure-lead text-pretty">
-            Selected credentials and certifications, alongside senior
+            Selected credentials and course certificates, alongside senior
             technical-support work. A short paper trail of the
             things I’ve studied formally: most of the learning happens in
             the work, not on paper.
