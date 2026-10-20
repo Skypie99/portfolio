@@ -1,0 +1,61 @@
+light 1440×900 prompt-library exhibit 1 label: text rgb(70, 84, 77); worst 5.93:1 on rgb(236, 220, 198); best 6.49:1; plinth opacity 1; glow box reaches 17px into the line
+light 1440×900 prompt-library exhibit 1 caption: text rgb(70, 84, 77); worst 5.76:1 on rgb(234, 217, 193); best 6.72:1; plinth opacity 1; glow box reaches 6px into the line
+light 1440×900 prompt-library exhibit 2 label: text rgb(70, 84, 77); worst 6.19:1 on rgb(239, 225, 205); best 6.67:1; plinth opacity 1; glow box reaches 10px into the line
+light 1440×900 prompt-library exhibit 2 caption: text rgb(70, 84, 77); worst 6.22:1 on rgb(238, 226, 206); best 6.71:1; plinth opacity 1; glow box ends 1px short of the line
+light 1440×900 claude-corp exhibit 2 label: text rgb(70, 84, 77); worst 5.81:1 on rgb(234, 218, 194); best 6.44:1; plinth opacity 1; glow box ends 2px short of the line
+light 1440×900 claude-corp exhibit 2 caption: text rgb(70, 84, 77); worst 5.92:1 on rgb(235, 220, 199); best 6.66:1; plinth opacity 1; glow box ends 13px short of the line
+light 1440×900 claude-corp exhibit 3 label: text rgb(70, 84, 77); worst 6.23:1 on rgb(239, 226, 204); best 6.71:1; plinth opacity 1; glow box reaches 17px into the line
+light 1440×900 claude-corp exhibit 3 caption: text rgb(70, 84, 77); worst 5.99:1 on rgb(237, 221, 201); best 6.71:1; plinth opacity 1; glow box reaches 6px into the line
+light 1440×900 ghost-code exhibit 1 label: text rgb(70, 84, 77); worst 5.93:1 on rgb(236, 220, 200); best 6.50:1; plinth opacity 1; glow box reaches 17px into the line
+light 1440×900 ghost-code exhibit 1 caption: text rgb(70, 84, 77); worst 5.71:1 on rgb(228, 217, 198); best 6.67:1; plinth opacity 1; glow box reaches 6px into the line
+light 1440×900 ghost-code exhibit 2 label: text rgb(70, 84, 77); worst 6.25:1 on rgb(240, 226, 206); best 6.67:1; plinth opacity 1; glow box reaches 19px into the line
+light 1440×900 ghost-code exhibit 2 caption: text rgb(70, 84, 77); worst 6.36:1 on rgb(241, 228, 209); best 6.72:1; plinth opacity 1; caption beside the plane
+light 1440×900 dashboard exhibit 1 label: text rgb(70, 84, 77); worst 5.85:1 on rgb(234, 219, 195); best 6.43:1; plinth opacity 1; glow box reaches 3px into the line
+light 1440×900 dashboard exhibit 1 caption: text rgb(70, 84, 77); worst 5.68:1 on rgb(231, 216, 191); best 6.42:1; plinth opacity 1; glow box ends 8px short of the line
+light 1440×900 dashboard exhibit 2 label: text rgb(70, 84, 77); worst 5.71:1 on rgb(233, 216, 193); best 6.54:1; plinth opacity 1; glow box reaches 14px into the line
+light 1440×900 dashboard exhibit 2 caption: text rgb(70, 84, 77); worst 5.87:1 on rgb(235, 219, 197); best 6.71:1; plinth opacity 1; glow box reaches 3px into the line
+light 1440×900 dashboard exhibit 3 label: text rgb(70, 84, 77); worst 6.34:1 on rgb(240, 228, 208); best 6.71:1; plinth opacity 1; glow box reaches 14px into the line
+light 1440×900 dashboard exhibit 3 caption: text rgb(70, 84, 77); worst 6.02:1 on rgb(236, 222, 203); best 6.71:1; plinth opacity 1; glow box reaches 3px into the line
+light 393×852 prompt-library exhibit 1 label: text rgb(70, 84, 77); worst 5.94:1 on rgb(237, 220, 199); best 6.44:1; plinth opacity 1; glow box ends 7px short of the line
+light 393×852 prompt-library exhibit 1 caption: text rgb(70, 84, 77); worst 5.75:1 on rgb(233, 217, 192); best 6.54:1; plinth opacity 1; glow box ends 18px short of the line
+light 393×852 prompt-library exhibit 2 label: text rgb(70, 84, 77); worst 5.99:1 on rgb(237, 221, 202); best 6.54:1; plinth opacity 1; glow box ends 4px short of the line
+light 393×852 prompt-library exhibit 2 caption: text rgb(70, 84, 77); worst 6.28:1 on rgb(239, 227, 206); best 6.71:1; plinth opacity 1; glow box ends 15px short of the line
+light 393×852 claude-corp exhibit 3 label: text rgb(70, 84, 77); worst 6.36:1 on rgb(241, 228, 210); best 6.71:1; plinth opacity 1; glow box reaches 8px into the line
+light 393×852 claude-corp exhibit 3 caption: text rgb(70, 84, 77); worst 6.28:1 on rgb(239, 227, 206); best 6.71:1; plinth opacity 1; glow box ends 3px short of the line
+light 393×852 ghost-code exhibit 2 label: text rgb(70, 84, 77); worst 5.74:1 on rgb(233, 217, 190); best 6.27:1; plinth opacity 1; glow box reaches 16px into the line
+light 393×852 ghost-code exhibit 2 caption: text rgb(70, 84, 77); worst 6.12:1 on rgb(233, 225, 206); best 6.71:1; plinth opacity 1; glow box reaches 4px into the line
+light 393×852 dashboard exhibit 2 label: text rgb(70, 84, 77); worst 5.80:1 on rgb(234, 218, 193); best 6.28:1; plinth opacity 1; glow box ends 1px short of the line
+light 393×852 dashboard exhibit 2 caption: text rgb(70, 84, 77); worst 5.79:1 on rgb(233, 218, 194); best 6.55:1; plinth opacity 1; glow box ends 12px short of the line
+light 393×852 dashboard exhibit 3 label: text rgb(70, 84, 77); worst 5.98:1 on rgb(237, 221, 199); best 6.51:1; plinth opacity 1; glow box reaches 8px into the line
+light 393×852 dashboard exhibit 3 caption: text rgb(70, 84, 77); worst 6.34:1 on rgb(240, 228, 207); best 6.70:1; plinth opacity 1; glow box ends 3px short of the line
+dark 1440×900 prompt-library exhibit 1 label: text rgb(236, 234, 224); worst 7.37:1 on rgb(90, 70, 53); best 10.67:1; plinth opacity 1; glow box reaches 17px into the line
+dark 1440×900 prompt-library exhibit 1 caption: text rgb(236, 234, 224); worst 7.42:1 on rgb(88, 70, 56); best 11.60:1; plinth opacity 1; glow box reaches 6px into the line
+dark 1440×900 prompt-library exhibit 2 label: text rgb(236, 234, 224); worst 8.37:1 on rgb(80, 62, 52); best 10.95:1; plinth opacity 1; glow box reaches 10px into the line
+dark 1440×900 prompt-library exhibit 2 caption: text rgb(236, 234, 224); worst 8.31:1 on rgb(79, 63, 53); best 11.45:1; plinth opacity 1; glow box ends 1px short of the line
+dark 1440×900 claude-corp exhibit 2 label: text rgb(236, 234, 224); worst 6.95:1 on rgb(93, 74, 58); best 10.28:1; plinth opacity 1; glow box ends 2px short of the line
+dark 1440×900 claude-corp exhibit 2 caption: text rgb(236, 234, 224); worst 7.73:1 on rgb(86, 67, 54); best 11.35:1; plinth opacity 1; glow box ends 13px short of the line
+dark 1440×900 claude-corp exhibit 3 label: text rgb(236, 234, 224); worst 8.29:1 on rgb(80, 63, 51); best 11.45:1; plinth opacity 1; glow box reaches 17px into the line
+dark 1440×900 claude-corp exhibit 3 caption: text rgb(236, 234, 224); worst 8.32:1 on rgb(79, 63, 52); best 11.72:1; plinth opacity 1; glow box reaches 6px into the line
+dark 1440×900 ghost-code exhibit 1 label: text rgb(236, 234, 224); worst 7.94:1 on rgb(85, 65, 52); best 10.72:1; plinth opacity 1; glow box reaches 17px into the line
+dark 1440×900 ghost-code exhibit 1 caption: text rgb(236, 234, 224); worst 7.64:1 on rgb(86, 68, 56); best 11.76:1; plinth opacity 1; glow box reaches 6px into the line
+dark 1440×900 ghost-code exhibit 2 label: text rgb(236, 234, 224); worst 8.94:1 on rgb(75, 58, 49); best 11.50:1; plinth opacity 1; glow box reaches 19px into the line
+dark 1440×900 ghost-code exhibit 2 caption: text rgb(236, 234, 224); worst 8.30:1 on rgb(79, 63, 54); best 11.49:1; plinth opacity 1; caption beside the plane
+dark 1440×900 dashboard exhibit 1 label: text rgb(236, 234, 224); worst 6.72:1 on rgb(96, 76, 57); best 10.00:1; plinth opacity 1; glow box reaches 3px into the line
+dark 1440×900 dashboard exhibit 1 caption: text rgb(236, 234, 224); worst 6.64:1 on rgb(96, 77, 59); best 10.57:1; plinth opacity 1; glow box ends 8px short of the line
+dark 1440×900 dashboard exhibit 2 label: text rgb(236, 234, 224); worst 6.85:1 on rgb(94, 75, 58); best 10.96:1; plinth opacity 1; glow box reaches 14px into the line
+dark 1440×900 dashboard exhibit 2 caption: text rgb(236, 234, 224); worst 8.13:1 on rgb(82, 64, 52); best 11.59:1; plinth opacity 1; glow box reaches 3px into the line
+dark 1440×900 dashboard exhibit 3 label: text rgb(236, 234, 224); worst 8.53:1 on rgb(78, 61, 52); best 11.45:1; plinth opacity 1; glow box reaches 14px into the line
+dark 1440×900 dashboard exhibit 3 caption: text rgb(236, 234, 224); worst 8.56:1 on rgb(77, 61, 53); best 11.79:1; plinth opacity 1; glow box reaches 3px into the line
+dark 393×852 prompt-library exhibit 1 label: text rgb(236, 234, 224); worst 7.55:1 on rgb(89, 68, 54); best 9.81:1; plinth opacity 1; glow box ends 7px short of the line
+dark 393×852 prompt-library exhibit 1 caption: text rgb(236, 234, 224); worst 6.62:1 on rgb(97, 77, 57); best 10.21:1; plinth opacity 1; glow box ends 18px short of the line
+dark 393×852 prompt-library exhibit 2 label: text rgb(236, 234, 224); worst 7.04:1 on rgb(93, 73, 55); best 9.78:1; plinth opacity 1; glow box ends 4px short of the line
+dark 393×852 prompt-library exhibit 2 caption: text rgb(236, 234, 224); worst 7.65:1 on rgb(86, 68, 54); best 10.60:1; plinth opacity 1; glow box ends 15px short of the line
+dark 393×852 claude-corp exhibit 3 label: text rgb(236, 234, 224); worst 8.41:1 on rgb(79, 62, 51); best 10.46:1; plinth opacity 1; glow box reaches 8px into the line
+dark 393×852 claude-corp exhibit 3 caption: text rgb(236, 234, 224); worst 7.66:1 on rgb(86, 68, 53); best 10.51:1; plinth opacity 1; glow box ends 3px short of the line
+dark 393×852 ghost-code exhibit 2 label: text rgb(236, 234, 224); worst 5.98:1 on rgb(103, 84, 60); best 8.88:1; plinth opacity 1; glow box reaches 16px into the line
+dark 393×852 ghost-code exhibit 2 caption: text rgb(236, 234, 224); worst 7.66:1 on rgb(86, 68, 53); best 10.71:1; plinth opacity 1; glow box reaches 4px into the line
+dark 393×852 dashboard exhibit 2 label: text rgb(236, 234, 224); worst 6.16:1 on rgb(101, 82, 60); best 9.25:1; plinth opacity 1; glow box ends 1px short of the line
+dark 393×852 dashboard exhibit 2 caption: text rgb(236, 234, 224); worst 6.60:1 on rgb(98, 77, 57); best 10.16:1; plinth opacity 1; glow box ends 12px short of the line
+dark 393×852 dashboard exhibit 3 label: text rgb(236, 234, 224); worst 6.93:1 on rgb(94, 74, 56); best 9.59:1; plinth opacity 1; glow box reaches 8px into the line
+dark 393×852 dashboard exhibit 3 caption: text rgb(236, 234, 224); worst 7.80:1 on rgb(84, 67, 53); best 10.65:1; plinth opacity 1; glow box ends 3px short of the line
+WORST light 5.68:1 (light 1440×900 dashboard exhibit 1 caption) · dark 5.98:1 (dark 393×852 ghost-code exhibit 2 label)
