@@ -1,0 +1,62 @@
+{
+  "name": "home-work-light-393x852",
+  "route": "/",
+  "theme": "light",
+  "size": "393x852",
+  "glideStartMs": 704,
+  "glideEndMs": 2111,
+  "totalMs": 4712,
+  "probe": "#work .reveal",
+  "elements": [
+    {
+      "tag": "div.reveal.reveal-scene",
+      "text": "The WorkA handful of things, made with i",
+      "startOpacity": 0,
+      "firstVisibleMs": 924,
+      "halfMs": 974,
+      "fullMs": 1288
+    },
+    {
+      "tag": "div.reveal.reveal-depth",
+      "text": "01FlagstoneCommunity map of accessibilit",
+      "startOpacity": 0,
+      "firstVisibleMs": 1074,
+      "halfMs": 1187,
+      "fullMs": 1489
+    },
+    {
+      "tag": "div.reveal.reveal-depth",
+      "text": "02Claude CorpA governed multi-agent deve",
+      "startOpacity": 0,
+      "firstVisibleMs": 1338,
+      "halfMs": 1439,
+      "fullMs": 1753
+    },
+    {
+      "tag": "div.reveal.reveal-depth",
+      "text": "03Claude Corp DashboardThe operator cons",
+      "startOpacity": 0,
+      "firstVisibleMs": 1753,
+      "halfMs": 1804,
+      "fullMs": 2107
+    },
+    {
+      "tag": "div.reveal.reveal-depth",
+      "text": "04Prompt LibraryPrompts as reusable asse",
+      "startOpacity": 0,
+      "firstVisibleMs": null,
+      "halfMs": null,
+      "fullMs": null
+    },
+    {
+      "tag": "div.reveal.reveal-depth",
+      "text": "05Ghost CodeA terminal-command trainer a",
+      "startOpacity": 0,
+      "firstVisibleMs": null,
+      "halfMs": null,
+      "fullMs": null
+    }
+  ],
+  "probeLoad": "",
+  "loadElements": []
+}

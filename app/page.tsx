@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { CSSProperties, ReactNode } from 'react';
 
 import { CinematicDesert } from '@/components/cinematic/CinematicDesert';
+import { CLAUSE_LINE_CLASS, ClauseBound } from '@/components/ClauseBound';
 import { ContactEmail } from '@/components/ContactEmail';
 import { ContentReveal } from '@/components/ContentReveal';
 import { Hero } from '@/components/Hero';
@@ -28,6 +29,8 @@ import { heroMedia } from '@/lib/media';
 import { canonicalFor } from '@/lib/metadata';
 import { OG_CARD } from '@/lib/og';
 import { signatureFor } from '@/lib/signature';
+
+import styles from '@/components/readingGroup.module.css';
 
 /**
  * TA-11 (truth audit 2026-07-31) — the homepage's share card, restated here
@@ -274,7 +277,18 @@ export default function HomePage() {
             figure: `Round ${calibration.value}`,
             what: (
               <>
-                {openRound ? `${openRound.title}: ${openRound.counts.join(' · ')}` : calibration.label}
+                {/* Release 6 (R6-B): the counts keep each short clause whole,
+                    so a phone column breaks at the interpunct instead of
+                    between a number and its noun ("axe 0 / violations" at
+                    393 before). Same words, same order, same evidence. */}
+                {openRound ? (
+                  <>
+                    {`${openRound.title}: `}
+                    <ClauseBound text={openRound.counts.join(' · ')} />
+                  </>
+                ) : (
+                  calibration.label
+                )}
                 {' · '}
                 <Link href="/colophon/#calibration" className="link-draw text-accent-text">
                   the record
@@ -733,16 +747,29 @@ export default function HomePage() {
         )}
       >
         {/* soft wash so the liquid-glass cards have something to refract —
-            a warm golden glow + a whisper of cool blue (decorative, static) */}
+            a warm golden glow + a whisper of cool blue (decorative, static).
+            Release 6 (R6-A): at half strength in dark mode. The gold pool over
+            the night world lifted the backdrop under row 01 to about
+            rgb(100 85 72), where the 14px summary measured 3.9:1 and the
+            "Featured: above" link 3.8:1 at their worst pixels (both themes'
+            tokens are pinned against plainer panels in ink-contrast.test.ts,
+            which this extra wash sits on top of). At 50% every index text
+            reads at or above 4.67:1 in dark mode on the built page; light mode
+            was already clear and is unchanged. */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 -z-10"
+          className="pointer-events-none absolute inset-0 -z-10 dark:opacity-50"
           style={{
             backgroundImage:
               'radial-gradient(40% 44% at 20% 26%, rgb(255 212 158 / 0.18), transparent 62%), radial-gradient(44% 48% at 86% 82%, rgb(150 188 214 / 0.18), transparent 64%)',
           }}
         />
-        <div className="max-w-content mx-auto">
+        {/* Release 6 (R6-B): the heading and its five rows are one reading
+            group on one clock (components/readingGroup.module.css): the
+            heading leads at delay 0 and the rows step in behind it. Measured
+            before: the heading's 1200 ms scene clock landed it ~110 ms AFTER
+            row 01 (900 ms). Scoped to this band; no other Reveal changes. */}
+        <div className={cn('max-w-content mx-auto', styles.group)}>
           {/* Dani wave5: terracotta left-border accent on section headers.
               U3 (A-03): corridor air tightened one spacing step (mb-24 → mb-20)
               — the walk read the heading→gallery stretch as dead air. */}
@@ -766,20 +793,31 @@ export default function HomePage() {
               reference back up to the room rather than a repeat of the status
               the room already prints in full.
 
-              ROWS AT EVERY WIDTH. Below lg the status+year wrapper is a
-              wrapping baseline line under the title; at lg `lg:contents`
-              dissolves it so status and year become columns of the row's own
-              flex track. Nothing is truncated and nothing scrolls sideways at
-              any width — the row simply grows taller when the copy needs it. */}
+              ROWS AT EVERY WIDTH. At lg the title column and the status +
+              year wrapper dissolve (`lg:contents`) so status and year become
+              columns of the row's own flex track. Below lg (Release 6, R6-A)
+              the same two wrappers are `contents` over a two-column grid, so
+              the year sits on the TITLE line at the right edge (the place it
+              already holds at lg), the facts (status, note) read before the
+              doorway, and the doorway closes the entry. Before this the year
+              trailed a wrapping status line and landed alone on its own line
+              on three of five phone rows (baseline capture, 393x852). DOM
+              order is unchanged: title, one line, doorway, status, note,
+              year; only the phone placement moves. Nothing is truncated and
+              nothing scrolls sideways at any width — the row simply grows
+              taller when the copy needs it. */}
           <ol className="flex flex-col">
             {workIndex.map(({ d, numeral, href, isFlagship, note }, i) => (
               <li
                 key={d.id}
                 className="group border-t border-border-decorative last:border-b"
               >
-                {/* MO-4: cap the stagger (site idiom Math.min(i, 4)). */}
+                {/* MO-4: cap the stagger (site idiom Math.min(i, 4)).
+                    R6-B: rows start one step BEHIND the heading (i + 1), so
+                    the heading is read first and its rows follow; the cap
+                    keeps the group inside ~0.9 s on the shared clock. */}
                 <Reveal
-                  index={Math.min(i, 4)}
+                  index={Math.min(i + 1, 4)}
                   variant="depth"
                   className="flex items-baseline gap-4 lg:gap-6 py-6"
                 >
@@ -801,14 +839,18 @@ export default function HomePage() {
                   >
                     {numeral}
                   </span>
-                  <div className="min-w-0 flex-1 flex flex-col lg:flex-row lg:items-baseline lg:gap-8">
-                    <div className="min-w-0 lg:flex-[1.6] flex flex-col gap-1.5">
+                  <div className="min-w-0 flex-1 grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-x-3 gap-y-1.5 lg:flex lg:flex-row lg:items-baseline lg:gap-8">
+                    <div className="contents lg:flex lg:min-w-0 lg:flex-[1.6] lg:flex-col lg:gap-1.5">
                       {/* W4-05 · VE02: title-first hierarchy — the row's
                           first scan. step-2 (24px) on phone / step-3 (31px)
                           at lg, inside C's hypotheses (23–27px phone,
                           26–32px desktop). Scoped type on this h3 only; no
                           global default moves. All words below unchanged. */}
-                      <h3 className="font-serif font-light text-step-2 lg:text-step-3 leading-heading text-ink">
+                      {/* R6-A: `break-words` only ever acts when a single word is
+                          wider than the title cell (text-only zoom at phone
+                          widths); at 100% text it changes nothing. Without it
+                          the word ran under the year on the same line. */}
+                      <h3 className="font-serif font-light text-step-2 lg:text-step-3 break-words leading-heading text-ink">
                         <Link
                           href={href}
                           aria-label={`View ${d.title} project`}
@@ -832,21 +874,26 @@ export default function HomePage() {
                           and never binds). Phone/1280 columns are already
                           narrower, so this only firms up wide desktop.
                           Words unchanged. */}
-                      <p className="font-sans font-light text-body-sm leading-body text-ink-muted text-pretty max-w-[460px]">
+                      <p className="col-span-2 row-start-2 font-sans font-light text-body-sm leading-body text-ink-muted text-pretty max-w-[460px]">
                         {d.summary}
                       </p>
                       {/* Redundant with the title link immediately above
                           (same destination) — kept out of tab order so
-                          keyboard users get one stop per row, not two. */}
-                      <ProjectDoorwayButton
-                        href={href}
-                        aria-label={`View project: ${d.title} case study`}
-                        tabIndex={-1}
-                      />
+                          keyboard users get one stop per row, not two.
+                          The wrapper only places the shared pill in the
+                          phone grid (row 4, after the facts); the pill itself
+                          is untouched (F-014 parity: no className prop). */}
+                      <div className="col-span-2 row-start-4 mt-2 lg:mt-0">
+                        <ProjectDoorwayButton
+                          href={href}
+                          aria-label={`View project: ${d.title} case study`}
+                          tabIndex={-1}
+                        />
+                      </div>
                     </div>
-                    <div className="mt-3 flex flex-wrap items-baseline gap-x-4 gap-y-1 lg:mt-0 lg:contents">
-                      <div className="lg:flex-1 flex flex-col gap-1.5">
-                      <p className="font-mono text-meta tracking-label uppercase text-text-meta text-pretty">
+                    <div className="contents">
+                      <div className="col-span-2 row-start-3 mt-2 flex flex-col gap-1.5 lg:mt-0 lg:flex-1">
+                      <p className={cn('font-mono text-meta tracking-label uppercase text-text-meta text-pretty', CLAUSE_LINE_CLASS)}>
                         {isFlagship ? (
                           <Link
                             href="#flagship"
@@ -880,7 +927,11 @@ export default function HomePage() {
                             <span aria-hidden="true" className="ml-1.5">{'↑'}</span>
                           </Link>
                         ) : (
-                          d.status
+                          /* Release 6 (R6-A): each short clause of the status
+                             holds on one line, so a narrow column breaks at
+                             the interpunct instead of inside a clause
+                             ("PUBLIC / SYNTHETIC DEMO" at 1440 before). */
+                          <ClauseBound text={d.status} />
                         )}
                       </p>
                       {/* The chip's own figure, demoted (C4's conservation
@@ -888,12 +939,12 @@ export default function HomePage() {
                           reads as a measured figure rather than a second
                           status — which is what it is. */}
                       {note && (
-                        <p className="font-mono text-meta tracking-label uppercase text-accent-text tabular-nums">
-                          {note}
+                        <p className={cn('font-mono text-meta tracking-label uppercase text-accent-text tabular-nums', CLAUSE_LINE_CLASS)}>
+                          <ClauseBound text={note} />
                         </p>
                       )}
                       </div>
-                      <p className="shrink-0 lg:w-16 lg:text-right font-mono text-meta tracking-label uppercase text-text-meta tabular-nums">
+                      <p className="col-start-2 row-start-1 shrink-0 lg:w-16 lg:text-right font-mono text-meta tracking-label uppercase text-text-meta tabular-nums">
                         <time dateTime={String(d.year)}>{d.year}</time>
                       </p>
                     </div>
@@ -976,7 +1027,7 @@ export default function HomePage() {
                   >
                     {row.figure}
                   </span>
-                  <span className="min-w-0 lg:flex-1 font-sans font-light text-body-sm leading-body text-ink-muted text-pretty">
+                  <span className={cn('min-w-0 lg:flex-1 font-sans font-light text-body-sm leading-body text-ink-muted text-pretty', CLAUSE_LINE_CLASS)}>
                     {row.what}
                   </span>
                   <span className="shrink-0 lg:ml-auto font-mono text-meta tracking-label uppercase text-text-meta tabular-nums">
