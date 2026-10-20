@@ -32,6 +32,7 @@ vi.mock('next/navigation', () => ({
 import { ViewTransitions } from '@/components/ViewTransitions';
 import {
   _resetReturnFocusForTests,
+  isKeyboardActivation,
   notePopstate,
   resolveArrivalFocus,
 } from '@/lib/returnFocus';
@@ -633,6 +634,30 @@ describe('ViewTransitions return-seat recording (W4-02 · N1)', () => {
     expect(pushMock).toHaveBeenCalledWith('/work/flagstone/');
     notePopstate();
     expect(resolveArrivalFocus('/work/flagstone/', '/')).toBeNull();
+  });
+
+  it('records a FIREFOX keyboard take-over (detail 1 on a :focus-visible link) as keyboard', () => {
+    // Gecko dispatches Enter-on-link with click count 1, so detail alone
+    // misclassifies it; the link's own :focus-visible carries the signal
+    // (R4-F05). jsdom matches :focus-visible on any focused element.
+    const row = rowAnchor();
+    row.focus();
+    click(row, 1);
+    expect(pushMock).toHaveBeenCalledWith('/work/flagstone/');
+    notePopstate();
+    expect(resolveArrivalFocus('/work/flagstone/', '/')).toBe(row);
+  });
+
+  it('isKeyboardActivation: detail 0 or :focus-visible is keyboard; an unfocused detail-1 click is not', () => {
+    const row = rowAnchor();
+    const ev = (detail: number) => new MouseEvent('click', { detail });
+    expect(isKeyboardActivation(ev(0), row)).toBe(true);
+    expect(isKeyboardActivation(ev(1), row)).toBe(false);
+    row.focus();
+    expect(isKeyboardActivation(ev(1), row)).toBe(true);
+    row.blur();
+    const throwing = { matches: () => { throw new SyntaxError('unsupported'); } } as unknown as Element;
+    expect(isKeyboardActivation(ev(1), throwing)).toBe(false);
   });
 
   it('records on the REDUCED-MOTION branch too (presence, not motion)', () => {

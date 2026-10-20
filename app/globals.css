@@ -4488,13 +4488,11 @@ html.dark .ts-float {
   transition: border-color var(--dur-fast) ease-out;
 }
 
-#work ol > li:has(a:hover),
 #work ol > li:has(a:focus-visible),
 #work ol > li:has(a:active) {
   border-color: rgb(var(--rgb-ink) / 0.5);
 }
 
-html.dark #work ol > li:has(a:hover),
 html.dark #work ol > li:has(a:focus-visible),
 html.dark #work ol > li:has(a:active) {
   border-color: rgb(var(--rgb-accent) / 0.6);
@@ -4504,9 +4502,30 @@ html.dark #work ol > li:has(a:active) {
    pill hover/press (shared component); these list-side rules give the
    row's TITLE link (and every row link) equal clarity on focus-visible,
    and give press the pill's own existing settle-down cue. */
-#work ol > li:has(:is(a:hover, a:focus-visible)) a.group > span[aria-hidden='true'].rounded-full {
+#work ol > li:has(a:focus-visible) a.group > span[aria-hidden='true'].rounded-full {
   width: 0.5rem;
   height: 0.5rem;
+}
+
+/* Release 4 — the row's HOVER cues sit behind the same hover:hover gate as
+   the doorway pill's own `[@media(hover:hover)]:` hover. Ungated, a tap's
+   sticky :hover kept a phone row ruled and its dot at 8px after release
+   (6 rest → 4 pressed → 8). Focus-visible and press cues stay ungated;
+   this block stays ahead of the :active dot rule below so press still
+   wins the cascade on fine pointers. */
+@media (hover: hover) {
+  #work ol > li:has(a:hover) {
+    border-color: rgb(var(--rgb-ink) / 0.5);
+  }
+
+  html.dark #work ol > li:has(a:hover) {
+    border-color: rgb(var(--rgb-accent) / 0.6);
+  }
+
+  #work ol > li:has(a:hover) a.group > span[aria-hidden='true'].rounded-full {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
 }
 
 #work ol > li:has(a:active) a.group > span[aria-hidden='true'].rounded-full {
