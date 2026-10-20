@@ -20,6 +20,8 @@
     "heroShot": {
       "src": "/showcase/flagstone/explore-current.phone.webp",
       "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+      "width": 1290,
+      "height": 2803,
       "focal": "50% 31%",
       "avif": "/showcase/flagstone/explore-current.phone.avif",
       "webp": "/showcase/flagstone/explore-current.phone.webp",
@@ -61,7 +63,8 @@
           "mp4": "/showcase/flagstone/clips/report-flow-current.dark.phone.mp4",
           "webm": "/showcase/flagstone/clips/report-flow-current.dark.phone.webm",
           "poster": "/showcase/flagstone/clips/report-flow-current.dark.phone-poster.avif",
-          "alt": "Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map."
+          "alt": "Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+          "autoplay": false
         },
         "matte": "dark-mono"
       },

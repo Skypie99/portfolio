@@ -1,0 +1,5627 @@
+{
+  "methodology": {
+    "page": "/work/flagstone/",
+    "engines": "Headless Playwright Chromium and WebKit, not real Safari/device acceptance",
+    "noJS": "Browser javaScriptEnabled:false; evaluation used only for measurement, no theme injection",
+    "captures": "Arrival screenshots use the stated viewport. Hero/proof section captures temporarily extend viewport height at the same width to paint the fixed backdrop over the whole section.",
+    "axe": "WCAG 2 A/AA, 2.1 A/AA, 2.2 AA; normal/reduced-motion scenarios only. Incomplete rules require manual review."
+  },
+  "scenarioRuns": [
+    {
+      "id": "chromium-1440-light-normal",
+      "engine": "chromium",
+      "browserVersion": "151.0.7922.34",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "light",
+      "mode": "normal",
+      "failures": [],
+      "initial": {
+        "dark": false,
+        "js": true,
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false,
+            "controls": false
+          }
+        ]
+      },
+      "hero": {
+        "width": 240.671875,
+        "height": 522.9375,
+        "screenWidth": 240.671875,
+        "screenHeight": 522.9375,
+        "naturalWidth": 1290,
+        "naturalHeight": 2803,
+        "complete": true,
+        "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+        "src": "/showcase/flagstone/explore-current.phone.webp",
+        "caption": "SEVERITY 3 OF 5 \u00b7 MODERATE \u00b7 VERIFIEDSteep grade: a real barrier report expanded on the map.CURRENT EXPLORE SCREEN \u00b7 FLAGSTONE",
+        "gap": 48
+      },
+      "proof": {
+        "items": [
+          {
+            "x": 312,
+            "y": 242.4375,
+            "width": 340
+          },
+          {
+            "x": 676,
+            "y": 242.4375,
+            "width": 340
+          },
+          {
+            "x": 1040,
+            "y": 242.4375,
+            "width": 340
+          }
+        ],
+        "provenance": "Current Flagstone build \u00b7 captures in this repository since 2026-09-01 (1cfb4b1) \u00b7 capture dates not recorded",
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false
+          }
+        ]
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "targets": [
+              [
+                ".my-8"
+              ]
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "targets": [
+              [
+                ".text-step-2.font-normal[href=\"/\"]"
+              ],
+              [
+                ".link-draw-group"
+              ],
+              [
+                ".rail-trim.mt-1.gap-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".group-hover\\:translate-x-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".inline-block.link-draw[href$=\"work/\"]"
+              ],
+              [
+                "h1"
+              ],
+              [
+                ".drop-cap.reveal-shown.text-prose"
+              ],
+              [
+                ".drop-cap.reveal-shown.text-prose > .underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]"
+              ],
+              [
+                ".mb-6"
+              ],
+              [
+                ".text-step-2.mb-8"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                ".mt-2.dark\\:text-ink.text-text-meta"
+              ],
+              [
+                "time[datetime=\"2026-09-01\"]"
+              ],
+              [
+                ".normal-case"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4)"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4) > em"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(5)"
+              ],
+              [
+                ".text-\\[12px\\]"
+              ],
+              [
+                "text[x=\"120\"]"
+              ],
+              [
+                "text[x=\"440\"]"
+              ],
+              [
+                "text[y=\"194\"]"
+              ],
+              [
+                ".contents:nth-child(2) > figure > figcaption"
+              ],
+              [
+                "figcaption > code"
+              ],
+              [
+                ".method-draw"
+              ],
+              [
+                "time[datetime=\"2026-08-16\"]"
+              ]
+            ]
+          },
+          {
+            "id": "video-caption",
+            "impact": "critical",
+            "targets": [
+              [
+                "video"
+              ]
+            ]
+          }
+        ],
+        "passes": 27
+      },
+      "keyboardTabs": 18,
+      "focus": {
+        "name": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "focusVisible": true,
+        "outline": "rgb(185, 99, 64) solid 2px",
+        "width": "2px",
+        "color": "rgb(185, 99, 64)",
+        "notObscured": true
+      },
+      "play": {
+        "paused": false,
+        "time": 1.115432
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "chromium-1440-light-reduce",
+      "engine": "chromium",
+      "browserVersion": "151.0.7922.34",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "light",
+      "mode": "reduce",
+      "failures": [],
+      "initial": {
+        "dark": false,
+        "js": true,
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false,
+            "controls": false
+          }
+        ]
+      },
+      "hero": {
+        "width": 240.671875,
+        "height": 522.9375,
+        "screenWidth": 240.671875,
+        "screenHeight": 522.9375,
+        "naturalWidth": 1290,
+        "naturalHeight": 2803,
+        "complete": true,
+        "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+        "src": "/showcase/flagstone/explore-current.phone.webp",
+        "caption": "SEVERITY 3 OF 5 \u00b7 MODERATE \u00b7 VERIFIEDSteep grade: a real barrier report expanded on the map.CURRENT EXPLORE SCREEN \u00b7 FLAGSTONE",
+        "gap": 48
+      },
+      "proof": {
+        "items": [
+          {
+            "x": 312,
+            "y": 242.4375,
+            "width": 340
+          },
+          {
+            "x": 676,
+            "y": 242.4375,
+            "width": 340
+          },
+          {
+            "x": 1040,
+            "y": 242.4375,
+            "width": 340
+          }
+        ],
+        "provenance": "Current Flagstone build \u00b7 captures in this repository since 2026-09-01 (1cfb4b1) \u00b7 capture dates not recorded",
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false
+          }
+        ]
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "targets": [
+              [
+                ".my-8"
+              ]
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "targets": [
+              [
+                ".text-step-2.font-normal[href=\"/\"]"
+              ],
+              [
+                ".link-draw-group"
+              ],
+              [
+                ".rail-trim.mt-1.gap-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".group-hover\\:translate-x-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".inline-block.link-draw[href$=\"work/\"]"
+              ],
+              [
+                "h1"
+              ],
+              [
+                ".max-w-full > span:nth-child(1)"
+              ],
+              [
+                "#the-problem"
+              ],
+              [
+                ".contents:nth-child(1) > .drop-cap.text-prose.leading-prose"
+              ],
+              [
+                "#the-approach"
+              ],
+              [
+                ".drop-cap.reveal-shown.text-prose"
+              ],
+              [
+                ".drop-cap.reveal-shown.text-prose > .underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]"
+              ],
+              [
+                ".mb-6"
+              ],
+              [
+                ".text-step-2.mb-8"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                ".mt-2.dark\\:text-ink.text-text-meta"
+              ],
+              [
+                "time[datetime=\"2026-09-01\"]"
+              ],
+              [
+                ".normal-case"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4)"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4) > em"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(5)"
+              ],
+              [
+                ".text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(6)"
+              ],
+              [
+                ".text-\\[12px\\]"
+              ],
+              [
+                "text[x=\"120\"]"
+              ],
+              [
+                "text[x=\"440\"]"
+              ],
+              [
+                "text[y=\"194\"]"
+              ],
+              [
+                ".contents:nth-child(2) > figure > figcaption"
+              ],
+              [
+                "figcaption > code"
+              ],
+              [
+                "#where-it-stands"
+              ],
+              [
+                ".contents:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(2)"
+              ],
+              [
+                ".contents:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(2) > .underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]:nth-child(1)"
+              ],
+              [
+                ".underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]:nth-child(2)"
+              ],
+              [
+                ".contents:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(3)"
+              ],
+              [
+                "#my-role"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(1) > .text-accent-ink.text-meta"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(1) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                ".text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\] > code"
+              ],
+              [
+                ".contents:nth-child(4) > .contents > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(3) > .text-accent-ink.text-meta"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(4) > .text-accent-ink.text-meta"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(4) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                "#what-went-wrong"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(2)"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(3)"
+              ],
+              [
+                ".text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(3) > em"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(4)"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(5)"
+              ],
+              [
+                "#reflection"
+              ],
+              [
+                "blockquote"
+              ],
+              [
+                ".method-draw"
+              ],
+              [
+                "time[datetime=\"2026-08-16\"]"
+              ],
+              [
+                ".self-start.text-near-black[href$=\"about/\"]"
+              ],
+              [
+                ".self-start.text-near-black[href$=\"about/\"] > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".text-step-4.ember.max-w-measure-heading"
+              ],
+              [
+                ".text-accent-ink.mb-4.text-label"
+              ],
+              [
+                ".z-10.max-w-content.mx-auto > .reveal-scene.reveal > .text-step-4.max-w-measure-heading.leading-heading"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .text-card-numeral.tabular-nums.text-ink\\/30"
+              ],
+              [
+                "a[data-door-target=\"/work/claude-corp/\"]"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .leading-body.text-ink-muted.text-body-sm"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .ml-auto.gap-x-6.items-center > .after\\:top-0.after\\:-bottom-\\[21px\\].px-1"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .text-card-numeral.tabular-nums.text-ink\\/30"
+              ],
+              [
+                "a[data-door-target=\"/work/dashboard/\"]"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .leading-body.text-ink-muted.text-body-sm"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .ml-auto.gap-x-6.items-center > .after\\:top-0.after\\:-bottom-\\[21px\\].px-1"
+              ],
+              [
+                ".text-step-3"
+              ],
+              [
+                ".min-h-11.-mx-2[href=\"/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"work/\"]"
+              ],
+              [
+                "a[href$=\"certificates/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"about/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"blog/\"]"
+              ],
+              [
+                "a[href$=\"accessibility/\"]"
+              ],
+              [
+                "a[href$=\"colophon/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"contact/\"]"
+              ],
+              [
+                ".gap-1.self-start[target=\"_blank\"] > span:nth-child(1)"
+              ],
+              [
+                ".break-all"
+              ],
+              [
+                "a[href$=\"skypie99\"] > span:nth-child(1)"
+              ],
+              [
+                "li:nth-child(3) > .gap-1[target=\"_blank\"][rel=\"noopener noreferrer\"] > span:nth-child(1)"
+              ]
+            ]
+          },
+          {
+            "id": "video-caption",
+            "impact": "critical",
+            "targets": [
+              [
+                "video"
+              ]
+            ]
+          }
+        ],
+        "passes": 27
+      },
+      "keyboardTabs": 18,
+      "focus": {
+        "name": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "focusVisible": true,
+        "outline": "rgb(185, 99, 64) solid 2px",
+        "width": "2px",
+        "color": "rgb(185, 99, 64)",
+        "notObscured": true
+      },
+      "play": {
+        "paused": false,
+        "time": 1.12825
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "chromium-1440-light-nojs",
+      "engine": "chromium",
+      "browserVersion": "151.0.7922.34",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "light",
+      "mode": "nojs",
+      "failures": [],
+      "initial": {
+        "dark": false,
+        "js": false,
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false,
+            "controls": true
+          }
+        ]
+      },
+      "hero": {
+        "width": 240.671875,
+        "height": 522.9375,
+        "screenWidth": 240.671875,
+        "screenHeight": 522.9375,
+        "naturalWidth": 1290,
+        "naturalHeight": 2803,
+        "complete": true,
+        "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+        "src": "/showcase/flagstone/explore-current.phone.webp",
+        "caption": "SEVERITY 3 OF 5 \u00b7 MODERATE \u00b7 VERIFIEDSteep grade: a real barrier report expanded on the map.CURRENT EXPLORE SCREEN \u00b7 FLAGSTONE",
+        "gap": 48
+      },
+      "proof": {
+        "items": [
+          {
+            "x": 312,
+            "y": 242.4375,
+            "width": 340
+          },
+          {
+            "x": 676,
+            "y": 242.4375,
+            "width": 340
+          },
+          {
+            "x": 1040,
+            "y": 242.4375,
+            "width": 340
+          }
+        ],
+        "provenance": "Current Flagstone build \u00b7 captures in this repository since 2026-09-01 (1cfb4b1) \u00b7 capture dates not recorded",
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false
+          }
+        ]
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "chromium-1440-dark-normal",
+      "engine": "chromium",
+      "browserVersion": "151.0.7922.34",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "dark",
+      "mode": "normal",
+      "failures": [],
+      "initial": {
+        "dark": true,
+        "js": true,
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false,
+            "controls": false
+          }
+        ]
+      },
+      "hero": {
+        "width": 240.671875,
+        "height": 522.9375,
+        "screenWidth": 240.671875,
+        "screenHeight": 522.9375,
+        "naturalWidth": 1290,
+        "naturalHeight": 2803,
+        "complete": true,
+        "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+        "src": "/showcase/flagstone/explore-current.phone.webp",
+        "caption": "SEVERITY 3 OF 5 \u00b7 MODERATE \u00b7 VERIFIEDSteep grade: a real barrier report expanded on the map.CURRENT EXPLORE SCREEN \u00b7 FLAGSTONE",
+        "gap": 48
+      },
+      "proof": {
+        "items": [
+          {
+            "x": 312,
+            "y": 242.4375,
+            "width": 340
+          },
+          {
+            "x": 676,
+            "y": 242.4375,
+            "width": 340
+          },
+          {
+            "x": 1040,
+            "y": 242.4375,
+            "width": 340
+          }
+        ],
+        "provenance": "Current Flagstone build \u00b7 captures in this repository since 2026-09-01 (1cfb4b1) \u00b7 capture dates not recorded",
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false
+          }
+        ]
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "targets": [
+              [
+                ".my-8"
+              ]
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "targets": [
+              [
+                ".text-step-2.font-normal[href=\"/\"]"
+              ],
+              [
+                ".link-draw-group"
+              ],
+              [
+                ".rail-trim.mt-1.gap-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".group-hover\\:translate-x-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".inline-block.link-draw[href$=\"work/\"]"
+              ],
+              [
+                "h1"
+              ],
+              [
+                ".drop-cap.reveal-shown.text-prose"
+              ],
+              [
+                ".drop-cap.reveal-shown.text-prose > .underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]"
+              ],
+              [
+                ".mb-6"
+              ],
+              [
+                ".text-step-2.mb-8"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                ".mt-2.dark\\:text-ink.text-text-meta"
+              ],
+              [
+                "time[datetime=\"2026-09-01\"]"
+              ],
+              [
+                ".normal-case"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4)"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4) > em"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(5)"
+              ],
+              [
+                ".text-\\[12px\\]"
+              ],
+              [
+                "text[x=\"120\"]"
+              ],
+              [
+                "text[x=\"440\"]"
+              ],
+              [
+                "text[y=\"194\"]"
+              ],
+              [
+                ".contents:nth-child(2) > figure > figcaption"
+              ],
+              [
+                "figcaption > code"
+              ],
+              [
+                ".method-draw"
+              ],
+              [
+                "time[datetime=\"2026-08-16\"]"
+              ]
+            ]
+          },
+          {
+            "id": "video-caption",
+            "impact": "critical",
+            "targets": [
+              [
+                "video"
+              ]
+            ]
+          }
+        ],
+        "passes": 27
+      },
+      "keyboardTabs": 18,
+      "focus": {
+        "name": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "focusVisible": true,
+        "outline": "rgb(231, 181, 147) solid 2px",
+        "width": "2px",
+        "color": "rgb(231, 181, 147)",
+        "notObscured": true
+      },
+      "play": {
+        "paused": false,
+        "time": 1.109908
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "chromium-1440-dark-reduce",
+      "engine": "chromium",
+      "browserVersion": "151.0.7922.34",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "dark",
+      "mode": "reduce",
+      "failures": [],
+      "initial": {
+        "dark": true,
+        "js": true,
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false,
+            "controls": false
+          }
+        ]
+      },
+      "hero": {
+        "width": 240.671875,
+        "height": 522.9375,
+        "screenWidth": 240.671875,
+        "screenHeight": 522.9375,
+        "naturalWidth": 1290,
+        "naturalHeight": 2803,
+        "complete": true,
+        "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+        "src": "/showcase/flagstone/explore-current.phone.webp",
+        "caption": "SEVERITY 3 OF 5 \u00b7 MODERATE \u00b7 VERIFIEDSteep grade: a real barrier report expanded on the map.CURRENT EXPLORE SCREEN \u00b7 FLAGSTONE",
+        "gap": 48
+      },
+      "proof": {
+        "items": [
+          {
+            "x": 312,
+            "y": 242.4375,
+            "width": 340
+          },
+          {
+            "x": 676,
+            "y": 242.4375,
+            "width": 340
+          },
+          {
+            "x": 1040,
+            "y": 242.4375,
+            "width": 340
+          }
+        ],
+        "provenance": "Current Flagstone build \u00b7 captures in this repository since 2026-09-01 (1cfb4b1) \u00b7 capture dates not recorded",
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false
+          }
+        ]
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "targets": [
+              [
+                ".my-8"
+              ]
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "targets": [
+              [
+                ".text-step-2.font-normal[href=\"/\"]"
+              ],
+              [
+                ".link-draw-group"
+              ],
+              [
+                ".rail-trim.mt-1.gap-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".group-hover\\:translate-x-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".inline-block.link-draw[href$=\"work/\"]"
+              ],
+              [
+                "h1"
+              ],
+              [
+                ".max-w-full > span:nth-child(1)"
+              ],
+              [
+                "#the-problem"
+              ],
+              [
+                ".contents:nth-child(1) > .drop-cap.text-prose.leading-prose"
+              ],
+              [
+                "#the-approach"
+              ],
+              [
+                ".drop-cap.reveal-shown.text-prose"
+              ],
+              [
+                ".drop-cap.reveal-shown.text-prose > .underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]"
+              ],
+              [
+                ".mb-6"
+              ],
+              [
+                ".text-step-2.mb-8"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                ".mt-2.dark\\:text-ink.text-text-meta"
+              ],
+              [
+                "time[datetime=\"2026-09-01\"]"
+              ],
+              [
+                ".normal-case"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4)"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4) > em"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(5)"
+              ],
+              [
+                ".text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(6)"
+              ],
+              [
+                ".text-\\[12px\\]"
+              ],
+              [
+                "text[x=\"120\"]"
+              ],
+              [
+                "text[x=\"440\"]"
+              ],
+              [
+                "text[y=\"194\"]"
+              ],
+              [
+                ".contents:nth-child(2) > figure > figcaption"
+              ],
+              [
+                "figcaption > code"
+              ],
+              [
+                "#where-it-stands"
+              ],
+              [
+                ".contents:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(2)"
+              ],
+              [
+                ".contents:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(2) > .underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]:nth-child(1)"
+              ],
+              [
+                ".underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]:nth-child(2)"
+              ],
+              [
+                ".contents:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(3)"
+              ],
+              [
+                "#my-role"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(1) > .text-accent-ink.text-meta"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(1) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                ".text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\] > code"
+              ],
+              [
+                ".contents:nth-child(4) > .contents > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(3) > .text-accent-ink.text-meta"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(4) > .text-accent-ink.text-meta"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(4) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                "#what-went-wrong"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(2)"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(3)"
+              ],
+              [
+                ".text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(3) > em"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(4)"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(5)"
+              ],
+              [
+                "#reflection"
+              ],
+              [
+                "blockquote"
+              ],
+              [
+                ".method-draw"
+              ],
+              [
+                "time[datetime=\"2026-08-16\"]"
+              ],
+              [
+                ".self-start.text-near-black[href$=\"about/\"]"
+              ],
+              [
+                ".self-start.text-near-black[href$=\"about/\"] > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".text-step-4.ember.max-w-measure-heading"
+              ],
+              [
+                ".text-accent-ink.mb-4.text-label"
+              ],
+              [
+                ".z-10.max-w-content.mx-auto > .reveal-scene.reveal > .text-step-4.max-w-measure-heading.leading-heading"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .text-card-numeral.tabular-nums.text-ink\\/30"
+              ],
+              [
+                "a[data-door-target=\"/work/claude-corp/\"]"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .leading-body.text-ink-muted.text-body-sm"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .ml-auto.gap-x-6.items-center > .after\\:top-0.after\\:-bottom-\\[21px\\].px-1"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .text-card-numeral.tabular-nums.text-ink\\/30"
+              ],
+              [
+                "a[data-door-target=\"/work/dashboard/\"]"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .leading-body.text-ink-muted.text-body-sm"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .ml-auto.gap-x-6.items-center > .after\\:top-0.after\\:-bottom-\\[21px\\].px-1"
+              ],
+              [
+                ".text-step-3"
+              ],
+              [
+                ".min-h-11.-mx-2[href=\"/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"work/\"]"
+              ],
+              [
+                "a[href$=\"certificates/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"about/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"blog/\"]"
+              ],
+              [
+                "a[href$=\"accessibility/\"]"
+              ],
+              [
+                "a[href$=\"colophon/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"contact/\"]"
+              ],
+              [
+                ".gap-1.self-start[target=\"_blank\"] > span:nth-child(1)"
+              ],
+              [
+                ".break-all"
+              ],
+              [
+                "a[href$=\"skypie99\"] > span:nth-child(1)"
+              ],
+              [
+                "li:nth-child(3) > .gap-1[target=\"_blank\"][rel=\"noopener noreferrer\"] > span:nth-child(1)"
+              ]
+            ]
+          },
+          {
+            "id": "video-caption",
+            "impact": "critical",
+            "targets": [
+              [
+                "video"
+              ]
+            ]
+          }
+        ],
+        "passes": 27
+      },
+      "keyboardTabs": 18,
+      "focus": {
+        "name": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "focusVisible": true,
+        "outline": "rgb(231, 181, 147) solid 2px",
+        "width": "2px",
+        "color": "rgb(231, 181, 147)",
+        "notObscured": true
+      },
+      "play": {
+        "paused": false,
+        "time": 1.168891
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "chromium-1440-dark-nojs",
+      "engine": "chromium",
+      "browserVersion": "151.0.7922.34",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "dark",
+      "mode": "nojs",
+      "failures": [],
+      "initial": {
+        "dark": false,
+        "js": false,
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false,
+            "controls": true
+          }
+        ]
+      },
+      "hero": {
+        "width": 240.671875,
+        "height": 522.9375,
+        "screenWidth": 240.671875,
+        "screenHeight": 522.9375,
+        "naturalWidth": 1290,
+        "naturalHeight": 2803,
+        "complete": true,
+        "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+        "src": "/showcase/flagstone/explore-current.phone.webp",
+        "caption": "SEVERITY 3 OF 5 \u00b7 MODERATE \u00b7 VERIFIEDSteep grade: a real barrier report expanded on the map.CURRENT EXPLORE SCREEN \u00b7 FLAGSTONE",
+        "gap": 48
+      },
+      "proof": {
+        "items": [
+          {
+            "x": 312,
+            "y": 242.4375,
+            "width": 340
+          },
+          {
+            "x": 676,
+            "y": 242.4375,
+            "width": 340
+          },
+          {
+            "x": 1040,
+            "y": 242.4375,
+            "width": 340
+          }
+        ],
+        "provenance": "Current Flagstone build \u00b7 captures in this repository since 2026-09-01 (1cfb4b1) \u00b7 capture dates not recorded",
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false
+          }
+        ]
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "chromium-393-light-normal",
+      "engine": "chromium",
+      "browserVersion": "151.0.7922.34",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "requestedTheme": "light",
+      "mode": "normal",
+      "failures": [],
+      "initial": {
+        "dark": false,
+        "js": true,
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false,
+            "controls": false
+          }
+        ]
+      },
+      "hero": {
+        "width": 217.4375,
+        "height": 472.453125,
+        "screenWidth": 217.4375,
+        "screenHeight": 472.453125,
+        "naturalWidth": 1290,
+        "naturalHeight": 2803,
+        "complete": true,
+        "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+        "src": "/showcase/flagstone/explore-current.phone.webp",
+        "caption": "SEVERITY 3 OF 5 \u00b7 MODERATE \u00b7 VERIFIEDSteep grade: a real barrier report expanded on the map.CURRENT EXPLORE SCREEN \u00b7 FLAGSTONE",
+        "gap": 28
+      },
+      "proof": {
+        "items": [
+          {
+            "x": 32,
+            "y": -313.828125,
+            "width": 329
+          },
+          {
+            "x": 32,
+            "y": 209.796875,
+            "width": 329
+          },
+          {
+            "x": 32,
+            "y": 733.421875,
+            "width": 329
+          }
+        ],
+        "provenance": "Current Flagstone build \u00b7 captures in this repository since 2026-09-01 (1cfb4b1) \u00b7 capture dates not recorded",
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false
+          }
+        ]
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "targets": [
+              [
+                ".my-8"
+              ]
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "targets": [
+              [
+                ".inline-block.link-draw[href$=\"work/\"]"
+              ],
+              [
+                "h1"
+              ],
+              [
+                ".md\\:max-lg\\:col-span-2.pt-8.border-border-decorative:nth-child(4) > .mb-3.text-text-meta.text-meta"
+              ],
+              [
+                "li:nth-child(1) > .bg-emerald\\/25.text-cool-deep.px-3"
+              ],
+              [
+                "li:nth-child(2) > .bg-cool-mid\\/35.text-cool-deep.px-3"
+              ],
+              [
+                ".bg-rose\\/30"
+              ],
+              [
+                ".mb-6"
+              ],
+              [
+                ".text-step-2.mb-8"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                ".mt-2.dark\\:text-ink.text-text-meta"
+              ],
+              [
+                "time[datetime=\"2026-09-01\"]"
+              ],
+              [
+                ".normal-case"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4)"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4) > em"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(5)"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(6)"
+              ],
+              [
+                ".text-\\[12px\\]"
+              ],
+              [
+                "text[x=\"120\"]"
+              ],
+              [
+                "text[x=\"440\"]"
+              ],
+              [
+                "text[y=\"194\"]"
+              ],
+              [
+                ".contents:nth-child(2) > figure > figcaption"
+              ],
+              [
+                "figcaption > code"
+              ],
+              [
+                ".method-pair"
+              ],
+              [
+                ".method-pair > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".method-draw"
+              ],
+              [
+                "time[datetime=\"2026-08-16\"]"
+              ]
+            ]
+          },
+          {
+            "id": "video-caption",
+            "impact": "critical",
+            "targets": [
+              [
+                "video"
+              ]
+            ]
+          }
+        ],
+        "passes": 26
+      },
+      "keyboardTabs": 8,
+      "focus": {
+        "name": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "focusVisible": true,
+        "outline": "rgb(185, 99, 64) solid 2px",
+        "width": "2px",
+        "color": "rgb(185, 99, 64)",
+        "notObscured": true
+      },
+      "play": {
+        "paused": false,
+        "time": 1.115364
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "chromium-393-light-reduce",
+      "engine": "chromium",
+      "browserVersion": "151.0.7922.34",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "requestedTheme": "light",
+      "mode": "reduce",
+      "failures": [],
+      "initial": {
+        "dark": false,
+        "js": true,
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false,
+            "controls": false
+          }
+        ]
+      },
+      "hero": {
+        "width": 217.4375,
+        "height": 472.453125,
+        "screenWidth": 217.4375,
+        "screenHeight": 472.453125,
+        "naturalWidth": 1290,
+        "naturalHeight": 2803,
+        "complete": true,
+        "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+        "src": "/showcase/flagstone/explore-current.phone.webp",
+        "caption": "SEVERITY 3 OF 5 \u00b7 MODERATE \u00b7 VERIFIEDSteep grade: a real barrier report expanded on the map.CURRENT EXPLORE SCREEN \u00b7 FLAGSTONE",
+        "gap": 28
+      },
+      "proof": {
+        "items": [
+          {
+            "x": 32,
+            "y": -313.828125,
+            "width": 329
+          },
+          {
+            "x": 32,
+            "y": 209.796875,
+            "width": 329
+          },
+          {
+            "x": 32,
+            "y": 733.421875,
+            "width": 329
+          }
+        ],
+        "provenance": "Current Flagstone build \u00b7 captures in this repository since 2026-09-01 (1cfb4b1) \u00b7 capture dates not recorded",
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false
+          }
+        ]
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "targets": [
+              [
+                ".my-8"
+              ]
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "targets": [
+              [
+                ".inline-block.link-draw[href$=\"work/\"]"
+              ],
+              [
+                "h1"
+              ],
+              [
+                ".max-w-full > span:nth-child(1)"
+              ],
+              [
+                ".md\\:max-lg\\:col-span-2.pt-8.border-border-decorative:nth-child(4) > .mb-3.text-text-meta.text-meta"
+              ],
+              [
+                "li:nth-child(1) > .bg-emerald\\/25.text-cool-deep.px-3"
+              ],
+              [
+                "li:nth-child(2) > .bg-cool-mid\\/35.text-cool-deep.px-3"
+              ],
+              [
+                ".bg-rose\\/30"
+              ],
+              [
+                "#the-problem"
+              ],
+              [
+                ".contents:nth-child(1) > .drop-cap.text-prose.leading-prose"
+              ],
+              [
+                "#the-approach"
+              ],
+              [
+                ".contents:nth-child(2) > .drop-cap.text-prose.leading-prose"
+              ],
+              [
+                ".drop-cap.text-prose.leading-prose > .underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]"
+              ],
+              [
+                ".mb-6"
+              ],
+              [
+                ".text-step-2.mb-8"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                ".mt-2.dark\\:text-ink.text-text-meta"
+              ],
+              [
+                "time[datetime=\"2026-09-01\"]"
+              ],
+              [
+                ".normal-case"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4)"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4) > em"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(5)"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(6)"
+              ],
+              [
+                ".text-\\[12px\\]"
+              ],
+              [
+                "text[x=\"120\"]"
+              ],
+              [
+                "text[x=\"440\"]"
+              ],
+              [
+                "text[y=\"194\"]"
+              ],
+              [
+                ".contents:nth-child(2) > figure > figcaption"
+              ],
+              [
+                "figcaption > code"
+              ],
+              [
+                "#where-it-stands"
+              ],
+              [
+                ".contents:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(2)"
+              ],
+              [
+                ".contents:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(2) > .underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]:nth-child(1)"
+              ],
+              [
+                ".underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]:nth-child(2)"
+              ],
+              [
+                ".contents:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(3)"
+              ],
+              [
+                "#my-role"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(1) > .text-accent-ink.text-meta"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(1) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                ".text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\] > code"
+              ],
+              [
+                ".contents:nth-child(4) > .contents > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(3) > .text-accent-ink.text-meta"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(4) > .text-accent-ink.text-meta"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(4) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                "#what-went-wrong"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(2)"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(3)"
+              ],
+              [
+                ".text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(3) > em"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(4)"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(5)"
+              ],
+              [
+                "#reflection"
+              ],
+              [
+                "blockquote"
+              ],
+              [
+                ".method-pair"
+              ],
+              [
+                ".method-pair > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".method-draw"
+              ],
+              [
+                "time[datetime=\"2026-08-16\"]"
+              ],
+              [
+                ".self-start.text-near-black[href$=\"about/\"]"
+              ],
+              [
+                ".self-start.text-near-black[href$=\"about/\"] > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".text-step-4.ember.max-w-measure-heading"
+              ],
+              [
+                ".text-accent-ink.mb-4.text-label"
+              ],
+              [
+                ".z-10.max-w-content.mx-auto > .reveal-scene.reveal > .text-step-4.max-w-measure-heading.leading-heading"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .text-card-numeral.tabular-nums.text-ink\\/30"
+              ],
+              [
+                "a[data-door-target=\"/work/claude-corp/\"]"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .leading-body.text-ink-muted.text-body-sm"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .ml-auto.gap-x-6.items-center > .after\\:top-0.after\\:-bottom-\\[21px\\].px-1"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .text-card-numeral.tabular-nums.text-ink\\/30"
+              ],
+              [
+                "a[data-door-target=\"/work/dashboard/\"]"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .leading-body.text-ink-muted.text-body-sm"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .ml-auto.gap-x-6.items-center > .after\\:top-0.after\\:-bottom-\\[21px\\].px-1"
+              ],
+              [
+                ".text-step-3"
+              ],
+              [
+                ".min-h-11.-mx-2[href=\"/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"work/\"]"
+              ],
+              [
+                "a[href$=\"certificates/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"about/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"blog/\"]"
+              ],
+              [
+                "a[href$=\"accessibility/\"]"
+              ],
+              [
+                "a[href$=\"colophon/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"contact/\"]"
+              ],
+              [
+                ".gap-1.self-start[target=\"_blank\"] > span:nth-child(1)"
+              ],
+              [
+                ".break-all"
+              ],
+              [
+                "a[href$=\"skypie99\"] > span:nth-child(1)"
+              ],
+              [
+                "li:nth-child(3) > .gap-1[target=\"_blank\"][rel=\"noopener noreferrer\"] > span:nth-child(1)"
+              ]
+            ]
+          },
+          {
+            "id": "video-caption",
+            "impact": "critical",
+            "targets": [
+              [
+                "video"
+              ]
+            ]
+          }
+        ],
+        "passes": 27
+      },
+      "keyboardTabs": 8,
+      "focus": {
+        "name": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "focusVisible": true,
+        "outline": "rgb(185, 99, 64) solid 2px",
+        "width": "2px",
+        "color": "rgb(185, 99, 64)",
+        "notObscured": true
+      },
+      "play": {
+        "paused": false,
+        "time": 1.186089
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "chromium-393-light-nojs",
+      "engine": "chromium",
+      "browserVersion": "151.0.7922.34",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "requestedTheme": "light",
+      "mode": "nojs",
+      "failures": [],
+      "initial": {
+        "dark": false,
+        "js": false,
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false,
+            "controls": true
+          }
+        ]
+      },
+      "hero": {
+        "width": 217.4375,
+        "height": 472.453125,
+        "screenWidth": 217.4375,
+        "screenHeight": 472.453125,
+        "naturalWidth": 1290,
+        "naturalHeight": 2803,
+        "complete": true,
+        "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+        "src": "/showcase/flagstone/explore-current.phone.webp",
+        "caption": "SEVERITY 3 OF 5 \u00b7 MODERATE \u00b7 VERIFIEDSteep grade: a real barrier report expanded on the map.CURRENT EXPLORE SCREEN \u00b7 FLAGSTONE",
+        "gap": 28
+      },
+      "proof": {
+        "items": [
+          {
+            "x": 32,
+            "y": -313.828125,
+            "width": 329
+          },
+          {
+            "x": 32,
+            "y": 209.796875,
+            "width": 329
+          },
+          {
+            "x": 32,
+            "y": 733.421875,
+            "width": 329
+          }
+        ],
+        "provenance": "Current Flagstone build \u00b7 captures in this repository since 2026-09-01 (1cfb4b1) \u00b7 capture dates not recorded",
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false
+          }
+        ]
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "chromium-393-dark-normal",
+      "engine": "chromium",
+      "browserVersion": "151.0.7922.34",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "requestedTheme": "dark",
+      "mode": "normal",
+      "failures": [],
+      "initial": {
+        "dark": true,
+        "js": true,
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false,
+            "controls": false
+          }
+        ]
+      },
+      "hero": {
+        "width": 217.4375,
+        "height": 472.453125,
+        "screenWidth": 217.4375,
+        "screenHeight": 472.453125,
+        "naturalWidth": 1290,
+        "naturalHeight": 2803,
+        "complete": true,
+        "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+        "src": "/showcase/flagstone/explore-current.phone.webp",
+        "caption": "SEVERITY 3 OF 5 \u00b7 MODERATE \u00b7 VERIFIEDSteep grade: a real barrier report expanded on the map.CURRENT EXPLORE SCREEN \u00b7 FLAGSTONE",
+        "gap": 28
+      },
+      "proof": {
+        "items": [
+          {
+            "x": 32,
+            "y": -313.828125,
+            "width": 329
+          },
+          {
+            "x": 32,
+            "y": 209.796875,
+            "width": 329
+          },
+          {
+            "x": 32,
+            "y": 733.421875,
+            "width": 329
+          }
+        ],
+        "provenance": "Current Flagstone build \u00b7 captures in this repository since 2026-09-01 (1cfb4b1) \u00b7 capture dates not recorded",
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false
+          }
+        ]
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "targets": [
+              [
+                ".my-8"
+              ]
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "targets": [
+              [
+                ".inline-block.link-draw[href$=\"work/\"]"
+              ],
+              [
+                "h1"
+              ],
+              [
+                ".md\\:max-lg\\:col-span-2.pt-8.border-border-decorative:nth-child(4) > .mb-3.text-text-meta.text-meta"
+              ],
+              [
+                "li:nth-child(1) > .bg-emerald\\/25.text-cool-deep.px-3"
+              ],
+              [
+                "li:nth-child(2) > .bg-cool-mid\\/35.text-cool-deep.px-3"
+              ],
+              [
+                ".bg-rose\\/30"
+              ],
+              [
+                ".mb-6"
+              ],
+              [
+                ".text-step-2.mb-8"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                ".mt-2.dark\\:text-ink.text-text-meta"
+              ],
+              [
+                "time[datetime=\"2026-09-01\"]"
+              ],
+              [
+                ".normal-case"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4)"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4) > em"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(5)"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(6)"
+              ],
+              [
+                ".text-\\[12px\\]"
+              ],
+              [
+                "text[x=\"120\"]"
+              ],
+              [
+                "text[x=\"440\"]"
+              ],
+              [
+                "text[y=\"194\"]"
+              ],
+              [
+                ".contents:nth-child(2) > figure > figcaption"
+              ],
+              [
+                "figcaption > code"
+              ],
+              [
+                ".method-pair"
+              ],
+              [
+                ".method-pair > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".method-draw"
+              ],
+              [
+                "time[datetime=\"2026-08-16\"]"
+              ]
+            ]
+          },
+          {
+            "id": "video-caption",
+            "impact": "critical",
+            "targets": [
+              [
+                "video"
+              ]
+            ]
+          }
+        ],
+        "passes": 26
+      },
+      "keyboardTabs": 8,
+      "focus": {
+        "name": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "focusVisible": true,
+        "outline": "rgb(231, 181, 147) solid 2px",
+        "width": "2px",
+        "color": "rgb(231, 181, 147)",
+        "notObscured": true
+      },
+      "play": {
+        "paused": false,
+        "time": 1.111921
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "chromium-393-dark-reduce",
+      "engine": "chromium",
+      "browserVersion": "151.0.7922.34",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "requestedTheme": "dark",
+      "mode": "reduce",
+      "failures": [],
+      "initial": {
+        "dark": true,
+        "js": true,
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false,
+            "controls": false
+          }
+        ]
+      },
+      "hero": {
+        "width": 217.4375,
+        "height": 472.453125,
+        "screenWidth": 217.4375,
+        "screenHeight": 472.453125,
+        "naturalWidth": 1290,
+        "naturalHeight": 2803,
+        "complete": true,
+        "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+        "src": "/showcase/flagstone/explore-current.phone.webp",
+        "caption": "SEVERITY 3 OF 5 \u00b7 MODERATE \u00b7 VERIFIEDSteep grade: a real barrier report expanded on the map.CURRENT EXPLORE SCREEN \u00b7 FLAGSTONE",
+        "gap": 28
+      },
+      "proof": {
+        "items": [
+          {
+            "x": 32,
+            "y": -313.828125,
+            "width": 329
+          },
+          {
+            "x": 32,
+            "y": 209.796875,
+            "width": 329
+          },
+          {
+            "x": 32,
+            "y": 733.421875,
+            "width": 329
+          }
+        ],
+        "provenance": "Current Flagstone build \u00b7 captures in this repository since 2026-09-01 (1cfb4b1) \u00b7 capture dates not recorded",
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false
+          }
+        ]
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "targets": [
+              [
+                ".my-8"
+              ]
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "targets": [
+              [
+                ".inline-block.link-draw[href$=\"work/\"]"
+              ],
+              [
+                "h1"
+              ],
+              [
+                ".max-w-full > span:nth-child(1)"
+              ],
+              [
+                ".md\\:max-lg\\:col-span-2.pt-8.border-border-decorative:nth-child(4) > .mb-3.text-text-meta.text-meta"
+              ],
+              [
+                "li:nth-child(1) > .bg-emerald\\/25.text-cool-deep.px-3"
+              ],
+              [
+                "li:nth-child(2) > .bg-cool-mid\\/35.text-cool-deep.px-3"
+              ],
+              [
+                ".bg-rose\\/30"
+              ],
+              [
+                "#the-problem"
+              ],
+              [
+                ".contents:nth-child(1) > .drop-cap.text-prose.leading-prose"
+              ],
+              [
+                "#the-approach"
+              ],
+              [
+                ".contents:nth-child(2) > .drop-cap.text-prose.leading-prose"
+              ],
+              [
+                ".drop-cap.text-prose.leading-prose > .underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]"
+              ],
+              [
+                ".mb-6"
+              ],
+              [
+                ".text-step-2.mb-8"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                ".mt-2.dark\\:text-ink.text-text-meta"
+              ],
+              [
+                "time[datetime=\"2026-09-01\"]"
+              ],
+              [
+                ".normal-case"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4)"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4) > em"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(5)"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(6)"
+              ],
+              [
+                ".text-\\[12px\\]"
+              ],
+              [
+                "text[x=\"120\"]"
+              ],
+              [
+                "text[x=\"440\"]"
+              ],
+              [
+                "text[y=\"194\"]"
+              ],
+              [
+                ".contents:nth-child(2) > figure > figcaption"
+              ],
+              [
+                "figcaption > code"
+              ],
+              [
+                "#where-it-stands"
+              ],
+              [
+                ".contents:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(2)"
+              ],
+              [
+                ".contents:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(2) > .underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]:nth-child(1)"
+              ],
+              [
+                ".underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]:nth-child(2)"
+              ],
+              [
+                ".contents:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(3)"
+              ],
+              [
+                "#my-role"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(1) > .text-accent-ink.text-meta"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(1) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                ".text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\] > code"
+              ],
+              [
+                ".contents:nth-child(4) > .contents > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(3) > .text-accent-ink.text-meta"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(4) > .text-accent-ink.text-meta"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(4) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                "#what-went-wrong"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(2)"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(3)"
+              ],
+              [
+                ".text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(3) > em"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(4)"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(5)"
+              ],
+              [
+                "#reflection"
+              ],
+              [
+                "blockquote"
+              ],
+              [
+                ".method-pair"
+              ],
+              [
+                ".method-pair > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".method-draw"
+              ],
+              [
+                "time[datetime=\"2026-08-16\"]"
+              ],
+              [
+                ".self-start.text-near-black[href$=\"about/\"]"
+              ],
+              [
+                ".self-start.text-near-black[href$=\"about/\"] > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".text-step-4.ember.max-w-measure-heading"
+              ],
+              [
+                ".text-accent-ink.mb-4.text-label"
+              ],
+              [
+                ".z-10.max-w-content.mx-auto > .reveal-scene.reveal > .text-step-4.max-w-measure-heading.leading-heading"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .text-card-numeral.tabular-nums.text-ink\\/30"
+              ],
+              [
+                "a[data-door-target=\"/work/claude-corp/\"]"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .leading-body.text-ink-muted.text-body-sm"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .ml-auto.gap-x-6.items-center > .after\\:top-0.after\\:-bottom-\\[21px\\].px-1"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .text-card-numeral.tabular-nums.text-ink\\/30"
+              ],
+              [
+                "a[data-door-target=\"/work/dashboard/\"]"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .leading-body.text-ink-muted.text-body-sm"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .ml-auto.gap-x-6.items-center > .after\\:top-0.after\\:-bottom-\\[21px\\].px-1"
+              ],
+              [
+                ".text-step-3"
+              ],
+              [
+                ".min-h-11.-mx-2[href=\"/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"work/\"]"
+              ],
+              [
+                "a[href$=\"certificates/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"about/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"blog/\"]"
+              ],
+              [
+                "a[href$=\"accessibility/\"]"
+              ],
+              [
+                "a[href$=\"colophon/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"contact/\"]"
+              ],
+              [
+                ".gap-1.self-start[target=\"_blank\"] > span:nth-child(1)"
+              ],
+              [
+                ".break-all"
+              ],
+              [
+                "a[href$=\"skypie99\"] > span:nth-child(1)"
+              ],
+              [
+                "li:nth-child(3) > .gap-1[target=\"_blank\"][rel=\"noopener noreferrer\"] > span:nth-child(1)"
+              ]
+            ]
+          },
+          {
+            "id": "video-caption",
+            "impact": "critical",
+            "targets": [
+              [
+                "video"
+              ]
+            ]
+          }
+        ],
+        "passes": 27
+      },
+      "keyboardTabs": 8,
+      "focus": {
+        "name": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "focusVisible": true,
+        "outline": "rgb(231, 181, 147) solid 2px",
+        "width": "2px",
+        "color": "rgb(231, 181, 147)",
+        "notObscured": true
+      },
+      "play": {
+        "paused": false,
+        "time": 1.142349
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "chromium-393-dark-nojs",
+      "engine": "chromium",
+      "browserVersion": "151.0.7922.34",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "requestedTheme": "dark",
+      "mode": "nojs",
+      "failures": [],
+      "initial": {
+        "dark": false,
+        "js": false,
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false,
+            "controls": true
+          }
+        ]
+      },
+      "hero": {
+        "width": 217.4375,
+        "height": 472.453125,
+        "screenWidth": 217.4375,
+        "screenHeight": 472.453125,
+        "naturalWidth": 1290,
+        "naturalHeight": 2803,
+        "complete": true,
+        "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+        "src": "/showcase/flagstone/explore-current.phone.webp",
+        "caption": "SEVERITY 3 OF 5 \u00b7 MODERATE \u00b7 VERIFIEDSteep grade: a real barrier report expanded on the map.CURRENT EXPLORE SCREEN \u00b7 FLAGSTONE",
+        "gap": 28
+      },
+      "proof": {
+        "items": [
+          {
+            "x": 32,
+            "y": -313.828125,
+            "width": 329
+          },
+          {
+            "x": 32,
+            "y": 209.796875,
+            "width": 329
+          },
+          {
+            "x": 32,
+            "y": 733.421875,
+            "width": 329
+          }
+        ],
+        "provenance": "Current Flagstone build \u00b7 captures in this repository since 2026-09-01 (1cfb4b1) \u00b7 capture dates not recorded",
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false
+          }
+        ]
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "webkit-1440-light-normal",
+      "engine": "webkit",
+      "browserVersion": "26.5",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "light",
+      "mode": "normal",
+      "failures": [],
+      "initial": {
+        "dark": false,
+        "js": true,
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false,
+            "controls": false
+          }
+        ]
+      },
+      "hero": {
+        "width": 240.671875,
+        "height": 522.9375,
+        "screenWidth": 240.671875,
+        "screenHeight": 522.9375,
+        "naturalWidth": 1290,
+        "naturalHeight": 2803,
+        "complete": true,
+        "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+        "src": "/showcase/flagstone/explore-current.phone.webp",
+        "caption": "SEVERITY 3 OF 5 \u00b7 MODERATE \u00b7 VERIFIEDSteep grade: a real barrier report expanded on the map.CURRENT EXPLORE SCREEN \u00b7 FLAGSTONE",
+        "gap": 48
+      },
+      "proof": {
+        "items": [
+          {
+            "x": 312,
+            "y": 188.46875,
+            "width": 340
+          },
+          {
+            "x": 676,
+            "y": 188.46875,
+            "width": 340
+          },
+          {
+            "x": 1040,
+            "y": 188.46875,
+            "width": 340
+          }
+        ],
+        "provenance": "Current Flagstone build \u00b7 captures in this repository since 2026-09-01 (1cfb4b1) \u00b7 capture dates not recorded",
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false
+          }
+        ]
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "targets": [
+              [
+                ".my-8"
+              ]
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "targets": [
+              [
+                ".text-step-2.font-normal[href=\"/\"]"
+              ],
+              [
+                ".link-draw-group"
+              ],
+              [
+                ".rail-trim.mt-1.gap-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".group-hover\\:translate-x-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".inline-block.link-draw[href$=\"work/\"]"
+              ],
+              [
+                "h1"
+              ],
+              [
+                ".md\\:max-lg\\:col-span-2.pt-8.border-border-decorative:nth-child(4) > .mb-3.text-text-meta.text-meta"
+              ],
+              [
+                "li:nth-child(1) > .bg-emerald\\/25.text-cool-deep.px-3"
+              ],
+              [
+                "li:nth-child(2) > .bg-cool-mid\\/35.text-cool-deep.px-3"
+              ],
+              [
+                ".bg-rose\\/30"
+              ],
+              [
+                ".drop-cap.reveal-shown.text-prose"
+              ],
+              [
+                ".drop-cap.reveal-shown.text-prose > .underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]"
+              ],
+              [
+                ".mb-6"
+              ],
+              [
+                ".text-step-2.mb-8"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                ".mt-2.dark\\:text-ink.text-text-meta"
+              ],
+              [
+                "time[datetime=\"2026-09-01\"]"
+              ],
+              [
+                ".normal-case"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4)"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4) > em"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(5)"
+              ],
+              [
+                ".text-\\[12px\\]"
+              ],
+              [
+                "text[x=\"120\"]"
+              ],
+              [
+                "text[x=\"440\"]"
+              ],
+              [
+                "text[y=\"194\"]"
+              ],
+              [
+                ".contents:nth-child(2) > figure > figcaption"
+              ],
+              [
+                "figcaption > code"
+              ],
+              [
+                ".method-pair"
+              ],
+              [
+                ".method-pair > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".method-draw"
+              ],
+              [
+                "time[datetime=\"2026-08-16\"]"
+              ],
+              [
+                "#flagstone-test-count-method"
+              ]
+            ]
+          },
+          {
+            "id": "video-caption",
+            "impact": "critical",
+            "targets": [
+              [
+                "video"
+              ]
+            ]
+          }
+        ],
+        "passes": 27
+      },
+      "keyboardTabs": 18,
+      "focus": {
+        "name": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "focusVisible": true,
+        "outline": "2px solid rgb(185, 99, 64)",
+        "width": "2px",
+        "color": "rgb(185, 99, 64)",
+        "notObscured": true
+      },
+      "play": {
+        "paused": false,
+        "time": 0.09018712499981467
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "webkit-1440-light-reduce",
+      "engine": "webkit",
+      "browserVersion": "26.5",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "light",
+      "mode": "reduce",
+      "failures": [],
+      "initial": {
+        "dark": false,
+        "js": true,
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false,
+            "controls": false
+          }
+        ]
+      },
+      "hero": {
+        "width": 240.671875,
+        "height": 522.9375,
+        "screenWidth": 240.671875,
+        "screenHeight": 522.9375,
+        "naturalWidth": 1290,
+        "naturalHeight": 2803,
+        "complete": true,
+        "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+        "src": "/showcase/flagstone/explore-current.phone.webp",
+        "caption": "SEVERITY 3 OF 5 \u00b7 MODERATE \u00b7 VERIFIEDSteep grade: a real barrier report expanded on the map.CURRENT EXPLORE SCREEN \u00b7 FLAGSTONE",
+        "gap": 48
+      },
+      "proof": {
+        "items": [
+          {
+            "x": 312,
+            "y": 242.46875,
+            "width": 340
+          },
+          {
+            "x": 676,
+            "y": 242.46875,
+            "width": 340
+          },
+          {
+            "x": 1040,
+            "y": 242.46875,
+            "width": 340
+          }
+        ],
+        "provenance": "Current Flagstone build \u00b7 captures in this repository since 2026-09-01 (1cfb4b1) \u00b7 capture dates not recorded",
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false
+          }
+        ]
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "targets": [
+              [
+                ".my-8"
+              ]
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "targets": [
+              [
+                ".text-step-2.font-normal[href=\"/\"]"
+              ],
+              [
+                ".link-draw-group"
+              ],
+              [
+                ".rail-trim.mt-1.gap-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".group-hover\\:translate-x-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".inline-block.link-draw[href$=\"work/\"]"
+              ],
+              [
+                "h1"
+              ],
+              [
+                ".max-w-full > span:nth-child(1)"
+              ],
+              [
+                "#the-problem"
+              ],
+              [
+                ".contents:nth-child(1) > .drop-cap.text-prose.leading-prose"
+              ],
+              [
+                "#the-approach"
+              ],
+              [
+                ".drop-cap.reveal-shown.text-prose"
+              ],
+              [
+                ".drop-cap.reveal-shown.text-prose > .underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]"
+              ],
+              [
+                ".mb-6"
+              ],
+              [
+                ".text-step-2.mb-8"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                ".mt-2.dark\\:text-ink.text-text-meta"
+              ],
+              [
+                "time[datetime=\"2026-09-01\"]"
+              ],
+              [
+                ".normal-case"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4)"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4) > em"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(5)"
+              ],
+              [
+                ".text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(6)"
+              ],
+              [
+                ".text-\\[12px\\]"
+              ],
+              [
+                "text[x=\"120\"]"
+              ],
+              [
+                "text[x=\"440\"]"
+              ],
+              [
+                "text[y=\"194\"]"
+              ],
+              [
+                ".contents:nth-child(2) > figure > figcaption"
+              ],
+              [
+                "figcaption > code"
+              ],
+              [
+                "#where-it-stands"
+              ],
+              [
+                ".contents:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(2)"
+              ],
+              [
+                ".contents:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(2) > .underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]:nth-child(1)"
+              ],
+              [
+                ".underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]:nth-child(2)"
+              ],
+              [
+                ".contents:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(3)"
+              ],
+              [
+                "#my-role"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(1) > .text-accent-ink.text-meta"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(1) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                ".text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\] > code"
+              ],
+              [
+                ".contents:nth-child(4) > .contents > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(3) > .text-accent-ink.text-meta"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(4) > .text-accent-ink.text-meta"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(4) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                "#what-went-wrong"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(2)"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(3)"
+              ],
+              [
+                ".text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(3) > em"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(4)"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(5)"
+              ],
+              [
+                "#reflection"
+              ],
+              [
+                "blockquote"
+              ],
+              [
+                ".method-draw"
+              ],
+              [
+                "time[datetime=\"2026-08-16\"]"
+              ],
+              [
+                ".self-start.text-near-black[href$=\"about/\"]"
+              ],
+              [
+                ".self-start.text-near-black[href$=\"about/\"] > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".text-step-4.ember.max-w-measure-heading"
+              ],
+              [
+                ".text-accent-ink.mb-4.text-label"
+              ],
+              [
+                ".z-10.max-w-content.mx-auto > .reveal-scene.reveal > .text-step-4.max-w-measure-heading.leading-heading"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .text-card-numeral.tabular-nums.text-ink\\/30"
+              ],
+              [
+                "a[data-door-target=\"/work/claude-corp/\"]"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .leading-body.text-ink-muted.text-body-sm"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .ml-auto.gap-x-6.items-center > .after\\:top-0.after\\:-bottom-\\[21px\\].px-1"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .text-card-numeral.tabular-nums.text-ink\\/30"
+              ],
+              [
+                "a[data-door-target=\"/work/dashboard/\"]"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .leading-body.text-ink-muted.text-body-sm"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .ml-auto.gap-x-6.items-center > .after\\:top-0.after\\:-bottom-\\[21px\\].px-1"
+              ],
+              [
+                ".text-step-3"
+              ],
+              [
+                ".min-h-11.-mx-2[href=\"/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"work/\"]"
+              ],
+              [
+                "a[href$=\"certificates/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"about/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"blog/\"]"
+              ],
+              [
+                "a[href$=\"accessibility/\"]"
+              ],
+              [
+                "a[href$=\"colophon/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"contact/\"]"
+              ],
+              [
+                ".gap-1.self-start[target=\"_blank\"] > span:nth-child(1)"
+              ],
+              [
+                ".break-all"
+              ],
+              [
+                "a[href$=\"skypie99\"] > span:nth-child(1)"
+              ],
+              [
+                "li:nth-child(3) > .gap-1[target=\"_blank\"][rel=\"noopener noreferrer\"] > span:nth-child(1)"
+              ]
+            ]
+          },
+          {
+            "id": "video-caption",
+            "impact": "critical",
+            "targets": [
+              [
+                "video"
+              ]
+            ]
+          }
+        ],
+        "passes": 27
+      },
+      "keyboardTabs": 18,
+      "focus": {
+        "name": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "focusVisible": true,
+        "outline": "2px solid rgb(185, 99, 64)",
+        "width": "2px",
+        "color": "rgb(185, 99, 64)",
+        "notObscured": true
+      },
+      "play": {
+        "paused": false,
+        "time": 0.024288791665875352
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "webkit-1440-light-nojs",
+      "engine": "webkit",
+      "browserVersion": "26.5",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "light",
+      "mode": "nojs",
+      "failures": [],
+      "initial": {
+        "dark": false,
+        "js": false,
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false,
+            "controls": true
+          }
+        ]
+      },
+      "hero": {
+        "width": 240.671875,
+        "height": 522.9375,
+        "screenWidth": 240.671875,
+        "screenHeight": 522.9375,
+        "naturalWidth": 1290,
+        "naturalHeight": 2803,
+        "complete": true,
+        "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+        "src": "/showcase/flagstone/explore-current.phone.webp",
+        "caption": "SEVERITY 3 OF 5 \u00b7 MODERATE \u00b7 VERIFIEDSteep grade: a real barrier report expanded on the map.CURRENT EXPLORE SCREEN \u00b7 FLAGSTONE",
+        "gap": 48
+      },
+      "proof": {
+        "items": [
+          {
+            "x": 312,
+            "y": 242.46875,
+            "width": 340
+          },
+          {
+            "x": 676,
+            "y": 242.46875,
+            "width": 340
+          },
+          {
+            "x": 1040,
+            "y": 242.46875,
+            "width": 340
+          }
+        ],
+        "provenance": "Current Flagstone build \u00b7 captures in this repository since 2026-09-01 (1cfb4b1) \u00b7 capture dates not recorded",
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false
+          }
+        ]
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "webkit-1440-dark-normal",
+      "engine": "webkit",
+      "browserVersion": "26.5",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "dark",
+      "mode": "normal",
+      "failures": [],
+      "initial": {
+        "dark": true,
+        "js": true,
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false,
+            "controls": false
+          }
+        ]
+      },
+      "hero": {
+        "width": 240.671875,
+        "height": 522.9375,
+        "screenWidth": 240.671875,
+        "screenHeight": 522.9375,
+        "naturalWidth": 1290,
+        "naturalHeight": 2803,
+        "complete": true,
+        "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+        "src": "/showcase/flagstone/explore-current.phone.webp",
+        "caption": "SEVERITY 3 OF 5 \u00b7 MODERATE \u00b7 VERIFIEDSteep grade: a real barrier report expanded on the map.CURRENT EXPLORE SCREEN \u00b7 FLAGSTONE",
+        "gap": 48
+      },
+      "proof": {
+        "items": [
+          {
+            "x": 312,
+            "y": 242.46875,
+            "width": 340
+          },
+          {
+            "x": 676,
+            "y": 242.46875,
+            "width": 340
+          },
+          {
+            "x": 1040,
+            "y": 242.46875,
+            "width": 340
+          }
+        ],
+        "provenance": "Current Flagstone build \u00b7 captures in this repository since 2026-09-01 (1cfb4b1) \u00b7 capture dates not recorded",
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false
+          }
+        ]
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "targets": [
+              [
+                ".my-8"
+              ]
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "targets": [
+              [
+                ".text-step-2.font-normal[href=\"/\"]"
+              ],
+              [
+                ".link-draw-group"
+              ],
+              [
+                ".rail-trim.mt-1.gap-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".group-hover\\:translate-x-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".inline-block.link-draw[href$=\"work/\"]"
+              ],
+              [
+                "h1"
+              ],
+              [
+                ".drop-cap.reveal-shown.text-prose"
+              ],
+              [
+                ".drop-cap.reveal-shown.text-prose > .underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]"
+              ],
+              [
+                ".mb-6"
+              ],
+              [
+                ".text-step-2.mb-8"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                ".mt-2.dark\\:text-ink.text-text-meta"
+              ],
+              [
+                "time[datetime=\"2026-09-01\"]"
+              ],
+              [
+                ".normal-case"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4)"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4) > em"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(5)"
+              ],
+              [
+                ".text-\\[12px\\]"
+              ],
+              [
+                "text[x=\"120\"]"
+              ],
+              [
+                "text[x=\"440\"]"
+              ],
+              [
+                "text[y=\"194\"]"
+              ],
+              [
+                ".contents:nth-child(2) > figure > figcaption"
+              ],
+              [
+                "figcaption > code"
+              ],
+              [
+                ".method-draw"
+              ],
+              [
+                "time[datetime=\"2026-08-16\"]"
+              ]
+            ]
+          },
+          {
+            "id": "video-caption",
+            "impact": "critical",
+            "targets": [
+              [
+                "video"
+              ]
+            ]
+          }
+        ],
+        "passes": 27
+      },
+      "keyboardTabs": 18,
+      "focus": {
+        "name": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "focusVisible": true,
+        "outline": "2px solid rgb(231, 181, 147)",
+        "width": "2px",
+        "color": "rgb(231, 181, 147)",
+        "notObscured": true
+      },
+      "play": {
+        "paused": false,
+        "time": 0.07691624999999348
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "webkit-1440-dark-reduce",
+      "engine": "webkit",
+      "browserVersion": "26.5",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "dark",
+      "mode": "reduce",
+      "failures": [],
+      "initial": {
+        "dark": true,
+        "js": true,
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false,
+            "controls": false
+          }
+        ]
+      },
+      "hero": {
+        "width": 240.671875,
+        "height": 522.9375,
+        "screenWidth": 240.671875,
+        "screenHeight": 522.9375,
+        "naturalWidth": 1290,
+        "naturalHeight": 2803,
+        "complete": true,
+        "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+        "src": "/showcase/flagstone/explore-current.phone.webp",
+        "caption": "SEVERITY 3 OF 5 \u00b7 MODERATE \u00b7 VERIFIEDSteep grade: a real barrier report expanded on the map.CURRENT EXPLORE SCREEN \u00b7 FLAGSTONE",
+        "gap": 48
+      },
+      "proof": {
+        "items": [
+          {
+            "x": 312,
+            "y": 242.46875,
+            "width": 340
+          },
+          {
+            "x": 676,
+            "y": 242.46875,
+            "width": 340
+          },
+          {
+            "x": 1040,
+            "y": 242.46875,
+            "width": 340
+          }
+        ],
+        "provenance": "Current Flagstone build \u00b7 captures in this repository since 2026-09-01 (1cfb4b1) \u00b7 capture dates not recorded",
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false
+          }
+        ]
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "targets": [
+              [
+                ".my-8"
+              ]
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "targets": [
+              [
+                ".text-step-2.font-normal[href=\"/\"]"
+              ],
+              [
+                ".link-draw-group"
+              ],
+              [
+                ".rail-trim.mt-1.gap-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".group-hover\\:translate-x-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".inline-block.link-draw[href$=\"work/\"]"
+              ],
+              [
+                "h1"
+              ],
+              [
+                ".max-w-full > span:nth-child(1)"
+              ],
+              [
+                "#the-problem"
+              ],
+              [
+                ".contents:nth-child(1) > .drop-cap.text-prose.leading-prose"
+              ],
+              [
+                "#the-approach"
+              ],
+              [
+                ".drop-cap.reveal-shown.text-prose"
+              ],
+              [
+                ".drop-cap.reveal-shown.text-prose > .underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]"
+              ],
+              [
+                ".mb-6"
+              ],
+              [
+                ".text-step-2.mb-8"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                ".mt-2.dark\\:text-ink.text-text-meta"
+              ],
+              [
+                "time[datetime=\"2026-09-01\"]"
+              ],
+              [
+                ".normal-case"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4)"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4) > em"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(5)"
+              ],
+              [
+                ".text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(6)"
+              ],
+              [
+                ".text-\\[12px\\]"
+              ],
+              [
+                "text[x=\"120\"]"
+              ],
+              [
+                "text[x=\"440\"]"
+              ],
+              [
+                "text[y=\"194\"]"
+              ],
+              [
+                ".contents:nth-child(2) > figure > figcaption"
+              ],
+              [
+                "figcaption > code"
+              ],
+              [
+                "#where-it-stands"
+              ],
+              [
+                ".contents:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(2)"
+              ],
+              [
+                ".contents:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(2) > .underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]:nth-child(1)"
+              ],
+              [
+                ".underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]:nth-child(2)"
+              ],
+              [
+                ".contents:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(3)"
+              ],
+              [
+                "#my-role"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(1) > .text-accent-ink.text-meta"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(1) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                ".text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\] > code"
+              ],
+              [
+                ".contents:nth-child(4) > .contents > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(3) > .text-accent-ink.text-meta"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(4) > .text-accent-ink.text-meta"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(4) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                "#what-went-wrong"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(2)"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(3)"
+              ],
+              [
+                ".text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(3) > em"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(4)"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(5)"
+              ],
+              [
+                "#reflection"
+              ],
+              [
+                "blockquote"
+              ],
+              [
+                ".method-draw"
+              ],
+              [
+                "time[datetime=\"2026-08-16\"]"
+              ],
+              [
+                ".self-start.text-near-black[href$=\"about/\"]"
+              ],
+              [
+                ".self-start.text-near-black[href$=\"about/\"] > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".text-step-4.ember.max-w-measure-heading"
+              ],
+              [
+                ".text-accent-ink.mb-4.text-label"
+              ],
+              [
+                ".z-10.max-w-content.mx-auto > .reveal-scene.reveal > .text-step-4.max-w-measure-heading.leading-heading"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .text-card-numeral.tabular-nums.text-ink\\/30"
+              ],
+              [
+                "a[data-door-target=\"/work/claude-corp/\"]"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .leading-body.text-ink-muted.text-body-sm"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .ml-auto.gap-x-6.items-center > .after\\:top-0.after\\:-bottom-\\[21px\\].px-1"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .text-card-numeral.tabular-nums.text-ink\\/30"
+              ],
+              [
+                "a[data-door-target=\"/work/dashboard/\"]"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .leading-body.text-ink-muted.text-body-sm"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .ml-auto.gap-x-6.items-center > .after\\:top-0.after\\:-bottom-\\[21px\\].px-1"
+              ],
+              [
+                ".text-step-3"
+              ],
+              [
+                ".min-h-11.-mx-2[href=\"/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"work/\"]"
+              ],
+              [
+                "a[href$=\"certificates/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"about/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"blog/\"]"
+              ],
+              [
+                "a[href$=\"accessibility/\"]"
+              ],
+              [
+                "a[href$=\"colophon/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"contact/\"]"
+              ],
+              [
+                ".gap-1.self-start[target=\"_blank\"] > span:nth-child(1)"
+              ],
+              [
+                ".break-all"
+              ],
+              [
+                "a[href$=\"skypie99\"] > span:nth-child(1)"
+              ],
+              [
+                "li:nth-child(3) > .gap-1[target=\"_blank\"][rel=\"noopener noreferrer\"] > span:nth-child(1)"
+              ]
+            ]
+          },
+          {
+            "id": "video-caption",
+            "impact": "critical",
+            "targets": [
+              [
+                "video"
+              ]
+            ]
+          }
+        ],
+        "passes": 27
+      },
+      "keyboardTabs": 18,
+      "focus": {
+        "name": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "focusVisible": true,
+        "outline": "2px solid rgb(231, 181, 147)",
+        "width": "2px",
+        "color": "rgb(231, 181, 147)",
+        "notObscured": true
+      },
+      "play": {
+        "paused": false,
+        "time": 0.04165962432351409
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "webkit-1440-dark-nojs",
+      "engine": "webkit",
+      "browserVersion": "26.5",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "dark",
+      "mode": "nojs",
+      "failures": [],
+      "initial": {
+        "dark": false,
+        "js": false,
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false,
+            "controls": true
+          }
+        ]
+      },
+      "hero": {
+        "width": 240.671875,
+        "height": 522.9375,
+        "screenWidth": 240.671875,
+        "screenHeight": 522.9375,
+        "naturalWidth": 1290,
+        "naturalHeight": 2803,
+        "complete": true,
+        "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+        "src": "/showcase/flagstone/explore-current.phone.webp",
+        "caption": "SEVERITY 3 OF 5 \u00b7 MODERATE \u00b7 VERIFIEDSteep grade: a real barrier report expanded on the map.CURRENT EXPLORE SCREEN \u00b7 FLAGSTONE",
+        "gap": 48
+      },
+      "proof": {
+        "items": [
+          {
+            "x": 312,
+            "y": 242.46875,
+            "width": 340
+          },
+          {
+            "x": 676,
+            "y": 242.46875,
+            "width": 340
+          },
+          {
+            "x": 1040,
+            "y": 242.46875,
+            "width": 340
+          }
+        ],
+        "provenance": "Current Flagstone build \u00b7 captures in this repository since 2026-09-01 (1cfb4b1) \u00b7 capture dates not recorded",
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false
+          }
+        ]
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "webkit-393-light-normal",
+      "engine": "webkit",
+      "browserVersion": "26.5",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "requestedTheme": "light",
+      "mode": "normal",
+      "failures": [],
+      "initial": {
+        "dark": false,
+        "js": true,
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false,
+            "controls": false
+          }
+        ]
+      },
+      "hero": {
+        "width": 217.4375,
+        "height": 472.453125,
+        "screenWidth": 217.4375,
+        "screenHeight": 472.453125,
+        "naturalWidth": 1290,
+        "naturalHeight": 2803,
+        "complete": true,
+        "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+        "src": "/showcase/flagstone/explore-current.phone.webp",
+        "caption": "SEVERITY 3 OF 5 \u00b7 MODERATE \u00b7 VERIFIEDSteep grade: a real barrier report expanded on the map.CURRENT EXPLORE SCREEN \u00b7 FLAGSTONE",
+        "gap": 28
+      },
+      "proof": {
+        "items": [
+          {
+            "x": 32,
+            "y": -314.78125,
+            "width": 329
+          },
+          {
+            "x": 32,
+            "y": 208.84375,
+            "width": 329
+          },
+          {
+            "x": 32,
+            "y": 732.46875,
+            "width": 329
+          }
+        ],
+        "provenance": "Current Flagstone build \u00b7 captures in this repository since 2026-09-01 (1cfb4b1) \u00b7 capture dates not recorded",
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false
+          }
+        ]
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "targets": [
+              [
+                ".my-8"
+              ]
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "targets": [
+              [
+                ".inline-block.link-draw[href$=\"work/\"]"
+              ],
+              [
+                "h1"
+              ],
+              [
+                ".md\\:max-lg\\:col-span-2.pt-8.border-border-decorative:nth-child(4) > .mb-3.text-text-meta.text-meta"
+              ],
+              [
+                "li:nth-child(1) > .bg-emerald\\/25.text-cool-deep.px-3"
+              ],
+              [
+                "li:nth-child(2) > .bg-cool-mid\\/35.text-cool-deep.px-3"
+              ],
+              [
+                ".bg-rose\\/30"
+              ],
+              [
+                ".mb-6"
+              ],
+              [
+                ".text-step-2.mb-8"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                ".mt-2.dark\\:text-ink.text-text-meta"
+              ],
+              [
+                "time[datetime=\"2026-09-01\"]"
+              ],
+              [
+                ".normal-case"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4)"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4) > em"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(5)"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(6)"
+              ],
+              [
+                ".text-\\[12px\\]"
+              ],
+              [
+                "text[x=\"120\"]"
+              ],
+              [
+                "text[x=\"440\"]"
+              ],
+              [
+                "text[y=\"194\"]"
+              ],
+              [
+                ".contents:nth-child(2) > figure > figcaption"
+              ],
+              [
+                "figcaption > code"
+              ],
+              [
+                ".method-pair"
+              ],
+              [
+                ".method-pair > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".method-draw"
+              ],
+              [
+                "time[datetime=\"2026-08-16\"]"
+              ],
+              [
+                "#flagstone-test-count-method"
+              ],
+              [
+                "#flagstone-test-count-method > code:nth-child(1)"
+              ],
+              [
+                "code:nth-child(2)"
+              ]
+            ]
+          },
+          {
+            "id": "video-caption",
+            "impact": "critical",
+            "targets": [
+              [
+                "video"
+              ]
+            ]
+          }
+        ],
+        "passes": 26
+      },
+      "keyboardTabs": 8,
+      "focus": {
+        "name": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "focusVisible": true,
+        "outline": "2px solid rgb(185, 99, 64)",
+        "width": "2px",
+        "color": "rgb(185, 99, 64)",
+        "notObscured": true
+      },
+      "play": {
+        "paused": false,
+        "time": 0.11493208333386853
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "webkit-393-light-reduce",
+      "engine": "webkit",
+      "browserVersion": "26.5",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "requestedTheme": "light",
+      "mode": "reduce",
+      "failures": [],
+      "initial": {
+        "dark": false,
+        "js": true,
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false,
+            "controls": false
+          }
+        ]
+      },
+      "hero": {
+        "width": 217.4375,
+        "height": 472.453125,
+        "screenWidth": 217.4375,
+        "screenHeight": 472.453125,
+        "naturalWidth": 1290,
+        "naturalHeight": 2803,
+        "complete": true,
+        "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+        "src": "/showcase/flagstone/explore-current.phone.webp",
+        "caption": "SEVERITY 3 OF 5 \u00b7 MODERATE \u00b7 VERIFIEDSteep grade: a real barrier report expanded on the map.CURRENT EXPLORE SCREEN \u00b7 FLAGSTONE",
+        "gap": 28
+      },
+      "proof": {
+        "items": [
+          {
+            "x": 32,
+            "y": -314.78125,
+            "width": 329
+          },
+          {
+            "x": 32,
+            "y": 208.84375,
+            "width": 329
+          },
+          {
+            "x": 32,
+            "y": 732.46875,
+            "width": 329
+          }
+        ],
+        "provenance": "Current Flagstone build \u00b7 captures in this repository since 2026-09-01 (1cfb4b1) \u00b7 capture dates not recorded",
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false
+          }
+        ]
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "targets": [
+              [
+                ".my-8"
+              ]
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "targets": [
+              [
+                ".inline-block.link-draw[href$=\"work/\"]"
+              ],
+              [
+                "h1"
+              ],
+              [
+                ".max-w-full > span:nth-child(1)"
+              ],
+              [
+                ".md\\:max-lg\\:col-span-2.pt-8.border-border-decorative:nth-child(4) > .mb-3.text-text-meta.text-meta"
+              ],
+              [
+                "li:nth-child(1) > .bg-emerald\\/25.text-cool-deep.px-3"
+              ],
+              [
+                "li:nth-child(2) > .bg-cool-mid\\/35.text-cool-deep.px-3"
+              ],
+              [
+                ".bg-rose\\/30"
+              ],
+              [
+                "#the-problem"
+              ],
+              [
+                ".contents:nth-child(1) > .drop-cap.text-prose.leading-prose"
+              ],
+              [
+                "#the-approach"
+              ],
+              [
+                ".contents:nth-child(2) > .drop-cap.text-prose.leading-prose"
+              ],
+              [
+                ".drop-cap.text-prose.leading-prose > .underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]"
+              ],
+              [
+                ".mb-6"
+              ],
+              [
+                ".text-step-2.mb-8"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                ".mt-2.dark\\:text-ink.text-text-meta"
+              ],
+              [
+                "time[datetime=\"2026-09-01\"]"
+              ],
+              [
+                ".normal-case"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4)"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4) > em"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(5)"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(6)"
+              ],
+              [
+                ".text-\\[12px\\]"
+              ],
+              [
+                "text[x=\"120\"]"
+              ],
+              [
+                "text[x=\"440\"]"
+              ],
+              [
+                "text[y=\"194\"]"
+              ],
+              [
+                ".contents:nth-child(2) > figure > figcaption"
+              ],
+              [
+                "figcaption > code"
+              ],
+              [
+                "#where-it-stands"
+              ],
+              [
+                ".contents:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(2)"
+              ],
+              [
+                ".contents:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(2) > .underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]:nth-child(1)"
+              ],
+              [
+                ".underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]:nth-child(2)"
+              ],
+              [
+                ".contents:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(3)"
+              ],
+              [
+                "#my-role"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(1) > .text-accent-ink.text-meta"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(1) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                ".text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\] > code"
+              ],
+              [
+                ".contents:nth-child(4) > .contents > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(3) > .text-accent-ink.text-meta"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(4) > .text-accent-ink.text-meta"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(4) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                "#what-went-wrong"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(2)"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(3)"
+              ],
+              [
+                ".text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(3) > em"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(4)"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(5)"
+              ],
+              [
+                "#reflection"
+              ],
+              [
+                "blockquote"
+              ],
+              [
+                ".method-pair"
+              ],
+              [
+                ".method-pair > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".method-draw"
+              ],
+              [
+                "time[datetime=\"2026-08-16\"]"
+              ],
+              [
+                "#flagstone-test-count-method"
+              ],
+              [
+                "#flagstone-test-count-method > code:nth-child(1)"
+              ],
+              [
+                "code:nth-child(2)"
+              ],
+              [
+                ".mt-16 > .text-text-meta.text-meta"
+              ],
+              [
+                ".self-start.text-near-black[href$=\"about/\"]"
+              ],
+              [
+                ".self-start.text-near-black[href$=\"about/\"] > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".text-step-4.ember.max-w-measure-heading"
+              ],
+              [
+                ".text-accent-ink.mb-4.text-label"
+              ],
+              [
+                ".z-10.max-w-content.mx-auto > .reveal-scene.reveal > .text-step-4.max-w-measure-heading.leading-heading"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .text-card-numeral.tabular-nums.text-ink\\/30"
+              ],
+              [
+                "a[data-door-target=\"/work/claude-corp/\"]"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .leading-body.text-ink-muted.text-body-sm"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .ml-auto.gap-x-6.items-center > .after\\:top-0.after\\:-bottom-\\[21px\\].px-1"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .text-card-numeral.tabular-nums.text-ink\\/30"
+              ],
+              [
+                "a[data-door-target=\"/work/dashboard/\"]"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .leading-body.text-ink-muted.text-body-sm"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .ml-auto.gap-x-6.items-center > .after\\:top-0.after\\:-bottom-\\[21px\\].px-1"
+              ],
+              [
+                ".text-step-3"
+              ],
+              [
+                ".min-h-11.-mx-2[href=\"/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"work/\"]"
+              ],
+              [
+                "a[href$=\"certificates/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"about/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"blog/\"]"
+              ],
+              [
+                "a[href$=\"accessibility/\"]"
+              ],
+              [
+                "a[href$=\"colophon/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"contact/\"]"
+              ],
+              [
+                ".gap-1.self-start[target=\"_blank\"] > span:nth-child(1)"
+              ],
+              [
+                ".break-all"
+              ],
+              [
+                "a[href$=\"skypie99\"] > span:nth-child(1)"
+              ],
+              [
+                "li:nth-child(3) > .gap-1[target=\"_blank\"][rel=\"noopener noreferrer\"] > span:nth-child(1)"
+              ]
+            ]
+          },
+          {
+            "id": "video-caption",
+            "impact": "critical",
+            "targets": [
+              [
+                "video"
+              ]
+            ]
+          }
+        ],
+        "passes": 27
+      },
+      "keyboardTabs": 8,
+      "focus": {
+        "name": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "focusVisible": true,
+        "outline": "2px solid rgb(185, 99, 64)",
+        "width": "2px",
+        "color": "rgb(185, 99, 64)",
+        "notObscured": true
+      },
+      "play": {
+        "paused": false,
+        "time": 0.023465875327768372
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "webkit-393-light-nojs",
+      "engine": "webkit",
+      "browserVersion": "26.5",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "requestedTheme": "light",
+      "mode": "nojs",
+      "failures": [],
+      "initial": {
+        "dark": false,
+        "js": false,
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false,
+            "controls": true
+          }
+        ]
+      },
+      "hero": {
+        "width": 217.4375,
+        "height": 472.453125,
+        "screenWidth": 217.4375,
+        "screenHeight": 472.453125,
+        "naturalWidth": 1290,
+        "naturalHeight": 2803,
+        "complete": true,
+        "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+        "src": "/showcase/flagstone/explore-current.phone.webp",
+        "caption": "SEVERITY 3 OF 5 \u00b7 MODERATE \u00b7 VERIFIEDSteep grade: a real barrier report expanded on the map.CURRENT EXPLORE SCREEN \u00b7 FLAGSTONE",
+        "gap": 28
+      },
+      "proof": {
+        "items": [
+          {
+            "x": 32,
+            "y": -314.78125,
+            "width": 329
+          },
+          {
+            "x": 32,
+            "y": 208.84375,
+            "width": 329
+          },
+          {
+            "x": 32,
+            "y": 732.46875,
+            "width": 329
+          }
+        ],
+        "provenance": "Current Flagstone build \u00b7 captures in this repository since 2026-09-01 (1cfb4b1) \u00b7 capture dates not recorded",
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false
+          }
+        ]
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "webkit-393-dark-normal",
+      "engine": "webkit",
+      "browserVersion": "26.5",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "requestedTheme": "dark",
+      "mode": "normal",
+      "failures": [],
+      "initial": {
+        "dark": true,
+        "js": true,
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false,
+            "controls": false
+          }
+        ]
+      },
+      "hero": {
+        "width": 217.4375,
+        "height": 472.453125,
+        "screenWidth": 217.4375,
+        "screenHeight": 472.453125,
+        "naturalWidth": 1290,
+        "naturalHeight": 2803,
+        "complete": true,
+        "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+        "src": "/showcase/flagstone/explore-current.phone.webp",
+        "caption": "SEVERITY 3 OF 5 \u00b7 MODERATE \u00b7 VERIFIEDSteep grade: a real barrier report expanded on the map.CURRENT EXPLORE SCREEN \u00b7 FLAGSTONE",
+        "gap": 28
+      },
+      "proof": {
+        "items": [
+          {
+            "x": 32,
+            "y": -314.78125,
+            "width": 329
+          },
+          {
+            "x": 32,
+            "y": 208.84375,
+            "width": 329
+          },
+          {
+            "x": 32,
+            "y": 732.46875,
+            "width": 329
+          }
+        ],
+        "provenance": "Current Flagstone build \u00b7 captures in this repository since 2026-09-01 (1cfb4b1) \u00b7 capture dates not recorded",
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false
+          }
+        ]
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "targets": [
+              [
+                ".my-8"
+              ]
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "targets": [
+              [
+                ".inline-block.link-draw[href$=\"work/\"]"
+              ],
+              [
+                "h1"
+              ],
+              [
+                ".md\\:max-lg\\:col-span-2.pt-8.border-border-decorative:nth-child(4) > .mb-3.text-text-meta.text-meta"
+              ],
+              [
+                "li:nth-child(1) > .bg-emerald\\/25.text-cool-deep.px-3"
+              ],
+              [
+                "li:nth-child(2) > .bg-cool-mid\\/35.text-cool-deep.px-3"
+              ],
+              [
+                ".bg-rose\\/30"
+              ],
+              [
+                ".mb-6"
+              ],
+              [
+                ".text-step-2.mb-8"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                ".mt-2.dark\\:text-ink.text-text-meta"
+              ],
+              [
+                "time[datetime=\"2026-09-01\"]"
+              ],
+              [
+                ".normal-case"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4)"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4) > em"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(5)"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(6)"
+              ],
+              [
+                ".text-\\[12px\\]"
+              ],
+              [
+                "text[x=\"120\"]"
+              ],
+              [
+                "text[x=\"440\"]"
+              ],
+              [
+                "text[y=\"194\"]"
+              ],
+              [
+                ".contents:nth-child(2) > figure > figcaption"
+              ],
+              [
+                "figcaption > code"
+              ],
+              [
+                ".method-pair"
+              ],
+              [
+                ".method-pair > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".method-draw"
+              ],
+              [
+                "time[datetime=\"2026-08-16\"]"
+              ],
+              [
+                "#flagstone-test-count-method"
+              ],
+              [
+                "#flagstone-test-count-method > code:nth-child(1)"
+              ],
+              [
+                "code:nth-child(2)"
+              ]
+            ]
+          },
+          {
+            "id": "video-caption",
+            "impact": "critical",
+            "targets": [
+              [
+                "video"
+              ]
+            ]
+          }
+        ],
+        "passes": 26
+      },
+      "keyboardTabs": 8,
+      "focus": {
+        "name": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "focusVisible": true,
+        "outline": "2px solid rgb(231, 181, 147)",
+        "width": "2px",
+        "color": "rgb(231, 181, 147)",
+        "notObscured": true
+      },
+      "play": {
+        "paused": false,
+        "time": 0.011706750006367452
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "webkit-393-dark-reduce",
+      "engine": "webkit",
+      "browserVersion": "26.5",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "requestedTheme": "dark",
+      "mode": "reduce",
+      "failures": [],
+      "initial": {
+        "dark": true,
+        "js": true,
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false,
+            "controls": false
+          }
+        ]
+      },
+      "hero": {
+        "width": 217.4375,
+        "height": 472.453125,
+        "screenWidth": 217.4375,
+        "screenHeight": 472.453125,
+        "naturalWidth": 1290,
+        "naturalHeight": 2803,
+        "complete": true,
+        "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+        "src": "/showcase/flagstone/explore-current.phone.webp",
+        "caption": "SEVERITY 3 OF 5 \u00b7 MODERATE \u00b7 VERIFIEDSteep grade: a real barrier report expanded on the map.CURRENT EXPLORE SCREEN \u00b7 FLAGSTONE",
+        "gap": 28
+      },
+      "proof": {
+        "items": [
+          {
+            "x": 32,
+            "y": -314.78125,
+            "width": 329
+          },
+          {
+            "x": 32,
+            "y": 208.84375,
+            "width": 329
+          },
+          {
+            "x": 32,
+            "y": 732.46875,
+            "width": 329
+          }
+        ],
+        "provenance": "Current Flagstone build \u00b7 captures in this repository since 2026-09-01 (1cfb4b1) \u00b7 capture dates not recorded",
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false
+          }
+        ]
+      },
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "impact": "serious",
+            "targets": [
+              [
+                ".my-8"
+              ]
+            ]
+          },
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "targets": [
+              [
+                ".inline-block.link-draw[href$=\"work/\"]"
+              ],
+              [
+                "h1"
+              ],
+              [
+                ".max-w-full > span:nth-child(1)"
+              ],
+              [
+                ".md\\:max-lg\\:col-span-2.pt-8.border-border-decorative:nth-child(4) > .mb-3.text-text-meta.text-meta"
+              ],
+              [
+                "li:nth-child(1) > .bg-emerald\\/25.text-cool-deep.px-3"
+              ],
+              [
+                "li:nth-child(2) > .bg-cool-mid\\/35.text-cool-deep.px-3"
+              ],
+              [
+                ".bg-rose\\/30"
+              ],
+              [
+                "#the-problem"
+              ],
+              [
+                ".contents:nth-child(1) > .drop-cap.text-prose.leading-prose"
+              ],
+              [
+                "#the-approach"
+              ],
+              [
+                ".contents:nth-child(2) > .drop-cap.text-prose.leading-prose"
+              ],
+              [
+                ".drop-cap.text-prose.leading-prose > .underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]"
+              ],
+              [
+                ".mb-6"
+              ],
+              [
+                ".text-step-2.mb-8"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"01\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"02\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .dark\\:text-ink.text-label.text-text-meta"
+              ],
+              [
+                "figure[data-proof-window=\"03\"] > .border-accent-ink\\/35.pt-2\\.5"
+              ],
+              [
+                ".mt-2.dark\\:text-ink.text-text-meta"
+              ],
+              [
+                "time[datetime=\"2026-09-01\"]"
+              ],
+              [
+                ".normal-case"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4)"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(4) > em"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(5)"
+              ],
+              [
+                ".reveal-shown.text-prose.leading-prose:nth-child(6)"
+              ],
+              [
+                ".text-\\[12px\\]"
+              ],
+              [
+                "text[x=\"120\"]"
+              ],
+              [
+                "text[x=\"440\"]"
+              ],
+              [
+                "text[y=\"194\"]"
+              ],
+              [
+                ".contents:nth-child(2) > figure > figcaption"
+              ],
+              [
+                "figcaption > code"
+              ],
+              [
+                "#where-it-stands"
+              ],
+              [
+                ".contents:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(2)"
+              ],
+              [
+                ".contents:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(2) > .underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]:nth-child(1)"
+              ],
+              [
+                ".underline.decoration-accent-text\\/40.underline-offset-\\[3px\\]:nth-child(2)"
+              ],
+              [
+                ".contents:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(3)"
+              ],
+              [
+                "#my-role"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(1) > .text-accent-ink.text-meta"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(1) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                ".text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\] > code"
+              ],
+              [
+                ".contents:nth-child(4) > .contents > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(3) > .text-accent-ink.text-meta"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(3) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(4) > .text-accent-ink.text-meta"
+              ],
+              [
+                ".gap-2.reveal-depth.reveal:nth-child(4) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]"
+              ],
+              [
+                "#what-went-wrong"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(2)"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(3)"
+              ],
+              [
+                ".text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(3) > em"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(4)"
+              ],
+              [
+                ".contents:nth-child(5) > .text-prose.leading-prose.\\[hanging-punctuation\\:first_allow-end\\]:nth-child(5)"
+              ],
+              [
+                "#reflection"
+              ],
+              [
+                "blockquote"
+              ],
+              [
+                ".method-pair"
+              ],
+              [
+                ".method-pair > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".method-draw"
+              ],
+              [
+                "time[datetime=\"2026-08-16\"]"
+              ],
+              [
+                "#flagstone-test-count-method"
+              ],
+              [
+                "#flagstone-test-count-method > code:nth-child(1)"
+              ],
+              [
+                "code:nth-child(2)"
+              ],
+              [
+                ".mt-16 > .text-text-meta.text-meta"
+              ],
+              [
+                ".self-start.text-near-black[href$=\"about/\"]"
+              ],
+              [
+                ".self-start.text-near-black[href$=\"about/\"] > span[aria-hidden=\"true\"]"
+              ],
+              [
+                ".text-step-4.ember.max-w-measure-heading"
+              ],
+              [
+                ".text-accent-ink.mb-4.text-label"
+              ],
+              [
+                ".z-10.max-w-content.mx-auto > .reveal-scene.reveal > .text-step-4.max-w-measure-heading.leading-heading"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .text-card-numeral.tabular-nums.text-ink\\/30"
+              ],
+              [
+                "a[data-door-target=\"/work/claude-corp/\"]"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .leading-body.text-ink-muted.text-body-sm"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                "div[data-category=\"claude-corp\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .ml-auto.gap-x-6.items-center > .after\\:top-0.after\\:-bottom-\\[21px\\].px-1"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .text-card-numeral.tabular-nums.text-ink\\/30"
+              ],
+              [
+                "a[data-door-target=\"/work/dashboard/\"]"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .leading-body.text-ink-muted.text-body-sm"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .after\\:-top-\\[21px\\].after\\:bottom-0.hover\\:translate-x-1 > span[aria-hidden=\"true\"]"
+              ],
+              [
+                "div[data-category=\"dashboard\"] > .case-study-card-copy.p-7.md\\:order-2 > .mt-auto.gap-4.flex-col > .border-\\[rgb\\(var\\(--rgb-ink\\)\\/0\\.1\\)\\].pt-4.mt-1 > .ml-auto.gap-x-6.items-center > .after\\:top-0.after\\:-bottom-\\[21px\\].px-1"
+              ],
+              [
+                ".text-step-3"
+              ],
+              [
+                ".min-h-11.-mx-2[href=\"/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"work/\"]"
+              ],
+              [
+                "a[href$=\"certificates/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"about/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"blog/\"]"
+              ],
+              [
+                "a[href$=\"accessibility/\"]"
+              ],
+              [
+                "a[href$=\"colophon/\"]"
+              ],
+              [
+                ".min-h-11.-mx-2[href$=\"contact/\"]"
+              ],
+              [
+                ".gap-1.self-start[target=\"_blank\"] > span:nth-child(1)"
+              ],
+              [
+                ".break-all"
+              ],
+              [
+                "a[href$=\"skypie99\"] > span:nth-child(1)"
+              ],
+              [
+                "li:nth-child(3) > .gap-1[target=\"_blank\"][rel=\"noopener noreferrer\"] > span:nth-child(1)"
+              ]
+            ]
+          },
+          {
+            "id": "video-caption",
+            "impact": "critical",
+            "targets": [
+              [
+                "video"
+              ]
+            ]
+          }
+        ],
+        "passes": 27
+      },
+      "keyboardTabs": 8,
+      "focus": {
+        "name": "Play animation: Flagstone reporting flow moving from the Explore map into the Report a flag form, through category selection and back to the updated map.",
+        "focusVisible": true,
+        "outline": "2px solid rgb(231, 181, 147)",
+        "width": "2px",
+        "color": "rgb(231, 181, 147)",
+        "notObscured": true
+      },
+      "play": {
+        "paused": false,
+        "time": 0.04706354132605194
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "webkit-393-dark-nojs",
+      "engine": "webkit",
+      "browserVersion": "26.5",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "requestedTheme": "dark",
+      "mode": "nojs",
+      "failures": [],
+      "initial": {
+        "dark": false,
+        "js": false,
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false,
+            "controls": true
+          }
+        ]
+      },
+      "hero": {
+        "width": 217.4375,
+        "height": 472.453125,
+        "screenWidth": 217.4375,
+        "screenHeight": 472.453125,
+        "naturalWidth": 1290,
+        "naturalHeight": 2803,
+        "complete": true,
+        "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+        "src": "/showcase/flagstone/explore-current.phone.webp",
+        "caption": "SEVERITY 3 OF 5 \u00b7 MODERATE \u00b7 VERIFIEDSteep grade: a real barrier report expanded on the map.CURRENT EXPLORE SCREEN \u00b7 FLAGSTONE",
+        "gap": 28
+      },
+      "proof": {
+        "items": [
+          {
+            "x": 32,
+            "y": -314.78125,
+            "width": 329
+          },
+          {
+            "x": 32,
+            "y": 208.84375,
+            "width": 329
+          },
+          {
+            "x": 32,
+            "y": 732.46875,
+            "width": 329
+          }
+        ],
+        "provenance": "Current Flagstone build \u00b7 captures in this repository since 2026-09-01 (1cfb4b1) \u00b7 capture dates not recorded",
+        "video": [
+          {
+            "paused": true,
+            "time": 0,
+            "autoplay": false
+          }
+        ]
+      },
+      "errors": [],
+      "blockedHosts": []
+    }
+  ],
+  "tableRuns": [
+    {
+      "id": "chromium-table-light-100",
+      "engine": "chromium",
+      "theme": "light",
+      "textScale": 100,
+      "failures": [],
+      "focused": true,
+      "before": {
+        "left": 0,
+        "max": 46,
+        "name": "Accessibility features supported by the Flagstone iOS app",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "focusVisible": true
+      },
+      "right": 46,
+      "left": 0,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "targets": [
+              [
+                ".a11y-icon"
+              ],
+              [
+                "tr:nth-child(1) > td:nth-child(3)"
+              ],
+              [
+                "tr:nth-child(3) > td:nth-child(3)"
+              ],
+              [
+                "tr:nth-child(5) > td:nth-child(3)"
+              ],
+              [
+                "tr:nth-child(7) > td:nth-child(3)"
+              ]
+            ]
+          }
+        ],
+        "passes": 29
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "chromium-table-light-200",
+      "engine": "chromium",
+      "theme": "light",
+      "textScale": 200,
+      "failures": [],
+      "focused": true,
+      "before": {
+        "left": 0,
+        "max": 376,
+        "name": "Accessibility features supported by the Flagstone iOS app",
+        "outline": "rgb(180, 83, 9) solid 3px",
+        "focusVisible": true
+      },
+      "right": 376,
+      "left": 0,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "targets": [
+              [
+                ".a11y-icon"
+              ],
+              [
+                ".about > h2"
+              ],
+              [
+                "tr:nth-child(1) > .yes"
+              ],
+              [
+                "tr:nth-child(1) > td:nth-child(3)"
+              ],
+              [
+                "tr:nth-child(3) > .yes"
+              ],
+              [
+                "tr:nth-child(3) > td:nth-child(3)"
+              ],
+              [
+                "tr:nth-child(5) > .yes"
+              ],
+              [
+                "tr:nth-child(5) > td:nth-child(3)"
+              ],
+              [
+                "tr:nth-child(7) > .na"
+              ],
+              [
+                "tr:nth-child(7) > td:nth-child(3)"
+              ]
+            ]
+          }
+        ],
+        "passes": 29
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "chromium-table-dark-100",
+      "engine": "chromium",
+      "theme": "dark",
+      "textScale": 100,
+      "failures": [],
+      "focused": true,
+      "before": {
+        "left": 0,
+        "max": 46,
+        "name": "Accessibility features supported by the Flagstone iOS app",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "focusVisible": true
+      },
+      "right": 46,
+      "left": 0,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "targets": [
+              [
+                ".a11y-icon"
+              ],
+              [
+                "tr:nth-child(1) > td:nth-child(3)"
+              ],
+              [
+                "tr:nth-child(3) > td:nth-child(3)"
+              ],
+              [
+                "tr:nth-child(5) > td:nth-child(3)"
+              ],
+              [
+                "tr:nth-child(7) > td:nth-child(3)"
+              ]
+            ]
+          }
+        ],
+        "passes": 29
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "chromium-table-dark-200",
+      "engine": "chromium",
+      "theme": "dark",
+      "textScale": 200,
+      "failures": [],
+      "focused": true,
+      "before": {
+        "left": 0,
+        "max": 376,
+        "name": "Accessibility features supported by the Flagstone iOS app",
+        "outline": "rgb(255, 212, 121) solid 3px",
+        "focusVisible": true
+      },
+      "right": 376,
+      "left": 0,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "targets": [
+              [
+                ".a11y-icon"
+              ],
+              [
+                ".about > h2"
+              ],
+              [
+                "tr:nth-child(1) > .yes"
+              ],
+              [
+                "tr:nth-child(1) > td:nth-child(3)"
+              ],
+              [
+                "tr:nth-child(3) > .yes"
+              ],
+              [
+                "tr:nth-child(3) > td:nth-child(3)"
+              ],
+              [
+                "tr:nth-child(5) > .yes"
+              ],
+              [
+                "tr:nth-child(5) > td:nth-child(3)"
+              ],
+              [
+                "tr:nth-child(7) > .na"
+              ],
+              [
+                "tr:nth-child(7) > td:nth-child(3)"
+              ]
+            ]
+          }
+        ],
+        "passes": 29
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "webkit-table-light-100",
+      "engine": "webkit",
+      "theme": "light",
+      "textScale": 100,
+      "failures": [],
+      "focused": true,
+      "before": {
+        "left": 0,
+        "max": 46,
+        "name": "Accessibility features supported by the Flagstone iOS app",
+        "outline": "3px solid rgb(180, 83, 9)",
+        "focusVisible": true
+      },
+      "right": 46,
+      "left": 0,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "targets": [
+              [
+                ".a11y-icon"
+              ],
+              [
+                "tr:nth-child(1) > td:nth-child(3)"
+              ],
+              [
+                "tr:nth-child(3) > td:nth-child(3)"
+              ],
+              [
+                "tr:nth-child(5) > td:nth-child(3)"
+              ],
+              [
+                "tr:nth-child(7) > td:nth-child(3)"
+              ]
+            ]
+          }
+        ],
+        "passes": 29
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "webkit-table-light-200",
+      "engine": "webkit",
+      "theme": "light",
+      "textScale": 200,
+      "failures": [],
+      "focused": true,
+      "before": {
+        "left": 0,
+        "max": 376,
+        "name": "Accessibility features supported by the Flagstone iOS app",
+        "outline": "3px solid rgb(180, 83, 9)",
+        "focusVisible": true
+      },
+      "right": 106,
+      "left": 29,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "targets": [
+              [
+                ".a11y-icon"
+              ],
+              [
+                ".about > h2"
+              ],
+              [
+                "tr:nth-child(1) > .yes"
+              ],
+              [
+                "tr:nth-child(1) > td:nth-child(3)"
+              ],
+              [
+                "tr:nth-child(3) > .yes"
+              ],
+              [
+                "tr:nth-child(3) > td:nth-child(3)"
+              ],
+              [
+                "tr:nth-child(5) > .yes"
+              ],
+              [
+                "tr:nth-child(5) > td:nth-child(3)"
+              ],
+              [
+                "tr:nth-child(7) > .na"
+              ],
+              [
+                "tr:nth-child(7) > td:nth-child(3)"
+              ]
+            ]
+          }
+        ],
+        "passes": 29
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "webkit-table-dark-100",
+      "engine": "webkit",
+      "theme": "dark",
+      "textScale": 100,
+      "failures": [],
+      "focused": true,
+      "before": {
+        "left": 0,
+        "max": 46,
+        "name": "Accessibility features supported by the Flagstone iOS app",
+        "outline": "3px solid rgb(255, 212, 121)",
+        "focusVisible": true
+      },
+      "right": 46,
+      "left": 0,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "targets": [
+              [
+                ".a11y-icon"
+              ],
+              [
+                "tr:nth-child(1) > td:nth-child(3)"
+              ],
+              [
+                "tr:nth-child(3) > td:nth-child(3)"
+              ],
+              [
+                "tr:nth-child(5) > td:nth-child(3)"
+              ],
+              [
+                "tr:nth-child(7) > td:nth-child(3)"
+              ]
+            ]
+          }
+        ],
+        "passes": 29
+      },
+      "errors": [],
+      "blockedHosts": []
+    },
+    {
+      "id": "webkit-table-dark-200",
+      "engine": "webkit",
+      "theme": "dark",
+      "textScale": 200,
+      "failures": [],
+      "focused": true,
+      "before": {
+        "left": 0,
+        "max": 376,
+        "name": "Accessibility features supported by the Flagstone iOS app",
+        "outline": "3px solid rgb(255, 212, 121)",
+        "focusVisible": true
+      },
+      "right": 112,
+      "left": 35,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "targets": [
+              [
+                ".a11y-icon"
+              ],
+              [
+                ".about > h2"
+              ],
+              [
+                "tr:nth-child(1) > .yes"
+              ],
+              [
+                "tr:nth-child(1) > td:nth-child(3)"
+              ],
+              [
+                "tr:nth-child(3) > .yes"
+              ],
+              [
+                "tr:nth-child(3) > td:nth-child(3)"
+              ],
+              [
+                "tr:nth-child(5) > .yes"
+              ],
+              [
+                "tr:nth-child(5) > td:nth-child(3)"
+              ],
+              [
+                "tr:nth-child(7) > .na"
+              ],
+              [
+                "tr:nth-child(7) > td:nth-child(3)"
+              ]
+            ]
+          }
+        ],
+        "passes": 29
+      },
+      "errors": [],
+      "blockedHosts": []
+    }
+  ],
+  "failures": [],
+  "harnessCorrections": [
+    "Initial WebKit attempt blocked local blob: icons; corrected the loopback guard to allow same-origin blobs and data resources.",
+    "Used Option-Tab for WebKit keyboard traversal.",
+    "Replaced the non-range fixture server for WebKit video playback with the prior review range-capable server; production source unchanged.",
+    "Waited for actual reveal settling and video time advancement instead of fixed timing."
+  ]
+}

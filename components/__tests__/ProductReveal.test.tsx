@@ -453,3 +453,86 @@ describe('ProductReveal — a dark twin routes into the dual-theme path (Cook Ou
     expect(container.querySelector('.ts-layer--dark')).toBeNull();
   });
 });
+
+/**
+ * Flagstone first proof (2026-10-19) — the capture-fitted hero frame. `frameWidth`
+ * is hero art direction for ONE call site (the Flagstone case study): it sizes
+ * the device frame by WIDTH and hands the screen the capture's own aspect
+ * (`--pr-screen-aspect`, consumed by `.pr-frame--fit-capture > .pr-screen-phone`
+ * in globals.css), so the frame's height follows the image and nothing
+ * letterboxes. Every other call site must render byte-identically to before.
+ */
+describe('ProductReveal — capture-fitted hero frame (frameWidth)', () => {
+  const capture = {
+    src: '/showcase/flagstone/explore-current.phone.webp',
+    avif: '/showcase/flagstone/explore-current.phone.avif',
+    webp: '/showcase/flagstone/explore-current.phone.webp',
+    alt: 'Flagstone Explore map with an expanded verified Steep grade report',
+    width: 1290,
+    height: 2803,
+  };
+
+  it('without frameWidth the phone hero keeps the shared well-fitted placement and emits no aspect var', () => {
+    const { container } = render(
+      <ProductReveal slug="flagstone" title="Flagstone" context="hero" bare media={capture} />,
+    );
+    const frame = container.querySelector('.pr-frame-phone') as HTMLElement;
+    expect(frame.className).toContain('h-[90%]');
+    expect(frame.className).toContain('aspect-[9/19]');
+    expect(frame.className).not.toContain('pr-frame--fit-capture');
+    const root = container.firstElementChild as HTMLElement;
+    expect(root.style.getPropertyValue('--pr-sig')).toBe('224 150 90');
+    expect(root.style.getPropertyValue('--pr-screen-aspect')).toBe('');
+  });
+
+  it('with frameWidth the frame is width-sized, carries no height/aspect class, is capture-fitted, and the host carries the capture aspect', () => {
+    const { container } = render(
+      <ProductReveal
+        slug="flagstone"
+        title="Flagstone"
+        context="hero"
+        bare
+        media={capture}
+        frameWidth="w-[72%] sm:w-[53%] lg:w-[58%]"
+      />,
+    );
+    const frame = container.querySelector('.pr-frame-phone') as HTMLElement;
+    for (const c of [
+      'absolute', 'left-1/2', 'top-1/2', '-translate-x-1/2', '-translate-y-1/2',
+      'pr-frame--fit-capture', 'w-[72%]', 'sm:w-[53%]', 'lg:w-[58%]',
+    ]) {
+      expect(frame.classList.contains(c), `frame carries ${c}`).toBe(true);
+    }
+    expect(frame.className).not.toMatch(/h-\[90%\]|aspect-\[9\/19\]/);
+    const root = container.firstElementChild as HTMLElement;
+    expect(root.style.getPropertyValue('--pr-screen-aspect')).toBe('1290 / 2803');
+    expect(root.style.getPropertyValue('--pr-sig')).toBe('224 150 90');
+    // The evidence contract is untouched: the real <img> with its alt, eager +
+    // high priority, inside the device screen, and the decorative notch stays.
+    const img = screen.getByRole('img', { name: capture.alt });
+    expect(img.closest('.pr-screen-phone')).not.toBeNull();
+    expect(img).toHaveAttribute('loading', 'eager');
+    expect(img).toHaveAttribute('fetchpriority', 'high');
+    expect(frame.querySelector('.pr-notch')).toHaveAttribute('aria-hidden', 'true');
+  });
+
+  it('a capture without declared dimensions still fits (the stylesheet falls back to 9/19.5): no aspect var is emitted', () => {
+    const { width, height, ...undeclared } = capture;
+    void width;
+    void height;
+    const { container } = render(
+      <ProductReveal slug="flagstone" title="Flagstone" context="hero" bare media={undeclared} frameWidth="w-[72%]" />,
+    );
+    expect(container.querySelector('.pr-frame-phone')).toHaveClass('pr-frame--fit-capture');
+    expect((container.firstElementChild as HTMLElement).style.getPropertyValue('--pr-screen-aspect')).toBe('');
+  });
+
+  it('is inert outside a device-framed hero: a card or shot has no frame to size', () => {
+    const { container } = render(
+      <ProductReveal slug="flagstone" title="Flagstone" context="card" media={capture} frameWidth="w-[72%]" />,
+    );
+    expect(container.querySelector('.pr-frame')).toBeNull();
+    expect(container.innerHTML).not.toContain('pr-frame--fit-capture');
+    expect(container.innerHTML).not.toContain('--pr-screen-aspect');
+  });
+});

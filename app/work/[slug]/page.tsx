@@ -221,23 +221,70 @@ function FlagstoneApproachDiagram() {
   );
 }
 
+/** Flagstone Version A (owner decision 2026-10-18) — the three proof
+ *  subjects, in shot order, for the numbered mono labels above each window.
+ *  Presentation copy, not content data: the captions stay in
+ *  deliverables.json. The separator is the site's middot, never an em dash
+ *  (recruiter-copy-truth bans em dashes on every rendered route). */
+const FLAGSTONE_PROOF_SUBJECTS: readonly string[] = [
+  'Reporting flow, in motion.',
+  'Report a barrier.',
+  'Community review.',
+];
+
+/** Verified git fact for the three "current" Flagstone captures: they
+ *  entered the repository on 2026-09-01 (the two stills in 1cfb4b1, the
+ *  clip in a4584fd), outside the capture factory, so the showcase manifest
+ *  holds no capture date for them. The provenance line states the
+ *  repository date and says the capture date is not recorded; it never
+ *  invents one. */
+const FLAGSTONE_PROOF_PROVENANCE = { addedDate: '2026-09-01', commit: '1cfb4b1' } as const;
+
 /** Ties D5/D6 to their sections; every section not named below renders
  *  through the ordinary path, chunk-for-chunk equivalent to the single-call
  *  renderer (dropCapEligible keeps the drop cap on the ARTICLE's true
- *  opening paragraph only — see renderMarkdownProse's option doc). */
-function CaseProof({ d }: { d: Deliverable }) {
+ *  opening paragraph only — see renderMarkdownProse's option doc).
+ *
+ *  Exported for app/__tests__/flagstone-proof-row.test.tsx only (the page
+ *  itself is a heavy async server component; the proof block renders alone). */
+export function CaseProof({ d }: { d: Deliverable }) {
   if (!d.shots?.some((shot) => shot.src || shot.video)) return null;
   // W4-04.N3 — a SOLITARY STATIC proof capture (exactly one shot, no video)
   // is the case's only evidence. At lg it spans the full article column
   // (~652px, the --measure-wide band) instead of one ~300px grid track
   // beside an empty partner track, so the 1600x1000 source rewards normal-
   // scale inspection. Gallery exceptions keep their existing presentation:
-  // flagstone's multi-image gallery, dashboard's pair, ghost-code's portrait
-  // video (still-first) each retain the two-column / portrait treatments.
+  // dashboard's pair and ghost-code's portrait video (still-first) retain
+  // the two-column / portrait treatments; Flagstone has its own row below.
   const solitaryStatic = d.shots.length === 1 && !d.shots.some((shot) => Boolean(shot.video));
+  /* Flagstone Version A (owner decision 2026-10-18) — three equal thin-frame
+     windows (17:20, 1px line, 8px radius) in ONE row at lg+: 3 × 340px with
+     24px gaps = 1068px, numbered mono labels above, a thin warm caption rule
+     below, one provenance line. Below lg the three stack in reading order
+     (label → window → caption), capped at 340px wide. The row escapes the
+     60ch article measure through the bounded `.proof-breakout` width in
+     globals.css (a container-query width, never a negative margin or a vw
+     unit), left-aligned to the article's own edge. Window 01 keeps the VE04
+     arrival edge and lifecycle exactly (ProofArrival + .proof-arrival-edge);
+     its clip is click-to-play (`autoplay: false` in deliverables.json). */
+  const isFlagstoneRow = d.id === 'flagstone';
+  const ListTag: 'ol' | 'ul' = isFlagstoneRow ? 'ol' : 'ul';
   return (
-    <div className="my-8 lg:my-12" aria-label={`${d.title} product evidence`}>
-      <p className="font-mono text-label tracking-label uppercase text-accent-ink mb-6">
+    <div
+      className={cn('my-8 lg:my-12', isFlagstoneRow && 'proof-breakout')}
+      aria-label={`${d.title} product evidence`}
+    >
+      {/* Release 3 contrast (2026-10-19), Flagstone's row only. Rendered
+          worst cases over the case-study world: light ink-meta labels and
+          provenance 4.47:1, dark ink-muted caption 3.98:1, dark accent-ink
+          kicker 4.28:1. Light labels/provenance take ink-muted (≈5.7:1);
+          dark caption and kicker take ink (≈6.1–6.5:1). */}
+      <p
+        className={cn(
+          'font-mono text-label tracking-label uppercase text-accent-ink mb-6',
+          isFlagstoneRow && 'dark:text-ink',
+        )}
+      >
         Inside the build
       </p>
       {/* W4-04.VE03 — the solitary proof as one quiet chapter: the label,
@@ -255,7 +302,15 @@ function CaseProof({ d }: { d: Deliverable }) {
         {d.shots.some((shot) => Boolean(shot.video)) ? 'See it in motion.' : 'A closer look.'}
       </h3>
       {solitaryStatic && <hr aria-hidden="true" className="hidden lg:block w-full border-0 border-t border-border-decorative lg:mb-6" />}
-      <ul className={cn('grid grid-cols-1 lg:grid-cols-2 gap-12', d.id === 'ghost-code' && 'lg:grid-cols-1', solitaryStatic && 'lg:grid-cols-1')}>
+      <ListTag
+        className={cn(
+          isFlagstoneRow
+            ? 'proof-row grid grid-cols-[minmax(0,340px)] gap-x-6 gap-y-10 lg:grid-cols-[repeat(3,minmax(0,340px))]'
+            : 'grid grid-cols-1 lg:grid-cols-2 gap-12',
+          d.id === 'ghost-code' && 'lg:grid-cols-1',
+          solitaryStatic && 'lg:grid-cols-1',
+        )}
+      >
         {d.shots.map((shot, i) => {
           /* W4-06 VE04/M1 — the one authorized instance: the Flagstone first
              proof. Its generic reveal entrance is disabled (skip → settled at
@@ -263,10 +318,21 @@ function CaseProof({ d }: { d: Deliverable }) {
              arrival beat (ProofArrival + .proof-arrival-edge). Every other
              shot keeps the shared reveal verbatim. */
           const isFirstProofArrival = d.id === 'flagstone' && i === 0;
+          const windowNumber = String(i + 1).padStart(2, '0');
+          const subject = isFlagstoneRow ? FLAGSTONE_PROOF_SUBJECTS[i] : undefined;
           return (
             <Reveal key={shot.alt} index={i} as="li" skip={isFirstProofArrival}>
               <ProofArrival enabled={isFirstProofArrival}>
-                <figure className="m-0 flex flex-col gap-3">
+                <figure
+                  className="m-0 flex flex-col gap-3"
+                  data-proof-window={isFlagstoneRow ? windowNumber : undefined}
+                >
+                  {isFlagstoneRow && (
+                    <p className="font-mono text-label tracking-label uppercase text-ink-muted dark:text-ink">
+                      {windowNumber}
+                      {subject && <> · {subject}</>}
+                    </p>
+                  )}
                   <ShotProductReveal
                     slug={d.id}
                     title={d.title}
@@ -283,14 +349,19 @@ function CaseProof({ d }: { d: Deliverable }) {
                       precropped: d.id === 'flagstone' && Boolean(shot.src?.includes('-current.phone')),
                     }}
                     className={cn(
-                      'rounded-lg border border-border-decorative',
-                      d.id === 'flagstone' && (shot.src?.includes('-current.phone') || Boolean(shot.video)) && 'aspect-[7/8]',
+                      'border border-border-decorative',
+                      isFlagstoneRow ? 'rounded-md aspect-[17/20]' : 'rounded-lg',
                       d.id === 'ghost-code' && shot.video && 'aspect-[390/844] w-full max-w-[390px] mx-auto',
                       isFirstProofArrival && 'proof-arrival-edge',
                     )}
                   />
                   {shot.caption && (
-                    <figcaption className="font-sans text-body-sm text-charcoal text-pretty">
+                    <figcaption
+                      className={cn(
+                        'font-sans text-body-sm text-charcoal text-pretty',
+                        isFlagstoneRow && 'border-t border-accent-ink/35 pt-2.5 dark:text-ink',
+                      )}
+                    >
                       {smartPunctuation(shot.caption)}
                       {shot.capturedDate && (
                         <span className="mt-1 block font-mono text-meta tracking-label uppercase text-text-meta">
@@ -305,7 +376,14 @@ function CaseProof({ d }: { d: Deliverable }) {
             </Reveal>
           );
         })}
-      </ul>
+      </ListTag>
+      {isFlagstoneRow && (
+        <p className="mt-2 font-mono text-meta tracking-label uppercase text-ink-muted dark:text-ink">
+          Current Flagstone build · captures in this repository since{' '}
+          <time dateTime={FLAGSTONE_PROOF_PROVENANCE.addedDate}>{FLAGSTONE_PROOF_PROVENANCE.addedDate}</time>
+          {' '}(<span className="normal-case">{FLAGSTONE_PROOF_PROVENANCE.commit}</span>) · capture dates not recorded
+        </p>
+      )}
     </div>
   );
 }
@@ -520,6 +598,71 @@ export default async function WorkDetailPage({
   const themedPreloads = heroPreloadLinks(d);
   const heroPreload = themedPreloads ? null : heroPreloadLink(d);
 
+  /* Flagstone first proof (2026-10-19) — the phone hero is a capture-fitted
+     exhibit. A previous mobile audit measured the real Explore screenshot at
+     ~156px wide inside the 329px figure at 393 (the 9/19 frame took 90% of a
+     4/5 well's height, so the phone was 53% of the column and letterboxed its
+     19.5:9 capture by 3–6px top and bottom). Three treatments were rendered on
+     the real page (qa-reports/flagstone-first-proof-20261019/): a ~200px, a
+     ~220px and a ~240px screenshot. 220 was selected — the card, photo, button
+     and nav read as components while the golden-hour stage still breathes;
+     240 crowded the well for a marginal gain. Mechanism, Flagstone only:
+       • frameWidth sizes the device frame by WIDTH (72% of the well below sm,
+         today's 53% proportion from sm, 58% from lg) and its screen holds the
+         capture's own 1290×2803 aspect, so the frame's height follows the
+         image and nothing letterboxes (ProductReveal `frameWidth`).
+       • the well reserves the height that frame needs: 5/8 below sm (526px at
+         393, +115px over the old 4/5 well), the unchanged 4/5 from sm, and 3/4
+         from lg, where the details column is taller anyway so the page gains
+         no height. Static classes → zero CLS, as before.
+     Every other deliverable keeps the shared placement byte-identically. */
+  const stoneExhibit = d.id === 'flagstone';
+  const heroWell = (
+    <HeroImageSettle
+      className={cn(
+        'group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center',
+        // Grid-item order (L5-01) only when the well IS the grid item. Inside
+        // the plate's <figure> the figure carries order-2 and the well must
+        // keep DOM order, or flex `order` would seat it below its caption.
+        !d.heroPlate && 'order-2 lg:order-none',
+        'shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]',
+        d.id !== 'flagstone' && 'lg:sticky lg:top-24',
+        wideHero ? 'aspect-[4/3]' : stoneExhibit ? 'aspect-[5/8] sm:aspect-[4/5] lg:aspect-[3/4]' : 'aspect-[4/5]',
+      )}
+    >
+      {/* S15: the plinth glow pool — the project's signature hue pooling
+          under the framed product so the travelling well reads lit, not
+          stranded. Decorative, absolute (zero CLS), rides with the well. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={
+          {
+            '--pr-sig': signatureFor(d.id),
+            background:
+              'radial-gradient(58% 52% at 50% 56%, rgb(var(--pr-sig) / 0.22), rgb(var(--pr-sig) / 0.07) 58%, transparent 78%)',
+          } as CSSProperties
+        }
+      />
+      {/* Selected artwork or an authentic hero screenshot occupies the
+          same reserved frame. The visible label distinguishes artwork
+          from the retained product captures. */}
+      <HeroProductReveal
+        slug={d.id}
+        title={d.title}
+        eyebrow={d.role}
+        media={media}
+        liftClassName={d.id === 'flagstone' ? 'pr-stone-settle' : undefined}
+        frameWidth={stoneExhibit ? 'w-[72%] sm:w-[53%] lg:w-[58%]' : undefined}
+      />
+      {d.heroArtwork && (
+        <span className="absolute right-2 top-2 z-20 rounded border border-[#C8C8B8] bg-[#FAF8F1] px-2 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-[#20302C] dark:border-[#708175] dark:bg-[#202925] dark:text-[#ECEAE0]">
+          {d.heroArtwork.label}
+        </span>
+      )}
+    </HeroImageSettle>
+  );
+
   return (
     <>
       {/* Cook Out P8 (final acceptance): this inline JSON-LD script is
@@ -593,126 +736,71 @@ export default async function WorkDetailPage({
               </li>
             </ol>
           </nav>
-          {/* UP-31 (ui-polish 2026-08-01): `lg:grid-rows-[auto_1fr]` pairs with the
-              details column's `lg:row-start-1 lg:row-span-2` below. Without a
-              FLEXIBLE row 2 the span alone only halves the defect — CSS Grid
-              §12.5 distributes a spanning item's intrinsic contribution equally
-              across the auto tracks it crosses, so row 1 would inflate 560 →
-              698.5px and the plate would still hang 186.50px low (measured).
-              A spanning item is excluded from that distribution when it crosses
-              a track with a flexible max sizing function, so `1fr` on row 2 lets
-              row 1 collapse to the well and the plate sits at the grid's own
-              gap-y-12. Gated on d.heroPlate so the other five deliverables emit
-              a byte-identical class string, honouring the promise at :318. */}
-          <div
-            className={cn(
-              'grid grid-cols-1 lg:grid-cols-2 gap-y-12 lg:gap-x-50 items-start',
-              d.heroPlate && 'lg:grid-rows-[auto_1fr]',
-            )}
-          >
+          {/* The exhibit grid. When a deliverable carries a heroPlate (today:
+              Flagstone) the well and its museum plate render as ONE <figure>
+              below, so the plate is the figure's <figcaption> for assistive
+              tech and sits a fixed gap under the frame at every width. That
+              retires UP-31's `lg:grid-rows-[auto_1fr]` + `lg:row-span-2`
+              machinery (ui-polish 2026-08-01), which existed only to seat a
+              plate that was a SEPARATE grid item: CSS Grid §12.5 would size row
+              1 by the tall details column and hang the plate 186.50px low. The
+              figure is auto-placed into col 1 exactly like the bare well was,
+              so the other five deliverables emit a byte-identical grid. */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-12 lg:gap-x-50 items-start">
             {/* L5-01: hero image well. On phones + tablets it rides BETWEEN the
                 title block and the metadata block (order-2) so proof crests the
                 first thumb-flick; at lg it returns to the left column. The
                 reserved-aspect class + mount settle stay owned by HeroImageSettle
-                → zero CLS.
+                → zero CLS. The well's JSX is `heroWell` (built above the return,
+                beside the media it renders) so it can sit inside the plate's
+                figure or stand alone without being written twice.
                 L2-03/S15: at lg the STICKY lives here for the other case studies.
                 Flagstone is intentionally normal-flow: its phone well staying
                 pinned while the title and metadata moved made the hero read as
                 two disconnected scroll planes. */}
-            <HeroImageSettle
-              className={cn(
-                'group relative w-full bg-gradient-to-br from-earth to-earth-deep border border-border-decorative overflow-hidden flex items-center justify-center order-2 lg:order-none shadow-[inset_0_-34px_50px_-38px_rgba(60,32,18,0.32)]',
-                d.id !== 'flagstone' && 'lg:sticky lg:top-24',
-                wideHero ? 'aspect-[4/3]' : 'aspect-[4/5]',
-              )}
-            >
-              {/* S15: the plinth glow pool — the project's signature hue pooling
-                  under the framed product so the travelling well reads lit, not
-                  stranded. Decorative, absolute (zero CLS), rides with the well. */}
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0"
-                style={
-                  {
-                    '--pr-sig': signatureFor(d.id),
-                    background:
-                      'radial-gradient(58% 52% at 50% 56%, rgb(var(--pr-sig) / 0.22), rgb(var(--pr-sig) / 0.07) 58%, transparent 78%)',
-                  } as CSSProperties
-                }
-              />
-              {/* Selected artwork or an authentic hero screenshot occupies the
-                  same reserved frame. The visible label distinguishes artwork
-                  from the retained product captures. */}
-              <HeroProductReveal
-                slug={d.id}
-                title={d.title}
-                eyebrow={d.role}
-                media={media}
-                liftClassName={d.id === 'flagstone' ? 'pr-stone-settle' : undefined}
-              />
-              {d.heroArtwork && (
-                <span className="absolute right-2 top-2 z-20 rounded border border-[#C8C8B8] bg-[#FAF8F1] px-2 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-[#20302C] dark:border-[#708175] dark:bg-[#202925] dark:text-[#ECEAE0]">
-                  {d.heroArtwork.label}
-                </span>
-              )}
-            </HeroImageSettle>
-
-            {/* FT-3/FT-10 — the museum plate. A static mono-meta plate as a plain
-                grid sibling directly beneath the hero well (NOT inside the aspect
-                box). On phones it follows the well (order-2), above the metadata;
-                at lg it is placed at col-1/row-2 — snug beneath flagstone's 4/5
-                phone well. UP-31 (ui-polish 2026-08-01) corrects two claims this
-                comment used to make: the well is NOT taller than its column (560
-                vs 972.30px at 1440) and it DOES ride the sticky, so row 1 was
-                being sized by the tall details column and "snug beneath" never
-                held — the plate hung 460.30px low at 1440 and 880.08px at 1024.
-                The grid now carries lg:grid-rows-[auto_1fr] and the details
-                column spans both rows, which collapses row 1 to the well and
-                delivers the stated intent: a 48.00px gap, the grid's own
-                gap-y-12, identical to what 375 already rendered.
-                Data-gated on d.heroPlate → flagstone only; every other
-                deliverable renders nothing here and its grid is unchanged. Mono
-                register, NEVER quotation-styled (the one pull-quote per essay
-                lives in Reflection). It seats the artifact's own severity ledger
-                line at reading size and names the place she mapped (the SR-only
-                provenance the raster bakes in illegibly). SSR'd static → CLS 0. */}
-            {/* R4/BP4: the plate borrows the room's own light — --pr-sig
-                scopes the dark-only hairline warmth (pr-plate-lit) inside
-                Plate. THE ROOM Phase H follow-up: this used to be an inline
-                copy of Plate's markup; it now renders the same component the
-                homepage Flagship Room uses (app/page.tsx), so the two are
-                word-identical by construction instead of by hand-kept sync. */}
-            {d.heroPlate && (
-              <Plate
-                claim={d.heroPlate.severity}
-                caption={d.heroPlate.caption}
-                placeDate={d.heroPlate.provenance}
-                sig={signatureFor(d.id)}
-                className="order-2 lg:order-none lg:col-start-1 lg:row-start-2"
-              />
+            {d.heroPlate ? (
+              /* FT-3/FT-10 — the museum plate, now the figure's own caption. A
+                 static mono-meta plate directly beneath the hero well (NOT inside
+                 the aspect box). Mono register, NEVER quotation-styled (the one
+                 pull-quote per essay lives in Reflection). It seats the
+                 artifact's own severity ledger line at reading size and names the
+                 place she mapped (the SR-only provenance the raster bakes in
+                 illegibly). SSR'd static → CLS 0.
+                 Flagstone first proof (2026-10-19): below lg the plate sits 28px
+                 (gap-7) under the frame so the caption reads as the figure's own
+                 label rather than the next stacked block (the 48px grid gap had
+                 left it equidistant from the frame and from the metadata
+                 hairline); at lg the gap stays the grid's 48px (gap-12), the
+                 measured UP-31 position, so the desktop composition is unchanged.
+                 R4/BP4: the plate borrows the room's own light — --pr-sig scopes
+                 the dark-only hairline warmth (pr-plate-lit) inside Plate, the
+                 same component the homepage Flagship Room renders (app/page.tsx),
+                 so the two stay word-identical by construction. */
+              <figure className="order-2 lg:order-none m-0 flex flex-col gap-7 lg:gap-12">
+                {heroWell}
+                <Plate
+                  as="figcaption"
+                  claim={d.heroPlate.severity}
+                  caption={d.heroPlate.caption}
+                  placeDate={d.heroPlate.provenance}
+                  sig={signatureFor(d.id)}
+                />
+              </figure>
+            ) : (
+              heroWell
             )}
 
             {/* Details — the right column at lg (sticky moved onto the media
                 well, L2-03/S15: the TALLER column scrolls free; a sticky here
                 could never engage). Below lg the wrapper is display:contents,
                 so the title block (order-1) and metadata block (order-3) become
-                siblings of the well (order-2) and reorder around it: title
-                leads, proof crests the fold, metadata follows (L5-01).
-                UP-31: on the plate route this column spans BOTH grid rows, so
-                row 1 is sized by the media well instead of by this column — the
-                only reason the plate ever hung 460px below the frame it
-                annotates. This column's own rect is byte-identical before and
-                after (top 200, h 972.30 at 1440); only the plate moves. The
-                well's sticky still engages on the other case studies, with its
-                travel reduced from 547.58 to 412.30px at 1440 — exactly the
-                dead band that was removed. Flagstone's normal-flow exception
-                is declared on the media well above. */}
-            <div
-              className={cn(
-                'contents lg:flex lg:flex-col lg:gap-12',
-                d.heroPlate && 'lg:row-start-1 lg:row-span-2',
-              )}
-            >
+                siblings of the figure/well (order-2) and reorder around it:
+                title leads, proof crests the fold, metadata follows (L5-01).
+                This column no longer spans two grid rows (UP-31): the plate is
+                inside the figure, so a single row is sized by this column and
+                the figure simply sits at the top of col 1 (items-start) — the
+                same positions as before, with one grid row instead of two. */}
+            <div className="contents lg:flex lg:flex-col lg:gap-12">
               {/* Title block — leads on every viewport. Mobile air steps down
                   (L5-04): gap-6 → md:gap-8 → lg:gap-12 (desktop unchanged). */}
               <div className="flex flex-col gap-6 md:gap-8 lg:gap-12 order-1 lg:order-none">
@@ -1003,7 +1091,10 @@ export default async function WorkDetailPage({
         <section className="px-gutter py-24 lg:py-32 world-surface-alt border-t border-border-decorative relative overflow-hidden">
           {/* Golden-hour scroll-depth behind the case-study prose */}
           <ParallaxWash depth="far" />
-          <div className="relative z-10 max-w-content mx-auto">
+          {/* Flagstone Version A: the content column is the inline-size
+              container the proof row's bounded breakout measures against
+              (`.proof-breakout-root` / `.proof-breakout`, globals.css). */}
+          <div className={cn('relative z-10 max-w-content mx-auto', d.id === 'flagstone' && 'proof-breakout-root')}>
             {/* Each block self-reveals in reading order (carve on H2s, depth on
                 prose) — see renderMarkdown — so the body has internal cinematic
                 choreography instead of one undifferentiated fade. */}

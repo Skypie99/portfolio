@@ -1,0 +1,115 @@
+{
+  "method": "Compare DOM after removing hydration/runtime scripts and bundled asset links, normalizing build-id comments and class token order; preserve JSON-LD, media links, copy, attributes, markup and metadata.",
+  "sameRoutes": true,
+  "routes": [
+    {
+      "route": "404/index.html",
+      "identical": true
+    },
+    {
+      "route": "about/index.html",
+      "identical": true
+    },
+    {
+      "route": "accessibility/index.html",
+      "identical": true
+    },
+    {
+      "route": "archive/index.html",
+      "identical": true
+    },
+    {
+      "route": "blog/building-accessmap/index.html",
+      "identical": true
+    },
+    {
+      "route": "blog/building-flagstone/index.html",
+      "identical": true
+    },
+    {
+      "route": "blog/index.html",
+      "identical": true
+    },
+    {
+      "route": "certificates/index.html",
+      "identical": true
+    },
+    {
+      "route": "colophon/index.html",
+      "identical": true
+    },
+    {
+      "route": "contact/index.html",
+      "identical": true
+    },
+    {
+      "route": "flagstone/accessibility/index.html",
+      "identical": false
+    },
+    {
+      "route": "flagstone/index.html",
+      "identical": true
+    },
+    {
+      "route": "flagstone/privacy/index.html",
+      "identical": true
+    },
+    {
+      "route": "flagstone/support/index.html",
+      "identical": true
+    },
+    {
+      "route": "flagstone/terms/index.html",
+      "identical": true
+    },
+    {
+      "route": "float/index.html",
+      "identical": true
+    },
+    {
+      "route": "index.html",
+      "identical": true
+    },
+    {
+      "route": "runway/index.html",
+      "identical": true
+    },
+    {
+      "route": "tokyo-through-time/index.html",
+      "identical": true
+    },
+    {
+      "route": "work/accessmap/index.html",
+      "identical": true
+    },
+    {
+      "route": "work/claude-corp/index.html",
+      "identical": true
+    },
+    {
+      "route": "work/dashboard/index.html",
+      "identical": true
+    },
+    {
+      "route": "work/flagstone/index.html",
+      "identical": false
+    },
+    {
+      "route": "work/ghost-code/index.html",
+      "identical": true
+    },
+    {
+      "route": "work/index.html",
+      "identical": true
+    },
+    {
+      "route": "work/mutual-mesh/index.html",
+      "identical": true
+    },
+    {
+      "route": "work/prompt-library/index.html",
+      "identical": true
+    }
+  ],
+  "protectedPathChanges": []
+}
