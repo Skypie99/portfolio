@@ -98,9 +98,10 @@ export function FlagstoneTestReceipt() {
           Run from a fresh clone of the public repo, not a local best case:{' '}
           <code className={INLINE_CODE_CLASS}>npm ci</code> then{' '}
           <code className={INLINE_CODE_CLASS}>npx jest --ci -w 3</code>. That run
-          reported 204 suites, 2,971 passing, 32 todo, 0 failing. The homepage
-          receipt says 2,900+ because the suite grows most weeks. (Separate from the
-          portfolio{'’'}s own measured 763 on the accessibility page.)
+          reported 204 suites, 2,971 passing, 32 todo, 0 failing. The suite has
+          grown since; this receipt states the exact figure and the date it was
+          true. (Separate from the portfolio{'’'}s own measured 763 on the
+          accessibility page.)
         </p>
       </div>
     </section>
