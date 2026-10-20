@@ -30,6 +30,8 @@ import { canonicalFor } from '@/lib/metadata';
 import { OG_CARD } from '@/lib/og';
 import { signatureFor } from '@/lib/signature';
 
+import styles from '@/components/readingGroup.module.css';
+
 /**
  * TA-11 (truth audit 2026-07-31) — the homepage's share card, restated here
  * and not in app/layout.tsx, because for the `/` segment the opengraph-image
@@ -275,7 +277,18 @@ export default function HomePage() {
             figure: `Round ${calibration.value}`,
             what: (
               <>
-                {openRound ? `${openRound.title}: ${openRound.counts.join(' · ')}` : calibration.label}
+                {/* Release 6 (R6-B): the counts keep each short clause whole,
+                    so a phone column breaks at the interpunct instead of
+                    between a number and its noun ("axe 0 / violations" at
+                    393 before). Same words, same order, same evidence. */}
+                {openRound ? (
+                  <>
+                    {`${openRound.title}: `}
+                    <ClauseBound text={openRound.counts.join(' · ')} />
+                  </>
+                ) : (
+                  calibration.label
+                )}
                 {' · '}
                 <Link href="/colophon/#calibration" className="link-draw text-accent-text">
                   the record
@@ -743,7 +756,12 @@ export default function HomePage() {
               'radial-gradient(40% 44% at 20% 26%, rgb(255 212 158 / 0.18), transparent 62%), radial-gradient(44% 48% at 86% 82%, rgb(150 188 214 / 0.18), transparent 64%)',
           }}
         />
-        <div className="max-w-content mx-auto">
+        {/* Release 6 (R6-B): the heading and its five rows are one reading
+            group on one clock (components/readingGroup.module.css): the
+            heading leads at delay 0 and the rows step in behind it. Measured
+            before: the heading's 1200 ms scene clock landed it ~110 ms AFTER
+            row 01 (900 ms). Scoped to this band; no other Reveal changes. */}
+        <div className={cn('max-w-content mx-auto', styles.group)}>
           {/* Dani wave5: terracotta left-border accent on section headers.
               U3 (A-03): corridor air tightened one spacing step (mb-24 → mb-20)
               — the walk read the heading→gallery stretch as dead air. */}
@@ -786,9 +804,12 @@ export default function HomePage() {
                 key={d.id}
                 className="group border-t border-border-decorative last:border-b"
               >
-                {/* MO-4: cap the stagger (site idiom Math.min(i, 4)). */}
+                {/* MO-4: cap the stagger (site idiom Math.min(i, 4)).
+                    R6-B: rows start one step BEHIND the heading (i + 1), so
+                    the heading is read first and its rows follow; the cap
+                    keeps the group inside ~0.9 s on the shared clock. */}
                 <Reveal
-                  index={Math.min(i, 4)}
+                  index={Math.min(i + 1, 4)}
                   variant="depth"
                   className="flex items-baseline gap-4 lg:gap-6 py-6"
                 >
