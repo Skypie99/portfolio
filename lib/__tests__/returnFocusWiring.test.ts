@@ -42,8 +42,8 @@ describe('returnFocus production wiring (W4-02 · N1)', () => {
   });
 
   it('the interceptor records the return seat and marks the push', () => {
-    expect(interceptor).toContain(
-      'recordReturnFocus(anchor, window.location.pathname, url.pathname, e.detail === 0)',
+    expect(interceptor).toMatch(
+      /recordReturnFocus\(\s*anchor,\s*window\.location\.pathname,\s*url\.pathname,\s*isKeyboardActivation\(e, anchor\),\s*\)/,
     );
     expect(interceptor).toContain('notePushNavigation()');
   });
