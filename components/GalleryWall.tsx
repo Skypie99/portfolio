@@ -8,6 +8,8 @@ import { Reveal } from '@/components/Reveal';
 import { cardMedia } from '@/lib/media';
 import type { Deliverable } from '@/lib/schema';
 
+import styles from './readingGroup.module.css';
+
 type Category = 'flagstone' | 'claude-corp' | 'dashboard' | 'prompt-library' | 'ghost';
 
 function toCategory(id: string): Category {
@@ -66,7 +68,7 @@ export function GalleryWall({ deliverables }: { deliverables: Deliverable[] }) {
   }, []);
 
   return (
-    <div className="relative isolate" data-wall-seen={skipMotion ? '' : undefined}>
+    <div className={`relative isolate ${styles.group}`} data-wall-seen={skipMotion ? '' : undefined}>
       {/* drifting golden-hour wash — its own clipped layer so the -inset
           oversize never clips the cards' hover-lift or shadows. */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
@@ -105,9 +107,15 @@ export function GalleryWall({ deliverables }: { deliverables: Deliverable[] }) {
           // horizontal grammar hangs every card media-left — so the question
           // only exists at lg+.
           const side: 'left' | 'right' = i === 0 ? 'left' : i % 2 === 1 ? 'left' : 'right';
+          // Release 6 (R6-B): the frontispiece and its companion are the two
+          // plates in view on arrival, so they arrive as a pair one stagger
+          // step apart; every later plate enters alone, when the reader
+          // reaches it, and a delay there would only be latency (the old
+          // Math.min(i, 3) made plate 04 wait 240 ms after entering view).
+          // The group's shared 560 ms clock lives in readingGroup.module.css.
           return (
             <li key={d.id}>
-              <Reveal variant="depth" index={Math.min(i, 3)} skip={skipMotion}>
+              <Reveal variant="depth" index={Math.min(i, 1)} skip={skipMotion}>
                 <CaseStudyCard
                   title={d.title}
                   category={toCategory(d.id)}

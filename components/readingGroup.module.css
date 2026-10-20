@@ -1,0 +1,43 @@
+/*
+ * readingGroup.module.css — Release 6 (R6-B): a heading and its rows as ONE
+ * reading group on ONE clock.
+ *
+ * Opt-in and route-scoped: the class is applied by exactly two consumers,
+ * the home `#work` index (app/page.tsx) and the gallery wall
+ * (components/GalleryWall.tsx). Every other Reveal on the site keeps the
+ * global choreography in app/globals.css byte for byte; no token changes.
+ *
+ * What the baseline did on the index (measured, qa-reports/release6-…/motion):
+ * the heading ran the 1200 ms scene clock while its rows ran 900 ms with an
+ * 80 ms stagger, so the heading landed ~110 ms AFTER its first row and the
+ * group took ~1.45 s from first light to last row. Here the heading and the
+ * rows share `--dur-settle` (560 ms, the rung a heading already arrives on
+ * alone; D-VIS-010's 0.5 to 0.7 s test band), the heading leads at delay 0
+ * and the rows step in behind it on the existing `--stagger-step`. Travel
+ * is shortened with the clock (16 px, a whisper of scale) so the perceived
+ * speed stays the house's slow drift rather than becoming a snap; easing is
+ * the same `--ease-gh-settle` as every other arrival.
+ *
+ * Floors, unchanged and still winning: the reduced-motion, print,
+ * reveal-seat (hash arrival), reveal-rearm and reveal-failsafe rules in
+ * globals.css are all `!important`, so a reduced-motion visitor, a no-JS
+ * visitor, a dead bundle, a fragment arrival and a restored Back position
+ * rest at the visible frame exactly as before. The hidden-state transform
+ * below is scoped to `:not(.reveal-shown)` so it can never hold a shown row
+ * off its resting place, whatever the stylesheet order.
+ */
+
+/* One clock for the group: heading (scene) and rows (depth). (0,3,1) beats
+   the global hidden rules (0,2,1) regardless of bundle order. */
+:global(html.js) .group :global(.reveal-scene),
+:global(html.js) .group :global(.reveal-depth) {
+  transition-duration: var(--dur-settle);
+}
+
+/* Shorter travel for the shorter clock; armed state only. */
+:global(html.js) .group :global(.reveal-scene:not(.reveal-shown)) {
+  transform: translateY(16px);
+}
+:global(html.js) .group :global(.reveal-depth:not(.reveal-shown)) {
+  transform: translateY(16px) scale(0.992);
+}
