@@ -232,7 +232,10 @@ describe('ink tokens clear WCAG AA on the surfaces they are actually painted on'
   // without the other.
   it('the audited ink values are the ones in the stylesheet', () => {
     expect(readToken('rgb-accent-ink', 'root')).toEqual([135, 71, 45]);
-    expect(readToken('rgb-ink-meta', 'root')).toEqual([84, 100, 93]);
+    // SYN-T-010 (D-A11Y-006, 2026-10-16; rendered re-verified 2026-10-21):
+    // --rgb-ink-meta is re-tuned in both themes. See the D-A11Y-006 blocks at EOF.
+    expect(readToken('rgb-ink-meta', 'root')).toEqual([76, 92, 85]);
+    expect(readToken('rgb-ink-meta', 'dark')).toEqual([175, 191, 184]);
     expect(readToken('rgb-accent-ink', 'dark')).toEqual([231, 181, 147]);
     // luxe W2: the deepened link-hover ink. Light deepens from resting; dark keeps
     // its already-deepening value. A change here needs a fresh AA re-derivation.
@@ -390,5 +393,109 @@ describe('the hero evidence strip inks clear WCAG AA on the hero wash (owner ref
     expect(readToken('rgb-canvas', 'dark')).toEqual([21, 25, 26]);
     expect(readNumber('surface-alpha', 'root')).toBe(0.62);
     expect(readNumber('surface-alpha', 'dark')).toBe(0.68);
+  });
+});
+
+/**
+ * SYN-T-010 / D-A11Y-006 provenance (2026-10-16; re-anchored 2026-10-21).
+ *
+ * The candidate re-tuned --rgb-ink-meta from 84 100 93 to 76 92 85 (light) and
+ * 159 176 169 to 175 191 184 (dark). The five backdrops below are the audit's
+ * recorded composites, kept as history: token arithmetic on those pixels is how
+ * the candidate was tuned. They are NOT today's rendered surfaces. The 2026-10-21
+ * rendered re-measure found no dark text-meta failure, and the light "Explore
+ * projects" wash is darker than the audit's [247,233,212]; the current-render
+ * guards are in the next block.
+ */
+const AUDIT_BACKDROPS_D_A11Y_006: ReadonlyArray<{
+  token: string;
+  scope: 'root' | 'dark';
+  opacity: number;
+  backdrop: RGB;
+  audited: number;
+  where: string;
+}> = [
+  // Historical surface: at 0.9 the re-tuned token clears THIS audit backdrop, but
+  // it does not clear today's darker wash — see the current-render block below.
+  { token: 'rgb-ink-meta', scope: 'root', opacity: 0.9, backdrop: [247, 233, 212], audited: 4.25, where: '"Explore projects" (R01 light, 0.9 opacity, E-0249)' },
+  { token: 'rgb-ink-meta', scope: 'root', opacity: 1, backdrop: [216, 219, 201], audited: 4.43, where: '"No metrics here" paragraph (R01 light, E-0249)' },
+  { token: 'rgb-ink-meta', scope: 'dark', opacity: 1, backdrop: [88, 65, 49], audited: 4.17, where: '"captured" (R05 dark, second card, E-0250)' },
+  { token: 'rgb-ink-meta', scope: 'dark', opacity: 1, backdrop: [90, 68, 50], audited: 4.01, where: '"2026-09-05" (R05 dark, second card, E-0250)' },
+  { token: 'rgb-ink-meta', scope: 'dark', opacity: 1, backdrop: [83, 61, 43], audited: 4.47, where: '"7 min read" (R11 dark, E-0250)' },
+];
+
+describe('D-A11Y-006: the re-tuned --rgb-ink-meta clears 4.5:1 on the audit-recorded backdrops (historical token arithmetic)', () => {
+  it.each(AUDIT_BACKDROPS_D_A11Y_006)(
+    '--$token ($scope) at opacity $opacity >= 4.5:1 on $where',
+    ({ token, scope, opacity, backdrop }) => {
+      const ink = readToken(token, scope);
+      expect(contrast(composite(ink, opacity, backdrop), backdrop)).toBeGreaterThanOrEqual(AA_SMALL);
+    },
+  );
+
+  // Non-vacuity: the audit's method applied to the PRE-FIX tokens must reproduce
+  // the audited failures (the audit rounds to two decimals).
+  it('reproduces the audited pre-fix ratios from the old tokens (non-vacuity)', () => {
+    const OLD_LIGHT: RGB = [84, 100, 93];
+    const OLD_DARK: RGB = [159, 176, 169];
+    for (const row of AUDIT_BACKDROPS_D_A11Y_006) {
+      const old = row.scope === 'root' ? OLD_LIGHT : OLD_DARK;
+      const ratio = contrast(composite(old, row.opacity, row.backdrop), row.backdrop);
+      expect(Math.abs(ratio - row.audited), `${row.where}: model ${ratio.toFixed(3)} vs audited ${row.audited}`).toBeLessThanOrEqual(0.02);
+      expect(ratio).toBeLessThan(AA_SMALL);
+    }
+  });
+});
+
+/**
+ * SYN-T-010 current-render guards (2026-10-21).
+ *
+ * Backdrops are the worst pixels under the glyph boxes in a Chromium-headless
+ * rendered-pixel sweep of the built static export (text hidden; WCAG 2.x
+ * compositing at the element's effective opacity). Checked at 1440x900 and
+ * 320x800, light and dark, over 11 routes; these are the three text-meta
+ * surfaces that bind after the re-tune. The light Explore guard pins the worst
+ * of 320/360/375/390/414/500/639/767/768/834/1024/1279px at opacity 0.95:
+ * [229,214,199] at 639px. The companion Hero test pins the 0.95 class.
+ * (The link is display:none from the xl breakpoint, verified at 1280px.)
+ */
+const CURRENT_BACKDROPS_SYN_T_010: ReadonlyArray<{
+  token: string;
+  scope: 'root' | 'dark';
+  opacity: number;
+  backdrop: RGB;
+  where: string;
+}> = [
+  { token: 'rgb-ink-meta', scope: 'root', opacity: 0.95, backdrop: [229, 214, 199], where: '"Explore projects" rest state, worst of 320–767px light' },
+  { token: 'rgb-ink-meta', scope: 'root', opacity: 1, backdrop: [217, 218, 193], where: '"No metrics here" at 1440 light' },
+  { token: 'rgb-ink-meta', scope: 'dark', opacity: 1, backdrop: [60, 65, 68], where: 'contact eyebrow at 320 dark (the worst measured dark surface)' },
+];
+
+describe('SYN-T-010: --rgb-ink-meta clears 4.5:1 on the 2026-10-21 rendered backdrops', () => {
+  it.each(CURRENT_BACKDROPS_SYN_T_010)(
+    '--$token ($scope) at opacity $opacity >= 4.5:1 on $where',
+    ({ token, scope, opacity, backdrop }) => {
+      const ink = readToken(token, scope);
+      expect(contrast(composite(ink, opacity, backdrop), backdrop)).toBeGreaterThanOrEqual(AA_SMALL);
+    },
+  );
+
+  // The token change alone is not enough: at the old 0.9 rest opacity the retuned
+  // token still measures 4.097:1 on the current Explore wash.
+  it('non-vacuity: the retuned token at 0.9 still fails on the current Explore wash', () => {
+    const bg: RGB = [229, 214, 199];
+    expect(contrast(composite(readToken('rgb-ink-meta', 'root'), 0.9, bg), bg)).toBeLessThan(AA_SMALL);
+  });
+
+  // The opacity change alone is not enough either: the OLD token at 0.95 still
+  // fails on the same wash, so both halves of the repair are load-bearing.
+  it('non-vacuity: the old token at 0.95 still fails on the current Explore wash', () => {
+    const bg: RGB = [229, 214, 199];
+    expect(contrast(composite([84, 100, 93], 0.95, bg), bg)).toBeLessThan(AA_SMALL);
+  });
+
+  it('the re-tuned ink-meta values are the ones in the stylesheet (both themes)', () => {
+    expect(readToken('rgb-ink-meta', 'root')).toEqual([76, 92, 85]);
+    expect(readToken('rgb-ink-meta', 'dark')).toEqual([175, 191, 184]);
   });
 });
