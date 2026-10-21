@@ -119,13 +119,14 @@ describe('Hero — RC-2 landing structure (desktop, D-CON-001 B)', () => {
     expect(pill.compareDocumentPosition(explore) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
   });
 
-  it('the Explore link rests at opacity-95, the SYN-T-010 contrast floor', () => {
+  it('the Explore link rests at opacity-100 (owner-approved correction)', () => {
     render(<Hero {...rc2Props} />);
     const explore = screen.getByRole('link', { name: 'Explore projects' });
-    // 0.9 still measured 4.10:1 on the current light hero wash even after the
-    // ink-meta re-tune; 0.95 is the smallest rest opacity that clears 4.5:1.
-    expect(explore).toHaveClass('opacity-95', 'hover:opacity-100');
-    expect(explore).not.toHaveClass('opacity-90');
+    // 0.9 measured 4.10:1 on the current light hero wash; 0.95 measured 4.512:1
+    // at 639px. The owner approved 1.00 on 2026-10-21; the changed candidate is
+    // re-measured in the rendered contrast matrix.
+    expect(explore).toHaveClass('opacity-100', 'hover:opacity-100');
+    expect(explore).not.toHaveClass('opacity-95', 'opacity-90');
   });
 
   it('keeps the landing pad byte-identical and moves only the bottom padding to classes', () => {

@@ -225,9 +225,12 @@ export function Hero({
             {/* Scroll indicator — subtle affordance to continue reading.
                 Alex A11y 2026-05-29: was opacity-60 (2.65:1 contrast — WCAG 1.4.3 FAIL).
                 SYN-T-010 (2026-10-21): at 0.9 the retuned ink-meta still measured
-                4.10–4.24:1 on the light peach hero wash at 320–767px, so the rest
-                state is opacity-95; the worst measured case is 4.51:1 at 639px
-                (Chromium rendered pixels), and hover returns to full opacity.
+                4.10–4.24:1 on the light peach hero wash at 320–767px; 0.95 cleared
+                the floor at 4.512:1 at 639px (Chromium rendered pixels).
+                Owner-approved correction (2026-10-21): the rest state is now
+                opacity-100. The changed candidate measured 4.976:1 at 639px
+                light (the marginal case) and 7.348:1 at 320px dark; hover remains
+                full opacity.
                 From xl the pill sits beside the lead and this duplicate of its
                 destination is not rendered (display:none, so it also leaves the
                 accessibility tree); below xl it stays exactly as it was. */}
@@ -237,7 +240,7 @@ export function Hero({
               className={cn(
                 'inline-flex flex-col items-center gap-1.5',
                 'font-mono text-meta tracking-label uppercase text-text-meta',
-                'opacity-95 hover:opacity-100',
+                'opacity-100 hover:opacity-100',
                 'transition-opacity duration-base ease-out',
                 'xl:hidden',
               )}
