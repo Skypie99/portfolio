@@ -90,7 +90,7 @@
 
   --rgb-ink:          32 48 44;      /* body + headings (deep pine-charcoal) */
   --rgb-ink-muted:    70 84 77;      /* body-muted (~7:1 on canvas) */
-  --rgb-ink-meta:     84 100 93;     /* metadata / eyebrow — ≥4.5:1 on every world surface (a11y 07-31) */
+  --rgb-ink-meta:     76 92 85;      /* metadata / eyebrow — SYN-T-010 (D-A11Y-006): deepened from 84 100 93; rendered contrast re-verified 2026-10-21. */
 
   --rgb-line:         204 207 190;   /* dividers/borders (bone) */
   --rgb-line-strong:  140 148 132;   /* interactive borders (≥3:1) */
@@ -481,7 +481,7 @@ html.dark {
 
   --rgb-ink:          236 234 224;   /* bone-cream */
   --rgb-ink-muted:    182 194 187;
-  --rgb-ink-meta:     159 176 169;
+  --rgb-ink-meta:     175 191 184;   /* SYN-T-010 (D-A11Y-006): lifted from 159 176 169; stays just below --rgb-ink-muted (182 194 187) so meta remains subordinate. */
 
   --rgb-line:         44 52 54;
   --rgb-line-strong:  74 86 82;
