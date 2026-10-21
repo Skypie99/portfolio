@@ -105,9 +105,28 @@ export function A11yReceipts({ data, className }: { data: A11yReceiptsData; clas
             byte-identical: this page's statement copy is byte-frozen (PROTECT),
             and only the element around the date changed. */}
         <p className="font-sans font-light text-prose text-ink-muted max-w-measure-lead mb-12 text-pretty">
-          Real numbers from a real run: measured{' '}
-          <time dateTime={data.measuredDate}>{data.measuredDate}</time>, method below. Not a
-          live gate yet; a snapshot you can re-run.
+          Historical measurement: <time dateTime={data.measuredDate}>{data.measuredDate}</time>.
+          These are the portfolio&rsquo;s own numbers at that date, not a current total; the{' '}
+          <a
+            href="https://github.com/Skypie99/portfolio/blob/e5c3624499bdad04dffad0ec0281eb16a0d44868/qa-reports/PHASE-08_RESPONSIVE_A11Y_HARDENING_RECEIPT.md"
+            rel="noopener noreferrer"
+            className="link-draw text-accent-text hover:text-accent-text"
+          >
+            7 September 2026 review
+          </a>{' '}
+          is later and broader. Not a live gate yet; a snapshot you can re-run.
+          {data.erratumPath && (
+            <>
+              {' '}
+              <a
+                href={data.erratumPath}
+                className="link-draw text-accent-text hover:text-accent-text"
+              >
+                Erratum, <time dateTime="2026-10-20">2026-10-20</time>
+              </a>
+              : two scope corrections.
+            </>
+          )}
         </p>
       </Reveal>
 
@@ -161,10 +180,9 @@ export function A11yReceipts({ data, className }: { data: A11yReceiptsData; clas
               </p>
               {/* curly-the-estate (luxe Wave 1): the sub is authored prose, not a
                   code specimen, so it takes the house apostrophe like every other
-                  prose surface — "the portfolio's own suite" was the last straight
-                  U+0027 rendering from content JSON. Mono TYPEFACE is not a mono
-                  CONTEXT: `code` spans keep their literal glyphs via
-                  INLINE_CODE_CLASS and never route through this transform. */}
+                  prose surface. Mono TYPEFACE is not a mono CONTEXT: `code` spans
+                  keep their literal glyphs via INLINE_CODE_CLASS and never route
+                  through this transform. */}
               <p className="font-mono text-meta text-text-meta">{smartPunctuation(r.sub)}</p>
             </Reveal>
           ))}

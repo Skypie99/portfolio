@@ -462,10 +462,11 @@ export default function HomePage() {
                       unboxed
                       value={axe.value}
                       label={`${axe.label}: ${axe.sub}`}
-                      /* "measured": run against THIS site. Figure, method line
-                         and date all read from content/a11y-receipts.json, so
-                         the next verification run moves this receipt. */
-                      tier="measured"
+                      /* "measured earlier": run against THIS site, dated and
+                         explicitly historical. Figure, method line and date all
+                         read from content/a11y-receipts.json, so the next
+                         verification run moves this receipt. */
+                      tier="measured earlier"
                       date={a11y.measuredDate}
                       methodHref="/accessibility/#receipts"
                       methodLabel="evidence"

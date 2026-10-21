@@ -1,6 +1,7 @@
 {
   "measuredDate": "2026-08-25",
   "evidencePath": "/receipts/a11y-2026-08-25.json",
+  "erratumPath": "/receipts/a11y-2026-08-25-erratum.json",
   "method": [
     "axe-core 4.11.4 across 17 routes × 2 themes",
     "label-content-name-mismatch + color-contrast on",
@@ -26,12 +27,12 @@
     {
       "value": "763",
       "label": "tests passing",
-      "sub": "the portfolio's own suite"
+      "sub": "portfolio suite, 25 Aug 2026 snapshot"
     },
     {
       "value": "100%",
       "label": "focus stops visible",
-      "sub": "every tab stop, keyboard-traced"
+      "sub": "sampled tab stops, keyboard-traced"
     },
     {
       "value": "0.0039",

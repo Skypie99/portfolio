@@ -1,0 +1,23 @@
+{
+  "erratumDate": "2026-10-20",
+  "appliesTo": "/receipts/a11y-2026-08-25.json",
+  "status": "dated clarification; the 2026-08-25 measurement is unchanged",
+  "retention": "The dated evidence file is retained unchanged. This erratum is the correction of record.",
+  "corrections": [
+    {
+      "field": "tests passing",
+      "issue": "The comparison used a retired AccessMap test count (1,680).",
+      "correction": "The 1,680 figure was a retired AccessMap count and was not AccessMap's count on 2026-08-25. AccessMap's dated count at 2026-08-16 was 2,971 tests across 204 suites, published with its method on /work/flagstone/. The portfolio's 763 tests in this receipt are unaffected."
+    },
+    {
+      "field": "focus stops visible",
+      "issue": "The summary says 'every tab stop' while the method describes a keyboard-traced sample.",
+      "correction": "The 2026-08-25 focus check was a keyboard-traced sample. The 100% figure describes the sampled tab stops, not a full census; the page now says 'sampled tab stops, keyboard-traced'."
+    }
+  ],
+  "laterEvidence": {
+    "label": "7 September 2026 responsive and accessibility hardening review",
+    "url": "https://github.com/Skypie99/portfolio/blob/e5c3624499bdad04dffad0ec0281eb16a0d44868/qa-reports/PHASE-08_RESPONSIVE_A11Y_HARDENING_RECEIPT.md",
+    "note": "Later and broader scope (20 public content pages, the 404 page and three legacy redirects); it does not replace this dated measurement."
+  }
+}
