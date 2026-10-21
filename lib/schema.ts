@@ -399,6 +399,14 @@ export const A11yReceiptsSchema = z.object({
     .string()
     .startsWith('/receipts/', 'evidence must ship under public/receipts/')
     .endsWith('.json'),
+  /** Optional dated erratum for a retained receipt. A dated evidence file is
+   *  never rewritten (docs/EVIDENCE_RETENTION.md §5); a later correction ships
+   *  beside it and is linked from the strip. */
+  erratumPath: z
+    .string()
+    .startsWith('/receipts/', 'erratum must ship under public/receipts/')
+    .endsWith('.json')
+    .optional(),
   method: z.array(z.string().min(2).max(90)).min(1).max(8),
   receipts: z
     .array(
