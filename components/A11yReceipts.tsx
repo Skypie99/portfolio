@@ -109,6 +109,7 @@ export function A11yReceipts({ data, className }: { data: A11yReceiptsData; clas
           These are the portfolio&rsquo;s own numbers at that date, not a current total; the{' '}
           <a
             href="https://github.com/Skypie99/portfolio/blob/e5c3624499bdad04dffad0ec0281eb16a0d44868/qa-reports/PHASE-08_RESPONSIVE_A11Y_HARDENING_RECEIPT.md"
+            rel="noopener noreferrer"
             className="link-draw text-accent-text hover:text-accent-text"
           >
             7 September 2026 review
@@ -121,7 +122,7 @@ export function A11yReceipts({ data, className }: { data: A11yReceiptsData; clas
                 href={data.erratumPath}
                 className="link-draw text-accent-text hover:text-accent-text"
               >
-                Erratum, 2026-10-20
+                Erratum, <time dateTime="2026-10-20">2026-10-20</time>
               </a>
               : two scope corrections.
             </>
