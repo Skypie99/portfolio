@@ -369,9 +369,9 @@ export default function AboutPage() {
               privacy-aware systems work.
             </p>
             <p className="font-sans font-light text-body text-ink-muted text-pretty">
-              I am looking for collaborators and clients who read the
-              documentation, ask good questions, and care how things turn out.
-              Write to me if that sounds like you.
+              I am open to senior support roles and professional conversations
+              with people who read the documentation, ask good questions, and
+              care how things turn out. Write to me if that sounds like you.
             </p>
           </Reveal>
         </div>
