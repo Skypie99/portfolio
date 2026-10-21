@@ -1,0 +1,358 @@
+{
+  "meta": {
+    "tool": "record-band-verify.mjs",
+    "axe": "4.11.4",
+    "engine": "Chromium headless — NOT Safari/WebKit",
+    "at": "2026-10-20T10:11:19.149Z",
+    "dir": "/Users/skypie/Portfolio-codex/skypi-post-r6-20261020/mimo-record-focus/out"
+  },
+  "runs": [
+    {
+      "size": "1440x900@1",
+      "theme": "light",
+      "errors": [],
+      "axe": {
+        "document": {
+          "violations": [],
+          "passes": 41
+        },
+        "recordBand": {
+          "violations": [],
+          "passes": 12
+        }
+      },
+      "focusStops": [
+        {
+          "link": "the record",
+          "href": "/colophon/#calibration",
+          "inViewport": true,
+          "ancestorMinOpacity": 1,
+          "revealOpacity": 1,
+          "revealTransition": "none",
+          "ring": {
+            "style": "solid",
+            "width": "2px",
+            "color": "rgb(185, 99, 64)",
+            "offset": "2px"
+          }
+        },
+        {
+          "link": "the account",
+          "href": "/work/flagstone/#what-went-wrong",
+          "inViewport": true,
+          "ancestorMinOpacity": 1,
+          "revealOpacity": 1,
+          "revealTransition": "none",
+          "ring": {
+            "style": "solid",
+            "width": "2px",
+            "color": "rgb(185, 99, 64)",
+            "offset": "2px"
+          }
+        },
+        {
+          "link": "the statement",
+          "href": "/accessibility/",
+          "inViewport": true,
+          "ancestorMinOpacity": 1,
+          "revealOpacity": 1,
+          "revealTransition": "none",
+          "ring": {
+            "style": "solid",
+            "width": "2px",
+            "color": "rgb(185, 99, 64)",
+            "offset": "2px"
+          }
+        },
+        {
+          "link": "evidence",
+          "href": "/accessibility/#receipts",
+          "inViewport": true,
+          "ancestorMinOpacity": 1,
+          "revealOpacity": 1,
+          "revealTransition": "none",
+          "ring": {
+            "style": "solid",
+            "width": "2px",
+            "color": "rgb(185, 99, 64)",
+            "offset": "2px"
+          }
+        }
+      ],
+      "zoom200": {
+        "rows": 4,
+        "clippedRows": [],
+        "horizontalPageOverflow": false,
+        "bandWidth": 1160,
+        "viewport": 1440
+      }
+    },
+    {
+      "size": "1440x900@1",
+      "theme": "dark",
+      "errors": [],
+      "axe": {
+        "document": {
+          "violations": [],
+          "passes": 41
+        },
+        "recordBand": {
+          "violations": [],
+          "passes": 12
+        }
+      },
+      "focusStops": [
+        {
+          "link": "the record",
+          "href": "/colophon/#calibration",
+          "inViewport": true,
+          "ancestorMinOpacity": 1,
+          "revealOpacity": 1,
+          "revealTransition": "none",
+          "ring": {
+            "style": "solid",
+            "width": "2px",
+            "color": "rgb(207, 122, 79)",
+            "offset": "2px"
+          }
+        },
+        {
+          "link": "the account",
+          "href": "/work/flagstone/#what-went-wrong",
+          "inViewport": true,
+          "ancestorMinOpacity": 1,
+          "revealOpacity": 1,
+          "revealTransition": "none",
+          "ring": {
+            "style": "solid",
+            "width": "2px",
+            "color": "rgb(207, 122, 79)",
+            "offset": "2px"
+          }
+        },
+        {
+          "link": "the statement",
+          "href": "/accessibility/",
+          "inViewport": true,
+          "ancestorMinOpacity": 1,
+          "revealOpacity": 1,
+          "revealTransition": "none",
+          "ring": {
+            "style": "solid",
+            "width": "2px",
+            "color": "rgb(207, 122, 79)",
+            "offset": "2px"
+          }
+        },
+        {
+          "link": "evidence",
+          "href": "/accessibility/#receipts",
+          "inViewport": true,
+          "ancestorMinOpacity": 1,
+          "revealOpacity": 1,
+          "revealTransition": "none",
+          "ring": {
+            "style": "solid",
+            "width": "2px",
+            "color": "rgb(207, 122, 79)",
+            "offset": "2px"
+          }
+        }
+      ],
+      "zoom200": {
+        "rows": 4,
+        "clippedRows": [],
+        "horizontalPageOverflow": false,
+        "bandWidth": 1160,
+        "viewport": 1440
+      }
+    },
+    {
+      "size": "393x852@2",
+      "theme": "light",
+      "errors": [],
+      "axe": {
+        "document": {
+          "violations": [],
+          "passes": 41
+        },
+        "recordBand": {
+          "violations": [],
+          "passes": 12
+        }
+      },
+      "focusStops": [
+        {
+          "link": "the record",
+          "href": "/colophon/#calibration",
+          "inViewport": true,
+          "ancestorMinOpacity": 1,
+          "revealOpacity": 1,
+          "revealTransition": "none",
+          "ring": {
+            "style": "solid",
+            "width": "2px",
+            "color": "rgb(185, 99, 64)",
+            "offset": "2px"
+          }
+        },
+        {
+          "link": "the account",
+          "href": "/work/flagstone/#what-went-wrong",
+          "inViewport": true,
+          "ancestorMinOpacity": 1,
+          "revealOpacity": 1,
+          "revealTransition": "none",
+          "ring": {
+            "style": "solid",
+            "width": "2px",
+            "color": "rgb(185, 99, 64)",
+            "offset": "2px"
+          }
+        },
+        {
+          "link": "the statement",
+          "href": "/accessibility/",
+          "inViewport": true,
+          "ancestorMinOpacity": 1,
+          "revealOpacity": 1,
+          "revealTransition": "none",
+          "ring": {
+            "style": "solid",
+            "width": "2px",
+            "color": "rgb(185, 99, 64)",
+            "offset": "2px"
+          }
+        },
+        {
+          "link": "evidence",
+          "href": "/accessibility/#receipts",
+          "inViewport": true,
+          "ancestorMinOpacity": 1,
+          "revealOpacity": 1,
+          "revealTransition": "none",
+          "ring": {
+            "style": "solid",
+            "width": "2px",
+            "color": "rgb(185, 99, 64)",
+            "offset": "2px"
+          }
+        }
+      ],
+      "zoom200": {
+        "rows": 4,
+        "clippedRows": [],
+        "horizontalPageOverflow": false,
+        "bandWidth": 393,
+        "viewport": 393
+      }
+    },
+    {
+      "size": "393x852@2",
+      "theme": "dark",
+      "errors": [],
+      "axe": {
+        "document": {
+          "violations": [],
+          "passes": 41
+        },
+        "recordBand": {
+          "violations": [],
+          "passes": 12
+        }
+      },
+      "focusStops": [
+        {
+          "link": "the record",
+          "href": "/colophon/#calibration",
+          "inViewport": true,
+          "ancestorMinOpacity": 1,
+          "revealOpacity": 1,
+          "revealTransition": "none",
+          "ring": {
+            "style": "solid",
+            "width": "2px",
+            "color": "rgb(207, 122, 79)",
+            "offset": "2px"
+          }
+        },
+        {
+          "link": "the account",
+          "href": "/work/flagstone/#what-went-wrong",
+          "inViewport": true,
+          "ancestorMinOpacity": 1,
+          "revealOpacity": 1,
+          "revealTransition": "none",
+          "ring": {
+            "style": "solid",
+            "width": "2px",
+            "color": "rgb(207, 122, 79)",
+            "offset": "2px"
+          }
+        },
+        {
+          "link": "the statement",
+          "href": "/accessibility/",
+          "inViewport": true,
+          "ancestorMinOpacity": 1,
+          "revealOpacity": 1,
+          "revealTransition": "none",
+          "ring": {
+            "style": "solid",
+            "width": "2px",
+            "color": "rgb(207, 122, 79)",
+            "offset": "2px"
+          }
+        },
+        {
+          "link": "evidence",
+          "href": "/accessibility/#receipts",
+          "inViewport": true,
+          "ancestorMinOpacity": 1,
+          "revealOpacity": 1,
+          "revealTransition": "none",
+          "ring": {
+            "style": "solid",
+            "width": "2px",
+            "color": "rgb(207, 122, 79)",
+            "offset": "2px"
+          }
+        }
+      ],
+      "zoom200": {
+        "rows": 4,
+        "clippedRows": [],
+        "horizontalPageOverflow": false,
+        "bandWidth": 393,
+        "viewport": 393
+      }
+    }
+  ],
+  "narrow320": {
+    "viewport": 320,
+    "docOverflow": false,
+    "bandCrossesViewport": false,
+    "rows": [
+      {
+        "right": 288,
+        "width": 256,
+        "clips": false
+      },
+      {
+        "right": 288,
+        "width": 256,
+        "clips": false
+      },
+      {
+        "right": 288,
+        "width": 256,
+        "clips": false
+      },
+      {
+        "right": 288,
+        "width": 256,
+        "clips": false
+      }
+    ]
+  }
+}
