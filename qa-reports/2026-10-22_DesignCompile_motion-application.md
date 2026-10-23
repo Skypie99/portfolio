@@ -8,20 +8,20 @@
 
 **Source:** `~/Downloads/IMG_8826.mov` (1 min 46 s portrait HDR iPhone video; left untouched, same SHA-256 before and after)
 
-**Status:** candidate for owner review. Local commits only: not pushed, not merged, not deployed. Nothing was sent to anyone.
+**Status:** approved by Sky for publication on 2026-10-22, to be released through a pull request with a CI-gated merge to `main` (no admin bypass). Nothing was sent to anyone; Sky submits the application himself.
 
 ## 1. DECISIONS FOR SKY
 
-- [ ] **Publish `/motion/`.** Awaiting your approval.
+- [x] **Publish `/motion/`.** Approved by Sky on 2026-10-22: "I authorize publishing the Motion page to production".
   - **Rollback:** `git revert -m 1 <merge-sha>` on `main` and push; CI and Deploy then republish the previous site.
-- [ ] **Confirm by ear at 0:07.8:** "working in **technical** product support". Both on-device recognisers hear "tactical". The vowel measurements favour "technical", which also matches how you say the word elsewhere in the recording.
-- [ ] **Confirm by ear at 1:36.7:** "You really have to **adopt** who you're speaking to". The spoken word measures as "adopt", and the captions keep what was said.
-- [ ] **Poster frame:** the closing smile at 105.6 s, as on /float/. Alternatives are in the evidence packet.
-- [ ] **Audio level:** −16.0 LUFS, the same treatment as /float/.
+- [x] **0:07.8, "working in technical product support":** confirmed by Sky by ear. The word is "technical", not "tactical". No change needed.
+- [x] **1:36.7, "You really have to adopt who you're speaking to":** confirmed by Sky by ear. He said "adopt" (he intended "adapt"), so the captions and transcript keep the spoken "adopt". No change needed.
+- [x] **The recording:** approved as recorded (Sky: "I accept the recording exactly as it is, including natural pauses, stumbles, and blinking").
+- [x] **Poster frame (closing smile at 105.6 s) and audio level (−16.0 LUFS):** published as reviewed, as part of the approved implementation.
 
 ## 2. BLOCKERS / FAIL_FAST
 
-None. The transcript is machine-verified. Two words await your listening review (section 1); the full transcript is in the evidence packet.
+None. Both flagged words were confirmed by Sky on 2026-10-22, so the captions and transcript are owner-verified.
 
 ## 3. Summary
 
@@ -90,7 +90,7 @@ No existing file outside `qa-reports/INDEX.md` was modified.
 | 4. Visual Entropy | PASS | ~86/100 (judgment) | Same three-band rhythm as /float/. The extra Tokyo line is a quiet second link, not a new element type. |
 | 5. Luxury UI Score | PASS | ~85/100 (judgment) | The poster's terracotta sun and orange chair sit naturally in the site palette. Copy is short; the transcript reads as quiet prose. |
 | 6. Regression Safety | PASS | — | Full and static suites green; built output of all other routes unchanged in content; no shared file touched |
-| 7. Compile Decision | **COMMIT** (local) | — | UI done; publication awaits Sky (section 1) |
+| 7. Compile Decision | **COMMIT** | — | UI done; publication approved by Sky on 2026-10-22 (section 1) |
 
 ## 7. Findings and notes
 
