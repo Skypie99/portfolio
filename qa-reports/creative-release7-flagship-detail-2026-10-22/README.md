@@ -1,5 +1,7 @@
 # Creative Release 7 candidate · The flagship room, shown at reading size · owner review
 
+> **Lifecycle (2026-10-23):** Sky accepted direction A with refinements (tablets stack; the caption ink approved; a dark-mode text floor for the room). The refined candidate and its evidence: [`creative-release7-refinement-2026-10-23/README.md`](../creative-release7-refinement-2026-10-23/README.md). This record stays as written for v1 (`ed5b25b`).
+
 **Date:** 2026-10-22 · **Branch:** `claude/skypi-creative-r7-flagship-detail-20261022` (local only, not pushed) · **Base:** `origin/main` `093324581fecdca4d06ec68ddcb666244491e309`, fetched and verified at the start of the session; GitHub Actions Deploy run `39694576424` published that exact SHA (2026-10-21 23:37 UTC), so the live site was this main · **Integrated at handoff:** main moved to `2fb857b` during the session (PR #39, the unlisted `/motion/` page, deployed 2026-10-23 03:51 UTC). It was merged into this branch at `82ed254` (a merge, no history rewritten); the one overlapping path, the generated `qa-reports/INDEX.md`, was regenerated, and the merged tree was re-verified (section 7) · **Deployed:** no · **Merged:** no · **Pull request:** none
 
 | Package | Surface | Status |

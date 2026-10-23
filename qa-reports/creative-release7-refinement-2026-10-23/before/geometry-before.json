@@ -1,0 +1,866 @@
+[
+ {
+  "tag": "before-light-1440x900@1",
+  "theme": "light",
+  "size": "1440x900@1",
+  "mode": "normal",
+  "errors": [],
+  "room": {
+   "x": 280,
+   "y": 0,
+   "w": 1160,
+   "h": 877.9
+  },
+  "h2": {
+   "x": 330,
+   "y": 323.3,
+   "w": 558.4,
+   "h": 53.7
+  },
+  "screen": {
+   "x": 1041.6,
+   "y": 138,
+   "w": 261.2,
+   "h": 571.5
+  },
+  "frame": {
+   "x": 1032.6,
+   "y": 129,
+   "w": 279.2,
+   "h": 589.5
+  },
+  "plate": null,
+  "leader": null,
+  "cardMid": 315.4,
+  "plateMid": null,
+  "slabVisible": true,
+  "docOverflowX": 0,
+  "imgs": [
+   {
+    "src": "explore-current.phone.avif",
+    "nat": [
+     1290,
+     2803
+    ],
+    "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+    "box": {
+     "x": 1041.6,
+     "y": 138,
+     "w": 261.2,
+     "h": 571.5
+    },
+    "hiddenFromAT": false
+   }
+  ]
+ },
+ {
+  "tag": "before-light-1280x800@1",
+  "theme": "light",
+  "size": "1280x800@1",
+  "mode": "normal",
+  "errors": [],
+  "room": {
+   "x": 280,
+   "y": 0,
+   "w": 1000,
+   "h": 787.9
+  },
+  "h2": {
+   "x": 330,
+   "y": 268.7,
+   "w": 470.4,
+   "h": 53.7
+  },
+  "screen": {
+   "x": 938.9,
+   "y": 138,
+   "w": 218.6,
+   "h": 481.5
+  },
+  "frame": {
+   "x": 929.9,
+   "y": 129,
+   "w": 236.6,
+   "h": 499.5
+  },
+  "plate": null,
+  "leader": null,
+  "cardMid": 287.4,
+  "plateMid": null,
+  "slabVisible": true,
+  "docOverflowX": 0,
+  "imgs": [
+   {
+    "src": "explore-current.phone.avif",
+    "nat": [
+     1290,
+     2803
+    ],
+    "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+    "box": {
+     "x": 938.9,
+     "y": 138,
+     "w": 218.6,
+     "h": 481.5
+    },
+    "hiddenFromAT": false
+   }
+  ]
+ },
+ {
+  "tag": "before-light-1024x768@1",
+  "theme": "light",
+  "size": "1024x768@1",
+  "mode": "normal",
+  "errors": [],
+  "room": {
+   "x": 280,
+   "y": 0,
+   "w": 744,
+   "h": 643.9
+  },
+  "h2": {
+   "x": 330,
+   "y": 189,
+   "w": 329.6,
+   "h": 53.7
+  },
+  "screen": {
+   "x": 774.6,
+   "y": 138,
+   "w": 150.4,
+   "h": 337.5
+  },
+  "frame": {
+   "x": 765.6,
+   "y": 129,
+   "w": 168.4,
+   "h": 355.5
+  },
+  "plate": null,
+  "leader": null,
+  "cardMid": 242.8,
+  "plateMid": null,
+  "slabVisible": true,
+  "docOverflowX": 0,
+  "imgs": [
+   {
+    "src": "explore-current.phone.avif",
+    "nat": [
+     1290,
+     2803
+    ],
+    "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+    "box": {
+     "x": 774.6,
+     "y": 138,
+     "w": 150.4,
+     "h": 337.5
+    },
+    "hiddenFromAT": false
+   }
+  ]
+ },
+ {
+  "tag": "before-light-834x1194@2",
+  "theme": "light",
+  "size": "834x1194@2",
+  "mode": "normal",
+  "errors": [],
+  "room": {
+   "x": 280,
+   "y": 0,
+   "w": 554,
+   "h": 1203.2
+  },
+  "h2": {
+   "x": 330,
+   "y": 129.8,
+   "w": 472,
+   "h": 46.9
+  },
+  "screen": {
+   "x": 420.9,
+   "y": 353,
+   "w": 272.1,
+   "h": 594.5
+  },
+  "frame": {
+   "x": 411.9,
+   "y": 344,
+   "w": 290.1,
+   "h": 612.5
+  },
+  "plate": null,
+  "leader": null,
+  "cardMid": 537.5,
+  "plateMid": null,
+  "slabVisible": true,
+  "docOverflowX": 0,
+  "imgs": [
+   {
+    "src": "explore-current.phone.avif",
+    "nat": [
+     1290,
+     2803
+    ],
+    "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+    "box": {
+     "x": 420.9,
+     "y": 353,
+     "w": 272.1,
+     "h": 594.5
+    },
+    "hiddenFromAT": false
+   }
+  ]
+ },
+ {
+  "tag": "before-light-768x1024@1",
+  "theme": "light",
+  "size": "768x1024@1",
+  "mode": "normal",
+  "errors": [],
+  "room": {
+   "x": 280,
+   "y": 0,
+   "w": 488,
+   "h": 1120.7
+  },
+  "h2": {
+   "x": 330,
+   "y": 129.8,
+   "w": 406,
+   "h": 46.9
+  },
+  "screen": {
+   "x": 407.5,
+   "y": 353,
+   "w": 233,
+   "h": 512
+  },
+  "frame": {
+   "x": 398.5,
+   "y": 344,
+   "w": 251,
+   "h": 530
+  },
+  "plate": null,
+  "leader": null,
+  "cardMid": 511.9,
+  "plateMid": null,
+  "slabVisible": true,
+  "docOverflowX": 0,
+  "imgs": [
+   {
+    "src": "explore-current.phone.avif",
+    "nat": [
+     1290,
+     2803
+    ],
+    "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+    "box": {
+     "x": 407.5,
+     "y": 353,
+     "w": 233,
+     "h": 512
+    },
+    "hiddenFromAT": false
+   }
+  ]
+ },
+ {
+  "tag": "before-light-393x852@2",
+  "theme": "light",
+  "size": "393x852@2",
+  "mode": "normal",
+  "errors": [],
+  "room": {
+   "x": 0,
+   "y": 0,
+   "w": 393,
+   "h": 1017.4
+  },
+  "h2": {
+   "x": 50,
+   "y": 129.8,
+   "w": 311,
+   "h": 46.9
+  },
+  "screen": {
+   "x": 108.1,
+   "y": 353,
+   "w": 176.8,
+   "h": 393.3
+  },
+  "frame": {
+   "x": 99.1,
+   "y": 344,
+   "w": 194.8,
+   "h": 411.3
+  },
+  "plate": null,
+  "leader": null,
+  "cardMid": 475,
+  "plateMid": null,
+  "slabVisible": true,
+  "docOverflowX": 0,
+  "imgs": [
+   {
+    "src": "explore-current.phone.avif",
+    "nat": [
+     1290,
+     2803
+    ],
+    "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+    "box": {
+     "x": 108.1,
+     "y": 353,
+     "w": 176.8,
+     "h": 393.3
+    },
+    "hiddenFromAT": false
+   }
+  ]
+ },
+ {
+  "tag": "before-light-375x667@2",
+  "theme": "light",
+  "size": "375x667@2",
+  "mode": "normal",
+  "errors": [],
+  "room": {
+   "x": 0,
+   "y": 0,
+   "w": 375,
+   "h": 1010.3
+  },
+  "h2": {
+   "x": 50,
+   "y": 129.8,
+   "w": 293,
+   "h": 46.9
+  },
+  "screen": {
+   "x": 104.4,
+   "y": 368.3,
+   "w": 166.1,
+   "h": 370.8
+  },
+  "frame": {
+   "x": 95.4,
+   "y": 359.3,
+   "w": 184.1,
+   "h": 388.8
+  },
+  "plate": null,
+  "leader": null,
+  "cardMid": 483.4,
+  "plateMid": null,
+  "slabVisible": true,
+  "docOverflowX": 0,
+  "imgs": [
+   {
+    "src": "explore-current.phone.avif",
+    "nat": [
+     1290,
+     2803
+    ],
+    "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+    "box": {
+     "x": 104.4,
+     "y": 368.3,
+     "w": 166.1,
+     "h": 370.8
+    },
+    "hiddenFromAT": false
+   }
+  ]
+ },
+ {
+  "tag": "before-light-320x568@2",
+  "theme": "light",
+  "size": "320x568@2",
+  "mode": "normal",
+  "errors": [],
+  "room": {
+   "x": 0,
+   "y": 0,
+   "w": 320,
+   "h": 972.3
+  },
+  "h2": {
+   "x": 50,
+   "y": 129.8,
+   "w": 238,
+   "h": 46.9
+  },
+  "screen": {
+   "x": 93.2,
+   "y": 383.7,
+   "w": 133.6,
+   "h": 302
+  },
+  "frame": {
+   "x": 84.2,
+   "y": 374.7,
+   "w": 151.6,
+   "h": 320
+  },
+  "plate": null,
+  "leader": null,
+  "cardMid": 477.5,
+  "plateMid": null,
+  "slabVisible": true,
+  "docOverflowX": 0,
+  "imgs": [
+   {
+    "src": "explore-current.phone.avif",
+    "nat": [
+     1290,
+     2803
+    ],
+    "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+    "box": {
+     "x": 93.2,
+     "y": 383.7,
+     "w": 133.6,
+     "h": 302
+    },
+    "hiddenFromAT": false
+   }
+  ]
+ },
+ {
+  "tag": "before-dark-1440x900@1",
+  "theme": "dark",
+  "size": "1440x900@1",
+  "mode": "normal",
+  "errors": [],
+  "room": {
+   "x": 280,
+   "y": 0,
+   "w": 1160,
+   "h": 877.9
+  },
+  "h2": {
+   "x": 330,
+   "y": 323.3,
+   "w": 558.4,
+   "h": 53.7
+  },
+  "screen": {
+   "x": 1041.6,
+   "y": 138,
+   "w": 261.2,
+   "h": 571.5
+  },
+  "frame": {
+   "x": 1032.6,
+   "y": 129,
+   "w": 279.2,
+   "h": 589.5
+  },
+  "plate": null,
+  "leader": null,
+  "cardMid": 315.4,
+  "plateMid": null,
+  "slabVisible": true,
+  "docOverflowX": 0,
+  "imgs": [
+   {
+    "src": "explore-current.phone.avif",
+    "nat": [
+     1290,
+     2803
+    ],
+    "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+    "box": {
+     "x": 1041.6,
+     "y": 138,
+     "w": 261.2,
+     "h": 571.5
+    },
+    "hiddenFromAT": false
+   }
+  ]
+ },
+ {
+  "tag": "before-dark-1280x800@1",
+  "theme": "dark",
+  "size": "1280x800@1",
+  "mode": "normal",
+  "errors": [],
+  "room": {
+   "x": 280,
+   "y": 0,
+   "w": 1000,
+   "h": 787.9
+  },
+  "h2": {
+   "x": 330,
+   "y": 268.7,
+   "w": 470.4,
+   "h": 53.7
+  },
+  "screen": {
+   "x": 938.9,
+   "y": 138,
+   "w": 218.6,
+   "h": 481.5
+  },
+  "frame": {
+   "x": 929.9,
+   "y": 129,
+   "w": 236.6,
+   "h": 499.5
+  },
+  "plate": null,
+  "leader": null,
+  "cardMid": 287.4,
+  "plateMid": null,
+  "slabVisible": true,
+  "docOverflowX": 0,
+  "imgs": [
+   {
+    "src": "explore-current.phone.avif",
+    "nat": [
+     1290,
+     2803
+    ],
+    "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+    "box": {
+     "x": 938.9,
+     "y": 138,
+     "w": 218.6,
+     "h": 481.5
+    },
+    "hiddenFromAT": false
+   }
+  ]
+ },
+ {
+  "tag": "before-dark-1024x768@1",
+  "theme": "dark",
+  "size": "1024x768@1",
+  "mode": "normal",
+  "errors": [],
+  "room": {
+   "x": 280,
+   "y": 0,
+   "w": 744,
+   "h": 643.9
+  },
+  "h2": {
+   "x": 330,
+   "y": 189,
+   "w": 329.6,
+   "h": 53.7
+  },
+  "screen": {
+   "x": 774.6,
+   "y": 138,
+   "w": 150.4,
+   "h": 337.5
+  },
+  "frame": {
+   "x": 765.6,
+   "y": 129,
+   "w": 168.4,
+   "h": 355.5
+  },
+  "plate": null,
+  "leader": null,
+  "cardMid": 242.8,
+  "plateMid": null,
+  "slabVisible": true,
+  "docOverflowX": 0,
+  "imgs": [
+   {
+    "src": "explore-current.phone.avif",
+    "nat": [
+     1290,
+     2803
+    ],
+    "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+    "box": {
+     "x": 774.6,
+     "y": 138,
+     "w": 150.4,
+     "h": 337.5
+    },
+    "hiddenFromAT": false
+   }
+  ]
+ },
+ {
+  "tag": "before-dark-834x1194@2",
+  "theme": "dark",
+  "size": "834x1194@2",
+  "mode": "normal",
+  "errors": [],
+  "room": {
+   "x": 280,
+   "y": 0,
+   "w": 554,
+   "h": 1203.2
+  },
+  "h2": {
+   "x": 330,
+   "y": 129.8,
+   "w": 472,
+   "h": 46.9
+  },
+  "screen": {
+   "x": 420.9,
+   "y": 353,
+   "w": 272.1,
+   "h": 594.5
+  },
+  "frame": {
+   "x": 411.9,
+   "y": 344,
+   "w": 290.1,
+   "h": 612.5
+  },
+  "plate": null,
+  "leader": null,
+  "cardMid": 537.5,
+  "plateMid": null,
+  "slabVisible": true,
+  "docOverflowX": 0,
+  "imgs": [
+   {
+    "src": "explore-current.phone.avif",
+    "nat": [
+     1290,
+     2803
+    ],
+    "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+    "box": {
+     "x": 420.9,
+     "y": 353,
+     "w": 272.1,
+     "h": 594.5
+    },
+    "hiddenFromAT": false
+   }
+  ]
+ },
+ {
+  "tag": "before-dark-768x1024@1",
+  "theme": "dark",
+  "size": "768x1024@1",
+  "mode": "normal",
+  "errors": [],
+  "room": {
+   "x": 280,
+   "y": 0,
+   "w": 488,
+   "h": 1120.7
+  },
+  "h2": {
+   "x": 330,
+   "y": 129.8,
+   "w": 406,
+   "h": 46.9
+  },
+  "screen": {
+   "x": 407.5,
+   "y": 353,
+   "w": 233,
+   "h": 512
+  },
+  "frame": {
+   "x": 398.5,
+   "y": 344,
+   "w": 251,
+   "h": 530
+  },
+  "plate": null,
+  "leader": null,
+  "cardMid": 511.9,
+  "plateMid": null,
+  "slabVisible": true,
+  "docOverflowX": 0,
+  "imgs": [
+   {
+    "src": "explore-current.phone.avif",
+    "nat": [
+     1290,
+     2803
+    ],
+    "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+    "box": {
+     "x": 407.5,
+     "y": 353,
+     "w": 233,
+     "h": 512
+    },
+    "hiddenFromAT": false
+   }
+  ]
+ },
+ {
+  "tag": "before-dark-393x852@2",
+  "theme": "dark",
+  "size": "393x852@2",
+  "mode": "normal",
+  "errors": [],
+  "room": {
+   "x": 0,
+   "y": 0,
+   "w": 393,
+   "h": 1017.4
+  },
+  "h2": {
+   "x": 50,
+   "y": 129.8,
+   "w": 311,
+   "h": 46.9
+  },
+  "screen": {
+   "x": 108.1,
+   "y": 353,
+   "w": 176.8,
+   "h": 393.3
+  },
+  "frame": {
+   "x": 99.1,
+   "y": 344,
+   "w": 194.8,
+   "h": 411.3
+  },
+  "plate": null,
+  "leader": null,
+  "cardMid": 475,
+  "plateMid": null,
+  "slabVisible": true,
+  "docOverflowX": 0,
+  "imgs": [
+   {
+    "src": "explore-current.phone.avif",
+    "nat": [
+     1290,
+     2803
+    ],
+    "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+    "box": {
+     "x": 108.1,
+     "y": 353,
+     "w": 176.8,
+     "h": 393.3
+    },
+    "hiddenFromAT": false
+   }
+  ]
+ },
+ {
+  "tag": "before-dark-375x667@2",
+  "theme": "dark",
+  "size": "375x667@2",
+  "mode": "normal",
+  "errors": [],
+  "room": {
+   "x": 0,
+   "y": 0,
+   "w": 375,
+   "h": 1010.3
+  },
+  "h2": {
+   "x": 50,
+   "y": 129.8,
+   "w": 293,
+   "h": 46.9
+  },
+  "screen": {
+   "x": 104.4,
+   "y": 368.3,
+   "w": 166.1,
+   "h": 370.8
+  },
+  "frame": {
+   "x": 95.4,
+   "y": 359.3,
+   "w": 184.1,
+   "h": 388.8
+  },
+  "plate": null,
+  "leader": null,
+  "cardMid": 483.4,
+  "plateMid": null,
+  "slabVisible": true,
+  "docOverflowX": 0,
+  "imgs": [
+   {
+    "src": "explore-current.phone.avif",
+    "nat": [
+     1290,
+     2803
+    ],
+    "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+    "box": {
+     "x": 104.4,
+     "y": 368.3,
+     "w": 166.1,
+     "h": 370.8
+    },
+    "hiddenFromAT": false
+   }
+  ]
+ },
+ {
+  "tag": "before-dark-320x568@2",
+  "theme": "dark",
+  "size": "320x568@2",
+  "mode": "normal",
+  "errors": [],
+  "room": {
+   "x": 0,
+   "y": 0,
+   "w": 320,
+   "h": 972.3
+  },
+  "h2": {
+   "x": 50,
+   "y": 129.8,
+   "w": 238,
+   "h": 46.9
+  },
+  "screen": {
+   "x": 93.2,
+   "y": 383.7,
+   "w": 133.6,
+   "h": 302
+  },
+  "frame": {
+   "x": 84.2,
+   "y": 374.7,
+   "w": 151.6,
+   "h": 320
+  },
+  "plate": null,
+  "leader": null,
+  "cardMid": 477.5,
+  "plateMid": null,
+  "slabVisible": true,
+  "docOverflowX": 0,
+  "imgs": [
+   {
+    "src": "explore-current.phone.avif",
+    "nat": [
+     1290,
+     2803
+    ],
+    "alt": "Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.",
+    "box": {
+     "x": 93.2,
+     "y": 383.7,
+     "w": 133.6,
+     "h": 302
+    },
+    "hiddenFromAT": false
+   }
+  ]
+ }
+]

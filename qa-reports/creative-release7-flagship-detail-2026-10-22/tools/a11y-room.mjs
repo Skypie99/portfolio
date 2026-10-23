@@ -17,7 +17,9 @@
  * decorative child's paint (the eyebrow's terracotta dot) is hidden with the
  * glyphs, as in the Release 6 probe. The room's h2 is not probed: its `ember`
  * ink is a gradient clipped to the glyphs, which this method cannot isolate
- * (the element is unchanged by this candidate).
+ * (the element is unchanged by this candidate). `--keep-shadow` keeps a line's own
+ * text-shadow in the sampled backdrop (stricter: a glow behind glyphs counts);
+ * `--inject-css` measures an experiment overlay and records it in the JSON.
  * Keyboard: focus the last focusable element before the room, Tab until focus
  * leaves it, and record every stop inside (name, visible ring). Pure
  * measurement; nothing on the page is changed except the probe's own
@@ -41,6 +43,12 @@ const TAG = opt('tag', 'after');
 const THEMES = opt('themes', 'light,dark').split(',');
 const SIZES = opt('sizes', '1440x900@1,393x852@2').split(',').map((t) => { const m = /^(\d+)x(\d+)@([\d.]+)$/.exec(t); return { w: +m[1], h: +m[2], dpr: +m[3], tag: t }; });
 const PORT = Number(opt('port', 3371));
+// --inject-css "<css>": an experiment overlay applied after load, to measure a candidate
+// fix before building it (recorded in the JSON so no run can pass for the shipped page).
+const INJECT = opt('inject-css', '');
+// --keep-shadow: leave each probed line's text-shadow in place while the backdrop is
+// sampled, so a glow behind the glyphs (the dark plate claim's) counts as backdrop.
+const KEEP_SHADOW = argv.includes('--keep-shadow');
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 fs.mkdirSync(OUT, { recursive: true });
 
@@ -68,6 +76,7 @@ try {
     const page = await ctx.newPage();
     await page.goto(`http://127.0.0.1:${PORT}/`, { waitUntil: 'networkidle' });
     await page.evaluate(() => document.fonts.ready);
+    if (INJECT) await page.addStyleTag({ content: INJECT });
     // walk the whole page once so every reveal rests visible
     const H = await page.evaluate(() => document.documentElement.scrollHeight);
     for (let y = 0; y < H; y += Math.round(size.h * 0.6)) { await page.evaluate((v) => scrollTo(0, v), y); await sleep(70); }
@@ -116,12 +125,13 @@ try {
       const el = handle && handle.asElement();
       if (!el) { contrast.push({ label: probe.label, missing: true }); continue; }
       await el.scrollIntoViewIfNeeded();
+      await page.evaluate((k) => { window.__keepShadow = k; }, KEEP_SHADOW);
       await sleep(500);
       const info = await el.evaluate((n) => { const cs = getComputedStyle(n); return { color: cs.color, fontSize: parseFloat(cs.fontSize), fontWeight: cs.fontWeight, text: (n.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 60) }; });
       const box = await el.boundingBox();
       const fg = parseRgb(info.color);
       if (!box || !fg) { contrast.push({ label: probe.label, missing: true }); continue; }
-      await el.evaluate((n) => { n.querySelectorAll('*').forEach((c) => { c.style.setProperty('color', 'transparent', 'important'); c.style.setProperty('-webkit-text-fill-color', 'transparent', 'important'); c.style.setProperty('background', 'transparent', 'important'); }); n.style.setProperty('color', 'transparent', 'important'); n.style.setProperty('-webkit-text-fill-color', 'transparent', 'important'); n.style.setProperty('text-shadow', 'none', 'important'); });
+      await el.evaluate((n) => { n.querySelectorAll('*').forEach((c) => { c.style.setProperty('color', 'transparent', 'important'); c.style.setProperty('-webkit-text-fill-color', 'transparent', 'important'); c.style.setProperty('background', 'transparent', 'important'); }); n.style.setProperty('color', 'transparent', 'important'); n.style.setProperty('-webkit-text-fill-color', 'transparent', 'important'); if (!window.__keepShadow) n.style.setProperty('text-shadow', 'none', 'important'); });
       const clip = { x: Math.max(0, box.x), y: Math.max(0, box.y), width: Math.max(1, Math.min(box.width, size.w - box.x)), height: Math.max(1, box.height) };
       const buf = await page.screenshot({ type: 'png', clip });
       await el.evaluate((n) => { n.querySelectorAll('*').forEach((c) => { c.style.removeProperty('color'); c.style.removeProperty('-webkit-text-fill-color'); c.style.removeProperty('background'); }); n.style.removeProperty('color'); n.style.removeProperty('-webkit-text-fill-color'); n.style.removeProperty('text-shadow'); });
@@ -133,7 +143,7 @@ try {
       const threshold = large ? 3 : 4.5;
       contrast.push({ label: probe.label, text: info.text, fontSize: info.fontSize, color: info.color, worst: +worst.toFixed(2), median: +rs[Math.floor(rs.length / 2)].toFixed(2), threshold, pass: worst >= threshold });
     }
-    report.push({ tag: TAG, theme, size: size.tag, axe, keyboard, aria, contrast });
+    report.push({ tag: TAG, theme, size: size.tag, injectCss: INJECT || null, keepShadow: KEEP_SHADOW, axe, keyboard, aria, contrast });
     console.log(`${TAG} ${theme} ${size.tag}: axe page ${axe.page.violations.length} viol / room ${axe.room.violations.length} viol · keyboard stops ${stops.length} (${stops.map((s) => s.name).join(' | ')}) · hidden focusables ${keyboard.hiddenFocusables} · contrast min ${Math.min(...contrast.filter((c) => !c.missing).map((c) => c.worst))} fails ${contrast.filter((c) => c.pass === false).length}`);
     await ctx.close();
   }

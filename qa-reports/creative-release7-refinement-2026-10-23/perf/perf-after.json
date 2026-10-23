@@ -1,0 +1,69 @@
+{
+ "tag": "after",
+ "files": {
+  "indexHtml": 178458,
+  "cssTotal": 145776
+ },
+ "runs": [
+  {
+   "size": "1440x900@1",
+   "cls": {
+    "walk": 0,
+    "whileRoomInView": 0,
+    "entries": 1
+   },
+   "captureRequests": [
+    {
+     "url": "/showcase/flagstone/explore-current.phone.avif",
+     "bytes": 126271
+    }
+   ],
+   "totals": {
+    "requests": 36,
+    "imageRequests": 8,
+    "imageBytes": 749533,
+    "scriptBytes": 709115
+   }
+  },
+  {
+   "size": "768x1024@1",
+   "cls": {
+    "walk": 0,
+    "whileRoomInView": 0,
+    "entries": 1
+   },
+   "captureRequests": [
+    {
+     "url": "/showcase/flagstone/explore-current.phone.avif",
+     "bytes": 126271
+    }
+   ],
+   "totals": {
+    "requests": 36,
+    "imageRequests": 8,
+    "imageBytes": 396793,
+    "scriptBytes": 709115
+   }
+  },
+  {
+   "size": "393x852@2",
+   "cls": {
+    "walk": 0,
+    "whileRoomInView": 0,
+    "entries": 0
+   },
+   "captureRequests": [
+    {
+     "url": "/showcase/flagstone/explore-current.phone.avif",
+     "bytes": 126271
+    }
+   ],
+   "totals": {
+    "requests": 34,
+    "imageRequests": 8,
+    "imageBytes": 306495,
+    "scriptBytes": 706541
+   }
+  }
+ ]
+}

@@ -1,0 +1,4 @@
+protected and preserved surfaces vs origin/main 2fb857b (empty = untouched):
+-- cinematic:
+-- Motion page:
+-- /motion/ in the build: present

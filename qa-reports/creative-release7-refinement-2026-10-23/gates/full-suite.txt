@@ -1,0 +1,22 @@
+
+ RUN  v3.2.7 /private/var/folders/mw/t168n0fn6dg8n35vq6c__chr0000gn/T/skypi-creative-release.JYAx1D/portfolio
+
+·································································-·········································································································stderr | components/__tests__/ProductReveal.test.tsx > ProductReveal > renders a real <img> carrying the alt when a src is provided
+Warning: React does not recognize the `fetchPriority` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `fetchpriority` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+    at img
+    at StaticShot (/private/var/folders/mw/t168n0fn6dg8n35vq6c__chr0000gn/T/skypi-creative-release.JYAx1D/portfolio/components/ProductReveal.tsx:212:3)
+    at div
+    at div
+    at DeviceFrame (/private/var/folders/mw/t168n0fn6dg8n35vq6c__chr0000gn/T/skypi-creative-release.JYAx1D/portfolio/components/DeviceFrame.tsx:6:24)
+    at FramedArtifact (/private/var/folders/mw/t168n0fn6dg8n35vq6c__chr0000gn/T/skypi-creative-release.JYAx1D/portfolio/components/ProductReveal.tsx:53:3)
+    at div
+    at ProductReveal (/private/var/folders/mw/t168n0fn6dg8n35vq6c__chr0000gn/T/skypi-creative-release.JYAx1D/portfolio/components/ProductReveal.tsx:296:3)
+
+··································································································································································································································································································································································-···········································································································································································································································································································································································································································································································································································································································································
+
+ Test Files  127 passed (127)
+      Tests  1175 passed | 2 skipped (1177)
+   Start at  01:10:44
+   Duration  17.07s (transform 3.72s, setup 7.34s, collect 19.76s, tests 16.39s, environment 44.97s, prepare 6.57s)
+
+exit 0
