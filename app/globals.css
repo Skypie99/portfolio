@@ -4504,6 +4504,21 @@ html.dark .ts-float {
   height: 100%;
 }
 
+/* Creative Release 7 candidate — the open stage. The room's own brief
+   (app/page.tsx, C2) is "no bordered well and no earth gradient: the phone
+   standing in the room's own light, not a framed picture", but the bare hero
+   component still paints its golden-hour world (.pr-world, an opaque earth
+   gradient), that world's horizon hairline and, in dark, its lamp inside the
+   well: on the live site a hard-edged 465×581 slab behind the phone at 1440,
+   in both themes. In this room the stage light (components/
+   exhibitDetail.module.css) replaces all three; every case-study hero keeps
+   them, untouched. Static paint: reduced motion and no-JS are identical. */
+#flagship .pr-world,
+#flagship .pr-horizon,
+#flagship .pr-lamp {
+  display: none;
+}
+
 /* M2 — the fine active-row rule (the row's existing divider). */
 #work ol > li {
   /* --dur-fast = 180ms — the ramp rung inside M2's 120–200ms band;

@@ -6,6 +6,7 @@ import { CinematicDesert } from '@/components/cinematic/CinematicDesert';
 import { CLAUSE_LINE_CLASS, ClauseBound } from '@/components/ClauseBound';
 import { ContactEmail } from '@/components/ContactEmail';
 import { ContentReveal } from '@/components/ContentReveal';
+import { ExhibitDetail } from '@/components/ExhibitDetail';
 import { Hero } from '@/components/Hero';
 import { HeroImageSettle } from '@/components/HeroSettle';
 import { IntroScrollCue } from '@/components/IntroScrollCue';
@@ -22,6 +23,7 @@ import { Receipt } from '@/components/Receipt';
 import { Reveal } from '@/components/Reveal';
 import { RunwayIdentity } from '@/components/RunwayIdentity';
 import { RunwayIdentityRelease } from '@/components/RunwayIdentityRelease';
+import { captureDetailFor } from '@/lib/captureDetail';
 import { cn } from '@/lib/cn';
 import { getA11yReceipts, getCertificates, getDeliverables, getProfile, getRounds } from '@/lib/content';
 import { bindSoloLetters } from '@/lib/markdown';
@@ -30,6 +32,7 @@ import { canonicalFor } from '@/lib/metadata';
 import { OG_CARD } from '@/lib/og';
 import { signatureFor } from '@/lib/signature';
 
+import exhibitStyles from '@/components/exhibitDetail.module.css';
 import styles from '@/components/readingGroup.module.css';
 
 /**
@@ -158,6 +161,12 @@ export default function HomePage() {
   const flagship = deliverables.find((d) => d.featured);
   /** Everything the flagship room does NOT already carry. */
   const rest = deliverables.filter((d) => d !== flagship);
+  /** The flagship's capture and its detail plate (Creative Release 7
+   *  candidate): one region of the SAME capture at a readable size. Null
+   *  whenever the hero is no longer the file the crop was measured on
+   *  (lib/captureDetail.ts), and the room then shows the screen alone. */
+  const flagshipMedia = flagship ? heroMedia(flagship) : null;
+  const flagshipDetail = flagship ? captureDetailFor(flagship) : null;
 
   /**
    * The work index (C3) — the page's canonical five-project list, flagship
@@ -530,8 +539,16 @@ export default function HomePage() {
                    step (gap-x-16 → gap-x-12), so the capture sits closer to
                    the copy column's terracotta rule while the grid stays
                    asymmetric. Trial targets (C): 260–300px visible phone and
-                   48–56px heading at wide desktop — measured after. */
-                'lg:grid-cols-[1.1fr_0.9fr] lg:gap-x-12 lg:items-center',
+                   48–56px heading at wide desktop — measured after.
+                   Creative Release 7 candidate: with a detail plate the
+                   stage carries plate AND screen, so it takes the larger
+                   track (0.8fr / 1.2fr). The screen keeps VE01's size
+                   within 2.5px (frame 277px at 1440, 234 at 1280, 167 at
+                   1024; main 279, 237, 168); the plate takes the width the
+                   copy column gives up. */
+                flagshipDetail
+                  ? 'lg:grid-cols-[0.8fr_1.2fr] lg:gap-x-12 lg:items-center'
+                  : 'lg:grid-cols-[1.1fr_0.9fr] lg:gap-x-12 lg:items-center',
               )}
             >
               {/* The left column is ONE box at lg and `display: contents`
@@ -613,46 +630,109 @@ export default function HomePage() {
                 </Reveal>
               </div>
 
-              {/* 3 · the capture, device-true, on the signature-hue plinth.
-                  No bordered well and no earth gradient (pane A's `.phonewell`
-                  is the phone standing in the room's own light, not a framed
-                  picture) — the aspect box exists only because a `bare`
-                  HeroProductReveal positions its frame absolutely and needs a
-                  sized, relative parent.
+              {/* 3 · the exhibit stage: the capture, device-true, standing in
+                  the room's own light. No bordered well and no earth gradient
+                  (pane A's `.phonewell` is the phone standing in the room's
+                  own light, not a framed picture); the bare hero's slab, its
+                  horizon and its lamp are switched off in this room (globals.css
+                  #flagship) and the stage light replaces them, edge-less.
                   `eager={false}` overrides the hero-context default: this well
                   sits a full band below the fold on the homepage, so an eager
-                  fetchpriority=high here would compete with the real LCP. */}
+                  fetchpriority=high here would compete with the real LCP.
+
+                  Creative Release 7 candidate · the detail plate. The screen
+                  is about 270px wide at 1440 and 190px at 393, so the report
+                  card the plate above describes renders its words at 3 to
+                  7px. The plate beside it (ExhibitDetail) is one region of
+                  the SAME file at about twice the screen's scale, where the
+                  card's title, severity, photograph and description can be
+                  read; a 1px leader runs to the frame. Plate and screen stand
+                  side by side (50 : 44, a 6% gap the leader spans; those
+                  proportions put the plate's mid-height on the card's
+                  mid-height on the screen, within 2px at every width) from
+                  `sm` while the stage holds at least 20em; otherwise, on a
+                  phone or under enlarged text, the plate stands above the
+                  screen at a near-native size (the rule and its reasons live
+                  in exhibitDetail.module.css). The plate is aria-hidden: the
+                  capture's alt and the museum plate already carry its words.
+
+                  The well's height is the capture-fitted frame's own height —
+                  (width − the frame's 1.125rem of padding and border) × the
+                  capture's aspect, plus that 1.125rem — reserved by an
+                  in-flow spacer, so the frame fills it exactly (zero
+                  letterbox, zero CLS) and VE01's 100% frame height agrees. */}
               <Reveal
                 variant="depth"
                 index={1}
                 className="order-3 lg:order-none"
               >
-                <HeroImageSettle className="group relative w-full aspect-[4/5] overflow-hidden flex items-center justify-center">
-                  <div
+                <div className={exhibitStyles.stage}>
+                  <span
                     aria-hidden="true"
-                    className="pointer-events-none absolute inset-0"
-                    style={
-                      {
-                        '--pr-sig': signatureFor(flagship.id),
-                        background:
-                          'radial-gradient(58% 52% at 50% 56%, rgb(var(--pr-sig) / 0.22), rgb(var(--pr-sig) / 0.07) 58%, transparent 78%)',
-                      } as CSSProperties
-                    }
+                    className={exhibitStyles.light}
+                    style={{ '--pr-sig': signatureFor(flagship.id) } as CSSProperties}
                   />
-                  <HeroProductReveal
-                    slug={flagship.id}
-                    title={flagship.title}
-                    eyebrow={flagship.role}
-                    media={heroMedia(flagship)}
-                    eager={false}
-                  />
-                </HeroImageSettle>
-                {/* The supplied submitted-era Explore screenshot has no
-                    independently proven capture date. Keep this screenshot-
-                    specific label truthful and date-free. */}
-                <p className="mt-4 text-center font-mono text-meta tracking-label uppercase text-text-meta">
-                  Current product capture · Explore
-                </p>
+                  {flagshipDetail && flagshipMedia?.src ? (
+                    <div
+                      className={cn(exhibitStyles.grid, 'sm:max-w-[34rem] lg:max-w-none')}
+                      style={{ '--leader-span': '12%' } as CSSProperties}
+                    >
+                      <ExhibitDetail
+                        detail={flagshipDetail}
+                        sources={{ src: flagshipMedia.src, avif: flagshipMedia.avif, webp: flagshipMedia.webp }}
+                        className={exhibitStyles.plateSlot}
+                      />
+                      {/* Stacked, the screen keeps the width it had before the
+                          plate arrived (59% of the column, a 194px frame at 393):
+                          the plate adds a view, it never shrinks the artifact. */}
+                      <HeroImageSettle className={cn('group relative', exhibitStyles.screenSlot)}>
+                        <div
+                          aria-hidden="true"
+                          style={{
+                            paddingTop: `calc((100% - 1.125rem) * ${flagshipDetail.height / flagshipDetail.width} + 1.125rem)`,
+                          }}
+                        />
+                        <HeroProductReveal
+                          slug={flagship.id}
+                          title={flagship.title}
+                          eyebrow={flagship.role}
+                          media={flagshipMedia}
+                          eager={false}
+                          frameWidth="w-full"
+                        />
+                      </HeroImageSettle>
+                      {/* The supplied submitted-era Explore screenshot has no
+                          independently proven capture date. Keep this screenshot-
+                          specific label truthful and date-free.
+                          Side by side the caption spans the stage and sits flush
+                          with the screen's right edge, so it stays one line
+                          wherever the screen's column is narrower than the
+                          caption (1024 to 1279, and the tablet stage) without
+                          crossing the gutter. Same ink pair as the plate's own
+                          line (ink-muted / ink, the Release 5 caption pair): both
+                          captions of the exhibit sit on the stage light, so both
+                          read one step stronger than text-meta. */}
+                      <p className={cn(exhibitStyles.caption, 'mt-4 font-mono text-meta tracking-label uppercase text-ink-muted dark:text-ink')}>
+                        Current product capture · Explore
+                      </p>
+                    </div>
+                  ) : (
+                    <>
+                      <HeroImageSettle className="group relative w-full aspect-[4/5] overflow-hidden flex items-center justify-center">
+                        <HeroProductReveal
+                          slug={flagship.id}
+                          title={flagship.title}
+                          eyebrow={flagship.role}
+                          media={heroMedia(flagship)}
+                          eager={false}
+                        />
+                      </HeroImageSettle>
+                      <p className="mt-4 text-center font-mono text-meta tracking-label uppercase text-text-meta">
+                        Current product capture · Explore
+                      </p>
+                    </>
+                  )}
+                </div>
               </Reveal>
             </div>
           </div>
