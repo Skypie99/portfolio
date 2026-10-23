@@ -6,10 +6,10 @@
 
 | Measure | Value |
 |---|---|
-| Tracked files under `qa-reports/` | 2175 |
+| Tracked files under `qa-reports/` | 2182 |
 | Top-level reports and receipts (Markdown) | 192 |
 | Evidence directories | 28 |
-| File types | jpg 888, png 604, md 227, json 212, mjs 83, log 63, txt 24, cjs 17, mp4 15, py 9, webm 9, gz 7, sh 4, stderr 4, patch 3, html 2, jsonl 2, (none) 1, zip 1 |
+| File types | jpg 888, png 604, md 227, json 212, mjs 83, log 63, txt 31, cjs 17, mp4 15, py 9, webm 9, gz 7, sh 4, stderr 4, patch 3, html 2, jsonl 2, (none) 1, zip 1 |
 | Dates named in file paths | 2026-05-23 to 2026-10-22 |
 
 ## How the evidence is organized
@@ -66,7 +66,7 @@
 | [`2026-10-19_Claude_Release4Final-evidence/`](2026-10-19_Claude_Release4Final-evidence/) | 16 | json 8, mjs 4, md 2, txt 2 | no top-level report |
 | [`2026-10-19_Codex_Release4Interactions-evidence/`](2026-10-19_Codex_Release4Interactions-evidence/) | 15 | json 4, png 4, mjs 3, patch 2, md 1, zip 1 | [`2026-10-19_Codex_Release4ApprovedInteractionIntegration.md`](2026-10-19_Codex_Release4ApprovedInteractionIntegration.md) |
 | [`2026-10-19_InteractionRefinement-evidence/`](2026-10-19_InteractionRefinement-evidence/) | 64 | png 44, mjs 7, json 6, webm 3, md 2, txt 2 | [`2026-10-19_Codex_Release4ApprovedInteractionIntegration.md`](2026-10-19_Codex_Release4ApprovedInteractionIntegration.md)<br>[`2026-10-19_InteractionRefinement.md`](2026-10-19_InteractionRefinement.md) |
-| [`creative-release7-flagship-detail-2026-10-22/`](creative-release7-flagship-detail-2026-10-22/) | 161 | jpg 122, json 17, mjs 9, txt 7, mp4 4, md 1, sh 1 | [`2026-10-22_DesignCompile_flagship-detail.md`](2026-10-22_DesignCompile_flagship-detail.md) |
+| [`creative-release7-flagship-detail-2026-10-22/`](creative-release7-flagship-detail-2026-10-22/) | 168 | jpg 122, json 17, txt 14, mjs 9, mp4 4, md 1, sh 1 | [`2026-10-22_DesignCompile_flagship-detail.md`](2026-10-22_DesignCompile_flagship-detail.md) |
 | [`evidence-retention/`](evidence-retention/) | 1 | md 1 | [`2026-09-28_PostMerge_Professionalism_Repair_Receipt.md`](2026-09-28_PostMerge_Professionalism_Repair_Receipt.md) |
 | [`flagstone-first-proof-20261019/`](flagstone-first-proof-20261019/) | 141 | jpg 128, png 5, py 3, webm 2, json 1, md 1, mjs 1 | [`2026-10-19_Flagstone_FirstProof_Candidate.md`](2026-10-19_Flagstone_FirstProof_Candidate.md) |
 | [`flagstone-version-a-20261018/`](flagstone-version-a-20261018/) | 55 | jpg 38, png 14, json 1, md 1, mjs 1 | [`2026-10-19_Flagstone_VersionA_Candidate.md`](2026-10-19_Flagstone_VersionA_Candidate.md) |

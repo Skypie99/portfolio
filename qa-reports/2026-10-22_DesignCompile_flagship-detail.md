@@ -1,6 +1,7 @@
 # Design Compile Result — flagship-detail (Creative Release 7 candidate) — 2026-10-22
 
-**Surface:** homepage `#flagship` room · **Branch:** `claude/skypi-creative-r7-flagship-detail-20261022`, off `origin/main` @ `0933245` (verified on GitHub; Deploy run `39694576424` published it) · **Status:** candidate on a local branch for Sky's review. Not pushed, not merged, not deployed; nothing sent to anyone.
+**Surface:** homepage `#flagship` room · **Branch:** `claude/skypi-creative-r7-flagship-detail-20261022`, off `origin/main` @ `0933245` (verified on GitHub; Deploy run `39694576424` published it) · **Integrated at handoff:** main moved to `2fb857b` (PR #39, `/motion/`) during the session and was merged in at `82ed254` (only the generated index overlapped; regenerated). Merged tree re-verified: build, typecheck, lint clean; 127 files, 1172 passed, 2 skipped; overflow 168 + 280 frames clean; homepage render byte-identical to the evidence build.
+**Status:** candidate on a local branch for Sky's review. Not pushed, not merged, not deployed; nothing sent to anyone.
 `mode: active · model_tier: opus (Sky-initiated session) · state_consistency: verified against remote main and the Deploy run · duplicate_work_detected: none (open PR #39 touches /motion/ only) · drift_risk: low`
 
 The review packet is the entry point: [`creative-release7-flagship-detail-2026-10-22/README.md`](creative-release7-flagship-detail-2026-10-22/README.md).
