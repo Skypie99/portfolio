@@ -529,7 +529,14 @@ export default function HomePage() {
             'border-t border-border-decorative',
           )}
         >
-          <ParallaxWash depth="far" />
+          {/* Creative Release 7 (owner decision 4, 2026-10-23): at half
+              strength in dark mode, the Release 6 #work precedent. Together
+              with this room's dark panel step (globals.css, #flagship) it
+              holds the eyebrow, the plate's claim and provenance and the
+              status line at 4.9:1 or better at their worst pixel, across scroll
+              offsets, where the full wash over the night world let them fall
+              to 3.70 to 4.33:1. Light mode is unchanged. */}
+          <ParallaxWash depth="far" className="dark:opacity-50" />
           <div className="relative z-10 max-w-content mx-auto">
             <div
               className={cn(
@@ -649,12 +656,13 @@ export default function HomePage() {
                   read; a 1px leader runs to the frame. Plate and screen stand
                   side by side (50 : 44, a 6% gap the leader spans; those
                   proportions put the plate's mid-height on the card's
-                  mid-height on the screen, within 2px at every width) from
-                  `sm` while the stage holds at least 20em; otherwise, on a
-                  phone or under enlarged text, the plate stands above the
-                  screen at a near-native size (the rule and its reasons live
-                  in exhibitDetail.module.css). The plate is aria-hidden: the
-                  capture's alt and the museum plate already carry its words.
+                  mid-height on the screen, within 2px at every width) in the
+                  desktop composition, from `lg` while the stage holds at least
+                  20em; otherwise, on a phone, a tablet or under enlarged text,
+                  the plate stands above the screen at a near-native size (the
+                  rule and its reasons live in exhibitDetail.module.css). The
+                  plate is aria-hidden: the capture's alt and the museum plate
+                  already carry its words.
 
                   The well's height is the capture-fitted frame's own height —
                   (width − the frame's 1.125rem of padding and border) × the
@@ -674,7 +682,7 @@ export default function HomePage() {
                   />
                   {flagshipDetail && flagshipMedia?.src ? (
                     <div
-                      className={cn(exhibitStyles.grid, 'sm:max-w-[34rem] lg:max-w-none')}
+                      className={exhibitStyles.grid}
                       style={{ '--leader-span': '12%' } as CSSProperties}
                     >
                       <ExhibitDetail
@@ -683,8 +691,9 @@ export default function HomePage() {
                         className={exhibitStyles.plateSlot}
                       />
                       {/* Stacked, the screen keeps the width it had before the
-                          plate arrived (59% of the column, a 194px frame at 393):
-                          the plate adds a view, it never shrinks the artifact. */}
+                          plate arrived: 59% of the column, as main's 4/5 well
+                          gave it (a 194px frame at 393, 250px at 768). The plate
+                          adds a view; it never shrinks the artifact. */}
                       <HeroImageSettle className={cn('group relative', exhibitStyles.screenSlot)}>
                         <div
                           aria-hidden="true"
@@ -707,11 +716,11 @@ export default function HomePage() {
                           Side by side the caption spans the stage and sits flush
                           with the screen's right edge, so it stays one line
                           wherever the screen's column is narrower than the
-                          caption (1024 to 1279, and the tablet stage) without
-                          crossing the gutter. Same ink pair as the plate's own
-                          line (ink-muted / ink, the Release 5 caption pair): both
-                          captions of the exhibit sit on the stage light, so both
-                          read one step stronger than text-meta. */}
+                          caption (1024 to 1279) without crossing the gutter.
+                          Same ink pair as the plate's own line (ink-muted / ink,
+                          the Release 5 caption pair; owner-approved 2026-10-23):
+                          both captions of the exhibit sit on the stage light, so
+                          both read one step stronger than text-meta. */}
                       <p className={cn(exhibitStyles.caption, 'mt-4 font-mono text-meta tracking-label uppercase text-ink-muted dark:text-ink')}>
                         Current product capture · Explore
                       </p>

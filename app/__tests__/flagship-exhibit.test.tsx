@@ -107,6 +107,42 @@ describe('Flagship room — the detail plate', () => {
   });
 });
 
+describe('Flagship room — owner refinements (2026-10-23)', () => {
+  const css = readFileSync(join(ROOT, 'app/globals.css'), 'utf8');
+
+  it('puts no tablet-only width cap on the stage, so the stacked screen keeps main’s 59% of the column', () => {
+    const { container } = render(<HomePage />);
+    const grid = room(container).querySelector('[data-exhibit-detail]')!.parentElement as HTMLElement;
+    expect(grid.className).not.toMatch(/\b(sm|md):/);
+  });
+
+  it('holds the dark text floor in this room only: one panel step and the wash at half strength', () => {
+    // The room-scoped alpha: a separate selector, never the token blocks.
+    expect(css).toMatch(/html\.dark #flagship\s*\{\s*--surface-alpha-alt:\s*0\.8;\s*\}/);
+    const overrides = css.match(/^[^{}\n]*\{\s*--surface-alpha-alt:[^}]*\}/gm) ?? [];
+    const scoped = overrides.filter((rule) => !/^\s*(:root|html\.dark)\s*\{/.test(rule));
+    expect(scoped).toHaveLength(1);
+    expect(scoped[0]).toMatch(/^html\.dark #flagship/);
+    // The wash: the room's first child is its ParallaxWash, at half strength in dark.
+    const { container } = render(<HomePage />);
+    const wash = room(container).firstElementChild as HTMLElement;
+    expect(wash).toHaveAttribute('aria-hidden', 'true');
+    expect(wash.className).toMatch(/\bdark:opacity-50\b/);
+  });
+
+  it('gives both exhibit captions the approved stronger ink (Release 5 pair)', () => {
+    const { container } = render(<HomePage />);
+    const r = room(container);
+    const caption = Array.from(r.querySelectorAll('p')).find((p) => p.textContent === 'Current product capture · Explore')!;
+    const tag = r.querySelector('[data-exhibit-detail] > p')!;
+    for (const el of [caption, tag]) {
+      expect(el.className).toMatch(/\btext-ink-muted\b/);
+      expect(el.className).toMatch(/\bdark:text-ink\b/);
+      expect(el.className).not.toMatch(/text-text-meta/);
+    }
+  });
+});
+
 describe('Flagship room — the open stage is scoped to this room', () => {
   const css = readFileSync(join(ROOT, 'app/globals.css'), 'utf8');
 
@@ -120,7 +156,7 @@ describe('Flagship room — the open stage is scoped to this room', () => {
 
 describe('exhibitDetail.module.css — the stage composition releases by width in em', () => {
   const css = readFileSync(join(ROOT, 'components/exhibitDetail.module.css'), 'utf8');
-  const sideBySide = /@media \(min-width: 640px\)\s*\{\s*@container \(min-width: 20em\)\s*\{([\s\S]*?)\n  \}\n\}/.exec(css);
+  const sideBySide = /@media \(min-width: 1024px\)\s*\{\s*@container \(min-width: 20em\)\s*\{([\s\S]*?)\n  \}\n\}/.exec(css);
 
   it('makes the stage a size container and stacks by default, leader hidden', () => {
     expect(css).toMatch(/\.stage\s*\{[^}]*container-type: inline-size;/);
@@ -128,8 +164,10 @@ describe('exhibitDetail.module.css — the stage composition releases by width i
     expect(css).toMatch(/\.leader,\s*\.pin\s*\{\s*display: none;\s*\}/);
   });
 
-  it('stands plate beside screen 50 : 44 with a 6% gap only from sm AND at 20em or wider', () => {
-    expect(sideBySide, 'the side-by-side block exists inside @media + @container').not.toBeNull();
+  it('stacks on phones and tablets: side by side only in the desktop composition (lg) at 20em or wider', () => {
+    // Owner decision 2026-10-23: tablets stack, so the screen keeps main's size.
+    expect(css).not.toMatch(/@media \(min-width: (640|768)px\)/);
+    expect(sideBySide, 'the side-by-side block exists inside @media (lg) + @container').not.toBeNull();
     const block = sideBySide![1];
     expect(block).toContain('grid-template-columns: minmax(0, 50fr) minmax(0, 44fr);');
     expect(block).toContain('column-gap: 6%;');
