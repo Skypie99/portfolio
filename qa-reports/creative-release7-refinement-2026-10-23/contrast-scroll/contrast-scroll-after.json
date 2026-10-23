@@ -1,0 +1,835 @@
+{
+ "tag": "after",
+ "injectCss": null,
+ "method": "min over scroll offsets of the worst-pixel ratio in each line box; glyphs transparent, own text-shadow kept",
+ "rows": [
+  {
+   "theme": "light",
+   "size": "1440x900@1",
+   "lines": {
+    "eyebrow · Featured: the flagship": {
+     "worst": 5.17,
+     "atOffset": -120,
+     "fontSize": 12,
+     "color": "rgb(135, 71, 45)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · claim": {
+     "worst": 5.22,
+     "atOffset": -315,
+     "fontSize": 11,
+     "color": "rgb(135, 71, 45)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · caption": {
+     "worst": 10.32,
+     "atOffset": -315,
+     "fontSize": 14,
+     "color": "rgb(32, 48, 44)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · provenance": {
+     "worst": 5.32,
+     "atOffset": -315,
+     "fontSize": 11,
+     "color": "rgb(76, 92, 85)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "status line": {
+     "worst": 5.44,
+     "atOffset": -315,
+     "fontSize": 11,
+     "color": "rgb(76, 92, 85)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "detail tag · Detail of the same capture": {
+     "worst": 5.28,
+     "atOffset": -120,
+     "fontSize": 11,
+     "color": "rgb(70, 84, 77)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "capture caption · Current product capture · Explore": {
+     "worst": 5.95,
+     "atOffset": -120,
+     "fontSize": 11,
+     "color": "rgb(70, 84, 77)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    }
+   }
+  },
+  {
+   "theme": "light",
+   "size": "1024x768@1",
+   "lines": {
+    "eyebrow · Featured: the flagship": {
+     "worst": 5.16,
+     "atOffset": -269,
+     "fontSize": 12,
+     "color": "rgb(135, 71, 45)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · claim": {
+     "worst": 5.18,
+     "atOffset": -269,
+     "fontSize": 11,
+     "color": "rgb(135, 71, 45)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · caption": {
+     "worst": 10.2,
+     "atOffset": -269,
+     "fontSize": 14,
+     "color": "rgb(32, 48, 44)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · provenance": {
+     "worst": 5.33,
+     "atOffset": -269,
+     "fontSize": 11,
+     "color": "rgb(76, 92, 85)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "status line": {
+     "worst": 5.44,
+     "atOffset": -269,
+     "fontSize": 11,
+     "color": "rgb(76, 92, 85)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "detail tag · Detail of the same capture": {
+     "worst": 5.25,
+     "atOffset": -269,
+     "fontSize": 11,
+     "color": "rgb(70, 84, 77)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "capture caption · Current product capture · Explore": {
+     "worst": 6.01,
+     "atOffset": -120,
+     "fontSize": 11,
+     "color": "rgb(70, 84, 77)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    }
+   }
+  },
+  {
+   "theme": "light",
+   "size": "834x1194@2",
+   "lines": {
+    "eyebrow · Featured: the flagship": {
+     "worst": 5.21,
+     "atOffset": -418,
+     "fontSize": 12,
+     "color": "rgb(135, 71, 45)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · claim": {
+     "worst": 5.15,
+     "atOffset": -418,
+     "fontSize": 11,
+     "color": "rgb(135, 71, 45)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · caption": {
+     "worst": 9.98,
+     "atOffset": -418,
+     "fontSize": 14,
+     "color": "rgb(32, 48, 44)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · provenance": {
+     "worst": 5.1,
+     "atOffset": -418,
+     "fontSize": 11,
+     "color": "rgb(76, 92, 85)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "detail tag · Detail of the same capture": {
+     "worst": 5.09,
+     "atOffset": -418,
+     "fontSize": 11,
+     "color": "rgb(70, 84, 77)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "capture caption · Current product capture · Explore": {
+     "worst": 5.97,
+     "atOffset": 208,
+     "fontSize": 11,
+     "color": "rgb(70, 84, 77)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "status line": {
+     "worst": 5.55,
+     "atOffset": 456,
+     "fontSize": 11,
+     "color": "rgb(76, 92, 85)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    }
+   }
+  },
+  {
+   "theme": "light",
+   "size": "768x1024@1",
+   "lines": {
+    "eyebrow · Featured: the flagship": {
+     "worst": 5.23,
+     "atOffset": -358,
+     "fontSize": 12,
+     "color": "rgb(135, 71, 45)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · claim": {
+     "worst": 5.19,
+     "atOffset": -120,
+     "fontSize": 11,
+     "color": "rgb(135, 71, 45)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · caption": {
+     "worst": 9.97,
+     "atOffset": -358,
+     "fontSize": 14,
+     "color": "rgb(32, 48, 44)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · provenance": {
+     "worst": 5.06,
+     "atOffset": -358,
+     "fontSize": 11,
+     "color": "rgb(76, 92, 85)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "detail tag · Detail of the same capture": {
+     "worst": 5.1,
+     "atOffset": -120,
+     "fontSize": 11,
+     "color": "rgb(70, 84, 77)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "status line": {
+     "worst": 5.55,
+     "atOffset": 541,
+     "fontSize": 11,
+     "color": "rgb(76, 92, 85)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "capture caption · Current product capture · Explore": {
+     "worst": 6.02,
+     "atOffset": 541,
+     "fontSize": 11,
+     "color": "rgb(70, 84, 77)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    }
+   }
+  },
+  {
+   "theme": "light",
+   "size": "393x852@2",
+   "lines": {
+    "eyebrow · Featured: the flagship": {
+     "worst": 5.22,
+     "atOffset": -298,
+     "fontSize": 12,
+     "color": "rgb(135, 71, 45)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · claim": {
+     "worst": 5.11,
+     "atOffset": -298,
+     "fontSize": 11,
+     "color": "rgb(135, 71, 45)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · caption": {
+     "worst": 9.87,
+     "atOffset": -298,
+     "fontSize": 14,
+     "color": "rgb(32, 48, 44)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · provenance": {
+     "worst": 5.01,
+     "atOffset": -298,
+     "fontSize": 11,
+     "color": "rgb(76, 92, 85)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "detail tag · Detail of the same capture": {
+     "worst": 5.09,
+     "atOffset": -120,
+     "fontSize": 11,
+     "color": "rgb(70, 84, 77)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "status line": {
+     "worst": 5.5,
+     "atOffset": 548,
+     "fontSize": 11,
+     "color": "rgb(76, 92, 85)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "capture caption · Current product capture · Explore": {
+     "worst": 5.97,
+     "atOffset": 548,
+     "fontSize": 11,
+     "color": "rgb(70, 84, 77)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    }
+   }
+  },
+  {
+   "theme": "light",
+   "size": "320x568@2",
+   "lines": {
+    "eyebrow · Featured: the flagship": {
+     "worst": 5.18,
+     "atOffset": -199,
+     "fontSize": 12,
+     "color": "rgb(135, 71, 45)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · claim": {
+     "worst": 4.94,
+     "atOffset": -199,
+     "fontSize": 11,
+     "color": "rgb(135, 71, 45)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · caption": {
+     "worst": 9.72,
+     "atOffset": -199,
+     "fontSize": 14,
+     "color": "rgb(32, 48, 44)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · provenance": {
+     "worst": 4.88,
+     "atOffset": -120,
+     "fontSize": 11,
+     "color": "rgb(76, 92, 85)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "detail tag · Detail of the same capture": {
+     "worst": 5.09,
+     "atOffset": 160,
+     "fontSize": 11,
+     "color": "rgb(70, 84, 77)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "status line": {
+     "worst": 5.56,
+     "atOffset": 735,
+     "fontSize": 11,
+     "color": "rgb(76, 92, 85)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "capture caption · Current product capture · Explore": {
+     "worst": 6.1,
+     "atOffset": 735,
+     "fontSize": 11,
+     "color": "rgb(70, 84, 77)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    }
+   }
+  },
+  {
+   "theme": "dark",
+   "size": "1440x900@1",
+   "lines": {
+    "eyebrow · Featured: the flagship": {
+     "worst": 5.2,
+     "atOffset": -315,
+     "fontSize": 12,
+     "color": "rgb(231, 181, 147)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · claim": {
+     "worst": 5.45,
+     "atOffset": -120,
+     "fontSize": 11,
+     "color": "rgb(231, 181, 147)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · caption": {
+     "worst": 8.34,
+     "atOffset": -120,
+     "fontSize": 14,
+     "color": "rgb(236, 234, 224)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · provenance": {
+     "worst": 5.19,
+     "atOffset": -120,
+     "fontSize": 11,
+     "color": "rgb(175, 191, 184)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "status line": {
+     "worst": 5.34,
+     "atOffset": -120,
+     "fontSize": 11,
+     "color": "rgb(175, 191, 184)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "detail tag · Detail of the same capture": {
+     "worst": 8.14,
+     "atOffset": -120,
+     "fontSize": 11,
+     "color": "rgb(236, 234, 224)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "capture caption · Current product capture · Explore": {
+     "worst": 9.07,
+     "atOffset": 160,
+     "fontSize": 11,
+     "color": "rgb(236, 234, 224)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    }
+   }
+  },
+  {
+   "theme": "dark",
+   "size": "1024x768@1",
+   "lines": {
+    "eyebrow · Featured: the flagship": {
+     "worst": 5.43,
+     "atOffset": -269,
+     "fontSize": 12,
+     "color": "rgb(231, 181, 147)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · claim": {
+     "worst": 5.37,
+     "atOffset": -269,
+     "fontSize": 11,
+     "color": "rgb(231, 181, 147)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · caption": {
+     "worst": 8.36,
+     "atOffset": -120,
+     "fontSize": 14,
+     "color": "rgb(236, 234, 224)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · provenance": {
+     "worst": 5.35,
+     "atOffset": -120,
+     "fontSize": 11,
+     "color": "rgb(175, 191, 184)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "status line": {
+     "worst": 5.62,
+     "atOffset": 0,
+     "fontSize": 11,
+     "color": "rgb(175, 191, 184)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "detail tag · Detail of the same capture": {
+     "worst": 8.14,
+     "atOffset": -120,
+     "fontSize": 11,
+     "color": "rgb(236, 234, 224)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "capture caption · Current product capture · Explore": {
+     "worst": 9.33,
+     "atOffset": 0,
+     "fontSize": 11,
+     "color": "rgb(236, 234, 224)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    }
+   }
+  },
+  {
+   "theme": "dark",
+   "size": "834x1194@2",
+   "lines": {
+    "eyebrow · Featured: the flagship": {
+     "worst": 5.45,
+     "atOffset": -418,
+     "fontSize": 12,
+     "color": "rgb(231, 181, 147)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · claim": {
+     "worst": 5.44,
+     "atOffset": -418,
+     "fontSize": 11,
+     "color": "rgb(231, 181, 147)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · caption": {
+     "worst": 8.06,
+     "atOffset": -418,
+     "fontSize": 14,
+     "color": "rgb(236, 234, 224)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · provenance": {
+     "worst": 5.25,
+     "atOffset": -418,
+     "fontSize": 11,
+     "color": "rgb(175, 191, 184)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "detail tag · Detail of the same capture": {
+     "worst": 7.51,
+     "atOffset": 208,
+     "fontSize": 11,
+     "color": "rgb(236, 234, 224)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "capture caption · Current product capture · Explore": {
+     "worst": 9.75,
+     "atOffset": 456,
+     "fontSize": 11,
+     "color": "rgb(236, 234, 224)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "status line": {
+     "worst": 6.25,
+     "atOffset": 456,
+     "fontSize": 11,
+     "color": "rgb(175, 191, 184)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    }
+   }
+  },
+  {
+   "theme": "dark",
+   "size": "768x1024@1",
+   "lines": {
+    "eyebrow · Featured: the flagship": {
+     "worst": 5.42,
+     "atOffset": -358,
+     "fontSize": 12,
+     "color": "rgb(231, 181, 147)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · claim": {
+     "worst": 5.48,
+     "atOffset": -358,
+     "fontSize": 11,
+     "color": "rgb(231, 181, 147)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · caption": {
+     "worst": 8.39,
+     "atOffset": -120,
+     "fontSize": 14,
+     "color": "rgb(236, 234, 224)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · provenance": {
+     "worst": 5.35,
+     "atOffset": -120,
+     "fontSize": 11,
+     "color": "rgb(175, 191, 184)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "detail tag · Detail of the same capture": {
+     "worst": 7.64,
+     "atOffset": 251,
+     "fontSize": 11,
+     "color": "rgb(236, 234, 224)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "status line": {
+     "worst": 6.32,
+     "atOffset": 541,
+     "fontSize": 11,
+     "color": "rgb(175, 191, 184)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "capture caption · Current product capture · Explore": {
+     "worst": 9.48,
+     "atOffset": 541,
+     "fontSize": 11,
+     "color": "rgb(236, 234, 224)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    }
+   }
+  },
+  {
+   "theme": "dark",
+   "size": "393x852@2",
+   "lines": {
+    "eyebrow · Featured: the flagship": {
+     "worst": 5.35,
+     "atOffset": -298,
+     "fontSize": 12,
+     "color": "rgb(231, 181, 147)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · claim": {
+     "worst": 5.12,
+     "atOffset": -120,
+     "fontSize": 11,
+     "color": "rgb(231, 181, 147)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · caption": {
+     "worst": 7.78,
+     "atOffset": -120,
+     "fontSize": 14,
+     "color": "rgb(236, 234, 224)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · provenance": {
+     "worst": 4.91,
+     "atOffset": -120,
+     "fontSize": 11,
+     "color": "rgb(175, 191, 184)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "detail tag · Detail of the same capture": {
+     "worst": 7.18,
+     "atOffset": 254,
+     "fontSize": 11,
+     "color": "rgb(236, 234, 224)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "status line": {
+     "worst": 6.03,
+     "atOffset": 548,
+     "fontSize": 11,
+     "color": "rgb(175, 191, 184)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "capture caption · Current product capture · Explore": {
+     "worst": 9.47,
+     "atOffset": 548,
+     "fontSize": 11,
+     "color": "rgb(236, 234, 224)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    }
+   }
+  },
+  {
+   "theme": "dark",
+   "size": "320x568@2",
+   "lines": {
+    "eyebrow · Featured: the flagship": {
+     "worst": 5.43,
+     "atOffset": -199,
+     "fontSize": 12,
+     "color": "rgb(231, 181, 147)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · claim": {
+     "worst": 5.09,
+     "atOffset": 0,
+     "fontSize": 11,
+     "color": "rgb(231, 181, 147)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · caption": {
+     "worst": 7.75,
+     "atOffset": 0,
+     "fontSize": 14,
+     "color": "rgb(236, 234, 224)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "plate · provenance": {
+     "worst": 4.97,
+     "atOffset": 0,
+     "fontSize": 11,
+     "color": "rgb(175, 191, 184)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "detail tag · Detail of the same capture": {
+     "worst": 7,
+     "atOffset": 347,
+     "fontSize": 11,
+     "color": "rgb(236, 234, 224)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "status line": {
+     "worst": 5.7,
+     "atOffset": 735,
+     "fontSize": 11,
+     "color": "rgb(175, 191, 184)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    },
+    "capture caption · Current product capture · Explore": {
+     "worst": 9.05,
+     "atOffset": 735,
+     "fontSize": 11,
+     "color": "rgb(236, 234, 224)",
+     "threshold": 4.5,
+     "hiddenChrome": [],
+     "pass": true
+    }
+   }
+  }
+ ]
+}

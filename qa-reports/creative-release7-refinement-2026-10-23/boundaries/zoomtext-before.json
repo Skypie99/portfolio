@@ -1,0 +1,43 @@
+[
+ {
+  "tag": "before-zoomtext-light-1440x900@1",
+  "overflowX": 0,
+  "crossing": [],
+  "tagBox": null,
+  "vw": 1440
+ },
+ {
+  "tag": "before-zoomtext-light-1024x768@1",
+  "overflowX": 0,
+  "crossing": [],
+  "tagBox": null,
+  "vw": 1024
+ },
+ {
+  "tag": "before-zoomtext-light-768x1024@1",
+  "overflowX": 0,
+  "crossing": [],
+  "tagBox": null,
+  "vw": 768
+ },
+ {
+  "tag": "before-zoomtext-light-393x852@2",
+  "overflowX": 0,
+  "crossing": [],
+  "tagBox": null,
+  "vw": 393
+ },
+ {
+  "tag": "before-zoomtext-light-320x568@2",
+  "overflowX": 0,
+  "crossing": [
+   {
+    "text": "View project→",
+    "left": 82,
+    "right": 349
+   }
+  ],
+  "tagBox": null,
+  "vw": 320
+ }
+]
