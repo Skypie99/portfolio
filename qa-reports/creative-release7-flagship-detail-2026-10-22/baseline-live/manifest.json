@@ -1,0 +1,134 @@
+{
+ "source": "https://skypistudio.com (live; Deploy run 39694576424 published main 0933245)",
+ "captured": "2026-10-22, Chromium headless (playwright-core 1.62.1), tools/live-journey.mjs",
+ "runs": [
+  {
+   "route": "/",
+   "theme": "light",
+   "size": "1440x900@1",
+   "errors": [],
+   "pos": {
+    "hero": 3420,
+    "flagship": 4547,
+    "support": 5425,
+    "work": 6435,
+    "record": 7911,
+    "how": 8534,
+    "about": 9764,
+    "contact": 10672,
+    "vh": 900,
+    "H": 12126
+   }
+  },
+  {
+   "route": "/work/",
+   "theme": "light",
+   "size": "1440x900@1",
+   "errors": [],
+   "H": 4064
+  },
+  {
+   "route": "/work/flagstone/",
+   "theme": "light",
+   "size": "1440x900@1",
+   "errors": [],
+   "H": 9519
+  },
+  {
+   "route": "/",
+   "theme": "light",
+   "size": "393x852@2",
+   "errors": [],
+   "pos": {
+    "hero": 2556,
+    "flagship": 4145,
+    "support": 5162,
+    "work": 6339,
+    "record": 8176,
+    "how": 9096,
+    "about": 10957,
+    "contact": 12049,
+    "vh": 852,
+    "H": 14118
+   }
+  },
+  {
+   "route": "/work/",
+   "theme": "light",
+   "size": "393x852@2",
+   "errors": [],
+   "H": 6758
+  },
+  {
+   "route": "/work/flagstone/",
+   "theme": "light",
+   "size": "393x852@2",
+   "errors": [],
+   "H": 15003
+  },
+  {
+   "route": "/",
+   "theme": "dark",
+   "size": "1440x900@1",
+   "errors": [],
+   "pos": {
+    "hero": 3420,
+    "flagship": 4547,
+    "support": 5425,
+    "work": 6435,
+    "record": 7911,
+    "how": 8534,
+    "about": 9764,
+    "contact": 10672,
+    "vh": 900,
+    "H": 12126
+   }
+  },
+  {
+   "route": "/work/",
+   "theme": "dark",
+   "size": "1440x900@1",
+   "errors": [],
+   "H": 4064
+  },
+  {
+   "route": "/work/flagstone/",
+   "theme": "dark",
+   "size": "1440x900@1",
+   "errors": [],
+   "H": 9519
+  },
+  {
+   "route": "/",
+   "theme": "dark",
+   "size": "393x852@2",
+   "errors": [],
+   "pos": {
+    "hero": 2556,
+    "flagship": 4145,
+    "support": 5162,
+    "work": 6339,
+    "record": 8176,
+    "how": 9096,
+    "about": 10957,
+    "contact": 12049,
+    "vh": 852,
+    "H": 14118
+   }
+  },
+  {
+   "route": "/work/",
+   "theme": "dark",
+   "size": "393x852@2",
+   "errors": [],
+   "H": 6758
+  },
+  {
+   "route": "/work/flagstone/",
+   "theme": "dark",
+   "size": "393x852@2",
+   "errors": [],
+   "H": 15003
+  }
+ ]
+}
