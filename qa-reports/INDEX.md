@@ -6,11 +6,11 @@
 
 | Measure | Value |
 |---|---|
-| Tracked files under `qa-reports/` | 2012 |
-| Top-level reports and receipts (Markdown) | 190 |
+| Tracked files under `qa-reports/` | 2013 |
+| Top-level reports and receipts (Markdown) | 191 |
 | Evidence directories | 27 |
-| File types | jpg 766, png 604, md 224, json 195, mjs 74, log 63, cjs 17, txt 17, mp4 11, py 9, webm 9, gz 7, stderr 4, patch 3, sh 3, html 2, jsonl 2, (none) 1, zip 1 |
-| Dates named in file paths | 2026-05-23 to 2026-10-20 |
+| File types | jpg 766, png 604, md 225, json 195, mjs 74, log 63, cjs 17, txt 17, mp4 11, py 9, webm 9, gz 7, stderr 4, patch 3, sh 3, html 2, jsonl 2, (none) 1, zip 1 |
+| Dates named in file paths | 2026-05-23 to 2026-10-22 |
 
 ## How the evidence is organized
 
@@ -19,10 +19,11 @@
 - **Adding evidence.** Name a receipt `YYYY-MM-DD_<Topic>.md` and cite its raw evidence by relative path. When a new artifact would be byte-identical to one already tracked, cite the existing path with its SHA-256 (or a manifest entry) instead of committing another copy, unless a self-contained package or a before/after comparison genuinely needs the copy. Then stage the files and regenerate this index.
 - **Evidence outside this directory:** `design-reviews/` (dated review programs) and `summaries/` (June 2026 pass reports). See [`docs/INDEX.md`](../docs/INDEX.md) for how every document in the repository is classified.
 
-## Newest dated reports (15 of 159)
+## Newest dated reports (15 of 160)
 
 | Date | Report | Title |
 |---|---|---|
+| 2026-10-22 | [`2026-10-22_DesignCompile_motion-application.md`](2026-10-22_DesignCompile_motion-application.md) | Design Compile Result: motion-application, 2026-10-22 |
 | 2026-10-20 | [`2026-10-20_Fable_Release6EditorialFinish.md`](2026-10-20_Fable_Release6EditorialFinish.md) | SkyPi Release 6: editorial flow and signature finish, candidate for owner review (2026-10-20) |
 | 2026-10-20 | [`2026-10-20_Mimo_RecordBandFocusRepair.md`](2026-10-20_Mimo_RecordBandFocusRepair.md) | 2026-10-20 — MiMo — Record band keyboard-focus repair (post-Release-6) |
 | 2026-10-20 | [`2026-10-20_Mimo_Release5Integration.md`](2026-10-20_Mimo_Release5Integration.md) | SkyPi Release 5: final integration onto the Release 4 baseline (2026-10-20) |
@@ -37,7 +38,6 @@
 | 2026-10-19 | [`2026-10-19_InteractionRefinement.md`](2026-10-19_InteractionRefinement.md) | Signature-interaction refinement — the press language for buttons and navigation (2026-10-19) |
 | 2026-10-19 | [`2026-10-19_cinematic-desktop-hotfix.md`](2026-10-19_cinematic-desktop-hotfix.md) | Cinematic desktop hotfix Report — 2026-10-19 |
 | 2026-10-18 | [`2026-10-18_DesignCompile_float-application.md`](2026-10-18_DesignCompile_float-application.md) | Design Compile Result — float-application — 2026-10-18 |
-| 2026-09-28 | [`2026-09-28_BL14_Overflow_Portability_Repair.md`](2026-09-28_BL14_Overflow_Portability_Repair.md) | BL-14 overflow-census portability repair (2026-09-28) |
 
 ## Phase gate receipts and packets (14)
 
@@ -104,7 +104,7 @@ Top-level files by the month named in their file name:
 
 | Month | Top-level files |
 |---|---|
-| 2026-10 | 14 |
+| 2026-10 | 15 |
 | 2026-09 | 42 |
 | 2026-08 | 2 |
 | 2026-07 | 2 |
