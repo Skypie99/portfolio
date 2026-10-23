@@ -4519,6 +4519,23 @@ html.dark .ts-float {
   display: none;
 }
 
+/* Creative Release 7 (owner decision 4, 2026-10-23) — the dark room's text
+   floor. The dark accent-ink and ink-meta tokens are tuned to clear 4.5:1 on a
+   plain world-surface-alt (ink-contrast.test.ts pins accent-ink at 4.64:1
+   there); this room adds a golden ParallaxWash and its exhibit light on top,
+   and its backdrop moves with scroll (the wash drifts, the world's day/night
+   tint follows). Measured at the worst pixel under each line across scroll
+   offsets, the eyebrow, the plate's claim and provenance and the status line
+   fell to 3.70 to 4.33:1 in dark. One panel step in this room only (the alpha
+   knob UI_SYSTEM.md names for exactly this: "set just above the alpha each
+   surface needs to keep all text at WCAG AA over every world state"), with the
+   room's wash at half strength in dark (app/page.tsx), holds every one of them
+   at 4.9:1 or better. No ink token changes; light mode untouched; a separate
+   selector, so the token blocks ink-contrast.test.ts reads stay single. */
+html.dark #flagship {
+  --surface-alpha-alt: 0.8;
+}
+
 /* M2 — the fine active-row rule (the row's existing divider). */
 #work ol > li {
   /* --dur-fast = 180ms — the ramp rung inside M2's 120–200ms band;

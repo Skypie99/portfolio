@@ -25,15 +25,19 @@
    alone. Stacked (the plate above the screen) is the default; side by side
    (plate 50 : screen 44, a 6% gap the leader spans; those proportions put
    the plate's mid-height on the card's mid-height on the screen) applies
-   only from `sm` AND while the stage is at least 20em wide. The em test is
-   the Release 6 clause-hold idiom (clauseBound.module.css): under text-only
-   enlargement the same stage holds fewer em, so a stage that has become too
-   narrow for its words falls back to stacking instead of starving the screen
-   (measured before this rule: at 1024 with the root at 200% the screen's
-   column collapsed to a sliver). At 100% text every side-by-side stage this
-   site renders is 23.7em or wider (379px at 1024); every phone stacks. Both
-   columns are minmax(0, …), so no min-content can re-weight them. Engines
-   without container queries keep the stacked composition. */
+   only in the desktop composition, from `lg` (the room's own two-column
+   breakpoint), AND while the stage is at least 20em wide. Phones and tablets
+   stack (owner decision, 2026-10-23: side by side at 768 shrank the screen
+   from main's 233px to 169px; stacked, it keeps main's size at every width
+   below lg). The em test is the Release 6 clause-hold idiom
+   (clauseBound.module.css): under text-only enlargement the same stage holds
+   fewer em, so a stage that has become too narrow for its words falls back
+   to stacking instead of starving the screen (measured before this rule: at
+   1024 with the root at 200% the screen's column collapsed to a sliver). At
+   100% text every side-by-side stage this site renders is 23.7em or wider
+   (379px at 1024). Both columns are minmax(0, …), so no min-content can
+   re-weight them. Engines without container queries keep the stacked
+   composition. */
 .stage {
   position: relative;
   isolation: isolate;
@@ -60,7 +64,7 @@
   display: none;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 1024px) {
   @container (min-width: 20em) {
     .grid {
       grid-template-columns: minmax(0, 50fr) minmax(0, 44fr);
