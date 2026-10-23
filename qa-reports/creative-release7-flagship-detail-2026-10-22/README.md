@@ -1,6 +1,6 @@
 # Creative Release 7 candidate · The flagship room, shown at reading size · owner review
 
-**Date:** 2026-10-22 · **Branch:** `claude/skypi-creative-r7-flagship-detail-20261022` (local only, not pushed) · **Base:** `origin/main` `093324581fecdca4d06ec68ddcb666244491e309`, fetched and verified at the start of the session; GitHub Actions Deploy run `39694576424` published that exact SHA (2026-10-21 23:37 UTC), so the live site is this main · **Deployed:** no · **Merged:** no · **Pull request:** none
+**Date:** 2026-10-22 · **Branch:** `claude/skypi-creative-r7-flagship-detail-20261022` (local only, not pushed) · **Base:** `origin/main` `093324581fecdca4d06ec68ddcb666244491e309`, fetched and verified at the start of the session; GitHub Actions Deploy run `39694576424` published that exact SHA (2026-10-21 23:37 UTC), so the live site was this main · **Integrated at handoff:** main moved to `2fb857b` during the session (PR #39, the unlisted `/motion/` page, deployed 2026-10-23 03:51 UTC). It was merged into this branch at `82ed254` (a merge, no history rewritten); the one overlapping path, the generated `qa-reports/INDEX.md`, was regenerated, and the merged tree was re-verified (section 7) · **Deployed:** no · **Merged:** no · **Pull request:** none
 
 | Package | Surface | Status |
 |---|---|---|
@@ -98,6 +98,7 @@ Proposed contract text, for Sky to apply when a release is approved (not applied
 | Render identity | The evidence was rendered from a build made before one comment-only edit to `app/page.tsx`. A rebuild from the final source produced byte-identical homepage HTML (build id masked) and identical CSS files (`gates/render-identity.txt`), and typecheck, lint and the suite were re-run on the final source |
 | `npm test` after the build (build-dependent guards run, as in CI) | **126 files, 1159 passed, 2 skipped** (main, same machine: 123 files, 1135 passed, the same 2 skipped; +3 files, +24 tests, 0 failures) |
 | House overflow census | 162 frames (27 routes × 2 themes × 320/375/414) and 270 frames (× 640/768/1024/1280/1440): no element crosses the viewport edge; the non-vacuity plant was caught on every frame |
+| **Merged tree** (this candidate + main `2fb857b`; logs in `gates/merged/`) | Build clean (`/` 174 kB, `/motion` present); typecheck and lint clean; **127 files, 1172 passed, 2 skipped** (+24 over main's 1148); overflow census 168 + 280 frames (28 routes) clean; homepage HTML (build id masked) and CSS **byte-identical** to the build every capture in this folder was taken from, so all the evidence describes the merged branch |
 
 | Accessibility check (both builds, light and dark, 1440 and 393) | Result |
 |---|---|
@@ -137,7 +138,7 @@ Proposed contract text, for Sky to apply when a release is approved (not applied
 ## 10. Next steps toward an approved release
 
 1. Sky reviews the boards and clips (sections 1 and 3) and answers section 8.
-2. On acceptance: push the branch and open a pull request (Sky, or an agent Sky authorizes). CI runs lint, typecheck, the build-backed suite and the build; Deploy runs only after CI succeeds on `main` (`CLAUDE.md` gotcha 1).
+2. On acceptance: push the branch and open a pull request against current main (Sky, or an agent Sky authorizes). The branch already contains main `2fb857b`; if main moves again, merge it in and regenerate `qa-reports/INDEX.md` the same way. CI runs lint, typecheck, the build-backed suite and the build; Deploy runs only after CI succeeds on `main` (`CLAUDE.md` gotcha 1).
 3. A device pass on iPhone Safari with VoiceOver and a Mac, using the section 7 list, alongside the deferred #38 checks.
 4. Sky merges. This is a portfolio change, so it's Sky-only; the Art. 17 grant does not apply.
 5. After Deploy: confirm on skypistudio.com that the slab is gone, the plate is legible, one capture request is made, and there are no console errors, in light and dark at 1440 and 393. Then record the publication receipt.
