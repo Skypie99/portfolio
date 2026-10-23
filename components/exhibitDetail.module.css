@@ -1,0 +1,186 @@
+/*
+ * exhibitDetail.module.css — the flagship room's exhibit stage and detail
+ * plate (Creative Release 7 candidate, 2026-10-22).
+ *
+ * Consumed only by components/ExhibitDetail.tsx and the homepage flagship
+ * room (app/page.tsx). Everything a Tailwind utility can express is written
+ * at the call site; this module holds what utilities cannot: the stage's
+ * edge-less light, the plate's material, the crop placement, and the
+ * leader's one quiet beat with its floors.
+ *
+ * CONTRACT — the same floors app/globals.css keeps (MOTION_SYSTEM.md §6, §7)
+ * and caseShowcase.module.css / editorial.module.css already follow:
+ *  - the only animated property is the leader's transform (compositor-only);
+ *  - every duration and delay is a ramp token: no literals;
+ *  - the intro's quint curve is never used: --ease-gh-glide only;
+ *  - REST = VISIBLE. The armed state exists only under `html.js` and only
+ *    inside `prefers-reduced-motion: no-preference`; reduced motion, print,
+ *    no-JS, dead-JS (`reveal-failsafe`) and hash arrivals (`reveal-seat`)
+ *    all rest drawn;
+ *  - no loops: the leader draws once, to rest, with its Reveal.
+ */
+
+/* ── The stage: plate beside screen, or plate above screen ─────────────── */
+/* Two compositions, chosen by the stage's OWN width in em, not by viewport
+   alone. Stacked (the plate above the screen) is the default; side by side
+   (plate 50 : screen 44, a 6% gap the leader spans; those proportions put
+   the plate's mid-height on the card's mid-height on the screen) applies
+   only from `sm` AND while the stage is at least 20em wide. The em test is
+   the Release 6 clause-hold idiom (clauseBound.module.css): under text-only
+   enlargement the same stage holds fewer em, so a stage that has become too
+   narrow for its words falls back to stacking instead of starving the screen
+   (measured before this rule: at 1024 with the root at 200% the screen's
+   column collapsed to a sliver). At 100% text every side-by-side stage this
+   site renders is 23.7em or wider (379px at 1024); every phone stacks. Both
+   columns are minmax(0, …), so no min-content can re-weight them. Engines
+   without container queries keep the stacked composition. */
+.stage {
+  position: relative;
+  isolation: isolate;
+  container-type: inline-size;
+}
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+.plateSlot {
+  width: 76%;
+  max-width: 18.75rem;
+  margin: 0 auto 2rem;
+}
+.screenSlot {
+  width: 59%;
+  margin: 0 auto;
+}
+.caption {
+  text-align: center;
+}
+.leader,
+.pin {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  @container (min-width: 20em) {
+    .grid {
+      grid-template-columns: minmax(0, 50fr) minmax(0, 44fr);
+      column-gap: 6%;
+      align-items: start;
+    }
+    .plateSlot {
+      width: auto;
+      max-width: none;
+      margin: 0;
+    }
+    .screenSlot {
+      width: 100%;
+      margin: 0;
+    }
+    /* The caption spans the stage, flush with the screen's right edge, so it
+       stays one line wherever the screen's column is narrower than it. */
+    .caption {
+      grid-column: 1 / -1;
+      text-align: right;
+    }
+    .leader,
+    .pin {
+      display: block;
+    }
+  }
+}
+
+/* ── The stage light: the room's own light on the exhibit ─────────────── */
+/* Replaces the opaque golden-hour slab the hero component paints inside its
+   well (globals.css #flagship rules hide it in this room). One radial in the
+   project's --pr-sig, centred between the plate and the screen, transparent
+   by 76% of a 60% x 52% ellipse, so the light has no edge anywhere inside
+   its box and the box itself extends past the stage sideways and below.
+   Never above: stacked on a phone the museum plate's words sit right over
+   the stage, and an upward bleed measured their worst pixel down from 5.02
+   to 4.75:1 (393, light). Decorative, behind everything, pointer-inert;
+   flips with the theme because it reads tokens. */
+.light {
+  position: absolute;
+  inset: 0 -6% -12%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 52% at 50% 46%, rgb(var(--pr-sig, 224 150 90) / 0.2), rgb(var(--pr-sig, 224 150 90) / 0.06) 56%, transparent 76%),
+    radial-gradient(40% 26% at 50% 8%, rgb(var(--rgb-gold) / 0.12), transparent 72%);
+}
+:global(html.dark) .light {
+  /* the exhibit lamp's own idiom (globals.css .pr-lamp): screen blend, the
+     artifact as the room's light source, a quieter alpha than daylight. */
+  mix-blend-mode: screen;
+  background: radial-gradient(60% 52% at 50% 46%, rgb(var(--pr-sig, 224 150 90) / 0.16), rgb(var(--pr-sig, 224 150 90) / 0.04) 56%, transparent 76%);
+}
+
+/* ── The plate: one region of the capture, at a readable size ─────────── */
+.plate {
+  border: 1px solid rgb(var(--rgb-ink) / 0.14);
+  background-color: rgb(var(--rgb-canvas));
+  box-shadow: var(--shadow-lg);
+}
+:global(html.dark) .plate {
+  /* the dark phone frame's own sig-tinted hairline (.pr-frame-phone). */
+  border-color: rgb(var(--pr-sig, 224 150 90) / 0.22);
+}
+
+/* The whole capture, scaled and shifted so the box shows exactly the spec's
+   crop. --crop-* are set inline from lib/captureDetail.ts cropGeometry():
+   width in box-widths, offsets in box-widths (x) and box-heights (y). */
+.crop {
+  position: absolute;
+  max-width: none;
+  height: auto;
+  width: calc(var(--crop-scale) * 100%);
+  left: calc(var(--crop-x) * -100%);
+  top: calc(var(--crop-y) * -100%);
+}
+
+/* ── The leader: plate to screen ─────────────────────────────────────── */
+/* A 1px terracotta hairline from the plate's right edge to the device frame
+   beside it, at the plate's mid-height (which the stage proportions put on
+   the card's own mid-height on the screen). It grows out of the pin on the
+   frame toward the plate: the detail is drawn out of the screen. */
+.leader {
+  width: var(--leader-span, 12%);
+  transform-origin: 100% 50%;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Armed only under html.js: the leader waits for the stage's Reveal, then
+     draws once the plate and the screen have all but landed. */
+  :global(html.js) .leader {
+    transform: scaleX(0);
+    transition: transform var(--dur-scene) var(--ease-gh-glide);
+    transition-delay: var(--dur-slow);
+  }
+  :global(html.js) :global(.reveal-shown) .leader {
+    transform: scaleX(1);
+  }
+}
+
+/* Failure floors — the same ones .reveal carries in globals.css. */
+:global(html.reveal-failsafe) .leader,
+:global(html.reveal-seat) .leader {
+  transform: scaleX(1) !important;
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .leader {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+@media print {
+  .leader {
+    transform: none !important;
+  }
+  .light {
+    display: none;
+  }
+}
