@@ -1,0 +1,52 @@
+[
+ {
+  "tag": "after-zoomtext-light-1440x900@1",
+  "overflowX": 0,
+  "crossing": [],
+  "tagBox": [
+   885,
+   1309,
+   31
+  ],
+  "vw": 1440
+ },
+ {
+  "tag": "after-zoomtext-light-1024x768@1",
+  "overflowX": 0,
+  "crossing": [],
+  "tagBox": [
+   835,
+   943,
+   123
+  ],
+  "vw": 1024
+ },
+ {
+  "tag": "after-zoomtext-light-393x852@2",
+  "overflowX": 0,
+  "crossing": [],
+  "tagBox": [
+   96,
+   297,
+   92
+  ],
+  "vw": 393
+ },
+ {
+  "tag": "after-zoomtext-light-320x568@2",
+  "overflowX": 0,
+  "crossing": [
+   {
+    "text": "View project→",
+    "left": 82,
+    "right": 349
+   }
+  ],
+  "tagBox": [
+   87,
+   233,
+   92
+  ],
+  "vw": 320
+ }
+]

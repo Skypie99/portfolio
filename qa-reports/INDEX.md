@@ -6,11 +6,11 @@
 
 | Measure | Value |
 |---|---|
-| Tracked files under `qa-reports/` | 2012 |
-| Top-level reports and receipts (Markdown) | 190 |
-| Evidence directories | 27 |
-| File types | jpg 766, png 604, md 224, json 195, mjs 74, log 63, cjs 17, txt 17, mp4 11, py 9, webm 9, gz 7, stderr 4, patch 3, sh 3, html 2, jsonl 2, (none) 1, zip 1 |
-| Dates named in file paths | 2026-05-23 to 2026-10-20 |
+| Tracked files under `qa-reports/` | 2174 |
+| Top-level reports and receipts (Markdown) | 191 |
+| Evidence directories | 28 |
+| File types | jpg 888, png 604, md 226, json 212, mjs 83, log 63, txt 24, cjs 17, mp4 15, py 9, webm 9, gz 7, sh 4, stderr 4, patch 3, html 2, jsonl 2, (none) 1, zip 1 |
+| Dates named in file paths | 2026-05-23 to 2026-10-22 |
 
 ## How the evidence is organized
 
@@ -19,10 +19,11 @@
 - **Adding evidence.** Name a receipt `YYYY-MM-DD_<Topic>.md` and cite its raw evidence by relative path. When a new artifact would be byte-identical to one already tracked, cite the existing path with its SHA-256 (or a manifest entry) instead of committing another copy, unless a self-contained package or a before/after comparison genuinely needs the copy. Then stage the files and regenerate this index.
 - **Evidence outside this directory:** `design-reviews/` (dated review programs) and `summaries/` (June 2026 pass reports). See [`docs/INDEX.md`](../docs/INDEX.md) for how every document in the repository is classified.
 
-## Newest dated reports (15 of 159)
+## Newest dated reports (15 of 160)
 
 | Date | Report | Title |
 |---|---|---|
+| 2026-10-22 | [`2026-10-22_DesignCompile_flagship-detail.md`](2026-10-22_DesignCompile_flagship-detail.md) | Design Compile Result — flagship-detail (Creative Release 7 candidate) — 2026-10-22 |
 | 2026-10-20 | [`2026-10-20_Fable_Release6EditorialFinish.md`](2026-10-20_Fable_Release6EditorialFinish.md) | SkyPi Release 6: editorial flow and signature finish, candidate for owner review (2026-10-20) |
 | 2026-10-20 | [`2026-10-20_Mimo_RecordBandFocusRepair.md`](2026-10-20_Mimo_RecordBandFocusRepair.md) | 2026-10-20 — MiMo — Record band keyboard-focus repair (post-Release-6) |
 | 2026-10-20 | [`2026-10-20_Mimo_Release5Integration.md`](2026-10-20_Mimo_Release5Integration.md) | SkyPi Release 5: final integration onto the Release 4 baseline (2026-10-20) |
@@ -37,7 +38,6 @@
 | 2026-10-19 | [`2026-10-19_InteractionRefinement.md`](2026-10-19_InteractionRefinement.md) | Signature-interaction refinement — the press language for buttons and navigation (2026-10-19) |
 | 2026-10-19 | [`2026-10-19_cinematic-desktop-hotfix.md`](2026-10-19_cinematic-desktop-hotfix.md) | Cinematic desktop hotfix Report — 2026-10-19 |
 | 2026-10-18 | [`2026-10-18_DesignCompile_float-application.md`](2026-10-18_DesignCompile_float-application.md) | Design Compile Result — float-application — 2026-10-18 |
-| 2026-09-28 | [`2026-09-28_BL14_Overflow_Portability_Repair.md`](2026-09-28_BL14_Overflow_Portability_Repair.md) | BL-14 overflow-census portability repair (2026-09-28) |
 
 ## Phase gate receipts and packets (14)
 
@@ -58,7 +58,7 @@
 | [`PHASE-09_TECHNICAL_INTEGRITY_RECEIPT.md`](PHASE-09_TECHNICAL_INTEGRITY_RECEIPT.md) | Current owner adjudication — 2026-09-07 |
 | [`PHASE-11_REMOTE_MUTATION_MANIFEST.md`](PHASE-11_REMOTE_MUTATION_MANIFEST.md) | Phase 11 remote mutation manifest — prepared by Phase 06 |
 
-## Evidence directories (27)
+## Evidence directories (28)
 
 | Directory | Files | Types | Cited by |
 |---|---|---|---|
@@ -66,6 +66,7 @@
 | [`2026-10-19_Claude_Release4Final-evidence/`](2026-10-19_Claude_Release4Final-evidence/) | 16 | json 8, mjs 4, md 2, txt 2 | no top-level report |
 | [`2026-10-19_Codex_Release4Interactions-evidence/`](2026-10-19_Codex_Release4Interactions-evidence/) | 15 | json 4, png 4, mjs 3, patch 2, md 1, zip 1 | [`2026-10-19_Codex_Release4ApprovedInteractionIntegration.md`](2026-10-19_Codex_Release4ApprovedInteractionIntegration.md) |
 | [`2026-10-19_InteractionRefinement-evidence/`](2026-10-19_InteractionRefinement-evidence/) | 64 | png 44, mjs 7, json 6, webm 3, md 2, txt 2 | [`2026-10-19_Codex_Release4ApprovedInteractionIntegration.md`](2026-10-19_Codex_Release4ApprovedInteractionIntegration.md)<br>[`2026-10-19_InteractionRefinement.md`](2026-10-19_InteractionRefinement.md) |
+| [`creative-release7-flagship-detail-2026-10-22/`](creative-release7-flagship-detail-2026-10-22/) | 161 | jpg 122, json 17, mjs 9, txt 7, mp4 4, md 1, sh 1 | [`2026-10-22_DesignCompile_flagship-detail.md`](2026-10-22_DesignCompile_flagship-detail.md) |
 | [`evidence-retention/`](evidence-retention/) | 1 | md 1 | [`2026-09-28_PostMerge_Professionalism_Repair_Receipt.md`](2026-09-28_PostMerge_Professionalism_Repair_Receipt.md) |
 | [`flagstone-first-proof-20261019/`](flagstone-first-proof-20261019/) | 141 | jpg 128, png 5, py 3, webm 2, json 1, md 1, mjs 1 | [`2026-10-19_Flagstone_FirstProof_Candidate.md`](2026-10-19_Flagstone_FirstProof_Candidate.md) |
 | [`flagstone-version-a-20261018/`](flagstone-version-a-20261018/) | 55 | jpg 38, png 14, json 1, md 1, mjs 1 | [`2026-10-19_Flagstone_VersionA_Candidate.md`](2026-10-19_Flagstone_VersionA_Candidate.md) |
@@ -104,7 +105,7 @@ Top-level files by the month named in their file name:
 
 | Month | Top-level files |
 |---|---|
-| 2026-10 | 14 |
+| 2026-10 | 15 |
 | 2026-09 | 42 |
 | 2026-08 | 2 |
 | 2026-07 | 2 |
