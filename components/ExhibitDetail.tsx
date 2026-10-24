@@ -75,7 +75,7 @@ export function ExhibitDetail({ detail, sources, className }: ExhibitDetailProps
       {/* ink-muted / ink, the Release 5 caption pair (CaseShowcase.tsx), not
           text-meta: in dark the stage light sits under this line, and text-meta
           measured 3.56:1 at its worst pixel there (393); ink reads well clear. */}
-      <p className="mt-3 font-mono text-meta tracking-label uppercase text-ink-muted dark:text-ink">Detail of the same capture</p>
+      <p className={cn(styles.tag, 'mt-3 font-mono text-meta tracking-label uppercase text-ink-muted dark:text-ink')}>Detail of the same capture</p>
     </div>
   );
 }
