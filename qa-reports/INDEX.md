@@ -6,11 +6,11 @@
 
 | Measure | Value |
 |---|---|
-| Tracked files under `qa-reports/` | 2375 |
-| Top-level reports and receipts (Markdown) | 195 |
-| Evidence directories | 30 |
-| File types | jpg 1039, png 604, json 235, md 231, mjs 89, log 63, txt 38, cjs 17, mp4 16, py 9, webm 9, gz 7, sh 5, stderr 4, patch 3, html 2, jsonl 2, (none) 1, zip 1 |
-| Dates named in file paths | 2026-05-23 to 2026-10-23 |
+| Tracked files under `qa-reports/` | 2398 |
+| Top-level reports and receipts (Markdown) | 197 |
+| Evidence directories | 31 |
+| File types | jpg 1049, png 606, json 238, md 233, mjs 94, log 63, txt 39, cjs 17, mp4 16, py 9, webm 9, gz 7, sh 5, stderr 4, patch 3, html 2, jsonl 2, (none) 1, zip 1 |
+| Dates named in file paths | 2026-05-23 to 2026-10-24 |
 
 ## How the evidence is organized
 
@@ -19,10 +19,12 @@
 - **Adding evidence.** Name a receipt `YYYY-MM-DD_<Topic>.md` and cite its raw evidence by relative path. When a new artifact would be byte-identical to one already tracked, cite the existing path with its SHA-256 (or a manifest entry) instead of committing another copy, unless a self-contained package or a before/after comparison genuinely needs the copy. Then stage the files and regenerate this index.
 - **Evidence outside this directory:** `design-reviews/` (dated review programs) and `summaries/` (June 2026 pass reports). See [`docs/INDEX.md`](../docs/INDEX.md) for how every document in the repository is classified.
 
-## Newest dated reports (15 of 164)
+## Newest dated reports (15 of 166)
 
 | Date | Report | Title |
 |---|---|---|
+| 2026-10-24 | [`2026-10-24_DesignCompile_flagship-detail-crop.md`](2026-10-24_DesignCompile_flagship-detail-crop.md) | Design Compile Result: flagship-detail crop (Creative Release 7), 2026-10-24 |
+| 2026-10-24 | [`2026-10-24_Flagstone_DetailCrop.md`](2026-10-24_Flagstone_DetailCrop.md) | Creative Release 7: Flagstone detail crop ends above the report's description, 2026-10-24 |
 | 2026-10-23 | [`2026-10-23_CreativeRelease7_FinalRefinements.md`](2026-10-23_CreativeRelease7_FinalRefinements.md) | Creative Release 7: the two final refinements (R7-VIS-01, R7-VIS-02), 2026-10-23 |
 | 2026-10-23 | [`2026-10-23_DesignCompile_flagship-detail-refinement.md`](2026-10-23_DesignCompile_flagship-detail-refinement.md) | Design Compile Result — flagship-detail refinement (Creative Release 7) — 2026-10-23 |
 | 2026-10-23 | [`2026-10-23_DesignCompile_flagship-final-refinements.md`](2026-10-23_DesignCompile_flagship-final-refinements.md) | Design Compile Result: flagship final refinements (R7-VIS-01, R7-VIS-02), 2026-10-23 |
@@ -36,8 +38,6 @@
 | 2026-10-19 | [`2026-10-19_Claude_Release4FinalIntegration.md`](2026-10-19_Claude_Release4FinalIntegration.md) | SkyPi Release 4: final integration and corrections (2026-10-19) |
 | 2026-10-19 | [`2026-10-19_Claude_SkyPiRelease3Final.md`](2026-10-19_Claude_SkyPiRelease3Final.md) | SkyPi Release 3 — final integration and accessibility clearance |
 | 2026-10-19 | [`2026-10-19_Codex_Release4ApprovedInteractionIntegration.md`](2026-10-19_Codex_Release4ApprovedInteractionIntegration.md) | SkyPi Release 4: approved interaction integration (2026-10-19) |
-| 2026-10-19 | [`2026-10-19_Codex_SkyPiRelease3FlagstoneIntegration.md`](2026-10-19_Codex_SkyPiRelease3FlagstoneIntegration.md) | SkyPi Release 3 — Flagstone Integration |
-| 2026-10-19 | [`2026-10-19_Flagstone_FirstProof_Candidate.md`](2026-10-19_Flagstone_FirstProof_Candidate.md) | Flagstone first proof candidate: the capture-fitted hero exhibit (2026-10-19) |
 
 ## Phase gate receipts and packets (14)
 
@@ -58,7 +58,7 @@
 | [`PHASE-09_TECHNICAL_INTEGRITY_RECEIPT.md`](PHASE-09_TECHNICAL_INTEGRITY_RECEIPT.md) | Current owner adjudication — 2026-09-07 |
 | [`PHASE-11_REMOTE_MUTATION_MANIFEST.md`](PHASE-11_REMOTE_MUTATION_MANIFEST.md) | Phase 11 remote mutation manifest — prepared by Phase 06 |
 
-## Evidence directories (30)
+## Evidence directories (31)
 
 | Directory | Files | Types | Cited by |
 |---|---|---|---|
@@ -67,9 +67,10 @@
 | [`2026-10-19_Codex_Release4Interactions-evidence/`](2026-10-19_Codex_Release4Interactions-evidence/) | 15 | json 4, png 4, mjs 3, patch 2, md 1, zip 1 | [`2026-10-19_Codex_Release4ApprovedInteractionIntegration.md`](2026-10-19_Codex_Release4ApprovedInteractionIntegration.md) |
 | [`2026-10-19_InteractionRefinement-evidence/`](2026-10-19_InteractionRefinement-evidence/) | 64 | png 44, mjs 7, json 6, webm 3, md 2, txt 2 | [`2026-10-19_Codex_Release4ApprovedInteractionIntegration.md`](2026-10-19_Codex_Release4ApprovedInteractionIntegration.md)<br>[`2026-10-19_InteractionRefinement.md`](2026-10-19_InteractionRefinement.md) |
 | [`creative-release7-final-refinements-2026-10-23/`](creative-release7-final-refinements-2026-10-23/) | 20 | jpg 10, json 7, mjs 3 | [`2026-10-23_CreativeRelease7_FinalRefinements.md`](2026-10-23_CreativeRelease7_FinalRefinements.md) |
-| [`creative-release7-flagship-detail-2026-10-22/`](creative-release7-flagship-detail-2026-10-22/) | 168 | jpg 122, json 17, txt 14, mjs 9, mp4 4, md 1, sh 1 | [`2026-10-22_DesignCompile_flagship-detail.md`](2026-10-22_DesignCompile_flagship-detail.md)<br>[`2026-10-23_CreativeRelease7_FinalRefinements.md`](2026-10-23_CreativeRelease7_FinalRefinements.md) |
+| [`creative-release7-flagship-detail-2026-10-22/`](creative-release7-flagship-detail-2026-10-22/) | 168 | jpg 122, json 17, txt 14, mjs 9, mp4 4, md 1, sh 1 | [`2026-10-22_DesignCompile_flagship-detail.md`](2026-10-22_DesignCompile_flagship-detail.md)<br>[`2026-10-23_CreativeRelease7_FinalRefinements.md`](2026-10-23_CreativeRelease7_FinalRefinements.md)<br>[`2026-10-24_Flagstone_DetailCrop.md`](2026-10-24_Flagstone_DetailCrop.md) |
 | [`creative-release7-refinement-2026-10-23/`](creative-release7-refinement-2026-10-23/) | 170 | jpg 141, json 16, txt 7, mjs 3, md 1, mp4 1, sh 1 | [`2026-10-22_DesignCompile_flagship-detail.md`](2026-10-22_DesignCompile_flagship-detail.md)<br>[`2026-10-23_CreativeRelease7_FinalRefinements.md`](2026-10-23_CreativeRelease7_FinalRefinements.md)<br>[`2026-10-23_DesignCompile_flagship-detail-refinement.md`](2026-10-23_DesignCompile_flagship-detail-refinement.md) |
 | [`evidence-retention/`](evidence-retention/) | 1 | md 1 | [`2026-09-28_PostMerge_Professionalism_Repair_Receipt.md`](2026-09-28_PostMerge_Professionalism_Repair_Receipt.md) |
+| [`flagstone-detail-crop-2026-10-24/`](flagstone-detail-crop-2026-10-24/) | 21 | jpg 10, mjs 5, json 3, png 2, txt 1 | no top-level report |
 | [`flagstone-first-proof-20261019/`](flagstone-first-proof-20261019/) | 141 | jpg 128, png 5, py 3, webm 2, json 1, md 1, mjs 1 | [`2026-10-19_Flagstone_FirstProof_Candidate.md`](2026-10-19_Flagstone_FirstProof_Candidate.md) |
 | [`flagstone-version-a-20261018/`](flagstone-version-a-20261018/) | 55 | jpg 38, png 14, json 1, md 1, mjs 1 | [`2026-10-19_Flagstone_VersionA_Candidate.md`](2026-10-19_Flagstone_VersionA_Candidate.md) |
 | [`phase-07-captures/`](phase-07-captures/) | 47 | png 45, json 2 | [`2026-09-05_Codex_Phase07IntroHandoff_PreApproval.md`](2026-09-05_Codex_Phase07IntroHandoff_PreApproval.md)<br>[`PHASE-07_INTRO_HANDOFF_GATE_RECEIPT.md`](PHASE-07_INTRO_HANDOFF_GATE_RECEIPT.md) |
@@ -107,7 +108,7 @@ Top-level files by the month named in their file name:
 
 | Month | Top-level files |
 |---|---|
-| 2026-10 | 19 |
+| 2026-10 | 21 |
 | 2026-09 | 42 |
 | 2026-08 | 2 |
 | 2026-07 | 2 |

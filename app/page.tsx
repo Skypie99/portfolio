@@ -652,11 +652,13 @@ export default function HomePage() {
                   card the plate above describes renders its words at 3 to
                   7px. The plate beside it (ExhibitDetail) is one region of
                   the SAME file at about twice the screen's scale, where the
-                  card's title, severity, photograph and description can be
-                  read; a 1px leader runs to the frame. Plate and screen stand
-                  side by side (50 : 44, a 6% gap the leader spans; those
-                  proportions put the plate's mid-height on the card's
-                  mid-height on the screen, within 2px at every width) in the
+                  card's title, severity, report age and photograph can be
+                  read; the crop stops above the reporter's free-text
+                  description (lib/captureDetail.ts). A 1px leader runs to the
+                  frame. Plate and screen stand side by side (50 : 44, a 6% gap
+                  the leader spans; at those proportions the leader, at the
+                  plate's mid-height, meets the screen on the card's own
+                  heading lines, capture row 563 to 565 at 1024 to 1440) in the
                   desktop composition, from `lg` while the stage holds at least
                   20em; otherwise, on a phone, a tablet or under enlarged text,
                   the plate stands above the screen at a near-native size (the
