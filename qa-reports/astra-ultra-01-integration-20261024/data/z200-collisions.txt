@@ -1,0 +1,19 @@
+baseline 8
+light  768 /work/dashboard/       'Live ↗': View project → × Live ↗; View project → × GitHub ↗
+light  768 /work/dashboard/       'Live ↗': View project → × Live ↗; View project → × GitHub ↗
+dark   768 /work/flagstone/       'Live ↗': View project → × Live ↗
+dark   768 /work/flagstone/       'Live ↗': View project → × Live ↗
+dark  1440 /work/flagstone/       'Live ↗': View project → × Live ↗
+dark  1440 /work/flagstone/       'Live ↗': View project → × Live ↗
+dark  1920 /work/                 'Live ↗': View project → × Live ↗
+dark  1920 /work/                 'Live ↗': View project → × Live ↗
+candidate-final 9
+dark   768 /work/claude-corp/     'Try synthetic demo ↗': View project → × Try synthetic demo ↗
+dark   768 /work/claude-corp/     'Open Prompt Library ↗': View project → × Open Prompt Library ↗; Open Prompt Library ↗ × GitHub ↗
+dark  1920 /work/                 'Open web app ↗': View project → × Open web app ↗
+dark  1920 /work/                 'Read system overview ↗': View project → × Read system overview ↗
+dark  1920 /work/                 'Try synthetic demo ↗': View project → × Try synthetic demo ↗
+dark  1920 /work/                 'Open Prompt Library ↗': View project → × Open Prompt Library ↗; Open Prompt Library ↗ × GitHub ↗
+dark  1920 /work/                 'Play Ghost Code ↗': View project → × Play Ghost Code ↗; Play Ghost Code ↗ × GitHub ↗
+dark  1920 /work/flagstone/       'Read system overview ↗': View project → × Read system overview ↗
+dark  1920 /work/flagstone/       'Try synthetic demo ↗': View project → × Try synthetic demo ↗
