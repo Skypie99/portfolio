@@ -16,7 +16,9 @@
  *   - Claude Corp's autonomy wording stays bounded.
  *   - The Studio Archive stays unlisted and noindex.
  *   - Current-facing product naming is Flagstone, not AccessMap.
- *   - The Prompt 2 CTA vocabulary (View project / Live demo / GitHub) holds.
+ *   - The Prompt 2 CTA vocabulary holds: "View project" for the internal
+ *     case study, "GitHub" for source, and each external demo link names its
+ *     own destination (Astra Ultra 01, owner-approved 2026-10-24).
  *   - Recruiter-facing copy carries zero em dashes, in source and in the
  *     built output (the renderer also turns `--` into one, so that is banned
  *     in bodies too).
@@ -341,10 +343,20 @@ describe('recruiter copy truth guards (Prompt 3)', () => {
     expect(read('app/about/page.tsx')).not.toContain('AccessMap');
   });
 
-  it('keeps the Prompt 2 doorway vocabulary: demo links say "Live demo", source links say "GitHub"', () => {
+  it('keeps the doorway vocabulary: each demo link names its destination, source links say "GitHub"', () => {
+    // Owner-approved destination labels (Astra Ultra 01, 2026-10-24). One
+    // label per project, because the five destinations are not the same kind
+    // of thing: a web app, a written overview, a synthetic demo, a tool, a game.
+    const demoLabels: Record<string, string> = {
+      flagstone: 'Open web app',
+      'claude-corp': 'Read system overview',
+      dashboard: 'Try synthetic demo',
+      'prompt-library': 'Open Prompt Library',
+      'ghost-code': 'Play Ghost Code',
+    };
     for (const d of deliverables) {
       for (const l of d.links ?? []) {
-        if (l.type === 'demo') expect(l.label, `${d.id} demo label`).toBe('Live demo');
+        if (l.type === 'demo') expect(l.label, `${d.id} demo label`).toBe(demoLabels[d.id]);
         if (l.type === 'github') expect(l.label, `${d.id} github label`).toBe('GitHub');
         // P1.A: the App Store doorway gets one wording too, for the same reason
         // the other two do: one label per destination type, site-wide.

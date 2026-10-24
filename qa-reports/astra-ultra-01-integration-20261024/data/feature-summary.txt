@@ -1,0 +1,22 @@
+===== baseline
+ counterFlip: counting observed=True mid=['0', '1', 'AA', '155', '20', '0.0039'] | 120ms after=['0', '2', 'AA', '193', '25', '0.0039'] final=False | 1620ms final=False
+ counterNoFlip: counting observed=True mid=['0', '1', 'AA', '120', '16', '0.0039'] | 120ms after=['0', '3', 'AA', '350', '46', '0.0039'] final=False | 1620ms final=True
+ certs cols   1024@100%:3 1024@125%:2 1024@150%:2 1024@200%:1 1100@100%:3 1100@125%:2 1100@150%:2 1100@200%:1 1180@100%:3 1180@125%:2 1180@150%:2 1180@200%:1 1280@100%:3 1280@125%:3 1280@150%:2 1280@200%:2 1366@100%:3 1366@125%:3 1366@150%:2 1366@200%:2 1440@100%:3 1440@125%:3 1440@150%:3 1440@200%:2 1920@100%:3 1920@125%:3 1920@150%:3 1920@200%:2
+ certs clipped 4 docOverflow 0
+ row5 bottom lit on hover/press/focus: [('dark', True), ('light', True)]
+ top highlights (all rows) hover!=rest: True
+ contact order ['Accessible technology, built w', 'Open to senior support roles, ', 'The socials below also work, f']
+ linkedin Full history on LinkedIn↗(opens in new tab) | Full history on LinkedIn↗(opens in new tab) | lastmod 14 | defect ['Last defect']
+ heading lines {'320': 5, '390': 4, '768': 3, '1024': 2, '1440': 2, '1920': 2}
+===== candidate
+ counterFlip: counting observed=True mid=['0', '1', 'AA', '120', '16', '0.0039'] | 120ms after=['0', '6', 'AA', '763', '100%', '0.0039'] final=True | 1620ms final=True
+ counterNoFlip: counting observed=True mid=['0', '1', 'AA', '120', '16', '0.0039'] | 120ms after=['0', '3', 'AA', '378', '50', '0.0039'] final=False | 1620ms final=True
+ certs cols   1024@100%:2 1024@125%:1 1024@150%:1 1024@200%:1 1100@100%:2 1100@125%:2 1100@150%:1 1100@200%:1 1180@100%:2 1180@125%:2 1180@150%:1 1180@200%:1 1280@100%:3 1280@125%:2 1280@150%:2 1280@200%:1 1366@100%:3 1366@125%:2 1366@150%:2 1366@200%:1 1440@100%:3 1440@125%:2 1440@150%:2 1440@200%:1 1920@100%:3 1920@125%:3 1920@150%:2 1920@200%:1
+ certs clipped 0 docOverflow 0
+ row5 bottom lit on hover/press/focus: [('dark', False), ('light', False)]
+ top highlights (all rows) hover!=rest: True
+ contact order ['Accessible technology, built w', 'Open to senior support roles, ', 'The socials below also work, f']
+ linkedin View LinkedIn profile↗(opens in new tab) | View LinkedIn profile↗(opens in new tab) | lastmod 0 | defect ['A documented defect']
+ heading lines {'320': 6, '390': 5, '768': 4, '1024': 2, '1440': 2, '1920': 2}
+synthetic 200% root text, card+pill links (both themes): baseline {'collisions': 8, 'overflowRow': 50, 'overflowCol': 12, 'docOverflow': 2}  candidate {'collisions': 9, 'overflowRow': 20, 'overflowCol': 12, 'docOverflow': 2}
+100% text: baseline {'collisions': 0, 'overflow': 0, 'docOverflow': 0, 'wraps': 0}  candidate {'collisions': 0, 'overflow': 0, 'docOverflow': 0, 'wraps': 8}

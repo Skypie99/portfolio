@@ -311,7 +311,7 @@ export default function HomePage() {
       : []),
     {
       key: 'defect',
-      figure: 'Last defect',
+      figure: 'A documented defect',
       /* The board's own wording for this row (board 01, pane A), and every
          clause of it is checkable against the case study's `What went wrong`
          — which is where the link goes. The subject is set in the house
@@ -1174,8 +1174,14 @@ export default function HomePage() {
               <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
               How the work gets made
             </p>
-            <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance">
-              I direct AI agents, and I built the system that keeps them honest.
+            {/* "implementation." is wider than this column on a 320px phone
+                (by 5px at 100% text, and clipped by the section at 125%). The
+                soft hyphen gives it a proper break, "imple- / mentation.",
+                only when it cannot fit; at 360px and wider it never shows.
+                break-words is the R6-A guard for larger text zoom, where
+                other words outgrow the column too. Same words. */}
+            <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance break-words">
+              I set the direction, make the decisions, and guide AI-assisted imple&shy;mentation.
             </h2>
           </Reveal>
 

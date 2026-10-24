@@ -139,7 +139,7 @@ describe('/contact — the calling card', () => {
     expect(norm(email.textContent)).toMatch(/email/i);
 
     const linkedin = profile.socials.find((s) => s.platform === 'linkedin')!;
-    const pointer = screen.getByRole('link', { name: /Full history on LinkedIn.*\(opens in new tab\)/ });
+    const pointer = screen.getByRole('link', { name: /View LinkedIn profile.*\(opens in new tab\)/ });
     expect(pointer).toHaveAttribute('href', linkedin.url);
     expect(pointer).toHaveAttribute('target', '_blank');
     expect(pointer).toHaveAttribute('rel', 'noopener noreferrer');

@@ -6,10 +6,10 @@
 
 | Measure | Value |
 |---|---|
-| Tracked files under `qa-reports/` | 2398 |
-| Top-level reports and receipts (Markdown) | 197 |
-| Evidence directories | 31 |
-| File types | jpg 1049, png 606, json 238, md 233, mjs 94, log 63, txt 39, cjs 17, mp4 16, py 9, webm 9, gz 7, sh 5, stderr 4, patch 3, html 2, jsonl 2, (none) 1, zip 1 |
+| Tracked files under `qa-reports/` | 2449 |
+| Top-level reports and receipts (Markdown) | 200 |
+| Evidence directories | 32 |
+| File types | jpg 1070, png 607, json 240, md 236, mjs 94, log 63, txt 50, cjs 26, mp4 16, py 12, webm 9, gz 8, sh 5, stderr 4, patch 3, html 2, jsonl 2, (none) 1, zip 1 |
 | Dates named in file paths | 2026-05-23 to 2026-10-24 |
 
 ## How the evidence is organized
@@ -19,10 +19,13 @@
 - **Adding evidence.** Name a receipt `YYYY-MM-DD_<Topic>.md` and cite its raw evidence by relative path. When a new artifact would be byte-identical to one already tracked, cite the existing path with its SHA-256 (or a manifest entry) instead of committing another copy, unless a self-contained package or a before/after comparison genuinely needs the copy. Then stage the files and regenerate this index.
 - **Evidence outside this directory:** `design-reviews/` (dated review programs) and `summaries/` (June 2026 pass reports). See [`docs/INDEX.md`](../docs/INDEX.md) for how every document in the repository is classified.
 
-## Newest dated reports (15 of 166)
+## Newest dated reports (15 of 169)
 
 | Date | Report | Title |
 |---|---|---|
+| 2026-10-24 | [`2026-10-24_AstraUltra01_PolishIntegration.md`](2026-10-24_AstraUltra01_PolishIntegration.md) | Astra Ultra 01: owner-approved polish integration, 2026-10-24 |
+| 2026-10-24 | [`2026-10-24_AstraUltra01_ReleaseHeadingFix.md`](2026-10-24_AstraUltra01_ReleaseHeadingFix.md) | Astra Ultra 01: release acceptance and heading fix, 2026-10-24 |
+| 2026-10-24 | [`2026-10-24_DesignCompile_astra-ultra-01-polish.md`](2026-10-24_DesignCompile_astra-ultra-01-polish.md) | Design Compile Result: Astra Ultra 01 polish integration, 2026-10-24 |
 | 2026-10-24 | [`2026-10-24_DesignCompile_flagship-detail-crop.md`](2026-10-24_DesignCompile_flagship-detail-crop.md) | Design Compile Result: flagship-detail crop (Creative Release 7), 2026-10-24 |
 | 2026-10-24 | [`2026-10-24_Flagstone_DetailCrop.md`](2026-10-24_Flagstone_DetailCrop.md) | Creative Release 7: Flagstone detail crop ends above the report's description, 2026-10-24 |
 | 2026-10-23 | [`2026-10-23_CreativeRelease7_FinalRefinements.md`](2026-10-23_CreativeRelease7_FinalRefinements.md) | Creative Release 7: the two final refinements (R7-VIS-01, R7-VIS-02), 2026-10-23 |
@@ -35,9 +38,6 @@
 | 2026-10-20 | [`2026-10-20_Mimo_Release5Integration.md`](2026-10-20_Mimo_Release5Integration.md) | SkyPi Release 5: final integration onto the Release 4 baseline (2026-10-20) |
 | 2026-10-20 | [`2026-10-20_Mimo_Release6Integration.md`](2026-10-20_Mimo_Release6Integration.md) | SkyPi Release 6: final integration onto the Release 5 baseline (2026-10-20) |
 | 2026-10-19 | [`2026-10-19_Claude_Release4Final-CombinedIntegration.md`](2026-10-19_Claude_Release4Final-CombinedIntegration.md) | SkyPi Release 4: final integration onto the Release 3 baseline (2026-10-19) |
-| 2026-10-19 | [`2026-10-19_Claude_Release4FinalIntegration.md`](2026-10-19_Claude_Release4FinalIntegration.md) | SkyPi Release 4: final integration and corrections (2026-10-19) |
-| 2026-10-19 | [`2026-10-19_Claude_SkyPiRelease3Final.md`](2026-10-19_Claude_SkyPiRelease3Final.md) | SkyPi Release 3 — final integration and accessibility clearance |
-| 2026-10-19 | [`2026-10-19_Codex_Release4ApprovedInteractionIntegration.md`](2026-10-19_Codex_Release4ApprovedInteractionIntegration.md) | SkyPi Release 4: approved interaction integration (2026-10-19) |
 
 ## Phase gate receipts and packets (14)
 
@@ -58,7 +58,7 @@
 | [`PHASE-09_TECHNICAL_INTEGRITY_RECEIPT.md`](PHASE-09_TECHNICAL_INTEGRITY_RECEIPT.md) | Current owner adjudication — 2026-09-07 |
 | [`PHASE-11_REMOTE_MUTATION_MANIFEST.md`](PHASE-11_REMOTE_MUTATION_MANIFEST.md) | Phase 11 remote mutation manifest — prepared by Phase 06 |
 
-## Evidence directories (31)
+## Evidence directories (32)
 
 | Directory | Files | Types | Cited by |
 |---|---|---|---|
@@ -66,6 +66,7 @@
 | [`2026-10-19_Claude_Release4Final-evidence/`](2026-10-19_Claude_Release4Final-evidence/) | 16 | json 8, mjs 4, md 2, txt 2 | no top-level report |
 | [`2026-10-19_Codex_Release4Interactions-evidence/`](2026-10-19_Codex_Release4Interactions-evidence/) | 15 | json 4, png 4, mjs 3, patch 2, md 1, zip 1 | [`2026-10-19_Codex_Release4ApprovedInteractionIntegration.md`](2026-10-19_Codex_Release4ApprovedInteractionIntegration.md) |
 | [`2026-10-19_InteractionRefinement-evidence/`](2026-10-19_InteractionRefinement-evidence/) | 64 | png 44, mjs 7, json 6, webm 3, md 2, txt 2 | [`2026-10-19_Codex_Release4ApprovedInteractionIntegration.md`](2026-10-19_Codex_Release4ApprovedInteractionIntegration.md)<br>[`2026-10-19_InteractionRefinement.md`](2026-10-19_InteractionRefinement.md) |
+| [`astra-ultra-01-integration-20261024/`](astra-ultra-01-integration-20261024/) | 48 | jpg 21, txt 11, cjs 9, py 3, json 2, gz 1, png 1 | [`2026-10-24_AstraUltra01_PolishIntegration.md`](2026-10-24_AstraUltra01_PolishIntegration.md)<br>[`2026-10-24_AstraUltra01_ReleaseHeadingFix.md`](2026-10-24_AstraUltra01_ReleaseHeadingFix.md) |
 | [`creative-release7-final-refinements-2026-10-23/`](creative-release7-final-refinements-2026-10-23/) | 20 | jpg 10, json 7, mjs 3 | [`2026-10-23_CreativeRelease7_FinalRefinements.md`](2026-10-23_CreativeRelease7_FinalRefinements.md) |
 | [`creative-release7-flagship-detail-2026-10-22/`](creative-release7-flagship-detail-2026-10-22/) | 168 | jpg 122, json 17, txt 14, mjs 9, mp4 4, md 1, sh 1 | [`2026-10-22_DesignCompile_flagship-detail.md`](2026-10-22_DesignCompile_flagship-detail.md)<br>[`2026-10-23_CreativeRelease7_FinalRefinements.md`](2026-10-23_CreativeRelease7_FinalRefinements.md)<br>[`2026-10-24_Flagstone_DetailCrop.md`](2026-10-24_Flagstone_DetailCrop.md) |
 | [`creative-release7-refinement-2026-10-23/`](creative-release7-refinement-2026-10-23/) | 170 | jpg 141, json 16, txt 7, mjs 3, md 1, mp4 1, sh 1 | [`2026-10-22_DesignCompile_flagship-detail.md`](2026-10-22_DesignCompile_flagship-detail.md)<br>[`2026-10-23_CreativeRelease7_FinalRefinements.md`](2026-10-23_CreativeRelease7_FinalRefinements.md)<br>[`2026-10-23_DesignCompile_flagship-detail-refinement.md`](2026-10-23_DesignCompile_flagship-detail-refinement.md) |
@@ -108,7 +109,7 @@ Top-level files by the month named in their file name:
 
 | Month | Top-level files |
 |---|---|
-| 2026-10 | 21 |
+| 2026-10 | 24 |
 | 2026-09 | 42 |
 | 2026-08 | 2 |
 | 2026-07 | 2 |

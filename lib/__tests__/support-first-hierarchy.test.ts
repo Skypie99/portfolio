@@ -201,7 +201,7 @@ describe('Phase 03 — the Support Operating Record (F-006)', () => {
     expect(section).not.toMatch(/\bdate=\{/);
     expect(section).not.toMatch(/\bopen=\{/);
     // The Record's own row figures must not reappear here.
-    for (const figure of ['Last defect', 'Round ']) {
+    for (const figure of ['A documented defect', 'Round ']) {
       expect(section, `Support record duplicates The Record's "${figure}"`).not.toContain(figure);
     }
   });

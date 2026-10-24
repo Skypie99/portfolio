@@ -1,0 +1,123 @@
+[
+ {
+  "control": "reduced-motion counter: old effect guard",
+  "file": "components/CountUpStat.tsx",
+  "caught": true,
+  "failing": [
+   "\u00d7 CountUpStat preference transitions > settles 100% and cancels frames when reduced motion is enabled mid-count 31ms",
+   "\u00d7 CountUpStat preference transitions > settles 1,680 and cancels frames when reduced motion is enabled mid-count 2ms",
+   "\u00d7 CountUpStat preference transitions > does not start a new animation after a cold reduced-motion render 4ms"
+  ]
+ },
+ {
+  "control": "Ghost Code divider: whole-row border-color on hover",
+  "file": "app/globals.css",
+  "caught": true,
+  "failing": [
+   "\u00d7 Astra Ultra 01 integration (owner-approved scope) > lights only the TOP rule of an active work-index row, so the last row keeps a neutral closing divider 5ms"
+  ]
+ },
+ {
+  "control": "Ghost Code divider: whole-row border-color on focus/press (dark)",
+  "file": "app/globals.css",
+  "caught": true,
+  "failing": [
+   "\u00d7 Astra Ultra 01 integration (owner-approved scope) > lights only the TOP rule of an active work-index row, so the last row keeps a neutral closing divider 6ms"
+  ]
+ },
+ {
+  "control": "REJECTED Contact reorder (Astra pitch first)",
+  "file": "app/contact/page.tsx",
+  "caught": true,
+  "failing": [
+   "\u00d7 Astra Ultra 01 integration (owner-approved scope) > leaves the Contact introduction in its published order (the recruiter-first reorder was rejected) 3ms",
+   "\u00d7 /contact \u2014 the calling card > keeps the invitation copy, the stored contact data and the accessible names 7ms"
+  ]
+ },
+ {
+  "control": "Astra's heading instead of the owner's",
+  "file": "app/page.tsx",
+  "caught": true,
+  "failing": [
+   "\u00d7 Astra Ultra 01 integration (owner-approved scope) > carries the owner-approved contribution heading verbatim 6ms"
+  ]
+ },
+ {
+  "control": "defect wording reverted",
+  "file": "app/page.tsx",
+  "caught": true,
+  "failing": [
+   "\u00d7 Astra Ultra 01 integration (owner-approved scope) > labels the Record defect row as a documented defect, not the latest one 8ms"
+  ]
+ },
+ {
+  "control": "card renders first word only",
+  "file": "components/CaseStudyCard.tsx",
+  "caught": true,
+  "failing": [
+   "\u00d7 Astra Ultra 01 integration (owner-approved scope) > components/CaseStudyCard.tsx keeps the demo link interaction classes exactly as shipped 7ms",
+   "\u00d7 external project destinations > case: flagstone exposes its complete destination label 9ms",
+   "\u00d7 external project destinations > case: claude-corp exposes its complete destination label 7ms",
+   "\u00d7 external project destinations > case: dashboard exposes its complete destination label 3ms"
+  ]
+ },
+ {
+  "control": "card demo link loses hover colour",
+  "file": "components/ProjectCard.tsx",
+  "caught": true,
+  "failing": [
+   "\u00d7 Astra Ultra 01 integration (owner-approved scope) > components/ProjectCard.tsx keeps the demo link interaction classes exactly as shipped 6ms"
+  ]
+ },
+ {
+  "control": "demo destination label reverted in content",
+  "file": "content/deliverables.json",
+  "caught": true,
+  "failing": [
+   "\u00d7 recruiter copy truth guards (Prompt 3) > keeps the doorway vocabulary: each demo link names its destination, source links say \"GitHub\" 6ms",
+   "\u00d7 external project destinations > project: ghost-code exposes its complete destination label 39ms",
+   "\u00d7 external project destinations > case: ghost-code exposes its complete destination label 11ms"
+  ]
+ },
+ {
+  "control": "sitemap build-time lastModified restored",
+  "file": "app/sitemap.ts",
+  "caught": true,
+  "failing": [
+   "\u00d7 Astra Ultra 01 integration (owner-approved scope) > keeps every public sitemap URL and stamps none with a build-time lastModified 58ms"
+  ]
+ },
+ {
+  "control": "Back to home (blog) loses focus parity",
+  "file": "app/blog/page.tsx",
+  "caught": true,
+  "failing": [
+   "\u00d7 Astra Ultra 01 integration (owner-approved scope) > app/blog/page.tsx gives keyboard focus on \"Back to home\" the same ink shift and arrow glide as hover 8ms"
+  ]
+ },
+ {
+  "control": "certificate grid floor reverted",
+  "file": "app/globals.css",
+  "caught": true,
+  "failing": [
+   "\u00d7 Astra Ultra 01 integration (owner-approved scope) > gives each certificate card a comfortable 16rem floor, capped at three columns 30ms"
+  ]
+ },
+ {
+  "control": "Footer LinkedIn label reverted",
+  "file": "components/Footer.tsx",
+  "caught": true,
+  "failing": [
+   "\u00d7 Astra Ultra 01 integration (owner-approved scope) > names the LinkedIn pointer as a profile, in Contact and in the Footer it moves with 8ms"
+  ]
+ },
+ {
+  "control": "Contact LinkedIn label reverted",
+  "file": "app/contact/page.tsx",
+  "caught": true,
+  "failing": [
+   "\u00d7 Astra Ultra 01 integration (owner-approved scope) > names the LinkedIn pointer as a profile, in Contact and in the Footer it moves with 11ms",
+   "\u00d7 /contact \u2014 the calling card > keeps the invitation copy, the stored contact data and the accessible names 40ms"
+  ]
+ }
+]

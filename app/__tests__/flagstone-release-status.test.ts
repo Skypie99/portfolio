@@ -75,7 +75,7 @@ describe('Flagstone App Store release truth', () => {
       'https://apps.apple.com/app/flagstone-accessibility-map/id6774709116',
     );
     // The demo link stays: the web build is a separate, still-true proof.
-    expect(flagstone?.links?.find((l) => l.type === 'demo')?.label).toBe('Live demo');
+    expect(flagstone?.links?.find((l) => l.type === 'demo')?.label).toBe('Open web app');
   });
 
   it('states availability rather than leaving the reader to infer it', () => {

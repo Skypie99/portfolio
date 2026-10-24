@@ -1,0 +1,66 @@
+certificates 390 light: PIXEL-IDENTICAL
+certificates 390 dark: PIXEL-IDENTICAL
+certificates 768 light: PIXEL-IDENTICAL
+certificates 768 dark: PIXEL-IDENTICAL
+certificates 1024 light: size differs
+certificates 1024 dark: size differs
+certificates 1440 light: PIXEL-IDENTICAL
+certificates 1440 dark: PIXEL-IDENTICAL
+work-card-actions 390 light: differs (486746 px)
+work-card-actions 390 dark: differs (507606 px)
+work-card-actions 768 light: size differs
+work-card-actions 768 dark: size differs
+work-card-actions 1440 light: differs (1279 px)
+work-card-actions 1440 dark: differs (1281 px)
+case-pill-claude-corp 390 light: differs (3149 px)
+case-pill-claude-corp 390 dark: differs (3132 px)
+case-pill-claude-corp 768 light: differs (23801 px)
+case-pill-claude-corp 768 dark: differs (23795 px)
+case-pill-claude-corp 1024 light: differs (19358 px)
+case-pill-claude-corp 1024 dark: differs (19334 px)
+case-pill-claude-corp 1440 light: differs (23801 px)
+case-pill-claude-corp 1440 dark: differs (23796 px)
+case-pill-prompt-library 390 light: differs (2959 px)
+case-pill-prompt-library 390 dark: differs (2948 px)
+case-pill-prompt-library 1024 light: differs (19277 px)
+case-pill-prompt-library 1024 dark: differs (19258 px)
+case-pill-prompt-library 1440 light: differs (21621 px)
+case-pill-prompt-library 1440 dark: differs (21607 px)
+case-pill-flagstone 390 light: differs (2366 px)
+case-pill-flagstone 390 dark: differs (2355 px)
+case-pill-flagstone 1024 light: differs (7903 px)
+case-pill-flagstone 1024 dark: differs (7892 px)
+case-pill-flagstone 1440 light: differs (7899 px)
+case-pill-flagstone 1440 dark: differs (7891 px)
+home-contribution-heading 390 light: size differs
+home-contribution-heading 390 dark: size differs
+home-contribution-heading 768 light: size differs
+home-contribution-heading 768 dark: size differs
+home-contribution-heading 1440 light: differs (35261 px)
+home-contribution-heading 1440 dark: differs (35258 px)
+home-record-defect 390 light: differs (2996 px)
+home-record-defect 390 dark: differs (2985 px)
+home-record-defect 1440 light: differs (2997 px)
+home-record-defect 1440 dark: differs (2988 px)
+home-work-ghost-code-hover 390 light: differs (1304 px)
+home-work-ghost-code-hover 390 dark: differs (1304 px)
+home-work-ghost-code-hover 768 light: differs (1696 px)
+home-work-ghost-code-hover 768 dark: differs (1696 px)
+home-work-ghost-code-hover 1440 light: differs (4384 px)
+home-work-ghost-code-hover 1440 dark: differs (4384 px)
+home-work-ghost-code-focus 1440 light: differs (4384 px)
+home-work-ghost-code-focus 1440 dark: differs (4384 px)
+contact-intro 390 light: differs (2685 px)
+contact-intro 390 dark: differs (2672 px)
+contact-intro 768 light: differs (2685 px)
+contact-intro 768 dark: differs (2672 px)
+contact-intro 1440 light: differs (2685 px)
+contact-intro 1440 dark: differs (2672 px)
+back-home-focus-work 1440 light: differs (1381 px)
+back-home-focus-work 1440 dark: differs (1371 px)
+flagship-cr7 390 light: PIXEL-IDENTICAL
+flagship-cr7 390 dark: PIXEL-IDENTICAL
+flagship-cr7 768 light: PIXEL-IDENTICAL
+flagship-cr7 768 dark: PIXEL-IDENTICAL
+flagship-cr7 1440 light: PIXEL-IDENTICAL
+flagship-cr7 1440 dark: PIXEL-IDENTICAL

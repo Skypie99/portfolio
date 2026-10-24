@@ -69,7 +69,7 @@ describe('CaseStudyCard', () => {
       <CaseStudyCard
         {...BASE_PROPS}
         links={[
-          { label: 'Live demo', href: 'https://flagstone.skypistudio.com', type: 'demo' },
+          { label: 'Open web app', href: 'https://flagstone.skypistudio.com', type: 'demo' },
           { label: 'GitHub', href: 'https://github.com/Skypie99/AccessMap', type: 'github' },
         ]}
       />,
@@ -82,7 +82,7 @@ describe('CaseStudyCard', () => {
     const viewProject = screen.getByRole('link', { name: /view project: flagstone case study/i });
     expect(viewProject).toHaveAttribute('tabindex', '-1');
     // Demo and GitHub each stay their own, separately actionable stop.
-    expect(screen.getByRole('link', { name: /open live demo for flagstone/i })).not.toHaveAttribute('tabindex');
+    expect(screen.getByRole('link', { name: /open web app for flagstone/i })).not.toHaveAttribute('tabindex');
     expect(screen.getByRole('link', { name: /view flagstone source on github/i })).not.toHaveAttribute('tabindex');
   });
 });

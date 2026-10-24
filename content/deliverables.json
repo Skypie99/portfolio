@@ -94,7 +94,7 @@
         "type": "github"
       },
       {
-        "label": "Live demo",
+        "label": "Open web app",
         "href": "https://flagstone.skypistudio.com",
         "type": "demo"
       },
@@ -201,7 +201,7 @@
     ],
     "links": [
       {
-        "label": "Live demo",
+        "label": "Read system overview",
         "href": "https://claudecorp.skypistudio.com",
         "type": "demo"
       },
@@ -319,7 +319,7 @@
     ],
     "links": [
       {
-        "label": "Live demo",
+        "label": "Try synthetic demo",
         "href": "https://dashboard.skypistudio.com",
         "type": "demo"
       }
@@ -434,7 +434,7 @@
         "type": "github"
       },
       {
-        "label": "Live demo",
+        "label": "Open Prompt Library",
         "href": "https://prompts.skypistudio.com",
         "type": "demo"
       }
@@ -548,7 +548,7 @@
         "type": "github"
       },
       {
-        "label": "Live demo",
+        "label": "Play Ghost Code",
         "href": "https://ghostcode.skypistudio.com",
         "type": "demo"
       }

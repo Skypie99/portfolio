@@ -119,7 +119,7 @@ export default function ContactPage() {
                     rel="noopener noreferrer"
                     className="link-draw text-ink hover:text-accent-text transition-colors duration-fast ease-out inline-flex items-center gap-1.5"
                   >
-                    <span>Full history on LinkedIn</span>
+                    <span>View LinkedIn profile</span>
                     {/* UP-11: the ↗ takes its label's colour (C-78). This is the
                         same link as Footer.tsx's About-column pointer, so it moves
                         with it — leaving it muted here would have made one link
