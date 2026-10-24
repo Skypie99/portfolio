@@ -7,7 +7,9 @@
  * and turns itself off the moment the hero stops being that file; the crop
  * holds its whole subject; and the subject is really there, read back from
  * the file's own pixels (so a re-capture saved under the same name and size
- * fails here instead of shipping a crop of the wrong region).
+ * fails here instead of shipping a crop of the wrong region). Flagstone's
+ * crop also ends on blank card face above the report's free-text
+ * description, read back the same way (owner decision, 2026-10-24).
  */
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -31,6 +33,18 @@ const webpSize = (buf: Buffer): [number, number] => {
   }
   if (chunk === 'VP8X') return [buf.readUIntLE(24, 3) + 1, buf.readUIntLE(27, 3) + 1];
   throw new Error(`unsupported WebP chunk ${chunk}`);
+};
+
+/** The shipped capture's own decoded pixels, as an RGB reader. */
+const pixels = async (src: string) => {
+  const { data, info } = await sharp(join(ROOT, 'public', src))
+    .removeAlpha()
+    .raw()
+    .toBuffer({ resolveWithObject: true });
+  return (x: number, y: number) => {
+    const i = (y * info.width + x) * info.channels;
+    return [data[i], data[i + 1], data[i + 2]];
+  };
 };
 
 describe('CAPTURE_DETAILS — every spec is measured on a real, shipped file', () => {
@@ -61,16 +75,9 @@ describe('CAPTURE_DETAILS — every spec is measured on a real, shipped file', (
     });
   }
 
-  it('flagstone: the subject is the expanded report card, read from the file itself', async () => {
+  it("flagstone: the subject is the report card's heading and photograph, read from the file itself", async () => {
     const spec = CAPTURE_DETAILS.flagstone;
-    const { data, info } = await sharp(join(ROOT, 'public', spec.src))
-      .removeAlpha()
-      .raw()
-      .toBuffer({ resolveWithObject: true });
-    const px = (x: number, y: number) => {
-      const i = (y * info.width + x) * info.channels;
-      return [data[i], data[i + 1], data[i + 2]];
-    };
+    const px = await pixels(spec.src);
     const { x, y, w, h } = spec.subject;
     const midY = Math.round(y + h / 2);
     // The card's orange severity stripe runs down its left edge…
@@ -89,6 +96,32 @@ describe('CAPTURE_DETAILS — every spec is measured on a real, shipped file', (
     for (const xx of [x - 12, x + w + 12]) {
       expect(Math.min(...px(xx, midY)), `map outside the card at x ${xx}`).toBeLessThan(200);
     }
+  });
+
+  it("flagstone: the crop ends on blank card face, short of the report's own description", async () => {
+    // The reporter's free-text sentence sits under the photograph; the plate
+    // leaves it out rather than enlarging it (lib/captureDetail.ts). Every
+    // card-face pixel the box holds below the subject must be blank, so no
+    // part of a glyph is magnified…
+    const spec = CAPTURE_DETAILS.flagstone;
+    const px = await pixels(spec.src);
+    const { subject, box } = spec;
+    const faceX0 = subject.x + 18; // right of the stripe's anti-aliased edge
+    const faceX1 = subject.x + subject.w - 4;
+    const end = box.y + box.h;
+    const rowMin = (yy: number) => {
+      let m = 255;
+      for (let xx = faceX0; xx < faceX1; xx++) m = Math.min(m, ...px(xx, yy));
+      return m;
+    };
+    for (let yy = subject.y + subject.h; yy < end; yy++) {
+      expect(rowMin(yy), `blank card face at y ${yy}`).toBeGreaterThanOrEqual(250);
+    }
+    // …and the description really starts just below the box, so the margin
+    // was measured on this file, not guessed: a re-capture with the text
+    // elsewhere fails here.
+    const firstInk = Array.from({ length: 16 }, (_, i) => end + i).find((yy) => rowMin(yy) < 128);
+    expect(firstInk, 'description ink within 16 rows below the crop').toBeDefined();
   });
 });
 

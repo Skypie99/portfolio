@@ -41,17 +41,23 @@ export type CaptureDetail = {
 
 /**
  * Keyed by deliverable id. Flagstone's box was measured on the 1290×2803
- * Explore capture: the expanded report card (orange severity stripe from
- * x 266, white card face to x 979, y 445 to 1295) plus a 30px margin of the
- * map around it.
+ * Explore capture. The expanded report card runs from its orange severity
+ * stripe at x 266 to the white face's edge at x 979, y 445 to 1295. The
+ * subject is the card's upper part: its title, severity line, report age
+ * and photograph, which ends at y 998. The box keeps a 30px margin of the map
+ * above and beside it and ends at y 1013, on blank card face, 10px above the
+ * report's free-text description (first ink at y 1024). That sentence is
+ * the reporter's own words: the crop leaves it out rather than enlarging it,
+ * and it stays untouched in the whole screen beside the plate (owner
+ * decision, 2026-10-24).
  */
 export const CAPTURE_DETAILS: Readonly<Record<string, CaptureDetail>> = {
   flagstone: {
     src: '/showcase/flagstone/explore-current.phone.webp',
     width: 1290,
     height: 2803,
-    box: { x: 236, y: 414, w: 774, h: 910 },
-    subject: { x: 266, y: 444, w: 714, h: 852 },
+    box: { x: 236, y: 414, w: 774, h: 600 },
+    subject: { x: 266, y: 444, w: 714, h: 555 },
   },
 };
 
