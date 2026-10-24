@@ -23,8 +23,8 @@
 /* ── The stage: plate beside screen, or plate above screen ─────────────── */
 /* Two compositions, chosen by the stage's OWN width in em, not by viewport
    alone. Stacked (the plate above the screen) is the default; side by side
-   (plate 50 : screen 44, a 6% gap the leader spans; those proportions put
-   the plate's mid-height on the card's mid-height on the screen) applies
+   (plate 50 : screen 44, a 6% gap the leader spans; at those proportions
+   the plate's mid-height meets the card's heading lines on the screen) applies
    only in the desktop composition, from `lg` (the room's own two-column
    breakpoint), AND while the stage is at least 20em wide. Phones and tablets
    stack (owner decision, 2026-10-23: side by side at 768 shrank the screen
@@ -153,8 +153,9 @@
 /* ── The leader: plate to screen ─────────────────────────────────────── */
 /* A 1px terracotta hairline from the plate's right edge to the device frame
    beside it, at the plate's mid-height (which the stage proportions put on
-   the card's own mid-height on the screen). It grows out of the pin on the
-   frame toward the plate: the detail is drawn out of the screen. */
+   the card's own heading lines on the screen, inside the region the plate
+   enlarges). It grows out of the pin on the frame toward the plate: the
+   detail is drawn out of the screen. */
 .leader {
   width: var(--leader-span, 12%);
   transform-origin: 100% 50%;
