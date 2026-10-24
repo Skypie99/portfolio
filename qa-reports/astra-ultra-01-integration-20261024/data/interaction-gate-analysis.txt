@@ -1,0 +1,98 @@
+case-pill-flagstone: interaction-property diffs=0
+     geometry/text (expected for label change): rest.text: 'Live demo↗' -> 'Open web app↗'; rest.width: '169.046875' -> '195.140625'
+case-pill-claude-corp-1024: interaction-property diffs=0
+     geometry/text (expected for label change): rest.text: 'Live demo↗' -> 'Read system overview↗'; rest.width: '169.046875' -> '240'
+case-pill-ghost-code-390: interaction-property diffs=0
+     geometry/text (expected for label change): rest.text: 'Live demo↗' -> 'Play Ghost Code↗'
+case-pill-prompt-library-1024: interaction-property diffs=0
+     geometry/text (expected for label change): rest.text: 'Live demo↗' -> 'Open Prompt Library↗'; rest.width: '169.046875' -> '240'
+case-pill-prompt-library-320: interaction-property diffs=0
+     geometry/text (expected for label change): rest.text: 'Live demo↗' -> 'Open Prompt Library↗'
+case-pill-claude-corp-320: interaction-property diffs=0
+     geometry/text (expected for label change): rest.text: 'Live demo↗' -> 'Read system overview↗'
+case-pill-dashboard-1024: interaction-property diffs=0
+     geometry/text (expected for label change): rest.text: 'Live demo↗' -> 'Try synthetic demo↗'; rest.width: '169.046875' -> '247.34375'
+appstore-pill-flagstone-1024: interaction-property diffs=0
+appstore-pill-flagstone: interaction-property diffs=0
+card-demo-ghost-code: interaction-property diffs=0
+     geometry/text (expected for label change): rest.text: 'Live ↗' -> 'Play Ghost Code ↗'; rest.width: '53.90625' -> '141.625'
+card-demo-prompt-library-768: interaction-property diffs=0
+     geometry/text (expected for label change): rest.text: 'Live ↗' -> 'Open Prompt Library ↗'; rest.width: '53.90625' -> '173.53125'
+card-github-ghost-code: interaction-property diffs=0
+card-view-project-ghost-code: interaction-property diffs=0
+home-row1-title-flagstone: interaction-property diffs=12
+     [light] hover.row.borderBottomColor: rgba(32, 48, 44, 0.5) -> rgb(204, 207, 190)
+     [light] press.row.borderBottomColor: rgba(32, 48, 44, 0.5) -> rgb(204, 207, 190)
+     [light] focus.row.borderBottomColor: rgba(32, 48, 44, 0.5) -> rgb(204, 207, 190)
+     [dark] hover.row.borderBottomColor: rgba(207, 122, 79, 0.6) -> rgb(44, 52, 54)
+     [dark] press.row.borderBottomColor: rgba(207, 122, 79, 0.6) -> rgb(44, 52, 54)
+     [dark] focus.row.borderBottomColor: rgba(207, 122, 79, 0.6) -> rgb(44, 52, 54)
+     [reduced-light] hover.row.borderBottomColor: rgba(32, 48, 44, 0.5) -> rgb(204, 207, 190)
+     [reduced-light] press.row.borderBottomColor: rgba(32, 48, 44, 0.5) -> rgb(204, 207, 190)
+     [reduced-light] focus.row.borderBottomColor: rgba(32, 48, 44, 0.5) -> rgb(204, 207, 190)
+     [reduced-dark] hover.row.borderBottomColor: rgba(207, 122, 79, 0.6) -> rgb(44, 52, 54)
+     [reduced-dark] press.row.borderBottomColor: rgba(207, 122, 79, 0.6) -> rgb(44, 52, 54)
+     [reduced-dark] focus.row.borderBottomColor: rgba(207, 122, 79, 0.6) -> rgb(44, 52, 54)
+home-row5-title-ghost-code: interaction-property diffs=12
+     [light] hover.row.borderBottomColor: rgba(32, 48, 44, 0.5) -> rgb(204, 207, 190)
+     [light] press.row.borderBottomColor: rgba(32, 48, 44, 0.5) -> rgb(204, 207, 190)
+     [light] focus.row.borderBottomColor: rgba(32, 48, 44, 0.5) -> rgb(204, 207, 190)
+     [dark] hover.row.borderBottomColor: rgba(207, 122, 79, 0.6) -> rgb(44, 52, 54)
+     [dark] press.row.borderBottomColor: rgba(207, 122, 79, 0.6) -> rgb(44, 52, 54)
+     [dark] focus.row.borderBottomColor: rgba(207, 122, 79, 0.6) -> rgb(44, 52, 54)
+     [reduced-light] hover.row.borderBottomColor: rgba(32, 48, 44, 0.5) -> rgb(204, 207, 190)
+     [reduced-light] press.row.borderBottomColor: rgba(32, 48, 44, 0.5) -> rgb(204, 207, 190)
+     [reduced-light] focus.row.borderBottomColor: rgba(32, 48, 44, 0.5) -> rgb(204, 207, 190)
+     [reduced-dark] hover.row.borderBottomColor: rgba(207, 122, 79, 0.6) -> rgb(44, 52, 54)
+     [reduced-dark] press.row.borderBottomColor: rgba(207, 122, 79, 0.6) -> rgb(44, 52, 54)
+     [reduced-dark] focus.row.borderBottomColor: rgba(207, 122, 79, 0.6) -> rgb(44, 52, 54)
+     geometry/text (expected for label change): rest.width: '142.93563842773438' -> '142.9364013671875'
+home-row5-doorway-ghost-code: interaction-property diffs=12
+     [light] hover.row.borderBottomColor: rgba(32, 48, 44, 0.5) -> rgb(204, 207, 190)
+     [light] press.row.borderBottomColor: rgba(32, 48, 44, 0.5) -> rgb(204, 207, 190)
+     [light] focus.row.borderBottomColor: rgba(32, 48, 44, 0.5) -> rgb(204, 207, 190)
+     [dark] hover.row.borderBottomColor: rgba(207, 122, 79, 0.6) -> rgb(44, 52, 54)
+     [dark] press.row.borderBottomColor: rgba(207, 122, 79, 0.6) -> rgb(44, 52, 54)
+     [dark] focus.row.borderBottomColor: rgba(207, 122, 79, 0.6) -> rgb(44, 52, 54)
+     [reduced-light] hover.row.borderBottomColor: rgba(32, 48, 44, 0.5) -> rgb(204, 207, 190)
+     [reduced-light] press.row.borderBottomColor: rgba(32, 48, 44, 0.5) -> rgb(204, 207, 190)
+     [reduced-light] focus.row.borderBottomColor: rgba(32, 48, 44, 0.5) -> rgb(204, 207, 190)
+     [reduced-dark] hover.row.borderBottomColor: rgba(207, 122, 79, 0.6) -> rgb(44, 52, 54)
+     [reduced-dark] press.row.borderBottomColor: rgba(207, 122, 79, 0.6) -> rgb(44, 52, 54)
+     [reduced-dark] focus.row.borderBottomColor: rgba(207, 122, 79, 0.6) -> rgb(44, 52, 54)
+     geometry/text (expected for label change): rest.width: '178.06015014648438' -> '178.06109619140625'
+home-row5-title-ghost-code-390: interaction-property diffs=12
+     [light] hover.row.borderBottomColor: rgba(32, 48, 44, 0.5) -> rgb(204, 207, 190)
+     [light] press.row.borderBottomColor: rgba(32, 48, 44, 0.5) -> rgb(204, 207, 190)
+     [light] focus.row.borderBottomColor: rgba(32, 48, 44, 0.5) -> rgb(204, 207, 190)
+     [dark] hover.row.borderBottomColor: rgba(207, 122, 79, 0.6) -> rgb(44, 52, 54)
+     [dark] press.row.borderBottomColor: rgba(207, 122, 79, 0.6) -> rgb(44, 52, 54)
+     [dark] focus.row.borderBottomColor: rgba(207, 122, 79, 0.6) -> rgb(44, 52, 54)
+     [reduced-light] hover.row.borderBottomColor: rgba(32, 48, 44, 0.5) -> rgb(204, 207, 190)
+     [reduced-light] press.row.borderBottomColor: rgba(32, 48, 44, 0.5) -> rgb(204, 207, 190)
+     [reduced-light] focus.row.borderBottomColor: rgba(32, 48, 44, 0.5) -> rgb(204, 207, 190)
+     [reduced-dark] hover.row.borderBottomColor: rgba(207, 122, 79, 0.6) -> rgb(44, 52, 54)
+     [reduced-dark] press.row.borderBottomColor: rgba(207, 122, 79, 0.6) -> rgb(44, 52, 54)
+     [reduced-dark] focus.row.borderBottomColor: rgba(207, 122, 79, 0.6) -> rgb(44, 52, 54)
+     geometry/text (expected for label change): rest.width: '112.20294189453125' -> '112.20266723632812'
+back-home-work: interaction-property diffs=16
+     [light] focus.self.color: rgb(32, 48, 44) -> rgb(135, 71, 45)
+     [light] focus.self.textDecorationColor: rgb(32, 48, 44) -> rgb(135, 71, 45)
+     [light] focus.arrow.transform: none -> matrix(1, 0, 0, 1, -4, 0)
+     [light] focus.arrow.color: rgb(32, 48, 44) -> rgb(135, 71, 45)
+     [dark] focus.self.color: rgb(236, 234, 224) -> rgb(231, 181, 147)
+     [dark] focus.self.textDecorationColor: rgb(236, 234, 224) -> rgb(231, 181, 147)
+     [dark] focus.arrow.transform: none -> matrix(1, 0, 0, 1, -4, 0)
+     [dark] focus.arrow.color: rgb(236, 234, 224) -> rgb(231, 181, 147)
+     [reduced-light] focus.self.color: rgb(32, 48, 44) -> rgb(135, 71, 45)
+     [reduced-light] focus.self.textDecorationColor: rgb(32, 48, 44) -> rgb(135, 71, 45)
+     [reduced-light] focus.arrow.transform: none -> matrix(1, 0, 0, 1, -4, 0)
+     [reduced-light] focus.arrow.color: rgb(32, 48, 44) -> rgb(135, 71, 45)
+     [reduced-dark] focus.self.color: rgb(236, 234, 224) -> rgb(231, 181, 147)
+     [reduced-dark] focus.self.textDecorationColor: rgb(236, 234, 224) -> rgb(231, 181, 147)
+     [reduced-dark] focus.arrow.transform: none -> matrix(1, 0, 0, 1, -4, 0)
+     [reduced-dark] focus.arrow.color: rgb(236, 234, 224) -> rgb(231, 181, 147)
+back-home-contact-control: interaction-property diffs=0
+contact-linkedin: interaction-property diffs=0
+     geometry/text (expected for label change): rest.text: 'Full history on LinkedIn↗(op' -> 'View LinkedIn profile↗(opens'; rest.width: '205.40625' -> '181.484375'
+state-reach problems: [('case-pill-dashboard-1024', 'reduced-light', 'baseline', 'POINTER BLOCKED by overlay (pre-existing); hover/press not probed'), ('case-pill-dashboard-1024', 'reduced-light', 'candidate', 'POINTER BLOCKED by overlay (pre-existing); hover/press not probed'), ('case-pill-dashboard-1024', 'reduced-dark', 'baseline', 'POINTER BLOCKED by overlay (pre-existing); hover/press not probed'), ('case-pill-dashboard-1024', 'reduced-dark', 'candidate', 'POINTER BLOCKED by overlay (pre-existing); hover/press not probed')]

@@ -1,0 +1,7 @@
+prefix-candidate-fbd9139: elements checked 552, issues 6
+320 @125% / "I set the direction, make the decisions, and guide" clipped/overflow 46px
+320 @150% / "I set the direction, make the decisions, and guide" clipped/overflow 118px
+360 @125% / "I set the direction, make the decisions, and guide" clipped/overflow 6px
+360 @150% / "I set the direction, make the decisions, and guide" clipped/overflow 78px
+390 @150% / "I set the direction, make the decisions, and guide" clipped/overflow 48px
+414 @150% / "I set the direction, make the decisions, and guide" clipped/overflow 24px

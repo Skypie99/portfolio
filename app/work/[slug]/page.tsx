@@ -973,6 +973,15 @@ export default async function WorkDetailPage({
                         rel="noopener noreferrer"
                         variant="primary"
                         aria-label={`${demoLink.label} for ${d.title} (opens in new tab)`}
+                        /* Astra Ultra 01: the destination labels ("Read system
+                           overview") are longer than "Live demo", and where the
+                           details column is narrow (1024, phones) the label
+                           wraps to two lines. Flex then squeezed the signature
+                           dot (8px rest measured 6.98px). Holding the dot at
+                           its own size keeps rest 8 / hover 10 / press 6
+                           exactly as Button defines them. Layout only; Button
+                           itself is untouched. */
+                        className="[&>.rounded-full]:shrink-0"
                       >
                         {demoLink.label}
                         <span aria-hidden="true" className="ml-1">{'↗'}</span>
