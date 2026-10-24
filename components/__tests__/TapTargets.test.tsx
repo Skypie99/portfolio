@@ -42,7 +42,7 @@ const DOWN = ['relative', "after:content-['']", 'after:absolute', 'after:inset-x
 const PITCH = ['py-1', '-my-1'];
 
 const links: Deliverable['links'] = [
-  { label: 'Live demo', href: 'https://accessmap.skypistudio.com', type: 'demo' as const },
+  { label: 'Open web app', href: 'https://accessmap.skypistudio.com', type: 'demo' as const },
   { label: 'GitHub', href: 'https://github.com/Skypie99/AccessMap', type: 'github' as const },
 ];
 
@@ -83,7 +83,7 @@ describe('card action rows carry the one-sided 44px tap extension (UP-02 / F7-2)
 
   it('ProjectCard: the trailing external links grow DOWN', () => {
     render(<ProjectCard deliverable={deliverable} />);
-    expectExtended(screen.getByRole('link', { name: /open live demo for flagstone/i }), 'down');
+    expectExtended(screen.getByRole('link', { name: /open web app for flagstone/i }), 'down');
     expectExtended(screen.getByRole('link', { name: /view flagstone source on github/i }), 'down');
   });
 
@@ -98,7 +98,7 @@ describe('card action rows carry the one-sided 44px tap extension (UP-02 / F7-2)
     render(
       <CaseStudyCard title="Flagstone" category="flagstone" description="A map-first mobile app." href="/work/flagstone/" links={links} />,
     );
-    expectExtended(screen.getByRole('link', { name: /open live demo for flagstone/i }), 'down');
+    expectExtended(screen.getByRole('link', { name: /open web app for flagstone/i }), 'down');
     expectExtended(screen.getByRole('link', { name: /view flagstone source on github/i }), 'down');
   });
 });

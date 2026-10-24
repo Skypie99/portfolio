@@ -69,7 +69,17 @@ export function CountUpStat({ value, emberClass, label }: CountUpStatProps) {
   const counting = parsed !== null && display < parsed.target;
 
   useEffect(() => {
-    if (!parsed || reduced || started.current || !inView) return;
+    if (!parsed) return;
+    // Reduced motion switched on mid-count: this effect's cleanup has just
+    // cancelled the frame loop, so land on the final value now instead of
+    // freezing on whatever frame it reached. `started` stays set, so turning
+    // the preference back off never replays the count.
+    if (reduced) {
+      started.current = true;
+      setDisplay(parsed.target);
+      return;
+    }
+    if (started.current || !inView) return;
     started.current = true;
     const target = parsed.target;
     const duration = 900;

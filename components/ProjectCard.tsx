@@ -185,19 +185,36 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
                    cards — previously GitHub orphaned alone onto a second
                    line at 390px. Desktop is pixel-identical: the group is
                    right-aligned via ml-auto and the internal gap-x-6 matches
-                   the parent gap that used to separate Live/GitHub. */
-                <span className="ml-auto flex items-center gap-x-6">
+                   the parent gap that used to separate Live/GitHub.
+
+                   Astra Ultra 01: the demo link now carries its full
+                   destination ("Play Ghost Code"), so where the card is too
+                   narrow for both, the group wraps and the two links stack
+                   whole instead of breaking a label mid-phrase, still
+                   right-aligned (justify-end) as the single line is. gap-y-8 is
+                   the stacked pitch the one-sided ::after needs: each box
+                   reaches 4px into the gap (-my-1) and the upper link's
+                   overlay reaches 21px down, so 32 - 8 = 24px >= 21px keeps
+                   the two touch targets apart. Under large text a single
+                   word ("SYNTHETIC") can outgrow a phone card, so the group
+                   may shrink to the row (min-w-0, max-w-full) and its
+                   inherited overflow-wrap breaks that word rather than
+                   pushing it past the card edge; at normal text sizes it
+                   never acts. Classes on the links themselves are
+                   untouched. */
+                <span className="ml-auto min-w-0 max-w-full flex flex-wrap items-center justify-end gap-x-6 gap-y-8 [overflow-wrap:anywhere]">
                   {demoLink && (
                     <a
                       href={demoLink.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`Open ${demoLink.label.toLowerCase()} for ${d.title} (opens in new tab)`}
+                      aria-label={`${demoLink.label} for ${d.title} (opens in new tab)`}
                       className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
                     >
-                      {/* label-derived: "Live" for live products, "Demo" for
-                          not-yet-live ones (e.g. Mutual Mesh) */}
-                      {demoLink.label.split(' ')[0]} <span aria-hidden="true">↗</span>
+                      {/* The full destination label from content ("Open web app",
+                          "Play Ghost Code"), which already begins with its verb, so
+                          the accessible name leads with the same words (SC 2.5.3). */}
+                      {demoLink.label} <span aria-hidden="true">↗</span>
                     </a>
                   )}
                   {githubLink && (

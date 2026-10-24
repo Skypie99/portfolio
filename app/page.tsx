@@ -311,7 +311,7 @@ export default function HomePage() {
       : []),
     {
       key: 'defect',
-      figure: 'Last defect',
+      figure: 'A documented defect',
       /* The board's own wording for this row (board 01, pane A), and every
          clause of it is checkable against the case study's `What went wrong`
          — which is where the link goes. The subject is set in the house
@@ -1175,7 +1175,7 @@ export default function HomePage() {
               How the work gets made
             </p>
             <h2 className="font-serif font-light text-step-4 ember max-w-measure-heading leading-heading text-balance">
-              I direct AI agents, and I built the system that keeps them honest.
+              I set the direction, make the decisions, and guide AI-assisted implementation.
             </h2>
           </Reveal>
 

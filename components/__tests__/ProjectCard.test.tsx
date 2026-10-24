@@ -3,7 +3,7 @@
  *
  * ProjectCard now renders:
  *  - An AppMockup (pure CSS/SVG, no img) in the top mockup area
- *  - Multiple CTA links: "View case study", "Live demo", "GitHub"
+ *  - Multiple CTA links: "View project", the demo's destination label, "GitHub"
  *  - A heading (h3) whose accessible name is "<title> — <role>, <year>"
  *    because the link inside carries aria-label with that full string
  *  - A featured badge pill when `featured: true`
@@ -88,13 +88,13 @@ describe('ProjectCard', () => {
     const withDemo = {
       ...baseDeliverable,
       links: [
-        { label: 'Live demo', href: 'https://access-map-tau.vercel.app', type: 'demo' as const },
+        { label: 'Open web app', href: 'https://access-map-tau.vercel.app', type: 'demo' as const },
       ],
     };
     render(<ProjectCard deliverable={withDemo} />);
 
     const demoLink = screen.getByRole('link', {
-      name: /open live demo for flagstone/i,
+      name: /open web app for flagstone/i,
     });
     expect(demoLink).toHaveAttribute('href', 'https://access-map-tau.vercel.app');
     expect(demoLink).toHaveAttribute('target', '_blank');
@@ -120,7 +120,7 @@ describe('ProjectCard', () => {
     const withLinks = {
       ...baseDeliverable,
       links: [
-        { label: 'Live demo', href: 'https://access-map-tau.vercel.app', type: 'demo' as const },
+        { label: 'Open web app', href: 'https://access-map-tau.vercel.app', type: 'demo' as const },
         { label: 'GitHub', href: 'https://github.com/Skypie99/AccessMap', type: 'github' as const },
       ],
     };
@@ -134,7 +134,7 @@ describe('ProjectCard', () => {
     const viewProject = screen.getByRole('link', { name: /view project.*flagstone.*case study/i });
     expect(viewProject).toHaveAttribute('tabindex', '-1');
     // Demo and GitHub each stay their own, separately actionable stop.
-    expect(screen.getByRole('link', { name: /open live demo for flagstone/i })).not.toHaveAttribute('tabindex');
+    expect(screen.getByRole('link', { name: /open web app for flagstone/i })).not.toHaveAttribute('tabindex');
     expect(screen.getByRole('link', { name: /view flagstone source on github/i })).not.toHaveAttribute('tabindex');
   });
 

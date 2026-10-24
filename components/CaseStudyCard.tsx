@@ -202,18 +202,24 @@ export function CaseStudyCard({ title, category, description, href, status, veri
               View project <span aria-hidden="true">→</span>
             </Link>
             {(demoLink || githubLink) && (
-              <span className="ml-auto flex items-center gap-x-6">
+              /* Astra Ultra 01: full destination labels can be wider than a
+                 narrow card's copy column, so the group wraps and the links
+                 stack whole rather than breaking a label. gap-y-8 keeps the
+                 stacked one-sided touch targets apart; ProjectCard's action
+                 row carries the arithmetic. */
+              <span className="ml-auto min-w-0 max-w-full flex flex-wrap items-center justify-end gap-x-6 gap-y-8 [overflow-wrap:anywhere]">
                 {demoLink && (
                   <a
                     href={demoLink.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`Open ${demoLink.label.toLowerCase()} for ${title} (opens in new tab)`}
+                    aria-label={`${demoLink.label} for ${title} (opens in new tab)`}
                     className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
                   >
-                    {/* label-derived: "Live" for live products, "Demo" for
-                        not-yet-live ones (e.g. Mutual Mesh) */}
-                    {demoLink.label.split(' ')[0]} <span aria-hidden="true">↗</span>
+                    {/* The full destination label from content ("Open web app",
+                        "Play Ghost Code"), which already begins with its verb, so
+                        the accessible name leads with the same words (SC 2.5.3). */}
+                    {demoLink.label} <span aria-hidden="true">↗</span>
                   </a>
                 )}
                 {githubLink && (
