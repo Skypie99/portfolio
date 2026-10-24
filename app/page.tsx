@@ -619,7 +619,7 @@ export default function HomePage() {
                   index={2}
                   className="order-4 flex flex-col items-start gap-5 pl-[18px]"
                 >
-                  <p className="font-mono text-meta tracking-label uppercase text-text-meta">
+                  <p className="font-mono text-meta tracking-label uppercase text-text-meta text-pretty">
                     Status{' '}
                     <span aria-hidden="true">: </span>{' '}
                     <span className="text-cool-deep normal-case tracking-normal">{flagship.status}</span>

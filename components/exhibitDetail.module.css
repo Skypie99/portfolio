@@ -59,6 +59,11 @@
 .caption {
   text-align: center;
 }
+/* The detail tag follows the caption: centred under the stacked plate, back
+   to the plate's own edge when side by side (below). */
+.tag {
+  text-align: center;
+}
 .leader,
 .pin {
   display: none;
@@ -85,6 +90,9 @@
     .caption {
       grid-column: 1 / -1;
       text-align: right;
+    }
+    .tag {
+      text-align: start;
     }
     .leader,
     .pin {

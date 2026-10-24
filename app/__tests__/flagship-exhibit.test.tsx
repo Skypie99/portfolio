@@ -141,6 +141,12 @@ describe('Flagship room — owner refinements (2026-10-23)', () => {
       expect(el.className).not.toMatch(/text-text-meta/);
     }
   });
+
+  it('gives the status line the pretty-wrap utility, so 1280 never strands "2026" (R7-VIS-01)', () => {
+    const { container } = render(<HomePage />);
+    const status = Array.from(room(container).querySelectorAll('p')).find((p) => p.textContent?.startsWith('Status'))!;
+    expect(status.className).toMatch(/\btext-pretty\b/);
+  });
 });
 
 describe('Flagship room — the open stage is scoped to this room', () => {
@@ -162,6 +168,9 @@ describe('exhibitDetail.module.css — the stage composition releases by width i
     expect(css).toMatch(/\.stage\s*\{[^}]*container-type: inline-size;/);
     expect(css).toMatch(/\.grid\s*\{[^}]*grid-template-columns: minmax\(0, 1fr\);/);
     expect(css).toMatch(/\.leader,\s*\.pin\s*\{\s*display: none;\s*\}/);
+    // R7-VIS-02: stacked, the detail tag is centred like the caption.
+    expect(css).toMatch(/\.caption\s*\{\s*text-align: center;\s*\}/);
+    expect(css).toMatch(/\.tag\s*\{\s*text-align: center;\s*\}/);
   });
 
   it('stacks on phones and tablets: side by side only in the desktop composition (lg) at 20em or wider', () => {
@@ -173,6 +182,8 @@ describe('exhibitDetail.module.css — the stage composition releases by width i
     expect(block).toContain('column-gap: 6%;');
     expect(block).toMatch(/\.leader,\s*\.pin\s*\{\s*display: block;/);
     expect(block).toMatch(/\.caption\s*\{[^}]*grid-column: 1 \/ -1;[^}]*text-align: right;/);
+    // R7-VIS-02: side by side, the tag returns to the plate's own edge.
+    expect(block).toMatch(/\.tag\s*\{\s*text-align: start;\s*\}/);
   });
 });
 
