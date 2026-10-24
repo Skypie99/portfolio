@@ -57,7 +57,15 @@ describe('Astra Ultra 01 integration (owner-approved scope)', () => {
 
   it('carries the owner-approved contribution heading verbatim', () => {
     const source = read('app/page.tsx');
-    expect(source).toContain('I set the direction, make the decisions, and guide AI-assisted implementation.');
+    // The only addition is an invisible soft hyphen, a break point used
+    // when "implementation." cannot fit a 320px column. Remove it and the
+    // words are the owner's, exactly.
+    expect(source).toContain('I set the direction, make the decisions, and guide AI-assisted imple&shy;mentation.');
+    expect(source.replace('imple&shy;mentation', 'implementation')).toContain(
+      'I set the direction, make the decisions, and guide AI-assisted implementation.',
+    );
+    const heading = source.slice(source.indexOf('<h2', source.indexOf('How the work gets made')));
+    expect(heading.slice(0, heading.indexOf('>'))).toContain('break-words');
     expect(source).not.toContain('I direct AI agents, and I built the system that keeps them honest.');
     expect(source).not.toContain('I set the direction. AI agents do the implementation.');
   });
