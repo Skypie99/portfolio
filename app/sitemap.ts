@@ -14,17 +14,19 @@ const BASE = 'https://skypistudio.com';
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+  // No lastModified: a build timestamp is not a content date, and stamping
+  // every URL with it told crawlers every page changed on every rebuild.
+  // Add per-route dates only when they are maintained from real edits.
 
   const staticRoutes: MetadataRoute.Sitemap = [
-    { url: `${BASE}/`, lastModified: now, changeFrequency: 'monthly', priority: 1 },
-    { url: `${BASE}/work/`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE}/about/`, lastModified: now, changeFrequency: 'yearly', priority: 0.7 },
-    { url: `${BASE}/certificates/`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE}/blog/`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
-    { url: `${BASE}/contact/`, lastModified: now, changeFrequency: 'yearly', priority: 0.5 },
-    { url: `${BASE}/accessibility/`, lastModified: now, changeFrequency: 'yearly', priority: 0.5 },
-    { url: `${BASE}/colophon/`, lastModified: now, changeFrequency: 'yearly', priority: 0.5 },
+    { url: `${BASE}/`, changeFrequency: 'monthly', priority: 1 },
+    { url: `${BASE}/work/`, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE}/about/`, changeFrequency: 'yearly', priority: 0.7 },
+    { url: `${BASE}/certificates/`, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE}/blog/`, changeFrequency: 'weekly', priority: 0.6 },
+    { url: `${BASE}/contact/`, changeFrequency: 'yearly', priority: 0.5 },
+    { url: `${BASE}/accessibility/`, changeFrequency: 'yearly', priority: 0.5 },
+    { url: `${BASE}/colophon/`, changeFrequency: 'yearly', priority: 0.5 },
   ];
 
   // Public Flagstone utility pages are copied from public/ into the export.
@@ -38,14 +40,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const work: MetadataRoute.Sitemap = getDeliverables().map((d) => ({
     url: `${BASE}/work/${d.id}/`,
-    lastModified: now,
     changeFrequency: 'monthly',
     priority: 0.8,
   }));
 
   const posts: MetadataRoute.Sitemap = getBlogPosts().map((p) => ({
     url: `${BASE}/blog/${p.id}/`,
-    lastModified: now,
     changeFrequency: 'monthly',
     priority: 0.6,
   }));

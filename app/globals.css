@@ -4182,13 +4182,16 @@ html.dark .runway-identity--page .runway-identity-chip {
   }
 }
 
-/* Three credential columns fit at normal text size. The root font size grows
-   at text zoom; require a readable minimum card width, then let the grid
-   fall to two columns before its Verify pills run past the viewport. The
-   calc term caps auto-fit at three columns on wide screens (two 4rem gaps). */
+/* Three credential columns where they have room. The 16rem floor is a
+   comfortable card width, so a cramped desktop row settles into two columns
+   rather than three narrow ones, and because it is rem-based, text zoom
+   moves the grid to two (then one) before its Verify pills run past the
+   viewport. min(100%, …) keeps a single column from overflowing a track
+   narrower than the floor. The calc term caps auto-fit at three columns on
+   wide screens (two 4rem gaps). */
 @media (min-width: 1024px) {
   .cert-grid {
-    grid-template-columns: repeat(auto-fit, minmax(max(11.5rem, calc((100% - 8rem) / 3)), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, max(16rem, calc((100% - 8rem) / 3))), 1fr));
   }
 }
 
@@ -4544,14 +4547,19 @@ html.dark #flagship {
   transition: border-color var(--dur-fast) ease-out;
 }
 
+/* The active-row rule is the row's TOP border only. The last row also
+   carries a closing divider (`last:border-b`); colouring the whole
+   border-color lit that one too, so Ghost Code showed two bright rules
+   where every other row shows one. The closing divider stays neutral. */
+
 #work ol > li:has(a:focus-visible),
 #work ol > li:has(a:active) {
-  border-color: rgb(var(--rgb-ink) / 0.5);
+  border-top-color: rgb(var(--rgb-ink) / 0.5);
 }
 
 html.dark #work ol > li:has(a:focus-visible),
 html.dark #work ol > li:has(a:active) {
-  border-color: rgb(var(--rgb-accent) / 0.6);
+  border-top-color: rgb(var(--rgb-accent) / 0.6);
 }
 
 /* M2 — the existing doorway dot as local cue: it already answers its own
@@ -4571,11 +4579,11 @@ html.dark #work ol > li:has(a:active) {
    wins the cascade on fine pointers. */
 @media (hover: hover) {
   #work ol > li:has(a:hover) {
-    border-color: rgb(var(--rgb-ink) / 0.5);
+    border-top-color: rgb(var(--rgb-ink) / 0.5);
   }
 
   html.dark #work ol > li:has(a:hover) {
-    border-color: rgb(var(--rgb-accent) / 0.6);
+    border-top-color: rgb(var(--rgb-accent) / 0.6);
   }
 
   #work ol > li:has(a:hover) a.group > span[aria-hidden='true'].rounded-full {
