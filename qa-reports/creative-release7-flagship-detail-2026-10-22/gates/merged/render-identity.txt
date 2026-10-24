@@ -1,0 +1,3 @@
+Homepage render identity, evidence build (candidate on 0933245) vs merged build (candidate + main 2fb857b): True 178339 178339
+CSS identical: True
+/motion/ present in merged build: True

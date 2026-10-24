@@ -1,0 +1,221 @@
+{
+ "engine": "Playwright WebKit (playwright-core 1.62.1)",
+ "rows": [
+  {
+   "tag": "after-webkit-light-1440x900@1",
+   "errors": [],
+   "plate": [
+    779,
+    129,
+    314,
+    370
+   ],
+   "screen": [
+    1140,
+    138,
+    259,
+    562
+   ],
+   "frame": [
+    1131,
+    129,
+    277,
+    580
+   ],
+   "leader": [
+    1094,
+    314,
+    38,
+    1
+   ],
+   "leaderTransform": "matrix(1, 0, 0, 1, 0, 0)",
+   "plateImg": [
+    true,
+    1290,
+    "explore-current.phone.avif"
+   ],
+   "slab": false,
+   "overflowX": 0
+  },
+  {
+   "tag": "after-webkit-light-768x1024@1",
+   "errors": [],
+   "plate": [
+    374,
+    344,
+    300,
+    353
+   ],
+   "screen": [
+    408,
+    765,
+    232,
+    504
+   ],
+   "frame": [
+    399,
+    756,
+    250,
+    522
+   ],
+   "leader": [
+    0,
+    -1,
+    0,
+    0
+   ],
+   "leaderTransform": "none",
+   "plateImg": [
+    true,
+    1290,
+    "explore-current.phone.avif"
+   ],
+   "slab": false,
+   "overflowX": 0
+  },
+  {
+   "tag": "after-webkit-light-393x852@2",
+   "errors": [],
+   "plate": [
+    71,
+    344,
+    250,
+    294
+   ],
+   "screen": [
+    108,
+    706,
+    176,
+    383
+   ],
+   "frame": [
+    99,
+    697,
+    194,
+    401
+   ],
+   "leader": [
+    0,
+    -1,
+    0,
+    0
+   ],
+   "leaderTransform": "none",
+   "plateImg": [
+    true,
+    1290,
+    "explore-current.phone.avif"
+   ],
+   "slab": false,
+   "overflowX": 0
+  },
+  {
+   "tag": "after-webkit-dark-1440x900@1",
+   "errors": [],
+   "plate": [
+    779,
+    129,
+    314,
+    370
+   ],
+   "screen": [
+    1140,
+    138,
+    259,
+    562
+   ],
+   "frame": [
+    1131,
+    129,
+    277,
+    580
+   ],
+   "leader": [
+    1094,
+    314,
+    38,
+    1
+   ],
+   "leaderTransform": "matrix(1, 0, 0, 1, 0, 0)",
+   "plateImg": [
+    true,
+    1290,
+    "explore-current.phone.avif"
+   ],
+   "slab": false,
+   "overflowX": 0
+  },
+  {
+   "tag": "after-webkit-dark-768x1024@1",
+   "errors": [],
+   "plate": [
+    374,
+    344,
+    300,
+    353
+   ],
+   "screen": [
+    408,
+    765,
+    232,
+    504
+   ],
+   "frame": [
+    399,
+    756,
+    250,
+    522
+   ],
+   "leader": [
+    0,
+    -1,
+    0,
+    0
+   ],
+   "leaderTransform": "none",
+   "plateImg": [
+    true,
+    1290,
+    "explore-current.phone.avif"
+   ],
+   "slab": false,
+   "overflowX": 0
+  },
+  {
+   "tag": "after-webkit-dark-393x852@2",
+   "errors": [],
+   "plate": [
+    71,
+    344,
+    250,
+    294
+   ],
+   "screen": [
+    108,
+    706,
+    176,
+    383
+   ],
+   "frame": [
+    99,
+    697,
+    194,
+    401
+   ],
+   "leader": [
+    0,
+    -1,
+    0,
+    0
+   ],
+   "leaderTransform": "none",
+   "plateImg": [
+    true,
+    1290,
+    "explore-current.phone.avif"
+   ],
+   "slab": false,
+   "overflowX": 0
+  }
+ ]
+}

@@ -1,0 +1,3 @@
+Render identity: the evidence build (out-cand, before a comment-only edit to app/page.tsx) vs the final-source build
+homepage HTML (build id masked) identical: True | bytes 178339 178339
+css files identical: True

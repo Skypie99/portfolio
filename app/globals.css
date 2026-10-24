@@ -4504,6 +4504,38 @@ html.dark .ts-float {
   height: 100%;
 }
 
+/* Creative Release 7 candidate — the open stage. The room's own brief
+   (app/page.tsx, C2) is "no bordered well and no earth gradient: the phone
+   standing in the room's own light, not a framed picture", but the bare hero
+   component still paints its golden-hour world (.pr-world, an opaque earth
+   gradient), that world's horizon hairline and, in dark, its lamp inside the
+   well: on the live site a hard-edged 465×581 slab behind the phone at 1440,
+   in both themes. In this room the stage light (components/
+   exhibitDetail.module.css) replaces all three; every case-study hero keeps
+   them, untouched. Static paint: reduced motion and no-JS are identical. */
+#flagship .pr-world,
+#flagship .pr-horizon,
+#flagship .pr-lamp {
+  display: none;
+}
+
+/* Creative Release 7 (owner decision 4, 2026-10-23) — the dark room's text
+   floor. The dark accent-ink and ink-meta tokens are tuned to clear 4.5:1 on a
+   plain world-surface-alt (ink-contrast.test.ts pins accent-ink at 4.64:1
+   there); this room adds a golden ParallaxWash and its exhibit light on top,
+   and its backdrop moves with scroll (the wash drifts, the world's day/night
+   tint follows). Measured at the worst pixel under each line across scroll
+   offsets, the eyebrow, the plate's claim and provenance and the status line
+   fell to 3.70 to 4.33:1 in dark. One panel step in this room only (the alpha
+   knob UI_SYSTEM.md names for exactly this: "set just above the alpha each
+   surface needs to keep all text at WCAG AA over every world state"), with the
+   room's wash at half strength in dark (app/page.tsx), holds every one of them
+   at 4.9:1 or better. No ink token changes; light mode untouched; a separate
+   selector, so the token blocks ink-contrast.test.ts reads stay single. */
+html.dark #flagship {
+  --surface-alpha-alt: 0.8;
+}
+
 /* M2 — the fine active-row rule (the row's existing divider). */
 #work ol > li {
   /* --dur-fast = 180ms — the ramp rung inside M2's 120–200ms band;

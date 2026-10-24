@@ -1,0 +1,187 @@
+[
+ {
+  "tag": "light-1440x900",
+  "changedPx": 0,
+  "bboxCss": null
+ },
+ {
+  "tag": "dark-1440x900",
+  "changedPx": 0,
+  "bboxCss": null
+ },
+ {
+  "tag": "light-1280x800",
+  "changedPx": 405,
+  "bboxCss": [
+   50,
+   463,
+   378,
+   490
+  ]
+ },
+ {
+  "tag": "dark-1280x800",
+  "changedPx": 398,
+  "bboxCss": [
+   50,
+   463,
+   378,
+   490
+  ]
+ },
+ {
+  "tag": "light-1180x820",
+  "changedPx": 0,
+  "bboxCss": null
+ },
+ {
+  "tag": "dark-1180x820",
+  "changedPx": 0,
+  "bboxCss": null
+ },
+ {
+  "tag": "light-1024x768",
+  "changedPx": 0,
+  "bboxCss": null
+ },
+ {
+  "tag": "dark-1024x768",
+  "changedPx": 0,
+  "bboxCss": null
+ },
+ {
+  "tag": "light-768x1024",
+  "changedPx": 1065,
+  "bboxCss": [
+   94,
+   712,
+   346,
+   721
+  ]
+ },
+ {
+  "tag": "dark-768x1024",
+  "changedPx": 284850,
+  "bboxCss": [
+   0,
+   2,
+   488,
+   1006
+  ]
+ },
+ {
+  "tag": "light-393x852@2",
+  "changedPx": 290329,
+  "bboxCss": [
+   0,
+   16,
+   393,
+   853
+  ]
+ },
+ {
+  "tag": "dark-393x852@2",
+  "changedPx": 413047,
+  "bboxCss": [
+   0,
+   1,
+   393,
+   1242
+  ]
+ },
+ {
+  "tag": "light-320x700@2",
+  "changedPx": 3645,
+  "bboxCss": [
+   63,
+   619,
+   230,
+   643
+  ]
+ },
+ {
+  "tag": "dark-320x700@2",
+  "changedPx": 3682,
+  "bboxCss": [
+   63,
+   619,
+   230,
+   643
+  ]
+ },
+ {
+  "tag": "light-1440x900-rm",
+  "changedPx": 0,
+  "bboxCss": null
+ },
+ {
+  "tag": "light-393x852@2-rm",
+  "changedPx": 3555,
+  "bboxCss": [
+   72,
+   654,
+   298,
+   663
+  ]
+ },
+ {
+  "tag": "dark-1280x800-rm",
+  "changedPx": 405,
+  "bboxCss": [
+   50,
+   463,
+   378,
+   490
+  ]
+ },
+ {
+  "tag": "light-1280x800-nojs",
+  "changedPx": 425,
+  "bboxCss": [
+   50,
+   138,
+   942,
+   541
+  ]
+ },
+ {
+  "tag": "light-393x852@2-nojs",
+  "changedPx": 4116,
+  "bboxCss": [
+   72,
+   654,
+   298,
+   1077
+  ]
+ },
+ {
+  "tag": "light-1440x900-focus",
+  "changedPx": 0,
+  "bboxCss": null
+ },
+ {
+  "tag": "dark-1440x900-focus",
+  "changedPx": 0,
+  "bboxCss": null
+ },
+ {
+  "tag": "webkit-light-1280x800",
+  "changedPx": 29702,
+  "bboxCss": [
+   50,
+   130,
+   959,
+   609
+  ]
+ },
+ {
+  "tag": "webkit-light-393x852@2",
+  "changedPx": 5699,
+  "bboxCss": [
+   50,
+   654,
+   344,
+   1200
+  ]
+ }
+]

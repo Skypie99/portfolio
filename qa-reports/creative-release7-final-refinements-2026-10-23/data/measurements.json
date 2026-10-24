@@ -1,0 +1,4898 @@
+[
+ {
+  "tag": "before/light-1440x900",
+  "side": "before",
+  "engine": "chromium",
+  "w": 1440,
+  "h": 900,
+  "theme": "light",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 868.5,
+  "docW": 1440,
+  "vw": 1440,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report expanded on",
+    "the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada · Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "wrap",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 513.9,
+    "w": 362.2,
+    "h": 15.4,
+    "cx": 511.1
+   },
+   "tag": {
+    "x": 779.2,
+    "y": 510.6,
+    "w": 314.4,
+    "h": 15.4,
+    "cx": 936.4
+   },
+   "capcap": {
+    "x": 779.2,
+    "y": 725.1,
+    "w": 628.8,
+    "h": 15.4,
+    "cx": 1093.6
+   },
+   "plate": {
+    "x": 779.2,
+    "y": 129,
+    "w": 314.4,
+    "h": 369.6,
+    "cx": 936.4
+   },
+   "frame": {
+    "x": 1131.3,
+    "y": 129,
+    "w": 276.7,
+    "h": 580.1,
+    "cx": 1269.7
+   },
+   "screen": {
+    "x": 1140.3,
+    "y": 138,
+    "w": 258.7,
+    "h": 562.1,
+    "cx": 1269.7
+   },
+   "h2": {
+    "x": 330,
+    "y": 309,
+    "w": 401.2,
+    "h": 53.7,
+    "cx": 530.6
+   },
+   "cta": {
+    "x": 330,
+    "y": 549.3,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": false,
+  "hasJsClass": true
+ },
+ {
+  "tag": "after/light-1440x900",
+  "side": "after",
+  "engine": "chromium",
+  "w": 1440,
+  "h": 900,
+  "theme": "light",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 868.5,
+  "docW": 1440,
+  "vw": 1440,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report expanded on",
+    "the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada · Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "pretty",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 513.9,
+    "w": 362.2,
+    "h": 15.4,
+    "cx": 511.1
+   },
+   "tag": {
+    "x": 779.2,
+    "y": 510.6,
+    "w": 314.4,
+    "h": 15.4,
+    "cx": 936.4
+   },
+   "capcap": {
+    "x": 779.2,
+    "y": 725.1,
+    "w": 628.8,
+    "h": 15.4,
+    "cx": 1093.6
+   },
+   "plate": {
+    "x": 779.2,
+    "y": 129,
+    "w": 314.4,
+    "h": 369.6,
+    "cx": 936.4
+   },
+   "frame": {
+    "x": 1131.3,
+    "y": 129,
+    "w": 276.7,
+    "h": 580.1,
+    "cx": 1269.7
+   },
+   "screen": {
+    "x": 1140.3,
+    "y": 138,
+    "w": 258.7,
+    "h": 562.1,
+    "cx": 1269.7
+   },
+   "h2": {
+    "x": 330,
+    "y": 309,
+    "w": 401.2,
+    "h": 53.7,
+    "cx": 530.6
+   },
+   "cta": {
+    "x": 330,
+    "y": 549.3,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": false,
+  "hasJsClass": true
+ },
+ {
+  "tag": "before/dark-1440x900",
+  "side": "before",
+  "engine": "chromium",
+  "w": 1440,
+  "h": 900,
+  "theme": "dark",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 868.5,
+  "docW": 1440,
+  "vw": 1440,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report expanded on",
+    "the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada · Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "wrap",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 513.9,
+    "w": 362.2,
+    "h": 15.4,
+    "cx": 511.1
+   },
+   "tag": {
+    "x": 779.2,
+    "y": 510.6,
+    "w": 314.4,
+    "h": 15.4,
+    "cx": 936.4
+   },
+   "capcap": {
+    "x": 779.2,
+    "y": 725.1,
+    "w": 628.8,
+    "h": 15.4,
+    "cx": 1093.6
+   },
+   "plate": {
+    "x": 779.2,
+    "y": 129,
+    "w": 314.4,
+    "h": 369.6,
+    "cx": 936.4
+   },
+   "frame": {
+    "x": 1131.3,
+    "y": 129,
+    "w": 276.7,
+    "h": 580.1,
+    "cx": 1269.7
+   },
+   "screen": {
+    "x": 1140.3,
+    "y": 138,
+    "w": 258.7,
+    "h": 562.1,
+    "cx": 1269.7
+   },
+   "h2": {
+    "x": 330,
+    "y": 309,
+    "w": 401.2,
+    "h": 53.7,
+    "cx": 530.6
+   },
+   "cta": {
+    "x": 330,
+    "y": 549.3,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": true,
+  "hasJsClass": true
+ },
+ {
+  "tag": "after/dark-1440x900",
+  "side": "after",
+  "engine": "chromium",
+  "w": 1440,
+  "h": 900,
+  "theme": "dark",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 868.5,
+  "docW": 1440,
+  "vw": 1440,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report expanded on",
+    "the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada · Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "pretty",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 513.9,
+    "w": 362.2,
+    "h": 15.4,
+    "cx": 511.1
+   },
+   "tag": {
+    "x": 779.2,
+    "y": 510.6,
+    "w": 314.4,
+    "h": 15.4,
+    "cx": 936.4
+   },
+   "capcap": {
+    "x": 779.2,
+    "y": 725.1,
+    "w": 628.8,
+    "h": 15.4,
+    "cx": 1093.6
+   },
+   "plate": {
+    "x": 779.2,
+    "y": 129,
+    "w": 314.4,
+    "h": 369.6,
+    "cx": 936.4
+   },
+   "frame": {
+    "x": 1131.3,
+    "y": 129,
+    "w": 276.7,
+    "h": 580.1,
+    "cx": 1269.7
+   },
+   "screen": {
+    "x": 1140.3,
+    "y": 138,
+    "w": 258.7,
+    "h": 562.1,
+    "cx": 1269.7
+   },
+   "h2": {
+    "x": 330,
+    "y": 309,
+    "w": 401.2,
+    "h": 53.7,
+    "cx": 530.6
+   },
+   "cta": {
+    "x": 330,
+    "y": 549.3,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": true,
+  "hasJsClass": true
+ },
+ {
+  "tag": "before/light-1280x800",
+  "side": "before",
+  "engine": "chromium",
+  "w": 1280,
+  "h": 800,
+  "theme": "light",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 776.7,
+  "docW": 1280,
+  "vw": 1280,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report",
+    "expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada · Sept",
+    "2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "wrap",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 460.3,
+    "w": 337.2,
+    "h": 30.8,
+    "cx": 498.6
+   },
+   "tag": {
+    "x": 715.2,
+    "y": 454.2,
+    "w": 266.4,
+    "h": 15.4,
+    "cx": 848.4
+   },
+   "capcap": {
+    "x": 715.2,
+    "y": 633.3,
+    "w": 532.8,
+    "h": 15.4,
+    "cx": 981.6
+   },
+   "plate": {
+    "x": 715.2,
+    "y": 129,
+    "w": 266.4,
+    "h": 313.2,
+    "cx": 848.4
+   },
+   "frame": {
+    "x": 1013.6,
+    "y": 129,
+    "w": 234.4,
+    "h": 488.3,
+    "cx": 1130.8
+   },
+   "screen": {
+    "x": 1022.6,
+    "y": 138,
+    "w": 216.4,
+    "h": 470.3,
+    "cx": 1130.8
+   },
+   "h2": {
+    "x": 330,
+    "y": 255.3,
+    "w": 337.2,
+    "h": 53.7,
+    "cx": 498.6
+   },
+   "cta": {
+    "x": 330,
+    "y": 511.1,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": false,
+  "hasJsClass": true
+ },
+ {
+  "tag": "after/light-1280x800",
+  "side": "after",
+  "engine": "chromium",
+  "w": 1280,
+  "h": 800,
+  "theme": "light",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 776.7,
+  "docW": 1280,
+  "vw": 1280,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report",
+    "expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada ·",
+    "Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "pretty",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 460.3,
+    "w": 337.2,
+    "h": 30.8,
+    "cx": 498.6
+   },
+   "tag": {
+    "x": 715.2,
+    "y": 454.2,
+    "w": 266.4,
+    "h": 15.4,
+    "cx": 848.4
+   },
+   "capcap": {
+    "x": 715.2,
+    "y": 633.3,
+    "w": 532.8,
+    "h": 15.4,
+    "cx": 981.6
+   },
+   "plate": {
+    "x": 715.2,
+    "y": 129,
+    "w": 266.4,
+    "h": 313.2,
+    "cx": 848.4
+   },
+   "frame": {
+    "x": 1013.6,
+    "y": 129,
+    "w": 234.4,
+    "h": 488.3,
+    "cx": 1130.8
+   },
+   "screen": {
+    "x": 1022.6,
+    "y": 138,
+    "w": 216.4,
+    "h": 470.3,
+    "cx": 1130.8
+   },
+   "h2": {
+    "x": 330,
+    "y": 255.3,
+    "w": 337.2,
+    "h": 53.7,
+    "cx": 498.6
+   },
+   "cta": {
+    "x": 330,
+    "y": 511.1,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": false,
+  "hasJsClass": true
+ },
+ {
+  "tag": "before/dark-1280x800",
+  "side": "before",
+  "engine": "chromium",
+  "w": 1280,
+  "h": 800,
+  "theme": "dark",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 776.7,
+  "docW": 1280,
+  "vw": 1280,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report",
+    "expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada · Sept",
+    "2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "wrap",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 460.3,
+    "w": 337.2,
+    "h": 30.8,
+    "cx": 498.6
+   },
+   "tag": {
+    "x": 715.2,
+    "y": 454.2,
+    "w": 266.4,
+    "h": 15.4,
+    "cx": 848.4
+   },
+   "capcap": {
+    "x": 715.2,
+    "y": 633.3,
+    "w": 532.8,
+    "h": 15.4,
+    "cx": 981.6
+   },
+   "plate": {
+    "x": 715.2,
+    "y": 129,
+    "w": 266.4,
+    "h": 313.2,
+    "cx": 848.4
+   },
+   "frame": {
+    "x": 1013.6,
+    "y": 129,
+    "w": 234.4,
+    "h": 488.3,
+    "cx": 1130.8
+   },
+   "screen": {
+    "x": 1022.6,
+    "y": 138,
+    "w": 216.4,
+    "h": 470.3,
+    "cx": 1130.8
+   },
+   "h2": {
+    "x": 330,
+    "y": 255.3,
+    "w": 337.2,
+    "h": 53.7,
+    "cx": 498.6
+   },
+   "cta": {
+    "x": 330,
+    "y": 511.1,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": true,
+  "hasJsClass": true
+ },
+ {
+  "tag": "after/dark-1280x800",
+  "side": "after",
+  "engine": "chromium",
+  "w": 1280,
+  "h": 800,
+  "theme": "dark",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 776.7,
+  "docW": 1280,
+  "vw": 1280,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report",
+    "expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada ·",
+    "Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "pretty",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 460.3,
+    "w": 337.2,
+    "h": 30.8,
+    "cx": 498.6
+   },
+   "tag": {
+    "x": 715.2,
+    "y": 454.2,
+    "w": 266.4,
+    "h": 15.4,
+    "cx": 848.4
+   },
+   "capcap": {
+    "x": 715.2,
+    "y": 633.3,
+    "w": 532.8,
+    "h": 15.4,
+    "cx": 981.6
+   },
+   "plate": {
+    "x": 715.2,
+    "y": 129,
+    "w": 266.4,
+    "h": 313.2,
+    "cx": 848.4
+   },
+   "frame": {
+    "x": 1013.6,
+    "y": 129,
+    "w": 234.4,
+    "h": 488.3,
+    "cx": 1130.8
+   },
+   "screen": {
+    "x": 1022.6,
+    "y": 138,
+    "w": 216.4,
+    "h": 470.3,
+    "cx": 1130.8
+   },
+   "h2": {
+    "x": 330,
+    "y": 255.3,
+    "w": 337.2,
+    "h": 53.7,
+    "cx": 498.6
+   },
+   "cta": {
+    "x": 330,
+    "y": 511.1,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": true,
+  "hasJsClass": true
+ },
+ {
+  "tag": "before/light-1180x820",
+  "side": "before",
+  "engine": "chromium",
+  "w": 1180,
+  "h": 820,
+  "theme": "light",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 719.3,
+  "docW": 1180,
+  "vw": 1180,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report",
+    "expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada ·",
+    "Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "wrap",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 431.7,
+    "w": 297.2,
+    "h": 30.8,
+    "cx": 478.6
+   },
+   "tag": {
+    "x": 675.2,
+    "y": 418.9,
+    "w": 236.4,
+    "h": 15.4,
+    "cx": 793.4
+   },
+   "capcap": {
+    "x": 675.2,
+    "y": 575.9,
+    "w": 472.8,
+    "h": 15.4,
+    "cx": 911.6
+   },
+   "plate": {
+    "x": 675.2,
+    "y": 129,
+    "w": 236.4,
+    "h": 277.9,
+    "cx": 793.4
+   },
+   "frame": {
+    "x": 939.9,
+    "y": 129,
+    "w": 208,
+    "h": 430.9,
+    "cx": 1044
+   },
+   "screen": {
+    "x": 948.9,
+    "y": 138,
+    "w": 190,
+    "h": 412.9,
+    "cx": 1044
+   },
+   "h2": {
+    "x": 330,
+    "y": 226.7,
+    "w": 297.2,
+    "h": 53.7,
+    "cx": 478.6
+   },
+   "cta": {
+    "x": 330,
+    "y": 482.4,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": false,
+  "hasJsClass": true
+ },
+ {
+  "tag": "after/light-1180x820",
+  "side": "after",
+  "engine": "chromium",
+  "w": 1180,
+  "h": 820,
+  "theme": "light",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 719.3,
+  "docW": 1180,
+  "vw": 1180,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report",
+    "expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada ·",
+    "Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "pretty",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 431.7,
+    "w": 297.2,
+    "h": 30.8,
+    "cx": 478.6
+   },
+   "tag": {
+    "x": 675.2,
+    "y": 418.9,
+    "w": 236.4,
+    "h": 15.4,
+    "cx": 793.4
+   },
+   "capcap": {
+    "x": 675.2,
+    "y": 575.9,
+    "w": 472.8,
+    "h": 15.4,
+    "cx": 911.6
+   },
+   "plate": {
+    "x": 675.2,
+    "y": 129,
+    "w": 236.4,
+    "h": 277.9,
+    "cx": 793.4
+   },
+   "frame": {
+    "x": 939.9,
+    "y": 129,
+    "w": 208,
+    "h": 430.9,
+    "cx": 1044
+   },
+   "screen": {
+    "x": 948.9,
+    "y": 138,
+    "w": 190,
+    "h": 412.9,
+    "cx": 1044
+   },
+   "h2": {
+    "x": 330,
+    "y": 226.7,
+    "w": 297.2,
+    "h": 53.7,
+    "cx": 478.6
+   },
+   "cta": {
+    "x": 330,
+    "y": 482.4,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": false,
+  "hasJsClass": true
+ },
+ {
+  "tag": "before/dark-1180x820",
+  "side": "before",
+  "engine": "chromium",
+  "w": 1180,
+  "h": 820,
+  "theme": "dark",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 719.3,
+  "docW": 1180,
+  "vw": 1180,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report",
+    "expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada ·",
+    "Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "wrap",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 431.7,
+    "w": 297.2,
+    "h": 30.8,
+    "cx": 478.6
+   },
+   "tag": {
+    "x": 675.2,
+    "y": 418.9,
+    "w": 236.4,
+    "h": 15.4,
+    "cx": 793.4
+   },
+   "capcap": {
+    "x": 675.2,
+    "y": 575.9,
+    "w": 472.8,
+    "h": 15.4,
+    "cx": 911.6
+   },
+   "plate": {
+    "x": 675.2,
+    "y": 129,
+    "w": 236.4,
+    "h": 277.9,
+    "cx": 793.4
+   },
+   "frame": {
+    "x": 939.9,
+    "y": 129,
+    "w": 208,
+    "h": 430.9,
+    "cx": 1044
+   },
+   "screen": {
+    "x": 948.9,
+    "y": 138,
+    "w": 190,
+    "h": 412.9,
+    "cx": 1044
+   },
+   "h2": {
+    "x": 330,
+    "y": 226.7,
+    "w": 297.2,
+    "h": 53.7,
+    "cx": 478.6
+   },
+   "cta": {
+    "x": 330,
+    "y": 482.4,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": true,
+  "hasJsClass": true
+ },
+ {
+  "tag": "after/dark-1180x820",
+  "side": "after",
+  "engine": "chromium",
+  "w": 1180,
+  "h": 820,
+  "theme": "dark",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 719.3,
+  "docW": 1180,
+  "vw": 1180,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report",
+    "expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada ·",
+    "Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "pretty",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 431.7,
+    "w": 297.2,
+    "h": 30.8,
+    "cx": 478.6
+   },
+   "tag": {
+    "x": 675.2,
+    "y": 418.9,
+    "w": 236.4,
+    "h": 15.4,
+    "cx": 793.4
+   },
+   "capcap": {
+    "x": 675.2,
+    "y": 575.9,
+    "w": 472.8,
+    "h": 15.4,
+    "cx": 911.6
+   },
+   "plate": {
+    "x": 675.2,
+    "y": 129,
+    "w": 236.4,
+    "h": 277.9,
+    "cx": 793.4
+   },
+   "frame": {
+    "x": 939.9,
+    "y": 129,
+    "w": 208,
+    "h": 430.9,
+    "cx": 1044
+   },
+   "screen": {
+    "x": 948.9,
+    "y": 138,
+    "w": 190,
+    "h": 412.9,
+    "cx": 1044
+   },
+   "h2": {
+    "x": 330,
+    "y": 226.7,
+    "w": 297.2,
+    "h": 53.7,
+    "cx": 478.6
+   },
+   "cta": {
+    "x": 330,
+    "y": 482.4,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": true,
+  "hasJsClass": true
+ },
+ {
+  "tag": "before/light-1024x768",
+  "side": "before",
+  "engine": "chromium",
+  "w": 1024,
+  "h": 768,
+  "theme": "light",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 629.8,
+  "docW": 1024,
+  "vw": 1024,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE ·",
+    "VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier",
+    "report expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN ·",
+    "FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US",
+    "and Canada · Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same",
+    "capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "wrap",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 402.3,
+    "w": 234.8,
+    "h": 30.8,
+    "cx": 447.4
+   },
+   "tag": {
+    "x": 612.8,
+    "y": 363.9,
+    "w": 189.6,
+    "h": 30.8,
+    "cx": 707.6
+   },
+   "capcap": {
+    "x": 612.8,
+    "y": 486.4,
+    "w": 379.2,
+    "h": 15.4,
+    "cx": 802.4
+   },
+   "plate": {
+    "x": 612.8,
+    "y": 129,
+    "w": 189.6,
+    "h": 222.9,
+    "cx": 707.6
+   },
+   "frame": {
+    "x": 825.1,
+    "y": 129,
+    "w": 166.8,
+    "h": 341.4,
+    "cx": 908.6
+   },
+   "screen": {
+    "x": 834.1,
+    "y": 138,
+    "w": 148.8,
+    "h": 323.4,
+    "cx": 908.6
+   },
+   "h2": {
+    "x": 330,
+    "y": 166.5,
+    "w": 234.8,
+    "h": 53.7,
+    "cx": 447.4
+   },
+   "cta": {
+    "x": 330,
+    "y": 453.1,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": false,
+  "hasJsClass": true
+ },
+ {
+  "tag": "after/light-1024x768",
+  "side": "after",
+  "engine": "chromium",
+  "w": 1024,
+  "h": 768,
+  "theme": "light",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 629.8,
+  "docW": 1024,
+  "vw": 1024,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE ·",
+    "VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier",
+    "report expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN ·",
+    "FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US",
+    "and Canada · Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same",
+    "capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "pretty",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 402.3,
+    "w": 234.8,
+    "h": 30.8,
+    "cx": 447.4
+   },
+   "tag": {
+    "x": 612.8,
+    "y": 363.9,
+    "w": 189.6,
+    "h": 30.8,
+    "cx": 707.6
+   },
+   "capcap": {
+    "x": 612.8,
+    "y": 486.4,
+    "w": 379.2,
+    "h": 15.4,
+    "cx": 802.4
+   },
+   "plate": {
+    "x": 612.8,
+    "y": 129,
+    "w": 189.6,
+    "h": 222.9,
+    "cx": 707.6
+   },
+   "frame": {
+    "x": 825.1,
+    "y": 129,
+    "w": 166.8,
+    "h": 341.4,
+    "cx": 908.6
+   },
+   "screen": {
+    "x": 834.1,
+    "y": 138,
+    "w": 148.8,
+    "h": 323.4,
+    "cx": 908.6
+   },
+   "h2": {
+    "x": 330,
+    "y": 166.5,
+    "w": 234.8,
+    "h": 53.7,
+    "cx": 447.4
+   },
+   "cta": {
+    "x": 330,
+    "y": 453.1,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": false,
+  "hasJsClass": true
+ },
+ {
+  "tag": "before/dark-1024x768",
+  "side": "before",
+  "engine": "chromium",
+  "w": 1024,
+  "h": 768,
+  "theme": "dark",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 629.8,
+  "docW": 1024,
+  "vw": 1024,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE ·",
+    "VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier",
+    "report expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN ·",
+    "FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US",
+    "and Canada · Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same",
+    "capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "wrap",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 402.3,
+    "w": 234.8,
+    "h": 30.8,
+    "cx": 447.4
+   },
+   "tag": {
+    "x": 612.8,
+    "y": 363.9,
+    "w": 189.6,
+    "h": 30.8,
+    "cx": 707.6
+   },
+   "capcap": {
+    "x": 612.8,
+    "y": 486.4,
+    "w": 379.2,
+    "h": 15.4,
+    "cx": 802.4
+   },
+   "plate": {
+    "x": 612.8,
+    "y": 129,
+    "w": 189.6,
+    "h": 222.9,
+    "cx": 707.6
+   },
+   "frame": {
+    "x": 825.1,
+    "y": 129,
+    "w": 166.8,
+    "h": 341.4,
+    "cx": 908.6
+   },
+   "screen": {
+    "x": 834.1,
+    "y": 138,
+    "w": 148.8,
+    "h": 323.4,
+    "cx": 908.6
+   },
+   "h2": {
+    "x": 330,
+    "y": 166.5,
+    "w": 234.8,
+    "h": 53.7,
+    "cx": 447.4
+   },
+   "cta": {
+    "x": 330,
+    "y": 453.1,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": true,
+  "hasJsClass": true
+ },
+ {
+  "tag": "after/dark-1024x768",
+  "side": "after",
+  "engine": "chromium",
+  "w": 1024,
+  "h": 768,
+  "theme": "dark",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 629.8,
+  "docW": 1024,
+  "vw": 1024,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE ·",
+    "VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier",
+    "report expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN ·",
+    "FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US",
+    "and Canada · Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same",
+    "capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "pretty",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 402.3,
+    "w": 234.8,
+    "h": 30.8,
+    "cx": 447.4
+   },
+   "tag": {
+    "x": 612.8,
+    "y": 363.9,
+    "w": 189.6,
+    "h": 30.8,
+    "cx": 707.6
+   },
+   "capcap": {
+    "x": 612.8,
+    "y": 486.4,
+    "w": 379.2,
+    "h": 15.4,
+    "cx": 802.4
+   },
+   "plate": {
+    "x": 612.8,
+    "y": 129,
+    "w": 189.6,
+    "h": 222.9,
+    "cx": 707.6
+   },
+   "frame": {
+    "x": 825.1,
+    "y": 129,
+    "w": 166.8,
+    "h": 341.4,
+    "cx": 908.6
+   },
+   "screen": {
+    "x": 834.1,
+    "y": 138,
+    "w": 148.8,
+    "h": 323.4,
+    "cx": 908.6
+   },
+   "h2": {
+    "x": 330,
+    "y": 166.5,
+    "w": 234.8,
+    "h": 53.7,
+    "cx": 447.4
+   },
+   "cta": {
+    "x": 330,
+    "y": 453.1,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": true,
+  "hasJsClass": true
+ },
+ {
+  "tag": "before/light-768x1024",
+  "side": "before",
+  "engine": "chromium",
+  "w": 768,
+  "h": 1024,
+  "theme": "light",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 1525.3,
+  "docW": 768,
+  "vw": 768,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report expanded on",
+    "the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada · Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "wrap",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "center"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 1349.9,
+    "w": 362.2,
+    "h": 15.4,
+    "cx": 511.1
+   },
+   "tag": {
+    "x": 374,
+    "y": 708.7,
+    "w": 300,
+    "h": 15.4,
+    "cx": 524
+   },
+   "capcap": {
+    "x": 312,
+    "y": 1294.5,
+    "w": 424,
+    "h": 15.4,
+    "cx": 524
+   },
+   "plate": {
+    "x": 374,
+    "y": 344,
+    "w": 300,
+    "h": 352.7,
+    "cx": 524
+   },
+   "frame": {
+    "x": 398.9,
+    "y": 756,
+    "w": 250.2,
+    "h": 522.4,
+    "cx": 524
+   },
+   "screen": {
+    "x": 407.9,
+    "y": 765,
+    "w": 232.2,
+    "h": 504.4,
+    "cx": 524
+   },
+   "h2": {
+    "x": 330,
+    "y": 129.8,
+    "w": 406,
+    "h": 46.9,
+    "cx": 533
+   },
+   "cta": {
+    "x": 330,
+    "y": 1385.3,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "none",
+  "isDark": false,
+  "hasJsClass": true
+ },
+ {
+  "tag": "after/light-768x1024",
+  "side": "after",
+  "engine": "chromium",
+  "w": 768,
+  "h": 1024,
+  "theme": "light",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 1525.3,
+  "docW": 768,
+  "vw": 768,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report expanded on",
+    "the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada · Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "pretty",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "center",
+   "captureCaption": "center"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 1349.9,
+    "w": 362.2,
+    "h": 15.4,
+    "cx": 511.1
+   },
+   "tag": {
+    "x": 374,
+    "y": 708.7,
+    "w": 300,
+    "h": 15.4,
+    "cx": 524
+   },
+   "capcap": {
+    "x": 312,
+    "y": 1294.5,
+    "w": 424,
+    "h": 15.4,
+    "cx": 524
+   },
+   "plate": {
+    "x": 374,
+    "y": 344,
+    "w": 300,
+    "h": 352.7,
+    "cx": 524
+   },
+   "frame": {
+    "x": 398.9,
+    "y": 756,
+    "w": 250.2,
+    "h": 522.4,
+    "cx": 524
+   },
+   "screen": {
+    "x": 407.9,
+    "y": 765,
+    "w": 232.2,
+    "h": 504.4,
+    "cx": 524
+   },
+   "h2": {
+    "x": 330,
+    "y": 129.8,
+    "w": 406,
+    "h": 46.9,
+    "cx": 533
+   },
+   "cta": {
+    "x": 330,
+    "y": 1385.3,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "none",
+  "isDark": false,
+  "hasJsClass": true
+ },
+ {
+  "tag": "before/dark-768x1024",
+  "side": "before",
+  "engine": "chromium",
+  "w": 768,
+  "h": 1024,
+  "theme": "dark",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 1525.3,
+  "docW": 768,
+  "vw": 768,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report expanded on",
+    "the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada · Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "wrap",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "center"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 1349.9,
+    "w": 362.2,
+    "h": 15.4,
+    "cx": 511.1
+   },
+   "tag": {
+    "x": 374,
+    "y": 708.7,
+    "w": 300,
+    "h": 15.4,
+    "cx": 524
+   },
+   "capcap": {
+    "x": 312,
+    "y": 1294.5,
+    "w": 424,
+    "h": 15.4,
+    "cx": 524
+   },
+   "plate": {
+    "x": 374,
+    "y": 344,
+    "w": 300,
+    "h": 352.7,
+    "cx": 524
+   },
+   "frame": {
+    "x": 398.9,
+    "y": 756,
+    "w": 250.2,
+    "h": 522.4,
+    "cx": 524
+   },
+   "screen": {
+    "x": 407.9,
+    "y": 765,
+    "w": 232.2,
+    "h": 504.4,
+    "cx": 524
+   },
+   "h2": {
+    "x": 330,
+    "y": 129.8,
+    "w": 406,
+    "h": 46.9,
+    "cx": 533
+   },
+   "cta": {
+    "x": 330,
+    "y": 1385.3,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "none",
+  "isDark": true,
+  "hasJsClass": true
+ },
+ {
+  "tag": "after/dark-768x1024",
+  "side": "after",
+  "engine": "chromium",
+  "w": 768,
+  "h": 1024,
+  "theme": "dark",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 1525.3,
+  "docW": 768,
+  "vw": 768,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report expanded on",
+    "the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada · Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "pretty",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "center",
+   "captureCaption": "center"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 1349.9,
+    "w": 362.2,
+    "h": 15.4,
+    "cx": 511.1
+   },
+   "tag": {
+    "x": 374,
+    "y": 708.7,
+    "w": 300,
+    "h": 15.4,
+    "cx": 524
+   },
+   "capcap": {
+    "x": 312,
+    "y": 1294.5,
+    "w": 424,
+    "h": 15.4,
+    "cx": 524
+   },
+   "plate": {
+    "x": 374,
+    "y": 344,
+    "w": 300,
+    "h": 352.7,
+    "cx": 524
+   },
+   "frame": {
+    "x": 398.9,
+    "y": 756,
+    "w": 250.2,
+    "h": 522.4,
+    "cx": 524
+   },
+   "screen": {
+    "x": 407.9,
+    "y": 765,
+    "w": 232.2,
+    "h": 504.4,
+    "cx": 524
+   },
+   "h2": {
+    "x": 330,
+    "y": 129.8,
+    "w": 406,
+    "h": 46.9,
+    "cx": 533
+   },
+   "cta": {
+    "x": 330,
+    "y": 1385.3,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "none",
+  "isDark": true,
+  "hasJsClass": true
+ },
+ {
+  "tag": "before/light-393x852@2",
+  "side": "before",
+  "engine": "chromium",
+  "w": 393,
+  "h": 852,
+  "dpr": 2,
+  "theme": "light",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 1360.1,
+  "docW": 393,
+  "vw": 393,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report",
+    "expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada ·",
+    "Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "wrap",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "center"
+  },
+  "boxes": {
+   "status": {
+    "x": 50,
+    "y": 1169.3,
+    "w": 311,
+    "h": 30.8,
+    "cx": 205.5
+   },
+   "tag": {
+    "x": 71.5,
+    "y": 649.9,
+    "w": 250,
+    "h": 15.4,
+    "cx": 196.5
+   },
+   "capcap": {
+    "x": 32,
+    "y": 1114,
+    "w": 329,
+    "h": 15.4,
+    "cx": 196.5
+   },
+   "plate": {
+    "x": 71.5,
+    "y": 344,
+    "w": 250,
+    "h": 294,
+    "cx": 196.5
+   },
+   "frame": {
+    "x": 99.4,
+    "y": 697.3,
+    "w": 194.1,
+    "h": 400.7,
+    "cx": 196.5
+   },
+   "screen": {
+    "x": 108.4,
+    "y": 706.3,
+    "w": 176.1,
+    "h": 382.7,
+    "cx": 196.5
+   },
+   "h2": {
+    "x": 50,
+    "y": 129.8,
+    "w": 311,
+    "h": 46.9,
+    "cx": 205.5
+   },
+   "cta": {
+    "x": 50,
+    "y": 1220.1,
+    "w": 178.1,
+    "h": 44,
+    "cx": 139
+   }
+  },
+  "leaderDisplay": "none",
+  "isDark": false,
+  "hasJsClass": true
+ },
+ {
+  "tag": "after/light-393x852@2",
+  "side": "after",
+  "engine": "chromium",
+  "w": 393,
+  "h": 852,
+  "dpr": 2,
+  "theme": "light",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 1360.1,
+  "docW": 393,
+  "vw": 393,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report",
+    "expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada ·",
+    "Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "pretty",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "center",
+   "captureCaption": "center"
+  },
+  "boxes": {
+   "status": {
+    "x": 50,
+    "y": 1169.3,
+    "w": 311,
+    "h": 30.8,
+    "cx": 205.5
+   },
+   "tag": {
+    "x": 71.5,
+    "y": 649.9,
+    "w": 250,
+    "h": 15.4,
+    "cx": 196.5
+   },
+   "capcap": {
+    "x": 32,
+    "y": 1114,
+    "w": 329,
+    "h": 15.4,
+    "cx": 196.5
+   },
+   "plate": {
+    "x": 71.5,
+    "y": 344,
+    "w": 250,
+    "h": 294,
+    "cx": 196.5
+   },
+   "frame": {
+    "x": 99.4,
+    "y": 697.3,
+    "w": 194.1,
+    "h": 400.7,
+    "cx": 196.5
+   },
+   "screen": {
+    "x": 108.4,
+    "y": 706.3,
+    "w": 176.1,
+    "h": 382.7,
+    "cx": 196.5
+   },
+   "h2": {
+    "x": 50,
+    "y": 129.8,
+    "w": 311,
+    "h": 46.9,
+    "cx": 205.5
+   },
+   "cta": {
+    "x": 50,
+    "y": 1220.1,
+    "w": 178.1,
+    "h": 44,
+    "cx": 139
+   }
+  },
+  "leaderDisplay": "none",
+  "isDark": false,
+  "hasJsClass": true
+ },
+ {
+  "tag": "before/dark-393x852@2",
+  "side": "before",
+  "engine": "chromium",
+  "w": 393,
+  "h": 852,
+  "dpr": 2,
+  "theme": "dark",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 1360.1,
+  "docW": 393,
+  "vw": 393,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report",
+    "expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada ·",
+    "Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "wrap",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "center"
+  },
+  "boxes": {
+   "status": {
+    "x": 50,
+    "y": 1169.3,
+    "w": 311,
+    "h": 30.8,
+    "cx": 205.5
+   },
+   "tag": {
+    "x": 71.5,
+    "y": 649.9,
+    "w": 250,
+    "h": 15.4,
+    "cx": 196.5
+   },
+   "capcap": {
+    "x": 32,
+    "y": 1114,
+    "w": 329,
+    "h": 15.4,
+    "cx": 196.5
+   },
+   "plate": {
+    "x": 71.5,
+    "y": 344,
+    "w": 250,
+    "h": 294,
+    "cx": 196.5
+   },
+   "frame": {
+    "x": 99.4,
+    "y": 697.3,
+    "w": 194.1,
+    "h": 400.7,
+    "cx": 196.5
+   },
+   "screen": {
+    "x": 108.4,
+    "y": 706.3,
+    "w": 176.1,
+    "h": 382.7,
+    "cx": 196.5
+   },
+   "h2": {
+    "x": 50,
+    "y": 129.8,
+    "w": 311,
+    "h": 46.9,
+    "cx": 205.5
+   },
+   "cta": {
+    "x": 50,
+    "y": 1220.1,
+    "w": 178.1,
+    "h": 44,
+    "cx": 139
+   }
+  },
+  "leaderDisplay": "none",
+  "isDark": true,
+  "hasJsClass": true
+ },
+ {
+  "tag": "after/dark-393x852@2",
+  "side": "after",
+  "engine": "chromium",
+  "w": 393,
+  "h": 852,
+  "dpr": 2,
+  "theme": "dark",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 1360.1,
+  "docW": 393,
+  "vw": 393,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report",
+    "expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada ·",
+    "Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "pretty",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "center",
+   "captureCaption": "center"
+  },
+  "boxes": {
+   "status": {
+    "x": 50,
+    "y": 1169.3,
+    "w": 311,
+    "h": 30.8,
+    "cx": 205.5
+   },
+   "tag": {
+    "x": 71.5,
+    "y": 649.9,
+    "w": 250,
+    "h": 15.4,
+    "cx": 196.5
+   },
+   "capcap": {
+    "x": 32,
+    "y": 1114,
+    "w": 329,
+    "h": 15.4,
+    "cx": 196.5
+   },
+   "plate": {
+    "x": 71.5,
+    "y": 344,
+    "w": 250,
+    "h": 294,
+    "cx": 196.5
+   },
+   "frame": {
+    "x": 99.4,
+    "y": 697.3,
+    "w": 194.1,
+    "h": 400.7,
+    "cx": 196.5
+   },
+   "screen": {
+    "x": 108.4,
+    "y": 706.3,
+    "w": 176.1,
+    "h": 382.7,
+    "cx": 196.5
+   },
+   "h2": {
+    "x": 50,
+    "y": 129.8,
+    "w": 311,
+    "h": 46.9,
+    "cx": 205.5
+   },
+   "cta": {
+    "x": 50,
+    "y": 1220.1,
+    "w": 178.1,
+    "h": 44,
+    "cx": 139
+   }
+  },
+  "leaderDisplay": "none",
+  "isDark": true,
+  "hasJsClass": true
+ },
+ {
+  "tag": "before/light-320x700@2",
+  "side": "before",
+  "engine": "chromium",
+  "w": 320,
+  "h": 700,
+  "dpr": 2,
+  "theme": "light",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 1262.8,
+  "docW": 320,
+  "vw": 320,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE ·",
+    "VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier",
+    "report expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN ·",
+    "FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and",
+    "Canada · Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same",
+    "capture"
+   ],
+   "captureCaption": [
+    "Current product capture ·",
+    "Explore"
+   ]
+  },
+  "statusWrap": "wrap",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "center"
+  },
+  "boxes": {
+   "status": {
+    "x": 50,
+    "y": 1072.1,
+    "w": 238,
+    "h": 30.8,
+    "cx": 169
+   },
+   "tag": {
+    "x": 62.7,
+    "y": 615.5,
+    "w": 194.5,
+    "h": 30.8,
+    "cx": 160
+   },
+   "capcap": {
+    "x": 32,
+    "y": 1001.3,
+    "w": 256,
+    "h": 30.8,
+    "cx": 160
+   },
+   "plate": {
+    "x": 62.7,
+    "y": 374.7,
+    "w": 194.5,
+    "h": 228.7,
+    "cx": 160
+   },
+   "frame": {
+    "x": 84.5,
+    "y": 678.2,
+    "w": 151,
+    "h": 307,
+    "cx": 160
+   },
+   "screen": {
+    "x": 93.5,
+    "y": 687.2,
+    "w": 133,
+    "h": 289,
+    "cx": 160
+   },
+   "h2": {
+    "x": 50,
+    "y": 129.8,
+    "w": 238,
+    "h": 46.9,
+    "cx": 169
+   },
+   "cta": {
+    "x": 50,
+    "y": 1122.8,
+    "w": 178.1,
+    "h": 44,
+    "cx": 139
+   }
+  },
+  "leaderDisplay": "none",
+  "isDark": false,
+  "hasJsClass": true
+ },
+ {
+  "tag": "after/light-320x700@2",
+  "side": "after",
+  "engine": "chromium",
+  "w": 320,
+  "h": 700,
+  "dpr": 2,
+  "theme": "light",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 1262.8,
+  "docW": 320,
+  "vw": 320,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE ·",
+    "VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier",
+    "report expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN ·",
+    "FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and",
+    "Canada · Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same",
+    "capture"
+   ],
+   "captureCaption": [
+    "Current product capture ·",
+    "Explore"
+   ]
+  },
+  "statusWrap": "pretty",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "center",
+   "captureCaption": "center"
+  },
+  "boxes": {
+   "status": {
+    "x": 50,
+    "y": 1072.1,
+    "w": 238,
+    "h": 30.8,
+    "cx": 169
+   },
+   "tag": {
+    "x": 62.7,
+    "y": 615.5,
+    "w": 194.5,
+    "h": 30.8,
+    "cx": 160
+   },
+   "capcap": {
+    "x": 32,
+    "y": 1001.3,
+    "w": 256,
+    "h": 30.8,
+    "cx": 160
+   },
+   "plate": {
+    "x": 62.7,
+    "y": 374.7,
+    "w": 194.5,
+    "h": 228.7,
+    "cx": 160
+   },
+   "frame": {
+    "x": 84.5,
+    "y": 678.2,
+    "w": 151,
+    "h": 307,
+    "cx": 160
+   },
+   "screen": {
+    "x": 93.5,
+    "y": 687.2,
+    "w": 133,
+    "h": 289,
+    "cx": 160
+   },
+   "h2": {
+    "x": 50,
+    "y": 129.8,
+    "w": 238,
+    "h": 46.9,
+    "cx": 169
+   },
+   "cta": {
+    "x": 50,
+    "y": 1122.8,
+    "w": 178.1,
+    "h": 44,
+    "cx": 139
+   }
+  },
+  "leaderDisplay": "none",
+  "isDark": false,
+  "hasJsClass": true
+ },
+ {
+  "tag": "before/dark-320x700@2",
+  "side": "before",
+  "engine": "chromium",
+  "w": 320,
+  "h": 700,
+  "dpr": 2,
+  "theme": "dark",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 1262.8,
+  "docW": 320,
+  "vw": 320,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE ·",
+    "VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier",
+    "report expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN ·",
+    "FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and",
+    "Canada · Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same",
+    "capture"
+   ],
+   "captureCaption": [
+    "Current product capture ·",
+    "Explore"
+   ]
+  },
+  "statusWrap": "wrap",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "center"
+  },
+  "boxes": {
+   "status": {
+    "x": 50,
+    "y": 1072.1,
+    "w": 238,
+    "h": 30.8,
+    "cx": 169
+   },
+   "tag": {
+    "x": 62.7,
+    "y": 615.5,
+    "w": 194.5,
+    "h": 30.8,
+    "cx": 160
+   },
+   "capcap": {
+    "x": 32,
+    "y": 1001.3,
+    "w": 256,
+    "h": 30.8,
+    "cx": 160
+   },
+   "plate": {
+    "x": 62.7,
+    "y": 374.7,
+    "w": 194.5,
+    "h": 228.7,
+    "cx": 160
+   },
+   "frame": {
+    "x": 84.5,
+    "y": 678.2,
+    "w": 151,
+    "h": 307,
+    "cx": 160
+   },
+   "screen": {
+    "x": 93.5,
+    "y": 687.2,
+    "w": 133,
+    "h": 289,
+    "cx": 160
+   },
+   "h2": {
+    "x": 50,
+    "y": 129.8,
+    "w": 238,
+    "h": 46.9,
+    "cx": 169
+   },
+   "cta": {
+    "x": 50,
+    "y": 1122.8,
+    "w": 178.1,
+    "h": 44,
+    "cx": 139
+   }
+  },
+  "leaderDisplay": "none",
+  "isDark": true,
+  "hasJsClass": true
+ },
+ {
+  "tag": "after/dark-320x700@2",
+  "side": "after",
+  "engine": "chromium",
+  "w": 320,
+  "h": 700,
+  "dpr": 2,
+  "theme": "dark",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 1262.8,
+  "docW": 320,
+  "vw": 320,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE ·",
+    "VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier",
+    "report expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN ·",
+    "FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and",
+    "Canada · Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same",
+    "capture"
+   ],
+   "captureCaption": [
+    "Current product capture ·",
+    "Explore"
+   ]
+  },
+  "statusWrap": "pretty",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "center",
+   "captureCaption": "center"
+  },
+  "boxes": {
+   "status": {
+    "x": 50,
+    "y": 1072.1,
+    "w": 238,
+    "h": 30.8,
+    "cx": 169
+   },
+   "tag": {
+    "x": 62.7,
+    "y": 615.5,
+    "w": 194.5,
+    "h": 30.8,
+    "cx": 160
+   },
+   "capcap": {
+    "x": 32,
+    "y": 1001.3,
+    "w": 256,
+    "h": 30.8,
+    "cx": 160
+   },
+   "plate": {
+    "x": 62.7,
+    "y": 374.7,
+    "w": 194.5,
+    "h": 228.7,
+    "cx": 160
+   },
+   "frame": {
+    "x": 84.5,
+    "y": 678.2,
+    "w": 151,
+    "h": 307,
+    "cx": 160
+   },
+   "screen": {
+    "x": 93.5,
+    "y": 687.2,
+    "w": 133,
+    "h": 289,
+    "cx": 160
+   },
+   "h2": {
+    "x": 50,
+    "y": 129.8,
+    "w": 238,
+    "h": 46.9,
+    "cx": 169
+   },
+   "cta": {
+    "x": 50,
+    "y": 1122.8,
+    "w": 178.1,
+    "h": 44,
+    "cx": 139
+   }
+  },
+  "leaderDisplay": "none",
+  "isDark": true,
+  "hasJsClass": true
+ },
+ {
+  "tag": "before/light-1440x900-rm",
+  "side": "before",
+  "engine": "chromium",
+  "w": 1440,
+  "h": 900,
+  "theme": "light",
+  "rm": true,
+  "errors": [],
+  "focusRing": null,
+  "roomH": 868.5,
+  "docW": 1440,
+  "vw": 1440,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report expanded on",
+    "the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada · Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "wrap",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 513.9,
+    "w": 362.2,
+    "h": 15.4,
+    "cx": 511.1
+   },
+   "tag": {
+    "x": 779.2,
+    "y": 510.6,
+    "w": 314.4,
+    "h": 15.4,
+    "cx": 936.4
+   },
+   "capcap": {
+    "x": 779.2,
+    "y": 725.1,
+    "w": 628.8,
+    "h": 15.4,
+    "cx": 1093.6
+   },
+   "plate": {
+    "x": 779.2,
+    "y": 129,
+    "w": 314.4,
+    "h": 369.6,
+    "cx": 936.4
+   },
+   "frame": {
+    "x": 1131.3,
+    "y": 129,
+    "w": 276.7,
+    "h": 580.1,
+    "cx": 1269.7
+   },
+   "screen": {
+    "x": 1140.3,
+    "y": 138,
+    "w": 258.7,
+    "h": 562.1,
+    "cx": 1269.7
+   },
+   "h2": {
+    "x": 330,
+    "y": 309,
+    "w": 401.2,
+    "h": 53.7,
+    "cx": 530.6
+   },
+   "cta": {
+    "x": 330,
+    "y": 549.3,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": false,
+  "hasJsClass": true
+ },
+ {
+  "tag": "after/light-1440x900-rm",
+  "side": "after",
+  "engine": "chromium",
+  "w": 1440,
+  "h": 900,
+  "theme": "light",
+  "rm": true,
+  "errors": [],
+  "focusRing": null,
+  "roomH": 868.5,
+  "docW": 1440,
+  "vw": 1440,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report expanded on",
+    "the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada · Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "pretty",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 513.9,
+    "w": 362.2,
+    "h": 15.4,
+    "cx": 511.1
+   },
+   "tag": {
+    "x": 779.2,
+    "y": 510.6,
+    "w": 314.4,
+    "h": 15.4,
+    "cx": 936.4
+   },
+   "capcap": {
+    "x": 779.2,
+    "y": 725.1,
+    "w": 628.8,
+    "h": 15.4,
+    "cx": 1093.6
+   },
+   "plate": {
+    "x": 779.2,
+    "y": 129,
+    "w": 314.4,
+    "h": 369.6,
+    "cx": 936.4
+   },
+   "frame": {
+    "x": 1131.3,
+    "y": 129,
+    "w": 276.7,
+    "h": 580.1,
+    "cx": 1269.7
+   },
+   "screen": {
+    "x": 1140.3,
+    "y": 138,
+    "w": 258.7,
+    "h": 562.1,
+    "cx": 1269.7
+   },
+   "h2": {
+    "x": 330,
+    "y": 309,
+    "w": 401.2,
+    "h": 53.7,
+    "cx": 530.6
+   },
+   "cta": {
+    "x": 330,
+    "y": 549.3,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": false,
+  "hasJsClass": true
+ },
+ {
+  "tag": "before/light-393x852@2-rm",
+  "side": "before",
+  "engine": "chromium",
+  "w": 393,
+  "h": 852,
+  "dpr": 2,
+  "theme": "light",
+  "rm": true,
+  "errors": [],
+  "focusRing": null,
+  "roomH": 1360.1,
+  "docW": 393,
+  "vw": 393,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report",
+    "expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada ·",
+    "Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "wrap",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "center"
+  },
+  "boxes": {
+   "status": {
+    "x": 50,
+    "y": 1169.3,
+    "w": 311,
+    "h": 30.8,
+    "cx": 205.5
+   },
+   "tag": {
+    "x": 71.5,
+    "y": 649.9,
+    "w": 250,
+    "h": 15.4,
+    "cx": 196.5
+   },
+   "capcap": {
+    "x": 32,
+    "y": 1114,
+    "w": 329,
+    "h": 15.4,
+    "cx": 196.5
+   },
+   "plate": {
+    "x": 71.5,
+    "y": 344,
+    "w": 250,
+    "h": 294,
+    "cx": 196.5
+   },
+   "frame": {
+    "x": 99.4,
+    "y": 697.3,
+    "w": 194.1,
+    "h": 400.7,
+    "cx": 196.5
+   },
+   "screen": {
+    "x": 108.4,
+    "y": 706.3,
+    "w": 176.1,
+    "h": 382.7,
+    "cx": 196.5
+   },
+   "h2": {
+    "x": 50,
+    "y": 129.8,
+    "w": 311,
+    "h": 46.9,
+    "cx": 205.5
+   },
+   "cta": {
+    "x": 50,
+    "y": 1220.1,
+    "w": 178.1,
+    "h": 44,
+    "cx": 139
+   }
+  },
+  "leaderDisplay": "none",
+  "isDark": false,
+  "hasJsClass": true
+ },
+ {
+  "tag": "after/light-393x852@2-rm",
+  "side": "after",
+  "engine": "chromium",
+  "w": 393,
+  "h": 852,
+  "dpr": 2,
+  "theme": "light",
+  "rm": true,
+  "errors": [],
+  "focusRing": null,
+  "roomH": 1360.1,
+  "docW": 393,
+  "vw": 393,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report",
+    "expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada ·",
+    "Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "pretty",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "center",
+   "captureCaption": "center"
+  },
+  "boxes": {
+   "status": {
+    "x": 50,
+    "y": 1169.3,
+    "w": 311,
+    "h": 30.8,
+    "cx": 205.5
+   },
+   "tag": {
+    "x": 71.5,
+    "y": 649.9,
+    "w": 250,
+    "h": 15.4,
+    "cx": 196.5
+   },
+   "capcap": {
+    "x": 32,
+    "y": 1114,
+    "w": 329,
+    "h": 15.4,
+    "cx": 196.5
+   },
+   "plate": {
+    "x": 71.5,
+    "y": 344,
+    "w": 250,
+    "h": 294,
+    "cx": 196.5
+   },
+   "frame": {
+    "x": 99.4,
+    "y": 697.3,
+    "w": 194.1,
+    "h": 400.7,
+    "cx": 196.5
+   },
+   "screen": {
+    "x": 108.4,
+    "y": 706.3,
+    "w": 176.1,
+    "h": 382.7,
+    "cx": 196.5
+   },
+   "h2": {
+    "x": 50,
+    "y": 129.8,
+    "w": 311,
+    "h": 46.9,
+    "cx": 205.5
+   },
+   "cta": {
+    "x": 50,
+    "y": 1220.1,
+    "w": 178.1,
+    "h": 44,
+    "cx": 139
+   }
+  },
+  "leaderDisplay": "none",
+  "isDark": false,
+  "hasJsClass": true
+ },
+ {
+  "tag": "before/dark-1280x800-rm",
+  "side": "before",
+  "engine": "chromium",
+  "w": 1280,
+  "h": 800,
+  "theme": "dark",
+  "rm": true,
+  "errors": [],
+  "focusRing": null,
+  "roomH": 776.7,
+  "docW": 1280,
+  "vw": 1280,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report",
+    "expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada · Sept",
+    "2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "wrap",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 460.3,
+    "w": 337.2,
+    "h": 30.8,
+    "cx": 498.6
+   },
+   "tag": {
+    "x": 715.2,
+    "y": 454.2,
+    "w": 266.4,
+    "h": 15.4,
+    "cx": 848.4
+   },
+   "capcap": {
+    "x": 715.2,
+    "y": 633.3,
+    "w": 532.8,
+    "h": 15.4,
+    "cx": 981.6
+   },
+   "plate": {
+    "x": 715.2,
+    "y": 129,
+    "w": 266.4,
+    "h": 313.2,
+    "cx": 848.4
+   },
+   "frame": {
+    "x": 1013.6,
+    "y": 129,
+    "w": 234.4,
+    "h": 488.3,
+    "cx": 1130.8
+   },
+   "screen": {
+    "x": 1022.6,
+    "y": 138,
+    "w": 216.4,
+    "h": 470.3,
+    "cx": 1130.8
+   },
+   "h2": {
+    "x": 330,
+    "y": 255.3,
+    "w": 337.2,
+    "h": 53.7,
+    "cx": 498.6
+   },
+   "cta": {
+    "x": 330,
+    "y": 511.1,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": true,
+  "hasJsClass": true
+ },
+ {
+  "tag": "after/dark-1280x800-rm",
+  "side": "after",
+  "engine": "chromium",
+  "w": 1280,
+  "h": 800,
+  "theme": "dark",
+  "rm": true,
+  "errors": [],
+  "focusRing": null,
+  "roomH": 776.7,
+  "docW": 1280,
+  "vw": 1280,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report",
+    "expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada ·",
+    "Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "pretty",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 460.3,
+    "w": 337.2,
+    "h": 30.8,
+    "cx": 498.6
+   },
+   "tag": {
+    "x": 715.2,
+    "y": 454.2,
+    "w": 266.4,
+    "h": 15.4,
+    "cx": 848.4
+   },
+   "capcap": {
+    "x": 715.2,
+    "y": 633.3,
+    "w": 532.8,
+    "h": 15.4,
+    "cx": 981.6
+   },
+   "plate": {
+    "x": 715.2,
+    "y": 129,
+    "w": 266.4,
+    "h": 313.2,
+    "cx": 848.4
+   },
+   "frame": {
+    "x": 1013.6,
+    "y": 129,
+    "w": 234.4,
+    "h": 488.3,
+    "cx": 1130.8
+   },
+   "screen": {
+    "x": 1022.6,
+    "y": 138,
+    "w": 216.4,
+    "h": 470.3,
+    "cx": 1130.8
+   },
+   "h2": {
+    "x": 330,
+    "y": 255.3,
+    "w": 337.2,
+    "h": 53.7,
+    "cx": 498.6
+   },
+   "cta": {
+    "x": 330,
+    "y": 511.1,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": true,
+  "hasJsClass": true
+ },
+ {
+  "tag": "before/light-1280x800-nojs",
+  "side": "before",
+  "engine": "chromium",
+  "w": 1280,
+  "h": 800,
+  "theme": "light",
+  "nojs": true,
+  "errors": [],
+  "focusRing": null,
+  "roomH": 776.7,
+  "docW": 1280,
+  "vw": 1280,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report",
+    "expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada · Sept",
+    "2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "wrap",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 460.3,
+    "w": 337.2,
+    "h": 30.8,
+    "cx": 498.6
+   },
+   "tag": {
+    "x": 715.2,
+    "y": 454.2,
+    "w": 266.4,
+    "h": 15.4,
+    "cx": 848.4
+   },
+   "capcap": {
+    "x": 715.2,
+    "y": 633.3,
+    "w": 532.8,
+    "h": 15.4,
+    "cx": 981.6
+   },
+   "plate": {
+    "x": 715.2,
+    "y": 129,
+    "w": 266.4,
+    "h": 313.2,
+    "cx": 848.4
+   },
+   "frame": {
+    "x": 1013.5,
+    "y": 128.9,
+    "w": 234.6,
+    "h": 488.5,
+    "cx": 1130.8
+   },
+   "screen": {
+    "x": 1022.5,
+    "y": 137.9,
+    "w": 216.6,
+    "h": 470.5,
+    "cx": 1130.8
+   },
+   "h2": {
+    "x": 330,
+    "y": 255.3,
+    "w": 337.2,
+    "h": 53.7,
+    "cx": 498.6
+   },
+   "cta": {
+    "x": 330,
+    "y": 511.1,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": false,
+  "hasJsClass": false
+ },
+ {
+  "tag": "after/light-1280x800-nojs",
+  "side": "after",
+  "engine": "chromium",
+  "w": 1280,
+  "h": 800,
+  "theme": "light",
+  "nojs": true,
+  "errors": [],
+  "focusRing": null,
+  "roomH": 776.7,
+  "docW": 1280,
+  "vw": 1280,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report",
+    "expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada ·",
+    "Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "pretty",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 460.3,
+    "w": 337.2,
+    "h": 30.8,
+    "cx": 498.6
+   },
+   "tag": {
+    "x": 715.2,
+    "y": 454.2,
+    "w": 266.4,
+    "h": 15.4,
+    "cx": 848.4
+   },
+   "capcap": {
+    "x": 715.2,
+    "y": 633.3,
+    "w": 532.8,
+    "h": 15.4,
+    "cx": 981.6
+   },
+   "plate": {
+    "x": 715.2,
+    "y": 129,
+    "w": 266.4,
+    "h": 313.2,
+    "cx": 848.4
+   },
+   "frame": {
+    "x": 1013.5,
+    "y": 128.9,
+    "w": 234.5,
+    "h": 488.5,
+    "cx": 1130.8
+   },
+   "screen": {
+    "x": 1022.5,
+    "y": 137.9,
+    "w": 216.5,
+    "h": 470.5,
+    "cx": 1130.8
+   },
+   "h2": {
+    "x": 330,
+    "y": 255.3,
+    "w": 337.2,
+    "h": 53.7,
+    "cx": 498.6
+   },
+   "cta": {
+    "x": 330,
+    "y": 511.1,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": false,
+  "hasJsClass": false
+ },
+ {
+  "tag": "before/light-393x852@2-nojs",
+  "side": "before",
+  "engine": "chromium",
+  "w": 393,
+  "h": 852,
+  "dpr": 2,
+  "theme": "light",
+  "nojs": true,
+  "errors": [],
+  "focusRing": null,
+  "roomH": 1360.1,
+  "docW": 393,
+  "vw": 393,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report",
+    "expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada ·",
+    "Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "wrap",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "center"
+  },
+  "boxes": {
+   "status": {
+    "x": 50,
+    "y": 1169.3,
+    "w": 311,
+    "h": 30.8,
+    "cx": 205.5
+   },
+   "tag": {
+    "x": 71.5,
+    "y": 649.9,
+    "w": 250,
+    "h": 15.4,
+    "cx": 196.5
+   },
+   "capcap": {
+    "x": 32,
+    "y": 1114,
+    "w": 329,
+    "h": 15.4,
+    "cx": 196.5
+   },
+   "plate": {
+    "x": 71.5,
+    "y": 344,
+    "w": 250,
+    "h": 294,
+    "cx": 196.5
+   },
+   "frame": {
+    "x": 99.4,
+    "y": 697.2,
+    "w": 194.2,
+    "h": 400.9,
+    "cx": 196.5
+   },
+   "screen": {
+    "x": 108.4,
+    "y": 706.2,
+    "w": 176.2,
+    "h": 382.9,
+    "cx": 196.5
+   },
+   "h2": {
+    "x": 50,
+    "y": 129.8,
+    "w": 311,
+    "h": 46.9,
+    "cx": 205.5
+   },
+   "cta": {
+    "x": 50,
+    "y": 1220.1,
+    "w": 178.1,
+    "h": 44,
+    "cx": 139
+   }
+  },
+  "leaderDisplay": "none",
+  "isDark": false,
+  "hasJsClass": false
+ },
+ {
+  "tag": "after/light-393x852@2-nojs",
+  "side": "after",
+  "engine": "chromium",
+  "w": 393,
+  "h": 852,
+  "dpr": 2,
+  "theme": "light",
+  "nojs": true,
+  "errors": [],
+  "focusRing": null,
+  "roomH": 1360.1,
+  "docW": 393,
+  "vw": 393,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report",
+    "expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada ·",
+    "Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "pretty",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "center",
+   "captureCaption": "center"
+  },
+  "boxes": {
+   "status": {
+    "x": 50,
+    "y": 1169.3,
+    "w": 311,
+    "h": 30.8,
+    "cx": 205.5
+   },
+   "tag": {
+    "x": 71.5,
+    "y": 649.9,
+    "w": 250,
+    "h": 15.4,
+    "cx": 196.5
+   },
+   "capcap": {
+    "x": 32,
+    "y": 1114,
+    "w": 329,
+    "h": 15.4,
+    "cx": 196.5
+   },
+   "plate": {
+    "x": 71.5,
+    "y": 344,
+    "w": 250,
+    "h": 294,
+    "cx": 196.5
+   },
+   "frame": {
+    "x": 99.4,
+    "y": 697.2,
+    "w": 194.2,
+    "h": 400.8,
+    "cx": 196.5
+   },
+   "screen": {
+    "x": 108.4,
+    "y": 706.2,
+    "w": 176.2,
+    "h": 382.8,
+    "cx": 196.5
+   },
+   "h2": {
+    "x": 50,
+    "y": 129.8,
+    "w": 311,
+    "h": 46.9,
+    "cx": 205.5
+   },
+   "cta": {
+    "x": 50,
+    "y": 1220.1,
+    "w": 178.1,
+    "h": 44,
+    "cx": 139
+   }
+  },
+  "leaderDisplay": "none",
+  "isDark": false,
+  "hasJsClass": false
+ },
+ {
+  "tag": "before/light-1440x900-focus",
+  "side": "before",
+  "engine": "chromium",
+  "w": 1440,
+  "h": 900,
+  "theme": "light",
+  "focus": true,
+  "errors": [],
+  "focusRing": {
+   "href": "/work/flagstone/",
+   "focusVisible": true,
+   "outline": "2px solid rgb(185, 99, 64)",
+   "outlineOffset": "2px",
+   "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(35, 36, 32, 0.04) 0px 1px 2px 0px, rgba(35, 36, 32, 0.03) 0px 4px 12px 0px"
+  },
+  "roomH": 868.5,
+  "docW": 1440,
+  "vw": 1440,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report expanded on",
+    "the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada · Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "wrap",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 513.9,
+    "w": 362.2,
+    "h": 15.4,
+    "cx": 511.1
+   },
+   "tag": {
+    "x": 779.2,
+    "y": 510.6,
+    "w": 314.4,
+    "h": 15.4,
+    "cx": 936.4
+   },
+   "capcap": {
+    "x": 779.2,
+    "y": 725.1,
+    "w": 628.8,
+    "h": 15.4,
+    "cx": 1093.6
+   },
+   "plate": {
+    "x": 779.2,
+    "y": 129,
+    "w": 314.4,
+    "h": 369.6,
+    "cx": 936.4
+   },
+   "frame": {
+    "x": 1131.3,
+    "y": 129,
+    "w": 276.7,
+    "h": 580.1,
+    "cx": 1269.7
+   },
+   "screen": {
+    "x": 1140.3,
+    "y": 138,
+    "w": 258.7,
+    "h": 562.1,
+    "cx": 1269.7
+   },
+   "h2": {
+    "x": 330,
+    "y": 309,
+    "w": 401.2,
+    "h": 53.7,
+    "cx": 530.6
+   },
+   "cta": {
+    "x": 330,
+    "y": 549.3,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": false,
+  "hasJsClass": true
+ },
+ {
+  "tag": "after/light-1440x900-focus",
+  "side": "after",
+  "engine": "chromium",
+  "w": 1440,
+  "h": 900,
+  "theme": "light",
+  "focus": true,
+  "errors": [],
+  "focusRing": {
+   "href": "/work/flagstone/",
+   "focusVisible": true,
+   "outline": "2px solid rgb(185, 99, 64)",
+   "outlineOffset": "2px",
+   "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(35, 36, 32, 0.04) 0px 1px 2px 0px, rgba(35, 36, 32, 0.03) 0px 4px 12px 0px"
+  },
+  "roomH": 868.5,
+  "docW": 1440,
+  "vw": 1440,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report expanded on",
+    "the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada · Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "pretty",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 513.9,
+    "w": 362.2,
+    "h": 15.4,
+    "cx": 511.1
+   },
+   "tag": {
+    "x": 779.2,
+    "y": 510.6,
+    "w": 314.4,
+    "h": 15.4,
+    "cx": 936.4
+   },
+   "capcap": {
+    "x": 779.2,
+    "y": 725.1,
+    "w": 628.8,
+    "h": 15.4,
+    "cx": 1093.6
+   },
+   "plate": {
+    "x": 779.2,
+    "y": 129,
+    "w": 314.4,
+    "h": 369.6,
+    "cx": 936.4
+   },
+   "frame": {
+    "x": 1131.3,
+    "y": 129,
+    "w": 276.7,
+    "h": 580.1,
+    "cx": 1269.7
+   },
+   "screen": {
+    "x": 1140.3,
+    "y": 138,
+    "w": 258.7,
+    "h": 562.1,
+    "cx": 1269.7
+   },
+   "h2": {
+    "x": 330,
+    "y": 309,
+    "w": 401.2,
+    "h": 53.7,
+    "cx": 530.6
+   },
+   "cta": {
+    "x": 330,
+    "y": 549.3,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": false,
+  "hasJsClass": true
+ },
+ {
+  "tag": "before/dark-1440x900-focus",
+  "side": "before",
+  "engine": "chromium",
+  "w": 1440,
+  "h": 900,
+  "theme": "dark",
+  "focus": true,
+  "errors": [],
+  "focusRing": {
+   "href": "/work/flagstone/",
+   "focusVisible": true,
+   "outline": "2px solid rgb(207, 122, 79)",
+   "outlineOffset": "2px",
+   "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.32) 0px 1px 2px 0px, rgba(0, 0, 0, 0.28) 0px 4px 12px 0px"
+  },
+  "roomH": 868.5,
+  "docW": 1440,
+  "vw": 1440,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report expanded on",
+    "the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada · Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "wrap",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 513.9,
+    "w": 362.2,
+    "h": 15.4,
+    "cx": 511.1
+   },
+   "tag": {
+    "x": 779.2,
+    "y": 510.6,
+    "w": 314.4,
+    "h": 15.4,
+    "cx": 936.4
+   },
+   "capcap": {
+    "x": 779.2,
+    "y": 725.1,
+    "w": 628.8,
+    "h": 15.4,
+    "cx": 1093.6
+   },
+   "plate": {
+    "x": 779.2,
+    "y": 129,
+    "w": 314.4,
+    "h": 369.6,
+    "cx": 936.4
+   },
+   "frame": {
+    "x": 1131.3,
+    "y": 129,
+    "w": 276.7,
+    "h": 580.1,
+    "cx": 1269.7
+   },
+   "screen": {
+    "x": 1140.3,
+    "y": 138,
+    "w": 258.7,
+    "h": 562.1,
+    "cx": 1269.7
+   },
+   "h2": {
+    "x": 330,
+    "y": 309,
+    "w": 401.2,
+    "h": 53.7,
+    "cx": 530.6
+   },
+   "cta": {
+    "x": 330,
+    "y": 549.3,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": true,
+  "hasJsClass": true
+ },
+ {
+  "tag": "after/dark-1440x900-focus",
+  "side": "after",
+  "engine": "chromium",
+  "w": 1440,
+  "h": 900,
+  "theme": "dark",
+  "focus": true,
+  "errors": [],
+  "focusRing": {
+   "href": "/work/flagstone/",
+   "focusVisible": true,
+   "outline": "2px solid rgb(207, 122, 79)",
+   "outlineOffset": "2px",
+   "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.32) 0px 1px 2px 0px, rgba(0, 0, 0, 0.28) 0px 4px 12px 0px"
+  },
+  "roomH": 868.5,
+  "docW": 1440,
+  "vw": 1440,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report expanded on",
+    "the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada · Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "pretty",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 513.9,
+    "w": 362.2,
+    "h": 15.4,
+    "cx": 511.1
+   },
+   "tag": {
+    "x": 779.2,
+    "y": 510.6,
+    "w": 314.4,
+    "h": 15.4,
+    "cx": 936.4
+   },
+   "capcap": {
+    "x": 779.2,
+    "y": 725.1,
+    "w": 628.8,
+    "h": 15.4,
+    "cx": 1093.6
+   },
+   "plate": {
+    "x": 779.2,
+    "y": 129,
+    "w": 314.4,
+    "h": 369.6,
+    "cx": 936.4
+   },
+   "frame": {
+    "x": 1131.3,
+    "y": 129,
+    "w": 276.7,
+    "h": 580.1,
+    "cx": 1269.7
+   },
+   "screen": {
+    "x": 1140.3,
+    "y": 138,
+    "w": 258.7,
+    "h": 562.1,
+    "cx": 1269.7
+   },
+   "h2": {
+    "x": 330,
+    "y": 309,
+    "w": 401.2,
+    "h": 53.7,
+    "cx": 530.6
+   },
+   "cta": {
+    "x": 330,
+    "y": 549.3,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": true,
+  "hasJsClass": true
+ },
+ {
+  "tag": "before/webkit-light-1280x800",
+  "side": "before",
+  "engine": "webkit",
+  "w": 1280,
+  "h": 800,
+  "theme": "light",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 776.7,
+  "docW": 1280,
+  "vw": 1280,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report",
+    "expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada · Sept",
+    "2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "wrap",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 460.3,
+    "w": 337.2,
+    "h": 30.8,
+    "cx": 498.6
+   },
+   "tag": {
+    "x": 715.2,
+    "y": 454.2,
+    "w": 266.4,
+    "h": 15.4,
+    "cx": 848.4
+   },
+   "capcap": {
+    "x": 715.2,
+    "y": 633.3,
+    "w": 532.8,
+    "h": 15.4,
+    "cx": 981.6
+   },
+   "plate": {
+    "x": 715.2,
+    "y": 129,
+    "w": 266.4,
+    "h": 313.2,
+    "cx": 848.4
+   },
+   "frame": {
+    "x": 1013.8,
+    "y": 129.1,
+    "w": 234.4,
+    "h": 488.3,
+    "cx": 1131
+   },
+   "screen": {
+    "x": 1022.8,
+    "y": 138.1,
+    "w": 216.4,
+    "h": 470.3,
+    "cx": 1131
+   },
+   "h2": {
+    "x": 330,
+    "y": 255.3,
+    "w": 337.2,
+    "h": 53.7,
+    "cx": 498.6
+   },
+   "cta": {
+    "x": 330,
+    "y": 511.1,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": false,
+  "hasJsClass": true
+ },
+ {
+  "tag": "after/webkit-light-1280x800",
+  "side": "after",
+  "engine": "webkit",
+  "w": 1280,
+  "h": 800,
+  "theme": "light",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 776.7,
+  "docW": 1280,
+  "vw": 1280,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report",
+    "expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada",
+    "· Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "pretty",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "right"
+  },
+  "boxes": {
+   "status": {
+    "x": 330,
+    "y": 460.3,
+    "w": 337.2,
+    "h": 30.8,
+    "cx": 498.6
+   },
+   "tag": {
+    "x": 715.2,
+    "y": 454.2,
+    "w": 266.4,
+    "h": 15.4,
+    "cx": 848.4
+   },
+   "capcap": {
+    "x": 715.2,
+    "y": 633.3,
+    "w": 532.8,
+    "h": 15.4,
+    "cx": 981.6
+   },
+   "plate": {
+    "x": 715.2,
+    "y": 129,
+    "w": 266.4,
+    "h": 313.2,
+    "cx": 848.4
+   },
+   "frame": {
+    "x": 1013.8,
+    "y": 129.1,
+    "w": 234.4,
+    "h": 488.3,
+    "cx": 1131
+   },
+   "screen": {
+    "x": 1022.8,
+    "y": 138.1,
+    "w": 216.4,
+    "h": 470.3,
+    "cx": 1131
+   },
+   "h2": {
+    "x": 330,
+    "y": 255.3,
+    "w": 337.2,
+    "h": 53.7,
+    "cx": 498.6
+   },
+   "cta": {
+    "x": 330,
+    "y": 511.1,
+    "w": 178.1,
+    "h": 44,
+    "cx": 419
+   }
+  },
+  "leaderDisplay": "block",
+  "isDark": false,
+  "hasJsClass": true
+ },
+ {
+  "tag": "before/webkit-light-393x852@2",
+  "side": "before",
+  "engine": "webkit",
+  "w": 393,
+  "h": 852,
+  "dpr": 2,
+  "theme": "light",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 1360.1,
+  "docW": 393,
+  "vw": 393,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report",
+    "expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and Canada ·",
+    "Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "wrap",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "start",
+   "captureCaption": "center"
+  },
+  "boxes": {
+   "status": {
+    "x": 50,
+    "y": 1169.3,
+    "w": 311,
+    "h": 30.8,
+    "cx": 205.5
+   },
+   "tag": {
+    "x": 71.5,
+    "y": 649.9,
+    "w": 250,
+    "h": 15.4,
+    "cx": 196.5
+   },
+   "capcap": {
+    "x": 32,
+    "y": 1113.9,
+    "w": 329,
+    "h": 15.4,
+    "cx": 196.5
+   },
+   "plate": {
+    "x": 71.5,
+    "y": 343.9,
+    "w": 250,
+    "h": 294,
+    "cx": 196.5
+   },
+   "frame": {
+    "x": 99.5,
+    "y": 697.3,
+    "w": 194.1,
+    "h": 400.7,
+    "cx": 196.5
+   },
+   "screen": {
+    "x": 108.5,
+    "y": 706.3,
+    "w": 176.1,
+    "h": 382.7,
+    "cx": 196.5
+   },
+   "h2": {
+    "x": 50,
+    "y": 129.8,
+    "w": 311,
+    "h": 46.8,
+    "cx": 205.5
+   },
+   "cta": {
+    "x": 50,
+    "y": 1220.1,
+    "w": 178.1,
+    "h": 44,
+    "cx": 139
+   }
+  },
+  "leaderDisplay": "none",
+  "isDark": false,
+  "hasJsClass": true
+ },
+ {
+  "tag": "after/webkit-light-393x852@2",
+  "side": "after",
+  "engine": "webkit",
+  "w": 393,
+  "h": 852,
+  "dpr": 2,
+  "theme": "light",
+  "errors": [],
+  "focusRing": null,
+  "roomH": 1360.1,
+  "docW": 393,
+  "vw": 393,
+  "lines": {
+   "h2": [
+    "Flagstone"
+   ],
+   "claim": [
+    "SEVERITY 3 OF 5 · MODERATE · VERIFIED"
+   ],
+   "caption": [
+    "Steep grade: a real barrier report",
+    "expanded on the map."
+   ],
+   "provenance": [
+    "CURRENT EXPLORE SCREEN · FLAGSTONE"
+   ],
+   "status": [
+    "Status : On the App Store · US and",
+    "Canada · Sept 2026"
+   ],
+   "tag": [
+    "Detail of the same capture"
+   ],
+   "captureCaption": [
+    "Current product capture · Explore"
+   ]
+  },
+  "statusWrap": "pretty",
+  "statusClipped": false,
+  "textAlign": {
+   "tag": "center",
+   "captureCaption": "center"
+  },
+  "boxes": {
+   "status": {
+    "x": 50,
+    "y": 1169.3,
+    "w": 311,
+    "h": 30.8,
+    "cx": 205.5
+   },
+   "tag": {
+    "x": 71.5,
+    "y": 649.9,
+    "w": 250,
+    "h": 15.4,
+    "cx": 196.5
+   },
+   "capcap": {
+    "x": 32,
+    "y": 1113.9,
+    "w": 329,
+    "h": 15.4,
+    "cx": 196.5
+   },
+   "plate": {
+    "x": 71.5,
+    "y": 343.9,
+    "w": 250,
+    "h": 294,
+    "cx": 196.5
+   },
+   "frame": {
+    "x": 99.5,
+    "y": 697.3,
+    "w": 194.1,
+    "h": 400.7,
+    "cx": 196.5
+   },
+   "screen": {
+    "x": 108.5,
+    "y": 706.3,
+    "w": 176.1,
+    "h": 382.7,
+    "cx": 196.5
+   },
+   "h2": {
+    "x": 50,
+    "y": 129.8,
+    "w": 311,
+    "h": 46.8,
+    "cx": 205.5
+   },
+   "cta": {
+    "x": 50,
+    "y": 1220.1,
+    "w": 178.1,
+    "h": 44,
+    "cx": 139
+   }
+  },
+  "leaderDisplay": "none",
+  "isDark": false,
+  "hasJsClass": true
+ }
+]
