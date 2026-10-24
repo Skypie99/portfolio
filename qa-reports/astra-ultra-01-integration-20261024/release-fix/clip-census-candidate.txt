@@ -1,0 +1,2 @@
+candidate-fixed: elements checked 552, issues 0
+
