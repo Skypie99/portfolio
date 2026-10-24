@@ -1,0 +1,37 @@
+# node tools/row-bands.mjs <repo> public/showcase/flagstone/explore-current.phone.webp
+ink   y 430..456
+white y 457..485
+ink   y 486..519
+white y 520..536
+ink   y 537..559
+white y 560..581
+ink   y 582..608
+white y 609..638
+ink   y 639..996
+white y 997..1023
+ink   y 1024..1051
+white y 1052..1064
+ink   y 1065..1092
+white y 1093..1131
+ink   y 1132..1262
+white y 1263..1282
+ink y 1283..1310
+stripe x250..299 ................OOOOOOOOOOOOOOO...................
+
+# node tools/gap-rows.mjs <repo> public/showcase/flagstone/explore-current.phone.webp
+276:64 277:62 278:58 279:56 280:57 281:63 282:171 283:241 284:252 285:253 286:253 287:253 288:255 289:255 290:255 291:255 292:255 
+row 990 min 0 at x 360
+row 993 min 211 at x 444
+row 995 min 231 at x 433
+row 996 min 237 at x 433
+row 997 min 245 at x 433
+row 998 min 251 at x 433
+row 1000 min 252 at x 284
+row 1005 min 252 at x 284
+row 1010 min 252 at x 284
+row 1015 min 252 at x 284
+row 1020 min 252 at x 284
+row 1022 min 252 at x 284
+row 1023 min 252 at x 284
+row 1024 min 217 at x 640
+row 1026 min 24 at x 632
