@@ -1,0 +1,9 @@
+
+> portfolio@0.1.0 check:overflow
+> node scripts/overflow-census.mjs --widths 640,768,834,1024,1280,1440
+
+[overflow] 336 frames · 28 routes × 2 themes × 6 widths (640, 768, 834, 1024, 1280, 1440)
+[overflow] scrollWidth probe was VACUOUS on 276/336 frames (overflow-x:clip) — that reading is not evidence here
+[overflow] non-vacuity plant caught on 336/336 frames
+[overflow] ✅ no element crosses the viewport edge.
+exit 0

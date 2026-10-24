@@ -1,0 +1,83 @@
+{
+ "method": "room element frames; a pixel differs when |dR|+|dG|+|dB| > 48",
+ "normalVsMode": [
+  {
+   "theme": "light",
+   "size": "1440x900@1",
+   "mode": "rm",
+   "roomPixels": 1008040,
+   "differingPixels": 9218
+  },
+  {
+   "theme": "light",
+   "size": "1440x900@1",
+   "mode": "nojs",
+   "roomPixels": 1008040,
+   "differingPixels": 4625
+  },
+  {
+   "theme": "light",
+   "size": "393x852@2",
+   "mode": "rm",
+   "roomPixels": 2139492,
+   "differingPixels": 43717
+  },
+  {
+   "theme": "light",
+   "size": "393x852@2",
+   "mode": "nojs",
+   "roomPixels": 2139492,
+   "differingPixels": 20
+  },
+  {
+   "theme": "dark",
+   "size": "1440x900@1",
+   "mode": "rm",
+   "roomPixels": 1008040,
+   "differingPixels": 381881
+  },
+  {
+   "theme": "dark",
+   "size": "1440x900@1",
+   "mode": "nojs",
+   "roomPixels": 1008040,
+   "differingPixels": 747988
+  },
+  {
+   "theme": "dark",
+   "size": "393x852@2",
+   "mode": "rm",
+   "roomPixels": 2139492,
+   "differingPixels": 44544
+  },
+  {
+   "theme": "dark",
+   "size": "393x852@2",
+   "mode": "nojs",
+   "roomPixels": 2139492,
+   "differingPixels": 1581375
+  }
+ ],
+ "reducedMotion120vs1600": [
+  {
+   "theme": "light",
+   "size": "1440x900@1",
+   "differingPixels": 0
+  },
+  {
+   "theme": "light",
+   "size": "393x852@2",
+   "differingPixels": 0
+  },
+  {
+   "theme": "dark",
+   "size": "1440x900@1",
+   "differingPixels": 0
+  },
+  {
+   "theme": "dark",
+   "size": "393x852@2",
+   "differingPixels": 0
+  }
+ ]
+}

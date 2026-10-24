@@ -1,0 +1,662 @@
+[
+ {
+  "tag": "before",
+  "theme": "light",
+  "size": "1440x900@1",
+  "injectCss": null,
+  "keepShadow": false,
+  "axe": {
+   "page": {
+    "violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "nodes": 161
+     }
+    ]
+   },
+   "room": {
+    "violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "nodes": 10
+     }
+    ]
+   },
+   "version": "4.11.4"
+  },
+  "keyboard": {
+   "startedFrom": "evidence",
+   "inside": 1,
+   "hiddenFocusables": 0,
+   "stops": [
+    {
+     "inRoom": true,
+     "tag": "a",
+     "name": "View project→",
+     "href": "/work/flagstone/",
+     "outline": "solid 2px rgb(185, 99, 64)",
+     "focusVisible": true
+    }
+   ]
+  },
+  "aria": "- paragraph: \"Featured: the flagship\"\n- heading \"Flagstone\" [level=2]\n- paragraph: SEVERITY 3 OF 5 · MODERATE · VERIFIED\n- paragraph: \"Steep grade: a real barrier report expanded on the map.\"\n- paragraph: CURRENT EXPLORE SCREEN · FLAGSTONE\n- paragraph: Status On the App Store · US and Canada · Sept 2026\n- link \"View project\":\n  - /url: /work/flagstone/\n- img \"Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.\"\n- paragraph: Current product capture · Explore",
+  "contrast": [
+   {
+    "label": "eyebrow · Featured: the flagship",
+    "text": "Featured: the flagship",
+    "fontSize": 12,
+    "color": "rgb(135, 71, 45)",
+    "worst": 5.14,
+    "median": 5.45,
+    "threshold": 4.5,
+    "pass": true
+   },
+   {
+    "label": "plate · claim",
+    "text": "SEVERITY 3 OF 5 · MODERATE · VERIFIED",
+    "fontSize": 11,
+    "color": "rgb(135, 71, 45)",
+    "worst": 5.23,
+    "median": 5.52,
+    "threshold": 4.5,
+    "pass": true
+   },
+   {
+    "label": "plate · caption",
+    "text": "Steep grade: a real barrier report expanded on the map.",
+    "fontSize": 14,
+    "color": "rgb(32, 48, 44)",
+    "worst": 10.36,
+    "median": 10.78,
+    "threshold": 4.5,
+    "pass": true
+   },
+   {
+    "label": "plate · provenance",
+    "text": "CURRENT EXPLORE SCREEN · FLAGSTONE",
+    "fontSize": 11,
+    "color": "rgb(76, 92, 85)",
+    "worst": 5.32,
+    "median": 5.56,
+    "threshold": 4.5,
+    "pass": true
+   },
+   {
+    "label": "status line",
+    "text": "Status : On the App Store · US and Canada · Sept 2026",
+    "fontSize": 11,
+    "color": "rgb(76, 92, 85)",
+    "worst": 5.41,
+    "median": 5.67,
+    "threshold": 4.5,
+    "pass": true
+   },
+   {
+    "label": "detail tag · Detail of the same capture (new)",
+    "missing": true
+   },
+   {
+    "label": "capture caption · Current product capture · Explore",
+    "text": "Current product capture · Explore",
+    "fontSize": 11,
+    "color": "rgb(76, 92, 85)",
+    "worst": 5.53,
+    "median": 5.74,
+    "threshold": 4.5,
+    "pass": true
+   }
+  ]
+ },
+ {
+  "tag": "before",
+  "theme": "light",
+  "size": "768x1024@1",
+  "injectCss": null,
+  "keepShadow": false,
+  "axe": {
+   "page": {
+    "violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "nodes": 164
+     }
+    ]
+   },
+   "room": {
+    "violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "nodes": 10
+     }
+    ]
+   },
+   "version": "4.11.4"
+  },
+  "keyboard": {
+   "startedFrom": "evidence",
+   "inside": 1,
+   "hiddenFocusables": 0,
+   "stops": [
+    {
+     "inRoom": true,
+     "tag": "a",
+     "name": "View project→",
+     "href": "/work/flagstone/",
+     "outline": "solid 2px rgb(185, 99, 64)",
+     "focusVisible": true
+    }
+   ]
+  },
+  "aria": "- paragraph: \"Featured: the flagship\"\n- heading \"Flagstone\" [level=2]\n- paragraph: SEVERITY 3 OF 5 · MODERATE · VERIFIED\n- paragraph: \"Steep grade: a real barrier report expanded on the map.\"\n- paragraph: CURRENT EXPLORE SCREEN · FLAGSTONE\n- paragraph: Status On the App Store · US and Canada · Sept 2026\n- link \"View project\":\n  - /url: /work/flagstone/\n- img \"Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.\"\n- paragraph: Current product capture · Explore",
+  "contrast": [
+   {
+    "label": "eyebrow · Featured: the flagship",
+    "text": "Featured: the flagship",
+    "fontSize": 12,
+    "color": "rgb(135, 71, 45)",
+    "worst": 5.24,
+    "median": 5.47,
+    "threshold": 4.5,
+    "pass": true
+   },
+   {
+    "label": "plate · claim",
+    "text": "SEVERITY 3 OF 5 · MODERATE · VERIFIED",
+    "fontSize": 11,
+    "color": "rgb(135, 71, 45)",
+    "worst": 5.07,
+    "median": 5.37,
+    "threshold": 4.5,
+    "pass": true
+   },
+   {
+    "label": "plate · caption",
+    "text": "Steep grade: a real barrier report expanded on the map.",
+    "fontSize": 14,
+    "color": "rgb(32, 48, 44)",
+    "worst": 9.79,
+    "median": 10.45,
+    "threshold": 4.5,
+    "pass": true
+   },
+   {
+    "label": "plate · provenance",
+    "text": "CURRENT EXPLORE SCREEN · FLAGSTONE",
+    "fontSize": 11,
+    "color": "rgb(76, 92, 85)",
+    "worst": 5.05,
+    "median": 5.34,
+    "threshold": 4.5,
+    "pass": true
+   },
+   {
+    "label": "status line",
+    "text": "Status : On the App Store · US and Canada · Sept 2026",
+    "fontSize": 11,
+    "color": "rgb(76, 92, 85)",
+    "worst": 5.65,
+    "median": 5.84,
+    "threshold": 4.5,
+    "pass": true
+   },
+   {
+    "label": "detail tag · Detail of the same capture (new)",
+    "missing": true
+   },
+   {
+    "label": "capture caption · Current product capture · Explore",
+    "text": "Current product capture · Explore",
+    "fontSize": 11,
+    "color": "rgb(76, 92, 85)",
+    "worst": 5.68,
+    "median": 5.84,
+    "threshold": 4.5,
+    "pass": true
+   }
+  ]
+ },
+ {
+  "tag": "before",
+  "theme": "light",
+  "size": "393x852@2",
+  "injectCss": null,
+  "keepShadow": false,
+  "axe": {
+   "page": {
+    "violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "nodes": 158
+     }
+    ]
+   },
+   "room": {
+    "violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "nodes": 10
+     }
+    ]
+   },
+   "version": "4.11.4"
+  },
+  "keyboard": {
+   "startedFrom": "evidence",
+   "inside": 1,
+   "hiddenFocusables": 0,
+   "stops": [
+    {
+     "inRoom": true,
+     "tag": "a",
+     "name": "View project→",
+     "href": "/work/flagstone/",
+     "outline": "solid 2px rgb(185, 99, 64)",
+     "focusVisible": true
+    }
+   ]
+  },
+  "aria": "- paragraph: \"Featured: the flagship\"\n- heading \"Flagstone\" [level=2]\n- paragraph: SEVERITY 3 OF 5 · MODERATE · VERIFIED\n- paragraph: \"Steep grade: a real barrier report expanded on the map.\"\n- paragraph: CURRENT EXPLORE SCREEN · FLAGSTONE\n- paragraph: Status On the App Store · US and Canada · Sept 2026\n- link \"View project\":\n  - /url: /work/flagstone/\n- img \"Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.\"\n- paragraph: Current product capture · Explore",
+  "contrast": [
+   {
+    "label": "eyebrow · Featured: the flagship",
+    "text": "Featured: the flagship",
+    "fontSize": 12,
+    "color": "rgb(135, 71, 45)",
+    "worst": 5.2,
+    "median": 5.46,
+    "threshold": 4.5,
+    "pass": true
+   },
+   {
+    "label": "plate · claim",
+    "text": "SEVERITY 3 OF 5 · MODERATE · VERIFIED",
+    "fontSize": 11,
+    "color": "rgb(135, 71, 45)",
+    "worst": 5.02,
+    "median": 5.34,
+    "threshold": 4.5,
+    "pass": true
+   },
+   {
+    "label": "plate · caption",
+    "text": "Steep grade: a real barrier report expanded on the map.",
+    "fontSize": 14,
+    "color": "rgb(32, 48, 44)",
+    "worst": 9.79,
+    "median": 10.41,
+    "threshold": 4.5,
+    "pass": true
+   },
+   {
+    "label": "plate · provenance",
+    "text": "CURRENT EXPLORE SCREEN · FLAGSTONE",
+    "fontSize": 11,
+    "color": "rgb(76, 92, 85)",
+    "worst": 5.02,
+    "median": 5.32,
+    "threshold": 4.5,
+    "pass": true
+   },
+   {
+    "label": "status line",
+    "text": "Status : On the App Store · US and Canada · Sept 2026",
+    "fontSize": 11,
+    "color": "rgb(76, 92, 85)",
+    "worst": 5.5,
+    "median": 5.84,
+    "threshold": 4.5,
+    "pass": true
+   },
+   {
+    "label": "detail tag · Detail of the same capture (new)",
+    "missing": true
+   },
+   {
+    "label": "capture caption · Current product capture · Explore",
+    "text": "Current product capture · Explore",
+    "fontSize": 11,
+    "color": "rgb(76, 92, 85)",
+    "worst": 5.64,
+    "median": 5.84,
+    "threshold": 4.5,
+    "pass": true
+   }
+  ]
+ },
+ {
+  "tag": "before",
+  "theme": "dark",
+  "size": "1440x900@1",
+  "injectCss": null,
+  "keepShadow": false,
+  "axe": {
+   "page": {
+    "violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "nodes": 161
+     }
+    ]
+   },
+   "room": {
+    "violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "nodes": 10
+     }
+    ]
+   },
+   "version": "4.11.4"
+  },
+  "keyboard": {
+   "startedFrom": "evidence",
+   "inside": 1,
+   "hiddenFocusables": 0,
+   "stops": [
+    {
+     "inRoom": true,
+     "tag": "a",
+     "name": "View project→",
+     "href": "/work/flagstone/",
+     "outline": "solid 2px rgb(207, 122, 79)",
+     "focusVisible": true
+    }
+   ]
+  },
+  "aria": "- paragraph: \"Featured: the flagship\"\n- heading \"Flagstone\" [level=2]\n- paragraph: SEVERITY 3 OF 5 · MODERATE · VERIFIED\n- paragraph: \"Steep grade: a real barrier report expanded on the map.\"\n- paragraph: CURRENT EXPLORE SCREEN · FLAGSTONE\n- paragraph: Status On the App Store · US and Canada · Sept 2026\n- link \"View project\":\n  - /url: /work/flagstone/\n- img \"Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.\"\n- paragraph: Current product capture · Explore",
+  "contrast": [
+   {
+    "label": "eyebrow · Featured: the flagship",
+    "text": "Featured: the flagship",
+    "fontSize": 12,
+    "color": "rgb(231, 181, 147)",
+    "worst": 4.15,
+    "median": 5.02,
+    "threshold": 4.5,
+    "pass": false
+   },
+   {
+    "label": "plate · claim",
+    "text": "SEVERITY 3 OF 5 · MODERATE · VERIFIED",
+    "fontSize": 11,
+    "color": "rgb(231, 181, 147)",
+    "worst": 4.18,
+    "median": 4.99,
+    "threshold": 4.5,
+    "pass": false
+   },
+   {
+    "label": "plate · caption",
+    "text": "Steep grade: a real barrier report expanded on the map.",
+    "fontSize": 14,
+    "color": "rgb(236, 234, 224)",
+    "worst": 6.44,
+    "median": 7.66,
+    "threshold": 4.5,
+    "pass": true
+   },
+   {
+    "label": "plate · provenance",
+    "text": "CURRENT EXPLORE SCREEN · FLAGSTONE",
+    "fontSize": 11,
+    "color": "rgb(175, 191, 184)",
+    "worst": 4.07,
+    "median": 4.89,
+    "threshold": 4.5,
+    "pass": false
+   },
+   {
+    "label": "status line",
+    "text": "Status : On the App Store · US and Canada · Sept 2026",
+    "fontSize": 11,
+    "color": "rgb(175, 191, 184)",
+    "worst": 4.47,
+    "median": 5.35,
+    "threshold": 4.5,
+    "pass": false
+   },
+   {
+    "label": "detail tag · Detail of the same capture (new)",
+    "missing": true
+   },
+   {
+    "label": "capture caption · Current product capture · Explore",
+    "text": "Current product capture · Explore",
+    "fontSize": 11,
+    "color": "rgb(175, 191, 184)",
+    "worst": 6.74,
+    "median": 7.55,
+    "threshold": 4.5,
+    "pass": true
+   }
+  ]
+ },
+ {
+  "tag": "before",
+  "theme": "dark",
+  "size": "768x1024@1",
+  "injectCss": null,
+  "keepShadow": false,
+  "axe": {
+   "page": {
+    "violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "nodes": 163
+     }
+    ]
+   },
+   "room": {
+    "violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "nodes": 10
+     }
+    ]
+   },
+   "version": "4.11.4"
+  },
+  "keyboard": {
+   "startedFrom": "evidence",
+   "inside": 1,
+   "hiddenFocusables": 0,
+   "stops": [
+    {
+     "inRoom": true,
+     "tag": "a",
+     "name": "View project→",
+     "href": "/work/flagstone/",
+     "outline": "solid 2px rgb(207, 122, 79)",
+     "focusVisible": true
+    }
+   ]
+  },
+  "aria": "- paragraph: \"Featured: the flagship\"\n- heading \"Flagstone\" [level=2]\n- paragraph: SEVERITY 3 OF 5 · MODERATE · VERIFIED\n- paragraph: \"Steep grade: a real barrier report expanded on the map.\"\n- paragraph: CURRENT EXPLORE SCREEN · FLAGSTONE\n- paragraph: Status On the App Store · US and Canada · Sept 2026\n- link \"View project\":\n  - /url: /work/flagstone/\n- img \"Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.\"\n- paragraph: Current product capture · Explore",
+  "contrast": [
+   {
+    "label": "eyebrow · Featured: the flagship",
+    "text": "Featured: the flagship",
+    "fontSize": 12,
+    "color": "rgb(231, 181, 147)",
+    "worst": 4.34,
+    "median": 5.17,
+    "threshold": 4.5,
+    "pass": false
+   },
+   {
+    "label": "plate · claim",
+    "text": "SEVERITY 3 OF 5 · MODERATE · VERIFIED",
+    "fontSize": 11,
+    "color": "rgb(231, 181, 147)",
+    "worst": 4.26,
+    "median": 5.17,
+    "threshold": 4.5,
+    "pass": false
+   },
+   {
+    "label": "plate · caption",
+    "text": "Steep grade: a real barrier report expanded on the map.",
+    "fontSize": 14,
+    "color": "rgb(236, 234, 224)",
+    "worst": 6.49,
+    "median": 7.88,
+    "threshold": 4.5,
+    "pass": true
+   },
+   {
+    "label": "plate · provenance",
+    "text": "CURRENT EXPLORE SCREEN · FLAGSTONE",
+    "fontSize": 11,
+    "color": "rgb(175, 191, 184)",
+    "worst": 4.1,
+    "median": 4.96,
+    "threshold": 4.5,
+    "pass": false
+   },
+   {
+    "label": "status line",
+    "text": "Status : On the App Store · US and Canada · Sept 2026",
+    "fontSize": 11,
+    "color": "rgb(175, 191, 184)",
+    "worst": 4.72,
+    "median": 5.71,
+    "threshold": 4.5,
+    "pass": true
+   },
+   {
+    "label": "detail tag · Detail of the same capture (new)",
+    "missing": true
+   },
+   {
+    "label": "capture caption · Current product capture · Explore",
+    "text": "Current product capture · Explore",
+    "fontSize": 11,
+    "color": "rgb(175, 191, 184)",
+    "worst": 4.71,
+    "median": 5.82,
+    "threshold": 4.5,
+    "pass": true
+   }
+  ]
+ },
+ {
+  "tag": "before",
+  "theme": "dark",
+  "size": "393x852@2",
+  "injectCss": null,
+  "keepShadow": false,
+  "axe": {
+   "page": {
+    "violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "nodes": 158
+     }
+    ]
+   },
+   "room": {
+    "violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "nodes": 10
+     }
+    ]
+   },
+   "version": "4.11.4"
+  },
+  "keyboard": {
+   "startedFrom": "evidence",
+   "inside": 1,
+   "hiddenFocusables": 0,
+   "stops": [
+    {
+     "inRoom": true,
+     "tag": "a",
+     "name": "View project→",
+     "href": "/work/flagstone/",
+     "outline": "solid 2px rgb(207, 122, 79)",
+     "focusVisible": true
+    }
+   ]
+  },
+  "aria": "- paragraph: \"Featured: the flagship\"\n- heading \"Flagstone\" [level=2]\n- paragraph: SEVERITY 3 OF 5 · MODERATE · VERIFIED\n- paragraph: \"Steep grade: a real barrier report expanded on the map.\"\n- paragraph: CURRENT EXPLORE SCREEN · FLAGSTONE\n- paragraph: Status On the App Store · US and Canada · Sept 2026\n- link \"View project\":\n  - /url: /work/flagstone/\n- img \"Flagstone's Explore map with an expanded verified Steep grade report, a real barrier photograph, orange map pins, map controls, and bottom navigation.\"\n- paragraph: Current product capture · Explore",
+  "contrast": [
+   {
+    "label": "eyebrow · Featured: the flagship",
+    "text": "Featured: the flagship",
+    "fontSize": 12,
+    "color": "rgb(231, 181, 147)",
+    "worst": 4.15,
+    "median": 5.03,
+    "threshold": 4.5,
+    "pass": false
+   },
+   {
+    "label": "plate · claim",
+    "text": "SEVERITY 3 OF 5 · MODERATE · VERIFIED",
+    "fontSize": 11,
+    "color": "rgb(231, 181, 147)",
+    "worst": 4.18,
+    "median": 5.08,
+    "threshold": 4.5,
+    "pass": false
+   },
+   {
+    "label": "plate · caption",
+    "text": "Steep grade: a real barrier report expanded on the map.",
+    "fontSize": 14,
+    "color": "rgb(236, 234, 224)",
+    "worst": 6.37,
+    "median": 7.8,
+    "threshold": 4.5,
+    "pass": true
+   },
+   {
+    "label": "plate · provenance",
+    "text": "CURRENT EXPLORE SCREEN · FLAGSTONE",
+    "fontSize": 11,
+    "color": "rgb(175, 191, 184)",
+    "worst": 4.12,
+    "median": 4.95,
+    "threshold": 4.5,
+    "pass": false
+   },
+   {
+    "label": "status line",
+    "text": "Status : On the App Store · US and Canada · Sept 2026",
+    "fontSize": 11,
+    "color": "rgb(175, 191, 184)",
+    "worst": 4.67,
+    "median": 5.54,
+    "threshold": 4.5,
+    "pass": true
+   },
+   {
+    "label": "detail tag · Detail of the same capture (new)",
+    "missing": true
+   },
+   {
+    "label": "capture caption · Current product capture · Explore",
+    "text": "Current product capture · Explore",
+    "fontSize": 11,
+    "color": "rgb(175, 191, 184)",
+    "worst": 4.79,
+    "median": 5.64,
+    "threshold": 4.5,
+    "pass": true
+   }
+  ]
+ }
+]

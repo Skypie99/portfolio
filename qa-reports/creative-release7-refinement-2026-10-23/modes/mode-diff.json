@@ -1,0 +1,35 @@
+{
+ "method": "room element frames under prefers-reduced-motion at 120ms vs 1600ms; a pixel differs when |dR|+|dG|+|dB| > 48",
+ "reducedMotion120vs1600": [
+  {
+   "theme": "light",
+   "size": "1440x900@1",
+   "differingPixels": 0
+  },
+  {
+   "theme": "light",
+   "size": "768x1024@1",
+   "differingPixels": 0
+  },
+  {
+   "theme": "light",
+   "size": "393x852@2",
+   "differingPixels": 0
+  },
+  {
+   "theme": "dark",
+   "size": "1440x900@1",
+   "differingPixels": 0
+  },
+  {
+   "theme": "dark",
+   "size": "768x1024@1",
+   "differingPixels": 0
+  },
+  {
+   "theme": "dark",
+   "size": "393x852@2",
+   "differingPixels": 0
+  }
+ ]
+}
