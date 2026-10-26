@@ -117,7 +117,7 @@ export default function ContactPage() {
                     href={linkedin.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="link-draw text-ink hover:text-accent-text transition-colors duration-fast ease-out inline-flex items-center gap-1.5"
+                    className="profile-pointer text-ink [@media(hover:hover)]:hover:text-accent-text active:text-accent-text transition-colors duration-fast ease-out inline-flex items-center gap-1.5"
                   >
                     <span>View LinkedIn profile</span>
                     {/* UP-11: the ↗ takes its label's colour (C-78). This is the

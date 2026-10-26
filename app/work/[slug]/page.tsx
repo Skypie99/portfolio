@@ -654,10 +654,10 @@ export default async function WorkDetailPage({
             ? 'aspect-[5/8] sm:aspect-[4/5] md:aspect-[16/10]'
             : 'aspect-[4/3]'
           : stoneExhibit ? 'aspect-[5/8] sm:aspect-[4/5] lg:aspect-[3/4]' : 'aspect-[4/5]',
-        // Release 5 showcase hero: content-wide, in flow (never sticky), and
-        // kept second in the single-column band at lg. twMerge resolves the
-        // later position/order utilities over the shared ones above.
-        showcaseHero && 'lg:static lg:order-2',
+        // Keep the in-flow well as the absolute layers' containing block.
+        // A static well depended on the entrance transform for containment,
+        // so reduced motion let the capture escape over the title and action.
+        showcaseHero && 'lg:relative lg:top-auto lg:order-2',
       )}
     >
       {/* S15: the plinth glow pool — the project's signature hue pooling
@@ -1354,7 +1354,7 @@ export default async function WorkDetailPage({
               </h2>
             </Reveal>
 
-            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+            <ul className="related-work-grid grid grid-cols-1 gap-12 lg:gap-24">
               {others.map((o, i) => (
                 <Reveal key={o.id} index={i} as="li">
                   {/* UP-33: h-full fills the stretched 2-up row so both card feet line up — it activates the card's own mt-auto footer; tailwind-merge keeps min-h-[22rem]. */}
