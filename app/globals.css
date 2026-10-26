@@ -2958,7 +2958,8 @@ html.dark ::selection {
    transitions, which Safari pre-17 didn't animate). Reduced-motion
    block in this file snaps the transition to 0.01ms automatically.
    ------------------------------------------------------------------ */
-.link-draw {
+.link-draw,
+.profile-pointer {
   background-image: linear-gradient(
     to right,
     var(--color-link-hover),
@@ -2976,6 +2977,21 @@ html.dark ::selection {
 .link-draw:focus-visible {
   background-size: 100% 1px;
   color: var(--color-link-hover);
+}
+
+.profile-pointer:focus-visible,
+.profile-pointer:active {
+  background-size: 100% 1px;
+  color: var(--color-link-hover);
+}
+
+/* The profile pointer keeps its press and keyboard answers on every input.
+   Only a hover-capable pointer gets the persistent hover treatment. */
+@media (hover: hover) {
+  .profile-pointer:hover {
+    background-size: 100% 1px;
+    color: var(--color-link-hover);
+  }
 }
 
 /* ------------------------------------------------------------------
@@ -4192,6 +4208,12 @@ html.dark .runway-identity--page .runway-identity-chip {
 @media (min-width: 1024px) {
   .cert-grid {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, max(16rem, calc((100% - 8rem) / 3))), 1fr));
+  }
+
+  /* Related cards keep two columns at ordinary text sizes. At enlarged
+     text, a rem-based floor gives their titles and actions a readable lane. */
+  .related-work-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
   }
 }
 

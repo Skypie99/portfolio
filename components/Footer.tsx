@@ -187,7 +187,7 @@ export function Footer() {
                 href={linkedin.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="link-draw inline-flex min-h-11 items-center gap-1 self-start -mx-2 px-2 font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out md:min-h-0 md:mx-0 md:px-0"
+                className="profile-pointer inline-flex min-h-11 items-center gap-1 self-start -mx-2 px-2 font-sans text-body-sm text-ink [@media(hover:hover)]:hover:text-accent-text active:text-accent-text transition-colors duration-fast ease-out md:min-h-0 md:mx-0 md:px-0"
               >
                 <span>View LinkedIn profile</span>
                 {/* UP-11: no colour override — the ↗ takes its label's colour.
