@@ -142,7 +142,7 @@ export function CountUpStat({ value, emberClass, label }: CountUpStatProps) {
           // tactile (wow 2026-06-04, C4): the figure leans in a hair when its cell
           // is hovered — the count "completes under your hand". Compositor-only,
           // origin-left so it stays aligned; snaps to rest under reduced motion.
-          'origin-left transition-transform duration-base ease-gh-glide group-hover:scale-[1.03]',
+          'origin-left transition-transform duration-base ease-gh-glide [@media(hover:hover)]:group-hover:scale-[1.03]',
           emberClass,
         )}
       >

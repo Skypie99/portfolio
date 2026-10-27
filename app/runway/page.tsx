@@ -15,7 +15,7 @@ import { OG_CARD } from '@/lib/og';
  */
 const LINK_CLASS =
   'text-accent-text underline decoration-accent-text/40 underline-offset-[3px] decoration-1 ' +
-  'hover:decoration-accent-text focus-visible:decoration-accent-text ' +
+  '[@media(hover:hover)]:hover:decoration-accent-text focus-visible:decoration-accent-text ' +
   'transition-[text-decoration-color,color] duration-fast ease-out';
 
 /**

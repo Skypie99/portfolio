@@ -77,7 +77,7 @@ export function SidebarFeatured({ featured }: { featured: Deliverable | null }) 
           'rail-trim font-mono text-meta tracking-label uppercase text-accent-text mt-1 inline-flex items-center gap-1 transition-transform duration-fast ease-out',
           // §7.2: stilled when you're already here — withdraw the translate
           // invitation. Geometry/size unchanged; only the nudge is dropped.
-          !onRoute && 'group-hover:translate-x-1 group-focus-visible:translate-x-1',
+          !onRoute && '[@media(hover:hover)]:group-hover:translate-x-1 group-focus-visible:translate-x-1',
         )}
       >
         Open it

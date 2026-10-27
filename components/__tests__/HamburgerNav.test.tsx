@@ -17,8 +17,10 @@ import { cleanup, render, screen, waitFor, within } from '@testing-library/react
 import userEvent from '@testing-library/user-event';
 import { createElement, forwardRef, type ReactNode } from 'react';
 
+const nav = vi.hoisted(() => ({ path: '/' }));
+
 vi.mock('next/navigation', () => ({
-  usePathname: () => '/',
+  usePathname: () => nav.path,
 }));
 
 vi.mock('framer-motion', async () => {
@@ -359,5 +361,64 @@ describe('HamburgerNav — the press language', () => {
       expect(bareHovers(numeral)).toEqual([]);
       expect(numeral.className).not.toMatch(/group-active:!?-?translate/);
     }
+  });
+});
+
+describe('mobile menu current-page marker (P6)', () => {
+  async function openMenu() {
+    const user = userEvent.setup();
+    render(<HamburgerNav />);
+    await user.click(screen.getByRole('button', { name: /open navigation menu/i }));
+    return screen.findByRole('dialog', { name: /primary menu/i });
+  }
+
+  async function currentItems() {
+    const dialog = await openMenu();
+    return within(dialog)
+      .getAllByRole('link')
+      .filter((link) => link.getAttribute('aria-current') === 'page')
+      .map((link) => link.textContent?.replace(/\s+/g, ' ').trim());
+  }
+
+  const cases: Array<[string, RegExp]> = [
+    ['/', /Home/],
+    ['/certificates/', /Credentials/],
+    ['/blog/', /Notes/],
+    ['/blog/a-post/', /Notes/],
+    ['/accessibility/', /Accessibility/],
+    ['/colophon/', /Colophon/],
+  ];
+
+  for (const [path, label] of cases) {
+    it(`marks exactly one item on ${path}`, async () => {
+      nav.path = path;
+      const marked = await currentItems();
+      expect(marked).toHaveLength(1);
+      expect(marked[0]).toMatch(label);
+      cleanup();
+    });
+  }
+
+  it('never marks a homepage anchor as the current page', async () => {
+    nav.path = '/';
+    const marked = await currentItems();
+    expect(marked).toHaveLength(1);
+    expect(marked[0]).toMatch(/Home/);
+    expect(marked[0]).not.toMatch(/The Work|A Brief Account|Let/);
+    cleanup();
+  });
+
+  it('does not mark Contact (no Contact item) on /contact/', async () => {
+    nav.path = '/contact/';
+    const marked = await currentItems();
+    // The menu's closing CTA points at the homepage #contact anchor, so no
+    // route item may claim current here.
+    expect(marked).toEqual([]);
+    cleanup();
+  });
+
+  afterEach(() => {
+    nav.path = '/';
+    cleanup();
   });
 });

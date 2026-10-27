@@ -313,6 +313,17 @@ export const ProfileSchema = z.object({
   tagline: z.string().min(1).max(120),
   location: z.string().min(2).max(60),
   contactEmail: z.string().email(),
+  /** The hero nameplate portrait (P8). Optional so a profile without one keeps
+   *  the current hard-coded fallback; `lqip` is the existing inline-blur
+   *  placeholder pipeline (same shape as heroShot.lqip), painted under the
+   *  80px avatar so the circle is never an empty ring while the JPEG decodes. */
+  avatar: z
+    .object({
+      src: z.string().startsWith('/images/'),
+      alt: z.string().min(2).max(120),
+      lqip: z.string().startsWith('data:image/').optional(),
+    })
+    .optional(),
   socials: z
     .array(
       z.object({

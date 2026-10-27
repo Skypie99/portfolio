@@ -88,7 +88,8 @@ describe('Astra Ultra 01 integration (owner-approved scope)', () => {
     const source = read(path);
     const end = source.indexOf('Back to home');
     const link = source.slice(source.lastIndexOf('href="/"', end), end);
-    expect(link).toContain('hover:text-accent-text focus-visible:text-accent-text');
+    expect(link).toContain('hover:text-accent-text');
+    expect(link).toContain('focus-visible:text-accent-text');
     expect(link).toContain('group-hover:-translate-x-1 group-focus-visible:-translate-x-1');
   });
 
@@ -120,10 +121,10 @@ describe('Astra Ultra 01 integration (owner-approved scope)', () => {
   });
 
   it.each(['components/ProjectCard.tsx', 'components/CaseStudyCard.tsx'])(
-    '%s keeps the demo link interaction classes exactly as shipped',
+    '%s preserves demo link geometry and timing with gated hover and keyboard parity',
     (path) => {
-      // The label change is text only: hover colour, transition timing,
-      // focus ring and the one-sided touch extension are the shipped string.
+      // Round two gates hover and adds keyboard parity. The approved label,
+      // timing, focus ring and one-sided touch extension stay protected.
       const source = read(path);
       const start = source.indexOf('href={demoLink.href}');
       const anchor = source.slice(start, source.indexOf('</a>', start));
@@ -131,7 +132,7 @@ describe('Astra Ultra 01 integration (owner-approved scope)', () => {
         'relative', 'px-1', 'py-1', '-mx-1', '-my-1',
         'after:absolute', 'after:inset-x-0', 'after:top-0', 'after:-bottom-[21px]', "after:content-['']",
         'inline-flex', 'items-center', 'gap-1.5', 'rounded-sm', 'font-mono', 'text-meta', 'uppercase', 'tracking-label',
-        'text-text-meta', 'transition-colors', 'duration-fast', 'ease-out', 'hover:text-ink',
+        'text-text-meta', 'transition-colors', 'duration-fast', 'ease-out', '[@media(hover:hover)]:hover:text-ink', 'focus-visible:text-ink',
         'focus-visible:outline-2', 'focus-visible:outline-offset-2', 'focus-visible:outline-accent-primary',
       ]) {
         expect(anchor, `${path} lost ${cls}`).toMatch(new RegExp(`[" ]${cls.replace(/[[\]().*+?^$|\\-]/g, '\\$&')}[" ]`));

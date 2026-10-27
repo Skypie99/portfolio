@@ -32,6 +32,10 @@ type HeroProps = {
   imprint?: string;
   avatarSrc?: string;
   avatarAlt?: string;
+  /** P8 — the avatar's own inline blur (the same LQIP pipeline the product
+   *  media uses), painted under the 80px circle so the nameplate never opens
+   *  on an empty ring. Decorative, static, zero layout impact. */
+  avatarLqip?: string;
   /**
    * Proof slot (C4, THE ROOM Phase C) — the three curated receipts that
    * replaced the five-chip band. They belong to the HERO, inside its own
@@ -70,6 +74,7 @@ export function Hero({
   imprint,
   avatarSrc,
   avatarAlt,
+  avatarLqip,
   receipts,
 }: HeroProps) {
   return (
@@ -130,15 +135,29 @@ export function Hero({
             )}
           >
             {avatarSrc && (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={avatarSrc}
-                alt={avatarAlt ?? name}
-                width={80}
-                height={80}
-                loading="lazy"
-                className="h-20 w-20 shrink-0 rounded-full object-cover ring-1 ring-terracotta/25"
-              />
+              // P8: the LQIP rides the same 80px box as a background behind the
+              // photo. No fade, no animation: the blur is simply already there
+              // if the JPEG is late.
+              <span
+                aria-hidden="true"
+                data-avatar-lqip={avatarLqip ? '' : undefined}
+                className="block h-20 w-20 shrink-0 rounded-full bg-cover bg-center ring-1 ring-terracotta/25"
+                style={
+                  avatarLqip
+                    ? { backgroundImage: `url("${avatarLqip}")` }
+                    : undefined
+                }
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={avatarSrc}
+                  alt={avatarAlt ?? name}
+                  width={80}
+                  height={80}
+                  loading="lazy"
+                  className="h-20 w-20 rounded-full object-cover"
+                />
+              </span>
             )}
             <div className="flex flex-col gap-1">
               <p className="font-serif font-light text-step-2 leading-tight text-ink">

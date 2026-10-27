@@ -9,8 +9,9 @@ type ExhibitDetailProps = {
   detail: CaptureDetail;
   /** The capture's own sources (heroMedia), so the plate requests exactly the
    *  URLs the device frame beside it already requested: one download, two
-   *  views of it. */
-  sources: { src: string; avif?: string; webp?: string };
+   *  views of it. `lqip` (P8) is the same inline blur the frame paints, so the
+   *  plate is never an empty box while its crop decodes. */
+  sources: { src: string; avif?: string; webp?: string; lqip?: string };
   className?: string;
 };
 
@@ -65,6 +66,22 @@ export function ExhibitDetail({ detail, sources, className }: ExhibitDetailProps
               className={styles.crop}
             />
           </picture>
+          {/* P8 — the same inline blur the hero frame already paints, laid
+              under the crop. Decorative, no animation, no new box: the plate's
+              aspect is fixed above, so this cannot move anything. */}
+          {sources.lqip && (
+            <span
+              aria-hidden="true"
+              data-exhibit-lqip=""
+              className="pointer-events-none absolute inset-0 block"
+              style={{
+                backgroundImage: `url("${sources.lqip}")`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+              }}
+            />
+          )}
         </div>
         <span className={cn(styles.leader, 'absolute left-full top-1/2 h-px bg-terracotta')} />
         <span

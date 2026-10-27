@@ -32,7 +32,7 @@ export default function NotFound() {
           <nav aria-label="Breadcrumb" className="mb-12">
             <ol className="inline-flex items-center gap-2 font-mono text-meta tracking-label uppercase text-text-meta">
               <li>
-                <Link href="/" className="link-draw inline-block text-text-meta">
+                <Link href="/" className="link-draw inline-block text-text-meta [@media(pointer:coarse)]:inline-flex [@media(pointer:coarse)]:items-center [@media(pointer:coarse)]:min-h-11">
                   Home
                 </Link>
               </li>
@@ -60,7 +60,7 @@ export default function NotFound() {
                 href="/work/"
                 /* C-113: padded-tap idiom (≥24px box, negative margins cancel the
                    layout shift) so the secondary exit isn't a thin target at 375. */
-                className="link-draw inline-block px-1 py-1.5 -mx-1 -my-1.5 font-mono text-label tracking-label uppercase text-ink"
+                className="link-draw inline-block px-1 py-1.5 -mx-1 -my-1.5 font-mono text-label tracking-label uppercase text-ink [@media(pointer:coarse)]:min-h-11 [@media(pointer:coarse)]:inline-flex [@media(pointer:coarse)]:items-center"
               >
                 {/* C-110: bind the last word + arrow so the → never strands. */}
                 Or browse the <span className="whitespace-nowrap">work {'→'}</span>

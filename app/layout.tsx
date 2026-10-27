@@ -12,6 +12,7 @@ import { RevealAlive } from '@/components/RevealAlive';
 import { RouteFocus } from '@/components/RouteFocus';
 import { Sidebar } from '@/components/Sidebar';
 import { SkipLink } from '@/components/SkipLink';
+import { ThemeColorSync } from '@/components/ThemeColorSync';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { ViewTransitions } from '@/components/ViewTransitions';
 import { WorldBackdrop } from '@/components/WorldBackdrop';
@@ -221,6 +222,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="bg-canvas text-ink">
         <ThemeProvider>
+          {/* CC1 — browser toolbar follows the SITE's theme, not only the OS. */}
+          <ThemeColorSync />
           {/* Reveal failure floor (L7-01): clears the inline guard's watchdog
               once React hydrates — proof the bundle executed. Renders null. */}
           <RevealAlive />

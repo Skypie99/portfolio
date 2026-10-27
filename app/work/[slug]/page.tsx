@@ -463,7 +463,7 @@ function CaseStudySignOff() {
       </p>
       <Link
         href="/about/"
-        className="link-draw self-start font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+        className="link-draw self-start font-sans text-body-sm text-near-black [@media(hover:hover)]:hover:text-accent-text transition-colors duration-fast ease-out"
       >
         A Brief Account
         <span aria-hidden="true"> →</span>
@@ -753,7 +753,7 @@ export default async function WorkDetailPage({
               <li className="shrink-0">
                 <Link
                   href="/work/"
-                  className="link-draw inline-block text-text-meta"
+                  className="link-draw inline-block text-text-meta [@media(pointer:coarse)]:min-h-11 [@media(pointer:coarse)]:inline-flex [@media(pointer:coarse)]:items-center"
                 >
                   The Work
                 </Link>
@@ -1127,7 +1127,7 @@ export default async function WorkDetailPage({
                             <span>{l.label}</span>
                             <span
                               aria-hidden="true"
-                              className="inline-block transition-transform duration-base ease-gh-glide group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                              className="inline-block transition-transform duration-base ease-gh-glide [@media(hover:hover)]:group-hover:translate-x-0.5 [@media(hover:hover)]:group-hover:-translate-y-0.5"
                             >
                               {'↗'}
                             </span>
@@ -1204,7 +1204,7 @@ export default async function WorkDetailPage({
               </p>
               <Link
                 href="/about/"
-                className="link-draw self-start font-sans text-body-sm text-near-black hover:text-accent-text transition-colors duration-fast ease-out"
+                className="link-draw self-start font-sans text-body-sm text-near-black [@media(hover:hover)]:hover:text-accent-text transition-colors duration-fast ease-out"
               >
                 A Brief Account
                 <span aria-hidden="true"> →</span>

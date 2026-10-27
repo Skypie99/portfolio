@@ -6,9 +6,13 @@ import { cn } from '@/lib/cn';
 import { getProfile } from '@/lib/content';
 
 /* A mobile-only comfort target. Its negative inline margin keeps the visible
- * editorial grid unchanged while the actual first-tap area reaches 44px. */
+ * editorial grid unchanged while the actual first-tap area reaches 44px.
+ *
+ * P1: the md: reset now rides a FINE-pointer query instead of width alone. A
+ * 768/1024 touch device (iPad, touch laptop) keeps the 44px target; only a
+ * mouse at desktop width gets the tight editorial row back. */
 const FOOTER_NAV_LINK =
-  'link-draw inline-flex min-h-11 items-center -mx-2 px-2 font-sans text-body-sm text-ink hover:text-accent-text transition-colors duration-fast ease-out md:min-h-0 md:mx-0 md:px-0';
+  'quiet-link tactile-link inline-flex min-h-11 items-center -mx-2 px-2 font-sans text-body-sm text-ink [@media(hover:hover)]:hover:text-accent-text transition-colors duration-fast ease-out md:[@media(pointer:fine)]:min-h-0 md:[@media(pointer:fine)]:mx-0 md:[@media(pointer:fine)]:px-0';
 
 /** Proper brand casing for social platforms — profile.json's `platform` is
  *  a schema-locked lowercase enum, so the display label is mapped at render
@@ -73,7 +77,7 @@ export function Footer() {
           <div className="flex flex-col gap-3">
             <Link
               href="/"
-              className="link-draw inline-block font-serif font-normal text-step-3 text-ink leading-none self-start"
+              className="quiet-link tactile-link inline-block font-serif font-normal text-step-3 text-ink leading-none self-start"
             >
               {profile.name}
             </Link>
@@ -187,7 +191,7 @@ export function Footer() {
                 href={linkedin.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="profile-pointer inline-flex min-h-11 items-center gap-1 self-start -mx-2 px-2 font-sans text-body-sm text-ink [@media(hover:hover)]:hover:text-accent-text active:text-accent-text transition-colors duration-fast ease-out md:min-h-0 md:mx-0 md:px-0"
+                className="quiet-link tactile-link inline-flex min-h-11 items-center gap-1 self-start -mx-2 px-2 font-sans text-body-sm text-ink [@media(hover:hover)]:hover:text-accent-text active:text-accent-text transition-colors duration-fast ease-out md:[@media(pointer:fine)]:min-h-0 md:[@media(pointer:fine)]:mx-0 md:[@media(pointer:fine)]:px-0"
               >
                 <span>View LinkedIn profile</span>
                 {/* UP-11: no colour override — the ↗ takes its label's colour.
@@ -218,13 +222,13 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={cn(
-                      'link-draw inline-flex min-h-11 items-center gap-1 -mx-2 px-2 font-sans text-body-sm md:min-h-0 md:mx-0 md:px-0',
+                      'quiet-link tactile-link inline-flex min-h-11 items-center gap-1 -mx-2 px-2 font-sans text-body-sm md:[@media(pointer:fine)]:min-h-0 md:[@media(pointer:fine)]:mx-0 md:[@media(pointer:fine)]:px-0',
                       'transition-colors duration-fast ease-out',
                       // B6a (Phase B, resolves UP-11-SET): Sky ratified unifying
                       // the set, 2026-08-25 — GitHub's prior lone-accent-at-rest
                       // treatment is gone; all three ELSEWHERE links now share
                       // one rule, matching email/LinkedIn's existing pattern.
-                      'text-ink hover:text-accent-text',
+                      'text-ink [@media(hover:hover)]:hover:text-accent-text',
                     )}
                   >
                     <span>{PLATFORM_LABELS[s.platform] ?? s.platform}</span>

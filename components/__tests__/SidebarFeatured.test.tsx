@@ -115,7 +115,19 @@ describe('SidebarFeatured — the rider in globals.css', () => {
   });
 
   it('leaves the base .link-draw rule intact for the other 29 sites', () => {
-    expect(GLOBALS).toContain('.link-draw:hover,\n.link-draw:focus-visible {');
+    // P2 split the old combined rule: the hover half is now fine-pointer-only,
+    // the keyboard half stays ungated. Both must still draw the full line and
+    // the AA-safe ink — the rider above adds no colour of its own.
+    const hoverStart = GLOBALS.indexOf('.link-draw:hover {');
+    expect(hoverStart).toBeGreaterThan(-1);
+    const hoverBlock = GLOBALS.slice(hoverStart, GLOBALS.indexOf('}', hoverStart) + 1);
+    expect(hoverBlock).toContain('background-size: 100% 1px');
+    expect(hoverBlock).toContain('color: var(--color-link-hover)');
+    expect(GLOBALS).toContain(
+      '.link-draw:focus-visible {\n  background-size: 100% 1px;\n  color: var(--color-link-hover);\n}',
+    );
+    // ...and the hover half really is inside the capability gate.
+    expect(GLOBALS).toContain('@media (hover: hover) {\n  .link-draw:hover {');
   });
 });
 
