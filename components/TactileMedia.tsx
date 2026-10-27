@@ -71,7 +71,7 @@ export function TactileMedia({ src, alt, width, height, depth = 0.05, sources, p
       {...(eager ? HIGH_FETCH_PRIORITY : {})}
       style={position ? { objectPosition: position } : undefined}
       className={cn(
-        'absolute inset-0 h-full w-full object-cover transition-transform duration-slow ease-gh-glide group-hover:scale-[1.05]',
+        'absolute inset-0 h-full w-full object-cover transition-transform duration-slow ease-gh-glide [@media(hover:hover)]:group-hover:scale-[1.05] motion-safe:group-focus-within:scale-[1.05]',
         className,
       )}
     />

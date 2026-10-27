@@ -404,8 +404,9 @@ export default function HomePage() {
           name="Skyler Halisky"
           positioning="Senior technical-support specialist. I turn recurring user friction into documentation, QA, and the tools that fix it."
           imprint="SkyPi Studio is one person."
-          avatarSrc="/images/headshot.jpg"
-          avatarAlt="Skyler Halisky"
+          avatarSrc={profile.avatar?.src ?? '/images/headshot.jpg'}
+          avatarAlt={profile.avatar?.alt ?? 'Skyler Halisky'}
+          avatarLqip={profile.avatar?.lqip}
           /* Phase 03 (c2). The blinded 15-second test had the Support
              Operations hiring manager answer "software/AI builder" first:
              the protected positioning sentence is small caption type and
@@ -689,7 +690,7 @@ export default function HomePage() {
                     >
                       <ExhibitDetail
                         detail={flagshipDetail}
-                        sources={{ src: flagshipMedia.src, avif: flagshipMedia.avif, webp: flagshipMedia.webp }}
+                        sources={{ src: flagshipMedia.src, avif: flagshipMedia.avif, webp: flagshipMedia.webp, lqip: flagshipMedia.lqip }}
                         className={exhibitStyles.plateSlot}
                       />
                       {/* Stacked, the screen keeps the width it had before the
@@ -927,7 +928,7 @@ export default function HomePage() {
                        numeral (same /30 pattern) is untouched — its larger
                        text-card-numeral size already clears 3:1, confirmed
                        by 0 axe violations on /work and every case page. */
-                    className="w-8 lg:w-12 shrink-0 font-serif font-light text-step-1 leading-none tabular-nums text-ink/70 transition-colors duration-base ease-out group-hover:text-ink/85"
+                    className="w-8 lg:w-12 shrink-0 font-serif font-light text-step-1 leading-none tabular-nums text-ink/70 transition-colors duration-base ease-out [@media(hover:hover)]:group-hover:text-ink/85"
                   >
                     {numeral}
                   </span>

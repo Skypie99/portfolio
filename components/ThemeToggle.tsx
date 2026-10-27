@@ -10,9 +10,14 @@ import { cn } from '@/lib/cn';
  * an explicit, persisted choice. Hydration-safe: the icon/label render a
  * stable placeholder until mounted so SSR markup matches the client.
  *
- * A11y: real <button>, descriptive aria-label that names the destination
- * mode, keyboard-operable, and the global focus-visible ring applies. The
- * icon is aria-hidden (the label is the accessible name).
+ * A11y (CC2 / D2): a real <button role="switch"> with ONE stable accessible
+ * name ("Dark mode") and `aria-checked` reporting whether dark is active. The
+ * icon and the visible word report the CURRENT theme (moon + "Dark" while the
+ * room is dark; sun + "Light" while it is light) — the previous convention
+ * named the destination and read as a status label, so "Dark" could be
+ * mistaken for what was already on. The destination is carried by the switch
+ * semantics, not by the label. Keyboard-operable; the global focus-visible ring
+ * applies; the icon is aria-hidden.
  */
 
 // B3 candidate (Phase B, wave-1 banked question): drawn to match the house
@@ -160,22 +165,28 @@ export function ThemeToggle({ className, withLabel = false }: Props) {
   const button = (
     <button
       type="button"
+      role="switch"
+      aria-checked={isDark}
       onClick={flip}
       onPointerEnter={signalIntent}
       onFocus={signalIntent}
       onTouchStart={signalIntent}
-      aria-label={mounted ? `Switch to ${next} mode` : 'Toggle colour theme'}
-      title={mounted ? `Switch to ${next} mode` : undefined}
+      aria-label="Dark mode"
+      title={mounted ? (isDark ? 'Dark mode is on' : 'Dark mode is off') : undefined}
       className={cn(
         'inline-flex items-center justify-center h-11 w-11 rounded-pill shrink-0',
         'border border-line text-ink-meta',
         'transition-colors duration-base ease-out',
-        'hover:text-accent hover:border-line-strong',
+        '[@media(hover:hover)]:hover:text-accent [@media(hover:hover)]:hover:border-line-strong',
+        'focus-visible:text-accent focus-visible:border-accent-primary',
+        'active:!text-accent-primary active:!border-accent-primary active:bg-accent/10',
+        'active:duration-[calc(var(--dur-fast)/2)]',
+        'touch-manipulation [-webkit-tap-highlight-color:transparent]',
         !withLabel && className,
       )}
     >
-      <span aria-hidden="true" className="block">
-        {isDark ? <SunIcon /> : <MoonIcon />}
+      <span aria-hidden="true" data-theme-icon={isDark ? 'moon' : 'sun'} className="block">
+        {isDark ? <MoonIcon /> : <SunIcon />}
       </span>
     </button>
   );
@@ -185,10 +196,9 @@ export function ThemeToggle({ className, withLabel = false }: Props) {
   return (
     <div className={cn('inline-flex items-center gap-3', className)}>
       <span className="font-mono text-meta tracking-label uppercase text-ink-meta">
-        {/* IN-5: name the DESTINATION (the capitalized `next` mode), so the label
-            agrees with the icon and aria-label instead of reporting current state.
-            Existing strings only — no new copy. */}
-        {mounted ? (isDark ? 'Light' : 'Dark') : 'Theme'}
+        {/* CC2: report the CURRENT theme beside the switch (D2). The words are
+            the existing strings, re-pointed at state rather than destination. */}
+        {mounted ? (isDark ? 'Dark' : 'Light') : 'Theme'}
       </span>
       {button}
     </div>

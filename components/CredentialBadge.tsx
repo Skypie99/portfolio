@@ -43,13 +43,12 @@ export function CredentialBadge({
         // Enumerated, not transition-all: bg/border/text flip with the theme, and
         // hover adds the wash + soft shadow. Nothing else on this pill animates.
         'transition-[background-color,border-color,box-shadow,color] duration-base ease-out',
-        href && 'hover:bg-[var(--badge-bg-hover)] hover:text-[var(--badge-text-hover)] hover:shadow-soft',
+        href && 'credential-surface',
         // (R6) The old focus-visible classes here were dead code — this div is
         // never the focus target (the wrapper <a> below is) — and carried an
         // unprefixed `rounded-sm` that fought rounded-pill by stylesheet
         // emission order. The global *:focus-visible ring on the wrapper now
         // traces the pill.
-        'group',
         className,
       )}
     >
@@ -83,7 +82,7 @@ export function CredentialBadge({
             carries the "(opens in new tab)" cue, so this adds no SR double-speak. */}
         <span
           aria-hidden="true"
-          className="inline-block transition-transform duration-base ease-gh-glide group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+          className="credential-arrow inline-block transition-transform duration-base ease-gh-glide"
         >
           ↗
         </span>
@@ -99,7 +98,7 @@ export function CredentialBadge({
         rel="noopener noreferrer"
         // rounded-pill so the global focus ring traces the badge's pill shape
         // (the <a> is the focus target, not the pill div it wraps). (R6)
-        className="inline-block rounded-pill"
+        className="credential-link inline-block rounded-pill"
         aria-label={`${verifyLabel} credential: ${label} (opens in new tab)`}
       >
         {content}

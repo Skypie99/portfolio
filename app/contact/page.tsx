@@ -9,6 +9,7 @@ import { HorizonRule } from '@/components/HorizonRule';
 import { IdentityLines } from '@/components/IdentityLines';
 import { ParallaxWash } from '@/components/ParallaxWash';
 import { Reveal } from '@/components/Reveal';
+import { TOUCH_HEIGHT_COARSE } from '@/lib/touch';
 import { cn } from '@/lib/cn';
 import { getProfile } from '@/lib/content';
 import { canonicalFor } from '@/lib/metadata';
@@ -117,7 +118,7 @@ export default function ContactPage() {
                     href={linkedin.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="profile-pointer text-ink [@media(hover:hover)]:hover:text-accent-text active:text-accent-text transition-colors duration-fast ease-out inline-flex items-center gap-1.5"
+                    className={`profile-pointer text-ink [@media(hover:hover)]:hover:text-accent-text active:text-accent-text transition-colors duration-fast ease-out inline-flex items-center gap-1.5 ${TOUCH_HEIGHT_COARSE}`}
                   >
                     <span>View LinkedIn profile</span>
                     {/* UP-11: the ↗ takes its label's colour (C-78). This is the
@@ -154,11 +155,14 @@ export default function ContactPage() {
           inverted spacing namespace; §7.4 refactor will rename the plumbing). */}
       {profile.socials.length > 0 && (
         <section
+          id="elsewhere"
           className={cn(
             // L3-07: trailing pad mirrors the section's own top (16/20) instead
             // of the full 24/32 band — a two-link list doesn't earn a showcase
             // close, and the closer grammar below still carries the air.
-            'px-gutter pt-16 lg:pt-20 pb-16 lg:pb-20',
+            // scroll-mt clears the fixed header when the no-JS contact CTA
+            // links here (D5 fallback; no copy change).
+            'scroll-mt-24 px-gutter pt-16 lg:pt-20 pb-16 lg:pb-20',
             'world-surface border-t border-border-decorative',
           )}
         >
@@ -184,7 +188,7 @@ export default function ContactPage() {
                   <Reveal index={i} variant="depth">
                     {/* C-69: keyboard parity — the cell glides on a focused link
                         (group-has :focus-visible), not hover alone. */}
-                    <div className="transition-transform duration-base ease-gh-glide group-hover:translate-x-1 group-has-[:focus-visible]:translate-x-1">
+                    <div className="transition-transform duration-base ease-gh-glide [@media(hover:hover)]:group-hover:translate-x-1 group-has-[:focus-visible]:translate-x-1">
                       {/* C-74: map the schema-locked lowercase enum to its proper
                           label so AT hears "GitHub"/"LinkedIn", not "github"/
                           "linkedin" (CSS uppercase keeps the visual unchanged). */}
@@ -222,10 +226,10 @@ export default function ContactPage() {
         <div className="max-w-content mx-auto">
           <Link
             href="/"
-            className="group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-ink hover:text-accent-text focus-visible:text-accent-text transition-colors duration-fast ease-out"
+            className="tactile-link group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-ink focus-visible:text-accent-text [@media(hover:hover)]:hover:text-accent-text transition-colors duration-fast ease-out"
           >
             {/* C-69: keyboard visitors get the same arrow glide + ink shift as hover. */}
-            <span aria-hidden="true" className="inline-block transition-transform duration-base ease-gh-glide group-hover:-translate-x-1 group-focus-visible:-translate-x-1">{'←'}</span>
+            <span aria-hidden="true" className="tactile-arrow inline-block transition-transform duration-base ease-gh-glide [@media(hover:hover)]:group-hover:-translate-x-1 group-focus-visible:-translate-x-1">{'←'}</span>
             Back to home
           </Link>
         </div>

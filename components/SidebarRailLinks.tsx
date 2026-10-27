@@ -38,7 +38,7 @@ export function SidebarNotesLink() {
         className={cn(
           'transition-transform duration-fast ease-out inline-flex items-center gap-1',
           // §7.2: stilled on its own destination — the nudge is the invitation.
-          !onRoute && 'group-hover:translate-x-1 group-focus-visible:translate-x-1',
+          !onRoute && '[@media(hover:hover)]:group-hover:translate-x-1 group-focus-visible:translate-x-1',
         )}
       >
         Read the notes

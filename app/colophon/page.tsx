@@ -227,11 +227,11 @@ export default function ColophonPage() {
                back link carries no padded-tap idiom at all and measures 15.39px,
                and the commit that wrote this comment, 8b087f2, never touched that
                file.) */
-            className="group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-meta tracking-label uppercase text-text-meta hover:text-accent-text focus-visible:text-accent-text transition-colors duration-fast ease-out"
+            className="group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-meta tracking-label uppercase text-text-meta [@media(hover:hover)]:hover:text-accent-text focus-visible:text-accent-text transition-colors duration-fast ease-out"
           >
             <span
               aria-hidden="true"
-              className="inline-block transition-transform duration-base ease-gh-glide group-hover:-translate-x-1 group-focus-visible:-translate-x-1"
+              className="inline-block transition-transform duration-base ease-gh-glide [@media(hover:hover)]:group-hover:-translate-x-1 group-focus-visible:-translate-x-1"
             >
               {'←'}
             </span>
@@ -239,12 +239,12 @@ export default function ColophonPage() {
           </Link>
           <Link
             href="/accessibility/"
-            className="group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-ink hover:text-accent-text transition-colors duration-fast ease-out"
+            className="group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-ink [@media(hover:hover)]:hover:text-accent-text transition-colors duration-fast ease-out"
           >
             Read the accessibility statement
             <span
               aria-hidden="true"
-              className="inline-block transition-transform duration-base ease-gh-glide group-hover:translate-x-1"
+              className="inline-block transition-transform duration-base ease-gh-glide [@media(hover:hover)]:group-hover:translate-x-1"
             >
               {'→'}
             </span>

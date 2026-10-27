@@ -272,7 +272,7 @@ export default function AboutPage() {
                 className="link-draw group inline-flex items-center gap-2 self-start font-mono text-label tracking-label uppercase text-accent-text"
               >
                 Read how the work gets made
-                <span aria-hidden="true" className="transition-transform duration-fast ease-out group-hover:translate-x-0.5 group-focus-visible:translate-x-0.5">
+                <span aria-hidden="true" className="transition-transform duration-fast ease-out [@media(hover:hover)]:group-hover:translate-x-0.5 group-focus-visible:translate-x-0.5">
                   →
                 </span>
               </Link>
@@ -413,7 +413,7 @@ export default function AboutPage() {
                            "Read about <title>" name would omit most of the visible
                            text. Name from content instead (the arrow is aria-hidden)
                            — AT hears the full card. */
-                        className="group flex flex-col gap-2 text-ink hover:text-accent-text transition-[color,transform] duration-base ease-gh-glide hover:translate-x-0.5"
+                        className="group flex flex-col gap-2 text-ink [@media(hover:hover)]:hover:text-accent-text transition-[color,transform] duration-base ease-gh-glide [@media(hover:hover)]:hover:translate-x-0.5"
                       >
                         <p className="font-mono text-meta tracking-label uppercase text-text-meta">
                           {d.role} · {d.year}
@@ -429,7 +429,7 @@ export default function AboutPage() {
                             renders it: the account now shows where each thing
                             stands, not only that it exists. */}
                         <p className="font-mono text-meta text-text-meta">{d.status}</p>
-                        <span className="font-mono text-meta tracking-label uppercase text-accent-text mt-2 inline-flex items-center gap-1 transition-transform duration-fast ease-out group-hover:translate-x-1 group-focus-visible:translate-x-1">
+                        <span className="font-mono text-meta tracking-label uppercase text-accent-text mt-2 inline-flex items-center gap-1 transition-transform duration-fast ease-out [@media(hover:hover)]:group-hover:translate-x-1 group-focus-visible:translate-x-1">
                           {/* Cook Out P2 · Part B: "View project" is the locked
                               recruiter-facing internal-case-study vocabulary
                               (was "Continue"). */}
@@ -445,10 +445,10 @@ export default function AboutPage() {
               <div className="mt-16">
                 <Link
                   href="/work/"
-                  className="group inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-ink hover:text-accent-text transition-colors duration-fast ease-out"
+                  className="tactile-link group inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-ink [@media(hover:hover)]:hover:text-accent-text focus-visible:text-accent-text transition-colors duration-fast ease-out"
                 >
                   All the work
-                  <span aria-hidden="true" className="inline-block transition-transform duration-base ease-gh-glide group-hover:translate-x-1 group-focus-visible:translate-x-1">{'→'}</span>
+                  <span aria-hidden="true" className="tactile-arrow inline-block transition-transform duration-base ease-gh-glide [@media(hover:hover)]:group-hover:translate-x-1 group-focus-visible:translate-x-1">{'→'}</span>
                 </Link>
               </div>
             </div>
@@ -469,9 +469,9 @@ export default function AboutPage() {
 
           <Link
             href="/"
-            className="group mt-12 px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-ink hover:text-accent-text focus-visible:text-accent-text transition-colors duration-fast ease-out"
+            className="tactile-link group mt-12 px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-ink focus-visible:text-accent-text [@media(hover:hover)]:hover:text-accent-text transition-colors duration-fast ease-out"
           >
-            <span aria-hidden="true" className="inline-block transition-transform duration-base ease-gh-glide group-hover:-translate-x-1 group-focus-visible:-translate-x-1">{'←'}</span>
+            <span aria-hidden="true" className="tactile-arrow inline-block transition-transform duration-base ease-gh-glide [@media(hover:hover)]:group-hover:-translate-x-1 group-focus-visible:-translate-x-1">{'←'}</span>
             Back to home
           </Link>
         </Reveal>
