@@ -354,7 +354,7 @@ describe('CaseShowcase — page scoping and floors', () => {
   it('the showcase hero is gated on the spec: capture-true well, in flow, the shared hero otherwise', () => {
     expect(page).toContain('const showcaseHero = showcase?.hero;');
     expect(page).toContain("showcaseHero\n            ? 'aspect-[5/8] sm:aspect-[4/5] md:aspect-[16/10]'\n            : 'aspect-[4/3]'");
-    expect(page).toContain("showcaseHero && 'lg:static lg:order-2'");
+    expect(page).toContain("showcaseHero && 'lg:relative lg:top-auto lg:order-2'");
     expect(page).toContain('{showcaseHero ? (\n        <ShowcaseHeroMedia slug={d.id} hero={showcaseHero} />');
     expect(page).toContain('{showcaseHero && <ShowcaseHeroCaption hero={showcaseHero}');
     // Flagstone's own literals survive untouched (pinned by its tests too).

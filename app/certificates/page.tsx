@@ -127,9 +127,9 @@ export default function CertificatesPage() {
         <div className="max-w-content mx-auto">
           <Link
             href="/"
-            className="group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-ink hover:text-accent-text focus-visible:text-accent-text transition-colors duration-fast ease-out"
+            className="tactile-link group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-ink focus-visible:text-accent-text [@media(hover:hover)]:hover:text-accent-text transition-colors duration-fast ease-out"
           >
-            <span aria-hidden="true" className="inline-block transition-transform duration-base ease-gh-glide group-hover:-translate-x-1 group-focus-visible:-translate-x-1">{'←'}</span>
+            <span aria-hidden="true" className="tactile-arrow inline-block transition-transform duration-base ease-gh-glide [@media(hover:hover)]:group-hover:-translate-x-1 group-focus-visible:-translate-x-1">{'←'}</span>
             Back to home
           </Link>
         </div>

@@ -323,8 +323,18 @@ export function HamburgerNav() {
               </p>
               <ul className="flex flex-col gap-7 items-start">
                 {NAV_ITEMS.map((item, i) => {
-                  // Anchor links are all on the homepage; only Home gets aria-current="page"
-                  const isActive = item.href === '/' && pathname === '/';
+                  // P6: a real current-page marker for every route, not just
+                  // Home. Homepage anchors ('/#work', '/#about', '/#contact')
+                  // stay Home-only behaviour and never claim current — they
+                  // point at sections, and Home already owns the page marker.
+                  // Exactly one item can match: the routes are distinct.
+                  const currentPath = pathname ?? '';
+                  const isActive =
+                    item.href === '/'
+                      ? currentPath === '/'
+                      : item.href.startsWith('/#')
+                        ? false
+                        : currentPath === item.href || currentPath.startsWith(item.href);
                   return (
                     <motion.li
                       key={item.href}

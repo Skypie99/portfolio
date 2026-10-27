@@ -297,7 +297,7 @@ export default async function BlogPostPage({
           <nav aria-label="Breadcrumb" className="mb-24">
             <ol className="flex flex-wrap items-center gap-2 font-mono text-meta tracking-label uppercase text-text-meta">
               <li className="shrink-0">
-                <Link href="/blog/" className="link-draw inline-block text-text-meta">
+                <Link href="/blog/" className="link-draw inline-block text-text-meta [@media(pointer:coarse)]:inline-flex [@media(pointer:coarse)]:items-center [@media(pointer:coarse)]:min-h-11">
                   Notes
                 </Link>
               </li>
@@ -427,9 +427,9 @@ export default async function BlogPostPage({
           )}
           <Link
             href="/blog/"
-            className="group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-ink hover:text-accent-text transition-colors duration-fast ease-out"
+            className="tactile-link group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-ink focus-visible:text-accent-text [@media(hover:hover)]:hover:text-accent-text transition-colors duration-fast ease-out"
           >
-            <span aria-hidden="true" className="inline-block transition-transform duration-base ease-gh-glide group-hover:-translate-x-1">{'←'}</span>
+            <span aria-hidden="true" className="tactile-arrow inline-block transition-transform duration-base ease-gh-glide [@media(hover:hover)]:group-hover:-translate-x-1 group-focus-visible:-translate-x-1">{'←'}</span>
             All posts
           </Link>
         </div>

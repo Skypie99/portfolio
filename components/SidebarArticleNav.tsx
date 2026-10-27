@@ -96,7 +96,7 @@ export function SidebarArticleNav() {
                   'group relative inline-flex items-start pl-3',
                   'font-mono text-meta tracking-label uppercase',
                   'transition-colors duration-fast ease-out',
-                  isActive ? 'text-ink' : 'text-text-meta hover:text-ink',
+                  isActive ? 'text-ink' : 'text-text-meta [@media(hover:hover)]:hover:text-ink',
                 )}
               >
                 {/* Quiet active marker — 2px terracotta bar; aria-current carries
@@ -109,7 +109,7 @@ export function SidebarArticleNav() {
                     isActive ? 'scale-y-100' : 'scale-y-0',
                   )}
                 />
-                <span className="transition-transform duration-fast ease-out group-hover:translate-x-0.5 group-focus-visible:translate-x-0.5">
+                <span className="transition-transform duration-fast ease-out [@media(hover:hover)]:group-hover:translate-x-0.5 group-focus-visible:translate-x-0.5">
                   {h.label}
                 </span>
               </a>

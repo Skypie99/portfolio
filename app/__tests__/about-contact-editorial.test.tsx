@@ -18,14 +18,15 @@ const norm = (s: string | null | undefined) => (s ?? '').replace(/\s+/g, ' ').tr
 
 /**
  * The ContactEmail link, whichever state it is in. Server markup carries the
- * `/contact/` fallback href; testing-library's render runs the component's
- * effect at once, so by the time we query it the runtime mailto is assembled.
- * Either way it is the one link whose href is the fallback or a mailto.
+ * `/contact/#elsewhere` fallback href (the existing no-JS socials list);
+ * testing-library's render runs the component's effect at once, so by the time
+ * we query it the runtime mailto is assembled. Either way it is the one link
+ * whose href is the fallback or a mailto.
  */
 const contactEmailLink = (root: HTMLElement) =>
   Array.from(root.querySelectorAll<HTMLAnchorElement>('a')).find((a) => {
     const href = a.getAttribute('href') ?? '';
-    return href === '/contact/' || href.startsWith('mailto:');
+    return href === '/contact/#elsewhere' || href.startsWith('mailto:');
   });
 // Next's <Link> normalises the trailing slash outside a configured build;
 // the static-integrity suite checks the real out/ hrefs.

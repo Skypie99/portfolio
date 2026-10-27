@@ -81,7 +81,48 @@ afterEach(() => {
   delete mutableDoc.startViewTransition;
 });
 
-const clickToggle = () => fireEvent.click(screen.getByRole('button'));
+const clickToggle = () => fireEvent.click(screen.getByRole('switch'));
+
+describe('the current-state switch (CC2)', () => {
+  it('is a switch whose stable name is "Dark mode" in both states', () => {
+    render(<ThemeToggle />);
+    const light = screen.getByRole('switch', { name: 'Dark mode' });
+    expect(light).toHaveAttribute('aria-checked', 'false');
+
+    cleanup();
+    resolvedTheme = 'dark';
+    render(<ThemeToggle />);
+    const dark = screen.getByRole('switch', { name: 'Dark mode' });
+    expect(dark).toHaveAttribute('aria-checked', 'true');
+  });
+
+  it('shows the CURRENT theme on the glyph and the visible word', () => {
+    render(<ThemeToggle withLabel />);
+    expect(screen.getByRole('switch', { name: 'Dark mode' })).toHaveAttribute(
+      'aria-checked',
+      'false',
+    );
+    expect(document.querySelector('[data-theme-icon]')).toHaveAttribute('data-theme-icon', 'sun');
+    expect(screen.getByText('Light')).toBeInTheDocument();
+
+    cleanup();
+    resolvedTheme = 'dark';
+    render(<ThemeToggle withLabel />);
+    expect(screen.getByRole('switch', { name: 'Dark mode' })).toHaveAttribute(
+      'aria-checked',
+      'true',
+    );
+    expect(document.querySelector('[data-theme-icon]')).toHaveAttribute('data-theme-icon', 'moon');
+    expect(screen.getByText('Dark')).toBeInTheDocument();
+  });
+
+  it('still names the DESTINATION only in the turn marker, never in the name', () => {
+    render(<ThemeToggle />);
+    clickToggle();
+    expect(seenInsideCallback).toBe('dark');
+    expect(screen.getByRole('switch')).toHaveAccessibleName('Dark mode');
+  });
+});
 
 describe('the dusk-turn (G1)', () => {
   it('marks the destination room INSIDE the transition callback', () => {

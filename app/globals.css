@@ -2958,7 +2958,9 @@ html.dark ::selection {
    transitions, which Safari pre-17 didn't animate). Reduced-motion
    block in this file snaps the transition to 0.01ms automatically.
    ------------------------------------------------------------------ */
-.link-draw {
+.link-draw,
+.profile-pointer,
+.quiet-link {
   background-image: linear-gradient(
     to right,
     var(--color-link-hover),
@@ -2968,14 +2970,119 @@ html.dark ::selection {
   background-repeat: no-repeat;
   background-size: 0% 1px;
   padding-bottom: 2px;
+  /* P3: background-color is part of the transition on purpose. The footer's
+     quiet links press to the 10% warm tint; without this property the tint
+     snapped on and off while the underline and ink eased. `--dur-base` here is
+     the RELEASE duration; the press rung below halves it on the way in. */
   transition:
     background-size var(--dur-base) var(--ease-out),
+    background-color var(--dur-base) var(--ease-out),
     color var(--dur-fast) var(--ease-out);
 }
-.link-draw:hover,
+/* P2: the underline is a fine-pointer invitation. Ungated, a tap left it drawn
+   until the next tap elsewhere. Focus-visible keeps its own rule below. */
+@media (hover: hover) {
+  .link-draw:hover {
+    background-size: 100% 1px;
+    color: var(--color-link-hover);
+  }
+}
 .link-draw:focus-visible {
   background-size: 100% 1px;
   color: var(--color-link-hover);
+}
+
+.profile-pointer:focus-visible,
+.profile-pointer:active,
+.quiet-link:focus-visible,
+.quiet-link:active {
+  background-size: 100% 1px;
+  color: var(--color-link-hover);
+}
+
+/* Quiet links echo the primary controls' warm press without moving their
+   hit area. Opt-in only: editorial copy and cinematic controls stay as-is. */
+.tactile-link,
+.credential-link {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+/* P3 — the pressed ink must WIN. In the compiled sheet Tailwind's hover
+   utilities are emitted after this file's custom rules, so a same-specificity
+   `:active` lost to the `hover:text-accent-text` utility it is meant to
+   override (measured: footer LinkedIn stayed rgb(135 71 45) through the whole
+   press instead of deepening to rgb(120 62 38)). The doubled class is the
+   estate's documented LVHA tie-break (see the glass-card press rungs): 0,3,0
+   outranks the 0,2,0 hover utility without an !important, and still loses to
+   nothing the press is supposed to beat. */
+.tactile-link.tactile-link:active {
+  color: var(--color-link-hover);
+  background-color: rgb(var(--rgb-accent) / 0.1);
+  transition-duration: calc(var(--dur-fast) / 2);
+}
+.tactile-link.tactile-link:active > .tactile-arrow {
+  transform: none;
+  transition-duration: calc(var(--dur-fast) / 2);
+}
+
+/* The wrapper is the keyboard target. The same surface answers hover and
+   focus; press uses the established warm tint and border without resizing. */
+.credential-link {
+  position: relative;
+}
+.credential-link::after {
+  content: '';
+  position: absolute;
+  inset: -6px 0;
+}
+.credential-link:focus-visible .credential-surface {
+  background-color: var(--badge-bg-hover);
+  color: var(--badge-text-hover);
+  box-shadow: var(--shadow-soft);
+}
+
+@media (hover: hover) {
+  .credential-link:hover .credential-surface {
+    background-color: var(--badge-bg-hover);
+    color: var(--badge-text-hover);
+    box-shadow: var(--shadow-soft);
+  }
+}
+.credential-link:active .credential-surface {
+  background-color: rgb(var(--rgb-accent) / 0.1);
+  border-color: var(--color-accent-primary);
+  color: var(--color-link-hover);
+  transition-duration: calc(var(--dur-fast) / 2);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .credential-link:focus-visible .credential-arrow {
+    transform: translate(0.125rem, -0.125rem);
+  }
+  @media (hover: hover) {
+    .credential-link:hover .credential-arrow {
+      transform: translate(0.125rem, -0.125rem);
+    }
+  }
+  .credential-link:active .credential-arrow {
+    transform: none;
+    transition-duration: calc(var(--dur-fast) / 2);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tactile-link,
+  .tactile-arrow {
+    transform: none !important;
+  }
+}
+
+/* The profile pointer keeps its press and keyboard answers on every input.
+   Only a hover-capable pointer gets the persistent hover treatment. */
+@media (hover: hover) {
+  .profile-pointer:hover,
+  .quiet-link:hover {
+    background-size: 100% 1px;
+    color: var(--color-link-hover);
+  }
 }
 
 /* ------------------------------------------------------------------
@@ -3011,7 +3118,13 @@ html.dark ::selection {
    new token, no new geometry, and the reduced-motion clamp at the bottom of
    this file snaps it exactly as it snaps the pointer path.
    ------------------------------------------------------------------ */
-.group:hover > .link-draw-group,
+/* P2: the block-level underline belongs to hover-capable pointers only; the
+   keyboard half stays ungated. */
+@media (hover: hover) {
+  .group:hover > .link-draw-group {
+    background-size: 100% 1px;
+  }
+}
 .group:focus-visible > .link-draw-group {
   background-size: 100% 1px;
 }
@@ -3078,7 +3191,11 @@ html.dark ::selection {
     background-size var(--dur-fast) var(--ease-out),
     color var(--dur-fast) var(--ease-out);
 }
-.method-pair:hover .method-draw,
+@media (hover: hover) {
+  .method-pair:hover .method-draw {
+    background-size: 100% 1px;
+  }
+}
 .method-pair:focus-within .method-draw {
   background-size: 100% 1px;
 }
@@ -4192,6 +4309,12 @@ html.dark .runway-identity--page .runway-identity-chip {
 @media (min-width: 1024px) {
   .cert-grid {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, max(16rem, calc((100% - 8rem) / 3))), 1fr));
+  }
+
+  /* Related cards keep two columns at ordinary text sizes. At enlarged
+     text, a rem-based floor gives their titles and actions a readable lane. */
+  .related-work-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
   }
 }
 

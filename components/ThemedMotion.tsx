@@ -283,7 +283,13 @@ export function ThemedMotion({
           className={cn(
             'absolute bottom-3 right-3 z-10 inline-flex h-11 w-11 items-center justify-center rounded-pill',
             'border border-line bg-[rgb(var(--rgb-surface)/0.72)] text-ink-meta backdrop-blur-md',
-            'transition-colors duration-base ease-out hover:text-accent hover:border-line-strong',
+            'transition-[color,background-color,border-color,box-shadow] duration-base ease-out',
+            '[@media(hover:hover)]:hover:text-accent [@media(hover:hover)]:hover:border-line-strong',
+            // P4: same frosted press as the theme toggle and the skip control —
+            // inset tint over the translucent surface, half-fast in.
+            'active:!text-accent-primary active:!border-accent-primary',
+            'active:shadow-[inset_0_0_0_1.5rem_rgb(var(--rgb-accent)/0.1)]',
+            'active:duration-[calc(var(--dur-fast)/2)]',
           )}
         >
           <PlayPauseIcon playing={playing} />

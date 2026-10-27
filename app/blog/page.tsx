@@ -9,6 +9,7 @@ import { TagPill } from '@/components/TagPill';
 import { RunwayIdentity } from '@/components/RunwayIdentity';
 import { RunwayIdentityRelease } from '@/components/RunwayIdentityRelease';
 import { cn } from '@/lib/cn';
+import { TOUCH_TARGET_COARSE } from '@/lib/touch';
 import { getBlogPosts, getProfile } from '@/lib/content';
 import { bindSeparatorDash, bindSoloLetters } from '@/lib/markdown';
 import { canonicalFor } from '@/lib/metadata';
@@ -96,14 +97,14 @@ export default function BlogIndexPage() {
             <span>Subscribe</span>
             <a
               href="/feed.xml"
-              className="link-draw text-ink hover:text-accent-text transition-colors duration-fast ease-out"
+              className={`link-draw text-ink [@media(hover:hover)]:hover:text-accent-text transition-colors duration-fast ease-out ${TOUCH_TARGET_COARSE}`}
             >
               RSS
             </a>
             <span aria-hidden="true" className="text-stone-strong">·</span>
             <a
               href="/feed.json"
-              className="link-draw text-ink hover:text-accent-text transition-colors duration-fast ease-out"
+              className={`link-draw text-ink [@media(hover:hover)]:hover:text-accent-text transition-colors duration-fast ease-out ${TOUCH_TARGET_COARSE}`}
             >
               JSON
             </a>
@@ -154,7 +155,7 @@ export default function BlogIndexPage() {
                       aria-hidden="true"
                       className={cn(
                         'font-mono text-label tracking-label tabular-nums shrink-0 mt-1',
-                        'text-text-meta group-hover:text-accent-text group-focus-visible:text-accent-text',
+                        'text-text-meta [@media(hover:hover)]:group-hover:text-accent-text group-focus-visible:text-accent-text',
                         'transition-colors duration-fast ease-out',
                       )}
                     >
@@ -185,7 +186,7 @@ export default function BlogIndexPage() {
                       <h3
                         className={cn(
                           'font-serif font-normal md:font-light text-blog-card-title text-balance',
-                          'text-ink group-hover:text-accent-text group-focus-visible:text-accent-text',
+                          'text-ink [@media(hover:hover)]:group-hover:text-accent-text group-focus-visible:text-accent-text',
                           'transition-colors duration-fast ease-out',
                         )}
                       >
@@ -211,7 +212,7 @@ export default function BlogIndexPage() {
                             'font-mono text-meta tracking-label uppercase text-accent-text',
                             'inline-flex items-center gap-1',
                             'transition-transform duration-fast ease-out',
-                            'group-hover:translate-x-1 group-focus-visible:translate-x-1',
+                            '[@media(hover:hover)]:group-hover:translate-x-1 group-focus-visible:translate-x-1',
                           )}
                         >
                           Read more
@@ -237,17 +238,17 @@ export default function BlogIndexPage() {
         <div className="max-w-content mx-auto flex flex-wrap items-center justify-between gap-x-8 gap-y-4">
           <Link
             href="/"
-            className="group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-ink hover:text-accent-text focus-visible:text-accent-text transition-colors duration-fast ease-out"
+            className="tactile-link group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-ink focus-visible:text-accent-text [@media(hover:hover)]:hover:text-accent-text transition-colors duration-fast ease-out"
           >
-            <span aria-hidden="true" className="inline-block transition-transform duration-base ease-gh-glide group-hover:-translate-x-1 group-focus-visible:-translate-x-1">{'←'}</span>
+            <span aria-hidden="true" className="tactile-arrow inline-block transition-transform duration-base ease-gh-glide [@media(hover:hover)]:group-hover:-translate-x-1 group-focus-visible:-translate-x-1">{'←'}</span>
             Back to home
           </Link>
           <Link
             href="/work/"
-            className="group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-ink hover:text-accent-text transition-colors duration-fast ease-out"
+            className="tactile-link group px-1 py-1.5 -mx-1 -my-1.5 inline-flex items-center gap-2 font-mono text-label tracking-label uppercase text-ink focus-visible:text-accent-text [@media(hover:hover)]:hover:text-accent-text transition-colors duration-fast ease-out"
           >
             Browse the work
-            <span aria-hidden="true" className="inline-block transition-transform duration-base ease-gh-glide group-hover:translate-x-1">{'→'}</span>
+            <span aria-hidden="true" className="tactile-arrow inline-block transition-transform duration-base ease-gh-glide [@media(hover:hover)]:group-hover:translate-x-1 group-focus-visible:translate-x-1">{'→'}</span>
           </Link>
         </div>
       </section>
