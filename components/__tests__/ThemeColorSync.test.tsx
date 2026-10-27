@@ -43,6 +43,20 @@ describe('theme-color sync (CC1)', () => {
     expect(metas()[0].content).toBe(THEME_COLORS.light);
   });
 
+  it('de-names superseded tags instead of detaching React-owned metadata', () => {
+    const pair = Array.from(document.head.querySelectorAll('meta[name="theme-color"]'));
+    expect(pair).toHaveLength(2);
+    render(<ThemeColorSync />);
+    // Exactly one readable tag remains, but BOTH stay attached: the static
+    // pair is React-owned metadata (the `viewport` export) and React deletes
+    // it on the next navigation — detaching it here made that deletion throw
+    // "Cannot read properties of null (reading 'removeChild')" on every
+    // in-site link (regression 2026-10-27).
+    expect(metas()).toHaveLength(1);
+    for (const meta of pair) expect(document.head.contains(meta)).toBe(true);
+    expect(pair.filter((m) => m.hasAttribute('name'))).toHaveLength(1);
+  });
+
   it('follows the class in BOTH directions', async () => {
     render(<ThemeColorSync />);
     await act(async () => {

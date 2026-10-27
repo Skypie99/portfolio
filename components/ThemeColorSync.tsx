@@ -20,11 +20,21 @@ import { THEME_COLORS } from '@/lib/theme';
  * (not React state, which lands a frame later) and rewrites the theme-color
  * metadata to match:
  *
- *  - exactly ONE `meta[name="theme-color"]` survives, with no `media` gate, so
- *    there is no last-one-wins ambiguity in the head;
+ *  - exactly ONE `meta[name="theme-color"]` remains readable, with no `media`
+ *    gate, so there is no last-one-wins ambiguity in the head;
  *  - the two static tags remain in the SSR HTML as the no-JS fallback until
  *    this mounts;
- *  - only `content` and `media` are touched. No palette, no JSON-LD, no CSP.
+ *  - only `name`, `content` and `media` are touched. No palette, no JSON-LD,
+ *    no CSP.
+ *
+ * Superseded tags are DE-NAMED, not removed. They are React-owned metadata
+ * nodes (the `viewport` export): detaching one leaves React's own deletion
+ * pass with a null parent — `commitDeletionEffectsOnFiber` then threw
+ * "Cannot read properties of null (reading 'removeChild')" on every in-site
+ * navigation (measured 2026-10-27 on the released site). De-naming removes
+ * the tag from the `meta[name="theme-color"]` set just as completely — the
+ * browser chrome and every reader key off `name` — while leaving React's
+ * node attached so its lifecycle stays intact.
  *
  * It ALSO observes <head> child changes. Next's App Router re-renders the
  * route's metadata on a client navigation and drops the runtime tag with it;
@@ -61,7 +71,10 @@ export function ThemeColorSync() {
         canonical.setAttribute('content', desired);
       }
       if (canonical.hasAttribute('media')) canonical.removeAttribute('media');
-      for (const extra of tags.slice(1)) extra.remove();
+      // De-name superseded tags instead of detaching them (see the header
+      // note): React owns these nodes and deletes them on the next metadata
+      // swap, so they must stay attached until then.
+      for (const extra of tags.slice(1)) extra.removeAttribute('name');
     };
 
     const schedule = () => {
