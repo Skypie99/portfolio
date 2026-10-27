@@ -83,8 +83,15 @@ export function IntroSkip() {
         'inline-flex h-11 items-center gap-2 rounded-pill px-4',
         'border border-line bg-canvas/90 backdrop-blur-sm',
         'font-mono text-meta tracking-label uppercase text-ink-meta',
-        'transition-[opacity,color,border-color] duration-base ease-out',
-        'hover:text-accent hover:border-line-strong',
+        'transition-[opacity,color,border-color,box-shadow] duration-base ease-out',
+        '[@media(hover:hover)]:hover:text-accent [@media(hover:hover)]:hover:border-line-strong',
+        // P4: the approved frosted press family (theme toggle / hamburger):
+        // warm 10% tint held in an inset shadow so the canvas/90 backing that
+        // lets this control sit over the film is never traded away; half-fast
+        // press-in, base release. No movement, no vibration.
+        'active:!text-accent-primary active:!border-accent-primary',
+        'active:shadow-[inset_0_0_0_1.5rem_rgb(var(--rgb-accent)/0.1)]',
+        'active:duration-[calc(var(--dur-fast)/2)]',
         'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary',
         'data-[skip-done]:invisible data-[skip-done]:pointer-events-none data-[skip-done]:opacity-0',
       )}

@@ -92,7 +92,7 @@ export function SidebarSectionNav() {
                   'group relative inline-flex items-center pl-3',
                   'font-mono text-meta tracking-label uppercase',
                   'transition-colors duration-fast ease-out',
-                  isActive ? 'text-ink' : 'text-text-meta hover:text-ink',
+                  isActive ? 'text-ink' : 'text-text-meta [@media(hover:hover)]:hover:text-ink',
                 )}
               >
                 {/* Quiet active marker — a 2px terracotta bar that scales in from
@@ -106,7 +106,7 @@ export function SidebarSectionNav() {
                     isActive ? 'scale-y-100' : 'scale-y-0',
                   )}
                 />
-                <span className="transition-transform duration-fast ease-out group-hover:translate-x-0.5 group-focus-visible:translate-x-0.5">
+                <span className="transition-transform duration-fast ease-out [@media(hover:hover)]:group-hover:translate-x-0.5 group-focus-visible:translate-x-0.5">
                   {s.label}
                 </span>
               </Link>

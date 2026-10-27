@@ -149,11 +149,11 @@ export default function AccessibilityPage() {
           <Button href="/contact/">Get in touch</Button>
           <Link
             href="/"
-            className="group inline-flex items-center gap-2 font-mono text-meta tracking-label uppercase text-text-meta hover:text-accent-text focus-visible:text-accent-text transition-colors duration-fast ease-out"
+            className="group inline-flex items-center gap-2 font-mono text-meta tracking-label uppercase text-text-meta [@media(hover:hover)]:hover:text-accent-text focus-visible:text-accent-text transition-colors duration-fast ease-out"
           >
             <span
               aria-hidden="true"
-              className="inline-block transition-transform duration-base ease-gh-glide group-hover:-translate-x-1 group-focus-visible:-translate-x-1"
+              className="inline-block transition-transform duration-base ease-gh-glide [@media(hover:hover)]:group-hover:-translate-x-1 group-focus-visible:-translate-x-1"
             >
               {'←'}
             </span>

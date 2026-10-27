@@ -15,5 +15,10 @@
       "handle": "skyler-halisky",
       "url": "https://www.linkedin.com/in/skyler-halisky"
     }
-  ]
+  ],
+  "avatar": {
+    "src": "/images/headshot.jpg",
+    "alt": "Skyler Halisky",
+    "lqip": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAABwBACdASoUABQAPxF4tVOsJyUiqAqpgCIJZgCdMw5BgAGKxB5QhnjMfkem0AA8TuUixlEfnLB5rN5X8vzdwCDv1va0yXn1WBmUCY5+oV/4Jn+7r4VCIcfUqC3qjuiAAAA="
+  }
 }

@@ -303,7 +303,7 @@ export function CaseShowcase({ d, spec }: { d: Deliverable; spec: ShowcaseSpec }
               <span>{spec.doorway.label}</span>
               <span
                 aria-hidden="true"
-                className="inline-block transition-transform duration-base ease-gh-glide group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                className="inline-block transition-transform duration-base ease-gh-glide [@media(hover:hover)]:group-hover:translate-x-0.5 [@media(hover:hover)]:group-hover:-translate-y-0.5"
               >
                 {'↗'}
               </span>

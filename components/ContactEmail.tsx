@@ -46,11 +46,14 @@ export function ContactEmail({
   }, []);
 
   // Before hydration (and with scripting disabled) the address is never in the
-  // HTML, so fall back to the /contact page rather than a dead `#` — keeps the
-  // CTA functional for no-JS visitors without exposing the address to scrapers.
+  // HTML. The static action therefore points at the contact page's existing
+  // public "Elsewhere" list (GitHub/LinkedIn) instead of a circular /contact/
+  // self-link; that is the same no-JS path the noscript line below offers.
+  // Once the runtime mailto is assembled this href is replaced, so nothing
+  // about the hydrated CTA changes.
   const href = email
     ? `mailto:${email}?subject=${encodeURIComponent(subject)}`
-    : '/contact/';
+    : '/contact/#elsewhere';
 
   // C-70: the full "Email {address}" label decks over two lines inside the
   // w-full pill at 375. Below md show a short label; restore the full address at
@@ -73,10 +76,11 @@ export function ContactEmail({
       <Button ref={magRef} href={href} dotColor={dotColor}>
         {children}
       </Button>
-      {/* C-72: with JS off the mailto is never assembled and the Button falls back
-          to /contact/ — a circular self-link on that very page. Give no-JS visitors
-          a real path via the ALREADY-PUBLIC socials (GitHub/LinkedIn). No address is
-          exposed, so the bot-armor is untouched; the browser hides this when JS runs. */}
+      {/* C-72: with JS off the mailto is never assembled. The static href now
+          points at the contact page's existing Elsewhere list (an in-page jump
+          on /contact/ itself), so the CTA is never a circular self-link. These
+          direct social paths stay visible to no-JS visitors; no address is
+          exposed, and the browser hides this when JS runs. */}
       <noscript>
         <p className="mt-4 font-mono text-meta tracking-label uppercase text-text-meta">
           Or reach me on{' '}

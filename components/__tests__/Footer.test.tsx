@@ -48,13 +48,13 @@ describe('Footer', () => {
     expect(screen.queryByText(/open to work/i)).not.toBeInTheDocument();
   });
 
-  it('applies link-draw to the email mailto (Cycle 1 editorial link pattern)', () => {
+  it('keeps the email in the gated editorial link family', () => {
     render(<Footer />);
     const emailLink = screen
       .getAllByRole('link')
       .find((a) => a.getAttribute('href')?.startsWith('mailto:'));
     expect(emailLink).toBeDefined();
-    expect(emailLink).toHaveClass('link-draw');
+    expect(emailLink).toHaveClass('quiet-link', 'tactile-link');
   });
 
   it('distinguishes the project index from the homepage work anchor', () => {

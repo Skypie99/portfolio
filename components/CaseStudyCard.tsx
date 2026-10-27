@@ -127,8 +127,8 @@ export function CaseStudyCard({ title, category, description, href, status, veri
           aria-hidden="true"
           className={
             editorial
-              ? 'font-serif font-light text-card-numeral leading-none tabular-nums text-ink/65 origin-top-left transition duration-slow ease-gh-glide group-hover:text-ink/80 motion-safe:group-hover:scale-[1.04]'
-              : 'font-serif font-light text-card-numeral leading-none tabular-nums text-ink/30 origin-top-left transition duration-slow ease-gh-glide group-hover:text-ink/45 motion-safe:group-hover:scale-[1.04]'
+              ? 'font-serif font-light text-card-numeral leading-none tabular-nums text-ink/65 origin-top-left transition duration-slow ease-gh-glide [@media(hover:hover)]:group-hover:text-ink/80 [@media(hover:hover)]:motion-safe:group-hover:scale-[1.04] group-focus-within:text-ink/80 motion-safe:group-focus-within:scale-[1.04]'
+              : 'font-serif font-light text-card-numeral leading-none tabular-nums text-ink/30 origin-top-left transition duration-slow ease-gh-glide [@media(hover:hover)]:group-hover:text-ink/45 [@media(hover:hover)]:motion-safe:group-hover:scale-[1.04] group-focus-within:text-ink/45 motion-safe:group-focus-within:scale-[1.04]'
           }
         >
           {numeral}
@@ -148,12 +148,12 @@ export function CaseStudyCard({ title, category, description, href, status, veri
                  the site's single 2px ring offset — no comment justified the wider
                  gap, and the title sits 16px (gap-4) from the rule below either
                  way, so 2px vs 4px changes nothing about collision. Unified. */
-              className="rounded-sm transition-colors duration-fast ease-out hover:text-accent-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
+              className="tactile-link rounded-sm transition-colors duration-fast ease-out [@media(hover:hover)]:hover:text-accent-text focus-visible:text-accent-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
             >
               {title}
             </Link>
           </h3>
-          <span aria-hidden="true" className="block h-px w-24 rounded-full bg-gradient-to-r from-[rgb(var(--rgb-accent)/0.65)] via-[rgb(var(--rgb-accent)/0.3)] to-transparent origin-left transition-transform duration-slow ease-gh-glide group-hover:scale-x-125" />
+          <span aria-hidden="true" className="block h-px w-24 rounded-full bg-gradient-to-r from-[rgb(var(--rgb-accent)/0.65)] via-[rgb(var(--rgb-accent)/0.3)] to-transparent origin-left transition-transform duration-slow ease-gh-glide [@media(hover:hover)]:motion-safe:group-hover:scale-x-125 motion-safe:group-focus-within:scale-x-125" />
           {/* C-14: no line-clamp — the summaries are Sky's own written receipt
               sentences ("vanilla JS, zero dependencies", "zero cloud, instant
               runs."); clamping amputated them on the work grid. Un-clamped they
@@ -197,7 +197,7 @@ export function CaseStudyCard({ title, category, description, href, status, veri
                  this a real, clickable, SR-rotor-visible link (NOT aria-hidden, NOT a
                  whole-card link). One stop per neighbour card, both names preserved. */
               tabIndex={-1}
-              className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:-top-[21px] after:bottom-0 after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-base ease-gh-glide hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
+              className="tactile-link relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:-top-[21px] after:bottom-0 after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-accent-text transition-transform duration-base ease-gh-glide [@media(hover:hover)]:hover:translate-x-1 focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
             >
               View project <span aria-hidden="true">→</span>
             </Link>
@@ -214,7 +214,7 @@ export function CaseStudyCard({ title, category, description, href, status, veri
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${demoLink.label} for ${title} (opens in new tab)`}
-                    className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
+                    className="tactile-link relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out [@media(hover:hover)]:hover:text-ink focus-visible:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
                   >
                     {/* The full destination label from content ("Open web app",
                         "Play Ghost Code"), which already begins with its verb, so
@@ -228,7 +228,7 @@ export function CaseStudyCard({ title, category, description, href, status, veri
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`View ${title} source on GitHub (opens in new tab)`}
-                    className="relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
+                    className="tactile-link relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out [@media(hover:hover)]:hover:text-ink focus-visible:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
                   >
                     GitHub <span aria-hidden="true">↗</span>
                   </a>
