@@ -6,6 +6,7 @@ import { CardField } from '@/components/CardField';
 import { CardProductReveal } from '@/components/ProductReveal';
 import { TagPill } from '@/components/TagPill';
 import { cn } from '@/lib/cn';
+import { demoLinkBehavior } from '@/lib/demoLinks';
 import { cardMedia } from '@/lib/media';
 import { useSpotlight } from '@/lib/motion';
 import type { Deliverable } from '@/lib/schema';
@@ -36,6 +37,8 @@ type ProjectCardProps = {
 export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index = 0, className }: ProjectCardProps) {
   const githubLink = d.links?.find((l) => l.type === 'github');
   const demoLink = d.links?.find((l) => l.type === 'demo');
+  // Tab behavior of the demo action (lib/demoLinks, hotfix 2026-10-29).
+  const demoBehavior = demoLinkBehavior(d.id);
   const numeral = String(index + 1).padStart(2, '0');
   const spotRef = useSpotlight<HTMLDivElement>();
 
@@ -206,14 +209,15 @@ export function ProjectCard({ deliverable: d, maxTech = 4, wide = false, index =
                   {demoLink && (
                     <a
                       href={demoLink.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${demoLink.label} for ${d.title} (opens in new tab)`}
+                      target={demoBehavior.target}
+                      rel={demoBehavior.rel}
+                      aria-label={`${demoLink.label} for ${d.title}${demoBehavior.newTabAnnouncement}`}
                       className="tactile-link relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out [@media(hover:hover)]:hover:text-ink focus-visible:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
                     >
                       {/* The full destination label from content ("Open web app",
                           "Play Ghost Code"), which already begins with its verb, so
-                          the accessible name leads with the same words (SC 2.5.3). */}
+                          the accessible name leads with the same words (SC 2.5.3).
+                          Tab behavior per lib/demoLinks (hotfix 2026-10-29). */}
                       {demoLink.label} <span aria-hidden="true">↗</span>
                     </a>
                   )}

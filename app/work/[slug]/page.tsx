@@ -18,6 +18,7 @@ import { TactileMedia } from '@/components/TactileMedia';
 import { TagPill } from '@/components/TagPill';
 import { caseShowcaseFor } from '@/lib/caseShowcase';
 import { cn } from '@/lib/cn';
+import { demoLinkBehavior } from '@/lib/demoLinks';
 import { INLINE_CODE_CLASS, smartPunctuation } from '@/lib/markdown';
 import { getDeliverables } from '@/lib/content';
 import { ThemedHeroPreload } from '@/components/ThemedHeroPreload';
@@ -582,6 +583,10 @@ export default async function WorkDetailPage({
   // the below-fold LINKS list into a primary pill in the hero details column. The
   // remaining links (GitHub, write-ups) keep the list; the demo no longer doubles.
   const demoLink = d.links?.find((l) => l.type === 'demo');
+  // Tab behavior of the promoted demo pill (lib/demoLinks, hotfix 2026-10-29):
+  // Claude Corp and Dashboard keep the genuine destination but stop forcing a
+  // new tab; Flagstone, Prompt Library and Ghost Code keep the convention.
+  const demoBehavior = demoLinkBehavior(d.id);
   // P1.A (2026-09-17): 'appstore' joins 'demo' as a PROMOTED link. Flagstone
   // shipped on 2026-09-15, and the shipped binary is at least as strong a proof
   // as the running web build, so it sits beside it rather than in the below-fold
@@ -969,10 +974,10 @@ export default async function WorkDetailPage({
                     {demoLink && (
                       <Button
                         href={demoLink.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        target={demoBehavior.target}
+                        rel={demoBehavior.rel}
                         variant="primary"
-                        aria-label={`${demoLink.label} for ${d.title} (opens in new tab)`}
+                        aria-label={`${demoLink.label} for ${d.title}${demoBehavior.newTabAnnouncement}`}
                         /* Astra Ultra 01: the destination labels ("Read system
                            overview") are longer than "Live demo", and where the
                            details column is narrow (1024, phones) the label
