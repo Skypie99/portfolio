@@ -83,4 +83,34 @@ describe('ExhibitDetail', () => {
     expect(tag.className).toMatch(/\bdark:text-ink\b/);
     expect(tag.className).not.toMatch(/text-text-meta/);
   });
+
+  it('paints the P8 placeholder UNDER the crop — placeholder first, picture after (hotfix 2026-10-29)', () => {
+    // Regression: the placeholder span and the crop img are both absolutely
+    // positioned with z-index auto, so they paint in DOM order. A 2026-10-27
+    // P8 change rendered the span AFTER the picture, so the blurred LQIP
+    // covered the sharp crop permanently (the owner-reported "blurred
+    // DETAIL OF THE SAME CAPTURE"). ProductReveal's StaticShot and
+    // ThemedShowcase layer their LQIPs first for the same reason.
+    const { container } = render(
+      <ExhibitDetail detail={detail} sources={{ ...sources, lqip: 'data:image/webp;base64,LQIPTESTTOKEN==' }} />,
+    );
+    const box = container.querySelector('img')!.closest('picture')!.parentElement as HTMLElement;
+    const lqip = box.querySelector('[data-exhibit-lqip]');
+    expect(lqip).not.toBeNull();
+    const kids = Array.from(box.children);
+    expect(kids.indexOf(lqip!)).toBeLessThan(kids.indexOf(box.querySelector('picture')!));
+    // The placeholder stays a pointer-inert decorative underlay — never a
+    // filter or overlay that can degrade the crop's own pixels.
+    expect(lqip!.className).toMatch(/pointer-events-none/);
+    expect(lqip!.getAttribute('aria-hidden')).toBe('true');
+    const img = box.querySelector('img')!;
+    expect(img.className).not.toMatch(/blur/);
+    expect(img.getAttribute('style') ?? '').not.toMatch(/filter/);
+  });
+
+  it('still requests the placeholder only when the caller carries one', () => {
+    const { container } = render(<ExhibitDetail detail={detail} sources={sources} />);
+    expect(container.querySelector('[data-exhibit-lqip]')).toBeNull();
+    expect(container.querySelector('picture')).not.toBeNull();
+  });
 });

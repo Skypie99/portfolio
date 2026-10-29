@@ -52,6 +52,31 @@ export function ExhibitDetail({ detail, sources, className }: ExhibitDetailProps
             } as CSSProperties
           }
         >
+          {/* P8 — the same inline blur the hero frame already paints, laid
+              under the crop. Decorative, no animation, no new box: the plate's
+              aspect is fixed above, so this cannot move anything.
+
+              ORDER IS LOAD-BEARING (hotfix 2026-10-29): this placeholder span
+              and the crop img below are both absolutely positioned with
+              z-index auto, so they paint in DOM order. The placeholder MUST
+              come first — exactly as ProductReveal's StaticShot and
+              ThemedShowcase layer their LQIPs — so the crop paints over it.
+              Rendered after the picture (as a 2026-10-27 P8 regression had
+              it), the blur covered the sharp crop permanently and the plate
+              showed only the placeholder. */}
+          {sources.lqip && (
+            <span
+              aria-hidden="true"
+              data-exhibit-lqip=""
+              className="pointer-events-none absolute inset-0 block"
+              style={{
+                backgroundImage: `url("${sources.lqip}")`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+              }}
+            />
+          )}
           <picture>
             {sources.avif && <source type="image/avif" srcSet={sources.avif} />}
             {sources.webp && <source type="image/webp" srcSet={sources.webp} />}
@@ -66,22 +91,6 @@ export function ExhibitDetail({ detail, sources, className }: ExhibitDetailProps
               className={styles.crop}
             />
           </picture>
-          {/* P8 — the same inline blur the hero frame already paints, laid
-              under the crop. Decorative, no animation, no new box: the plate's
-              aspect is fixed above, so this cannot move anything. */}
-          {sources.lqip && (
-            <span
-              aria-hidden="true"
-              data-exhibit-lqip=""
-              className="pointer-events-none absolute inset-0 block"
-              style={{
-                backgroundImage: `url("${sources.lqip}")`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-              }}
-            />
-          )}
         </div>
         <span className={cn(styles.leader, 'absolute left-full top-1/2 h-px bg-terracotta')} />
         <span
