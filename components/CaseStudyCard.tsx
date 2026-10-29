@@ -6,6 +6,7 @@ import { CardField } from '@/components/CardField';
 import { CLAUSE_LINE_CLASS, ClauseBound } from '@/components/ClauseBound';
 import { CardProductReveal, type ProductRevealMedia } from '@/components/ProductReveal';
 import { cn } from '@/lib/cn';
+import { demoLinkBehavior } from '@/lib/demoLinks';
 import { useSpotlight } from '@/lib/motion';
 import type { Deliverable } from '@/lib/schema';
 import { frameForSlug } from '@/lib/signature';
@@ -65,6 +66,9 @@ export function CaseStudyCard({ title, category, description, href, status, veri
   const numeral = String(index + 1).padStart(2, '0');
   const githubLink = links?.find((l) => l.type === 'github');
   const demoLink = links?.find((l) => l.type === 'demo');
+  // Tab behavior of the demo action (lib/demoLinks, hotfix 2026-10-29): the
+  // category mirrors the deliverable id ('ghost-code' hangs as 'ghost').
+  const demoBehavior = demoLinkBehavior(category === 'ghost' ? 'ghost-code' : category);
   const spotRef = useSpotlight<HTMLDivElement>();
   // The wall's well ratio per frame (R4/BP9): portrait phone frames 2/5,
   // window/plate 1/2 — the two shipped anatomies, picked per work.
@@ -211,14 +215,15 @@ export function CaseStudyCard({ title, category, description, href, status, veri
                 {demoLink && (
                   <a
                     href={demoLink.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${demoLink.label} for ${title} (opens in new tab)`}
+                    target={demoBehavior.target}
+                    rel={demoBehavior.rel}
+                    aria-label={`${demoLink.label} for ${title}${demoBehavior.newTabAnnouncement}`}
                     className="tactile-link relative px-1 py-1 -mx-1 -my-1 after:absolute after:inset-x-0 after:top-0 after:-bottom-[21px] after:content-[''] inline-flex items-center gap-1.5 rounded-sm font-mono text-meta uppercase tracking-label text-text-meta transition-colors duration-fast ease-out [@media(hover:hover)]:hover:text-ink focus-visible:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-primary"
                   >
                     {/* The full destination label from content ("Open web app",
                         "Play Ghost Code"), which already begins with its verb, so
-                        the accessible name leads with the same words (SC 2.5.3). */}
+                        the accessible name leads with the same words (SC 2.5.3).
+                        Tab behavior per lib/demoLinks (hotfix 2026-10-29). */}
                     {demoLink.label} <span aria-hidden="true">↗</span>
                   </a>
                 )}
