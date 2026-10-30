@@ -74,6 +74,7 @@ npm test             # after a build, so the build-dependent guards run instead 
 
 | Need | Go to |
 |---|---|
+| The strongest evidence, curated for reviewers | [`docs/PUBLIC_EVIDENCE.md`](docs/PUBLIC_EVIDENCE.md) |
 | Which documents are current, and which are historical | [`docs/INDEX.md`](docs/INDEX.md) |
 | Contributor and agent guidance | [`CLAUDE.md`](CLAUDE.md) |
 | Visual and motion systems | [`UI_SYSTEM.md`](UI_SYSTEM.md), [`MOTION_SYSTEM.md`](MOTION_SYSTEM.md) |
@@ -93,6 +94,8 @@ npm test             # after a build, so the build-dependent guards run instead 
 > Historical repository documentation follows. Everything below is a dated record, kept for provenance. Each block was true for its own date; where a heading or sentence below says "current", "latest", or "live", it means as of that block's date, not today. The current orientation is everything above this line.
 
 *Formatting note, 2026-09-26: the headings inside these blocks are nested under this section so they cannot be read as current sections. Their wording is unchanged unless a block's own note says otherwise.*
+
+*Reading note, 2026-10-28: names such as Gary, Rory, Morgan, Quinn, Dani and Alex in these blocks are role labels in the multi-agent AI workflow, not additional people.*
 
 ### Historical recorded state: 2026-09-24
 
