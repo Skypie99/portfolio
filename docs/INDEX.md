@@ -65,6 +65,7 @@ counts and claims stay true for their dates.
 | `scripts/README.md` | `CURRENT_DOC` | Script lifecycle and how to run each tool. |
 | `proof-masters/README.md` | `CURRENT_DOC` | Where raw proof media goes (never shipped). |
 | `docs/INDEX.md` | `CURRENT_DOC` | This page. |
+| `docs/PUBLIC_EVIDENCE.md` | `CURRENT_DOC` | Curated route to the strongest evidence for reviewers. Dated at its top. |
 | `package.json`, `next.config.mjs`, `tailwind.config.ts`, `tsconfig.json`, `vitest.config.ts`, `.eslintrc.json` | `ACTIVE_CONFIG` | `next.config.mjs` `headers()` is documentation only on GitHub Pages. |
 | `.github/workflows/ci.yml`, `.github/workflows/deploy.yml` | `ACTIVE_CONFIG` | The release gate. |
 | `.github/workflows/supabase-keepalive.yml` | `ACTIVE_CONFIG` | Daily read that keeps the `/archive` Supabase project active. |
